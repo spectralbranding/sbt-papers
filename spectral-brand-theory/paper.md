@@ -121,7 +121,7 @@ Brand perception follows a three-stage epistemic pipeline:
 
 **Stage 3: Re-collapse.** New evidence (a product failure, a CEO scandal, a brilliant campaign) introduces signals that contradict the existing conviction. If the contradicting evidence is strong enough, the conviction dissolves and the observer re-forms a cloud from the full evidence set — including the new signals. The conviction is rebuilt from scratch, never patched. This explains both brand resilience (convictions resist moderate contradicting evidence) and brand crises (sufficient contradicting evidence forces wholesale re-evaluation).
 
-The re-collapse mechanism is borrowed directly from an epistemological architecture developed for financial document processing (Zharnikov, 2025), where probabilistic facts about financial transactions are rebuilt from scratch whenever new evidence arrives, rather than incrementally updated. The domain transfer works because the underlying epistemic structure is identical: observations → hypotheses → knowledge, with the added complexity that brand "observations" are filtered through heterogeneous observer profiles rather than a single system.
+The re-collapse mechanism is borrowed directly from an epistemological architecture developed for financial document processing (Zharnikov, 2026b), where probabilistic facts about financial transactions are rebuilt from scratch whenever new evidence arrives, rather than incrementally updated. The domain transfer works because the underlying epistemic structure is identical: observations → hypotheses → knowledge, with the added complexity that brand "observations" are filtered through heterogeneous observer profiles rather than a single system.
 
 ### 2.5 Coherence as Structural Property
 
@@ -449,7 +449,7 @@ Vargo, S. L., & Lusch, R. F. (2004). Evolving to a new dominant logic for market
 
 Veblen, T. (1899). *The theory of the leisure class*. Macmillan.
 
-Zharnikov, D. (2025). Atom-cloud-fact: An epistemological architecture for probabilistic knowledge formation. Unpublished working paper.
+Zharnikov, D. (2026b). The atom-cloud-fact epistemological pipeline: From financial document processing to brand perception modeling. Working paper. https://github.com/spectralbranding/sbt-papers/tree/main/alibi-epistemology
 
 ---
 
