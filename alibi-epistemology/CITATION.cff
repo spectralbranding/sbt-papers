@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+message: "If you use this architecture, please cite it as below."
+authors:
+  - family-names: Zharnikov
+    given-names: Dmitry
+    email: dmitry@spectralbranding.com
+title: "The Atom-Cloud-Fact Epistemological Pipeline: From Financial Document Processing to Brand Perception Modeling"
+version: 1.0.0
+date-released: 2026-02-27
+url: "https://github.com/spectralbranding/sbt-papers"
+keywords:
+  - epistemology
+  - probabilistic knowledge
+  - atom-cloud-fact
+  - domain transfer
+  - computational framework
+license: MIT
+type: article
