@@ -340,7 +340,9 @@ Sharp's (2010) empirical challenge to brand differentiation is complementary rat
 
 Gestalt psychology (Koffka, 1935) provides the perceptual foundations: cloud formation *is* gestalt perception applied to brand signals. Closure (collapsing an incomplete cloud), similarity (dimensional matching), and proximity (temporal clustering) are the mechanisms through which perception clouds form. Kahneman's (2011) dual-process theory maps to the collapse mechanism: strong brand convictions are System 1 shortcuts that bypass deliberate evaluation, while weak or forming clouds require effortful System 2 processing.
 
-In sum, SBT functions as a meta-framework. It provides the architecture within which Aaker, Kapferer, Keller, Sharp, and cognitive science each describe a single stage or dimension of the full perception pipeline.
+Peters' (2019) ergodicity economics offers an unexpected but structurally precise theoretical ancestor. Peters demonstrates that in multiplicative, path-dependent processes, ensemble averages (averaging across many agents at one moment) diverge systematically from time averages (following one agent across time). This divergence is the formal definition of non-ergodicity. SBT's finding that brand power (an ensemble measure — aggregate awareness across all observers at one moment) and brand health (a time-average measure — how brand architecture performs for any given cohort over its perceptual trajectory) are independent variables is a direct instantiation of Peters' thesis in brand perception. The asymmetric conviction resilience finding (Section 4.3) maps to Peters' concept of absorbing states in non-ergodic processes: once a negative conviction crosses a threshold with no experiential friction to reverse it, the observer is on a one-directional compounding trajectory. Peters' framework thus provides a unified root cause — non-ergodic multiplicative dynamics — for multiple independently discovered SBT phenomena.
+
+In sum, SBT functions as a meta-framework. It provides the architecture within which Aaker, Kapferer, Keller, Sharp, cognitive science, and ergodicity economics each describe a single stage or dimension of the full perception pipeline.
 
 ### 5.2 Computational Implementability
 
@@ -386,6 +388,8 @@ Several limitations warrant discussion.
 **Competitive analysis.** The current framework analyzes brands in isolation. Extending the model to competitive contexts — how Brand A's signal environment interacts with Brand B's in the same perceptual space — is a natural extension that the dimensional architecture supports but that has not been validated.
 
 **Temporal compounding.** Our cross-brand comparison reveals that heritage compounds non-linearly — 20 years of heritage is supplementary, 50 years is moderate, 80 years approaches a compounding threshold, and 180+ years becomes the foundational architecture on which all other dimensions rest. Formalizing this compounding curve as a mathematical function within the temporal dimension model would strengthen the framework's predictive capacity.
+
+**Non-ergodic dynamics.** Brand perception operates as a multiplicative, path-dependent process: each new signal multiplies (rather than adds to) an observer's existing cloud confidence. This makes brand perception structurally non-ergodic in Peters' (2019) sense — what happens to the "average observer" in a cross-sectional survey does not predict any individual cohort's perceptual trajectory over time. Introducing an ergodicity coefficient per brand-dimension pair — measuring the degree to which ensemble metrics reliably predict individual cohort trajectories — would strengthen the framework's diagnostic capacity by identifying which dimensions can be safely measured with aggregate surveys and which require longitudinal cohort-trajectory tracking.
 
 ---
 
@@ -440,6 +444,8 @@ McLuhan, M. (1964). *Understanding media: The extensions of man*. McGraw-Hill.
 Muniz, A. M., & O'Guinn, T. C. (2001). Brand community. *Journal of Consumer Research*, 27(4), 412–432.
 
 Peirce, C. S. (1931–1958). *Collected papers of Charles Sanders Peirce* (C. Hartshorne & P. Weiss, Eds., Vols. 1–6). Harvard University Press.
+
+Peters, O. (2019). The ergodicity problem in economics. *Nature Physics*, 15, 1216–1221. https://doi.org/10.1038/s41567-019-0732-0
 
 Ries, A., & Trout, J. (1981). *Positioning: The battle for your mind*. McGraw-Hill.
 
