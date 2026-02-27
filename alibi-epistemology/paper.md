@@ -217,6 +217,8 @@ The architecture's generalizability rests on a single structural condition: the 
 
 The atom-cloud-fact pipeline shares structural similarities with Bayesian reasoning: both update beliefs based on new evidence. However, the pipeline differs in a critical respect. Bayesian updating is incremental — prior beliefs are updated by multiplying with likelihood ratios. The atom-cloud-fact pipeline is *non-incremental*: on re-collapse, facts are dissolved and rebuilt from the complete evidence set. This is epistemically stronger (the result is always consistent with the total evidence) but computationally more expensive.
 
+The re-collapse mechanism also differs from formal belief revision as modeled by AGM theory (Alchourrón, Gärdenfors, & Makinson, 1985), which defines contraction and revision as operations on logically closed belief sets. AGM revision preserves as much of the prior belief set as possible (the principle of minimal change); the atom-cloud-fact pipeline preserves nothing — it dissolves the fact and rebuilds from the complete atom set. This makes the pipeline epistemically more radical than AGM revision but computationally simpler: there is no need to determine which beliefs to retain.
+
 The distinction matters in practice. Bayesian updating can accumulate path-dependent biases — the order in which evidence arrives affects the posterior, even when it should not. The atom-cloud-fact pipeline is path-independent by construction: only the final atom set matters, not the order of observation. This property is essential for financial reconciliation (the order of document discovery should not affect which transactions are confirmed) and for brand perception (the order of brand encounters should not determine the conviction — only the total evidence should).
 
 ### 7.2 Symbolic vs. Probabilistic Reasoning
@@ -247,6 +249,8 @@ The architecture is computationally implementable. The financial implementation 
 
 ## References
 
+Alchourrón, C. E., Gärdenfors, P., & Makinson, D. (1985). On the logic of theory change: Partial meet contraction and revision functions. *The Journal of Symbolic Logic*, 50(2), 510–530.
+
 Buchanan, B. G., & Shortliffe, E. H. (1984). *Rule-based expert systems: The MYCIN experiments of the Stanford Heuristic Programming Project*. Addison-Wesley.
 
 Dempster, A. P. (1967). Upper and lower probabilities induced by a multivalued mapping. *The Annals of Mathematical Statistics*, 38(2), 325–339.
@@ -265,7 +269,7 @@ Pearl, J. (1988). *Probabilistic reasoning in intelligent systems: Networks of p
 
 Peirce, C. S. (1931–1958). *Collected papers of Charles Sanders Peirce* (C. Hartshorne & P. Weiss, Eds., Vols. 1–6). Harvard University Press.
 
-Polanyi, M. (1966). *The tacit dimension*. University of Chicago Press.
+Polanyi, M. (1966). *The tacit dimension*. Doubleday.
 
 Popper, K. R. (1959). *The logic of scientific discovery*. Hutchinson.
 
