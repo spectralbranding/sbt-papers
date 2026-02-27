@@ -211,7 +211,31 @@ The architecture's generalizability rests on a single structural condition: the 
 
 ---
 
-## 7. Conclusion
+## 7. Discussion: Relationship to Existing Epistemological Frameworks
+
+### 7.1 Bayesian Reasoning
+
+The atom-cloud-fact pipeline shares structural similarities with Bayesian reasoning: both update beliefs based on new evidence. However, the pipeline differs in a critical respect. Bayesian updating is incremental — prior beliefs are updated by multiplying with likelihood ratios. The atom-cloud-fact pipeline is *non-incremental*: on re-collapse, facts are dissolved and rebuilt from the complete evidence set. This is epistemically stronger (the result is always consistent with the total evidence) but computationally more expensive.
+
+The distinction matters in practice. Bayesian updating can accumulate path-dependent biases — the order in which evidence arrives affects the posterior, even when it should not. The atom-cloud-fact pipeline is path-independent by construction: only the final atom set matters, not the order of observation. This property is essential for financial reconciliation (the order of document discovery should not affect which transactions are confirmed) and for brand perception (the order of brand encounters should not determine the conviction — only the total evidence should).
+
+### 7.2 Symbolic vs. Probabilistic Reasoning
+
+The pipeline occupies a space between purely symbolic and purely probabilistic approaches. Atoms are symbolic — typed, named, structured. Clouds are probabilistic — scored, uncertain, revisable. Facts are quasi-symbolic — confirmed, stable, but subject to dissolution. This hybrid structure allows the system to handle both the structured certainty of known data types and the genuine uncertainty of multi-source reconciliation.
+
+Classical expert systems (Buchanan & Shortliffe, 1984) operate in the symbolic regime: rules transform structured inputs into conclusions. Statistical models operate in the probabilistic regime: numerical functions map features to predictions. The atom-cloud-fact pipeline uses symbolic structure at the observation level (dimensional typing, identity gates) and probabilistic computation at the hypothesis level (weighted scoring, threshold collapse). This combination produces results that are both interpretable (you can trace exactly which atoms contributed to which fact) and uncertainty-aware (you can see which clouds have not yet collapsed).
+
+### 7.3 LLM Implementability
+
+A distinctive property of the atom-cloud-fact pipeline is that it can be implemented through natural language instructions to a large language model, without custom code. The seven principles can be expressed as a system prompt: "Extract typed signals across these dimensions. Cluster them using these weights. Identify when the evidence threshold is met. Rebuild from scratch when new evidence contradicts existing conclusions."
+
+This is not trivially possible with other epistemological frameworks. Bayesian networks require explicit probability distributions. Expert systems require formal rule bases. The atom-cloud-fact pipeline's principles are expressible in natural language because they describe *cognitive operations* (perceive, cluster, weigh, decide, revise) rather than *mathematical operations* (multiply, integrate, optimize). LLMs, trained on text describing human reasoning, can execute cognitive operations with surprising fidelity.
+
+The SBT implementation demonstrates this: the six-module analytical pipeline operates entirely as a structured prompt sequence, producing formal multi-cohort brand analysis through natural language instruction rather than code execution (Zharnikov, 2026a). This suggests that the atom-cloud-fact architecture is not merely computationally implementable but *linguistically implementable* — a property that may prove important as LLMs become the primary computational platform for analytical work.
+
+---
+
+## 8. Conclusion
 
 The atom-cloud-fact pipeline is not a technique for financial document processing. It is an epistemological architecture — a formal model of how knowledge forms from heterogeneous observation. The financial domain provided the implementation context. The brand perception domain provided the validation through transfer. The architecture's seven principles — dimensional typing, source binding, identity gating, asymmetric tolerances, weighted scoring, re-collapse, and epistemic separation — appear to capture general properties of observation-to-knowledge progression that are not domain-specific.
 
@@ -223,11 +247,37 @@ The architecture is computationally implementable. The financial implementation 
 
 ## References
 
+Buchanan, B. G., & Shortliffe, E. H. (1984). *Rule-based expert systems: The MYCIN experiments of the Stanford Heuristic Programming Project*. Addison-Wesley.
+
+Dempster, A. P. (1967). Upper and lower probabilities induced by a multivalued mapping. *The Annals of Mathematical Statistics*, 38(2), 325–339.
+
+Enderton, H. B. (2001). *A mathematical introduction to logic* (2nd ed.). Academic Press.
+
+Goldman, A. I. (1986). *Epistemology and cognition*. Harvard University Press.
+
 Kahneman, D. (2011). *Thinking, fast and slow*. Farrar, Straus and Giroux.
 
 Koffka, K. (1935). *Principles of Gestalt psychology*. Harcourt, Brace.
 
+Kuhn, T. S. (1962). *The structure of scientific revolutions*. University of Chicago Press.
+
+Pearl, J. (1988). *Probabilistic reasoning in intelligent systems: Networks of plausible inference*. Morgan Kaufmann.
+
 Peirce, C. S. (1931–1958). *Collected papers of Charles Sanders Peirce* (C. Hartshorne & P. Weiss, Eds., Vols. 1–6). Harvard University Press.
+
+Polanyi, M. (1966). *The tacit dimension*. University of Chicago Press.
+
+Popper, K. R. (1959). *The logic of scientific discovery*. Hutchinson.
+
+Quine, W. V. O. (1951). Two dogmas of empiricism. *The Philosophical Review*, 60(1), 20–43.
+
+Russell, S., & Norvig, P. (2020). *Artificial intelligence: A modern approach* (4th ed.). Pearson.
+
+Shafer, G. (1976). *A mathematical theory of evidence*. Princeton University Press.
+
+Sowa, J. F. (2000). *Knowledge representation: Logical, philosophical, and computational foundations*. Brooks/Cole.
+
+Zadeh, L. A. (1965). Fuzzy sets. *Information and Control*, 8(3), 338–353.
 
 Zharnikov, D. (2026a). Spectral Brand Theory: A computational framework for multi-dimensional brand perception. Working paper. https://github.com/spectralbranding/sbt-papers
 
