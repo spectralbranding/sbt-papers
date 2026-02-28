@@ -170,7 +170,7 @@ Each of the seven principles operates identically in both domains:
 
 **Weighted scoring** (Principle 5): This is the core mechanism of Spectral Brand Theory. Each observer cohort has a weight profile that determines how they cluster brand signals. The weights produce different perception clouds from the same signal set.
 
-**Re-collapse** (Principle 6): A brand scandal introduces new signals that force conviction rebuild. The observer does not "update" their brand image — they dissolve it and re-form from the complete signal set, including the new negative signals. This explains both brand resilience (strong convictions resist moderate contradicting evidence) and brand crises (overwhelming contradicting evidence forces wholesale re-evaluation).
+**Re-collapse** (Principle 6): A brand scandal introduces new signals that force conviction rebuild. The observer does not "update" their brand image — they dissolve it and re-form from the available evidence: the signals that have survived temporal decay plus crystallized priors, now including the new contradicting signals. This explains both brand resilience (strong convictions resist moderate contradicting evidence) and brand crises (overwhelming contradicting evidence forces wholesale re-evaluation).
 
 **Epistemic separation** (Principle 7): Brand signals (atoms), brand impressions (clouds), and brand convictions (facts) are structurally distinct. A brand signal is not "the brand" — it is one observation. A brand impression is not a conviction — it is a probabilistic cluster. A brand conviction is not permanent — it can be dissolved and rebuilt.
 
