@@ -10,7 +10,7 @@ Working Paper — February 2026
 |---|---|
 | **Open-source toolkit** | [github.com/spectralbranding/sbt-framework](https://github.com/spectralbranding/sbt-framework) |
 | **Article series** | [spectralbranding.substack.com](https://spectralbranding.substack.com) |
-| **SSRN** | *(link pending)* |
+| **SSRN** | [papers.ssrn.com/abstract=6318718](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6318718) |
 | **License** | MIT |
 
 ---
@@ -62,7 +62,7 @@ This inversion has a philosophical precedent. Peirce's semiotics (1890s) establi
 SBT decomposes brand signals across eight dimensions, each representing a distinct channel through which observers perceive brand meaning:
 
 | Dimension | Signal Type | Examples |
-|-----------|------------|---------|
+|:----------|:------------|:---------|
 | **Semiotic** | Visual and sensory identity markers | Logo, name, colors, typography, packaging, sonic identity |
 | **Narrative** | Story structures and temporal arcs | Origin story, founder myth, key events, brand legends |
 | **Ideological** | Values, ethics, and purpose claims | Stated mission, ethical positions, political stance |
@@ -105,16 +105,32 @@ Cohort membership is dynamic. Because priors are a profile component and priors 
 
 **Figure 1. The Observer-Mediated Perception Pipeline**
 
-```
-Brand signals          Observer spectral         Perception          Conviction
-(8 dimensions)    →    profile (filter)     →    cloud          →   (collapse)
-                       spectrum, weights,         probabilistic       stable belief
-                       tolerances, priors         cluster             about brand
+```mermaid
+graph LR
+    subgraph INPUT ["Signal Environment"]
+        A["Brand Signals<br/><i>(8 dimensions)</i>"]
+        B["Ambient Signals<br/><i>(reviews, news,<br/>competitors, culture)</i>"]
+    end
 
-+ Ambient signals       Identity gate            Cloud valence        Re-collapse
-  (reviews, news,      (recognition              (positive /          on new
-  competitors,          prerequisite)             negative /           evidence
-  cultural context)                               ambivalent)
+    subgraph OBSERVER ["Observer Spectral Profile"]
+        C["Identity Gate<br/><i>(recognition<br/>prerequisite)</i>"]
+        D["Spectral Filter<br/><i>spectrum, weights,<br/>tolerances, priors</i>"]
+    end
+
+    subgraph PERCEPTION ["Perception"]
+        E["Perception Cloud<br/><i>probabilistic cluster<br/>(+/−/ambivalent)</i>"]
+    end
+
+    subgraph CONVICTION ["Conviction"]
+        F["Collapse<br/><i>stable belief<br/>about brand</i>"]
+    end
+
+    A --> C
+    B --> C
+    C -->|"passes gate"| D
+    D --> E
+    E -->|"threshold<br/>reached"| F
+    F -.->|"re-collapse on<br/>new evidence"| E
 ```
 
 ### 2.4 Cloud Formation and Conviction Collapse
@@ -138,7 +154,7 @@ A brand's coherence is not the consistency of its messaging but the structural r
 Coherence is measured through a seven-metric scorecard:
 
 | Metric | What It Measures |
-|--------|-----------------|
+|:-------|:-----------------|
 | Dimensional coverage | How many dimensions the brand actively emits on |
 | Gate permeability | What proportion of target observers recognize the brand |
 | Cloud coherence | Compatibility of perception clouds across cohorts |
@@ -158,7 +174,7 @@ Coherence is measured through a seven-metric scorecard:
 We validated SBT through structured analysis of five brands selected to span the brand architecture space:
 
 | Brand | Selection Rationale | Architecture Type |
-|-------|-------------------|-------------------|
+|:------|:----------------------------------|:------------------|
 | Patagonia | Mission-driven, ideological core, moderate scale | Identity coherence |
 | Tesla | Maximum observer divergence, CEO-dominated signals | Incoherence |
 | IKEA | Global consistency, designed-signal dominance | Signal coherence |
@@ -197,7 +213,7 @@ Second, cloud confidence scores are calibrated within each brand analysis but no
 Third, the analytical pipeline was initially executed by a single LLM (Claude Opus 4.6), introducing potential model-specific biases. A full cross-model replication was conducted using Gemini 3.1 Pro (Google) across all five brands. Both models independently produced identical coherence type classifications and identical letter grades for every brand in the sample:
 
 | Brand | Claude Opus 4.6 | Gemini 3.1 Pro | Convergence |
-|-------|----------------|----------------|-------------|
+|:------|:----------------|:----------------|:------------|
 | Tesla | Incoherent, C- | Incoherent, C- | Identical |
 | Hermès | Ecosystem, A+ | Ecosystem, A+ | Identical |
 | Patagonia | Identity, B+ | Identity, B+ | Identical |
@@ -231,7 +247,7 @@ We formalize this as **structural absence**: the deliberate withholding of signa
 SBT introduces a three-type emission taxonomy:
 
 | Emission Type | Mechanism | Signal Present? | Example |
-|--------------|-----------|----------------|---------|
+|:-------------|:-------------------------------|:----------------|:-------------------------------|
 | Positive | Brand actively emits signal | Yes | Product launch, campaign |
 | Null | Signal absent, unintentional | No (neglect) | Unused heritage, dormant dimension |
 | Structural absence | Designed restriction functions as signal | No (strategy) | Wait list, no discounts, geographic scarcity |
@@ -257,7 +273,7 @@ The scarcity multiplier amplifies the perceived weight of signals that exist in 
 Traditional brand analysis treats coherence as a single variable from low to high: how consistently is the brand perceived across audiences? Our five-brand validation reveals that coherence is not a single variable but a structural property that comes in five qualitatively distinct types, each with different resilience profiles.
 
 | Coherence Type | Grade | Pattern | Resilience Profile | Brand |
-|---------------|-------|---------|-------------------|-------|
+|:--------------|:------|:--------------------------------------|:--------------------------------------|:------|
 | Ecosystem | A+ | Different clouds reinforce through functional interdependence | Selective — absorbs disruption by purification | Hermès |
 | Signal | A- | Consistent designed signals → consistent clouds | Uniform — transmits disruption evenly | IKEA |
 | Identity | B+ | Ideological core filters cohort compatibility | Binary — divides along ideology | Patagonia |
@@ -307,7 +323,7 @@ The strategic implication is stark: resources spent attempting to convert struct
 The five-brand validation produces a finding that inverts conventional brand wisdom: brand power (emission strength, awareness, cultural impact) and brand health (coherence, architectural integrity, resilience) are independent variables. A brand can maximize the first while minimizing the second.
 
 | Brand | Traditional Power | Spectral Health | D/A Ratio | The Gap |
-|-------|------------------|----------------|-----------|---------|
+|:------|:------------------------------------------|:----------------|:----------|:-------------------------------|
 | Tesla | Highest (near-universal awareness, massive cultural impact) | Lowest (C-) | 30/65 | Maximum inversion |
 | Hermès | Moderate (niche, exclusive, deliberately restricted) | Highest (A+) | 60/35 | Architecture > awareness |
 | IKEA | High (global, ubiquitous, universally recognized) | High (A-) | 75/25 | Consistent alignment |
@@ -487,7 +503,7 @@ Vargo, S. L., & Lusch, R. F. (2004). Evolving to a new dominant logic for market
 
 Veblen, T. (1899). *The theory of the leisure class*. Macmillan.
 
-Zharnikov, D. (2026b). The atom-cloud-fact epistemological pipeline: From financial document processing to brand perception modeling. Working paper. https://github.com/spectralbranding/sbt-papers/tree/main/alibi-epistemology
+Zharnikov, D. (2026b). The atom-cloud-fact epistemological pipeline: From financial document processing to brand perception modeling. Working paper. <https://github.com/spectralbranding/sbt-papers>
 
 ---
 
@@ -511,5 +527,5 @@ Zharnikov, D. (2026b). The atom-cloud-fact epistemological pipeline: From financ
 ```
 
 Also available on:
-- SSRN: *(link pending)*
+- SSRN: [papers.ssrn.com/abstract=6318718](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6318718)
 - [spectralbranding.substack.com](https://spectralbranding.substack.com)

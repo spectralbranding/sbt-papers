@@ -16,7 +16,7 @@ Introduces the full SBT framework: eight perceptual dimensions, observer spectra
 **Keywords**: brand perception, computational branding, observer heterogeneity, brand coherence, structural absence, AI-native framework
 
 - [Read on GitHub](spectral-brand-theory/paper.md)
-- [SSRN]([SSRN_URL]) *(link pending)*
+- [SSRN](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6318718)
 
 ### The Atom-Cloud-Fact Epistemological Pipeline (Zharnikov 2026b)
 
