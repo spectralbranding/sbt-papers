@@ -389,7 +389,7 @@ Several limitations warrant discussion.
 
 **Cross-brand calibration.** Cloud confidence scores and coherence metrics are calibrated within each brand analysis but not across brands. Developing an absolute scale — or at minimum, calibration benchmarks across brand categories — is a priority for future work.
 
-**Temporal dynamics.** The framework captures snapshots and simulates disruptions but does not formally model the rate of change. Adding velocity metrics to cohort sizing (growth rate, conviction migration speed) would strengthen the longitudinal analytical capacity.
+**Temporal dynamics.** The framework captures snapshots and simulates disruptions but does not formally model the rate of change. Two temporal properties require formalization: (1) *signal decay* — how individual signal contributions to cloud formation attenuate over time, with decay rates varying by emotional intensity, encounter mode (direct experiential signals persist longer than mediated ones), and reinforcement frequency; and (2) *cohort velocity* — growth rate and conviction migration speed metrics for longitudinal cohort tracking. Signal decay is particularly important because it makes cloud formation recency-weighted: the "evidence set" available at any moment of re-collapse is not the complete historical set but the set of signals that have survived temporal attenuation plus whatever has crystallized into permanent priors.
 
 **Competitive analysis.** The current framework analyzes brands in isolation. Extending the model to competitive contexts — how Brand A's signal environment interacts with Brand B's in the same perceptual space — is a natural extension that the dimensional architecture supports but that has not been validated.
 
