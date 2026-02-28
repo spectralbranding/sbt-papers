@@ -24,7 +24,7 @@ This paper describes a domain-agnostic epistemological architecture — the atom
 
 ## 1. Introduction
 
-How does knowledge form from observation? The question is ancient. The computational answer is surprisingly recent — and surprisingly underdeveloped.
+How does knowledge form from observation? The question is ancient — addressed by epistemologists from Peirce's (1931–1958) theory of abductive inference to Goldman's (1986) naturalized epistemology. The computational answer is surprisingly recent — and surprisingly underdeveloped.
 
 In most software systems, "knowledge" is an input, not an output. A database stores facts that humans have already determined. A search engine retrieves documents that humans have already written. A machine learning classifier assigns labels that humans have already defined. The system manipulates knowledge; it does not *form* it.
 
@@ -60,9 +60,9 @@ Atoms                       Clouds                      Facts
 
 **Stage 1: Atomic Observation.** Raw data is extracted from source documents and decomposed into typed atoms. Each atom belongs to exactly one dimension (vendor, amount, date, etc.) and exactly one source document. Atoms are immutable — once extracted, they do not change. They are the ground truth of what was observed.
 
-**Stage 2: Cloud Formation.** Atoms from different sources cluster into probabilistic hypothesis clouds. A cloud represents "these atoms probably describe the same real-world event." Clouds are scored through weighted multi-dimensional comparison. They are inherently uncertain and continuously revisable as new atoms arrive.
+**Stage 2: Cloud Formation.** Atoms from different sources cluster into probabilistic hypothesis clouds — a process structurally analogous to gestalt grouping (Koffka, 1935), where discrete perceptual elements are assembled into coherent wholes through proximity, similarity, and closure. A cloud represents "these atoms probably describe the same real-world event." Clouds are scored through weighted multi-dimensional comparison. They are inherently uncertain and continuously revisable as new atoms arrive.
 
-**Stage 3: Fact Collapse.** When a cloud's score exceeds a threshold, it collapses into a fact — confirmed knowledge. Facts are not permanent: when new evidence arrives that contradicts an existing fact, the fact dissolves and the system rebuilds from the full atom set. This re-collapse mechanism ensures that knowledge is always consistent with the total evidence, not incrementally patched.
+**Stage 3: Fact Collapse.** When a cloud's score exceeds a threshold, it collapses into a fact — confirmed knowledge. The collapse is functionally analogous to Kahneman's (2011) System 1 processing: once the evidence threshold is met, the hypothesis becomes an automatic, low-effort conviction rather than an effortful evaluation. Facts are not permanent: when new evidence arrives that contradicts an existing fact, the fact dissolves and the system rebuilds from the full atom set. This re-collapse mechanism ensures that knowledge is always consistent with the total evidence, not incrementally patched.
 
 ### 2.2 Seven Architectural Principles
 
@@ -86,7 +86,7 @@ Seven principles govern the pipeline's operation. Each was discovered through th
 
 **Principle 3: Identity gate** is the most architecturally significant principle. Before any multi-dimensional comparison occurs, the system must determine: do these atoms describe the same entity? In financial processing, the vendor gate answers: are these two documents about the same merchant? If the gate fails, no further comparison is attempted — the atoms are noise to each other regardless of how well other dimensions align. The identity gate is a binary precondition, not a weighted score.
 
-**Principle 4: Asymmetric tolerances** acknowledge that "close enough" is context-dependent. A receipt and a bank statement for the same purchase might have different dates (the bank processes the charge days later). But an invoice and its payment might be separated by months. The tolerance is not a property of the dimension — it is a property of the source-pair interaction.
+**Principle 4: Asymmetric tolerances** acknowledge that "close enough" is context-dependent — a form of fuzzy matching that resonates with Zadeh's (1965) formalization of graded set membership. A receipt and a bank statement for the same purchase might have different dates (the bank processes the charge days later). But an invoice and its payment might be separated by months. The tolerance is not a property of the dimension — it is a property of the source-pair interaction.
 
 **Principle 5: Weighted multi-dimensional scoring** reflects the empirical reality that some dimensions are more diagnostic than others. An amount match is stronger evidence than a date match (many transactions happen on the same day; fewer share the same amount). The weights are calibrated to the domain.
 
@@ -186,7 +186,7 @@ In financial processing, having multiple observers with different weights would 
 
 ### 5.2 Structural Absence
 
-The financial pipeline assumes positive evidence: atoms are extracted from documents that exist. The brand domain introduces a phenomenon absent in the financial domain: *designed absence as a signal*. Hermes' strategy of deliberately restricting signal emission (no discounts, no online sales for core products, geographic scarcity) functions as a signal in the brand domain — the absence generates perception effects on dimensions other than the restricted one (Zharnikov, 2026a). This extends the atom model with a new emission type (structural absence) and a scarcity multiplier in the cloud formation formula.
+The financial pipeline assumes positive evidence: atoms are extracted from documents that exist. The brand domain introduces a phenomenon absent in the financial domain: *designed absence as a signal*. Hermès' strategy of deliberately restricting signal emission (no discounts, no online sales for core products, geographic scarcity) functions as a signal in the brand domain — the absence generates perception effects on dimensions other than the restricted one (Zharnikov, 2026a). This extends the atom model with a new emission type (structural absence) and a scarcity multiplier in the cloud formation formula.
 
 ### 5.3 Valence Asymmetry
 
@@ -215,11 +215,11 @@ The architecture's generalizability rests on a single structural condition: the 
 
 ### 7.1 Bayesian Reasoning
 
-The atom-cloud-fact pipeline shares structural similarities with Bayesian reasoning: both update beliefs based on new evidence. However, the pipeline differs in a critical respect. Bayesian updating is incremental — prior beliefs are updated by multiplying with likelihood ratios. The atom-cloud-fact pipeline is *non-incremental*: on re-collapse, facts are dissolved and rebuilt from the complete evidence set. This is epistemically stronger (the result is always consistent with the total evidence) but computationally more expensive.
+The atom-cloud-fact pipeline shares structural similarities with Bayesian reasoning — particularly as formalized in probabilistic networks (Pearl, 1988): both update beliefs based on new evidence. However, the pipeline differs in a critical respect. Bayesian updating is incremental — prior beliefs are updated by multiplying with likelihood ratios. The atom-cloud-fact pipeline is *non-incremental*: on re-collapse, facts are dissolved and rebuilt from the complete evidence set. This is epistemically stronger (the result is always consistent with the total evidence) but computationally more expensive. The pipeline also differs from Dempster-Shafer evidence theory (Dempster, 1967; Shafer, 1976), which combines evidence through belief functions that handle ignorance explicitly. The atom-cloud-fact pipeline does not model degrees of ignorance — it models degrees of match through weighted scoring, with ignorance represented implicitly as missing atoms rather than explicit uncertainty intervals.
 
 The re-collapse mechanism also differs from formal belief revision as modeled by AGM theory (Alchourrón, Gärdenfors, & Makinson, 1985), which defines contraction and revision as operations on logically closed belief sets. AGM revision preserves as much of the prior belief set as possible (the principle of minimal change); the atom-cloud-fact pipeline preserves nothing — it dissolves the fact and rebuilds from the complete atom set. This makes the pipeline epistemically more radical than AGM revision but computationally simpler: there is no need to determine which beliefs to retain.
 
-The distinction matters in practice. Bayesian updating can accumulate path-dependent biases — the order in which evidence arrives affects the posterior, even when it should not. The atom-cloud-fact pipeline addresses this through re-collapse: when new evidence arrives, facts are dissolved and rebuilt from the complete available evidence set rather than incrementally updated.
+The distinction matters in practice. Bayesian updating can accumulate path-dependent biases — the order in which evidence arrives affects the posterior, even when it should not. The atom-cloud-fact pipeline addresses this through re-collapse: when new evidence arrives, facts are dissolved and rebuilt from the complete available evidence set rather than incrementally updated. This re-collapse mechanism resonates with Popper's (1959) falsificationism — existing knowledge is discarded when contradicted, not defended — and with Quine's (1951) holism, which argues that no individual belief can be evaluated in isolation from the total web of beliefs. The pipeline operationalizes Quine's insight: re-collapse rebuilds from the *total* atom set because any single atom might change the interpretation of all others. It also parallels Kuhn's (1962) account of paradigm shifts: when accumulated anomalies exceed the existing framework's capacity to accommodate them, the framework is not patched but replaced wholesale.
 
 However, the pipeline's path-independence properties differ across domains because signal persistence is domain-specific. In financial reconciliation, atoms are permanent — an invoice discovered in January is as evidentially valid in December as on the day of discovery. The complete atom set is always available for re-collapse, making the pipeline genuinely path-independent: the order of document discovery does not and should not affect which transactions are confirmed.
 
@@ -229,15 +229,15 @@ The pipeline architecture is the same in both domains. The difference is in the 
 
 ### 7.2 Symbolic vs. Probabilistic Reasoning
 
-The pipeline occupies a space between purely symbolic and purely probabilistic approaches. Atoms are symbolic — typed, named, structured. Clouds are probabilistic — scored, uncertain, revisable. Facts are quasi-symbolic — confirmed, stable, but subject to dissolution. This hybrid structure allows the system to handle both the structured certainty of known data types and the genuine uncertainty of multi-source reconciliation.
+The pipeline occupies a space between purely symbolic and purely probabilistic approaches. Atoms are symbolic — typed, named, structured, drawing on the representational traditions formalized by Enderton (2001) in mathematical logic and Sowa (2000) in knowledge representation. Clouds are probabilistic — scored, uncertain, revisable. Facts are quasi-symbolic — confirmed, stable, but subject to dissolution. This hybrid structure allows the system to handle both the structured certainty of known data types and the genuine uncertainty of multi-source reconciliation.
 
-Classical expert systems (Buchanan & Shortliffe, 1984) operate in the symbolic regime: rules transform structured inputs into conclusions. Statistical models operate in the probabilistic regime: numerical functions map features to predictions. The atom-cloud-fact pipeline uses symbolic structure at the observation level (dimensional typing, identity gates) and probabilistic computation at the hypothesis level (weighted scoring, threshold collapse). This combination produces results that are both interpretable (you can trace exactly which atoms contributed to which fact) and uncertainty-aware (you can see which clouds have not yet collapsed).
+Classical expert systems (Buchanan & Shortliffe, 1984) operate in the symbolic regime: rules transform structured inputs into conclusions. Statistical models operate in the probabilistic regime: numerical functions map features to predictions. The atom-cloud-fact pipeline uses symbolic structure at the observation level (dimensional typing, identity gates) and probabilistic computation at the hypothesis level (weighted scoring, threshold collapse). This combination produces results that are both interpretable (you can trace exactly which atoms contributed to which fact) and uncertainty-aware (you can see which clouds have not yet collapsed). The collapsed fact also contains a form of tacit knowledge (Polanyi, 1966): the fact "knows" more than its constituent atoms because the cloud formation process integrated contextual relationships — tolerances, temporal proximity, source interactions — that are not explicitly stored in the fact itself.
 
 ### 7.3 LLM Implementability
 
 A distinctive property of the atom-cloud-fact pipeline is that it can be implemented through natural language instructions to a large language model, without custom code. The seven principles can be expressed as a system prompt: "Extract typed signals across these dimensions. Cluster them using these weights. Identify when the evidence threshold is met. Rebuild from scratch when new evidence contradicts existing conclusions."
 
-This is not trivially possible with other epistemological frameworks. Bayesian networks require explicit probability distributions. Expert systems require formal rule bases. The atom-cloud-fact pipeline's principles are expressible in natural language because they describe *cognitive operations* (perceive, cluster, weigh, decide, revise) rather than *mathematical operations* (multiply, integrate, optimize). LLMs, trained on text describing human reasoning, can execute cognitive operations with surprising fidelity.
+This is not trivially possible with other epistemological frameworks. Bayesian networks require explicit probability distributions. Expert systems require formal rule bases. The classical AI approach — symbolic reasoning with logical inference (Russell & Norvig, 2020) — requires formalized knowledge bases. The atom-cloud-fact pipeline's principles are expressible in natural language because they describe *cognitive operations* (perceive, cluster, weigh, decide, revise) rather than *mathematical operations* (multiply, integrate, optimize). LLMs, trained on text describing human reasoning, can execute cognitive operations with surprising fidelity.
 
 The SBT implementation demonstrates this: the six-module analytical pipeline operates entirely as a structured prompt sequence, producing formal multi-cohort brand analysis through natural language instruction rather than code execution (Zharnikov, 2026a). This suggests that the atom-cloud-fact architecture is not merely computationally implementable but *linguistically implementable* — a property that may prove important as LLMs become the primary computational platform for analytical work.
 
@@ -274,6 +274,8 @@ Kuhn, T. S. (1962). *The structure of scientific revolutions*. University of Chi
 Pearl, J. (1988). *Probabilistic reasoning in intelligent systems: Networks of plausible inference*. Morgan Kaufmann.
 
 Peirce, C. S. (1931–1958). *Collected papers of Charles Sanders Peirce* (C. Hartshorne & P. Weiss, Eds., Vols. 1–6). Harvard University Press.
+
+Peters, O. (2019). The ergodicity problem in economics. *Nature Physics*, 15, 1216–1221. https://doi.org/10.1038/s41567-019-0732-0
 
 Polanyi, M. (1966). *The tacit dimension*. Doubleday.
 
