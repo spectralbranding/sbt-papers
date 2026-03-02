@@ -51,7 +51,7 @@ The remainder of this paper is organized as follows. Section 2 presents the theo
 
 ### 2.1 Epistemic Foundation: Brands as Perceptual Objects
 
-SBT's core claim is epistemic: a brand is not an object with properties but a perceptual process with observers. The metaphor is astronomical. A constellation of stars appears different from every point in the universe and to every creature with a different range of spectral sensitivity. The constellation "itself" — all stars from no perspective — is a theoretical construct no one actually experiences. What exists are observer-specific perceptions of a shared signal field.
+SBT's core claim is epistemic: a brand is not an object with properties but a perceptual process with observers. The metaphor is astronomical. A constellation of stars appears different from every point in the universe and to every creature with a different range of spectral sensitivity. The constellation "itself" — all stars from no perspective — is a theoretical construct no one actually experiences. What exists are observer-specific perceptions of a shared signal field. (The stellar metaphor is useful for visualizing multi-dimensionality and observer sensitivity differences; it should be noted that in optics the spectrum is observer-independent, while in brand perception the observer's profile co-creates the perceived brand.)
 
 Applied to brands: what a company designs and emits (logo, products, campaigns, pricing, culture) are signals. These signals exist across multiple perceptual dimensions. Each observer cohort filters these signals through its spectral profile, clusters the perceived signals into a probabilistic perception cloud, and — if sufficient evidence accumulates — collapses that cloud into a brand conviction. The conviction is observer-specific. The signal environment is shared. The brand, as commonly understood, is the observer's collapse product — not the company's intended identity.
 
@@ -258,9 +258,9 @@ The key mechanism is cross-dimensional: restriction on one dimension generates a
 
 We model cloud formation with structural absence as:
 
-> Cloud = Σ(emitted signals × weights) + Σ(absent signals × scarcity multiplier × weights)
+> Conceptually, structural absence amplifies the perceived weight of present signals through contrast — a multiplicative mechanism in perception rather than an additive formula. (Formalizing this as a computable parameter is on the research agenda; the formula is a schematic representation, not a computation.)
 
-The scarcity multiplier amplifies the perceived weight of signals that exist in the context of signals that are withheld. Hermès achieves the highest emission efficiency in the study (9/10) not by optimizing what it sends but by optimizing what it withholds — the signal-to-noise ratio approaches its maximum because noise has been structurally excluded.
+The contrast effect amplifies the perceived weight of signals that exist in the context of signals that are withheld. Hermès achieves the highest emission efficiency in the study (9/10) not by optimizing what it sends but by optimizing what it withholds — the signal-to-noise ratio approaches its maximum because noise has been structurally excluded.
 
 **Dimensional constraints.** Structural absence does not operate on all dimensions. It operates primarily on social (exclusivity), economic (pricing discipline), and experiential (geographic scarcity) dimensions. It cannot operate on semiotic (there is no "absent logo" — visual identity requires presence) or narrative (the absence of a story is just absence — Hermès in fact has a rich narrative that *frames* the absence). This constraint is consistent with the finding that structural absence requires existing demand to restrict. The strategy is available only to brands with sufficient heritage and established desire to make the restriction legible as intention rather than failure.
 
@@ -270,7 +270,7 @@ The scarcity multiplier amplifies the perceived weight of signals that exist in 
 
 **Discovery context:** Cross-brand comparison (Module 4 across all five brands).
 
-Traditional brand analysis treats coherence as a single variable from low to high: how consistently is the brand perceived across audiences? Our five-brand validation reveals that coherence is not a single variable but a structural property that comes in five qualitatively distinct types, each with different resilience profiles.
+Traditional brand analysis treats coherence as a single variable from low to high: how consistently is the brand perceived across audiences? Our five-brand exploratory analysis suggests that coherence is not a single variable but a structural property that comes in five qualitatively distinct types, each with different resilience profiles.
 
 | Coherence Type | Grade | Pattern | Resilience Profile | Brand |
 |:--------------|:------|:--------------------------------------|:--------------------------------------|:------|
@@ -370,7 +370,7 @@ Coherence
 
 SBT does not replace existing brand frameworks. It explains why each of them works partially and where each breaks down.
 
-Aaker's (1996) brand identity system describes the signal side of the equation — what the brand intends to emit — but lacks the observer model that explains why the same identity produces different perceptions in different cohorts. Kapferer's (2008) prism comes closest to SBT's dimensional approach, with its six facets mapping loosely to SBT's eight dimensions, but treats the facets as properties of the brand rather than perceptual channels through which observers filter signals.
+Aaker's (1996) brand identity system describes the signal side of the equation — what the brand intends to emit — but lacks the observer model that explains why the same identity produces different perceptions in different cohorts. Kapferer's (2008) prism comes closest to SBT's dimensional approach, with its six facets mapping loosely to SBT's eight dimensions, but treats the facets as properties of the brand rather than perceptual channels through which observers filter signals. Schmitt's (1999) experiential marketing modules (SENSE, FEEL, THINK, ACT, RELATE) decompose the experiential domain; SBT's Experiential dimension encompasses these as sub-types, situating them within a multi-dimensional field where experiential signals interact with and can be overridden by ideological, social, and economic signals. Oswald's (2012) application of Peircean semiotics to brand strategy grounds SBT's Semiotic dimension; SBT extends this by treating semiotic signals as one of eight perceptual channels rather than the primary analytical lens.
 
 Keller's (1993) customer-based brand equity is the most direct predecessor: equity lives in the customer's mind, brand knowledge equals awareness plus image. SBT extends Keller by modeling the customer as a heterogeneous population rather than a single model, by formalizing the perception-to-conviction pipeline, and by introducing the re-collapse mechanism that explains how brand equity is lost and rebuilt.
 
@@ -381,6 +381,10 @@ Vargo & Lusch's (2004) service-dominant logic anticipated a key SBT premise: tha
 Gestalt psychology (Koffka, 1935) provides the perceptual foundations: cloud formation *is* gestalt perception applied to brand signals. Closure (collapsing an incomplete cloud), similarity (dimensional matching), and proximity (temporal clustering) are the mechanisms through which perception clouds form. Kahneman's (2011) dual-process theory maps to the collapse mechanism: strong brand convictions are System 1 shortcuts that bypass deliberate evaluation, while weak or forming clouds require effortful System 2 processing.
 
 Peters' (2019) ergodicity economics offers an unexpected and illuminating organizing analogy. Peters demonstrates that in multiplicative, path-dependent processes, ensemble averages (averaging across many agents at one moment) diverge systematically from time averages (following one agent across time). This divergence is the formal definition of non-ergodicity. SBT's finding that brand power (an ensemble measure — aggregate awareness across all observers at one moment) and brand health (a time-average measure — how brand architecture performs for any given cohort over its perceptual trajectory) are independent variables is a structural parallel to Peters' thesis in the domain of brand perception. (We use this analogy as an organizing framework — not as a claim that brand perception obeys the specific mathematical properties Peters demonstrates for wealth processes.) The asymmetric conviction resilience finding (Section 4.3) maps to Peters' concept of absorbing states in non-ergodic processes: once a negative conviction crosses a threshold with no experiential friction to reverse it, the observer is on a one-directional compounding trajectory. Peters' framework thus provides a unified root cause — non-ergodic multiplicative dynamics — for multiple independently discovered SBT phenomena.
+
+Attitude strength research (Krosnick & Petty, 1995) establishes that strong attitudes resist change and persist over time. SBT's asymmetric resilience mechanism (Section 4.3) extends this by specifying the dimensional pathway through which resistance operates: evidence-free convictions resist counter-evidence because the observer's spectral profile excludes the dimensions where counter-evidence exists, making the experiential gate structurally closed.
+
+Commodity theory (Brock, 1968) and the scarcity principle (Cialdini, 2001; Lynn, 1991) establish that scarcity enhances perceived value. SBT's structural absence mechanism (Section 4.1) formalizes the underlying pathway: restriction on one dimension generates a cross-dimensional signal on another. The contribution relative to prior scarcity research is not the observation of value enhancement through scarcity — which is well-established — but the specification of the cross-dimensional generation mechanism and its two prerequisites (existing demand and a legitimizing heritage context).
 
 In sum, SBT functions as a meta-framework. It provides the architecture within which Aaker, Kapferer, Keller, Sharp, cognitive science, and ergodicity economics each describe a single stage or dimension of the full perception pipeline.
 
@@ -439,7 +443,7 @@ Several limitations warrant discussion.
 
 Spectral Brand Theory contributes a formal, computational framework for modeling brand perception as an observer-mediated process. The core claim — there is no brand-in-itself, only signals and observers — produces an analytical architecture that explains phenomena traditional frameworks cannot: how the same brand can be simultaneously powerful and fragile (Tesla), how restricting signals can create more value than emitting them (Hermès), how five qualitatively different types of brand coherence determine resilience profiles that a single coherence score cannot distinguish, and how evidence-free convictions can be more stable than evidence-rich ones.
 
-The framework has been demonstrated across five illustrative brand analyses spanning luxury, mass-market, mission-driven, technology, and hyperlocal categories. The exploratory analysis produced 25 non-obvious, dimensionally specific, actionable, observer-differentiated insights (five per brand, formally assessed against all four criteria — see Section 3.3) — a yield that suggests the framework captures genuine structural properties of brand perception rather than producing tautological outputs.
+The framework has been demonstrated across five illustrative brand analyses spanning luxury, mass-market, mission-driven, technology, and hyperlocal categories. The exploratory analysis produced 25 non-obvious, dimensionally specific, actionable, observer-differentiated insights (five per brand, formally assessed against all four criteria — see Section 3.3) — a yield that is consistent with the framework capturing structural properties of brand perception, though independent validation with primary consumer data is required to confirm this interpretation (see Section 3.4)
 
 The framework's computational implementability — executable as a structured LLM prompt sequence with open-source templates — makes multi-cohort brand analysis accessible to practitioners without custom engineering, collapsing a multi-week consulting engagement into a single analytical session. The prompt kit, YAML templates, and framework documentation are publicly available.
 
@@ -457,11 +461,17 @@ Barthes, R. (1957). *Mythologies*. Seuil.
 
 Berger, J. (2013). *Contagious: Why things catch on*. Simon & Schuster.
 
+Brock, T. C. (1968). Implications of commodity theory for value change. In A. G. Greenwald, T. C. Brock, & T. M. Ostrom (Eds.), *Psychological foundations of attitudes* (pp. 243–275). Academic Press.
+
 Christodoulides, G., & de Chernatony, L. (2010). Consumer-based brand equity conceptualization and measurement. *International Journal of Market Research*, 52(1), 43–66.
+
+Cialdini, R. B. (2001). *Influence: Science and practice* (4th ed.). Allyn & Bacon.
 
 Damasio, A. R. (1994). *Descartes' error: Emotion, reason, and the human brain*. Putnam.
 
 De Chernatony, L., & McDonald, M. (2003). *Creating powerful brands*. Butterworth-Heinemann.
+
+Doctor, J. N., Wakker, P. P., & Wang, T. V. (2020). Economists' views on the ergodicity problem. *Nature Physics*, 16, 1168.
 
 Eco, U. (1976). *A theory of semiotics*. Indiana University Press.
 
@@ -485,17 +495,27 @@ Keller, K. L., & Lehmann, D. R. (2006). Brands and branding: Research findings a
 
 Koffka, K. (1935). *Principles of Gestalt psychology*. Harcourt, Brace.
 
+Krosnick, J. A., & Petty, R. E. (1995). Attitude strength: An overview. In R. E. Petty & J. A. Krosnick (Eds.), *Attitude strength: Antecedents and consequences* (pp. 1–24). Erlbaum.
+
 Lakoff, G. (2004). *Don't think of an elephant!* Chelsea Green.
+
+Lynn, M. (1991). Scarcity effects on value: A quantitative review of the commodity theory literature. *Psychology & Marketing*, 8(1), 43–57.
 
 McLuhan, M. (1964). *Understanding media: The extensions of man*. McGraw-Hill.
 
+Meder, D., et al. (2021). Ergodicity-breaking reveals time optimal decision making in humans. *PLOS Computational Biology*, 17(9), e1009217.
+
 Muniz, A. M., & O'Guinn, T. C. (2001). Brand community. *Journal of Consumer Research*, 27(4), 412–432.
+
+Oswald, L. R. (2012). *Marketing semiotics: Signs, strategies, and brand value*. Oxford University Press.
 
 Peirce, C. S. (1931–1958). *Collected papers of Charles Sanders Peirce* (C. Hartshorne & P. Weiss, Eds., Vols. 1–6). Harvard University Press.
 
 Peters, O. (2019). The ergodicity problem in economics. *Nature Physics*, 15, 1216–1221. https://doi.org/10.1038/s41567-019-0732-0
 
 Ries, A., & Trout, J. (1981). *Positioning: The battle for your mind*. McGraw-Hill.
+
+Schmitt, B. H. (1999). *Experiential marketing*. Free Press.
 
 Sharp, B. (2010). *How brands grow: What marketers don't know*. Oxford University Press.
 
