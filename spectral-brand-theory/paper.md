@@ -230,7 +230,7 @@ Fifth, the validation uses the framework's own analytical pipeline to produce th
 
 ## 4. Findings
 
-The five-brand validation produced nine novel mechanisms. We report four in depth — selected as the most theoretically significant contributions that are unavailable through any existing brand framework.
+The five-brand structured analysis identified nine candidate mechanisms. We report four in depth — selected as the most theoretically significant contributions that are difficult to produce through existing brand frameworks.
 
 ### 4.1 Structural Absence: Value Creation Through Designed Signal Restriction
 
