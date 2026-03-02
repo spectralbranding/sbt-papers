@@ -133,6 +133,22 @@ graph LR
     F -.->|"re-collapse on<br/>new evidence"| E
 ```
 
+**Figure 2. Observer Heterogeneity: Same Signal Field, Different Perceptions**
+
+```mermaid
+graph TD
+    S["Tesla Signal Environment<br/><i>Same 8-dimensional signals</i>"]
+
+    S --> LP["<b>Tech Loyalist</b><br/>Experiential: 0.35 · Economic: 0.20<br/>Ideological: 0.10 · Tolerance: High"]
+    S --> BP["<b>Progressive Boycotter</b><br/>Ideological: 0.45 · Social: 0.20<br/>Experiential: 0.03 · Tolerance: Zero"]
+
+    LP --> LC["Positive Cloud<br/><i>Product-anchored</i><br/>Confidence: 0.78"]
+    BP --> BC["Negative Cloud<br/><i>Ideology-anchored</i><br/>Confidence: 0.82"]
+
+    LC --> LV["Conviction:<br/>'Best EV on the market'"]
+    BC --> BV["Conviction:<br/>'CEO's political vehicle'"]
+```
+
 ### 2.4 Cloud Formation and Conviction Collapse
 
 The terminology — cloud, collapse — deliberately invokes quantum mechanical metaphor. A perception cloud is indeterminate; a conviction is a collapsed state. As in quantum measurement, the collapse is observer-dependent: different observers collapse the same signal environment into different convictions. The metaphor is structural, not mathematical — brand perception does not obey quantum mechanics, but it shares the epistemic property that observation determines outcome.
@@ -220,6 +236,8 @@ Third, the analytical pipeline was initially executed by a single LLM (Claude Op
 | IKEA | Signal, A- | Signal, A- | Identical |
 | Erewhon | Exp. Asymmetry, B- | Exp. Asymmetry, B- | Identical |
 
+**Table 7.** Cross-model replication convergence: coherence type and grade.
+
 Both models independently derived the structural absence mechanism for Hermès without it being named in the prompt templates, and both independently identified the CEO ambient signal domination as Tesla's core architectural failure. Model-sensitive findings were limited to two dimensions: cohort granularity (Claude consistently identified 5-6 cohorts per brand; Gemini consistently identified 3, aggregating into broader strategic segments) and D/A ratio variance (within 10-15 percentage points, with Gemini attributing slightly more to designed signals). The replication also revealed complementary operational biases. Claude Opus 4.6 generates finer cohort fragmentation, isolating edge-case observer profiles (e.g., separating "Heritage Client" from "Cultural Connoisseur"). Gemini 3.1 Pro produces parsimonious macro-segments suited to strategic planning. Claude's outputs emphasize paradoxes and internal tensions; Gemini's are more clinically operational. Neither model exhibited grade inflation across any of the five brands. These biases are complementary rather than contradictory: the structural diagnosis remains stable regardless of cohort resolution, confirming that the framework — not the model — drives the analytical conclusions. Replication with additional models and by human analysts would further strengthen the validation. Additionally, both models were trained on substantial corpora of brand-related text for these five well-documented brands; convergence may reflect shared training data as well as framework validity. Testing the framework on brands with minimal public information would provide a stronger test of the analytical pipeline.
 
 Fourth, all five brands are well-known entities with extensive public information. The framework's performance on obscure or newly launched brands — where signal inventories are sparse — remains untested.
@@ -284,6 +302,22 @@ Traditional brand analysis treats coherence as a single variable from low to hig
 
 (The letter grades reported here are L2 rendered outputs — human-readable projections of the multi-dimensional spectral profile onto a disruption resilience scale. The underlying coherence classification is nominal (structural type); the grade projects the typical resilience mechanism of each type for practitioner reference. Different spectral profiles can project to the same grade (spectral metamerism); the full L1 spectral profiles are reported in Section 3.3.)
 
+**Figure 3. Spectral Metamerism: Different L1 Structures, Same L2 Grade**
+
+```mermaid
+graph LR
+    subgraph L1_A ["L1: Brand A"]
+        A["Ecosystem coherence<br/><i>Cross-cohort interdependence<br/>Selective resilience</i>"]
+    end
+
+    subgraph L1_B ["L1: Brand B"]
+        B["Signal coherence<br/><i>Uniform signal distribution<br/>Uniform resilience</i>"]
+    end
+
+    A -->|"resilience<br/>projection"| G["L2 Grade<br/><b>7 / 10</b>"]
+    B -->|"resilience<br/>projection"| G
+```
+
 The critical finding is that two brands can score identically on coherence and have completely different structural properties. A brand with 7/10 signal coherence (the IKEA pattern: everyone perceives the same thing) and a brand with 7/10 ecosystem coherence (the Hermès pattern: different cohorts perceive different things that reinforce each other) would appear identical on any traditional scorecard. Their responses to disruption are radically different.
 
 **Ecosystem coherence** (Hermès) exhibits selective resilience. When the Hermès secondary market collapses in our simulation, the Investment Buyer cohort is destroyed — but the Heritage Client and Cultural Connoisseur are *strengthened*: "now the speculators are gone." The ecosystem metabolizes the disruption by sacrificing peripheral elements while purifying the core. This capacity for selective absorption is unique to ecosystem coherence and explains the extraordinary durability of brands that exhibit it.
@@ -297,6 +331,25 @@ The critical finding is that two brands can score identically on coherence and h
 **Incoherence** (Tesla) exhibits amplifying fragility. Each disruption widens existing cracks. The system does not absorb disruption — it converts disruption into deeper division. This is the worst resilience profile in the taxonomy.
 
 The coherence type is determined by three structural properties: (1) cohort interdependence — how much one cohort's perception depends on another's behavior; (2) ideological centrality — how much coherence depends on a shared ideological commitment; and (3) encounter mode variance — how different the direct-encounter brand is from the mediated brand.
+
+**Figure 4. Coherence Types: Disruption Response Patterns**
+
+```mermaid
+graph TD
+    D["DISRUPTION<br/><i>Brand crisis event</i>"]
+
+    D --> E["<b>Ecosystem</b><br/>(Hermès)"]
+    D --> S["<b>Signal</b><br/>(IKEA)"]
+    D --> I["<b>Identity</b><br/>(Patagonia)"]
+    D --> EA["<b>Exp. Asymmetry</b><br/>(Erewhon)"]
+    D --> IN["<b>Incoherent</b><br/>(Tesla)"]
+
+    E --> ER["Selective absorption<br/><i>Periphery sacrificed,<br/>core strengthened</i>"]
+    S --> SR["Uniform transmission<br/><i>All cohorts affected<br/>equally</i>"]
+    I --> IR["Binary split<br/><i>Aligned rally,<br/>misaligned deepen</i>"]
+    EA --> EAR["Geographic split<br/><i>Local vs mediated<br/>diverge</i>"]
+    IN --> INR["Amplifying fragility<br/><i>Existing cracks<br/>widen</i>"]
+```
 
 ### 4.3 Asymmetric Conviction Resilience
 
@@ -317,6 +370,26 @@ The Loyalist, by contrast, has real product data. They know the car is excellent
 This asymmetry has a critical resilience implication. In our disruption simulations, negative convictions consistently *strengthen* under brand stress, while positive convictions *weaken*. A brand crisis confirms what the negative-conviction holder already believed. But it introduces contradicting evidence for the positive-conviction holder, who must now reconcile their favorable experience with unfavorable news. The asymmetry is directional: positive → negative is far easier than negative → positive, because the latter requires experiential evidence that the negative-conviction holder's spectral profile is designed to exclude.
 
 The strategic implication is stark: resources spent attempting to convert structurally locked negative cohorts are wasted. The Boycotter's experiential gate is effectively closed (0.03 weight). No test drive campaign will reach them because they are not evaluating the product — they are evaluating the ideology. Brands with locked negative cohorts must accept the structural constraint and invest in addressable cohorts instead.
+
+**Figure 5. Asymmetric Conviction Resilience**
+
+```mermaid
+graph LR
+    subgraph LOYALIST ["Tech Loyalist (evidence-rich)"]
+        LE["Experiential: 0.35<br/>Economic: 0.20<br/>Narrative: 0.15"]
+        LC["Confidence: 0.78<br/><i>Mixed signals create<br/>ambivalence</i>"]
+        LE --> LC
+    end
+
+    subgraph BOYCOTTER ["Progressive Boycotter (evidence-free)"]
+        BE["Ideological: 0.45<br/>Social: 0.20<br/>Experiential: 0.03"]
+        BC["Confidence: 0.82<br/><i>No contradicting data<br/>= pure certainty</i>"]
+        BE --> BC
+    end
+
+    CRISIS["Brand<br/>Crisis"] -.->|"weakens"| LC
+    CRISIS -.->|"strengthens"| BC
+```
 
 ### 4.4 Brand Power and Brand Health as Independent Variables
 
@@ -342,24 +415,27 @@ The confusion between brand power and brand health is, we argue, the central err
 
 The D/A ratio is the single metric that most powerfully discriminates between power and health. Our five-brand comparison tentatively suggests a possible optimal zone around 55–65% designed signals; this is an exploratory hypothesis requiring validation across a larger sample. High enough to maintain narrative control. Low enough to allow authentic ambient reinforcement. Tesla, at 30% designed, is 25 points below the floor of this zone — meaning no communication strategy can fix its brand problem because 65% of the signal environment is beyond its control. Hermès, at 60% designed with *aligned* ambient signals, demonstrates that the direction of ambient signals matters as much as the ratio: its ambient signals amplify rather than contradict its designed signals.
 
-**Figure 2. D/A Ratio and Coherence Across Five Brands**
+**Figure 6. D/A Ratio and Coherence Across Five Brands**
 
 ```
 Coherence
   10 |                                        * Hermès (60/35, A+)
      |                              * IKEA (75/25, A-)
-   8 |
-     |
-   6 |
-     |       * Patagonia (65/30, B+)
+   8 |                                  :
+     |                                  :  ← Optimal zone
+   6 |                                  :    (55-65% designed)
+     |       * Patagonia (65/30, B+) ...:
    4 |                    * Erewhon (40/55, B-)
-     |
-   2 |                              * Tesla (30/65, C-)
-     |
+     |                         ↑
+   2 |              * Tesla (30/65, C-)
+     |                   ↑
    0 +----+----+----+----+----+----+----+----+----+----
      0   10   20   30   40   50   60   70   80   90  100
                     Designed/Ambient Ratio (% designed)
-                         [Optimal zone: 55-65%]
+
+     Tesla: max power, min health      Hermès: mod power, max health
+     ← Under-designed zone →|← Optimal →|← Over-designed zone →
+                            55          65
 ```
 
 ---
@@ -381,6 +457,33 @@ Vargo & Lusch's (2004) service-dominant logic anticipated a key SBT premise: tha
 Gestalt psychology (Koffka, 1935) provides the perceptual foundations: cloud formation *is* gestalt perception applied to brand signals. Closure (collapsing an incomplete cloud), similarity (dimensional matching), and proximity (temporal clustering) are the mechanisms through which perception clouds form. Kahneman's (2011) dual-process theory maps to the collapse mechanism: strong brand convictions are System 1 shortcuts that bypass deliberate evaluation, while weak or forming clouds require effortful System 2 processing.
 
 Peters' (2019) ergodicity economics offers an unexpected and illuminating organizing analogy. Peters demonstrates that in multiplicative, path-dependent processes, ensemble averages (averaging across many agents at one moment) diverge systematically from time averages (following one agent across time). This divergence is the formal definition of non-ergodicity. SBT's finding that brand power (an ensemble measure — aggregate awareness across all observers at one moment) and brand health (a time-average measure — how brand architecture performs for any given cohort over its perceptual trajectory) are independent variables is a structural parallel to Peters' thesis in the domain of brand perception. (We use this analogy as an organizing framework — not as a claim that brand perception obeys the specific mathematical properties Peters demonstrates for wealth processes.) The asymmetric conviction resilience finding (Section 4.3) maps to Peters' concept of absorbing states in non-ergodic processes: once a negative conviction crosses a threshold with no experiential friction to reverse it, the observer is on a one-directional compounding trajectory. Peters' framework thus provides a unified root cause — non-ergodic multiplicative dynamics — for multiple independently discovered SBT phenomena.
+
+**Figure 7. Non-Ergodic Brand Perception: Ensemble Average vs. Cohort Trajectories**
+
+```
+Brand
+Health
+  10 |
+     |        ........Ensemble average (cross-sectional survey)........
+   8 |  ------                                          ------
+     |        \  Tech Loyalist                   /-----/
+   6 |         \-------\                  /-----/
+     |                  \------\   /-----/  Heritage Client
+   4 |                         \ /
+     |                          X  ← Trajectories cross:
+   2 |                         / \    ensemble stays flat,
+     |               /--------/   \   cohorts diverge
+   0 |  Boycotter --/              \---------\-----------
+     +----+----+----+----+----+----+----+----+----+----+----→ Time
+     t₀       t₁        t₂        t₃        t₄
+          Signal  Crisis   Recovery  New
+          shift   event    attempt   equilibrium
+
+     Ensemble average ≈ 6 throughout (misleading stability)
+     Individual cohorts: 0 to 8 range (actual dynamics)
+```
+
+The divergence between the flat ensemble average and the volatile cohort trajectories is the non-ergodic gap. Cross-sectional brand surveys report the ensemble average — a number that appears stable even as individual cohorts undergo dramatic perceptual shifts in opposite directions.
 
 Attitude strength research (Krosnick & Petty, 1995) establishes that strong attitudes resist change and persist over time. SBT's asymmetric resilience mechanism (Section 4.3) extends this by specifying the dimensional pathway through which resistance operates: evidence-free convictions resist counter-evidence because the observer's spectral profile excludes the dimensions where counter-evidence exists, making the experiential gate structurally closed.
 
@@ -436,6 +539,41 @@ Several limitations warrant discussion.
 **Multi-model ensemble analysis.** The full cross-model replication (Section 3.4) demonstrates that different LLMs exhibit complementary analytical biases that are consistent across all five brands: Claude Opus 4.6 atomizes observer populations into fine-grained cohorts (5-6 per brand) that isolate perceptual edge cases; Gemini 3.1 Pro synthesizes into parsimonious macro-segments (3 per brand) suited to strategic planning. The structural conclusions (coherence type, grade, key mechanisms) are identical across models for all five brands; the variation occurs exclusively in cohort resolution and minor D/A ratio calibration. This is analogous to viewing the same constellation through telescopes of different apertures — different detail, same structure. Running the pipeline with multiple models produces a richer analysis than either alone, and formalizing this multi-model ensemble approach as a recommended practice would strengthen practitioners' confidence in the framework's outputs.
 
 **Non-ergodic dynamics.** Brand perception operates as a multiplicative, path-dependent process: each new signal multiplies (rather than adds to) an observer's existing cloud confidence. This makes brand perception structurally non-ergodic in Peters' (2019) sense — what happens to the "average observer" in a cross-sectional survey does not predict any individual cohort's perceptual trajectory over time. Introducing an ergodicity coefficient per brand-dimension pair — measuring the degree to which ensemble metrics reliably predict individual cohort trajectories — would strengthen the framework's diagnostic capacity by identifying which dimensions can be safely measured with aggregate surveys and which require longitudinal cohort-trajectory tracking.
+
+### 5.5 Falsifiable Hypotheses
+
+The preceding framework and exploratory analysis generate five falsifiable hypotheses that constitute the empirical research agenda required to validate SBT as a quantitative theory. Each hypothesis is directly derived from a mechanism reported in Section 4 and operationalized with a specific testing methodology.
+
+**H1 (D/A Goldilocks zone).** Brands with 55–65% designed signals will show higher brand equity and disruption resilience than brands outside this range, controlling for category, age, and market position. *Derivation:* the five-brand D/A comparison (Section 4.4, Figure 6) shows the highest-health brands clustered in this range. *Test:* cross-sectional study of 50+ brands with empirically measured D/A ratios and brand equity scores (e.g., BAV, Interbrand, or bespoke spectral health metrics).
+
+**H2 (Asymmetric conviction resilience).** Evidence-free negative brand convictions will show higher resistance to counter-evidence than evidence-rich positive convictions. *Derivation:* the Tesla Boycotter/Loyalist asymmetry (Section 4.3, Figure 5). *Test:* controlled experiment — expose participants with no product experience and participants with extensive product experience to counter-attitudinal brand information; measure pre/post conviction change magnitude.
+
+**H3 (Coherence type predicts disruption response).** Ecosystem-coherent brands will exhibit selective disruption absorption (periphery sacrificed, core strengthened); incoherent brands will exhibit disruption amplification (existing divisions widen). *Derivation:* the five-type coherence taxonomy (Section 4.2, Figure 4). *Test:* longitudinal cohort tracking before and after documented brand crisis events; compare per-cohort resilience trajectories across coherence types.
+
+**H4 (Non-ergodic gap).** For incoherent brands, cross-sectional brand surveys will systematically overstate cohort-level resilience relative to longitudinal individual-level tracking. For signal-coherent brands, the gap will be minimal. *Derivation:* the brand power/health independence finding (Section 4.4) and the non-ergodic organizing analogy (Section 5.1, Figure 7). *Test:* paired study — compare snapshot survey scores to individual panel tracking data for the same brand across incoherent versus signal-coherent types.
+
+**H5 (Structural absence prerequisite).** Structural absence strategies (designed signal restriction) generate positive scarcity signals only when two conditions are met: (a) existing demand for the restricted dimension, and (b) a legitimizing heritage context that makes restriction legible as intention rather than incapacity. *Derivation:* the Hermès structural absence mechanism (Section 4.1). *Test:* experiment — manipulate scarcity (present vs. absent) crossed with demand level (high vs. low) and heritage context (established vs. novel); measure perceived exclusivity versus perceived arrogance.
+
+**Figure 8. Research Agenda: Falsifiable Hypotheses and Testing Methods**
+
+```mermaid
+graph TD
+    SBT["<b>SBT Framework</b><br/><i>Sections 2-4</i>"]
+
+    SBT --> H1["<b>H1: D/A Goldilocks</b><br/>55-65% designed optimal"]
+    SBT --> H2["<b>H2: Asymmetric Resilience</b><br/>Evidence-free > evidence-rich"]
+    SBT --> H3["<b>H3: Coherence → Disruption</b><br/>Type predicts response"]
+    SBT --> H4["<b>H4: Non-Ergodic Gap</b><br/>Ensemble ≠ time average"]
+    SBT --> H5["<b>H5: Absence Prerequisite</b><br/>Demand + heritage required"]
+
+    H1 --> T1["Cross-sectional<br/>50+ brands<br/><i>D/A ratio vs equity</i>"]
+    H2 --> T2["Controlled experiment<br/>No-experience vs high-experience<br/><i>Counter-evidence resistance</i>"]
+    H3 --> T3["Longitudinal cohort tracking<br/>Pre/post crisis<br/><i>Per-type resilience</i>"]
+    H4 --> T4["Paired study<br/>Snapshot vs panel<br/><i>Incoherent vs coherent</i>"]
+    H5 --> T5["2×2×2 experiment<br/>Scarcity × Demand × Heritage<br/><i>Exclusivity vs arrogance</i>"]
+```
+
+These five hypotheses are sufficient to confirm or disconfirm the core predictive claims of SBT. H1 and H3 test the framework's structural predictions (D/A ratio matters, coherence type matters). H2 tests the conviction dynamics mechanism. H4 tests the non-ergodic organizing analogy's diagnostic utility. H5 tests the structural absence mechanism's boundary conditions. A program that validates H1–H5 would move SBT from an exploratory framework to a quantitatively grounded theory.
 
 ---
 
