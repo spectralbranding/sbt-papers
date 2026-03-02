@@ -302,6 +302,6 @@ Zharnikov, D. (2026a). Spectral Brand Theory: A computational framework for mult
   title={The Atom-Cloud-Fact Epistemological Pipeline: From Financial Document Processing to Brand Perception Modeling},
   author={Zharnikov, Dmitry},
   year={2026},
-  url={https://github.com/spectralbranding/sbt-papers}
+  url={https://github.com/spectralbranding/sbt-papers/tree/main/alibi-epistemology}
 }
 ```
