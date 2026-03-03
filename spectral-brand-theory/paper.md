@@ -491,6 +491,8 @@ Commodity theory (Brock, 1968) and the scarcity principle (Cialdini, 2001; Lynn,
 
 In sum, SBT functions as a meta-framework. It provides the architecture within which Aaker, Kapferer, Keller, Sharp, cognitive science, and ergodicity economics each describe a single stage or dimension of the full perception pipeline.
 
+A complementary question — how organizations *generate* the signals that observers perceive — lies outside SBT's scope but follows naturally from it. Each coherence type discovered in Section 4.2 can be traced to a specific pattern of operational process configuration: Hermès's structural absence emerges from maximally restricted logistical and communication processes; IKEA's signal coherence emerges from globally standardized operations; Tesla's incoherence reflects key signal sources (CEO communication) operating outside any formal process specification. Formalizing the emission side of the pipeline as process-level configuration parameters — where the degree of process specification predicts the designed/ambient ratio, and therefore the coherence type — is a separate research agenda that we plan to develop in a companion paper on the organization as signal source.
+
 ### 5.2 Computational Implementability
 
 A distinguishing property of SBT is that the entire framework can be executed computationally. Signals are typed data structures with dimension, source, emission type, and strength fields. Observer profiles are parameter sets with spectrum, weight, tolerance, and prior fields. Cloud formation is a weighted clustering operation. Conviction collapse is a threshold function. Re-collapse is a full recalculation from the updated evidence set.
