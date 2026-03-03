@@ -318,7 +318,7 @@ graph LR
     B -->|"resilience<br/>projection"| G
 ```
 
-The critical finding is that two brands can score identically on coherence and have completely different structural properties. A brand with 7/10 signal coherence (the IKEA pattern: everyone perceives the same thing) and a brand with 7/10 ecosystem coherence (the Hermès pattern: different cohorts perceive different things that reinforce each other) would appear identical on any traditional scorecard. Their responses to disruption are radically different.
+The practical consequence is that traditional scorecards are structurally blind to the distinction. A brand with 7/10 signal coherence (the IKEA pattern: everyone perceives the same thing) and a brand with 7/10 ecosystem coherence (the Hermès pattern: different cohorts perceive different things that reinforce each other) would appear identical on any single-variable dashboard. Their responses to disruption are radically different.
 
 **Ecosystem coherence** (Hermès) exhibits selective resilience. When the Hermès secondary market collapses in our simulation, the Investment Buyer cohort is destroyed — but the Heritage Client and Cultural Connoisseur are *strengthened*: "now the speculators are gone." The ecosystem metabolizes the disruption by sacrificing peripheral elements while purifying the core. This capacity for selective absorption is unique to ecosystem coherence and explains the extraordinary durability of brands that exhibit it.
 
