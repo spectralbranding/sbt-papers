@@ -1,0 +1,76 @@
+name: Fleet CI
+
+on:
+  push:
+    branches: [ "main", "master" ]
+  pull_request:
+    branches: [ "main", "master" ]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  quality:
+    name: Code Quality & Security
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # Python tooling - only if pyproject.toml exists
+      - name: Install uv
+        if: hashFiles('pyproject.toml') != ''
+        uses: astral-sh/setup-uv@v4
+        with:
+          enable-cache: true
+          cache-dependency-glob: "uv.lock"
+          ignore-nothing-to-cache: true
+
+      - name: Set up Python
+        if: hashFiles('pyproject.toml') != ''
+        run: uv python install 3.12
+
+      - name: Install Dependencies
+        if: hashFiles('pyproject.toml') != ''
+        run: uv sync --all-extras --dev
+
+      - name: 🎨 Lint (Black)
+        if: hashFiles('pyproject.toml') != ''
+        run: uv run black --check .
+
+      - name: ⚖️ Lint (Flake8)
+        if: hashFiles('pyproject.toml') != ''
+        run: uv run flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
+
+      - name: 🔍 Type Check (MyPy)
+        if: hashFiles('pyproject.toml') != ''
+        run: |
+          # Check for Python files before running MyPy
+          if [ -d "src" ] && find src -name "*.py" -type f | grep -q .; then
+             uv run mypy src/ --ignore-missing-imports --exclude "archive|ARCHIVE"
+          elif find . -name "*.py" -type f -not -path "./.venv/*" -not -path "./venv/*" -not -path "./archive/*" -not -path "./ARCHIVE/*" -not -path "./node_modules/*" | grep -q .; then
+             uv run mypy . --ignore-missing-imports --exclude "tests|archive|ARCHIVE|.venv|venv|node_modules"
+          else
+             echo "No Python files found, skipping MyPy."
+          fi
+
+      - name: 🧪 Test (Pytest)
+        if: hashFiles('pyproject.toml') != ''
+        run: |
+          # Skip if tests require local environment (marker file)
+          if [ -f ".ci-skip-tests" ]; then
+            echo "Tests skipped (.ci-skip-tests marker found)"
+          elif [ -d "tests" ] || [ -f "pytest.ini" ]; then
+            uv run pytest
+          else
+            echo "No tests found, skipping."
+          fi
+
+      # Security scan - runs for ALL project types
+      - name: 🔒 Security (Trivy)
+        run: |
+          wget -qO - https://aquasecurity.github.io/trivy-repo/deb/public.key | gpg --dearmor | sudo tee /usr/share/keyrings/trivy.gpg > /dev/null
+          echo "deb [signed-by=/usr/share/keyrings/trivy.gpg] https://aquasecurity.github.io/trivy-repo/deb generic main" | sudo tee /etc/apt/sources.list.d/trivy.list > /dev/null
+          sudo apt-get update -qq && sudo apt-get install -y trivy
+          trivy fs --exit-code 1 --ignore-unfixed --vuln-type os,library --severity CRITICAL,HIGH --no-progress .
