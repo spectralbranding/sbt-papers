@@ -674,3 +674,20 @@ Zharnikov, D. (2026b). The atom-cloud-fact epistemological pipeline: From financ
 *The open-source prompt kit, YAML templates, and framework documentation are available at github.com/spectralbranding/sbt-framework. An ongoing series of analytical articles applying SBT to specific brands is published at spectralbranding.substack.com.*
 
 *License: MIT*
+
+---
+
+## Citation
+
+```bibtex
+@article{zharnikov2026spectral,
+  title={Spectral Brand Theory: A Computational Framework for Multi-Dimensional Brand Perception},
+  author={Zharnikov, Dmitry},
+  year={2026},
+  url={https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6318718}
+}
+```
+
+Also available on:
+- SSRN: [papers.ssrn.com/abstract=6318718](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6318718)
+- [spectralbranding.substack.com](https://spectralbranding.substack.com)
