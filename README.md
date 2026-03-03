@@ -6,12 +6,12 @@ Research publications on Spectral Brand Theory (SBT), a computational framework 
 
 | Paper | Words | Refs | Status |
 |-------|-------|------|--------|
-| [Spectral Brand Theory: A Computational Framework for Multi-Dimensional Brand Perception](spectral-brand-theory/paper.md) | ~6,400 | 24 | Working paper, Feb 2026 |
-| [The Atom-Cloud-Fact Epistemological Pipeline](alibi-epistemology/paper.md) | ~4,100 | 17 | Working paper, Feb 2026 |
+| [Spectral Brand Theory: A Computational Framework for Multi-Dimensional Brand Perception](spectral-brand-theory/paper.md) | ~6,400 | 37 | Working paper, Feb 2026 |
+| [The Atom-Cloud-Fact Epistemological Pipeline](alibi-epistemology/paper.md) | ~4,100 | 19 | Working paper, Feb 2026 |
 
 ### Spectral Brand Theory (Zharnikov 2026a)
 
-Introduces the full SBT framework: eight perceptual dimensions, observer spectral profiles, cloud formation and conviction collapse, and the seven-metric coherence scorecard. Validated across five brands (Hermes, IKEA, Patagonia, Tesla, Erewhon). Reports four novel mechanisms: structural absence (dark signals), five-type coherence taxonomy, asymmetric conviction resilience, and brand power/health independence.
+Introduces the full SBT framework: eight perceptual dimensions, observer spectral profiles, cloud formation and conviction collapse, and the seven-metric coherence scorecard. Validated across five brands (Hermes, IKEA, Patagonia, Tesla, Erewhon). Reports nine candidate mechanisms: structural absence (dark signals), five-type coherence taxonomy, asymmetric conviction resilience, brand power/health independence, D/A ratio optimum, temporal compounding, mediated cloud formation, evidence-free conviction stability, and cross-weight barrier penetration.
 
 **Keywords**: brand perception, computational branding, observer heterogeneity, brand coherence, structural absence, AI-native framework
 
