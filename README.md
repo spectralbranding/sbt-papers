@@ -65,3 +65,7 @@ Brand strategist and computational framework designer. Creator of Spectral Brand
 ## License
 
 All papers are released under [MIT License](LICENSE). Use, cite, and build upon this work freely with attribution.
+
+## Trademarks
+
+"Spectral Brand Theory" and "Brand Code" are trademarks of Dmitry Zharnikov. The MIT license applies to the source code and text only and does not grant permission to use the project trademarks. You may cite, reference, and build upon this work freely, but derivative works should not use these names in ways that imply endorsement or official affiliation.
