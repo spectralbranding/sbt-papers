@@ -544,7 +544,7 @@ Several limitations warrant discussion.
 
 ### 5.5 Falsifiable Hypotheses
 
-The preceding framework and exploratory analysis generate five falsifiable hypotheses that constitute the empirical research agenda required to validate SBT as a quantitative theory. Each hypothesis is directly derived from a mechanism reported in Section 4 and operationalized with a specific testing methodology.
+The preceding framework and exploratory analysis generate ten falsifiable hypotheses that constitute the empirical research agenda required to validate SBT as a quantitative theory. The first five hypotheses (H1–H5) are derived from the perception-layer mechanisms reported in Section 4. The remaining five (H6–H10) are derived from the signal dissemination layer (Section 3.5) and address pre-encounter mechanics — how brand signals reach observers in the first place.
 
 **H1 (D/A Goldilocks zone).** Brands with 55–65% designed signals will show higher brand equity and disruption resilience than brands outside this range, controlling for category, age, and market position. *Derivation:* the five-brand D/A comparison (Section 4.4, Figure 6) shows the highest-health brands clustered in this range. *Test:* cross-sectional study of 50+ brands with empirically measured D/A ratios and brand equity scores (e.g., BAV, Interbrand, or bespoke spectral health metrics).
 
@@ -556,26 +556,43 @@ The preceding framework and exploratory analysis generate five falsifiable hypot
 
 **H5 (Structural absence prerequisite).** Structural absence strategies (designed signal restriction) generate positive scarcity signals only when two conditions are met: (a) existing demand for the restricted dimension, and (b) a legitimizing heritage context that makes restriction legible as intention rather than incapacity. *Derivation:* the Hermès structural absence mechanism (Section 4.1). *Test:* experiment — manipulate scarcity (present vs. absent) crossed with demand level (high vs. low) and heritage context (established vs. novel); measure perceived exclusivity versus perceived arrogance.
 
+**H6 (Gate friction varies by cohort).** Identity gate friction for a given brand will differ significantly across observer cohorts, with cohorts whose dominant dimensions match the brand's strongest emission dimensions showing lower gate friction. *Derivation:* the identity gate mechanism (Section 3.3) combined with dimensional weight heterogeneity across cohorts. *Test:* exposure experiment — present brand cues to cohorts with different spectral profiles; measure recognition threshold (number of exposures to achieve recognition).
+
+**H7 (First-atom primacy).** The dimensional content of the first brand atom encountered will disproportionately determine the observer's initial spectral profile, persisting as a prior even after subsequent atoms provide evidence on other dimensions. *Derivation:* the prior formation mechanism (Section 3.3) and non-ergodic path dependence (Section 5.1). *Test:* experiment — expose different groups to different "first atoms" (experiential versus semiotic versus ideological); measure resulting spectral profiles after equal total exposure.
+
+**H8 (Amplification asymmetry).** Confirmed observers with negative-valence brand facts will have higher amplification rates (secondary emission volume) than those with positive-valence facts, creating faster signal field population for negative atoms. *Derivation:* the asymmetric conviction resilience finding (Section 4.3). *Test:* track secondary emission behavior (reviews, social posts, word-of-mouth) for positive versus negative Confirmed observers; measure volume and reach of emitted ambient atoms.
+
+**H9 (Channel-dimension coupling).** Specific channels show systematic dimensional bias in atom transmission — for example, social media transmits semiotic and social dimensions at high fidelity but experiential at low fidelity; direct encounters transmit experiential at high fidelity but ideological at low fidelity. *Derivation:* the mediated cloud formation finding (Section 4.3) and channel fidelity concept (Section 3.5). *Test:* compare spectral profiles of observers who encountered the same brand through different channels; measure dimensional variance attributable to channel.
+
+**H10 (Field density threshold).** There exists a minimum signal field density below which encounter probability drops to near-zero regardless of observer receptivity, and this threshold is higher for channels with low signal-to-noise ratio. *Derivation:* the signal dissemination layer (Section 3.5) and Sharp's (2010) mental availability framework. *Test:* vary brand signal frequency in controlled environments; measure encounter rate as a function of field density and channel noise level.
+
 **Figure 8. Research Agenda: Falsifiable Hypotheses and Testing Methods**
 
 ```mermaid
 graph TD
     SBT["<b>SBT Framework</b><br/><i>Sections 2-4</i>"]
 
-    SBT --> H1["<b>H1: D/A Goldilocks</b><br/>55-65% designed optimal"]
-    SBT --> H2["<b>H2: Asymmetric Resilience</b><br/>Evidence-free > evidence-rich"]
-    SBT --> H3["<b>H3: Coherence → Disruption</b><br/>Type predicts response"]
-    SBT --> H4["<b>H4: Non-Ergodic Gap</b><br/>Ensemble ≠ time average"]
-    SBT --> H5["<b>H5: Absence Prerequisite</b><br/>Demand + heritage required"]
+    subgraph "Perception Layer (H1-H5)"
+        H1["<b>H1: D/A Goldilocks</b><br/>55-65% designed optimal"]
+        H2["<b>H2: Asymmetric Resilience</b><br/>Evidence-free > evidence-rich"]
+        H3["<b>H3: Coherence → Disruption</b><br/>Type predicts response"]
+        H4["<b>H4: Non-Ergodic Gap</b><br/>Ensemble ≠ time average"]
+        H5["<b>H5: Absence Prerequisite</b><br/>Demand + heritage required"]
+    end
 
-    H1 --> T1["Cross-sectional<br/>50+ brands<br/><i>D/A ratio vs equity</i>"]
-    H2 --> T2["Controlled experiment<br/>No-experience vs high-experience<br/><i>Counter-evidence resistance</i>"]
-    H3 --> T3["Longitudinal cohort tracking<br/>Pre/post crisis<br/><i>Per-type resilience</i>"]
-    H4 --> T4["Paired study<br/>Snapshot vs panel<br/><i>Incoherent vs coherent</i>"]
-    H5 --> T5["2×2×2 experiment<br/>Scarcity × Demand × Heritage<br/><i>Exclusivity vs arrogance</i>"]
+    subgraph "Dissemination Layer (H6-H10)"
+        H6["<b>H6: Gate Friction</b><br/>Varies by cohort profile"]
+        H7["<b>H7: First-Atom Primacy</b><br/>Initial encounter shapes priors"]
+        H8["<b>H8: Amplification Asymmetry</b><br/>Negative > positive emission"]
+        H9["<b>H9: Channel-Dimension Coupling</b><br/>Channels bias dimensions"]
+        H10["<b>H10: Field Density Threshold</b><br/>Minimum for encounter"]
+    end
+
+    SBT --> H1 & H2 & H3 & H4 & H5
+    SBT --> H6 & H7 & H8 & H9 & H10
 ```
 
-These five hypotheses are sufficient to confirm or disconfirm the core predictive claims of SBT. H1 and H3 test the framework's structural predictions (D/A ratio matters, coherence type matters). H2 tests the conviction dynamics mechanism. H4 tests the non-ergodic organizing analogy's diagnostic utility. H5 tests the structural absence mechanism's boundary conditions. A program that validates H1–H5 would move SBT from an exploratory framework to a quantitatively grounded theory.
+The first five hypotheses (H1–H5) test the core perception-layer predictions of SBT: structural predictions (H1, H3), conviction dynamics (H2), non-ergodic diagnostics (H4), and structural absence boundary conditions (H5). The dissemination-layer hypotheses (H6–H10) extend the research agenda to pre-encounter mechanics: how observer cohorts differ in gate friction (H6), how first-atom encounters shape lasting priors (H7), how negative convictions amplify faster than positive ones (H8), how channels systematically bias dimensional transmission (H9), and what minimum signal density is required for encounter events (H10). A program that validates H1–H10 would move SBT from an exploratory framework to a comprehensive, quantitatively grounded theory of brand perception across the full lifecycle — from pre-awareness through conviction formation to re-collapse.
 
 ---
 
