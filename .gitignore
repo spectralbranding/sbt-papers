@@ -1,0 +1,29 @@
+# Claude Code local settings
+.claude/
+
+# Claude decision traces
+.claude-decisions/
+
+# Skills (fleet-specific)
+skills/
+
+# IDE configs
+.clinerules
+.cursorrules
+.cursorignore
+.rooignore
+
+# Machine-specific MCP config
+.mcp.json
+
+# macOS
+.DS_Store
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Linting
+.flake8
