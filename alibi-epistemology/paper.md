@@ -9,6 +9,7 @@ Working Paper — February 2026
 | | |
 |---|---|
 | **Applied framework** | [github.com/spectralbranding/sbt-framework](https://github.com/spectralbranding/sbt-framework) |
+| **Source code** | [github.com/viberesearch/alibi](https://github.com/viberesearch/alibi) |
 | **SBT paper** | [spectral-brand-theory/paper.md](../spectral-brand-theory/paper.md) |
 | **License** | MIT |
 

@@ -41,6 +41,7 @@ Describes the domain-agnostic epistemological architecture underlying SBT. Origi
 **Keywords**: epistemology, probabilistic knowledge, atom-cloud-fact, domain transfer, computational framework
 
 - [Read on GitHub](alibi-epistemology/paper.md)
+- [Source Code](https://github.com/viberesearch/alibi)
 
 ## How to Cite
 
