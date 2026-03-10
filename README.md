@@ -6,8 +6,24 @@ Research publications on Spectral Brand Theory (SBT), a computational framework 
 
 | Paper | Words | Refs | Status |
 |-------|-------|------|--------|
-| [Spectral Brand Theory: A Computational Framework for Multi-Dimensional Brand Perception](spectral-brand-theory/paper.md) | ~6,400 | 37 | Working paper, Feb 2026 |
-| [The Atom-Cloud-Fact Epistemological Pipeline](alibi-epistemology/paper.md) | ~4,100 | 19 | Working paper, Feb 2026 |
+| [Spectral Brand Theory: A Computational Framework for Multi-Dimensional Brand Perception](spectral-brand-theory/paper.md) | ~6,400 | 37 | SSRN preprint, Feb 2026 |
+| [The Atom-Cloud-Fact Epistemological Pipeline](alibi-epistemology/paper.md) | ~4,100 | 19 | Published, Feb 2026 |
+
+### Mathematical Foundations (R0-R6)
+
+Seven companion papers establishing formal mathematical foundations for SBT:
+
+| Key | Paper | Primary venue | Status |
+|-----|-------|---------------|--------|
+| R0 | Geometric Approaches to Brand Perception: A Critical Survey | [SSRN](https://papers.ssrn.com/abstract=6379181) | Preprint |
+| R1 | Brand Space Geometry: A Formal Metric for Multi-Dimensional Brand Perception | [SSRN](https://papers.ssrn.com/abstract=6379298) | Preprint |
+| R2 | Spectral Metamerism in Brand Perception: Projection Bounds from High-Dimensional Geometry | arXiv (pending) | PDF ready |
+| R3 | Cohort Boundaries in High-Dimensional Perception Space | arXiv (pending) | PDF ready |
+| R4 | How Many Brands Can a Market Hold? Sphere Packing Bounds | arXiv (pending) | PDF ready |
+| R5 | Specification Impossibility in Organizational Design | [SSRN](https://papers.ssrn.com/abstract=6379578) | Preprint |
+| R6 | Non-Ergodic Brand Perception: Diffusion Dynamics on Perceptual Manifolds | arXiv (pending) | PDF ready |
+
+Key results: formal metric (R1), metamerism inevitability (R2), fuzzy cohort boundaries (R3), positioning capacity bounds (R4), specification impossibility (R5), non-ergodic dynamics (R6).
 
 ### Spectral Brand Theory (Zharnikov 2026a)
 
