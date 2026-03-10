@@ -15,13 +15,13 @@ Seven companion papers establishing formal mathematical foundations for SBT:
 
 | Key | Paper | Primary venue | Status |
 |-----|-------|---------------|--------|
-| R0 | Geometric Approaches to Brand Perception: A Critical Survey | [SSRN](https://papers.ssrn.com/abstract=6379181) | Preprint |
-| R1 | Brand Space Geometry: A Formal Metric for Multi-Dimensional Brand Perception | [SSRN](https://papers.ssrn.com/abstract=6379298) | Preprint |
-| R2 | Spectral Metamerism in Brand Perception: Projection Bounds from High-Dimensional Geometry | SSRN + Zenodo (pending) | PDF ready |
-| R3 | Cohort Boundaries in High-Dimensional Perception Space | SSRN + Zenodo (pending) | PDF ready |
-| R4 | How Many Brands Can a Market Hold? Sphere Packing Bounds | SSRN + Zenodo (pending) | PDF ready |
-| R5 | Specification Impossibility in Organizational Design | [SSRN](https://papers.ssrn.com/abstract=6379578) | Preprint |
-| R6 | Non-Ergodic Brand Perception: Diffusion Dynamics on Perceptual Manifolds | SSRN + Zenodo (pending) | PDF ready |
+| R0 | [Geometric Approaches to Brand Perception: A Critical Survey](r0-literature-survey/paper.md) | [SSRN](https://papers.ssrn.com/abstract=6379181) | Preprint |
+| R1 | [Brand Space Geometry: A Formal Metric for Multi-Dimensional Brand Perception](r1-formal-metric/paper.md) | [SSRN](https://papers.ssrn.com/abstract=6379298) | Preprint |
+| R2 | [Spectral Metamerism in Brand Perception: Projection Bounds from High-Dimensional Geometry](r2-spectral-metamerism/paper.md) | SSRN + Zenodo (pending) | Preprint |
+| R3 | [Cohort Boundaries in High-Dimensional Perception Space: A Concentration of Measure Analysis](r3-cohort-boundaries/paper.md) | SSRN + Zenodo (pending) | Preprint |
+| R4 | [How Many Brands Can a Market Hold? Sphere Packing Bounds for Multi-Dimensional Positioning](r4-sphere-packing/paper.md) | SSRN + Zenodo (pending) | Preprint |
+| R5 | [Specification Impossibility in Organizational Design: A High-Dimensional Geometric Analysis](r5-specification-impossibility/paper.md) | [SSRN](https://papers.ssrn.com/abstract=6379578) | Preprint |
+| R6 | [Non-Ergodic Brand Perception: Diffusion Dynamics on Multi-Dimensional Perceptual Manifolds](r6-diffusion-dynamics/paper.md) | SSRN + Zenodo (pending) | Preprint |
 
 Key results: formal metric (R1), metamerism inevitability (R2), fuzzy cohort boundaries (R3), positioning capacity bounds (R4), specification impossibility (R5), non-ergodic dynamics (R6).
 
@@ -61,9 +61,65 @@ Describes the domain-agnostic epistemological architecture underlying SBT. Origi
   year={2026},
   url={https://github.com/spectralbranding/sbt-papers}
 }
+
+@article{zharnikov2026r0,
+  title={Geometric approaches to brand perception: A critical survey
+         and research agenda},
+  author={Zharnikov, Dmitry},
+  year={2026},
+  url={https://papers.ssrn.com/abstract=6379181}
+}
+
+@article{zharnikov2026r1,
+  title={Brand space geometry: A formal metric for multi-dimensional
+         brand perception},
+  author={Zharnikov, Dmitry},
+  year={2026},
+  url={https://papers.ssrn.com/abstract=6379298}
+}
+
+@article{zharnikov2026r2,
+  title={Spectral metamerism in brand perception: Projection bounds
+         from high-dimensional geometry},
+  author={Zharnikov, Dmitry},
+  year={2026},
+  url={https://github.com/spectralbranding/sbt-papers}
+}
+
+@article{zharnikov2026r3,
+  title={Cohort boundaries in high-dimensional perception space:
+         A concentration of measure analysis},
+  author={Zharnikov, Dmitry},
+  year={2026},
+  url={https://github.com/spectralbranding/sbt-papers}
+}
+
+@article{zharnikov2026r4,
+  title={How many brands can a market hold? Sphere packing bounds
+         for multi-dimensional positioning},
+  author={Zharnikov, Dmitry},
+  year={2026},
+  url={https://github.com/spectralbranding/sbt-papers}
+}
+
+@article{zharnikov2026r5,
+  title={Specification impossibility in organizational design:
+         A high-dimensional geometric analysis},
+  author={Zharnikov, Dmitry},
+  year={2026},
+  url={https://papers.ssrn.com/abstract=6379578}
+}
+
+@article{zharnikov2026r6,
+  title={Non-ergodic brand perception: Diffusion dynamics on
+         multi-dimensional perceptual manifolds},
+  author={Zharnikov, Dmitry},
+  year={2026},
+  url={https://github.com/spectralbranding/sbt-papers}
+}
 ```
 
-Machine-readable citations: [SBT CITATION.cff](spectral-brand-theory/CITATION.cff) | [ACF CITATION.cff](alibi-epistemology/CITATION.cff)
+Machine-readable citations: [SBT CITATION.cff](spectral-brand-theory/CITATION.cff) | [ACF CITATION.cff](alibi-epistemology/CITATION.cff) | [R0 CITATION.cff](r0-literature-survey/CITATION.cff) | [R1 CITATION.cff](r1-formal-metric/CITATION.cff) | [R2 CITATION.cff](r2-spectral-metamerism/CITATION.cff) | [R3 CITATION.cff](r3-cohort-boundaries/CITATION.cff) | [R4 CITATION.cff](r4-sphere-packing/CITATION.cff) | [R5 CITATION.cff](r5-specification-impossibility/CITATION.cff) | [R6 CITATION.cff](r6-diffusion-dynamics/CITATION.cff)
 
 ## Companion Repositories
 
