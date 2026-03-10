@@ -17,11 +17,11 @@ Seven companion papers establishing formal mathematical foundations for SBT:
 |-----|-------|---------------|--------|
 | R0 | Geometric Approaches to Brand Perception: A Critical Survey | [SSRN](https://papers.ssrn.com/abstract=6379181) | Preprint |
 | R1 | Brand Space Geometry: A Formal Metric for Multi-Dimensional Brand Perception | [SSRN](https://papers.ssrn.com/abstract=6379298) | Preprint |
-| R2 | Spectral Metamerism in Brand Perception: Projection Bounds from High-Dimensional Geometry | arXiv (pending) | PDF ready |
-| R3 | Cohort Boundaries in High-Dimensional Perception Space | arXiv (pending) | PDF ready |
-| R4 | How Many Brands Can a Market Hold? Sphere Packing Bounds | arXiv (pending) | PDF ready |
+| R2 | Spectral Metamerism in Brand Perception: Projection Bounds from High-Dimensional Geometry | SSRN + Zenodo (pending) | PDF ready |
+| R3 | Cohort Boundaries in High-Dimensional Perception Space | SSRN + Zenodo (pending) | PDF ready |
+| R4 | How Many Brands Can a Market Hold? Sphere Packing Bounds | SSRN + Zenodo (pending) | PDF ready |
 | R5 | Specification Impossibility in Organizational Design | [SSRN](https://papers.ssrn.com/abstract=6379578) | Preprint |
-| R6 | Non-Ergodic Brand Perception: Diffusion Dynamics on Perceptual Manifolds | arXiv (pending) | PDF ready |
+| R6 | Non-Ergodic Brand Perception: Diffusion Dynamics on Perceptual Manifolds | SSRN + Zenodo (pending) | PDF ready |
 
 Key results: formal metric (R1), metamerism inevitability (R2), fuzzy cohort boundaries (R3), positioning capacity bounds (R4), specification impossibility (R5), non-ergodic dynamics (R6).
 
