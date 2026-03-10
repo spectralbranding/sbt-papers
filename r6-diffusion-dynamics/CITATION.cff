@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+message: "If you use this paper, please cite it as below."
+authors:
+  - family-names: Zharnikov
+    given-names: Dmitry
+    email: dmitry@spectralbranding.com
+title: "Non-ergodic brand perception: Diffusion dynamics on multi-dimensional perceptual manifolds"
+version: 1.0.0
+date-released: 2026-03-10
+url: "https://github.com/spectralbranding/sbt-papers"
+repository-code: "https://github.com/spectralbranding/sbt-papers"
+keywords:
+  - non-ergodic
+  - diffusion dynamics
+  - perceptual manifolds
+  - brand perception
+  - stochastic processes
+license: MIT
+type: article

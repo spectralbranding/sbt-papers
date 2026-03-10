@@ -1,0 +1,28 @@
+cff-version: 1.2.0
+message: "If you use this paper, please cite it as below."
+authors:
+  - family-names: Zharnikov
+    given-names: Dmitry
+    email: dmitry@spectralbranding.com
+title: "Geometric approaches to brand perception: A critical survey and research agenda"
+version: 1.0.0
+date-released: 2026-03-10
+url: "https://papers.ssrn.com/abstract=6379181"
+repository-code: "https://github.com/spectralbranding/sbt-papers"
+keywords:
+  - brand perception
+  - geometric methods
+  - perception science
+  - literature survey
+  - multi-dimensional analysis
+license: MIT
+type: article
+preferred-citation:
+  type: article
+  authors:
+    - family-names: Zharnikov
+      given-names: Dmitry
+      email: dmitry@spectralbranding.com
+  title: "Geometric approaches to brand perception: A critical survey and research agenda"
+  year: 2026
+  url: "https://papers.ssrn.com/abstract=6379181"

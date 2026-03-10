@@ -1,0 +1,28 @@
+cff-version: 1.2.0
+message: "If you use this paper, please cite it as below."
+authors:
+  - family-names: Zharnikov
+    given-names: Dmitry
+    email: dmitry@spectralbranding.com
+title: "Brand space geometry: A formal metric for multi-dimensional brand perception"
+version: 1.0.0
+date-released: 2026-03-10
+url: "https://papers.ssrn.com/abstract=6379298"
+repository-code: "https://github.com/spectralbranding/sbt-papers"
+keywords:
+  - brand metric
+  - simplex geometry
+  - Aitchison metric
+  - Fisher-Rao metric
+  - brand similarity
+license: MIT
+type: article
+preferred-citation:
+  type: article
+  authors:
+    - family-names: Zharnikov
+      given-names: Dmitry
+      email: dmitry@spectralbranding.com
+  title: "Brand space geometry: A formal metric for multi-dimensional brand perception"
+  year: 2026
+  url: "https://papers.ssrn.com/abstract=6379298"
