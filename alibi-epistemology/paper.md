@@ -75,7 +75,7 @@ Seven principles govern the pipeline's operation. Each was discovered through th
 | 2 | Source binding | Each observation belongs to exactly one source | Atoms belong to exactly one document |
 | 3 | Identity gate | Core identity match is a precondition for clustering | Vendor name must match before any other comparison |
 | 4 | Asymmetric tolerances | Context determines what "close enough" means | Receipt + statement: 5-day tolerance; invoice + payment: 60 days |
-| 5 | Weighted multi-dimensional scoring | Not all dimensions contribute equally | Vendor 0.30, amount 0.40, date 0.20, items 0.50 bonus |
+| 5 | Weighted multi-dimensional scoring | Not all dimensions contribute equally | Vendor 0.30, amount 0.40, date 0.20, location 0.15, items 0.50 bonus |
 | 6 | Re-collapse on new evidence | Knowledge is rebuilt from scratch, never patched | Facts recalculated from full atom set on any change |
 | 7 | Epistemic separation | Observations, hypotheses, and knowledge are structurally distinct | Atoms, clouds, and facts stored and processed separately |
 
@@ -89,7 +89,7 @@ Seven principles govern the pipeline's operation. Each was discovered through th
 
 **Principle 4: Asymmetric tolerances** acknowledge that "close enough" is context-dependent — a form of fuzzy matching that resonates with Zadeh's (1965) formalization of graded set membership. A receipt and a bank statement for the same purchase might have different dates (the bank processes the charge days later). But an invoice and its payment might be separated by months. The tolerance is not a property of the dimension — it is a property of the source-pair interaction.
 
-**Principle 5: Weighted multi-dimensional scoring** reflects the empirical reality that some dimensions are more diagnostic than others. An amount match is stronger evidence than a date match (many transactions happen on the same day; fewer share the same amount). The weights are calibrated to the domain.
+**Principle 5: Weighted multi-dimensional scoring** reflects the empirical reality that some dimensions are more diagnostic than others. An amount match is stronger evidence than a date match (many transactions happen on the same day; fewer share the same amount). The weights are additive contribution coefficients, not normalized probabilities: core dimensions (vendor 0.30, amount 0.40, date 0.20) yield a base score up to 0.90, while bonus dimensions (location 0.15, items 0.50) can push the score higher. The total is capped at 1.0. This design rewards corroborating evidence from multiple dimensions without requiring every dimension to be present.
 
 **Principle 6: Re-collapse** is the principle that most strongly distinguishes this architecture from incremental systems. When new evidence arrives, the system does not update the existing fact — it dissolves the fact and rebuilds from the complete atom set. This is computationally expensive but epistemically correct: the new evidence may change the entire interpretation of the data, not just append to it. A newly discovered receipt might reassign atoms from one cloud to another, changing which facts exist. Incremental update cannot handle this; full recalculation can.
 
@@ -120,9 +120,9 @@ The challenge: the same transaction appears in different documents with differen
 
 **Identity gate**: The vendor atoms are compared through fuzzy matching. "STARBUCKS #12345" and "SQ *STARBUCKS CORP" pass the gate (both resolve to the Starbucks canonical entity). Without this gate pass, the atoms would never cluster.
 
-**Cloud formation**: The atoms cluster into a cloud with the following scores: vendor match 0.85 (high confidence after canonical resolution), amount match 0.70 (close but not exact — the tip explains the difference), date match 0.80 (2-day gap within the 5-day tolerance for receipt-statement pairs). Weighted score: 0.30(0.85) + 0.40(0.70) + 0.20(0.80) = 0.255 + 0.280 + 0.160 = 0.695.
+**Cloud formation**: The atoms cluster into a cloud with the following scores: vendor match 0.85 (high confidence after canonical resolution), amount match 0.70 (close but not exact — the tip explains the difference), date match 0.80 (2-day gap within the 5-day tolerance for receipt-statement pairs), location match 0.90 (GPS coordinates from the receipt place the transaction within 100m of the known Starbucks). Weighted score: 0.30(0.85) + 0.40(0.70) + 0.20(0.80) + 0.15(0.90) = 0.255 + 0.280 + 0.160 + 0.135 = 0.830.
 
-**Collapse**: The threshold for receipt-statement reconciliation is 0.60. The cloud score (0.695) exceeds the threshold. The cloud collapses into a fact: "Confirmed purchase at Starbucks, March 15, $5.20 (receipt $4.95 + tip)."
+**Collapse**: The cloud-matching threshold is 0.50 — a bundle scoring below this is assigned to a new cloud rather than merged with an existing one. The cloud score (0.830) comfortably exceeds the threshold. The cloud collapses into a fact: "Confirmed purchase at Starbucks, March 15, $5.20 (receipt $4.95 + tip)."
 
 **Re-collapse trigger**: If a second receipt arrives for the same Starbucks on the same day (a colleague's lunch), the system dissolves the fact and recalculates. The new atom set might produce two clouds where there was one, splitting the bank charge differently. The fact is not patched — it is rebuilt from scratch.
 
@@ -149,7 +149,7 @@ The domain transfer from financial processing to brand perception preserves all 
 
 ### 4.2 The Critical Extension: Heterogeneous Observers
 
-The financial pipeline has one observer: the system. Its weights are fixed (vendor 0.30, amount 0.40, date 0.20). Every atom is processed through the same scoring function.
+The financial pipeline has one observer: the system. Its weights are fixed (vendor 0.30, amount 0.40, date 0.20, location 0.15). Every atom is processed through the same scoring function.
 
 Brand perception has *many* observers, each with different weights. A Gen-Z consumer weights social signals at 0.40 and cultural at 0.30. A B2B buyer weights economic at 0.40 and experiential at 0.35. Same signals, different weights, different clouds, different facts.
 
