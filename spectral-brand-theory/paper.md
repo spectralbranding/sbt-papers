@@ -680,7 +680,7 @@ Vargo, S. L., & Lusch, R. F. (2004). Evolving to a new dominant logic for market
 
 Veblen, T. (1899). *The theory of the leisure class*. Macmillan.
 
-Zharnikov, D. (2026b). The atom-cloud-fact epistemological pipeline: From financial document processing to brand perception modeling. Working paper. <https://github.com/spectralbranding/sbt-papers>
+Zharnikov, D. (2026b). The atom-cloud-fact epistemological pipeline: From financial document processing to brand perception modeling. SSRN Working Paper.
 
 ---
 
