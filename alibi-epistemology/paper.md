@@ -10,7 +10,7 @@ Working Paper — February 2026
 |---|---|
 | **Applied framework** | [github.com/spectralbranding/sbt-framework](https://github.com/spectralbranding/sbt-framework) |
 | **Source code** | [github.com/viberesearch/alibi](https://github.com/viberesearch/alibi) |
-| **SBT paper** | [spectral-brand-theory/paper.md](../spectral-brand-theory/paper.md) |
+| **SBT paper** | [SSRN](https://papers.ssrn.com/abstract=5148182) |
 | **License** | MIT |
 
 ---
@@ -292,7 +292,7 @@ Sowa, J. F. (2000). *Knowledge representation: Logical, philosophical, and compu
 
 Zadeh, L. A. (1965). Fuzzy sets. *Information and Control*, 8(3), 338–353.
 
-Zharnikov, D. (2026a). Spectral Brand Theory: A computational framework for multi-dimensional brand perception. Working paper. https://github.com/spectralbranding/sbt-papers/tree/main/spectral-brand-theory
+Zharnikov, D. (2026a). Spectral Brand Theory: A computational framework for multi-dimensional brand perception. SSRN Working Paper. https://papers.ssrn.com/abstract=5148182
 
 ---
 
@@ -303,6 +303,6 @@ Zharnikov, D. (2026a). Spectral Brand Theory: A computational framework for mult
   title={The Atom-Cloud-Fact Epistemological Pipeline: From Financial Document Processing to Brand Perception Modeling},
   author={Zharnikov, Dmitry},
   year={2026},
-  url={https://github.com/spectralbranding/sbt-papers/tree/main/alibi-epistemology}
+  url={https://github.com/spectralbranding/sbt-papers}
 }
 ```
