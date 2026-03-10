@@ -578,7 +578,7 @@ $$\text{Tesla} > \text{Erewhon} > \text{Hermes} > \text{Patagonia} > \text{IKEA}
 
 $$\text{Tesla} > \text{Erewhon} > \text{IKEA} > \text{Patagonia} > \text{Hermes}$$
 
-*which matches the SBT coherence grading: C- > B- > A- > B+ > A+.*
+*which nearly matches the SBT coherence grading (C- > B- > B+ > A- > A+), with one inversion: IKEA (A-) has higher absorption risk than Patagonia (B+), because Patagonia's identity coherence creates stronger directional drift opposing absorption than IKEA's signal coherence, despite IKEA's higher overall grade.*
 
 *Derivation.* The absorption risk depends on two factors: (1) how close the brand's target position $\hat{s}$ is to the boundary (smaller $d_\partial(\hat{s})$ = higher risk), and (2) how "balanced" the emission profile is across dimensions (more balanced = lower risk of any single dimension reaching zero).
 
@@ -596,7 +596,7 @@ When we account for the *strength* of the drift (proportional to the brand's coh
 
 - **Tesla (C-)**: Lowest $d_\partial$ (temporal = 2.0/10, ideological = 3.0/10) and weak, contradictory drift. The incoherence means signals from different encounter modes push perception in different directions, creating high effective diffusion rather than drift. The ideological polarization (3.0/10) means many observers start with perception profiles close to $x_3 = 0$. Very high absorption risk.
 
-The adjusted ordering Tesla > Erewhon > IKEA > Patagonia > Hermes matches the SBT coherence grades C- > B- > A- > B+ > A+, providing the first formal derivation of the coherence ordering from dynamical principles. $\square$
+The adjusted ordering Tesla > Erewhon > IKEA > Patagonia > Hermes aligns with the SBT coherence grades (C- > B- > B+ > A- > A+), with one inversion: IKEA (A-) shows higher absorption risk than Patagonia (B+). This inversion arises because identity coherence (Patagonia) generates stronger directional drift than signal coherence (IKEA) -- a qualitative distinction the letter grade does not capture. The near-match provides the first formal derivation connecting coherence type to dynamical stability from first principles. $\square$
 
 ### 8.3 Survival Time Estimates
 
@@ -674,7 +674,7 @@ Several simplifying assumptions deserve explicit acknowledgment:
 
 4. **Continuous approximation**: The Brownian motion model treats signal encounters as continuous, while real encounters are discrete events. The continuous approximation is valid when the encounter rate $\lambda_{\text{enc}}$ is large relative to the observation time scale, which holds for major consumer brands but may fail for niche brands with very low encounter rates.
 
-5. **Eigenvalue estimates**: The Dirichlet eigenvalue $\lambda_{D,1} \geq 8$ is a lower bound. The exact value for the positive octant of $S^7$ is not known in closed form. Numerical computation would sharpen the survival time estimates.
+5. **Eigenfunction regularity**: The first Dirichlet eigenfunction $\phi_1(x) = \prod_{i=1}^8 x_i$ yields the exact eigenvalue $\lambda_{D,1} = 112$ (Section 5.2). However, the positive octant $S^7_+$ has non-smooth boundary (eight hyperplane faces meeting at corners), and the regularity of higher eigenfunctions near these corners requires careful analysis. The spectral gap estimate $\lambda_{D,2} - \lambda_{D,1} = 48$ used in Theorem 3 depends on the second eigenfunction being smooth on the interior, which holds but deserves explicit justification in a journal submission.
 
 ---
 
@@ -710,7 +710,7 @@ The main results are:
 
 4. **Non-ergodicity (Theorem 4).** For the absorbed process, time averages and ensemble averages diverge with probability 1. This is the first formal proof that brand perception surveys (ensemble averages) and individual perceptual trajectories (time averages) measure fundamentally different quantities, establishing the brand-perception analogue of Peters' (2019) ergodicity economics.
 
-5. **Absorption risk matches coherence grades (Proposition 5).** For the five case-study brands, the absorption risk ordering Tesla > Erewhon > IKEA > Patagonia > Hermes matches the SBT coherence grading C- > B- > A- > B+ > A+. Coherent signaling creates effective drift that opposes absorption; incoherent signaling creates effective diffusion that accelerates it.
+5. **Absorption risk nearly matches coherence grades (Proposition 5).** For the five case-study brands, the absorption risk ordering Tesla > Erewhon > IKEA > Patagonia > Hermes aligns with the SBT coherence grading, with one inversion: IKEA (A-) has higher absorption risk than Patagonia (B+), because identity coherence generates stronger directional drift than signal coherence. Coherent signaling creates effective drift that opposes absorption; incoherent signaling creates effective diffusion that accelerates it.
 
 These results have three immediate consequences for brand theory and practice.
 
