@@ -437,14 +437,14 @@ Todd, J. T., Oomes, A. H. J., Koenderink, J. J., & Kappers, A. M. L. (2001). On 
 
 Vershynin, R. (2018). *High-Dimensional Probability: An Introduction with Applications in Data Science*. Cambridge University Press.
 
-Zharnikov, D. (2026a). Spectral Brand Theory: A multi-dimensional framework for brand perception analysis. SSRN Working Paper.
+Zharnikov, D. (2026a). Spectral Brand Theory: A multi-dimensional framework for brand perception analysis. Working Paper.
 
-Zharnikov, D. (2026b). The alibi problem: Epistemic foundations of multi-source data reconciliation. SSRN Working Paper.
+Zharnikov, D. (2026b). The alibi problem: Epistemic foundations of multi-source data reconciliation. Working Paper.
 
-Zharnikov, D. (2026c). Geometric approaches to brand perception: A critical survey and research agenda. SSRN Working Paper.
+Zharnikov, D. (2026c). Geometric approaches to brand perception: A critical survey and research agenda. Working Paper.
 
-Zharnikov, D. (2026d). Brand space geometry: A formal metric for multi-dimensional brand perception. SSRN Working Paper.
+Zharnikov, D. (2026d). Brand space geometry: A formal metric for multi-dimensional brand perception. Working Paper.
 
-Zharnikov, D. (2026i). The Organizational Schema Theory: Test-driven business design. SSRN Working Paper.
+Zharnikov, D. (2026i). The Organizational Schema Theory: Test-driven business design. Working Paper.
 
 Zharnikov, D. (2026e). Spectral metamerism in brand perception: Projection bounds from high-dimensional geometry. Working Paper.

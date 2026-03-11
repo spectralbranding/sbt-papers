@@ -14,8 +14,8 @@ identifiers:
     value: "10.5281/zenodo.18945912"
     description: "Zenodo archive (primary)"
   - type: url
-    value: "https://papers.ssrn.com/abstract=6318718"
-    description: "SSRN preprint (pending review)"
+    value: "https://doi.org/10.5281/zenodo.18945912"
+    description: "Zenodo preprint"
 keywords:
   - brand perception
   - computational branding

@@ -14,8 +14,8 @@ identifiers:
     value: "10.5281/zenodo.18945295"
     description: "Zenodo archive (primary)"
   - type: url
-    value: "https://papers.ssrn.com/abstract=6379298"
-    description: "SSRN preprint (pending review)"
+    value: "https://doi.org/10.5281/zenodo.18945295"
+    description: "Zenodo preprint"
 keywords:
   - brand metric
   - simplex geometry

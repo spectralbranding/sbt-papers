@@ -551,13 +551,13 @@ Torgerson, W. S. (1958). *Theory and Methods of Scaling*. Wiley.
 
 Wyszecki, G., & Stiles, W. S. (1982). *Color Science: Concepts and Methods, Quantitative Data and Formulae* (2nd ed.). Wiley.
 
-Zharnikov, D. (2026a). Spectral Brand Theory: A multi-dimensional framework for brand perception analysis. SSRN Working Paper.
+Zharnikov, D. (2026a). Spectral Brand Theory: A multi-dimensional framework for brand perception analysis. Working Paper.
 
-Zharnikov, D. (2026i). The Organizational Schema Theory: Test-driven business design. SSRN Working Paper.
+Zharnikov, D. (2026i). The Organizational Schema Theory: Test-driven business design. Working Paper.
 
-Zharnikov, D. (2026c). Geometric approaches to brand perception: A critical survey and research agenda. SSRN Working Paper.
+Zharnikov, D. (2026c). Geometric approaches to brand perception: A critical survey and research agenda. Working Paper.
 
-Zharnikov, D. (2026d). Brand space geometry: A formal metric for multi-dimensional brand perception. SSRN Working Paper.
+Zharnikov, D. (2026d). Brand space geometry: A formal metric for multi-dimensional brand perception. Working Paper.
 
 ---
 

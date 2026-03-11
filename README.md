@@ -33,8 +33,6 @@ Introduces the full SBT framework: eight perceptual dimensions, observer spectra
 
 - [Read on GitHub](spectral-brand-theory/paper.md)
 - [Zenodo DOI](https://doi.org/10.5281/zenodo.18945912)
-- [SSRN](https://papers.ssrn.com/abstract=6318718) (pending review)
-
 ### The Atom-Cloud-Fact Epistemological Pipeline (Zharnikov 2026b)
 
 Describes the domain-agnostic epistemological architecture underlying SBT. Originally developed for probabilistic financial fact extraction, the atom-cloud-fact pipeline provides the formal machinery for observation-to-knowledge progression. Documents the architecture, its seven principles, and the domain transfer from financial document processing to brand perception modeling.
@@ -43,7 +41,6 @@ Describes the domain-agnostic epistemological architecture underlying SBT. Origi
 
 - [Read on GitHub](alibi-epistemology/paper.md)
 - [Zenodo DOI](https://doi.org/10.5281/zenodo.18944770)
-- [SSRN](https://papers.ssrn.com/abstract=6388318) (pending review)
 - [Source Code](https://github.com/viberesearch/alibi)
 
 ## How to Cite
@@ -55,8 +52,7 @@ Describes the domain-agnostic epistemological architecture underlying SBT. Origi
   author={Zharnikov, Dmitry},
   year={2026},
   url={https://doi.org/10.5281/zenodo.18945912},
-  doi={10.5281/zenodo.18945912},
-  note = {SSRN: https://papers.ssrn.com/abstract=6318718 (pending review)}
+  doi={10.5281/zenodo.18945912}
 }
 
 @article{zharnikov2026acf,
@@ -65,8 +61,7 @@ Describes the domain-agnostic epistemological architecture underlying SBT. Origi
   author={Zharnikov, Dmitry},
   year={2026},
   url={https://doi.org/10.5281/zenodo.18944770},
-  doi={10.5281/zenodo.18944770},
-  note = {SSRN: https://papers.ssrn.com/abstract=6388318 (pending review)}
+  doi={10.5281/zenodo.18944770}
 }
 
 @article{zharnikov2026r0,
@@ -75,8 +70,7 @@ Describes the domain-agnostic epistemological architecture underlying SBT. Origi
   author={Zharnikov, Dmitry},
   year={2026},
   url={https://doi.org/10.5281/zenodo.18945217},
-  doi={10.5281/zenodo.18945217},
-  note = {SSRN: https://papers.ssrn.com/abstract=6379181 (pending review)}
+  doi={10.5281/zenodo.18945217}
 }
 
 @article{zharnikov2026r1,
@@ -85,8 +79,7 @@ Describes the domain-agnostic epistemological architecture underlying SBT. Origi
   author={Zharnikov, Dmitry},
   year={2026},
   url={https://doi.org/10.5281/zenodo.18945295},
-  doi={10.5281/zenodo.18945295},
-  note = {SSRN: https://papers.ssrn.com/abstract=6379298 (pending review)}
+  doi={10.5281/zenodo.18945295}
 }
 
 @article{zharnikov2026r2,
@@ -95,8 +88,7 @@ Describes the domain-agnostic epistemological architecture underlying SBT. Origi
   author={Zharnikov, Dmitry},
   year={2026},
   url={https://doi.org/10.5281/zenodo.18945352},
-  doi={10.5281/zenodo.18945352},
-  note = {SSRN: https://papers.ssrn.com/abstract=6388378 (pending review)}
+  doi={10.5281/zenodo.18945352}
 }
 
 @article{zharnikov2026r3,
@@ -105,8 +97,7 @@ Describes the domain-agnostic epistemological architecture underlying SBT. Origi
   author={Zharnikov, Dmitry},
   year={2026},
   url={https://doi.org/10.5281/zenodo.18945477},
-  doi={10.5281/zenodo.18945477},
-  note = {SSRN: https://papers.ssrn.com/abstract=6388360 (pending review)}
+  doi={10.5281/zenodo.18945477}
 }
 
 @article{zharnikov2026r4,
@@ -115,8 +106,7 @@ Describes the domain-agnostic epistemological architecture underlying SBT. Origi
   author={Zharnikov, Dmitry},
   year={2026},
   url={https://doi.org/10.5281/zenodo.18945522},
-  doi={10.5281/zenodo.18945522},
-  note = {SSRN: https://papers.ssrn.com/abstract=6388361 (pending review)}
+  doi={10.5281/zenodo.18945522}
 }
 
 @article{zharnikov2026r5,
@@ -125,8 +115,7 @@ Describes the domain-agnostic epistemological architecture underlying SBT. Origi
   author={Zharnikov, Dmitry},
   year={2026},
   url={https://doi.org/10.5281/zenodo.18945591},
-  doi={10.5281/zenodo.18945591},
-  note = {SSRN: https://papers.ssrn.com/abstract=6379578 (pending review)}
+  doi={10.5281/zenodo.18945591}
 }
 
 @article{zharnikov2026r6,
@@ -135,8 +124,7 @@ Describes the domain-agnostic epistemological architecture underlying SBT. Origi
   author={Zharnikov, Dmitry},
   year={2026},
   url={https://doi.org/10.5281/zenodo.18945659},
-  doi={10.5281/zenodo.18945659},
-  note = {SSRN: https://papers.ssrn.com/abstract=6388498 (pending review)}
+  doi={10.5281/zenodo.18945659}
 }
 ```
 

@@ -539,10 +539,10 @@ Vershynin, R. (2018). *High-Dimensional Probability: An Introduction with Applic
 
 Waterman, R. H., Peters, T. J., & Phillips, J. R. (1980). Structure is not organization. *Business Horizons*, 23(3), 14--26.
 
-Zharnikov, D. (2026a). Spectral Brand Theory: A multi-dimensional framework for brand perception analysis. SSRN Working Paper.
+Zharnikov, D. (2026a). Spectral Brand Theory: A multi-dimensional framework for brand perception analysis. Working Paper.
 
-Zharnikov, D. (2026d). Brand space geometry: A formal metric for multi-dimensional brand perception. SSRN Working Paper.
+Zharnikov, D. (2026d). Brand space geometry: A formal metric for multi-dimensional brand perception. Working Paper.
 
 Zharnikov, D. (2026e). Spectral metamerism in brand perception: Projection bounds from high-dimensional geometry. Working Paper.
 
-Zharnikov, D. (2026i). The Organizational Schema Theory: Test-driven business design. SSRN Working Paper.
+Zharnikov, D. (2026i). The Organizational Schema Theory: Test-driven business design. Working Paper.
