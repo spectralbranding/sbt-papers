@@ -4,24 +4,24 @@ Research publications on Spectral Brand Theory (SBT), a computational framework 
 
 ## Papers
 
-| Paper | Words | Refs | SSRN | Zenodo | Status |
-|-------|-------|------|------|--------|--------|
-| [Spectral Brand Theory: A Computational Framework for Multi-Dimensional Brand Perception](spectral-brand-theory/paper.md) | ~6,400 | 37 | [6318718](https://papers.ssrn.com/abstract=6318718) | [10.5281/zenodo.18945913](https://doi.org/10.5281/zenodo.18945913) | Preprint |
-| [The Atom-Cloud-Fact Epistemological Pipeline](alibi-epistemology/paper.md) | ~4,100 | 19 | [6388318](https://papers.ssrn.com/abstract=6388318) | [10.5281/zenodo.18944771](https://doi.org/10.5281/zenodo.18944771) | Preprint |
+| Paper | Words | Refs | Zenodo DOI | Status |
+|-------|-------|------|------------|--------|
+| [Spectral Brand Theory: A Computational Framework for Multi-Dimensional Brand Perception](spectral-brand-theory/paper.md) | ~6,400 | 37 | [10.5281/zenodo.18945912](https://doi.org/10.5281/zenodo.18945912) | Preprint |
+| [The Atom-Cloud-Fact Epistemological Pipeline](alibi-epistemology/paper.md) | ~4,100 | 19 | [10.5281/zenodo.18944770](https://doi.org/10.5281/zenodo.18944770) | Preprint |
 
 ### Mathematical Foundations (R0-R6)
 
 Seven companion papers establishing formal mathematical foundations for SBT:
 
-| Key | Paper | SSRN | Zenodo | Status |
-|-----|-------|------|--------|--------|
-| R0 | [Geometric Approaches to Brand Perception: A Critical Survey](r0-literature-survey/paper.md) | [6379181](https://papers.ssrn.com/abstract=6379181) | [10.5281/zenodo.18945218](https://doi.org/10.5281/zenodo.18945218) | Preprint |
-| R1 | [Brand Space Geometry: A Formal Metric for Multi-Dimensional Brand Perception](r1-formal-metric/paper.md) | [6379298](https://papers.ssrn.com/abstract=6379298) | [10.5281/zenodo.18945296](https://doi.org/10.5281/zenodo.18945296) | Preprint |
-| R2 | [Spectral Metamerism in Brand Perception: Projection Bounds from High-Dimensional Geometry](r2-spectral-metamerism/paper.md) | [6388378](https://papers.ssrn.com/abstract=6388378) | [10.5281/zenodo.18945353](https://doi.org/10.5281/zenodo.18945353) | Preprint |
-| R3 | [Cohort Boundaries in High-Dimensional Perception Space: A Concentration of Measure Analysis](r3-cohort-boundaries/paper.md) | [6388360](https://papers.ssrn.com/abstract=6388360) | [10.5281/zenodo.18945478](https://doi.org/10.5281/zenodo.18945478) | Preprint |
-| R4 | [How Many Brands Can a Market Hold? Sphere Packing Bounds for Multi-Dimensional Positioning](r4-sphere-packing/paper.md) | [6388361](https://papers.ssrn.com/abstract=6388361) | [10.5281/zenodo.18945523](https://doi.org/10.5281/zenodo.18945523) | Preprint |
-| R5 | [Specification Impossibility in Organizational Design: A High-Dimensional Geometric Analysis](r5-specification-impossibility/paper.md) | [6379578](https://papers.ssrn.com/abstract=6379578) | [10.5281/zenodo.18945592](https://doi.org/10.5281/zenodo.18945592) | Preprint |
-| R6 | [Non-Ergodic Brand Perception: Diffusion Dynamics on Multi-Dimensional Perceptual Manifolds](r6-diffusion-dynamics/paper.md) | [6388498](https://papers.ssrn.com/abstract=6388498) | [10.5281/zenodo.18945660](https://doi.org/10.5281/zenodo.18945660) | Preprint |
+| Key | Paper | Zenodo DOI | Status |
+|-----|-------|------------|--------|
+| R0 | [Geometric Approaches to Brand Perception: A Critical Survey](r0-literature-survey/paper.md) | [10.5281/zenodo.18945217](https://doi.org/10.5281/zenodo.18945217) | Preprint |
+| R1 | [Brand Space Geometry: A Formal Metric for Multi-Dimensional Brand Perception](r1-formal-metric/paper.md) | [10.5281/zenodo.18945295](https://doi.org/10.5281/zenodo.18945295) | Preprint |
+| R2 | [Spectral Metamerism in Brand Perception: Projection Bounds from High-Dimensional Geometry](r2-spectral-metamerism/paper.md) | [10.5281/zenodo.18945352](https://doi.org/10.5281/zenodo.18945352) | Preprint |
+| R3 | [Cohort Boundaries in High-Dimensional Perception Space: A Concentration of Measure Analysis](r3-cohort-boundaries/paper.md) | [10.5281/zenodo.18945477](https://doi.org/10.5281/zenodo.18945477) | Preprint |
+| R4 | [How Many Brands Can a Market Hold? Sphere Packing Bounds for Multi-Dimensional Positioning](r4-sphere-packing/paper.md) | [10.5281/zenodo.18945522](https://doi.org/10.5281/zenodo.18945522) | Preprint |
+| R5 | [Specification Impossibility in Organizational Design: A High-Dimensional Geometric Analysis](r5-specification-impossibility/paper.md) | [10.5281/zenodo.18945591](https://doi.org/10.5281/zenodo.18945591) | Preprint |
+| R6 | [Non-Ergodic Brand Perception: Diffusion Dynamics on Multi-Dimensional Perceptual Manifolds](r6-diffusion-dynamics/paper.md) | [10.5281/zenodo.18945659](https://doi.org/10.5281/zenodo.18945659) | Preprint |
 
 Key results: formal metric (R1), metamerism inevitability (R2), fuzzy cohort boundaries (R3), positioning capacity bounds (R4), specification impossibility (R5), non-ergodic dynamics (R6).
 
@@ -32,8 +32,8 @@ Introduces the full SBT framework: eight perceptual dimensions, observer spectra
 **Keywords**: brand perception, computational branding, observer heterogeneity, brand coherence, structural absence, AI-native framework
 
 - [Read on GitHub](spectral-brand-theory/paper.md)
-- [SSRN](https://papers.ssrn.com/abstract=6318718)
-- [Zenodo](https://doi.org/10.5281/zenodo.18945913)
+- [Zenodo DOI](https://doi.org/10.5281/zenodo.18945912)
+- [SSRN](https://papers.ssrn.com/abstract=6318718) (pending review)
 
 ### The Atom-Cloud-Fact Epistemological Pipeline (Zharnikov 2026b)
 
@@ -42,8 +42,8 @@ Describes the domain-agnostic epistemological architecture underlying SBT. Origi
 **Keywords**: epistemology, probabilistic knowledge, atom-cloud-fact, domain transfer, computational framework
 
 - [Read on GitHub](alibi-epistemology/paper.md)
-- [SSRN](https://papers.ssrn.com/abstract=6388318)
-- [Zenodo](https://doi.org/10.5281/zenodo.18944771)
+- [Zenodo DOI](https://doi.org/10.5281/zenodo.18944770)
+- [SSRN](https://papers.ssrn.com/abstract=6388318) (pending review)
 - [Source Code](https://github.com/viberesearch/alibi)
 
 ## How to Cite
@@ -54,8 +54,9 @@ Describes the domain-agnostic epistemological architecture underlying SBT. Origi
          Multi-Dimensional Brand Perception},
   author={Zharnikov, Dmitry},
   year={2026},
-  url={https://papers.ssrn.com/abstract=6318718},
-  doi={10.5281/zenodo.18945913}
+  url={https://doi.org/10.5281/zenodo.18945912},
+  doi={10.5281/zenodo.18945912},
+  note = {SSRN: https://papers.ssrn.com/abstract=6318718 (pending review)}
 }
 
 @article{zharnikov2026acf,
@@ -63,8 +64,9 @@ Describes the domain-agnostic epistemological architecture underlying SBT. Origi
          Document Processing to Brand Perception Modeling},
   author={Zharnikov, Dmitry},
   year={2026},
-  url={https://papers.ssrn.com/abstract=6388318},
-  doi={10.5281/zenodo.18944771}
+  url={https://doi.org/10.5281/zenodo.18944770},
+  doi={10.5281/zenodo.18944770},
+  note = {SSRN: https://papers.ssrn.com/abstract=6388318 (pending review)}
 }
 
 @article{zharnikov2026r0,
@@ -72,8 +74,9 @@ Describes the domain-agnostic epistemological architecture underlying SBT. Origi
          and research agenda},
   author={Zharnikov, Dmitry},
   year={2026},
-  url={https://papers.ssrn.com/abstract=6379181},
-  doi={10.5281/zenodo.18945218}
+  url={https://doi.org/10.5281/zenodo.18945217},
+  doi={10.5281/zenodo.18945217},
+  note = {SSRN: https://papers.ssrn.com/abstract=6379181 (pending review)}
 }
 
 @article{zharnikov2026r1,
@@ -81,8 +84,9 @@ Describes the domain-agnostic epistemological architecture underlying SBT. Origi
          brand perception},
   author={Zharnikov, Dmitry},
   year={2026},
-  url={https://papers.ssrn.com/abstract=6379298},
-  doi={10.5281/zenodo.18945296}
+  url={https://doi.org/10.5281/zenodo.18945295},
+  doi={10.5281/zenodo.18945295},
+  note = {SSRN: https://papers.ssrn.com/abstract=6379298 (pending review)}
 }
 
 @article{zharnikov2026r2,
@@ -90,8 +94,9 @@ Describes the domain-agnostic epistemological architecture underlying SBT. Origi
          from high-dimensional geometry},
   author={Zharnikov, Dmitry},
   year={2026},
-  url={https://papers.ssrn.com/abstract=6388378},
-  doi={10.5281/zenodo.18945353}
+  url={https://doi.org/10.5281/zenodo.18945352},
+  doi={10.5281/zenodo.18945352},
+  note = {SSRN: https://papers.ssrn.com/abstract=6388378 (pending review)}
 }
 
 @article{zharnikov2026r3,
@@ -99,8 +104,9 @@ Describes the domain-agnostic epistemological architecture underlying SBT. Origi
          A concentration of measure analysis},
   author={Zharnikov, Dmitry},
   year={2026},
-  url={https://papers.ssrn.com/abstract=6388360},
-  doi={10.5281/zenodo.18945478}
+  url={https://doi.org/10.5281/zenodo.18945477},
+  doi={10.5281/zenodo.18945477},
+  note = {SSRN: https://papers.ssrn.com/abstract=6388360 (pending review)}
 }
 
 @article{zharnikov2026r4,
@@ -108,8 +114,9 @@ Describes the domain-agnostic epistemological architecture underlying SBT. Origi
          for multi-dimensional positioning},
   author={Zharnikov, Dmitry},
   year={2026},
-  url={https://papers.ssrn.com/abstract=6388361},
-  doi={10.5281/zenodo.18945523}
+  url={https://doi.org/10.5281/zenodo.18945522},
+  doi={10.5281/zenodo.18945522},
+  note = {SSRN: https://papers.ssrn.com/abstract=6388361 (pending review)}
 }
 
 @article{zharnikov2026r5,
@@ -117,8 +124,9 @@ Describes the domain-agnostic epistemological architecture underlying SBT. Origi
          A high-dimensional geometric analysis},
   author={Zharnikov, Dmitry},
   year={2026},
-  url={https://papers.ssrn.com/abstract=6379578},
-  doi={10.5281/zenodo.18945592}
+  url={https://doi.org/10.5281/zenodo.18945591},
+  doi={10.5281/zenodo.18945591},
+  note = {SSRN: https://papers.ssrn.com/abstract=6379578 (pending review)}
 }
 
 @article{zharnikov2026r6,
@@ -126,8 +134,9 @@ Describes the domain-agnostic epistemological architecture underlying SBT. Origi
          multi-dimensional perceptual manifolds},
   author={Zharnikov, Dmitry},
   year={2026},
-  url={https://papers.ssrn.com/abstract=6388498},
-  doi={10.5281/zenodo.18945660}
+  url={https://doi.org/10.5281/zenodo.18945659},
+  doi={10.5281/zenodo.18945659},
+  note = {SSRN: https://papers.ssrn.com/abstract=6388498 (pending review)}
 }
 ```
 

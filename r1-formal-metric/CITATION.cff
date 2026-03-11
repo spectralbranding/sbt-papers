@@ -7,15 +7,15 @@ authors:
 title: "Brand space geometry: A formal metric for multi-dimensional brand perception"
 version: 1.0.0
 date-released: 2026-03-10
-url: "https://papers.ssrn.com/abstract=6379298"
+url: "https://doi.org/10.5281/zenodo.18945295"
 repository-code: "https://github.com/spectralbranding/sbt-papers"
 identifiers:
   - type: doi
-    value: "10.5281/zenodo.18945296"
-    description: "Zenodo archive"
+    value: "10.5281/zenodo.18945295"
+    description: "Zenodo archive (primary)"
   - type: url
     value: "https://papers.ssrn.com/abstract=6379298"
-    description: "SSRN preprint"
+    description: "SSRN preprint (pending review)"
 keywords:
   - brand metric
   - simplex geometry
@@ -32,4 +32,4 @@ preferred-citation:
       email: dmitry@spectralbranding.com
   title: "Brand space geometry: A formal metric for multi-dimensional brand perception"
   year: 2026
-  url: "https://papers.ssrn.com/abstract=6379298"
+  url: "https://doi.org/10.5281/zenodo.18945295"
