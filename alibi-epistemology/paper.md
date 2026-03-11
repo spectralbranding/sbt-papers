@@ -10,7 +10,7 @@ Working Paper — February 2026
 |---|---|
 | **Applied framework** | [github.com/spectralbranding/sbt-framework](https://github.com/spectralbranding/sbt-framework) |
 | **Source code** | [github.com/viberesearch/alibi](https://github.com/viberesearch/alibi) |
-| **SBT paper** | [SSRN](https://papers.ssrn.com/abstract=6318718) |
+| **SBT paper** | [Zenodo DOI](https://doi.org/10.5281/zenodo.18945912) |
 | **License** | MIT |
 
 ---
@@ -292,7 +292,7 @@ Sowa, J. F. (2000). *Knowledge representation: Logical, philosophical, and compu
 
 Zadeh, L. A. (1965). Fuzzy sets. *Information and Control*, 8(3), 338–353.
 
-Zharnikov, D. (2026a). Spectral Brand Theory: A computational framework for multi-dimensional brand perception. SSRN Working Paper. https://papers.ssrn.com/abstract=6318718
+Zharnikov, D. (2026a). Spectral Brand Theory: A computational framework for multi-dimensional brand perception. Zenodo. https://doi.org/10.5281/zenodo.18945912
 
 ---
 

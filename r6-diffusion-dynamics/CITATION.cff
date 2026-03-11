@@ -7,15 +7,15 @@ authors:
 title: "Non-ergodic brand perception: Diffusion dynamics on multi-dimensional perceptual manifolds"
 version: 1.0.0
 date-released: 2026-03-10
-url: "https://papers.ssrn.com/abstract=6388498"
+url: "https://doi.org/10.5281/zenodo.18945659"
 repository-code: "https://github.com/spectralbranding/sbt-papers"
 identifiers:
   - type: doi
-    value: "10.5281/zenodo.18945660"
-    description: "Zenodo archive"
+    value: "10.5281/zenodo.18945659"
+    description: "Zenodo archive (primary)"
   - type: url
     value: "https://papers.ssrn.com/abstract=6388498"
-    description: "SSRN preprint"
+    description: "SSRN preprint (pending review)"
 keywords:
   - non-ergodic
   - diffusion dynamics
@@ -32,4 +32,4 @@ preferred-citation:
       email: dmitry@spectralbranding.com
   title: "Non-ergodic brand perception: Diffusion dynamics on multi-dimensional perceptual manifolds"
   year: 2026
-  url: "https://papers.ssrn.com/abstract=6388498"
+  url: "https://doi.org/10.5281/zenodo.18945659"

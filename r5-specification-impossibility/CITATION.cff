@@ -7,15 +7,15 @@ authors:
 title: "Specification impossibility in organizational design: A high-dimensional geometric analysis"
 version: 1.0.0
 date-released: 2026-03-10
-url: "https://papers.ssrn.com/abstract=6379578"
+url: "https://doi.org/10.5281/zenodo.18945591"
 repository-code: "https://github.com/spectralbranding/sbt-papers"
 identifiers:
   - type: doi
-    value: "10.5281/zenodo.18945592"
-    description: "Zenodo archive"
+    value: "10.5281/zenodo.18945591"
+    description: "Zenodo archive (primary)"
   - type: url
     value: "https://papers.ssrn.com/abstract=6379578"
-    description: "SSRN preprint"
+    description: "SSRN preprint (pending review)"
 keywords:
   - specification impossibility
   - organizational design
@@ -32,4 +32,4 @@ preferred-citation:
       email: dmitry@spectralbranding.com
   title: "Specification impossibility in organizational design: A high-dimensional geometric analysis"
   year: 2026
-  url: "https://papers.ssrn.com/abstract=6379578"
+  url: "https://doi.org/10.5281/zenodo.18945591"

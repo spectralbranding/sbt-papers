@@ -10,7 +10,7 @@ Working Paper — February 2026
 |---|---|
 | **Open-source toolkit** | [github.com/spectralbranding/sbt-framework](https://github.com/spectralbranding/sbt-framework) |
 | **Article series** | [spectralbranding.substack.com](https://spectralbranding.substack.com) |
-| **SSRN** | [papers.ssrn.com/abstract=6318718](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6318718) |
+| **Zenodo DOI** | [10.5281/zenodo.18945912](https://doi.org/10.5281/zenodo.18945912) |
 | **License** | MIT |
 
 ---
@@ -699,10 +699,11 @@ Zharnikov, D. (2026b). The atom-cloud-fact epistemological pipeline: From financ
   title={Spectral Brand Theory: A Computational Framework for Multi-Dimensional Brand Perception},
   author={Zharnikov, Dmitry},
   year={2026},
-  url={https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6318718}
+  url={https://doi.org/10.5281/zenodo.18945912}
 }
 ```
 
 Also available on:
-- SSRN: [papers.ssrn.com/abstract=6318718](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6318718)
+- Zenodo: [doi.org/10.5281/zenodo.18945912](https://doi.org/10.5281/zenodo.18945912)
+- SSRN: [papers.ssrn.com/abstract=6318718](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6318718) (pending review)
 - [spectralbranding.substack.com](https://spectralbranding.substack.com)

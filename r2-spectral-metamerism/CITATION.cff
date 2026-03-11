@@ -7,15 +7,15 @@ authors:
 title: "Spectral metamerism in brand perception: Projection bounds from high-dimensional geometry"
 version: 1.0.0
 date-released: 2026-03-10
-url: "https://papers.ssrn.com/abstract=6388378"
+url: "https://doi.org/10.5281/zenodo.18945352"
 repository-code: "https://github.com/spectralbranding/sbt-papers"
 identifiers:
   - type: doi
-    value: "10.5281/zenodo.18945353"
-    description: "Zenodo archive"
+    value: "10.5281/zenodo.18945352"
+    description: "Zenodo archive (primary)"
   - type: url
     value: "https://papers.ssrn.com/abstract=6388378"
-    description: "SSRN preprint"
+    description: "SSRN preprint (pending review)"
 keywords:
   - metamerism
   - dimension reduction
@@ -32,4 +32,4 @@ preferred-citation:
       email: dmitry@spectralbranding.com
   title: "Spectral metamerism in brand perception: Projection bounds from high-dimensional geometry"
   year: 2026
-  url: "https://papers.ssrn.com/abstract=6388378"
+  url: "https://doi.org/10.5281/zenodo.18945352"
