@@ -14,8 +14,8 @@ identifiers:
     value: "10.5281/zenodo.18945477"
     description: "Zenodo archive (primary)"
   - type: url
-    value: "https://papers.ssrn.com/abstract=6388360"
-    description: "SSRN preprint (pending review)"
+    value: "https://doi.org/10.5281/zenodo.18945477"
+    description: "Zenodo preprint"
 keywords:
   - cohort boundaries
   - concentration of measure

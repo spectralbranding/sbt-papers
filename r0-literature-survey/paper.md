@@ -594,9 +594,9 @@ Warglien, M., and Gartner, W. B. (2004). "Entrepreneurial Leadership and the Cre
 
 Yen, P. T.-W., and Cheong, S. A. (2021). "Using Topological Data Analysis (TDA) and Persistent Homology to Analyze the Stock Markets in Singapore and Taiwan." *Frontiers in Physics*, 9, 572216.
 
-Zharnikov, D. (2026a). Spectral Brand Theory: A multi-dimensional framework for brand perception analysis. SSRN Working Paper.
+Zharnikov, D. (2026a). Spectral Brand Theory: A multi-dimensional framework for brand perception analysis. Working Paper.
 
-Zharnikov, D. (2026d). Brand space geometry: A formal metric for multi-dimensional brand perception. SSRN Working Paper.
+Zharnikov, D. (2026d). Brand space geometry: A formal metric for multi-dimensional brand perception. Working Paper.
 
 Zharnikov, D. (2026e). Spectral metamerism in brand perception: Projection bounds from high-dimensional geometry. Working Paper.
 
@@ -604,9 +604,9 @@ Zharnikov, D. (2026f). Cohort boundaries in high-dimensional perception space: A
 
 Zharnikov, D. (2026g). How many brands can a market hold? Sphere packing bounds for multi-dimensional positioning. Working Paper.
 
-Zharnikov, D. (2026h). Specification impossibility in organizational design: A high-dimensional geometric analysis. SSRN Working Paper.
+Zharnikov, D. (2026h). Specification impossibility in organizational design: A high-dimensional geometric analysis. Working Paper.
 
-Zharnikov, D. (2026i). The Organizational Schema Theory: Test-driven business design. SSRN Working Paper.
+Zharnikov, D. (2026i). The Organizational Schema Theory: Test-driven business design. Working Paper.
 
 Zharnikov, D. (2026j). Non-ergodic brand perception: Diffusion dynamics on multi-dimensional perceptual manifolds. Working Paper.
 

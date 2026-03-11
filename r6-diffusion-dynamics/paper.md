@@ -782,13 +782,13 @@ Viazovska, M. S. (2017). The sphere packing problem in dimension 8. *Annals of M
 
 Weber, E. H. (1834). *De Pulsu, Resorptione, Auditu et Tactu: Annotationes Anatomicae et Physiologicae*. Koehler.
 
-Zharnikov, D. (2026a). Spectral Brand Theory: A multi-dimensional framework for brand perception analysis. SSRN Working Paper.
+Zharnikov, D. (2026a). Spectral Brand Theory: A multi-dimensional framework for brand perception analysis. Working Paper.
 
-Zharnikov, D. (2026b). The alibi problem: Epistemic foundations of multi-source data reconciliation. SSRN Working Paper.
+Zharnikov, D. (2026b). The alibi problem: Epistemic foundations of multi-source data reconciliation. Working Paper.
 
-Zharnikov, D. (2026c). Geometric approaches to brand perception: A critical survey and research agenda. SSRN Working Paper.
+Zharnikov, D. (2026c). Geometric approaches to brand perception: A critical survey and research agenda. Working Paper.
 
-Zharnikov, D. (2026d). Brand space geometry: A formal metric for multi-dimensional brand perception. SSRN Working Paper.
+Zharnikov, D. (2026d). Brand space geometry: A formal metric for multi-dimensional brand perception. Working Paper.
 
 Zharnikov, D. (2026e). Spectral metamerism in brand perception: Projection bounds from high-dimensional geometry. Working Paper.
 
@@ -796,9 +796,9 @@ Zharnikov, D. (2026f). Cohort boundaries in high-dimensional perception space: A
 
 Zharnikov, D. (2026g). How many brands can a market hold? Sphere packing bounds for multi-dimensional positioning. Working Paper.
 
-Zharnikov, D. (2026h). Specification impossibility in organizational design: A high-dimensional geometric analysis. SSRN Working Paper.
+Zharnikov, D. (2026h). Specification impossibility in organizational design: A high-dimensional geometric analysis. Working Paper.
 
-Zharnikov, D. (2026i). The Organizational Schema Theory: Test-driven business design. SSRN Working Paper.
+Zharnikov, D. (2026i). The Organizational Schema Theory: Test-driven business design. Working Paper.
 
 ---
 
