@@ -7,7 +7,15 @@ authors:
 title: "The Atom-Cloud-Fact Epistemological Pipeline: From Financial Document Processing to Brand Perception Modeling"
 version: 1.0.0
 date-released: 2026-02-27
-url: "https://github.com/spectralbranding/sbt-papers"
+url: "https://papers.ssrn.com/abstract=6388318"
+repository-code: "https://github.com/viberesearch/alibi"
+identifiers:
+  - type: doi
+    value: "10.5281/zenodo.18944771"
+    description: "Zenodo archive"
+  - type: url
+    value: "https://papers.ssrn.com/abstract=6388318"
+    description: "SSRN preprint"
 keywords:
   - epistemology
   - probabilistic knowledge
@@ -16,3 +24,12 @@ keywords:
   - computational framework
 license: MIT
 type: article
+preferred-citation:
+  type: article
+  authors:
+    - family-names: Zharnikov
+      given-names: Dmitry
+      email: dmitry@spectralbranding.com
+  title: "The Atom-Cloud-Fact Epistemological Pipeline: From Financial Document Processing to Brand Perception Modeling"
+  year: 2026
+  url: "https://papers.ssrn.com/abstract=6388318"

@@ -7,8 +7,15 @@ authors:
 title: "Spectral Brand Theory: A Computational Framework for Multi-Dimensional Brand Perception"
 version: 1.0.0
 date-released: 2026-02-27
-url: "https://github.com/spectralbranding/sbt-papers"
+url: "https://papers.ssrn.com/abstract=6318718"
 repository-code: "https://github.com/spectralbranding/sbt-framework"
+identifiers:
+  - type: doi
+    value: "10.5281/zenodo.18945913"
+    description: "Zenodo archive"
+  - type: url
+    value: "https://papers.ssrn.com/abstract=6318718"
+    description: "SSRN preprint"
 keywords:
   - brand perception
   - computational branding

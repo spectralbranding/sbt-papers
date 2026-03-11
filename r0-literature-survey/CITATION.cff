@@ -9,6 +9,13 @@ version: 1.0.0
 date-released: 2026-03-10
 url: "https://papers.ssrn.com/abstract=6379181"
 repository-code: "https://github.com/spectralbranding/sbt-papers"
+identifiers:
+  - type: doi
+    value: "10.5281/zenodo.18945218"
+    description: "Zenodo archive"
+  - type: url
+    value: "https://papers.ssrn.com/abstract=6379181"
+    description: "SSRN preprint"
 keywords:
   - brand perception
   - geometric methods
