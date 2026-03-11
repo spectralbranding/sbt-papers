@@ -7,8 +7,15 @@ authors:
 title: "Cohort boundaries in high-dimensional perception space: A concentration of measure analysis"
 version: 1.0.0
 date-released: 2026-03-10
-url: "https://github.com/spectralbranding/sbt-papers"
+url: "https://papers.ssrn.com/abstract=6388360"
 repository-code: "https://github.com/spectralbranding/sbt-papers"
+identifiers:
+  - type: doi
+    value: "10.5281/zenodo.18945478"
+    description: "Zenodo archive"
+  - type: url
+    value: "https://papers.ssrn.com/abstract=6388360"
+    description: "SSRN preprint"
 keywords:
   - cohort boundaries
   - concentration of measure
@@ -17,3 +24,12 @@ keywords:
   - brand segmentation
 license: MIT
 type: article
+preferred-citation:
+  type: article
+  authors:
+    - family-names: Zharnikov
+      given-names: Dmitry
+      email: dmitry@spectralbranding.com
+  title: "Cohort boundaries in high-dimensional perception space: A concentration of measure analysis"
+  year: 2026
+  url: "https://papers.ssrn.com/abstract=6388360"
