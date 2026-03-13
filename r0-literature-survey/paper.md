@@ -462,6 +462,12 @@ The research program we propose would not merely formalize an existing framework
 
 ---
 
+## Author Note
+
+Dmitry Zharnikov is an independent researcher and strategist. He holds a Professional MBA (Entrepreneurship & Innovation) from Technische Universitat Wien and Wirtschaftsuniversitat Wien (dual degree, 2018), where his thesis examined strategic positioning of solar energy companies in Russia (Zharnikov, 2018). ORCID: https://orcid.org/0009-0000-6893-9231
+
+---
+
 ## References
 
 Aaker, D. A. (1991). *Managing Brand Equity: Capitalizing on the Value of a Brand Name*. Free Press.
@@ -609,6 +615,8 @@ Zharnikov, D. (2026h). Specification impossibility in organizational design: A h
 Zharnikov, D. (2026i). The Organizational Schema Theory: Test-driven business design. Working Paper.
 
 Zharnikov, D. (2026j). Non-ergodic brand perception: Diffusion dynamics on multi-dimensional perceptual manifolds. Working Paper.
+
+Zharnikov, D. (2018). Strategy of the leading energy generation companies in solar business in the Russian Federation: Features and challenges (MBA thesis). Technische Universitat Wien and Wirtschaftsuniversitat Wien. https://repositum.tuwien.at/handle/20.500.12708/79295
 
 ---
 
