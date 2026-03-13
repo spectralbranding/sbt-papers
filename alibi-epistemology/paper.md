@@ -302,15 +302,3 @@ Zharnikov, D. (2026a). Spectral Brand Theory: A multi-dimensional framework for 
 
 Zharnikov, D. (2018). Strategy of the leading energy generation companies in solar business in the Russian Federation: Features and challenges (MBA thesis). Technische Universitat Wien and Wirtschaftsuniversitat Wien. https://repositum.tuwien.at/handle/20.500.12708/79295
 
----
-
-## Citation
-
-```bibtex
-@article{zharnikov2026alibi,
-  title={The Atom-Cloud-Fact Epistemological Pipeline: From Financial Document Processing to Brand Perception Modeling},
-  author={Zharnikov, Dmitry},
-  year={2026},
-  url={https://github.com/spectralbranding/sbt-papers}
-}
-```
