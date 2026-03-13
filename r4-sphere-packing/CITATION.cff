@@ -4,6 +4,8 @@ authors:
   - family-names: Zharnikov
     given-names: Dmitry
     email: dmitry@spectralbranding.com
+    affiliation: "Independent Researcher"
+    orcid: "https://orcid.org/0009-0000-6893-9231"
 title: "How many brands can a market hold? Sphere packing bounds for multi-dimensional positioning"
 version: 1.0.0
 date-released: 2026-03-10
@@ -30,6 +32,10 @@ preferred-citation:
     - family-names: Zharnikov
       given-names: Dmitry
       email: dmitry@spectralbranding.com
+      affiliation: "Independent Researcher"
+      orcid: "https://orcid.org/0009-0000-6893-9231"
+    affiliation: "Independent Researcher"
+    orcid: "https://orcid.org/0009-0000-6893-9231"
   title: "How many brands can a market hold? Sphere packing bounds for multi-dimensional positioning"
   year: 2026
   url: "https://doi.org/10.5281/zenodo.18945522"
