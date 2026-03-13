@@ -9,9 +9,9 @@ Research publications on Spectral Brand Theory (SBT), a computational framework 
 | [Spectral Brand Theory: A Computational Framework for Multi-Dimensional Brand Perception](spectral-brand-theory/paper.md) | ~6,400 | 37 | [10.5281/zenodo.18945912](https://doi.org/10.5281/zenodo.18945912) | Preprint |
 | [The Atom-Cloud-Fact Epistemological Pipeline](alibi-epistemology/paper.md) | ~4,100 | 19 | [10.5281/zenodo.18944770](https://doi.org/10.5281/zenodo.18944770) | Preprint |
 
-### Mathematical Foundations (R0-R6)
+### Mathematical Foundations (R0-R7)
 
-Seven companion papers establishing formal mathematical foundations for SBT:
+Eight companion papers establishing formal mathematical foundations for SBT:
 
 | Key | Paper | Zenodo DOI | Status |
 |-----|-------|------------|--------|
@@ -22,8 +22,11 @@ Seven companion papers establishing formal mathematical foundations for SBT:
 | R4 | [How Many Brands Can a Market Hold? Sphere Packing Bounds for Multi-Dimensional Positioning](r4-sphere-packing/paper.md) | [10.5281/zenodo.18945522](https://doi.org/10.5281/zenodo.18945522) | Preprint |
 | R5 | [Specification Impossibility in Organizational Design: A High-Dimensional Geometric Analysis](r5-specification-impossibility/paper.md) | [10.5281/zenodo.18945591](https://doi.org/10.5281/zenodo.18945591) | Preprint |
 | R6 | [Non-Ergodic Brand Perception: Diffusion Dynamics on Multi-Dimensional Perceptual Manifolds](r6-diffusion-dynamics/paper.md) | [10.5281/zenodo.18945659](https://doi.org/10.5281/zenodo.18945659) | Preprint |
+| R7 | [Spectral Resource Allocation: Demand-Driven Investment in Multi-Dimensional Brand Space](r7-spectral-resource-allocation/paper.md) | [10.5281/zenodo.19009268](https://doi.org/10.5281/zenodo.19009268) | Preprint |
 
-Key results: formal metric (R1), metamerism inevitability (R2), fuzzy cohort boundaries (R3), positioning capacity bounds (R4), specification impossibility (R5), non-ergodic dynamics (R6).
+Key results: formal metric (R1), metamerism inevitability (R2), fuzzy cohort boundaries (R3), positioning capacity bounds (R4), specification impossibility (R5), non-ergodic dynamics (R6), demand-driven resource allocation (R7).
+
+R7 formalizes spectral resource allocation — optimal dimensional investment given measured cohort weights, alignment gap between founder and cohort profiles.
 
 ### Spectral Brand Theory (Zharnikov 2026a)
 
@@ -126,9 +129,18 @@ Describes the domain-agnostic epistemological architecture underlying SBT. Origi
   url={https://doi.org/10.5281/zenodo.18945659},
   doi={10.5281/zenodo.18945659}
 }
+
+@article{zharnikov2026r7,
+  title={Spectral resource allocation: Demand-driven investment in
+         multi-dimensional brand space},
+  author={Zharnikov, Dmitry},
+  year={2026},
+  url={https://doi.org/10.5281/zenodo.19009268},
+  doi={10.5281/zenodo.19009268}
+}
 ```
 
-Machine-readable citations: [SBT CITATION.cff](spectral-brand-theory/CITATION.cff) | [ACF CITATION.cff](alibi-epistemology/CITATION.cff) | [R0 CITATION.cff](r0-literature-survey/CITATION.cff) | [R1 CITATION.cff](r1-formal-metric/CITATION.cff) | [R2 CITATION.cff](r2-spectral-metamerism/CITATION.cff) | [R3 CITATION.cff](r3-cohort-boundaries/CITATION.cff) | [R4 CITATION.cff](r4-sphere-packing/CITATION.cff) | [R5 CITATION.cff](r5-specification-impossibility/CITATION.cff) | [R6 CITATION.cff](r6-diffusion-dynamics/CITATION.cff)
+Machine-readable citations: [SBT CITATION.cff](spectral-brand-theory/CITATION.cff) | [ACF CITATION.cff](alibi-epistemology/CITATION.cff) | [R0 CITATION.cff](r0-literature-survey/CITATION.cff) | [R1 CITATION.cff](r1-formal-metric/CITATION.cff) | [R2 CITATION.cff](r2-spectral-metamerism/CITATION.cff) | [R3 CITATION.cff](r3-cohort-boundaries/CITATION.cff) | [R4 CITATION.cff](r4-sphere-packing/CITATION.cff) | [R5 CITATION.cff](r5-specification-impossibility/CITATION.cff) | [R6 CITATION.cff](r6-diffusion-dynamics/CITATION.cff) | [R7 CITATION.cff](r7-spectral-resource-allocation/CITATION.cff)
 
 ## Companion Repositories
 
