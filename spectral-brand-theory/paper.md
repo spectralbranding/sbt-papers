@@ -2,7 +2,7 @@
 
 **Dmitry Zharnikov**
 
-Working Paper — February 2026
+Working Paper — February 2026 (revised March 2026)
 
 *Contact: dmitry@spectralbranding.com*
 
@@ -243,6 +243,28 @@ Both models independently derived the structural absence mechanism for Hermès w
 Fourth, all five brands are well-known entities with extensive public information. The framework's performance on obscure or newly launched brands — where signal inventories are sparse — remains untested.
 
 Fifth, the validation uses the framework's own analytical pipeline to produce the findings that validate the framework. While the four validation criteria (non-obvious, dimensionally specific, actionable, observer-differentiated) impose external constraints on what counts as a validated insight, the framework shapes which phenomena become visible. Independent validation — comparing SBT-generated findings against independently collected consumer survey data or established brand tracking metrics — would provide a stronger test of the framework's explanatory value.
+
+### 3.5 Mathematical Foundations
+
+The framework as presented in Sections 1–3 operates at the level of structured qualitative analysis: dimensions are named, observer profiles are specified, and the analytical pipeline produces assessable insights. A natural question is whether the framework's core constructs — eight-dimensional brand space, observer spectral profiles, perception clouds — admit formal mathematical treatment. A series of eight companion papers (Zharnikov, 2026c–g, 2026j, 2026h, 2026k) establishes that they do.
+
+The research program began with a critical survey of geometric approaches to brand perception (Zharnikov, 2026c), which identified a gap: no existing framework combines high-dimensional geometry, generative signal models, observer heterogeneity, and non-ergodic dynamics. The six subsequent papers address specific mathematical problems within SBT's architecture:
+
+- **Formal metric** (Zharnikov, 2026d): defines a Riemannian metric on the eight-dimensional brand space that respects the structure of observer spectral profiles, enabling rigorous measurement of distances and angles between brand positions.
+
+- **Spectral metamerism** (Zharnikov, 2026e): proves that dimensionality reduction from the full eight-dimensional space to lower-dimensional projections (as traditional frameworks implicitly perform) incurs bounded but unavoidable information loss — two brands that appear identical in a three-dimensional projection can be arbitrarily different in the full space.
+
+- **Cohort boundaries** (Zharnikov, 2026f): applies concentration of measure results to show that observer cohort boundaries in high-dimensional perception space are inherently fuzzy — sharp demographic segmentation is geometrically impossible when perception operates in eight or more dimensions.
+
+- **Sphere packing** (Zharnikov, 2026g): derives upper bounds on the number of distinguishable brand positions a market can sustain, connecting the eight-dimensional structure to classical sphere packing results and the exceptional properties of the E₈ lattice.
+
+- **Non-ergodic dynamics** (Zharnikov, 2026j): models brand perception as a stochastic diffusion process on the perceptual manifold, formalizing the multiplicative, path-dependent nature of conviction formation and proving that ensemble averages (cross-sectional surveys) systematically misrepresent individual cohort trajectories.
+
+- **Specification impossibility** (Zharnikov, 2026h): proves a fundamental limit on organizational specification completeness — no finite specification can fully determine behavior in high-dimensional operational space, providing the mathematical foundation for the companion Organizational Schema Theory (Zharnikov, 2026i).
+
+- **Resource allocation** (Zharnikov, 2026k): derives optimal dimensional investment prescriptions from measured cohort weight profiles and introduces the alignment gap metric, which quantifies the economic loss when founders allocate resources based on their own perceptual weights rather than their target customers'.
+
+These results transform the framework's constructs from analytical metaphors into mathematically grounded objects with provable properties. The companion papers are self-contained and do not require reading the present paper, though they build on its conceptual vocabulary. All are available as working papers on Zenodo.
 
 ---
 
@@ -526,7 +548,7 @@ SBT accommodates all three changes within its existing architecture. The analyti
 
 ### 5.4 Limitations and Future Directions
 
-Several limitations warrant discussion.
+Several limitations warrant discussion. We note that several of the open questions identified below — particularly non-ergodic dynamics, cohort boundary formalization, and resource allocation — now have formal mathematical treatment in the companion papers described in Section 3.5 (Zharnikov, 2026c–k). The limitations discussed here concern the empirical validation of the framework, which remains for future work.
 
 **Weight validation.** Observer dimensional weights are currently expert estimates. While behavioral inference provides defensible ranges — particularly for polarized brands where stated purchase behavior makes priorities visible — empirical validation through conjoint analysis, behavioral experiments, or large-scale survey data would strengthen the framework's credibility. Observer weight assignments are illustrative estimates; the specific values assigned in the case studies were selected for analytical clarity rather than empirical measurement. Different weight assumptions would produce different outputs, and results should be interpreted accordingly.
 
@@ -610,6 +632,12 @@ SBT is not a replacement for strategic judgment. It is an analytical instrument 
 
 ---
 
+## Author Note
+
+Dmitry Zharnikov is an independent researcher and strategist. He holds a Professional MBA (Entrepreneurship & Innovation) from Technische Universitat Wien and Wirtschaftsuniversitat Wien (dual degree, 2018), where his thesis examined strategic positioning of solar energy companies in Russia (Zharnikov, 2018). ORCID: https://orcid.org/0009-0000-6893-9231
+
+---
+
 ## References
 
 Aaker, D. A. (1996). *Building strong brands*. Free Press.
@@ -682,9 +710,27 @@ Vargo, S. L., & Lusch, R. F. (2004). Evolving to a new dominant logic for market
 
 Veblen, T. (1899). *The theory of the leisure class*. Macmillan.
 
-Zharnikov, D. (2026b). The atom-cloud-fact epistemological pipeline: From financial document processing to brand perception modeling. Working Paper. https://doi.org/10.5281/zenodo.18944770
+Zharnikov, D. (2026b). The alibi problem: Epistemic foundations of multi-source data reconciliation. Working Paper. https://doi.org/10.5281/zenodo.18944770
+
+Zharnikov, D. (2026c). Geometric approaches to brand perception: A critical survey and research agenda. Working Paper. https://doi.org/10.5281/zenodo.18945217
+
+Zharnikov, D. (2026d). Brand space geometry: A formal metric for multi-dimensional brand perception. Working Paper. https://doi.org/10.5281/zenodo.18945295
+
+Zharnikov, D. (2026e). Spectral metamerism in brand perception: Projection bounds from high-dimensional geometry. Working Paper. https://doi.org/10.5281/zenodo.18945352
+
+Zharnikov, D. (2026f). Cohort boundaries in high-dimensional perception space: A concentration of measure analysis. Working Paper. https://doi.org/10.5281/zenodo.18945477
+
+Zharnikov, D. (2026g). How many brands can a market hold? Sphere packing bounds for multi-dimensional positioning. Working Paper. https://doi.org/10.5281/zenodo.18945522
+
+Zharnikov, D. (2026h). Specification impossibility in organizational design: A high-dimensional geometric analysis. Working Paper. https://doi.org/10.5281/zenodo.18945591
+
+Zharnikov, D. (2026i). The Organizational Schema Theory: Test-driven business design. Working Paper. https://doi.org/10.5281/zenodo.18946043
+
+Zharnikov, D. (2026j). Non-ergodic brand perception: Diffusion dynamics on multi-dimensional perceptual manifolds. Working Paper. https://doi.org/10.5281/zenodo.18945659
 
 Zharnikov, D. (2026k). Spectral resource allocation: Demand-driven investment in multi-dimensional brand space. Working Paper. https://doi.org/10.5281/zenodo.19009268
+
+Zharnikov, D. (2018). Strategy of the leading energy generation companies in solar business in the Russian Federation: Features and challenges (MBA thesis). Technische Universitat Wien and Wirtschaftsuniversitat Wien. https://repositum.tuwien.at/handle/20.500.12708/79295
 
 ---
 

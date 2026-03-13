@@ -254,6 +254,12 @@ The architecture is computationally implementable. The financial implementation 
 
 ---
 
+## Author Note
+
+Dmitry Zharnikov is an independent researcher and strategist. He holds a Professional MBA (Entrepreneurship & Innovation) from Technische Universitat Wien and Wirtschaftsuniversitat Wien (dual degree, 2018), where his thesis examined strategic positioning of solar energy companies in Russia (Zharnikov, 2018). ORCID: https://orcid.org/0009-0000-6893-9231
+
+---
+
 ## References
 
 Alchourrón, C. E., Gärdenfors, P., & Makinson, D. (1985). On the logic of theory change: Partial meet contraction and revision functions. *The Journal of Symbolic Logic*, 50(2), 510–530.
@@ -292,7 +298,9 @@ Sowa, J. F. (2000). *Knowledge representation: Logical, philosophical, and compu
 
 Zadeh, L. A. (1965). Fuzzy sets. *Information and Control*, 8(3), 338–353.
 
-Zharnikov, D. (2026a). Spectral Brand Theory: A computational framework for multi-dimensional brand perception. Zenodo. https://doi.org/10.5281/zenodo.18945912
+Zharnikov, D. (2026a). Spectral Brand Theory: A multi-dimensional framework for brand perception analysis. Working Paper. https://doi.org/10.5281/zenodo.18945912
+
+Zharnikov, D. (2018). Strategy of the leading energy generation companies in solar business in the Russian Federation: Features and challenges (MBA thesis). Technische Universitat Wien and Wirtschaftsuniversitat Wien. https://repositum.tuwien.at/handle/20.500.12708/79295
 
 ---
 
