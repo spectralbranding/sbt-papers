@@ -740,19 +740,3 @@ Zharnikov, D. (2018). Strategy of the leading energy generation companies in sol
 
 *License: MIT*
 
----
-
-## Citation
-
-```bibtex
-@article{zharnikov2026spectral,
-  title={Spectral Brand Theory: A Computational Framework for Multi-Dimensional Brand Perception},
-  author={Zharnikov, Dmitry},
-  year={2026},
-  url={https://doi.org/10.5281/zenodo.18945912}
-}
-```
-
-Also available on:
-- Zenodo: [doi.org/10.5281/zenodo.18945912](https://doi.org/10.5281/zenodo.18945912)
-- [spectralbranding.substack.com](https://spectralbranding.substack.com)
