@@ -542,6 +542,8 @@ Several limitations warrant discussion.
 
 **Non-ergodic dynamics.** Brand perception operates as a multiplicative, path-dependent process: each new signal multiplies (rather than adds to) an observer's existing cloud confidence. This makes brand perception structurally non-ergodic in Peters' (2019) sense — what happens to the "average observer" in a cross-sectional survey does not predict any individual cohort's perceptual trajectory over time. Introducing an ergodicity coefficient per brand-dimension pair — measuring the degree to which ensemble metrics reliably predict individual cohort trajectories — would strengthen the framework's diagnostic capacity by identifying which dimensions can be safely measured with aggregate surveys and which require longitudinal cohort-trajectory tracking.
 
+**Resource allocation.** The framework identifies *what* observers perceive and *how* convictions form, but does not specify *where* operational investment should be directed given a measured cohort profile. R7 (Zharnikov, 2026k) formalizes spectral resource allocation — the optimal investment of operational resources across dimensions given measured cohort weight profiles. The alignment gap metric quantifies the economic loss from founder weight projection.
+
 ### 5.5 Falsifiable Hypotheses
 
 The preceding framework and exploratory analysis generate ten falsifiable hypotheses that constitute the empirical research agenda required to validate SBT as a quantitative theory. The first five hypotheses (H1–H5) are derived from the perception-layer mechanisms reported in Section 4. The remaining five (H6–H10) are derived from the signal dissemination layer (Section 3.5) and address pre-encounter mechanics — how brand signals reach observers in the first place.
@@ -681,6 +683,8 @@ Vargo, S. L., & Lusch, R. F. (2004). Evolving to a new dominant logic for market
 Veblen, T. (1899). *The theory of the leisure class*. Macmillan.
 
 Zharnikov, D. (2026b). The atom-cloud-fact epistemological pipeline: From financial document processing to brand perception modeling. Working Paper. https://doi.org/10.5281/zenodo.18944770
+
+Zharnikov, D. (2026k). Spectral resource allocation: Demand-driven investment in multi-dimensional brand space. Working Paper. https://doi.org/10.5281/zenodo.19009268
 
 ---
 
