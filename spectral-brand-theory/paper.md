@@ -519,7 +519,7 @@ A complementary question — how organizations *generate* the signals that obser
 
 A distinguishing property of SBT is that the entire framework can be executed computationally. Signals are typed data structures with dimension, source, emission type, and strength fields. Observer profiles are parameter sets with spectrum, weight, tolerance, and prior fields. Cloud formation is a weighted clustering operation. Conviction collapse is a threshold function. Re-collapse is a full recalculation from the updated evidence set.
 
-This computational character enables AI-native implementation. The six-module analytical pipeline operates as a structured prompt sequence for large language models. In practice, a capable LLM (Claude, GPT-4, or equivalent) can execute all six modules in a single analytical session, producing:
+This computational character enables AI-native implementation. The seven-module analytical pipeline operates as a structured prompt sequence for large language models. In practice, a capable LLM (Claude, GPT-4, or equivalent) can execute all seven modules in a single analytical session, producing:
 
 - A full signal inventory across eight dimensions
 - 3–5 observer cohort spectral profiles
