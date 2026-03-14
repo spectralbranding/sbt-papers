@@ -240,7 +240,7 @@ A distinctive property of the atom-cloud-fact pipeline is that it can be impleme
 
 This is not trivially possible with other epistemological frameworks. Bayesian networks require explicit probability distributions. Expert systems require formal rule bases. The classical AI approach — symbolic reasoning with logical inference (Russell & Norvig, 2020) — requires formalized knowledge bases. The atom-cloud-fact pipeline's principles are expressible in natural language because they describe *cognitive operations* (perceive, cluster, weigh, decide, revise) rather than *mathematical operations* (multiply, integrate, optimize). LLMs, trained on text describing human reasoning, can execute cognitive operations with surprising fidelity.
 
-The SBT implementation demonstrates this: the six-module analytical pipeline operates entirely as a structured prompt sequence, producing formal multi-cohort brand analysis through natural language instruction rather than code execution (Zharnikov, 2026a). This suggests that the atom-cloud-fact architecture is not merely computationally implementable but *linguistically implementable* — a property that may prove important as LLMs become the primary computational platform for analytical work.
+The SBT implementation demonstrates this: the seven-module analytical pipeline operates entirely as a structured prompt sequence, producing formal multi-cohort brand analysis through natural language instruction rather than code execution (Zharnikov, 2026a). This suggests that the atom-cloud-fact architecture is not merely computationally implementable but *linguistically implementable* — a property that may prove important as LLMs become the primary computational platform for analytical work.
 
 ---
 

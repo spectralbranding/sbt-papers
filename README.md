@@ -146,7 +146,7 @@ Machine-readable citations: [SBT CITATION.cff](spectral-brand-theory/CITATION.cf
 
 | Repository | Description |
 |-----------|-------------|
-| [sbt-framework](https://github.com/spectralbranding/sbt-framework) | AI-native brand analysis toolkit — 6-module prompt kit with YAML templates |
+| [sbt-framework](https://github.com/spectralbranding/sbt-framework) | AI-native brand analysis toolkit — 7-module prompt kit with YAML templates |
 | [brand-code](https://github.com/spectralbranding/brand-code) | Executable brand identity specification — spectral palette, particle system source, AI-readable prompt |
 | [Substack](https://spectralbranding.substack.com) | Applied analysis articles on brand perception |
 
