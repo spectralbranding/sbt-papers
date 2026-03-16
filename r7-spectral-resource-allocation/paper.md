@@ -65,7 +65,7 @@ $$V(s, c) = \sum_{i=1}^{8} w_i(c) \cdot s_i = \langle w(c), s \rangle$$
 
 This is the inner product of the cohort's weight vector with the brand's signal portfolio. It represents the cohort's overall brand evaluation -- the perceptual equivalent of utility. The function is linear in $s$ for a given cohort, but the same signal portfolio produces different values for different cohorts because the weights differ.
 
-**Remark 1.** The linearity of $V$ in $s$ is a modeling choice that captures first-order effects. In practice, diminishing marginal perception (a Weber-Fechner effect) would make $V$ concave in each $s_i$. We address this through the cost function (Section 2.3), which captures diminishing returns on the production side. The perceptual side could be generalized to $V(s, c) = \sum_i w_i(c) \cdot u_i(s_i)$ with concave $u_i$; all results extend with minor modifications.
+**Remark 1.** The linearity of $V$ in $s$ is a modeling choice that captures first-order effects. In practice, diminishing marginal perception (a Weber-Fechner effect) would make $V$ concave in each $s_i$. We address this through the cost function (Section 2.3), which captures diminishing returns on the production side. The perceptual side could be generalized to $V(s, c) = \sum_i w_i(c) \cdot u_i(s_i)$ with concave $u_i$; all results extend with minor modifications. The Hellinger distance bound in Theorem 2 exploits the linearity of $V$. Extension to concave utility functions is a direction for future work; the directional implication -- that misalignment is bounded below by a geometric quantity related to the distance between founder and cohort weight profiles -- is expected to hold under concavity, but the specific bound form may change.
 
 ### 2.3 Operational Cost Function
 
@@ -401,7 +401,7 @@ To illustrate the alignment gap, we construct hypothetical founder spectral prof
 
 These profiles are illustrative, not measured. The Hermes founder profile emphasizes semiotic and experiential (artisan obsession). The IKEA founder profile heavily weights economic (democratic design philosophy). The Patagonia founder profile concentrates on ideological (environmental mission). The Erewhon founder profile emphasizes experiential (curated sensory experience). The Tesla founder profile loads on narrative and experiential (technology vision).
 
-### 8.3 Alignment Gap Computation
+### 8.3 Alignment Gap Computation (Illustrative, Non-Empirical Scenario)
 
 For each brand, we construct a plausible target cohort weight profile and compute the alignment gap. The target cohort profiles represent the observed perceptual priorities of each brand's core customer base:
 
@@ -476,7 +476,7 @@ The spectral model provides the left side; organizational cost analysis provides
 
 ### 10.1 Empirical Validation
 
-The case-study analysis uses hypothetical founder and cohort profiles. Empirical validation requires measuring actual spectral profiles through consumer surveys (MaxDiff analysis, conjoint studies) and founder self-assessment. The empirical validation protocol is specified in Zharnikov (2026a, Section 5) and developed further in the Empirical Validation Brief (Zharnikov 2026, unpublished).
+The case-study analysis uses hypothetical founder and cohort profiles. Empirical validation requires measuring actual spectral profiles through consumer surveys (MaxDiff analysis, conjoint studies) and founder self-assessment. The empirical validation protocol is specified in Zharnikov (2026a, Section 5) and developed further in the author's internal analysis. The methodology assumes cohort weight profiles are measurable; SBT provides a specification for this measurement (Zharnikov, 2026a, Section 5), though large-scale empirical implementation remains future work.
 
 ### 10.2 Cost Function Estimation
 

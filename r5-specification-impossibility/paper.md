@@ -324,7 +324,7 @@ This is a substantial information load. For comparison:
 
 ### 6.2 Cognitive Constraints and Compression
 
-Miller's (1956) finding that human working memory can hold approximately $7 \pm 2$ chunks has been refined by subsequent research but remains directionally valid: humans cannot simultaneously hold more than about 7 independent pieces of information. If each "chunk" carries $\log_2(10) = 3.32$ bits (one dimension at resolution 0.1), then working memory can hold:
+Miller's (1956) finding that human working memory can hold approximately $7 \pm 2$ chunks has been refined by subsequent research (see also Cowan, 2001, who revised the estimate to approximately 4 chunks) but remains directionally valid: humans cannot simultaneously hold more than about 7 independent pieces of information. If each "chunk" carries $\log_2(10) = 3.32$ bits (one dimension at resolution 0.1), then working memory can hold:
 
 $$H_{\text{WM}} \approx 7 \cdot 3.32 = 23.2 \text{ bits}$$
 
@@ -419,6 +419,8 @@ Two additional frameworks merit differentiation.
 
 **Design Structure Matrix (Eppinger & Browning, 2012).** DSM represents interdependencies among design elements as a square matrix, with applications to both product and organizational architecture. DSM captures the *topology* of dependencies (which elements interact with which) but does not address the *volume* of the configuration space or the geometric impossibility of exhaustive specification. The cascade model in OST can be viewed as a special case of DSM where the dependency matrix is strictly lower-triangular (higher levels influence lower levels, not vice versa), but the volumetric analysis of the present paper goes beyond what DSM provides.
 
+**Contingency theory (Lawrence & Lorsch, 1967; Donaldson, 2001).** Contingency theory established, over six decades of empirical and theoretical work, that no single organizational form is universally optimal: structure must be matched to environmental complexity, technology, and task uncertainty. R5's coverage impossibility theorem provides the formal geometric grounding for this qualitative claim. The impossibility of any finite set of specifications covering more than a negligible fraction of $[0,1]^{48}$ is precisely why no single organizational form can be optimal across all contexts: different environmental conditions correspond to different regions of the specification space, and those regions are too far apart for any universal template to reach. The contribution of the present paper is not the insight itself -- contingency theory established it empirically -- but its formalization: geometric bounds on how badly a single specification fails, and a precise characterization of why specialization is the only viable response.
+
 **Simon (1962) and Baldwin & Clark (2000).** Simon's "Architecture of Complexity" introduced near-decomposability as a design principle: complex systems can be managed by decomposing them into nearly independent subsystems. Baldwin and Clark (2000) formalized this insight for modular product design, showing that modularity creates option value by enabling independent experimentation. The present paper provides the geometric foundation for these insights: forkability (Theorem 3) is a precise formalization of modularity as subspace decomposition, and the coverage impossibility theorem explains *why* decomposition is necessary -- not merely because it is convenient, but because the undecomposed space is geometrically unmanageable.
 
 ---
@@ -503,15 +505,21 @@ Aaker, D. A. (1991). *Managing Brand Equity: Capitalizing on the Value of a Bran
 
 Baldwin, C. Y., & Clark, K. B. (2000). *Design Rules: The Power of Modularity*. MIT Press.
 
+Cowan, N. (2001). The magical number 4 in short-term memory: A reconsideration of mental storage capacity. *Behavioral and Brain Sciences*, 24(1), 87--114.
+
 Bellman, R. E. (1957). *Dynamic Programming*. Princeton University Press.
 
 Eppinger, S. D., & Browning, T. R. (2012). *Design Structure Matrix Methods and Applications*. MIT Press.
 
 Kauffman, S. A. (1993). *The Origins of Order: Self-Organization and Selection in Evolution*. Oxford University Press.
 
+Donaldson, L. (2001). *The Contingency Theory of Organizations*. Sage Publications.
+
 Keller, K. L. (1993). Conceptualizing, measuring, and managing customer-based brand equity. *Journal of Marketing*, 57(1), 1--22.
 
 Lancaster, K. J. (1966). A new approach to consumer theory. *Journal of Political Economy*, 74(2), 132--157.
+
+Lawrence, P. R., & Lorsch, J. W. (1967). *Organization and environment: Managing differentiation and integration*. Harvard Business School Press.
 
 Levinthal, D. A. (1997). Adaptation on rugged landscapes. *Management Science*, 43(7), 934--950.
 

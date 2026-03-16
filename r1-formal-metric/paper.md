@@ -20,7 +20,7 @@ Brand theory lacks formal mathematical foundations. While frameworks such as Kel
 
 ## 1. Introduction
 
-Brand management is among the most economically consequential domains that lacks a formal mathematical foundation. The global value of the top 100 brands exceeds \$8 trillion (Brand Finance, 2025), yet the theoretical frameworks used to analyze, compare, and optimize brand perception remain fundamentally qualitative. Keller's (1993) Customer-Based Brand Equity model provides a conceptual hierarchy but no distance function. Aaker's (1997) brand personality dimensions generate survey scores but no geometry. Kapferer's (2008, 4th ed.) brand identity prism offers a visual metaphor but no metric. None of these foundational frameworks answers the most basic mathematical question about brand perception: *what does it mean for two brands to be "close" or "far apart" in the space of consumer perception?*
+Brand management is among the most economically consequential domains that lacks a formal mathematical foundation. The global value of the top 100 brands exceeds \$8 trillion (Brand Finance, 2025), yet the theoretical frameworks used to analyze, compare, and optimize brand perception remain fundamentally qualitative. Keller's (1993) Customer-Based Brand Equity model provides a conceptual hierarchy but no distance function. Aaker's (1997) brand personality dimensions generate survey scores but no geometry. Kapferer's (2008, 4th ed.) brand identity prism offers a visual metaphor but no metric. None of these foundational frameworks answers the most basic mathematical question about brand perception: *what does it mean for two brands to be "close" or "far apart" in the space of consumer perception?* (see Zharnikov, 2026c, for a comprehensive survey of geometric approaches that have been applied to brand perception and the formal gap that persists across all of them)
 
 This absence of formal structure is not merely an aesthetic shortcoming. Without a metric, there is no principled way to quantify brand differentiation, define the boundaries of observer cohorts, assess whether a rebranding has moved a brand "far enough" from its prior position, or determine how many truly distinguishable brand positions exist in a market. These are geometric questions that require geometric answers.
 
@@ -63,7 +63,7 @@ A **pseudo-metric** relaxes (M2) to require only $d(x, x) = 0$, permitting $d(x,
 
 ### 2.2 SBT Dimensional Architecture
 
-Spectral Brand Theory (Zharnikov, 2026a) models brand perception through an eight-dimensional signal architecture. The eight dimensions are:
+Spectral Brand Theory (Zharnikov, 2026a) models brand perception through an eight-dimensional signal architecture. The epistemic foundations of how signals from multiple sources and dimensions are reconciled into a coherent brand perception are developed in Zharnikov (2026b). The eight dimensions are:
 
 | Index | Dimension | Description |
 |-------|-----------|-------------|
@@ -81,6 +81,10 @@ A brand's **emission profile** is a vector $s = (s_1, \ldots, s_8) \in \mathbb{R
 An **observer spectral profile** in SBT comprises five components: spectrum (which dimensions the observer can perceive), weights (relative importance of each dimension), tolerances (how much deviation the observer accepts), priors (accumulated beliefs from prior encounters), and an identity gate (hard matching criterion). For the metric formalization, we focus on the weight component, which determines the observer's salience structure.
 
 An observer's **weight profile** is a vector $w = (w_1, \ldots, w_8) \in \Delta^7$ representing the relative importance the observer assigns to each dimension. The constraint $\sum_{i=1}^8 w_i = 1$ reflects the assumption that salience is a finite resource: increasing attention to one dimension necessarily reduces attention to others.
+
+### 2.2.1 Relationship to Aaker's Brand Personality Dimensions
+
+A natural question arises: how do SBT's eight dimensions relate to Aaker's (1997) five-factor Brand Personality Scale---Sincerity, Excitement, Competence, Sophistication, and Ruggedness---the most widely cited multi-dimensional brand measurement instrument in marketing? The two frameworks are not competing alternatives; they operate at fundamentally different levels of analysis. Aaker's five factors measure brand *personality*: the anthropomorphic traits that consumers project onto brands through a process of human-to-brand analogical mapping. These factors emerge from factor analysis of personality-trait adjectives applied to brands---they describe how consumers humanize a brand, not how the brand generates signals. SBT's eight dimensions, by contrast, measure brand *perception* as signal decomposition across typed emission channels: semiotic identity, narrative content, ideological positioning, experiential quality, social affiliation, economic accessibility, cultural resonance, and temporal heritage. These dimensions were derived from empirical analysis of what distinct types of signals brands actually emit, not from factor analysis of personality descriptors. The two frameworks are complementary: brand personality (in Aaker's sense) is best understood as one component of SBT's narrative dimension---the anthropomorphic layer of a brand's storytelling---rather than as an alternative dimensional architecture. A brand that scores high on "Sophistication" in Aaker's framework is, in SBT terms, emitting strong signals on the semiotic, economic (exclusivity), and cultural dimensions simultaneously. SBT's eight-dimensional structure captures this multi-channel emission explicitly; Aaker's five factors compress it into a single anthropomorphic summary.
 
 ### 2.3 The Measurement Problem
 
@@ -792,6 +796,8 @@ Viazovska, M. S. (2017). The sphere packing problem in dimension 8. *Annals of M
 Zharnikov, D. (2026a). Spectral Brand Theory: A multi-dimensional framework for brand perception analysis. Working Paper.
 
 Zharnikov, D. (2026b). The alibi problem: Epistemic foundations of multi-source data reconciliation. Working Paper.
+
+Zharnikov, D. (2026c). Geometric approaches to brand perception: A critical survey and research agenda. Working Paper.
 
 Zharnikov, D. (2026e). Spectral metamerism in brand perception: Projection bounds from high-dimensional geometry. Working Paper.
 

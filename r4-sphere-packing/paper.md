@@ -211,6 +211,8 @@ This $E_8$-based estimate falls between the simple lower and upper bounds, as ex
 
 ### 4.3 The Kissing Number: Specialist vs. Generalist Decomposition
 
+**Interpretive note.** The result that follows establishes a precise mathematical property of the $E_8$ lattice in eight dimensions. It is important to read the competitive interpretation as structurally motivated analogy, not empirical claim: real brand competition is asymmetric, category-bounded, and observer-dependent in ways that no lattice model captures. The 112/128 decomposition and the 240 kissing number describe the geometry of the optimal packing arrangement, not regularities observed in markets.
+
 **Proposition 2** (Local competition). *Each brand position in the $E_8$ lattice packing has exactly 240 nearest-neighbor positions -- the maximum possible in 8 dimensions. These 240 neighbors decompose into two structurally distinct classes:*
 
 *(a) 112 "specialist" vectors of the form $(\pm 1, \pm 1, 0, 0, 0, 0, 0, 0)$ in all permutations of coordinates. These are concentrated on exactly 2 of the 8 dimensions.*
@@ -442,7 +444,13 @@ The positioning capacity analysis provides quantitative context for Zharnikov (2
 
 Zharnikov (2026f) showed that 57% of $\Delta^7$ lies within relative distance 0.10 of a cohort boundary. The positioning capacity analysis reveals the complement: even with $10^8$ positions available, concentration pushes actual brand profiles toward thin shells. Both "who is observing" and "where brands are" concentrate in geometrically constrained regions, despite the theoretical abundance of the full space.
 
-### 10.3 Future Directions
+### 10.3 Tension with Empirical Brand Growth Research
+
+The capacity analysis above establishes a theoretical upper bound on positioning diversity. A productive tension arises from empirical work by Sharp (2010), whose analysis of market data shows that most real markets converge on a small number of highly salient brands regardless of the theoretical positioning space available. Sharp argues that mental availability and physical availability -- not differentiated positioning -- drive brand growth, and that brand differentiation strategies are routinely overstated as competitive advantages. This directly challenges the prescriptive implication that brands should "exploit 8-dimensional white space."
+
+The two frameworks are asking different questions, and the distinction is essential. This paper asks: *how many brands CAN a market hold?* Sharp asks: *how many brands DO consumers consider?* The theoretical capacity of $10^8$ positions is a mathematical ceiling; Sharp's findings establish that the practical consideration set is bounded at far fewer alternatives, because most consumers do not perceive or value dimensional differentiation across all eight axes in any given product category. The gap between these figures -- between geometric capacity and practical salience -- represents an opportunity cost that future empirical work should quantify. Brands that successfully occupy distinct 8-dimensional positions may still fail to convert that distinction into mental availability if the dimensions they differentiate on are not perceptually salient to the relevant observer cohorts.
+
+### 10.4 Future Directions
 
 Natural extensions include: (1) **empirical calibration of $\varepsilon$** via JND experiments adapted from psychophysics; (2) **anisotropic packing** with dimension-specific thresholds; (3) **observer-dependent capacity** by integrating packing bounds over observer distributions on $\Delta^7$; (4) **dynamic capacity** as the metric evolves under signal decay and crystallization, connecting to R6 (Zharnikov, forthcoming); (5) **empirical dimensionality estimation** via PCA on observed brand profiles to test Proposition 5; and (6) **category-level analysis** comparing observed saturation patterns against predicted capacity at estimated effective dimensionality.
 
@@ -511,6 +519,8 @@ Lancaster, K. J. (1966). A new approach to consumer theory. *Journal of Politica
 Pfender, F., & Zong, G. M. (2004). Kissing numbers, sphere packings, and some unexpected proofs. *Notices of the American Mathematical Society*, 51(8), 873--883.
 
 Ries, A., & Trout, J. (1981). *Positioning: The Battle for Your Mind*. McGraw-Hill.
+
+Sharp, B. (2010). *How brands grow: What marketers don't know*. Oxford University Press.
 
 Viazovska, M. S. (2017). The sphere packing problem in dimension 8. *Annals of Mathematics*, 185(3), 991--1015.
 
