@@ -341,7 +341,7 @@ This connects to SBT's concept of coherence types. The $A+$ (ecosystem) coherenc
 
 ### 6.3 Empirical Estimates of Dimensional Correlation
 
-Among the SBT case studies, Hermes ($A+$) has the most uniform profile (high across all dimensions, suggesting high within-brand correlation), while Tesla ($C-$) has the most variable profile (very high on narrative, very low on ideological and temporal, suggesting greater dimensional independence). The critical point is that correlation structure may vary by *category*: luxury goods may have inherently correlated dimensions (semiotic $\leftrightarrow$ cultural $\leftrightarrow$ temporal), while technology may have more independent dimensions (experiential vs. economic vs. ideological). Category-level correlation structure determines positioning capacity as much as raw dimensionality.
+Among the SBT case studies, Hermes ($A+$) has the most uniform profile (high across most dimensions, though the Economic dimension (3.0) is a notable exception to this general pattern, suggesting high within-brand correlation overall), while Tesla ($C-$) has the most variable profile (very high on narrative, very low on ideological and temporal, suggesting greater dimensional independence). The critical point is that correlation structure may vary by *category*: luxury goods may have inherently correlated dimensions (semiotic $\leftrightarrow$ cultural $\leftrightarrow$ temporal), while technology may have more independent dimensions (experiential vs. economic vs. ideological). Category-level correlation structure determines positioning capacity as much as raw dimensionality.
 
 ---
 
