@@ -465,7 +465,7 @@ Several limitations should be acknowledged.
 
 **Cascade linearity.** The cascade model assumes linear coupling ($x_{i+1} = \gamma f(x_i) + (1-\gamma)z_{i+1}$). Real organizational cascades may be nonlinear: purpose may strongly constrain values on some dimensions while leaving others free, rather than constraining all dimensions equally. A nonlinear cascade model would produce dimension-dependent reduction rather than the uniform reduction assumed here.
 
-**Static analysis.** The paper analyzes the specification space at a single point in time. Real organizations evolve, and their activation matrices change as they adapt to environments, learn from experience, and respond to external pressures. A dynamic extension would model organizational evolution as trajectories in $[0,1]^{48}$, connecting to the diffusion-on-manifolds framework developed in Zharnikov (2026-R6, forthcoming).
+**Static analysis.** The paper analyzes the specification space at a single point in time. Real organizations evolve, and their activation matrices change as they adapt to environments, learn from experience, and respond to external pressures. A dynamic extension would model organizational evolution as trajectories in $[0,1]^{48}$, connecting to the diffusion-on-manifolds framework developed in Zharnikov (2026j).
 
 ### 9.2 Extensions
 
@@ -507,8 +507,6 @@ Bellman, R. E. (1957). *Dynamic Programming*. Princeton University Press.
 
 Eppinger, S. D., & Browning, T. R. (2012). *Design Structure Matrix Methods and Applications*. MIT Press.
 
-Galbraith, J. R. (2014). *Designing Organizations: Strategy, Structure, and Process at the Business Unit and Enterprise Levels* (3rd ed.). Jossey-Bass.
-
 Kauffman, S. A. (1993). *The Origins of Order: Self-Organization and Selection in Evolution*. Oxford University Press.
 
 Keller, K. L. (1993). Conceptualizing, measuring, and managing customer-based brand equity. *Journal of Marketing*, 57(1), 1--22.
@@ -546,3 +544,5 @@ Zharnikov, D. (2026d). Brand space geometry: A formal metric for multi-dimension
 Zharnikov, D. (2026e). Spectral metamerism in brand perception: Projection bounds from high-dimensional geometry. Working Paper.
 
 Zharnikov, D. (2026i). The Organizational Schema Theory: Test-driven business design. Working Paper.
+
+Zharnikov, D. (2026j). Non-ergodic brand perception: Diffusion dynamics on multi-dimensional perceptual manifolds. Working Paper. https://doi.org/10.5281/zenodo.18945659

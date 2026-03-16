@@ -8,7 +8,7 @@ Working Paper -- March 2026
 
 ## Abstract
 
-Traditional brand evaluation compresses multi-dimensional perception into scalar grades -- "Brand Health Scores," letter grades, Net Promoter Scores -- yet the information cost of this compression has never been formally quantified. This paper introduces *spectral metamerism* to brand theory: the phenomenon whereby structurally distinct brand profiles produce identical scalar evaluations, analogous to physically different light spectra producing identical color percepts. Drawing on Spectral Brand Theory (SBT), which models brands as emitters across eight typed dimensions perceived by heterogeneous observers, we prove that metamerism is not a correctable measurement artifact but a geometric inevitability of dimensionality reduction. Applying the Johnson-Lindenstrauss lemma, we show that projecting $\mathbb{R}^8$ to $\mathbb{R}^1$ requires distortion exceeding 152% for as few as 10 brands and 198% for 50 brands. The projection creates a 7-dimensional null space -- a subspace of "invisible" brand differences that no scalar grade can detect. Information-theoretically, a 5-point grade captures 2.32 bits of a $\sim$20-bit 8-dimensional profile, retaining 11.6% of the available information. Monte Carlo simulations confirm that 31--39% of brand pairs are metameric under random projection. We formalize the distinction between *rasterized* brand management (human projection, inherently lossy) and *vectorized* brand management (computed projections from a full-dimensional specification), arguing that SBT's 8-dimensional spectral profile is not optional complexity but the minimum resolution required to avoid metameric collapse. The results establish formal bounds on when scalar grades suffice and when full spectral profiles are necessary, connecting to MDS dimensionality selection and survey instrument design.
+Traditional brand evaluation compresses multi-dimensional perception into scalar grades -- "Brand Health Scores," letter grades, Net Promoter Scores -- yet the information cost of this compression has never been formally quantified. (Examples of widely used scalar brand valuation systems include BrandZ (Kantar), Interbrand Best Global Brands, and BAV (Young & Rubicam); the critique applies to any system that reduces multi-dimensional brand perception to a single scalar output.) This paper introduces *spectral metamerism* to brand theory: the phenomenon whereby structurally distinct brand profiles produce identical scalar evaluations, analogous to physically different light spectra producing identical color percepts. Drawing on Spectral Brand Theory (SBT), which models brands as emitters across eight typed dimensions perceived by heterogeneous observers, we prove that metamerism is not a correctable measurement artifact but a geometric inevitability of dimensionality reduction, under the assumption that brand perception operates in a multi-dimensional space with more dimensions than typical scalar measures capture. Applying the Johnson-Lindenstrauss lemma, we show that projecting $\mathbb{R}^8$ to $\mathbb{R}^1$ requires distortion exceeding 152% for as few as 10 brands and 198% for 50 brands. The projection creates a 7-dimensional null space -- a subspace of "invisible" brand differences that no scalar grade can detect. Information-theoretically, a 5-point grade captures 2.32 bits of a $\sim$20-bit 8-dimensional profile, retaining 11.6% of the available information. Monte Carlo simulations confirm that 31--39% of brand pairs are metameric under random projection. We formalize the distinction between *rasterized* brand management (human projection, inherently lossy) and *vectorized* brand management (computed projections from a full-dimensional specification), arguing that SBT's 8-dimensional spectral profile is not optional complexity but the minimum resolution required to avoid metameric collapse. The results establish formal bounds on when scalar grades suffice and when full spectral profiles are necessary, connecting to MDS dimensionality selection and survey instrument design.
 
 **Keywords**: spectral metamerism, Johnson-Lindenstrauss lemma, dimensionality reduction, brand perception, null space, information loss, Spectral Brand Theory
 
@@ -146,6 +146,8 @@ The crucial difference is scale: in color science, the null space is infinite-di
 
 ### 3.3 Constructive Example from Case Studies
 
+*Note: For expository clarity, this example uses raw profile scores rather than Aitchison-transformed distances. The formal analysis in Sections 4--7 operates in Aitchison geometry throughout.*
+
 Consider the Hermes-Tesla pair. In 8D Aitchison space, their distance is 1.76 -- the maximum in the case-study set. They receive grades of A+ and C- respectively, which are maximally separated on the 5-point scale. This is a case where the 1D projection happens to preserve the 8D ordering.
 
 Now consider a constructive metameric pair. Suppose Brand X has profile $(9.5, 9.0, 7.0, 9.0, 8.5, 3.0, 9.0, 9.5)$ -- identical to Hermes -- and Brand Y has profile $(3.0, 3.0, 9.5, 3.0, 3.0, 9.5, 3.0, 3.0)$. Brand Y is a hypothetical ideologically-driven, economically-positioned brand with minimal signal on all other dimensions. Under a simple average projection $\phi(s) = \frac{1}{8}\sum_k s_k$, Hermes scores $(9.5 + 9.0 + 7.0 + 9.0 + 8.5 + 3.0 + 9.0 + 9.5)/8 = 8.06$, while Brand Y scores $(3.0 + 3.0 + 9.5 + 3.0 + 3.0 + 9.5 + 3.0 + 3.0)/8 = 4.63$. These are far apart under this projection.
@@ -271,7 +273,7 @@ For the second statement: let $v \in \ker(\phi)$ be any nonzero null-space vecto
 
 We can construct explicit metameric pairs from the case-study data. Let $\phi(s) = \mathbf{u}^T \text{clr}(s)$ for some unit vector $\mathbf{u} \in \mathbb{R}^8$. Any perturbation $\delta$ in $\ker(\phi)$ (i.e., $\mathbf{u}^T \delta = 0$) produces a metameric profile: $\phi(s + \delta) = \phi(s)$.
 
-Consider Hermes with $\text{clr}(s_H) \approx (0.227, 0.173, -0.078, 0.173, 0.116, -0.926, 0.173, 0.227)$. Take the simplest projection direction $\mathbf{u} = (1, 1, 1, 1, 1, 1, 1, 1)/\sqrt{8}$ (the equal-weight direction). Then the null space consists of all vectors orthogonal to $\mathbf{1}$ -- that is, all vectors whose components sum to zero.
+Consider Hermes with $\text{clr}(s_H) \approx (0.227, 0.173, -0.078, 0.173, 0.116, -0.926, 0.173, 0.227)$. (Note: CLR values in this paper are computed using the methodology described in Section 3; minor differences from R1's Appendix A.4 values arise from intermediate rounding.) Take the simplest projection direction $\mathbf{u} = (1, 1, 1, 1, 1, 1, 1, 1)/\sqrt{8}$ (the equal-weight direction). Then the null space consists of all vectors orthogonal to $\mathbf{1}$ -- that is, all vectors whose components sum to zero.
 
 The perturbation $\delta = (0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5)$ sums to zero and thus lies in $\ker(\phi)$. The profile $\text{clr}(s_H) + \delta$ would score identically to Hermes under the equal-weight grade but would represent a brand with dramatically amplified semiotic, narrative, social, and cultural signals and suppressed ideological, experiential, economic, and temporal signals -- a qualitatively different brand architecture.
 
@@ -325,7 +327,7 @@ $$I_{\text{profile}} = n \cdot B$$
 
 $$\rho = \frac{C_{\text{grade}}}{I_{\text{profile}}} = \frac{\log_2 L}{n \cdot B}$$
 
-*For SBT's 5-point grade scale ($L = 5$) and a profile with $B = 2.5$ bits per dimension ($\approx 6$ distinguishable levels per dimension, conservative for a $[1, 10]$ scale):*
+*For SBT's 5-point grade scale ($L = 5$) and a profile with $B = 2.5$ bits per dimension ($\approx 6$ distinguishable levels per dimension, conservative for a $[1, 10]$ scale; illustrative — computed from author-constructed assumptions, not empirical data):*
 
 $$\rho = \frac{\log_2 5}{8 \times 2.5} = \frac{2.32}{20} = 11.6\%$$
 
@@ -363,7 +365,7 @@ To verify the theoretical bounds, we conduct Monte Carlo simulations using the c
 
 ### 7.2 Results
 
-Three independent trials (different random seeds):
+Three independent trials (different random seeds) *(illustrative — computed from author-constructed profiles, not empirical data)*:
 
 | Trial | Metameric Pairs | Fraction | Total Pairs |
 |:---:|:---:|:---:|:---:|
