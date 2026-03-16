@@ -74,7 +74,7 @@ SBT decomposes brand signals across eight dimensions, each representing a distin
 
 **Table 1.** The eight perceptual dimensions of brand signal architecture.
 
-The eight dimensions emerged from a synthesis of prior frameworks. Kapferer's (2008) "physique" maps to the semiotic dimension; his "culture" maps to cultural and ideological; his "relationship" maps to experiential and social. Aaker's (1996) functional benefits map to experiential and economic; emotional benefits to social and cultural; self-expressive benefits to ideological and social. Holt's (2004) cultural branding theory maps to a combination of ideological and cultural dimensions, treating brands as cultural artifacts that derive meaning from their position in cultural discourse. De Chernatony & McDonald's (2003) brand management framework similarly addresses the multi-faceted nature of brand meaning but treats the facets as brand properties rather than observer-dependent perceptual channels. The temporal dimension — heritage and time-depth — appears in prior work as an attribute of specific brands but has not been modeled as a universal perceptual channel. Our demonstration suggests it should be.
+The eight dimensions emerged from a synthesis of prior frameworks. Kapferer's (2008) "physique" maps to the semiotic dimension; his "culture" maps to cultural and ideological; his "relationship" maps to experiential and social. Aaker's (1996) functional benefits map to experiential and economic; emotional benefits to social and cultural; self-expressive benefits to ideological and social. Holt's (2004) cultural branding theory maps to a combination of ideological and cultural dimensions, treating brands as cultural artifacts that derive meaning from their position in cultural discourse. De Chernatony & McDonald's (2003) brand management framework similarly addresses the multi-faceted nature of brand meaning but treats the facets as brand properties rather than observer-dependent perceptual channels. The temporal dimension — heritage and time-depth — appears in prior work as an attribute of specific brands but has not been modeled as a universal perceptual channel. Our exploratory analysis suggests it should be.
 
 Each signal carries three properties:
 
@@ -197,7 +197,7 @@ We demonstrated SBT through structured analysis of five brands selected to span 
 | Hermès | Scarcity-based luxury, structural absence strategy | Ecosystem coherence |
 | Erewhon | Hyperlocal niche, mediated perception dominance | Experiential asymmetry |
 
-**Table 3.** Five case-study brands and selection rationale.
+**Table 3.** Five case-study brands and selection rationale (exploratory demonstration).
 
 The five brands were chosen to stress-test different properties of the framework: Patagonia tests ideological filtering; Tesla tests extreme observer divergence and ambient signal dominance; IKEA tests consistent signal architecture at global scale; Hermès tests scarcity-based value creation and cross-cohort interdependence; Erewhon tests the framework's minimum viable scale and mediated perception dynamics.
 
@@ -220,7 +220,7 @@ Each brand analysis was followed by a structured insight assessment that evaluat
 
 ### 3.4 Limitations of the Demonstration Approach
 
-The validation has several methodological limitations that must be acknowledged.
+The demonstration has several methodological limitations that must be acknowledged.
 
 First, observer weight assignments are expert estimates informed by behavioral inference, not empirically measured through surveys or experiments. The weights are most defensible for polarized brands (Tesla), where stated purchase behavior makes dimensional priorities visible, and least defensible for inaccessible cohorts (Hermès heritage collectors). Future work should validate weight assignments through conjoint analysis or behavioral experiments.
 
