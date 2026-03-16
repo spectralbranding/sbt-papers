@@ -541,7 +541,7 @@ $$d_{w_\beta}(\text{Hermes}, \text{Patagonia}) \approx 0.40$$
 
 Here the distance spread is much narrower ($0.28$ vs. $0.40$, compared to the $0.32$ vs. $0.74$ spread for Hermes-IKEA), because Hermes and Patagonia differ on dimensions that both observers attend to (semiotic design vs. purposeful utility is visible to the aesthete; both have moderate economic positioning visible to the pragmatist).
 
-These results validate the central claim of the metric framework: brand distance is not an objective quantity but a function of the observer's attentional structure. The metric formalizes what SBT describes qualitatively -- that different observer cohorts inhabit genuinely different brand landscapes.
+These results demonstrate the central claim of the metric framework: brand distance is not an objective quantity but a function of the observer's attentional structure. The metric formalizes what SBT describes qualitatively -- that different observer cohorts inhabit genuinely different brand landscapes.
 
 ---
 
@@ -591,13 +591,13 @@ This paper provides the foundation for the Mathematical Foundations of Spectral 
 
 ## 10. Conclusion
 
-This paper has defined the first formal metric space for multi-dimensional brand perception. Three metric spaces have been constructed, each with proved properties:
+This paper has defined, to the best of our knowledge, the first formal metric space for multi-dimensional brand perception. Three metric spaces have been constructed, each with proved properties:
 
 1. The **brand signal space** $(\mathcal{B}, d_{\mathcal{B}})$, where $\mathcal{B} = \mathbb{R}^8_+$ is equipped with the Aitchison metric. The metric is justified by the compositional nature of brand profiles and the logarithmic scaling of perceptual intensity (Weber-Fechner law). Geodesics in Aitchison space correspond to power interpolations that preserve the ratio structure of brand profiles.
 
 2. The **observer weight space** $(\mathcal{O}, d_{\mathcal{O}})$, where $\mathcal{O} = \Delta^7_\circ$ is equipped with the Fisher-Rao metric. The metric is uniquely justified by Cencov's theorem as the only distance invariant under sufficient-statistic transformations. Geodesics bulge toward the simplex center, implying that intermediate observers are more open-minded than linear averaging predicts.
 
-3. The **combined brand-observer space** $(\mathcal{P}, D)$, formalized as a warped product manifold with observer weights distorting the brand-space metric. The construction generalizes the INDSCAL model, connecting fifty years of psychometric empirical validation to a rigorous differential-geometric foundation.
+3. The **combined brand-observer space** $(\mathcal{P}, D)$, formalized as a warped product manifold with observer weights distorting the brand-space metric. The construction generalizes the INDSCAL model, connecting fifty years of psychometric empirical work to a rigorous differential-geometric foundation.
 
 We have established concentration-of-measure bounds at $n = 8$ (providing a null model for meaningful brand differentiation), proved that the positive-octant restriction compresses brand space to $1/256$ of the full sphere (quantifying the geometric difficulty of differentiation), and demonstrated the metric's behavior on five case-study brands.
 
