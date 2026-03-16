@@ -74,7 +74,7 @@ SBT decomposes brand signals across eight dimensions, each representing a distin
 
 **Table 1.** The eight perceptual dimensions of brand signal architecture.
 
-The eight dimensions emerged from a synthesis of prior frameworks. Kapferer's (2008) "physique" maps to the semiotic dimension; his "culture" maps to cultural and ideological; his "relationship" maps to experiential and social. Aaker's (1996) functional benefits map to experiential and economic; emotional benefits to social and cultural; self-expressive benefits to ideological and social. Holt's (2004) cultural branding theory maps to a combination of ideological and cultural dimensions, treating brands as cultural artifacts that derive meaning from their position in cultural discourse. De Chernatony & McDonald's (2003) brand management framework similarly addresses the multi-faceted nature of brand meaning but treats the facets as brand properties rather than observer-dependent perceptual channels. The temporal dimension — heritage and time-depth — appears in prior work as an attribute of specific brands but has not been modeled as a universal perceptual channel. Our validation suggests it should be.
+The eight dimensions emerged from a synthesis of prior frameworks. Kapferer's (2008) "physique" maps to the semiotic dimension; his "culture" maps to cultural and ideological; his "relationship" maps to experiential and social. Aaker's (1996) functional benefits map to experiential and economic; emotional benefits to social and cultural; self-expressive benefits to ideological and social. Holt's (2004) cultural branding theory maps to a combination of ideological and cultural dimensions, treating brands as cultural artifacts that derive meaning from their position in cultural discourse. De Chernatony & McDonald's (2003) brand management framework similarly addresses the multi-faceted nature of brand meaning but treats the facets as brand properties rather than observer-dependent perceptual channels. The temporal dimension — heritage and time-depth — appears in prior work as an attribute of specific brands but has not been modeled as a universal perceptual channel. Our demonstration suggests it should be.
 
 Each signal carries three properties:
 
@@ -197,7 +197,7 @@ We demonstrated SBT through structured analysis of five brands selected to span 
 | Hermès | Scarcity-based luxury, structural absence strategy | Ecosystem coherence |
 | Erewhon | Hyperlocal niche, mediated perception dominance | Experiential asymmetry |
 
-**Table 3.** Five validation brands and selection rationale.
+**Table 3.** Five case-study brands and selection rationale.
 
 The five brands were chosen to stress-test different properties of the framework: Patagonia tests ideological filtering; Tesla tests extreme observer divergence and ambient signal dominance; IKEA tests consistent signal architecture at global scale; Hermès tests scarcity-based value creation and cross-cohort interdependence; Erewhon tests the framework's minimum viable scale and mediated perception dynamics.
 
@@ -244,6 +244,12 @@ Fourth, all five brands are well-known entities with extensive public informatio
 
 Fifth, the validation uses the framework's own analytical pipeline to produce the findings that validate the framework. While the four validation criteria (non-obvious, dimensionally specific, actionable, observer-differentiated) impose external constraints on what counts as a validated insight, the framework shapes which phenomena become visible. Independent validation — comparing SBT-generated findings against independently collected consumer survey data or established brand tracking metrics — would provide a stronger test of the framework's explanatory value.
 
+Sixth, the eight dimensions are presented as a working decomposition synthesized from prior frameworks (Section 2.2), not as a proven exhaustive set. Other decompositions are possible — a standalone environmental/sustainability dimension, or a functional/utilitarian dimension, might capture signal channels that the current eight subsume rather than exclude. The claim is that the eight dimensions are sufficient to demonstrate the framework's analytical architecture, not that they are the only valid decomposition. Empirical factor-analytic work on brand perception data would be needed to establish the dimensionality of the perceptual space.
+
+Seventh, the framework treats dimensional weights as independent parameters within each observer's spectral profile. In practice, perceptual dimensions may be correlated — an observer who weights ideological signals heavily may systematically discount economic signals. The independence assumption simplifies the model but may miss interaction effects that shape cloud formation.
+
+Eighth, all five case-study brands are Western-origin, consumer-facing brands analyzed in English. The framework's applicability to non-Western brands (where cultural dimension weights may differ substantially), B2B contexts (where committee-based evaluation and longer decision cycles change cloud formation dynamics), or non-English perception contexts remains untested. The eight dimensions are hypothesized to be universal perceptual channels, but their relative salience is likely culturally variable.
+
 ### 3.5 Mathematical Foundations
 
 The framework as presented in Sections 1–3 operates at the level of structured qualitative analysis: dimensions are named, observer profiles are specified, and the analytical pipeline produces assessable insights. A natural question is whether the framework's core constructs — eight-dimensional brand space, observer spectral profiles, perception clouds — admit formal mathematical treatment. A series of eight companion papers (Zharnikov, 2026c–g, 2026j, 2026h, 2026k) establishes that they do.
@@ -264,7 +270,7 @@ The research program began with a critical survey of geometric approaches to bra
 
 - **Resource allocation** (Zharnikov, 2026k): derives optimal dimensional investment prescriptions from measured cohort weight profiles and introduces the alignment gap metric, which quantifies the economic loss when founders allocate resources based on their own perceptual weights rather than their target customers'.
 
-These results transform the framework's constructs from analytical metaphors into mathematically grounded objects with provable properties. The companion papers are self-contained and do not require reading the present paper, though they build on its conceptual vocabulary. All are available as working papers on Zenodo.
+These results transform the framework's constructs from analytical metaphors into mathematically grounded objects with provable properties. The companion papers are self-contained and do not require reading the present paper, though they build on its conceptual vocabulary. All are available as working papers on Zenodo.^[The complete companion paper series is available as a collection at the Zenodo community page: zenodo.org/communities/spectral-branding.]
 
 ---
 
@@ -379,7 +385,7 @@ graph TD
 
 Our analysis of Tesla revealed a counterintuitive structural property of brand perception: evidence-free negative convictions can be more stable than evidence-rich positive ones.
 
-The Tesla Progressive Boycotter cohort holds a brand conviction with 0.82 confidence (classified as "strong"). This conviction is constructed from an ideological weight of 0.45 and a social weight of 0.20 — but an experiential weight of only 0.03. The Boycotter has never driven a Tesla, never visited a showroom, never used a Supercharger. Their entire brand image is constructed from ambient ideological and social signals encountered through screens.
+The Tesla Progressive Boycotter cohort holds a brand conviction with 0.82 confidence (classified as "strong"). This conviction is constructed from an ideological weight of 0.45 and a social weight of 0.20 — but an experiential weight of only 0.03. The Boycotter has never driven a Tesla, never visited a showroom, never used a Supercharger. Their entire brand perception is constructed from ambient ideological and social signals encountered through screens.
 
 The Tesla Tech Loyalist, who drives the car daily and has extensive product data, holds a conviction with 0.78 confidence — lower than the Boycotter's.
 
@@ -471,6 +477,8 @@ SBT does not replace existing brand frameworks. It explains why each of them wor
 Aaker's (1996) brand identity system describes the signal side of the equation — what the brand intends to emit — but lacks the observer model that explains why the same identity produces different perceptions in different cohorts. Kapferer's (2008) prism comes closest to SBT's dimensional approach, with its six facets mapping loosely to SBT's eight dimensions, but treats the facets as properties of the brand rather than perceptual channels through which observers filter signals. Schmitt's (1999) experiential marketing modules (SENSE, FEEL, THINK, ACT, RELATE) decompose the experiential domain; SBT's Experiential dimension encompasses these as sub-types, situating them within a multi-dimensional field where experiential signals interact with and can be overridden by ideological, social, and economic signals. Oswald's (2012) application of Peircean semiotics to brand strategy grounds SBT's Semiotic dimension; SBT extends this by treating semiotic signals as one of eight perceptual channels rather than the primary analytical lens.
 
 Keller's (1993) customer-based brand equity is the most direct predecessor: equity lives in the customer's mind, brand knowledge equals awareness plus image. SBT extends Keller by modeling the customer as a heterogeneous population rather than a single model, by formalizing the perception-to-conviction pipeline, and by introducing the re-collapse mechanism that explains how brand equity is lost and rebuilt.
+
+Hatch & Schultz (2010) anticipated SBT's observer-as-co-creator thesis by proposing that brand identity is co-created through stakeholder interactions rather than unilaterally defined by the firm. SBT operationalizes this by making the co-creation mechanism explicit: the observer's spectral profile is the formal instrument of co-creation, and the perception cloud is its product. Urde's (2013) corporate brand identity matrix provides a structured approach to the brand's intended identity — what SBT would call the designed signal architecture — but without the observer model that explains how different cohorts interpret that architecture differently. Park, MacInnis & Priester (2010) distinguish brand attachment from brand attitude strength — a distinction SBT captures as the difference between cloud stability (how resistant the perception cloud is to disruption) and collapse confidence (how certain the conviction is). Swaminathan, Stilley & Ahluwalia (2009) demonstrate that individual differences moderate brand personality effects — direct evidence for the kind of observer heterogeneity SBT formalizes through spectral profiles.
 
 Sharp's (2010) empirical challenge to brand differentiation — building on the double jeopardy patterns documented by Ehrenberg, Goodhardt, & Barwise (1990) — is complementary rather than contradictory. Sharp describes acquisition: passing the identity gate widely (SBT's "gate permeability"). SBT describes what happens *after* the gate: how different observers cluster signals differently and form different convictions. The frameworks address different stages of the same pipeline.
 
@@ -668,6 +676,8 @@ Festinger, L. (1957). *A theory of cognitive dissonance*. Stanford University Pr
 
 Fishbein, M., & Ajzen, I. (1975). *Belief, attitude, intention and behavior: An introduction to theory and research*. Addison-Wesley.
 
+Hatch, M. J., & Schultz, M. (2010). Toward a theory of brand co-creation with implications for brand governance. *Journal of Brand Management*, 17(8), 590–604.
+
 Holt, D. B. (2004). *How brands become icons: The principles of cultural branding*. Harvard Business Press.
 
 Kahneman, D. (2011). *Thinking, fast and slow*. Farrar, Straus and Giroux.
@@ -694,6 +704,8 @@ Muniz, A. M., & O'Guinn, T. C. (2001). Brand community. *Journal of Consumer Res
 
 Oswald, L. R. (2012). *Marketing semiotics: Signs, strategies, and brand value*. Oxford University Press.
 
+Park, C. W., MacInnis, D. J., & Priester, J. R. (2010). Brand attachment and brand attitude strength: Conceptual and empirical differentiation of two critical brand equity drivers. *Journal of Marketing*, 74(6), 1–17.
+
 Peirce, C. S. (1931–1958). *Collected papers of Charles Sanders Peirce* (C. Hartshorne & P. Weiss, Eds., Vols. 1–6). Harvard University Press.
 
 Peters, O. (2019). The ergodicity problem in economics. *Nature Physics*, 15, 1216–1221. https://doi.org/10.1038/s41567-019-0732-0
@@ -705,6 +717,10 @@ Schmitt, B. H. (1999). *Experiential marketing*. Free Press.
 Sharp, B. (2010). *How brands grow: What marketers don't know*. Oxford University Press.
 
 Spence, M. (1973). Job market signaling. *The Quarterly Journal of Economics*, 87(3), 355–374.
+
+Swaminathan, V., Stilley, K. M., & Ahluwalia, R. (2009). When brand personality matters: The moderating role of attachment styles. *Journal of Consumer Research*, 35(6), 985–1002.
+
+Urde, M. (2013). The corporate brand identity matrix. *Journal of Brand Management*, 20(9), 742–761.
 
 Vargo, S. L., & Lusch, R. F. (2004). Evolving to a new dominant logic for marketing. *Journal of Marketing*, 68(1), 1–17.
 
