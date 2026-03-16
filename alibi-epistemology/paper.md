@@ -151,7 +151,7 @@ The domain transfer from financial processing to brand perception preserves all 
 
 The financial pipeline has one observer: the system. Its weights are fixed (vendor 0.30, amount 0.40, date 0.20, location 0.15). Every atom is processed through the same scoring function.
 
-Brand perception has *many* observers, each with different weights. A Gen-Z consumer weights social signals at 0.40 and cultural at 0.30. A B2B buyer weights economic at 0.40 and experiential at 0.35. Same signals, different weights, different clouds, different facts.
+Brand perception has *many* observers, each with different weights. A Gen-Z consumer weights social signals at 0.40 and cultural at 0.30. A B2B buyer weights economic at 0.40 and experiential at 0.35. (These cohort labels are used here as shorthand for observers with characteristic weight patterns, not as demographic segments.) Same signals, different weights, different clouds, different facts.
 
 This is the critical extension that produces Spectral Brand Theory. The seven principles transfer directly. The pipeline stages transfer directly. But the single-observer assumption is replaced by a heterogeneous-observer model where each cohort has its own spectral profile — spectrum, weights, tolerances, and priors — that determines how they process the same signal environment.
 
@@ -197,7 +197,7 @@ Financial facts do not have valence — a confirmed purchase is neither good nor
 
 ## 6. Generalizability: Beyond Finance and Brands
 
-The atom-cloud-fact pipeline applies to any domain where heterogeneous observers perceive typed signals from multiple sources under uncertainty. Candidate domains include:
+The atom-cloud-fact pipeline is a candidate framework for any domain where heterogeneous observers perceive typed signals from multiple sources under uncertainty. Candidate domains include:
 
 | Domain | Atoms | Observers | Cloud → Fact |
 |--------|-------|-----------|-------------|
@@ -209,6 +209,12 @@ The atom-cloud-fact pipeline applies to any domain where heterogeneous observers
 **Table 4.** Candidate domains for the atom-cloud-fact architecture.
 
 The architecture's generalizability rests on a single structural condition: the domain must involve *typed observations from multiple sources that cluster under uncertainty into revisable knowledge*. Where this condition holds, the seven principles apply without modification.
+
+---
+
+## 6.1 Limitations
+
+Both the financial reconciliation architecture and SBT were developed by the same author, making the cross-domain transfer self-confirming. Independent replication of the atom-cloud-fact architecture in a domain not developed by this author would provide stronger evidence of domain-agnosticism. Each candidate domain listed in Section 6 has its own mature computational literature; structural analogy to the atom-cloud-fact pipeline does not imply novelty relative to domain-specific approaches.
 
 ---
 

@@ -8,7 +8,7 @@ Working Paper -- March 2026
 
 ## Abstract
 
-Brand perception evolves over time, yet no existing brand theory provides a formal dynamical model of this evolution. This paper models the trajectory of an observer's brand perception as a stochastic process on $S^7_+$, the positive octant of the 7-sphere in Spectral Brand Theory's (SBT) eight-dimensional perception space. Signal encounters drive Brownian motion on the manifold, signal decay introduces deterministic drift toward a neutral prior, and negative conviction creates absorbing boundaries at the octant boundary where any perceptual dimension reaches zero. We formulate a Stratonovich stochastic differential equation (SDE) on $S^7_+$ and prove four main results. First, the SDE with absorbing boundaries is well-posed with a unique strong solution up to the absorption stopping time (Theorem 1). Second, the survival probability decays as $S(t, x) \sim C(x) \exp(-\lambda_{D,1} \sigma^2 t / 2)$, where $C(x)$ depends on the initial position's distance from the boundary (Theorem 2). Third, the Dirichlet spectral gap on $S^7_+$ is $\lambda_{D,2} - \lambda_{D,1} = 48$, so mixing to the quasi-stationary distribution is faster than on the full sphere: conditioned on survival, perception trajectories are confined to the deep interior of the octant (Theorem 3). Fourth, for the absorbed process, the time average and ensemble average of any non-trivial observable diverge with probability 1 as $t \to \infty$, establishing non-ergodicity in the precise sense of Peters (2019) (Theorem 4). Application to five case-study brands shows that the absorption risk ordering -- Tesla (C-) > Erewhon (B-) > IKEA (A-) > Patagonia (B+) > Hermes (A+) -- nearly matches the SBT coherence grading (Proposition 5), with one inversion (IKEA/Patagonia) explained by coherence-type-dependent drift strength, providing the first formal connection between brand coherence and stochastic stability. The results formalize SBT's ergodicity coefficient as $\varepsilon \sim 1/\tau_{\text{mix}}$, complete the dynamic extension of the static metric framework established in Zharnikov (2026d), and establish that the distinction between *vectorized* and *rasterized* brand management is not merely practical but reflects a fundamental mathematical asymmetry between trajectory-level and snapshot-level information.
+Brand perception evolves over time, yet no existing brand theory provides a formal dynamical model of this evolution. This paper models the trajectory of an observer's brand perception as a stochastic process on $S^7_+$, the positive octant of the 7-sphere in Spectral Brand Theory's (SBT) eight-dimensional perception space. Signal encounters drive Brownian motion on the manifold, signal decay introduces deterministic drift toward a neutral prior, and negative conviction creates absorbing boundaries at the octant boundary where any perceptual dimension reaches zero. We formulate a Stratonovich stochastic differential equation (SDE) on $S^7_+$ and prove four main results. First, the SDE with absorbing boundaries is well-posed with a unique strong solution up to the absorption stopping time (Theorem 1). Second, the survival probability decays as $S(t, x) \sim C(x) \exp(-\lambda_{D,1} \sigma^2 t / 2)$, where $C(x)$ depends on the initial position's distance from the boundary (Theorem 2). Third, the Dirichlet spectral gap on $S^7_+$ is $\lambda_{D,2} - \lambda_{D,1} = 48$, so mixing to the quasi-stationary distribution is faster than on the full sphere: conditioned on survival, perception trajectories are confined to the deep interior of the octant (Theorem 3). Fourth, for the absorbed process, the time average and ensemble average of any non-trivial observable diverge with probability 1 as $t \to \infty$, establishing non-ergodicity consistent with the framework of Peters (2019) (Theorem 4). Application to five case-study brands shows that the absorption risk ordering -- Tesla (C-) > Erewhon (B-) > IKEA (A-) > Patagonia (B+) > Hermes (A+) -- nearly matches the SBT coherence grading (Proposition 5), with one inversion (IKEA/Patagonia) explained by coherence-type-dependent drift strength, providing the first formal connection between brand coherence and stochastic stability. The results formalize SBT's ergodicity coefficient as $\varepsilon \sim 1/\tau_{\text{mix}}$, complete the dynamic extension of the static metric framework established in Zharnikov (2026d), and establish that the distinction between *vectorized* and *rasterized* brand management is not merely practical but reflects a fundamental mathematical asymmetry between trajectory-level and snapshot-level information.
 
 **Keywords**: stochastic differential equations on manifolds, non-ergodicity, brand perception dynamics, absorbing boundaries, Laplace-Beltrami operator, mixing time, Spectral Brand Theory
 
@@ -30,7 +30,7 @@ The gap is not merely aesthetic. Without a dynamical model, brand theory cannot 
 
 3. **Why does signal decay matter?** SBT models signal luminosity as decaying over time (emotional intensity fades, memories erode), with crystallized signals exempt from decay. This creates a competition between incoming signals and fading memory. What are the dynamical consequences?
 
-4. **Why does the D/A ratio affect trajectory stability?** SBT's designed/ambient ratio controls how much of a brand's perception is strategically managed versus emergent. The static framework observes that D/A ratios of 55--65% produce the most stable perception. A dynamical model should *derive* this from the mathematics.
+4. **Why does the D/A ratio affect trajectory stability?** SBT's designed/ambient ratio controls how much of a brand's perception is strategically managed versus emergent. The static framework observes that D/A ratios of 55--65% produce the most stable perception. A dynamical model should provide a dynamical rationale for this from the mathematics.
 
 This paper provides the missing dynamical foundation. We model an observer's evolving perception of a brand as a trajectory on $S^7_+$, the positive octant of the 7-sphere -- the natural state space for normalized perception profiles with eight non-negative components. Signal encounters drive stochastic perturbations (Brownian motion on the manifold), signal decay introduces deterministic drift (toward a neutral prior), and negative conviction creates absorbing boundaries (at the octant boundary where any dimension reaches zero). The resulting stochastic differential equation (SDE) admits a rigorous analysis using the spectral theory of the Laplace-Beltrami operator on $S^7_+$ with Dirichlet boundary conditions.
 
@@ -529,7 +529,7 @@ At $r = 0$ (all ambient), the process is pure diffusion and absorption is certai
 2. Diffusion is present enough to allow the perception to explore the neighborhood of $s/\|s\|$, creating "organic" variation that strengthens crystallization (repeatedly encountering the brand position from different angles reinforces the prior).
 3. The signal-to-noise ratio is in the range where the QSD is concentrated near $s/\|s\|$ but not degenerate.
 
-This provides a dynamical derivation of SBT's D/A Goldilocks zone: too little design ($r < 0.55$) risks absorption; too much design ($r > 0.65$) prevents the stochastic exploration that crystallizes perception.
+This provides a dynamical rationale for SBT's D/A Goldilocks zone: too little design ($r < 0.55$) risks absorption; too much design ($r > 0.65$) prevents the stochastic exploration that crystallizes perception.
 
 ### 7.4 Decay Rate and Signal Maintenance
 
@@ -604,7 +604,7 @@ Using Theorem 2 with the exact $\lambda_{D,1} = 112$ and $\sigma_0 = 0.1$ (moder
 
 $$\tau_{\text{char}} = \frac{2}{\lambda_{D,1} \sigma_0^2} = \frac{2}{112 \times 0.01} \approx 1.78$$
 
-In dimensionless units. If we calibrate the time unit as one year (assuming the observer encounters the brand approximately weekly), then $\tau_{\text{char}} = 1.78$ years represents the characteristic time for an observer to lose a perceptual dimension through random fluctuation alone.
+In dimensionless units. Under the illustrative assumption $\sigma_0 = 0.1$, if we calibrate the time unit as one year (assuming the observer encounters the brand approximately weekly), then $\tau_{\text{char}} = 1.78$ years is an illustrative estimate of the characteristic time for an observer to lose a perceptual dimension through random fluctuation alone; the actual value scales as $1/\sigma_0^2$ and will differ across contexts.
 
 The survival probability at various times, for the equal-weight initial condition $x^* = (1/\sqrt{8}, \ldots, 1/\sqrt{8})$:
 
@@ -658,7 +658,7 @@ The dynamical framework yields four strategic principles:
 
 2. **Coherence reduces absorption risk.** Proposition 5 shows that brands with higher coherence grades have lower absorption risk, because coherent signaling creates strong, consistent drift that opposes boundary approach. Incoherent signaling creates *effective diffusion* (contradictory signals that push perception in random directions) rather than effective drift.
 
-3. **The D/A ratio has an optimal range.** The dynamical derivation of the D/A Goldilocks zone (Section 7.3) provides a principled justification for SBT's 55--65% recommendation: too little design risks absorption, too much prevents crystallization.
+3. **The D/A ratio has an optimal range.** The dynamical rationale for the D/A Goldilocks zone (Section 7.3) provides a principled justification for SBT's 55--65% recommendation: too little design risks absorption, too much prevents crystallization.
 
 4. **Temporal compounding is the strongest defense.** Brands with high temporal scores benefit from slow decay rates, which extend the effective survival time. Heritage brands like Hermes have built such deep temporal compounding that their perception profiles are essentially crystallized -- they are in the reflecting-boundary regime of Section 7.1, not the absorbing-boundary regime. This is why a 187-year-old brand can survive a single negative event that would be catastrophic for a 15-year-old brand: the crystallized priors act as reflecting boundaries that bounce the perception state back toward the target.
 
@@ -670,17 +670,19 @@ Several simplifying assumptions deserve explicit acknowledgment:
 
 2. **Constant parameters**: The SDE parameters ($\kappa$, $\alpha$, $\sigma_0$, $\lambda_{\text{enc}}$) are treated as constants. In reality, they change over time as the brand evolves, the media environment shifts, and the observer ages.
 
-3. **Independent observers**: We modeled each observer's trajectory independently. In reality, observers influence each other through social signals, creating correlated trajectories. A full treatment would require a system of interacting SDEs on $S^7_+$ -- a topic for future work.
+3. **Independent observers**: We modeled each observer's trajectory independently. In reality, observers influence each other through social signals, creating correlated trajectories. If observer trajectories are positively correlated (e.g., via word-of-mouth or social media amplification), the effective variance of aggregate perception change is larger than the single-observer model predicts, potentially accelerating absorption. Negatively correlated trajectories (contrarian effects) would slow absorption. The independence assumption is most defensible for low-involvement categories where brand perception forms primarily through individual experience rather than social transmission. A full treatment would require a system of interacting SDEs on $S^7_+$ -- a topic for future work.
 
 4. **Continuous approximation**: The Brownian motion model treats signal encounters as continuous, while real encounters are discrete events. The continuous approximation is valid when the encounter rate $\lambda_{\text{enc}}$ is large relative to the observation time scale, which holds for major consumer brands but may fail for niche brands with very low encounter rates.
 
 5. **Eigenfunction regularity**: The first Dirichlet eigenfunction $\phi_1(x) = \prod_{i=1}^8 x_i$ yields the exact eigenvalue $\lambda_{D,1} = 112$ (Section 5.2). However, the positive octant $S^7_+$ has non-smooth boundary (eight hyperplane faces meeting at corners), and the regularity of higher eigenfunctions near these corners requires careful analysis. The spectral gap estimate $\lambda_{D,2} - \lambda_{D,1} = 48$ used in Theorem 3 depends on the second eigenfunction being smooth on the interior, which holds but deserves explicit justification in a journal submission.
 
+6. **Absorbing boundary irreversibility**: The absorbing boundary assumption treats zero-dimension perception as irreversible. Empirical exceptions exist -- brands have recovered from near-zero signals on specific dimensions through sustained re-investment (e.g., deliberate re-collapse in SBT terminology). The model may underestimate recovery probability for brands that actively restructure their emission policy.
+
 ---
 
 ## 10. Connections to the Research Program
 
-R6 completes the mathematical foundations of Spectral Brand Theory by providing the dynamical extension of the static framework established in R1--R5.
+R6 provides a dynamical component of the mathematical foundations of Spectral Brand Theory, extending the static framework established in R1--R5.
 
 **R1 (Formal Metric, Zharnikov 2026d)** defined the geometry of brand space -- the Aitchison metric on $\mathbb{R}^8_+$, the Fisher-Rao metric on $\Delta^7$, and the warped product metric on the combined space. R6 takes this geometry as given and adds dynamics: the SDE on $S^7_+$ evolves perception states within the metric structure that R1 established. The Laplace-Beltrami operator that governs the diffusion is determined by the Riemannian metric, making R6 the natural dynamical completion of R1.
 
@@ -755,10 +757,6 @@ Hsu, E. P. (2002). *Stochastic Analysis on Manifolds*. Graduate Studies in Mathe
 Kapferer, J.-N. (2008). *The New Strategic Brand Management: Creating and Sustaining Brand Equity Long Term* (4th ed.). Kogan Page.
 
 Keller, K. L. (1993). Conceptualizing, measuring, and managing customer-based brand equity. *Journal of Marketing*, 57(1), 1--22.
-
-Kent, J. T. (1982). The Fisher-Bingham distribution on the sphere. *Journal of the Royal Statistical Society: Series B*, 44(1), 71--80.
-
-
 
 Levin, D. A., Peres, Y., & Wilmer, E. L. (2009). *Markov Chains and Mixing Times*. American Mathematical Society.
 
