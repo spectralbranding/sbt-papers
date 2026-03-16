@@ -17,7 +17,7 @@ Working Paper — February 2026 (revised March 2026)
 
 ## Abstract
 
-This paper introduces Spectral Brand Theory (SBT), a computational framework that models brands as multi-dimensional signal sources perceived through observer-specific spectral profiles. Unlike traditional brand frameworks that treat brand perception as a uniform property of the brand itself, SBT formalizes the observer as an active assembler of brand meaning — each observer cohort perceives a structurally different brand from the same signal environment. The framework decomposes brand signals across eight perceptual dimensions (semiotic, narrative, ideological, experiential, social, economic, cultural, temporal), defines observer cohorts through formal spectral profiles (sensitivity, weights, tolerances), and models brand perception as probabilistic cloud formation that collapses into conviction through evidence accumulation. We validate the framework through structured analysis of five brands spanning luxury (Hermès), mass-market (IKEA), mission-driven (Patagonia), technology (Tesla), and hyperlocal niche (Erewhon). The structured analysis identifies nine candidate mechanisms, four of which are reported in depth: (1) structural absence as a brand strategy, where designed signal restriction generates value through what is not emitted; (2) a five-type coherence taxonomy, where brands with identical coherence scores exhibit fundamentally different resilience properties; (3) asymmetric conviction resilience, where evidence-free negative convictions are more stable than evidence-rich positive ones; and (4) the independence of brand power and brand health as measurable variables. The framework is computationally implementable: the entire analytical pipeline operates as a structured prompt sequence executable by large language models, compressing analysis that would require a multi-week consulting engagement into a single analytical session. Cross-model replication (Claude Opus 4.6 and Gemini 3.1 Pro across all five brands) confirms that structural conclusions are framework-driven rather than model-specific. The analyses constitute a structured demonstration of the framework's analytical capacity; empirical validation against independently collected consumer data remains for future work. An open-source toolkit is publicly available.
+This paper introduces Spectral Brand Theory (SBT), a computational framework that models brands as multi-dimensional signal sources perceived through observer-specific spectral profiles. Unlike traditional brand frameworks that treat brand perception as a uniform property of the brand itself, SBT formalizes the observer as an active assembler of brand meaning — each observer cohort perceives a structurally different brand from the same signal environment. The framework decomposes brand signals across eight perceptual dimensions (semiotic, narrative, ideological, experiential, social, economic, cultural, temporal), defines observer cohorts through formal spectral profiles (sensitivity, weights, tolerances), and models brand perception as probabilistic cloud formation that collapses into conviction through evidence accumulation. We demonstrate the framework through structured analysis of five brands spanning luxury (Hermès), mass-market (IKEA), mission-driven (Patagonia), technology (Tesla), and hyperlocal niche (Erewhon). The structured analysis identifies nine candidate mechanisms, four of which are reported in depth: (1) structural absence as a brand strategy, where designed signal restriction generates value through what is not emitted; (2) a five-type coherence taxonomy, where brands with identical coherence scores exhibit fundamentally different resilience properties; (3) asymmetric conviction resilience, where evidence-free negative convictions are more stable than evidence-rich positive ones; and (4) the independence of brand power and brand health as measurable variables. The framework is computationally implementable: the entire analytical pipeline operates as a structured prompt sequence executable by large language models, compressing analysis that would require a multi-week consulting engagement into a single analytical session. Cross-model replication (Claude Opus 4.6 and Gemini 3.1 Pro across all five brands) confirms that structural conclusions are framework-driven rather than model-specific. The analyses constitute a structured demonstration of the framework's analytical capacity; empirical validation against independently collected consumer data remains for future work. An open-source toolkit is publicly available.
 
 **Keywords:** brand perception, computational branding, observer heterogeneity, brand coherence, structural absence, AI-native framework
 
@@ -43,7 +43,7 @@ The framework contributes to branding theory in three ways:
 
 3. **Computational implementability.** Unlike prior branding frameworks, SBT can be directly executed as software. Signals are typed data structures. Observers are parameter sets. Perception is clustering output. Conviction is a threshold function. The entire pipeline operates as a structured prompt sequence for large language models, making multi-cohort brand analysis accessible without custom engineering.
 
-The remainder of this paper is organized as follows. Section 2 presents the theoretical framework. Section 3 describes the validation methodology. Section 4 reports findings, focusing on four novel mechanisms that emerged from the five-brand validation. Section 5 discusses implications, limitations, and future directions. Section 6 concludes.
+The remainder of this paper is organized as follows. Section 2 presents the theoretical framework. Section 3 describes the demonstration methodology. Section 4 reports findings, focusing on four candidate mechanisms that emerged from the five-brand demonstration. Section 5 discusses implications, limitations, and future directions. Section 6 concludes.
 
 ---
 
@@ -183,11 +183,11 @@ Coherence is measured through a seven-metric scorecard:
 
 ---
 
-## 3. Validation Methodology
+## 3. Demonstration Methodology
 
 ### 3.1 Design
 
-We validated SBT through structured analysis of five brands selected to span the brand architecture space:
+We demonstrated SBT through structured analysis of five brands selected to span the brand architecture space:
 
 | Brand | Selection Rationale | Architecture Type |
 |:------|:----------------------------------|:------------------|
@@ -218,7 +218,7 @@ The pipeline was executed using Claude Opus 4.6 (Anthropic) as the primary analy
 
 Each brand analysis was followed by a structured insight assessment that evaluated the top findings against the four criteria. An insight was counted as validated only if it satisfied all four criteria simultaneously. Across five brands, 25 insights were assessed by the framework's author against four criteria; all 25 were judged to satisfy the criteria. Independent blind evaluation by practitioners not familiar with the framework would provide a stronger test. The four mechanisms reported in Section 4 were selected as the most novel — insights that could not have been produced by any existing brand framework because the existing frameworks lack the necessary vocabulary.
 
-### 3.4 Limitations of the Validation Approach
+### 3.4 Limitations of the Demonstration Approach
 
 The validation has several methodological limitations that must be acknowledged.
 
