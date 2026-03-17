@@ -24,6 +24,12 @@ Eight companion papers establishing formal mathematical foundations for SBT:
 | R6 | [Non-Ergodic Brand Perception: Diffusion Dynamics on Multi-Dimensional Perceptual Manifolds](r6-diffusion-dynamics/paper.md) | [10.5281/zenodo.18945659](https://doi.org/10.5281/zenodo.18945659) | Preprint |
 | R7 | [Spectral Resource Allocation: Demand-Driven Investment in Multi-Dimensional Brand Space](r7-spectral-resource-allocation/paper.md) | [10.5281/zenodo.19009268](https://doi.org/10.5281/zenodo.19009268) | Preprint |
 
+### Cross-Framework Synthesis
+
+| Key | Paper | Zenodo DOI | Status |
+|-----|-------|------------|--------|
+| 2026l | [The Rendering Problem: From Genetic Expression to Brand Perception](rendering-problem/paper.md) | [10.5281/zenodo.19064427](https://doi.org/10.5281/zenodo.19064427) | Preprint |
+
 Key results: formal metric (R1), metamerism inevitability (R2), fuzzy cohort boundaries (R3), positioning capacity bounds (R4), specification impossibility (R5), non-ergodic dynamics (R6), demand-driven resource allocation (R7).
 
 R7 formalizes spectral resource allocation — optimal dimensional investment given measured cohort weights, alignment gap between founder and cohort profiles.
@@ -45,6 +51,15 @@ Describes the domain-agnostic epistemological architecture underlying SBT. Origi
 - [Read on GitHub](alibi-epistemology/paper.md)
 - [Zenodo DOI](https://doi.org/10.5281/zenodo.18944770)
 - [Source Code](https://github.com/viberesearch/alibi)
+
+### The Rendering Problem: From Genetic Expression to Brand Perception (Zharnikov 2026l)
+
+Proposes the Rendering Problem as a unifying structural pattern across biological and social systems: a specification (DNA, organizational schema, brand signal) is never directly perceived — it is rendered through an implementation layer, and perception is always of the rendering, not the specification. Documents three instantiations (genetic expression, organizational execution, brand perception), formalizes the structural specification gap at each transition, and argues that the gap is irreducible in principle. Connects SBT, OST, and the body-as-metadata thesis under a single formal architecture.
+
+**Keywords**: rendering problem, specification gap, brand perception, genetic expression, organizational schema, cross-framework synthesis
+
+- [Read on GitHub](rendering-problem/paper.md)
+- [Zenodo DOI](https://doi.org/10.5281/zenodo.19064427)
 
 ## How to Cite
 
@@ -138,9 +153,17 @@ Describes the domain-agnostic epistemological architecture underlying SBT. Origi
   url={https://doi.org/10.5281/zenodo.19009268},
   doi={10.5281/zenodo.19009268}
 }
+
+@article{zharnikov2026rendering,
+  title={The Rendering Problem: From Genetic Expression to Brand Perception},
+  author={Zharnikov, Dmitry},
+  year={2026},
+  url={https://doi.org/10.5281/zenodo.19064427},
+  doi={10.5281/zenodo.19064427}
+}
 ```
 
-Machine-readable citations: [SBT CITATION.cff](spectral-brand-theory/CITATION.cff) | [ACF CITATION.cff](alibi-epistemology/CITATION.cff) | [R0 CITATION.cff](r0-literature-survey/CITATION.cff) | [R1 CITATION.cff](r1-formal-metric/CITATION.cff) | [R2 CITATION.cff](r2-spectral-metamerism/CITATION.cff) | [R3 CITATION.cff](r3-cohort-boundaries/CITATION.cff) | [R4 CITATION.cff](r4-sphere-packing/CITATION.cff) | [R5 CITATION.cff](r5-specification-impossibility/CITATION.cff) | [R6 CITATION.cff](r6-diffusion-dynamics/CITATION.cff) | [R7 CITATION.cff](r7-spectral-resource-allocation/CITATION.cff)
+Machine-readable citations: [SBT CITATION.cff](spectral-brand-theory/CITATION.cff) | [ACF CITATION.cff](alibi-epistemology/CITATION.cff) | [R0 CITATION.cff](r0-literature-survey/CITATION.cff) | [R1 CITATION.cff](r1-formal-metric/CITATION.cff) | [R2 CITATION.cff](r2-spectral-metamerism/CITATION.cff) | [R3 CITATION.cff](r3-cohort-boundaries/CITATION.cff) | [R4 CITATION.cff](r4-sphere-packing/CITATION.cff) | [R5 CITATION.cff](r5-specification-impossibility/CITATION.cff) | [R6 CITATION.cff](r6-diffusion-dynamics/CITATION.cff) | [R7 CITATION.cff](r7-spectral-resource-allocation/CITATION.cff) | [Rendering Problem CITATION.cff](rendering-problem/CITATION.cff)
 
 ## Companion Repositories
 
