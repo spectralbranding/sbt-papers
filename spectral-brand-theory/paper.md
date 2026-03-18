@@ -722,6 +722,8 @@ Holt, D. B. (2004). *How brands become icons: The principles of cultural brandin
 
 Kahneman, D. (2011). *Thinking, fast and slow*. Farrar, Straus and Giroux.
 
+Kahneman, D., & Tversky, A. (1979). Prospect theory: An analysis of decision under risk. *Econometrica*, 47(2), 263-291.
+
 Kapferer, J.-N. (2008). *The new strategic brand management* (4th ed.). Kogan Page.
 
 Keller, K. L. (1993). Conceptualizing, measuring, and managing customer-based brand equity. *Journal of Marketing*, 57(1), 1–22.
