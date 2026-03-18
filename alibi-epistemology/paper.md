@@ -101,6 +101,8 @@ Seven principles govern the pipeline's operation. Each was discovered through th
 
 ### 3.1 The Reconciliation Problem
 
+The financial reconciliation problem is a variant of probabilistic record linkage — the task of identifying which records across different databases refer to the same real-world entity (Fellegi and Sunter, 1969; Christen, 2012). The atom-cloud-fact pipeline differs from classical record linkage in three respects: it operates on unstructured documents rather than database records, it maintains the three-stage epistemic separation (observation, hypothesis, knowledge) rather than collapsing directly to a match/non-match decision, and it supports the re-collapse principle (Principle 6) where established facts can be fully recalculated on new evidence. These differences are structural consequences of the pipeline's epistemological architecture rather than implementation choices.
+
 A typical business generates four document types for a single transaction: a receipt (from the vendor), an invoice (from the vendor), a bank statement (from the financial institution), and a payment confirmation (from the payment processor). These documents contain overlapping but non-identical information:
 
 | Document | Atoms Extracted | Typical Dimensions |
@@ -149,7 +151,7 @@ The domain transfer from financial processing to brand perception preserves all 
 
 ### 4.2 The Critical Extension: Heterogeneous Observers
 
-The financial pipeline has one observer: the system. Its weights are fixed (vendor 0.30, amount 0.40, date 0.20, location 0.15). Every atom is processed through the same scoring function.
+The financial pipeline has one observer: the system. Its weights are fixed (vendor 0.30, amount 0.40, date 0.20, location 0.15) — values hand-tuned during implementation to maximize reconciliation accuracy on a development dataset of approximately 500 transactions, then held constant across all subsequent processing. No formal sensitivity analysis was conducted; different datasets or business contexts would likely require recalibration. Every atom is processed through the same scoring function.
 
 Brand perception has *many* observers, each with different weights. A Gen-Z consumer weights social signals at 0.40 and cultural at 0.30. A B2B buyer weights economic at 0.40 and experiential at 0.35. (These cohort labels are used here as shorthand for observers with characteristic weight patterns, not as demographic segments.) Same signals, different weights, different clouds, different facts.
 
@@ -303,6 +305,10 @@ Dmitry Zharnikov is an independent researcher and strategist. He holds a Profess
 Alchourrón, C. E., Gärdenfors, P., & Makinson, D. (1985). On the logic of theory change: Partial meet contraction and revision functions. *The Journal of Symbolic Logic*, 50(2), 510–530.
 
 Buchanan, B. G., & Shortliffe, E. H. (1984). *Rule-based expert systems: The MYCIN experiments of the Stanford Heuristic Programming Project*. Addison-Wesley.
+
+Christen, P. (2012). *Data matching: Concepts and techniques for record linkage, entity resolution, and duplicate detection*. Springer.
+
+Fellegi, I. P., & Sunter, A. B. (1969). A theory for record linkage. *Journal of the American Statistical Association*, 64(328), 1183–1210.
 
 Dempster, A. P. (1967). Upper and lower probabilities induced by a multivalued mapping. *The Annals of Mathematical Statistics*, 38(2), 325–339.
 
