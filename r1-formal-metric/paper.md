@@ -747,7 +747,7 @@ Borg, I., & Groenen, P. J. F. (2005). *Modern Multidimensional Scaling: Theory a
 
 Brand Finance. (2025). *Global 500 2025: The Annual Report on the World's Most Valuable and Strongest Brands*. Brand Finance.
 
-Bujack, R., Teti, E., Miller, J., Caffrey, E., & Flatley, C. (2022). The non-Riemannian nature of perceptual color space. *Proceedings of the National Academy of Sciences*, 119(18), e2119753119.
+Bujack, R., Teti, E., Miller, J., Caffrey, E., & Turton, T. L. (2022). The non-Riemannian nature of perceptual color space. *Proceedings of the National Academy of Sciences*, 119(18), e2119753119.
 
 Busemeyer, J. R., & Bruza, P. D. (2012). *Quantum Models of Cognition and Decision*. Cambridge University Press.
 
