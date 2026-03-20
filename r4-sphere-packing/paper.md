@@ -67,7 +67,7 @@ Spectral Brand Theory (Zharnikov, 2026a) models brand perception through an eigh
 
 A brand's **emission profile** (spectral profile) is a vector $s = (s_1, \ldots, s_8) \in \mathbb{R}^8_+$ representing signal strength across each dimension. An observer's **weight profile** is a vector $w = (w_1, \ldots, w_8) \in \Delta^7$ representing the relative salience of each dimension to that observer.
 
-SBT distinguishes five coherence types -- ecosystem ($A+$), signal ($A-$), identity ($B+$), experiential asymmetry ($B-$), and incoherent ($C-$) -- assessed across five case-study brands: Hermes ($A+$), IKEA ($A-$), Patagonia ($B+$), Erewhon ($B-$), and Tesla ($C-$).
+SBT distinguishes five coherence types -- ecosystem ($A+$), signal ($A-$), identity ($B+$), experiential asymmetry ($B-$), and incoherent ($C-$) -- assessed across five case-study brands: Hermès ($A+$), IKEA ($A-$), Patagonia ($B+$), Erewhon ($B-$), and Tesla ($C-$).
 
 ### 2.2 Brand Space with the Aitchison Metric
 
@@ -345,7 +345,7 @@ This connects to SBT's concept of coherence types. The $A+$ (ecosystem) coherenc
 
 ### 6.3 Empirical Estimates of Dimensional Correlation
 
-Among the SBT case studies, Hermes ($A+$) has the most uniform profile (high across most dimensions, though the Economic dimension (3.0) is a notable exception to this general pattern, suggesting high within-brand correlation overall), while Tesla ($C-$) has the most variable profile (very high on narrative, very low on ideological and temporal, suggesting greater dimensional independence). The critical point is that correlation structure may vary by *category*: luxury goods may have inherently correlated dimensions (semiotic $\leftrightarrow$ cultural $\leftrightarrow$ temporal), while technology may have more independent dimensions (experiential vs. economic vs. ideological). Category-level correlation structure determines positioning capacity as much as raw dimensionality.
+Among the SBT case studies, Hermès ($A+$) has the most uniform profile (high across most dimensions, though the Economic dimension (3.0) is a notable exception to this general pattern, suggesting high within-brand correlation overall), while Tesla ($C-$) has the most variable profile (very high on narrative, very low on ideological and temporal, suggesting greater dimensional independence). The critical point is that correlation structure may vary by *category*: luxury goods may have inherently correlated dimensions (semiotic $\leftrightarrow$ cultural $\leftrightarrow$ temporal), while technology may have more independent dimensions (experiential vs. economic vs. ideological). Category-level correlation structure determines positioning capacity as much as raw dimensionality.
 
 ---
 
@@ -375,7 +375,7 @@ The specialist-to-generalist ratio is $112:128 \approx 47\%:53\%$, suggesting th
 
 ### 8.1 Luxury Fashion: High Effective Dimensionality
 
-Luxury fashion brands (Hermes, Chanel, Louis Vuitton, Gucci, Prada) arguably activate all eight SBT dimensions -- from distinctive visual identity (semiotic) through heritage depth (temporal). If these dimensions are moderately independent ($\rho \approx 0.2$), effective dimensionality is approximately 3.3, yielding a category capacity of roughly $10^3$ -- about 1,000 distinguishable luxury positions. This is consistent with the global luxury market supporting several hundred distinct houses without apparent saturation.
+Luxury fashion brands (Hermès, Chanel, Louis Vuitton, Gucci, Prada) arguably activate all eight SBT dimensions -- from distinctive visual identity (semiotic) through heritage depth (temporal). If these dimensions are moderately independent ($\rho \approx 0.2$), effective dimensionality is approximately 3.3, yielding a category capacity of roughly $10^3$ -- about 1,000 distinguishable luxury positions. This is consistent with the global luxury market supporting several hundred distinct houses without apparent saturation.
 
 If the luxury category's dimensions are more tightly correlated ($\rho \approx 0.5$, reflecting a "luxury halo" where positive signals co-occur), effective dimensionality drops to 1.8 and capacity drops to approximately 100 -- suggesting approaching saturation, a claim some industry analysts have made (Kapferer & Bastien, 2012).
 

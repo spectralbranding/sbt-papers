@@ -22,7 +22,7 @@ This paper presents a systematic survey of geometric and topological methods app
 
 ## 1. Introduction
 
-Brand theory, as it has developed over the past four decades, is strikingly under-formalized. The foundational frameworks that guide both academic research and professional practice---Aaker's (1991) brand equity model, Keller's (1993) customer-based brand equity pyramid, Kapferer's (2008, 4th ed.) brand identity prism---are taxonomic rather than mathematical. They identify components, propose relationships, and offer measurement instruments, but they do not specify the formal structure of the space in which brands exist, the metric by which brand differences should be measured, or the dynamical laws governing how brand perceptions evolve over time. A recent systematic review confirmed that "no model allows comprehensive evaluation of brand equity" in a formally rigorous sense (Chernikov, 2024).
+Brand theory, as it has developed over the past four decades, is strikingly under-formalized. The foundational frameworks that guide both academic research and professional practice---Aaker's (1991) brand equity model, Keller's (1993) customer-based brand equity pyramid, Kapferer's (2008, 4th ed.) brand identity prism---are taxonomic rather than mathematical. They identify components, propose relationships, and offer measurement instruments, but they do not specify the formal structure of the space in which brands exist, the metric by which brand differences should be measured, or the dynamical laws governing how brand perceptions evolve over time. Roy and Banerjee (2014) provided the first quantitative measurement of the brand identity-image gap using Kapferer's prism dimensions, confirming that the gap exists and varies systematically across brand attributes --- yet even this empirical advance operated within the taxonomic framework rather than a geometric one. A recent systematic review confirmed that "no model allows comprehensive evaluation of brand equity" in a formally rigorous sense (Chernikov, 2024).
 
 This absence of mathematical structure stands in sharp contrast to adjacent fields where geometric methods have produced transformative insights. In perception science, the discovery that human perceptual space is non-Euclidean---"at best Riemannian" (Todd, Oomes, Koenderink, and Kappers, 2001) and possibly non-Riemannian (Bujack, Teti, Miller, Caffrey, and Turton, 2022)---has reshaped how researchers model visual and sensory experience. In cognitive science, Gardenfors's (2000) conceptual spaces framework demonstrated that natural concepts correspond to convex regions in geometric quality-dimension spaces, providing a formal bridge between perception and categorization. In economics, Lancaster's (1966) characteristics theory recast consumer choice as navigation through an n-dimensional attribute space, while Hotelling's (1929) spatial competition model placed firms on a geometric line. In physics and machine learning, high-dimensional geometry has revealed counterintuitive phenomena---concentration of measure, the curse of dimensionality, the Johnson-Lindenstrauss projection lemma---that fundamentally alter how systems behave as dimensions increase.
 
@@ -64,7 +64,7 @@ This limitation is not unique to MDS; it is shared by all purely data-driven emb
 
 Recent work has sought to enrich MDS with probabilistic structure. Oh and Raftery (2001) developed Bayesian MDS, which provides posterior distributions over point configurations rather than point estimates. Bakker and Poole (2013) applied Bayesian ideal-point models to political positioning data. These extensions address uncertainty quantification but do not add a generative mechanism or temporal dynamics.
 
-The latent-class extensions of MDS (Bijmolt, Wedel, Pieters, and DeSarbo, 1998) allow for multiple consumer segments, each with its own spatial configuration or dimension weights. This is the closest the MDS tradition comes to modeling observer heterogeneity, but it treats segments as static, exogenous groupings rather than as emergent, dynamic observer cohorts.
+The latent-class extensions of MDS (Bijmolt, Wedel, Pieters, and DeSarbo, 1998) allow for multiple consumer segments, each with its own spatial configuration or dimension weights. This is the closest the MDS tradition comes to modeling observer heterogeneity, but it treats segments as static, exogenous groupings rather than as emergent, dynamic observer cohorts. The foundational segmentation methodology of Wedel and Kamakura (2000) established latent class models as the standard for discovering unobservable consumer heterogeneity --- the statistical predecessor to SBT's observer cohort concept.
 
 ## 3. Characteristics Space Models
 
@@ -116,7 +116,7 @@ However, four significant gaps limit its applicability to brand perception:
 
 *No temporal dynamics*. Conceptual spaces are essentially static. While Gardenfors discusses conceptual change, the framework provides no formal model of how perceptions evolve over time in response to signal encounters, no mechanism for signal decay or memory effects, and no account of path dependence.
 
-*No observer heterogeneity*. The framework assumes a universal conceptual space shared by all cognitive agents. Individual differences in how quality dimensions are weighted, how domains are organized, or how concepts are bounded are not modeled. Recent work on "personalized value spaces" (Bechberger, 2019) has begun to address this, but the field remains in its early stages.
+*No observer heterogeneity*. The framework assumes a universal conceptual space shared by all cognitive agents. Individual differences in how quality dimensions are weighted, how domains are organized, or how concepts are bounded are not modeled. Recent work on "personalized value spaces" (Bechberger, 2019) has begun to address this, but the field remains in its early stages. Grier and Brumbaugh (1999) provided direct empirical evidence that identical advertisements produce systematically different meanings in target versus non-target cultural groups --- a finding that underscores the need for observer-specific processing in any geometric brand theory.
 
 *No generative mechanism*. Conceptual spaces describe the structure of concepts but not how concepts are created through the processing of signals. There is no analog to a brand emitting signals along multiple dimensions, those signals being filtered through observer-specific processing, and the result accumulating into a perception.
 
@@ -156,7 +156,7 @@ $$d_{ijk} = \left[ \sum_{r=1}^{R} w_{kr} (x_{ir} - x_{jr})^2 \right]^{1/2}$$
 
 where $x_{ir}$ is the coordinate of stimulus $i$ on dimension $r$, and $w_{kr} \geq 0$ is the weight that subject $k$ assigns to dimension $r$. High weight means the dimension is perceptually salient for that individual; zero weight means the dimension is ignored.
 
-INDSCAL was a significant conceptual advance because it formalized the idea that the same stimulus configuration could be perceived differently by different people. The weight vector $\mathbf{w}_k = (w_{k1}, \ldots, w_{kR})$ is a profile of dimensional salience---a precursor to what SBT calls the observer spectral profile. However, INDSCAL's weights are static (estimated from a single set of judgments), non-negative but otherwise unconstrained (no normalization requirement), and estimated within the MDS framework's typical two-to-three dimensions.
+INDSCAL was a significant conceptual advance because it formalized the idea that the same stimulus configuration could be perceived differently by different people. The weight vector $\mathbf{w}_k = (w_{k1}, \ldots, w_{kR})$ is a profile of dimensional salience---a precursor to what SBT calls the observer spectral profile. However, INDSCAL's weights are static (estimated from a single set of judgments), non-negative but otherwise unconstrained (no normalization requirement), and estimated within the MDS framework's typical two-to-three dimensions. The need for careful dimensional decomposition was underscored by Azoulay and Kapferer (2003), who demonstrated that Aaker's (1997) Brand Personality Scale conflates personality traits with user imagery, blurring the boundary between what the brand is and who uses it --- a conflation that SBT's dimensional decomposition into eight distinct perceptual dimensions resolves by separating semiotic, narrative, ideological, experiential, social, economic, cultural, and temporal components.
 
 ### 6.2 Latent-Class Unfolding Models
 
@@ -246,7 +246,7 @@ Extensions to multiple dimensions (Lorenz, 2007) replace the scalar opinion with
 
 The DeGroot (1974) model provides a simpler framework for opinion dynamics, where agents update by forming weighted averages of their neighbors' opinions at each time step. Under mild connectivity conditions, the system converges to consensus. The model has been extensively studied in the context of social learning, information aggregation, and group decision-making.
 
-Golub and Jackson (2010) extended DeGroot's model to study the speed of social learning and the conditions under which a society reaches approximately correct beliefs. They showed that the rate of convergence depends on the spectral gap of the influence matrix---the difference between the largest and second-largest eigenvalues---which determines how quickly disagreements decay.
+Golub and Jackson (2010) extended DeGroot's model to study the speed of social learning and the conditions under which a society reaches approximately correct beliefs. They showed that the rate of convergence depends on the spectral gap of the influence matrix---the difference between the largest and second-largest eigenvalues---which determines how quickly disagreements decay. It is worth noting that the first application of spectral analysis methods in marketing research was MacKay (1971), who used power spectral density to analyse supermarket visit frequency --- a methodological precedent for the "spectral" framing in brand perception, though MacKay's use was time-series decomposition rather than the multi-dimensional signal decomposition central to SBT.
 
 ### 9.3 Gaps Relative to Brand Perception
 
@@ -400,7 +400,7 @@ The synthesis above identifies a compound gap at the intersection of high-dimens
 
 **Formulation.** Given $n$ brand profiles in $\mathbb{R}^8$ with pairwise distances $\{d_{ij}\}$, let $\pi: \mathbb{R}^8 \to \mathbb{R}^1$ be any linear projection (grading function). Prove that for any such $\pi$, there exist brand pairs $(A, B)$ with $d(A, B) > \delta$ but $|\pi(A) - \pi(B)| < \epsilon$, for explicitly computable $\delta, \epsilon$ depending on $n$. Derive the minimum projection dimensionality $k^*$ required to preserve all pairwise distances within factor $(1 \pm 0.1)$.
 
-**Target result.** A "metamerism is inevitable" theorem proving that scalar brand grades necessarily conflate brands that differ in their full spectral profiles, with explicit bounds showing that metamerism is not a deficiency of a particular grading system but a geometric inevitability.
+**Target result.** A "metamerism is inevitable" theorem proving that scalar brand grades necessarily conflate brands that differ in their full spectral profiles, with explicit bounds showing that metamerism is not a deficiency of a particular grading system but a geometric inevitability. Puntoni, Vanhamme, and Ruber (2011) documented purposeful polysemy in advertising --- the deliberate design of messages that activate different meanings in different audiences --- providing empirical evidence that metamerism is not merely a theoretical artifact but a phenomenon actively exploited in practice.
 
 **Companion paper.** Zharnikov (2026e) develops this problem in full, deriving JL-based distortion bounds and proving that spectral metamerism is a geometric inevitability of any dimension-reducing brand assessment.
 
@@ -476,11 +476,15 @@ Dmitry Zharnikov is an independent researcher and strategist. He holds a Profess
 
 Aaker, D. A. (1991). *Managing Brand Equity: Capitalizing on the Value of a Brand Name*. Free Press.
 
+Aaker, J. L. (1997). "Dimensions of Brand Personality." *Journal of Marketing Research*, 34(3), 347-356.
+
 Aisbett, J., and Gibbon, G. (2001). "A General Formulation of Conceptual Spaces as a Meso Level Representation." *Artificial Intelligence*, 133(1-2), 189-232.
 
 Amari, S.-i. (2016). *Information Geometry and Its Applications*. Springer.
 
 Amari, S.-i., Nagaoka, H., and Harada, D. (2000). *Methods of Information Geometry*. American Mathematical Society.
+
+Azoulay, A., and Kapferer, J.-N. (2003). "Do Brand Personality Scales Really Measure Brand Personality?" *Journal of Brand Management*, 11(2), 143-155.
 
 Bakker, R., and Poole, K. T. (2013). "Bayesian Metric Multidimensional Scaling." *Political Analysis*, 21(1), 125-140.
 
@@ -542,6 +546,8 @@ Green, P. E., and Rao, V. R. (1972). *Applied Multidimensional Scaling: A Compar
 
 Green, P. E., and Srinivasan, V. (1978). "Conjoint Analysis in Consumer Research: Issues and Outlook." *Journal of Consumer Research*, 5(2), 103-123.
 
+Grier, S. A., and Brumbaugh, A. M. (1999). "Noticing Cultural Differences: Ad Meanings Created by Target and Non-Target Markets." *Journal of Advertising*, 28(1), 79-93.
+
 Hegselmann, R., and Krause, U. (2002). "Opinion Dynamics and Bounded Confidence: Models, Analysis and Simulation." *Journal of Artificial Societies and Social Simulation*, 5(3), 2.
 
 Hotelling, H. (1929). "Stability in Competition." *The Economic Journal*, 39(153), 41-57.
@@ -557,6 +563,8 @@ Khrennikov, A. (2016). "Quantum-Like Model of Decision Making and Sense Percepti
 Kruskal, J. B. (1964). "Multidimensional Scaling by Optimizing Goodness of Fit to a Nonmetric Hypothesis." *Psychometrika*, 29(1), 1-27.
 
 Lancaster, K. J. (1966). "A New Approach to Consumer Theory." *Journal of Political Economy*, 74(2), 132-157.
+
+MacKay, D. B. (1971). "A Spectral Analysis of the Frequency of Supermarket Visits." *Journal of Marketing Research*, 10(1), 84-90.
 
 Layton, R. A., and Duffy, S. (2018). "Path Dependent and Path Creation Perspectives on Marketing System Development." *Journal of Macromarketing*, 38(1), 23-31.
 
@@ -582,6 +590,10 @@ Peters, O., and Skjold, A. (2024). "Time-Average Cooperation in Agent-Based Mode
 
 Pothos, E. M., and Busemeyer, J. R. (2022). "Quantum Cognition." *Annual Review of Psychology*, 73, 749-778.
 
+Puntoni, S., Vanhamme, J., and Ruber, R. (2011). "Two Birds and One Stone: Purposeful Polysemy in Minority Targeting and Advertising Evaluations." *Journal of Advertising*, 40(1), 25-41.
+
+Roy, D., and Banerjee, S. (2014). "Identification and Measurement of Brand Identity and Image Gap: A Quantitative Approach." *Journal of Product & Brand Management*, 23(3), 207-219.
+
 Rosen, S. (1974). "Hedonic Prices and Implicit Markets: Product Differentiation in Pure Competition." *Journal of Political Economy*, 82(1), 34-55.
 
 Shepard, R. N. (1962). "The Analysis of Proximities: Multidimensional Scaling with an Unknown Distance Function." *Psychometrika*, 27(2), 125-140.
@@ -605,6 +617,8 @@ Viazovska, M. S. (2017). "The Sphere Packing Problem in Dimension 8." *Annals of
 Vogt, P. (2006). "Language Evolution and Robotics: Issues on Symbol Grounding and Language Acquisition." In *Artificial Cognition Systems*, Idea Group, 176-209.
 
 Warglien, M., and Gartner, W. B. (2004). "Entrepreneurial Leadership and the Creation of New Markets: Components of a Conceptual Space Theory." Working paper.
+
+Wedel, M., and Kamakura, W. A. (2000). *Market Segmentation: Conceptual and Methodological Foundations* (2nd ed.). Kluwer Academic Publishers.
 
 Yen, P. T.-W., and Cheong, S. A. (2021). "Using Topological Data Analysis (TDA) and Persistent Homology to Analyze the Stock Markets in Singapore and Taiwan." *Frontiers in Physics*, 9, 572216.
 

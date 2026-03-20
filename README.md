@@ -36,7 +36,7 @@ R7 formalizes spectral resource allocation — optimal dimensional investment gi
 
 ### Spectral Brand Theory (Zharnikov 2026a)
 
-Introduces the full SBT framework: eight perceptual dimensions, observer spectral profiles, cloud formation and conviction collapse, and the seven-metric coherence scorecard. Validated across five brands (Hermes, IKEA, Patagonia, Tesla, Erewhon). Reports nine candidate mechanisms: structural absence (dark signals), five-type coherence taxonomy, asymmetric conviction resilience, brand power/health independence, D/A ratio optimum, temporal compounding, mediated cloud formation, evidence-free conviction stability, and cross-weight barrier penetration.
+Introduces the full SBT framework: eight perceptual dimensions, observer spectral profiles, cloud formation and conviction collapse, and the seven-metric coherence scorecard. Validated across five brands (Hermès, IKEA, Patagonia, Tesla, Erewhon). Reports nine candidate mechanisms: structural absence (dark signals), five-type coherence taxonomy, asymmetric conviction resilience, brand power/health independence, D/A ratio optimum, temporal compounding, mediated cloud formation, evidence-free conviction stability, and cross-weight barrier penetration.
 
 **Keywords**: brand perception, computational branding, observer heterogeneity, brand coherence, structural absence, AI-native framework
 

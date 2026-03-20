@@ -155,7 +155,7 @@ When $w_i(c) = 0$ for some dimension $i$, the optimal allocation assigns $s_i^* 
 
 $$s_i^{\text{dark}} = 0, \quad \text{with explicit operational constraint ensuring no ambient signal leaks through}$$
 
-The cost of dark signals is not zero -- it is the cost of suppression. Hermes's refusal to discount (dark economic signal) requires active management of distribution channels, pricing discipline, and waitlist maintenance. The cost function for dark-signal dimensions is $c_i^{\text{dark}}(s_i) = \gamma_i \cdot (s_i - 0)^2$ for $s_i > 0$, penalizing any positive emission.
+The cost of dark signals is not zero -- it is the cost of suppression. Hermès's refusal to discount (dark economic signal) requires active management of distribution channels, pricing discipline, and waitlist maintenance. The cost function for dark-signal dimensions is $c_i^{\text{dark}}(s_i) = \gamma_i \cdot (s_i - 0)^2$ for $s_i > 0$, penalizing any positive emission.
 
 ---
 
@@ -375,7 +375,7 @@ Barney's (1991) RBV identifies Valuable, Rare, Inimitable, and Non-substitutable
 
 We apply the model to the five case-study brands from Zharnikov (2026a, 2026d), using the canonical emission profiles:
 
-| Dimension | Hermes | IKEA | Patagonia | Erewhon | Tesla |
+| Dimension | Hermès | IKEA | Patagonia | Erewhon | Tesla |
 |:----------|:------:|:----:|:---------:|:-------:|:-----:|
 | Semiotic | 9.5 | 8.0 | 6.0 | 7.0 | 7.5 |
 | Narrative | 9.0 | 7.5 | 9.0 | 6.5 | 8.5 |
@@ -390,7 +390,7 @@ We apply the model to the five case-study brands from Zharnikov (2026a, 2026d), 
 
 To illustrate the alignment gap, we construct hypothetical founder spectral profiles for each brand:
 
-| Dimension | Hermes Founder | IKEA Founder | Patagonia Founder | Erewhon Founder | Tesla Founder |
+| Dimension | Hermès Founder | IKEA Founder | Patagonia Founder | Erewhon Founder | Tesla Founder |
 |:----------|:--------------:|:------------:|:-----------------:|:---------------:|:-------------:|
 | Semiotic | 0.20 | 0.05 | 0.05 | 0.10 | 0.10 |
 | Narrative | 0.15 | 0.05 | 0.15 | 0.05 | 0.20 |
@@ -401,13 +401,13 @@ To illustrate the alignment gap, we construct hypothetical founder spectral prof
 | Cultural | 0.10 | 0.10 | 0.10 | 0.15 | 0.05 |
 | Temporal | 0.08 | 0.10 | 0.10 | 0.10 | 0.10 |
 
-These profiles are illustrative, not measured. The Hermes founder profile emphasizes semiotic and experiential (artisan obsession). The IKEA founder profile heavily weights economic (democratic design philosophy). The Patagonia founder profile concentrates on ideological (environmental mission). The Erewhon founder profile emphasizes experiential (curated sensory experience). The Tesla founder profile loads on narrative and experiential (technology vision).
+These profiles are illustrative, not measured. The Hermès founder profile emphasizes semiotic and experiential (artisan obsession). The IKEA founder profile heavily weights economic (democratic design philosophy). The Patagonia founder profile concentrates on ideological (environmental mission). The Erewhon founder profile emphasizes experiential (curated sensory experience). The Tesla founder profile loads on narrative and experiential (technology vision).
 
 ### 8.3 Alignment Gap Computation (Illustrative, Non-Empirical Scenario)
 
 For each brand, we construct a plausible target cohort weight profile and compute the alignment gap. The target cohort profiles represent the observed perceptual priorities of each brand's core customer base:
 
-| Dimension | Hermes Cohort | IKEA Cohort | Patagonia Cohort | Erewhon Cohort | Tesla Cohort |
+| Dimension | Hermès Cohort | IKEA Cohort | Patagonia Cohort | Erewhon Cohort | Tesla Cohort |
 |:----------|:------------:|:-----------:|:----------------:|:--------------:|:------------:|
 | Semiotic | 0.18 | 0.10 | 0.08 | 0.10 | 0.12 |
 | Narrative | 0.15 | 0.08 | 0.12 | 0.08 | 0.15 |
@@ -422,13 +422,13 @@ For each brand, we construct a plausible target cohort weight profile and comput
 
 | Brand | $\|w(f)\|^2$ | $\langle w(f), w(c) \rangle$ | $\mathcal{A}(f,c)$ | Hellinger $H(f,c)$ | Interpretation |
 |:------|:------------:|:----------------------------:|:-------------------:|:-------------------:|:--------------|
-| Hermes | 0.156 | 0.152 | 0.004 | 0.048 | Near-perfect alignment |
+| Hermès | 0.156 | 0.152 | 0.004 | 0.048 | Near-perfect alignment |
 | IKEA | 0.286 | 0.222 | 0.064 | 0.212 | Founder over-weights economic |
 | Patagonia | 0.155 | 0.142 | 0.013 | 0.103 | Small gap (mission aligns) |
 | Erewhon | 0.163 | 0.141 | 0.022 | 0.127 | Moderate experiential bias |
 | Tesla | 0.157 | 0.127 | 0.030 | 0.158 | Narrative/experiential over-weight |
 
-**Ordering**: Hermes (0.004) < Patagonia (0.013) < Erewhon (0.022) < Tesla (0.030) < IKEA (0.064).
+**Ordering**: Hermès (0.004) < Patagonia (0.013) < Erewhon (0.022) < Tesla (0.030) < IKEA (0.064).
 
 IKEA's large gap reflects the founder's extreme economic concentration ($w_6 = 0.50$) versus the cohort's more balanced profile ($w_6 = 0.35$). This does not mean IKEA is poorly managed -- Ingvar Kamprad's economic obsession was the brand's defining feature. Rather, it means IKEA's success required the founder's vision to be sufficiently close to the cohort's priorities on the economic dimension that the over-investment in that dimension still created net positive value.
 
@@ -436,7 +436,7 @@ IKEA's large gap reflects the founder's extreme economic concentration ($w_6 = 0
 
 | Brand | Founder Blind Spot | Cohort Weight on That Dimension | Risk Level |
 |:------|:-------------------|:-------------------------------|:-----------|
-| Hermes | None (all $w_i > 0$) | -- | Low |
+| Hermès | None (all $w_i > 0$) | -- | Low |
 | IKEA | Social ($w_5 = 0.05$) | 0.07 | Low (both low) |
 | Patagonia | Economic ($w_6 = 0.05$) | 0.08 | Low-Medium |
 | Erewhon | Narrative ($w_2 = 0.05$) | 0.08 | Low-Medium |
@@ -614,7 +614,7 @@ $$\mathcal{A}(f,c) = \sum_i w_i(f)^2 - \sum_i w_i(f) w_i(c)$$
 
 with $\lambda = 1$, $\bar{\alpha} = 1$.
 
-**Hermes**: $\|w(f)\|^2 = 0.20^2 + 0.15^2 + 0.10^2 + 0.20^2 + 0.15^2 + 0.02^2 + 0.10^2 + 0.08^2 = 0.1558$
+**Hermès**: $\|w(f)\|^2 = 0.20^2 + 0.15^2 + 0.10^2 + 0.20^2 + 0.15^2 + 0.02^2 + 0.10^2 + 0.08^2 = 0.1558$
 
 $\langle w(f), w(c) \rangle = 0.20 \cdot 0.18 + 0.15 \cdot 0.15 + 0.10 \cdot 0.08 + 0.20 \cdot 0.15 + 0.15 \cdot 0.18 + 0.02 \cdot 0.03 + 0.10 \cdot 0.13 + 0.08 \cdot 0.10 = 0.1521$
 
