@@ -80,7 +80,7 @@ which takes a full spectral profile and produces a scalar grade. When $\phi$ is 
 
 For the case-study data from Zharnikov (2026a), we use the canonical emission profiles established in Zharnikov (2026d):
 
-| Dimension | Hermes | IKEA | Patagonia | Erewhon | Tesla |
+| Dimension | Hermès | IKEA | Patagonia | Erewhon | Tesla |
 |-----------|--------|------|-----------|---------|-------|
 | Semiotic | 9.5 | 8.0 | 6.0 | 7.0 | 7.5 |
 | Narrative | 9.0 | 7.5 | 9.0 | 6.5 | 8.5 |
@@ -91,7 +91,7 @@ For the case-study data from Zharnikov (2026a), we use the canonical emission pr
 | Cultural | 9.0 | 7.5 | 7.0 | 7.5 | 4.0 |
 | Temporal | 9.5 | 6.0 | 6.5 | 2.5 | 2.0 |
 
-These brands receive L2 grades of A+, A-, B+, B-, and C- respectively. The Aitchison distances computed in Zharnikov (2026d) range from 0.88 (Hermes-Patagonia) to 1.76 (Hermes-Tesla), establishing that these brands are well-separated in 8D space.
+These brands receive L2 grades of A+, A-, B+, B-, and C- respectively. The Aitchison distances computed in Zharnikov (2026d) range from 0.88 (Hermès-Patagonia) to 1.76 (Hermès-Tesla), establishing that these brands are well-separated in 8D space.
 
 ### 2.3 Metrics from R1
 
@@ -148,11 +148,11 @@ The crucial difference is scale: in color science, the null space is infinite-di
 
 *Note: For expository clarity, this example uses raw profile scores rather than Aitchison-transformed distances. The formal analysis in Sections 4--7 operates in Aitchison geometry throughout.*
 
-Consider the Hermes-Tesla pair. In 8D Aitchison space, their distance is 1.76 -- the maximum in the case-study set. They receive grades of A+ and C- respectively, which are maximally separated on the 5-point scale. This is a case where the 1D projection happens to preserve the 8D ordering.
+Consider the Hermès-Tesla pair. In 8D Aitchison space, their distance is 1.76 -- the maximum in the case-study set. They receive grades of A+ and C- respectively, which are maximally separated on the 5-point scale. This is a case where the 1D projection happens to preserve the 8D ordering.
 
-Now consider a constructive metameric pair. Suppose Brand X has profile $(9.5, 9.0, 7.0, 9.0, 8.5, 3.0, 9.0, 9.5)$ -- identical to Hermes -- and Brand Y has profile $(3.0, 3.0, 9.5, 3.0, 3.0, 9.5, 3.0, 3.0)$. Brand Y is a hypothetical ideologically-driven, economically-positioned brand with minimal signal on all other dimensions. Under a simple average projection $\phi(s) = \frac{1}{8}\sum_k s_k$, Hermes scores $(9.5 + 9.0 + 7.0 + 9.0 + 8.5 + 3.0 + 9.0 + 9.5)/8 = 8.06$, while Brand Y scores $(3.0 + 3.0 + 9.5 + 3.0 + 3.0 + 9.5 + 3.0 + 3.0)/8 = 4.63$. These are far apart under this projection.
+Now consider a constructive metameric pair. Suppose Brand X has profile $(9.5, 9.0, 7.0, 9.0, 8.5, 3.0, 9.0, 9.5)$ -- identical to Hermès -- and Brand Y has profile $(3.0, 3.0, 9.5, 3.0, 3.0, 9.5, 3.0, 3.0)$. Brand Y is a hypothetical ideologically-driven, economically-positioned brand with minimal signal on all other dimensions. Under a simple average projection $\phi(s) = \frac{1}{8}\sum_k s_k$, Hermès scores $(9.5 + 9.0 + 7.0 + 9.0 + 8.5 + 3.0 + 9.0 + 9.5)/8 = 8.06$, while Brand Y scores $(3.0 + 3.0 + 9.5 + 3.0 + 3.0 + 9.5 + 3.0 + 3.0)/8 = 4.63$. These are far apart under this projection.
 
-But consider the projection $\phi(s) = s_3 + s_6$ (sum of ideological and economic dimensions). Now Hermes scores $7.0 + 3.0 = 10.0$ and Brand Y scores $9.5 + 9.5 = 19.0$. Under a different projection, $\phi(s) = s_1 + s_8$ (semiotic + temporal), Hermes scores $9.5 + 9.5 = 19.0$ while Brand Y scores $3.0 + 3.0 = 6.0$. The relative ranking reverses entirely depending on the projection direction.
+But consider the projection $\phi(s) = s_3 + s_6$ (sum of ideological and economic dimensions). Now Hermès scores $7.0 + 3.0 = 10.0$ and Brand Y scores $9.5 + 9.5 = 19.0$. Under a different projection, $\phi(s) = s_1 + s_8$ (semiotic + temporal), Hermès scores $9.5 + 9.5 = 19.0$ while Brand Y scores $3.0 + 3.0 = 6.0$. The relative ranking reverses entirely depending on the projection direction.
 
 This is not a pathological construction. It illustrates that every brand manager who intuitively compares brands using different criteria is performing a different projection, and each projection has a different null space. The brand manager who focuses on "heritage and design" will rank brands differently from one who focuses on "value proposition and ideology" -- not because either is wrong, but because each is projecting through a different 1D subspace of $\mathbb{R}^8$. This is precisely the rasterization problem: the human operator cannot hold all 8 dimensions simultaneously and is forced to project, losing 7 dimensions of information in the process.
 
@@ -275,13 +275,13 @@ For the second statement: let $v \in \ker(\phi)$ be any nonzero null-space vecto
 
 We can construct explicit metameric pairs from the case-study data. Let $\phi(s) = \mathbf{u}^T \text{clr}(s)$ for some unit vector $\mathbf{u} \in \mathbb{R}^8$. Any perturbation $\delta$ in $\ker(\phi)$ (i.e., $\mathbf{u}^T \delta = 0$) produces a metameric profile: $\phi(s + \delta) = \phi(s)$.
 
-Consider Hermes with $\text{clr}(s_H) \approx (0.227, 0.173, -0.078, 0.173, 0.116, -0.926, 0.173, 0.227)$. (Note: CLR values in this paper are computed using the methodology described in Section 3; minor differences from R1's Appendix A.4 values arise from intermediate rounding.) Take the simplest projection direction $\mathbf{u} = (1, 1, 1, 1, 1, 1, 1, 1)/\sqrt{8}$ (the equal-weight direction). Then the null space consists of all vectors orthogonal to $\mathbf{1}$ -- that is, all vectors whose components sum to zero.
+Consider Hermès with $\text{clr}(s_H) \approx (0.227, 0.173, -0.078, 0.173, 0.116, -0.926, 0.173, 0.227)$. (Note: CLR values in this paper are computed using the methodology described in Section 3; minor differences from R1's Appendix A.4 values arise from intermediate rounding.) Take the simplest projection direction $\mathbf{u} = (1, 1, 1, 1, 1, 1, 1, 1)/\sqrt{8}$ (the equal-weight direction). Then the null space consists of all vectors orthogonal to $\mathbf{1}$ -- that is, all vectors whose components sum to zero.
 
-The perturbation $\delta = (0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5)$ sums to zero and thus lies in $\ker(\phi)$. The profile $\text{clr}(s_H) + \delta$ would score identically to Hermes under the equal-weight grade but would represent a brand with dramatically amplified semiotic, narrative, social, and cultural signals and suppressed ideological, experiential, economic, and temporal signals -- a qualitatively different brand architecture.
+The perturbation $\delta = (0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5)$ sums to zero and thus lies in $\ker(\phi)$. The profile $\text{clr}(s_H) + \delta$ would score identically to Hermès under the equal-weight grade but would represent a brand with dramatically amplified semiotic, narrative, social, and cultural signals and suppressed ideological, experiential, economic, and temporal signals -- a qualitatively different brand architecture.
 
-The Aitchison distance between the original and perturbed profiles is $\|\delta\|_2 = \sqrt{8 \cdot 0.25} = \sqrt{2} \approx 1.41$, which is comparable to the Hermes-Tesla distance of 1.76. Brands nearly as different as the most separated pair in the case-study set can share the same scalar grade.
+The Aitchison distance between the original and perturbed profiles is $\|\delta\|_2 = \sqrt{8 \cdot 0.25} = \sqrt{2} \approx 1.41$, which is comparable to the Hermès-Tesla distance of 1.76. Brands nearly as different as the most separated pair in the case-study set can share the same scalar grade.
 
-This construction makes vivid the rasterization problem. When a brand manager tells a design team "we're an A+ brand like Hermes," they are communicating the 1D projection (the grade) and implicitly asking the team to reconstruct the 7 null-space dimensions from context, intuition, and prior experience. Different team members will reconstruct different null-space components, producing divergent interpretations that are all consistent with the stated grade. The vectorized alternative -- communicating the full 8D spectral profile -- eliminates this ambiguity by specifying the exact point in $\mathbb{R}^8_+$ rather than the equivalence class in $\mathbb{R}^1$.
+This construction makes vivid the rasterization problem. When a brand manager tells a design team "we're an A+ brand like Hermès," they are communicating the 1D projection (the grade) and implicitly asking the team to reconstruct the 7 null-space dimensions from context, intuition, and prior experience. Different team members will reconstruct different null-space components, producing divergent interpretations that are all consistent with the stated grade. The vectorized alternative -- communicating the full 8D spectral profile -- eliminates this ambiguity by specifying the exact point in $\mathbb{R}^8_+$ rather than the equivalence class in $\mathbb{R}^1$.
 
 ### 5.3 Observer-Dependent Null Spaces
 

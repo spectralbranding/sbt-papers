@@ -273,7 +273,7 @@ This has a practical implication: you cannot control the emergent layer. You can
 
 **Emergence criteria.** Definition 5's emergence criterion ("not derivable from S alone") is strong. Weak emergence — where the emergent property is in principle derivable from lower levels given sufficient computation — might satisfy the criterion technically while missing the spirit. We adopt a pragmatic stance: if no known derivation exists and the property is not predicted from specification knowledge alone, the criterion is met.
 
-**Western bias.** The empirical grounding draws primarily on Western biology (English-language literature), Western brands (Hermes, IKEA, Patagonia, Tesla, Erewhon), and Western organizational theory. Whether the rendering problem's structural claims hold in non-Western organizational forms (keiretsu, chaebol, guanxi-based enterprises) requires separate investigation.
+**Western bias.** The empirical grounding draws primarily on Western biology (English-language literature), Western brands (Hermès, IKEA, Patagonia, Tesla, Erewhon), and Western organizational theory. Whether the rendering problem's structural claims hold in non-Western organizational forms (keiretsu, chaebol, guanxi-based enterprises) requires separate investigation.
 
 **Single-author limitation.** This paper advances a theoretical framework without empirical data collection. The propositions are stated as testable but have not been tested. Empirical validation requires collaboration with domain specialists in biology, organizational behavior, and consumer psychology.
 

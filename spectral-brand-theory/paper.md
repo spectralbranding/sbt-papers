@@ -109,9 +109,9 @@ The observer model is SBT's primary theoretical contribution. Each observer coho
 - **Identity gate**: whether the observer can recognize the brand's signals as belonging to a single entity (analogous to facial recognition — without it, signals are noise)
 - **Encounter mode**: direct (product use, store visit), mediated (screens, content, secondhand accounts), or mixed
 
-The weight-based observer profile is structurally analogous to multi-attribute attitude models (Fishbein & Ajzen, 1975), extending the attribute-weighting mechanism from product evaluation to perceptual dimensions with the critical additions of tolerances, priors, and the identity gate. The spectral profile determines not just *what* the observer sees but *how* they assemble what they see into meaning. Two observers exposed to identical signals will form different perception clouds if their weight profiles differ. This is not a failure of communication — it is the fundamental mechanism of brand perception.
+The weight-based observer profile is structurally analogous to multi-attribute attitude models (Fishbein & Ajzen, 1975), extending the attribute-weighting mechanism from product evaluation to perceptual dimensions with the critical additions of tolerances, priors, and the identity gate. The concept of observer-specific dimensional weights has its methodological precedent in the INDSCAL model (Carroll & Chang, 1970), which demonstrated that individuals weight perceptual dimensions differently when evaluating stimuli — the same structural insight that SBT extends from laboratory stimuli to brand perception at the cohort level. The spectral profile determines not just *what* the observer sees but *how* they assemble what they see into meaning. Two observers exposed to identical signals will form different perception clouds if their weight profiles differ. This is not a failure of communication — it is the fundamental mechanism of brand perception.
 
-**Formal observer model.** SBT defines each observer cohort through a spectral profile — a vector of dimensional weights, tolerances, priors, and gate states. Critically, cohorts are perceptual groupings, not demographic segments. Traditional segmentation variables — age, income, geography — are metadata: descriptive labels attached to the observer that may correlate with perceptual behavior but do not determine it. A cohort is a cluster in spectral-profile space: a group of observers whose profiles are similar enough that they form structurally similar perception clouds from the same signal environment. Two observers who share a demographic segment may belong to different SBT cohorts if their priors diverge — and two observers from entirely different demographics may share a cohort if their spectral profiles are similar. The clustering is a structural property of the observer population, not an analyst's modelling choice.
+**Formal observer model.** SBT defines each observer cohort through a spectral profile — a vector of dimensional weights, tolerances, priors, and gate states. Critically, cohorts are perceptual groupings, not demographic segments. Traditional segmentation variables — age, income, geography — are metadata: descriptive labels attached to the observer that may correlate with perceptual behavior but do not determine it. A cohort is a cluster in spectral-profile space: a group of observers whose profiles are similar enough that they form structurally similar perception clouds from the same signal environment. Two observers who share a demographic segment may belong to different SBT cohorts if their priors diverge — and two observers from entirely different demographics may share a cohort if their spectral profiles are similar. The distinction between a priori demographic segments and empirically discovered perceptual cohorts builds on the foundational segmentation methodology of Wedel and Kamakura (2000), who established latent class models as the standard for discovering unobservable consumer heterogeneity. The clustering is a structural property of the observer population, not an analyst's modelling choice.
 
 Cohort membership is dynamic. Because priors are a profile component and priors evolve through signal accumulation, decay, and crystallization (see Section 5.4, Temporal dynamics), an observer's position in spectral-profile space shifts over time. Differential signal exposure — arising from encounter mode, geography, media consumption, and social networks — causes observers who once shared a cohort to drift apart as their priors diverge. Signal events (a CEO controversy, a product failure, a viral campaign) do not merely change perception — they physically redistribute observers across cohort boundaries. This dynamism distinguishes SBT cohorts from traditional market segments: segments describe who the observer *is*; cohorts describe how the observer *perceives*, and perception changes.
 
@@ -199,11 +199,11 @@ The theoretical framework developed in Sections 2.1–2.5 generates five formal 
 
 **Proposition 1 (Observer heterogeneity).** *Different observer cohorts, exposed to identical brand signal environments, will form systematically different brand convictions as a function of their spectral profile differences (weights, tolerances, priors, encounter mode).*
 
-Keller (1993) locates brand equity in the customer's mind — the most important precedent for SBT's observer-dependent approach. The structural limitation of Keller's model is that it treats "the customer" as a single model: one set of brand associations, one equity structure. Keller acknowledged individual variation but did not parameterize it. SBT formalizes the heterogeneity that Keller's framework recognized but could not model, specifying the observer's spectral profile as the mechanism through which identical signals produce different convictions. Testable prediction: measuring brand conviction across cohorts with documented spectral profile differences will reveal systematic, profile-predictable divergence rather than random variation.
+Keller (1993) locates brand equity in the customer's mind — the most important precedent for SBT's observer-dependent approach. The structural limitation of Keller's model is that it treats "the customer" as a single model: one set of brand associations, one equity structure. Keller acknowledged individual variation but did not parameterize it. SBT formalizes the heterogeneity that Keller's framework recognized but could not model, specifying the observer's spectral profile as the mechanism through which identical signals produce different convictions. Empirical evidence for observer-dependent brand perception already exists in the advertising literature. Grier and Brumbaugh (1999) demonstrated that identical advertisements produce systematically different meanings in target versus non-target cultural groups. Puntoni, Vanhamme, and Ruber (2011) documented "purposeful polysemy" — the deliberate design of messages that activate different meanings in different audiences — providing direct evidence that what SBT formalizes as spectral metamerism is an observed phenomenon in marketing practice. Testable prediction: measuring brand conviction across cohorts with documented spectral profile differences will reveal systematic, profile-predictable divergence rather than random variation.
 
 **Proposition 2 (Non-ergodicity of perception).** *The temporal sequence in which brand signals are encountered affects the resulting brand conviction, even when the set of signals is identical.*
 
-Peters (2019) demonstrates that in multiplicative, path-dependent processes, the order of events matters — ensemble averages diverge from time averages. Brand perception is structurally analogous: signals compound multiplicatively through priors rather than summing additively into a running total. An observer who encounters a product failure before a brand's origin story forms a different conviction than one who encounters the same two signals in reverse order, because the first signal establishes a prior that filters interpretation of the second. The structural limitation of cross-sectional brand measurement is that it captures ensemble averages — snapshots across many observers at one moment — which systematically misrepresent individual cohort trajectories. Testable prediction: presenting the same signal set in different temporal orders to matched cohorts will produce measurably different conviction outcomes.
+Peters (2019) demonstrates that in multiplicative, path-dependent processes, the order of events matters — ensemble averages diverge from time averages. Brand perception is structurally analogous: signals compound multiplicatively through priors rather than summing additively into a running total. An observer who encounters a product failure before a brand's origin story forms a different conviction than one who encounters the same two signals in reverse order, because the first signal establishes a prior that filters interpretation of the second. In consumer psychology, Hogarth and Einhorn (1992) provided the formal precedent for order-dependent belief updating: their Belief-Adjustment Model demonstrates that step-by-step evaluation produces different outcomes from end-of-sequence evaluation, and that negative evidence has asymmetric updating power relative to positive evidence — a mechanism that SBT formalizes as conviction asymmetry. The structural limitation of cross-sectional brand measurement is that it captures ensemble averages — snapshots across many observers at one moment — which systematically misrepresent individual cohort trajectories. Testable prediction: presenting the same signal set in different temporal orders to matched cohorts will produce measurably different conviction outcomes.
 
 **Proposition 3 (Structural absence as signal).** *Designed restriction of signal emission in specific dimensions generates perceived value that cannot be replicated by signal addition in other dimensions.*
 
@@ -384,7 +384,7 @@ graph LR
     B -->|"resilience<br/>projection"| G
 ```
 
-The practical consequence is that traditional scorecards are structurally blind to the distinction. A brand with 7/10 signal coherence (the IKEA pattern: everyone perceives the same thing) and a brand with 7/10 ecosystem coherence (the Hermès pattern: different cohorts perceive different things that reinforce each other) would appear identical on any single-variable dashboard. Their responses to disruption are radically different.
+The practical consequence is that traditional scorecards are structurally blind to the distinction. A brand with 7/10 signal coherence (the IKEA pattern: everyone perceives the same thing) and a brand with 7/10 ecosystem coherence (the Hermès pattern: different cohorts perceive different things that reinforce each other) would appear identical on any single-variable dashboard. Their responses to disruption are radically different. Empirical support for the claim that coherence type predicts resilience better than coherence degree comes from organizational culture research. Sorensen (2002) demonstrated across more than 200 firms that strong cultures outperform in stable environments but underperform in volatile ones — establishing that the structure of alignment, not its intensity, determines outcomes. Chatman, Caldwell, O'Reilly, and Doerr (2014) extended this by showing that consensus combined with adaptability outperforms consensus alone.
 
 **Ecosystem coherence** (Hermès) exhibits selective resilience. When the Hermès secondary market collapses in our simulation, the Investment Buyer cohort is destroyed — but the Heritage Client and Cultural Connoisseur are *strengthened*: "now the speculators are gone." The ecosystem metabolizes the disruption by sacrificing peripheral elements while purifying the core. This capacity for selective absorption is unique to ecosystem coherence and explains the extraordinary durability of brands that exhibit it.
 
@@ -513,6 +513,8 @@ Coherence
 SBT does not replace existing brand frameworks. It explains why each of them works partially and where each breaks down.
 
 Aaker's (1996) brand identity system describes the signal side of the equation — what the brand intends to emit — but lacks the observer model that explains why the same identity produces different perceptions in different cohorts. Kapferer's (2008) prism comes closest to SBT's dimensional approach, with its six facets mapping loosely to SBT's eight dimensions, but treats the facets as properties of the brand rather than perceptual channels through which observers filter signals. Schmitt's (1999) experiential marketing modules (SENSE, FEEL, THINK, ACT, RELATE) decompose the experiential domain; SBT's Experiential dimension encompasses these as sub-types, situating them within a multi-dimensional field where experiential signals interact with and can be overridden by ideological, social, and economic signals. Oswald's (2012) application of Peircean semiotics to brand strategy grounds SBT's Semiotic dimension; SBT extends this by treating semiotic signals as one of eight perceptual channels rather than the primary analytical lens.
+
+The relationship between SBT and Aaker's (1996) Brand Identity Model is one of formalization, not replacement. Aaker's four identity perspectives — Brand as Product, Organisation, Person, Symbol — each bundle multiple independent perceptual channels that SBT decomposes into eight parameterized dimensions. Every insight in Aaker's framework is preserved; SBT adds the observer heterogeneity, coherence taxonomy, and dynamic modelling that the original framework acknowledged as needed but did not formalize. The relationship mirrors that of behavioural economics to classical economics: the predecessor is preserved as a special case within a more general theory.
 
 Keller's (1993) customer-based brand equity is the most direct predecessor: equity lives in the customer's mind, brand knowledge equals awareness plus image. SBT extends Keller by modeling the customer as a heterogeneous population rather than a single model, by formalizing the perception-to-conviction pipeline, and by introducing the re-collapse mechanism that explains how brand equity is lost and rebuilt.
 
@@ -696,6 +698,10 @@ Berger, J. (2013). *Contagious: Why things catch on*. Simon & Schuster.
 
 Brock, T. C. (1968). Implications of commodity theory for value change. In A. G. Greenwald, T. C. Brock, & T. M. Ostrom (Eds.), *Psychological foundations of attitudes* (pp. 243–275). Academic Press.
 
+Carroll, J. D., & Chang, J. J. (1970). Analysis of individual differences in multidimensional scaling via an N-way generalization of Eckart-Young decomposition. *Psychometrika*, 35(3), 283–319.
+
+Chatman, J. A., Caldwell, D. F., O'Reilly, C. A., & Doerr, B. (2014). Parsing organizational culture: How the norm for adaptability influences the relationship between culture consensus and financial performance in high-technology firms. *Journal of Organizational Behavior*, 35(6), 785–808.
+
 Christodoulides, G., & de Chernatony, L. (2010). Consumer-based brand equity conceptualization and measurement. *International Journal of Market Research*, 52(1), 43–66.
 
 Cialdini, R. B. (2001). *Influence: Science and practice* (4th ed.). Allyn & Bacon.
@@ -716,7 +722,11 @@ Festinger, L. (1957). *A theory of cognitive dissonance*. Stanford University Pr
 
 Fishbein, M., & Ajzen, I. (1975). *Belief, attitude, intention and behavior: An introduction to theory and research*. Addison-Wesley.
 
+Grier, S. A., & Brumbaugh, A. M. (1999). Noticing cultural differences: Ad meanings created by target and non-target markets. *Journal of Advertising*, 28(1), 79–93.
+
 Hatch, M. J., & Schultz, M. (2010). Toward a theory of brand co-creation with implications for brand governance. *Journal of Brand Management*, 17(8), 590–604.
+
+Hogarth, R. M., & Einhorn, H. J. (1992). Order effects in belief updating: The belief-adjustment model. *Cognitive Psychology*, 24(1), 1–55.
 
 Holt, D. B. (2004). *How brands become icons: The principles of cultural branding*. Harvard Business Press.
 
@@ -752,11 +762,15 @@ Peirce, C. S. (1931–1958). *Collected papers of Charles Sanders Peirce* (C. Ha
 
 Peters, O. (2019). The ergodicity problem in economics. *Nature Physics*, 15, 1216–1221. https://doi.org/10.1038/s41567-019-0732-0
 
+Puntoni, S., Vanhamme, J., & Ruber, R. (2011). Two birds and one stone: Purposeful polysemy in minority targeting and advertising evaluations. *Journal of Advertising*, 40(1), 25–41.
+
 Ries, A., & Trout, J. (1981). *Positioning: The battle for your mind*. McGraw-Hill.
 
 Schmitt, B. H. (1999). *Experiential marketing*. Free Press.
 
 Sharp, B. (2010). *How brands grow: What marketers don't know*. Oxford University Press.
+
+Sorensen, J. B. (2002). The strength of corporate culture and the reliability of firm performance. *Administrative Science Quarterly*, 47(1), 70–91.
 
 Spence, M. (1973). Job market signaling. *The Quarterly Journal of Economics*, 87(3), 355–374.
 
@@ -767,6 +781,8 @@ Urde, M. (2013). The corporate brand identity matrix. *Journal of Brand Manageme
 Vargo, S. L., & Lusch, R. F. (2004). Evolving to a new dominant logic for marketing. *Journal of Marketing*, 68(1), 1–17.
 
 Veblen, T. (1899). *The theory of the leisure class*. Macmillan.
+
+Wedel, M., & Kamakura, W. A. (2000). *Market segmentation: Conceptual and methodological foundations* (2nd ed.). Kluwer Academic.
 
 Zharnikov, D. (2026b). The alibi problem: Epistemic foundations of multi-source data reconciliation. Working Paper. https://doi.org/10.5281/zenodo.18944770
 

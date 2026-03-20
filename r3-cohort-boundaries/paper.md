@@ -56,7 +56,7 @@ An observer's **spectral profile** includes, among other components, a **weight 
 
 A **perceptual cohort** is a cluster of observers whose weight profiles are geometrically proximate in $\Delta^7$. Unlike traditional demographic segments, perceptual cohorts are defined by *how* observers process signals, not by *who* they are. An affluent 25-year-old and a middle-income 55-year-old who both weight the ideological and narrative dimensions heavily belong to the same perceptual cohort, despite occupying distant positions in demographic space.
 
-SBT posits five case-study brands -- Hermes (A+), IKEA (A-), Patagonia (B+), Erewhon (B-), Tesla (C-) -- analyzed through this framework. Cross-model replication (Claude and Gemini independently analyzing the same data) produced identical coherence types and grades for all five brands but different cohort granularities, motivating the present investigation.
+SBT posits five case-study brands -- Hermès (A+), IKEA (A-), Patagonia (B+), Erewhon (B-), Tesla (C-) -- analyzed through this framework. Cross-model replication (Claude and Gemini independently analyzing the same data) produced identical coherence types and grades for all five brands but different cohort granularities, motivating the present investigation.
 
 ### 2.2 The Observer Weight Space $(\mathcal{O}, d_\mathcal{O})$
 
@@ -311,7 +311,7 @@ $$\sigma^2_{\text{eff}} \approx \frac{D}{A} \cdot \sigma^2_D + \frac{A}{D} \cdot
 
 A higher D/A ratio shifts weight toward the lower-variance designed component, reducing $\sigma^2_{\text{eff}}$ and thereby compressing the cohort in $\Delta^7$. Compressed cohorts have smaller effective radii, which means a larger fraction of their volume lies in the interior rather than the boundary zone. The boundary volume fraction for a cohort of effective radius $r$ scales as $1 - (1 - \delta/r)^n$, so smaller $r$ (sharper cohort) means less boundary volume at fixed absolute $\delta$.
 
-This explains Hermes's (A+, high D/A) sharp cohort structure versus Tesla's (C-, volatile D/A) diffuse cohort structure: Hermes's designed-dominant signal environment compresses observer cohorts, while Tesla's ambient-heavy, controversy-driven signal environment inflates them.
+This explains Hermès's (A+, high D/A) sharp cohort structure versus Tesla's (C-, volatile D/A) diffuse cohort structure: Hermès's designed-dominant signal environment compresses observer cohorts, while Tesla's ambient-heavy, controversy-driven signal environment inflates them.
 
 ### 6.4 From Categorical Segments to Continuous Profiles
 

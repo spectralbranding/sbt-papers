@@ -472,7 +472,7 @@ We apply the metric framework to five brands analyzed as case studies in Zharnik
 
 | Brand | Coherence Type | Grade | D/A Ratio |
 |-------|---------------|-------|-----------|
-| Hermes | Ecosystem | A+ | 60/35 |
+| Hermès | Ecosystem | A+ | 60/35 |
 | IKEA | Signal | A- | 75/25 |
 | Patagonia | Identity | B+ | 65/30 |
 | Erewhon | Experiential asymmetry | B- | 40/55 |
@@ -480,7 +480,7 @@ We apply the metric framework to five brands analyzed as case studies in Zharnik
 
 To demonstrate the metric, we construct canonical emission profiles based on the qualitative case-study assessments. These profiles are illustrative; the numerical values are chosen to reflect the qualitative descriptions in Zharnikov (2026a) rather than derived from empirical measurement. All values are on a [1, 10] scale representing relative signal intensity:
 
-| Dimension | Hermes | IKEA | Patagonia | Erewhon | Tesla |
+| Dimension | Hermès | IKEA | Patagonia | Erewhon | Tesla |
 |-----------|--------|------|-----------|---------|-------|
 | Semiotic | 9.5 | 8.0 | 6.0 | 7.0 | 7.5 |
 | Narrative | 9.0 | 7.5 | 9.0 | 6.5 | 8.5 |
@@ -495,17 +495,17 @@ To demonstrate the metric, we construct canonical emission profiles based on the
 
 Computing the Aitchison distance $d_{\mathcal{B}}$ for all brand pairs yields the following distance matrix (values rounded to two decimal places):
 
-To compute, we first apply the centered log-ratio transform to each brand profile. For example, for Hermes with $s = (9.5, 9.0, 7.0, 9.0, 8.5, 3.0, 9.0, 9.5)$, the geometric mean is $g(s) = (9.5 \cdot 9.0 \cdot 7.0 \cdot 9.0 \cdot 8.5 \cdot 3.0 \cdot 9.0 \cdot 9.5)^{1/8} \approx 7.65$, and the clr transform is:
+To compute, we first apply the centered log-ratio transform to each brand profile. For example, for Hermès with $s = (9.5, 9.0, 7.0, 9.0, 8.5, 3.0, 9.0, 9.5)$, the geometric mean is $g(s) = (9.5 \cdot 9.0 \cdot 7.0 \cdot 9.0 \cdot 8.5 \cdot 3.0 \cdot 9.0 \cdot 9.5)^{1/8} \approx 7.65$, and the clr transform is:
 
-$$\text{clr}(s_{\text{Hermes}}) \approx (0.216, 0.162, -0.089, 0.162, 0.105, -0.936, 0.162, 0.216)$$
+$$\text{clr}(s_{\text{Hermès}}) \approx (0.216, 0.162, -0.089, 0.162, 0.105, -0.936, 0.162, 0.216)$$
 
-The large negative value on the economic dimension ($-0.936$) reflects Hermes's luxury positioning: relative to its other signals, the economic (accessibility/value) signal is deliberately suppressed.
+The large negative value on the economic dimension ($-0.936$) reflects Hermès's luxury positioning: relative to its other signals, the economic (accessibility/value) signal is deliberately suppressed.
 
 Carrying out the full computation for all pairs:
 
-| | Hermes | IKEA | Patagonia | Erewhon | Tesla |
+| | Hermès | IKEA | Patagonia | Erewhon | Tesla |
 |-----------|--------|------|-----------|---------|-------|
-| Hermes | 0 | 1.34 | 0.88 | 1.21 | 1.76 |
+| Hermès | 0 | 1.34 | 0.88 | 1.21 | 1.76 |
 | IKEA | 1.34 | 0 | 0.95 | 1.34 | 1.25 |
 | Patagonia | 0.88 | 0.95 | 0 | 1.10 | 1.46 |
 | Erewhon | 1.21 | 1.34 | 1.10 | 0 | 1.06 |
@@ -513,11 +513,11 @@ Carrying out the full computation for all pairs:
 
 Several patterns emerge:
 
-1. **Tesla is the most distant brand.** Its maximum distance is to Hermes ($1.76$), reflecting the opposition between Hermes's high-coherence ecosystem (strong, balanced profile with deliberate economic suppression) and Tesla's incoherent profile (volatile ideological and temporal dimensions). This accords with the qualitative assessment: A+ and C- brands are maximally separated.
+1. **Tesla is the most distant brand.** Its maximum distance is to Hermès ($1.76$), reflecting the opposition between Hermès's high-coherence ecosystem (strong, balanced profile with deliberate economic suppression) and Tesla's incoherent profile (volatile ideological and temporal dimensions). This accords with the qualitative assessment: A+ and C- brands are maximally separated.
 
-2. **Hermes and Patagonia are the closest high-grade pair** ($0.88$). Despite different coherence types (ecosystem vs. identity), both brands have strong, intentional signal profiles with clear ideological conviction. Their proximity reflects a shared structural quality: both are brands where the emission profile is dominated by deliberate choices rather than market noise.
+2. **Hermès and Patagonia are the closest high-grade pair** ($0.88$). Despite different coherence types (ecosystem vs. identity), both brands have strong, intentional signal profiles with clear ideological conviction. Their proximity reflects a shared structural quality: both are brands where the emission profile is dominated by deliberate choices rather than market noise.
 
-3. **IKEA occupies a middle position.** Its signal-coherence type produces a profile that is moderately distant from both the strongly ideological brands (Hermes, Patagonia) and the less coherent brands (Erewhon, Tesla).
+3. **IKEA occupies a middle position.** Its signal-coherence type produces a profile that is moderately distant from both the strongly ideological brands (Hermès, Patagonia) and the less coherent brands (Erewhon, Tesla).
 
 ### 8.3 Observer-Dependent Distances
 
@@ -529,21 +529,21 @@ The power of the combined metric emerges when we examine how brand distances cha
 - **Observer $\beta$** (pragmatist): $w_\beta = (0.05, 0.05, 0.10, 0.15, 0.05, 0.35, 0.05, 0.20)$
   Attends primarily to economic and temporal dimensions.
 
-The observer-dependent distances $d_w(s_A, s_B)$ for the Hermes-IKEA pair:
+The observer-dependent distances $d_w(s_A, s_B)$ for the Hermès-IKEA pair:
 
-$$d_{w_\alpha}(\text{Hermes}, \text{IKEA}) = \sqrt{\sum_k w_{\alpha,k} (\text{clr}_k(s_H) - \text{clr}_k(s_I))^2} \approx 0.32$$
+$$d_{w_\alpha}(\text{Hermès}, \text{IKEA}) = \sqrt{\sum_k w_{\alpha,k} (\text{clr}_k(s_H) - \text{clr}_k(s_I))^2} \approx 0.32$$
 
-$$d_{w_\beta}(\text{Hermes}, \text{IKEA}) = \sqrt{\sum_k w_{\beta,k} (\text{clr}_k(s_H) - \text{clr}_k(s_I))^2} \approx 0.74$$
+$$d_{w_\beta}(\text{Hermès}, \text{IKEA}) = \sqrt{\sum_k w_{\beta,k} (\text{clr}_k(s_H) - \text{clr}_k(s_I))^2} \approx 0.74$$
 
-The pragmatist observer perceives Hermes and IKEA as more than twice as far apart as the aesthete observer ($0.74 / 0.32 \approx 2.3$). This is because the primary difference between Hermes and IKEA lies in the economic and temporal dimensions (luxury vs. value; heritage vs. modernity), which the pragmatist weights heavily and the aesthete largely ignores.
+The pragmatist observer perceives Hermès and IKEA as more than twice as far apart as the aesthete observer ($0.74 / 0.32 \approx 2.3$). This is because the primary difference between Hermès and IKEA lies in the economic and temporal dimensions (luxury vs. value; heritage vs. modernity), which the pragmatist weights heavily and the aesthete largely ignores.
 
-Conversely, for the Hermes-Patagonia pair:
+Conversely, for the Hermès-Patagonia pair:
 
-$$d_{w_\alpha}(\text{Hermes}, \text{Patagonia}) \approx 0.28$$
+$$d_{w_\alpha}(\text{Hermès}, \text{Patagonia}) \approx 0.28$$
 
-$$d_{w_\beta}(\text{Hermes}, \text{Patagonia}) \approx 0.40$$
+$$d_{w_\beta}(\text{Hermès}, \text{Patagonia}) \approx 0.40$$
 
-Here the distance spread is much narrower ($0.28$ vs. $0.40$, compared to the $0.32$ vs. $0.74$ spread for Hermes-IKEA), because Hermes and Patagonia differ on dimensions that both observers attend to (semiotic design vs. purposeful utility is visible to the aesthete; both have moderate economic positioning visible to the pragmatist).
+Here the distance spread is much narrower ($0.28$ vs. $0.40$, compared to the $0.32$ vs. $0.74$ spread for Hermès-IKEA), because Hermès and Patagonia differ on dimensions that both observers attend to (semiotic design vs. purposeful utility is visible to the aesthete; both have moderate economic positioning visible to the pragmatist).
 
 These results demonstrate the central claim of the metric framework: brand distance is not an objective quantity but a function of the observer's attentional structure. The metric formalizes what SBT describes qualitatively -- that different observer cohorts inhabit genuinely different brand landscapes.
 
@@ -691,7 +691,7 @@ This is proportional to $(\sqrt{w_{A,i}} + \sqrt{w_{B,i}})^2$, which is more uni
 
 The centered log-ratio transforms for the five brands (using the profiles from Section 8.1):
 
-**Hermes**: $g = (9.5 \cdot 9.0 \cdot 7.0 \cdot 9.0 \cdot 8.5 \cdot 3.0 \cdot 9.0 \cdot 9.5)^{1/8} = 7.651$
+**Hermès**: $g = (9.5 \cdot 9.0 \cdot 7.0 \cdot 9.0 \cdot 8.5 \cdot 3.0 \cdot 9.0 \cdot 9.5)^{1/8} = 7.651$
 
 $\text{clr} = (0.216, 0.162, -0.089, 0.162, 0.105, -0.936, 0.162, 0.216)$
 
@@ -713,7 +713,7 @@ $\text{clr} = (0.407, 0.532, -0.509, 0.184, 0.338, 0.184, -0.222, -0.915)$
 
 Pairwise Aitchison distances are then computed as $d_A(X, Y) = \|\text{clr}(X) - \text{clr}(Y)\|_2$.
 
-For example, $d_A(\text{Hermes}, \text{Tesla})$:
+For example, $d_A(\text{Hermès}, \text{Tesla})$:
 
 $$\text{clr}(H) - \text{clr}(T) = (-0.191, -0.370, 0.420, -0.022, -0.233, -1.120, 0.384, 1.131)$$
 

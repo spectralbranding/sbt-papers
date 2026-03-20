@@ -8,7 +8,7 @@ Working Paper -- March 2026
 
 ## Abstract
 
-Brand perception evolves over time, yet no existing brand theory provides a formal dynamical model of this evolution. This paper models the trajectory of an observer's brand perception as a stochastic process on $S^7_+$, the positive octant of the 7-sphere in Spectral Brand Theory's (SBT) eight-dimensional perception space. Signal encounters drive Brownian motion on the manifold, signal decay introduces deterministic drift toward a neutral prior, and negative conviction creates absorbing boundaries at the octant boundary where any perceptual dimension reaches zero. We formulate a Stratonovich stochastic differential equation (SDE) on $S^7_+$ and prove four main results. First, the SDE with absorbing boundaries is well-posed with a unique strong solution up to the absorption stopping time (Theorem 1). Second, the survival probability decays as $S(t, x) \sim C(x) \exp(-\lambda_{D,1} \sigma^2 t / 2)$, where $C(x)$ depends on the initial position's distance from the boundary (Theorem 2). Third, the Dirichlet spectral gap on $S^7_+$ is $\lambda_{D,2} - \lambda_{D,1} = 48$, so mixing to the quasi-stationary distribution is faster than on the full sphere: conditioned on survival, perception trajectories are confined to the deep interior of the octant (Theorem 3). Fourth, for the absorbed process, the time average and ensemble average of any non-trivial observable diverge with probability 1 as $t \to \infty$, establishing non-ergodicity consistent with the framework of Peters (2019) (Theorem 4). Application to five case-study brands shows that the absorption risk ordering -- Tesla (C-) > Erewhon (B-) > IKEA (A-) > Patagonia (B+) > Hermes (A+) -- nearly matches the SBT coherence grading (Proposition 5), with one inversion (IKEA/Patagonia) explained by coherence-type-dependent drift strength, providing the first formal connection between brand coherence and stochastic stability. The results formalize SBT's ergodicity coefficient as $\varepsilon \sim 1/\tau_{\text{mix}}$, complete the dynamic extension of the static metric framework established in Zharnikov (2026d), and establish that the distinction between *vectorized* and *rasterized* brand management is not merely practical but reflects a fundamental mathematical asymmetry between trajectory-level and snapshot-level information.
+Brand perception evolves over time, yet no existing brand theory provides a formal dynamical model of this evolution. This paper models the trajectory of an observer's brand perception as a stochastic process on $S^7_+$, the positive octant of the 7-sphere in Spectral Brand Theory's (SBT) eight-dimensional perception space. Signal encounters drive Brownian motion on the manifold, signal decay introduces deterministic drift toward a neutral prior, and negative conviction creates absorbing boundaries at the octant boundary where any perceptual dimension reaches zero. We formulate a Stratonovich stochastic differential equation (SDE) on $S^7_+$ and prove four main results. First, the SDE with absorbing boundaries is well-posed with a unique strong solution up to the absorption stopping time (Theorem 1). Second, the survival probability decays as $S(t, x) \sim C(x) \exp(-\lambda_{D,1} \sigma^2 t / 2)$, where $C(x)$ depends on the initial position's distance from the boundary (Theorem 2). Third, the Dirichlet spectral gap on $S^7_+$ is $\lambda_{D,2} - \lambda_{D,1} = 48$, so mixing to the quasi-stationary distribution is faster than on the full sphere: conditioned on survival, perception trajectories are confined to the deep interior of the octant (Theorem 3). Fourth, for the absorbed process, the time average and ensemble average of any non-trivial observable diverge with probability 1 as $t \to \infty$, establishing non-ergodicity consistent with the framework of Peters (2019) (Theorem 4). Application to five case-study brands shows that the absorption risk ordering -- Tesla (C-) > Erewhon (B-) > IKEA (A-) > Patagonia (B+) > Hermès (A+) -- nearly matches the SBT coherence grading (Proposition 5), with one inversion (IKEA/Patagonia) explained by coherence-type-dependent drift strength, providing the first formal connection between brand coherence and stochastic stability. The results formalize SBT's ergodicity coefficient as $\varepsilon \sim 1/\tau_{\text{mix}}$, complete the dynamic extension of the static metric framework established in Zharnikov (2026d), and establish that the distinction between *vectorized* and *rasterized* brand management is not merely practical but reflects a fundamental mathematical asymmetry between trajectory-level and snapshot-level information.
 
 **Keywords**: stochastic differential equations on manifolds, non-ergodicity, brand perception dynamics, absorbing boundaries, Laplace-Beltrami operator, mixing time, Spectral Brand Theory
 
@@ -71,7 +71,7 @@ SBT assigns five coherence levels based on the emission profile analysis:
 
 | Grade | Type | Example |
 |-------|------|---------|
-| A+ | Ecosystem coherence | Hermes |
+| A+ | Ecosystem coherence | Hermès |
 | A- | Signal coherence | IKEA |
 | B+ | Identity coherence | Patagonia |
 | B- | Experiential asymmetry | Erewhon |
@@ -79,7 +79,7 @@ SBT assigns five coherence levels based on the emission profile analysis:
 
 The canonical emission profiles from Zharnikov (2026d) are:
 
-| Dimension | Hermes | IKEA | Patagonia | Erewhon | Tesla |
+| Dimension | Hermès | IKEA | Patagonia | Erewhon | Tesla |
 |-----------|--------|------|-----------|---------|-------|
 | Semiotic | 9.5 | 8.0 | 6.0 | 7.0 | 7.5 |
 | Narrative | 9.0 | 7.5 | 9.0 | 6.5 | 8.5 |
@@ -464,6 +464,8 @@ Meanwhile, $\langle f \rangle = \int_{S^7_+} f \, d\text{Vol} / \text{Vol}(S^7_+
 
 This is the brand-perception analogue of Peters' (2019) ergodicity economics. In Peters' framework, the ensemble average of a multiplicative gambling game shows positive growth, while the time average of any individual trajectory shows negative growth (or ruin). Here, the ensemble average of brand perception is healthy (all dimensions positive), while the time average of any individual observer's perception converges to zero (eventual absorption). The practical consequence is identical: **surveys that aggregate across observers (ensemble averages) systematically overstate the quality of brand perception relative to any individual observer's temporal experience**.
 
+In consumer psychology, Hogarth and Einhorn (1992) provided the formal precedent for order-dependent belief updating. Their Belief-Adjustment Model demonstrates that step-by-step evaluation produces order-dependent outcomes unlike batch processing, and that negative evidence has asymmetric updating power --- a mechanism that this paper formalises as non-ergodic conviction dynamics through absorbing boundaries on $S^7_+$. Similarly, Kardes and Kalyanaram (1992) demonstrated that the first brand to enter a category gains a permanent evaluation advantage due to order-of-entry effects --- empirical evidence for the path dependence that non-ergodic perception formalises.
+
 ### 6.4 Conditional Non-Ergodicity with Drift
 
 When signal drift is active ($\alpha \lambda_{\text{enc}} > 0$), the situation is more nuanced. If the drift is sufficiently strong to prevent absorption (the process has a positive probability of surviving forever), then the time average may converge to a non-zero limit, and the question becomes whether this limit equals the ensemble average.
@@ -549,7 +551,7 @@ We apply the framework to SBT's five case-study brands using the canonical emiss
 
 | Brand | Grade | $\|\hat{s}\|$ | $\min_i \hat{s}_i$ | Min dimension | $d_\partial(\hat{s})$ |
 |-------|-------|---------|-----------|---------------|-------------|
-| Hermes | A+ | 1.000 | 0.137 | Economic | 0.137 |
+| Hermès | A+ | 1.000 | 0.137 | Economic | 0.137 |
 | IKEA | A- | 1.000 | 0.227 | Social | 0.227 |
 | Patagonia | B+ | 1.000 | 0.219 | Economic | 0.219 |
 | Erewhon | B- | 1.000 | 0.113 | Temporal | 0.113 |
@@ -557,7 +559,7 @@ We apply the framework to SBT's five case-study brands using the canonical emiss
 
 **Normalized emission profiles** (components of $\hat{s} = s/\|s\|$):
 
-| Dimension | Hermes | IKEA | Patagonia | Erewhon | Tesla |
+| Dimension | Hermès | IKEA | Patagonia | Erewhon | Tesla |
 |-----------|--------|------|-----------|---------|-------|
 | Semiotic | 0.432 | 0.379 | 0.272 | 0.318 | 0.341 |
 | Narrative | 0.409 | 0.356 | 0.408 | 0.296 | 0.387 |
@@ -574,21 +576,21 @@ The minimum coordinate $d_\partial(\hat{s})$ provides a first-order proxy for ab
 
 **Proposition 5** (Absorption probability ordering). *For the five case-study brands, under the assumption that observer perception evolves as the SDE of Section 4 with equal-weight initial condition $X_0 = x^* = (1/\sqrt{8}, \ldots, 1/\sqrt{8})$ and isotropic diffusion, the absorption risk ordering is:*
 
-$$\text{Tesla} > \text{Erewhon} > \text{Hermes} > \text{Patagonia} > \text{IKEA}$$
+$$\text{Tesla} > \text{Erewhon} > \text{Hermès} > \text{Patagonia} > \text{IKEA}$$
 
 *When drift toward the brand's emission profile is included, the ordering adjusts to:*
 
-$$\text{Tesla} > \text{Erewhon} > \text{IKEA} > \text{Patagonia} > \text{Hermes}$$
+$$\text{Tesla} > \text{Erewhon} > \text{IKEA} > \text{Patagonia} > \text{Hermès}$$
 
 *which nearly matches the SBT coherence grading (C- > B- > B+ > A- > A+), with one inversion: IKEA (A-) has higher absorption risk than Patagonia (B+), because Patagonia's identity coherence creates stronger directional drift opposing absorption than IKEA's signal coherence, despite IKEA's higher overall grade.*
 
 *Derivation.* The absorption risk depends on two factors: (1) how close the brand's target position $\hat{s}$ is to the boundary (smaller $d_\partial(\hat{s})$ = higher risk), and (2) how "balanced" the emission profile is across dimensions (more balanced = lower risk of any single dimension reaching zero).
 
-For the pure distance-from-boundary ordering, we read off from the table: Tesla ($d_\partial = 0.091$) > Erewhon ($d_\partial = 0.113$) > Hermes ($d_\partial = 0.137$) > Patagonia ($d_\partial = 0.219$) > IKEA ($d_\partial = 0.227$). Hermes ranks worse than expected because its economic dimension is very low (3.0/10); however, the drift toward Hermes's emission profile is very strong because Hermes has the highest overall signal coherence, meaning the drift opposes absorption effectively.
+For the pure distance-from-boundary ordering, we read off from the table: Tesla ($d_\partial = 0.091$) > Erewhon ($d_\partial = 0.113$) > Hermès ($d_\partial = 0.137$) > Patagonia ($d_\partial = 0.219$) > IKEA ($d_\partial = 0.227$). Hermès ranks worse than expected because its economic dimension is very low (3.0/10); however, the drift toward Hermès's emission profile is very strong because Hermès has the highest overall signal coherence, meaning the drift opposes absorption effectively.
 
 When we account for the *strength* of the drift (proportional to the brand's coherence -- how consistently signals reinforce the target position), the ordering changes:
 
-- **Hermes (A+)**: Low $d_\partial$ but extremely strong, consistent drift. The ecosystem coherence means signals from all encounter modes reinforce the same position. Effective absorption risk is very low despite the narrow economic dimension.
+- **Hermès (A+)**: Low $d_\partial$ but extremely strong, consistent drift. The ecosystem coherence means signals from all encounter modes reinforce the same position. Effective absorption risk is very low despite the narrow economic dimension.
 
 - **IKEA (A-)**: High $d_\partial$ but moderate drift strength. Signal coherence is strong but not ecosystem-level. Absorption risk is moderate.
 
@@ -598,7 +600,7 @@ When we account for the *strength* of the drift (proportional to the brand's coh
 
 - **Tesla (C-)**: Lowest $d_\partial$ (temporal = 2.0/10, ideological = 3.0/10) and weak, contradictory drift. The incoherence means signals from different encounter modes push perception in different directions, creating high effective diffusion rather than drift. The ideological polarization (3.0/10) means many observers start with perception profiles close to $x_3 = 0$. Very high absorption risk.
 
-The adjusted ordering Tesla > Erewhon > IKEA > Patagonia > Hermes aligns with the SBT coherence grades (C- > B- > B+ > A- > A+), with one inversion: IKEA (A-) shows higher absorption risk than Patagonia (B+). This inversion arises because identity coherence (Patagonia) generates stronger directional drift than signal coherence (IKEA) -- a qualitative distinction the letter grade does not capture. The near-match provides the first formal derivation connecting coherence type to dynamical stability from first principles. $\square$
+The adjusted ordering Tesla > Erewhon > IKEA > Patagonia > Hermès aligns with the SBT coherence grades (C- > B- > B+ > A- > A+), with one inversion: IKEA (A-) shows higher absorption risk than Patagonia (B+). This inversion arises because identity coherence (Patagonia) generates stronger directional drift than signal coherence (IKEA) -- a qualitative distinction the letter grade does not capture. The near-match provides the first formal derivation connecting coherence type to dynamical stability from first principles. $\square$
 
 ### 8.3 Survival Time Estimates
 
@@ -618,7 +620,7 @@ The survival probability at various times, for the equal-weight initial conditio
 | 4 | 0.106 |
 | 5 | 0.060 |
 
-These numbers assume no drift (no brand signaling). With drift, survival times are extended dramatically. For a brand with strong, consistent signaling (Hermes-level coherence), the effective absorption rate is reduced by a factor that depends on the drift-to-diffusion ratio. At $\alpha \lambda_{\text{enc}} / \sigma_0^2 \geq 10$ (strong signal maintenance), the process is effectively confined to a neighborhood of the brand's emission profile, and the survival time extends to $> 200$ years -- longer than any brand has existed.
+These numbers assume no drift (no brand signaling). With drift, survival times are extended dramatically. For a brand with strong, consistent signaling (Hermès-level coherence), the effective absorption rate is reduced by a factor that depends on the drift-to-diffusion ratio. At $\alpha \lambda_{\text{enc}} / \sigma_0^2 \geq 10$ (strong signal maintenance), the process is effectively confined to a neighborhood of the brand's emission profile, and the survival time extends to $> 200$ years -- longer than any brand has existed.
 
 ### 8.4 Ergodicity Coefficient by Brand
 
@@ -626,13 +628,13 @@ Using Definition 2 with observation window $\tau_{\text{char}} = 1$ year and the
 
 | Brand | $\tau_{\text{mix}}$ (years) | $\varepsilon$ | Interpretation |
 |-------|---------------------|------------|----------------|
-| Hermes | 0.20 | 5.0 | Effectively ergodic |
+| Hermès | 0.20 | 5.0 | Effectively ergodic |
 | IKEA | 0.35 | 2.9 | Moderately ergodic |
 | Patagonia | 0.30 | 3.3 | Moderately ergodic |
 | Erewhon | 0.80 | 1.3 | Weakly ergodic |
 | Tesla | 2.50 | 0.4 | Non-ergodic |
 
-**Interpretation.** Hermes has $\varepsilon = 5.0$: an ensemble survey of Hermes observers conducted over one year will closely approximate the time average of any individual observer. Brand health metrics are reliable. Tesla has $\varepsilon = 0.4$: an ensemble survey will systematically misrepresent the time-average experience of individual observers. The survey overestimates positive perception because the entire perception cloud of observers includes those who have not yet been absorbed -- the "survivorship bias" of brand health surveys.
+**Interpretation.** Hermès has $\varepsilon = 5.0$: an ensemble survey of Hermès observers conducted over one year will closely approximate the time average of any individual observer. Brand health metrics are reliable. Tesla has $\varepsilon = 0.4$: an ensemble survey will systematically misrepresent the time-average experience of individual observers. The survey overestimates positive perception because the entire perception cloud of observers includes those who have not yet been absorbed -- the "survivorship bias" of brand health surveys.
 
 This provides a formal basis for SBT's warning that "brand health is not brand power" (Zharnikov, 2026a). Brand health surveys measure ensemble averages; brand power depends on time averages. The two diverge precisely when the ergodicity coefficient is low.
 
@@ -662,7 +664,7 @@ The dynamical framework yields four strategic principles:
 
 3. **The D/A ratio has an optimal range.** The dynamical rationale for the D/A Goldilocks zone (Section 7.3) provides a principled justification for SBT's 55--65% recommendation: too little design risks absorption, too much prevents crystallization.
 
-4. **Temporal compounding is the strongest defense.** Brands with high temporal scores benefit from slow decay rates, which extend the effective survival time. Heritage brands like Hermes have built such deep temporal compounding that their perception profiles are essentially crystallized -- they are in the reflecting-boundary regime of Section 7.1, not the absorbing-boundary regime. This is why a 187-year-old brand can survive a single negative event that would be catastrophic for a 15-year-old brand: the crystallized priors act as reflecting boundaries that bounce the perception state back toward the target.
+4. **Temporal compounding is the strongest defense.** Brands with high temporal scores benefit from slow decay rates, which extend the effective survival time. Heritage brands like Hermès have built such deep temporal compounding that their perception profiles are essentially crystallized -- they are in the reflecting-boundary regime of Section 7.1, not the absorbing-boundary regime. This is why a 187-year-old brand can survive a single negative event that would be catastrophic for a 15-year-old brand: the crystallized priors act as reflecting boundaries that bounce the perception state back toward the target.
 
 ### 9.4 Limitations
 
@@ -714,7 +716,7 @@ The main results are:
 
 4. **Non-ergodicity (Theorem 4).** For the absorbed process, time averages and ensemble averages diverge with probability 1. To the best of our knowledge, this is the first formal proof that brand perception surveys (ensemble averages) and individual perceptual trajectories (time averages) measure fundamentally different quantities, establishing the brand-perception analogue of Peters' (2019) ergodicity economics.
 
-5. **Absorption risk nearly matches coherence grades (Proposition 5).** For the five case-study brands, the absorption risk ordering Tesla > Erewhon > IKEA > Patagonia > Hermes aligns with the SBT coherence grading, with one inversion: IKEA (A-) has higher absorption risk than Patagonia (B+), because identity coherence generates stronger directional drift than signal coherence. Coherent signaling creates effective drift that opposes absorption; incoherent signaling creates effective diffusion that accelerates it.
+5. **Absorption risk nearly matches coherence grades (Proposition 5).** For the five case-study brands, the absorption risk ordering Tesla > Erewhon > IKEA > Patagonia > Hermès aligns with the SBT coherence grading, with one inversion: IKEA (A-) has higher absorption risk than Patagonia (B+), because identity coherence generates stronger directional drift than signal coherence. Coherent signaling creates effective drift that opposes absorption; incoherent signaling creates effective diffusion that accelerates it.
 
 These results have three immediate consequences for brand theory and practice.
 
@@ -754,9 +756,13 @@ Gardenfors, P. (2000). *Conceptual Spaces: The Geometry of Thought*. MIT Press.
 
 Hegselmann, R., & Krause, U. (2002). Opinion dynamics and bounded confidence: Models, analysis and simulation. *Journal of Artificial Societies and Social Simulation*, 5(3), 2.
 
+Hogarth, R. M., & Einhorn, H. J. (1992). Order effects in belief updating: The belief-adjustment model. *Cognitive Psychology*, 24(1), 1--55.
+
 Hsu, E. P. (2002). *Stochastic Analysis on Manifolds*. Graduate Studies in Mathematics, Vol. 38. American Mathematical Society.
 
 Kapferer, J.-N. (2008). *The New Strategic Brand Management: Creating and Sustaining Brand Equity Long Term* (4th ed.). Kogan Page.
+
+Kardes, F. R., & Kalyanaram, G. (1992). Order-of-entry effects on consumer memory and judgment: An information integration perspective. *Journal of Marketing Research*, 29(3), 343--357.
 
 Keller, K. L. (1993). Conceptualizing, measuring, and managing customer-based brand equity. *Journal of Marketing*, 57(1), 1--22.
 
@@ -823,7 +829,7 @@ All numerical results reported in this paper were computed using standard mathem
 
 | Brand | $d_\partial(\hat{s})$ | Minimum dimension |
 |-------|---------------------|-------------------|
-| Hermes | 0.137 | Economic (3.0/10) |
+| Hermès | 0.137 | Economic (3.0/10) |
 | IKEA | 0.227 | Social (5.0/10) |
 | Patagonia | 0.219 | Economic (5.0/10) |
 | Erewhon | 0.113 | Temporal (2.5/10) |
