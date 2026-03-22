@@ -40,7 +40,7 @@ The approach connects three previously separate intellectual traditions. From **
 
 The paper builds on the metric framework established in Zharnikov (2026d), which defined the Aitchison metric on brand signal space $\mathbb{R}^8_+$ and the Fisher-Rao metric on observer weight space $\Delta^7$. Where that paper established the *geometry* of brand perception (how to measure distances), this paper establishes the *dynamics* (how positions change over time). The two together -- statics and dynamics -- provide a complete mathematical foundation for SBT.
 
-The remainder of the paper is organized as follows. Section 2 establishes preliminaries and notation, recalling the SBT framework and the relevant elements of Riemannian geometry. Section 3 develops Brownian motion on spheres, including the Laplace-Beltrami operator and its eigenvalues. Section 4 formulates the brand perception SDE. Section 5 analyzes absorbed Brownian motion on $S^7_+$. Section 6 establishes mixing time bounds and non-ergodicity results. Section 7 connects the mathematical framework to SBT's signal dynamics and brand strategy. Section 8 presents numerical demonstrations for the five case-study brands. Section 9 discusses implications. Section 10 connects to the broader research program. Section 11 concludes.
+The remainder of the paper is organized as follows. Section 2 establishes preliminaries and notation, recalling the SBT framework and the relevant elements of Riemannian geometry. Section 3 develops Brownian motion on spheres, including the Laplace-Beltrami operator and its eigenvalues. Section 4 formulates the brand perception SDE. Section 5 analyzes absorbed Brownian motion on $S^7_+$. Section 6 establishes mixing time bounds and non-ergodicity results. Section 7 connects the mathematical framework to SBT's signal dynamics and brand strategy. Section 8 presents numerical demonstrations for the five case-study brands. Section 9 discusses implications. Section 10 connects to the broader research program. Section 11 develops distribution-free calibration of velocity estimates using conformal prediction. Section 12 concludes.
 
 ---
 
@@ -704,7 +704,95 @@ Together, R1--R6 provide a complete mathematical apparatus for Spectral Brand Th
 
 ---
 
-## 11. Conclusion
+## 11. Distribution-Free Calibration of Perception Trajectories
+
+### 11.1 The Calibration Problem
+
+The velocity tracking implemented in Section 9.1 produces point estimates: a signed rate of change per dimension per period. But point estimates without calibrated uncertainty are operationally incomplete. A velocity estimate of $-0.5$/quarter on the Ideological dimension could represent a confident decline or a noisy fluctuation. Without uncertainty quantification, practitioners cannot distinguish actionable signals from measurement noise.
+
+The SDE framework developed in Sections 4--6 provides theoretical distributions via the drift vector $\mu$ and diffusion coefficient $\sigma$. However, these require assumptions about noise structure (Brownian motion on the manifold) and parameter values that may not hold for real brand tracking data. In particular, the isotropic diffusion assumption (Section 9.4, Limitation 1) and the constant-parameter assumption (Limitation 2) are simplifications whose violations would invalidate parametric confidence intervals derived from the SDE model. What is needed is a distribution-free calibration method that provides coverage guarantees without parametric assumptions -- a method that remains valid regardless of the true noise structure.
+
+Conformal prediction (Vovk et al., 2005; Angelopoulos & Bates, 2023) provides exactly this guarantee. Originally developed in the machine learning literature for predictive inference, conformal prediction constructs prediction intervals with finite-sample coverage guarantees under a single assumption -- exchangeability -- that is strictly weaker than the i.i.d. assumption and far weaker than Gaussianity. We show here that the method applies naturally to the velocity estimates from Section 9.1, providing calibrated uncertainty bands for both per-dimension velocities and time-to-absorption estimates.
+
+### 11.2 Conformal Prediction for Velocity Estimates
+
+We adopt the split conformal prediction framework of Lei et al. (2018). The key insight is that coverage guarantees can be derived from the empirical distribution of past prediction errors, without any assumption about the form of that distribution.
+
+Let $\hat{v}_i^{(t)}$ denote the velocity estimate for dimension $i$ at time $t$, computed from sequential signal profile snapshots as described in Section 9.1. Let $v_i^{(t)}$ denote the true velocity (the realized rate of change observed at the next measurement period). The residual is $r_i^{(t)} = v_i^{(t)} - \hat{v}_i^{(t)}$.
+
+Given a calibration set of $n$ historical residuals $\{r_i^{(1)}, \ldots, r_i^{(n)}\}$ from prior tracking periods, the conformal prediction algorithm proceeds as follows:
+
+1. Compute nonconformity scores: $s_k = |r_i^{(k)}|$ for $k = 1, \ldots, n$.
+2. Find the finite-sample corrected quantile:
+
+$$q_{1-\alpha} = \text{Quantile}\left(\{s_k\}_{k=1}^n,\; \frac{\lceil (1-\alpha)(n+1) \rceil}{n}\right)$$
+
+3. For a new velocity estimate $\hat{v}_i^{(n+1)}$, construct the prediction interval:
+
+$$C_{1-\alpha}(\hat{v}_i^{(n+1)}) = \left[\hat{v}_i^{(n+1)} - q_{1-\alpha},\; \hat{v}_i^{(n+1)} + q_{1-\alpha}\right]$$
+
+The coverage guarantee is immediate from the theory of conformal prediction.
+
+**Proposition 6 (Conformal Coverage).** *If the velocity residuals $r_i^{(1)}, \ldots, r_i^{(n)}, r_i^{(n+1)}$ are exchangeable, then*
+
+$$\mathbb{P}\!\left(v_i^{(n+1)} \in C_{1-\alpha}(\hat{v}_i^{(n+1)})\right) \geq 1 - \alpha.$$
+
+This is a standard result from conformal prediction theory (Vovk et al., 2005, Chapter 2). The finite-sample correction $\lceil (1-\alpha)(n+1) \rceil / n$ ensures that the coverage guarantee holds for any sample size $n$, not merely asymptotically. The guarantee holds for *any* underlying distribution of residuals -- no Gaussian assumption, no stationarity assumption, no parametric model of any kind.
+
+The exchangeability condition deserves comment. Exchangeability requires that the joint distribution of the residual sequence is invariant under permutation; it is strictly weaker than the i.i.d. assumption, since it permits dependencies in the marginal distributions provided the joint distribution is permutation-invariant. For brand perception velocity, exchangeability holds when the data-generating process is stationary over the calibration window -- a reasonable assumption for quarterly brand tracking data within a stable competitive environment. When the competitive environment shifts (a new entrant, a category disruption), the calibration set should be refreshed.
+
+### 11.3 Application to Time-to-Absorption Estimates
+
+The linear time-to-absorption estimate from Section 9.1,
+
+$$T_{\text{absorb},i} = \frac{x_i^{(t)} - x_{\min}}{|\hat{v}_i^{(t)}|}$$
+
+where $x_i^{(t)}$ is the current value of dimension $i$ and $x_{\min}$ is the absorbing boundary threshold, inherits uncertainty from the velocity estimate. Conformal bands on the velocity propagate directly to bounds on the absorption time.
+
+Let $[\hat{v}_i - q_{1-\alpha},\; \hat{v}_i + q_{1-\alpha}]$ be the conformal interval for a declining dimension (where $\hat{v}_i < 0$). Then:
+
+- The upper velocity bound $\hat{v}_i + q_{1-\alpha}$ (less negative, or possibly positive) yields a longer -- more optimistic -- time to absorption.
+- The lower velocity bound $\hat{v}_i - q_{1-\alpha}$ (more negative) yields a shorter -- more pessimistic -- time to absorption.
+
+This gives practitioners a calibrated range rather than a point estimate: "at 90% confidence, this dimension reaches the absorbing boundary between 1.2 and 4.8 quarters." The calibrated range transforms the time-to-absorption estimate from a deterministic extrapolation (which implies false precision) into a prediction interval with guaranteed coverage (which correctly communicates the degree of uncertainty in the forecast).
+
+When the upper velocity bound is non-negative ($\hat{v}_i + q_{1-\alpha} \geq 0$), the optimistic bound is infinite -- the data are consistent with the dimension not declining at all. This is informative: it tells the practitioner that the observed decline is not statistically distinguishable from noise at the chosen confidence level.
+
+### 11.4 Practical Implementation
+
+The conformal calibration algorithm requires only basic numerical computation (no external statistical libraries beyond standard array operations). The core algorithm is approximately ten lines of code and has been implemented in the open-source SBT validation toolkit (spectralbranding/sbt-framework) as part of the `VelocityReport` dataclass.
+
+Several design decisions merit discussion:
+
+**Calibration data.** The calibration set consists of historical velocity residuals from sequential brand profile snapshots. Each residual compares the velocity predicted at time $t$ with the velocity realized at time $t+1$. The residuals are computed per dimension, so each of the eight SBT dimensions maintains its own calibration set.
+
+**Minimum calibration set size.** We require a minimum of $n = 10$ calibration residuals. Below this threshold, the conformal quantile $q_{1-\alpha}$ is dominated by the most extreme residual, producing intervals too wide to be operationally useful. For quarterly brand tracking data, this corresponds to approximately 2.5 years of history -- a practical minimum for any meaningful trend analysis.
+
+**Default coverage level.** The default coverage is set to 90% ($\alpha = 0.10$). Practitioners can adjust this parameter: higher coverage (e.g., 95%) produces wider intervals suitable for high-stakes decisions (should we restructure the brand's emission policy?), while lower coverage (e.g., 80%) produces narrower intervals for routine monitoring.
+
+**Interval clamping.** Velocity bounds are clamped to $[x_{\min} - x_i^{(t)},\; x_{\max} - x_i^{(t)}]$, where $x_{\min}$ and $x_{\max}$ are the minimum and maximum attainable signal values. This prevents physically impossible predictions -- a velocity bound that would push a perception score below $x_{\min} = 0$ (the absorbing boundary) or above $x_{\max} = 10$ (the maximum signal value) is truncated.
+
+### 11.5 Relationship to the SDE Framework
+
+The conformal approach complements rather than replaces the SDE model developed in Sections 4--6. The two methods address different aspects of uncertainty:
+
+The SDE framework provides:
+- Theoretical drift and diffusion structure (the form of the equations of motion)
+- Qualitative predictions (which dimensions face absorption risk, which are crystallized)
+- Asymptotic behavior (survival probability decay rates, mixing times, quasi-stationary distributions)
+
+Conformal prediction provides:
+- Finite-sample coverage guarantees derived from empirical data
+- Distribution-free intervals (no Brownian motion assumption required)
+- Operationally actionable uncertainty bands for period-to-period velocity estimates
+
+When the SDE parameters are well-estimated and the model assumptions hold, conformal intervals and parametric intervals will be similar in width, providing mutual validation. When the SDE assumptions are violated -- non-Gaussian noise, anisotropic diffusion, non-stationary dynamics, or parameter misspecification -- the conformal intervals remain valid while the parametric intervals do not. The conformal approach thus provides a robustness guarantee: practitioners obtain calibrated uncertainty regardless of whether the theoretical model holds exactly for their brand and market context.
+
+This complementarity has a natural interpretation in the vectorized-rasterized distinction of Section 9.1. The SDE model is the theoretical engine of the vectorized approach: it specifies the equations of motion and their qualitative consequences. Conformal prediction is the empirical calibrator: it takes the point estimates produced by the vectorized approach and wraps them in distribution-free uncertainty bands. Together, they provide both the "why" (SDE theory) and the "how much" (conformal calibration) of brand perception dynamics.
+
+---
+
+## 12. Conclusion
 
 This paper has established a formal dynamical model of brand perception evolution within Spectral Brand Theory's eight-dimensional framework. The central mathematical object is a stochastic differential equation on $S^7_+$, the positive octant of the 7-sphere, with absorbing boundary conditions representing irreversible loss of perceptual dimensions.
 
@@ -720,13 +808,15 @@ The main results are:
 
 5. **Absorption risk nearly matches coherence grades (Proposition 5).** For the five case-study brands, the absorption risk ordering Tesla > Erewhon > IKEA > Patagonia > Hermès aligns with the SBT coherence grading, with one inversion: IKEA (A-) has higher absorption risk than Patagonia (B+), because identity coherence generates stronger directional drift than signal coherence. Coherent signaling creates effective drift that opposes absorption; incoherent signaling creates effective diffusion that accelerates it.
 
+6. **Distribution-free calibration (Proposition 6).** Conformal prediction applied to velocity residuals provides finite-sample coverage guarantees for per-dimension velocity estimates and time-to-absorption forecasts, without requiring Gaussian noise, stationarity, or any parametric model. The conformal intervals remain valid even when the SDE assumptions of Sections 4--6 are violated, providing a robustness guarantee for the practical implementation of the vectorized approach.
+
 These results have three immediate consequences for brand theory and practice.
 
 First, **signal maintenance is mathematically necessary**. Without active brand signaling, absorption is certain (Section 5.4). The question for brand managers is not whether to invest in ongoing signal emission but how much investment is needed to maintain the survival probability above their risk tolerance. Theorem 2 provides the quantitative tool for this calculation.
 
 Second, **ensemble surveys are unreliable for non-ergodic brands**. When the ergodicity coefficient $\varepsilon$ is low (below approximately 1), the time-average experience of individual observers diverges systematically from the ensemble average captured by surveys. For brands like Tesla ($\varepsilon \approx 0.4$), survey-based brand health metrics are not merely imprecise but fundamentally misleading -- they suffer from survivorship bias in perception space.
 
-Third, **brand management is a trajectory optimization problem**, not a position optimization problem. The traditional framing -- "where should we position the brand?" -- is the wrong question. The right question is: "what drift and diffusion parameters keep the perception trajectory in a desirable region of $S^7_+$, away from absorbing boundaries and within crystallization basins?" This reframing is the dynamical consequence of the static insight that brands are multi-dimensional objects, not points on a perceptual map.
+Third, **brand management is a trajectory optimization problem**, not a position optimization problem. The traditional framing -- "where should we position the brand?" -- is the wrong question. The right question is: "what drift and diffusion parameters keep the perception trajectory in a desirable region of $S^7_+$, away from absorbing boundaries and within crystallization basins?" This reframing is the dynamical consequence of the static insight that brands are multi-dimensional objects, not points on a perceptual map. Conformal prediction bands (Section 11) make this trajectory optimization operationally actionable by providing calibrated uncertainty around velocity estimates and time-to-absorption forecasts, enabling practitioners to distinguish statistically significant trajectory changes from measurement noise without relying on parametric assumptions.
 
 The dynamical framework opens several directions for future work: interacting observer systems (correlated trajectories through social signals), empirical calibration of SDE parameters from longitudinal brand tracking data, optimal control formulations (what signal strategy minimizes absorption risk?), and connections to mean-field game theory (how do competing brands' strategies interact through their effect on shared observer populations). These extensions would complete the transition from qualitative brand theory to quantitative brand dynamics -- a transition that this paper, together with R1--R5, has begun.
 
@@ -737,6 +827,8 @@ The dynamical framework opens several directions for future work: interacting ob
 Aaker, D. A. (1991). *Managing Brand Equity: Capitalizing on the Value of a Brand Name*. Free Press.
 
 Aitchison, J. (1986). *The Statistical Analysis of Compositional Data*. Chapman and Hall.
+
+Angelopoulos, A. N., & Bates, S. (2023). Conformal prediction: A gentle introduction. *Foundations and Trends in Machine Learning*, 16(4), 494--591.
 
 Ashbaugh, M. S., & Benguria, R. D. (1992). A sharp bound for the ratio of the first two eigenvalues of Dirichlet Laplacians and extensions. *Annals of Mathematics*, 135(3), 601--628.
 
@@ -768,6 +860,8 @@ Kardes, F. R., & Kalyanaram, G. (1992). Order-of-entry effects on consumer memor
 
 Keller, K. L. (1993). Conceptualizing, measuring, and managing customer-based brand equity. *Journal of Marketing*, 57(1), 1--22.
 
+Lei, J., G'Sell, M., Rinaldo, A., Tibshirani, R. J., & Wasserman, L. (2018). Distribution-free predictive inference for regression. *Journal of the American Statistical Association*, 113(523), 1094--1111.
+
 Levin, D. A., Peres, Y., & Wilmer, E. L. (2009). *Markov Chains and Mixing Times*. American Mathematical Society.
 
 Lichnerowicz, A. (1958). Geometrie des groupes de transformations. *Travaux et Recherches Mathematiques*, 3. Dunod.
@@ -787,6 +881,8 @@ Stroock, D. W. (2000). *An Introduction to the Analysis of Paths on a Riemannian
 Todd, J. T., Oomes, A. H. J., Koenderink, J. J., & Kappers, A. M. L. (2001). On the affine structure of perceptual space. *Psychological Science*, 12(3), 191--196.
 
 Viazovska, M. S. (2017). The sphere packing problem in dimension 8. *Annals of Mathematics*, 185(3), 991--1015.
+
+Vovk, V., Gammerman, A., & Shafer, G. (2005). *Algorithmic Learning in a Random World*. Springer.
 
 Weber, E. H. (1834). *De Pulsu, Resorptione, Auditu et Tactu: Annotationes Anatomicae et Physiologicae*. Koehler.
 
