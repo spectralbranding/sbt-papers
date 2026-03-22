@@ -325,7 +325,7 @@ The eigenvalues of $-\Delta_{S^{n-1}}$ for spherical harmonics of degree $\ell$ 
 
 $$\lambda_{D,1}(S^7_+) = 8(8 + 8 - 2) = 112$$
 
-This far exceeds the first eigenvalue $\lambda_1 = 7$ of the full sphere. The Dirichlet eigenvalue is strictly larger because the boundary conditions remove all eigenfunctions of lower degrees, requiring the process to be highly concentrated in the center of the octant to survive.
+This far exceeds the first eigenvalue $\lambda_1 = 7$ of the full sphere. The Dirichlet eigenvalue is strictly larger because any polynomial that is odd in all 8 variables must contain each variable to an odd power $\geq 1$, so the minimum total degree is 8. All spherical harmonics of degree $\ell < 8$ therefore fail the odd-parity boundary condition on at least one coordinate hyperplane, leaving $\phi_1$ as the first Dirichlet eigenfunction.
 
 ### 5.3 Survival Probability
 
@@ -551,24 +551,24 @@ We apply the framework to SBT's five case-study brands using the canonical emiss
 
 | Brand | Grade | $\|\hat{s}\|$ | $\min_i \hat{s}_i$ | Min dimension | $d_\partial(\hat{s})$ |
 |-------|-------|---------|-----------|---------------|-------------|
-| Hermès | A+ | 1.000 | 0.137 | Economic | 0.137 |
-| IKEA | A- | 1.000 | 0.227 | Social | 0.227 |
-| Patagonia | B+ | 1.000 | 0.219 | Economic | 0.219 |
-| Erewhon | B- | 1.000 | 0.113 | Temporal | 0.113 |
-| Tesla | C- | 1.000 | 0.091 | Temporal | 0.091 |
+| Hermès | A+ | 1.000 | 0.128 | Economic | 0.128 |
+| IKEA | A- | 1.000 | 0.249 | Social | 0.249 |
+| Patagonia | B+ | 1.000 | 0.237 | Economic | 0.237 |
+| Erewhon | B- | 1.000 | 0.135 | Temporal | 0.135 |
+| Tesla | C- | 1.000 | 0.120 | Temporal | 0.120 |
 
 **Normalized emission profiles** (components of $\hat{s} = s/\|s\|$):
 
 | Dimension | Hermès | IKEA | Patagonia | Erewhon | Tesla |
 |-----------|--------|------|-----------|---------|-------|
-| Semiotic | 0.432 | 0.379 | 0.272 | 0.318 | 0.341 |
-| Narrative | 0.409 | 0.356 | 0.408 | 0.296 | 0.387 |
-| Ideological | 0.318 | 0.284 | 0.430 | 0.227 | 0.136 |
-| Experiential | 0.409 | 0.332 | 0.340 | 0.409 | 0.273 |
-| Social | 0.386 | 0.237 | 0.362 | 0.386 | 0.318 |
-| Economic | 0.136 | 0.427 | 0.226 | 0.159 | 0.273 |
-| Cultural | 0.409 | 0.356 | 0.317 | 0.341 | 0.182 |
-| Temporal | 0.432 | 0.284 | 0.295 | 0.114 | 0.091 |
+| Semiotic | 0.404 | 0.398 | 0.285 | 0.377 | 0.449 |
+| Narrative | 0.383 | 0.373 | 0.427 | 0.350 | 0.509 |
+| Ideological | 0.297 | 0.299 | 0.451 | 0.270 | 0.180 |
+| Experiential | 0.383 | 0.348 | 0.356 | 0.485 | 0.360 |
+| Social | 0.361 | 0.249 | 0.380 | 0.458 | 0.420 |
+| Economic | 0.128 | 0.448 | 0.237 | 0.189 | 0.360 |
+| Cultural | 0.383 | 0.373 | 0.332 | 0.404 | 0.240 |
+| Temporal | 0.404 | 0.299 | 0.309 | 0.135 | 0.120 |
 
 The minimum coordinate $d_\partial(\hat{s})$ provides a first-order proxy for absorption risk: brands with smaller minimum coordinates have perception profiles closer to the boundary and are more vulnerable to dimensional loss.
 
@@ -576,7 +576,7 @@ The minimum coordinate $d_\partial(\hat{s})$ provides a first-order proxy for ab
 
 **Proposition 5** (Absorption probability ordering). *For the five case-study brands, under the assumption that observer perception evolves as the SDE of Section 4 with equal-weight initial condition $X_0 = x^* = (1/\sqrt{8}, \ldots, 1/\sqrt{8})$ and isotropic diffusion, the absorption risk ordering is:*
 
-$$\text{Tesla} > \text{Erewhon} > \text{Hermès} > \text{Patagonia} > \text{IKEA}$$
+$$\text{Tesla} > \text{Hermès} > \text{Erewhon} > \text{Patagonia} > \text{IKEA}$$
 
 *When drift toward the brand's emission profile is included, the ordering adjusts to:*
 
@@ -586,7 +586,7 @@ $$\text{Tesla} > \text{Erewhon} > \text{IKEA} > \text{Patagonia} > \text{Hermès
 
 *Derivation.* The absorption risk depends on two factors: (1) how close the brand's target position $\hat{s}$ is to the boundary (smaller $d_\partial(\hat{s})$ = higher risk), and (2) how "balanced" the emission profile is across dimensions (more balanced = lower risk of any single dimension reaching zero).
 
-For the pure distance-from-boundary ordering, we read off from the table: Tesla ($d_\partial = 0.091$) > Erewhon ($d_\partial = 0.113$) > Hermès ($d_\partial = 0.137$) > Patagonia ($d_\partial = 0.219$) > IKEA ($d_\partial = 0.227$). Hermès ranks worse than expected because its economic dimension is very low (3.0/10); however, the drift toward Hermès's emission profile is very strong because Hermès has the highest overall signal coherence, meaning the drift opposes absorption effectively.
+For the pure distance-from-boundary ordering, we read off from the table: Tesla ($d_\partial = 0.120$) > Hermès ($d_\partial = 0.128$) > Erewhon ($d_\partial = 0.135$) > Patagonia ($d_\partial = 0.237$) > IKEA ($d_\partial = 0.249$). Hermès ranks second-worst in the no-drift case — surprising for an A+ brand — because its economic dimension is very low (3.0/10), placing its normalized target profile close to the boundary. However, the drift toward Hermès's emission profile is extremely strong (ecosystem coherence), meaning the drift nearly eliminates absorption risk despite the narrow economic dimension.
 
 When we account for the *strength* of the drift (proportional to the brand's coherence -- how consistently signals reinforce the target position), the ordering changes:
 
@@ -596,9 +596,9 @@ When we account for the *strength* of the drift (proportional to the brand's coh
 
 - **Patagonia (B+)**: High $d_\partial$ with strong ideological drift. The identity coherence means ideological signals strongly oppose absorption, but experiential and economic signals are less coordinated.
 
-- **Erewhon (B-)**: Low $d_\partial$ (temporal dimension is very weak at 2.5/10) and moderate, asymmetric drift. The experiential strength creates a local pull, but the temporal weakness means the brand has little temporal compounding to resist decay. High absorption risk.
+- **Erewhon (B-)**: Low $d_\partial$ ($d_\partial = 0.135$, third-closest to boundary, driven by the temporal dimension at 2.5/10) and moderate, asymmetric drift. The experiential strength creates a local pull, but the temporal weakness means the brand has little temporal compounding to resist decay. High absorption risk.
 
-- **Tesla (C-)**: Lowest $d_\partial$ (temporal = 2.0/10, ideological = 3.0/10) and weak, contradictory drift. The incoherence means signals from different encounter modes push perception in different directions, creating high effective diffusion rather than drift. The ideological polarization (3.0/10) means many observers start with perception profiles close to $x_3 = 0$. Very high absorption risk.
+- **Tesla (C-)**: Lowest $d_\partial$ ($d_\partial = 0.120$, temporal = 2.0/10, ideological = 3.0/10) and weak, contradictory drift. The incoherence means signals from different encounter modes push perception in different directions, creating high effective diffusion rather than drift. The ideological polarization (3.0/10) means many observers start with perception profiles close to $x_3 = 0$. Very high absorption risk.
 
 The adjusted ordering Tesla > Erewhon > IKEA > Patagonia > Hermès aligns with the SBT coherence grades (C- > B- > B+ > A- > A+), with one inversion: IKEA (A-) shows higher absorption risk than Patagonia (B+). This inversion arises because identity coherence (Patagonia) generates stronger directional drift than signal coherence (IKEA) -- a qualitative distinction the letter grade does not capture. The near-match provides the first formal derivation connecting coherence type to dynamical stability from first principles. $\square$
 
@@ -739,7 +739,7 @@ $$\mathbb{P}\!\left(v_i^{(n+1)} \in C_{1-\alpha}(\hat{v}_i^{(n+1)})\right) \geq 
 
 This is a standard result from conformal prediction theory (Vovk et al., 2005, Chapter 2). The finite-sample correction $\lceil (1-\alpha)(n+1) \rceil / n$ ensures that the coverage guarantee holds for any sample size $n$, not merely asymptotically. The guarantee holds for *any* underlying distribution of residuals -- no Gaussian assumption, no stationarity assumption, no parametric model of any kind.
 
-The exchangeability condition deserves comment. Exchangeability requires that the joint distribution of the residual sequence is invariant under permutation; it is strictly weaker than the i.i.d. assumption, since it permits dependencies in the marginal distributions provided the joint distribution is permutation-invariant. For brand perception velocity, exchangeability holds when the data-generating process is stationary over the calibration window -- a reasonable assumption for quarterly brand tracking data within a stable competitive environment. When the competitive environment shifts (a new entrant, a category disruption), the calibration set should be refreshed.
+The exchangeability condition deserves comment. Exchangeability requires that the joint distribution of the residual sequence is invariant under permutation; it is strictly weaker than the i.i.d. assumption, since it permits dependencies in the marginal distributions provided the joint distribution is permutation-invariant. For brand perception velocity, exchangeability is plausible when the data-generating process is stable over the calibration window, but it is not automatic. Stationarity of a time series does not imply exchangeability: a stationary AR(1) process, for example, has marginal distributions that are identical but a joint distribution that is not permutation-invariant due to serial correlation. If velocity residuals exhibit serial correlation (as they plausibly might when brand dynamics follow smooth trajectories), the standard conformal guarantee is weakened. Two practical mitigations exist: (a) using only every $k$-th residual to reduce serial dependence (thinning), and (b) applying block-wise conformal methods that preserve temporal structure. When the competitive environment shifts (a new entrant, a category disruption), the calibration set should be refreshed regardless of the method used.
 
 ### 11.3 Application to Time-to-Absorption Estimates
 
@@ -804,7 +804,7 @@ The main results are:
 
 3. **Mixing time bounds (Theorem 3).** The Dirichlet spectral gap on $S^7_+$ is $\lambda_{D,2} - \lambda_{D,1} = 160 - 112 = 48$, yielding a mixing time to the quasi-stationary distribution of $\tau_{\text{mix}} \asymp 2/(48\sigma_0^2)$, which is *faster* than the mixing time $2/(7\sigma_0^2)$ on the full sphere. Conditioned on survival, perception trajectories are confined to the deep interior of the octant, reducing the effective volume and accelerating convergence to the QSD.
 
-4. **Non-ergodicity (Theorem 4).** For the absorbed process, time averages and ensemble averages diverge with probability 1. To the best of our knowledge, this is the first formal proof that brand perception surveys (ensemble averages) and individual perceptual trajectories (time averages) measure fundamentally different quantities, establishing the brand-perception analogue of Peters' (2019) ergodicity economics.
+4. **Non-ergodicity (Theorem 4).** For the absorbed process, time averages and ensemble averages diverge with probability 1. To the best of our knowledge, this is the first formal proof of time-ensemble divergence in the context of multi-dimensional brand perception, establishing the brand-perception analogue of Peters' (2019) ergodicity economics.
 
 5. **Absorption risk nearly matches coherence grades (Proposition 5).** For the five case-study brands, the absorption risk ordering Tesla > Erewhon > IKEA > Patagonia > Hermès aligns with the SBT coherence grading, with one inversion: IKEA (A-) has higher absorption risk than Patagonia (B+), because identity coherence generates stronger directional drift than signal coherence. Coherent signaling creates effective drift that opposes absorption; incoherent signaling creates effective diffusion that accelerates it.
 
@@ -839,6 +839,8 @@ Berger, M., Gauduchon, P., & Mazet, E. (1971). *Le Spectre d'une Variete Riemann
 Busemeyer, J. R., & Bruza, P. D. (2012). *Quantum Models of Cognition and Decision*. Cambridge University Press.
 
 Cattiaux, P., Collet, P., Lambert, A., Martinez, S., Meleard, S., & San Martin, J. (2009). Quasi-stationary distributions and diffusion models in population dynamics. *Annals of Probability*, 37(5), 1926--1969.
+
+Dick, A. S., & Basu, K. (1994). Customer loyalty: Toward an integrated conceptual framework. *Journal of the Academy of Marketing Science*, 22(2), 99--113.
 
 Chavel, I. (1984). *Eigenvalues in Riemannian Geometry*. Academic Press.
 
@@ -875,6 +877,8 @@ Molenaar, P. C. M. (2009). The new person-specific paradigm in psychology. *Curr
 Peters, O. (2019). The ergodicity problem in economics. *Nature Physics*, 15, 1216--1221.
 
 Peters, O., & Gell-Mann, M. (2016). Evaluating gambles using dynamics. *Chaos*, 26(2), 023103.
+
+Petty, R. E., & Cacioppo, J. T. (1986). *Communication and Persuasion: Central and Peripheral Routes to Attitude Change*. Springer.
 
 Stroock, D. W. (2000). *An Introduction to the Analysis of Paths on a Riemannian Manifold*. Mathematical Surveys and Monographs, Vol. 74. American Mathematical Society.
 
@@ -927,10 +931,10 @@ All numerical results reported in this paper were computed using standard mathem
 
 | Brand | $d_\partial(\hat{s})$ | Minimum dimension |
 |-------|---------------------|-------------------|
-| Hermès | 0.137 | Economic (3.0/10) |
-| IKEA | 0.227 | Social (5.0/10) |
-| Patagonia | 0.219 | Economic (5.0/10) |
-| Erewhon | 0.113 | Temporal (2.5/10) |
-| Tesla | 0.091 | Temporal (2.0/10) |
+| Hermès | 0.128 | Economic (3.0/10) |
+| IKEA | 0.249 | Social (5.0/10) |
+| Patagonia | 0.237 | Economic (5.0/10) |
+| Erewhon | 0.135 | Temporal (2.5/10) |
+| Tesla | 0.120 | Temporal (2.0/10) |
 
 **Ergodicity coefficient estimates** were computed as $\varepsilon = \tau_{\text{char}} / \tau_{\text{mix}}$ with $\tau_{\text{char}} = 1$ year and mixing times estimated from the drift-diffusion balance for each brand. Higher coherence grades correspond to stronger drift, which reduces the effective mixing time and increases $\varepsilon$.
