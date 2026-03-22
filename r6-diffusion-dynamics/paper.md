@@ -648,6 +648,8 @@ The dynamical framework established in this paper deepens the distinction betwee
 
 The mathematical asymmetry is now precise: a snapshot $X_t$ at any single time $t$ contains no information about $\dot{X}_t$ (the velocity of perception change), $d_\partial(X_t)$ (proximity to irreversible loss), or the absorption probability $\mathbb{P}[\tau < t + T]$. These are trajectory-level quantities that require trajectory-level data. The SDE framework makes this concrete: knowing $X_t$ is knowing one point on a stochastic curve; managing the brand requires knowing the curve's drift, diffusion, and boundary conditions.
 
+**Implementation note.** The per-dimension velocity tracking described above — the discrete approximation to the drift vector $\mu(X_t, t)$ — has been implemented in the open-source SBT validation toolkit (spectralbranding/sbt-framework). The implementation computes signed velocity per dimension from sequential signal profile snapshots, directional classification (rising, falling, or stable), acceleration when three or more snapshots are available, and linear time-to-absorption estimates for declining dimensions. This operationalizes the vectorized approach: practitioners using the toolkit now track velocity and boundary proximity, not just position.
+
 ### 9.2 The Time-Average Perspective
 
 Peters (2019) argued that the ergodicity assumption -- the conflation of time and ensemble averages -- is the deepest error in economic theory, responsible for paradoxes from the St. Petersburg problem to the equity premium puzzle. Theorem 4 establishes an analogous claim for brand theory: brand health surveys (ensemble averages) systematically misrepresent brand reality (time averages) whenever absorbing boundaries are active.
