@@ -20,7 +20,7 @@ Brand theory lacks formal mathematical foundations. While frameworks such as Kel
 
 ## 1. Introduction
 
-Brand management is among the most economically consequential domains that lacks a formal mathematical foundation. The global value of the top 100 brands exceeds \$8 trillion (Brand Finance, 2025), yet the theoretical frameworks used to analyze, compare, and optimize brand perception remain fundamentally qualitative. Keller's (1993) Customer-Based Brand Equity model provides a conceptual hierarchy but no distance function. Aaker's (1997) brand personality dimensions generate survey scores but no geometry. Kapferer's (2008, 4th ed.) brand identity prism offers a visual metaphor but no metric. None of these foundational frameworks answers the most basic mathematical question about brand perception: *what does it mean for two brands to be "close" or "far apart" in the space of consumer perception?*
+Brand management is among the most economically consequential domains that lacks a formal mathematical foundation. The global value of the top 100 brands exceeds \$8 trillion (Brand Finance, 2025), yet the theoretical frameworks used to analyze, compare, and optimize brand perception remain fundamentally qualitative. Keller's (1993) Customer-Based Brand Equity model provides a conceptual hierarchy but no distance function. Aaker's (1997) brand personality dimensions generate survey scores but no geometry. Kapferer's (2008, 4th ed.) brand identity prism offers a visual metaphor but no metric. Lancaster's (1966) characteristics approach -- the most direct economic precedent for treating products as bundles of dimensional attributes -- defines a product space but provides no perceptual metric that accounts for observer heterogeneity. Gardenfors (2000) comes closest to a geometric approach, proposing *conceptual spaces* where quality dimensions carry metric structure and concepts correspond to convex regions; however, his framework lacks the compositional structure (brand profiles are proportional, not absolute), the observer-dependent warping (different observers inhabit metrically distinct brand landscapes), and the information-geometric grounding (Cencov's uniqueness theorem) that the present work develops. None of these foundational frameworks answers the most basic mathematical question about brand perception: *what does it mean for two brands to be "close" or "far apart" in the space of consumer perception?*
 
 This absence of formal structure is not merely an aesthetic shortcoming. Without a metric, there is no principled way to quantify brand differentiation, define the boundaries of observer cohorts, assess whether a rebranding has moved a brand "far enough" from its prior position, or determine how many truly distinguishable brand positions exist in a market. These are geometric questions that require geometric answers.
 
@@ -86,11 +86,11 @@ An observer's **weight profile** is a vector $w = (w_1, \ldots, w_8) \in \Delta^
 
 ### 2.3 The Measurement Problem
 
-Given two brands $A$ and $B$ with emission profiles $s_A, s_B \in \mathbb{R}^8_+$, what does $d(s_A, s_B)$ mean? The question is subtle for three reasons.
+Given two brands $A$ and $B$ with emission profiles $s_A, s_B \in \mathbb{R}^8_+$, what does $d(s_A, s_B)$ mean? The question is subtle for three reasons, each with roots in the psychophysical measurement tradition (Thurstone, 1927; Fechner, 1860).
 
 First, brand perception is *relative*, not *absolute*. An observer does not experience "50 units of semiotic signal" -- she experiences a brand as having "twice the semiotic presence" of another. This suggests a multiplicative rather than additive distance structure.
 
-Second, brand perception is *observer-dependent*. Two observers with different weight profiles may perceive the same brand pair as very close or very far apart, depending on which dimensions carry the distinguishing information.
+Second, brand perception is *observer-dependent*. Two observers with different weight profiles may perceive the same brand pair as very close or very far apart, depending on which dimensions carry the distinguishing information. This parallels the observer-dependence formalized in quantum models of cognition (Busemeyer & Bruza, 2012), though we adopt a Riemannian rather than Hilbert-space framework.
 
 Third, brand perception is *compositional*. The individual dimension scores are not independent quantities; they form an integrated gestalt. Increasing the semiotic dimension while holding others constant changes the *proportions* of the profile, and it is the proportional structure that carries perceptual meaning.
 
@@ -188,6 +188,8 @@ The Aitchison geometry endows $\mathcal{B}$ with several properties relevant to 
 
 4. **Flatness**: The Aitchison geometry on $\mathbb{R}^8_+$ has zero curvature, being isometric to Euclidean $\mathbb{R}^7$. This simplifies computation and means that standard statistical methods (means, variances, PCA) apply directly in ilr coordinates.
 
+**Remark** (Dimensional independence). The Aitchison metric treats the eight SBT dimensions as independent compositional components. If dimensions are empirically correlated -- semiotic and cultural signals may co-vary, economic and experiential signals may be inversely related -- the metric would systematically underestimate distances along correlated dimensions and overestimate along anticorrelated ones. The present formalization takes dimensional independence as a working assumption; the extension to a Mahalanobis-like variant of the Aitchison distance, incorporating an empirically estimated correlation structure, is discussed in Section 10.2.
+
 ---
 
 ## 4. The Observer Weight Space
@@ -222,7 +224,7 @@ We select the Fisher-Rao metric on the basis of Cencov's uniqueness theorem.
 
 **Theorem** (Cencov, 1972; Cencov, 1982). *The Fisher information metric is the unique Riemannian metric on the space of probability distributions (up to a constant scaling factor) that is invariant under Markov morphisms (sufficient-statistic embeddings).*
 
-This theorem provides the decisive justification. The invariance under Markov morphisms means that the Fisher-Rao metric is the unique metric satisfying Criterion 2: it is the only choice that gives consistent distances regardless of how the dimensional taxonomy is refined, coarsened, or rearranged, provided the underlying information is preserved. No other metric on the simplex possesses this invariance.
+The Fisher-Rao metric originates with Rao (1945), who first proposed using the Fisher information matrix as a Riemannian metric tensor on statistical models. The uniqueness theorem above, combined with the comprehensive development of information geometry by Amari and Nagaoka (2000) and Amari (2016), establishes the Fisher-Rao metric as the canonical choice for distances between probability distributions. This theorem provides the decisive justification. The invariance under Markov morphisms means that the Fisher-Rao metric is the unique metric satisfying Criterion 2: it is the only choice that gives consistent distances regardless of how the dimensional taxonomy is refined, coarsened, or rearranged, provided the underlying information is preserved. No other metric on the simplex possesses this invariance.
 
 The Fisher-Rao metric also satisfies Criterion 1: the metric tensor $g_{ij}(w) = \delta_{ij} / w_i$ assigns large curvature near the simplex boundary (where weights are small), so small absolute changes in near-zero weights produce large distances. This aligns with the psychological observation that introducing a new, previously ignored dimension into an observer's attention structure is a more significant perceptual shift than redistributing attention among already-salient dimensions.
 
@@ -336,7 +338,7 @@ $$D^2 = \sum_{k=1}^{8} w_k \left( \text{clr}_k(s_A) - \text{clr}_k(s_B) \right)^
 
 *Proof.* Setting $w_A = w_B = w$ gives $d_{FR}(w, w) = 0$ and $\bar{w}_k = w_k$, so $D^2 = \sum_k w_k (\text{clr}_k(s_A) - \text{clr}_k(s_B))^2$. This is precisely the INDSCAL formula with brand coordinates given by $\text{clr}(s)$ rather than raw coordinates. $\square$
 
-This connection is significant because it grounds our formal construction in the INDSCAL model's extensive empirical validation record. INDSCAL has been applied successfully in marketing, psychophysics, and cognitive science for over fifty years (Carroll & Chang, 1970; Carroll & Arabie, 1980; Borg & Groenen, 2005). Our metric generalizes INDSCAL in two ways: (a) it replaces raw Euclidean coordinates with Aitchison log-ratio coordinates, correcting for the multiplicative nature of perceptual scaling; and (b) it adds the Fisher-Rao distance component for comparing observers with different weight profiles, which INDSCAL's fixed-weight framework does not address.
+This connection is significant because it grounds our formal construction in the INDSCAL model's extensive empirical validation record. INDSCAL has been applied successfully in marketing, psychophysics, and cognitive science for over fifty years (Carroll & Chang, 1970; Carroll & Arabie, 1980; Borg & Groenen, 2005; Bijmolt & Wedel, 1999). The affine structure of perceptual space has been confirmed experimentally (Todd, Oomes, Koenderink, & Kappers, 2001), providing empirical support for the geometric approach to perception that this paper formalizes for brand theory. Our metric generalizes INDSCAL in two ways: (a) it replaces raw Euclidean coordinates with Aitchison log-ratio coordinates, correcting for the multiplicative nature of perceptual scaling; and (b) it adds the Fisher-Rao distance component for comparing observers with different weight profiles, which INDSCAL's fixed-weight framework does not address.
 
 ### 5.4 The Observer-Dependent Pseudo-Metric
 
@@ -405,6 +407,8 @@ $$\text{Var}_w\left[ d_w^2(s_A, s_B) \right] = \frac{1}{72} \left( \sum_{k=1}^{8
 *Proof.* Part (i): $\mathbb{E}_w[d_w^2] = \sum_k \delta_k^2 \mathbb{E}[w_k] = \sum_k \delta_k^2 / 8$ since $\mathbb{E}[w_k] = 1/8$ under the symmetric Dirichlet distribution.
 
 Part (ii): $\text{Var}_w[d_w^2] = \sum_{k,\ell} \delta_k^2 \delta_\ell^2 \text{Cov}(w_k, w_\ell)$. For the symmetric Dirichlet$(1, \ldots, 1)$ distribution on $\Delta^7$, $\text{Var}(w_k) = 7/(8^2 \cdot 9) = 7/576$ and $\text{Cov}(w_k, w_\ell) = -1/(8^2 \cdot 9) = -1/576$ for $k \neq \ell$. Substituting and simplifying yields the stated expression. $\square$
+
+**Remark** (Null model as mathematical baseline). The symmetric Dirichlet$(1, \ldots, 1)$ distribution assumes all observer profiles on $\Delta^7$ are equally likely. Real observer populations likely cluster around a few prototypical profiles (e.g., aesthetes, pragmatists, brand-agnostics). The null model provides a mathematical baseline for *what random observer variation alone would produce*, not an empirical claim about actual observer distribution. Empirical observer data would be needed to replace this uniform prior with a data-driven distribution.
 
 The practical interpretation is as follows. Under the null model (uniformly random observers), the expected observer-dependent brand distance is $1/8$ of the total brand difference. If two brands are highly differentiated on all dimensions, every observer will perceive them as different. If they are differentiated on only one or two dimensions, the average observer perceives them as closer together, and the variance across observers is high -- meaning that the "differentiation" is visible to some observers but invisible to others.
 
@@ -645,6 +649,8 @@ Several limitations should be noted:
 
 **Static profiles.** While Section 8 introduces trajectory sensitivity analysis via Jacobi fields, the core metric treats brand profiles and observer weights as fixed points rather than evolving trajectories. SBT describes brand perception as a dynamic process with signal decay, crystallization, and re-collapse. The full dynamic extension -- modeling perception evolution as a stochastic differential equation on $S^7_+$ -- is developed in Zharnikov (2026j).
 
+**Cultural and sector scope.** All five case-study brands are Western consumer (B2C) brands. The mathematical framework -- Aitchison, Fisher-Rao, and warped product metrics -- is general and applies to any brand in any market. However, the illustrative profiles have not been tested cross-culturally, and B2B brands (where experiential and temporal dimensions may dominate while semiotic may be minimal) could produce qualitatively different distance structures. Cross-cultural and B2B applications would strengthen the empirical grounding of the framework.
+
 **Reference implementation.** A Python reference implementation of all metrics defined in this paper is available as supplementary material.
 
 ### 10.3 Connection to Subsequent Work
@@ -655,7 +661,7 @@ This paper provides the foundation for the Mathematical Foundations of Spectral 
 
 - **R3 (Cohort boundaries)** (Zharnikov, 2026f): Uses the Fisher-Rao metric and concentration bounds from Theorem 4 to derive lower bounds on cohort boundary fuzziness in $\Delta^7$.
 
-- **R4 (Brand positioning capacity)** (Zharnikov, 2026g): Uses the brand space geometry to derive sphere-packing bounds on the maximum number of distinguishable brand positions, connecting to the E8 lattice's optimal packing in 8 dimensions.
+- **R4 (Brand positioning capacity)** (Zharnikov, 2026g): Uses the brand space geometry to derive sphere-packing bounds on the maximum number of distinguishable brand positions, connecting to the E8 lattice and Viazovska's (2017) proof of optimal sphere packing in 8 dimensions.
 
 - **R5 (Specification impossibility)** (Zharnikov, 2026h): Proves coverage impossibility in high-dimensional specification spaces, establishing the organizational complement to the brand-perception geometry.
 
