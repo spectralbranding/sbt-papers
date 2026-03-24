@@ -425,4 +425,4 @@ Zharnikov, D. (2026i). The Organizational Schema Theory: Test-driven business de
 
 Zharnikov, D. (2026l). The rendering problem: From genetic expression to brand perception. Working Paper. https://doi.org/10.5281/zenodo.19064427
 
-Zharnikov, D. (2026t). Paper Spec v0.1.0: A machine-readable specification format for scientific papers. https://doi.org/10.5281/zenodo.19210037
+Zharnikov, D. (2026t). Paper as specification: A machine-readable standard for scientific claims. https://doi.org/10.5281/zenodo.19210037
