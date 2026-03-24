@@ -23,6 +23,8 @@ Eight companion papers establishing formal mathematical foundations for SBT:
 | R5 | [Specification Impossibility in Organizational Design: A High-Dimensional Geometric Analysis](r5-specification-impossibility/paper.md) | [10.5281/zenodo.18945591](https://doi.org/10.5281/zenodo.18945591) | Preprint |
 | R6 | [Non-Ergodic Brand Perception: Diffusion Dynamics on Multi-Dimensional Perceptual Manifolds](r6-diffusion-dynamics/paper.md) | [10.5281/zenodo.18945659](https://doi.org/10.5281/zenodo.18945659) | Preprint |
 | R7 | [Spectral Resource Allocation: Demand-Driven Investment in Multi-Dimensional Brand Space](r7-spectral-resource-allocation/paper.md) | [10.5281/zenodo.19009268](https://doi.org/10.5281/zenodo.19009268) | Preprint |
+| R11 | [Why Eight? Completeness and Necessity of the SBT Dimensional Taxonomy](r11-dimension-justification/paper.md) | [10.5281/zenodo.19207599](https://doi.org/10.5281/zenodo.19207599) | Preprint |
+| R12 | [Coherence Type as Crisis Predictor: A Formal Derivation from Non-Ergodic Dynamics](r12-coherence-resilience/paper.md) | [10.5281/zenodo.19208107](https://doi.org/10.5281/zenodo.19208107) | Preprint |
 
 ### Cross-Framework Synthesis
 
@@ -30,7 +32,7 @@ Eight companion papers establishing formal mathematical foundations for SBT:
 |-----|-------|------------|--------|
 | 2026l | [The Rendering Problem: From Genetic Expression to Brand Perception](rendering-problem/paper.md) | [10.5281/zenodo.19064427](https://doi.org/10.5281/zenodo.19064427) | Preprint |
 
-Key results: formal metric (R1), metamerism inevitability (R2), fuzzy cohort boundaries (R3), positioning capacity bounds (R4), specification impossibility (R5), non-ergodic dynamics (R6), demand-driven resource allocation (R7).
+Key results: formal metric (R1), metamerism inevitability (R2), fuzzy cohort boundaries (R3), positioning capacity bounds (R4), specification impossibility (R5), non-ergodic dynamics (R6), demand-driven resource allocation (R7), dimensional taxonomy justification (R11), coherence-resilience derivation (R12).
 
 R7 formalizes spectral resource allocation — optimal dimensional investment given measured cohort weights, alignment gap between founder and cohort profiles.
 
