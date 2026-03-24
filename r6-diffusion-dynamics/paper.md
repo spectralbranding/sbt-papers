@@ -547,26 +547,26 @@ The ratio $\alpha \lambda_{\text{enc}} / \kappa$ determines the **effective sign
 
 We apply the framework to SBT's five case-study brands using the canonical emission profiles from Zharnikov (2026d). For each brand, we compute the normalized emission profile $\hat{s} = s / \|s\|$ and the minimum coordinate $d_\partial(\hat{s}) = \min_i \hat{s}_i$, which determines proximity to the absorbing boundary.
 
-| Brand | Grade | $\|\hat{s}\|$ | $\min_i \hat{s}_i$ | Min dimension | $d_\partial(\hat{s})$ |
+| Brand | Grade | $\|s\|_2$ | $\min_i \hat{s}_i$ | Min dimension | $d_\partial(\hat{s})$ |
 |-------|-------|---------|-----------|---------------|-------------|
-| Hermès | A+ | 1.000 | 0.137 | Economic | 0.137 |
-| IKEA | A- | 1.000 | 0.227 | Social | 0.227 |
-| Patagonia | B+ | 1.000 | 0.219 | Economic | 0.219 |
-| Erewhon | B- | 1.000 | 0.113 | Temporal | 0.113 |
-| Tesla | C- | 1.000 | 0.091 | Temporal | 0.091 |
+| Hermès | A+ | 23.53 | 0.127 | Economic | 0.127 |
+| IKEA | A- | 20.09 | 0.249 | Social | 0.249 |
+| Patagonia | B+ | 21.07 | 0.237 | Economic | 0.237 |
+| Erewhon | B- | 18.55 | 0.135 | Temporal | 0.135 |
+| Tesla | C- | 16.69 | 0.120 | Temporal | 0.120 |
 
-**Normalized emission profiles** (components of $\hat{s} = s/\|s\|$):
+**Normalized emission profiles** (components of $\hat{s} = s/\|s\|_2$):
 
 | Dimension | Hermès | IKEA | Patagonia | Erewhon | Tesla |
 |-----------|--------|------|-----------|---------|-------|
-| Semiotic | 0.432 | 0.379 | 0.272 | 0.318 | 0.341 |
-| Narrative | 0.409 | 0.356 | 0.408 | 0.296 | 0.387 |
-| Ideological | 0.318 | 0.284 | 0.430 | 0.227 | 0.136 |
-| Experiential | 0.409 | 0.332 | 0.340 | 0.409 | 0.273 |
-| Social | 0.386 | 0.237 | 0.362 | 0.386 | 0.318 |
-| Economic | 0.136 | 0.427 | 0.226 | 0.159 | 0.273 |
-| Cultural | 0.409 | 0.356 | 0.317 | 0.341 | 0.182 |
-| Temporal | 0.432 | 0.284 | 0.295 | 0.114 | 0.091 |
+| Semiotic | 0.404 | 0.398 | 0.285 | 0.377 | 0.449 |
+| Narrative | 0.382 | 0.373 | 0.427 | 0.350 | 0.509 |
+| Ideological | 0.297 | 0.299 | 0.451 | 0.270 | 0.180 |
+| Experiential | 0.382 | 0.348 | 0.356 | 0.485 | 0.360 |
+| Social | 0.361 | 0.249 | 0.380 | 0.458 | 0.419 |
+| Economic | 0.127 | 0.448 | 0.237 | 0.189 | 0.360 |
+| Cultural | 0.382 | 0.373 | 0.332 | 0.404 | 0.240 |
+| Temporal | 0.404 | 0.299 | 0.309 | 0.135 | 0.120 |
 
 The minimum coordinate $d_\partial(\hat{s})$ provides a first-order proxy for absorption risk: brands with smaller minimum coordinates have perception profiles closer to the boundary and are more vulnerable to dimensional loss.
 
@@ -584,7 +584,7 @@ $$\text{Tesla} > \text{Erewhon} > \text{IKEA} > \text{Patagonia} > \text{Hermès
 
 *Derivation.* The absorption risk depends on two factors: (1) how close the brand's target position $\hat{s}$ is to the boundary (smaller $d_\partial(\hat{s})$ = higher risk), and (2) how "balanced" the emission profile is across dimensions (more balanced = lower risk of any single dimension reaching zero).
 
-For the pure distance-from-boundary ordering, we read off from the table: Tesla ($d_\partial = 0.091$) > Erewhon ($d_\partial = 0.113$) > Hermès ($d_\partial = 0.137$) > Patagonia ($d_\partial = 0.219$) > IKEA ($d_\partial = 0.227$). Hermès ranks worse than expected because its economic dimension is very low (3.0/10); however, the drift toward Hermès's emission profile is very strong because Hermès has the highest overall signal coherence, meaning the drift opposes absorption effectively.
+For the pure distance-from-boundary ordering, we read off from the table: Tesla ($d_\partial = 0.120$) > Hermès ($d_\partial = 0.127$) > Erewhon ($d_\partial = 0.135$) > Patagonia ($d_\partial = 0.237$) > IKEA ($d_\partial = 0.249$). Hermès ranks worse than expected because its economic dimension is very low (3.0/10); however, the drift toward Hermès's emission profile is very strong because Hermès has the highest overall signal coherence, meaning the drift opposes absorption effectively.
 
 When we account for the *strength* of the drift (proportional to the brand's coherence -- how consistently signals reinforce the target position), the ordering changes:
 
@@ -712,7 +712,7 @@ The main results are:
 
 3. **Mixing time bounds (Theorem 3).** The Dirichlet spectral gap on $S^7_+$ is $\lambda_{D,2} - \lambda_{D,1} = 160 - 112 = 48$, yielding a mixing time to the quasi-stationary distribution of $\tau_{\text{mix}} \asymp 2/(48\sigma_0^2)$, which is *faster* than the mixing time $2/(7\sigma_0^2)$ on the full sphere. Conditioned on survival, perception trajectories are confined to the deep interior of the octant, reducing the effective volume and accelerating convergence to the QSD.
 
-4. **Non-ergodicity (Theorem 4).** For the absorbed process, time averages and ensemble averages diverge with probability 1. To the best of our knowledge, this is the first formal proof that brand perception surveys (ensemble averages) and individual perceptual trajectories (time averages) measure fundamentally different quantities, establishing the brand-perception analogue of Peters' (2019) ergodicity economics.
+4. **Non-ergodicity (Theorem 4).** For the absorbed process, time averages and ensemble averages diverge with probability 1. To the best of our knowledge, this is the first formal proof of time-ensemble divergence in the context of multi-dimensional brand perception, establishing the brand-perception analogue of Peters' (2019) ergodicity economics and extending Molenaar's (2004, 2009) idiographic critique to a specific dynamical mechanism on a Riemannian manifold.
 
 5. **Absorption risk nearly matches coherence grades (Proposition 5).** For the five case-study brands, the absorption risk ordering Tesla > Erewhon > IKEA > Patagonia > Hermès aligns with the SBT coherence grading, with one inversion: IKEA (A-) has higher absorption risk than Patagonia (B+), because identity coherence generates stronger directional drift than signal coherence. Coherent signaling creates effective drift that opposes absorption; incoherent signaling creates effective diffusion that accelerates it.
 
@@ -748,6 +748,8 @@ Chavel, I. (1984). *Eigenvalues in Riemannian Geometry*. Academic Press.
 
 Deffuant, G., Neau, D., Amblard, F., & Weisbuch, G. (2000). Mixing beliefs among interacting agents. *Advances in Complex Systems*, 3(01n04), 87--98.
 
+Dick, A. S., & Basu, K. (1994). Customer loyalty: Toward an integrated conceptual framework. *Journal of the Academy of Marketing Science*, 22(2), 99--113.
+
 Fechner, G. T. (1860). *Elemente der Psychophysik*. Breitkopf und Hartel.
 
 Gardenfors, P. (2000). *Conceptual Spaces: The Geometry of Thought*. MIT Press.
@@ -771,6 +773,8 @@ Molenaar, P. C. M. (2004). A manifesto on psychology as idiographic science: Bri
 Molenaar, P. C. M. (2009). The new person-specific paradigm in psychology. *Current Directions in Psychological Science*, 18(2), 112--117.
 
 Peters, O. (2019). The ergodicity problem in economics. *Nature Physics*, 15, 1216--1221.
+
+Petty, R. E., & Cacioppo, J. T. (1986). *Communication and Persuasion: Central and Peripheral Routes to Attitude Change*. Springer.
 
 Peters, O., & Gell-Mann, M. (2016). Evaluating gambles using dynamics. *Chaos*, 26(2), 023103.
 
@@ -823,10 +827,10 @@ All numerical results reported in this paper were computed using standard mathem
 
 | Brand | $d_\partial(\hat{s})$ | Minimum dimension |
 |-------|---------------------|-------------------|
-| Hermès | 0.137 | Economic (3.0/10) |
-| IKEA | 0.227 | Social (5.0/10) |
-| Patagonia | 0.219 | Economic (5.0/10) |
-| Erewhon | 0.113 | Temporal (2.5/10) |
-| Tesla | 0.091 | Temporal (2.0/10) |
+| Hermès | 0.127 | Economic (3.0/10) |
+| IKEA | 0.249 | Social (5.0/10) |
+| Patagonia | 0.237 | Economic (5.0/10) |
+| Erewhon | 0.135 | Temporal (2.5/10) |
+| Tesla | 0.120 | Temporal (2.0/10) |
 
 **Ergodicity coefficient estimates** were computed as $\varepsilon = \tau_{\text{char}} / \tau_{\text{mix}}$ with $\tau_{\text{char}} = 1$ year and mixing times estimated from the drift-diffusion balance for each brand. Higher coherence grades correspond to stronger drift, which reduces the effective mixing time and increases $\varepsilon$.
