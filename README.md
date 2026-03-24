@@ -9,9 +9,9 @@ Research publications on Spectral Brand Theory (SBT), a computational framework 
 | [Spectral Brand Theory: A Computational Framework for Multi-Dimensional Brand Perception](spectral-brand-theory/paper.md) | ~6,400 | 37 | [10.5281/zenodo.18945912](https://doi.org/10.5281/zenodo.18945912) | Preprint |
 | [The Atom-Cloud-Fact Epistemological Pipeline](alibi-epistemology/paper.md) | ~4,100 | 19 | [10.5281/zenodo.18944770](https://doi.org/10.5281/zenodo.18944770) | Preprint |
 
-### Mathematical Foundations (R0-R7)
+### Mathematical Foundations (R0-R7, R11-R13)
 
-Eight companion papers establishing formal mathematical foundations for SBT:
+Eight companion papers establishing formal mathematical foundations for SBT, plus three extensions:
 
 | Key | Paper | Zenodo DOI | Status |
 |-----|-------|------------|--------|
@@ -25,6 +25,7 @@ Eight companion papers establishing formal mathematical foundations for SBT:
 | R7 | [Spectral Resource Allocation: Demand-Driven Investment in Multi-Dimensional Brand Space](r7-spectral-resource-allocation/paper.md) | [10.5281/zenodo.19009268](https://doi.org/10.5281/zenodo.19009268) | Preprint |
 | R11 | [Why Eight? Completeness and Necessity of the SBT Dimensional Taxonomy](r11-dimension-justification/paper.md) | [10.5281/zenodo.19207599](https://doi.org/10.5281/zenodo.19207599) | Preprint |
 | R12 | [Coherence Type as Crisis Predictor: A Formal Derivation from Non-Ergodic Dynamics](r12-coherence-resilience/paper.md) | [10.5281/zenodo.19208107](https://doi.org/10.5281/zenodo.19208107) | Preprint |
+| R13 | [Paper as Specification: A Machine-Readable Standard for Scientific Claims](r13-paper-as-specification/paper.md) | [10.5281/zenodo.19210037](https://doi.org/10.5281/zenodo.19210037) | Preprint |
 
 ### Cross-Framework Synthesis
 
@@ -32,7 +33,7 @@ Eight companion papers establishing formal mathematical foundations for SBT:
 |-----|-------|------------|--------|
 | 2026l | [The Rendering Problem: From Genetic Expression to Brand Perception](rendering-problem/paper.md) | [10.5281/zenodo.19064427](https://doi.org/10.5281/zenodo.19064427) | Preprint |
 
-Key results: formal metric (R1), metamerism inevitability (R2), fuzzy cohort boundaries (R3), positioning capacity bounds (R4), specification impossibility (R5), non-ergodic dynamics (R6), demand-driven resource allocation (R7), dimensional taxonomy justification (R11), coherence-resilience derivation (R12).
+Key results: formal metric (R1), metamerism inevitability (R2), fuzzy cohort boundaries (R3), positioning capacity bounds (R4), specification impossibility (R5), non-ergodic dynamics (R6), demand-driven resource allocation (R7), dimensional taxonomy justification (R11), coherence-resilience derivation (R12), paper specification standard (R13).
 
 R7 formalizes spectral resource allocation — optimal dimensional investment given measured cohort weights, alignment gap between founder and cohort profiles.
 
@@ -163,9 +164,36 @@ Proposes the Rendering Problem as a unifying structural pattern across biologica
   url={https://doi.org/10.5281/zenodo.19064427},
   doi={10.5281/zenodo.19064427}
 }
+
+@article{zharnikov2026r11,
+  title={Why Eight? Completeness and Necessity of the SBT Dimensional
+         Taxonomy},
+  author={Zharnikov, Dmitry},
+  year={2026},
+  url={https://doi.org/10.5281/zenodo.19207599},
+  doi={10.5281/zenodo.19207599}
+}
+
+@article{zharnikov2026r12,
+  title={Coherence type as crisis predictor: A formal derivation from
+         non-ergodic dynamics},
+  author={Zharnikov, Dmitry},
+  year={2026},
+  url={https://doi.org/10.5281/zenodo.19208107},
+  doi={10.5281/zenodo.19208107}
+}
+
+@article{zharnikov2026r13,
+  title={Paper as Specification: A Machine-Readable Standard for
+         Scientific Claims},
+  author={Zharnikov, Dmitry},
+  year={2026},
+  url={https://doi.org/10.5281/zenodo.19210037},
+  doi={10.5281/zenodo.19210037}
+}
 ```
 
-Machine-readable citations: [SBT CITATION.cff](spectral-brand-theory/CITATION.cff) | [ACF CITATION.cff](alibi-epistemology/CITATION.cff) | [R0 CITATION.cff](r0-literature-survey/CITATION.cff) | [R1 CITATION.cff](r1-formal-metric/CITATION.cff) | [R2 CITATION.cff](r2-spectral-metamerism/CITATION.cff) | [R3 CITATION.cff](r3-cohort-boundaries/CITATION.cff) | [R4 CITATION.cff](r4-sphere-packing/CITATION.cff) | [R5 CITATION.cff](r5-specification-impossibility/CITATION.cff) | [R6 CITATION.cff](r6-diffusion-dynamics/CITATION.cff) | [R7 CITATION.cff](r7-spectral-resource-allocation/CITATION.cff) | [Rendering Problem CITATION.cff](rendering-problem/CITATION.cff)
+Machine-readable citations: [SBT CITATION.cff](spectral-brand-theory/CITATION.cff) | [ACF CITATION.cff](alibi-epistemology/CITATION.cff) | [R0 CITATION.cff](r0-literature-survey/CITATION.cff) | [R1 CITATION.cff](r1-formal-metric/CITATION.cff) | [R2 CITATION.cff](r2-spectral-metamerism/CITATION.cff) | [R3 CITATION.cff](r3-cohort-boundaries/CITATION.cff) | [R4 CITATION.cff](r4-sphere-packing/CITATION.cff) | [R5 CITATION.cff](r5-specification-impossibility/CITATION.cff) | [R6 CITATION.cff](r6-diffusion-dynamics/CITATION.cff) | [R7 CITATION.cff](r7-spectral-resource-allocation/CITATION.cff) | [Rendering Problem CITATION.cff](rendering-problem/CITATION.cff) | [R11 CITATION.cff](r11-dimension-justification/CITATION.cff) | [R12 CITATION.cff](r12-coherence-resilience/CITATION.cff) | [R13 CITATION.cff](r13-paper-as-specification/CITATION.cff)
 
 ## Companion Repositories
 
@@ -173,6 +201,7 @@ Machine-readable citations: [SBT CITATION.cff](spectral-brand-theory/CITATION.cf
 |-----------|-------------|
 | [sbt-framework](https://github.com/spectralbranding/sbt-framework) | AI-native brand analysis toolkit — 7-module prompt kit with YAML templates |
 | [brand-code](https://github.com/spectralbranding/brand-code) | Executable brand identity specification — spectral palette, particle system source, AI-readable prompt |
+| [paper-spec](https://github.com/spectralbranding/paper-spec) | Paper Spec v0.1.0 — machine-readable YAML standard for scientific claims, with validator and 20 examples |
 | [Substack](https://spectralbranding.substack.com) | Applied analysis articles on brand perception |
 
 ## Author
