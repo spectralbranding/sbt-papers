@@ -1,0 +1,39 @@
+cff-version: 1.2.0
+message: "If you use this paper, please cite it as below."
+authors:
+  - family-names: Zharnikov
+    given-names: Dmitry
+    email: dmitry@spectralbranding.com
+    affiliation: "Independent Researcher"
+    orcid: "https://orcid.org/0009-0000-6893-9231"
+title: "Coherence Type as Crisis Predictor: A Formal Derivation from Non-Ergodic Dynamics"
+version: 1.0.0
+date-released: 2026-03-24
+url: "https://doi.org/10.5281/zenodo.19208107"
+repository-code: "https://github.com/spectralbranding/sbt-papers"
+identifiers:
+  - type: doi
+    value: "10.5281/zenodo.19208107"
+    description: "Zenodo archive (primary)"
+  - type: url
+    value: "https://doi.org/10.5281/zenodo.19208107"
+    description: "Zenodo preprint"
+keywords:
+  - spectral brand theory
+  - crisis resilience
+  - coherence type
+  - brand stability
+  - non-ergodic dynamics
+license: MIT
+type: article
+preferred-citation:
+  type: article
+  authors:
+    - family-names: Zharnikov
+      given-names: Dmitry
+      email: dmitry@spectralbranding.com
+      affiliation: "Independent Researcher"
+      orcid: "https://orcid.org/0009-0000-6893-9231"
+  title: "Coherence Type as Crisis Predictor: A Formal Derivation from Non-Ergodic Dynamics"
+  year: 2026
+  url: "https://doi.org/10.5281/zenodo.19208107"

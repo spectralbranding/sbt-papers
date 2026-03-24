@@ -1,0 +1,39 @@
+cff-version: 1.2.0
+message: "If you use this paper, please cite it as below."
+authors:
+  - family-names: Zharnikov
+    given-names: Dmitry
+    email: dmitry@spectralbranding.com
+    affiliation: "Independent Researcher"
+    orcid: "https://orcid.org/0009-0000-6893-9231"
+title: "Paper as Specification: A Machine-Readable Standard for Scientific Claims"
+version: 1.0.0
+date-released: 2026-03-25
+url: "https://doi.org/10.5281/zenodo.19210037"
+repository-code: "https://github.com/spectralbranding/sbt-papers"
+identifiers:
+  - type: doi
+    value: "10.5281/zenodo.19210037"
+    description: "Zenodo archive (primary)"
+  - type: url
+    value: "https://doi.org/10.5281/zenodo.19210037"
+    description: "Zenodo preprint"
+keywords:
+  - scientific verification
+  - machine-readable claims
+  - paper specification
+  - reproducibility crisis
+  - open science
+license: MIT
+type: article
+preferred-citation:
+  type: article
+  authors:
+    - family-names: Zharnikov
+      given-names: Dmitry
+      email: dmitry@spectralbranding.com
+      affiliation: "Independent Researcher"
+      orcid: "https://orcid.org/0009-0000-6893-9231"
+  title: "Paper as Specification: A Machine-Readable Standard for Scientific Claims"
+  year: 2026
+  url: "https://doi.org/10.5281/zenodo.19210037"
