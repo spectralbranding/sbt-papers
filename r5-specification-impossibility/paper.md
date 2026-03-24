@@ -324,7 +324,7 @@ This is a substantial information load. For comparison:
 
 ### 6.2 Cognitive Constraints and Compression
 
-Miller's (1956) finding that human working memory can hold approximately $7 \pm 2$ chunks has been refined by subsequent research (see also Cowan, 2001, who revised the estimate to approximately 4 chunks) but remains directionally valid: humans cannot simultaneously hold more than about 7 independent pieces of information. If each "chunk" carries $\log_2(10) = 3.32$ bits (one dimension at resolution 0.1), then working memory can hold:
+Miller's (1956) finding that human working memory can hold approximately $7 \pm 2$ chunks has been refined by subsequent research but remains directionally valid: humans cannot simultaneously hold more than about 7 independent pieces of information. If each "chunk" carries $\log_2(10) = 3.32$ bits (one dimension at resolution 0.1), then working memory can hold:
 
 $$H_{\text{WM}} \approx 7 \cdot 3.32 = 23.2 \text{ bits}$$
 
@@ -419,8 +419,6 @@ Two additional frameworks merit differentiation.
 
 **Design Structure Matrix (Eppinger & Browning, 2012).** DSM represents interdependencies among design elements as a square matrix, with applications to both product and organizational architecture. DSM captures the *topology* of dependencies (which elements interact with which) but does not address the *volume* of the configuration space or the geometric impossibility of exhaustive specification. The cascade model in OST can be viewed as a special case of DSM where the dependency matrix is strictly lower-triangular (higher levels influence lower levels, not vice versa), but the volumetric analysis of the present paper goes beyond what DSM provides.
 
-**Contingency theory (Lawrence & Lorsch, 1967; Donaldson, 2001).** Contingency theory established, over six decades of empirical and theoretical work, that no single organizational form is universally optimal: structure must be matched to environmental complexity, technology, and task uncertainty. R5's coverage impossibility theorem provides the formal geometric grounding for this qualitative claim. The impossibility of any finite set of specifications covering more than a negligible fraction of $[0,1]^{48}$ is precisely why no single organizational form can be optimal across all contexts: different environmental conditions correspond to different regions of the specification space, and those regions are too far apart for any universal template to reach. The contribution of the present paper is not the insight itself -- contingency theory established it empirically -- but its formalization: geometric bounds on how badly a single specification fails, and a precise characterization of why specialization is the only viable response.
-
 **Simon (1962) and Baldwin & Clark (2000).** Simon's "Architecture of Complexity" introduced near-decomposability as a design principle: complex systems can be managed by decomposing them into nearly independent subsystems. Baldwin and Clark (2000) formalized this insight for modular product design, showing that modularity creates option value by enabling independent experimentation. The present paper provides the geometric foundation for these insights: forkability (Theorem 3) is a precise formalization of modularity as subspace decomposition, and the coverage impossibility theorem explains *why* decomposition is necessary -- not merely because it is convenient, but because the undecomposed space is geometrically unmanageable.
 
 ---
@@ -452,6 +450,10 @@ The coverage impossibility theorem provides the geometric foundation for OST's s
 3. **Organizational advice must be dimensional, not categorical.** Telling an organization to "become more agile" is categorical advice that selects a neighborhood in $[0,1]^{48}$. Telling an organization to "increase L4-Process flexibility from 0.3 to 0.6 while maintaining L2-Strategy stability above 0.7" is dimensional advice that moves the organization along specific axes in the specification space. The latter is geometrically precise; the former discards most of the relevant information.
 
 4. **Forking is geometrically efficient.** The fork model allows organizations to share the cognitively expensive higher-level specification (purpose, values, strategy = 24 dimensions = 79.7 bits) while independently exploring the lower-level implementation space. This is why franchise systems, open-source projects, and denominational structures have emerged independently across domains: they represent a geometrically efficient response to the specification impossibility problem.
+
+### 8.4 Position-as-Projection Within L3
+
+The cascade model has a further implication for the internal structure of L3. Positions within the structure level are not independently chosen variables; they are projections of the process requirements at L4 onto the personnel dimension. Function -- whether accounting, quality, or marketing -- is a parameter of the position, determined by which processes the position must serve, not an independent organizational primitive. This projection relationship reinforces the cascade coupling quantified above: just as L3's effective dimensionality is compressed by L0--L2 constraints from above, the internal structure of L3 is further constrained by L4's process topology from below. Reorganization -- changing positions without changing processes -- corresponds to changing the projection operators without changing the underlying process space, which explains why organizational restructuring frequently fails to improve outcomes (Hammer, 1996). The specification impossibility established in Theorem 1 thus applies doubly: L3 is constrained from above by the purpose--values--strategy cascade and from below by the process space onto which its positions must project.
 
 ---
 
@@ -505,21 +507,19 @@ Aaker, D. A. (1991). *Managing Brand Equity: Capitalizing on the Value of a Bran
 
 Baldwin, C. Y., & Clark, K. B. (2000). *Design Rules: The Power of Modularity*. MIT Press.
 
-Cowan, N. (2001). The magical number 4 in short-term memory: A reconsideration of mental storage capacity. *Behavioral and Brain Sciences*, 24(1), 87--114.
-
 Bellman, R. E. (1957). *Dynamic Programming*. Princeton University Press.
 
 Eppinger, S. D., & Browning, T. R. (2012). *Design Structure Matrix Methods and Applications*. MIT Press.
 
-Kauffman, S. A. (1993). *The Origins of Order: Self-Organization and Selection in Evolution*. Oxford University Press.
+Galbraith, J. R. (2014). *Designing Organizations: Strategy, Structure, and Process at the Business Unit and Enterprise Levels* (3rd ed.). Jossey-Bass.
 
-Donaldson, L. (2001). *The Contingency Theory of Organizations*. Sage Publications.
+Hammer, M. (1996). *Beyond Reengineering: How the Process-Centered Organization Is Changing Our Work and Our Lives*. HarperBusiness, New York.
+
+Kauffman, S. A. (1993). *The Origins of Order: Self-Organization and Selection in Evolution*. Oxford University Press.
 
 Keller, K. L. (1993). Conceptualizing, measuring, and managing customer-based brand equity. *Journal of Marketing*, 57(1), 1--22.
 
 Lancaster, K. J. (1966). A new approach to consumer theory. *Journal of Political Economy*, 74(2), 132--157.
-
-Lawrence, P. R., & Lorsch, J. W. (1967). *Organization and environment: Managing differentiation and integration*. Harvard Business School Press.
 
 Levinthal, D. A. (1997). Adaptation on rugged landscapes. *Management Science*, 43(7), 934--950.
 
@@ -545,12 +545,10 @@ Vershynin, R. (2018). *High-Dimensional Probability: An Introduction with Applic
 
 Waterman, R. H., Peters, T. J., & Phillips, J. R. (1980). Structure is not organization. *Business Horizons*, 23(3), 14--26.
 
-Zharnikov, D. (2026a). Spectral Brand Theory: A multi-dimensional framework for brand perception analysis. Working Paper.
+Zharnikov, D. (2026a). Spectral Brand Theory: A multi-dimensional framework for brand perception analysis. Working Paper. https://doi.org/10.5281/zenodo.18945912
 
-Zharnikov, D. (2026d). Brand space geometry: A formal metric for multi-dimensional brand perception. Working Paper.
+Zharnikov, D. (2026d). Brand space geometry: A formal metric for multi-dimensional brand perception. Working Paper. https://doi.org/10.5281/zenodo.18945295
 
-Zharnikov, D. (2026e). Spectral metamerism in brand perception: Projection bounds from high-dimensional geometry. Working Paper.
+Zharnikov, D. (2026e). Spectral metamerism in brand perception: Projection bounds from high-dimensional geometry. Working Paper. https://doi.org/10.5281/zenodo.18945352
 
-Zharnikov, D. (2026i). The Organizational Schema Theory: Test-driven business design. Working Paper.
-
-Zharnikov, D. (2026j). Non-ergodic brand perception: Diffusion dynamics on multi-dimensional perceptual manifolds. Working Paper. https://doi.org/10.5281/zenodo.18945659
+Zharnikov, D. (2026i). The Organizational Schema Theory: Test-driven business design. Working Paper. https://doi.org/10.5281/zenodo.18946043
