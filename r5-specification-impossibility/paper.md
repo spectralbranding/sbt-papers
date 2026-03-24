@@ -292,7 +292,7 @@ Even at $k = 5$ (sharing everything except artifacts), the $10^8$ distinguishabl
 
 The fork and cascade models interact. Under cascade coupling, the effective freedom in the private subspace is reduced. For a fork at level $k$ with cascade strength $\gamma$, the effective private dimensionality is:
 
-$$d_{\text{private,eff}} = \sum_{i=k}^{5} 8(1-\gamma)^i = 8(1-\gamma)^k \cdot \frac{1 - (1-\gamma)^{6-k}}{\gamma}$$
+$$d_{\text{private,eff}} = \sum_{i=k}^{5} 8(1-\gamma)^i = \frac{8(1-\gamma)^{k} \left[1 - (1-\gamma)^{6-k}\right]}{\gamma}$$
 
 For the canonical fork ($k = 3$) at $\gamma = 0.5$:
 
