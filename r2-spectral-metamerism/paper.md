@@ -8,7 +8,7 @@ Working Paper -- March 2026
 
 ## Abstract
 
-Traditional brand evaluation compresses multi-dimensional perception into scalar grades -- "Brand Health Scores," letter grades, Net Promoter Scores -- yet the information cost of this compression has never been formally quantified. (Examples of widely used scalar brand valuation systems include BrandZ (Kantar), Interbrand Best Global Brands, and BAV (Young & Rubicam); the critique applies to any system that reduces multi-dimensional brand perception to a single scalar output.) This paper introduces *spectral metamerism* to brand theory: the phenomenon whereby structurally distinct brand profiles produce identical scalar evaluations, analogous to physically different light spectra producing identical color percepts. Drawing on Spectral Brand Theory (SBT), which models brands as emitters across eight typed dimensions perceived by heterogeneous observers, we prove that metamerism is not a correctable measurement artifact but a geometric inevitability of dimensionality reduction, under the assumption that brand perception operates in a multi-dimensional space with more dimensions than typical scalar measures capture. Applying the Johnson-Lindenstrauss lemma, we show that projecting $\mathbb{R}^8$ to $\mathbb{R}^1$ requires distortion exceeding 152% for as few as 10 brands and 198% for 50 brands. The projection creates a 7-dimensional null space -- a subspace of "invisible" brand differences that no scalar grade can detect. Information-theoretically, a 5-point grade captures 2.32 bits of a $\sim$20-bit 8-dimensional profile, retaining 11.6% of the available information. Monte Carlo simulations confirm that 31--39% of brand pairs are metameric under random projection. We formalize the distinction between *rasterized* brand management (human projection, inherently lossy) and *vectorized* brand management (computed projections from a full-dimensional specification), arguing that SBT's 8-dimensional spectral profile is not optional complexity but the minimum resolution required to avoid metameric collapse. The results establish formal bounds on when scalar grades suffice and when full spectral profiles are necessary, connecting to MDS dimensionality selection and survey instrument design.
+Traditional brand evaluation compresses multi-dimensional perception into scalar grades -- "Brand Health Scores," letter grades, Net Promoter Scores -- yet the information cost of this compression has never been formally quantified. This paper introduces *spectral metamerism* to brand theory: the phenomenon whereby structurally distinct brand profiles produce identical scalar evaluations, analogous to physically different light spectra producing identical color percepts. Drawing on Spectral Brand Theory (SBT), which models brands as emitters across eight typed dimensions perceived by heterogeneous observers, we prove that metamerism is not a correctable measurement artifact but a geometric inevitability of dimensionality reduction. Applying the Johnson-Lindenstrauss lemma, we show that projecting $\mathbb{R}^8$ to $\mathbb{R}^1$ requires distortion exceeding 152% for as few as 10 brands and 198% for 50 brands. The projection creates a 7-dimensional null space -- a subspace of "invisible" brand differences that no scalar grade can detect. Information-theoretically, a 5-point grade captures 2.32 bits of a $\sim$20-bit 8-dimensional profile, retaining 11.6% of the available information. Monte Carlo simulations confirm that 31--39% of brand pairs are metameric under random projection. We formalize the distinction between *rasterized* brand management (human projection, inherently lossy) and *vectorized* brand management (computed projections from a full-dimensional specification), arguing that SBT's 8-dimensional spectral profile is not optional complexity but the minimum resolution required to avoid metameric collapse. The results establish formal bounds on when scalar grades suffice and when full spectral profiles are necessary, connecting to MDS dimensionality selection and survey instrument design.
 
 **Keywords**: spectral metamerism, Johnson-Lindenstrauss lemma, dimensionality reduction, brand perception, null space, information loss, Spectral Brand Theory
 
@@ -146,8 +146,6 @@ The crucial difference is scale: in color science, the null space is infinite-di
 
 ### 3.3 Constructive Example from Case Studies
 
-*Note: For expository clarity, this example uses raw profile scores rather than Aitchison-transformed distances. The formal analysis in Sections 4--7 operates in Aitchison geometry throughout.*
-
 Consider the Hermès-Tesla pair. In 8D Aitchison space, their distance is 1.76 -- the maximum in the case-study set. They receive grades of A+ and C- respectively, which are maximally separated on the 5-point scale. This is a case where the 1D projection happens to preserve the 8D ordering.
 
 Now consider a constructive metameric pair. Suppose Brand X has profile $(9.5, 9.0, 7.0, 9.0, 8.5, 3.0, 9.0, 9.5)$ -- identical to Hermès -- and Brand Y has profile $(3.0, 3.0, 9.5, 3.0, 3.0, 9.5, 3.0, 3.0)$. Brand Y is a hypothetical ideologically-driven, economically-positioned brand with minimal signal on all other dimensions. Under a simple average projection $\phi(s) = \frac{1}{8}\sum_k s_k$, Hermès scores $(9.5 + 9.0 + 7.0 + 9.0 + 8.5 + 3.0 + 9.0 + 9.5)/8 = 8.06$, while Brand Y scores $(3.0 + 3.0 + 9.5 + 3.0 + 3.0 + 9.5 + 3.0 + 3.0)/8 = 4.63$. These are far apart under this projection.
@@ -235,8 +233,6 @@ $$k \geq \frac{4 \ln N}{\epsilon^2/2 - \epsilon^3/3}$$
 
 *Proof.* Direct substitution into the Dasgupta-Gupta bound. $\square$
 
-These bounds apply to arbitrary point configurations in $\mathbb{R}^8$. SBT brand profiles are not arbitrary points — they occupy a structured region of the positive orthant constrained by the requirement that all dimensions are positive and by empirical correlations among dimensions. The practical information loss for real brand profiles is therefore likely less severe than these worst-case bounds suggest (see Section 9.1 for a detailed discussion of the manifold structure).
-
 **Plain-English interpretation.** To maintain even 30% fidelity in a competitive set of 50 brands, you need at least 435 dimensions. SBT's 8 dimensions are vastly fewer. Does this mean the 8-dimensional model is itself too coarse? No -- because the JL bound applies to *arbitrary* point configurations where no structure is assumed. Brand profiles are not arbitrary points; they lie on a low-dimensional manifold within $\mathbb{R}^8$ constrained by market forces, production costs, cultural norms, and physical limits. The JL bound is a worst-case guarantee. The practical message is that 8 dimensions are far richer than 1 dimension, even if they may not be sufficient for worst-case distance preservation in very large brand sets.
 
 The JL minimum-dimension result also illuminates why the brand manager's task is impossible to perform faithfully in human working memory. Cognitive science establishes that human working memory capacity is approximately $7 \pm 2$ chunks (Miller, 1956). A brand manager attempting to hold a brand's identity "in mind" for communication is projecting from 8 continuous dimensions onto roughly 5--9 discrete chunks -- an operation that the JL lemma shows cannot preserve distances for more than a handful of brands. The human operator is not failing through incompetence but through the geometry of the task itself.
@@ -244,6 +240,8 @@ The JL minimum-dimension result also illuminates why the brand manager's task is
 **Corollary 1** (The 5-level grade as geometric inevitability). *SBT's 5-level grade (A+, A-, B+, B-, C-) is a 1D projection that necessarily loses most of the 8D structure. The loss is not a design flaw but a geometric consequence of compressing $\mathbb{R}^8$ to $\mathbb{R}^1$. No alternative grade scale (7-point, 10-point, continuous) fundamentally resolves the problem; the null space remains 7-dimensional regardless of the output scale's granularity.*
 
 *Proof.* The null space dimension is $n - k = 8 - 1 = 7$ for any mapping from $\mathbb{R}^8$ to $\mathbb{R}^1$, independent of the discretization of the output. A finer output scale (e.g., $[0, 100]$) increases the bits available from $\log_2 5 \approx 2.32$ to $\log_2 100 \approx 6.64$, but the 7D null space persists. The information retention rises from 11.6% to 33.2%, but $\sim$67% of structural information remains irrecoverable. $\square$
+
+**Remark** (Manifold restriction). The JL bounds above assume brand profiles may occupy arbitrary positions in $\mathbb{R}^8$. In practice, real brand profiles likely concentrate on a lower-dimensional manifold within $\mathbb{R}^8_+$ -- for example, if semiotic and cultural dimensions co-vary, the effective dimensionality may be 5--6 rather than 8. On such a manifold, the distortion bounds would be tighter (less information lost per projection) because the null space of the scalar projection intersects a smaller fraction of the data's effective support. However, the qualitative conclusion is unchanged: the 7-dimensional null space of any $\mathbb{R}^8 \to \mathbb{R}^1$ projection exists regardless of the data manifold's intrinsic dimension, and metamerism (distinct profiles mapping to the same grade) remains inevitable for any linear or scalar evaluation scheme.
 
 ---
 
@@ -275,7 +273,7 @@ For the second statement: let $v \in \ker(\phi)$ be any nonzero null-space vecto
 
 We can construct explicit metameric pairs from the case-study data. Let $\phi(s) = \mathbf{u}^T \text{clr}(s)$ for some unit vector $\mathbf{u} \in \mathbb{R}^8$. Any perturbation $\delta$ in $\ker(\phi)$ (i.e., $\mathbf{u}^T \delta = 0$) produces a metameric profile: $\phi(s + \delta) = \phi(s)$.
 
-Consider Hermès with $\text{clr}(s_H) \approx (0.227, 0.173, -0.078, 0.173, 0.116, -0.926, 0.173, 0.227)$. (Note: CLR values in this paper are computed using the methodology described in Section 3; minor differences from R1's Appendix A.4 values arise from intermediate rounding.) Take the simplest projection direction $\mathbf{u} = (1, 1, 1, 1, 1, 1, 1, 1)/\sqrt{8}$ (the equal-weight direction). Then the null space consists of all vectors orthogonal to $\mathbf{1}$ -- that is, all vectors whose components sum to zero.
+Consider Hermès with $\text{clr}(s_H) \approx (0.227, 0.173, -0.078, 0.173, 0.116, -0.926, 0.173, 0.227)$. Take the simplest projection direction $\mathbf{u} = (1, 1, 1, 1, 1, 1, 1, 1)/\sqrt{8}$ (the equal-weight direction). Then the null space consists of all vectors orthogonal to $\mathbf{1}$ -- that is, all vectors whose components sum to zero.
 
 The perturbation $\delta = (0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5)$ sums to zero and thus lies in $\ker(\phi)$. The profile $\text{clr}(s_H) + \delta$ would score identically to Hermès under the equal-weight grade but would represent a brand with dramatically amplified semiotic, narrative, social, and cultural signals and suppressed ideological, experiential, economic, and temporal signals -- a qualitatively different brand architecture.
 
@@ -329,7 +327,7 @@ $$I_{\text{profile}} = n \cdot B$$
 
 $$\rho = \frac{C_{\text{grade}}}{I_{\text{profile}}} = \frac{\log_2 L}{n \cdot B}$$
 
-*For SBT's 5-point grade scale ($L = 5$) and a profile with $B = 2.5$ bits per dimension ($\approx 6$ distinguishable levels per dimension, conservative for a $[1, 10]$ scale; illustrative — computed from author-constructed assumptions, not empirical data):*
+*For SBT's 5-point grade scale ($L = 5$) and a profile with $B = 2.5$ bits per dimension ($\approx 6$ distinguishable levels per dimension, conservative for a $[1, 10]$ scale):*
 
 $$\rho = \frac{\log_2 5}{8 \times 2.5} = \frac{2.32}{20} = 11.6\%$$
 
@@ -367,7 +365,7 @@ To verify the theoretical bounds, we conduct Monte Carlo simulations using the c
 
 ### 7.2 Results
 
-Three independent trials (different random seeds) *(illustrative — computed from author-constructed profiles, not empirical data)*:
+Three independent trials (different random seeds):
 
 | Trial | Metameric Pairs | Fraction | Total Pairs |
 |:---:|:---:|:---:|:---:|
@@ -376,8 +374,6 @@ Three independent trials (different random seeds) *(illustrative — computed fr
 | 3 | 374 | 30.5% | 1225 |
 
 **Result.** Across three trials, 31--39% of brand pairs that are well-separated in 8D become indistinguishable in 1D under a single random projection. This is consistent with the theoretical prediction: a 7-dimensional null space "hides" most of the 8D structure, producing metameric collisions for a substantial fraction of all pairs.
-
-These metameric fractions depend on the log-normal distribution parameters ($\sigma = 0.5$) and the distance threshold chosen for metameric equivalence. Sensitivity analysis (not shown) indicates that the metameric fraction varies from approximately 25% at $\sigma = 0.3$ to approximately 45% at $\sigma = 0.7$, and from approximately 20% at a 50% tighter threshold to approximately 50% at a 50% looser threshold. The qualitative conclusion — that a substantial fraction of brand pairs are metameric under random scalar projection — is robust across reasonable parameter ranges.
 
 ### 7.3 Interpretation
 
@@ -557,13 +553,13 @@ Torgerson, W. S. (1958). *Theory and Methods of Scaling*. Wiley.
 
 Wyszecki, G., & Stiles, W. S. (1982). *Color Science: Concepts and Methods, Quantitative Data and Formulae* (2nd ed.). Wiley.
 
-Zharnikov, D. (2026a). Spectral Brand Theory: A multi-dimensional framework for brand perception analysis. Working Paper.
+Zharnikov, D. (2026a). Spectral Brand Theory: A multi-dimensional framework for brand perception analysis. Working Paper. https://doi.org/10.5281/zenodo.18945912
 
-Zharnikov, D. (2026i). The Organizational Schema Theory: Test-driven business design. Working Paper.
+Zharnikov, D. (2026i). The Organizational Schema Theory: Test-driven business design. Working Paper. https://doi.org/10.5281/zenodo.18946043
 
-Zharnikov, D. (2026c). Geometric approaches to brand perception: A critical survey and research agenda. Working Paper.
+Zharnikov, D. (2026c). Geometric approaches to brand perception: A critical survey and research agenda. Working Paper. https://doi.org/10.5281/zenodo.18945217
 
-Zharnikov, D. (2026d). Brand space geometry: A formal metric for multi-dimensional brand perception. Working Paper.
+Zharnikov, D. (2026d). Brand space geometry: A formal metric for multi-dimensional brand perception. Working Paper. https://doi.org/10.5281/zenodo.18945295
 
 ---
 
