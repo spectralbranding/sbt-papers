@@ -8,9 +8,9 @@ Working Paper -- March 2026
 
 ## Abstract
 
-Brand perception evolves over time, yet no existing brand theory provides a formal dynamical model of this evolution. This paper models the trajectory of an observer's brand perception as a stochastic process on $S^7_+$, the positive octant of the 7-sphere in Spectral Brand Theory's (SBT) eight-dimensional perception space. Signal encounters drive Brownian motion on the manifold, signal decay introduces deterministic drift toward a neutral prior, and negative conviction creates absorbing boundaries at the octant boundary where any perceptual dimension reaches zero. We formulate a Stratonovich stochastic differential equation (SDE) on $S^7_+$ and prove four main results. First, the SDE with absorbing boundaries is well-posed with a unique strong solution up to the absorption stopping time (Theorem 1). Second, the survival probability decays as $S(t, x) \sim C(x) \exp(-\lambda_{D,1} \sigma^2 t / 2)$, where $C(x)$ depends on the initial position's distance from the boundary (Theorem 2). Third, the Dirichlet spectral gap on $S^7_+$ is $\lambda_{D,2} - \lambda_{D,1} = 48$, so mixing to the quasi-stationary distribution is faster than on the full sphere: conditioned on survival, perception trajectories are confined to the deep interior of the octant (Theorem 3). Fourth, for the absorbed process, the time average and ensemble average of any non-trivial observable diverge with probability 1 as $t \to \infty$, establishing non-ergodicity consistent with the framework of Peters (2019) (Theorem 4). Application to five case-study brands shows that the absorption risk ordering -- Tesla (C-) > Erewhon (B-) > IKEA (A-) > Patagonia (B+) > Hermès (A+) -- nearly matches the SBT coherence grading (Proposition 5), with one inversion (IKEA/Patagonia) explained by coherence-type-dependent drift strength, providing the first formal connection between brand coherence and stochastic stability. The results formalize SBT's ergodicity coefficient as $\varepsilon \sim 1/\tau_{\text{mix}}$, complete the dynamic extension of the static metric framework established in Zharnikov (2026d), and establish that the distinction between *vectorized* and *rasterized* brand management is not merely practical but reflects a fundamental mathematical asymmetry between trajectory-level and snapshot-level information. Finally, distribution-free calibration of per-dimension velocity estimates is developed using split conformal prediction (Proposition 6), providing calibrated uncertainty bands with finite-sample coverage guarantees and no distributional assumptions.
+Brand perception evolves over time, yet no existing brand theory provides a formal dynamical model of this evolution. This paper models the trajectory of an observer's brand perception as a stochastic process on $S^7_+$, the positive octant of the 7-sphere in Spectral Brand Theory's (SBT) eight-dimensional perception space. Signal encounters drive Brownian motion on the manifold, signal decay introduces deterministic drift toward a neutral prior, and negative conviction creates absorbing boundaries at the octant boundary where any perceptual dimension reaches zero. We formulate a Stratonovich stochastic differential equation (SDE) on $S^7_+$ and prove four main results. First, the SDE with absorbing boundaries is well-posed with a unique strong solution up to the absorption stopping time (Theorem 1). Second, the survival probability decays as $S(t, x) \sim C(x) \exp(-\lambda_{D,1} \sigma^2 t / 2)$, where $C(x)$ depends on the initial position's distance from the boundary (Theorem 2). Third, the Dirichlet spectral gap on $S^7_+$ is $\lambda_{D,2} - \lambda_{D,1} = 48$, so mixing to the quasi-stationary distribution is faster than on the full sphere: conditioned on survival, perception trajectories are confined to the deep interior of the octant (Theorem 3). Fourth, for the absorbed process, the time average and ensemble average of any non-trivial observable diverge with probability 1 as $t \to \infty$, establishing non-ergodicity consistent with the framework of Peters (2019) (Theorem 4). Application to five case-study brands shows that the absorption risk ordering -- Tesla (C-) > Erewhon (B-) > IKEA (A-) > Patagonia (B+) > Hermès (A+) -- nearly matches the SBT coherence grading (Proposition 5), with one inversion (IKEA/Patagonia) explained by coherence-type-dependent drift strength, providing the first formal connection between brand coherence and stochastic stability. The results formalize SBT's ergodicity coefficient as $\varepsilon \sim 1/\tau_{\text{mix}}$, complete the dynamic extension of the static metric framework established in Zharnikov (2026d), and establish that the distinction between *vectorized* and *rasterized* brand management is not merely practical but reflects a fundamental mathematical asymmetry between trajectory-level and snapshot-level information.
 
-**Keywords**: stochastic differential equations on manifolds, non-ergodicity, brand perception dynamics, absorbing boundaries, Laplace-Beltrami operator, mixing time, conformal prediction, Spectral Brand Theory
+**Keywords**: stochastic differential equations on manifolds, non-ergodicity, brand perception dynamics, absorbing boundaries, Laplace-Beltrami operator, mixing time, Spectral Brand Theory
 
 **JEL Classification**: C65, M31, C02
 
@@ -40,7 +40,7 @@ The approach connects three previously separate intellectual traditions. From **
 
 The paper builds on the metric framework established in Zharnikov (2026d), which defined the Aitchison metric on brand signal space $\mathbb{R}^8_+$ and the Fisher-Rao metric on observer weight space $\Delta^7$. Where that paper established the *geometry* of brand perception (how to measure distances), this paper establishes the *dynamics* (how positions change over time). The two together -- statics and dynamics -- provide a complete mathematical foundation for SBT.
 
-The remainder of the paper is organized as follows. Section 2 establishes preliminaries and notation, recalling the SBT framework and the relevant elements of Riemannian geometry. Section 3 develops Brownian motion on spheres, including the Laplace-Beltrami operator and its eigenvalues. Section 4 formulates the brand perception SDE. Section 5 analyzes absorbed Brownian motion on $S^7_+$. Section 6 establishes mixing time bounds and non-ergodicity results. Section 7 connects the mathematical framework to SBT's signal dynamics and brand strategy. Section 8 presents numerical demonstrations for the five case-study brands. Section 9 discusses implications. Section 10 connects to the broader research program. Section 11 develops distribution-free calibration of velocity estimates using conformal prediction. Section 12 concludes.
+The remainder of the paper is organized as follows. Section 2 establishes preliminaries and notation, recalling the SBT framework and the relevant elements of Riemannian geometry. Section 3 develops Brownian motion on spheres, including the Laplace-Beltrami operator and its eigenvalues. Section 4 formulates the brand perception SDE. Section 5 analyzes absorbed Brownian motion on $S^7_+$. Section 6 establishes mixing time bounds and non-ergodicity results. Section 7 connects the mathematical framework to SBT's signal dynamics and brand strategy. Section 8 presents numerical demonstrations for the five case-study brands. Section 9 discusses implications. Section 10 connects to the broader research program. Section 11 concludes.
 
 ---
 
@@ -325,7 +325,7 @@ The eigenvalues of $-\Delta_{S^{n-1}}$ for spherical harmonics of degree $\ell$ 
 
 $$\lambda_{D,1}(S^7_+) = 8(8 + 8 - 2) = 112$$
 
-This far exceeds the first eigenvalue $\lambda_1 = 7$ of the full sphere. The Dirichlet eigenvalue is strictly larger because any polynomial that is odd in all 8 variables must contain each variable to an odd power $\geq 1$, so the minimum total degree is 8. All spherical harmonics of degree $\ell < 8$ therefore fail the odd-parity boundary condition on at least one coordinate hyperplane, leaving $\phi_1$ as the first Dirichlet eigenfunction.
+This far exceeds the first eigenvalue $\lambda_1 = 7$ of the full sphere. The Dirichlet eigenvalue is strictly larger because the boundary conditions remove all eigenfunctions of lower degrees, requiring the process to be highly concentrated in the center of the octant to survive.
 
 ### 5.3 Survival Probability
 
@@ -464,8 +464,6 @@ Meanwhile, $\langle f \rangle = \int_{S^7_+} f \, d\text{Vol} / \text{Vol}(S^7_+
 
 This is the brand-perception analogue of Peters' (2019) ergodicity economics. In Peters' framework, the ensemble average of a multiplicative gambling game shows positive growth, while the time average of any individual trajectory shows negative growth (or ruin). Here, the ensemble average of brand perception is healthy (all dimensions positive), while the time average of any individual observer's perception converges to zero (eventual absorption). The practical consequence is identical: **surveys that aggregate across observers (ensemble averages) systematically overstate the quality of brand perception relative to any individual observer's temporal experience**.
 
-In consumer psychology, Hogarth and Einhorn (1992) provided the formal precedent for order-dependent belief updating. Their Belief-Adjustment Model demonstrates that step-by-step evaluation produces order-dependent outcomes unlike batch processing, and that negative evidence has asymmetric updating power --- a mechanism that this paper formalises as non-ergodic conviction dynamics through absorbing boundaries on $S^7_+$. Similarly, Kardes and Kalyanaram (1992) demonstrated that the first brand to enter a category gains a permanent evaluation advantage due to order-of-entry effects --- empirical evidence for the path dependence that non-ergodic perception formalises.
-
 ### 6.4 Conditional Non-Ergodicity with Drift
 
 When signal drift is active ($\alpha \lambda_{\text{enc}} > 0$), the situation is more nuanced. If the drift is sufficiently strong to prevent absorption (the process has a positive probability of surviving forever), then the time average may converge to a non-zero limit, and the question becomes whether this limit equals the ensemble average.
@@ -551,24 +549,24 @@ We apply the framework to SBT's five case-study brands using the canonical emiss
 
 | Brand | Grade | $\|\hat{s}\|$ | $\min_i \hat{s}_i$ | Min dimension | $d_\partial(\hat{s})$ |
 |-------|-------|---------|-----------|---------------|-------------|
-| Hermès | A+ | 1.000 | 0.128 | Economic | 0.128 |
-| IKEA | A- | 1.000 | 0.249 | Social | 0.249 |
-| Patagonia | B+ | 1.000 | 0.237 | Economic | 0.237 |
-| Erewhon | B- | 1.000 | 0.135 | Temporal | 0.135 |
-| Tesla | C- | 1.000 | 0.120 | Temporal | 0.120 |
+| Hermès | A+ | 1.000 | 0.137 | Economic | 0.137 |
+| IKEA | A- | 1.000 | 0.227 | Social | 0.227 |
+| Patagonia | B+ | 1.000 | 0.219 | Economic | 0.219 |
+| Erewhon | B- | 1.000 | 0.113 | Temporal | 0.113 |
+| Tesla | C- | 1.000 | 0.091 | Temporal | 0.091 |
 
 **Normalized emission profiles** (components of $\hat{s} = s/\|s\|$):
 
 | Dimension | Hermès | IKEA | Patagonia | Erewhon | Tesla |
 |-----------|--------|------|-----------|---------|-------|
-| Semiotic | 0.404 | 0.398 | 0.285 | 0.377 | 0.449 |
-| Narrative | 0.383 | 0.373 | 0.427 | 0.350 | 0.509 |
-| Ideological | 0.297 | 0.299 | 0.451 | 0.270 | 0.180 |
-| Experiential | 0.383 | 0.348 | 0.356 | 0.485 | 0.360 |
-| Social | 0.361 | 0.249 | 0.380 | 0.458 | 0.420 |
-| Economic | 0.128 | 0.448 | 0.237 | 0.189 | 0.360 |
-| Cultural | 0.383 | 0.373 | 0.332 | 0.404 | 0.240 |
-| Temporal | 0.404 | 0.299 | 0.309 | 0.135 | 0.120 |
+| Semiotic | 0.432 | 0.379 | 0.272 | 0.318 | 0.341 |
+| Narrative | 0.409 | 0.356 | 0.408 | 0.296 | 0.387 |
+| Ideological | 0.318 | 0.284 | 0.430 | 0.227 | 0.136 |
+| Experiential | 0.409 | 0.332 | 0.340 | 0.409 | 0.273 |
+| Social | 0.386 | 0.237 | 0.362 | 0.386 | 0.318 |
+| Economic | 0.136 | 0.427 | 0.226 | 0.159 | 0.273 |
+| Cultural | 0.409 | 0.356 | 0.317 | 0.341 | 0.182 |
+| Temporal | 0.432 | 0.284 | 0.295 | 0.114 | 0.091 |
 
 The minimum coordinate $d_\partial(\hat{s})$ provides a first-order proxy for absorption risk: brands with smaller minimum coordinates have perception profiles closer to the boundary and are more vulnerable to dimensional loss.
 
@@ -576,7 +574,7 @@ The minimum coordinate $d_\partial(\hat{s})$ provides a first-order proxy for ab
 
 **Proposition 5** (Absorption probability ordering). *For the five case-study brands, under the assumption that observer perception evolves as the SDE of Section 4 with equal-weight initial condition $X_0 = x^* = (1/\sqrt{8}, \ldots, 1/\sqrt{8})$ and isotropic diffusion, the absorption risk ordering is:*
 
-$$\text{Tesla} > \text{Hermès} > \text{Erewhon} > \text{Patagonia} > \text{IKEA}$$
+$$\text{Tesla} > \text{Erewhon} > \text{Hermès} > \text{Patagonia} > \text{IKEA}$$
 
 *When drift toward the brand's emission profile is included, the ordering adjusts to:*
 
@@ -586,7 +584,7 @@ $$\text{Tesla} > \text{Erewhon} > \text{IKEA} > \text{Patagonia} > \text{Hermès
 
 *Derivation.* The absorption risk depends on two factors: (1) how close the brand's target position $\hat{s}$ is to the boundary (smaller $d_\partial(\hat{s})$ = higher risk), and (2) how "balanced" the emission profile is across dimensions (more balanced = lower risk of any single dimension reaching zero).
 
-For the pure distance-from-boundary ordering, we read off from the table: Tesla ($d_\partial = 0.120$) > Hermès ($d_\partial = 0.128$) > Erewhon ($d_\partial = 0.135$) > Patagonia ($d_\partial = 0.237$) > IKEA ($d_\partial = 0.249$). Hermès ranks second-worst in the no-drift case — surprising for an A+ brand — because its economic dimension is very low (3.0/10), placing its normalized target profile close to the boundary. However, the drift toward Hermès's emission profile is extremely strong (ecosystem coherence), meaning the drift nearly eliminates absorption risk despite the narrow economic dimension.
+For the pure distance-from-boundary ordering, we read off from the table: Tesla ($d_\partial = 0.091$) > Erewhon ($d_\partial = 0.113$) > Hermès ($d_\partial = 0.137$) > Patagonia ($d_\partial = 0.219$) > IKEA ($d_\partial = 0.227$). Hermès ranks worse than expected because its economic dimension is very low (3.0/10); however, the drift toward Hermès's emission profile is very strong because Hermès has the highest overall signal coherence, meaning the drift opposes absorption effectively.
 
 When we account for the *strength* of the drift (proportional to the brand's coherence -- how consistently signals reinforce the target position), the ordering changes:
 
@@ -596,9 +594,9 @@ When we account for the *strength* of the drift (proportional to the brand's coh
 
 - **Patagonia (B+)**: High $d_\partial$ with strong ideological drift. The identity coherence means ideological signals strongly oppose absorption, but experiential and economic signals are less coordinated.
 
-- **Erewhon (B-)**: Low $d_\partial$ ($d_\partial = 0.135$, third-closest to boundary, driven by the temporal dimension at 2.5/10) and moderate, asymmetric drift. The experiential strength creates a local pull, but the temporal weakness means the brand has little temporal compounding to resist decay. High absorption risk.
+- **Erewhon (B-)**: Low $d_\partial$ (temporal dimension is very weak at 2.5/10) and moderate, asymmetric drift. The experiential strength creates a local pull, but the temporal weakness means the brand has little temporal compounding to resist decay. High absorption risk.
 
-- **Tesla (C-)**: Lowest $d_\partial$ ($d_\partial = 0.120$, temporal = 2.0/10, ideological = 3.0/10) and weak, contradictory drift. The incoherence means signals from different encounter modes push perception in different directions, creating high effective diffusion rather than drift. The ideological polarization (3.0/10) means many observers start with perception profiles close to $x_3 = 0$. Very high absorption risk.
+- **Tesla (C-)**: Lowest $d_\partial$ (temporal = 2.0/10, ideological = 3.0/10) and weak, contradictory drift. The incoherence means signals from different encounter modes push perception in different directions, creating high effective diffusion rather than drift. The ideological polarization (3.0/10) means many observers start with perception profiles close to $x_3 = 0$. Very high absorption risk.
 
 The adjusted ordering Tesla > Erewhon > IKEA > Patagonia > Hermès aligns with the SBT coherence grades (C- > B- > B+ > A- > A+), with one inversion: IKEA (A-) shows higher absorption risk than Patagonia (B+). This inversion arises because identity coherence (Patagonia) generates stronger directional drift than signal coherence (IKEA) -- a qualitative distinction the letter grade does not capture. The near-match provides the first formal derivation connecting coherence type to dynamical stability from first principles. $\square$
 
@@ -648,8 +646,6 @@ The dynamical framework established in this paper deepens the distinction betwee
 
 The mathematical asymmetry is now precise: a snapshot $X_t$ at any single time $t$ contains no information about $\dot{X}_t$ (the velocity of perception change), $d_\partial(X_t)$ (proximity to irreversible loss), or the absorption probability $\mathbb{P}[\tau < t + T]$. These are trajectory-level quantities that require trajectory-level data. The SDE framework makes this concrete: knowing $X_t$ is knowing one point on a stochastic curve; managing the brand requires knowing the curve's drift, diffusion, and boundary conditions.
 
-**Implementation note.** The per-dimension velocity tracking described above — the discrete approximation to the drift vector $\mu(X_t, t)$ — has been implemented in the open-source SBT validation toolkit (spectralbranding/sbt-framework). The implementation computes signed velocity per dimension from sequential signal profile snapshots, directional classification (rising, falling, or stable), acceleration when three or more snapshots are available, and linear time-to-absorption estimates for declining dimensions. This operationalizes the vectorized approach: practitioners using the toolkit now track velocity and boundary proximity, not just position.
-
 ### 9.2 The Time-Average Perspective
 
 Peters (2019) argued that the ergodicity assumption -- the conflation of time and ensemble averages -- is the deepest error in economic theory, responsible for paradoxes from the St. Petersburg problem to the equity premium puzzle. Theorem 4 establishes an analogous claim for brand theory: brand health surveys (ensemble averages) systematically misrepresent brand reality (time averages) whenever absorbing boundaries are active.
@@ -690,7 +686,7 @@ Several simplifying assumptions deserve explicit acknowledgment:
 
 R6 provides a dynamical component of the mathematical foundations of Spectral Brand Theory, extending the static framework established in R1--R5.
 
-**R1 (Formal Metric, Zharnikov 2026d)** defined the geometry of brand space -- the Aitchison metric on $\mathbb{R}^8_+$, the Fisher-Rao metric on $\Delta^7$, and the warped product metric on the combined space. R6 takes this geometry as given and adds dynamics: the SDE on $S^7_+$ evolves perception states within the metric structure that R1 established. The Laplace-Beltrami operator that governs the diffusion is determined by the Riemannian metric, making R6 the natural dynamical completion of R1.
+**R1 (Formal Metric, Zharnikov 2026d)** defined the geometry of brand space -- the Aitchison metric on $\mathbb{R}^8_+$, the Fisher-Rao metric on $\Delta^7$, and the warped product metric on the combined space. R1 also develops Jacobi field analysis on the perception manifold, introducing the spectral sensitivity index -- an observer-weighted curvature measure that quantifies trajectory vulnerability. R6 takes this geometry as given and adds dynamics: the SDE on $S^7_+$ evolves perception states within the metric structure that R1 established. The Jacobi field analysis in R1 provides the deterministic skeleton of R6's stochastic model: in the low-noise limit ($\sigma \to 0$), trajectory sensitivity is governed by the curvature-based risk metric, and the spectral sensitivity index predicts which brands face the strongest path-dependence. The Laplace-Beltrami operator that governs the diffusion is determined by the Riemannian metric, making R6 the natural dynamical completion of R1.
 
 **R2 (Spectral Metamerism, Zharnikov 2026e)** proved that scalar projections of 8-dimensional brand profiles are necessarily lossy. R6 extends this to a dynamical setting: even if one could perfectly observe the current state $X_t$, the scalar projection $\langle w, X_t \rangle$ loses all information about the trajectory's velocity, drift direction, and boundary proximity. The "metameric loss" is even larger for dynamical quantities than for static profiles.
 
@@ -704,95 +700,7 @@ Together, R1--R6 provide a complete mathematical apparatus for Spectral Brand Th
 
 ---
 
-## 11. Distribution-Free Calibration of Perception Trajectories
-
-### 11.1 The Calibration Problem
-
-The velocity tracking implemented in Section 9.1 produces point estimates: a signed rate of change per dimension per period. But point estimates without calibrated uncertainty are operationally incomplete. A velocity estimate of $-0.5$/quarter on the Ideological dimension could represent a confident decline or a noisy fluctuation. Without uncertainty quantification, practitioners cannot distinguish actionable signals from measurement noise.
-
-The SDE framework developed in Sections 4--6 provides theoretical distributions via the drift vector $\mu$ and diffusion coefficient $\sigma$. However, these require assumptions about noise structure (Brownian motion on the manifold) and parameter values that may not hold for real brand tracking data. In particular, the isotropic diffusion assumption (Section 9.4, Limitation 1) and the constant-parameter assumption (Limitation 2) are simplifications whose violations would invalidate parametric confidence intervals derived from the SDE model. What is needed is a distribution-free calibration method that provides coverage guarantees without parametric assumptions -- a method that remains valid regardless of the true noise structure.
-
-Conformal prediction (Vovk et al., 2005; Angelopoulos & Bates, 2023) provides exactly this guarantee. Originally developed in the machine learning literature for predictive inference, conformal prediction constructs prediction intervals with finite-sample coverage guarantees under a single assumption -- exchangeability -- that is strictly weaker than the i.i.d. assumption and far weaker than Gaussianity. We show here that the method applies naturally to the velocity estimates from Section 9.1, providing calibrated uncertainty bands for both per-dimension velocities and time-to-absorption estimates.
-
-### 11.2 Conformal Prediction for Velocity Estimates
-
-We adopt the split conformal prediction framework of Lei et al. (2018). The key insight is that coverage guarantees can be derived from the empirical distribution of past prediction errors, without any assumption about the form of that distribution.
-
-Let $\hat{v}_i^{(t)}$ denote the velocity estimate for dimension $i$ at time $t$, computed from sequential signal profile snapshots as described in Section 9.1. Let $v_i^{(t)}$ denote the true velocity (the realized rate of change observed at the next measurement period). The residual is $r_i^{(t)} = v_i^{(t)} - \hat{v}_i^{(t)}$.
-
-Given a calibration set of $n$ historical residuals $\{r_i^{(1)}, \ldots, r_i^{(n)}\}$ from prior tracking periods, the conformal prediction algorithm proceeds as follows:
-
-1. Compute nonconformity scores: $s_k = |r_i^{(k)}|$ for $k = 1, \ldots, n$.
-2. Find the finite-sample corrected quantile:
-
-$$q_{1-\alpha} = \text{Quantile}\left(\{s_k\}_{k=1}^n,\; \frac{\lceil (1-\alpha)(n+1) \rceil}{n}\right)$$
-
-3. For a new velocity estimate $\hat{v}_i^{(n+1)}$, construct the prediction interval:
-
-$$C_{1-\alpha}(\hat{v}_i^{(n+1)}) = \left[\hat{v}_i^{(n+1)} - q_{1-\alpha},\; \hat{v}_i^{(n+1)} + q_{1-\alpha}\right]$$
-
-The coverage guarantee is immediate from the theory of conformal prediction.
-
-**Proposition 6 (Conformal Coverage).** *If the velocity residuals $r_i^{(1)}, \ldots, r_i^{(n)}, r_i^{(n+1)}$ are exchangeable, then*
-
-$$\mathbb{P}\!\left(v_i^{(n+1)} \in C_{1-\alpha}(\hat{v}_i^{(n+1)})\right) \geq 1 - \alpha.$$
-
-This is a standard result from conformal prediction theory (Vovk et al., 2005, Chapter 2). The finite-sample correction $\lceil (1-\alpha)(n+1) \rceil / n$ ensures that the coverage guarantee holds for any sample size $n$, not merely asymptotically. The guarantee holds for *any* underlying distribution of residuals -- no Gaussian assumption, no stationarity assumption, no parametric model of any kind.
-
-The exchangeability condition deserves comment. Exchangeability requires that the joint distribution of the residual sequence is invariant under permutation; it is strictly weaker than the i.i.d. assumption, since it permits dependencies in the marginal distributions provided the joint distribution is permutation-invariant. For brand perception velocity, exchangeability is plausible when the data-generating process is stable over the calibration window, but it is not automatic. Stationarity of a time series does not imply exchangeability: a stationary AR(1) process, for example, has marginal distributions that are identical but a joint distribution that is not permutation-invariant due to serial correlation. If velocity residuals exhibit serial correlation (as they plausibly might when brand dynamics follow smooth trajectories), the standard conformal guarantee is weakened. Two practical mitigations exist: (a) using only every $k$-th residual to reduce serial dependence (thinning), and (b) applying block-wise conformal methods that preserve temporal structure. When the competitive environment shifts (a new entrant, a category disruption), the calibration set should be refreshed regardless of the method used.
-
-### 11.3 Application to Time-to-Absorption Estimates
-
-The linear time-to-absorption estimate from Section 9.1,
-
-$$T_{\text{absorb},i} = \frac{x_i^{(t)} - x_{\min}}{|\hat{v}_i^{(t)}|}$$
-
-where $x_i^{(t)}$ is the current value of dimension $i$ and $x_{\min}$ is the absorbing boundary threshold, inherits uncertainty from the velocity estimate. Conformal bands on the velocity propagate directly to bounds on the absorption time.
-
-Let $[\hat{v}_i - q_{1-\alpha},\; \hat{v}_i + q_{1-\alpha}]$ be the conformal interval for a declining dimension (where $\hat{v}_i < 0$). Then:
-
-- The upper velocity bound $\hat{v}_i + q_{1-\alpha}$ (less negative, or possibly positive) yields a longer -- more optimistic -- time to absorption.
-- The lower velocity bound $\hat{v}_i - q_{1-\alpha}$ (more negative) yields a shorter -- more pessimistic -- time to absorption.
-
-This gives practitioners a calibrated range rather than a point estimate: "at 90% confidence, this dimension reaches the absorbing boundary between 1.2 and 4.8 quarters." The calibrated range transforms the time-to-absorption estimate from a deterministic extrapolation (which implies false precision) into a prediction interval with guaranteed coverage (which correctly communicates the degree of uncertainty in the forecast).
-
-When the upper velocity bound is non-negative ($\hat{v}_i + q_{1-\alpha} \geq 0$), the optimistic bound is infinite -- the data are consistent with the dimension not declining at all. This is informative: it tells the practitioner that the observed decline is not statistically distinguishable from noise at the chosen confidence level.
-
-### 11.4 Practical Implementation
-
-The conformal calibration algorithm requires only basic numerical computation (no external statistical libraries beyond standard array operations). The core algorithm is approximately ten lines of code and has been implemented in the open-source SBT validation toolkit (spectralbranding/sbt-framework) as part of the `VelocityReport` dataclass.
-
-Several design decisions merit discussion:
-
-**Calibration data.** The calibration set consists of historical velocity residuals from sequential brand profile snapshots. Each residual compares the velocity predicted at time $t$ with the velocity realized at time $t+1$. The residuals are computed per dimension, so each of the eight SBT dimensions maintains its own calibration set.
-
-**Minimum calibration set size.** We require a minimum of $n = 10$ calibration residuals. Below this threshold, the conformal quantile $q_{1-\alpha}$ is dominated by the most extreme residual, producing intervals too wide to be operationally useful. For quarterly brand tracking data, this corresponds to approximately 2.5 years of history -- a practical minimum for any meaningful trend analysis.
-
-**Default coverage level.** The default coverage is set to 90% ($\alpha = 0.10$). Practitioners can adjust this parameter: higher coverage (e.g., 95%) produces wider intervals suitable for high-stakes decisions (should we restructure the brand's emission policy?), while lower coverage (e.g., 80%) produces narrower intervals for routine monitoring.
-
-**Interval clamping.** Velocity bounds are clamped to $[x_{\min} - x_i^{(t)},\; x_{\max} - x_i^{(t)}]$, where $x_{\min}$ and $x_{\max}$ are the minimum and maximum attainable signal values. This prevents physically impossible predictions -- a velocity bound that would push a perception score below $x_{\min} = 0$ (the absorbing boundary) or above $x_{\max} = 10$ (the maximum signal value) is truncated.
-
-### 11.5 Relationship to the SDE Framework
-
-The conformal approach complements rather than replaces the SDE model developed in Sections 4--6. The two methods address different aspects of uncertainty:
-
-The SDE framework provides:
-- Theoretical drift and diffusion structure (the form of the equations of motion)
-- Qualitative predictions (which dimensions face absorption risk, which are crystallized)
-- Asymptotic behavior (survival probability decay rates, mixing times, quasi-stationary distributions)
-
-Conformal prediction provides:
-- Finite-sample coverage guarantees derived from empirical data
-- Distribution-free intervals (no Brownian motion assumption required)
-- Operationally actionable uncertainty bands for period-to-period velocity estimates
-
-When the SDE parameters are well-estimated and the model assumptions hold, conformal intervals and parametric intervals will be similar in width, providing mutual validation. When the SDE assumptions are violated -- non-Gaussian noise, anisotropic diffusion, non-stationary dynamics, or parameter misspecification -- the conformal intervals remain valid while the parametric intervals do not. The conformal approach thus provides a robustness guarantee: practitioners obtain calibrated uncertainty regardless of whether the theoretical model holds exactly for their brand and market context.
-
-This complementarity has a natural interpretation in the vectorized-rasterized distinction of Section 9.1. The SDE model is the theoretical engine of the vectorized approach: it specifies the equations of motion and their qualitative consequences. Conformal prediction is the empirical calibrator: it takes the point estimates produced by the vectorized approach and wraps them in distribution-free uncertainty bands. Together, they provide both the "why" (SDE theory) and the "how much" (conformal calibration) of brand perception dynamics.
-
----
-
-## 12. Conclusion
+## 11. Conclusion
 
 This paper has established a formal dynamical model of brand perception evolution within Spectral Brand Theory's eight-dimensional framework. The central mathematical object is a stochastic differential equation on $S^7_+$, the positive octant of the 7-sphere, with absorbing boundary conditions representing irreversible loss of perceptual dimensions.
 
@@ -804,11 +712,9 @@ The main results are:
 
 3. **Mixing time bounds (Theorem 3).** The Dirichlet spectral gap on $S^7_+$ is $\lambda_{D,2} - \lambda_{D,1} = 160 - 112 = 48$, yielding a mixing time to the quasi-stationary distribution of $\tau_{\text{mix}} \asymp 2/(48\sigma_0^2)$, which is *faster* than the mixing time $2/(7\sigma_0^2)$ on the full sphere. Conditioned on survival, perception trajectories are confined to the deep interior of the octant, reducing the effective volume and accelerating convergence to the QSD.
 
-4. **Non-ergodicity (Theorem 4).** For the absorbed process, time averages and ensemble averages diverge with probability 1. To the best of our knowledge, this is the first formal proof of time-ensemble divergence in the context of multi-dimensional brand perception, establishing the brand-perception analogue of Peters' (2019) ergodicity economics.
+4. **Non-ergodicity (Theorem 4).** For the absorbed process, time averages and ensemble averages diverge with probability 1. To the best of our knowledge, this is the first formal proof that brand perception surveys (ensemble averages) and individual perceptual trajectories (time averages) measure fundamentally different quantities, establishing the brand-perception analogue of Peters' (2019) ergodicity economics.
 
 5. **Absorption risk nearly matches coherence grades (Proposition 5).** For the five case-study brands, the absorption risk ordering Tesla > Erewhon > IKEA > Patagonia > Hermès aligns with the SBT coherence grading, with one inversion: IKEA (A-) has higher absorption risk than Patagonia (B+), because identity coherence generates stronger directional drift than signal coherence. Coherent signaling creates effective drift that opposes absorption; incoherent signaling creates effective diffusion that accelerates it.
-
-6. **Distribution-free calibration (Proposition 6).** Conformal prediction applied to velocity residuals provides finite-sample coverage guarantees for per-dimension velocity estimates and time-to-absorption forecasts, without requiring Gaussian noise, stationarity, or any parametric model. The conformal intervals remain valid even when the SDE assumptions of Sections 4--6 are violated, providing a robustness guarantee for the practical implementation of the vectorized approach.
 
 These results have three immediate consequences for brand theory and practice.
 
@@ -816,7 +722,7 @@ First, **signal maintenance is mathematically necessary**. Without active brand 
 
 Second, **ensemble surveys are unreliable for non-ergodic brands**. When the ergodicity coefficient $\varepsilon$ is low (below approximately 1), the time-average experience of individual observers diverges systematically from the ensemble average captured by surveys. For brands like Tesla ($\varepsilon \approx 0.4$), survey-based brand health metrics are not merely imprecise but fundamentally misleading -- they suffer from survivorship bias in perception space.
 
-Third, **brand management is a trajectory optimization problem**, not a position optimization problem. The traditional framing -- "where should we position the brand?" -- is the wrong question. The right question is: "what drift and diffusion parameters keep the perception trajectory in a desirable region of $S^7_+$, away from absorbing boundaries and within crystallization basins?" This reframing is the dynamical consequence of the static insight that brands are multi-dimensional objects, not points on a perceptual map. Conformal prediction bands (Section 11) make this trajectory optimization operationally actionable by providing calibrated uncertainty around velocity estimates and time-to-absorption forecasts, enabling practitioners to distinguish statistically significant trajectory changes from measurement noise without relying on parametric assumptions.
+Third, **brand management is a trajectory optimization problem**, not a position optimization problem. The traditional framing -- "where should we position the brand?" -- is the wrong question. The right question is: "what drift and diffusion parameters keep the perception trajectory in a desirable region of $S^7_+$, away from absorbing boundaries and within crystallization basins?" This reframing is the dynamical consequence of the static insight that brands are multi-dimensional objects, not points on a perceptual map.
 
 The dynamical framework opens several directions for future work: interacting observer systems (correlated trajectories through social signals), empirical calibration of SDE parameters from longitudinal brand tracking data, optimal control formulations (what signal strategy minimizes absorption risk?), and connections to mean-field game theory (how do competing brands' strategies interact through their effect on shared observer populations). These extensions would complete the transition from qualitative brand theory to quantitative brand dynamics -- a transition that this paper, together with R1--R5, has begun.
 
@@ -828,8 +734,6 @@ Aaker, D. A. (1991). *Managing Brand Equity: Capitalizing on the Value of a Bran
 
 Aitchison, J. (1986). *The Statistical Analysis of Compositional Data*. Chapman and Hall.
 
-Angelopoulos, A. N., & Bates, S. (2023). Conformal prediction: A gentle introduction. *Foundations and Trends in Machine Learning*, 16(4), 494--591.
-
 Ashbaugh, M. S., & Benguria, R. D. (1992). A sharp bound for the ratio of the first two eigenvalues of Dirichlet Laplacians and extensions. *Annals of Mathematics*, 135(3), 601--628.
 
 Aydogdu, A., McQuade, S. T., & Pouradier Duteil, N. (2017). Opinion dynamics on a general compact Riemannian manifold. *Networks and Heterogeneous Media*, 12(3), 489--523.
@@ -839,8 +743,6 @@ Berger, M., Gauduchon, P., & Mazet, E. (1971). *Le Spectre d'une Variete Riemann
 Busemeyer, J. R., & Bruza, P. D. (2012). *Quantum Models of Cognition and Decision*. Cambridge University Press.
 
 Cattiaux, P., Collet, P., Lambert, A., Martinez, S., Meleard, S., & San Martin, J. (2009). Quasi-stationary distributions and diffusion models in population dynamics. *Annals of Probability*, 37(5), 1926--1969.
-
-Dick, A. S., & Basu, K. (1994). Customer loyalty: Toward an integrated conceptual framework. *Journal of the Academy of Marketing Science*, 22(2), 99--113.
 
 Chavel, I. (1984). *Eigenvalues in Riemannian Geometry*. Academic Press.
 
@@ -852,17 +754,11 @@ Gardenfors, P. (2000). *Conceptual Spaces: The Geometry of Thought*. MIT Press.
 
 Hegselmann, R., & Krause, U. (2002). Opinion dynamics and bounded confidence: Models, analysis and simulation. *Journal of Artificial Societies and Social Simulation*, 5(3), 2.
 
-Hogarth, R. M., & Einhorn, H. J. (1992). Order effects in belief updating: The belief-adjustment model. *Cognitive Psychology*, 24(1), 1--55.
-
 Hsu, E. P. (2002). *Stochastic Analysis on Manifolds*. Graduate Studies in Mathematics, Vol. 38. American Mathematical Society.
 
 Kapferer, J.-N. (2008). *The New Strategic Brand Management: Creating and Sustaining Brand Equity Long Term* (4th ed.). Kogan Page.
 
-Kardes, F. R., & Kalyanaram, G. (1992). Order-of-entry effects on consumer memory and judgment: An information integration perspective. *Journal of Marketing Research*, 29(3), 343--357.
-
 Keller, K. L. (1993). Conceptualizing, measuring, and managing customer-based brand equity. *Journal of Marketing*, 57(1), 1--22.
-
-Lei, J., G'Sell, M., Rinaldo, A., Tibshirani, R. J., & Wasserman, L. (2018). Distribution-free predictive inference for regression. *Journal of the American Statistical Association*, 113(523), 1094--1111.
 
 Levin, D. A., Peres, Y., & Wilmer, E. L. (2009). *Markov Chains and Mixing Times*. American Mathematical Society.
 
@@ -878,15 +774,11 @@ Peters, O. (2019). The ergodicity problem in economics. *Nature Physics*, 15, 12
 
 Peters, O., & Gell-Mann, M. (2016). Evaluating gambles using dynamics. *Chaos*, 26(2), 023103.
 
-Petty, R. E., & Cacioppo, J. T. (1986). *Communication and Persuasion: Central and Peripheral Routes to Attitude Change*. Springer.
-
 Stroock, D. W. (2000). *An Introduction to the Analysis of Paths on a Riemannian Manifold*. Mathematical Surveys and Monographs, Vol. 74. American Mathematical Society.
 
 Todd, J. T., Oomes, A. H. J., Koenderink, J. J., & Kappers, A. M. L. (2001). On the affine structure of perceptual space. *Psychological Science*, 12(3), 191--196.
 
 Viazovska, M. S. (2017). The sphere packing problem in dimension 8. *Annals of Mathematics*, 185(3), 991--1015.
-
-Vovk, V., Gammerman, A., & Shafer, G. (2005). *Algorithmic Learning in a Random World*. Springer.
 
 Weber, E. H. (1834). *De Pulsu, Resorptione, Auditu et Tactu: Annotationes Anatomicae et Physiologicae*. Koehler.
 
@@ -931,10 +823,10 @@ All numerical results reported in this paper were computed using standard mathem
 
 | Brand | $d_\partial(\hat{s})$ | Minimum dimension |
 |-------|---------------------|-------------------|
-| Hermès | 0.128 | Economic (3.0/10) |
-| IKEA | 0.249 | Social (5.0/10) |
-| Patagonia | 0.237 | Economic (5.0/10) |
-| Erewhon | 0.135 | Temporal (2.5/10) |
-| Tesla | 0.120 | Temporal (2.0/10) |
+| Hermès | 0.137 | Economic (3.0/10) |
+| IKEA | 0.227 | Social (5.0/10) |
+| Patagonia | 0.219 | Economic (5.0/10) |
+| Erewhon | 0.113 | Temporal (2.5/10) |
+| Tesla | 0.091 | Temporal (2.0/10) |
 
 **Ergodicity coefficient estimates** were computed as $\varepsilon = \tau_{\text{char}} / \tau_{\text{mix}}$ with $\tau_{\text{char}} = 1$ year and mixing times estimated from the drift-diffusion balance for each brand. Higher coherence grades correspond to stronger drift, which reduces the effective mixing time and increases $\varepsilon$.
