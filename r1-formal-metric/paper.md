@@ -464,7 +464,7 @@ In practice, for brand profiles that are not pathologically close to the boundar
 
 ## 8. Trajectory Sensitivity on the Perception Manifold
 
-The metric framework developed in Sections 3--7 treats brand profiles and observer weights as static objects. In practice, brand perception evolves: emission profiles shift through rebranding, observer weights drift through cultural change, and both evolve along curves on their respective manifolds. This section introduces the mathematical machinery for analyzing how sensitive brand trajectories are to initial conditions -- a question with direct strategic implications.
+The metric framework developed in Sections 3--7 treats brand profiles and observer weights as static objects. In practice, brand perception evolves: emission profiles shift through re-collapse, observer weights drift through cultural change, and both evolve along curves on their respective manifolds. This section introduces the mathematical machinery for analyzing how sensitive brand trajectories are to initial conditions -- a question with direct strategic implications.
 
 ### 8.1 Jacobi Fields and Geodesic Deviation
 
@@ -530,7 +530,7 @@ where $b$ is a drift term (directed encounters, signal decay) and $\sigma$ is a 
 
 The connection is precise: R6 proves that brand perception on $S^7_+$ is non-ergodic (Theorem 4 in Zharnikov, 2026j), meaning that time-averages do not converge to ensemble-averages. The Jacobi field analysis complements this by showing *why* non-ergodicity has heterogeneous impact: brands in high-curvature regions of perception space (near the boundary, or observed through concentrated weight profiles) experience stronger path-dependence than brands in low-curvature regions. The spectral sensitivity index provides the formal bridge between the static metric (this paper) and the dynamic theory (R6).
 
-Cafaro and Ali (2007) analyzed Jacobi field instability on negatively curved statistical manifolds, characterizing chaotic divergence of nearby trajectories through Lyapunov-type growth rates. In contrast, the positive curvature of $S^7_+$ produces oscillatory rather than exponential Jacobi field behavior, meaning brand trajectories on the perception manifold are bounded in their deviation -- a qualitatively different sensitivity regime that permits strategic positioning to manage vulnerability. Recent work on Riemannian variational methods (Zaghen, Carrasco, Sumaraj, Bekkers, & Rieck, 2026) demonstrates that Jacobi field computations are tractable on curved manifolds in machine learning contexts, suggesting that the sensitivity analysis developed here could be implemented computationally for empirical brand data.
+Cafaro and Ali (2007) analyzed Jacobi field instability on negatively curved statistical manifolds, characterizing chaotic divergence of nearby trajectories through Lyapunov-type growth rates. In contrast, the positive curvature of $S^7_+$ produces oscillatory rather than exponential Jacobi field behavior, meaning brand trajectories on the perception manifold are bounded in their deviation -- a qualitatively different sensitivity regime that permits strategic positioning to manage vulnerability. Recent work on Riemannian variational methods (Zaghen, Eijkelboom, Pouplin, Liu, Welling, van de Meent, & Bekkers, 2025) demonstrates that Jacobi field computations are tractable on curved manifolds in machine learning contexts, suggesting that the sensitivity analysis developed here could be implemented computationally for empirical brand data.
 
 ---
 
@@ -867,7 +867,7 @@ Thurstone, L. L. (1927). A law of comparative judgment. *Psychological Review*, 
 
 Viazovska, M. S. (2017). The sphere packing problem in dimension 8. *Annals of Mathematics*, 185(3), 991--1015.
 
-Zaghen, O., Carrasco, M., Sumaraj, K., Bekkers, E., & Rieck, B. (2026). Riemannian Variational Flow Matching for Material and Protein Design. *arXiv preprint*.
+Zaghen, O., Eijkelboom, F., Pouplin, A., Liu, C., Welling, M., van de Meent, J.-W., & Bekkers, E. J. (2025). Riemannian Variational Flow Matching for Material and Protein Design. *arXiv preprint* arXiv:2502.12981.
 
 Zharnikov, D. (2026a). Spectral Brand Theory: A multi-dimensional framework for brand perception analysis. Working Paper. https://doi.org/10.5281/zenodo.18945912
 
