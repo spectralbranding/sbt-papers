@@ -191,18 +191,33 @@ The example above is abbreviated. The full specification, including all fields, 
 
 ### 4.4 A Worked Example
 
-Consider a hypothetical empirical paper claiming that sleep deprivation reduces decision accuracy. The `claims` section would contain:
+Consider Kahneman and Tversky's (1979) prospect theory paper. The `claims` section would contain:
 
 ```yaml
 claims:
   - id: "H1"
     type: hypothesis
     statement: >
-      Sleep deprivation of 24+ hours reduces multi-attribute
-      decision accuracy by at least 10%.
+      People underweight outcomes that are merely probable
+      compared to outcomes obtained with certainty (the
+      certainty effect), leading to risk aversion in choices
+      involving sure gains and risk seeking in choices
+      involving sure losses.
     testable: true
     tested_in_paper: true
     status: supported
+
+  - id: "H2"
+    type: hypothesis
+    statement: >
+      The value function is defined on deviations from a
+      reference point, is generally concave for gains and
+      convex for losses, and is steeper for losses than
+      for gains (loss aversion).
+    testable: true
+    tested_in_paper: true
+    status: supported
+    depends_on: ["H1"]
 ```
 
 The corresponding `acceptance` entry:
@@ -211,23 +226,28 @@ The corresponding `acceptance` entry:
 acceptance:
   - claim_id: "H1"
     criterion: >
-      Mean accuracy in sleep-deprived condition is at least
-      10 percentage points lower than rested condition.
+      In forced-choice experiments, a statistically significant
+      majority of subjects prefer a certain gain over a
+      probabilistically equivalent or superior gamble, and
+      prefer a gamble over a certain loss of equivalent
+      expected value.
     falsification: >
-      Accuracy difference is less than 5 percentage points
-      or favors sleep-deprived condition.
-    threshold: "Cohen's d >= 0.5, p < .005"
+      Subjects show no systematic preference for certainty
+      in gains or gambling in losses -- choices are consistent
+      with expected utility theory.
 ```
 
 And the `dependencies` entry, identifying a specific prior claim this builds on:
 
 ```yaml
 dependencies:
-  - doi: "10.1037/rev0000045"
+  - reference: >
+      von Neumann, J., & Morgenstern, O. (1947). Theory of
+      Games and Economic Behavior.
     claim: >
-      Working memory capacity predicts decision quality
-      under cognitive load.
-    relationship: extends
+      Expected utility theory -- the baseline model that
+      prospect theory replaces.
+    relationship: contradicts
     critical: true
 ```
 
@@ -379,6 +399,8 @@ Hicks, D., Wouters, P., Waltman, L., de Rijcke, S., & Rafols, I. (2015). Bibliom
 
 Ioannidis, J. P. A. (2005). Why most published research findings are false. *PLoS Medicine*, 2(8), e124.
 
+Kahneman, D., & Tversky, A. (1979). Prospect theory: An analysis of decision under risk. *Econometrica*, 47(2), 263-292.
+
 NISO (2012). *JATS: Journal Article Tag Suite* (ANSI/NISO Z39.96-2012). National Information Standards Organization.
 
 Nosek, B. A., & Lakens, D. (2014). Registered reports: A method to increase the credibility of published results. *Social Psychology*, 45(3), 137-141.
@@ -403,4 +425,4 @@ Zharnikov, D. (2026i). The Organizational Schema Theory: Test-driven business de
 
 Zharnikov, D. (2026l). The rendering problem: From genetic expression to brand perception. Working Paper. https://doi.org/10.5281/zenodo.19064427
 
-Zharnikov, D. (2026t). Paper Spec v0.1.0: A machine-readable specification format for scientific papers. https://github.com/spectralbranding/paper-spec
+Zharnikov, D. (2026t). Paper Spec v0.1.0: A machine-readable specification format for scientific papers. https://doi.org/10.5281/zenodo.19210037
