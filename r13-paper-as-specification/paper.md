@@ -187,7 +187,7 @@ submission_history: # Publication journey.
     decision: under_review
 ```
 
-The example above is abbreviated. The full specification, including all fields, types, enums, and validation rules, is published as a standalone document with a companion JSON Schema (Zharnikov, 2026t).
+The example above is abbreviated. The full specification, including all fields, types, enums, and validation rules, is published as a standalone document with a companion JSON Schema (https://github.com/spectralbranding/paper-spec).
 
 ### 4.4 A Worked Example
 
@@ -424,5 +424,3 @@ Zharnikov, D. (2026a). Spectral Brand Theory: A multi-dimensional framework for 
 Zharnikov, D. (2026i). The Organizational Schema Theory: Test-driven business design. Working Paper. https://doi.org/10.5281/zenodo.18946043
 
 Zharnikov, D. (2026l). The rendering problem: From genetic expression to brand perception. Working Paper. https://doi.org/10.5281/zenodo.19064427
-
-Zharnikov, D. (2026t). Paper as specification: A machine-readable standard for scientific claims. https://doi.org/10.5281/zenodo.19210037
