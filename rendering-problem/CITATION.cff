@@ -6,24 +6,24 @@ authors:
     email: dmitry@spectralbranding.com
     affiliation: "Independent Researcher"
     orcid: "https://orcid.org/0009-0000-6893-9231"
-title: "Brand space geometry: A formal metric for multi-dimensional brand perception"
+title: "The rendering problem: From genetic expression to brand perception"
 version: 1.0.0
-date-released: 2026-03-10
-url: "https://doi.org/10.5281/zenodo.18945295"
+date-released: 2026-03-17
+url: "https://doi.org/10.5281/zenodo.19064427"
 repository-code: "https://github.com/spectralbranding/sbt-papers"
 identifiers:
   - type: doi
-    value: "10.5281/zenodo.18945295"
+    value: "10.5281/zenodo.19064427"
     description: "Zenodo archive (primary)"
   - type: url
-    value: "https://doi.org/10.5281/zenodo.18945295"
+    value: "https://doi.org/10.5281/zenodo.19064427"
     description: "Zenodo preprint"
 keywords:
-  - brand metric
-  - simplex geometry
-  - Aitchison metric
-  - Fisher-Rao metric
-  - brand similarity
+  - rendering problem
+  - brand perception
+  - specification gap
+  - genetic expression
+  - structural absence
 license: MIT
 type: article
 preferred-citation:
@@ -34,6 +34,6 @@ preferred-citation:
       email: dmitry@spectralbranding.com
       affiliation: "Independent Researcher"
       orcid: "https://orcid.org/0009-0000-6893-9231"
-  title: "Brand space geometry: A formal metric for multi-dimensional brand perception"
+  title: "The rendering problem: From genetic expression to brand perception"
   year: 2026
-  url: "https://doi.org/10.5281/zenodo.18945295"
+  url: "https://doi.org/10.5281/zenodo.19064427"
