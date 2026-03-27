@@ -6,7 +6,7 @@ authors:
     email: dmitry@spectralbranding.com
     affiliation: "Independent Researcher"
     orcid: "https://orcid.org/0009-0000-6893-9231"
-title: "Paper as Specification: A Machine-Readable Standard for Scientific Claims"
+title: "Paper as specification: A machine-readable standard for scientific claims"
 version: 1.0.0
 date-released: 2026-03-25
 url: "https://doi.org/10.5281/zenodo.19210037"
@@ -34,6 +34,6 @@ preferred-citation:
       email: dmitry@spectralbranding.com
       affiliation: "Independent Researcher"
       orcid: "https://orcid.org/0009-0000-6893-9231"
-  title: "Paper as Specification: A Machine-Readable Standard for Scientific Claims"
+  title: "Paper as specification: A machine-readable standard for scientific claims"
   year: 2026
   url: "https://doi.org/10.5281/zenodo.19210037"
