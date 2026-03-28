@@ -528,17 +528,17 @@ Viazovska, M. S. (2017). The sphere packing problem in dimension 8. *Annals of M
 
 Weber, E. H. (1834). *De Pulsu, Resorptione, Auditu et Tactu: Annotationes Anatomicae et Physiologicae*. Koehler.
 
-Zharnikov, D. (2026a). Spectral Brand Theory: A multi-dimensional framework for brand perception analysis. Working Paper.
+Zharnikov, D. (2026a). Spectral Brand Theory: A multi-dimensional framework for brand perception analysis. Working Paper. https://doi.org/10.5281/zenodo.18945912
 
-Zharnikov, D. (2026b). The alibi problem: Epistemic foundations of multi-source data reconciliation. Working Paper.
+Zharnikov, D. (2026b). The Atom-Cloud-Fact Epistemological Pipeline: From financial document processing to brand perception modeling. Working Paper. https://doi.org/10.5281/zenodo.18944770
 
-Zharnikov, D. (2026c). Geometric approaches to brand perception: A critical survey and research agenda. Working Paper.
+Zharnikov, D. (2026c). Geometric approaches to brand perception: A critical survey and research agenda. Working Paper. https://doi.org/10.5281/zenodo.18945217
 
-Zharnikov, D. (2026d). Brand space geometry: A formal metric for multi-dimensional brand perception. Working Paper.
+Zharnikov, D. (2026d). Brand space geometry: A formal metric for multi-dimensional brand perception. Working Paper. https://doi.org/10.5281/zenodo.18945295
 
-Zharnikov, D. (2026e). Spectral metamerism in brand perception: Projection bounds from high-dimensional geometry. Working Paper.
+Zharnikov, D. (2026e). Spectral metamerism in brand perception: Projection bounds from high-dimensional geometry. Working Paper. https://doi.org/10.5281/zenodo.18945352
 
-Zharnikov, D. (2026f). Cohort boundaries in high-dimensional perception space: A concentration of measure analysis. Working Paper.
+Zharnikov, D. (2026f). Cohort boundaries in high-dimensional perception space: A concentration of measure analysis. Working Paper. https://doi.org/10.5281/zenodo.18945477
 
 ---
 
