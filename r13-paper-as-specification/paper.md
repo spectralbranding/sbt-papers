@@ -4,15 +4,15 @@
 
 Independent Researcher, ORCID 0009-0000-6893-9231
 
-Working Paper -- March 2026
+March 2026
 
 ---
 
 ## Abstract
 
-The cost of generating scientific hypotheses has collapsed. Large language models can produce a thousand plausible research questions before dinner, yet the infrastructure for verifying, replicating, and building upon scientific claims remains essentially unchanged since the seventeenth century: unstructured prose, evaluated by overworked human reviewers, with no machine-readable representation of what is being claimed, how it was tested, or under what conditions it would be falsified. We argue that the verification crisis in science is, at its root, a specification crisis -- the same class of problem that printing press pamphlet wars and early internet information overload represented in their respective eras. Each generation breakthrough in information production was resolved not by faster consumption but by a specification breakthrough: the scientific method formalized falsifiable prediction; structured data standards (HTML metadata, schema.org, knowledge graphs) made web content machine-parseable. The current generation breakthrough -- LLM-driven hypothesis production -- demands an equivalent specification response for scientific claims themselves. We introduce Paper Spec v0.1.0, a YAML-based standard that provides a machine-readable companion file (`paper.yaml`) for scientific papers. Paper Spec captures claims, methodology, acceptance criteria, results, dependencies, contradictions, and limitations in a format that is human-writable in thirty minutes, machine-parseable by any YAML processor, and incrementally adoptable (every section is optional except bibliographic metadata). We define five verification layers (L0-L4) that the standard enables, ranging from schema validation to cross-corpus dependency graph traversal and retraction cascade analysis. We demonstrate the standard on a corpus of twenty papers, revealing dependency structures, self-citation patterns, and retraction propagation pathways that are invisible in the unstructured originals. We advance four propositions concerning the expressiveness, verification utility, dependency analysis capability, and cognitive value of the standard, and discuss implications for research assessment, peer review, and the use of paper.yaml as an independent pre-registration and collaboration artifact.
+The verification crisis in science is a specification crisis. Papers communicate claims in natural language optimized for human comprehension but hostile to machine verification. We argue that three prior generation-specification cycles -- printing press + scientific method, internet + structured data, LLMs + paper specification -- establish a pattern: each generation breakthrough in information production was resolved by a specification breakthrough, not faster consumption. We introduce Paper Spec v0.1.0, an open YAML standard that makes a paper's claims, methodology, acceptance criteria, and results machine-readable without replacing the paper itself. The standard defines five verification layers (L0-L4) from schema validation to retraction cascade analysis. We demonstrate the standard on a twenty-paper corpus across two research programs, revealing dependency structures and specification deficiencies invisible in unstructured text. We advance four formal propositions on expressiveness, verification utility, dependency analysis, and cognitive value, each with explicit acceptance criteria and falsification conditions. The standard is human-writable in thirty minutes, incrementally adoptable, and compatible with existing preprint and publication workflows.
 
-**Keywords**: scientific verification, machine-readable claims, paper specification, YAML, reproducibility crisis, structured science, dependency graphs, retraction cascades, open science
+**Keywords**: scientific verification, machine-readable claims, reproducibility crisis, structured science, open science, dependency graphs
 
 ---
 
@@ -98,19 +98,19 @@ Several initiatives have addressed fragments of this problem. We review them not
 
 What none of these solutions provides is a single, human-writable, machine-parseable, format-agnostic file that captures the full epistemic content of a paper: what it claims, how those claims were tested, what would prove them wrong, what they depend on, and what their known limits are. Table 1 summarizes how each initiative addresses the key requirements.
 
-**Table 1. Comparison of structured science standards.**
+**Table 1. Comparison of structured science standards.** HW = human-writable; MR = machine-readable; FA = format-agnostic; AC = acceptance criteria; DC = dependency criticality; IN = incremental adoption.
 
-| Standard | Human-writable | Machine-readable | Scope | Format-agnostic | Acceptance criteria | Dependency criticality | Incremental |
+| Standard | HW | MR | Scope | FA | AC | DC | IN |
 |----------|:-:|:-:|--------|:-:|:-:|:-:|:-:|
 | Registered Reports | Yes | No | Methodology | Yes | Partial | No | No |
 | FAIR | N/A | Yes | Data | Yes | No | No | Yes |
-| Nanopublications | No | Yes | Atomic assertion | Yes | No | Partial | No |
+| Nanopublications | No | Yes | Assertion | Yes | No | Partial | No |
 | Micropublications | No | Yes | Claim-evidence | Yes | No | No | No |
 | CiTO / SPAR | No | Yes | Citation | Yes | No | No | No |
-| scienceverse | Partial (R) | Yes | Hypothesis | No (R) | No | No | No |
-| ORKG | No (crowdsourced) | Yes | Contribution | Yes | No | No | Partial |
-| SciKGTeX | Partial (LaTeX) | Yes | Contribution | No (LaTeX) | No | No | Partial |
-| RO-Crate | No (tooling) | Yes | Research object | Yes | No | No | Yes |
+| scienceverse | Partial | Yes | Hypothesis | No | No | No | No |
+| ORKG | No | Yes | Contribution | Yes | No | No | Partial |
+| SciKGTeX | Partial | Yes | Contribution | No | No | No | Partial |
+| RO-Crate | No | Yes | Research object | Yes | No | No | Yes |
 | **Paper Spec** | **Yes** | **Yes** | **Full paper** | **Yes** | **Yes** | **Yes** | **Yes** |
 
 This is the gap that Paper Spec fills.
@@ -462,4 +462,4 @@ Zharnikov, D. (2026a). Spectral Brand Theory: A multi-dimensional framework for 
 
 Zharnikov, D. (2026i). The Organizational Schema Theory: Test-driven business design. Working Paper. https://doi.org/10.5281/zenodo.18946043
 
-Zharnikov, D. (2026l). The rendering problem: From genetic expression to brand perception. Working Paper. https://doi.org/10.5281/zenodo.19064427
+Zharnikov, D. (2026l). The rendering problem: From genetic expression to brand perception. Working Paper. https://doi.org/10.5281/zenodo.19064426
