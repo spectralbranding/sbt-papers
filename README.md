@@ -30,7 +30,7 @@ Eight companion papers establishing formal mathematical foundations for SBT, plu
 
 | Key | Paper | Zenodo DOI | Status |
 |-----|-------|------------|--------|
-| R13 | [Paper as Specification: A Machine-Readable Standard for Scientific Claims](r13-paper-as-specification/paper.md) | [10.5281/zenodo.19210037](https://doi.org/10.5281/zenodo.19210037) | Preprint |
+| R13 | [Paper as Specification: A Machine-Readable Standard for Scientific Claims](r13-paper-as-specification/paper.md) | [10.5281/zenodo.19210037](https://doi.org/10.5281/zenodo.19210037) | QSS (submitted) |
 
 ### Cross-Framework Synthesis
 
@@ -206,7 +206,7 @@ Machine-readable citations: [SBT CITATION.cff](spectral-brand-theory/CITATION.cf
 |-----------|-------------|
 | [sbt-framework](https://github.com/spectralbranding/sbt-framework) | AI-native brand analysis toolkit — 7-module prompt kit with YAML templates |
 | [brand-code](https://github.com/spectralbranding/brand-code) | Executable brand identity specification — spectral palette, particle system source, AI-readable prompt |
-| [paper-spec](https://github.com/spectralbranding/paper-spec) | Paper Spec v0.1.0 — machine-readable YAML standard for scientific claims, with validator and 20 examples |
+| [paper-spec](https://github.com/spectralbranding/paper-spec) | Paper Spec v0.1.0 — machine-readable YAML standard for scientific claims, with validator and 23 examples |
 | [Substack](https://spectralbranding.substack.com) | Applied analysis articles on brand perception |
 
 ## Author
