@@ -245,15 +245,31 @@ Consider two competing brands in the same product category, both optimizing for 
 
 Yet the brands may differ fundamentally in how they handle edge cases, resolve disputes, adjust pricing under competitive pressure, respond to supply chain disruptions, or communicate during service failures. These behavioral differences are consequential for an AI purchasing agent making decisions on behalf of a principal, but they are invisible to statistical observation.
 
-### 6.2 Why GEO Cannot Solve Identity
+### 6.2 Formal Definition
+
+We formalize behavioral metamerism using the structure of observational equivalence from econometrics (Koopmans, 1949; Manski, 1995).
+
+Let *f*: Q x C x O x T -> R denote a Brand Function mapping queries, contexts, observer types, and time to behavioral responses. Let G = {*g*_1, *g*_2, ..., *g*_k} denote the set of observable aggregate statistics available to an AI agent (topic distributions, sentiment scores, citation counts, review distributions, engagement metrics).
+
+**Definition (Behavioral metamerism).** Two Brand Functions *f*_1 and *f*_2 are *behaviorally metameric* with respect to observation set G if:
+
+E[*g*(*f*_1)] = E[*g*(*f*_2)] for all *g* in G
+
+while there exists at least one behavioral dimension *h* not in G such that *f*_1(*h*) != *f*_2(*h*).
+
+The metamerism condition holds when the observation set G is informationally incomplete --- when it collapses the full behavioral space into a lower-dimensional statistical summary. This is structurally identical to color metamerism, where the three-channel human visual system collapses infinite spectral variation into tristimulus coordinates, and to the observational equivalence problem in econometrics, where multiple structural models generate identical reduced-form distributions.
+
+The resolution condition follows directly: behavioral metamerism is broken if and only if the agent gains access to the structural specification *f* itself, not merely to observations of *f*'s statistical outputs. The Brand Function serves as this structural specification.
+
+### 6.3 Why GEO Cannot Resolve Metamerism
 
 GEO optimizes for statistical visibility in generative AI outputs (Aggarwal et al., 2024). It is designed to make a brand more likely to appear in AI-generated responses. But GEO is structurally incapable of resolving behavioral metamerism because it *produces* the convergence that metamerism requires.
 
 When brands in the same category adopt similar GEO strategies, their statistical profiles converge toward a category mean. The competitive dynamics of GEO optimization actively push brands toward statistical similarity: each brand adds citations, incorporates statistics, and optimizes for the same AI platforms using similar techniques. The result is precisely the condition under which behavioral metamerism becomes prevalent.
 
-This is an information-theoretic impossibility, not a practical limitation that more data or better algorithms can overcome. If two Brand Functions *f*_1 and *f*_2 satisfy E[*g*(*f*_1)] = E[*g*(*f*_2)] for all observable statistics *g*, then no amount of observation of *g*-type statistics can distinguish them. This is a form of observational equivalence well-established in econometrics (Koopmans, 1949; Manski, 1995): multiple structural models can generate identical reduced-form distributions. The only resolution is access to the structural model itself --- the specification.
+This is the behavioral metamerism condition formalized in Section 6.2: when the observation set G converges across brands, no amount of statistical observation can distinguish them. The only resolution is access to the structural model itself --- the Brand Function specification.
 
-### 6.3 Connection to Brand Confusion and Coherence
+### 6.4 Connection to Brand Confusion and Coherence
 
 Behavioral metamerism is the AI-native equivalent of the brand confusion that marketing scholars have studied in human perception contexts. Loken et al. (1986) demonstrated that visual and attribute similarity leads to mistaken brand origin judgments. Foxman et al. (1990) identified stimuli similarity, consumer characteristics, and situational factors as drivers of confusion. This literature focuses on perceptual similarity in names, packaging, and trade dress --- visual confusion for human observers.
 
@@ -342,6 +358,8 @@ Sixth, behavioral metamerism requires empirical measurement. Developing a behavi
 Seventh, the framework does not address how multi-brand portfolios manage multiple Brand Functions. The interactions between Brand Functions within a portfolio --- interference, coherence, and capacity constraints analogous to those in spectral portfolio theory (Zharnikov, 2026q) --- require separate theoretical development.
 
 Future research should address five priorities: (a) empirical measurement of behavioral metamerism across product categories, developing indices for statistical convergence in AI-mediated brand evaluation; (b) technical specification of a Brand Function v0.1 schema that integrates with existing protocols; (c) experimental validation of the necessity conditions, testing whether AI agents make better purchasing decisions when Brand Functions are available versus when they rely solely on statistical observation; (d) investigation of privacy and competitive dynamics in behavioral specification transparency; and (e) longitudinal tracking of the dual identity infrastructure transition as AI commerce protocols scale.
+
+**Proposed empirical pilot.** A feasible first test of Proposition 6 (behavioral metamerism) would proceed as follows. Select 10--20 brands in a convergent category (e.g., direct-to-consumer supplements or consumer electronics accessories) where GEO optimization has produced statistical similarity. For each brand, query 3 LLMs (Claude, GPT, Gemini) with standardized purchasing-agent prompts ("recommend a brand for [category] based on [criteria]") under two conditions: (a) statistical-only, where the LLM has access only to publicly available reviews, ratings, and web content; and (b) specification-augmented, where the LLM additionally receives a structured Brand Function document for each brand. Measure: (i) brand discrimination --- can the LLM distinguish brands that humans consider distinct? (ii) behavioral prediction accuracy --- does access to the Brand Function improve the LLM's ability to predict how a brand will respond to edge cases (returns, disputes, out-of-stock)? (iii) recommendation stability --- does the Brand Function reduce recommendation variance across LLMs? A behavioral metamerism index can be computed as the ratio of inter-brand statistical distance to inter-brand behavioral distance, with values approaching zero indicating high metamerism. This pilot requires no access to production commerce systems and can be executed with publicly available LLM APIs.
 
 ---
 
