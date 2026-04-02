@@ -50,7 +50,7 @@ Every other field that studies complex multi-attribute phenomena independently d
 | Computational text analysis | Semantic Brand Score | Colladon (2018) |
 | **Brand perception theory** | **???** | **Single-score metrics collapse dimensions** |
 
-**Table 1a.** Dimensional decomposition across fields. Brand perception theory is the only major domain studying multi-attribute phenomena that lacks a formal decomposition framework preserving observer-level information.
+**Table 1.** Dimensional decomposition across fields. Brand perception theory is the only major domain studying multi-attribute phenomena that lacks a formal decomposition framework preserving observer-level information.
 
 The contribution of this paper is not the application of spectral methods to brands — it is the identification that brand perception measurement lacks dimensional decomposition, a construct every other field studying complex multi-attribute phenomena independently developed. The "spectral" label is descriptive: the eight dimensions are independent measurement channels, analogous to spectral bands in that each carries information the others cannot. The analogy names the construct; it does not claim that brands are literally like light.
 
@@ -95,7 +95,7 @@ SBT decomposes brand signals across eight dimensions, each representing a distin
 | **Cultural** | Aesthetic and zeitgeist positioning | Design language, cultural references, humor, taste codes |
 | **Temporal** | Heritage and time-depth signals | History, heritage, generational continuity, era associations |
 
-**Table 1.** The eight perceptual dimensions of brand signal architecture.
+**Table 2.** The eight perceptual dimensions of brand signal architecture.
 
 The eight dimensions emerged from a synthesis of prior frameworks. Kapferer's (2008) "physique" maps to the semiotic dimension; his "culture" maps to cultural and ideological; his "relationship" maps to experiential and social. Aaker's (1996) functional benefits map to experiential and economic; emotional benefits to social and cultural; self-expressive benefits to ideological and social. Holt's (2004) cultural branding theory maps to a combination of ideological and cultural dimensions, treating brands as cultural artifacts that derive meaning from their position in cultural discourse. De Chernatony & McDonald's (2003) brand management framework similarly addresses the multi-faceted nature of brand meaning but treats the facets as brand properties rather than observer-dependent perceptual channels. Floch's (1990) structural semiotics provides a complementary decomposition of the semiotic dimension, distinguishing practical, ludic, utopian, and critical valorizations that map to distinct sub-channels within SBT's semiotic-ideological space. Mick (1986) establishes the semiotic foundations for consumer research, demonstrating that brand signs operate through both denotative and connotative codes — a distinction SBT operationalizes through the designed/ambient signal classification. The temporal dimension — heritage and time-depth — appears in prior work as an attribute of specific brands but has not been modeled as a universal perceptual channel. Our exploratory analysis suggests it should be.
 
@@ -211,7 +211,7 @@ Coherence is measured through a seven-metric scorecard:
 | Emission efficiency | Signal-to-noise ratio of designed signals |
 | Designed/ambient ratio | Brand's control over its own signal environment |
 
-**Table 2.** The seven-metric spectral scorecard.
+**Table 3.** The seven-metric spectral scorecard.
 
 ### 2.6 Formal Propositions
 
@@ -255,7 +255,7 @@ We demonstrated SBT through structured analysis of five brands selected to span 
 | Hermès | Scarcity-based luxury, structural absence strategy | Ecosystem coherence |
 | Erewhon | Hyperlocal niche, mediated perception dominance | Experiential asymmetry |
 
-**Table 3.** Five case-study brands and selection rationale (exploratory demonstration).
+**Table 4.** Five case-study brands and selection rationale (exploratory demonstration).
 
 The five brands were chosen to stress-test different properties of the framework: Patagonia tests ideological filtering; Tesla tests extreme observer divergence and ambient signal dominance; IKEA tests consistent signal architecture at global scale; Hermès tests scarcity-based value creation and cross-cohort interdependence; Erewhon tests the framework's minimum viable scale and mediated perception dynamics.
 
@@ -294,7 +294,7 @@ Third, the analytical pipeline was initially executed by a single LLM (Claude Op
 | IKEA | Signal, A- | Signal, A- | Identical |
 | Erewhon | Exp. Asymmetry, B- | Exp. Asymmetry, B- | Identical |
 
-**Table 7.** Cross-model replication convergence: coherence type and grade.
+**Table 5.** Cross-model replication convergence: coherence type and grade.
 
 Both models independently derived the structural absence mechanism for Hermès without it being named in the prompt templates, and both independently identified the CEO ambient signal domination as Tesla's core architectural failure. Model-sensitive findings were limited to two dimensions: cohort granularity (Claude consistently identified 5-6 cohorts per brand; Gemini consistently identified 3, aggregating into broader strategic segments) and D/A ratio variance (within 10-15 percentage points, with Gemini attributing slightly more to designed signals). The replication also revealed complementary operational biases. Claude Opus 4.6 generates finer cohort fragmentation, isolating edge-case observer profiles (e.g., separating "Heritage Client" from "Cultural Connoisseur"). Gemini 3.1 Pro produces parsimonious macro-segments suited to strategic planning. Claude's outputs emphasize paradoxes and internal tensions; Gemini's are more clinically operational. Neither model exhibited grade inflation across any of the five brands. These biases are complementary rather than contradictory: the structural diagnosis remains stable regardless of cohort resolution, confirming that the framework — not the model — drives the analytical conclusions. Replication with additional models and by human analysts would further strengthen the validation. Additionally, both models were trained on substantial corpora of brand-related text for these five well-documented brands; convergence may reflect shared training data as well as framework validity. Testing the framework on brands with minimal public information would provide a stronger test of the analytical pipeline.
 
@@ -356,7 +356,7 @@ SBT introduces a three-type emission taxonomy:
 | Null | Signal absent, unintentional | No (neglect) | Unused heritage, dormant dimension |
 | Structural absence | Designed restriction functions as signal | No (strategy) | Wait list, no discounts, geographic scarcity |
 
-**Table 4.** Three emission types in the spectral model.
+**Table 6.** Three emission types in the spectral model.
 
 The key mechanism is cross-dimensional: restriction on one dimension generates a signal on a different dimension. Economic restriction (never discounting) produces a social signal — the product exists outside normal market forces, inverting Veblen's (1899) conspicuous consumption from display of spending to display of access. Experiential restriction (in-store purchase only) produces an economic signal (difficulty of access justifies the price). Social restriction (purchase rituals, relationship requirements) produces an experiential signal (the restriction process *is* the brand experience).
 
@@ -384,7 +384,7 @@ Traditional brand analysis treats coherence as a single variable from low to hig
 | Experiential asymmetry | B- | Evidence gap between direct and mediated observers | Geographic — different impact by location | Erewhon |
 | Incoherent | C- | Contradictory signals → irreconcilable clouds | Amplifying — widens existing cracks | Tesla |
 
-**Table 5.** Five-type coherence taxonomy with resilience profiles.
+**Table 7.** Five-type coherence taxonomy with resilience profiles.
 
 (The letter grades reported here are L2 rendered outputs — human-readable projections of the multi-dimensional spectral profile onto a disruption resilience scale. The underlying coherence classification is nominal (structural type); the grade projects the typical resilience mechanism of each type for practitioner reference. Different spectral profiles can project to the same grade (spectral metamerism); the full L1 spectral profiles are reported in Section 3.3.)
 
@@ -481,7 +481,7 @@ The five-brand exploratory analysis produces a finding that inverts conventional
 | Patagonia | Moderate (category-bound) | B+ | 65/30 | Ideological filter |
 | Erewhon | Low-moderate (hyperlocal) | B- | 40/55 | Scale floor |
 
-**Table 6.** Five-brand scorecard: brand power versus spectral health.
+**Table 8.** Five-brand scorecard: brand power versus spectral health.
 
 Traditional frameworks — BrandAsset Valuator (BAV), Interbrand's brand strength methodology, Keller's brand equity pyramid — measure dimensions of power: differentiation, relevance, esteem, knowledge, awareness, consideration. By these metrics, Tesla is among the world's most valuable brands. Seven of eight dimensions emit at strength 4 or higher. Gate permeability is 10/10 — everyone knows the brand.
 
@@ -575,7 +575,7 @@ Attitude strength research (Krosnick & Petty, 1995) establishes that strong atti
 
 Commodity theory (Brock, 1968) and the scarcity principle (Cialdini, 2001; Lynn, 1991) establish that scarcity enhances perceived value. SBT's structural absence mechanism (Section 4.1) formalizes the underlying pathway: restriction on one dimension generates a cross-dimensional signal on another. The contribution relative to prior scarcity research is not the observation of value enhancement through scarcity — which is well-established — but the specification of the cross-dimensional generation mechanism and its two prerequisites (existing demand and a legitimizing heritage context).
 
-In sum, SBT functions as a meta-framework. The contribution is not the application of spectral methods to brands — it is the identification that brand perception measurement lacks dimensional decomposition, a construct that physics, psychology, economics, consumer research, and signal processing each independently developed for analyzing complex multi-attribute phenomena (see Table 1a). SBT provides the architecture within which Aaker, Kapferer, Keller, Sharp, cognitive science, and ergodicity economics each describe a single stage or dimension of the full perception pipeline.
+In sum, SBT functions as a meta-framework. The contribution is not the application of spectral methods to brands — it is the identification that brand perception measurement lacks dimensional decomposition, a construct that physics, psychology, economics, consumer research, and signal processing each independently developed for analyzing complex multi-attribute phenomena (see Table 1). SBT provides the architecture within which Aaker, Kapferer, Keller, Sharp, cognitive science, and ergodicity economics each describe a single stage or dimension of the full perception pipeline.
 
 A complementary question — how organizations *generate* the signals that observers perceive — lies outside SBT's scope but follows naturally from it. Each coherence type discovered in Section 4.2 can be traced to a specific pattern of operational process configuration: Hermès's structural absence emerges from maximally restricted logistical and communication processes; IKEA's signal coherence emerges from globally standardized operations; Tesla's incoherence reflects key signal sources (CEO communication) operating outside any formal process specification. Formalizing the emission side of the pipeline as process-level configuration parameters — where the degree of process specification predicts the designed/ambient ratio, and therefore the coherence type — is a separate research agenda that we plan to develop in a companion paper on the organization as signal source.
 
