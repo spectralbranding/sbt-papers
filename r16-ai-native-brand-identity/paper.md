@@ -36,6 +36,8 @@ The remainder of the paper proceeds as follows. Section 2 traces the historical 
 
 Identity verification technologies do not evolve incrementally. They emerge in response to a change in the observer type. This section traces five such transitions to establish the pattern that predicts the sixth.
 
+The analysis that follows draws primarily on Western European and North American examples, reflecting the genealogy of modern trademark and digital identity law. Parallel identity verification traditions developed independently across other civilizations: Chinese personal seals (*yinzhang*) served bureaucratic and commercial authentication for over three millennia; Islamic calligraphic seals (*tughra*) authenticated imperial decrees through unique penmanship rather than physical impression; Japanese family crests (*mon*) identified clan affiliation across both administrative and commercial contexts; Indian guild marks verified artisan provenance in textile and metalwork trade networks. These traditions followed analogous observer-driven patterns --- each adapted identity technology to the verification capabilities of its dominant observer class --- though the specific institutional forms differed. The Western examples traced below are selected for their direct genealogical connection to the current digital identity infrastructure (trademark law, SSL/TLS, W3C standards) rather than as a claim of universality.
+
 ### 2.1 Wax Seals and the Bureaucratic Observer
 
 The earliest identity technologies served bureaucratic observers --- officials who needed to verify the authenticity and integrity of documents at a distance. Mesopotamian cylinder seals (ca. 3500 BCE) authenticated clay tablets through unique physical impressions, allowing verification without requiring the verifier to know the sender personally. In medieval Europe, wax seals proliferated as monarchs, bishops, and guilds expanded administrative reach beyond face-to-face interaction. The seal's uniqueness allowed a literate or semi-literate official to verify authenticity through visual and tactile inspection of the matrix impression.
@@ -72,7 +74,11 @@ This transition established the template for machine-native identity: when the o
 
 **Proposition 1: Identity verification technology characteristically changes not through incremental improvement but through discontinuous response to a change in the observer type.**
 
+*Falsification*: P1 is falsified if the current AI-observer transition produces only incremental extensions of existing logo-based identity (e.g., animated logos for AI agents, richer metadata on existing visual marks) rather than a structurally different verification mechanism. If logo-based identity proves sufficient for AI agents across multiple commerce categories, the discontinuity thesis fails.
+
 **Proposition 2: When the observer changes, the previous identity technology persists for legacy observers but becomes functionally irrelevant for the new observer class.**
+
+*Falsification*: P2 is falsified if AI agents demonstrably use logos as informational inputs in purchasing decisions --- not merely recognizing them as identifiers but weighting visual brand identity in recommendation quality. If logo presence/absence significantly affects AI recommendation accuracy, the irrelevance claim fails.
 
 The historical evidence supports both propositions. Wax seals persist in legal ceremonies; hallmarks persist in precious metals regulation; logos persist on websites despite SSL certificates handling actual identity verification. Each technology remains functional for its original observer class while becoming irrelevant for the new one. The question for marketing theory is: what happens when the observer changes again?
 
@@ -115,6 +121,8 @@ However, GEO addresses a symptom rather than the underlying structural problem. 
 Furthermore, GEO creates a convergence dynamic. As brands in the same category adopt similar GEO strategies --- adding citations, incorporating statistics, optimizing for the same query patterns --- their statistical profiles converge. This convergence is precisely the condition that produces behavioral metamerism, which Section 6 develops in detail.
 
 **Proposition 3: AI agents do not perceive brand identity through visual recognition but through structured data evaluation, behavioral pattern analysis, and third-party corroboration. The logo carries zero informational weight for machine observers.**
+
+*Falsification*: P3 is falsified if multimodal AI agents that process visual brand elements (logo, packaging, color) make measurably better purchasing decisions than text-only agents with identical structured data. If visual brand identity provides incremental information value to AI agents beyond what structured data conveys, the "zero weight" claim is too strong.
 
 ---
 
@@ -180,6 +188,8 @@ The Brand Function is therefore not a competing protocol but a theoretical const
 
 **Proposition 4: The Brand Function is the root specification from which all brand emissions and identity artifacts derive. Technologies are the primary rendering engines; the organization is coordination overhead. Existing AI commerce protocols (ACP, UCP, brand.json) address brand discovery and transaction but not brand perception or coherence --- the Brand Function extends them by adding spectral dimensions, behavioral specification, and coherence measurement.**
 
+*Falsification*: P4 is falsified if existing protocols (brand.json, Brando Schema, ACP) prove sufficient for AI agents to measure brand coherence and predict behavioral responses without additional specification layers. If platforms successfully verify brand identity and measure perception using only the constructs these protocols already provide, the Brand Function adds no incremental value.
+
 ---
 
 ## 5. Cryptographic Signature as AI-Native Logo
@@ -226,6 +236,8 @@ The logo tells a human "I am Nike" through perceptual recognition. The cryptogra
 This is not a metaphor. It is a structural parallel to the SSL certificate transition: just as SSL certificates replaced the visual cues that humans used to assess website trustworthiness (design quality, professional appearance) with machine-verifiable cryptographic proofs, the Brand Function signature replaces the visual cues that humans use to assess brand identity (logos, trade dress, brand experience) with machine-verifiable behavioral attestation.
 
 **Proposition 5: Cryptographic signatures on behavioral specifications will replace logos as the primary brand identity mechanism for AI-mediated commerce, following the historical pattern where each observer-type change produces a new identity technology.**
+
+*Falsification*: P5 is falsified if AI-mediated commerce scales to significant market share (>20% of category transactions) without adopting cryptographic brand verification --- i.e., if reputation systems, platform ratings, or statistical optimization prove sufficient for AI agents to establish brand trust without behavioral attestation. The prediction is conditional on agentic commerce adoption; if human-mediated purchasing remains dominant, P5's precondition is not met.
 
 ---
 
@@ -278,6 +290,8 @@ Behavioral metamerism shifts the confusion from the visual to the statistical an
 The connection to SBT coherence types is direct. SBT's coherence hierarchy measures the alignment between a brand's specified identity and its perceived emissions across observer cohorts (Zharnikov, 2026a). In the AI-native context, coherence becomes the alignment between the Brand Function specification and actual rendered behavior as evaluated by AI agents. A brand achieves ecosystem coherence when all observable behaviors match the signed specification; it is incoherent when behaviors contradict it. The Brand Function provides the specification against which coherence is measured; without it, the concept of AI-evaluated brand coherence is undefined.
 
 **Proposition 6: Behavioral metamerism --- where brands have identical statistical profiles but structurally different behavioral signatures --- is the AI-native equivalent of visual brand confusion, and can only be resolved through behavioral specification, not through statistical optimization.**
+
+*Falsification*: P6 is falsified if LLMs with access only to statistical brand data (reviews, ratings, sentiment, GEO-optimized content) can distinguish behaviorally different brands at rates statistically indistinguishable from LLMs with access to Brand Function specifications. Specifically, if augmented-condition discrimination accuracy does not exceed statistical-only accuracy by a statistically significant margin (p < 0.05) across at least three product categories, the metamerism thesis fails. The pilot study design in Section 9 operationalizes this test.
 
 ---
 
