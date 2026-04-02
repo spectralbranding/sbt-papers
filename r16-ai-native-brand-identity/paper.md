@@ -34,9 +34,7 @@ The remainder of the paper proceeds as follows. Section 2 traces the historical 
 
 ## 2. Historical Pattern: Observer Determines Technology
 
-Identity verification technologies do not evolve incrementally. They emerge in response to a change in the observer type. This section traces five such transitions to establish the pattern that predicts the sixth.
-
-The analysis that follows draws primarily on Western European and North American examples, reflecting the genealogy of modern trademark and digital identity law. Parallel identity verification traditions developed independently across other civilizations: Chinese personal seals (*yinzhang*) served bureaucratic and commercial authentication for over three millennia; Islamic calligraphic seals (*tughra*) authenticated imperial decrees through unique penmanship rather than physical impression; Japanese family crests (*mon*) identified clan affiliation across both administrative and commercial contexts; Indian guild marks verified artisan provenance in textile and metalwork trade networks. These traditions followed analogous observer-driven patterns --- each adapted identity technology to the verification capabilities of its dominant observer class --- though the specific institutional forms differed. The Western examples traced below are selected for their direct genealogical connection to the current digital identity infrastructure (trademark law, SSL/TLS, W3C standards) rather than as a claim of universality.
+Identity verification technologies do not evolve incrementally. They emerge in response to a change in the observer type. This section traces five such transitions to establish the pattern that predicts the sixth. The examples are drawn from the Western European genealogy that produced modern trademark law and digital identity infrastructure (SSL/TLS, W3C standards) --- the direct ancestors of the AI commerce protocols under analysis.
 
 ### 2.1 Wax Seals and the Bureaucratic Observer
 
