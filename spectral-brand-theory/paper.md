@@ -32,7 +32,7 @@ Kapferer's (2008) prism includes "reflection" and "self-image" facets that gestu
 
 Keller's (1993) customer-based brand equity model locates equity in the customer's mind — the closest precedent to SBT's approach and the most important one. The structural limitation is that Keller treats "the customer" as a single model: one set of brand associations, one equity structure. The framework acknowledges individual variation but does not formalize it. SBT's central move is to parameterize exactly what Keller left as an acknowledged but unmodeled phenomenon — the heterogeneous observer.
 
-Christodoulides & de Chernatony (2010) consolidate these equity-based approaches into a measurement framework that remains anchored to the single-observer assumption. Keller & Lehmann (2006) survey the field's research priorities and identify measurement of brand equity as a central challenge — yet the measurement frameworks they review all assume a single "true" brand perception to be measured. The structural limitation across this measurement tradition is the premise that there exists one correct brand perception to measure, rather than multiple structurally different perceptions that are simultaneously valid.
+Christodoulides & de Chernatony (2010) consolidate these equity-based approaches into a measurement framework that remains anchored to the single-observer assumption. The broader brand equity literature — including Feldwick's (1996) taxonomy distinguishing brand valuation, brand strength, and brand description; Ambler's (2003) operational metrics approach; and Wood's (2000) reconciliation of financial and consumer perspectives — operates within the same assumption: equity is a property of the brand-observer pair, but the observer is treated as singular. Keller & Lehmann (2006) survey the field's research priorities and identify measurement of brand equity as a central challenge — yet the measurement frameworks they review all assume a single "true" brand perception to be measured. The structural limitation across this measurement tradition is the premise that there exists one correct brand perception to measure, rather than multiple structurally different perceptions that are simultaneously valid.
 
 Sharp's (2010) empirical marketing science measures mental and physical availability — how easily the brand comes to mind and how easily it can be purchased. The structural limitation is that availability is a pre-perceptual construct: Sharp measures whether the brand passes the identity gate but does not model the perception mechanism that translates availability into conviction. Two observers with identical availability can form opposite convictions; Sharp's framework cannot explain why.
 
@@ -97,7 +97,7 @@ SBT decomposes brand signals across eight dimensions, each representing a distin
 
 **Table 1.** The eight perceptual dimensions of brand signal architecture.
 
-The eight dimensions emerged from a synthesis of prior frameworks. Kapferer's (2008) "physique" maps to the semiotic dimension; his "culture" maps to cultural and ideological; his "relationship" maps to experiential and social. Aaker's (1996) functional benefits map to experiential and economic; emotional benefits to social and cultural; self-expressive benefits to ideological and social. Holt's (2004) cultural branding theory maps to a combination of ideological and cultural dimensions, treating brands as cultural artifacts that derive meaning from their position in cultural discourse. De Chernatony & McDonald's (2003) brand management framework similarly addresses the multi-faceted nature of brand meaning but treats the facets as brand properties rather than observer-dependent perceptual channels. The temporal dimension — heritage and time-depth — appears in prior work as an attribute of specific brands but has not been modeled as a universal perceptual channel. Our exploratory analysis suggests it should be.
+The eight dimensions emerged from a synthesis of prior frameworks. Kapferer's (2008) "physique" maps to the semiotic dimension; his "culture" maps to cultural and ideological; his "relationship" maps to experiential and social. Aaker's (1996) functional benefits map to experiential and economic; emotional benefits to social and cultural; self-expressive benefits to ideological and social. Holt's (2004) cultural branding theory maps to a combination of ideological and cultural dimensions, treating brands as cultural artifacts that derive meaning from their position in cultural discourse. De Chernatony & McDonald's (2003) brand management framework similarly addresses the multi-faceted nature of brand meaning but treats the facets as brand properties rather than observer-dependent perceptual channels. Floch's (1990) structural semiotics provides a complementary decomposition of the semiotic dimension, distinguishing practical, ludic, utopian, and critical valorizations that map to distinct sub-channels within SBT's semiotic-ideological space. Mick (1986) establishes the semiotic foundations for consumer research, demonstrating that brand signs operate through both denotative and connotative codes — a distinction SBT operationalizes through the designed/ambient signal classification. The temporal dimension — heritage and time-depth — appears in prior work as an attribute of specific brands but has not been modeled as a universal perceptual channel. Our exploratory analysis suggests it should be.
 
 Each signal carries three properties:
 
@@ -598,6 +598,8 @@ The AI era changes three things simultaneously:
 
 3. **AI as synthetic observer.** LLM-powered recommendation systems ("what EV should I buy?") are a new class of observer with their own spectral profile: trained on text (biased toward narrative and ideological signals), weak on experiential and semiotic signals, and operating without tolerances or identity gates. These synthetic observers will increasingly influence human purchase decisions.
 
+These three shifts are recognized in the emerging AI-era branding literature. Davenport, Guha, Grewal, and Bressgott (2020) identify AI as transforming marketing from segmented to individualized, a trajectory SBT operationalizes through cohort-level spectral profiles. Huang and Rust (2021) propose a theory of AI task replacement that predicts which marketing functions AI will subsume — analytical, mechanical, then intuitive and empathetic. SBT's computational implementability positions it for the analytical phase; the synthetic observer construct addresses the subsequent phases. Puntoni, Reczek, Giesler, and Simester (2021) analyze how consumers experience AI as threatening to their sense of autonomy and uniqueness — perceptual reactions that SBT would model as observer-profile shifts in the ideological and social dimensions triggered by AI-mediated encounters.
+
 SBT accommodates all three changes within its existing architecture. The analytical pipeline was designed for AI execution from inception. The observer model includes encounter modes (direct, mediated, mixed) that capture algorithmic mediation. The signal taxonomy includes synthetic as a source type. The framework does not need to be retrofitted for the AI era because it was built for it.
 
 ### 5.4 Limitations and Future Directions
@@ -698,6 +700,8 @@ Alba, J. W., & Hutchinson, J. W. (1987). Dimensions of consumer expertise. *Jour
 
 Barari, M., & Eisend, M. (2024). Computational content analysis of brand communications: A review and research agenda. *International Journal of Research in Marketing*, 41(1), 24–47.
 
+Ambler, T. (2003). *Marketing and the bottom line: The marketing metrics to pump up cash flow* (2nd ed.). Financial Times/Prentice Hall.
+
 Barthes, R. (1957). *Mythologies*. Seuil.
 
 Berger, J. (2013). *Contagious: Why things catch on*. Simon & Schuster.
@@ -720,6 +724,8 @@ Cialdini, R. B. (2001). *Influence: Science and practice* (4th ed.). Allyn & Bac
 
 Damasio, A. R. (1994). *Descartes' error: Emotion, reason, and the human brain*. Putnam.
 
+Davenport, T., Guha, A., Grewal, D., & Bressgott, T. (2020). How artificial intelligence will change the future of marketing. *Journal of the Academy of Marketing Science*, 48(1), 24–42.
+
 Dawar, N., & Parker, P. (1994). Marketing universals: Consumers' use of brand name, price, physical appearance, and retailer reputation as signals of product quality. *Journal of Marketing*, 58(2), 81–95.
 
 De Chernatony, L., & McDonald, M. (2003). *Creating powerful brands*. Butterworth-Heinemann.
@@ -732,7 +738,11 @@ Erdem, T., & Swait, J. (1998). Brand equity as a signaling phenomenon. *Journal 
 
 Ehrenberg, A. S. C., Goodhardt, G. J., & Barwise, T. P. (1990). Double jeopardy revisited. *Journal of Marketing*, 54(3), 82–91.
 
+Feldwick, P. (1996). What is brand equity anyway, and how do you measure it? *Journal of the Market Research Society*, 38(2), 85–104.
+
 Festinger, L. (1957). *A theory of cognitive dissonance*. Stanford University Press.
+
+Floch, J.-M. (1990). *Semiotics, marketing and communication: Beneath the signs, the strategies*. Palgrave Macmillan.
 
 Fournier, S., & Lee, L. (2009). Getting brand communities right. *Harvard Business Review*, 87(4), 105–111.
 
@@ -747,6 +757,8 @@ Hatch, M. J., & Schultz, M. (2010). Toward a theory of brand co-creation with im
 Hogarth, R. M., & Einhorn, H. J. (1992). Order effects in belief updating: The belief-adjustment model. *Cognitive Psychology*, 24(1), 1–55.
 
 Holt, D. B. (2004). *How brands become icons: The principles of cultural branding*. Harvard Business Press.
+
+Huang, M.-H., & Rust, R. T. (2021). A strategic framework for artificial intelligence in marketing. *Journal of the Academy of Marketing Science*, 49(1), 30–50.
 
 Kahneman, D. (2011). *Thinking, fast and slow*. Farrar, Straus and Giroux.
 
@@ -772,6 +784,8 @@ McLuhan, M. (1964). *Understanding media: The extensions of man*. McGraw-Hill.
 
 Meder, D., et al. (2021). Ergodicity-breaking reveals time optimal decision making in humans. *PLOS Computational Biology*, 17(9), e1009217.
 
+Mick, D. G. (1986). Consumer research and semiotics: Exploring the morphology of signs, symbols, and significance. *Journal of Consumer Research*, 13(2), 196–213.
+
 Muniz, A. M., & O'Guinn, T. C. (2001). Brand community. *Journal of Consumer Research*, 27(4), 412–432.
 
 Oswald, L. R. (2012). *Marketing semiotics: Signs, strategies, and brand value*. Oxford University Press.
@@ -783,6 +797,8 @@ Peirce, C. S. (1931–1958). *Collected papers of Charles Sanders Peirce* (C. Ha
 Peters, O. (2019). The ergodicity problem in economics. *Nature Physics*, 15, 1216–1221. https://doi.org/10.1038/s41567-019-0732-0
 
 Puntoni, S., Vanhamme, J., & Ruber, R. (2011). Two birds and one stone: Purposeful polysemy in minority targeting and advertising evaluations. *Journal of Advertising*, 40(1), 25–41.
+
+Puntoni, S., Reczek, R. W., Giesler, M., & Simester, D. (2021). Consumers and artificial intelligence: An experiential perspective. *Journal of Marketing*, 85(1), 131–151.
 
 Ries, A., & Trout, J. (1981). *Positioning: The battle for your mind*. McGraw-Hill.
 
@@ -813,6 +829,8 @@ Veblen, T. (1899). *The theory of the leisure class*. Macmillan.
 Wedel, M., & Kamakura, W. A. (2000). *Market segmentation: Conceptual and methodological foundations* (2nd ed.). Kluwer Academic.
 
 Wilkie, W. L., & Pessemier, E. A. (1973). Issues in marketing's use of multi-attribute attitude models. *Journal of Marketing Research*, 10(4), 428–441.
+
+Wood, L. (2000). Brands and brand equity: Definition and management. *Management Decision*, 38(9), 662–669.
 
 Yankelovich, D., & Meer, D. (2006). Rediscovering market segmentation. *Harvard Business Review*, 84(2), 122–131.
 
