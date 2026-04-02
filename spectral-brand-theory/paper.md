@@ -131,16 +131,32 @@ Cohort membership is dynamic. Because priors are a profile component and priors 
 **Figure 1. The Observer-Mediated Perception Pipeline**
 
 ```
-Signal Environment              Observer Spectral Profile           Perception          Conviction
-+-------------------+          +------------------------+      +-----------------+   +-----------+
-| Brand Signals     |---+      | Identity Gate          |      | Perception Cloud|   | Collapse  |
-| (8 dimensions)    |   +----->| (recognition           |----->| (probabilistic  |-->| (stable   |
-|                   |   |      |  prerequisite)         |      |  cluster:       |   |  belief   |
-| Ambient Signals   |---+      |                        |      |  +/- /ambiv.)   |   |  about    |
-| (reviews, news,   |          | Spectral Filter        |      |                 |   |  brand)   |
-|  competitors,     |          | (spectrum, weights,    |      |                 |   |           |
-|  culture)         |          |  tolerances, priors)   |      |                 |<..|re-collapse|
-+-------------------+          +------------------------+      +-----------------+   +-----------+
+  SIGNAL ENVIRONMENT         OBSERVER PROFILE
+  +------------------+       +------------------+
+  | Brand Signals    |--+    | Identity Gate    |
+  | (8 dimensions)   |  +--->| (recognition)    |
+  |                  |  |    |                  |
+  | Ambient Signals  |--+    | Spectral Filter  |
+  | (reviews, news,  |       | (weights, toler- |
+  |  culture)        |       |  ances, priors)  |
+  +------------------+       +--------+---------+
+                                      |
+                                      v
+                              PERCEPTION CLOUD
+                              (probabilistic
+                               +/- /ambivalent)
+                                      |
+                              threshold reached
+                                      |
+                                      v
+                               CONVICTION
+                              (stable belief)
+                                      |
+                              re-collapse on
+                               new evidence
+                                      |
+                                      v
+                              [back to cloud]
 ```
 
 **Figure 2. Observer Heterogeneity: Same Signal Field, Different Perceptions**
@@ -401,6 +417,8 @@ The practical consequence is that traditional scorecards are structurally blind 
 
 The coherence type is determined by three structural properties: (1) cohort interdependence — how much one cohort's perception depends on another's behavior; (2) ideological centrality — how much coherence depends on a shared ideological commitment; and (3) encounter mode variance — how different the direct-encounter brand is from the mediated brand.
 
+\newpage
+
 **Figure 4. Coherence Types: Disruption Response Patterns**
 
 ```
@@ -467,15 +485,15 @@ The strategic implication is stark: resources spent attempting to convert struct
 
 The five-brand exploratory analysis produces a finding that inverts conventional brand wisdom: brand power (emission strength, awareness, cultural impact) and brand health (coherence, architectural integrity, resilience) are independent variables. A brand can maximize the first while minimizing the second.
 
-| Brand | Traditional Power | Spectral Health | D/A Ratio | The Gap |
-|:------|:------------------------------------------|:----------------|:----------|:-------------------------------|
-| Tesla | Highest (near-universal awareness, massive cultural impact) | Lowest (C-) | 30/65 | Maximum inversion |
-| Hermès | Moderate (niche, exclusive, deliberately restricted) | Highest (A+) | 60/35 | Architecture > awareness |
-| IKEA | High (global, ubiquitous, universally recognized) | High (A-) | 75/25 | Consistent alignment |
-| Patagonia | Moderate (strong in category, limited outside it) | Moderate-high (B+) | 65/30 | Ideological filter |
-| Erewhon | Low-moderate (hyperlocal, culturally outsized) | Low-moderate (B-) | 40/55 | Scale floor |
-
 \newpage
+
+| Brand | Power | Health | D/A | Gap |
+|:----------|:------------------------------|:----------|:------|:------------------------|
+| Tesla | Highest (universal awareness) | C- | 30/65 | Maximum inversion |
+| Hermès | Moderate (niche, restricted) | A+ | 60/35 | Architecture > awareness |
+| IKEA | High (global, ubiquitous) | A- | 75/25 | Consistent alignment |
+| Patagonia | Moderate (category-bound) | B+ | 65/30 | Ideological filter |
+| Erewhon | Low-moderate (hyperlocal) | B- | 40/55 | Scale floor |
 
 **Table 6.** Five-brand scorecard: brand power versus spectral health.
 
