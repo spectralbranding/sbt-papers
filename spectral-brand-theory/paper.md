@@ -415,9 +415,9 @@ The practical consequence is that traditional scorecards are structurally blind 
 
 **Incoherence** (Tesla) exhibits amplifying fragility. Each disruption widens existing cracks. The system does not absorb disruption — it converts disruption into deeper division. This is the worst resilience profile in the taxonomy.
 
-The coherence type is determined by three structural properties: (1) cohort interdependence — how much one cohort's perception depends on another's behavior; (2) ideological centrality — how much coherence depends on a shared ideological commitment; and (3) encounter mode variance — how different the direct-encounter brand is from the mediated brand.
-
 \newpage
+
+The coherence type is determined by three structural properties: (1) cohort interdependence — how much one cohort's perception depends on another's behavior; (2) ideological centrality — how much coherence depends on a shared ideological commitment; and (3) encounter mode variance — how different the direct-encounter brand is from the mediated brand.
 
 **Figure 4. Coherence Types: Disruption Response Patterns**
 
