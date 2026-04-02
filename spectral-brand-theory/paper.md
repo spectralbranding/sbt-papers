@@ -422,22 +422,16 @@ The coherence type is determined by three structural properties: (1) cohort inte
 **Figure 4. Coherence Types: Disruption Response Patterns**
 
 ```
-                              DISRUPTION
-                          (Brand crisis event)
-                    /     /       |       \       \
-                   v     v        v        v       v
-             Ecosystem  Signal  Identity  Exp.    Incoherent
-             (Hermes)   (IKEA)  (Patag.)  Asym.   (Tesla)
-                                          (Erewh.)
-                |         |        |        |        |
-                v         v        v        v        v
-           Selective   Uniform  Binary   Geograph. Amplifying
-           absorption  transmis. split    split     fragility
-           Periphery   All       Aligned  Local vs  Existing
-           sacrificed, cohorts   rally,   mediated  cracks
-           core        affected  mis-     diverge   widen
-           strengthed  equally   aligned
-                                 deepen
+                         DISRUPTION
+                    /    /     |     \      \
+                   v    v      v      v      v
+              Eco-   Signal Identity Exp.  Incoher.
+              system (IKEA) (Patag.) Asym. (Tesla)
+              (Herm.)              (Erew.)
+                |      |      |      |      |
+                v      v      v      v      v
+             Select. Uniform Binary Geogr. Amplif.
+             absorb. transm. split  split  fragil.
 ```
 
 ### 4.3 Asymmetric Conviction Resilience
@@ -460,24 +454,14 @@ This asymmetry has a critical resilience implication. In our disruption simulati
 
 The strategic implication is stark: resources spent attempting to convert structurally locked negative cohorts are wasted. The Boycotter's experiential gate is effectively closed (0.03 weight). No test drive campaign will reach them because they are not evaluating the product — they are evaluating the ideology. Brands with locked negative cohorts must accept the structural constraint and invest in addressable cohorts instead.
 
-**Figure 5. Asymmetric Conviction Resilience**
+**Figure 5. Asymmetric Conviction Resilience** (Tesla case)
 
-```
-  Tech Loyalist (evidence-rich)         Progressive Boycotter (evidence-free)
-  +----------------------------+        +----------------------------+
-  | Experiential: 0.35         |        | Ideological:  0.45         |
-  | Economic:     0.20         |        | Social:       0.20         |
-  | Narrative:    0.15         |        | Experiential: 0.03         |
-  |         |                  |        |         |                  |
-  |         v                  |        |         v                  |
-  | Confidence: 0.78           |        | Confidence: 0.82           |
-  | Mixed signals create       |        | No contradicting data      |
-  | ambivalence                |        | = pure certainty           |
-  +----------------------------+        +----------------------------+
-         ^                                       ^
-         | weakens                               | strengthens
-         +------------- BRAND CRISIS ------------+
-```
+| | Tech Loyalist | Progressive Boycotter |
+|:--|:--|:--|
+| **Top weights** | Experiential: 0.35, Economic: 0.20 | Ideological: 0.45, Social: 0.20 |
+| **Experiential** | 0.15 (extensive product data) | 0.03 (no product contact) |
+| **Confidence** | 0.78 (mixed signals = ambivalence) | 0.82 (no contradiction = certainty) |
+| **Crisis effect** | Weakens (new evidence conflicts) | Strengthens (confirms prior belief) |
 
 ### 4.4 Brand Power and Brand Health as Independent Variables
 
