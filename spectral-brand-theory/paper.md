@@ -454,14 +454,14 @@ This asymmetry has a critical resilience implication. In our disruption simulati
 
 The strategic implication is stark: resources spent attempting to convert structurally locked negative cohorts are wasted. The Boycotter's experiential gate is effectively closed (0.03 weight). No test drive campaign will reach them because they are not evaluating the product — they are evaluating the ideology. Brands with locked negative cohorts must accept the structural constraint and invest in addressable cohorts instead.
 
-| **Figure 5** | **Tech Loyalist** | **Progressive Boycotter** |
+| | **Tech Loyalist** | **Progressive Boycotter** |
 |:--|:--|:--|
 | **Top weights** | Experiential: 0.35, Economic: 0.20 | Ideological: 0.45, Social: 0.20 |
 | **Experiential** | 0.15 (extensive product data) | 0.03 (no product contact) |
 | **Confidence** | 0.78 (mixed signals = ambivalence) | 0.82 (no contradiction = certainty) |
 | **Crisis effect** | Weakens (new evidence conflicts) | Strengthens (confirms prior belief) |
 
-**Figure 5.** Asymmetric Conviction Resilience (Tesla case): evidence-rich Loyalist vs. evidence-free Boycotter.
+**Table 8.** Asymmetric conviction resilience (Tesla case): evidence-rich Loyalist vs. evidence-free Boycotter.
 
 ### 4.4 Brand Power and Brand Health as Independent Variables
 
@@ -479,7 +479,7 @@ The five-brand exploratory analysis produces a finding that inverts conventional
 | Patagonia | Moderate (category-bound) | B+ | 65/30 | Ideological filter |
 | Erewhon | Low-moderate (hyperlocal) | B- | 40/55 | Scale floor |
 
-**Table 8.** Five-brand scorecard: brand power versus spectral health.
+**Table 9.** Five-brand scorecard: brand power versus spectral health.
 
 Traditional frameworks — BrandAsset Valuator (BAV), Interbrand's brand strength methodology, Keller's brand equity pyramid — measure dimensions of power: differentiation, relevance, esteem, knowledge, awareness, consideration. By these metrics, Tesla is among the world's most valuable brands. Seven of eight dimensions emit at strength 4 or higher. Gate permeability is 10/10 — everyone knows the brand.
 
@@ -491,7 +491,7 @@ The D/A ratio is the single metric that most powerfully discriminates between po
 
 \newpage
 
-**Figure 6. D/A Ratio and Coherence Across Five Brands**
+**Figure 5. D/A Ratio and Coherence Across Five Brands**
 
 ```
 Coherence
@@ -540,7 +540,7 @@ Gestalt psychology (Koffka, 1935) provides the perceptual foundations: cloud for
 
 \newpage
 
-**Figure 7. Non-Ergodic Brand Perception: Ensemble Average vs. Cohort Trajectories**
+**Figure 6. Non-Ergodic Brand Perception: Ensemble Average vs. Cohort Trajectories**
 
 ```
 Brand
@@ -636,13 +636,13 @@ Several limitations warrant discussion. We note that several of the open questio
 
 The preceding framework and exploratory analysis generate ten falsifiable hypotheses that constitute the empirical research agenda required to validate SBT as a quantitative theory. The first five hypotheses (H1–H5) are derived from the perception-layer mechanisms reported in Section 4. The remaining five (H6–H10) are derived from the signal dissemination layer (Section 3.5) and address pre-encounter mechanics — how brand signals reach observers in the first place.
 
-**H1 (D/A Goldilocks zone).** Brands with 55–65% designed signals will show higher brand equity and disruption resilience than brands outside this range, controlling for category, age, and market position. *Derivation:* the five-brand D/A comparison (Section 4.4, Figure 6) shows the highest-health brands clustered in this range. *Test:* cross-sectional study of 50+ brands with empirically measured D/A ratios and brand equity scores (e.g., BAV, Interbrand, or bespoke spectral health metrics).
+**H1 (D/A Goldilocks zone).** Brands with 55–65% designed signals will show higher brand equity and disruption resilience than brands outside this range, controlling for category, age, and market position. *Derivation:* the five-brand D/A comparison (Section 4.4, Figure 5) shows the highest-health brands clustered in this range. *Test:* cross-sectional study of 50+ brands with empirically measured D/A ratios and brand equity scores (e.g., BAV, Interbrand, or bespoke spectral health metrics).
 
-**H2 (Asymmetric conviction resilience).** Evidence-free negative brand convictions will show higher resistance to counter-evidence than evidence-rich positive convictions. *Derivation:* the Tesla Boycotter/Loyalist asymmetry (Section 4.3, Figure 5). *Test:* controlled experiment — expose participants with no product experience and participants with extensive product experience to counter-attitudinal brand information; measure pre/post conviction change magnitude.
+**H2 (Asymmetric conviction resilience).** Evidence-free negative brand convictions will show higher resistance to counter-evidence than evidence-rich positive convictions. *Derivation:* the Tesla Boycotter/Loyalist asymmetry (Section 4.3, Table 8). *Test:* controlled experiment — expose participants with no product experience and participants with extensive product experience to counter-attitudinal brand information; measure pre/post conviction change magnitude.
 
 **H3 (Coherence type predicts disruption response).** Ecosystem-coherent brands will exhibit selective disruption absorption (periphery sacrificed, core strengthened); incoherent brands will exhibit disruption amplification (existing divisions widen). *Derivation:* the five-type coherence taxonomy (Section 4.2, Figure 4). *Test:* longitudinal cohort tracking before and after documented brand crisis events; compare per-cohort resilience trajectories across coherence types.
 
-**H4 (Non-ergodic gap).** For incoherent brands, cross-sectional brand surveys will systematically overstate cohort-level resilience relative to longitudinal individual-level tracking. For signal-coherent brands, the gap will be minimal. *Derivation:* the brand power/health independence finding (Section 4.4) and the non-ergodic organizing analogy (Section 5.1, Figure 7). *Test:* paired study — compare snapshot survey scores to individual panel tracking data for the same brand across incoherent versus signal-coherent types.
+**H4 (Non-ergodic gap).** For incoherent brands, cross-sectional brand surveys will systematically overstate cohort-level resilience relative to longitudinal individual-level tracking. For signal-coherent brands, the gap will be minimal. *Derivation:* the brand power/health independence finding (Section 4.4) and the non-ergodic organizing analogy (Section 5.1, Figure 6). *Test:* paired study — compare snapshot survey scores to individual panel tracking data for the same brand across incoherent versus signal-coherent types.
 
 **H5 (Structural absence prerequisite).** Structural absence strategies (designed signal restriction) generate positive scarcity signals only when two conditions are met: (a) existing demand for the restricted dimension, and (b) a legitimizing heritage context that makes restriction legible as intention rather than incapacity. *Derivation:* the Hermès structural absence mechanism (Section 4.1). *Test:* experiment — manipulate scarcity (present vs. absent) crossed with demand level (high vs. low) and heritage context (established vs. novel); measure perceived exclusivity versus perceived arrogance.
 
@@ -658,7 +658,7 @@ The preceding framework and exploratory analysis generate ten falsifiable hypoth
 
 \newpage
 
-**Figure 8. Research Agenda: Falsifiable Hypotheses and Testing Methods**
+**Figure 7. Research Agenda: Falsifiable Hypotheses and Testing Methods**
 
 ```
                          SBT Framework
