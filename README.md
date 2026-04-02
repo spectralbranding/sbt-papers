@@ -6,7 +6,7 @@ Research publications on Spectral Brand Theory (SBT), a computational framework 
 
 | Paper | Words | Refs | Zenodo DOI | Status |
 |-------|-------|------|------------|--------|
-| [Spectral Brand Theory: A Computational Framework for Multi-Dimensional Brand Perception](spectral-brand-theory/paper.md) | ~6,400 | 37 | [10.5281/zenodo.18945912](https://doi.org/10.5281/zenodo.18945912) | Preprint |
+| [Spectral Brand Theory: A Computational Framework for Multi-Dimensional Brand Perception](spectral-brand-theory/paper.md) | ~15,000 | 81 | [10.5281/zenodo.18945912](https://doi.org/10.5281/zenodo.18945912) | Preprint |
 | [The Atom-Cloud-Fact Epistemological Pipeline](alibi-epistemology/paper.md) | ~4,100 | 19 | [10.5281/zenodo.18944770](https://doi.org/10.5281/zenodo.18944770) | Preprint |
 
 ### Mathematical Foundations (R0-R7, R11-R12)
@@ -31,6 +31,12 @@ Eight companion papers establishing formal mathematical foundations for SBT, plu
 | Key | Paper | Zenodo DOI | Status |
 |-----|-------|------------|--------|
 | R13 | [Paper as Specification: A Machine-Readable Standard for Scientific Claims](r13-paper-as-specification/paper.md) | [10.5281/zenodo.19210037](https://doi.org/10.5281/zenodo.19210037) | QSS (submitted) |
+
+### AI-Era Extensions
+
+| Key | Paper | Zenodo DOI | Status |
+|-----|-------|------------|--------|
+| R16 | [AI-Native Brand Identity: From Visual Recognition to Cryptographic Verification](r16-ai-native-brand-identity/paper.md) | [10.5281/zenodo.19391476](https://doi.org/10.5281/zenodo.19391476) | Preprint |
 
 ### Cross-Framework Synthesis
 
