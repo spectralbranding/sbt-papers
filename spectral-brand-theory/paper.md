@@ -452,7 +452,7 @@ The Loyalist, by contrast, has real product data. They know the car is excellent
 
 This asymmetry has a critical resilience implication. In our disruption simulations, negative convictions consistently *strengthen* under brand stress, while positive convictions *weaken*. A brand crisis confirms what the negative-conviction holder already believed. But it introduces contradicting evidence for the positive-conviction holder, who must now reconcile their favorable experience with unfavorable news. The asymmetry is directional: positive → negative is far easier than negative → positive, because the latter requires experiential evidence that the negative-conviction holder's spectral profile is designed to exclude.
 
-The strategic implication is stark: resources spent attempting to convert structurally locked negative cohorts are wasted. The Boycotter's experiential gate is effectively closed (0.03 weight). No test drive campaign will reach them because they are not evaluating the product — they are evaluating the ideology. Brands with locked negative cohorts must accept the structural constraint and invest in addressable cohorts instead.
+\newpage
 
 **Figure 5. Asymmetric Conviction Resilience** (Tesla case)
 
@@ -462,6 +462,8 @@ The strategic implication is stark: resources spent attempting to convert struct
 | **Experiential** | 0.15 (extensive product data) | 0.03 (no product contact) |
 | **Confidence** | 0.78 (mixed signals = ambivalence) | 0.82 (no contradiction = certainty) |
 | **Crisis effect** | Weakens (new evidence conflicts) | Strengthens (confirms prior belief) |
+
+The strategic implication is stark: resources spent attempting to convert structurally locked negative cohorts are wasted. The Boycotter's experiential gate is effectively closed (0.03 weight). No test drive campaign will reach them because they are not evaluating the product — they are evaluating the ideology. Brands with locked negative cohorts must accept the structural constraint and invest in addressable cohorts instead.
 
 ### 4.4 Brand Power and Brand Health as Independent Variables
 
@@ -538,8 +540,6 @@ Vargo & Lusch's (2004) service-dominant logic anticipated a key SBT premise: tha
 
 Gestalt psychology (Koffka, 1935) provides the perceptual foundations: cloud formation *is* gestalt perception applied to brand signals. Closure (collapsing an incomplete cloud), similarity (dimensional matching), and proximity (temporal clustering) are the mechanisms through which perception clouds form. Kahneman's (2011) dual-process theory maps to the collapse mechanism: strong brand convictions are System 1 shortcuts that bypass deliberate evaluation, while weak or forming clouds require effortful System 2 processing.
 
-Peters' (2019) ergodicity economics offers an unexpected and illuminating organizing analogy. The ergodicity problem — and its implications for decision theory — has attracted growing attention across disciplines (Doctor, Wakker, & Wang, 2020), with experimental evidence confirming that human decision-making reflects time-average rather than ensemble-average optimization (Meder et al., 2021). Peters demonstrates that in multiplicative, path-dependent processes, ensemble averages (averaging across many agents at one moment) diverge systematically from time averages (following one agent across time). This divergence is the formal definition of non-ergodicity. SBT's finding that brand power (an ensemble measure — aggregate awareness across all observers at one moment) and brand health (a time-average measure — how brand architecture performs for any given cohort over its perceptual trajectory) are independent variables is a structural parallel to Peters' thesis in the domain of brand perception. (We use this analogy as an organizing framework — not as a claim that brand perception obeys the specific mathematical properties Peters demonstrates for wealth processes.) The asymmetric conviction resilience finding (Section 4.3) maps to Peters' concept of absorbing states in non-ergodic processes: once a negative conviction crosses a threshold with no experiential friction to reverse it, the observer is on a one-directional compounding trajectory. Peters' framework thus provides a unified root cause — non-ergodic multiplicative dynamics — for multiple independently discovered SBT phenomena.
-
 \newpage
 
 **Figure 7. Non-Ergodic Brand Perception: Ensemble Average vs. Cohort Trajectories**
@@ -554,18 +554,20 @@ Health
    6 |         \-------\                  /-----/
      |                  \------\   /-----/  Heritage Client
    4 |                         \ /
-     |                          X  ← Trajectories cross:
+     |                          X  <- Trajectories cross:
    2 |                         / \    ensemble stays flat,
      |               /--------/   \   cohorts diverge
    0 |  Boycotter --/              \---------\-----------
-     +----+----+----+----+----+----+----+----+----+----+----→ Time
-     t₀       t₁        t₂        t₃        t₄
+     +----+----+----+----+----+----+----+----+----+----+----> Time
+     t0        t1        t2        t3        t4
           Signal  Crisis   Recovery  New
           shift   event    attempt   equilibrium
 
-     Ensemble average ≈ 6 throughout (misleading stability)
+     Ensemble average = 6 throughout (misleading stability)
      Individual cohorts: 0 to 8 range (actual dynamics)
 ```
+
+Peters' (2019) ergodicity economics offers an unexpected and illuminating organizing analogy. The ergodicity problem — and its implications for decision theory — has attracted growing attention across disciplines (Doctor, Wakker, & Wang, 2020), with experimental evidence confirming that human decision-making reflects time-average rather than ensemble-average optimization (Meder et al., 2021). Peters demonstrates that in multiplicative, path-dependent processes, ensemble averages (averaging across many agents at one moment) diverge systematically from time averages (following one agent across time). This divergence is the formal definition of non-ergodicity. SBT's finding that brand power (an ensemble measure — aggregate awareness across all observers at one moment) and brand health (a time-average measure — how brand architecture performs for any given cohort over its perceptual trajectory) are independent variables is a structural parallel to Peters' thesis in the domain of brand perception. (We use this analogy as an organizing framework — not as a claim that brand perception obeys the specific mathematical properties Peters demonstrates for wealth processes.) The asymmetric conviction resilience finding (Section 4.3) maps to Peters' concept of absorbing states in non-ergodic processes: once a negative conviction crosses a threshold with no experiential friction to reverse it, the observer is on a one-directional compounding trajectory. Peters' framework thus provides a unified root cause — non-ergodic multiplicative dynamics — for multiple independently discovered SBT phenomena.
 
 The divergence between the flat ensemble average and the volatile cohort trajectories is the non-ergodic gap. Cross-sectional brand surveys report the ensemble average — a number that appears stable even as individual cohorts undergo dramatic perceptual shifts in opposite directions.
 
