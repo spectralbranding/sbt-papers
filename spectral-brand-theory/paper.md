@@ -452,18 +452,16 @@ The Loyalist, by contrast, has real product data. They know the car is excellent
 
 This asymmetry has a critical resilience implication. In our disruption simulations, negative convictions consistently *strengthen* under brand stress, while positive convictions *weaken*. A brand crisis confirms what the negative-conviction holder already believed. But it introduces contradicting evidence for the positive-conviction holder, who must now reconcile their favorable experience with unfavorable news. The asymmetry is directional: positive → negative is far easier than negative → positive, because the latter requires experiential evidence that the negative-conviction holder's spectral profile is designed to exclude.
 
-\newpage
+The strategic implication is stark: resources spent attempting to convert structurally locked negative cohorts are wasted. The Boycotter's experiential gate is effectively closed (0.03 weight). No test drive campaign will reach them because they are not evaluating the product — they are evaluating the ideology. Brands with locked negative cohorts must accept the structural constraint and invest in addressable cohorts instead.
 
-**Figure 5. Asymmetric Conviction Resilience** (Tesla case)
-
-| | Tech Loyalist | Progressive Boycotter |
+| **Figure 5** | **Tech Loyalist** | **Progressive Boycotter** |
 |:--|:--|:--|
 | **Top weights** | Experiential: 0.35, Economic: 0.20 | Ideological: 0.45, Social: 0.20 |
 | **Experiential** | 0.15 (extensive product data) | 0.03 (no product contact) |
 | **Confidence** | 0.78 (mixed signals = ambivalence) | 0.82 (no contradiction = certainty) |
 | **Crisis effect** | Weakens (new evidence conflicts) | Strengthens (confirms prior belief) |
 
-The strategic implication is stark: resources spent attempting to convert structurally locked negative cohorts are wasted. The Boycotter's experiential gate is effectively closed (0.03 weight). No test drive campaign will reach them because they are not evaluating the product — they are evaluating the ideology. Brands with locked negative cohorts must accept the structural constraint and invest in addressable cohorts instead.
+**Figure 5.** Asymmetric Conviction Resilience (Tesla case): evidence-rich Loyalist vs. evidence-free Boycotter.
 
 ### 4.4 Brand Power and Brand Health as Independent Variables
 
