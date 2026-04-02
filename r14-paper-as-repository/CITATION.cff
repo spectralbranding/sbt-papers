@@ -1,0 +1,33 @@
+cff-version: 1.2.0
+message: "If you use this paper, please cite it as below."
+authors:
+  - family-names: Zharnikov
+    given-names: Dmitry
+    email: dmitry@spectralbranding.com
+    affiliation: "Independent Researcher"
+    orcid: "https://orcid.org/0009-0000-6893-9231"
+title: "Research as Repository: A Git-Native Protocol for Scientific Knowledge Production"
+version: 1.0.0
+date-released: 2026-03-28
+url: "https://doi.org/10.5281/zenodo.19294864"
+repository-code: "https://github.com/spectralbranding/sbt-papers"
+identifiers:
+  - type: doi
+    value: "10.5281/zenodo.19294864"
+    description: "Zenodo archive (primary)"
+keywords:
+  - scientific publishing
+  - version control
+  - peer review
+  - research infrastructure
+  - open science
+license: MIT
+type: article
+preferred-citation:
+  type: article
+  authors:
+    - family-names: Zharnikov
+      given-names: Dmitry
+  title: "Research as Repository: A Git-Native Protocol for Scientific Knowledge Production"
+  year: 2026
+  url: "https://doi.org/10.5281/zenodo.19294864"

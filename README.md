@@ -26,6 +26,13 @@ Eight companion papers establishing formal mathematical foundations for SBT, plu
 | R11 | [Why Eight? Completeness and Necessity of the SBT Dimensional Taxonomy](r11-dimension-justification/paper.md) | [10.5281/zenodo.19207599](https://doi.org/10.5281/zenodo.19207599) | Preprint |
 | R12 | [Coherence Type as Crisis Predictor: A Formal Derivation from Non-Ergodic Dynamics](r12-coherence-resilience/paper.md) | [10.5281/zenodo.19208107](https://doi.org/10.5281/zenodo.19208107) | Preprint |
 
+### Applied Theory
+
+| Key | Paper | Zenodo DOI | Status |
+|-----|-------|------------|--------|
+| R8 | [Spectral Portfolio Theory: Interference, Coherence, and Capacity in Multi-Brand Perception Space](r8-portfolio-theory/paper.md) | [10.5281/zenodo.19145099](https://doi.org/10.5281/zenodo.19145099) | IJRM (submitted) |
+| R14 | [Research as Repository: A Git-Native Protocol for Scientific Knowledge Production](r14-paper-as-repository/paper.md) | [10.5281/zenodo.19294864](https://doi.org/10.5281/zenodo.19294864) | JLSC (submitted) |
+
 ### Methodology
 
 | Key | Paper | Zenodo DOI | Status |
