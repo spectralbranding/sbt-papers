@@ -126,6 +126,8 @@ The weight-based observer profile is structurally analogous to multi-attribute a
 
 Cohort membership is dynamic. Because priors are a profile component and priors evolve through signal accumulation, decay, and crystallization (see Section 5.4, Temporal dynamics), an observer's position in spectral-profile space shifts over time. Differential signal exposure — arising from encounter mode, geography, media consumption, and social networks — causes observers who once shared a cohort to drift apart as their priors diverge. Signal events (a CEO controversy, a product failure, a viral campaign) do not merely change perception — they physically redistribute observers across cohort boundaries. This dynamism distinguishes SBT cohorts from traditional market segments: segments describe who the observer *is*; cohorts describe how the observer *perceives*, and perception changes.
 
+\newpage
+
 **Figure 1. The Observer-Mediated Perception Pipeline**
 
 ```
@@ -473,6 +475,8 @@ The five-brand exploratory analysis produces a finding that inverts conventional
 | Patagonia | Moderate (strong in category, limited outside it) | Moderate-high (B+) | 65/30 | Ideological filter |
 | Erewhon | Low-moderate (hyperlocal, culturally outsized) | Low-moderate (B-) | 40/55 | Scale floor |
 
+\newpage
+
 **Table 6.** Five-brand scorecard: brand power versus spectral health.
 
 Traditional frameworks — BrandAsset Valuator (BAV), Interbrand's brand strength methodology, Keller's brand equity pyramid — measure dimensions of power: differentiation, relevance, esteem, knowledge, awareness, consideration. By these metrics, Tesla is among the world's most valuable brands. Seven of eight dimensions emit at strength 4 or higher. Gate permeability is 10/10 — everyone knows the brand.
@@ -482,6 +486,8 @@ But the spectral scorecard reveals Tesla's cloud coherence at 2/10, its designed
 The confusion between brand power and brand health is, we argue, the central error in traditional brand management. It leads to the systematic misdiagnosis of brands like Tesla (perceived as "strong" when structurally fragile) and the systematic undervaluation of brands like Hermès (perceived as "niche" when architecturally impregnable).
 
 The D/A ratio is the single metric that most powerfully discriminates between power and health. Our five-brand comparison tentatively suggests a possible optimal zone around 55–65% designed signals; this is an exploratory hypothesis requiring validation across a larger sample. High enough to maintain narrative control. Low enough to allow authentic ambient reinforcement. Tesla, at 30% designed, is 25 points below the floor of this zone — meaning no communication strategy can fix its brand problem because 65% of the signal environment is beyond its control. Hermès, at 60% designed with *aligned* ambient signals, demonstrates that the direction of ambient signals matters as much as the ratio: its ambient signals amplify rather than contradict its designed signals.
+
+\newpage
 
 **Figure 6. D/A Ratio and Coherence Across Five Brands**
 
@@ -645,6 +651,8 @@ The preceding framework and exploratory analysis generate ten falsifiable hypoth
 **H9 (Channel-dimension coupling).** Specific channels show systematic dimensional bias in atom transmission — for example, social media transmits semiotic and social dimensions at high fidelity but experiential at low fidelity; direct encounters transmit experiential at high fidelity but ideological at low fidelity. *Derivation:* the mediated cloud formation finding (Section 4.3) and channel fidelity concept (Section 3.5). *Test:* compare spectral profiles of observers who encountered the same brand through different channels; measure dimensional variance attributable to channel.
 
 **H10 (Field density threshold).** There exists a minimum signal field density below which encounter probability drops to near-zero regardless of observer receptivity, and this threshold is higher for channels with low signal-to-noise ratio. *Derivation:* the signal dissemination layer (Section 3.5) and Sharp's (2010) mental availability framework. *Test:* vary brand signal frequency in controlled environments; measure encounter rate as a function of field density and channel noise level.
+
+\newpage
 
 **Figure 8. Research Agenda: Falsifiable Hypotheses and Testing Methods**
 
