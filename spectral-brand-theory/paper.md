@@ -4,14 +4,7 @@
 
 Working Paper — February 2026 (revised April 2026)
 
-*Contact: dmitry@spectralbranding.com*
-
-| | |
-|---|---|
-| **Open-source toolkit** | [github.com/spectralbranding/sbt-framework](https://github.com/spectralbranding/sbt-framework) |
-| **Article series** | [spectralbranding.substack.com](https://spectralbranding.substack.com) |
-| **Zenodo DOI** | [10.5281/zenodo.18945912](https://doi.org/10.5281/zenodo.18945912) |
-| **License** | MIT |
+*Zenodo DOI: [10.5281/zenodo.18945912](https://doi.org/10.5281/zenodo.18945912)*
 
 ---
 
@@ -135,48 +128,39 @@ Cohort membership is dynamic. Because priors are a profile component and priors 
 
 **Figure 1. The Observer-Mediated Perception Pipeline**
 
-```mermaid
-graph LR
-    subgraph INPUT ["Signal Environment"]
-        A["Brand Signals<br/><i>(8 dimensions)</i>"]
-        B["Ambient Signals<br/><i>(reviews, news,<br/>competitors, culture)</i>"]
-    end
-
-    subgraph OBSERVER ["Observer Spectral Profile"]
-        C["Identity Gate<br/><i>(recognition<br/>prerequisite)</i>"]
-        D["Spectral Filter<br/><i>spectrum, weights,<br/>tolerances, priors</i>"]
-    end
-
-    subgraph PERCEPTION ["Perception"]
-        E["Perception Cloud<br/><i>probabilistic cluster<br/>(+/−/ambivalent)</i>"]
-    end
-
-    subgraph CONVICTION ["Conviction"]
-        F["Collapse<br/><i>stable belief<br/>about brand</i>"]
-    end
-
-    A --> C
-    B --> C
-    C -->|"passes gate"| D
-    D --> E
-    E -->|"threshold<br/>reached"| F
-    F -.->|"re-collapse on<br/>new evidence"| E
+```
+Signal Environment              Observer Spectral Profile           Perception          Conviction
++-------------------+          +------------------------+      +-----------------+   +-----------+
+| Brand Signals     |---+      | Identity Gate          |      | Perception Cloud|   | Collapse  |
+| (8 dimensions)    |   +----->| (recognition           |----->| (probabilistic  |-->| (stable   |
+|                   |   |      |  prerequisite)         |      |  cluster:       |   |  belief   |
+| Ambient Signals   |---+      |                        |      |  +/- /ambiv.)   |   |  about    |
+| (reviews, news,   |          | Spectral Filter        |      |                 |   |  brand)   |
+|  competitors,     |          | (spectrum, weights,    |      |                 |   |           |
+|  culture)         |          |  tolerances, priors)   |      |                 |<..|re-collapse|
++-------------------+          +------------------------+      +-----------------+   +-----------+
 ```
 
 **Figure 2. Observer Heterogeneity: Same Signal Field, Different Perceptions**
 
-```mermaid
-graph TD
-    S["Tesla Signal Environment<br/><i>Same 8-dimensional signals</i>"]
-
-    S --> LP["<b>Tech Loyalist</b><br/>Experiential: 0.35 · Economic: 0.20<br/>Ideological: 0.10 · Tolerance: High"]
-    S --> BP["<b>Progressive Boycotter</b><br/>Ideological: 0.45 · Social: 0.20<br/>Experiential: 0.03 · Tolerance: Zero"]
-
-    LP --> LC["Positive Cloud<br/><i>Product-anchored</i><br/>Confidence: 0.78"]
-    BP --> BC["Negative Cloud<br/><i>Ideology-anchored</i><br/>Confidence: 0.82"]
-
-    LC --> LV["Conviction:<br/>'Best EV on the market'"]
-    BC --> BV["Conviction:<br/>'CEO's political vehicle'"]
+```
+                    Tesla Signal Environment
+                    (Same 8-dimensional signals)
+                           /            \
+                          /              \
+            Tech Loyalist                  Progressive Boycotter
+  Experiential: 0.35                       Ideological: 0.45
+  Economic:     0.20                       Social:      0.20
+  Ideological:  0.10                       Experiential: 0.03
+  Tolerance:    High                       Tolerance:    Zero
+            |                                        |
+            v                                        v
+     Positive Cloud                           Negative Cloud
+    (Product-anchored)                      (Ideology-anchored)
+     Confidence: 0.78                        Confidence: 0.82
+            |                                        |
+            v                                        v
+  "Best EV on the market"              "CEO's political vehicle"
 ```
 
 ### 2.4 Cloud Formation and Conviction Collapse
@@ -388,18 +372,17 @@ Traditional brand analysis treats coherence as a single variable from low to hig
 
 **Figure 3. Spectral Metamerism: Different L1 Structures, Same L2 Grade**
 
-```mermaid
-graph LR
-    subgraph L1_A ["L1: Brand A"]
-        A["Ecosystem coherence<br/><i>Cross-cohort interdependence<br/>Selective resilience</i>"]
-    end
-
-    subgraph L1_B ["L1: Brand B"]
-        B["Signal coherence<br/><i>Uniform signal distribution<br/>Uniform resilience</i>"]
-    end
-
-    A -->|"resilience<br/>projection"| G["L2 Grade<br/><b>7 / 10</b>"]
-    B -->|"resilience<br/>projection"| G
+```
+  L1: Brand A                                    L1: Brand B
+  +---------------------------+                  +---------------------------+
+  | Ecosystem coherence       |                  | Signal coherence          |
+  | Cross-cohort              |                  | Uniform signal            |
+  | interdependence           |                  | distribution              |
+  | Selective resilience      |                  | Uniform resilience        |
+  +---------------------------+                  +---------------------------+
+             \                                              /
+              \--- resilience projection ---> L2 Grade <---/
+                                              [ 7 / 10 ]
 ```
 
 The practical consequence is that traditional scorecards are structurally blind to the distinction. A brand with 7/10 signal coherence (the IKEA pattern: everyone perceives the same thing) and a brand with 7/10 ecosystem coherence (the Hermès pattern: different cohorts perceive different things that reinforce each other) would appear identical on any single-variable dashboard. Their responses to disruption are radically different. Empirical support for the claim that coherence type predicts resilience better than coherence degree comes from organizational culture research. Sorensen (2002) demonstrated across more than 200 firms that strong cultures outperform in stable environments but underperform in volatile ones — establishing that the structure of alignment, not its intensity, determines outcomes. Chatman, Caldwell, O'Reilly, and Doerr (2014) extended this by showing that consensus combined with adaptability outperforms consensus alone.
@@ -418,21 +401,23 @@ The coherence type is determined by three structural properties: (1) cohort inte
 
 **Figure 4. Coherence Types: Disruption Response Patterns**
 
-```mermaid
-graph TD
-    D["DISRUPTION<br/><i>Brand crisis event</i>"]
-
-    D --> E["<b>Ecosystem</b><br/>(Hermès)"]
-    D --> S["<b>Signal</b><br/>(IKEA)"]
-    D --> I["<b>Identity</b><br/>(Patagonia)"]
-    D --> EA["<b>Exp. Asymmetry</b><br/>(Erewhon)"]
-    D --> IN["<b>Incoherent</b><br/>(Tesla)"]
-
-    E --> ER["Selective absorption<br/><i>Periphery sacrificed,<br/>core strengthened</i>"]
-    S --> SR["Uniform transmission<br/><i>All cohorts affected<br/>equally</i>"]
-    I --> IR["Binary split<br/><i>Aligned rally,<br/>misaligned deepen</i>"]
-    EA --> EAR["Geographic split<br/><i>Local vs mediated<br/>diverge</i>"]
-    IN --> INR["Amplifying fragility<br/><i>Existing cracks<br/>widen</i>"]
+```
+                              DISRUPTION
+                          (Brand crisis event)
+                    /     /       |       \       \
+                   v     v        v        v       v
+             Ecosystem  Signal  Identity  Exp.    Incoherent
+             (Hermes)   (IKEA)  (Patag.)  Asym.   (Tesla)
+                                          (Erewh.)
+                |         |        |        |        |
+                v         v        v        v        v
+           Selective   Uniform  Binary   Geograph. Amplifying
+           absorption  transmis. split    split     fragility
+           Periphery   All       Aligned  Local vs  Existing
+           sacrificed, cohorts   rally,   mediated  cracks
+           core        affected  mis-     diverge   widen
+           strengthed  equally   aligned
+                                 deepen
 ```
 
 ### 4.3 Asymmetric Conviction Resilience
@@ -457,22 +442,21 @@ The strategic implication is stark: resources spent attempting to convert struct
 
 **Figure 5. Asymmetric Conviction Resilience**
 
-```mermaid
-graph LR
-    subgraph LOYALIST ["Tech Loyalist (evidence-rich)"]
-        LE["Experiential: 0.35<br/>Economic: 0.20<br/>Narrative: 0.15"]
-        LC["Confidence: 0.78<br/><i>Mixed signals create<br/>ambivalence</i>"]
-        LE --> LC
-    end
-
-    subgraph BOYCOTTER ["Progressive Boycotter (evidence-free)"]
-        BE["Ideological: 0.45<br/>Social: 0.20<br/>Experiential: 0.03"]
-        BC["Confidence: 0.82<br/><i>No contradicting data<br/>= pure certainty</i>"]
-        BE --> BC
-    end
-
-    CRISIS["Brand<br/>Crisis"] -.->|"weakens"| LC
-    CRISIS -.->|"strengthens"| BC
+```
+  Tech Loyalist (evidence-rich)         Progressive Boycotter (evidence-free)
+  +----------------------------+        +----------------------------+
+  | Experiential: 0.35         |        | Ideological:  0.45         |
+  | Economic:     0.20         |        | Social:       0.20         |
+  | Narrative:    0.15         |        | Experiential: 0.03         |
+  |         |                  |        |         |                  |
+  |         v                  |        |         v                  |
+  | Confidence: 0.78           |        | Confidence: 0.82           |
+  | Mixed signals create       |        | No contradicting data      |
+  | ambivalence                |        | = pure certainty           |
+  +----------------------------+        +----------------------------+
+         ^                                       ^
+         | weakens                               | strengthens
+         +------------- BRAND CRISIS ------------+
 ```
 
 ### 4.4 Brand Power and Brand Health as Independent Variables
@@ -662,28 +646,24 @@ The preceding framework and exploratory analysis generate ten falsifiable hypoth
 
 **Figure 8. Research Agenda: Falsifiable Hypotheses and Testing Methods**
 
-```mermaid
-graph TD
-    SBT["<b>SBT Framework</b><br/><i>Sections 2-4</i>"]
-
-    subgraph "Perception Layer (H1-H5)"
-        H1["<b>H1: D/A Goldilocks</b><br/>55-65% designed optimal"]
-        H2["<b>H2: Asymmetric Resilience</b><br/>Evidence-free > evidence-rich"]
-        H3["<b>H3: Coherence → Disruption</b><br/>Type predicts response"]
-        H4["<b>H4: Non-Ergodic Gap</b><br/>Ensemble ≠ time average"]
-        H5["<b>H5: Absence Prerequisite</b><br/>Demand + heritage required"]
-    end
-
-    subgraph "Dissemination Layer (H6-H10)"
-        H6["<b>H6: Gate Friction</b><br/>Varies by cohort profile"]
-        H7["<b>H7: First-Atom Primacy</b><br/>Initial encounter shapes priors"]
-        H8["<b>H8: Amplification Asymmetry</b><br/>Negative > positive emission"]
-        H9["<b>H9: Channel-Dimension Coupling</b><br/>Channels bias dimensions"]
-        H10["<b>H10: Field Density Threshold</b><br/>Minimum for encounter"]
-    end
-
-    SBT --> H1 & H2 & H3 & H4 & H5
-    SBT --> H6 & H7 & H8 & H9 & H10
+```
+                         SBT Framework
+                         (Sections 2-4)
+                        /              \
+                       v                v
+  Perception Layer (H1-H5)        Dissemination Layer (H6-H10)
+  +---------------------------+   +---------------------------+
+  | H1: D/A Goldilocks        |   | H6: Gate Friction         |
+  |     55-65% designed opt.   |   |     Varies by cohort      |
+  | H2: Asymmetric Resilience |   | H7: First-Atom Primacy    |
+  |     Evidence-free > rich   |   |     Initial shapes priors |
+  | H3: Coherence->Disruption |   | H8: Amplification Asymm.  |
+  |     Type predicts response |   |     Negative > positive   |
+  | H4: Non-Ergodic Gap       |   | H9: Channel-Dim. Coupling |
+  |     Ensemble != time avg   |   |     Channels bias dims    |
+  | H5: Absence Prerequisite  |   | H10: Field Density Thresh.|
+  |     Demand + heritage req. |   |      Minimum for encounter|
+  +---------------------------+   +---------------------------+
 ```
 
 The first five hypotheses (H1–H5) test the core perception-layer predictions of SBT: structural predictions (H1, H3), conviction dynamics (H2), non-ergodic diagnostics (H4), and structural absence boundary conditions (H5). The dissemination-layer hypotheses (H6–H10) extend the research agenda to pre-encounter mechanics: how observer cohorts differ in gate friction (H6), how first-atom encounters shape lasting priors (H7), how negative convictions amplify faster than positive ones (H8), how channels systematically bias dimensional transmission (H9), and what minimum signal density is required for encounter events (H10). A program that validates H1–H10 would move SBT from an exploratory framework to a comprehensive, quantitatively grounded theory of brand perception across the full lifecycle — from pre-awareness through conviction formation to re-collapse.
@@ -706,7 +686,7 @@ SBT is not a replacement for strategic judgment. It is an analytical instrument 
 
 ## Author Note
 
-Dmitry Zharnikov is an independent researcher and strategist. He holds a Professional MBA (Entrepreneurship & Innovation) from Technische Universitat Wien and Wirtschaftsuniversitat Wien (dual degree, 2018), where his thesis examined strategic positioning of solar energy companies in Russia (Zharnikov, 2018). ORCID: https://orcid.org/0009-0000-6893-9231
+Dmitry Zharnikov is an independent researcher and strategist. He holds a Professional MBA (Entrepreneurship & Innovation) from Technische Universitat Wien and Wirtschaftsuniversitat Wien (dual degree, 2018). ORCID: https://orcid.org/0009-0000-6893-9231
 
 ---
 
@@ -858,13 +838,7 @@ Zharnikov, D. (2026j). Non-ergodic brand perception: Diffusion dynamics on multi
 
 Zharnikov, D. (2026k). Spectral resource allocation: Demand-driven investment in multi-dimensional brand space. Working Paper. https://doi.org/10.5281/zenodo.19009268
 
-Zharnikov, D. (2018). Strategy of the leading energy generation companies in solar business in the Russian Federation: Features and challenges (MBA thesis). Technische Universitat Wien and Wirtschaftsuniversitat Wien. https://repositum.tuwien.at/handle/20.500.12708/79295
-
 ---
 
-*This is a working paper. Comments welcome at dmitry@spectralbranding.com.*
-
-*The open-source prompt kit, YAML templates, and framework documentation are available at github.com/spectralbranding/sbt-framework. An ongoing series of analytical articles applying SBT to specific brands is published at spectralbranding.substack.com.*
-
-*License: MIT*
+*Working paper. Comments: dmitry@spectralbranding.com. Open-source toolkit: github.com/spectralbranding/sbt-framework. License: MIT.*
 
