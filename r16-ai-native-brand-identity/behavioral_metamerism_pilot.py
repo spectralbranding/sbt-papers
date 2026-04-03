@@ -29,7 +29,7 @@ LLM providers supported (all optional -- skip if API key is missing):
   - Gemma4 27B (local Ollama): requires Ollama running at localhost:11434
 
 Requirements:
-  pip install anthropic openai google-generativeai pyyaml numpy scipy
+  pip install anthropic openai google-genai pyyaml numpy scipy
 
 Usage:
   python behavioral_metamerism_pilot.py --demo
@@ -40,18 +40,59 @@ License: MIT
 """
 
 import argparse
+import datetime
+import hashlib
+import importlib.metadata
 import json
 import os
+import platform
+import subprocess
 import sys
 import time
 import textwrap
 from dataclasses import dataclass, field, asdict
+from math import asin, sqrt
 from pathlib import Path
 from typing import Optional, Any
 import re
 
 import numpy as np
 import yaml
+
+
+# --- Pre-Registration Protocol ---
+
+
+PRE_REGISTRATION = """
+## Pre-Registration Protocol
+
+### Hypotheses
+H1: Brands with high statistical similarity (BMI > 0.5) will show low discrimination rates
+    under the statistical-only condition across all LLM families.
+H2: Specification-augmented condition will significantly improve discrimination rates
+    (Fisher's exact p < 0.05, Cohen's h > 0.3).
+H3: Cross-model variance in brand recommendations will be lower in the augmented condition
+    than the statistical condition (F-test p < 0.05).
+H4: The metamerism-discrimination relationship will replicate across Western and Chinese
+    model clusters (no significant cluster x condition interaction).
+
+### Stopping Rules
+- Minimum: 3 runs per condition per model (established before data collection)
+- If Fisher's exact p > 0.10 after 3 runs: extend to 5 runs
+- If Fisher's exact p > 0.10 after 5 runs: report null result
+
+### Analysis Plan
+- Primary: Fisher's exact test on discrimination rates (statistical vs augmented)
+- Secondary: Wilcoxon signed-rank on confidence scores, F-test on variance
+- Effect sizes: Cohen's h (discrimination), Cohen's d (confidence), Cramer's V (association)
+- Exploratory: Per-model and per-cluster analysis, inter-model agreement
+
+### Exclusion Criteria
+- API errors resulting in unparseable responses are recorded as {can_distinguish: false, confidence: 0.5}
+  and flagged in the session log
+- Models with >50% error rate in any condition are excluded from aggregate statistics
+  but reported separately
+"""
 
 
 # --- Data Structures ---
@@ -121,6 +162,9 @@ class StatisticsResult:
     bmi_ci_upper: float
     bmi_ci_pair: str
     interpretation: str
+    cohens_h: float = float("nan")
+    cohens_d: float = float("nan")
+    cramers_v: float = float("nan")
 
 
 @dataclass
@@ -135,6 +179,7 @@ class PilotResults:
     metamerism_index: dict[str, float] = field(default_factory=dict)
     cross_model_variance: dict[str, float] = field(default_factory=dict)
     statistics: Optional[dict] = None
+    metadata: dict = field(default_factory=dict)
 
 
 # --- Prompts ---
@@ -428,7 +473,7 @@ def parse_llm_json(text: str) -> dict[str, Any]:
 # --- API Clients ---
 
 
-def call_claude(prompt: str, model: str = "claude-3-5-haiku-20241022") -> str:
+def call_claude(prompt: str, model: str = "claude-sonnet-4-6") -> str:
     """Call Anthropic Claude API and return response text."""
     import anthropic
     client = anthropic.Anthropic(api_key=os.environ["ANTHROPIC_API_KEY"])
@@ -553,29 +598,78 @@ def call_with_retry(
     model_name: str,
     max_retries: int = 3,
     rate_limit_delay: float = 1.0,
+    *,
+    log_path: Optional[str] = None,
+    log_context: Optional[dict] = None,
 ) -> str:
     """
     Call an LLM API function with exponential backoff retry and rate limiting.
 
     Delays: 2s, 4s, 8s on successive failures.
     Always waits rate_limit_delay seconds before returning to avoid burst limits.
+
+    If log_path is provided, appends a JSONL entry for each call (success or final failure).
+    log_context should contain: condition, test_type, brand_a, brand_b, run.
     """
     delays = [2, 4, 8]
     last_exc: Exception = RuntimeError("No attempts made")
 
     for attempt in range(max_retries):
+        t0 = time.monotonic()
         try:
             result = fn(prompt)
+            latency_ms = int((time.monotonic() - t0) * 1000)
             time.sleep(rate_limit_delay)
+
+            # Log successful call
+            if log_path and log_context:
+                parsed = None
+                try:
+                    parsed = parse_llm_json(result)
+                except Exception:
+                    pass
+                append_session_log(
+                    log_path,
+                    model=model_name,
+                    model_id=MODEL_IDS.get(model_name, "unknown"),
+                    condition=log_context.get("condition", ""),
+                    test_type=log_context.get("test_type", ""),
+                    brand_a=log_context.get("brand_a", ""),
+                    brand_b=log_context.get("brand_b", ""),
+                    run=log_context.get("run", 0),
+                    prompt=prompt,
+                    response=result,
+                    parsed=parsed,
+                    latency_ms=latency_ms,
+                )
+
             return result
         except Exception as exc:
             last_exc = exc
+            latency_ms = int((time.monotonic() - t0) * 1000)
             if attempt < max_retries - 1:
                 wait = delays[attempt]
                 print(f"    [retry {attempt + 1}/{max_retries - 1}] {model_name} error: {exc} — waiting {wait}s")
                 time.sleep(wait)
             else:
                 print(f"    [failed] {model_name} after {max_retries} attempts: {exc}")
+                # Log final failure
+                if log_path and log_context:
+                    append_session_log(
+                        log_path,
+                        model=model_name,
+                        model_id=MODEL_IDS.get(model_name, "unknown"),
+                        condition=log_context.get("condition", ""),
+                        test_type=log_context.get("test_type", ""),
+                        brand_a=log_context.get("brand_a", ""),
+                        brand_b=log_context.get("brand_b", ""),
+                        run=log_context.get("run", 0),
+                        prompt=prompt,
+                        response="",
+                        parsed=None,
+                        latency_ms=latency_ms,
+                        error=str(exc),
+                    )
 
     raise last_exc
 
@@ -683,6 +777,204 @@ def bootstrap_bmi_ci(
     return lower, upper
 
 
+# --- Session Logging ---
+
+
+def _open_session_log(log_path: str) -> Path:
+    """Ensure the session log directory exists and return the Path object."""
+    p = Path(log_path)
+    p.parent.mkdir(parents=True, exist_ok=True)
+    return p
+
+
+def append_session_log(
+    log_path: str,
+    *,
+    model: str,
+    model_id: str,
+    condition: str,
+    test_type: str,
+    brand_a: str,
+    brand_b: str,
+    run: int,
+    prompt: str,
+    response: str,
+    parsed: Optional[dict],
+    latency_ms: int,
+    tokens_in: Optional[int] = None,
+    tokens_out: Optional[int] = None,
+    error: Optional[str] = None,
+) -> None:
+    """Append a single JSONL entry to the session log (crash-safe: flush after each write)."""
+    entry = {
+        "timestamp": datetime.datetime.now(datetime.timezone.utc).isoformat(),
+        "model": model,
+        "model_id": model_id,
+        "condition": condition,
+        "test_type": test_type,
+        "brand_a": brand_a,
+        "brand_b": brand_b,
+        "run": run,
+        "prompt": prompt,
+        "response": response,
+        "parsed": parsed,
+        "latency_ms": latency_ms,
+        "tokens_in": tokens_in,
+        "tokens_out": tokens_out,
+        "error": error,
+    }
+    p = _open_session_log(log_path)
+    with p.open("a", encoding="utf-8") as f:
+        f.write(json.dumps(entry, default=str) + "\n")
+        f.flush()
+
+
+# --- Reproducibility Metadata ---
+
+
+MODEL_IDS: dict[str, str] = {
+    "claude": "claude-sonnet-4-6",
+    "gpt": "gpt-4o-mini",
+    "gemini": "gemini-2.5-flash",
+    "deepseek": "deepseek-chat",
+    "qwen": "qwen-plus-latest",
+    "qwen3_local": "qwen3:30b",
+    "gemma4_local": "gemma4:latest",
+    "simulated": "simulated",
+}
+
+
+def collect_experiment_metadata(
+    models: list[str],
+    start_time: str,
+) -> dict:
+    """Collect reproducibility metadata for the experiment."""
+    # Git commit hash
+    try:
+        git_hash = subprocess.check_output(
+            ["git", "rev-parse", "HEAD"], stderr=subprocess.DEVNULL, text=True
+        ).strip()
+    except Exception:
+        git_hash = "unknown"
+
+    # Package versions
+    pkg_versions = {}
+    for pkg in ["anthropic", "openai", "google-genai", "scipy", "numpy", "pyyaml"]:
+        try:
+            pkg_versions[pkg] = importlib.metadata.version(pkg)
+        except importlib.metadata.PackageNotFoundError:
+            pkg_versions[pkg] = "not installed"
+
+    # API key hashes (first 8 chars of SHA256 for audit without exposure)
+    api_key_hashes = {}
+    for model_name, env_var in API_KEY_VARS.items():
+        key = os.environ.get(env_var, "")
+        if key and key != "1":  # skip sentinel values like OLLAMA_AVAILABLE=1
+            api_key_hashes[model_name] = hashlib.sha256(key.encode()).hexdigest()[:8]
+
+    # Model configs
+    model_configs = {}
+    for m in models:
+        model_configs[m] = {
+            "model_id": MODEL_IDS.get(m, "unknown"),
+            "max_tokens": 512,
+            "temperature": "default (not explicitly set)",
+        }
+
+    return {
+        "script_version": git_hash,
+        "python_version": sys.version,
+        "package_versions": pkg_versions,
+        "hardware": platform.machine(),
+        "processor": platform.processor(),
+        "os": platform.platform(),
+        "start_time": start_time,
+        "end_time": None,  # filled at completion
+        "model_configs": model_configs,
+        "api_key_hash": api_key_hashes,
+    }
+
+
+# --- Effect Sizes ---
+
+
+def cohens_h(p1: float, p2: float) -> float:
+    """
+    Cohen's h for comparing two proportions.
+
+    h = 2 * arcsin(sqrt(p1)) - 2 * arcsin(sqrt(p2))
+    |h| >= 0.2 small, >= 0.5 medium, >= 0.8 large
+    """
+    return 2.0 * asin(sqrt(max(0.0, min(1.0, p1)))) - 2.0 * asin(sqrt(max(0.0, min(1.0, p2))))
+
+
+def cohens_d(group1: list[float], group2: list[float]) -> float:
+    """
+    Cohen's d for comparing two group means.
+
+    d = (mean1 - mean2) / pooled_sd
+    |d| >= 0.2 small, >= 0.5 medium, >= 0.8 large
+    """
+    n1, n2 = len(group1), len(group2)
+    if n1 < 2 or n2 < 2:
+        return float("nan")
+    m1, m2 = np.mean(group1), np.mean(group2)
+    var1, var2 = np.var(group1, ddof=1), np.var(group2, ddof=1)
+    pooled_var = ((n1 - 1) * var1 + (n2 - 1) * var2) / (n1 + n2 - 2)
+    pooled_sd = sqrt(max(pooled_var, 1e-12))
+    return float((m1 - m2) / pooled_sd)
+
+
+def cramers_v(contingency_table: np.ndarray) -> float:
+    """
+    Cramer's V for chi-square association strength.
+
+    V = sqrt(chi2 / (n * min(r-1, c-1)))
+    """
+    from scipy import stats as scipy_stats
+    n = contingency_table.sum()
+    if n == 0:
+        return float("nan")
+    r, c = contingency_table.shape
+    min_dim = min(r - 1, c - 1)
+    if min_dim == 0:
+        return float("nan")
+    try:
+        chi2_result = scipy_stats.chi2_contingency(contingency_table, correction=False)
+        chi2 = float(chi2_result.statistic)
+    except Exception:
+        return float("nan")
+    return float(sqrt(chi2 / (n * min_dim)))
+
+
+def fleiss_kappa(ratings_matrix: np.ndarray) -> float:
+    """
+    Fleiss' kappa for inter-rater reliability.
+
+    ratings_matrix: shape (n_subjects, n_categories)
+    Each row sums to the number of raters.
+    """
+    N, k = ratings_matrix.shape
+    n = ratings_matrix[0].sum()  # number of raters per subject
+    if N == 0 or n <= 1:
+        return float("nan")
+
+    # Proportion of ratings per category
+    p_j = ratings_matrix.sum(axis=0) / (N * n)
+
+    # Per-subject agreement
+    P_i = (np.sum(ratings_matrix ** 2, axis=1) - n) / (n * (n - 1))
+    P_bar = np.mean(P_i)
+
+    # Expected agreement
+    P_e = np.sum(p_j ** 2)
+
+    if abs(1.0 - P_e) < 1e-12:
+        return 1.0 if abs(P_bar - 1.0) < 1e-12 else float("nan")
+
+    return float((P_bar - P_e) / (1.0 - P_e))
+
+
 def compute_statistics(
     discrimination_results: list[DiscriminationResult],
     metamerism_index: dict[tuple[str, str], float],
@@ -778,6 +1070,18 @@ def compute_statistics(
     else:
         ci_lower, ci_upper, ci_pair = float("nan"), float("nan"), "N/A"
 
+    # --- Effect sizes ---
+    # Cohen's h: proportion of can_distinguish in augmented vs statistical
+    p_aug = n_aug_true / max(len(aug_dist_flags), 1)
+    p_stat = n_stat_true / max(len(stat_dist_flags), 1)
+    effect_h = cohens_h(p_aug, p_stat)
+
+    # Cohen's d: confidence score difference
+    effect_d = cohens_d(aug_conf, stat_conf)
+
+    # Cramer's V: association strength from contingency table
+    effect_v = cramers_v(contingency)
+
     # --- Interpretation ---
     lines = []
     if not np.isnan(chi2_p) and chi2_p < 0.05:
@@ -795,6 +1099,13 @@ def compute_statistics(
     if not np.isnan(f_p) and f_p < 0.05:
         lines.append("F-test significant: variance differs between conditions.")
 
+    # Effect size interpretation
+    h_abs = abs(effect_h) if not np.isnan(effect_h) else 0
+    d_abs = abs(effect_d) if not np.isnan(effect_d) else 0
+    h_label = "large" if h_abs >= 0.8 else ("medium" if h_abs >= 0.5 else "small")
+    d_label = "large" if d_abs >= 0.8 else ("medium" if d_abs >= 0.5 else "small")
+    lines.append(f"Effect sizes: Cohen's h = {effect_h:.3f} ({h_label}), Cohen's d = {effect_d:.3f} ({d_label}).")
+
     return StatisticsResult(
         chi_square_stat=chi2_stat if not np.isnan(chi2_stat) else -1.0,
         chi_square_p=chi2_p if not np.isnan(chi2_p) else -1.0,
@@ -807,6 +1118,9 @@ def compute_statistics(
         bmi_ci_upper=ci_upper,
         bmi_ci_pair=ci_pair,
         interpretation=" ".join(lines),
+        cohens_h=effect_h,
+        cohens_d=effect_d,
+        cramers_v=effect_v,
     )
 
 
@@ -817,9 +1131,24 @@ def write_summary_tables(results: PilotResults, output_path: str = "summary_tabl
     """Write formatted Markdown summary tables to a file."""
     lines = []
     lines.append("# Behavioral Metamerism Pilot — Summary Tables\n")
-    lines.append(f"**Category**: {results.category}  ")
-    lines.append(f"**Models**: {', '.join(results.models)}  ")
-    lines.append(f"**Runs per condition**: {results.runs}\n")
+
+    # Table 0: Experiment metadata
+    meta = results.metadata or {}
+    lines.append("## Table 0: Experiment Metadata\n")
+    lines.append("| Parameter | Value |")
+    lines.append("|-----------|-------|")
+    lines.append(f"| Date | {meta.get('start_time', 'N/A')[:10] if meta.get('start_time') else 'N/A'} |")
+    lines.append(f"| Category | {results.category} |")
+    lines.append(f"| Models | {', '.join(results.models)} |")
+    lines.append(f"| Runs per condition | {results.runs} |")
+    lines.append(f"| Total discrimination calls | {len(results.discrimination_results)} |")
+    lines.append(f"| Total prediction calls | {len(results.prediction_results)} |")
+    if meta.get("start_time") and meta.get("end_time"):
+        lines.append(f"| Start time | {meta['start_time']} |")
+        lines.append(f"| End time | {meta['end_time']} |")
+    lines.append(f"| Script version | {meta.get('script_version', 'N/A')} |")
+    lines.append(f"| Python version | {meta.get('python_version', 'N/A')[:20] if meta.get('python_version') else 'N/A'} |")
+    lines.append("")
 
     # Table 1: BMI by pair
     lines.append("## Table 1: Behavioral Metamerism Index (BMI) by Brand Pair\n")
@@ -869,17 +1198,20 @@ def write_summary_tables(results: PilotResults, output_path: str = "summary_tabl
         lines.append(f"| {cond} | {var:.4f} | {interp} |")
     lines.append("")
 
-    # Table 5: Statistics
+    # Table 5: Statistical Tests (with effect sizes)
     if results.statistics:
         s = results.statistics
-        lines.append("## Table 5: Statistical Tests\n")
-        lines.append("| Test | Statistic | p-value | Significant |")
-        lines.append("|------|-----------|---------|-------------|")
-        for label, stat, pval in [
-            ("Chi-square (discrimination rate)", s.get("chi_square_stat", -1), s.get("chi_square_p", -1)),
-            ("Fisher's exact (discrimination rate)", "—", s.get("fisher_exact_p", -1)),
-            ("Wilcoxon signed-rank (confidence)", s.get("wilcoxon_stat", -1), s.get("wilcoxon_p", -1)),
-            ("F-test (variance ratio)", s.get("f_stat", -1), s.get("f_p", -1)),
+        lines.append("## Table 5: Statistical Tests and Effect Sizes\n")
+        lines.append("| Test | Statistic | p-value | Effect Size | Significant |")
+        lines.append("|------|-----------|---------|-------------|-------------|")
+        for label, stat, pval, effect in [
+            ("Chi-square (discrimination rate)", s.get("chi_square_stat", -1), s.get("chi_square_p", -1),
+             f"Cramer's V = {s.get('cramers_v', float('nan')):.3f}" if not np.isnan(s.get("cramers_v", float("nan"))) else "N/A"),
+            ("Fisher's exact (discrimination rate)", "---", s.get("fisher_exact_p", -1),
+             f"Cohen's h = {s.get('cohens_h', float('nan')):.3f}" if not np.isnan(s.get("cohens_h", float("nan"))) else "N/A"),
+            ("Wilcoxon signed-rank (confidence)", s.get("wilcoxon_stat", -1), s.get("wilcoxon_p", -1),
+             f"Cohen's d = {s.get('cohens_d', float('nan')):.3f}" if not np.isnan(s.get("cohens_d", float("nan"))) else "N/A"),
+            ("F-test (variance ratio)", s.get("f_stat", -1), s.get("f_p", -1), "---"),
         ]:
             if isinstance(pval, float) and pval >= 0:
                 sig = "Yes *" if pval < 0.05 else "No"
@@ -888,13 +1220,120 @@ def write_summary_tables(results: PilotResults, output_path: str = "summary_tabl
                 sig = "N/A"
                 pval_str = "N/A"
             stat_str = f"{stat:.3f}" if isinstance(stat, float) and stat >= 0 else str(stat)
-            lines.append(f"| {label} | {stat_str} | {pval_str} | {sig} |")
+            lines.append(f"| {label} | {stat_str} | {pval_str} | {effect} | {sig} |")
         lines.append("")
         ci_pair = s.get("bmi_ci_pair", "N/A")
         ci_lo = s.get("bmi_ci_lower", float("nan"))
         ci_hi = s.get("bmi_ci_upper", float("nan"))
         lines.append(f"**BMI 95% CI** ({ci_pair}): [{ci_lo:.3f}, {ci_hi:.3f}] (bootstrap, n=1000)\n")
-        lines.append(f"**Interpretation**: {s.get('interpretation', '')}\n")
+
+    # Table 6: Per-model discrimination rates by condition
+    disc_results = results.discrimination_results
+    if disc_results:
+        model_names = sorted(set(r["model"] for r in disc_results))
+        if len(model_names) > 1 or (len(model_names) == 1 and model_names[0] != "simulated"):
+            lines.append("## Table 6: Per-Model Discrimination Rates by Condition\n")
+            lines.append("| Model | Condition | N | Discrimination Rate | Mean Confidence |")
+            lines.append("|-------|-----------|---|--------------------:|----------------:|")
+            for m in model_names:
+                for cond in ["statistical", "augmented"]:
+                    subset = [r for r in disc_results if r["model"] == m and r["condition"] == cond]
+                    n = len(subset)
+                    if n > 0:
+                        rate = sum(1 for r in subset if r["can_distinguish"]) / n
+                        mean_conf = sum(r["confidence"] for r in subset) / n
+                        lines.append(f"| {m} | {cond} | {n} | {rate:.3f} | {mean_conf:.3f} |")
+            lines.append("")
+
+    # Table 7: Inter-model agreement matrix and Fleiss' kappa
+    if disc_results:
+        model_names = sorted(set(r["model"] for r in disc_results))
+        if len(model_names) >= 2:
+            lines.append("## Table 7: Inter-Model Agreement Matrix\n")
+            lines.append("Proportion of brand-pair evaluations where both models agree on can_distinguish.\n")
+
+            # Build header
+            header = "| Model | " + " | ".join(model_names) + " |"
+            sep = "|-------|" + "|".join(["------:" for _ in model_names]) + "|"
+            lines.append(header)
+            lines.append(sep)
+
+            # Index results by (model, condition, brand_a, brand_b, run) -> can_distinguish
+            for m_row in model_names:
+                row_vals = []
+                for m_col in model_names:
+                    if m_row == m_col:
+                        row_vals.append("1.000")
+                    else:
+                        # Find matching evaluations
+                        m_row_results = {
+                            (r["condition"], r["brand_a"], r["brand_b"], r.get("run", 0)): r["can_distinguish"]
+                            for r in disc_results if r["model"] == m_row
+                        }
+                        m_col_results = {
+                            (r["condition"], r["brand_a"], r["brand_b"], r.get("run", 0)): r["can_distinguish"]
+                            for r in disc_results if r["model"] == m_col
+                        }
+                        common_keys = set(m_row_results.keys()) & set(m_col_results.keys())
+                        if common_keys:
+                            agree = sum(1 for k in common_keys if m_row_results[k] == m_col_results[k])
+                            row_vals.append(f"{agree / len(common_keys):.3f}")
+                        else:
+                            row_vals.append("N/A")
+                lines.append(f"| {m_row} | " + " | ".join(row_vals) + " |")
+            lines.append("")
+
+            # Compute Fleiss' kappa if possible
+            # Build ratings matrix: each "subject" is a (condition, pair, run) tuple
+            # Each subject gets rated by each model as 0 (no distinguish) or 1 (distinguish)
+            all_keys = set()
+            model_decisions: dict[str, dict] = {}
+            for m in model_names:
+                model_decisions[m] = {
+                    (r["condition"], r["brand_a"], r["brand_b"], r.get("run", 0)): r["can_distinguish"]
+                    for r in disc_results if r["model"] == m
+                }
+                all_keys.update(model_decisions[m].keys())
+
+            # Only use subjects rated by ALL models
+            common_keys = sorted(all_keys)
+            common_keys = [k for k in common_keys if all(k in model_decisions[m] for m in model_names)]
+
+            if len(common_keys) >= 2 and len(model_names) >= 2:
+                # ratings_matrix: (n_subjects, 2 categories [no, yes])
+                ratings_matrix = np.zeros((len(common_keys), 2), dtype=int)
+                for i, k in enumerate(common_keys):
+                    for m in model_names:
+                        if model_decisions[m][k]:
+                            ratings_matrix[i, 1] += 1
+                        else:
+                            ratings_matrix[i, 0] += 1
+                kappa = fleiss_kappa(ratings_matrix)
+                if not np.isnan(kappa):
+                    kappa_label = (
+                        "almost perfect" if kappa >= 0.81 else
+                        "substantial" if kappa >= 0.61 else
+                        "moderate" if kappa >= 0.41 else
+                        "fair" if kappa >= 0.21 else
+                        "slight" if kappa >= 0.0 else "poor"
+                    )
+                    lines.append(f"**Fleiss' kappa**: {kappa:.3f} ({kappa_label} agreement, "
+                                 f"n_subjects={len(common_keys)}, n_raters={len(model_names)})\n")
+
+    # Interpretation (moved from console to end of report)
+    lines.append("---\n")
+    lines.append("## Interpretation\n")
+    if results.statistics:
+        lines.append(f"{results.statistics.get('interpretation', '')}\n")
+    lines.append(textwrap.dedent("""\
+    If BMI > 0.5 AND discrimination improves under augmented condition
+    AND cross-model variance decreases under augmented condition,
+    then Proposition 6 (behavioral metamerism) is supported:
+
+    > Brands with identical statistical profiles but structurally
+    > different behavioral signatures cannot be distinguished through
+    > statistical observation alone; behavioral specification is required.
+    """))
 
     Path(output_path).write_text("\n".join(lines), encoding="utf-8")
     print(f"Summary tables saved to {output_path}")
@@ -909,6 +1348,7 @@ def run_discrimination_live(
     models: list[str],
     runs: int,
     category: str,
+    log_path: Optional[str] = None,
 ) -> list[DiscriminationResult]:
     """Run live discrimination tests for all brand pairs, models, and conditions."""
     func_map = {f.name: f for f in functions}
@@ -952,8 +1392,18 @@ def run_discrimination_live(
                     done += 1
                     print(f"  [{done}/{total}] run={run_idx} model={model_name} condition={condition} "
                           f"pair={a.name}vs{b.name}")
+                    log_ctx = {
+                        "condition": condition,
+                        "test_type": "discrimination",
+                        "brand_a": a.name,
+                        "brand_b": b.name,
+                        "run": run_idx,
+                    }
                     try:
-                        raw = call_with_retry(caller, prompt, model_name)
+                        raw = call_with_retry(
+                            caller, prompt, model_name,
+                            log_path=log_path, log_context=log_ctx,
+                        )
                         parsed = parse_llm_json(raw)
                         results.append(DiscriminationResult(
                             model=model_name,
@@ -987,6 +1437,7 @@ def run_prediction_live(
     models: list[str],
     runs: int,
     scenarios: list[str],
+    log_path: Optional[str] = None,
 ) -> list[BehavioralPrediction]:
     """Run live behavioral prediction tests for a sample of brands and scenarios."""
     func_map = {f.name: f for f in functions}
@@ -1022,8 +1473,18 @@ def run_prediction_live(
                         )
                         print(f"  [predict] run={run_idx} model={model_name} condition={condition} "
                               f"brand={profile.name}")
+                        log_ctx = {
+                            "condition": condition,
+                            "test_type": "prediction",
+                            "brand_a": profile.name,
+                            "brand_b": "",
+                            "run": run_idx,
+                        }
                         try:
-                            predicted = call_with_retry(caller, prompt, model_name)
+                            predicted = call_with_retry(
+                                caller, prompt, model_name,
+                                log_path=log_path, log_context=log_ctx,
+                            )
                             # Score accuracy as string overlap heuristic (0-1)
                             overlap = len(
                                 set(predicted.lower().split()) & set(actual.lower().split())
@@ -1057,6 +1518,7 @@ def run_pilot(
     demo: bool = True,
     runs: int = 3,
     category: str = "DTC supplements",
+    log_path: Optional[str] = None,
 ) -> PilotResults:
     """
     Run the behavioral metamerism pilot study.
@@ -1068,7 +1530,12 @@ def run_pilot(
     Gemini (Google), DeepSeek, and Qwen (DashScope) APIs with exponential
     backoff retry and rate limiting. Models whose API key is absent are
     skipped automatically.
+
+    If log_path is set, every API call is recorded as a JSONL entry for
+    full audit trail reproducibility.
     """
+    start_time = datetime.datetime.now(datetime.timezone.utc).isoformat()
+
     # Load brand data
     if brands_file:
         with open(brands_file) as f:
@@ -1107,11 +1574,31 @@ def run_pilot(
     else:
         model_list = ["simulated"]
 
+    # Collect reproducibility metadata
+    metadata = collect_experiment_metadata(model_list, start_time)
+
+    # Write pre-registration protocol (live mode only)
+    if not demo and log_path:
+        exp_dir = Path(log_path).parent
+        exp_dir.mkdir(parents=True, exist_ok=True)
+        pre_reg_path = exp_dir / "PRE_REGISTRATION.md"
+        if not pre_reg_path.exists():
+            pre_reg_path.write_text(PRE_REGISTRATION.strip() + "\n", encoding="utf-8")
+            print(f"Pre-registration protocol written to {pre_reg_path}")
+        else:
+            print(f"Pre-registration protocol already exists at {pre_reg_path}")
+
+        # Write metadata.yaml
+        metadata_path = exp_dir / "metadata.yaml"
+        metadata_path.write_text(yaml.dump(metadata, default_flow_style=False, sort_keys=False), encoding="utf-8")
+        print(f"Experiment metadata written to {metadata_path}")
+
     results = PilotResults(
         brands=[p.name for p in profiles],
         models=model_list,
         category=category,
         runs=runs,
+        metadata=metadata,
     )
 
     # Compute pairwise statistical distances
@@ -1289,10 +1776,14 @@ def run_pilot(
               f"{len(stat_dist) * len(model_list) * 2 * runs}\n")
 
         print("--- Discrimination Tests ---")
-        discrimination_objs = run_discrimination_live(profiles, functions, model_list, runs, category)
+        discrimination_objs = run_discrimination_live(
+            profiles, functions, model_list, runs, category, log_path=log_path,
+        )
 
         print("\n--- Prediction Tests ---")
-        prediction_objs = run_prediction_live(profiles, functions, model_list, runs, EDGE_CASE_SCENARIOS)
+        prediction_objs = run_prediction_live(
+            profiles, functions, model_list, runs, EDGE_CASE_SCENARIOS, log_path=log_path,
+        )
 
         results.cross_model_variance = compute_recommendation_variance(discrimination_objs)
 
@@ -1306,6 +1797,17 @@ def run_pilot(
     except Exception as exc:
         print(f"  [warn] Statistical tests skipped: {exc}")
         results.statistics = None
+
+    # Finalize metadata
+    end_time = datetime.datetime.now(datetime.timezone.utc).isoformat()
+    results.metadata["end_time"] = end_time
+    if not demo and log_path:
+        exp_dir = Path(log_path).parent
+        metadata_path = exp_dir / "metadata.yaml"
+        metadata_path.write_text(
+            yaml.dump(results.metadata, default_flow_style=False, sort_keys=False),
+            encoding="utf-8",
+        )
 
     # --- Print summary ---
     print("\n" + "=" * 60)
@@ -1351,7 +1853,17 @@ def run_pilot(
         if s["f_p"] >= 0:
             print(f"  F-test p         = {s['f_p']:.4f}")
         print(f"  BMI 95% CI ({s['bmi_ci_pair']}): [{s['bmi_ci_lower']:.3f}, {s['bmi_ci_upper']:.3f}]")
-        print(f"  Interpretation: {s['interpretation']}")
+        print(f"\nEffect Sizes:")
+        ch = s.get("cohens_h", float("nan"))
+        cd = s.get("cohens_d", float("nan"))
+        cv = s.get("cramers_v", float("nan"))
+        if not np.isnan(ch):
+            print(f"  Cohen's h        = {ch:.3f}")
+        if not np.isnan(cd):
+            print(f"  Cohen's d        = {cd:.3f}")
+        if not np.isnan(cv):
+            print(f"  Cramer's V       = {cv:.3f}")
+        print(f"\n  Interpretation: {s['interpretation']}")
 
     print(f"\n{'=' * 60}")
     print("INTERPRETATION")
@@ -1387,6 +1899,7 @@ if __name__ == "__main__":
           python behavioral_metamerism_pilot.py --live --runs 5
           python behavioral_metamerism_pilot.py --live --brands brands.yaml --category "DTC skincare"
           python behavioral_metamerism_pilot.py --live --output my_results.json --runs 1
+          python behavioral_metamerism_pilot.py --live --log experiment/session_log.jsonl --runs 3
         """),
     )
     parser.add_argument(
@@ -1433,6 +1946,12 @@ if __name__ == "__main__":
         default="DTC supplements",
         help="Product category label for prompts (default: 'DTC supplements')",
     )
+    parser.add_argument(
+        "--log",
+        type=str,
+        default="experiment/session_log.jsonl",
+        help="JSONL session log path for full audit trail (default: experiment/session_log.jsonl)",
+    )
     args = parser.parse_args()
 
     if args.live and args.demo:
@@ -1450,4 +1969,5 @@ if __name__ == "__main__":
         demo=not args.live,
         runs=args.runs,
         category=args.category,
+        log_path=args.log if args.live else None,
     )

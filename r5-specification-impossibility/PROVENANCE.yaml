@@ -1,0 +1,19 @@
+# PROVENANCE.yaml — Specification Impossibility in Organizational Design
+# Fork history and submission records per the Research-as-Repository protocol
+
+provenance:
+  paper_title: "Specification Impossibility in Organizational Design: A High-Dimensional Geometric Analysis"
+  citation_key: "2026h"
+  repository: "spectralbranding/sbt-papers/r5-specification-impossibility"
+
+  forks:
+    - id: "fork-2026-03-11-zenodo"
+      target: "Zenodo"
+      target_type: preprint_server
+      created: "2026-03-11"
+      source_commit: "main"
+      status: merged
+      outcome: published
+      identifiers:
+        doi: "10.5281/zenodo.18945592"
+        community: ["spectral-branding"]

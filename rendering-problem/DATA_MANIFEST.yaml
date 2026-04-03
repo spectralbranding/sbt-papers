@@ -1,0 +1,12 @@
+# DATA_MANIFEST.yaml — The Rendering Problem: From Genetic Expression to Brand Perception
+# External data dependencies per the Research-as-Repository protocol
+
+data_manifest:
+  - id: "zenodo-preprint"
+    description: >
+      Published preprint PDF on Zenodo. No external datasets —
+      this is a theoretical/cross-domain paper with no empirical data collection.
+    archive: "Zenodo"
+    doi: "10.5281/zenodo.19064426"
+    format: "PDF"
+    access: public

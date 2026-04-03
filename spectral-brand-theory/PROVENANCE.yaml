@@ -1,0 +1,19 @@
+# PROVENANCE.yaml — Spectral Brand Theory (2026a)
+# Fork history and submission records per the Research-as-Repository protocol
+
+provenance:
+  paper_title: "Spectral Brand Theory: A Computational Framework for Multi-Dimensional Brand Perception"
+  citation_key: "2026a"
+  repository: "spectralbranding/sbt-papers/spectral-brand-theory"
+
+  forks:
+    - id: "fork-2026-03-11-zenodo"
+      target: "Zenodo"
+      target_type: preprint_server
+      created: "2026-03-11"
+      source_commit: "main"
+      status: merged
+      outcome: published
+      identifiers:
+        doi: "10.5281/zenodo.18945913"
+        community: ["spectral-branding"]

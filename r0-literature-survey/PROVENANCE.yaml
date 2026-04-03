@@ -1,0 +1,19 @@
+# PROVENANCE.yaml — R0: Geometric Approaches to Brand Perception (2026c)
+# Fork history and submission records per the Research-as-Repository protocol
+
+provenance:
+  paper_title: "Geometric Approaches to Brand Perception: A Critical Survey and Research Agenda"
+  citation_key: "2026c"
+  repository: "spectralbranding/sbt-papers/r0-literature-survey"
+
+  forks:
+    - id: "fork-2026-03-11-zenodo"
+      target: "Zenodo"
+      target_type: preprint_server
+      created: "2026-03-11"
+      source_commit: "main"
+      status: merged
+      outcome: published
+      identifiers:
+        doi: "10.5281/zenodo.18945218"
+        community: ["spectral-branding"]

@@ -1,0 +1,359 @@
+# paper.yaml — Paper Spec v0.1.0
+# Zharnikov (2026j): Non-ergodic brand perception — diffusion dynamics
+spec_version: "0.1.0"
+
+meta:
+  title: "Non-ergodic brand perception: Diffusion dynamics on multi-dimensional perceptual manifolds"
+  authors:
+    - name: "Zharnikov, Dmitry"
+      orcid: "0009-0000-6893-9231"
+      affiliation: "Independent Researcher"
+  doi: "10.5281/zenodo.18945659"
+  date: "2026-01-01"
+  version: "3.0"
+  venue: "Working Paper (Zenodo)"
+  license: "CC-BY-4.0"
+  keywords:
+    - non-ergodicity
+    - stochastic differential equations
+    - brand perception dynamics
+    - perceptual manifold
+    - absorbing boundaries
+    - diffusion processes
+    - ergodicity economics
+
+claims:
+  - id: "T1"
+    type: theorem
+    statement: >
+      The stochastic differential equation governing brand perception trajectories
+      on the positive orthant of the 7-sphere (S^7_+) is well-posed: a unique
+      strong solution exists for all t >= 0 under the specified drift and diffusion
+      coefficients, given non-degenerate initial conditions.
+    formal: >
+      Let dX_t = mu(X_t) dt + sigma(X_t) dW_t on S^7_+ with reflecting boundary
+      conditions. Under Lipschitz continuity of mu and sigma and linear growth bounds,
+      a unique strong solution exists for all t in [0, inf). (Ito existence and
+      uniqueness theorem applied to manifold-valued SDEs; cf. Hsu 2002.)
+    testable: false
+    tested_in_paper: true
+    status: supported
+    depends_on: []
+
+  - id: "T2"
+    type: theorem
+    statement: >
+      The survival probability — the probability that a brand's perception on a given
+      dimension remains above a threshold epsilon for all time up to T — decays
+      exponentially in T. The decay rate depends on the diffusion coefficient sigma
+      and the threshold epsilon, but not on the initial profile height (above epsilon).
+    formal: >
+      P(X_i(t) > epsilon for all t in [0,T] | X_i(0) = x_0 > epsilon)
+        = exp(-lambda(sigma, epsilon) * T) + O(exp(-2*lambda*T)),
+      where lambda = pi^2 * sigma^2 / (2 * epsilon^2).
+    testable: true
+    tested_in_paper: false
+    status: supported
+    depends_on: ["T1"]
+
+  - id: "T3"
+    type: theorem
+    statement: >
+      There exists a spectral gap Delta > 0 in the generator of the perception
+      diffusion process on S^7_+. The spectral gap implies exponential convergence
+      to the stationary distribution at rate exp(-Delta * t), provided the brand
+      remains in the interior of S^7_+ (no absorption).
+    formal: >
+      The generator L of the diffusion on S^7_+ satisfies: lambda_1(L) - lambda_0(L) >= Delta > 0,
+      where lambda_0 = 0 is the ground-state eigenvalue and lambda_1 is the first
+      excited eigenvalue. Convergence: ||rho_t - rho_*||_TV <= C * exp(-Delta * t).
+    testable: false
+    tested_in_paper: true
+    status: supported
+    depends_on: ["T1"]
+
+  - id: "T4"
+    type: theorem
+    statement: >
+      Brand perception dynamics on S^7_+ are non-ergodic in the presence of absorbing
+      boundaries: the time-average of an individual observer's perception trajectory
+      does not converge to the ensemble average across observers, for any non-zero
+      absorption probability. This makes cross-sectional brand tracking a biased
+      estimator of individual perception trajectories.
+    formal: >
+      Let A be the absorbing set (negative conviction region). If P(tau_A < inf) > 0,
+      then lim_{T->inf} (1/T) int_0^T X_i(t) dt != E_rho*[X_i] a.s.,
+      where rho* is the stationary distribution on S^7_+ \ A.
+      The bias is proportional to P(tau_A < inf) * E[X_i | absorbed].
+    testable: true
+    tested_in_paper: false
+    status: supported
+    depends_on: ["T1", "T3"]
+
+  - id: "P5"
+    type: proposition
+    statement: >
+      For two brands B and B' with absorption probabilities p and p' (p < p'),
+      the long-run expected perception of B stochastically dominates that of B'
+      in the first-order sense. Brands with lower absorption probability are
+      predicted to maintain higher average perception across all observers.
+    formal: >
+      If P(tau_A(B) < inf) < P(tau_A(B') < inf), then
+      F_{B}(x) <= F_{B'}(x) for all x, with strict inequality on (0, epsilon),
+      where F_B is the CDF of the stationary perception distribution for B.
+    testable: true
+    tested_in_paper: false
+    status: not_tested
+    depends_on: ["T4"]
+
+  - id: "P6"
+    type: proposition
+    statement: >
+      For a brand in the semi-permeable near-death zone (0, epsilon) — below the
+      absorption threshold but not yet absorbed — the expected recovery time back
+      to x_0 > epsilon scales as O(1/epsilon^2). Recovery from deeper near-death
+      positions requires quadratically more time.
+    formal: >
+      Let tau_rec = inf{t > 0 : X_i(t) >= x_0 | X_i(0) = delta, delta in (0, epsilon)}.
+      Then E[tau_rec] = (x_0 - delta)^2 / (2 * sigma^2 * delta) * (1 + O(delta/epsilon)),
+      implying E[tau_rec] = O(1/epsilon^2) as delta -> 0.
+    testable: true
+    tested_in_paper: false
+    status: not_tested
+    depends_on: ["T1", "T4"]
+
+  - id: "P7"
+    type: proposition
+    statement: >
+      The optimal ratio of designed signals to ambient signals (D/A ratio) that
+      minimizes absorption probability while maintaining sufficient perceptual
+      exploration lies in the interval [0.55, 0.65] for the baseline parameter
+      regime (sigma_0 = 0.10, lambda = 112). This interval is derived from the
+      drift-diffusion balance, not asserted.
+    formal: >
+      Let r = D/(D+A) be the D/A ratio, mu(r) = r * mu_design + (1-r) * mu_ambient
+      the composite drift, and P_abs(r) the absorption probability.
+      r* = argmin_{r in [0,1]} P_abs(r) subject to Var(X_t) >= epsilon_explore.
+      For sigma_0 = 0.10, lambda = 112: r* in [0.55, 0.65].
+    testable: true
+    tested_in_paper: true
+    status: supported
+    depends_on: ["T1", "T2", "T4"]
+
+methodology:
+  type: theoretical
+  design: >
+    Proof-based mathematical analysis. The perception manifold S^7_+ is equipped
+    with the Riemannian metric from Zharnikov (2026d). Stochastic differential
+    equations are constructed using standard Ito calculus on manifolds (Hsu 2002).
+    Theorems T1-T4 are proved using standard results from stochastic analysis.
+    Propositions P5-P7 are derived as corollaries. Numerical illustration of
+    P7 (D/A Goldilocks derivation) uses parameter values from SBT baseline
+    calibration; no fitting to data is performed.
+  analysis:
+    method: "Ito calculus on Riemannian manifolds; spectral theory of diffusion generators; first-passage time analysis"
+    software: "None (analytical proofs). Numerical illustration in Python (numpy, scipy)."
+
+acceptance:
+  - claim_id: "T1"
+    criterion: >
+      No mathematical error is found in the application of Ito's existence and
+      uniqueness theorem to the manifold-valued SDE. Peer review by a stochastic
+      analysis expert confirms the proof structure.
+    falsification: >
+      A specific counterexample is constructed showing non-uniqueness or non-existence
+      of solutions under the stated conditions, or a gap is identified in the Lipschitz
+      continuity argument.
+
+  - claim_id: "T2"
+    criterion: >
+      Longitudinal brand tracking data (minimum 5-year panel) shows exponential
+      decay of brand survival rates on individual dimensions, with decay rates
+      consistent with the formula lambda = pi^2 * sigma^2 / (2 * epsilon^2).
+    falsification: >
+      Brand survival rates follow a power-law or other non-exponential decay,
+      or decay rates show strong dependence on initial profile height (x_0),
+      which T2 predicts should be absent.
+
+  - claim_id: "T4"
+    criterion: >
+      In longitudinal panel data, time-average perception scores for individual
+      observers diverge significantly from cross-sectional ensemble averages for
+      brands with high estimated absorption probability, but not for brands with
+      low absorption probability. The divergence magnitude correlates with
+      estimated absorption probability.
+    falsification: >
+      Individual time-averages converge to cross-sectional ensemble averages
+      within measurement error, indicating ergodic dynamics and undermining the
+      non-ergodicity claim.
+
+  - claim_id: "P6"
+    criterion: >
+      Brand recovery timelines (from documented crises) scale quadratically with
+      the depth of the crisis trough (minimum tracking score relative to absorption
+      threshold). Brands closer to the zero boundary take disproportionately longer
+      to recover.
+    falsification: >
+      Recovery time scales linearly or logarithmically with crisis depth, or shows
+      no significant dependence on depth, refuting the O(1/epsilon^2) scaling.
+
+  - claim_id: "P7"
+    criterion: >
+      Brands with D/A ratios in [0.55, 0.65] (measured via content analysis of
+      brand communications) show lower crisis incidence and faster post-crisis
+      recovery than brands outside this interval, controlling for brand size and
+      category.
+    falsification: >
+      D/A ratio in [0.55, 0.65] does not predict lower absorption probability
+      or faster recovery, or the optimal ratio is found to lie outside this range
+      across multiple brand categories.
+
+data:
+  available: false
+  url: ""
+  notes: >
+    No empirical data. All results are analytical proofs or numerical illustrations
+    using fixed parameter values. The SBT framework parameters (sigma_0, lambda)
+    are baseline calibration values, not data-fitted.
+
+code:
+  available: true
+  url: "https://github.com/spectralbranding/sbt-framework"
+  notes: >
+    The sbt-framework repository implements the diffusion dynamics simulation
+    (Module 5: trajectory analysis). The D/A Goldilocks derivation (P7) can
+    be reproduced using the numerical solver in Module 5.
+
+replication:
+  feasible: true
+  estimated_cost: "< $1,000 USD (computational only for proof verification; $50,000+ for empirical test of T4)"
+  estimated_time: "2-4 weeks (proof audit); 18-36 months (longitudinal empirical test)"
+  requirements:
+    - "Graduate-level stochastic analysis background for proof audit"
+    - "Hsu (2002) 'Stochastic Analysis on Manifolds' (American Mathematical Society)"
+    - "Python or R with SDE simulation libraries for numerical validation"
+    - "For empirical T4 test: longitudinal brand tracking panel, minimum 5 years, minimum 500 observers per brand"
+
+dependencies:
+  - doi: "10.5281/zenodo.18945295"
+    claim: "Zharnikov (2026d) R1 — defines the SBT metric space and manifold S^7_+ used throughout this paper"
+    relationship: "applies"
+    critical: true
+
+  - doi: "10.1038/s41567-019-0732-0"
+    claim: "Peters (2019) — ergodicity problem in economics; motivates the non-ergodicity framework for perception dynamics"
+    relationship: "applies"
+    critical: true
+
+  - reference: "Hsu, E. P. (2002). Stochastic analysis on manifolds. American Mathematical Society."
+    claim: "Hsu (2002) 'Stochastic Analysis on Manifolds' — theoretical foundation for manifold-valued SDEs"
+    relationship: "applies"
+    critical: true
+
+  - doi: "10.5281/zenodo.18945912"
+    claim: "Zharnikov (2026a) SBT — defines the 8-dimensional perception space and emission types"
+    relationship: "applies"
+    critical: true
+
+  - reference: "Doctor, Y., Larson, E. J., & Sibani, L. (2020). Economists' ergodicity problem. Nature Physics, 16(4), 384."
+    claim: "Doctor et al. (2020) 'Economists' Ergodicity Problem' in Nature Physics — critique of Peters (2019) addressed in Section 9.2"
+    relationship: "contradicts"
+    critical: false
+
+results:
+  - claim_id: "T1"
+    status: supported
+    notes: >
+      Proved analytically using Ito existence and uniqueness theorem applied to
+      manifold-valued SDEs. The Lipschitz conditions are verified for the specific
+      drift and diffusion coefficients used.
+
+  - claim_id: "T2"
+    status: supported
+    notes: >
+      Proved analytically using first-passage time theory for diffusions on bounded
+      intervals. Numerical illustration confirms the exponential decay rate formula.
+      Empirical validation pending.
+
+  - claim_id: "T3"
+    status: supported
+    notes: >
+      Proved using spectral theory of the generator. The spectral gap Delta is bounded
+      below by a function of the manifold curvature and the diffusion coefficient.
+
+  - claim_id: "T4"
+    status: supported
+    notes: >
+      Proved analytically from the definition of ergodicity and the existence of
+      absorbing boundaries. This is the central result of the paper. Empirical
+      validation pending — see Zharnikov (2026o) for the bridge to consumer-language
+      predictions.
+
+  - claim_id: "P5"
+    status: supported
+    notes: >
+      Derived as a corollary of T4 using stochastic dominance arguments. Not
+      independently tested.
+
+  - claim_id: "P6"
+    status: supported
+    notes: >
+      Derived analytically using Dynkin's formula for expected first-passage times.
+      The O(1/epsilon^2) scaling is confirmed by numerical simulation.
+
+  - claim_id: "P7"
+    status: supported
+    notes: >
+      Derived analytically for the baseline parameter regime. The interval [0.55, 0.65]
+      is sensitive to sigma_0 and lambda — see sensitivity analysis in Section 7.6.
+      This result transforms the D/A Goldilocks claim from assertion to derivation.
+
+limitations:
+  - description: >
+      The Brownian motion model on S^7_+ assumes perception updates are multiplicative
+      (each signal scales prior perception). If perception updates are additive, the
+      dynamics are ergodic and T4 does not apply. Sufficiency conditions for the
+      multiplicative regime are derived in companion paper Zharnikov (2026o) Section 4.5.
+    severity: major
+    addressable: true
+
+  - description: >
+      The absorbing boundary at X_i = 0 implies total perception loss is irreversible.
+      This is inconsistent with observed brand rehabilitations (Tylenol 1982, Samsung
+      Note 7). Version 3 of this paper introduces semi-permeable boundaries (P6)
+      to address this. The pure absorbing model remains in T1-T4 as a limiting case.
+    severity: major
+    addressable: true
+
+  - description: >
+      The D/A Goldilocks interval [0.55, 0.65] in P7 is derived for a specific
+      parameter regime. The interval shifts with sigma_0 and lambda. No calibration
+      of these parameters to real brand data has been performed.
+    severity: moderate
+    addressable: true
+
+  - description: >
+      The model uses a homogeneous diffusion coefficient sigma. Real brand perception
+      may have dimension-specific volatility (e.g., Economic dimension is more volatile
+      during price changes than Temporal dimension).
+    severity: moderate
+    addressable: true
+
+  - description: >
+      The critique of Peters (2019) by Doctor et al. (2020) is addressed in Section 9.2.
+      Their critique targets the wealth-dynamics application of Peters' framework;
+      the non-ergodicity in this paper arises from a different mechanism (absorbing
+      boundaries, not multiplicative wealth dynamics) and is not invalidated by their argument.
+    severity: minor
+    addressable: false
+
+repositories:
+  - platform: "Zenodo"
+    doi: "10.5281/zenodo.18945659"
+    url: "https://doi.org/10.5281/zenodo.18945659"
+    version: "v3"
+    date: "2026-03-24"
+  - platform: "GitHub"
+    url: "https://github.com/spectralbranding/sbt-papers/r6-diffusion-dynamics"
+
+submission_history: []

@@ -1,0 +1,38 @@
+# PROVENANCE.yaml — Spectral Portfolio Theory: Interference, Coherence, and Capacity in Multi-Brand Perception Space
+# Fork history and submission records per the Research-as-Repository protocol
+
+provenance:
+  paper_title: "Spectral Portfolio Theory: Interference, Coherence, and Capacity in Multi-Brand Perception Space"
+  citation_key: "2026q"
+  repository: "spectralbranding/sbt-papers/r8-portfolio-theory"
+
+  forks:
+    - id: "fork-2026-03-21-zenodo"
+      target: "Zenodo"
+      target_type: preprint_server
+      created: "2026-03-21"
+      source_commit: "main"
+      status: merged
+      outcome: published
+      identifiers:
+        doi: "10.5281/zenodo.19145099"
+        community: ["spectral-branding"]
+
+    - id: "fork-2026-03-25-mksc"
+      target: "Marketing Science"
+      target_type: journal
+      created: "2026-03-25"
+      source_commit: "main"
+      status: closed
+      outcome: desk_rejected
+      identifiers:
+        manuscript_id: "MKSC-2026-0149"
+
+    - id: "fork-2026-03-26-ijrm"
+      target: "International Journal of Research in Marketing"
+      target_type: journal
+      created: "2026-03-26"
+      source_commit: "main"
+      status: pending
+      identifiers:
+        manuscript_id: "IJRM-D-26-00310"

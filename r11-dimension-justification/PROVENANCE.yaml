@@ -1,0 +1,19 @@
+# PROVENANCE.yaml — R11: Why Eight?
+# Fork history and submission records per the Research-as-Repository protocol
+
+provenance:
+  paper_title: "Why eight? Completeness and necessity of the SBT dimensional taxonomy"
+  citation_key: "2026r"
+  repository: "spectralbranding/sbt-papers/r11-dimension-justification"
+
+  forks:
+    - id: "fork-2026-03-23-zenodo"
+      target: "Zenodo"
+      target_type: preprint_server
+      created: "2026-03-23"
+      source_commit: "main"
+      status: merged
+      outcome: published
+      identifiers:
+        doi: "10.5281/zenodo.19207599"
+        community: ["spectral-branding"]

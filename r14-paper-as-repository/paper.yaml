@@ -1,0 +1,316 @@
+# paper.yaml — Paper Spec v0.1.0
+# Zharnikov (2026u): R14 — Research as Repository
+spec_version: "0.1.0"
+
+meta:
+  title: "Research as Repository: A Git-Native Protocol for Scientific Knowledge Production"
+  authors:
+    - name: "Zharnikov, Dmitry"
+      orcid: "0009-0000-6893-9231"
+      affiliation: "Independent Researcher"
+  doi: "10.5281/zenodo.19294864"
+  date: "2026-04-02"
+  version: "1.1"
+  venue: "Zenodo preprint (JASIST desk-rejected 2026-04-02; next: JEP)"
+  license: "CC-BY-NC-ND-4.0"
+  keywords:
+    - scientific publishing
+    - version control
+    - peer review
+    - research infrastructure
+    - open science
+    - provenance
+    - knowledge production
+    - research evaluation
+    - AI transparency
+    - prestige loop
+    - fork-based submission
+
+claims:
+  - id: "C1"
+    type: proposition
+    statement: >
+      Fork-based submission creates cryptographic provenance that makes submission history
+      structurally auditable. Every fork is irrevocably recorded in the author's repository,
+      making dual submission structurally detectable without relying on author declarations.
+    testable: true
+    tested_in_paper: false
+    status: proposed
+    depends_on: []
+
+  - id: "C2"
+    type: proposition
+    statement: >
+      Blinding-as-function replaces manual anonymization with a configurable system property.
+      The blinding configuration is deterministic, complete (covers metadata, code comments,
+      figure properties), verifiable, and reversible — properties that manual blinding cannot
+      guarantee.
+    testable: true
+    tested_in_paper: false
+    status: proposed
+    depends_on: []
+
+  - id: "C3"
+    type: proposition
+    statement: >
+      Review-as-commits creates attributed, portable review records with measurable depth.
+      Each reviewer's branch is a timestamped, diffable record of their intellectual
+      contribution, enabling reviewer portfolios and structural assessment of review quality.
+    testable: true
+    tested_in_paper: false
+    status: proposed
+    depends_on: []
+
+  - id: "C4"
+    type: proposition
+    statement: >
+      Collections-as-users unifies preprint servers, journals, and institutional repositories
+      under a single protocol. Each collection is a registered user that curates forks according
+      to its own criteria, eliminating format conversion, multiple uploads, and version
+      fragmentation.
+    testable: true
+    tested_in_paper: false
+    status: proposed
+    depends_on: []
+
+  - id: "C5"
+    type: proposition
+    statement: >
+      A compliance gate (journal_spec.yaml validated by CI/CD) substantially reduces
+      formatting-related non-compliance. Target: 80% reduction in formatting desk rejections
+      for journals that adopt the gate, with resubmission turnaround reduced from weeks to
+      minutes for compliance-related fixes.
+    testable: true
+    tested_in_paper: true
+    status: supported
+    depends_on: []
+
+  - id: "C6"
+    type: proposition
+    statement: >
+      Provenance-by-design makes dual submission structurally detectable. Every fork is
+      permanently recorded in the author's PROVENANCE.yaml; any subsequent fork to another
+      venue carries the full provenance chain, making concurrent identical submissions
+      visible to all fork recipients.
+    testable: true
+    tested_in_paper: false
+    status: proposed
+    depends_on: ["C1"]
+
+  - id: "C7"
+    type: proposition
+    statement: >
+      The protocol's machine-readable structure enables AI-native querying across the full
+      research lifecycle. Every AI-assisted edit becomes a commit with metadata (tool, model
+      version, prompt hash, diff), making AI contribution structurally transparent and
+      auditable — solving the disclosure problem that journals currently address with
+      honor-system forms.
+    testable: true
+    tested_in_paper: false
+    status: proposed
+    depends_on: []
+
+methodology:
+  type: conceptual
+  design: >
+    Conceptual protocol proposal with partial prototype. The paper applies a lean value-stream
+    analysis (Ohno, 1988; Womack & Jones, 1996) to scientific publishing, identifying five
+    structural gaps in the document-based paradigm (no version history, no contributor
+    traceability, no submission provenance, no review attribution, no machine interface).
+    The protocol is specified across eleven subsections (2.1-2.11) covering repository
+    structure, fork-based submission, compliance gate, blinding, review, reviewer ownership,
+    provenance, collections, federation, AI-native layer, and normative specification roadmap.
+    A comparative analysis against twelve existing systems (Table 1a) demonstrates that no
+    prior system integrates all six protocol features.
+  analysis:
+    method: >
+      Lean value-stream analysis to identify waste (muda) in the publishing pipeline.
+      Comparative feature analysis against 12 existing systems. Self-referential implementation:
+      this paper is structured as a compliant paper repository with 7 typed claims,
+      4 contributors (1 human + 3 AI tools), and a functioning compliance gate validator.
+      Working prototype at github.com/spectralbranding/paper-repo.
+    software: >
+      Python (validate_paper.py, 290 lines, compliance gate validator).
+      YAML (journal_spec.yaml schema, paper.yaml specification).
+      Git (version control, fork semantics).
+
+acceptance:
+  - claim_id: "C1"
+    criterion: >
+      Implement fork-based submission for a single journal or preprint server. Verify that
+      every fork creates a cryptographic link (SHA hash) recorded in the author's provenance.
+      Test: create 10 forks from 5 authors; verify all 10 appear in provenance with correct
+      commit hashes.
+    falsification: >
+      The fork mechanism fails to create a unique, verifiable link to the source repository
+      in more than 10% of cases, or the provenance record can be modified by the author
+      after fork creation.
+
+  - claim_id: "C5"
+    criterion: >
+      Deploy the compliance gate for an existing journal. Measure: (a) number of submissions
+      that pass the gate on first attempt; (b) average time from gate failure to resubmission;
+      (c) comparison of formatting desk rejection rate before and after gate deployment.
+      Target: 80% reduction in formatting desk rejections.
+    falsification: >
+      Formatting desk rejection rate decreases by less than 30% after gate deployment,
+      suggesting that the majority of desk rejections are not formatting-related or that
+      the gate's validation rules do not match actual editorial standards.
+
+  - claim_id: "C7"
+    criterion: >
+      Analyze commit histories from 20+ paper repositories that used AI tools. Measure:
+      (a) what fraction of AI-assisted commits contain tool metadata; (b) whether an auditor
+      can reconstruct which sections were AI-assisted from commit history alone. Target:
+      90% of AI commits carry tool metadata; auditor reconstruction accuracy > 85%.
+    falsification: >
+      Fewer than 50% of AI-assisted commits carry tool metadata in practice, indicating that
+      the commit-based disclosure mechanism is no more reliable than self-reported forms.
+
+data:
+  available: false
+  url: ""
+  notes: >
+    No primary data collected. This is a conceptual protocol proposal. The compliance gate
+    validator is demonstrated on a worked example (Journal of Marketing submission requirements
+    encoded as journal_spec_jm.yaml). The self-referential implementation provides a single
+    proof-of-concept repository.
+
+code:
+  available: true
+  url: "https://github.com/spectralbranding/paper-repo"
+  notes: >
+    The paper-repo repository contains: validate_paper.py (compliance gate validator, 290
+    lines Python), journal_spec.yaml schema, worked Journal of Marketing example, paper.yaml
+    schema, CONTRIBUTORS.yaml template, PROVENANCE.yaml template, and the self-referential
+    R14 implementation.
+
+replication:
+  feasible: true
+  estimated_cost: "< $10,000 USD (pilot with single journal or preprint server)"
+  estimated_time: "6-12 months"
+  requirements:
+    - "paper-repo repository (spectralbranding/paper-repo) for schemas and validator"
+    - "A journal or preprint server willing to pilot fork-based submission"
+    - "Developer resources to implement fork lifecycle (estimated 3-6 months)"
+    - "Git hosting infrastructure (GitHub, GitLab, or self-hosted)"
+    - "IRB approval if studying researcher adoption behavior"
+
+dependencies:
+  - doi: "10.1371/journal.pmed.0020124"
+    claim: "Ioannidis (2005): Why Most Published Research Findings Are False — motivates the structural reform"
+    relationship: "applies"
+    critical: true
+
+  - doi: "10.1038/sdata.2016.18"
+    claim: "Wilkinson et al. (2016) FAIR principles — protocol inherits FAIR for paper repositories"
+    relationship: "extends"
+    critical: true
+
+  - doi: "10.1126/science.aac4716"
+    claim: "Nosek et al. (2015) TOP Guidelines — protocol operationalizes transparency standards"
+    relationship: "extends"
+    critical: true
+
+  - doi: "10.1371/journal.pcbi.1005510"
+    claim: "Himmelstein et al. (2019) Manubot — closest predecessor for Git-native authoring layer"
+    relationship: "extends"
+    critical: false
+
+  - doi: "10.7717/peerj-cs.147"
+    claim: "Katz et al. (2018) JOSS — closest predecessor for GitHub-based review"
+    relationship: "extends"
+    critical: false
+
+  - doi: "10.5281/zenodo.19210037"
+    claim: "Zharnikov (2026t) Paper Spec — companion standard. Paper Spec specifies WHAT a paper claims; this protocol specifies HOW the paper was built"
+    relationship: "extends"
+    critical: true
+
+results:
+  - claim_id: "C5"
+    status: supported
+    notes: >
+      Supported by prototype: the compliance gate validator (validate_paper.py) successfully
+      validates a paper repository against Journal of Marketing specifications (130 fields,
+      46 compliance checks). Execution time < 1 second. The validator correctly identifies
+      self-citation ratio violations, missing AI disclosure statements, and word count
+      exceedances. Full fork lifecycle validation not implemented.
+
+  - claim_id: "C1"
+    status: proposed
+    notes: >
+      Not yet tested. Fork-based submission requires implementation of the fork lifecycle
+      (freeze, transfer, provenance recording) which is specified in Section 2.2 but not
+      prototyped. The PROVENANCE.yaml schema and structure are defined and demonstrated
+      in the self-referential implementation.
+
+  - claim_id: "C7"
+    status: proposed
+    notes: >
+      Partially demonstrated by self-referential implementation: R14's CONTRIBUTORS.yaml
+      lists 4 contributors (1 human + 3 AI tools) with disclosure statements. Commit-level
+      AI attribution metadata is specified but not enforced by the current prototype.
+
+limitations:
+  - description: >
+      Partial prototype only. The compliance gate, schemas, validator, and self-referential
+      implementation are working (github.com/spectralbranding/paper-repo). The full
+      fork-and-review lifecycle — fork creation, blinding function, reviewer branch
+      management, provenance chain propagation, federation — is conceptual.
+    severity: major
+    addressable: true
+
+  - description: >
+      Git literacy barrier. The majority of researchers outside CS and engineering have
+      never used Git. The protocol requires a GUI abstraction layer for adoption beyond
+      computationally literate disciplines.
+    severity: major
+    addressable: true
+
+  - description: >
+      No empirical adoption data. No evidence that journals, reviewers, or researchers
+      would adopt the protocol. The evaluation framework (Section 5.2) defines success
+      metrics but none have been measured.
+    severity: major
+    addressable: true
+
+  - description: >
+      Legacy corpus. The existing 50+ million published papers have no repository structure.
+      The protocol applies to new papers going forward; legacy papers are referenced by DOI
+      in dependencies without conversion.
+    severity: moderate
+    addressable: false
+
+repositories:
+  - name: "paper-repo"
+    url: "https://github.com/spectralbranding/paper-repo"
+    doi: ""  # PENDING
+
+submission_history:
+  - venue: "Zenodo"
+    date: "2026-03-28"
+    status: "published"
+    doi: "10.5281/zenodo.19294864"
+    notes: >
+      v1.0 initial preprint. ~13,850 words, 35 references, 7 claims.
+      Self-referential implementation. CC BY-NC-ND 4.0.
+  - venue: "JASIST (Journal of the Association for Information Science and Technology)"
+    date: "2026-03-29"
+    status: "desk_rejected"
+    manuscript_id: "JASIST-2026-03-0533"
+    decision_date: "2026-04-02"
+    doi: ""
+    notes: >
+      Desk rejection #1. Editor: Dr. Steve Sawyer. Reason: "not clear that the
+      work draws on information science literature." Paper read as software
+      engineering import. ~6,312 words body, 40 refs. Single-blind. ScholarOne.
+  - venue: "Journal of Electronic Publishing (JEP, U of Michigan)"
+    date: null
+    status: "pending_reformat"
+    manuscript_id: null
+    doi: ""
+    notes: >
+      Venue #2. Diamond OA (no APC). 30-year history of publishing innovation.
+      Reframing: lead with "publishing lacks version control" gap. ~6,000 word
+      compressed version at export/R14-paper-repository/jep/.

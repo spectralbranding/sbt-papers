@@ -1,0 +1,12 @@
+# DATA_MANIFEST.yaml — Spectral Portfolio Theory: Interference, Coherence, and Capacity in Multi-Brand Perception Space
+# External data dependencies per the Research-as-Repository protocol
+
+data_manifest:
+  - id: "zenodo-preprint"
+    description: >
+      Published preprint PDF on Zenodo. No external datasets —
+      this is a theoretical paper with no empirical data collection.
+    archive: "Zenodo"
+    doi: "10.5281/zenodo.19145099"
+    format: "PDF"
+    access: public

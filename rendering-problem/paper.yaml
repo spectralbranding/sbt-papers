@@ -1,0 +1,445 @@
+# paper.yaml — Paper Spec v0.1.0
+# Zharnikov (2026l): The Rendering Problem
+spec_version: "0.1.0"
+
+meta:
+  title: "The Rendering Problem: From Genetic Expression to Brand Perception"
+  authors:
+    - name: "Zharnikov, Dmitry"
+      orcid: "0009-0000-6893-9231"
+      affiliation: "Independent Researcher"
+  doi: "10.5281/zenodo.19064426"
+  date: "2026-01-01"
+  version: "1.0"
+  venue: "Working Paper (Zenodo)"
+  license: "CC-BY-4.0"
+  keywords:
+    - rendering problem
+    - specification gap
+    - emergence
+    - non-ergodicity
+    - organizational specification
+    - brand perception
+    - epigenetics
+    - systems theory
+    - viable system model
+    - design theory
+
+claims:
+  - id: "D1"
+    type: definition
+    statement: >
+      A specification S is a finite, explicit encoding of constraints and parameters that a
+      system must satisfy. The key property is boundedness: S can be fully enumerated,
+      inspected, and compared across instances.
+    formal: "S = {c_i}: finite, enumerable, bounded complexity"
+    testable: false
+    tested_in_paper: false
+    status: not_tested
+    depends_on: []
+
+  - id: "D2"
+    type: definition
+    statement: >
+      An implementation M is the realized system produced through the execution of specification
+      S in context C. The implementation's descriptive complexity substantially exceeds that
+      of the specification.
+    formal: "M = render(S, C): complexity(M) >> complexity(S)"
+    testable: true
+    tested_in_paper: false
+    status: not_tested
+    depends_on: ["D1"]
+
+  - id: "D3"
+    type: definition
+    statement: >
+      The specification gap is the complexity differential between implementation and specification.
+      The rendering problem asserts that this gap is a structural property of specification-to-
+      implementation chains, not an artifact of incomplete specification. A specification that
+      fully determined its implementation would not exhibit the rendering problem.
+    formal: "gap = complexity(M) - complexity(S) >> 0; structural, not reducible by adding detail to S"
+    testable: true
+    tested_in_paper: false
+    status: not_tested
+    depends_on: ["D1", "D2"]
+
+  - id: "D4"
+    type: definition
+    statement: >
+      A configuration layer is a set of contextual parameters that determine which elements
+      of specification S are active in a given context. The same specification S produces
+      different implementations under different configurations — the biological proof being
+      identical twins with divergent epigenomes (Fraga et al., 2005).
+    formal: "gamma: context -> active_subset(S); M = render(S, gamma(C))"
+    testable: true
+    tested_in_paper: false
+    status: not_tested
+    depends_on: ["D1"]
+
+  - id: "D5"
+    type: definition
+    statement: >
+      An emergent phenomenon E is a property of the integrated system that satisfies Bedau's
+      (1997) criteria for weak emergence: E is derivable in principle from the micro-level
+      dynamics but is not deducible from the specification alone without simulation of the
+      full system. Examples: consciousness (from genome/organism), customer experience (from
+      org-schema/operations), perception cloud (from brand guidelines/signal field).
+    formal: "E: P(E | S) < 1; E is weakly emergent in the sense of Bedau (1997)"
+    testable: true
+    tested_in_paper: false
+    status: not_tested
+    depends_on: ["D2"]
+
+  - id: "D6"
+    type: definition
+    statement: >
+      A system exhibits the rendering problem if and only if: (1) there exists a bounded,
+      enumerable specification S; (2) the implementation M has substantially greater
+      descriptive complexity than S (specification gap); (3) a configuration layer mediates
+      between S and M such that identical S produces non-identical M under varying configurations
+      (configuration dependence); and (4) the system produces an emergent phenomenon E
+      satisfying Definition 5 (weak emergence).
+    formal: >
+      rendering_problem(S, M, gamma, E) :=
+        bounded(S) AND complexity(M) >> complexity(S) AND
+        (gamma_1 != gamma_2 => M_1 != M_2) AND weakly_emergent(E, S)
+    testable: true
+    tested_in_paper: false
+    status: not_tested
+    depends_on: ["D1", "D2", "D3", "D4", "D5"]
+
+  - id: "P1"
+    type: proposition
+    statement: >
+      Structural Specification Gap: In any system exhibiting the rendering problem, the
+      descriptive complexity of the implementation substantially exceeds that of the
+      specification, and this gap cannot be closed by making the specification more detailed.
+      In biology: the genome (~6.4 billion bits) specifies organisms of vastly greater
+      descriptive complexity (37 trillion cells, 200+ cell types, 86 billion neurons).
+    formal: >
+      For all delta > 0, there exists S' with complexity(S') = complexity(S) + delta such that
+      complexity(M(S')) > complexity(M(S)) + delta: adding detail to the specification does not
+      close the gap; it may widen it through increased configuration space.
+    testable: true
+    tested_in_paper: false
+    status: not_tested
+    depends_on: ["D3"]
+
+  - id: "P2"
+    type: proposition
+    statement: >
+      Configuration Independence: Identical specifications produce non-identical implementations
+      when the configuration layer differs: S_1 = S_2 AND gamma_1 != gamma_2 implies M_1 != M_2.
+      Biological evidence: identical twins (same genome, different epigenetic configuration)
+      diverge measurably over time (Fraga et al., 2005). Organizational evidence: franchise
+      operations using identical operating manuals produce measurably different customer experiences.
+    formal: "S_1 = S_2 AND gamma_1 != gamma_2 => M_1 != M_2"
+    testable: true
+    tested_in_paper: false
+    status: not_tested
+    depends_on: ["D4"]
+
+  - id: "P3"
+    type: proposition
+    statement: >
+      Irreducible Emergence: The emergent phenomenon E cannot be predicted from the specification
+      S alone, even given complete knowledge of S: P(E | S) < 1. In biology: genotype does not
+      fully determine consciousness. In organizations: org-schema does not fully determine
+      customer experience. In brands: brand guidelines do not fully predict observer perception.
+    formal: "P(E | S) < 1; equivalently: E is not a computable function of S alone"
+    testable: true
+    tested_in_paper: false
+    status: not_tested
+    depends_on: ["D5"]
+
+  - id: "P4"
+    type: proposition
+    statement: >
+      Temporal Divergence: For any two implementations M_1, M_2 of the same specification S,
+      the distance d(M_1, M_2) increases over time: d/dt d(M_1, M_2) > 0 in expectation.
+      Evidence: Fraga et al. (2005) report increasing epigenetic divergence in identical twins
+      with age. Organizational: operational variance across franchise locations increases from
+      opening. Brand: perception cloud divergence across cultural markets increases over time.
+    formal: "E[d/dt d(M_1, M_2)] > 0 for M_1, M_2 = render(S, gamma_1), render(S, gamma_2) with gamma_1 != gamma_2"
+    testable: true
+    tested_in_paper: false
+    status: not_tested
+    depends_on: ["D4"]
+
+  - id: "P5"
+    type: proposition
+    statement: >
+      Specification Persistence: In systems exhibiting the rendering problem, the specification
+      persists through implementation turnover: the specification's lifespan exceeds the
+      average component lifespan by at least one order of magnitude. In biology: DNA persists
+      while cells turn over (avg cell lifespan << organism lifespan). In organizations: core
+      operating principles persist longer than employee tenure. In brands: brand identity
+      elements persist longer than marketing personnel and campaigns.
+    formal: "lifespan(S) >= 10 * avg_lifespan(component of M)"
+    testable: true
+    tested_in_paper: false
+    status: not_tested
+    depends_on: ["D1", "D2"]
+
+  - id: "P6"
+    type: proposition
+    statement: >
+      Specification Value Amplification under Acceleration: As the rate of implementation
+      generation increases, the value of specification quality increases. Organizations with
+      explicit, testable specifications extract more value from implementation acceleration
+      (including AI) than organizations without such specifications. This is equivalent to
+      Meadows' (2008) leverage point prediction: specification-layer interventions are higher-
+      leverage than implementation-layer interventions, and this leverage differential increases
+      as implementation speed increases.
+    formal: >
+      Let v(S, r) = value of specification S when implementation rate = r.
+      Proposition: dv/dr > 0 — value of specification quality increases with implementation rate.
+      Testability: compare output quality variance of AI-augmented organizations with vs.
+      without explicit operational specifications (OST-compliant).
+    testable: true
+    tested_in_paper: false
+    status: not_tested
+    depends_on: ["D1", "D2"]
+
+methodology:
+  type: theoretical
+  design: >
+    Framework construction identifying the rendering problem as a domain-independent structural
+    pattern that manifests wherever three conditions hold simultaneously: specification gap,
+    configuration dependence, and irreducible emergence. The paper proceeds through: (1) mapping
+    three domain instances (biology, organizations, brands) in Section 2; (2) providing formal
+    structural definitions in Section 3; (3) positioning against prior work — Morgan (1986),
+    Neilson et al. (2003), Dawkins (1976, 1982), Beer (1972), Checkland (1981), Ackoff (1981),
+    Whitehead (1929), Maturana & Varela (1980), Peters (2019) — in Section 4; (4) stating
+    six testable propositions in Section 5. No primary data collection. Grounded in established
+    biology, process philosophy, information theory, and non-ergodic dynamics.
+  analysis:
+    method: >
+      Conceptual synthesis across three domains (biology, organizations, brands) using structural
+      isomorphism argument (not analogy, not homology). Prior work positioning through critical
+      comparison against each predecessor framework. Proposition derivation from structural
+      definitions. Testability conditions specified for each proposition within at least one domain.
+    software: "None"
+
+acceptance:
+  - claim_id: "P1"
+    criterion: >
+      In biology: measure genome complexity (~6.4 Gbits) vs. phenotype complexity (by any
+      accepted information-theoretic measure). The structural claim (implementation >> specification)
+      is uncontested in biology (Noble, 2006); quantification is the challenge. In organizations:
+      compare specification document size (org-schema, brand guidelines) to total operational
+      information produced in a comparable period — orders-of-magnitude difference predicted.
+    falsification: >
+      Identify a non-trivial system where adding detail to the specification closes the gap —
+      where a sufficiently detailed specification fully determines the implementation and the
+      system nevertheless produces emergent properties. If such a system exists, P1 requires
+      qualification with boundary conditions.
+
+  - claim_id: "P2"
+    criterion: >
+      In biology: measure epigenetic divergence in identical twins over time; predict increasing
+      divergence with age (Fraga et al., 2005 data confirm this). In organizations: measure
+      customer experience variance across franchise locations with identical operating manuals
+      at 6-month and 18-month intervals from opening; predict increasing variance over time.
+    falsification: >
+      Identical specifications with different configurations produce identical implementations
+      across extended time periods (> 5 years). This would contradict the configuration
+      independence claim and suggest that implementation dynamics converge to a unique
+      attractor regardless of initial configuration differences.
+
+  - claim_id: "P4"
+    criterion: >
+      Epigenetic divergence in identical twins increases monotonically with age (Kaminsky et al.,
+      2009, confirm this). Operational variance across franchise locations increases from opening
+      to 18 months. Perception cloud divergence across cultural markets measurable through
+      SBT cohort composition comparison at T1 vs. T2.
+    falsification: >
+      Implementations of identical specifications converge over time rather than diverge. If
+      identical twin epigenomes become more similar with age (not less), P4 is falsified in
+      the biological domain.
+
+  - claim_id: "P6"
+    criterion: >
+      Organizations deploying AI with explicit operational specifications (OST-compliant) show
+      lower output quality variance and higher customer experience consistency than organizations
+      deploying AI without such specifications. Measurable as: SD(quality) across AI-generated
+      outputs is lower for specified vs. unspecified organizations in same domain.
+    falsification: >
+      Increasing implementation speed reduces the value of specification quality — unspecified
+      systems benefit equally or more from AI acceleration. This would contradict both the
+      rendering problem prediction and Meadows' (2008) leverage point hierarchy.
+
+data:
+  available: false
+  url: ""
+  notes: >
+    No primary data collected. Biological evidence cited from published literature (Fraga et al.,
+    2005; Kaminsky et al., 2009; Sender & Milo, 2021; Spalding et al., 2005). Organizational
+    and brand evidence is illustrative. Empirical validation requires domain-specific studies
+    in each of the three domains.
+
+code:
+  available: false
+  url: ""
+  notes: "No computational component. All analysis is conceptual and theoretical."
+
+replication:
+  feasible: true
+  estimated_cost: "< $500 USD (literature synthesis; no new data collection)"
+  estimated_time: "2-3 months"
+  requirements:
+    - "Access to biological literature on epigenetics (Fraga et al. 2005, Kaminsky et al. 2009)"
+    - "Access to organizational theory literature (Morgan 1986, Beer 1972, Checkland 1981)"
+    - "Access to SBT and OST papers (Zharnikov 2026a, 2026i)"
+    - "Access to Peters (2019) on non-ergodicity"
+
+dependencies:
+  - doi: "10.5281/zenodo.18945912"
+    claim: "Zharnikov (2026a) SBT — provides the brand perception instance of the rendering problem: brand guidelines (specification) -> signal field (implementation) -> perception cloud (emergence)"
+    relationship: "applies"
+    critical: true
+
+  - doi: "10.5281/zenodo.18946043"
+    claim: "Zharnikov (2026i) OST — provides the organizational instance of the rendering problem: org-schema L0-L5 (specification) -> operations (implementation) -> customer experience (emergence)"
+    relationship: "applies"
+    critical: true
+
+  - doi: "10.1038/s41567-019-0732-0"
+    claim: "Peters (2019) ergodicity economics — non-ergodic dynamics motivate P4 (temporal divergence): multiplicative path-dependent processes explain why implementations of identical specifications diverge"
+    relationship: "applies"
+    critical: false
+
+  - reference: "Fraga, M. F., Ballestar, E., Paz, M. F., et al. (2005). Epigenetic differences arise during the lifetime of monozygotic twins. Proceedings of the National Academy of Sciences, 102(30), 10604-10609."
+    claim: "Fraga et al. (2005) — empirical demonstration of P2 (configuration independence) and P4 (temporal divergence) in the biological domain: identical twins with same genome diverge epigenetically with age"
+    relationship: "tests"
+    critical: true
+
+  - reference: "Bedau, M. A. (1997). Weak emergence. Philosophical Perspectives, 11, 375-399."
+    claim: "Bedau (1997) weak emergence criterion — Definition 5 adopts Bedau's formalization of emergence as the criterion for the emergent layer"
+    relationship: "applies"
+    critical: true
+
+  - reference: "Beer, S. (1972). Brain of the firm. Herder and Herder."
+    claim: "Beer (1972) Viable System Model — OST's L0-L5 cascade parallels VSM S1-S5; Section 4.4 positions rendering problem as extending VSM by formalizing the specification gap"
+    relationship: "extends"
+    critical: false
+
+  - reference: "Morgan, G. (1986). Images of organization. Sage."
+    claim: "Morgan (1986) organization as organism metaphor — rendering problem is positioned against Morgan: not a metaphor but a structural isomorphism"
+    relationship: "extends"
+    critical: false
+
+  - reference: "Meadows, D. H. (2008). Thinking in systems: A primer. Chelsea Green."
+    claim: "Meadows (2008) leverage points — P6 is a restatement of Meadows' leverage point hierarchy: specification-layer interventions are highest leverage"
+    relationship: "applies"
+    critical: false
+
+results:
+  - claim_id: "P1"
+    status: not_tested
+    notes: >
+      Biological evidence is cited but not newly collected. Noble (2006) and Oyama (2000)
+      are cited as establishing the structural claim. The measurement challenge (quantifying
+      phenotype information content) is acknowledged as unresolved. The structural claim is
+      treated as established in the biological literature; organizational and brand measurement
+      is not conducted.
+
+  - claim_id: "P2"
+    status: not_tested
+    notes: >
+      Fraga et al. (2005) and Kaminsky et al. (2009) data are cited as supporting the
+      biological instance. Franchise organization divergence is asserted but not measured.
+      Brand perception cloud divergence across cultural markets is asserted but not measured.
+      No primary data collected.
+
+  - claim_id: "P3"
+    status: not_tested
+    notes: >
+      The irreducible emergence claim is argued through reference to consciousness theories
+      (Tononi, Baars, Rosenthal), all of which agree consciousness is not reducible to
+      specification or implementation. The organizational and brand instances are argued by
+      reference to SBT's observer heterogeneity. No empirical test conducted.
+
+  - claim_id: "P4"
+    status: not_tested
+    notes: >
+      Fraga et al. (2005) is cited as confirming the biological instance. Sterman (2000)
+      provides system dynamics support for organizational divergence. Brand divergence is
+      predicted from Peters (2019) non-ergodicity. No primary measurement conducted.
+
+  - claim_id: "P5"
+    status: not_tested
+    notes: >
+      DNA persistence vs. cell turnover is cited from Spalding et al. (2005) and Sender &
+      Milo (2021). Organizational specification persistence is argued but not measured.
+      Brand identity element persistence vs. campaign personnel turnover is asserted but
+      not measured.
+
+  - claim_id: "P6"
+    status: not_tested
+    notes: >
+      AI acceleration argument is theoretical. The prediction is directional (organizations
+      with explicit specifications extract more coherent value from AI) and consistent with
+      Meadows' leverage point framework. No empirical comparison of AI-augmented specified
+      vs. unspecified organizations conducted.
+
+limitations:
+  - description: >
+      Cross-domain measurement challenge: the specification gap is defined as an information
+      differential, but measuring implementation information content is non-trivial. In
+      biology, no accepted quantification of phenotype information exists. In organizations
+      and brands, "implementation information" lacks standardized measurement. Propositions
+      1-4 require operationalization specific to each domain before empirical testing.
+    severity: major
+    addressable: true
+
+  - description: >
+      All six propositions are stated but not empirically tested. The paper is entirely
+      theoretical. No primary data collection. Claims are supported by existing literature
+      citations rather than new evidence.
+    severity: major
+    addressable: true
+
+  - description: >
+      Western bias: the empirical grounding draws primarily on Western biology, Western brands
+      (Hermes, IKEA, Patagonia, Tesla, Erewhon), and Western organizational theory. Whether
+      the rendering problem's structural claims hold in non-Western organizational forms
+      (keiretsu, chaebol, guanxi-based enterprises) requires separate investigation.
+    severity: moderate
+    addressable: true
+
+  - description: >
+      Emergence criteria: Definition 5's weak emergence criterion ("not derivable from S
+      alone") may be too weak — it could be satisfied technically by systems where emergence
+      is derivable given sufficient computation. The paper adopts a pragmatic stance
+      (if no known derivation exists, criterion is met) without fully resolving this.
+    severity: moderate
+    addressable: true
+
+  - description: >
+      The boundary between "coordinate system" specifications (which exhibit the rendering
+      problem) and "blueprint" specifications (which do not, e.g., thermostats, sorting
+      algorithms) is acknowledged as a matter of degree. The theory does not provide a
+      principled threshold for when the rendering problem's properties become negligible.
+    severity: moderate
+    addressable: true
+
+  - description: >
+      Reductive risk: by identifying a common pattern across biology and business, the
+      paper risks biological determinism readings. The paper explicitly disclaims this
+      (Section 6.1) but the structural language may invite such readings.
+    severity: minor
+    addressable: true
+
+repositories:
+  - platform: "Zenodo"
+    doi: "10.5281/zenodo.19064426"
+    url: "https://doi.org/10.5281/zenodo.19064426"
+    version: "v1"
+    date: "2026-03-17"
+
+submission_history:
+  - venue: "Systems Research and Behavioral Science"
+    date_submitted: "2026-03-17"
+    decision: under_review
+    notes: "Manuscript ID: 8927197"

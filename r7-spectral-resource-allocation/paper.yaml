@@ -1,0 +1,504 @@
+# paper.yaml — Paper Spec v0.1.0
+# Zharnikov (2026k): Spectral Resource Allocation
+spec_version: "0.1.0"
+
+meta:
+  title: "Spectral Resource Allocation: Demand-Driven Investment in Multi-Dimensional Brand Space"
+  authors:
+    - name: "Zharnikov, Dmitry"
+      orcid: "0009-0000-6893-9231"
+      affiliation: "Independent Researcher"
+  doi: "10.5281/zenodo.19009268"
+  date: "2026-01-01"
+  version: "1.0"
+  venue: "Working Paper (Zenodo)"
+  license: "CC-BY-4.0"
+  keywords:
+    - brand resource allocation
+    - spectral perception
+    - alignment gap
+    - founder bias
+    - multi-dimensional optimization
+    - cohort targeting
+    - Spectral Brand Theory
+    - observer cohorts
+    - quadratic value function
+
+claims:
+  - id: "D1"
+    type: definition
+    statement: >
+      The spectral value function V(s, c) = sum_i w_i(c) * s_i = <w(c), s>
+      is the inner product of cohort c's weight vector with the brand's
+      signal portfolio. It represents the cohort's overall brand evaluation —
+      the perceptual equivalent of utility. The function is linear in s for
+      a given cohort; the same portfolio produces different values for
+      different cohorts because weight profiles w(c) differ.
+    formal: "V(s, c) = <w(c), s> where w(c) in Delta^7, s in R^8_+"
+    testable: true
+    tested_in_paper: false
+    status: not_tested
+    depends_on: []
+
+  - id: "D2"
+    type: definition
+    statement: >
+      The alignment gap A(f, c) = V(s*_f, f) - V(s*_f, c) is the difference
+      between what founder f perceives as the value of their optimized signal
+      portfolio s*_f and what target cohort c actually perceives from that
+      same portfolio. The gap is not symmetric: A(f, c) ≠ A(c, f).
+    formal: "A(f, c) = V(s*_f, f) - V(s*_f, c) where s*_f = argmax_s [V(s,f) - lambda*C(s)]"
+    testable: true
+    tested_in_paper: false
+    status: not_tested
+    depends_on: ["D1"]
+
+  - id: "T1"
+    type: theorem
+    statement: >
+      Optimal dimensional allocation: let c be a target cohort with weight
+      profile w(c) in Delta^7 and let c_i(s_i) = (alpha_i/2)*s_i^2 be the
+      quadratic cost on dimension i. The signal portfolio maximizing V(s,c) -
+      lambda*C(s) is s*_i(c) = w_i(c) / (lambda*alpha_i) for i=1,...,8.
+      For general convex costs the optimum satisfies w_i(c) = lambda*c_i'(s*_i).
+    formal: "s*_i(c) = w_i(c) / (lambda * alpha_i); FOC: w_i(c) = lambda * c_i'(s*_i)"
+    testable: true
+    tested_in_paper: false
+    status: supported
+    depends_on: ["D1"]
+
+  - id: "C1"
+    type: proposition
+    statement: >
+      Investment ratio: for any two active dimensions i, j with w_i(c), w_j(c) > 0,
+      the optimal signal strength ratio is s*_i / s*_j = (w_i(c)/w_j(c)) * (alpha_j/alpha_i).
+      The ratio depends only on the weight ratio and the inverse cost ratio.
+      Despite the cohort weighting dimension i more highly, high cost alpha_i
+      may equalize or reverse the optimal investment allocation.
+    formal: "s*_i / s*_j = [w_i(c)/w_j(c)] * [alpha_j/alpha_i]"
+    testable: true
+    tested_in_paper: false
+    status: supported
+    depends_on: ["T1"]
+
+  - id: "P1"
+    type: proposition
+    statement: >
+      Concentration premium: for two cohorts with the same mean weight w_bar = 1/8
+      but different concentrations, the cohort with higher Herfindahl index
+      H(c) = sum_i w_i(c)^2 achieves higher optimal value V*(c) = H(c)/(lambda*alpha_bar)
+      under uniform costs. Concentrated (niche) cohorts are inherently more
+      valuable to serve than diffuse (mass-market) cohorts, holding costs equal.
+    formal: "V*(c) = H(c)/(lambda*alpha_bar); H(c) >= 1/8 with equality at uniform weights"
+    testable: true
+    tested_in_paper: false
+    status: supported
+    depends_on: ["T1"]
+
+  - id: "T2"
+    type: theorem
+    statement: >
+      Alignment gap lower bound: let d_FR(w(f), w(c)) be the Fisher-Rao distance
+      between founder and cohort weight profiles on Delta^7. Then A(f,c) >= H(f,c)^2 / (2*lambda*alpha_bar),
+      where H(f,c) = (1/sqrt(2)) * ||sqrt(w(f)) - sqrt(w(c))||_2 is the Hellinger
+      distance. More precisely: A(f,c) >= d_FR(w(f),w(c))^2 / (4*8*lambda*alpha_bar).
+      Perceptual distance directly predicts economic loss.
+    formal: "A(f,c) >= H(f,c)^2 / (2*lambda*alpha_bar); H(f,c)^2 = 1 - BC(f,c)"
+    testable: true
+    tested_in_paper: false
+    status: supported
+    depends_on: ["D2", "T1"]
+
+  - id: "P2"
+    type: proposition
+    statement: >
+      Alignment gap under quadratic costs with uniform parameters alpha_i = alpha_bar:
+      A(f,c) = (1/(lambda*alpha_bar)) * [||w(f)||^2 - <w(f), w(c)>].
+      The gap is proportional to the founder's weights projected onto the
+      difference vector (w(f) - w(c)). Large gaps arise when the founder has
+      concentrated weights AND the founder and cohort disagree on which dimensions
+      matter.
+    formal: "A(f,c) = (1/(lambda*alpha_bar)) * [sum_i w_i(f)^2 - sum_i w_i(f)*w_i(c)]"
+    testable: true
+    tested_in_paper: false
+    status: supported
+    depends_on: ["D2", "T1"]
+
+  - id: "P3"
+    type: proposition
+    statement: >
+      Blind spots are worse than projections: for a founder with one spectral
+      blind spot (w_j(f) = 0, w_j(c) = beta > 0) versus a founder with the
+      same total weight misallocation but no blind spots (w_j(f) = epsilon > 0),
+      the blind-spot founder has a strictly larger alignment gap. Furthermore,
+      blind spots are undetectable by the founder — the dimension is perceptually
+      invisible, making the gap irreducible without external measurement.
+    formal: "A_blind > A_projection when w_j(f)=0 vs w_j(f)=epsilon for any epsilon>0"
+    testable: true
+    tested_in_paper: false
+    status: supported
+    depends_on: ["D2", "T2"]
+
+  - id: "T3"
+    type: theorem
+    statement: >
+      Multi-cohort efficiency bound: a single signal portfolio s achieves at
+      least (1-epsilon) fraction of the sum of individual optima for k cohorts
+      if and only if the cohorts' weight profiles lie within a Fisher-Rao ball
+      of radius r(epsilon) <= arccos(1 - epsilon/2) approx sqrt(epsilon) on Delta^7.
+      For epsilon=0.10 (10% efficiency loss): max Fisher-Rao radius r approx 0.32.
+    formal: "r(epsilon) <= arccos(1 - epsilon/2); at epsilon=0.10: r approx 0.32"
+    testable: true
+    tested_in_paper: false
+    status: supported
+    depends_on: ["T1", "D1"]
+
+  - id: "C2"
+    type: proposition
+    statement: >
+      Cohort coverage threshold: the number of cohorts a single brand can
+      efficiently serve (at epsilon=0.10 efficiency loss) is bounded by the
+      Fisher-Rao covering number of the target region on Delta^7, approximately
+      k_max ~ (pi/(2*r(epsilon)))^7. For epsilon=0.10: k_max approx 6.7*10^4.
+    formal: "k_max ~ (pi / (2 * r(epsilon)))^7; at epsilon=0.10: k_max approx 6.7*10^4"
+    testable: false
+    tested_in_paper: false
+    status: supported
+    depends_on: ["T3"]
+
+  - id: "T4"
+    type: theorem
+    statement: >
+      Metamerism and cost-minimizing signal portfolios: the cost-minimizing signal
+      portfolio achieving a target perception p_target = V(s, c) for cohort c is
+      generically unique when all 8 dimensions are active (w_i(c) > 0 for all i),
+      but admits an (8-k)-dimensional family of solutions when only k < 8 dimensions
+      have positive cohort weight. This connects to spectral metamerism: distinct
+      signal portfolios can produce identical perceived value for a given cohort.
+    formal: "Cost-min metamer: unique when k=8; (8-k)-dim family when k<8 active dimensions"
+    testable: true
+    tested_in_paper: false
+    status: supported
+    depends_on: ["T1", "D1"]
+
+  - id: "T5"
+    type: theorem
+    statement: >
+      Optimal allocation with interaction effects: under the quadratic value function
+      V_Q(s,c) = sum_i w_i*s_i + sum_{i<j} w_{ij}*s_i*s_j with interaction matrix
+      W=(w_{ij}) and cost Lambda = lambda*diag(alpha_1,...,alpha_8), the optimal
+      signal portfolio satisfies (Lambda - W)*s* = w(c). When Lambda - W is
+      positive definite the solution is unique: s* = (Lambda - W)^{-1} * w(c).
+      Optimal allocation shifts toward complementary dimensions (w_{ij}>0) and
+      away from substitutive dimensions (w_{ij}<0).
+    formal: "(Lambda - W)*s* = w(c); s* = (Lambda - W)^{-1} * w(c) when Lambda - W > 0"
+    testable: true
+    tested_in_paper: false
+    status: supported
+    depends_on: ["T1"]
+
+  - id: "C3"
+    type: proposition
+    statement: >
+      Under the quadratic value function, complementary dimension pairs
+      (narrative*temporal: w_{2,8} > 0 for luxury/craft cohorts; heritage premium)
+      increase optimal investment in both dimensions jointly relative to the linear
+      case. Substitutive dimension pairs (ideological*economic: w_{3,6} < 0 for
+      disruption cohorts; luxury paradox) reduce optimal investment in one dimension
+      when the other is high.
+    formal: "Complements (w_{ij}>0): s*_i increases with s*_j. Substitutes (w_{ij}<0): s*_i decreases with s*_j."
+    testable: true
+    tested_in_paper: false
+    status: supported
+    depends_on: ["T5"]
+
+methodology:
+  type: theoretical
+  design: >
+    Formal economic model of brand resource allocation within Spectral Brand
+    Theory. The spectral value function V(s,c) = <w(c), s> is optimized
+    against a separable convex cost function C(s) = sum_i c_i(s_i) under
+    budget constraint. First-order conditions yield optimal allocation (T1).
+    The alignment gap (D2) measures economic loss from founder weight projection;
+    its lower bound in terms of Fisher-Rao distance is proved via the Hellinger
+    distance and Cauchy-Schwarz inequality (T2). The multi-cohort efficiency
+    bound (T3) uses convexity of V* in w and Fisher-Rao curvature. The quadratic
+    extension (T5) yields a linear system. Application to five case-study brands
+    demonstrates that alignment gap ordering corresponds to known product-market
+    fit outcomes.
+  analysis:
+    method: >
+      Lagrangian optimization (convex, separable); first-order conditions;
+      Hellinger distance and Cauchy-Schwarz inequality; convexity arguments;
+      linear algebra (positive definite system inversion for T5);
+      conceptual mapping of five strategy frameworks to spectral model;
+      case-study application to five SBT brands
+    software: "None (analytical)"
+
+acceptance:
+  - claim_id: "T1"
+    criterion: >
+      Empirically measured cohort weight profiles w(c) from brand surveys,
+      combined with observed brand investment allocations s, should show that
+      brands with higher empirical s_i/s_j ratios tend to serve cohorts with
+      higher w_i/w_j ratios (adjusted for dimension-specific cost proxies),
+      consistent with the optimality condition.
+    falsification: >
+      Observed brand investment allocations show no correlation with target
+      cohort weight profiles, or high-w_i cohorts are not better served by
+      high-s_i brands, suggesting the spectral value function is not a
+      useful model of brand evaluation.
+
+  - claim_id: "T2"
+    criterion: >
+      Among startups with measured founder and target-cohort spectral profiles,
+      larger Fisher-Rao distance between founder and cohort predicts lower
+      product-market fit scores (NPS, revenue growth, retention), consistent
+      with the alignment gap lower bound.
+    falsification: >
+      Fisher-Rao distance between founder and cohort profiles shows no
+      correlation with product-market fit outcomes, or the correlation is
+      negative (larger distance predicts better fit), contradicting the theorem.
+
+  - claim_id: "T3"
+    criterion: >
+      Brands attempting to serve multiple cohorts with a single signal portfolio
+      exhibit lower per-cohort satisfaction scores when the cohorts' Fisher-Rao
+      spread exceeds r(0.10) approx 0.32, consistent with the efficiency bound.
+    falsification: >
+      Single-portfolio brands serve diverse cohorts (Fisher-Rao spread > 0.32)
+      without measurable satisfaction decline relative to targeted portfolios.
+
+  - claim_id: "T5"
+    criterion: >
+      For luxury/craft cohorts (positive narrative*temporal interaction), brands
+      that invest in both narrative and temporal dimensions (heritage storytelling)
+      outperform brands that invest in only one dimension by more than the sum
+      of marginal contributions, consistent with the complementarity prediction.
+    falsification: >
+      Interaction weights w_{ij} are indistinguishable from zero across cohort
+      types in empirical data, making the quadratic extension unnecessary and
+      T5 empirically vacuous.
+
+data:
+  available: false
+  url: ""
+  notes: >
+    No primary data collected. Five case-study brand profiles (Hermes, IKEA,
+    Patagonia, Erewhon, Tesla) are from Zharnikov (2026a) and used for
+    illustrative application only — profiles are author-assigned, not survey-derived.
+    Hypothetical founder and cohort profiles are constructed for illustration.
+    Empirical validation requires MaxDiff or conjoint studies to measure
+    actual cohort weight profiles w(c) and founder profiles w(f).
+
+code:
+  available: true
+  url: "https://github.com/spectralbranding/sbt-framework"
+  notes: >
+    The sbt-framework repository implements SBT dimension scoring, cohort
+    clustering, and the Fisher-Rao metric on Delta^7. The resource allocation
+    model (T1: s*_i = w_i/(lambda*alpha_i)) can be computed directly from
+    cohort weight profiles output by sbt-framework. The quadratic system
+    (T5: (Lambda-W)*s* = w(c)) requires numpy.linalg.solve or equivalent.
+    No dedicated implementation of the alignment gap or multi-cohort efficiency
+    bound exists in the repository at time of writing.
+
+replication:
+  feasible: true
+  estimated_cost: "< $50,000 USD for empirical validation (MaxDiff survey + startup data); analytical replication is trivial"
+  estimated_time: "1 week (analytical); 12-24 months (empirical validation)"
+  requirements:
+    - "Analytical: verify T1 by solving Lagrangian FOC for quadratic costs"
+    - "Analytical: verify T2 by computing Hellinger distance bound via Cauchy-Schwarz"
+    - "Analytical: verify T5 by solving (Lambda-W)*s* = w(c) as linear system"
+    - "Empirical: MaxDiff or conjoint survey measuring w(c) for 3+ cohorts across 5+ brands"
+    - "Empirical: founder self-assessment survey measuring w(f) for startup founders"
+    - "Empirical: product-market fit outcome data (NPS, retention, revenue) for same companies"
+    - "Empirical: minimum n=50 founders with matched cohort data for T2 test"
+
+dependencies:
+  - doi: "10.5281/zenodo.18945912"
+    claim: "Zharnikov (2026a) SBT — defines the 8-dimensional brand space, observer cohort weight profiles on Delta^7, signal portfolios in R^8_+, and five case-study brands"
+    relationship: "extends"
+    critical: true
+
+  - doi: "10.5281/zenodo.18945295"
+    claim: "Zharnikov (2026d) R1 — establishes Fisher-Rao metric on Delta^7 and Aitchison metric on R^8_+; T2 uses Fisher-Rao distance as the geometric lower bound on the alignment gap"
+    relationship: "applies"
+    critical: true
+
+  - doi: "10.5281/zenodo.18945352"
+    claim: "Zharnikov (2026e) R2 — spectral metamerism result: distinct signal portfolios can produce identical perceived value; T4 gives the economic interpretation of metamerism"
+    relationship: "applies"
+    critical: true
+
+  - doi: "10.5281/zenodo.18945477"
+    claim: "Zharnikov (2026f) R3 — cohort boundary fuzziness; referenced in multi-cohort optimization constraints"
+    relationship: "applies"
+    critical: false
+
+  - doi: "10.5281/zenodo.18945522"
+    claim: "Zharnikov (2026g) R4 — sphere packing capacity bounds; referenced as constraint in multi-cohort allocation (positioning capacity bound)"
+    relationship: "applies"
+    critical: false
+
+  - doi: "10.5281/zenodo.18945591"
+    claim: "Zharnikov (2026h) R5 — specification impossibility; referenced as constraint in multi-cohort optimization (only K dimensions can be fully specified)"
+    relationship: "applies"
+    critical: false
+
+  - reference: "Zharnikov, D. (2026j). Non-Ergodic Perception Dynamics. Working Paper (Zenodo)."
+    claim: "Zharnikov (2026j) R6 — non-ergodic dynamics; non-ergodicity constraint in multi-cohort allocation: early investment compounds, misallocation is not recoverable by averaging"
+    relationship: "applies"
+    critical: false
+
+  - reference: "Lancaster, K. J. (1966). A new approach to consumer theory. Journal of Political Economy, 74(2), 132-157."
+    claim: "Lancaster (1966) — characteristics approach motivating the quadratic value function (bundles of dimensions, not just individual dimensions); T5 formalizes Lancaster's insight with a spectral metric"
+    relationship: "extends"
+    critical: true
+
+  - reference: "Zharnikov, D. (2026i). Organization as Specification. Working Paper (Zenodo). DOI: 10.5281/zenodo.18946043."
+    claim: "Zharnikov (2026i) OST — provides the L0 demand-validation gate interpretation of the alignment gap; the resource allocation model connects to OST's six-level cascade"
+    relationship: "applies"
+    critical: false
+
+results:
+  - claim_id: "T1"
+    status: supported
+    notes: >
+      Lagrangian derivation: FOC w_i(c) = lambda*alpha_i*s_i gives s*_i = w_i(c)/(lambda*alpha_i).
+      Second-order condition satisfied by strict convexity of c_i. Non-negativity
+      automatic from w_i >= 0. Interpretively: invest proportionally to cohort weight
+      and inversely to production cost.
+
+  - claim_id: "C1"
+    status: supported
+    notes: >
+      Direct ratio of T1 solutions: s*_i/s*_j = [w_i(c)/alpha_i] / [w_j(c)/alpha_j].
+      Operationally: a cohort weighting experiential 2.5x more than economic but
+      with 3x cost disadvantage should receive nearly equal investment.
+
+  - claim_id: "P1"
+    status: supported
+    notes: >
+      V*(c) = sum_i w_i^2/(lambda*alpha_bar) = H(c)/(lambda*alpha_bar).
+      Since H(c) >= 1/8 with equality at uniform weights, concentrated cohorts
+      achieve strictly higher V*. Niche cohort premium is exact under uniform costs.
+
+  - claim_id: "T2"
+    status: supported
+    notes: >
+      Proof via Hellinger distance: H(f,c)^2 = 1 - BC(f,c) where BC is Bhattacharyya
+      coefficient. Cauchy-Schwarz gives ||w(f)||^2 - <w(f),w(c)> >= ||w(f)||^2 * H^2.
+      Since ||w(f)||^2 >= 1/8: A(f,c) >= H^2/(8*lambda*alpha_bar). Fisher-Rao
+      connection: d_FR approx 2H for small distances. Lower bound is tight at
+      w(f) = w(c) (zero gap).
+
+  - claim_id: "P2"
+    status: supported
+    notes: >
+      Direct calculation: V(s*_f, f) = ||w(f)||^2/(lambda*alpha_bar),
+      V(s*_f, c) = <w(f),w(c)>/(lambda*alpha_bar). Difference = P2 formula.
+      Two components: founder concentration (||w(f)||^2) and disagreement
+      (<w(f),w(c)> low when weights diverge).
+
+  - claim_id: "P3"
+    status: supported
+    notes: >
+      The blind-spot founder assigns s*_j = 0, losing the full cohort value
+      w_j(c)*s^opt_j(c). The projection founder with w_j(f) = epsilon > 0
+      partially serves the cohort's need. Difference is positive for any epsilon > 0,
+      establishing strict inequality. Undetectability follows from w_j(f) = 0
+      making the dimension invisible.
+
+  - claim_id: "T3"
+    status: supported
+    notes: >
+      Proof sketch: optimum for aggregate cohort is w_bar = weighted mean of cohort
+      profiles. Efficiency loss is bounded by the variance of profiles around w_bar,
+      which is bounded by the Fisher-Rao spread via the curvature of V*. Threshold
+      r(0.10) approx 0.32 computed from arccos(1 - 0.10/2).
+
+  - claim_id: "T5"
+    status: supported
+    notes: >
+      Section 6 (quadratic value function): FOC for V_Q - lambda*C gives the
+      linear system (Lambda - W)*s* = w(c). Positive definiteness of Lambda - W
+      required for a maximum (guarantees unique solution). Heritage premium
+      (w_{narrative,temporal} > 0) and luxury paradox (w_{ideological,economic} < 0)
+      are empirically motivated sign patterns. Corollary 3 follows directly.
+
+  - claim_id: "C3"
+    status: supported
+    notes: >
+      Follows from T5: partial derivative of s*_i with respect to w_{ij} shows
+      investment in dimension i increases with positive w_{ij} (complements)
+      and decreases with negative w_{ij} (substitutes). Heritage premium and
+      luxury paradox are two named examples with sign structure confirmed by
+      brand case analysis.
+
+limitations:
+  - description: >
+      The case-study analysis uses hypothetical founder and cohort profiles.
+      Empirical validation requires measuring actual spectral profiles through
+      consumer surveys (MaxDiff, conjoint) and founder self-assessment.
+      Large-scale empirical implementation of cohort weight measurement remains
+      future work.
+    severity: major
+    addressable: true
+
+  - description: >
+      The quadratic cost assumption c_i(s_i) = (alpha_i/2)*s_i^2 is convenient
+      but not empirically validated. Real cost functions may exhibit non-convexities
+      (threshold effects where signals below a minimum strength are imperceptible).
+      Estimating alpha_i requires operational data at the dimensional level that
+      few organizations currently track.
+    severity: moderate
+    addressable: true
+
+  - description: >
+      The model is static: it optimizes the signal portfolio at a single point
+      in time. Zharnikov (2026j) establishes that brand perception evolves
+      non-ergodically, with early investments compounding multiplicatively.
+      Integrating the static resource allocation model with non-ergodic dynamics
+      to produce a dynamic investment trajectory is a necessary extension for
+      capital budgeting applications.
+    severity: moderate
+    addressable: true
+
+  - description: >
+      Interaction effects (Section 6) are introduced on the value side through
+      the quadratic value function, but cost interaction terms c_{ij}(s_i, s_j)
+      are excluded by the separable cost assumption. In practice, narrative and
+      semiotic signals share creative infrastructure, and experiential and economic
+      signals interact through pricing psychology. Cost cross-terms would alter
+      optimal allocation quantitatively.
+    severity: minor
+    addressable: true
+
+  - description: >
+      The model treats the firm as a unified optimizer. In practice, dimensional
+      investment is distributed across departments (marketing owns semiotic/narrative,
+      operations owns experiential, finance owns economic). Coordinating distributed
+      optimization introduces organizational specification complexity (Zharnikov, 2026h).
+    severity: minor
+    addressable: true
+
+  - description: >
+      The interaction weight matrix W(c) = (w_{ij}(c)) is observer-dependent and
+      must be estimated empirically per cohort. No measurement protocol for W(c)
+      is provided in this paper. The heritage premium and luxury paradox are
+      qualitatively motivated but not empirically estimated.
+    severity: moderate
+    addressable: true
+
+repositories:
+  - platform: "Zenodo"
+    doi: "10.5281/zenodo.19009268"
+    url: "https://doi.org/10.5281/zenodo.19009268"
+    version: "v1"
+    date: "2026-03-24"
+  - platform: "GitHub"
+    url: "https://github.com/spectralbranding/sbt-papers/tree/main/r7-spectral-resource-allocation"
+
+submission_history: []

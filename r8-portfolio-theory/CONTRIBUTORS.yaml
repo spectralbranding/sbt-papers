@@ -1,0 +1,33 @@
+# CONTRIBUTORS.yaml — Spectral Portfolio Theory: Interference, Coherence, and Capacity in Multi-Brand Perception Space
+# Verified contributor attribution per the Research-as-Repository protocol
+
+contributors:
+  - name: "Dmitry Zharnikov"
+    orcid: "0009-0000-6893-9231"
+    type: human
+    roles:
+      - conceptualization
+      - methodology
+      - writing-original
+      - formal-analysis
+      - project-administration
+    affiliation: "Independent Researcher"
+    first_commit: "2026-03-15"
+    last_commit: "2026-03-26"
+
+  - name: "Claude (Anthropic)"
+    type: ai_tool
+    roles:
+      - writing-review
+      - consistency-checking
+    disclosure: >
+      Used for manuscript review, terminology consistency checking,
+      and editorial feedback. All theoretical propositions and
+      intellectual contributions are solely the author's work.
+
+  - name: "Gemini Deep Research (Google)"
+    type: ai_tool
+    roles:
+      - investigation
+    disclosure: >
+      Used for literature landscape mapping. All results independently verified.

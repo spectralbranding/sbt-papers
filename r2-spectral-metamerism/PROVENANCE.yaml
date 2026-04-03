@@ -1,0 +1,19 @@
+# PROVENANCE.yaml — Spectral Metamerism in Brand Perception
+# Fork history and submission records per the Research-as-Repository protocol
+
+provenance:
+  paper_title: "Spectral Metamerism in Brand Perception: Projection Bounds from High-Dimensional Geometry"
+  citation_key: "2026e"
+  repository: "spectralbranding/sbt-papers/r2-spectral-metamerism"
+
+  forks:
+    - id: "fork-2026-03-11-zenodo"
+      target: "Zenodo"
+      target_type: preprint_server
+      created: "2026-03-11"
+      source_commit: "main"
+      status: merged
+      outcome: published
+      identifiers:
+        doi: "10.5281/zenodo.18945353"
+        community: ["spectral-branding"]

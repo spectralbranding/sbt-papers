@@ -1,0 +1,19 @@
+# PROVENANCE.yaml — R1: Brand Space Geometry (2026d)
+# Fork history and submission records per the Research-as-Repository protocol
+
+provenance:
+  paper_title: "Brand Space Geometry: A Formal Metric for Multi-Dimensional Brand Perception"
+  citation_key: "2026d"
+  repository: "spectralbranding/sbt-papers/r1-formal-metric"
+
+  forks:
+    - id: "fork-2026-03-11-zenodo"
+      target: "Zenodo"
+      target_type: preprint_server
+      created: "2026-03-11"
+      source_commit: "main"
+      status: merged
+      outcome: published
+      identifiers:
+        doi: "10.5281/zenodo.18945296"
+        community: ["spectral-branding"]
