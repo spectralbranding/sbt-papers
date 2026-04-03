@@ -1,0 +1,19 @@
+# PROVENANCE.yaml — Spectral Resource Allocation: Demand-Driven Investment in Multi-Dimensional Brand Space
+# Fork history and submission records per the Research-as-Repository protocol
+
+provenance:
+  paper_title: "Spectral Resource Allocation: Demand-Driven Investment in Multi-Dimensional Brand Space"
+  citation_key: "2026k"
+  repository: "spectralbranding/sbt-papers/r7-spectral-resource-allocation"
+
+  forks:
+    - id: "fork-2026-03-13-zenodo"
+      target: "Zenodo"
+      target_type: preprint_server
+      created: "2026-03-13"
+      source_commit: "main"
+      status: merged
+      outcome: published
+      identifiers:
+        doi: "10.5281/zenodo.19009268"
+        community: ["spectral-branding"]

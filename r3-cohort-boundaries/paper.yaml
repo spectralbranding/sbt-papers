@@ -1,0 +1,323 @@
+# paper.yaml — Paper Spec v0.1.0
+# Zharnikov (2026f): Cohort Boundaries in High-Dimensional Perception Space
+spec_version: "0.1.0"
+
+meta:
+  title: "Cohort Boundaries in High-Dimensional Perception Space: A Concentration of Measure Analysis"
+  authors:
+    - name: "Zharnikov, Dmitry"
+      orcid: "0009-0000-6893-9231"
+      affiliation: "Independent Researcher"
+  doi: "10.5281/zenodo.18945477"
+  date: "2026-01-01"
+  version: "1.0"
+  venue: "Working Paper (Zenodo)"
+  license: "CC-BY-4.0"
+  keywords:
+    - concentration of measure
+    - cohort boundaries
+    - probability simplex
+    - Levy's lemma
+    - brand perception
+    - high-dimensional geometry
+    - Spectral Brand Theory
+    - observer cohorts
+
+claims:
+  - id: "P1"
+    type: proposition
+    statement: >
+      For a 1-Lipschitz function f on the 7-sphere S^7, deviations from the median
+      M_f satisfy P(|f(x) - M_f| >= epsilon) <= 4 exp(-7*epsilon^2 / 8). This
+      is the Levy concentration bound for n=8. For the general sphere S^(n-1):
+      P(|f(x) - M_f| >= epsilon) <= 4 exp(-(n-1)*epsilon^2 / 8).
+    formal: "P(|f(x) - M_f| >= epsilon) <= 4 exp(-7*epsilon^2/8) for f: S^7 -> R, 1-Lipschitz"
+    testable: true
+    tested_in_paper: true
+    status: supported
+    depends_on: []
+
+  - id: "P2"
+    type: proposition
+    statement: >
+      For X = (X_1, ..., X_8) ~ Dir(1,...,1) (uniform on Delta^7), each component
+      satisfies E[X_i] = 1/8 and Var[X_i] = (1/8)(7/8)/9 = 0.012153, giving
+      SD[X_i] = 0.1102. Components are negatively correlated: Cov[X_i, X_j] = -1/(64*9).
+    formal: "E[X_i] = 1/8, Var[X_i] = (n-1)/(n^2(n+1)) at n=8"
+    testable: true
+    tested_in_paper: true
+    status: supported
+    depends_on: []
+
+  - id: "T1"
+    type: theorem
+    statement: >
+      Distance concentration on Delta^7: for m i.i.d. draws from Dir(1,...,1)
+      on Delta^7, the Euclidean distance contrast ratio max_d / min_d equals
+      approximately 8.35 at n=8 (versus 5801 at n=2). The coefficient of
+      variation CV_8 = 0.271. Distances concentrate but the regime at n=8 is
+      transitional — clustering is possible but inherently noisy.
+    formal: "R_8 = max_j ||w_j - w_0|| / min_j ||w_j - w_0|| approx 8.35 (Monte Carlo, m=1000)"
+    testable: true
+    tested_in_paper: true
+    status: supported
+    depends_on: ["P2"]
+
+  - id: "T2"
+    type: theorem
+    statement: >
+      Boundary fuzziness on Delta^7: for any partition of Delta^(n-1) into k >= 2
+      convex regions, the boundary volume fraction satisfies BVF(n, delta) >= 1 - (1-delta)^n.
+      At n=8, delta=0.10: BVF(8, 0.10) >= 57.0%. A majority of the observer-weight
+      space lies within 10% relative distance of a cohort boundary.
+    formal: "BVF(n, delta) >= 1 - (1-delta)^n; BVF(8, 0.10) = 57.0%"
+    testable: true
+    tested_in_paper: true
+    status: supported
+    depends_on: ["P1"]
+
+  - id: "C1"
+    type: proposition
+    statement: >
+      Dynamic cohort membership is geometrically necessary: in 8-dimensional
+      perception space, for any convex partition into k >= 2 cohort regions,
+      a majority of observer profiles lie within 10% of a cohort boundary.
+      Therefore (a) cohort membership is sensitive to small perturbations,
+      (b) discrete assignment is unstable, and (c) the fuzzy-cohort claim of
+      Zharnikov (2026a) is a geometric necessity, not merely an empirical observation,
+      under Dirichlet-uniform observer-weight distributions on Delta^7.
+    formal: "BVF(8, 0.10) = 57.0% > 50%, SD[X_i] = 0.1102 implies typical perturbations cross boundaries"
+    testable: true
+    tested_in_paper: true
+    status: supported
+    depends_on: ["T2", "P2"]
+
+  - id: "P3"
+    type: proposition
+    statement: >
+      Dirichlet(alpha,...,alpha) with alpha > 1 is the best-case model for cohort
+      sharpness: boundary volume fractions shrink by a factor of alpha^(-(n-1)/2)
+      relative to the uniform (alpha=1) case. The uniform distribution is the
+      worst-case bound. Real populations with empirical clustering (alpha > 1)
+      have strictly sharper cohort boundaries than the theoretical bounds predict.
+      For the concentrated Dirichlet case, the boundary fraction at delta satisfies
+      BVF(n, delta; alpha) <= (1/alpha)^((n-1)/2) * BVF(n, delta; 1).
+    formal: "BVF(n, delta; alpha) shrinks by alpha^(-(n-1)/2) relative to alpha=1 case"
+    testable: true
+    tested_in_paper: true
+    status: supported
+    depends_on: ["T2"]
+
+methodology:
+  type: mixed
+  design: >
+    Theoretical proofs using concentration of measure theory (Levy's lemma,
+    Brunn-Minkowski inequality, Dirichlet distribution theory) applied to
+    the 8-dimensional probability simplex Delta^7. Monte Carlo simulations
+    with 10^3 to 10^5 sample points drawn from Dir(1,...,1) on Delta^(n-1)
+    for n in {2, 4, 8, 16, 32} verify all theoretical predictions.
+    The square-root transform maps Delta^7 isometrically to S^7_+, enabling
+    application of known sphere-concentration results.
+  analysis:
+    method: >
+      Concentration inequalities (Levy lemma, Brunn-Minkowski); Dirichlet
+      distribution moment calculations; Monte Carlo distance ratio simulations
+      (10^4 independent trials); boundary proximity simulation (k-means on
+      10^5 samples from Dir(1,...,1) at n=8, k=4)
+    software: "Python (NumPy, SciPy); standard statistical computing"
+
+acceptance:
+  - claim_id: "T1"
+    criterion: >
+      Monte Carlo simulation with m >= 1000 draws from Dir(1,...,1) on Delta^7
+      produces distance contrast ratio in the range [7.0, 10.0] and mean Euclidean
+      distance approximately 0.37, consistent with the theoretical prediction
+      sqrt(7/36) = 0.4410 (Jensen inequality accounts for the gap).
+    falsification: >
+      Empirical contrast ratio substantially exceeds 20 or falls below 2 for n=8,
+      indicating the Dirichlet-uniform model is a poor null model for observer
+      profiles, or that n=8 is not in the transitional regime described.
+
+  - claim_id: "T2"
+    criterion: >
+      For k=4 convex partition of Delta^7 (obtained by k-means on 10^5 Dirichlet
+      samples), the empirical fraction of points within relative distance 0.10
+      of the nearest boundary is >= 57.0% (matching or exceeding the theoretical
+      lower bound).
+    falsification: >
+      Empirical boundary volume fraction is substantially below 57.0% at delta=0.10
+      for k >= 2 convex partitions on Delta^7, contradicting Theorem 2.
+
+  - claim_id: "C1"
+    criterion: >
+      Observer profiles measured in a real brand perception study exhibit
+      cross-rater variability on the order of SD[w_i] ~ 0.10, consistent with
+      the Dirichlet-uniform prediction. Different analysts/algorithms recover
+      different cohort counts (3 vs. 5-6) for the same dataset.
+    falsification: >
+      Empirical observer weight profiles cluster sharply with low within-cohort
+      variance and unambiguous cross-cohort separation, or all analysts consistently
+      recover the same cohort count regardless of threshold or algorithm.
+
+  - claim_id: "P3"
+    criterion: >
+      For concentrated Dirichlet(alpha,...,alpha) with alpha = 5, boundary volume
+      fraction at delta=0.10 is reduced by approximately 5^(-7/2) = 0.036 relative
+      to the alpha=1 case, yielding BVF ~ 2% (vs. 57%).
+    falsification: >
+      Boundary volume fraction does not decrease systematically with alpha,
+      contradicting the worst-case property of the uniform distribution.
+
+data:
+  available: false
+  url: ""
+  notes: >
+    No primary empirical data collected. All simulations are synthetic draws
+    from the Dirichlet distribution and are fully reproducible from the
+    simulation code. Observer profiles used for cross-model comparison
+    (Claude: 5-6 cohorts, Gemini: 3 cohorts) are from the SBT case study
+    analysis in Zharnikov (2026a), not a separate dataset.
+
+code:
+  available: true
+  url: "https://github.com/spectralbranding/sbt-framework"
+  notes: >
+    Monte Carlo simulations (distance ratio and boundary proximity) are
+    described in the paper with sufficient precision for independent
+    reproduction. The sbt-framework repository implements observer cohort
+    clustering using the Fisher-Rao metric on Delta^7, directly operationalizing
+    the theoretical results of this paper.
+
+replication:
+  feasible: true
+  estimated_cost: "< $500 USD (computational only; no data collection)"
+  estimated_time: "1-2 weeks"
+  requirements:
+    - "Python with NumPy, SciPy, scikit-learn (k-means)"
+    - "Dirichlet sampling routine for Delta^(n-1), n in {2,4,8,16,32}"
+    - "10^4 Monte Carlo trials for distance ratio estimation"
+    - "10^5 Dirichlet samples for boundary proximity simulation with k=4 k-means"
+    - "Reproducibility: fix random seed for exact numerical match"
+
+dependencies:
+  - doi: "10.5281/zenodo.18945912"
+    claim: "Zharnikov (2026a) SBT — defines observer spectral profiles, weight vectors on Delta^7, perceptual cohorts, and the five case-study brands"
+    relationship: "extends"
+    critical: true
+
+  - doi: "10.5281/zenodo.18945295"
+    claim: "Zharnikov (2026d) R1 — establishes Fisher-Rao metric on observer weight space and Aitchison metric on brand signal space; formal metric structure for cohort boundaries"
+    relationship: "extends"
+    critical: true
+
+  - reference: "Wedel, M., & Kamakura, W. A. (2000). Market segmentation: Conceptual and methodological foundations (2nd ed.). Kluwer Academic."
+    claim: "Wedel & Kamakura (2000) — prior work on market segmentation that SBT's perceptual cohort approach challenges; discrete segmentation is shown geometrically lossy"
+    relationship: "refines"
+    critical: true
+
+  - reference: "Ledoux, M. (2001). The concentration of measure phenomenon. American Mathematical Society."
+    claim: "Ledoux (2001) — mathematical foundation for concentration of measure theory applied throughout this paper"
+    relationship: "applies"
+    critical: true
+
+  - reference: "Vershynin, R. (2018). High-dimensional probability: An introduction with applications in data science. Cambridge University Press."
+    claim: "Vershynin (2018) — provides the technical machinery for Proposition 1 (Theorem 5.1.4) and the peeling argument in Theorem 2 (Section 5.2)"
+    relationship: "applies"
+    critical: true
+
+  - reference: "Beyer, K., Goldstein, J., Ramakrishnan, R., & Shaft, U. (1999). When is 'nearest neighbor' meaningful? International Conference on Database Theory."
+    claim: "Beyer et al. (1999) — distance contrast phenomenon in high dimensions; framework for Theorem 1"
+    relationship: "applies"
+    critical: false
+
+results:
+  - claim_id: "P1"
+    status: supported
+    notes: >
+      Follows from the Gaussian isoperimetric inequality on S^(n-1) via the
+      Herbst argument. The numerical bound is confirmed by the Monte Carlo
+      simulations in Section 5.
+
+  - claim_id: "T1"
+    status: supported
+    notes: >
+      Theoretical formula for E[D^2] = 7/36 proved analytically. Contrast
+      ratio R_8 = 8.35 confirmed by Monte Carlo (10^4 trials, m=1000 points).
+      Empirical mean distance 0.3659 consistent with theoretical value 0.4410
+      up to Jensen inequality correction.
+
+  - claim_id: "T2"
+    status: supported
+    notes: >
+      Lower bound 1-(1-delta)^n proved via the Brunn-Minkowski peeling argument.
+      Empirical BVF at delta=0.10: 60.8 +/- 0.3% (10^5 samples, k=4),
+      exceeding the 57.0% bound by 3.8 percentage points. Monte Carlo
+      verification in Section 5.2 confirms bound is tight.
+
+  - claim_id: "C1"
+    status: supported
+    notes: >
+      Direct consequence of T2 and P2. No additional computation required.
+      The geometric necessity argument applies under uniform Dirichlet null model;
+      empirical validation with real observer data would require survey collection.
+
+  - claim_id: "P3"
+    status: supported
+    notes: >
+      Section 8 (concentrated Dirichlet) derives the alpha^(-(n-1)/2) scaling
+      factor analytically. Shows uniform model is worst-case; real populations
+      with alpha > 1 have sharper boundaries than the main theorems predict.
+
+limitations:
+  - description: >
+      The uniform Dirichlet(1,...,1) null model is the worst-case bound, but real
+      observer populations may exhibit asymmetric concentration (dimension-specific
+      alpha_i) that the symmetric Dirichlet does not capture. The boundary fraction
+      scaling for asymmetric Dirichlet depends on the geometric mean of alpha_i,
+      requiring empirical estimation of dimension-specific parameters.
+    severity: moderate
+    addressable: true
+
+  - description: >
+      Distance contrast ratios (Theorem 1) use Euclidean distances on Delta^7,
+      while SBT's canonical metric is Fisher-Rao (Zharnikov, 2026d). The two
+      metrics are related by the square-root diffeomorphism and qualitative
+      conclusions are expected to be unchanged, but exact quantitative bounds
+      in the Fisher-Rao metric are not computed in this paper.
+    severity: minor
+    addressable: true
+
+  - description: >
+      Theorem 2 assumes convex cohort regions (satisfied by k-means Voronoi cells).
+      Density-based clustering methods (DBSCAN, HDBSCAN) can produce non-convex
+      regions for which the boundary volume bound may not hold in its current form.
+    severity: minor
+    addressable: true
+
+  - description: >
+      The Dirichlet model imposes negative correlations between dimension weights
+      (sum-to-one constraint) but does not capture positive correlations that may
+      exist empirically (e.g., observers who weight ideological highly may also
+      weight cultural highly). Copula-based models on the simplex would extend
+      the analysis but are not developed here.
+    severity: moderate
+    addressable: true
+
+  - description: >
+      If empirical observer profiles cluster along a lower-dimensional submanifold
+      of Delta^7, effective dimensionality d_eff < 8 would reduce concentration
+      effects and sharpen cohort boundaries relative to the theoretical bounds.
+      Estimating d_eff from survey data is an important empirical open question.
+    severity: moderate
+    addressable: true
+
+repositories:
+  - platform: "Zenodo"
+    doi: "10.5281/zenodo.18945477"
+    url: "https://doi.org/10.5281/zenodo.18945477"
+    version: "v1"
+    date: "2026-03-24"
+  - platform: "GitHub"
+    url: "https://github.com/spectralbranding/sbt-papers/tree/main/r3-cohort-boundaries"
+
+submission_history: []

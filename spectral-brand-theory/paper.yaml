@@ -1,0 +1,168 @@
+# paper.yaml -- Paper Spec v0.1.0
+# Zharnikov (2026a): Spectral Brand Theory
+spec_version: "0.1.0"
+
+meta:
+  title: "Spectral Brand Theory: A Computational Framework for Multi-Dimensional Brand Perception"
+  authors:
+    - name: "Zharnikov, Dmitry"
+      orcid: "0009-0000-6893-9231"
+      affiliation: "Independent Researcher"
+  doi: "10.5281/zenodo.18945912"
+  date: "2026-04-02"
+  version: "2.0"
+  venue: "Zenodo preprint (not yet submitted to journal)"
+  license: "CC-BY-NC-ND-4.0"
+  keywords:
+    - spectral brand theory
+    - brand perception
+    - computational branding
+    - observer heterogeneity
+    - brand coherence
+    - structural absence
+    - dimensional decomposition
+    - multi-attribute perception
+    - non-ergodic dynamics
+    - AI-native framework
+
+claims:
+  - id: "P1"
+    type: proposition
+    statement: >
+      Different observer cohorts, exposed to identical brand signal environments,
+      will form systematically different brand convictions as a function of their
+      spectral profile differences (weights, tolerances, priors, encounter mode).
+    testable: true
+    tested_in_paper: false
+    status: proposed
+    depends_on: []
+
+  - id: "P2"
+    type: proposition
+    statement: >
+      The temporal sequence in which brand signals are encountered affects the
+      resulting brand conviction, even when the set of signals is identical.
+    testable: true
+    tested_in_paper: false
+    status: proposed
+    depends_on: []
+
+  - id: "P3"
+    type: proposition
+    statement: >
+      Designed restriction of signal emission in specific dimensions generates
+      perceived value that cannot be replicated by signal addition in other dimensions.
+    testable: true
+    tested_in_paper: false
+    status: proposed
+    depends_on: []
+
+  - id: "P4"
+    type: proposition
+    statement: >
+      Brands with identical aggregate coherence scores exhibit different resilience
+      properties depending on their coherence type (ecosystem, signal, identity,
+      experiential asymmetry, incoherent).
+    testable: true
+    tested_in_paper: false
+    status: proposed
+    depends_on: []
+
+  - id: "P5"
+    type: proposition
+    statement: >
+      Evidence-free negative brand convictions are more resistant to disconfirmation
+      than evidence-rich positive convictions.
+    testable: true
+    tested_in_paper: false
+    status: proposed
+    depends_on: []
+
+  - id: "H1"
+    type: hypothesis
+    statement: >
+      Brands with 55-65% designed signals will show higher brand equity and disruption
+      resilience than brands outside this range, controlling for category, age, and
+      market position.
+    testable: true
+    tested_in_paper: false
+    status: proposed
+    depends_on: ["P3", "P4"]
+
+  - id: "H2"
+    type: hypothesis
+    statement: >
+      Evidence-free negative brand convictions will show higher resistance to
+      counter-evidence than evidence-rich positive convictions.
+    testable: true
+    tested_in_paper: false
+    status: proposed
+    depends_on: ["P5"]
+
+  - id: "H3"
+    type: hypothesis
+    statement: >
+      Ecosystem-coherent brands will exhibit selective disruption absorption;
+      incoherent brands will exhibit disruption amplification.
+    testable: true
+    tested_in_paper: false
+    status: proposed
+    depends_on: ["P4"]
+
+  - id: "H4"
+    type: hypothesis
+    statement: >
+      For incoherent brands, cross-sectional brand surveys will systematically
+      overstate cohort-level resilience relative to longitudinal tracking.
+    testable: true
+    tested_in_paper: false
+    status: proposed
+    depends_on: ["P1", "P2"]
+
+  - id: "H5"
+    type: hypothesis
+    statement: >
+      Structural absence strategies generate positive scarcity signals only when
+      two conditions are met: existing demand and a legitimizing heritage context.
+    testable: true
+    tested_in_paper: false
+    status: proposed
+    depends_on: ["P3"]
+
+companion_papers:
+  - key: "2026b"
+    title: "The Atom-Cloud-Fact Epistemological Pipeline"
+    doi: "10.5281/zenodo.18944770"
+    relationship: "epistemological_foundation"
+  - key: "2026c"
+    title: "Geometric Approaches to Brand Perception"
+    doi: "10.5281/zenodo.18945217"
+    relationship: "literature_survey"
+  - key: "2026d"
+    title: "Brand Space Geometry"
+    doi: "10.5281/zenodo.18945295"
+    relationship: "formal_metric"
+  - key: "2026e"
+    title: "Spectral Metamerism in Brand Perception"
+    doi: "10.5281/zenodo.18945352"
+    relationship: "projection_bounds"
+  - key: "2026f"
+    title: "Cohort Boundaries in High-Dimensional Perception Space"
+    doi: "10.5281/zenodo.18945477"
+    relationship: "cohort_formalization"
+  - key: "2026g"
+    title: "How Many Brands Can a Market Hold?"
+    doi: "10.5281/zenodo.18945522"
+    relationship: "capacity_bounds"
+  - key: "2026h"
+    title: "Specification Impossibility in Organizational Design"
+    doi: "10.5281/zenodo.18945591"
+    relationship: "OST_foundation"
+  - key: "2026j"
+    title: "Non-Ergodic Brand Perception"
+    doi: "10.5281/zenodo.18945659"
+    relationship: "dynamics_formalization"
+  - key: "2026k"
+    title: "Spectral Resource Allocation"
+    doi: "10.5281/zenodo.19009268"
+    relationship: "resource_optimization"

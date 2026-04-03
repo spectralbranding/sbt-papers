@@ -1,0 +1,19 @@
+# PROVENANCE.yaml — Non-ergodic brand perception: Diffusion dynamics
+# Fork history and submission records per the Research-as-Repository protocol
+
+provenance:
+  paper_title: "Non-ergodic brand perception: Diffusion dynamics on multi-dimensional perceptual manifolds"
+  citation_key: "2026j"
+  repository: "spectralbranding/sbt-papers/r6-diffusion-dynamics"
+
+  forks:
+    - id: "fork-2026-03-11-zenodo"
+      target: "Zenodo"
+      target_type: preprint_server
+      created: "2026-03-11"
+      source_commit: "main"
+      status: merged
+      outcome: published
+      identifiers:
+        doi: "10.5281/zenodo.18945659"
+        community: ["spectral-branding"]

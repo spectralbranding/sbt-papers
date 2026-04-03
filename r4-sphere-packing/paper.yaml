@@ -1,0 +1,317 @@
+# paper.yaml — Paper Spec v0.1.0
+# Zharnikov (2026g): Sphere Packing Bounds for Multi-Dimensional Brand Positioning
+spec_version: "0.1.0"
+
+meta:
+  title: "How Many Brands Can a Market Hold? Sphere Packing Bounds for Multi-Dimensional Positioning"
+  authors:
+    - name: "Zharnikov, Dmitry"
+      orcid: "0009-0000-6893-9231"
+      affiliation: "Independent Researcher"
+  doi: "10.5281/zenodo.18945522"
+  date: "2026-01-01"
+  version: "1.0"
+  venue: "Working Paper (Zenodo)"
+  license: "CC-BY-4.0"
+  keywords:
+    - sphere packing
+    - E8 lattice
+    - brand positioning
+    - market capacity
+    - kissing number
+    - perceptual threshold
+    - high-dimensional geometry
+    - Spectral Brand Theory
+
+claims:
+  - id: "D1"
+    type: definition
+    statement: >
+      Two brands A and B are distinguishable if their Aitchison distance in
+      the clr-transformed brand space exceeds the perceptual threshold epsilon.
+      They are confusable if d_B(s_A, s_B) <= epsilon. The threshold epsilon
+      is a parameter (not a constant) depending on observer expertise, dimensional
+      salience, comparison context, and engagement level.
+    formal: "Distinguishable iff d_B(s_A, s_B) > epsilon; confusable iff d_B(s_A, s_B) <= epsilon"
+    testable: true
+    tested_in_paper: false
+    status: not_tested
+    depends_on: []
+
+  - id: "P1"
+    type: proposition
+    statement: >
+      Positioning capacity: for a perceptual threshold epsilon > 0 in the unit
+      8-ball of the clr-transformed brand space, the number of distinguishable
+      brand positions N satisfies (1/epsilon)^8 <= N <= ((2+epsilon)/epsilon)^8.
+      At epsilon=0.10: 10^8 <= N <= 3.78*10^10. At epsilon=0.20: ~3.91*10^5 <= N <= ~2.14*10^8.
+    formal: "(1/epsilon)^8 <= N <= ((2+epsilon)/epsilon)^8"
+    testable: false
+    tested_in_paper: false
+    status: supported
+    depends_on: ["D1"]
+
+  - id: "P2"
+    type: proposition
+    statement: >
+      Local competition structure: each brand position in the E8 lattice packing
+      has exactly 240 nearest-neighbor positions (the maximum possible in 8 dimensions).
+      These decompose into 112 specialist vectors of the form (+-1, +-1, 0,...,0)
+      concentrated on exactly 2 of 8 dimensions, and 128 generalist vectors of
+      the form (+-1/2,...,+-1/2) with even number of minus signs distributed
+      across all 8 dimensions.
+    formal: "E8 kissing number = 240 = 112 (specialist) + 128 (generalist)"
+    testable: false
+    tested_in_paper: false
+    status: supported
+    depends_on: ["P1"]
+
+  - id: "P3"
+    type: proposition
+    statement: >
+      White space abundance: for n_b brands in the unit 8-ball with perceptual
+      threshold epsilon, the fraction of positioning space not covered by any
+      brand's perceptual neighborhood is approximately 1 - n_b * epsilon^8.
+      At epsilon=0.10 with 10,000 brands: white space fraction = 99.99%.
+      Even 1,000,000 brands leave 99.0% of the space unoccupied.
+    formal: "f_white approx 1 - n_b * epsilon^8 (for n_b * epsilon^8 << 1)"
+    testable: false
+    tested_in_paper: false
+    status: supported
+    depends_on: ["P1"]
+
+  - id: "P4"
+    type: proposition
+    statement: >
+      Category saturation criterion: a product category with effective dimensionality
+      d_eff and perceptual threshold epsilon is saturated when the number of brands
+      n_b approaches (1/epsilon)^d_eff. Categories with d_eff = 2 saturate at ~100
+      brands; d_eff = 8 saturates at ~10^8 brands.
+    formal: "Saturation when n_b ~ (1/epsilon)^d_eff"
+    testable: true
+    tested_in_paper: false
+    status: not_tested
+    depends_on: ["P1"]
+
+  - id: "P5"
+    type: proposition
+    statement: >
+      Correlation-induced capacity collapse: when SBT dimensions are correlated
+      at average pairwise correlation rho = 0.3, effective dimensionality drops
+      from 8 to approximately d_eff = 8 * (1 - rho) / (1 + (8-1)*rho) approx 2.6,
+      collapsing positioning capacity from 10^8 to approximately 10^3.
+    formal: "d_eff = n(1-rho) / (1+(n-1)rho); at n=8, rho=0.3: d_eff approx 2.6"
+    testable: true
+    tested_in_paper: false
+    status: not_tested
+    depends_on: ["P1"]
+
+methodology:
+  type: theoretical
+  design: >
+    Mathematical derivation applying sphere packing theory to Spectral Brand
+    Theory's 8-dimensional brand space equipped with the Aitchison metric
+    (Zharnikov, 2026d). The clr transform maps R^8_+ isometrically to a
+    7-dimensional hyperplane where the Aitchison metric becomes Euclidean,
+    enabling direct application of sphere packing results. Viazovska's (2017)
+    proof of E8 optimality provides the packing density. Capacity bounds
+    derived from standard volume ratio arguments; white space from direct
+    volume calculation; correlation collapse from effective dimensionality
+    estimation via principal component analysis argument.
+  analysis:
+    method: >
+      Volume ratio bounds (Minkowski-Hlawka lower bound, covering upper bound);
+      E8 lattice geometry (Conway & Sloane 1999); effective dimensionality
+      estimation under dimensional correlation; conceptual application to
+      five SBT case-study brands
+    software: "None (analytical)"
+
+acceptance:
+  - claim_id: "P1"
+    criterion: >
+      Empirical perceptual discrimination studies with trained observers establish
+      a just-noticeable difference threshold epsilon in the Aitchison-metric brand
+      space; the resulting capacity bounds are non-trivially large (> 1000 positions
+      at the measured epsilon).
+    falsification: >
+      The perceptual threshold epsilon is so large (e.g., > 0.5) that capacity
+      bounds collapse to fewer than 100 distinguishable positions, making the
+      framework trivially equivalent to low-dimensional perceptual maps.
+
+  - claim_id: "P4"
+    criterion: >
+      In product categories where effective dimensionality is measurable (e.g.,
+      via factor analysis of consumer perception data), brand counts correlate
+      positively with (1/epsilon)^d_eff, and categories with known saturation
+      exhibit n_b close to the capacity bound.
+    falsification: >
+      Brand counts show no systematic relationship to estimated positioning
+      capacity across categories, or capacity bounds are consistently exceeded
+      without competitive pressure.
+
+  - claim_id: "P5"
+    criterion: >
+      Factor analysis of SBT dimension scores across a large sample of brands
+      yields effective dimensionality substantially below 8 (e.g., 2-4 factors),
+      consistent with dimensional correlation reducing capacity as predicted.
+    falsification: >
+      Factor analysis yields 7-8 independent factors with low cross-loadings,
+      indicating near-zero dimensional correlation and full 8-dimensional capacity.
+
+data:
+  available: false
+  url: ""
+  notes: >
+    No primary data collected. Five SBT case-study brand profiles (Hermes,
+    IKEA, Patagonia, Erewhon, Tesla) are used for illustrative application
+    only; they are author-assigned from Zharnikov (2026a), not survey-derived.
+    Perceptual threshold epsilon is treated as a parameter; empirical calibration
+    is explicitly deferred to future work.
+
+code:
+  available: true
+  url: "https://github.com/spectralbranding/sbt-framework"
+  notes: >
+    No simulation code required for this paper (all results are analytical).
+    The sbt-framework repository implements brand profile computation and
+    the Aitchison distance metric on which the distinguishability definition (D1)
+    is based. The capacity bounds of Proposition 1 can be computed with trivial
+    arithmetic given epsilon.
+
+replication:
+  feasible: true
+  estimated_cost: "< $500 USD (analytical; empirical calibration of epsilon requires additional survey work)"
+  estimated_time: "1-4 weeks for analytical verification; 6-18 months for empirical epsilon calibration"
+  requirements:
+    - "Verification of E8 lattice properties (kissing number 240, density pi^4/384) from Conway & Sloane (1999)"
+    - "Numerical verification of capacity bounds for epsilon in {0.05, 0.10, 0.20, 0.30, 0.50}"
+    - "Effective dimensionality simulation under dimensional correlation using PCA or related method"
+    - "For empirical test of P4-P5: survey data on brand perception across multiple categories"
+
+dependencies:
+  - doi: "10.5281/zenodo.18945912"
+    claim: "Zharnikov (2026a) SBT — defines the 8-dimensional brand space, observer cohorts, and five case-study brands used in applications"
+    relationship: "extends"
+    critical: true
+
+  - doi: "10.5281/zenodo.18945295"
+    claim: "Zharnikov (2026d) R1 — establishes the Aitchison metric on R^8_+ and the clr transform that maps the positioning problem to Euclidean sphere packing"
+    relationship: "extends"
+    critical: true
+
+  - doi: "10.5281/zenodo.18945477"
+    claim: "Zharnikov (2026f) R3 — establishes that observer cohort boundaries are fuzzy in 8 dimensions; referenced for the white space difficulty argument (Section 5.2)"
+    relationship: "applies"
+    critical: false
+
+  - reference: "Viazovska, M. (2017). The sphere packing problem in dimension 8. Annals of Mathematics, 185(3), 991-1015."
+    claim: "Viazovska (2017) — proves E8 lattice achieves optimal packing density pi^4/384 in 8 dimensions; Fields Medal 2022. Central mathematical result of this paper."
+    relationship: "applies"
+    critical: true
+
+  - reference: "Conway, J. H., & Sloane, N. J. A. (1999). Sphere packings, lattices and groups (3rd ed.). Springer."
+    claim: "Conway & Sloane (1999) — defines E8 lattice, kissing number 240, and the 112/128 specialist/generalist decomposition of minimal vectors"
+    relationship: "applies"
+    critical: true
+
+  - reference: "Lancaster, K. J. (1966). A new approach to consumer theory. Journal of Political Economy, 74(2), 132-157."
+    claim: "Lancaster (1966) — characteristics space; SBT extends to a formal metric space enabling the capacity question Lancaster's framework cannot answer"
+    relationship: "extends"
+    critical: false
+
+results:
+  - claim_id: "D1"
+    status: not_tested
+    notes: >
+      Distinguishability definition adopted from psychophysics (Weber-Fechner JND).
+      The Aitchison-metric threshold has not been empirically calibrated; epsilon
+      is treated as a free parameter throughout.
+
+  - claim_id: "P1"
+    status: supported
+    notes: >
+      Lower bound follows from volume ratio: N >= V_8(1)/V_8(epsilon) = (1/epsilon)^8.
+      Upper bound from covering argument: N <= V_8(1+epsilon/2)/V_8(epsilon/2) = ((2+epsilon)/epsilon)^8.
+      Analytical derivation in Section 4.1. No empirical validation.
+
+  - claim_id: "P2"
+    status: supported
+    notes: >
+      240 nearest neighbors of E8 are well-known (Conway & Sloane 1999, Ch. 4).
+      The 112/128 decomposition follows from counting vectors with 2 nonzero
+      coordinates (C(8,2)*4 = 112) and all-half-integer vectors with even
+      negative count (2^8/2 = 128). The specialist/generalist interpretation
+      is structurally motivated; the competitive analogy is explicitly marked
+      as interpretive throughout the paper.
+
+  - claim_id: "P3"
+    status: supported
+    notes: >
+      Direct consequence of P1: white space fraction = 1 - n_b * V_8(epsilon)/V_8(1) = 1 - n_b * epsilon^8.
+      The calculation shows that even 10^6 brands at epsilon=0.10 leave 99% of
+      the space unoccupied. No empirical data required.
+
+  - claim_id: "P4"
+    status: not_tested
+    notes: >
+      Saturation criterion is proposed as a theoretical tool. Empirical test
+      requires measuring d_eff per category and comparing to brand counts.
+      Not tested in this paper.
+
+  - claim_id: "P5"
+    status: not_tested
+    notes: >
+      Effective dimensionality formula derived analytically. At rho=0.3: d_eff approx 2.6.
+      Empirical correlation structure of SBT dimensions has not been measured.
+
+limitations:
+  - description: >
+      The E8 connection is structural, not literal. The analysis provides the
+      mathematical ceiling on packing efficiency; it does not claim brands arrange
+      themselves as lattice points. Real competitive dynamics are asymmetric,
+      category-bounded, and observer-dependent in ways no lattice model captures.
+    severity: moderate
+    addressable: false
+
+  - description: >
+      The analysis assumes isotropic brand space (equal scaling in all 8 dimensions).
+      SBT dimensions are likely anisotropic — different dimensions may have different
+      ranges of distinguishable values. In anisotropic space, spheres become
+      ellipsoids and E8 no longer provides optimal packing. Capacity bounds remain
+      valid as order-of-magnitude estimates but exact constants change.
+    severity: moderate
+    addressable: true
+
+  - description: >
+      Perceptual threshold epsilon is treated as a fixed parameter with no empirical
+      calibration. The entire framework depends on knowing epsilon; without empirical
+      JND studies in the Aitchison-metric brand space, capacity numbers are hypothetical.
+    severity: major
+    addressable: true
+
+  - description: >
+      Brand positions are modeled as point estimates (perception clouds in SBT
+      terminology are reduced to centers). When positions are stochastic
+      distributions, effective threshold increases to epsilon + 2*sigma, reducing
+      capacity by ((epsilon + 2*sigma)/epsilon)^8 — potentially orders of magnitude.
+    severity: moderate
+    addressable: true
+
+  - description: >
+      Observer-dependent distance: SBT's canonical distance is observer-weighted
+      d_k(A,B) = ||W_k * (clr(s_A) - clr(s_B))||, making positioning capacity
+      cohort-specific. The analysis uses the unweighted Aitchison distance.
+      A full treatment would integrate over the observer distribution on Delta^7.
+    severity: moderate
+    addressable: true
+
+repositories:
+  - platform: "Zenodo"
+    doi: "10.5281/zenodo.18945522"
+    url: "https://doi.org/10.5281/zenodo.18945522"
+    version: "v1"
+    date: "2026-03-24"
+  - platform: "GitHub"
+    url: "https://github.com/spectralbranding/sbt-papers/tree/main/r4-sphere-packing"
+
+submission_history: []

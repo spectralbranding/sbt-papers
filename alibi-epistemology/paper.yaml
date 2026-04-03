@@ -1,0 +1,418 @@
+# paper.yaml — Paper Spec v0.1.0
+# Zharnikov (2026b): Alibi — Atom-Cloud-Fact Epistemological Pipeline
+spec_version: "0.1.0"
+
+meta:
+  title: "The Atom-Cloud-Fact Epistemological Pipeline: From Financial Document Processing to Brand Perception Modeling"
+  authors:
+    - name: "Zharnikov, Dmitry"
+      orcid: "0009-0000-6893-9231"
+      affiliation: "Independent Researcher"
+  doi: "10.5281/zenodo.18944770"
+  date: "2026-01-01"
+  version: "1.0"
+  venue: "Working Paper (Zenodo)"
+  license: "CC-BY-4.0"
+  keywords:
+    - epistemology
+    - probabilistic knowledge
+    - observation pipeline
+    - domain transfer
+    - computational framework
+    - brand perception
+    - confirmation bias
+    - convergent validity
+
+claims:
+  - id: "P1"
+    type: proposition
+    statement: >
+      External corroboration structurally reduces confirmation bias in brand assessment.
+      The atom-cloud-fact pipeline requires that any brand conviction be built from atoms
+      drawn from multiple independent source types. Because confirmation bias operates by
+      selectively attending to evidence that supports a prior belief, and because the
+      pipeline's identity gate and weighted scoring require convergent evidence across
+      independently typed sources, the architecture is structurally less susceptible to
+      confirmation bias than single-source brand assessment methods.
+    formal: >
+      Let A_1,...,A_n be atom sets drawn from n independent source types. A fact F can
+      crystallize only when cloud score C(A_1,...,A_n) > theta, where theta is the
+      collapse threshold. Single-source score C(A_i) < theta by construction (Principle 5:
+      no single source can provide sufficient weight to exceed threshold alone). Therefore
+      any concluded fact integrates evidence across at least two distinct source types.
+    testable: true
+    tested_in_paper: false
+    status: not_tested
+    depends_on: []
+
+  - id: "P2"
+    type: proposition
+    statement: >
+      Multi-model replication produces more robust brand assessments than single-model
+      analysis. Conclusions that appear across multiple architecturally distinct LLM
+      implementations processing the same signal set are structurally more robust than
+      conclusions appearing in only some outputs. This holds when models differ
+      architecturally and converge on structural rather than numerical features; it
+      requires human-subject validation as the definitive test.
+    formal: >
+      Let M_1,...,M_k be LLM models with architecturally distinct training distributions.
+      Let c be a brand claim. Define robust(c) = True iff c appears in outputs of all
+      M_i. By Principle 2 (source binding), each M_i constitutes an independent observation
+      source. Convergence implies the claim survived k distinct observation processes.
+      Retest reliability: r(robust claims) > r(single-model claims).
+    testable: true
+    tested_in_paper: false
+    status: not_tested
+    depends_on: []
+
+  - id: "P3"
+    type: proposition
+    statement: >
+      The three-stage epistemic separation prevents category errors that conflate brand
+      signals (atoms), perception clouds, and brand convictions (facts). Analyses without
+      formal stage separation exhibit higher rates of three specific error types: treating
+      signals as convictions, treating clouds as facts, and treating convictions as permanent.
+    formal: >
+      Define three error types: E1 = {analyses where a single signal implies a brand
+      conviction}, E2 = {analyses where a probabilistic cloud is asserted as established
+      knowledge}, E3 = {analyses that fail to model conviction dissolution on contradicting
+      evidence}. For pipelines with Principle 7 (epistemic separation) enforced:
+      P(E1 or E2 or E3) = 0 by construction. For pipelines without stage separation:
+      P(E1 or E2 or E3) > 0 empirically.
+    testable: true
+    tested_in_paper: false
+    status: not_tested
+    depends_on: []
+
+  - id: "P4"
+    type: proposition
+    statement: >
+      Cross-model disagreement is diagnostic of evidential ambiguity, not model failure.
+      When multiple model implementations of the atom-cloud-fact pipeline disagree on a
+      specific brand claim, that disagreement identifies a location in the evidence where
+      the signal is genuinely ambiguous — a cloud that has not reached collapse threshold.
+    formal: >
+      Let D(c) = event that models disagree on claim c. Let A(c) = event that claim c
+      corresponds to genuinely ambiguous evidence (consumer research itself produces
+      inconsistent findings). Claim: P(A(c) | D(c)) >> P(A(c)), i.e., disagreement is
+      positively predictive of genuine ambiguity. By re-collapse principle (P6): if
+      sufficient unambiguous evidence existed, all implementations would converge.
+      Disagreement implies sub-threshold cloud confidence in at least one model.
+    testable: true
+    tested_in_paper: false
+    status: not_tested
+    depends_on: []
+
+  - id: "D1"
+    type: definition
+    statement: >
+      The atom-cloud-fact pipeline is a three-stage epistemological architecture: Stage 1
+      (atoms) — typed, source-bound, immutable observations; Stage 2 (clouds) — probabilistic,
+      multi-source, revisable hypothesis clusters; Stage 3 (facts) — threshold-based,
+      stable-but-dissolvable knowledge. Seven architectural principles govern the pipeline:
+      dimensional typing, source binding, identity gate, asymmetric tolerances, weighted
+      multi-dimensional scoring, re-collapse on new evidence, and epistemic separation.
+    formal: >
+      Pipeline = (Atoms, Clouds, Facts, {P1,...,P7}) where:
+        Atoms = typed(d_i) x source(s_j) x immutable
+        Clouds = weighted_score(atoms) in [0,1]; collapse when score > theta
+        Facts = collapsed clouds; dissolve and rebuild on contradicting new atoms
+        P6 (re-collapse): Facts_new = collapse(all_atoms_current), NOT Facts_old + delta
+    testable: true
+    tested_in_paper: true
+    status: supported
+    depends_on: []
+
+  - id: "D2"
+    type: definition
+    statement: >
+      In the brand perception domain, the pipeline maps to: atoms = brand signals across
+      8 SBT dimensions from typed encounter sources; clouds = perception clouds (probabilistic
+      multi-source impressions of the brand); facts = brand convictions. Re-collapse
+      corresponds to conviction rebuild after contradicting evidence (a scandal, product
+      failure, or transformative encounter). The critical extension over the financial domain
+      is heterogeneous observers — each observer cohort processes the same atoms through a
+      distinct weight profile on the 8 dimensions.
+    formal: >
+      Brand_atom = signal(dimension_i, source_j, intensity) where dimension_i in {semiotic,
+        narrative, ideological, experiential, social, economic, cultural, temporal}
+      Observer_profile = (spectrum, weights_w, tolerances, priors, identity_gate)
+      Brand_conviction = fact in observer o's pipeline = f(atoms, w_o, threshold_o)
+      Re-collapse: conviction dissolves when new atom set shifts cloud below threshold
+    testable: true
+    tested_in_paper: true
+    status: supported
+    depends_on: ["D1"]
+
+  - id: "C1"
+    type: proposition
+    statement: >
+      Four conditions determine whether cross-model LLM convergence constitutes genuine
+      structural evidence: (1) different training data distributions (partially satisfied
+      across Claude/Gemini/GPT-4); (2) different model architectures (substantially
+      satisfied — distinct training objectives, RLHF procedures, fine-tuning); (3) agreement
+      on structural features rather than numerical values (structural agreement is more
+      robust than numerical agreement); (4) stability across prompt variations (genuine
+      structural features are recoverable through multiple prompt formulations). LLM
+      agreement is necessary but not sufficient for structural validity.
+    formal: >
+      convergent_validity(c) = True iff conditions 1-4 hold for claim c.
+      Condition 4 is operationally testable: run k prompt reformulations of same analysis;
+      classify each output as structural or numerical; compute stability_rate =
+      fraction of reformulations yielding same structural classification.
+      Claim: stability_rate(structural features) >> stability_rate(numerical values).
+    testable: true
+    tested_in_paper: true
+    status: supported
+    depends_on: ["P2"]
+
+methodology:
+  type: theoretical
+  design: >
+    Architectural derivation from a working financial document reconciliation system, followed
+    by formal cross-domain transfer to brand perception modeling. The seven principles were
+    discovered empirically through financial implementation (processing approximately 500
+    transactions in development) and then shown to transfer without modification to brand
+    perception. The four propositions are derived from the structural properties of the
+    pipeline's three stages and seven principles. No primary data collection. The financial
+    implementation processes real documents; the brand perception implementation operates as
+    a structured LLM prompt sequence. Competing frameworks (Bayesian updating, AGM revision,
+    Dempster-Shafer theory, expert systems) are evaluated against four structural requirements:
+    path-independence, observer heterogeneity, epistemic separation, and linguistic
+    implementability.
+  analysis:
+    method: >
+      Structural argument; cross-domain mapping (Table 3); competing-framework elimination
+      against four requirements; sensitivity analysis of LLM prompt reformulations for
+      Condition 4 of C1; qualitative brand transfer demonstration
+    software: "None (architectural analysis). Source code for financial implementation: github.com/viberesearch/alibi"
+
+acceptance:
+  - claim_id: "P1"
+    criterion: >
+      Brand assessments produced through the pipeline show lower confirmation-bias indicators
+      (e.g., ratio of confirming-to-disconfirming evidence cited, analyst-prior concordance
+      rate) than assessments produced through single-source analysis. Effect should be larger
+      when analysts bring strong priors. Measured via structured coding of audit reports
+      produced with vs. without pipeline discipline (N >= 30 pairs).
+    falsification: >
+      Pipeline-constrained analyses exhibit equivalent or higher confirmation bias indicators
+      relative to single-source analyses, suggesting that the structural requirement for
+      multi-source integration does not effectively constrain analyst inference.
+
+  - claim_id: "P2"
+    criterion: >
+      Brand claims coded as appearing across all three model implementations (Claude, Gemini,
+      GPT-4) show significantly higher retest reliability (Pearson r across independent
+      analysis sessions) than claims appearing in only one model's output. Expected: r(robust)
+      > 0.70; r(single-model) < 0.50. Tested on at least 10 brands, 3 analysis sessions each.
+    falsification: >
+      Multi-model convergence does not predict retest reliability, indicating that LLM
+      agreement is an artifact of shared training corpus rather than structural signal.
+
+  - claim_id: "P3"
+    criterion: >
+      Structured coding of published brand audits (N >= 50) without formal stage separation
+      yields error-type frequencies E1, E2, E3 significantly above zero. Pipeline-constrained
+      analyses (N >= 30) yield rates not significantly different from zero. Inter-coder
+      reliability for error coding kappa > 0.60.
+    falsification: >
+      Error types E1-E3 appear at comparable frequencies in pipeline-constrained and
+      unconstrained analyses, indicating that the architectural separation does not prevent
+      these errors in practice.
+
+  - claim_id: "P4"
+    criterion: >
+      For a sample of brand claims, those on which LLM models disagree (D = 1) show higher
+      rates of contested findings in independent consumer research (A = 1). Measured by
+      cross-referencing model disagreement log with published consumer research on the same
+      brand attributes. Expected: P(A=1 | D=1) > 2 * P(A=1 | D=0).
+    falsification: >
+      Model disagreement does not predict genuine consumer research ambiguity, indicating
+      that disagreement reflects model artifacts (idiosyncratic biases) rather than
+      evidential ambiguity.
+
+  - claim_id: "C1"
+    criterion: >
+      For the same brand analysis prompt, 5+ reformulations produce consistent structural
+      classifications (dimension active/inactive, coherence type assignment) despite variable
+      numerical outputs. Stability rate for structural features >= 80%; for numerical values
+      <= 50%. Tested across at least 5 brands and 3 LLM architectures.
+    falsification: >
+      Structural features (dimension identification, coherence type) vary as much as numerical
+      values across prompt reformulations, indicating that LLM structural outputs are
+      prompt-sensitive rather than signal-driven.
+
+data:
+  available: false
+  url: ""
+  notes: >
+    No primary data collected in this paper. The financial implementation processed
+    approximately 500 real business transactions during development; those records are
+    proprietary and not publicly available. Brand analyses referenced use publicly available
+    brand information. The alibi repository (github.com/viberesearch/alibi) contains a
+    sterilized version of the financial implementation code. Primary data for testing P1-P4
+    would require controlled analyst studies and consumer survey instruments.
+
+code:
+  available: true
+  url: "https://github.com/viberesearch/alibi"
+  notes: >
+    The alibi repository contains a sterilized implementation of the financial document
+    reconciliation pipeline demonstrating all seven principles. The sbt-framework repository
+    (github.com/spectralbranding/sbt-framework) implements the brand perception domain transfer
+    as a structured prompt sequence across 7 modules. The financial implementation uses Python;
+    the brand perception implementation uses natural language prompts for LLM execution.
+
+replication:
+  feasible: true
+  estimated_cost: "< $5,000 USD (analyst studies + LLM API costs)"
+  estimated_time: "6-12 months"
+  requirements:
+    - "Analyst pool (N >= 30) with varying levels of prior brand convictions for testing P1"
+    - "Brand audit corpus (N >= 50 published audits) for testing P3 via error coding"
+    - "LLM API access to Claude, Gemini, and GPT-4 for cross-model replication"
+    - "Structured coding protocol for error types E1-E3 with inter-rater reliability testing"
+    - "Independent consumer research database for P4 cross-referencing"
+    - "Pre-registered analysis plan on OSF or AsPredicted"
+
+dependencies:
+  - doi: "10.5281/zenodo.18945912"
+    claim: "Zharnikov (2026a) SBT — defines the 8 dimensions used in the domain transfer (Section 4); provides the brand examples used in the mapping demonstration"
+    relationship: "applies"
+    critical: true
+
+  - doi: "10.1177/002224299305700201"
+    claim: "Keller (1993) customer-based brand equity — primary target of the domain transfer demonstration; SBT's observer cohort concept extends CBBE"
+    relationship: "extends"
+    critical: false
+
+  - doi: "10.1016/0022-4359(96)90015-4"
+    claim: "Aaker (1996) brand personality — 5-dimension taxonomy whose dimensional typing is structurally analogous to the pipeline's typed atom architecture"
+    relationship: "applies"
+    critical: false
+
+  - reference: "Nickerson, R. S. (1998). Confirmation bias: A ubiquitous phenomenon in many guises. Review of General Psychology, 2(2), 175-220."
+    claim: "Defines confirmation bias as operating through selective attention — the mechanism P1 claims the pipeline structurally prevents"
+    relationship: "applies"
+    critical: true
+
+  - reference: "Peters, O. (2019). The ergodicity problem in economics. Nature Physics, 15, 1216-1221."
+    claim: "Non-ergodicity formalism — motivates the path-dependence of brand conviction rebuild through re-collapse (Principle 6) as sequence-dependent outcome"
+    relationship: "applies"
+    critical: false
+
+  - reference: "Argyle, L. P., et al. (2023). Out of one, many: Using language models to simulate human samples. Political Analysis, 31(3), 337-351."
+    claim: "LLM-as-simulacrum validity framework — methodological template for the human-subject validation proposed to confirm P2's LLM convergence claims"
+    relationship: "applies"
+    critical: false
+
+results:
+  - claim_id: "P1"
+    status: not_tested
+    notes: >
+      The structural argument is presented through architectural analysis: the pipeline's
+      multi-source requirement is shown to be a necessary condition for fact collapse,
+      logically preventing single-source confirmation. No controlled analyst study has
+      been conducted to measure whether the structural prevention translates to lower
+      empirical confirmation bias rates.
+
+  - claim_id: "P2"
+    status: not_tested
+    notes: >
+      The four conditions for LLM convergent validity (C1) are analyzed theoretically and
+      supported by a prompt-sensitivity observation referenced in Section 7.2. No systematic
+      retest reliability comparison between multi-model and single-model conclusions has
+      been conducted.
+
+  - claim_id: "P3"
+    status: not_tested
+    notes: >
+      The three error types are defined and their causal mechanism in pipelines without
+      stage separation is argued. No coding study of published brand audits has been
+      conducted to measure empirical error frequency.
+
+  - claim_id: "P4"
+    status: not_tested
+    notes: >
+      The diagnostic interpretation of cross-model disagreement is argued from the
+      re-collapse principle. No empirical study cross-referencing model disagreement
+      logs with consumer research ambiguity data has been conducted.
+
+  - claim_id: "D1"
+    status: supported
+    notes: >
+      The seven-principle, three-stage architecture is demonstrated through the working
+      financial implementation. All seven principles are operationalized in the alibi
+      codebase and shown to produce correct transaction reconciliation on development data.
+      The architectural properties (path-independence via re-collapse, epistemic separation
+      via distinct storage layers) are verified by implementation.
+
+  - claim_id: "D2"
+    status: supported
+    notes: >
+      The cross-domain mapping (Table 3 in the paper) is demonstrated through qualitative
+      analysis of five SBT case-study brands. Each of the seven principles is shown to
+      operate identically in the brand domain. Observer heterogeneity is shown to be the
+      critical extension that produces the multi-cohort structure of SBT.
+
+  - claim_id: "C1"
+    status: supported
+    notes: >
+      Condition 4 is partially tested via the sensitivity analysis in Section 7.2: five
+      prompt reformulations of the same brand analysis produced stable structural
+      classifications (dimension identification, coherence type) while producing variable
+      numerical scores. Conditions 1-3 are argued from public knowledge of model
+      architectures and training procedures.
+
+limitations:
+  - description: >
+      The atom-cloud-fact pipeline and SBT were developed by the same author, making
+      the cross-domain transfer self-confirming. Independent replication of the pipeline
+      in a domain not developed by this author (political perception, medical diagnosis)
+      would provide stronger evidence of domain-agnosticism.
+    severity: major
+    addressable: true
+
+  - description: >
+      All four propositions (P1-P4) are untested. The paper establishes structural
+      arguments and testable predictions but does not report empirical results. Empirical
+      testing requires controlled studies that have not yet been conducted.
+    severity: major
+    addressable: true
+
+  - description: >
+      LLM training corpora overrepresent Western, English-language consumer brand discourse.
+      Multi-model convergence on prominent brands (Hermes, IKEA, Tesla) may partly reflect
+      shared training signal rather than independent structural inference. This bias is
+      most severe for globally prominent brands.
+    severity: moderate
+    addressable: true
+
+  - description: >
+      The financial implementation's scoring weights (vendor 0.30, amount 0.40, date 0.20)
+      were hand-tuned on approximately 500 development transactions without formal sensitivity
+      analysis. Different business contexts would likely require recalibration, and the
+      specific weight values should not be treated as theoretically motivated constants.
+    severity: minor
+    addressable: true
+
+  - description: >
+      The path-independence claim for the brand domain requires qualification: financial
+      atoms persist, but perceptual atoms decay. Brand conviction rebuild is not fully
+      path-independent because the available atom set at re-collapse time is the set of
+      signals that survived temporal decay plus crystallized priors — which depends on
+      the order and timing of prior encounters.
+    severity: moderate
+    addressable: false
+
+repositories:
+  - platform: "Zenodo"
+    doi: "10.5281/zenodo.18944770"
+    url: "https://doi.org/10.5281/zenodo.18944770"
+    version: "v2"
+    date: "2026-03-24"
+  - platform: "GitHub"
+    url: "https://github.com/spectralbranding/sbt-papers/alibi-epistemology"
+
+submission_history: []

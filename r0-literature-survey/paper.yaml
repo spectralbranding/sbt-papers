@@ -1,0 +1,402 @@
+# paper.yaml — Paper Spec v0.1.0
+# Zharnikov (2026c): R0 — Literature Survey (Geometric Approaches to Brand Perception)
+spec_version: "0.1.0"
+
+meta:
+  title: "Geometric Approaches to Brand Perception: A Critical Survey and Research Agenda"
+  authors:
+    - name: "Zharnikov, Dmitry"
+      orcid: "0009-0000-6893-9231"
+      affiliation: "Independent Researcher"
+  doi: "10.5281/zenodo.18945217"
+  date: "2026-01-01"
+  version: "1.0"
+  venue: "Working Paper (Zenodo)"
+  license: "CC-BY-4.0"
+  keywords:
+    - brand perception
+    - geometric methods
+    - multidimensional scaling
+    - conceptual spaces
+    - non-ergodicity
+    - high-dimensional geometry
+    - Spectral Brand Theory
+    - information geometry
+    - Johnson-Lindenstrauss lemma
+    - literature survey
+
+claims:
+  - id: "G1"
+    type: proposition
+    statement: >
+      A compound gap persists in the literature on brand perception: no existing framework
+      combines (1) high-dimensional geometric structure, (2) a formal metric on brand space
+      with proved properties, (3) observer heterogeneity beyond preference parameters,
+      (4) non-ergodic temporal dynamics, and (5) a generative signal mechanism, into an
+      integrated theory. Each existing tradition satisfies at most two of these five criteria.
+    formal: >
+      Let T_1,...,T_n be the surveyed traditions (MDS, Lancaster, conceptual spaces,
+      non-Euclidean perception, information geometry, INDSCAL, TDA, quantum cognition,
+      opinion dynamics, non-ergodicity). Define criteria set C = {C1,...,C5}. For all i:
+      |{c in C : T_i satisfies c}| <= 2. No T_i satisfies all 5 criteria simultaneously.
+      Proved by classification matrix (Table 1a, Table 1b in the paper).
+    testable: true
+    tested_in_paper: true
+    status: supported
+    depends_on: []
+
+  - id: "G2"
+    type: proposition
+    statement: >
+      The two-to-three dimensionality convention in MDS marketing research reflects a
+      visual-interpretability constraint and the properties of standard stress-plot elbow
+      criteria, not evidence that brand perception is genuinely low-dimensional. The
+      Johnson-Lindenstrauss lemma, which has not previously been connected to the MDS
+      dimensionality-selection problem in marketing, implies that low-dimensional MDS
+      solutions are systematically distorted projections of higher-dimensional perceptual
+      space.
+    formal: >
+      JL lemma: for n points in R^d, projection to k dimensions preserves pairwise distances
+      within (1 +/- epsilon) provided k >= C * log(n) / epsilon^2. For marketing MDS
+      studies with d = 8 (SBT dimensions), k = 2, n = 20 brands: required epsilon for
+      (1 +/- epsilon) preservation is epsilon >= sqrt(ln(20) / 2) >= 1.23 (123% distortion).
+      MDS 2D solutions are therefore not faithful distance representations.
+    testable: true
+    tested_in_paper: true
+    status: supported
+    depends_on: []
+
+  - id: "G3"
+    type: proposition
+    statement: >
+      Non-ergodicity — the divergence between time averages and ensemble averages in
+      multiplicative dynamics — is structurally present in brand perception but has never
+      been applied to brand perception, customer loyalty, or marketing metrics. Brand
+      perception exhibits all four hallmarks of non-ergodic dynamics: multiplicative signal
+      compounding, absorbing states (permanent negative conviction), path dependence
+      (signal order effects on final conviction), and observer heterogeneity.
+    formal: >
+      Ergodicity condition: lim_{T->inf} (1/T) sum_{t=0}^T X_t = E[X] for any trajectory.
+      Brand perception violates this: signals compound multiplicatively (new signal interacts
+      with existing conviction, not just adds), absorbing states exist (permanent rejection
+      conviction cannot be undone by positive signals), and individual trajectories are
+      governed by person-specific observer spectral profiles making population averages
+      uninformative about individual trajectories (Molenaar, 2004).
+    testable: true
+    tested_in_paper: true
+    status: supported
+    depends_on: []
+
+  - id: "G4"
+    type: proposition
+    statement: >
+      The Fisher-Rao information metric on the probability simplex Delta^7, derived from
+      Cencov's (1982) uniqueness theorem, is the appropriate metric for observer weight
+      spaces in brand theory. Of four candidate metrics (Fisher-Rao, Hellinger, Jensen-Shannon,
+      Aitchison), only Fisher-Rao satisfies invariance under sufficient-statistic embeddings
+      — the property that distances are consistent regardless of how the dimensional taxonomy
+      is refined or coarsened.
+    formal: >
+      Cencov uniqueness: the Fisher information metric g_{ij}(w) = delta_{ij}/w_i is the
+      unique Riemannian metric on {probability distributions} invariant under Markov morphisms.
+      Closed-form distance: d_FR(w_A, w_B) = 2 arccos(sum_i sqrt(w_{A,i} * w_{B,i})).
+      Competing metrics: Hellinger lacks Cencov invariance; Jensen-Shannon lacks it;
+      Aitchison is singular at boundary (w_i = 0), blocking representation of dimension-blind
+      observers. Fisher-Rao handles all cases.
+    testable: true
+    tested_in_paper: true
+    status: supported
+    depends_on: []
+
+  - id: "OP1"
+    type: proposition
+    statement: >
+      Open Problem 1 (Formal Metric): Define a mathematically rigorous metric space for
+      multi-dimensional brand profiles and prove its fundamental properties. The target
+      result is a formally verified metric space with at least three non-trivial theorems
+      about its geometric properties. Addressed by companion paper Zharnikov (2026d).
+    formal: >
+      Let B = R^8_+ (brand emission profiles) and O = Delta^7 (observer weight profiles).
+      Define d_B: B x B -> R_+ and d_O: O x O -> R_+ satisfying metric axioms (M1)-(M4).
+      Derive geodesics, curvature, and volume elements. Define observer-dependent
+      pseudo-metric d_w(A,B) = ||W_w circ (s_A - s_B)||, characterize its kernel.
+    testable: true
+    tested_in_paper: false
+    status: not_tested
+    depends_on: ["G1"]
+
+  - id: "OP2"
+    type: proposition
+    statement: >
+      Open Problem 2 (Projection Bounds): Apply the Johnson-Lindenstrauss lemma to quantify
+      information loss when reducing 8-dimensional brand profiles to scalar grades. Target
+      result: a "metamerism is inevitable" theorem proving scalar grades necessarily conflate
+      brands that differ in full spectral profiles. Addressed by companion paper Zharnikov
+      (2026e).
+    formal: >
+      For any linear projection phi: R^8 -> R^1 and N brand profiles, the distortion
+      epsilon satisfies epsilon >= sqrt(ln N). For N=10: epsilon >= 1.52 (152% distortion).
+      Null-space dimension = 8 - 1 = 7, making 7/8 of brand identity invisible to any
+      scalar grade. Information retention: log_2(5) / (8 * 2.5) = 11.6% for a 5-level grade.
+    testable: true
+    tested_in_paper: false
+    status: not_tested
+    depends_on: ["G1", "G2"]
+
+  - id: "OP3"
+    type: proposition
+    statement: >
+      Open Problem 3 (Concentration of Measure): Establish concentration-of-measure bounds
+      for the 8-dimensional brand space and observer simplex. Target result: explicit bounds
+      on pairwise distances among random brand profiles and observer weight vectors, providing
+      a null-model baseline for statistically meaningful brand differentiation.
+    formal: >
+      For w drawn from Dirichlet(1,...,1) on Delta^7: E[||w_A - w_B||^2] = 7/36 approx
+      0.194. For normalized brand profiles on S^7_+: positive-octant restriction compresses
+      available brand space to 1/256 of full sphere, raising the geometric difficulty of
+      differentiation. Addressed by Zharnikov (2026d), Zharnikov (2026f).
+    testable: true
+    tested_in_paper: false
+    status: not_tested
+    depends_on: ["G1"]
+
+methodology:
+  type: review
+  design: >
+    Systematic survey of nine distinct research traditions at the intersection of formal
+    geometry and brand/consumer perception theory: (1) multidimensional scaling in marketing,
+    (2) characteristics-space economics (Lancaster, Hotelling), (3) conceptual spaces
+    (Gardenfors), (4) non-Euclidean perceptual geometry (Todd, Bujack), (5) information
+    geometry (Amari), (6) individual differences and dimension weighting (INDSCAL, DeSarbo),
+    (7) topological data analysis in marketing, (8) quantum cognition models, (9) opinion
+    dynamics and multi-agent models, (10) non-ergodicity beyond economics (Peters, Molenaar).
+    Each tradition is assessed against six criteria (dimensionality, metric structure,
+    observer heterogeneity, temporal dynamics, generative mechanism, empirical validation)
+    and classified in two matrices. Six open problems are formulated with mathematical
+    specifications and target results. No primary data collection.
+  analysis:
+    method: >
+      Structured narrative review; classification matrix (6 criteria x 10 traditions);
+      gap identification through pairwise absence of criterion satisfaction; mathematical
+      formulation of 6 open problems with companion paper cross-references
+    software: "None"
+
+acceptance:
+  - claim_id: "G1"
+    criterion: >
+      Systematic replication of the classification matrix by an independent reviewer using
+      the same six criteria and the same set of traditions produces a matrix that agrees
+      with Table 1a/1b on at least 50 of 60 cells (83% agreement). Disagreements should
+      be attributable to reasonable differences in how "satisfied" is defined for a given
+      criterion, not to factual errors.
+    falsification: >
+      An existing framework is identified that satisfies all five criteria simultaneously,
+      invalidating the compound-gap claim. Alternatively, the independent reviewer's matrix
+      shows widespread disagreement (< 70% cell concordance), indicating the criteria are
+      too subjective to support the gap claim.
+
+  - claim_id: "G2"
+    criterion: >
+      Reanalysis of an existing MDS marketing dataset (e.g., Green & Rao 1972 or a
+      contemporary equivalent) shows that (a) the recovered 2-3D solution has stress
+      values consistent with JL-predicted distortion at epsilon > 1.0 for the sample size,
+      and (b) brands rated as similar in 2D are rated as distinct in 8D when evaluated on
+      SBT dimensions by independent raters.
+    falsification: >
+      The 2-3D MDS solution achieves stress levels consistent with epsilon < 0.3, suggesting
+      that 2-3 dimensions do faithfully represent the pairwise distances and the JL
+      argument does not apply in this domain.
+
+  - claim_id: "G3"
+    criterion: >
+      An empirical study measures individual-level brand perception trajectories (N >= 50
+      observers, T >= 12 time points, 3+ brands) and computes the ergodicity information
+      index (EII) for each observer-brand pair. If brand perception is non-ergodic:
+      EII >> 0 across observers; time-average brand evaluations should differ systematically
+      from ensemble-average (cross-sectional) evaluations on the same brands.
+    falsification: >
+      EII is near zero across observers and brands, indicating that cross-sectional brand
+      tracking data is a faithful representation of individual trajectories and brand
+      perception is approximately ergodic.
+
+  - claim_id: "G4"
+    criterion: >
+      For a sample of N >= 100 observers each evaluated with an 8-item brand perception
+      instrument (one item per SBT dimension), distance calculations under Fisher-Rao and
+      the three competing metrics (Hellinger, Jensen-Shannon, Aitchison) are compared for
+      predictive validity against an external criterion (e.g., brand choice consistency over
+      time). Fisher-Rao distances should predict the external criterion more reliably.
+    falsification: >
+      A competing metric (e.g., Aitchison or Hellinger) shows equal or superior predictive
+      validity for the external criterion, indicating that the Cencov theoretical uniqueness
+      does not translate to practical superiority in this domain.
+
+data:
+  available: false
+  url: ""
+  notes: >
+    No primary data collected. This is a literature survey paper. All quantitative analyses
+    (JL calculations, concentration bounds) are analytical derivations, not empirical
+    measurements. The classification matrix reflects the author's reading of published
+    literature and is subject to inter-reviewer agreement testing as specified in the
+    acceptance criteria.
+
+code:
+  available: true
+  url: "https://github.com/spectralbranding/sbt-framework"
+  notes: >
+    The sbt-framework repository implements the SBT computational pipeline referenced as
+    a candidate to address the identified gap. Analytical computations (JL bounds, Fisher-Rao
+    distances) referenced in the open problems are implemented in companion papers Zharnikov
+    (2026d) and Zharnikov (2026e), not in this survey paper directly.
+
+replication:
+  feasible: true
+  estimated_cost: "< $2,000 USD (literature access + research assistant time)"
+  estimated_time: "3-6 months"
+  requirements:
+    - "Access to the full set of referenced papers (most available open access or via institutional access)"
+    - "One or two independent reviewers to replicate the classification matrix assessment"
+    - "Consensus protocol for resolving disagreements on criterion satisfaction"
+    - "Mathematical verification of JL bound calculations (no custom software needed)"
+
+dependencies:
+  - doi: "10.5281/zenodo.18945912"
+    claim: "Zharnikov (2026a) SBT — the candidate framework positioned to address the identified compound gap; classification matrix row for SBT"
+    relationship: "applies"
+    critical: true
+
+  - doi: "10.1177/002224299305700201"
+    claim: "Keller (1993) CBBE — classified in tradition assessment; observer heterogeneity: not modeled; generative mechanism: none; temporal dynamics: none"
+    relationship: "applies"
+    critical: false
+
+  - doi: "10.1016/0022-4359(96)90015-4"
+    claim: "Aaker (1996) brand personality — 5-dimension taxonomy classified in MDS tradition; lacks formal metric and generative mechanism"
+    relationship: "applies"
+    critical: false
+
+  - reference: "Kapferer, J.-N. (2008). The new strategic brand management (4th ed.). Kogan Page."
+    claim: "Kapferer (2008, 4th ed.) Brand Identity Prism — 6-facet model classified as lacking formal metric, observer heterogeneity, and temporal dynamics"
+    relationship: "applies"
+    critical: false
+
+  - reference: "Carroll, J. D., & Chang, J.-J. (1970). Analysis of individual differences in multidimensional scaling via an N-way generalization of Eckart-Young decomposition. Psychometrika, 35(3), 283-319."
+    claim: "Carroll & Chang (1970) INDSCAL — closest precedent to SBT observer cohort concept; formally classified as lacking temporal dynamics and generative mechanism"
+    relationship: "applies"
+    critical: true
+
+  - reference: "Peters, O. (2019). The ergodicity problem in economics. Nature Physics, 15, 1216-1221."
+    claim: "Peters (2019) — non-ergodicity formalism applied to brand perception for the first time in this survey; gap identification G3"
+    relationship: "applies"
+    critical: true
+
+  - reference: "Bujack, R., Teti, E., Miller, J., Caffrey, E., & Turton, T. L. (2022). The non-Riemannian nature of perceptual color space. Proceedings of the National Academy of Sciences, 119(18)."
+    claim: "Bujack et al. (2022) — establishes that perceptual color space is non-Riemannian, motivating non-Euclidean treatment of brand perception space"
+    relationship: "applies"
+    critical: true
+
+  - reference: "Amari, S., & Nagaoka, H. (2000). Methods of information geometry. American Mathematical Society."
+    claim: "Amari information geometry — Fisher-Rao metric selection rationale (G4); Cencov uniqueness theorem citation"
+    relationship: "applies"
+    critical: true
+
+results:
+  - claim_id: "G1"
+    status: supported
+    notes: >
+      The classification matrix (Tables 1a and 1b) is presented and argued in Sections 2-11.
+      Each tradition's assessment is argued with citations and reasoning. No tradition
+      satisfies more than 2 of 6 criteria. SBT is assessed as satisfying 5 criteria
+      conceptually but lacking formal proof and empirical validation at the time of writing.
+      Independent reviewer replication has not been conducted.
+
+  - claim_id: "G2"
+    status: supported
+    notes: >
+      The JL calculation showing 123%+ distortion for 2D MDS in marketing contexts is
+      presented analytically. The claim that MDS studies recover 2-3 dimensions due to
+      interpretability constraints rather than genuine low-dimensionality is argued from
+      the literature (stress function monotonicity, elbow subjectivity). No reanalysis of
+      specific MDS datasets has been conducted.
+
+  - claim_id: "G3"
+    status: supported
+    notes: >
+      The four hallmarks of non-ergodicity in brand perception (multiplicative compounding,
+      absorbing states, path dependence, observer heterogeneity) are argued by analogy with
+      Peters (2019), Molenaar (2004), and the literature on marketing path dependence
+      (Layton & Duffy, 2018). No empirical EII measurement on brand perception data has
+      been conducted.
+
+  - claim_id: "G4"
+    status: supported
+    notes: >
+      The Fisher-Rao selection is argued from Cencov's uniqueness theorem and the four
+      criteria for an appropriate observer-space metric. The competing metrics are analyzed
+      and their deficiencies identified (Hellinger lacks Cencov invariance; Aitchison is
+      boundary-singular). The argument is theoretical; no empirical predictive-validity
+      comparison has been conducted.
+
+  - claim_id: "OP1"
+    status: not_tested
+    notes: >
+      This is a formulated open problem, not a result. Companion paper Zharnikov (2026d)
+      addresses this problem and reports results (three metric spaces, proved properties,
+      geodesics, concentration bounds).
+
+  - claim_id: "OP2"
+    status: not_tested
+    notes: >
+      This is a formulated open problem, not a result. Companion paper Zharnikov (2026e)
+      addresses this problem and proves the metamerism theorems with JL bounds.
+
+  - claim_id: "OP3"
+    status: not_tested
+    notes: >
+      This is a formulated open problem, not a result. Companion papers Zharnikov (2026d)
+      and Zharnikov (2026f) address concentration-of-measure bounds.
+
+limitations:
+  - description: >
+      The classification matrix relies on the author's judgment about whether each tradition
+      satisfies each criterion. Reasonable researchers may disagree, particularly for
+      criteria like "observer heterogeneity" (INDSCAL partially satisfies this). The matrix
+      is presented as an analytical argument, not an empirical measurement.
+    severity: major
+    addressable: true
+
+  - description: >
+      The survey covers the traditions the author identified as relevant to the compound
+      gap. Other traditions (e.g., activity theory, ecological psychology, semiotic
+      traditions in marketing) are not covered. The absence of a tradition from the matrix
+      does not mean it could not address the gap.
+    severity: moderate
+    addressable: true
+
+  - description: >
+      The six open problems are defined relative to SBT's framework (8 dimensions, observer
+      simplex Delta^7). If a different number of dimensions proves empirically correct,
+      the mathematical formulations require rescaling. The problem statements are not
+      falsifiable from within the survey paper itself.
+    severity: minor
+    addressable: true
+
+  - description: >
+      The survey is a single-author work, increasing the risk that the gap identification
+      reflects the author's research agenda rather than an objectively neutral assessment
+      of the literature. An independent systematic review using the same six criteria would
+      provide stronger evidence for the gap claim.
+    severity: moderate
+    addressable: true
+
+repositories:
+  - platform: "Zenodo"
+    doi: "10.5281/zenodo.18945217"
+    url: "https://doi.org/10.5281/zenodo.18945217"
+    version: "v2"
+    date: "2026-03-24"
+  - platform: "GitHub"
+    url: "https://github.com/spectralbranding/sbt-papers/r0-literature-survey"
+
+submission_history: []

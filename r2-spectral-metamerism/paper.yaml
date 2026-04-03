@@ -1,0 +1,446 @@
+# paper.yaml — Paper Spec v0.1.0
+# Zharnikov (2026e): R2 — Spectral Metamerism (Johnson-Lindenstrauss projections)
+spec_version: "0.1.0"
+
+meta:
+  title: "Spectral Metamerism in Brand Perception: Projection Bounds from High-Dimensional Geometry"
+  authors:
+    - name: "Zharnikov, Dmitry"
+      orcid: "0009-0000-6893-9231"
+      affiliation: "Independent Researcher"
+  doi: "10.5281/zenodo.18945352"
+  date: "2026-01-01"
+  version: "1.0"
+  venue: "Working Paper (Zenodo)"
+  license: "CC-BY-4.0"
+  keywords:
+    - spectral metamerism
+    - Johnson-Lindenstrauss lemma
+    - dimensionality reduction
+    - brand perception
+    - null space
+    - information loss
+    - Spectral Brand Theory
+    - rasterized brand management
+    - vectorized brand management
+    - scalar grades
+
+claims:
+  - id: "D1"
+    type: definition
+    statement: >
+      Two brand profiles s_A, s_B in R^8_+ are metameric with respect to a projection
+      phi: R^8_+ -> R if phi(s_A) = phi(s_B) and d_B(s_A, s_B) > 0 (i.e., same grade,
+      distinct spectral profiles). More generally, two brands are (epsilon, delta)-metameric
+      if |phi(s_A) - phi(s_B)| < epsilon and d_B(s_A, s_B) > delta. The analogy to color
+      science is structural: in both cases, a high-dimensional physical stimulus is projected
+      through a lower-dimensional sensor array, and the projection's null space creates
+      equivalence classes of physically distinct stimuli that produce identical responses.
+    formal: >
+      metameric(s_A, s_B, phi) := phi(s_A) = phi(s_B) AND d_B(s_A, s_B) > 0
+      (epsilon, delta)-metameric: |phi(s_A) - phi(s_B)| < epsilon AND d_B(s_A, s_B) > delta
+      Cohen (1982) Fundamental Metamerism: S = S* + B_metameric where S* in row-space(phi),
+      B_metameric in ker(phi). For R^8 -> R^1: dim(ker(phi)) = 8 - 1 = 7.
+    testable: true
+    tested_in_paper: true
+    status: supported
+    depends_on: []
+
+  - id: "T1"
+    type: theorem
+    statement: >
+      For any set of N brand profiles in R^8 and any linear projection f: R^8 -> R^1, the
+      distortion parameter epsilon required for (1 +/- epsilon) distance preservation satisfies
+      epsilon >= sqrt(ln N). Specifically: for N=5, epsilon >= 1.27 (127% distortion);
+      for N=10, epsilon >= 1.52 (152%); for N=50, epsilon >= 1.98 (198%); for N=100,
+      epsilon >= 2.15 (215%). Scalar grades are geometrically unfaithful representations
+      of 8-dimensional brand profiles.
+    formal: >
+      Johnson-Lindenstrauss (1984) lower bound (Larsen-Nelson, 2017 tight form):
+      For k-dimensional target and n points: epsilon >= sqrt(C * ln(n) / k).
+      Setting k=1, C=1 (conservative): epsilon >= sqrt(ln N).
+      N=10: sqrt(ln 10) = sqrt(2.303) approx 1.52.
+      N=50: sqrt(ln 50) = sqrt(3.912) approx 1.98.
+      Interpretation: distortion epsilon = 1.52 means 1D grade can represent two brands
+      as 252% of their true distance or as 0% (same point). Grade similarity is not
+      geometric similarity.
+    testable: true
+    tested_in_paper: true
+    status: supported
+    depends_on: ["D1"]
+
+  - id: "T2"
+    type: theorem
+    statement: >
+      To preserve pairwise Euclidean distances among N brands within factor (1 +/- epsilon),
+      the projection dimension must satisfy k >= 4 * ln(N) / (epsilon^2/2 - epsilon^3/3).
+      For epsilon = 0.3 (30% distortion tolerance): N=10 requires k >= 256; N=50 requires
+      k >= 435; N=100 requires k >= 512. Human working memory capacity (~7 +/- 2 chunks)
+      makes faithful brand identity representation impossible for competitive sets larger
+      than a handful of brands.
+    formal: >
+      Dasgupta-Gupta (2003) bound: k >= 4*ln(N) / (epsilon^2/2 - epsilon^3/3).
+      For epsilon=0.3, N=10: k >= 4*ln(10)/(0.045 - 0.009) = 4*2.303/0.036 approx 256.
+      Miller (1956): human working memory = 7 +/- 2 chunks approx k_human in {5,...,9}.
+      Therefore: for any N > exp(k_human^2 * 0.036 / 4) approx exp(0.56) approx 1.7 brands,
+      the human brand manager cannot faithfully preserve pairwise distances in working memory.
+    testable: true
+    tested_in_paper: true
+    status: supported
+    depends_on: ["T1"]
+
+  - id: "T3"
+    type: theorem
+    statement: >
+      For any linear projection phi: R^8 -> R^1, the null space ker(phi) is a 7-dimensional
+      linear subspace of R^8. For any brand profile s in R^8_+, the set of metameric profiles
+      M_s = {s' in R^8_+: phi(s') = phi(s)} is the intersection of a 7-dimensional affine
+      subspace with the positive orthant — a convex set of dimension at most 7. For any
+      delta > 0, there exist metameric pairs (s_A, s_B) with ||s_A - s_B|| > delta and
+      |phi(s_A) - phi(s_B)| = 0.
+    formal: >
+      Rank-nullity theorem: dim(ker(phi)) = 8 - rank(phi) = 8 - 1 = 7 for any nonzero phi.
+      Preimage phi^{-1}(phi(s)) = s + ker(phi): a 7D affine subspace of R^8.
+      Intersection with R^8_+ (convex cone): convex set of dimension at most 7.
+      For any delta > 0: let v in ker(phi), ||v||=1. For small t: s + tv in R^8_+ (by openness
+      of interior). phi(s + tv) = phi(s) + t*phi(v) = phi(s). Pair (s, s+tv) is metameric
+      with ||s - (s+tv)|| = t. Choose t > delta. QED.
+    testable: true
+    tested_in_paper: true
+    status: supported
+    depends_on: ["D1"]
+
+  - id: "P1"
+    type: proposition
+    statement: >
+      For two distinct observers w_A, w_B in Delta^7_circ with w_A != w_B, the intersection
+      ker(phi_{w_A}) intersect ker(phi_{w_B}) has dimension 6 (generically). Two distinct
+      observers reduce the effective null space from 7D to 6D; m independent observers reduce
+      it to (8-m)D. Eight independent observers eliminate the null space entirely, recovering
+      the full 8D structure from 8 scalar evaluations.
+    formal: >
+      Each ker(phi_w) is a hyperplane in R^8 (dimension 7). Two distinct hyperplanes in R^8
+      generically intersect in a subspace of dimension 7 + 7 - 8 = 6.
+      General case: m hyperplanes in R^8 with linearly independent normal vectors have
+      intersection of dimension 8 - m.
+      Consequence: perceptual diversity across m >= 8 independent observers is geometrically
+      necessary for faithful brand representation — not merely desirable but required by
+      the rank-nullity theorem.
+    testable: true
+    tested_in_paper: true
+    status: supported
+    depends_on: ["T3"]
+
+  - id: "T4"
+    type: theorem
+    statement: >
+      Variance retention bound: For n independent, identically-distributed dimensions projected
+      to k dimensions, the maximum fraction of variance retained is k/n. For n=8, k=1:
+      at most 12.5% of variance is retained. The optimal 1D projection (first principal
+      component) captures exactly 1/8 of total variance under equal-variance assumption.
+      The remaining 87.5% is distributed across the 7 null-space dimensions.
+    formal: >
+      For Sigma = sigma^2 * I_8 (equal variance, independent dimensions): eigenvalues all equal.
+      PCA captures top k eigenvalues: fraction = k*sigma^2 / (8*sigma^2) = k/8.
+      For k=1: 1/8 = 12.5%.
+      Rate-distortion convergence: for Gaussian source in R^8 with equal eigenvalues,
+      1D representation incurs distortion D = 7*sigma^2 = 87.5% of total variance (reverse
+      water-filling assigns all rate to largest eigenvalue direction).
+    testable: true
+    tested_in_paper: true
+    status: supported
+    depends_on: ["T3"]
+
+  - id: "T5"
+    type: theorem
+    statement: >
+      Information-theoretic bound on scalar grade capacity: a discrete grade scale with L
+      levels has channel capacity C = log_2(L) bits. An 8-dimensional profile with B bits
+      of resolution per dimension has total information content I = 8*B bits. For SBT's
+      5-point grade (L=5) and B=2.5 bits per dimension: information retention ratio
+      rho = log_2(5) / (8*2.5) = 2.32 / 20 = 11.6%. The 5-point grade compresses a
+      ~1,000,000-state profile space into 5 bins.
+    formal: >
+      C_grade = log_2(L) bits (channel capacity of uniform L-symbol output).
+      I_profile = n * B bits (total information content of n-dimensional profile).
+      rho = C_grade / I_profile = log_2(L) / (n * B).
+      For L=5, n=8, B=2.5: rho = 2.32 / 20 = 11.6%.
+      Finer scale (L=100): rho = log_2(100) / 20 = 6.64/20 = 33.2%; 7D null space persists.
+      Corollary 1: the 7D null space exists for any phi: R^8 -> R^1 regardless of output
+      scale granularity. A continuous grade scale does not resolve the geometric problem.
+    testable: true
+    tested_in_paper: true
+    status: supported
+    depends_on: ["T3"]
+
+  - id: "MC1"
+    type: proposition
+    statement: >
+      Monte Carlo verification: in a competitive set of 50 randomly generated brand profiles,
+      31-39% of all pairwise comparisons are metameric under a random 1D projection (defined
+      as: 8D Aitchison distance > 1.0 but 1D Euclidean distance < 0.3). This confirms that
+      metamerism is not a rare pathological case but a prevalent geometric phenomenon affecting
+      approximately one-third of all competitive brand comparisons.
+    formal: >
+      Simulation: N=50 log-normal profiles in R^8_+, random unit projection vector u in R^8.
+      All C(50,2) = 1225 pairwise distances computed in 8D (Euclidean on log-profiles) and 1D.
+      Metameric pair: d_{8D} > 1.0 AND d_{1D} < 0.3.
+      Three independent trials: 474/1225 = 38.7%, 388/1225 = 31.7%, 374/1225 = 30.5%.
+      Code: R2_R3_computations.py (see companion paper Zharnikov, 2026f).
+    testable: true
+    tested_in_paper: true
+    status: supported
+    depends_on: ["T3"]
+
+methodology:
+  type: mixed
+  design: >
+    Three independent lines of argument establishing that spectral metamerism is a geometric
+    inevitability, not a correctable measurement artifact: (1) Johnson-Lindenstrauss projection
+    bounds — deriving explicit distortion lower bounds for R^8 -> R^1 projection; (2) null-space
+    analysis — proving the 7-dimensional null space structure via rank-nullity theorem and
+    constructing explicit metameric pairs from the case-study brand data; (3) information-theoretic
+    bounds — deriving channel capacity limits for discrete grade scales. The rasterized-vs-vectorized
+    brand management framework is developed as the practical implication. Color science metamerism
+    (Cohen, 1982) is formalized as the structural analogy. Monte Carlo simulation is conducted
+    to verify theoretical predictions on randomly generated brand profiles. The companion code
+    (R2_R3_computations.py) implements the simulation.
+  analysis:
+    method: >
+      Analytical proof (JL lemma application, rank-nullity theorem, information theory);
+      constructive example (explicit metameric pairs from CLR perturbations of case-study profiles);
+      Monte Carlo simulation (N=50 profiles, 3 independent trials, random projection);
+      connections to MDS dimensionality selection and survey instrument design
+    software: "Python (numpy) for Monte Carlo simulation. Code: R2_R3_computations.py"
+
+acceptance:
+  - claim_id: "T1"
+    criterion: >
+      The JL lower bound derivation is verified against the Larsen-Nelson (2017) paper.
+      The specific epsilon values for N=5,10,50,100,500 are recomputed independently
+      using the formula epsilon >= sqrt(ln N) (setting C=1 as conservative constant)
+      and confirmed to match the table in Section 4.2.
+    falsification: >
+      The Larsen-Nelson (2017) lower bound is shown not to apply in the R^8 -> R^1 setting
+      (e.g., because the target dimension k=1 violates the proof assumptions), or the
+      constant C in the tight lower bound exceeds 1 and produces materially different
+      epsilon values that weaken the practical claim.
+
+  - claim_id: "T3"
+    criterion: >
+      The rank-nullity theorem application is verified: for any nonzero linear phi: R^8 -> R^1,
+      rank(phi) = 1 and dim(ker(phi)) = 7. The constructive metameric pair is verified:
+      for Hermes profile with equal-weight projection phi(s) = (1/8)*sum(s), the perturbation
+      delta = (0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5) (sum = 0) lies in ker(phi);
+      Aitchison distance between original and perturbed CLR profiles = ||delta||_2 = sqrt(2) approx 1.41.
+    falsification: >
+      The rank-nullity analysis is incorrect for nonlinear projection functions phi
+      (e.g., threshold-based grade assignment). Note: the claim is stated for linear phi;
+      the paper acknowledges nonlinear phi has >= as much information loss (Section 10.1).
+
+  - claim_id: "T5"
+    criterion: >
+      The information retention calculation is reproduced: log_2(5) = 2.322 bits; 8 dimensions
+      x 2.5 bits/dimension = 20 bits; ratio = 2.322/20 = 11.6%. The B=2.5 bits/dimension
+      assumption (approximately 6 reliably distinguishable levels on [1,10]) is verified by
+      comparison with signal detection theory (d' analysis for 10-point scales in
+      psychophysics literature).
+    falsification: >
+      B per dimension substantially exceeds 2.5 bits (e.g., B=4 bits, corresponding to 16
+      distinguishable levels), which would raise information retention to 23.2% — still low
+      but less extreme. The paper's conservative B=2.5 assumption should be treated as a
+      lower bound rather than a point estimate.
+
+  - claim_id: "MC1"
+    criterion: >
+      The Monte Carlo simulation is reproduced by running R2_R3_computations.py with three
+      different random seeds. The fraction of metameric pairs across trials should fall in
+      [25%, 45%] to confirm the paper's finding of 31-39%. If the fraction falls consistently
+      outside this range, the specific thresholds (d_{8D} > 1.0, d_{1D} < 0.3) may require
+      adjustment.
+    falsification: >
+      Replication consistently produces < 10% metameric pairs, indicating that the
+      31-39% finding is highly sensitive to the threshold choice and does not reflect a
+      robust property of the metric structure.
+
+data:
+  available: false
+  url: ""
+  notes: >
+    No empirical brand data collected. Case-study brand profiles (Hermes, IKEA, Patagonia,
+    Erewhon, Tesla) are the canonical profiles from Zharnikov (2026a): Hermes [9.5,9.0,7.0,
+    9.0,8.5,3.0,9.0,9.5], IKEA [8.0,7.5,6.0,7.0,5.0,9.0,7.5,6.0], Patagonia [6.0,9.0,
+    9.5,7.5,8.0,5.0,7.0,6.5], Erewhon [7.0,6.5,5.0,9.0,8.5,3.5,7.5,2.5], Tesla [7.5,8.5,
+    3.0,6.0,7.0,6.0,4.0,2.0]. Monte Carlo simulation uses randomly generated profiles,
+    not empirical survey data. Empirical validation would require survey instruments
+    measuring brand perception on all 8 SBT dimensions across a competitive brand set.
+
+code:
+  available: true
+  url: "https://github.com/spectralbranding/sbt-framework"
+  notes: >
+    Monte Carlo simulation code R2_R3_computations.py is referenced in the paper and
+    implemented as companion code to Zharnikov (2026f). The sbt-framework repository
+    implements the JL projection bounds module (Module 3, used in Zharnikov (2026r) P3
+    analysis). Distance computations using the Aitchison metric are implemented in
+    Module 2 of the sbt-framework.
+
+replication:
+  feasible: true
+  estimated_cost: "< $500 USD (analytical + computation; no data collection)"
+  estimated_time: "1-2 months"
+  requirements:
+    - "Python with numpy for Monte Carlo simulation (R2_R3_computations.py)"
+    - "Access to Johnson & Lindenstrauss (1984) and Larsen-Nelson (2017) for bound verification"
+    - "Access to Aitchison (1986) and Zharnikov (2026d) for distance computation in CLR coordinates"
+    - "Case study brand profiles (published in Zharnikov 2026a)"
+
+dependencies:
+  - doi: "10.5281/zenodo.18945912"
+    claim: "Zharnikov (2026a) SBT — provides the 8-dimensional framework; defines L1 (spectral profile) and L2 (scalar grade) outputs; provides canonical brand profiles"
+    relationship: "applies"
+    critical: true
+
+  - doi: "10.5281/zenodo.18945295"
+    claim: "Zharnikov (2026d) R1 — provides the three metric spaces used throughout: Aitchison distance on R^8_+, Fisher-Rao distance on Delta^7, warped product distance; Section 2.3 recalls all metrics from R1"
+    relationship: "applies"
+    critical: true
+
+  - reference: "Johnson, W. B., & Lindenstrauss, J. (1984). Extensions of Lipschitz mappings into a Hilbert space. Contemporary Mathematics, 26, 189-206."
+    claim: "Johnson-Lindenstrauss lemma — foundational result for T1 and T2; establishes the k >= C*log(n)/epsilon^2 dimension requirement"
+    relationship: "applies"
+    critical: true
+
+  - reference: "Larsen, K. G., & Nelson, J. (2017). Optimality of the Johnson-Lindenstrauss lemma. 58th Annual IEEE Symposium on Foundations of Computer Science."
+    claim: "Larsen-Nelson (2017) tight lower bound — establishes that Omega(epsilon^{-2} * log N) dependence is optimal; used in T1 proof"
+    relationship: "applies"
+    critical: true
+
+  - reference: "Cohen, J. B. (1982). Dependency of the spectral reflectance curves of the Munsell color chips. Psychon. Bull. Rev., 1, 281-302."
+    claim: "Cohen (1982) Fundamental Theorem of Colorimetry — structural analogy for Definition 1; metameric black / null space concept"
+    relationship: "applies"
+    critical: true
+
+  - reference: "Carroll, J. D., & Chang, J.-J. (1970). Analysis of individual differences in multidimensional scaling via an N-way generalization of Eckart-Young decomposition. Psychometrika, 35(3), 283-319."
+    claim: "Carroll & Chang (1970) INDSCAL — observer-dependent null space analysis in Section 5.3 uses the warped product distance from R1 which generalizes INDSCAL"
+    relationship: "applies"
+    critical: false
+
+  - reference: "Miller, G. A. (1956). The magical number seven, plus or minus two. Psychological Review, 63(2), 81-97."
+    claim: "Miller (1956) working memory limit — human operator as rasterization bottleneck; 7 +/- 2 chunks as the human k_human in Theorem 2 context"
+    relationship: "applies"
+    critical: false
+
+results:
+  - claim_id: "D1"
+    status: supported
+    notes: >
+      Definition 1 is established with both the exact and (epsilon, delta) forms. The color
+      science analogy (Table comparing color science to brand perception domains) is presented.
+      Constructive example with Hermes profile demonstrates metameric pair construction in Section 3.3.
+
+  - claim_id: "T1"
+    status: supported
+    notes: >
+      Full derivation presented in Section 4.2. Distortion table for N=5,10,50,100,500 computed
+      using epsilon >= sqrt(ln N). The plain-English interpretation (252% maximum misrepresentation
+      for N=10) is explicitly stated.
+
+  - claim_id: "T2"
+    status: supported
+    notes: >
+      Minimum faithful dimension table presented for epsilon=0.3 and epsilon=0.1. The human
+      working-memory connection (Miller, 1956) is drawn. The JL result is shown to be a
+      worst-case bound, not a practical target for well-structured brand data.
+
+  - claim_id: "T3"
+    status: supported
+    notes: >
+      Full proof presented in Section 5.1. Constructive example: Hermes + delta perturbation
+      produces metameric pair at Aitchison distance sqrt(2) approx 1.41 under equal-weight
+      projection. Explicit CLR perturbation vector provided.
+
+  - claim_id: "P1"
+    status: supported
+    notes: >
+      Null-space complementarity proposition proved in Section 5.3. Strategic interpretation
+      (diversity of observer perspectives is geometrically necessary) developed. The (8-m)D
+      formula for m independent observers stated and argued.
+
+  - claim_id: "T4"
+    status: supported
+    notes: >
+      PCA variance retention bound proved in Section 6.1. Rate-distortion convergence
+      (87.5% distortion for 1D representation of 8D Gaussian source) derived via reverse
+      water-filling in Section 6.3.
+
+  - claim_id: "T5"
+    status: supported
+    notes: >
+      Information retention calculation presented in Section 6.2. Corollary 1 (7D null
+      space persists regardless of output scale) proved. Finer output scale comparison
+      (L=100 gives 33.2% retention) presented.
+
+  - claim_id: "MC1"
+    status: supported
+    notes: >
+      Three Monte Carlo trials reported: 38.7%, 31.7%, 30.5% metameric pairs. Simulation
+      design (log-normal profiles, random projection vector, thresholds d_{8D}>1.0 and
+      d_{1D}<0.3) described. Code referenced as R2_R3_computations.py.
+
+limitations:
+  - description: >
+      The JL bounds and null-space analysis assume linear projections. Real brand evaluation
+      may involve nonlinear aggregation (e.g., identity-gate minimum score). Nonlinear
+      projections from R^8 to R^1 cannot exceed the channel capacity bound of log_2(L) bits
+      (T5 is linear-independent), but the JL distortion bounds may differ for specific
+      nonlinear functions.
+    severity: moderate
+    addressable: true
+
+  - description: >
+      The Monte Carlo simulation uses randomly generated log-normal brand profiles, not
+      profiles from an empirical brand survey. If real brand profiles concentrate on a
+      lower-dimensional manifold within R^8_+ (due to structural constraints from market
+      forces), the empirical metamerism rate may differ from 31-39%. The qualitative
+      conclusion (metamerism is prevalent) is likely robust, but the specific fraction
+      is a worst-case estimate.
+    severity: moderate
+    addressable: true
+
+  - description: >
+      The B=2.5 bits per dimension assumption in T5 is stated as conservative. Empirical
+      calibration using signal detection theory for 10-point rating scales would improve
+      the precision of the information retention estimate. The 11.6% figure should be
+      treated as an order-of-magnitude bound, not a precise measurement.
+    severity: minor
+    addressable: true
+
+  - description: >
+      The paper treats the projection phi as a fixed observer-independent function.
+      Observer-dependent metamerism (Section 10.6) — where different observer cohorts have
+      different null spaces — is analyzed in Proposition 1 only at the level of two-observer
+      null-space intersection. The full analysis for the warped product manifold metric from
+      R1 is deferred to future work.
+    severity: minor
+    addressable: true
+
+  - description: >
+      The vectorized brand management framework is presented as the normative alternative to
+      rasterized management. However, the practical transition costs (tooling for 8D profile
+      elicitation, training for brand managers, organizational change management) are not
+      analyzed. The mathematical case for vectorization is strong; the implementation path
+      requires further development.
+    severity: minor
+    addressable: true
+
+repositories:
+  - platform: "Zenodo"
+    doi: "10.5281/zenodo.18945352"
+    url: "https://doi.org/10.5281/zenodo.18945352"
+    version: "v2"
+    date: "2026-03-24"
+  - platform: "GitHub"
+    url: "https://github.com/spectralbranding/sbt-papers/r2-spectral-metamerism"
+
+submission_history: []

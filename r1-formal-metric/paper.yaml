@@ -1,0 +1,477 @@
+# paper.yaml — Paper Spec v0.1.0
+# Zharnikov (2026d): R1 — Formal Metric Space for Brand Perception
+spec_version: "0.1.0"
+
+meta:
+  title: "Brand Space Geometry: A Formal Metric for Multi-Dimensional Brand Perception"
+  authors:
+    - name: "Zharnikov, Dmitry"
+      orcid: "0009-0000-6893-9231"
+      affiliation: "Independent Researcher"
+  doi: "10.5281/zenodo.18945295"
+  date: "2026-01-01"
+  version: "1.0"
+  venue: "Working Paper (Zenodo)"
+  license: "CC-BY-4.0"
+  keywords:
+    - brand perception
+    - metric space
+    - information geometry
+    - Fisher-Rao metric
+    - Aitchison geometry
+    - compositional data
+    - warped product manifold
+    - Jacobi fields
+    - trajectory sensitivity
+    - Spectral Brand Theory
+    - INDSCAL
+    - concentration of measure
+
+claims:
+  - id: "D1"
+    type: definition
+    statement: >
+      The brand signal space is the metric space (B, d_B) where B = R^8_+ (open positive
+      orthant of R^8) and d_B is the Aitchison distance: d_B(s_A, s_B) = ||ilr(s_A) -
+      ilr(s_B)||_2, where ilr is the isometric log-ratio transform. This metric is
+      justified by three properties of brand perception: (1) perception is relative not
+      absolute (Weber-Fechner scaling), (2) brand profiles are compositional (proportional
+      structure carries meaning, not absolute magnitudes), (3) subcompositional coherence
+      must hold across dimensional subsets.
+    formal: >
+      d_B(s_A, s_B) = [sum_{i=1}^8 sum_{j=1}^8 (log(s_{A,i}/s_{A,j}) - log(s_{B,i}/s_{B,j}))^2 / 8]^{1/2}
+      equivalently: ||clr(s_A) - clr(s_B)||_2 where clr_k(s) = log(s_k / g(s)), g(s) = geometric mean.
+      Scale invariance: d_B(alpha*s_A, alpha*s_B) = d_B(s_A, s_B) for any alpha > 0.
+    testable: true
+    tested_in_paper: true
+    status: supported
+    depends_on: []
+
+  - id: "T1"
+    type: theorem
+    statement: >
+      The brand signal space (B, d_B) is a metric space: d_B satisfies non-negativity (M1),
+      identity of indiscernibles (M2), symmetry (M3), and the triangle inequality (M4).
+    formal: >
+      Proof via ilr isometry: the ilr transform phi: R^8_+ -> R^7 is a bijection.
+      d_B(s_A, s_B) = ||phi(s_A) - phi(s_B)||_2 is the pullback of the Euclidean metric
+      through a bijection. M1-M4 follow from the corresponding properties of the Euclidean
+      norm on R^7. M2: d_B = 0 iff phi(s_A) = phi(s_B) iff s_A = s_B (bijectivity).
+      M4: triangle inequality for ||.||_2 on R^7 pulls back to d_B.
+    testable: true
+    tested_in_paper: true
+    status: supported
+    depends_on: ["D1"]
+
+  - id: "D2"
+    type: definition
+    statement: >
+      The observer weight space is the metric space (O, d_O) where O = Delta^7_circ (interior
+      of the 7-simplex) and d_O is the Fisher-Rao distance: d_O(w_A, w_B) = 2 arccos(sum_i
+      sqrt(w_{A,i} * w_{B,i})). Selection is justified by Cencov's uniqueness theorem: the
+      Fisher information metric is the unique Riemannian metric on probability distributions
+      invariant under Markov morphisms (sufficient-statistic embeddings). This invariance
+      ensures distances are consistent regardless of how the dimensional taxonomy is refined
+      or coarsened.
+    formal: >
+      d_O(w_A, w_B) = 2 arccos(sum_{i=1}^8 sqrt(w_{A,i} * w_{B,i}))
+      Cencov (1972, 1982): unique Riemannian metric on {probability distributions} invariant
+      under Markov morphisms (up to constant scaling).
+      Embedding: varphi: Delta^7_circ -> S^7_+, varphi(w)_i = 2*sqrt(w_i).
+      d_O is the geodesic distance on S^7_+ under this embedding. Bounded: d_O in [0, pi).
+    testable: true
+    tested_in_paper: true
+    status: supported
+    depends_on: []
+
+  - id: "T2"
+    type: theorem
+    statement: >
+      The observer weight space (O, d_O) is a metric space: d_O satisfies M1-M4.
+      The Fisher-Rao geodesic has an entropy-bulge property: the midpoint gamma(1/2) of the
+      geodesic between any two distinct profiles w_A, w_B has Shannon entropy >= the entropy
+      of the arithmetic average (w_A + w_B)/2.
+    formal: >
+      M2: d_O(w_A, w_B) = 0 iff arccos(sum sqrt(w_i)) = 0 iff sum sqrt(w_{A,i} sqrt(w_{B,i}) = 1.
+      By Cauchy-Schwarz: sum sqrt(w_A * w_B) <= sqrt(sum w_A) * sqrt(sum w_B) = 1, with
+      equality iff w_A = w_B.
+      M4: geodesic distance on Riemannian manifold satisfies triangle inequality (do Carmo, 1992).
+      Entropy bulge (Prop 1): H(gamma(1/2)) >= H((w_A + w_B)/2) because sqrt-embedding maps
+      geodesic midpoint to more uniform distribution by concavity of sqrt. Equality iff profiles
+      are related by coordinate permutation.
+    testable: true
+    tested_in_paper: true
+    status: supported
+    depends_on: ["D2"]
+
+  - id: "D3"
+    type: definition
+    statement: >
+      The combined brand-observer space is the metric space (P, D) where P = Delta^7_circ x R^8_+
+      and D is a warped product metric: D^2((w_A,s_A),(w_B,s_B)) = d_FR^2(w_A,w_B) +
+      sum_k w_bar_k * (clr_k(s_A) - clr_k(s_B))^2, where w_bar_k = (w_{A,k} + w_{B,k})/2.
+      This generalizes the INDSCAL model (Carroll & Chang, 1970) by replacing raw coordinates
+      with Aitchison log-ratio coordinates and adding the Fisher-Rao component for comparing
+      observers with different weight profiles.
+    formal: >
+      D^2((w_A,s_A),(w_B,s_B)) = d_FR^2(w_A,w_B) + sum_{k=1}^8 ((w_{A,k}+w_{B,k})/2) * (clr_k(s_A)-clr_k(s_B))^2
+      When w_A = w_B = w (same observer): D^2 = sum_k w_k * (clr_k(s_A) - clr_k(s_B))^2
+      This is the INDSCAL distance with clr-transformed coordinates (Prop 2).
+    testable: true
+    tested_in_paper: true
+    status: supported
+    depends_on: ["D1", "D2"]
+
+  - id: "T3"
+    type: theorem
+    statement: >
+      The combined brand-observer space (P, D) is a metric space: D satisfies M1-M4.
+      The INDSCAL model is a special case of D when w_A = w_B (same observer perceiving
+      both brands). The observer-dependent brand distance d_w is a metric for w in the
+      interior of Delta^7 and a pseudo-metric on the boundary, with kernel consisting
+      of brand pairs differing only on dimensions to which observer w assigns zero weight.
+    formal: >
+      M1: d_FR^2 >= 0 and w_bar_k > 0 for interior observers implies D >= 0.
+      M2: D = 0 iff d_FR(w_A,w_B) = 0 (hence w_A=w_B) and all clr differences zero (hence s_A=s_B).
+      M3: w_bar_k symmetric in (w_A,w_B); (clr_k(s_A)-clr_k(s_B))^2 symmetric in (s_A,s_B).
+      M4: Triangle inequality via Minkowski inequality; full proof uses O'Neill (1983) warped product theorem.
+      Pseudo-metric kernel: ker(d_w) = {(s_A,s_B): clr_k(s_A)=clr_k(s_B) for all k with w_k > 0}.
+    testable: true
+    tested_in_paper: true
+    status: supported
+    depends_on: ["D3"]
+
+  - id: "T4"
+    type: theorem
+    statement: >
+      For two observer weight profiles drawn independently and uniformly from Dirichlet(1,...,1)
+      on Delta^7, the expected squared Euclidean distance is E[||w_A - w_B||^2] = 7/36 approx
+      0.194. The expected Euclidean distance is approx 0.441. This provides a null-model
+      baseline for statistically meaningful brand differentiation under random observer variation.
+    formal: >
+      For w ~ Dir(1,...,1) on Delta^{n-1}: E[w_i] = 1/n, E[w_i^2] = 2/(n(n+1)), E[w_i*w_j] = 1/(n(n+1)) for i!=j.
+      E[||w_A - w_B||^2] = sum_i E[(w_{A,i} - w_{B,i})^2] = n * (4/(n(n+1)) - 2/n^2) = 2(n-1)/(n(n+1)).
+      For n=8: 2*7/(8*9) = 14/72 = 7/36.
+      Interpretation: brand pairs perceived as closer than sqrt(7/36) by random observers may
+      be within null-model variation; perceived distances substantially exceeding this threshold
+      indicate genuine brand differentiation.
+    testable: true
+    tested_in_paper: true
+    status: supported
+    depends_on: ["D2"]
+
+  - id: "P4"
+    type: proposition
+    statement: >
+      The positive octant S^7_+ occupies 1/256 of the full 7-sphere S^7, compressing the
+      available brand space by a factor of 256 relative to the full sphere. Two random brand
+      profiles on S^7_+ have a positive expected inner product (unlike the full sphere where
+      E[<x,y>] = 0), meaning brand profiles are on average more similar to each other than
+      random points on the full sphere. This quantifies the geometric difficulty of brand
+      differentiation.
+    formal: >
+      Vol(S^7_+) = Vol(S^7) / 2^8 = Vol(S^7) / 256.
+      For n=8: Vol(S^7) = pi^4/3 approx 32.47; Vol(S^7_+) = pi^4/768 approx 0.127.
+      Maximum geodesic distance on S^7_+: pi/2 (vs pi on full sphere).
+      E[<x,y>] > 0 for uniform x,y on S^7_+: all coordinates non-negative by construction,
+      so inner product is non-negative with probability 1.
+    testable: true
+    tested_in_paper: true
+    status: supported
+    depends_on: ["D1"]
+
+  - id: "D7"
+    type: definition
+    statement: >
+      The spectral sensitivity index (SSI) for a brand at position s in S^7_+ perceived by
+      observer profile w in Delta^7_circ is: SSI(s,w) = (1/7) * sum_{k=1}^8 w_k * kappa_k(s),
+      where kappa_k(s) is the principal curvature of S^7_+ in the direction of the k-th
+      coordinate at s. The SSI is the observer-weighted average of directional curvatures,
+      quantifying trajectory vulnerability to perturbation. In the Aitchison geometry, SSI
+      diverges as any dimension s_k approaches zero (structural absence), formalizing that
+      dark-signal strategies are geometrically fragile.
+    formal: >
+      SSI(s,w) = (1/7) * sum_k w_k * kappa_k(s)
+      For round sphere: kappa_k = 1 everywhere on interior, SSI = 1/7.
+      Near boundary s_k -> 0: Aitchison geometry amplifies kappa_k -> inf (log-singularity).
+      Corollary: SSI(s,w) -> inf whenever w_k > 0 for a dimension with structural absence.
+      Jacobi field equation on S^7_+: J''_perp + J_perp = 0 (oscillatory, not divergent,
+      because positive curvature). Perturbations bounded, maximum separation at t = pi/2.
+    testable: true
+    tested_in_paper: true
+    status: supported
+    depends_on: ["D3"]
+
+  - id: "P6"
+    type: proposition
+    statement: >
+      In the warped product space (P, D), the sectional curvature depends on the observer
+      position w in Delta^7_circ. For a two-plane sigma tangent to the brand-space fiber,
+      the sectional curvature is K_w(sigma) = (K_{S^7_+}(sigma) - ||grad_F ln f||^2) / f^2(w),
+      where f(w) is the warping function. Observers near the boundary of Delta^7_circ
+      (extreme salience concentration) experience higher effective curvature, making brand
+      trajectories more sensitive to perturbation in their perception.
+    formal: >
+      O'Neill curvature formula for warped products (O'Neill, 1983, Corollary 7.43):
+      K_w(sigma) = (K_S^7_+(sigma) - ||nabla_F ln f||^2) / f^2(w)
+      Near simplex boundary (w_k -> 0): Fisher-Rao metric diverges; ||nabla_F ln f|| large;
+      effective curvature amplified.
+      Strategic implication: brands perceived through a single dimension (specialist observers,
+      boundary weight profiles) face higher trajectory sensitivity than brands perceived
+      holistically (generalist observers, interior weight profiles).
+    testable: true
+    tested_in_paper: true
+    status: supported
+    depends_on: ["D3", "D7"]
+
+methodology:
+  type: theoretical
+  design: >
+    Formal mathematical construction of three metric spaces corresponding to the fundamental
+    objects in Spectral Brand Theory: brand emission profiles (brand signal space), observer
+    weight vectors (observer weight space), and the combined brand-observer perception space.
+    For each space: (1) motivate the metric choice from first principles (Weber-Fechner scaling,
+    Cencov uniqueness, INDSCAL generalization), (2) formally define the metric, (3) prove
+    metric axioms (M1-M4), (4) derive geodesics, (5) establish geometric properties (curvature,
+    concentration bounds, volume fractions). The paper also develops Jacobi field analysis of
+    trajectory sensitivity on the perception manifold, introducing the spectral sensitivity
+    index. Application to five case-study brands (Hermes, IKEA, Patagonia, Erewhon, Tesla)
+    demonstrates that the metric recovers qualitative SBT coherence assessments and reveals
+    observer-dependent distance structures. No primary data collection.
+  analysis:
+    method: >
+      Axiomatic proof (metric axioms M1-M4 for all three spaces); isometric embedding
+      (ilr transform as isometry to R^7); Riemannian geometry (geodesics, curvature,
+      Jacobi fields via O'Neill warped product formula); concentration of measure
+      (Dirichlet distribution moments); case study application using canonical brand profiles
+    software: "None (formal proofs). Python (numpy) for case study distance computations."
+
+acceptance:
+  - claim_id: "T1"
+    criterion: >
+      The proof of Theorem 1 is verified by an independent mathematician familiar with
+      Aitchison geometry. The ilr isometry property (bijection and distance preservation)
+      is confirmed against Egozcue et al. (2003) as the primary reference. Metric axioms
+      follow directly and are verified independently.
+    falsification: >
+      The ilr transform is shown not to be injective on R^8_+ (i.e., two distinct profiles
+      map to the same ilr vector), which would violate M2 (identity of indiscernibles).
+      This would require a fundamental correction to the Aitchison geometry literature.
+
+  - claim_id: "T2"
+    criterion: >
+      Theorem 2 proof is independently verified: (a) Cauchy-Schwarz equality condition
+      check for M2, (b) geodesic distance triangle inequality from Riemannian geometry
+      textbooks (do Carmo, 1992). The entropy-bulge Proposition 1 is verified via Schur-concavity
+      of Shannon entropy and the majorization argument.
+    falsification: >
+      A counterexample is found where d_O(w_A, w_B) = 0 for distinct w_A != w_B (violating M2),
+      indicating an error in the Cauchy-Schwarz equality analysis. Such a counterexample
+      would require w_{A,i} = w_{B,i} for all i but w_A != w_B — contradictory by definition.
+
+  - claim_id: "T4"
+    criterion: >
+      The Dirichlet moment calculation is independently verified using the known moments of
+      the symmetric Dirichlet distribution (Johnson & Kotz, 1972). The result 7/36 is
+      confirmed by Monte Carlo simulation: draw N=100,000 pairs (w_A, w_B) from Dirichlet(1,...,1)
+      on Delta^7 and compute mean squared distance; result should be within 1% of 7/36.
+    falsification: >
+      Monte Carlo simulation produces a mean squared distance significantly different from
+      7/36 (e.g., outside the interval [0.19, 0.20]), indicating an error in the analytical
+      computation.
+
+  - claim_id: "D7"
+    criterion: >
+      The spectral sensitivity index SSI is computed for the five case-study brands (Hermes,
+      IKEA, Patagonia, Erewhon, Tesla) under at least three distinct observer weight profiles
+      (aesthete, pragmatist, balanced). Hermes, with low economic signal (structural near-zero),
+      should show the highest SSI under weight profiles with positive economic weight, consistent
+      with the geometric prediction.
+    falsification: >
+      SSI does not increase near boundary conditions (s_k -> 0) in the Aitchison geometry,
+      contradicting the log-singularity prediction. This would require an error in the
+      curvature analysis of the Aitchison metric near the boundary.
+
+data:
+  available: false
+  url: ""
+  notes: >
+    No primary data collected. The five case-study brand profiles (Hermes, IKEA, Patagonia,
+    Erewhon, Tesla) are the canonical profiles from Zharnikov (2026a): Hermes [9.5,9.0,7.0,
+    9.0,8.5,3.0,9.0,9.5], IKEA [8.0,7.5,6.0,7.0,5.0,9.0,7.5,6.0], Patagonia [6.0,9.0,
+    9.5,7.5,8.0,5.0,7.0,6.5], Erewhon [7.0,6.5,5.0,9.0,8.5,3.5,7.5,2.5], Tesla [7.5,8.5,
+    3.0,6.0,7.0,6.0,4.0,2.0]. These are author-assigned illustrative profiles, not
+    survey-derived measurements. Empirical validation would require survey data on observer
+    weight profiles and brand emission assessments.
+
+code:
+  available: true
+  url: "https://github.com/spectralbranding/sbt-framework"
+  notes: >
+    The sbt-framework repository implements the SBT computational pipeline including
+    cohort clustering (Module 4) and profile visualization (Module 6). Distance computations
+    using the Aitchison metric on case-study profiles can be reproduced using Python numpy.
+    The companion R2/R3 computations (Zharnikov, 2026e, 2026f) include Monte Carlo simulations
+    that use the metric definitions from this paper.
+
+replication:
+  feasible: true
+  estimated_cost: "< $1,000 USD (mathematical verification; no data collection needed)"
+  estimated_time: "1-3 months"
+  requirements:
+    - "Mathematician with background in Riemannian geometry and information geometry"
+    - "Access to: Aitchison (1986), Egozcue et al. (2003), do Carmo (1992), O'Neill (1983)"
+    - "Python or R for Monte Carlo verification of Theorem 4 (Dirichlet moments)"
+    - "Case study distance matrix recomputation using published brand profiles"
+
+dependencies:
+  - doi: "10.5281/zenodo.18945912"
+    claim: "Zharnikov (2026a) SBT — defines the 8 dimensions; provides canonical brand profiles for case study application; motivates the observer spectral profile concept"
+    relationship: "applies"
+    critical: true
+
+  - doi: "10.5281/zenodo.18945217"
+    claim: "Zharnikov (2026c) R0 — literature survey identifying Problem 1 (formal metric) as the first open problem; this paper is the solution"
+    relationship: "applies"
+    critical: true
+
+  - reference: "Carroll, J. D., & Chang, J.-J. (1970). Analysis of individual differences in multidimensional scaling via an N-way generalization of Eckart-Young decomposition. Psychometrika, 35(3), 283-319."
+    claim: "Carroll & Chang (1970) INDSCAL — D3 (combined space) explicitly generalizes INDSCAL; Prop 2 proves INDSCAL is a special case of the combined metric"
+    relationship: "extends"
+    critical: true
+
+  - reference: "Amari, S., & Nagaoka, H. (2000). Methods of information geometry. American Mathematical Society."
+    claim: "Information geometry foundations — Fisher-Rao metric; Fisher information as Riemannian metric tensor; Cencov uniqueness theorem citation"
+    relationship: "applies"
+    critical: true
+
+  - reference: "Aitchison, J. (1986). The statistical analysis of compositional data. Chapman and Hall."
+    claim: "Aitchison geometry — defines ilr transform, compositional data analysis framework; justifies D1 metric choice"
+    relationship: "applies"
+    critical: true
+
+  - reference: "Cencov, N. N. (1982). Statistical decision rules and optimal inference. American Mathematical Society."
+    claim: "Cencov uniqueness theorem — justifies Fisher-Rao as the unique invariant metric for D2 observer weight space"
+    relationship: "applies"
+    critical: true
+
+  - reference: "O'Neill, B. (1983). Semi-Riemannian geometry with applications to relativity. Academic Press."
+    claim: "O'Neill warped product curvature formula (Corollary 7.43) — used in proof of T3 triangle inequality and Prop 6 sectional curvature"
+    relationship: "applies"
+    critical: true
+
+  - reference: "Peters, O. (2019). The ergodicity problem in economics. Nature Physics, 15, 1216-1221."
+    claim: "Non-ergodic dynamics — Jacobi field analysis in Section 8.4 connects the static metric to the dynamic non-ergodic theory in companion paper R6"
+    relationship: "applies"
+    critical: false
+
+results:
+  - claim_id: "D1"
+    status: supported
+    notes: >
+      The Aitchison distance is defined and its three justifying properties (scale invariance,
+      Weber-Fechner consistency, subcompositional coherence) are demonstrated. The clr and ilr
+      transforms are standard from Aitchison (1986).
+
+  - claim_id: "T1"
+    status: supported
+    notes: >
+      Full proof presented in Section 3.3. All four metric axioms verified via ilr isometry.
+      The proof is complete and rigorous by standard mathematical standards.
+
+  - claim_id: "D2"
+    status: supported
+    notes: >
+      Fisher-Rao metric defined; four candidate metrics compared against three selection
+      criteria; Cencov uniqueness theorem cited as decisive justification for Fisher-Rao.
+
+  - claim_id: "T2"
+    status: supported
+    notes: >
+      Full proof presented in Section 4.4. M1-M4 verified via embedding into S^7_+.
+      Entropy-bulge Proposition 1 proved via Schur-concavity of Shannon entropy.
+
+  - claim_id: "D3"
+    status: supported
+    notes: >
+      Warped product metric defined; INDSCAL connection (Prop 2) proved; pseudo-metric
+      kernel characterized (Prop 3). Full mathematical definition provided.
+
+  - claim_id: "T3"
+    status: supported
+    notes: >
+      Metric axioms for combined space proved in Section 5.2. Triangle inequality proof
+      references O'Neill (1983) for the warped product case with a note that the full
+      derivation is in the Mathematical Appendix.
+
+  - claim_id: "T4"
+    status: supported
+    notes: >
+      Closed-form computation presented using Dirichlet distribution moments (Johnson & Kotz,
+      1972). Result: 7/36 for n=8. Monte Carlo verification not performed in-paper but
+      trivially executable.
+
+  - claim_id: "P4"
+    status: supported
+    notes: >
+      Volume fraction 1/256 proved by sphere symmetry under sign reflections. Expected inner
+      product positivity on S^7_+ proved by non-negativity of coordinates. Maximum geodesic
+      distance pi/2 established.
+
+  - claim_id: "D7"
+    status: supported
+    notes: >
+      SSI formally defined. Curvature properties of Aitchison geometry near boundary analyzed.
+      Corollary (structural absence amplifies sensitivity) proved. Application to case study
+      brands not computed numerically in-paper.
+
+  - claim_id: "P6"
+    status: supported
+    notes: >
+      Observer-dependent curvature formula derived from O'Neill (1983). Strategic implication
+      (specialist observers face higher trajectory sensitivity) argued from formula structure.
+
+limitations:
+  - description: >
+      All case study brand profiles are author-assigned (Hermes, IKEA, Patagonia, Erewhon,
+      Tesla). The metric is applied to illustrative profiles, not survey-derived measurements.
+      The distance matrix and geometric properties are demonstrated on these author-assigned
+      profiles only.
+    severity: major
+    addressable: true
+
+  - description: >
+      The Aitchison metric treats the eight SBT dimensions as independent compositional
+      components. If dimensions are empirically correlated (semiotic and cultural may co-vary),
+      the metric systematically underestimates distances along correlated dimensions. A
+      Mahalanobis-like extension incorporating empirical correlation structure is discussed
+      in Section 10 but not implemented.
+    severity: moderate
+    addressable: true
+
+  - description: >
+      The Jacobi field analysis and spectral sensitivity index are derived for the theoretical
+      perception manifold. The SSI is not computed numerically for the case-study brands;
+      only qualitative implications are drawn. Numerical computation requires specifying the
+      warping function f(w) explicitly.
+    severity: minor
+    addressable: true
+
+  - description: >
+      The combined space metric (D3) uses a symmetrized average weight w_bar_k = (w_{A,k} +
+      w_{B,k})/2. An asymmetric version using only w_{A,k} would model "perceived distance
+      from observer A's perspective" — a directed metric useful for modeling asymmetric brand
+      relationships. This case is not developed.
+    severity: minor
+    addressable: true
+
+repositories:
+  - platform: "Zenodo"
+    doi: "10.5281/zenodo.18945295"
+    url: "https://doi.org/10.5281/zenodo.18945295"
+    version: "v2"
+    date: "2026-03-24"
+  - platform: "GitHub"
+    url: "https://github.com/spectralbranding/sbt-papers/r1-formal-metric"
+
+submission_history: []

@@ -1,0 +1,380 @@
+# paper.yaml — Paper Spec v0.1.0
+# Zharnikov (2026s): Coherence Type as Crisis Predictor
+spec_version: "0.1.0"
+
+meta:
+  title: "Coherence Type as Crisis Predictor: A Formal Derivation from Non-Ergodic Dynamics"
+  authors:
+    - name: "Zharnikov, Dmitry"
+      orcid: "0009-0000-6893-9231"
+      affiliation: "Independent Researcher"
+  doi: "10.5281/zenodo.19208107"
+  date: "2026-01-01"
+  version: "1.0"
+  venue: "Working Paper (Zenodo)"
+  license: "CC-BY-4.0"
+  keywords:
+    - crisis resilience
+    - coherence type
+    - brand stability
+    - stochastic dynamics
+    - drift geometry
+    - non-ergodicity
+    - Spectral Brand Theory
+
+claims:
+  - id: "D1"
+    type: definition
+    statement: >
+      A signal-driven drift field alpha is rho-isotropic if, for all pairs of dimensions
+      i and j: |alpha_i/alpha_j - 1| <= rho. Perfect isotropy corresponds to rho = 0
+      (equal drift on all dimensions). Ecosystem-coherent brands (Hermes) produce
+      approximately rho-isotropic drift fields.
+    formal: "|alpha_i/alpha_j - 1| <= rho for all i, j"
+    testable: false
+    tested_in_paper: false
+    status: not_tested
+    depends_on: []
+
+  - id: "D2"
+    type: definition
+    statement: >
+      A drift field is k-anisotropic if there exists a partition of dimensions
+      {1,...,8} = A ∪ B with |A| = k such that alpha_i >= alpha_min > 0 for i in A
+      (active dimensions) and alpha_j <= epsilon for j in B (passive dimensions), where
+      alpha_min >> epsilon. Signal-coherent brands are 5-anisotropic, identity-coherent
+      brands are 3-anisotropic.
+    formal: >
+      A = {i : alpha_i >= alpha_min}, B = {j : alpha_j <= epsilon}, |A| = k.
+      k-anisotropic brand has strong drift on k dimensions, weak drift on 8-k dimensions.
+    testable: false
+    tested_in_paper: false
+    status: not_tested
+    depends_on: ["D1"]
+
+  - id: "T1"
+    type: theorem
+    statement: >
+      (Stability Ordering by Drift Isotropy) For the SDE on S^7_+ with common starting
+      point x_0 in the interior and equal total drift intensity sum_i alpha_i = 8*alpha_bar:
+      P_abs(T; mu_iso) <= P_abs(T; mu_k) <= P_abs(T; mu_stoch), and P_abs(T; mu_k) is
+      increasing in the anisotropy degree 8-k. Isotropic drift (ecosystem) produces
+      strictly lower absorption probability than k-anisotropic drift (signal, identity),
+      which produces lower absorption probability than stochastic drift (incoherent).
+    formal: >
+      P_abs(T; mu_iso) <= P_abs(T; mu_k) <= P_abs(T; mu_stoch).
+      Mechanism: absorption probability dominated by min-drift dimension; distributing
+      drift uniformly raises the minimum. Union bound: P_abs <= sum_i p_i(T; alpha_i).
+      Convexity of p_i(T; alpha) in alpha means concentrating drift on fewer dimensions
+      increases total absorption probability (Jensen's inequality).
+    testable: true
+    tested_in_paper: false
+    status: not_tested
+    depends_on: ["D1", "D2"]
+
+  - id: "C1"
+    type: proposition
+    statement: >
+      (Volatility-adjusted stability) Among k-anisotropic drift fields with the same k
+      and the same total drift intensity, the absorption probability is lower when the
+      active dimensions have low intrinsic volatility than when they have high intrinsic
+      volatility. Identity-coherent brands (active on low-volatility Ideological, Narrative)
+      are more stable than experiential-asymmetry brands (active on high-volatility
+      Experiential, Social).
+    formal: >
+      Dimension volatility ordering: nu_Tem < nu_Sem < nu_Nar < nu_Ide < nu_Cul <
+      nu_Eco < nu_Soc < nu_Exp. For equal k-anisotropic brands: P_abs lower when
+      active dimensions have low nu_i. Experiential asymmetry brands are unstable
+      because strong drift operates in a high-noise environment.
+    testable: true
+    tested_in_paper: false
+    status: not_tested
+    depends_on: ["T1"]
+
+  - id: "P1"
+    type: proposition
+    statement: >
+      (Full Coherence-Stability Ordering) Combining Theorem 1 (drift isotropy) and
+      Corollary 1 (dimension volatility), the absorption probability ordering across
+      coherence types is: P_abs^eco < P_abs^sig < P_abs^ident < P_abs^exp_asym <
+      P_abs^incoh. Equivalently, the stability ordering is: ecosystem > signal >
+      identity > experiential asymmetry > incoherent.
+    formal: >
+      P_abs^eco < P_abs^sig: isotropic (k=8) < 5-anisotropic (k=5) by T1.
+      P_abs^sig < P_abs^ident: 5-anisotropic (k=5) < 3-anisotropic (k=3) by T1.
+      P_abs^ident < P_abs^exp_asym: both ~3-anisotropic; identity active dims have
+      low nu (Ide, Nar) vs. high nu (Exp, Soc) for exp-asym — C1 distinguishes.
+      P_abs^exp_asym < P_abs^incoh: fixed anisotropic < stochastic drift by T1.
+    testable: true
+    tested_in_paper: false
+    status: not_tested
+    depends_on: ["T1", "C1"]
+
+  - id: "T2"
+    type: theorem
+    statement: >
+      (Recovery Probability by Coherence Type) For a pure crisis of severity eta
+      affecting dimension i: (a) P_rec is increasing in the drift alpha_i on the
+      affected dimension; (b) for ecosystem-coherent brands, P_rec is approximately
+      uniform across crisis directions because all dimensions have substantial drift;
+      (c) for k-anisotropic brands, crises on active dimensions produce substantially
+      higher P_rec than crises on passive dimensions (the same severity eta); (d) for
+      incoherent brands, P_rec is low across all dimensions.
+    formal: >
+      P_rec(i, eta; type) = P(x_i(t) > 0 for all t > tau | x_i(tau+) = x_i(tau-) - eta).
+      (a) d/d(alpha_i) P_rec > 0.
+      (b) Eco: P_rec(i) approx uniform over i.
+      (c) k-aniso: P_rec(i in A, eta; type) >> P_rec(j in B, eta; type).
+      (d) Incoh: P_rec(i, eta; incoh) low and approx uniform — but due to no protection,
+      not full protection.
+    testable: true
+    tested_in_paper: false
+    status: not_tested
+    depends_on: ["T1", "P1"]
+
+  - id: "P2"
+    type: proposition
+    statement: >
+      (Recovery Time by Coherence Type) The constant C in the recovery time scaling
+      tau_return ~ C/delta^2 is a decreasing function of the drift alpha_i on the
+      affected dimension. Therefore, ecosystem-coherent brands have the shortest
+      recovery times and incoherent brands have the longest, for crises of equal
+      severity on the worst-case dimension for each type.
+    formal: >
+      tau_return ~ C/delta^2 where C = C(alpha_i, sigma_i).
+      dC/d(alpha_i) < 0 (stronger drift shortens recovery time).
+      Ordering: tau_return^eco < tau_return^sig < tau_return^ident <
+      tau_return^exp_asym < tau_return^incoh.
+    testable: true
+    tested_in_paper: false
+    status: not_tested
+    depends_on: ["T2"]
+
+  - id: "T3"
+    type: theorem
+    statement: >
+      (Coherence-Resilience Theorem) Under the SDE model with drift parametrized by
+      coherence type: (1) Crisis resilience ordering is ecosystem > signal > identity >
+      experiential asymmetry > incoherent; (2) ordering is robust to crisis severity
+      eta for all eta below the total-absorption threshold; (3) ordering depends on
+      coherence TYPE, not coherence SCORE — two brands with identical total emission but
+      different distributions exhibit different resilience; (4) the type gap Delta(eta) is
+      monotonically increasing in crisis severity: at small perturbations, all types
+      recover similarly; at large shocks, ecosystem dramatically outperforms incoherent.
+    formal: >
+      (1) 1 - P_abs(T; mu, x_post-crisis): eco > sig > ident > exp_asym > incoh.
+      (2) For eta < eta* = min_i x_i(tau-): ordering maintained.
+      (3) sum_i s_i^A = sum_i s_i^B but A = eco, B = sig => P_abs(mu^A) < P_abs(mu^B).
+      Mechanism: P_abs approx max_i p_i(T; alpha_i); max minimized when all alpha_i equal.
+      (4) Delta(eta) = P_abs^incoh(eta) - P_abs^eco(eta) increasing in eta.
+    testable: true
+    tested_in_paper: false
+    status: not_tested
+    depends_on: ["P1", "T2", "P2"]
+
+methodology:
+  type: theoretical
+  design: >
+    Formal derivation of coherence-resilience ordering from the SDE framework of
+    Zharnikov (2026j). The paper maps SBT's five coherence types to drift structures
+    (drift isotropy and k-anisotropy), derives stability properties (Theorem 1 and
+    Corollary 1), models crises as perturbations and derives recovery probabilities
+    (Theorem 2), assembles the full ordering (Theorem 3), and specifies three falsifiable
+    predictions. Four brand crisis case studies (Tylenol 1982, BP Deepwater Horizon 2010,
+    Volkswagen Dieselgate 2015, Tesla Cybertruck 2019) illustrate the framework's
+    predictions against documented outcomes. Coherence-type classifications for the
+    case studies are author-assigned qualitative assessments.
+  analysis:
+    method: >
+      Mathematical derivation using the Wright-Fisher-type diffusion on S^7_+. Key
+      techniques: union bound on absorption probability across dimensions; Jensen's
+      inequality applied to convex hitting probability function; comparison theorem
+      for one-dimensional diffusions (Ikeda & Watanabe 1989); recovery time scaling
+      from Zharnikov (2026j) Proposition 6. Case analysis: Tylenol/J&J (1982),
+      BP Deepwater Horizon (2010), VW Dieselgate (2015), Tesla Cybertruck (2019).
+    software: "None"
+
+acceptance:
+  - claim_id: "T3"
+    criterion: >
+      (Prediction 1: Type over Score) In a dataset of brand crises matched on pre-crisis
+      coherence score (total emission intensity) but varying in coherence type, coherence
+      type variable explains more variance in recovery speed than coherence score alone.
+      Hierarchical regression: Model 2 (coherence type added) shows delta R^2 > 0,
+      F-test significant vs. Model 1 (coherence score only).
+    falsification: >
+      Coherence score alone is sufficient; coherence type adds no explanatory power
+      (delta R^2 not significant). This falsifies Theorem 3's type-over-score principle.
+
+  - claim_id: "T2"
+    criterion: >
+      (Prediction 2: Dimension-Specific Vulnerability) For identity-coherent brands,
+      crises affecting unprotected dimensions produce longer recovery times and lower
+      recovery probabilities than crises of the same severity affecting protected
+      dimensions. Paired t-test or mixed-effects model comparing recovery time for
+      crises on protected vs. unprotected dimensions.
+    falsification: >
+      Recovery time is independent of which dimension the crisis affects, controlling
+      for severity. Crises on unprotected dimensions are not more damaging for identity-
+      coherent brands. This falsifies Theorem 2(c).
+
+  - claim_id: "T3"
+    criterion: >
+      (Prediction 3: Severity-Dependent Type Gap) The relationship between crisis
+      severity and recovery time is moderated by coherence type: severity slope is
+      steeper for incoherent brands than for ecosystem-coherent brands. Moderated
+      regression: severity x type interaction term significant; steepest slope for C-,
+      flattest for A+.
+    falsification: >
+      Severity-recovery relationship is the same across coherence types (interaction
+      term not significant). This falsifies Theorem 3, Result (4).
+
+data:
+  available: false
+  url: ""
+  notes: >
+    No primary data collected. Case study evidence from published sources:
+    J&J Tylenol (Mitchell 1989, academic case studies); BP Deepwater Horizon (Shamma
+    & Hassan 2009, Unilever annual reports — noted inaccuracy: should be BP documents);
+    VW Dieselgate (academic sales recovery data, news sources); Tesla Cybertruck
+    (stock price data, news sources). Coherence-type classifications for all four cases
+    are author-assigned qualitative assessments, not empirically measured. The paper
+    specifies required data for formal tests (Section 7): panel of brands with pre-crisis
+    emission profiles, documented crisis severity, and 24-month post-crisis tracking.
+
+code:
+  available: true
+  url: "https://github.com/spectralbranding/sbt-framework"
+  notes: >
+    The sbt-framework repository provides coherence classification tools. Drift
+    geometry computations (isotropy parameter rho, k-anisotropy classification) are
+    implementable from emission profiles using the framework's Module 5. Absorption
+    probability bounds and recovery time scaling computations are not yet in the
+    public framework but follow from the SDE parameter formulas given in the paper.
+
+replication:
+  feasible: true
+  estimated_cost: "$50,000-200,000 USD (brand crisis longitudinal database construction)"
+  estimated_time: "24-48 months (dependent on crisis event sample availability)"
+  requirements:
+    - "Panel of brands with empirically measured pre-crisis 8-dimensional SBT profiles"
+    - "Documented crisis events with severity assessment protocol"
+    - "Post-crisis brand perception tracking at 6, 12, 24 months (minimum 200 observers per brand per wave)"
+    - "Minimum 10 brands per coherence type (A+, A-, B+, B-, C-)"
+    - "Hierarchical regression and moderated regression capability"
+    - "Pre-registered coherence classification protocol to prevent outcome-dependent reclassification"
+
+dependencies:
+  - doi: "10.5281/zenodo.18945912"
+    claim: "Zharnikov (2026a) SBT — 8-dimensional framework; coherence types, canonical brand profiles (Hermes, IKEA, Patagonia, Erewhon, Tesla), and the qualitative coherence-resilience prediction that this paper formally derives"
+    relationship: "extends"
+    critical: true
+
+  - doi: "10.5281/zenodo.18945659"
+    claim: "Zharnikov (2026j) — SDE on S^7_+; Theorem 1-3 in this paper derive from the drift-diffusion structure of that model"
+    relationship: "applies"
+    critical: true
+
+  - doi: "10.5281/zenodo.19138860"
+    claim: "Zharnikov (2026o) non-ergodic perception — identifies three sources of non-ergodicity; this paper extends to coherence-type-specific crisis dynamics"
+    relationship: "extends"
+    critical: true
+
+results:
+  - claim_id: "T1"
+    status: not_tested
+    notes: >
+      Formally derived via union bound and Jensen's inequality. Proof sketch provided.
+      Not empirically tested. Assumption of conditional dimensional independence noted
+      as an approximation; cross-dimensional coupling would increase absorption
+      probabilities beyond the model's predictions.
+
+  - claim_id: "C1"
+    status: not_tested
+    notes: >
+      Derived from volatility ordering of SBT dimensions (Definition 3). Ordering is
+      proposed on theoretical grounds (heritage changes slowly, product experience
+      fluctuates rapidly) and consistent with Urde et al. (2007) and Brakus et al.
+      (2009), but not empirically validated.
+
+  - claim_id: "P1"
+    status: not_tested
+    notes: >
+      Derived from T1 and C1. Formally establishes that SBT's qualitative coherence
+      grading (A+ > A- > B+ > B- > C-) is a mathematical consequence of drift geometry,
+      not an ad hoc ranking. Not empirically tested against crisis recovery data.
+
+  - claim_id: "T2"
+    status: not_tested
+    notes: >
+      Illustrated through four case studies. J&J Tylenol (ecosystem, full recovery
+      consistent with prediction), BP Deepwater Horizon (experiential asymmetry,
+      incomplete recovery consistent), VW Dieselgate (signal coherent, moderate
+      recovery consistent), Tesla Cybertruck (incoherent, but low-severity crisis
+      — consistent with T3 Result 4 that type gap is small at low severity). All
+      classifications are qualitative; empirical test requires measured emission profiles.
+
+  - claim_id: "P2"
+    status: not_tested
+    notes: >
+      Formally derived from recovery time scaling in Zharnikov (2026j) Proposition 6.
+      Ordering is consistent with Dawar & Pillutla (2000) and Roehm & Brady (2007)
+      finding that multi-dimensional equity brands recover faster. No direct test.
+
+  - claim_id: "T3"
+    status: not_tested
+    notes: >
+      Central theorem of the paper. Three falsifiable predictions specified (Section 7).
+      Illustrated through four case studies. Aaker, Fournier & Brasel (2004) apparent
+      contradiction resolved: their finding that sincere (identity-coherent) brands are
+      punished more harshly for transgressions is consistent with T2(c) — crises on
+      protected dimensions involve larger effective shocks because the brand has set
+      higher expectations, not because identity coherence reduces protection per se.
+
+limitations:
+  - description: >
+      Coherence-type classifications for all four case studies are author-assigned
+      qualitative assessments, not empirical measurements. Until validated measurement
+      instruments for the 8 SBT dimensions are available, the framework's predictions
+      cannot be rigorously tested against the specified falsification criteria.
+    severity: major
+    addressable: true
+
+  - description: >
+      The drift-isotropy model assumes conditional independence of dimensional dynamics
+      given the drift field. In practice, dimensions interact: a crisis on the
+      Ideological dimension may cascade to the Narrative dimension. The model is a
+      first-order approximation; cross-dimensional coupling would increase absorption
+      probabilities for all coherence types and may alter the ordering for correlated
+      dimensions.
+    severity: major
+    addressable: true
+
+  - description: >
+      The model holds the drift field constant before and after the crisis, isolating
+      the structural effect of pre-crisis coherence type from the strategic effect of
+      post-crisis response. In practice, crisis response modifies the drift field.
+      A well-managed response increases signal-driven drift on the affected dimension.
+      The model predicts a lower bound on resilience; actual outcomes depend on both
+      structural coherence and response quality.
+    severity: moderate
+    addressable: true
+
+  - description: >
+      The dimension-volatility ordering (Definition 3) is proposed on theoretical
+      grounds and has not been empirically validated. The specific ranking
+      (nu_Tem < nu_Sem < ... < nu_Exp) is plausible but the quantitative relationships
+      between volatility levels are unspecified and untested.
+    severity: moderate
+    addressable: true
+
+repositories:
+  - platform: "Zenodo"
+    doi: "10.5281/zenodo.19208107"
+    url: "https://doi.org/10.5281/zenodo.19208107"
+    version: "v1"
+    date: "2026-03-24"
+  - platform: "GitHub"
+    url: "https://github.com/spectralbranding/sbt-papers"
+
+submission_history: []

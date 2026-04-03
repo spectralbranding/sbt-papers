@@ -1,0 +1,467 @@
+# paper.yaml — Paper Spec v0.1.0
+# Zharnikov (2026q): Spectral Portfolio Theory
+spec_version: "0.1.0"
+
+meta:
+  title: "Spectral Portfolio Theory: Interference, Coherence, and Capacity in Multi-Brand Perception Space"
+  authors:
+    - name: "Zharnikov, Dmitry"
+      orcid: "0009-0000-6893-9231"
+      affiliation: "Independent Researcher"
+  doi: "10.5281/zenodo.19145099"
+  date: "2026-01-01"
+  version: "1.0"
+  venue: "Working Paper (Zenodo)"
+  license: "CC-BY-4.0"
+  keywords:
+    - brand portfolio
+    - spectral interference
+    - constructive interference
+    - destructive interference
+    - portfolio coherence
+    - observer cohorts
+    - multi-dimensional brand perception
+    - Spectral Brand Theory
+
+claims:
+  - id: "D1"
+    type: definition
+    statement: >
+      A brand portfolio P = {B_1, B_2, ..., B_n} is a set of brands under common
+      ownership by a parent entity P_0. Two brands share a cohort C_k if observers in
+      C_k hold non-trivial perception clouds for both brands. The cohort overlap
+      magnitude O(B_i, B_j) sums cohort-size-weighted minimum cloud densities across
+      all shared cohorts.
+    formal: >
+      Overlap(B_i, B_j) = {C_k : |Pi_{C_k}(B_i,t)| > tau AND |Pi_{C_k}(B_j,t)| > tau};
+      O(B_i, B_j) = sum_{C_k in Overlap} |C_k| * min(|Pi_{C_k}(B_i,t)|, |Pi_{C_k}(B_j,t)|)
+    testable: true
+    tested_in_paper: false
+    status: not_tested
+    depends_on: []
+
+  - id: "D2"
+    type: definition
+    statement: >
+      The awareness gate alpha_j(B_i, B_j, P) in [0,1] represents the degree to which
+      observer j recognizes that brands B_i and B_j are owned by parent entity P.
+      When alpha_j = 0, no portfolio interference can occur; when alpha_j = 1, full
+      awareness enables maximal interference.
+    formal: "alpha_j in [0,1]; interference terms scale linearly with alpha_j"
+    testable: true
+    tested_in_paper: false
+    status: not_tested
+    depends_on: ["D1"]
+
+  - id: "D3"
+    type: definition
+    statement: >
+      Spectral interference on dimension d for brand B_i from sibling brand B_j in
+      cohort C_k is: I_d(B_i <- B_j, C_k) = alpha_{C_k} * w_d^{C_k} * (e_d^{B_j} - mu_d),
+      where mu_d is the category mean on dimension d. Constructive interference occurs
+      when the sibling's deviation from category mean has the same sign as the focal
+      brand's deviation; destructive when signs differ.
+    formal: >
+      I_d(B_i <- B_j, C_k) = alpha_{C_k} * w_bar_d^{C_k} * (e_d^{B_j} - mu_d).
+      Constructive: sign(e_d^{B_i} - mu_d) = sign(e_d^{B_j} - mu_d).
+      Destructive: sign(e_d^{B_i} - mu_d) != sign(e_d^{B_j} - mu_d).
+    testable: true
+    tested_in_paper: false
+    status: not_tested
+    depends_on: ["D1", "D2"]
+
+  - id: "P1"
+    type: proposition
+    statement: >
+      Spectral interference between brands B_i and B_j within portfolio P operates if
+      and only if three conditions hold simultaneously: (a) the brands share at least
+      one observer cohort (O(B_i, B_j) > 0), (b) the awareness gate exceeds a minimum
+      threshold (alpha_{C_k} > alpha_min), and (c) the brands' emission profiles differ
+      on at least one dimension weighted above a salience threshold by the shared cohort.
+      The absence of any one condition suppresses interference entirely.
+    formal: >
+      I_d(B_i <- B_j, C_k) > 0 iff O(B_i, B_j) > 0 AND alpha_{C_k} > alpha_min AND
+      exists d: w_bar_d^{C_k} > w_min AND |e_d^{B_i} - e_d^{B_j}| > 0.
+    testable: true
+    tested_in_paper: false
+    status: not_tested
+    depends_on: ["D1", "D2", "D3"]
+
+  - id: "P2"
+    type: proposition
+    statement: >
+      The direction (constructive versus destructive) of spectral interference between
+      brands B_i and B_j on dimension d in cohort C_k is determined by the sign
+      concordance of the brands' deviations from the category mean on dimension d.
+      Same-sign deviations produce constructive interference; opposite-sign deviations
+      produce destructive interference. The direction is predictable from emission
+      profiles alone, without requiring empirical measurement of the interference effect.
+    formal: >
+      Constructive iff sign(e_d^{B_i} - mu_d) = sign(e_d^{B_j} - mu_d).
+      Destructive iff sign(e_d^{B_i} - mu_d) != sign(e_d^{B_j} - mu_d).
+      Direction is computable ex ante from observable emission profiles.
+    testable: true
+    tested_in_paper: false
+    status: not_tested
+    depends_on: ["D3"]
+
+  - id: "P3"
+    type: proposition
+    statement: >
+      The same portfolio can be simultaneously coherent for one observer cohort and
+      contradictory for another. Formally, there exist portfolios P and distinct cohorts
+      C_k, C_l such that kappa_P(P, C_k) > kappa_P^{A-} (spectral alignment threshold)
+      and kappa_P(P, C_l) < kappa_P^{C-} (spectral contradiction threshold).
+    formal: >
+      Portfolio coherence kappa_P(P, C_k) depends on cohort weight vector w^{C_k}.
+      Cohort assigning w_3 (Ideological) = 0 registers no Dove-Axe contradiction.
+      Cohort assigning w_3 = 1 registers maximal contradiction. Existence follows from
+      the unconstrained nature of SBT weight vectors.
+    testable: true
+    tested_in_paper: true
+    status: supported
+    depends_on: ["D3"]
+
+  - id: "P4"
+    type: proposition
+    statement: >
+      The magnitude of spectral interference is moderated by the awareness gate alpha.
+      In a house-of-brands architecture where parent brand recognition is below the
+      awareness threshold (alpha < alpha_min), spectral contradictions between sibling
+      brands produce no interference, regardless of the magnitude of the dimensional
+      contradiction. As alpha increases above threshold, destructive interference
+      increases monotonically with alpha.
+    formal: >
+      |I_d(B_i <- B_j, C_k)| = alpha_{C_k} * |w_bar_d^{C_k} * (e_d^{B_j} - mu_d)|.
+      When alpha < alpha_min: I_d = 0 (interference suppressed).
+      When alpha > alpha_min: I_d increases linearly in alpha.
+      Corollary (Shielding Theorem): house-of-brands shielding fails once alpha > threshold.
+    testable: true
+    tested_in_paper: false
+    status: not_tested
+    depends_on: ["D2", "D3"]
+
+  - id: "P5"
+    type: proposition
+    statement: >
+      Spectral interference is asymmetric: the perturbation of brand B_i's perception
+      cloud by awareness of brand B_j differs in magnitude from the perturbation of
+      B_j's cloud by awareness of B_i. Specifically, the brand with higher single-brand
+      coherence suffers greater relative perturbation from a lower-coherence sibling
+      than vice versa.
+    formal: >
+      A highly coherent brand (A+) has tight perception cloud with low variance.
+      Proportional perturbation = |perturbation| / cloud_variance.
+      For brand A+ perturbed by C-: proportional perturbation >> reverse.
+      Formally: |Delta_Pi(A+)| / Var(Pi(A+)) > |Delta_Pi(C-)| / Var(Pi(C-)).
+    testable: true
+    tested_in_paper: false
+    status: not_tested
+    depends_on: ["D3"]
+
+  - id: "P6"
+    type: proposition
+    statement: >
+      In a spectral cluster portfolio, constructive interference compounds across brand
+      pairs: each additional brand whose emission profile is compatible with the cluster
+      reinforces the perception of every existing brand. The total constructive
+      interference experienced by any brand in a cluster of n brands scales
+      superlinearly with n, up to a saturation point determined by the cluster's spectral
+      density.
+    formal: >
+      Total constructive interference for B_i in cluster of n: I_total(B_i) =
+      sum_{j != i} I(B_i <- B_j, C_k). For compatible cluster, all terms positive and
+      each new brand also increases awareness gate for future acquisitions.
+      I_total(n) grows superlinearly in n until spectral density saturation.
+    testable: true
+    tested_in_paper: false
+    status: not_tested
+    depends_on: ["D1", "D3"]
+
+  - id: "P7"
+    type: proposition
+    statement: >
+      The maximum number of brands a portfolio can sustain without exceeding the
+      interference budget of any brand in any shared cohort is constrained by the
+      portfolio's spectral structure. For a spectral cluster, capacity is bounded by
+      the local packing density. For a spectral contradiction portfolio, each
+      additional brand on a contested dimension reduces the effective capacity for all
+      existing brands sharing that dimension.
+    formal: >
+      K(P, C_k, theta) = max{|P'| : P' subset P, |I|(B_i <- B_j, C_k) < theta for all
+      B_i, B_j in P'}. Cluster bound: from Zharnikov (2026g) sphere packing.
+      Contradiction bound: each new contradicting brand increases |I_total| for existing
+      brands, tightening the budget constraint.
+    testable: true
+    tested_in_paper: false
+    status: not_tested
+    depends_on: ["D1", "D3", "P6"]
+
+methodology:
+  type: theoretical
+  design: >
+    Framework construction and formal model derivation. The spectral interference model
+    extends SBT (Zharnikov 2026a) to the portfolio level. Four contributions: (1)
+    spectral interference formalism with constructive/destructive distinction; (2)
+    three-layer portfolio coherence metric (within-brand, cross-brand, aggregate);
+    (3) four portfolio archetypes (spectral cluster, spectral spread, spectral
+    contradiction, spectral layering); (4) portfolio capacity bounds extending sphere
+    packing results. Two illustrative case analyses (LVMH vs. Unilever) demonstrate
+    structural predictions from estimated emission profiles.
+  analysis:
+    method: >
+      Formal derivation of definitions and propositions from the SBT mathematical
+      framework. Illustrative case analysis using public corporate data: LVMH 2023
+      Annual Report (EUR 86.2B revenue, ~75 brands); Unilever 2023 Annual Report
+      (EUR 59.6B revenue, ~400 brands). Emission profiles estimated from advertising
+      content, academic perception studies, and public brand positioning; not measured
+      via spectral profile instrumentation. Pairwise cross-brand coherence scores are
+      illustrative computations applied to estimated profiles.
+    software: "None"
+
+acceptance:
+  - claim_id: "P1"
+    criterion: >
+      Controlled awareness experiment: present observers with brands B_i and B_j
+      independently vs. with ownership disclosure. Measure perception cloud for B_i
+      before and after disclosure. Interference should occur only when all three
+      conditions hold: shared cohort, awareness above threshold, and dimensional
+      deviation on a salient dimension.
+    falsification: >
+      Perception cloud perturbation upon ownership disclosure is not moderated by
+      cohort overlap, awareness level, or dimensional salience — any of the three
+      necessary conditions proves unnecessary.
+
+  - claim_id: "P2"
+    criterion: >
+      For a portfolio of n brands, compute predicted interference direction for all
+      n*(n-1)/2 brand pairs. Measure actual perception cloud perturbations via
+      controlled awareness manipulations. Predicted direction should match observed
+      direction in significantly more than 50% of pairs (binomial test).
+    falsification: >
+      Predicted direction matches observed direction at chance level; sign concordance
+      of emission deviations from category mean does not predict interference direction.
+
+  - claim_id: "P3"
+    criterion: >
+      Measure portfolio coherence perception for a known contradictory portfolio
+      (Unilever) across observer cohorts identified by spectral weight clustering.
+      Purpose-Aligned cohort (high Ideological weight) should assess portfolio coherence
+      as significantly lower than Product-Pragmatist cohort (high Experiential/Economic
+      weight) for the same portfolio.
+    falsification: >
+      Portfolio coherence assessments do not differ significantly across cohort types;
+      all cohorts rate the same portfolio similarly regardless of their spectral weights.
+
+  - claim_id: "P4"
+    criterion: >
+      Vary ownership disclosure level experimentally (0%, 25%, 50%, 75%, 100%
+      probability of disclosure). Measure destructive interference as a function of
+      disclosure level. Interference should be below threshold below alpha_min and
+      increase monotonically above it.
+    falsification: >
+      Destructive interference does not increase monotonically with disclosure
+      probability; the threshold effect is absent and interference operates even at
+      very low awareness levels.
+
+  - claim_id: "P6"
+    criterion: >
+      Present brands from a luxury cluster (e.g., LVMH maisons) in isolation vs.
+      within progressively larger cluster frames. Conviction strength for focal brand
+      should increase superlinearly as cluster size increases up to a saturation point.
+    falsification: >
+      Conviction strength increases linearly or not at all with cluster size; no
+      superlinear compounding or saturation is observed.
+
+  - claim_id: "P7"
+    criterion: >
+      Examine historical portfolio rationalization events (P&G 2014 divestiture of 100+
+      brands). Divested brands should disproportionately be those that generated the
+      highest destructive interference in the remaining portfolio as predicted by the
+      interference model applied to pre-divestiture emission profiles.
+    falsification: >
+      Divested brands are not disproportionately high-interference brands; portfolio
+      rationalization is explained by revenue/cost criteria alone, with no relationship
+      to predicted interference levels.
+
+data:
+  available: false
+  url: ""
+  notes: >
+    No primary data collected. Illustrative case analyses use public corporate data
+    (LVMH 2023 Annual Report, Unilever 2023 Annual Report, Unilever investor
+    presentations). Emission profiles for LVMH and Unilever brands are author-estimated
+    from advertising content and academic studies, not measured via spectral profile
+    instrumentation. Cross-brand coherence scores (e.g., kappa_X = 0.92 for Louis
+    Vuitton — Dior) reflect internal arithmetic applied to these estimates.
+
+code:
+  available: true
+  url: "https://github.com/spectralbranding/sbt-framework"
+  notes: >
+    The sbt-framework repository implements the SBT computational pipeline. Spectral
+    interference computations (per D3) and cross-brand coherence metrics (per D3-P7)
+    would be implemented as an extension to the framework's Module 5 (coherence
+    classification). Interference metric implementation not yet in the public framework.
+
+replication:
+  feasible: true
+  estimated_cost: "< $40,000 USD (controlled awareness experiments + cohort surveys)"
+  estimated_time: "6-18 months"
+  requirements:
+    - "Multi-dimensional brand perception survey covering all 8 SBT dimensions per brand"
+    - "Awareness gate measurement protocol (parent brand recognition across observers)"
+    - "Controlled ownership disclosure manipulation (reveal vs. conceal parentage)"
+    - "Minimum 100 observers per cohort per portfolio"
+    - "At least 2 portfolios with known structural types (cluster vs. contradiction)"
+    - "Pre-registered predictions for interference direction on all brand pairs"
+
+dependencies:
+  - doi: "10.5281/zenodo.18945912"
+    claim: "Zharnikov (2026a) SBT — 8-dimensional emission profiles, observer spectral profiles, coherence types; all definitions and propositions build on this foundation"
+    relationship: "extends"
+    critical: true
+
+  - doi: "10.5281/zenodo.18945659"
+    claim: "Zharnikov (2026j) — formal dynamic model; non-ergodic dynamics referenced for why interference compounds over time rather than averaging out"
+    relationship: "applies"
+    critical: false
+
+  - doi: "10.5281/zenodo.18945295"
+    claim: "Zharnikov (2026d) — metric structure on brand perception space; spectral distance calculations underlie cross-brand coherence metric"
+    relationship: "applies"
+    critical: true
+
+  - doi: "10.5281/zenodo.18945477"
+    claim: "Zharnikov (2026f) — cohort boundary analysis; formalizes cohort overlap conditions required for P1"
+    relationship: "applies"
+    critical: true
+
+  - doi: "10.5281/zenodo.18945522"
+    claim: "Zharnikov (2026g) — sphere packing bounds for brand positioning capacity; portfolio capacity in P7 cannot exceed single-brand positioning capacity"
+    relationship: "applies"
+    critical: true
+
+  - doi: "10.5281/zenodo.19138860"
+    claim: "Zharnikov (2026o) — non-ergodic dynamics; interference effects compound multiplicatively over time"
+    relationship: "applies"
+    critical: false
+
+  - doi: "10.5281/zenodo.19139258"
+    claim: "Zharnikov (2026p) Dove case study — primary empirical illustration of P3, P4, and destructive Ideological interference in the Unilever portfolio"
+    relationship: "applies"
+    critical: true
+
+results:
+  - claim_id: "P1"
+    status: not_tested
+    notes: >
+      Formally derived from definitions D1-D3. Illustrated through Unilever case (all
+      three conditions hold for Purpose-Aligned cohort regarding Dove-Axe relationship).
+      No controlled empirical test conducted.
+
+  - claim_id: "P2"
+    status: not_tested
+    notes: >
+      Formally derived from D3. Illustrated through LVMH (same-sign luxury deviations
+      produce constructive interference) vs. Unilever (opposite-sign Ideological
+      deviations produce destructive interference). Directional predictions have not
+      been tested against measured perception cloud perturbations.
+
+  - claim_id: "P3"
+    status: supported
+    notes: >
+      Illustrated through Table 6 (Dove-Axe cross-brand coherence = 0.15 for Purpose-
+      Aligned cohort) vs. Table 7 (Dove-Axe coherence = 0.75 for Product-Pragmatist
+      cohort). Coherence values are computed from estimated emission profiles, not
+      measured from representative observer samples.
+
+  - claim_id: "P4"
+    status: not_tested
+    notes: >
+      Corollary (Shielding Theorem) derived formally. Unilever awareness gate dynamics
+      documented qualitatively through journalism, social media, and Murray (2013). No
+      experimental test of the threshold effect or linear scaling above threshold.
+
+  - claim_id: "P5"
+    status: not_tested
+    notes: >
+      Formally derived from coherence-type asymmetry in perception cloud variance.
+      Not tested empirically. Prediction: Dove (higher coherence) suffers greater
+      proportional perturbation from Axe (lower coherence) than vice versa.
+
+  - claim_id: "P6"
+    status: not_tested
+    notes: >
+      Illustrated through LVMH Fashion & Leather Goods cluster. Superlinear compounding
+      mechanism described through awareness gate positive feedback loop. No empirical
+      test of superlinearity vs. linearity in conviction strength vs. cluster size.
+
+  - claim_id: "P7"
+    status: not_tested
+    notes: >
+      P&G 2014 divestiture (170 to 65 brands) cited as candidate test case. Prediction
+      that divested brands were high-interference has not been verified against actual
+      interference computations for the pre-divestiture P&G portfolio.
+
+limitations:
+  - description: >
+      The spectral interference model has not been empirically tested through controlled
+      measurement. Emission profiles and coherence scores in case analyses are assessed
+      estimates from public sources, not values measured via spectral profile
+      instrumentation. Precision of computed coherence scores reflects internal
+      arithmetic, not empirical measurement accuracy.
+    severity: major
+    addressable: true
+
+  - description: >
+      The interference model operates at a point in time. Dynamic interference —
+      how interference effects evolve as awareness gates shift, emission profiles change,
+      and cohort compositions evolve — is not formally modeled. Integration with the
+      non-ergodic dynamics of Zharnikov (2026o) is a required extension.
+    severity: major
+    addressable: true
+
+  - description: >
+      Observer spectral resolution is assumed sufficient to distinguish dimensional
+      signals. In practice, some observers compress perception to 2-3 salient dimensions
+      (Zharnikov 2026e). Interaction between observer spectral resolution and
+      interference susceptibility is not modeled.
+    severity: moderate
+    addressable: true
+
+  - description: >
+      Emission profiles and coherence assessments are based on perceptual patterns from
+      Western academic literature. Cross-cultural variation in dimensional salience,
+      cohort structure, and awareness gate dynamics may produce structurally different
+      interference profiles in non-Western markets.
+    severity: moderate
+    addressable: true
+
+repositories:
+  - platform: "Zenodo"
+    doi: "10.5281/zenodo.19145099"
+    url: "https://doi.org/10.5281/zenodo.19145099"
+    version: "v1"
+    date: "2026-03-23"
+  - platform: "GitHub"
+    url: "https://github.com/spectralbranding/sbt-papers"
+
+submission_history:
+  - venue: "Marketing Science"
+    id: "MKSC-2026-0149"
+    date_submitted: "2026-03-23"
+    date_decided: "2026-03-26"
+    status: "desk_rejected"
+    notes: >
+      Editor: Prof. Puneet Manchanda. Reasons: (1) underlying SBT methodology
+      not yet peer-reviewed in methods journal, (2) unclear managerial problem,
+      (3) incremental contribution concern. Advice: publish methodology first.
+  - venue: "International Journal of Research in Marketing"
+    id: "IJRM-D-26-00310"
+    date_submitted: "2026-03-26"
+    status: "under_review"
+    notes: >
+      Research Paper. Double-blind. 10,876 words, 42 references.
+      Suggested AEs: Volkner, Batra, Chernev.
+      Suggested reviewers: Van Osselaer, Morgan, Puntoni.

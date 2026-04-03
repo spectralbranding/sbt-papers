@@ -1,0 +1,333 @@
+# paper.yaml — Paper Spec v0.1.0
+# Zharnikov (2026h): Specification Impossibility in Organizational Design
+spec_version: "0.1.0"
+
+meta:
+  title: "Specification Impossibility in Organizational Design: A High-Dimensional Geometric Analysis"
+  authors:
+    - name: "Zharnikov, Dmitry"
+      orcid: "0009-0000-6893-9231"
+      affiliation: "Independent Researcher"
+  doi: "10.5281/zenodo.18945591"
+  date: "2026-01-01"
+  version: "1.0"
+  venue: "Working Paper (Zenodo)"
+  license: "CC-BY-4.0"
+  keywords:
+    - organizational design
+    - specification space
+    - high-dimensional geometry
+    - coverage impossibility
+    - dimensionality reduction
+    - cascade constraints
+    - forkability
+    - OrgSchema Theory
+    - specification impossibility
+
+claims:
+  - id: "T1"
+    type: theorem
+    statement: >
+      Coverage impossibility: let S = [0,1]^48 be the specification space of
+      OST's 48-dimensional activation matrix. At resolution epsilon = 0.1:
+      (i) the number of distinguishable specifications is N = 10^48;
+      (ii) a single specification covers a ball of volume V_48(0.1) approx 1.38*10^{-60};
+      (iii) even 10^20 specifications cover only 1.38*10^{-40} of the space.
+      Exhaustive specification is geometrically impossible.
+    formal: "N = (1/0.1)^48 = 10^48; V_48(0.1) approx 1.38*10^{-60}; 10^20 * V_48(0.1) = 1.38*10^{-40}"
+    testable: false
+    tested_in_paper: true
+    status: supported
+    depends_on: []
+
+  - id: "C1_1"
+    type: proposition
+    statement: >
+      To cover even 1% of [0,1]^48 with balls of radius 0.1 requires
+      M_{1%} approx 7.26*10^{57} specifications — far beyond any practical
+      enumeration. Every organizational library, consulting template collection,
+      and management textbook combined covers a negligible fraction of the space.
+    formal: "M_{1%} = 0.01 / V_48(0.1) approx 7.26*10^{57}"
+    testable: false
+    tested_in_paper: true
+    status: supported
+    depends_on: ["T1"]
+
+  - id: "P1"
+    type: proposition
+    statement: >
+      Cascade per-level dimensions: under OST's cascade model with coupling
+      strength gamma = 0.5, effective free dimensions per level are L0=8.00,
+      L1=4.00, L2=2.00, L3=1.00, L4=0.50, L5=0.25.
+    formal: "d_i = 8 * (1-gamma)^i; at gamma=0.5: d_0=8, d_1=4, d_2=2, d_3=1, d_4=0.5, d_5=0.25"
+    testable: true
+    tested_in_paper: false
+    status: supported
+    depends_on: []
+
+  - id: "T2"
+    type: theorem
+    statement: >
+      Effective dimensionality reduction: under OST's cascade model with coupling
+      strength gamma in (0,1], the effective dimensionality of the specification
+      space is d_eff = 8 * (1 - (1-gamma)^6) / gamma. At gamma=0.5:
+      d_eff = 15.8, a 67.1% reduction from the unconstrained 48 dimensions.
+    formal: "d_eff = 8 * (1 - (1-gamma)^6) / gamma; at gamma=0.5: d_eff = 15.75 approx 15.8"
+    testable: true
+    tested_in_paper: false
+    status: supported
+    depends_on: ["P1"]
+
+  - id: "T3"
+    type: theorem
+    statement: >
+      Forkability as subspace decomposition: the fork model sharing levels L0
+      through L_{k-1} while diverging on levels L_k through L5 is geometrically
+      equivalent to decomposing [0,1]^48 into a shared subspace [0,1]^{8k} and
+      a private subspace [0,1]^{8(6-k)}. For the canonical fork at k=3 (shared
+      L0-L2, divergent L3-L5): [0,1]^48 = [0,1]^24 x [0,1]^24. The private
+      subspace alone admits (1/epsilon)^{8(6-k)} distinguishable configurations.
+    formal: "[0,1]^48 = [0,1]^{8k} x [0,1]^{8(6-k)}; at k=3: shared=24D, private=24D"
+    testable: false
+    tested_in_paper: true
+    status: supported
+    depends_on: ["T1"]
+
+  - id: "R1"
+    type: proposition
+    statement: >
+      Cognitive necessity of compression: a full 48-dimensional specification
+      at resolution 0.1 contains 159.4 bits of information (= 48 * log2(10)).
+      Human working memory capacity (~7 chunks, ~7*log2(7) approx 19.6 bits)
+      cannot hold this directly. Cascade and fork compression is cognitively
+      required, not merely convenient.
+    formal: "I = n * log2(1/epsilon) = 48 * log2(10) = 159.4 bits; WM capacity ~ 7 chunks"
+    testable: true
+    tested_in_paper: false
+    status: not_tested
+    depends_on: ["T1"]
+
+methodology:
+  type: theoretical
+  design: >
+    Mathematical analysis of the geometry of high-dimensional specification
+    spaces. The OST activation matrix A in [0,1]^{8x6} is vectorized to
+    a = vec(A) in [0,1]^48. Volume computations use the formula V_n(r) =
+    pi^{n/2} * r^n / Gamma(n/2+1). The cascade model is formalized as
+    linear coupling x_{i+1} = gamma*f(x_i) + (1-gamma)*z_{i+1}. Effective
+    dimensionality is derived as the sum of a geometric series. The fork
+    model is formalized as a Cartesian product decomposition of [0,1]^48.
+    Information-theoretic analysis uses Shannon entropy at resolution epsilon.
+    All proofs are analytical; no simulation required.
+  analysis:
+    method: >
+      High-dimensional volume calculations (Gamma function); geometric series
+      summation for cascade effective dimensionality; Cartesian product
+      decomposition for fork model; Shannon entropy for information-theoretic
+      bound; comparison table across frameworks at n in {2, 5, 8, 16, 48}
+    software: "None (analytical)"
+
+acceptance:
+  - claim_id: "T1"
+    criterion: >
+      The volume formula V_48(0.1) = pi^24 * 0.1^48 / Gamma(25) is verified
+      numerically to equal approximately 1.38*10^{-60}. All three parts of
+      Theorem 1 follow by arithmetic.
+    falsification: >
+      The specification space has effective dimensionality substantially below 48
+      (e.g., due to biological constraints on organizational form), making coverage
+      impossibility less severe. This would require showing that the viable
+      organization manifold has dimension < ~20.
+
+  - claim_id: "T2"
+    criterion: >
+      Empirical organizational data (comparing variation at each level to
+      variation at the level above) yields cascade coupling estimates gamma
+      in the range [0.3, 0.7], consistent with d_eff in [11.4, 23.5] — a
+      substantial reduction from 48 without collapse to 8.
+    falsification: >
+      Empirical coupling estimates gamma fall near 0 (no cascade; d_eff approx 48)
+      or near 1 (near-perfect cascade; d_eff approx 8), with no support for
+      intermediate values.
+
+  - claim_id: "T3"
+    criterion: >
+      Organizations identified as forks at level k (e.g., franchise systems
+      sharing L0-L2) exhibit low variance on shared dimensions and high
+      variance on private dimensions, consistent with the subspace decomposition.
+    falsification: >
+      Organizations nominally sharing L0-L2 specifications show high variance
+      on those shared dimensions, inconsistent with the fork model's geometric
+      interpretation.
+
+  - claim_id: "R1"
+    criterion: >
+      Organizational design practitioners, when asked to specify all 48 activation
+      matrix parameters, experience cognitive overload and rely on templates,
+      heuristics, or simplifying frameworks — consistent with the 159.4-bit
+      information load exceeding working memory capacity.
+    falsification: >
+      Practitioners can reliably specify all 48 parameters independently without
+      cognitive aids, or the effective number of independent choices is consistently
+      below working memory capacity (~7).
+
+data:
+  available: false
+  url: ""
+  notes: >
+    No primary data collected. The paper is entirely theoretical. The OST
+    framework's 8x6 activation matrix structure is taken from Zharnikov (2026i);
+    the Spectra Coffee example is a pedagogical illustration, not a research
+    dataset. Empirical estimation of cascade coupling strength gamma is
+    identified as a direction for future work.
+
+code:
+  available: true
+  url: "https://github.com/spectralbranding/sbt-framework"
+  notes: >
+    No simulation code required for this paper (all results are analytical).
+    The sbt-framework repository implements the SBT dimension scoring
+    pipeline; the OST activation matrix structure is the 8-dimensional
+    generalization applied at 6 levels. Volume computations (V_48) and
+    effective dimensionality formulas (T2) require only standard arithmetic.
+
+replication:
+  feasible: true
+  estimated_cost: "< $100 USD (analytical verification only)"
+  estimated_time: "1 week"
+  requirements:
+    - "Numerical verification of V_48(0.1) = pi^24 / (24! * 10^48) approx 1.38*10^{-60}"
+    - "Geometric series computation: d_eff = 8*(1-(1-gamma)^6)/gamma for gamma in [0,1]"
+    - "Verification of fork subspace dimension counts: 8k (shared) + 8(6-k) (private) = 48"
+    - "Shannon entropy: 48 * log2(1/0.1) = 48 * 3.322 = 159.4 bits"
+    - "Comparison table: (1/0.1)^n for n in {2, 5, 8, 16, 48}"
+
+dependencies:
+  - doi: "10.5281/zenodo.18945912"
+    claim: "Zharnikov (2026a) SBT — provides the 8-dimensional framework that OST applies at 6 hierarchical levels; the 8 configuration dimensions of OST parallel the 8 SBT dimensions"
+    relationship: "extends"
+    critical: true
+
+  - doi: "10.5281/zenodo.18945295"
+    claim: "Zharnikov (2026d) R1 — metric framework for the 8-dimensional brand space; this paper extends the geometric analysis to the full 48-dimensional specification space"
+    relationship: "extends"
+    critical: true
+
+  - doi: "10.5281/zenodo.18945522"
+    claim: "Zharnikov (2026g) R4 — sphere packing capacity bounds in 8 dimensions; this paper applies the same volume-ratio logic to the 48-dimensional organizational specification space"
+    relationship: "extends"
+    critical: false
+
+  - reference: "Zharnikov, D. (2026i). Organization as Specification. Working Paper (Zenodo). DOI: 10.5281/zenodo.18946043."
+    claim: "Zharnikov (2026i) OST — defines the 8x6 activation matrix, cascade model, and fork model that this paper analyzes geometrically"
+    relationship: "extends"
+    critical: true
+
+  - reference: "Kauffman, S. A. (1993). The origins of order: Self-organization and selection in evolution. Oxford University Press."
+    claim: "Kauffman (1993) NK landscapes — search complexity on fitness landscapes; explicitly distinguished from specification complexity (geometric impossibility) throughout the paper"
+    relationship: "refines"
+    critical: false
+
+  - reference: "Galbraith, J. R. (1974). Organization design: An information processing view. Interfaces, 4(3), 28-36."
+    claim: "Galbraith (1974) Star Model — management framework identifying key organizational dimensions; SBT/OST extends to a formal metric space that makes coverage impossibility provable"
+    relationship: "extends"
+    critical: false
+
+results:
+  - claim_id: "T1"
+    status: supported
+    notes: >
+      Direct computation: N = 10^48 (distinguishable specs at epsilon=0.1);
+      V_48(0.1) = pi^24 / (24! * 10^48) approx 1.38*10^{-60}.
+      Coverage of 10^20 specs: 1.38*10^{-40}. All arithmetic verified.
+
+  - claim_id: "C1_1"
+    status: supported
+    notes: >
+      Follows from T1: M_{1%} = 0.01 / V_48(0.1) = 0.01 / (1.38*10^{-60}) = 7.26*10^{57}.
+      Plain-language interpretation: all organizations that have ever existed
+      (~10^10 specs) cover approximately 10^{-50} of the space.
+
+  - claim_id: "P1"
+    status: supported
+    notes: >
+      Direct computation: d_i = 8*(0.5)^i for i = 0,...,5 gives
+      8.0, 4.0, 2.0, 1.0, 0.5, 0.25. Sum = 15.75 approx d_eff from T2.
+
+  - claim_id: "T2"
+    status: supported
+    notes: >
+      Geometric series: sum_{i=0}^{5} 8*(1-gamma)^i = 8*(1-(1-gamma)^6)/gamma.
+      At gamma=0.5: d_eff = 15.75. Reduction from 48: 67.2%.
+      Range across gamma shown in sensitivity table (Section 4.3).
+
+  - claim_id: "T3"
+    status: supported
+    notes: >
+      Cartesian product decomposition follows from the vectorized form of the
+      activation matrix. Fork at k=3: shared subspace = [0,1]^24 (3 levels * 8 dims),
+      private subspace = [0,1]^24 (3 levels * 8 dims). Even k=5 (sharing all but
+      artifacts) leaves 10^8 distinguishable artifact configurations.
+
+  - claim_id: "R1"
+    status: not_tested
+    notes: >
+      Information-theoretic calculation: 48 * log2(10) = 48 * 3.322 = 159.4 bits.
+      Working memory reference is Miller (1956) "7 +/- 2 chunks." The cognitive
+      necessity claim is supported by the calculation but not empirically tested
+      against practitioner behavior.
+
+limitations:
+  - description: >
+      The coverage impossibility theorem computes volumes assuming all points in
+      [0,1]^48 are equally relevant. Real organizational configurations cluster
+      in certain regions (not all combinations are viable). If the viable
+      organization manifold has effective dimension below ~20, coverage impossibility
+      becomes less severe. Characterizing the viability manifold is identified as
+      a future research direction.
+    severity: moderate
+    addressable: true
+
+  - description: >
+      The activation matrix treats 8 configuration dimensions as independent at
+      each level. Dimension-level correlations (e.g., semiotic and narrative at
+      L5 may be tightly coupled) reduce effective dimensionality. The cascade
+      model approximates but does not precisely capture within-level correlation.
+    severity: moderate
+    addressable: true
+
+  - description: >
+      The cascade model assumes linear coupling (x_{i+1} = gamma*f(x_i) + (1-gamma)*z_{i+1}).
+      Real organizational cascades may be nonlinear: purpose may strongly constrain
+      values on some dimensions while leaving others free. A nonlinear cascade would
+      produce dimension-dependent reduction rather than the uniform reduction here.
+    severity: moderate
+    addressable: true
+
+  - description: >
+      The paper analyzes the specification space at a single point in time. Real
+      organizations evolve, and their activation matrices change as they adapt.
+      A dynamic extension would model organizational evolution as trajectories in
+      [0,1]^48, connecting to diffusion-on-manifolds frameworks.
+    severity: minor
+    addressable: true
+
+  - description: >
+      The cascade coupling strength gamma is treated as a single scalar. In
+      practice, coupling may vary across levels (L0->L1 may be stronger than
+      L4->L5) and across dimensions (ideological dimension may cascade more
+      strongly than economic). Empirical estimation of gamma is deferred to
+      future work.
+    severity: moderate
+    addressable: true
+
+repositories:
+  - platform: "Zenodo"
+    doi: "10.5281/zenodo.18945591"
+    url: "https://doi.org/10.5281/zenodo.18945591"
+    version: "v1"
+    date: "2026-03-24"
+  - platform: "GitHub"
+    url: "https://github.com/spectralbranding/sbt-papers/tree/main/r5-specification-impossibility"
+
+submission_history: []

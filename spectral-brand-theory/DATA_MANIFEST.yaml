@@ -1,0 +1,12 @@
+# DATA_MANIFEST.yaml — Spectral Brand Theory (2026a)
+# External data dependencies per the Research-as-Repository protocol
+
+data_manifest:
+  - id: "zenodo-preprint"
+    description: >
+      Published preprint PDF on Zenodo. No external datasets —
+      this is a theoretical paper with no empirical data collection.
+    archive: "Zenodo"
+    doi: "10.5281/zenodo.18945913"
+    format: "PDF"
+    access: public

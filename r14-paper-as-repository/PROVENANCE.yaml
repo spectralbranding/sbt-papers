@@ -1,0 +1,46 @@
+# PROVENANCE.yaml — R14: Research as Repository
+# Fork history and submission records per the Research-as-Repository protocol
+
+provenance:
+  paper_title: "Research as Repository: A Git-Native Protocol for Scientific Knowledge Production"
+  citation_key: "2026u"
+  repository: "spectralbranding/sbt-papers/r14-paper-as-repository"
+
+  forks:
+    - id: "fork-2026-03-28-zenodo"
+      target: "Zenodo"
+      target_type: preprint_server
+      created: "2026-03-28"
+      source_commit: "main"
+      status: merged
+      outcome: published
+      identifiers:
+        doi: "10.5281/zenodo.19294864"
+        community: ["spectral-branding"]
+
+    - id: "fork-2026-03-29-jasist"
+      target: "JASIST"
+      target_type: journal
+      created: "2026-03-29"
+      source_commit: "main"
+      status: rejected
+      outcome: desk_rejected
+      identifiers:
+        manuscript_id: "JASIST-2026-03-0533"
+      decision_date: "2026-04-02"
+      notes: >
+        Editor: Dr. Steve Sawyer. Reason: work does not clearly draw on
+        information science literature.
+
+    - id: "fork-2026-04-02-jlsc"
+      target: "JLSC (Journal of Librarianship and Scholarly Communication)"
+      target_type: journal
+      created: "2026-04-02"
+      source_commit: "main"
+      status: pending
+      outcome: under_review
+      identifiers:
+        manuscript_id: "25252"
+      notes: >
+        Diamond OA (no APC). Theory article. Double-anonymous review.
+        Iowa State University Digital Press.

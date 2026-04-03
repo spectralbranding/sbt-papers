@@ -1,0 +1,22 @@
+# DATA_MANIFEST.yaml — R13: Paper as Specification
+# External data dependencies per the Research-as-Repository protocol
+
+data_manifest:
+  - id: "zenodo-preprint"
+    description: >
+      Published preprint PDF on Zenodo. No external datasets —
+      this is a theoretical paper with demonstration corpus.
+    archive: "Zenodo"
+    doi: "10.5281/zenodo.19210037"
+    format: "PDF"
+    access: public
+
+  - id: "paper-spec-corpus"
+    description: >
+      Twenty-paper demonstration corpus of paper.yaml files used in
+      the dependency analysis. Available in the paper-spec repository.
+    archive: "GitHub"
+    repository: "spectralbranding/paper-spec"
+    path: "examples/"
+    format: "YAML"
+    access: public

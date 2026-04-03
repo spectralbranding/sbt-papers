@@ -1,0 +1,21 @@
+# DATA_MANIFEST.yaml — R14: Research as Repository
+# External data dependencies per the Research-as-Repository protocol
+
+data_manifest:
+  - id: "zenodo-preprint"
+    description: >
+      Published preprint PDF on Zenodo. No external datasets —
+      this is a conceptual protocol proposal with prototype implementation.
+    archive: "Zenodo"
+    doi: "10.5281/zenodo.19294864"
+    format: "PDF"
+    access: public
+
+  - id: "paper-repo-prototype"
+    description: >
+      Working prototype of the proposed protocol. Contains compliance gate
+      validator, schemas, templates, and self-referential R14 implementation.
+    archive: "GitHub"
+    repository: "spectralbranding/paper-repo"
+    format: "Python + YAML"
+    access: public
