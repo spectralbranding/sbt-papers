@@ -1,0 +1,19 @@
+# PROVENANCE.yaml — R16: AI-Native Brand Identity
+# Fork history and submission records per the Research-as-Repository protocol
+
+provenance:
+  paper_title: "AI-Native Brand Identity: From Visual Recognition to Cryptographic Verification"
+  citation_key: "2026x"
+  repository: "spectralbranding/sbt-papers/r16-ai-native-brand-identity"
+
+  forks:
+    - id: "fork-2026-04-02-zenodo"
+      target: "Zenodo"
+      target_type: preprint_server
+      created: "2026-04-02"
+      source_commit: "main"
+      status: merged
+      outcome: published
+      identifiers:
+        doi: "10.5281/zenodo.19391476"
+        community: ["spectral-branding"]

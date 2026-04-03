@@ -25,6 +25,8 @@ LLM providers supported (all optional -- skip if API key is missing):
   - Gemini (Google): GOOGLE_API_KEY
   - DeepSeek: DEEPSEEK_API_KEY (OpenAI-compatible API)
   - Qwen (Alibaba DashScope): DASHSCOPE_API_KEY (OpenAI-compatible API)
+  - Qwen3 30B (local Ollama): requires Ollama running at localhost:11434
+  - Gemma4 27B (local Ollama): requires Ollama running at localhost:11434
 
 Requirements:
   pip install anthropic openai google-generativeai pyyaml numpy scipy
@@ -450,12 +452,14 @@ def call_gpt(prompt: str, model: str = "gpt-4o-mini") -> str:
     return response.choices[0].message.content
 
 
-def call_gemini(prompt: str, model: str = "gemini-1.5-flash") -> str:
-    """Call Google Gemini API and return response text."""
-    import google.generativeai as genai
-    genai.configure(api_key=os.environ["GOOGLE_API_KEY"])
-    gmodel = genai.GenerativeModel(model)
-    response = gmodel.generate_content(prompt)
+def call_gemini(prompt: str, model: str = "gemini-2.5-flash") -> str:
+    """Call Google Gemini via google-genai SDK and return response text."""
+    from google import genai
+    client = genai.Client(api_key=os.environ["GOOGLE_API_KEY"])
+    response = client.models.generate_content(
+        model=model,
+        contents=prompt,
+    )
     return response.text
 
 
@@ -474,12 +478,42 @@ def call_deepseek(prompt: str, model: str = "deepseek-chat") -> str:
     return response.choices[0].message.content
 
 
-def call_qwen(prompt: str, model: str = "qwen-plus") -> str:
+def call_qwen(prompt: str, model: str = "qwen-plus-latest") -> str:
     """Call Qwen via Alibaba DashScope API (OpenAI-compatible) and return response text."""
     from openai import OpenAI
     client = OpenAI(
         api_key=os.environ["DASHSCOPE_API_KEY"],
-        base_url="https://dashscope.aliyuncs.com/compatible-mode/v1",
+        base_url="https://dashscope-intl.aliyuncs.com/compatible-mode/v1",
+    )
+    response = client.chat.completions.create(
+        model=model,
+        messages=[{"role": "user", "content": prompt}],
+        max_tokens=512,
+    )
+    return response.choices[0].message.content
+
+
+def call_qwen3_local(prompt: str, model: str = "qwen3:30b") -> str:
+    """Call Qwen3 30B via local Ollama (OpenAI-compatible) and return response text."""
+    from openai import OpenAI
+    client = OpenAI(
+        api_key="ollama",
+        base_url="http://localhost:11434/v1",
+    )
+    response = client.chat.completions.create(
+        model=model,
+        messages=[{"role": "user", "content": prompt}],
+        max_tokens=512,
+    )
+    return response.choices[0].message.content
+
+
+def call_gemma4_local(prompt: str, model: str = "gemma4:latest") -> str:
+    """Call Gemma 4 27B via local Ollama (OpenAI-compatible) and return response text."""
+    from openai import OpenAI
+    client = OpenAI(
+        api_key="ollama",
+        base_url="http://localhost:11434/v1",
     )
     response = client.chat.completions.create(
         model=model,
@@ -495,6 +529,8 @@ API_CALLERS: dict[str, Any] = {
     "gemini": call_gemini,
     "deepseek": call_deepseek,
     "qwen": call_qwen,
+    "qwen3_local": call_qwen3_local,
+    "gemma4_local": call_gemma4_local,
 }
 
 API_KEY_VARS: dict[str, str] = {
@@ -503,6 +539,8 @@ API_KEY_VARS: dict[str, str] = {
     "gemini": "GOOGLE_API_KEY",
     "deepseek": "DEEPSEEK_API_KEY",
     "qwen": "DASHSCOPE_API_KEY",
+    "qwen3_local": "OLLAMA_AVAILABLE",
+    "gemma4_local": "OLLAMA_AVAILABLE",
 }
 
 
@@ -1041,6 +1079,14 @@ def run_pilot(
     else:
         profiles, functions = load_sample_brands(category)
         print(f"Using {len(profiles)} sample brands ({category})")
+
+    # Check if Ollama is available (for local models)
+    import urllib.request
+    try:
+        urllib.request.urlopen("http://localhost:11434/api/tags", timeout=2)
+        os.environ["OLLAMA_AVAILABLE"] = "1"
+    except Exception:
+        pass  # Ollama not running, local models will be skipped
 
     # Determine available models in live mode
     if not demo:

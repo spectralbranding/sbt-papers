@@ -1,0 +1,12 @@
+# PROVENANCE.yaml — R15: Spectral Metamerism in AI-Mediated Brand Perception
+# Fork history and submission records per the Research-as-Repository protocol
+
+provenance:
+  paper_title: "Spectral Metamerism in AI-Mediated Brand Perception: How Large Language Models Collapse Multi-Dimensional Brand Differentiation in Consumer Search"
+  citation_key: "2026v"
+  repository: "spectralbranding/sbt-papers/r15-ai-search-metamerism"
+
+  forks: []
+  # No forks yet. Will be updated when:
+  # 1. Paper uploaded to Zenodo (preprint)
+  # 2. Paper submitted to JAR (journal)

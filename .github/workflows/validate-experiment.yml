@@ -1,0 +1,31 @@
+name: Validate Experiment Data
+on:
+  push:
+    paths:
+      - '**/experiment/**'
+  pull_request:
+    paths:
+      - '**/experiment/**'
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        experiment:
+          - r16-ai-native-brand-identity
+          - r15-ai-search-metamerism
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+        with:
+          version: "latest"
+
+      - name: Validate experiment data
+        run: |
+          cd ${{ matrix.experiment }}/experiment
+          if [ -f validation/validate.py ]; then
+            uv run python validation/validate.py --all
+          else
+            echo "No validation script found, skipping"
+          fi

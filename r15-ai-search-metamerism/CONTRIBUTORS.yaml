@@ -1,0 +1,30 @@
+# CONTRIBUTORS.yaml — R15: Spectral Metamerism in AI-Mediated Brand Perception
+# Verified contributor attribution per the Research-as-Repository protocol
+
+contributors:
+  - name: "Dmitry Zharnikov"
+    orcid: "0009-0000-6893-9231"
+    type: human
+    roles:
+      - conceptualization
+      - methodology
+      - writing-original
+      - software
+      - formal-analysis
+      - project-administration
+    affiliation: "Independent Researcher"
+    first_commit: "2026-03-01"
+    last_commit: "2026-04-03"
+
+  - name: "Claude (Anthropic)"
+    type: ai_tool
+    roles:
+      - writing-review
+      - consistency-checking
+      - software
+    disclosure: >
+      Used for manuscript drafting, hypothesis formalization, experiment
+      script development, and editorial review. All hypotheses, the
+      LLM-as-observer concept, spectral profile estimation methodology,
+      and experimental design are solely the author's intellectual contribution.
+      Note: Claude is also one of seven LLM subjects in the experiment.
