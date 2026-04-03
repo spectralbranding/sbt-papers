@@ -37,14 +37,16 @@ Demo mode uses simulated LLM responses to demonstrate the methodology and analys
 ### Live Execution
 
 ```bash
-export ANTHROPIC_API_KEY=sk-ant-...
-export OPENAI_API_KEY=sk-...
-export GOOGLE_API_KEY=AI...
+export ANTHROPIC_API_KEY=sk-ant-...   # Claude (Anthropic)
+export OPENAI_API_KEY=sk-...           # GPT (OpenAI)
+export GOOGLE_API_KEY=AI...            # Gemini (Google)
+export DEEPSEEK_API_KEY=sk-...         # DeepSeek
+export DASHSCOPE_API_KEY=sk-...        # Qwen (Alibaba DashScope)
 
 python behavioral_metamerism_pilot.py --live --runs 3 --output results.json --summary summary_tables.md
 ```
 
-Live mode queries Claude, GPT, and Gemini with real brand discrimination prompts under two conditions:
+All five API keys are optional. Models with missing keys are skipped automatically with a warning; at least one key must be set. Live mode queries whichever of Claude, GPT, Gemini, DeepSeek, and Qwen are available, with real brand discrimination prompts under two conditions:
 
 - **Statistical-only**: LLM sees ratings, reviews, sentiment, claims
 - **Specification-augmented**: LLM additionally sees verified Brand Function (return policy, dispute resolution, service failure communication, etc.)
