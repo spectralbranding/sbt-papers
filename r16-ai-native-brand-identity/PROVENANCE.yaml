@@ -6,6 +6,17 @@ provenance:
   citation_key: "2026x"
   repository: "spectralbranding/sbt-papers/r16-ai-native-brand-identity"
 
+  versions:
+    - version: "1.0"
+      date: "2026-04-02"
+      description: "Initial draft with 6 propositions, pilot design, no empirical results"
+    - version: "1.1"
+      date: "2026-04-03"
+      description: "Added Section 9 empirical pilot results (684 calls, 4 tables)"
+    - version: "1.2"
+      date: "2026-04-03"
+      description: "Grok review fixes (P3 softened, AI disclosure, power analysis, synthetic brand defense)"
+
   forks:
     - id: "fork-2026-04-02-zenodo"
       target: "Zenodo"
@@ -17,3 +28,10 @@ provenance:
       identifiers:
         doi: "10.5281/zenodo.19391476"
         community: ["spectral-branding"]
+      note: "v1.0 — upload v1.2 PDF pending"
+
+  target_venue:
+    journal: "Journal of Interactive Marketing"
+    publisher: "Elsevier/SAGE"
+    status: "pre-submission"
+    note: "Submission after Zenodo v1.2 upload"

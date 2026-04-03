@@ -25,7 +25,7 @@ contributors:
       - formal-analysis
     disclosure: >
       Used for manuscript drafting, proposition formalization, pilot script
-      development (behavioral_metamerism_pilot.py), and editorial review.
+      development (experiment/behavioral_metamerism_pilot.py), and editorial review.
       All theoretical propositions, the Brand Function concept, cryptographic
       verification architecture, and experimental design decisions are solely
       the author's intellectual contribution.
