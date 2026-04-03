@@ -1,0 +1,182 @@
+# paper.yaml — R15: Spectral Metamerism in AI-Mediated Brand Perception
+# Citation key: 2026v
+# Paper Spec schema: https://github.com/spectralbranding/paper-spec/SPECIFICATION.md
+
+paper_spec_version: "0.1.0"
+
+metadata:
+  title: "Spectral Metamerism in AI-Mediated Brand Perception: How Large Language Models Collapse Multi-Dimensional Brand Differentiation in Consumer Search"
+  authors:
+    - name: "Dmitry Zharnikov"
+      orcid: "0009-0000-6893-9231"
+      affiliation: "Independent Researcher"
+      corresponding: true
+  citation_key: "2026v"
+  doi: null  # Populate after Zenodo upload
+  date: "2026-04-03"
+  version: "1.0"
+  status: working_paper
+  license: "CC-BY-NC-ND-4.0"
+  keywords:
+    - AI-mediated search
+    - brand perception
+    - spectral metamerism
+    - large language models
+    - advertising effectiveness
+    - consumer search
+    - dimensionality reduction
+    - observer heterogeneity
+
+claims:
+  - id: H1
+    type: hypothesis
+    statement: >
+      LLMs assign systematically higher implicit weights to Economic and
+      Experiential dimensions than to Narrative, Ideological, Cultural,
+      and Temporal dimensions when processing brand comparison queries.
+    testable: true
+    tested_in_paper: true
+    status: proposed
+    falsification: >
+      H1 is falsified if LLM spectral profiles show uniform or near-uniform
+      dimensional weights (no statistically significant departure from equal
+      weighting across all eight SBT dimensions, Bonferroni-corrected p > 0.05).
+    depends_on: []
+
+  - id: H2
+    type: hypothesis
+    statement: >
+      Brand pairs that are spectrally distinct to human observers on Narrative,
+      Ideological, Cultural, or Temporal dimensions become functionally
+      equivalent in LLM-mediated recommendations.
+    testable: true
+    tested_in_paper: true
+    status: proposed
+    falsification: >
+      H2 is falsified if fewer than 30% of brand pairs classified as metameric
+      based on differentiating on "soft" dimensions actually show collapsed
+      spectral distances in LLM perception. If LLMs preserve differentiation
+      on perception-dependent dimensions, metameric collapse is not systematic.
+    depends_on: [H1]
+
+  - id: H3
+    type: hypothesis
+    statement: >
+      Different LLM architectures and training origins (Western cloud, Chinese
+      cloud, local open-weight) and deployment contexts (cloud-aligned vs.
+      local open-weight) exhibit measurably different spectral profiles,
+      constituting distinct AI observer cohorts.
+    testable: true
+    tested_in_paper: true
+    status: proposed
+    falsification: >
+      H3 is falsified if MANOVA shows no significant effect of model identity
+      on the eight-dimensional weight vector (p > 0.05), indicating that all
+      seven LLMs produce statistically indistinguishable spectral profiles.
+    depends_on: []
+
+methodology:
+  type: empirical
+  design: >
+    Prompt-based experimental design measuring implicit spectral profiles of
+    seven LLMs across ten brand pairs. Three prompt types (recommendation,
+    differentiation, dimension-specific probes) administered five times per
+    model at temperature 0.7.
+  sample:
+    size: 3850
+    description: "1,050 organic responses + 2,800 calibration responses"
+    models: 7
+    brand_pairs: 10
+  measures:
+    - variable: "dimensional_coverage"
+      instrument: "Human coding of dimensional presence/intensity (0-10 scale)"
+      reliability: "Target: Cohen's kappa > 0.80 (presence), ICC > 0.75 (intensity)"
+    - variable: "spectral_distance"
+      instrument: "Euclidean distance in 8-dimensional intensity space"
+    - variable: "metameric_pair_classification"
+      instrument: "Distance threshold (1 SD below human-perceived mean)"
+  analysis:
+    primary:
+      - "One-sample t-test per dimension against uniform benchmark (H1)"
+      - "Euclidean spectral distance comparison against human benchmarks (H2)"
+      - "MANOVA with model identity as IV, 8D weight vector as DV (H3)"
+      - "Two planned contrasts: Qwen Plus vs Qwen3 30B, Gemini vs Gemma 4"
+    secondary:
+      - "Johnson-Lindenstrauss information loss quantification"
+      - "Spectral entropy comparison (LLM vs human profiles)"
+    software: "Python 3.12, scipy, numpy"
+  tools:
+    - "Python 3.12 (experiment script)"
+    - "Anthropic API (Claude Sonnet 4.6)"
+    - "OpenAI API (GPT-4o-mini)"
+    - "Google AI Studio (Gemini 2.5 Flash)"
+    - "DeepSeek API (DeepSeek V3)"
+    - "DashScope API (Qwen Plus)"
+    - "Ollama (Qwen3 30B, Gemma 4 27B)"
+
+dependencies:
+  - citation: "Zharnikov (2026a)"
+    doi: "10.5281/zenodo.18945912"
+    relationship: extends
+    critical: true
+    description: "SBT framework: 8-dimensional model, canonical brand profiles"
+
+  - citation: "Zharnikov (2026e)"
+    doi: "10.5281/zenodo.18945352"
+    relationship: extends
+    critical: true
+    description: "Spectral metamerism formalization and Johnson-Lindenstrauss bounds"
+
+  - citation: "Zharnikov (2026f)"
+    doi: "10.5281/zenodo.18945477"
+    relationship: extends
+    critical: true
+    description: "Cohort boundaries and observer heterogeneity"
+
+  - citation: "Zharnikov (2026l)"
+    doi: "10.5281/zenodo.19064426"
+    relationship: extends
+    critical: false
+    description: "Rendering problem framework"
+
+  - citation: "Zharnikov (2026q)"
+    doi: "10.5281/zenodo.19145099"
+    relationship: extends
+    critical: false
+    description: "Spectral portfolio theory (portfolio self-competition)"
+
+limitations:
+  - id: L1
+    description: "Prompt-based protocol does not capture multimodal AI-brand interactions"
+    severity: moderate
+    addressable: true
+  - id: L2
+    description: "LLM responses sensitive to prompt engineering; 5-repetition design mitigates but does not eliminate"
+    severity: minor
+    addressable: true
+  - id: L3
+    description: "Measures LLM output, not downstream consumer purchase behavior"
+    severity: major
+    addressable: true
+  - id: L4
+    description: "Models evolve rapidly; profiles may shift with updates"
+    severity: moderate
+    addressable: true
+  - id: L5
+    description: "Human coding introduces subjectivity despite inter-rater reliability controls"
+    severity: minor
+    addressable: true
+
+submission_history:
+  - venue: "Journal of Advertising Research"
+    type: journal
+    date: null
+    status: planned
+    note: "Special call: Insights on the future of search-related advertising and AI"
+
+ai_disclosure: >
+  AI tools (Claude, Anthropic) were used for manuscript drafting, hypothesis
+  formalization, experiment script development, and editorial review.
+  Seven LLMs are the subjects of the experiment, not contributors to the
+  theoretical framework. All hypotheses, the LLM-as-observer concept, and
+  experimental design are solely the author's intellectual contribution.

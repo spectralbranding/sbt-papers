@@ -17,6 +17,9 @@
 # macOS
 .DS_Store
 
+# Environment
+.envrc
+
 # Python
 __pycache__/
 *.py[cod]

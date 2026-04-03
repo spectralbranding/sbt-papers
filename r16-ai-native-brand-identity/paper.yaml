@@ -1,0 +1,174 @@
+# paper.yaml — R16: AI-Native Brand Identity
+# Citation key: 2026x
+# Paper Spec schema: https://github.com/spectralbranding/paper-spec/SPECIFICATION.md
+
+paper_spec_version: "0.1.0"
+
+metadata:
+  title: "AI-Native Brand Identity: From Visual Recognition to Cryptographic Verification"
+  authors:
+    - name: "Dmitry Zharnikov"
+      orcid: "0009-0000-6893-9231"
+      affiliation: "Independent Researcher"
+      corresponding: true
+  citation_key: "2026x"
+  doi: "10.5281/zenodo.19391476"
+  date: "2026-04-02"
+  version: "1.0"
+  status: working_paper
+  license: "CC-BY-NC-ND-4.0"
+  keywords:
+    - AI-native brand identity
+    - cryptographic verification
+    - behavioral metamerism
+    - brand function
+    - agentic commerce
+    - observer-type transition
+    - spectral brand theory
+
+claims:
+  - id: P1
+    type: proposition
+    statement: >
+      Identity verification technology characteristically changes not through
+      incremental improvement but through discontinuous response to a change
+      in the observer type.
+    falsification: >
+      P1 is falsified if the current AI-observer transition produces only
+      incremental extensions of existing logo-based identity rather than a
+      structurally different verification mechanism.
+    depends_on: []
+
+  - id: P2
+    type: proposition
+    statement: >
+      When the observer changes, the previous identity technology persists
+      for legacy observers but becomes functionally irrelevant for the new
+      observer class.
+    falsification: >
+      P2 is falsified if AI agents demonstrably use logos as informational
+      inputs in purchasing decisions, weighting visual brand identity in
+      recommendation quality.
+    depends_on: [P1]
+
+  - id: P3
+    type: proposition
+    statement: >
+      AI agents do not perceive brand identity through visual recognition
+      but through structured data evaluation, behavioral pattern analysis,
+      and third-party corroboration. The logo carries zero informational
+      weight for machine observers.
+    falsification: >
+      P3 is falsified if multimodal AI agents that process visual brand
+      elements make measurably better purchasing decisions than text-only
+      agents with identical structured data.
+    depends_on: [P1, P2]
+
+  - id: P4
+    type: proposition
+    statement: >
+      The Brand Function is the root specification from which all brand
+      emissions and identity artifacts derive. Existing AI commerce protocols
+      (ACP, UCP, brand.json) address brand discovery and transaction but not
+      brand perception or coherence.
+    falsification: >
+      P4 is falsified if existing protocols prove sufficient for AI agents
+      to measure brand coherence and predict behavioral responses without
+      additional specification layers.
+    depends_on: []
+
+  - id: P5
+    type: proposition
+    statement: >
+      Cryptographic signatures on behavioral specifications will replace logos
+      as the primary brand identity mechanism for AI-mediated commerce,
+      following the historical pattern where each observer-type change
+      produces a new identity technology.
+    falsification: >
+      P5 is falsified if AI-mediated commerce scales to significant market
+      share (>20% of category transactions) without adopting cryptographic
+      brand verification.
+    depends_on: [P1, P2, P3, P4]
+
+  - id: P6
+    type: proposition
+    statement: >
+      Behavioral metamerism --- where brands have identical statistical
+      profiles but structurally different behavioral signatures --- is the
+      AI-native equivalent of visual brand confusion, and can only be
+      resolved through behavioral specification.
+    testable: true
+    tested_in_paper: true
+    status: proposed
+    falsification: >
+      P6 is falsified if LLMs can reliably distinguish behaviorally
+      different brands using only statistical profiles (reviews, ratings,
+      public web content) without structured behavioral specifications.
+    depends_on: [P3, P4]
+
+methodology:
+  type: mixed
+  approach: >
+    Historical analysis of five observer-type transitions combined with
+    empirical pilot testing behavioral metamerism across seven LLMs in
+    four clusters (Western cloud, Chinese cloud, local Chinese open-weight,
+    local Western open-weight).
+  tools:
+    - "Python 3.12 (experiment script)"
+    - "Anthropic API (Claude Sonnet 4.6)"
+    - "OpenAI API (GPT-4o-mini)"
+    - "Google AI Studio (Gemini 2.5 Flash)"
+    - "DeepSeek API (DeepSeek V3)"
+    - "DashScope API (Qwen Plus)"
+    - "Ollama (Qwen3 30B, Gemma 4 27B)"
+
+dependencies:
+  - citation: "Zharnikov (2026a)"
+    doi: "10.5281/zenodo.18945912"
+    relationship: extends
+    critical: true
+    description: "SBT framework: 8-dimensional model, observer spectral profiles"
+
+  - citation: "Zharnikov (2026e)"
+    doi: "10.5281/zenodo.18945352"
+    relationship: extends
+    critical: true
+    description: "Spectral metamerism formalization (R2)"
+
+  - citation: "Zharnikov (2026l)"
+    doi: "10.5281/zenodo.19064426"
+    relationship: extends
+    critical: false
+    description: "Rendering problem framework"
+
+limitations:
+  - id: L1
+    description: "Pilot uses synthetic brand profiles, not real-world data"
+    severity: moderate
+    addressable: true
+  - id: L2
+    description: "Cryptographic verification system not implemented, only specified"
+    severity: major
+    addressable: true
+  - id: L3
+    description: "No consumer behavioral validation of AI agent recommendations"
+    severity: moderate
+    addressable: true
+
+submission_history:
+  - venue: "Zenodo"
+    type: preprint
+    date: "2026-04-02"
+    status: published
+    doi: "10.5281/zenodo.19391476"
+  - venue: "Journal of Interactive Marketing (JIM)"
+    type: journal
+    date: "2026-04-TBD"
+    status: planned
+
+ai_disclosure: >
+  AI tools (Claude, Anthropic) were used for manuscript drafting,
+  proposition formalization, pilot script development, and editorial
+  review. Gemini Deep Research was used for prior art mapping.
+  All theoretical propositions, the Brand Function concept, and the
+  experimental design are solely the author's intellectual contribution.
