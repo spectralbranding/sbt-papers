@@ -203,12 +203,14 @@ Brand B ({brand_b}):
 
 Question: Are these brands meaningfully different in ways that matter for a purchasing decision?
 
-Respond in JSON:
+You MUST respond with ONLY a valid JSON object (no other text before or after):
 {{
-  "can_distinguish": true/false,
-  "confidence": 0.0-1.0,
-  "reasoning": "..."
-}}"""
+  "can_distinguish": true,
+  "confidence": 0.85,
+  "reasoning": "Brief explanation here"
+}}
+
+Replace the values with your actual assessment. The "can_distinguish" field must be true or false (lowercase, no quotes). The "confidence" field must be a number between 0.0 and 1.0. The "reasoning" field must be a brief string."""
 
 DISCRIMINATION_PROMPT_AUGMENTED = """You are an AI purchasing agent evaluating brands in the {category} category.
 
@@ -240,12 +242,14 @@ Brand B ({brand_b}):
 
 Question: Are these brands meaningfully different in ways that matter for a purchasing decision?
 
-Respond in JSON:
+You MUST respond with ONLY a valid JSON object (no other text before or after):
 {{
-  "can_distinguish": true/false,
-  "confidence": 0.0-1.0,
-  "reasoning": "..."
-}}"""
+  "can_distinguish": true,
+  "confidence": 0.85,
+  "reasoning": "Brief explanation here"
+}}
+
+Replace the values with your actual assessment. The "can_distinguish" field must be true or false (lowercase, no quotes). The "confidence" field must be a number between 0.0 and 1.0. The "reasoning" field must be a brief string."""
 
 PREDICTION_PROMPT = """You are an AI purchasing agent. Based on what you know about {brand}, predict how it would handle this scenario:
 
@@ -539,33 +543,69 @@ def call_qwen(prompt: str, model: str = "qwen-plus-latest") -> str:
 
 
 def call_qwen3_local(prompt: str, model: str = "qwen3:30b") -> str:
-    """Call Qwen3 30B via local Ollama (OpenAI-compatible) and return response text.
+    """Call Qwen3 30B via local Ollama with fallback to native API.
 
-    Qwen3 has a 'thinking' mode that wraps reasoning in <think> tags.
-    We append /no_think to disable it, and also strip any residual tags.
+    Qwen3 has a 'thinking' mode that may put content in reasoning_content
+    instead of content. We check both fields. If OpenAI-compatible endpoint
+    returns empty, we fall back to Ollama's native /api/generate endpoint.
     """
-    from openai import OpenAI
-    client = OpenAI(
-        api_key="ollama",
-        base_url="http://localhost:11434/v1",
+    import urllib.request
+
+    # --- Attempt 1: OpenAI-compatible endpoint with system message ---
+    try:
+        from openai import OpenAI
+        client = OpenAI(
+            api_key="ollama",
+            base_url="http://localhost:11434/v1",
+        )
+        response = client.chat.completions.create(
+            model=model,
+            messages=[
+                {"role": "system", "content": "You are a brand evaluation assistant. Always respond with ONLY a valid JSON object. No markdown, no explanation, no thinking -- just the JSON."},
+                {"role": "user", "content": prompt},
+            ],
+            max_tokens=1024,
+        )
+        msg = response.choices[0].message
+        # Try content first, then reasoning_content (Qwen3 thinking mode)
+        content = msg.content or ""
+        if not content.strip() and hasattr(msg, "reasoning_content") and msg.reasoning_content:
+            content = msg.reasoning_content
+        # Strip think tags and markdown fences
+        content = re.sub(r"<think>.*?</think>", "", content, flags=re.DOTALL).strip()
+        content = re.sub(r"```(?:json)?\s*", "", content).strip()
+        content = re.sub(r"```\s*$", "", content).strip()
+        if content.strip():
+            return content
+    except Exception:
+        pass
+
+    # --- Attempt 2: Ollama native /api/generate (bypasses OpenAI-compatible layer) ---
+    payload = json.dumps({
+        "model": model,
+        "prompt": prompt + "\n\nRespond with ONLY a JSON object:",
+        "stream": False,
+        "options": {"num_predict": 1024},
+    }).encode()
+    req = urllib.request.Request(
+        "http://localhost:11434/api/generate",
+        data=payload,
+        headers={"Content-Type": "application/json"},
     )
-    # Append /no_think to suppress thinking mode for structured output
-    augmented_prompt = prompt + "\n\n/no_think"
-    response = client.chat.completions.create(
-        model=model,
-        messages=[{"role": "user", "content": augmented_prompt}],
-        max_tokens=512,
-    )
-    content = response.choices[0].message.content or ""
-    # Strip any <think>...</think> tags that may still appear
+    with urllib.request.urlopen(req, timeout=120) as resp:
+        data = json.loads(resp.read())
+    content = data.get("response", "")
     content = re.sub(r"<think>.*?</think>", "", content, flags=re.DOTALL).strip()
+    content = re.sub(r"```(?:json)?\s*", "", content).strip()
+    content = re.sub(r"```\s*$", "", content).strip()
     return content
 
 
 def call_gemma4_local(prompt: str, model: str = "gemma4:latest") -> str:
     """Call Gemma 4 27B via local Ollama (OpenAI-compatible) and return response text.
 
-    Gemma4 sometimes produces markdown-wrapped JSON. We strip code fences.
+    Gemma4 sometimes produces markdown-wrapped JSON or empty responses.
+    We add a system message to prime JSON output and increase max_tokens.
     """
     from openai import OpenAI
     client = OpenAI(
@@ -574,8 +614,11 @@ def call_gemma4_local(prompt: str, model: str = "gemma4:latest") -> str:
     )
     response = client.chat.completions.create(
         model=model,
-        messages=[{"role": "user", "content": prompt}],
-        max_tokens=512,
+        messages=[
+            {"role": "system", "content": "You are a brand evaluation assistant. Always respond with ONLY a valid JSON object. No markdown, no explanation -- just the JSON."},
+            {"role": "user", "content": prompt},
+        ],
+        max_tokens=1024,
     )
     content = response.choices[0].message.content or ""
     # Strip markdown code fences that some models wrap JSON in
