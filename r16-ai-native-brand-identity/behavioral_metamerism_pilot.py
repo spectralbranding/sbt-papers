@@ -19,6 +19,13 @@ The behavioral metamerism index (BMI) is computed as:
   BMI = 1 - (inter-brand statistical distance / inter-brand behavioral distance)
   Values approaching 1 indicate high metamerism (statistically similar, behaviorally different).
 
+LLM providers supported (all optional -- skip if API key is missing):
+  - Claude (Anthropic): ANTHROPIC_API_KEY
+  - GPT (OpenAI): OPENAI_API_KEY
+  - Gemini (Google): GOOGLE_API_KEY
+  - DeepSeek: DEEPSEEK_API_KEY (OpenAI-compatible API)
+  - Qwen (Alibaba DashScope): DASHSCOPE_API_KEY (OpenAI-compatible API)
+
 Requirements:
   pip install anthropic openai google-generativeai pyyaml numpy scipy
 
@@ -452,16 +459,50 @@ def call_gemini(prompt: str, model: str = "gemini-1.5-flash") -> str:
     return response.text
 
 
+def call_deepseek(prompt: str, model: str = "deepseek-chat") -> str:
+    """Call DeepSeek API (OpenAI-compatible) and return response text."""
+    from openai import OpenAI
+    client = OpenAI(
+        api_key=os.environ["DEEPSEEK_API_KEY"],
+        base_url="https://api.deepseek.com",
+    )
+    response = client.chat.completions.create(
+        model=model,
+        messages=[{"role": "user", "content": prompt}],
+        max_tokens=512,
+    )
+    return response.choices[0].message.content
+
+
+def call_qwen(prompt: str, model: str = "qwen-plus") -> str:
+    """Call Qwen via Alibaba DashScope API (OpenAI-compatible) and return response text."""
+    from openai import OpenAI
+    client = OpenAI(
+        api_key=os.environ["DASHSCOPE_API_KEY"],
+        base_url="https://dashscope.aliyuncs.com/compatible-mode/v1",
+    )
+    response = client.chat.completions.create(
+        model=model,
+        messages=[{"role": "user", "content": prompt}],
+        max_tokens=512,
+    )
+    return response.choices[0].message.content
+
+
 API_CALLERS: dict[str, Any] = {
     "claude": call_claude,
     "gpt": call_gpt,
     "gemini": call_gemini,
+    "deepseek": call_deepseek,
+    "qwen": call_qwen,
 }
 
 API_KEY_VARS: dict[str, str] = {
     "claude": "ANTHROPIC_API_KEY",
     "gpt": "OPENAI_API_KEY",
     "gemini": "GOOGLE_API_KEY",
+    "deepseek": "DEEPSEEK_API_KEY",
+    "qwen": "DASHSCOPE_API_KEY",
 }
 
 
@@ -985,8 +1026,10 @@ def run_pilot(
     In demo mode (default), uses sample data and simulated LLM responses
     to demonstrate the methodology without requiring API keys.
 
-    In live mode, calls Anthropic, OpenAI, and Google Gemini APIs with
-    exponential backoff retry and rate limiting.
+    In live mode, calls any subset of Claude (Anthropic), GPT (OpenAI),
+    Gemini (Google), DeepSeek, and Qwen (DashScope) APIs with exponential
+    backoff retry and rate limiting. Models whose API key is absent are
+    skipped automatically.
     """
     # Load brand data
     if brands_file:
@@ -1008,7 +1051,11 @@ def run_pilot(
             else:
                 print(f"  [skip] {model_name}: {env_var} not set")
         if not available_models:
-            print("ERROR: No API keys found. Set ANTHROPIC_API_KEY, OPENAI_API_KEY, or GOOGLE_API_KEY.")
+            print(
+                "ERROR: No API keys found. Set one or more of: "
+                "ANTHROPIC_API_KEY, OPENAI_API_KEY, GOOGLE_API_KEY, "
+                "DEEPSEEK_API_KEY, DASHSCOPE_API_KEY."
+            )
             sys.exit(1)
         model_list = available_models
     else:
@@ -1304,7 +1351,11 @@ if __name__ == "__main__":
     parser.add_argument(
         "--live",
         action="store_true",
-        help="Run with actual LLM APIs (requires ANTHROPIC_API_KEY, OPENAI_API_KEY, GOOGLE_API_KEY)",
+        help=(
+            "Run with actual LLM APIs. Set any of: ANTHROPIC_API_KEY, OPENAI_API_KEY, "
+            "GOOGLE_API_KEY, DEEPSEEK_API_KEY, DASHSCOPE_API_KEY. "
+            "Models with missing keys are skipped automatically."
+        ),
     )
     parser.add_argument(
         "--brands",
