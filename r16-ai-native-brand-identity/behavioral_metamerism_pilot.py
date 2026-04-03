@@ -539,22 +539,34 @@ def call_qwen(prompt: str, model: str = "qwen-plus-latest") -> str:
 
 
 def call_qwen3_local(prompt: str, model: str = "qwen3:30b") -> str:
-    """Call Qwen3 30B via local Ollama (OpenAI-compatible) and return response text."""
+    """Call Qwen3 30B via local Ollama (OpenAI-compatible) and return response text.
+
+    Qwen3 has a 'thinking' mode that wraps reasoning in <think> tags.
+    We append /no_think to disable it, and also strip any residual tags.
+    """
     from openai import OpenAI
     client = OpenAI(
         api_key="ollama",
         base_url="http://localhost:11434/v1",
     )
+    # Append /no_think to suppress thinking mode for structured output
+    augmented_prompt = prompt + "\n\n/no_think"
     response = client.chat.completions.create(
         model=model,
-        messages=[{"role": "user", "content": prompt}],
+        messages=[{"role": "user", "content": augmented_prompt}],
         max_tokens=512,
     )
-    return response.choices[0].message.content
+    content = response.choices[0].message.content or ""
+    # Strip any <think>...</think> tags that may still appear
+    content = re.sub(r"<think>.*?</think>", "", content, flags=re.DOTALL).strip()
+    return content
 
 
 def call_gemma4_local(prompt: str, model: str = "gemma4:latest") -> str:
-    """Call Gemma 4 27B via local Ollama (OpenAI-compatible) and return response text."""
+    """Call Gemma 4 27B via local Ollama (OpenAI-compatible) and return response text.
+
+    Gemma4 sometimes produces markdown-wrapped JSON. We strip code fences.
+    """
     from openai import OpenAI
     client = OpenAI(
         api_key="ollama",
@@ -565,7 +577,11 @@ def call_gemma4_local(prompt: str, model: str = "gemma4:latest") -> str:
         messages=[{"role": "user", "content": prompt}],
         max_tokens=512,
     )
-    return response.choices[0].message.content
+    content = response.choices[0].message.content or ""
+    # Strip markdown code fences that some models wrap JSON in
+    content = re.sub(r"```(?:json)?\s*", "", content).strip()
+    content = re.sub(r"```\s*$", "", content).strip()
+    return content
 
 
 API_CALLERS: dict[str, Any] = {
