@@ -10,98 +10,81 @@
 
 ## Abstract
 
-This paper proposes the observer-driven evolution thesis --- identity verification technologies change discontinuously in response to shifts in the observer type --- and introduces behavioral metamerism as the AI-native equivalent of visual brand confusion. It argues that cryptographic signatures on behavioral specifications (the Brand Function) are positioned to replace logos as the primary brand identity mechanism for AI-mediated commerce.
+This paper proposes the observer-driven evolution thesis --- identity verification technologies change discontinuously in response to shifts in the observer type --- and introduces behavioral metamerism as the AI-native equivalent of visual brand confusion. A pre-registered pilot study (684 API calls, 6 LLMs, 4 architectural clusters) provides initial empirical support: three of six models showed zero discrimination for the high-metamerism brand pair under statistical-only observation, rising to 100% discrimination across all models when behavioral specifications were provided (Fisher's exact *p* = 0.0009, Cohen's *d* = 0.791). The paper argues that cryptographic signatures on behavioral specifications (the Brand Function) are positioned to replace logos as the primary brand identity mechanism for AI-mediated commerce.
 
 ## Repository Contents
 
 | File | Description |
 |------|-------------|
-| `paper.md` | Full paper (~9,300 words, 36 references, 6 propositions) |
-| `behavioral_metamerism_pilot.py` | Empirical pilot study script for Proposition 6 |
-| `requirements.txt` | Python dependencies for the pilot script |
+| `paper.md` | Full paper (~12,050 words, 6 propositions, 4 results tables) |
+| `paper.pdf` | PDF export (320K) |
+| `paper.yaml` | Paper specification (machine-readable claims) |
 | `CITATION.cff` | Citation metadata |
+| `CONTRIBUTORS.yaml` | Contributor attribution (human + AI) |
+| `PROVENANCE.yaml` | Version history and submission records |
+| `DATA_MANIFEST.yaml` | Experiment data inventory |
+| `experiment/` | Full experiment infrastructure (see below) |
 
 ## Behavioral Metamerism Pilot
 
-The pilot tests whether LLMs can distinguish brands with identical statistical profiles but different behavioral specifications. It implements the study design described in Section 9 of the paper.
+The pilot tests whether LLMs can distinguish brands with identical statistical profiles but different behavioral specifications. Results are reported in Section 9 of the paper.
 
-### Quick Start (Demo Mode)
+**Key results (684 API calls, 0 errors):**
+- VitaCore vs NutraPure BMI = 0.979 (high behavioral metamerism)
+- 3/6 models: 0% discrimination (statistical) -> 100% (augmented)
+- All 6 models: 100% discrimination in augmented condition
+- Fisher's exact p = 0.0009, Cohen's d = 0.791, Fleiss' kappa = 0.536
+
+### Experiment Structure
+
+```
+experiment/
+  L0_specification/protocol.md    # Pre-registration (written before data collection)
+  L3_sessions/
+    session_log.jsonl             # 684 prompt-response pairs with timestamps
+    metadata.yaml                 # Model configs, package versions, hardware
+    PRE_REGISTRATION.md           # Hypothesis statements
+  results.json                    # Full results (6,956 lines)
+  summary_tables.md               # Pre-formatted results tables
+  behavioral_metamerism_pilot.py  # Experiment script
+  requirements.txt                # Python dependencies
+```
+
+### Running the Experiment
 
 ```bash
+cd experiment
 pip install -r requirements.txt
-python behavioral_metamerism_pilot.py --demo
+
+# Set API keys (models with missing keys are skipped)
+export ANTHROPIC_API_KEY=sk-ant-...
+export OPENAI_API_KEY=sk-...
+export GOOGLE_API_KEY=AI...
+export DEEPSEEK_API_KEY=sk-...
+
+# Run with local models (Qwen3 30B, Gemma 4 27B via Ollama)
+python behavioral_metamerism_pilot.py --live --runs 3
 ```
 
-Demo mode uses simulated LLM responses to demonstrate the methodology and analysis pipeline. No API keys required.
+### Models Tested
 
-### Live Execution
-
-```bash
-export ANTHROPIC_API_KEY=sk-ant-...   # Claude (Anthropic)
-export OPENAI_API_KEY=sk-...           # GPT (OpenAI)
-export GOOGLE_API_KEY=AI...            # Gemini (Google)
-export DEEPSEEK_API_KEY=sk-...         # DeepSeek
-export DASHSCOPE_API_KEY=sk-...        # Qwen (Alibaba DashScope)
-
-python behavioral_metamerism_pilot.py --live --runs 3 --output results.json --summary summary_tables.md
-```
-
-All five API keys are optional. Models with missing keys are skipped automatically with a warning; at least one key must be set. Live mode queries whichever of Claude, GPT, Gemini, DeepSeek, and Qwen are available, with real brand discrimination prompts under two conditions:
-
-- **Statistical-only**: LLM sees ratings, reviews, sentiment, claims
-- **Specification-augmented**: LLM additionally sees verified Brand Function (return policy, dispute resolution, service failure communication, etc.)
+| Model | Cluster | API |
+|-------|---------|-----|
+| Claude Haiku 3.5 | Western cloud | Anthropic |
+| GPT-4o-mini | Western cloud | OpenAI |
+| Gemini 2.5 Flash | Western cloud | Google |
+| DeepSeek V3 | Chinese cloud | DeepSeek |
+| Qwen3 30B | Local open-weight | Ollama |
+| Gemma 4 27B | Local open-weight | Ollama |
 
 ### Measures
 
 | Measure | What it tests |
 |---------|--------------|
-| **Brand discrimination** | Can the LLM distinguish brands that humans consider distinct? |
-| **Behavioral prediction** | Does Brand Function access improve edge-case prediction accuracy? |
-| **Recommendation stability** | Does Brand Function reduce cross-LLM recommendation variance? |
-| **BMI (Behavioral Metamerism Index)** | Ratio of statistical similarity to behavioral difference (0 = no metamerism, 1 = maximum metamerism) |
-
-### Statistical Tests
-
-- Fisher's exact test on discrimination rate (statistical vs. augmented)
-- Wilcoxon signed-rank test on confidence scores
-- F-test (variance ratio) on cross-model stability
-- Bootstrap 95% CI on BMI (1,000 samples)
-
-### Custom Brands
-
-Supply your own brands via YAML:
-
-```bash
-python behavioral_metamerism_pilot.py --live --brands my_brands.yaml
-```
-
-YAML format:
-
-```yaml
-profiles:
-  - name: "BrandA"
-    category: "Category"
-    avg_rating: 4.3
-    review_count: 12500
-    price_range: "$25-45"
-    key_claims: ["claim1", "claim2"]
-    sentiment_summary: "positive"
-  - name: "BrandB"
-    ...
-
-functions:
-  - name: "BrandA"
-    return_policy: "30-day no-questions refund"
-    dispute_resolution: "..."
-    supply_chain_disruption_response: "..."
-    pricing_under_competition: "..."
-    service_failure_communication: "..."
-    edge_case_handling:
-      out_of_stock_replacement: "..."
-      expired_return_window: "..."
-  - name: "BrandB"
-    ...
-```
+| **Brand discrimination** | Can the LLM distinguish brands with identical statistics? |
+| **Behavioral prediction** | Does Brand Function access improve edge-case prediction? |
+| **Recommendation stability** | Does Brand Function reduce cross-LLM variance? |
+| **BMI** | Ratio of statistical similarity to behavioral difference (0-1) |
 
 ## How to Cite
 

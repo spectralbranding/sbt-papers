@@ -14,7 +14,7 @@ metadata:
   citation_key: "2026x"
   doi: "10.5281/zenodo.19391476"
   date: "2026-04-02"
-  version: "1.1"
+  version: "1.2"
   status: working_paper
   license: "CC-BY-NC-ND-4.0"
   keywords:
@@ -54,10 +54,11 @@ claims:
   - id: P3
     type: proposition
     statement: >
-      AI agents do not perceive brand identity through visual recognition
-      but through structured data evaluation, behavioral pattern analysis,
-      and third-party corroboration. The logo carries zero informational
-      weight for machine observers.
+      AI agents perceive brand identity primarily through structured data
+      evaluation, behavioral pattern analysis, and third-party corroboration
+      rather than visual recognition. The logo carries minimal incremental
+      informational weight for machine observers beyond what structured
+      data conveys.
     falsification: >
       P3 is falsified if multimodal AI agents that process visual brand
       elements make measurably better purchasing decisions than text-only
@@ -99,7 +100,7 @@ claims:
       resolved through behavioral specification.
     testable: true
     tested_in_paper: true
-    status: proposed
+    status: supported
     falsification: >
       P6 is falsified if LLMs can reliably distinguish behaviorally
       different brands using only statistical profiles (reviews, ratings,
@@ -110,16 +111,15 @@ methodology:
   type: mixed
   approach: >
     Historical analysis of five observer-type transitions combined with
-    empirical pilot testing behavioral metamerism across seven LLMs in
-    four clusters (Western cloud, Chinese cloud, local Chinese open-weight,
-    local Western open-weight).
+    pre-registered empirical pilot testing behavioral metamerism across
+    six LLMs in three clusters (Western cloud, Chinese cloud, local
+    open-weight). 684 API calls, 0 errors, all 4 hypotheses supported.
   tools:
-    - "Python 3.12 (experiment script)"
-    - "Anthropic API (Claude Sonnet 4.6)"
+    - "Python 3.14.3 (experiment script)"
+    - "Anthropic API (Claude Haiku 3.5)"
     - "OpenAI API (GPT-4o-mini)"
     - "Google AI Studio (Gemini 2.5 Flash)"
     - "DeepSeek API (DeepSeek V3)"
-    - "DashScope API (Qwen Plus)"
     - "Ollama (Qwen3 30B, Gemma 4 27B)"
 
 dependencies:
