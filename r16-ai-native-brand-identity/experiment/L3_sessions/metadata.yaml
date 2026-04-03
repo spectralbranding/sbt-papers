@@ -1,0 +1,44 @@
+script_version: 5e99aacb33f2db579b63eb853c6d4efe3d0ba807
+python_version: 3.14.3 (main, Feb  4 2026, 01:51:49) [Clang 21.1.4 ]
+package_versions:
+  anthropic: 0.88.0
+  openai: 2.30.0
+  google-genai: 1.70.0
+  scipy: 1.17.1
+  numpy: 2.4.4
+  pyyaml: 6.0.3
+hardware: arm64
+processor: arm
+os: macOS-26.3.1-arm64-arm-64bit-Mach-O
+start_time: '2026-04-03T16:11:54.711529+00:00'
+end_time: '2026-04-03T17:19:20.687179+00:00'
+model_configs:
+  claude:
+    model_id: claude-sonnet-4-6
+    max_tokens: 512
+    temperature: default (not explicitly set)
+  gpt:
+    model_id: gpt-4o-mini
+    max_tokens: 512
+    temperature: default (not explicitly set)
+  gemini:
+    model_id: gemini-2.5-flash
+    max_tokens: 512
+    temperature: default (not explicitly set)
+  deepseek:
+    model_id: deepseek-chat
+    max_tokens: 512
+    temperature: default (not explicitly set)
+  qwen3_local:
+    model_id: qwen3:30b
+    max_tokens: 512
+    temperature: default (not explicitly set)
+  gemma4_local:
+    model_id: gemma4:latest
+    max_tokens: 512
+    temperature: default (not explicitly set)
+api_key_hash:
+  claude: '42851649'
+  gpt: 1105afa6
+  gemini: ed30e51c
+  deepseek: 73f315a4
