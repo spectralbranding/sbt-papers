@@ -38,3 +38,7 @@ venv/
 
 # Machine-specific MCP config (use .mcp.json.silicon or .mcp.json.intel templates)
 .mcp.json
+
+# Build tooling (not for public distribution)
+*.typ
+*.lua
