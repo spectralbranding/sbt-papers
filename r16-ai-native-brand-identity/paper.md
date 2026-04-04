@@ -491,7 +491,7 @@ Loken, B., Ross, I., & Hinkle, R. L. (1986). Consumer "confusion" of origin and 
 
 Manski, C. F. (1995). *Identification problems in the social sciences*. Harvard University Press.
 
-Medesani, M. (2026). Geometric foundations of invariant corridors and governance: A unified framework with empirical validation (Level 3.3). *Working Paper*. https://doi.org/10.5281/zenodo.18822553
+Medesani, M., & Macdonald, J. (2026). Geometric foundations of invariant corridors and governance: A unified framework with empirical validation (Level 3.3). *Working Paper*. https://doi.org/10.5281/zenodo.18822552
 
 Parasuraman, A., Zeithaml, V. A., & Berry, L. L. (1985). A conceptual model of service quality and its implications for future research. *Journal of Marketing*, *49*(4), 41--50.
 
