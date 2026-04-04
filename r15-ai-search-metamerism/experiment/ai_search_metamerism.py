@@ -304,6 +304,77 @@ BRAND_PAIRS: list[BrandPair] = [
 
 
 # ---------------------------------------------------------------------------
+# Local Brand Pairs (thin training data -- conditional metamerism test)
+# ---------------------------------------------------------------------------
+# Brands from small non-English-speaking markets where LLM training data is
+# sparse. Paired with global competitors in the same category. These pairs
+# test the conditional metamerism hypothesis: dimensional collapse should be
+# significantly higher for local brands than for the globally known pairs above.
+
+LOCAL_BRAND_PAIRS: list[BrandPair] = [
+    BrandPair(
+        id="cyprus_supermarket",
+        brand_a="AlphaMega",
+        brand_b="Carrefour",
+        category="supermarket chain",
+        differentiating_dims=["cultural", "temporal"],
+        dim_type="soft",
+        description="AlphaMega is Cyprus's leading supermarket chain (~30 stores, bilingual "
+                    "Greek-English market, ~1.2M population). Carrefour is a global French retailer. "
+                    "AlphaMega has limited web presence beyond Cyprus; Carrefour has extensive global "
+                    "training data. Tests cultural embeddedness and temporal heritage in thin-data conditions.",
+    ),
+    BrandPair(
+        id="latvia_chocolate",
+        brand_a="Laima",
+        brand_b="Lindt",
+        category="chocolate brand",
+        differentiating_dims=["cultural", "narrative"],
+        dim_type="soft",
+        description="Laima is Latvia's oldest chocolate maker (est. 1870, Riga). Lindt is the "
+                    "global Swiss benchmark. Laima has deep cultural significance in Latvia and the "
+                    "Baltics but minimal English-language web presence. Tests whether cultural and "
+                    "narrative dimensions collapse when training data is thin.",
+    ),
+    BrandPair(
+        id="kenya_beer",
+        brand_a="Tusker",
+        brand_b="Heineken",
+        category="beer brand",
+        differentiating_dims=["narrative", "social"],
+        dim_type="soft",
+        description="Tusker is Kenya's iconic beer (est. 1922, named after an elephant that killed "
+                    "the founder's father). Heineken is a global premium lager. Tusker has rich "
+                    "narrative and social meaning in East Africa but limited global web footprint. "
+                    "Tests dimensional collapse for African brands in Western LLMs.",
+    ),
+    BrandPair(
+        id="vietnam_dairy",
+        brand_a="Vinamilk",
+        brand_b="Danone",
+        category="dairy brand",
+        differentiating_dims=["ideological", "economic"],
+        dim_type="mixed",
+        description="Vinamilk is Vietnam's largest dairy company (state-founded, 50%+ market share). "
+                    "Danone is global. Vinamilk has moderate international presence (JSE-listed) "
+                    "but limited English-language brand narrative. Tests intermediate embeddedness.",
+    ),
+    BrandPair(
+        id="serbia_water",
+        brand_a="Knjaz Milos",
+        brand_b="Evian",
+        category="mineral water brand",
+        differentiating_dims=["temporal", "cultural"],
+        dim_type="soft",
+        description="Knjaz Milos is Serbia's iconic mineral water (est. 1811, named after Prince "
+                    "Milos Obrenovic). Evian is a global premium water brand. Knjaz Milos has deep "
+                    "temporal and cultural significance in Serbia but near-zero English web presence. "
+                    "Tests maximum dimensional collapse conditions.",
+    ),
+]
+
+
+# ---------------------------------------------------------------------------
 # Prompts (v2 -- structured dimensional elicitation)
 # ---------------------------------------------------------------------------
 
@@ -1892,6 +1963,8 @@ def run_experiment(
     smoke: bool = False,
     runs: int = 3,
     log_path: Optional[str] = None,
+    include_local: bool = False,
+    local_only: bool = False,
 ) -> ExperimentResults:
     """
     Run the R15 AI Search Metamerism experiment.
@@ -1905,7 +1978,8 @@ def run_experiment(
     print(f"\nR15 AI Search Metamerism Experiment")
     print(f"Mode: {mode_label}")
     if not demo:
-        print(f"Brand pairs: {1 if smoke else len(BRAND_PAIRS)}")
+        n_pairs = 1 if smoke else (len(LOCAL_BRAND_PAIRS) if local_only else (len(BRAND_PAIRS) + len(LOCAL_BRAND_PAIRS) if include_local else len(BRAND_PAIRS)))
+        print(f"Brand pairs: {n_pairs}{' (local only)' if local_only else (' (global + local)' if include_local else '')}")
         print(f"Runs per prompt: {1 if smoke else runs}")
         print(f"Temperature: 0.7\n")
 
@@ -1962,7 +2036,14 @@ def run_experiment(
     if demo:
         raw_calls = run_experiment_demo(smoke=False)
     else:
-        actual_pairs = BRAND_PAIRS[:1] if smoke else BRAND_PAIRS
+        if smoke:
+            actual_pairs = BRAND_PAIRS[:1]
+        elif local_only:
+            actual_pairs = LOCAL_BRAND_PAIRS
+        elif include_local:
+            actual_pairs = BRAND_PAIRS + LOCAL_BRAND_PAIRS
+        else:
+            actual_pairs = BRAND_PAIRS
         actual_runs = 1 if smoke else runs
         raw_calls = run_experiment_live(actual_pairs, model_list, actual_runs, log_path=log_path)
 
@@ -2069,6 +2150,8 @@ def main() -> None:
           python ai_search_metamerism.py --live --runs 1
           python ai_search_metamerism.py --live --runs 3 --output results.json
           python ai_search_metamerism.py --live --runs 1 --log L3_sessions/session_log.jsonl
+          python ai_search_metamerism.py --live --runs 3 --local-brands   # global + local pairs
+          python ai_search_metamerism.py --live --runs 3 --local-only     # local pairs only
         """),
     )
     parser.add_argument(
@@ -2107,6 +2190,16 @@ def main() -> None:
         default=None,
         help="Path for JSONL session log (e.g. L3_sessions/session_log.jsonl)",
     )
+    parser.add_argument(
+        "--local-brands",
+        action="store_true",
+        help="Include local brand pairs from small non-English markets (conditional metamerism test)",
+    )
+    parser.add_argument(
+        "--local-only",
+        action="store_true",
+        help="Run ONLY the local brand pairs (skip global pairs)",
+    )
     args = parser.parse_args()
 
     n_modes = sum([args.live, args.demo, args.smoke])
@@ -2127,6 +2220,8 @@ def main() -> None:
         smoke=args.smoke,
         runs=args.runs,
         log_path=args.log,
+        include_local=args.local_brands,
+        local_only=args.local_only,
     )
 
 
