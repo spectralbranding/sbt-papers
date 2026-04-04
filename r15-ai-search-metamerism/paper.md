@@ -296,6 +296,8 @@ Cultural (41%) and Temporal (50%) are suppressed to below half of baseline for l
 
 #### Per-pair Analysis
 
+All five pairs exceed the baseline DCI of 0.250. The Cyprus pair (AlphaMega/Carrefour, DCI = 0.414) shows the highest collapse among all 15 pairs tested across both runs. The Serbia pair (Knjaz Milos/Evian, DCI = ~0.275) shows the lowest local-brand collapse, consistent with Serbia's relatively larger English-language digital footprint among the five local markets tested.
+
 **Table 5.** DCI by brand pair, local brands (Run 3).
 
 | Local brand | Global brand | DCI |
@@ -305,8 +307,6 @@ Cultural (41%) and Temporal (50%) are suppressed to below half of baseline for l
 | Tusker | Heineken | ~0.362 |
 | Vinamilk | Danone | ~0.348 |
 | Knjaz Milos | Evian | ~0.275 |
-
-All five pairs exceed the baseline DCI of 0.250. The Cyprus pair (AlphaMega/Carrefour, DCI = 0.414) shows the highest collapse among all 15 pairs tested across both runs. The Serbia pair (Knjaz Milos/Evian, DCI = ~0.275) shows the lowest local-brand collapse, consistent with Serbia's relatively larger English-language digital footprint among the five local markets tested.
 
 ### 4.3 Conditional Metamerism: Global vs. Local Comparison
 
