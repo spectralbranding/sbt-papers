@@ -24,7 +24,7 @@ This directory follows the [Research-as-Repository protocol](https://github.com/
 
 | File | Purpose |
 |------|---------|
-| `paper.md` | Full paper (v2.0, ~9,000 words, 4 hypotheses, 28 refs) |
+| `paper.md` | Full paper (v1.0, ~9,000 words, 4 hypotheses, 28 refs) |
 | `paper.pdf` | PDF export |
 | `paper.yaml` | Machine-readable claims, hypotheses, falsification criteria |
 | `CITATION.cff` | Citation metadata |

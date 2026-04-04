@@ -8,11 +8,8 @@ provenance:
 
   versions:
     - version: "1.0"
-      date: "2026-04-03"
-      description: "Initial draft with v1 keyword extraction design + Run 1 null result"
-    - version: "2.0"
       date: "2026-04-04"
-      description: "Full empirical results. v2 structured weight allocation. Run 2 (3,240 calls, 10 global pairs), Run 3 (1,620 calls, 5 local pairs), Run 4 (90 calls, Brand Function resolution). Methodology rewritten. 16 review issues resolved. Self-citation 17.9%."
+      description: "Full empirical results. v2 structured weight allocation. Run 2 (3,240 calls, 10 global pairs), Run 3 (1,620 calls, 5 local pairs), Run 4 (90 calls, Brand Function resolution). 4 hypotheses tested, 2 supported. Conditional metamerism confirmed. 28 refs, 17.9% self-citation."
 
   forks: []
   # No forks yet. Will be updated when:
