@@ -4,10 +4,6 @@
 
 Working Paper -- April 2026
 
-**Target**: Journal of Advertising Research -- Special Call: "Insights on the future of search-related advertising and artificial intelligence"
-
-**Citation key**: 2026v
-
 ---
 
 ## Abstract
@@ -125,18 +121,18 @@ Ten brand pairs were selected to span multiple product categories and to maximiz
 
 **Table 1.** Global brand pairs (Run 2), categories, and primary differentiating dimensions. Pairs are selected to occupy similar product categories but differ primarily on specific SBT dimensions.
 
-| # | Pair ID | Category | Brand A | Brand B | Primary differentiating dimension |
-|---|---------|----------|---------|---------|-----------------------------------|
-| 1 | luxury_heritage | Luxury fashion | Hermes | Coach | Temporal (heritage depth) vs. Economic (accessible luxury) |
-| 2 | purpose_driven | Outdoor apparel | Patagonia | Columbia | Ideological (environmental activism) vs. Experiential (performance) |
-| 3 | premium_tech | Consumer technology | Apple | Samsung | Narrative (design mythology) vs. Experiential (feature breadth) |
-| 4 | artisanal_food | Premium grocery | Erewhon | Whole Foods | Social (exclusivity signaling) vs. Economic (accessible wellness) |
-| 5 | auto_disruption | Automotive | Mercedes | Tesla | Cultural (European heritage) vs. Ideological (sustainability mission) |
-| 6 | indie_beauty | Skincare | Glossier | Maybelline | Narrative (community-built identity) vs. Economic (mass accessibility) |
-| 7 | craft_spirits | Spirits | Hendricks | Gordons | Semiotic (craft aesthetic) vs. Economic (commodity positioning) |
-| 8 | boutique_hotel | Hospitality | Aman | Four Seasons | Cultural (place-specific immersion) vs. Experiential (service consistency) |
-| 9 | heritage_sportswear | Sportswear | Nike | Shein | Narrative (athlete hero mythology) vs. Economic (ultra-low price) |
-| 10 | ethical_finance | Financial services | Aspiration | Chase | Ideological (climate commitment) vs. Economic (institutional scale) |
+| # | Pair ID | Category | Brand A | Brand B | Differentiator |
+|---|---------|----------|---------|---------|----------------|
+| 1 | luxury_heritage | Luxury fashion | Hermes | Coach | Temporal vs. Economic |
+| 2 | purpose_driven | Outdoor apparel | Patagonia | Columbia | Ideological vs. Experiential |
+| 3 | premium_tech | Consumer tech | Apple | Samsung | Narrative vs. Experiential |
+| 4 | artisanal_food | Premium grocery | Erewhon | Whole Foods | Social vs. Economic |
+| 5 | auto_disruption | Automotive | Mercedes | Tesla | Cultural vs. Ideological |
+| 6 | indie_beauty | Skincare | Glossier | Maybelline | Narrative vs. Economic |
+| 7 | craft_spirits | Spirits | Hendricks | Gordons | Semiotic vs. Economic |
+| 8 | boutique_hotel | Hospitality | Aman | Four Seasons | Cultural vs. Experiential |
+| 9 | heritage_sportswear | Sportswear | Nike | Shein | Narrative vs. Economic |
+| 10 | ethical_finance | Financial services | Aspiration | Chase | Ideological vs. Economic |
 
 Three SBT canonical brands (Hermes, Patagonia, Erewhon) appear across the pairs, grounding the analysis in established spectral profiles (Zharnikov, 2026a). The remaining brands were selected based on published positioning analyses and expert assessment to ensure clear dimensional differentiation across categories.
 
