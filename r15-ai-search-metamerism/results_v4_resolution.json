@@ -1,0 +1,85 @@
+{
+  "condition": "spec_augmented",
+  "calls": 90,
+  "models": [
+    "claude",
+    "gpt",
+    "gemini",
+    "deepseek",
+    "qwen3_local",
+    "gemma4_local"
+  ],
+  "model_dcis": {
+    "claude": 0.25236363636363635,
+    "gpt": 0.35,
+    "gemini": 0.17916666666666667,
+    "deepseek": 0.2366666666666667,
+    "qwen3_local": 0.39120879120879126,
+    "gemma4_local": 0.28654545454545455
+  },
+  "aggregate_dci": 0.28375706646294885,
+  "run3_baseline_dci": 0.355,
+  "model_weights": {
+    "claude": {
+      "semiotic": 9.818181818181818,
+      "narrative": 12.92121212121212,
+      "ideological": 12.07878787878788,
+      "experiential": 20.460606060606057,
+      "social": 14.490909090909092,
+      "economic": 15.418181818181818,
+      "cultural": 7.642424242424243,
+      "temporal": 7.16969696969697
+    },
+    "gpt": {
+      "semiotic": 15.0,
+      "narrative": 13.666666666666666,
+      "ideological": 9.0,
+      "experiential": 19.0,
+      "social": 10.333333333333334,
+      "economic": 20.0,
+      "cultural": 6.333333333333333,
+      "temporal": 6.666666666666667
+    },
+    "gemini": {
+      "semiotic": 6.666666666666667,
+      "narrative": 13.0,
+      "ideological": 12.083333333333334,
+      "experiential": 10.833333333333334,
+      "social": 13.75,
+      "economic": 11.25,
+      "cultural": 21.25,
+      "temporal": 11.166666666666666
+    },
+    "deepseek": {
+      "semiotic": 9.333333333333334,
+      "narrative": 13.666666666666666,
+      "ideological": 12.333333333333334,
+      "experiential": 15.0,
+      "social": 14.333333333333334,
+      "economic": 14.333333333333334,
+      "cultural": 12.333333333333334,
+      "temporal": 8.666666666666666
+    },
+    "qwen3_local": {
+      "semiotic": 14.212454212454212,
+      "narrative": 9.597069597069597,
+      "ideological": 6.080586080586081,
+      "experiential": 19.56043956043956,
+      "social": 10.695970695970695,
+      "economic": 24.90842490842491,
+      "cultural": 5.347985347985348,
+      "temporal": 9.597069597069597
+    },
+    "gemma4_local": {
+      "semiotic": 11.636363636363635,
+      "narrative": 13.315151515151515,
+      "ideological": 10.454545454545457,
+      "experiential": 15.545454545454543,
+      "social": 14.212121212121211,
+      "economic": 17.018181818181816,
+      "cultural": 9.624242424242423,
+      "temporal": 8.193939393939395
+    }
+  },
+  "timestamp": "2026-04-04T18:24:33.147450+00:00"
+}
