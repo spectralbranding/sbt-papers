@@ -171,6 +171,32 @@ perceptual reduction that SBT's 8-dimensional framework is designed to measure a
 
 ---
 
+## Run It On Your Own Brands
+
+The experiment is designed to be forked. You can test any brand pairs with any models:
+
+1. **Fork the repo**: `git clone https://github.com/spectralbranding/sbt-papers.git`
+2. **Edit brand pairs**: In `ai_search_metamerism.py`, modify the `BRAND_PAIRS` list. Each pair needs:
+   - `id`: short identifier (e.g., `"my_category"`)
+   - `brand_a`, `brand_b`: the two brands to compare
+   - `category`: product category (e.g., `"coffee brand"`)
+   - `differentiating_dims`: which SBT dimensions you expect to differ most
+   - `dim_type`: `"hard"`, `"soft"`, or `"mixed"`
+3. **Set API keys**: Any combination works --- even a single model is informative
+4. **Run**: `python ai_search_metamerism.py --live --runs 3 --log L3_sessions/my_session.jsonl`
+5. **Check results**: `summary_tables.md` shows dimensional weight profiles and hypothesis tests
+
+**Cost**: ~$0.80 for 3,240 calls (10 pairs, 6 models, 3 runs). Local models via Ollama are free.
+
+**What to look for**:
+- Which dimensions does the model over-weight for your brands?
+- Do different models agree (high cosine similarity = structural collapse)?
+- Are your brand's key differentiators (the dimensions you care about) in the "collapsed" category?
+
+If you find something interesting, open an issue or PR. This is how science compounds.
+
+---
+
 ## Reproduction
 
 ```bash
