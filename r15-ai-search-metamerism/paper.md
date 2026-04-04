@@ -41,11 +41,11 @@ This flattening has a precise theoretical name. In optics, metamerism occurs whe
 
 ### 1.3 Existing Research and Its Limits
 
-The intersection of AI and brand perception is attracting rapid scholarly attention. The scale of AI involvement in knowledge production is accelerating: Lu et al. (2026) demonstrate a fully autonomous AI system that generates, experiments, writes, and reviews research papers end-to-end, with AI-generated papers passing peer review at a top-tier conference. Huang and Rust (2021) proposed a strategic framework for AI in marketing that identifies feeling, thinking, and doing tasks, arguing that AI will progressively absorb all three. Davenport et al. (2020) surveyed AI applications across the marketing function, including brand management. Dawar and Bendle (2018) anticipated that AI-mediated platforms would shift competitive advantage from brand awareness to algorithmic recommendation, and De Bruyn et al. (2020) identified recommendation quality as a key research gap. Campbell et al. (2022) examined AI's implications for advertising practice. Kietzmann, Paschen, and Treen (2018) mapped AI applications across the consumer journey, identifying recommendation and search as high-impact touchpoints. Hermann and Puntoni (2024) provided a comprehensive analysis of AI's impact on consumer behavior, distinguishing predictive AI from generative AI.
+The intersection of AI and brand perception is attracting rapid scholarly attention. The scale of AI involvement in knowledge production is accelerating: Lu et al. (2026) demonstrate a fully autonomous AI system that generates, experiments, writes, and reviews research papers end-to-end, with AI-generated papers passing peer review at a top-tier conference. Huang and Rust (2021) proposed a strategic framework for AI in marketing that identifies feeling, thinking, and doing tasks, arguing that AI will progressively absorb all three. Davenport et al. (2020) surveyed AI applications across the marketing function, including brand management. Dawar and Bendle (2018) anticipated that AI-mediated platforms would shift competitive advantage from brand awareness to algorithmic recommendation, and De Bruyn et al. (2020) identified recommendation quality as a key research gap. Campbell et al. (2022) examined AI's implications for advertising practice. Kietzmann, Paschen, and Treen (2018) mapped AI applications across the consumer journey, identifying recommendation and search as high-impact touchpoints. Hermann and Puntoni (2024) provided a comprehensive analysis of AI's impact on consumer behavior, distinguishing predictive AI from generative AI. Puntoni, Reczek, Giesler, and Botti (2021) identified four experiential modes through which consumers encounter AI --- data capture, classification, delegation, and social interaction --- and showed that AI interactions frequently trigger loss of autonomy and identity threat; their experiential framing is directly relevant here because LLM-mediated search constitutes a delegation encounter in which the AI makes perceptual judgments the consumer cannot inspect or override.
 
 The consumer search literature has long recognized that search costs shape competitive dynamics: Lynch and Ariely (2000) showed that lower search costs for quality information reduce price sensitivity, while Diehl, Kornish, and Lynch (2003) demonstrated that AI agents that reduce quality-search costs can paradoxically increase price sensitivity by making price the salient comparison dimension. These findings anticipate the dimensional asymmetry documented in the present study. Yet these contributions describe what AI does in marketing. None provides a formal model that predicts which specific dimensions of brand perception AI preserves and which it destroys. The distinction is critical: without a dimensional model, practitioners cannot diagnose which brands are vulnerable to AI-mediated flattening, and researchers cannot test whether dimensional collapse is systematic or idiosyncratic.
 
-Hermann, Puntoni, and Schweidel (2026) come closest. Their analysis of AI agents and brand defensibility argues that AI agents "cannot recommend brands they cannot defend" -- that is, AI recommendations favor brands whose value proposition can be articulated in terms the model can process. This insight is directional but lacks a formal perceptual framework. It does not specify which dimensions are defensible and which are not, nor does it provide a measurement protocol for assessing dimensional vulnerability.
+Hermann, Puntoni, and Schweidel (2026) come closest. Their analysis of AI agents and brand defensibility argues that AI agents "cannot recommend brands they cannot defend" -- that is, AI recommendations favor brands whose value proposition can be articulated in terms the model can process. This insight is directional but lacks a formal perceptual framework. It does not specify which dimensions are defensible and which are not, nor does it provide a measurement protocol for assessing dimensional vulnerability. Acar and Schweidel (2026) document practitioner evidence for the same problem: their analysis of Pernod Ricard's discovery that LLMs systematically miscategorize premium spirits brands demonstrates that dimensional collapse has immediate commercial consequences, not merely academic ones. Their work underscores the need for a formal measurement model -- precisely what the present paper provides.
 
 ### 1.4 Contribution
 
@@ -59,7 +59,7 @@ The paper proceeds as follows. Section 2 presents the theoretical framework, ext
 
 ### 2.1 SBT's Multi-Dimensional Perception Model
 
-Spectral Brand Theory (Zharnikov, 2026a) models brand perception as emission profiles across eight typed dimensions, received by heterogeneous observer cohorts. The eight dimensions -- Semiotic, Narrative, Ideological, Experiential, Social, Economic, Cultural, and Temporal -- represent structurally distinct categories of brand signal. This taxonomy builds on but differs from established dimensional frameworks in brand research (Aaker, 1996; Keller, 1993). Aaker's (1997) five brand personality dimensions (sincerity, excitement, competence, sophistication, ruggedness) capture how consumers anthropomorphize brands; SBT's dimensions capture what brands emit as perceptual signals, regardless of anthropomorphic framing. Brakus, Schmitt, and Zarantonello's (2009) brand experience scale identifies sensory, affective, intellectual, and behavioral experience dimensions; SBT's Experiential dimension subsumes these as one of eight emission channels. The present study uses SBT's eight dimensions because the research question concerns which categories of brand signal survive AI mediation -- a question about emission channels, not personality traits or experience types. A brand's emission profile at time $t$ is the vector $\mathbf{e}(t) = [e_1(t), \ldots, e_8(t)]$, encoding signal intensity across all eight dimensions.
+Spectral Brand Theory (Zharnikov, 2026a) models brand perception as emission profiles across eight typed dimensions, received by heterogeneous observer cohorts. The eight dimensions -- Semiotic, Narrative, Ideological, Experiential, Social, Economic, Cultural, and Temporal -- represent structurally distinct categories of brand signal. This taxonomy builds on but differs from established dimensional frameworks in brand research (Aaker, 1991, 1996; Keller, 1993; Kapferer, 2008). Aaker's (1991) foundational equity model identifies brand awareness and brand associations as the core assets through which brands create value in consumer memory; SBT's eight-dimensional framework refines the associations construct, decomposing it into typed emission channels rather than treating it as a unitary cognitive category. Kapferer's (2008) Brand Identity Prism organizes brand identity across six facets -- physique, personality, culture, relationship, reflection, and self-image -- with culture as an integral facet linking the brand to its origin and values; R15's empirical finding that the Cultural dimension collapses to 41--58% of baseline in AI mediation can be read as a direct test of what happens to Kapferer's culture facet when a non-human observer mediates brand encounter. Aaker's (1997) five brand personality dimensions (sincerity, excitement, competence, sophistication, ruggedness) capture how consumers anthropomorphize brands; SBT's dimensions capture what brands emit as perceptual signals, regardless of anthropomorphic framing. Brakus, Schmitt, and Zarantonello's (2009) brand experience scale identifies sensory, affective, intellectual, and behavioral experience dimensions; SBT's Experiential dimension subsumes these as one of eight emission channels. The present study uses SBT's eight dimensions because the research question concerns which categories of brand signal survive AI mediation -- a question about emission channels, not personality traits or experience types. A brand's emission profile at time $t$ is the vector $\mathbf{e}(t) = [e_1(t), \ldots, e_8(t)]$, encoding signal intensity across all eight dimensions.
 
 The critical feature of SBT is that emission is not perception. Each observer possesses an observer spectral profile -- a weight vector $\mathbf{w} = [w_1, \ldots, w_8]$ on the simplex $\sum w_i = 1$ -- that determines the relative salience of each dimension in forming brand conviction. Observers with similar weight vectors cluster into cohorts (Zharnikov, 2026f). Brand conviction -- the observer's formed assessment of a brand -- is a function of the interaction between the brand's emission profile and the observer's spectral weights. Two observers encountering identical brand signals can form structurally different brand convictions if their spectral profiles weight different dimensions.
 
@@ -412,9 +412,13 @@ For practitioners, the implication is precise: the most valuable brand dimension
 
 ## References
 
+Aaker, D. A. (1991). *Managing brand equity: Capitalizing on the value of a brand name*. Free Press.
+
 Aaker, D. A. (1996). *Building strong brands*. Free Press.
 
 Aaker, J. L. (1997). Dimensions of brand personality. *Journal of Marketing Research*, 34(3), 347-356.
+
+Acar, O. A., & Schweidel, D. A. (2026). Preparing your brand for agentic AI. *Harvard Business Review*, March-April 2026.
 
 Brakus, J. J., Schmitt, B. H., & Zarantonello, L. (2009). Brand experience: What is it? How is it measured? Does it affect loyalty? *Journal of Marketing*, 73(3), 52-68.
 
@@ -430,7 +434,7 @@ Diehl, K., Kornish, L. J., & Lynch, J. G. (2003). Smart agents: When lower searc
 
 Hagendorff, T., Fabi, S., & Kosinski, M. (2023). Human-like intuitive behavior and reasoning biases emerged in large language models but disappeared in ChatGPT. *Nature Computational Science*, 3, 833-838.
 
-Hashimoto, Y., & Oshio, A. (2025). Structural compression of personality assessment in large language models. *Personality and Individual Differences*, 217, 112437.
+Hashimoto, Y., & Oshio, A. (2025). Structural compression of personality assessment in large language models. [Working paper; journal and volume to be verified before submission.]
 
 Hermann, E., & Puntoni, S. (2024). Artificial intelligence and consumer behavior: From predictive to generative AI. *Journal of Business Research*, 180, 114720. https://doi.org/10.1016/j.jbusres.2024.114720
 
@@ -439,6 +443,8 @@ Hermann, E., Puntoni, S., & Schweidel, D. A. (2026). Trusting AI agents: How con
 Huang, M.-H., & Rust, R. T. (2021). A strategic framework for artificial intelligence in marketing. *Journal of the Academy of Marketing Science*, 49, 30-50.
 
 Johnson, W. B., & Lindenstrauss, J. (1984). Extensions of Lipschitz mappings into a Hilbert space. In *Conference in Modern Analysis and Probability* (pp. 189-206). American Mathematical Society.
+
+Kapferer, J.-N. (2008). *The new strategic brand management: Creating and sustaining brand equity long term* (4th ed.). Kogan Page.
 
 Keller, K. L. (1993). Conceptualizing, measuring, and managing customer-based brand equity. *Journal of Marketing*, 57(1), 1-22.
 
@@ -452,9 +458,11 @@ Lu, C., Lu, C., Lange, R. T., Yamada, Y., Hu, S., Foerster, J., Ha, D., & Clune,
 
 Lynch, J. G., & Ariely, D. (2000). Wine online: Search costs affect competition on price, quality, and distribution. *Marketing Science*, 19(1), 83-103.
 
+Puntoni, S., Reczek, R. W., Giesler, M., & Botti, S. (2021). Consumers and artificial intelligence: An experiential perspective. *Journal of Marketing*, 85(1), 131-151.
+
 Tversky, A. (1972). Elimination by aspects: A theory of choice. *Psychological Review*, 79(4), 281-299.
 
-Van Doren, M., et al. (2025). Cultural figurative collapse in neural machine translation. *Computational Linguistics*, 51(2), 289-312.
+Van Doren, M., et al. (2025). Cultural figurative collapse in neural machine translation. [Working paper; journal venue and volume to be verified before submission.]
 
 Wyszecki, G., & Stiles, W. S. (1982). *Color science: Concepts and methods, quantitative data and formulae* (2nd ed.). Wiley.
 
