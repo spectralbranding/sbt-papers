@@ -298,13 +298,13 @@ Cultural (41%) and Temporal (50%) are suppressed to below half of baseline for l
 
 **Table 5.** DCI by brand pair, local brands (Run 3).
 
-| Pair | Category | DCI |
-|-----------|------------|-------|
-| AlphaMega / Carrefour (Cyprus) | Grocery retail | 0.414 |
-| Laima / Lindt (Latvia) | Confectionery | ~0.375 |
-| Tusker / Heineken (Kenya) | Beer | ~0.362 |
-| Vinamilk / Danone (Vietnam) | Dairy | ~0.348 |
-| Knjaz Milos / Evian (Serbia) | Bottled water | ~0.275 |
+| Local brand | Global brand | DCI |
+|------------|-------------|-------|
+| AlphaMega | Carrefour | 0.414 |
+| Laima | Lindt | ~0.375 |
+| Tusker | Heineken | ~0.362 |
+| Vinamilk | Danone | ~0.348 |
+| Knjaz Milos | Evian | ~0.275 |
 
 All five pairs exceed the baseline DCI of 0.250. The Cyprus pair (AlphaMega/Carrefour, DCI = 0.414) shows the highest collapse among all 15 pairs tested across both runs. The Serbia pair (Knjaz Milos/Evian, DCI = ~0.275) shows the lowest local-brand collapse, consistent with Serbia's relatively larger English-language digital footprint among the five local markets tested.
 
