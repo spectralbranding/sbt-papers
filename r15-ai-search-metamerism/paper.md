@@ -299,7 +299,7 @@ Cultural (41%) and Temporal (50%) are suppressed to below half of baseline for l
 **Table 5.** DCI by brand pair, local brands (Run 3).
 
 | Pair | Country | Category | DCI |
-|------|---------|----------|-----|
+|-----------|---------|----------|-------|
 | AlphaMega / Carrefour | Cyprus | Grocery retail | 0.414 |
 | Laima / Lindt | Latvia | Confectionery | ~0.375 |
 | Tusker / Heineken | Kenya | Beer | ~0.362 |
