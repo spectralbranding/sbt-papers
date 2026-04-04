@@ -632,6 +632,8 @@ Several limitations warrant discussion. We note that several of the open questio
 
 **Resource allocation.** The framework identifies *what* observers perceive and *how* convictions form, but does not specify *where* operational investment should be directed given a measured cohort profile. R7 (Zharnikov, 2026k) formalizes spectral resource allocation — the optimal investment of operational resources across dimensions given measured cohort weight profiles. The alignment gap metric quantifies the economic loss from founder weight projection.
 
+**Admissibility versus coherence.** The coherence taxonomy (Section 4.2) measures internal consistency — whether brand signals align with each other. A complementary concept is *admissibility*: whether the brand's current position in perception space falls within the region its specification defines as acceptable. A brand can exhibit perfect signal coherence while operating in an inadmissible state — coherently positioned in a perception region that its Brand Function (Zharnikov, 2026x) does not specify, or coherently serving observer cohorts outside its target architecture. This distinction parallels the difference between *state invariance* (individual measurements remain fixed) and *process invariance* (the governing operator is preserved through adaptation) formalized in geometric governance frameworks (Medesani, 2026). Medesani demonstrates that invariant corridors — bounded admissible regions that contract under stress and recover with hysteresis — preserve system integrity through constraining the *evolution* of the system under stress rather than maintaining any particular state. The contraction-recovery asymmetry (damage faster than recovery) provides a formal precedent for the Dilution/Amplification ratio observed across the five demonstration brands (Section 4.4, Figure 5). Extending the coherence hierarchy with an admissibility criterion — measured relative to a Brand Function specification — would enable the framework to distinguish between brands that are coherently positioned correctly and brands that are coherently positioned incorrectly, a diagnostic distinction that the current taxonomy cannot make.
+
 ### 5.5 Falsifiable Hypotheses
 
 The preceding framework and exploratory analysis generate ten falsifiable hypotheses that constitute the empirical research agenda required to validate SBT as a quantitative theory. The first five hypotheses (H1–H5) are derived from the perception-layer mechanisms reported in Section 4. The remaining five (H6–H10) are derived from the signal dissemination layer (Section 3.5) and address pre-encounter mechanics — how brand signals reach observers in the first place.
@@ -795,6 +797,8 @@ Lakoff, G. (2004). *Don't think of an elephant!* Chelsea Green.
 Lynn, M. (1991). Scarcity effects on value: A quantitative review of the commodity theory literature. *Psychology & Marketing*, 8(1), 43–57.
 
 McLuhan, M. (1964). *Understanding media: The extensions of man*. McGraw-Hill.
+
+Medesani, M. (2026). Geometric foundations of invariant corridors and governance: A unified framework with empirical validation (Level 3.3). *Working Paper*. https://doi.org/10.5281/zenodo.18822553
 
 Meder, D., et al. (2021). Ergodicity-breaking reveals time optimal decision making in humans. *PLOS Computational Biology*, 17(9), e1009217.
 
