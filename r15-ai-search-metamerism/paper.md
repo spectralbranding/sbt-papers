@@ -458,18 +458,3 @@ Zharnikov, D. (2026l). The rendering problem: From genetic expression to brand p
 
 Zharnikov, D. (2026q). Spectral portfolio theory: Interference, coherence, and capacity in multi-brand perception space. Working Paper. https://doi.org/10.5281/zenodo.19145099
 
----
-
-## Notes
-
-- This paper is EMPIRICAL (JAR preference) -- Runs 2 and 3 are the core contribution
-- The theoretical framework is compact (cite SBT/R2, don't re-derive)
-- The practitioner angle is central: "which of your brand dimensions are invisible to AI?"
-- The "AI observer cohort" concept is novel and directly extends SBT
-- The metamerism framing is distinctive and connects to R2's mathematical results
-- Do NOT submit until R10 JAR decision (avoid dual submission to same journal)
-- Alternative venue if JAR rejects or timing is wrong: JCP, IJRM, Marketing Science
-- Self-citation ratio: 5/28 = 17.9% -- below 20% threshold
-- Runs: Run 2 = 10 global pairs, 6 models, 3,240 calls. Run 3 = 5 local pairs, 6 models, 1,620 calls. Total = 4,860 API calls
-- Key null results: H3 (cross-model heterogeneity) and H4 (differential soft collapse) are theoretically important non-findings -- both refine the story
-- Conditional metamerism now supported empirically (was future research direction)
