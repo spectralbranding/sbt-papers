@@ -120,9 +120,11 @@ However, GEO addresses a symptom rather than the underlying structural problem. 
 
 Furthermore, GEO creates a convergence dynamic. As brands in the same category adopt similar GEO strategies --- adding citations, incorporating statistics, optimizing for the same query patterns --- their statistical profiles converge. This convergence is precisely the condition that produces behavioral metamerism, which Section 6 develops in detail.
 
-**Proposition 3: AI agents do not perceive brand identity through visual recognition but through structured data evaluation, behavioral pattern analysis, and third-party corroboration. The logo carries zero informational weight for machine observers.**
+**Proposition 3: AI agents do not perceive brand identity through visual recognition but through structured data evaluation, behavioral pattern analysis, and third-party corroboration. The logo carries near-zero informational weight for text-based AI agents, and minimal informational weight in text-only AI mediation more broadly.**
 
-*Falsification*: P3 is falsified if multimodal AI agents that process visual brand elements (logo, packaging, color) make measurably better purchasing decisions than text-only agents with identical structured data. If visual brand identity provides incremental information value to AI agents beyond what structured data conveys, the "zero weight" claim is too strong.
+*Caveat on multimodal agents*: Multimodal AI agents (GPT-4V, Gemini Vision) do process visual elements including logos, packaging, and color. The near-zero weight claim applies specifically to text-based agents operating through structured data and language models. As multimodal agents gain commerce capabilities, the visual identity layer may recover partial informational weight --- though the structural data and behavioral specification layers are predicted to remain primary.
+
+*Falsification*: P3 is falsified if multimodal AI agents that process visual brand elements (logo, packaging, color) make measurably better purchasing decisions than text-only agents with identical structured data. If visual brand identity provides incremental information value to AI agents beyond what structured data conveys, the "near-zero weight" claim is too strong.
 
 ---
 
@@ -188,7 +190,7 @@ Existing protocols leave three gaps that the Brand Function fills:
 
 The Brand Function is therefore not a competing protocol but a theoretical construct that identifies the missing layer: Brando Schema addresses creative and communication governance; the Brand Function extends this to behavioral specification, perception measurement, and coherence verification --- the layers that existing protocols do not cover.
 
-**Proposition 4: The Brand Function is the root specification from which all brand emissions and identity artifacts derive. Technologies are the primary rendering engines; the organization is coordination overhead. Existing AI commerce protocols (ACP, UCP, brand.json) address brand discovery and transaction but not brand perception or coherence --- the Brand Function extends them by adding spectral dimensions, behavioral specification, and coherence measurement.**
+**Proposition 4: The Brand Function is the root specification from which all brand emissions and identity artifacts derive. Technologies are the primary rendering engines; in this framework, organizational structure functions as coordination overhead relative to the Brand Function specification. Existing AI commerce protocols (ACP, UCP, brand.json) address brand discovery and transaction but not brand perception or coherence --- the Brand Function extends them by adding spectral dimensions, behavioral specification, and coherence measurement.**
 
 *Falsification*: P4 is falsified if existing protocols (brand.json, Brando Schema, ACP) prove sufficient for AI agents to measure brand coherence and predict behavioral responses without additional specification layers. If platforms successfully verify brand identity and measure perception using only the constructs these protocols already provide, the Brand Function adds no incremental value.
 
@@ -357,7 +359,7 @@ The Brand Function's practical value is not uniform across all brands --- it var
 
 The pilot finding that six architecturally diverse LLMs show moderate agreement on discrimination judgments (Fleiss' kappa = 0.536) is suggestive of coordinate-invariant brand geometry, though the moderate kappa warrants caution. If the perception space has real geometric structure --- distances, curvature, geodesics --- that structure should be detectable regardless of which observers measure it and which dimensional decomposition is used. The moderate cross-model agreement observed here is consistent with an underlying geometric reality that different AI architectures access through different computational pathways, analogous to how GPS receivers from different manufacturers converge on the same position because the underlying space has objective structure.
 
-A practical extension is temporal: comparing the pilot results across measurement epochs would reveal whether AI brand perception is stable or drifting. If LLM training data changes (model updates, fine-tuning), the same Brand Function should produce the same discrimination results --- testing whether the specification provides temporal stability that statistical observation alone cannot.
+A practical extension is temporal: comparing the pilot results across measurement epochs would reveal whether AI brand perception is stable or drifting. If LLM training data changes (model updates, fine-tuning), the same Brand Function should produce the same discrimination results --- testing whether the specification provides temporal stability that statistical observation alone cannot. Two sources of drift should be distinguished: (a) training-data updates, where a new web crawl changes what the model knows about a brand, and (b) architecture changes, where a model redesign alters how the model processes and weights information. The Brand Function specification provides stability against drift source (a) --- a consistent behavioral specification counteracts shifting statistical priors --- but does not necessarily protect against drift source (b), where changes in the model's processing structure may alter how the specification is interpreted regardless of its content.
 
 ### 8.3 Consumer Welfare Implications
 
@@ -382,6 +384,8 @@ This paper is conceptual. It develops a theoretical framework and six propositio
 The primary threat to validity is the absence of primary empirical data. All six propositions are currently untested. Behavioral metamerism is theorized but not yet measured in actual AI purchasing environments. The Brand Function is specified as a formal construct but has not yet been implemented at scale in any deployed commerce system. The critical empirical test would be a controlled experiment comparing AI agent decision quality --- in terms of brand discrimination, behavioral prediction, and trust calibration --- when Brand Function data is available versus when agents rely solely on statistical observation of brand signals. Until such evidence exists, the propositions remain theoretical claims.
 
 First, the necessity conditions (Section 7) are being satisfied progressively, not simultaneously in all markets. Categories with high product differentiation, limited AI mediation, and strong human brand loyalty may not require the Brand Function for years or decades. The framework predicts *where* the Brand Function becomes necessary first (commodity categories with high GEO convergence and deployed agentic commerce protocols) but does not empirically validate this prediction.
+
+Second, the six propositions are stated as universal claims but have not been tested across different AI architectures, product categories, or cultural contexts. Generalizability beyond the supplement category pilot and the six LLMs tested requires broader empirical validation.
 
 Third, the historical analysis in Section 2 draws primarily on Western European and North American examples (English hallmarks, European trademarks, American SSL). Non-Western identity verification traditions --- Chinese chops, Islamic calligraphic seals, Indian guild marks --- may follow different evolutionary patterns and deserve separate investigation.
 
@@ -440,8 +444,6 @@ Acar, O. A., & Schweidel, D. A. (2026). Preparing your brand for agentic AI. *Ha
 Accornero, P. F. (2026). Agentic commerce: The shopper schism and the future of AI-mediated purchasing. *SSRN Electronic Journal*. https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6111766
 
 Aggarwal, P., Murahari, V., Rajpurohit, T., Kalyan, A., Narasimhan, K., & Deshpande, A. (2024). GEO: Generative Engine Optimization. In *Proceedings of the 30th ACM SIGKDD Conference on Knowledge Discovery and Data Mining (KDD '24)* (pp. 5--16). ACM. https://doi.org/10.1145/3637528.3671900
-
-Burmann, C., Jost-Benz, M., & Riley, N. (2009). Towards an identity-based brand equity model. *Journal of Business Research*, *62*(3), 390--397. https://doi.org/10.1016/j.jbusres.2008.10.015
 
 Clarke, E. M., Grumberg, O., & Peled, D. A. (1999). *Model checking*. MIT Press.
 
@@ -507,13 +509,13 @@ Wichmann, J. R. K., Wiegand, N., & Reinartz, W. J. (2022). The platformization o
 
 Wyszecki, G., & Stiles, W. S. (1982). *Color science: Concepts and methods, quantitative data and formulae* (2nd ed.). Wiley.
 
-Zharnikov, D. (2026a). Spectral Brand Theory: A computational framework for multi-dimensional brand perception. *Working Paper*. https://doi.org/10.5281/zenodo.18945912
+Zharnikov, D. (2026a). Spectral Brand Theory: A multi-dimensional framework for brand perception analysis. *Working Paper*. https://doi.org/10.5281/zenodo.18945912
 
 Zharnikov, D. (2026e). Spectral metamerism in brand perception: Projection bounds from high-dimensional geometry. *Working Paper*. https://doi.org/10.5281/zenodo.18945352
 
-Zharnikov, D. (2026l). The rendering problem: Why organizations cannot implement what they specify. *Working Paper*. https://doi.org/10.5281/zenodo.19064427
+Zharnikov, D. (2026l). The rendering problem: From genetic expression to brand perception. *Working Paper*. https://doi.org/10.5281/zenodo.19064427
 
-Zharnikov, D. (2026q). Spectral portfolio theory: Interference, coherence, and capacity in multi-brand perception space. *Working Paper*.
+Zharnikov, D. (2026q). Spectral portfolio theory: Interference, coherence, and capacity in multi-brand perception space. *Working Paper*. https://doi.org/10.5281/zenodo.19145099
 
 Zharnikov, D. (2026v). Spectral metamerism in AI-mediated brand perception. *Working Paper*. Target: Journal of Advertising Research.
 
