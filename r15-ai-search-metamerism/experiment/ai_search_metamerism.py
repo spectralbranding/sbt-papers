@@ -586,8 +586,8 @@ def parse_weights(parsed: dict) -> Optional[dict[str, float]]:
     if total < 1e-6:
         return None
 
-    # Accept if within 5% of 100, then renormalize
-    if abs(total - 100.0) > 5.0:
+    # Accept if within 15% of 100, then renormalize (LLMs often produce 90-110 sums)
+    if abs(total - 100.0) > 15.0:
         return None
 
     if abs(total - 100.0) > 0.01:
