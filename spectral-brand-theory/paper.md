@@ -798,7 +798,7 @@ Lynn, M. (1991). Scarcity effects on value: A quantitative review of the commodi
 
 McLuhan, M. (1964). *Understanding media: The extensions of man*. McGraw-Hill.
 
-Medesani, M. (2026). Geometric foundations of invariant corridors and governance: A unified framework with empirical validation (Level 3.3). *Working Paper*. https://doi.org/10.5281/zenodo.18822553
+Medesani, M., & Macdonald, J. (2026). Geometric foundations of invariant corridors and governance: A unified framework with empirical validation (Level 3.3). *Working Paper*. https://doi.org/10.5281/zenodo.18822552
 
 Meder, D., et al. (2021). Ergodicity-breaking reveals time optimal decision making in humans. *PLOS Computational Biology*, 17(9), e1009217.
 
