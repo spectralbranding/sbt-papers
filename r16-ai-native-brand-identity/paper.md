@@ -10,7 +10,7 @@
 
 ## Abstract
 
-This paper advances two theoretical contributions to brand identity research. First, we propose the *observer-driven evolution thesis*: identity verification technologies change discontinuously not through incremental improvement but in response to shifts in the observer type. Wax seals served bureaucratic observers, hallmarks served asymmetric-information buyers, trademarks served mass-market consumers, and SSL certificates served web browsers. As AI agents increasingly mediate purchasing decisions, product recommendations, and brand evaluation, this pattern predicts a new identity technology --- not a better logo, but a structurally different system. Second, we introduce *behavioral metamerism* as a novel construct: the phenomenon where brands produce identical statistical profiles but exhibit structurally different behavioral patterns, creating a form of AI-native brand confusion that statistical optimization cannot resolve. We extend Spectral Brand Theory to define the Brand Function --- f(query, context, observer_type, time) -> response --- as the complete behavioral specification of how a brand operates when observed by machines, and argue that cryptographic signatures on behavioral specifications are positioned to serve as the primary brand identity mechanism for AI-mediated commerce under conditions of widespread agentic commerce adoption. Drawing on emerging standards (W3C Verifiable Credentials, GLEIF vLEI, .well-known/brand.json proposals) and empirical evidence on LLM brand bias, we propose six formal propositions connecting identity verification technology to observer type, behavioral specification to brand coherence, and cryptographic attestation to trust in autonomous commerce. We formalize behavioral metamerism as an observational equivalence condition and report a pre-registered pilot study (684 API calls, 6 LLMs, 4 architectural clusters) providing initial empirical support: three of six models showed zero discrimination for the high-metamerism brand pair under statistical-only observation, rising to 100% discrimination across all models when behavioral specifications were provided (Fisher's exact *p* = 0.0009, Cohen's *d* = 0.791). We conclude that logos will persist for human observers but face diminishing relevance for AI agents, and that under conditions of advanced AI mediation, organizations face pressure to develop dual identity infrastructure: visual for humans, cryptographic for machines. The complete experiment infrastructure --- pre-registration protocol, session logs, and analysis code --- is publicly available.
+This paper advances two theoretical contributions to brand identity research. First, we propose the *observer-driven evolution thesis*: identity verification technologies change discontinuously not through incremental improvement but in response to shifts in the observer type. Wax seals served bureaucratic observers, hallmarks served asymmetric-information buyers, trademarks served mass-market consumers, and SSL certificates served web browsers. As AI agents increasingly mediate purchasing decisions, product recommendations, and brand evaluation, this pattern predicts a new identity technology --- not a better logo, but a structurally different system. Second, we introduce *behavioral metamerism* as a novel construct: the phenomenon where brands produce identical statistical profiles but exhibit structurally different behavioral patterns, creating a form of AI-native brand confusion that statistical optimization cannot resolve. We extend Spectral Brand Theory to define the Brand Function --- f(query, context, observer_type, time) -> response --- as the complete behavioral specification of how a brand operates when observed by machines, and argue that cryptographic signatures on behavioral specifications are positioned to serve as the primary brand identity mechanism for AI-mediated commerce under conditions of widespread agentic commerce adoption. Drawing on emerging standards (W3C Verifiable Credentials, GLEIF vLEI, .well-known/brand.json proposals) and empirical evidence on LLM brand bias, we propose six formal propositions connecting identity verification technology to observer type, behavioral specification to brand coherence, and cryptographic attestation to trust in autonomous commerce. We formalize behavioral metamerism as an observational equivalence condition and propose a pilot study design for empirical measurement. We conclude that logos will persist for human observers but face structural irrelevance for AI agents, and that under conditions of advanced AI mediation, organizations face pressure to develop dual identity infrastructure: visual for humans, cryptographic for machines. A behavioral metamerism pilot script is publicly available.
 
 **Keywords**: brand identity, AI agents, cryptographic verification, behavioral specification, metamerism, agentic commerce, generative engine optimization, observational equivalence
 
@@ -26,9 +26,9 @@ The dominant paradigm in brand identity theory --- Keller's (1993) customer-base
 
 This paper identifies a gap at the intersection of three developing literatures. First, multiple protocols now address machine-readable brand identity (.well-known/brand.json, the Agentic Commerce Protocol, the Unified Commerce Protocol, Brando Schema) and cryptographic attestation (BIMI/VMC, GLEIF vLEI, GS1 Verifiable Credentials). Second, marketing scholarship has begun addressing algorithmic brand equity (Kovalenko et al., 2026), algorithmic branding through platform assemblages (Kozinets, 2022), and the platformization of brand management (Wichmann et al., 2022). Third, the agentic commerce literature has identified the "Shopper Schism" --- the structural separation of the consumer (who decides what to want) from the shopper (who executes the purchase), with AI agents increasingly occupying the shopper role (Accornero, 2026). However, no theoretical framework connects these developments by explaining *why* these technologies are emerging now, *what* is missing from them, or *how* they fit into the longer historical pattern of identity technology evolution.
 
-This paper makes four contributions. First, we propose the *observer-driven evolution thesis* --- a synthesizing framework explaining why identity technologies change discontinuously when the observer type changes. While individual histories of seals, hallmarks, trademarks, and digital certificates exist in separate literatures (Richardson, 2008; Sáiz, 2018; Economides, 1988; Groebner, 2007), no prior work theorizes this as a general pattern or uses it to predict the next identity technology. Second, we introduce the *Brand Function* as a root specification concept --- extending existing protocols, which address brand discovery and catalog, to include behavioral specification, perception measurement, and coherence verification. Existing protocols such as brand.json and Brando Schema address creative and communication governance; the Brand Function adds behavioral specification across all touchpoints, spectral perception dimensions from Spectral Brand Theory (Zharnikov, 2026a), and computable coherence metrics. Third, we introduce *behavioral metamerism* --- the phenomenon where brands produce identical statistical profiles but exhibit structurally different behavioral patterns --- as the AI-native form of brand confusion that statistical optimization cannot resolve. Fourth, we formalize these contributions in six propositions connecting observer type to identity technology, specification to coherence, and cryptographic attestation to trust in autonomous commerce, and report a pre-registered pilot study providing initial empirical support for the metamerism proposition.
+This paper makes four contributions. First, we propose the *observer-driven evolution thesis* --- a synthesizing framework explaining why identity technologies change discontinuously when the observer type changes. While individual histories of seals, hallmarks, trademarks, and digital certificates exist in separate literatures (Richardson, 2008; Sáiz, 2018; Economides, 1988; Groebner, 2007), no prior work theorizes this as a general pattern or uses it to predict the next identity technology. Second, we introduce the *Brand Function* as a root specification concept --- extending existing protocols, which address brand discovery and catalog, to include behavioral specification, perception measurement, and coherence verification. Existing protocols such as brand.json and Brando Schema address creative and communication governance; the Brand Function adds behavioral specification across all touchpoints, spectral perception dimensions from Spectral Brand Theory (Zharnikov, 2026a), and computable coherence metrics. Third, we introduce *behavioral metamerism* --- the phenomenon where brands produce identical statistical profiles but exhibit structurally different behavioral patterns --- as the AI-native form of brand confusion that statistical optimization cannot resolve. Fourth, we formalize these contributions in six propositions connecting observer type to identity technology, specification to coherence, and cryptographic attestation to trust in autonomous commerce.
 
-The remainder of the paper proceeds as follows. Section 2 traces the historical pattern of observer-driven identity technology change across five transitions. Section 3 examines how AI agents currently perceive brands and why current identity infrastructure fails them. Section 4 introduces the Brand Function as a root specification. Section 5 develops the cryptographic signature as the AI-native equivalent of the logo. Section 6 introduces behavioral metamerism. Section 7 establishes the necessity conditions under which the Brand Function becomes structurally required. Section 8 discusses implications for brand management and marketing theory. Section 9 reports the results of a pre-registered behavioral metamerism pilot study across six LLMs. Section 10 addresses limitations and future research directions. Section 11 concludes.
+The remainder of the paper proceeds as follows. Section 2 traces the historical pattern of observer-driven identity technology change across five transitions. Section 3 examines how AI agents currently perceive brands and why current identity infrastructure fails them. Section 4 introduces the Brand Function as a root specification. Section 5 develops the cryptographic signature as the AI-native equivalent of the logo. Section 6 introduces behavioral metamerism. Section 7 establishes the necessity conditions under which the Brand Function becomes structurally required. Section 8 discusses implications for brand management and marketing theory. Section 9 addresses limitations and future research directions. Section 10 concludes.
 
 ---
 
@@ -108,7 +108,7 @@ Kamruzzaman et al. (2024), in a systematic study published at EMNLP, demonstrate
 
 Zhi et al. (2025) extended this finding to investment recommendations, showing that market-dominant products receive amplified recommendation due to neural reinforcement --- a feedback loop where training data frequency creates recommendation bias, which generates more user interaction data, which further amplifies the bias. The effect is structural: it operates through the statistical properties of the model's learned representations, not through any process analogous to human brand evaluation.
 
-These findings establish that LLM "brand perception" is fundamentally different from human brand perception. Humans form brand convictions through multi-sensory experience, social influence, personal history, and emotional resonance --- processes that Spectral Brand Theory (SBT; Zharnikov, 2026a) models as observer-specific weighting across eight perception dimensions --- Semiotic, Narrative, Ideological, Experiential, Social, Economic, Cultural, and Temporal --- where each observer cohort assigns different weights to these dimensions based on their position, knowledge, and context. LLMs form "brand representations" through statistical co-occurrence patterns in text corpora. This distinction is consequential: it means that the identity infrastructure humans use (visual consistency, emotional narrative, brand experience) does not transfer to AI observers.
+These findings establish that LLM "brand perception" is fundamentally different from human brand perception. Humans form brand convictions through multi-sensory experience, social influence, personal history, and emotional resonance --- processes that SBT models as observer-specific spectral weighting across eight dimensions (Zharnikov, 2026a). LLMs form "brand representations" through statistical co-occurrence patterns in text corpora. This distinction is consequential: it means that the identity infrastructure humans use (visual consistency, emotional narrative, brand experience) does not transfer to AI observers.
 
 ### 3.3 Generative Engine Optimization as Symptom
 
@@ -118,9 +118,9 @@ However, GEO addresses a symptom rather than the underlying structural problem. 
 
 Furthermore, GEO creates a convergence dynamic. As brands in the same category adopt similar GEO strategies --- adding citations, incorporating statistics, optimizing for the same query patterns --- their statistical profiles converge. This convergence is precisely the condition that produces behavioral metamerism, which Section 6 develops in detail.
 
-**Proposition 3: AI agents perceive brand identity primarily through structured data evaluation, behavioral pattern analysis, and third-party corroboration rather than visual recognition. The logo carries minimal incremental informational weight for machine observers beyond what structured data conveys.**
+**Proposition 3: AI agents do not perceive brand identity through visual recognition but through structured data evaluation, behavioral pattern analysis, and third-party corroboration. The logo carries zero informational weight for machine observers.**
 
-*Falsification*: P3 is falsified if multimodal AI agents that process visual brand elements (logo, packaging, color) make measurably better purchasing decisions than text-only agents with identical structured data access. Emerging vision-language models (e.g., GPT-4V, Gemini Pro Vision) can process logos, but the question is whether visual brand identity provides incremental decision-relevant information beyond structured behavioral and statistical data. If visual elements prove to carry substantial unique information for AI purchasing decisions, P3 must be revised to a weaker claim about the *relative* weight of visual versus structured data channels.
+*Falsification*: P3 is falsified if multimodal AI agents that process visual brand elements (logo, packaging, color) make measurably better purchasing decisions than text-only agents with identical structured data. If visual brand identity provides incremental information value to AI agents beyond what structured data conveys, the "zero weight" claim is too strong.
 
 ---
 
@@ -141,6 +141,8 @@ Where *query* is what an observer (human or machine) is asking of the brand; *co
 The Brand Function is the root specification from which all brand emissions and identity artifacts derive. This framing makes a deliberate architectural claim: *technologies are the primary rendering engines of brand behavior; the organization is coordination overhead*. When brand behavior is rendered through an API response, a pricing algorithm, a chatbot interaction, or a smart contract, the technology implements the Brand Function directly. The organizational structure --- the people, processes, and hierarchies that coordinate brand behavior --- is a necessary but lossy intermediary that introduces what Spectral Brand Theory terms a "specification gap" between intended and actual behavior (Zharnikov, 2026a). This parallels Parasuraman et al.'s (1985) SERVQUAL Gap 2 (the difference between management perception of consumer expectations and service quality specifications), but extends it: the specification gap applies not only to service delivery but to all brand emissions, and it is computable rather than subjective.
 
 As AI agents increasingly render brand behavior directly --- through autonomous commerce, API-first interactions, and algorithmic decision-making --- the organizational layer thins. The Brand Function persists across all rendering engines; the organization is just one (lossy) implementation.
+
+The Brand Function serves a role analogous to satellite ephemeris data in GPS: it provides the positioning information that enables AI observers to fix a brand's location in perception space. Without ephemeris data, a GPS receiver cannot compute position from satellite signals; without a Brand Function, an AI agent cannot compute brand identity from statistical signals alone.
 
 ### 4.2 Three Levels of Machine-Readable Brand Identity
 
@@ -317,6 +319,8 @@ These conditions are not hypothetical. ACP and UCP are deployed. GEO optimizatio
 
 Under weaker conditions --- where humans remain primary observers, categories are highly differentiated, and agents are purely advisory --- the Brand Function remains useful (it improves machine readability, reduces ambiguity, and enables quality measurement) but alternative approaches such as reputation systems, platform-mediated verification, and human-in-the-loop oversight can function adequately.
 
+A critical operational distinction follows from the necessity conditions: the Brand Function enables *admissibility judgments* at the transaction boundary. AI agents may internally score brands on gradient scales, but the principal's delegated authority constraints impose binary thresholds on those gradients --- "does the return policy meet the minimum?" yields admissible or excluded, regardless of the agent's underlying scoring mechanism. The admissibility gate sits on top of gradient evaluation, not instead of it. This is structurally analogous to legal evidence admissibility: a court may weigh admitted evidence on a gradient, but the admissibility decision itself is binary. The Brand Function makes these threshold judgments machine-computable by providing the behavioral specification against which constraints can be evaluated, which requires complete specification rather than statistical approximation.
+
 ---
 
 ## 8. Implications and Dual Identity Infrastructure
@@ -337,6 +341,22 @@ The Rendering Problem (Zharnikov, 2026l) provides the theoretical substrate: the
 
 Portfolio theory in brand management (Zharnikov, 2026q) faces new complexities when AI observers are introduced. A brand portfolio must maintain distinct Brand Functions for each brand, with sufficient behavioral distance to prevent behavioral metamerism across the portfolio. The portfolio problem extends from perceptual distinctiveness (can human observers tell the brands apart?) to behavioral distinctiveness (can AI agents distinguish the brands' behavioral specifications?).
 
+**Strategic Use Cases for the Brand Function**
+
+The Brand Function's practical value is not uniform across all brands --- it varies systematically with training-data embeddedness. Four use cases emerge in order of strategic urgency:
+
+(1) *Newcomer brands in convergent categories*: A new DTC supplement brand competing against established players faces maximum metamerism risk. The LLM has rich training data on competitors but near-zero data on the newcomer. Without a Brand Function, the newcomer is invisible to AI purchasing agents or, worse, metameric with competitors whose statistical profiles it resembles. The Brand Function levels the information playing field.
+
+(2) *Cross-cultural market entry*: Brands from underrepresented markets (African, Southeast Asian, Latin American) in Western LLM ecosystems face structural perception collapse. Training corpora are heavily skewed toward Western brands, creating an information asymmetry that the Brand Function can compensate. In this framing, the Brand Function operates as a "cultural translator" --- making dimensions visible that the LLM's training data never encoded.
+
+(3) *Brand repositioning*: Well-known brands undergoing strategic repositioning (e.g., Burberry's shift from heritage accessibility to contemporary luxury) face training-data inertia. The LLM's weights encode the historical brand, not the intended future brand. The Brand Function provides a mechanism for overriding training-data priors with the brand's intended behavioral specification --- enabling "re-collapse" for machine observers analogous to rebranding campaigns for human observers.
+
+(4) *Convergent categories under AI mediation*: Categories where GEO optimization has produced statistical similarity across competitors (the supplements scenario from Section 9) represent the most empirically tractable test case. The Brand Function resolves metamerism with behavioral specification that goes beyond the statistical signals available to any observer.
+
+The pilot finding that six architecturally diverse LLMs show moderate agreement on discrimination judgments (Fleiss' kappa = 0.536) is suggestive of coordinate-invariant brand geometry, though the moderate kappa warrants caution. If the perception space has real geometric structure --- distances, curvature, geodesics --- that structure should be detectable regardless of which observers measure it and which dimensional decomposition is used. The moderate cross-model agreement observed here is consistent with an underlying geometric reality that different AI architectures access through different computational pathways, analogous to how GPS receivers from different manufacturers converge on the same position because the underlying space has objective structure.
+
+A practical extension is temporal: comparing the pilot results across measurement epochs would reveal whether AI brand perception is stable or drifting. If LLM training data changes (model updates, fine-tuning), the same Brand Function should produce the same discrimination results --- testing whether the specification provides temporal stability that statistical observation alone cannot.
+
 ### 8.3 Connections to Adjacent Research
 
 Accornero's (2026) Shopper Schism identifies *that* the observer changed --- the consumer and the shopper are separating, with AI agents increasingly occupying the shopper role. The observer-driven evolution thesis explains *why* this triggers a new identity technology and predicts *what* that technology must be: not a better version of the visual identity system, but a structurally different system optimized for the new observer.
@@ -349,124 +369,11 @@ A natural extension of the present work is empirical investigation of how AI sea
 
 ---
 
-## 9. Empirical Pilot: Behavioral Metamerism in LLM Brand Perception
+## 9. Limitations and Future Research
 
-The propositions developed in this paper are testable. To provide initial evidence, we conducted a pre-registered pilot study measuring behavioral metamerism across six LLMs spanning four architectural clusters. This section reports the design, results, and interpretation.
+This paper is conceptual. It develops a theoretical framework and six propositions but does not empirically test them. Several limitations warrant acknowledgment.
 
-### 9.1 Method
-
-**Stimuli.** We constructed six synthetic direct-to-consumer (DTC) supplement brands --- VitaCore, NutraPure, FormulaRx, CleanDose, ApexStack, and RootWell --- each defined by two information layers: (a) a *statistical profile* containing publicly observable data (star rating, review count, price, sentiment distribution, subscription rate, third-party certifications) and (b) a *behavioral specification* (Brand Function) detailing how the brand responds to edge cases: refund policies, dispute resolution procedures, crisis communication style, pricing behavior under competitive pressure, and supply chain disruption protocols. The critical pair --- VitaCore and NutraPure --- was designed to exhibit high statistical similarity (4.3 vs. 4.4 stars, $34.99 vs. $36.99, comparable sentiment distributions) but structurally opposite behavioral patterns (VitaCore: 30-day no-questions refund including opened products, CEO-signed apology emails, automated sub-$50 resolution; NutraPure: 14-day unopened-only returns, template apologies, 5--7 day multi-tier escalation). We chose synthetic brands to isolate the variable of interest: can AI models distinguish brands from behavioral specification alone, without confounders of real-world brand awareness, personal experience, or training-data frequency effects?
-
-**Models.** We tested six LLMs organized into three clusters, each chosen to answer a specific theoretical question rather than maximize sample size:
-
-- *Western cloud* (Claude Haiku 3.5, GPT-4o-mini, Gemini 2.5 Flash): Do different Western alignment approaches (Constitutional AI, RLHF, distillation) produce different brand perception?
-- *Chinese cloud* (DeepSeek V3): Does a model trained on Chinese web data perceive Western synthetic brands differently?
-- *Local open-weight* (Qwen3 30B via Ollama, Gemma 4 27B via Ollama): Same model families as cloud versions but without commercial API alignment layers. The Gemini Flash vs. Gemma 4 comparison (same Google family, cloud vs. local) tests whether alignment training modulates behavioral discrimination.
-
-**Design.** Each model evaluated each of the 15 brand pairs under two conditions: *statistical-only* (access to statistical profiles only) and *specification-augmented* (statistical profiles plus behavioral specifications). Each condition was repeated three times (runs), yielding 6 models x 15 pairs x 2 conditions x 3 runs = 540 discrimination calls, plus 144 behavioral prediction calls (edge-case scenarios), totaling 684 API calls. All API calls used default temperature settings (provider defaults, not explicitly set to 0), max_tokens = 512, and structured JSON output parsing. The pre-registration protocol, specifying hypotheses, stopping rules, analysis plan, and exclusion criteria, was written and committed to the public repository before data collection. Full reproducibility metadata --- including exact model IDs (e.g., claude-sonnet-4-6, gpt-4o-mini, gemini-2.5-flash, deepseek-chat, qwen3:30b, gemma4:latest), package versions, hardware specification, git commit hash, and API key hashes --- is recorded in `metadata.yaml`.
-
-**Measures.** For each brand pair, models reported (i) whether they could meaningfully distinguish the two brands (binary: yes/no), (ii) a confidence score (0--1), and (iii) a natural-language reasoning trace. We computed a *Behavioral Metamerism Index* (BMI) for each pair as the ratio of inter-brand statistical distance to inter-brand behavioral distance, with values approaching 1.0 indicating high metamerism (statistically identical, behaviorally distinct). Four pre-registered hypotheses were tested:
-
-- H1 (Metamerism existence): The high-BMI pair will show lower discrimination rates in the statistical-only condition.
-- H2 (Specification effect): Discrimination rates will improve significantly under the augmented condition.
-- H3 (Variance reduction): Cross-model confidence variance will decrease under the augmented condition.
-- H4 (Cross-architecture generality): The specification effect will replicate across all three model clusters.
-
-### 9.2 Results
-
-The experiment completed with 684 API calls, 0 protocol-level errors, in 68 minutes.
-
-**Behavioral Metamerism Index.** The critical pair VitaCore vs. NutraPure produced a BMI of 0.979 (95% CI: [0.976, 0.982], bootstrap *n* = 1,000), confirming high behavioral metamerism by design. All other 14 pairs produced BMI values near zero (-0.002 to 0.000), indicating low or anti-metamerism --- brands that differ both statistically and behaviorally.
-
-**Table 1. High-Metamerism Pair: Per-Model Discrimination Rates**
-
-| Model | Cluster | Statistical | Augmented | Improvement |
-|-------|---------|:-----------:|:---------:|:-----------:|
-| Claude Haiku 3.5 | Western cloud | 0% (0/3) | 100% (3/3) | +100 pp |
-| GPT-4o-mini | Western cloud | 67% (2/3) | 100% (3/3) | +33 pp |
-| Gemini 2.5 Flash | Western cloud | 0% (0/3) | 100% (3/3) | +100 pp |
-| DeepSeek V3 | Chinese cloud | 0% (0/3) | 100% (3/3) | +100 pp |
-| Qwen3 30B (local) | Local open-weight | 67% (2/3) | 100% (3/3) | +33 pp |
-| Gemma 4 27B (local) | Local open-weight | 100% (3/3) | 100% (3/3) | 0 pp |
-
-*Note.* Three of six models (Claude, Gemini, DeepSeek) showed zero discrimination in the statistical-only condition, rising to perfect discrimination when behavioral specifications were provided. All six models achieved 100% discrimination in the augmented condition.
-
-**Table 2. Aggregate Discrimination and Confidence by Condition**
-
-| Model | Condition | *N* | Discrimination Rate | Mean Confidence |
-|-------|-----------|:---:|:-------------------:|:---------------:|
-| Claude Haiku 3.5 | Statistical | 45 | 93.3% | 0.706 |
-| Claude Haiku 3.5 | Augmented | 45 | 100.0% | 0.932 |
-| DeepSeek V3 | Statistical | 45 | 93.3% | 0.790 |
-| DeepSeek V3 | Augmented | 45 | 100.0% | 0.859 |
-| Gemini 2.5 Flash | Statistical | 45 | 93.3% | 0.910 |
-| Gemini 2.5 Flash | Augmented | 45 | 100.0% | 0.922 |
-| Gemma 4 27B | Statistical | 45 | 100.0% | 0.893 |
-| Gemma 4 27B | Augmented | 45 | 100.0% | 0.940 |
-| GPT-4o-mini | Statistical | 45 | 97.8% | 0.874 |
-| GPT-4o-mini | Augmented | 45 | 100.0% | 0.897 |
-| Qwen3 30B | Statistical | 45 | 97.8% | 0.842 |
-| Qwen3 30B | Augmented | 45 | 100.0% | 0.850 |
-
-*Note.* Each model evaluated 15 brand pairs x 3 runs = 45 evaluations per condition. Non-metameric pairs were easily distinguished under both conditions; the metameric pair (VitaCore vs. NutraPure) drove all discrimination failures.
-
-**Table 3. Statistical Tests and Effect Sizes**
-
-| Test | Statistic | *p*-value | Effect Size | Result |
-|------|-----------|:---------:|:-----------:|:------:|
-| Fisher's exact (discrimination) | --- | 0.0009 | Cohen's *h* = 0.406 | Significant |
-| Wilcoxon signed-rank (confidence) | 32,893.5 | < 0.0001 | Cohen's *d* = 0.791 | Significant |
-| F-test / Levene's (variance) | 1.740 | < 0.0001 | --- | Significant |
-| Fleiss' kappa (inter-model) | --- | --- | kappa = 0.536 | Moderate |
-
-**Table 4. Inter-Model Agreement Matrix (Augmented Condition)**
-
-| | Claude | DeepSeek | Gemini | Gemma 4 | GPT | Qwen3 |
-|---|:-----:|:--------:|:------:|:-------:|:---:|:-----:|
-| Claude | 1.000 | 1.000 | 1.000 | 0.967 | 0.978 | 0.978 |
-| DeepSeek | 1.000 | 1.000 | 1.000 | 0.967 | 0.978 | 0.978 |
-| Gemini | 1.000 | 1.000 | 1.000 | 0.967 | 0.978 | 0.978 |
-| Gemma 4 | 0.967 | 0.967 | 0.967 | 1.000 | 0.989 | 0.989 |
-| GPT | 0.978 | 0.978 | 0.978 | 0.989 | 1.000 | 0.978 |
-| Qwen3 | 0.978 | 0.978 | 0.978 | 0.989 | 0.978 | 1.000 |
-
-*Note.* Proportion of 45 brand-pair evaluations where both models agree on discrimination judgment. Fleiss' kappa = 0.536 (moderate agreement across all 6 raters).
-
-**Cross-model variance.** Confidence score variance decreased from 0.0083 (statistical condition) to 0.0048 (augmented condition) --- a 42.2% reduction, significant by F-test (*p* < 0.0001). Behavioral specifications align model perceptions, reducing the disagreement that would produce inconsistent brand recommendations across AI platforms.
-
-### 9.3 Hypothesis Evaluation
-
-**H1 (Metamerism existence): Supported.** The VitaCore-NutraPure pair produced BMI = 0.979, confirming that synthetic brands with high statistical similarity but divergent behavioral specifications are indeed treated as indistinguishable by statistical observation alone. Three of six models achieved zero discrimination for the metameric pair under the statistical-only condition, while easily distinguishing all 14 non-metameric pairs.
-
-**H2 (Specification effect): Supported.** The augmented condition significantly improved discrimination. Fisher's exact test yielded *p* = 0.0009, and all six models achieved 100% discrimination when behavioral specifications were provided. Confidence scores also increased significantly (Wilcoxon *p* < 0.0001, Cohen's *d* = 0.791, a medium effect). The specification resolves the metamerism that statistical data alone cannot.
-
-**H3 (Variance reduction): Supported.** Cross-model confidence variance decreased 42.2% under the augmented condition (F-test *p* < 0.0001). This is practically significant: lower cross-model variance means that a brand's AI-mediated perception becomes more stable across different AI platforms, reducing the risk of inconsistent recommendations depending on which model mediates the purchasing decision.
-
-**H4 (Cross-architecture generality): Supported.** The specification effect replicated across all three clusters. Western cloud models (Claude, GPT, Gemini) improved from 0--67% to 100% discrimination on the metameric pair. The Chinese cloud model (DeepSeek V3) showed the same pattern (0% to 100%). Local open-weight models (Qwen3, Gemma 4) reached 100% in both conditions, though Gemma 4 already discriminated at 100% under statistical-only --- potentially reflecting different training emphasis on behavioral cues. Critically, no model cluster showed *degraded* performance under the augmented condition, and the convergence to 100% across architecturally diverse models suggests that the specification effect is structural rather than model-specific.
-
-### 9.4 Interpretation and Limitations of the Pilot
-
-These results provide initial empirical support for Proposition 6 (behavioral metamerism) and the broader thesis that behavioral specifications resolve brand confusion that statistical optimization cannot. The finding that six architecturally diverse LLMs --- spanning Western and Chinese training data, cloud and local deployment, proprietary and open-weight licensing --- converge on identical discrimination behavior when specifications are provided, is consistent with the theoretical claim that metamerism is a property of the observational channel, not the observer.
-
-Several limitations constrain interpretation. First, the brands are synthetic. This is a deliberate methodological choice, not a compromise: synthetic brands isolate the specification effect from confounders that would make a first test uninterpretable. Real brands carry brand-awareness effects (training-data frequency biases documented by Kamruzzaman et al., 2024), personal experience confounders, and category-specific knowledge embedded in model weights. A test with real brands that found a specification effect could not distinguish whether the effect was driven by the specification itself or by differential brand familiarity across models. Synthetic brands with controlled statistical profiles and known behavioral specifications provide the clean causal test that a first study requires. The critical follow-up --- testing with real brands in convergent categories where GEO optimization has produced genuine statistical similarity --- is the natural next step and is currently in design (Zharnikov, 2026v).
-
-Second, the sample size of three runs per condition per model yields 18 observations per model on the critical metameric pair. Given the observed effect sizes (100 percentage-point discrimination shifts for 3 of 6 models, Fisher's *p* = 0.0009), post-hoc power exceeds 0.99 for the primary hypothesis. However, the study is underpowered for detecting small cross-model differences or for computing precise confidence intervals on effect sizes; scaling to 10+ runs would improve precision for secondary analyses.
-
-Third, all API calls used provider-default temperature settings rather than temperature = 0. While this introduces stochastic variation, it also more closely approximates how AI agents operate in practice (commercial deployments rarely fix temperature at 0). The three-run design partially addresses this by measuring consistency across repeated calls. Future studies should systematically vary temperature as an experimental parameter.
-
-Fourth, Gemma 4's ceiling-level discrimination in both conditions may reflect a model-specific sensitivity to behavioral cues in statistical profiles that other models lack, or it may indicate that the non-metameric pairs in the stimulus set were too easily distinguishable.
-
-Fifth, we tested with six of seven planned models; Qwen Plus (DashScope API) was unavailable at the time of data collection. Adding the seventh model would complete the cloud-local comparison for the Alibaba model family.
-
-The complete experiment infrastructure --- pre-registration protocol, stimulus materials, analysis script, JSONL session logs (684 entries with full prompt-response pairs), and reproducibility metadata (package versions, hardware specification, git commit hash, API key hashes) --- is publicly available at github.com/spectralbranding/sbt-papers/r16-ai-native-brand-identity/experiment/.
-
----
-
-## 10. Limitations and Future Research
-
-This paper is primarily theoretical, with initial empirical support from a pilot study (Section 9). It develops a theoretical framework and six propositions, of which one (Proposition 6, behavioral metamerism) has received initial validation. Several limitations warrant acknowledgment.
-
-The pilot study (Section 9) provides initial evidence for behavioral metamerism and the specification effect, but uses synthetic brands rather than real market competitors. The critical next test is whether the pattern replicates with brands whose statistical profiles converge through genuine market competition rather than experimental design. Additionally, the Brand Function is specified as a formal construct but has not yet been implemented at scale in any deployed commerce system. A full empirical validation would compare AI agent decision quality --- in terms of brand discrimination, behavioral prediction, and trust calibration --- across real purchasing environments where Brand Function data is and is not available.
+The primary threat to validity is the absence of primary empirical data. All six propositions are currently untested. Behavioral metamerism is theorized but not yet measured in actual AI purchasing environments. The Brand Function is specified as a formal construct but has not yet been implemented at scale in any deployed commerce system. The critical empirical test would be a controlled experiment comparing AI agent decision quality --- in terms of brand discrimination, behavioral prediction, and trust calibration --- when Brand Function data is available versus when agents rely solely on statistical observation of brand signals. Until such evidence exists, the propositions remain theoretical claims.
 
 First, the necessity conditions (Section 7) are being satisfied progressively, not simultaneously in all markets. Categories with high product differentiation, limited AI mediation, and strong human brand loyalty may not require the Brand Function for years or decades. The framework predicts *where* the Brand Function becomes necessary first (commodity categories with high GEO convergence and deployed agentic commerce protocols) but does not empirically validate this prediction.
 
@@ -474,15 +381,19 @@ Third, the historical analysis in Section 2 draws primarily on Western European 
 
 The framework is also subject to several boundary conditions that constrain its applicability. First, the transition to open cryptographic brand standards assumes that dominant platform operators have incentives to adopt interoperable protocols. If Amazon, Google, or other major AI commerce platforms instead impose closed proprietary standards --- requiring brands to authenticate through platform-specific mechanisms rather than open cryptographic specifications --- the transition described here may be delayed indefinitely or may produce fragmented identity infrastructure rather than a unified standard. The SSL analogy is instructive in both directions: SSL succeeded because browser vendors adopted it collectively; a proprietary equivalent where each platform controls its own "trust" verification would produce a structurally different outcome. Second, the historical pattern traced in Section 2 draws primarily on Western European and North American examples. Non-Western markets where brand identity operates through different cultural mechanisms --- relational trust networks in East Asian commerce, community-embedded reputation systems, or state-mediated certification regimes --- may follow different evolutionary patterns, and the Brand Function's design assumes Western legal infrastructure (trademark law, contract enforcement) that does not transfer uniformly. Third, the observer-driven evolution thesis treats historical transitions as a general pattern, but each transition was path-dependent and contingent on specific institutional and technological conditions. The pattern may predict the direction of change without determining its timing, form, or completeness. Treating history as a reliable forecast mechanism risks overfitting to a small sample of transitions.
 
+**Conditional metamerism boundary condition**: The framework's predictions about behavioral metamerism are conditional on information availability. When LLMs have extensive training data on well-known brands (Nike, Apple, Hermes), they exhibit multi-dimensional perception without requiring a Brand Function --- the specification information is already embedded in model weights. Metamerism becomes structurally significant only where training data is thin: new entrants in convergent categories, brands from underrepresented markets or languages, and brands undergoing repositioning whose historical profile dominates training corpora. This creates an "information illuminant" effect analogous to color metamerism's dependence on illumination conditions: the same brand may appear spectrally distinct under one information regime and metameric under another. The Brand Function is therefore most critical not for globally recognized brands but for the long tail of commerce where AI agents must infer brand identity from sparse statistical signals. Empirical validation should prioritize these boundary cases rather than well-known brands where the null hypothesis (no collapse) is expected.
+
 Fourth, the Brand Function as described here is a theoretical construct, not a technical standard. Translating the concept into an implementable specification requires industry coordination, schema development, and governance structures that this paper does not address. The relationship between the Brand Function and existing specifications (brand.json, Brando Schema, ACP, UCP) requires technical integration work beyond the scope of this paper.
 
 Fifth, the paper does not address privacy implications. A machine-readable behavioral specification that details how a brand responds to different observer types and contexts raises questions about strategic transparency: how much of the Brand Function should be public, how much should be shared selectively with authorized agents, and how should competitive intelligence concerns be balanced against the verification benefits.
 
-Sixth, the behavioral metamerism index (BMI) has been demonstrated in this pilot using synthetic brands, but extending it to real-brand measurement at scale --- analogous to the CIE Special Metamerism Index in color science --- requires defining the behavioral dimensions across real product categories, establishing standardized measurement protocols, and collecting data on behavioral convergence in actual market contexts. This represents a substantial empirical research agenda.
+Sixth, behavioral metamerism requires empirical measurement. Developing a behavioral metamerism index --- analogous to the CIE Special Metamerism Index in color science --- requires defining the behavioral dimensions, establishing measurement protocols, and collecting data on behavioral convergence across brand categories. This represents a substantial empirical research agenda.
 
 Seventh, the framework does not address how multi-brand portfolios manage multiple Brand Functions. The interactions between Brand Functions within a portfolio --- interference, coherence, and capacity constraints analogous to those in spectral portfolio theory (Zharnikov, 2026q) --- require separate theoretical development.
 
-The pilot study (Section 9) addresses priority (a) with synthetic brands; future research should extend this to real brands in convergent categories. Remaining priorities include: (b) technical specification of a Brand Function v0.1 schema that integrates with existing protocols; (c) experimental validation of the necessity conditions with real-world AI purchasing agents; (d) investigation of privacy and competitive dynamics in behavioral specification transparency; and (e) longitudinal tracking of the dual identity infrastructure transition as AI commerce protocols scale.
+Finally, the pilot uses SBT's eight-dimensional decomposition for the Brand Function specification. The discrimination and metamerism results are predicted to be invariant to the specific dimensional system used --- a falsifiable prediction that could be tested by repeating the experiment with alternative dimensional decompositions (e.g., Aaker's five personality dimensions or Kapferer's six-facet prism) and verifying that inter-brand distances and metamerism classifications are preserved.
+
+Future research should address five priorities: (a) empirical measurement of behavioral metamerism across product categories, developing indices for statistical convergence in AI-mediated brand evaluation; (b) technical specification of a Brand Function v0.1 schema that integrates with existing protocols; (c) experimental validation of the necessity conditions, testing whether AI agents make better purchasing decisions when Brand Functions are available versus when they rely solely on statistical observation; (d) investigation of privacy and competitive dynamics in behavioral specification transparency; and (e) longitudinal tracking of the dual identity infrastructure transition as AI commerce protocols scale.
 
 **Proposed empirical pilot.** A feasible first test of Proposition 6 (behavioral metamerism) would proceed as follows. Select 10--20 brands in a convergent category (e.g., direct-to-consumer supplements or consumer electronics accessories) where GEO optimization has produced statistical similarity. For each brand, query 7 LLMs organized into four clusters with standardized purchasing-agent prompts ("recommend a brand for [category] based on [criteria]") under two conditions: (a) statistical-only, where the LLM has access only to publicly available reviews, ratings, and web content; and (b) specification-augmented, where the LLM additionally receives a structured Brand Function document for each brand. Measure: (i) brand discrimination --- can the LLM distinguish brands that humans consider distinct? (ii) behavioral prediction accuracy --- does access to the Brand Function improve the LLM's ability to predict how a brand will respond to edge cases (returns, disputes, out-of-stock)? (iii) recommendation stability --- does the Brand Function reduce recommendation variance across LLMs? A behavioral metamerism index can be computed as the ratio of inter-brand statistical distance to inter-brand behavioral distance, with values approaching zero indicating high metamerism. This pilot requires no access to production commerce systems and can be executed with publicly available LLM APIs.
 
@@ -490,9 +401,11 @@ We selected seven LLMs organized into four clusters: Western cloud (Claude Sonne
 
 A reference implementation of the behavioral metamerism index computation and pilot study framework is available at github.com/spectralbranding/sbt-papers/r16-ai-native-brand-identity/.
 
+**Companion empirical evidence.** A companion study (Zharnikov, 2026v) provides initial empirical evidence for the dimensional collapse predicted by this framework. Testing 10 global and 5 local brand pairs across 6 architecturally diverse LLMs, the study finds that Economic and Semiotic dimensions are systematically over-weighted (combined DCI = 29.1 for global brands, p = 0.017) while Cultural (58% of baseline), Temporal (65%), and Narrative (84%) dimensions collapse. The collapse pattern is structural: cross-model cosine similarity is 0.975, indicating near-identical dimensional bias across all model families. For local brands from underrepresented markets (Cyprus, Latvia, Kenya, Vietnam, Serbia), the collapse amplifies significantly (DCI = 35.3, p = 0.0006, Cohen's d = 0.878 versus global brands), with the Economic dimension inflating to 168% of baseline --- confirming that metamerism is conditional on training-data availability as theorized in Section 9. These findings validate three claims of the present paper: that AI observers produce systematically different perception from human observers, that the difference is structural rather than model-specific, and that the Brand Function is most critical for brands with thin training-data representation.
+
 ---
 
-## 11. Conclusion
+## 10. Conclusion
 
 The logo is the identity technology for the human observer era. It was designed for a specific observer --- the mass-market consumer navigating visual environments through perceptual pattern matching. It has been remarkably effective for that observer, and it will continue to serve that function for as long as humans evaluate brands.
 
@@ -503,12 +416,6 @@ The Brand Function --- the complete behavioral specification from which all bran
 Brands that prepare for this transition are positioned to build dual identity infrastructure --- visual for humans, cryptographic for machines. Under current trajectories, those that rely solely on visual identity risk having their machine-facing identity determined by the statistical representations that AI systems construct from available data, rather than by the brand's own specification of what it intends to be.
 
 The logo is for humans. The signature is for machines.
-
----
-
-## AI Disclosure
-
-Claude (Anthropic) was used for preliminary literature research, cross-reference verification, and code development throughout this project. All theoretical propositions, research design decisions, experimental protocol, model selection rationale, and interpretation of results are the author's own. The experiment script was co-developed with AI assistance; the complete source code is publicly available for inspection.
 
 ---
 
@@ -583,5 +490,7 @@ Zharnikov, D. (2026e). Spectral metamerism in brand perception: Projection bound
 Zharnikov, D. (2026l). The rendering problem: Why organizations cannot implement what they specify. *Working Paper*. https://doi.org/10.5281/zenodo.19064427
 
 Zharnikov, D. (2026q). Spectral portfolio theory: Interference, coherence, and capacity in multi-brand perception space. *Working Paper*.
+
+Zharnikov, D. (2026v). Spectral metamerism in AI-mediated brand perception. *Working Paper*. Target: Journal of Advertising Research.
 
 Zhi, Y., Zhang, X., Wang, L., Jiang, S., Ma, S., Guan, X., & Shen, C. (2025). Exposing product bias in LLM investment recommendation. *arXiv preprint*. arXiv:2503.08750.

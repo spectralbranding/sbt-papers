@@ -16,6 +16,12 @@ provenance:
     - version: "1.2"
       date: "2026-04-03"
       description: "Grok review fixes (P3 softened, AI disclosure, power analysis, synthetic brand defense)"
+    - version: "1.3"
+      date: "2026-04-04"
+      description: "Ephemeris analogy (4.1), admissibility framing (7.2), 4 Brand Function use cases (8), coordinate-invariant geometry (8), temporal stability (8), conditional metamerism (9), dimensional invariance (9)"
+    - version: "1.4"
+      date: "2026-04-04"
+      description: "R15 companion evidence (9), admissibility binary/gradient fix (7.2), kappa caveat (8), review C1 resolved"
 
   forks:
     - id: "fork-2026-04-02-zenodo"
@@ -28,7 +34,7 @@ provenance:
       identifiers:
         doi: "10.5281/zenodo.19391476"
         community: ["spectral-branding"]
-      note: "v1.0 — upload v1.2 PDF pending"
+      note: "v1.2 on Zenodo — upload v1.4 PDF pending"
 
   target_venue:
     journal: "Journal of Interactive Marketing"

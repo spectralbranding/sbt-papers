@@ -16,8 +16,8 @@ This paper proposes the observer-driven evolution thesis --- identity verificati
 
 | File | Description |
 |------|-------------|
-| `paper.md` | Full paper (~12,050 words, 6 propositions, 4 results tables) |
-| `paper.pdf` | PDF export (320K) |
+| `paper.md` | Full paper (v1.4, ~12,500 words, 6 propositions, 4 results tables) |
+| `paper.pdf` | PDF export (244K) |
 | `paper.yaml` | Paper specification (machine-readable claims) |
 | `CITATION.cff` | Citation metadata |
 | `CONTRIBUTORS.yaml` | Contributor attribution (human + AI) |
