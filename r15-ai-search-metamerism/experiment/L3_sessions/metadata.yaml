@@ -1,0 +1,59 @@
+script_version: 649ed3fa5f6a8bef0b873e6231c5099b956a510e
+python_version: 3.14.3 (main, Feb  4 2026, 01:51:49) [Clang 21.1.4 ]
+package_versions:
+  anthropic: 0.89.0
+  openai: 2.30.0
+  google-genai: 1.70.0
+  scipy: 1.17.1
+  numpy: 2.4.4
+  pyyaml: 6.0.3
+hardware: arm64
+processor: arm
+os: macOS-26.3.1-arm64-arm-64bit-Mach-O
+start_time: '2026-04-04T14:47:55.085792+00:00'
+end_time: null
+model_configs:
+  claude:
+    model_id: claude-haiku-4-5
+    max_tokens: 2048
+    temperature: 0.7
+  gpt:
+    model_id: gpt-4o-mini
+    max_tokens: 2048
+    temperature: 0.7
+  gemini:
+    model_id: gemini-2.5-flash
+    max_tokens: 2048
+    temperature: 0.7
+  deepseek:
+    model_id: deepseek-chat
+    max_tokens: 2048
+    temperature: 0.7
+  qwen3_local:
+    model_id: qwen3:30b
+    max_tokens: 2048
+    temperature: 0.7
+  gemma4_local:
+    model_id: gemma4:latest
+    max_tokens: 2048
+    temperature: 0.7
+api_key_hash:
+  claude: '42851649'
+  gpt: 1105afa6
+  gemini: ed30e51c
+  deepseek: 73f315a4
+experiment: R15-ai-search-metamerism
+script_revision: v2-structured-elicitation
+temperature: 0.7
+dimensions:
+- semiotic
+- narrative
+- ideological
+- experiential
+- social
+- economic
+- cultural
+- temporal
+n_brand_pairs: 10
+prompts_per_pair: 1 weighted_recommendation + 1 dimensional_differentiation + 8 probes
+  x 2 brands = 18
