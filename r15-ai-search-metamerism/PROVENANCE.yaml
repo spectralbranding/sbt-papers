@@ -6,7 +6,22 @@ provenance:
   citation_key: "2026v"
   repository: "spectralbranding/sbt-papers/r15-ai-search-metamerism"
 
+  versions:
+    - version: "1.0"
+      date: "2026-04-03"
+      description: "Initial draft with v1 keyword extraction design + Run 1 null result"
+    - version: "2.0"
+      date: "2026-04-04"
+      description: "Full empirical results. v2 structured weight allocation. Run 2 (3,240 calls, 10 global pairs), Run 3 (1,620 calls, 5 local pairs), Run 4 (90 calls, Brand Function resolution). Methodology rewritten. 16 review issues resolved. Self-citation 17.9%."
+
   forks: []
   # No forks yet. Will be updated when:
   # 1. Paper uploaded to Zenodo (preprint)
   # 2. Paper submitted to JAR (journal)
+
+  target_venue:
+    journal: "Journal of Advertising Research"
+    publisher: "ARF / SAGE"
+    special_call: "AI + Search"
+    status: "pre-submission"
+    note: "Submit after Zenodo upload"

@@ -1,0 +1,32 @@
+cff-version: 1.2.0
+message: "If you use this paper, please cite it as below."
+authors:
+  - family-names: Zharnikov
+    given-names: Dmitry
+    email: dmitry@spectralbranding.com
+    affiliation: "Independent Researcher"
+    orcid: "https://orcid.org/0009-0000-6893-9231"
+title: "Spectral Metamerism in AI-Mediated Brand Perception: How Large Language Models Collapse Multi-Dimensional Brand Differentiation in Consumer Search"
+version: 2.0.0
+date-released: 2026-04-04
+repository-code: "https://github.com/spectralbranding/sbt-papers"
+keywords:
+  - spectral metamerism
+  - AI brand perception
+  - dimensional collapse
+  - LLM brand recommendation
+  - consumer search
+  - Spectral Brand Theory
+  - conditional metamerism
+license: CC-BY-NC-ND-4.0
+type: article
+preferred-citation:
+  type: article
+  authors:
+    - family-names: Zharnikov
+      given-names: Dmitry
+      email: dmitry@spectralbranding.com
+      affiliation: "Independent Researcher"
+      orcid: "https://orcid.org/0009-0000-6893-9231"
+  title: "Spectral Metamerism in AI-Mediated Brand Perception"
+  year: 2026

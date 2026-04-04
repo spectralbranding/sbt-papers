@@ -14,7 +14,7 @@ contributors:
       - project-administration
     affiliation: "Independent Researcher"
     first_commit: "2026-03-01"
-    last_commit: "2026-04-03"
+    last_commit: "2026-04-04"
 
   - name: "Claude (Anthropic)"
     type: ai_tool
@@ -27,4 +27,4 @@ contributors:
       script development, and editorial review. All hypotheses, the
       LLM-as-observer concept, spectral profile estimation methodology,
       and experimental design are solely the author's intellectual contribution.
-      Note: Claude is also one of seven LLM subjects in the experiment.
+      Note: Claude is also one of six LLM subjects in the experiment.
