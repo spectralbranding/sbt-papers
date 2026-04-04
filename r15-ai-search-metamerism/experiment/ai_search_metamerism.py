@@ -653,20 +653,45 @@ def call_gpt(prompt: str, model: str = "gpt-4o-mini") -> str:
 
 
 def call_gemini(prompt: str, model: str = "gemini-2.5-flash") -> str:
-    """Call Google Gemini via google-genai SDK at temperature 0.7 and return response text."""
+    """Call Google Gemini via google-genai SDK at temperature 0.7 and return response text.
+
+    Fix history (documented per fleet rules):
+    - v2 (dc0dbd4): max_output_tokens raised from 512 to 2048 -- still truncated (55 chars)
+    - v3 (this): added response_mime_type="application/json" to force JSON mode,
+      which prevents markdown fences, preamble, and early truncation. Also added
+      system_instruction to reinforce JSON-only output.
+    """
     from google import genai
     from google.genai import types
     client = genai.Client(api_key=os.environ["GOOGLE_API_KEY"])
+
+    # Attempt 1: JSON mode with response_mime_type (preferred -- forces structured output)
+    try:
+        response = client.models.generate_content(
+            model=model,
+            contents=prompt,
+            config=types.GenerateContentConfig(
+                temperature=0.7,
+                max_output_tokens=2048,
+                response_mime_type="application/json",
+                system_instruction="You are a brand research assistant. Respond with valid JSON only.",
+            ),
+        )
+        text = response.text
+        if text and text.strip():
+            return text
+    except Exception:
+        pass
+
+    # Attempt 2: Standard call without JSON mode (fallback)
     response = client.models.generate_content(
         model=model,
         contents=prompt,
         config=types.GenerateContentConfig(temperature=0.7, max_output_tokens=2048),
     )
-    # response.text may raise if there are no candidates; handle gracefully
     try:
         text = response.text
     except Exception:
-        # Fallback: try to extract from candidates
         if response.candidates:
             text = response.candidates[0].content.parts[0].text
         else:
@@ -695,7 +720,16 @@ def call_qwen3_local(prompt: str, model: str = "qwen3:30b") -> str:
 
     Qwen3 thinking mode may put content in reasoning_content instead of content.
     We check both fields and strip think tags.
+
+    Fix history (documented per fleet rules):
+    - v2 (dc0dbd4): max_tokens raised to 2048, system message added, reasoning_content
+      fallback, native Ollama API fallback -- still truncated (211 chars)
+    - v3 (this): added /no_think tag to user prompt to suppress thinking mode that
+      consumes output token budget. Increased to 4096 tokens for safety margin.
     """
+    # Append /no_think to suppress Qwen3 internal reasoning (saves output tokens)
+    prompt_with_no_think = prompt + "\n/no_think"
+
     # Attempt 1: OpenAI-compatible endpoint with system message to suppress thinking
     try:
         from openai import OpenAI
@@ -711,9 +745,9 @@ def call_qwen3_local(prompt: str, model: str = "qwen3:30b") -> str:
                         "No markdown, no explanation, no thinking -- just the JSON."
                     ),
                 },
-                {"role": "user", "content": prompt},
+                {"role": "user", "content": prompt_with_no_think},
             ],
-            max_tokens=2048,
+            max_tokens=4096,
             temperature=0.7,
         )
         msg = response.choices[0].message
@@ -731,9 +765,9 @@ def call_qwen3_local(prompt: str, model: str = "qwen3:30b") -> str:
     # Attempt 2: Ollama native /api/generate (bypasses OpenAI-compatible layer)
     payload = json.dumps({
         "model": model,
-        "prompt": prompt + "\n\nRespond with ONLY a JSON object:",
+        "prompt": prompt + "\n/no_think\n\nRespond with ONLY a JSON object:",
         "stream": False,
-        "options": {"num_predict": 2048, "temperature": 0.7},
+        "options": {"num_predict": 4096, "temperature": 0.7},
     }).encode()
     req = urllib.request.Request(
         "http://localhost:11434/api/generate",
