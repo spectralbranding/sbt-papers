@@ -12,7 +12,7 @@ metadata:
       affiliation: "Independent Researcher"
       corresponding: true
   citation_key: "2026v"
-  doi: null  # Populate after Zenodo upload
+  doi: "10.5281/zenodo.19422427"
   date: "2026-04-04"
   version: "1.0"
   status: working_paper
