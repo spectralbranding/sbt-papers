@@ -419,6 +419,10 @@ The logo is for humans. The signature is for machines.
 
 ---
 
+## Acknowledgments
+
+The admissibility-versus-validation distinction in Section 7.2 was refined through exchange with Aaron Radina (Korzent), whose formulation of "irreversibility requires pre-state admissibility" sharpened the operational framing of the Brand Function at the transaction boundary.
+
 ## References
 
 Aaker, D. A. (1996). *Building strong brands*. Free Press.
