@@ -561,7 +561,7 @@ def call_claude(prompt: str, model: str = "claude-haiku-4-5") -> str:
     client = anthropic.Anthropic(api_key=os.environ["ANTHROPIC_API_KEY"])
     message = client.messages.create(
         model=model,
-        max_tokens=1024,
+        max_tokens=2048,
         temperature=0.7,
         messages=[{"role": "user", "content": prompt}],
     )
@@ -575,7 +575,7 @@ def call_gpt(prompt: str, model: str = "gpt-4o-mini") -> str:
     response = client.chat.completions.create(
         model=model,
         messages=[{"role": "user", "content": prompt}],
-        max_tokens=1024,
+        max_tokens=2048,
         temperature=0.7,
     )
     return response.choices[0].message.content
@@ -613,7 +613,7 @@ def call_deepseek(prompt: str, model: str = "deepseek-chat") -> str:
     response = client.chat.completions.create(
         model=model,
         messages=[{"role": "user", "content": prompt}],
-        max_tokens=1024,
+        max_tokens=2048,
         temperature=0.7,
     )
     return response.choices[0].message.content
