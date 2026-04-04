@@ -508,7 +508,7 @@ The logo is for humans. The signature is for machines.
 
 ## AI Disclosure
 
-Claude (Anthropic) was used as a writing assistant for drafting, editing, and code development throughout this project. All theoretical propositions, research design decisions, experimental protocol, model selection rationale, and interpretation of results are the author's own. The experiment script was co-developed with AI assistance; the complete source code is publicly available for inspection. Gemini (Google) was used for literature search during the research phase; all citations were independently verified against original sources.
+Claude (Anthropic) was used for preliminary literature research, cross-reference verification, and code development throughout this project. All theoretical propositions, research design decisions, experimental protocol, model selection rationale, and interpretation of results are the author's own. The experiment script was co-developed with AI assistance; the complete source code is publicly available for inspection.
 
 ---
 
