@@ -325,6 +325,8 @@ Under weaker conditions --- where humans remain primary observers, categories ar
 
 A critical operational distinction follows from the necessity conditions: the Brand Function enables *admissibility judgments* at the transaction boundary. AI agents may internally score brands on gradient scales, but the principal's delegated authority constraints impose binary thresholds on those gradients --- "does the return policy meet the minimum?" yields admissible or excluded, regardless of the agent's underlying scoring mechanism. The admissibility gate sits on top of gradient evaluation, not instead of it. This is structurally analogous to legal evidence admissibility: a court may weigh admitted evidence on a gradient, but the admissibility decision itself is binary. The Brand Function makes these threshold judgments machine-computable by providing the behavioral specification against which constraints can be evaluated, which requires complete specification rather than statistical approximation.
 
+This admissibility structure has a formal parallel in geometric governance theory. Medesani (2026) demonstrates that dynamic systems can maintain integrity through *invariant corridors* --- bounded admissible regions that contract under stress and recover with hysteresis, where the true invariant is the governing operator rather than any particular system state. The Brand Function defines such a corridor in behavioral space: the set of responses the brand commits to under specified conditions. Transactions formed within this corridor are admissible by construction; those outside it are structurally excluded. The deeper implication, formalized through Medesani's tri-binding admissibility condition (geometric integrity, authorization routing, and temporal coherence must hold simultaneously), is that brand admissibility requires not merely a valid specification but also a governance mechanism that enforces it and temporal consistency that prevents contradiction with the brand's own history.
+
 ---
 
 ## 8. Implications and Dual Identity Infrastructure
@@ -433,7 +435,7 @@ The logo is for humans. The signature is for machines.
 
 ## Acknowledgments
 
-The admissibility-versus-validation distinction in Section 7.2 was refined through exchange with Aaron Radina (Korzent), whose formulation of "irreversibility requires pre-state admissibility" sharpened the operational framing of the Brand Function at the transaction boundary.
+The admissibility-versus-validation distinction in Section 7.2 was refined through exchange with Aaron Radina (Korzent), whose formulation of "irreversibility requires pre-state admissibility" sharpened the operational framing of the Brand Function at the transaction boundary. The invariant corridor formalization draws on Medesani's (2026) geometric governance framework; the connection between invariant corridors and brand behavioral boundaries was identified through Radina's engagement with Medesani's work.
 
 ## References
 
@@ -488,6 +490,8 @@ Kozinets, R. V. (2022). Algorithmic branding through platform assemblages: Core 
 Loken, B., Ross, I., & Hinkle, R. L. (1986). Consumer "confusion" of origin and brand similarity perceptions. *Journal of Public Policy & Marketing*, *5*(1), 195--211.
 
 Manski, C. F. (1995). *Identification problems in the social sciences*. Harvard University Press.
+
+Medesani, M. (2026). Geometric foundations of invariant corridors and governance: A unified framework with empirical validation (Level 3.3). *Working Paper*. https://doi.org/10.5281/zenodo.18822553
 
 Parasuraman, A., Zeithaml, V. A., & Berry, L. L. (1985). A conceptual model of service quality and its implications for future research. *Journal of Marketing*, *49*(4), 41--50.
 
