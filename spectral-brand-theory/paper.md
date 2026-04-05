@@ -658,8 +658,6 @@ The preceding framework and exploratory analysis generate ten falsifiable hypoth
 
 **H10 (Field density threshold).** There exists a minimum signal field density below which encounter probability drops to near-zero regardless of observer receptivity, and this threshold is higher for channels with low signal-to-noise ratio. *Derivation:* the signal dissemination layer (Section 3.5) and Sharp's (2010) mental availability framework. *Test:* vary brand signal frequency in controlled environments; measure encounter rate as a function of field density and channel noise level.
 
-\newpage
-
 **Figure 7. Research Agenda: Falsifiable Hypotheses and Testing Methods**
 
 ```
