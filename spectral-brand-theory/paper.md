@@ -128,7 +128,7 @@ Cohort membership is dynamic. Because priors are a profile component and priors 
 
 \newpage
 
-**Figure 1. The Observer-Mediated Perception Pipeline**
+**Figure 1.** The Observer-Mediated Perception Pipeline
 
 ```
   SIGNAL ENVIRONMENT         OBSERVER PROFILE
@@ -159,7 +159,7 @@ Cohort membership is dynamic. Because priors are a profile component and priors 
                               [back to cloud]
 ```
 
-**Figure 2. Observer Heterogeneity: Same Signal Field, Different Perceptions**
+**Figure 2.** Observer Heterogeneity: Same Signal Field, Different Perceptions
 
 ```
                     Tesla Signal Environment
@@ -388,7 +388,7 @@ Traditional brand analysis treats coherence as a single variable from low to hig
 
 (The letter grades reported here are L2 rendered outputs — human-readable projections of the multi-dimensional spectral profile onto a disruption resilience scale. The underlying coherence classification is nominal (structural type); the grade projects the typical resilience mechanism of each type for practitioner reference. Different spectral profiles can project to the same grade (spectral metamerism); the full L1 spectral profiles are reported in Section 3.3.)
 
-**Figure 3. Spectral Metamerism: Different L1 Structures, Same L2 Grade**
+**Figure 3.** Spectral Metamerism: Different L1 Structures, Same L2 Grade
 
 ```
   L1: Brand A                                    L1: Brand B
@@ -419,7 +419,7 @@ The practical consequence is that traditional scorecards are structurally blind 
 
 The coherence type is determined by three structural properties: (1) cohort interdependence — how much one cohort's perception depends on another's behavior; (2) ideological centrality — how much coherence depends on a shared ideological commitment; and (3) encounter mode variance — how different the direct-encounter brand is from the mediated brand.
 
-**Figure 4. Coherence Types: Disruption Response Patterns**
+**Figure 4.** Coherence Types: Disruption Response Patterns
 
 ```
                          DISRUPTION
@@ -491,7 +491,7 @@ The D/A ratio is the single metric that most powerfully discriminates between po
 
 \newpage
 
-**Figure 5. D/A Ratio and Coherence Across Five Brands**
+**Figure 5.** D/A Ratio and Coherence Across Five Brands
 
 ```
 Coherence
@@ -540,7 +540,7 @@ Gestalt psychology (Koffka, 1935) provides the perceptual foundations: cloud for
 
 \newpage
 
-**Figure 6. Non-Ergodic Brand Perception: Ensemble Average vs. Cohort Trajectories**
+**Figure 6.** Non-Ergodic Brand Perception: Ensemble Average vs. Cohort Trajectories
 
 ```
 Brand
@@ -620,7 +620,7 @@ Several limitations warrant discussion. We note that several of the open questio
 
 **Cross-brand calibration.** Cloud confidence scores and coherence metrics are calibrated within each brand analysis but not across brands. Developing an absolute scale — or at minimum, calibration benchmarks across brand categories — is a priority for future work.
 
-**Temporal dynamics.** The framework captures snapshots and simulates disruptions but does not formally model the rate of change. Two temporal properties require formalization: (1) *signal decay* — how individual signal contributions to cloud formation attenuate over time, with decay rates varying by emotional intensity, encounter mode (direct experiential signals persist longer than mediated ones), and reinforcement frequency; and (2) *cohort velocity* — growth rate and conviction migration speed metrics for longitudinal cohort tracking. Per-dimension velocity tracking (signed rate of change, direction classification, acceleration, and linear time-to-absorption estimates) has been implemented in the open-source toolkit (spectralbranding/sbt-framework), operationalizing the discrete approximation to the drift vector defined in Zharnikov (2026j); cohort-level velocity aggregation across observer populations remains an open direction. Signal decay is particularly important because it makes cloud formation recency-weighted: the "evidence set" available at any moment of re-collapse is not the complete historical set but the set of signals that have survived temporal attenuation plus whatever has crystallized into permanent priors.
+**Temporal dynamics.** The framework captures snapshots and simulates disruptions but does not formally model the rate of change. Two temporal properties require formalization: (1) *signal decay* — how individual signal contributions to cloud formation attenuate over time, with decay rates varying by emotional intensity, encounter mode (direct experiential signals persist longer than mediated ones), and reinforcement frequency; and (2) *cohort velocity* — growth rate and conviction migration speed metrics for longitudinal cohort tracking. Per-dimension velocity tracking (signed rate of change, direction classification, acceleration, and linear time-to-absorption estimates) has been implemented in the open-source toolkit (spectralbranding/sbt-framework), operationalizing the discrete approximation to the drift vector defined in Zharnikov (2026j); cohort-level velocity aggregation across observer populations remains an open direction. Du and Kamakura (2015) demonstrate that primary dynamic factor analysis can improve the statistical performance of brand tracking studies based on repeated cross-sections — separating true brand movement from measurement drift — and their methodology provides a natural estimation framework for cohort-level velocity aggregation in the spectral setting. Signal decay is particularly important because it makes cloud formation recency-weighted: the "evidence set" available at any moment of re-collapse is not the complete historical set but the set of signals that have survived temporal attenuation plus whatever has crystallized into permanent priors.
 
 **Competitive analysis.** The current framework analyzes brands in isolation. Extending the model to competitive contexts — how Brand A's signal environment interacts with Brand B's in the same perceptual space — is a natural extension that the dimensional architecture supports but that has not been validated.
 
@@ -658,7 +658,7 @@ The preceding framework and exploratory analysis generate ten falsifiable hypoth
 
 **H10 (Field density threshold).** There exists a minimum signal field density below which encounter probability drops to near-zero regardless of observer receptivity, and this threshold is higher for channels with low signal-to-noise ratio. *Derivation:* the signal dissemination layer (Section 3.5) and Sharp's (2010) mental availability framework. *Test:* vary brand signal frequency in controlled environments; measure encounter rate as a function of field density and channel noise level.
 
-**Figure 7. Research Agenda: Falsifiable Hypotheses and Testing Methods**
+**Figure 7.** Research Agenda: Falsifiable Hypotheses and Testing Methods
 
 ```
                          SBT Framework
@@ -739,6 +739,8 @@ Cialdini, R. B. (2001). *Influence: Science and practice* (4th ed.). Allyn & Bac
 Damasio, A. R. (1994). *Descartes' error: Emotion, reason, and the human brain*. Putnam.
 
 Davenport, T., Guha, A., Grewal, D., & Bressgott, T. (2020). How artificial intelligence will change the future of marketing. *Journal of the Academy of Marketing Science*, 48(1), 24–42.
+
+Du, R. Y., & Kamakura, W. A. (2015). Improving the statistical performance of tracking studies based on repeated cross-sections with primary dynamic factor analysis. *International Journal of Research in Marketing*, 32(1), 94–112. https://doi.org/10.1016/j.ijresmar.2014.10.002
 
 Dawar, N., & Parker, P. (1994). Marketing universals: Consumers' use of brand name, price, physical appearance, and retailer reputation as signals of product quality. *Journal of Marketing*, 58(2), 81–95.
 
