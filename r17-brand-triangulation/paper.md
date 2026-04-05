@@ -567,11 +567,11 @@ De Chernatony, L. (1999). Brand management through narrowing the gap between bra
 
 DeSarbo, W. S., and Rao, V. R. (1986). A constrained unfolding methodology for product positioning analysis. *Marketing Science*, 5(1), 1-19. DOI: 10.1287/mksc.5.1.1
 
-Du, R. Y., & Kamakura, W. A. (2015). Improving tracking studies with primary dynamic factor analysis. *International Journal of Research in Marketing*, 32(1), 94–112. DOI: 10.1016/j.ijresmar.2014.10.002
+Du, R. Y., & Kamakura, W. A. (2015). Improving the statistical performance of tracking studies based on repeated cross-sections with primary dynamic factor analysis. *International Journal of Research in Marketing*, 32(1), 94–112. DOI: 10.1016/j.ijresmar.2014.10.002
 
 Esterhuizen, W., Levine, J., & Streif, S. (2021). Epidemic management with admissible and robust invariant sets. *PLOS ONE*, 16(9), e0257598.
 
-Grimm, K. J., Zhang, Z., Hamagami, F., & Mazzocco, M. (2013). Modeling nonlinear change via latent change frameworks: Fully latent models, residual approaches, and a flexible unified framework. *Multivariate Behavioral Research*, 48(1), 117–143.
+Grimm, K. J., Zhang, Z., Hamagami, F., & Mazzocco, M. M. M. (2013). Modeling nonlinear change via latent change and latent acceleration frameworks: Examining velocity and acceleration of growth trajectories. *Multivariate Behavioral Research*, 48(1), 117–143. DOI: 10.1080/00273171.2012.755111
 
 Ilchmann, A., Ryan, E. P., & Sangwin, C. J. (2002). Tracking with prescribed transient behaviour. *ESAIM: Control, Optimisation and Calculus of Variations*, 7, 471–493. DOI: 10.1051/cocv:2002064
 
@@ -621,18 +621,18 @@ Wald, A. (1947). An essentially complete class of admissible decision functions.
 
 Wedel, M., and Kamakura, W. A. (2000). *Market Segmentation: Conceptual and Methodological Foundations* (2nd ed.). Springer. DOI: 10.1007/978-1-4615-4651-1
 
-Zharnikov, D. (2026a). *Spectral Brand Theory: A Multi-Dimensional Framework for Brand Perception and Measurement*. Zenodo. DOI: 10.5281/zenodo.18945912
+Zharnikov, D. (2026a). Spectral Brand Theory: A multi-dimensional framework for brand perception analysis. Working Paper. https://doi.org/10.5281/zenodo.18945912
 
-Zharnikov, D. (2026e). *Spectral Metamerism in Brand Perception: Projection Bounds from High-Dimensional Geometry*. Zenodo. DOI: 10.5281/zenodo.18945352
+Zharnikov, D. (2026e). Spectral metamerism in brand perception: Projection bounds from high-dimensional geometry. Working Paper. https://doi.org/10.5281/zenodo.18945352
 
-Zharnikov, D. (2026f). *Spectral Cohort Boundaries: How Observer Groups Form and Stabilize in Multi-Dimensional Brand Perception*. Zenodo. DOI: 10.5281/zenodo.18945477
+Zharnikov, D. (2026f). Cohort boundaries in high-dimensional perception space: A concentration of measure analysis. Working Paper. https://doi.org/10.5281/zenodo.18945477
 
-Zharnikov, D. (2026i). *The Organizational Schema Theory: Test-Driven Business Design*. Zenodo. DOI: 10.5281/zenodo.18946043
+Zharnikov, D. (2026i). The Organizational Schema Theory: Test-driven business design. Working Paper. https://doi.org/10.5281/zenodo.18946043
 
-Zharnikov, D. (2026o). *Non-Ergodic Brand Perception: Why Cross-Sectional Brand Tracking Systematically Misrepresents Individual Trajectories*. Zenodo. DOI: 10.5281/zenodo.19138860
+Zharnikov, D. (2026o). Non-ergodic brand perception: Why cross-sectional brand tracking systematically misrepresents individual trajectories. Working Paper. https://doi.org/10.5281/zenodo.19138860
 
-Zharnikov, D. (2026s). *Coherence Type as Crisis Predictor: A Formal Derivation from Non-Ergodic Dynamics*. Zenodo. DOI: 10.5281/zenodo.19208107
+Zharnikov, D. (2026s). Coherence type as crisis predictor: A formal derivation from non-ergodic dynamics. Working Paper. https://doi.org/10.5281/zenodo.19208107
 
-Zharnikov, D. (2026v). *Spectral Metamerism in AI-Mediated Brand Perception: How Large Language Models Collapse Multi-Dimensional Brand Differentiation in Consumer Search*. Zenodo. DOI: 10.5281/zenodo.19422427
+Zharnikov, D. (2026v). Spectral metamerism in AI-mediated brand perception: How large language models collapse multi-dimensional brand differentiation in consumer search. Working Paper. https://doi.org/10.5281/zenodo.19422427
 
-Zharnikov, D. (2026x). *AI-Native Brand Identity: From Visual Recognition to Cryptographic Verification*. Zenodo. DOI: 10.5281/zenodo.19391476
+Zharnikov, D. (2026x). AI-native brand identity: From visual recognition to cryptographic verification. Working Paper. https://doi.org/10.5281/zenodo.19391476
