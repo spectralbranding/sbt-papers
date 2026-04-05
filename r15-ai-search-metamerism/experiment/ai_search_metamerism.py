@@ -952,15 +952,36 @@ def _call_openai_compatible(
     return response.choices[0].message.content
 
 
-def call_cerebras(prompt: str, model: str = "qwen3-32b") -> str:
+def call_cerebras(prompt: str, model: str = "qwen-3-235b-a22b-instruct-2507") -> str:
     """Call Cerebras Inference API (free tier, 1M tokens/day)."""
     return _call_openai_compatible(
         prompt, model, "CEREBRAS_API_KEY", "https://api.cerebras.ai/v1"
     )
 
 
-def call_sambanova(prompt: str, model: str = "Qwen2.5-72B-Instruct") -> str:
+def call_cerebras_glm(prompt: str, model: str = "zai-glm-4.7") -> str:
+    """Call GLM-4.7 via Cerebras (Zhipu AI, Chinese, free tier)."""
+    return _call_openai_compatible(
+        prompt, model, "CEREBRAS_API_KEY", "https://api.cerebras.ai/v1"
+    )
+
+
+def call_sambanova(prompt: str, model: str = "Qwen3-32B") -> str:
     """Call SambaNova Cloud API (free tier, rate-limited)."""
+    return _call_openai_compatible(
+        prompt, model, "SAMBANOVA_API_KEY", "https://api.sambanova.ai/v1"
+    )
+
+
+def call_sambanova_swallow(prompt: str, model: str = "Llama-3.3-Swallow-70B-Instruct-v0.4") -> str:
+    """Call Swallow 70B via SambaNova (Japanese, Tokyo Tech, free tier)."""
+    return _call_openai_compatible(
+        prompt, model, "SAMBANOVA_API_KEY", "https://api.sambanova.ai/v1"
+    )
+
+
+def call_sambanova_deepseek(prompt: str, model: str = "DeepSeek-V3.2") -> str:
+    """Call DeepSeek V3.2 via SambaNova (Chinese, open-weight, free tier)."""
     return _call_openai_compatible(
         prompt, model, "SAMBANOVA_API_KEY", "https://api.sambanova.ai/v1"
     )
@@ -970,6 +991,27 @@ def call_groq(prompt: str, model: str = "llama-3.3-70b-versatile") -> str:
     """Call Groq API (free tier, rate-limited)."""
     return _call_openai_compatible(
         prompt, model, "GROQ_API_KEY", "https://api.groq.com/openai/v1"
+    )
+
+
+def call_groq_allam(prompt: str, model: str = "allam-2-7b") -> str:
+    """Call ALLaM-2-7B via Groq (SDAIA Saudi, Arabic-primary, free tier)."""
+    return _call_openai_compatible(
+        prompt, model, "GROQ_API_KEY", "https://api.groq.com/openai/v1"
+    )
+
+
+def call_groq_kimi(prompt: str, model: str = "moonshotai/kimi-k2-instruct") -> str:
+    """Call Kimi K2 via Groq (Moonshot AI, Chinese, free tier)."""
+    return _call_openai_compatible(
+        prompt, model, "GROQ_API_KEY", "https://api.groq.com/openai/v1"
+    )
+
+
+def call_grok(prompt: str, model: str = "grok-4-1-fast-non-reasoning") -> str:
+    """Call xAI Grok API (OpenAI-compatible). Grok trained on X/Twitter corpus."""
+    return _call_openai_compatible(
+        prompt, model, "GROK_API_KEY", "https://api.x.ai/v1"
     )
 
 
@@ -1031,7 +1073,7 @@ def call_exaone_local(
 
 def call_swallow_local(
     prompt: str,
-    model: str = "hf.co/mmnga/Llama-3.1-Swallow-8B-Instruct-v0.3-GGUF:Q4_K_M",
+    model: str = "hf.co/mradermacher/Llama-3.1-Swallow-8B-Instruct-v0.3-GGUF:latest",
 ) -> str:
     """Call Swallow 8B via local Ollama (Japanese, Tokyo Tech)."""
     return _call_ollama_model(prompt, model)
@@ -1041,7 +1083,14 @@ def call_falcon_arabic_local(
     prompt: str,
     model: str = "hf.co/tiiuae/Falcon-H1-Arabic-7B-Instruct-GGUF:Q4_K_M",
 ) -> str:
-    """Call Falcon-H1-Arabic 7B via local Ollama (Arabic, TII UAE)."""
+    """Call Falcon-H1-Arabic 7B via local Ollama (Arabic, TII UAE).
+
+    NOTE: Falcon-H1-Arabic GGUF may not be published by TII yet.
+    If this model fails, alternatives:
+    - inceptionai/jais-30b-chat-v3 (Jais, Arabic-primary, 30B)
+    - tiiuae/falcon-arabic-7b-instruct (older Falcon Arabic)
+    - silma-ai/SILMA-9B-Instruct-v1.0 (Arabic, Apache 2.0)
+    """
     return _call_ollama_model(prompt, model)
 
 
@@ -1063,16 +1112,22 @@ API_CALLERS: dict[str, Any] = {
     "qwen3_local": call_qwen3_local,
     "gemma4_local": call_gemma4_local,
     # Free-tier cloud (Run 5+)
-    "cerebras_qwen3": call_cerebras,
-    "sambanova_qwen25": call_sambanova,
-    "groq_llama33": call_groq,
-    # National models - local (Run 5+)
-    "yandexgpt_local": call_yandexgpt_local,
-    "gigachat_local": call_gigachat_local,
-    "exaone_local": call_exaone_local,
-    "swallow_local": call_swallow_local,
-    "falcon_arabic_local": call_falcon_arabic_local,
-    "qwen35_local": call_qwen35_local,
+    "cerebras_qwen3": call_cerebras,            # Qwen3-235B via Cerebras
+    "cerebras_glm": call_cerebras_glm,          # GLM-4.7 (Zhipu AI, Chinese) via Cerebras
+    "sambanova_qwen3": call_sambanova,          # Qwen3-32B via SambaNova
+    "sambanova_swallow": call_sambanova_swallow, # Swallow 70B (Japanese) via SambaNova
+    "sambanova_deepseek": call_sambanova_deepseek, # DeepSeek V3.2 via SambaNova
+    "groq_llama33": call_groq,                  # Llama 3.3 70B via Groq
+    "groq_allam": call_groq_allam,              # ALLaM-2-7B (Saudi/Arabic) via Groq
+    "groq_kimi": call_groq_kimi,                # Kimi K2 (Moonshot AI, Chinese) via Groq
+    "grok": call_grok,                          # Grok-3-mini (xAI, X/Twitter corpus)
+    # National models - local Ollama (Run 5+)
+    "yandexgpt_local": call_yandexgpt_local,    # YandexGPT 5 Lite 8B (Russian)
+    "gigachat_local": call_gigachat_local,       # GigaChat 20B-A3B (Russian, Sber)
+    "exaone_local": call_exaone_local,           # EXAONE 4.0 32B (Korean, LG AI)
+    "swallow_local": call_swallow_local,         # Swallow 8B (Japanese, Tokyo Tech)
+    "falcon_arabic_local": call_falcon_arabic_local, # Falcon-H1-Arabic 7B (Arabic, TII)
+    "qwen35_local": call_qwen35_local,           # Qwen3.5 27B (Chinese, newer)
 }
 
 API_KEY_VARS: dict[str, str] = {
@@ -1085,8 +1140,14 @@ API_KEY_VARS: dict[str, str] = {
     "gemma4_local": "OLLAMA_AVAILABLE",
     # Free-tier cloud
     "cerebras_qwen3": "CEREBRAS_API_KEY",
-    "sambanova_qwen25": "SAMBANOVA_API_KEY",
+    "cerebras_glm": "CEREBRAS_API_KEY",
+    "sambanova_qwen3": "SAMBANOVA_API_KEY",
+    "sambanova_swallow": "SAMBANOVA_API_KEY",
+    "sambanova_deepseek": "SAMBANOVA_API_KEY",
     "groq_llama33": "GROQ_API_KEY",
+    "groq_allam": "GROQ_API_KEY",
+    "groq_kimi": "GROQ_API_KEY",
+    "grok": "GROK_API_KEY",
     # National models - local
     "yandexgpt_local": "OLLAMA_AVAILABLE",
     "gigachat_local": "OLLAMA_AVAILABLE",
@@ -1097,7 +1158,7 @@ API_KEY_VARS: dict[str, str] = {
 }
 
 MODEL_IDS: dict[str, str] = {
-    # Original
+    # Original (Runs 2-4)
     "claude": "claude-haiku-4-5",
     "gpt": "gpt-4o-mini",
     "gemini": "gemini-2.5-flash",
@@ -1105,15 +1166,23 @@ MODEL_IDS: dict[str, str] = {
     "qwen3_local": "qwen3:30b",
     "gemma4_local": "gemma4:latest",
     "simulated": "simulated",
-    # Free-tier cloud
-    "cerebras_qwen3": "qwen3-32b",
-    "sambanova_qwen25": "Qwen2.5-72B-Instruct",
-    "groq_llama33": "llama-3.3-70b-versatile",
-    # National models
-    "yandexgpt_local": "yandex/YandexGPT-5-Lite-8B-instruct-GGUF:Q4_K_M",
+    # Free-tier cloud — Chinese models
+    "cerebras_qwen3": "qwen-3-235b-a22b-instruct-2507",  # Qwen3-235B on Cerebras
+    "cerebras_glm": "zai-glm-4.7",                        # GLM-4.7 (Zhipu AI) on Cerebras
+    "sambanova_qwen3": "Qwen3-32B",                       # Qwen3-32B on SambaNova
+    "sambanova_deepseek": "DeepSeek-V3.2",                # DeepSeek V3.2 on SambaNova
+    "groq_kimi": "moonshotai/kimi-k2-instruct",           # Kimi K2 (Moonshot) on Groq
+    # Free-tier cloud — Western/baseline models
+    "groq_llama33": "llama-3.3-70b-versatile",            # Llama 3.3 70B on Groq
+    "grok": "grok-4-1-fast-non-reasoning",                  # Grok-4.1 fast (xAI, X/Twitter corpus)
+    # Free-tier cloud — National models
+    "sambanova_swallow": "Llama-3.3-Swallow-70B-Instruct-v0.4",  # Japanese 70B on SambaNova
+    "groq_allam": "allam-2-7b",                            # ALLaM-2 (SDAIA Saudi) on Groq
+    # Local Ollama — National models
+    "yandexgpt_local": "hf.co/yandex/YandexGPT-5-Lite-8B-instruct-GGUF:latest",
     "gigachat_local": "hf.co/ai-sage/GigaChat-20B-A3B-instruct-GGUF:Q4_K_M",
     "exaone_local": "hf.co/LGAI-EXAONE/EXAONE-4.0-32B-GGUF:Q4_K_M",
-    "swallow_local": "hf.co/mmnga/Llama-3.1-Swallow-8B-Instruct-v0.3-GGUF:Q4_K_M",
+    "swallow_local": "hf.co/mradermacher/Llama-3.1-Swallow-8B-Instruct-v0.3-GGUF:latest",
     "falcon_arabic_local": "hf.co/tiiuae/Falcon-H1-Arabic-7B-Instruct-GGUF:Q4_K_M",
     "qwen35_local": "qwen3.5:27b",
 }
