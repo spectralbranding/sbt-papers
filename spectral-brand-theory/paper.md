@@ -40,6 +40,8 @@ The gap is not in any single framework. It is structural: brand measurement coll
 
 Every other field that studies complex multi-attribute phenomena independently developed a construct for preserving this information — *dimensional decomposition*: the systematic separation of a complex signal into independent measurement channels.
 
+**Table 1.** Dimensional decomposition across fields. Brand perception theory is the only major domain studying multi-attribute phenomena that lacks a formal decomposition framework preserving observer-level information.
+
 | Domain | Decomposition Construct | Key Work |
 |:---|:---|:---|
 | Physics | Spectroscopy | Newton (1672), Fraunhofer (1814) |
@@ -49,8 +51,6 @@ Every other field that studies complex multi-attribute phenomena independently d
 | Signal processing | Fourier decomposition | Fourier (1822) |
 | Computational text analysis | Semantic Brand Score | Colladon (2018) |
 | **Brand perception theory** | **???** | **Single-score metrics collapse dimensions** |
-
-**Table 1.** Dimensional decomposition across fields. Brand perception theory is the only major domain studying multi-attribute phenomena that lacks a formal decomposition framework preserving observer-level information.
 
 The contribution of this paper is not the application of spectral methods to brands — it is the identification that brand perception measurement lacks dimensional decomposition, a construct every other field studying complex multi-attribute phenomena independently developed. The "spectral" label is descriptive: the eight dimensions are independent measurement channels, analogous to spectral bands in that each carries information the others cannot. The analogy names the construct; it does not claim that brands are literally like light.
 
@@ -84,6 +84,8 @@ This inversion has a philosophical precedent. Peirce's semiotics (1890s) establi
 
 SBT decomposes brand signals across eight dimensions, each representing a distinct channel through which observers perceive brand meaning:
 
+**Table 2.** The eight perceptual dimensions of brand signal architecture.
+
 | Dimension | Signal Type | Examples |
 |:----------|:------------|:---------|
 | **Semiotic** | Visual and sensory identity markers | Logo, name, colors, typography, packaging, sonic identity |
@@ -94,8 +96,6 @@ SBT decomposes brand signals across eight dimensions, each representing a distin
 | **Economic** | Price and value communication | Pricing strategy, discounting behavior, perceived value |
 | **Cultural** | Aesthetic and zeitgeist positioning | Design language, cultural references, humor, taste codes |
 | **Temporal** | Heritage and time-depth signals | History, heritage, generational continuity, era associations |
-
-**Table 2.** The eight perceptual dimensions of brand signal architecture.
 
 The eight dimensions emerged from a synthesis of prior frameworks. Kapferer's (2008) "physique" maps to the semiotic dimension; his "culture" maps to cultural and ideological; his "relationship" maps to experiential and social. Aaker's (1996) functional benefits map to experiential and economic; emotional benefits to social and cultural; self-expressive benefits to ideological and social. Holt's (2004) cultural branding theory maps to a combination of ideological and cultural dimensions, treating brands as cultural artifacts that derive meaning from their position in cultural discourse. De Chernatony & McDonald's (2003) brand management framework similarly addresses the multi-faceted nature of brand meaning but treats the facets as brand properties rather than observer-dependent perceptual channels. Floch's (1990) structural semiotics provides a complementary decomposition of the semiotic dimension, distinguishing practical, ludic, utopian, and critical valorizations that map to distinct sub-channels within SBT's semiotic-ideological space. Mick (1986) establishes the semiotic foundations for consumer research, demonstrating that brand signs operate through both denotative and connotative codes — a distinction SBT operationalizes through the designed/ambient signal classification. The temporal dimension — heritage and time-depth — appears in prior work as an attribute of specific brands but has not been modeled as a universal perceptual channel. Our exploratory analysis suggests it should be.
 
@@ -201,6 +201,8 @@ A brand's coherence is not the consistency of its messaging but the structural r
 
 Coherence is measured through a seven-metric scorecard:
 
+**Table 3.** The seven-metric spectral scorecard.
+
 | Metric | What It Measures |
 |:-------|:-----------------|
 | Dimensional coverage | How many dimensions the brand actively emits on |
@@ -210,8 +212,6 @@ Coherence is measured through a seven-metric scorecard:
 | Re-collapse resistance | Stability of convictions under disruption |
 | Emission efficiency | Signal-to-noise ratio of designed signals |
 | Designed/ambient ratio | Brand's control over its own signal environment |
-
-**Table 3.** The seven-metric spectral scorecard.
 
 ### 2.6 Formal Propositions
 
@@ -247,6 +247,8 @@ These five propositions are not exhaustive predictions of SBT; they formalize th
 
 We demonstrated SBT through structured analysis of five brands selected to span the brand architecture space:
 
+**Table 4.** Five case-study brands and selection rationale (exploratory demonstration).
+
 | Brand | Selection Rationale | Architecture Type |
 |:------|:----------------------------------|:------------------|
 | Patagonia | Mission-driven, ideological core, moderate scale | Identity coherence |
@@ -254,8 +256,6 @@ We demonstrated SBT through structured analysis of five brands selected to span 
 | IKEA | Global consistency, designed-signal dominance | Signal coherence |
 | Hermès | Scarcity-based luxury, structural absence strategy | Ecosystem coherence |
 | Erewhon | Hyperlocal niche, mediated perception dominance | Experiential asymmetry |
-
-**Table 4.** Five case-study brands and selection rationale (exploratory demonstration).
 
 The five brands were chosen to stress-test different properties of the framework: Patagonia tests ideological filtering; Tesla tests extreme observer divergence and ambient signal dominance; IKEA tests consistent signal architecture at global scale; Hermès tests scarcity-based value creation and cross-cohort interdependence; Erewhon tests the framework's minimum viable scale and mediated perception dynamics.
 
@@ -350,13 +350,13 @@ We formalize this as **structural absence**: the deliberate withholding of signa
 
 SBT introduces a three-type emission taxonomy:
 
+**Table 6.** Three emission types in the spectral model.
+
 | Emission Type | Mechanism | Signal Present? | Example |
 |:-------------|:-------------------------------|:----------------|:-------------------------------|
 | Positive | Brand actively emits signal | Yes | Product launch, campaign |
 | Null | Signal absent, unintentional | No (neglect) | Unused heritage, dormant dimension |
 | Structural absence | Designed restriction functions as signal | No (strategy) | Wait list, no discounts, geographic scarcity |
-
-**Table 6.** Three emission types in the spectral model.
 
 The key mechanism is cross-dimensional: restriction on one dimension generates a signal on a different dimension. Economic restriction (never discounting) produces a social signal — the product exists outside normal market forces, inverting Veblen's (1899) conspicuous consumption from display of spending to display of access. Experiential restriction (in-store purchase only) produces an economic signal (difficulty of access justifies the price). Social restriction (purchase rituals, relationship requirements) produces an experiential signal (the restriction process *is* the brand experience).
 
@@ -376,6 +376,8 @@ The contrast effect amplifies the perceived weight of signals that exist in the 
 
 Traditional brand analysis treats coherence as a single variable from low to high: how consistently is the brand perceived across audiences? Our five-brand exploratory analysis suggests that coherence is not a single variable but a structural property that comes in five qualitatively distinct types, each with different resilience profiles.
 
+**Table 7.** Five-type coherence taxonomy with resilience profiles.
+
 | Coherence Type | Grade | Pattern | Resilience Profile | Brand |
 |:--------------|:------|:--------------------------------------|:--------------------------------------|:------|
 | Ecosystem | A+ | Different clouds reinforce through functional interdependence | Selective — absorbs disruption by purification | Hermès |
@@ -383,8 +385,6 @@ Traditional brand analysis treats coherence as a single variable from low to hig
 | Identity | B+ | Ideological core filters cohort compatibility | Binary — divides along ideology | Patagonia |
 | Experiential asymmetry | B- | Evidence gap between direct and mediated observers | Geographic — different impact by location | Erewhon |
 | Incoherent | C- | Contradictory signals → irreconcilable clouds | Amplifying — widens existing cracks | Tesla |
-
-**Table 7.** Five-type coherence taxonomy with resilience profiles.
 
 (The letter grades reported here are L2 rendered outputs — human-readable projections of the multi-dimensional spectral profile onto a disruption resilience scale. The underlying coherence classification is nominal (structural type); the grade projects the typical resilience mechanism of each type for practitioner reference. Different spectral profiles can project to the same grade (spectral metamerism); the full L1 spectral profiles are reported in Section 3.3.)
 
@@ -454,14 +454,14 @@ This asymmetry has a critical resilience implication. In our disruption simulati
 
 The strategic implication is stark: resources spent attempting to convert structurally locked negative cohorts are wasted. The Boycotter's experiential gate is effectively closed (0.03 weight). No test drive campaign will reach them because they are not evaluating the product — they are evaluating the ideology. Brands with locked negative cohorts must accept the structural constraint and invest in addressable cohorts instead.
 
+**Table 8.** Asymmetric conviction resilience (Tesla case): evidence-rich Loyalist vs. evidence-free Boycotter.
+
 | | **Tech Loyalist** | **Progressive Boycotter** |
 |:--|:--|:--|
 | **Top weights** | Experiential: 0.35, Economic: 0.20 | Ideological: 0.45, Social: 0.20 |
 | **Experiential** | 0.15 (extensive product data) | 0.03 (no product contact) |
 | **Confidence** | 0.78 (mixed signals = ambivalence) | 0.82 (no contradiction = certainty) |
 | **Crisis effect** | Weakens (new evidence conflicts) | Strengthens (confirms prior belief) |
-
-**Table 8.** Asymmetric conviction resilience (Tesla case): evidence-rich Loyalist vs. evidence-free Boycotter.
 
 ### 4.4 Brand Power and Brand Health as Independent Variables
 
@@ -471,6 +471,8 @@ The five-brand exploratory analysis produces a finding that inverts conventional
 
 \newpage
 
+**Table 9.** Five-brand scorecard: brand power versus spectral health.
+
 | Brand | Power | Health | D/A | Gap |
 |:----------|:------------------------------|:----------|:------|:------------------------|
 | Tesla | Highest (universal awareness) | C- | 30/65 | Maximum inversion |
@@ -478,8 +480,6 @@ The five-brand exploratory analysis produces a finding that inverts conventional
 | IKEA | High (global, ubiquitous) | A- | 75/25 | Consistent alignment |
 | Patagonia | Moderate (category-bound) | B+ | 65/30 | Ideological filter |
 | Erewhon | Low-moderate (hyperlocal) | B- | 40/55 | Scale floor |
-
-**Table 9.** Five-brand scorecard: brand power versus spectral health.
 
 Traditional frameworks — BrandAsset Valuator (BAV), Interbrand's brand strength methodology, Keller's brand equity pyramid — measure dimensions of power: differentiation, relevance, esteem, knowledge, awareness, consideration. By these metrics, Tesla is among the world's most valuable brands. Seven of eight dimensions emit at strength 4 or higher. Gate permeability is 10/10 — everyone knows the brand.
 
