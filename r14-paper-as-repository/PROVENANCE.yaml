@@ -44,3 +44,18 @@ provenance:
       notes: >
         Diamond OA (no APC). Theory article. Double-anonymous review.
         Iowa State University Digital Press.
+
+    - id: "update-2026-04-05-zenodo-v1.2"
+      target: "Zenodo"
+      target_type: preprint_server
+      created: "2026-04-05"
+      source_commit: "main"
+      status: pending
+      outcome: pending_upload
+      identifiers:
+        doi: "10.5281/zenodo.19294864"
+      notes: >
+        v1.2 preprint update. Added Section 2.13: Research Wiki —
+        Karpathy (2026) three-layer pattern adapted for research.
+        Five intellectual work proof types. Correspondence handling.
+        ~17,600 words, 36 references. PDF 555K.

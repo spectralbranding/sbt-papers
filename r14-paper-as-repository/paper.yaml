@@ -10,8 +10,8 @@ meta:
       affiliation: "Independent Researcher"
   doi: "10.5281/zenodo.19294864"
   date: "2026-04-02"
-  version: "1.1"
-  venue: "Zenodo preprint (JASIST desk-rejected 2026-04-02; next: JEP)"
+  version: "1.2"
+  venue: "Zenodo preprint (JASIST desk-rejected 2026-04-02; submitted JLSC 2026-04-02)"
   license: "CC-BY-NC-ND-4.0"
   keywords:
     - scientific publishing
@@ -117,9 +117,10 @@ methodology:
     analysis (Ohno, 1988; Womack & Jones, 1996) to scientific publishing, identifying five
     structural gaps in the document-based paradigm (no version history, no contributor
     traceability, no submission provenance, no review attribution, no machine interface).
-    The protocol is specified across eleven subsections (2.1-2.11) covering repository
+    The protocol is specified across thirteen subsections (2.1-2.13) covering repository
     structure, fork-based submission, compliance gate, blinding, review, reviewer ownership,
-    provenance, collections, federation, AI-native layer, and normative specification roadmap.
+    provenance, collections, federation, AI-native layer, normative specification roadmap,
+    and the research wiki (structured knowledge accumulation with intellectual work proofs).
     A comparative analysis against twelve existing systems (Table 1a) demonstrates that no
     prior system integrates all six protocol features.
   analysis:
@@ -305,12 +306,19 @@ submission_history:
       Desk rejection #1. Editor: Dr. Steve Sawyer. Reason: "not clear that the
       work draws on information science literature." Paper read as software
       engineering import. ~6,312 words body, 40 refs. Single-blind. ScholarOne.
-  - venue: "Journal of Electronic Publishing (JEP, U of Michigan)"
-    date: null
-    status: "pending_reformat"
-    manuscript_id: null
+  - venue: "JLSC (Journal of Librarianship and Scholarly Communication)"
+    date: "2026-04-02"
+    status: "under_review"
+    manuscript_id: "25252"
     doi: ""
     notes: >
-      Venue #2. Diamond OA (no APC). 30-year history of publishing innovation.
-      Reframing: lead with "publishing lacks version control" gap. ~6,000 word
-      compressed version at export/R14-paper-repository/jep/.
+      Venue #2. Diamond OA (no APC). Double-anonymous. Theory article.
+      Cross-domain reframing, Stodden + Altman refs added, structured abstract.
+  - venue: "Zenodo"
+    date: "2026-04-05"
+    status: "pending_upload"
+    doi: "10.5281/zenodo.19294864"
+    notes: >
+      v1.2 update. Section 2.13 added: Research Wiki (Karpathy 2026 pattern),
+      five intellectual work proof types, correspondence handling, LLM maintenance.
+      ~17,600 words, 36 references. PDF 555K.
