@@ -39,11 +39,18 @@ Eight companion papers establishing formal mathematical foundations for SBT, plu
 |-----|-------|------------|--------|
 | R13 | [Paper as Specification: A Machine-Readable Standard for Scientific Claims](r13-paper-as-specification/paper.md) | [10.5281/zenodo.19210037](https://doi.org/10.5281/zenodo.19210037) | QSS (submitted) |
 
+### Empirical
+
+| Key | Paper | Zenodo DOI | Status |
+|-----|-------|------------|--------|
+| R15 | [Spectral Metamerism in AI-Mediated Brand Perception](r15-ai-search-metamerism/paper.md) | [10.5281/zenodo.19422427](https://doi.org/10.5281/zenodo.19422427) | JAR (submitted) |
+
 ### AI-Era Extensions
 
 | Key | Paper | Zenodo DOI | Status |
 |-----|-------|------------|--------|
-| R16 | [AI-Native Brand Identity: From Visual Recognition to Cryptographic Verification](r16-ai-native-brand-identity/paper.md) | [10.5281/zenodo.19391476](https://doi.org/10.5281/zenodo.19391476) | Preprint |
+| R16 | [AI-Native Brand Identity: From Visual Recognition to Cryptographic Verification](r16-ai-native-brand-identity/paper.md) | [10.5281/zenodo.19391476](https://doi.org/10.5281/zenodo.19391476) | JIM (pending) |
+| R17 | [Brand Triangulation: A Geometric Framework for Multi-Observer Brand Positioning](r17-brand-triangulation/paper.md) | Zenodo pending | Preprint |
 
 ### Cross-Framework Synthesis
 
