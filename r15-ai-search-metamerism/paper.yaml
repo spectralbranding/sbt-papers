@@ -15,7 +15,7 @@ metadata:
   doi: "10.5281/zenodo.19422427"
   date: "2026-04-04"
   version: "1.0"
-  status: working_paper
+  status: preprint  # v1.0 published on Zenodo 2026-04-04; Run 5 cross-cultural pending (v1.1)
   license: "CC-BY-NC-ND-4.0"
   keywords:
     - AI-mediated search
@@ -32,11 +32,11 @@ claims:
     type: hypothesis
     statement: >
       LLMs assign systematically higher implicit weights to Economic and
-      Experiential dimensions than to Narrative, Ideological, Cultural,
-      and Temporal dimensions when processing brand comparison queries.
+      Semiotic dimensions than to Narrative, Ideological, Cultural, and
+      Temporal dimensions when processing brand comparison queries.
     testable: true
     tested_in_paper: true
-    status: proposed
+    status: supported  # global DCI = 0.291 vs 0.250 baseline, p = 0.0170; local DCI = 0.353, p = 0.0006
     falsification: >
       H1 is falsified if LLM spectral profiles show uniform or near-uniform
       dimensional weights (no statistically significant departure from equal
@@ -48,15 +48,15 @@ claims:
     statement: >
       Brand pairs that are spectrally distinct to human observers on Narrative,
       Ideological, Cultural, or Temporal dimensions become functionally
-      equivalent in LLM-mediated recommendations.
+      equivalent in LLM-mediated recommendations, producing cross-model
+      convergence in dimensional weight profiles.
     testable: true
     tested_in_paper: true
-    status: proposed
+    status: supported  # cosine similarity across 6 architectures = 0.975; collapse structural not model-specific
     falsification: >
-      H2 is falsified if fewer than 30% of brand pairs classified as metameric
-      based on differentiating on "soft" dimensions actually show collapsed
-      spectral distances in LLM perception. If LLMs preserve differentiation
-      on perception-dependent dimensions, metameric collapse is not systematic.
+      H2 is falsified if pairwise cosine similarity of spectral profiles across
+      LLM architectures is low (< 0.70), indicating that dimensional collapse
+      is model-specific rather than structural.
     depends_on: [H1]
 
   - id: H3
@@ -68,51 +68,78 @@ claims:
       constituting distinct AI observer cohorts.
     testable: true
     tested_in_paper: true
-    status: proposed
+    status: not_supported  # MANOVA: cross-model heterogeneity non-significant; collapse uniform across architectures
     falsification: >
       H3 is falsified if MANOVA shows no significant effect of model identity
       on the eight-dimensional weight vector (p > 0.05), indicating that all
-      seven LLMs produce statistically indistinguishable spectral profiles.
+      six LLMs produce statistically indistinguishable spectral profiles.
+      [This is the actual result: H3 not supported.]
     depends_on: []
+
+  - id: H4
+    type: hypothesis
+    statement: >
+      Among the soft dimensions (Narrative, Ideological, Cultural, Temporal),
+      collapse is differential rather than uniform: Narrative and Ideological
+      dimensions collapse more severely than Cultural and Temporal dimensions
+      because they are harder to operationalize in training data.
+    testable: true
+    tested_in_paper: true
+    status: not_supported  # collapse is approximately uniform across all soft dimensions
+    falsification: >
+      H4 is falsified if paired t-tests show no significant between-soft-dimension
+      differences in collapse rates, indicating uniform rather than differential
+      collapse across Narrative, Ideological, Cultural, and Temporal dimensions.
+      [This is the actual result: H4 not supported; collapse is uniform.]
+    depends_on: [H1]
 
 methodology:
   type: empirical
   design: >
-    Prompt-based experimental design measuring implicit spectral profiles of
-    seven LLMs across ten brand pairs. Three prompt types (recommendation,
-    differentiation, dimension-specific probes) administered five times per
-    model at temperature 0.7.
+    Structured weight elicitation design measuring implicit spectral profiles of
+    six LLMs (Qwen Plus excluded due to persistent 403 errors) across fifteen
+    brand pairs: ten globally recognized pairs (Run 2, 3,240 API calls) and five
+    locally embedded pairs from small non-English-speaking markets (Run 3, 1,620
+    API calls). A Brand Function resolution test (Run 4, 90 calls) demonstrates
+    that providing behavioral specifications reduces local-brand collapse by 20%.
+    Models directly allocate 100 points across SBT's eight dimensions via
+    structured JSON output, eliminating human coding. Three prompt types:
+    weighted recommendation, dimensional differentiation, and dimension-specific
+    probes. Each prompt administered 3 times per model at temperature 0.7.
+    Total: 4,860 API calls across Runs 2, 3, and 4.
   sample:
-    size: 3850
-    description: "1,050 organic responses + 2,800 calibration responses"
-    models: 7
-    brand_pairs: 10
+    size: 4860  # Run 2: 3,240 (10 global pairs) + Run 3: 1,620 (5 local pairs) + Run 4: 90 (brand function test)
+    description: "3,240 global brand calls + 1,620 local brand calls + 90 Brand Function resolution calls"
+    models: 6  # Qwen Plus excluded; final: Claude Sonnet 4.6, GPT-4o, Gemini 2.5 Flash, DeepSeek V3, Qwen3 30B, Gemma 4 27B
+    brand_pairs: 15  # 10 global + 5 local
   measures:
-    - variable: "dimensional_coverage"
-      instrument: "Human coding of dimensional presence/intensity (0-10 scale)"
-      reliability: "Target: Cohen's kappa > 0.80 (presence), ICC > 0.75 (intensity)"
-    - variable: "spectral_distance"
-      instrument: "Euclidean distance in 8-dimensional intensity space"
-    - variable: "metameric_pair_classification"
-      instrument: "Distance threshold (1 SD below human-perceived mean)"
+    - variable: "dimensional_weight_allocation"
+      instrument: "Structured JSON weight allocation (100 points across 8 SBT dimensions)"
+      reliability: "Automated parsing; < 3% call failure rate; renormalization applied"
+    - variable: "dimensional_collapse_index"
+      instrument: "DCI = (w_Economic + w_Semiotic) / 100; baseline 0.250 under uniform allocation"
+    - variable: "cross_model_convergence"
+      instrument: "Pairwise cosine similarity of 8D spectral profiles across LLM pairs"
   analysis:
     primary:
-      - "One-sample t-test per dimension against uniform benchmark (H1)"
-      - "Euclidean spectral distance comparison against human benchmarks (H2)"
+      - "One-sample t-test of DCI against 0.250 baseline (H1)"
+      - "Pairwise cosine similarity across 6 model spectral profiles (H2)"
       - "MANOVA with model identity as IV, 8D weight vector as DV (H3)"
-      - "Two planned contrasts: Qwen Plus vs Qwen3 30B, Gemini vs Gemma 4"
+      - "Paired t-tests on mean dimensional weights within soft-dimension set (H4)"
+      - "Conditional metamerism: independent samples t-test, global vs. local DCI"
     secondary:
       - "Johnson-Lindenstrauss information loss quantification"
-      - "Spectral entropy comparison (LLM vs human profiles)"
+      - "Brand Function resolution: DCI change with behavioral specifications (Run 4)"
+      - "Planned contrast: Gemini Flash (cloud) vs. Gemma 4 (local) — alignment-layer effect"
     software: "Python 3.12, scipy, numpy"
   tools:
     - "Python 3.12 (experiment script)"
     - "Anthropic API (Claude Sonnet 4.6)"
-    - "OpenAI API (GPT-4o-mini)"
+    - "OpenAI API (GPT-4o)"
     - "Google AI Studio (Gemini 2.5 Flash)"
     - "DeepSeek API (DeepSeek V3)"
-    - "DashScope API (Qwen Plus)"
     - "Ollama (Qwen3 30B, Gemma 4 27B)"
+    - "DashScope API (Qwen Plus) — excluded; 403 authentication errors"
 
 dependencies:
   - citation: "Zharnikov (2026a)"
@@ -168,11 +195,24 @@ limitations:
     addressable: true
 
 submission_history:
+  - venue: "Zenodo"
+    type: preprint
+    date: "2026-04-04"
+    status: published
+    doi: "10.5281/zenodo.19422427"
+    note: >
+      v1.0 preprint. 7 sections, 4 hypotheses (H1+H2 supported, H3+H4 not supported).
+      4,860 API calls, 15 brand pairs, 6 LLMs. Grok review fixes applied: SBT positioning
+      clarified, H3/H4 reframed as expected null, tone softened, Brakus et al. (2009) added.
+      Run 5 cross-cultural expansion pending (~Apr 8): 7 additional pairs across China, Japan,
+      UAE, Russia, Ukraine, Mongolia, South Korea. All 7 models including Qwen Plus. ~4,038
+      additional calls. v1.1 expected after Run 5 completion.
+
   - venue: "Journal of Advertising Research"
     type: journal
     date: null
     status: planned
-    note: "Special call: Insights on the future of search-related advertising and AI"
+    note: "Special call: Insights on the future of search-related advertising and AI. Submit after Run 5 data integrated (v1.1)."
 
 ai_disclosure: >
   AI tools (Claude, Anthropic) were used for manuscript drafting, hypothesis

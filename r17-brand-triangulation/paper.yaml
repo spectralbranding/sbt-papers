@@ -353,6 +353,6 @@ submission_history:
     status: "pending_upload"
     doi: ""
     notes: >
-      v1.0 preprint. 12 sections, 6 propositions, 45 references. ~14,263 words. PDF generation in progress.
+      v1.0 preprint. 12 sections, 6 propositions, 46 references. ~14,263 words.
       Target journals: Marketing Science (primary), Journal of Marketing Research (fallback).
       After Zenodo publication, submission timeline: April 2026 (allow 3–4 weeks for decision).
