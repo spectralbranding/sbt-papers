@@ -461,6 +461,18 @@ CROSSCULTURAL_BRAND_PAIRS: list[BrandPair] = [
                     "Flavored Milk is a K-culture icon). Tests EXAONE Korean training "
                     "advantage and K-culture halo effect in perception.",
     ),
+    BrandPair(
+        id="india_dairy",
+        brand_a="Amul",
+        brand_b="Danone",
+        category="dairy products",
+        differentiating_dims=["cultural", "ideological", "narrative"],
+        dim_type="soft",
+        description="Amul is India's largest dairy cooperative (est. 1946, Gujarat, "
+                    "'The Taste of India', Operation Flood). Deep cultural significance "
+                    "across 22 Indian languages. Tests Sarvam-105B Indian training "
+                    "advantage vs Western models on Narrative and Cultural dimensions.",
+    ),
 ]
 
 
@@ -995,17 +1007,73 @@ def call_groq(prompt: str, model: str = "llama-3.3-70b-versatile") -> str:
 
 
 def call_groq_allam(prompt: str, model: str = "allam-2-7b") -> str:
-    """Call ALLaM-2-7B via Groq (SDAIA Saudi, Arabic-primary, free tier)."""
-    return _call_openai_compatible(
-        prompt, model, "GROQ_API_KEY", "https://api.groq.com/openai/v1"
+    """Call ALLaM-2-7B via Groq (SDAIA Saudi, Arabic-primary, free tier).
+
+    ALLaM-2-7B (7B params) needs stricter JSON instruction than larger models.
+    Uses a system message to enforce JSON-only output.
+    """
+    from openai import OpenAI
+
+    client = OpenAI(
+        api_key=os.environ["GROQ_API_KEY"],
+        base_url="https://api.groq.com/openai/v1",
     )
+    response = client.chat.completions.create(
+        model=model,
+        messages=[
+            {
+                "role": "system",
+                "content": (
+                    "You are a brand analysis assistant. You MUST respond with "
+                    "ONLY a valid JSON object. No markdown, no explanation, no "
+                    "text before or after the JSON. Start your response with { "
+                    "and end with }."
+                ),
+            },
+            {"role": "user", "content": prompt},
+        ],
+        max_tokens=2048,
+        temperature=0.7,
+    )
+    return response.choices[0].message.content
 
 
 def call_groq_kimi(prompt: str, model: str = "moonshotai/kimi-k2-instruct") -> str:
-    """Call Kimi K2 via Groq (Moonshot AI, Chinese, free tier)."""
-    return _call_openai_compatible(
-        prompt, model, "GROQ_API_KEY", "https://api.groq.com/openai/v1"
+    """Call Kimi K2 via Groq (Moonshot AI, Chinese, free tier).
+
+    Kimi K2 tends to reason extensively before producing JSON. Uses system
+    message to enforce JSON-only output format.
+    """
+    from openai import OpenAI
+
+    client = OpenAI(
+        api_key=os.environ["GROQ_API_KEY"],
+        base_url="https://api.groq.com/openai/v1",
     )
+    response = client.chat.completions.create(
+        model=model,
+        messages=[
+            {
+                "role": "system",
+                "content": (
+                    "You are a brand analysis assistant. You MUST respond with "
+                    "ONLY a valid JSON object. No markdown, no explanation, no "
+                    "text before or after the JSON. Start your response with { "
+                    "and end with }."
+                ),
+            },
+            {"role": "user", "content": prompt},
+        ],
+        max_tokens=2048,
+        temperature=0.7,
+    )
+    content = response.choices[0].message.content or ""
+    # Strip thinking tags if present
+    import re as _re
+    content = _re.sub(r"<think>.*?</think>", "", content, flags=_re.DOTALL).strip()
+    content = _re.sub(r"```(?:json)?\s*", "", content).strip()
+    content = _re.sub(r"```\s*$", "", content).strip()
+    return content
 
 
 def call_grok(prompt: str, model: str = "grok-4-1-fast-non-reasoning") -> str:
@@ -1013,6 +1081,35 @@ def call_grok(prompt: str, model: str = "grok-4-1-fast-non-reasoning") -> str:
     return _call_openai_compatible(
         prompt, model, "GROK_API_KEY", "https://api.x.ai/v1"
     )
+
+
+def call_sarvam(prompt: str, model: str = "sarvam-105b") -> str:
+    """Call Sarvam 105B via Indus API (Indian, Sarvam AI, Apache 2.0, free tier).
+
+    Sarvam-105B: 105B MoE (10.3B active), trained from scratch on 12T tokens.
+    State-of-the-art Indian language performance (22 languages).
+    OpenAI-compatible but uses api-subscription-key header instead of Bearer.
+    """
+    key = os.environ["SARVAM_API_KEY"]
+    payload = json.dumps(
+        {
+            "model": model,
+            "messages": [{"role": "user", "content": prompt}],
+            "max_tokens": 2048,
+            "temperature": 0.7,
+        }
+    ).encode()
+    req = urllib.request.Request(
+        "https://api.sarvam.ai/v1/chat/completions",
+        data=payload,
+        headers={
+            "Content-Type": "application/json",
+            "api-subscription-key": key,
+        },
+    )
+    with urllib.request.urlopen(req, timeout=120) as resp:
+        data = json.loads(resp.read())
+    return data["choices"][0]["message"]["content"]
 
 
 # ---------------------------------------------------------------------------
@@ -1049,7 +1146,7 @@ def _call_ollama_model(prompt: str, model: str, no_think: bool = False) -> str:
 
 def call_yandexgpt_local(
     prompt: str,
-    model: str = "yandex/YandexGPT-5-Lite-8B-instruct-GGUF:Q4_K_M",
+    model: str = "hf.co/yandex/YandexGPT-5-Lite-8B-instruct-GGUF:latest",
 ) -> str:
     """Call YandexGPT 5 Lite 8B via local Ollama (Russian cultural training)."""
     return _call_ollama_model(prompt, model)
@@ -1057,9 +1154,13 @@ def call_yandexgpt_local(
 
 def call_gigachat_local(
     prompt: str,
-    model: str = "hf.co/ai-sage/GigaChat-20B-A3B-instruct-GGUF:Q4_K_M",
+    model: str = "hf.co/ai-sage/GigaChat3.1-10B-A1.8B-GGUF:latest",
 ) -> str:
-    """Call GigaChat 20B-A3B via local Ollama (Russian, Sber, MIT license)."""
+    """Call GigaChat 3.1 Lightning via local Ollama (Russian, Sber, MIT license).
+
+    Replaces GigaChat 20B-A3B (3B active params, too small for JSON).
+    GigaChat 3.1 Lightning: 10B total, 1.8B active, better JSON compliance.
+    """
     return _call_ollama_model(prompt, model)
 
 
@@ -1121,9 +1222,10 @@ API_CALLERS: dict[str, Any] = {
     "groq_allam": call_groq_allam,              # ALLaM-2-7B (Saudi/Arabic) via Groq
     "groq_kimi": call_groq_kimi,                # Kimi K2 (Moonshot AI, Chinese) via Groq
     "grok": call_grok,                          # Grok-3-mini (xAI, X/Twitter corpus)
+    "sarvam": call_sarvam,                      # Sarvam-105B (Indian, Sarvam AI, Indus API)
     # National models - local Ollama (Run 5+)
     "yandexgpt_local": call_yandexgpt_local,    # YandexGPT 5 Lite 8B (Russian)
-    "gigachat_local": call_gigachat_local,       # GigaChat 20B-A3B (Russian, Sber)
+    "gigachat_local": call_gigachat_local,       # GigaChat 3.1 Lightning (Russian, Sber)
     "exaone_local": call_exaone_local,           # EXAONE 4.0 32B (Korean, LG AI)
     "swallow_local": call_swallow_local,         # Swallow 8B (Japanese, Tokyo Tech)
     "falcon_arabic_local": call_falcon_arabic_local, # Falcon-H1-Arabic 7B (Arabic, TII)
@@ -1148,6 +1250,7 @@ API_KEY_VARS: dict[str, str] = {
     "groq_allam": "GROQ_API_KEY",
     "groq_kimi": "GROQ_API_KEY",
     "grok": "GROK_API_KEY",
+    "sarvam": "SARVAM_API_KEY",
     # National models - local
     "yandexgpt_local": "OLLAMA_AVAILABLE",
     "gigachat_local": "OLLAMA_AVAILABLE",
@@ -1175,12 +1278,13 @@ MODEL_IDS: dict[str, str] = {
     # Free-tier cloud — Western/baseline models
     "groq_llama33": "llama-3.3-70b-versatile",            # Llama 3.3 70B on Groq
     "grok": "grok-4-1-fast-non-reasoning",                  # Grok-4.1 fast (xAI, X/Twitter corpus)
+    "sarvam": "sarvam-105b",                                  # Sarvam-105B (Indian, Sarvam AI, Indus API)
     # Free-tier cloud — National models
     "sambanova_swallow": "Llama-3.3-Swallow-70B-Instruct-v0.4",  # Japanese 70B on SambaNova
     "groq_allam": "allam-2-7b",                            # ALLaM-2 (SDAIA Saudi) on Groq
     # Local Ollama — National models
     "yandexgpt_local": "hf.co/yandex/YandexGPT-5-Lite-8B-instruct-GGUF:latest",
-    "gigachat_local": "hf.co/ai-sage/GigaChat-20B-A3B-instruct-GGUF:Q4_K_M",
+    "gigachat_local": "hf.co/ai-sage/GigaChat3.1-10B-A1.8B-GGUF:latest",
     "exaone_local": "hf.co/LGAI-EXAONE/EXAONE-4.0-32B-GGUF:Q4_K_M",
     "swallow_local": "hf.co/mradermacher/Llama-3.1-Swallow-8B-Instruct-v0.3-GGUF:latest",
     "falcon_arabic_local": "hf.co/tiiuae/Falcon-H1-Arabic-7B-Instruct-GGUF:Q4_K_M",
