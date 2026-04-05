@@ -23,6 +23,10 @@
 
 **H8 (Thin-Data Floor)**: APU Chinggis (Mongolia) will have the highest DCI across all models, establishing a floor for dimensional collapse when training data is near-zero.
 
+**H9 (Capacity-Dependent Collapse)**: Smaller models (7-8B) will exhibit higher DCI than larger models (30B+) from the same culture, suggesting dimensional collapse is partially a function of model capacity rather than solely training data distribution. Testable pairs: Swallow 8B vs 70B (Japanese), ALLaM 7B vs Jais 70B (Arabic), YandexGPT 8B vs YandexGPT 5 Pro (Russian), Qwen3 30B vs Qwen3-235B (Chinese).
+
+**H10 (Prompt Language Effect)**: Culture-matched models prompted in their native language will show lower DCI for local brands than the same models prompted in English. The magnitude of this effect will be larger for models with smaller parameter counts. Test: within-model paired comparison of English vs native-language weighted_recommendation prompts on culture-matched brand pairs.
+
 ## 2. Design
 
 ### 2.1 Brand Pairs
@@ -74,9 +78,24 @@ Temperature: 0.7 (same as Runs 2-4)
 Max tokens: 2048 (same as Runs 2-4, except Qwen3 local: 4096)
 Runs per prompt: 3 (same as Runs 2-4)
 
-### 2.5 Sample Size
-- 8 pairs x 18 prompts/pair x 3 runs x ~15 models = ~6,480 calls
-- With Runs 2-4 carried forward (4,860 calls), total dataset: ~11,340 calls
+### 2.5 Native-Language Prompt Condition (H10)
+
+For culture-matched model-brand pairs, the weighted_recommendation prompt is also run in the model's native language. This tests whether dimensional collapse is an artifact of English prompting vs a property of the model's cultural knowledge.
+
+Design: within-model paired comparison (English vs native on the same brand pair).
+Only weighted_recommendation is translated (primary DCI measure). Differentiation and probes remain English for JSON parse reliability.
+JSON keys stay in English across all languages for consistent parsing. Only instructional text and dimension descriptions are translated.
+Translations are manual, not machine-generated.
+
+Languages: Chinese (zh), Russian (ru), Japanese (ja), Korean (ko), Arabic (ar), Hindi (hi).
+Native calls per model: 1 native brand pair x 1 prompt x 3 runs = 3 additional calls per culture-matched model.
+Total native calls: ~6 model-culture matches x 3 runs = ~18 additional calls.
+
+### 2.6 Sample Size
+- English: 8 pairs x 18 prompts/pair x 3 runs x ~21 models = ~9,072 calls
+- Native-language: ~18 additional calls (culture-matched weighted_recommendation only)
+- Total Run 5: ~9,090 calls
+- With Runs 2-4 carried forward (4,860 calls), total dataset: ~13,950 calls
 
 ## 3. Analysis Plan
 
