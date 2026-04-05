@@ -22,6 +22,9 @@ provenance:
     - version: "1.4"
       date: "2026-04-04"
       description: "R15 companion evidence (9), admissibility binary/gradient fix (7.2), kappa caveat (8), review C1 resolved"
+    - version: "1.5"
+      date: "2026-04-05"
+      description: "Medesani & Macdonald (2026) invariant corridor formalization in Section 7.2, tri-binding admissibility, updated Acknowledgments"
 
   forks:
     - id: "fork-2026-04-02-zenodo"
@@ -34,7 +37,7 @@ provenance:
       identifiers:
         doi: "10.5281/zenodo.19391476"
         community: ["spectral-branding"]
-      note: "v1.2 on Zenodo — upload v1.4 PDF pending"
+      note: "v1.4 uploaded 2026-04-05; v1.5 pending upload"
 
   target_venue:
     journal: "Journal of Interactive Marketing"
