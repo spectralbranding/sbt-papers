@@ -7,8 +7,8 @@ authors:
     affiliation: "Independent Researcher"
     orcid: "https://orcid.org/0009-0000-6893-9231"
 title: "Research as Repository: A Git-Native Protocol for Scientific Knowledge Production"
-version: 1.0.0
-date-released: 2026-03-28
+version: 1.2.0
+date-released: 2026-04-05
 url: "https://doi.org/10.5281/zenodo.19294864"
 repository-code: "https://github.com/spectralbranding/sbt-papers"
 identifiers:

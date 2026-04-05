@@ -918,6 +918,82 @@ The normative specification would contain four structural components:
 
 The normative specification is future work. It requires multi-stakeholder input from publishers (who must implement fork acceptance and review branch management), libraries (who must implement collection curation and long-term preservation), platform providers (who must implement the federation protocol), and researchers (who must validate that the specification serves their workflows without imposing unreasonable burden). The governance model — whether the specification is maintained by an existing standards body (NISO, W3C, IETF) or a new consortium — is itself a design decision that affects adoption. The conceptual architecture in this paper is the necessary prerequisite: one must know what the protocol does before specifying how it does it.
 
+### 2.13 The Research Wiki: Structured Knowledge Accumulation
+
+The repository protocol addresses how research is built, evaluated, and decided upon. It does not address how the researcher *organizes the knowledge that informs the research* — the literature, the sources, the correspondence, the evolving understanding that precedes and surrounds the paper. This gap is currently filled by reference managers (Zotero, Mendeley, EndNote) that operate outside the research repository: no version control, no provenance chain, no structural integration with the paper's claims. The researcher's intellectual process — what was read, when, in what order, and how it influenced the argument — is invisible.
+
+Karpathy (2026) proposes a three-layer pattern for personal knowledge management: raw sources (immutable ground truth), a wiki (LLM-maintained structured knowledge), and a schema (specification governing what the wiki tracks). The pattern applies directly to research: the sources are the literature and data the researcher consults; the wiki is the organized, cross-referenced understanding; the schema defines the research program's knowledge structure.
+
+We propose an optional `.wiki/` directory within the research repository:
+
+```
+research-repo/
+  paper.md
+  paper.yaml
+  experiment/
+  .wiki/                          # Research knowledge base
+    schema.yaml                   # What to track and how to organize
+    sources/                      # Raw materials (PDFs, URLs-as-markdown, datasets)
+    pages/                        # LLM-maintained wiki pages (by topic, author, concept)
+    correspondence/               # Emails, messages, reviews (redactable)
+    ingest.jsonl                  # Chronological source ingestion log
+    contradictions.md             # Sources that conflict with paper's claims
+    .gitignore                    # Optional: exclude large PDFs from public push
+```
+
+The `.wiki/` directory is dot-prefixed by convention (hidden in standard directory listings) and can be selectively excluded from public repository access via `.gitignore` while retaining full git history locally. The researcher controls what is shared. The provenance chain — *when* each source was added, *what* was read, *how* the understanding evolved — is preserved regardless.
+
+#### 2.13.1 Intellectual Work Proofs
+
+The research wiki creates five structurally distinct types of intellectual work proof, each addressing a different verification need. All derive from git's cryptographic properties: every commit is SHA-256 hashed, timestamped, and signed, creating a tamper-evident chain.
+
+**Discovery proof.** When was a source first encountered? The `ingest.jsonl` log records each source addition with a timestamp, file hash, and optional annotation. A researcher who adds `smith-2024-brand-equity.pdf` on February 12 has a cryptographically verifiable record of access to that source on that date. This is currently unprovable — reference managers record when a citation was added to a library, but not when the source was actually read or consulted, and the record is not tamper-evident.
+
+```jsonl
+{"timestamp": "2026-02-12T14:23:07Z", "action": "ingest", "source": "smith-2024-brand-equity.pdf", "sha256": "a3f2...", "note": "Found via backward citation from Jones (2023). Relevant to H2."}
+{"timestamp": "2026-02-15T09:41:33Z", "action": "ingest", "source": "https://doi.org/10.1234/example", "sha256": "b7c1...", "note": "Peters (2019) ergodicity framework. Restructures Section 3 argument."}
+```
+
+**Priority proof.** When was an idea first articulated? The commit history shows the exact moment a concept appeared in the manuscript. A diff between consecutive commits reveals: "On March 3, the author added the concept of dimensional collapse to Section 4." If two researchers independently develop the same idea, git timestamps establish priority to the commit — not to the publication date, which may lag by months or years.
+
+**Attestation proof.** When was an idea shared with a third party? The `.wiki/correspondence/` directory stores emails, messages, or review exchanges where the researcher communicated ideas to others. A researcher who emails a colleague on January 15 describing a novel method, and adds that email to the repository on January 16, has a git-timestamped record that the idea existed and was communicated before the paper was written. The correspondent can independently verify the exchange if a dispute arises. Correspondence can be stored in full, redacted (with the unredacted version's hash preserved for future verification), or as metadata-only entries (date, correspondent, subject, hash of original).
+
+```jsonl
+{"timestamp": "2026-01-16T08:12:00Z", "action": "correspondence", "type": "email_sent", "to": "colleague@university.edu", "subject": "New method for dimensional weight estimation", "sha256_of_original": "d4e5...", "redacted": true, "note": "Described the PDOP approach before drafting Section 3."}
+{"timestamp": "2026-03-22T11:30:00Z", "action": "correspondence", "type": "message_received", "from": "reviewer@journal.org", "subject": "Pre-submission feedback", "sha256_of_original": "f6a7...", "note": "Suggested adding Monte Carlo validation. Led to Section 9.6."}
+```
+
+**Derivation proof.** How did the argument develop? The full commit history of the paper — not just the final version — shows the intellectual trajectory: which sources led to which ideas, which ideas were abandoned, which were restructured. A reviewer or evaluator can inspect the diff graph and see: "The author initially framed this as a measurement problem (commits 1-12), then reframed as a geometric estimation problem after encountering DeSarbo and Rao (1986) on February 20 (commit 13), and the current argument crystallized after the Monte Carlo simulation on April 5 (commit 34)." This is the intellectual equivalent of a lab notebook — currently absent from all published research.
+
+**Independence proof.** Did the researcher develop an idea independently of another researcher? If two groups publish similar findings, the git history of each repository can establish: (a) when each group first committed the idea, (b) whether either group had access to the other's work (via `ingest.jsonl` — if the other group's preprint was never ingested, independence is structurally demonstrated), and (c) the derivation path that led each group to the same conclusion independently. This addresses a verification need that the current system handles only through informal attestation ("we developed this independently") with no structural evidence.
+
+#### 2.13.2 The LLM-Maintained Knowledge Layer
+
+The wiki pages in `.wiki/pages/` are not manually maintained. Following Karpathy's (2026) pattern, the LLM processes each ingested source and updates the relevant wiki pages: adding cross-references, noting contradictions, linking to the paper's claims. The `schema.yaml` governs what the wiki tracks — for a brand perception research program, this might include pages per theoretical construct, per cited author, per methodology, and per dataset. The schema is itself version-controlled, so changes in research focus are traceable.
+
+Three maintenance operations map directly to the research workflow:
+
+**Ingest.** A new source (PDF, URL, dataset, correspondence) is added to `sources/`. The LLM reads it, updates relevant wiki pages, adds entries to `ingest.jsonl`, and flags any contradictions with the paper's current claims.
+
+**Query.** The researcher asks a question ("Which papers use Bayesian heterogeneity models for brand positioning?"). The LLM searches wiki pages and synthesizes an answer. Valuable findings are filed back into the wiki, making the knowledge base self-improving.
+
+**Lint.** The LLM performs health checks: orphan pages (sources cited in the paper but missing from the wiki), missing cross-references, contradictions between wiki pages and the paper's current claims, and citation completeness (every reference in `paper.yaml` should have a corresponding source in `.wiki/sources/`).
+
+The lint operation is particularly powerful for citation integrity. A paper that claims 45 references but whose wiki contains only 38 source files has 7 citations that may be fabricated, copied from another paper's reference list, or added without consulting the source. This does not prove fabrication — the researcher may have consulted a library copy — but it creates a structural signal that current publishing infrastructure cannot detect at all.
+
+#### 2.13.3 Privacy and Selective Disclosure
+
+The research wiki is private by default. The `.gitignore` file within `.wiki/` can exclude large source files (PDFs) from the public repository while preserving their metadata (filenames, SHA-256 hashes, timestamps) in the tracked `ingest.jsonl`. This creates a verifiable chain without publishing copyrighted materials: the hash proves the researcher possessed a specific version of a specific file at a specific time, without distributing the file itself.
+
+Selective disclosure supports multiple scenarios:
+
+- **Standard submission**: `.wiki/` excluded from the public fork. The paper stands on its own merits.
+- **Transparency signal**: `ingest.jsonl` included in the public fork. Reviewers can verify the chronological development of the knowledge base.
+- **Full disclosure**: `.wiki/` fully public. The research process itself becomes a citable artifact.
+- **Audit response**: `.wiki/` disclosed to a specific party (institution, funder, ethics board) in response to a verification request, without public disclosure.
+
+The choice is the researcher's. The protocol does not mandate disclosure — it makes disclosure possible, verifiable, and granular.
+
 ---
 
 ## 3. Design Principles
@@ -1240,6 +1316,8 @@ Hammer, M., & Champy, J. (1993). *Reengineering the Corporation: A Manifesto for
 Ioannidis, J. P. A. (2005). Why most published research findings are false. *PLOS Medicine*, 2(8), e124. https://doi.org/10.1371/journal.pmed.0020124
 
 Himmelstein, D. S., Rubinetti, V., Slochower, D. R., et al. (2019). Open collaborative writing with Manubot. *PLOS Computational Biology*, 15(6), e1007128. https://doi.org/10.1371/journal.pcbi.1007128
+
+Karpathy, A. (2026). LLM Wiki: A pattern for personal knowledge bases [Idea file]. GitHub Gist. https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f
 
 Katz, D. S., Barba, L. A., Niemeyer, K. E., & Smith, A. M. (2018). Journal of Open Source Software (JOSS): design and first-year review. *PeerJ Computer Science*, 4, e147.
 
