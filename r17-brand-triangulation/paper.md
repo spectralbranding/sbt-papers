@@ -8,7 +8,7 @@
 
 ## Abstract
 
-Brand positioning research faces a fundamental measurement problem: every observer cohort perceives the same brand differently, yet traditional frameworks treat this variation as noise rather than signal. We propose *brand triangulation* — a geometric framework that borrows from GPS positioning theory to estimate brand spectral profiles from multiple observer cohorts while jointly solving for observer bias. We make four contributions. First, we formalize the GPS-SBT mapping, showing that observer cohorts function as positioning satellites whose geometric diversity determines measurement precision. Second, we introduce *Perception DOP* (Dilution of Precision), a computable metric that quantifies how well a given set of observer cohorts can resolve a brand's eight-dimensional spectral profile — before any data is collected. Third, we propose *differential brand measurement*, a calibration protocol using reference brands with known spectral profiles to correct systematic observer bias across studies. Fourth, we establish identifiability conditions: the minimum observer configurations required for unique brand positioning. We position the framework against existing Bayesian heterogeneity approaches, showing that the geometric formulation provides pre-study design criteria (PDOP) that probabilistic methods lack. We illustrate the framework computationally using dimensional weight data from six large language models (4,860 API calls across fifteen brand pairs), showing that Perception DOP is consistent with measurement quality patterns and that differential correction reduces cross-observer variance. The framework transforms multi-observer disagreement from a methodological nuisance into the primary source of positioning information.
+Brand positioning research faces a fundamental measurement problem: every observer cohort perceives the same brand differently, yet traditional frameworks treat this variation as noise rather than signal. We propose *brand triangulation* — a geometric framework that borrows from GPS positioning theory to estimate brand spectral profiles from multiple observer cohorts while jointly solving for observer bias. We make four contributions. First, we formalize the GPS-SBT mapping, showing that observer cohorts function as positioning satellites whose geometric diversity determines measurement precision. Second, we introduce *Perception DOP* (Dilution of Precision), a computable metric that quantifies how well a given set of observer cohorts can resolve a brand's eight-dimensional spectral profile — before any data is collected. Third, we propose *differential brand measurement*, a calibration protocol using reference brands with known spectral profiles to correct systematic observer bias across studies. Fourth, we establish identifiability conditions: the minimum observer configurations required for unique brand positioning. We position the framework against existing Bayesian heterogeneity approaches, showing that the geometric formulation provides pre-study design criteria (PDOP) that probabilistic methods lack. We illustrate the framework computationally using dimensional weight data from six large language models (4,860 API calls across fifteen brand pairs), showing that Perception DOP is consistent with measurement quality patterns and that differential correction reduces cross-observer variance, reducing cross-observer variance along biased dimensions by an estimated 20% (DCI 0.355→0.284 for local brands with specification). The framework transforms multi-observer disagreement from a methodological nuisance into the primary source of positioning information.
 
 **Keywords**: brand positioning, Spectral Brand Theory, dilution of precision, observer bias, brand measurement, GPS analogy, dimensional collapse
 
@@ -36,7 +36,7 @@ Taken together, these developments suggest that what the positioning literature 
 
 The formal analogy between GPS positioning and brand measurement is precise rather than metaphorical. Table 1 maps the core GPS concepts to their SBT counterparts.
 
-**Table 1: GPS-SBT Concept Mapping**
+**Table 1.** GPS-SBT concept mapping
 
 | GPS Concept | SBT Concept | Mathematical Role |
 |---|---|---|
@@ -348,6 +348,8 @@ Per-cohort admissibility analysis changes the verdict entirely. For the intended
 
 The generalization identifies a structural pattern across brand governance failures:
 
+**Table 2.** Brand governance failures: admissibility analysis across three brand types
+
 | Brand | Intended corridor | Unintended cohort | Admissibility status |
 |---|---|---|---|
 | Industrial adhesive | Contractors | Substance abusers | Inadmissible: all three bindings fail |
@@ -375,6 +377,8 @@ Sections 3–7 treat brand positioning as a static estimation problem: at a give
 ### 8.1 Three Temporal Concepts
 
 Brand Triangulation involves three distinct temporal concepts that GPS navigation separates carefully, and which must similarly be distinguished in brand measurement.
+
+**Table 3.** Three temporal concepts in brand triangulation and their GPS equivalents
 
 | Temporal Concept | GPS Equivalent | SBT Equivalent |
 |---|---|---|
@@ -426,7 +430,9 @@ Each model's aggregate weight profile constitutes one row of the observation wei
 
 ### 9.2 DOP Computation
 
-Table 1 reports the aggregate dimensional weight profile across all six models and all 15 brands.
+Table 4 reports the aggregate dimensional weight profile across all six models and all 15 brands.
+
+**Table 4.** Aggregate dimensional weight profiles across six LLM observer cohorts (R15 data, N = 4,860 calls)
 
 | Dimension | Mean weight | Ratio to flat-weight baseline (12.5) |
 |---|---|---|
@@ -518,6 +524,8 @@ In the triangulation framework, this is the ephemeris data analogy: when a GPS s
 The present paper establishes the geometric framework for multi-observer brand positioning and provides an Option A empirical demonstration using AI observer constellations. Several limitations delimit the current contribution and identify priorities for extension.
 
 The human observer constellation is the most important limitation. Human cohort data with demonstrably distinct spectral weight profiles — verifiably non-collinear in 8D weight space — is required to test P4 (multi-constellation DOP reduction) and to validate the differential correction protocol against an external standard. An Option B study design would administer a structured 8-dimensional weight elicitation to demographically diverse cohorts (five or more, stratified by age, income, cultural background, and brand involvement) alongside the AI constellation, using the same calibration brands and target brands as R15.
+
+A concrete study design for Option B would administer the same 100-point weight allocation task used in R15 to five or more demographically distinct human cohorts — stratified by age, income, cultural background, and brand involvement — scoring the same 15 brands alongside the three calibration brands. This design directly tests whether human weight profiles are non-collinear with the AI constellation's Experiential-Economic clustering, validating P4.
 
 The 8-dimensional corridor proof requires an extension of Medesani & Macdonald (2026). The invariant corridor framework is established in one dimension; Medesani & Macdonald identify multi-dimensional vector-valued invariants as Future Work. For Brand Triangulation, the 8D corridor is a hyperrectangle or ellipsoid in R^8, the contraction operator is a matrix rather than a scalar, and the sensitivity plateau becomes a higher-dimensional surface. The structural argument for plateau existence — derived from separated time scales rather than dimensionality — is portable, but the formal proof is an open problem that the present paper defers.
 
@@ -621,18 +629,18 @@ Wald, A. (1947). An essentially complete class of admissible decision functions.
 
 Wedel, M., and Kamakura, W. A. (2000). *Market Segmentation: Conceptual and Methodological Foundations* (2nd ed.). Springer. DOI: 10.1007/978-1-4615-4651-1
 
-Zharnikov, D. (2026a). Spectral Brand Theory: A multi-dimensional framework for brand perception analysis. Working Paper. https://doi.org/10.5281/zenodo.18945912
+Zharnikov, D. (2026a). Spectral brand theory: a multi-dimensional framework for brand perception analysis. Working Paper. https://doi.org/10.5281/zenodo.18945912
 
-Zharnikov, D. (2026e). Spectral metamerism in brand perception: Projection bounds from high-dimensional geometry. Working Paper. https://doi.org/10.5281/zenodo.18945352
+Zharnikov, D. (2026e). Spectral metamerism in brand perception: projection bounds from high-dimensional geometry. Working Paper. https://doi.org/10.5281/zenodo.18945352
 
-Zharnikov, D. (2026f). Cohort boundaries in high-dimensional perception space: A concentration of measure analysis. Working Paper. https://doi.org/10.5281/zenodo.18945477
+Zharnikov, D. (2026f). Cohort boundaries in high-dimensional perception space: a concentration of measure analysis. Working Paper. https://doi.org/10.5281/zenodo.18945477
 
-Zharnikov, D. (2026i). The Organizational Schema Theory: Test-driven business design. Working Paper. https://doi.org/10.5281/zenodo.18946043
+Zharnikov, D. (2026i). The organizational schema theory: test-driven business design. Working Paper. https://doi.org/10.5281/zenodo.18946043
 
-Zharnikov, D. (2026o). Non-ergodic brand perception: Why cross-sectional brand tracking systematically misrepresents individual trajectories. Working Paper. https://doi.org/10.5281/zenodo.19138860
+Zharnikov, D. (2026o). Non-ergodic brand perception: why cross-sectional brand tracking systematically misrepresents individual trajectories. Working Paper. https://doi.org/10.5281/zenodo.19138860
 
-Zharnikov, D. (2026s). Coherence type as crisis predictor: A formal derivation from non-ergodic dynamics. Working Paper. https://doi.org/10.5281/zenodo.19208107
+Zharnikov, D. (2026s). Coherence type as crisis predictor: a formal derivation from non-ergodic dynamics. Working Paper. https://doi.org/10.5281/zenodo.19208107
 
-Zharnikov, D. (2026v). Spectral metamerism in AI-mediated brand perception: How large language models collapse multi-dimensional brand differentiation in consumer search. Working Paper. https://doi.org/10.5281/zenodo.19422427
+Zharnikov, D. (2026v). Spectral metamerism in AI-mediated brand perception: how large language models collapse multi-dimensional brand differentiation in consumer search. Working Paper. https://doi.org/10.5281/zenodo.19422427
 
-Zharnikov, D. (2026x). AI-native brand identity: From visual recognition to cryptographic verification. Working Paper. https://doi.org/10.5281/zenodo.19391476
+Zharnikov, D. (2026x). AI-native brand identity: from visual recognition to cryptographic verification. Working Paper. https://doi.org/10.5281/zenodo.19391476
