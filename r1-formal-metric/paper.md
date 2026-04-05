@@ -278,6 +278,8 @@ $$H(\gamma(1/2)) \geq H\left( \frac{w_A + w_B}{2} \right)$$
 
 This result has a striking interpretation for SBT: the "intermediate" observer profile between two specialized observers is *more open-minded* (higher entropy, more balanced weights) than a naive average would suggest. An observer cohort that spans two specialized sub-populations has a richer attentional structure than the simple average of its members.
 
+The Fisher-Rao metric on the brand perception manifold is the direct analog of the metric tensor in general relativity. Both are symmetric positive-definite matrices that convert coordinate differences into true distances on curved manifolds. The GR metric tensor has 10 independent components (for 4D space-time); the perception metric has 36 (for 8D perception space). The analogy clarifies the role of brand emission: just as mass-energy determines space-time curvature through the Einstein field equations, brand signal intensity determines perception space curvature through the Fisher information. Brands with strong, concentrated emission create deep curvature — a "gravity well" in perception space that attracts observer attention along geodesics. Brands with diffuse emission create weak curvature — a flat region where perception offers no preferred direction, producing the dimensional collapse (Economic Default) observed in AI observers (Zharnikov, 2026v). The Mercator analogy is instructive: two brands that appear equidistant on a flat projection (same NPS score) may be vastly different in actual perceptual distance when the metric correction is applied. The 36 metric components provide this correction.
+
 ---
 
 ## 5. The Combined Brand-Observer Space
