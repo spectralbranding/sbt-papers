@@ -1113,6 +1113,100 @@ def call_sarvam(prompt: str, model: str = "sarvam-105b") -> str:
 
 
 # ---------------------------------------------------------------------------
+# GigaChat API (Sber, Russian, OAuth2 + MinTsifry cert)
+# ---------------------------------------------------------------------------
+
+_GIGACHAT_ACCESS_TOKEN: Optional[str] = None
+_GIGACHAT_TOKEN_EXPIRES: float = 0.0
+
+
+def _get_gigachat_token() -> str:
+    """Obtain or refresh GigaChat access token (30 min TTL)."""
+    global _GIGACHAT_ACCESS_TOKEN, _GIGACHAT_TOKEN_EXPIRES
+    if _GIGACHAT_ACCESS_TOKEN and time.time() < _GIGACHAT_TOKEN_EXPIRES - 60:
+        return _GIGACHAT_ACCESS_TOKEN
+
+    import ssl
+    import base64
+    import uuid
+
+    auth_key = os.environ["GIGACHAT_API_KEY"]
+    scope = os.environ.get("GIGACHAT_SCOPE", "GIGACHAT_API_PERS")
+
+    # SSL context with Russian MinTsifry root CA
+    cert_path = os.path.join(
+        os.path.dirname(__file__), "russian_trusted_root_ca.crt"
+    )
+    ctx = ssl.create_default_context()
+    if os.path.exists(cert_path):
+        ctx.load_verify_locations(cert_path)
+    else:
+        ctx.check_hostname = False
+        ctx.verify_mode = ssl.CERT_NONE
+
+    payload = f"scope={scope}".encode()
+    req = urllib.request.Request(
+        "https://ngw.devices.sberbank.ru:9443/api/v2/oauth",
+        data=payload,
+        headers={
+            "Content-Type": "application/x-www-form-urlencoded",
+            "Accept": "application/json",
+            "Authorization": f"Basic {auth_key}",
+            "RqUID": str(uuid.uuid4()),
+        },
+    )
+    with urllib.request.urlopen(req, timeout=30, context=ctx) as resp:
+        data = json.loads(resp.read())
+
+    _GIGACHAT_ACCESS_TOKEN = data["access_token"]
+    _GIGACHAT_TOKEN_EXPIRES = data["expires_at"] / 1000.0  # ms -> s
+    return _GIGACHAT_ACCESS_TOKEN
+
+
+def call_gigachat_api(prompt: str, model: str = "GigaChat-2-Max") -> str:
+    """Call GigaChat 2 Max via Sber API (Russian, commercial, freemium tier).
+
+    GigaChat 2 Max: Sber's most capable commercially deployed model.
+    Freemium: 50K tokens for Max, 900K for Lite, 50K for Pro.
+    Auth: OAuth2 with Russian MinTsifry root CA certificate.
+    """
+    import ssl
+
+    token = _get_gigachat_token()
+
+    cert_path = os.path.join(
+        os.path.dirname(__file__), "russian_trusted_root_ca.crt"
+    )
+    ctx = ssl.create_default_context()
+    if os.path.exists(cert_path):
+        ctx.load_verify_locations(cert_path)
+    else:
+        ctx.check_hostname = False
+        ctx.verify_mode = ssl.CERT_NONE
+
+    payload = json.dumps(
+        {
+            "model": model,
+            "messages": [{"role": "user", "content": prompt}],
+            "max_tokens": 2048,
+            "temperature": 0.7,
+        }
+    ).encode()
+    req = urllib.request.Request(
+        "https://gigachat.devices.sberbank.ru/api/v1/chat/completions",
+        data=payload,
+        headers={
+            "Content-Type": "application/json",
+            "Accept": "application/json",
+            "Authorization": f"Bearer {token}",
+        },
+    )
+    with urllib.request.urlopen(req, timeout=120, context=ctx) as resp:
+        data = json.loads(resp.read())
+    return data["choices"][0]["message"]["content"]
+
+
+# ---------------------------------------------------------------------------
 # National model backends (local Ollama)
 # ---------------------------------------------------------------------------
 
@@ -1195,6 +1289,19 @@ def call_falcon_arabic_local(
     return _call_ollama_model(prompt, model)
 
 
+def call_jais_local(
+    prompt: str,
+    model: str = "hf.co/mradermacher/jais-adapted-70b-chat-i1-GGUF:Q4_K_M",
+) -> str:
+    """Call Jais-adapted 70B via local Ollama (Arabic, Inception AI, Apache 2.0).
+
+    70B dense model, Llama 2-based Arabic adaptation. Trained on 370B tokens
+    (330B Arabic, 40B English). Q4_K_M ~42GB, fits in 64GB RAM.
+    Tier 1 Arabic model for size-comparable cross-cultural analysis.
+    """
+    return _call_ollama_model(prompt, model)
+
+
 def call_qwen35_local(prompt: str, model: str = "qwen3.5:27b") -> str:
     """Call Qwen3.5 27B via local Ollama (Chinese, newer than Qwen3)."""
     return _call_ollama_model(prompt, model, no_think=True)
@@ -1223,12 +1330,14 @@ API_CALLERS: dict[str, Any] = {
     "groq_kimi": call_groq_kimi,                # Kimi K2 (Moonshot AI, Chinese) via Groq
     "grok": call_grok,                          # Grok-3-mini (xAI, X/Twitter corpus)
     "sarvam": call_sarvam,                      # Sarvam-105B (Indian, Sarvam AI, Indus API)
+    "gigachat_api": call_gigachat_api,          # GigaChat 2 Max (Russian, Sber API)
     # National models - local Ollama (Run 5+)
     "yandexgpt_local": call_yandexgpt_local,    # YandexGPT 5 Lite 8B (Russian)
     "gigachat_local": call_gigachat_local,       # GigaChat 3.1 Lightning (Russian, Sber)
     "exaone_local": call_exaone_local,           # EXAONE 4.0 32B (Korean, LG AI)
     "swallow_local": call_swallow_local,         # Swallow 8B (Japanese, Tokyo Tech)
     "falcon_arabic_local": call_falcon_arabic_local, # Falcon-H1-Arabic 7B (Arabic, TII)
+    "jais_local": call_jais_local,               # Jais-adapted 70B (Arabic, Inception AI)
     "qwen35_local": call_qwen35_local,           # Qwen3.5 27B (Chinese, newer)
 }
 
@@ -1251,12 +1360,14 @@ API_KEY_VARS: dict[str, str] = {
     "groq_kimi": "GROQ_API_KEY",
     "grok": "GROK_API_KEY",
     "sarvam": "SARVAM_API_KEY",
+    "gigachat_api": "GIGACHAT_API_KEY",
     # National models - local
     "yandexgpt_local": "OLLAMA_AVAILABLE",
     "gigachat_local": "OLLAMA_AVAILABLE",
     "exaone_local": "OLLAMA_AVAILABLE",
     "swallow_local": "OLLAMA_AVAILABLE",
     "falcon_arabic_local": "OLLAMA_AVAILABLE",
+    "jais_local": "OLLAMA_AVAILABLE",
     "qwen35_local": "OLLAMA_AVAILABLE",
 }
 
@@ -1279,6 +1390,7 @@ MODEL_IDS: dict[str, str] = {
     "groq_llama33": "llama-3.3-70b-versatile",            # Llama 3.3 70B on Groq
     "grok": "grok-4-1-fast-non-reasoning",                  # Grok-4.1 fast (xAI, X/Twitter corpus)
     "sarvam": "sarvam-105b",                                  # Sarvam-105B (Indian, Sarvam AI, Indus API)
+    "gigachat_api": "GigaChat-2-Max",                          # GigaChat 2 Max (Russian, Sber API)
     # Free-tier cloud — National models
     "sambanova_swallow": "Llama-3.3-Swallow-70B-Instruct-v0.4",  # Japanese 70B on SambaNova
     "groq_allam": "allam-2-7b",                            # ALLaM-2 (SDAIA Saudi) on Groq
@@ -1288,6 +1400,7 @@ MODEL_IDS: dict[str, str] = {
     "exaone_local": "hf.co/LGAI-EXAONE/EXAONE-4.0-32B-GGUF:Q4_K_M",
     "swallow_local": "hf.co/mradermacher/Llama-3.1-Swallow-8B-Instruct-v0.3-GGUF:latest",
     "falcon_arabic_local": "hf.co/tiiuae/Falcon-H1-Arabic-7B-Instruct-GGUF:Q4_K_M",
+    "jais_local": "hf.co/mradermacher/jais-adapted-70b-chat-i1-GGUF:Q4_K_M",
     "qwen35_local": "qwen3.5:27b",
 }
 
