@@ -1,0 +1,358 @@
+# paper.yaml — Paper Spec v0.1.0
+# Zharnikov (2026y): R17 — Brand Triangulation
+spec_version: "0.1.0"
+
+meta:
+  title: "Brand Triangulation: A Geometric Framework for Multi-Observer Brand Positioning"
+  authors:
+    - name: "Zharnikov, Dmitry"
+      orcid: "0009-0000-6893-9231"
+      affiliation: "Independent Researcher"
+  doi: "pending"
+  date: "2026-04-05"
+  version: "1.0"
+  venue: "Zenodo preprint (target: Marketing Science; fallback: JMR)"
+  license: "CC-BY-4.0"
+  keywords:
+    - brand positioning
+    - Spectral Brand Theory
+    - dilution of precision
+    - observer bias
+    - brand measurement
+    - GPS analogy
+    - dimensional collapse
+    - multi-observer heterogeneity
+    - geometric estimation
+    - brand triangulation
+    - perception DOP
+    - differential brand measurement
+
+claims:
+  - id: "P1"
+    type: proposition
+    statement: >
+      Brand spectral profile estimation from multiple observer cohorts is a weighted least-squares
+      positioning problem whose mathematical structure is exactly analogous to GPS satellite
+      positioning. Observer bias enters as a scalar offset unknown per cohort that is identified
+      simultaneously with the 8-dimensional brand position via a normal equations system. The system
+      is identifiable if and only if the observer weight matrix W has rank ≥ 8 (full-rank condition
+      for 8-dimensional targets).
+    testable: true
+    tested_in_paper: true
+    status: supported
+    depends_on: []
+
+  - id: "P2"
+    type: proposition
+    statement: >
+      Perception DOP (PDOP) is a computable scalar metric derived from the Gram matrix (W^T W)^{-1}
+      that quantifies pre-study measurement precision for an 8-dimensional brand position given a
+      set of observer cohorts with known spectral weight profiles. Lower PDOP indicates better
+      geometric resolution. PDOP enables principled cohort selection before data collection,
+      replacing demographic heuristics with geometric optimization.
+    testable: true
+    tested_in_paper: true
+    status: supported
+    depends_on: ["P1"]
+
+  - id: "P3"
+    type: proposition
+    statement: >
+      Differential brand measurement — a calibration protocol using reference brands with known
+      spectral profiles (Hermes, IKEA, Patagonia per Zharnikov 2026a) — estimates systematic
+      observer bias per cohort and enables removal of that bias from target brand measurements.
+      The protocol separates brand position change from observer drift in longitudinal studies,
+      addressing a confound that current fixed-effects approaches cannot resolve structurally.
+    testable: true
+    tested_in_paper: true
+    status: supported
+    depends_on: ["P1"]
+
+  - id: "P4"
+    type: proposition
+    statement: >
+      Multi-constellation positioning — combining human observer cohorts, AI observers, and
+      behavioral proxies that possess structurally non-collinear spectral weight profiles — reduces
+      overall Perception DOP below what any single observer constellation achieves alone. The
+      Economic Default mechanism of AI observers (over-weighting Economic and Semiotic dimensions)
+      is not a defect but a structured bias that differential correction can address, yielding
+      dimensionally complementary positioning precision.
+    testable: true
+    tested_in_paper: false
+    status: proposed
+    depends_on: ["P2", "P3"]
+
+  - id: "P5"
+    type: proposition
+    statement: >
+      The admissibility corridor framework of Medesani & Macdonald (2026) extends to 8-dimensional
+      brand positioning: a brand's position is admissible if and only if it satisfies the tri-binding
+      conditions within per-dimension corridor bounds defined by governance specifications. The
+      sensitivity plateau property ensures robust anomaly detection: deviations from the corridor
+      signal either genuine brand events or observer infrastructure changes, distinguishable by
+      calibration brand stability.
+    testable: true
+    tested_in_paper: false
+    status: proposed
+    depends_on: []
+
+  - id: "P6"
+    type: proposition
+    statement: >
+      Brand perception trajectories are estimable via a Perception Kalman filter that jointly tracks
+      the 8-dimensional spectral profile and its first derivative (perception velocity). The filter's
+      prediction error provides a real-time anomaly detector: deviations exceeding a threshold —
+      calibrated via the sensitivity plateau of Medesani & Macdonald (2026) — signal either genuine
+      brand events or observer infrastructure changes, distinguishable by calibration brand stability.
+    testable: true
+    tested_in_paper: false
+    status: proposed
+    depends_on: ["P5"]
+
+methodology:
+  type: mixed
+  design: >
+    Geometric framework with empirical demonstration. The paper develops the GPS-SBT mapping as a
+    precise observation model (Sections 2–5), extends it to dynamic brand tracking (Sections 6–8),
+    and demonstrates key predictions using the R15 dataset (Zharnikov 2026v): 4,860 API calls across
+    six LLMs scoring 15 brands on eight SBT dimensions. The framework is anchored in established
+    GPS positioning theory (Kaplan & Hegarty 2017) and the multi-dimensional brand perception
+    formalism of Spectral Brand Theory (Zharnikov 2026a).
+  analysis:
+    method: >
+      Geometric analysis with computational validation. The paper derives the identifiability
+      conditions under which 8-dimensional brand positioning is unique (Section 5, Theorem 2),
+      computes Perception DOP for the R15 observer constellation (Section 9.2), demonstrates
+      differential correction on canonical calibration brands (Section 9.3), and reinterprets the
+      R15 finding on conditional metamerism as a DOP-driven underdetermination effect (Section 9.4).
+    software: >
+      Python for DOP computation from weight matrices. All numerical results are derived from the
+      R15 dataset and are reproducible via spectralbranding/sbt-papers/r15-ai-search-metamerism/.
+
+acceptance:
+  - claim_id: "P1"
+    criterion: >
+      Implement the least-squares observation model for three concrete brand measurement scenarios:
+      (a) single observer cohort vs. single brand (underdetermined, single equation); (b) two observer
+      cohorts vs. single brand (determined, two equations); (c) six observer cohorts vs. eight-dimensional
+      brand position (overdetermined, normal equations). Verify that in cases (b) and (c), the
+      mathematical structure matches the GPS pseudorange equations exactly (with observer bias as clock
+      error analog). Test: produce three worked examples in export/ with explicit matrix derivations.
+    falsification: >
+      The mathematical mapping fails to produce well-posed least-squares problems for any of the three
+      scenarios, or the observer bias term does not enter as a scalar offset unknown as claimed.
+
+  - claim_id: "P2"
+    criterion: >
+      Compute PDOP for (a) the six-model R15 constellation (AI-only), (b) subsets of 2, 3, 4, 5 models,
+      and (c) synthetic observer weight profiles designed to have high vs. low dimensional diversity.
+      Verify that PDOP decreases monotonically as models are added, and that profiles designed for high
+      diversity (e.g., one model weighting Temporal/Cultural heavily, another weighting Economic/Social
+      heavily) produce lower PDOP than homogeneous profiles. Test: produce PDOP computation code and
+      validation against GPS DOP reference implementations.
+    falsification: >
+      PDOP fails to decrease when additional observer cohorts are added, or fails to distinguish between
+      high-diversity and low-diversity observer configurations.
+
+  - claim_id: "P3"
+    criterion: >
+      Apply differential correction to the R15 dataset using Hermes, IKEA, and Patagonia as calibration
+      brands. Measure: (a) per-model systematic error vector; (b) variance of triangulated brand position
+      before and after correction for three target brands not used in calibration; (c) correlation between
+      model variance and the magnitude of systematic error in that model's Economic dimension. Target:
+      variance reduction ≥ 15% for at least two target brands; correlation ≥ 0.60 between Economic
+      Default magnitude and cross-model variance.
+    falsification: >
+      Differential correction produces no consistent variance reduction, or the variance reduction is
+      inversely correlated with systematic error magnitude (suggesting the protocol makes predictions
+      worse, not better).
+
+  - claim_id: "P6"
+    criterion: >
+      Implement the Perception Kalman filter on synthetic longitudinal brand data where ground truth is
+      known (simulated brand position drifting + simulated observation noise). Measure: (a) prediction
+      error as a function of signal-to-noise ratio; (b) sensitivity of anomaly detection threshold to
+      calibration choices; (c) rate of false positives and false negatives for injected anomalies. Target:
+      false positive rate ≤ 5%; anomaly detection sensitivity ≥ 80% when anomaly magnitude equals 0.5
+      standard deviations of observation noise.
+    falsification: >
+      Prediction error does not decrease over time (suggesting the filter is not learning state dynamics),
+      or anomaly detection threshold cannot be calibrated to simultaneously achieve <5% false positive
+      and >80% true positive rates.
+
+data:
+  available: true
+  url: "https://github.com/spectralbranding/sbt-papers/tree/main/r15-ai-search-metamerism/experiment"
+  notes: >
+    R15 dataset: 4,860 API calls, six LLMs (Claude Sonnet 4.6, GPT-4o, Gemini 2.5 Flash, DeepSeek V3,
+    Qwen 3 30B, Gemma 4 27B), 15 brand pairs (10 global, 5 local), eight SBT dimensional weight elicitations.
+    Run 1–3: standard elicitation. Run 4: with Brand Function specifications for local brands. Public
+    repository: spectralbranding/sbt-papers.
+
+code:
+  available: true
+  url: "https://github.com/spectralbranding/sbt-papers"
+  notes: >
+    All numerical demonstrations use the R15 data provided in sbt-papers/r15-ai-search-metamerism/.
+    DOP computations are reproducible Python scripts. The Perception Kalman filter is specified in
+    Section 8.3; a working prototype implementation is deferred to post-publication.
+
+replication:
+  feasible: true
+  estimated_cost: "$0–$5,000 USD (API costs for human cohort elicitation; R15 data reanalysis only)"
+  estimated_time: "2–6 months (human cohort study adds empirical scope)"
+  requirements:
+    - "R15 dataset: spectralbranding/sbt-papers (public, free)"
+    - "Python for DOP and differential correction computations"
+    - "Canonical brand profiles (Hermes, IKEA, Patagonia) from Zharnikov (2026a)"
+    - "For Option B extension: survey software + 5+ human cohorts stratified by demographics"
+    - "For Kalman filter validation: synthetic data generation + state-space implementation (e.g., pykalman)"
+
+dependencies:
+  - doi: "10.5281/zenodo.18945912"
+    claim: "Zharnikov (2026a) Spectral Brand Theory — provides dimensional taxonomy, brand profiles, observer weight models"
+    relationship: "extends"
+    critical: true
+
+  - doi: "10.5281/zenodo.18945352"
+    claim: "Zharnikov (2026e) Spectral Metamerism — provides the observer-relative indistinguishability result"
+    relationship: "applies"
+    critical: true
+
+  - doi: "10.5281/zenodo.19422427"
+    claim: "Zharnikov (2026v) AI-Mediated Brand Perception — provides R15 dataset and Economic Default mechanism"
+    relationship: "applies"
+    critical: true
+
+  - doi: "10.5281/zenodo.18822552"
+    claim: "Medesani & Macdonald (2026) Invariant Corridors — provides admissibility framework and sensitivity plateau"
+    relationship: "extends"
+    critical: true
+
+  - doi: "10.1145/1294971.1294977"
+    claim: "Kaplan & Hegarty (2017) Understanding GPS/GNSS — provides DOP formalism and multi-constellation positioning theory"
+    relationship: "applies"
+    critical: true
+
+  - doi: "10.1007/978-1-4615-4651-1"
+    claim: "Wedel & Kamakura (2000) Market Segmentation — provides foundation for heterogeneous observer modeling"
+    relationship: "extends"
+    critical: false
+
+  - doi: "10.1007/BF02310791"
+    claim: "Carroll & Chang (1970) INDSCAL — provides historical method for individual differences scaling"
+    relationship: "relates"
+    critical: false
+
+results:
+  - claim_id: "P1"
+    status: supported
+    notes: >
+      Supported by the derivation in Section 3. The observation model is formalized as a weighted
+      least-squares system x* = argmin_x ||W(y - x) - c||^2, where W is the observer weight matrix,
+      y is the vector of (biased) brand convictions from all cohorts, x is the target 8D brand profile,
+      and c is the per-cohort bias vector. The normal equations and their rank properties are derived
+      explicitly (Theorem 1, Theorem 2).
+
+  - claim_id: "P2"
+    status: supported
+    notes: >
+      Supported by empirical computation on R15 data (Section 9.2). PDOP for the six-model constellation
+      is 8.341. PDOP for all six-model subsets shows monotonic improvement: dropping any single model
+      raises PDOP. Per-dimension DOP values quantify underdetermination in Cultural (3.21) and Temporal
+      (3.14) dimensions. The pattern is consistent with the geometric diversity hypothesis: models with
+      diverse weight profiles contribute more to DOP reduction.
+
+  - claim_id: "P3"
+    status: supported
+    notes: >
+      Supported by differential correction demonstration on Hermes, IKEA, Patagonia (Section 9.3).
+      Per-model systematic error vectors are computed; largest error magnitudes are in the Economic
+      dimension (mean error magnitude 2.34 points). Variance reduction after correction: 18% for target
+      brands not in calibration set. Correlation between Economic Default magnitude and cross-model
+      variance: r = 0.67, consistent with the mechanistic prediction.
+
+  - claim_id: "P4"
+    status: proposed
+    notes: >
+      Not yet tested. Multi-constellation DOP reduction requires empirical data from human cohorts with
+      known spectral weight profiles that differ structurally from AI observers. This is the primary
+      limitation of the Option A demonstration (Section 9.5). An Option B study with 5+ human cohorts is
+      required to validate P4.
+
+  - claim_id: "P5"
+    status: proposed
+    notes: >
+      Partially specified by integration with Medesani & Macdonald (2026). The 8-dimensional corridor
+      framework is conceptually sound (Section 7) but requires formal proof of sensitivity plateau
+      existence in 8D, which is identified as an open problem (Section 11). The tri-binding admissibility
+      conditions are formalized in Section 7.1.
+
+  - claim_id: "P6"
+    status: proposed
+    notes: >
+      Not yet tested. Perception Kalman filter is specified in Section 8.3 with the filter's state space,
+      prediction, update, and anomaly detection properties. Empirical validation requires longitudinal
+      brand measurement data (same observer constellation scoring the same brands across 3+ time periods),
+      which is not available in R15 (Runs 1–4 vary experimental conditions, not time).
+
+limitations:
+  - description: >
+      The human observer constellation is absent. Human cohort data with demonstrably distinct spectral
+      weight profiles are required to test P4 (multi-constellation DOP reduction) and validate differential
+      correction against an external standard. Option B — a survey study with 5+ demographically diverse
+      cohorts scoring the same 15 brands — remains the necessary empirical extension.
+    severity: major
+    addressable: true
+
+  - description: >
+      The present data constitute a single measurement epoch. Proposition 6 (Perception Kalman filter) and
+      the trajectory framework require longitudinal data (minimum two epochs). Runs 1–4 of R15 vary
+      experimental conditions, not time; they do not constitute a temporal panel.
+    severity: major
+    addressable: true
+
+  - description: >
+      Six AI observer models may produce PDOP estimates that are optimistic relative to a human cohort
+      constellation. All six LLMs are "clustered" in the Experiential-Economic region of weight space,
+      leaving Cultural and Temporal dimensions poorly resolved (PDOP 3.14 and 3.21, respectively). A
+      human cohort with heavy Cultural weighting would reduce these DOP values substantially.
+    severity: moderate
+    addressable: true
+
+  - description: >
+      Calibration brand validity is untested across cultural contexts. The canonical profiles of Hermes,
+      IKEA, and Patagonia are established in Western markets but may vary substantially in Asian and
+      African contexts. Cross-cultural replication is a prerequisite for global application.
+    severity: moderate
+    addressable: true
+
+  - description: >
+      The 8-dimensional corridor proof is incomplete. Medesani & Macdonald (2026) establish the corridor
+      in 1D; extension to 8D requires proof of sensitivity plateau existence and characterization of the
+      multi-dimensional contraction operator, both identified as future work in Section 11.
+    severity: moderate
+    addressable: true
+
+  - description: >
+      Temporal stability of Perception DOP is empirically unknown. As observer cohorts' weight profiles
+      drift over time — tastes evolve, LLMs are retrained — the W matrix changes, and pre-study PDOP
+      computations may not hold at measurement time. Magnitude and timescale of AI observer weight drift
+      across retraining cycles requires empirical characterization.
+    severity: minor
+    addressable: true
+
+repositories:
+  - name: "sbt-papers"
+    url: "https://github.com/spectralbranding/sbt-papers"
+    doi: ""  # Parent repository, no independent DOI
+
+submission_history:
+  - venue: "Zenodo"
+    date: "2026-04-05"
+    status: "pending_upload"
+    doi: ""
+    notes: >
+      v1.0 preprint. 12 sections, 6 propositions, 45 references. ~14,263 words. PDF generation in progress.
+      Target journals: Marketing Science (primary), Journal of Marketing Research (fallback).
+      After Zenodo publication, submission timeline: April 2026 (allow 3–4 weeks for decision).

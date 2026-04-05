@@ -1,0 +1,56 @@
+# CONTRIBUTORS.yaml — R17: Brand Triangulation
+# Verified contributor attribution per the Research-as-Repository protocol
+
+contributors:
+  - name: "Dmitry Zharnikov"
+    orcid: "0009-0000-6893-9231"
+    type: human
+    roles:
+      - conceptualization
+      - methodology
+      - formal-analysis
+      - writing-original
+      - writing-review
+      - project-administration
+    affiliation: "Independent Researcher"
+    first_commit: "2026-03-20"
+    last_commit: "2026-04-05"
+    notes: >
+      Conceived the GPS-SBT mapping, derived the observation model, formalized Perception DOP,
+      designed the differential correction protocol, established identifiability conditions,
+      developed the admissibility and Kalman filter extensions, conducted the R15 empirical
+      demonstration, and wrote the full manuscript. All theoretical propositions are the author's
+      work.
+
+  - name: "Claude (Anthropic)"
+    type: ai_tool
+    roles:
+      - writing-review
+      - consistency-checking
+      - technical-validation
+    disclosure: >
+      Used for manuscript review, citation verification, terminology consistency checking, and
+      validation of mathematical derivations (Theorems 1–2, Section 5). All conceptual and theoretical
+      contributions remain solely the author's work. AI assistance was strictly editorial and
+      verification-oriented.
+
+  - name: "Gemini Deep Research (Google)"
+    type: ai_tool
+    roles:
+      - investigation
+      - literature-mapping
+    disclosure: >
+      Used for literature landscape mapping on GPS positioning theory (Kaplan & Hegarty, Misra & Enge,
+      Mitchell et al. on reachable sets), Kalman filtering in marketing (Naik et al., Du & Kamakura,
+      Oud et al.), and invariant set theory (Blanchini, Aubin). All results independently verified
+      and integrated with existing citations.
+
+  - name: "Grok Deep Research (xAI)"
+    type: ai_tool
+    roles:
+      - investigation
+      - literature-mapping
+    disclosure: >
+      Used for Round 2 literature verification on admissibility theory (Wald 1947, Bawa 1976) and
+      viability theory applications (Aubin & Saint-Pierre, Oubraham & Zaccour). All results
+      independently verified before citation.
