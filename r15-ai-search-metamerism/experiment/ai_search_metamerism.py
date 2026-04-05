@@ -551,6 +551,239 @@ DIMENSION_PROBE_PROMPT = (
 
 
 # ---------------------------------------------------------------------------
+# Native Language Prompts (H10: Prompt Language Effect)
+# ---------------------------------------------------------------------------
+
+# Map cross-cultural pair IDs to their native language code
+PAIR_NATIVE_LANGUAGE: dict[str, str] = {
+    "china_water": "zh",
+    "japan_snacks": "ja",
+    "uae_dairy": "ar",
+    "russia_organic": "ru",
+    "ukraine_confectionery": "ru",  # Ukrainian brands, Russian widely understood
+    "mongolia_beer": "zh",         # Mongolian Cyrillic, but zh models are the test
+    "korea_dairy": "ko",
+    "india_dairy": "hi",
+}
+
+# Map model names to their native language(s)
+MODEL_NATIVE_LANGUAGE: dict[str, str] = {
+    # Chinese-trained
+    "deepseek": "zh",
+    "cerebras_qwen3": "zh",
+    "qwen3_local": "zh",
+    "groq_kimi": "zh",
+    # Russian-trained
+    "gigachat_api": "ru",
+    "yandexgpt_pro": "ru",
+    "gigachat_local": "ru",
+    "yandexgpt_local": "ru",
+    # Japanese-trained
+    "sambanova_swallow": "ja",
+    "swallow_local": "ja",
+    # Korean-trained
+    "exaone_local": "ko",
+    # Arabic-trained
+    "jais_local": "ar",
+    "groq_allam": "ar",
+    # Indian-trained
+    "sarvam": "hi",
+}
+
+# Dimension names in native languages (transliterated where appropriate)
+# JSON keys stay in English for consistent parsing; descriptions are translated
+NATIVE_DIMENSION_DESCRIPTIONS: dict[str, dict[str, str]] = {
+    "zh": {
+        "semiotic": "视觉识别、标志、包装、设计语言",
+        "narrative": "品牌故事、起源神话、创始叙事",
+        "ideological": "价值观、伦理、社会公益、环保立场",
+        "experiential": "客户体验质量、服务、开箱体验",
+        "social": "社交信号、社群、拥有该品牌代表什么",
+        "economic": "价格、性价比、定价策略",
+        "cultural": "文化相关性、与运动/传统的联系",
+        "temporal": "传承、历史、与时间的关系",
+    },
+    "ru": {
+        "semiotic": "визуальная идентичность, логотипы, упаковка, дизайн-язык",
+        "narrative": "история бренда, миф о происхождении, нарратив основания",
+        "ideological": "ценности, этика, социальные инициативы, экологическая позиция",
+        "experiential": "качество клиентского опыта, сервис, распаковка",
+        "social": "социальная сигнализация, сообщество, что говорит о вас владение брендом",
+        "economic": "цена, соотношение цены и качества, ценовая стратегия",
+        "cultural": "культурная релевантность, связь с движениями/традициями",
+        "temporal": "наследие, история, отношение ко времени",
+    },
+    "ja": {
+        "semiotic": "ビジュアルアイデンティティ、ロゴ、パッケージ、デザイン言語",
+        "narrative": "ブランドストーリー、起源神話、創業の物語",
+        "ideological": "価値観、倫理、社会的取り組み、環境への姿勢",
+        "experiential": "顧客体験の質、サービス、開封体験",
+        "social": "社会的シグナル、コミュニティ、所有が意味すること",
+        "economic": "価格、コストパフォーマンス、価格戦略",
+        "cultural": "文化的関連性、ムーブメントや伝統とのつながり",
+        "temporal": "遺産、歴史、時間との関係",
+    },
+    "ko": {
+        "semiotic": "시각적 정체성, 로고, 패키징, 디자인 언어",
+        "narrative": "브랜드 스토리, 기원 신화, 창업 서사",
+        "ideological": "가치관, 윤리, 사회적 공헌, 환경적 입장",
+        "experiential": "고객 경험 품질, 서비스, 언박싱",
+        "social": "사회적 신호, 커뮤니티, 소유가 의미하는 것",
+        "economic": "가격, 가성비, 가격 전략",
+        "cultural": "문화적 관련성, 운동/전통과의 연결",
+        "temporal": "유산, 역사, 시간과의 관계",
+    },
+    "ar": {
+        "semiotic": "الهوية البصرية، الشعارات، التغليف، لغة التصميم",
+        "narrative": "قصة العلامة التجارية، أسطورة الأصل، رواية التأسيس",
+        "ideological": "القيم، الأخلاق، القضايا الاجتماعية، الموقف البيئي",
+        "experiential": "جودة تجربة العميل، الخدمة، تجربة فتح المنتج",
+        "social": "الإشارات الاجتماعية، المجتمع، ما يعنيه امتلاك هذه العلامة",
+        "economic": "السعر، القيمة مقابل المال، استراتيجية التسعير",
+        "cultural": "الصلة الثقافية، الارتباط بالحركات والتقاليد",
+        "temporal": "التراث، التاريخ، العلاقة بالزمن",
+    },
+    "hi": {
+        "semiotic": "दृश्य पहचान, लोगो, पैकेजिंग, डिज़ाइन भाषा",
+        "narrative": "ब्रांड कहानी, उत्पत्ति मिथक, संस्थापक कथा",
+        "ideological": "मूल्य, नैतिकता, सामाजिक कारण, पर्यावरणीय रुख",
+        "experiential": "ग्राहक अनुभव गुणवत्ता, सेवा, अनबॉक्सिंग",
+        "social": "सामाजिक संकेत, समुदाय, ब्रांड रखने का क्या मतलब है",
+        "economic": "कीमत, पैसे का मूल्य, मूल्य निर्धारण रणनीति",
+        "cultural": "सांस्कृतिक प्रासंगिकता, आंदोलनों/परंपराओं से जुड़ाव",
+        "temporal": "विरासत, इतिहास, समय से संबंध",
+    },
+}
+
+
+def _dim_block_native(lang: str) -> str:
+    """Return dimension list in native language. JSON keys stay English."""
+    descs = NATIVE_DIMENSION_DESCRIPTIONS.get(lang, DIMENSION_DESCRIPTIONS)
+    lines = []
+    for dim in DIMENSIONS:
+        lines.append(f"- {dim} ({dim.capitalize()}): {descs[dim]}")
+    return "\n".join(lines)
+
+
+# Native-language prompt templates. JSON keys MUST stay in English for parsing.
+# Only the instructional text is translated.
+NATIVE_WEIGHTED_RECOMMENDATION: dict[str, str] = {
+    "zh": (
+        "你是一位AI购物助手，帮助消费者在两个品牌之间做选择。\n\n"
+        "品类: {category}\n品牌: {brand_a} vs {brand_b}\n\n"
+        "第一步: 推荐一个品牌。\n"
+        "第二步: 通过在以下8个感知维度上分配100个重要性分数来解释原因。\n\n"
+        "维度:\n{dim_block}\n\n"
+        "仅用有效的JSON回答:\n"
+        '{{\n  "recommended_brand": "品牌名",\n'
+        '  "weights": {{\n'
+        '    "semiotic": 15, "narrative": 10, "ideological": 5,\n'
+        '    "experiential": 20, "social": 10, "economic": 25,\n'
+        '    "cultural": 5, "temporal": 10\n'
+        "  }},\n"
+        '  "reasoning": "1-2句解释"\n}}\n\n'
+        "权重之和必须恰好为100。"
+    ),
+    "ru": (
+        "Вы — AI-помощник по покупкам, помогающий потребителю выбрать между двумя брендами.\n\n"
+        "Категория: {category}\nБренды: {brand_a} vs {brand_b}\n\n"
+        "Шаг 1: Порекомендуйте один бренд.\n"
+        "Шаг 2: Объясните ПОЧЕМУ, распределив 100 баллов важности по 8 измерениям восприятия.\n\n"
+        "Измерения:\n{dim_block}\n\n"
+        "Ответьте ТОЛЬКО валидным JSON:\n"
+        '{{\n  "recommended_brand": "НазваниеБренда",\n'
+        '  "weights": {{\n'
+        '    "semiotic": 15, "narrative": 10, "ideological": 5,\n'
+        '    "experiential": 20, "social": 10, "economic": 25,\n'
+        '    "cultural": 5, "temporal": 10\n'
+        "  }},\n"
+        '  "reasoning": "Объяснение в 1-2 предложениях"\n}}\n\n'
+        "Сумма весов ДОЛЖНА быть ровно 100."
+    ),
+    "ja": (
+        "あなたはAIショッピングアシスタントです。消費者が2つのブランドから選ぶのを手助けしてください。\n\n"
+        "カテゴリー: {category}\nブランド: {brand_a} vs {brand_b}\n\n"
+        "ステップ1: 1つのブランドを推薦してください。\n"
+        "ステップ2: 8つの知覚次元に100ポイントを配分して理由を説明してください。\n\n"
+        "次元:\n{dim_block}\n\n"
+        "有効なJSONのみで回答してください:\n"
+        '{{\n  "recommended_brand": "ブランド名",\n'
+        '  "weights": {{\n'
+        '    "semiotic": 15, "narrative": 10, "ideological": 5,\n'
+        '    "experiential": 20, "social": 10, "economic": 25,\n'
+        '    "cultural": 5, "temporal": 10\n'
+        "  }},\n"
+        '  "reasoning": "1-2文の説明"\n}}\n\n'
+        "重みの合計は正確に100でなければなりません。"
+    ),
+    "ko": (
+        "당신은 소비자가 두 브랜드 사이에서 선택하도록 돕는 AI 쇼핑 어시스턴트입니다.\n\n"
+        "카테고리: {category}\n브랜드: {brand_a} vs {brand_b}\n\n"
+        "1단계: 하나의 브랜드를 추천하세요.\n"
+        "2단계: 8개 인식 차원에 100점을 배분하여 이유를 설명하세요.\n\n"
+        "차원:\n{dim_block}\n\n"
+        "유효한 JSON으로만 응답하세요:\n"
+        '{{\n  "recommended_brand": "브랜드명",\n'
+        '  "weights": {{\n'
+        '    "semiotic": 15, "narrative": 10, "ideological": 5,\n'
+        '    "experiential": 20, "social": 10, "economic": 25,\n'
+        '    "cultural": 5, "temporal": 10\n'
+        "  }},\n"
+        '  "reasoning": "1-2문장 설명"\n}}\n\n'
+        "가중치의 합은 정확히 100이어야 합니다."
+    ),
+    "ar": (
+        "أنت مساعد تسوق ذكي يساعد المستهلك في الاختيار بين علامتين تجاريتين.\n\n"
+        "الفئة: {category}\nالعلامات: {brand_a} vs {brand_b}\n\n"
+        "الخطوة 1: أوصِ بعلامة تجارية واحدة.\n"
+        "الخطوة 2: اشرح السبب بتوزيع 100 نقطة أهمية على 8 أبعاد إدراكية.\n\n"
+        "الأبعاد:\n{dim_block}\n\n"
+        "أجب بـ JSON صالح فقط:\n"
+        '{{\n  "recommended_brand": "اسم_العلامة",\n'
+        '  "weights": {{\n'
+        '    "semiotic": 15, "narrative": 10, "ideological": 5,\n'
+        '    "experiential": 20, "social": 10, "economic": 25,\n'
+        '    "cultural": 5, "temporal": 10\n'
+        "  }},\n"
+        '  "reasoning": "شرح في جملة أو جملتين"\n}}\n\n'
+        "يجب أن يكون مجموع الأوزان 100 بالضبط."
+    ),
+    "hi": (
+        "आप एक AI शॉपिंग सहायक हैं जो उपभोक्ता को दो ब्रांडों के बीच चुनने में मदद कर रहे हैं।\n\n"
+        "श्रेणी: {category}\nब्रांड: {brand_a} vs {brand_b}\n\n"
+        "चरण 1: एक ब्रांड की सिफारिश करें।\n"
+        "चरण 2: 8 धारणा आयामों पर 100 महत्व अंक वितरित करके बताएं क्यों।\n\n"
+        "आयाम:\n{dim_block}\n\n"
+        "केवल वैध JSON में उत्तर दें:\n"
+        '{{\n  "recommended_brand": "ब्रांडनाम",\n'
+        '  "weights": {{\n'
+        '    "semiotic": 15, "narrative": 10, "ideological": 5,\n'
+        '    "experiential": 20, "social": 10, "economic": 25,\n'
+        '    "cultural": 5, "temporal": 10\n'
+        "  }},\n"
+        '  "reasoning": "1-2 वाक्यों में स्पष्टीकरण"\n}}\n\n'
+        "भार का योग ठीक 100 होना चाहिए।"
+    ),
+}
+
+# Simplified: only weighted_recommendation gets native translation (primary DCI measure).
+# Differentiation and probes use English to maintain JSON parse reliability.
+# This is documented in the pre-registration as a design choice.
+
+
+def should_run_native(model_name: str, pair_id: str) -> Optional[str]:
+    """Check if this model-pair combination should also get a native-language prompt.
+
+    Returns the language code if yes, None if no.
+    """
+    model_lang = MODEL_NATIVE_LANGUAGE.get(model_name)
+    pair_lang = PAIR_NATIVE_LANGUAGE.get(pair_id)
+    if model_lang and pair_lang and model_lang == pair_lang:
+        return model_lang
+    return None
+
+
+# ---------------------------------------------------------------------------
 # Data Structures
 # ---------------------------------------------------------------------------
 
@@ -569,6 +802,7 @@ class ExperimentCall:
     timestamp: str
     latency_ms: int
     error: Optional[str] = None
+    prompt_language: str = "en"   # "en" for English, "zh"/"ru"/"ja"/"ko"/"ar"/"hi" for native
 
 
 @dataclass
@@ -2160,6 +2394,74 @@ def run_experiment_live(
                         latency_ms=0,
                         error=str(exc),
                     ))
+
+                # --- Native-language Weighted Recommendation (H10) ---
+                native_lang = should_run_native(model_name, pair.id)
+                if native_lang and native_lang in NATIVE_WEIGHTED_RECOMMENDATION:
+                    native_dim_block = _dim_block_native(native_lang)
+                    native_rec_prompt = NATIVE_WEIGHTED_RECOMMENDATION[native_lang].format(
+                        category=pair.category,
+                        brand_a=pair.brand_a,
+                        brand_b=pair.brand_b,
+                        dim_block=native_dim_block,
+                    )
+                    done += 1
+                    print(
+                        f"  [{done}/{total}] run={run_idx} model={model_name} "
+                        f"type=weighted_recommendation_native lang={native_lang} pair={pair.id}"
+                    )
+                    native_log_ctx = {
+                        "prompt_type": "weighted_recommendation_native",
+                        "brand_pair": pair_label,
+                        "pair_id": pair.id,
+                        "dimension": None,
+                        "brand": None,
+                        "run": run_idx,
+                        "prompt_language": native_lang,
+                    }
+                    t0 = time.monotonic()
+                    try:
+                        raw = call_with_retry(
+                            caller, native_rec_prompt, model_name,
+                            log_path=log_path, log_context=native_log_ctx,
+                        )
+                        latency_ms = int((time.monotonic() - t0) * 1000)
+                        parsed = {}
+                        try:
+                            parsed = parse_llm_json(raw)
+                        except Exception:
+                            pass
+                        all_calls.append(ExperimentCall(
+                            model=model_name,
+                            brand_pair=pair_label,
+                            pair_id=pair.id,
+                            prompt_type="weighted_recommendation_native",
+                            dimension=None,
+                            brand=None,
+                            run=run_idx,
+                            response=raw,
+                            parsed=parsed,
+                            timestamp=datetime.datetime.now(datetime.timezone.utc).isoformat(),
+                            latency_ms=latency_ms,
+                            prompt_language=native_lang,
+                        ))
+                    except Exception as exc:
+                        print(f"    [error] weighted_recommendation_native {model_name}: {exc}")
+                        all_calls.append(ExperimentCall(
+                            model=model_name,
+                            brand_pair=pair_label,
+                            pair_id=pair.id,
+                            prompt_type="weighted_recommendation_native",
+                            dimension=None,
+                            brand=None,
+                            run=run_idx,
+                            response="",
+                            parsed={},
+                            timestamp=datetime.datetime.now(datetime.timezone.utc).isoformat(),
+                            latency_ms=0,
+                            error=str(exc),
+                            prompt_language=native_lang,
+                        ))
 
                 # --- Dimensional Differentiation prompt ---
                 done += 1
