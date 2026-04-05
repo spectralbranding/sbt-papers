@@ -375,6 +375,96 @@ LOCAL_BRAND_PAIRS: list[BrandPair] = [
 
 
 # ---------------------------------------------------------------------------
+# Run 5: Cross-Cultural Information Asymmetry Brand Pairs
+# ---------------------------------------------------------------------------
+# These pairs test whether models trained on specific cultural web data resolve
+# brands from their own culture better than foreign models do. Each local brand
+# is paired with a global competitor in the same category. The key variable is
+# cultural training data bias, not commercial alignment (see Methodological Note
+# in NOTE_R15_RUN5_CROSS_CULTURAL.md).
+
+CROSSCULTURAL_BRAND_PAIRS: list[BrandPair] = [
+    BrandPair(
+        id="china_water",
+        brand_a="Nongfu Spring",
+        brand_b="Evian",
+        category="bottled water",
+        differentiating_dims=["cultural", "narrative"],
+        dim_type="soft",
+        description="Nongfu Spring is China's #1 bottled water brand (est. 1996, Hangzhou, "
+                    "'We don't produce water, we are porters of nature'). Tests Chinese "
+                    "training data advantage for Qwen/DeepSeek vs Western models.",
+    ),
+    BrandPair(
+        id="japan_snacks",
+        brand_a="Calbee",
+        brand_b="Lay's",
+        category="snack food",
+        differentiating_dims=["cultural", "experiential"],
+        dim_type="soft",
+        description="Calbee is Japan's largest snack maker (est. 1949, Hiroshima). "
+                    "Strong Japanese cultural identity but limited English data. "
+                    "Tests Japanese brand perception across Swallow vs Western models.",
+    ),
+    BrandPair(
+        id="uae_dairy",
+        brand_a="Al Rawabi",
+        brand_b="Danone",
+        category="dairy products",
+        differentiating_dims=["cultural", "social"],
+        dim_type="soft",
+        description="Al Rawabi is UAE's leading fresh dairy brand (est. 1989, Dubai, "
+                    "integrated farm-to-table). Arabic-language brand in English-language models. "
+                    "Tests Falcon/Jais Arabic training advantage.",
+    ),
+    BrandPair(
+        id="russia_organic",
+        brand_a="VkusVill",
+        brand_b="Whole Foods",
+        category="organic grocery chain",
+        differentiating_dims=["ideological", "cultural"],
+        dim_type="soft",
+        description="VkusVill is Russia's clean-label grocery chain (est. 2009, Moscow, "
+                    "1,800+ stores). Tests Russian brand perception in GigaChat/YandexGPT "
+                    "vs Western models. Also tests geopolitical bias in perception.",
+    ),
+    BrandPair(
+        id="ukraine_confectionery",
+        brand_a="Roshen",
+        brand_b="Cadbury",
+        category="confectionery",
+        differentiating_dims=["narrative", "cultural"],
+        dim_type="soft",
+        description="Roshen is Ukraine's largest confectionery (est. 1996, Vinnytsia, "
+                    "founded by Petro Poroshenko). Tests opposite geopolitical valence "
+                    "from VkusVill. Do models treat Ukrainian vs Russian brands differently?",
+    ),
+    BrandPair(
+        id="mongolia_beer",
+        brand_a="APU Chinggis",
+        brand_b="Heineken",
+        category="beer brand",
+        differentiating_dims=["cultural", "temporal"],
+        dim_type="soft",
+        description="APU's Chinggis brand is Mongolia's national beer (est. 1927, "
+                    "Ulaanbaatar, named after Chinggis Khaan). Near-zero English training "
+                    "data. Ultimate thin-data test for dimensional collapse.",
+    ),
+    BrandPair(
+        id="korea_dairy",
+        brand_a="Binggrae",
+        brand_b="Danone",
+        category="dairy and beverages",
+        differentiating_dims=["cultural", "social"],
+        dim_type="soft",
+        description="Binggrae is South Korea's iconic dairy brand (est. 1967, Banana "
+                    "Flavored Milk is a K-culture icon). Tests EXAONE Korean training "
+                    "advantage and K-culture halo effect in perception.",
+    ),
+]
+
+
+# ---------------------------------------------------------------------------
 # Prompts (v2 -- structured dimensional elicitation)
 # ---------------------------------------------------------------------------
 
@@ -837,25 +927,177 @@ def call_gemma4_local(prompt: str, model: str = "gemma4:latest") -> str:
     return content
 
 
+# ---------------------------------------------------------------------------
+# Free-tier cloud backends (OpenAI-compatible)
+# ---------------------------------------------------------------------------
+
+
+def _call_openai_compatible(
+    prompt: str,
+    model: str,
+    api_key_env: str,
+    base_url: str,
+    max_tokens: int = 2048,
+) -> str:
+    """Generic caller for any OpenAI-compatible endpoint."""
+    from openai import OpenAI
+
+    client = OpenAI(api_key=os.environ[api_key_env], base_url=base_url)
+    response = client.chat.completions.create(
+        model=model,
+        messages=[{"role": "user", "content": prompt}],
+        max_tokens=max_tokens,
+        temperature=0.7,
+    )
+    return response.choices[0].message.content
+
+
+def call_cerebras(prompt: str, model: str = "qwen3-32b") -> str:
+    """Call Cerebras Inference API (free tier, 1M tokens/day)."""
+    return _call_openai_compatible(
+        prompt, model, "CEREBRAS_API_KEY", "https://api.cerebras.ai/v1"
+    )
+
+
+def call_sambanova(prompt: str, model: str = "Qwen2.5-72B-Instruct") -> str:
+    """Call SambaNova Cloud API (free tier, rate-limited)."""
+    return _call_openai_compatible(
+        prompt, model, "SAMBANOVA_API_KEY", "https://api.sambanova.ai/v1"
+    )
+
+
+def call_groq(prompt: str, model: str = "llama-3.3-70b-versatile") -> str:
+    """Call Groq API (free tier, rate-limited)."""
+    return _call_openai_compatible(
+        prompt, model, "GROQ_API_KEY", "https://api.groq.com/openai/v1"
+    )
+
+
+# ---------------------------------------------------------------------------
+# National model backends (local Ollama)
+# ---------------------------------------------------------------------------
+
+
+def _call_ollama_model(prompt: str, model: str, no_think: bool = False) -> str:
+    """Generic Ollama caller for national models. Uses native /api/generate."""
+    p = prompt
+    if no_think:
+        p = prompt + "\n/no_think"
+    payload = json.dumps(
+        {
+            "model": model,
+            "prompt": p + "\n\nRespond with ONLY a JSON object:",
+            "stream": False,
+            "options": {"num_predict": 2048, "temperature": 0.7},
+        }
+    ).encode()
+    req = urllib.request.Request(
+        "http://localhost:11434/api/generate",
+        data=payload,
+        headers={"Content-Type": "application/json"},
+    )
+    with urllib.request.urlopen(req, timeout=180) as resp:
+        data = json.loads(resp.read())
+    content = data.get("response", "")
+    content = re.sub(r"<think>.*?</think>", "", content, flags=re.DOTALL).strip()
+    content = re.sub(r"```(?:json)?\s*", "", content).strip()
+    content = re.sub(r"```\s*$", "", content).strip()
+    return content
+
+
+def call_yandexgpt_local(
+    prompt: str,
+    model: str = "yandex/YandexGPT-5-Lite-8B-instruct-GGUF:Q4_K_M",
+) -> str:
+    """Call YandexGPT 5 Lite 8B via local Ollama (Russian cultural training)."""
+    return _call_ollama_model(prompt, model)
+
+
+def call_gigachat_local(
+    prompt: str,
+    model: str = "hf.co/ai-sage/GigaChat-20B-A3B-instruct-GGUF:Q4_K_M",
+) -> str:
+    """Call GigaChat 20B-A3B via local Ollama (Russian, Sber, MIT license)."""
+    return _call_ollama_model(prompt, model)
+
+
+def call_exaone_local(
+    prompt: str,
+    model: str = "hf.co/LGAI-EXAONE/EXAONE-4.0-32B-GGUF:Q4_K_M",
+) -> str:
+    """Call EXAONE 4.0 32B via local Ollama (Korean, LG AI Research)."""
+    return _call_ollama_model(prompt, model)
+
+
+def call_swallow_local(
+    prompt: str,
+    model: str = "hf.co/mmnga/Llama-3.1-Swallow-8B-Instruct-v0.3-GGUF:Q4_K_M",
+) -> str:
+    """Call Swallow 8B via local Ollama (Japanese, Tokyo Tech)."""
+    return _call_ollama_model(prompt, model)
+
+
+def call_falcon_arabic_local(
+    prompt: str,
+    model: str = "hf.co/tiiuae/Falcon-H1-Arabic-7B-Instruct-GGUF:Q4_K_M",
+) -> str:
+    """Call Falcon-H1-Arabic 7B via local Ollama (Arabic, TII UAE)."""
+    return _call_ollama_model(prompt, model)
+
+
+def call_qwen35_local(prompt: str, model: str = "qwen3.5:27b") -> str:
+    """Call Qwen3.5 27B via local Ollama (Chinese, newer than Qwen3)."""
+    return _call_ollama_model(prompt, model, no_think=True)
+
+
+# ---------------------------------------------------------------------------
+# Model registry
+# ---------------------------------------------------------------------------
+
 API_CALLERS: dict[str, Any] = {
+    # Original models (Runs 2-4)
     "claude": call_claude,
     "gpt": call_gpt,
     "gemini": call_gemini,
     "deepseek": call_deepseek,
     "qwen3_local": call_qwen3_local,
     "gemma4_local": call_gemma4_local,
+    # Free-tier cloud (Run 5+)
+    "cerebras_qwen3": call_cerebras,
+    "sambanova_qwen25": call_sambanova,
+    "groq_llama33": call_groq,
+    # National models - local (Run 5+)
+    "yandexgpt_local": call_yandexgpt_local,
+    "gigachat_local": call_gigachat_local,
+    "exaone_local": call_exaone_local,
+    "swallow_local": call_swallow_local,
+    "falcon_arabic_local": call_falcon_arabic_local,
+    "qwen35_local": call_qwen35_local,
 }
 
 API_KEY_VARS: dict[str, str] = {
+    # Original
     "claude": "ANTHROPIC_API_KEY",
     "gpt": "OPENAI_API_KEY",
     "gemini": "GOOGLE_API_KEY",
     "deepseek": "DEEPSEEK_API_KEY",
     "qwen3_local": "OLLAMA_AVAILABLE",
     "gemma4_local": "OLLAMA_AVAILABLE",
+    # Free-tier cloud
+    "cerebras_qwen3": "CEREBRAS_API_KEY",
+    "sambanova_qwen25": "SAMBANOVA_API_KEY",
+    "groq_llama33": "GROQ_API_KEY",
+    # National models - local
+    "yandexgpt_local": "OLLAMA_AVAILABLE",
+    "gigachat_local": "OLLAMA_AVAILABLE",
+    "exaone_local": "OLLAMA_AVAILABLE",
+    "swallow_local": "OLLAMA_AVAILABLE",
+    "falcon_arabic_local": "OLLAMA_AVAILABLE",
+    "qwen35_local": "OLLAMA_AVAILABLE",
 }
 
 MODEL_IDS: dict[str, str] = {
+    # Original
     "claude": "claude-haiku-4-5",
     "gpt": "gpt-4o-mini",
     "gemini": "gemini-2.5-flash",
@@ -863,6 +1105,17 @@ MODEL_IDS: dict[str, str] = {
     "qwen3_local": "qwen3:30b",
     "gemma4_local": "gemma4:latest",
     "simulated": "simulated",
+    # Free-tier cloud
+    "cerebras_qwen3": "qwen3-32b",
+    "sambanova_qwen25": "Qwen2.5-72B-Instruct",
+    "groq_llama33": "llama-3.3-70b-versatile",
+    # National models
+    "yandexgpt_local": "yandex/YandexGPT-5-Lite-8B-instruct-GGUF:Q4_K_M",
+    "gigachat_local": "hf.co/ai-sage/GigaChat-20B-A3B-instruct-GGUF:Q4_K_M",
+    "exaone_local": "hf.co/LGAI-EXAONE/EXAONE-4.0-32B-GGUF:Q4_K_M",
+    "swallow_local": "hf.co/mmnga/Llama-3.1-Swallow-8B-Instruct-v0.3-GGUF:Q4_K_M",
+    "falcon_arabic_local": "hf.co/tiiuae/Falcon-H1-Arabic-7B-Instruct-GGUF:Q4_K_M",
+    "qwen35_local": "qwen3.5:27b",
 }
 
 
@@ -1999,6 +2252,9 @@ def run_experiment(
     log_path: Optional[str] = None,
     include_local: bool = False,
     local_only: bool = False,
+    include_crosscultural: bool = False,
+    crosscultural_only: bool = False,
+    model_filter: Optional[list[str]] = None,
 ) -> ExperimentResults:
     """
     Run the R15 AI Search Metamerism experiment.
@@ -2031,11 +2287,14 @@ def run_experiment(
     else:
         model_list = []
         for model_name, env_var in API_KEY_VARS.items():
+            if model_filter and model_name not in model_filter:
+                continue
             if os.environ.get(env_var):
                 model_list.append(model_name)
                 print(f"  [available] {model_name} ({MODEL_IDS.get(model_name, '?')})")
             else:
-                print(f"  [skip] {model_name}: {env_var} not set")
+                if not model_filter or model_name in model_filter:
+                    print(f"  [skip] {model_name}: {env_var} not set")
         if not model_list:
             print(
                 "\nERROR: No API keys found. Set one or more of:\n"
@@ -2072,8 +2331,14 @@ def run_experiment(
     else:
         if smoke:
             actual_pairs = BRAND_PAIRS[:1]
+        elif crosscultural_only:
+            actual_pairs = CROSSCULTURAL_BRAND_PAIRS
         elif local_only:
             actual_pairs = LOCAL_BRAND_PAIRS
+        elif include_crosscultural and include_local:
+            actual_pairs = BRAND_PAIRS + LOCAL_BRAND_PAIRS + CROSSCULTURAL_BRAND_PAIRS
+        elif include_crosscultural:
+            actual_pairs = BRAND_PAIRS + CROSSCULTURAL_BRAND_PAIRS
         elif include_local:
             actual_pairs = BRAND_PAIRS + LOCAL_BRAND_PAIRS
         else:
@@ -2234,6 +2499,23 @@ def main() -> None:
         action="store_true",
         help="Run ONLY the local brand pairs (skip global pairs)",
     )
+    parser.add_argument(
+        "--crosscultural",
+        action="store_true",
+        help="Include Run 5 cross-cultural brand pairs (7 pairs from 7 cultures)",
+    )
+    parser.add_argument(
+        "--crosscultural-only",
+        action="store_true",
+        help="Run ONLY the cross-cultural brand pairs (skip global and local pairs)",
+    )
+    parser.add_argument(
+        "--models",
+        type=str,
+        default=None,
+        help="Comma-separated list of model names to use (e.g. 'cerebras_qwen3,groq_llama33'). "
+             "Default: all available models.",
+    )
     args = parser.parse_args()
 
     n_modes = sum([args.live, args.demo, args.smoke])
@@ -2256,6 +2538,9 @@ def main() -> None:
         log_path=args.log,
         include_local=args.local_brands,
         local_only=args.local_only,
+        include_crosscultural=args.crosscultural,
+        crosscultural_only=args.crosscultural_only,
+        model_filter=args.models.split(",") if args.models else None,
     )
 
 
