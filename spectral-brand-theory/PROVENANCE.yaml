@@ -17,3 +17,27 @@ provenance:
       identifiers:
         doi: "10.5281/zenodo.18945913"
         community: ["spectral-branding"]
+
+    - id: "fork-2026-04-04-zenodo-v2.2"
+      target: "Zenodo"
+      target_type: preprint_server
+      created: "2026-04-04"
+      source_commit: "main"
+      status: merged
+      outcome: published
+      notes: "v2.2: Coordinate-free DOP + temporal tracking"
+      identifiers:
+        doi: "10.5281/zenodo.18945912"
+        community: ["spectral-branding"]
+
+    - id: "fork-2026-04-05-zenodo-v2.3"
+      target: "Zenodo"
+      target_type: preprint_server
+      created: "2026-04-05"
+      source_commit: "feature/medesani-admissibility"
+      status: pending
+      outcome: pending_upload
+      notes: "v2.3: Admissibility vs coherence (Medesani & Macdonald), Du & Kamakura (2015), caption formatting"
+      identifiers:
+        doi: "10.5281/zenodo.18945912"
+        community: ["spectral-branding"]
