@@ -364,6 +364,8 @@ The metameric collapse mechanism provides a formal, testable explanation for pra
 
 The conditional metamerism finding adds a moderator structure to this framework that was theoretically anticipated but empirically uncertain prior to this study. The large effect is consistent with training-data embeddedness being a primary moderator of AI-mediated dimensional collapse, outweighing model architecture, training corpus cultural origin, and deployment context (cloud vs. local). This creates an immediately actionable prioritization principle: brands in underrepresented markets face a quantifiably larger AI metamerism risk, and their vulnerability can be estimated from measurable proxies (English-language search result count, Wikipedia coverage depth, international media mentions).
 
+The conditional metamerism documented here connects to a broader diagnostic framework. Medesani and Macdonald (2026) formalize *admissible regions* --- invariant corridors within which a system's state must remain for governance guarantees to hold. Applied to brand perception, a brand's measured spectral profile is admissible only when it falls within the corridor defined by its Brand Function. Conditional metamerism implies that admissibility assessment itself is observer-dependent: a brand may be admissible as perceived by information-rich observers yet inadmissible as perceived by information-sparse AI observers operating under the Economic Default. This observer-contingent admissibility is a direct consequence of conditional metamerism and suggests that brand governance must account for the measurement infrastructure, not merely the measured position.
+
 ### 5.6 Implications for Search Advertising
 
 The most direct implication is that search advertising strategy must account for the dimensional structure of AI mediation. Four specific implications follow from the empirical results.
@@ -384,7 +386,7 @@ This reframes the brand specification challenge. The practical output is a brand
 
 ### 5.8 Connection to Broader AI and Search Trends
 
-The dimensional collapse documented here is not unique to brands. Personality perception by AI shows analogous flattening (Hashimoto & Oshio, 2025). Cultural nuance in machine translation shows analogous loss (Van Doren et al., 2025). The SBT framework provides a general instrument for measuring this collapse across domains: the methodological approach --- measuring the implicit spectral profile of an AI system by analyzing which dimensions it preserves in its outputs --- is domain-general.
+The dimensional collapse documented here is not unique to brands. Personality perception by AI shows analogous flattening (Hashimoto & Oshio, 2025). Cultural nuance in machine translation shows analogous loss (Van Doren & Holland, 2025). The SBT framework provides a general instrument for measuring this collapse across domains: the methodological approach --- measuring the implicit spectral profile of an AI system by analyzing which dimensions it preserves in its outputs --- is domain-general.
 
 ---
 
@@ -434,7 +436,7 @@ Diehl, K., Kornish, L. J., & Lynch, J. G. (2003). Smart agents: When lower searc
 
 Hagendorff, T., Fabi, S., & Kosinski, M. (2023). Human-like intuitive behavior and reasoning biases emerged in large language models but disappeared in ChatGPT. *Nature Computational Science*, 3, 833-838.
 
-Hashimoto, Y., & Oshio, A. (2025). Structural compression of personality assessment in large language models. [Working paper; journal and volume to be verified before submission.]
+Hashimoto, Y., & Oshio, A. (2025). Exploring personality structure through LLM agent: A lexical perspective. *Psychological Test Adaptation and Development*, 6, 248–258. https://doi.org/10.1027/2698-1866/a000114
 
 Hermann, E., & Puntoni, S. (2024). Artificial intelligence and consumer behavior: From predictive to generative AI. *Journal of Business Research*, 180, 114720. https://doi.org/10.1016/j.jbusres.2024.114720
 
@@ -450,7 +452,7 @@ Keller, K. L. (1993). Conceptualizing, measuring, and managing customer-based br
 
 Kietzmann, J., Paschen, J., & Treen, E. (2018). Artificial intelligence in advertising: How marketers can leverage artificial intelligence along the consumer journey. *Journal of Advertising Research*, 58(3), 263-267.
 
-Liu, Z. (2026). The alignment tax: RLHF-induced homogenization in language model outputs. *Proceedings of the ACL*, 2026.
+Liu, M. (2026). The alignment tax: Response homogenization in aligned LLMs and its implications for uncertainty estimation. arXiv:2603.24124. <!-- VERIFY BEFORE SUBMISSION: arXiv preprint March 2026; confirm ACL acceptance status --> https://arxiv.org/abs/2603.24124
 
 Longoni, C., & Cian, L. (2022). Artificial intelligence in utilitarian vs. hedonic contexts: The "word-of-machine" effect. *Journal of Marketing*, 86(1), 91-108.
 
@@ -458,11 +460,13 @@ Lu, C., Lu, C., Lange, R. T., Yamada, Y., Hu, S., Foerster, J., Ha, D., & Clune,
 
 Lynch, J. G., & Ariely, D. (2000). Wine online: Search costs affect competition on price, quality, and distribution. *Marketing Science*, 19(1), 83-103.
 
+Medesani, M., & Macdonald, J. (2026). Geometric foundations of invariant corridors and governance. Working Paper. https://doi.org/10.5281/zenodo.18822552
+
 Puntoni, S., Reczek, R. W., Giesler, M., & Botti, S. (2021). Consumers and artificial intelligence: An experiential perspective. *Journal of Marketing*, 85(1), 131-151.
 
 Tversky, A. (1972). Elimination by aspects: A theory of choice. *Psychological Review*, 79(4), 281-299.
 
-Van Doren, M., et al. (2025). Cultural figurative collapse in neural machine translation. [Working paper; journal venue and volume to be verified before submission.]
+Van Doren, M., & Holland, C. (2025). "Be My Cheese?": Assessing cultural nuance in multilingual LLM translations. arXiv:2509.21577. https://arxiv.org/abs/2509.21577
 
 Wyszecki, G., & Stiles, W. S. (1982). *Color science: Concepts and methods, quantitative data and formulae* (2nd ed.). Wiley.
 
