@@ -286,6 +286,8 @@ Second, cloud confidence scores are calibrated within each brand analysis but no
 
 Third, the analytical pipeline was initially executed by a single LLM (Claude Opus 4.6), introducing potential model-specific biases. A full cross-model replication was conducted using Gemini 3.1 Pro (Google) across all five brands. Both models independently produced identical coherence type classifications and identical letter grades for every brand in the sample:
 
+**Table 5.** Cross-model replication convergence: coherence type and grade.
+
 | Brand | Claude Opus 4.6 | Gemini 3.1 Pro | Convergence |
 |:------|:----------------|:----------------|:------------|
 | Tesla | Incoherent, C- | Incoherent, C- | Identical |
@@ -293,8 +295,6 @@ Third, the analytical pipeline was initially executed by a single LLM (Claude Op
 | Patagonia | Identity, B+ | Identity, B+ | Identical |
 | IKEA | Signal, A- | Signal, A- | Identical |
 | Erewhon | Exp. Asymmetry, B- | Exp. Asymmetry, B- | Identical |
-
-**Table 5.** Cross-model replication convergence: coherence type and grade.
 
 Both models independently derived the structural absence mechanism for Hermès without it being named in the prompt templates, and both independently identified the CEO ambient signal domination as Tesla's core architectural failure. Model-sensitive findings were limited to two dimensions: cohort granularity (Claude consistently identified 5-6 cohorts per brand; Gemini consistently identified 3, aggregating into broader strategic segments) and D/A ratio variance (within 10-15 percentage points, with Gemini attributing slightly more to designed signals). The replication also revealed complementary operational biases. Claude Opus 4.6 generates finer cohort fragmentation, isolating edge-case observer profiles (e.g., separating "Heritage Client" from "Cultural Connoisseur"). Gemini 3.1 Pro produces parsimonious macro-segments suited to strategic planning. Claude's outputs emphasize paradoxes and internal tensions; Gemini's are more clinically operational. Neither model exhibited grade inflation across any of the five brands. These biases are complementary rather than contradictory: the structural diagnosis remains stable regardless of cohort resolution, confirming that the framework — not the model — drives the analytical conclusions. Replication with additional models and by human analysts would further strengthen the validation. Additionally, both models were trained on substantial corpora of brand-related text for these five well-documented brands; convergence may reflect shared training data as well as framework validity. Testing the framework on brands with minimal public information would provide a stronger test of the analytical pipeline.
 
