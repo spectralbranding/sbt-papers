@@ -8,9 +8,9 @@ Working Paper v1.1 — April 2026
 
 ## Abstract
 
-Scientific evaluation relies on a self-reinforcing loop: universities evaluate researchers by journal prestige, journals evaluate papers partly by institutional affiliation, and no one evaluates the research directly — because direct evaluation at scale has lacked the necessary infrastructure. This paper proposes a protocol that provides that infrastructure by treating every research program as a version-controlled repository. A paper is a render of the research at a point on its timeline: a frozen snapshot forked to a journal so the community can confirm the findings. The protocol introduces fork-based submission, automated compliance gates, attributed reviewer commits, provenance chains, structural funding and affiliation metadata, and AI-traceability by design — every AI-assisted edit becomes a commit with auditable metadata. The protocol optimizes the knowledge production process, not the paper: existing publishing reforms improve the rendered artifact; this protocol makes the research itself structurally transparent. Universities can evaluate researchers on contribution depth and review quality instead of journal brands. Funders can trace grants to specific commits. Reviewers build portable, credited portfolios. Junior researchers gain visibility from their first commit. Combined with the Paper Spec standard (Zharnikov, 2026t), which specifies what a paper claims, the repository protocol specifies how the research was built, evaluated, and decided upon.
+Scientific evaluation relies on a self-reinforcing loop: universities evaluate researchers by journal prestige, journals evaluate papers partly by institutional affiliation, and no one evaluates the research directly — because direct evaluation at scale has lacked the necessary infrastructure. This paper proposes a protocol that provides that infrastructure by treating every research program as a version-controlled repository. A paper is a render of the research at a point on its timeline: a frozen snapshot forked to a journal so the community can confirm the findings. The protocol introduces fork-based submission, automated compliance gates, attributed reviewer commits, provenance chains, structural funding and affiliation metadata, and AI-traceability by design — every AI-assisted edit becomes a commit with auditable metadata. The protocol further introduces a Research Wiki layer within the repository — adapting Karpathy's (2026) three-layer knowledge pattern — that creates five types of git-timestamped intellectual work proof: discovery (when a source was first encountered), priority (when an idea was first articulated), attestation (when an idea was shared with a third party), derivation (how the argument developed from sources to conclusions), and independence (whether researchers developed ideas independently). The protocol optimizes the knowledge production process, not the paper: existing publishing reforms improve the rendered artifact; this protocol makes the research itself structurally transparent. Combined with the Paper Spec standard (Zharnikov, 2026t), which specifies what a paper claims, the repository protocol specifies how the research was built, evaluated, and decided upon.
 
-**Keywords**: scientific publishing, version control, peer review, research infrastructure, open science, provenance, knowledge production, research evaluation, AI transparency
+**Keywords**: scientific publishing, version control, peer review, research infrastructure, open science, provenance, knowledge production, research evaluation, AI transparency, intellectual work proof, research wiki, scholarly communication
 
 ---
 
@@ -27,6 +27,8 @@ Open access reforms — accelerated by mandates such as Plan S (cOAlition S, 201
 Each reform addresses one dimension of the publishing problem while leaving the document assumption intact. The result is a system that has been incrementally improved on six dimensions simultaneously — access, timing, sequence, commentary, data sharing, reproducibility — without any reform touching the structural foundation that constrains all of them.
 
 Scientific publishing is the only knowledge-intensive domain without formal version control and provenance infrastructure. Legal systems track case law revisions. Financial auditing requires audit trails. Clinical research mandates trial registration. Supply chain management maintains chain of custody. Software engineering uses Git. Each domain independently developed provenance tracking because each discovered that knowledge integrity requires it. Publishing has not.
+
+**Table 1.** Provenance mechanisms across knowledge-intensive domains.
 
 | Domain | Provenance mechanism | When adopted |
 |--------|---------------------|-------------|
@@ -124,7 +126,7 @@ This inversion shifts the value of journals to a different level. In the documen
 
 Several platforms and standards address subsets of the gaps identified above. None integrates all five into a unified protocol.
 
-**Table 1a. Protocol feature coverage.** Columns indicate whether a system supports each of the six protocol features described in Section 1.2. Full = structurally integrated; Partial = addressed but not fully integrated; No = not addressed.
+**Table 2a.** Protocol feature coverage. Columns indicate whether a system supports each of the six protocol features described in Section 1.2. Full = structurally integrated; Partial = addressed but not fully integrated; No = not addressed.
 
 | System | VC | Fork | Gate | Rev | Prov | Coll |
 |--------|:-:|:-:|:-:|:-:|:-:|:-:|
@@ -144,7 +146,7 @@ Several platforms and standards address subsets of the gaps identified above. No
 
 Column key: VC = version control, Fork = fork-based submission, Gate = compliance gate, Rev = reviewer attribution, Prov = provenance chain, Coll = collections as users. Dashes indicate the feature is absent.
 
-**Table 1b. System context.**
+**Table 2b.** System context and adoption.
 
 | System | Adoption | Key limitation |
 |--------|----------|----------------|
@@ -409,7 +411,7 @@ ScholarOne / Editorial Manager / OJS
     |     structural metadata or provenance
 ```
 
-**Figure 1. Architecture of the fork-based submission lifecycle.**
+**Figure 1.** Architecture of the fork-based submission lifecycle.
 
 ```
 Research Repository (author)
@@ -601,6 +603,8 @@ pre_submission:
 These AI checks are **advisory, not blocking**. They help the author assess fit before investing in the submission. A researcher can see: "Your paper's claims overlap 72% with Journal X's scope but only 31% with Journal Y's — consider submitting to X first." This replaces the current guesswork of reading "Instructions for Authors" and hoping.
 
 **Implementability.** Every check in the gate is technically straightforward:
+
+**Table 3.** Compliance gate checks and implementation difficulty.
 
 | Check | Implementation | Difficulty |
 |---|---|---|
@@ -1008,6 +1012,8 @@ This inverts the current hierarchy, where the published PDF is the canonical ver
 
 Every feature that the current system implements through policy, the repository protocol implements through structure:
 
+**Table 4.** Policy-based vs structure-based implementation of publishing functions.
+
 | Current approach | Repository approach |
 |---|---|
 | Dual submission ban (policy, honor system) | Provenance chain makes active forks visible (structural) |
@@ -1057,7 +1063,7 @@ The four-level hierarchy introduced in Section 1.1 — repository, paper, fork, 
 3. **Fork = sharing.** The render is transmitted to the community for confirmation. The fork is lossy: no single paper captures the full repository, just as no single brand interaction captures the full brand specification.
 4. **Publication = merge.** The community (journal) evaluates the render and either merges it into its collection or closes the fork. Analogous to the perception that forms after the signal reaches its audience.
 
-**Cross-domain comparison.** The same three-layer structure appears across the sibling frameworks in this research program:
+**Table 5.** Cross-domain comparison: specification-rendering-perception across three sibling frameworks.
 
 | Structural layer          | Branding (SBT)             | Organization (OST)         | Research (this protocol)   |
 |---------------------------|----------------------------|----------------------------|----------------------------|
@@ -1144,7 +1150,7 @@ The protocol does not solve the pipeline problem. But it provides the infrastruc
 
 ### 4.10 Stakeholder Summary
 
-**Table 2. Stakeholder benefit summary.**
+**Table 6.** Stakeholder benefit summary.
 
 | Stakeholder | Current pain | Protocol benefit |
 |-------------|-------------|-----------------|
