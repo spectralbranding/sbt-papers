@@ -15,6 +15,7 @@
 - Korean-trained models (EXAONE) will have lower DCI for Binggrae than Western-trained models
 - Arabic-trained models (Falcon-H1-Arabic) will have lower DCI for Al Rawabi than Western-trained models
 - Japanese-trained models (Swallow) will have lower DCI for Calbee than Western-trained models
+- Indian-trained models (Sarvam-105B) will have lower DCI for Amul than Western-trained models
 
 **H6 (Bidirectional Asymmetry)**: The cultural advantage is bidirectional — Western-trained models will have lower DCI for Evian/Lay's/Danone/Heineken than national models from non-Western cultures.
 
@@ -33,6 +34,7 @@
 5. Ukraine: Roshen vs Cadbury (confectionery)
 6. Mongolia: APU Chinggis vs Heineken (beer)
 7. South Korea: Binggrae vs Danone (dairy/beverages)
+8. India: Amul vs Danone (dairy products)
 
 ### 2.2 Models
 Open-weight models used where available to isolate cultural training data bias from commercial alignment confounds.
@@ -47,10 +49,10 @@ Open-weight models used where available to isolate cultural training data bias f
 
 **New national models** (Run 5):
 - EXAONE 4.0 32B (LG AI Research, Korean, local GGUF)
-- Falcon-H1-Arabic 7B (TII, Arabic/UAE, local GGUF)
 - YandexGPT 5 Lite 8B (Yandex, Russian, local Ollama)
-- GigaChat 20B-A3B (Sber, Russian, local GGUF, MIT license)
+- GigaChat 3.1 Lightning (Sber, Russian, local GGUF, MIT license)
 - Swallow 8B (Tokyo Tech, Japanese, local GGUF)
+- Sarvam-105B (Sarvam AI, Indian, Indus API free tier, Apache 2.0)
 
 **Free-tier cloud additions**:
 - Qwen3-32B via Cerebras (same weights as Qwen3 local — replication check)
@@ -73,9 +75,8 @@ Max tokens: 2048 (same as Runs 2-4, except Qwen3 local: 4096)
 Runs per prompt: 3 (same as Runs 2-4)
 
 ### 2.5 Sample Size
-- 7 pairs x 3 prompt types x 3 runs x ~14 models = ~882 calls per model set
-- Total: ~882 calls (original 6) + ~882 calls (new 8 national/cloud) = ~1,764 calls
-- With Runs 2-4 carried forward (4,860 calls), total dataset: ~6,624 calls
+- 8 pairs x 18 prompts/pair x 3 runs x ~15 models = ~6,480 calls
+- With Runs 2-4 carried forward (4,860 calls), total dataset: ~11,340 calls
 
 ## 3. Analysis Plan
 
@@ -84,7 +85,7 @@ For each culture c with national model m_c:
 - Compute DCI for m_c on the local brand from culture c
 - Compute DCI for all other models on the same brand
 - Test: paired t-test (m_c DCI vs mean other-model DCI)
-- Report: Cohen's d, 95% CI, Bonferroni-corrected p-value (7 cultures)
+- Report: Cohen's d, 95% CI, Bonferroni-corrected p-value (8 cultures)
 
 ### 3.2 Diagonal Advantage Matrix
 Construct a models x cultures matrix of DCI values. The "diagonal" (each national model on its own culture's brand) should have systematically lower DCI than off-diagonal cells. Test via permutation test.
@@ -112,8 +113,8 @@ All session logs (JSONL), analysis code, and raw results will be deposited in:
 
 | Aspect | Runs 2-4 | Run 5 | Rationale |
 |---|---|---|---|
-| Brand pairs | 10 global + 5 local | 7 cross-cultural | Tests cultural training data asymmetry (new hypothesis) |
-| Models | 6 (3 cloud + 2 local + 1 cloud Chinese) | 14 (6 original + 5 national + 3 cloud free-tier) | National models provide culture-specific test |
+| Brand pairs | 10 global + 5 local | 8 cross-cultural | Tests cultural training data asymmetry (new hypothesis) |
+| Models | 6 (3 cloud + 2 local + 1 cloud Chinese) | 15+ (6 original + 6 national + 3+ cloud free-tier) | National models provide culture-specific test |
 | Qwen variant | Qwen3 30B local | Same + Qwen3-32B Cerebras (replication) | Replication check: same weights, different endpoint |
 | DeepSeek variant | DeepSeek V3 cloud API | DeepSeek V3 SambaNova | Open-weight, removes commercial alignment confound |
 | Open-weight policy | Mixed (cloud + local) | Open-weight preferred | Isolates training data variable from alignment |
