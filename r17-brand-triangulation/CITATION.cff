@@ -1,0 +1,80 @@
+cff-version: 1.2.0
+message: "If you use this paper, please cite it as below."
+type: article
+authors:
+  - family-names: Zharnikov
+    given-names: Dmitry
+    email: dmitry@spectralbranding.com
+    affiliation: "Independent Researcher"
+    orcid: "https://orcid.org/0009-0000-6893-9231"
+title: "Brand Triangulation: A Geometric Framework for Multi-Observer Brand Positioning"
+version: 1.0.0
+date-released: 2026-04-05
+url: "https://zenodo.org/record/pending"
+repository-code: "https://github.com/spectralbranding/sbt-papers"
+identifiers:
+  - type: doi
+    value: "pending"
+    description: "Zenodo archive (primary, pending upload)"
+  - type: citation-key
+    value: "2026y"
+    description: "Internal citation key"
+keywords:
+  - brand positioning
+  - Spectral Brand Theory
+  - dilution of precision
+  - observer bias
+  - brand measurement
+  - GPS analogy
+  - dimensional collapse
+  - multi-observer heterogeneity
+  - geometric estimation
+  - brand triangulation
+  - perception DOP
+  - differential brand measurement
+license: CC-BY-4.0
+references:
+  - type: article
+    authors:
+      - family-names: Zharnikov
+        given-names: Dmitry
+    title: "Spectral Brand Theory: A Multi-Dimensional Framework for Brand Perception and Measurement"
+    year: 2026
+    doi: "10.5281/zenodo.18945912"
+    citation-key: "2026a"
+  - type: article
+    authors:
+      - family-names: Zharnikov
+        given-names: Dmitry
+    title: "Spectral Metamerism in AI-Mediated Brand Perception: How Large Language Models Collapse Multi-Dimensional Brand Differentiation in Consumer Search"
+    year: 2026
+    doi: "10.5281/zenodo.19422427"
+    citation-key: "2026v"
+  - type: article
+    authors:
+      - family-names: Medesani
+        given-names: Marco
+      - family-names: Macdonald
+        given-names: James
+    title: "Geometric Foundations of Invariant Corridors and Governance: A Unified Framework with Empirical Validation"
+    year: 2026
+    doi: "10.5281/zenodo.18822552"
+  - type: book
+    authors:
+      - family-names: Kaplan
+        given-names: Elliott D.
+      - family-names: Hegarty
+        given-names: Christopher J.
+    title: "Understanding GPS/GNSS: Principles and Applications"
+    publisher: "Artech House"
+    year: 2017
+    edition: "3rd"
+preferred-citation:
+  type: article
+  authors:
+    - family-names: Zharnikov
+      given-names: Dmitry
+  title: "Brand Triangulation: A Geometric Framework for Multi-Observer Brand Positioning"
+  year: 2026
+  url: "https://zenodo.org/record/pending"
+  notes: "Preprint, pending DOI assignment. Citation key: 2026y"
