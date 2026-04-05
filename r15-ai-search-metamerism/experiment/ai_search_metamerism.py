@@ -1207,6 +1207,75 @@ def call_gigachat_api(prompt: str, model: str = "GigaChat-2-Max") -> str:
 
 
 # ---------------------------------------------------------------------------
+# Yandex AI Studio (OpenAI-compatible: YandexGPT, T-Pro, etc.)
+# ---------------------------------------------------------------------------
+
+
+def _call_yandex_ai_studio(prompt: str, model: str) -> str:
+    """Call Yandex AI Studio models via OpenAI-compatible API.
+
+    Base URL: https://llm.api.cloud.yandex.net/v1
+    Auth: API key as api_key, folder ID as project header.
+    Model URI: gpt://<folder_id>/<model_name>
+    """
+    from openai import OpenAI
+
+    api_key = os.environ["YANDEX_AI_API_KEY"]
+    folder_id = os.environ.get("YANDEX_FOLDER_ID", "")
+    if not folder_id:
+        raise RuntimeError(
+            "YANDEX_FOLDER_ID must be set (Yandex Cloud folder ID, e.g. b1g...)"
+        )
+
+    client = OpenAI(
+        api_key=api_key,
+        project=folder_id,
+        base_url="https://llm.api.cloud.yandex.net/v1",
+    )
+
+    model_uri = f"gpt://{folder_id}/{model}"
+    response = client.chat.completions.create(
+        model=model_uri,
+        messages=[
+            {
+                "role": "system",
+                "content": (
+                    "You are a brand analysis assistant. You MUST respond "
+                    "with ONLY a valid JSON object. No markdown, no "
+                    "explanation. Start with { and end with }."
+                ),
+            },
+            {"role": "user", "content": prompt},
+        ],
+        max_tokens=2048,
+        temperature=0.7,
+    )
+    content = response.choices[0].message.content or ""
+    content = re.sub(r"```(?:json)?\s*", "", content).strip()
+    content = re.sub(r"```\s*$", "", content).strip()
+    return content
+
+
+def call_yandexgpt_pro(prompt: str, model: str = "yandexgpt-5-pro/latest") -> str:
+    """Call YandexGPT 5 Pro via Yandex AI Studio (Russian, Tier 1, 2026-02).
+
+    YandexGPT 5 Pro: Yandex's production model, 5th generation.
+    OpenAI-compatible endpoint at llm.api.cloud.yandex.net/v1.
+    """
+    return _call_yandex_ai_studio(prompt, model)
+
+
+def call_tpro_yandex(prompt: str, model: str = "t-pro-it-2.0-fp8") -> str:
+    """Call T-Pro 2.0 FP8 via Yandex AI Studio (T-Bank, 32B, Russian).
+
+    T-Pro 2.0: T-Bank (ex-Tinkoff) open-source 32B Russian model.
+    NOTE: Only available as dedicated instance ($6.20/hr) on Yandex AI Studio.
+    Not available in synchronous mode. Kept for future use if pricing changes.
+    """
+    return _call_yandex_ai_studio(prompt, model)
+
+
+# ---------------------------------------------------------------------------
 # National model backends (local Ollama)
 # ---------------------------------------------------------------------------
 
@@ -1331,6 +1400,8 @@ API_CALLERS: dict[str, Any] = {
     "grok": call_grok,                          # Grok-3-mini (xAI, X/Twitter corpus)
     "sarvam": call_sarvam,                      # Sarvam-105B (Indian, Sarvam AI, Indus API)
     "gigachat_api": call_gigachat_api,          # GigaChat 2 Max (Russian, Sber API)
+    "yandexgpt_pro": call_yandexgpt_pro,        # YandexGPT 5 Pro (Russian, Yandex AI Studio)
+    "tpro_yandex": call_tpro_yandex,            # T-Pro 2.0 FP8 (Russian, T-Bank 32B, via Yandex)
     # National models - local Ollama (Run 5+)
     "yandexgpt_local": call_yandexgpt_local,    # YandexGPT 5 Lite 8B (Russian)
     "gigachat_local": call_gigachat_local,       # GigaChat 3.1 Lightning (Russian, Sber)
@@ -1361,6 +1432,8 @@ API_KEY_VARS: dict[str, str] = {
     "grok": "GROK_API_KEY",
     "sarvam": "SARVAM_API_KEY",
     "gigachat_api": "GIGACHAT_API_KEY",
+    "yandexgpt_pro": "YANDEX_AI_API_KEY",
+    "tpro_yandex": "YANDEX_AI_API_KEY",
     # National models - local
     "yandexgpt_local": "OLLAMA_AVAILABLE",
     "gigachat_local": "OLLAMA_AVAILABLE",
@@ -1391,6 +1464,8 @@ MODEL_IDS: dict[str, str] = {
     "grok": "grok-4-1-fast-non-reasoning",                  # Grok-4.1 fast (xAI, X/Twitter corpus)
     "sarvam": "sarvam-105b",                                  # Sarvam-105B (Indian, Sarvam AI, Indus API)
     "gigachat_api": "GigaChat-2-Max",                          # GigaChat 2 Max (Russian, Sber API)
+    "yandexgpt_pro": "yandexgpt-5-pro/latest",                   # YandexGPT 5 Pro (Russian, Yandex AI Studio)
+    "tpro_yandex": "t-pro-it-2.0-fp8",                        # T-Pro 2.0 FP8 (T-Bank 32B, Russian)
     # Free-tier cloud — National models
     "sambanova_swallow": "Llama-3.3-Swallow-70B-Instruct-v0.4",  # Japanese 70B on SambaNova
     "groq_allam": "allam-2-7b",                            # ALLaM-2 (SDAIA Saudi) on Groq
