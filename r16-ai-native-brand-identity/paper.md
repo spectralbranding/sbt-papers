@@ -10,7 +10,7 @@
 
 ## Abstract
 
-This paper advances two theoretical contributions to brand identity research. First, we propose the *observer-driven evolution thesis*: identity verification technologies change discontinuously not through incremental improvement but in response to shifts in the observer type. Wax seals served bureaucratic observers, hallmarks served asymmetric-information buyers, trademarks served mass-market consumers, and SSL certificates served web browsers. As AI agents increasingly mediate purchasing decisions, product recommendations, and brand evaluation, this pattern predicts a new identity technology --- not a better logo, but a structurally different system. Second, we introduce *behavioral metamerism* as a new construct: the phenomenon where brands produce identical statistical profiles but exhibit structurally different behavioral patterns, creating a form of AI-native brand confusion that statistical optimization cannot resolve. We extend Spectral Brand Theory to define the Brand Function --- f(query, context, observer_type, time) -> response --- as the complete behavioral specification of how a brand operates when observed by machines, and argue that cryptographic signatures on behavioral specifications are positioned to serve as the primary brand identity mechanism for AI-mediated commerce under conditions of widespread agentic commerce adoption. Drawing on emerging standards (W3C Verifiable Credentials, GLEIF vLEI, .well-known/brand.json proposals) and empirical evidence on LLM brand bias, we propose six formal propositions connecting identity verification technology to observer type, behavioral specification to brand coherence, and cryptographic attestation to trust in autonomous commerce. We formalize behavioral metamerism as an observational equivalence condition and propose a pilot study design for empirical measurement. We conclude that logos will persist for human observers but face structural irrelevance for AI agents, and that under conditions of advanced AI mediation, organizations face pressure to develop dual identity infrastructure: visual for humans, cryptographic for machines. A behavioral metamerism pilot script is publicly available.
+This paper advances two contributions to brand identity research. First, we propose the *observer-driven evolution thesis*: identity verification technologies change discontinuously in response to shifts in the observer type. Wax seals served bureaucratic observers, hallmarks served asymmetric-information buyers, trademarks served mass-market consumers, and SSL certificates served web browsers. As AI agents increasingly mediate purchasing decisions and brand evaluation, this pattern predicts a structurally different identity technology. Second, we introduce *behavioral metamerism*: the phenomenon where brands produce identical statistical profiles but exhibit structurally different behavioral patterns, creating AI-native brand confusion that statistical optimization cannot resolve. We extend Spectral Brand Theory to define the Brand Function --- f(query, context, observer_type, time) -> response --- as the complete behavioral specification of how a brand operates when observed by machines, and argue that cryptographic signatures on behavioral specifications will serve as the primary brand identity mechanism for AI-mediated commerce. Drawing on emerging standards (W3C Verifiable Credentials, GLEIF vLEI, .well-known/brand.json) and empirical evidence on LLM brand bias, we propose six formal propositions connecting identity verification technology to observer type, behavioral specification to brand coherence, and cryptographic attestation to trust in autonomous commerce. We formalize behavioral metamerism as an observational equivalence condition and propose a pilot study design. Logos will persist for human observers but face structural irrelevance for AI agents; organizations face pressure to develop dual identity infrastructure: visual for humans, cryptographic for machines.
 
 **Keywords**: brand identity, AI agents, cryptographic verification, behavioral specification, metamerism, agentic commerce, generative engine optimization, observational equivalence
 
@@ -36,41 +36,17 @@ The remainder of the paper proceeds as follows. Section 2 traces the historical 
 
 ## 2. Historical Pattern: Observer Determines Technology
 
-Identity verification technologies do not evolve incrementally. They emerge in response to a change in the observer type. This section traces five such transitions to establish the pattern that predicts the sixth. The examples are drawn from the Western European genealogy that produced modern trademark law and digital identity infrastructure (SSL/TLS, W3C standards) --- the direct ancestors of the AI commerce protocols under analysis.
+Identity verification technologies do not evolve incrementally. They emerge in response to a change in the observer type. Five transitions establish the pattern that predicts the sixth. The examples trace the Western European genealogy that produced modern trademark law and digital identity infrastructure --- the direct ancestors of the AI commerce protocols under analysis.
 
-### 2.1 Wax Seals and the Bureaucratic Observer
+**Wax seals** served the first non-personal observer: the bureaucratic official verifying documents at a distance. Mesopotamian cylinder seals (ca. 3500 BCE) authenticated clay tablets through unique physical impressions. Medieval signet rings were destroyed upon death --- an early form of key revocation. The technology was adapted to an observer who could inspect a physical impression but lacked personal knowledge of the sender.
 
-The earliest identity technologies served bureaucratic observers --- officials who needed to verify the authenticity and integrity of documents at a distance. Mesopotamian cylinder seals (ca. 3500 BCE) authenticated clay tablets through unique physical impressions, allowing verification without requiring the verifier to know the sender personally. In medieval Europe, wax seals proliferated as monarchs, bishops, and guilds expanded administrative reach beyond face-to-face interaction. The seal's uniqueness allowed a literate or semi-literate official to verify authenticity through visual and tactile inspection of the matrix impression.
+**Hallmarks** emerged when the observer shifted from official to commercial buyer. England's 1300 statute required silver to be assayed at Goldsmiths' Hall before sale, introducing trusted third-party attestation. The buyer needed only to recognize an institutional mark, not possess metallurgical expertise. Wax seals persisted for legal documents but were irrelevant for commercial quality verification.
 
-Critically, the infrastructure around seals already exhibited what would become a recurring pattern in identity technology: key management. Signet rings were destroyed upon the owner's death --- an early form of key revocation that prevented posthumous forgery. The technology was perfectly adapted to its observer: a human official verifying at a distance, with enough expertise to inspect a physical impression but not enough context to verify the sender's identity through personal knowledge alone.
+**Trademarks** responded to the Industrial Revolution's anonymous consumer. Pre-industrial craft marks identified known local makers (Richardson, 2008); mass production broke this link. Trademarks carried abstract associations --- quality, emotion, culture --- rather than certifying physical properties (Schechter, 1925; Economides, 1988). Aaker (1996) and Kapferer (2008) codified this mature form into brand identity systems designed for a specific observer: the human consumer forming associations through sensory experience. The logo is the mature expression of this technology.
 
-### 2.2 Hallmarks and the Asymmetric-Information Buyer
+**Holograms** are instructive because the observer did *not* change. When industrialized counterfeiting intensified the threat but the observer remained human, the response was incremental --- adding optical verification features to the existing visual paradigm. Discontinuous technology change required a change in the observer itself.
 
-When the observer changed from a bureaucratic official to a commercial buyer, the identity technology changed with it. England's 1300 statute under Edward I required all silver to be assayed at Goldsmiths' Hall before sale --- the origin of the term "hallmark." The buyer of precious metals faced a specific information asymmetry: they could not assay metal purity without costly chemical testing, yet they needed to trust the quality of what they purchased.
-
-Hallmarks solved this problem through trusted third-party attestation. The guild or state assay office tested the metal and applied a mark guaranteeing purity. The buyer did not need metallurgical expertise; they needed only to recognize the hallmark. The technology was optimized for an observer who lacked the ability to verify quality independently but could recognize a trusted institutional mark. Wax seals persisted in their original domain (legal and administrative documents) but were functionally irrelevant for commercial quality verification.
-
-### 2.3 Trademarks and the Mass-Market Consumer
-
-The Industrial Revolution created a new observer: the anonymous consumer purchasing goods from unknown, distant producers in scaled markets. Pre-industrial craft and guild marks had identified known local makers (Richardson, 2008), but the expansion of national and international markets broke the link between producer and consumer. Buyers could no longer inspect quality pre-purchase or rely on personal knowledge of the maker.
-
-The trademark emerged as the identity technology for this observer. Unlike the hallmark, which certified a specific physical property (metal purity), the trademark carried abstract associations --- quality reputation, emotional values, cultural meaning. Schechter (1925) recognized this transformation early, arguing that trademarks functioned as psychological assets whose value lay not in describing the product but in carrying accumulated consumer associations. Economides (1988) formalized the economic logic: trademarks reduced search costs in anonymous markets by allowing consumers to identify goods from a known source without product inspection. Sáiz (2018) documented the legal evolution from physical origin marks to abstract brand identifiers, driven by mass production and advertising. Aaker (1996) codified this mature form into the Brand Identity System --- four perspectives (brand as product, organization, person, symbol) that together define what a brand should stand for. This framework, along with Kapferer's (2008) Brand Identity Prism, remains the dominant practitioner model for brand identity. Both are designed for a specific observer: the human consumer forming associations through sensory experience and emotional resonance.
-
-The logo is the mature form of this technology. It is optimized for a human observer navigating visual environments --- retail shelves, advertisements, websites --- who recognizes brands through perceptual pattern matching across sensory modalities. This is the identity technology that currently dominates.
-
-### 2.4 Holograms and the Counterfeiting Observer
-
-The late 20th century introduced a variation on the pattern. The observer did not change, but the verification challenge intensified: industrialized counterfeiting produced fakes of sufficient quality to defeat human visual inspection. Holograms and other optically variable devices (OVDs) provided overt and covert optical verification features that were extremely difficult to replicate with available manufacturing technology. Beginning with adoption on banknotes and pharmaceuticals in the 1980s, holograms extended the logo's visual paradigm rather than replacing it --- adding a layer of anti-counterfeiting verification while maintaining the human visual observer as primary.
-
-This transition is instructive precisely because it did *not* change the observer type. When the observer remained human and only the threat model changed, the response was incremental --- adding security features to the existing visual paradigm. Discontinuous technology change required a change in the observer itself.
-
-### 2.5 SSL Certificates and the Browser as Observer
-
-The decisive break from human-visual identity technology came with the introduction of SSL (Secure Sockets Layer) by Netscape in 1994. For the first time, the primary observer of identity was not a human but a software program --- the web browser. The browser needed to verify that a server was the entity it claimed to be, without any capacity for visual inspection, emotional response, or social context.
-
-SSL certificates solved this through cryptographic verification of a certificate chain anchored in trusted certificate authorities. The technology was structurally different from everything that preceded it: verification was mathematical rather than perceptual, binary (valid or invalid) rather than graded, and scalable without human attention. The human observer did not disappear --- the padlock icon translated cryptographic verification into a visual signal for the human user --- but the primary identity verification was now machine-to-machine. Logos persisted on websites, but they carried zero weight in the browser's trust decision.
-
-This transition established the template for machine-native identity: when the observer is a machine, the identity technology must be verifiable by computation, not perception.
+**SSL certificates** (Netscape, 1994) marked the decisive break. For the first time, the primary identity observer was a software program --- the web browser. Verification became mathematical rather than perceptual, binary rather than graded, and scalable without human attention. Logos persisted on websites but carried zero weight in the browser's trust decision. This transition established the template: when the observer is a machine, the identity technology must be verifiable by computation, not perception.
 
 **Proposition 1: Identity verification technology characteristically changes not through incremental improvement but through discontinuous response to a change in the observer type.**
 
@@ -110,9 +86,7 @@ Kamruzzaman et al. (2024), in a systematic study published at EMNLP, demonstrate
 
 Zhi et al. (2025) extended this finding to investment recommendations, showing that market-dominant products receive amplified recommendation due to neural reinforcement --- a feedback loop where training data frequency creates recommendation bias, which generates more user interaction data, which further amplifies the bias. The effect is structural: it operates through the statistical properties of the model's learned representations, not through any process analogous to human brand evaluation.
 
-These findings establish that LLM "brand perception" is fundamentally different from human brand perception. Humans form brand convictions through multi-sensory experience, social influence, personal history, and emotional resonance --- processes that SBT models as observer-specific spectral weighting across eight dimensions (Zharnikov, 2026a). LLMs form "brand representations" through statistical co-occurrence patterns in text corpora. This distinction is consequential: it means that the identity infrastructure humans use (visual consistency, emotional narrative, brand experience) does not transfer to AI observers. De Bruyn et al. (2020), in a foundational JIM analysis of AI in marketing, identified biased AI and badly defined objective functions as structural pitfalls of AI marketing systems --- behavioral metamerism is a direct consequence of both, arising when brands optimize for the same statistical objective (GEO visibility) and the AI's learned representations inherit training-data frequency bias.
-
-The interactive marketing literature provides additional context for the observer-type transition thesis. Yadav and Pavlou (2014) develop a theoretical framework for marketing in computer-mediated environments, identifying how technology fundamentally transforms exchange processes rather than merely digitizing them. Their framework anticipates the structural distinction between human and AI observers that the present paper formalizes: each new generation of computer-mediated exchange reshapes not only how transactions occur but who (or what) evaluates and acts on brand signals. Shankar, Kleijnen, Ramanathan, Rizley, Holland, and Morrissey (2016) examine mobile shopper marketing, documenting how device-mediated interactions alter brand evaluation processes --- a precursor to the AI-mediated evaluation this paper addresses. The shift from mobile-mediated to AI-mediated brand evaluation follows the same structural logic: the mediating technology transforms the observer's perception mechanism, requiring new forms of brand specification adapted to that mechanism.
+These findings establish that LLM "brand perception" is fundamentally different from human brand perception. Humans form brand convictions through multi-sensory experience, social influence, personal history, and emotional resonance --- processes that SBT models as observer-specific spectral weighting across eight dimensions (Zharnikov, 2026a). LLMs form "brand representations" through statistical co-occurrence patterns in text corpora. This distinction is consequential: it means that the identity infrastructure humans use (visual consistency, emotional narrative, brand experience) does not transfer to AI observers. De Bruyn et al. (2020), in a foundational JIM analysis of AI in marketing, identified biased AI and badly defined objective functions as structural pitfalls of AI marketing systems --- behavioral metamerism is a direct consequence of both, arising when brands optimize for the same statistical objective (GEO visibility) and the AI's learned representations inherit training-data frequency bias. The broader JIM conversation on AI-mediated marketing has established both the promise and structural risks: Ramesh and Chawla (2022) survey the chatbot marketing literature and identify brand personality transfer as a critical gap --- chatbots can simulate brand voice but cannot verify brand identity, precisely the verification problem this paper formalizes. Pagani and Wind (2025) argue that AI unlocks marketing creativity but requires new governance frameworks to manage the loss of human oversight --- a governance challenge that the Brand Function specification (Section 5) directly addresses. Shankar and Balasubramanian (2009) anticipated many of these dynamics in the mobile marketing context, noting that as marketing channels shift from human-centric to technology-mediated, identity verification mechanisms must evolve correspondingly.
 
 ### 3.3 Generative Engine Optimization as Symptom
 
@@ -327,8 +301,6 @@ Under weaker conditions --- where humans remain primary observers, categories ar
 
 A critical operational distinction follows from the necessity conditions: the Brand Function enables *admissibility judgments* at the transaction boundary. AI agents may internally score brands on gradient scales, but the principal's delegated authority constraints impose binary thresholds on those gradients --- "does the return policy meet the minimum?" yields admissible or excluded, regardless of the agent's underlying scoring mechanism. The admissibility gate sits on top of gradient evaluation, not instead of it. This is structurally analogous to legal evidence admissibility: a court may weigh admitted evidence on a gradient, but the admissibility decision itself is binary. The Brand Function makes these threshold judgments machine-computable by providing the behavioral specification against which constraints can be evaluated, which requires complete specification rather than statistical approximation.
 
-This admissibility structure has a formal parallel in geometric governance theory. Medesani and Macdonald (2026) demonstrates that dynamic systems can maintain integrity through *invariant corridors* --- bounded admissible regions that contract under stress and recover with hysteresis, where the true invariant is the governing operator rather than any particular system state. The Brand Function defines such a corridor in behavioral space: the set of responses the brand commits to under specified conditions. Transactions formed within this corridor are admissible by construction; those outside it are structurally excluded. The deeper implication, formalized through Medesani's tri-binding admissibility condition (geometric integrity, authorization routing, and temporal coherence must hold simultaneously), is that brand admissibility requires not merely a valid specification but also a governance mechanism that enforces it and temporal consistency that prevents contradiction with the brand's own history.
-
 ---
 
 ## 8. Implications and Dual Identity Infrastructure
@@ -437,7 +409,7 @@ The logo is for humans. The signature is for machines.
 
 ## Acknowledgments
 
-The admissibility-versus-validation distinction in Section 7.2 was refined through exchange with Aaron Radina (Korzent), whose formulation of "irreversibility requires pre-state admissibility" sharpened the operational framing of the Brand Function at the transaction boundary. The invariant corridor formalization draws on Medesani and Macdonald's (2026) geometric governance framework; the connection between invariant corridors and brand behavioral boundaries was identified through Radina's engagement with Medesani's work.
+The admissibility-versus-validation distinction in Section 7.2 was refined through exchange with Aaron Radina (Korzent), whose formulation of "irreversibility requires pre-state admissibility" sharpened the operational framing of the Brand Function at the transaction boundary.
 
 ## References
 
@@ -493,21 +465,23 @@ Loken, B., Ross, I., & Hinkle, R. L. (1986). Consumer "confusion" of origin and 
 
 Manski, C. F. (1995). *Identification problems in the social sciences*. Harvard University Press.
 
-Medesani, M., & Macdonald, J. (2026). Geometric foundations of invariant corridors and governance: A unified framework with empirical validation (Level 3.3). *Working Paper*. https://doi.org/10.5281/zenodo.18822552
+Pagani, M., & Wind, Y. (2025). Unlocking marketing creativity using artificial intelligence. *Journal of Interactive Marketing*, *60*(1), 25--43. https://doi.org/10.1177/10949968241265855
 
 Parasuraman, A., Zeithaml, V. A., & Berry, L. L. (1985). A conceptual model of service quality and its implications for future research. *Journal of Marketing*, *49*(4), 41--50.
 
 Puntoni, S., Reczek, R. W., Giesler, M., & Botti, S. (2021). Consumers and artificial intelligence: An experiential perspective. *Journal of Marketing*, *85*(1), 131--151. https://doi.org/10.1177/0022242920958517
 
+Shankar, V., & Balasubramanian, S. (2009). Mobile marketing: A synthesis and prognosis. *Journal of Interactive Marketing*, *23*(2), 118--129. https://doi.org/10.1016/j.intmar.2009.02.002
+
 Richardson, G. (2008). *Brand names before the Industrial Revolution* (NBER Working Paper No. 13930). National Bureau of Economic Research. http://www.nber.org/papers/w13930
+
+Ramesh, A., & Chawla, V. (2022). Chatbots in marketing: A literature review using morphological and co-occurrence analyses. *Journal of Interactive Marketing*, *57*(3), 472--496. https://doi.org/10.1177/10949968221095549
 
 Sabater, J., & Sierra, C. (2005). Review on computational trust and reputation models. *Artificial Intelligence Review*, *24*(1), 33--60. https://doi.org/10.1007/s10462-004-0041-5
 
 Sáiz, P. (2018). Trademarks in branding: Legal issues and commercial practices. *Business History*, *60*(8), 1105--1113. https://doi.org/10.1080/00076791.2018.1497765
 
 Schechter, F. I. (1925). *The historical foundations of the law relating to trade-marks*. Columbia University Press.
-
-Shankar, V., Kleijnen, M., Ramanathan, S., Rizley, R., Holland, S., and Morrissey, S. (2016). Mobile shopper marketing: Key issues, current insights, and future research avenues. *Journal of Interactive Marketing*, *34*, 37--48. https://doi.org/10.1016/j.intmar.2016.03.002
 
 W3C. (2022). *Decentralized identifiers (DIDs) v1.0*. W3C Recommendation. https://www.w3.org/TR/did-core/
 
@@ -517,8 +491,6 @@ Wichmann, J. R. K., Wiegand, N., & Reinartz, W. J. (2022). The platformization o
 
 Wyszecki, G., & Stiles, W. S. (1982). *Color science: Concepts and methods, quantitative data and formulae* (2nd ed.). Wiley.
 
-Yadav, M. S., & Pavlou, P. A. (2014). Marketing in computer-mediated environments: Research synthesis and new directions. *Journal of Marketing*, *78*(1), 20--40. https://doi.org/10.1509/jm.12.0020
-
 Zharnikov, D. (2026a). Spectral Brand Theory: A multi-dimensional framework for brand perception analysis. *Working Paper*. https://doi.org/10.5281/zenodo.18945912
 
 Zharnikov, D. (2026e). Spectral metamerism in brand perception: Projection bounds from high-dimensional geometry. *Working Paper*. https://doi.org/10.5281/zenodo.18945352
@@ -527,6 +499,6 @@ Zharnikov, D. (2026l). The rendering problem: From genetic expression to brand p
 
 Zharnikov, D. (2026q). Spectral portfolio theory: Interference, coherence, and capacity in multi-brand perception space. *Working Paper*. https://doi.org/10.5281/zenodo.19145099
 
-Zharnikov, D. (2026v). Spectral metamerism in AI-mediated brand perception. *Working Paper*. Working Paper.
+Zharnikov, D. (2026v). Spectral metamerism in AI-mediated brand perception. *Working Paper*. Target: Journal of Advertising Research.
 
 Zhi, Y., Zhang, X., Wang, L., Jiang, S., Ma, S., Guan, X., & Shen, C. (2025). Exposing product bias in LLM investment recommendation. *arXiv preprint*. arXiv:2503.08750.
