@@ -527,6 +527,6 @@ Zharnikov, D. (2026l). The rendering problem: From genetic expression to brand p
 
 Zharnikov, D. (2026q). Spectral portfolio theory: Interference, coherence, and capacity in multi-brand perception space. *Working Paper*. https://doi.org/10.5281/zenodo.19145099
 
-Zharnikov, D. (2026v). Spectral metamerism in AI-mediated brand perception. *Working Paper*. Target: Journal of Advertising Research.
+Zharnikov, D. (2026v). Spectral metamerism in AI-mediated brand perception. *Working Paper*. Working Paper.
 
 Zhi, Y., Zhang, X., Wang, L., Jiang, S., Ma, S., Guan, X., & Shen, C. (2025). Exposing product bias in LLM investment recommendation. *arXiv preprint*. arXiv:2503.08750.

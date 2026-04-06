@@ -12,7 +12,7 @@ AI-mediated search may have structurally different perception clouds when observ
 directly by human cohorts across all 8 dimensions.
 
 Paper: Zharnikov, D. (2026v). Spectral Metamerism in AI-Mediated Brand Perception.
-       Target: Journal of Advertising Research (JAR special call on AI + search).
+
 
 Measurement approach (v2 -- structured dimensional elicitation):
   (i)  Weighted recommendation: models allocate 100 importance points across 8
@@ -80,7 +80,7 @@ PRE_REGISTRATION = """
 
 ### Study
 R15: Spectral Metamerism in AI-Mediated Brand Perception
-Paper: Zharnikov (2026v), target JAR special call on AI + search
+Paper: Zharnikov (2026v)
 
 ### Measurement Design (v2)
 All dimensional measures are elicited via structured JSON prompts -- no
