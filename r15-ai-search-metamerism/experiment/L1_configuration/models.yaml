@@ -1,0 +1,345 @@
+# R15 Run 5 Model Configuration
+# Generated: 2026-04-05
+# Source of truth: ai_search_metamerism.py (API_CALLERS, API_KEY_VARS, MODEL_IDS)
+#
+# Tier classification:
+#   1 = 30B+ parameters (primary analysis)
+#   2 = 7-30B parameters (capacity comparison, H9)
+#
+# Culture: primary training corpus language/region
+# Backend: ollama | anthropic | openai | google | deepseek | dashscope |
+#          cerebras | sambanova | groq | xai | sarvam | gigachat | yandex
+
+models:
+
+  # ---------------------------------------------------------------------------
+  # Original models — Runs 2-4, carried forward to Run 5
+  # ---------------------------------------------------------------------------
+
+  - name: claude
+    label: "Claude Sonnet 4.6"
+    model_id: "claude-haiku-4-5"
+    tier: 1
+    culture: Western
+    size_class: "proprietary"
+    backend: anthropic
+    api_key_env: ANTHROPIC_API_KEY
+    open_weight: false
+    notes: "No open-weight equivalent exists. Retained for continuity."
+
+  - name: gpt
+    label: "GPT-4o-mini"
+    model_id: "gpt-4o-mini"
+    tier: 2
+    culture: Western
+    size_class: "proprietary"
+    backend: openai
+    api_key_env: OPENAI_API_KEY
+    open_weight: false
+    notes: "No open-weight equivalent exists. Retained for continuity."
+
+  - name: gemini
+    label: "Gemini 2.5 Flash"
+    model_id: "gemini-2.5-flash"
+    tier: 1
+    culture: Western
+    size_class: "proprietary"
+    backend: google
+    api_key_env: GOOGLE_API_KEY
+    open_weight: false
+    notes: "No open-weight equivalent exists. Retained for continuity."
+
+  - name: deepseek
+    label: "DeepSeek V3 (cloud)"
+    model_id: "deepseek-chat"
+    tier: 1
+    culture: Chinese
+    size_class: "671B MoE"
+    backend: deepseek
+    api_key_env: DEEPSEEK_API_KEY
+    open_weight: true
+    notes: "Baseline Chinese model from Runs 2-4. Also available via SambaNova."
+
+  - name: qwen3_local
+    label: "Qwen3 30B (local Ollama)"
+    model_id: "qwen3:30b"
+    tier: 1
+    culture: Chinese
+    size_class: "30B"
+    backend: ollama
+    api_key_env: OLLAMA_AVAILABLE
+    open_weight: true
+    notes: "Local inference via Ollama. Thinking mode disabled (no_think=True)."
+
+  - name: gemma4_local
+    label: "Gemma 4 27B (local Ollama)"
+    model_id: "gemma4:latest"
+    tier: 1
+    culture: Western
+    size_class: "27B"
+    backend: ollama
+    api_key_env: OLLAMA_AVAILABLE
+    open_weight: true
+    notes: "Google open-weight. Western/multilingual training corpus."
+
+  # ---------------------------------------------------------------------------
+  # Free-tier cloud additions — Chinese models
+  # ---------------------------------------------------------------------------
+
+  - name: cerebras_qwen3
+    label: "Qwen3-235B (Cerebras)"
+    model_id: "qwen-3-235b-a22b-instruct-2507"
+    tier: 1
+    culture: Chinese
+    size_class: "235B MoE"
+    backend: cerebras
+    api_key_env: CEREBRAS_API_KEY
+    open_weight: true
+    notes: "Replication check: same weights as qwen3_local, different endpoint. H9 size comparison."
+
+  - name: cerebras_glm
+    label: "GLM-4.7 (Cerebras)"
+    model_id: "zai-glm-4.7"
+    tier: 1
+    culture: Chinese
+    size_class: "proprietary"
+    backend: cerebras
+    api_key_env: CEREBRAS_API_KEY
+    open_weight: false
+    notes: "Zhipu AI. Chinese training corpus, different architecture from Qwen/DeepSeek."
+
+  - name: sambanova_qwen3
+    label: "Qwen3-32B (SambaNova)"
+    model_id: "Qwen3-32B"
+    tier: 1
+    culture: Chinese
+    size_class: "32B"
+    backend: sambanova
+    api_key_env: SAMBANOVA_API_KEY
+    open_weight: true
+    notes: "Free-tier cloud endpoint. Rate-limited."
+
+  - name: sambanova_deepseek
+    label: "DeepSeek V3.2 (SambaNova)"
+    model_id: "DeepSeek-V3.2"
+    tier: 1
+    culture: Chinese
+    size_class: "671B MoE"
+    backend: sambanova
+    api_key_env: SAMBANOVA_API_KEY
+    open_weight: true
+    notes: "Open-weight endpoint. Removes commercial alignment confound vs deepseek cloud."
+
+  - name: groq_kimi
+    label: "Kimi K2 (Groq)"
+    model_id: "moonshotai/kimi-k2-instruct"
+    tier: 1
+    culture: Chinese
+    size_class: "1T MoE"
+    backend: groq
+    api_key_env: GROQ_API_KEY
+    open_weight: true
+    notes: "Moonshot AI. Chinese-primary training corpus."
+
+  # ---------------------------------------------------------------------------
+  # Free-tier cloud additions — Western / baseline models
+  # ---------------------------------------------------------------------------
+
+  - name: groq_llama33
+    label: "Llama 3.3 70B (Groq)"
+    model_id: "llama-3.3-70b-versatile"
+    tier: 1
+    culture: Western
+    size_class: "70B"
+    backend: groq
+    api_key_env: GROQ_API_KEY
+    open_weight: true
+    notes: "Western open-weight baseline. Rate-limited free tier."
+
+  - name: grok
+    label: "Grok-4.1 fast (xAI)"
+    model_id: "grok-4-1-fast-non-reasoning"
+    tier: 1
+    culture: Western
+    size_class: "proprietary"
+    backend: xai
+    api_key_env: GROK_API_KEY
+    open_weight: false
+    notes: "Trained on X/Twitter corpus. Distinct data distribution from other Western models."
+
+  # ---------------------------------------------------------------------------
+  # National models — free-tier cloud
+  # ---------------------------------------------------------------------------
+
+  - name: sarvam
+    label: "Sarvam-105B (Indus API)"
+    model_id: "sarvam-105b"
+    tier: 1
+    culture: Indian
+    size_class: "105B"
+    backend: sarvam
+    api_key_env: SARVAM_API_KEY
+    open_weight: true
+    license: "Apache 2.0"
+    notes: "Indian language specialist. Tests H5 for Amul brand pair."
+
+  - name: gigachat_api
+    label: "GigaChat 2 Max (Sber API)"
+    model_id: "GigaChat-2-Max"
+    tier: 1
+    culture: Russian
+    size_class: "proprietary"
+    backend: gigachat
+    api_key_env: GIGACHAT_API_KEY
+    open_weight: false
+    notes: "Russian commercial. Certificate pinning required (russian_trusted_root_ca.crt)."
+
+  - name: yandexgpt_pro
+    label: "YandexGPT 5 Pro (Yandex AI Studio)"
+    model_id: "yandexgpt-5-pro/latest"
+    tier: 1
+    culture: Russian
+    size_class: "proprietary"
+    backend: yandex
+    api_key_env: YANDEX_AI_API_KEY
+    open_weight: false
+    notes: "H9 size comparison counterpart to yandexgpt_local (8B)."
+
+  - name: tpro_yandex
+    label: "T-Pro 2.0 FP8 (Yandex AI Studio)"
+    model_id: "t-pro-it-2.0-fp8"
+    tier: 1
+    culture: Russian
+    size_class: "32B"
+    backend: yandex
+    api_key_env: YANDEX_AI_API_KEY
+    open_weight: false
+    notes: "T-Bank model (32B). Russian-primary. Served via Yandex AI Studio."
+
+  - name: sambanova_swallow
+    label: "Swallow 70B (SambaNova)"
+    model_id: "Llama-3.3-Swallow-70B-Instruct-v0.4"
+    tier: 1
+    culture: Japanese
+    size_class: "70B"
+    backend: sambanova
+    api_key_env: SAMBANOVA_API_KEY
+    open_weight: true
+    notes: "Tokyo Tech. H9 size comparison counterpart to swallow_local (8B)."
+
+  - name: groq_allam
+    label: "ALLaM-2-7B (Groq)"
+    model_id: "allam-2-7b"
+    tier: 2
+    culture: Arabic
+    size_class: "7B"
+    backend: groq
+    api_key_env: GROQ_API_KEY
+    open_weight: true
+    notes: "SDAIA Saudi Arabia. H9 size comparison counterpart to jais_local (70B)."
+
+  # ---------------------------------------------------------------------------
+  # National models — local Ollama (Run 5+)
+  # ---------------------------------------------------------------------------
+
+  - name: yandexgpt_local
+    label: "YandexGPT 5 Lite 8B (local Ollama)"
+    model_id: "hf.co/yandex/YandexGPT-5-Lite-8B-instruct-GGUF:latest"
+    tier: 2
+    culture: Russian
+    size_class: "8B"
+    backend: ollama
+    api_key_env: OLLAMA_AVAILABLE
+    open_weight: true
+    notes: "H9 small Russian model. Paired with yandexgpt_pro for capacity comparison."
+
+  - name: gigachat_local
+    label: "GigaChat 3.1 Lightning 10B (local Ollama)"
+    model_id: "hf.co/ai-sage/GigaChat3.1-10B-A1.8B-GGUF:latest"
+    tier: 2
+    culture: Russian
+    size_class: "10B MoE (1.8B active)"
+    backend: ollama
+    api_key_env: OLLAMA_AVAILABLE
+    open_weight: true
+    license: "MIT"
+    notes: "Sber open-weight MoE. Lightweight Russian national model."
+
+  - name: exaone_local
+    label: "EXAONE 4.0 32B (local Ollama)"
+    model_id: "hf.co/LGAI-EXAONE/EXAONE-4.0-32B-GGUF:Q4_K_M"
+    tier: 1
+    culture: Korean
+    size_class: "32B"
+    backend: ollama
+    api_key_env: OLLAMA_AVAILABLE
+    open_weight: true
+    notes: "LG AI Research. Primary Korean national model for H5 test on Binggrae."
+
+  - name: swallow_local
+    label: "Swallow 8B (local Ollama)"
+    model_id: "hf.co/mradermacher/Llama-3.1-Swallow-8B-Instruct-v0.3-GGUF:latest"
+    tier: 2
+    culture: Japanese
+    size_class: "8B"
+    backend: ollama
+    api_key_env: OLLAMA_AVAILABLE
+    open_weight: true
+    notes: "Tokyo Tech. H9 small Japanese model. Paired with sambanova_swallow (70B)."
+
+  - name: falcon_arabic_local
+    label: "Falcon-H1-Arabic 7B (local Ollama)"
+    model_id: "hf.co/tiiuae/Falcon-H1-Arabic-7B-Instruct-GGUF:Q4_K_M"
+    tier: 2
+    culture: Arabic
+    size_class: "7B"
+    backend: ollama
+    api_key_env: OLLAMA_AVAILABLE
+    open_weight: true
+    notes: "TII UAE. GGUF may not be published by TII yet. Alternatives: jais-30b-chat-v3, SILMA-9B."
+
+  - name: jais_local
+    label: "Jais-adapted 70B (local Ollama)"
+    model_id: "hf.co/mradermacher/jais-adapted-70b-chat-i1-GGUF:Q4_K_M"
+    tier: 1
+    culture: Arabic
+    size_class: "70B"
+    backend: ollama
+    api_key_env: OLLAMA_AVAILABLE
+    open_weight: true
+    license: "Apache 2.0"
+    notes: "Inception AI. Llama 2-based, trained on 370B tokens (330B Arabic). Q4_K_M ~42GB."
+
+  - name: qwen35_local
+    label: "Qwen3.5 27B (local Ollama)"
+    model_id: "qwen3.5:27b"
+    tier: 1
+    culture: Chinese
+    size_class: "27B"
+    backend: ollama
+    api_key_env: OLLAMA_AVAILABLE
+    open_weight: true
+    notes: "Newer Qwen generation. Complements qwen3_local (30B) for within-family comparison."
+
+# ---------------------------------------------------------------------------
+# Summary
+# ---------------------------------------------------------------------------
+# Total models: 21 (6 original + 10 free-tier cloud + 7 national local)
+# Tier 1 (30B+): 17 models
+# Tier 2 (7-30B): 4 models (gpt, yandexgpt_local, gigachat_local, swallow_local, groq_allam)
+#
+# Cultures represented:
+#   Western:  claude, gpt, gemini, gemma4_local, groq_llama33, grok
+#   Chinese:  deepseek, qwen3_local, cerebras_qwen3, cerebras_glm, sambanova_qwen3,
+#             sambanova_deepseek, groq_kimi, qwen35_local
+#   Russian:  gigachat_api, yandexgpt_pro, tpro_yandex, yandexgpt_local, gigachat_local
+#   Japanese: sambanova_swallow, swallow_local
+#   Korean:   exaone_local
+#   Arabic:   jais_local, falcon_arabic_local, groq_allam
+#   Indian:   sarvam
+#
+# H9 size pairs for capacity comparison:
+#   Chinese:  qwen3_local (30B) vs cerebras_qwen3 (235B)
+#   Russian:  yandexgpt_local (8B) vs yandexgpt_pro (pro)
+#   Japanese: swallow_local (8B) vs sambanova_swallow (70B)
+#   Arabic:   groq_allam (7B) vs jais_local (70B)
