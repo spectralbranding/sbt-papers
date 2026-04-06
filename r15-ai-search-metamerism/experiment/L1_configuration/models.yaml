@@ -324,15 +324,17 @@ models:
 # ---------------------------------------------------------------------------
 # Summary
 # ---------------------------------------------------------------------------
-# Total models: 21 (6 original + 10 free-tier cloud + 7 national local)
+# Total models in config: 22 (6 original + 10 free-tier cloud + 6 national local + tpro_yandex)
+# Active in Run 5 analysis: 22 configured; T-Pro 2.0 (tpro_yandex) had 0 successful responses
+#   and is excluded from all analysis tables.
 # Tier 1 (30B+): 17 models
-# Tier 2 (7-30B): 4 models (gpt, yandexgpt_local, gigachat_local, swallow_local, groq_allam)
+# Tier 2 (7-30B): 5 models (gpt, yandexgpt_local, gigachat_local, swallow_local, groq_allam)
 #
 # Cultures represented:
 #   Western:  claude, gpt, gemini, gemma4_local, groq_llama33, grok
 #   Chinese:  deepseek, qwen3_local, cerebras_qwen3, cerebras_glm, sambanova_qwen3,
 #             sambanova_deepseek, groq_kimi, qwen35_local
-#   Russian:  gigachat_api, yandexgpt_pro, tpro_yandex, yandexgpt_local, gigachat_local
+#   Russian:  gigachat_api, yandexgpt_pro, tpro_yandex (excluded), yandexgpt_local, gigachat_local
 #   Japanese: sambanova_swallow, swallow_local
 #   Korean:   exaone_local
 #   Arabic:   jais_local, falcon_arabic_local, groq_allam

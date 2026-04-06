@@ -417,6 +417,22 @@ CROSSCULTURAL_BRAND_PAIRS: list[BrandPair] = [
                     "integrated farm-to-table). Arabic-language brand in English-language models. "
                     "Tests Falcon/Jais Arabic training advantage.",
     ),
+    # Primary geopolitical pair (same-category: digital consumer banking)
+    BrandPair(
+        id="russia_ukraine_banking",
+        brand_a="Tinkoff",
+        brand_b="PrivatBank",
+        category="digital consumer banking",
+        differentiating_dims=["ideological", "cultural", "narrative"],
+        dim_type="soft",
+        description="Tinkoff (rebranded T-Bank, est. 2006, Moscow, ~30M customers) and "
+                    "PrivatBank (est. 1992, Dnipro, ~22M customers) are the leading digital "
+                    "consumer banks in Russia and Ukraine respectively. Both underwent "
+                    "significant corporate restructuring events that generated substantial "
+                    "media coverage. Same-category pair tests whether geopolitical context "
+                    "in LLM training corpora affects dimensional weighting.",
+    ),
+    # Supplementary pairs -- collected but not featured in publications (category mismatch)
     BrandPair(
         id="russia_organic",
         brand_a="VkusVill",
@@ -425,8 +441,8 @@ CROSSCULTURAL_BRAND_PAIRS: list[BrandPair] = [
         differentiating_dims=["ideological", "cultural"],
         dim_type="soft",
         description="VkusVill is Russia's clean-label grocery chain (est. 2009, Moscow, "
-                    "1,800+ stores). Tests Russian brand perception in GigaChat/YandexGPT "
-                    "vs Western models. Also tests geopolitical bias in perception.",
+                    "1,800+ stores). Supplementary data point; not featured in publications "
+                    "due to category mismatch with Ukraine pair.",
     ),
     BrandPair(
         id="ukraine_confectionery",
@@ -435,9 +451,9 @@ CROSSCULTURAL_BRAND_PAIRS: list[BrandPair] = [
         category="confectionery",
         differentiating_dims=["narrative", "cultural"],
         dim_type="soft",
-        description="Roshen is Ukraine's largest confectionery (est. 1996, Vinnytsia, "
-                    "founded by Petro Poroshenko). Tests opposite geopolitical valence "
-                    "from VkusVill. Do models treat Ukrainian vs Russian brands differently?",
+        description="Roshen is Ukraine's largest confectionery (est. 1996, Vinnytsia). "
+                    "Supplementary data point; not featured in publications "
+                    "due to category mismatch with Russia pair.",
     ),
     BrandPair(
         id="mongolia_beer",
@@ -559,8 +575,9 @@ PAIR_NATIVE_LANGUAGE: dict[str, str] = {
     "china_water": "zh",
     "japan_snacks": "ja",
     "uae_dairy": "ar",
+    "russia_ukraine_banking": "ru",  # Both brands widely discussed in Russian media
     "russia_organic": "ru",
-    "ukraine_confectionery": "ru",  # Ukrainian brands, Russian widely understood
+    "ukraine_confectionery": "ru",
     "mongolia_beer": "zh",         # Mongolian Cyrillic, but zh models are the test
     "korea_dairy": "ko",
     "india_dairy": "hi",
@@ -2949,6 +2966,7 @@ def run_experiment(
     include_crosscultural: bool = False,
     crosscultural_only: bool = False,
     model_filter: Optional[list[str]] = None,
+    pair_filter: Optional[list[str]] = None,
 ) -> ExperimentResults:
     """
     Run the R15 AI Search Metamerism experiment.
@@ -3037,6 +3055,14 @@ def run_experiment(
             actual_pairs = BRAND_PAIRS + LOCAL_BRAND_PAIRS
         else:
             actual_pairs = BRAND_PAIRS
+        # Apply pair filter if specified
+        if pair_filter:
+            actual_pairs = [p for p in actual_pairs if p.id in pair_filter]
+            if not actual_pairs:
+                print(f"ERROR: No pairs matched filter: {pair_filter}")
+                sys.exit(1)
+            print(f"Pair filter active: running {len(actual_pairs)} pair(s): "
+                  f"{[p.id for p in actual_pairs]}")
         actual_runs = 1 if smoke else runs
         raw_calls = run_experiment_live(actual_pairs, model_list, actual_runs, log_path=log_path)
 
@@ -3210,6 +3236,13 @@ def main() -> None:
         help="Comma-separated list of model names to use (e.g. 'cerebras_qwen3,groq_llama33'). "
              "Default: all available models.",
     )
+    parser.add_argument(
+        "--pairs",
+        type=str,
+        default=None,
+        help="Comma-separated list of brand pair IDs to run (e.g. 'russia_ukraine_banking'). "
+             "Default: all pairs in the selected set.",
+    )
     args = parser.parse_args()
 
     n_modes = sum([args.live, args.demo, args.smoke])
@@ -3235,6 +3268,7 @@ def main() -> None:
         include_crosscultural=args.crosscultural,
         crosscultural_only=args.crosscultural_only,
         model_filter=args.models.split(",") if args.models else None,
+        pair_filter=args.pairs.split(",") if args.pairs else None,
     )
 
 

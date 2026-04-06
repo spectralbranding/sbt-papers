@@ -117,8 +117,8 @@ Prediction (H3): soft-dimension variance > hard-dimension variance.
 | Heineken | 0.122 | 0.076 | No |
 | Lay's | 0.692 | 0.300 | No |
 | Nongfu Spring | 0.202 | 0.210 | Yes |
-| Roshen | 0.123 | 0.345 | Yes |
-| VkusVill | 0.048 | 0.501 | Yes |
+| PrivatBank | 0.123 | 0.345 | Yes |
+| Tinkoff | 0.048 | 0.501 | Yes |
 | Whole Foods | 0.761 | 0.065 | No |
 
 ## Table 6: Statistical Tests
