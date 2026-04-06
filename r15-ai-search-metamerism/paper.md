@@ -448,6 +448,8 @@ The full Run 5 dataset (16,800 calls, 13,389 successful) was collected for \$3.0
 
 This cost structure has methodological implications. The entire cross-cultural AI perception study --- 23 models, 8 cultures, 7 brand pairs, native-language conditions --- cost less than a single human-respondent focus group. The marginal cost of adding a model, a brand pair, or a cultural condition is under \$0.20. This makes longitudinal tracking of AI spectral profiles operationally feasible at a scale that human-respondent studies cannot match: a quarterly audit of how 20+ models perceive a brand portfolio costs less than \$15 per quarter.
 
+**Data Availability.** The complete dataset --- all 16,800 per-call records (JSONL), per-model cost and token summaries (CSV), statistical test results (JSON), and the reproducible analysis script --- is publicly available at https://huggingface.co/datasets/spectralbranding/r15-ai-search-metamerism (DOI: 10.57967/hf/8284). The experiment source code is at https://github.com/spectralbranding/sbt-papers.
+
 ---
 
 ## 5. Discussion
