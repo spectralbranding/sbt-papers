@@ -11,7 +11,7 @@
 
 **H5 (Cultural Training Data Advantage)**: Models trained primarily on a specific culture's web data will produce lower DCI (Dimensional Collapse Index) for brands from that culture than for brands from other cultures. Specifically:
 - Chinese-trained models (Qwen3, DeepSeek) will have lower DCI for Nongfu Spring than Western-trained models
-- Russian-trained models (YandexGPT, GigaChat) will have lower DCI for VkusVill than Western-trained models
+- Russian-trained models (YandexGPT, GigaChat) will have lower DCI for Tinkoff than Western-trained models
 - Korean-trained models (EXAONE) will have lower DCI for Binggrae than Western-trained models
 - Arabic-trained models (Falcon-H1-Arabic) will have lower DCI for Al Rawabi than Western-trained models
 - Japanese-trained models (Swallow) will have lower DCI for Calbee than Western-trained models
@@ -19,7 +19,7 @@
 
 **H6 (Bidirectional Asymmetry)**: The cultural advantage is bidirectional — Western-trained models will have lower DCI for Evian/Lay's/Danone/Heineken than national models from non-Western cultures.
 
-**H7 (Geopolitical Valence)**: Models will show systematic differences in perception of VkusVill (Russia) vs Roshen (Ukraine), reflecting geopolitical framing in training data post-2022. This is exploratory (no directional prediction).
+**H7 (Geopolitical Valence)**: Models will show systematic differences in perception of Tinkoff (Russia) vs PrivatBank (Ukraine), reflecting geopolitical framing in training data post-2022. Both are digital-first consumer banks occupying analogous market positions — same category, eliminating the category confound. This is exploratory (no directional prediction).
 
 **H8 (Thin-Data Floor)**: APU Chinggis (Mongolia) will have the highest DCI across all models, establishing a floor for dimensional collapse when training data is near-zero.
 
@@ -34,11 +34,10 @@
 1. China: Nongfu Spring vs Evian (bottled water)
 2. Japan: Calbee vs Lay's (snacks)
 3. UAE: Al Rawabi vs Danone (dairy)
-4. Russia: VkusVill vs Whole Foods (organic grocery)
-5. Ukraine: Roshen vs Cadbury (confectionery)
-6. Mongolia: APU Chinggis vs Heineken (beer)
-7. South Korea: Binggrae vs Danone (dairy/beverages)
-8. India: Amul vs Danone (dairy products)
+4. Russia/Ukraine: Tinkoff vs PrivatBank (digital banking — geopolitical pair, same category)
+5. Mongolia: APU Chinggis vs Heineken (beer)
+6. South Korea: Binggrae vs Danone (dairy/beverages)
+7. India: Amul vs Danone (dairy products)
 
 ### 2.2 Models
 Open-weight models used where available to isolate cultural training data bias from commercial alignment confounds.
@@ -113,7 +112,7 @@ Construct a models x cultures matrix of DCI values. The "diagonal" (each nationa
 For the 6 original models, compare DCI on Run 5 cross-cultural pairs to DCI on Run 3 local pairs (same model, different local brands). If DCI values are in the same range, backward compatibility is confirmed.
 
 ### 3.4 Exploratory (H7)
-Compare VkusVill vs Roshen DCI patterns across all models. No directional prediction — report descriptive statistics and flag any systematic pattern.
+Compare Tinkoff vs PrivatBank DCI patterns across all models. Both are digital-first consumer banks (same category), so the geopolitical salience of the Russian-Ukrainian context since 2022 is the primary variable. No directional prediction — report descriptive statistics and flag any systematic pattern.
 
 ## 4. Stopping Rules
 

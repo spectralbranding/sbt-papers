@@ -24,7 +24,7 @@ For Run 5, the `weighted_recommendation` prompt is also run in native languages:
 | Language | Code | Model(s) | Brand pair |
 |----------|------|----------|-----------|
 | Chinese | zh | qwen3_local, cerebras_qwen3, sambanova_qwen3, sambanova_deepseek, cerebras_glm, groq_kimi, qwen35_local | china_water |
-| Russian | ru | gigachat_api, yandexgpt_pro, tpro_yandex, yandexgpt_local, gigachat_local | russia_grocery |
+| Russian | ru | gigachat_api, yandexgpt_pro, yandexgpt_local, gigachat_local | russia_grocery |
 | Japanese | ja | sambanova_swallow, swallow_local | japan_snacks |
 | Korean | ko | exaone_local | korea_dairy |
 | Arabic | ar | jais_local, falcon_arabic_local, groq_allam | uae_dairy |
@@ -34,5 +34,7 @@ Native translations are in `NATIVE_WEIGHTED_RECOMMENDATION` dict in the script (
 
 ## Status
 
-Templates and rendered/ directories are populated at runtime. After Run 5 completes,
-representative rendered examples for each culture-language condition will be committed here.
+Run 5 is complete (2026-04-06). Representative rendered prompt examples for each
+culture-language condition can be extracted from `../L3_sessions/run5_crosscultural.jsonl`.
+The templates/ and rendered/ directories remain available for curated examples to be
+committed manually.
