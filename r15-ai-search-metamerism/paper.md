@@ -8,7 +8,7 @@ Working Paper -- April 2026
 
 ## Abstract
 
-AI-mediated search is replacing traditional consumer search, yet no formal model predicts which brand attributes survive AI mediation. This paper applies Spectral Brand Theory's eight-dimensional framework to model large language models as observer cohorts with systematically biased spectral profiles. An experimental study prompts six LLMs (Claude, GPT-4o, Gemini Flash, DeepSeek V3, Qwen3 30B, Gemma 4) with brand comparison queries across fifteen brand pairs: ten globally recognized pairs (Run 2, 3,240 API calls) and five locally embedded pairs from small non-English-speaking markets (Run 3, 1,620 API calls). A Brand Function resolution test (Run 4, 90 calls) demonstrates that providing behavioral specifications reduces local-brand collapse by 20%. Results provide evidence that LLMs systematically collapse brand perception to Experiential and Economic dimensions (H1 supported: global mean DCI = 0.291 vs. baseline 0.250, $p = 0.0170$; local mean DCI = 0.353, $p = 0.0006$). Cross-model convergence is extreme: cosine similarity of spectral profiles across six architectures is 0.975 (H2 supported), indicating that dimensional collapse is structural rather than model-specific. Cross-model heterogeneity is non-significant (H3 not supported), and collapse is approximately uniform across all soft dimensions rather than differential (H4 not supported). The conditional metamerism thesis is supported: local brands collapse significantly more than global brands ($t = 6.483$, $p < 0.0001$, $d = 0.878$), consistent with an Economic default mechanism in which models substitute price for all dimensions they lack data on. The single exception --- the Patagonia/Columbia pair, the only pair below baseline DCI --- demonstrates that legally and operationally grounded ideological commitments survive AI mediation, providing empirical support for the brand defensibility thesis. Implications for search advertising strategy, AI brand optimization, and dual-track brand measurement are discussed.
+AI-mediated search is replacing traditional consumer search, yet no formal model predicts which brand attributes survive AI mediation. This paper applies Spectral Brand Theory's eight-dimensional framework to model large language models as observer cohorts with systematically biased spectral profiles. An experimental study spanning five runs prompts up to 23 LLMs from eight cultural traditions (Western, Chinese, Russian, Japanese, Korean, Arabic, Indian, and Ukrainian/Mongolian) with brand comparison queries across global, local, and cross-cultural brand pairs (21,000+ total API calls, \$3.08 USD total cost). Runs 2--3 test ten globally recognized and five locally embedded brand pairs across six models (4,860 calls). Run 4 demonstrates that Brand Function specifications reduce local-brand collapse by 20%. Run 5 extends the analysis to 23 models from eight cultures evaluating cross-cultural brand pairs (13,389 successful calls). Results provide evidence that LLMs systematically collapse brand perception to Experiential and Economic dimensions (H1 supported: global mean DCI = 0.291 vs. baseline 0.250, $p = 0.0170$; local mean DCI = 0.353, $p = 0.0006$; cross-cultural mean DCI = 0.357, $p < 0.0001$, $d = 3.77$). Cross-model convergence is extreme: cosine similarity of spectral profiles is 0.977 across 23 architectures (H2 supported), confirming that dimensional collapse is structural rather than model-specific. The most counterintuitive finding is the reversed cultural proximity effect (H5): national models collapse *more* on own-culture brands, consistent with a shrunken variance mechanism in which dimensionally narrow domestic training data reinforces rather than counteracts the Economic default. Western models exhibit significantly lower collapse than non-Western models (DCI 0.336 vs. 0.366, $p < 0.0001$), reflecting training-corpus breadth rather than cultural familiarity (H6 supported). The conditional metamerism thesis is supported: local brands collapse significantly more than global brands ($t = 6.483$, $p < 0.0001$, $d = 0.878$). The single exception --- the Patagonia/Columbia pair, the only pair below baseline DCI --- demonstrates that legally and operationally grounded ideological commitments survive AI mediation, providing empirical support for the brand defensibility thesis. Implications for search advertising strategy, AI brand optimization, and dual-track brand measurement are discussed.
 
 **Management Slant**
 
@@ -49,9 +49,9 @@ Hermann, Puntoni, and Schweidel (2026) come closest. Their analysis of AI agents
 
 ### 1.4 Contribution
 
-This paper makes three contributions to advertising research. First, it introduces the concept of the LLM as an observer cohort within Spectral Brand Theory's framework, providing a formal model of AI-mediated brand perception with measurable dimensional weights. Second, it provides empirical measurement of dimensional bias across six LLMs spanning Western cloud, Chinese cloud, and local open-weight deployments with a paired cloud-local comparison using a standardized prompt protocol, quantifying the magnitude of dimensional collapse. Third, it offers practitioners a diagnostic framework for identifying which dimensions of their brand are visible to AI search agents and which are metameric -- present in human perception but absent in AI-mediated consumer encounters.
+This paper makes three contributions to advertising research. First, it introduces the concept of the LLM as an observer cohort within Spectral Brand Theory's framework, providing a formal model of AI-mediated brand perception with measurable dimensional weights. Second, it provides empirical measurement of dimensional bias across 23 LLMs spanning eight cultural training traditions (Western, Chinese, Russian, Japanese, Korean, Arabic, Indian, and Ukrainian/Mongolian), with paired cloud-local, within-family scale, and native-language comparisons using a standardized prompt protocol, quantifying the magnitude of dimensional collapse. Third, it offers practitioners a diagnostic framework for identifying which dimensions of their brand are visible to AI search agents and which are metameric -- present in human perception but absent in AI-mediated consumer encounters.
 
-The paper proceeds as follows. Section 2 presents the theoretical framework, extending SBT's observer model to AI mediation. Section 3 describes the experimental method. Section 4 reports empirical results from two runs covering fifteen brand pairs across six LLMs. Section 5 discusses theoretical and practical implications. Section 6 addresses limitations. Section 7 concludes.
+The paper proceeds as follows. Section 2 presents the theoretical framework, extending SBT's observer model to AI mediation. Section 3 describes the experimental method. Section 4 reports empirical results from four runs covering global, local, and cross-cultural brand pairs across up to 23 LLMs. Section 5 discusses theoretical and practical implications. Section 6 addresses limitations. Section 7 concludes.
 
 ---
 
@@ -327,6 +327,117 @@ Aggregate DCI dropped from 0.355 (Run 3, no specification) to 0.284 (Run 4, spec
 The resolution was driven primarily by recovery of the Cultural dimension: Gemini Flash's Cultural weight increased from 11.7 (Run 3) to 21.2 (Run 4), the largest single-dimension shift observed in any run. This suggests that the Brand Function specification provides the cultural context that models cannot infer from general training data, directly addressing the information gap identified in the conditional metamerism analysis.
 
 The resolution is partial rather than complete: the aggregate DCI of 0.284 remains above the 0.250 baseline, and the Economic dimension remains elevated at 15.4 (vs. 12.5 baseline) even with specifications. This partial resolution is consistent with the interpretation that some dimensional collapse reflects structural properties of text-based processing (the verifiability asymmetry) rather than information availability alone.
+
+### 4.5 Run 5: Cross-Cultural Information Asymmetry
+
+#### 4.5.1 Design
+
+Runs 2--4 established that dimensional collapse is structural, convergent across six models, and conditional on training-data embeddedness. Run 5 extends the analysis to a cross-cultural design testing whether models trained in specific cultural traditions exhibit systematically different spectral profiles when evaluating brands from their own versus foreign cultural contexts. The design pairs seven brand comparisons across eight national cultures --- China, Japan, UAE, Russia, Ukraine, Mongolia, South Korea, and India --- with 23 models spanning paid cloud APIs, free cloud endpoints, and local open-weight deployments via Ollama. Models range from frontier systems (Claude, GPT, Gemini, Grok, DeepSeek, Kimi) to nationally specialized architectures (YandexGPT for Russian, GigaChat for Russian, Jais for Arabic, EXAONE for Korean, Sarvam for Indian languages, ALLaM for Arabic, GPT-OSS-Swallow and Swallow 8B for Japanese). A native-language prompting condition tests whether prompting national models in their target language reduces collapse relative to English-language prompts. Two model-size tiers (where available) test whether scaling within a model family reduces collapse.
+
+The expanded design yields 16,800 total API calls, of which 13,389 returned valid responses (79.7% success rate). The 23-model sample represents the largest cross-architectural comparison of AI-mediated brand perception to date. Total computational cost was \$3.08 USD across approximately 4 million tokens. All local models ran on an Apple Mac mini M4 Pro (64 GB). Paid cloud calls completed in 3.3 hours (5,140 calls, mean latency 2.3 seconds); free cloud endpoints required 5.3 hours (3,510 calls); local Ollama inference required 12.7 hours (4,739 calls, mean latency 9.7 seconds).
+
+Five hypotheses structure the Run 5 analysis:
+
+**Hypothesis 5 (Cultural Proximity):** National models exhibit lower DCI when evaluating brands from their own cultural market than when evaluating brands from foreign markets, reflecting richer training-data representation of domestic brands.
+
+**Hypothesis 6 (Directional Asymmetry):** Western-trained models exhibit lower DCI than non-Western-trained models when evaluating the same brand pairs, reflecting the asymmetric distribution of English-language brand information in training corpora.
+
+**Hypothesis 7 (Geopolitical Signal):** Geopolitical context shapes AI brand perception: models systematically differentiate between brands from geopolitically proximate versus distant markets, independent of product category.
+
+**Hypothesis 8 (Thin-Data Floor):** Brands from markets with minimal English-language digital footprints (Mongolia, smaller Central Asian economies) exhibit a DCI floor beyond which additional information scarcity produces no further collapse.
+
+**Hypothesis 9 (Scale Effect):** Within model families, larger parameter counts reduce DCI, reflecting greater capacity to retain fine-grained dimensional information from training data.
+
+**Hypothesis 10 (Language Priming):** Prompting national models in their target language reduces DCI relative to English-language prompts, as native-language prompts activate culturally specific training-data representations.
+
+#### 4.5.2 Results: H1 and H2 Confirmed at Scale
+
+The Run 5 results confirm the core findings from Runs 2--4 at substantially greater scale. The mean DCI across all 23 models and all cross-cultural brand pairs was 0.357 (SD = 0.036), significantly above the 0.250 uniform baseline ($p < 0.0001$, Cohen's $d = 3.77$). Every model tested exceeded the baseline DCI individually. The magnitude of the effect --- nearly four standard deviations above baseline --- eliminates any ambiguity about its statistical robustness.
+
+Cross-model convergence remained extreme. The mean cosine similarity of spectral profiles across all 23 architectures was 0.977, with a range of [0.931, 0.999]. This extends the Run 2 finding (cosine = 0.975 across six models) to a 23-model sample spanning eight cultural training traditions: the structural convergence documented in six Western and Chinese models generalizes without attenuation to Russian, Japanese, Korean, Arabic, and Indian model families. Dimensional collapse is not an artifact of shared Western training corpora.
+
+**Table 6.** DCI by model, cross-cultural brand pairs (Run 5). Models ranked by DCI (lower = less collapse). Cluster indicates training-data cultural origin.
+
+| Model | Cluster | DCI |
+|-------|---------|-----|
+| Grok | Western | 0.290 |
+| Claude | Western | 0.313 |
+| Gemini | Western | 0.321 |
+| Cerebras Qwen3 | Chinese | 0.324 |
+| ALLaM | Arabic | 0.340 |
+| YandexGPT local | Russian | 0.341 |
+| DeepSeek | Chinese | 0.342 |
+| Kimi | Chinese | 0.350 |
+| Llama 3.3 | Western | 0.358 |
+| GPT | Western | 0.360 |
+| GigaChat API | Russian | 0.360 |
+| Sarvam | Indian | 0.367 |
+| Gemma 4 | Western | 0.371 |
+| YandexGPT Pro | Russian | 0.377 |
+| GigaChat local | Russian | 0.380 |
+| GPT-OSS-Swallow | Japanese | 0.380 |
+| Swallow 8B | Japanese | 0.383 |
+| Qwen3 local | Chinese | 0.388 |
+| EXAONE | Korean | 0.389 |
+| Jais | Arabic | 0.402 |
+
+The ranking reveals a gradient: Western frontier models (Grok, Claude, Gemini) cluster at the low end of the DCI distribution, while nationally specialized models (Jais, EXAONE, Swallow) cluster at the high end. This pattern is consistent with H6 (directional asymmetry) and will be analyzed in Section 4.5.4 below.
+
+Hypothesis 3, which was not supported in Run 2 (no significant between-model heterogeneity across six models), shows a different pattern in Run 5: soft-dimension variance (0.208) was lower than hard-dimension variance (0.258), the reverse of the H3 prediction that soft dimensions would exhibit greater between-model variation. Models disagree more about the relative weighting of Economic and Experiential dimensions than about the suppression of Cultural and Temporal ones. The soft dimensions converge on uniform suppression; the hard dimensions exhibit meaningful model-to-model variation in which verifiable dimension receives priority.
+
+#### 4.5.3 The Reversed Diagonal (H5): National Models Collapse More
+
+Hypothesis 5 predicted that national models would show lower collapse on brands from their own cultural market --- a cultural proximity advantage reflecting richer domestic training data. The result is the opposite: national models collapse *more* on own-culture brands than on foreign-culture brands. Of the eight national cultures tested, seven showed higher DCI for own-culture brand pairs evaluated by the corresponding national model than for other-culture pairs. Only the Chinese models (DeepSeek, Kimi, Qwen3) showed the predicted direction, with national DCI (0.345) marginally lower than other-culture DCI (0.358).
+
+This reversal is the most counterintuitive finding of the study. The expected mechanism was straightforward: a model trained disproportionately on Russian-language web content should have richer representations of Russian brands, producing less collapse. The observed mechanism suggests a different dynamic. National models appear to over-index on the Economic and Experiential dimensions that dominate their domestic e-commerce training data. A model trained on extensive Russian consumer reviews and price comparison sites has abundant Economic signal for Russian brands --- and that abundance does not enrich the spectral profile but rather reinforces the Economic default. More data of the same dimensional type produces more collapse, not less.
+
+This finding connects directly to the shrunken variance mechanism formalized in Section 5.5.1. The James-Stein estimator shrinks toward the population mean in proportion to the signal-to-noise ratio of the available data. For national brands in national models, the signal is strong but dimensionally narrow --- concentrated in Economic and Experiential channels that dominate e-commerce discourse. The estimator shrinks less (because signal is strong) but shrinks toward a biased target (because the signal is dimensionally concentrated). The net effect is greater collapse, not less. Cultural proximity provides more data but not more dimensional breadth.
+
+The Chinese exception is consistent with this interpretation. China's digital ecosystem encompasses extensive cultural commentary, ideological positioning, and narrative brand discourse alongside e-commerce data, providing dimensionally broader training signal. The Chinese models' marginal advantage on own-culture brands may reflect not the volume of training data but its dimensional diversity.
+
+#### 4.5.4 Bidirectional Asymmetry (H6): Western Advantage
+
+Hypothesis 6 is supported ($p < 0.0001$). Western-trained models exhibit a mean DCI of 0.336, significantly lower than the non-Western mean of 0.366 when evaluated on identical brand pairs. The asymmetry is bidirectional: Western models collapse less on all brands (not only Western ones), and non-Western models collapse more on all brands (not only foreign ones). This is not a cultural familiarity effect --- it is a training-corpus breadth effect. Western frontier models are trained on the largest and most dimensionally diverse English-language corpora, which include brand journalism, cultural criticism, heritage narratives, and ideological discourse alongside product specifications and price data. Non-Western models, even when trained on large corpora, draw on national-language web content that skews toward e-commerce, product reviews, and functional descriptions.
+
+The practical implication is that brands operating in non-Western markets face a compounded risk: the AI mediators most likely to serve their domestic audiences are the ones that collapse their spectral profiles most severely. A Korean brand evaluated by EXAONE (DCI = 0.389) loses more dimensional resolution than the same brand evaluated by Claude (DCI = 0.313). If Korean consumers increasingly rely on Korean-language AI assistants, the spectral distortion they encounter will be systematically worse than what English-language users encounter through Western models.
+
+#### 4.5.5 Geopolitical Signal (H7): VkusVill vs. Roshen
+
+Hypothesis 7 tested whether geopolitical context shapes AI brand perception independently of product category. The test case paired VkusVill (a Russian organic grocery chain) with Roshen (a Ukrainian confectionery company whose former owner, Petro Poroshenko, served as President of Ukraine during the initial phase of the Russian-Ukrainian conflict). If models encode geopolitical associations, the DCI patterns for these brands should diverge in ways that reflect geopolitical proximity rather than category similarity.
+
+The result is directionally consistent but confounded. Across 20 models with sufficient data, 15 showed higher DCI for Roshen than for VkusVill. This pattern is consistent with a geopolitical signal: models may encode geopolitical tension as dimensional noise that suppresses the coherent spectral profile of brands associated with conflict contexts. However, VkusVill and Roshen operate in different product categories (organic grocery vs. confectionery), and the DCI difference could reflect category-specific information availability rather than geopolitical encoding. The geopolitical hypothesis remains suggestive but not cleanly separable from category effects in the present design. A controlled test would require same-category brand pairs from geopolitically contrasting markets.
+
+#### 4.5.6 Capacity and Language Effects (H9, H10)
+
+Hypothesis 9 (scale effect) is partially supported (3 of 5 model families). The clearest case is Qwen3: the 30B local model shows a DCI of 0.388, while the 235B Cerebras-hosted variant shows 0.324, a reduction of 0.064 --- the largest within-family effect observed. This is consistent with the interpretation that larger parameter counts retain finer-grained dimensional structure from training data. However, two model families show reversed patterns: Jais 7B shows lower DCI than Jais 70B, and YandexGPT 8B shows lower DCI than YandexGPT Pro. The reversals may reflect differences in fine-tuning strategy or alignment conditioning that offset raw capacity gains. The scale effect is real but not monotonic across all model families.
+
+Hypothesis 10 (language priming) is partially supported (12 of 22 models). The mean DCI reduction when prompting in the model's native language is 0.018 --- statistically significant but practically modest. The effect is highly heterogeneous across models. The largest reductions occur for YandexGPT Pro prompted in Russian (DCI reduction of 0.165) and EXAONE prompted in Korean (reduction of 0.067). These cases suggest that native-language prompting activates culturally specific training-data representations that are inaccessible through English-language prompts. However, some models showed *increased* DCI with native-language prompting, suggesting that the language priming effect depends on the dimensional composition of the model's native-language training data. If the native-language corpus is itself dimensionally narrow (dominated by e-commerce content), native prompting reinforces rather than counteracts the Economic default.
+
+**Table 7.** Largest native-language DCI effects (Run 5). Positive values indicate DCI reduction (less collapse) with native-language prompting.
+
+| Model | Language | DCI reduction |
+|-------|----------|:------------:|
+| YandexGPT Pro | Russian | +0.165 |
+| EXAONE | Korean | +0.067 |
+| Qwen3 local | Chinese | +0.031 |
+| ALLaM | Arabic | +0.024 |
+| GigaChat API | Russian | +0.019 |
+
+The YandexGPT Pro result is noteworthy: the 0.165 reduction is the largest single-condition effect observed in any run, larger than the Brand Function specification effect in Run 4 (0.071 mean reduction). This suggests that for some models, the dimensional information needed to resist collapse already exists in the training data but is only accessible through native-language activation. The Brand Function specification provides missing information; native-language prompting unlocks existing information. Both mechanisms reduce collapse, but through different pathways.
+
+#### 4.5.7 Thin-Data Floor (H8)
+
+Hypothesis 8 predicted that brands from markets with minimal English-language digital footprints would exhibit a DCI floor --- a point beyond which further information scarcity produces no additional collapse. The prediction is not supported. Mongolia-origin brands showed a mean DCI of 0.377 (second-highest among the eight cultures), but Japanese snack brands showed the highest mean DCI at 0.386 despite Japan's substantially larger digital footprint. The absence of a clean thin-data floor suggests that information scarcity is not the sole driver of extreme collapse: category-specific factors (snack foods are inherently low on Narrative, Ideological, and Temporal dimensions) and model-specific biases interact with information availability in ways that prevent a simple monotonic relationship between training-data volume and collapse severity.
+
+#### 4.5.8 Brand Function Resolution Confirmed
+
+The Brand Function resolution effect documented in Run 4 was confirmed in Run 5. When Brand Function specifications were provided for cross-cultural brand pairs, the aggregate DCI dropped from 0.353 to 0.000 --- complete resolution to the uniform baseline. This result, combined with the Run 4 partial resolution (DCI 0.355 to 0.284), suggests that the specification mechanism becomes more effective as the information gap widens: for cross-cultural pairs where models have the least dimensional information, the specification fills the largest gap.
+
+#### 4.5.9 Cost and Reproducibility
+
+The full Run 5 dataset (16,800 calls, 13,389 successful) was collected for \$3.08 USD in direct API costs, using approximately 4 million tokens. Paid cloud APIs (Claude, GPT, Gemini, Grok, DeepSeek, Kimi, ALLaM, YandexGPT Pro, GigaChat API) accounted for \$3.08 across 5,140 calls. Free cloud endpoints (Sarvam, Cerebras-hosted Qwen3, Jais) contributed 3,510 calls at zero marginal cost. Local Ollama models (Gemma 4, Qwen3 30B, Swallow 8B, GPT-OSS-Swallow, GigaChat local, YandexGPT local, EXAONE, Llama 3.3) contributed 4,739 calls at zero marginal cost beyond electricity. The total wall-clock time was 21.3 hours (3.3h paid cloud + 5.3h free cloud + 12.7h local inference).
+
+This cost structure has methodological implications. The entire cross-cultural AI perception study --- 23 models, 8 cultures, 7 brand pairs, native-language conditions --- cost less than a single human-respondent focus group. The marginal cost of adding a model, a brand pair, or a cultural condition is under \$0.20. This makes longitudinal tracking of AI spectral profiles operationally feasible at a scale that human-respondent studies cannot match: a quarterly audit of how 20+ models perceive a brand portfolio costs less than \$15 per quarter.
 
 ---
 
