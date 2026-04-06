@@ -30,26 +30,26 @@ Eight companion papers establishing formal mathematical foundations for SBT, plu
 
 | Key | Paper | Zenodo DOI | Status |
 |-----|-------|------------|--------|
-| R8 | [Spectral Portfolio Theory: Interference, Coherence, and Capacity in Multi-Brand Perception Space](r8-portfolio-theory/paper.md) | [10.5281/zenodo.19145099](https://doi.org/10.5281/zenodo.19145099) | IJRM (submitted) |
-| R14 | [Research as Repository: A Git-Native Protocol for Scientific Knowledge Production](r14-paper-as-repository/paper.md) | [10.5281/zenodo.19294864](https://doi.org/10.5281/zenodo.19294864) | JLSC (submitted) |
+| R8 | [Spectral Portfolio Theory: Interference, Coherence, and Capacity in Multi-Brand Perception Space](r8-portfolio-theory/paper.md) | [10.5281/zenodo.19145099](https://doi.org/10.5281/zenodo.19145099) | Under review |
+| R14 | [Research as Repository: A Git-Native Protocol for Scientific Knowledge Production](r14-paper-as-repository/paper.md) | [10.5281/zenodo.19294864](https://doi.org/10.5281/zenodo.19294864) | Under review |
 
 ### Methodology
 
 | Key | Paper | Zenodo DOI | Status |
 |-----|-------|------------|--------|
-| R13 | [Paper as Specification: A Machine-Readable Standard for Scientific Claims](r13-paper-as-specification/paper.md) | [10.5281/zenodo.19210037](https://doi.org/10.5281/zenodo.19210037) | QSS (submitted) |
+| R13 | [Paper as Specification: A Machine-Readable Standard for Scientific Claims](r13-paper-as-specification/paper.md) | [10.5281/zenodo.19210037](https://doi.org/10.5281/zenodo.19210037) | Under review |
 
 ### Empirical
 
 | Key | Paper | Zenodo DOI | Status |
 |-----|-------|------------|--------|
-| R15 | [Spectral Metamerism in AI-Mediated Brand Perception](r15-ai-search-metamerism/paper.md) | [10.5281/zenodo.19422427](https://doi.org/10.5281/zenodo.19422427) | JAR (submitted) |
+| R15 | [Spectral Metamerism in AI-Mediated Brand Perception](r15-ai-search-metamerism/paper.md) | [10.5281/zenodo.19422427](https://doi.org/10.5281/zenodo.19422427) | Under review |
 
 ### AI-Era Extensions
 
 | Key | Paper | Zenodo DOI | Status |
 |-----|-------|------------|--------|
-| R16 | [AI-Native Brand Identity: From Visual Recognition to Cryptographic Verification](r16-ai-native-brand-identity/paper.md) | [10.5281/zenodo.19391476](https://doi.org/10.5281/zenodo.19391476) | JIM (pending) |
+| R16 | [AI-Native Brand Identity: From Visual Recognition to Cryptographic Verification](r16-ai-native-brand-identity/paper.md) | [10.5281/zenodo.19391476](https://doi.org/10.5281/zenodo.19391476) | Under review |
 | R17 | [Brand Triangulation: A Geometric Framework for Multi-Observer Brand Positioning](r17-brand-triangulation/paper.md) | Zenodo pending | Preprint |
 
 ### Cross-Framework Synthesis
