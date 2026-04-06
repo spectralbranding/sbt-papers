@@ -8,12 +8,12 @@ Working Paper -- April 2026
 
 ## Abstract
 
-AI-mediated search is replacing traditional consumer search, yet no formal model predicts which brand attributes survive AI mediation. This paper applies Spectral Brand Theory's eight-dimensional framework to model large language models as observer cohorts with systematically biased spectral profiles. An experimental study spanning five runs prompts up to 23 LLMs from eight cultural traditions (Western, Chinese, Russian, Japanese, Korean, Arabic, Indian, and Ukrainian/Mongolian) with brand comparison queries across global, local, and cross-cultural brand pairs (21,000+ total API calls, \$3.08 USD total cost). Runs 2--3 test ten globally recognized and five locally embedded brand pairs across six models (4,860 calls). Run 4 demonstrates that Brand Function specifications reduce local-brand collapse by 20%. Run 5 extends the analysis to 23 models from eight cultures evaluating cross-cultural brand pairs (13,389 successful calls). Results provide evidence that LLMs systematically collapse brand perception to Experiential and Economic dimensions (H1 supported: global mean DCI = 0.291 vs. baseline 0.250, $p = 0.0170$; local mean DCI = 0.353, $p = 0.0006$; cross-cultural mean DCI = 0.357, $p < 0.0001$, $d = 3.77$). Cross-model convergence is extreme: cosine similarity of spectral profiles is 0.977 across 23 architectures (H2 supported), confirming that dimensional collapse is structural rather than model-specific. The most counterintuitive finding is the reversed cultural proximity effect (H5): national models collapse *more* on own-culture brands, consistent with a shrunken variance mechanism in which dimensionally narrow domestic training data reinforces rather than counteracts the Economic default. Western models exhibit significantly lower collapse than non-Western models (DCI 0.336 vs. 0.366, $p < 0.0001$), reflecting training-corpus breadth rather than cultural familiarity (H6 supported). The conditional metamerism thesis is supported: local brands collapse significantly more than global brands ($t = 6.483$, $p < 0.0001$, $d = 0.878$). The single exception --- the Patagonia/Columbia pair, the only pair below baseline DCI --- demonstrates that legally and operationally grounded ideological commitments survive AI mediation, providing empirical support for the brand defensibility thesis. Implications for search advertising strategy, AI brand optimization, and dual-track brand measurement are discussed.
+AI-mediated search is replacing traditional consumer search, yet no formal model predicts which brand attributes survive AI mediation. This paper applies Spectral Brand Theory's eight-dimensional framework to model large language models as observer cohorts with systematically biased spectral profiles. An experimental study spanning five runs prompts 23 LLMs from eight cultural traditions (Western, Chinese, Russian, Japanese, Korean, Arabic, Indian, and Ukrainian/Mongolian) with brand comparison queries across global, local, and cross-cultural brand pairs (16,800 total API calls, \$3.08 USD total cost). Runs 2--3 test ten globally recognized and five locally embedded brand pairs across six models (4,860 calls). Run 4 demonstrates that Brand Function specifications reduce local-brand collapse by 20%. Run 5 extends the analysis to 23 models from eight cultures evaluating cross-cultural brand pairs (13,389 successful calls out of 16,800 designed). Results provide evidence that LLMs systematically collapse brand perception to Experiential and Economic dimensions (H1 supported: global mean DCI = 0.291 vs. baseline 0.250, $p = 0.0170$; local mean DCI = 0.353, $p = 0.0006$; cross-cultural mean DCI = 0.357, $p < 0.0001$, $d = 3.77$). Cross-model convergence is extreme: cosine similarity of spectral profiles is 0.977 across 23 architectures (H2 supported), confirming that dimensional collapse is structural rather than model-specific. The most counterintuitive finding is the reversed cultural proximity effect (H5): national models collapse *more* on own-culture brands, consistent with a shrunken variance mechanism in which dimensionally narrow domestic training data reinforces rather than counteracts the Economic default. Western models exhibit significantly lower collapse than non-Western models (DCI 0.336 vs. 0.366, $p < 0.0001$), reflecting training-corpus breadth rather than cultural familiarity (H6 supported). The conditional metamerism thesis is supported: local brands collapse significantly more than global brands ($t = 6.483$, $p < 0.0001$, $d = 0.878$). The single exception --- the Patagonia/Columbia pair, the only pair below baseline DCI --- demonstrates that legally and operationally grounded ideological commitments survive AI mediation, providing empirical support for the brand defensibility thesis. Implications for search advertising strategy, AI brand optimization, and dual-track brand measurement are discussed.
 
 **Management Slant**
 
-- LLMs recommend products, not brands: across six models and fifteen brand pairs, AI-mediated search systematically collapses brand perception to Experiential and Economic dimensions, rendering brands differentiated on narrative, ideology, culture, or heritage metameric (structurally different but identically recommended).
-- The collapse is cross-platform: cosine similarity of 0.975 across six different architectures means that switching AI vendors does not solve the problem. The solution must be dimensional, not platform-specific.
+- LLMs recommend products, not brands: across 23 models from eight cultural traditions and multiple brand pairs, AI-mediated search systematically collapses brand perception to Experiential and Economic dimensions, rendering brands differentiated on narrative, ideology, culture, or heritage metameric (structurally different but identically recommended).
+- The collapse is cross-platform: cosine similarity of 0.977 across 23 architectures from eight cultures means that switching AI vendors does not solve the problem. The solution must be dimensional, not platform-specific.
 - Local and regional brands face amplified risk: brands from small non-English-speaking markets collapse 25% more severely than global brands ($d = 0.878$), associated with an Economic default in which AI substitutes price for every dimension it lacks data on.
 - The collapse is not inevitable: Patagonia's legally grounded ideological commitments survive AI mediation, demonstrating that encoding soft dimensions as verifiable, machine-readable claims is the operative defense. Making brand value structured and defensible --- not just "felt" --- is the prerequisite for surviving agentic commerce.
 
@@ -356,30 +356,30 @@ The Run 5 results confirm the core findings from Runs 2--4 at substantially grea
 
 Cross-model convergence remained extreme. The mean cosine similarity of spectral profiles across all 23 architectures was 0.977, with a range of [0.931, 0.999]. This extends the Run 2 finding (cosine = 0.975 across six models) to a 23-model sample spanning eight cultural training traditions: the structural convergence documented in six Western and Chinese models generalizes without attenuation to Russian, Japanese, Korean, Arabic, and Indian model families. Dimensional collapse is not an artifact of shared Western training corpora.
 
-**Table 6.** DCI by model, cross-cultural brand pairs (Run 5). Models ranked by DCI (lower = less collapse). Cluster indicates training-data cultural origin.
+**Table 6.** All 23 models across Runs 2--5, ranked by DCI (lower = less collapse). Tier 1 = frontier/large production models; Tier 2 = smaller or local open-weight models. DCI column reflects cross-cultural brand pairs (Run 5) for models present in Run 5; Runs 2--4 models are included for completeness with their Run 2--4 mean DCI.
 
-| Model | Cluster | DCI |
-|-------|---------|-----|
-| Grok | Western | 0.290 |
-| Claude | Western | 0.313 |
-| Gemini | Western | 0.321 |
-| Cerebras Qwen3 | Chinese | 0.324 |
-| ALLaM | Arabic | 0.340 |
-| YandexGPT local | Russian | 0.341 |
-| DeepSeek | Chinese | 0.342 |
-| Kimi | Chinese | 0.350 |
-| Llama 3.3 | Western | 0.358 |
-| GPT | Western | 0.360 |
-| GigaChat API | Russian | 0.360 |
-| Sarvam | Indian | 0.367 |
-| Gemma 4 | Western | 0.371 |
-| YandexGPT Pro | Russian | 0.377 |
-| GigaChat local | Russian | 0.380 |
-| GPT-OSS-Swallow | Japanese | 0.380 |
-| Swallow 8B | Japanese | 0.383 |
-| Qwen3 local | Chinese | 0.388 |
-| EXAONE | Korean | 0.389 |
-| Jais | Arabic | 0.402 |
+| Model | Size | Culture | Tier | Provider | Release | DCI |
+|-------|------|---------|------|----------|---------|-----|
+| grok | large | Western | 1 | xAI | 2025-12 | 0.290 |
+| claude | ~200B+ | Western | 1 | Anthropic | 2025-10 | 0.313 |
+| gemini | large | Western | 1 | Google | 2025-12 | 0.321 |
+| cerebras_qwen3 | 235B MoE | Chinese | 1 | Cerebras | 2025-06 | 0.324 |
+| groq_allam | 7B | Arabic | 2 | Groq | 2025-01 | 0.340 |
+| yandexgpt_local | 8B | Russian | 2 | Local | 2025-03 | 0.341 |
+| deepseek | 671B MoE | Chinese | 1 | DeepSeek | 2025-03 | 0.342 |
+| groq_kimi | large MoE | Chinese | 1 | Groq | 2025-06 | 0.350 |
+| groq_llama33 | 70B | Western | 1 | Groq | 2024-12 | 0.358 |
+| gpt | ~8B | Western | 2 | OpenAI | 2024-07 | 0.360 |
+| gigachat_api | commercial | Russian | 1 | Sber | 2026-02 | 0.360 |
+| sarvam | 105B MoE | Indian | 1 | Sarvam AI | 2026-02 | 0.367 |
+| gemma4_local | 27B | Western | 2 | Local | 2025-06 | 0.371 |
+| yandexgpt_pro | commercial | Russian | 1 | Yandex | 2026-02 | 0.377 |
+| gigachat_local | 10B/1.8B | Russian | 2 | Local | 2026-03 | 0.380 |
+| gptoss_swallow | 20B | Japanese | 1 | Yandex | 2026-02 | 0.380 |
+| swallow_local | 8B | Japanese | 2 | Local | 2024-12 | 0.383 |
+| qwen3_local | 30B | Chinese | 2 | Local | 2025-06 | 0.388 |
+| exaone_local | 32B | Korean | 1 | Local | 2026-02 | 0.389 |
+| jais_local | 70B | Arabic | 1 | Local | 2024-03 | 0.402 |
 
 The ranking reveals a gradient: Western frontier models (Grok, Claude, Gemini) cluster at the low end of the DCI distribution, while nationally specialized models (Jais, EXAONE, Swallow) cluster at the high end. This pattern is consistent with H6 (directional asymmetry) and will be analyzed in Section 4.5.4 below.
 
@@ -437,6 +437,15 @@ The Brand Function resolution effect documented in Run 4 was confirmed in Run 5.
 
 The full Run 5 dataset (16,800 calls, 13,389 successful) was collected for \$3.08 USD in direct API costs, using approximately 4 million tokens. Paid cloud APIs (Claude, GPT, Gemini, Grok, DeepSeek, Kimi, ALLaM, YandexGPT Pro, GigaChat API) accounted for \$3.08 across 5,140 calls. Free cloud endpoints (Sarvam, Cerebras-hosted Qwen3, Jais) contributed 3,510 calls at zero marginal cost. Local Ollama models (Gemma 4, Qwen3 30B, Swallow 8B, GPT-OSS-Swallow, GigaChat local, YandexGPT local, EXAONE, Llama 3.3) contributed 4,739 calls at zero marginal cost beyond electricity. The total wall-clock time was 21.3 hours (3.3h paid cloud + 5.3h free cloud + 12.7h local inference).
 
+**Table 8.** Run 5 cost and time breakdown by infrastructure tier (successful calls only). Local inference ran on Apple Mac mini M4 Pro (64 GB unified memory).
+
+| Category | Calls (OK) | Time | Avg/Call | Cost |
+|----------|-----------|------|----------|------|
+| Paid cloud | 5,140 | 3.3h | 2.3s | \$3.08 |
+| Free cloud | 3,510 | 5.3h | 5.4s | \$0.00 |
+| Local (M4 Pro 64GB) | 4,739 | 12.7h | 9.7s | \$0.00 |
+| **Total** | **13,389** | **21.3h** | | **\$3.08** |
+
 This cost structure has methodological implications. The entire cross-cultural AI perception study --- 23 models, 8 cultures, 7 brand pairs, native-language conditions --- cost less than a single human-respondent focus group. The marginal cost of adding a model, a brand pair, or a cultural condition is under \$0.20. This makes longitudinal tracking of AI spectral profiles operationally feasible at a scale that human-respondent studies cannot match: a quarterly audit of how 20+ models perceive a brand portfolio costs less than \$15 per quarter.
 
 ---
@@ -445,7 +454,7 @@ This cost structure has methodological implications. The entire cross-cultural A
 
 ### 5.1 H1 and H2 Supported: Dimensional Collapse Is Structural and Convergent
 
-The two most fundamental predictions of the LLM-as-observer model are supported. H1 is supported in both runs: LLMs exhibit significantly non-uniform dimensional profiles, systematically overweighting Experiential and Economic dimensions relative to Cultural, Temporal, and Narrative dimensions. H2 is supported at a high level of statistical certainty: cross-model cosine similarity of 0.975 means that the six architectures tested converge on essentially the same dimensional ordering. This convergence is the most important single result of the study. It establishes that dimensional collapse is not a quirk of RLHF training (Claude and GPT-4o), not an artifact of e-commerce training data (DeepSeek and Qwen3), and not an effect of commercial API safety layers (cloud models diverge negligibly from local open-weight models). Collapse is structural: it follows from the inherent information asymmetry between verifiable brand attributes (price, features, certifications) and perception-dependent brand attributes (heritage, cultural embeddedness, ideological resonance). Text-only models trained on general web corpora that include product descriptions, price comparisons, and consumer reviews are likely to exhibit this profile.
+The two most fundamental predictions of the LLM-as-observer model are supported. H1 is supported in both runs: LLMs exhibit significantly non-uniform dimensional profiles, systematically overweighting Experiential and Economic dimensions relative to Cultural, Temporal, and Narrative dimensions. H2 is supported at a high level of statistical certainty: cross-model cosine similarity of 0.977 across 23 architectures from eight cultural traditions means they converge on essentially the same dimensional ordering. This convergence is the most important single result of the study. It establishes that dimensional collapse is not a quirk of RLHF training (Claude and GPT-4o), not an artifact of e-commerce training data (DeepSeek and Qwen3), and not an effect of commercial API safety layers (cloud models diverge negligibly from local open-weight models). Collapse is structural: it follows from the inherent information asymmetry between verifiable brand attributes (price, features, certifications) and perception-dependent brand attributes (heritage, cultural embeddedness, ideological resonance). Text-only models trained on general web corpora that include product descriptions, price comparisons, and consumer reviews are likely to exhibit this profile.
 
 This finding has a direct implication for advertising strategy: platform heterogeneity is not the primary risk. A brand manager who discovers that their brand is metameric in GPT-4o cannot solve the problem by redirecting to Claude or DeepSeek. The collapse is cross-platform. The solution must be dimensional, not platform-specific.
 
