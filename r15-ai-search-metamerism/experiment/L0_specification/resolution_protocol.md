@@ -1,5 +1,12 @@
 # Pre-Registration Protocol: Brand Function Resolution Test (Run 4)
 
+> **NOTE on hypothesis numbering**: This protocol uses H5-H7 for internal naming
+> of Run 4 resolution hypotheses. In the consolidated paper these are renumbered
+> as H4a-H4c (extensions of the Run 4 specification resolution test). The primary
+> hypothesis numbering H5-H10 in `PRE_REGISTRATION_RUN5.md` takes precedence for
+> the Run 5 cross-cultural study. There is no conflict: H5-H7 here are Run 4-scoped
+> placeholders; H5-H10 in Run 5 are the authoritative paper hypotheses.
+
 **Study**: R15 Extension — Does Brand Function Specification Resolve Dimensional Collapse for Local Brands?
 **Paper**: Zharnikov (2026v), Spectral Metamerism in AI-Mediated Brand Perception
 **Date registered**: 2026-04-04 (before data collection)

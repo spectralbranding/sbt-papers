@@ -5,7 +5,7 @@ differences in brand perception clouds -- the phenomenon of spectral metamerism
 applied to AI-mediated consumer search.
 
 **Paper**: Zharnikov, D. (2026v). Spectral Metamerism in AI-Mediated Brand Perception.
-Target: Journal of Advertising Research (JAR special call on AI + search).
+
 
 ---
 

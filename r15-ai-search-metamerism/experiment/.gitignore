@@ -1,0 +1,18 @@
+# Credentials and certificates
+*.crt
+*.pem
+*.key
+
+# Virtual environment
+.venv/
+venv/
+
+# macOS
+.DS_Store
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Run 5 in-progress data (add to tracking when complete)
+# L3_sessions/run5_*.jsonl

@@ -2,7 +2,7 @@
 
 ### Study
 R15: Spectral Metamerism in AI-Mediated Brand Perception
-Paper: Zharnikov (2026v), target JAR special call on AI + search
+Paper: Zharnikov (2026v)
 
 ### Measurement Design (v2)
 All dimensional measures are elicited via structured JSON prompts -- no

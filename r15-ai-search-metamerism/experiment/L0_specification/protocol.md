@@ -1,7 +1,7 @@
 # R15 AI Search Metamerism -- Pre-Registration Protocol
 
 **Study**: Spectral Metamerism in AI-Mediated Brand Perception
-**Paper**: Zharnikov, D. (2026v), target JAR special call on AI + search
+**Paper**: Zharnikov, D. (2026v)
 **Proposition tested**: AI-mediated brand search produces systematic dimensional collapse
 **Protocol registered**: 2026-04-03 (before data collection)
 **Script**: `ai_search_metamerism.py` (commit hash recorded in metadata.yaml)
