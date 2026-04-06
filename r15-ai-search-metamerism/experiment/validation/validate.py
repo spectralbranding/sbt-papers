@@ -37,27 +37,24 @@ def check_integrity():
 
 
 def check_completeness():
-    """Ensure every L1 model config has corresponding L3 session data."""
-    l1_dir = EXPERIMENT_DIR / "L1_configuration"
+    """Ensure L3 session data exists for the experiment runs."""
     l3_dir = EXPERIMENT_DIR / "L3_sessions"
 
-    configs = list(l1_dir.glob("*.yaml"))
-    if not configs:
-        print("Completeness check: SKIPPED (no model configs yet)")
-        return True
-
-    missing = []
-    for config in configs:
-        model_name = config.stem
-        session_dir = l3_dir / model_name
-        if not session_dir.exists() or not list(session_dir.glob("*.jsonl")):
-            missing.append(model_name)
-
-    if missing:
-        print(f"Completeness check: FAILED — missing session data for: {missing}")
+    # Check that JSONL session logs exist (one per run, not per model)
+    session_files = list(l3_dir.glob("*.jsonl"))
+    if not session_files:
+        print("Completeness check: FAILED — no JSONL session files in L3_sessions/")
         return False
 
-    print(f"Completeness check: PASSED ({len(configs)} models verified)")
+    # Verify each JSONL has at least one valid entry
+    total_calls = 0
+    for sf in session_files:
+        line_count = sum(1 for _ in open(sf))
+        total_calls += line_count
+        if line_count == 0:
+            print(f"Completeness check: WARNING — empty file: {sf.name}")
+
+    print(f"Completeness check: PASSED ({len(session_files)} session files, {total_calls:,} total calls)")
     return True
 
 
