@@ -1,0 +1,21 @@
+model,dci,tier,culture,size,release,provider,n_valid,weight_semiotic,weight_narrative,weight_ideological,weight_experiential,weight_social,weight_economic,weight_cultural,weight_temporal
+grok,0.2896,1,western,large,2025-12,xAI,24,12.8,11.3,12.9,18.4,11.8,16.2,10.0,6.5
+claude,0.3132,1,western,~200B+,2025-10,Anthropic,25,12.0,8.3,12.9,17.8,11.4,19.3,10.0,8.3
+gemini,0.3208,1,western,large,2025-12,Google,25,13.7,8.7,9.5,16.9,10.2,18.4,12.3,10.3
+cerebras_qwen3,0.3242,1,chinese,235B MoE,2025-06,Cerebras,25,14.6,9.8,10.8,18.0,10.8,17.6,7.2,10.4
+groq_allam,0.3402,2,arabic,7B,2025-01,Groq,23,17.6,16.5,11.1,15.9,10.2,18.3,5.7,10.2
+yandexgpt_local,0.3413,2,russian,8B,2025-03,Ollama,24,15.4,10.4,12.7,21.5,11.2,20.2,5.0,7.9
+deepseek,0.342,1,chinese,671B MoE,2025-03,DeepSeek,25,12.0,11.4,10.2,15.2,9.0,22.2,12.4,7.6
+groq_kimi,0.3496,1,chinese,large MoE,2025-06,Groq,24,11.3,9.9,9.1,18.2,10.4,23.6,8.1,9.3
+groq_llama33,0.3583,1,western,70B,2024-12,Groq,24,11.7,7.9,9.5,18.2,9.8,24.2,7.0,11.6
+gpt,0.36,2,western,~8B,2024-07,OpenAI,25,16.6,11.6,10.4,19.8,10.2,19.4,5.0,7.0
+gigachat_api,0.36,1,russian,commercial,2026-02,Sber,10,14.5,10.5,11.5,17.0,8.5,21.5,7.0,9.5
+sarvam,0.3669,1,indian,105B MoE,2026-02,Sarvam AI,15,13.9,9.4,5.5,20.2,11.3,23.0,7.0,10.3
+gemma4_local,0.371,2,western,27B,2025-06,Ollama,25,15.1,9.5,8.7,18.0,10.7,22.8,7.9,9.5
+yandexgpt_pro,0.3771,1,russian,commercial,2026-02,Yandex,24,14.6,8.6,10.3,19.9,9.7,23.1,7.2,6.7
+gigachat_local,0.3798,2,russian,10B/1.8B,2026-03,Ollama,24,11.2,8.2,6.5,20.8,11.0,25.4,5.5,7.8
+gptoss_swallow,0.3801,1,japanese,20B,2026-02,Yandex,24,13.3,9.1,7.5,19.8,10.5,24.8,5.7,9.4
+swallow_local,0.3827,2,japanese,8B,2024-12,Ollama,24,17.9,11.7,6.2,18.5,8.5,19.6,5.7,9.8
+qwen3_local,0.3875,2,chinese,30B,2025-06,Ollama,24,14.0,9.8,6.9,20.0,9.8,24.8,5.4,9.4
+exaone_local,0.3888,1,korean,32B,2026-02,Ollama,24,15.6,9.8,6.5,20.4,10.0,23.3,4.8,9.8
+jais_local,0.4016,1,arabic,70B,2024-03,Ollama,24,21.7,10.6,7.5,15.2,11.0,19.2,8.3,8.1

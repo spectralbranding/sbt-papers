@@ -1,0 +1,839 @@
+{
+  "metadata": {
+    "total_calls": 16800,
+    "cross_cultural_calls": 8818,
+    "models": 20,
+    "cultures": 7,
+    "brand_pairs": 8,
+    "total_cost_usd": 3.08,
+    "total_est_tokens": 4067212
+  },
+  "H1_overweighting": {
+    "supported": "True",
+    "mean": 35.673461050912586,
+    "std": 2.830080318927527,
+    "baseline": 25.0,
+    "t_stat": 16.439299544818606,
+    "p_value": 1.0869665519258364e-12,
+    "n_models": 20,
+    "effect_size_d": 3.771433969392553
+  },
+  "H2_convergent_collapse": {
+    "supported": "True",
+    "mean_cosine": 0.9772934556440148,
+    "min_cosine": 0.9309393200319354,
+    "max_cosine": 0.9993780221440903,
+    "std_cosine": 0.01382208680103081,
+    "n_pairs": 190,
+    "n_models": 20,
+    "threshold": 0.85
+  },
+  "H3_probe_variance": {
+    "supported": "False",
+    "hard_mean_var": 0.2580138567386831,
+    "soft_mean_var": 0.20813513041501322,
+    "t_stat": -0.7081407717088631,
+    "p_value": 0.7597131494175479,
+    "effect_size_d": -0.1420940450765621,
+    "n_hard": 42,
+    "n_soft": 56
+  },
+  "H4_differentiation_gap": {
+    "supported": null,
+    "pair_agreement": {
+      "china_water": 0.5,
+      "japan_snacks": 0.6,
+      "uae_dairy": 0.6,
+      "russia_organic": 0.55,
+      "ukraine_confectionery": 0.9,
+      "mongolia_beer": 0.9,
+      "korea_dairy": 0.7,
+      "india_dairy": 1.0
+    },
+    "mean_agreement": 0.71875
+  },
+  "H5_diagonal_advantage": {
+    "supported": false,
+    "mean_advantage": -0.01452902746696045,
+    "positive_count": 1,
+    "total_pairs": 8,
+    "t_stat": -2.790142372999892,
+    "p_value": 0.02690282017010022,
+    "per_pair": {
+      "china_water": {
+        "culture": "chinese",
+        "national_mean_dci": 0.34501096491228067,
+        "other_mean_dci": 0.3575622691651725,
+        "advantage": 0.012551304252891804,
+        "n_national": 4,
+        "n_other": 16,
+        "t_stat": 0.3435269749280933,
+        "p_value": 0.7492903742822251
+      },
+      "japan_snacks": {
+        "culture": "japanese",
+        "national_mean_dci": 0.3916666666666667,
+        "other_mean_dci": 0.3853922944037323,
+        "advantage": -0.0062743722629344245,
+        "n_national": 2,
+        "n_other": 18,
+        "t_stat": -0.507232014898229,
+        "p_value": 0.6359862453402023
+      },
+      "uae_dairy": {
+        "culture": "arabic",
+        "national_mean_dci": 0.36290726817042607,
+        "other_mean_dci": 0.3396178296470694,
+        "advantage": -0.023289438523356687,
+        "n_national": 2,
+        "n_other": 18,
+        "t_stat": -0.5997208419355692,
+        "p_value": 0.6419583429673559
+      },
+      "russia_organic": {
+        "culture": "russian",
+        "national_mean_dci": 0.32272727272727275,
+        "other_mean_dci": 0.302676046089839,
+        "advantage": -0.02005122663743375,
+        "n_national": 4,
+        "n_other": 16,
+        "t_stat": -0.672358825810867,
+        "p_value": 0.5323306834413457
+      },
+      "ukraine_confectionery": {
+        "culture": "russian",
+        "national_mean_dci": 0.3905273892773893,
+        "other_mean_dci": 0.36130040392483187,
+        "advantage": -0.02922698535255741,
+        "n_national": 4,
+        "n_other": 16,
+        "t_stat": -1.9989182359493876,
+        "p_value": 0.060958315297802775
+      },
+      "mongolia_beer": {
+        "culture": "chinese",
+        "national_mean_dci": 0.3891666666666667,
+        "other_mean_dci": 0.37395664824941144,
+        "advantage": -0.015210018417255278,
+        "n_national": 4,
+        "n_other": 16,
+        "t_stat": -1.0947770829215737,
+        "p_value": 0.3075560969080285
+      },
+      "korea_dairy": {
+        "culture": "korean",
+        "national_mean_dci": 0.35000000000000003,
+        "other_mean_dci": 0.3463668257468797,
+        "advantage": -0.0036331742531203193,
+        "n_national": 1,
+        "n_other": 19,
+        "t_stat": null,
+        "p_value": null
+      },
+      "india_dairy": {
+        "culture": "indian",
+        "national_mean_dci": 0.4,
+        "other_mean_dci": 0.3689016914580825,
+        "advantage": -0.03109830854191753,
+        "n_national": 1,
+        "n_other": 19,
+        "t_stat": null,
+        "p_value": null
+      }
+    }
+  },
+  "H6_bidirectional_asymmetry": {
+    "supported": "True",
+    "western_mean_dci": 0.3358073008073008,
+    "nonwestern_mean_dci": 0.3661498431958724,
+    "difference": 0.03034254238857159,
+    "t_stat": -5.26131430159495,
+    "p_value": 2.1970937672174697e-07,
+    "n_western": 148,
+    "n_nonwestern": 314
+  },
+  "H7_geopolitical_valence": {
+    "supported": null,
+    "mean_difference": -0.0604595095780176,
+    "std_difference": 0.05444320027804842,
+    "models_russia_higher": 3,
+    "models_ukraine_higher": 15,
+    "total_models": 20,
+    "per_model": {
+      "yandexgpt_pro": {
+        "russia_dci": 0.4000000000000001,
+        "ukraine_dci": 0.4000000000000001,
+        "difference": 0.0
+      },
+      "groq_kimi": {
+        "russia_dci": 0.31666666666666665,
+        "ukraine_dci": 0.3566666666666667,
+        "difference": -0.040000000000000036
+      },
+      "groq_allam": {
+        "russia_dci": 0.3220026350461133,
+        "ukraine_dci": 0.3064182194616977,
+        "difference": 0.01558441558441559
+      },
+      "gptoss_swallow": {
+        "russia_dci": 0.3549019607843138,
+        "ukraine_dci": 0.38999999999999996,
+        "difference": -0.03509803921568616
+      },
+      "yandexgpt_local": {
+        "russia_dci": 0.28138528138528135,
+        "ukraine_dci": 0.3878787878787879,
+        "difference": -0.10649350649350653
+      },
+      "gemma4_local": {
+        "russia_dci": 0.2818181818181818,
+        "ukraine_dci": 0.4000000000000001,
+        "difference": -0.11818181818181828
+      },
+      "exaone_local": {
+        "russia_dci": 0.34803675856307437,
+        "ukraine_dci": 0.40952380952380957,
+        "difference": -0.0614870509607352
+      },
+      "qwen3_local": {
+        "russia_dci": 0.35000000000000003,
+        "ukraine_dci": 0.4000000000000001,
+        "difference": -0.050000000000000044
+      },
+      "swallow_local": {
+        "russia_dci": 0.34363295880149813,
+        "ukraine_dci": 0.35486443381180216,
+        "difference": -0.011231475010304026
+      },
+      "claude": {
+        "russia_dci": 0.22,
+        "ukraine_dci": 0.34,
+        "difference": -0.12000000000000002
+      },
+      "gigachat_api": {
+        "russia_dci": 0.3,
+        "ukraine_dci": 0.4,
+        "difference": -0.10000000000000003
+      },
+      "cerebras_qwen3": {
+        "russia_dci": 0.22999999999999998,
+        "ukraine_dci": 0.4000000000000001,
+        "difference": -0.1700000000000001
+      },
+      "gpt": {
+        "russia_dci": 0.26666666666666666,
+        "ukraine_dci": 0.3833333333333333,
+        "difference": -0.11666666666666664
+      },
+      "jais_local": {
+        "russia_dci": 0.34242424242424246,
+        "ukraine_dci": 0.4166666666666667,
+        "difference": -0.07424242424242422
+      },
+      "sarvam": {
+        "russia_dci": 0.4,
+        "ukraine_dci": 0.4,
+        "difference": 0.0
+      },
+      "grok": {
+        "russia_dci": 0.20000000000000004,
+        "ukraine_dci": 0.3,
+        "difference": -0.09999999999999995
+      },
+      "gigachat_local": {
+        "russia_dci": 0.30952380952380953,
+        "ukraine_dci": 0.3742307692307692,
+        "difference": -0.06470695970695967
+      },
+      "groq_llama33": {
+        "russia_dci": 0.3,
+        "ukraine_dci": 0.4000000000000001,
+        "difference": -0.10000000000000009
+      },
+      "deepseek": {
+        "russia_dci": 0.3,
+        "ukraine_dci": 0.2833333333333333,
+        "difference": 0.016666666666666663
+      },
+      "gemini": {
+        "russia_dci": 0.26666666666666666,
+        "ukraine_dci": 0.24,
+        "difference": 0.026666666666666672
+      }
+    }
+  },
+  "H8_thindata_floor": {
+    "supported": false,
+    "mongolia_dci": 0.3769653399847306,
+    "highest_pair": "japan_snacks",
+    "highest_dci": 0.38578277792883975,
+    "pair_dcis": {
+      "china_water": 0.35171610976861617,
+      "japan_snacks": 0.38578277792883975,
+      "uae_dairy": 0.347540374203908,
+      "russia_organic": 0.3035924550899919,
+      "ukraine_confectionery": 0.3654166326266771,
+      "mongolia_beer": 0.3769653399847306,
+      "korea_dairy": 0.3472440187293358,
+      "india_dairy": 0.37191779309126244
+    }
+  },
+  "H9_capacity_effect": {
+    "supported": true,
+    "small_higher_count": 3,
+    "total_pairs": 5,
+    "pairs": [
+      {
+        "small_model": "swallow_local",
+        "large_model": "gptoss_swallow",
+        "culture": "japanese",
+        "label": "8B vs 20B",
+        "small_dci": 0.3825241623807561,
+        "large_dci": 0.38019607843137254,
+        "difference": 0.0023280839493835526,
+        "small_higher": true,
+        "t_stat": 0.17117359928674913,
+        "p_value": 0.8648380255324297
+      },
+      {
+        "small_model": "groq_allam",
+        "large_model": "jais_local",
+        "culture": "arabic",
+        "label": "7B vs 70B",
+        "small_dci": 0.33969263250926757,
+        "large_dci": 0.40246212121212127,
+        "difference": -0.0627694887028537,
+        "small_higher": false,
+        "t_stat": -4.504576339183138,
+        "p_value": 4.689974652541331e-05
+      },
+      {
+        "small_model": "yandexgpt_local",
+        "large_model": "yandexgpt_pro",
+        "culture": "russian",
+        "label": "8B vs Pro",
+        "small_dci": 0.34184704184704184,
+        "large_dci": 0.3770833333333334,
+        "difference": -0.03523629148629154,
+        "small_higher": false,
+        "t_stat": -2.5976946494604674,
+        "p_value": 0.012564528819424792
+      },
+      {
+        "small_model": "gigachat_local",
+        "large_model": "gigachat_api",
+        "culture": "russian",
+        "label": "1.8B vs Max",
+        "small_dci": 0.3821318655507979,
+        "large_dci": 0.36,
+        "difference": 0.022131865550797936,
+        "small_higher": true,
+        "t_stat": 0.9244461844237017,
+        "p_value": 0.36217311984452005
+      },
+      {
+        "small_model": "qwen3_local",
+        "large_model": "cerebras_qwen3",
+        "culture": "chinese",
+        "label": "30B vs 235B",
+        "small_dci": 0.3875,
+        "large_dci": 0.3236,
+        "difference": 0.06390000000000001,
+        "small_higher": true,
+        "t_stat": 3.667553788845364,
+        "p_value": 0.0006227707631881221
+      }
+    ]
+  },
+  "H10_native_language": {
+    "supported": true,
+    "mean_reduction": 0.01814922716111585,
+    "positive_count": 12,
+    "total_pairs": 22,
+    "pairs": [
+      {
+        "model": "groq_kimi",
+        "pair_id": "china_water",
+        "en_dci": 0.3833333333333333,
+        "native_dci": 0.31333333333333335,
+        "reduction": 0.06999999999999995
+      },
+      {
+        "model": "yandexgpt_local",
+        "pair_id": "ukraine_confectionery",
+        "en_dci": 0.3878787878787879,
+        "native_dci": 0.3878787878787879,
+        "reduction": 0.0
+      },
+      {
+        "model": "gigachat_api",
+        "pair_id": "ukraine_confectionery",
+        "en_dci": 0.4,
+        "native_dci": 0.4,
+        "reduction": 0.0
+      },
+      {
+        "model": "gigachat_local",
+        "pair_id": "russia_organic",
+        "en_dci": 0.30952380952380953,
+        "native_dci": 0.35636484389276646,
+        "reduction": -0.046841034368956924
+      },
+      {
+        "model": "groq_kimi",
+        "pair_id": "mongolia_beer",
+        "en_dci": 0.3566666666666667,
+        "native_dci": 0.35333333333333333,
+        "reduction": 0.003333333333333355
+      },
+      {
+        "model": "qwen3_local",
+        "pair_id": "china_water",
+        "en_dci": 0.4000000000000001,
+        "native_dci": 0.4,
+        "reduction": 5.551115123125783e-17
+      },
+      {
+        "model": "deepseek",
+        "pair_id": "china_water",
+        "en_dci": 0.35,
+        "native_dci": 0.38750000000000007,
+        "reduction": -0.03750000000000009
+      },
+      {
+        "model": "sarvam",
+        "pair_id": "india_dairy",
+        "en_dci": 0.4,
+        "native_dci": 0.4,
+        "reduction": 0.0
+      },
+      {
+        "model": "jais_local",
+        "pair_id": "uae_dairy",
+        "en_dci": 0.4000000000000001,
+        "native_dci": 0.3833333333333333,
+        "reduction": 0.016666666666666774
+      },
+      {
+        "model": "yandexgpt_local",
+        "pair_id": "russia_organic",
+        "en_dci": 0.28138528138528135,
+        "native_dci": 0.28614718614718615,
+        "reduction": -0.0047619047619048005
+      },
+      {
+        "model": "gptoss_swallow",
+        "pair_id": "japan_snacks",
+        "en_dci": 0.3833333333333333,
+        "native_dci": 0.4166666666666667,
+        "reduction": -0.03333333333333338
+      },
+      {
+        "model": "gigachat_api",
+        "pair_id": "russia_organic",
+        "en_dci": 0.3,
+        "native_dci": 0.25,
+        "reduction": 0.04999999999999999
+      },
+      {
+        "model": "cerebras_qwen3",
+        "pair_id": "china_water",
+        "en_dci": 0.24671052631578946,
+        "native_dci": 0.23921052631578948,
+        "reduction": 0.007499999999999979
+      },
+      {
+        "model": "yandexgpt_pro",
+        "pair_id": "ukraine_confectionery",
+        "en_dci": 0.4000000000000001,
+        "native_dci": 0.4000000000000001,
+        "reduction": 0.0
+      },
+      {
+        "model": "swallow_local",
+        "pair_id": "japan_snacks",
+        "en_dci": 0.4000000000000001,
+        "native_dci": 0.38947368421052636,
+        "reduction": 0.010526315789473717
+      },
+      {
+        "model": "qwen3_local",
+        "pair_id": "mongolia_beer",
+        "en_dci": 0.4000000000000001,
+        "native_dci": 0.4000000000000001,
+        "reduction": 0.0
+      },
+      {
+        "model": "groq_allam",
+        "pair_id": "uae_dairy",
+        "en_dci": 0.32581453634085206,
+        "native_dci": 0.36111111111111116,
+        "reduction": -0.035296574770259104
+      },
+      {
+        "model": "deepseek",
+        "pair_id": "mongolia_beer",
+        "en_dci": 0.4000000000000001,
+        "native_dci": 0.31666666666666665,
+        "reduction": 0.08333333333333343
+      },
+      {
+        "model": "yandexgpt_pro",
+        "pair_id": "russia_organic",
+        "en_dci": 0.4000000000000001,
+        "native_dci": 0.23484848484848486,
+        "reduction": 0.16515151515151522
+      },
+      {
+        "model": "cerebras_qwen3",
+        "pair_id": "mongolia_beer",
+        "en_dci": 0.4000000000000001,
+        "native_dci": 0.36,
+        "reduction": 0.04000000000000009
+      },
+      {
+        "model": "exaone_local",
+        "pair_id": "korea_dairy",
+        "en_dci": 0.35000000000000003,
+        "native_dci": 0.2833333333333333,
+        "reduction": 0.06666666666666671
+      },
+      {
+        "model": "gigachat_local",
+        "pair_id": "ukraine_confectionery",
+        "en_dci": 0.3742307692307692,
+        "native_dci": 0.3303927553927554,
+        "reduction": 0.04383801383801378
+      }
+    ]
+  },
+  "Run4_resolution": {
+    "run3_baseline_dci": 0.3529499759499759,
+    "run4_spec_dci": 0,
+    "reduction": 0.3529499759499759,
+    "n_run3": 90,
+    "n_run4": 0
+  },
+  "model_profiles": {
+    "claude": {
+      "dci": 0.3132,
+      "n_valid": 25,
+      "weights": {
+        "semiotic": 12.0,
+        "narrative": 8.28,
+        "ideological": 12.88,
+        "experiential": 17.84,
+        "social": 11.36,
+        "economic": 19.32,
+        "cultural": 10.04,
+        "temporal": 8.28
+      },
+      "tier": 1,
+      "culture": "western"
+    },
+    "gpt": {
+      "dci": 0.36,
+      "n_valid": 25,
+      "weights": {
+        "semiotic": 16.6,
+        "narrative": 11.6,
+        "ideological": 10.4,
+        "experiential": 19.8,
+        "social": 10.2,
+        "economic": 19.4,
+        "cultural": 5.0,
+        "temporal": 7.0
+      },
+      "tier": 2,
+      "culture": "western"
+    },
+    "gemini": {
+      "dci": 0.3208,
+      "n_valid": 25,
+      "weights": {
+        "semiotic": 13.68,
+        "narrative": 8.72,
+        "ideological": 9.48,
+        "experiential": 16.92,
+        "social": 10.24,
+        "economic": 18.4,
+        "cultural": 12.28,
+        "temporal": 10.28
+      },
+      "tier": 1,
+      "culture": "western"
+    },
+    "deepseek": {
+      "dci": 0.342,
+      "n_valid": 25,
+      "weights": {
+        "semiotic": 12.0,
+        "narrative": 11.4,
+        "ideological": 10.2,
+        "experiential": 15.2,
+        "social": 9.0,
+        "economic": 22.2,
+        "cultural": 12.4,
+        "temporal": 7.6
+      },
+      "tier": 1,
+      "culture": "chinese"
+    },
+    "qwen3_local": {
+      "dci": 0.3875,
+      "n_valid": 24,
+      "weights": {
+        "semiotic": 13.958333333333334,
+        "narrative": 9.791666666666666,
+        "ideological": 6.875,
+        "experiential": 20.0,
+        "social": 9.791666666666666,
+        "economic": 24.791666666666668,
+        "cultural": 5.416666666666667,
+        "temporal": 9.375
+      },
+      "tier": 2,
+      "culture": "chinese"
+    },
+    "gemma4_local": {
+      "dci": 0.3710371819960861,
+      "n_valid": 25,
+      "weights": {
+        "semiotic": 15.12,
+        "narrative": 9.48,
+        "ideological": 8.68,
+        "experiential": 18.0,
+        "social": 10.68,
+        "economic": 22.8,
+        "cultural": 7.92,
+        "temporal": 9.52
+      },
+      "tier": 2,
+      "culture": "western"
+    },
+    "cerebras_qwen3": {
+      "dci": 0.3241935483870968,
+      "n_valid": 25,
+      "weights": {
+        "semiotic": 14.56,
+        "narrative": 9.84,
+        "ideological": 10.8,
+        "experiential": 18.04,
+        "social": 10.76,
+        "economic": 17.6,
+        "cultural": 7.2,
+        "temporal": 10.4
+      },
+      "tier": 1,
+      "culture": "chinese"
+    },
+    "groq_llama33": {
+      "dci": 0.35833333333333334,
+      "n_valid": 24,
+      "weights": {
+        "semiotic": 11.666666666666666,
+        "narrative": 7.916666666666667,
+        "ideological": 9.541666666666666,
+        "experiential": 18.25,
+        "social": 9.833333333333334,
+        "economic": 24.166666666666668,
+        "cultural": 7.0,
+        "temporal": 11.625
+      },
+      "tier": 1,
+      "culture": "western"
+    },
+    "groq_allam": {
+      "dci": 0.3402061855670103,
+      "n_valid": 23,
+      "weights": {
+        "semiotic": 17.608695652173914,
+        "narrative": 16.52173913043478,
+        "ideological": 11.08695652173913,
+        "experiential": 15.869565217391305,
+        "social": 10.217391304347826,
+        "economic": 18.26086956521739,
+        "cultural": 5.6521739130434785,
+        "temporal": 10.217391304347826
+      },
+      "tier": 2,
+      "culture": "arabic"
+    },
+    "groq_kimi": {
+      "dci": 0.3495833333333334,
+      "n_valid": 24,
+      "weights": {
+        "semiotic": 11.333333333333334,
+        "narrative": 9.916666666666666,
+        "ideological": 9.125,
+        "experiential": 18.208333333333332,
+        "social": 10.375,
+        "economic": 23.625,
+        "cultural": 8.083333333333334,
+        "temporal": 9.333333333333334
+      },
+      "tier": 1,
+      "culture": "chinese"
+    },
+    "grok": {
+      "dci": 0.2895833333333333,
+      "n_valid": 24,
+      "weights": {
+        "semiotic": 12.75,
+        "narrative": 11.333333333333334,
+        "ideological": 12.916666666666666,
+        "experiential": 18.416666666666668,
+        "social": 11.833333333333334,
+        "economic": 16.208333333333332,
+        "cultural": 10.041666666666666,
+        "temporal": 6.5
+      },
+      "tier": 1,
+      "culture": "western"
+    },
+    "sarvam": {
+      "dci": 0.36688741721854307,
+      "n_valid": 15,
+      "weights": {
+        "semiotic": 13.933333333333334,
+        "narrative": 9.4,
+        "ideological": 5.533333333333333,
+        "experiential": 20.2,
+        "social": 11.333333333333334,
+        "economic": 23.0,
+        "cultural": 7.0,
+        "temporal": 10.266666666666667
+      },
+      "tier": 1,
+      "culture": "indian"
+    },
+    "gigachat_api": {
+      "dci": 0.36,
+      "n_valid": 10,
+      "weights": {
+        "semiotic": 14.5,
+        "narrative": 10.5,
+        "ideological": 11.5,
+        "experiential": 17.0,
+        "social": 8.5,
+        "economic": 21.5,
+        "cultural": 7.0,
+        "temporal": 9.5
+      },
+      "tier": 1,
+      "culture": "russian"
+    },
+    "yandexgpt_pro": {
+      "dci": 0.3770833333333334,
+      "n_valid": 24,
+      "weights": {
+        "semiotic": 14.583333333333334,
+        "narrative": 8.625,
+        "ideological": 10.291666666666666,
+        "experiential": 19.875,
+        "social": 9.666666666666666,
+        "economic": 23.125,
+        "cultural": 7.166666666666667,
+        "temporal": 6.666666666666667
+      },
+      "tier": 1,
+      "culture": "russian"
+    },
+    "yandexgpt_local": {
+      "dci": 0.3413173652694611,
+      "n_valid": 24,
+      "weights": {
+        "semiotic": 15.416666666666666,
+        "narrative": 10.416666666666666,
+        "ideological": 12.708333333333334,
+        "experiential": 21.458333333333332,
+        "social": 11.25,
+        "economic": 20.208333333333332,
+        "cultural": 5.0,
+        "temporal": 7.916666666666667
+      },
+      "tier": 2,
+      "culture": "russian"
+    },
+    "gigachat_local": {
+      "dci": 0.3798014674147605,
+      "n_valid": 24,
+      "weights": {
+        "semiotic": 11.25,
+        "narrative": 8.25,
+        "ideological": 6.5,
+        "experiential": 20.75,
+        "social": 11.0,
+        "economic": 25.416666666666668,
+        "cultural": 5.541666666666667,
+        "temporal": 7.833333333333333
+      },
+      "tier": 2,
+      "culture": "russian"
+    },
+    "exaone_local": {
+      "dci": 0.3887733887733887,
+      "n_valid": 24,
+      "weights": {
+        "semiotic": 15.625,
+        "narrative": 9.791666666666666,
+        "ideological": 6.458333333333333,
+        "experiential": 20.416666666666668,
+        "social": 10.0,
+        "economic": 23.333333333333332,
+        "cultural": 4.791666666666667,
+        "temporal": 9.791666666666666
+      },
+      "tier": 1,
+      "culture": "korean"
+    },
+    "swallow_local": {
+      "dci": 0.3826530612244898,
+      "n_valid": 24,
+      "weights": {
+        "semiotic": 17.916666666666668,
+        "narrative": 11.666666666666666,
+        "ideological": 6.25,
+        "experiential": 18.541666666666668,
+        "social": 8.541666666666666,
+        "economic": 19.583333333333332,
+        "cultural": 5.666666666666667,
+        "temporal": 9.833333333333334
+      },
+      "tier": 2,
+      "culture": "japanese"
+    },
+    "jais_local": {
+      "dci": 0.4016393442622951,
+      "n_valid": 24,
+      "weights": {
+        "semiotic": 21.666666666666668,
+        "narrative": 10.625,
+        "ideological": 7.5,
+        "experiential": 15.208333333333334,
+        "social": 11.041666666666666,
+        "economic": 19.166666666666668,
+        "cultural": 8.333333333333334,
+        "temporal": 8.125
+      },
+      "tier": 1,
+      "culture": "arabic"
+    },
+    "gptoss_swallow": {
+      "dci": 0.38009991673605326,
+      "n_valid": 24,
+      "weights": {
+        "semiotic": 13.291666666666666,
+        "narrative": 9.083333333333334,
+        "ideological": 7.458333333333333,
+        "experiential": 19.833333333333332,
+        "social": 10.541666666666666,
+        "economic": 24.75,
+        "cultural": 5.708333333333333,
+        "temporal": 9.416666666666666
+      },
+      "tier": 1,
+      "culture": "japanese"
+    }
+  }
+}
