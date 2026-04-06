@@ -368,6 +368,10 @@ The conditional metamerism finding adds a moderator structure to this framework 
 
 The conditional metamerism documented here connects to a broader diagnostic framework. Medesani and Macdonald (2026) formalize *admissible regions* --- invariant corridors within which a system's state must remain for governance guarantees to hold. Applied to brand perception, a brand's measured spectral profile is admissible only when it falls within the corridor defined by its Brand Function. Conditional metamerism implies that admissibility assessment itself is observer-dependent: a brand may be admissible as perceived by information-rich observers yet inadmissible as perceived by information-sparse AI observers operating under the Economic Default. This observer-contingent admissibility is a direct consequence of conditional metamerism and suggests that brand governance must account for the measurement infrastructure, not merely the measured position.
 
+### 5.5.1 Shrunken Variance and the Estimation-Theory Analogy
+
+The cross-model convergence documented in this study (cosine similarity 0.976 across 22 models from 8 cultures) is consistent with the shrunken variance phenomenon established in the Bayesian estimation literature. LLM training on aggregated text corpora functions as an implicit shrinkage estimator, analogous to the James-Stein estimator (James & Stein, 1961), pulling dimensional weight estimates toward the population mean and compressing the variance that distinguishes brands on perception-dependent dimensions. The Economic and Semiotic dimensions resist this shrinkage because they are explicitly quantified in training data (prices, visual descriptions), while Narrative, Cultural, and Temporal dimensions --- which require direct observer experience to resolve --- are compressed toward the aggregate. Brand Function specification counteracts this shrinkage by providing explicit dimensional information that the training corpus lacks, reducing the Dimensional Collapse Index from 0.355 to 0.284 (Run 4). This framing connects LLM-mediated brand perception to established results in high-dimensional estimation theory, where shrinkage toward a common mean is both statistically efficient and informationally lossy.
+
 ### 5.6 Implications for Search Advertising
 
 The most direct implication is that search advertising strategy must account for the dimensional structure of AI mediation. Four specific implications follow from the empirical results.
@@ -445,6 +449,8 @@ Hermann, E., & Puntoni, S. (2024). Artificial intelligence and consumer behavior
 Hermann, E., Puntoni, S., & Schweidel, D. A. (2026). Trusting AI agents: How consumers and firms navigate trust in agentic AI. *Working Paper*, SSRN. https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6406639
 
 Huang, M.-H., & Rust, R. T. (2021). A strategic framework for artificial intelligence in marketing. *Journal of the Academy of Marketing Science*, 49, 30-50.
+
+James, W., & Stein, C. (1961). Estimation with quadratic loss. *Proceedings of the Fourth Berkeley Symposium on Mathematical Statistics and Probability*, 1, 361-379.
 
 Johnson, W. B., & Lindenstrauss, J. (1984). Extensions of Lipschitz mappings into a Hilbert space. In *Conference in Modern Analysis and Probability* (pp. 189-206). American Mathematical Society.
 

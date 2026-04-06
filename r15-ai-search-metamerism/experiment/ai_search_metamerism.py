@@ -581,6 +581,7 @@ MODEL_NATIVE_LANGUAGE: dict[str, str] = {
     # Japanese-trained
     "sambanova_swallow": "ja",
     "swallow_local": "ja",
+    "swallow70_local": "ja",
     # Korean-trained
     "exaone_local": "ko",
     # Arabic-trained
@@ -1577,6 +1578,19 @@ def call_swallow_local(
     return _call_ollama_model(prompt, model)
 
 
+def call_swallow70_local(
+    prompt: str,
+    model: str = "hf.co/mmnga/tokyotech-llm-Llama-3.3-Swallow-70B-Instruct-v0.4-gguf:Q4_K_M",
+) -> str:
+    """Call Swallow 70B via local Ollama (Japanese, Tokyo Tech, Tier 1).
+
+    70B dense (Llama 3.3 base + Japanese continued pretraining). Q4_K_M 42GB.
+    Replaces SambaNova Swallow 70B (removed from free tier Apr 6).
+    Same model weights as sambanova_swallow, different deployment.
+    """
+    return _call_ollama_model(prompt, model)
+
+
 def call_falcon_arabic_local(
     prompt: str,
     model: str = "hf.co/tiiuae/Falcon-H1-Arabic-7B-Instruct-GGUF:Q4_K_M",
@@ -1641,6 +1655,7 @@ API_CALLERS: dict[str, Any] = {
     "gigachat_local": call_gigachat_local,       # GigaChat 3.1 Lightning (Russian, Sber)
     "exaone_local": call_exaone_local,           # EXAONE 4.0 32B (Korean, LG AI)
     "swallow_local": call_swallow_local,         # Swallow 8B (Japanese, Tokyo Tech)
+    "swallow70_local": call_swallow70_local,     # Swallow 70B (Japanese, Tokyo Tech, Tier 1)
     "falcon_arabic_local": call_falcon_arabic_local, # Falcon-H1-Arabic 7B (Arabic, TII)
     "jais_local": call_jais_local,               # Jais-adapted 70B (Arabic, Inception AI)
     "qwen35_local": call_qwen35_local,           # Qwen3.5 27B (Chinese, newer)
@@ -1673,6 +1688,7 @@ API_KEY_VARS: dict[str, str] = {
     "gigachat_local": "OLLAMA_AVAILABLE",
     "exaone_local": "OLLAMA_AVAILABLE",
     "swallow_local": "OLLAMA_AVAILABLE",
+    "swallow70_local": "OLLAMA_AVAILABLE",
     "falcon_arabic_local": "OLLAMA_AVAILABLE",
     "jais_local": "OLLAMA_AVAILABLE",
     "qwen35_local": "OLLAMA_AVAILABLE",
@@ -1708,6 +1724,7 @@ MODEL_IDS: dict[str, str] = {
     "gigachat_local": "hf.co/ai-sage/GigaChat3.1-10B-A1.8B-GGUF:latest",
     "exaone_local": "hf.co/LGAI-EXAONE/EXAONE-4.0-32B-GGUF:Q4_K_M",
     "swallow_local": "hf.co/mradermacher/Llama-3.1-Swallow-8B-Instruct-v0.3-GGUF:latest",
+    "swallow70_local": "hf.co/mmnga/tokyotech-llm-Llama-3.3-Swallow-70B-Instruct-v0.4-gguf:Q4_K_M",
     "falcon_arabic_local": "hf.co/tiiuae/Falcon-H1-Arabic-7B-Instruct-GGUF:Q4_K_M",
     "jais_local": "hf.co/mradermacher/jais-adapted-70b-chat-i1-GGUF:Q4_K_M",
     "qwen35_local": "qwen3.5:27b",
