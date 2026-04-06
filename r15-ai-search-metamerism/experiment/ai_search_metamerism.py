@@ -582,6 +582,7 @@ MODEL_NATIVE_LANGUAGE: dict[str, str] = {
     "sambanova_swallow": "ja",
     "swallow_local": "ja",
     "swallow70_local": "ja",
+    "gptoss_swallow": "ja",
     # Korean-trained
     "exaone_local": "ko",
     # Arabic-trained
@@ -1500,6 +1501,16 @@ def call_yandexgpt_pro(prompt: str, model: str = "yandexgpt-5-pro/latest") -> st
     return _call_yandex_ai_studio(prompt, model)
 
 
+def call_gptoss_swallow(prompt: str, model: str = "gpt-oss-20b/latest") -> str:
+    """Call GPT-OSS-Swallow 20B via Yandex AI Studio (Japanese, Tokyo Tech, Tier 1).
+
+    GPT-OSS-Swallow 20B: Trained from scratch (not Llama-derived), 20B dense.
+    Japanese-focused model from the Swallow team at Institute of Science Tokyo.
+    Released Feb 2026. Available on Yandex AI Studio cloud.
+    """
+    return _call_yandex_ai_studio(prompt, model)
+
+
 def call_tpro_yandex(prompt: str, model: str = "t-pro-it-2.0-fp8") -> str:
     """Call T-Pro 2.0 FP8 via Yandex AI Studio (T-Bank, 32B, Russian).
 
@@ -1649,6 +1660,7 @@ API_CALLERS: dict[str, Any] = {
     "sarvam": call_sarvam,                      # Sarvam-105B (Indian, Sarvam AI, Indus API)
     "gigachat_api": call_gigachat_api,          # GigaChat 2 Max (Russian, Sber API)
     "yandexgpt_pro": call_yandexgpt_pro,        # YandexGPT 5 Pro (Russian, Yandex AI Studio)
+    "gptoss_swallow": call_gptoss_swallow,      # GPT-OSS-Swallow 20B (Japanese, Tokyo Tech, Yandex)
     "tpro_yandex": call_tpro_yandex,            # T-Pro 2.0 FP8 (Russian, T-Bank 32B, via Yandex)
     # National models - local Ollama (Run 5+)
     "yandexgpt_local": call_yandexgpt_local,    # YandexGPT 5 Lite 8B (Russian)
@@ -1682,6 +1694,7 @@ API_KEY_VARS: dict[str, str] = {
     "sarvam": "SARVAM_API_KEY",
     "gigachat_api": "GIGACHAT_API_KEY",
     "yandexgpt_pro": "YANDEX_AI_API_KEY",
+    "gptoss_swallow": "YANDEX_AI_API_KEY",
     "tpro_yandex": "YANDEX_AI_API_KEY",
     # National models - local
     "yandexgpt_local": "OLLAMA_AVAILABLE",
@@ -1715,6 +1728,7 @@ MODEL_IDS: dict[str, str] = {
     "sarvam": "sarvam-105b",                                  # Sarvam-105B (Indian, Sarvam AI, Indus API)
     "gigachat_api": "GigaChat-2-Max",                          # GigaChat 2 Max (Russian, Sber API)
     "yandexgpt_pro": "yandexgpt-5-pro/latest",                   # YandexGPT 5 Pro (Russian, Yandex AI Studio)
+    "gptoss_swallow": "gpt-oss-20b/latest",                       # GPT-OSS-Swallow 20B (Japanese, Tokyo Tech)
     "tpro_yandex": "t-pro-it-2.0-fp8",                        # T-Pro 2.0 FP8 (T-Bank 32B, Russian)
     # Free-tier cloud — National models
     "sambanova_swallow": "Llama-3.3-Swallow-70B-Instruct-v0.4",  # Japanese 70B on SambaNova
