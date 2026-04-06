@@ -226,6 +226,8 @@ We select the Fisher-Rao metric on the basis of Cencov's uniqueness theorem.
 
 The Fisher-Rao metric originates with Rao (1945), who first proposed using the Fisher information matrix as a Riemannian metric tensor on statistical models. The uniqueness theorem above, combined with the comprehensive development of information geometry by Amari and Nagaoka (2000) and Amari (2016), establishes the Fisher-Rao metric as the canonical choice for distances between probability distributions. This theorem provides the decisive justification. The invariance under Markov morphisms means that the Fisher-Rao metric is the unique metric satisfying Criterion 2: it is the only choice that gives consistent distances regardless of how the dimensional taxonomy is refined, coarsened, or rearranged, provided the underlying information is preserved. No other metric on the simplex possesses this invariance.
 
+The use of Riemannian geometry to model perceptual space has independent precedent in psychophysics. Resnikoff (1974) was the first to model perceived color space as a Riemannian manifold, establishing that the differential-geometric apparatus — metric tensors, geodesics, curvature — is not merely a mathematical convenience but a structural necessity for capturing observer-relative perception. Provenzi (2017) extends Resnikoff's framework by formalizing color perception using principal fiber bundles, where the base space encodes the objective chromatic stimulus and the fibers encode observer-dependent perceptual representations — a direct structural analog to SBT's distinction between brand emission profiles and observer-weighted conviction profiles. Berthier, Garcin, Prencipe, and Provenzi (2021) develop this further by demonstrating that color perception exhibits a relativistic structure: different observers (including adapted vs. neutral observers) construct genuinely different perceptual geometries from the same chromatic stimulus, with the observer's state functioning as a reference frame. The mathematical architecture — Riemannian metrics on perceptual simplices, observer-dependent projections, fiber bundle structures — is the same architecture that the present paper applies to brand perception. The contribution here is the extension from three-dimensional color perception (where the simplex is $\Delta^2$) to eight-dimensional brand perception (where the simplex is $\Delta^7$), along with the specific warped-product construction that couples brand signal space with observer weight space.
+
 The Fisher-Rao metric also satisfies Criterion 1: the metric tensor $g_{ij}(w) = \delta_{ij} / w_i$ assigns large curvature near the simplex boundary (where weights are small), so small absolute changes in near-zero weights produce large distances. This aligns with the psychological observation that introducing a new, previously ignored dimension into an observer's attention structure is a more significant perceptual shift than redistributing attention among already-salient dimensions.
 
 Criterion 3 is satisfied by the closed-form formula involving only square roots and arc-cosine.
@@ -819,6 +821,8 @@ Amari, S.-i., & Nagaoka, H. (2000). *Methods of Information Geometry*. American 
 
 Atkinson, C., & Mitchell, A. F. S. (1981). Rao's distance measure. *Sankhya: The Indian Journal of Statistics, Series A*, 43(3), 345--365.
 
+Berthier, M., Garcin, V., Prencipe, N., & Provenzi, E. (2021). The relativity of color perception. *Journal of Mathematical Psychology*, 103, 102562. DOI: 10.1016/j.jmp.2021.102562
+
 Bijmolt, T. H. A., & Wedel, M. (1999). A comparison of multidimensional scaling methods for perceptual mapping. *Journal of Marketing Research*, 36(1), 137--153.
 
 Bishop, R. L., & O'Neill, B. (1969). Manifolds of negative curvature. *Transactions of the American Mathematical Society*, 145, 1--49.
@@ -865,7 +869,11 @@ O'Neill, B. (1983). *Semi-Riemannian Geometry with Applications to Relativity*. 
 
 Pawlowsky-Glahn, V., & Buccianti, A. (Eds.). (2011). *Compositional Data Analysis: Theory and Applications*. Wiley.
 
+Provenzi, E. (2017). Principal fiber bundles and geometry of color spaces. In *Proceedings of the Second International Conference on Advances in Signal, Image and Video Processing (SIGNAL 2017)*.
+
 Rao, C. R. (1945). Information and the accuracy attainable in the estimation of statistical parameters. *Bulletin of the Calcutta Mathematical Society*, 37, 81--91.
+
+Resnikoff, H. L. (1974). Differential geometry and color perception. *Journal of Mathematical Biology*, 1, 97--131. DOI: 10.1007/BF00275798
 
 Stevens, S. S. (1961). To honor Fechner and repeal his law. *Science*, 133(3446), 80--86.
 

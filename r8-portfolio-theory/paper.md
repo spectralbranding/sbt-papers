@@ -24,7 +24,7 @@ This scenario illustrates a phenomenon that brand portfolio theory has discussed
 
 The distinction matters because architecturally identical portfolios can produce structurally opposite perceptual effects. LVMH and Unilever both operate house-of-brands architectures with dozens of product brands beneath a corporate parent. Yet LVMH's portfolio produces predominantly constructive perceptual interactions (luxury brands reinforcing each other's luxury positioning), while Unilever's portfolio produces destructive interactions on the Ideological dimension (Dove's empowerment messaging contradicted by Axe's historical objectification). The architectural classification "house of brands" captures none of this difference. The urgency of this gap has increased as heightened information access -- what Swaminathan, Sorescu, Steenkamp, O'Guinn, and Schmitt (2020) call "hyperconnectedness" -- makes ownership structures more visible to consumers, effectively raising the awareness gate for portfolio interference. A framework that models brands as objects in multi-dimensional perception space -- and formalizes the mechanisms by which they interact within that space -- is required.
 
-Spectral Brand Theory (Zharnikov, 2026a) provides the necessary foundation. SBT models a brand as an emitter of signals across eight typed dimensions (Semiotic, Narrative, Ideological, Experiential, Social, Economic, Cultural, Temporal), perceived by observers whose heterogeneous weight vectors determine which dimensions dominate their brand conviction. The framework distinguishes emission profiles (what brands signal) from perception clouds (what observers perceive), and has been applied to single-brand analysis (Zharnikov, 2026a), metamerism in dimensionality reduction (Zharnikov, 2026e), cohort boundary formation (Zharnikov, 2026f), positioning capacity (Zharnikov, 2026g), non-ergodic perception dynamics (Zharnikov, 2026o), and longitudinal case analysis of Dove (Zharnikov, 2026p).
+Spectral Brand Theory (Zharnikov, 2026a) provides the necessary foundation. SBT models a brand as an emitter of signals across eight typed dimensions (Semiotic, Narrative, Ideological, Experiential, Social, Economic, Cultural, Temporal), perceived by observers whose heterogeneous weight vectors determine which dimensions dominate their brand conviction. The framework distinguishes emission profiles (what brands signal) from perception clouds (what observers perceive), and has been applied to metamerism in dimensionality reduction (Zharnikov, 2026e), positioning capacity (Zharnikov, 2026g), and longitudinal case analysis of Dove (Zharnikov, 2026p).
 
 This paper extends SBT to the portfolio level. The core contributions are:
 
@@ -80,7 +80,9 @@ A substantial empirical literature has investigated cross-brand effects within p
 
 Janakiraman, Sismeiro, and Dutta (2009) modeled perception spillovers across competing brands using a disaggregate model, identifying the conditions under which competitor brands benefit or suffer from a focal brand's actions. Their work is directly relevant to portfolio interference but examines between-competitor spillovers rather than within-portfolio interactions. Portfolio interference, as formalized in Section 3, operates through the awareness gate mechanism: it is conditioned on the observer's knowledge of shared parentage. Between-competitor spillovers operate through category-level associations and do not require ownership awareness. This distinction separates portfolio interference from the Janakiraman et al. (2009) framework, even as both address cross-brand perceptual effects.
 
-The brand portfolio coherence literature also provides relevant empirical foundations. Nguyen, Zhang, and Calantone (2018) developed a brand portfolio coherence scale measuring the perceived consistency across brands in a portfolio, finding that higher coherence is associated with more favorable consumer evaluations of individual brands. Their empirical scale taps into the same construct that Section 4 formalizes as aggregate portfolio coherence ($\kappa_P$), though the Nguyen et al. scale does not distinguish within-brand from cross-brand coherence, nor does it account for observer heterogeneity in coherence perception. Ward et al. (2025) provided the most recent empirical examination of portfolio brand cohesion, identifying consistency in symbolism and user imagery as the primary drivers of cohesion across portfolios. Their findings are consistent with the spectral interpretation: symbolism maps onto Semiotic emission, user imagery onto Social emission, and high cohesion on these dimensions corresponds to constructive interference in the awareness-gate framework.
+The brand portfolio coherence literature also provides relevant empirical foundations. Nguyen, Zhang, and Calantone (2018) developed a brand portfolio coherence scale measuring the perceived consistency across brands in a portfolio, finding that higher coherence is associated with more favorable consumer evaluations of individual brands. Their empirical scale taps into the same construct that Section 4 formalizes as aggregate portfolio coherence ($\kappa_P$), though the Nguyen et al. scale does not distinguish within-brand from cross-brand coherence, nor does it account for observer heterogeneity in coherence perception. Kirca, Randhawa, Talay, and Akdeniz (2020) demonstrate empirically that product and brand portfolio strategies interact to affect brand performance, using longitudinal data from the U.S. automotive industry -- evidence that portfolio-level dynamics have measurable performance consequences beyond single-brand effects. Ward et al. (2025) provided the most recent empirical examination of portfolio brand cohesion, identifying consistency in symbolism and user imagery as the primary drivers of cohesion across portfolios. Their findings are consistent with the spectral interpretation: symbolism maps onto Semiotic emission, user imagery onto Social emission, and high cohesion on these dimensions corresponds to constructive interference in the awareness-gate framework.
+
+The cannibalization literature provides a complementary perspective on portfolio interference. Jayarajan, Siddarth, and Silva-Risso (2018) empirically distinguish cannibalization from competition in multi-product portfolios, finding that within-portfolio product overlap has systematically different demand effects from cross-firm competition -- a structural distinction that aligns with the awareness-gate mechanism formalized in Section 3.
 
 The empirical literature on brand architecture value is also relevant. Rao, Agarwal, and Dahlhoff (2004) empirically demonstrated that branded-house strategies are associated with higher firm value than house-of-brands strategies, suggesting that constructive interference (which is maximized under high parent brand visibility) generates measurable economic value. Morgan and Rego (2009) showed that portfolio composition characteristics -- including brand concentration and the presence of functionally broad anchor brands -- predict firm performance. These findings are consistent with Proposition 6 (constructive interference compounding) and Proposition 7 (portfolio capacity constraints) derived in Section 7.
 
@@ -114,17 +116,17 @@ This paper addresses all three deficiencies.
 
 ### 3.1 Preliminaries and Notation
 
-The paper adopts the notation and definitions of Zharnikov (2026a, 2026d). A brand's *emission profile* at time $t$ is a vector $\mathbf{e}_B(t) = [e_1, e_2, \ldots, e_8] \in \mathbb{R}^8_+$, where each component represents signal intensity on one of SBT's eight dimensions: Semiotic ($e_1$), Narrative ($e_2$), Ideological ($e_3$), Experiential ($e_4$), Social ($e_5$), Economic ($e_6$), Cultural ($e_7$), and Temporal ($e_8$). Each dimension carries signals of three types: *positive* (actively emitted), *null* (no signal), or *structural absence* (dark signal -- the conspicuous lack of expected signal).
+The paper adopts the notation and definitions of Zharnikov (2026a). A brand's *emission profile* at time $t$ is a vector $\mathbf{e}_B(t) = [e_1, e_2, \ldots, e_8] \in \mathbb{R}^8_+$, where each component represents signal intensity on one of SBT's eight dimensions: Semiotic ($e_1$), Narrative ($e_2$), Ideological ($e_3$), Experiential ($e_4$), Social ($e_5$), Economic ($e_6$), Cultural ($e_7$), and Temporal ($e_8$). Each dimension carries signals of three types: *positive* (actively emitted), *null* (no signal), or *structural absence* (dark signal -- the conspicuous lack of expected signal).
 
 **A note on observer dependence of emission profiles.** SBT's core thesis is that brand perception is observer-heterogeneous: what an observer perceives is a function of both the brand's emitted signals and the observer's spectral weight vector. This creates an important clarification for the interference model. Emission profiles $\mathbf{e}_B(t)$ are modeled as properties of the brand's communication output -- what the brand puts into the signal channel -- rather than as properties of individual observers' perceptions. However, the mapping from emission to perception is observer-dependent, governed by the observer's weight vector. In this sense, emission profiles are best understood as cohort-mean estimates: across a given observer cohort, the effective emission perceived by the average cohort member is a weighted function of $\mathbf{e}_B(t)$ and the cohort's mean spectral profile $\bar{\mathbf{w}}^{(C_k)}$. The worked examples in Sections 5 and 8 use illustrative cohort-mean estimates, not objectively measured signals. Empirical implementation would require spectral profile measurement instruments applied to representative observer samples (see Section 10.1).
 
-An observer $j$ possesses an *observer spectral profile* -- a weight vector $\mathbf{w}_j = [w_1, \ldots, w_8] \in \Delta^7$ -- that determines the relative salience of each dimension in forming brand conviction. Observers with similar spectral profiles cluster into *cohorts* $C_k$ (Zharnikov, 2026f).
+An observer $j$ possesses an *observer spectral profile* -- a weight vector $\mathbf{w}_j = [w_1, \ldots, w_8] \in \Delta^7$ -- that determines the relative salience of each dimension in forming brand conviction. Observers with similar spectral profiles cluster into *cohorts* $C_k$ (Zharnikov, 2026a).
 
 The *perception cloud* for cohort $C_k$ observing brand $B$ at time $t$ is the distribution of brand convictions across cohort members:
 
 $$\Pi_{C_k}(B, t) = \{f(\mathbf{e}_B(t), \mathbf{w}_j) : j \in C_k\}$$
 
-where $f$ is the conviction formation function that maps emission profiles and observer spectral profiles to brand conviction states (Zharnikov, 2026a, 2026j).
+where $f$ is the conviction formation function that maps emission profiles and observer spectral profiles to brand conviction states (Zharnikov, 2026a).
 
 ### 3.2 Portfolio and Cohort Overlap
 
@@ -403,6 +405,8 @@ The preceding formal framework yields seven testable propositions.
 
 **Testability.** Measure the perception cloud for brand $B_i$ in a cohort before and after revealing the ownership connection to brand $B_j$. If conditions (a) and (c) hold, the change in perception cloud should be non-trivial only when $\alpha$ transitions from below to above threshold.
 
+*Falsification*: P1 is falsified if significant perception cloud changes occur when any of the three conditions is absent -- for instance, if revealing ownership produces perception changes even when the brands share no observer cohorts, or when the brands' emission profiles are identical on all weighted dimensions.
+
 ### Proposition 2: Interference Direction Predictability
 
 *The direction (constructive versus destructive) of spectral interference between brands $B_i$ and $B_j$ on dimension $d$ in cohort $C_k$ is determined by the sign concordance of the brands' deviations from the category mean on dimension $d$. Same-sign deviations produce constructive interference; opposite-sign deviations produce destructive interference. The direction is predictable from emission profiles alone, without requiring empirical measurement of the interference effect.*
@@ -411,6 +415,8 @@ The preceding formal framework yields seven testable propositions.
 
 **Testability.** For a portfolio of $n$ brands, compute the predicted direction of interference on each dimension for all $\binom{n}{2}$ brand pairs. Measure actual perception cloud perturbations through controlled awareness manipulations. The predicted direction should match the observed direction in significantly more than 50% of cases.
 
+*Falsification*: P2 is falsified if the observed direction of interference is uncorrelated with sign concordance of emission profile deviations -- that is, if brands with same-sign deviations produce destructive interference as often as constructive, indicating that emission profiles alone do not determine interference direction.
+
 ### Proposition 3: Cohort-Dependent Portfolio Coherence
 
 *The same portfolio can be simultaneously coherent for one observer cohort and contradictory for another. Formally, there exist portfolios $\mathcal{P}$ and distinct cohorts $C_k$, $C_l$ such that $\kappa_P(\mathcal{P}, C_k) > \kappa_P^{A-}$ (spectral alignment threshold) and $\kappa_P(\mathcal{P}, C_l) < \kappa_P^{C-}$ (spectral contradiction threshold).*
@@ -418,6 +424,8 @@ The preceding formal framework yields seven testable propositions.
 **Derivation.** Cross-brand coherence $\kappa_X$ (Definition 10) depends on the cohort's weight vector $\bar{w}_d^{(C_k)}$. A cohort that assigns zero weight to the Ideological dimension will not register the Dove-Axe contradiction. A cohort that assigns maximum weight to the Ideological dimension will register it maximally. Since SBT permits arbitrary weight vectors, the existence of portfolios with cohort-dependent coherence follows directly.
 
 **Testability.** For a portfolio known to contain dimensional contradictions (e.g., Unilever), measure portfolio coherence perception across cohorts identified by their spectral weight vectors. The Purpose-Aligned cohort's portfolio coherence assessment should be significantly lower than the Product-Pragmatist cohort's assessment of the same portfolio.
+
+*Falsification*: P3 is falsified if portfolio coherence assessments are statistically indistinguishable across cohorts with demonstrably different spectral weight profiles -- that is, if coherence perception is cohort-invariant despite dimensional contradictions in the portfolio.
 
 ### Proposition 4: Awareness Gate Moderation
 
@@ -429,6 +437,8 @@ The preceding formal framework yields seven testable propositions.
 
 **Corollary (Shielding Theorem).** *A house-of-brands architecture functions as an interference shield if and only if the parent brand recognition gate remains below threshold across the portfolio's shared cohorts. The shield degrades monotonically as $\alpha$ increases, and cannot be restored once $\alpha$ exceeds threshold in a given cohort.*
 
+*Falsification*: P4 is falsified if ownership disclosure produces significant perception cloud perturbations even when awareness levels are below the threshold -- that is, if interference operates independently of ownership awareness, suggesting that category-level association transfer (rather than ownership-gated interference) is the dominant mechanism.
+
 This corollary has significant implications for corporate transparency trends. As media literacy increases and corporate ownership structures become more visible (through investigative journalism, social media, and regulatory disclosure requirements), the house-of-brands shield erodes. The interference that the architecture was designed to prevent begins to operate.
 
 ### Proposition 5: Interference Asymmetry
@@ -439,6 +449,8 @@ This corollary has significant implications for corporate transparency trends. A
 
 **Testability.** Within a portfolio, identify brand pairs with asymmetric coherence levels. Measure the change in perception cloud dispersion for each brand upon disclosure of the sibling relationship. The higher-coherence brand should exhibit a larger proportional increase in cloud dispersion.
 
+*Falsification*: P5 is falsified if interference is symmetric -- that is, if the proportional perception cloud perturbation is equal for high-coherence and low-coherence siblings, indicating that single-brand coherence does not moderate interference susceptibility.
+
 ### Proposition 6: Constructive Interference Compounding
 
 *In a spectral cluster portfolio, constructive interference compounds across brand pairs: each additional brand whose emission profile is compatible with the cluster reinforces the perception of every existing brand. The total constructive interference experienced by any brand in a cluster of $n$ brands scales superlinearly with $n$, up to a saturation point determined by the cluster's spectral density.*
@@ -447,6 +459,8 @@ This corollary has significant implications for corporate transparency trends. A
 
 **Testability.** Compare perception cloud intensity (conviction strength) for a brand presented in isolation versus presented as a member of progressively larger compatible clusters. Conviction strength should increase superlinearly up to a saturation point.
 
+*Falsification*: P6 is falsified if conviction strength scales linearly (or sublinearly) with cluster size -- that is, if each additional compatible brand contributes a fixed marginal reinforcement with no compounding effect, indicating additive rather than superlinear dynamics.
+
 ### Proposition 7: Portfolio Capacity Constraint
 
 *The maximum number of brands a portfolio can sustain without exceeding the interference budget of any brand in any shared cohort is constrained by the portfolio's spectral structure. For a spectral cluster, capacity is bounded by the local packing density divided by the minimum required inter-brand distance for constructive interference. For a spectral contradiction portfolio, each additional brand on a contested dimension reduces the effective capacity for all existing brands sharing that dimension.*
@@ -454,6 +468,8 @@ This corollary has significant implications for corporate transparency trends. A
 **Derivation.** From Definition 12, portfolio capacity $K$ requires that no pair exceeds the interference tolerance $\theta$. In a cluster, all pairs are constructive, so the binding constraint is distinguishability (from Zharnikov 2026g). In a contradiction, each additional brand on the contested dimension increases $|\mathcal{I}_{\text{total}}|$ for every other brand, and the budget constraint binds earlier.
 
 **Testability.** Examine portfolios that have undergone brand rationalization (e.g., P&G's divestiture of 100+ brands in 2014). The divested brands should disproportionately be those that generated the highest destructive interference in the remaining portfolio.
+
+*Falsification*: P7 is falsified if portfolios with high spectral contradiction sustain as many brands as spectrally clustered portfolios of comparable size and revenue -- that is, if contradiction imposes no capacity penalty, indicating that destructive interference does not accumulate with portfolio size.
 
 ---
 
@@ -594,9 +610,11 @@ The spectral interference model does not replace existing portfolio frameworks; 
 
 The relationship is complementary, not competitive. An optimal portfolio strategy requires architectural design (Aaker), equity management (Keller), strategic role assignment (Kapferer), *and* interference management (this paper). The spectral framework adds the missing perceptual layer to the existing strategic layers.
 
+A note on coordinate invariance: the four portfolio archetypes (spectral cluster, spectral spread, spectral contradiction, spectral layering) and the interference dynamics that generate them are geometric phenomena that do not depend on the specific choice of dimensional taxonomy. The eight SBT dimensions are one valid coordinate representation; the interference structure -- which brands reinforce and which undermine each other in shared cohorts -- is invariant under basis rotation and metric-preserving transformations. This coordinate-free character strengthens the framework's generalizability: the archetypes would be recoverable under any dimensional decomposition that preserves the perceptual geometry.
+
 ### 9.4 Connection to the SBT Research Program
 
-This paper fills a specific gap in the SBT research program by extending the framework from single-brand to portfolio-level analysis. The connection to prior work is direct: the metric structure from Zharnikov (2026d) underlies the spectral distance calculations; the metamerism results from Zharnikov (2026e) explain why portfolio contradictions are invisible to scalar brand health metrics; the cohort boundary analysis from Zharnikov (2026f) formalizes the cohort overlap conditions; the sphere packing bounds from Zharnikov (2026g) provide the positioning capacity ceiling that portfolio capacity cannot exceed; the non-ergodic dynamics from Zharnikov (2026o) explain why interference effects compound over time rather than averaging out; and the Dove longitudinal analysis from Zharnikov (2026p) provides the primary empirical illustration.
+This paper fills a specific gap in the SBT research program by extending the framework from single-brand to portfolio-level analysis. The connection to prior work is direct: the metamerism results from Zharnikov (2026e) explain why portfolio contradictions are invisible to scalar brand health metrics; the sphere packing bounds from Zharnikov (2026g) provide the positioning capacity ceiling that portfolio capacity cannot exceed; and the Dove longitudinal analysis from Zharnikov (2026p) provides the primary empirical illustration.
 
 ---
 
@@ -624,7 +642,7 @@ The emission profiles and coherence assessments in this paper are based on perce
 
 ### 10.4 Dynamic Interference
 
-This paper models interference at a point in time. In reality, interference dynamics evolve as awareness gates shift, emission profiles change, and cohort compositions evolve. The non-ergodic framework of Zharnikov (2026o) provides the mathematical foundation for modeling dynamic interference -- interference effects that compound multiplicatively over time rather than averaging ergodically. Integrating the portfolio interference model with non-ergodic dynamics is a natural next step.
+This paper models interference at a point in time. In reality, interference dynamics evolve as awareness gates shift, emission profiles change, and cohort compositions evolve. Non-ergodic perception dynamics -- where interference effects compound multiplicatively over time rather than averaging ergodically -- provide the mathematical foundation for modeling dynamic interference. Integrating the portfolio interference model with non-ergodic dynamics is a natural next step. Medesani and Macdonald (2026) formalize a relevant asymmetry: the contraction gain k_c (the rate at which an admissible corridor narrows under strain) exceeds the recovery gain k_r (the rate at which it expands during quiescence). Applied to portfolio interference, this predicts that destructive interference accumulates faster than constructive interference dissipates -- brand damage from portfolio contradictions is faster than recovery from portfolio rationalization. This asymmetry may explain the empirical observation that portfolio contradictions, once publicly recognized, persist in consumer perception long after the offending brand has been repositioned. Per-dimension velocity tracking -- monitoring the rate and direction of change on each of the eight dimensions across measurement epochs -- provides an operational implementation path for detecting interference dynamics before they become visible in aggregate brand health metrics.
 
 The Dove-Axe illustrative analysis uses emission profiles reflecting the historical peak of their Ideological dimension contradiction. Since approximately 2016, Axe/Lynx has undertaken significant repositioning, shifting from hypersexualized messaging toward inclusive masculine identity narratives (the 'Find Your Magic' campaign and subsequent messaging). Current emission profiles would likely show a narrowed Ideological gap, reducing the destructive interference magnitude computed in Tables 5-6. The structural point -- that architecturally identical portfolios can produce opposite interference dynamics depending on emission profile alignment -- remains valid regardless of any single brand's repositioning trajectory.
 
@@ -632,7 +650,11 @@ The Dove-Axe illustrative analysis uses emission profiles reflecting the histori
 
 Pending full spectral profile instrumentation, several empirical proxies may facilitate near-term testing: (a) brand perception surveys that decompose evaluation across SBT's eight dimensions; (b) sentiment analysis of social media discourse, coded by dimension; (c) conjoint analyses that vary brand portfolio disclosure; and (d) natural experiments in which corporate ownership becomes publicly known (e.g., following an acquisition announcement).
 
-### 10.6 Digital-Native Portfolios
+### 10.6 Graph-Theoretic Formalization
+
+The portfolio interference model can be recast in graph-theoretic terms. Brands are nodes with eight-dimensional emission profiles as attributes; interference relationships are edges weighted by cohort overlap and spectral proximity. The four archetypes (cluster, spread, contradiction, layering) then correspond to graph-structural classes, and portfolio coherence becomes a graph-level property. Recent work on graph homomorphism distortion (Carrasco, Zaghen, Sumaraj, Bekkers, and Rieck, 2026) offers a metric that captures gradations of structural similarity between attributed graphs -- analogous to how the spectral framework captures gradations between brands that scalar brand equity treats as binary (same/different). Formalizing portfolio interference through graph homomorphism distortion would provide tighter bounds on portfolio capacity and enable computational optimization of portfolio composition.
+
+### 10.7 Digital-Native Portfolios
 
 The current framework is demonstrated on physical-product portfolios (luxury goods, FMCG, automotive). Digital-native portfolios -- Meta (Facebook, Instagram, WhatsApp), Alphabet (Google, YouTube, Waymo), Amazon (AWS, Prime, Whole Foods) -- represent a distinct archetype in which the parent brand is highly visible ($\alpha$ near 1.0) and interference operates partly through data-sharing and algorithmic association rather than traditional brand signals. In these portfolios, implicit awareness -- where the user does not consciously associate two services but behavioral data integration creates algorithmic coupling -- may require extending the awareness gate beyond conscious recognition. The 'spectral platform' archetype, in which interference flows through data infrastructure as well as brand signals, is a priority for empirical investigation and theoretical extension.
 
@@ -662,31 +684,11 @@ This appendix summarizes the core notation and concepts of Spectral Brand Theory
 
 **Perception cloud.** The probabilistic representation of brand conviction formed through weighted signal accumulation across observer-brand interactions. A tight cloud indicates high-conviction observers; a diffuse cloud indicates heterogeneous or uncertain perceptions.
 
-**Cohort.** A cluster of observers with similar spectral profiles -- close in the eight-dimensional weight space (Zharnikov, 2026f). Cohorts are perceptual, not demographic: a "Purpose-Aligned cohort" is defined by high weights on Ideological and Narrative, not by age or income.
+**Cohort.** A cluster of observers with similar spectral profiles -- close in the eight-dimensional weight space (Zharnikov, 2026a). Cohorts are perceptual, not demographic: a "Purpose-Aligned cohort" is defined by high weights on Ideological and Narrative, not by age or income.
 
 **Coherence types** (single-brand, ordered from highest to lowest): ecosystem ($A+$, all dimensions reinforce), signal ($A-$, most dimensions align), identity ($B+$, strong core on 2-3 dimensions), experiential asymmetry ($B-$, product excellent but other dimensions weak), incoherent ($C-$, dimensional signals contradict each other).
 
 ---
-
-## Author Contributions (CRediT)
-
-Dmitry Zharnikov: Conceptualization, Data curation, Formal analysis, Investigation, Methodology, Project administration, Software, Validation, Writing -- original draft, Writing -- review and editing.
-
-## Funding
-
-This research did not receive any specific grant from funding agencies in the public, commercial, or not-for-profit sectors.
-
-## Declaration of Competing Interests
-
-The author declares no competing interests.
-
-## Data Availability
-
-No primary data was collected. Illustrative case analyses use public corporate data (LVMH 2023 Annual Report; Unilever 2023 Annual Report). The open-source toolkit implementing the SBT computational pipeline is available at https://github.com/spectralbranding/sbt-framework.
-
-## Declaration of Generative AI and AI-Assisted Technologies in the Manuscript Preparation Process
-
-During the preparation of this work the author used Claude (Anthropic) in order to assist with structural verification, cross-paper consistency checking across an eight-paper research program, and copy-editing. After using this tool, the author reviewed and edited the content as needed and takes full responsibility for the content of the published article.
 
 ## References
 
@@ -700,17 +702,23 @@ Berens, G., van Riel, C. B. M., & van Bruggen, G. H. (2005). Corporate associati
 
 Brown, T. J., & Dacin, P. A. (1997). The company and the product: Corporate associations and consumer product responses. *Journal of Marketing*, 61(1), 68-84.
 
+Carrasco, M., Zaghen, O., Sumaraj, K., Bekkers, E., & Rieck, B. (2026). Graph homomorphism distortion: A metric to distinguish them all and in the latent space bind them. arXiv:2511.03068v4.
+
 Dacin, P. A., & Smith, D. C. (1994). The effect of brand portfolio characteristics on consumer evaluations of brand extensions. *Journal of Marketing Research*, 31(2), 229-242.
 
 Erdem, T., & Swait, J. (1998). Brand equity as a signaling phenomenon. *Journal of Consumer Psychology*, 7(2), 131-157.
 
 Erdem, T., & Sun, B. (2002). An empirical investigation of the spillover effects of advertising and sales promotions in umbrella branding. *Journal of Marketing Research*, 39(4), 408-420.
 
+Jayarajan, D., Siddarth, S., & Silva-Risso, J. (2018). Cannibalization vs. competition: An empirical study of the impact of product durability on automobile demand. *International Journal of Research in Marketing*, 35(4), 641--660. DOI: 10.1016/j.ijresmar.2018.08.001
+
 Janakiraman, R., Sismeiro, C., & Dutta, S. (2009). Perception spillovers across competing brands: A disaggregate model of how and when. *Journal of Marketing Research*, 46(4), 467-481.
 
 John, D. R., Loken, B., & Joiner, C. (1998). The negative impact of extensions: Can flagship products be diluted? *Journal of Marketing*, 62(1), 19-32.
 
 Kapferer, J.-N. (2008). *The new strategic brand management* (4th ed.). Kogan Page.
+
+Kirca, A. H., Randhawa, P., Talay, M. B., & Akdeniz, M. B. (2020). The interactive effects of product and brand portfolio strategies on brand performance: Longitudinal evidence from the U.S. automotive industry. *International Journal of Research in Marketing*, 37(2), 421--439. DOI: 10.1016/j.ijresmar.2019.09.003
 
 Ke, T. T., Shin, J., & Yu, J. (2022). A model of product portfolio design: Guiding consumer search through brand positioning. *Marketing Science*, 42(6), 1101-1124.
 
@@ -725,6 +733,8 @@ Lei, J., Dawar, N., & Lemmink, J. (2008). Negative spillover in brand portfolios
 Loken, B., & John, D. R. (1993). Diluting brand beliefs: When do brand extensions have a negative impact? *Journal of Marketing*, 57(3), 71-84.
 
 LVMH Moët Hennessy Louis Vuitton. (2023). *2023 Annual report*. LVMH.
+
+Medesani, M., & Macdonald, J. (2026). *Geometric Foundations of Invariant Corridors and Governance: A Unified Framework with Empirical Validation* (Level 3.3 Frozen Baseline). Zenodo. DOI: 10.5281/zenodo.18822552
 
 Meyvis, T., & Janiszewski, C. (2004). When are broader brands stronger brands? An accessibility perspective on the success of brand extensions. *Journal of Consumer Research*, 31(2), 346-357.
 
@@ -760,16 +770,8 @@ Ward, T., Trinh, G., Beal, V., Dawes, J., & Romaniuk, J. (2025). Keeping it in t
 
 Zharnikov, D. (2026a). Spectral Brand Theory: A multi-dimensional framework for brand perception analysis. Working Paper. https://doi.org/10.5281/zenodo.18945912
 
-Zharnikov, D. (2026d). Brand space geometry: A formal metric for multi-dimensional brand perception. Working Paper. https://doi.org/10.5281/zenodo.18945295
-
 Zharnikov, D. (2026e). Spectral metamerism in brand perception: Projection bounds from high-dimensional geometry. Working Paper. https://doi.org/10.5281/zenodo.18945352
 
-Zharnikov, D. (2026f). Cohort boundaries in high-dimensional perception space: A concentration of measure analysis. Working Paper. https://doi.org/10.5281/zenodo.18945477
-
 Zharnikov, D. (2026g). How many brands can a market hold? Sphere packing bounds for multi-dimensional positioning. Working Paper. https://doi.org/10.5281/zenodo.18945522
-
-Zharnikov, D. (2026j). Non-ergodic brand perception: Diffusion dynamics on multi-dimensional perceptual manifolds. Working Paper. https://doi.org/10.5281/zenodo.18945659
-
-Zharnikov, D. (2026o). Non-ergodic brand perception: Why cross-sectional brand tracking systematically misrepresents individual trajectories. Working Paper. https://doi.org/10.5281/zenodo.19138860
 
 Zharnikov, D. (2026p). The spectral anatomy of purpose: A longitudinal analysis of Dove Real Beauty through multi-dimensional brand perception theory. Working Paper. https://doi.org/10.5281/zenodo.19139258
