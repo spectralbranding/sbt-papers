@@ -52,11 +52,11 @@ data_manifest:
   - id: "run5-crosscultural"
     description: >
       Run 5: 11,410 total calls (7,999 successful, 70.1% success rate) across
-      22 LLMs, 7 cross-cultural brand pairs, 8 cultural contexts (China, Japan,
+      21 active LLMs, 7 cross-cultural brand pairs, 8 cultural contexts (China, Japan,
       UAE, Russia, Ukraine, Mongolia, South Korea, India). Includes 69 native-
       language calls for H10 (Prompt Language Effect). Models span Western,
       Chinese, Russian, Japanese, Korean, Arabic, and Indian clusters.
-      T-Pro 2.0 excluded from analysis (0 successful responses).
+      T-Pro 2.0 excluded from study (requires dedicated paid instance).
     archive: "GitHub"
     repository: "spectralbranding/sbt-papers"
     path: "r15-ai-search-metamerism/experiment/L3_sessions/run5_crosscultural.jsonl"

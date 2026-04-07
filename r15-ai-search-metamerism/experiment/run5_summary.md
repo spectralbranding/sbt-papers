@@ -6,7 +6,7 @@
 |-----------|-------|
 | Date | 2026-04-05 |
 | Script revision | v2-structured-elicitation |
-| Models | claude, gpt, gemini, deepseek, qwen3_local, gemma4_local, cerebras_qwen3, cerebras_glm, sambanova_qwen3, sambanova_swallow, sambanova_deepseek, groq_llama33, groq_allam, groq_kimi, grok, sarvam, gigachat_api, yandexgpt_pro, tpro_yandex, yandexgpt_local, gigachat_local, exaone_local, swallow_local, falcon_arabic_local, jais_local, qwen35_local |
+| Models | claude, gpt, gemini, deepseek, qwen3_local, gemma4_local, cerebras_qwen3, cerebras_glm, sambanova_qwen3, sambanova_swallow, sambanova_deepseek, groq_llama33, groq_allam, groq_kimi, grok, sarvam, gigachat_api, yandexgpt_pro, yandexgpt_local, gigachat_local, exaone_local, swallow_local, falcon_arabic_local, jais_local, qwen35_local |
 | Runs per prompt | 3 |
 | Brand pairs | 10 |
 | Total calls | 11298 |
@@ -17,16 +17,16 @@
 
 Uniform baseline = 12.5 per dimension (100/8). Values > 12.5 = over-weighted.
 
-| Dimension | Type | claude | gpt | gemini | deepseek | qwen3_local | gemma4_local | cerebras_qwen3 | cerebras_glm | sambanova_qwen3 | sambanova_swallow | sambanova_deepseek | groq_llama33 | groq_allam | groq_kimi | grok | sarvam | gigachat_api | yandexgpt_pro | tpro_yandex | yandexgpt_local | gigachat_local | exaone_local | swallow_local | falcon_arabic_local | jais_local | qwen35_local | Aggregate |
+| Dimension | Type | claude | gpt | gemini | deepseek | qwen3_local | gemma4_local | cerebras_qwen3 | cerebras_glm | sambanova_qwen3 | sambanova_swallow | sambanova_deepseek | groq_llama33 | groq_allam | groq_kimi | grok | sarvam | gigachat_api | yandexgpt_pro | yandexgpt_local | gigachat_local | exaone_local | swallow_local | falcon_arabic_local | jais_local | qwen35_local | Aggregate |
 |-----------|------|----------:|----------:|----------:|----------:|----------:|----------:|----------:|----------:|----------:|----------:|----------:|----------:|----------:|----------:|----------:|----------:|----------:|----------:|----------:|----------:|----------:|----------:|----------:|----------:|----------:|----------:|----------:|
-| semiotic | hard | 12.0 | 16.7 | 13.4 | 12.1 | 13.9 | 14.8 | 14.6 | 0.0 | 15.0 | 15.0 | 12.5 | 11.7 | 16.4 | 11.3 | 12.8 | 13.9 | 14.5 | 14.6 | 0.0 | 14.8 | 12.0 | 15.6 | 18.4 | 0.0 | 21.3 | 0.0 | 12.2 |
-| narrative | soft | 8.3 | 11.7 | 8.5 | 11.5 | 9.8 | 9.2 | 9.9 | 0.0 | 10.0 | 7.5 | 12.5 | 7.9 | 15.6 | 9.9 | 11.3 | 9.4 | 10.5 | 8.6 | 0.0 | 10.0 | 8.5 | 9.8 | 11.9 | 0.0 | 10.4 | 0.0 | 8.6 |
-| ideological | soft | 12.7 | 10.6 | 9.5 | 10.0 | 7.0 | 8.5 | 10.7 | 0.0 | 5.0 | 5.0 | 10.0 | 9.5 | 10.4 | 9.1 | 12.9 | 5.5 | 11.5 | 10.3 | 0.0 | 12.1 | 6.8 | 6.5 | 6.4 | 0.0 | 7.3 | 0.0 | 7.6 |
-| experiential | hard | 18.0 | 19.8 | 17.2 | 15.2 | 20.0 | 17.5 | 18.3 | 0.0 | 20.0 | 17.5 | 15.0 | 18.2 | 15.0 | 18.2 | 18.4 | 20.0 | 17.0 | 19.9 | 0.0 | 20.6 | 22.4 | 20.4 | 18.9 | 0.0 | 15.0 | 0.0 | 15.5 * |
-| social | soft | 11.3 | 10.2 | 10.0 | 9.2 | 9.8 | 10.5 | 10.7 | 0.0 | 10.0 | 15.0 | 7.5 | 9.8 | 9.8 | 10.4 | 11.8 | 11.2 | 8.5 | 9.7 | 0.0 | 10.8 | 11.5 | 10.0 | 8.7 | 0.0 | 10.9 | 0.0 | 8.7 |
-| economic | hard | 19.3 | 19.2 | 18.8 | 22.1 | 24.8 | 22.3 | 18.0 | 0.0 | 25.0 | 22.5 | 20.0 | 24.2 | 17.6 | 23.6 | 16.2 | 22.9 | 21.5 | 23.1 | 0.0 | 19.4 | 24.5 | 23.3 | 19.9 | 0.0 | 19.0 | 0.0 | 18.0 * |
-| cultural | soft | 10.1 | 5.0 | 12.4 | 12.5 | 5.4 | 7.9 | 7.1 | 0.0 | 5.0 | 7.5 | 12.5 | 7.0 | 5.4 | 8.1 | 10.0 | 6.9 | 7.0 | 7.2 | 0.0 | 4.8 | 5.7 | 4.8 | 5.8 | 0.0 | 8.1 | 0.0 | 6.4 |
-| temporal | soft | 8.3 | 6.9 | 10.3 | 7.5 | 9.3 | 9.3 | 10.7 | 0.0 | 10.0 | 10.0 | 10.0 | 11.6 | 9.8 | 9.3 | 6.5 | 10.2 | 9.5 | 6.7 | 0.0 | 7.6 | 8.5 | 9.8 | 10.0 | 0.0 | 8.0 | 0.0 | 7.7 |
+| semiotic | hard | 12.0 | 16.7 | 13.4 | 12.1 | 13.9 | 14.8 | 14.6 | 0.0 | 15.0 | 15.0 | 12.5 | 11.7 | 16.4 | 11.3 | 12.8 | 13.9 | 14.5 | 14.6 | 14.8 | 12.0 | 15.6 | 18.4 | 0.0 | 21.3 | 0.0 | 12.2 |
+| narrative | soft | 8.3 | 11.7 | 8.5 | 11.5 | 9.8 | 9.2 | 9.9 | 0.0 | 10.0 | 7.5 | 12.5 | 7.9 | 15.6 | 9.9 | 11.3 | 9.4 | 10.5 | 8.6 | 10.0 | 8.5 | 9.8 | 11.9 | 0.0 | 10.4 | 0.0 | 8.6 |
+| ideological | soft | 12.7 | 10.6 | 9.5 | 10.0 | 7.0 | 8.5 | 10.7 | 0.0 | 5.0 | 5.0 | 10.0 | 9.5 | 10.4 | 9.1 | 12.9 | 5.5 | 11.5 | 10.3 | 12.1 | 6.8 | 6.5 | 6.4 | 0.0 | 7.3 | 0.0 | 7.6 |
+| experiential | hard | 18.0 | 19.8 | 17.2 | 15.2 | 20.0 | 17.5 | 18.3 | 0.0 | 20.0 | 17.5 | 15.0 | 18.2 | 15.0 | 18.2 | 18.4 | 20.0 | 17.0 | 19.9 | 20.6 | 22.4 | 20.4 | 18.9 | 0.0 | 15.0 | 0.0 | 15.5 * |
+| social | soft | 11.3 | 10.2 | 10.0 | 9.2 | 9.8 | 10.5 | 10.7 | 0.0 | 10.0 | 15.0 | 7.5 | 9.8 | 9.8 | 10.4 | 11.8 | 11.2 | 8.5 | 9.7 | 10.8 | 11.5 | 10.0 | 8.7 | 0.0 | 10.9 | 0.0 | 8.7 |
+| economic | hard | 19.3 | 19.2 | 18.8 | 22.1 | 24.8 | 22.3 | 18.0 | 0.0 | 25.0 | 22.5 | 20.0 | 24.2 | 17.6 | 23.6 | 16.2 | 22.9 | 21.5 | 23.1 | 19.4 | 24.5 | 23.3 | 19.9 | 0.0 | 19.0 | 0.0 | 18.0 * |
+| cultural | soft | 10.1 | 5.0 | 12.4 | 12.5 | 5.4 | 7.9 | 7.1 | 0.0 | 5.0 | 7.5 | 12.5 | 7.0 | 5.4 | 8.1 | 10.0 | 6.9 | 7.0 | 7.2 | 4.8 | 5.7 | 4.8 | 5.8 | 0.0 | 8.1 | 0.0 | 6.4 |
+| temporal | soft | 8.3 | 6.9 | 10.3 | 7.5 | 9.3 | 9.3 | 10.7 | 0.0 | 10.0 | 10.0 | 10.0 | 11.6 | 9.8 | 9.3 | 6.5 | 10.2 | 9.5 | 6.7 | 7.6 | 8.5 | 9.8 | 10.0 | 0.0 | 8.0 | 0.0 | 7.7 |
 
 \* = noticeably above uniform baseline (12.5)
 
@@ -54,7 +54,6 @@ DCI = (Economic_weight + Semiotic_weight) / 100. Baseline = 0.250.
 | sarvam | 0.368 | +0.118 | Moderate |
 | gigachat_api | 0.360 | +0.110 | Moderate |
 | yandexgpt_pro | 0.377 | +0.127 | Moderate |
-| tpro_yandex | N/A | N/A | Insufficient data |
 | yandexgpt_local | 0.342 | +0.092 | Moderate |
 | gigachat_local | 0.365 | +0.115 | Moderate |
 | exaone_local | 0.388 | +0.138 | Moderate |
