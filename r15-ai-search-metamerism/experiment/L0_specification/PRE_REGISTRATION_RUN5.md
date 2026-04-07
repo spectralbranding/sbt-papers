@@ -27,6 +27,21 @@
 
 **H10 (Prompt Language Effect)**: Culture-matched models prompted in their native language will show lower DCI for local brands than the same models prompted in English. The magnitude of this effect will be larger for models with smaller parameter counts. Test: within-model paired comparison of English vs native-language weighted_recommendation prompts on culture-matched brand pairs.
 
+**H11 (Supplementary pairs)**: VkusVill (Russia), Roshen (Ukraine), and APU Chinggis (Mongolia) are collected as supplementary data points. Their DCI values are expected to follow the same cross-cultural pattern as primary pairs. Not featured in publications due to category mismatches but included in session logs for replication purposes.
+
+**H12 (Geopolitical Framing Effect)**: The same brand evaluated in two different city/country contexts will receive systematically different dimensional weight profiles. The brand, product, and prompt structure are held constant; only the city context changes. If LLMs encode geopolitical framing in their training data, dimensional weights for Ideological, Cultural, and Temporal dimensions will differ significantly between the two city contexts (2x2 design: city_a vs city_b x English vs native language).
+
+Three brand pairs test distinct framing mechanisms:
+1. **roshen_ru_ua** (Roshen chocolate, Moscow vs Kyiv): Tests framing in an active conflict context. Roshen was sold in both Russian and Ukrainian markets. Roshen's owner (Petro Poroshenko) became a public figure in Ukrainian politics post-2014. Models with heavy coverage of this period may associate the brand differently depending on city context.
+2. **volvo_eu_cn** (Volvo XC90, Stockholm vs Shanghai): Tests ownership-transfer framing. Volvo is a Swedish brand acquired by Chinese Geely in 2010. Same product, same brand, two different ownership-narrative contexts. Models trained on Western vs Chinese web corpora may weight Narrative and Cultural dimensions differently.
+3. **burgerking_us_ru** (Burger King, New York vs Moscow): Tests stay-vs-leave framing. Burger King continued operating in Russia after 2022 while McDonald's exited. The brand's decision to stay changed its meaning in each market. Models may weight Ideological dimension differently depending on city context.
+
+Native-language condition (H12 x H10 interaction): For city contexts with a non-English native language, culture-matched models are additionally prompted in the native language. This tests whether the framing effect is amplified when the model operates in the language of the geopolitical context.
+
+Analysis: For each framing pair, compute the per-dimension weight delta (city_b - city_a) per model. H12 is supported if at least two of the three pairs show a statistically significant non-zero delta on at least one dimension. Primary dimensions of interest: Ideological, Cultural, Temporal (soft dimensions most likely to encode geopolitical framing).
+
+Pre-registration date: 2026-04-07 (framing experiment designed after Run 5 completion).
+
 ## 2. Design
 
 ### 2.1 Brand Pairs
