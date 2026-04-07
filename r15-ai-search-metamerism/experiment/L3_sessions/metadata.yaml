@@ -1,4 +1,4 @@
-script_version: 12b97c69793751d80f8620aaea6beadf8170a6ee
+script_version: 83f9827aa43be5dc6a6ba8cea35dd4e1f833ccf0
 python_version: 3.12.13 (main, Mar  3 2026, 12:39:30) [Clang 17.0.0 (clang-1700.6.3.2)]
 package_versions:
   anthropic: 0.89.0
@@ -10,47 +10,19 @@ package_versions:
 hardware: arm64
 processor: arm
 os: macOS-26.3.1-arm64-arm-64bit
-start_time: '2026-04-07T05:57:20.229325+00:00'
+start_time: '2026-04-07T11:43:32.463981+00:00'
 end_time: null
 model_configs:
-  cerebras_glm:
-    model_id: zai-glm-4.7
+  fireworks_glm:
+    model_id: glm-4p7
     max_tokens: 2048
     temperature: 0.7
-  sambanova_qwen3:
-    model_id: Qwen3-32B
-    max_tokens: 2048
-    temperature: 0.7
-  sambanova_swallow:
-    model_id: Llama-3.3-Swallow-70B-Instruct-v0.4
-    max_tokens: 2048
-    temperature: 0.7
-  sambanova_deepseek:
-    model_id: DeepSeek-V3.2
-    max_tokens: 2048
-    temperature: 0.7
-  groq_llama33:
-    model_id: llama-3.3-70b-versatile
-    max_tokens: 2048
-    temperature: 0.7
-  yandexgpt_pro:
-    model_id: yandexgpt-5-pro/latest
-    max_tokens: 2048
-    temperature: 0.7
-  gptoss_swallow:
-    model_id: gpt-oss-20b/latest
-    max_tokens: 2048
-    temperature: 0.7
-  tpro_yandex:
-    model_id: t-pro-it-2.0-fp8
+  dashscope_qwen_plus:
+    model_id: qwen-plus
     max_tokens: 2048
     temperature: 0.7
   swallow70_local:
     model_id: hf.co/mmnga/tokyotech-llm-Llama-3.3-Swallow-70B-Instruct-v0.4-gguf:Q4_K_M
-    max_tokens: 2048
-    temperature: 0.7
-  qwen35_local:
-    model_id: qwen3.5:27b
     max_tokens: 2048
     temperature: 0.7
 api_key_hash:
@@ -59,7 +31,8 @@ api_key_hash:
   gemini: ed30e51c
   deepseek: 73f315a4
   cerebras_qwen3: 4a3fcc73
-  cerebras_glm: 4a3fcc73
+  fireworks_glm: 3971cc15
+  dashscope_qwen_plus: 21c81cea
   sambanova_qwen3: b01ad88b
   sambanova_swallow: b01ad88b
   sambanova_deepseek: b01ad88b
@@ -71,7 +44,6 @@ api_key_hash:
   gigachat_api: 313939d5
   yandexgpt_pro: 02c3b438
   gptoss_swallow: 02c3b438
-  tpro_yandex: 02c3b438
 experiment: R15-ai-search-metamerism
 script_revision: v2-structured-elicitation
 temperature: 0.7

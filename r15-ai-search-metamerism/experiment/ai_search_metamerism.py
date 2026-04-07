@@ -702,6 +702,8 @@ MODEL_NATIVE_LANGUAGE: dict[str, str] = {
     # Chinese-trained
     "deepseek": "zh",
     "cerebras_qwen3": "zh",
+    "fireworks_glm": "zh",
+    "dashscope_qwen_plus": "zh",
     "qwen3_local": "zh",
     "groq_kimi": "zh",
     # Russian-trained
@@ -1339,9 +1341,32 @@ def call_cerebras(prompt: str, model: str = "qwen-3-235b-a22b-instruct-2507") ->
 
 
 def call_cerebras_glm(prompt: str, model: str = "zai-glm-4.7") -> str:
-    """Call GLM-4.7 via Cerebras (Zhipu AI, Chinese, free tier)."""
+    """Call GLM-4.7 via Cerebras (Zhipu AI, Chinese).
+    NOTE: As of Apr 2026, Cerebras returns 404 for this model despite listing it.
+    Use fireworks_glm instead.
+    """
     return _call_openai_compatible(
         prompt, model, "CEREBRAS_API_KEY", "https://api.cerebras.ai/v1"
+    )
+
+
+def call_fireworks_glm(prompt: str, model: str = "accounts/fireworks/models/glm-4p7") -> str:
+    """Call GLM-4.7 via Fireworks AI (Zhipu AI, Chinese, $0.60/M input).
+    Replaces cerebras_glm which is inaccessible as of Apr 2026.
+    """
+    return _call_openai_compatible(
+        prompt, model, "FIREWORKS_API_KEY", "https://api.fireworks.ai/inference/v1"
+    )
+
+
+def call_dashscope_qwen_plus(prompt: str, model: str = "qwen-plus") -> str:
+    """Call Qwen Plus via Alibaba DashScope International (Chinese, production).
+    Previously excluded from all runs due to 403 errors. Now working as of Apr 2026.
+    Provides the planned paired comparison with qwen3_local (cloud vs local).
+    """
+    return _call_openai_compatible(
+        prompt, model, "DASHSCOPE_API_KEY",
+        "https://dashscope-intl.aliyuncs.com/compatible-mode/v1"
     )
 
 
@@ -1359,8 +1384,8 @@ def call_sambanova_swallow(prompt: str, model: str = "Llama-3.3-Swallow-70B-Inst
     )
 
 
-def call_sambanova_deepseek(prompt: str, model: str = "DeepSeek-V3.2") -> str:
-    """Call DeepSeek V3.2 via SambaNova (Chinese, open-weight, free tier)."""
+def call_sambanova_deepseek(prompt: str, model: str = "DeepSeek-V3-0324") -> str:
+    """Call DeepSeek V3 (0324) via SambaNova (Chinese, open-weight)."""
     return _call_openai_compatible(
         prompt, model, "SAMBANOVA_API_KEY", "https://api.sambanova.ai/v1"
     )
@@ -1682,7 +1707,7 @@ def _call_ollama_model(prompt: str, model: str, no_think: bool = False) -> str:
         data=payload,
         headers={"Content-Type": "application/json"},
     )
-    with urllib.request.urlopen(req, timeout=180) as resp:
+    with urllib.request.urlopen(req, timeout=360) as resp:
         data = json.loads(resp.read())
     content = data.get("response", "")
     content = re.sub(r"<think>.*?</think>", "", content, flags=re.DOTALL).strip()
@@ -1787,7 +1812,9 @@ API_CALLERS: dict[str, Any] = {
     "gemma4_local": call_gemma4_local,
     # Free-tier cloud (Run 5+)
     "cerebras_qwen3": call_cerebras,            # Qwen3-235B via Cerebras
-    "cerebras_glm": call_cerebras_glm,          # GLM-4.7 (Zhipu AI, Chinese) via Cerebras
+    # "cerebras_glm": call_cerebras_glm,        # GLM-4.7 via Cerebras -- INACCESSIBLE Apr 2026
+    "fireworks_glm": call_fireworks_glm,        # GLM-4.7 (Zhipu AI, Chinese) via Fireworks
+    "dashscope_qwen_plus": call_dashscope_qwen_plus,  # Qwen Plus (Alibaba, Chinese) via DashScope
     "sambanova_qwen3": call_sambanova,          # Qwen3-32B via SambaNova
     "sambanova_swallow": call_sambanova_swallow, # Swallow 70B (Japanese) via SambaNova
     "sambanova_deepseek": call_sambanova_deepseek, # DeepSeek V3.2 via SambaNova
@@ -1821,7 +1848,9 @@ API_KEY_VARS: dict[str, str] = {
     "gemma4_local": "OLLAMA_AVAILABLE",
     # Free-tier cloud
     "cerebras_qwen3": "CEREBRAS_API_KEY",
-    "cerebras_glm": "CEREBRAS_API_KEY",
+    # "cerebras_glm": "CEREBRAS_API_KEY",       # INACCESSIBLE Apr 2026
+    "fireworks_glm": "FIREWORKS_API_KEY",
+    "dashscope_qwen_plus": "DASHSCOPE_API_KEY",
     "sambanova_qwen3": "SAMBANOVA_API_KEY",
     "sambanova_swallow": "SAMBANOVA_API_KEY",
     "sambanova_deepseek": "SAMBANOVA_API_KEY",
@@ -1856,9 +1885,11 @@ MODEL_IDS: dict[str, str] = {
     "simulated": "simulated",
     # Free-tier cloud — Chinese models
     "cerebras_qwen3": "qwen-3-235b-a22b-instruct-2507",  # Qwen3-235B on Cerebras
-    "cerebras_glm": "zai-glm-4.7",                        # GLM-4.7 (Zhipu AI) on Cerebras
+    # "cerebras_glm": "zai-glm-4.7",                      # INACCESSIBLE Apr 2026
+    "fireworks_glm": "glm-4p7",                            # GLM-4.7 (Zhipu AI) on Fireworks
+    "dashscope_qwen_plus": "qwen-plus",                    # Qwen Plus on DashScope International
     "sambanova_qwen3": "Qwen3-32B",                       # Qwen3-32B on SambaNova
-    "sambanova_deepseek": "DeepSeek-V3.2",                # DeepSeek V3.2 on SambaNova
+    "sambanova_deepseek": "DeepSeek-V3-0324",              # DeepSeek V3 (0324) on SambaNova
     "groq_kimi": "moonshotai/kimi-k2-instruct",           # Kimi K2 (Moonshot) on Groq
     # Free-tier cloud — Western/baseline models
     "groq_llama33": "llama-3.3-70b-versatile",            # Llama 3.3 70B on Groq
