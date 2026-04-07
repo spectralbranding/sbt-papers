@@ -100,9 +100,12 @@ Clusters:
 - Arabic: Jais 70B, Falcon-H1-Arabic 7B, ALLaM-2-7B
 - Indian: Sarvam-105B
 
-Open-weight models are preferred over proprietary cloud APIs to isolate cultural training data
-bias from commercial alignment confounds. Proprietary APIs retained only where no open-weight
-equivalent exists (Claude, GPT, Gemini).
+Open-weight models are preferred over closed-weight cloud APIs to isolate cultural training data
+bias from commercial alignment confounds. Paid APIs: Claude (Anthropic), GPT (OpenAI), Gemini
+(Google), DeepSeek V3 cloud (DeepSeek). Free-tier APIs: Grok (xAI), Llama 3.3 / Kimi K2 /
+ALLaM-2-7B (Groq), Qwen3-235B / GLM-4.7 (Cerebras), Qwen3-32B / DeepSeek V3.2 / Swallow 70B
+(SambaNova), Sarvam-105B (Indus API), GigaChat 2 Max (Sber API), YandexGPT 5 Pro (Yandex AI
+Studio). Local Ollama models incur no API cost.
 
 ### Native-Language Prompt Condition (H10)
 
