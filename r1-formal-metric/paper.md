@@ -641,6 +641,8 @@ The formal metric space defined in this paper enables several capabilities that 
 
 **Differentiation assessment.** Theorem 6 (brand space compression) quantifies the geometric difficulty of differentiation: brands are restricted to $1/256$ of the full sphere, making it harder to find distinct positions than naive dimensional counting suggests. Combined with the observer-dependent pseudo-metric kernel (Proposition 3), this provides a formal framework for assessing when two brands are genuinely distinct versus indistinguishable to relevant observers.
 
+**Intrinsic cohort centrality.** The Riemannian structure of $(\Delta^7, d_{FR})$ has a direct consequence for cohort summary statistics. When observer profiles are clustered into cohorts, the natural center of a cohort is the Karcher mean — the Riemannian center of mass that minimizes the sum of squared geodesic distances to all cohort members (Karcher, 1977). Because Fisher-Rao geodesics bulge toward the simplex center (Proposition 1), the Karcher mean of a cohort will be systematically more entropy-rich — more 'open-minded' — than the arithmetic average of the cohort's weight profiles. Naive dimension-by-dimension averaging underestimates this effect. The Karcher mean provides the intrinsic estimator for empirical cohort analysis on the observer weight simplex.
+
 ### 10.2 Limitations
 
 Several limitations should be noted:
@@ -656,6 +658,8 @@ Several limitations should be noted:
 **Cultural and sector scope.** All five case-study brands are Western consumer (B2C) brands. The mathematical framework -- Aitchison, Fisher-Rao, and warped product metrics -- is general and applies to any brand in any market. However, the illustrative profiles have not been tested cross-culturally, and B2B brands (where experiential and temporal dimensions may dominate while semiotic may be minimal) could produce qualitatively different distance structures. Cross-cultural and B2B applications would strengthen the empirical grounding of the framework.
 
 **Reference implementation.** A Python reference implementation of all metrics defined in this paper is available as supplementary material.
+
+**Cencov uniqueness boundary.** The selection of the Fisher-Rao metric (Section 4) rests on Cencov's uniqueness theorem: Fisher-Rao is the unique metric invariant under sufficient-statistic embeddings. This uniqueness holds when all observers share the same sufficient statistics — that is, when all observers perceive all eight dimensions ($w_i > 0$ for all $i$). For boundary observers who are genuinely blind to certain dimensions ($w_j = 0$), the sufficient-statistics condition does not hold across the full space, and Cencov's theorem no longer forces a unique metric. In this regime, the observer-dependent warping introduced in Definition 3 is not merely an empirical convenience but a theoretical necessity: the information geometry of observers with different dimensional access is genuinely observer-dependent. Empirical characterization of whether observer weight profiles cluster at the boundary $\partial \Delta^7$ would strengthen the information-theoretic foundation of the warped product construction.
 
 ### 10.3 Connection to Subsequent Work
 
@@ -856,6 +860,8 @@ Gardenfors, P. (2000). *Conceptual Spaces: The Geometry of Thought*. MIT Press.
 Johnson, N. L., & Kotz, S. (1972). *Distributions in Statistics: Continuous Multivariate Distributions*. Wiley.
 
 Kapferer, J.-N. (2008). *The New Strategic Brand Management: Creating and Sustaining Brand Equity Long Term* (4th ed.). Kogan Page.
+
+Karcher, H. (1977). Riemannian center of mass and mollifier smoothing. *Communications on Pure and Applied Mathematics*, 30(5), 509–541. DOI: 10.1002/cpa.3160300502
 
 Keller, K. L. (1993). Conceptualizing, measuring, and managing customer-based brand equity. *Journal of Marketing*, 57(1), 1--22.
 
