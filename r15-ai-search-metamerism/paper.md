@@ -360,6 +360,20 @@ Five hypotheses structure the Run 5 analysis:
 
 **Hypothesis 10 (Language Priming):** Prompting national models in their target language reduces DCI relative to English-language prompts, as native-language prompts activate culturally specific training-data representations.
 
+**Hypothesis 12 (Same-Brand Geopolitical Framing).** *The same brand evaluated in different geopolitical city contexts produces significantly different dimensional weight profiles, with Ideological, Cultural, and Narrative dimensions showing the largest divergence.*
+
+The hypothesis is grounded in the country-of-origin (COO) literature (Bilkey & Nes, 1982; Verlegh & Steenkamp, 1999) and the consumer animosity model (Klein, Ettenson & Morris, 1998), which demonstrate that geopolitical context systematically modulates brand perception. H12 extends this to LLMs: if training corpora encode geopolitical framing, then prompting the same brand in different city contexts should activate different dimensional weight patterns.
+
+**Design:** Three brands that operate (or operated) in both countries of a geopolitically salient pair are evaluated in two city contexts:
+
+- Roshen chocolate (Moscow vs. Kyiv) --- conflict context
+- Volvo XC90 (Stockholm vs. Shanghai) --- ownership transfer context
+- Burger King (New York vs. Moscow) --- one of few Western brands that continued operating in Russia after 2022
+
+Each brand is evaluated using a city-grounded shopping assistant prompt that differs by exactly one variable (the city name). A native-language condition (Russian for Moscow/Kyiv, Chinese for Shanghai) tests whether prompt language compounds the geopolitical framing effect (H12 x H10 interaction).
+
+**Metric:** Cosine distance between City A and City B weight profiles for the same brand. H12 is supported if the mean cosine distance across the three brands is significantly greater than the test-retest noise floor established by the prompt sensitivity analysis (ICC = 0.752).
+
 #### 4.5.2 Results: H1 and H2 Confirmed at Scale
 
 The Run 5 results confirm the core findings from Runs 2--4 at substantially greater scale. The mean DCI across all 23 models and all cross-cultural brand pairs was 0.357 (SD = 0.036), significantly above the 0.250 uniform baseline ($p < 0.0001$, Cohen's $d = 2.97$). Every model tested exceeded the baseline DCI individually. The magnitude of the effect --- nearly three standard deviations above baseline --- eliminates any ambiguity about its statistical robustness.
@@ -445,20 +459,22 @@ The Brand Function resolution effect documented in Run 4 was confirmed in Run 5.
 
 #### 4.5.9 Cost and Reproducibility
 
-The full Run 5 dataset (16,800 calls, 13,389 successful) was collected for \$3.08 USD in direct API costs, using approximately 4 million tokens. Paid cloud APIs (Claude, GPT, Gemini, Grok, DeepSeek, Kimi, ALLaM, YandexGPT Pro, GigaChat API) accounted for \$3.08 across 5,140 calls. Free cloud endpoints (Sarvam, Cerebras-hosted Qwen3, Jais) contributed 3,510 calls at zero marginal cost. Local Ollama models (Gemma 4, Qwen3 30B, Swallow 8B, GPT-OSS-Swallow, GigaChat local, YandexGPT local, EXAONE, Llama 3.3) contributed 4,739 calls at zero marginal cost beyond electricity. The total wall-clock time was 21.3 hours (3.3h paid cloud + 5.3h free cloud + 12.7h local inference).
+The full Run 5 dataset (16,800 calls, 13,389 successful) was collected for \$3.08 USD in direct API costs, using approximately 4 million tokens. Paid cloud APIs (Claude, GPT, Gemini, DeepSeek) accounted for \$3.08 across the commercial-tier calls. Free-tier cloud APIs (Grok via xAI, Kimi and ALLaM via Groq, Qwen3-235B and GLM-4.7 via Cerebras, Qwen3-32B and Swallow 70B via SambaNova, Sarvam via Indus API, GigaChat 2 Max via Sber, YandexGPT 5 Pro and GPT-OSS-Swallow via Yandex AI Studio) contributed the remaining cloud calls at zero marginal cost. Local Ollama models (Gemma 4, Qwen3 30B, Swallow 8B, GigaChat local, YandexGPT local, EXAONE, Jais, Llama 3.3) ran on an Apple Mac mini M4 Pro (64 GB unified memory) at zero marginal cost beyond electricity. The total wall-clock time was 21.3 hours.
 
-**Table 8.** Run 5 cost and time breakdown by infrastructure tier (successful calls only). Local inference ran on Apple Mac mini M4 Pro (64 GB unified memory).
+**Table 8.** Run 5 cost and time breakdown by infrastructure tier (successful calls only). Paid cloud = Claude, GPT, Gemini, DeepSeek. Free cloud = Grok (xAI), Groq-hosted (Llama 3.3, Kimi, ALLaM), Cerebras-hosted (Qwen3-235B, GLM-4.7), SambaNova-hosted (Qwen3-32B, Swallow 70B, DeepSeek V3.2), Sarvam (Indus), GigaChat 2 Max (Sber), YandexGPT 5 Pro, GPT-OSS-Swallow (Yandex AI Studio). Local inference ran on Apple Mac mini M4 Pro (64 GB unified memory).
 
-| Category | Calls (OK) | Time | Avg/Call | Cost |
-|----------|-----------|------|----------|------|
-| Paid cloud | 5,140 | 3.3h | 2.3s | \$3.08 |
-| Free cloud | 3,510 | 5.3h | 5.4s | \$0.00 |
-| Local (M4 Pro 64GB) | 4,739 | 12.7h | 9.7s | \$0.00 |
-| **Total** | **13,389** | **21.3h** | | **\$3.08** |
+| Category | Calls (OK) | Cost |
+|----------|-----------|------|
+| Paid cloud (4 models) | ~2,100 | \$3.08 |
+| Free cloud (13 models) | ~6,550 | \$0.00 |
+| Local Ollama (8 models) | ~4,739 | \$0.00 |
+| **Total** | **~13,389** | **\$3.08** |
+
+*Note.* Call counts are approximate; exact per-model breakdowns are in the HuggingFace dataset.
 
 This cost structure has methodological implications. The entire cross-cultural AI perception study --- 23 models, 9 cultural traditions, 7 brand pairs, native-language conditions --- cost less than a single human-respondent focus group. The marginal cost of adding a model, a brand pair, or a cultural condition is under \$0.20. This makes longitudinal tracking of AI spectral profiles operationally feasible at a scale that human-respondent studies cannot match: a quarterly audit of how 20+ models perceive a brand portfolio costs less than \$15 per quarter.
 
-**Data Availability.** The complete dataset --- all 16,800 per-call records (JSONL), per-model cost and token summaries (CSV), statistical test results (JSON), and the reproducible analysis script --- is publicly available at https://huggingface.co/datasets/spectralbranding/r15-ai-search-metamerism (DOI: 10.57967/hf/8284). The experiment source code is at https://github.com/spectralbranding/sbt-papers.
+**Data Availability.** The complete dataset --- all 16,800 per-call records (JSONL), per-model cost and token summaries (CSV), statistical test results (JSON), and the reproducible analysis script --- is publicly available at https://huggingface.co/datasets/spectralbranding/r15-ai-search-metamerism (DOI: 10.57967/hf/8284). The experiment source code, prompts, and model configurations are at https://github.com/spectralbranding/sbt-papers/tree/main/r15-ai-search-metamerism/experiment.
 
 ---
 
@@ -562,6 +578,8 @@ Aaker, J. L. (1997). Dimensions of brand personality. *Journal of Marketing Rese
 
 Acar, O. A., & Schweidel, D. A. (2026). Preparing your brand for agentic AI. *Harvard Business Review*, March-April 2026.
 
+Bilkey, W. J., & Nes, E. (1982). Country-of-origin effects on product evaluations. *Journal of International Business Studies*, 13(1), 89-99.
+
 Brakus, J. J., Schmitt, B. H., & Zarantonello, L. (2009). Brand experience: What is it? How is it measured? Does it affect loyalty? *Journal of Marketing*, 73(3), 52-68. https://doi.org/10.1509/jmkg.73.3.052
 
 Campbell, C., Plangger, K., Sands, S., Kietzmann, J., & Bates, K. (2022). How deepfakes and artificial intelligence could reshape the advertising industry. *Journal of Advertising Research*, 62(3), 241-251.
@@ -600,6 +618,8 @@ Keller, K. L. (1993). Conceptualizing, measuring, and managing customer-based br
 
 Kietzmann, J., Paschen, J., & Treen, E. (2018). Artificial intelligence in advertising: How marketers can leverage artificial intelligence along the consumer journey. *Journal of Advertising Research*, 58(3), 263-267.
 
+Klein, J. G., Ettenson, R., & Morris, M. D. (1998). The animosity model of foreign product purchase: An empirical test in the People's Republic of China. *Journal of Marketing*, 62(1), 89-100.
+
 Liu, M. (2026). The alignment tax: Response homogenization in aligned LLMs and its implications for uncertainty estimation. arXiv:2603.24124. https://arxiv.org/abs/2603.24124
 
 Longoni, C., & Cian, L. (2022). Artificial intelligence in utilitarian vs. hedonic contexts: The "word-of-machine" effect. *Journal of Marketing*, 86(1), 91-108.
@@ -615,6 +635,8 @@ Puntoni, S., Reczek, R. W., Giesler, M., & Botti, S. (2021). Consumers and artif
 Tversky, A. (1972). Elimination by aspects: A theory of choice. *Psychological Review*, 79(4), 281-299.
 
 Van Doren, M., & Holland, C. (2025). "Be My Cheese?": Assessing cultural nuance in multilingual LLM translations. arXiv:2509.21577. https://arxiv.org/abs/2509.21577
+
+Verlegh, P. W. J., & Steenkamp, J.-B. E. M. (1999). A review and meta-analysis of country-of-origin research. *Journal of Economic Psychology*, 20(5), 521-546.
 
 Wyszecki, G., & Stiles, W. S. (1982). *Color science: Concepts and methods, quantitative data and formulae* (2nd ed.). Wiley.
 

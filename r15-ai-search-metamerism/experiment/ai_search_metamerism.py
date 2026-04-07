@@ -187,6 +187,20 @@ class BrandPair:
     description: str                  # brief design rationale
 
 
+@dataclass(frozen=True)
+class FramingPair:
+    """A single brand evaluated in two different geopolitical contexts (H12)."""
+    id: str
+    brand: str
+    product: str
+    city_a: str
+    city_b: str
+    country_a: str
+    country_b: str
+    tension_type: str
+    description: str
+
+
 BRAND_PAIRS: list[BrandPair] = [
     BrandPair(
         id="luxury_heritage",
@@ -493,6 +507,64 @@ CROSSCULTURAL_BRAND_PAIRS: list[BrandPair] = [
 
 
 # ---------------------------------------------------------------------------
+# H12: Geopolitical Framing Pairs (same brand, different country context)
+# ---------------------------------------------------------------------------
+# Tests whether the same brand receives different dimensional weight profiles
+# when evaluated in different geopolitical contexts. Brand and product are
+# identical -- only the city/country context changes.
+
+GEOPOLITICAL_FRAMING_PAIRS: list[FramingPair] = [
+    FramingPair(
+        id="roshen_ru_ua",
+        brand="Roshen",
+        product="chocolate",
+        city_a="Moscow",
+        city_b="Kyiv",
+        country_a="Russia",
+        country_b="Ukraine",
+        tension_type="conflict",
+        description="Roshen chocolate was sold in both Russian and Ukrainian markets. "
+                    "Tests whether LLMs apply different dimensional framing based on "
+                    "the geopolitical context of consumption.",
+    ),
+    FramingPair(
+        id="volvo_eu_cn",
+        brand="Volvo XC90",
+        product="SUV",
+        city_a="Stockholm",
+        city_b="Shanghai",
+        country_a="Sweden",
+        country_b="China",
+        tension_type="ownership_transfer",
+        description="Volvo is a Swedish brand acquired by Chinese Geely in 2010. "
+                    "Same car sold in both markets. Tests whether ownership context "
+                    "shifts Cultural and Narrative dimensions.",
+    ),
+    FramingPair(
+        id="burgerking_us_ru",
+        brand="Burger King",
+        product="fast food",
+        city_a="New York",
+        city_b="Moscow",
+        country_a="USA",
+        country_b="Russia",
+        tension_type="staying_vs_leaving",
+        description="Burger King continued operating in Russia after 2022, unlike "
+                    "McDonald's which exited. Same menu, same branding, but the decision "
+                    "to stay changed the brand's meaning in each market. Tests whether "
+                    "LLMs encode the 'staying vs leaving' framing differently.",
+    ),
+]
+
+# Map framing pair IDs to native languages for each city context
+FRAMING_NATIVE_LANGUAGE: dict[str, dict[str, str]] = {
+    "roshen_ru_ua": {"Moscow": "ru", "Kyiv": "ru"},
+    "volvo_eu_cn": {"Stockholm": "en", "Shanghai": "zh"},
+    "burgerking_us_ru": {"New York": "en", "Moscow": "ru"},
+}
+
+
+# ---------------------------------------------------------------------------
 # Prompts (v2 -- structured dimensional elicitation)
 # ---------------------------------------------------------------------------
 
@@ -547,6 +619,48 @@ DIMENSIONAL_DIFFERENTIATION_PROMPT = (
     "Each score: 0.0 (identical) to 10.0 (completely different).\n"
     "overall_score: 0.0 to 1.0 summary measure."
 )
+
+GEOPOLITICAL_FRAMING_PROMPT = (
+    "You are an AI shopping assistant helping a consumer in {city}.\n"
+    "The consumer is considering purchasing {brand} {product}.\n\n"
+    "Based on your knowledge of {brand} as available to consumers in {city}, allocate exactly "
+    "100 points across the following 8 brand dimensions to reflect which aspects of the brand "
+    "are most relevant to this consumer's purchase decision. The points must sum to exactly 100.\n\n"
+    "{dim_block}\n\n"
+    "Return your answer as JSON with this exact structure:\n"
+    '{{"weights": {{"semiotic": N, "narrative": N, "ideological": N, "experiential": N, '
+    '"social": N, "economic": N, "cultural": N, "temporal": N}}, "reasoning": "your explanation"}}'
+)
+
+# Native-language geopolitical framing prompts (H12 x H10 interaction).
+# JSON keys stay in English for parsing. Only instructional text is translated.
+NATIVE_GEOPOLITICAL_FRAMING: dict[str, str] = {
+    "ru": (
+        "Вы — AI-помощник по покупкам, помогающий потребителю в городе {city}.\n"
+        "Потребитель рассматривает покупку {brand} {product}.\n\n"
+        "Основываясь на вашем знании {brand} в контексте потребителей в {city}, "
+        "распределите ровно 100 баллов по 8 измерениям бренда, чтобы отразить, "
+        "какие аспекты бренда наиболее важны для решения о покупке этого потребителя. "
+        "Сумма баллов должна быть ровно 100.\n\n"
+        "{dim_block}\n\n"
+        "Ответьте ТОЛЬКО валидным JSON:\n"
+        '{{"weights": {{"semiotic": N, "narrative": N, "ideological": N, '
+        '"experiential": N, "social": N, "economic": N, "cultural": N, '
+        '"temporal": N}}, "reasoning": "ваше объяснение"}}'
+    ),
+    "zh": (
+        "你是一位AI购物助手，正在帮助{city}的消费者。\n"
+        "消费者正在考虑购买{brand} {product}。\n\n"
+        "基于你对{city}消费者可获得的{brand}的了解，"
+        "请将100分分配到以下8个品牌维度，以反映该品牌的哪些方面"
+        "对该消费者的购买决策最为重要。分数之和必须恰好为100。\n\n"
+        "{dim_block}\n\n"
+        "仅用有效的JSON回答:\n"
+        '{{"weights": {{"semiotic": N, "narrative": N, "ideological": N, '
+        '"experiential": N, "social": N, "economic": N, "cultural": N, '
+        '"temporal": N}}, "reasoning": "你的解释"}}'
+    ),
+}
 
 DIMENSION_PROBE_PROMPT = (
     "You are a brand researcher scoring brands on specific attributes.\n\n"
@@ -1791,6 +1905,7 @@ def append_session_log(
     tokens_in: Optional[int] = None,
     tokens_out: Optional[int] = None,
     error: Optional[str] = None,
+    prompt_language: str = "en",
 ) -> None:
     """Append a single JSONL entry to the session log (crash-safe: flush after each write)."""
     entry = {
@@ -1810,6 +1925,7 @@ def append_session_log(
         "tokens_in": tokens_in,
         "tokens_out": tokens_out,
         "error": error,
+        "prompt_language": prompt_language,
     }
     p = _ensure_log_dir(log_path)
     with p.open("a", encoding="utf-8") as f:
@@ -1867,6 +1983,7 @@ def call_with_retry(
                     response=result,
                     parsed=parsed,
                     latency_ms=latency_ms,
+                    prompt_language=log_context.get("prompt_language", "en"),
                 )
             return result
 
@@ -1895,6 +2012,7 @@ def call_with_retry(
                         parsed=None,
                         latency_ms=latency_ms,
                         error=str(exc),
+                        prompt_language=log_context.get("prompt_language", "en"),
                     )
     raise last_exc
 
@@ -1963,13 +2081,18 @@ def compute_weight_profiles(
     """
     Compute mean dimensional weight profile per model from weighted_recommendation calls.
 
+    Includes weighted_recommendation_native calls so that native-language DCI is
+    incorporated in the aggregate profile. Does NOT include geopolitical_framing
+    calls (those are analysed separately by compute_framing_weight_profiles).
+
     Returns: {model: {dimension: mean_weight_0_to_100}}
     Weights sum to 100 for each response; this averages across all responses per model.
     """
     weight_sums: dict[str, dict[str, float]] = {}
     weight_counts: dict[str, int] = {}
 
-    rec_calls = [c for c in calls if c.get("prompt_type") == "weighted_recommendation"]
+    WEIGHT_REC_TYPES = {"weighted_recommendation", "weighted_recommendation_native"}
+    rec_calls = [c for c in calls if c.get("prompt_type") in WEIGHT_REC_TYPES]
     for call in rec_calls:
         model = call["model"]
         parsed = call.get("parsed") or {}
@@ -2009,6 +2132,62 @@ def compute_dimensional_collapse_index(
         semiotic = profile.get("semiotic", 0.0)
         dci[model] = (economic + semiotic) / 100.0
     return dci
+
+
+def compute_framing_weight_profiles(
+    calls: list[dict],
+) -> dict[str, dict[str, dict[str, float]]]:
+    """
+    Compute mean dimensional weight profiles per model and city context for H12.
+
+    Covers geopolitical_framing and geopolitical_framing_native calls.
+    The city context is encoded in the brand_pair field (e.g. "Roshen (Moscow)").
+
+    Returns: {pair_id: {brand_pair_label: {model: {dimension: mean_weight}}}}
+
+    Each entry captures the per-city, per-model weight vector so that the caller
+    can compute the framing delta: weight(city_b) - weight(city_a) per dimension.
+    """
+    FRAMING_TYPES = {"geopolitical_framing", "geopolitical_framing_native"}
+    framing_calls = [c for c in calls if c.get("prompt_type") in FRAMING_TYPES]
+
+    # sums[pair_id][brand_pair_label][model] = {dim: sum_of_weights}
+    sums: dict[str, dict[str, dict[str, dict[str, float]]]] = {}
+    counts: dict[str, dict[str, dict[str, int]]] = {}
+
+    for call in framing_calls:
+        pair_id = call.get("pair_id", "")
+        brand_pair = call.get("brand_pair", "")
+        model = call.get("model", "")
+        parsed = call.get("parsed") or {}
+        weights = parse_weights(parsed)
+        if weights is None:
+            continue
+
+        if pair_id not in sums:
+            sums[pair_id] = {}
+            counts[pair_id] = {}
+        if brand_pair not in sums[pair_id]:
+            sums[pair_id][brand_pair] = {}
+            counts[pair_id][brand_pair] = {}
+        if model not in sums[pair_id][brand_pair]:
+            sums[pair_id][brand_pair][model] = {d: 0.0 for d in DIMENSIONS}
+            counts[pair_id][brand_pair][model] = 0
+
+        for dim in DIMENSIONS:
+            sums[pair_id][brand_pair][model][dim] += weights[dim]
+        counts[pair_id][brand_pair][model] += 1
+
+    result: dict[str, dict[str, dict[str, dict[str, float]]]] = {}
+    for pair_id, label_dict in sums.items():
+        result[pair_id] = {}
+        for brand_pair, model_dict in label_dict.items():
+            result[pair_id][brand_pair] = {}
+            for model, dim_sums in model_dict.items():
+                n = counts[pair_id][brand_pair][model]
+                result[pair_id][brand_pair][model] = {d: dim_sums[d] / n for d in DIMENSIONS}
+
+    return result
 
 
 def compute_model_similarity_matrix(
@@ -2631,6 +2810,174 @@ def run_experiment_live(
 
 
 # ---------------------------------------------------------------------------
+# H12: Geopolitical Framing Experiment
+# ---------------------------------------------------------------------------
+
+def run_framing_experiment(
+    framing_pairs: list[FramingPair],
+    models: list[str],
+    runs: int,
+    log_path: Optional[str] = None,
+) -> list[ExperimentCall]:
+    """
+    Run H12 geopolitical framing calls: same brand, two city contexts per pair.
+
+    For each FramingPair, sends GEOPOLITICAL_FRAMING_PROMPT once with city_a
+    and once with city_b. Additionally, for model-city combinations where
+    a native-language prompt exists (NATIVE_GEOPOLITICAL_FRAMING), sends
+    a native-language version (prompt_type="geopolitical_framing_native").
+    This creates a 2x2 design: (city context) x (prompt language).
+    """
+    all_calls: list[ExperimentCall] = []
+    dim_block = _dim_block()
+
+    total = len(framing_pairs) * 2 * runs * len(models)
+    done = 0
+
+    for run_idx in range(1, runs + 1):
+        for fp in framing_pairs:
+            for city, country in [(fp.city_a, fp.country_a), (fp.city_b, fp.country_b)]:
+                brand_label = f"{fp.brand} ({city})"
+                prompt = GEOPOLITICAL_FRAMING_PROMPT.format(
+                    city=city,
+                    brand=fp.brand,
+                    product=fp.product,
+                    dim_block=dim_block,
+                )
+
+                for model_name in models:
+                    caller = API_CALLERS[model_name]
+                    done += 1
+                    print(
+                        f"  [{done}/{total}] run={run_idx} model={model_name} "
+                        f"type=geopolitical_framing pair={fp.id} city={city}"
+                    )
+                    log_ctx = {
+                        "prompt_type": "geopolitical_framing",
+                        "brand_pair": brand_label,
+                        "pair_id": fp.id,
+                        "dimension": None,
+                        "brand": fp.brand,
+                        "run": run_idx,
+                        "prompt_language": "en",
+                    }
+                    t0 = time.monotonic()
+                    try:
+                        raw = call_with_retry(
+                            caller, prompt, model_name, log_path=log_path, log_context=log_ctx
+                        )
+                        latency_ms = int((time.monotonic() - t0) * 1000)
+                        parsed: dict[str, Any] = {}
+                        try:
+                            parsed = parse_llm_json(raw)
+                        except Exception:
+                            pass
+                        all_calls.append(ExperimentCall(
+                            model=model_name,
+                            brand_pair=brand_label,
+                            pair_id=fp.id,
+                            prompt_type="geopolitical_framing",
+                            dimension=None,
+                            brand=fp.brand,
+                            run=run_idx,
+                            response=raw,
+                            parsed=parsed,
+                            timestamp=datetime.datetime.now(datetime.timezone.utc).isoformat(),
+                            latency_ms=latency_ms,
+                        ))
+                    except Exception as exc:
+                        print(f"    [error] geopolitical_framing {model_name} {city}: {exc}")
+                        all_calls.append(ExperimentCall(
+                            model=model_name,
+                            brand_pair=brand_label,
+                            pair_id=fp.id,
+                            prompt_type="geopolitical_framing",
+                            dimension=None,
+                            brand=fp.brand,
+                            run=run_idx,
+                            response="",
+                            parsed={},
+                            timestamp=datetime.datetime.now(datetime.timezone.utc).isoformat(),
+                            latency_ms=0,
+                            error=str(exc),
+                        ))
+
+                    # --- Native-language framing (H12 x H10 interaction) ---
+                    native_langs = FRAMING_NATIVE_LANGUAGE.get(fp.id, {})
+                    native_lang = native_langs.get(city)
+                    model_lang = MODEL_NATIVE_LANGUAGE.get(model_name)
+                    if (native_lang and native_lang != "en"
+                            and native_lang in NATIVE_GEOPOLITICAL_FRAMING
+                            and model_lang and model_lang == native_lang):
+                        native_dim_block = _dim_block_native(native_lang)
+                        native_prompt = NATIVE_GEOPOLITICAL_FRAMING[native_lang].format(
+                            city=city,
+                            brand=fp.brand,
+                            product=fp.product,
+                            dim_block=native_dim_block,
+                        )
+                        native_label = f"{fp.brand} ({city}) [{native_lang}]"
+                        native_log_ctx = {
+                            "prompt_type": "geopolitical_framing_native",
+                            "brand_pair": native_label,
+                            "pair_id": fp.id,
+                            "dimension": None,
+                            "brand": fp.brand,
+                            "run": run_idx,
+                            "prompt_language": native_lang,
+                        }
+                        print(
+                            f"  [{done}/{total}] run={run_idx} model={model_name} "
+                            f"type=framing_native pair={fp.id} city={city} lang={native_lang}"
+                        )
+                        t0n = time.monotonic()
+                        try:
+                            raw_n = call_with_retry(
+                                caller, native_prompt, model_name,
+                                log_path=log_path, log_context=native_log_ctx,
+                            )
+                            latency_n = int((time.monotonic() - t0n) * 1000)
+                            parsed_n: dict[str, Any] = {}
+                            try:
+                                parsed_n = parse_llm_json(raw_n)
+                            except Exception:
+                                pass
+                            all_calls.append(ExperimentCall(
+                                model=model_name,
+                                brand_pair=native_label,
+                                pair_id=fp.id,
+                                prompt_type="geopolitical_framing_native",
+                                dimension=None,
+                                brand=fp.brand,
+                                run=run_idx,
+                                response=raw_n,
+                                parsed=parsed_n,
+                                timestamp=datetime.datetime.now(datetime.timezone.utc).isoformat(),
+                                latency_ms=latency_n,
+                                prompt_language=native_lang,
+                            ))
+                        except Exception as exc:
+                            print(f"    [error] framing_native {model_name} {city}: {exc}")
+                            all_calls.append(ExperimentCall(
+                                model=model_name,
+                                brand_pair=native_label,
+                                pair_id=fp.id,
+                                prompt_type="geopolitical_framing_native",
+                                dimension=None,
+                                brand=fp.brand,
+                                run=run_idx,
+                                response="",
+                                parsed={},
+                                timestamp=datetime.datetime.now(datetime.timezone.utc).isoformat(),
+                                latency_ms=0,
+                                error=str(exc),
+                                prompt_language=native_lang,
+                            ))
+
+    return all_calls
+
+
+# ---------------------------------------------------------------------------
 # Demo Mode (simulated responses)
 # ---------------------------------------------------------------------------
 
@@ -2920,6 +3267,60 @@ def write_summary_tables(results: ExperimentResults, output_path: str) -> None:
             )
         lines.append("")
 
+    # Table 8: H12 Geopolitical Framing — per-city weight deltas
+    framing_profiles = compute_framing_weight_profiles(results.calls)
+    if framing_profiles:
+        lines.append("## Table 8: H12 Geopolitical Framing — Weight Profiles by City Context\n")
+        lines.append(
+            "For each framing pair, the table shows mean dimensional weights in each city context "
+            "and the delta (city_b minus city_a). A non-zero delta indicates the model encodes "
+            "geopolitical context in its dimensional weighting.\n"
+        )
+        for pair_id, label_dict in sorted(framing_profiles.items()):
+            lines.append(f"### Pair: {pair_id}\n")
+            labels = sorted(label_dict.keys())
+            if len(labels) < 2:
+                for label, model_dict in label_dict.items():
+                    lines.append(f"Context: {label}")
+                    for model, dim_weights in model_dict.items():
+                        vals = " | ".join(f"{dim_weights.get(d, 0.0):.1f}" for d in DIMENSIONS)
+                        lines.append(f"  {model}: {vals}")
+                lines.append("")
+                continue
+
+            # Show city_a vs city_b and delta for each model
+            city_a_label = labels[0]
+            city_b_label = labels[1]
+            dim_header = " | ".join(d[:5] for d in DIMENSIONS)
+            lines.append(f"Contexts: `{city_a_label}` vs `{city_b_label}`\n")
+            lines.append(f"| Model | Context | {dim_header} | DCI |")
+            lines.append("|-------|---------|" + "|".join(["------:" for _ in DIMENSIONS]) + "|------:|")
+
+            all_models = sorted(
+                set(list(label_dict[city_a_label].keys()) + list(label_dict[city_b_label].keys()))
+            )
+            for model in all_models:
+                w_a = label_dict[city_a_label].get(model)
+                w_b = label_dict[city_b_label].get(model)
+                if w_a:
+                    vals_a = " | ".join(f"{w_a.get(d, 0.0):.1f}" for d in DIMENSIONS)
+                    dci_a = (w_a.get("economic", 0.0) + w_a.get("semiotic", 0.0)) / 100.0
+                    lines.append(f"| {model} | {city_a_label} | {vals_a} | {dci_a:.3f} |")
+                if w_b:
+                    vals_b = " | ".join(f"{w_b.get(d, 0.0):.1f}" for d in DIMENSIONS)
+                    dci_b = (w_b.get("economic", 0.0) + w_b.get("semiotic", 0.0)) / 100.0
+                    lines.append(f"| {model} | {city_b_label} | {vals_b} | {dci_b:.3f} |")
+                if w_a and w_b:
+                    delta = " | ".join(
+                        f"{w_b.get(d, 0.0) - w_a.get(d, 0.0):+.1f}" for d in DIMENSIONS
+                    )
+                    dci_delta = (
+                        (w_b.get("economic", 0.0) + w_b.get("semiotic", 0.0))
+                        - (w_a.get("economic", 0.0) + w_a.get("semiotic", 0.0))
+                    ) / 100.0
+                    lines.append(f"| {model} | **delta** | {delta} | {dci_delta:+.3f} |")
+            lines.append("")
+
     lines.append("---\n")
     lines.append("## Interpretation\n")
     lines.append(textwrap.dedent("""\
@@ -2939,6 +3340,12 @@ def write_summary_tables(results: ExperimentResults, output_path: str) -> None:
     Ideological, Cultural, Temporal) appear more similar through AI-mediated search
     than their actual spectral distance would predict -- the operational signature
     of spectral metamerism.
+
+    If H12 is supported: The same brand receives systematically different dimensional
+    weight profiles when evaluated in different geopolitical city contexts. Non-zero
+    deltas in Table 8 indicate that LLMs encode geopolitical framing in their
+    dimensional weighting, demonstrating that brand perception in AI systems is
+    context-dependent, not purely brand-intrinsic.
 
     Theoretical implication: Brands investing in soft-dimension differentiation face
     an AI search penalty. Their perception clouds are real but invisible to the AI
@@ -2965,6 +3372,8 @@ def run_experiment(
     local_only: bool = False,
     include_crosscultural: bool = False,
     crosscultural_only: bool = False,
+    include_framing: bool = False,
+    framing_only: bool = False,
     model_filter: Optional[list[str]] = None,
     pair_filter: Optional[list[str]] = None,
 ) -> ExperimentResults:
@@ -3064,7 +3473,17 @@ def run_experiment(
             print(f"Pair filter active: running {len(actual_pairs)} pair(s): "
                   f"{[p.id for p in actual_pairs]}")
         actual_runs = 1 if smoke else runs
-        raw_calls = run_experiment_live(actual_pairs, model_list, actual_runs, log_path=log_path)
+        if framing_only:
+            raw_calls = run_framing_experiment(
+                GEOPOLITICAL_FRAMING_PAIRS, model_list, actual_runs, log_path=log_path
+            )
+        else:
+            raw_calls = run_experiment_live(actual_pairs, model_list, actual_runs, log_path=log_path)
+            if include_framing:
+                framing_calls = run_framing_experiment(
+                    GEOPOLITICAL_FRAMING_PAIRS, model_list, actual_runs, log_path=log_path
+                )
+                raw_calls = raw_calls + framing_calls
 
     print(f"\nCompleted {len(raw_calls)} calls. Running analysis...")
 
@@ -3230,6 +3649,16 @@ def main() -> None:
         help="Run ONLY the cross-cultural brand pairs (skip global and local pairs)",
     )
     parser.add_argument(
+        "--framing",
+        action="store_true",
+        help="Include H12 geopolitical framing pairs (same brand, different country context)",
+    )
+    parser.add_argument(
+        "--framing-only",
+        action="store_true",
+        help="Run ONLY the H12 geopolitical framing pairs",
+    )
+    parser.add_argument(
         "--models",
         type=str,
         default=None,
@@ -3267,6 +3696,8 @@ def main() -> None:
         local_only=args.local_only,
         include_crosscultural=args.crosscultural,
         crosscultural_only=args.crosscultural_only,
+        include_framing=args.framing,
+        framing_only=args.framing_only,
         model_filter=args.models.split(",") if args.models else None,
         pair_filter=args.pairs.split(",") if args.pairs else None,
     )

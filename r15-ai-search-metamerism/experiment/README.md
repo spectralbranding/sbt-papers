@@ -19,6 +19,7 @@ applied to AI-mediated consumer search.
 | Run 3 | 5 local brand pairs, 6 models | ~810 | Complete | H2 SUPPORTED (cosine=0.975), local DCI=0.355 |
 | Run 4 | Brand Function resolution test, 6 models | ~90 | Complete | DCI 0.355→0.284 |
 | Run 5 | 7 cross-cultural pairs, 22 models, 8 cultures | 11,410 (7,999 successful) | **Complete (2026-04-06)** | H1 SUPPORTED (p<0.0001, DCI=35.6), H2 SUPPORTED (cosine=0.976), 69 native-language calls |
+| H12 Framing | 3 framing pairs, same models as Run 5, 2 city contexts each | ~pending | **Pending** | H12: geopolitical framing effect on dimensional weights |
 
 ---
 
@@ -54,6 +55,18 @@ may have structurally different perception clouds when observed directly.
 - **H8 (Thin-Data Floor)**: APU Chinggis (Mongolia) will have the highest DCI across all models
 - **H9 (Capacity-Dependent Collapse)**: Smaller models (7-8B) will exhibit higher DCI than larger models (30B+) from the same culture
 - **H10 (Prompt Language Effect)**: Culture-matched models prompted in their native language will show lower DCI for local brands than when prompted in English
+
+### H12 — Geopolitical Framing (pre-registered 2026-04-07)
+
+- **H12 (Geopolitical Framing Effect)**: The same brand receives systematically different dimensional weight profiles when evaluated in two different geopolitical city contexts. Brand, product, and prompt structure are held constant; only the city context changes. Non-zero deltas on Ideological, Cultural, or Temporal dimensions confirm that LLMs encode geopolitical framing in their brand weights.
+
+Three framing pairs (2x2 design: city context x prompt language):
+
+| Pair ID | Brand | City A | City B | Framing Type |
+|---------|-------|--------|--------|--------------|
+| roshen_ru_ua | Roshen chocolate | Moscow | Kyiv | Active conflict |
+| volvo_eu_cn | Volvo XC90 | Stockholm | Shanghai | Ownership transfer (Geely 2010) |
+| burgerking_us_ru | Burger King | New York | Moscow | Stay-vs-leave decision (2022) |
 
 Full pre-registration: `L0_specification/PRE_REGISTRATION_RUN5.md`
 
@@ -156,6 +169,24 @@ python ai_search_metamerism.py --live --runs 3 \
   --log L3_sessions/session_log.jsonl \
   --output L4_analysis/results.json \
   --summary L4_analysis/summary_tables.md
+```
+
+H12 geopolitical framing only (3 pairs, 2 city contexts each):
+
+```
+python ai_search_metamerism.py --live --runs 3 --framing-only \
+  --log L3_sessions/run_framing.jsonl \
+  --output L4_analysis/results_framing.json \
+  --summary L4_analysis/summary_framing.md
+```
+
+H12 framing combined with cross-cultural Run 5 pairs:
+
+```
+python ai_search_metamerism.py --live --runs 3 --crosscultural-only --framing \
+  --log L3_sessions/run_h12.jsonl \
+  --output L4_analysis/results_h12.json \
+  --summary L4_analysis/summary_h12.md
 ```
 
 Required environment variables (Run 5):
