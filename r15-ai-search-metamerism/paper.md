@@ -53,6 +53,8 @@ The consumer search literature has long recognized that search costs shape compe
 
 Hermann, Puntoni, and Schweidel (2026) come closest. Their analysis of AI agents and brand defensibility argues that AI agents "cannot recommend brands they cannot defend" -- that is, AI recommendations favor brands whose value proposition can be articulated in terms the model can process. This insight is directional but lacks a formal perceptual framework. It does not specify which dimensions are defensible and which are not, nor does it provide a measurement protocol for assessing dimensional vulnerability. Acar and Schweidel (2026) document practitioner evidence for the same problem: their analysis of Pernod Ricard's discovery that LLMs systematically miscategorize premium spirits brands demonstrates that dimensional collapse has immediate commercial consequences, not merely academic ones. Their work underscores the need for a formal measurement model -- precisely what the present paper provides.
 
+Concurrent work on agentic commerce provides complementary evidence. Sabbah and Acar (2026) develop a controlled simulation environment (Agentyx) testing how four AI models respond to e-commerce promotional badges across four product categories, finding pronounced cross-model heterogeneity: only ratings consistently increase selection probabilities across all models, while other promotional cues vary by model and category. Their finding that "AI models cannot be treated as a homogeneous class of decision-makers" converges with the present study's metameric collapse thesis from a different direction: where Sabbah and Acar measure choice-level heterogeneity across promotional cues, the present study measures perceptual-level heterogeneity across brand dimensions. That ratings --- the most verifiable, quantifiable cue --- is the only universally effective signal parallels our finding that Economic and Experiential dimensions dominate AI perception. Allouah, Besbes, Figueroa, Kanoria, and Kumar (2025) provide further evidence from agentic marketplace experiments, documenting model-specific biases including positional preferences and first-proposal bias. Bansal et al. (2025) report systematic first-proposal bias in agentic market settings. Together, these studies establish that AI-mediated commerce produces structurally different decision patterns than human commerce --- but none provides a formal dimensional framework for predicting which brand attributes survive and which collapse.
+
 ### 1.4 Contribution
 
 This paper makes three contributions to advertising research. First, it introduces the concept of the LLM as an observer cohort within Spectral Brand Theory's framework, providing a formal model of AI-mediated brand perception with measurable dimensional weights. Second, it provides empirical measurement of dimensional bias across 23 LLMs spanning nine cultural training traditions (Western, Chinese, Russian, Japanese, Korean, Arabic, Indian, Ukrainian, and Mongolian), with paired cloud-local, within-family scale, and native-language comparisons using a standardized prompt protocol, quantifying the magnitude of dimensional collapse. Third, it offers practitioners a diagnostic framework for identifying which dimensions of their brand are visible to AI search agents and which are metameric -- present in human perception but absent in AI-mediated consumer encounters.
@@ -115,11 +117,13 @@ If H1-H3 are supported, the implications for search advertising theory are subst
 
 ## 3. Method
 
-### 3.1 Research Design
+### 3.1 Research Design and Instrument
 
 This study employs a structured weight elicitation design to measure the implicit spectral profiles of up to 23 LLMs when processing brand comparison queries (six models in Runs 2--4; 23 models in Run 5). The core logic is as follows: if an LLM's recommendations systematically emphasize certain brand dimensions over others, the pattern of emphasis reveals the model's implicit weight vector across SBT's eight dimensions. By prompting multiple models with identical brand comparison queries and requiring them to allocate 100 points across SBT's eight dimensions via structured JSON output, we directly estimate each model's spectral profile and test whether dimensional bias, metameric collapse, and cross-model heterogeneity are present.
 
-An initial pilot (Run 1) used free-text responses with keyword extraction to infer dimensional weights. This produced a null result: keyword-based coding could not reliably distinguish dimensional emphasis from mere dimensional mention. The null result motivated the v2 structured elicitation design used in Runs 2 and 3, in which models directly report their weight allocations as numeric vectors, eliminating the need for human coding entirely.
+An initial pilot (Run 1) used free-text responses with keyword extraction to infer dimensional weights. This produced a null result: keyword-based coding could not reliably distinguish dimensional emphasis from mere dimensional mention. The null result motivated the v2 structured elicitation design used in Runs 2--5, in which models directly report their weight allocations as numeric vectors, eliminating the need for human coding entirely.
+
+**PRISM: The Measurement Instrument.** The experiment is conducted using PRISM (Perception Response Instrument for Structured Measurement), an open-source instrument family for measuring multi-dimensional LLM perception. PRISM defines a reusable five-layer scaffold that is domain-neutral: L0 (specification: pre-registered protocol, hypotheses, and stopping rules), L1 (configuration: model backends, API endpoints, and parameters defined in a declarative YAML file), L2 (prompts: versioned prompt templates with structured JSON output schemas), L3 (sessions: every API call logged as a JSONL record containing the full prompt, raw response, parsed weights, model metadata, and timestamp), and L4 (analysis: statistical scripts operating on the L3 session data). The scaffold is the constant; specific instruments inherit it and add domain-specific prompts and analysis. The present study uses PRISM-B (Brand), which implements the structured weight elicitation prompts described in Section 3.4 for measuring brand perception across SBT's eight dimensions. The same scaffold supports variant instruments: PRISM-M (Metamerism) for behavioral discrimination testing (Zharnikov, 2026x), PRISM-T (Temporal) for longitudinal model-version tracking, and domain extensions beyond brand perception. The L0--L4 structure ensures that each instrument variant is fully reproducible: any researcher can fork the repository, substitute their own constructs for the brand pairs, and run the identical pipeline against any LLM with a chat-completion API. PRISM-B was used across all five runs of the present study --- with different brand sets, model sets, prompt variants, cultural contexts, and hypotheses --- without structural modification to the instrument. The pipeline, data, and all session logs are publicly available at `github.com/spectralbranding/sbt-papers/r15-ai-search-metamerism/experiment/`.
 
 ### 3.2 Brand Pair Selection
 
@@ -205,7 +209,37 @@ where $w_{Economic}$ and $w_{Semiotic}$ are the model's mean allocated weights f
 
 A note on the Experiential dimension: Table 2 shows that Experiential (150% of baseline) is the most inflated single dimension in the global brand results, exceeding both Economic (114%) and Semiotic (118%). The DCI formula intentionally captures the *economic-semiotic* over-weighting pattern as a paired index of verifiability concentration, because these two dimensions are most directly tied to checkable factual attributes (price, specifications, visual identity). Experiential operates as a distinct inflation mechanism: models inflate it because experiential attributes (features, functionality, sensory properties) are richly represented in product reviews, but its inflation reflects functional-descriptive abundance rather than the verifiability asymmetry captured by the Economic-Semiotic pair. The DCI therefore understates total collapse relative to the soft dimensions when Experiential is high, but correctly identifies the verifiability-driven collapse mechanism. Readers should interpret DCI alongside the full dimensional weight table (Tables 2 and 4) to capture the Experiential inflation pattern separately.
 
-### 3.6 Analysis Plan
+### 3.6 Statistical Model
+
+For a given model $m$ and brand pair $p$, the PRISM-B instrument elicits a weight vector $\mathbf{w}_{mp} = [w_{mp,1}, \ldots, w_{mp,8}]$ where $\sum_{i=1}^{8} w_{mp,i} = 100$. Each call $c$ produces a raw allocation $\mathbf{w}_{mpc}$; the model-pair spectral profile is the mean across repetitions:
+
+$$\hat{\mathbf{w}}_{mp} = \frac{1}{C} \sum_{c=1}^{C} \mathbf{w}_{mpc}$$
+
+where $C$ is the number of valid responses (typically 3 repetitions $\times$ 2 prompt types = 6). The model-level spectral profile aggregates across pairs:
+
+$$\hat{\mathbf{w}}_m = \frac{1}{P} \sum_{p=1}^{P} \hat{\mathbf{w}}_{mp}$$
+
+The Dimensional Collapse Index for model $m$ on pair $p$ is:
+
+$$DCI_{mp} = \frac{w_{mp,\text{Econ}} + w_{mp,\text{Sem}}}{100}$$
+
+with standard error estimated from the repetition-level variance:
+
+$$SE(DCI_{mp}) = \frac{1}{100} \sqrt{s^2_{mp,\text{Econ}} + s^2_{mp,\text{Sem}} + 2 \cdot \text{cov}(w_{mp,\text{Econ}}, w_{mp,\text{Sem}})}$$
+
+where $s^2_{mp,i}$ is the sample variance of dimension $i$'s allocation across repetitions. This formalization permits confidence intervals on all reported DCI values and enables formal comparison of DCI across model clusters, brand pair types, and cultural groups using standard parametric tests.
+
+Cross-model convergence is quantified by the mean pairwise cosine similarity of model-level spectral profiles:
+
+$$\bar{\rho} = \frac{2}{M(M-1)} \sum_{m < m'} \frac{\hat{\mathbf{w}}_m \cdot \hat{\mathbf{w}}_{m'}}{\|\hat{\mathbf{w}}_m\| \|\hat{\mathbf{w}}_{m'}\|}$$
+
+where $M$ is the number of models. Values approaching 1.0 indicate structural convergence in dimensional ordering across architectures.
+
+### 3.7 Study Design: Confirmatory and Exploratory Components
+
+Runs 2--4 constitute the **confirmatory** component of the study. The protocol, hypotheses (H1--H4), brand pairs, model selection, and analysis plan were pre-registered prior to data collection (L0 specification file in the PRISM-B repository). Run 5 (cross-cultural extension to 23 models from nine cultural traditions) is **exploratory**: it was designed after observing Runs 2--4 results, with new hypotheses (H5--H12) formulated to test mechanisms suggested by the confirmatory findings. The exploratory status of Run 5 does not diminish its evidential value --- the effect sizes are large and consistent --- but readers should interpret its hypothesis tests as pattern-confirming rather than pattern-discovering. Future pre-registered replications with the same PRISM-B instrument can elevate these findings to confirmatory status.
+
+### 3.8 Analysis Plan
 
 Five primary analyses address the hypotheses:
 
@@ -520,7 +554,13 @@ The conditional metamerism documented here connects to a broader diagnostic fram
 
 The cross-model convergence documented in this study (cosine similarity 0.977 across 23 models from nine cultural traditions) is consistent with the shrunken variance phenomenon established in the Bayesian estimation literature. LLM training on aggregated text corpora functions as an implicit shrinkage estimator, analogous to the James-Stein estimator (James & Stein, 1961; Efron & Morris, 1975), pulling dimensional weight estimates toward the population mean and compressing the variance that distinguishes brands on perception-dependent dimensions. The Economic and Semiotic dimensions resist this shrinkage because they are explicitly quantified in training data (prices, visual descriptions), while Narrative, Cultural, and Temporal dimensions --- which require direct observer experience to resolve --- are compressed toward the aggregate. Brand Function specification counteracts this shrinkage by providing explicit dimensional information that the training corpus lacks, reducing the Dimensional Collapse Index from 0.353 to 0.284 (Run 4). This framing connects LLM-mediated brand perception to established results in high-dimensional estimation theory, where shrinkage toward a common mean is both statistically efficient and informationally lossy.
 
-### 5.6 Implications for Search Advertising
+### 5.6 Convergence with Agentic Commerce Evidence
+
+The dimensional collapse documented here converges with independent findings from the agentic commerce literature. Sabbah and Acar (2026) find that among eight common e-commerce promotional cues tested across four AI models, only ratings --- the most quantifiable, verifiable signal --- consistently increases selection probability across all models and product categories. All other cues (assurance, scarcity, timers, vouchers, bundles, strike-through pricing) show heterogeneous and often model-specific effects. This maps directly onto the present study's dimensional structure: ratings operate in the Economic dimension (quantifiable quality proxy), and their universal effectiveness is the choice-level analog of the Economic Default documented here. The promotional cues that fail to transfer --- scarcity (Social/Temporal), assurance (Narrative), bundling (Experiential packaging) --- are precisely those that depend on perception-dependent dimensions that collapse in AI mediation.
+
+Sabbah and Acar also report pronounced cross-category heterogeneity within the same model: GPT-5 responds positively to bundling for fitness watches but negatively for phones. This within-model instability parallels our per-pair DCI variation (Table 3): the same model collapses more on some brand pairs than others, depending on the availability of dimensional information in the training data. Together, these studies suggest that AI-mediated commerce is neither uniformly biased nor randomly noisy --- it is *dimensionally structured*, with predictable patterns of sensitivity and collapse that depend on the verifiability of the signal, the richness of training data, and the model's architectural characteristics.
+
+### 5.7 Implications for Search Advertising
 
 The most direct implication is that search advertising strategy must account for the dimensional structure of AI mediation. Four specific implications follow from the empirical results.
 
@@ -532,13 +572,13 @@ The most direct implication is that search advertising strategy must account for
 
 **Measurement must become dual-track.** Brand health metrics based on human respondent surveys will increasingly diverge from AI-mediated brand effectiveness. A brand can score high on human-perceived differentiation while being metameric in AI search. Practitioners need dual-track measurement: human spectral profiles from survey-based assessment and AI spectral profiles from the prompt-based protocol described in this paper.
 
-### 5.7 Implications for Advertising Creative Strategy
+### 5.8 Implications for Advertising Creative Strategy
 
 Investment in building narrative, cultural, and temporal brand dimensions has traditionally created durable competitive advantage because these dimensions are difficult for competitors to replicate. AI mediation does not make that investment less valuable to human observers --- it makes it invisible to the AI intermediary. The strategic response is not to abandon perception-dependent dimensions but to make them machine-defensible: encoded in structured formats that survive AI mediation.
 
 This reframes the brand specification challenge. The practical output is a brand-specific AI vulnerability audit: for each of a brand's eight dimensions, what proportion of its value is machine-readable versus perception-dependent? The present study provides the measurement protocol for such an audit, and the Patagonia exception demonstrates that the distinction is actionable: brands that invest in structured, verifiable expression of their soft dimensions can reduce their collapse exposure.
 
-### 5.8 Connection to Broader AI and Search Trends
+### 5.9 Connection to Broader AI and Search Trends
 
 The dimensional collapse documented here is not unique to brands. Personality perception by AI shows analogous flattening (Hashimoto & Oshio, 2025). Cultural nuance in machine translation shows analogous loss (Van Doren & Holland, 2025). The SBT framework provides a general instrument for measuring this collapse across domains: the methodological approach --- measuring the implicit spectral profile of an AI system by analyzing which dimensions it preserves in its outputs --- is domain-general.
 
@@ -579,6 +619,10 @@ Aaker, D. A. (1996). *Building strong brands*. Free Press.
 Aaker, J. L. (1997). Dimensions of brand personality. *Journal of Marketing Research*, 34(3), 347-356.
 
 Acar, O. A., & Schweidel, D. A. (2026). Preparing your brand for agentic AI. *Harvard Business Review*, March-April 2026.
+
+Allouah, A., Besbes, O., Figueroa, J. D., Kanoria, Y., & Kumar, A. (2025). What is your AI agent buying? Evaluation, biases, model dependence, and emerging implications for agentic e-commerce. arXiv:2508.02630v3.
+
+Bansal, G., Hua, W., Huang, Z., Fourney, A., Swearngin, A., Epperson, W., Payne, T., Hofman, J. M., Lucier, B., Singh, C., Mobius, M., Nambi, A., Yadav, A., Gao, K., Rothschild, D. M., Slivkins, A., Goldstein, D. G., Mozannar, H., Immorlica, N., Murad, M., Vogel, M., Kambhampati, S., Horvitz, E., & Amershi, S. (2025). Magentic marketplace: An open-source environment for studying agentic markets. arXiv:2510.25779.
 
 Bilkey, W. J., & Nes, E. (1982). Country-of-origin effects on product evaluations. *Journal of International Business Studies*, 13(1), 89-99.
 
@@ -633,6 +677,8 @@ Lynch, J. G., & Ariely, D. (2000). Wine online: Search costs affect competition 
 Medesani, M., & Macdonald, J. (2026). Geometric foundations of invariant corridors and governance. Working Paper. https://doi.org/10.5281/zenodo.18822552
 
 Puntoni, S., Reczek, R. W., Giesler, M., & Botti, S. (2021). Consumers and artificial intelligence: An experiential perspective. *Journal of Marketing*, 85(1), 131-151.
+
+Sabbah, J., & Acar, O. A. (2026). Marketing to machines: How AI models respond to promotional cues. Working Paper. SSRN 6406639.
 
 Tversky, A. (1972). Elimination by aspects: A theory of choice. *Psychological Review*, 79(4), 281-299.
 
