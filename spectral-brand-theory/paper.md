@@ -302,6 +302,17 @@ The framework as presented in Sections 1–3 operates at the level of structured
 
 **The Gravitational Analogy.** SBT's perception space has a structural analog in general relativity. In GR, gravity is curvature of 4-dimensional space-time, described by a symmetric metric tensor with 10 independent components. In SBT's 8-dimensional perception space, the analogous object is the Fisher-Rao information metric: a symmetric 8x8 matrix with 36 independent components that determine how actual perceptual distances (measured by observer cohort agreement) differ from naive coordinate distances (measured by dimensional score differences). Brand emission intensity curves perception space and observer cohorts follow perceptual geodesics. A critical difference: in GR, all bodies follow the same geodesic regardless of mass (the equivalence principle). In SBT, different cohorts follow different geodesics because their spectral weight profiles determine which dimensions they are sensitive to — the geometry is observer-relative, not universal. The use of differential geometry to model perceptual space has a half-century pedigree in psychophysics: Resnikoff (1974) models perceived color space as a Riemannian manifold, and Koenderink and van Doorn (2012) formalize pictorial space as a fiber bundle where observer-dependent depth representations project from a shared visual field — the same mathematical architecture that SBT applies to brand perception.
 
+**The Correspondence Principle.** The relationship between SBT and classical brand frameworks is analogous to the relationship between general relativity and Newtonian mechanics: the simpler framework is the limiting case of the richer one. When observer diversity is low — when all cohorts share similar spectral weight profiles — the fiber bundle collapses to a trivial bundle, perception space is approximately flat, and classical brand measurement frameworks (Keller, 1993; Aaker, 1996) are adequate. As observer diversity increases structurally — through globalization, AI-mediated perception, and digital fragmentation — the curvature becomes non-negligible and SBT's geometric tools become necessary. Table 6 summarizes this regime hierarchy.
+
+**Table 6.** Correspondence between physical regimes and SBT measurement frameworks
+
+| Physical regime | GR analog | SBT analog | Measurement framework |
+|---|---|---|---|
+| Weak field, uniform observers | Newtonian gravity | Classical brand measurement | Single observer, no triangulation needed |
+| Curved space, uniform observers | GR with test particles | SBT with homogeneous cohorts | Fisher-Rao metric (Zharnikov, 2026d) describes geometry |
+| Curved space, diverse observers | Electromagnetism in curved space | SBT with heterogeneous cohorts | Brand Triangulation (Zharnikov, 2026y) needed |
+| Extreme curvature, dark signals | Black holes, dark matter | Structural absence, brand singularities | Full fiber bundle + dark signal detection |
+
 ---
 
 ## 4. Findings
@@ -322,7 +333,7 @@ We formalize this as **structural absence**: the deliberate withholding of signa
 
 SBT introduces a three-type emission taxonomy:
 
-**Table 6.** Three emission types in the spectral model.
+**Table 7.** Three emission types in the spectral model.
 
 | Emission Type | Mechanism | Signal Present? | Example |
 |:-------------|:-------------------------------|:----------------|:-------------------------------|
@@ -344,7 +355,7 @@ Structural absence amplifies the perceived weight of present signals through con
 
 Traditional brand analysis treats coherence as a single variable from low to high: how consistently is the brand perceived across audiences? Our five-brand exploratory analysis suggests that coherence is not a single variable but a structural property that comes in five qualitatively distinct types, each with different resilience profiles.
 
-**Table 7.** Five-type coherence taxonomy with resilience profiles.
+**Table 8.** Five-type coherence taxonomy with resilience profiles.
 
 | Coherence Type | Grade | Pattern | Resilience Profile | Brand |
 |:--------------|:------|:--------------------------------------|:--------------------------------------|:------|
@@ -405,7 +416,7 @@ This asymmetry has a critical resilience implication. In our disruption simulati
 
 The strategic implication is stark: resources spent attempting to convert structurally locked negative cohorts are wasted. The Boycotter's experiential gate is effectively closed (0.03 weight). No test drive campaign will reach them because they are not evaluating the product — they are evaluating the ideology. Brands with locked negative cohorts must accept the structural constraint and invest in addressable cohorts instead.
 
-**Table 8.** Asymmetric conviction resilience (Tesla case): evidence-rich Loyalist vs. evidence-free Boycotter.
+**Table 9.** Asymmetric conviction resilience (Tesla case): evidence-rich Loyalist vs. evidence-free Boycotter.
 
 | | **Tech Loyalist** | **Progressive Boycotter** |
 |:--|:--|:--|
@@ -422,7 +433,7 @@ The five-brand exploratory analysis produces a finding that inverts conventional
 
 \newpage
 
-**Table 9.** Five-brand scorecard: brand power versus spectral health.
+**Table 10.** Five-brand scorecard: brand power versus spectral health.
 
 | Brand | Power | Health | D/A | Gap |
 |:----------|:------------------------------|:----------|:------|:------------------------|
@@ -554,7 +565,7 @@ The framework generates ten falsifiable hypotheses. H1–H5 derive from the perc
 
 **H1 (D/A Goldilocks zone).** Brands with 55–65% designed signals will show higher brand equity and disruption resilience than brands outside this range, controlling for category, age, and market position. *Derivation:* the five-brand D/A comparison (Section 4.4, Figure 5) shows the highest-health brands clustered in this range. *Test:* cross-sectional study of 50+ brands with empirically measured D/A ratios and brand equity scores (e.g., BAV, Interbrand, or bespoke spectral health metrics).
 
-**H2 (Asymmetric conviction resilience).** Evidence-free negative brand convictions will show higher resistance to counter-evidence than evidence-rich positive convictions. *Derivation:* the Tesla Boycotter/Loyalist asymmetry (Section 4.3, Table 8). *Test:* controlled experiment — expose participants with no product experience and participants with extensive product experience to counter-attitudinal brand information; measure pre/post conviction change magnitude.
+**H2 (Asymmetric conviction resilience).** Evidence-free negative brand convictions will show higher resistance to counter-evidence than evidence-rich positive convictions. *Derivation:* the Tesla Boycotter/Loyalist asymmetry (Section 4.3, Table 9). *Test:* controlled experiment — expose participants with no product experience and participants with extensive product experience to counter-attitudinal brand information; measure pre/post conviction change magnitude.
 
 **H3 (Coherence type predicts disruption response).** Ecosystem-coherent brands will exhibit selective disruption absorption (periphery sacrificed, core strengthened); incoherent brands will exhibit disruption amplification (existing divisions widen). *Derivation:* the five-type coherence taxonomy (Section 4.2, Figure 4). *Test:* longitudinal cohort tracking before and after documented brand crisis events; compare per-cohort resilience trajectories across coherence types.
 

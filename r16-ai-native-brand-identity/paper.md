@@ -357,6 +357,8 @@ A natural extension of the present work is empirical investigation of how AI sea
 
 This paper is conceptual. It develops a theoretical framework and six propositions but does not empirically test them. Several limitations warrant acknowledgment.
 
+The framework's conceptual architecture has a precise geometric formalization. The distinction between human and AI perception of brands maps onto a fiber bundle structure from mathematical physics: the shared brand emission space (eight SBT dimensions) serves as the base manifold, while each observer type --- human cohorts, text-based AI agents, multimodal AI agents --- constitutes a distinct fiber, encoding how that observer type projects the brand's emission into perception. Sarti, Citti, and Petitot (2008) establish the precedent for this architecture in neuroscience, modeling primary visual cortex as a principal fiber bundle; Koenderink and van Doorn (2012) apply gauge theory to pictorial space where observer-dependent depth representations constitute fibers over a shared visual field. In the Brand Function framework, the specification layer is the connection form that relates fibers: it provides the information needed to transport a brand measurement from one observer type's frame to another's. Without this connection --- without the Brand Function --- AI and human perceptions of the same brand exist in disconnected fibers, and cross-observer comparison is undefined.
+
 The primary threat to validity is the absence of primary empirical data. All six propositions are currently untested. Behavioral metamerism is theorized but not yet measured in actual AI purchasing environments. The Brand Function is specified as a formal construct but has not yet been implemented at scale in any deployed commerce system. The critical empirical test would be a controlled experiment comparing AI agent decision quality --- in terms of brand discrimination, behavioral prediction, and trust calibration --- when Brand Function data is available versus when agents rely solely on statistical observation of brand signals. Until such evidence exists, the propositions remain theoretical claims.
 
 First, the necessity conditions (Section 7) are being satisfied progressively, not simultaneously in all markets. Categories with high product differentiation, limited AI mediation, and strong human brand loyalty may not require the Brand Function for years or decades. The framework predicts *where* the Brand Function becomes necessary first (commodity categories with high GEO convergence and deployed agentic commerce protocols) but does not empirically validate this prediction.
@@ -455,6 +457,8 @@ Kannan, P. K., & Li, H. A. (2017). Digital marketing: A framework, review and re
 
 Keller, K. L. (1993). Conceptualizing, measuring, and managing customer-based brand equity. *Journal of Marketing*, *57*(1), 1--22.
 
+Koenderink, J. J., & van Doorn, A. J. (2012). Gauge fields in pictorial space. *SIAM Journal on Imaging Sciences*, *5*(4), 1213--1233. DOI: 10.1137/120861151
+
 Koopmans, T. C. (1949). Identification problems in economic model construction. *Econometrica*, *17*(2), 125--144.
 
 Kovalenko, Y., Nikitin, A., & Kuzina, Y. (2026). Value creation in the algorithmic age: Algorithmic brand equity and the future of brand management. *American Impact Review*, e2026018. https://americanimpactreview.com/article/e2026018
@@ -478,6 +482,8 @@ Richardson, G. (2008). *Brand names before the Industrial Revolution* (NBER Work
 Ramesh, A., & Chawla, V. (2022). Chatbots in marketing: A literature review using morphological and co-occurrence analyses. *Journal of Interactive Marketing*, *57*(3), 472--496. https://doi.org/10.1177/10949968221095549
 
 Sabater, J., & Sierra, C. (2005). Review on computational trust and reputation models. *Artificial Intelligence Review*, *24*(1), 33--60. https://doi.org/10.1007/s10462-004-0041-5
+
+Sarti, A., Citti, G., & Petitot, J. (2008). The symplectic structure of the primary visual cortex. *Biological Cybernetics*, *98*(1), 33--48. DOI: 10.1007/s00422-007-0194-9
 
 Sáiz, P. (2018). Trademarks in branding: Legal issues and commercial practices. *Business History*, *60*(8), 1105--1113. https://doi.org/10.1080/00076791.2018.1497765
 
