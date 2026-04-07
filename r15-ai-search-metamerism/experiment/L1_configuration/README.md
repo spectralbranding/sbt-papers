@@ -7,14 +7,13 @@ participated in each run, their API endpoints, tier classification, and cultural
 
 | File | Contents |
 |------|----------|
-| `models.yaml` | Full model registry: 22 configured models across 7 cultural clusters |
+| `models.yaml` | Full model registry: 21 active models across 7 cultural clusters |
 
 ## Model Summary
 
-- **Total configured**: 22 models
-- **Active in Run 5 analysis**: 21 models (T-Pro 2.0 excluded — 0 successful responses)
+- **Total active**: 21 models
 - **Runs 2-4**: 6 models (Claude Sonnet 4.6, GPT-4o-mini, Gemini 2.5 Flash, DeepSeek V3, Qwen3 30B, Gemma 4 27B)
-- **Run 5 additions**: 16 models spanning Chinese, Russian, Japanese, Korean, Arabic, and Indian clusters
+- **Run 5 additions**: 15 models spanning Chinese, Russian, Japanese, Korean, Arabic, and Indian clusters
 
 ## Tier Classification
 
@@ -23,8 +22,8 @@ participated in each run, their API endpoints, tier classification, and cultural
 
 ## Excluded Models
 
-- **T-Pro 2.0** (`tpro_yandex`): Configured for Run 5 but produced 0 successful responses.
-  Excluded from all analysis tables. The entry is retained in models.yaml for reproducibility.
+- **T-Pro 2.0** (`tpro_yandex`): Requires dedicated paid instance ($6.20/hr).
+  Not available as free-tier API endpoint. Excluded from study. Config retained for reference.
 
 ## Usage
 

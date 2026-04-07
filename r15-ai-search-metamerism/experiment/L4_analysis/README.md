@@ -31,7 +31,7 @@ See `../L0_specification/PRE_REGISTRATION_RUN5.md` Section 3 for the pre-registe
 
 ## Model Exclusion Notes
 
-- **T-Pro 2.0** (tpro_yandex, Yandex AI Studio): 0 successful responses. Excluded from all Run 5 analysis. Parse failure rate exceeded 20% stopping rule.
+- **T-Pro 2.0** (tpro_yandex, Yandex AI Studio): Requires dedicated paid instance ($6.20/hr). Not available in free-tier. Excluded from study.
 - **GLM-4.7** (cerebras_glm): DCI listed as N/A in run5_summary.md — insufficient successful responses.
 - **Falcon-H1-Arabic 7B** (falcon_arabic_local): DCI listed as N/A — insufficient successful responses.
 - **Qwen3.5 27B** (qwen35_local): DCI listed as N/A — insufficient successful responses.

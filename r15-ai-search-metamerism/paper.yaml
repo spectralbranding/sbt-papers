@@ -110,8 +110,8 @@ methodology:
     Total: 16,270 API calls across all runs.
   sample:
     size: 16270  # Run 2: 3,240 + Run 3: 1,620 + Run 4: 90 + Run 5: 11,410
-    description: "Runs 2-4: 4,860 calls (6 models, 15 pairs). Run 5: 11,410 calls (22 models, 7 cross-cultural pairs, 8 cultures, 69 native-language calls)."
-    models: 22  # Run 5: 22 models; T-Pro 2.0 included in config but 0 successful responses
+    description: "Runs 2-4: 4,860 calls (6 models, 15 pairs). Run 5: 11,410 calls (21 active models, 7 cross-cultural pairs, 8 cultures, 69 native-language calls)."
+    models: 21  # Run 5: 21 active models in analysis; T-Pro 2.0 excluded due to infrastructure cost
     brand_pairs: 22  # 10 global + 5 local + 7 cross-cultural
   measures:
     - variable: "dimensional_weight_allocation"

@@ -12,7 +12,7 @@ provenance:
       description: "Full empirical results. v2 structured weight allocation. Run 2 (3,240 calls, 10 global pairs), Run 3 (1,620 calls, 5 local pairs), Run 4 (90 calls, Brand Function resolution). 4 hypotheses tested, 2 supported. Conditional metamerism confirmed. 28 refs, 17.9% self-citation. Published on Zenodo: 10.5281/zenodo.19422427."
     - version: "2.0"
       date: "2026-04-06"
-      description: "Incorporates Run 5 cross-cultural results. 22 models, 8 cultures, 7 cross-cultural brand pairs. 11,410 calls (7,999 successful, 70.1%). 69 native-language calls (H10). H1 SUPPORTED (p<0.0001, DCI=35.6 vs 25.0 baseline). H2 SUPPORTED (cosine=0.976). Cultural dimension most collapsed (-4.9 points). H5-H10 pre-registered 2026-04-05. T-Pro 2.0 excluded (0 successful responses). Zenodo upload pending."
+      description: "Incorporates Run 5 cross-cultural results. 21 active models, 8 cultures, 7 cross-cultural brand pairs. 11,410 calls (7,999 successful, 70.1%). 69 native-language calls (H10). H1 SUPPORTED (p<0.0001, DCI=35.6 vs 25.0 baseline). H2 SUPPORTED (cosine=0.976). Cultural dimension most collapsed (-4.9 points). H5-H10 pre-registered 2026-04-05. T-Pro 2.0 excluded (requires dedicated paid instance). Zenodo upload pending."
 
   forks: []
 

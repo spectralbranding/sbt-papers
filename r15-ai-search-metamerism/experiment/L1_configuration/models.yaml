@@ -213,17 +213,17 @@ models:
     paid_api: false
     notes: "Free-tier Yandex AI Studio. H9 size comparison counterpart to yandexgpt_local (8B)."
 
-  - name: tpro_yandex
-    label: "T-Pro 2.0 FP8 (Yandex AI Studio)"
-    model_id: "t-pro-it-2.0-fp8"
-    tier: 1
-    culture: Russian
-    size_class: "32B"
-    backend: yandex
-    api_key_env: YANDEX_AI_API_KEY
-    open_weight: false
-    paid_api: false
-    notes: "Free-tier Yandex AI Studio. T-Bank model (32B). Russian-primary. Excluded from Run 5 analysis (0 successful responses)."
+  # T-Pro 2.0 EXCLUDED: Requires dedicated paid instance ($6.20/hr). Not available in free-tier.
+  # Previous config retained for reference:
+  # - name: tpro_yandex
+  #   label: "T-Pro 2.0 FP8 (Yandex AI Studio)"
+  #   model_id: "t-pro-it-2.0-fp8"
+  #   tier: 1
+  #   culture: Russian
+  #   size_class: "32B"
+  #   backend: yandex
+  #   paid_api: true
+  #   notes: "Requires dedicated paid instance ($6.20/hr). Excluded from study."
 
   - name: sambanova_swallow
     label: "Swallow 70B (SambaNova)"
@@ -333,10 +333,9 @@ models:
 # ---------------------------------------------------------------------------
 # Summary
 # ---------------------------------------------------------------------------
-# Total models in config: 22 (6 original + 10 free-tier cloud + 6 national local + tpro_yandex)
-# Active in Run 5 analysis: 22 configured; T-Pro 2.0 (tpro_yandex) had 0 successful responses
-#   and is excluded from all analysis tables.
-# Tier 1 (30B+): 17 models
+# Total models in active analysis: 21 (6 original + 10 free-tier cloud + 5 national local)
+# Excluded: T-Pro 2.0 (requires dedicated paid instance at $6.20/hr)
+# Tier 1 (30B+): 16 models
 # Tier 2 (7-30B): 5 models (gpt, yandexgpt_local, gigachat_local, swallow_local, groq_allam)
 #
 # API cost classification (paid_api: true):
@@ -344,14 +343,14 @@ models:
 # Free-tier cloud (paid_api: false):
 #   Grok (xAI), Llama 3.3 / Kimi K2 / ALLaM-2-7B (Groq), Qwen3-235B / GLM-4.7 (Cerebras),
 #   Qwen3-32B / DeepSeek V3.2 / Swallow 70B (SambaNova), Sarvam-105B (Indus API),
-#   GigaChat 2 Max (Sber API), YandexGPT 5 Pro / T-Pro 2.0 (Yandex AI Studio)
+#   GigaChat 2 Max (Sber API), YandexGPT 5 Pro (Yandex AI Studio)
 # Local Ollama (no API cost): all ollama backend models
 #
 # Cultures represented:
 #   Western:  claude, gpt, gemini, gemma4_local, groq_llama33, grok
 #   Chinese:  deepseek, qwen3_local, cerebras_qwen3, cerebras_glm, sambanova_qwen3,
 #             sambanova_deepseek, groq_kimi, qwen35_local
-#   Russian:  gigachat_api, yandexgpt_pro, tpro_yandex (excluded), yandexgpt_local, gigachat_local
+#   Russian:  gigachat_api, yandexgpt_pro, yandexgpt_local, gigachat_local
 #   Japanese: sambanova_swallow, swallow_local
 #   Korean:   exaone_local
 #   Arabic:   jais_local, falcon_arabic_local, groq_allam

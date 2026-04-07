@@ -86,15 +86,15 @@ Full pre-registration: `L0_specification/PRE_REGISTRATION_RUN5.md`
 | korea_dairy | Binggrae | Danone | Dairy/beverages | Korean |
 | india_dairy | Amul | Danone | Dairy products | Indian |
 
-### Models (22 active in Run 5 — see `L1_configuration/models.yaml`)
+### Models (21 active in Run 5 — see `L1_configuration/models.yaml`)
 
-**Tier 1 (30B+, primary analysis)**: 17 models across 7 cultures
-**Tier 2 (7-30B, H9 capacity comparison)**: 4 models
+**Tier 1 (30B+, primary analysis)**: 16 models across 7 cultures
+**Tier 2 (7-30B, H9 capacity comparison)**: 5 models
 
 Clusters:
 - Western: Claude Sonnet 4.6, GPT-4o-mini, Gemini 2.5 Flash, Llama 3.3 70B, Grok-4.1, Gemma 4 27B
 - Chinese: DeepSeek V3, Qwen3 30B, Qwen3-235B (Cerebras), GLM-4.7, Qwen3-32B (SambaNova), DeepSeek V3.2 (SambaNova), Kimi K2, Qwen3.5 27B
-- Russian: GigaChat 2 Max, YandexGPT 5 Pro, YandexGPT 5 Lite 8B, GigaChat 3.1 Lightning (T-Pro 2.0 produced 0 successful responses — excluded from analysis)
+- Russian: GigaChat 2 Max, YandexGPT 5 Pro, YandexGPT 5 Lite 8B, GigaChat 3.1 Lightning
 - Japanese: Swallow 70B (SambaNova), Swallow 8B (local)
 - Korean: EXAONE 4.0 32B
 - Arabic: Jais 70B, Falcon-H1-Arabic 7B, ALLaM-2-7B
@@ -210,7 +210,7 @@ export GROQ_API_KEY=...             # Llama 3.3 70B, Kimi K2, ALLaM-2-7B
 export GROK_API_KEY=...             # Grok-4.1 (xAI)
 export SARVAM_API_KEY=...           # Sarvam-105B (Indian)
 export GIGACHAT_API_KEY=...         # GigaChat 2 Max (Russian)
-export YANDEX_AI_API_KEY=...        # YandexGPT 5 Pro (Russian); T-Pro 2.0 uses same key but had 0 successful responses in Run 5
+export YANDEX_AI_API_KEY=...        # YandexGPT 5 Pro (Russian)
 
 # Local Ollama (start with `ollama serve`, then pull models)
 # Required models: qwen3:30b, gemma4:latest, qwen3.5:27b
