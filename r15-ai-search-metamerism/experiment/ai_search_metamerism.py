@@ -686,6 +686,84 @@ NATIVE_GEOPOLITICAL_FRAMING: dict[str, str] = {
         '"experiential": N, "social": N, "economic": N, "cultural": N, '
         '"temporal": N}}, "reasoning": "din forklaring"}}'
     ),
+    "el": (
+        "Είστε ένας AI βοηθός αγορών που βοηθά έναν καταναλωτή στην πόλη {city}.\n"
+        "Ο καταναλωτής εξετάζει την αγορά {brand} {product}.\n\n"
+        "Βασισμένοι στις γνώσεις σας για {brand} στο πλαίσιο των καταναλωτών στην πόλη {city}, "
+        "κατανείμετε ακριβώς 100 βαθμούς στις 8 διαστάσεις μάρκας, για να αντικατοπτρίσετε "
+        "ποιες πτυχές της μάρκας είναι πιο σημαντικές για την απόφαση αγοράς αυτού του καταναλωτή. "
+        "Το άθροισμα των βαθμών πρέπει να είναι ακριβώς 100.\n\n"
+        "{dim_block}\n\n"
+        "Απαντήστε ΜΟΝΟ με έγκυρο JSON:\n"
+        '{{"weights": {{"semiotic": N, "narrative": N, "ideological": N, '
+        '"experiential": N, "social": N, "economic": N, "cultural": N, '
+        '"temporal": N}}, "reasoning": "η εξήγησή σας"}}'
+    ),
+    "lv": (
+        "Jus esat AI iepirksanas asistents, kas palīdz patēretājam pilseta {city}.\n"
+        "Patēretājs apsvēr {brand} {product} iegādi.\n\n"
+        "Pamatojoties uz jūsu zinasanam par {brand} {city} patēretāju kontekstā, "
+        "sadaliet precizi 100 punktus pa 8 zimola dimensijam, lai atspoguļotu, "
+        "kuri zimola aspekti ir vissvarigakie sa patēretāja pirkuma lemumam. "
+        "Punktu summai jabut precizi 100.\n\n"
+        "{dim_block}\n\n"
+        "Atbildiet TIKAI ar derīgu JSON:\n"
+        '{{"weights": {{"semiotic": N, "narrative": N, "ideological": N, '
+        '"experiential": N, "social": N, "economic": N, "cultural": N, '
+        '"temporal": N}}, "reasoning": "jūsu skaidrojums"}}'
+    ),
+    "vi": (
+        "Ban la mot tro ly mua sam AI giup mot nguoi tieu dung o thanh pho {city}.\n"
+        "Nguoi tieu dung dang xem xet mua {brand} {product}.\n\n"
+        "Dua tren kien thuc cua ban ve {brand} trong boi canh nguoi tieu dung o {city}, "
+        "hay phan bo chinh xac 100 diem cho 8 chieu thuong hieu, phan anh "
+        "nhung khia canh nao cua thuong hieu quan trong nhat doi voi quyet dinh mua hang cua nguoi tieu dung nay. "
+        "Tong diem phai chinh xac la 100.\n\n"
+        "{dim_block}\n\n"
+        "Chi tra loi bang JSON hop le:\n"
+        '{{"weights": {{"semiotic": N, "narrative": N, "ideological": N, '
+        '"experiential": N, "social": N, "economic": N, "cultural": N, '
+        '"temporal": N}}, "reasoning": "giai thich cua ban"}}'
+    ),
+    "sr": (
+        "Vi ste AI asistent za kupovinu koji pomaze potrosacu u gradu {city}.\n"
+        "Potrosac razmatra kupovinu {brand} {product}.\n\n"
+        "Na osnovu vaseg znanja o {brand} u kontekstu potrosaca u gradu {city}, "
+        "raspodelite tacno 100 poena na 8 dimenzija brenda, odrazavajuci "
+        "koji aspekti brenda su najvazniji za odluku o kupovini ovog potrosaca. "
+        "Zbir poena mora biti tacno 100.\n\n"
+        "{dim_block}\n\n"
+        "Odgovorite SAMO validnim JSON-om:\n"
+        '{{"weights": {{"semiotic": N, "narrative": N, "ideological": N, '
+        '"experiential": N, "social": N, "economic": N, "cultural": N, '
+        '"temporal": N}}, "reasoning": "vase objasnjenje"}}'
+    ),
+    "mn": (
+        "Ta {city} хотын хэрэглэгчид туслах AI худалдааны туслагч юм.\n"
+        "Хэрэглэгч {brand} {product} худалдан авахыг авч үзэж байна.\n\n"
+        "{city} хотын хэрэглэгчдийн хүрээн дэх {brand}-ийн талаарх мэдлэгт үндэслэн "
+        "8 брендийн хэмжигдэхүүнд яг 100 оноо хуваарилж, "
+        "брендийн аль талууд нь энэ хэрэглэгчийн худалдан авалтын шийдвэрт хамгийн чухал болохыг тусгана уу. "
+        "Оноонуудын нийлбэр яг 100 байх ёстой.\n\n"
+        "{dim_block}\n\n"
+        "Зөвхөн хүчинтэй JSON-оор хариулна уу:\n"
+        '{{"weights": {{"semiotic": N, "narrative": N, "ideological": N, '
+        '"experiential": N, "social": N, "economic": N, "cultural": N, '
+        '"temporal": N}}, "reasoning": "таны тайлбар"}}'
+    ),
+    "sw": (
+        "Wewe ni msaidizi wa ununuzi wa AI unaosaidia mtumiaji katika mji wa {city}.\n"
+        "Mtumiaji anazingatia kununua {brand} {product}.\n\n"
+        "Kulingana na ujuzi wako kuhusu {brand} katika muktadha wa watumiaji katika {city}, "
+        "gawanya pointi 100 hasa katika vipimo 8 vya chapa, ukionyesha "
+        "vipengele gani vya chapa ni muhimu zaidi kwa uamuzi wa ununuzi wa mtumiaji huyu. "
+        "Jumla ya pointi lazima iwe 100 hasa.\n\n"
+        "{dim_block}\n\n"
+        "Jibu kwa JSON halali TU:\n"
+        '{{"weights": {{"semiotic": N, "narrative": N, "ideological": N, '
+        '"experiential": N, "social": N, "economic": N, "cultural": N, '
+        '"temporal": N}}, "reasoning": "maelezo yako"}}'
+    ),
 }
 
 DIMENSION_PROBE_PROMPT = (
@@ -717,10 +795,15 @@ PAIR_NATIVE_LANGUAGE: dict[str, str] = {
     "uae_dairy": "ar",
     "russia_ukraine_banking": "ru",  # Both brands widely discussed in Russian media
     "russia_organic": "ru",
-    "ukraine_confectionery": "ru",
-    "mongolia_beer": "zh",         # Mongolian Cyrillic, but zh models are the test
+    "ukraine_confectionery": "uk",   # Ukrainian is official language
+    "mongolia_beer": "mn",           # Mongolian is the actual native language
     "korea_dairy": "ko",
     "india_dairy": "hi",
+    "cyprus_supermarket": "el",      # Greek for AlphaMega
+    "latvia_chocolate": "lv",        # Latvian for Laima
+    "kenya_beer": "sw",              # Swahili for Tusker
+    "vietnam_dairy": "vi",           # Vietnamese for Vinamilk
+    "serbia_water": "sr",            # Serbian for Knjaz Milos
 }
 
 # Map model names to their native language(s)
@@ -813,6 +896,66 @@ NATIVE_DIMENSION_DESCRIPTIONS: dict[str, dict[str, str]] = {
         "economic": "कीमत, पैसे का मूल्य, मूल्य निर्धारण रणनीति",
         "cultural": "सांस्कृतिक प्रासंगिकता, आंदोलनों/परंपराओं से जुड़ाव",
         "temporal": "विरासत, इतिहास, समय से संबंध",
+    },
+    "el": {
+        "semiotic": "Οπτική ταυτότητα, λογότυπα, συσκευασία, γλώσσα σχεδιασμού",
+        "narrative": "Ιστορία μάρκας, μύθος προέλευσης, αφήγηση ίδρυσης",
+        "ideological": "Αξίες, ηθική, κοινωνικοί σκοποί, περιβαλλοντική θέση",
+        "experiential": "Ποιότητα εμπειρίας πελάτη, εξυπηρέτηση, unboxing",
+        "social": "Κοινωνικά σήματα, κοινότητα, τι σημαίνει η κατοχή",
+        "economic": "Τιμή, σχέση ποιότητας-τιμής, στρατηγική τιμολόγησης",
+        "cultural": "Πολιτιστική σχετικότητα, σύνδεση με κινήματα/παραδόσεις",
+        "temporal": "Κληρονομιά, ιστορία, σχέση με τον χρόνο",
+    },
+    "lv": {
+        "semiotic": "Vizuala identitate, logotipi, iepakojums, dizaina valoda",
+        "narrative": "Zimola stasts, izcelsmes mits, dibinasanas narracija",
+        "ideological": "Vertibas, etika, socialie merki, vides pozicija",
+        "experiential": "Klienta pieredzes kvalitate, serviss, iepakojuma atversana",
+        "social": "Socialie signali, kopiena, ko nozime zimola piesana",
+        "economic": "Cena, vertiba par naudu, cenu strategija",
+        "cultural": "Kulturala nozimiba, saikne ar kustibam/tradicijam",
+        "temporal": "Mantojums, vesture, attiecibas ar laiku",
+    },
+    "vi": {
+        "semiotic": "Nhan dien thi giac, logo, bao bi, ngon ngu thiet ke",
+        "narrative": "Cau chuyen thuong hieu, huyen thoai nguon goc, tu su sang lap",
+        "ideological": "Gia tri, dao duc, muc dich xa hoi, lap truong moi truong",
+        "experiential": "Chat luong trai nghiem khach hang, dich vu, mo hop",
+        "social": "Tin hieu xa hoi, cong dong, y nghia cua viec so huu",
+        "economic": "Gia ca, gia tri dong tien, chien luoc gia",
+        "cultural": "Su phu hop van hoa, ket noi voi phong trao/truyen thong",
+        "temporal": "Di san, lich su, moi quan he voi thoi gian",
+    },
+    "sr": {
+        "semiotic": "Vizuelni identitet, logotipi, pakovanje, dizajn jezik",
+        "narrative": "Prica o brendu, mit o poreklu, narativ osnivanja",
+        "ideological": "Vrednosti, etika, drustveni ciljevi, ekoloski stav",
+        "experiential": "Kvalitet korisnickog iskustva, usluga, unboxing",
+        "social": "Drustveni signali, zajednica, sta znaci posedovanje brenda",
+        "economic": "Cena, vrednost za novac, strategija cena",
+        "cultural": "Kulturna relevantnost, povezanost sa pokretima/tradicijama",
+        "temporal": "Nasledje, istorija, odnos sa vremenom",
+    },
+    "mn": {
+        "semiotic": "Visual identity, logo, savlalt, dizainy khel",
+        "narrative": "Brendiin tuukh, uusel garlyn domog, uusgagchiin tuukh",
+        "ideological": "Urtsg chanr, yos zuiltei, niigmiin zoriulalt, baigal orchny baidl",
+        "experiential": "Kheregllegchiin turslaga, uilchilgee, savlalt zadlakh",
+        "social": "Niigmiin door, khamtlag, brendiig ezemshikh utga",
+        "economic": "Une, uniin chanar, une todorkhоilokh bodlоgо",
+        "cultural": "Soyolyn kholbоgdоkh bаidаl, ursgаl/ulamjlaltai kholboo",
+        "temporal": "Uv, tuukh, tsаg khugаtsааtаi kholbоо",
+    },
+    "sw": {
+        "semiotic": "Utambulisho wa kuona, nembo, ufungashaji, lugha ya muundo",
+        "narrative": "Hadithi ya chapa, hadithi ya asili, simulizi ya mwanzilishi",
+        "ideological": "Maadili, maadili, sababu za kijamii, msimamo wa mazingira",
+        "experiential": "Ubora wa uzoefu wa mteja, huduma, kufungua kifurushi",
+        "social": "Ishara za kijamii, jumuiya, maana ya kumiliki chapa",
+        "economic": "Bei, thamani ya pesa, mkakati wa bei",
+        "cultural": "Umuhimu wa kitamaduni, uhusiano na harakati/mila",
+        "temporal": "Urithi, historia, uhusiano na wakati",
     },
 }
 
@@ -924,6 +1067,102 @@ NATIVE_WEIGHTED_RECOMMENDATION: dict[str, str] = {
         "  }},\n"
         '  "reasoning": "1-2 वाक्यों में स्पष्टीकरण"\n}}\n\n'
         "भार का योग ठीक 100 होना चाहिए।"
+    ),
+    "el": (
+        "Είστε ένας AI βοηθός αγορών που βοηθά έναν καταναλωτή να επιλέξει μεταξύ δύο μαρκών.\n\n"
+        "Κατηγορία: {category}\nΜάρκες: {brand_a} vs {brand_b}\n\n"
+        "Βήμα 1: Προτείνετε μια μάρκα.\n"
+        "Βήμα 2: Εξηγήστε ΓΙΑΤΙ κατανέμοντας 100 βαθμούς σπουδαιότητας στις 8 διαστάσεις αντίληψης.\n\n"
+        "Διαστάσεις:\n{dim_block}\n\n"
+        "Απαντήστε ΜΟΝΟ με έγκυρο JSON:\n"
+        '{{\n  "recommended_brand": "ΌνομαΜάρκας",\n'
+        '  "weights": {{\n'
+        '    "semiotic": 15, "narrative": 10, "ideological": 5,\n'
+        '    "experiential": 20, "social": 10, "economic": 25,\n'
+        '    "cultural": 5, "temporal": 10\n'
+        "  }},\n"
+        '  "reasoning": "Εξήγηση σε 1-2 προτάσεις"\n}}\n\n'
+        "Το άθροισμα των βαρών πρέπει να είναι ακριβώς 100."
+    ),
+    "lv": (
+        "Jus esat AI iepirksanas asistents, kas palīdz patēretājam izveleties starp diviem zimoliem.\n\n"
+        "Kategorija: {category}\nZimoli: {brand_a} vs {brand_b}\n\n"
+        "1. solis: Ieteikt vienu zimolu.\n"
+        "2. solis: Izskaidrojiet KĀPĒC, sadalot 100 nozīmīguma punktus pa 8 uztveres dimensijām.\n\n"
+        "Dimensijas:\n{dim_block}\n\n"
+        "Atbildiet TIKAI ar derīgu JSON:\n"
+        '{{\n  "recommended_brand": "ZimolanosaukumS",\n'
+        '  "weights": {{\n'
+        '    "semiotic": 15, "narrative": 10, "ideological": 5,\n'
+        '    "experiential": 20, "social": 10, "economic": 25,\n'
+        '    "cultural": 5, "temporal": 10\n'
+        "  }},\n"
+        '  "reasoning": "Skaidrojums 1-2 teikumos"\n}}\n\n'
+        "Svaru summai ir jabut precizi 100."
+    ),
+    "vi": (
+        "Ban la mot tro ly mua sam AI giup nguoi tieu dung lua chon giua hai thuong hieu.\n\n"
+        "Danh muc: {category}\nThuong hieu: {brand_a} vs {brand_b}\n\n"
+        "Buoc 1: De xuat mot thuong hieu.\n"
+        "Buoc 2: Giai thich TAI SAO bang cach phan bo 100 diem quan trong cho 8 chieu nhan thuc.\n\n"
+        "Cac chieu:\n{dim_block}\n\n"
+        "Chi tra loi bang JSON hop le:\n"
+        '{{\n  "recommended_brand": "TenThuongHieu",\n'
+        '  "weights": {{\n'
+        '    "semiotic": 15, "narrative": 10, "ideological": 5,\n'
+        '    "experiential": 20, "social": 10, "economic": 25,\n'
+        '    "cultural": 5, "temporal": 10\n'
+        "  }},\n"
+        '  "reasoning": "Giai thich trong 1-2 cau"\n}}\n\n'
+        "Tong cac trong so phai chinh xac bang 100."
+    ),
+    "sr": (
+        "Vi ste AI asistent za kupovinu koji pomaze potrosacu da izabere izmedju dva brenda.\n\n"
+        "Kategorija: {category}\nBrendovi: {brand_a} vs {brand_b}\n\n"
+        "Korak 1: Preporučite jedan brend.\n"
+        "Korak 2: Objasnite ZASTO raspodelom 100 poena vaznosti na 8 dimenzija percepcije.\n\n"
+        "Dimenzije:\n{dim_block}\n\n"
+        "Odgovorite SAMO validnim JSON-om:\n"
+        '{{\n  "recommended_brand": "NazivBrend",\n'
+        '  "weights": {{\n'
+        '    "semiotic": 15, "narrative": 10, "ideological": 5,\n'
+        '    "experiential": 20, "social": 10, "economic": 25,\n'
+        '    "cultural": 5, "temporal": 10\n'
+        "  }},\n"
+        '  "reasoning": "Objasnjenje u 1-2 recenice"\n}}\n\n'
+        "Zbir tezina mora biti tacno 100."
+    ),
+    "mn": (
+        "Ta bol khoyor brendiin dund songokhod kheregleechiid tuslakh AI худалдааны туслагч юм.\n\n"
+        "Ангилал: {category}\nБрендүүд: {brand_a} vs {brand_b}\n\n"
+        "Алхам 1: Нэг брендийг санал болгоно уу.\n"
+        "Алхам 2: 8 ойлголтын хэмжигдэхүүнд 100 оноо хуваарилж ЯАГААД гэдгийг тайлбарлана уу.\n\n"
+        "Хэмжигдэхүүнүүд:\n{dim_block}\n\n"
+        "Зөвхөн хүчинтэй JSON-оор хариулна уу:\n"
+        '{{\n  "recommended_brand": "БрендийнНэр",\n'
+        '  "weights": {{\n'
+        '    "semiotic": 15, "narrative": 10, "ideological": 5,\n'
+        '    "experiential": 20, "social": 10, "economic": 25,\n'
+        '    "cultural": 5, "temporal": 10\n'
+        "  }},\n"
+        '  "reasoning": "1-2 өгүүлбэрээр тайлбар"\n}}\n\n'
+        "Жингүүдийн нийлбэр яг 100 байх ёстой."
+    ),
+    "sw": (
+        "Wewe ni msaidizi wa ununuzi wa AI unaosaidia mtumiaji kuchagua kati ya chapa mbili.\n\n"
+        "Kategoria: {category}\nChapa: {brand_a} vs {brand_b}\n\n"
+        "Hatua ya 1: Pendekeza chapa moja.\n"
+        "Hatua ya 2: Eleza KWA NINI kwa kugawanya pointi 100 za umuhimu kwenye vipimo 8 vya mtazamo.\n\n"
+        "Vipimo:\n{dim_block}\n\n"
+        "Jibu kwa JSON halali TU:\n"
+        '{{\n  "recommended_brand": "JinaLaChapa",\n'
+        '  "weights": {{\n'
+        '    "semiotic": 15, "narrative": 10, "ideological": 5,\n'
+        '    "experiential": 20, "social": 10, "economic": 25,\n'
+        '    "cultural": 5, "temporal": 10\n'
+        "  }},\n"
+        '  "reasoning": "Maelezo katika sentensi 1-2"\n}}\n\n'
+        "Jumla ya uzito lazima iwe sawa na 100 hasa."
     ),
 }
 
