@@ -1,0 +1,35 @@
+# PROVENANCE.yaml — R18: Spectral Dynamics
+# Fork history and submission records per the Research-as-Repository protocol
+
+provenance:
+  paper_title: "Spectral Dynamics: Velocity, Acceleration, and Phase Space in Multi-Dimensional Brand Perception"
+  citation_key: "2026z"
+  repository: "spectralbranding/sbt-papers/r18-spectral-dynamics"
+
+  forks:
+    - id: "fork-2026-04-08-zenodo"
+      target: "Zenodo"
+      target_type: preprint_server
+      created: "2026-04-08"
+      source_commit: "main"
+      status: doi_secured
+      outcome: awaiting_upload
+      identifiers:
+        doi: "10.5281/zenodo.19468204"
+        community: ["spectral-branding"]
+      notes: >
+        v1.0 preprint. 9 sections, 3 propositions, 1 theorem, 6 definitions,
+        29 references. ~7,500 words. PDF 267K, 20 pages.
+
+submission_timeline:
+  - date: "2026-04-08"
+    event: "Zenodo DOI secured"
+    status: "doi_secured"
+    notes: "DOI 10.5281/zenodo.19468204. PDF ready for upload."
+
+  - date: "2026-04-15"
+    event: "Manuscript targeted for submission to JMR"
+    status: "planned"
+    notes: >
+      Estimated submission date. Requires double-blind masking and docx generation.
+      Expected decision window: 3-6 months (~Jul-Oct 2026).

@@ -1,0 +1,75 @@
+cff-version: 1.2.0
+message: "If you use this paper, please cite it as below."
+type: article
+authors:
+  - family-names: Zharnikov
+    given-names: Dmitry
+    email: dmitry@spectralbranding.com
+    affiliation: "Independent Researcher"
+    orcid: "https://orcid.org/0009-0000-6893-9231"
+title: "Spectral Dynamics: Velocity, Acceleration, and Phase Space in Multi-Dimensional Brand Perception"
+version: 1.0.0
+date-released: 2026-04-08
+url: "https://doi.org/10.5281/zenodo.19468204"
+repository-code: "https://github.com/spectralbranding/sbt-papers"
+identifiers:
+  - type: doi
+    value: "10.5281/zenodo.19468204"
+    description: "Zenodo archive"
+  - type: citation-key
+    value: "2026z"
+    description: "Internal citation key"
+keywords:
+  - brand dynamics
+  - brand velocity
+  - phase space
+  - trajectory clustering
+  - spectral brand theory
+  - differential calculus
+  - non-ergodic perception
+  - Kalman filter
+  - brand measurement
+  - directional coherence
+license: CC-BY-4.0
+references:
+  - type: article
+    authors:
+      - family-names: Zharnikov
+        given-names: Dmitry
+    title: "Spectral Brand Theory: A Multi-Dimensional Framework for Brand Perception and Measurement"
+    year: 2026
+    doi: "10.5281/zenodo.18945912"
+    citation-key: "2026a"
+  - type: article
+    authors:
+      - family-names: Zharnikov
+        given-names: Dmitry
+    title: "Non-ergodic brand perception: Diffusion dynamics on multi-dimensional perceptual manifolds"
+    year: 2026
+    doi: "10.5281/zenodo.18945659"
+    citation-key: "2026j"
+  - type: article
+    authors:
+      - family-names: Zharnikov
+        given-names: Dmitry
+    title: "Non-ergodic brand perception: Why cross-sectional brand tracking systematically misrepresents individual trajectories"
+    year: 2026
+    doi: "10.5281/zenodo.19138860"
+    citation-key: "2026o"
+  - type: article
+    authors:
+      - family-names: Zharnikov
+        given-names: Dmitry
+    title: "Dimensional activation and cohort divergence: A longitudinal decomposition of purpose advertising effectiveness"
+    year: 2026
+    doi: "10.5281/zenodo.19139258"
+    citation-key: "2026p"
+preferred-citation:
+  type: article
+  authors:
+    - family-names: Zharnikov
+      given-names: Dmitry
+  title: "Spectral Dynamics: Velocity, Acceleration, and Phase Space in Multi-Dimensional Brand Perception"
+  year: 2026
+  doi: "10.5281/zenodo.19468204"
+  notes: "Preprint. Citation key: 2026z"
