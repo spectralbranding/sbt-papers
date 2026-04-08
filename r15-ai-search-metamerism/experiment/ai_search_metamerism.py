@@ -712,9 +712,9 @@ MODEL_NATIVE_LANGUAGE: dict[str, str] = {
     "gigachat_local": "ru",
     "yandexgpt_local": "ru",
     # Japanese-trained
-    "sambanova_swallow": "ja",
+    # "sambanova_swallow": "ja",  # EXCLUDED: removed from SambaNova Apr 2026
     "swallow_local": "ja",
-    "swallow70_local": "ja",
+    # "swallow70_local": "ja",    # EXCLUDED: 3.6% success rate, times out on 64GB RAM
     "gptoss_swallow": "ja",
     # Korean-trained
     "exaone_local": "ko",
@@ -1816,7 +1816,7 @@ API_CALLERS: dict[str, Any] = {
     "fireworks_glm": call_fireworks_glm,        # GLM-4.7 (Zhipu AI, Chinese) via Fireworks
     "dashscope_qwen_plus": call_dashscope_qwen_plus,  # Qwen Plus (Alibaba, Chinese) via DashScope
     "sambanova_qwen3": call_sambanova,          # Qwen3-32B via SambaNova
-    "sambanova_swallow": call_sambanova_swallow, # Swallow 70B (Japanese) via SambaNova
+    # "sambanova_swallow": call_sambanova_swallow, # EXCLUDED: 3.6% success rate (20 OK out of 549 attempts)
     "sambanova_deepseek": call_sambanova_deepseek, # DeepSeek V3.2 via SambaNova
     "groq_llama33": call_groq,                  # Llama 3.3 70B via Groq
     "groq_allam": call_groq_allam,              # ALLaM-2-7B (Saudi/Arabic) via Groq
@@ -1832,7 +1832,8 @@ API_CALLERS: dict[str, Any] = {
     "gigachat_local": call_gigachat_local,       # GigaChat 3.1 Lightning (Russian, Sber)
     "exaone_local": call_exaone_local,           # EXAONE 4.0 32B (Korean, LG AI)
     "swallow_local": call_swallow_local,         # Swallow 8B (Japanese, Tokyo Tech)
-    "swallow70_local": call_swallow70_local,     # Swallow 70B (Japanese, Tokyo Tech, Tier 1)
+    # "swallow70_local": call_swallow70_local,   # EXCLUDED: times out on 64GB RAM, 3.6% success rate
+    # "sambanova_swallow": call_sambanova_swallow, # EXCLUDED: removed from SambaNova Apr 2026
     "falcon_arabic_local": call_falcon_arabic_local, # Falcon-H1-Arabic 7B (Arabic, TII)
     "jais_local": call_jais_local,               # Jais-adapted 70B (Arabic, Inception AI)
     "qwen35_local": call_qwen35_local,           # Qwen3.5 27B (Chinese, newer)
@@ -1852,7 +1853,7 @@ API_KEY_VARS: dict[str, str] = {
     "fireworks_glm": "FIREWORKS_API_KEY",
     "dashscope_qwen_plus": "DASHSCOPE_API_KEY",
     "sambanova_qwen3": "SAMBANOVA_API_KEY",
-    "sambanova_swallow": "SAMBANOVA_API_KEY",
+    # "sambanova_swallow": "SAMBANOVA_API_KEY",  # EXCLUDED: 3.6% success rate
     "sambanova_deepseek": "SAMBANOVA_API_KEY",
     "groq_llama33": "GROQ_API_KEY",
     "groq_allam": "GROQ_API_KEY",
@@ -1868,7 +1869,7 @@ API_KEY_VARS: dict[str, str] = {
     "gigachat_local": "OLLAMA_AVAILABLE",
     "exaone_local": "OLLAMA_AVAILABLE",
     "swallow_local": "OLLAMA_AVAILABLE",
-    "swallow70_local": "OLLAMA_AVAILABLE",
+    # "swallow70_local": "OLLAMA_AVAILABLE",     # EXCLUDED: times out on 64GB RAM
     "falcon_arabic_local": "OLLAMA_AVAILABLE",
     "jais_local": "OLLAMA_AVAILABLE",
     "qwen35_local": "OLLAMA_AVAILABLE",
@@ -1900,14 +1901,14 @@ MODEL_IDS: dict[str, str] = {
     "gptoss_swallow": "gpt-oss-20b/latest",                       # GPT-OSS-Swallow 20B (Japanese, Tokyo Tech)
     # "tpro_yandex": "t-pro-it-2.0-fp8",                      # T-Pro 2.0 EXCLUDED: requires dedicated paid instance
     # Free-tier cloud — National models
-    "sambanova_swallow": "Llama-3.3-Swallow-70B-Instruct-v0.4",  # Japanese 70B on SambaNova
+    # "sambanova_swallow": "Llama-3.3-Swallow-70B-Instruct-v0.4",  # EXCLUDED: 3.6% success rate
     "groq_allam": "allam-2-7b",                            # ALLaM-2 (SDAIA Saudi) on Groq
     # Local Ollama — National models
     "yandexgpt_local": "hf.co/yandex/YandexGPT-5-Lite-8B-instruct-GGUF:latest",
     "gigachat_local": "hf.co/ai-sage/GigaChat3.1-10B-A1.8B-GGUF:latest",
     "exaone_local": "hf.co/LGAI-EXAONE/EXAONE-4.0-32B-GGUF:Q4_K_M",
     "swallow_local": "hf.co/mradermacher/Llama-3.1-Swallow-8B-Instruct-v0.3-GGUF:latest",
-    "swallow70_local": "hf.co/mmnga/tokyotech-llm-Llama-3.3-Swallow-70B-Instruct-v0.4-gguf:Q4_K_M",
+    # "swallow70_local": "hf.co/mmnga/tokyotech-llm-Llama-3.3-Swallow-70B-Instruct-v0.4-gguf:Q4_K_M",  # EXCLUDED: times out on 64GB
     "falcon_arabic_local": "hf.co/tiiuae/Falcon-H1-Arabic-7B-Instruct-GGUF:Q4_K_M",
     "jais_local": "hf.co/mradermacher/jais-adapted-70b-chat-i1-GGUF:Q4_K_M",
     "qwen35_local": "qwen3.5:27b",
