@@ -2955,12 +2955,15 @@ def run_framing_experiment(
                         ))
 
                     # --- Native-language framing (H12 x H10 interaction) ---
+                    # For framing experiments, send native-language prompts to
+                    # ALL models with a non-English native language mapping,
+                    # regardless of model training language. This avoids the
+                    # confound of testing Ukrainian only on Russian-trained
+                    # models. All models receive identical treatment per city.
                     native_langs = FRAMING_NATIVE_LANGUAGE.get(fp.id, {})
                     native_lang = native_langs.get(city)
-                    model_lang = MODEL_NATIVE_LANGUAGE.get(model_name)
                     if (native_lang and native_lang != "en"
-                            and native_lang in NATIVE_GEOPOLITICAL_FRAMING
-                            and model_lang and model_lang == native_lang):
+                            and native_lang in NATIVE_GEOPOLITICAL_FRAMING):
                         native_dim_block = _dim_block_native(native_lang)
                         native_prompt = NATIVE_GEOPOLITICAL_FRAMING[native_lang].format(
                             city=city,
