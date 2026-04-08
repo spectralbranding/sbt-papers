@@ -394,6 +394,10 @@ Five hypotheses structure the Run 5 analysis:
 
 **Hypothesis 10 (Language Priming):** Prompting national models in their target language reduces DCI relative to English-language prompts, as native-language prompts activate culturally specific training-data representations.
 
+**Hypothesis 11 (Same-Category Cross-Border).** *A same-category brand pair spanning a geopolitically charged border --- digital banking: Tinkoff/T-Bank (Russia) versus PrivatBank (Ukraine) --- shows amplified dimensional divergence relative to cross-category pairs, with Ideological and Cultural dimensions most affected by the geopolitical context.*
+
+Run 6 tests this hypothesis with 24 models (1,018 clean calls). Both brands are digital-first neobanks in the same product category, controlling for category effects. Both underwent ownership changes with political backgrounds: Tinkoff was sold by founder Oleg Tinkov, who departed Russia, and subsequently rebranded to T-Bank in 2023; PrivatBank was nationalized by the Ukrainian government in 2016 following the departure of founder Ihor Kolomoisky.
+
 **Hypothesis 12 (Same-Brand Geopolitical Framing).** *The same brand evaluated in different geopolitical city contexts produces significantly different dimensional weight profiles, with Ideological, Cultural, and Narrative dimensions showing the largest divergence.*
 
 The hypothesis is grounded in the country-of-origin (COO) literature (Bilkey & Nes, 1982; Verlegh & Steenkamp, 1999) and the consumer animosity model (Klein, Ettenson & Morris, 1998), which demonstrate that geopolitical context systematically modulates brand perception. H12 extends this to LLMs: if training corpora encode geopolitical framing, then prompting the same brand in different city contexts should activate different dimensional weight patterns.
@@ -407,6 +411,8 @@ The hypothesis is grounded in the country-of-origin (COO) literature (Bilkey & N
 Each brand is evaluated using a city-grounded shopping assistant prompt that differs by exactly one variable (the city name). A native-language condition (Russian for Moscow/Kyiv, Chinese for Shanghai) tests whether prompt language compounds the geopolitical framing effect (H12 x H10 interaction).
 
 **Metric:** Cosine distance between City A and City B weight profiles for the same brand. H12 is supported if the mean cosine distance across the three brands is significantly greater than the test-retest noise floor established by the prompt sensitivity analysis (ICC = 0.752).
+
+**Hypothesis 13 (Temporal Training Stability).** *Successive versions of the same model family produce significantly different dimensional weight profiles for the same brand, with the direction of change reflecting shifts in training data composition.* H13 is proposed as a future direction (Section 6e) and is not tested in the present study.
 
 #### 4.5.2 Results: H1 and H2 Confirmed at Scale
 
@@ -508,7 +514,7 @@ The full Run 5 dataset (16,800 calls, 13,389 successful) was collected for \$3.0
 
 This cost structure has methodological implications. The entire cross-cultural AI perception study --- 23 models, 9 cultural traditions, 7 brand pairs, native-language conditions --- cost less than a single human-respondent focus group. The marginal cost of adding a model, a brand pair, or a cultural condition is under \$0.20. This makes longitudinal tracking of AI spectral profiles operationally feasible at a scale that human-respondent studies cannot match: a quarterly audit of how 20+ models perceive a brand portfolio costs less than \$15 per quarter.
 
-**Data Availability.** The complete dataset --- all 16,800 per-call records (JSONL), per-model cost and token summaries (CSV), statistical test results (JSON), and the reproducible analysis script --- is publicly available at https://huggingface.co/datasets/spectralbranding/r15-ai-search-metamerism (DOI: 10.57967/hf/8284). The experiment source code, prompts, and model configurations are at https://github.com/spectralbranding/sbt-papers/tree/main/r15-ai-search-metamerism/experiment.
+**Data Availability.** The complete dataset --- all 18,000+ per-call records across 6 runs (JSONL), per-model cost and token summaries (CSV), statistical test results (JSON), and the reproducible PRISM-B analysis scripts --- is publicly available at https://huggingface.co/datasets/spectralbranding/r15-ai-search-metamerism (DOI: 10.57967/hf/8284). The experiment source code, prompts, model configurations, and the PRISM instrument scaffold are at https://github.com/spectralbranding/sbt-papers/tree/main/r15-ai-search-metamerism/experiment.
 
 ---
 

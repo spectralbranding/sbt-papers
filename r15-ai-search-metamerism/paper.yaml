@@ -13,7 +13,7 @@ metadata:
       corresponding: true
   citation_key: "2026v"
   doi: "10.5281/zenodo.19422427"
-  date: "2026-04-04"
+  date: "2026-04-08"
   version: "2.0"
   status: preprint  # v1.0 published on Zenodo 2026-04-04; v2.0 incorporates Run 5 cross-cultural results
   license: "CC-BY-NC-ND-4.0"
@@ -97,22 +97,25 @@ methodology:
   type: empirical
   design: >
     Structured weight elicitation design measuring implicit spectral profiles of
-    22 LLMs across 22 brand pairs in 5 runs. Runs 2-4 used 6 LLMs across 15
+    24 LLMs across 23 brand pairs in 6 runs. Runs 2-4 used 6 LLMs across 15
     brand pairs (10 global, 5 local) for 4,860 API calls. Run 5 (cross-cultural)
     used 22 LLMs across 7 cross-cultural brand pairs in 8 cultural contexts
     (11,410 calls, 7,999 successful, 70.1% success rate) plus 69 native-language
-    prompt calls (H10). A Brand Function resolution test (Run 4, 90 calls)
+    prompt calls (H10). Run 6 added a banking sector pair (HSBC vs. Monzo)
+    with backfill models Qwen Plus (DashScope) and Fireworks GLM, bringing total
+    unique models to 24. A Brand Function resolution test (Run 4, 90 calls)
     demonstrates that providing behavioral specifications reduces local-brand
     collapse by 20%. Models directly allocate 100 points across SBT's eight
     dimensions via structured JSON output. Three prompt types: weighted
     recommendation, dimensional differentiation, and dimension-specific probes.
     Each prompt administered 3 times per model at temperature 0.7.
-    Total: 16,270 API calls across all runs.
+    Total: ~18,000+ API calls across all runs; 14,817 successful.
   sample:
-    size: 16270  # Run 2: 3,240 + Run 3: 1,620 + Run 4: 90 + Run 5: 11,410
-    description: "Runs 2-4: 4,860 calls (6 models, 15 pairs). Run 5: 11,410 calls (21 active models, 7 cross-cultural pairs, 8 cultures, 69 native-language calls)."
-    models: 21  # Run 5: 21 active models in analysis; T-Pro 2.0 excluded due to infrastructure cost
-    brand_pairs: 22  # 10 global + 5 local + 7 cross-cultural
+    size: 18360  # Run 2: 3,240 + Run 3: 1,620 + Run 4: 90 + Run 5: 11,410 + Run 6 banking pair + backfills
+    description: "Runs 2-4: 4,860 calls (6 models, 15 pairs). Run 5: 11,410 calls (22 active models, 7 cross-cultural pairs, 8 cultures, 69 native-language calls). Run 6: banking pair (HSBC vs. Monzo) with backfill models Qwen Plus (DashScope) and Fireworks GLM. Total unique models: 24; 14,817 successful calls."
+    models: 24  # 24 unique models across all runs; T-Pro 2.0 excluded from Run 5 analysis due to infrastructure cost
+    brand_pairs: 23  # 10 global + 5 local + 7 cross-cultural + 1 banking (Run 6)
+  instrument: "PRISM-B (Perception Response Instrument for Structured Measurement — Brand variant)"
   measures:
     - variable: "dimensional_weight_allocation"
       instrument: "Structured JSON weight allocation (100 points across 8 SBT dimensions)"
@@ -140,7 +143,8 @@ methodology:
     - "Google AI Studio (Gemini 2.5 Flash)"
     - "DeepSeek API (DeepSeek V3)"
     - "Ollama (Qwen3 30B, Gemma 4 27B)"
-    - "DashScope API (Qwen Plus) — excluded; 403 authentication errors"
+    - "DashScope API (Qwen Plus) — Run 6 backfill model"
+    - "Fireworks AI API (GLM) — Run 6 backfill model"
 
 dependencies:
   - citation: "Zharnikov (2026a)"
@@ -205,11 +209,12 @@ submission_history:
       v1.0 preprint (2026-04-04). 7 sections, 4 hypotheses (H1+H2 supported, H3+H4 not
       supported). 4,860 API calls, 15 brand pairs, 6 LLMs. Grok review fixes applied: SBT
       positioning clarified, H3/H4 reframed as expected null, tone softened, Brakus et al.
-      (2009) added. v2.0 (in preparation): incorporates Run 5 cross-cultural results
-      (11,410 calls, 7,999 successful, 22 models, 8 cultures, 7 cross-cultural pairs,
-      69 native-language calls). H1 SUPPORTED (p<0.0001, DCI=35.6), H2 SUPPORTED
-      (cosine=0.976). Cultural dimension most collapsed (-4.9 vs baseline).
-      Upload to Zenodo pending v2.0 paper completion.
+      (2009) added. v2.0 (2026-04-08): incorporates Run 5 cross-cultural results
+      (11,410 calls, 7,999 successful, 24 models across all runs, 8 cultures, 7 cross-cultural
+      pairs, 69 native-language calls) and Run 6 banking pair (HSBC vs. Monzo) with Qwen Plus
+      and Fireworks GLM backfills. ~18,000+ total calls, 14,817 successful. H1 SUPPORTED
+      (p<0.0001, DCI=35.6), H2 SUPPORTED (cosine=0.976). Cultural dimension most collapsed
+      (-4.9 vs baseline). Upload to Zenodo pending v2.0 paper completion.
 
   - venue: "Journal of Advertising Research"
     type: journal
