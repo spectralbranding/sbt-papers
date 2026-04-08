@@ -1,4 +1,4 @@
-script_version: 83f9827aa43be5dc6a6ba8cea35dd4e1f833ccf0
+script_version: 05767ab9085e129036f283fb2008f078d5d2d63f
 python_version: 3.12.13 (main, Mar  3 2026, 12:39:30) [Clang 17.0.0 (clang-1700.6.3.2)]
 package_versions:
   anthropic: 0.89.0
@@ -10,19 +10,11 @@ package_versions:
 hardware: arm64
 processor: arm
 os: macOS-26.3.1-arm64-arm-64bit
-start_time: '2026-04-07T11:43:32.463981+00:00'
+start_time: '2026-04-08T03:07:50.595231+00:00'
 end_time: null
 model_configs:
   fireworks_glm:
     model_id: glm-4p7
-    max_tokens: 2048
-    temperature: 0.7
-  dashscope_qwen_plus:
-    model_id: qwen-plus
-    max_tokens: 2048
-    temperature: 0.7
-  swallow70_local:
-    model_id: hf.co/mmnga/tokyotech-llm-Llama-3.3-Swallow-70B-Instruct-v0.4-gguf:Q4_K_M
     max_tokens: 2048
     temperature: 0.7
 api_key_hash:
@@ -30,7 +22,7 @@ api_key_hash:
   gpt: 1105afa6
   gemini: ed30e51c
   deepseek: 73f315a4
-  cerebras_qwen3: 4a3fcc73
+  cerebras_qwen3: e76b914b
   fireworks_glm: 3971cc15
   dashscope_qwen_plus: 21c81cea
   sambanova_qwen3: b01ad88b

@@ -25,7 +25,7 @@ For Run 5, the `weighted_recommendation` prompt is also run in native languages:
 |----------|------|----------|-----------|
 | Chinese | zh | qwen3_local, cerebras_qwen3, sambanova_qwen3, sambanova_deepseek, cerebras_glm, groq_kimi, qwen35_local | china_water |
 | Russian | ru | gigachat_api, yandexgpt_pro, yandexgpt_local, gigachat_local | russia_grocery |
-| Japanese | ja | sambanova_swallow, swallow_local | japan_snacks |
+| Japanese | ja | gptoss_swallow, swallow_local | japan_snacks |
 | Korean | ko | exaone_local | korea_dairy |
 | Arabic | ar | jais_local, falcon_arabic_local, groq_allam | uae_dairy |
 | Hindi | hi | sarvam | india_dairy |

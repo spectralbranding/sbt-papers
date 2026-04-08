@@ -86,24 +86,26 @@ Full pre-registration: `L0_specification/PRE_REGISTRATION_RUN5.md`
 | korea_dairy | Binggrae | Danone | Dairy/beverages | Korean |
 | india_dairy | Amul | Danone | Dairy products | Indian |
 
-### Models (21 active in Run 5 — see `L1_configuration/models.yaml`)
+### Models (22 active in Run 5 — see `L1_configuration/models.yaml`)
 
-**Tier 1 (30B+, primary analysis)**: 16 models across 7 cultures
-**Tier 2 (7-30B, H9 capacity comparison)**: 5 models
+**Tier 1 (30B+, primary analysis)**: 15 models across 6 cultures
+**Tier 2 (7-30B, H9 capacity comparison)**: 4 models
 
 Clusters:
 - Western: Claude Sonnet 4.6, GPT-4o-mini, Gemini 2.5 Flash, Llama 3.3 70B, Grok-4.1, Gemma 4 27B
 - Chinese: DeepSeek V3, Qwen3 30B, Qwen3-235B (Cerebras), GLM-4.7, Qwen3-32B (SambaNova), DeepSeek V3.2 (SambaNova), Kimi K2, Qwen3.5 27B
 - Russian: GigaChat 2 Max, YandexGPT 5 Pro, YandexGPT 5 Lite 8B, GigaChat 3.1 Lightning
-- Japanese: Swallow 70B (SambaNova), Swallow 8B (local)
+- Japanese: GPT-OSS-Swallow 20B (Yandex AI Studio), Swallow 8B (local)
 - Korean: EXAONE 4.0 32B
 - Arabic: Jais 70B, Falcon-H1-Arabic 7B, ALLaM-2-7B
 - Indian: Sarvam-105B
 
+**EXCLUDED**: Swallow 70B (SambaNova — model removed, 3.6% success rate); Swallow 70B (local — times out on 64GB RAM, 0 successful calls)
+
 Open-weight models are preferred over closed-weight cloud APIs to isolate cultural training data
 bias from commercial alignment confounds. Paid APIs: Claude (Anthropic), GPT (OpenAI), Gemini
 (Google), DeepSeek V3 cloud (DeepSeek). Free-tier APIs: Grok (xAI), Llama 3.3 / Kimi K2 /
-ALLaM-2-7B (Groq), Qwen3-235B / GLM-4.7 (Cerebras), Qwen3-32B / DeepSeek V3.2 / Swallow 70B
+ALLaM-2-7B (Groq), Qwen3-235B / GLM-4.7 (Cerebras), Qwen3-32B / DeepSeek V3.2
 (SambaNova), Sarvam-105B (Indus API), GigaChat 2 Max (Sber API), YandexGPT 5 Pro (Yandex AI
 Studio). Local Ollama models incur no API cost.
 
@@ -203,7 +205,7 @@ export GOOGLE_API_KEY=...           # Gemini 2.5 Flash
 # Cloud — Chinese
 export DEEPSEEK_API_KEY=...         # DeepSeek V3
 export CEREBRAS_API_KEY=...         # Qwen3-235B, GLM-4.7
-export SAMBANOVA_API_KEY=...        # Qwen3-32B, DeepSeek V3.2, Swallow 70B
+export SAMBANOVA_API_KEY=...        # DeepSeek V3-0324
 export GROQ_API_KEY=...             # Llama 3.3 70B, Kimi K2, ALLaM-2-7B
 
 # Cloud — national models
@@ -215,7 +217,7 @@ export YANDEX_AI_API_KEY=...        # YandexGPT 5 Pro (Russian)
 # Local Ollama (start with `ollama serve`, then pull models)
 # Required models: qwen3:30b, gemma4:latest, qwen3.5:27b
 # National models (GGUF via hf.co): EXAONE 4.0 32B, YandexGPT 5 Lite 8B,
-#   GigaChat 3.1 Lightning, Swallow 8B, Falcon-H1-Arabic 7B, Jais 70B
+#   GigaChat 3.1 Lightning, Falcon-H1-Arabic 7B, Jais 70B
 ```
 
 Missing keys are skipped gracefully.
@@ -228,14 +230,11 @@ Missing keys are skipped gracefully.
 |------|----------|
 | `run5_results.json` | Run 5 full results (10.8MB): all calls, DCI per model/pair, test statistics |
 | `run5_summary.md` | Run 5 summary tables: DCI by model, cosine similarity matrix, H5-H10 test results |
-| `run5_gptoss_results.json` | Supplemental: gpt-oss-20b/Swallow run (435 calls) |
-| `run5_gptoss_summary.md` | Supplemental summary for gpt-oss run |
 | `L4_analysis/run5_analysis.py` | Post-processing analysis script |
 | `L4_analysis/run5_analysis_results.json` | Analysis outputs: diagonal advantage matrix, H9/H10 tests |
 | `L4_analysis/run5_dci_table.csv` | DCI per model per culture (H5 matrix) |
 | `L4_analysis/run5_diagonal_advantage.csv` | Diagonal advantage scores (H5 primary measure) |
 | `L3_sessions/run5_crosscultural.jsonl` | JSONL session log for Run 5 (14MB) |
-| `L3_sessions/run5_gptoss_swallow.jsonl` | JSONL session log for supplemental run |
 | `L1_configuration/models.yaml` | Full model registry: tier, culture, size, backend, API key env vars |
 | `L0_specification/PRE_REGISTRATION_RUN5.md` | Run 5 pre-registration protocol |
 | `L0_specification/protocol.md` | Original pre-registration (Runs 1-3) |
