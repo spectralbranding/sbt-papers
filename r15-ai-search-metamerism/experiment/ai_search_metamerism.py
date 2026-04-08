@@ -1175,11 +1175,17 @@ def should_run_native(model_name: str, pair_id: str) -> Optional[str]:
     """Check if this model-pair combination should also get a native-language prompt.
 
     Returns the language code if yes, None if no.
+
+    Design decision (Session 90): native-language prompts are sent to ALL
+    models, not just models natively trained in that language. This avoids
+    the confound of testing Greek/Latvian/Vietnamese/Serbian/Mongolian/Swahili
+    only on models that don't exist for those languages. The strongest H10
+    test sends each pair's national language to all models identically,
+    isolating the prompt-language effect from model-training-language effect.
     """
-    model_lang = MODEL_NATIVE_LANGUAGE.get(model_name)
     pair_lang = PAIR_NATIVE_LANGUAGE.get(pair_id)
-    if model_lang and pair_lang and model_lang == pair_lang:
-        return model_lang
+    if pair_lang:
+        return pair_lang
     return None
 
 
