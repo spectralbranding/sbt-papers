@@ -402,7 +402,7 @@ The hypothesis is grounded in the country-of-origin (COO) literature (Bilkey & N
 
 - Roshen chocolate (Moscow vs. Kyiv) --- conflict context
 - Volvo XC90 (Stockholm vs. Shanghai) --- ownership transfer context
-- Burger King (New York vs. Moscow) --- one of few Western brands that continued operating in Russia after 2022
+- Burger King (New York vs. Moscow) --- a Western brand whose visual identity remains visible in Russia through a local franchisee (BURGER RUS LLC) after RBI suspended corporate support in March 2022 and retained only a passive 15% stake; unlike McDonald's, which fully rebranded to "Vkusno & tochka," the BK trademark continues to operate under local control, making it a case where the brand exists in LLM training data as both a Western brand and an active Russian presence
 
 Each brand is evaluated using a city-grounded shopping assistant prompt that differs by exactly one variable (the city name). A native-language condition (Russian for Moscow/Kyiv, Chinese for Shanghai) tests whether prompt language compounds the geopolitical framing effect (H12 x H10 interaction).
 
@@ -418,26 +418,26 @@ Cross-model convergence remained extreme. The mean cosine similarity of spectral
 
 | Model | Size | Culture | Tier | Provider | Release | DCI |
 |-------|------|---------|------|----------|---------|-----|
-| grok | large | Western | 1 | xAI | 2025-12 | 0.290 |
-| claude | ~200B+ | Western | 1 | Anthropic | 2025-10 | 0.313 |
-| gemini | large | Western | 1 | Google | 2025-12 | 0.321 |
-| cerebras_qwen3 | 235B MoE | Chinese | 1 | Cerebras | 2025-06 | 0.324 |
-| groq_allam | 7B | Arabic | 2 | Groq | 2025-01 | 0.340 |
+| grok | undisclosed | Western | 1 | xAI | 2025-12 | 0.290 |
+| claude | undisclosed | Western | 1 | Anthropic | 2025-10 | 0.313 |
+| gemini | undisclosed | Western | 1 | Google | 2025-12 | 0.321 |
+| cerebras_qwen3 | 235B total, ~22B active (MoE) | Chinese | 1 | Cerebras | 2025-06 | 0.324 |
+| groq_allam | 7B (dense) | Arabic | 2 | Groq | 2025-01 | 0.340 |
 | yandexgpt_local | 8B | Russian | 2 | Local | 2025-03 | 0.341 |
-| deepseek | 671B MoE | Chinese | 1 | DeepSeek | 2025-03 | 0.342 |
-| groq_kimi | large MoE | Chinese | 1 | Groq | 2025-06 | 0.350 |
-| groq_llama33 | 70B | Western | 1 | Groq | 2024-12 | 0.358 |
-| gpt | ~8B | Western | 2 | OpenAI | 2024-07 | 0.360 |
-| gigachat_api | commercial | Russian | 1 | Sber | 2026-02 | 0.360 |
-| sarvam | 105B MoE | Indian | 1 | Sarvam AI | 2026-02 | 0.367 |
-| gemma4_local | 27B | Western | 2 | Local | 2025-06 | 0.371 |
-| yandexgpt_pro | commercial | Russian | 1 | Yandex | 2026-02 | 0.377 |
-| gigachat_local | 10B/1.8B | Russian | 2 | Local | 2026-03 | 0.380 |
-| gptoss_swallow | 20B | Japanese | 1 | TOKYOTECH/SBI | 2026-02 | 0.380 |
+| deepseek | 671B total, 37B active (MoE) | Chinese | 1 | DeepSeek | 2025-03 | 0.342 |
+| groq_kimi | undisclosed | Chinese | 1 | Groq | 2025-06 | 0.350 |
+| groq_llama33 | 70B (dense) | Western | 1 | Groq | 2024-12 | 0.358 |
+| gpt | undisclosed | Western | 2 | OpenAI | 2024-07 | 0.360 |
+| gigachat_api | undisclosed | Russian | 1 | Sber | 2026-02 | 0.360 |
+| sarvam | ~105B (approx.) | Indian | 1 | Sarvam AI | 2026-02 | 0.367 |
+| gemma4_local | 27B total, 3.8B active (MoE) | Western | 2 | Local | 2025-06 | 0.371 |
+| yandexgpt_pro | undisclosed | Russian | 1 | Yandex | 2026-02 | 0.377 |
+| gigachat_local | undisclosed | Russian | 2 | Local | 2026-03 | 0.380 |
+| gptoss_swallow | 20B (dense) | Japanese | 1 | TOKYOTECH/SBI | 2026-02 | 0.380 |
 | swallow_local | 8B | Japanese | 2 | Local | 2024-12 | 0.383 |
-| qwen3_local | 30B | Chinese | 2 | Local | 2025-06 | 0.388 |
-| exaone_local | 32B | Korean | 1 | Local | 2026-02 | 0.389 |
-| jais_local | 70B | Arabic | 1 | Local | 2024-03 | 0.402 |
+| qwen3_local | 30B (dense) | Chinese | 2 | Local | 2025-06 | 0.388 |
+| exaone_local | 32B (dense) | Korean | 1 | Local | 2026-02 | 0.389 |
+| jais_local | 70B (dense) | Arabic | 1 | Local | 2024-03 | 0.402 |
 
 The ranking reveals a gradient: Western frontier models (Grok, Claude, Gemini) cluster at the low end of the DCI distribution, while nationally specialized models (Jais, EXAONE, Swallow) cluster at the high end. This pattern is consistent with H6 (directional asymmetry) and will be analyzed in Section 4.5.4 below.
 
@@ -461,7 +461,7 @@ The practical implication is that brands operating in non-Western markets face a
 
 #### 4.5.5 Geopolitical Signal (H7): Tinkoff vs. PrivatBank
 
-Hypothesis 7 tested whether geopolitical context shapes AI brand perception independently of product category. The test case paired Tinkoff (rebranded T-Bank), a Russian digital consumer bank, with PrivatBank, a Ukrainian digital consumer bank. Both are digital-first consumer banks occupying analogous market positions in their respective countries — same category, same digital-first positioning, comparable scale. The heightened geopolitical salience of the Russian-Ukrainian context since 2022 provides a natural experiment for testing whether LLM training corpora encode geopolitical context into brand perception independently of functional category. Both brands also underwent significant corporate restructuring events that generated substantial media coverage: Tinkoff rebranded to T-Bank in 2023; PrivatBank was nationalized by the Ukrainian government in 2016. If models encode geopolitical associations, the DCI patterns for these brands should diverge in ways that reflect geopolitical salience rather than category or structural differences.
+Hypothesis 7 tested whether geopolitical context shapes AI brand perception independently of product category. The test case paired Tinkoff (rebranded T-Bank), a Russian digital consumer bank, with PrivatBank, a Ukrainian digital consumer bank. Both are digital-first consumer banks occupying analogous market positions in their respective countries — same category, same digital-first positioning, comparable scale. The heightened geopolitical salience of the Russian-Ukrainian context since 2022 provides a natural experiment for testing whether LLM training corpora encode geopolitical context into brand perception independently of functional category. Both brands also underwent significant corporate restructuring events that generated substantial media coverage: Tinkoff rebranded to T-Bank in 2023 following the departure and sale of the bank by its founder Oleg Tinkov; PrivatBank was nationalized by the Ukrainian government in 2016 following the exit of its founder Ihor Kolomoisky. Both restructuring events were ownership-change events with documented political backgrounds. If models encode geopolitical associations, the DCI patterns for these brands should diverge in ways that reflect geopolitical salience rather than category or structural differences.
 
 The result is directionally consistent with the geopolitical signal hypothesis. Across 20 models with sufficient data, 15 showed higher DCI for PrivatBank than for Tinkoff. This pattern is consistent with a geopolitical encoding effect: models may encode geopolitical salience as dimensional noise that suppresses the coherent spectral profile of brands associated with conflict contexts. Because Tinkoff and PrivatBank operate in the same product category, the category confound present in prior designs is eliminated, and the DCI divergence is attributable to geopolitical salience rather than information availability differences across product domains.
 
