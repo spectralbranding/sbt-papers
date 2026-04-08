@@ -1,4 +1,4 @@
-script_version: 05767ab9085e129036f283fb2008f078d5d2d63f
+script_version: 3b9bb2ad9eec0a80c5642e18432454cd99a7d004
 python_version: 3.12.13 (main, Mar  3 2026, 12:39:30) [Clang 17.0.0 (clang-1700.6.3.2)]
 package_versions:
   anthropic: 0.89.0
@@ -10,11 +10,11 @@ package_versions:
 hardware: arm64
 processor: arm
 os: macOS-26.3.1-arm64-arm-64bit
-start_time: '2026-04-08T03:07:50.595231+00:00'
+start_time: '2026-04-08T03:59:06.278884+00:00'
 end_time: null
 model_configs:
-  fireworks_glm:
-    model_id: glm-4p7
+  dashscope_qwen_plus:
+    model_id: qwen-plus
     max_tokens: 2048
     temperature: 0.7
 api_key_hash:
@@ -26,7 +26,6 @@ api_key_hash:
   fireworks_glm: 3971cc15
   dashscope_qwen_plus: 21c81cea
   sambanova_qwen3: b01ad88b
-  sambanova_swallow: b01ad88b
   sambanova_deepseek: b01ad88b
   groq_llama33: f05e6f93
   groq_allam: f05e6f93
