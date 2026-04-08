@@ -16,6 +16,9 @@ Inputs (JSONL session logs):
     ../L3_sessions/run4_resolution.jsonl
     ../L3_sessions/run5_crosscultural.jsonl
     ../L3_sessions/run5_gptoss_swallow.jsonl
+    ../L3_sessions/run6_banking_clean.jsonl
+    ../L3_sessions/run2_qwen_plus.jsonl
+    ../L3_sessions/run5_fireworks_glm.jsonl
 
 Outputs:
     - Statistical test results (H1-H10)
@@ -60,38 +63,42 @@ BASELINE_WEIGHT = 12.5  # 100 / 8
 # Model metadata: tier, culture, size, release date
 MODEL_META = {
     # Tier 1 (30B+)
-    "claude":           {"tier": 1, "culture": "western",  "size": "~200B+",  "release": "2025-10", "provider": "Anthropic"},
-    "gemini":           {"tier": 1, "culture": "western",  "size": "large",   "release": "2025-12", "provider": "Google"},
+    "claude":           {"tier": 1, "culture": "western",  "size": "undisclosed", "release": "2025-10", "provider": "Anthropic"},
+    "gemini":           {"tier": 1, "culture": "western",  "size": "undisclosed", "release": "2025-12", "provider": "Google"},
     "groq_llama33":     {"tier": 1, "culture": "western",  "size": "70B",     "release": "2024-12", "provider": "Groq"},
     "deepseek":         {"tier": 1, "culture": "chinese",  "size": "671B MoE","release": "2025-03", "provider": "DeepSeek"},
     "cerebras_qwen3":   {"tier": 1, "culture": "chinese",  "size": "235B MoE","release": "2025-06", "provider": "Cerebras"},
-    "groq_kimi":        {"tier": 1, "culture": "chinese",  "size": "large MoE","release": "2025-06","provider": "Groq"},
-    "grok":             {"tier": 1, "culture": "western",  "size": "large",   "release": "2025-12", "provider": "xAI"},
+    "groq_kimi":        {"tier": 1, "culture": "chinese",  "size": "undisclosed", "release": "2025-06", "provider": "Groq"},
+    "grok":             {"tier": 1, "culture": "western",  "size": "undisclosed", "release": "2025-12", "provider": "xAI"},
     "sarvam":           {"tier": 1, "culture": "indian",   "size": "105B MoE","release": "2026-02", "provider": "Sarvam AI"},
-    "gigachat_api":     {"tier": 1, "culture": "russian",  "size": "commercial","release": "2026-02","provider": "Sber"},
-    "yandexgpt_pro":    {"tier": 1, "culture": "russian",  "size": "commercial","release": "2026-02","provider": "Yandex"},
+    "gigachat_api":     {"tier": 1, "culture": "russian",  "size": "undisclosed", "release": "2026-02", "provider": "Sber"},
+    "yandexgpt_pro":    {"tier": 1, "culture": "russian",  "size": "undisclosed", "release": "2026-02", "provider": "Yandex"},
     "exaone_local":     {"tier": 1, "culture": "korean",   "size": "32B",     "release": "2026-02", "provider": "Ollama"},
     "jais_local":       {"tier": 1, "culture": "arabic",   "size": "70B",     "release": "2024-03", "provider": "Ollama"},
     "gptoss_swallow":   {"tier": 1, "culture": "japanese", "size": "20B",     "release": "2026-02", "provider": "Yandex"},
+    "fireworks_glm":    {"tier": 1, "culture": "chinese",  "size": "undisclosed", "release": "2025-12", "provider": "Fireworks"},
+    "dashscope_qwen_plus": {"tier": 1, "culture": "chinese", "size": "undisclosed", "release": "2025-12", "provider": "DashScope"},
+    "sambanova_deepseek": {"tier": 1, "culture": "western", "size": "671B MoE", "release": "2025-06", "provider": "SambaNova"},
     # Tier 2 (7-30B)
-    "gpt":              {"tier": 2, "culture": "western",  "size": "~8B",     "release": "2024-07", "provider": "OpenAI"},
+    "gpt":              {"tier": 2, "culture": "western",  "size": "undisclosed", "release": "2024-07", "provider": "OpenAI"},
     "qwen3_local":      {"tier": 2, "culture": "chinese",  "size": "30B",     "release": "2025-06", "provider": "Ollama"},
-    "gemma4_local":     {"tier": 2, "culture": "western",  "size": "27B",     "release": "2025-06", "provider": "Ollama"},
+    "gemma4_local":     {"tier": 2, "culture": "western",  "size": "27B MoE", "release": "2025-06", "provider": "Ollama"},
     "groq_allam":       {"tier": 2, "culture": "arabic",   "size": "7B",      "release": "2025-01", "provider": "Groq"},
     "yandexgpt_local":  {"tier": 2, "culture": "russian",  "size": "8B",      "release": "2025-03", "provider": "Ollama"},
-    "gigachat_local":   {"tier": 2, "culture": "russian",  "size": "10B/1.8B","release": "2026-03", "provider": "Ollama"},
+    "gigachat_local":   {"tier": 2, "culture": "russian",  "size": "undisclosed", "release": "2026-03", "provider": "Ollama"},
     "swallow_local":    {"tier": 2, "culture": "japanese", "size": "8B",      "release": "2024-12", "provider": "Ollama"},
+    "qwen35_local":     {"tier": 2, "culture": "chinese",  "size": "27B",     "release": "2026-06", "provider": "Ollama"},
 }
 
 # Culture-model mapping for diagonal advantage analysis
 CULTURE_MODELS = {
-    "chinese":  ["deepseek", "cerebras_qwen3", "groq_kimi", "qwen3_local"],
+    "chinese":  ["deepseek", "cerebras_qwen3", "groq_kimi", "qwen3_local", "fireworks_glm", "dashscope_qwen_plus", "qwen35_local"],
     "russian":  ["gigachat_api", "yandexgpt_pro", "gigachat_local", "yandexgpt_local"],
     "japanese": ["gptoss_swallow", "swallow_local"],
     "korean":   ["exaone_local"],
     "arabic":   ["jais_local", "groq_allam"],
     "indian":   ["sarvam"],
-    "western":  ["claude", "gpt", "gemini", "gemma4_local", "groq_llama33", "grok"],
+    "western":  ["claude", "gpt", "gemini", "gemma4_local", "groq_llama33", "grok", "sambanova_deepseek"],
 }
 
 # Brand pair to culture mapping
@@ -104,6 +111,7 @@ PAIR_CULTURE = {
     "mongolia_beer": "chinese",          # Mongolian, tested with Chinese models
     "korea_dairy": "korean",
     "india_dairy": "indian",
+    "russia_ukraine_banking": "russian",  # Tinkoff vs PrivatBank cross-cultural banking
 }
 
 # H9 capacity pairs (same culture, different sizes)
@@ -128,6 +136,9 @@ def load_all_calls(base_dir: str) -> list[dict]:
         ("Run 4", "L3_sessions/run4_resolution.jsonl"),
         ("Run 5", "L3_sessions/run5_crosscultural.jsonl"),
         ("Run 5 (GPT-OSS)", "L3_sessions/run5_gptoss_swallow.jsonl"),
+        ("Run 6 (banking)", "L3_sessions/run6_banking_clean.jsonl"),
+        ("Run 2 (Qwen Plus)", "L3_sessions/run2_qwen_plus.jsonl"),
+        ("Run 5 (Fireworks GLM)", "L3_sessions/run5_fireworks_glm.jsonl"),
     ]
     all_calls = []
     for label, rel_path in files:
