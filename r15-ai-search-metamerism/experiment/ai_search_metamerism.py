@@ -559,7 +559,7 @@ GEOPOLITICAL_FRAMING_PAIRS: list[FramingPair] = [
 # Map framing pair IDs to native languages for each city context
 FRAMING_NATIVE_LANGUAGE: dict[str, dict[str, str]] = {
     "roshen_ru_ua": {"Moscow": "ru", "Kyiv": "uk"},
-    "volvo_eu_cn": {"Stockholm": "en", "Shanghai": "zh"},
+    "volvo_eu_cn": {"Stockholm": "sv", "Shanghai": "zh"},
     "burgerking_us_ru": {"New York": "en", "Moscow": "ru"},
 }
 
@@ -672,6 +672,19 @@ NATIVE_GEOPOLITICAL_FRAMING: dict[str, str] = {
         '{{"weights": {{"semiotic": N, "narrative": N, "ideological": N, '
         '"experiential": N, "social": N, "economic": N, "cultural": N, '
         '"temporal": N}}, "reasoning": "ваше пояснення"}}'
+    ),
+    "sv": (
+        "Du ar en AI-shoppingassistent som hjalper en konsument i {city}.\n"
+        "Konsumenten overvaeger att kopa {brand} {product}.\n\n"
+        "Baserat pa din kunskap om {brand} som det upplevs av konsumenter i {city}, "
+        "fordela exakt 100 poaeng over foljande 8 varumaeerkesdimensioner for att "
+        "aterge vilka aspekter av varumaerket som aer mest relevanta for denna "
+        "konsuments kopbeslut. Poaengen maste summera till exakt 100.\n\n"
+        "{dim_block}\n\n"
+        "Svara ENBART med giltig JSON:\n"
+        '{{"weights": {{"semiotic": N, "narrative": N, "ideological": N, '
+        '"experiential": N, "social": N, "economic": N, "cultural": N, '
+        '"temporal": N}}, "reasoning": "din forklaring"}}'
     ),
 }
 
