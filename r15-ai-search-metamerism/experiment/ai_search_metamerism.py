@@ -558,7 +558,7 @@ GEOPOLITICAL_FRAMING_PAIRS: list[FramingPair] = [
 
 # Map framing pair IDs to native languages for each city context
 FRAMING_NATIVE_LANGUAGE: dict[str, dict[str, str]] = {
-    "roshen_ru_ua": {"Moscow": "ru", "Kyiv": "ru"},
+    "roshen_ru_ua": {"Moscow": "ru", "Kyiv": "uk"},
     "volvo_eu_cn": {"Stockholm": "en", "Shanghai": "zh"},
     "burgerking_us_ru": {"New York": "en", "Moscow": "ru"},
 }
@@ -659,6 +659,19 @@ NATIVE_GEOPOLITICAL_FRAMING: dict[str, str] = {
         '{{"weights": {{"semiotic": N, "narrative": N, "ideological": N, '
         '"experiential": N, "social": N, "economic": N, "cultural": N, '
         '"temporal": N}}, "reasoning": "你的解释"}}'
+    ),
+    "uk": (
+        "Ви — AI-помічник з покупок, що допомагає споживачу в місті {city}.\n"
+        "Споживач розглядає покупку {brand} {product}.\n\n"
+        "Спираючись на ваші знання про {brand} у контексті споживачів у {city}, "
+        "розподіліть рівно 100 балів за 8 вимірами бренду, щоб відобразити, "
+        "які аспекти бренду є найважливішими для рішення про покупку цього споживача. "
+        "Сума балів має дорівнювати рівно 100.\n\n"
+        "{dim_block}\n\n"
+        "Відповідайте ЛИШЕ валідним JSON:\n"
+        '{{"weights": {{"semiotic": N, "narrative": N, "ideological": N, '
+        '"experiential": N, "social": N, "economic": N, "cultural": N, '
+        '"temporal": N}}, "reasoning": "ваше пояснення"}}'
     ),
 }
 
