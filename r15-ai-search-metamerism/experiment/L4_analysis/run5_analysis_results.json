@@ -1,12 +1,12 @@
 {
   "metadata": {
-    "total_calls": 13684,
+    "total_calls": 14302,
     "cross_cultural_calls": 8147,
     "models": 23,
     "cultures": 7,
     "brand_pairs": 9,
-    "total_cost_usd": 2.8,
-    "total_est_tokens": 3664409
+    "total_cost_usd": 3.53,
+    "total_est_tokens": 4399329
   },
   "H1_overweighting": {
     "supported": "True",
@@ -165,56 +165,76 @@
   },
   "H7_geopolitical_valence": {
     "supported": null,
-    "mean_difference": -0.07005947800271989,
+    "mean_difference": -0.0700594780027199,
     "std_difference": 0.06125048862129147,
     "models_russia_higher": 3,
     "models_ukraine_higher": 15,
     "total_models": 20,
     "per_model": {
-      "groq_allam": {
-        "russia_dci": 0.3239130434782609,
-        "ukraine_dci": 0.3167701863354037,
-        "difference": 0.007142857142857173
+      "gigachat_local": {
+        "russia_dci": 0.25,
+        "ukraine_dci": 0.40634615384615386,
+        "difference": -0.15634615384615386
       },
       "groq_kimi": {
         "russia_dci": 0.3,
         "ukraine_dci": 0.375,
         "difference": -0.07500000000000001
       },
-      "claude": {
-        "russia_dci": 0.22,
-        "ukraine_dci": 0.34,
-        "difference": -0.12000000000000002
-      },
-      "yandexgpt_pro": {
-        "russia_dci": 0.4,
-        "ukraine_dci": 0.4,
-        "difference": 0.0
-      },
       "yandexgpt_local": {
         "russia_dci": 0.2857142857142857,
         "ukraine_dci": 0.38181818181818183,
         "difference": -0.09610389610389614
       },
-      "qwen3_local": {
-        "russia_dci": 0.325,
-        "ukraine_dci": 0.4,
-        "difference": -0.07500000000000001
+      "claude": {
+        "russia_dci": 0.22,
+        "ukraine_dci": 0.34,
+        "difference": -0.12000000000000002
+      },
+      "jais_local": {
+        "russia_dci": 0.31363636363636366,
+        "ukraine_dci": 0.42500000000000004,
+        "difference": -0.11136363636363639
       },
       "gemini": {
         "russia_dci": 0.275,
         "ukraine_dci": 0.235,
         "difference": 0.040000000000000036
       },
-      "gemma4_local": {
-        "russia_dci": 0.2727272727272727,
-        "ukraine_dci": 0.4,
-        "difference": -0.12727272727272732
+      "fireworks_glm": {
+        "russia_dci": 0.21666666666666665,
+        "ukraine_dci": 0.3,
+        "difference": -0.08333333333333334
+      },
+      "deepseek": {
+        "russia_dci": 0.3,
+        "ukraine_dci": 0.3,
+        "difference": 0.0
       },
       "groq_llama33": {
         "russia_dci": 0.3,
         "ukraine_dci": 0.4,
         "difference": -0.10000000000000003
+      },
+      "gigachat_api": {
+        "russia_dci": 0.3,
+        "ukraine_dci": 0.4,
+        "difference": -0.10000000000000003
+      },
+      "yandexgpt_pro": {
+        "russia_dci": 0.4,
+        "ukraine_dci": 0.4,
+        "difference": 0.0
+      },
+      "exaone_local": {
+        "russia_dci": 0.3904761904761905,
+        "ukraine_dci": 0.41428571428571426,
+        "difference": -0.02380952380952378
+      },
+      "cerebras_qwen3": {
+        "russia_dci": 0.235,
+        "ukraine_dci": 0.4,
+        "difference": -0.16500000000000004
       },
       "grok": {
         "russia_dci": 0.2,
@@ -226,50 +246,30 @@
         "ukraine_dci": 0.2954545454545454,
         "difference": 0.0449948927477018
       },
-      "deepseek": {
-        "russia_dci": 0.3,
-        "ukraine_dci": 0.3,
-        "difference": 0.0
-      },
-      "gptoss_swallow": {
-        "russia_dci": 0.3549019607843138,
-        "ukraine_dci": 0.38999999999999996,
-        "difference": -0.03509803921568616
-      },
-      "gigachat_api": {
-        "russia_dci": 0.3,
-        "ukraine_dci": 0.4,
-        "difference": -0.10000000000000003
-      },
-      "gigachat_local": {
-        "russia_dci": 0.25,
-        "ukraine_dci": 0.40634615384615386,
-        "difference": -0.15634615384615386
-      },
-      "jais_local": {
-        "russia_dci": 0.31363636363636366,
-        "ukraine_dci": 0.42500000000000004,
-        "difference": -0.11136363636363639
-      },
-      "exaone_local": {
-        "russia_dci": 0.3904761904761905,
-        "ukraine_dci": 0.41428571428571426,
-        "difference": -0.02380952380952378
-      },
-      "fireworks_glm": {
-        "russia_dci": 0.21666666666666665,
-        "ukraine_dci": 0.3,
-        "difference": -0.08333333333333334
-      },
-      "cerebras_qwen3": {
-        "russia_dci": 0.235,
-        "ukraine_dci": 0.4,
-        "difference": -0.16500000000000004
+      "groq_allam": {
+        "russia_dci": 0.3239130434782609,
+        "ukraine_dci": 0.3167701863354037,
+        "difference": 0.007142857142857173
       },
       "gpt": {
         "russia_dci": 0.25,
         "ukraine_dci": 0.375,
         "difference": -0.125
+      },
+      "gemma4_local": {
+        "russia_dci": 0.2727272727272727,
+        "ukraine_dci": 0.4,
+        "difference": -0.12727272727272732
+      },
+      "qwen3_local": {
+        "russia_dci": 0.325,
+        "ukraine_dci": 0.4,
+        "difference": -0.07500000000000001
+      },
+      "gptoss_swallow": {
+        "russia_dci": 0.3549019607843138,
+        "ukraine_dci": 0.38999999999999996,
+        "difference": -0.03509803921568616
       }
     }
   },
@@ -364,32 +364,11 @@
     "total_pairs": 28,
     "pairs": [
       {
-        "model": "gigachat_local",
-        "pair_id": "ukraine_confectionery",
-        "en_dci": 0.40634615384615386,
-        "native_dci": 0.3313034188034188,
-        "reduction": 0.07504273504273506
-      },
-      {
-        "model": "jais_local",
-        "pair_id": "uae_dairy",
-        "en_dci": 0.42500000000000004,
-        "native_dci": 0.375,
-        "reduction": 0.050000000000000044
-      },
-      {
-        "model": "groq_kimi",
-        "pair_id": "china_water",
-        "en_dci": 0.3833333333333333,
-        "native_dci": 0.31333333333333335,
-        "reduction": 0.06999999999999995
-      },
-      {
-        "model": "yandexgpt_local",
-        "pair_id": "russia_ukraine_banking",
-        "en_dci": 0.3333333333333333,
-        "native_dci": 0.4000000000000001,
-        "reduction": -0.06666666666666676
+        "model": "yandexgpt_pro",
+        "pair_id": "russia_organic",
+        "en_dci": 0.4,
+        "native_dci": 0.23863636363636365,
+        "reduction": 0.16136363636363638
       },
       {
         "model": "yandexgpt_pro",
@@ -399,151 +378,11 @@
         "reduction": 0.03333333333333344
       },
       {
-        "model": "swallow_local",
-        "pair_id": "japan_snacks",
-        "en_dci": 0.4000000000000001,
-        "native_dci": 0.38947368421052636,
-        "reduction": 0.010526315789473717
-      },
-      {
-        "model": "groq_kimi",
-        "pair_id": "mongolia_beer",
-        "en_dci": 0.4,
-        "native_dci": 0.36,
-        "reduction": 0.040000000000000036
-      },
-      {
-        "model": "sarvam",
-        "pair_id": "india_dairy",
-        "en_dci": 0.4,
-        "native_dci": 0.4,
-        "reduction": 0.0
-      },
-      {
-        "model": "gigachat_api",
-        "pair_id": "russia_organic",
-        "en_dci": 0.3,
-        "native_dci": 0.25,
-        "reduction": 0.04999999999999999
-      },
-      {
-        "model": "qwen3_local",
-        "pair_id": "china_water",
-        "en_dci": 0.4000000000000001,
-        "native_dci": 0.4,
-        "reduction": 5.551115123125783e-17
-      },
-      {
-        "model": "deepseek",
-        "pair_id": "china_water",
-        "en_dci": 0.35,
-        "native_dci": 0.38750000000000007,
-        "reduction": -0.03750000000000009
-      },
-      {
-        "model": "fireworks_glm",
-        "pair_id": "china_water",
-        "en_dci": 0.325,
-        "native_dci": 0.4000000000000001,
-        "reduction": -0.07500000000000007
-      },
-      {
-        "model": "yandexgpt_local",
-        "pair_id": "ukraine_confectionery",
-        "en_dci": 0.38181818181818183,
-        "native_dci": 0.4,
-        "reduction": -0.018181818181818188
-      },
-      {
-        "model": "gigachat_local",
-        "pair_id": "russia_organic",
-        "en_dci": 0.25,
-        "native_dci": 0.36648003894839337,
-        "reduction": -0.11648003894839337
-      },
-      {
-        "model": "yandexgpt_pro",
-        "pair_id": "ukraine_confectionery",
-        "en_dci": 0.4,
-        "native_dci": 0.4,
-        "reduction": 0.0
-      },
-      {
-        "model": "fireworks_glm",
-        "pair_id": "mongolia_beer",
-        "en_dci": 0.2333333333333333,
-        "native_dci": 0.25,
-        "reduction": -0.01666666666666669
-      },
-      {
-        "model": "qwen3_local",
-        "pair_id": "mongolia_beer",
-        "en_dci": 0.4,
-        "native_dci": 0.4,
-        "reduction": 0.0
-      },
-      {
         "model": "deepseek",
         "pair_id": "mongolia_beer",
         "en_dci": 0.4,
         "native_dci": 0.35,
         "reduction": 0.050000000000000044
-      },
-      {
-        "model": "cerebras_qwen3",
-        "pair_id": "china_water",
-        "en_dci": 0.24671052631578946,
-        "native_dci": 0.23921052631578948,
-        "reduction": 0.007499999999999979
-      },
-      {
-        "model": "gigachat_api",
-        "pair_id": "russia_ukraine_banking",
-        "en_dci": 0.3333333333333333,
-        "native_dci": 0.3666666666666667,
-        "reduction": -0.03333333333333338
-      },
-      {
-        "model": "cerebras_qwen3",
-        "pair_id": "mongolia_beer",
-        "en_dci": 0.4,
-        "native_dci": 0.36,
-        "reduction": 0.040000000000000036
-      },
-      {
-        "model": "gigachat_local",
-        "pair_id": "russia_ukraine_banking",
-        "en_dci": 0.34847924438089484,
-        "native_dci": 0.27575757575757576,
-        "reduction": 0.07272166862331908
-      },
-      {
-        "model": "yandexgpt_local",
-        "pair_id": "russia_organic",
-        "en_dci": 0.2857142857142857,
-        "native_dci": 0.2863636363636364,
-        "reduction": -0.0006493506493506773
-      },
-      {
-        "model": "yandexgpt_pro",
-        "pair_id": "russia_organic",
-        "en_dci": 0.4,
-        "native_dci": 0.23863636363636365,
-        "reduction": 0.16136363636363638
-      },
-      {
-        "model": "gptoss_swallow",
-        "pair_id": "japan_snacks",
-        "en_dci": 0.3833333333333333,
-        "native_dci": 0.4166666666666667,
-        "reduction": -0.03333333333333338
-      },
-      {
-        "model": "gigachat_api",
-        "pair_id": "ukraine_confectionery",
-        "en_dci": 0.4,
-        "native_dci": 0.4,
-        "reduction": 0.0
       },
       {
         "model": "groq_allam",
@@ -553,13 +392,453 @@
         "reduction": 0.015476190476190421
       },
       {
+        "model": "deepseek",
+        "pair_id": "china_water",
+        "en_dci": 0.35,
+        "native_dci": 0.38750000000000007,
+        "reduction": -0.03750000000000009
+      },
+      {
+        "model": "yandexgpt_local",
+        "pair_id": "russia_organic",
+        "en_dci": 0.2857142857142857,
+        "native_dci": 0.2863636363636364,
+        "reduction": -0.0006493506493506773
+      },
+      {
+        "model": "yandexgpt_local",
+        "pair_id": "russia_ukraine_banking",
+        "en_dci": 0.3333333333333333,
+        "native_dci": 0.4000000000000001,
+        "reduction": -0.06666666666666676
+      },
+      {
+        "model": "gigachat_api",
+        "pair_id": "ukraine_confectionery",
+        "en_dci": 0.4,
+        "native_dci": 0.4,
+        "reduction": 0.0
+      },
+      {
+        "model": "sarvam",
+        "pair_id": "india_dairy",
+        "en_dci": 0.4,
+        "native_dci": 0.4,
+        "reduction": 0.0
+      },
+      {
+        "model": "gigachat_local",
+        "pair_id": "russia_organic",
+        "en_dci": 0.25,
+        "native_dci": 0.36648003894839337,
+        "reduction": -0.11648003894839337
+      },
+      {
+        "model": "gigachat_local",
+        "pair_id": "russia_ukraine_banking",
+        "en_dci": 0.34847924438089484,
+        "native_dci": 0.27575757575757576,
+        "reduction": 0.07272166862331908
+      },
+      {
+        "model": "jais_local",
+        "pair_id": "uae_dairy",
+        "en_dci": 0.42500000000000004,
+        "native_dci": 0.375,
+        "reduction": 0.050000000000000044
+      },
+      {
+        "model": "yandexgpt_pro",
+        "pair_id": "ukraine_confectionery",
+        "en_dci": 0.4,
+        "native_dci": 0.4,
+        "reduction": 0.0
+      },
+      {
+        "model": "groq_kimi",
+        "pair_id": "mongolia_beer",
+        "en_dci": 0.4,
+        "native_dci": 0.36,
+        "reduction": 0.040000000000000036
+      },
+      {
+        "model": "gigachat_api",
+        "pair_id": "russia_organic",
+        "en_dci": 0.3,
+        "native_dci": 0.25,
+        "reduction": 0.04999999999999999
+      },
+      {
+        "model": "groq_kimi",
+        "pair_id": "china_water",
+        "en_dci": 0.3833333333333333,
+        "native_dci": 0.31333333333333335,
+        "reduction": 0.06999999999999995
+      },
+      {
+        "model": "gigachat_api",
+        "pair_id": "russia_ukraine_banking",
+        "en_dci": 0.3333333333333333,
+        "native_dci": 0.3666666666666667,
+        "reduction": -0.03333333333333338
+      },
+      {
+        "model": "fireworks_glm",
+        "pair_id": "mongolia_beer",
+        "en_dci": 0.2333333333333333,
+        "native_dci": 0.25,
+        "reduction": -0.01666666666666669
+      },
+      {
+        "model": "yandexgpt_local",
+        "pair_id": "ukraine_confectionery",
+        "en_dci": 0.38181818181818183,
+        "native_dci": 0.4,
+        "reduction": -0.018181818181818188
+      },
+      {
+        "model": "fireworks_glm",
+        "pair_id": "china_water",
+        "en_dci": 0.325,
+        "native_dci": 0.4000000000000001,
+        "reduction": -0.07500000000000007
+      },
+      {
         "model": "exaone_local",
         "pair_id": "korea_dairy",
         "en_dci": 0.325,
         "native_dci": 0.3,
         "reduction": 0.025000000000000022
+      },
+      {
+        "model": "swallow_local",
+        "pair_id": "japan_snacks",
+        "en_dci": 0.4000000000000001,
+        "native_dci": 0.38947368421052636,
+        "reduction": 0.010526315789473717
+      },
+      {
+        "model": "cerebras_qwen3",
+        "pair_id": "mongolia_beer",
+        "en_dci": 0.4,
+        "native_dci": 0.36,
+        "reduction": 0.040000000000000036
+      },
+      {
+        "model": "gigachat_local",
+        "pair_id": "ukraine_confectionery",
+        "en_dci": 0.40634615384615386,
+        "native_dci": 0.3313034188034188,
+        "reduction": 0.07504273504273506
+      },
+      {
+        "model": "qwen3_local",
+        "pair_id": "mongolia_beer",
+        "en_dci": 0.4,
+        "native_dci": 0.4,
+        "reduction": 0.0
+      },
+      {
+        "model": "cerebras_qwen3",
+        "pair_id": "china_water",
+        "en_dci": 0.24671052631578946,
+        "native_dci": 0.23921052631578948,
+        "reduction": 0.007499999999999979
+      },
+      {
+        "model": "qwen3_local",
+        "pair_id": "china_water",
+        "en_dci": 0.4000000000000001,
+        "native_dci": 0.4,
+        "reduction": 5.551115123125783e-17
+      },
+      {
+        "model": "gptoss_swallow",
+        "pair_id": "japan_snacks",
+        "en_dci": 0.3833333333333333,
+        "native_dci": 0.4166666666666667,
+        "reduction": -0.03333333333333338
       }
     ]
+  },
+  "H12_geopolitical_framing": {
+    "supported": "True",
+    "mean_abs_delta": 0.039735482192690894,
+    "t_stat": 7.122272660129313,
+    "p_value": 4.776740089407019e-09,
+    "n_pairs": 3,
+    "total_deltas": 49,
+    "pairs": {
+      "roshen_ru_ua": {
+        "city_a": "Roshen (Kyiv)",
+        "city_b": "Roshen (Moscow)",
+        "models": 15,
+        "mean_abs_delta": 0.06226815776815779,
+        "per_model": {
+          "groq_kimi": {
+            "city_a_dci": 0.34333333333333327,
+            "city_b_dci": 0.3466666666666667,
+            "delta": 0.0033333333333334103
+          },
+          "sambanova_deepseek": {
+            "city_a_dci": 0.39999999999999997,
+            "city_b_dci": 0.4166666666666667,
+            "delta": 0.01666666666666672
+          },
+          "cerebras_qwen3": {
+            "city_a_dci": 0.25,
+            "city_b_dci": 0.3499999999999999,
+            "delta": 0.09999999999999992
+          },
+          "grok": {
+            "city_a_dci": 0.4166666666666667,
+            "city_b_dci": 0.5,
+            "delta": 0.08333333333333331
+          },
+          "gpt": {
+            "city_a_dci": 0.3499999999999999,
+            "city_b_dci": 0.3666666666666667,
+            "delta": 0.016666666666666774
+          },
+          "deepseek": {
+            "city_a_dci": 0.44333333333333336,
+            "city_b_dci": 0.48333333333333334,
+            "delta": 0.03999999999999998
+          },
+          "dashscope_qwen_plus": {
+            "city_a_dci": 0.27,
+            "city_b_dci": 0.36999999999999994,
+            "delta": 0.09999999999999992
+          },
+          "claude": {
+            "city_a_dci": 0.2933333333333334,
+            "city_b_dci": 0.38000000000000006,
+            "delta": 0.08666666666666667
+          },
+          "gemma4_local": {
+            "city_a_dci": 0.2712121212121212,
+            "city_b_dci": 0.3590909090909091,
+            "delta": 0.08787878787878795
+          },
+          "qwen3_local": {
+            "city_a_dci": 0.3499999999999999,
+            "city_b_dci": 0.5634920634920635,
+            "delta": 0.21349206349206357
+          },
+          "gigachat_api": {
+            "city_a_dci": 0.3499999999999999,
+            "city_b_dci": 0.43333333333333335,
+            "delta": 0.08333333333333343
+          },
+          "groq_llama33": {
+            "city_a_dci": 0.3499999999999999,
+            "city_b_dci": 0.3499999999999999,
+            "delta": 0.0
+          },
+          "groq_allam": {
+            "city_a_dci": 0.4090909090909091,
+            "city_b_dci": 0.4147727272727273,
+            "delta": 0.005681818181818177
+          },
+          "gptoss_swallow": {
+            "city_a_dci": 0.3,
+            "city_b_dci": 0.38333333333333336,
+            "delta": 0.08333333333333337
+          },
+          "sarvam": {
+            "city_a_dci": 0.36363636363636365,
+            "city_b_dci": 0.35,
+            "delta": -0.013636363636363669
+          }
+        }
+      },
+      "volvo_eu_cn": {
+        "city_a": "Volvo XC90 (Shanghai)",
+        "city_b": "Volvo XC90 (Stockholm)",
+        "models": 17,
+        "mean_abs_delta": 0.029333531392354922,
+        "per_model": {
+          "yandexgpt_pro": {
+            "city_a_dci": 0.3,
+            "city_b_dci": 0.27666666666666667,
+            "delta": -0.023333333333333317
+          },
+          "fireworks_glm": {
+            "city_a_dci": 0.27,
+            "city_b_dci": 0.24,
+            "delta": -0.030000000000000027
+          },
+          "groq_kimi": {
+            "city_a_dci": 0.26,
+            "city_b_dci": 0.29000000000000004,
+            "delta": 0.030000000000000027
+          },
+          "sambanova_deepseek": {
+            "city_a_dci": 0.25,
+            "city_b_dci": 0.3,
+            "delta": 0.04999999999999999
+          },
+          "cerebras_qwen3": {
+            "city_a_dci": 0.25555555555555554,
+            "city_b_dci": 0.24666666666666667,
+            "delta": -0.008888888888888863
+          },
+          "grok": {
+            "city_a_dci": 0.32,
+            "city_b_dci": 0.2385185185185185,
+            "delta": -0.08148148148148152
+          },
+          "gpt": {
+            "city_a_dci": 0.2833333333333333,
+            "city_b_dci": 0.25,
+            "delta": -0.033333333333333326
+          },
+          "deepseek": {
+            "city_a_dci": 0.3,
+            "city_b_dci": 0.3,
+            "delta": 0.0
+          },
+          "dashscope_qwen_plus": {
+            "city_a_dci": 0.28,
+            "city_b_dci": 0.26,
+            "delta": -0.020000000000000018
+          },
+          "claude": {
+            "city_a_dci": 0.26,
+            "city_b_dci": 0.3,
+            "delta": 0.03999999999999998
+          },
+          "gemma4_local": {
+            "city_a_dci": 0.2515151515151515,
+            "city_b_dci": 0.2712121212121212,
+            "delta": 0.019696969696969657
+          },
+          "qwen3_local": {
+            "city_a_dci": 0.2833333333333334,
+            "city_b_dci": 0.19999999999999998,
+            "delta": -0.0833333333333334
+          },
+          "groq_llama33": {
+            "city_a_dci": 0.25,
+            "city_b_dci": 0.25,
+            "delta": 0.0
+          },
+          "gigachat_api": {
+            "city_a_dci": 0.3,
+            "city_b_dci": 0.3,
+            "delta": 0.0
+          },
+          "gptoss_swallow": {
+            "city_a_dci": 0.2733333333333334,
+            "city_b_dci": 0.3133333333333333,
+            "delta": 0.039999999999999925
+          },
+          "gemini": {
+            "city_a_dci": 0.33666666666666667,
+            "city_b_dci": 0.3033333333333333,
+            "delta": -0.03333333333333338
+          },
+          "sarvam": {
+            "city_a_dci": 0.2751851851851852,
+            "city_b_dci": 0.28045454545454546,
+            "delta": 0.005269360269360257
+          }
+        }
+      },
+      "burgerking_us_ru": {
+        "city_a": "Burger King (Moscow)",
+        "city_b": "Burger King (New York)",
+        "models": 17,
+        "mean_abs_delta": 0.030255660426438413,
+        "per_model": {
+          "yandexgpt_pro": {
+            "city_a_dci": 0.3833333333333333,
+            "city_b_dci": 0.4066666666666667,
+            "delta": 0.023333333333333373
+          },
+          "groq_kimi": {
+            "city_a_dci": 0.3866666666666667,
+            "city_b_dci": 0.36333333333333334,
+            "delta": -0.023333333333333373
+          },
+          "sambanova_deepseek": {
+            "city_a_dci": 0.4000000000000001,
+            "city_b_dci": 0.4000000000000001,
+            "delta": 0.0
+          },
+          "cerebras_qwen3": {
+            "city_a_dci": 0.32,
+            "city_b_dci": 0.36481481481481487,
+            "delta": 0.04481481481481486
+          },
+          "grok": {
+            "city_a_dci": 0.42,
+            "city_b_dci": 0.48,
+            "delta": 0.06
+          },
+          "gpt": {
+            "city_a_dci": 0.3333333333333333,
+            "city_b_dci": 0.3,
+            "delta": -0.033333333333333326
+          },
+          "deepseek": {
+            "city_a_dci": 0.4566666666666667,
+            "city_b_dci": 0.45,
+            "delta": -0.00666666666666671
+          },
+          "dashscope_qwen_plus": {
+            "city_a_dci": 0.36999999999999994,
+            "city_b_dci": 0.33,
+            "delta": -0.039999999999999925
+          },
+          "claude": {
+            "city_a_dci": 0.4296296296296296,
+            "city_b_dci": 0.4000000000000001,
+            "delta": -0.029629629629629506
+          },
+          "gemma4_local": {
+            "city_a_dci": 0.3636363636363636,
+            "city_b_dci": 0.3606060606060606,
+            "delta": -0.0030303030303029943
+          },
+          "qwen3_local": {
+            "city_a_dci": 0.45,
+            "city_b_dci": 0.46666666666666673,
+            "delta": 0.01666666666666672
+          },
+          "gigachat_api": {
+            "city_a_dci": 0.35000000000000003,
+            "city_b_dci": 0.4166666666666667,
+            "delta": 0.06666666666666665
+          },
+          "groq_llama33": {
+            "city_a_dci": 0.3666666666666667,
+            "city_b_dci": 0.4000000000000001,
+            "delta": 0.03333333333333338
+          },
+          "groq_allam": {
+            "city_a_dci": 0.41428571428571426,
+            "city_b_dci": 0.3870967741935484,
+            "delta": -0.02718894009216588
+          },
+          "gptoss_swallow": {
+            "city_a_dci": 0.3466666666666667,
+            "city_b_dci": 0.4033333333333333,
+            "delta": 0.05666666666666664
+          },
+          "gemini": {
+            "city_a_dci": 0.43333333333333335,
+            "city_b_dci": 0.44333333333333336,
+            "delta": 0.010000000000000009
+          },
+          "sarvam": {
+            "city_a_dci": 0.39031746031746034,
+            "city_b_dci": 0.43,
+            "delta": 0.03968253968253965
+          }
+        }
+      }
+    }
   },
   "Run4_resolution": {
     "run3_baseline_dci": 0.3529499759499759,
