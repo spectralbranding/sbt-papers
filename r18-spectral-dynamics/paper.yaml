@@ -1,0 +1,219 @@
+# paper.yaml — Paper Spec v0.1.0
+# Zharnikov (2026z): R18 — Spectral Dynamics
+spec_version: "0.1.0"
+
+meta:
+  title: "Spectral Dynamics: Velocity, Acceleration, and Phase Space in Multi-Dimensional Brand Perception"
+  authors:
+    - name: "Zharnikov, Dmitry"
+      orcid: "0009-0000-6893-9231"
+      affiliation: "Independent Researcher"
+  doi: "10.5281/zenodo.19468204"
+  date: "2026-04-08"
+  version: "1.0"
+  venue: "Zenodo preprint (target: JMR; fallback: IJRM)"
+  license: "CC-BY-4.0"
+  keywords:
+    - brand dynamics
+    - brand velocity
+    - phase space
+    - trajectory clustering
+    - spectral brand theory
+    - differential calculus
+    - non-ergodic perception
+    - Kalman filter
+    - brand measurement
+    - directional coherence
+
+claims:
+  - id: "P1"
+    type: proposition
+    statement: >
+      The mean squared error of the velocity estimator is minimized when the measurement
+      interval Delta_t* balances truncation error (proportional to Delta_t^2 for smooth
+      dynamics) against noise amplification (proportional to 1/Delta_t^2). The optimal
+      interval satisfies Delta_t* ~ (sigma_x)^{1/3} / f''^{1/3}.
+    testable: true
+    tested_in_paper: false
+    status: proposed
+    depends_on: []
+
+  - id: "P2"
+    type: proposition
+    statement: >
+      Under the SDE dynamics of Zharnikov (2026j), conditioned on the same realization of
+      the driving Brownian motion, phase space trajectories (x(t), v(t)) are unique: two
+      brands starting from distinct phase space points remain distinct for all t > 0 with
+      probability 1.
+    testable: true
+    tested_in_paper: true
+    status: supported
+    depends_on: []
+
+  - id: "T1"
+    type: theorem
+    statement: >
+      Let brands A and B have identical spectral profiles at time t. If their velocity
+      vectors differ, then: (a) the brands are distinguishable in phase space; (b) under
+      the SDE dynamics, their profiles will diverge for t' > t with probability 1; (c) the
+      magnitude of divergence is to first order proportional to the velocity difference
+      times the time elapsed.
+    testable: true
+    tested_in_paper: true
+    status: supported
+    depends_on: ["P2"]
+
+  - id: "P3"
+    type: proposition
+    statement: >
+      For brands with convergence indicator CI > 0 and constant velocities, the time to
+      positional convergence is approximately ||x_A - x_B|| / ||v_A - v_B||.
+    testable: true
+    tested_in_paper: false
+    status: proposed
+    depends_on: []
+
+methodology:
+  type: theoretical
+  design: >
+    Conceptual paper developing a differential calculus for multi-dimensional brand perception.
+    The framework extends Spectral Brand Theory from static profiles (Order 0) to velocity
+    (Order 1) and acceleration (Order 2). Illustrated using author-assigned Dove brand profiles
+    across four temporal cross-sections (2003-2023) from Zharnikov (2026p).
+  analysis:
+    method: >
+      Finite difference estimation of velocity and acceleration vectors from discrete-time
+      brand profiles. Noise amplification analysis. Phase space construction. Directional
+      coherence computation. No primary data collection.
+    software: >
+      Computations are straightforward finite differences reproducible in any numerical
+      environment. Kalman filter implementation deferred to post-publication.
+
+acceptance:
+  - claim_id: "T1"
+    criterion: >
+      Identify two brands with similar current spectral profiles but different trajectories
+      (different velocity vectors). Verify that their profiles diverge in subsequent measurement
+      waves as predicted by the velocity difference.
+    falsification: >
+      Brands with identical profiles and different velocities do NOT diverge in subsequent
+      measurements, or divergence direction is unrelated to velocity direction.
+
+  - claim_id: "P1"
+    criterion: >
+      Apply velocity estimation to brand tracking data at multiple measurement frequencies
+      (monthly, quarterly, semi-annual, annual). Verify that MSE follows the predicted
+      U-shaped curve with minimum near the theoretically optimal interval.
+    falsification: >
+      MSE does not exhibit a minimum at intermediate frequencies, or the minimum occurs at
+      a frequency inconsistent with the theoretical prediction.
+
+data:
+  available: true
+  url: "https://github.com/spectralbranding/sbt-papers/tree/main/r18-spectral-dynamics"
+  notes: >
+    Dove profiles from Zharnikov (2026p, Table 1). Author-assigned based on qualitative
+    assessment. No new primary data collected. Illustration only.
+
+code:
+  available: false
+  notes: >
+    Computations are finite differences (velocity, acceleration) applied to Table 1 data.
+    Reproducible by hand or in any spreadsheet/numerical environment.
+
+replication:
+  feasible: true
+  estimated_cost: "$0 (no data collection required for theoretical framework)"
+  estimated_time: "1 day (reproduce finite difference computations from Table 1)"
+  requirements:
+    - "Table 1 data (Dove profiles at 4 time points)"
+    - "Any numerical environment (Python, R, Excel)"
+
+dependencies:
+  - doi: "10.5281/zenodo.18945912"
+    claim: "Zharnikov (2026a) SBT — dimensional taxonomy, brand profiles"
+    relationship: "extends"
+    critical: true
+
+  - doi: "10.5281/zenodo.18945659"
+    claim: "Zharnikov (2026j) R6 Diffusion Dynamics — SDE model, drift as expected velocity"
+    relationship: "extends"
+    critical: true
+
+  - doi: "10.5281/zenodo.19138860"
+    claim: "Zharnikov (2026o) R9 Non-Ergodic Perception — trajectory importance, non-ergodicity"
+    relationship: "extends"
+    critical: true
+
+  - doi: "10.5281/zenodo.19139258"
+    claim: "Zharnikov (2026p) R10 Dove Case Study — Dove profiles used for illustration"
+    relationship: "uses_data_from"
+    critical: true
+
+  - doi: "pending"
+    claim: "Zharnikov (2026y) R17 Brand Triangulation — Kalman filter with velocity state"
+    relationship: "extends"
+    critical: true
+
+results:
+  - claim_id: "T1"
+    status: supported
+    notes: >
+      Proved via pathwise uniqueness of the SBT SDE. Illustrated with Dove example showing
+      velocity-based disambiguation of brands at similar positions.
+
+  - claim_id: "P2"
+    status: supported
+    notes: >
+      Follows from Lipschitz continuity of drift and diffusion coefficients in the SBT SDE,
+      which guarantees pathwise uniqueness (Zharnikov 2026j, Theorem 1).
+
+  - claim_id: "P1"
+    status: proposed
+    notes: >
+      Theoretical derivation from bias-variance tradeoff. Illustrative parameters suggest
+      6-12 month optimal interval. Empirical validation requires measured brand tracking data.
+
+  - claim_id: "P3"
+    status: proposed
+    notes: >
+      First-order estimate under constant velocity assumption. Degrades with acceleration.
+
+limitations:
+  - description: >
+      The Dove illustration uses author-assigned profiles, not measured data. Velocity and
+      acceleration values are illustrative of the method, not empirically validated.
+    severity: major
+    addressable: true
+
+  - description: >
+      Four time points over 20 years provide only three velocity and two acceleration estimates.
+      Denser time series would enable detection of nonlinear dynamics.
+    severity: major
+    addressable: true
+
+  - description: >
+      The SDE produces non-differentiable sample paths. Velocity is defined as the drift
+      expectation (not a pathwise derivative), estimated via Kalman filtering or finite
+      differences from discrete measurements.
+    severity: moderate
+    addressable: true
+
+  - description: >
+      Dimensional creation events (null-to-positive transitions) are topological changes
+      that the differential calculus cannot capture as standard derivatives.
+    severity: minor
+    addressable: false
+
+repositories:
+  - name: "sbt-papers"
+    url: "https://github.com/spectralbranding/sbt-papers"
+
+submission_history:
+  - venue: "Zenodo"
+    date: "2026-04-08"
+    status: "doi_secured"
+    doi: "10.5281/zenodo.19468204"
+    notes: >
+      v1.0 preprint. 9 sections, 3 propositions, 1 theorem, 6 definitions, 29 references.
+      ~7,500 words. Target: JMR (primary), IJRM (fallback).
