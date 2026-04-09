@@ -1,6 +1,6 @@
 # R15: Spectral Metamerism in AI-Mediated Brand Perception
 
-**Citation key**: 2026v | **DOI**: [10.5281/zenodo.19422427](https://doi.org/10.5281/zenodo.19422427) | **Status**: Empirical results complete (17,000+ calls across 6 runs, 24 models)
+**Citation key**: 2026v | **DOI**: [10.5281/zenodo.19422427](https://doi.org/10.5281/zenodo.19422427) | **Status**: Empirical results complete (21,000+ calls across 8 runs, 24 models)
 
 ## Paper
 
@@ -8,7 +8,7 @@ Zharnikov, D. (2026). Spectral Metamerism in AI-Mediated Brand Perception: How L
 
 ## Abstract
 
-AI-mediated search is replacing traditional consumer search, yet no formal model predicts which brand attributes survive AI mediation. This paper applies Spectral Brand Theory's eight-dimensional framework to model large language models as observer cohorts with systematically biased spectral profiles. An experimental study across 24 LLMs --- organized into Western cloud, Chinese cloud, Russian, Japanese, Korean, Arabic, and Indian clusters --- tests 23 brand pairs using structured weight allocation across 6 runs (17,000+ API calls). Results from Runs 2-4: Cultural meaning collapses to 58% of baseline, Temporal heritage to 65%, while Experiential inflates to 150%. Cross-model cosine similarity of 0.975 confirms the collapse is structural, not model-specific. Local brands from underrepresented markets show significantly amplified collapse (p < 0.0001, Cohen's d = 0.878). Run 5 (cross-cultural, 11,410 calls, 7,999 successful): H1 supported (p < 0.0001, DCI = 35.6 vs 25.0 baseline), H2 supported (cosine = 0.976). Cultural dimension most collapsed (-4.9 points below baseline). Run 6 (banking pair, 1,018 calls, 24 models): Tinkoff vs PrivatBank cross-cultural banking test.
+AI-mediated search is replacing traditional consumer search, yet no formal model predicts which brand attributes survive AI mediation. This paper applies Spectral Brand Theory's eight-dimensional framework to model large language models as observer cohorts with systematically biased spectral profiles. An experimental study across 24 LLMs --- organized into Western cloud, Chinese cloud, Russian, Japanese, Korean, Arabic, Indian, and Swedish clusters --- tests brand pairs using structured weight allocation across 8 runs (21,000+ API calls, 815 native-language calls in 11 languages). Results from Runs 2-4: Cultural meaning collapses to 58% of baseline, Temporal heritage to 65%, while Experiential inflates to 150%. Cross-model cosine similarity of 0.977 confirms the collapse is structural, not model-specific. Local brands from underrepresented markets show significantly amplified collapse (H6 supported, p = 0.0013, Cohen's d = 3.449). H1 supported (p < 0.0001, DCI = 35.6 vs 25.0 baseline), H2 supported (cosine = 0.977), H12 supported (p < 0.0001). H10 (native language reduces collapse) NOT SUPPORTED (46/115 pairs, mean = -0.005).
 
 ## Key Results
 
@@ -18,7 +18,9 @@ AI-mediated search is replacing traditional consumer search, yet no formal model
 | Run 3 (local) | 5 | 1,620 | p = 0.0006, DCI = 35.3 | cosine = 0.975 |
 | Run 4 (resolution) | 5 | 90 | DCI drops 0.355 -> 0.284 | -- |
 | Run 5 (cross-cultural) | 7 | 11,410 (7,999 successful) | p < 0.0001, DCI = 35.6 | cosine = 0.976 |
-| Run 6 (banking) | 1 | 1,018 | pending analysis | pending |
+| Run 6 (banking) | 1 | 1,018 | H6 p = 0.0013, d = 3.449 | cosine = 0.977 |
+| Run 7 (framing) | varies | varies | H12 p < 0.0001 | -- |
+| Run 8 (native expansion) | varies | varies | H10 NOT SUPPORTED (mean = -0.005) | -- |
 
 ## Repository Structure
 
@@ -40,6 +42,9 @@ This directory follows the [Research-as-Repository protocol](https://github.com/
 | `results_v4_resolution.json` | Run 4 results (Brand Function resolution, 90 calls) |
 | `experiment/run5_results.json` | Run 5 results (7 cross-cultural pairs, 22 models, 11,410 calls) |
 | `experiment/L3_sessions/run6_banking_clean.jsonl` | Run 6 results (1 banking pair, 24 models, 1,018 calls) |
+| `experiment/L3_sessions/run7_framing.jsonl` | Run 7 results (framing experiment, H12 test) |
+| `experiment/L3_sessions/run7d_swedish.jsonl` | Run 7d Swedish sub-run |
+| `experiment/L3_sessions/run8_native_expansion.jsonl` | Run 8 results (native language expansion, 815 calls, 11 languages, H10 test) |
 | `experiment/run5_summary.md` | Run 5 summary tables (DCI, cosine, H5-H10 tests) |
 
 ## Reproducing the Experiment
