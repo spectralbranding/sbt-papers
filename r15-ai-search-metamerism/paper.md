@@ -628,6 +628,21 @@ The dimensional collapse documented here is not unique to brands. Personality pe
 
 ---
 
+### 5.10 Robustness: Temperature Sensitivity
+
+A potential concern is that the structured weight elicitation results are sensitive to the temperature parameter used in LLM API calls. Higher temperatures increase response randomness, which could either inflate or deflate dimensional bias depending on how the noise interacts with the weight allocation constraint. To test this, we re-ran the weighted recommendation protocol on all 10 global brand pairs with the 6 original models (Claude, GPT-4o-mini, Gemini, DeepSeek, Qwen3, Gemma 4) at three alternative temperatures: 0.0 (deterministic), 0.3 (low variance), and 1.0 (high variance), with the baseline T=0.7 from Run 2 as reference (540 additional calls, 3 repetitions per condition).
+
+**Table 10.** Dimensional Collapse Index by temperature setting (10 global brand pairs, 6 models, 3 runs per temperature).
+
+| Temperature | Mean DCI | SD | n |
+|------------|---------|-----|---|
+| 0.0 (deterministic) | 0.298 | -- | 179 |
+| 0.3 (low variance) | 0.303 | -- | 171 |
+| 0.7 (baseline) | 0.291 | -- | 171 |
+| 1.0 (high variance) | 0.296 | -- | 174 |
+
+The DCI range across all four temperature conditions is 0.012 (0.291 to 0.303), confirming that the dimensional collapse finding is not an artifact of the temperature setting. The Economic default mechanism operates at similar magnitude whether responses are deterministic (T=0.0) or maximally random (T=1.0). This stability is consistent with the structural interpretation: dimensional bias reflects the composition of training data, not the stochastic sampling process.
+
 ## 6. Limitations and Future Research
 
 Several limitations bound the present study. First, the prompt-based protocol measures recommendation behavior in a controlled experimental setting; it does not capture the full range of AI-brand interactions, including multimodal encounters (image search, voice assistants), agentic commerce (AI agents making purchase decisions autonomously), and social media AI integrations. Second, LLM responses are sensitive to prompt engineering; while the protocol standardizes prompts across models, variations in phrasing could alter dimensional weight allocations. The three-repetition design mitigates but does not eliminate this concern. Third, the study measures LLM output, not downstream consumer behavior; connecting AI spectral profiles to actual purchase decisions requires experimental consumer studies that are beyond the present scope. Fourth, LLM capabilities evolve rapidly; multimodal models with image and video processing may exhibit different spectral profiles than the text-based models studied here. Fifth, the structured weight elicitation design measures what models report as important when explicitly asked to allocate points, which may differ from the implicit dimensional weighting in unconstrained free-text responses; the v1 null result (Run 1) suggests that implicit measurement through keyword extraction is unreliable, but this does not guarantee that explicit allocation fully captures implicit bias. Sixth, all five local brand pairs are in the food and beverage retail sector, which could confound locality effects with category-specific patterns; future research should test local brands in luxury, technology, and service categories to disentangle these effects.
