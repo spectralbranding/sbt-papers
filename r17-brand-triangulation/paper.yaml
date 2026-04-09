@@ -8,7 +8,7 @@ meta:
     - name: "Zharnikov, Dmitry"
       orcid: "0009-0000-6893-9231"
       affiliation: "Independent Researcher"
-  doi: "pending"
+  doi: "10.5281/zenodo.19482547"
   date: "2026-04-05"
   version: "1.0"
   venue: "Zenodo preprint (target: Marketing Science; fallback: JMR)"
@@ -349,9 +349,9 @@ repositories:
 
 submission_history:
   - venue: "Zenodo"
-    date: "2026-04-05"
-    status: "pending_upload"
-    doi: ""
+    date: "2026-04-07"
+    status: "published"
+    doi: "10.5281/zenodo.19482547"
     notes: >
       v1.0 preprint. 12 sections, 6 propositions, 46 references. ~14,263 words.
       Target journals: Marketing Science (primary), Journal of Marketing Research (fallback).

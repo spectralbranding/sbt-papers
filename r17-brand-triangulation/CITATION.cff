@@ -10,12 +10,12 @@ authors:
 title: "Brand Triangulation: A Geometric Framework for Multi-Observer Brand Positioning"
 version: 1.0.0
 date-released: 2026-04-05
-url: "https://zenodo.org/record/pending"
+url: "https://doi.org/10.5281/zenodo.19482547"
 repository-code: "https://github.com/spectralbranding/sbt-papers"
 identifiers:
   - type: doi
-    value: "pending"
-    description: "Zenodo archive (primary, pending upload)"
+    value: "10.5281/zenodo.19482547"
+    description: "Zenodo archive (primary)"
   - type: citation-key
     value: "2026y"
     description: "Internal citation key"
@@ -76,5 +76,5 @@ preferred-citation:
       given-names: Dmitry
   title: "Brand Triangulation: A Geometric Framework for Multi-Observer Brand Positioning"
   year: 2026
-  url: "https://zenodo.org/record/pending"
-  notes: "Preprint, pending DOI assignment. Citation key: 2026y"
+  url: "https://doi.org/10.5281/zenodo.19482547"
+  notes: "Preprint. DOI: 10.5281/zenodo.19482547. Citation key: 2026y"
