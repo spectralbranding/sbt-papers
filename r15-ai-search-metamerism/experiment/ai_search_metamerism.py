@@ -2834,6 +2834,7 @@ def run_experiment_live(
     models: list[str],
     runs: int,
     log_path: Optional[str] = None,
+    weighted_rec_only: bool = False,
 ) -> list[ExperimentCall]:
     """
     Run all experiment calls: weighted_recommendation, dimensional_differentiation,
@@ -2845,7 +2846,10 @@ def run_experiment_live(
     all_calls: list[ExperimentCall] = []
     dim_block = _dim_block()
 
-    calls_per_pair = 1 + 1 + len(DIMENSIONS) * 2  # weighted_rec + diff + 8 probes x 2 brands
+    if weighted_rec_only:
+        calls_per_pair = 1  # weighted_rec only
+    else:
+        calls_per_pair = 1 + 1 + len(DIMENSIONS) * 2  # weighted_rec + diff + 8 probes x 2 brands
     total = len(brand_pairs) * calls_per_pair * runs * len(models)
     done = 0
 
@@ -3005,6 +3009,8 @@ def run_experiment_live(
                         ))
 
                 # --- Dimensional Differentiation prompt ---
+                if weighted_rec_only:
+                    continue  # skip diff + probes for DCI-only robustness runs
                 done += 1
                 print(
                     f"  [{done}/{total}] run={run_idx} model={model_name} "
@@ -3693,6 +3699,7 @@ def run_experiment(
     framing_only: bool = False,
     model_filter: Optional[list[str]] = None,
     pair_filter: Optional[list[str]] = None,
+    weighted_rec_only: bool = False,
 ) -> ExperimentResults:
     """
     Run the R15 AI Search Metamerism experiment.
@@ -3795,7 +3802,7 @@ def run_experiment(
                 GEOPOLITICAL_FRAMING_PAIRS, model_list, actual_runs, log_path=log_path
             )
         else:
-            raw_calls = run_experiment_live(actual_pairs, model_list, actual_runs, log_path=log_path)
+            raw_calls = run_experiment_live(actual_pairs, model_list, actual_runs, log_path=log_path, weighted_rec_only=weighted_rec_only)
             if include_framing:
                 framing_calls = run_framing_experiment(
                     GEOPOLITICAL_FRAMING_PAIRS, model_list, actual_runs, log_path=log_path
@@ -4033,6 +4040,7 @@ def main() -> None:
         framing_only=args.framing_only,
         model_filter=args.models.split(",") if args.models else None,
         pair_filter=args.pairs.split(",") if args.pairs else None,
+        weighted_rec_only=args.weighted_rec_only,
     )
 
 
