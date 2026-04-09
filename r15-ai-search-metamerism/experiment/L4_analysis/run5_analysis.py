@@ -848,7 +848,7 @@ def main():
     h9 = test_h9_capacity(xc_calls)
 
     print("Testing H10 (native language)...")
-    h10 = test_h10_native_language(xc_calls)
+    h10 = test_h10_native_language(valid_calls)  # all calls, not just xc — includes Run 8 native expansion
 
     print("Testing H12 (geopolitical framing)...")
     h12 = test_h12_geopolitical_framing(all_calls)
