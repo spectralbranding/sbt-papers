@@ -467,7 +467,7 @@ This DOP pattern replicates a finding from navigation: when all satellites are c
 
 Comparing PDOP across observer subsets confirms the expected pattern: using all six models produces lower PDOP than using any five, which produces lower PDOP than any four. The marginal DOP reduction from adding each observer is largest when the new observer introduces a weight profile that is structurally non-collinear with existing observers. Models with lower Economic Default (Claude Sonnet 4.6, GPT-4o) add more DOP-reducing geometric diversity than models with higher Economic Default.
 
-The complete R15 dataset confirms this cross-architecture convergence at scale: cosine similarity of 0.977 across 24 model architectures from nine cultural traditions (Zharnikov, 2026v, H2 supported).
+The complete R15 dataset confirms this cross-architecture convergence at scale: cosine similarity of 0.977 across 24 model architectures from seven training traditions (Zharnikov, 2026v, H2 supported).
 
 ### 9.3 Differential Correction Demonstration
 
