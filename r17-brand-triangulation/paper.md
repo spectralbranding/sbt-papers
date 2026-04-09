@@ -4,6 +4,8 @@
 
 *Working Paper — April 2026*
 
+*DOI: https://doi.org/10.5281/zenodo.19482547*
+
 ---
 
 ## Abstract
