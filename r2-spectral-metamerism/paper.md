@@ -497,6 +497,8 @@ SBT's 8-dimensional spectral profile is therefore not optional complexity. It is
 
 Future work includes empirical measurement of metameric pair frequency in real brand data (testing the 31--39% prediction), extension to the warped product manifold (observer-dependent metamerism bounds), and application to organizational specification through OrgSchema Theory (Zharnikov, 2026i), where the 48-dimensional specification space makes the metamerism problem dramatically more severe.
 
+A deeper geometric perspective on metamerism emerges from recent work in differential geometry. Bobenko, Hoffmann, and Sageman-Furnas (2025) prove that two surfaces can share the same metric and the same mean curvature yet be genuinely non-congruent — the Bonnet pair phenomenon. Spectral metamerism is the brand perception analog: two brands with different eight-dimensional emission profiles that project identically under a given observer's spectral weights are 'Bonnet pairs' relative to that observer. The null space of projection (Theorem 1) is precisely the space of Bonnet-equivalent brand profiles. Different observers have different null spaces, so one observer's Bonnet pair is another's distinguishable pair — the observer-relativity of metamerism formalized geometrically.
+
 ---
 
 ## References
@@ -508,6 +510,8 @@ Aaker, J. L. (1997). Dimensions of brand personality. *Journal of Marketing Rese
 Aitchison, J. (1986). *The Statistical Analysis of Compositional Data*. Chapman & Hall.
 
 Amari, S.-i. (2016). *Information Geometry and Its Applications*. Springer.
+
+Bobenko, A. I., Hoffmann, T., & Sageman-Furnas, A. O. (2025). Compact Bonnet pairs: Isometric tori with the same curvatures. *Publications Mathematiques de l'IHES*, 142, 241--293. DOI: 10.1007/s10240-025-00159-z
 
 Berger, T. (1971). *Rate Distortion Theory: A Mathematical Basis for Data Compression*. Prentice-Hall.
 

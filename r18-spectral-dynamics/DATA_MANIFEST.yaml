@@ -1,0 +1,58 @@
+# DATA_MANIFEST.yaml — R18: Spectral Dynamics
+# External data dependencies per the Research-as-Repository protocol
+
+data_manifest:
+  - id: "dove-profiles"
+    description: >
+      Dove spectral profiles at four temporal cross-sections (2003, 2006, 2013, 2023) from
+      Zharnikov (2026p, Table 1). Author-assigned based on documented campaign activity,
+      advertising content, public reception, and expert assessment.
+    archive: "Zenodo"
+    repository: "spectralbranding/sbt-papers/r10-dove-case-study"
+    format: "Markdown table in paper.md"
+    access: public
+    doi: "10.5281/zenodo.19139258"
+    citation: "Zharnikov (2026p)"
+    notes: >
+      These profiles are illustrative, not empirically measured. Velocity and acceleration
+      computations derived from these profiles demonstrate the analytical framework but do
+      not constitute empirical validation.
+
+  - id: "canonical-brand-profiles"
+    description: >
+      Canonical spectral brand profiles from Spectral Brand Theory (Zharnikov 2026a):
+      Hermes [9.5, 9.0, 7.0, 9.0, 8.5, 3.0, 9.0, 9.5]
+      IKEA [8.0, 7.5, 6.0, 7.0, 5.0, 9.0, 7.5, 6.0]
+      Patagonia [6.0, 9.0, 9.5, 7.5, 8.0, 5.0, 7.0, 6.5]
+    archive: "Zenodo"
+    repository: "spectralbranding/sbt-papers"
+    format: "Documented in SBT paper Table 2"
+    access: public
+    doi: "10.5281/zenodo.18945912"
+    citation: "Zharnikov (2026a)"
+
+no_new_data_collection: >
+  This paper uses Dove profiles from Zharnikov (2026p). No new experiments, surveys, or
+  data collection were conducted. The framework is theoretical; the Dove illustration is
+  conceptual.
+
+reproducibility:
+  - step: "Velocity computation (Period 1)"
+    data: "Dove profiles at 2003 and 2006 from Table 1"
+    software: "Any (finite differences)"
+    expected_result: "v = [+0.17, +1.17, --, 0.00, +0.83, 0.00, +1.50, +0.17] units/yr"
+
+  - step: "Brand speed (Period 1)"
+    data: "Velocity vector from step 1 (7 computable dimensions)"
+    software: "Any (Euclidean norm)"
+    expected_result: "||v|| = 2.10 units/yr"
+
+  - step: "Acceleration (Period 1->2)"
+    data: "Velocity vectors from Periods 1 and 2"
+    software: "Any (finite differences of velocity)"
+    expected_result: "Cultural dimension: a_C = -0.314 units/yr^2"
+
+data_availability_statement: >
+  The Dove dimensional profiles used in Section 6 are reproduced from Zharnikov (2026p,
+  Table 1) and are available in spectralbranding/sbt-papers/r10-dove-case-study/. All
+  computations are finite differences reproducible by hand.

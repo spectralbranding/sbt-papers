@@ -187,6 +187,20 @@ class BrandPair:
     description: str                  # brief design rationale
 
 
+@dataclass(frozen=True)
+class FramingPair:
+    """A single brand evaluated in two different geopolitical contexts (H12)."""
+    id: str
+    brand: str
+    product: str
+    city_a: str
+    city_b: str
+    country_a: str
+    country_b: str
+    tension_type: str
+    description: str
+
+
 BRAND_PAIRS: list[BrandPair] = [
     BrandPair(
         id="luxury_heritage",
@@ -417,6 +431,22 @@ CROSSCULTURAL_BRAND_PAIRS: list[BrandPair] = [
                     "integrated farm-to-table). Arabic-language brand in English-language models. "
                     "Tests Falcon/Jais Arabic training advantage.",
     ),
+    # Primary geopolitical pair (same-category: digital consumer banking)
+    BrandPair(
+        id="russia_ukraine_banking",
+        brand_a="Tinkoff",
+        brand_b="PrivatBank",
+        category="digital consumer banking",
+        differentiating_dims=["ideological", "cultural", "narrative"],
+        dim_type="soft",
+        description="Tinkoff (rebranded T-Bank, est. 2006, Moscow, ~30M customers) and "
+                    "PrivatBank (est. 1992, Dnipro, ~22M customers) are the leading digital "
+                    "consumer banks in Russia and Ukraine respectively. Both underwent "
+                    "significant corporate restructuring events that generated substantial "
+                    "media coverage. Same-category pair tests whether geopolitical context "
+                    "in LLM training corpora affects dimensional weighting.",
+    ),
+    # Supplementary pairs -- collected but not featured in publications (category mismatch)
     BrandPair(
         id="russia_organic",
         brand_a="VkusVill",
@@ -425,8 +455,8 @@ CROSSCULTURAL_BRAND_PAIRS: list[BrandPair] = [
         differentiating_dims=["ideological", "cultural"],
         dim_type="soft",
         description="VkusVill is Russia's clean-label grocery chain (est. 2009, Moscow, "
-                    "1,800+ stores). Tests Russian brand perception in GigaChat/YandexGPT "
-                    "vs Western models. Also tests geopolitical bias in perception.",
+                    "1,800+ stores). Supplementary data point; not featured in publications "
+                    "due to category mismatch with Ukraine pair.",
     ),
     BrandPair(
         id="ukraine_confectionery",
@@ -435,9 +465,9 @@ CROSSCULTURAL_BRAND_PAIRS: list[BrandPair] = [
         category="confectionery",
         differentiating_dims=["narrative", "cultural"],
         dim_type="soft",
-        description="Roshen is Ukraine's largest confectionery (est. 1996, Vinnytsia, "
-                    "founded by Petro Poroshenko). Tests opposite geopolitical valence "
-                    "from VkusVill. Do models treat Ukrainian vs Russian brands differently?",
+        description="Roshen is Ukraine's largest confectionery (est. 1996, Vinnytsia). "
+                    "Supplementary data point; not featured in publications "
+                    "due to category mismatch with Russia pair.",
     ),
     BrandPair(
         id="mongolia_beer",
@@ -474,6 +504,64 @@ CROSSCULTURAL_BRAND_PAIRS: list[BrandPair] = [
                     "advantage vs Western models on Narrative and Cultural dimensions.",
     ),
 ]
+
+
+# ---------------------------------------------------------------------------
+# H12: Geopolitical Framing Pairs (same brand, different country context)
+# ---------------------------------------------------------------------------
+# Tests whether the same brand receives different dimensional weight profiles
+# when evaluated in different geopolitical contexts. Brand and product are
+# identical -- only the city/country context changes.
+
+GEOPOLITICAL_FRAMING_PAIRS: list[FramingPair] = [
+    FramingPair(
+        id="roshen_ru_ua",
+        brand="Roshen",
+        product="chocolate",
+        city_a="Moscow",
+        city_b="Kyiv",
+        country_a="Russia",
+        country_b="Ukraine",
+        tension_type="conflict",
+        description="Roshen chocolate was sold in both Russian and Ukrainian markets. "
+                    "Tests whether LLMs apply different dimensional framing based on "
+                    "the geopolitical context of consumption.",
+    ),
+    FramingPair(
+        id="volvo_eu_cn",
+        brand="Volvo XC90",
+        product="SUV",
+        city_a="Stockholm",
+        city_b="Shanghai",
+        country_a="Sweden",
+        country_b="China",
+        tension_type="ownership_transfer",
+        description="Volvo is a Swedish brand acquired by Chinese Geely in 2010. "
+                    "Same car sold in both markets. Tests whether ownership context "
+                    "shifts Cultural and Narrative dimensions.",
+    ),
+    FramingPair(
+        id="burgerking_us_ru",
+        brand="Burger King",
+        product="fast food",
+        city_a="New York",
+        city_b="Moscow",
+        country_a="USA",
+        country_b="Russia",
+        tension_type="staying_vs_leaving",
+        description="Burger King continued operating in Russia after 2022, unlike "
+                    "McDonald's which exited. Same menu, same branding, but the decision "
+                    "to stay changed the brand's meaning in each market. Tests whether "
+                    "LLMs encode the 'staying vs leaving' framing differently.",
+    ),
+]
+
+# Map framing pair IDs to native languages for each city context
+FRAMING_NATIVE_LANGUAGE: dict[str, dict[str, str]] = {
+    "roshen_ru_ua": {"Moscow": "ru", "Kyiv": "uk"},
+    "volvo_eu_cn": {"Stockholm": "sv", "Shanghai": "zh"},
+    "burgerking_us_ru": {"New York": "en", "Moscow": "ru"},
+}
 
 
 # ---------------------------------------------------------------------------
@@ -532,6 +620,152 @@ DIMENSIONAL_DIFFERENTIATION_PROMPT = (
     "overall_score: 0.0 to 1.0 summary measure."
 )
 
+GEOPOLITICAL_FRAMING_PROMPT = (
+    "You are an AI shopping assistant helping a consumer in {city}.\n"
+    "The consumer is considering purchasing {brand} {product}.\n\n"
+    "Based on your knowledge of {brand} as available to consumers in {city}, allocate exactly "
+    "100 points across the following 8 brand dimensions to reflect which aspects of the brand "
+    "are most relevant to this consumer's purchase decision. The points must sum to exactly 100.\n\n"
+    "{dim_block}\n\n"
+    "Return your answer as JSON with this exact structure:\n"
+    '{{"weights": {{"semiotic": N, "narrative": N, "ideological": N, "experiential": N, '
+    '"social": N, "economic": N, "cultural": N, "temporal": N}}, "reasoning": "your explanation"}}'
+)
+
+# Native-language geopolitical framing prompts (H12 x H10 interaction).
+# JSON keys stay in English for parsing. Only instructional text is translated.
+NATIVE_GEOPOLITICAL_FRAMING: dict[str, str] = {
+    "ru": (
+        "Вы — AI-помощник по покупкам, помогающий потребителю в городе {city}.\n"
+        "Потребитель рассматривает покупку {brand} {product}.\n\n"
+        "Основываясь на вашем знании {brand} в контексте потребителей в {city}, "
+        "распределите ровно 100 баллов по 8 измерениям бренда, чтобы отразить, "
+        "какие аспекты бренда наиболее важны для решения о покупке этого потребителя. "
+        "Сумма баллов должна быть ровно 100.\n\n"
+        "{dim_block}\n\n"
+        "Ответьте ТОЛЬКО валидным JSON:\n"
+        '{{"weights": {{"semiotic": N, "narrative": N, "ideological": N, '
+        '"experiential": N, "social": N, "economic": N, "cultural": N, '
+        '"temporal": N}}, "reasoning": "ваше объяснение"}}'
+    ),
+    "zh": (
+        "你是一位AI购物助手，正在帮助{city}的消费者。\n"
+        "消费者正在考虑购买{brand} {product}。\n\n"
+        "基于你对{city}消费者可获得的{brand}的了解，"
+        "请将100分分配到以下8个品牌维度，以反映该品牌的哪些方面"
+        "对该消费者的购买决策最为重要。分数之和必须恰好为100。\n\n"
+        "{dim_block}\n\n"
+        "仅用有效的JSON回答:\n"
+        '{{"weights": {{"semiotic": N, "narrative": N, "ideological": N, '
+        '"experiential": N, "social": N, "economic": N, "cultural": N, '
+        '"temporal": N}}, "reasoning": "你的解释"}}'
+    ),
+    "uk": (
+        "Ви — AI-помічник з покупок, що допомагає споживачу в місті {city}.\n"
+        "Споживач розглядає покупку {brand} {product}.\n\n"
+        "Спираючись на ваші знання про {brand} у контексті споживачів у {city}, "
+        "розподіліть рівно 100 балів за 8 вимірами бренду, щоб відобразити, "
+        "які аспекти бренду є найважливішими для рішення про покупку цього споживача. "
+        "Сума балів має дорівнювати рівно 100.\n\n"
+        "{dim_block}\n\n"
+        "Відповідайте ЛИШЕ валідним JSON:\n"
+        '{{"weights": {{"semiotic": N, "narrative": N, "ideological": N, '
+        '"experiential": N, "social": N, "economic": N, "cultural": N, '
+        '"temporal": N}}, "reasoning": "ваше пояснення"}}'
+    ),
+    "sv": (
+        "Du ar en AI-shoppingassistent som hjalper en konsument i {city}.\n"
+        "Konsumenten overvaeger att kopa {brand} {product}.\n\n"
+        "Baserat pa din kunskap om {brand} som det upplevs av konsumenter i {city}, "
+        "fordela exakt 100 poaeng over foljande 8 varumaeerkesdimensioner for att "
+        "aterge vilka aspekter av varumaerket som aer mest relevanta for denna "
+        "konsuments kopbeslut. Poaengen maste summera till exakt 100.\n\n"
+        "{dim_block}\n\n"
+        "Svara ENBART med giltig JSON:\n"
+        '{{"weights": {{"semiotic": N, "narrative": N, "ideological": N, '
+        '"experiential": N, "social": N, "economic": N, "cultural": N, '
+        '"temporal": N}}, "reasoning": "din forklaring"}}'
+    ),
+    "el": (
+        "Είστε ένας AI βοηθός αγορών που βοηθά έναν καταναλωτή στην πόλη {city}.\n"
+        "Ο καταναλωτής εξετάζει την αγορά {brand} {product}.\n\n"
+        "Βασισμένοι στις γνώσεις σας για {brand} στο πλαίσιο των καταναλωτών στην πόλη {city}, "
+        "κατανείμετε ακριβώς 100 βαθμούς στις 8 διαστάσεις μάρκας, για να αντικατοπτρίσετε "
+        "ποιες πτυχές της μάρκας είναι πιο σημαντικές για την απόφαση αγοράς αυτού του καταναλωτή. "
+        "Το άθροισμα των βαθμών πρέπει να είναι ακριβώς 100.\n\n"
+        "{dim_block}\n\n"
+        "Απαντήστε ΜΟΝΟ με έγκυρο JSON:\n"
+        '{{"weights": {{"semiotic": N, "narrative": N, "ideological": N, '
+        '"experiential": N, "social": N, "economic": N, "cultural": N, '
+        '"temporal": N}}, "reasoning": "η εξήγησή σας"}}'
+    ),
+    "lv": (
+        "Jus esat AI iepirksanas asistents, kas palīdz patēretājam pilseta {city}.\n"
+        "Patēretājs apsvēr {brand} {product} iegādi.\n\n"
+        "Pamatojoties uz jūsu zinasanam par {brand} {city} patēretāju kontekstā, "
+        "sadaliet precizi 100 punktus pa 8 zimola dimensijam, lai atspoguļotu, "
+        "kuri zimola aspekti ir vissvarigakie sa patēretāja pirkuma lemumam. "
+        "Punktu summai jabut precizi 100.\n\n"
+        "{dim_block}\n\n"
+        "Atbildiet TIKAI ar derīgu JSON:\n"
+        '{{"weights": {{"semiotic": N, "narrative": N, "ideological": N, '
+        '"experiential": N, "social": N, "economic": N, "cultural": N, '
+        '"temporal": N}}, "reasoning": "jūsu skaidrojums"}}'
+    ),
+    "vi": (
+        "Ban la mot tro ly mua sam AI giup mot nguoi tieu dung o thanh pho {city}.\n"
+        "Nguoi tieu dung dang xem xet mua {brand} {product}.\n\n"
+        "Dua tren kien thuc cua ban ve {brand} trong boi canh nguoi tieu dung o {city}, "
+        "hay phan bo chinh xac 100 diem cho 8 chieu thuong hieu, phan anh "
+        "nhung khia canh nao cua thuong hieu quan trong nhat doi voi quyet dinh mua hang cua nguoi tieu dung nay. "
+        "Tong diem phai chinh xac la 100.\n\n"
+        "{dim_block}\n\n"
+        "Chi tra loi bang JSON hop le:\n"
+        '{{"weights": {{"semiotic": N, "narrative": N, "ideological": N, '
+        '"experiential": N, "social": N, "economic": N, "cultural": N, '
+        '"temporal": N}}, "reasoning": "giai thich cua ban"}}'
+    ),
+    "sr": (
+        "Vi ste AI asistent za kupovinu koji pomaze potrosacu u gradu {city}.\n"
+        "Potrosac razmatra kupovinu {brand} {product}.\n\n"
+        "Na osnovu vaseg znanja o {brand} u kontekstu potrosaca u gradu {city}, "
+        "raspodelite tacno 100 poena na 8 dimenzija brenda, odrazavajuci "
+        "koji aspekti brenda su najvazniji za odluku o kupovini ovog potrosaca. "
+        "Zbir poena mora biti tacno 100.\n\n"
+        "{dim_block}\n\n"
+        "Odgovorite SAMO validnim JSON-om:\n"
+        '{{"weights": {{"semiotic": N, "narrative": N, "ideological": N, '
+        '"experiential": N, "social": N, "economic": N, "cultural": N, '
+        '"temporal": N}}, "reasoning": "vase objasnjenje"}}'
+    ),
+    "mn": (
+        "Ta {city} хотын хэрэглэгчид туслах AI худалдааны туслагч юм.\n"
+        "Хэрэглэгч {brand} {product} худалдан авахыг авч үзэж байна.\n\n"
+        "{city} хотын хэрэглэгчдийн хүрээн дэх {brand}-ийн талаарх мэдлэгт үндэслэн "
+        "8 брендийн хэмжигдэхүүнд яг 100 оноо хуваарилж, "
+        "брендийн аль талууд нь энэ хэрэглэгчийн худалдан авалтын шийдвэрт хамгийн чухал болохыг тусгана уу. "
+        "Оноонуудын нийлбэр яг 100 байх ёстой.\n\n"
+        "{dim_block}\n\n"
+        "Зөвхөн хүчинтэй JSON-оор хариулна уу:\n"
+        '{{"weights": {{"semiotic": N, "narrative": N, "ideological": N, '
+        '"experiential": N, "social": N, "economic": N, "cultural": N, '
+        '"temporal": N}}, "reasoning": "таны тайлбар"}}'
+    ),
+    "sw": (
+        "Wewe ni msaidizi wa ununuzi wa AI unaosaidia mtumiaji katika mji wa {city}.\n"
+        "Mtumiaji anazingatia kununua {brand} {product}.\n\n"
+        "Kulingana na ujuzi wako kuhusu {brand} katika muktadha wa watumiaji katika {city}, "
+        "gawanya pointi 100 hasa katika vipimo 8 vya chapa, ukionyesha "
+        "vipengele gani vya chapa ni muhimu zaidi kwa uamuzi wa ununuzi wa mtumiaji huyu. "
+        "Jumla ya pointi lazima iwe 100 hasa.\n\n"
+        "{dim_block}\n\n"
+        "Jibu kwa JSON halali TU:\n"
+        '{{"weights": {{"semiotic": N, "narrative": N, "ideological": N, '
+        '"experiential": N, "social": N, "economic": N, "cultural": N, '
+        '"temporal": N}}, "reasoning": "maelezo yako"}}'
+    ),
+}
+
 DIMENSION_PROBE_PROMPT = (
     "You are a brand researcher scoring brands on specific attributes.\n\n"
     "Rate {brand} on the following attribute:\n\n"
@@ -559,11 +793,17 @@ PAIR_NATIVE_LANGUAGE: dict[str, str] = {
     "china_water": "zh",
     "japan_snacks": "ja",
     "uae_dairy": "ar",
+    "russia_ukraine_banking": "ru",  # Both brands widely discussed in Russian media
     "russia_organic": "ru",
-    "ukraine_confectionery": "ru",  # Ukrainian brands, Russian widely understood
-    "mongolia_beer": "zh",         # Mongolian Cyrillic, but zh models are the test
+    "ukraine_confectionery": "uk",   # Ukrainian is official language
+    "mongolia_beer": "mn",           # Mongolian is the actual native language
     "korea_dairy": "ko",
     "india_dairy": "hi",
+    "cyprus_supermarket": "el",      # Greek for AlphaMega
+    "latvia_chocolate": "lv",        # Latvian for Laima
+    "kenya_beer": "sw",              # Swahili for Tusker
+    "vietnam_dairy": "vi",           # Vietnamese for Vinamilk
+    "serbia_water": "sr",            # Serbian for Knjaz Milos
 }
 
 # Map model names to their native language(s)
@@ -571,6 +811,8 @@ MODEL_NATIVE_LANGUAGE: dict[str, str] = {
     # Chinese-trained
     "deepseek": "zh",
     "cerebras_qwen3": "zh",
+    "fireworks_glm": "zh",
+    "dashscope_qwen_plus": "zh",
     "qwen3_local": "zh",
     "groq_kimi": "zh",
     # Russian-trained
@@ -579,9 +821,9 @@ MODEL_NATIVE_LANGUAGE: dict[str, str] = {
     "gigachat_local": "ru",
     "yandexgpt_local": "ru",
     # Japanese-trained
-    "sambanova_swallow": "ja",
+    # "sambanova_swallow": "ja",  # EXCLUDED: removed from SambaNova Apr 2026
     "swallow_local": "ja",
-    "swallow70_local": "ja",
+    # "swallow70_local": "ja",    # EXCLUDED: 3.6% success rate, times out on 64GB RAM
     "gptoss_swallow": "ja",
     # Korean-trained
     "exaone_local": "ko",
@@ -654,6 +896,66 @@ NATIVE_DIMENSION_DESCRIPTIONS: dict[str, dict[str, str]] = {
         "economic": "कीमत, पैसे का मूल्य, मूल्य निर्धारण रणनीति",
         "cultural": "सांस्कृतिक प्रासंगिकता, आंदोलनों/परंपराओं से जुड़ाव",
         "temporal": "विरासत, इतिहास, समय से संबंध",
+    },
+    "el": {
+        "semiotic": "Οπτική ταυτότητα, λογότυπα, συσκευασία, γλώσσα σχεδιασμού",
+        "narrative": "Ιστορία μάρκας, μύθος προέλευσης, αφήγηση ίδρυσης",
+        "ideological": "Αξίες, ηθική, κοινωνικοί σκοποί, περιβαλλοντική θέση",
+        "experiential": "Ποιότητα εμπειρίας πελάτη, εξυπηρέτηση, unboxing",
+        "social": "Κοινωνικά σήματα, κοινότητα, τι σημαίνει η κατοχή",
+        "economic": "Τιμή, σχέση ποιότητας-τιμής, στρατηγική τιμολόγησης",
+        "cultural": "Πολιτιστική σχετικότητα, σύνδεση με κινήματα/παραδόσεις",
+        "temporal": "Κληρονομιά, ιστορία, σχέση με τον χρόνο",
+    },
+    "lv": {
+        "semiotic": "Vizuala identitate, logotipi, iepakojums, dizaina valoda",
+        "narrative": "Zimola stasts, izcelsmes mits, dibinasanas narracija",
+        "ideological": "Vertibas, etika, socialie merki, vides pozicija",
+        "experiential": "Klienta pieredzes kvalitate, serviss, iepakojuma atversana",
+        "social": "Socialie signali, kopiena, ko nozime zimola piesana",
+        "economic": "Cena, vertiba par naudu, cenu strategija",
+        "cultural": "Kulturala nozimiba, saikne ar kustibam/tradicijam",
+        "temporal": "Mantojums, vesture, attiecibas ar laiku",
+    },
+    "vi": {
+        "semiotic": "Nhan dien thi giac, logo, bao bi, ngon ngu thiet ke",
+        "narrative": "Cau chuyen thuong hieu, huyen thoai nguon goc, tu su sang lap",
+        "ideological": "Gia tri, dao duc, muc dich xa hoi, lap truong moi truong",
+        "experiential": "Chat luong trai nghiem khach hang, dich vu, mo hop",
+        "social": "Tin hieu xa hoi, cong dong, y nghia cua viec so huu",
+        "economic": "Gia ca, gia tri dong tien, chien luoc gia",
+        "cultural": "Su phu hop van hoa, ket noi voi phong trao/truyen thong",
+        "temporal": "Di san, lich su, moi quan he voi thoi gian",
+    },
+    "sr": {
+        "semiotic": "Vizuelni identitet, logotipi, pakovanje, dizajn jezik",
+        "narrative": "Prica o brendu, mit o poreklu, narativ osnivanja",
+        "ideological": "Vrednosti, etika, drustveni ciljevi, ekoloski stav",
+        "experiential": "Kvalitet korisnickog iskustva, usluga, unboxing",
+        "social": "Drustveni signali, zajednica, sta znaci posedovanje brenda",
+        "economic": "Cena, vrednost za novac, strategija cena",
+        "cultural": "Kulturna relevantnost, povezanost sa pokretima/tradicijama",
+        "temporal": "Nasledje, istorija, odnos sa vremenom",
+    },
+    "mn": {
+        "semiotic": "Visual identity, logo, savlalt, dizainy khel",
+        "narrative": "Brendiin tuukh, uusel garlyn domog, uusgagchiin tuukh",
+        "ideological": "Urtsg chanr, yos zuiltei, niigmiin zoriulalt, baigal orchny baidl",
+        "experiential": "Kheregllegchiin turslaga, uilchilgee, savlalt zadlakh",
+        "social": "Niigmiin door, khamtlag, brendiig ezemshikh utga",
+        "economic": "Une, uniin chanar, une todorkhоilokh bodlоgо",
+        "cultural": "Soyolyn kholbоgdоkh bаidаl, ursgаl/ulamjlaltai kholboo",
+        "temporal": "Uv, tuukh, tsаg khugаtsааtаi kholbоо",
+    },
+    "sw": {
+        "semiotic": "Utambulisho wa kuona, nembo, ufungashaji, lugha ya muundo",
+        "narrative": "Hadithi ya chapa, hadithi ya asili, simulizi ya mwanzilishi",
+        "ideological": "Maadili, maadili, sababu za kijamii, msimamo wa mazingira",
+        "experiential": "Ubora wa uzoefu wa mteja, huduma, kufungua kifurushi",
+        "social": "Ishara za kijamii, jumuiya, maana ya kumiliki chapa",
+        "economic": "Bei, thamani ya pesa, mkakati wa bei",
+        "cultural": "Umuhimu wa kitamaduni, uhusiano na harakati/mila",
+        "temporal": "Urithi, historia, uhusiano na wakati",
     },
 }
 
@@ -766,6 +1068,102 @@ NATIVE_WEIGHTED_RECOMMENDATION: dict[str, str] = {
         '  "reasoning": "1-2 वाक्यों में स्पष्टीकरण"\n}}\n\n'
         "भार का योग ठीक 100 होना चाहिए।"
     ),
+    "el": (
+        "Είστε ένας AI βοηθός αγορών που βοηθά έναν καταναλωτή να επιλέξει μεταξύ δύο μαρκών.\n\n"
+        "Κατηγορία: {category}\nΜάρκες: {brand_a} vs {brand_b}\n\n"
+        "Βήμα 1: Προτείνετε μια μάρκα.\n"
+        "Βήμα 2: Εξηγήστε ΓΙΑΤΙ κατανέμοντας 100 βαθμούς σπουδαιότητας στις 8 διαστάσεις αντίληψης.\n\n"
+        "Διαστάσεις:\n{dim_block}\n\n"
+        "Απαντήστε ΜΟΝΟ με έγκυρο JSON:\n"
+        '{{\n  "recommended_brand": "ΌνομαΜάρκας",\n'
+        '  "weights": {{\n'
+        '    "semiotic": 15, "narrative": 10, "ideological": 5,\n'
+        '    "experiential": 20, "social": 10, "economic": 25,\n'
+        '    "cultural": 5, "temporal": 10\n'
+        "  }},\n"
+        '  "reasoning": "Εξήγηση σε 1-2 προτάσεις"\n}}\n\n'
+        "Το άθροισμα των βαρών πρέπει να είναι ακριβώς 100."
+    ),
+    "lv": (
+        "Jus esat AI iepirksanas asistents, kas palīdz patēretājam izveleties starp diviem zimoliem.\n\n"
+        "Kategorija: {category}\nZimoli: {brand_a} vs {brand_b}\n\n"
+        "1. solis: Ieteikt vienu zimolu.\n"
+        "2. solis: Izskaidrojiet KĀPĒC, sadalot 100 nozīmīguma punktus pa 8 uztveres dimensijām.\n\n"
+        "Dimensijas:\n{dim_block}\n\n"
+        "Atbildiet TIKAI ar derīgu JSON:\n"
+        '{{\n  "recommended_brand": "ZimolanosaukumS",\n'
+        '  "weights": {{\n'
+        '    "semiotic": 15, "narrative": 10, "ideological": 5,\n'
+        '    "experiential": 20, "social": 10, "economic": 25,\n'
+        '    "cultural": 5, "temporal": 10\n'
+        "  }},\n"
+        '  "reasoning": "Skaidrojums 1-2 teikumos"\n}}\n\n'
+        "Svaru summai ir jabut precizi 100."
+    ),
+    "vi": (
+        "Ban la mot tro ly mua sam AI giup nguoi tieu dung lua chon giua hai thuong hieu.\n\n"
+        "Danh muc: {category}\nThuong hieu: {brand_a} vs {brand_b}\n\n"
+        "Buoc 1: De xuat mot thuong hieu.\n"
+        "Buoc 2: Giai thich TAI SAO bang cach phan bo 100 diem quan trong cho 8 chieu nhan thuc.\n\n"
+        "Cac chieu:\n{dim_block}\n\n"
+        "Chi tra loi bang JSON hop le:\n"
+        '{{\n  "recommended_brand": "TenThuongHieu",\n'
+        '  "weights": {{\n'
+        '    "semiotic": 15, "narrative": 10, "ideological": 5,\n'
+        '    "experiential": 20, "social": 10, "economic": 25,\n'
+        '    "cultural": 5, "temporal": 10\n'
+        "  }},\n"
+        '  "reasoning": "Giai thich trong 1-2 cau"\n}}\n\n'
+        "Tong cac trong so phai chinh xac bang 100."
+    ),
+    "sr": (
+        "Vi ste AI asistent za kupovinu koji pomaze potrosacu da izabere izmedju dva brenda.\n\n"
+        "Kategorija: {category}\nBrendovi: {brand_a} vs {brand_b}\n\n"
+        "Korak 1: Preporučite jedan brend.\n"
+        "Korak 2: Objasnite ZASTO raspodelom 100 poena vaznosti na 8 dimenzija percepcije.\n\n"
+        "Dimenzije:\n{dim_block}\n\n"
+        "Odgovorite SAMO validnim JSON-om:\n"
+        '{{\n  "recommended_brand": "NazivBrend",\n'
+        '  "weights": {{\n'
+        '    "semiotic": 15, "narrative": 10, "ideological": 5,\n'
+        '    "experiential": 20, "social": 10, "economic": 25,\n'
+        '    "cultural": 5, "temporal": 10\n'
+        "  }},\n"
+        '  "reasoning": "Objasnjenje u 1-2 recenice"\n}}\n\n'
+        "Zbir tezina mora biti tacno 100."
+    ),
+    "mn": (
+        "Ta bol khoyor brendiin dund songokhod kheregleechiid tuslakh AI худалдааны туслагч юм.\n\n"
+        "Ангилал: {category}\nБрендүүд: {brand_a} vs {brand_b}\n\n"
+        "Алхам 1: Нэг брендийг санал болгоно уу.\n"
+        "Алхам 2: 8 ойлголтын хэмжигдэхүүнд 100 оноо хуваарилж ЯАГААД гэдгийг тайлбарлана уу.\n\n"
+        "Хэмжигдэхүүнүүд:\n{dim_block}\n\n"
+        "Зөвхөн хүчинтэй JSON-оор хариулна уу:\n"
+        '{{\n  "recommended_brand": "БрендийнНэр",\n'
+        '  "weights": {{\n'
+        '    "semiotic": 15, "narrative": 10, "ideological": 5,\n'
+        '    "experiential": 20, "social": 10, "economic": 25,\n'
+        '    "cultural": 5, "temporal": 10\n'
+        "  }},\n"
+        '  "reasoning": "1-2 өгүүлбэрээр тайлбар"\n}}\n\n'
+        "Жингүүдийн нийлбэр яг 100 байх ёстой."
+    ),
+    "sw": (
+        "Wewe ni msaidizi wa ununuzi wa AI unaosaidia mtumiaji kuchagua kati ya chapa mbili.\n\n"
+        "Kategoria: {category}\nChapa: {brand_a} vs {brand_b}\n\n"
+        "Hatua ya 1: Pendekeza chapa moja.\n"
+        "Hatua ya 2: Eleza KWA NINI kwa kugawanya pointi 100 za umuhimu kwenye vipimo 8 vya mtazamo.\n\n"
+        "Vipimo:\n{dim_block}\n\n"
+        "Jibu kwa JSON halali TU:\n"
+        '{{\n  "recommended_brand": "JinaLaChapa",\n'
+        '  "weights": {{\n'
+        '    "semiotic": 15, "narrative": 10, "ideological": 5,\n'
+        '    "experiential": 20, "social": 10, "economic": 25,\n'
+        '    "cultural": 5, "temporal": 10\n'
+        "  }},\n"
+        '  "reasoning": "Maelezo katika sentensi 1-2"\n}}\n\n'
+        "Jumla ya uzito lazima iwe sawa na 100 hasa."
+    ),
 }
 
 # Simplified: only weighted_recommendation gets native translation (primary DCI measure).
@@ -777,11 +1175,17 @@ def should_run_native(model_name: str, pair_id: str) -> Optional[str]:
     """Check if this model-pair combination should also get a native-language prompt.
 
     Returns the language code if yes, None if no.
+
+    Design decision (Session 90): native-language prompts are sent to ALL
+    models, not just models natively trained in that language. This avoids
+    the confound of testing Greek/Latvian/Vietnamese/Serbian/Mongolian/Swahili
+    only on models that don't exist for those languages. The strongest H10
+    test sends each pair's national language to all models identically,
+    isolating the prompt-language effect from model-training-language effect.
     """
-    model_lang = MODEL_NATIVE_LANGUAGE.get(model_name)
     pair_lang = PAIR_NATIVE_LANGUAGE.get(pair_id)
-    if model_lang and pair_lang and model_lang == pair_lang:
-        return model_lang
+    if pair_lang:
+        return pair_lang
     return None
 
 
@@ -1208,9 +1612,32 @@ def call_cerebras(prompt: str, model: str = "qwen-3-235b-a22b-instruct-2507") ->
 
 
 def call_cerebras_glm(prompt: str, model: str = "zai-glm-4.7") -> str:
-    """Call GLM-4.7 via Cerebras (Zhipu AI, Chinese, free tier)."""
+    """Call GLM-4.7 via Cerebras (Zhipu AI, Chinese).
+    NOTE: As of Apr 2026, Cerebras returns 404 for this model despite listing it.
+    Use fireworks_glm instead.
+    """
     return _call_openai_compatible(
         prompt, model, "CEREBRAS_API_KEY", "https://api.cerebras.ai/v1"
+    )
+
+
+def call_fireworks_glm(prompt: str, model: str = "accounts/fireworks/models/glm-4p7") -> str:
+    """Call GLM-4.7 via Fireworks AI (Zhipu AI, Chinese, $0.60/M input).
+    Replaces cerebras_glm which is inaccessible as of Apr 2026.
+    """
+    return _call_openai_compatible(
+        prompt, model, "FIREWORKS_API_KEY", "https://api.fireworks.ai/inference/v1"
+    )
+
+
+def call_dashscope_qwen_plus(prompt: str, model: str = "qwen-plus") -> str:
+    """Call Qwen Plus via Alibaba DashScope International (Chinese, production).
+    Previously excluded from all runs due to 403 errors. Now working as of Apr 2026.
+    Provides the planned paired comparison with qwen3_local (cloud vs local).
+    """
+    return _call_openai_compatible(
+        prompt, model, "DASHSCOPE_API_KEY",
+        "https://dashscope-intl.aliyuncs.com/compatible-mode/v1"
     )
 
 
@@ -1228,8 +1655,8 @@ def call_sambanova_swallow(prompt: str, model: str = "Llama-3.3-Swallow-70B-Inst
     )
 
 
-def call_sambanova_deepseek(prompt: str, model: str = "DeepSeek-V3.2") -> str:
-    """Call DeepSeek V3.2 via SambaNova (Chinese, open-weight, free tier)."""
+def call_sambanova_deepseek(prompt: str, model: str = "DeepSeek-V3-0324") -> str:
+    """Call DeepSeek V3 (0324) via SambaNova (Chinese, open-weight)."""
     return _call_openai_compatible(
         prompt, model, "SAMBANOVA_API_KEY", "https://api.sambanova.ai/v1"
     )
@@ -1511,14 +1938,21 @@ def call_gptoss_swallow(prompt: str, model: str = "gpt-oss-20b/latest") -> str:
     return _call_yandex_ai_studio(prompt, model)
 
 
+# T-Pro 2.0 EXCLUDED FROM STUDY
+# Requires dedicated paid instance ($6.20/hr) on Yandex AI Studio.
+# Not available as free-tier API endpoint.
+# Kept in config for potential future use if pricing changes.
 def call_tpro_yandex(prompt: str, model: str = "t-pro-it-2.0-fp8") -> str:
     """Call T-Pro 2.0 FP8 via Yandex AI Studio (T-Bank, 32B, Russian).
 
     T-Pro 2.0: T-Bank (ex-Tinkoff) open-source 32B Russian model.
-    NOTE: Only available as dedicated instance ($6.20/hr) on Yandex AI Studio.
-    Not available in synchronous mode. Kept for future use if pricing changes.
+    EXCLUDED FROM R15 STUDY: Requires dedicated paid instance ($6.20/hr).
+    Not available in free-tier. Kept for potential future use if pricing changes.
     """
-    return _call_yandex_ai_studio(prompt, model)
+    raise NotImplementedError(
+        "T-Pro 2.0 excluded from study: requires dedicated paid instance ($6.20/hr). "
+        "Not available as free-tier API endpoint."
+    )
 
 
 # ---------------------------------------------------------------------------
@@ -1544,7 +1978,7 @@ def _call_ollama_model(prompt: str, model: str, no_think: bool = False) -> str:
         data=payload,
         headers={"Content-Type": "application/json"},
     )
-    with urllib.request.urlopen(req, timeout=180) as resp:
+    with urllib.request.urlopen(req, timeout=360) as resp:
         data = json.loads(resp.read())
     content = data.get("response", "")
     content = re.sub(r"<think>.*?</think>", "", content, flags=re.DOTALL).strip()
@@ -1649,9 +2083,11 @@ API_CALLERS: dict[str, Any] = {
     "gemma4_local": call_gemma4_local,
     # Free-tier cloud (Run 5+)
     "cerebras_qwen3": call_cerebras,            # Qwen3-235B via Cerebras
-    "cerebras_glm": call_cerebras_glm,          # GLM-4.7 (Zhipu AI, Chinese) via Cerebras
+    # "cerebras_glm": call_cerebras_glm,        # GLM-4.7 via Cerebras -- INACCESSIBLE Apr 2026
+    "fireworks_glm": call_fireworks_glm,        # GLM-4.7 (Zhipu AI, Chinese) via Fireworks
+    "dashscope_qwen_plus": call_dashscope_qwen_plus,  # Qwen Plus (Alibaba, Chinese) via DashScope
     "sambanova_qwen3": call_sambanova,          # Qwen3-32B via SambaNova
-    "sambanova_swallow": call_sambanova_swallow, # Swallow 70B (Japanese) via SambaNova
+    # "sambanova_swallow": call_sambanova_swallow, # EXCLUDED: 3.6% success rate (20 OK out of 549 attempts)
     "sambanova_deepseek": call_sambanova_deepseek, # DeepSeek V3.2 via SambaNova
     "groq_llama33": call_groq,                  # Llama 3.3 70B via Groq
     "groq_allam": call_groq_allam,              # ALLaM-2-7B (Saudi/Arabic) via Groq
@@ -1661,13 +2097,14 @@ API_CALLERS: dict[str, Any] = {
     "gigachat_api": call_gigachat_api,          # GigaChat 2 Max (Russian, Sber API)
     "yandexgpt_pro": call_yandexgpt_pro,        # YandexGPT 5 Pro (Russian, Yandex AI Studio)
     "gptoss_swallow": call_gptoss_swallow,      # GPT-OSS-Swallow 20B (Japanese, Tokyo Tech, Yandex)
-    "tpro_yandex": call_tpro_yandex,            # T-Pro 2.0 FP8 (Russian, T-Bank 32B, via Yandex)
+    # "tpro_yandex": call_tpro_yandex,            # T-Pro 2.0 EXCLUDED: requires dedicated paid instance ($6.20/hr)
     # National models - local Ollama (Run 5+)
     "yandexgpt_local": call_yandexgpt_local,    # YandexGPT 5 Lite 8B (Russian)
     "gigachat_local": call_gigachat_local,       # GigaChat 3.1 Lightning (Russian, Sber)
     "exaone_local": call_exaone_local,           # EXAONE 4.0 32B (Korean, LG AI)
     "swallow_local": call_swallow_local,         # Swallow 8B (Japanese, Tokyo Tech)
-    "swallow70_local": call_swallow70_local,     # Swallow 70B (Japanese, Tokyo Tech, Tier 1)
+    # "swallow70_local": call_swallow70_local,   # EXCLUDED: times out on 64GB RAM, 3.6% success rate
+    # "sambanova_swallow": call_sambanova_swallow, # EXCLUDED: removed from SambaNova Apr 2026
     "falcon_arabic_local": call_falcon_arabic_local, # Falcon-H1-Arabic 7B (Arabic, TII)
     "jais_local": call_jais_local,               # Jais-adapted 70B (Arabic, Inception AI)
     "qwen35_local": call_qwen35_local,           # Qwen3.5 27B (Chinese, newer)
@@ -1683,9 +2120,11 @@ API_KEY_VARS: dict[str, str] = {
     "gemma4_local": "OLLAMA_AVAILABLE",
     # Free-tier cloud
     "cerebras_qwen3": "CEREBRAS_API_KEY",
-    "cerebras_glm": "CEREBRAS_API_KEY",
+    # "cerebras_glm": "CEREBRAS_API_KEY",       # INACCESSIBLE Apr 2026
+    "fireworks_glm": "FIREWORKS_API_KEY",
+    "dashscope_qwen_plus": "DASHSCOPE_API_KEY",
     "sambanova_qwen3": "SAMBANOVA_API_KEY",
-    "sambanova_swallow": "SAMBANOVA_API_KEY",
+    # "sambanova_swallow": "SAMBANOVA_API_KEY",  # EXCLUDED: 3.6% success rate
     "sambanova_deepseek": "SAMBANOVA_API_KEY",
     "groq_llama33": "GROQ_API_KEY",
     "groq_allam": "GROQ_API_KEY",
@@ -1695,13 +2134,13 @@ API_KEY_VARS: dict[str, str] = {
     "gigachat_api": "GIGACHAT_API_KEY",
     "yandexgpt_pro": "YANDEX_AI_API_KEY",
     "gptoss_swallow": "YANDEX_AI_API_KEY",
-    "tpro_yandex": "YANDEX_AI_API_KEY",
+    # "tpro_yandex": "YANDEX_AI_API_KEY",  # T-Pro EXCLUDED: requires dedicated paid instance
     # National models - local
     "yandexgpt_local": "OLLAMA_AVAILABLE",
     "gigachat_local": "OLLAMA_AVAILABLE",
     "exaone_local": "OLLAMA_AVAILABLE",
     "swallow_local": "OLLAMA_AVAILABLE",
-    "swallow70_local": "OLLAMA_AVAILABLE",
+    # "swallow70_local": "OLLAMA_AVAILABLE",     # EXCLUDED: times out on 64GB RAM
     "falcon_arabic_local": "OLLAMA_AVAILABLE",
     "jais_local": "OLLAMA_AVAILABLE",
     "qwen35_local": "OLLAMA_AVAILABLE",
@@ -1718,9 +2157,11 @@ MODEL_IDS: dict[str, str] = {
     "simulated": "simulated",
     # Free-tier cloud — Chinese models
     "cerebras_qwen3": "qwen-3-235b-a22b-instruct-2507",  # Qwen3-235B on Cerebras
-    "cerebras_glm": "zai-glm-4.7",                        # GLM-4.7 (Zhipu AI) on Cerebras
+    # "cerebras_glm": "zai-glm-4.7",                      # INACCESSIBLE Apr 2026
+    "fireworks_glm": "glm-4p7",                            # GLM-4.7 (Zhipu AI) on Fireworks
+    "dashscope_qwen_plus": "qwen-plus",                    # Qwen Plus on DashScope International
     "sambanova_qwen3": "Qwen3-32B",                       # Qwen3-32B on SambaNova
-    "sambanova_deepseek": "DeepSeek-V3.2",                # DeepSeek V3.2 on SambaNova
+    "sambanova_deepseek": "DeepSeek-V3-0324",              # DeepSeek V3 (0324) on SambaNova
     "groq_kimi": "moonshotai/kimi-k2-instruct",           # Kimi K2 (Moonshot) on Groq
     # Free-tier cloud — Western/baseline models
     "groq_llama33": "llama-3.3-70b-versatile",            # Llama 3.3 70B on Groq
@@ -1729,16 +2170,16 @@ MODEL_IDS: dict[str, str] = {
     "gigachat_api": "GigaChat-2-Max",                          # GigaChat 2 Max (Russian, Sber API)
     "yandexgpt_pro": "yandexgpt-5-pro/latest",                   # YandexGPT 5 Pro (Russian, Yandex AI Studio)
     "gptoss_swallow": "gpt-oss-20b/latest",                       # GPT-OSS-Swallow 20B (Japanese, Tokyo Tech)
-    "tpro_yandex": "t-pro-it-2.0-fp8",                        # T-Pro 2.0 FP8 (T-Bank 32B, Russian)
+    # "tpro_yandex": "t-pro-it-2.0-fp8",                      # T-Pro 2.0 EXCLUDED: requires dedicated paid instance
     # Free-tier cloud — National models
-    "sambanova_swallow": "Llama-3.3-Swallow-70B-Instruct-v0.4",  # Japanese 70B on SambaNova
+    # "sambanova_swallow": "Llama-3.3-Swallow-70B-Instruct-v0.4",  # EXCLUDED: 3.6% success rate
     "groq_allam": "allam-2-7b",                            # ALLaM-2 (SDAIA Saudi) on Groq
     # Local Ollama — National models
     "yandexgpt_local": "hf.co/yandex/YandexGPT-5-Lite-8B-instruct-GGUF:latest",
     "gigachat_local": "hf.co/ai-sage/GigaChat3.1-10B-A1.8B-GGUF:latest",
     "exaone_local": "hf.co/LGAI-EXAONE/EXAONE-4.0-32B-GGUF:Q4_K_M",
     "swallow_local": "hf.co/mradermacher/Llama-3.1-Swallow-8B-Instruct-v0.3-GGUF:latest",
-    "swallow70_local": "hf.co/mmnga/tokyotech-llm-Llama-3.3-Swallow-70B-Instruct-v0.4-gguf:Q4_K_M",
+    # "swallow70_local": "hf.co/mmnga/tokyotech-llm-Llama-3.3-Swallow-70B-Instruct-v0.4-gguf:Q4_K_M",  # EXCLUDED: times out on 64GB
     "falcon_arabic_local": "hf.co/tiiuae/Falcon-H1-Arabic-7B-Instruct-GGUF:Q4_K_M",
     "jais_local": "hf.co/mradermacher/jais-adapted-70b-chat-i1-GGUF:Q4_K_M",
     "qwen35_local": "qwen3.5:27b",
@@ -1774,6 +2215,7 @@ def append_session_log(
     tokens_in: Optional[int] = None,
     tokens_out: Optional[int] = None,
     error: Optional[str] = None,
+    prompt_language: str = "en",
 ) -> None:
     """Append a single JSONL entry to the session log (crash-safe: flush after each write)."""
     entry = {
@@ -1793,6 +2235,7 @@ def append_session_log(
         "tokens_in": tokens_in,
         "tokens_out": tokens_out,
         "error": error,
+        "prompt_language": prompt_language,
     }
     p = _ensure_log_dir(log_path)
     with p.open("a", encoding="utf-8") as f:
@@ -1850,6 +2293,7 @@ def call_with_retry(
                     response=result,
                     parsed=parsed,
                     latency_ms=latency_ms,
+                    prompt_language=log_context.get("prompt_language", "en"),
                 )
             return result
 
@@ -1878,6 +2322,7 @@ def call_with_retry(
                         parsed=None,
                         latency_ms=latency_ms,
                         error=str(exc),
+                        prompt_language=log_context.get("prompt_language", "en"),
                     )
     raise last_exc
 
@@ -1946,13 +2391,18 @@ def compute_weight_profiles(
     """
     Compute mean dimensional weight profile per model from weighted_recommendation calls.
 
+    Includes weighted_recommendation_native calls so that native-language DCI is
+    incorporated in the aggregate profile. Does NOT include geopolitical_framing
+    calls (those are analysed separately by compute_framing_weight_profiles).
+
     Returns: {model: {dimension: mean_weight_0_to_100}}
     Weights sum to 100 for each response; this averages across all responses per model.
     """
     weight_sums: dict[str, dict[str, float]] = {}
     weight_counts: dict[str, int] = {}
 
-    rec_calls = [c for c in calls if c.get("prompt_type") == "weighted_recommendation"]
+    WEIGHT_REC_TYPES = {"weighted_recommendation", "weighted_recommendation_native"}
+    rec_calls = [c for c in calls if c.get("prompt_type") in WEIGHT_REC_TYPES]
     for call in rec_calls:
         model = call["model"]
         parsed = call.get("parsed") or {}
@@ -1992,6 +2442,62 @@ def compute_dimensional_collapse_index(
         semiotic = profile.get("semiotic", 0.0)
         dci[model] = (economic + semiotic) / 100.0
     return dci
+
+
+def compute_framing_weight_profiles(
+    calls: list[dict],
+) -> dict[str, dict[str, dict[str, float]]]:
+    """
+    Compute mean dimensional weight profiles per model and city context for H12.
+
+    Covers geopolitical_framing and geopolitical_framing_native calls.
+    The city context is encoded in the brand_pair field (e.g. "Roshen (Moscow)").
+
+    Returns: {pair_id: {brand_pair_label: {model: {dimension: mean_weight}}}}
+
+    Each entry captures the per-city, per-model weight vector so that the caller
+    can compute the framing delta: weight(city_b) - weight(city_a) per dimension.
+    """
+    FRAMING_TYPES = {"geopolitical_framing", "geopolitical_framing_native"}
+    framing_calls = [c for c in calls if c.get("prompt_type") in FRAMING_TYPES]
+
+    # sums[pair_id][brand_pair_label][model] = {dim: sum_of_weights}
+    sums: dict[str, dict[str, dict[str, dict[str, float]]]] = {}
+    counts: dict[str, dict[str, dict[str, int]]] = {}
+
+    for call in framing_calls:
+        pair_id = call.get("pair_id", "")
+        brand_pair = call.get("brand_pair", "")
+        model = call.get("model", "")
+        parsed = call.get("parsed") or {}
+        weights = parse_weights(parsed)
+        if weights is None:
+            continue
+
+        if pair_id not in sums:
+            sums[pair_id] = {}
+            counts[pair_id] = {}
+        if brand_pair not in sums[pair_id]:
+            sums[pair_id][brand_pair] = {}
+            counts[pair_id][brand_pair] = {}
+        if model not in sums[pair_id][brand_pair]:
+            sums[pair_id][brand_pair][model] = {d: 0.0 for d in DIMENSIONS}
+            counts[pair_id][brand_pair][model] = 0
+
+        for dim in DIMENSIONS:
+            sums[pair_id][brand_pair][model][dim] += weights[dim]
+        counts[pair_id][brand_pair][model] += 1
+
+    result: dict[str, dict[str, dict[str, dict[str, float]]]] = {}
+    for pair_id, label_dict in sums.items():
+        result[pair_id] = {}
+        for brand_pair, model_dict in label_dict.items():
+            result[pair_id][brand_pair] = {}
+            for model, dim_sums in model_dict.items():
+                n = counts[pair_id][brand_pair][model]
+                result[pair_id][brand_pair][model] = {d: dim_sums[d] / n for d in DIMENSIONS}
+
+    return result
 
 
 def compute_model_similarity_matrix(
@@ -2614,6 +3120,177 @@ def run_experiment_live(
 
 
 # ---------------------------------------------------------------------------
+# H12: Geopolitical Framing Experiment
+# ---------------------------------------------------------------------------
+
+def run_framing_experiment(
+    framing_pairs: list[FramingPair],
+    models: list[str],
+    runs: int,
+    log_path: Optional[str] = None,
+) -> list[ExperimentCall]:
+    """
+    Run H12 geopolitical framing calls: same brand, two city contexts per pair.
+
+    For each FramingPair, sends GEOPOLITICAL_FRAMING_PROMPT once with city_a
+    and once with city_b. Additionally, for model-city combinations where
+    a native-language prompt exists (NATIVE_GEOPOLITICAL_FRAMING), sends
+    a native-language version (prompt_type="geopolitical_framing_native").
+    This creates a 2x2 design: (city context) x (prompt language).
+    """
+    all_calls: list[ExperimentCall] = []
+    dim_block = _dim_block()
+
+    total = len(framing_pairs) * 2 * runs * len(models)
+    done = 0
+
+    for run_idx in range(1, runs + 1):
+        for fp in framing_pairs:
+            for city, country in [(fp.city_a, fp.country_a), (fp.city_b, fp.country_b)]:
+                brand_label = f"{fp.brand} ({city})"
+                prompt = GEOPOLITICAL_FRAMING_PROMPT.format(
+                    city=city,
+                    brand=fp.brand,
+                    product=fp.product,
+                    dim_block=dim_block,
+                )
+
+                for model_name in models:
+                    caller = API_CALLERS[model_name]
+                    done += 1
+                    print(
+                        f"  [{done}/{total}] run={run_idx} model={model_name} "
+                        f"type=geopolitical_framing pair={fp.id} city={city}"
+                    )
+                    log_ctx = {
+                        "prompt_type": "geopolitical_framing",
+                        "brand_pair": brand_label,
+                        "pair_id": fp.id,
+                        "dimension": None,
+                        "brand": fp.brand,
+                        "run": run_idx,
+                        "prompt_language": "en",
+                    }
+                    t0 = time.monotonic()
+                    try:
+                        raw = call_with_retry(
+                            caller, prompt, model_name, log_path=log_path, log_context=log_ctx
+                        )
+                        latency_ms = int((time.monotonic() - t0) * 1000)
+                        parsed: dict[str, Any] = {}
+                        try:
+                            parsed = parse_llm_json(raw)
+                        except Exception:
+                            pass
+                        all_calls.append(ExperimentCall(
+                            model=model_name,
+                            brand_pair=brand_label,
+                            pair_id=fp.id,
+                            prompt_type="geopolitical_framing",
+                            dimension=None,
+                            brand=fp.brand,
+                            run=run_idx,
+                            response=raw,
+                            parsed=parsed,
+                            timestamp=datetime.datetime.now(datetime.timezone.utc).isoformat(),
+                            latency_ms=latency_ms,
+                        ))
+                    except Exception as exc:
+                        print(f"    [error] geopolitical_framing {model_name} {city}: {exc}")
+                        all_calls.append(ExperimentCall(
+                            model=model_name,
+                            brand_pair=brand_label,
+                            pair_id=fp.id,
+                            prompt_type="geopolitical_framing",
+                            dimension=None,
+                            brand=fp.brand,
+                            run=run_idx,
+                            response="",
+                            parsed={},
+                            timestamp=datetime.datetime.now(datetime.timezone.utc).isoformat(),
+                            latency_ms=0,
+                            error=str(exc),
+                        ))
+
+                    # --- Native-language framing (H12 x H10 interaction) ---
+                    # For framing experiments, send native-language prompts to
+                    # ALL models with a non-English native language mapping,
+                    # regardless of model training language. This avoids the
+                    # confound of testing Ukrainian only on Russian-trained
+                    # models. All models receive identical treatment per city.
+                    native_langs = FRAMING_NATIVE_LANGUAGE.get(fp.id, {})
+                    native_lang = native_langs.get(city)
+                    if (native_lang and native_lang != "en"
+                            and native_lang in NATIVE_GEOPOLITICAL_FRAMING):
+                        native_dim_block = _dim_block_native(native_lang)
+                        native_prompt = NATIVE_GEOPOLITICAL_FRAMING[native_lang].format(
+                            city=city,
+                            brand=fp.brand,
+                            product=fp.product,
+                            dim_block=native_dim_block,
+                        )
+                        native_label = f"{fp.brand} ({city}) [{native_lang}]"
+                        native_log_ctx = {
+                            "prompt_type": "geopolitical_framing_native",
+                            "brand_pair": native_label,
+                            "pair_id": fp.id,
+                            "dimension": None,
+                            "brand": fp.brand,
+                            "run": run_idx,
+                            "prompt_language": native_lang,
+                        }
+                        print(
+                            f"  [{done}/{total}] run={run_idx} model={model_name} "
+                            f"type=framing_native pair={fp.id} city={city} lang={native_lang}"
+                        )
+                        t0n = time.monotonic()
+                        try:
+                            raw_n = call_with_retry(
+                                caller, native_prompt, model_name,
+                                log_path=log_path, log_context=native_log_ctx,
+                            )
+                            latency_n = int((time.monotonic() - t0n) * 1000)
+                            parsed_n: dict[str, Any] = {}
+                            try:
+                                parsed_n = parse_llm_json(raw_n)
+                            except Exception:
+                                pass
+                            all_calls.append(ExperimentCall(
+                                model=model_name,
+                                brand_pair=native_label,
+                                pair_id=fp.id,
+                                prompt_type="geopolitical_framing_native",
+                                dimension=None,
+                                brand=fp.brand,
+                                run=run_idx,
+                                response=raw_n,
+                                parsed=parsed_n,
+                                timestamp=datetime.datetime.now(datetime.timezone.utc).isoformat(),
+                                latency_ms=latency_n,
+                                prompt_language=native_lang,
+                            ))
+                        except Exception as exc:
+                            print(f"    [error] framing_native {model_name} {city}: {exc}")
+                            all_calls.append(ExperimentCall(
+                                model=model_name,
+                                brand_pair=native_label,
+                                pair_id=fp.id,
+                                prompt_type="geopolitical_framing_native",
+                                dimension=None,
+                                brand=fp.brand,
+                                run=run_idx,
+                                response="",
+                                parsed={},
+                                timestamp=datetime.datetime.now(datetime.timezone.utc).isoformat(),
+                                latency_ms=0,
+                                error=str(exc),
+                                prompt_language=native_lang,
+                            ))
+
+    return all_calls
+
+
+# ---------------------------------------------------------------------------
 # Demo Mode (simulated responses)
 # ---------------------------------------------------------------------------
 
@@ -2903,6 +3580,60 @@ def write_summary_tables(results: ExperimentResults, output_path: str) -> None:
             )
         lines.append("")
 
+    # Table 8: H12 Geopolitical Framing — per-city weight deltas
+    framing_profiles = compute_framing_weight_profiles(results.calls)
+    if framing_profiles:
+        lines.append("## Table 8: H12 Geopolitical Framing — Weight Profiles by City Context\n")
+        lines.append(
+            "For each framing pair, the table shows mean dimensional weights in each city context "
+            "and the delta (city_b minus city_a). A non-zero delta indicates the model encodes "
+            "geopolitical context in its dimensional weighting.\n"
+        )
+        for pair_id, label_dict in sorted(framing_profiles.items()):
+            lines.append(f"### Pair: {pair_id}\n")
+            labels = sorted(label_dict.keys())
+            if len(labels) < 2:
+                for label, model_dict in label_dict.items():
+                    lines.append(f"Context: {label}")
+                    for model, dim_weights in model_dict.items():
+                        vals = " | ".join(f"{dim_weights.get(d, 0.0):.1f}" for d in DIMENSIONS)
+                        lines.append(f"  {model}: {vals}")
+                lines.append("")
+                continue
+
+            # Show city_a vs city_b and delta for each model
+            city_a_label = labels[0]
+            city_b_label = labels[1]
+            dim_header = " | ".join(d[:5] for d in DIMENSIONS)
+            lines.append(f"Contexts: `{city_a_label}` vs `{city_b_label}`\n")
+            lines.append(f"| Model | Context | {dim_header} | DCI |")
+            lines.append("|-------|---------|" + "|".join(["------:" for _ in DIMENSIONS]) + "|------:|")
+
+            all_models = sorted(
+                set(list(label_dict[city_a_label].keys()) + list(label_dict[city_b_label].keys()))
+            )
+            for model in all_models:
+                w_a = label_dict[city_a_label].get(model)
+                w_b = label_dict[city_b_label].get(model)
+                if w_a:
+                    vals_a = " | ".join(f"{w_a.get(d, 0.0):.1f}" for d in DIMENSIONS)
+                    dci_a = (w_a.get("economic", 0.0) + w_a.get("semiotic", 0.0)) / 100.0
+                    lines.append(f"| {model} | {city_a_label} | {vals_a} | {dci_a:.3f} |")
+                if w_b:
+                    vals_b = " | ".join(f"{w_b.get(d, 0.0):.1f}" for d in DIMENSIONS)
+                    dci_b = (w_b.get("economic", 0.0) + w_b.get("semiotic", 0.0)) / 100.0
+                    lines.append(f"| {model} | {city_b_label} | {vals_b} | {dci_b:.3f} |")
+                if w_a and w_b:
+                    delta = " | ".join(
+                        f"{w_b.get(d, 0.0) - w_a.get(d, 0.0):+.1f}" for d in DIMENSIONS
+                    )
+                    dci_delta = (
+                        (w_b.get("economic", 0.0) + w_b.get("semiotic", 0.0))
+                        - (w_a.get("economic", 0.0) + w_a.get("semiotic", 0.0))
+                    ) / 100.0
+                    lines.append(f"| {model} | **delta** | {delta} | {dci_delta:+.3f} |")
+            lines.append("")
+
     lines.append("---\n")
     lines.append("## Interpretation\n")
     lines.append(textwrap.dedent("""\
@@ -2922,6 +3653,12 @@ def write_summary_tables(results: ExperimentResults, output_path: str) -> None:
     Ideological, Cultural, Temporal) appear more similar through AI-mediated search
     than their actual spectral distance would predict -- the operational signature
     of spectral metamerism.
+
+    If H12 is supported: The same brand receives systematically different dimensional
+    weight profiles when evaluated in different geopolitical city contexts. Non-zero
+    deltas in Table 8 indicate that LLMs encode geopolitical framing in their
+    dimensional weighting, demonstrating that brand perception in AI systems is
+    context-dependent, not purely brand-intrinsic.
 
     Theoretical implication: Brands investing in soft-dimension differentiation face
     an AI search penalty. Their perception clouds are real but invisible to the AI
@@ -2948,7 +3685,10 @@ def run_experiment(
     local_only: bool = False,
     include_crosscultural: bool = False,
     crosscultural_only: bool = False,
+    include_framing: bool = False,
+    framing_only: bool = False,
     model_filter: Optional[list[str]] = None,
+    pair_filter: Optional[list[str]] = None,
 ) -> ExperimentResults:
     """
     Run the R15 AI Search Metamerism experiment.
@@ -3037,8 +3777,26 @@ def run_experiment(
             actual_pairs = BRAND_PAIRS + LOCAL_BRAND_PAIRS
         else:
             actual_pairs = BRAND_PAIRS
+        # Apply pair filter if specified
+        if pair_filter:
+            actual_pairs = [p for p in actual_pairs if p.id in pair_filter]
+            if not actual_pairs:
+                print(f"ERROR: No pairs matched filter: {pair_filter}")
+                sys.exit(1)
+            print(f"Pair filter active: running {len(actual_pairs)} pair(s): "
+                  f"{[p.id for p in actual_pairs]}")
         actual_runs = 1 if smoke else runs
-        raw_calls = run_experiment_live(actual_pairs, model_list, actual_runs, log_path=log_path)
+        if framing_only:
+            raw_calls = run_framing_experiment(
+                GEOPOLITICAL_FRAMING_PAIRS, model_list, actual_runs, log_path=log_path
+            )
+        else:
+            raw_calls = run_experiment_live(actual_pairs, model_list, actual_runs, log_path=log_path)
+            if include_framing:
+                framing_calls = run_framing_experiment(
+                    GEOPOLITICAL_FRAMING_PAIRS, model_list, actual_runs, log_path=log_path
+                )
+                raw_calls = raw_calls + framing_calls
 
     print(f"\nCompleted {len(raw_calls)} calls. Running analysis...")
 
@@ -3204,11 +3962,28 @@ def main() -> None:
         help="Run ONLY the cross-cultural brand pairs (skip global and local pairs)",
     )
     parser.add_argument(
+        "--framing",
+        action="store_true",
+        help="Include H12 geopolitical framing pairs (same brand, different country context)",
+    )
+    parser.add_argument(
+        "--framing-only",
+        action="store_true",
+        help="Run ONLY the H12 geopolitical framing pairs",
+    )
+    parser.add_argument(
         "--models",
         type=str,
         default=None,
         help="Comma-separated list of model names to use (e.g. 'cerebras_qwen3,groq_llama33'). "
              "Default: all available models.",
+    )
+    parser.add_argument(
+        "--pairs",
+        type=str,
+        default=None,
+        help="Comma-separated list of brand pair IDs to run (e.g. 'russia_ukraine_banking'). "
+             "Default: all pairs in the selected set.",
     )
     args = parser.parse_args()
 
@@ -3234,7 +4009,10 @@ def main() -> None:
         local_only=args.local_only,
         include_crosscultural=args.crosscultural,
         crosscultural_only=args.crosscultural_only,
+        include_framing=args.framing,
+        framing_only=args.framing_only,
         model_filter=args.models.split(",") if args.models else None,
+        pair_filter=args.pairs.split(",") if args.pairs else None,
     )
 
 

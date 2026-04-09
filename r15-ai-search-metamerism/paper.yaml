@@ -13,9 +13,9 @@ metadata:
       corresponding: true
   citation_key: "2026v"
   doi: "10.5281/zenodo.19422427"
-  date: "2026-04-04"
-  version: "1.0"
-  status: preprint  # v1.0 published on Zenodo 2026-04-04; Run 5 cross-cultural pending (v1.1)
+  date: "2026-04-08"
+  version: "2.0"
+  status: preprint  # v1.0 published on Zenodo 2026-04-04; v2.0 incorporates Run 5 cross-cultural results
   license: "CC-BY-NC-ND-4.0"
   keywords:
     - AI-mediated search
@@ -97,21 +97,27 @@ methodology:
   type: empirical
   design: >
     Structured weight elicitation design measuring implicit spectral profiles of
-    six LLMs (Qwen Plus excluded due to persistent 403 errors) across fifteen
-    brand pairs: ten globally recognized pairs (Run 2, 3,240 API calls) and five
-    locally embedded pairs from small non-English-speaking markets (Run 3, 1,620
-    API calls). A Brand Function resolution test (Run 4, 90 calls) demonstrates
-    that providing behavioral specifications reduces local-brand collapse by 20%.
-    Models directly allocate 100 points across SBT's eight dimensions via
-    structured JSON output, eliminating human coding. Three prompt types:
-    weighted recommendation, dimensional differentiation, and dimension-specific
-    probes. Each prompt administered 3 times per model at temperature 0.7.
-    Total: 4,860 API calls across Runs 2, 3, and 4.
+    24 LLMs across brand pairs in 8 runs. Runs 2-4 used 6 LLMs across 15
+    brand pairs (10 global, 5 local) for 4,860 API calls. Run 5 (cross-cultural)
+    used 22 LLMs across 7 cross-cultural brand pairs in 8 cultural contexts
+    (11,410 calls, 7,999 successful, 70.1% success rate) plus 69 native-language
+    prompt calls. Run 6 added a banking sector pair with backfill models Qwen Plus
+    (DashScope) and Fireworks GLM, bringing total unique models to 24 (1,018 calls).
+    Run 7 (framing experiment) tested H12 prompt-framing effects. Run 8 (native
+    language expansion) tested H10 across 815 native-language calls in 11 languages.
+    A Brand Function resolution test (Run 4, 90 calls) demonstrates that providing
+    behavioral specifications reduces local-brand collapse by 20%. Models directly
+    allocate 100 points across SBT's eight dimensions via structured JSON output.
+    Three prompt types: weighted recommendation, dimensional differentiation, and
+    dimension-specific probes. Each prompt administered 3 times per model at
+    temperature 0.7. Total: 21,061 clean calls across all 8 runs; ~6.1M tokens;
+    $5.52 total cost.
   sample:
-    size: 4860  # Run 2: 3,240 (10 global pairs) + Run 3: 1,620 (5 local pairs) + Run 4: 90 (brand function test)
-    description: "3,240 global brand calls + 1,620 local brand calls + 90 Brand Function resolution calls"
-    models: 6  # Qwen Plus excluded; final: Claude Sonnet 4.6, GPT-4o, Gemini 2.5 Flash, DeepSeek V3, Qwen3 30B, Gemma 4 27B
-    brand_pairs: 15  # 10 global + 5 local
+    size: 21061  # 13 JSONL files across 8 runs; clean calls after deduplication
+    description: "8 runs across 13 JSONL files. Runs 2-4: 4,860 calls (6 models, 15 pairs). Run 5: 11,410 calls (22 active models, 7 cross-cultural pairs, 8 cultures, 69 native-language calls). Run 6: 1,018 calls (banking pair, 24 models). Run 7: framing experiment (H12 test). Run 8: native language expansion (815 calls in 11 languages, H10 test — NOT SUPPORTED). Total unique models: 24; 9 cultural traditions; ~6.1M tokens; $5.52 total cost."
+    models: 24  # 24 unique models across all runs; T-Pro 2.0 excluded from Run 5 analysis due to infrastructure cost
+    brand_pairs: 23  # 10 global + 5 local + 7 cross-cultural + 1 banking (Run 6)
+  instrument: "PRISM-B (Perception Response Instrument for Structured Measurement — Brand variant)"
   measures:
     - variable: "dimensional_weight_allocation"
       instrument: "Structured JSON weight allocation (100 points across 8 SBT dimensions)"
@@ -139,7 +145,8 @@ methodology:
     - "Google AI Studio (Gemini 2.5 Flash)"
     - "DeepSeek API (DeepSeek V3)"
     - "Ollama (Qwen3 30B, Gemma 4 27B)"
-    - "DashScope API (Qwen Plus) — excluded; 403 authentication errors"
+    - "DashScope API (Qwen Plus) — Run 6 backfill model"
+    - "Fireworks AI API (GLM) — Run 6 backfill model"
 
 dependencies:
   - citation: "Zharnikov (2026a)"
@@ -201,12 +208,19 @@ submission_history:
     status: published
     doi: "10.5281/zenodo.19422427"
     note: >
-      v1.0 preprint. 7 sections, 4 hypotheses (H1+H2 supported, H3+H4 not supported).
-      4,860 API calls, 15 brand pairs, 6 LLMs. Grok review fixes applied: SBT positioning
-      clarified, H3/H4 reframed as expected null, tone softened, Brakus et al. (2009) added.
-      Run 5 cross-cultural expansion pending (~Apr 8): 7 additional pairs across China, Japan,
-      UAE, Russia, Ukraine, Mongolia, South Korea. All 7 models including Qwen Plus. ~4,038
-      additional calls. v1.1 expected after Run 5 completion.
+      v1.0 preprint (2026-04-04). 7 sections, 4 hypotheses (H1+H2 supported, H3+H4 not
+      supported). 4,860 API calls, 15 brand pairs, 6 LLMs. Grok review fixes applied: SBT
+      positioning clarified, H3/H4 reframed as expected null, tone softened, Brakus et al.
+      (2009) added. v2.0 (2026-04-08): incorporates Run 5 cross-cultural results
+      (11,410 calls, 7,999 successful, 24 models across all runs, 8 cultures, 7 cross-cultural
+      pairs, 69 native-language calls), Run 6 banking pair (H6 p=0.0013, d=3.449), Run 7
+      framing experiment (H12 p<0.0001), and Run 8 native language expansion (815 calls, 11
+      languages; H10 NOT SUPPORTED, 46/115, mean=-0.005). Final: 21,061 clean calls across
+      8 runs, 13 JSONL files, 24 models, 9 cultural traditions, ~6.1M tokens, $5.52 total cost.
+      H1 SUPPORTED (p<0.0001, DCI=35.6), H2 SUPPORTED (cosine=0.977), H6 SUPPORTED
+      (p=0.0013, d=3.449), H12 SUPPORTED (p<0.0001). Cultural dimension most collapsed
+      (-4.9 vs baseline). 13 hypotheses formalized (H1-H13; H13 future direction).
+      Upload to Zenodo pending v2.0 paper completion.
 
   - venue: "Journal of Advertising Research"
     type: journal

@@ -846,6 +846,8 @@ Several simplifying assumptions deserve explicit acknowledgment:
 
 6. **Absorbing boundary irreversibility**: The absorbing boundary assumption treats zero-dimension perception as irreversible. Empirical exceptions exist -- brands have recovered from near-zero signals on specific dimensions through sustained re-investment (e.g., deliberate re-collapse in SBT terminology). The model may underestimate recovery probability for brands that actively restructure their emission policy. The semi-permeable boundary model of Section 7.5 partially addresses this limitation, but it introduces its own simplification: the reflecting drift strength $\kappa_R$ is assumed constant across dimensions, whereas in practice the ease of rehabilitation likely varies by dimension (e.g., restoring experiential perception through product redesign may be faster than restoring ideological credibility through values-based messaging). A dimension-dependent $\kappa_R(i)$ would be more realistic but substantially complicates the analysis.
 
+A theoretical boundary of the diffusion framework concerns the sufficiency of the metric for determining perception dynamics. Recent work in differential geometry establishes that two surfaces can share the same metric and the same mean curvature yet be genuinely non-congruent — the Bonnet pair phenomenon (Bobenko, Hoffmann & Sageman-Furnas, 2025). In brand perception terms, two brands with identical curvature properties in perception space may nevertheless produce different perceptual trajectories if their 'embeddings' — the observers' non-ergodic histories — differ. The metric and drift structure characterized in this paper determine dynamics on the manifold but do not uniquely determine the embedding; the observer's trajectory through the space provides the missing information.
+
 ---
 
 ## 10. Connections to the Research Program
@@ -905,6 +907,8 @@ Aitchison, J. (1986). *The Statistical Analysis of Compositional Data*. Chapman 
 Ashbaugh, M. S., & Benguria, R. D. (1992). A sharp bound for the ratio of the first two eigenvalues of Dirichlet Laplacians and extensions. *Annals of Mathematics*, 135(3), 601--628.
 
 Aydogdu, A., McQuade, S. T., & Pouradier Duteil, N. (2017). Opinion dynamics on a general compact Riemannian manifold. *Networks and Heterogeneous Media*, 12(3), 489--523.
+
+Bobenko, A. I., Hoffmann, T., & Sageman-Furnas, A. O. (2025). Compact Bonnet pairs: Isometric tori with the same curvatures. *Publications Mathematiques de l'IHES*, 142, 241--293. DOI: 10.1007/s10240-025-00159-z
 
 Berger, M., Gauduchon, P., & Mazet, E. (1971). *Le Spectre d'une Variete Riemannienne*. Lecture Notes in Mathematics, Vol. 194. Springer.
 
