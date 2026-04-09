@@ -295,7 +295,7 @@ models:
     backend: yandex
     api_key_env: YANDEX_AI_API_KEY
     open_weight: true
-    paid_api: false
+    paid_api: true  # Yandex AI Studio Model Gallery charges 0.10 RUB/1K tokens
     notes: "Tokyo Tech / SBI. Trained from scratch (not Llama-derived). Released Feb 2026. 489 successful calls in Run 5. H9 large Japanese model paired with swallow_local (8B)."
 
   - name: swallow_local
@@ -356,13 +356,15 @@ models:
 # Tier 2 (7-30B): 6 models (gpt, yandexgpt_local, gigachat_local, groq_allam, swallow_local, gptoss_swallow*)
 #   * gptoss_swallow is 20B but classified Tier 1 in paper as Japanese national frontier model
 #
-# API cost classification (paid_api: true):
-#   Claude (Anthropic), GPT (OpenAI), Gemini (Google), DeepSeek V3 cloud (DeepSeek)
-# Free-tier cloud (paid_api: false):
-#   Grok (xAI), Llama 3.3 / Kimi K2 / ALLaM-2-7B (Groq), Qwen3-235B / GLM-4.7 (Cerebras),
-#   Qwen3-32B / DeepSeek V3.2 (SambaNova), Sarvam-105B (Indus API),
-#   GigaChat 2 Max (Sber API), YandexGPT 5 Pro / GPT-OSS-Swallow 20B (Yandex AI Studio)
-# Local Ollama (no API cost): all ollama backend models
+# API cost classification:
+# Paid (10): Claude (Anthropic), GPT-4o-mini (OpenAI), Gemini (Google),
+#   DeepSeek V3 (DeepSeek), YandexGPT Pro (Yandex), GPT-OSS-Swallow (Yandex AI Studio),
+#   GigaChat 2 Max (Sber), Sarvam 105B (Sarvam AI), DashScope Qwen Plus (Alibaba),
+#   Fireworks GLM (Fireworks AI)
+# Free cloud (6): Grok (xAI), Llama 3.3 / Kimi K2 / ALLaM-2-7B (Groq),
+#   Qwen3-235B (Cerebras), DeepSeek V3.2 (SambaNova)
+# Local Ollama (8, no API cost): qwen3, gemma4, yandexgpt_local, gigachat_local,
+#   exaone, swallow, jais, qwen35, falcon_arabic
 #
 # Cultures represented:
 #   Western:  claude, gpt, gemini, gemma4_local, groq_llama33, grok
