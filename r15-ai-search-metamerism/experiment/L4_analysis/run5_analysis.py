@@ -140,6 +140,8 @@ def load_all_calls(base_dir: str) -> list[dict]:
         ("Run 2 (Qwen Plus)", "L3_sessions/run2_qwen_plus.jsonl"),
         ("Run 5 (Fireworks GLM)", "L3_sessions/run5_fireworks_glm.jsonl"),
         ("Run 7 (H12 framing)", "L3_sessions/run7_framing.jsonl"),
+        ("Run 7d (Swedish framing)", "L3_sessions/run7d_swedish.jsonl"),
+        ("Run 8 (native expansion)", "L3_sessions/run8_native_expansion.jsonl"),
     ]
     all_calls = []
     for label, rel_path in files:
