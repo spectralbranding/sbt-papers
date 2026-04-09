@@ -1,6 +1,6 @@
 # R15: Spectral Metamerism in AI-Mediated Brand Perception
 
-**Citation key**: 2026v | **DOI**: [10.5281/zenodo.19422427](https://doi.org/10.5281/zenodo.19422427) | **Status**: Empirical results complete (21,000+ calls across 8 runs, 24 models)
+**Citation key**: 2026v | **DOI**: [10.5281/zenodo.19422427](https://doi.org/10.5281/zenodo.19422427) | **Status**: Empirical results complete (21,600+ calls across 9 runs, 24 models)
 
 ## Paper
 
@@ -8,7 +8,7 @@ Zharnikov, D. (2026). Spectral Metamerism in AI-Mediated Brand Perception: How L
 
 ## Abstract
 
-AI-mediated search is replacing traditional consumer search, yet no formal model predicts which brand attributes survive AI mediation. This paper applies Spectral Brand Theory's eight-dimensional framework to model large language models as observer cohorts with systematically biased spectral profiles. An experimental study across 24 LLMs --- organized into Western cloud, Chinese cloud, Russian, Japanese, Korean, Arabic, Indian, and Swedish clusters --- tests brand pairs using structured weight allocation across 8 runs (21,000+ API calls, 815 native-language calls in 11 languages). Results from Runs 2-4: Cultural meaning collapses to 58% of baseline, Temporal heritage to 65%, while Experiential inflates to 150%. Cross-model cosine similarity of 0.977 confirms the collapse is structural, not model-specific. Local brands from underrepresented markets show significantly amplified collapse (H6 supported, p = 0.0013, Cohen's d = 3.449). H1 supported (p < 0.0001, DCI = 35.6 vs 25.0 baseline), H2 supported (cosine = 0.977), H12 supported (p < 0.0001). H10 (native language reduces collapse) NOT SUPPORTED (46/115 pairs, mean = -0.005).
+AI-mediated search is replacing traditional consumer search, yet no formal model predicts which brand attributes survive AI mediation. This paper applies Spectral Brand Theory's eight-dimensional framework to model large language models as observer cohorts with systematically biased spectral profiles. An experimental study across 24 LLMs --- organized into Western cloud, Chinese cloud, Russian, Japanese, Korean, Arabic, Indian, and Swedish clusters --- tests brand pairs using structured weight allocation across 9 runs (21,000+ API calls, 815 native-language calls in 11 languages). Results from Runs 2-4: Cultural meaning collapses to 58% of baseline, Temporal heritage to 65%, while Experiential inflates to 150%. Cross-model cosine similarity of 0.977 confirms the collapse is structural, not model-specific. Local brands from underrepresented markets show significantly amplified collapse (H6 supported, p = 0.0013, Cohen's d = 3.449). H1 supported (p < 0.0001, DCI = 35.6 vs 25.0 baseline), H2 supported (cosine = 0.977), H12 supported (p < 0.0001). H10 (native language reduces collapse) NOT SUPPORTED (46/115 pairs, mean = -0.005).
 
 ## Key Results
 
