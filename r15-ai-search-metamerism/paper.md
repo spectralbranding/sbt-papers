@@ -519,16 +519,16 @@ The Brand Function resolution effect documented in Run 4 was confirmed in Run 5.
 
 #### 4.5.9 Cost and Reproducibility
 
-The full Run 5 dataset (16,800 calls, 13,389 successful) was collected for \$3.08 USD in direct API costs, using approximately 4 million tokens. Paid cloud APIs (Claude, GPT, Gemini, DeepSeek) accounted for \$3.08 across the commercial-tier calls. Free-tier cloud APIs (Grok via xAI, Kimi and ALLaM via Groq, Qwen3-235B via Cerebras, DeepSeek V3 via SambaNova, Sarvam via Indus API, GigaChat 2 Max via Sber, YandexGPT 5 Pro and GPT-OSS-Swallow via Yandex AI Studio, GLM-4.7 via Fireworks) contributed the remaining cloud calls at zero marginal cost. Local Ollama models (Gemma 4, Qwen3 30B, Swallow 8B, GigaChat local, YandexGPT local, EXAONE, Jais, Qwen3.5) ran on an Apple Mac mini M4 Pro (64 GB unified memory) at zero marginal cost beyond electricity. The total wall-clock time was 21.3 hours. Note: Swallow 70B was attempted via both SambaNova (cloud, removed from platform Apr 2026) and local Ollama (times out on 64 GB RAM); both deployments were excluded due to a combined 3.6% success rate (20 successful calls out of 549 attempted). Japanese coverage is provided by Swallow 8B (local, 381 successful calls) and GPT-OSS-Swallow 20B (Yandex AI Studio, 489 successful calls).
+The full experiment (21,061 clean calls across 8 runs) was collected for \$5.52 USD in direct API costs, using approximately 6.1 million tokens. Paid cloud APIs (10 models: Claude, GPT-4o-mini, Gemini, DeepSeek, YandexGPT Pro, GPT-OSS-Swallow, GigaChat 2 Max, Sarvam, DashScope Qwen Plus, Fireworks GLM) accounted for the entire \$5.52. Free cloud APIs (6 models: Grok via xAI, Llama 3.3 / Kimi K2 / ALLaM-2 via Groq, Qwen3-235B via Cerebras, DeepSeek V3.2 via SambaNova) contributed calls at zero marginal cost. Local Ollama models (8 models: Gemma 4, Qwen3 30B, Qwen3.5, Swallow 8B, GigaChat local, YandexGPT local, EXAONE, Jais) ran on an Apple Mac mini M4 Pro (64 GB unified memory) at zero marginal cost beyond electricity.
 
-**Table 8.** Run 5 cost and time breakdown by infrastructure tier (successful calls only). Paid cloud = Claude, GPT, Gemini, DeepSeek. Free cloud = Grok (xAI), Groq-hosted (Llama 3.3, Kimi, ALLaM), Cerebras-hosted (Qwen3-235B, GLM-4.7), SambaNova-hosted (DeepSeek V3), Sarvam (Indus), GigaChat 2 Max (Sber), YandexGPT 5 Pro, GPT-OSS-Swallow (Yandex AI Studio). Local inference ran on Apple Mac mini M4 Pro (64 GB unified memory).
+**Table 8.** Cost and infrastructure breakdown across all 8 runs. Paid cloud = metered per-token APIs. Free cloud = providers offering free inference tiers. Local = Ollama on Apple M4 Pro 64 GB.
 
-| Category | Calls (OK) | Cost |
-|----------|-----------|------|
-| Paid cloud (4 models) | ~2,100 | \$3.08 |
-| Free cloud (13 models) | ~6,550 | \$0.00 |
-| Local Ollama (8 models) | ~4,739 | \$0.00 |
-| **Total** | **~13,389** | **\$3.08** |
+| Category | Models | Calls (OK) | Cost |
+|----------|--------|-----------|------|
+| Paid cloud | 10 | ~7,500 | \$5.52 |
+| Free cloud | 6 | ~5,500 | \$0.00 |
+| Local Ollama | 8 | ~8,000 | \$0.00 |
+| **Total** | **24** | **~21,000** | **\$5.52** |
 
 *Note.* Call counts are approximate; exact per-model breakdowns are in the HuggingFace dataset.
 
