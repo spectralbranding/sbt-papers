@@ -1,0 +1,53 @@
+# CONTRIBUTORS.yaml — R18: Spectral Dynamics
+# Verified contributor attribution per the Research-as-Repository protocol
+
+contributors:
+  - name: "Dmitry Zharnikov"
+    orcid: "0009-0000-6893-9231"
+    type: human
+    roles:
+      - conceptualization
+      - methodology
+      - formal-analysis
+      - writing-original
+      - writing-review
+      - project-administration
+    affiliation: "Independent Researcher"
+    first_commit: "2026-04-08"
+    last_commit: "2026-04-08"
+    notes: >
+      Conceived the differential calculus framework for brand perception, formalized velocity
+      and acceleration as vector quantities in R^8, proved the velocity-based identification
+      theorem (Bonnet pair resolution), introduced directional coherence and trajectory
+      clustering, conducted the Dove illustration, and wrote the full manuscript.
+
+  - name: "Claude (Anthropic)"
+    type: ai_tool
+    roles:
+      - writing-review
+      - consistency-checking
+      - technical-validation
+    disclosure: >
+      Used for manuscript drafting assistance, citation verification, mathematical consistency
+      checking, and self-adversarial review (/review-paper protocol). All conceptual and
+      theoretical contributions remain solely the author's work.
+
+  - name: "Gemini Deep Research (Google)"
+    type: ai_tool
+    roles:
+      - investigation
+      - literature-mapping
+    disclosure: >
+      Used for literature landscape mapping on time derivatives in brand measurement, phase
+      space in consumer research, Kalman filters in marketing, identifiability theory, and
+      dynamical systems in strategic management (5 research prompts). All results independently
+      verified before use.
+
+  - name: "Grok Deep Research (xAI)"
+    type: ai_tool
+    roles:
+      - investigation
+      - literature-mapping
+    disclosure: >
+      Used as validation baseline for Gemini Deep Research citations. Higher accuracy, fewer
+      citations. Cross-referenced against Gemini results to identify fabricated references.

@@ -428,6 +428,8 @@ Three directions for future work are immediate. First, the development of empiri
 
 A fourth, more speculative direction concerns the connection between this paper's results and the portfolio theory of Zharnikov (2026q). If individual brands have coherence-dependent resilience, then a portfolio of brands has portfolio-level resilience that depends on the coherence types of its constituents and their correlations. A portfolio dominated by incoherent brands is more vulnerable to systemic crises than a portfolio balanced across coherence types. This connection between brand-level and portfolio-level resilience is a natural extension of the present framework.
 
+A geometric formalization of the coherence-type distinction is suggested by the Bonnet pair phenomenon in differential geometry (Bobenko, Hoffmann & Sageman-Furnas, 2025): two surfaces can share the same metric (spectral profile) and the same mean curvature (aggregate coherence score) yet be genuinely non-congruent (different crisis trajectories). The result that coherence type predicts resilience better than coherence score is the brand perception analog — the 'shape' of emission (type) determines crisis dynamics, not the 'size' (score), just as a surface's embedding determines its mechanical properties beyond what the intrinsic metric specifies.
+
 ---
 
 ## References
@@ -435,6 +437,8 @@ A fourth, more speculative direction concerns the connection between this paper'
 Aaker, D. A. (1996). *Building strong brands*. Free Press.
 
 Aaker, J., Fournier, S., & Brasel, S. A. (2004). When good brands do bad. *Journal of Consumer Research*, *31*(1), 1--16.
+
+Bobenko, A. I., Hoffmann, T., & Sageman-Furnas, A. O. (2025). Compact Bonnet pairs: Isometric tori with the same curvatures. *Publications Mathematiques de l'IHES*, 142, 241--293. DOI: 10.1007/s10240-025-00159-z
 
 Brakus, J. J., Schmitt, B. H., & Zarantonello, L. (2009). Brand experience: What is it? How is it measured? Does it affect loyalty? *Journal of Marketing*, *73*(3), 52--68.
 

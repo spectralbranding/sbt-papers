@@ -49,10 +49,50 @@ data_manifest:
     format: "JSON"
     access: public
 
+  - id: "run5-crosscultural"
+    description: >
+      Run 5: 11,410 total calls (7,999 successful, 70.1% success rate) across
+      21 active LLMs, 7 cross-cultural brand pairs, 8 cultural contexts (China, Japan,
+      UAE, Russia, Ukraine, Mongolia, South Korea, India). Includes 69 native-
+      language calls for H10 (Prompt Language Effect). Models span Western,
+      Chinese, Russian, Japanese, Korean, Arabic, and Indian clusters.
+      T-Pro 2.0 excluded from study (requires dedicated paid instance).
+    archive: "GitHub"
+    repository: "spectralbranding/sbt-papers"
+    path: "r15-ai-search-metamerism/experiment/L3_sessions/run5_crosscultural.jsonl"
+    format: "JSONL"
+    access: public
+    size_mb: 14
+    records: 7999  # successful responses; 11,410 total calls
+
+  - id: "run5-results"
+    description: >
+      Run 5 aggregated results (10.8MB JSON): DCI per model per culture pair,
+      diagonal advantage matrix (H5), capacity comparison (H9), language effect
+      (H10), geopolitical exploratory (H7). H1 SUPPORTED (p<0.0001, DCI=35.6),
+      H2 SUPPORTED (cosine=0.976).
+    archive: "GitHub"
+    repository: "spectralbranding/sbt-papers"
+    path: "r15-ai-search-metamerism/experiment/run5_results.json"
+    format: "JSON"
+    access: public
+    size_mb: 10.8
+
+  - id: "run5-analysis"
+    description: >
+      Post-processed analysis outputs: run5_dci_table.csv (models x cultures DCI
+      matrix), run5_diagonal_advantage.csv (H5 primary measure),
+      run5_analysis_results.json (full H5-H10 test statistics).
+    archive: "GitHub"
+    repository: "spectralbranding/sbt-papers"
+    path: "r15-ai-search-metamerism/experiment/L4_analysis/"
+    format: "CSV, JSON"
+    access: public
+
   - id: "results-aggregated"
     description: >
       Aggregated results: dimensional weight profiles, DCI, cosine
-      similarity matrices, hypothesis test statistics for all runs.
+      similarity matrices, hypothesis test statistics for Runs 2-4.
     archive: "GitHub"
     repository: "spectralbranding/sbt-papers"
     path: "r15-ai-search-metamerism/results_v2_global.json, results_v3_local.json, results_v4_resolution.json"

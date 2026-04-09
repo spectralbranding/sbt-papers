@@ -16,6 +16,9 @@ Inputs (JSONL session logs):
     ../L3_sessions/run4_resolution.jsonl
     ../L3_sessions/run5_crosscultural.jsonl
     ../L3_sessions/run5_gptoss_swallow.jsonl
+    ../L3_sessions/run6_banking_clean.jsonl
+    ../L3_sessions/run2_qwen_plus.jsonl
+    ../L3_sessions/run5_fireworks_glm.jsonl
 
 Outputs:
     - Statistical test results (H1-H10)
@@ -60,38 +63,42 @@ BASELINE_WEIGHT = 12.5  # 100 / 8
 # Model metadata: tier, culture, size, release date
 MODEL_META = {
     # Tier 1 (30B+)
-    "claude":           {"tier": 1, "culture": "western",  "size": "~200B+",  "release": "2025-10", "provider": "Anthropic"},
-    "gemini":           {"tier": 1, "culture": "western",  "size": "large",   "release": "2025-12", "provider": "Google"},
+    "claude":           {"tier": 1, "culture": "western",  "size": "undisclosed", "release": "2025-10", "provider": "Anthropic"},
+    "gemini":           {"tier": 1, "culture": "western",  "size": "undisclosed", "release": "2025-12", "provider": "Google"},
     "groq_llama33":     {"tier": 1, "culture": "western",  "size": "70B",     "release": "2024-12", "provider": "Groq"},
     "deepseek":         {"tier": 1, "culture": "chinese",  "size": "671B MoE","release": "2025-03", "provider": "DeepSeek"},
     "cerebras_qwen3":   {"tier": 1, "culture": "chinese",  "size": "235B MoE","release": "2025-06", "provider": "Cerebras"},
-    "groq_kimi":        {"tier": 1, "culture": "chinese",  "size": "large MoE","release": "2025-06","provider": "Groq"},
-    "grok":             {"tier": 1, "culture": "western",  "size": "large",   "release": "2025-12", "provider": "xAI"},
+    "groq_kimi":        {"tier": 1, "culture": "chinese",  "size": "undisclosed", "release": "2025-06", "provider": "Groq"},
+    "grok":             {"tier": 1, "culture": "western",  "size": "undisclosed", "release": "2025-12", "provider": "xAI"},
     "sarvam":           {"tier": 1, "culture": "indian",   "size": "105B MoE","release": "2026-02", "provider": "Sarvam AI"},
-    "gigachat_api":     {"tier": 1, "culture": "russian",  "size": "commercial","release": "2026-02","provider": "Sber"},
-    "yandexgpt_pro":    {"tier": 1, "culture": "russian",  "size": "commercial","release": "2026-02","provider": "Yandex"},
+    "gigachat_api":     {"tier": 1, "culture": "russian",  "size": "undisclosed", "release": "2026-02", "provider": "Sber"},
+    "yandexgpt_pro":    {"tier": 1, "culture": "russian",  "size": "undisclosed", "release": "2026-02", "provider": "Yandex"},
     "exaone_local":     {"tier": 1, "culture": "korean",   "size": "32B",     "release": "2026-02", "provider": "Ollama"},
     "jais_local":       {"tier": 1, "culture": "arabic",   "size": "70B",     "release": "2024-03", "provider": "Ollama"},
     "gptoss_swallow":   {"tier": 1, "culture": "japanese", "size": "20B",     "release": "2026-02", "provider": "Yandex"},
+    "fireworks_glm":    {"tier": 1, "culture": "chinese",  "size": "undisclosed", "release": "2025-12", "provider": "Fireworks"},
+    "dashscope_qwen_plus": {"tier": 1, "culture": "chinese", "size": "undisclosed", "release": "2025-12", "provider": "DashScope"},
+    "sambanova_deepseek": {"tier": 1, "culture": "western", "size": "671B MoE", "release": "2025-06", "provider": "SambaNova"},
     # Tier 2 (7-30B)
-    "gpt":              {"tier": 2, "culture": "western",  "size": "~8B",     "release": "2024-07", "provider": "OpenAI"},
+    "gpt":              {"tier": 2, "culture": "western",  "size": "undisclosed", "release": "2024-07", "provider": "OpenAI"},
     "qwen3_local":      {"tier": 2, "culture": "chinese",  "size": "30B",     "release": "2025-06", "provider": "Ollama"},
-    "gemma4_local":     {"tier": 2, "culture": "western",  "size": "27B",     "release": "2025-06", "provider": "Ollama"},
+    "gemma4_local":     {"tier": 2, "culture": "western",  "size": "27B MoE", "release": "2025-06", "provider": "Ollama"},
     "groq_allam":       {"tier": 2, "culture": "arabic",   "size": "7B",      "release": "2025-01", "provider": "Groq"},
     "yandexgpt_local":  {"tier": 2, "culture": "russian",  "size": "8B",      "release": "2025-03", "provider": "Ollama"},
-    "gigachat_local":   {"tier": 2, "culture": "russian",  "size": "10B/1.8B","release": "2026-03", "provider": "Ollama"},
+    "gigachat_local":   {"tier": 2, "culture": "russian",  "size": "undisclosed", "release": "2026-03", "provider": "Ollama"},
     "swallow_local":    {"tier": 2, "culture": "japanese", "size": "8B",      "release": "2024-12", "provider": "Ollama"},
+    "qwen35_local":     {"tier": 2, "culture": "chinese",  "size": "27B",     "release": "2026-06", "provider": "Ollama"},
 }
 
 # Culture-model mapping for diagonal advantage analysis
 CULTURE_MODELS = {
-    "chinese":  ["deepseek", "cerebras_qwen3", "groq_kimi", "qwen3_local"],
+    "chinese":  ["deepseek", "cerebras_qwen3", "groq_kimi", "qwen3_local", "fireworks_glm", "dashscope_qwen_plus", "qwen35_local"],
     "russian":  ["gigachat_api", "yandexgpt_pro", "gigachat_local", "yandexgpt_local"],
     "japanese": ["gptoss_swallow", "swallow_local"],
     "korean":   ["exaone_local"],
     "arabic":   ["jais_local", "groq_allam"],
     "indian":   ["sarvam"],
-    "western":  ["claude", "gpt", "gemini", "gemma4_local", "groq_llama33", "grok"],
+    "western":  ["claude", "gpt", "gemini", "gemma4_local", "groq_llama33", "grok", "sambanova_deepseek"],
 }
 
 # Brand pair to culture mapping
@@ -104,6 +111,7 @@ PAIR_CULTURE = {
     "mongolia_beer": "chinese",          # Mongolian, tested with Chinese models
     "korea_dairy": "korean",
     "india_dairy": "indian",
+    "russia_ukraine_banking": "russian",  # Tinkoff vs PrivatBank cross-cultural banking
 }
 
 # H9 capacity pairs (same culture, different sizes)
@@ -128,6 +136,12 @@ def load_all_calls(base_dir: str) -> list[dict]:
         ("Run 4", "L3_sessions/run4_resolution.jsonl"),
         ("Run 5", "L3_sessions/run5_crosscultural.jsonl"),
         ("Run 5 (GPT-OSS)", "L3_sessions/run5_gptoss_swallow.jsonl"),
+        ("Run 6 (banking)", "L3_sessions/run6_banking_clean.jsonl"),
+        ("Run 2 (Qwen Plus)", "L3_sessions/run2_qwen_plus.jsonl"),
+        ("Run 5 (Fireworks GLM)", "L3_sessions/run5_fireworks_glm.jsonl"),
+        ("Run 7 (H12 framing)", "L3_sessions/run7_framing.jsonl"),
+        ("Run 7d (Swedish framing)", "L3_sessions/run7d_swedish.jsonl"),
+        ("Run 8 (native expansion)", "L3_sessions/run8_native_expansion.jsonl"),
     ]
     all_calls = []
     for label, rel_path in files:
@@ -654,6 +668,86 @@ def test_h10_native_language(calls: list[dict]) -> dict:
     }
 
 
+def test_h12_geopolitical_framing(calls: list[dict]) -> dict:
+    """H12: Same brand gets different dimensional profiles in different city contexts.
+
+    Tests whether LLMs apply geopolitical framing to brand perception.
+    Uses geopolitical_framing prompt type from Run 7.
+    Three pairs: Roshen (Moscow/Kyiv), Volvo XC90 (Stockholm/Shanghai),
+    Burger King (New York/Moscow).
+    """
+    framing_calls = [c for c in calls
+                     if c.get("prompt_type") == "geopolitical_framing"
+                     and not c.get("error")]
+
+    if not framing_calls:
+        return {"supported": None, "note": "No framing data available yet"}
+
+    # Group by pair_id -> city -> model -> weights
+    from collections import defaultdict
+    pair_data = defaultdict(lambda: defaultdict(lambda: defaultdict(list)))
+
+    for c in framing_calls:
+        pair_id = c.get("pair_id", "")
+        brand_pair = c.get("brand_pair", "")  # e.g. "Roshen (Moscow)"
+        model = c.get("model", "")
+        w = parse_weights(c.get("parsed") or {})
+        if w:
+            pair_data[pair_id][brand_pair][model].append(w)
+
+    # For each pair, compute per-model DCI delta between city_a and city_b
+    pair_results = {}
+    all_deltas = []
+
+    for pair_id, cities in pair_data.items():
+        city_labels = sorted(cities.keys())
+        if len(city_labels) < 2:
+            continue
+
+        city_a_label, city_b_label = city_labels[0], city_labels[1]
+        per_model_delta = {}
+
+        for model in set(list(cities[city_a_label].keys()) + list(cities[city_b_label].keys())):
+            if model in cities[city_a_label] and model in cities[city_b_label]:
+                dcis_a = [compute_dci(w) for w in cities[city_a_label][model]]
+                dcis_b = [compute_dci(w) for w in cities[city_b_label][model]]
+                if dcis_a and dcis_b:
+                    mean_a = float(np.mean(dcis_a))
+                    mean_b = float(np.mean(dcis_b))
+                    delta = mean_b - mean_a
+                    per_model_delta[model] = {
+                        "city_a_dci": mean_a,
+                        "city_b_dci": mean_b,
+                        "delta": delta,
+                    }
+                    all_deltas.append(abs(delta))
+
+        pair_results[pair_id] = {
+            "city_a": city_a_label,
+            "city_b": city_b_label,
+            "models": len(per_model_delta),
+            "mean_abs_delta": float(np.mean([abs(v["delta"]) for v in per_model_delta.values()])) if per_model_delta else 0,
+            "per_model": per_model_delta,
+        }
+
+    # H12 is supported if the mean absolute DCI delta is significantly > 0
+    if all_deltas:
+        t_stat, p_value = stats.ttest_1samp(all_deltas, 0)
+        mean_abs = float(np.mean(all_deltas))
+    else:
+        t_stat, p_value, mean_abs = 0, 1, 0
+
+    return {
+        "supported": mean_abs > 0.02 and p_value < 0.05 if all_deltas else None,
+        "mean_abs_delta": mean_abs,
+        "t_stat": float(t_stat),
+        "p_value": float(p_value),
+        "n_pairs": len(pair_results),
+        "total_deltas": len(all_deltas),
+        "pairs": pair_results,
+    }
+
+
 def compute_cost_summary(calls: list[dict]) -> dict:
     """Compute token estimates and cost per model."""
     CHARS_PER_TOKEN = 4.0
@@ -754,7 +848,10 @@ def main():
     h9 = test_h9_capacity(xc_calls)
 
     print("Testing H10 (native language)...")
-    h10 = test_h10_native_language(xc_calls)
+    h10 = test_h10_native_language(valid_calls)  # all calls, not just xc — includes Run 8 native expansion
+
+    print("Testing H12 (geopolitical framing)...")
+    h12 = test_h12_geopolitical_framing(all_calls)
 
     print("Testing Run 4 resolution (H5r4-H7r4)...")
     run4 = test_run4_resolution(valid_calls)
@@ -783,6 +880,7 @@ def main():
         "H8_thindata_floor": h8,
         "H9_capacity_effect": h9,
         "H10_native_language": h10,
+        "H12_geopolitical_framing": h12,
         "Run4_resolution": run4,
         "model_profiles": {m: {
             "dci": p["dci"],
@@ -884,6 +982,20 @@ def main():
     for p in h10.get("pairs", []):
         print(f"    {p['model']} on {p['pair_id']}: en={p['en_dci']:.3f} native={p['native_dci']:.3f} "
               f"(reduction={p['reduction']:+.4f})")
+
+    print(f"\n--- H12 (Geopolitical Framing — Same Brand, Different City) ---")
+    if h12.get("note"):
+        print(f"  {h12['note']}")
+    else:
+        print(f"  Mean absolute DCI delta: {h12.get('mean_abs_delta', 0):.4f}")
+        if h12.get("t_stat"):
+            print(f"  t={h12['t_stat']:.3f}, p={h12['p_value']:.4f}")
+        print(f"  Pairs tested: {h12.get('n_pairs', 0)}")
+        print(f"  Total deltas: {h12.get('total_deltas', 0)}")
+        print(f"  SUPPORTED: {h12.get('supported')}")
+        for pair_id, pr in sorted(h12.get("pairs", {}).items()):
+            print(f"    {pair_id}: {pr['city_a']} vs {pr['city_b']} "
+                  f"(mean_abs_delta={pr['mean_abs_delta']:.4f}, n_models={pr['models']})")
 
     print(f"\n--- DCI Ranking (Cross-Cultural, all models) ---")
     for m, p in sorted(xc_profiles.items(), key=lambda x: x[1]["dci"]):

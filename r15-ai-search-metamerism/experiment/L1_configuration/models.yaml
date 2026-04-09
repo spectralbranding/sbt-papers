@@ -25,6 +25,7 @@ models:
     backend: anthropic
     api_key_env: ANTHROPIC_API_KEY
     open_weight: false
+    paid_api: true
     notes: "No open-weight equivalent exists. Retained for continuity."
 
   - name: gpt
@@ -36,6 +37,7 @@ models:
     backend: openai
     api_key_env: OPENAI_API_KEY
     open_weight: false
+    paid_api: true
     notes: "No open-weight equivalent exists. Retained for continuity."
 
   - name: gemini
@@ -47,6 +49,7 @@ models:
     backend: google
     api_key_env: GOOGLE_API_KEY
     open_weight: false
+    paid_api: true
     notes: "No open-weight equivalent exists. Retained for continuity."
 
   - name: deepseek
@@ -58,7 +61,8 @@ models:
     backend: deepseek
     api_key_env: DEEPSEEK_API_KEY
     open_weight: true
-    notes: "Baseline Chinese model from Runs 2-4. Also available via SambaNova."
+    paid_api: true
+    notes: "Baseline Chinese model from Runs 2-4. Open weights but paid cloud API. Also available via SambaNova (free)."
 
   - name: qwen3_local
     label: "Qwen3 30B (local Ollama)"
@@ -165,7 +169,8 @@ models:
     backend: xai
     api_key_env: GROK_API_KEY
     open_weight: false
-    notes: "Trained on X/Twitter corpus. Distinct data distribution from other Western models."
+    paid_api: false
+    notes: "Free-tier xAI API. Trained on X/Twitter corpus. Distinct data distribution from other Western models."
 
   # ---------------------------------------------------------------------------
   # National models — free-tier cloud
@@ -180,8 +185,9 @@ models:
     backend: sarvam
     api_key_env: SARVAM_API_KEY
     open_weight: true
+    paid_api: false
     license: "Apache 2.0"
-    notes: "Indian language specialist. Tests H5 for Amul brand pair."
+    notes: "Free-tier Indus API. Indian language specialist. Tests H5 for Amul brand pair."
 
   - name: gigachat_api
     label: "GigaChat 2 Max (Sber API)"
@@ -192,7 +198,8 @@ models:
     backend: gigachat
     api_key_env: GIGACHAT_API_KEY
     open_weight: false
-    notes: "Russian commercial. Certificate pinning required (russian_trusted_root_ca.crt)."
+    paid_api: false
+    notes: "Free-tier Sber API. Certificate pinning required (russian_trusted_root_ca.crt)."
 
   - name: yandexgpt_pro
     label: "YandexGPT 5 Pro (Yandex AI Studio)"
@@ -203,29 +210,32 @@ models:
     backend: yandex
     api_key_env: YANDEX_AI_API_KEY
     open_weight: false
-    notes: "H9 size comparison counterpart to yandexgpt_local (8B)."
+    paid_api: false
+    notes: "Free-tier Yandex AI Studio. H9 size comparison counterpart to yandexgpt_local (8B)."
 
-  - name: tpro_yandex
-    label: "T-Pro 2.0 FP8 (Yandex AI Studio)"
-    model_id: "t-pro-it-2.0-fp8"
-    tier: 1
-    culture: Russian
-    size_class: "32B"
-    backend: yandex
-    api_key_env: YANDEX_AI_API_KEY
-    open_weight: false
-    notes: "T-Bank model (32B). Russian-primary. Served via Yandex AI Studio."
+  # T-Pro 2.0 EXCLUDED: Requires dedicated paid instance ($6.20/hr). Not available in free-tier.
+  # Previous config retained for reference:
+  # - name: tpro_yandex
+  #   label: "T-Pro 2.0 FP8 (Yandex AI Studio)"
+  #   model_id: "t-pro-it-2.0-fp8"
+  #   tier: 1
+  #   culture: Russian
+  #   size_class: "32B"
+  #   backend: yandex
+  #   paid_api: true
+  #   notes: "Requires dedicated paid instance ($6.20/hr). Excluded from study."
 
-  - name: sambanova_swallow
-    label: "Swallow 70B (SambaNova)"
-    model_id: "Llama-3.3-Swallow-70B-Instruct-v0.4"
-    tier: 1
-    culture: Japanese
-    size_class: "70B"
-    backend: sambanova
-    api_key_env: SAMBANOVA_API_KEY
-    open_weight: true
-    notes: "Tokyo Tech. H9 size comparison counterpart to swallow_local (8B)."
+  # EXCLUDED: sambanova_swallow
+  # - name: sambanova_swallow
+  #   label: "Swallow 70B (SambaNova)"
+  #   model_id: "Llama-3.3-Swallow-70B-Instruct-v0.4"
+  #   tier: 1
+  #   culture: Japanese
+  #   size_class: "70B"
+  #   backend: sambanova
+  #   api_key_env: SAMBANOVA_API_KEY
+  #   open_weight: true
+  #   notes: "Tokyo Tech. H9 size comparison counterpart to swallow_local (8B). EXCLUDED: 3.6% success rate (20 OK out of 549 attempts)."
 
   - name: groq_allam
     label: "ALLaM-2-7B (Groq)"
@@ -276,6 +286,18 @@ models:
     open_weight: true
     notes: "LG AI Research. Primary Korean national model for H5 test on Binggrae."
 
+  - name: gptoss_swallow
+    label: "GPT-OSS-Swallow 20B (Yandex AI Studio)"
+    model_id: "gpt-oss-20b/latest"
+    tier: 1
+    culture: Japanese
+    size_class: "20B"
+    backend: yandex
+    api_key_env: YANDEX_AI_API_KEY
+    open_weight: true
+    paid_api: false
+    notes: "Tokyo Tech / SBI. Trained from scratch (not Llama-derived). Released Feb 2026. 489 successful calls in Run 5. H9 large Japanese model paired with swallow_local (8B)."
+
   - name: swallow_local
     label: "Swallow 8B (local Ollama)"
     model_id: "hf.co/mradermacher/Llama-3.1-Swallow-8B-Instruct-v0.3-GGUF:latest"
@@ -285,7 +307,9 @@ models:
     backend: ollama
     api_key_env: OLLAMA_AVAILABLE
     open_weight: true
-    notes: "Tokyo Tech. H9 small Japanese model. Paired with sambanova_swallow (70B)."
+    notes: "Tokyo Tech. H9 small Japanese model. 381 successful calls in Run 5. Paired with gptoss_swallow (20B) for H9 capacity comparison."
+
+  # EXCLUDED: swallow70_local (70B local — times out on 64GB RAM, 0 successful calls)
 
   - name: falcon_arabic_local
     label: "Falcon-H1-Arabic 7B (local Ollama)"
@@ -324,16 +348,28 @@ models:
 # ---------------------------------------------------------------------------
 # Summary
 # ---------------------------------------------------------------------------
-# Total models: 21 (6 original + 10 free-tier cloud + 7 national local)
-# Tier 1 (30B+): 17 models
-# Tier 2 (7-30B): 4 models (gpt, yandexgpt_local, gigachat_local, swallow_local, groq_allam)
+# Total models in active analysis: 22 (6 original + 10 free-tier cloud + 6 national local/cloud)
+# Excluded: T-Pro 2.0 (requires dedicated paid instance at $6.20/hr)
+# Excluded: swallow70_local (70B local — times out on 64GB RAM, 0 successful calls)
+# Excluded: sambanova_swallow (70B SambaNova — model removed, 3.6% success rate)
+# Tier 1 (30B+): 16 models
+# Tier 2 (7-30B): 6 models (gpt, yandexgpt_local, gigachat_local, groq_allam, swallow_local, gptoss_swallow*)
+#   * gptoss_swallow is 20B but classified Tier 1 in paper as Japanese national frontier model
+#
+# API cost classification (paid_api: true):
+#   Claude (Anthropic), GPT (OpenAI), Gemini (Google), DeepSeek V3 cloud (DeepSeek)
+# Free-tier cloud (paid_api: false):
+#   Grok (xAI), Llama 3.3 / Kimi K2 / ALLaM-2-7B (Groq), Qwen3-235B / GLM-4.7 (Cerebras),
+#   Qwen3-32B / DeepSeek V3.2 (SambaNova), Sarvam-105B (Indus API),
+#   GigaChat 2 Max (Sber API), YandexGPT 5 Pro / GPT-OSS-Swallow 20B (Yandex AI Studio)
+# Local Ollama (no API cost): all ollama backend models
 #
 # Cultures represented:
 #   Western:  claude, gpt, gemini, gemma4_local, groq_llama33, grok
 #   Chinese:  deepseek, qwen3_local, cerebras_qwen3, cerebras_glm, sambanova_qwen3,
 #             sambanova_deepseek, groq_kimi, qwen35_local
-#   Russian:  gigachat_api, yandexgpt_pro, tpro_yandex, yandexgpt_local, gigachat_local
-#   Japanese: sambanova_swallow, swallow_local
+#   Russian:  gigachat_api, yandexgpt_pro, yandexgpt_local, gigachat_local
+#   Japanese: gptoss_swallow, swallow_local
 #   Korean:   exaone_local
 #   Arabic:   jais_local, falcon_arabic_local, groq_allam
 #   Indian:   sarvam
@@ -341,5 +377,5 @@ models:
 # H9 size pairs for capacity comparison:
 #   Chinese:  qwen3_local (30B) vs cerebras_qwen3 (235B)
 #   Russian:  yandexgpt_local (8B) vs yandexgpt_pro (pro)
-#   Japanese: swallow_local (8B) vs sambanova_swallow (70B)
+#   Japanese: swallow_local (8B) vs gptoss_swallow (20B)
 #   Arabic:   groq_allam (7B) vs jais_local (70B)
