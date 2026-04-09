@@ -36,7 +36,7 @@ claims:
       Temporal dimensions when processing brand comparison queries.
     testable: true
     tested_in_paper: true
-    status: supported  # global DCI = 0.291 vs 0.250 baseline, p = 0.0170; local DCI = 0.353, p = 0.0006
+    status: supported  # global DCI = 0.291 vs 0.250 baseline, p = 0.0170; local DCI = 0.353, p = 0.0006; cross-cultural DCI = 0.357, d = 3.449. BH-corrected across H1-H4.
     falsification: >
       H1 is falsified if LLM spectral profiles show uniform or near-uniform
       dimensional weights (no statistically significant departure from equal
@@ -52,7 +52,7 @@ claims:
       convergence in dimensional weight profiles.
     testable: true
     tested_in_paper: true
-    status: supported  # cosine similarity across 6 architectures = 0.975; collapse structural not model-specific
+    status: supported  # cosine similarity across 24 models from 7 training traditions = 0.976; collapse structural not model-specific
     falsification: >
       H2 is falsified if pairwise cosine similarity of spectral profiles across
       LLM architectures is low (< 0.70), indicating that dimensional collapse

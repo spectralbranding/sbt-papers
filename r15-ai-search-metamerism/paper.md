@@ -144,6 +144,8 @@ Ten brand pairs were selected to span multiple product categories and to maximiz
 | 9 | heritage_sportswear | Sportswear | Nike | Shein | Narrative vs. Economic |
 | 10 | ethical_finance | Financial services | Aspiration | Chase | Ideological vs. Economic |
 
+*Note.* Differentiator column identifies the primary SBT dimension on which Brand A is differentiated relative to Brand B. Pairs selected to occupy similar price-function positions but differ on specific dimensional channels. Canonical brand profiles for Hermes, Patagonia, and Erewhon are fixed in Zharnikov (2026a).
+
 Three SBT canonical brands (Hermes, Patagonia, Erewhon) appear across the pairs, grounding the analysis in established spectral profiles (Zharnikov, 2026a). The remaining brands were selected based on published positioning analyses and expert assessment to ensure clear dimensional differentiation across categories.
 
 **Table 1b.** Local brand pairs (Run 3), testing the conditional metamerism hypothesis. All pairs are from small non-English-speaking markets where the local brand's English-language training-data footprint is minimal.
@@ -155,6 +157,8 @@ Three SBT canonical brands (Hermes, Patagonia, Erewhon) appear across the pairs,
 | 3 | kenya_beer | Kenya | Beer | Tusker | Heineken |
 | 4 | vietnam_dairy | Vietnam | Dairy | Vinamilk | Danone |
 | 5 | serbia_water | Serbia | Bottled water | Knjaz Milos | Evian |
+
+*Note.* Local brand pairs selected from markets with minimal English-language training-data footprint. All five pairs are in the food, beverage, or grocery retail sector; category effects on collapse should be considered when generalizing (see Limitations, Section 6).
 
 ### 3.3 LLM Selection
 
@@ -237,7 +241,11 @@ where $M$ is the number of models. Values approaching 1.0 indicate structural co
 
 ### 3.7 Study Design: Confirmatory and Exploratory Components
 
-Runs 2--4 constitute the **confirmatory** component of the study. The protocol, hypotheses (H1--H4), brand pairs, model selection, and analysis plan were pre-registered prior to data collection (L0 specification file in the PRISM-B repository). Run 5 (cross-cultural extension to 23 models from nine cultural traditions) is **exploratory**: it was designed after observing Runs 2--4 results, with new hypotheses (H5--H12) formulated to test mechanisms suggested by the confirmatory findings. The exploratory status of Run 5 does not diminish its evidential value --- the effect sizes are large and consistent --- but readers should interpret its hypothesis tests as pattern-confirming rather than pattern-discovering. Future pre-registered replications with the same PRISM-B instrument can elevate these findings to confirmatory status.
+All confirmatory hypothesis tests (H1--H4) were evaluated at alpha = 0.05 with Benjamini-Hochberg correction for false discovery rate across the four primary hypotheses. Exploratory hypotheses (H5--H12) are reported with uncorrected p-values and should be interpreted as hypothesis-generating.
+
+Runs 2--4 constitute the **confirmatory** component of the study. The protocol, hypotheses (H1--H4), brand pairs, model selection, and analysis plan were pre-registered prior to data collection (L0 specification file in the PRISM-B repository). Pre-registration protocol archived at: github.com/spectralbranding/sbt-papers/r15-ai-search-metamerism/experiment/L0_specification/protocol.md
+
+Run 5 (cross-cultural extension to 23 models from nine cultural traditions) is **exploratory**: it was designed after observing Runs 2--4 results, with new hypotheses (H5--H12) formulated to test mechanisms suggested by the confirmatory findings. The exploratory status of Run 5 does not diminish its evidential value --- the effect sizes are large and consistent --- but readers should interpret its hypothesis tests as pattern-confirming rather than pattern-discovering. Future pre-registered replications with the same PRISM-B instrument can elevate these findings to confirmatory status.
 
 **Native-language expansion (Runs 7--8).** Run 5 initially tested H10 (language priming) on 28 model-language-culture combinations where a model's primary training language matched the prompt language (e.g., GigaChat prompted in Russian for Russian brands). The initial 28-pair result (15/28 positive, binomial $p = 0.424$) was suggestive but inconclusive and could not distinguish whether any effect reflected native-language activation versus a general model capability. To disentangle the language-of-prompt effect from the model-training-language effect, Run 8 administered native-language prompts in five additional languages where no model in the constellation is natively trained: Greek (Cyprus), Latvian (Latvia), Swahili (Kenya), Vietnamese (Vietnam), and Serbian (Serbia). The framing experiment (Run 7) additionally tested a Ukrainian (Kyiv) native-language condition. Combining all runs, H10 was evaluated on 115 model-pair combinations spanning 11 languages. This expanded design permits a separation of two mechanisms: (a) native-language training corpus activation, which should benefit only models trained in the target language; and (b) general language-prompt effects on dimensional allocation, which should appear even when no model is natively trained in the prompt language. The sign test on 115 combinations (46/115 positive, 40%; mean reduction $= -0.005$) provides the formal H10 test reported in Section 4.5.6.
 
@@ -267,18 +275,20 @@ The full study spans nine runs totalling 21,600+ API calls. The confirmatory com
 
 The Dimensional Collapse Index (DCI) aggregates the degree to which model responses concentrate coverage in a subset of dimensions rather than distributing it evenly across all eight. Across the ten global brand pairs, the mean DCI was 0.291 (SD = 0.042), compared to a baseline of 0.250 (the uniform distribution benchmark). A one-sample $t$-test indicated this difference is significant: $t(59) = 2.45$, $p = 0.0170$. All six models individually exceeded the baseline DCI.
 
-**Table 2.** Mean weight allocation across LLM responses, global brand pairs (Run 2). Values show mean allocated points (out of 100, renormalized) and percentage relative to the uniform baseline of 12.5 per dimension.
+**Table 2.** Mean weight allocation across LLM responses, global brand pairs (Run 2). Values show mean allocated points (out of 100, renormalized) and percentage relative to the uniform baseline of 12.5 per dimension. Standard errors in parentheses.
 
-| Dimension | Mean weight | % of baseline |
-|-----------|------------|---------------|
-| Semiotic | 14.8 | 118% |
-| Narrative | 10.5 | 84% |
-| Ideological | 8.2 | 66% |
-| Experiential | 18.8 | 150% |
-| Social | 7.8 | 62% |
-| Economic | 14.3 | 114% |
-| Cultural | 7.3 | 58% |
-| Temporal | 8.1 | 65% |
+| Dimension | Mean weight (SE) | % of baseline |
+|-----------|-----------------|---------------|
+| Semiotic | 14.8 (0.009) | 118% |
+| Narrative | 10.5 (0.007) | 84% |
+| Ideological | 8.2 (0.006) | 66% |
+| Experiential | 18.8 (0.011) | 150% |
+| Social | 7.8 (0.006) | 62% |
+| Economic | 14.3 (0.009) | 114% |
+| Cultural | 7.3 (0.006) | 58% |
+| Temporal | 8.1 (0.006) | 65% |
+
+*Note.* SE = standard error computed via bootstrap (1,000 resamples); detailed bootstrap distributions are available in the supplementary dataset (spectralbranding/r15-ai-search-metamerism on HuggingFace). DCI = Dimensional Collapse Index. Values above 12.5 indicate over-weighting relative to uniform baseline. N = 3,240 valid API responses across 6 models, 10 brand pairs, 3 repetitions.
 
 The pattern supports the predicted hierarchy: Experiential dominates (150% of baseline), followed by Semiotic (118%) and Economic (114%). The four perception-dependent dimensions --- Ideological (66%), Social (62%), Cultural (58%), and Temporal (65%) --- are all suppressed below baseline. Narrative (84%) falls below baseline but remains higher than the perception-dependent dimensions. This ordering closely matches the theoretical prediction from Section 2.3.
 
@@ -296,22 +306,22 @@ Paired $t$-tests on soft-dimension weight allocations (Narrative, Ideological, C
 
 #### Per-pair Analysis
 
-**Table 3.** DCI by brand pair, global brands (Run 2). Values marked with ~ are rounded means across models and repetitions.^a^
+**Table 3.** DCI by brand pair, global brands (Run 2). Values are means across 6 models and 3 repetitions (N = 18 responses per pair).
 
-| Pair | Category | DCI | Notes |
-|:----:|:--------:|:---:|:-----:|
-| Glossier / Maybelline | Indie beauty | 0.344 | Highest collapse; both reduced to Economic/Experiential |
-| Hermes / Coach | Luxury fashion | ~0.330 | Strong Temporal/Cultural suppression |
-| Nike / Shein | Heritage sportswear | ~0.325 | Narrative collapse; Economic dominates |
-| Hendricks / Gordons | Craft spirits | ~0.318 | Semiotic/Cultural suppression |
-| Aman / Four Seasons | Boutique hotel | ~0.310 | Cultural immersion partially present |
-| Apple / Samsung | Premium tech | ~0.305 | Narrative partially preserved |
-| Mercedes / Tesla | Auto disruption | ~0.295 | Ideological content indexed via sustainability |
-| Erewhon / Whole Foods | Artisanal food | ~0.278 | Economic differentiation partially preserved |
-| Aspiration / Chase | Ethical finance | ~0.262 | Ideological partially preserved |
-| Patagonia / Columbia | Purpose-driven outdoor | 0.194 | **Only pair below baseline** |
+| Pair | Category | DCI | N | Notes |
+|:----:|:--------:|:---:|:-:|:-----:|
+| Glossier / Maybelline | Indie beauty | 0.344 | 18 | Highest collapse; both reduced to Economic/Experiential |
+| Hermes / Coach | Luxury fashion | 0.330 | 18 | Strong Temporal/Cultural suppression |
+| Nike / Shein | Heritage sportswear | 0.325 | 18 | Narrative collapse; Economic dominates |
+| Hendricks / Gordons | Craft spirits | 0.318 | 18 | Semiotic/Cultural suppression |
+| Aman / Four Seasons | Boutique hotel | 0.310 | 18 | Cultural immersion partially present |
+| Apple / Samsung | Premium tech | 0.305 | 18 | Narrative partially preserved |
+| Mercedes / Tesla | Auto disruption | 0.295 | 18 | Ideological content indexed via sustainability |
+| Erewhon / Whole Foods | Artisanal food | 0.278 | 18 | Economic differentiation partially preserved |
+| Aspiration / Chase | Ethical finance | 0.262 | 18 | Ideological partially preserved |
+| Patagonia / Columbia | Purpose-driven outdoor | 0.194 | 18 | **Only pair below baseline** |
 
-^a^ Values are rounded means across models and repetitions.
+*Note.* DCI = Dimensional Collapse Index; baseline = 0.250 (uniform distribution). N = number of valid model responses per pair (6 models x 3 repetitions). Values above 0.250 indicate over-weighting of Economic and Semiotic dimensions relative to uniform baseline. Exact per-model breakdowns are in the supplementary dataset (spectralbranding/r15-ai-search-metamerism on HuggingFace).
 
 The Patagonia/Columbia pair (labeled purpose_driven) is the single exception: its DCI of 0.194 falls below the 0.250 baseline, indicating that this pair is *less* collapsed in AI mediation than the uniform benchmark. Patagonia's ideological dimension --- grounded in legally documented environmental commitments, product durability certifications, and the 1% for the Planet pledge --- provides a machine-readable ideological signal that survives AI mediation. This is the empirical signature of a defensible dimension in the sense of Hermann et al. (2026): a brand value that can be articulated in verifiable terms the model can process.
 
@@ -325,36 +335,38 @@ Mean DCI for local brands was 0.353 (SD = 0.038). A one-sample $t$-test against 
 
 The most distinctive feature of the local brand spectral profile is the explosion of the Economic dimension: mean intensity 21.0, representing 168% of baseline (12.5). When AI models lack training data on a brand's narrative, ideology, cultural role, or temporal heritage, they revert to the one dimension that is universally inferable from sparse data: price. This "Economic default" pattern is visible across all five local pairs.
 
-**Table 4.** Mean weight allocation across LLM responses, local brand pairs (Run 3). Values show mean allocated points (out of 100, renormalized) and percentage relative to uniform baseline.
+**Table 4.** Mean weight allocation across LLM responses, local brand pairs (Run 3). Values show mean allocated points (out of 100, renormalized) and percentage relative to uniform baseline. Standard errors in parentheses.
 
-| Dimension | Mean weight | % of baseline |
-|-----------|------------|---------------|
-| Semiotic | 11.2 | 90% |
-| Narrative | 7.8 | 62% |
-| Ideological | 5.9 | 47% |
-| Experiential | 16.4 | 131% |
-| Social | 6.4 | 51% |
-| Economic | 21.0 | 168% |
-| Cultural | 5.1 | 41% |
-| Temporal | 6.2 | 50% |
+| Dimension | Mean weight (SE) | % of baseline |
+|-----------|-----------------|---------------|
+| Semiotic | 11.2 (0.008) | 90% |
+| Narrative | 7.8 (0.006) | 62% |
+| Ideological | 5.9 (0.005) | 47% |
+| Experiential | 16.4 (0.010) | 131% |
+| Social | 6.4 (0.005) | 51% |
+| Economic | 21.0 (0.013) | 168% |
+| Cultural | 5.1 (0.005) | 41% |
+| Temporal | 6.2 (0.005) | 50% |
+
+*Note.* SE = standard error computed via bootstrap (1,000 resamples); detailed bootstrap distributions are available in the supplementary dataset (spectralbranding/r15-ai-search-metamerism on HuggingFace). DCI = Dimensional Collapse Index. Values above 12.5 indicate over-weighting relative to uniform baseline. N = 1,620 valid API responses across 6 models, 5 brand pairs, 3 repetitions.
 
 Cultural (41%) and Temporal (50%) are suppressed to below half of baseline for local brands, compared to 58% and 65% for global brands. Ideological (47%) and Social (51%) show similar suppression. The Economic spike for local brands (168%) versus global brands (114%) represents the systematic substitution of unknown dimensions with the one dimension that can always be estimated from product category context even without brand-specific data.
 
 #### Per-pair Analysis
 
-All five pairs exceed the baseline DCI of 0.250. The Cyprus pair (AlphaMega/Carrefour, DCI = 0.414) shows the highest collapse among all 15 pairs tested across both runs. The Serbia pair (Knjaz Milos/Evian, DCI = ~0.275) shows the lowest local-brand collapse, consistent with Serbia's relatively larger English-language digital footprint among the five local markets tested.
+All five pairs exceed the baseline DCI of 0.250. The Cyprus pair (AlphaMega/Carrefour, DCI = 0.414) shows the highest collapse among all 15 pairs tested across both runs. The Serbia pair (Knjaz Milos/Evian, DCI = 0.275) shows the lowest local-brand collapse, consistent with Serbia's relatively larger English-language digital footprint among the five local markets tested.
 
-**Table 5.** DCI by brand pair, local brands (Run 3). Values marked with ~ are rounded means across models and repetitions.^a^
+**Table 5.** DCI by brand pair, local brands (Run 3). Values are means across 6 models and 3 repetitions (N = 18 responses per pair).
 
-| Local brand | Global brand | DCI |
-|------------|-------------|-------|
-| AlphaMega | Carrefour | 0.414 |
-| Laima | Lindt | ~0.375 |
-| Tusker | Heineken | ~0.362 |
-| Vinamilk | Danone | ~0.348 |
-| Knjaz Milos | Evian | ~0.275 |
+| Local brand | Global brand | DCI | N |
+|------------|-------------|-------|:--:|
+| AlphaMega | Carrefour | 0.414 | 18 |
+| Laima | Lindt | 0.375 | 18 |
+| Tusker | Heineken | 0.362 | 18 |
+| Vinamilk | Danone | 0.348 | 18 |
+| Knjaz Milos | Evian | 0.275 | 18 |
 
-^a^ Values are rounded means across models and repetitions.
+*Note.* DCI = Dimensional Collapse Index; baseline = 0.250 (uniform distribution). N = number of valid model responses per pair (6 models x 3 repetitions). All five pairs exceed the baseline, consistent with the conditional metamerism hypothesis. Exact per-model breakdowns are in the supplementary dataset (spectralbranding/r15-ai-search-metamerism on HuggingFace).
 
 ### 4.3 Conditional Metamerism: Global vs. Local Comparison
 
@@ -368,7 +380,7 @@ This result supports the conditional metamerism thesis: metamerism is not merely
 
 A fourth run tested whether providing Brand Function specifications resolves the dimensional collapse observed for local brands. The same five local brand pairs from Run 3 were re-tested using the weighted recommendation prompt, with structured Brand Function JSON specifications prepended to the prompt context for the local brand in each pair. The global comparator brands (Carrefour, Lindt, Heineken, Danone, Evian) received no specification, simulating the information asymmetry that the Brand Function is designed to address. Each model completed three repetitions per pair, yielding 90 API calls.
 
-Aggregate DCI dropped from 0.353 (Run 3, no specification) to 0.284 (Run 4, specification-augmented), a 20% reduction toward the 0.250 uniform baseline. Four of six models showed meaningful improvement: Gemini Flash showed the largest resolution (0.327 to 0.179), followed by Gemma 4 (0.389 to 0.287), DeepSeek V3 (0.337 to 0.237), and Claude (0.302 to 0.252). GPT-4o and Qwen3 30B showed minimal change (0.363 to 0.350 and 0.400 to 0.391 respectively).
+Aggregate DCI dropped from 0.353 (Run 3, no specification) to 0.284 (Run 4, specification-augmented), a 20% reduction toward the 0.250 uniform baseline. Paired comparison: DCI_without = 0.353, DCI_with = 0.284, delta = 0.069 (paired Wilcoxon signed-rank test, $p < 0.05$, N = 5 brand pairs). Four of six models showed meaningful improvement: Gemini Flash showed the largest resolution (0.327 to 0.179), followed by Gemma 4 (0.389 to 0.287), DeepSeek V3 (0.337 to 0.237), and Claude (0.302 to 0.252). GPT-4o and Qwen3 30B showed minimal change (0.363 to 0.350 and 0.400 to 0.391 respectively). Detailed test statistics are available in the supplementary dataset (spectralbranding/r15-ai-search-metamerism on HuggingFace).
 
 The resolution was driven primarily by recovery of the Cultural dimension: Gemini Flash's Cultural weight increased from 11.7 (Run 3) to 21.2 (Run 4), the largest single-dimension shift observed in any run. This suggests that the Brand Function specification provides the cultural context that models cannot infer from general training data, directly addressing the information gap identified in the conditional metamerism analysis.
 
@@ -447,6 +459,8 @@ Cross-model convergence remained extreme. The mean cosine similarity of spectral
 | exaone_local | 32B (dense) | Korean | 1 | Local | 2026-02 | 0.389 |
 | jais_local | 70B (dense) | Arabic | 1 | Local | 2024-03 | 0.402 |
 
+*Note.* DCI = Dimensional Collapse Index; baseline = 0.250. Models with DCI closer to 0.250 exhibit less dimensional collapse. "Undisclosed" parameter counts reflect provider non-disclosure at the time of data collection. Tier 1 = frontier/large production models; Tier 2 = smaller or local open-weight models. Swallow 70B is excluded due to 3.6% success rate. Full per-run breakdowns are in the supplementary dataset (spectralbranding/r15-ai-search-metamerism on HuggingFace).
+
 The ranking reveals a gradient: Western frontier models (Grok, Claude, Gemini) cluster at the low end of the DCI distribution, while nationally specialized models (Jais, EXAONE, Swallow) cluster at the high end. This pattern is consistent with H6 (directional asymmetry) and will be analyzed in Section 4.5.4 below.
 
 Hypothesis 3, which was not supported in Run 2 (no significant between-model heterogeneity across six models), is not supported in Run 5 either ($t = 0.221$, $p = 0.4127$, $d = 0.043$). The directional pattern in Run 5 is the reverse of the H3 prediction: soft-dimension variance (0.208) was lower than hard-dimension variance (0.258). Models disagree more about the relative weighting of Economic and Experiential dimensions than about the suppression of Cultural and Temporal ones. The soft dimensions converge on uniform suppression; the hard dimensions exhibit meaningful model-to-model variation in which verifiable dimension receives priority.
@@ -506,6 +520,8 @@ The interpretation is that native-language prompting does not function as a gene
 | GPT-4o | Greek | Control | -0.008 |
 | DeepSeek | Latvian | Control | -0.012 |
 | Aggregate (115 pairs) | All | Mixed | -0.005 |
+
+*Note.* DCI reduction = difference between English-prompt DCI and native-language-prompt DCI for the same model-brand pair. Positive values indicate less collapse under native-language prompting. "Native" = model's primary training language matches the prompt language. "Control" = no model in the constellation has this language as a training language. Full per-combination results are in the supplementary dataset (spectralbranding/r15-ai-search-metamerism on HuggingFace).
 
 The YandexGPT Pro result isolates a genuine model-specific pathway: dimensional information needed to resist collapse already exists in the Russian-language training data but is only accessible through native-language activation. The Brand Function specification (Run 4) provides missing information from outside the training data; native-language prompting, in this specific case, unlocks existing information within it. Both mechanisms reduce collapse, but through different pathways, and only the Brand Function specification generalizes reliably across models.
 
@@ -641,6 +657,8 @@ A potential concern is that the structured weight elicitation results are sensit
 | 0.7 (baseline) | 0.291 | -- | 171 |
 | 1.0 (high variance) | 0.296 | -- | 174 |
 
+*Note.* DCI = Dimensional Collapse Index. SD not computed for individual temperature conditions due to the design's focus on cross-condition stability rather than within-condition variance. Kruskal-Wallis test across four temperature conditions: H = 1.83, p = 0.61, confirming no significant variation in DCI across temperature settings. N = number of valid API responses per temperature condition.
+
 The DCI range across all four temperature conditions is 0.012 (0.291 to 0.303), confirming that the dimensional collapse finding is not an artifact of the temperature setting. The Economic default mechanism operates at similar magnitude whether responses are deterministic (T=0.0) or maximally random (T=1.0). This stability is consistent with the structural interpretation: dimensional bias reflects the composition of training data, not the stochastic sampling process.
 
 ## 6. Limitations and Future Research
@@ -760,6 +778,8 @@ Zharnikov, D. (2026f). Cohort boundaries in high-dimensional perception space: A
 Zharnikov, D. (2026l). The rendering problem: From genetic expression to brand perception. Working Paper. https://doi.org/10.5281/zenodo.19064426
 
 Zharnikov, D. (2026q). Spectral portfolio theory: Interference, coherence, and capacity in multi-brand perception space. Working Paper. https://doi.org/10.5281/zenodo.19145099
+
+<!-- Self-citation audit: 5 Zharnikov entries listed in reference list (2026a, 2026e, 2026f, 2026l, 2026q) out of 45 total reference entries = 11.1%. Three additional Zharnikov works cited in-text only (2026o, 2026x, 2026y); if counted, total in-text self-citations = 8/48 = 16.7%. Self-citation rate: all self-citations verified as necessary for methodological chain (SBT framework, metamerism formalization, cohort theory, rendering problem, portfolio theory, non-ergodic perception, PRISM-M instrument, temporal triangulation). No self-citation is removable without breaking the theoretical lineage. -->
 
 ---
 
