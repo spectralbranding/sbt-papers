@@ -10,7 +10,7 @@
 
 ## Abstract
 
-Brand positioning research faces a fundamental measurement problem: every observer cohort perceives the same brand differently, yet traditional frameworks treat this variation as noise rather than signal. We propose *brand triangulation* — a geometric framework that borrows from GPS positioning theory to estimate brand spectral profiles from multiple observer cohorts while jointly solving for observer bias. We make four contributions. First, we formalize the GPS-SBT mapping, showing that observer cohorts function as positioning satellites whose geometric diversity determines measurement precision. Second, we introduce *Perception DOP* (Dilution of Precision), a computable metric that quantifies how well a given set of observer cohorts can resolve a brand's eight-dimensional spectral profile — before any data is collected. Third, we propose *differential brand measurement*, a calibration protocol using reference brands with known spectral profiles to correct systematic observer bias across studies. Fourth, we establish identifiability conditions: the minimum observer configurations required for unique brand positioning. We position the framework against existing Bayesian heterogeneity approaches, showing that the geometric formulation provides pre-study design criteria (PDOP) that probabilistic methods lack. We illustrate the framework computationally using dimensional weight data from six large language models drawn from the R15 dataset (Runs 1--4; 4,860 API calls across fifteen brand pairs), showing that Perception DOP predicts estimation error (Monte Carlo: R^2 = 0.926, log-log slope = 0.995, Spearman rho = 0.996, all p < 10^{-300}) and that Brand Function specification — reinterpreted as a DOP improvement — reduces dimensional collapse by 20% (DCI 0.355→0.284 for local brands). The framework reframes multi-observer disagreement from a methodological nuisance into a primary source of positioning information.
+Brand positioning research faces a fundamental measurement problem: every observer cohort perceives the same brand differently, yet traditional frameworks treat this variation as noise rather than signal. We propose *brand triangulation* — a geometric framework borrowing from GPS positioning theory to estimate brand spectral profiles from multiple observer cohorts while jointly solving for observer bias. We make four contributions. First, we formalize the GPS-SBT mapping, showing that observer cohorts function as positioning satellites whose geometric diversity determines measurement precision. Second, we introduce *Perception DOP* (Dilution of Precision), a computable metric quantifying how well a given set of observer cohorts resolves a brand's eight-dimensional spectral profile — before any data is collected. Third, we propose *differential brand measurement*, a calibration protocol using reference brands with known spectral profiles to correct systematic observer bias across studies. Fourth, we establish identifiability conditions: the minimum observer configurations required for unique brand positioning. The geometric formulation provides pre-study design criteria that Bayesian heterogeneity approaches lack. We demonstrate the framework computationally using dimensional weight data from six large language models drawn from the R15 dataset (Runs 1--4; 4,860 API calls across fifteen brand pairs). Perception DOP predicts estimation error (Monte Carlo: R^2 = 0.926, log-log slope = 0.995, Spearman rho = 0.996, all p < 10^{-300}), and Brand Function specification — reinterpreted as a DOP improvement — reduces dimensional collapse by 20% (DCI 0.355→0.284 for local brands). The framework reframes multi-observer disagreement from a methodological nuisance into a primary source of positioning information.
 
 **Keywords**: brand positioning, Spectral Brand Theory, dilution of precision, observer bias, brand measurement, GPS analogy, dimensional collapse
 
@@ -69,6 +69,8 @@ Second, we introduce *Perception DOP* as a computable, pre-study metric that qua
 Third, we propose *differential brand measurement*, a calibration protocol using reference brands with known spectral profiles to correct systematic observer bias — the brand measurement analog of Differential GPS. The protocol separates brand position change from observer drift in longitudinal studies, addressing a critical confound in brand tracking.
 
 Fourth, we establish identifiability conditions specifying the minimum cohort configurations required for unique brand positioning. We show that brands are spectrally metameric not because they are genuinely indistinguishable but because the measurement infrastructure lacks the geometric coverage to resolve them — and we characterize precisely what geometric coverage is required.
+
+(Contributions 1–4 are developed in Sections 3, 4, 5, and 9.6 respectively.)
 
 ### 1.5 Roadmap
 
@@ -517,12 +519,14 @@ The theoretical prediction from the GPS-SBT analogy is that MSE = sigma^2 * PDOP
 
 | Test | Statistic | Value | Expected |
 |---|---|---|---|
-| MSE ~ sigma^2 * PDOP^2 | Slope | 0.968 | 1.000 |
+| MSE ~ sigma^2 * PDOP^2 | Slope | 0.968 [0.945, 0.991] | 1.000 |
 | MSE ~ sigma^2 * PDOP^2 | R^2 | 0.926 | 1.000 |
 | MSE ~ sigma^2 * PDOP^2 | p-value | < 10^{-300} | -- |
-| log(RMSE) ~ log(PDOP) | Slope | 0.995 | 1.000 |
+| log(RMSE) ~ log(PDOP) | Slope | 0.995 [0.981, 1.009] | 1.000 |
 | log(RMSE) ~ log(PDOP) | R^2 | 0.994 | 1.000 |
 | Spearman rank | rho | 0.996 | 1.000 |
+
+*Note.* 95% confidence intervals (shown in brackets) computed via bootstrap (1,000 resamples). Full results in R17_pdop_simulation_results.json.
 
 The log-log regression slope of 0.995 (expected 1.0) confirms the power-law relationship: RMSE scales linearly with PDOP, as GPS theory predicts. The slight departure from unity in the MSE regression slope (0.968) reflects the finite number of replications per trial.
 
@@ -543,37 +547,59 @@ The 24-fold difference in RMSE between Q1 and Q4 configurations demonstrates tha
 
 **Sensitivity plateau.** Perturbing the optimal weight matrix by Gaussian noise with standard deviation epsilon confirms the plateau structure: PDOP degrades by less than 10% for perturbations up to epsilon = 0.2 (relative to the D-scaled weight values). At epsilon = 0.3, degradation reaches 16%. This confirms the Medesani and Macdonald (2026) plateau prediction: researchers need approximate, not exact, weight profile calibration to achieve near-optimal measurement geometry.
 
-The simulation code, raw results, and JSON output are archived in the project repository (R17_pdop_simulation.py, R17_pdop_simulation_results.json).
+The simulation code, raw results, and JSON output are archived at github.com/spectralbranding/sbt-papers/r17-brand-triangulation/ (R17_pdop_simulation.py, R17_pdop_simulation_results.json).
+
+---
+
+**Data and Code Availability.** Monte Carlo simulation code (R17_pdop_simulation.py) and results (R17_pdop_simulation_results.json) are available at github.com/spectralbranding/sbt-papers/r17-brand-triangulation/. The R15 empirical dataset used for validation is archived at doi.org/10.5281/zenodo.19422427.
 
 ---
 
 ## 10. Implications for Brand Research Methodology
 
-The Brand Triangulation framework generates specific methodological implications for brand measurement practice that differ from current standard approaches.
+The Brand Triangulation framework generates theoretical and practical implications for brand measurement that differ substantially from current standard approaches.
 
-### 10.1 Pre-Study DOP Optimization
+### 10.1 Theoretical Implications
+
+The GPS-SBT mapping situates brand positioning within a class of geometric estimation problems for which principled solutions already exist. The connection to INDSCAL (Carroll & Chang, 1970) is foundational: INDSCAL's per-subject dimension weights are the direct methodological ancestor of SBT's observer spectral profiles, but INDSCAL treats observer positions as unknowns to be estimated jointly with brand positions. Brand Triangulation inverts this structure — treating observer weight profiles as approximately known reference positions and brand profiles as the unknown targets — producing a positioning problem analogous to GPS trilateration rather than multidimensional unfolding. This inversion is possible precisely because the observer profiling step (PRISM-B instrument; Zharnikov, 2026v) provides pre-measurement weight calibration.
+
+The connection to Bayesian heterogeneity modeling (Wedel & Kamakura, 2000) is complementary rather than competitive. Bayesian methods characterize the *distribution* of spectral weights across a population; Brand Triangulation uses that distribution to estimate the *position* of a brand in dimensional space. The two approaches answer different questions and can be combined: Bayesian estimation of cohort weight profiles feeds the W matrix, which then drives PDOP computation and triangulated estimation. The geometric framework adds pre-study design criteria — PDOP — that the Bayesian approach does not provide.
+
+### 10.2 Practical Implications
+
+### 10.2.1 Pre-Study DOP Optimization
 
 Current practice selects survey cohorts on demographic or category-usage grounds — age, gender, income, purchase frequency — without reference to measurement geometry. Brand Triangulation replaces this with a formal design criterion: select cohorts whose spectral weight profiles maximize geometric diversity, minimizing PDOP before data collection begins.
 
 In practice, this requires pre-study elicitation of approximate weight profiles from pilot cohort members. The cost is modest; the benefit is large: the DOP computation tells the researcher which dimensional estimates will be reliable given the proposed cohort configuration, and which cohorts to add to resolve remaining deficits. Optimal design theory (Kuhfeld, Tobias & Garratt, 1994) provides the statistical framework for extending this criterion to choice experiment designs, connecting Brand Triangulation to a mature methodological literature.
 
-### 10.2 Cross-Study Comparability Through Differential Correction
+### 10.2.2 Cross-Study Comparability Through Differential Correction
 
 A persistent problem in brand tracking research is that estimates from different studies, different agencies, and different methodologies cannot be directly compared. Brand A scored 7.2 on Semiotic in Study 1 and 6.8 in Study 2: is this brand change or observer drift? Current practice cannot answer this question.
 
 Differential correction solves it structurally. If both studies include the same calibration brands — Hermes, IKEA, Patagonia, measured by the same observer cohorts — the systematic difference between studies can be estimated and removed. What remains is the brand change signal. This enables genuine meta-analysis of brand tracking studies: aggregating results across research agencies, time periods, and methodological generations in a way that is currently impossible (Grimm et al., 2013; Molenaar, 1985).
 
-### 10.3 Continuous Brand Monitoring via Kalman Filter
+### 10.2.3 Continuous Brand Monitoring via Kalman Filter
 
 Current brand tracking is periodic and expensive: annual or semi-annual surveys with large samples, producing a time series of scalar scores that cannot distinguish brand change from measurement drift. The Perception Kalman filter enables a different operational model: a continuous stream of lightweight, high-frequency observations (AI probes, behavioral proxies, social listening sentiment) integrated with periodic high-quality human cohort surveys. The filter allocates trust between observation types as a function of their reliability, producing a smooth, continuously updated trajectory estimate.
 
 The anomaly detection property of the filter (Proposition 6) converts this into a real-time governance tool: when prediction error exceeds the sensitivity plateau threshold, the system flags an event for investigation. Crisis detection, which currently relies on reputational monitoring systems that measure outcomes rather than dimensions, becomes a dimensional early-warning system — identifying which of the eight SBT dimensions is driving the anomaly before it becomes visible in sales or share data.
 
-### 10.4 Brand Function as Ephemeris Data for AI Commerce
+### 10.2.4 Brand Function as Ephemeris Data for AI Commerce
 
 Zharnikov (2026x) establishes that AI purchasing agents — operating in agentic commerce environments — make brand decisions using dimensional weight profiles derived from training data. These profiles suffer from the Economic Default for brands with sparse training coverage. The Brand Function provides a structured specification that agents can read directly, bypassing the training-data inference step.
 
 In the triangulation framework, this is the ephemeris data analogy: when a GPS satellite's broadcast signal is weak or absent, a receiver can use stored ephemeris data to maintain positioning. When an AI agent lacks training data about a brand's dimensional profile, a publicly available Brand Function specification provides the equivalent: a direct channel from the brand owner's specification to the agent's positioning algorithm. The DOP improvement from Run 4 in the R15 data (DCI 0.355→0.284) quantifies the effect: providing specification data improves the AI observer's geometric resolution by an amount equivalent to adding a new satellite with a well-characterized orbit.
+
+### 10.3 Convergence with Other Evidence
+
+The R15 empirical study (Zharnikov, 2026v) provides direct evidence for the dimensional collapse patterns this paper's DOP framework is designed to diagnose. Local brands exhibit higher Dimensional Collapse Index (DCI = 0.353) than global brands (DCI = 0.291), and this elevation is predicted by the triangulation framework as a DOP effect: lower training-data coverage reduces the AI observer constellation's geometric resolution, driving the Economic Default. The cross-model cosine similarity of 0.976 across 24 AI model architectures confirms that observer convergence is structural — precisely the condition where triangulation geometry becomes most informative, because all observers occupy the same region of perceptual sky and geometric diversity must be supplied by non-AI constellations. The Brand Function specification intervention in Run 4 (DCI 0.355→0.284, a 20% reduction) provides a direct empirical demonstration of the DOP improvement mechanism: structured dimensional information functions as ephemeris data, correcting the observer's positional estimate and improving geometric resolution.
+
+### 10.4 Future Research
+
+The most pressing empirical extension is an Option B study incorporating human observer cohorts with verified non-collinear weight profiles. Such a study would directly test Proposition 4 (multi-constellation DOP reduction) by comparing PDOP and estimation precision in AI-only versus mixed human-AI constellations. A concrete design would administer the PRISM-B 100-point weight allocation task to five demographically stratified cohorts — varying by age, cultural background, income, and brand involvement — alongside the AI constellation, using the same 15 brands and three calibration brands as R15.
+
+Beyond the immediate human cohort extension, three research directions follow from the framework. First, implementing DOP-aware cohort selection in a live brand tracking study — selecting human cohort composition using pre-study PDOP computation — would test whether geometric optimization produces measurable precision gains relative to demographically-selected cohorts. Second, validating the calibration brand stability assumption across cultural contexts requires cross-cultural replication of the Hermes, IKEA, and Patagonia profiles, establishing whether these brands function as reliable DGPS base stations outside Western markets. Third, extending the 8-dimensional corridor proof (Section 7) to the multi-dimensional case requires the vector-valued invariant extension identified by Medesani & Macdonald (2026) as future work — a formal open problem that limits the current framework to approximation-based corridor assessment in R^8.
 
 ---
 
@@ -607,7 +633,7 @@ Brand positioning has long been treated as a matter of subjective perception, re
 
 The theoretical contributions of this paper are four. First, Perception DOP provides an a priori measurement quality criterion: the precision of dimensional estimation is computable before data collection, enabling principled cohort selection that replaces demographic heuristics with geometric optimization. Second, differential brand measurement enables cross-study comparability by anchoring measurements to calibration brands with known spectral profiles, separating brand change from observer drift in longitudinal data. Third, multi-constellation positioning establishes that human observer cohorts, AI observers, and behavioral proxies provide structurally non-collinear weight profiles whose combination reduces overall DOP — the AI observer's Economic Default is not merely a defect but a structured bias that differential correction can address. Fourth, the admissibility framework — integrating the tri-binding conditions of Medesani & Macdonald (2026) with Wald's (1947) admissibility criterion and the Brand Function specification layer — completes the measurement architecture: it is not sufficient to know where a brand is; governance requires knowing whether that position is admissible relative to specification.
 
-The practical transformation implied by this framework is substantial. Brand measurement upgrades from opinion polling to geometric estimation. Multi-observer disagreement, currently treated as noise to be averaged away, becomes signal: it locates the source of dimensional underdetermination in the observer configuration rather than in the brand. Longitudinal tracking, currently limited to scalar time series, extends to 8-dimensional trajectory estimation with real-time anomaly detection. Re-collapse — what traditional brand management calls rebranding — can be distinguished from corridor drift: the former is a deliberate governed transition to a new Brand Function; the latter is an ungoverned exit from the current one. And admissibility monitoring converts Brand Function specifications from governance documents into operational diagnostic tools, capable of identifying per-cohort governance failures that aggregate coherence scores cannot detect.
+The practical transformation implied by this framework is substantial. Brand measurement upgrades from opinion polling to geometric estimation. Multi-observer disagreement, currently treated as noise to be averaged away, becomes signal: it locates the source of dimensional underdetermination in the observer configuration rather than in the brand. Longitudinal tracking, currently limited to scalar time series, extends to 8-dimensional trajectory estimation with real-time anomaly detection. Re-collapse — what traditional brand management calls "rebranding" — can be distinguished from corridor drift: the former is a deliberate governed transition to a new Brand Function; the latter is an ungoverned exit from the current one. And admissibility monitoring converts Brand Function specifications from governance documents into operational diagnostic tools, capable of identifying per-cohort governance failures that aggregate coherence scores cannot detect.
 
 The framework's dependence on the GPS analogy is deliberate but bounded. GPS is instructive because navigation is a solved multi-observer positioning problem with a mature literature on precision, bias correction, and dynamic tracking. The mathematical structures — DOP, differential correction, Kalman filtering, multi-constellation fusion — transfer to brand measurement because the underlying geometry is the same: unknown position, multiple biased observers, known observer characteristics, goal of minimum-variance estimation. The analogy breaks where it must break: brands are not physical objects with fixed positions but social constructs whose "position" depends on the observer configuration itself. The framework does not deny this; it provides the geometric tools for characterizing and managing it.
 
