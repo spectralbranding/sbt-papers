@@ -59,6 +59,9 @@ import re
 import subprocess
 import sys
 import textwrap
+
+# Module-level temperature (set by --temperature flag in main, default 0.7)
+EXPERIMENT_TEMPERATURE: float = 0.7
 import time
 import urllib.request
 from dataclasses import dataclass, field, asdict
@@ -1375,7 +1378,7 @@ def call_claude(prompt: str, model: str = "claude-haiku-4-5") -> str:
     message = client.messages.create(
         model=model,
         max_tokens=2048,
-        temperature=0.7,
+        temperature=EXPERIMENT_TEMPERATURE,
         messages=[{"role": "user", "content": prompt}],
     )
     return message.content[0].text
@@ -1389,7 +1392,7 @@ def call_gpt(prompt: str, model: str = "gpt-4o-mini") -> str:
         model=model,
         messages=[{"role": "user", "content": prompt}],
         max_tokens=2048,
-        temperature=0.7,
+        temperature=EXPERIMENT_TEMPERATURE,
     )
     return response.choices[0].message.content
 
@@ -1413,7 +1416,7 @@ def call_gemini(prompt: str, model: str = "gemini-2.5-flash") -> str:
             model=model,
             contents=prompt,
             config=types.GenerateContentConfig(
-                temperature=0.7,
+                temperature=EXPERIMENT_TEMPERATURE,
                 max_output_tokens=2048,
                 response_mime_type="application/json",
                 system_instruction="You are a brand research assistant. Respond with valid JSON only.",
@@ -1429,7 +1432,7 @@ def call_gemini(prompt: str, model: str = "gemini-2.5-flash") -> str:
     response = client.models.generate_content(
         model=model,
         contents=prompt,
-        config=types.GenerateContentConfig(temperature=0.7, max_output_tokens=2048),
+        config=types.GenerateContentConfig(temperature=EXPERIMENT_TEMPERATURE, max_output_tokens=2048),
     )
     try:
         text = response.text
@@ -1452,7 +1455,7 @@ def call_deepseek(prompt: str, model: str = "deepseek-chat") -> str:
         model=model,
         messages=[{"role": "user", "content": prompt}],
         max_tokens=2048,
-        temperature=0.7,
+        temperature=EXPERIMENT_TEMPERATURE,
     )
     return response.choices[0].message.content
 
@@ -1490,7 +1493,7 @@ def call_qwen3_local(prompt: str, model: str = "qwen3:30b") -> str:
                 {"role": "user", "content": prompt_with_no_think},
             ],
             max_tokens=4096,
-            temperature=0.7,
+            temperature=EXPERIMENT_TEMPERATURE,
         )
         msg = response.choices[0].message
         content = msg.content or ""
@@ -1549,7 +1552,7 @@ def call_gemma4_local(prompt: str, model: str = "gemma4:latest") -> str:
                 {"role": "user", "content": prompt},
             ],
             max_tokens=2048,
-            temperature=0.7,
+            temperature=EXPERIMENT_TEMPERATURE,
         )
         content = response.choices[0].message.content or ""
         content = re.sub(r"```(?:json)?\s*", "", content).strip()
@@ -1599,7 +1602,7 @@ def _call_openai_compatible(
         model=model,
         messages=[{"role": "user", "content": prompt}],
         max_tokens=max_tokens,
-        temperature=0.7,
+        temperature=EXPERIMENT_TEMPERATURE,
     )
     return response.choices[0].message.content
 
@@ -1696,7 +1699,7 @@ def call_groq_allam(prompt: str, model: str = "allam-2-7b") -> str:
             {"role": "user", "content": prompt},
         ],
         max_tokens=2048,
-        temperature=0.7,
+        temperature=EXPERIMENT_TEMPERATURE,
     )
     return response.choices[0].message.content
 
@@ -1728,7 +1731,7 @@ def call_groq_kimi(prompt: str, model: str = "moonshotai/kimi-k2-instruct") -> s
             {"role": "user", "content": prompt},
         ],
         max_tokens=2048,
-        temperature=0.7,
+        temperature=EXPERIMENT_TEMPERATURE,
     )
     content = response.choices[0].message.content or ""
     # Strip thinking tags if present
@@ -1759,7 +1762,7 @@ def call_sarvam(prompt: str, model: str = "sarvam-105b") -> str:
             "model": model,
             "messages": [{"role": "user", "content": prompt}],
             "max_tokens": 2048,
-            "temperature": 0.7,
+            "temperature": EXPERIMENT_TEMPERATURE,
         }
     ).encode()
     req = urllib.request.Request(
@@ -1852,7 +1855,7 @@ def call_gigachat_api(prompt: str, model: str = "GigaChat-2-Max") -> str:
             "model": model,
             "messages": [{"role": "user", "content": prompt}],
             "max_tokens": 2048,
-            "temperature": 0.7,
+            "temperature": EXPERIMENT_TEMPERATURE,
         }
     ).encode()
     req = urllib.request.Request(
@@ -1911,7 +1914,7 @@ def _call_yandex_ai_studio(prompt: str, model: str) -> str:
             {"role": "user", "content": prompt},
         ],
         max_tokens=2048,
-        temperature=0.7,
+        temperature=EXPERIMENT_TEMPERATURE,
     )
     content = response.choices[0].message.content or ""
     content = re.sub(r"```(?:json)?\s*", "", content).strip()
@@ -2236,6 +2239,7 @@ def append_session_log(
         "tokens_out": tokens_out,
         "error": error,
         "prompt_language": prompt_language,
+        "temperature": EXPERIMENT_TEMPERATURE,
     }
     p = _ensure_log_dir(log_path)
     with p.open("a", encoding="utf-8") as f:
@@ -2358,7 +2362,7 @@ def collect_experiment_metadata(models: list[str], start_time: str) -> dict:
         model_configs[m] = {
             "model_id": MODEL_IDS.get(m, "unknown"),
             "max_tokens": 2048,
-            "temperature": 0.7,
+            "temperature": EXPERIMENT_TEMPERATURE,
         }
 
     return {
@@ -2374,7 +2378,7 @@ def collect_experiment_metadata(models: list[str], start_time: str) -> dict:
         "api_key_hash": api_key_hashes,
         "experiment": "R15-ai-search-metamerism",
         "script_revision": "v2-structured-elicitation",
-        "temperature": 0.7,
+        "temperature": EXPERIMENT_TEMPERATURE,
         "dimensions": DIMENSIONS,
         "n_brand_pairs": len(BRAND_PAIRS),
         "prompts_per_pair": "1 weighted_recommendation + 1 dimensional_differentiation + 8 probes x 2 brands = 18",
@@ -3985,7 +3989,23 @@ def main() -> None:
         help="Comma-separated list of brand pair IDs to run (e.g. 'russia_ukraine_banking'). "
              "Default: all pairs in the selected set.",
     )
+    parser.add_argument(
+        "--temperature",
+        type=float,
+        default=0.7,
+        help="Temperature for LLM API calls (default: 0.7). Use 0.0/0.3/1.0 for robustness tests.",
+    )
+    parser.add_argument(
+        "--weighted-rec-only",
+        action="store_true",
+        help="Run ONLY weighted_recommendation prompts (skip differentiation + probes). "
+             "Useful for robustness tests where only DCI is needed.",
+    )
     args = parser.parse_args()
+
+    # Set module-level temperature for all API callers
+    global EXPERIMENT_TEMPERATURE
+    EXPERIMENT_TEMPERATURE = args.temperature
 
     n_modes = sum([args.live, args.demo, args.smoke])
     if n_modes > 1:
