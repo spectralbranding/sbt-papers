@@ -43,15 +43,18 @@ MODEL PANEL (7 models, drawn from the R15 v2.0 panel)
 2. gpt             — GPT-4o-mini              (OpenAI, Western, paid cloud)
 3. gemini          — Gemini 2.5 Flash         (Google, Western, paid cloud)
 4. deepseek        — DeepSeek V3              (DeepSeek, Chinese, paid cloud)
-5. qwen35_local    — Qwen3.5 27B              (Alibaba, Chinese, local Ollama)
+5. qwen3_local     — Qwen3 30B                (Alibaba, Chinese, local Ollama)
 6. gemma4_local    — Gemma 4 27B              (Google, Western, local Ollama)
 7. yandexgpt_pro   — YandexGPT 5 Pro          (Yandex, Russian, free cloud)
 
 Notes on model selection:
-- Qwen3 30B was removed; Qwen3.5 27B (newer same-family Chinese model)
-  is a 1:1 substitute. The two are within ~15% on parameter count and
-  cluster identically in Run 5 cross-model cosine, so the substitution
-  is methodologically clean.
+- qwen3_local (Qwen3 30B) is the same model used in R15 Runs 2-5. This
+  preserves cross-experiment comparability with the published R15 results.
+  The user re-pulls qwen3:30b to Ollama before executing Run 10.
+  An earlier draft of this script used qwen3.5:27b (a newer same-family
+  substitute), but pulling the original Qwen3 30B is methodologically
+  smoother because it eliminates any model-substitution confound between
+  Run 10 and R15.
 - YandexGPT 5 Pro is added because VkusVill is a Russian brand. A
   Russian-trained model provides the strongest test of whether AI can
   see VkusVill *as itself* (not through any Western template). The
@@ -61,6 +64,18 @@ Notes on model selection:
   (1 cloud + 1 local), and 1 Russian. This is the smallest panel that
   still spans the relevant cultural traditions while keeping the
   experiment short and cheap.
+
+LANGUAGE: ENGLISH ONLY
+
+Run 10 uses English-language prompts only. Native-language variants are
+deliberately excluded for two reasons:
+(1) R15 H10 (Native Language Effect) was already tested with mixed-language
+    prompts and NOT supported (mean = -0.005 across 815 calls in 11 languages);
+(2) Mixing language and comparator in one experiment would confound the two
+    effects. Run 10's question is about category-template substitution, which
+    must be isolated. A separate clean re-test of H10 with fully-native
+    prompts is scheduled as Run 11 (see CONTINUATION_PROMPT.md Session 93
+    priority #0b).
 
 EXPERIMENT VOLUME
 
@@ -240,7 +255,7 @@ MODEL_PANEL = [
     "gpt",             # GPT-4o-mini (Western, paid cloud)
     "gemini",          # Gemini 2.5 Flash (Western, paid cloud)
     "deepseek",        # DeepSeek V3 (Chinese, paid cloud)
-    "qwen35_local",    # Qwen3.5 27B (Chinese, local Ollama) — NEW substitute for qwen3_local
+    "qwen3_local",     # Qwen3 30B (Chinese, local Ollama) — same as R15 Runs 2-5
     "gemma4_local",    # Gemma 4 27B (Western, local Ollama)
     "yandexgpt_pro",   # YandexGPT 5 Pro (Russian, free cloud) — NEW addition for VkusVill case
 ]

@@ -1,0 +1,304 @@
+# Native Localization Data for Run 11 — Clean Native-Language Re-Test
+#
+# Purpose: provide fully-localized brand names, city names, category labels,
+# and product descriptors for each (language, brand_pair) combination that
+# was tested in the original R15 native-language runs (Runs 5, 6, 7, 7d, 8).
+#
+# The original R15 native-language prompts were "dirty": they wrapped native
+# instructions around English brand and city names (e.g., "в городе Moscow"
+# — grammatically broken Russian). Run 11 tests fully native prompts where
+# the entire content is in the target language; only the JSON output keys
+# remain English (a documented mechanical parsing constraint, not a
+# linguistic content choice).
+#
+# STATUS: DRAFT — translations entered by Claude based on widely-published
+# brand/geographic name conventions. Native-speaker verification is REQUIRED
+# before final publication. The next session's executor should:
+#   1. Verify each translation against the brand's own native-language
+#      website / Wikipedia article in the target language
+#   2. Flag any translation that does not match a native source
+#   3. Update this file before running Run 11
+#
+# SCHEMA
+#
+# pairs:
+#   <pair_id>:
+#     english:
+#       brand_a: <English brand name>
+#       brand_b: <English brand name>
+#       category: <English category descriptor>
+#       product: <English product descriptor; only used by framing prompts>
+#     localizations:
+#       <lang_code>:
+#         brand_a: <native brand name>
+#         brand_b: <native brand name>
+#         category: <native category descriptor>
+#         product: <native product descriptor>
+#         city_a: <native city name; framing prompts only>
+#         city_b: <native city name; framing prompts only>
+#
+# Lang codes follow ISO 639-1 (zh, ru, uk, ja, ko, ar, hi, sv, el, lv, vi,
+# sr, mn, sw).
+#
+# JSON OUTPUT KEY POLICY
+#
+# The output schema (JSON keys: weights, semiotic, narrative, ..., reasoning)
+# stays English across all languages. This is a mechanical parsing constraint:
+# the analysis pipeline expects a fixed key set. The "reasoning" field VALUE
+# should be in the target language (the model writes in the language it was
+# prompted in); only the field NAMES are English. This is documented in the
+# Run 11 prompt template as: "Reply ONLY with valid JSON. JSON keys must be
+# exactly as shown (in English). Field values, including the reasoning text,
+# must be in <target language>."
+
+schema_version: "1.0"
+
+# ----------------------------------------------------------------------------
+# Brand pairs that had native-language calls in dirty R15 runs.
+# 9 unique pairs across 9 languages, total dirty native calls = 744.
+# ----------------------------------------------------------------------------
+
+pairs:
+
+  # ===========================================================================
+  # FRAMING PAIRS (Run 7 / Run 7d) — same brand evaluated in two cities
+  # ===========================================================================
+
+  roshen_ru_ua:
+    type: framing
+    english:
+      brand: "Roshen"
+      product: "chocolate"
+      category: "confectionery"
+      city_a: "Moscow"
+      country_a: "Russia"
+      city_b: "Kyiv"
+      country_b: "Ukraine"
+    localizations:
+      ru:
+        brand: "Рошен"
+        product: "шоколад"
+        category: "кондитерские изделия"
+        city_a: "Москва"  # nominative; prompt template must apply preposition case
+        city_a_prep: "Москве"  # prepositional case for "в Москве"
+        city_b: "Киев"
+        city_b_prep: "Киеве"
+        country_a: "Россия"
+        country_b: "Украина"
+      uk:
+        brand: "Рошен"
+        product: "шоколад"
+        category: "кондитерські вироби"
+        city_a: "Москва"
+        city_a_prep: "Москві"  # Ukrainian locative case
+        city_b: "Київ"
+        city_b_prep: "Києві"
+        country_a: "Росія"
+        country_b: "Україна"
+
+  burgerking_us_ru:
+    type: framing
+    english:
+      brand: "Burger King"
+      product: "fast food meal"
+      category: "fast food restaurant"
+      city_a: "New York"
+      country_a: "United States"
+      city_b: "Moscow"
+      country_b: "Russia"
+    localizations:
+      ru:
+        brand: "Бургер Кинг"  # commonly transliterated; some Russian sources use Latin
+        product: "обед в фастфуде"
+        category: "ресторан быстрого питания"
+        city_a: "Нью-Йорк"
+        city_a_prep: "Нью-Йорке"
+        city_b: "Москва"
+        city_b_prep: "Москве"
+        country_a: "США"
+        country_b: "Россия"
+
+  volvo_eu_cn:
+    type: framing
+    english:
+      brand: "Volvo"
+      product: "car"
+      category: "automotive"
+      city_a: "Stockholm"
+      country_a: "Sweden"
+      city_b: "Shanghai"
+      country_b: "China"
+    localizations:
+      sv:
+        brand: "Volvo"  # native Swedish brand, name stays Latin
+        product: "bil"
+        category: "bilindustri"
+        city_a: "Stockholm"
+        city_b: "Shanghai"
+        country_a: "Sverige"
+        country_b: "Kina"
+      zh:
+        brand: "沃尔沃"  # standard Chinese transliteration
+        product: "汽车"
+        category: "汽车行业"
+        city_a: "斯德哥尔摩"
+        city_b: "上海"
+        country_a: "瑞典"
+        country_b: "中国"
+
+  # ===========================================================================
+  # CROSS-CULTURAL WEIGHTED PAIRS (Run 5) — VkusVill, mongolia_beer, china_water
+  # ===========================================================================
+
+  china_water:
+    type: weighted
+    english:
+      brand_a: "Nongfu Spring"
+      brand_b: "Evian"
+      category: "bottled water"
+    localizations:
+      zh:
+        brand_a: "农夫山泉"
+        brand_b: "依云"
+        category: "瓶装水"
+
+  mongolia_beer:
+    type: weighted
+    english:
+      brand_a: "APU Chinggis"
+      brand_b: "Heineken"
+      category: "beer brand"
+    localizations:
+      mn:
+        brand_a: "АПУ Чингис"
+        brand_b: "Heineken"  # international brand, common in Latin script in MN media
+        category: "шар айраг"
+      zh:
+        brand_a: "APU 成吉思"  # APU Chinggis is rarely localized to Chinese; verify
+        brand_b: "喜力"
+        category: "啤酒品牌"
+
+  russia_ukraine_banking:
+    type: weighted
+    english:
+      brand_a: "Tinkoff"
+      brand_b: "PrivatBank"
+      category: "digital consumer banking"
+    localizations:
+      ru:
+        brand_a: "Тинькофф"  # also commonly written "Т-Банк" since 2024 rebrand
+        brand_b: "ПриватБанк"
+        category: "цифровой потребительский банкинг"
+
+  # ===========================================================================
+  # LOCAL-BRAND PAIRS (Run 8) — supplementary 5-language tests
+  # ===========================================================================
+
+  cyprus_supermarket:
+    type: weighted
+    english:
+      brand_a: "AlphaMega"
+      brand_b: "Carrefour"
+      category: "supermarket chain"
+    localizations:
+      el:
+        brand_a: "AlphaMega"  # AlphaMega uses Latin script in Cyprus marketing
+        brand_b: "Carrefour"
+        category: "αλυσίδα σούπερ μάρκετ"
+
+  latvia_chocolate:
+    type: weighted
+    english:
+      brand_a: "Laima"
+      brand_b: "Lindt"
+      category: "chocolate"
+    localizations:
+      lv:
+        brand_a: "Laima"
+        brand_b: "Lindt"
+        category: "šokolāde"
+
+  serbia_water:
+    type: weighted
+    english:
+      brand_a: "Knjaz Milos"
+      brand_b: "San Pellegrino"
+      category: "mineral water"
+    localizations:
+      sr:
+        brand_a: "Књаз Милош"  # Cyrillic; also commonly written "Knjaz Miloš" in Latin
+        brand_b: "Сан Пелегрино"
+        category: "минерална вода"
+
+  vietnam_dairy:
+    type: weighted
+    english:
+      brand_a: "Vinamilk"
+      brand_b: "Nestle"
+      category: "dairy products"
+    localizations:
+      vi:
+        brand_a: "Vinamilk"  # Vietnamese brand, name stays Latin
+        brand_b: "Nestle"
+        category: "sản phẩm sữa"
+
+  kenya_beer:
+    type: weighted
+    english:
+      brand_a: "Tusker"
+      brand_b: "Heineken"
+      category: "beer brand"
+    localizations:
+      sw:
+        brand_a: "Tusker"
+        brand_b: "Heineken"
+        category: "chapa ya bia"
+
+# ============================================================================
+# TRANSLATION VERIFICATION CHECKLIST
+# ============================================================================
+#
+# Before executing Run 11, the next session's operator MUST:
+#
+# [ ] Russian (ru) — verify on:
+#     - https://ru.wikipedia.org/wiki/Roshen
+#     - https://ru.wikipedia.org/wiki/Тинькофф_Банк (now Т-Банк)
+#     - https://ru.wikipedia.org/wiki/Burger_King
+#     - https://ru.wikipedia.org/wiki/Москва (city case forms)
+#
+# [ ] Ukrainian (uk) — verify on:
+#     - https://uk.wikipedia.org/wiki/Roshen
+#     - https://uk.wikipedia.org/wiki/Київ (city case forms)
+#
+# [ ] Chinese (zh) — verify on:
+#     - https://zh.wikipedia.org/wiki/沃尔沃
+#     - https://zh.wikipedia.org/wiki/农夫山泉
+#     - APU Chinggis Chinese name is uncertain; if no widely-used Chinese
+#       transliteration exists, fall back to "APU Chinggis" in Latin script
+#       and document the limitation.
+#
+# [ ] Mongolian (mn) — verify on:
+#     - https://mn.wikipedia.org/wiki/АПУ
+#     - APU Chinggis ("Чингис" beer brand of APU Group)
+#
+# [ ] Swedish (sv) — Volvo names are mostly direct; verify Stockholm/
+#     Shanghai/China spellings on Swedish Wikipedia
+#
+# [ ] Greek (el) — verify "αλυσίδα σούπερ μάρκετ" or use "αλυσίδα υπεραγορών"
+#
+# [ ] Latvian (lv) — verify "šokolāde" with diacritics correct in JSON encoding
+#
+# [ ] Serbian (sr) — Cyrillic vs Latin: Serbia uses both. Default to Cyrillic
+#     for the prompt; Knjaz Milos's own marketing uses both.
+#
+# [ ] Vietnamese (vi) — verify diacritics on "sản phẩm sữa"
+#
+# [ ] Swahili (sw) — verify "chapa ya bia" is the natural Swahili rendering
+#
+# A native speaker SHOULD review each translation. Where no native speaker
+# is available, use the brand's own native-language website / official
+# Wikipedia article in the target language as the authoritative source.
+# Do NOT use machine translation as the final source.
+#
+# If a translation cannot be verified, document the uncertainty in the
+# Run 11 results write-up rather than publishing an unverified claim.
