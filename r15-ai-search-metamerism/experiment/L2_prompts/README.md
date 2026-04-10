@@ -34,7 +34,7 @@ Native translations are in `NATIVE_WEIGHTED_RECOMMENDATION` dict in the script (
 
 ## Status
 
-Run 5 is complete (2026-04-06). All runs (2-9) are complete (2026-04-09).
+All runs (2-9) complete (2026-04-09). Supplementary Run 10 (corrective comparators, weighted_recommendation only) complete (2026-04-10). Run 10 uses the same weighted_recommendation template as Runs 2-4.
 
 ## Directory Contents
 

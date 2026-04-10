@@ -11,7 +11,7 @@ hardware: arm64
 processor: arm
 os: macOS-26.3.1-arm64-arm-64bit
 start_time: '2026-04-09T13:14:35.159808+00:00'
-end_time: null
+end_time: '2026-04-10T17:47:28.402070+00:00'
 model_configs:
   claude:
     model_id: claude-haiku-4-5
@@ -70,3 +70,35 @@ dimensions:
 n_brand_pairs: 10
 prompts_per_pair: 1 weighted_recommendation + 1 dimensional_differentiation + 8 probes
   x 2 brands = 18
+
+# Run index — supplementary corrective experiments appended after main study
+runs:
+  run10_corrective:
+    date: '2026-04-10'
+    jsonl: run10_corrective.jsonl
+    n_records: 126
+    script: run10_corrective.py
+    design: >
+      Corrective comparators experiment. 3 focal brands (VkusVill, Calbee, Roshen)
+      x 2 conditions (control comparator vs corrective same-culture comparator)
+      x 7 models x 3 runs. Tests whether the choice of comparator brand drives
+      dimensional weight profiles, or whether collapse is intrinsic to the focal brand.
+      Supplementary to the main 9-run study (Runs 2-9, 21,601 calls).
+    models:
+      - claude
+      - gpt
+      - gemini
+      - deepseek
+      - qwen3_local
+      - gemma4_local
+      - yandexgpt_pro
+    pairs:
+      - vkusvill_vs_whole_foods
+      - vkusvill_vs_trader_joes
+      - calbee_vs_frito_lay
+      - calbee_vs_koikeya
+      - roshen_vs_cadbury
+      - roshen_vs_hershey
+    results:
+      summary: experiment/L4_analysis/run10_corrective_summary.md
+      json: experiment/L4_analysis/run10_corrective_results.json

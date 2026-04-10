@@ -55,6 +55,8 @@ EXPECTED_L3_SESSIONS = [
     "run9_temp_0.0.jsonl",
     "run9_temp_0.3.jsonl",
     "run9_temp_1.0.jsonl",
+    # Run 10: supplementary corrective comparators experiment (2026-04-10)
+    "run10_corrective.jsonl",
 ]
 
 EXPECTED_L4_RESULTS = [
@@ -71,6 +73,9 @@ EXPECTED_L4_RESULTS = [
     "power_analysis_results.json",
     "prompt_sensitivity_results.json",
     "exclude_patagonia_results.json",
+    # Run 10 supplementary outputs
+    "run10_corrective_results.json",
+    "run10_corrective_summary.md",
 ]
 
 EXPECTED_ROOT_RESULTS = [

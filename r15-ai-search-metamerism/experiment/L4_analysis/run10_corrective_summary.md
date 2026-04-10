@@ -37,8 +37,6 @@ for every pair-model cell.
 
 ## Verdicts
 
-(populate manually after reviewing the deltas)
-
-- **VkusVill**: 
-- **Calbee**: 
-- **Roshen**: 
+- **VkusVill**: Comparator-sensitive. ΔDCI = +7.4 when paired with Trader Joe's vs Whole Foods. The corrective comparator (Trader Joe's, US organic-grocery analogue) produces measurably higher collapse, suggesting VkusVill's dimensional profile is partially driven by which Western reference brand anchors the comparison. Largest effect in the experiment.
+- **Calbee**: Comparator-robust. ΔDCI = +0.7 when paired with Koikeya vs Frito-Lay. Switching to a same-culture Japanese snack comparator produces negligible change in collapse depth. Collapse appears intrinsic to Calbee in LLM training data, not driven by the comparator choice.
+- **Roshen**: Comparator-robust. ΔDCI = +0.4 when paired with Hershey's vs Cadbury. Negligible comparator effect; collapse is structurally similar regardless of whether the Western comparator is British (Cadbury) or American (Hershey's).

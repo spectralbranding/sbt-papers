@@ -1,3 +1,6 @@
+# NOTE: Run `python validation/validate.py --regenerate-checksums` after Run 10 integration
+# to update metadata.yaml hash and add run10_corrective.jsonl, run10_corrective_results.json,
+# and run10_corrective_summary.md entries. (Updated 2026-04-10, Session 93)
 6b971af34fb0219daf3b79677384c7837de5eea083f5f9e98c313b325700eab3  experiment/L1_configuration/models.yaml
 a09766475102910e8ad4e38e7e1e0990c535b7d563a84b93cfa8c6f495a7299b  experiment/L3_sessions/metadata.yaml
 011823582ed4b36834ec1e9606d16daf054d0cb32e1ee4269c3efad2e2ab4d44  experiment/L3_sessions/run2_global.jsonl

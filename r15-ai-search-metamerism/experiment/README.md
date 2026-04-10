@@ -18,8 +18,12 @@ applied to AI-mediated consumer search.
 | Run 2 | 10 global pairs, 6 models | ~3,240 | Complete | H1 SUPPORTED |
 | Run 3 | 5 local brand pairs, 6 models | ~810 | Complete | H2 SUPPORTED (cosine=0.975), local DCI=0.355 |
 | Run 4 | Brand Function resolution test, 6 models | ~90 | Complete | DCI 0.355→0.284 |
-| Run 5 | 7 cross-cultural pairs, 22 models, 8 cultures | 11,410 (7,999 successful) | **Complete (2026-04-06)** | H1 SUPPORTED (p<0.0001, DCI=35.6), H2 SUPPORTED (cosine=0.976), 69 native-language calls |
-| H12 Framing | 3 framing pairs, same models as Run 5, 2 city contexts each | ~pending | **Pending** | H12: geopolitical framing effect on dimensional weights |
+| Run 5 | 7 cross-cultural pairs, 22 models, 8 cultures | 11,410 (7,999 successful) | **Complete (2026-04-06)** | H1 SUPPORTED (p<0.0001, DCI=35.6), H2 SUPPORTED (cosine=0.977), 69 native-language calls |
+| Run 6 | Banking pair, 24 models | 1,018 | **Complete** | H6 SUPPORTED (p=0.0013, d=3.449) |
+| Run 7 | Geopolitical framing, 3 pairs × 2 city contexts | varies | **Complete** | H12 SUPPORTED (p<0.0001, delta=0.040) |
+| Run 8 | Native language expansion, 11 languages | 815 | **Complete** | H10 NOT SUPPORTED (mean=-0.005) |
+| Run 9 | Temperature sensitivity, T=0.0/0.3/1.0 | varies | **Complete** | DCI spread=0.012 (robust) |
+| Run 10 *(supplementary)* | Corrective comparators, 3 focal × 2 conditions, 7 models | 126 | **Complete (2026-04-10)** | VkusVill largest comparator effect (ΔDCI=+7.4) |
 
 ---
 
@@ -128,7 +132,10 @@ of the model's cultural knowledge.
 | Run 5 successful responses | 7,999 (70.1%) |
 | Native-language calls (H10) | 69 |
 | Runs 2-4 calls | 4,860 |
-| **All runs total** | **16,270** |
+| Runs 6-9 calls | 5,331 |
+| **Main study total (Runs 2-9)** | **21,601** |
+| Run 10 supplementary | 126 |
+| **All runs total (Runs 1-10)** | **~21,727** |
 
 ---
 
@@ -138,7 +145,7 @@ of the model's cultural knowledge.
 |-------|-----------|----------|--------|
 | L0 | `L0_specification/` | Hypotheses, design, pre-registrations | Complete |
 | L1 | `L1_configuration/` | Model configs, API version records | Complete |
-| L2 | `L2_prompts/` | Prompt templates reference | Templates in script; rendered examples pending |
+| L2 | `L2_prompts/` | Prompt templates reference | Templates in script; rendered examples in `rendered/` |
 | L3 | `L3_sessions/` | JSONL session logs | Complete (run2-run5 logs committed) |
 | L4 | `L4_analysis/` | Results, summary tables | Complete (run5_analysis.py + outputs) |
 

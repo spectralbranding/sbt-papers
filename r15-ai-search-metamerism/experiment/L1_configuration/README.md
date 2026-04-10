@@ -7,13 +7,15 @@ participated in each run, their API endpoints, tier classification, and cultural
 
 | File | Contents |
 |------|----------|
-| `models.yaml` | Full model registry: 21 active models across 7 cultural clusters |
+| `models.yaml` | Full model registry: 24 unique models across 7 cultural clusters |
 
 ## Model Summary
 
-- **Total active**: 21 models
+- **Total unique models across all runs**: 24
 - **Runs 2-4**: 6 models (Claude Sonnet 4.6, GPT-4o-mini, Gemini 2.5 Flash, DeepSeek V3, Qwen3 30B, Gemma 4 27B)
-- **Run 5 additions**: 15 models spanning Chinese, Russian, Japanese, Korean, Arabic, and Indian clusters
+- **Run 5 additions**: ~15 models spanning Chinese, Russian, Japanese, Korean, Arabic, and Indian clusters
+- **Run 6 backfill**: Qwen Plus (DashScope), GLM-4.7 (Fireworks) — bring unique model count to 24
+- **Run 10 models**: 7 models (claude, gpt, gemini, deepseek, qwen3_local, gemma4_local, yandexgpt_pro)
 
 ## Tier Classification
 

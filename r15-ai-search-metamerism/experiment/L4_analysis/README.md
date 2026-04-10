@@ -1,6 +1,8 @@
 # L4 Analysis
 
-Post-experiment analysis scripts and outputs for Run 5 (cross-cultural, completed 2026-04-06).
+Post-experiment analysis scripts and outputs for Runs 5-10.
+Run 5 (cross-cultural, 2026-04-06), Runs 6-9 (banking/framing/native/temperature), and
+Run 10 supplementary corrective comparators (2026-04-10).
 
 **Status**: Complete
 
@@ -14,6 +16,8 @@ Post-experiment analysis scripts and outputs for Run 5 (cross-cultural, complete
 | `run5_analysis_results.json` | Full analysis outputs including H5-H10 test statistics |
 | `run5_dci_table.csv` | DCI per model per culture (primary H5 matrix) |
 | `run5_diagonal_advantage.csv` | Diagonal advantage scores: national model DCI vs cross-culture DCI |
+| `run10_corrective_results.json` | Run 10 supplementary: per-model profiles for 6 corrective-comparator pairs |
+| `run10_corrective_summary.md` | Run 10 supplementary: per-dimension delta table (corrective − control) |
 
 Session logs (JSONL) are in `../L3_sessions/` (run2_global.jsonl through run5_crosscultural.jsonl).
 

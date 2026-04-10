@@ -13,9 +13,9 @@ metadata:
       corresponding: true
   citation_key: "2026v"
   doi: "10.5281/zenodo.19422427"
-  date: "2026-04-08"
-  version: "2.0"
-  status: preprint  # v1.0 published on Zenodo 2026-04-04; v2.0 incorporates Run 5 cross-cultural results
+  date: "2026-04-10"
+  version: "2.1"
+  status: preprint  # v1.0 published on Zenodo 2026-04-04; v2.0 incorporates Run 5 cross-cultural results; v2.1 adds supplementary Run 10 corrective comparators (126 calls, 2026-04-10)
   license: "CC-BY-NC-ND-4.0"
   keywords:
     - AI-mediated search
@@ -113,8 +113,8 @@ methodology:
     temperature 0.7. Total: 21601 clean calls across all 9 runs; ~6.1M tokens;
     $5.52 total cost.
   sample:
-    size: 21061  # 13 JSONL files across 9 runs; clean calls after deduplication
-    description: "9 runs across 13 JSONL files. Runs 2-4: 4,860 calls (6 models, 15 pairs). Run 5: 11,410 calls (22 active models, 7 cross-cultural pairs, 8 cultures, 69 native-language calls). Run 6: 1,018 calls (banking pair, 24 models). Run 7: framing experiment (H12 test). Run 8: native language expansion (815 calls in 11 languages, H10 test — NOT SUPPORTED). Total unique models: 24; 9 cultural traditions; ~6.1M tokens; $5.52 total cost."
+    size: 21601  # 15 JSONL files across main study Runs 2-9; clean calls; Run 10 supplementary adds 126 more
+    description: "9 runs (main study) across 15 JSONL files. Runs 2-4: 4,860 calls (6 models, 15 pairs). Run 5: 11,410 calls (22 active models, 7 cross-cultural pairs, 8 cultures, 69 native-language calls). Run 6: 1,018 calls (banking pair, 24 models). Run 7: framing experiment (H12 test). Run 8: native language expansion (815 calls in 11 languages, H10 test — NOT SUPPORTED). Run 9: temperature sensitivity. Total unique models: 24; 9 cultural traditions; ~6.1M tokens; $5.52 total cost. Supplementary Run 10 (corrective comparators, 2026-04-10): 126 calls, 7 models, 6 pairs — not included in main study totals."
     models: 24  # 24 unique models across all runs; T-Pro 2.0 excluded from Run 5 analysis due to infrastructure cost
     brand_pairs: 23  # 10 global + 5 local + 7 cross-cultural + 1 banking (Run 6)
   instrument: "PRISM-B (Perception Response Instrument for Structured Measurement — Brand variant)"
@@ -220,7 +220,9 @@ submission_history:
       H1 SUPPORTED (p<0.0001, DCI=35.6), H2 SUPPORTED (cosine=0.977), H6 SUPPORTED
       (p=0.0013, d=3.449), H12 SUPPORTED (p<0.0001). Cultural dimension most collapsed
       (-4.9 vs baseline). 13 hypotheses formalized (H1-H13; H13 future direction).
-      Upload to Zenodo pending v2.0 paper completion.
+      Upload to Zenodo pending v2.1 paper completion. v2.1 (2026-04-10): supplementary
+      Run 10 corrective comparators added (126 calls); abstract trimmed to 243 words;
+      leading-zero convention applied throughout; metadata files aligned.
 
   - venue: "Journal of Advertising Research"
     type: journal
