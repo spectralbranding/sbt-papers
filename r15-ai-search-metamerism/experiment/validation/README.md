@@ -26,8 +26,8 @@ python validation/validate.py --regenerate-checksums
 
 Verifies that all expected files exist on disk:
 
-- **15 L3 session JSONL files** in `L3_sessions/` (Runs 2-9)
-- **13 L4 result files** in `L4_analysis/` (run5/run6/run7/run8/run9 + 3 robustness analyses + 5 run5 detail files)
+- **16 L3 session JSONL files** in `L3_sessions/` (Runs 2-9 main study + Run 10 supplementary)
+- **15 L4 result files** in `L4_analysis/` (run5/run6/run7/run8/run9 + run10_corrective + 3 robustness analyses + 5 run5 detail files)
 - **3 root result files** at the package root (`results_v2_global.json`, `results_v3_local.json`, `results_v4_resolution.json`)
 
 Counts total session log lines and reports them.
@@ -45,12 +45,12 @@ Uses `jsonschema` if installed; falls back to a built-in minimal checker that en
 
 Verifies SHA-256 hashes of all checksummed data files against `checksums.sha256`. The checksummed set includes:
 
-- All 15 L3 session JSONL files
-- All 13 L4 result files
+- All 16 L3 session JSONL files (including run10_corrective.jsonl)
+- All 15 L4 result files (including run10_corrective_results.json)
 - All 3 root results files
 - `local_brand_specs.json`, `L3_sessions/metadata.yaml`, `L1_configuration/models.yaml`
 
-Total: 34 files. Run `--regenerate-checksums` after intentional data changes (e.g., adding a new run).
+Total: ~37 files. Run `--regenerate-checksums` after intentional data changes (e.g., adding a new run).
 
 ## Schemas
 

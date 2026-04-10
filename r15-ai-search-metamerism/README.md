@@ -1,6 +1,6 @@
 # R15: Spectral Metamerism in AI-Mediated Brand Perception
 
-**Citation key**: 2026v | **DOI**: [10.5281/zenodo.19422427](https://doi.org/10.5281/zenodo.19422427) | **Status**: Empirical results complete (21,600+ calls across 9 runs, 24 models, 9 cultural traditions)
+**Citation key**: 2026v | **DOI**: [10.5281/zenodo.19422427](https://doi.org/10.5281/zenodo.19422427) | **Status**: Empirical results complete (21,601 calls across 9 runs, 24 models, 9 cultural traditions; plus supplementary Run 10 corrective comparators, 126 calls)
 
 ## Paper
 
@@ -40,6 +40,7 @@ AI-mediated search is replacing traditional consumer search, yet no formal model
 | Run 7 (framing) | varies | varies | H12 p < 0.0001 | -- |
 | Run 8 (native expansion) | varies | 815 | H10 NOT SUPPORTED (mean = -0.005) | -- |
 | Run 9 (temperature) | varies | varies | DCI spread = 0.012 (robust) | -- |
+| Run 10 (corrective comparators, supplementary) | 3 focal × 2 conditions | 126 | VkusVill shows largest comparator effect (ΔDCI = +7.4) | -- |
 
 ## Repository Structure
 
@@ -68,7 +69,7 @@ This directory follows the [Research-as-Repository protocol](https://github.com/
 | `L0_specification/` | Pre-registered protocols for Runs 2-4 and Run 5 |
 | `L1_configuration/` | `models.yaml` — 24 model configurations |
 | `L2_prompts/` | Prompt templates (`templates/`) and rendered examples (`rendered/`) |
-| `L3_sessions/` | Raw JSONL session logs — 15 files, 20,000+ records |
+| `L3_sessions/` | Raw JSONL session logs — 16 files, 21,727+ records (Runs 2-9 main study + Run 10 supplementary) |
 | `L4_analysis/` | Analysis scripts and outputs (per-run results, robustness tests) |
 | `validation/` | Schema validation, checksums, completeness checks |
 | `ai_search_metamerism.py` | Main experiment script (179K, 24 models, 4 prompt types) |
@@ -92,6 +93,8 @@ This directory follows the [Research-as-Repository protocol](https://github.com/
 | `power_analysis_results.json` | Post-hoc power for H1, H2, H5, H6 |
 | `prompt_sensitivity_results.json` | ICC(3,1) across 3 repetitions per condition |
 | `exclude_patagonia_results.json` | Robustness: replication with Patagonia excluded |
+| `run10_corrective_results.json` | Run 10 supplementary: per-model profiles for 6 corrective-comparator pairs |
+| `run10_corrective_summary.md` | Run 10 supplementary: per-dimension delta table (corrective − control) |
 
 ## Reproducing the Experiment
 
@@ -160,7 +163,7 @@ python L4_analysis/extract_rendered_prompts.py
 
 See [experiment README](experiment/README.md#run-it-on-your-own-brands) for a step-by-step guide.
 
-**Cost**: roughly $0.25 (5-6 models, 3 runs) to $0.80 (all 24 models, 3 runs) for a single brand pair audit at current paid-model rates. The full 9-run cross-cultural study cost $5.52 total.
+**Cost**: roughly $0.25 (5-6 models, 3 runs) to $0.80 (all 24 models, 3 runs) for a single brand pair audit at current paid-model rates. The full 9-run cross-cultural study cost $5.52 total; Run 10 supplementary (~$0.04) brings the project total to ~$5.56.
 
 ## How to Cite
 
