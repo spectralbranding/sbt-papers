@@ -2,7 +2,7 @@
 # Model: claude
 # Pair: cyprus_supermarket
 # Source: L3_sessions/run4_resolution.jsonl
-# (Selected as the first occurrence of this prompt_type across all session files.)
+# (First occurrence of this prompt_type across all session files.)
 
 ================ PROMPT ================
 
