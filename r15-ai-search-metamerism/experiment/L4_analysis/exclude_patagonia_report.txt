@@ -1,0 +1,115 @@
+======================================================================
+R15 EXCLUDE-PATAGONIA ROBUSTNESS REPLICATION
+Testing whether H1 and H2 hold after removing the Patagonia outlier
+======================================================================
+Pair excluded: 'purpose_driven' (Patagonia vs. Columbia)
+Baseline DCI:  0.25
+
+Full dataset:     171 calls, 10 pairs
+Patagonia removed: 153 calls, 9 pairs
+----------------------------------------------------------------------
+1. PATAGONIA/COLUMBIA PAIR CHARACTERIZATION
+----------------------------------------------------------------------
+  Patagonia mean DCI:      0.1938
+  Other pairs mean DCI:    0.3034
+  Grand mean DCI:          0.2924
+  Z-score vs other pairs:  -4.506
+  Below 0.250 baseline:    YES
+  t-test vs baseline:      t=-5.2825, p=6.0940e-05
+
+  All pairs by DCI (low to high):
+    purpose_driven                 0.1938 [below baseline] <<< PATAGONIA (excluded)
+    ethical_finance                0.2664
+    auto_disruption                0.2715
+    heritage_sportswear            0.2937
+    luxury_heritage                0.3009
+    boutique_hotel                 0.3054
+    premium_tech                   0.3091
+    craft_spirits                  0.3139
+    artisanal_food                 0.3274
+    indie_beauty                   0.3424
+----------------------------------------------------------------------
+2. H1 REPLICATION: DCI above 0.250 baseline
+----------------------------------------------------------------------
+
+With Patagonia:
+  Label:        H1 (all 10 pairs)
+  n_models:     6
+  mean_dci:     0.2912 (baseline: 0.250)
+  Cohen's d:    1.1808
+  t-stat:       2.8924
+  p-value:      3.4092e-02
+  Supported:    YES
+
+Without Patagonia:
+  Label:        H1 (excluding purpose_driven)
+  n_models:     6
+  mean_dci:     0.3031 (baseline: 0.250)
+  Cohen's d:    1.3332
+  t-stat:       3.2656
+  p-value:      2.2308e-02
+  Supported:    YES
+----------------------------------------------------------------------
+3. H2 REPLICATION: Convergent collapse (cosine similarity)
+----------------------------------------------------------------------
+
+With Patagonia:
+  Label:        H2 (all 10 pairs)
+  n_models:     6
+  mean_cosine:  0.9754
+  range:        [0.9547, 0.9970]
+  p-value:      nan
+  Supported:    YES
+
+Without Patagonia:
+  Label:        H2 (excluding purpose_driven)
+  n_models:     6
+  mean_cosine:  0.9726
+  range:        [0.9426, 0.9945]
+  p-value:      nan
+  Supported:    YES
+----------------------------------------------------------------------
+4. EFFECT SIZE COMPARISON
+----------------------------------------------------------------------
+
+  H1 Cohen's d:  1.1808 (full) -> 1.3332 (excl.)   delta=+0.1524
+  H1 mean DCI:   0.2912 (full) -> 0.3031 (excl.)   delta=+0.0119
+  H2 cosine:     0.9754 (full) -> 0.9726 (excl.)   delta=-0.0028
+
+  H1 robust:     YES
+  H2 robust:     YES
+----------------------------------------------------------------------
+5. THEORETICAL INTERPRETATION
+----------------------------------------------------------------------
+
+The purpose_driven pair (Patagonia/Columbia) has the lowest DCI in Run 2:
+DCI = 0.1938, which is 0.0562
+below the 0.250 uniform baseline (z = -4.51 vs other pairs).
+
+This is the ONLY pair below baseline across all 15 pairs in Runs 2-3.
+The paper interprets Patagonia's below-baseline DCI not as noise but as
+a theoretically significant exception: Patagonia's ideological commitments
+are encoded as verifiable, machine-readable claims (1% for the Planet,
+Chouinard ownership transfer to environmental trust, B Corp certification)
+that survive AI mediation precisely because they are defensible in the
+sense of Hermann et al. (2026).
+
+Excluding this pair:
+- H1: DCI changes from 0.2912 to 0.3031
+  (delta = +0.0119). Effect increases.
+  H1 remains supported in both versions.
+- H2: cosine changes from 0.9754 to 0.9726
+  (delta = -0.0028).
+  H2 remains supported in both versions.
+
+Robustness verdict: H1 and H2 are ROBUST to Patagonia exclusion.
+
+The correct interpretation of the Patagonia pair is as evidence FOR the
+defensibility mechanism, not as a confound. Its exclusion makes H1 stronger
+(as expected when the only sub-baseline pair is removed), and does not
+affect H2. The main findings are unambiguously robust.
+
+======================================================================
+OVERALL ROBUSTNESS: CONFIRMED
+======================================================================
+Wrote: exclude_patagonia_results.json

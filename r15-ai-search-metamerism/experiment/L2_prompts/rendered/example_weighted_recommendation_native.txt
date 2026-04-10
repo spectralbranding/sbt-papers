@@ -1,0 +1,57 @@
+# Rendered example: weighted_recommendation_native
+# Model: deepseek
+# Pair: china_water
+# Source: L3_sessions/run5_crosscultural.jsonl
+# (Selected as the first occurrence of this prompt_type across all session files.)
+
+================ PROMPT ================
+
+你是一位AI购物助手，帮助消费者在两个品牌之间做选择。
+
+品类: bottled water
+品牌: Nongfu Spring vs Evian
+
+第一步: 推荐一个品牌。
+第二步: 通过在以下8个感知维度上分配100个重要性分数来解释原因。
+
+维度:
+- semiotic (Semiotic): 视觉识别、标志、包装、设计语言
+- narrative (Narrative): 品牌故事、起源神话、创始叙事
+- ideological (Ideological): 价值观、伦理、社会公益、环保立场
+- experiential (Experiential): 客户体验质量、服务、开箱体验
+- social (Social): 社交信号、社群、拥有该品牌代表什么
+- economic (Economic): 价格、性价比、定价策略
+- cultural (Cultural): 文化相关性、与运动/传统的联系
+- temporal (Temporal): 传承、历史、与时间的关系
+
+仅用有效的JSON回答:
+{
+  "recommended_brand": "品牌名",
+  "weights": {
+    "semiotic": 15, "narrative": 10, "ideological": 5,
+    "experiential": 20, "social": 10, "economic": 25,
+    "cultural": 5, "temporal": 10
+  },
+  "reasoning": "1-2句解释"
+}
+
+权重之和必须恰好为100。
+
+================ RESPONSE (first 1000 chars) ================
+
+```json
+{
+  "recommended_brand": "Nongfu Spring",
+  "weights": {
+    "semiotic": 15,
+    "narrative": 10,
+    "ideological": 15,
+    "experiential": 15,
+    "social": 10,
+    "economic": 25,
+    "cultural": 5,
+    "temporal": 5
+  },
+  "reasoning": "推荐Nongfu Spring，因为它在经济维度（性价比极高）和意识形态维度（强调天然水源与环保）上表现突出，更符合中国消费者对日常饮用水的实用与健康需求，而依云的高溢价更多体现在社交与叙事维度，对普通消费者必要性较低。"
+}
+```

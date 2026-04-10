@@ -1,0 +1,57 @@
+# Rendered example: dimensional_differentiation
+# Model: claude
+# Pair: luxury_heritage
+# Source: L3_sessions/run2_global.jsonl
+# (Selected as the first occurrence of this prompt_type across all session files.)
+
+================ PROMPT ================
+
+You are a brand analyst comparing two brands for a consumer research report.
+
+Category: luxury leather goods
+Brands: Hermes vs Coach
+
+Rate how DIFFERENT these two brands are on each of 8 perception dimensions.
+
+Dimensions:
+- Semiotic: visual identity, logos, packaging, design language
+- Narrative: brand story, origin myth, founding narrative
+- Ideological: values, ethics, social causes, environmental stance
+- Experiential: customer experience quality, service, unboxing
+- Social: social signaling, community, what owning it says about you
+- Economic: price, value for money, pricing strategy
+- Cultural: cultural relevance, connection to movements/traditions
+- Temporal: heritage, history, relationship to time
+
+Respond with ONLY valid JSON:
+{
+  "differentiation": {
+    "semiotic": 7.5, "narrative": 8.0, "ideological": 6.0,
+    "experiential": 5.5, "social": 8.5, "economic": 9.0,
+    "cultural": 7.0, "temporal": 9.5
+  },
+  "overall_score": 0.78,
+  "summary": "1-2 sentence summary of the key differences"
+}
+
+Each score: 0.0 (identical) to 10.0 (completely different).
+overall_score: 0.0 to 1.0 summary measure.
+
+================ RESPONSE (first 1000 chars) ================
+
+```json
+{
+  "differentiation": {
+    "semiotic": 8.5,
+    "narrative": 8.0,
+    "ideological": 6.5,
+    "experiential": 7.0,
+    "social": 9.0,
+    "economic": 8.5,
+    "cultural": 8.0,
+    "temporal": 9.0
+  },
+  "overall_score": 0.82,
+  "summary": "Hermès positions itself as an exclusive, heritage-driven luxury house with artisanal craftsmanship and scarcity-driven prestige, while Coach operates as an accessible luxury brand emphasizing American optimism, design innovation, and aspirational quality. The brands differ most dramatically in temporal positioning (Hermès as timeless French legacy vs. Coach as contemporary American), social signaling (exclusivity vs. attainability), and economic strategy (premium scarcity vs. volume-based luxury)."
+}
+```

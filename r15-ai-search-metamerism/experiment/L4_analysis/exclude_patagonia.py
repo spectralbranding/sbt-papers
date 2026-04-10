@@ -453,8 +453,30 @@ affect H2. The main findings are unambiguously robust.
 """)
 
     print_separator("=")
-    print(f"OVERALL ROBUSTNESS: {'CONFIRMED' if comparison["overall_robust"] else 'CONCERN FLAGGED'}")
+    print(f"OVERALL ROBUSTNESS: {'CONFIRMED' if comparison['overall_robust'] else 'CONCERN FLAGGED'}")
     print_separator("=")
+
+    # Persist JSON results
+    out_path = Path(__file__).resolve().parent / "exclude_patagonia_results.json"
+    payload = {
+        "schema_version": "1.0",
+        "patagonia_pair_id": PATAGONIA_PAIR_ID,
+        "baseline_dci": BASELINE_DCI,
+        "n_calls_full": len(calls),
+        "n_calls_without": len(calls_without),
+        "n_pairs_full": n_pairs_with,
+        "n_pairs_without": n_pairs_without,
+        "patagonia_characterization": pat_stats,
+        "h1_with_patagonia": h1_with,
+        "h1_without_patagonia": h1_without,
+        "h2_with_patagonia": h2_with,
+        "h2_without_patagonia": h2_without,
+        "comparison": comparison,
+        "overall_robust": bool(comparison["overall_robust"]),
+        "verdict": "CONFIRMED" if comparison["overall_robust"] else "CONCERN_FLAGGED",
+    }
+    out_path.write_text(json.dumps(payload, indent=2, default=float))
+    print(f"Wrote: {out_path.name}")
 
 
 if __name__ == "__main__":

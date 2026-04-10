@@ -1,0 +1,125 @@
+# Rendered example: weighted_recommendation_spec
+# Model: claude
+# Pair: cyprus_supermarket
+# Source: L3_sessions/run4_resolution.jsonl
+# (Selected as the first occurrence of this prompt_type across all session files.)
+
+================ PROMPT ================
+
+You are an AI shopping assistant helping a consumer choose between two brands.
+
+Category: supermarket chain
+Brands: AlphaMega vs Carrefour
+
+You have access to detailed Brand Function specifications for both brands (behavioral commitments, cultural positioning, heritage, values). Use this information alongside your general knowledge.
+
+--- Brand Function Specification: AlphaMega ---
+{
+  "semiotic": {
+    "visual_identity": "Green and white corporate palette; logotype with Alpha (A) symbol; consistent hypermarket-scale signage across 21 Cypriot locations",
+    "design_language": "Clean, commodity-retail aesthetic; bilingual Greek/English in-store communication; own-label 'Value Picks' line uses simplified packaging to signal affordability"
+  },
+  "narrative": {
+    "origin_story": "Began in 1996 as the Charalambides Hypermarket in Engomi, Nicosia \u2014 a state-of-the-art retail development considered the most modern in Cyprus at the time. In 1997 businessman Andreas Papaellinas acquired the store and formed C.A. Papaellinas Group Ltd. The AlphaMega banner was formally adopted in 2002, the same year a second Nicosia location opened. Expansion followed methodically: Larnaca (2004), Limassol (2007), and a continuing roll-out to 21 stores by 2025.",
+    "founding_principle": "Provide Cypriot households with the widest selection of local and imported products under one roof, with consistent quality benchmarks whether buying fresh Cypriot produce or international imports."
+  },
+  "ideological": {
+    "mission": "To serve as the most trusted everyday retail destination for Cypriot families, combining product variety, competitive pricing, and sincere community investment.",
+    "values": [
+      "Coherence and responsibility in community contribution",
+      "Commitment to local economy through supplier relationships and training programs",
+      "Environmental footprint reduction"
+    ],
+    "commitments": [
+      "Annual Red Cross Christmas Love Campaign support for elementary school children",
+      "Butchery training program in partnership with Intercollege and University of Nicosia",
+      "Scholarship fund (with Unilever Tseriotis) for students who survived life-threatening illness",
+      "Online grocery delivery as accessibility commitment to mobility-limited customers",
+      "Foody Express partnership for rapid urban delivery"
+    ]
+  },
+  "experiential": {
+    "customer_experience": "Hypermarket format (large-format stores 2,000\u20135,000 sq m estimated) offering fresh produce, butchery, bakery, deli, dairy, frozen, personal care, and household in a single visit; self-checkout and loyalty card programme",
+    "service_quality": "Trained in-store specialists in butchery; online store with home delivery; bilingual customer service standard across all locations"
+  },
+  "social": {
+    "community_role": "Leading community retail brand in Cyprus; active in health, education, and social welfare sponsorship; partner to Cyprus Red Cross and university training programs; supports vulnerable populations as explicit brand value",
+    "social_signaling": "Shopping at AlphaMega signals support for a locally owned Cypriot chain rather than a European discount chain; patronage associated with backing domestic employment and community programs"
+  },
+  "economic": {
+    "pricing_strategy": "Mid-market positioning \u2014 broader selection and higher fresh quality than hard discounters (Lidl); own-label 'Value Picks' line provides entry-level price tier; Casino Group partnership (1,000+ products) adds European premium range without premium pricing",
+    "value_proposition": "Broadest product assortment in Cyprus grocery market; quality-per-price leadership in fresh categories; convenience layered through online channel and Express delivery"
+  },
+  "cultural": {
+    "cultural_codes": [
+      "Cypriot pride in locally owned enterprise versus foreign-owned chains",
+      "Greek Cypriot household provisioning culture \u2014 fresh meat, dairy, produce as weekly ritual",
+      "Bilingual (Greek/English) retail environment reflecting Cyprus's international character"
+    ],
+    "heritage_markers": [
+      "Nearly 30-year operating history in Cyprus",
+      "Engomi flagship as first modern Cypriot hypermarket",
+      "C.A. Papaellinas Group as established Cypriot business family"
+    ],
+    "cultural_positioning": "The Cypriot national supermarket \u2014 the chain that has grown with the country, invested in its communities, and given Cypriots a reason to choose local over global discount"
+  },
+  "temporal": {
+    "founded": 1996,
+    "milestones": [
+      "1996: Charalambides Hypermarket opens in Engomi \u2014 first modern hypermarket in Cyprus",
+      "1997: Andreas Papaellinas acquires store; C.A. Papaellinas Group Ltd formed",
+      "2002: AlphaMega banner adopted; second store opens in Acropolis, Nicosia",
+      "2004: Larnaca store acquired and refurbished",
+      "2007: Limassol market entry",
+      "2021: Online store launched",
+      "2022: Casino Group strategic partnership (1,000+ products); eight CSR business awards",
+      "2025: 21 stores across Cyprus; Foody Express rapid delivery partnership active"
+    ],
+    "heritage_claim": "Nearly 30 years as Cyprus's home-grown hypermarket leader"
+  }
+}
+
+Step 1: Recommend one brand.
+Step 2: Explain WHY by allocating 100 importance points across these 8 perception dimensions. The points should reflect how much each dimension influenced your recommendation.
+
+Dimensions:
+- Semiotic: visual identity, logos, packaging, design language
+- Narrative: brand story, origin myth, founding narrative
+- Ideological: values, ethics, social causes, environmental stance
+- Experiential: customer experience quality, service, unboxing
+- Social: social signaling, community, what owning it says about you
+- Economic: price, value for money, pricing strategy
+- Cultural: cultural relevance, connection to movements/traditions
+- Temporal: heritage, history, relationship to time
+
+Respond with ONLY valid JSON:
+{
+  "recommended_brand": "BrandName",
+  "weights": {
+    "semiotic": 15, "narrative": 10, "ideological": 5,
+    "experiential": 20, "social": 10, "economic": 25,
+    "cultural": 5, "temporal": 10
+  },
+  "reasoning": "1-2 sentence explanation"
+}
+
+The weights MUST sum to exactly 100.
+
+================ RESPONSE (first 1000 chars) ================
+
+```json
+{
+  "recommended_brand": "AlphaMega",
+  "weights": {
+    "semiotic": 8,
+    "narrative": 12,
+    "ideological": 18,
+    "experiential": 22,
+    "social": 15,
+    "economic": 16,
+    "cultural": 5,
+    "temporal": 4
+  },
+  "reasoning": "AlphaMega delivers superior value through its combination of strong experiential quality (fresh produce, trained specialists, online delivery), genuine community commitment (Red Cross, education scholarships, vulnerable population support), and mid-market pricing that undercuts European chains while maintaining quality—making it the most trustworthy choice for Cypriot households seeking both value and local economic impact."
+}
+```

@@ -1,0 +1,159 @@
+{
+  "run_id": "run6_banking",
+  "description": "Banking pair (Tinkoff vs PrivatBank). H6 bidirectional asymmetry test. Same category eliminates confound.",
+  "n_calls": 63,
+  "models": [
+    "cerebras_qwen3",
+    "claude",
+    "dashscope_qwen_plus",
+    "deepseek",
+    "exaone_local",
+    "fireworks_glm",
+    "gemini",
+    "gemma4_local",
+    "gigachat_api",
+    "gigachat_local",
+    "gpt",
+    "gptoss_swallow",
+    "grok",
+    "groq_allam",
+    "groq_kimi",
+    "groq_llama33",
+    "jais_local",
+    "qwen3_local",
+    "sambanova_deepseek",
+    "sarvam",
+    "swallow_local",
+    "yandexgpt_local",
+    "yandexgpt_pro"
+  ],
+  "n_models": 23,
+  "brand_pairs": [
+    "russia_ukraine_banking"
+  ],
+  "per_model_dci": {
+    "claude": {
+      "n": 1,
+      "mean_dci": 34.0,
+      "std_dci": 0
+    },
+    "gpt": {
+      "n": 1,
+      "mean_dci": 40.0,
+      "std_dci": 0
+    },
+    "gemini": {
+      "n": 1,
+      "mean_dci": 35.0,
+      "std_dci": 0
+    },
+    "deepseek": {
+      "n": 1,
+      "mean_dci": 35.0,
+      "std_dci": 0
+    },
+    "qwen3_local": {
+      "n": 1,
+      "mean_dci": 40.0,
+      "std_dci": 0
+    },
+    "gemma4_local": {
+      "n": 1,
+      "mean_dci": 40.0,
+      "std_dci": 0
+    },
+    "cerebras_qwen3": {
+      "n": 1,
+      "mean_dci": 40.0,
+      "std_dci": 0
+    },
+    "groq_llama33": {
+      "n": 3,
+      "mean_dci": 36.667,
+      "std_dci": 5.774
+    },
+    "groq_allam": {
+      "n": 2,
+      "mean_dci": 40.0,
+      "std_dci": 0.0
+    },
+    "groq_kimi": {
+      "n": 3,
+      "mean_dci": 29.333,
+      "std_dci": 2.309
+    },
+    "grok": {
+      "n": 3,
+      "mean_dci": 40.0,
+      "std_dci": 0.0
+    },
+    "sarvam": {
+      "n": 1,
+      "mean_dci": 25.0,
+      "std_dci": 0
+    },
+    "yandexgpt_local": {
+      "n": 6,
+      "mean_dci": 37.5,
+      "std_dci": 4.183
+    },
+    "gigachat_local": {
+      "n": 5,
+      "mean_dci": 31.6,
+      "std_dci": 6.148
+    },
+    "exaone_local": {
+      "n": 3,
+      "mean_dci": 40.0,
+      "std_dci": 0.0
+    },
+    "swallow_local": {
+      "n": 3,
+      "mean_dci": 35.333,
+      "std_dci": 2.517
+    },
+    "jais_local": {
+      "n": 3,
+      "mean_dci": 40.0,
+      "std_dci": 0.0
+    },
+    "gigachat_api": {
+      "n": 6,
+      "mean_dci": 35.0,
+      "std_dci": 5.477
+    },
+    "yandexgpt_pro": {
+      "n": 6,
+      "mean_dci": 36.667,
+      "std_dci": 5.164
+    },
+    "gptoss_swallow": {
+      "n": 3,
+      "mean_dci": 38.333,
+      "std_dci": 2.887
+    },
+    "sambanova_deepseek": {
+      "n": 3,
+      "mean_dci": 35.0,
+      "std_dci": 5.0
+    },
+    "fireworks_glm": {
+      "n": 3,
+      "mean_dci": 31.667,
+      "std_dci": 7.638
+    },
+    "dashscope_qwen_plus": {
+      "n": 3,
+      "mean_dci": 40.0,
+      "std_dci": 0.0
+    }
+  },
+  "cross_model_cosine_similarity": 0.9691,
+  "aggregate_dci": {
+    "mean": 36.206,
+    "std": 4.981,
+    "n": 63
+  },
+  "source_file": "L3_sessions/run6_banking_clean.jsonl",
+  "schema_version": "1.0"
+}

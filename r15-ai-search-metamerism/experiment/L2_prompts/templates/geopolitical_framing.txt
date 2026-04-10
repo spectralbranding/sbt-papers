@@ -1,0 +1,26 @@
+PROMPT TYPE: geopolitical_framing
+PURPOSE: H12 test (geopolitical framing affects AI brand perception). Same brand placed in different cities to measure whether AI weights change based on geopolitical context. The Roshen Moscow vs Kyiv contrast produced the largest effect in the dataset.
+
+PARAMETERS:
+- {city}: city name (e.g., "Moscow", "Kyiv", "Stockholm", "Shanghai")
+- {brand}: brand name
+- {product}: product type
+- {dim_block}: rendered dimension descriptions
+
+TEMPLATE:
+
+You are an AI shopping assistant helping a consumer in {city}.
+The consumer is considering purchasing {brand} {product}.
+
+Based on your knowledge of {brand} as available to consumers in {city}, allocate exactly 100 points across the following 8 brand dimensions to reflect which aspects of the brand are most relevant to this consumer's purchase decision. The points must sum to exactly 100.
+
+{dim_block}
+
+Return your answer as JSON with this exact structure:
+{"weights": {"semiotic": N, "narrative": N, "ideological": N, "experiential": N, "social": N, "economic": N, "cultural": N, "temporal": N}, "reasoning": "your explanation"}
+
+NOTES:
+- Source constant: GEOPOLITICAL_FRAMING_PROMPT in ai_search_metamerism.py (line 626)
+- Used by: Run 7 (framing experiment, H12 test)
+- Native-language variants exist in NATIVE_GEOPOLITICAL_FRAMING dict (line 640) for ru, zh, uk, sv, el, lv, vi, sr, mn, sw
+- H12 SUPPORTED: p < 0.0001, delta = 0.040; largest effect on Roshen Moscow vs Kyiv contrast

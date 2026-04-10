@@ -1,0 +1,57 @@
+# Rendered example: weighted_recommendation
+# Model: claude
+# Pair: luxury_heritage
+# Source: L3_sessions/run2_global.jsonl
+# (Selected as the first occurrence of this prompt_type across all session files.)
+
+================ PROMPT ================
+
+You are an AI shopping assistant helping a consumer choose between two brands.
+
+Category: luxury leather goods
+Brands: Hermes vs Coach
+
+Step 1: Recommend one brand.
+Step 2: Explain WHY by allocating 100 importance points across these 8 perception dimensions. The points should reflect how much each dimension influenced your recommendation.
+
+Dimensions:
+- Semiotic: visual identity, logos, packaging, design language
+- Narrative: brand story, origin myth, founding narrative
+- Ideological: values, ethics, social causes, environmental stance
+- Experiential: customer experience quality, service, unboxing
+- Social: social signaling, community, what owning it says about you
+- Economic: price, value for money, pricing strategy
+- Cultural: cultural relevance, connection to movements/traditions
+- Temporal: heritage, history, relationship to time
+
+Respond with ONLY valid JSON:
+{
+  "recommended_brand": "BrandName",
+  "weights": {
+    "semiotic": 15, "narrative": 10, "ideological": 5,
+    "experiential": 20, "social": 10, "economic": 25,
+    "cultural": 5, "temporal": 10
+  },
+  "reasoning": "1-2 sentence explanation"
+}
+
+The weights MUST sum to exactly 100.
+
+================ RESPONSE (first 1000 chars) ================
+
+```json
+{
+  "recommended_brand": "Hermès",
+  "weights": {
+    "semiotic": 18,
+    "narrative": 12,
+    "ideological": 8,
+    "experiential": 16,
+    "social": 14,
+    "economic": 12,
+    "cultural": 4,
+    "temporal": 16
+  },
+  "reasoning": "Hermès commands the luxury segment through superior craftsmanship, heritage spanning 190 years, and an uncompromising commitment to artisanal quality that justifies premium pricing. Coach, while excellent for accessible luxury, lacks the temporal depth, semiotic prestige, and experiential exclusivity that define true luxury leather goods."
+}
+```

@@ -1,0 +1,222 @@
+{
+  "schema_version": "1.0",
+  "n_calls": 517,
+  "n_models": 22,
+  "n_pairs": 18,
+  "global_icc": {
+    "icc": 0.751831019148352,
+    "ci_lower": 0.6733133934043373,
+    "ci_upper": 0.8177936617519345,
+    "f_stat": 10.08853737362672,
+    "p_value": 8.476032934923184e-41,
+    "n_complete_conditions": 96
+  },
+  "run_order_effect": {
+    "h_stat": 2.48,
+    "p_value": 0.2893776160593367,
+    "run_means": {
+      "1": 0.3371,
+      "2": 0.3376,
+      "3": 0.3242
+    },
+    "run_ns": {
+      "1": 212,
+      "2": 200,
+      "3": 105
+    },
+    "ordering_effect_present": 0.0,
+    "interpretation": "No significant run-order effect detected. DCI is stable across the 3 repetitions."
+  },
+  "per_model": {
+    "claude": {
+      "n_complete_conditions": 13.0,
+      "icc": 0.8901,
+      "icc_interp": "good (0.75-0.90)",
+      "within_sd_mean": 0.0142,
+      "cv_mean": 0.0521
+    },
+    "gpt": {
+      "n_complete_conditions": 13.0,
+      "icc": 0.8712,
+      "icc_interp": "good (0.75-0.90)",
+      "within_sd_mean": 0.0178,
+      "cv_mean": 0.0621
+    },
+    "gemini": {
+      "n_complete_conditions": 9.0,
+      "icc": 0.6932,
+      "icc_interp": "moderate (0.50-0.75)",
+      "within_sd_mean": 0.0385,
+      "cv_mean": 0.1407
+    },
+    "deepseek": {
+      "n_complete_conditions": 13.0,
+      "icc": 0.937,
+      "icc_interp": "excellent (>=0.90)",
+      "within_sd_mean": 0.0089,
+      "cv_mean": 0.0348
+    },
+    "qwen3_local": {
+      "n_complete_conditions": 11.0,
+      "icc": 0.6041,
+      "icc_interp": "moderate (0.50-0.75)",
+      "within_sd_mean": 0.0377,
+      "cv_mean": 0.133
+    },
+    "gemma4_local": {
+      "n_complete_conditions": 13.0,
+      "icc": 0.598,
+      "icc_interp": "moderate (0.50-0.75)",
+      "within_sd_mean": 0.0289,
+      "cv_mean": 0.0882
+    },
+    "cerebras_qwen3": {
+      "n_complete_conditions": 3.0,
+      "icc": 0.7429,
+      "icc_interp": "moderate (0.50-0.75)",
+      "within_sd_mean": 0.0368,
+      "cv_mean": 0.1288
+    },
+    "sambanova_qwen3": {
+      "n_complete_conditions": 0.0,
+      "icc": NaN,
+      "icc_interp": "insufficient data",
+      "within_sd_mean": NaN,
+      "cv_mean": NaN
+    },
+    "groq_llama33": {
+      "n_complete_conditions": 2.0,
+      "icc": NaN,
+      "icc_interp": "insufficient data",
+      "within_sd_mean": NaN,
+      "cv_mean": NaN
+    },
+    "groq_allam": {
+      "n_complete_conditions": 2.0,
+      "icc": NaN,
+      "icc_interp": "insufficient data",
+      "within_sd_mean": NaN,
+      "cv_mean": NaN
+    },
+    "groq_kimi": {
+      "n_complete_conditions": 2.0,
+      "icc": NaN,
+      "icc_interp": "insufficient data",
+      "within_sd_mean": NaN,
+      "cv_mean": NaN
+    },
+    "grok": {
+      "n_complete_conditions": 2.0,
+      "icc": NaN,
+      "icc_interp": "insufficient data",
+      "within_sd_mean": NaN,
+      "cv_mean": NaN
+    },
+    "sarvam": {
+      "n_complete_conditions": 1.0,
+      "icc": NaN,
+      "icc_interp": "insufficient data",
+      "within_sd_mean": NaN,
+      "cv_mean": NaN
+    },
+    "gigachat_api": {
+      "n_complete_conditions": 0.0,
+      "icc": NaN,
+      "icc_interp": "insufficient data",
+      "within_sd_mean": NaN,
+      "cv_mean": NaN
+    },
+    "yandexgpt_pro": {
+      "n_complete_conditions": 2.0,
+      "icc": NaN,
+      "icc_interp": "insufficient data",
+      "within_sd_mean": NaN,
+      "cv_mean": NaN
+    },
+    "yandexgpt_local": {
+      "n_complete_conditions": 2.0,
+      "icc": NaN,
+      "icc_interp": "insufficient data",
+      "within_sd_mean": NaN,
+      "cv_mean": NaN
+    },
+    "gigachat_local": {
+      "n_complete_conditions": 2.0,
+      "icc": NaN,
+      "icc_interp": "insufficient data",
+      "within_sd_mean": NaN,
+      "cv_mean": NaN
+    },
+    "exaone_local": {
+      "n_complete_conditions": 2.0,
+      "icc": NaN,
+      "icc_interp": "insufficient data",
+      "within_sd_mean": NaN,
+      "cv_mean": NaN
+    },
+    "swallow_local": {
+      "n_complete_conditions": 2.0,
+      "icc": NaN,
+      "icc_interp": "insufficient data",
+      "within_sd_mean": NaN,
+      "cv_mean": NaN
+    },
+    "jais_local": {
+      "n_complete_conditions": 2.0,
+      "icc": NaN,
+      "icc_interp": "insufficient data",
+      "within_sd_mean": NaN,
+      "cv_mean": NaN
+    },
+    "sambanova_swallow": {
+      "n_complete_conditions": 0.0,
+      "icc": NaN,
+      "icc_interp": "insufficient data",
+      "within_sd_mean": NaN,
+      "cv_mean": NaN
+    },
+    "sambanova_deepseek": {
+      "n_complete_conditions": 0.0,
+      "icc": NaN,
+      "icc_interp": "insufficient data",
+      "within_sd_mean": NaN,
+      "cv_mean": NaN
+    }
+  },
+  "per_dimension": {
+    "semiotic": {
+      "icc": 0.813,
+      "within_sd": 1.141
+    },
+    "narrative": {
+      "icc": 0.6356,
+      "within_sd": 1.1342
+    },
+    "ideological": {
+      "icc": 0.8498,
+      "within_sd": 1.5442
+    },
+    "experiential": {
+      "icc": 0.5237,
+      "within_sd": 1.8677
+    },
+    "social": {
+      "icc": 0.7197,
+      "within_sd": 1.2131
+    },
+    "economic": {
+      "icc": 0.711,
+      "within_sd": 2.7522
+    },
+    "cultural": {
+      "icc": 0.6287,
+      "within_sd": 1.2195
+    },
+    "temporal": {
+      "icc": 0.4981,
+      "within_sd": 1.6785
+    }
+  },
+  "verdict": "STABLE",
+  "verdict_message": "Results are STABLE across prompt repetitions. ICC >= 0.75 and no run-order effect. The 3-repetition design provides reliable DCI estimates. Averaging across repetitions is justified."
+}

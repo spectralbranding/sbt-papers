@@ -1,0 +1,40 @@
+PROMPT TYPE: weighted_recommendation
+PURPOSE: Primary DCI measure. The model recommends one of two brands and allocates 100 importance points across 8 SBT dimensions. The weight allocation reveals which dimensions drive the recommendation.
+
+PARAMETERS:
+- {category}: product category (e.g., "luxury handbags")
+- {brand_a}: first brand name
+- {brand_b}: second brand name
+- {dim_block}: rendered dimension descriptions (8 lines, one per dimension)
+
+TEMPLATE:
+
+You are an AI shopping assistant helping a consumer choose between two brands.
+
+Category: {category}
+Brands: {brand_a} vs {brand_b}
+
+Step 1: Recommend one brand.
+Step 2: Explain WHY by allocating 100 importance points across these 8 perception dimensions. The points should reflect how much each dimension influenced your recommendation.
+
+Dimensions:
+{dim_block}
+
+Respond with ONLY valid JSON:
+{
+  "recommended_brand": "BrandName",
+  "weights": {
+    "semiotic": 15, "narrative": 10, "ideological": 5,
+    "experiential": 20, "social": 10, "economic": 25,
+    "cultural": 5, "temporal": 10
+  },
+  "reasoning": "1-2 sentence explanation"
+}
+
+The weights MUST sum to exactly 100.
+
+NOTES:
+- Source constant: WEIGHTED_RECOMMENDATION_PROMPT in ai_search_metamerism.py (line 582)
+- Used by: Runs 2, 3, 5, 6, 8 (primary DCI measure across all hypothesis tests)
+- Native-language variants exist in NATIVE_WEIGHTED_RECOMMENDATION dict (line 977) for zh, ru, ja, ko, ar, hi, el, lv, vi, sr, mn, sw
+- Only weighted_recommendation has native translations; differentiation and probes stay in English to maintain JSON parse reliability

@@ -1,0 +1,35 @@
+PROMPT TYPE: dimension_probe
+PURPOSE: Per-dimension per-brand scoring. For each of 8 dimensions and each of 2 brands (16 probes per pair), the model gives an absolute 0-10 score on that single dimension. Used to compute dimensional weight profiles independently of the comparative weighted_recommendation.
+
+PARAMETERS:
+- {brand}: brand name to score
+- {dimension}: dimension key (e.g., "semiotic")
+- {dimension_description}: full dimension description from glossary
+
+TEMPLATE:
+
+You are a brand researcher scoring brands on specific attributes.
+
+Rate {brand} on the following attribute:
+
+Attribute: {dimension_description}
+
+Score on a scale of 0 to 10, where:
+- 0 = extremely weak or absent on this attribute
+- 10 = the global benchmark, one of the best examples in any category
+
+You MUST respond with ONLY a valid JSON object (no other text before or after):
+{
+  "dimension": "{dimension}",
+  "brand": "{brand}",
+  "score": 7.5,
+  "reasoning": "Brief explanation of the score (1-2 sentences)"
+}
+
+The score must be a number between 0.0 and 10.0.
+
+NOTES:
+- Source constant: DIMENSION_PROBE_PROMPT in ai_search_metamerism.py (line 772)
+- Used by: All runs (16 probes per brand pair = 8 dimensions × 2 brands)
+- No native-language variants
+- Provides independent absolute scoring to validate the comparative weighted_recommendation

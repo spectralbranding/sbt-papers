@@ -1,0 +1,84 @@
+======================================================================
+R15 PROMPT SENSITIVITY ANALYSIS
+Stability of DCI across 3 repetitions per condition
+======================================================================
+
+Loaded 517 valid weighted_recommendation calls
+Models: 22, Brand pairs: 18
+----------------------------------------------------------------------
+1. GLOBAL ICC (all models x all brand pairs)
+----------------------------------------------------------------------
+Total conditions (model x pair): 216
+Conditions with all 3 repetitions: 96
+Conditions with missing repetitions: 120
+
+ICC(3,1) = 0.7518  [0.6733, 0.8178]
+Interpretation: good (0.75-0.90)
+F(95, 190) = 10.089, p = 8.4760e-41
+
+Mean within-condition SD of DCI: 0.0256
+Median within-condition SD: 0.0259
+Max within-condition SD: 0.1258
+Mean coefficient of variation: 0.0839
+Fraction of conditions with SD < 0.02: 45.83%
+Fraction of conditions with SD > 0.05: 15.62%
+----------------------------------------------------------------------
+2. RUN-ORDER EFFECT TEST (Kruskal-Wallis across runs 1, 2, 3)
+----------------------------------------------------------------------
+  h_stat: 2.4800
+  p_value: 0.2894
+  run_means: {1: 0.3371, 2: 0.3376, 3: 0.3242}
+  run_ns: {1: 212, 2: 200, 3: 105}
+  ordering_effect_present: False
+  interpretation: No significant run-order effect detected. DCI is stable across the 3 repetitions.
+----------------------------------------------------------------------
+3. PER-MODEL STABILITY
+----------------------------------------------------------------------
+
+Model                  n_cond     ICC  within_SD       CV Stability
+----------------------------------------------------------------------
+deepseek                   13  0.9370     0.0089   0.0348  excellent (>=0.90)
+claude                     13  0.8901     0.0142   0.0521  good (0.75-0.90)
+gpt                        13  0.8712     0.0178   0.0621  good (0.75-0.90)
+cerebras_qwen3              3  0.7429     0.0368   0.1288  moderate (0.50-0.75)
+gemini                      9  0.6932     0.0385   0.1407  moderate (0.50-0.75)
+qwen3_local                11  0.6041     0.0377   0.1330  moderate (0.50-0.75)
+gemma4_local               13  0.5980     0.0289   0.0882  moderate (0.50-0.75)
+sambanova_qwen3             0     N/A        N/A      N/A  insufficient data
+groq_llama33                2     N/A        N/A      N/A  insufficient data
+groq_allam                  2     N/A        N/A      N/A  insufficient data
+groq_kimi                   2     N/A        N/A      N/A  insufficient data
+grok                        2     N/A        N/A      N/A  insufficient data
+sarvam                      1     N/A        N/A      N/A  insufficient data
+gigachat_api                0     N/A        N/A      N/A  insufficient data
+yandexgpt_pro               2     N/A        N/A      N/A  insufficient data
+yandexgpt_local             2     N/A        N/A      N/A  insufficient data
+gigachat_local              2     N/A        N/A      N/A  insufficient data
+exaone_local                2     N/A        N/A      N/A  insufficient data
+swallow_local               2     N/A        N/A      N/A  insufficient data
+jais_local                  2     N/A        N/A      N/A  insufficient data
+sambanova_swallow           0     N/A        N/A      N/A  insufficient data
+sambanova_deepseek          0     N/A        N/A      N/A  insufficient data
+----------------------------------------------------------------------
+4. PER-DIMENSION WEIGHT STABILITY
+----------------------------------------------------------------------
+
+Dimension            ICC  within_SD Stability
+--------------------------------------------------
+semiotic          0.8130     1.1410  good (0.75-0.90)
+narrative         0.6356     1.1342  moderate (0.50-0.75)
+ideological       0.8498     1.5442  good (0.75-0.90)
+experiential      0.5237     1.8677  moderate (0.50-0.75)
+social            0.7197     1.2131  moderate (0.50-0.75)
+economic          0.7110     2.7522  moderate (0.50-0.75)
+cultural          0.6287     1.2195  moderate (0.50-0.75)
+temporal          0.4981     1.6785  poor (<0.50)
+======================================================================
+SUMMARY VERDICT
+----------------------------------------------------------------------
+Global ICC(3,1) = 0.7518  (good (0.75-0.90))
+Run-order effect: NOT DETECTED (p>=0.05)
+
+CONCLUSION: Results are STABLE across prompt repetitions. ICC >= 0.75 and no run-order effect. The 3-repetition design provides reliable DCI estimates. Averaging across repetitions is justified.
+
+Wrote: prompt_sensitivity_results.json

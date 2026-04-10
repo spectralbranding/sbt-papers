@@ -1,0 +1,198 @@
+{
+  "run_id": "run2_global",
+  "description": "Run 2: 10 global brand pairs, 6 LLMs, 3 runs each. Primary DCI measure.",
+  "n_calls": 199,
+  "n_successful": 199,
+  "models": [
+    "claude",
+    "dashscope_qwen_plus",
+    "deepseek",
+    "gemini",
+    "gemma4_local",
+    "gpt",
+    "qwen3_local"
+  ],
+  "brand_pairs": [
+    "artisanal_food",
+    "auto_disruption",
+    "boutique_hotel",
+    "craft_spirits",
+    "ethical_finance",
+    "heritage_sportswear",
+    "indie_beauty",
+    "luxury_heritage",
+    "premium_tech",
+    "purpose_driven"
+  ],
+  "dimensional_weights": {
+    "claude": {
+      "semiotic": 13.2,
+      "narrative": 10.733,
+      "ideological": 12.033,
+      "experiential": 19.067,
+      "social": 13.133,
+      "economic": 16.4,
+      "cultural": 7.2,
+      "temporal": 8.233
+    },
+    "gpt": {
+      "semiotic": 17.5,
+      "narrative": 13.5,
+      "ideological": 14.167,
+      "experiential": 20.333,
+      "social": 11.167,
+      "economic": 11.333,
+      "cultural": 6.1,
+      "temporal": 5.9
+    },
+    "gemini": {
+      "semiotic": 13.44,
+      "narrative": 9.44,
+      "ideological": 11.6,
+      "experiential": 18.08,
+      "social": 15.72,
+      "economic": 12.92,
+      "cultural": 9.72,
+      "temporal": 9.08
+    },
+    "deepseek": {
+      "semiotic": 13.167,
+      "narrative": 10.5,
+      "ideological": 12.667,
+      "experiential": 18.333,
+      "social": 14.833,
+      "economic": 11.0,
+      "cultural": 10.667,
+      "temporal": 8.833
+    },
+    "qwen3_local": {
+      "semiotic": 12.692,
+      "narrative": 10.0,
+      "ideological": 11.923,
+      "experiential": 19.615,
+      "social": 11.538,
+      "economic": 20.0,
+      "cultural": 5.0,
+      "temporal": 9.231
+    },
+    "gemma4_local": {
+      "semiotic": 19.643,
+      "narrative": 13.143,
+      "ideological": 11.25,
+      "experiential": 18.929,
+      "social": 14.643,
+      "economic": 15.071,
+      "cultural": 5.321,
+      "temporal": 7.357
+    },
+    "dashscope_qwen_plus": {
+      "semiotic": 13.733,
+      "narrative": 9.6,
+      "ideological": 7.667,
+      "experiential": 19.167,
+      "social": 9.6,
+      "economic": 24.4,
+      "cultural": 5.5,
+      "temporal": 10.333
+    }
+  },
+  "dci_per_model": {
+    "claude": 29.6,
+    "gpt": 28.833,
+    "gemini": 26.36,
+    "deepseek": 24.167,
+    "qwen3_local": 32.692,
+    "gemma4_local": 34.714,
+    "dashscope_qwen_plus": 38.133
+  },
+  "dci_aggregate": {
+    "mean": 30.668,
+    "std": 7.973,
+    "n": 199,
+    "baseline": 25.0,
+    "h1_t_statistic": 10.0285,
+    "h1_p_value": 0.0
+  },
+  "cosine_similarity": {
+    "model_order": [
+      "claude",
+      "dashscope_qwen_plus",
+      "deepseek",
+      "gemini",
+      "gemma4_local",
+      "gpt",
+      "qwen3_local"
+    ],
+    "matrix": [
+      [
+        1.0,
+        0.9656,
+        0.9831,
+        0.9894,
+        0.9833,
+        0.9757,
+        0.9923
+      ],
+      [
+        0.9656,
+        1.0,
+        0.9103,
+        0.9305,
+        0.9414,
+        0.9106,
+        0.9857
+      ],
+      [
+        0.9831,
+        0.9103,
+        1.0,
+        0.997,
+        0.9695,
+        0.9727,
+        0.9547
+      ],
+      [
+        0.9894,
+        0.9305,
+        0.997,
+        1.0,
+        0.9754,
+        0.9676,
+        0.9669
+      ],
+      [
+        0.9833,
+        0.9414,
+        0.9695,
+        0.9754,
+        1.0,
+        0.9864,
+        0.9688
+      ],
+      [
+        0.9757,
+        0.9106,
+        0.9727,
+        0.9676,
+        0.9864,
+        1.0,
+        0.9551
+      ],
+      [
+        0.9923,
+        0.9857,
+        0.9547,
+        0.9669,
+        0.9688,
+        0.9551,
+        1.0
+      ]
+    ],
+    "mean_pairwise": 0.9658
+  },
+  "source_files": [
+    "run2_global.jsonl",
+    "run2_qwen_plus.jsonl"
+  ],
+  "schema_version": "1.0"
+}
