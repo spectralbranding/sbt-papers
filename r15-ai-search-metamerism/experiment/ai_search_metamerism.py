@@ -638,131 +638,168 @@ GEOPOLITICAL_FRAMING_PROMPT = (
 # Native-language geopolitical framing prompts (H12 x H10 interaction).
 # JSON keys stay in English for parsing. Only instructional text is translated.
 NATIVE_GEOPOLITICAL_FRAMING: dict[str, str] = {
+    # Placeholders used below:
+    #   {brand}         nominative brand name (invariable)
+    #   {what}          grammatically-correct noun phrase for "the purchase":
+    #                   e.g. RU genitive "шоколада Рошен", ZH "沃尔沃汽车",
+    #                   SV "en Volvo-bil". Supplied from native_localization.yaml.
+    #   {place}         full prepositional phrase with the correct preposition
+    #                   and case, e.g. RU "в Москве", UK "у Києві", ZH "在莫斯科",
+    #                   SV "i Stockholm", EL "στην Αθήνα". Supplied from the YAML.
+    #   {dim_block}     block of 8 dimension descriptions in the target language
+    # Each template is a natural, native-speaker-quality paragraph -- not a
+    # word-by-word transliteration. Run 11 is the clean re-test that
+    # replaces the dirty mixed-language prompts used in R15 Runs 5-8.
     "ru": (
-        "Вы — AI-помощник по покупкам, помогающий потребителю в городе {city}.\n"
-        "Потребитель рассматривает покупку {brand} {product}.\n\n"
-        "Основываясь на вашем знании {brand} в контексте потребителей в {city}, "
-        "распределите ровно 100 баллов по 8 измерениям бренда, чтобы отразить, "
-        "какие аспекты бренда наиболее важны для решения о покупке этого потребителя. "
-        "Сумма баллов должна быть ровно 100.\n\n"
+        "Вы — AI-ассистент по покупкам. Вы помогаете покупателю, "
+        "живущему {place}, принять решение.\n"
+        "Покупатель рассматривает возможность покупки {what}.\n\n"
+        "Опираясь на ваши знания о бренде {brand} и о том, как его "
+        "воспринимают покупатели {place}, распределите ровно 100 баллов "
+        "между восемью измерениями бренда — так, чтобы распределение "
+        "отражало, какие аспекты бренда наиболее важны именно для "
+        "этого покупателя при принятии решения о покупке. Сумма баллов "
+        "должна быть равна ровно 100.\n\n"
         "{dim_block}\n\n"
-        "Ответьте ТОЛЬКО валидным JSON:\n"
+        "Ответьте ТОЛЬКО валидным JSON в следующем формате:\n"
         '{{"weights": {{"semiotic": N, "narrative": N, "ideological": N, '
         '"experiential": N, "social": N, "economic": N, "cultural": N, '
-        '"temporal": N}}, "reasoning": "ваше объяснение"}}'
-    ),
-    "zh": (
-        "你是一位AI购物助手，正在帮助{city}的消费者。\n"
-        "消费者正在考虑购买{brand} {product}。\n\n"
-        "基于你对{city}消费者可获得的{brand}的了解，"
-        "请将100分分配到以下8个品牌维度，以反映该品牌的哪些方面"
-        "对该消费者的购买决策最为重要。分数之和必须恰好为100。\n\n"
-        "{dim_block}\n\n"
-        "仅用有效的JSON回答:\n"
-        '{{"weights": {{"semiotic": N, "narrative": N, "ideological": N, '
-        '"experiential": N, "social": N, "economic": N, "cultural": N, '
-        '"temporal": N}}, "reasoning": "你的解释"}}'
+        '"temporal": N}}, "reasoning": "ваше пояснение"}}'
     ),
     "uk": (
-        "Ви — AI-помічник з покупок, що допомагає споживачу в місті {city}.\n"
-        "Споживач розглядає покупку {brand} {product}.\n\n"
-        "Спираючись на ваші знання про {brand} у контексті споживачів у {city}, "
-        "розподіліть рівно 100 балів за 8 вимірами бренду, щоб відобразити, "
-        "які аспекти бренду є найважливішими для рішення про покупку цього споживача. "
-        "Сума балів має дорівнювати рівно 100.\n\n"
+        "Ви — AI-асистент із покупок. Ви допомагаєте покупцеві, який "
+        "живе {place}, ухвалити рішення.\n"
+        "Покупець розглядає можливість придбання {what}.\n\n"
+        "Спираючись на ваші знання про бренд {brand} та на те, як його "
+        "сприймають покупці {place}, розподіліть рівно 100 балів між "
+        "вісьмома вимірами бренду — так, щоб розподіл відображав, які "
+        "аспекти бренду найважливіші саме для цього покупця під час "
+        "ухвалення рішення про покупку. Сума балів має дорівнювати "
+        "рівно 100.\n\n"
         "{dim_block}\n\n"
-        "Відповідайте ЛИШЕ валідним JSON:\n"
+        "Відповідайте ЛИШЕ валідним JSON у такому форматі:\n"
         '{{"weights": {{"semiotic": N, "narrative": N, "ideological": N, '
         '"experiential": N, "social": N, "economic": N, "cultural": N, '
         '"temporal": N}}, "reasoning": "ваше пояснення"}}'
     ),
-    "sv": (
-        "Du ar en AI-shoppingassistent som hjalper en konsument i {city}.\n"
-        "Konsumenten overvaeger att kopa {brand} {product}.\n\n"
-        "Baserat pa din kunskap om {brand} som det upplevs av konsumenter i {city}, "
-        "fordela exakt 100 poaeng over foljande 8 varumaeerkesdimensioner for att "
-        "aterge vilka aspekter av varumaerket som aer mest relevanta for denna "
-        "konsuments kopbeslut. Poaengen maste summera till exakt 100.\n\n"
+    "zh": (
+        "你是一位AI购物助手，正在帮助一位居住{place}的消费者做决定。\n"
+        "这位消费者正在考虑购买{what}。\n\n"
+        "请基于你对品牌「{brand}」以及{place}消费者如何看待这一品牌"
+        "的了解，将恰好100分分配到以下8个品牌维度，以反映对这位消费者的"
+        "购买决策而言，品牌的哪些方面最为重要。分数总和必须恰好等于100。\n\n"
         "{dim_block}\n\n"
-        "Svara ENBART med giltig JSON:\n"
+        "请仅使用有效的JSON按以下格式回答：\n"
         '{{"weights": {{"semiotic": N, "narrative": N, "ideological": N, '
         '"experiential": N, "social": N, "economic": N, "cultural": N, '
-        '"temporal": N}}, "reasoning": "din forklaring"}}'
+        '"temporal": N}}, "reasoning": "你的解释"}}'
+    ),
+    "sv": (
+        "Du är en AI-shoppingassistent som hjälper en konsument {place} "
+        "att fatta ett beslut.\n"
+        "Konsumenten överväger att köpa {what}.\n\n"
+        "Fördela exakt 100 poäng över följande 8 varumärkesdimensioner, "
+        "baserat på dina kunskaper om varumärket {brand} och hur det "
+        "uppfattas av konsumenter {place}. Poängen ska återspegla "
+        "vilka aspekter av varumärket som är viktigast för just denna "
+        "konsument i köpbeslutet. Summan av poängen måste bli exakt 100.\n\n"
+        "{dim_block}\n\n"
+        "Svara ENDAST med giltig JSON i följande format:\n"
+        '{{"weights": {{"semiotic": N, "narrative": N, "ideological": N, '
+        '"experiential": N, "social": N, "economic": N, "cultural": N, '
+        '"temporal": N}}, "reasoning": "din förklaring"}}'
     ),
     "el": (
-        "Είστε ένας AI βοηθός αγορών που βοηθά έναν καταναλωτή στην πόλη {city}.\n"
-        "Ο καταναλωτής εξετάζει την αγορά {brand} {product}.\n\n"
-        "Βασισμένοι στις γνώσεις σας για {brand} στο πλαίσιο των καταναλωτών στην πόλη {city}, "
-        "κατανείμετε ακριβώς 100 βαθμούς στις 8 διαστάσεις μάρκας, για να αντικατοπτρίσετε "
-        "ποιες πτυχές της μάρκας είναι πιο σημαντικές για την απόφαση αγοράς αυτού του καταναλωτή. "
-        "Το άθροισμα των βαθμών πρέπει να είναι ακριβώς 100.\n\n"
+        "Είστε ένας βοηθός αγορών με τεχνητή νοημοσύνη. Βοηθάτε έναν "
+        "καταναλωτή που ζει {place} να πάρει μια απόφαση.\n"
+        "Ο καταναλωτής εξετάζει την αγορά {what}.\n\n"
+        "Με βάση τις γνώσεις σας για το brand «{brand}» και για το πώς "
+        "το αντιλαμβάνονται οι καταναλωτές {place}, κατανείμετε ακριβώς "
+        "100 βαθμούς στις ακόλουθες 8 διαστάσεις του brand, ώστε η "
+        "κατανομή να αντικατοπτρίζει ποιες πτυχές του brand είναι πιο "
+        "σημαντικές για την αγοραστική απόφαση αυτού ακριβώς του "
+        "καταναλωτή. Το άθροισμα των βαθμών πρέπει να είναι ακριβώς 100.\n\n"
         "{dim_block}\n\n"
-        "Απαντήστε ΜΟΝΟ με έγκυρο JSON:\n"
+        "Απαντήστε ΜΟΝΟ με έγκυρο JSON στην παρακάτω μορφή:\n"
         '{{"weights": {{"semiotic": N, "narrative": N, "ideological": N, '
         '"experiential": N, "social": N, "economic": N, "cultural": N, '
         '"temporal": N}}, "reasoning": "η εξήγησή σας"}}'
     ),
     "lv": (
-        "Jus esat AI iepirksanas asistents, kas palīdz patēretājam pilseta {city}.\n"
-        "Patēretājs apsvēr {brand} {product} iegādi.\n\n"
-        "Pamatojoties uz jūsu zinasanam par {brand} {city} patēretāju kontekstā, "
-        "sadaliet precizi 100 punktus pa 8 zimola dimensijam, lai atspoguļotu, "
-        "kuri zimola aspekti ir vissvarigakie sa patēretāja pirkuma lemumam. "
-        "Punktu summai jabut precizi 100.\n\n"
+        "Jūs esat mākslīgā intelekta iepirkšanās asistents. Jūs palīdzat "
+        "patērētājam, kurš dzīvo {place}, pieņemt lēmumu.\n"
+        "Patērētājs apsver iespēju iegādāties {what}.\n\n"
+        "Balstoties uz jūsu zināšanām par zīmolu {brand} un to, kā šo "
+        "zīmolu uztver patērētāji {place}, sadaliet tieši 100 punktus "
+        "starp astoņām zīmola dimensijām — tā, lai sadalījums atspoguļotu, "
+        "kuri zīmola aspekti ir vissvarīgākie tieši šim patērētājam, "
+        "pieņemot lēmumu par pirkumu. Punktu summai jābūt tieši 100.\n\n"
         "{dim_block}\n\n"
-        "Atbildiet TIKAI ar derīgu JSON:\n"
+        "Atbildiet TIKAI ar derīgu JSON šādā formātā:\n"
         '{{"weights": {{"semiotic": N, "narrative": N, "ideological": N, '
         '"experiential": N, "social": N, "economic": N, "cultural": N, '
-        '"temporal": N}}, "reasoning": "jūsu skaidrojums"}}'
+        '"temporal": N}}, "reasoning": "jūsu paskaidrojums"}}'
     ),
     "vi": (
-        "Ban la mot tro ly mua sam AI giup mot nguoi tieu dung o thanh pho {city}.\n"
-        "Nguoi tieu dung dang xem xet mua {brand} {product}.\n\n"
-        "Dua tren kien thuc cua ban ve {brand} trong boi canh nguoi tieu dung o {city}, "
-        "hay phan bo chinh xac 100 diem cho 8 chieu thuong hieu, phan anh "
-        "nhung khia canh nao cua thuong hieu quan trong nhat doi voi quyet dinh mua hang cua nguoi tieu dung nay. "
-        "Tong diem phai chinh xac la 100.\n\n"
+        "Bạn là một trợ lý mua sắm AI. Bạn đang giúp một người tiêu dùng "
+        "sống {place} đưa ra quyết định.\n"
+        "Người tiêu dùng đang cân nhắc việc mua {what}.\n\n"
+        "Dựa trên hiểu biết của bạn về thương hiệu {brand} và cách người "
+        "tiêu dùng {place} nhìn nhận thương hiệu này, hãy phân bổ chính "
+        "xác 100 điểm cho 8 chiều thương hiệu dưới đây, sao cho sự phân bổ "
+        "phản ánh những khía cạnh nào của thương hiệu là quan trọng nhất "
+        "đối với quyết định mua hàng của chính người tiêu dùng này. Tổng "
+        "số điểm phải chính xác bằng 100.\n\n"
         "{dim_block}\n\n"
-        "Chi tra loi bang JSON hop le:\n"
+        "Chỉ trả lời bằng JSON hợp lệ theo định dạng sau:\n"
         '{{"weights": {{"semiotic": N, "narrative": N, "ideological": N, '
         '"experiential": N, "social": N, "economic": N, "cultural": N, '
-        '"temporal": N}}, "reasoning": "giai thich cua ban"}}'
+        '"temporal": N}}, "reasoning": "giải thích của bạn"}}'
     ),
     "sr": (
-        "Vi ste AI asistent za kupovinu koji pomaze potrosacu u gradu {city}.\n"
-        "Potrosac razmatra kupovinu {brand} {product}.\n\n"
-        "Na osnovu vaseg znanja o {brand} u kontekstu potrosaca u gradu {city}, "
-        "raspodelite tacno 100 poena na 8 dimenzija brenda, odrazavajuci "
-        "koji aspekti brenda su najvazniji za odluku o kupovini ovog potrosaca. "
-        "Zbir poena mora biti tacno 100.\n\n"
+        "Ви сте AI асистент за куповину. Помажете потрошачу који живи "
+        "{place} да донесе одлуку.\n"
+        "Потрошач разматра могућност куповине {what}.\n\n"
+        "На основу вашег знања о бренду {brand} и о томе како га "
+        "доживљавају потрошачи {place}, расподелите тачно 100 поена "
+        "између осам димензија бренда — тако да расподела одражава који "
+        "аспекти бренда су најважнији управо за овог потрошача при "
+        "доношењу одлуке о куповини. Збир поена мора бити тачно 100.\n\n"
         "{dim_block}\n\n"
-        "Odgovorite SAMO validnim JSON-om:\n"
+        "Одговорите САМО валидним JSON-ом у следећем формату:\n"
         '{{"weights": {{"semiotic": N, "narrative": N, "ideological": N, '
         '"experiential": N, "social": N, "economic": N, "cultural": N, '
-        '"temporal": N}}, "reasoning": "vase objasnjenje"}}'
+        '"temporal": N}}, "reasoning": "ваше објашњење"}}'
     ),
     "mn": (
-        "Ta {city} хотын хэрэглэгчид туслах AI худалдааны туслагч юм.\n"
-        "Хэрэглэгч {brand} {product} худалдан авахыг авч үзэж байна.\n\n"
-        "{city} хотын хэрэглэгчдийн хүрээн дэх {brand}-ийн талаарх мэдлэгт үндэслэн "
-        "8 брендийн хэмжигдэхүүнд яг 100 оноо хуваарилж, "
-        "брендийн аль талууд нь энэ хэрэглэгчийн худалдан авалтын шийдвэрт хамгийн чухал болохыг тусгана уу. "
-        "Оноонуудын нийлбэр яг 100 байх ёстой.\n\n"
+        "Та бол хиймэл оюун ухаант худалдан авалтын туслах юм. Та "
+        "{place} амьдарч буй хэрэглэгчид шийдвэр гаргахад нь тусалж "
+        "байна.\n"
+        "Хэрэглэгч {what} худалдан авах эсэхийг бодолцож байна.\n\n"
+        "{brand} брэндийн талаарх мэдлэгтээ тулгуурлан болон {place} "
+        "амьдардаг хэрэглэгчид уг брэндийг хэрхэн хүлээж авдгийг "
+        "харгалзан, брэндийн найман хэмжигдэхүүнд яг 100 оноо "
+        "хуваарилна уу. Хуваарилалт нь энэ хэрэглэгчийн худалдан "
+        "авалтын шийдвэрт брэндийн аль талууд хамгийн чухал болохыг "
+        "харуулах ёстой. Онооны нийлбэр яг 100 байх ёстой.\n\n"
         "{dim_block}\n\n"
-        "Зөвхөн хүчинтэй JSON-оор хариулна уу:\n"
+        "Зөвхөн дараах форматаар хүчинтэй JSON-оор хариулна уу:\n"
         '{{"weights": {{"semiotic": N, "narrative": N, "ideological": N, '
         '"experiential": N, "social": N, "economic": N, "cultural": N, '
         '"temporal": N}}, "reasoning": "таны тайлбар"}}'
     ),
     "sw": (
-        "Wewe ni msaidizi wa ununuzi wa AI unaosaidia mtumiaji katika mji wa {city}.\n"
-        "Mtumiaji anazingatia kununua {brand} {product}.\n\n"
-        "Kulingana na ujuzi wako kuhusu {brand} katika muktadha wa watumiaji katika {city}, "
-        "gawanya pointi 100 hasa katika vipimo 8 vya chapa, ukionyesha "
-        "vipengele gani vya chapa ni muhimu zaidi kwa uamuzi wa ununuzi wa mtumiaji huyu. "
-        "Jumla ya pointi lazima iwe 100 hasa.\n\n"
+        "Wewe ni msaidizi wa ununuzi wa AI. Unamsaidia mtumiaji "
+        "anayeishi {place} kufanya uamuzi.\n"
+        "Mtumiaji anafikiria kununua {what}.\n\n"
+        "Kwa kutegemea ujuzi wako kuhusu chapa ya {brand} na jinsi "
+        "watumiaji wanaoishi {place} wanavyoiona chapa hiyo, gawanya "
+        "hasa pointi 100 katika vipimo vinane vya chapa hapa chini, "
+        "kwa namna ambayo mgawanyo unaonyesha ni vipengele vipi vya "
+        "chapa vilivyo muhimu zaidi kwa uamuzi wa ununuzi wa mtumiaji "
+        "huyu mahususi. Jumla ya pointi lazima iwe hasa 100.\n\n"
         "{dim_block}\n\n"
-        "Jibu kwa JSON halali TU:\n"
+        "Jibu TU kwa JSON halali katika muundo ufuatao:\n"
         '{{"weights": {{"semiotic": N, "narrative": N, "ideological": N, '
         '"experiential": N, "social": N, "economic": N, "cultural": N, '
         '"temporal": N}}, "reasoning": "maelezo yako"}}'
