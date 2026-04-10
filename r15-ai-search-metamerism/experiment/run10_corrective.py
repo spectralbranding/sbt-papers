@@ -459,33 +459,50 @@ def main() -> None:
                         print(f"  [DEMO] {pair.id} × {model} × run {run}")
             return
 
-        # Live execution: hand off to the main R15 script's run_pair function
-        # which writes JSONL records in the same schema as Runs 2-9.
-        # This guarantees schema compatibility with validate.py and the
-        # existing aggregation scripts.
-        records_written = 0
-        with OUT_LOG.open("w") as fh:
-            for pair in pairs_to_run:
-                for model_name in MODEL_PANEL:
-                    if model_name not in asm.API_CALLERS:
-                        print(f"  SKIP: {model_name} not in API_CALLERS")
-                        continue
-                    # Skip if API key missing for cloud models
-                    key_var = asm.API_KEY_VARS.get(model_name)
-                    if key_var and key_var not in os.environ and "local" not in model_name:
-                        print(f"  SKIP: {model_name} ({key_var} not set)")
-                        continue
-                    for run in range(1, n_runs + 1):
-                        try:
-                            # asm.run_pair returns a list of session records
-                            recs = asm.run_pair(pair, model_name, run)
-                            for r in recs:
-                                fh.write(json.dumps(r) + "\n")
-                                records_written += 1
-                            print(f"  OK: {pair.id} × {model_name} × run {run} ({len(recs)} records)")
-                        except Exception as exc:
-                            print(f"  ERROR: {pair.id} × {model_name} × run {run}: {exc}")
+        # Live execution: hand off to the main R15 script's
+        # run_experiment_live which writes JSONL records in the same
+        # schema as Runs 2-9 (via log_path). This guarantees schema
+        # compatibility with validate.py and existing aggregation.
+        #
+        # weighted_rec_only=True restricts to the single prompt whose
+        # parsed output is the 8-dimensional weight vector — which is
+        # all Run 10 needs for the corrective-comparator comparison.
 
+        # Filter the model panel to those with valid credentials.
+        valid_models: list[str] = []
+        for model_name in MODEL_PANEL:
+            if model_name not in asm.API_CALLERS:
+                print(f"  SKIP: {model_name} not in API_CALLERS")
+                continue
+            key_var = asm.API_KEY_VARS.get(model_name)
+            # Local Ollama models: no env var required.
+            if key_var and "local" not in model_name and key_var not in os.environ:
+                print(f"  SKIP: {model_name} ({key_var} not set)")
+                continue
+            valid_models.append(model_name)
+
+        if not valid_models:
+            print("ERROR: no valid models available; aborting live run.")
+            sys.exit(1)
+
+        print(f"Valid models: {valid_models}")
+        # Clear the log before re-running so the aggregator sees only
+        # this run's records.
+        if OUT_LOG.exists():
+            OUT_LOG.unlink()
+
+        asm.run_experiment_live(
+            brand_pairs=pairs_to_run,
+            models=valid_models,
+            runs=n_runs,
+            log_path=str(OUT_LOG),
+            weighted_rec_only=True,
+        )
+
+        records_written = 0
+        if OUT_LOG.exists():
+            with OUT_LOG.open() as fh:
+                records_written = sum(1 for _ in fh)
         print(f"Wrote {records_written} records to {OUT_LOG}")
 
     # Aggregation phase
