@@ -486,20 +486,55 @@ def main() -> None:
     print()
 
     if not math.isnan(icc_global) and icc_global >= ICC_MODERATE and order_p >= 0.05:
-        print("CONCLUSION: Results are STABLE across prompt repetitions.")
-        print("ICC >= 0.75 and no run-order effect. The 3-repetition")
-        print("design provides reliable DCI estimates. Averaging across")
-        print("repetitions is justified.")
+        verdict = "STABLE"
+        verdict_msg = (
+            "Results are STABLE across prompt repetitions. ICC >= 0.75 and no "
+            "run-order effect. The 3-repetition design provides reliable DCI "
+            "estimates. Averaging across repetitions is justified."
+        )
     elif not math.isnan(icc_global) and icc_global >= ICC_POOR:
-        print("CONCLUSION: Results show MODERATE stability.")
-        print("ICC >= 0.50. Some within-condition variance present.")
-        print("Main findings are robust but per-condition estimates")
-        print("should be interpreted with caution.")
+        verdict = "MODERATE"
+        verdict_msg = (
+            "Results show MODERATE stability. ICC >= 0.50. Some within-condition "
+            "variance present. Main findings are robust but per-condition estimates "
+            "should be interpreted with caution."
+        )
     else:
-        print("CONCLUSION: Results show LOW stability.")
-        print("ICC < 0.50 or significant run-order effect detected.")
-        print("Primary findings should be verified with additional repetitions.")
+        verdict = "LOW"
+        verdict_msg = (
+            "Results show LOW stability. ICC < 0.50 or significant run-order effect "
+            "detected. Primary findings should be verified with additional repetitions."
+        )
+    print(f"CONCLUSION: {verdict_msg}")
     print()
+
+    # Persist JSON results
+    out_path = Path(__file__).resolve().parent / "prompt_sensitivity_results.json"
+    payload = {
+        "schema_version": "1.0",
+        "n_calls": n_total,
+        "n_models": n_models,
+        "n_pairs": n_pairs,
+        "global_icc": {
+            "icc": float(icc_result["icc"]) if len(complete_matrix) >= 2 else None,
+            "ci_lower": float(icc_result["ci_lower"]) if len(complete_matrix) >= 2 else None,
+            "ci_upper": float(icc_result["ci_upper"]) if len(complete_matrix) >= 2 else None,
+            "f_stat": float(icc_result["f_stat"]) if len(complete_matrix) >= 2 else None,
+            "p_value": float(icc_result["p_value"]) if len(complete_matrix) >= 2 else None,
+            "n_complete_conditions": int(len(complete_matrix)),
+        },
+        "run_order_effect": {k: (float(v) if isinstance(v, (int, float)) else v) for k, v in order_result.items()},
+        "per_model": {
+            m: {k: (float(v) if isinstance(v, (int, float, np.floating)) else v)
+                for k, v in res.items()}
+            for m, res in model_stability.items()
+        },
+        "per_dimension": dim_stability,
+        "verdict": verdict,
+        "verdict_message": verdict_msg,
+    }
+    out_path.write_text(json.dumps(payload, indent=2, default=float))
+    print(f"Wrote: {out_path.name}")
 
 
 if __name__ == "__main__":

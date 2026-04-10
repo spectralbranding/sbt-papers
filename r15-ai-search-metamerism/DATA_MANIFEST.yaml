@@ -1,100 +1,336 @@
 # DATA_MANIFEST.yaml — R15: Spectral Metamerism in AI-Mediated Brand Perception
-# External data dependencies per the Research-as-Repository protocol
+# External data dependencies per the Research-as-Repository protocol.
+# All paths are relative to the package root (r15-ai-search-metamerism/).
 
 data_manifest:
+
+  # ----- L3 SESSION LOGS (raw API responses) -----
+
   - id: "run2-global-brands"
     description: >
-      Run 2: 3,240 API calls across 6 LLMs, 10 global brand pairs,
-      3 runs each. Structured weight allocation (100 points across 8
-      SBT dimensions). Full JSONL session log with prompt/response pairs.
+      Run 2: Foundational global brand pairs. ~3,240 API calls across 6 LLMs,
+      10 global brand pairs (Hermes/Coach, Patagonia/Columbia, etc.), 3 runs each.
+      Structured weight allocation (100 points across 8 SBT dimensions). Full
+      JSONL session log with prompt/response/parsed triples.
     archive: "GitHub"
     repository: "spectralbranding/sbt-papers"
-    path: "r15-ai-search-metamerism/experiment/L3_sessions/run2_global.jsonl"
+    path: "experiment/L3_sessions/run2_global.jsonl"
     format: "JSONL"
     access: public
-    records: 3240
+
+  - id: "run2-qwen-plus"
+    description: >
+      Run 2 supplementary: Qwen Plus (Alibaba commercial API) backfill for the
+      same 10 global brand pairs. Held in a separate file to enable open-weight-only
+      analysis if needed.
+    archive: "GitHub"
+    repository: "spectralbranding/sbt-papers"
+    path: "experiment/L3_sessions/run2_qwen_plus.jsonl"
+    format: "JSONL"
+    access: public
 
   - id: "run3-local-brands"
     description: >
-      Run 3: 1,620 API calls across 6 LLMs, 5 local brand pairs
-      (Cyprus, Latvia, Kenya, Vietnam, Serbia), 3 runs each.
-      Tests conditional metamerism hypothesis.
+      Run 3: 5 local brand pairs (Cyprus, Latvia, Kenya, Vietnam, Serbia), 6 LLMs,
+      3 runs each. Tests conditional metamerism hypothesis (H6: local brands collapse
+      more than global brands).
     archive: "GitHub"
     repository: "spectralbranding/sbt-papers"
-    path: "r15-ai-search-metamerism/experiment/L3_sessions/run3_local.jsonl"
+    path: "experiment/L3_sessions/run3_local.jsonl"
     format: "JSONL"
     access: public
-    records: 1620
+
+  - id: "run3-qwen-plus"
+    description: >
+      Run 3 supplementary: Qwen Plus backfill for the same 5 local brand pairs.
+    archive: "GitHub"
+    repository: "spectralbranding/sbt-papers"
+    path: "experiment/L3_sessions/run3_qwen_plus.jsonl"
+    format: "JSONL"
+    access: public
 
   - id: "run4-resolution"
     description: >
-      Run 4: 90 API calls. Brand Function resolution test.
-      Same 5 local brand pairs with behavioral specifications prepended.
-      Tests whether specification resolves dimensional collapse.
+      Run 4: Brand Function resolution test. Same 5 local brand pairs from Run 3
+      with behavioral specifications prepended to the prompt. Tests whether
+      structured specification resolves dimensional collapse. DCI drops from
+      0.355 to 0.284 (20% reduction).
     archive: "GitHub"
     repository: "spectralbranding/sbt-papers"
-    path: "r15-ai-search-metamerism/experiment/L3_sessions/run4_resolution.jsonl"
+    path: "experiment/L3_sessions/run4_resolution.jsonl"
     format: "JSONL"
     access: public
-    records: 90
 
   - id: "local-brand-specs"
     description: >
-      Brand Function specifications for 5 local brands (AlphaMega,
-      Laima, Tusker, Vinamilk, Knjaz Milos). Created from publicly
-      available information with provenance notes.
+      Brand Function specifications for 5 local brands (AlphaMega, Laima, Tusker,
+      Vinamilk, Knjaz Milos). Created from publicly available information with
+      provenance notes. Used by Run 4.
     archive: "GitHub"
     repository: "spectralbranding/sbt-papers"
-    path: "r15-ai-search-metamerism/experiment/local_brand_specs.json"
+    path: "experiment/local_brand_specs.json"
     format: "JSON"
     access: public
 
   - id: "run5-crosscultural"
     description: >
-      Run 5: 11,410 total calls (7,999 successful, 70.1% success rate) across
-      21 active LLMs, 7 cross-cultural brand pairs, 8 cultural contexts (China, Japan,
-      UAE, Russia, Ukraine, Mongolia, South Korea, India). Includes 69 native-
-      language calls for H10 (Prompt Language Effect). Models span Western,
-      Chinese, Russian, Japanese, Korean, Arabic, and Indian clusters.
-      T-Pro 2.0 excluded from study (requires dedicated paid instance).
+      Run 5: Cross-cultural information asymmetry. 11,410 total calls across 24
+      unique LLMs, 7 cross-cultural brand pairs, 9 cultural traditions
+      (Western baseline + China, Japan, UAE, Russia, Ukraine, Mongolia, South Korea, India).
+      Includes 69 native-language calls for H10 (Prompt Language Effect).
+      Models span Western, Chinese, Russian, Japanese, Korean, Arabic, and
+      Indian clusters. T-Pro 2.0 excluded from analysis (requires dedicated paid instance).
     archive: "GitHub"
     repository: "spectralbranding/sbt-papers"
-    path: "r15-ai-search-metamerism/experiment/L3_sessions/run5_crosscultural.jsonl"
+    path: "experiment/L3_sessions/run5_crosscultural.jsonl"
     format: "JSONL"
     access: public
     size_mb: 14
-    records: 7999  # successful responses; 11,410 total calls
 
-  - id: "run5-results"
+  - id: "run5-fireworks-glm"
     description: >
-      Run 5 aggregated results (10.8MB JSON): DCI per model per culture pair,
-      diagonal advantage matrix (H5), capacity comparison (H9), language effect
-      (H10), geopolitical exploratory (H7). H1 SUPPORTED (p<0.0001, DCI=35.6),
-      H2 SUPPORTED (cosine=0.976).
+      Run 5 supplementary: GLM-4.7 (Zhipu, Fireworks API) backfill for cross-cultural pairs.
     archive: "GitHub"
     repository: "spectralbranding/sbt-papers"
-    path: "r15-ai-search-metamerism/experiment/run5_results.json"
+    path: "experiment/L3_sessions/run5_fireworks_glm.jsonl"
+    format: "JSONL"
+    access: public
+
+  - id: "run5-gptoss-swallow"
+    description: >
+      Run 5 supplementary: GPT-OSS Swallow 20B (Japanese, via Yandex AI Studio) backfill.
+    archive: "GitHub"
+    repository: "spectralbranding/sbt-papers"
+    path: "experiment/L3_sessions/run5_gptoss_swallow.jsonl"
+    format: "JSONL"
+    access: public
+
+  - id: "run6-banking"
+    description: >
+      Run 6: Banking pair (Tinkoff vs PrivatBank), 1,018 calls across 24 models.
+      Tests H6 bidirectional asymmetry with same-category control (eliminates
+      product category confound). H6 SUPPORTED: p=0.0013, Cohen's d=3.449.
+    archive: "GitHub"
+    repository: "spectralbranding/sbt-papers"
+    path: "experiment/L3_sessions/run6_banking_clean.jsonl"
+    format: "JSONL"
+    access: public
+
+  - id: "run7-framing"
+    description: >
+      Run 7: Geopolitical framing experiment. Same brands placed in different
+      cities (Roshen Moscow vs Kyiv, Volvo Stockholm vs Shanghai, Burger King
+      NY vs Moscow). Tests H12 (geopolitical framing affects AI brand perception).
+      H12 SUPPORTED: p<0.0001, delta=0.040. Roshen Moscow/Kyiv produced the
+      largest effect in the dataset.
+    archive: "GitHub"
+    repository: "spectralbranding/sbt-papers"
+    path: "experiment/L3_sessions/run7_framing.jsonl"
+    format: "JSONL"
+    access: public
+
+  - id: "run7d-swedish"
+    description: >
+      Run 7d: Swedish sub-run for the framing experiment.
+    archive: "GitHub"
+    repository: "spectralbranding/sbt-papers"
+    path: "experiment/L3_sessions/run7d_swedish.jsonl"
+    format: "JSONL"
+    access: public
+
+  - id: "run8-native-expansion"
+    description: >
+      Run 8: Native language expansion. 815 calls in 11 languages (zh, ru, ja,
+      ko, ar, hi, el, lv, vi, sr, mn, sw). Tests H10 (Prompt Language Effect).
+      H10 NOT SUPPORTED: 46/115 model-pair comparisons show effect, mean=-0.005.
+      Translating prompts does not reduce dimensional collapse — the collapse
+      is architectural, not linguistic.
+    archive: "GitHub"
+    repository: "spectralbranding/sbt-papers"
+    path: "experiment/L3_sessions/run8_native_expansion.jsonl"
+    format: "JSONL"
+    access: public
+
+  - id: "run9-temperature"
+    description: >
+      Run 9: Temperature sensitivity test. Same models run at T=0.0, 0.3, 1.0
+      to verify DCI is robust to sampling temperature. DCI spread = 0.012
+      across temperatures. Confirms robustness of primary findings.
+    archive: "GitHub"
+    repository: "spectralbranding/sbt-papers"
+    path:
+      - "experiment/L3_sessions/run9_temp_0.0.jsonl"
+      - "experiment/L3_sessions/run9_temp_0.3.jsonl"
+      - "experiment/L3_sessions/run9_temp_1.0.jsonl"
+    format: "JSONL"
+    access: public
+
+  # ----- L4 ANALYSIS RESULTS (post-processed) -----
+
+  - id: "results-v2-global-aggregated"
+    description: >
+      Aggregated Run 2 results: per-model dimensional weight profiles, per-model
+      DCI, cross-model cosine similarity matrix, H1 t-test statistic. Generated
+      by experiment/L4_analysis/aggregate_runs_2_to_4.py.
+    archive: "GitHub"
+    repository: "spectralbranding/sbt-papers"
+    path: "results_v2_global.json"
+    format: "JSON"
+    access: public
+
+  - id: "results-v3-local-aggregated"
+    description: >
+      Aggregated Run 3 results (local brand pairs).
+    archive: "GitHub"
+    repository: "spectralbranding/sbt-papers"
+    path: "results_v3_local.json"
+    format: "JSON"
+    access: public
+
+  - id: "results-v4-resolution-aggregated"
+    description: >
+      Aggregated Run 4 results (Brand Function resolution test).
+    archive: "GitHub"
+    repository: "spectralbranding/sbt-papers"
+    path: "results_v4_resolution.json"
+    format: "JSON"
+    access: public
+
+  - id: "run5-results-detailed"
+    description: >
+      Run 5 detailed results (10.8 MB JSON): DCI per model per culture pair,
+      diagonal advantage matrix (H5), capacity comparison (H9), language effect
+      (H10), geopolitical exploratory (H7). H1 SUPPORTED (p<0.0001, DCI=35.6),
+      H2 SUPPORTED (cosine=0.977).
+    archive: "GitHub"
+    repository: "spectralbranding/sbt-papers"
+    path: "experiment/L4_analysis/run5_results.json"
     format: "JSON"
     access: public
     size_mb: 10.8
 
-  - id: "run5-analysis"
+  - id: "run5-summary"
     description: >
-      Post-processed analysis outputs: run5_dci_table.csv (models x cultures DCI
-      matrix), run5_diagonal_advantage.csv (H5 primary measure),
-      run5_analysis_results.json (full H5-H10 test statistics).
+      Human-readable Run 5 summary tables (DCI, cosine, H5-H10 hypothesis tests).
     archive: "GitHub"
     repository: "spectralbranding/sbt-papers"
-    path: "r15-ai-search-metamerism/experiment/L4_analysis/"
-    format: "CSV, JSON"
+    path: "experiment/L4_analysis/run5_summary.md"
+    format: "Markdown"
     access: public
 
-  - id: "results-aggregated"
+  - id: "run5-analysis-results"
     description: >
-      Aggregated results: dimensional weight profiles, DCI, cosine
-      similarity matrices, hypothesis test statistics for Runs 2-4.
+      Post-processed Run 5 analysis: full H5-H10 test statistics, ICC, effect
+      sizes. Generated by experiment/L4_analysis/run5_analysis.py.
     archive: "GitHub"
     repository: "spectralbranding/sbt-papers"
-    path: "r15-ai-search-metamerism/results_v2_global.json, results_v3_local.json, results_v4_resolution.json"
+    path: "experiment/L4_analysis/run5_analysis_results.json"
     format: "JSON"
+    access: public
+
+  - id: "run5-dci-table"
+    description: >
+      DCI matrix (models x cultures) as CSV for direct import into stats software.
+    archive: "GitHub"
+    repository: "spectralbranding/sbt-papers"
+    path: "experiment/L4_analysis/run5_dci_table.csv"
+    format: "CSV"
+    access: public
+
+  - id: "run5-diagonal-advantage"
+    description: >
+      H5 primary measure (diagonal advantage scores) as CSV.
+    archive: "GitHub"
+    repository: "spectralbranding/sbt-papers"
+    path: "experiment/L4_analysis/run5_diagonal_advantage.csv"
+    format: "CSV"
+    access: public
+
+  - id: "run6-banking-results"
+    description: >
+      Run 6 aggregated results (banking pair, 24 models).
+    archive: "GitHub"
+    repository: "spectralbranding/sbt-papers"
+    path: "experiment/L4_analysis/run6_banking_results.json"
+    format: "JSON"
+    access: public
+
+  - id: "run7-framing-results"
+    description: >
+      Run 7 detailed framing experiment results (H12 test).
+    archive: "GitHub"
+    repository: "spectralbranding/sbt-papers"
+    path: "experiment/L4_analysis/run7_framing_results.json"
+    format: "JSON"
+    access: public
+
+  - id: "run7-framing-summary"
+    description: >
+      Human-readable Run 7 framing experiment summary.
+    archive: "GitHub"
+    repository: "spectralbranding/sbt-papers"
+    path: "experiment/L4_analysis/run7_framing_summary.md"
+    format: "Markdown"
+    access: public
+
+  - id: "run8-native-expansion-results"
+    description: >
+      Run 8 aggregated results (per-language DCI, H10 test outcome).
+    archive: "GitHub"
+    repository: "spectralbranding/sbt-papers"
+    path: "experiment/L4_analysis/run8_native_expansion_results.json"
+    format: "JSON"
+    access: public
+
+  - id: "run9-temperature-results"
+    description: >
+      Run 9 temperature sensitivity aggregated results.
+    archive: "GitHub"
+    repository: "spectralbranding/sbt-papers"
+    path: "experiment/L4_analysis/run9_temperature_results.json"
+    format: "JSON"
+    access: public
+
+  - id: "robustness-power-analysis"
+    description: >
+      Post-hoc power analysis for H1, H2, H5, H6. Generated by
+      experiment/L4_analysis/power_analysis.py.
+    archive: "GitHub"
+    repository: "spectralbranding/sbt-papers"
+    path: "experiment/L4_analysis/power_analysis_results.json"
+    format: "JSON"
+    access: public
+
+  - id: "robustness-prompt-sensitivity"
+    description: >
+      ICC(3,1) intra-class correlation across 3 repetitions per condition. Tests
+      whether DCI estimates are stable across prompt repetitions. Generated by
+      experiment/L4_analysis/prompt_sensitivity.py.
+    archive: "GitHub"
+    repository: "spectralbranding/sbt-papers"
+    path: "experiment/L4_analysis/prompt_sensitivity_results.json"
+    format: "JSON"
+    access: public
+
+  - id: "robustness-exclude-patagonia"
+    description: >
+      Replication of H1 and H2 with the Patagonia/Columbia pair (the only
+      sub-baseline pair) excluded. Confirms findings are robust. Generated by
+      experiment/L4_analysis/exclude_patagonia.py.
+    archive: "GitHub"
+    repository: "spectralbranding/sbt-papers"
+    path: "experiment/L4_analysis/exclude_patagonia_results.json"
+    format: "JSON"
+    access: public
+
+  # ----- HUGGING FACE DATASET (mirror) -----
+
+  - id: "huggingface-dataset"
+    description: >
+      Public dataset mirror on Hugging Face. Contains the same JSONL session
+      logs and aggregated CSVs, with a Datasette Lite viewer.
+    archive: "Hugging Face"
+    repository: "spectralbranding/r15-ai-search-metamerism"
+    url: "https://huggingface.co/datasets/spectralbranding/r15-ai-search-metamerism"
+    doi: "10.57967/hf/8284"
     access: public

@@ -1,0 +1,193 @@
+{
+  "run_id": "run3_local",
+  "description": "Run 3: 5 local brand pairs (Cyprus, Latvia, Kenya, Vietnam, Serbia), 6 LLMs, 3 runs each. Tests conditional metamerism.",
+  "n_calls": 105,
+  "n_successful": 105,
+  "models": [
+    "claude",
+    "dashscope_qwen_plus",
+    "deepseek",
+    "gemini",
+    "gemma4_local",
+    "gpt",
+    "qwen3_local"
+  ],
+  "brand_pairs": [
+    "cyprus_supermarket",
+    "kenya_beer",
+    "latvia_chocolate",
+    "serbia_water",
+    "vietnam_dairy"
+  ],
+  "dimensional_weights": {
+    "claude": {
+      "semiotic": 12.0,
+      "narrative": 8.0,
+      "ideological": 12.267,
+      "experiential": 18.6,
+      "social": 12.067,
+      "economic": 18.2,
+      "cultural": 7.4,
+      "temporal": 11.467
+    },
+    "gpt": {
+      "semiotic": 17.667,
+      "narrative": 12.667,
+      "ideological": 7.333,
+      "experiential": 19.333,
+      "social": 11.333,
+      "economic": 18.667,
+      "cultural": 5.667,
+      "temporal": 7.333
+    },
+    "gemini": {
+      "semiotic": 13.333,
+      "narrative": 9.267,
+      "ideological": 9.2,
+      "experiential": 15.933,
+      "social": 11.6,
+      "economic": 19.333,
+      "cultural": 11.667,
+      "temporal": 9.667
+    },
+    "deepseek": {
+      "semiotic": 11.0,
+      "narrative": 11.333,
+      "ideological": 9.333,
+      "experiential": 15.667,
+      "social": 10.0,
+      "economic": 22.667,
+      "cultural": 11.333,
+      "temporal": 8.667
+    },
+    "qwen3_local": {
+      "semiotic": 15.0,
+      "narrative": 10.0,
+      "ideological": 5.0,
+      "experiential": 20.0,
+      "social": 10.0,
+      "economic": 25.0,
+      "cultural": 5.333,
+      "temporal": 9.667
+    },
+    "gemma4_local": {
+      "semiotic": 17.667,
+      "narrative": 10.667,
+      "ideological": 6.333,
+      "experiential": 18.667,
+      "social": 12.333,
+      "economic": 22.333,
+      "cultural": 6.133,
+      "temporal": 8.867
+    },
+    "dashscope_qwen_plus": {
+      "semiotic": 15.0,
+      "narrative": 10.0,
+      "ideological": 5.0,
+      "experiential": 20.0,
+      "social": 10.0,
+      "economic": 25.0,
+      "cultural": 5.0,
+      "temporal": 10.0
+    }
+  },
+  "dci_per_model": {
+    "claude": 30.2,
+    "gpt": 36.333,
+    "gemini": 32.667,
+    "deepseek": 33.667,
+    "qwen3_local": 40.0,
+    "gemma4_local": 40.0,
+    "dashscope_qwen_plus": 40.0
+  },
+  "dci_aggregate": {
+    "mean": 36.124,
+    "std": 5.796,
+    "n": 105,
+    "baseline": 25.0,
+    "h1_t_statistic": 19.6671,
+    "h1_p_value": 0.0
+  },
+  "cosine_similarity": {
+    "model_order": [
+      "claude",
+      "dashscope_qwen_plus",
+      "deepseek",
+      "gemini",
+      "gemma4_local",
+      "gpt",
+      "qwen3_local"
+    ],
+    "matrix": [
+      [
+        1.0,
+        0.9604,
+        0.9723,
+        0.9842,
+        0.9687,
+        0.9653,
+        0.9604
+      ],
+      [
+        0.9604,
+        1.0,
+        0.9679,
+        0.9641,
+        0.9918,
+        0.9783,
+        0.9999
+      ],
+      [
+        0.9723,
+        0.9679,
+        1.0,
+        0.9913,
+        0.9698,
+        0.9599,
+        0.9695
+      ],
+      [
+        0.9842,
+        0.9641,
+        0.9913,
+        1.0,
+        0.9769,
+        0.9698,
+        0.9655
+      ],
+      [
+        0.9687,
+        0.9918,
+        0.9698,
+        0.9769,
+        1.0,
+        0.9934,
+        0.9922
+      ],
+      [
+        0.9653,
+        0.9783,
+        0.9599,
+        0.9698,
+        0.9934,
+        1.0,
+        0.9789
+      ],
+      [
+        0.9604,
+        0.9999,
+        0.9695,
+        0.9655,
+        0.9922,
+        0.9789,
+        1.0
+      ]
+    ],
+    "mean_pairwise": 0.9753
+  },
+  "source_files": [
+    "run3_local.jsonl",
+    "run3_qwen_plus.jsonl"
+  ],
+  "schema_version": "1.0"
+}

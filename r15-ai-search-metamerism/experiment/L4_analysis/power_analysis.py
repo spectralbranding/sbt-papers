@@ -434,6 +434,7 @@ def print_result(result: dict) -> None:
 
 def main() -> None:
     """Run post-hoc power analysis for H1, H2, H5, H6."""
+    out_dir = Path(__file__).resolve().parent
     print("=" * 70)
     print("R15 POST-HOC POWER ANALYSIS")
     print("Spectral Metamerism in AI-Mediated Brand Perception")
@@ -482,6 +483,33 @@ def main() -> None:
     print("  but the reversal is statistically significant (p<0.05),")
     print("  so the finding is a real reversal, not a power failure.")
     print()
+
+    # Persist JSON results next to this script
+    out_json = out_dir / "power_analysis_results.json"
+    payload = {
+        "schema_version": "1.0",
+        "alpha": ALPHA,
+        "power_threshold": POWER_THRESHOLD,
+        "hypotheses": {
+            label: result for label, result in zip(labels, analyses)
+        },
+        "summary": [
+            {
+                "hypothesis": label,
+                "power": result.get(pkey),
+                "adequate": result.get(adkey, False),
+                "p_value": result.get("p_value"),
+            }
+            for label, result, pkey, adkey in zip(labels, analyses, power_keys, powered_keys)
+        ],
+        "interpretation": [
+            "H1 and H6: extremely high power; null findings would be reliable.",
+            "H2: ceiling effect on cosine; power is effectively 1.0.",
+            "H5: low n=8 pairs limits power for small effects, but the reversal is statistically significant (p<0.05), so the finding is a real reversal, not a power failure.",
+        ],
+    }
+    out_json.write_text(json.dumps(payload, indent=2, default=float))
+    print(f"Wrote: {out_json.name}")
 
 
 if __name__ == "__main__":

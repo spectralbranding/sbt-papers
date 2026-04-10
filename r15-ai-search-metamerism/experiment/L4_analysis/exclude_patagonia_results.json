@@ -1,0 +1,90 @@
+{
+  "schema_version": "1.0",
+  "patagonia_pair_id": "purpose_driven",
+  "baseline_dci": 0.25,
+  "n_calls_full": 171,
+  "n_calls_without": 153,
+  "n_pairs_full": 10,
+  "n_pairs_without": 9,
+  "patagonia_characterization": {
+    "patagonia_mean_dci": 0.1938,
+    "other_pairs_mean_dci": 0.3034,
+    "other_pairs_sd": 0.0243,
+    "grand_mean_dci": 0.2924,
+    "z_score_vs_other_pairs": -4.506,
+    "n_patagonia_calls": 18,
+    "t_below_baseline": -5.2825,
+    "p_below_baseline": 6.093962362758339e-05,
+    "patagonia_below_baseline": true,
+    "all_pair_means": {
+      "purpose_driven": 0.1938,
+      "ethical_finance": 0.2664,
+      "auto_disruption": 0.2715,
+      "heritage_sportswear": 0.2937,
+      "luxury_heritage": 0.3009,
+      "boutique_hotel": 0.3054,
+      "premium_tech": 0.3091,
+      "craft_spirits": 0.3139,
+      "artisanal_food": 0.3274,
+      "indie_beauty": 0.3424
+    }
+  },
+  "h1_with_patagonia": {
+    "label": "H1 (all 10 pairs)",
+    "n_models": 6,
+    "mean_dci": 0.2912,
+    "sd_dci": 0.0349,
+    "baseline": 0.25,
+    "t_stat": 2.8924,
+    "p_value": 0.03409237076086262,
+    "cohens_d": 1.1808,
+    "supported": true
+  },
+  "h1_without_patagonia": {
+    "label": "H1 (excluding purpose_driven)",
+    "n_models": 6,
+    "mean_dci": 0.3031,
+    "sd_dci": 0.0398,
+    "baseline": 0.25,
+    "t_stat": 3.2656,
+    "p_value": 0.02230759529625533,
+    "cohens_d": 1.3332,
+    "supported": true
+  },
+  "h2_with_patagonia": {
+    "label": "H2 (all 10 pairs)",
+    "n_models": 6,
+    "n_pairs": 15,
+    "mean_cosine": 0.9754,
+    "min_cosine": 0.9547,
+    "max_cosine": 0.997,
+    "std_cosine": 0.0122,
+    "supported": true
+  },
+  "h2_without_patagonia": {
+    "label": "H2 (excluding purpose_driven)",
+    "n_models": 6,
+    "n_pairs": 15,
+    "mean_cosine": 0.9726,
+    "min_cosine": 0.9426,
+    "max_cosine": 0.9945,
+    "std_cosine": 0.0145,
+    "supported": true
+  },
+  "comparison": {
+    "H1_d_with_patagonia": 1.1808,
+    "H1_d_without_patagonia": 1.3332,
+    "H1_d_change": 0.1524,
+    "H1_mean_dci_with": 0.2912,
+    "H1_mean_dci_without": 0.3031,
+    "H1_mean_dci_change": 0.0119,
+    "H2_cosine_with_patagonia": 0.9754,
+    "H2_cosine_without_patagonia": 0.9726,
+    "H2_cosine_change": -0.0028,
+    "H1_robust": true,
+    "H2_robust": true,
+    "overall_robust": true
+  },
+  "overall_robust": true,
+  "verdict": "CONFIRMED"
+}

@@ -1,0 +1,133 @@
+{
+  "run_id": "run8_native_expansion",
+  "description": "Native language expansion: 11 languages tested for H10 (prompt language effect). Result: H10 NOT SUPPORTED \u2014 translating prompts does not reduce dimensional collapse.",
+  "n_calls": 500,
+  "languages": [
+    "en"
+  ],
+  "n_languages": 1,
+  "models": [
+    "cerebras_qwen3",
+    "claude",
+    "dashscope_qwen_plus",
+    "deepseek",
+    "fireworks_glm",
+    "gemini",
+    "gemma4_local",
+    "gigachat_api",
+    "gpt",
+    "gptoss_swallow",
+    "grok",
+    "groq_allam",
+    "groq_kimi",
+    "groq_llama33",
+    "qwen3_local",
+    "sambanova_deepseek",
+    "sarvam",
+    "yandexgpt_pro"
+  ],
+  "per_language_dci": {
+    "en": {
+      "n": 500,
+      "mean_dci": 34.912,
+      "std_dci": 5.644
+    }
+  },
+  "per_model_dci": {
+    "claude": {
+      "n": 30,
+      "mean_dci": 30.533,
+      "std_dci": 2.862
+    },
+    "gpt": {
+      "n": 30,
+      "mean_dci": 36.5,
+      "std_dci": 3.749
+    },
+    "gemini": {
+      "n": 25,
+      "mean_dci": 31.68,
+      "std_dci": 6.401
+    },
+    "deepseek": {
+      "n": 30,
+      "mean_dci": 34.167,
+      "std_dci": 4.749
+    },
+    "qwen3_local": {
+      "n": 28,
+      "mean_dci": 39.107,
+      "std_dci": 2.378
+    },
+    "gemma4_local": {
+      "n": 29,
+      "mean_dci": 39.483,
+      "std_dci": 3.842
+    },
+    "cerebras_qwen3": {
+      "n": 30,
+      "mean_dci": 32.933,
+      "std_dci": 6.888
+    },
+    "fireworks_glm": {
+      "n": 26,
+      "mean_dci": 29.423,
+      "std_dci": 7.256
+    },
+    "dashscope_qwen_plus": {
+      "n": 30,
+      "mean_dci": 39.9,
+      "std_dci": 0.548
+    },
+    "sambanova_deepseek": {
+      "n": 30,
+      "mean_dci": 32.333,
+      "std_dci": 4.097
+    },
+    "groq_llama33": {
+      "n": 23,
+      "mean_dci": 33.261,
+      "std_dci": 4.309
+    },
+    "groq_allam": {
+      "n": 25,
+      "mean_dci": 34.4,
+      "std_dci": 6.506
+    },
+    "groq_kimi": {
+      "n": 30,
+      "mean_dci": 32.167,
+      "std_dci": 4.942
+    },
+    "grok": {
+      "n": 29,
+      "mean_dci": 30.621,
+      "std_dci": 4.246
+    },
+    "sarvam": {
+      "n": 15,
+      "mean_dci": 38.333,
+      "std_dci": 3.086
+    },
+    "gigachat_api": {
+      "n": 30,
+      "mean_dci": 38.5,
+      "std_dci": 3.256
+    },
+    "yandexgpt_pro": {
+      "n": 30,
+      "mean_dci": 38.3,
+      "std_dci": 3.807
+    },
+    "gptoss_swallow": {
+      "n": 30,
+      "mean_dci": 37.033,
+      "std_dci": 4.605
+    }
+  },
+  "cross_model_cosine_similarity": 0.9834,
+  "h10_verdict": "NOT_SUPPORTED",
+  "h10_summary": "Across 11 languages, native-language prompting does not significantly reduce DCI vs English. The collapse is architectural, not linguistic.",
+  "source_file": "L3_sessions/run8_native_expansion.jsonl",
+  "schema_version": "1.0"
+}

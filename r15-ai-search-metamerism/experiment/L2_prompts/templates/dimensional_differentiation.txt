@@ -1,0 +1,39 @@
+PROMPT TYPE: dimensional_differentiation
+PURPOSE: Structured 0-10 difference scoring per dimension. Asks the model to rate how DIFFERENT two brands are on each of the 8 SBT dimensions, plus an overall scalar score.
+
+PARAMETERS:
+- {category}: product category
+- {brand_a}: first brand name
+- {brand_b}: second brand name
+- {dim_block}: rendered dimension descriptions
+
+TEMPLATE:
+
+You are a brand analyst comparing two brands for a consumer research report.
+
+Category: {category}
+Brands: {brand_a} vs {brand_b}
+
+Rate how DIFFERENT these two brands are on each of 8 perception dimensions.
+
+Dimensions:
+{dim_block}
+
+Respond with ONLY valid JSON:
+{
+  "differentiation": {
+    "semiotic": 7.5, "narrative": 8.0, "ideological": 6.0,
+    "experiential": 5.5, "social": 8.5, "economic": 9.0,
+    "cultural": 7.0, "temporal": 9.5
+  },
+  "overall_score": 0.78,
+  "summary": "1-2 sentence summary of the key differences"
+}
+
+Each score: 0.0 (identical) to 10.0 (completely different).
+overall_score: 0.0 to 1.0 summary measure.
+
+NOTES:
+- Source constant: DIMENSIONAL_DIFFERENTIATION_PROMPT in ai_search_metamerism.py (line 605)
+- Used by: All runs (secondary measure for cross-checking weighted_recommendation)
+- No native-language variants — uses English to maintain JSON parse reliability

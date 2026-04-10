@@ -1,0 +1,38 @@
+# Rendered example: dimension_probe
+# Model: claude
+# Pair: luxury_heritage
+# Source: L3_sessions/run2_global.jsonl
+# (Selected as the first occurrence of this prompt_type across all session files.)
+
+================ PROMPT ================
+
+You are a brand researcher scoring brands on specific attributes.
+
+Rate Hermes on the following attribute:
+
+Attribute: visual identity, logos, packaging, design language
+
+Score on a scale of 0 to 10, where:
+- 0 = extremely weak or absent on this attribute
+- 10 = the global benchmark, one of the best examples in any category
+
+You MUST respond with ONLY a valid JSON object (no other text before or after):
+{
+  "dimension": "semiotic",
+  "brand": "Hermes",
+  "score": 7.5,
+  "reasoning": "Brief explanation of the score (1-2 sentences)"
+}
+
+The score must be a number between 0.0 and 10.0.
+
+================ RESPONSE (first 1000 chars) ================
+
+```json
+{
+  "dimension": "semiotic",
+  "brand": "Hermes",
+  "score": 9.0,
+  "reasoning": "Hermès demonstrates exceptional visual identity through its iconic H logo, distinctive orange packaging, and refined minimalist design language that has remained consistently elegant and recognizable across decades. The brand's cohesive aesthetic—from the Birkin bag silhouette to typography to color palette—represents a global benchmark for luxury brand design coherence and timeless appeal."
+}
+```

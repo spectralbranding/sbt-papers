@@ -1,0 +1,100 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://orgschema.com/r15/session_record.schema.json",
+  "title": "R15 Session Record",
+  "description": "One JSONL line in any L3_sessions/*.jsonl file. One API call to one model with one prompt.",
+  "type": "object",
+  "required": [
+    "timestamp",
+    "model",
+    "prompt_type",
+    "prompt"
+  ],
+  "properties": {
+    "timestamp": {
+      "type": "string",
+      "format": "date-time",
+      "description": "ISO 8601 timestamp of the API call."
+    },
+    "model": {
+      "type": "string",
+      "description": "Model identifier as configured in models.yaml (e.g., 'claude', 'gpt', 'qwen3_local')."
+    },
+    "model_id": {
+      "type": ["string", "null"],
+      "description": "Underlying provider-specific model ID (e.g., 'claude-haiku-4-5')."
+    },
+    "prompt_type": {
+      "type": "string",
+      "enum": [
+        "weighted_recommendation",
+        "weighted_recommendation_spec",
+        "weighted_recommendation_native",
+        "dimensional_differentiation",
+        "dimension_probe",
+        "geopolitical_framing",
+        "geopolitical_framing_native"
+      ],
+      "description": "Which prompt template was used (see L2_prompts/templates/)."
+    },
+    "brand_pair": {
+      "type": ["string", "null"],
+      "description": "Human-readable brand pair label (e.g., 'Hermes vs Coach')."
+    },
+    "pair_id": {
+      "type": ["string", "null"],
+      "description": "Stable pair identifier used in code (e.g., 'luxury_handbags')."
+    },
+    "dimension": {
+      "type": ["string", "null"],
+      "description": "For dimension_probe prompt_type only: which SBT dimension was probed."
+    },
+    "brand": {
+      "type": ["string", "null"],
+      "description": "For dimension_probe prompt_type only: which brand was probed."
+    },
+    "run": {
+      "type": ["integer", "string", "null"],
+      "description": "Repetition number within a run (1, 2, or 3)."
+    },
+    "prompt": {
+      "type": "string",
+      "description": "Full rendered prompt text sent to the model."
+    },
+    "response": {
+      "type": ["string", "null"],
+      "description": "Full raw response from the model."
+    },
+    "parsed": {
+      "type": ["object", "array", "null"],
+      "description": "Parsed JSON content from the response if successfully parsed."
+    },
+    "latency_ms": {
+      "type": ["number", "null"],
+      "description": "API call latency in milliseconds."
+    },
+    "tokens_in": {
+      "type": ["integer", "null"]
+    },
+    "tokens_out": {
+      "type": ["integer", "null"]
+    },
+    "error": {
+      "type": ["string", "null"],
+      "description": "Error message if the call failed; null on success."
+    },
+    "native_language": {
+      "type": ["string", "null"],
+      "description": "Two-letter language code for native-language variants (zh, ru, ja, ko, ar, hi, el, lv, vi, sr, mn, sw, uk, sv)."
+    },
+    "city": {
+      "type": ["string", "null"],
+      "description": "For geopolitical_framing only: the city used in the prompt."
+    },
+    "temperature": {
+      "type": ["number", "null"],
+      "description": "Sampling temperature used for the API call (Run 9 sensitivity test)."
+    }
+  },
+  "additionalProperties": true
+}

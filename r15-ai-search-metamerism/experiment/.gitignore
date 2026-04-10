@@ -6,6 +6,7 @@
 # Virtual environment
 .venv/
 venv/
+env/
 
 # macOS
 .DS_Store
@@ -13,6 +14,19 @@ venv/
 # Python cache
 __pycache__/
 *.py[cod]
+*.so
 
-# Run 5 in-progress data (add to tracking when complete)
-# L3_sessions/run5_*.jsonl
+# IDE
+.idea/
+.vscode/
+*.swp
+
+# Local environment
+.env
+.env.local
+*.log
+
+# Notes:
+# All runs (2-9) are complete and tracked.
+# L4_analysis/*_report.txt files ARE committed (human-readable text
+# summaries of the corresponding _results.json files).

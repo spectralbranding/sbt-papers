@@ -34,7 +34,24 @@ Native translations are in `NATIVE_WEIGHTED_RECOMMENDATION` dict in the script (
 
 ## Status
 
-Run 5 is complete (2026-04-06). Representative rendered prompt examples for each
-culture-language condition can be extracted from `../L3_sessions/run5_crosscultural.jsonl`.
-The templates/ and rendered/ directories remain available for curated examples to be
-committed manually.
+Run 5 is complete (2026-04-06). All runs (2-9) are complete (2026-04-09).
+
+## Directory Contents
+
+`templates/` — extracted prompt templates with parameter documentation:
+- `weighted_recommendation.txt` — primary DCI measure (Runs 2, 3, 5, 6, 8)
+- `dimensional_differentiation.txt` — secondary 0-10 difference scoring
+- `dimension_probe.txt` — per-brand per-dimension absolute scoring (16 probes per pair)
+- `geopolitical_framing.txt` — H12 test (Run 7, framing experiment)
+
+`rendered/` — first occurrence of each prompt_type extracted from real session logs:
+- `example_weighted_recommendation.txt` — Hermes vs Coach example from Run 2
+- `example_dimensional_differentiation.txt` — same pair, secondary measure
+- `example_dimension_probe.txt` — single-dimension probe example
+- `example_weighted_recommendation_spec.txt` — Brand Function variant (Run 4)
+- `example_weighted_recommendation_native.txt` — native-language variant (Run 5)
+- `example_geopolitical_framing.txt` — H12 framing variant (Run 7)
+- `example_geopolitical_framing_native.txt` — native-language framing variant
+
+To regenerate the rendered examples after adding more runs, see
+`../L4_analysis/extract_rendered_prompts.py` (creates one example per prompt_type).

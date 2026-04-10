@@ -1,0 +1,130 @@
+{
+  "run_id": "run9_temperature",
+  "description": "Temperature sensitivity: same models run at T=0.0, 0.3, 1.0 to verify DCI is robust to sampling temperature.",
+  "temperatures_tested": [
+    "0.0",
+    "0.3",
+    "1.0"
+  ],
+  "per_temperature": {
+    "0.0": {
+      "n_calls": 170,
+      "mean_dci": 29.747,
+      "std_dci": 7.168,
+      "per_model_dci": {
+        "claude": {
+          "n": 30,
+          "mean_dci": 30.1,
+          "std_dci": 6.619
+        },
+        "gpt": {
+          "n": 30,
+          "mean_dci": 30.0,
+          "std_dci": 5.252
+        },
+        "gemini": {
+          "n": 30,
+          "mean_dci": 27.967,
+          "std_dci": 5.641
+        },
+        "deepseek": {
+          "n": 30,
+          "mean_dci": 24.167,
+          "std_dci": 4.928
+        },
+        "qwen3_local": {
+          "n": 29,
+          "mean_dci": 32.931,
+          "std_dci": 9.684
+        },
+        "gemma4_local": {
+          "n": 21,
+          "mean_dci": 35.0,
+          "std_dci": 4.743
+        }
+      }
+    },
+    "0.3": {
+      "n_calls": 166,
+      "mean_dci": 30.428,
+      "std_dci": 7.691,
+      "per_model_dci": {
+        "claude": {
+          "n": 30,
+          "mean_dci": 29.967,
+          "std_dci": 6.79
+        },
+        "gpt": {
+          "n": 30,
+          "mean_dci": 29.333,
+          "std_dci": 4.498
+        },
+        "gemini": {
+          "n": 25,
+          "mean_dci": 30.88,
+          "std_dci": 9.649
+        },
+        "deepseek": {
+          "n": 30,
+          "mean_dci": 24.333,
+          "std_dci": 5.208
+        },
+        "qwen3_local": {
+          "n": 26,
+          "mean_dci": 34.423,
+          "std_dci": 9.091
+        },
+        "gemma4_local": {
+          "n": 25,
+          "mean_dci": 35.0,
+          "std_dci": 5.204
+        }
+      }
+    },
+    "1.0": {
+      "n_calls": 172,
+      "mean_dci": 29.913,
+      "std_dci": 7.802,
+      "per_model_dci": {
+        "claude": {
+          "n": 30,
+          "mean_dci": 30.1,
+          "std_dci": 6.748
+        },
+        "gpt": {
+          "n": 30,
+          "mean_dci": 28.833,
+          "std_dci": 5.578
+        },
+        "gemini": {
+          "n": 28,
+          "mean_dci": 31.321,
+          "std_dci": 9.088
+        },
+        "deepseek": {
+          "n": 30,
+          "mean_dci": 24.667,
+          "std_dci": 4.722
+        },
+        "qwen3_local": {
+          "n": 26,
+          "mean_dci": 32.308,
+          "std_dci": 10.699
+        },
+        "gemma4_local": {
+          "n": 28,
+          "mean_dci": 32.857,
+          "std_dci": 6.496
+        }
+      }
+    }
+  },
+  "dci_spread_across_temperatures": 0.681,
+  "robustness_verdict": "TEMPERATURE_SENSITIVE",
+  "source_files": [
+    "L3_sessions/run9_temp_0.0.jsonl",
+    "L3_sessions/run9_temp_0.3.jsonl",
+    "L3_sessions/run9_temp_1.0.jsonl"
+  ],
+  "schema_version": "1.0"
+}

@@ -1,0 +1,40 @@
+# Rendered example: geopolitical_framing
+# Model: claude
+# Pair: roshen_ru_ua
+# Source: L3_sessions/run7_framing.jsonl
+# (Selected as the first occurrence of this prompt_type across all session files.)
+
+================ PROMPT ================
+
+You are an AI shopping assistant helping a consumer in Moscow.
+The consumer is considering purchasing Roshen chocolate.
+
+Based on your knowledge of Roshen as available to consumers in Moscow, allocate exactly 100 points across the following 8 brand dimensions to reflect which aspects of the brand are most relevant to this consumer's purchase decision. The points must sum to exactly 100.
+
+- Semiotic: visual identity, logos, packaging, design language
+- Narrative: brand story, origin myth, founding narrative
+- Ideological: values, ethics, social causes, environmental stance
+- Experiential: customer experience quality, service, unboxing
+- Social: social signaling, community, what owning it says about you
+- Economic: price, value for money, pricing strategy
+- Cultural: cultural relevance, connection to movements/traditions
+- Temporal: heritage, history, relationship to time
+
+Return your answer as JSON with this exact structure:
+{"weights": {"semiotic": N, "narrative": N, "ideological": N, "experiential": N, "social": N, "economic": N, "cultural": N, "temporal": N}, "reasoning": "your explanation"}
+
+================ RESPONSE (first 1000 chars) ================
+
+```json
+{
+  "weights": {
+    "semiotic": 18,
+    "narrative": 12,
+    "ideological": 8,
+    "experiential": 16,
+    "social": 10,
+    "economic": 22,
+    "cultural": 8,
+    "temporal": 6
+  },
+  "reasoning": "For a Moscow consumer considering Roshen chocolate, the allocation prioritizes practical purchase drivers: Economic (22) is highest because price-to-quality ratio and value for money are primary factors in the Russian confectionery market, especially given Roshen's mid-premium positioning. Semiotic (18) reflects the importance of distinctive packaging and visual appeal on retail shelves—Roshen's colorful, recognizable designs are key differentiators in a competitive market. Experiential (16) captures the quality of taste, texture, and product consistency that directly influences repeat purchases and satisfaction. Narrative (12) accounts for Roshen's Ukrainian heritage and brand story, which carries some weight but is secondary to product experience for most consumers. Social (10) r
