@@ -1,0 +1,616 @@
+{
+  "schema_version": "1.0",
+  "run_id": "run10_corrective",
+  "description": "Corrective comparators experiment \u2014 3 focal brands \u00d7 2 conditions",
+  "n_pairs": 6,
+  "models": [
+    "claude",
+    "gpt",
+    "gemini",
+    "deepseek",
+    "qwen3_local",
+    "gemma4_local",
+    "yandexgpt_pro"
+  ],
+  "pairs": {
+    "vkusvill_vs_whole_foods": {
+      "pair_id": "vkusvill_vs_whole_foods",
+      "n_calls": 17,
+      "n_models_with_data": 7,
+      "per_model_profiles": {
+        "claude": {
+          "semiotic": 12.0,
+          "narrative": 8.0,
+          "ideological": 18.0,
+          "experiential": 22.0,
+          "social": 15.0,
+          "economic": 12.0,
+          "cultural": 8.0,
+          "temporal": 5.0
+        },
+        "gpt": {
+          "semiotic": 15.0,
+          "narrative": 10.0,
+          "ideological": 20.0,
+          "experiential": 20.0,
+          "social": 10.0,
+          "economic": 10.0,
+          "cultural": 6.667,
+          "temporal": 8.333
+        },
+        "gemini": {
+          "semiotic": 10.0,
+          "narrative": 10.0,
+          "ideological": 15.0,
+          "experiential": 20.0,
+          "social": 5.0,
+          "economic": 25.0,
+          "cultural": 5.0,
+          "temporal": 10.0
+        },
+        "deepseek": {
+          "semiotic": 10.0,
+          "narrative": 15.0,
+          "ideological": 15.0,
+          "experiential": 15.0,
+          "social": 10.0,
+          "economic": 20.0,
+          "cultural": 10.0,
+          "temporal": 5.0
+        },
+        "qwen3_local": {
+          "semiotic": 11.667,
+          "narrative": 10.0,
+          "ideological": 11.667,
+          "experiential": 20.0,
+          "social": 10.0,
+          "economic": 20.0,
+          "cultural": 5.0,
+          "temporal": 11.667
+        },
+        "yandexgpt_pro": {
+          "semiotic": 10.0,
+          "narrative": 8.333,
+          "ideological": 20.0,
+          "experiential": 21.667,
+          "social": 11.667,
+          "economic": 16.667,
+          "cultural": 5.0,
+          "temporal": 5.0
+        },
+        "gemma4_local": {
+          "semiotic": 15.0,
+          "narrative": 10.0,
+          "ideological": 20.0,
+          "experiential": 25.0,
+          "social": 15.0,
+          "economic": 15.0,
+          "cultural": 5.0,
+          "temporal": 5.0
+        }
+      },
+      "per_model_dci": {
+        "claude": 24.0,
+        "gpt": 25.0,
+        "gemini": 35.0,
+        "deepseek": 30.0,
+        "qwen3_local": 31.667,
+        "yandexgpt_pro": 26.667,
+        "gemma4_local": 30.0
+      },
+      "cross_model_mean_profile": {
+        "semiotic": 11.952,
+        "narrative": 10.19,
+        "ideological": 17.095,
+        "experiential": 20.524,
+        "social": 10.952,
+        "economic": 16.952,
+        "cultural": 6.381,
+        "temporal": 7.143
+      },
+      "cross_model_mean_dci": 28.904
+    },
+    "vkusvill_vs_trader_joes": {
+      "pair_id": "vkusvill_vs_trader_joes",
+      "n_calls": 21,
+      "n_models_with_data": 7,
+      "per_model_profiles": {
+        "claude": {
+          "semiotic": 12.0,
+          "narrative": 8.0,
+          "ideological": 14.0,
+          "experiential": 22.0,
+          "social": 16.0,
+          "economic": 18.0,
+          "cultural": 5.333,
+          "temporal": 4.667
+        },
+        "gpt": {
+          "semiotic": 15.0,
+          "narrative": 10.0,
+          "ideological": 16.667,
+          "experiential": 20.0,
+          "social": 6.667,
+          "economic": 21.667,
+          "cultural": 5.0,
+          "temporal": 5.0
+        },
+        "gemini": {
+          "semiotic": 13.333,
+          "narrative": 8.667,
+          "ideological": 7.333,
+          "experiential": 21.667,
+          "social": 11.667,
+          "economic": 25.0,
+          "cultural": 7.333,
+          "temporal": 5.0
+        },
+        "deepseek": {
+          "semiotic": 10.0,
+          "narrative": 13.333,
+          "ideological": 10.0,
+          "experiential": 20.0,
+          "social": 10.0,
+          "economic": 25.0,
+          "cultural": 6.667,
+          "temporal": 5.0
+        },
+        "qwen3_local": {
+          "semiotic": 15.0,
+          "narrative": 10.0,
+          "ideological": 5.0,
+          "experiential": 20.0,
+          "social": 10.0,
+          "economic": 25.0,
+          "cultural": 5.0,
+          "temporal": 10.0
+        },
+        "gemma4_local": {
+          "semiotic": 13.333,
+          "narrative": 8.333,
+          "ideological": 6.667,
+          "experiential": 21.667,
+          "social": 13.333,
+          "economic": 26.667,
+          "cultural": 5.0,
+          "temporal": 8.333
+        },
+        "yandexgpt_pro": {
+          "semiotic": 15.0,
+          "narrative": 7.667,
+          "ideological": 18.333,
+          "experiential": 23.333,
+          "social": 8.333,
+          "economic": 19.0,
+          "cultural": 5.667,
+          "temporal": 6.0
+        }
+      },
+      "per_model_dci": {
+        "claude": 30.0,
+        "gpt": 36.667,
+        "gemini": 38.333,
+        "deepseek": 35.0,
+        "qwen3_local": 40.0,
+        "gemma4_local": 40.0,
+        "yandexgpt_pro": 34.0
+      },
+      "cross_model_mean_profile": {
+        "semiotic": 13.381,
+        "narrative": 9.429,
+        "ideological": 11.143,
+        "experiential": 21.238,
+        "social": 10.857,
+        "economic": 22.905,
+        "cultural": 5.714,
+        "temporal": 6.286
+      },
+      "cross_model_mean_dci": 36.286
+    },
+    "calbee_vs_frito_lay": {
+      "pair_id": "calbee_vs_frito_lay",
+      "n_calls": 21,
+      "n_models_with_data": 7,
+      "per_model_profiles": {
+        "claude": {
+          "semiotic": 12.0,
+          "narrative": 8.0,
+          "ideological": 10.0,
+          "experiential": 18.0,
+          "social": 8.0,
+          "economic": 20.667,
+          "cultural": 12.0,
+          "temporal": 11.333
+        },
+        "gpt": {
+          "semiotic": 18.333,
+          "narrative": 13.333,
+          "ideological": 8.333,
+          "experiential": 20.0,
+          "social": 10.0,
+          "economic": 20.0,
+          "cultural": 5.0,
+          "temporal": 5.0
+        },
+        "gemini": {
+          "semiotic": 15.0,
+          "narrative": 4.333,
+          "ideological": 4.0,
+          "experiential": 15.0,
+          "social": 11.667,
+          "economic": 25.0,
+          "cultural": 18.333,
+          "temporal": 6.667
+        },
+        "deepseek": {
+          "semiotic": 15.0,
+          "narrative": 10.0,
+          "ideological": 10.0,
+          "experiential": 15.0,
+          "social": 5.0,
+          "economic": 20.0,
+          "cultural": 10.0,
+          "temporal": 15.0
+        },
+        "qwen3_local": {
+          "semiotic": 15.0,
+          "narrative": 10.0,
+          "ideological": 5.0,
+          "experiential": 20.0,
+          "social": 10.0,
+          "economic": 25.0,
+          "cultural": 5.0,
+          "temporal": 10.0
+        },
+        "gemma4_local": {
+          "semiotic": 15.0,
+          "narrative": 10.0,
+          "ideological": 5.0,
+          "experiential": 20.0,
+          "social": 10.0,
+          "economic": 25.0,
+          "cultural": 5.0,
+          "temporal": 10.0
+        },
+        "yandexgpt_pro": {
+          "semiotic": 15.0,
+          "narrative": 6.0,
+          "ideological": 6.667,
+          "experiential": 20.0,
+          "social": 10.0,
+          "economic": 27.333,
+          "cultural": 7.333,
+          "temporal": 7.667
+        }
+      },
+      "per_model_dci": {
+        "claude": 32.667,
+        "gpt": 38.333,
+        "gemini": 40.0,
+        "deepseek": 35.0,
+        "qwen3_local": 40.0,
+        "gemma4_local": 40.0,
+        "yandexgpt_pro": 42.333
+      },
+      "cross_model_mean_profile": {
+        "semiotic": 15.048,
+        "narrative": 8.809,
+        "ideological": 7.0,
+        "experiential": 18.286,
+        "social": 9.238,
+        "economic": 23.286,
+        "cultural": 8.952,
+        "temporal": 9.381
+      },
+      "cross_model_mean_dci": 38.334
+    },
+    "calbee_vs_koikeya": {
+      "pair_id": "calbee_vs_koikeya",
+      "n_calls": 21,
+      "n_models_with_data": 7,
+      "per_model_profiles": {
+        "claude": {
+          "semiotic": 12.0,
+          "narrative": 8.0,
+          "ideological": 6.0,
+          "experiential": 22.0,
+          "social": 9.0,
+          "economic": 23.0,
+          "cultural": 10.0,
+          "temporal": 10.0
+        },
+        "gpt": {
+          "semiotic": 15.0,
+          "narrative": 10.0,
+          "ideological": 5.0,
+          "experiential": 20.0,
+          "social": 10.0,
+          "economic": 25.0,
+          "cultural": 5.0,
+          "temporal": 10.0
+        },
+        "gemini": {
+          "semiotic": 15.0,
+          "narrative": 5.0,
+          "ideological": 5.0,
+          "experiential": 20.0,
+          "social": 5.0,
+          "economic": 25.0,
+          "cultural": 13.333,
+          "temporal": 11.667
+        },
+        "deepseek": {
+          "semiotic": 13.333,
+          "narrative": 8.333,
+          "ideological": 10.0,
+          "experiential": 15.0,
+          "social": 6.667,
+          "economic": 25.0,
+          "cultural": 11.667,
+          "temporal": 10.0
+        },
+        "qwen3_local": {
+          "semiotic": 15.0,
+          "narrative": 10.0,
+          "ideological": 5.0,
+          "experiential": 20.0,
+          "social": 10.0,
+          "economic": 25.0,
+          "cultural": 5.0,
+          "temporal": 10.0
+        },
+        "gemma4_local": {
+          "semiotic": 15.0,
+          "narrative": 10.0,
+          "ideological": 5.0,
+          "experiential": 20.0,
+          "social": 10.0,
+          "economic": 25.0,
+          "cultural": 5.0,
+          "temporal": 10.0
+        },
+        "yandexgpt_pro": {
+          "semiotic": 15.0,
+          "narrative": 8.667,
+          "ideological": 6.333,
+          "experiential": 20.0,
+          "social": 10.0,
+          "economic": 25.0,
+          "cultural": 5.0,
+          "temporal": 10.0
+        }
+      },
+      "per_model_dci": {
+        "claude": 35.0,
+        "gpt": 40.0,
+        "gemini": 40.0,
+        "deepseek": 38.333,
+        "qwen3_local": 40.0,
+        "gemma4_local": 40.0,
+        "yandexgpt_pro": 40.0
+      },
+      "cross_model_mean_profile": {
+        "semiotic": 14.333,
+        "narrative": 8.571,
+        "ideological": 6.048,
+        "experiential": 19.571,
+        "social": 8.667,
+        "economic": 24.714,
+        "cultural": 7.857,
+        "temporal": 10.238
+      },
+      "cross_model_mean_dci": 39.047
+    },
+    "roshen_vs_cadbury": {
+      "pair_id": "roshen_vs_cadbury",
+      "n_calls": 21,
+      "n_models_with_data": 7,
+      "per_model_profiles": {
+        "claude": {
+          "semiotic": 12.0,
+          "narrative": 8.0,
+          "ideological": 6.667,
+          "experiential": 18.0,
+          "social": 13.333,
+          "economic": 20.667,
+          "cultural": 12.667,
+          "temporal": 8.667
+        },
+        "gpt": {
+          "semiotic": 15.0,
+          "narrative": 10.0,
+          "ideological": 5.0,
+          "experiential": 20.0,
+          "social": 10.0,
+          "economic": 25.0,
+          "cultural": 5.0,
+          "temporal": 10.0
+        },
+        "gemini": {
+          "semiotic": 15.0,
+          "narrative": 10.0,
+          "ideological": 5.0,
+          "experiential": 18.333,
+          "social": 10.0,
+          "economic": 15.0,
+          "cultural": 16.667,
+          "temporal": 10.0
+        },
+        "deepseek": {
+          "semiotic": 15.0,
+          "narrative": 10.0,
+          "ideological": 10.0,
+          "experiential": 20.0,
+          "social": 5.0,
+          "economic": 15.0,
+          "cultural": 13.333,
+          "temporal": 11.667
+        },
+        "qwen3_local": {
+          "semiotic": 15.0,
+          "narrative": 10.0,
+          "ideological": 5.0,
+          "experiential": 20.0,
+          "social": 10.0,
+          "economic": 25.0,
+          "cultural": 5.0,
+          "temporal": 10.0
+        },
+        "gemma4_local": {
+          "semiotic": 18.333,
+          "narrative": 13.333,
+          "ideological": 6.0,
+          "experiential": 15.0,
+          "social": 10.0,
+          "economic": 23.333,
+          "cultural": 6.667,
+          "temporal": 10.667
+        },
+        "yandexgpt_pro": {
+          "semiotic": 15.0,
+          "narrative": 8.667,
+          "ideological": 6.333,
+          "experiential": 20.0,
+          "social": 10.0,
+          "economic": 25.0,
+          "cultural": 5.0,
+          "temporal": 10.0
+        }
+      },
+      "per_model_dci": {
+        "claude": 32.667,
+        "gpt": 40.0,
+        "gemini": 30.0,
+        "deepseek": 30.0,
+        "qwen3_local": 40.0,
+        "gemma4_local": 41.666,
+        "yandexgpt_pro": 40.0
+      },
+      "cross_model_mean_profile": {
+        "semiotic": 15.048,
+        "narrative": 10.0,
+        "ideological": 6.286,
+        "experiential": 18.762,
+        "social": 9.762,
+        "economic": 21.286,
+        "cultural": 9.191,
+        "temporal": 10.143
+      },
+      "cross_model_mean_dci": 36.334
+    },
+    "roshen_vs_hershey": {
+      "pair_id": "roshen_vs_hershey",
+      "n_calls": 21,
+      "n_models_with_data": 7,
+      "per_model_profiles": {
+        "claude": {
+          "semiotic": 12.0,
+          "narrative": 8.0,
+          "ideological": 7.333,
+          "experiential": 18.0,
+          "social": 11.0,
+          "economic": 21.333,
+          "cultural": 10.667,
+          "temporal": 11.667
+        },
+        "gpt": {
+          "semiotic": 18.333,
+          "narrative": 15.0,
+          "ideological": 9.333,
+          "experiential": 18.333,
+          "social": 10.0,
+          "economic": 21.667,
+          "cultural": 6.667,
+          "temporal": 4.0
+        },
+        "gemini": {
+          "semiotic": 14.0,
+          "narrative": 11.667,
+          "ideological": 5.0,
+          "experiential": 15.0,
+          "social": 6.667,
+          "economic": 18.333,
+          "cultural": 17.667,
+          "temporal": 11.667
+        },
+        "deepseek": {
+          "semiotic": 10.0,
+          "narrative": 10.0,
+          "ideological": 6.667,
+          "experiential": 15.0,
+          "social": 13.333,
+          "economic": 20.0,
+          "cultural": 15.0,
+          "temporal": 10.0
+        },
+        "qwen3_local": {
+          "semiotic": 15.0,
+          "narrative": 10.0,
+          "ideological": 5.0,
+          "experiential": 20.0,
+          "social": 10.0,
+          "economic": 25.0,
+          "cultural": 5.0,
+          "temporal": 10.0
+        },
+        "gemma4_local": {
+          "semiotic": 16.667,
+          "narrative": 11.667,
+          "ideological": 5.0,
+          "experiential": 18.333,
+          "social": 11.667,
+          "economic": 25.0,
+          "cultural": 5.0,
+          "temporal": 10.0
+        },
+        "yandexgpt_pro": {
+          "semiotic": 15.0,
+          "narrative": 10.0,
+          "ideological": 5.0,
+          "experiential": 20.0,
+          "social": 10.0,
+          "economic": 25.0,
+          "cultural": 5.0,
+          "temporal": 10.0
+        }
+      },
+      "per_model_dci": {
+        "claude": 33.333,
+        "gpt": 40.0,
+        "gemini": 32.333,
+        "deepseek": 30.0,
+        "qwen3_local": 40.0,
+        "gemma4_local": 41.667,
+        "yandexgpt_pro": 40.0
+      },
+      "cross_model_mean_profile": {
+        "semiotic": 14.429,
+        "narrative": 10.905,
+        "ideological": 6.19,
+        "experiential": 17.809,
+        "social": 10.381,
+        "economic": 22.333,
+        "cultural": 9.286,
+        "temporal": 9.619
+      },
+      "cross_model_mean_dci": 36.762
+    }
+  },
+  "comparison_groups": [
+    {
+      "focal_brand": "VkusVill",
+      "control_pair": "vkusvill_vs_whole_foods",
+      "corrective_pair": "vkusvill_vs_trader_joes"
+    },
+    {
+      "focal_brand": "Calbee",
+      "control_pair": "calbee_vs_frito_lay",
+      "corrective_pair": "calbee_vs_koikeya"
+    },
+    {
+      "focal_brand": "Roshen",
+      "control_pair": "roshen_vs_cadbury",
+      "corrective_pair": "roshen_vs_hershey"
+    }
+  ]
+}
