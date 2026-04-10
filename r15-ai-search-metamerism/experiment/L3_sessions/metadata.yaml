@@ -1,4 +1,4 @@
-script_version: be35a8247ef5a4db5d513440cc387192787b668b
+script_version: b292c5e63705803f4a91a2429f415868bb7662da
 python_version: 3.12.13 (main, Mar  3 2026, 12:39:30) [Clang 17.0.0 (clang-1700.6.3.2)]
 package_versions:
   anthropic: 0.89.0
@@ -10,113 +10,33 @@ package_versions:
 hardware: arm64
 processor: arm
 os: macOS-26.3.1-arm64-arm-64bit
-start_time: '2026-04-08T06:01:31.096872+00:00'
+start_time: '2026-04-09T13:14:35.159808+00:00'
 end_time: null
 model_configs:
   claude:
     model_id: claude-haiku-4-5
     max_tokens: 2048
-    temperature: 0.7
+    temperature: 1.0
   gpt:
     model_id: gpt-4o-mini
     max_tokens: 2048
-    temperature: 0.7
+    temperature: 1.0
   gemini:
     model_id: gemini-2.5-flash
     max_tokens: 2048
-    temperature: 0.7
+    temperature: 1.0
   deepseek:
     model_id: deepseek-chat
     max_tokens: 2048
-    temperature: 0.7
+    temperature: 1.0
   qwen3_local:
     model_id: qwen3:30b
     max_tokens: 2048
-    temperature: 0.7
+    temperature: 1.0
   gemma4_local:
     model_id: gemma4:latest
     max_tokens: 2048
-    temperature: 0.7
-  cerebras_qwen3:
-    model_id: qwen-3-235b-a22b-instruct-2507
-    max_tokens: 2048
-    temperature: 0.7
-  fireworks_glm:
-    model_id: glm-4p7
-    max_tokens: 2048
-    temperature: 0.7
-  dashscope_qwen_plus:
-    model_id: qwen-plus
-    max_tokens: 2048
-    temperature: 0.7
-  sambanova_qwen3:
-    model_id: Qwen3-32B
-    max_tokens: 2048
-    temperature: 0.7
-  sambanova_deepseek:
-    model_id: DeepSeek-V3-0324
-    max_tokens: 2048
-    temperature: 0.7
-  groq_llama33:
-    model_id: llama-3.3-70b-versatile
-    max_tokens: 2048
-    temperature: 0.7
-  groq_allam:
-    model_id: allam-2-7b
-    max_tokens: 2048
-    temperature: 0.7
-  groq_kimi:
-    model_id: moonshotai/kimi-k2-instruct
-    max_tokens: 2048
-    temperature: 0.7
-  grok:
-    model_id: grok-4-1-fast-non-reasoning
-    max_tokens: 2048
-    temperature: 0.7
-  sarvam:
-    model_id: sarvam-105b
-    max_tokens: 2048
-    temperature: 0.7
-  gigachat_api:
-    model_id: GigaChat-2-Max
-    max_tokens: 2048
-    temperature: 0.7
-  yandexgpt_pro:
-    model_id: yandexgpt-5-pro/latest
-    max_tokens: 2048
-    temperature: 0.7
-  gptoss_swallow:
-    model_id: gpt-oss-20b/latest
-    max_tokens: 2048
-    temperature: 0.7
-  yandexgpt_local:
-    model_id: hf.co/yandex/YandexGPT-5-Lite-8B-instruct-GGUF:latest
-    max_tokens: 2048
-    temperature: 0.7
-  gigachat_local:
-    model_id: hf.co/ai-sage/GigaChat3.1-10B-A1.8B-GGUF:latest
-    max_tokens: 2048
-    temperature: 0.7
-  exaone_local:
-    model_id: hf.co/LGAI-EXAONE/EXAONE-4.0-32B-GGUF:Q4_K_M
-    max_tokens: 2048
-    temperature: 0.7
-  swallow_local:
-    model_id: hf.co/mradermacher/Llama-3.1-Swallow-8B-Instruct-v0.3-GGUF:latest
-    max_tokens: 2048
-    temperature: 0.7
-  falcon_arabic_local:
-    model_id: hf.co/tiiuae/Falcon-H1-Arabic-7B-Instruct-GGUF:Q4_K_M
-    max_tokens: 2048
-    temperature: 0.7
-  jais_local:
-    model_id: hf.co/mradermacher/jais-adapted-70b-chat-i1-GGUF:Q4_K_M
-    max_tokens: 2048
-    temperature: 0.7
-  qwen35_local:
-    model_id: qwen3.5:27b
-    max_tokens: 2048
-    temperature: 0.7
+    temperature: 1.0
 api_key_hash:
   claude: '42851649'
   gpt: 1105afa6
@@ -137,7 +57,7 @@ api_key_hash:
   gptoss_swallow: 02c3b438
 experiment: R15-ai-search-metamerism
 script_revision: v2-structured-elicitation
-temperature: 0.7
+temperature: 1.0
 dimensions:
 - semiotic
 - narrative
