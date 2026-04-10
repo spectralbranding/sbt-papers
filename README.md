@@ -220,10 +220,15 @@ Proposes the Rendering Problem as a unifying structural pattern across biologica
 
 Machine-readable citations: [SBT CITATION.cff](spectral-brand-theory/CITATION.cff) | [ACF CITATION.cff](alibi-epistemology/CITATION.cff) | [R0 CITATION.cff](r0-literature-survey/CITATION.cff) | [R1 CITATION.cff](r1-formal-metric/CITATION.cff) | [R2 CITATION.cff](r2-spectral-metamerism/CITATION.cff) | [R3 CITATION.cff](r3-cohort-boundaries/CITATION.cff) | [R4 CITATION.cff](r4-sphere-packing/CITATION.cff) | [R5 CITATION.cff](r5-specification-impossibility/CITATION.cff) | [R6 CITATION.cff](r6-diffusion-dynamics/CITATION.cff) | [R7 CITATION.cff](r7-spectral-resource-allocation/CITATION.cff) | [Rendering Problem CITATION.cff](rendering-problem/CITATION.cff) | [R11 CITATION.cff](r11-dimension-justification/CITATION.cff) | [R12 CITATION.cff](r12-coherence-resilience/CITATION.cff) | [R13 CITATION.cff](r13-paper-as-specification/CITATION.cff)
 
+## Note on Cross-Cutting Papers
+
+**R13 (Paper as Specification)**, **R14 (Research as Repository)**, and **The Rendering Problem (2026l)** are cross-cutting methodology pieces that apply equally to Spectral Brand Theory and Organizational Schema Theory. They live here for historical reasons (originated in sbt-papers before the orgschema-papers split) but are conceptually shared between the two frameworks. The sibling repository [orgschema-papers](https://github.com/spectralbranding/orgschema-papers) cross-references them as part of the broader specification-first research program.
+
 ## Companion Repositories
 
 | Repository | Description |
 |-----------|-------------|
+| [orgschema-papers](https://github.com/spectralbranding/orgschema-papers) | Organizational Schema Theory research papers (sibling framework — operations side) |
 | [sbt-framework](https://github.com/spectralbranding/sbt-framework) | AI-native brand analysis toolkit — 7-module prompt kit with YAML templates |
 | [brand-code](https://github.com/spectralbranding/brand-code) | Executable brand identity specification — spectral palette, particle system source, AI-readable prompt |
 | [paper-spec](https://github.com/spectralbranding/paper-spec) | Paper Spec v0.1.0 — machine-readable YAML standard for scientific claims, with validator and 24 examples |
