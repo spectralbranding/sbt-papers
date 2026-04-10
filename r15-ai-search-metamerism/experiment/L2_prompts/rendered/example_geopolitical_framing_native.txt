@@ -2,7 +2,7 @@
 # Model: claude
 # Pair: roshen_ru_ua
 # Source: L3_sessions/run7_framing.jsonl
-# (Selected as the first occurrence of this prompt_type across all session files.)
+# (First occurrence of this prompt_type across all session files.)
 
 ================ PROMPT ================
 

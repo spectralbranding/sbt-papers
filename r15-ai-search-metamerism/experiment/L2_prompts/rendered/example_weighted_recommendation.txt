@@ -1,15 +1,15 @@
 # Rendered example: weighted_recommendation
 # Model: claude
-# Pair: luxury_heritage
-# Source: L3_sessions/run2_global.jsonl
-# (Selected as the first occurrence of this prompt_type across all session files.)
+# Pair: vkusvill_vs_whole_foods
+# Source: L3_sessions/run10_corrective.jsonl
+# (First occurrence of this prompt_type across all session files.)
 
 ================ PROMPT ================
 
 You are an AI shopping assistant helping a consumer choose between two brands.
 
-Category: luxury leather goods
-Brands: Hermes vs Coach
+Category: organic grocery chain
+Brands: VkusVill vs Whole Foods Market
 
 Step 1: Recommend one brand.
 Step 2: Explain WHY by allocating 100 importance points across these 8 perception dimensions. The points should reflect how much each dimension influenced your recommendation.
@@ -41,17 +41,17 @@ The weights MUST sum to exactly 100.
 
 ```json
 {
-  "recommended_brand": "Hermès",
+  "recommended_brand": "Whole Foods Market",
   "weights": {
-    "semiotic": 18,
-    "narrative": 12,
-    "ideological": 8,
-    "experiential": 16,
-    "social": 14,
+    "semiotic": 12,
+    "narrative": 8,
+    "ideological": 18,
+    "experiential": 22,
+    "social": 15,
     "economic": 12,
-    "cultural": 4,
-    "temporal": 16
+    "cultural": 8,
+    "temporal": 5
   },
-  "reasoning": "Hermès commands the luxury segment through superior craftsmanship, heritage spanning 190 years, and an uncompromising commitment to artisanal quality that justifies premium pricing. Coach, while excellent for accessible luxury, lacks the temporal depth, semiotic prestige, and experiential exclusivity that define true luxury leather goods."
+  "reasoning": "Whole Foods Market offers superior experiential quality, stronger ideological alignment with global sustainability standards, and significant social signaling value that justifies premium pricing for most Western consumers. While VkusVill excels in economic value and cultural relevance in Eastern European markets, Whole Foods delivers a more comprehensive organic grocery experience across dimensions that matter most to international shoppers."
 }
 ```
