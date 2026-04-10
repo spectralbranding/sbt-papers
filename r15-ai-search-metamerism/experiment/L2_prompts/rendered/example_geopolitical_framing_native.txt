@@ -4,6 +4,22 @@
 # Source: L3_sessions/run7_framing.jsonl
 # (First occurrence of this prompt_type across all session files.)
 
+# -----------------------------------------------------------------
+# WARNING: known methodological limitation
+# -----------------------------------------------------------------
+# This example shows the R15 "dirty native" prompt design: the
+# instructions are translated into the target language, but the
+# brand names, city names, and category labels remain in English.
+# This is the mixed-language limitation documented in paper
+# Section 4.5 (H10). The current H10 result is valid only as the
+# narrow claim "switching the instruction language alone does not
+# reduce dimensional collapse." A clean-native re-test (Run 11) is
+# planned: see CONTINUATION_PROMPT.md "Session 93 Priorities #0b"
+# and experiment/L1_configuration/native_localization.yaml for the
+# prepared translation data. After Run 11, this file will be
+# regenerated to show the clean-native variant.
+# -----------------------------------------------------------------
+
 ================ PROMPT ================
 
 Вы — AI-помощник по покупкам, помогающий потребителю в городе Moscow.
