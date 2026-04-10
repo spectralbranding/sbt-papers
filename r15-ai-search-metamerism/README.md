@@ -8,9 +8,9 @@ Zharnikov, D. (2026). Spectral Metamerism in AI-Mediated Brand Perception: How L
 
 ## Abstract
 
-AI-mediated search is replacing traditional consumer search, yet no formal model predicts which brand attributes survive AI mediation. This paper applies Spectral Brand Theory's eight-dimensional framework to model large language models as observer cohorts with systematically biased spectral profiles. An experimental study across 24 LLMs — organized into Western cloud, Chinese cloud, Russian, Japanese, Korean, Arabic, Indian, and Swedish clusters — tests brand pairs using structured weight allocation across 9 runs (21,600+ API calls, 815 native-language calls in 11 languages). Results: Cultural meaning collapses to 58% of baseline, Temporal heritage to 65%, while Experiential inflates to 150%. Cross-model cosine similarity of 0.977 confirms the collapse is structural, not model-specific. Local brands from underrepresented markets show significantly amplified collapse (H6 supported, p = 0.0013, Cohen's d = 3.449). H1 supported (p < 0.0001, DCI = 35.6 vs 25.0 baseline), H2 supported (cosine = 0.977), H12 supported (p < 0.0001). H10 (native language reduces collapse) NOT SUPPORTED (46/115 pairs, mean = -0.005).
+AI-mediated search is replacing traditional consumer search, yet no formal model predicts which brand attributes survive AI mediation. This paper applies Spectral Brand Theory's eight-dimensional framework to model large language models as observer cohorts with systematically biased spectral profiles. An experimental study across 24 LLMs from 7 training traditions — covering 9 cultural traditions in brand pairs (Western, Chinese, Russian, Japanese, Korean, Arabic, Indian, Ukrainian, Mongolian) — tests brand pairs using structured weight allocation across 9 runs (21,600+ API calls, 815 native-language calls in 11 languages). Results: Cultural meaning collapses to 58% of baseline, Temporal heritage to 65%, while Experiential inflates to 150%. Cross-model cosine similarity of 0.977 confirms the collapse is structural, not model-specific. Local brands from underrepresented markets show significantly amplified collapse (Cohen's d = 0.878 vs global brands). H1 supported (p < 0.0001, DCI = 35.6 vs 25.0 baseline, cross-cultural d = 3.449), H2 supported (cosine = 0.977), H6 supported (Western DCI 0.339 < non-Western 0.360, p = 0.0013), H12 supported (p < 0.0001, delta = 0.040). H10 (native language reduces collapse) NOT SUPPORTED (46/115 pairs, mean = -0.005). H5 NOT SUPPORTED — reversed (national models collapse MORE on own-culture brands).
 
-## Hypotheses Tested (12)
+## Hypotheses (12 tested + 1 future direction)
 
 | ID | Statement | Run | Result |
 |----|-----------|-----|--------|
@@ -19,13 +19,14 @@ AI-mediated search is replacing traditional consumer search, yet no formal model
 | H3 | Lower probe variance for hard dimensions (Economic, Semiotic) than soft | 2 | exploratory |
 | H4 | Differentiation gap on soft-dim brand pairs | 2 | exploratory |
 | H5 | National models collapse less on own-culture brands | 5 | **NOT SUPPORTED** (reversed) |
-| H6 | Bidirectional cultural advantage (Western models on Western brands) | 5, 6 | **SUPPORTED** (p = 0.0013, d = 3.449) |
+| H6 | Bidirectional cultural advantage (Western lower DCI than non-Western) | 5 | **SUPPORTED** (Western 0.339 vs non-Western 0.360, t = -3.243, p = 0.0013) |
 | H7 | Geopolitical valence (Tinkoff vs PrivatBank) | 6, 7 | exploratory |
 | H8 | Thin-data floor (Mongolia highest DCI) | 5 | partial |
 | H9 | Capacity-dependent collapse (smaller models collapse more) | 5 | partial |
 | H10 | Native-language prompting reduces collapse | 5, 8 | **NOT SUPPORTED** (mean = -0.005) |
-| H11 | Supplementary pairs follow main pattern | 5 | descriptive |
-| H12 | Geopolitical framing affects AI brand perception | 7 | **SUPPORTED** (p < 0.0001, delta = 0.040) |
+| H11 | Same-category cross-border (Tinkoff vs PrivatBank banking pair) | 6 | tested (geopolitical signal, Run 6) |
+| H12 | Geopolitical framing — same brand in different cities | 7 | **SUPPORTED** (p < 0.0001, delta = 0.040) |
+| H13 | Temporal training stability (successive model versions) | -- | future work (proposed, not tested) |
 
 ## Key Results
 
