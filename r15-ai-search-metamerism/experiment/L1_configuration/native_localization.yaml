@@ -75,26 +75,20 @@ pairs:
       city_b: "Kyiv"
       country_b: "Ukraine"
     localizations:
+      # The clean Run 11 templates use three placeholders:
+      #   {brand}   -- invariable brand name
+      #   {place_a} -- full prepositional phrase "in <city>" with correct case
+      #   {what_a}  -- grammatical noun phrase "purchase of <product of brand>"
       ru:
         brand: "Рошен"
-        product: "шоколад"
-        category: "кондитерские изделия"
-        city_a: "Москва"  # nominative; prompt template must apply preposition case
-        city_a_prep: "Москве"  # prepositional case for "в Москве"
-        city_b: "Киев"
-        city_b_prep: "Киеве"
-        country_a: "Россия"
-        country_b: "Украина"
+        place_a: "в Москве"
+        place_b: "в Киеве"
+        what: "шоколада Рошен"        # genitive required after "покупку"
       uk:
         brand: "Рошен"
-        product: "шоколад"
-        category: "кондитерські вироби"
-        city_a: "Москва"
-        city_a_prep: "Москві"  # Ukrainian locative case
-        city_b: "Київ"
-        city_b_prep: "Києві"
-        country_a: "Росія"
-        country_b: "Україна"
+        place_a: "у Москві"
+        place_b: "у Києві"
+        what: "шоколаду Рошен"        # Ukrainian genitive required after "придбання"
 
   burgerking_us_ru:
     type: framing
@@ -108,15 +102,10 @@ pairs:
       country_b: "Russia"
     localizations:
       ru:
-        brand: "Бургер Кинг"  # commonly transliterated; some Russian sources use Latin
-        product: "обед в фастфуде"
-        category: "ресторан быстрого питания"
-        city_a: "Нью-Йорк"
-        city_a_prep: "Нью-Йорке"
-        city_b: "Москва"
-        city_b_prep: "Москве"
-        country_a: "США"
-        country_b: "Россия"
+        brand: "Бургер Кинг"  # commonly transliterated in Russian-language media
+        place_a: "в Нью-Йорке"
+        place_b: "в Москве"
+        what: "обеда в ресторане «Бургер Кинг»"  # genitive after "покупки"
 
   volvo_eu_cn:
     type: framing
@@ -131,20 +120,14 @@ pairs:
     localizations:
       sv:
         brand: "Volvo"  # native Swedish brand, name stays Latin
-        product: "bil"
-        category: "bilindustri"
-        city_a: "Stockholm"
-        city_b: "Shanghai"
-        country_a: "Sverige"
-        country_b: "Kina"
+        place_a: "i Stockholm"
+        place_b: "i Shanghai"
+        what: "en Volvo-bil"
       zh:
-        brand: "沃尔沃"  # standard Chinese transliteration
-        product: "汽车"
-        category: "汽车行业"
-        city_a: "斯德哥尔摩"
-        city_b: "上海"
-        country_a: "瑞典"
-        country_b: "中国"
+        brand: "沃尔沃"  # standard Mainland Chinese transliteration
+        place_a: "在斯德哥尔摩"
+        place_b: "在上海"
+        what: "一辆沃尔沃汽车"
 
   # ===========================================================================
   # CROSS-CULTURAL WEIGHTED PAIRS (Run 5) — VkusVill, mongolia_beer, china_water
