@@ -11,7 +11,7 @@ The original H12 Roshen pair (Run 7) compared Moscow vs Kyiv and showed
 the largest framing effect in the dataset. But "Moscow vs Kyiv" conflates:
 
   1. Geopolitical alignment    (Russian context vs Ukrainian context)
-  2. Operational anchor        (no factory vs home market)
+  2. Manufacturing anchor      (factory presence vs commercial-distribution-only presence)
   3. Discourse density         (sanitized foreign coverage vs rich domestic coverage)
 
 Run 11 adds five cities with different combinations of these properties,
@@ -21,17 +21,23 @@ so the experiment can distinguish them empirically:
 |----------|-----------|----------------------------------------------|-------------------|
 | Moscow   | Russia    | Lipetsk factory nationalized 2024 (defunct) | Conflict / hostile|
 | Kyiv     | Ukraine   | Home market; founded 1996                    | Home              |
-| Vilnius  | Lithuania | Klaipėda factory ~15,500 t/yr — largest non-Ukraine operation | EU / NATO / Ukraine-aligned |
-| Warsaw   | Poland    | No factory; major export market              | EU / NATO / Ukraine-aligned |
-| Astana   | Kazakhstan| Sales representative office only (Almaty)    | Mixed; CIS member |
-| Tbilisi  | Georgia   | Distributor (Roshen Georgia, Tbilisi)        | Mixed; EU candidate |
-| Baku     | Azerbaijan| Shops/distributors only                       | Mixed; CSTO observer|
+| Vilnius  | Lithuania | Klaipėda Confectionery Factory ~15,500 t/yr — largest non-Ukraine manufacturing operation | EU / NATO / Ukraine-aligned |
+| Warsaw   | Poland    | Active commercial distribution: Roshen-Polska Sp. z o.o. (registered 2001, Jarosław) + Roshen Europe Sp. z o.o. (Warsaw); no manufacturing in Poland | EU / NATO / Ukraine-aligned |
+| Astana   | Kazakhstan| Sales representative office (Almaty); no manufacturing | Mixed; CIS member |
+| Tbilisi  | Georgia   | Distributor (Roshen Georgia, Tbilisi); no manufacturing | Mixed; EU candidate |
+| Baku     | Azerbaijan| Shops/distributors only; no manufacturing | Mixed; CSTO observer|
 
-OPERATIONAL NOTE — only Vilnius (Klaipėda factory) has actual production
-infrastructure outside Ukraine. Astana, Tbilisi, and Baku host commercial
-operations only (sales offices, distributors, retail) — no manufacturing.
-Warsaw has neither factory nor official distributor but is a major
-informal export market via grey trade and Ukrainian diaspora retail.
+OPERATIONAL NOTE — only Lithuania (Klaipėda factory) hosts actual
+manufacturing outside Ukraine within the city set tested. Hungary's
+Budapest plant (Bonbonetti Choco) ceased production in 2023; Russia's
+Lipetsk factory was nationalized in 2024. Poland (Warsaw + Jarosław)
+has active commercial distribution via Roshen-Polska Sp. z o.o. and
+Roshen Europe Sp. z o.o., covering candy / chocolate / wafer / biscuit /
+jelly segments through importers and specialty retailers — but no
+manufacturing line. Astana, Tbilisi, and Baku host commercial operations
+only (sales offices, distributors, retail) — no manufacturing. The
+contrast is therefore "manufacturing presence (Vilnius via Klaipėda) vs
+commercial-distribution presence (Warsaw)", not "factory vs nothing".
 
 This separation enables the following contrasts:
 
@@ -200,9 +206,9 @@ CITY_CONDITIONS: list[tuple[str, str, list[str]]] = [
 CITY_OPERATIONAL_STATUS: dict[str, str] = {
     "Moscow":  "Lipetsk factory nationalized 2024 (defunct)",
     "Kyiv":    "Home market; founded 1996; multiple Kyiv factories",
-    "Vilnius": "Klaipėda factory ~15,500 t/yr (largest non-Ukraine operation)",
-    "Warsaw":  "No factory or official distributor; informal export market",
-    "Astana":  "Sales representative office in Almaty; no manufacturing",
+    "Vilnius": "Klaipėda Confectionery Factory ~15,500 t/yr (largest non-Ukraine manufacturing)",
+    "Warsaw":  "No factory in Poland; active commercial distribution via Roshen-Polska Sp. z o.o. (Jarosław) + Roshen Europe Sp. z o.o. (Warsaw)",
+    "Astana":  "Sales representative office (Almaty); no manufacturing",
     "Tbilisi": "Roshen Georgia distributor (Tbilisi); no manufacturing",
     "Baku":    "Shops/distributors in Khirdalan; no manufacturing",
 }

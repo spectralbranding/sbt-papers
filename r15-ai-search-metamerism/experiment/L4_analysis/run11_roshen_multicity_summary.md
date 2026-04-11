@@ -20,7 +20,7 @@ Higher DCI = more dimensional collapse toward Economic + Semiotic.
 | Moscow | Lipetsk factory nationalized 2024 (defunct) | 44.238 | 38.0 (ru) | -6.238 (ru) |
 | Kyiv | Home market; founded 1996; multiple Kyiv factories | 34.778 | 35.0 (uk) | +0.222 (uk) |
 | Vilnius | Klaipėda factory ~15,500 t/yr (largest non-Ukraine operation) | 42.666 | 37.524 (lt) | -5.142 (lt) |
-| Warsaw | No factory or official distributor; informal export market | 39.0 | 35.69 (pl) | -3.310 (pl) |
+| Warsaw | No factory in Poland; active commercial distribution (Roshen-Polska Sp. z o.o.; Roshen Europe Sp. z o.o.) | 39.0 | 35.69 (pl) | -3.310 (pl) |
 | Astana | Sales representative office in Almaty; no manufacturing | 43.881 | 34.667 (kk); 37.715 (ru) | -9.214 (kk); -6.166 (ru) |
 | Tbilisi | Roshen Georgia distributor (Tbilisi); no manufacturing | 42.572 | 37.715 (ka) | -4.857 (ka) |
 | Baku | Shops/distributors in Khirdalan; no manufacturing | 44.523 | 36.524 (az) | -7.999 (az) |
