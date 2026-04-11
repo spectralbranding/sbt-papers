@@ -273,6 +273,14 @@ The connection to SBT coherence types is direct. SBT's coherence hierarchy measu
 
 *Falsification*: P6 is falsified if LLMs with access only to statistical brand data (reviews, ratings, sentiment, GEO-optimized content) can distinguish behaviorally different brands at rates statistically indistinguishable from LLMs with access to Brand Function specifications. Specifically, if augmented-condition discrimination accuracy does not exceed statistical-only accuracy by a statistically significant margin (p < .05) across at least three product categories, the metamerism thesis fails. The pilot study design in Section 9 operationalizes this test.
 
+### 6.5 Metamers as Vector Quantization Cells
+
+Behavioral metamerism has a precise formal home in the vector quantization literature (Gersho & Gray, 1992). A vector quantizer $Q: \mathbb{R}^n \to \mathcal{C}$ partitions a source space into Voronoi cells $V_i = \{ \mathbf{x} : Q(\mathbf{x}) = c_i \}$, where every input within a cell is mapped to the same codebook entry $c_i$. Two distinct inputs $\mathbf{x}_1 \neq \mathbf{x}_2$ that fall in the same cell are quantization metamers: they cannot be distinguished by any decoder operating on the quantized output, even though they differ in the source space.
+
+This is exactly the structural relationship between two brands $B_1, B_2$ that are behaviorally metameric to an AI observer. The AI agent's decision function is a lossy encoder of the brand's full Brand Function specification; when two brands fall in the same Voronoi cell of that encoder, no statistical test on the agent's outputs can separate them (Cover & Thomas, 2006). The "invariant corridor" introduced in Section 7.2 below is, in this language, a Voronoi region of the quantizer induced by the AI observer's training distribution and decision protocol.
+
+This framing makes three things precise. First, *metamerism is not a defect* of any individual model; it is the structural consequence of any rate-constrained encoder operating below source entropy. Second, the cell boundaries are determined by the encoder, not by the brands — which is why the same two brands can be metameric to one AI agent and distinguishable to another, and why the GEO interventions surveyed in Section 6.3 cannot fix the problem from the brand side alone. Third, the only structural escape is to operate *outside the encoder's source space* — to give the agent direct access to a specification that bypasses the lossy channel, which is the role of the Brand Function (Section 4) and the cryptographic signature (Section 5).
+
 ---
 
 ## 7. Necessity Conditions
@@ -431,6 +439,8 @@ Aggarwal, P., Murahari, V., Rajpurohit, T., Kalyan, A., Narasimhan, K., & Deshpa
 
 Clarke, E. M., Grumberg, O., & Peled, D. A. (1999). *Model checking*. MIT Press.
 
+Cover, T. M., & Thomas, J. A. (2006). *Elements of information theory* (2nd ed.). Wiley-Interscience.
+
 Davenport, T., Guha, A., Grewal, D., & Bressgott, T. (2020). How artificial intelligence will change the future of marketing. *Journal of the Academy of Marketing Science*, *48*(1), 24--42. https://doi.org/10.1007/s11747-019-00696-0
 
 De Bruyn, A., Viswanathan, V., Beh, Y. S., Brock, J. K.-U., & von Wangenheim, F. (2020). Artificial intelligence and marketing: Pitfalls and opportunities. *Journal of Interactive Marketing*, *51*, 91--105. https://doi.org/10.1016/j.intmar.2020.04.007
@@ -442,6 +452,8 @@ Dijkstra, E. W. (1970). *Notes on structured programming* (EWD249). T.H.-Report 
 Economides, N. (1988). The economics of trademarks. *The Trademark Reporter*, *78*, 523--539.
 
 Foxman, E. R., Muehling, D. D., & Berger, P. W. (1990). An investigation of factors contributing to consumer brand confusion. *Journal of Consumer Affairs*, *24*(1), 170--189.
+
+Gersho, A., & Gray, R. M. (1992). *Vector quantization and signal compression*. Kluwer Academic Publishers.
 
 Gligor, V. D., & Wing, J. M. (2011). Towards a theory of trust in networks of humans and computers. In *Security Protocols XIX*, Lecture Notes in Computer Science (Vol. 7114, pp. 223--242). Springer. https://doi.org/10.1007/978-3-642-25867-1_22
 

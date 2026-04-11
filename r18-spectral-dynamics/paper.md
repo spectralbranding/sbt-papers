@@ -100,6 +100,8 @@ The acceleration captures whether brand movement is intensifying (|**v**| increa
 
 **Remark (Smoothness and the SDE).** The SDE of Zharnikov (2026j) produces sample paths that are continuous but almost surely nowhere differentiable -- a standard property of diffusion processes. The velocity defined here is therefore not the pathwise derivative (which does not exist) but the *expected rate of change conditioned on the current state*: **v**(t) = E[d**X**/dt | **X**_t] = mu(**X**_t, t), i.e., the drift function of the SDE. In practice, velocity is estimated from discrete-time measurements via finite differences or Kalman filtering (Section 3.7), both of which produce smooth estimates of the underlying drift. This is standard in all applications of state-space models to noisy processes: the estimated velocity is the posterior mean of the drift, not a pathwise derivative. All definitions, propositions, and theorems in this paper should be understood in this sense: "velocity" denotes the estimated drift, not a classical derivative of a non-differentiable sample path.
 
+**Remark (Lossy projection of the dynamics).** The position $\mathbf{x}(t)$, velocity $\mathbf{v}(t)$, and acceleration $\mathbf{a}(t)$ are defined in the full 8-dimensional perception space $\mathbb{R}^8$. Any individual observer measurement, however, is a lossy projection of this state onto a lower-dimensional observable subspace determined by that observer's spectral weight vector. Reconstructing the full trajectory from observer-side measurements is therefore a source-coding problem with side information (Cover & Thomas, 2006): the rate of distortion depends on the observer's effective channel capacity and on the geometric diversity of the observer constellation, in the sense formalized by R17 (Zharnikov, 2026y). Velocities and accelerations recovered from a low-rank observer constellation are subject to the same rate-distortion bounds as the position estimates from which they are derived. We use this framing only to situate the differential calculus in standard information-theoretic terms; no estimator in this paper depends on it.
+
 ### 3.2 Discrete-Time Estimation
 
 Brand perception is measured at discrete time points t_1, t_2, ..., t_M. The continuous derivatives must be approximated from finite differences.
@@ -505,6 +507,8 @@ Bobenko, A. I., Hoffmann, T., & Sageman-Furnas, A. O. (2025). Compact Bonnet pai
 Bourgeois, L. J., & Eisenhardt, K. M. (1988). Strategic decision processes in high velocity environments: Four cases in the microcomputer industry. *Management Science*, 34(7), 816--835.
 
 Bruce, N. I. (2008). Pooling and dynamic forgetting effects in multitheme advertising: Tracking the advertising sales relationship with particle filters. *Marketing Science*, 27(4), 659--673.
+
+Cover, T. M., & Thomas, J. A. (2006). *Elements of information theory* (2nd ed.). Wiley-Interscience.
 
 D'Aveni, R. A. (1994). *Hypercompetition: Managing the Dynamics of Strategic Maneuvering*. Free Press.
 
