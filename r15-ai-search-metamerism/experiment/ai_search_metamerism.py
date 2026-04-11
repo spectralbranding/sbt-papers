@@ -1125,68 +1125,81 @@ NATIVE_WEIGHTED_RECOMMENDATION: dict[str, str] = {
         "Το άθροισμα των βαρών πρέπει να είναι ακριβώς 100."
     ),
     "lv": (
-        "Jus esat AI iepirksanas asistents, kas palīdz patēretājam izveleties starp diviem zimoliem.\n\n"
-        "Kategorija: {category}\nZimoli: {brand_a} vs {brand_b}\n\n"
-        "1. solis: Ieteikt vienu zimolu.\n"
-        "2. solis: Izskaidrojiet KĀPĒC, sadalot 100 nozīmīguma punktus pa 8 uztveres dimensijām.\n\n"
+        "Jūs esat mākslīgā intelekta iepirkšanās asistents. Jūsu uzdevums "
+        "ir palīdzēt patērētājam izvēlēties starp diviem zīmoliem.\n\n"
+        "Kategorija: {category}\nZīmoli: {brand_a} vs {brand_b}\n\n"
+        "1. solis: Ieteikt vienu zīmolu.\n"
+        "2. solis: Paskaidrojiet KĀPĒC, sadalot tieši 100 nozīmīguma "
+        "punktus starp astoņām uztveres dimensijām.\n\n"
         "Dimensijas:\n{dim_block}\n\n"
-        "Atbildiet TIKAI ar derīgu JSON:\n"
-        '{{\n  "recommended_brand": "ZimolanosaukumS",\n'
+        "Atbildiet TIKAI ar derīgu JSON šādā formātā:\n"
+        '{{\n  "recommended_brand": "Zīmola nosaukums",\n'
         '  "weights": {{\n'
         '    "semiotic": 15, "narrative": 10, "ideological": 5,\n'
         '    "experiential": 20, "social": 10, "economic": 25,\n'
         '    "cultural": 5, "temporal": 10\n'
         "  }},\n"
-        '  "reasoning": "Skaidrojums 1-2 teikumos"\n}}\n\n'
-        "Svaru summai ir jabut precizi 100."
+        '  "reasoning": "Paskaidrojums 1–2 teikumos"\n}}\n\n'
+        "Punktu summai jābūt tieši 100."
     ),
     "vi": (
-        "Ban la mot tro ly mua sam AI giup nguoi tieu dung lua chon giua hai thuong hieu.\n\n"
-        "Danh muc: {category}\nThuong hieu: {brand_a} vs {brand_b}\n\n"
-        "Buoc 1: De xuat mot thuong hieu.\n"
-        "Buoc 2: Giai thich TAI SAO bang cach phan bo 100 diem quan trong cho 8 chieu nhan thuc.\n\n"
-        "Cac chieu:\n{dim_block}\n\n"
-        "Chi tra loi bang JSON hop le:\n"
-        '{{\n  "recommended_brand": "TenThuongHieu",\n'
+        "Bạn là một trợ lý mua sắm AI. Bạn giúp một người tiêu dùng lựa "
+        "chọn giữa hai thương hiệu.\n\n"
+        "Danh mục: {category}\nThương hiệu: {brand_a} vs {brand_b}\n\n"
+        "Bước 1: Đề xuất một thương hiệu.\n"
+        "Bước 2: Giải thích TẠI SAO bằng cách phân bổ chính xác 100 "
+        "điểm quan trọng cho 8 chiều nhận thức.\n\n"
+        "Các chiều:\n{dim_block}\n\n"
+        "Chỉ trả lời bằng JSON hợp lệ theo định dạng sau:\n"
+        '{{\n  "recommended_brand": "Tên thương hiệu",\n'
         '  "weights": {{\n'
         '    "semiotic": 15, "narrative": 10, "ideological": 5,\n'
         '    "experiential": 20, "social": 10, "economic": 25,\n'
         '    "cultural": 5, "temporal": 10\n'
         "  }},\n"
-        '  "reasoning": "Giai thich trong 1-2 cau"\n}}\n\n'
-        "Tong cac trong so phai chinh xac bang 100."
+        '  "reasoning": "Giải thích trong 1–2 câu"\n}}\n\n'
+        "Tổng các trọng số phải chính xác bằng 100."
     ),
     "sr": (
-        "Vi ste AI asistent za kupovinu koji pomaze potrosacu da izabere izmedju dva brenda.\n\n"
-        "Kategorija: {category}\nBrendovi: {brand_a} vs {brand_b}\n\n"
-        "Korak 1: Preporučite jedan brend.\n"
-        "Korak 2: Objasnite ZASTO raspodelom 100 poena vaznosti na 8 dimenzija percepcije.\n\n"
-        "Dimenzije:\n{dim_block}\n\n"
-        "Odgovorite SAMO validnim JSON-om:\n"
-        '{{\n  "recommended_brand": "NazivBrend",\n'
+        # Serbian Cyrillic (primary script); Latin is also commonly used
+        # in Serbia, but the framing template already uses Cyrillic, so
+        # keep both templates in the same script for consistency.
+        "Ви сте AI асистент за куповину. Ви помажете потрошачу да "
+        "изабере између два бренда.\n\n"
+        "Категорија: {category}\nБрендови: {brand_a} vs {brand_b}\n\n"
+        "Корак 1: Препоручите један бренд.\n"
+        "Корак 2: Објасните ЗАШТО тако што ћете расподелити тачно 100 "
+        "поена важности између осам димензија перцепције.\n\n"
+        "Димензије:\n{dim_block}\n\n"
+        "Одговорите САМО валидним JSON-ом у следећем формату:\n"
+        '{{\n  "recommended_brand": "Назив бренда",\n'
         '  "weights": {{\n'
         '    "semiotic": 15, "narrative": 10, "ideological": 5,\n'
         '    "experiential": 20, "social": 10, "economic": 25,\n'
         '    "cultural": 5, "temporal": 10\n'
         "  }},\n"
-        '  "reasoning": "Objasnjenje u 1-2 recenice"\n}}\n\n'
-        "Zbir tezina mora biti tacno 100."
+        '  "reasoning": "Објашњење у 1–2 реченице"\n}}\n\n'
+        "Збир поена мора бити тачно 100."
     ),
     "mn": (
-        "Ta bol khoyor brendiin dund songokhod kheregleechiid tuslakh AI худалдааны туслагч юм.\n\n"
-        "Ангилал: {category}\nБрендүүд: {brand_a} vs {brand_b}\n\n"
-        "Алхам 1: Нэг брендийг санал болгоно уу.\n"
-        "Алхам 2: 8 ойлголтын хэмжигдэхүүнд 100 оноо хуваарилж ЯАГААД гэдгийг тайлбарлана уу.\n\n"
+        "Та бол хиймэл оюун ухаант худалдан авалтын туслах юм. Та "
+        "хэрэглэгчид хоёр брэндийн хооронд сонголт хийхэд туслаж "
+        "байна.\n\n"
+        "Ангилал: {category}\nБрэндүүд: {brand_a} vs {brand_b}\n\n"
+        "1-р алхам: Нэг брэндийг санал болго.\n"
+        "2-р алхам: Яагаад гэдгийг тайлбарлахын тулд зөвөөр 100 "
+        "чухал байдлын оноог найман ойлголтын хэмжигдэхүүнд "
+        "хуваарил.\n\n"
         "Хэмжигдэхүүнүүд:\n{dim_block}\n\n"
-        "Зөвхөн хүчинтэй JSON-оор хариулна уу:\n"
-        '{{\n  "recommended_brand": "БрендийнНэр",\n'
+        "Зөвхөн хүчинтэй JSON-оор дараах форматаар хариул:\n"
+        '{{\n  "recommended_brand": "Брэндийн нэр",\n'
         '  "weights": {{\n'
         '    "semiotic": 15, "narrative": 10, "ideological": 5,\n'
         '    "experiential": 20, "social": 10, "economic": 25,\n'
         '    "cultural": 5, "temporal": 10\n'
         "  }},\n"
-        '  "reasoning": "1-2 өгүүлбэрээр тайлбар"\n}}\n\n'
-        "Жингүүдийн нийлбэр яг 100 байх ёстой."
+        '  "reasoning": "1–2 өгүүлбэрээр тайлбар"\n}}\n\n'
+        "Онооны нийлбэр яг 100 байх ёстой."
     ),
     "sw": (
         "Wewe ni msaidizi wa ununuzi wa AI unaosaidia mtumiaji kuchagua kati ya chapa mbili.\n\n"
