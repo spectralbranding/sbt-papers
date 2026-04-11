@@ -275,7 +275,7 @@ The connection to SBT coherence types is direct. SBT's coherence hierarchy measu
 
 ### 6.5 Metamers as Vector Quantization Cells
 
-Behavioral metamerism has a precise formal home in the vector quantization literature (Gersho & Gray, 1992). A vector quantizer $Q: \mathbb{R}^n \to \mathcal{C}$ partitions a source space into Voronoi cells $V_i = \{ \mathbf{x} : Q(\mathbf{x}) = c_i \}$, where every input within a cell is mapped to the same codebook entry $c_i$. Two distinct inputs $\mathbf{x}_1 \neq \mathbf{x}_2$ that fall in the same cell are quantization metamers: they cannot be distinguished by any decoder operating on the quantized output, even though they differ in the source space.
+Behavioral metamerism has a precise formal home in the vector quantization literature (Gersho & Gray, 1991). A vector quantizer $Q: \mathbb{R}^n \to \mathcal{C}$ partitions a source space into Voronoi cells $V_i = \{ \mathbf{x} : Q(\mathbf{x}) = c_i \}$, where every input within a cell is mapped to the same codebook entry $c_i$. Two distinct inputs $\mathbf{x}_1 \neq \mathbf{x}_2$ that fall in the same cell are quantization metamers: they cannot be distinguished by any decoder operating on the quantized output, even though they differ in the source space.
 
 This is exactly the structural relationship between two brands $B_1, B_2$ that are behaviorally metameric to an AI observer. The AI agent's decision function is a lossy encoder of the brand's full Brand Function specification; when two brands fall in the same Voronoi cell of that encoder, no statistical test on the agent's outputs can separate them (Cover & Thomas, 2006). The "invariant corridor" introduced in Section 7.2 below is, in this language, a Voronoi region of the quantizer induced by the AI observer's training distribution and decision protocol.
 
@@ -453,7 +453,7 @@ Economides, N. (1988). The economics of trademarks. *The Trademark Reporter*, *7
 
 Foxman, E. R., Muehling, D. D., & Berger, P. W. (1990). An investigation of factors contributing to consumer brand confusion. *Journal of Consumer Affairs*, *24*(1), 170--189.
 
-Gersho, A., & Gray, R. M. (1992). *Vector quantization and signal compression*. Kluwer Academic Publishers.
+Gersho, A., & Gray, R. M. (1991). *Vector quantization and signal compression*. Kluwer Academic Publishers.
 
 Gligor, V. D., & Wing, J. M. (2011). Towards a theory of trust in networks of humans and computers. In *Security Protocols XIX*, Lecture Notes in Computer Science (Vol. 7114, pp. 223--242). Springer. https://doi.org/10.1007/978-3-642-25867-1_22
 
