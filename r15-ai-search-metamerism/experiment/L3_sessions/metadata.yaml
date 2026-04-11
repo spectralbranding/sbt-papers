@@ -83,7 +83,7 @@ runs:
       x 2 conditions (control comparator vs corrective same-culture comparator)
       x 7 models x 3 runs. Tests whether the choice of comparator brand drives
       dimensional weight profiles, or whether collapse is intrinsic to the focal brand.
-      Supplementary to the main 9-run study (Runs 2-9, 21,601 calls).
+      Supplementary to the main 9-run study. v2.1-final canonical total across all 10 runs (Runs 2-11) is 21,350 calls.
     models:
       - claude
       - gpt

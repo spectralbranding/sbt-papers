@@ -1,6 +1,6 @@
 # R15: Spectral Metamerism in AI-Mediated Brand Perception
 
-**Citation key**: 2026v | **DOI**: [10.5281/zenodo.19422427](https://doi.org/10.5281/zenodo.19422427) | **Status**: Empirical results complete (21,601 calls across 9 runs, 24 models, 7 training traditions; plus supplementary Run 10 corrective comparators, 126 calls, 7 models)
+**Citation key**: 2026v | **DOI**: [10.5281/zenodo.19422427](https://doi.org/10.5281/zenodo.19422427) | **Status**: Empirical results complete (21,350 total API calls across 10 runs, 24 LLMs from 7 training traditions; v2.1-final includes Run 10 corrective comparators (126 calls) and Run 11 Roshen multi-city extension (315 calls))
 
 ## Paper
 
@@ -8,7 +8,7 @@ Zharnikov, D. (2026). Spectral Metamerism in AI-Mediated Brand Perception: How L
 
 ## Abstract
 
-AI-mediated search is replacing traditional consumer search, yet no formal model predicts which brand attributes survive AI mediation. This paper applies Spectral Brand Theory's eight-dimensional framework to model large language models as observer cohorts with systematically biased spectral profiles. An experimental study across 24 LLMs from 7 training traditions — covering 9 cultural traditions in brand pairs (Western, Chinese, Russian, Japanese, Korean, Arabic, Indian, Ukrainian, Mongolian) — tests brand pairs using structured weight allocation across 9 runs (21,600+ API calls, 815 native-language calls in 11 languages). Results: Cultural meaning collapses to 58% of baseline, Temporal heritage to 65%, while Experiential inflates to 150%. Cross-model cosine similarity of 0.977 confirms the collapse is structural, not model-specific. Local brands from underrepresented markets show significantly amplified collapse (Cohen's d = 0.878 vs global brands). H1 supported (p < 0.0001, DCI = 35.6 vs 25.0 baseline, cross-cultural d = 3.449), H2 supported (cosine = 0.977), H6 supported (Western DCI 0.339 < non-Western 0.360, p = 0.0013), H12 supported (p < 0.0001, delta = 0.040). H10 (native language reduces collapse) NOT SUPPORTED — null result: 52/116 model-pair combinations positive (45%), mean reduction = -.002, binomial sign test p = .307 two-sided; no detectable aggregate benefit from native-language prompting. H5 NOT SUPPORTED — reversed (national models collapse MORE on own-culture brands).
+AI-mediated search is replacing traditional consumer search, yet no formal model predicts which brand attributes survive AI mediation. This paper applies Spectral Brand Theory's eight-dimensional framework to model large language models as observer cohorts with systematically biased spectral profiles. An experimental study across 24 LLMs from 7 training traditions — covering 9 cultural traditions in brand pairs (Western, Chinese, Russian, Japanese, Korean, Arabic, Indian, Ukrainian, Mongolian) — tests brand pairs using structured weight allocation across 10 runs (21,350 total API calls, native-language prompts in 11 languages tested formally for H10 plus 5 additional languages introduced in the Run 11 multi-city Roshen extension). Results: Cultural meaning collapses to 58% of baseline, Temporal heritage to 65%, while Experiential inflates to 150%. Cross-model cosine similarity of 0.977 confirms the collapse is structural, not model-specific. Local brands from underrepresented markets show significantly amplified collapse (Cohen's d = 0.878 vs global brands). H1 supported (p < 0.0001, DCI = 35.6 vs 25.0 baseline, cross-cultural d = 3.449), H2 supported (cosine = 0.977), H6 supported (Western DCI 0.339 < non-Western 0.360, p = 0.0013), H12 supported (p < 0.0001, delta = 0.040) but reinterpreted via Run 11 as discourse-layer activation rather than country-of-origin animosity. H10 (native-language reduces collapse) is null on home-market brand pairs (58/121 positive, mean = +.001, p = .716), but Run 11 shows native-language prompting reduces collapse by 3.31–9.50 DCI for every non-home-market city, with the largest effect Astana in Kazakh (-9.50, p = .002). H5 NOT SUPPORTED — reversed (national models collapse MORE on own-culture brands).
 
 ## Hypotheses (12 tested + 1 future direction)
 
@@ -69,7 +69,7 @@ This directory follows the [Research-as-Repository protocol](https://github.com/
 | `L0_specification/` | Pre-registered protocols for Runs 2-4 and Run 5 |
 | `L1_configuration/` | `models.yaml` — 24 model configurations |
 | `L2_prompts/` | Prompt templates (`templates/`) and rendered examples (`rendered/`) |
-| `L3_sessions/` | Raw JSONL session logs — 16 files, 21,727+ records (Runs 2-9 main study + Run 10 supplementary) |
+| `L3_sessions/` | Raw JSONL session logs — 17 files, 21,350 records (Runs 2-9 main study + Run 10 corrective comparators + Run 11 Roshen multi-city) |
 | `L4_analysis/` | Analysis scripts and outputs (per-run results, robustness tests) |
 | `validation/` | Schema validation, checksums, completeness checks |
 | `ai_search_metamerism.py` | Main experiment script (179K, 24 models, 4 prompt types) |
