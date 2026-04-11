@@ -544,14 +544,14 @@ The full experiment (21,350 total calls across 10 runs, including the Run 10 cor
 
 **Table 8.** Cost and infrastructure breakdown across all 10 runs. Paid cloud = metered per-token APIs. Free cloud = providers offering free inference tiers. Local = Ollama on Apple M4 Pro 64 GB.
 
-| Category | Models | Calls (OK) | Cost |
-|----------|--------|-----------|------|
-| Paid cloud | 10 | ~7,500 | \$5.52 |
-| Free cloud | 6 | ~5,500 | \$0.00 |
-| Local Ollama | 8 | ~8,000 | \$0.00 |
-| **Total** | **24** | **~21,000** | **\$5.52** |
+| Category | Models | Calls | Cost |
+|----------|--------|------:|-----:|
+| Paid cloud | 10 | 12,145 | \~\$6.10 |
+| Free cloud | 6 | 3,750 | \$0.00 |
+| Local Ollama | 8 | 5,455 | \$0.00 |
+| **Total** | **24** | **21,350** | **\~\$6.10** |
 
-*Note.* Call counts are approximate; exact per-model breakdowns are in the HuggingFace dataset.
+*Note.* Call counts are exact (validated by `experiment/validation/validate.py`). Two additional free-cloud SambaNova models (sambanova_qwen3 and sambanova_swallow) were attempted in Run 5 but each returned fewer than 25 calls before being dropped from the analysis; their 42 combined calls are included in the Free cloud row but the model count remains 6 for the analytical panel. Per-model breakdowns and the full per-call cost ledger are in the HuggingFace dataset (DOI: 10.57967/hf/8284) and on GitHub.
 
 This cost structure has methodological implications. The full study --- 24 models from 7 training traditions, 23 brand pairs, 15 native-language conditions across the dataset --- cost less than a single human-respondent focus group. The marginal cost of adding a model, a brand pair, or a cultural condition is under \$0.20. This makes longitudinal tracking of AI spectral profiles operationally feasible at a scale that human-respondent studies cannot match: a quarterly audit of how 20+ models perceive a brand portfolio costs less than \$15 per quarter.
 
