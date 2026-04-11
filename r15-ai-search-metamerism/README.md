@@ -1,6 +1,6 @@
 # R15: Spectral Metamerism in AI-Mediated Brand Perception
 
-**Citation key**: 2026v | **DOI**: [10.5281/zenodo.19422427](https://doi.org/10.5281/zenodo.19422427) | **Status**: Empirical results complete (21,601 calls across 9 runs, 24 models, 9 cultural traditions; plus supplementary Run 10 corrective comparators, 126 calls)
+**Citation key**: 2026v | **DOI**: [10.5281/zenodo.19422427](https://doi.org/10.5281/zenodo.19422427) | **Status**: Empirical results complete (21,601 calls across 9 runs, 24 models, 7 training traditions; plus supplementary Run 10 corrective comparators, 126 calls, 7 models)
 
 ## Paper
 
@@ -8,7 +8,7 @@ Zharnikov, D. (2026). Spectral Metamerism in AI-Mediated Brand Perception: How L
 
 ## Abstract
 
-AI-mediated search is replacing traditional consumer search, yet no formal model predicts which brand attributes survive AI mediation. This paper applies Spectral Brand Theory's eight-dimensional framework to model large language models as observer cohorts with systematically biased spectral profiles. An experimental study across 24 LLMs from 7 training traditions — covering 9 cultural traditions in brand pairs (Western, Chinese, Russian, Japanese, Korean, Arabic, Indian, Ukrainian, Mongolian) — tests brand pairs using structured weight allocation across 9 runs (21,600+ API calls, 815 native-language calls in 11 languages). Results: Cultural meaning collapses to 58% of baseline, Temporal heritage to 65%, while Experiential inflates to 150%. Cross-model cosine similarity of 0.977 confirms the collapse is structural, not model-specific. Local brands from underrepresented markets show significantly amplified collapse (Cohen's d = 0.878 vs global brands). H1 supported (p < 0.0001, DCI = 35.6 vs 25.0 baseline, cross-cultural d = 3.449), H2 supported (cosine = 0.977), H6 supported (Western DCI 0.339 < non-Western 0.360, p = 0.0013), H12 supported (p < 0.0001, delta = 0.040). H10 (native language reduces collapse) NOT SUPPORTED (46/115 pairs, mean = -0.005). H5 NOT SUPPORTED — reversed (national models collapse MORE on own-culture brands).
+AI-mediated search is replacing traditional consumer search, yet no formal model predicts which brand attributes survive AI mediation. This paper applies Spectral Brand Theory's eight-dimensional framework to model large language models as observer cohorts with systematically biased spectral profiles. An experimental study across 24 LLMs from 7 training traditions — covering 9 cultural traditions in brand pairs (Western, Chinese, Russian, Japanese, Korean, Arabic, Indian, Ukrainian, Mongolian) — tests brand pairs using structured weight allocation across 9 runs (21,600+ API calls, 815 native-language calls in 11 languages). Results: Cultural meaning collapses to 58% of baseline, Temporal heritage to 65%, while Experiential inflates to 150%. Cross-model cosine similarity of 0.977 confirms the collapse is structural, not model-specific. Local brands from underrepresented markets show significantly amplified collapse (Cohen's d = 0.878 vs global brands). H1 supported (p < 0.0001, DCI = 35.6 vs 25.0 baseline, cross-cultural d = 3.449), H2 supported (cosine = 0.977), H6 supported (Western DCI 0.339 < non-Western 0.360, p = 0.0013), H12 supported (p < 0.0001, delta = 0.040). H10 (native language reduces collapse) NOT SUPPORTED — null result: 52/116 model-pair combinations positive (45%), mean reduction = -.002, binomial sign test p = .307 two-sided; no detectable aggregate benefit from native-language prompting. H5 NOT SUPPORTED — reversed (national models collapse MORE on own-culture brands).
 
 ## Hypotheses (12 tested + 1 future direction)
 
@@ -23,7 +23,7 @@ AI-mediated search is replacing traditional consumer search, yet no formal model
 | H7 | Geopolitical valence (Tinkoff vs PrivatBank) | 6, 7 | exploratory |
 | H8 | Thin-data floor (Mongolia highest DCI) | 5 | partial |
 | H9 | Capacity-dependent collapse (smaller models collapse more) | 5 | partial |
-| H10 | Native-language prompting reduces collapse | 5, 8 | **NOT SUPPORTED** (mean = -0.005) |
+| H10 | Native-language prompting reduces collapse | 5, 8 | **NOT SUPPORTED** — null result (52/116 positive, mean = -.002, p = .307) |
 | H11 | Same-category cross-border (Tinkoff vs PrivatBank banking pair) | 6 | tested (geopolitical signal, Run 6) |
 | H12 | Geopolitical framing — same brand in different cities | 7 | **SUPPORTED** (p < 0.0001, delta = 0.040) |
 | H13 | Temporal training stability (successive model versions) | -- | future work (proposed, not tested) |
@@ -38,7 +38,7 @@ AI-mediated search is replacing traditional consumer search, yet no formal model
 | Run 5 (cross-cultural) | 7 | 11,410 (7,999 successful) | p < 0.0001, DCI = 35.6 | cosine = 0.977 |
 | Run 6 (banking) | 1 | 1,018 | H6 p = 0.0013, d = 3.449 | cosine = 0.977 |
 | Run 7 (framing) | varies | varies | H12 p < 0.0001 | -- |
-| Run 8 (native expansion) | varies | 815 | H10 NOT SUPPORTED (mean = -0.005) | -- |
+| Run 8 (native expansion) | varies | 815 | H10 NOT SUPPORTED — null result (52/116 positive, mean = -.002, p = .307) | -- |
 | Run 9 (temperature) | varies | varies | DCI spread = 0.012 (robust) | -- |
 | Run 10 (corrective comparators, supplementary) | 3 focal × 2 conditions | 126 | VkusVill shows largest comparator effect (ΔDCI = +7.4) | -- |
 
@@ -163,7 +163,7 @@ python L4_analysis/extract_rendered_prompts.py
 
 See [experiment README](experiment/README.md#run-it-on-your-own-brands) for a step-by-step guide.
 
-**Cost**: roughly $0.25 (5-6 models, 3 runs) to $0.80 (all 24 models, 3 runs) for a single brand pair audit at current paid-model rates. The full 9-run cross-cultural study cost $5.52 total; Run 10 supplementary (~$0.04) brings the project total to ~$5.56.
+**Cost**: roughly $0.25 (5-6 models, 3 runs) to $0.80 (all 24 models, 3 runs) for a single brand pair audit at current paid-model rates. The full 9-run cross-cultural study cost ~$5.52; Run 10 supplementary (~$0.30) brings the project total to ~$5.82.
 
 ## How to Cite
 

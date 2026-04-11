@@ -18,10 +18,10 @@ applied to AI-mediated consumer search.
 | Run 2 | 10 global pairs, 6 models | ~3,240 | Complete | H1 SUPPORTED |
 | Run 3 | 5 local brand pairs, 6 models | ~810 | Complete | H2 SUPPORTED (cosine=0.975), local DCI=0.355 |
 | Run 4 | Brand Function resolution test, 6 models | ~90 | Complete | DCI 0.355→0.284 |
-| Run 5 | 7 cross-cultural pairs, 22 models, 8 cultures | 11,410 (7,999 successful) | **Complete (2026-04-06)** | H1 SUPPORTED (p<0.0001, DCI=35.6), H2 SUPPORTED (cosine=0.977), 69 native-language calls |
+| Run 5 | 7 cross-cultural pairs, 22 active models (24 total), 7 training traditions | 11,410 (7,999 successful) | **Complete (2026-04-06)** | H1 SUPPORTED (p<0.0001, DCI=35.6), H2 SUPPORTED (cosine=0.977), 69 native-language calls |
 | Run 6 | Banking pair, 24 models | 1,018 | **Complete** | H6 SUPPORTED (p=0.0013, d=3.449) |
 | Run 7 | Geopolitical framing, 3 pairs × 2 city contexts | varies | **Complete** | H12 SUPPORTED (p<0.0001, delta=0.040) |
-| Run 8 | Native language expansion, 11 languages | 815 | **Complete** | H10 NOT SUPPORTED (mean=-0.005) |
+| Run 8 | Native language expansion, 11 languages | 815 | **Complete** | H10 NOT SUPPORTED — null result (52/116 positive, mean = -.002, p = .307) |
 | Run 9 | Temperature sensitivity, T=0.0/0.3/1.0 | varies | **Complete** | DCI spread=0.012 (robust) |
 | Run 10 *(supplementary)* | Corrective comparators, 3 focal × 2 conditions, 7 models | 126 | **Complete (2026-04-10)** | VkusVill largest comparator effect (ΔDCI=+7.4) |
 
@@ -47,7 +47,7 @@ may have structurally different perception clouds when observed directly.
 ### Core (Runs 2-3, confirmed)
 
 - **H1**: Economic and Semiotic dimensions are cited more than the uniform baseline (1/8 per dim). **SUPPORTED** (p < 0.0001)
-- **H2**: Citation patterns are consistent across model families (Fleiss kappa >= 0.40). **SUPPORTED** (cosine = 0.975)
+- **H2**: Citation patterns are consistent across model families (Fleiss kappa >= 0.40). **SUPPORTED** (cosine = 0.975 in Run 2; 0.977 in Run 5+)
 - **H3**: Cross-model variance is higher for soft dimensions (Narrative, Cultural, Temporal) than hard dimensions (Economic, Semiotic, Experiential)
 - **H4**: Soft-dimension brand pairs show higher cross-model recommendation convergence
 
@@ -58,7 +58,7 @@ may have structurally different perception clouds when observed directly.
 - **H7 (Geopolitical Valence)**: Models will show systematic DCI differences between Tinkoff (Russia) and PrivatBank (Ukraine), reflecting post-2022 geopolitical framing in training data. Both are digital-first consumer banks in the same category — category confound eliminated. Exploratory — no directional prediction.
 - **H8 (Thin-Data Floor)**: APU Chinggis (Mongolia) will have the highest DCI across all models
 - **H9 (Capacity-Dependent Collapse)**: Smaller models (7-8B) will exhibit higher DCI than larger models (30B+) from the same culture
-- **H10 (Prompt Language Effect)**: Culture-matched models prompted in their native language will show lower DCI for local brands than when prompted in English
+- **H10 (Prompt Language Effect)**: Culture-matched models prompted in their native language will show lower DCI for local brands than when prompted in English. **NOT SUPPORTED** — null result (52/116 model-pair combinations positive, mean reduction = -.002, p = .307 two-sided)
 
 ### H12 — Geopolitical Framing (pre-registered 2026-04-07)
 
@@ -90,7 +90,7 @@ Full pre-registration: `L0_specification/PRE_REGISTRATION_RUN5.md`
 | korea_dairy | Binggrae | Danone | Dairy/beverages | Korean |
 | india_dairy | Amul | Danone | Dairy products | Indian |
 
-### Models (22 active in Run 5 — see `L1_configuration/models.yaml`)
+### Models (22 active in Run 5, 24 total across all runs — see `L1_configuration/models.yaml`)
 
 **Tier 1 (30B+, primary analysis)**: 15 models across 6 cultures
 **Tier 2 (7-30B, H9 capacity comparison)**: 4 models
@@ -122,7 +122,7 @@ of the model's cultural knowledge.
 
 - JSON keys remain in English for consistent parsing
 - Only instructional text and dimension descriptions are translated (manually, not by machine)
-- Total native-language calls: ~18 (6 culture-matched models x 1 prompt x 3 runs)
+- Total native-language calls (actual Run 5): 69
 
 ### Call Volume (actual Run 5 results)
 

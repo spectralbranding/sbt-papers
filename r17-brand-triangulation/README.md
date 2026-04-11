@@ -37,7 +37,7 @@ Marketing Science (measurement methodology). Fallback: JMR, Psychometrika.
 
 ## Data
 
-This paper reanalyzes R15 experiment data (4,860 API calls, 6 LLMs, 15 brand pairs). No new data collection. Source data: `../r15-ai-search-metamerism/experiment/`
+This paper reanalyzes R15 experiment data (Runs 2-4: 4,860 API calls, 6 LLMs, 15 brand pairs — the subset used for the GPS-SBT illustration). No new data collection. Source data: `../r15-ai-search-metamerism/experiment/`
 
 ## License
 
