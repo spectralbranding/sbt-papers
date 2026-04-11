@@ -29,7 +29,11 @@ API call with prompt, raw response, parsed output, model ID, latency, and error 
 
 **Run 5**: 70.1% success rate (7,999 of 11,410 calls). T-Pro 2.0 excluded (0 responses). GLM-4.7, Falcon-H1-Arabic 7B, Qwen3.5 27B show N/A DCI (insufficient responses). 69 native-language calls for H10.
 
-**Run 10 (supplementary)**: Tests whether comparator choice drives dimensional collapse. VkusVill is comparator-sensitive (ΔDCI=+7.4 with Trader Joe's vs Whole Foods); Calbee and Roshen are comparator-robust (ΔDCI<1.0). Does not alter the headline 9-run results (21,601 calls). Results in `../L4_analysis/run10_corrective_results.json`.
+**Run 10 (supplementary)**: Tests whether comparator choice drives dimensional collapse. VkusVill is comparator-sensitive (ΔDCI=+7.4 with Trader Joe's vs Whole Foods); Calbee and Roshen are comparator-robust (ΔDCI<1.0). Does not alter the headline 9-run results. Results in `../L4_analysis/run10_corrective_results.json`.
+
+**Run 11 (supplementary)**: Roshen 7-city framing extension. 315 calls (7 cities × 7 LLMs × 3 runs, English plus 7 native languages). Supports a discourse-layer reinterpretation of H12. Results in `../L4_analysis/run11_roshen_multicity_results.json`.
+
+**v2.1-final canonical total**: 21,350 calls across 10 runs (Runs 2-11), 17 JSONL files. Verified by `validation/validate.py --check-completeness`.
 
 ## Data Format
 

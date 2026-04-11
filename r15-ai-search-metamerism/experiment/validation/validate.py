@@ -57,6 +57,8 @@ EXPECTED_L3_SESSIONS = [
     "run9_temp_1.0.jsonl",
     # Run 10: supplementary corrective comparators experiment (2026-04-10)
     "run10_corrective.jsonl",
+    # Run 11: Roshen multi-city extension (2026-04-11)
+    "run11_roshen_multicity.jsonl",
 ]
 
 EXPECTED_L4_RESULTS = [
@@ -76,6 +78,9 @@ EXPECTED_L4_RESULTS = [
     # Run 10 supplementary outputs
     "run10_corrective_results.json",
     "run10_corrective_summary.md",
+    # Run 11 supplementary outputs
+    "run11_roshen_multicity_results.json",
+    "run11_roshen_multicity_summary.md",
 ]
 
 EXPECTED_ROOT_RESULTS = [

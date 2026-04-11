@@ -172,7 +172,7 @@ data_manifest:
       same-culture comparator) x 7 models x 3 runs = 126 calls. Tests whether
       the choice of comparator brand drives dimensional weight profiles, or whether
       collapse is intrinsic to the focal brand. Supplementary to the main 9-run
-      study (Runs 2-9, 21,601 calls). Completed 2026-04-10.
+      study (Runs 2-9). Completed 2026-04-10. v2.1-final canonical total across all 10 runs (Runs 2-11) is 21,350 calls (verified by validation/validate.py).
     archive: "GitHub"
     repository: "spectralbranding/sbt-papers"
     path: "experiment/L3_sessions/run10_corrective.jsonl"

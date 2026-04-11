@@ -128,14 +128,15 @@ of the model's cultural knowledge.
 
 | Condition | Actual |
 |-----------|--------|
-| Run 5 total calls | 11,410 |
-| Run 5 successful responses | 7,999 (70.1%) |
-| Native-language calls (H10) | 69 |
-| Runs 2-4 calls | 4,860 |
-| Runs 6-9 calls | 5,331 |
-| **Main study total (Runs 2-9)** | **21,601** |
-| Run 10 supplementary | 126 |
-| **All runs total (Runs 1-10)** | **~21,727** |
+| Run 5 total calls (incl. supplementary models) | 7,342 |
+| Run 5 native-language calls (H10) | 87 |
+| Runs 2-4 calls | 6,083 |
+| Runs 6-9 calls (incl. Run 7d Swedish) | 7,544 |
+| **Main study total (Runs 2-9)** | **20,909** |
+| Run 10 corrective comparators | 126 |
+| Run 11 Roshen multi-city | 315 |
+| **All runs total (Runs 2-11)** | **21,350** |
+| Native-language calls across full dataset | 999 (15 distinct native languages plus English) |
 
 ---
 
