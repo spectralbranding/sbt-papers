@@ -133,7 +133,7 @@ of the model's cultural knowledge.
 | Native-language calls (H10) | 69 |
 | Runs 2-4 calls | 4,860 |
 | Runs 6-9 calls | 5,331 |
-| **Main study total (Runs 2-9)** | **21,601** |
+| **Main study total (Runs 2-9)** | **21,594** |
 | Run 10 supplementary | 126 |
 | **All runs total (Runs 1-10)** | **~21,727** |
 

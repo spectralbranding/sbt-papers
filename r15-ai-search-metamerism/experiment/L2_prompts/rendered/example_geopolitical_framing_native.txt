@@ -4,28 +4,12 @@
 # Source: L3_sessions/run7_framing.jsonl
 # (First occurrence of this prompt_type across all session files.)
 
-# -----------------------------------------------------------------
-# WARNING: known methodological limitation
-# -----------------------------------------------------------------
-# This example shows the R15 "dirty native" prompt design: the
-# instructions are translated into the target language, but the
-# brand names, city names, and category labels remain in English.
-# This is the mixed-language limitation documented in paper
-# Section 4.5 (H10). The current H10 result is valid only as the
-# narrow claim "switching the instruction language alone does not
-# reduce dimensional collapse." A clean-native re-test (Run 11) is
-# planned: see CONTINUATION_PROMPT.md "Session 93 Priorities #0b"
-# and experiment/L1_configuration/native_localization.yaml for the
-# prepared translation data. After Run 11, this file will be
-# regenerated to show the clean-native variant.
-# -----------------------------------------------------------------
-
 ================ PROMPT ================
 
-Вы — AI-помощник по покупкам, помогающий потребителю в городе Moscow.
-Потребитель рассматривает покупку Roshen chocolate.
+Вы — AI-ассистент по покупкам. Вы помогаете покупателю, живущему в Москве, принять решение.
+Покупатель рассматривает возможность покупки шоколада Рошен.
 
-Основываясь на вашем знании Roshen в контексте потребителей в Moscow, распределите ровно 100 баллов по 8 измерениям бренда, чтобы отразить, какие аспекты бренда наиболее важны для решения о покупке этого потребителя. Сумма баллов должна быть ровно 100.
+Опираясь на ваши знания о бренде Рошен и о том, как его воспринимают покупатели в Москве, распределите ровно 100 баллов между восемью измерениями бренда — так, чтобы распределение отражало, какие аспекты бренда наиболее важны именно для этого покупателя при принятии решения о покупке. Сумма баллов должна быть равна ровно 100.
 
 - semiotic (Semiotic): визуальная идентичность, логотипы, упаковка, дизайн-язык
 - narrative (Narrative): история бренда, миф о происхождении, нарратив основания
@@ -36,8 +20,8 @@
 - cultural (Cultural): культурная релевантность, связь с движениями/традициями
 - temporal (Temporal): наследие, история, отношение ко времени
 
-Ответьте ТОЛЬКО валидным JSON:
-{"weights": {"semiotic": N, "narrative": N, "ideological": N, "experiential": N, "social": N, "economic": N, "cultural": N, "temporal": N}, "reasoning": "ваше объяснение"}
+Ответьте ТОЛЬКО валидным JSON в следующем формате:
+{"weights": {"semiotic": N, "narrative": N, "ideological": N, "experiential": N, "social": N, "economic": N, "cultural": N, "temporal": N}, "reasoning": "ваше пояснение"}
 
 ================ RESPONSE (first 1000 chars) ================
 
@@ -46,11 +30,13 @@
   "weights": {
     "semiotic": 12,
     "narrative": 8,
-    "ideological": 6,
-    "experiential": 14,
-    "social": 9,
-    "economic": 22,
-    "cultural": 15,
-    "temporal": 14
+    "ideological": 14,
+    "experiential": 16,
+    "social": 10,
+    "economic": 18,
+    "cultural": 11,
+    "temporal": 11
   },
-  "reasoning": "Для московского потребителя при покупке Roshen шоколада приоритеты распределены следующим образом: Economic (22) — самый важный фактор, так как Roshen позиционируется как доступный премиум-шоколад с хорошим соотношением цены и качества. Cultural (15) и Experiential (14) имеют высокий вес благодаря украинскому происхождению бренда и качеству продукта, которые актуальны в московском контексте. Temporal (14) отражает долгую историю бренда и его укоренённость на российском рынке. Semiotic (12) важен для узнаваемости и привлекательности упаковки на полке. Social (9) умеренен — владение брендом не является сильным социальным сигналом. Narrative (8) и Ideological (6) имеют меньший вес, так как потребитель в основном ориентируется на качество и цену, а не на историю или социальные инициати
+  "reasoning": "Для московского покупателя шоколада Рошен приоритеты следующие: Economic (18) — цена и соотношение цена/качество критичны при выборе конфет; Experiential (16) — качество вкуса, текстуры, свежесть продукта определяют повторную покупку; Ideological (14) — в России актуальны вопросы происхождения продукта и честности бренда, особенно учитывая историю Рошена; Semiotic (12) — узнаваемая упаковка важна для быстрого выбора в магазине; Cultural (11) и Temporal (11) — бренд связан с советским наследием и традициями подарков, что резонирует с московской аудиторией; Narrative (8) — история бренда менее критична при покупке повседневного продукта; Social (10) — шоколад не является статусным товаром для демонстрации социального положения в московском контексте."
+}
+```

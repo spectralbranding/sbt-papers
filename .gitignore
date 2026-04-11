@@ -42,3 +42,6 @@ venv/
 # Build tooling (not for public distribution)
 *.typ
 *.lua
+
+# Local backup dir created by fix_native_prompts.py (should never be committed)
+.native_fix_backup/
