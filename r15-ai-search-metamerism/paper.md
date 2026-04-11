@@ -239,6 +239,8 @@ $$\bar{\rho} = \frac{2}{M(M-1)} \sum_{m < m'} \frac{\hat{\mathbf{w}}_m \cdot \ha
 
 where $M$ is the number of models. Values approaching 1.0 indicate structural convergence in dimensional ordering across architectures.
 
+**DCI as a rate-distortion functional.** The Dimensional Collapse Index admits a stricter information-theoretic interpretation. Treat the eight-dimensional weight allocation $\mathbf{w}$ as a source variable and the AI model's response as a lossy encoder $Q(\mathbf{w}) \to \hat{\mathbf{w}}$ that maps the full perception vector onto the model's reproducible output distribution. Under this framing the empirical collapse to Economic + Semiotic is not merely "shrinkage" toward a prior but a *minimum-distortion encoding* given the model's effective channel capacity, in the sense of Shannon's source-coding-with-fidelity theorem (Shannon, 1959; Cover & Thomas, 2006). The DCI is a single-statistic distortion measure on this encoding; the cosine similarity $\bar{\rho}$ across models quantifies the convergence of independent encoders to the same rate-distortion-optimal codebook. This reframing is consistent with established results in vector quantization (Gersho & Gray, 1992): when the source distribution is fixed and the rate budget is small, distinct quantizers converge on a common partition of the source space — exactly the cross-architecture pattern observed at $\bar{\rho} = .977$. We do not estimate the rate-distortion curve $R(D)$ in the present study (this is a target for future work, see Section 6); the framing serves to ground the collapse phenomenon in a 60-year-old established literature rather than to introduce a new estimator.
+
 ### 3.7 Study Design: Confirmatory and Exploratory Components
 
 All confirmatory hypothesis tests (H1--H4) were evaluated at alpha = .05 with Benjamini-Hochberg correction for false discovery rate across the four primary hypotheses. Exploratory hypotheses (H5--H12) are reported with uncorrected p-values and should be interpreted as hypothesis-generating.
@@ -734,6 +736,8 @@ Campbell, C., Plangger, K., Sands, S., Kietzmann, J., & Bates, K. (2022). How de
 
 Campbell, C., Sands, S., Ferraro, C., Tsao, H.-Y., & Mavrommatis, A. (2020). From data to action: How marketers can leverage AI. *Business Horizons*, 63(2), 227-243.
 
+Cover, T. M., & Thomas, J. A. (2006). *Elements of information theory* (2nd ed.). Wiley-Interscience.
+
 Dawar, N., & Bendle, N. (2018). Marketing in the age of Alexa. *Harvard Business Review*, 96(3), 80-86.
 
 Davenport, T., Guha, A., Grewal, D., & Bressgott, T. (2020). How artificial intelligence will change the future of marketing. *Journal of the Academy of Marketing Science*, 48, 24-42.
@@ -747,6 +751,8 @@ Diehl, K., Kornish, L. J., & Lynch, J. G. (2003). Smart agents: When lower searc
 Doshi, A. R., & Hauser, O. P. (2024). Generative AI enhances individual creativity but reduces the collective diversity of novel content. *Science Advances*, 10(28), eadn5290.
 
 Efron, B., & Morris, C. (1975). Data analysis using Stein's estimator and its generalizations. *Journal of the American Statistical Association*, 70(350), 311-319.
+
+Gersho, A., & Gray, R. M. (1992). *Vector quantization and signal compression*. Kluwer Academic Publishers.
 
 Hagendorff, T., Fabi, S., & Kosinski, M. (2023). Human-like intuitive behavior and reasoning biases emerged in large language models but disappeared in ChatGPT. *Nature Computational Science*, 3, 833-838.
 
@@ -783,6 +789,8 @@ Medesani, M., & Macdonald, J. (2026). Geometric foundations of invariant corrido
 Puntoni, S., Reczek, R. W., Giesler, M., & Botti, S. (2021). Consumers and artificial intelligence: An experiential perspective. *Journal of Marketing*, 85(1), 131-151.
 
 Sabbah, J., & Acar, O. A. (2026). Marketing to machines: How AI models respond to promotional cues. Working Paper. SSRN 6406639.
+
+Shannon, C. E. (1959). Coding theorems for a discrete source with a fidelity criterion. *IRE National Convention Record*, 7(4), 142-163.
 
 Sourati, Z., Venkatesh, S., Doshi, A., Hauser, J. R., & Tenenbaum, J. B. (2026). LLM homogenization and epistemic collapse in AI-mediated knowledge production. *Trends in Cognitive Sciences*, forthcoming.
 

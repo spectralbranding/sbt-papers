@@ -565,6 +565,8 @@ The GPS-SBT mapping situates brand positioning within a class of geometric estim
 
 The connection to Bayesian heterogeneity modeling (Wedel & Kamakura, 2000) is complementary rather than competitive. Bayesian methods characterize the *distribution* of spectral weights across a population; Brand Triangulation uses that distribution to estimate the *position* of a brand in dimensional space. The two approaches answer different questions and can be combined: Bayesian estimation of cohort weight profiles feeds the W matrix, which then drives PDOP computation and triangulated estimation. The geometric framework adds pre-study design criteria — PDOP — that the Bayesian approach does not provide.
 
+A final theoretical observation concerns the *non-local* character of the perception cloud. Brand triangulation works precisely because the perception cloud is a global object: individual observer scores carry information about the brand position only through their joint geometry, not as independent local measurements. This is structurally analogous to the constraint Bell (1964) identified in physics — that any hidden-variable account of jointly distributed correlated measurements must operate non-locally to reproduce the observed joint statistics. Brand triangulation is non-local in the same precise sense: the W matrix and the resulting PDOP depend on the entire observer constellation, not on any single observer in isolation, and no aggregation procedure that treats observers as independent local probes can recover the same positioning information. This is why per-observer brand scores cannot be averaged into a meaningful population estimate without first specifying the constellation geometry. The non-local structure is a feature of the framework, not a constraint on it: it is what permits triangulated estimation to extract more information than the sum of its individual observations.
+
 ### 10.2 Practical Implications
 
 ### 10.2.1 Pre-Study DOP Optimization
@@ -656,6 +658,8 @@ Aubin, J.-P. (1991). *Viability Theory*. Birkhauser. DOI: 10.1007/978-0-8176-491
 Aubin, J.-P., Bayen, A. M., & Saint-Pierre, P. (2011). *Viability Theory: New Directions*. Springer. DOI: 10.1007/978-3-642-16684-6
 
 Bawa, V. S. (1976). Admissible portfolios for all individuals. *Journal of Finance*, 31(4), 1169–1183.
+
+Bell, J. S. (1964). On the Einstein Podolsky Rosen paradox. *Physics Physique Fizika*, 1(3), 195-200.
 
 Berger, M. P. F., King, C. Y. J., & Wong, W. K. (2000). Minimax D-optimal designs for item response theory models. *Psychometrika*, 65(3), 377–390. DOI: 10.1007/BF02296152
 

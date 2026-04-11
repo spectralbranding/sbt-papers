@@ -9,7 +9,7 @@ meta:
       orcid: "0009-0000-6893-9231"
       affiliation: "Independent Researcher"
   doi: "10.5281/zenodo.19482547"
-  date: "2026-04-05"
+  date: "2026-04-07"
   version: "1.0"
   venue: "Zenodo preprint (target: Marketing Science; fallback: JMR)"
   license: "CC-BY-4.0"
@@ -353,6 +353,9 @@ submission_history:
     status: "published"
     doi: "10.5281/zenodo.19482547"
     notes: >
-      v1.0 preprint. 12 sections, 6 propositions, 46 references. ~14,263 words.
+      v1.0 preprint. 12 sections, 6 propositions, 63 references. ~17,300 words.
+      Monte Carlo PDOP validation (Section 9.6): R^2 = 0.926, Spearman rho = 0.996.
+      Session 90: dark signals/PDOP blind spots, Bonnet pairs metric insufficiency,
+      Karcher mean curved-space generalization (all in Section 11).
       Target journals: Marketing Science (primary), Journal of Marketing Research (fallback).
       After Zenodo publication, submission timeline: April 2026 (allow 3–4 weeks for decision).
