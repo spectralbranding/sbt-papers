@@ -12,7 +12,7 @@ API call with prompt, raw response, parsed output, model ID, latency, and error 
 | `run3_local.jsonl` | Run 3 | 1,620 | 5 local brand pairs (Cyprus, Latvia, Kenya, Vietnam, Serbia), 6 models |
 | `run3_qwen_plus.jsonl` | Run 3 supplement | varies | Qwen Plus backfill for 5 local pairs |
 | `run4_resolution.jsonl` | Run 4 | 90 | Brand Function resolution test, 5 local pairs with behavioral specs |
-| `run5_crosscultural.jsonl` | Run 5 | 11,410 total (7,999 successful) | 7 cross-cultural pairs, 22 models, 8 cultures, 69 native-language calls (14MB) |
+| `run5_crosscultural.jsonl` | Run 5 | 11,410 total (7,999 successful) | 7 cross-cultural pairs, 22 active models, 7 training traditions, 69 native-language calls (14MB) |
 | `run5_fireworks_glm.jsonl` | Run 5 supplement | varies | GLM-4.7 (Zhipu, Fireworks API) backfill |
 | `run5_gptoss_swallow.jsonl` | Run 5 supplement | 435 | GPT-OSS Swallow 20B (Japanese) backfill |
 | `run6_banking_clean.jsonl` | Run 6 | 1,018 | Banking pair (Tinkoff vs PrivatBank), 24 models; H6 test |
