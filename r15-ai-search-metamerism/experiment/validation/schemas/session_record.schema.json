@@ -30,6 +30,7 @@
         "weighted_recommendation",
         "weighted_recommendation_spec",
         "weighted_recommendation_native",
+        "weighted_recommendation_native_spec",
         "dimensional_differentiation",
         "dimension_probe",
         "geopolitical_framing",
