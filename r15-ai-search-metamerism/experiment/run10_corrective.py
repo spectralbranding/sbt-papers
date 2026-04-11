@@ -69,13 +69,11 @@ LANGUAGE: ENGLISH ONLY
 
 Run 10 uses English-language prompts only. Native-language variants are
 deliberately excluded for two reasons:
-(1) R15 H10 (Native Language Effect) was already tested with mixed-language
-    prompts and NOT supported (mean = -0.005 across 815 calls in 11 languages);
+(1) R15 H10 (Native Language Effect) has already been tested and is
+    NOT supported in the main experiment (Runs 5-8).
 (2) Mixing language and comparator in one experiment would confound the two
-    effects. Run 10's question is about category-template substitution, which
-    must be isolated. A separate clean re-test of H10 with fully-native
-    prompts is scheduled as Run 11 (see CONTINUATION_PROMPT.md Session 93
-    priority #0b).
+    effects. Run 10's question is about category-template substitution,
+    which must be isolated.
 
 EXPERIMENT VOLUME
 

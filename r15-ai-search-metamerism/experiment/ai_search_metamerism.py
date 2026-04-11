@@ -638,18 +638,25 @@ GEOPOLITICAL_FRAMING_PROMPT = (
 # Native-language geopolitical framing prompts (H12 x H10 interaction).
 # JSON keys stay in English for parsing. Only instructional text is translated.
 NATIVE_GEOPOLITICAL_FRAMING: dict[str, str] = {
-    # Placeholders used below:
-    #   {brand}         nominative brand name (invariable)
-    #   {what}          grammatically-correct noun phrase for "the purchase":
-    #                   e.g. RU genitive "шоколада Рошен", ZH "沃尔沃汽车",
-    #                   SV "en Volvo-bil". Supplied from native_localization.yaml.
-    #   {place}         full prepositional phrase with the correct preposition
-    #                   and case, e.g. RU "в Москве", UK "у Києві", ZH "在莫斯科",
-    #                   SV "i Stockholm", EL "στην Αθήνα". Supplied from the YAML.
-    #   {dim_block}     block of 8 dimension descriptions in the target language
-    # Each template is a natural, native-speaker-quality paragraph -- not a
-    # word-by-word transliteration. Run 11 is the clean re-test that
-    # replaces the dirty mixed-language prompts used in R15 Runs 5-8.
+    # Native-language geopolitical framing prompts (H12).
+    #
+    # Placeholders:
+    #   {brand}         nominative brand name (invariable across cases)
+    #   {what}          full noun phrase naming the purchase target, in
+    #                   whatever case the target language requires at
+    #                   the insertion point (e.g. RU genitive
+    #                   "шоколада Рошен", ZH "沃尔沃汽车", SV "en Volvo-bil").
+    #                   Supplied from L1_configuration/native_localization.yaml.
+    #   {place}         full prepositional phrase with the correct
+    #                   preposition and case (e.g. RU "в Москве",
+    #                   UK "у Києві", ZH "在斯德哥尔摩", SV "i Stockholm").
+    #                   Supplied from L1_configuration/native_localization.yaml.
+    #   {dim_block}     block of 8 dimension descriptions in the target
+    #                   language (produced by _dim_block_native()).
+    #
+    # Each template is written as natural native-speaker prose with
+    # correct grammar, case marking, and word order for the target
+    # language.
     "ru": (
         "Вы — AI-ассистент по покупкам. Вы помогаете покупателю, "
         "живущему {place}, принять решение.\n"

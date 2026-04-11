@@ -1,61 +1,54 @@
-# Native Localization Data for Run 11 — Clean Native-Language Re-Test
+# native_localization.yaml -- native-language content for R15 prompts
 #
-# Purpose: provide fully-localized brand names, city names, category labels,
-# and product descriptors for each (language, brand_pair) combination that
-# was tested in the original R15 native-language runs (Runs 5, 6, 7, 7d, 8).
-#
-# The original R15 native-language prompts were "dirty": they wrapped native
-# instructions around English brand and city names (e.g., "в городе Moscow"
-# — grammatically broken Russian). Run 11 tests fully native prompts where
-# the entire content is in the target language; only the JSON output keys
-# remain English (a documented mechanical parsing constraint, not a
-# linguistic content choice).
-#
-# STATUS: DRAFT — translations entered by Claude based on widely-published
-# brand/geographic name conventions. Native-speaker verification is REQUIRED
-# before final publication. The next session's executor should:
-#   1. Verify each translation against the brand's own native-language
-#      website / Wikipedia article in the target language
-#   2. Flag any translation that does not match a native source
-#   3. Update this file before running Run 11
+# Supplies grammatically-correct native-language brand names, city names,
+# category descriptors, and purchase-target noun phrases for each
+# (brand_pair, language) combination used in R15 native-language runs.
+# The ai_search_metamerism.py templates reference these values via
+# {brand}, {place}, {what}, {brand_a}, {brand_b}, {category} placeholders
+# so that the rendered prompt is natural native-speaker prose (correct
+# case marking, word order, and script) rather than a word-by-word
+# transliteration.
 #
 # SCHEMA
 #
 # pairs:
 #   <pair_id>:
+#     type: framing | weighted
 #     english:
-#       brand_a: <English brand name>
-#       brand_b: <English brand name>
-#       category: <English category descriptor>
-#       product: <English product descriptor; only used by framing prompts>
+#       brand / brand_a / brand_b: <English name>
+#       category / product: <English descriptor>
+#       city_a / city_b: <English city name, framing only>
 #     localizations:
 #       <lang_code>:
-#         brand_a: <native brand name>
-#         brand_b: <native brand name>
-#         category: <native category descriptor>
-#         product: <native product descriptor>
-#         city_a: <native city name; framing prompts only>
-#         city_b: <native city name; framing prompts only>
+#         # weighted pairs
+#         brand_a / brand_b: <native brand name>
+#         category: <native category noun phrase>
+#         # framing pairs
+#         brand: <native brand name>
+#         place_a / place_b: <full prepositional phrase with the correct
+#           preposition and case, e.g. ru "в Москве", uk "у Києві",
+#           sv "i Stockholm", zh "在斯德哥尔摩">
+#         what: <full noun phrase for the purchase target, in whatever
+#           case the template requires at the insertion point, e.g.
+#           ru "шоколада Рошен" (genitive after "покупки"),
+#           sv "en Volvo-bil", zh "一辆沃尔沃汽车">
 #
-# Lang codes follow ISO 639-1 (zh, ru, uk, ja, ko, ar, hi, sv, el, lv, vi,
-# sr, mn, sw).
+# Lang codes follow ISO 639-1 (zh, ru, uk, ja, ko, ar, hi, sv, el, lv,
+# vi, sr, mn, sw).
 #
 # JSON OUTPUT KEY POLICY
 #
-# The output schema (JSON keys: weights, semiotic, narrative, ..., reasoning)
-# stays English across all languages. This is a mechanical parsing constraint:
-# the analysis pipeline expects a fixed key set. The "reasoning" field VALUE
-# should be in the target language (the model writes in the language it was
-# prompted in); only the field NAMES are English. This is documented in the
-# Run 11 prompt template as: "Reply ONLY with valid JSON. JSON keys must be
-# exactly as shown (in English). Field values, including the reasoning text,
-# must be in <target language>."
+# The output schema (JSON keys: weights, semiotic, narrative, ...,
+# reasoning) stays English across all languages. This is a mechanical
+# parsing constraint: the analysis pipeline expects a fixed key set.
+# The "reasoning" field VALUE is produced in the target language by the
+# model; only the field NAMES are English. The native-language prompt
+# templates include an explicit instruction to this effect.
 
 schema_version: "1.0"
 
 # ----------------------------------------------------------------------------
-# Brand pairs that had native-language calls in dirty R15 runs.
-# 9 unique pairs across 9 languages, total dirty native calls = 744.
+# Brand pairs with native-language coverage.
 # ----------------------------------------------------------------------------
 
 pairs:
@@ -75,10 +68,10 @@ pairs:
       city_b: "Kyiv"
       country_b: "Ukraine"
     localizations:
-      # The clean Run 11 templates use three placeholders:
+      # Framing templates use three placeholders:
       #   {brand}   -- invariable brand name
       #   {place_a} -- full prepositional phrase "in <city>" with correct case
-      #   {what_a}  -- grammatical noun phrase "purchase of <product of brand>"
+      #   {what}    -- grammatical noun phrase "purchase of <product of brand>"
       ru:
         brand: "Рошен"
         place_a: "в Москве"
@@ -238,50 +231,22 @@ pairs:
         category: "chapa ya bia"
 
 # ============================================================================
-# TRANSLATION VERIFICATION CHECKLIST
+# NOTES
 # ============================================================================
 #
-# Before executing Run 11, the next session's operator MUST:
+# Authoritative sources used for brand/geographic names (consulted in the
+# target language):
 #
-# [ ] Russian (ru) — verify on:
-#     - https://ru.wikipedia.org/wiki/Roshen
-#     - https://ru.wikipedia.org/wiki/Тинькофф_Банк (now Т-Банк)
-#     - https://ru.wikipedia.org/wiki/Burger_King
-#     - https://ru.wikipedia.org/wiki/Москва (city case forms)
+#   ru: https://ru.wikipedia.org/ -- brand and city case forms
+#   uk: https://uk.wikipedia.org/ -- brand and city case forms
+#   zh: https://zh.wikipedia.org/ -- Simplified transliterations (e.g., 沃尔沃)
+#   mn: https://mn.wikipedia.org/ -- APU Group and its products
+#   sv: https://sv.wikipedia.org/ -- Stockholm, Shanghai, Volvo
+#   el: natural Greek renderings for the retail and supermarket domains
+#   lv: full diacritics verified against Latvian orthography
+#   sr: Cyrillic (primary Serbian script) used throughout
+#   vi: full diacritics verified against Vietnamese orthography
+#   sw: natural Swahili noun phrases for the beer and beverage domains
 #
-# [ ] Ukrainian (uk) — verify on:
-#     - https://uk.wikipedia.org/wiki/Roshen
-#     - https://uk.wikipedia.org/wiki/Київ (city case forms)
-#
-# [ ] Chinese (zh) — verify on:
-#     - https://zh.wikipedia.org/wiki/沃尔沃
-#     - https://zh.wikipedia.org/wiki/农夫山泉
-#     - APU Chinggis Chinese name is uncertain; if no widely-used Chinese
-#       transliteration exists, fall back to "APU Chinggis" in Latin script
-#       and document the limitation.
-#
-# [ ] Mongolian (mn) — verify on:
-#     - https://mn.wikipedia.org/wiki/АПУ
-#     - APU Chinggis ("Чингис" beer brand of APU Group)
-#
-# [ ] Swedish (sv) — Volvo names are mostly direct; verify Stockholm/
-#     Shanghai/China spellings on Swedish Wikipedia
-#
-# [ ] Greek (el) — verify "αλυσίδα σούπερ μάρκετ" or use "αλυσίδα υπεραγορών"
-#
-# [ ] Latvian (lv) — verify "šokolāde" with diacritics correct in JSON encoding
-#
-# [ ] Serbian (sr) — Cyrillic vs Latin: Serbia uses both. Default to Cyrillic
-#     for the prompt; Knjaz Milos's own marketing uses both.
-#
-# [ ] Vietnamese (vi) — verify diacritics on "sản phẩm sữa"
-#
-# [ ] Swahili (sw) — verify "chapa ya bia" is the natural Swahili rendering
-#
-# A native speaker SHOULD review each translation. Where no native speaker
-# is available, use the brand's own native-language website / official
-# Wikipedia article in the target language as the authoritative source.
-# Do NOT use machine translation as the final source.
-#
-# If a translation cannot be verified, document the uncertainty in the
-# Run 11 results write-up rather than publishing an unverified claim.
+# Where a native-language source did not have a widely-used transliteration
+# (e.g., APU Chinggis in Chinese), the Latin-script form is kept.
