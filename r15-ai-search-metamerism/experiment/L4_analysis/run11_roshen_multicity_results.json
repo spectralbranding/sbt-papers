@@ -1,0 +1,1235 @@
+{
+  "n_records": 315,
+  "n_valid_records": 301,
+  "cell_profiles": {
+    "Moscow|en": {
+      "claude": {
+        "semiotic": 14.667,
+        "narrative": 8.0,
+        "ideological": 6.0,
+        "experiential": 17.333,
+        "social": 12.0,
+        "economic": 20.667,
+        "cultural": 12.333,
+        "temporal": 9.0
+      },
+      "gpt": {
+        "semiotic": 15.0,
+        "narrative": 10.0,
+        "ideological": 8.333,
+        "experiential": 20.0,
+        "social": 11.667,
+        "economic": 23.333,
+        "cultural": 6.667,
+        "temporal": 5.0
+      },
+      "gemini": {
+        "semiotic": 13.333,
+        "narrative": 5.0,
+        "ideological": 5.0,
+        "experiential": 11.667,
+        "social": 5.0,
+        "economic": 30.0,
+        "cultural": 18.333,
+        "temporal": 11.667
+      },
+      "deepseek": {
+        "semiotic": 20.0,
+        "narrative": 5.0,
+        "ideological": 5.0,
+        "experiential": 10.0,
+        "social": 5.0,
+        "economic": 35.0,
+        "cultural": 10.0,
+        "temporal": 10.0
+      },
+      "qwen3_local": {
+        "semiotic": 28.333,
+        "narrative": 5.0,
+        "ideological": 5.0,
+        "experiential": 8.333,
+        "social": 10.0,
+        "economic": 33.333,
+        "cultural": 5.0,
+        "temporal": 5.0
+      },
+      "gemma4_local": {
+        "semiotic": 16.667,
+        "narrative": 8.333,
+        "ideological": 5.0,
+        "experiential": 10.0,
+        "social": 15.0,
+        "economic": 23.333,
+        "cultural": 21.667,
+        "temporal": 10.0
+      },
+      "yandexgpt_pro": {
+        "semiotic": 16.667,
+        "narrative": 10.0,
+        "ideological": 12.333,
+        "experiential": 12.333,
+        "social": 9.667,
+        "economic": 19.333,
+        "cultural": 11.667,
+        "temporal": 8.0
+      }
+    },
+    "Moscow|ru": {
+      "claude": {
+        "semiotic": 12.0,
+        "narrative": 8.0,
+        "ideological": 10.0,
+        "experiential": 15.0,
+        "social": 9.333,
+        "economic": 20.667,
+        "cultural": 12.0,
+        "temporal": 13.0
+      },
+      "gpt": {
+        "semiotic": 15.0,
+        "narrative": 10.0,
+        "ideological": 8.333,
+        "experiential": 21.667,
+        "social": 11.667,
+        "economic": 21.667,
+        "cultural": 6.667,
+        "temporal": 5.0
+      },
+      "gemini": {
+        "semiotic": 10.0,
+        "narrative": 5.0,
+        "ideological": 5.0,
+        "experiential": 20.0,
+        "social": 5.0,
+        "economic": 30.0,
+        "cultural": 15.0,
+        "temporal": 10.0
+      },
+      "deepseek": {
+        "semiotic": 15.0,
+        "narrative": 5.0,
+        "ideological": 5.0,
+        "experiential": 20.0,
+        "social": 6.667,
+        "economic": 25.0,
+        "cultural": 10.0,
+        "temporal": 13.333
+      },
+      "qwen3_local": {
+        "semiotic": 18.333,
+        "narrative": 6.667,
+        "ideological": 5.0,
+        "experiential": 13.333,
+        "social": 8.333,
+        "economic": 28.333,
+        "cultural": 16.667,
+        "temporal": 6.667
+      },
+      "gemma4_local": {
+        "semiotic": 17.5,
+        "narrative": 11.0,
+        "ideological": 6.5,
+        "experiential": 7.5,
+        "social": 12.5,
+        "economic": 17.5,
+        "cultural": 13.5,
+        "temporal": 14.0
+      },
+      "yandexgpt_pro": {
+        "semiotic": 15.0,
+        "narrative": 10.0,
+        "ideological": 12.0,
+        "experiential": 13.0,
+        "social": 8.0,
+        "economic": 20.0,
+        "cultural": 11.667,
+        "temporal": 10.333
+      }
+    },
+    "Kyiv|en": {
+      "claude": {
+        "semiotic": 12.0,
+        "narrative": 8.0,
+        "ideological": 6.0,
+        "experiential": 14.0,
+        "social": 9.667,
+        "economic": 18.0,
+        "cultural": 16.0,
+        "temporal": 16.333
+      },
+      "gpt": {
+        "semiotic": 15.0,
+        "narrative": 10.0,
+        "ideological": 10.0,
+        "experiential": 20.0,
+        "social": 11.667,
+        "economic": 21.667,
+        "cultural": 6.667,
+        "temporal": 5.0
+      },
+      "gemini": {
+        "semiotic": 13.333,
+        "narrative": 6.667,
+        "ideological": 20.0,
+        "experiential": 10.0,
+        "social": 5.0,
+        "economic": 20.0,
+        "cultural": 20.0,
+        "temporal": 5.0
+      },
+      "deepseek": {
+        "semiotic": 19.333,
+        "narrative": 7.667,
+        "ideological": 10.0,
+        "experiential": 12.333,
+        "social": 5.0,
+        "economic": 25.0,
+        "cultural": 15.0,
+        "temporal": 5.667
+      },
+      "qwen3_local": {
+        "semiotic": 15.0,
+        "narrative": 3.333,
+        "ideological": 15.0,
+        "experiential": 3.333,
+        "social": 25.0,
+        "economic": 11.667,
+        "cultural": 21.667,
+        "temporal": 5.0
+      },
+      "gemma4_local": {
+        "semiotic": 16.0,
+        "narrative": 7.0,
+        "ideological": 5.333,
+        "experiential": 11.0,
+        "social": 11.333,
+        "economic": 21.667,
+        "cultural": 20.0,
+        "temporal": 14.333
+      }
+    },
+    "Kyiv|uk": {
+      "claude": {
+        "semiotic": 15.0,
+        "narrative": 8.0,
+        "ideological": 12.0,
+        "experiential": 18.0,
+        "social": 10.0,
+        "economic": 20.0,
+        "cultural": 12.0,
+        "temporal": 5.0
+      },
+      "gpt": {
+        "semiotic": 15.0,
+        "narrative": 10.0,
+        "ideological": 10.0,
+        "experiential": 20.0,
+        "social": 13.333,
+        "economic": 21.667,
+        "cultural": 5.0,
+        "temporal": 5.0
+      },
+      "gemini": {
+        "semiotic": 10.0,
+        "narrative": 5.0,
+        "ideological": 8.333,
+        "experiential": 15.0,
+        "social": 5.0,
+        "economic": 25.0,
+        "cultural": 21.667,
+        "temporal": 10.0
+      },
+      "deepseek": {
+        "semiotic": 15.0,
+        "narrative": 6.667,
+        "ideological": 23.333,
+        "experiential": 10.0,
+        "social": 8.333,
+        "economic": 21.667,
+        "cultural": 10.0,
+        "temporal": 5.0
+      },
+      "qwen3_local": {
+        "semiotic": 16.667,
+        "narrative": 5.667,
+        "ideological": 4.333,
+        "experiential": 5.0,
+        "social": 25.0,
+        "economic": 16.667,
+        "cultural": 23.333,
+        "temporal": 6.667
+      },
+      "gemma4_local": {
+        "semiotic": 15.0,
+        "narrative": 10.0,
+        "ideological": 6.667,
+        "experiential": 10.0,
+        "social": 15.0,
+        "economic": 18.333,
+        "cultural": 15.0,
+        "temporal": 10.0
+      }
+    },
+    "Vilnius|en": {
+      "claude": {
+        "semiotic": 15.0,
+        "narrative": 8.0,
+        "ideological": 7.0,
+        "experiential": 17.333,
+        "social": 10.667,
+        "economic": 22.0,
+        "cultural": 11.333,
+        "temporal": 8.667
+      },
+      "gpt": {
+        "semiotic": 15.0,
+        "narrative": 10.0,
+        "ideological": 8.333,
+        "experiential": 20.0,
+        "social": 10.0,
+        "economic": 21.667,
+        "cultural": 10.0,
+        "temporal": 5.0
+      },
+      "gemini": {
+        "semiotic": 20.0,
+        "narrative": 5.0,
+        "ideological": 10.0,
+        "experiential": 15.0,
+        "social": 5.0,
+        "economic": 30.0,
+        "cultural": 10.0,
+        "temporal": 5.0
+      },
+      "deepseek": {
+        "semiotic": 20.0,
+        "narrative": 5.0,
+        "ideological": 10.0,
+        "experiential": 10.0,
+        "social": 5.0,
+        "economic": 30.0,
+        "cultural": 10.0,
+        "temporal": 10.0
+      },
+      "qwen3_local": {
+        "semiotic": 28.333,
+        "narrative": 5.0,
+        "ideological": 8.333,
+        "experiential": 10.0,
+        "social": 13.333,
+        "economic": 25.0,
+        "cultural": 5.0,
+        "temporal": 5.0
+      },
+      "gemma4_local": {
+        "semiotic": 16.667,
+        "narrative": 9.333,
+        "ideological": 5.667,
+        "experiential": 12.667,
+        "social": 13.333,
+        "economic": 20.0,
+        "cultural": 16.667,
+        "temporal": 9.0
+      },
+      "yandexgpt_pro": {
+        "semiotic": 15.0,
+        "narrative": 10.0,
+        "ideological": 11.333,
+        "experiential": 11.0,
+        "social": 8.667,
+        "economic": 20.0,
+        "cultural": 15.0,
+        "temporal": 9.0
+      }
+    },
+    "Vilnius|lt": {
+      "claude": {
+        "semiotic": 15.0,
+        "narrative": 8.0,
+        "ideological": 12.0,
+        "experiential": 14.0,
+        "social": 10.0,
+        "economic": 20.667,
+        "cultural": 10.333,
+        "temporal": 10.0
+      },
+      "gpt": {
+        "semiotic": 15.0,
+        "narrative": 10.0,
+        "ideological": 10.0,
+        "experiential": 20.0,
+        "social": 15.0,
+        "economic": 20.0,
+        "cultural": 5.0,
+        "temporal": 5.0
+      },
+      "gemini": {
+        "semiotic": 10.0,
+        "narrative": 5.0,
+        "ideological": 6.667,
+        "experiential": 20.0,
+        "social": 6.667,
+        "economic": 26.667,
+        "cultural": 15.0,
+        "temporal": 10.0
+      },
+      "deepseek": {
+        "semiotic": 11.667,
+        "narrative": 5.0,
+        "ideological": 15.0,
+        "experiential": 16.667,
+        "social": 5.0,
+        "economic": 28.333,
+        "cultural": 10.0,
+        "temporal": 8.333
+      },
+      "qwen3_local": {
+        "semiotic": 20.0,
+        "narrative": 5.0,
+        "ideological": 5.0,
+        "experiential": 16.667,
+        "social": 13.333,
+        "economic": 23.333,
+        "cultural": 8.333,
+        "temporal": 8.333
+      },
+      "gemma4_local": {
+        "semiotic": 16.0,
+        "narrative": 10.667,
+        "ideological": 10.0,
+        "experiential": 15.0,
+        "social": 11.667,
+        "economic": 21.0,
+        "cultural": 12.333,
+        "temporal": 10.0
+      },
+      "yandexgpt_pro": {
+        "semiotic": 15.0,
+        "narrative": 10.0,
+        "ideological": 10.667,
+        "experiential": 9.333,
+        "social": 11.0,
+        "economic": 20.0,
+        "cultural": 15.667,
+        "temporal": 8.333
+      }
+    },
+    "Warsaw|en": {
+      "claude": {
+        "semiotic": 14.0,
+        "narrative": 8.0,
+        "ideological": 6.667,
+        "experiential": 14.667,
+        "social": 9.0,
+        "economic": 20.667,
+        "cultural": 14.0,
+        "temporal": 13.0
+      },
+      "gpt": {
+        "semiotic": 15.0,
+        "narrative": 10.0,
+        "ideological": 10.0,
+        "experiential": 20.0,
+        "social": 13.333,
+        "economic": 20.0,
+        "cultural": 6.667,
+        "temporal": 5.0
+      },
+      "gemini": {
+        "semiotic": 20.0,
+        "narrative": 5.0,
+        "ideological": 10.0,
+        "experiential": 11.667,
+        "social": 5.0,
+        "economic": 30.0,
+        "cultural": 13.333,
+        "temporal": 5.0
+      },
+      "deepseek": {
+        "semiotic": 20.0,
+        "narrative": 5.0,
+        "ideological": 10.0,
+        "experiential": 10.0,
+        "social": 5.0,
+        "economic": 26.667,
+        "cultural": 13.333,
+        "temporal": 10.0
+      },
+      "qwen3_local": {
+        "semiotic": 20.0,
+        "narrative": 15.0,
+        "ideological": 15.0,
+        "experiential": 2.5,
+        "social": 20.0,
+        "economic": 15.0,
+        "cultural": 10.0,
+        "temporal": 2.5
+      },
+      "gemma4_local": {
+        "semiotic": 15.0,
+        "narrative": 8.333,
+        "ideological": 5.0,
+        "experiential": 10.0,
+        "social": 15.0,
+        "economic": 21.667,
+        "cultural": 21.667,
+        "temporal": 6.667
+      },
+      "yandexgpt_pro": {
+        "semiotic": 15.0,
+        "narrative": 10.0,
+        "ideological": 11.333,
+        "experiential": 12.667,
+        "social": 8.0,
+        "economic": 20.0,
+        "cultural": 15.0,
+        "temporal": 8.0
+      }
+    },
+    "Warsaw|pl": {
+      "claude": {
+        "semiotic": 12.0,
+        "narrative": 8.0,
+        "ideological": 14.0,
+        "experiential": 16.0,
+        "social": 10.0,
+        "economic": 18.0,
+        "cultural": 6.0,
+        "temporal": 16.0
+      },
+      "gpt": {
+        "semiotic": 15.0,
+        "narrative": 10.0,
+        "ideological": 15.0,
+        "experiential": 23.333,
+        "social": 8.333,
+        "economic": 15.0,
+        "cultural": 6.667,
+        "temporal": 6.667
+      },
+      "gemini": {
+        "semiotic": 10.0,
+        "narrative": 5.0,
+        "ideological": 8.333,
+        "experiential": 20.0,
+        "social": 6.667,
+        "economic": 28.333,
+        "cultural": 11.667,
+        "temporal": 10.0
+      },
+      "deepseek": {
+        "semiotic": 11.667,
+        "narrative": 5.0,
+        "ideological": 6.667,
+        "experiential": 18.333,
+        "social": 5.0,
+        "economic": 31.667,
+        "cultural": 10.0,
+        "temporal": 11.667
+      },
+      "qwen3_local": {
+        "semiotic": 20.0,
+        "narrative": 5.0,
+        "ideological": 5.0,
+        "experiential": 20.0,
+        "social": 15.0,
+        "economic": 23.333,
+        "cultural": 5.0,
+        "temporal": 5.0
+      },
+      "yandexgpt_pro": {
+        "semiotic": 15.0,
+        "narrative": 10.0,
+        "ideological": 6.0,
+        "experiential": 12.0,
+        "social": 10.333,
+        "economic": 23.333,
+        "cultural": 14.0,
+        "temporal": 9.333
+      },
+      "gemma4_local": {
+        "semiotic": 15.0,
+        "narrative": 7.5,
+        "ideological": 5.0,
+        "experiential": 7.5,
+        "social": 18.5,
+        "economic": 11.5,
+        "cultural": 17.5,
+        "temporal": 17.5
+      }
+    },
+    "Astana|en": {
+      "claude": {
+        "semiotic": 16.0,
+        "narrative": 8.0,
+        "ideological": 6.667,
+        "experiential": 18.0,
+        "social": 12.0,
+        "economic": 21.333,
+        "cultural": 10.667,
+        "temporal": 7.333
+      },
+      "gpt": {
+        "semiotic": 15.0,
+        "narrative": 10.0,
+        "ideological": 10.0,
+        "experiential": 20.0,
+        "social": 15.0,
+        "economic": 20.0,
+        "cultural": 5.0,
+        "temporal": 5.0
+      },
+      "gemini": {
+        "semiotic": 20.0,
+        "narrative": 5.0,
+        "ideological": 5.0,
+        "experiential": 10.0,
+        "social": 5.0,
+        "economic": 30.0,
+        "cultural": 15.0,
+        "temporal": 10.0
+      },
+      "deepseek": {
+        "semiotic": 18.333,
+        "narrative": 5.0,
+        "ideological": 6.667,
+        "experiential": 10.0,
+        "social": 5.0,
+        "economic": 28.333,
+        "cultural": 13.333,
+        "temporal": 13.333
+      },
+      "qwen3_local": {
+        "semiotic": 30.0,
+        "narrative": 7.5,
+        "ideological": 5.0,
+        "experiential": 5.0,
+        "social": 12.5,
+        "economic": 27.5,
+        "cultural": 5.0,
+        "temporal": 7.5
+      },
+      "gemma4_local": {
+        "semiotic": 20.0,
+        "narrative": 8.0,
+        "ideological": 6.5,
+        "experiential": 16.5,
+        "social": 23.5,
+        "economic": 19.0,
+        "cultural": 10.0,
+        "temporal": 6.5
+      },
+      "yandexgpt_pro": {
+        "semiotic": 18.333,
+        "narrative": 10.0,
+        "ideological": 14.0,
+        "experiential": 9.333,
+        "social": 10.0,
+        "economic": 23.333,
+        "cultural": 9.0,
+        "temporal": 6.0
+      }
+    },
+    "Astana|kk": {
+      "claude": {
+        "semiotic": 12.0,
+        "narrative": 8.0,
+        "ideological": 14.333,
+        "experiential": 15.333,
+        "social": 12.0,
+        "economic": 17.333,
+        "cultural": 6.333,
+        "temporal": 11.333
+      },
+      "gpt": {
+        "semiotic": 15.0,
+        "narrative": 20.0,
+        "ideological": 10.0,
+        "experiential": 20.0,
+        "social": 10.0,
+        "economic": 15.0,
+        "cultural": 5.0,
+        "temporal": 5.0
+      },
+      "gemini": {
+        "semiotic": 15.0,
+        "narrative": 5.0,
+        "ideological": 6.667,
+        "experiential": 20.0,
+        "social": 6.667,
+        "economic": 26.667,
+        "cultural": 11.667,
+        "temporal": 8.333
+      },
+      "deepseek": {
+        "semiotic": 15.0,
+        "narrative": 5.0,
+        "ideological": 10.0,
+        "experiential": 25.0,
+        "social": 10.0,
+        "economic": 20.0,
+        "cultural": 10.0,
+        "temporal": 5.0
+      },
+      "qwen3_local": {
+        "semiotic": 18.333,
+        "narrative": 6.667,
+        "ideological": 5.0,
+        "experiential": 26.667,
+        "social": 11.667,
+        "economic": 21.667,
+        "cultural": 5.0,
+        "temporal": 5.0
+      },
+      "gemma4_local": {
+        "semiotic": 16.5,
+        "narrative": 10.0,
+        "ideological": 10.0,
+        "experiential": 17.5,
+        "social": 20.0,
+        "economic": 12.5,
+        "cultural": 12.5,
+        "temporal": 6.0
+      },
+      "yandexgpt_pro": {
+        "semiotic": 15.0,
+        "narrative": 10.0,
+        "ideological": 12.0,
+        "experiential": 20.0,
+        "social": 8.0,
+        "economic": 22.667,
+        "cultural": 7.0,
+        "temporal": 5.333
+      }
+    },
+    "Astana|ru": {
+      "claude": {
+        "semiotic": 12.0,
+        "narrative": 8.0,
+        "ideological": 10.0,
+        "experiential": 15.0,
+        "social": 12.0,
+        "economic": 18.0,
+        "cultural": 14.333,
+        "temporal": 10.667
+      },
+      "gpt": {
+        "semiotic": 13.333,
+        "narrative": 11.667,
+        "ideological": 10.0,
+        "experiential": 20.0,
+        "social": 10.0,
+        "economic": 25.0,
+        "cultural": 5.0,
+        "temporal": 5.0
+      },
+      "gemini": {
+        "semiotic": 10.0,
+        "narrative": 5.0,
+        "ideological": 5.0,
+        "experiential": 20.0,
+        "social": 5.0,
+        "economic": 30.0,
+        "cultural": 15.0,
+        "temporal": 10.0
+      },
+      "deepseek": {
+        "semiotic": 15.0,
+        "narrative": 5.0,
+        "ideological": 5.0,
+        "experiential": 20.0,
+        "social": 8.333,
+        "economic": 25.0,
+        "cultural": 10.0,
+        "temporal": 11.667
+      },
+      "qwen3_local": {
+        "semiotic": 20.0,
+        "narrative": 3.667,
+        "ideological": 3.667,
+        "experiential": 23.333,
+        "social": 8.333,
+        "economic": 26.667,
+        "cultural": 6.667,
+        "temporal": 7.667
+      },
+      "gemma4_local": {
+        "semiotic": 19.0,
+        "narrative": 7.0,
+        "ideological": 5.667,
+        "experiential": 10.667,
+        "social": 20.333,
+        "economic": 15.0,
+        "cultural": 13.333,
+        "temporal": 12.333
+      },
+      "yandexgpt_pro": {
+        "semiotic": 15.0,
+        "narrative": 10.0,
+        "ideological": 12.0,
+        "experiential": 13.0,
+        "social": 8.0,
+        "economic": 20.0,
+        "cultural": 13.0,
+        "temporal": 9.0
+      }
+    },
+    "Tbilisi|en": {
+      "claude": {
+        "semiotic": 16.667,
+        "narrative": 8.0,
+        "ideological": 6.0,
+        "experiential": 17.333,
+        "social": 12.0,
+        "economic": 22.0,
+        "cultural": 10.0,
+        "temporal": 8.0
+      },
+      "gpt": {
+        "semiotic": 15.0,
+        "narrative": 10.0,
+        "ideological": 8.333,
+        "experiential": 20.0,
+        "social": 13.333,
+        "economic": 21.667,
+        "cultural": 6.667,
+        "temporal": 5.0
+      },
+      "gemini": {
+        "semiotic": 16.667,
+        "narrative": 5.0,
+        "ideological": 6.667,
+        "experiential": 10.0,
+        "social": 5.0,
+        "economic": 30.0,
+        "cultural": 20.0,
+        "temporal": 6.667
+      },
+      "deepseek": {
+        "semiotic": 17.667,
+        "narrative": 6.0,
+        "ideological": 6.667,
+        "experiential": 10.0,
+        "social": 5.0,
+        "economic": 28.333,
+        "cultural": 12.333,
+        "temporal": 14.0
+      },
+      "qwen3_local": {
+        "semiotic": 28.333,
+        "narrative": 6.667,
+        "ideological": 5.0,
+        "experiential": 8.333,
+        "social": 13.333,
+        "economic": 28.333,
+        "cultural": 5.0,
+        "temporal": 5.0
+      },
+      "gemma4_local": {
+        "semiotic": 19.0,
+        "narrative": 7.0,
+        "ideological": 4.333,
+        "experiential": 11.667,
+        "social": 15.333,
+        "economic": 16.667,
+        "cultural": 16.667,
+        "temporal": 12.667
+      },
+      "yandexgpt_pro": {
+        "semiotic": 18.333,
+        "narrative": 10.0,
+        "ideological": 14.0,
+        "experiential": 13.333,
+        "social": 8.667,
+        "economic": 19.333,
+        "cultural": 9.667,
+        "temporal": 6.667
+      }
+    },
+    "Tbilisi|ka": {
+      "claude": {
+        "semiotic": 12.0,
+        "narrative": 8.0,
+        "ideological": 8.0,
+        "experiential": 18.0,
+        "social": 11.333,
+        "economic": 21.333,
+        "cultural": 12.0,
+        "temporal": 9.333
+      },
+      "gpt": {
+        "semiotic": 15.0,
+        "narrative": 10.0,
+        "ideological": 10.0,
+        "experiential": 20.0,
+        "social": 13.333,
+        "economic": 21.667,
+        "cultural": 5.0,
+        "temporal": 5.0
+      },
+      "gemini": {
+        "semiotic": 10.0,
+        "narrative": 5.0,
+        "ideological": 5.0,
+        "experiential": 20.0,
+        "social": 8.333,
+        "economic": 26.667,
+        "cultural": 13.333,
+        "temporal": 11.667
+      },
+      "deepseek": {
+        "semiotic": 15.0,
+        "narrative": 5.0,
+        "ideological": 10.0,
+        "experiential": 25.0,
+        "social": 5.0,
+        "economic": 25.0,
+        "cultural": 8.333,
+        "temporal": 6.667
+      },
+      "qwen3_local": {
+        "semiotic": 20.0,
+        "narrative": 4.333,
+        "ideological": 4.333,
+        "experiential": 21.667,
+        "social": 11.0,
+        "economic": 30.0,
+        "cultural": 4.333,
+        "temporal": 4.333
+      },
+      "gemma4_local": {
+        "semiotic": 14.0,
+        "narrative": 9.333,
+        "ideological": 6.667,
+        "experiential": 11.667,
+        "social": 23.333,
+        "economic": 13.333,
+        "cultural": 16.667,
+        "temporal": 11.667
+      },
+      "yandexgpt_pro": {
+        "semiotic": 15.0,
+        "narrative": 10.0,
+        "ideological": 6.667,
+        "experiential": 20.0,
+        "social": 11.667,
+        "economic": 25.0,
+        "cultural": 9.0,
+        "temporal": 2.667
+      }
+    },
+    "Baku|en": {
+      "claude": {
+        "semiotic": 17.333,
+        "narrative": 10.667,
+        "ideological": 7.333,
+        "experiential": 16.667,
+        "social": 10.667,
+        "economic": 20.667,
+        "cultural": 10.0,
+        "temporal": 6.667
+      },
+      "gpt": {
+        "semiotic": 15.0,
+        "narrative": 10.0,
+        "ideological": 6.667,
+        "experiential": 20.0,
+        "social": 11.667,
+        "economic": 23.333,
+        "cultural": 8.333,
+        "temporal": 5.0
+      },
+      "gemini": {
+        "semiotic": 18.333,
+        "narrative": 5.0,
+        "ideological": 5.0,
+        "experiential": 13.333,
+        "social": 6.667,
+        "economic": 26.667,
+        "cultural": 16.667,
+        "temporal": 8.333
+      },
+      "deepseek": {
+        "semiotic": 19.333,
+        "narrative": 6.0,
+        "ideological": 5.0,
+        "experiential": 10.667,
+        "social": 5.667,
+        "economic": 31.667,
+        "cultural": 10.0,
+        "temporal": 11.667
+      },
+      "qwen3_local": {
+        "semiotic": 25.0,
+        "narrative": 5.0,
+        "ideological": 5.0,
+        "experiential": 11.667,
+        "social": 11.667,
+        "economic": 28.333,
+        "cultural": 5.0,
+        "temporal": 8.333
+      },
+      "gemma4_local": {
+        "semiotic": 16.667,
+        "narrative": 10.0,
+        "ideological": 5.0,
+        "experiential": 11.667,
+        "social": 16.667,
+        "economic": 23.333,
+        "cultural": 18.333,
+        "temporal": 5.0
+      },
+      "yandexgpt_pro": {
+        "semiotic": 20.0,
+        "narrative": 10.0,
+        "ideological": 8.333,
+        "experiential": 14.0,
+        "social": 9.333,
+        "economic": 26.0,
+        "cultural": 5.667,
+        "temporal": 6.667
+      }
+    },
+    "Baku|az": {
+      "claude": {
+        "semiotic": 17.0,
+        "narrative": 8.0,
+        "ideological": 7.0,
+        "experiential": 16.667,
+        "social": 12.0,
+        "economic": 22.0,
+        "cultural": 12.0,
+        "temporal": 5.333
+      },
+      "gpt": {
+        "semiotic": 15.0,
+        "narrative": 10.0,
+        "ideological": 11.667,
+        "experiential": 20.0,
+        "social": 13.333,
+        "economic": 20.0,
+        "cultural": 5.0,
+        "temporal": 5.0
+      },
+      "gemini": {
+        "semiotic": 13.333,
+        "narrative": 5.0,
+        "ideological": 5.0,
+        "experiential": 18.333,
+        "social": 5.0,
+        "economic": 26.667,
+        "cultural": 11.667,
+        "temporal": 15.0
+      },
+      "deepseek": {
+        "semiotic": 21.667,
+        "narrative": 10.0,
+        "ideological": 5.0,
+        "experiential": 15.0,
+        "social": 10.0,
+        "economic": 23.333,
+        "cultural": 10.0,
+        "temporal": 5.0
+      },
+      "qwen3_local": {
+        "semiotic": 21.667,
+        "narrative": 6.667,
+        "ideological": 8.333,
+        "experiential": 23.333,
+        "social": 16.667,
+        "economic": 13.333,
+        "cultural": 5.0,
+        "temporal": 5.0
+      },
+      "gemma4_local": {
+        "semiotic": 15.0,
+        "narrative": 10.0,
+        "ideological": 10.0,
+        "experiential": 15.0,
+        "social": 20.0,
+        "economic": 15.0,
+        "cultural": 10.0,
+        "temporal": 5.0
+      },
+      "yandexgpt_pro": {
+        "semiotic": 16.667,
+        "narrative": 11.667,
+        "ideological": 11.333,
+        "experiential": 21.667,
+        "social": 10.333,
+        "economic": 15.0,
+        "cultural": 8.0,
+        "temporal": 8.667
+      }
+    }
+  },
+  "cell_means": {
+    "Moscow|en": {
+      "semiotic": 17.81,
+      "narrative": 7.333,
+      "ideological": 6.667,
+      "experiential": 12.809,
+      "social": 9.762,
+      "economic": 26.428,
+      "cultural": 12.238,
+      "temporal": 8.381
+    },
+    "Moscow|ru": {
+      "semiotic": 14.69,
+      "narrative": 7.952,
+      "ideological": 7.405,
+      "experiential": 15.786,
+      "social": 8.786,
+      "economic": 23.31,
+      "cultural": 12.214,
+      "temporal": 10.333
+    },
+    "Kyiv|en": {
+      "semiotic": 15.111,
+      "narrative": 7.111,
+      "ideological": 11.056,
+      "experiential": 11.778,
+      "social": 11.278,
+      "economic": 19.667,
+      "cultural": 16.556,
+      "temporal": 8.556
+    },
+    "Kyiv|uk": {
+      "semiotic": 14.444,
+      "narrative": 7.556,
+      "ideological": 10.778,
+      "experiential": 13.0,
+      "social": 12.778,
+      "economic": 20.556,
+      "cultural": 14.5,
+      "temporal": 6.944
+    },
+    "Vilnius|en": {
+      "semiotic": 18.571,
+      "narrative": 7.476,
+      "ideological": 8.667,
+      "experiential": 13.714,
+      "social": 9.429,
+      "economic": 24.095,
+      "cultural": 11.143,
+      "temporal": 7.381
+    },
+    "Vilnius|lt": {
+      "semiotic": 14.667,
+      "narrative": 7.667,
+      "ideological": 9.905,
+      "experiential": 15.952,
+      "social": 10.381,
+      "economic": 22.857,
+      "cultural": 10.952,
+      "temporal": 8.571
+    },
+    "Warsaw|en": {
+      "semiotic": 17.0,
+      "narrative": 8.762,
+      "ideological": 9.714,
+      "experiential": 11.643,
+      "social": 10.762,
+      "economic": 22.0,
+      "cultural": 13.429,
+      "temporal": 7.167
+    },
+    "Warsaw|pl": {
+      "semiotic": 14.095,
+      "narrative": 7.214,
+      "ideological": 8.571,
+      "experiential": 16.738,
+      "social": 10.548,
+      "economic": 21.595,
+      "cultural": 10.119,
+      "temporal": 10.881
+    },
+    "Astana|en": {
+      "semiotic": 19.667,
+      "narrative": 7.643,
+      "ideological": 7.691,
+      "experiential": 12.69,
+      "social": 11.857,
+      "economic": 24.214,
+      "cultural": 9.714,
+      "temporal": 7.952
+    },
+    "Astana|kk": {
+      "semiotic": 15.262,
+      "narrative": 9.238,
+      "ideological": 9.714,
+      "experiential": 20.643,
+      "social": 11.191,
+      "economic": 19.405,
+      "cultural": 8.214,
+      "temporal": 6.571
+    },
+    "Astana|ru": {
+      "semiotic": 14.905,
+      "narrative": 7.191,
+      "ideological": 7.333,
+      "experiential": 17.429,
+      "social": 10.286,
+      "economic": 22.81,
+      "cultural": 11.048,
+      "temporal": 9.476
+    },
+    "Tbilisi|en": {
+      "semiotic": 18.81,
+      "narrative": 7.524,
+      "ideological": 7.286,
+      "experiential": 12.952,
+      "social": 10.381,
+      "economic": 23.762,
+      "cultural": 11.476,
+      "temporal": 8.286
+    },
+    "Tbilisi|ka": {
+      "semiotic": 14.429,
+      "narrative": 7.381,
+      "ideological": 7.238,
+      "experiential": 19.476,
+      "social": 12.0,
+      "economic": 23.286,
+      "cultural": 9.809,
+      "temporal": 7.333
+    },
+    "Baku|en": {
+      "semiotic": 18.809,
+      "narrative": 8.095,
+      "ideological": 6.048,
+      "experiential": 14.0,
+      "social": 10.334,
+      "economic": 25.714,
+      "cultural": 10.571,
+      "temporal": 7.381
+    },
+    "Baku|az": {
+      "semiotic": 17.191,
+      "narrative": 8.762,
+      "ideological": 8.333,
+      "experiential": 18.571,
+      "social": 12.476,
+      "economic": 19.333,
+      "cultural": 8.81,
+      "temporal": 7.0
+    }
+  },
+  "cell_dci": {
+    "Moscow|en": 44.238,
+    "Moscow|ru": 38.0,
+    "Kyiv|en": 34.778,
+    "Kyiv|uk": 35.0,
+    "Vilnius|en": 42.666,
+    "Vilnius|lt": 37.524,
+    "Warsaw|en": 39.0,
+    "Warsaw|pl": 35.69,
+    "Astana|en": 43.881,
+    "Astana|kk": 34.667,
+    "Astana|ru": 37.715,
+    "Tbilisi|en": 42.572,
+    "Tbilisi|ka": 37.715,
+    "Baku|en": 44.523,
+    "Baku|az": 36.524
+  }
+}
