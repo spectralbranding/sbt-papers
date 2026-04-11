@@ -1,0 +1,58 @@
+# DATA_MANIFEST.yaml — R9: Non-Ergodic Brand Perception
+# External data dependencies per the Research-as-Repository protocol
+
+data_manifest:
+  - id: "dove-financial-trajectory"
+    description: >
+      Publicly reported Dove/Unilever financial data used in Table 5
+      (Financial Mapping). Drawn from Unilever Annual Reports 2003-2023
+      and cited academic analyses of purpose campaign ROI (Ogilvy & Mather
+      masterbrand analysis, Unilever sustainable living report).
+    archive: "Public corporate filings"
+    access: public
+    key_sources:
+      - "Unilever Annual Report 2003"
+      - "Unilever Annual Report 2007"
+      - "Unilever Annual Report 2011"
+      - "Unilever Annual Report 2023"
+    note: >
+      Revenue figures are publicly reported. SBT interpretation
+      (dimensional activation correlation) is analytical, not observational.
+
+  - id: "dove-cohort-perception-studies"
+    description: >
+      Academic perception studies of Dove's Campaign for Real Beauty used
+      to construct the four observer cohort profiles (Table 2).
+    archive: "Academic literature"
+    access: public
+    key_sources:
+      - "Georgeson (2018) — 326-woman survey"
+      - "Garick (2023) — 1,000 YouTube comment content analysis"
+      - "Bissell and Rask (2010) — self-discrepancy and thin-ideal effects"
+      - "Hwang, Yoo, and Kim (2016) — brand equity perception study"
+      - "Taylor, Johnston, and Whitehead (2016) — critical discourse analysis"
+    note: >
+      Cohort profiles are the author's synthesis of documented response
+      patterns. Not survey-derived. See Limitation 2 for future research
+      recommendation to apply PRISM-B instrument prospectively.
+
+  - id: "r15-empirical-anchor"
+    description: >
+      R15 dataset (Zharnikov 2026v) used as empirical anchor in the new
+      Empirical Anchor section. 21,601 API calls across 24 LLM observer
+      cohorts from 7 training traditions, 23 brand pairs (10 global +
+      5 local + 7 cross-cultural + 1 banking).
+    archive: "GitHub + Zenodo + HuggingFace"
+    repository: "spectralbranding/sbt-papers"
+    path: "r15-ai-search-metamerism/experiment/"
+    format: "JSONL + JSON + YAML + Python + Markdown"
+    access: public
+    doi: "10.5281/zenodo.19422427"
+    hf_dataset: "spectralbranding/r15-ai-search-metamerism"
+    key_findings_imported:
+      - "Cross-model cosine similarity 0.976 across 24 LLM cohorts"
+      - "DCI 35.6 vs baseline 25.0 (p < 0.0001)"
+      - "Cultural dimension collapse -4.9 from baseline"
+      - "Patagonia/Columbia: only brand pair below baseline DCI (0.194)"
+      - "Local brands collapse 25% more than global (Cohen's d = 0.878)"
+      - "Temperature robustness: DCI spread 0.012 (p = 0.61)"

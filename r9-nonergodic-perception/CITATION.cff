@@ -1,0 +1,37 @@
+cff-version: 1.2.0
+message: "If you use this paper, please cite it as below."
+authors:
+  - family-names: Zharnikov
+    given-names: Dmitry
+    email: dmitry@spectralbranding.com
+    affiliation: "Independent Researcher"
+    orcid: "https://orcid.org/0009-0000-6893-9231"
+title: "Non-ergodic brand perception: Why cross-sectional brand tracking systematically misrepresents individual trajectories"
+version: 1.0.0
+date-released: 2026-03-20
+url: "https://doi.org/10.5281/zenodo.19138860"
+repository-code: "https://github.com/spectralbranding/sbt-papers"
+identifiers:
+  - type: doi
+    value: "10.5281/zenodo.19138860"
+    description: "Zenodo archive (primary)"
+keywords:
+  - non-ergodicity
+  - brand perception
+  - path dependence
+  - order effects
+  - brand tracking
+  - belief updating
+  - Spectral Brand Theory
+license: MIT
+type: article
+preferred-citation:
+  type: article
+  authors:
+    - family-names: Zharnikov
+      given-names: Dmitry
+      email: dmitry@spectralbranding.com
+      affiliation: "Independent Researcher"
+      orcid: "https://orcid.org/0009-0000-6893-9231"
+  title: "Non-ergodic brand perception: Why cross-sectional brand tracking systematically misrepresents individual trajectories"
+  year: 2026
