@@ -1,0 +1,188 @@
+# paper.yaml — R10: Dove Case Study
+# Citation key: 2026p
+# Paper Spec schema: https://github.com/spectralbranding/paper-spec/SPECIFICATION.md
+
+paper_spec_version: "0.1.0"
+
+metadata:
+  title: "Dimensional Activation and Cohort Divergence: A Longitudinal Decomposition of Purpose Advertising Effectiveness"
+  authors:
+    - name: "Dmitry Zharnikov"
+      orcid: "0009-0000-6893-9231"
+      affiliation: "Independent Researcher"
+      corresponding: true
+  citation_key: "2026p"
+  doi: "10.5281/zenodo.19139258"
+  date: "2026-04-10"
+  version: "2.0"
+  status: working_paper
+  license: "CC-BY-NC-ND-4.0"
+  keywords:
+    - brand purpose
+    - purpose advertising
+    - brand activism
+    - observer cohorts
+    - portfolio interference
+    - counter-cultural decay
+    - multi-dimensional perception
+    - spectral brand theory
+    - Dove Real Beauty
+    - consumer welfare
+
+claims:
+  - id: P1
+    type: proposition
+    statement: >
+      Purpose campaigns produce disproportionate commercial impact when
+      they activate a previously null dimension, creating new perceptual
+      signal space rather than competing within existing dimensional
+      territory.
+    testable: true
+    tested_in_paper: true
+    status: supported
+    falsification: >
+      P1 is falsified if purpose campaigns activating a previously null
+      dimension produce equivalent or lower revenue growth than campaigns
+      intensifying existing dimensions, controlling for campaign spend
+      and category baseline growth.
+    depends_on: []
+
+  - id: P2
+    type: proposition
+    statement: >
+      Identical brand signals produce structurally different perception
+      clouds in different observer cohorts, with the structure of
+      divergence predictable from the interaction between emission
+      profiles and cohort spectral weight vectors.
+    testable: true
+    tested_in_paper: true
+    status: supported
+    falsification: >
+      P2 is falsified if Purpose-Aligned and Skeptic-Critic cohorts
+      converge in brand conviction valence when given identical campaign
+      signals, or if cohort-level perception variance is not statistically
+      distinguishable from within-cohort variance.
+    depends_on: []
+
+  - id: P3
+    type: proposition
+    statement: >
+      When brands within a corporate portfolio emit contradictory signals
+      on the same dimension, the resulting spectral interference generates
+      a coherence penalty proportional to the contradiction magnitude, the
+      observer's dimensional weight, and the observer's awareness of the
+      corporate relationship.
+    testable: true
+    tested_in_paper: true
+    status: supported
+    falsification: >
+      P3 is falsified if the coherence penalty for observers aware of
+      Dove and Axe's shared corporate parentage is statistically
+      indistinguishable from the penalty for unaware observers, after
+      controlling for prior Ideological weight.
+    depends_on: [P2]
+
+  - id: P4
+    type: proposition
+    statement: >
+      The perceptual intensity of counter-cultural brand signals decays
+      as a function of their adoption by competitors and cultural
+      institutions, following an inverted-U trajectory on the Cultural
+      dimension.
+    testable: true
+    tested_in_paper: true
+    status: supported
+    falsification: >
+      P4 is falsified if Cultural dimension intensity does not decline
+      as competitor adoption of body-positive messaging rises, or if no
+      inverted-U trajectory is observable across multiple purpose
+      campaigns when Cultural dimension is tracked against an index of
+      competitor adoption.
+    depends_on: []
+
+  - id: P5
+    type: proposition
+    statement: >
+      Brand revenue growth correlates with new-dimension activation
+      events rather than with total campaign investment, because
+      new-dimension activation creates perceptual territory that does
+      not compete with existing brand convictions.
+    testable: true
+    tested_in_paper: true
+    status: supported
+    falsification: >
+      P5 is falsified if revenue growth correlates more strongly with
+      total campaign spend than with new-dimension activation events,
+      controlling for category baseline growth.
+    depends_on: [P1]
+
+methodology:
+  type: case_study_with_empirical_anchor
+  design: >
+    Spectral case analysis of Dove's "Campaign for Real Beauty" (2004-2026)
+    with longitudinal signal decomposition across eight SBT dimensions at
+    four temporal cross-sections (2003, 2006, 2013, 2023), four observer
+    cohort reconstructions from existing academic perception literature,
+    and comparison cases (Pepsi/Kendall Jenner 2017, Gillette "The Best
+    Men Can Be" 2019, Patagonia "Don't Buy This Jacket" 2011). Independent
+    empirical anchor imported from Zharnikov (2026v) — 21,601 LLM API
+    calls across 24 models from 7 training traditions — corroborating
+    cohort divergence and the Patagonia-as-exception finding.
+  sample:
+    size: "1 focal brand + 3 comparison cases + 23 brand pairs from R15 anchor"
+    description: >
+      Primary case: Dove Real Beauty (2003-2026). Comparison cases: Pepsi,
+      Gillette, Patagonia. Empirical anchor: R15 dataset of 23 brand pairs
+      evaluated by 24 LLM observer cohorts (21,601 API calls).
+    cohorts: 4
+    time_points: 4
+  instrument: "Spectral case analysis (interpretive eight-dimension emission scoring)"
+  analysis:
+    primary:
+      - "Signal decomposition across eight SBT dimensions at four time points"
+      - "Cohort-specific perception cloud reconstruction"
+      - "Coherence audit classification"
+      - "Financial mapping of dimensional activation events to revenue trajectories"
+      - "Cross-case contrast with three comparison purpose campaigns"
+      - "Empirical anchor from R15 LLM observer study"
+    software: "Manual analysis + R15 Python pipeline (imported)"
+
+dependencies:
+  - citation: "Zharnikov (2026a)"
+    doi: "10.5281/zenodo.18945912"
+    relationship: extends
+  - citation: "Zharnikov (2026f)"
+    doi: "10.5281/zenodo.18945477"
+    relationship: extends
+  - citation: "Zharnikov (2026j)"
+    doi: "10.5281/zenodo.18945659"
+    relationship: extends
+  - citation: "Zharnikov (2026q)"
+    doi: "10.5281/zenodo.19145099"
+    relationship: complements
+  - citation: "Zharnikov (2026v)"
+    doi: "10.5281/zenodo.19422427"
+    relationship: empirical_anchor
+  - citation: "Zharnikov (2026x)"
+    doi: "10.5281/zenodo.19391476"
+    relationship: complements
+
+submission_history:
+  - venue: "Journal of Marketing"
+    id: "JM-26-0421"
+    submitted: "2026-03-19"
+    decision: "desk_reject"
+    decision_date: "2026-03-28"
+    editor: "Jan-Benedict Steenkamp"
+    reason: "single-case generalizability concerns; SBT unproven"
+  - venue: "Journal of Advertising Research"
+    id: "261517468 / JAR Paper3686"
+    submitted: "2026-03-29"
+    decision: "desk_reject"
+    decision_date: "2026-04-10"
+    editor: "Colin Campbell"
+    reason: "theoretical grounding and empirical rigor insufficient; evidentiary base insufficient to support scope of claims"
+  - venue: "International Journal of Advertising (IJA)"
+    status: "pre-submission"
+    target_date: "2026-04-12"
+    rationale: "Explicit multi-dimensional/longitudinal scope, tolerant of case method, strong Vredenburg/Mukherjee tradition"

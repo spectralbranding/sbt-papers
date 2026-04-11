@@ -1,0 +1,40 @@
+# CONTRIBUTORS.yaml — R10: Dove Case Study
+# Verified contributor attribution per the Research-as-Repository protocol
+
+contributors:
+  - name: "Dmitry Zharnikov"
+    orcid: "0009-0000-6893-9231"
+    type: human
+    roles:
+      - conceptualization
+      - methodology
+      - writing-original
+      - formal-analysis
+      - project-administration
+    affiliation: "Independent Researcher"
+    first_commit: "2026-03-19"
+    last_commit: "2026-04-10"
+
+  - name: "Claude (Anthropic)"
+    type: ai_tool
+    roles:
+      - writing-review
+      - consistency-checking
+      - formal-analysis
+    disclosure: >
+      Used for manuscript drafting, proposition formalization, falsification
+      condition derivation, literature engagement (Vredenburg, Brakus, Holt,
+      Mukherjee & Althuizen, Hermann), empirical anchor section integration
+      with R15, and editorial review. All theoretical propositions, the
+      cohort taxonomy, dimensional creation mechanism, portfolio spectral
+      interference mechanism, counter-cultural decay thesis, and financial
+      mapping are solely the author's intellectual contribution.
+
+  - name: "Gemini Deep Research (Google)"
+    type: ai_tool
+    roles:
+      - investigation
+    disclosure: >
+      Used for prior art landscape mapping (purpose advertising literature,
+      Dove academic perception studies). All results independently verified
+      against source documents.
