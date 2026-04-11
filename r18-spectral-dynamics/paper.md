@@ -558,12 +558,3 @@ Zharnikov, D. (2026s). Coherence type as crisis predictor: A formal derivation f
 
 Zharnikov, D. (2026y). Brand triangulation: A geometric framework for multi-observer brand positioning. Working Paper.
 
----
-
-## Disclosure
-
-No funding was received for this research. No conflicts of interest to declare. The author used AI assistants (Claude, Anthropic) for literature verification, mathematical checking, and editorial review. All theoretical contributions, arguments, and errors are the author's own.
-
-## Data Availability
-
-The Dove dimensional profiles used in Section 6 are reproduced from Zharnikov (2026p, Table 1). No new data was collected for this paper.
