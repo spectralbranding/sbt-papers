@@ -99,7 +99,7 @@ methodology:
     Structured weight elicitation design measuring implicit spectral profiles of
     24 LLMs across brand pairs in 9 runs. Runs 2-4 used 6 LLMs across 15
     brand pairs (10 global, 5 local) for 4,860 API calls. Run 5 (cross-cultural)
-    used 22 LLMs across 7 cross-cultural brand pairs in 8 cultural contexts
+    used 22 LLMs across 7 cross-cultural brand pairs
     (11,410 calls, 7,999 successful, 70.1% success rate) plus 69 native-language
     prompt calls. Run 6 added a banking sector pair with backfill models Qwen Plus
     (DashScope) and Fireworks GLM, bringing total unique models to 24 (1,018 calls).
@@ -114,7 +114,7 @@ methodology:
     $5.52 total cost.
   sample:
     size: 21601  # 15 JSONL files across main study Runs 2-9; clean calls; Run 10 supplementary adds 126 more
-    description: "9 runs (main study) across 15 JSONL files. Runs 2-4: 4,860 calls (6 models, 15 pairs). Run 5: 11,410 calls (22 active models, 7 cross-cultural pairs, 8 cultures, 69 native-language calls). Run 6: 1,018 calls (banking pair, 24 models). Run 7: framing experiment (H12 test). Run 8: native language expansion (815 calls in 11 languages, H10 test — NOT SUPPORTED). Run 9: temperature sensitivity. Total unique models: 24; 9 cultural traditions; ~6.1M tokens; $5.52 total cost. Supplementary Run 10 (corrective comparators, 2026-04-10): 126 calls, 7 models, 6 pairs — not included in main study totals."
+    description: "9 runs (main study) across 15 JSONL files. Runs 2-4: 4,860 calls (6 models, 15 pairs). Run 5: 11,410 calls (22 active models, 7 cross-cultural pairs, 69 native-language calls). Run 6: 1,018 calls (banking pair, 24 models). Run 7: framing experiment (H12 test). Run 8: native language expansion (815 calls in 11 languages, H10 test — NOT SUPPORTED). Run 9: temperature sensitivity. Total unique models: 24; 7 training traditions; ~6.1M tokens; $5.52 total cost. Supplementary Run 10 (corrective comparators, 2026-04-10): 126 calls, 7 models, 6 pairs — not included in main study totals."
     models: 24  # 24 unique models across all runs; T-Pro 2.0 excluded from Run 5 analysis due to infrastructure cost
     brand_pairs: 23  # 10 global + 5 local + 7 cross-cultural + 1 banking (Run 6)
   instrument: "PRISM-B (Perception Response Instrument for Structured Measurement — Brand variant)"
@@ -212,11 +212,11 @@ submission_history:
       supported). 4,860 API calls, 15 brand pairs, 6 LLMs. Grok review fixes applied: SBT
       positioning clarified, H3/H4 reframed as expected null, tone softened, Brakus et al.
       (2009) added. v2.0 (2026-04-08): incorporates Run 5 cross-cultural results
-      (11,410 calls, 7,999 successful, 24 models across all runs, 8 cultures, 7 cross-cultural
+      (11,410 calls, 7,999 successful, 24 models across all runs, 7 cross-cultural
       pairs, 69 native-language calls), Run 6 banking pair (H6 p=0.0013, d=3.449), Run 7
       framing experiment (H12 p<0.0001), and Run 8 native language expansion (815 calls, 11
       languages; H10 NOT SUPPORTED, 52/116, mean=-0.002, p=0.307 two-sided). Final: 21601 clean calls across
-      9 runs, 13 JSONL files, 24 models, 9 cultural traditions, ~6.1M tokens, $5.52 total cost.
+      9 runs, 13 JSONL files, 24 models from 7 training traditions, ~6.1M tokens, $5.52 total cost.
       H1 SUPPORTED (p<0.0001, DCI=35.6), H2 SUPPORTED (cosine=0.977), H6 SUPPORTED
       (p=0.0013, d=3.449), H12 SUPPORTED (p<0.0001). Cultural dimension most collapsed
       (-4.9 vs baseline). 13 hypotheses formalized (H1-H13; H13 future direction).
