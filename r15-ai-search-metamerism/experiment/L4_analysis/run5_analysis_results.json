@@ -1,12 +1,12 @@
 {
   "metadata": {
-    "total_calls": 19928,
-    "cross_cultural_calls": 8147,
+    "total_calls": 20099,
+    "cross_cultural_calls": 8171,
     "models": 23,
     "cultures": 7,
     "brand_pairs": 9,
-    "total_cost_usd": 5.54,
-    "total_est_tokens": 6122000
+    "total_cost_usd": 5.88,
+    "total_est_tokens": 6333497
   },
   "H1_overweighting": {
     "supported": "True",
@@ -166,20 +166,45 @@
   "H7_geopolitical_valence": {
     "supported": null,
     "mean_difference": -0.07005947800271992,
-    "std_difference": 0.06125048862129146,
+    "std_difference": 0.06125048862129147,
     "models_russia_higher": 3,
     "models_ukraine_higher": 15,
     "total_models": 20,
     "per_model": {
-      "grok": {
-        "russia_dci": 0.2,
-        "ukraine_dci": 0.3,
-        "difference": -0.09999999999999998
-      },
-      "gigachat_api": {
+      "deepseek": {
         "russia_dci": 0.3,
+        "ukraine_dci": 0.3,
+        "difference": 0.0
+      },
+      "cerebras_qwen3": {
+        "russia_dci": 0.235,
         "ukraine_dci": 0.4,
-        "difference": -0.10000000000000003
+        "difference": -0.16500000000000004
+      },
+      "gemini": {
+        "russia_dci": 0.275,
+        "ukraine_dci": 0.235,
+        "difference": 0.040000000000000036
+      },
+      "groq_kimi": {
+        "russia_dci": 0.3,
+        "ukraine_dci": 0.375,
+        "difference": -0.07500000000000001
+      },
+      "gpt": {
+        "russia_dci": 0.25,
+        "ukraine_dci": 0.375,
+        "difference": -0.125
+      },
+      "qwen3_local": {
+        "russia_dci": 0.325,
+        "ukraine_dci": 0.4,
+        "difference": -0.07500000000000001
+      },
+      "yandexgpt_pro": {
+        "russia_dci": 0.4,
+        "ukraine_dci": 0.4,
+        "difference": 0.0
       },
       "gemma4_local": {
         "russia_dci": 0.2727272727272727,
@@ -191,85 +216,60 @@
         "ukraine_dci": 0.3,
         "difference": -0.08333333333333334
       },
-      "cerebras_qwen3": {
-        "russia_dci": 0.235,
-        "ukraine_dci": 0.4,
-        "difference": -0.16500000000000004
-      },
       "groq_allam": {
         "russia_dci": 0.3239130434782609,
         "ukraine_dci": 0.3167701863354037,
         "difference": 0.007142857142857173
       },
-      "gigachat_local": {
-        "russia_dci": 0.25,
-        "ukraine_dci": 0.40634615384615386,
-        "difference": -0.15634615384615386
-      },
-      "swallow_local": {
-        "russia_dci": 0.3404494382022472,
-        "ukraine_dci": 0.2954545454545454,
-        "difference": 0.0449948927477018
-      },
-      "claude": {
-        "russia_dci": 0.22,
-        "ukraine_dci": 0.34,
-        "difference": -0.12000000000000002
-      },
-      "yandexgpt_pro": {
-        "russia_dci": 0.4,
-        "ukraine_dci": 0.4,
-        "difference": 0.0
-      },
-      "gpt": {
-        "russia_dci": 0.25,
-        "ukraine_dci": 0.375,
-        "difference": -0.125
-      },
-      "groq_kimi": {
+      "gigachat_api": {
         "russia_dci": 0.3,
-        "ukraine_dci": 0.375,
-        "difference": -0.07500000000000001
-      },
-      "jais_local": {
-        "russia_dci": 0.31363636363636366,
-        "ukraine_dci": 0.42500000000000004,
-        "difference": -0.11136363636363639
-      },
-      "yandexgpt_local": {
-        "russia_dci": 0.2857142857142857,
-        "ukraine_dci": 0.38181818181818183,
-        "difference": -0.09610389610389614
-      },
-      "qwen3_local": {
-        "russia_dci": 0.325,
         "ukraine_dci": 0.4,
-        "difference": -0.07500000000000001
-      },
-      "exaone_local": {
-        "russia_dci": 0.3904761904761905,
-        "ukraine_dci": 0.41428571428571426,
-        "difference": -0.02380952380952378
+        "difference": -0.10000000000000003
       },
       "gptoss_swallow": {
         "russia_dci": 0.3549019607843138,
         "ukraine_dci": 0.38999999999999996,
         "difference": -0.03509803921568616
       },
-      "deepseek": {
-        "russia_dci": 0.3,
-        "ukraine_dci": 0.3,
-        "difference": 0.0
+      "jais_local": {
+        "russia_dci": 0.31363636363636366,
+        "ukraine_dci": 0.42500000000000004,
+        "difference": -0.11136363636363639
       },
-      "gemini": {
-        "russia_dci": 0.275,
-        "ukraine_dci": 0.235,
-        "difference": 0.040000000000000036
+      "grok": {
+        "russia_dci": 0.2,
+        "ukraine_dci": 0.3,
+        "difference": -0.09999999999999998
       },
       "groq_llama33": {
         "russia_dci": 0.3,
         "ukraine_dci": 0.4,
         "difference": -0.10000000000000003
+      },
+      "exaone_local": {
+        "russia_dci": 0.3904761904761905,
+        "ukraine_dci": 0.41428571428571426,
+        "difference": -0.02380952380952378
+      },
+      "claude": {
+        "russia_dci": 0.22,
+        "ukraine_dci": 0.34,
+        "difference": -0.12000000000000002
+      },
+      "gigachat_local": {
+        "russia_dci": 0.25,
+        "ukraine_dci": 0.40634615384615386,
+        "difference": -0.15634615384615386
+      },
+      "yandexgpt_local": {
+        "russia_dci": 0.2857142857142857,
+        "ukraine_dci": 0.38181818181818183,
+        "difference": -0.09610389610389614
+      },
+      "swallow_local": {
+        "russia_dci": 0.3404494382022472,
+        "ukraine_dci": 0.2954545454545454,
+        "difference": 0.0449948927477018
       }
     }
   },
@@ -359,51 +359,44 @@
   },
   "H10_native_language": {
     "supported": false,
-    "mean_reduction": -0.0016625932056711808,
-    "positive_count": 52,
-    "total_pairs": 116,
+    "mean_reduction": 0.0007545170262964299,
+    "positive_count": 58,
+    "total_pairs": 121,
     "pairs": [
       {
-        "model": "claude",
+        "model": "groq_kimi",
         "pair_id": "cyprus_supermarket",
-        "en_dci": 0.3516666666666666,
-        "native_dci": 0.32,
-        "reduction": 0.03166666666666662
+        "en_dci": 0.39333333333333337,
+        "native_dci": 0.3,
+        "reduction": 0.09333333333333338
       },
       {
-        "model": "yandexgpt_local",
-        "pair_id": "russia_organic",
-        "en_dci": 0.2857142857142857,
-        "native_dci": 0.2863636363636364,
-        "reduction": -0.0006493506493506773
+        "model": "gigachat_local",
+        "pair_id": "russia_ukraine_banking",
+        "en_dci": 0.34847924438089484,
+        "native_dci": 0.27575757575757576,
+        "reduction": 0.07272166862331908
       },
       {
-        "model": "gemma4_local",
-        "pair_id": "cyprus_supermarket",
-        "en_dci": 0.4348484848484849,
-        "native_dci": 0.4000000000000001,
-        "reduction": 0.034848484848484795
-      },
-      {
-        "model": "grok",
-        "pair_id": "serbia_water",
-        "en_dci": 0.25,
-        "native_dci": 0.31666666666666665,
-        "reduction": -0.06666666666666665
-      },
-      {
-        "model": "yandexgpt_pro",
-        "pair_id": "cyprus_supermarket",
-        "en_dci": 0.3666666666666667,
-        "native_dci": 0.4000000000000001,
+        "model": "gptoss_swallow",
+        "pair_id": "japan_snacks",
+        "en_dci": 0.3833333333333333,
+        "native_dci": 0.4166666666666667,
         "reduction": -0.03333333333333338
       },
       {
-        "model": "cerebras_qwen3",
+        "model": "qwen3_local",
         "pair_id": "cyprus_supermarket",
-        "en_dci": 0.4000000000000001,
-        "native_dci": 0.35000000000000003,
-        "reduction": 0.050000000000000044
+        "en_dci": 0.38333333333333336,
+        "native_dci": 0.4000000000000001,
+        "reduction": -0.01666666666666672
+      },
+      {
+        "model": "groq_allam",
+        "pair_id": "vietnam_dairy",
+        "en_dci": 0.3238095238095238,
+        "native_dci": 0.375,
+        "reduction": -0.051190476190476175
       },
       {
         "model": "fireworks_glm",
@@ -413,18 +406,95 @@
         "reduction": 0.0333333333333333
       },
       {
-        "model": "fireworks_glm",
-        "pair_id": "serbia_water",
-        "en_dci": 0.2,
-        "native_dci": 0.35,
-        "reduction": -0.14999999999999997
+        "model": "dashscope_qwen_plus",
+        "pair_id": "kenya_beer",
+        "en_dci": 0.4000000000000001,
+        "native_dci": 0.4000000000000001,
+        "reduction": 0.0
       },
       {
-        "model": "jais_local",
-        "pair_id": "uae_dairy",
-        "en_dci": 0.42500000000000004,
-        "native_dci": 0.375,
+        "model": "gemini",
+        "pair_id": "kenya_beer",
+        "en_dci": 0.3,
+        "native_dci": 0.34,
+        "reduction": -0.040000000000000036
+      },
+      {
+        "model": "qwen3_local",
+        "pair_id": "mongolia_beer",
+        "en_dci": 0.4,
+        "native_dci": 0.39,
+        "reduction": 0.010000000000000009
+      },
+      {
+        "model": "deepseek",
+        "pair_id": "vietnam_dairy",
+        "en_dci": 0.3,
+        "native_dci": 0.3,
+        "reduction": 0.0
+      },
+      {
+        "model": "cerebras_qwen3",
+        "pair_id": "cyprus_supermarket",
+        "en_dci": 0.4000000000000001,
+        "native_dci": 0.35000000000000003,
         "reduction": 0.050000000000000044
+      },
+      {
+        "model": "gigachat_api",
+        "pair_id": "kenya_beer",
+        "en_dci": 0.4000000000000001,
+        "native_dci": 0.4000000000000001,
+        "reduction": 0.0
+      },
+      {
+        "model": "groq_kimi",
+        "pair_id": "china_water",
+        "en_dci": 0.3833333333333333,
+        "native_dci": 0.31333333333333335,
+        "reduction": 0.06999999999999995
+      },
+      {
+        "model": "qwen3_local",
+        "pair_id": "china_water",
+        "en_dci": 0.4000000000000001,
+        "native_dci": 0.4,
+        "reduction": 5.551115123125783e-17
+      },
+      {
+        "model": "fireworks_glm",
+        "pair_id": "latvia_chocolate",
+        "en_dci": 0.25,
+        "native_dci": 0.35,
+        "reduction": -0.09999999999999998
+      },
+      {
+        "model": "groq_allam",
+        "pair_id": "cyprus_supermarket",
+        "en_dci": 0.33636363636363636,
+        "native_dci": 0.38431372549019605,
+        "reduction": -0.04795008912655968
+      },
+      {
+        "model": "grok",
+        "pair_id": "kenya_beer",
+        "en_dci": 0.25,
+        "native_dci": 0.23076923076923075,
+        "reduction": 0.019230769230769246
+      },
+      {
+        "model": "yandexgpt_pro",
+        "pair_id": "ukraine_confectionery",
+        "en_dci": 0.4,
+        "native_dci": 0.4,
+        "reduction": 0.0
+      },
+      {
+        "model": "cerebras_qwen3",
+        "pair_id": "china_water",
+        "en_dci": 0.24671052631578946,
+        "native_dci": 0.23921052631578948,
+        "reduction": 0.007499999999999979
       },
       {
         "model": "yandexgpt_local",
@@ -435,374 +505,10 @@
       },
       {
         "model": "deepseek",
-        "pair_id": "vietnam_dairy",
-        "en_dci": 0.3,
-        "native_dci": 0.3,
-        "reduction": 0.0
-      },
-      {
-        "model": "fireworks_glm",
-        "pair_id": "china_water",
-        "en_dci": 0.325,
-        "native_dci": 0.3833333333333333,
-        "reduction": -0.05833333333333329
-      },
-      {
-        "model": "gpt",
-        "pair_id": "latvia_chocolate",
-        "en_dci": 0.3416666666666666,
-        "native_dci": 0.3499999999999999,
-        "reduction": -0.008333333333333304
-      },
-      {
-        "model": "gptoss_swallow",
-        "pair_id": "serbia_water",
-        "en_dci": 0.3666666666666667,
-        "native_dci": 0.3545454545454545,
-        "reduction": 0.0121212121212122
-      },
-      {
-        "model": "claude",
-        "pair_id": "vietnam_dairy",
-        "en_dci": 0.31,
-        "native_dci": 0.32,
-        "reduction": -0.010000000000000009
-      },
-      {
-        "model": "grok",
-        "pair_id": "kenya_beer",
-        "en_dci": 0.25,
-        "native_dci": 0.23076923076923075,
-        "reduction": 0.019230769230769246
-      },
-      {
-        "model": "qwen3_local",
-        "pair_id": "mongolia_beer",
-        "en_dci": 0.4,
-        "native_dci": 0.4,
-        "reduction": 0.0
-      },
-      {
-        "model": "qwen3_local",
-        "pair_id": "serbia_water",
-        "en_dci": 0.39999999999999997,
+        "pair_id": "cyprus_supermarket",
+        "en_dci": 0.4333333333333334,
         "native_dci": 0.4000000000000001,
-        "reduction": -1.1102230246251565e-16
-      },
-      {
-        "model": "yandexgpt_pro",
-        "pair_id": "vietnam_dairy",
-        "en_dci": 0.4166666666666667,
-        "native_dci": 0.4000000000000001,
-        "reduction": 0.016666666666666607
-      },
-      {
-        "model": "cerebras_qwen3",
-        "pair_id": "vietnam_dairy",
-        "en_dci": 0.4000000000000001,
-        "native_dci": 0.25666666666666665,
-        "reduction": 0.14333333333333342
-      },
-      {
-        "model": "yandexgpt_pro",
-        "pair_id": "russia_organic",
-        "en_dci": 0.4,
-        "native_dci": 0.23863636363636365,
-        "reduction": 0.16136363636363638
-      },
-      {
-        "model": "sambanova_deepseek",
-        "pair_id": "cyprus_supermarket",
-        "en_dci": 0.3666666666666667,
-        "native_dci": 0.35000000000000003,
-        "reduction": 0.016666666666666663
-      },
-      {
-        "model": "groq_llama33",
-        "pair_id": "cyprus_supermarket",
-        "en_dci": 0.4000000000000001,
-        "native_dci": 0.3,
-        "reduction": 0.10000000000000009
-      },
-      {
-        "model": "gigachat_local",
-        "pair_id": "russia_organic",
-        "en_dci": 0.25,
-        "native_dci": 0.36648003894839337,
-        "reduction": -0.11648003894839337
-      },
-      {
-        "model": "gpt",
-        "pair_id": "serbia_water",
-        "en_dci": 0.3333333333333333,
-        "native_dci": 0.3499999999999999,
-        "reduction": -0.016666666666666607
-      },
-      {
-        "model": "qwen3_local",
-        "pair_id": "china_water",
-        "en_dci": 0.4000000000000001,
-        "native_dci": 0.4,
-        "reduction": 5.551115123125783e-17
-      },
-      {
-        "model": "yandexgpt_pro",
-        "pair_id": "russia_ukraine_banking",
-        "en_dci": 0.38333333333333336,
-        "native_dci": 0.3499999999999999,
-        "reduction": 0.03333333333333344
-      },
-      {
-        "model": "claude",
-        "pair_id": "latvia_chocolate",
-        "en_dci": 0.3,
-        "native_dci": 0.32666666666666666,
-        "reduction": -0.026666666666666672
-      },
-      {
-        "model": "gemma4_local",
-        "pair_id": "latvia_chocolate",
-        "en_dci": 0.3545454545454545,
-        "native_dci": 0.4,
-        "reduction": -0.045454545454545525
-      },
-      {
-        "model": "gemini",
-        "pair_id": "cyprus_supermarket",
-        "en_dci": 0.41,
-        "native_dci": 0.3333333333333333,
-        "reduction": 0.07666666666666666
-      },
-      {
-        "model": "deepseek",
-        "pair_id": "mongolia_beer",
-        "en_dci": 0.4,
-        "native_dci": 0.35,
-        "reduction": 0.050000000000000044
-      },
-      {
-        "model": "deepseek",
-        "pair_id": "serbia_water",
-        "en_dci": 0.35833333333333334,
-        "native_dci": 0.3499999999999999,
-        "reduction": 0.008333333333333415
-      },
-      {
-        "model": "groq_allam",
-        "pair_id": "cyprus_supermarket",
-        "en_dci": 0.33636363636363636,
-        "native_dci": 0.38431372549019605,
-        "reduction": -0.04795008912655968
-      },
-      {
-        "model": "yandexgpt_pro",
-        "pair_id": "latvia_chocolate",
-        "en_dci": 0.37777777777777777,
-        "native_dci": 0.25,
-        "reduction": 0.12777777777777777
-      },
-      {
-        "model": "cerebras_qwen3",
-        "pair_id": "latvia_chocolate",
-        "en_dci": 0.2631578947368421,
-        "native_dci": 0.33,
-        "reduction": -0.06684210526315792
-      },
-      {
-        "model": "gptoss_swallow",
-        "pair_id": "kenya_beer",
-        "en_dci": 0.3866666666666667,
-        "native_dci": 0.3333333333333333,
-        "reduction": 0.0533333333333334
-      },
-      {
-        "model": "qwen3_local",
-        "pair_id": "kenya_beer",
-        "en_dci": 0.39166666666666666,
-        "native_dci": 0.3666666666666667,
-        "reduction": 0.024999999999999967
-      },
-      {
-        "model": "dashscope_qwen_plus",
-        "pair_id": "cyprus_supermarket",
-        "en_dci": 0.4000000000000001,
-        "native_dci": 0.4000000000000001,
-        "reduction": 0.0
-      },
-      {
-        "model": "groq_kimi",
-        "pair_id": "cyprus_supermarket",
-        "en_dci": 0.39333333333333337,
-        "native_dci": 0.3,
-        "reduction": 0.09333333333333338
-      },
-      {
-        "model": "deepseek",
-        "pair_id": "china_water",
-        "en_dci": 0.35,
-        "native_dci": 0.38750000000000007,
-        "reduction": -0.03750000000000009
-      },
-      {
-        "model": "groq_llama33",
-        "pair_id": "vietnam_dairy",
-        "en_dci": 0.3,
-        "native_dci": 0.4,
-        "reduction": -0.10000000000000003
-      },
-      {
-        "model": "gigachat_api",
-        "pair_id": "cyprus_supermarket",
-        "en_dci": 0.4000000000000001,
-        "native_dci": 0.4000000000000001,
-        "reduction": 0.0
-      },
-      {
-        "model": "gpt",
-        "pair_id": "kenya_beer",
-        "en_dci": 0.3416666666666666,
-        "native_dci": 0.3499999999999999,
-        "reduction": -0.008333333333333304
-      },
-      {
-        "model": "gigachat_api",
-        "pair_id": "ukraine_confectionery",
-        "en_dci": 0.4,
-        "native_dci": 0.4,
-        "reduction": 0.0
-      },
-      {
-        "model": "yandexgpt_pro",
-        "pair_id": "serbia_water",
-        "en_dci": 0.37666666666666665,
-        "native_dci": 0.25,
-        "reduction": 0.12666666666666665
-      },
-      {
-        "model": "cerebras_qwen3",
-        "pair_id": "mongolia_beer",
-        "en_dci": 0.4,
-        "native_dci": 0.36,
-        "reduction": 0.040000000000000036
-      },
-      {
-        "model": "fireworks_glm",
-        "pair_id": "cyprus_supermarket",
-        "en_dci": 0.3,
-        "native_dci": 0.3666666666666667,
-        "reduction": -0.06666666666666671
-      },
-      {
-        "model": "cerebras_qwen3",
-        "pair_id": "serbia_water",
-        "en_dci": 0.25,
-        "native_dci": 0.31000000000000005,
-        "reduction": -0.06000000000000005
-      },
-      {
-        "model": "gemma4_local",
-        "pair_id": "vietnam_dairy",
-        "en_dci": 0.37424242424242427,
-        "native_dci": 0.4000000000000001,
-        "reduction": -0.025757575757575812
-      },
-      {
-        "model": "gemini",
-        "pair_id": "vietnam_dairy",
-        "en_dci": 0.26666666666666666,
-        "native_dci": 0.3499999999999999,
-        "reduction": -0.08333333333333326
-      },
-      {
-        "model": "deepseek",
-        "pair_id": "kenya_beer",
-        "en_dci": 0.3,
-        "native_dci": 0.3333333333333333,
-        "reduction": -0.033333333333333326
-      },
-      {
-        "model": "sarvam",
-        "pair_id": "cyprus_supermarket",
-        "en_dci": 0.3666666666666667,
-        "native_dci": 0.4,
-        "reduction": -0.033333333333333326
-      },
-      {
-        "model": "groq_allam",
-        "pair_id": "vietnam_dairy",
-        "en_dci": 0.3238095238095238,
-        "native_dci": 0.375,
-        "reduction": -0.051190476190476175
-      },
-      {
-        "model": "sambanova_deepseek",
-        "pair_id": "latvia_chocolate",
-        "en_dci": 0.3,
-        "native_dci": 0.31666666666666665,
-        "reduction": -0.016666666666666663
-      },
-      {
-        "model": "groq_llama33",
-        "pair_id": "latvia_chocolate",
-        "en_dci": 0.3333333333333333,
-        "native_dci": 0.32,
-        "reduction": 0.013333333333333308
-      },
-      {
-        "model": "cerebras_qwen3",
-        "pair_id": "china_water",
-        "en_dci": 0.24671052631578946,
-        "native_dci": 0.23921052631578948,
-        "reduction": 0.007499999999999979
-      },
-      {
-        "model": "exaone_local",
-        "pair_id": "korea_dairy",
-        "en_dci": 0.325,
-        "native_dci": 0.3,
-        "reduction": 0.025000000000000022
-      },
-      {
-        "model": "dashscope_qwen_plus",
-        "pair_id": "vietnam_dairy",
-        "en_dci": 0.38999999999999996,
-        "native_dci": 0.36999999999999994,
-        "reduction": 0.020000000000000018
-      },
-      {
-        "model": "groq_kimi",
-        "pair_id": "vietnam_dairy",
-        "en_dci": 0.3466666666666667,
-        "native_dci": 0.2833333333333334,
-        "reduction": 0.0633333333333333
-      },
-      {
-        "model": "sarvam",
-        "pair_id": "india_dairy",
-        "en_dci": 0.4,
-        "native_dci": 0.4,
-        "reduction": 0.0
-      },
-      {
-        "model": "gigachat_api",
-        "pair_id": "vietnam_dairy",
-        "en_dci": 0.3,
-        "native_dci": 0.4000000000000001,
-        "reduction": -0.10000000000000009
-      },
-      {
-        "model": "gptoss_swallow",
-        "pair_id": "cyprus_supermarket",
-        "en_dci": 0.36771241830065354,
-        "native_dci": 0.36999999999999994,
-        "reduction": -0.002287581699346397
-      },
-      {
-        "model": "claude",
-        "pair_id": "kenya_beer",
-        "en_dci": 0.2933333333333334,
-        "native_dci": 0.24,
-        "reduction": 0.0533333333333334
+        "reduction": 0.033333333333333326
       },
       {
         "model": "groq_allam",
@@ -812,116 +518,74 @@
         "reduction": 0.015476190476190421
       },
       {
-        "model": "qwen3_local",
-        "pair_id": "cyprus_supermarket",
-        "en_dci": 0.38333333333333336,
-        "native_dci": 0.4000000000000001,
-        "reduction": -0.01666666666666672
-      },
-      {
-        "model": "gemini",
-        "pair_id": "latvia_chocolate",
-        "en_dci": 0.35000000000000003,
-        "native_dci": 0.25333333333333335,
-        "reduction": 0.09666666666666668
-      },
-      {
-        "model": "yandexgpt_pro",
-        "pair_id": "kenya_beer",
-        "en_dci": 0.39333333333333337,
-        "native_dci": 0.3766666666666667,
-        "reduction": 0.016666666666666663
-      },
-      {
-        "model": "cerebras_qwen3",
-        "pair_id": "kenya_beer",
-        "en_dci": 0.3,
-        "native_dci": 0.4000000000000001,
-        "reduction": -0.10000000000000009
-      },
-      {
-        "model": "groq_allam",
-        "pair_id": "latvia_chocolate",
-        "en_dci": 0.3043859649122807,
-        "native_dci": 0.38947368421052636,
-        "reduction": -0.08508771929824566
-      },
-      {
-        "model": "fireworks_glm",
+        "model": "gemma4_local",
         "pair_id": "vietnam_dairy",
-        "en_dci": 0.28333333333333327,
-        "native_dci": 0.375,
-        "reduction": -0.09166666666666673
+        "en_dci": 0.37424242424242427,
+        "native_dci": 0.4000000000000001,
+        "reduction": -0.025757575757575812
       },
       {
-        "model": "gigachat_api",
-        "pair_id": "russia_ukraine_banking",
-        "en_dci": 0.3333333333333333,
-        "native_dci": 0.3666666666666667,
-        "reduction": -0.03333333333333338
+        "model": "gptoss_swallow",
+        "pair_id": "vietnam_dairy",
+        "en_dci": 0.31666666666666665,
+        "native_dci": 0.4000000000000001,
+        "reduction": -0.08333333333333343
       },
       {
-        "model": "gpt",
-        "pair_id": "cyprus_supermarket",
-        "en_dci": 0.39999999999999997,
-        "native_dci": 0.3566666666666667,
-        "reduction": 0.04333333333333328
-      },
-      {
-        "model": "dashscope_qwen_plus",
-        "pair_id": "latvia_chocolate",
-        "en_dci": 0.4000000000000001,
-        "native_dci": 0.38000000000000006,
-        "reduction": 0.020000000000000018
+        "model": "deepseek",
+        "pair_id": "serbia_water",
+        "en_dci": 0.35833333333333334,
+        "native_dci": 0.3499999999999999,
+        "reduction": 0.008333333333333415
       },
       {
         "model": "sarvam",
-        "pair_id": "vietnam_dairy",
-        "en_dci": 0.35,
+        "pair_id": "india_dairy",
+        "en_dci": 0.4,
         "native_dci": 0.4,
-        "reduction": -0.050000000000000044
+        "reduction": 0.0
+      },
+      {
+        "model": "deepseek",
+        "pair_id": "mongolia_beer",
+        "en_dci": 0.4,
+        "native_dci": 0.35,
+        "reduction": 0.050000000000000044
+      },
+      {
+        "model": "sarvam",
+        "pair_id": "kenya_beer",
+        "en_dci": 0.4,
+        "native_dci": 0.3,
+        "reduction": 0.10000000000000003
       },
       {
         "model": "groq_kimi",
-        "pair_id": "latvia_chocolate",
-        "en_dci": 0.3,
-        "native_dci": 0.30333333333333334,
-        "reduction": -0.003333333333333355
+        "pair_id": "kenya_beer",
+        "en_dci": 0.34333333333333327,
+        "native_dci": 0.31333333333333335,
+        "reduction": 0.029999999999999916
       },
       {
-        "model": "yandexgpt_local",
-        "pair_id": "ukraine_confectionery",
-        "en_dci": 0.38181818181818183,
-        "native_dci": 0.4,
-        "reduction": -0.018181818181818188
+        "model": "qwen3_local",
+        "pair_id": "kenya_beer",
+        "en_dci": 0.39166666666666666,
+        "native_dci": 0.3666666666666667,
+        "reduction": 0.024999999999999967
       },
       {
-        "model": "sambanova_deepseek",
-        "pair_id": "vietnam_dairy",
-        "en_dci": 0.3333333333333333,
-        "native_dci": 0.3499999999999999,
-        "reduction": -0.016666666666666607
+        "model": "deepseek",
+        "pair_id": "china_water",
+        "en_dci": 0.35,
+        "native_dci": 0.38750000000000007,
+        "reduction": -0.03750000000000009
       },
       {
-        "model": "gigachat_api",
-        "pair_id": "latvia_chocolate",
-        "en_dci": 0.4000000000000001,
-        "native_dci": 0.3499999999999999,
-        "reduction": 0.050000000000000155
-      },
-      {
-        "model": "grok",
-        "pair_id": "cyprus_supermarket",
-        "en_dci": 0.3333333333333333,
-        "native_dci": 0.37333333333333335,
-        "reduction": -0.040000000000000036
-      },
-      {
-        "model": "claude",
+        "model": "gptoss_swallow",
         "pair_id": "serbia_water",
-        "en_dci": 0.2833333333333334,
-        "native_dci": 0.29757575757575755,
-        "reduction": -0.014242424242424168
+        "en_dci": 0.3666666666666667,
+        "native_dci": 0.3545454545454545,
+        "reduction": 0.0121212121212122
       },
       {
         "model": "gemma4_local",
@@ -932,122 +596,38 @@
       },
       {
         "model": "deepseek",
-        "pair_id": "cyprus_supermarket",
-        "en_dci": 0.4333333333333334,
+        "pair_id": "latvia_chocolate",
+        "en_dci": 0.3,
+        "native_dci": 0.3233333333333333,
+        "reduction": -0.023333333333333317
+      },
+      {
+        "model": "gemma4_local",
+        "pair_id": "mongolia_beer",
+        "en_dci": 0.41428571428571426,
+        "native_dci": 0.39787878787878794,
+        "reduction": 0.016406926406926314
+      },
+      {
+        "model": "cerebras_qwen3",
+        "pair_id": "kenya_beer",
+        "en_dci": 0.3,
         "native_dci": 0.4000000000000001,
-        "reduction": 0.033333333333333326
-      },
-      {
-        "model": "gemini",
-        "pair_id": "serbia_water",
-        "en_dci": 0.27,
-        "native_dci": 0.34,
-        "reduction": -0.07
-      },
-      {
-        "model": "groq_allam",
-        "pair_id": "serbia_water",
-        "en_dci": 0.3315789473684211,
-        "native_dci": 0.4,
-        "reduction": -0.06842105263157894
-      },
-      {
-        "model": "swallow_local",
-        "pair_id": "japan_snacks",
-        "en_dci": 0.4000000000000001,
-        "native_dci": 0.38947368421052636,
-        "reduction": 0.010526315789473717
+        "reduction": -0.10000000000000009
       },
       {
         "model": "fireworks_glm",
-        "pair_id": "latvia_chocolate",
-        "en_dci": 0.25,
-        "native_dci": 0.35,
-        "reduction": -0.09999999999999998
-      },
-      {
-        "model": "groq_kimi",
-        "pair_id": "mongolia_beer",
-        "en_dci": 0.4,
-        "native_dci": 0.36,
-        "reduction": 0.040000000000000036
-      },
-      {
-        "model": "groq_kimi",
-        "pair_id": "serbia_water",
-        "en_dci": 0.2733333333333333,
-        "native_dci": 0.2833333333333333,
-        "reduction": -0.010000000000000009
-      },
-      {
-        "model": "groq_llama33",
-        "pair_id": "kenya_beer",
+        "pair_id": "cyprus_supermarket",
         "en_dci": 0.3,
-        "native_dci": 0.36,
-        "reduction": -0.06
-      },
-      {
-        "model": "groq_kimi",
-        "pair_id": "china_water",
-        "en_dci": 0.3833333333333333,
-        "native_dci": 0.31333333333333335,
-        "reduction": 0.06999999999999995
-      },
-      {
-        "model": "gptoss_swallow",
-        "pair_id": "latvia_chocolate",
-        "en_dci": 0.4166666666666667,
-        "native_dci": 0.35000000000000003,
-        "reduction": 0.06666666666666665
+        "native_dci": 0.3666666666666667,
+        "reduction": -0.06666666666666671
       },
       {
         "model": "gigachat_api",
-        "pair_id": "russia_organic",
-        "en_dci": 0.3,
-        "native_dci": 0.25,
-        "reduction": 0.04999999999999999
-      },
-      {
-        "model": "yandexgpt_pro",
         "pair_id": "ukraine_confectionery",
         "en_dci": 0.4,
         "native_dci": 0.4,
         "reduction": 0.0
-      },
-      {
-        "model": "gemma4_local",
-        "pair_id": "kenya_beer",
-        "en_dci": 0.41408128908128905,
-        "native_dci": 0.4000000000000001,
-        "reduction": 0.014081289081288972
-      },
-      {
-        "model": "grok",
-        "pair_id": "vietnam_dairy",
-        "en_dci": 0.3499999999999999,
-        "native_dci": 0.31666666666666665,
-        "reduction": 0.03333333333333327
-      },
-      {
-        "model": "gigachat_local",
-        "pair_id": "ukraine_confectionery",
-        "en_dci": 0.40634615384615386,
-        "native_dci": 0.3313034188034188,
-        "reduction": 0.07504273504273506
-      },
-      {
-        "model": "gemini",
-        "pair_id": "kenya_beer",
-        "en_dci": 0.3,
-        "native_dci": 0.34,
-        "reduction": -0.040000000000000036
-      },
-      {
-        "model": "qwen3_local",
-        "pair_id": "latvia_chocolate",
-        "en_dci": 0.39999999999999997,
-        "native_dci": 0.4,
-        "reduction": -5.551115123125783e-17
       },
       {
         "model": "groq_allam",
@@ -1057,6 +637,41 @@
         "reduction": -0.03577884104199902
       },
       {
+        "model": "gptoss_swallow",
+        "pair_id": "latvia_chocolate",
+        "en_dci": 0.4166666666666667,
+        "native_dci": 0.35000000000000003,
+        "reduction": 0.06666666666666665
+      },
+      {
+        "model": "gemma4_local",
+        "pair_id": "latvia_chocolate",
+        "en_dci": 0.3545454545454545,
+        "native_dci": 0.4,
+        "reduction": -0.045454545454545525
+      },
+      {
+        "model": "deepseek",
+        "pair_id": "kenya_beer",
+        "en_dci": 0.3,
+        "native_dci": 0.3333333333333333,
+        "reduction": -0.033333333333333326
+      },
+      {
+        "model": "fireworks_glm",
+        "pair_id": "china_water",
+        "en_dci": 0.325,
+        "native_dci": 0.3833333333333333,
+        "reduction": -0.05833333333333329
+      },
+      {
+        "model": "yandexgpt_pro",
+        "pair_id": "vietnam_dairy",
+        "en_dci": 0.4166666666666667,
+        "native_dci": 0.4000000000000001,
+        "reduction": 0.016666666666666607
+      },
+      {
         "model": "sambanova_deepseek",
         "pair_id": "serbia_water",
         "en_dci": 0.31666666666666665,
@@ -1064,53 +679,32 @@
         "reduction": 0.016666666666666663
       },
       {
-        "model": "groq_llama33",
-        "pair_id": "serbia_water",
-        "en_dci": 0.3,
-        "native_dci": 0.4,
-        "reduction": -0.10000000000000003
+        "model": "yandexgpt_local",
+        "pair_id": "russia_organic",
+        "en_dci": 0.2857142857142857,
+        "native_dci": 0.2863636363636364,
+        "reduction": -0.0006493506493506773
       },
       {
-        "model": "gptoss_swallow",
-        "pair_id": "japan_snacks",
-        "en_dci": 0.3833333333333333,
-        "native_dci": 0.4166666666666667,
-        "reduction": -0.03333333333333338
-      },
-      {
-        "model": "dashscope_qwen_plus",
-        "pair_id": "kenya_beer",
-        "en_dci": 0.4000000000000001,
-        "native_dci": 0.4000000000000001,
-        "reduction": 0.0
-      },
-      {
-        "model": "groq_kimi",
-        "pair_id": "kenya_beer",
-        "en_dci": 0.34333333333333327,
-        "native_dci": 0.31333333333333335,
-        "reduction": 0.029999999999999916
+        "model": "exaone_local",
+        "pair_id": "korea_dairy",
+        "en_dci": 0.325,
+        "native_dci": 0.3,
+        "reduction": 0.025000000000000022
       },
       {
         "model": "gigachat_api",
-        "pair_id": "kenya_beer",
-        "en_dci": 0.4000000000000001,
-        "native_dci": 0.4000000000000001,
-        "reduction": 0.0
+        "pair_id": "russia_ukraine_banking",
+        "en_dci": 0.3333333333333333,
+        "native_dci": 0.3666666666666667,
+        "reduction": -0.03333333333333338
       },
       {
-        "model": "grok",
-        "pair_id": "latvia_chocolate",
-        "en_dci": 0.3,
-        "native_dci": 0.3499999999999999,
-        "reduction": -0.04999999999999993
-      },
-      {
-        "model": "deepseek",
-        "pair_id": "latvia_chocolate",
-        "en_dci": 0.3,
-        "native_dci": 0.3233333333333333,
-        "reduction": -0.023333333333333317
+        "model": "yandexgpt_pro",
+        "pair_id": "serbia_water",
+        "en_dci": 0.37666666666666665,
+        "native_dci": 0.25,
+        "reduction": 0.12666666666666665
       },
       {
         "model": "fireworks_glm",
@@ -1121,38 +715,87 @@
       },
       {
         "model": "gptoss_swallow",
-        "pair_id": "vietnam_dairy",
-        "en_dci": 0.31666666666666665,
+        "pair_id": "cyprus_supermarket",
+        "en_dci": 0.36771241830065354,
+        "native_dci": 0.36999999999999994,
+        "reduction": -0.002287581699346397
+      },
+      {
+        "model": "gemma4_local",
+        "pair_id": "cyprus_supermarket",
+        "en_dci": 0.4348484848484849,
         "native_dci": 0.4000000000000001,
-        "reduction": -0.08333333333333343
-      },
-      {
-        "model": "qwen3_local",
-        "pair_id": "vietnam_dairy",
-        "en_dci": 0.39999999999999997,
-        "native_dci": 0.3878787878787879,
-        "reduction": 0.012121212121212088
-      },
-      {
-        "model": "sarvam",
-        "pair_id": "kenya_beer",
-        "en_dci": 0.4,
-        "native_dci": 0.3,
-        "reduction": 0.10000000000000003
-      },
-      {
-        "model": "dashscope_qwen_plus",
-        "pair_id": "serbia_water",
-        "en_dci": 0.4000000000000001,
-        "native_dci": 0.36000000000000004,
-        "reduction": 0.040000000000000036
+        "reduction": 0.034848484848484795
       },
       {
         "model": "sambanova_deepseek",
-        "pair_id": "kenya_beer",
+        "pair_id": "latvia_chocolate",
         "en_dci": 0.3,
         "native_dci": 0.31666666666666665,
         "reduction": -0.016666666666666663
+      },
+      {
+        "model": "yandexgpt_pro",
+        "pair_id": "russia_ukraine_banking",
+        "en_dci": 0.38333333333333336,
+        "native_dci": 0.3499999999999999,
+        "reduction": 0.03333333333333344
+      },
+      {
+        "model": "yandexgpt_pro",
+        "pair_id": "latvia_chocolate",
+        "en_dci": 0.37777777777777777,
+        "native_dci": 0.25,
+        "reduction": 0.12777777777777777
+      },
+      {
+        "model": "gigachat_api",
+        "pair_id": "vietnam_dairy",
+        "en_dci": 0.3,
+        "native_dci": 0.4000000000000001,
+        "reduction": -0.10000000000000009
+      },
+      {
+        "model": "gigachat_local",
+        "pair_id": "russia_organic",
+        "en_dci": 0.25,
+        "native_dci": 0.36648003894839337,
+        "reduction": -0.11648003894839337
+      },
+      {
+        "model": "gpt",
+        "pair_id": "vietnam_dairy",
+        "en_dci": 0.39999999999999997,
+        "native_dci": 0.3833333333333333,
+        "reduction": 0.016666666666666663
+      },
+      {
+        "model": "groq_llama33",
+        "pair_id": "vietnam_dairy",
+        "en_dci": 0.3,
+        "native_dci": 0.4,
+        "reduction": -0.10000000000000003
+      },
+      {
+        "model": "sambanova_deepseek",
+        "pair_id": "vietnam_dairy",
+        "en_dci": 0.3333333333333333,
+        "native_dci": 0.3499999999999999,
+        "reduction": -0.016666666666666607
+      },
+      {
+        "model": "claude",
+        "pair_id": "vietnam_dairy",
+        "en_dci": 0.31,
+        "native_dci": 0.32,
+        "reduction": -0.010000000000000009
+      },
+      {
+        "model": "gemini",
+        "pair_id": "serbia_water",
+        "en_dci": 0.27,
+        "native_dci": 0.34,
+        "reduction": -0.07
       },
       {
         "model": "gigachat_api",
@@ -1163,25 +806,417 @@
       },
       {
         "model": "gpt",
-        "pair_id": "vietnam_dairy",
+        "pair_id": "cyprus_supermarket",
         "en_dci": 0.39999999999999997,
-        "native_dci": 0.3833333333333333,
+        "native_dci": 0.3566666666666667,
+        "reduction": 0.04333333333333328
+      },
+      {
+        "model": "gpt",
+        "pair_id": "serbia_water",
+        "en_dci": 0.3333333333333333,
+        "native_dci": 0.3499999999999999,
+        "reduction": -0.016666666666666607
+      },
+      {
+        "model": "groq_llama33",
+        "pair_id": "cyprus_supermarket",
+        "en_dci": 0.4000000000000001,
+        "native_dci": 0.3,
+        "reduction": 0.10000000000000009
+      },
+      {
+        "model": "groq_llama33",
+        "pair_id": "serbia_water",
+        "en_dci": 0.3,
+        "native_dci": 0.4,
+        "reduction": -0.10000000000000003
+      },
+      {
+        "model": "sambanova_deepseek",
+        "pair_id": "cyprus_supermarket",
+        "en_dci": 0.3666666666666667,
+        "native_dci": 0.35000000000000003,
         "reduction": 0.016666666666666663
       },
       {
+        "model": "groq_kimi",
+        "pair_id": "vietnam_dairy",
+        "en_dci": 0.3466666666666667,
+        "native_dci": 0.2833333333333334,
+        "reduction": 0.0633333333333333
+      },
+      {
+        "model": "qwen3_local",
+        "pair_id": "vietnam_dairy",
+        "en_dci": 0.39999999999999997,
+        "native_dci": 0.3878787878787879,
+        "reduction": 0.012121212121212088
+      },
+      {
+        "model": "claude",
+        "pair_id": "serbia_water",
+        "en_dci": 0.2833333333333334,
+        "native_dci": 0.29757575757575755,
+        "reduction": -0.014242424242424168
+      },
+      {
+        "model": "gpt",
+        "pair_id": "mongolia_beer",
+        "en_dci": 0.35,
+        "native_dci": 0.3333333333333333,
+        "reduction": 0.016666666666666663
+      },
+      {
+        "model": "gemini",
+        "pair_id": "latvia_chocolate",
+        "en_dci": 0.35000000000000003,
+        "native_dci": 0.25333333333333335,
+        "reduction": 0.09666666666666668
+      },
+      {
+        "model": "gemma4_local",
+        "pair_id": "kenya_beer",
+        "en_dci": 0.41408128908128905,
+        "native_dci": 0.4000000000000001,
+        "reduction": 0.014081289081288972
+      },
+      {
+        "model": "gptoss_swallow",
+        "pair_id": "kenya_beer",
+        "en_dci": 0.3866666666666667,
+        "native_dci": 0.3333333333333333,
+        "reduction": 0.0533333333333334
+      },
+      {
+        "model": "claude",
+        "pair_id": "mongolia_beer",
+        "en_dci": 0.30000000000000004,
+        "native_dci": 0.26509803921568625,
+        "reduction": 0.03490196078431379
+      },
+      {
+        "model": "yandexgpt_pro",
+        "pair_id": "cyprus_supermarket",
+        "en_dci": 0.3666666666666667,
+        "native_dci": 0.4000000000000001,
+        "reduction": -0.03333333333333338
+      },
+      {
+        "model": "cerebras_qwen3",
+        "pair_id": "vietnam_dairy",
+        "en_dci": 0.4000000000000001,
+        "native_dci": 0.25666666666666665,
+        "reduction": 0.14333333333333342
+      },
+      {
+        "model": "gigachat_api",
+        "pair_id": "latvia_chocolate",
+        "en_dci": 0.4000000000000001,
+        "native_dci": 0.3499999999999999,
+        "reduction": 0.050000000000000155
+      },
+      {
+        "model": "yandexgpt_local",
+        "pair_id": "ukraine_confectionery",
+        "en_dci": 0.38181818181818183,
+        "native_dci": 0.4,
+        "reduction": -0.018181818181818188
+      },
+      {
+        "model": "gpt",
+        "pair_id": "latvia_chocolate",
+        "en_dci": 0.3416666666666666,
+        "native_dci": 0.3499999999999999,
+        "reduction": -0.008333333333333304
+      },
+      {
+        "model": "yandexgpt_pro",
+        "pair_id": "mongolia_beer",
+        "en_dci": 0.4,
+        "native_dci": 0.2818181818181818,
+        "reduction": 0.11818181818181822
+      },
+      {
+        "model": "groq_llama33",
+        "pair_id": "latvia_chocolate",
+        "en_dci": 0.3333333333333333,
+        "native_dci": 0.32,
+        "reduction": 0.013333333333333308
+      },
+      {
+        "model": "groq_kimi",
+        "pair_id": "serbia_water",
+        "en_dci": 0.2733333333333333,
+        "native_dci": 0.2833333333333333,
+        "reduction": -0.010000000000000009
+      },
+      {
+        "model": "qwen3_local",
+        "pair_id": "serbia_water",
+        "en_dci": 0.39999999999999997,
+        "native_dci": 0.4000000000000001,
+        "reduction": -1.1102230246251565e-16
+      },
+      {
+        "model": "claude",
+        "pair_id": "latvia_chocolate",
+        "en_dci": 0.3,
+        "native_dci": 0.32666666666666666,
+        "reduction": -0.026666666666666672
+      },
+      {
+        "model": "dashscope_qwen_plus",
+        "pair_id": "vietnam_dairy",
+        "en_dci": 0.38999999999999996,
+        "native_dci": 0.36999999999999994,
+        "reduction": 0.020000000000000018
+      },
+      {
+        "model": "gemini",
+        "pair_id": "vietnam_dairy",
+        "en_dci": 0.26666666666666666,
+        "native_dci": 0.3499999999999999,
+        "reduction": -0.08333333333333326
+      },
+      {
+        "model": "groq_kimi",
+        "pair_id": "mongolia_beer",
+        "en_dci": 0.4,
+        "native_dci": 0.312,
+        "reduction": 0.08800000000000002
+      },
+      {
+        "model": "yandexgpt_pro",
+        "pair_id": "russia_organic",
+        "en_dci": 0.4,
+        "native_dci": 0.23863636363636365,
+        "reduction": 0.16136363636363638
+      },
+      {
+        "model": "cerebras_qwen3",
+        "pair_id": "serbia_water",
+        "en_dci": 0.25,
+        "native_dci": 0.31000000000000005,
+        "reduction": -0.06000000000000005
+      },
+      {
+        "model": "grok",
+        "pair_id": "vietnam_dairy",
+        "en_dci": 0.3499999999999999,
+        "native_dci": 0.31666666666666665,
+        "reduction": 0.03333333333333327
+      },
+      {
+        "model": "cerebras_qwen3",
+        "pair_id": "mongolia_beer",
+        "en_dci": 0.4,
+        "native_dci": 0.36,
+        "reduction": 0.040000000000000036
+      },
+      {
+        "model": "dashscope_qwen_plus",
+        "pair_id": "cyprus_supermarket",
+        "en_dci": 0.4000000000000001,
+        "native_dci": 0.4000000000000001,
+        "reduction": 0.0
+      },
+      {
+        "model": "groq_kimi",
+        "pair_id": "latvia_chocolate",
+        "en_dci": 0.3,
+        "native_dci": 0.30333333333333334,
+        "reduction": -0.003333333333333355
+      },
+      {
+        "model": "gpt",
+        "pair_id": "kenya_beer",
+        "en_dci": 0.3416666666666666,
+        "native_dci": 0.3499999999999999,
+        "reduction": -0.008333333333333304
+      },
+      {
+        "model": "gemini",
+        "pair_id": "cyprus_supermarket",
+        "en_dci": 0.41,
+        "native_dci": 0.3333333333333333,
+        "reduction": 0.07666666666666666
+      },
+      {
+        "model": "dashscope_qwen_plus",
+        "pair_id": "serbia_water",
+        "en_dci": 0.4000000000000001,
+        "native_dci": 0.36000000000000004,
+        "reduction": 0.040000000000000036
+      },
+      {
+        "model": "qwen3_local",
+        "pair_id": "latvia_chocolate",
+        "en_dci": 0.39999999999999997,
+        "native_dci": 0.4,
+        "reduction": -5.551115123125783e-17
+      },
+      {
+        "model": "groq_llama33",
+        "pair_id": "kenya_beer",
+        "en_dci": 0.3,
+        "native_dci": 0.36,
+        "reduction": -0.06
+      },
+      {
+        "model": "groq_allam",
+        "pair_id": "serbia_water",
+        "en_dci": 0.3315789473684211,
+        "native_dci": 0.4,
+        "reduction": -0.06842105263157894
+      },
+      {
+        "model": "sambanova_deepseek",
+        "pair_id": "kenya_beer",
+        "en_dci": 0.3,
+        "native_dci": 0.31666666666666665,
+        "reduction": -0.016666666666666663
+      },
+      {
+        "model": "swallow_local",
+        "pair_id": "japan_snacks",
+        "en_dci": 0.4000000000000001,
+        "native_dci": 0.38947368421052636,
+        "reduction": 0.010526315789473717
+      },
+      {
+        "model": "claude",
+        "pair_id": "kenya_beer",
+        "en_dci": 0.2933333333333334,
+        "native_dci": 0.24,
+        "reduction": 0.0533333333333334
+      },
+      {
         "model": "gigachat_local",
-        "pair_id": "russia_ukraine_banking",
-        "en_dci": 0.34847924438089484,
-        "native_dci": 0.27575757575757576,
-        "reduction": 0.07272166862331908
+        "pair_id": "ukraine_confectionery",
+        "en_dci": 0.40634615384615386,
+        "native_dci": 0.3313034188034188,
+        "reduction": 0.07504273504273506
+      },
+      {
+        "model": "gemini",
+        "pair_id": "mongolia_beer",
+        "en_dci": 0.35,
+        "native_dci": 0.31,
+        "reduction": 0.03999999999999998
+      },
+      {
+        "model": "gigachat_api",
+        "pair_id": "cyprus_supermarket",
+        "en_dci": 0.4000000000000001,
+        "native_dci": 0.4000000000000001,
+        "reduction": 0.0
+      },
+      {
+        "model": "cerebras_qwen3",
+        "pair_id": "latvia_chocolate",
+        "en_dci": 0.2631578947368421,
+        "native_dci": 0.33,
+        "reduction": -0.06684210526315792
+      },
+      {
+        "model": "yandexgpt_pro",
+        "pair_id": "kenya_beer",
+        "en_dci": 0.39333333333333337,
+        "native_dci": 0.3766666666666667,
+        "reduction": 0.016666666666666663
+      },
+      {
+        "model": "sarvam",
+        "pair_id": "vietnam_dairy",
+        "en_dci": 0.35,
+        "native_dci": 0.4,
+        "reduction": -0.050000000000000044
+      },
+      {
+        "model": "grok",
+        "pair_id": "latvia_chocolate",
+        "en_dci": 0.3,
+        "native_dci": 0.3499999999999999,
+        "reduction": -0.04999999999999993
+      },
+      {
+        "model": "grok",
+        "pair_id": "cyprus_supermarket",
+        "en_dci": 0.3333333333333333,
+        "native_dci": 0.37333333333333335,
+        "reduction": -0.040000000000000036
+      },
+      {
+        "model": "grok",
+        "pair_id": "serbia_water",
+        "en_dci": 0.25,
+        "native_dci": 0.31666666666666665,
+        "reduction": -0.06666666666666665
+      },
+      {
+        "model": "fireworks_glm",
+        "pair_id": "vietnam_dairy",
+        "en_dci": 0.28333333333333327,
+        "native_dci": 0.375,
+        "reduction": -0.09166666666666673
+      },
+      {
+        "model": "claude",
+        "pair_id": "cyprus_supermarket",
+        "en_dci": 0.3516666666666666,
+        "native_dci": 0.32,
+        "reduction": 0.03166666666666662
+      },
+      {
+        "model": "groq_allam",
+        "pair_id": "latvia_chocolate",
+        "en_dci": 0.3043859649122807,
+        "native_dci": 0.38947368421052636,
+        "reduction": -0.08508771929824566
+      },
+      {
+        "model": "dashscope_qwen_plus",
+        "pair_id": "latvia_chocolate",
+        "en_dci": 0.4000000000000001,
+        "native_dci": 0.38000000000000006,
+        "reduction": 0.020000000000000018
+      },
+      {
+        "model": "jais_local",
+        "pair_id": "uae_dairy",
+        "en_dci": 0.42500000000000004,
+        "native_dci": 0.375,
+        "reduction": 0.050000000000000044
+      },
+      {
+        "model": "gigachat_api",
+        "pair_id": "russia_organic",
+        "en_dci": 0.3,
+        "native_dci": 0.25,
+        "reduction": 0.04999999999999999
+      },
+      {
+        "model": "sarvam",
+        "pair_id": "cyprus_supermarket",
+        "en_dci": 0.3666666666666667,
+        "native_dci": 0.4,
+        "reduction": -0.033333333333333326
+      },
+      {
+        "model": "fireworks_glm",
+        "pair_id": "serbia_water",
+        "en_dci": 0.2,
+        "native_dci": 0.35,
+        "reduction": -0.14999999999999997
       }
     ]
   },
   "H12_geopolitical_framing": {
     "supported": "True",
-    "mean_abs_delta": 0.04060217605712857,
-    "t_stat": 6.499824375533333,
-    "p_value": 3.637673431238266e-08,
+    "mean_abs_delta": 0.040602176057128576,
+    "t_stat": 6.499824375533334,
+    "p_value": 3.637673431238247e-08,
     "n_pairs": 3,
     "total_deltas": 51,
     "pairs": {
@@ -1189,87 +1224,87 @@
         "city_a": "Roshen (Kyiv)",
         "city_b": "Roshen (Moscow)",
         "models": 16,
-        "mean_abs_delta": 0.07442945075757576,
+        "mean_abs_delta": 0.07442945075757575,
         "per_model": {
-          "grok": {
-            "city_a_dci": 0.4083333333333334,
-            "city_b_dci": 0.4916666666666667,
-            "delta": 0.08333333333333331
-          },
-          "groq_allam": {
-            "city_a_dci": 0.3333333333333333,
-            "city_b_dci": 0.41193181818181823,
-            "delta": 0.07859848484848492
-          },
-          "sambanova_deepseek": {
-            "city_a_dci": 0.37500000000000006,
-            "city_b_dci": 0.39999999999999997,
-            "delta": 0.02499999999999991
-          },
-          "sarvam": {
-            "city_a_dci": 0.23500000000000001,
-            "city_b_dci": 0.3,
-            "delta": 0.06499999999999997
-          },
-          "qwen3_local": {
-            "city_a_dci": 0.2833333333333333,
-            "city_b_dci": 0.55,
-            "delta": 0.2666666666666667
-          },
-          "gigachat_api": {
-            "city_a_dci": 0.35000000000000003,
-            "city_b_dci": 0.4416666666666667,
-            "delta": 0.09166666666666667
+          "deepseek": {
+            "city_a_dci": 0.45,
+            "city_b_dci": 0.5083333333333333,
+            "delta": 0.05833333333333329
           },
           "dashscope_qwen_plus": {
             "city_a_dci": 0.28500000000000003,
             "city_b_dci": 0.37000000000000005,
             "delta": 0.08500000000000002
           },
-          "claude": {
-            "city_a_dci": 0.3,
-            "city_b_dci": 0.365,
-            "delta": 0.065
+          "grok": {
+            "city_a_dci": 0.4083333333333334,
+            "city_b_dci": 0.4916666666666667,
+            "delta": 0.08333333333333331
           },
-          "gpt": {
-            "city_a_dci": 0.3666666666666667,
-            "city_b_dci": 0.3666666666666667,
-            "delta": 0.0
-          },
-          "groq_kimi": {
-            "city_a_dci": 0.3233333333333333,
-            "city_b_dci": 0.37999999999999995,
-            "delta": 0.05666666666666664
-          },
-          "deepseek": {
-            "city_a_dci": 0.45,
-            "city_b_dci": 0.5083333333333333,
-            "delta": 0.05833333333333329
+          "cerebras_qwen3": {
+            "city_a_dci": 0.25166666666666665,
+            "city_b_dci": 0.35000000000000003,
+            "delta": 0.09833333333333338
           },
           "gemini": {
             "city_a_dci": 0.34,
             "city_b_dci": 0.2333333333333333,
             "delta": -0.10666666666666672
           },
-          "gptoss_swallow": {
-            "city_a_dci": 0.3183333333333333,
-            "city_b_dci": 0.3833333333333333,
-            "delta": 0.065
-          },
           "groq_llama33": {
             "city_a_dci": 0.32499999999999996,
             "city_b_dci": 0.3499999999999999,
             "delta": 0.024999999999999967
+          },
+          "groq_kimi": {
+            "city_a_dci": 0.3233333333333333,
+            "city_b_dci": 0.37999999999999995,
+            "delta": 0.05666666666666664
+          },
+          "gpt": {
+            "city_a_dci": 0.3666666666666667,
+            "city_b_dci": 0.3666666666666667,
+            "delta": 0.0
+          },
+          "groq_allam": {
+            "city_a_dci": 0.3333333333333333,
+            "city_b_dci": 0.41193181818181823,
+            "delta": 0.07859848484848492
+          },
+          "qwen3_local": {
+            "city_a_dci": 0.2833333333333333,
+            "city_b_dci": 0.55,
+            "delta": 0.2666666666666667
+          },
+          "sarvam": {
+            "city_a_dci": 0.23500000000000001,
+            "city_b_dci": 0.3,
+            "delta": 0.06499999999999997
           },
           "gemma4_local": {
             "city_a_dci": 0.2983333333333334,
             "city_b_dci": 0.3189393939393939,
             "delta": 0.020606060606060517
           },
-          "cerebras_qwen3": {
-            "city_a_dci": 0.25166666666666665,
-            "city_b_dci": 0.35000000000000003,
-            "delta": 0.09833333333333338
+          "gigachat_api": {
+            "city_a_dci": 0.35000000000000003,
+            "city_b_dci": 0.4416666666666667,
+            "delta": 0.09166666666666667
+          },
+          "claude": {
+            "city_a_dci": 0.3,
+            "city_b_dci": 0.365,
+            "delta": 0.065
+          },
+          "sambanova_deepseek": {
+            "city_a_dci": 0.37500000000000006,
+            "city_b_dci": 0.39999999999999997,
+            "delta": 0.02499999999999991
+          },
+          "gptoss_swallow": {
+            "city_a_dci": 0.3183333333333333,
+            "city_b_dci": 0.3833333333333333,
+            "delta": 0.065
           }
         }
       },
@@ -1279,75 +1314,30 @@
         "models": 18,
         "mean_abs_delta": 0.027396326387872278,
         "per_model": {
-          "groq_allam": {
-            "city_a_dci": 0.37344532279314885,
-            "city_b_dci": 0.35,
-            "delta": -0.02344532279314887
-          },
-          "grok": {
-            "city_a_dci": 0.2866666666666667,
-            "city_b_dci": 0.255,
-            "delta": -0.031666666666666676
-          },
-          "sambanova_deepseek": {
-            "city_a_dci": 0.25833333333333336,
-            "city_b_dci": 0.25,
-            "delta": -0.00833333333333336
-          },
-          "sarvam": {
-            "city_a_dci": 0.2581481481481482,
-            "city_b_dci": 0.24,
-            "delta": -0.01814814814814819
-          },
-          "qwen3_local": {
-            "city_a_dci": 0.33055555555555555,
-            "city_b_dci": 0.22499999999999998,
-            "delta": -0.10555555555555557
-          },
-          "gigachat_api": {
-            "city_a_dci": 0.3,
-            "city_b_dci": 0.3,
-            "delta": 0.0
-          },
           "fireworks_glm": {
             "city_a_dci": 0.27,
             "city_b_dci": 0.22,
             "delta": -0.05000000000000002
-          },
-          "dashscope_qwen_plus": {
-            "city_a_dci": 0.28,
-            "city_b_dci": 0.26333333333333336,
-            "delta": -0.016666666666666663
-          },
-          "claude": {
-            "city_a_dci": 0.265,
-            "city_b_dci": 0.2816666666666667,
-            "delta": 0.016666666666666663
-          },
-          "gpt": {
-            "city_a_dci": 0.30833333333333335,
-            "city_b_dci": 0.25833333333333336,
-            "delta": -0.04999999999999999
-          },
-          "groq_kimi": {
-            "city_a_dci": 0.27666666666666667,
-            "city_b_dci": 0.25333333333333335,
-            "delta": -0.023333333333333317
           },
           "deepseek": {
             "city_a_dci": 0.2933333333333334,
             "city_b_dci": 0.3,
             "delta": 0.006666666666666599
           },
-          "gemma4_local": {
-            "city_a_dci": 0.2772727272727273,
-            "city_b_dci": 0.2537878787878788,
-            "delta": -0.023484848484848497
+          "dashscope_qwen_plus": {
+            "city_a_dci": 0.28,
+            "city_b_dci": 0.26333333333333336,
+            "delta": -0.016666666666666663
           },
-          "gptoss_swallow": {
-            "city_a_dci": 0.285,
-            "city_b_dci": 0.20833333333333334,
-            "delta": -0.07666666666666663
+          "grok": {
+            "city_a_dci": 0.2866666666666667,
+            "city_b_dci": 0.255,
+            "delta": -0.031666666666666676
+          },
+          "cerebras_qwen3": {
+            "city_a_dci": 0.25166666666666665,
+            "city_b_dci": 0.2383333333333333,
+            "delta": -0.013333333333333336
           },
           "gemini": {
             "city_a_dci": 0.3375,
@@ -1359,15 +1349,60 @@
             "city_b_dci": 0.25,
             "delta": 0.0
           },
+          "groq_allam": {
+            "city_a_dci": 0.37344532279314885,
+            "city_b_dci": 0.35,
+            "delta": -0.02344532279314887
+          },
+          "gpt": {
+            "city_a_dci": 0.30833333333333335,
+            "city_b_dci": 0.25833333333333336,
+            "delta": -0.04999999999999999
+          },
+          "groq_kimi": {
+            "city_a_dci": 0.27666666666666667,
+            "city_b_dci": 0.25333333333333335,
+            "delta": -0.023333333333333317
+          },
+          "qwen3_local": {
+            "city_a_dci": 0.33055555555555555,
+            "city_b_dci": 0.22499999999999998,
+            "delta": -0.10555555555555557
+          },
           "yandexgpt_pro": {
             "city_a_dci": 0.28,
             "city_b_dci": 0.2916666666666667,
             "delta": 0.011666666666666659
           },
-          "cerebras_qwen3": {
-            "city_a_dci": 0.25166666666666665,
-            "city_b_dci": 0.2383333333333333,
-            "delta": -0.013333333333333336
+          "sarvam": {
+            "city_a_dci": 0.2581481481481482,
+            "city_b_dci": 0.24,
+            "delta": -0.01814814814814819
+          },
+          "gemma4_local": {
+            "city_a_dci": 0.2772727272727273,
+            "city_b_dci": 0.2537878787878788,
+            "delta": -0.023484848484848497
+          },
+          "gigachat_api": {
+            "city_a_dci": 0.3,
+            "city_b_dci": 0.3,
+            "delta": 0.0
+          },
+          "claude": {
+            "city_a_dci": 0.265,
+            "city_b_dci": 0.2816666666666667,
+            "delta": 0.016666666666666663
+          },
+          "sambanova_deepseek": {
+            "city_a_dci": 0.25833333333333336,
+            "city_b_dci": 0.25,
+            "delta": -0.00833333333333336
+          },
+          "gptoss_swallow": {
+            "city_a_dci": 0.285,
+            "city_b_dci": 0.20833333333333334,
+            "delta": -0.07666666666666663
           }
         }
       },
@@ -1377,75 +1412,60 @@
         "models": 17,
         "mean_abs_delta": 0.02274740540062612,
         "per_model": {
-          "grok": {
-            "city_a_dci": 0.4466666666666667,
-            "city_b_dci": 0.4383333333333333,
-            "delta": -0.008333333333333415
-          },
-          "groq_allam": {
-            "city_a_dci": 0.38095238095238093,
-            "city_b_dci": 0.42857142857142855,
-            "delta": 0.047619047619047616
-          },
-          "sambanova_deepseek": {
-            "city_a_dci": 0.4083333333333334,
-            "city_b_dci": 0.39999999999999997,
-            "delta": -0.008333333333333415
-          },
-          "sarvam": {
-            "city_a_dci": 0.4083333333333334,
-            "city_b_dci": 0.4079139522828843,
-            "delta": -0.0004193810504490858
-          },
-          "qwen3_local": {
-            "city_a_dci": 0.4916666666666667,
-            "city_b_dci": 0.4912907268170426,
-            "delta": -0.0003759398496240851
-          },
-          "gigachat_api": {
-            "city_a_dci": 0.25833333333333336,
-            "city_b_dci": 0.3333333333333333,
-            "delta": 0.07499999999999996
-          },
           "fireworks_glm": {
             "city_a_dci": 0.475,
             "city_b_dci": 0.45,
             "delta": -0.024999999999999967
-          },
-          "dashscope_qwen_plus": {
-            "city_a_dci": 0.3683333333333334,
-            "city_b_dci": 0.33,
-            "delta": -0.038333333333333386
-          },
-          "claude": {
-            "city_a_dci": 0.43703703703703706,
-            "city_b_dci": 0.3942673992673993,
-            "delta": -0.04276963776963777
-          },
-          "gpt": {
-            "city_a_dci": 0.34166666666666673,
-            "city_b_dci": 0.3499999999999999,
-            "delta": 0.008333333333333193
-          },
-          "groq_kimi": {
-            "city_a_dci": 0.38000000000000006,
-            "city_b_dci": 0.4066666666666667,
-            "delta": 0.026666666666666616
           },
           "deepseek": {
             "city_a_dci": 0.45,
             "city_b_dci": 0.45,
             "delta": 0.0
           },
+          "dashscope_qwen_plus": {
+            "city_a_dci": 0.3683333333333334,
+            "city_b_dci": 0.33,
+            "delta": -0.038333333333333386
+          },
+          "grok": {
+            "city_a_dci": 0.4466666666666667,
+            "city_b_dci": 0.4383333333333333,
+            "delta": -0.008333333333333415
+          },
+          "cerebras_qwen3": {
+            "city_a_dci": 0.3268518518518519,
+            "city_b_dci": 0.35388888888888886,
+            "delta": 0.02703703703703697
+          },
           "gemini": {
             "city_a_dci": 0.44333333333333336,
             "city_b_dci": 0.4616666666666667,
             "delta": 0.018333333333333368
           },
-          "gptoss_swallow": {
-            "city_a_dci": 0.39166666666666666,
-            "city_b_dci": 0.385,
-            "delta": -0.006666666666666654
+          "groq_kimi": {
+            "city_a_dci": 0.38000000000000006,
+            "city_b_dci": 0.4066666666666667,
+            "delta": 0.026666666666666616
+          },
+          "gpt": {
+            "city_a_dci": 0.34166666666666673,
+            "city_b_dci": 0.3499999999999999,
+            "delta": 0.008333333333333193
+          },
+          "groq_allam": {
+            "city_a_dci": 0.38095238095238093,
+            "city_b_dci": 0.42857142857142855,
+            "delta": 0.047619047619047616
+          },
+          "qwen3_local": {
+            "city_a_dci": 0.4916666666666667,
+            "city_b_dci": 0.4912907268170426,
+            "delta": -0.0003759398496240851
+          },
+          "sarvam": {
+            "city_a_dci": 0.4083333333333334,
+            "city_b_dci": 0.4079139522828843,
+            "delta": -0.0004193810504490858
           },
           "yandexgpt_pro": {
             "city_a_dci": 0.4116666666666666,
@@ -1457,10 +1477,25 @@
             "city_b_dci": 0.356060606060606,
             "delta": -0.03515151515151527
           },
-          "cerebras_qwen3": {
-            "city_a_dci": 0.3268518518518519,
-            "city_b_dci": 0.35388888888888886,
-            "delta": 0.02703703703703697
+          "gigachat_api": {
+            "city_a_dci": 0.25833333333333336,
+            "city_b_dci": 0.3333333333333333,
+            "delta": 0.07499999999999996
+          },
+          "claude": {
+            "city_a_dci": 0.43703703703703706,
+            "city_b_dci": 0.3942673992673993,
+            "delta": -0.04276963776963777
+          },
+          "sambanova_deepseek": {
+            "city_a_dci": 0.4083333333333334,
+            "city_b_dci": 0.39999999999999997,
+            "delta": -0.008333333333333415
+          },
+          "gptoss_swallow": {
+            "city_a_dci": 0.39166666666666666,
+            "city_b_dci": 0.385,
+            "delta": -0.006666666666666654
           }
         }
       }
