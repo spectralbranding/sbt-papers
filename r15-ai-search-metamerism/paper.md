@@ -524,7 +524,7 @@ The interpretation is that native-language prompting does not function as a gene
 | GigaChat API | Russian | Native | +.019 |
 | GPT-4o | Greek | Control | -.008 |
 | DeepSeek | Latvian | Control | -.012 |
-| Aggregate (116 pairs) | All | Mixed | -.005 |
+| Aggregate (121 pairs) | All | Mixed | +.001 |
 
 *Note.* DCI reduction = difference between English-prompt DCI and native-language-prompt DCI for the same model-brand pair. Positive values indicate less collapse under native-language prompting. "Native" = model's primary training language matches the prompt language. "Control" = no model in the constellation has this language as a training language. Full per-combination results are in the supplementary dataset (spectralbranding/r15-ai-search-metamerism on HuggingFace).
 

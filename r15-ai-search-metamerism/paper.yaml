@@ -14,8 +14,8 @@ metadata:
   citation_key: "2026v"
   doi: "10.5281/zenodo.19422427"
   date: "2026-04-11"
-  version: "2.2"
-  status: preprint  # v2.2 (2026-04-11): H10 recomputation on the full clean dataset (52/116 positive, mean = -.002, binomial sign test p = .307 two-sided -- NOT significant; H10 framed as a null result rather than significantly negative); supplementary Run 10 corrective comparators included; abstract refinements
+  version: "2.1"
+  status: preprint  # v2.1 (2026-04-11): first revision since the v2.0 Zenodo upload (2026-04-09). H10 recomputed on the full updated dataset including the mongolia_beer Mongolian-language subgroup test and the VkusVill Brand Function specification follow-up: 58/121 positive (48%), mean = +.001, binomial sign test p = .716 two-sided -- NOT significant. H10 framing corrected from "significantly negative" to "null result." Mongolia mn-language exception documented (8/8 models, mean -4.9 DCI points). Supplementary Run 10 corrective comparators included (126 calls; VkusVill Ideological collapsed -5.95 with corrective comparator). Native templates rewritten as natural native-speaker prose for ru/uk/zh/sv/el/lv/vi/sr/mn/sw. "7 training traditions" phrasing standardized. AMA leading-zero convention applied paper-wide. Abstract updated.
   license: "CC-BY-NC-ND-4.0"
   keywords:
     - AI-mediated search
@@ -215,7 +215,7 @@ submission_history:
       (11,410 calls, 7,999 successful, 24 models across all runs, 7 cross-cultural
       pairs, 69 native-language calls), Run 6 banking pair (H6 p=0.0013, d=3.449), Run 7
       framing experiment (H12 p<0.0001), and Run 8 native language expansion (815 calls, 11
-      languages; H10 NOT SUPPORTED, 52/116, mean=-0.002, p=0.307 two-sided). Final: 21601 clean calls across
+      languages; H10 NOT SUPPORTED, 58/121, mean=+0.001, p=0.716 two-sided -- null result). Final: 21601 clean calls across
       9 runs, 13 JSONL files, 24 models from 7 training traditions, ~6.1M tokens, $5.52 total cost.
       H1 SUPPORTED (p<0.0001, DCI=35.6), H2 SUPPORTED (cosine=0.977), H6 SUPPORTED
       (p=0.0013, d=3.449), H12 SUPPORTED (p<0.0001). Cultural dimension most collapsed
