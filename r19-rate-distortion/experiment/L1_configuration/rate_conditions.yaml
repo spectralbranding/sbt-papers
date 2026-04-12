@@ -1,0 +1,73 @@
+# R19 Rate Condition Configuration
+# Five levels of rate budget, from high (R1) to low (R5)
+
+rate_conditions:
+  - code: R1
+    rate_bits: 26
+    description: 100-point allocation across 8 dimensions
+    response_format: 8 floats summing to 100
+    normalization: divide_by_sum
+    output_schema:
+      type: object
+      properties:
+        weights:
+          type: object
+          required: [semiotic, narrative, ideological, experiential, social, economic, cultural, temporal]
+        reasoning:
+          type: string
+
+  - code: R2
+    rate_bits: 19
+    description: 1-5 scale rating for each dimension
+    response_format: 8 integers each in {1,2,3,4,5}
+    normalization: divide_by_sum
+    output_schema:
+      type: object
+      properties:
+        ratings:
+          type: object
+          required: [semiotic, narrative, ideological, experiential, social, economic, cultural, temporal]
+        reasoning:
+          type: string
+
+  - code: R3
+    rate_bits: 13
+    description: Low/Medium/High classification for each dimension
+    response_format: 8 categoricals in {Low, Medium, High}
+    normalization: map_L1_M3_H5_then_divide_by_sum
+    output_schema:
+      type: object
+      properties:
+        classifications:
+          type: object
+          required: [semiotic, narrative, ideological, experiential, social, economic, cultural, temporal]
+        reasoning:
+          type: string
+
+  - code: R4
+    rate_bits: 8
+    description: Yes/No binary for each dimension
+    response_format: 8 booleans (true/false or yes/no)
+    normalization: divide_by_sum_with_epsilon
+    output_schema:
+      type: object
+      properties:
+        present:
+          type: object
+          required: [semiotic, narrative, ideological, experiential, social, economic, cultural, temporal]
+        reasoning:
+          type: string
+
+  - code: R5
+    rate_bits: 3
+    description: Single most important dimension
+    response_format: 1 string from {semiotic, narrative, ideological, experiential, social, economic, cultural, temporal}
+    normalization: indicator_vector
+    output_schema:
+      type: object
+      properties:
+        top_dimension:
+          type: string
+          enum: [semiotic, narrative, ideological, experiential, social, economic, cultural, temporal]
+        reasoning:
+          type: string

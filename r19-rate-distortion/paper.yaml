@@ -1,0 +1,186 @@
+# paper.yaml — R19: Empirical Rate-Distortion Curve for AI Brand Perception Encoders
+# Citation key: 2026aa
+# Paper Spec schema: https://github.com/spectralbranding/paper-spec/SPECIFICATION.md
+
+paper_spec_version: "0.1.0"
+
+metadata:
+  title: "R19: Empirical Rate-Distortion Curve for AI Brand Perception Encoders"
+  subtitle: "J-Shaped Distortion Curves and Cross-Architectural Codebook Convergence in LLM Brand Perception"
+  authors:
+    - name: "Dmitry Zharnikov"
+      orcid: "0009-0000-6893-9231"
+      affiliation: "Independent Researcher"
+      corresponding: true
+  citation_key: "2026aa"
+  doi: "pending"
+  date: "2026-04-11"
+  version: "1.0.0-prep"
+  status: in_preparation
+  license: "CC-BY-NC-ND-4.0"
+  keywords:
+    - rate-distortion theory
+    - LLM brand perception
+    - dimensional collapse
+    - vector quantization
+    - codebook convergence
+    - J-curve
+    - Spectral Brand Theory
+    - information theory
+
+experiment_summary:
+  total_calls: 875
+  successful_calls: 875
+  success_rate: 1.0
+  models: 7
+  model_list:
+    - claude  # Anthropic claude-haiku-4-5
+    - gpt     # OpenAI gpt-4o-mini
+    - gemini  # Google gemini-2.5-flash
+    - deepseek  # DeepSeek deepseek-chat
+    - groq_llama33  # Meta Llama 3.3 70B via Groq
+    - cerebras_qwen3  # Alibaba Qwen3 235B via Cerebras
+    - grok    # xAI grok-3-mini
+  brands: 5
+  brand_list: [Hermes, IKEA, Patagonia, Tesla, Erewhon]
+  rate_conditions: 5
+  rate_condition_list: [R1, R2, R3, R4, R5]
+  repetitions: 5
+  total_cost_usd: 0.225
+  wall_clock_minutes: 33
+  language: English only
+  temperature: 0.7
+
+hypothesis_results:
+  - id: H1
+    description: "D decreases monotonically as R increases (Spearman rho < 0, Bonferroni-corrected)"
+    status: not_supported
+    note: >
+      H1 failure is a test-power artifact. n = 5 rate conditions is insufficient for
+      Bonferroni-corrected Spearman significance (adjusted alpha = .0071). All 7 models
+      show negative rho (-.4 to -.9) but none reach corrected significance. The J-shape
+      supplementary provides the informative characterization.
+
+  - id: J_shape
+    description: "J-shaped R(D) curve with minimum distortion at R2 (1-5 scale, ~19 bits)"
+    status: supported
+    note: >
+      Exploratory but overwhelming: R2 < R1, R3, R4 for all 7 models. Paired t-tests:
+      t(6) = 5.81 (R1 vs R2, p < .001, d_z = 2.20), t(6) = 6.04 (R3 vs R2, p < .001,
+      d_z = 2.28), t(6) = 7.70 (R4 vs R2, p < .001, d_z = 2.91). Combined Fisher p < .0001.
+
+  - id: H2
+    description: "Common R(D) curve: mean cross-model CV < .15"
+    status: supported
+    note: "Mean cross-model CV = .107 across all 5 rate conditions (threshold .15)."
+
+  - id: H3
+    description: "Shannon lower bound comparison"
+    status: deferred
+    note: "Requires analytical computation of Dirichlet source R(D) bound. Follow-up note."
+
+  - id: H4
+    description: "Architectural separation (Western vs cross-cultural slope)"
+    status: not_supported
+    note: >
+      t(4.60) = -.671, p = .534 (two-sided), Cohen's d = -.464. Severely underpowered
+      (n = 4 vs n = 3). Neither p < .05 nor |d| > .50. Requires >= 15 models per group.
+
+  - id: H5
+    description: "At R1, cross-model CV of distortion < .20"
+    status: supported
+    note: "CV at R1 = .196 (threshold .20, n = 7 models)."
+
+target_venue: "Marketing Letters (Springer)"
+target_venue_alt:
+  - "Quantitative Marketing and Economics (Springer)"
+  - "Journal of Marketing Research"
+  - "Journal of the Academy of Marketing Science"
+
+submission_history: []
+
+methodology:
+  type: empirical
+  design: >
+    Rate-distortion sweep: 5 response-format conditions (R1-R5) applied to 5 canonical
+    SBT reference brands across 7 cloud AI architectures. Distortion measured as total
+    variation distance (L1/2) between AI output (normalized to 8D simplex) and canonical
+    brand profile. 5 repetitions per cell; 875 total calls; 100% success rate.
+  sample:
+    size: 875
+    description: >
+      7 models x 5 brands x 5 rate conditions x 5 repetitions = 875 calls.
+      7 architectures from 7 distinct training lineages: Anthropic (claude-haiku-4-5),
+      OpenAI (gpt-4o-mini), Google (gemini-2.5-flash), xAI (grok-3-mini), DeepSeek
+      (deepseek-chat), Alibaba via Cerebras (qwen-3-235b), Meta via Groq
+      (llama-3.3-70b-versatile). Total cost $0.225; 33 min wall clock.
+    models: 7
+    brands: 5
+  instrument: "PRISM-B rate-distortion variant (5 rate conditions)"
+  measures:
+    - variable: "distortion_vs_canonical"
+      instrument: "L1/2 total variation distance between normalized AI output and canonical profile"
+      reliability: "100% parse rate across 875 calls"
+    - variable: "rd_curve_fit"
+      instrument: "Power-law D = a * R^(-b) + c, fitted via scipy.optimize.curve_fit"
+    - variable: "cross_model_cv"
+      instrument: "Coefficient of variation of mean distortion across 7 models per rate condition"
+  analysis:
+    primary:
+      - "Spearman rank correlation (rate_bits vs mean_distortion) per model, Bonferroni-corrected (H1)"
+      - "Cross-model CV of distortion, averaged across rate conditions (H2)"
+      - "Cross-model CV of distortion at R1 (H5)"
+    secondary:
+      - "Paired t-tests on per-model means: R1 vs R2, R3 vs R2, R4 vs R2 (J-shape test)"
+      - "Fisher combined test across 3 paired t-tests (J-shape combined p)"
+      - "Welch t-test on R(D) slope estimates: Western vs cross-cultural (H4)"
+      - "Per-brand R(D) curves (exploratory)"
+    software: "Python 3.12, scipy, numpy"
+
+dependencies:
+  - citation: "Zharnikov (2026a)"
+    doi: "10.5281/zenodo.18945912"
+    relationship: extends
+    critical: true
+    description: "SBT framework: 8-dimensional model, canonical brand profiles"
+
+  - citation: "Zharnikov (2026v)"
+    doi: "10.5281/zenodo.19422427"
+    relationship: extends
+    critical: true
+    description: "R15: metamerism study; API infrastructure reused by R19"
+
+  - citation: "Zharnikov (2026x)"
+    doi: "10.5281/zenodo.19391476"
+    relationship: extends
+    critical: false
+    description: "R16: invariant corridor formalization (rate-distortion framing cited)"
+
+limitations:
+  - id: L1
+    description: "Canonical brand profiles are theoretically-derived; distortion is vs. theory, not human cohorts"
+    severity: major
+    addressable: true
+  - id: L2
+    description: "5 rate conditions insufficient for Bonferroni-corrected Spearman test (H1 power failure)"
+    severity: moderate
+    addressable: true
+  - id: L3
+    description: "n = 4 vs n = 3 for H4 (architectural separation) severely underpowered"
+    severity: major
+    addressable: true
+  - id: L4
+    description: "English prompts only; native-language effects on R(D) curve not tested"
+    severity: moderate
+    addressable: true
+  - id: L5
+    description: "R5 produces indicator vectors; distortion at R5 dominated by 1D vs 8D mismatch"
+    severity: minor
+    addressable: false
+
+ai_disclosure: >
+  AI tools (Claude, Anthropic) were used for experiment scripting, analysis automation,
+  and documentation drafting. Seven LLMs are the subjects of the experiment (AI encoders
+  whose rate-distortion properties are measured), not contributors to the theoretical
+  framework. All hypotheses, experimental design, and theoretical framing are solely the
+  author's intellectual contribution.

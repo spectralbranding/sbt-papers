@@ -1,0 +1,95 @@
+cff-version: 1.2.0
+message: "If you use this paper, please cite it as below."
+authors:
+  - family-names: Zharnikov
+    given-names: Dmitry
+    email: dmitry@spectralbranding.com
+    affiliation: "Independent Researcher"
+    orcid: "https://orcid.org/0009-0000-6893-9231"
+title: "R19: Empirical Rate-Distortion Curve for AI Brand Perception Encoders"
+version: "1.0.0-prep"
+date-released: "2026-04-11"
+repository-code: "https://github.com/spectralbranding/sbt-papers"
+keywords:
+  - rate-distortion
+  - vector quantization
+  - dimensional collapse
+  - LLM brand perception
+  - J-curve
+  - Spectral Brand Theory
+  - lossy encoding
+  - codebook convergence
+license: CC-BY-NC-ND-4.0
+type: article
+preferred-citation:
+  type: article
+  authors:
+    - family-names: Zharnikov
+      given-names: Dmitry
+      email: dmitry@spectralbranding.com
+      affiliation: "Independent Researcher"
+      orcid: "https://orcid.org/0009-0000-6893-9231"
+  title: "R19: Empirical Rate-Distortion Curve for AI Brand Perception Encoders"
+  year: 2026
+  citation-key: "2026aa"
+  doi: "pending"
+  note: "Paper in preparation. Experiment complete (875 calls, 7 LLMs, 5 brands, 5 rate conditions, 5 reps, 100% success rate). DOI to be assigned at Zenodo upload."
+references:
+  - type: article
+    authors:
+      - family-names: Zharnikov
+        given-names: Dmitry
+    title: "Spectral Metamerism in AI-Mediated Brand Perception"
+    year: 2026
+    citation-key: "2026v"
+    doi: "10.5281/zenodo.19422427"
+    notes: "R15 — foundational metamerism study reusing API infrastructure"
+  - type: article
+    authors:
+      - family-names: Zharnikov
+        given-names: Dmitry
+    title: "Spectral Metamerism and Brand Invariant Corridors"
+    year: 2026
+    citation-key: "2026x"
+    doi: "10.5281/zenodo.19391476"
+    notes: "R16 — invariant corridor formalization"
+  - type: article
+    authors:
+      - family-names: Zharnikov
+        given-names: Dmitry
+    title: "Spectral Brand Theory: A Mathematical Framework for Multi-Dimensional Brand Perception"
+    year: 2026
+    citation-key: "2026a"
+    doi: "10.5281/zenodo.18945912"
+    notes: "SBT main paper — 8-dimensional framework and canonical brand profiles"
+  - type: article
+    authors:
+      - family-names: Shannon
+        given-names: "Claude E."
+    title: "Coding Theorems for a Discrete Source with a Fidelity Criterion"
+    year: 1959
+    journal: "IRE National Convention Record"
+    volume: 7
+    pages: "142-163"
+    notes: "Foundational rate-distortion theorem"
+  - type: book
+    authors:
+      - family-names: Cover
+        given-names: "Thomas M."
+      - family-names: Thomas
+        given-names: "Joy A."
+    title: "Elements of Information Theory"
+    year: 2006
+    edition: 2
+    publisher: "Wiley-Interscience"
+    notes: "Standard reference for R(D) theory"
+  - type: book
+    authors:
+      - family-names: Gersho
+        given-names: Allen
+      - family-names: Gray
+        given-names: "Robert M."
+    title: "Vector Quantization and Signal Compression"
+    year: 1991
+    publisher: "Kluwer Academic Publishers"
+    notes: "Vector quantization and codebook theory"

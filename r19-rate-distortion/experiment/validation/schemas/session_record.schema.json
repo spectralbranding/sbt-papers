@@ -1,0 +1,91 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://orgschema.com/r19/session_record.schema.json",
+  "title": "R19 Session Record",
+  "description": "One JSONL line in L3_sessions/r19_rate_sweep.jsonl. One API call to one model with one rate-condition prompt.",
+  "type": "object",
+  "required": [
+    "timestamp",
+    "model",
+    "rate_condition",
+    "brand"
+  ],
+  "properties": {
+    "timestamp": {
+      "type": "string",
+      "format": "date-time",
+      "description": "ISO 8601 timestamp of the API call."
+    },
+    "run_id": {
+      "type": ["string", "null"],
+      "description": "Run identifier (r19_rate_sweep)."
+    },
+    "model": {
+      "type": "string",
+      "description": "Model identifier as configured in models.yaml (e.g., 'claude', 'gpt', 'gemini')."
+    },
+    "model_id": {
+      "type": ["string", "null"],
+      "description": "Underlying provider-specific model ID (e.g., 'claude-haiku-4-5')."
+    },
+    "rate_condition": {
+      "type": "string",
+      "enum": ["R1", "R2", "R3", "R4", "R5"],
+      "description": "Rate condition code (R1=100-point, R2=1-5scale, R3=LMH, R4=binary, R5=single)."
+    },
+    "rate_bits": {
+      "type": ["integer", "number", "null"],
+      "description": "Approximate information rate in bits (26, 19, 13, 8, 3)."
+    },
+    "brand": {
+      "type": "string",
+      "enum": ["Hermes", "IKEA", "Patagonia", "Tesla", "Erewhon"],
+      "description": "Target brand for this call."
+    },
+    "language": {
+      "type": ["string", "null"],
+      "description": "Prompt language code (en for all R19 calls)."
+    },
+    "temperature": {
+      "type": ["number", "null"],
+      "description": "Sampling temperature (0.7 for all R19 calls)."
+    },
+    "repetition": {
+      "type": ["integer", "null"],
+      "description": "Repetition index within cell (1-5)."
+    },
+    "prompt_hash": {
+      "type": ["string", "null"],
+      "description": "SHA-256 prefix hash of the prompt text."
+    },
+    "prompt_text": {
+      "type": ["string", "null"],
+      "description": "Full rendered prompt text sent to the model."
+    },
+    "raw_response": {
+      "type": ["string", "null"],
+      "description": "Full raw response from the model."
+    },
+    "parsed_output": {
+      "type": ["object", "null"],
+      "description": "Parsed 8D normalized output as named dict (semiotic, narrative, ...). Null if parse failed."
+    },
+    "distortion_vs_canonical": {
+      "type": ["number", "null"],
+      "description": "L1/2 total variation distance between parsed_output and canonical brand profile. Null if parse failed."
+    },
+    "elapsed_ms": {
+      "type": ["integer", "number", "null"],
+      "description": "API call latency in milliseconds."
+    },
+    "cost_usd": {
+      "type": ["number", "null"],
+      "description": "Estimated cost in USD for this call."
+    },
+    "error": {
+      "type": ["string", "null"],
+      "description": "Error message if the call failed; null on success."
+    }
+  },
+  "additionalProperties": true
+}
