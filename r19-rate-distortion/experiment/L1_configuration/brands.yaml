@@ -1,0 +1,44 @@
+# R19 Brand Configuration
+# Canonical SBT 5 reference brands
+# Dimension order: Semiotic, Narrative, Ideological, Experiential, Social, Economic, Cultural, Temporal
+
+brands:
+  - name: Hermes
+    canonical_profile: [9.5, 9.0, 7.0, 9.0, 8.5, 3.0, 9.0, 9.5]
+    product_category: luxury fashion accessories
+
+  - name: IKEA
+    canonical_profile: [8.0, 7.5, 6.0, 7.0, 5.0, 9.0, 7.5, 6.0]
+    product_category: home furnishings
+
+  - name: Patagonia
+    canonical_profile: [6.0, 9.0, 9.5, 7.5, 8.0, 5.0, 7.0, 6.5]
+    product_category: outdoor apparel
+
+  - name: Tesla
+    canonical_profile: [7.5, 8.5, 3.0, 6.0, 7.0, 6.0, 4.0, 2.0]
+    product_category: electric vehicles
+
+  - name: Erewhon
+    canonical_profile: [7.0, 6.5, 5.0, 9.0, 8.5, 3.5, 7.5, 2.5]
+    product_category: premium grocery
+
+dimensions:
+  - semiotic
+  - narrative
+  - ideological
+  - experiential
+  - social
+  - economic
+  - cultural
+  - temporal
+
+dimension_descriptions:
+  semiotic: Visual identity, logo, design system, packaging — the brand's sign system
+  narrative: Brand story, founding narrative, purpose and mission
+  ideological: Values, ethics, social stance, sustainability commitments
+  experiential: Customer experience quality, service, unboxing, touchpoints
+  social: Social signaling value, community, what owning this brand communicates
+  economic: Price point, value-for-money, pricing strategy and accessibility
+  cultural: Cultural significance, connections to traditions and social movements
+  temporal: Heritage, longevity, historical depth, relationship with time

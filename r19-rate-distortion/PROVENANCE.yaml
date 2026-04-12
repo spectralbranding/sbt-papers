@@ -1,0 +1,34 @@
+# PROVENANCE.yaml — R19: Empirical Rate-Distortion Curve for AI Brand Perception Encoders
+# Fork history and submission records per the Research-as-Repository protocol
+
+provenance:
+  paper_title: "R19: Empirical Rate-Distortion Curve for AI Brand Perception Encoders"
+  citation_key: "2026aa"
+  repository: "spectralbranding/sbt-papers/r19-rate-distortion"
+
+  versions:
+    - version: "1.0.0-prep"
+      date: "2026-04-11"
+      description: >
+        Experiment complete (875 calls). Pre-registration, prompts, configs, results,
+        and supplementary analyses (H4, J-shape, per-brand) all archived. Paper.md
+        drafting deferred to a separate session. Headline finding: J-shaped R(D) curve
+        with minimum distortion at R2 (1-5 scale, 19 bits), not R1 (100-point allocation,
+        26 bits). Cross-architectural codebook convergence confirmed (mean CV = .107
+        across 7 LLMs from 7 distinct training pipelines).
+
+  forks: []
+
+  target_venue:
+    journal: "Marketing Letters"
+    publisher: "Springer"
+    status: "pre-submission (paper not yet drafted)"
+    note: "Target after paper.md is drafted in next research session."
+
+  target_venue_alt:
+    - journal: "Quantitative Marketing and Economics"
+      publisher: "Springer"
+    - journal: "Journal of Marketing Research"
+      publisher: "SAGE / AMA"
+    - journal: "Journal of the Academy of Marketing Science"
+      publisher: "Springer"

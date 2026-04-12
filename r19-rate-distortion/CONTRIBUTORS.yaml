@@ -1,0 +1,30 @@
+# CONTRIBUTORS.yaml — R19: Empirical Rate-Distortion Curve for AI Brand Perception Encoders
+# Verified contributor attribution per the Research-as-Repository protocol
+
+contributors:
+  - name: "Dmitry Zharnikov"
+    orcid: "0009-0000-6893-9231"
+    type: human
+    roles:
+      - conceptualization
+      - methodology
+      - writing-original
+      - software
+      - formal-analysis
+      - project-administration
+    affiliation: "Independent Researcher"
+    first_commit: "2026-04-11"
+    last_commit: "2026-04-11"
+
+  - name: "Claude (Anthropic)"
+    type: ai_tool
+    roles:
+      - software
+      - writing-review
+      - consistency-checking
+    disclosure: >
+      Used for experiment scripting, analysis automation, and documentation drafting.
+      All hypotheses, the rate-distortion framing of AI dimensional collapse, and
+      experimental design are solely the author's intellectual contribution.
+      Note: Claude (claude-haiku-4-5) is also one of seven AI encoder subjects in the
+      experiment whose rate-distortion properties are measured.
