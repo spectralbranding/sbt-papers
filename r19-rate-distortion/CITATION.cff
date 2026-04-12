@@ -7,8 +7,8 @@ authors:
     affiliation: "Independent Researcher"
     orcid: "https://orcid.org/0009-0000-6893-9231"
 title: "R19: Empirical Rate-Distortion Curve for AI Brand Perception Encoders"
-version: "1.0.0-prep"
-date-released: "2026-04-11"
+version: "1.0.0"
+date-released: "2026-04-12"
 repository-code: "https://github.com/spectralbranding/sbt-papers"
 keywords:
   - rate-distortion
@@ -33,7 +33,7 @@ preferred-citation:
   year: 2026
   citation-key: "2026aa"
   doi: "pending"
-  note: "Paper in preparation. Experiment complete (875 calls, 7 LLMs, 5 brands, 5 rate conditions, 5 reps, 100% success rate). DOI to be assigned at Zenodo upload."
+  note: "Working paper v1.0. 17 LLMs, 5 brands, 5 rate conditions. J-shaped R(D) curve: minimum distortion at R2 (1-5 scale). DOI to be assigned at Zenodo upload."
 references:
   - type: article
     authors:
@@ -68,7 +68,7 @@ references:
         given-names: "Claude E."
     title: "Coding Theorems for a Discrete Source with a Fidelity Criterion"
     year: 1959
-    journal: "IRE National Convention Record"
+    journal: "IRE International Convention Record"
     volume: 7
     pages: "142-163"
     notes: "Foundational rate-distortion theorem"
