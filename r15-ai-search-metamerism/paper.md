@@ -131,18 +131,18 @@ Ten brand pairs were selected to span multiple product categories and to maximiz
 
 **Table 1.** Global brand pairs (Run 2), categories, and primary differentiating dimensions. Pairs are selected to occupy similar product categories but differ primarily on specific SBT dimensions.
 
-| # | Pair ID | Category | Brand A | Brand B | Differentiator |
-|---|---------|----------|---------|---------|----------------|
-| 1 | luxury_heritage | Luxury fashion | Hermes | Coach | Temporal vs. Economic |
-| 2 | purpose_driven | Outdoor apparel | Patagonia | Columbia | Ideological vs. Experiential |
-| 3 | premium_tech | Consumer tech | Apple | Samsung | Narrative vs. Experiential |
-| 4 | artisanal_food | Premium grocery | Erewhon | Whole Foods | Social vs. Economic |
-| 5 | auto_disruption | Automotive | Mercedes | Tesla | Cultural vs. Ideological |
-| 6 | indie_beauty | Skincare | Glossier | Maybelline | Narrative vs. Economic |
-| 7 | craft_spirits | Spirits | Hendricks | Gordons | Semiotic vs. Economic |
-| 8 | boutique_hotel | Hospitality | Aman | Four Seasons | Cultural vs. Experiential |
-| 9 | heritage_sportswear | Sportswear | Nike | Shein | Narrative vs. Economic |
-| 10 | ethical_finance | Financial services | Aspiration | Chase | Ideological vs. Economic |
+| Pair ID | Category | Brand A | Brand B | Differentiator |
+|---------|----------|---------|---------|----------------|
+| luxury_heritage | Luxury fashion | Hermes | Coach | Temporal vs. Economic |
+| purpose_driven | Outdoor apparel | Patagonia | Columbia | Ideological vs. Experiential |
+| premium_tech | Consumer tech | Apple | Samsung | Narrative vs. Experiential |
+| artisanal_food | Premium grocery | Erewhon | Whole Foods | Social vs. Economic |
+| auto_disruption | Automotive | Mercedes | Tesla | Cultural vs. Ideological |
+| indie_beauty | Skincare | Glossier | Maybelline | Narrative vs. Economic |
+| craft_spirits | Spirits | Hendricks | Gordons | Semiotic vs. Economic |
+| boutique_hotel | Hospitality | Aman | Four Seasons | Cultural vs. Experiential |
+| heritage_sportswear | Sportswear | Nike | Shein | Narrative vs. Economic |
+| ethical_finance | Financial services | Aspiration | Chase | Ideological vs. Economic |
 
 *Note.* Differentiator column identifies the primary SBT dimension on which Brand A is differentiated relative to Brand B. Pairs selected to occupy similar price-function positions but differ on specific dimensional channels. Canonical brand profiles for Hermes, Patagonia, and Erewhon are fixed in Zharnikov (2026a).
 
@@ -150,13 +150,13 @@ Three SBT canonical brands (Hermes, Patagonia, Erewhon) appear across the pairs,
 
 **Table 1b.** Local brand pairs (Run 3), testing the conditional metamerism hypothesis. All pairs are from small non-English-speaking markets where the local brand's English-language training-data footprint is minimal.
 
-| # | Pair ID | Country | Category | Local brand | Global comparator |
-|---|---------|---------|----------|-------------|-------------------|
-| 1 | cyprus_supermarket | Cyprus | Grocery retail | AlphaMega | Carrefour |
-| 2 | latvia_chocolate | Latvia | Confectionery | Laima | Lindt |
-| 3 | kenya_beer | Kenya | Beer | Tusker | Heineken |
-| 4 | vietnam_dairy | Vietnam | Dairy | Vinamilk | Danone |
-| 5 | serbia_water | Serbia | Bottled water | Knjaz Milos | Evian |
+| Pair ID | Country | Category | Local brand | Global comparator |
+|---------|---------|----------|-------------|-------------------|
+| cyprus_supermarket | Cyprus | Grocery retail | AlphaMega | Carrefour |
+| latvia_chocolate | Latvia | Confectionery | Laima | Lindt |
+| kenya_beer | Kenya | Beer | Tusker | Heineken |
+| vietnam_dairy | Vietnam | Dairy | Vinamilk | Danone |
+| serbia_water | Serbia | Bottled water | Knjaz Milos | Evian |
 
 *Note.* Local brand pairs selected from markets with minimal English-language training-data footprint. All five pairs are in the food, beverage, or grocery retail sector; category effects on collapse should be considered when generalizing (see Limitations, Section 6).
 
@@ -442,30 +442,30 @@ Cross-model convergence remained extreme. The mean cosine similarity of spectral
 
 **Table 6.** Twenty-three of the 24 active models across Runs 2--8, ranked by DCI (lower = less collapse); one model with insufficient data is omitted (note: Swallow 70B excluded due to 3.6% success rate; SambaNova removed the model). Tier 1 = frontier/large production models; Tier 2 = smaller or local open-weight models. Model size is marked "undisclosed" where the provider does not publish parameter counts; all explicit sizes are taken from official documentation. GPT refers to GPT-4o-mini (Tier 2 classification reflects the smaller variant). DCI column reflects cross-cultural brand pairs (Run 5) for models present in Run 5; other runs' models included with their run-specific mean DCI.
 
-| Model | Size | Culture | Tier | Provider | Release | DCI |
-|-------|------|---------|------|----------|---------|-----|
-| grok | undisclosed | Western | 1 | xAI | 2025-12 | .290 |
-| claude | undisclosed | Western | 1 | Anthropic | 2025-10 | .313 |
-| gemini | undisclosed | Western | 1 | Google | 2025-12 | .321 |
-| cerebras_qwen3 | 235B total, ~22B active (MoE) | Chinese | 1 | Cerebras | 2025-06 | .324 |
-| groq_allam | 7B (dense) | Arabic | 2 | Groq | 2025-01 | .340 |
-| yandexgpt_local | 8B | Russian | 2 | Local | 2025-03 | .341 |
-| deepseek | 671B total, 37B active (MoE) | Chinese | 1 | DeepSeek | 2025-03 | .342 |
-| groq_kimi | undisclosed | Chinese | 1 | Groq | 2025-06 | .350 |
-| groq_llama33 | 70B (dense) | Western | 1 | Groq | 2024-12 | .358 |
-| gpt | undisclosed | Western | 2 | OpenAI | 2024-07 | .360 |
-| gigachat_api | undisclosed | Russian | 1 | Sber | 2026-02 | .360 |
-| sarvam | ~105B (approx.) | Indian | 1 | Sarvam AI | 2026-02 | .367 |
-| gemma4_local | 27B total, 3.8B active (MoE) | Western | 2 | Local | 2025-06 | .371 |
-| yandexgpt_pro | undisclosed | Russian | 1 | Yandex | 2026-02 | .377 |
-| gigachat_local | undisclosed | Russian | 2 | Local | 2026-03 | .380 |
-| gptoss_swallow | 20B (dense) | Japanese | 1 | TOKYOTECH/SBI | 2026-02 | .380 |
-| swallow_local | 8B | Japanese | 2 | Local | 2024-12 | .383 |
-| qwen3_local | 30B (dense) | Chinese | 2 | Local | 2025-06 | .388 |
-| exaone_local | 32B (dense) | Korean | 1 | Local | 2026-02 | .389 |
-| jais_local | 70B (dense) | Arabic | 1 | Local | 2024-03 | .402 |
+| Model | Size | Culture | Provider | DCI |
+|-------|------|---------|----------|-----|
+| grok | undisclosed | Western | xAI | .290 |
+| claude | undisclosed | Western | Anthropic | .313 |
+| gemini | undisclosed | Western | Google | .321 |
+| cerebras_qwen3 | 235B (MoE) | Chinese | Cerebras | .324 |
+| groq_allam | 7B | Arabic | Groq | .340 |
+| yandexgpt_local | 8B | Russian | Local | .341 |
+| deepseek | 671B (MoE) | Chinese | DeepSeek | .342 |
+| groq_kimi | undisclosed | Chinese | Groq | .350 |
+| groq_llama33 | 70B | Western | Groq | .358 |
+| gpt | undisclosed | Western | OpenAI | .360 |
+| gigachat_api | undisclosed | Russian | Sber | .360 |
+| sarvam | ~105B | Indian | Sarvam AI | .367 |
+| gemma4_local | 27B (MoE) | Western | Local | .371 |
+| yandexgpt_pro | undisclosed | Russian | Yandex | .377 |
+| gigachat_local | undisclosed | Russian | Local | .380 |
+| gptoss_swallow | 20B | Japanese | TOKYOTECH | .380 |
+| swallow_local | 8B | Japanese | Local | .383 |
+| qwen3_local | 30B | Chinese | Local | .388 |
+| exaone_local | 32B | Korean | Local | .389 |
+| jais_local | 70B | Arabic | Local | .402 |
 
-*Note.* DCI = Dimensional Collapse Index; baseline = .250. Models with DCI closer to .250 exhibit less dimensional collapse. "Undisclosed" parameter counts reflect provider non-disclosure at the time of data collection. Tier 1 = frontier/large production models; Tier 2 = smaller or local open-weight models. Swallow 70B is excluded due to 3.6% success rate. Full per-run breakdowns are in the supplementary dataset (spectralbranding/r15-ai-search-metamerism on HuggingFace).
+*Note.* DCI = Dimensional Collapse Index; baseline = .250. Models with DCI closer to .250 exhibit less dimensional collapse. "Undisclosed" parameter counts reflect provider non-disclosure at the time of data collection. MoE = Mixture of Experts (active parameter count is lower than total). Swallow 70B is excluded due to 3.6% success rate. Full per-run breakdowns including tier classification and release dates are in the supplementary dataset (spectralbranding/r15-ai-search-metamerism on HuggingFace).
 
 The ranking reveals a gradient: Western frontier models (Grok, Claude, Gemini) cluster at the low end of the DCI distribution, while nationally specialized models (Jais, EXAONE, Swallow) cluster at the high end. This pattern is consistent with H6 (directional asymmetry) and will be analyzed in Section 4.5.4 below.
 
