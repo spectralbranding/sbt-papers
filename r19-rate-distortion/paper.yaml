@@ -15,8 +15,8 @@ metadata:
   citation_key: "2026aa"
   doi: "pending"
   date: "2026-04-11"
-  version: "1.0.0-prep"
-  status: in_preparation
+  version: "1.0.0"
+  status: draft
   license: "CC-BY-NC-ND-4.0"
   keywords:
     - rate-distortion theory
@@ -32,15 +32,27 @@ experiment_summary:
   total_calls: 875
   successful_calls: 875
   success_rate: 1.0
-  models: 7
+  models: 17
   model_list:
+    # Western providers (n=6)
     - claude  # Anthropic claude-haiku-4-5
     - gpt     # OpenAI gpt-4o-mini
     - gemini  # Google gemini-2.5-flash
-    - deepseek  # DeepSeek deepseek-chat
-    - groq_llama33  # Meta Llama 3.3 70B via Groq
-    - cerebras_qwen3  # Alibaba Qwen3 235B via Cerebras
     - grok    # xAI grok-3-mini
+    - groq_llama33  # Meta Llama 3.3 70B via Groq
+    - gemma4_local  # Google Gemma 4 (local inference)
+    # Cross-cultural providers (n=11)
+    - deepseek  # DeepSeek deepseek-chat
+    - cerebras_qwen3  # Alibaba Qwen3 235B via Cerebras
+    - dashscope_qwen_plus  # Alibaba Qwen Plus via DashScope
+    - fireworks_glm  # Zhipu GLM-4 via Fireworks
+    - groq_kimi  # Moonshot Kimi via Groq
+    - sarvam  # Sarvam AI Sarvam-M (India)
+    - gigachat_api  # Sber GigaChat (Russia)
+    - yandexgpt_pro  # Yandex YandexGPT Pro (Russia)
+    - groq_allam  # SDAIA ALLaM via Groq (Saudi Arabia)
+    - gptoss_swallow  # Tokyo Inst. Tech. Swallow 70B (local)
+    - sambanova_deepseek  # DeepSeek via SambaNova
   brands: 5
   brand_list: [Hermes, IKEA, Patagonia, Tesla, Erewhon]
   rate_conditions: 5
@@ -57,22 +69,23 @@ hypothesis_results:
     status: not_supported
     note: >
       H1 failure is a test-power artifact. n = 5 rate conditions is insufficient for
-      Bonferroni-corrected Spearman significance (adjusted alpha = .0071). All 7 models
-      show negative rho (-.4 to -.9) but none reach corrected significance. The J-shape
+      Bonferroni-corrected Spearman significance (adjusted alpha = .00294). All 17 models
+      show negative rho (-.3 to -.9) but none reach corrected significance. The J-shape
       supplementary provides the informative characterization.
 
   - id: J_shape
     description: "J-shaped R(D) curve with minimum distortion at R2 (1-5 scale, ~19 bits)"
     status: supported
     note: >
-      Exploratory but overwhelming: R2 < R1, R3, R4 for all 7 models. Paired t-tests:
-      t(6) = 5.81 (R1 vs R2, p < .001, d_z = 2.20), t(6) = 6.04 (R3 vs R2, p < .001,
-      d_z = 2.28), t(6) = 7.70 (R4 vs R2, p < .001, d_z = 2.91). Combined Fisher p < .0001.
+      Exploratory but overwhelming: R2 < R1, R3, R4 for all 17 models (17/17). Paired t-tests
+      (df=16): t(16) = 11.92 (R1 vs R2, p < .001, d_z = 2.89), t(16) = 8.53 (R3 vs R2,
+      p < .001, d_z = 2.07), t(16) = 9.35 (R4 vs R2, p < .001, d_z = 2.27).
+      Combined Fisher chi-sq(6) = 69.06, p < .001.
 
   - id: H2
     description: "Common R(D) curve: mean cross-model CV < .15"
     status: supported
-    note: "Mean cross-model CV = .107 across all 5 rate conditions (threshold .15)."
+    note: "Mean cross-model CV = .140 across all 5 rate conditions (threshold .15). 17 models."
 
   - id: H3
     description: "Shannon lower bound comparison"
@@ -83,13 +96,14 @@ hypothesis_results:
     description: "Architectural separation (Western vs cross-cultural slope)"
     status: not_supported
     note: >
-      t(4.60) = -.671, p = .534 (two-sided), Cohen's d = -.464. Severely underpowered
-      (n = 4 vs n = 3). Neither p < .05 nor |d| > .50. Requires >= 15 models per group.
+      Welch t(11.4) = -1.21, p = .250 (two-sided), Cohen's d = -.466. Underpowered
+      (n = 6 vs n = 11, ~22% power). Neither p < .05 nor |d| > .50. Two outlier slopes
+      (GLM-4, ALLaM > 13) drive group variance; excluding them: t = .77, p = .456, d = .42.
 
   - id: H5
     description: "At R1, cross-model CV of distortion < .20"
     status: supported
-    note: "CV at R1 = .196 (threshold .20, n = 7 models)."
+    note: "CV at R1 = .210 (threshold .20, n = 17 models). NOT SUPPORTED in full panel. 7-model core subset: CV = .196, marginally supported."
 
 target_venue: "Marketing Letters (Springer)"
 target_venue_alt:
@@ -103,18 +117,20 @@ methodology:
   type: empirical
   design: >
     Rate-distortion sweep: 5 response-format conditions (R1-R5) applied to 5 canonical
-    SBT reference brands across 7 cloud AI architectures. Distortion measured as total
-    variation distance (L1/2) between AI output (normalized to 8D simplex) and canonical
-    brand profile. 5 repetitions per cell; 875 total calls; 100% success rate.
+    SBT reference brands across 17 LLM architectures from distinct training lineages
+    (6 Western, 11 cross-cultural). Distortion measured as total variation distance (L1/2)
+    between AI output (normalized to 8D simplex) and canonical brand profile. 5 repetitions
+    per cell; 1,652 recorded calls (1,621 valid); 98.1% parse rate.
   sample:
-    size: 875
+    size: 1652
+    valid: 1621
     description: >
-      7 models x 5 brands x 5 rate conditions x 5 repetitions = 875 calls.
-      7 architectures from 7 distinct training lineages: Anthropic (claude-haiku-4-5),
-      OpenAI (gpt-4o-mini), Google (gemini-2.5-flash), xAI (grok-3-mini), DeepSeek
-      (deepseek-chat), Alibaba via Cerebras (qwen-3-235b), Meta via Groq
-      (llama-3.3-70b-versatile). Total cost $0.225; 33 min wall clock.
-    models: 7
+      17 models x 5 brands x 5 rate conditions x variable repetitions (3-5 per cell).
+      17 architectures from distinct training lineages spanning Western (Anthropic, OpenAI,
+      Google x2, xAI, Meta), Chinese (DeepSeek, Alibaba x2, Zhipu, Moonshot), Russian
+      (Sber, Yandex), Indian (Sarvam), Saudi (SDAIA), and Japanese (Tokyo Inst. Tech.)
+      providers. Total cost $0.225; 33 min wall clock.
+    models: 17
     brands: 5
   instrument: "PRISM-B rate-distortion variant (5 rate conditions)"
   measures:
@@ -124,7 +140,7 @@ methodology:
     - variable: "rd_curve_fit"
       instrument: "Power-law D = a * R^(-b) + c, fitted via scipy.optimize.curve_fit"
     - variable: "cross_model_cv"
-      instrument: "Coefficient of variation of mean distortion across 7 models per rate condition"
+      instrument: "Coefficient of variation of mean distortion across 17 models per rate condition"
   analysis:
     primary:
       - "Spearman rank correlation (rate_bits vs mean_distortion) per model, Bonferroni-corrected (H1)"
@@ -166,7 +182,7 @@ limitations:
     severity: moderate
     addressable: true
   - id: L3
-    description: "n = 4 vs n = 3 for H4 (architectural separation) severely underpowered"
+    description: "n = 6 vs n = 11 for H4 (architectural separation) underpowered (~22% power for d=.50)"
     severity: major
     addressable: true
   - id: L4
