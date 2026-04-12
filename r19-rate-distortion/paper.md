@@ -12,9 +12,9 @@ This study applies Shannon rate-distortion theory to measure how response-format
 
 *Keywords:* rate-distortion theory, brand perception, large language models, dimensional collapse, codebook convergence, instrument design
 
-The measurement of brand perception through AI systems has become a practical concern as large language models (LLMs) increasingly mediate consumer information search, product recommendation, and purchase decisions. Recent empirical work demonstrates that LLMs exhibit systematic dimensional collapse when encoding brand perceptions: multi-dimensional brand profiles are compressed toward a small number of salient dimensions, producing distortion that varies by elicitation format and model architecture (Zharnikov, 2026v). The question of *how much* distortion different elicitation formats produce, and whether an optimal operating point exists, has not been addressed.
+The measurement of brand perception through AI systems has become a practical concern as large language models (LLMs) increasingly mediate consumer information search, product recommendation, and purchase decisions. Li, Castelo, Katona, and Sarvary (2024) demonstrated that LLM-generated brand similarity and attribute ratings match human survey data with greater than 75% agreement, establishing LLMs as valid perceptual instruments. However, their study treated the response format as fixed. Recent empirical work demonstrates that LLMs exhibit systematic dimensional collapse when encoding brand perceptions: multi-dimensional brand profiles are compressed toward a small number of salient dimensions, producing distortion that varies by elicitation format and model architecture (Zharnikov, 2026v). The question of *how much* distortion different elicitation formats produce, and whether an optimal operating point exists, has not been addressed.
 
-Information theory provides a natural framework. Shannon's (1959) rate-distortion function R(D) characterizes the minimum information rate required to represent a source within a given distortion tolerance. In the classical formulation, distortion decreases monotonically as rate increases: more bits always mean better reconstruction. The theory has been applied extensively to signal compression (Cover and Thomas, 2006; Gersho and Gray, 1991) but never, to the author's knowledge, to the measurement of consumer brand perception.
+Information theory provides a natural framework. Shannon's (1959) rate-distortion function R(D) characterizes the minimum information rate required to represent a source within a given distortion tolerance. In the classical formulation, distortion decreases monotonically as rate increases: more bits always mean better reconstruction. The theory has been applied extensively to signal compression (Cover and Thomas, 2006; Gersho and Gray, 1991) and more recently to human perceptual cognition (Sims, 2016), but never, to the author's knowledge, to the measurement of consumer brand perception.
 
 This paper reports the first empirical rate-distortion curve for AI brand perception encoders. The contribution is threefold. First, the study operationalizes rate as the information capacity of the response format and distortion as the distance between AI-generated and canonical brand profiles, establishing an information-theoretic measurement framework for AI brand research (Method section). Second, the empirical curve is J-shaped rather than monotonically decreasing: the intermediate 1-5 ordinal format (19 bits) outperforms the highest-rate 100-point allocation (26 bits), demonstrating that bounded quantization suppresses encoder bias (Results section). Third, 17 architectures from distinct training lineages trace essentially the same curve, establishing cross-architectural codebook convergence in brand perception encoding (Results section, H2).
 
@@ -199,7 +199,11 @@ Gersho Allen and Robert M Gray (1991), *Vector Quantization and Signal Compressi
 
 Krosnick Jon A (1991), "Response Strategies for Coping with the Cognitive Demands of Attitude Measures in Surveys," *Applied Cognitive Psychology*, 5 (3), 213-36.
 
+Li Yuli, Sandro Castelo, Miklos Katona, and Miklos Sarvary (2024), "Determining the Validity of Large Language Models for Automated Perceptual Analysis," *Marketing Science*, 43 (2), 254-66.
+
 Sabbah Riad and Oguz A Acar (2026), "Marketing to Machines: When AI Agents Do the Shopping," SSRN working paper 6406639.
+
+Sims Chris R (2016), "Rate-Distortion Theory and Human Perception," *Cognition*, 152, 181-98.
 
 Schwarz Norbert (1999), "Self-Reports: How the Questions Shape the Answers," *American Psychologist*, 54 (2), 93-105.
 
