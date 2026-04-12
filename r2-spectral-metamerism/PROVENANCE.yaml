@@ -17,3 +17,15 @@ provenance:
       identifiers:
         doi: "10.5281/zenodo.18945353"
         community: ["spectral-branding"]
+
+    - id: "fork-2026-04-12-zenodo-v1.2"
+      target: "Zenodo"
+      target_type: preprint_server
+      created: "2026-04-12"
+      source_commit: "main"
+      status: pending
+      outcome: pending
+      notes: "v1.2 — added R19 (2026aa) as empirical validation of rate-distortion prediction in Section 6.3. New Zenodo version required (30-day file-replace limit exceeded)."
+      identifiers:
+        doi: "10.5281/zenodo.18945352"
+        community: ["spectral-branding"]

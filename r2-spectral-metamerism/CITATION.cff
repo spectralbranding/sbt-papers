@@ -7,8 +7,8 @@ authors:
     affiliation: "Independent Researcher"
     orcid: "https://orcid.org/0009-0000-6893-9231"
 title: "Spectral metamerism in brand perception: Projection bounds from high-dimensional geometry"
-version: 1.0.0
-date-released: 2026-03-10
+version: 1.2.0
+date-released: 2026-04-12
 url: "https://doi.org/10.5281/zenodo.18945352"
 repository-code: "https://github.com/spectralbranding/sbt-papers"
 identifiers:
