@@ -1,10 +1,10 @@
 # R19: Empirical Rate-Distortion Curve for AI Brand Perception Encoders
 
-**Citation key**: 2026aa | **DOI**: pending (Zenodo upload scheduled after paper draft) | **Status**: Experiment complete — paper in preparation (875 total API calls, 7 LLMs from 7 training lineages, 100% success rate)
+**Citation key**: 2026aa | **DOI**: [10.5281/zenodo.19528833](https://doi.org/10.5281/zenodo.19528833) | **Status**: Working paper v1.0 (1,652 API calls, 17 LLM architectures from distinct training lineages, 98.1% parse rate)
 
 ## Paper
 
-Zharnikov, D. (2026). R19: Empirical Rate-Distortion Curve for AI Brand Perception Encoders. Working Paper. [Paper draft forthcoming]
+Zharnikov, D. (2026aa). Empirical Rate-Distortion Curve for AI Brand Perception Encoders. Working Paper. https://doi.org/10.5281/zenodo.19528833
 
 ## Abstract
 
@@ -66,9 +66,9 @@ This directory follows the [Research-as-Repository protocol](https://github.com/
 
 | File | Purpose |
 |------|---------|
-| `paper.md` | **PLACEHOLDER** — paper draft scheduled for next session |
+| `paper.md` | Full paper v1.0 (3,074 words, 11 refs, target: Marketing Letters) |
 | `paper.yaml` | Machine-readable claims, hypotheses, falsification criteria |
-| `CITATION.cff` | Citation metadata (version 1.0.0-prep; DOI pending) |
+| `CITATION.cff` | Citation metadata (version 1.0.0; DOI 10.5281/zenodo.19528833) |
 | `CONTRIBUTORS.yaml` | Human and AI contributor roles |
 | `PROVENANCE.yaml` | Version history and submission records |
 | `DATA_MANIFEST.yaml` | Experiment data location and description |
@@ -173,7 +173,8 @@ R19, R15, and R16 form a triad examining AI brand perception from different angl
   title={R19: Empirical Rate-Distortion Curve for AI Brand Perception Encoders},
   author={Zharnikov, Dmitry},
   year={2026},
-  note={Working paper. DOI pending Zenodo upload.}
+  doi={10.5281/zenodo.19528833},
+  note={Working paper.}
 }
 ```
 
