@@ -347,7 +347,7 @@ where $\theta$ is set by the distortion constraint. For a 1D representation (rat
 
 $$D = \sum_{i=2}^{8} \lambda_i = 7\sigma^2$$
 
-which is $7/8 = 87.5\%$ of the total variance -- converging with the PCA analysis of Section 6.1. The "reverse water-filling" algorithm allocates all available rate to the single largest eigenvalue direction and ignores the remaining 7 dimensions entirely.
+which is $7/8 = 87.5\%$ of the total variance -- converging with the PCA analysis of Section 6.1. The "reverse water-filling" algorithm allocates all available rate to the single largest eigenvalue direction and ignores the remaining 7 dimensions entirely. Empirical validation of this prediction comes from Zharnikov (2026aa), who measures the rate-distortion curve for 17 LLM architectures across five response-format conditions: the curve is J-shaped with minimum distortion at an intermediate bounded format (1-5 ordinal scale, ~19 bits), not at the highest-rate format (~26 bits), because unconstrained formats allow encoder priors to amplify the very dimensional biases this section predicts theoretically.
 
 ---
 
@@ -558,6 +558,8 @@ Torgerson, W. S. (1958). *Theory and Methods of Scaling*. Wiley.
 Wyszecki, G., & Stiles, W. S. (1982). *Color Science: Concepts and Methods, Quantitative Data and Formulae* (2nd ed.). Wiley.
 
 Zharnikov, D. (2026a). Spectral Brand Theory: A multi-dimensional framework for brand perception analysis. Working Paper. https://doi.org/10.5281/zenodo.18945912
+
+Zharnikov, D. (2026aa). Empirical rate-distortion curve for AI brand perception encoders. Working Paper. https://doi.org/10.5281/zenodo.19528833
 
 Zharnikov, D. (2026i). The Organizational Schema Theory: Test-driven business design. Working Paper. https://doi.org/10.5281/zenodo.18946043
 

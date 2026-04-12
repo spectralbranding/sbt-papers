@@ -96,7 +96,7 @@ Five pre-registered hypotheses:
 
 ### Data Quality
 
-Of 1,652 recorded API calls, 1,621 (98.1%) produced valid parsed responses. Total experiment cost was $0.225 USD; wall-clock time was 33 minutes. Zero deviations from the pre-registered protocol were required.
+Of 1,652 recorded API calls, 1,621 (98.1%) produced valid parsed responses. Total experiment cost was $0.225 USD; wall-clock time was 33 minutes. Zero deviations from the pre-registered protocol were required. One model (Qwen 3 235B via Cerebras) produced an anomalously flat R1-R2-R3 profile yielding a degenerate power-law fit (R^2^ = .000); its R2 minimum is still present (.087) and all qualitative results hold with or without this model.
 
 ### H1: Monotonic Rate-Distortion Shape
 
