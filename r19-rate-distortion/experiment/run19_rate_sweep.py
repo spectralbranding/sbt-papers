@@ -187,18 +187,26 @@ for _brand, _profile in CANONICAL_PROFILES.items():
 # -------------------------------------------------------------------------------
 
 CONFIRMATORY_MODELS = [
-    # Rep-5 completion run: only expansion models that need rep 5
-    # (After this run, restore to full 17-model list)
+    # 17 architectures spanning 17 distinct training pipelines
+    # ── Western (6) ─────────────────────────────────────────
+    "claude",              # Anthropic claude-haiku-4-5
+    "gpt",                 # OpenAI gpt-4o-mini
+    "gemini",              # Google gemini-2.5-flash
+    "grok",                # xAI grok-3-mini (X/Twitter corpus)
+    "groq_llama33",        # Meta Llama 3.3 70B via Groq
+    "gemma4_local",        # Google Gemma 4 via local Ollama
+    # ── Cross-cultural (11) ─────────────────────────────────
+    "deepseek",            # DeepSeek deepseek-chat (Chinese)
+    "cerebras_qwen3",      # Alibaba Qwen3-235B via Cerebras (Chinese)
     "fireworks_glm",       # Zhipu AI GLM-4.7 via Fireworks (Chinese)
-    "dashscope_qwen_plus", # Alibaba Qwen Plus via DashScope International (Chinese)
+    "dashscope_qwen_plus", # Alibaba Qwen Plus via DashScope (Chinese)
     "sambanova_deepseek",  # DeepSeek V3 via SambaNova (Chinese)
-    "groq_kimi",           # Moonshot AI Kimi K2 via Groq (Chinese)
-    "sarvam",              # Sarvam-105B via Sarvam AI Indus API (Indian)
+    "groq_kimi",           # Moonshot Kimi K2 via Groq (Chinese)
+    "sarvam",              # Sarvam-M via Sarvam AI (Indian)
     "gigachat_api",        # Sber GigaChat 2 Max (Russian)
     "yandexgpt_pro",       # Yandex YandexGPT 5 Pro (Russian)
     "gptoss_swallow",      # Tokyo Tech Swallow 20B via Yandex (Japanese)
     "groq_allam",          # SDAIA ALLaM-2-7B via Groq (Arabic)
-    "gemma4_local",        # Google Gemma 4 via local Ollama (Western)
 ]
 
 ROBUSTNESS_MODELS: list[str] = []  # all 17 architectures already in confirmatory core
@@ -220,16 +228,16 @@ COST_PER_CALL: dict[str, float] = {
     "cerebras_qwen3": 0.0,
     "grok": 0.0002,
     "simulated": 0.0,
-    "fireworks_glm": 0.0,         # free tier
-    "dashscope_qwen_plus": 0.0,   # free tier
-    "sambanova_deepseek": 0.0,    # free tier
-    "groq_kimi": 0.0,             # free tier
-    "groq_allam": 0.0,            # free tier
-    "sarvam": 0.0008,             # paid
-    "gigachat_api": 0.0010,       # paid
-    "yandexgpt_pro": 0.0008,      # paid
-    "gptoss_swallow": 0.0010,     # paid
-    "gemma4_local": 0.0,          # local Ollama (free)
+    "fireworks_glm": 0.0,  # free tier
+    "dashscope_qwen_plus": 0.0,  # free tier
+    "sambanova_deepseek": 0.0,  # free tier
+    "groq_kimi": 0.0,  # free tier
+    "groq_allam": 0.0,  # free tier
+    "sarvam": 0.0008,  # paid
+    "gigachat_api": 0.0010,  # paid
+    "yandexgpt_pro": 0.0008,  # paid
+    "gptoss_swallow": 0.0010,  # paid
+    "gemma4_local": 0.0,  # local Ollama (free)
 }
 
 # -------------------------------------------------------------------------------
