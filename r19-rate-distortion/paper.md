@@ -2,9 +2,7 @@
 
 **Dmitry Zharnikov**
 
-Independent Researcher. ORCID: 0009-0000-6893-9231.
-
-Correspondence: dmitry@spectralbranding.com
+DOI: 10.5281/zenodo.19528833
 
 **Abstract**
 
