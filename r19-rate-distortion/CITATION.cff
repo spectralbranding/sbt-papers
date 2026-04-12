@@ -32,7 +32,7 @@ preferred-citation:
   title: "R19: Empirical Rate-Distortion Curve for AI Brand Perception Encoders"
   year: 2026
   citation-key: "2026aa"
-  doi: "pending"
+  doi: "10.5281/zenodo.19528833"
   note: "Working paper v1.0. 17 LLMs, 5 brands, 5 rate conditions. J-shaped R(D) curve: minimum distortion at R2 (1-5 scale). DOI to be assigned at Zenodo upload."
 references:
   - type: article
