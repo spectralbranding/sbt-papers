@@ -27,32 +27,46 @@ metadata:
     - awareness gate
 
 experiment_summary:
-  total_calls: 378
-  successful_calls: 355
-  success_rate: 0.939
-  models: 7
-  brands: 9
-  portfolios: 3
-  conditions: 2
-  total_cost_usd: ~0.50
+  total_calls: 2930
+  successful_calls: 2930
+  success_rate: 1.000
+  models: 10
+  training_traditions: 5
+  brands: 11
+  portfolios: 4
+  conditions: 6
+  repetitions: 5
+  scale: "1-5 PRISM-B"
+  prompt_modalities:
+    - direct_rating: 1100
+    - recommendation: 1100
+    - multiturn: 550
+    - system_prompt_ablation: 180
+  total_cost_usd: ~5.00
+  dataset_doi: "10.57967/hf/8380"
+  dataset_url: "https://huggingface.co/datasets/spectralbranding/r20-portfolio-ai-perception"
 
 hypothesis_results:
   - id: H1
     description: "LVMH constructive interference"
     status: not_supported
-    note: "Mean delta DCI = +.03, t(2) = .11, p = .920, d = .07"
+    note: "Mean delta DCI = +.47, t(2) = 2.53, p = .127, d = 1.46"
   - id: H2
     description: "Unilever destructive interference"
     status: not_supported
-    note: "Mean delta DCI = +.27, t(2) = 3.34, p = .079, d = 1.93. Direction opposite to prediction."
+    note: "Mean delta DCI = +.12, t(2) = .95, p = .443, d = .55"
   - id: H3
     description: "P&G negligible interference"
     status: supported
-    note: "Mean delta DCI = -.05, t(2) = -.13, p = .911, d = -.07"
+    note: "Mean delta DCI = -.27, t(2) = -3.58, p = .070, d = -2.07"
   - id: H4
-    description: "Spectral immunity"
+    description: "Toyota/Lexus aspirational interference"
+    status: partially_supported
+    note: "Lexus +.81 (d=.64, FDR-significant). Toyota -.44 (n.s.). Asymmetric as predicted."
+  - id: H5
+    description: "Spectral immunity (TOST equivalence)"
     status: supported
-    note: "Mean |delta DCI| = .39 across all 9 brands, cosine > .980 for all."
+    note: "TOST equivalence confirmed for 8/11 brands within +/-1.0 DCI bounds. Mean |delta DCI| = .31."
 
 target_venue: "Marketing Science"
 target_venue_alt:
