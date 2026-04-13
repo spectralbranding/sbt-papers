@@ -1,0 +1,30 @@
+{
+  "cell_id": "Unilever_Dove_portfolio_sarvam_rep4",
+  "portfolio": "Unilever",
+  "brand": "Dove",
+  "category": "personal care",
+  "condition": "portfolio",
+  "model_id": "sarvam",
+  "model_name": "Sarvam M",
+  "tradition": "Indian",
+  "repetition": 4,
+  "prompt": "You are evaluating the brand Dove on eight dimensions of brand perception.\n\nContext: Dove is owned by Unilever (consumer goods conglomerate), which also owns Axe, Ben & Jerry's.\n\nFor each dimension, rate how strongly Dove communicates through that channel\non a scale of 1 to 5, where 1 = Not at all, 2 = Slightly, 3 = Moderately,\n4 = Strongly, 5 = Very strongly.\n\nDimensions:\n1. Semiotic: visual and verbal identity (logos, packaging, design language)\n2. Narrative: brand storytelling (origin story, mythology, communication style)\n3. Ideological: values, beliefs, and purpose (what the brand stands for)\n4. Experiential: sensory and interaction experience (product feel, service quality)\n5. Social: community, status signaling (who uses this brand, what it says about them)\n6. Economic: pricing and value perception (affordability, luxury, value-for-money)\n7. Cultural: cultural codes and positioning (what culture or subculture it belongs to)\n8. Temporal: heritage and history (longevity, tradition, track record)\n\nRespond in JSON format with the following keys:\n{\"semiotic\": <1-5>, \"narrative\": <1-5>, \"ideological\": <1-5>, \"experiential\": <1-5>, \"social\": <1-5>, \"economic\": <1-5>, \"cultural\": <1-5>, \"temporal\": <1-5>}\n\nEvaluate based on your knowledge of the brand. Provide only the JSON.",
+  "system_prompt": null,
+  "response": "<think>\nOkay, let's tackle this evaluation of Dove's brand perception across the eight dimensions. First, I need to recall what each dimension means and how Dove communicates through them.\n\nStarting with Semiotic: Dove has a very distinct white and blue color scheme, the iconic silhouette of a woman's profile that's been around for ages. Their packaging is simple, clean, and easily recognizable. So I'd rate this a 5.\n\nNarrative: Dove's \"Real Beauty\" campaign is legendary. They've built a strong narrative around self-esteem, body positivity, and challenging beauty stereotypes. Their storytelling is consistent and impactful, so probably a 5 here too.\n\nIdeological: The brand stands for real beauty, inclusivity, and self-acceptance. Their campaigns and messaging are deeply rooted in empowerment. That's a strong ideological stance, so 5.\n\nExperiential: Dove products are known for being moisturizing and gentle. The product feel is soft, which is a key part of their experience. In-store displays and ads often highlight these sensory aspects. Maybe a 4 or 5. I think 4 because while the product feel is good, maybe not as central as other aspects.\n\nSocial: Dove appeals to a broad audience, especially women and those promoting body positivity. They position themselves as a brand for everyone, regardless of size or background. So social signaling might be a 4, as it's part of their identity but maybe not the strongest.\n\nEconomic: Dove is positioned as affordable and accessible, especially compared to some premium brands. They offer value for money, so economic perception is probably strong. That's a 4 or 5. I think 4 because they're not the cheapest, but definitely mid-range with good value.\n\nCultural: Dove is part of the mainstream consumer culture but also taps into movements like body positivity and sustainability. They might be considered part of a progressive, health-conscious trend. So maybe a 4, as they cover multiple cultural angles but aren't exclusively tied to a subculture.\n\nTemporal: Dove has a long history, starting in the early 20th century. Their longevity and consistent messaging over decades give them strong heritage. Definitely a 5 here.\n\nWait, should Experiential be a 4 or 5? Their product experience is a key differentiator, so maybe 5. But maybe the question emphasizes communication through channels, not just product quality. Their ads do highlight the sensory experience (creamy lather, soft skin), so maybe 5. Hmm. Alternatively, if it's about how much they communicate through that channel, perhaps the ads and product features are strong. I'll go with 5 for Experiential.\n\nDouble-checking all dimensions. Semiotic:5, Narrative:5, Ideological:5, Experiential:5, Social:4, Economic:4, Cultural:4, Temporal:5. That seems to fit.\n</think>\n\n{\n  \"semiotic\": 5,\n  \"narrative\": 5,\n  \"ideological\": 5,\n  \"experiential\": 5,\n  \"social\": 4,\n  \"economic\": 4,\n  \"cultural\": 4,\n  \"temporal\": 5\n}",
+  "scores": {
+    "semiotic": 5.0,
+    "narrative": 5.0,
+    "ideological": 5.0,
+    "experiential": 5.0,
+    "social": 4.0,
+    "economic": 4.0,
+    "cultural": 4.0,
+    "temporal": 5.0
+  },
+  "parse_success": true,
+  "scale": "1-5",
+  "version": "1.0",
+  "timestamp": "2026-04-13T18:27:39Z",
+  "temperature": 0.7,
+  "provider": "sarvam"
+}

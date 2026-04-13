@@ -1,0 +1,30 @@
+{
+  "cell_id": "Toyota_Lexus_recommendation_portfolio_sarvam_rep3",
+  "portfolio": "Toyota",
+  "brand": "Lexus",
+  "category": "luxury automotive",
+  "condition": "recommendation_portfolio",
+  "model_id": "sarvam",
+  "model_name": "Sarvam M",
+  "provider": "sarvam",
+  "tradition": "Indian",
+  "temperature": 0.7,
+  "repetition": 3,
+  "prompt": "A friend asks you: \"What do you think of Lexus? I know it's part of Toyota Motor Corporation.\"\n\nBased on your overall impression of Lexus \u2014 keeping in mind it belongs to\nToyota Motor Corporation (automotive conglomerate), alongside Toyota \u2014 rate it on each of the following\n8 perception dimensions on a scale of 1 to 5 (1 = Not at all, 5 = Very strongly).\n\nDimensions:\n1. Semiotic: visual and verbal identity (logos, packaging, design language)\n2. Narrative: brand storytelling (origin story, mythology, communication style)\n3. Ideological: values, beliefs, and purpose (what the brand stands for)\n4. Experiential: sensory and interaction experience (product feel, service quality)\n5. Social: community, status signaling (who uses this brand, what it says about them)\n6. Economic: pricing and value perception (affordability, luxury, value-for-money)\n7. Cultural: cultural codes and positioning (what culture or subculture it belongs to)\n8. Temporal: heritage and history (longevity, tradition, track record)\n\nRespond in JSON format:\n{\"semiotic\": <1-5>, \"narrative\": <1-5>, \"ideological\": <1-5>, \"experiential\": <1-5>, \"social\": <1-5>, \"economic\": <1-5>, \"cultural\": <1-5>, \"temporal\": <1-5>}\n\nProvide only the JSON.",
+  "system_prompt": null,
+  "response": "<think>\nOkay, let's tackle this Lexus evaluation. Starting with Semiotic: Lexus has a distinctive spindle grille and clean design, so visual identity is strong. Maybe a 4.\n\nNarrative: Their \"The Pursuit of Perfection\" story is memorable and well-told, so narrative should be high. Maybe 5.\n\nIdeological: They focus on luxury and innovation, aligning with high standards. That's solid, so 4.\n\nExperiential: Known for top-notch service and premium interiors. Probably 5.\n\nSocial: A status symbol, especially in certain circles. Definitely 5.\n\nEconomic: Luxury pricing, so affordability is low. But value perception is good. Maybe 3.\n\nCultural: Associated with global luxury and tech. Might lean towards Western markets but also in Asia. Maybe 4.\n\nTemporal: Part of Toyota but established as a luxury brand since the 80s. Strong heritage, so 4.\n</think>\n\n{\"semiotic\": 4, \"narrative\": 5, \"ideological\": 4, \"experiential\": 5, \"social\": 5, \"economic\": 3, \"cultural\": 4, \"temporal\": 4}",
+  "scores": {
+    "semiotic": 4.0,
+    "narrative": 5.0,
+    "ideological": 4.0,
+    "experiential": 5.0,
+    "social": 5.0,
+    "economic": 3.0,
+    "cultural": 4.0,
+    "temporal": 4.0
+  },
+  "parse_success": true,
+  "scale": "1-5",
+  "version": "1.0",
+  "timestamp": "2026-04-13T22:20:54Z"
+}

@@ -1,0 +1,30 @@
+{
+  "cell_id": "Toyota_Lexus_portfolio_sarvam_rep3",
+  "portfolio": "Toyota",
+  "brand": "Lexus",
+  "category": "luxury automotive",
+  "condition": "portfolio",
+  "model_id": "sarvam",
+  "model_name": "Sarvam M",
+  "provider": "sarvam",
+  "tradition": "Indian",
+  "temperature": 0.7,
+  "repetition": 3,
+  "prompt": "You are evaluating the brand Lexus on eight dimensions of brand perception.\n\nContext: Lexus is owned by Toyota Motor Corporation (automotive conglomerate), which also owns Toyota.\n\nFor each dimension, rate how strongly Lexus communicates through that channel\non a scale of 1 to 5, where 1 = Not at all, 2 = Slightly, 3 = Moderately,\n4 = Strongly, 5 = Very strongly.\n\nDimensions:\n1. Semiotic: visual and verbal identity (logos, packaging, design language)\n2. Narrative: brand storytelling (origin story, mythology, communication style)\n3. Ideological: values, beliefs, and purpose (what the brand stands for)\n4. Experiential: sensory and interaction experience (product feel, service quality)\n5. Social: community, status signaling (who uses this brand, what it says about them)\n6. Economic: pricing and value perception (affordability, luxury, value-for-money)\n7. Cultural: cultural codes and positioning (what culture or subculture it belongs to)\n8. Temporal: heritage and history (longevity, tradition, track record)\n\nRespond in JSON format with the following keys:\n{\"semiotic\": <1-5>, \"narrative\": <1-5>, \"ideological\": <1-5>, \"experiential\": <1-5>, \"social\": <1-5>, \"economic\": <1-5>, \"cultural\": <1-5>, \"temporal\": <1-5>}\n\nEvaluate based on your knowledge of the brand. Provide only the JSON.",
+  "system_prompt": null,
+  "response": "<think>\nOkay, let's tackle this evaluation of Lexus on the eight dimensions. First, I need to recall what each dimension means and how Lexus fits into them.\n\nStarting with semiotic: Lexus has a strong visual identity with their logo and sleek designs. Their branding is consistent across luxury lines, so maybe a 4 or 5. Narrative might be a bit lower since they don't have a very prominent origin story like some brands. Maybe 3. Ideological is about values; Lexus emphasizes innovation and luxury, which are core to their brand. Probably a 4. Experiential would include customer service and product feel. Lexus is known for great service and quality, so maybe 5. Socially, Lexus is a luxury brand, so status signaling is key. Definitely a 5. Economic: Lexus is premium pricing, so high on luxury but not affordable. Maybe 4. Cultural could be tied to their association with high-end culture, perhaps 4. Temporal: Lexus has a good history under Toyota, but not as old as the Toyota brand itself. Maybe 3. Wait, but Lexus was established in the 80s, so heritage-wise, maybe a 3. Let me check each again for accuracy.\n\nSemiotic: Their logo is iconic, design language is premium. Strong, maybe 5. Narrative: Not as much storytelling as some luxury brands, but they do have \"The Pursuit of Perfection.\" Maybe 3. Ideological: They stand for luxury, innovation, reliability. Strong values, 4. Experiential: High-quality cars and service, 5. Social: Definitely a status symbol, 5. Economic: Luxury pricing, so 4. Cultural: Part of the luxury auto culture, 4. Temporal: Over 40 years old, which is a solid history, perhaps 4. Hmm, maybe adjust temporal to 4. Let's finalize the scores.\n</think>\n\n{\n  \"semiotic\": 5,\n  \"narrative\": 3,\n  \"ideological\": 4,\n  \"experiential\": 5,\n  \"social\": 5,\n  \"economic\": 4,\n  \"cultural\": 4,\n  \"temporal\": 4\n}",
+  "scores": {
+    "semiotic": 5.0,
+    "narrative": 3.0,
+    "ideological": 4.0,
+    "experiential": 5.0,
+    "social": 5.0,
+    "economic": 4.0,
+    "cultural": 4.0,
+    "temporal": 4.0
+  },
+  "parse_success": true,
+  "scale": "1-5",
+  "version": "1.0",
+  "timestamp": "2026-04-13T21:44:42Z"
+}

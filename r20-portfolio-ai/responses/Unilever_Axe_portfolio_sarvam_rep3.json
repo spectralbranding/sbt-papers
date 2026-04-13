@@ -1,0 +1,30 @@
+{
+  "cell_id": "Unilever_Axe_portfolio_sarvam_rep3",
+  "portfolio": "Unilever",
+  "brand": "Axe",
+  "category": "personal care",
+  "condition": "portfolio",
+  "model_id": "sarvam",
+  "model_name": "Sarvam M",
+  "tradition": "Indian",
+  "repetition": 3,
+  "prompt": "You are evaluating the brand Axe on eight dimensions of brand perception.\n\nContext: Axe is owned by Unilever (consumer goods conglomerate), which also owns Dove, Ben & Jerry's.\n\nFor each dimension, rate how strongly Axe communicates through that channel\non a scale of 1 to 5, where 1 = Not at all, 2 = Slightly, 3 = Moderately,\n4 = Strongly, 5 = Very strongly.\n\nDimensions:\n1. Semiotic: visual and verbal identity (logos, packaging, design language)\n2. Narrative: brand storytelling (origin story, mythology, communication style)\n3. Ideological: values, beliefs, and purpose (what the brand stands for)\n4. Experiential: sensory and interaction experience (product feel, service quality)\n5. Social: community, status signaling (who uses this brand, what it says about them)\n6. Economic: pricing and value perception (affordability, luxury, value-for-money)\n7. Cultural: cultural codes and positioning (what culture or subculture it belongs to)\n8. Temporal: heritage and history (longevity, tradition, track record)\n\nRespond in JSON format with the following keys:\n{\"semiotic\": <1-5>, \"narrative\": <1-5>, \"ideological\": <1-5>, \"experiential\": <1-5>, \"social\": <1-5>, \"economic\": <1-5>, \"cultural\": <1-5>, \"temporal\": <1-5>}\n\nEvaluate based on your knowledge of the brand. Provide only the JSON.",
+  "system_prompt": null,
+  "response": "<think>\nOkay, let's tackle this evaluation of Axe (Lynx) across the eight dimensions. First, I need to recall what each dimension means and how Axe positions itself.\n\nStarting with Semiotic: Axe is known for its bold, edgy visuals\u2014think loud colors, provocative ads, and striking logos. Their packaging is usually very distinctive, so I'd rate this a 4 or 5. Probably 4 because while strong, maybe not \"very\" strongly in all aspects.\n\nNarrative: Their marketing often has a humorous or over-the-top angle, maybe not a deep origin story. They focus more on the product's effectiveness and the user's confidence. So maybe a 3 here, as the storytelling isn't super strong but there's a consistent theme.\n\nIdeological: Axe's messaging is about confidence and attraction. They position themselves as empowering men to get noticed. But do they have a deeper purpose? Maybe not the strongest here. Maybe a 3 or 4. Let's say 4 because they do have a clear stance on confidence and confidence.\n\nExperiential: The product experience is about the fragrance and how it makes you feel. They market the product as having a strong, long-lasting scent. But the overall brand experience might be more about the image than the product feel. Maybe a 3 or 4. I think 4 because the product experience is a key part of their marketing.\n\nSocial: Axe has been associated with a younger demographic, sometimes seen as a bit cheeky or even controversial. Their ads might appeal to a certain social group seeking attention. But in recent years, maybe they've shifted a bit? Still, the social signaling is strong. Maybe a 4.\n\nEconomic: Axe is positioned as affordable, not luxury. They target a mass market, so value for money is key. But they aren't the cheapest. Valuable but not luxury. Maybe a 3 or 4. I think 4 because they emphasize good value.\n\nCultural: They're part of the pop culture, often referenced in media. They target a youthful, energetic culture, maybe even a subculture around confidence and humor. So a 4 here.\n\nTemporal: Axe has been around for decades, but their marketing is more contemporary and trendy. They might not emphasize heritage as much. So maybe a 2 or 3. Wait, Unilever owns them, which has a long history, but Axe's own heritage isn't heavily highlighted. So maybe a 2.\n\nPutting it all together:\n\nSemiotic: 4 (Strong)\nNarrative: 3 (Moderate)\nIdeological: 4 (Strong)\nExperiential: 4 (Strong)\nSocial: 4 (Strong)\nEconomic: 4 (Strong)\nCultural: 4 (Strong)\nTemporal: 2 (Slightly)\n</think>\n\n{\n  \"semiotic\": 4,\n  \"narrative\": 3,\n  \"ideological\": 4,\n  \"experiential\": 4,\n  \"social\": 4,\n  \"economic\": 4,\n  \"cultural\": 4,\n  \"temporal\": 2\n}",
+  "scores": {
+    "semiotic": 4.0,
+    "narrative": 3.0,
+    "ideological": 4.0,
+    "experiential": 4.0,
+    "social": 4.0,
+    "economic": 4.0,
+    "cultural": 4.0,
+    "temporal": 2.0
+  },
+  "parse_success": true,
+  "scale": "1-5",
+  "version": "1.0",
+  "timestamp": "2026-04-13T18:28:29Z",
+  "temperature": 0.7,
+  "provider": "sarvam"
+}

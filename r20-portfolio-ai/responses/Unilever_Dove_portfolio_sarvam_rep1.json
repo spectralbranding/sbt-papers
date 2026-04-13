@@ -1,0 +1,30 @@
+{
+  "cell_id": "Unilever_Dove_portfolio_sarvam_rep1",
+  "portfolio": "Unilever",
+  "brand": "Dove",
+  "category": "personal care",
+  "condition": "portfolio",
+  "model_id": "sarvam",
+  "model_name": "Sarvam M",
+  "tradition": "Indian",
+  "repetition": 1,
+  "prompt": "You are evaluating the brand Dove on eight dimensions of brand perception.\n\nContext: Dove is owned by Unilever (consumer goods conglomerate), which also owns Axe, Ben & Jerry's.\n\nFor each dimension, rate how strongly Dove communicates through that channel\non a scale of 1 to 5, where 1 = Not at all, 2 = Slightly, 3 = Moderately,\n4 = Strongly, 5 = Very strongly.\n\nDimensions:\n1. Semiotic: visual and verbal identity (logos, packaging, design language)\n2. Narrative: brand storytelling (origin story, mythology, communication style)\n3. Ideological: values, beliefs, and purpose (what the brand stands for)\n4. Experiential: sensory and interaction experience (product feel, service quality)\n5. Social: community, status signaling (who uses this brand, what it says about them)\n6. Economic: pricing and value perception (affordability, luxury, value-for-money)\n7. Cultural: cultural codes and positioning (what culture or subculture it belongs to)\n8. Temporal: heritage and history (longevity, tradition, track record)\n\nRespond in JSON format with the following keys:\n{\"semiotic\": <1-5>, \"narrative\": <1-5>, \"ideological\": <1-5>, \"experiential\": <1-5>, \"social\": <1-5>, \"economic\": <1-5>, \"cultural\": <1-5>, \"temporal\": <1-5>}\n\nEvaluate based on your knowledge of the brand. Provide only the JSON.",
+  "system_prompt": null,
+  "response": "<think>\nOkay, let's tackle this evaluation of Dove's brand perception across the eight dimensions. First, I need to recall what each dimension means and how Dove communicates through them.\n\nStarting with Semiotic: Dove is known for its iconic white logo and packaging with soft, simple designs. Their visual identity uses a lot of white and calming colors, which aligns with their messaging of purity and real beauty. So maybe a 4 or 5 here. But wait, the scale goes up to 5 as very strongly. Their logo is super recognizable, so maybe 5.\n\nNarrative: Dove's campaigns like Real Beauty have strong storytelling. They focus on empowering women and challenging beauty standards. Their origin story is about promoting real beauty, which they communicate consistently. That's a strong narrative, maybe a 4 or 5. But maybe 4 because while they have a strong narrative, it's more about campaigns than a deep origin myth.\n\nIdeological: Dove positions itself as a brand that stands for self-esteem, body positivity, and challenging stereotypes. Their campaigns and messaging are all about these values. That's pretty strong, so maybe 5 here.\n\nExperiential: Product feel and service. Dove's products like body wash and soap are known for their moisturizing formulas, which are a good sensory experience. They also have a strong in-store presence with clear product info. Maybe a 4 here.\n\nSocial: Who uses Dove? It's a mass-market brand, but through their campaigns, they associate with empowerment and inclusivity. It's used by a broad audience but with a positive social image. Maybe a 4.\n\nEconomic: Dove is affordable and positioned as value-for-money, not luxury. They're accessible, so economic value is strong. Maybe a 4 or 5. Since they are widely available and seen as good quality for price, probably 4.\n\nCultural: Dove is part of mass-market consumer goods, fitting into mainstream culture. However, their campaigns targeting body positivity have influenced cultural conversations. Maybe a 3 or 4. They do tap into current social movements, so maybe 4.\n\nTemporal: Dove has been around for a long time (over a century), so heritage is strong. But their campaigns are more recent in terms of the Real Beauty campaigns. The brand has evolved over time, so maybe a 3 or 4. But longevity is a 5, so maybe they retain some temporal strength. Hmm, but not sure if they emphasize their history as much. Maybe 3.\n\nWait, Unilever's ownership might affect some aspects, but the question is about Dove's own communication. Let me double-check each dimension.\n\nSemiotic: 5 because logo and packaging are very distinct and consistent.\n\nNarrative: 4, strong storytelling but maybe not as deep as some other brands with more mythical elements.\n\nIdeological: 5, very clear on values.\n\nExperiential: 4, good product feel but maybe not exceptional beyond that.\n\nSocial: 4, positive community image.\n\nEconomic: 4, good value but not luxury.\n\nCultural: 4, part of mainstream and influencing culture.\n\nTemporal: 3, long history but maybe not leveraged as much in recent campaigns.\n\nI think that's reasonable. Let's structure the JSON accordingly.\n</think>\n\n{\n  \"semiotic\": 5,\n  \"narrative\": 4,\n  \"ideological\": 5,\n  \"experiential\": 4,\n  \"social\": 4,\n  \"economic\": 4,\n  \"cultural\": 4,\n  \"temporal\": 3\n}",
+  "scores": {
+    "semiotic": 5.0,
+    "narrative": 4.0,
+    "ideological": 5.0,
+    "experiential": 4.0,
+    "social": 4.0,
+    "economic": 4.0,
+    "cultural": 4.0,
+    "temporal": 3.0
+  },
+  "parse_success": true,
+  "scale": "1-5",
+  "version": "1.0",
+  "timestamp": "2026-04-13T18:27:20Z",
+  "temperature": 0.7,
+  "provider": "sarvam"
+}

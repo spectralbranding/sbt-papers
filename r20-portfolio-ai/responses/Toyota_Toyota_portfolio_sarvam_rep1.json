@@ -1,0 +1,30 @@
+{
+  "cell_id": "Toyota_Toyota_portfolio_sarvam_rep1",
+  "portfolio": "Toyota",
+  "brand": "Toyota",
+  "category": "mass-market automotive",
+  "condition": "portfolio",
+  "model_id": "sarvam",
+  "model_name": "Sarvam M",
+  "provider": "sarvam",
+  "tradition": "Indian",
+  "temperature": 0.7,
+  "repetition": 1,
+  "prompt": "You are evaluating the brand Toyota on eight dimensions of brand perception.\n\nContext: Toyota is owned by Toyota Motor Corporation (automotive conglomerate), which also owns Lexus.\n\nFor each dimension, rate how strongly Toyota communicates through that channel\non a scale of 1 to 5, where 1 = Not at all, 2 = Slightly, 3 = Moderately,\n4 = Strongly, 5 = Very strongly.\n\nDimensions:\n1. Semiotic: visual and verbal identity (logos, packaging, design language)\n2. Narrative: brand storytelling (origin story, mythology, communication style)\n3. Ideological: values, beliefs, and purpose (what the brand stands for)\n4. Experiential: sensory and interaction experience (product feel, service quality)\n5. Social: community, status signaling (who uses this brand, what it says about them)\n6. Economic: pricing and value perception (affordability, luxury, value-for-money)\n7. Cultural: cultural codes and positioning (what culture or subculture it belongs to)\n8. Temporal: heritage and history (longevity, tradition, track record)\n\nRespond in JSON format with the following keys:\n{\"semiotic\": <1-5>, \"narrative\": <1-5>, \"ideological\": <1-5>, \"experiential\": <1-5>, \"social\": <1-5>, \"economic\": <1-5>, \"cultural\": <1-5>, \"temporal\": <1-5>}\n\nEvaluate based on your knowledge of the brand. Provide only the JSON.",
+  "system_prompt": null,
+  "response": "<think>\nOkay, let's tackle this evaluation of Toyota's brand perception across the eight dimensions. I need to rate each from 1 to 5 based on how strongly Toyota communicates through each channel. Let me start by recalling what each dimension means and then think about Toyota's positioning.\n\n1. **Semiotic**: This is about visual and verbal identity. Toyota has a very recognizable logo, the red and white color scheme, and a consistent design language in their cars. Their packaging, advertising materials, and even dealership designs are pretty consistent. So maybe a 4 or 5 here. Maybe 4 because while they're strong, maybe not as cutting-edge as some luxury brands.\n\n2. **Narrative**: Brand storytelling. Toyota's \"Let's Go Places\" campaign comes to mind, focusing on adventure and reliability. They do have an origin story about Kiichiro Toyoda, but how much do they emphasize that in their current narratives? Maybe they focus more on reliability and innovation. Maybe a 3 or 4. I think it's moderately strong, so 3 or 4. Let's go with 4 because they do have a consistent narrative around innovation and reliability.\n\n3. **Ideological**: Values and purpose. Toyota emphasizes environmental sustainability with their hybrids like the Prius, safety, and quality. They have initiatives like the Toyota Environmental Challenge. Their commitment to innovation and quality is part of their brand values. This seems strong, maybe 4. They do stand for reliability and environmental responsibility, so 4.\n\n4. **Experiential**: Sensory and interaction experience. Toyota cars are known for durability and smooth driving experience. Their dealerships are generally reliable with good service, but maybe not as luxurious as Lexus. The product feel is solid, so maybe 4. But compared to luxury brands, maybe 3. Hmm, maybe 3 or 4. I think 4 because reliable experience is key for Toyota.\n\n5. **Social**: Community and status. Toyota is mass-market, so it's accessible. It's used by a broad audience, so the social signaling might be more about practicality and reliability rather than status. Maybe lower here, like 2 or 3. But they do have a strong presence in many communities, so maybe 3. Wait, some people might buy Toyota for its reputation, so maybe 3.\n\n6. **Economic**: Pricing and value perception. Toyota is known for good value and long-term reliability, which affects resale value. They have models at various price points, but generally seen as affordable for their quality. Maybe 4. They emphasize value for money, so 4.\n\n7. **Cultural**: Cultural codes. Toyota is global, so they adapt to local cultures. In some markets, they might be seen as part of the mainstream automotive culture. They have a broad cultural positioning. Maybe 3 or 4. Since they are present everywhere and adapt, maybe 4.\n\n8. **Temporal**: Heritage and history. Toyota has a long history since the early 20th century, known for innovation and durability. Their history is a big part of their brand. This is strong, maybe 5. They often highlight their long-standing reputation and heritage in their branding.\n\nPutting it all together, maybe:\n\nsemiotic:4, narrative:4, ideological:4, experiential:4, social:3, economic:4, cultural:4, temporal:5.\n\nWait, temporal might be 5 because their history is a key part. Let me check again. Yes, they often reference their heritage in ads, \"over 70 years of history\" etc. So temporal is definitely 5. Social maybe a 3 because it's accessible but not a status symbol. Economic is 4 because value-for-money is strong. Experiential 4 because the experience is reliable. Semiotic 4 because strong but maybe not as bold as some luxury brands. Narrative 4 because they do have a consistent story. Ideological 4 for their values. Cultural 4 as they adapt globally. Yeah, that seems right.\n</think>\n\n{\"semiotic\": 4, \"narrative\": 4, \"ideological\": 4, \"experiential\": 4, \"social\": 3, \"economic\": 4, \"cultural\": 4, \"temporal\": 5}",
+  "scores": {
+    "semiotic": 4.0,
+    "narrative": 4.0,
+    "ideological": 4.0,
+    "experiential": 4.0,
+    "social": 3.0,
+    "economic": 4.0,
+    "cultural": 4.0,
+    "temporal": 5.0
+  },
+  "parse_success": true,
+  "scale": "1-5",
+  "version": "1.0",
+  "timestamp": "2026-04-13T21:43:22Z"
+}
