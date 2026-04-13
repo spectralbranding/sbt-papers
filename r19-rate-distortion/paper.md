@@ -72,7 +72,7 @@ Seventeen cloud-accessible LLM architectures from distinct training lineages:
 
 *Cross-cultural providers (n = 11):* DeepSeek (deepseek-chat), Qwen 3 235B (Alibaba via Cerebras), Qwen Plus (Alibaba via DashScope), GLM-4 (Zhipu via Fireworks), Kimi (Moonshot via Groq), Sarvam-M (Sarvam AI, India), GigaChat (Sber, Russia), YandexGPT Pro (Yandex, Russia), ALLaM (SDAIA via Groq, Saudi Arabia), Swallow 70B (Tokyo Institute of Technology via local), SambaNova DeepSeek (DeepSeek via SambaNova).
 
-All models were queried at temperature 0.7 (the default creative-task setting for most providers, balancing response diversity with coherence) with English prompts. Each prompt presented a brand name and requested evaluation in the specified format across the eight SBT dimensions.
+All models were queried at temperature 0.7 (the default creative-task setting for most providers, balancing response diversity with coherence) with English prompts. Each prompt presented a brand name and requested evaluation in the specified format across the eight SBT dimensions. Local models (Gemma 4, Swallow 70B) ran on Apple M4 Pro with 64 GB unified memory via Ollama.
 
 ### Distortion Measure
 
@@ -96,7 +96,7 @@ Five pre-registered hypotheses:
 
 ### Data Quality
 
-Of 1,652 recorded API calls, 1,621 (98.1%) produced valid parsed responses. Total experiment cost was $0.225 USD; wall-clock time was 33 minutes. Zero deviations from the pre-registered protocol were required. One model (Qwen 3 235B via Cerebras) produced an anomalously flat R1-R2-R3 profile yielding a degenerate power-law fit (R^2^ = .000); its R2 minimum is still present (.087) and all qualitative results hold with or without this model.
+Of 1,652 recorded API calls, 1,621 (98.1%) produced valid parsed responses. Total experiment cost was $0.225 USD; wall-clock time was 33 minutes. Zero deviations from the pre-registered protocol were required.
 
 ### H1: Monotonic Rate-Distortion Shape
 
