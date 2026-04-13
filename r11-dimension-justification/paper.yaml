@@ -9,8 +9,8 @@ meta:
       orcid: "0009-0000-6893-9231"
       affiliation: "Independent Researcher"
   doi: "10.5281/zenodo.19207599"
-  date: "2026-04-04"
-  version: "1.1"
+  date: "2026-04-13"
+  version: "1.2"
   venue: "Working Paper (Zenodo)"
   license: "CC-BY-4.0"
   keywords:
@@ -88,19 +88,17 @@ claims:
     depends_on: ["P1", "P2"]
 
 methodology:
-  type: theoretical
+  type: mixed
   design: >
-    Theoretical and argumentative. P1 (non-redundancy) is demonstrated via
-    counter-example brand pairs — for each dimension D_i, two real or constructed
-    brands are identified that are indistinguishable on all other 7 dimensions but
-    clearly distinct on D_i. P2 (minimal completeness) is argued by testing candidate
-    9th dimensions proposed in alternative taxonomies (Aaker 5, Keller 4, Kapferer 6)
-    and showing each reduces to an existing SBT dimension or sub-dimension. P3
-    (concentration of measure) is derived analytically using the Johnson-Lindenstrauss
-    lemma applied to the SBT perception space. No primary data collection.
+    Theoretical argument (Sections 2-7) plus empirical robustness test (Section 8A).
+    P1 (non-redundancy) via counter-example brand pairs. P2 (minimal completeness)
+    via candidate 9th dimension reduction. P3 (MDS resolution) via JL lemma.
+    Section 8A: perturbation analysis on R15 Run 5 data (22 LLMs, 11,298 API calls).
+    Three experiments: drop-one (8D to 7D), drop-pair (8D to 6D), augmented (8D to 10D).
+    Metrics: Spearman rho, cosine similarity, mean rank displacement, variance decomposition.
   analysis:
-    method: "Counter-example construction; dimensional reduction analysis; JL lemma application"
-    software: "None (analytical). Python (numpy) for JL bound computation."
+    method: "Counter-example construction; JL lemma; perturbation analysis; variance decomposition"
+    software: "Python 3.12 (scipy, numpy). Analysis script: robustness-analysis/gap5_dimension_robustness.py"
 
 acceptance:
   - claim_id: "P1"
@@ -139,21 +137,20 @@ acceptance:
       that P1 predicts require 8 dimensions.
 
 data:
-  available: false
-  url: ""
+  available: true
+  url: "https://github.com/spectralbranding/sbt-papers/tree/main/r11-dimension-justification/robustness-analysis"
   notes: >
-    No primary data collected. Counter-example brands in P1 are drawn from publicly
-    known brands and assigned profiles using structured judgment (same methodology as
-    Zharnikov 2026a). Empirical validation of all three propositions requires
-    survey data — see replication section.
+    Section 8A uses R15 Run 5 data (22 LLMs, 11,298 API calls). Full results in
+    robustness-analysis/gap5_dimension_robustness_results.json. Source data from
+    R15 experiment at sbt-papers/r15-ai-search-metamerism/experiment/.
+    Counter-example brands in P1 are drawn from publicly known brands.
 
 code:
   available: true
-  url: "https://github.com/spectralbranding/sbt-framework"
+  url: "https://github.com/spectralbranding/sbt-papers/tree/main/r11-dimension-justification/robustness-analysis"
   notes: >
-    The JL bound computation for P3 can be reproduced using the projection_bounds
-    module in sbt-framework (Module 3, from Zharnikov 2026e). No new code was
-    developed for this paper.
+    Section 8A analysis: robustness-analysis/gap5_dimension_robustness.py (Python 3.12,
+    scipy, numpy). JL bound computation for P3: sbt-framework Module 3.
 
 replication:
   feasible: true
@@ -187,6 +184,11 @@ dependencies:
     claim: "Zharnikov (2026f) R3 — concentration of measure on the SBT simplex; supports P3"
     relationship: "applies"
     critical: false
+
+  - doi: "10.5281/zenodo.19422427"
+    claim: "Zharnikov (2026v) R15 — source data for Section 8A empirical robustness test (22 models, 11,298 API calls)"
+    relationship: "applies"
+    critical: true
 
   - doi: "10.1016/0022-4359(96)90015-4"
     claim: "Aaker (1996) brand personality — 5 dimensions tested for reduction to SBT taxonomy in P2"
@@ -267,7 +269,8 @@ repositories:
   - platform: "Zenodo"
     doi: "10.5281/zenodo.19207599"
     url: "https://doi.org/10.5281/zenodo.19207599"
-    version: "v1"
-    date: "2026-03-24"
+    version: "v1.2"
+    date: "2026-04-13"
+    notes: "v1.2: Section 8A empirical robustness test. v1.1: Perception DOP section. v1.0: initial preprint."
 
 submission_history: []
