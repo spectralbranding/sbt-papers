@@ -526,6 +526,12 @@ The eight dimensions of SBT are neither the fewest possible (which would sacrifi
 
 ---
 
+## Data Availability
+
+The empirical robustness analysis in Section 8A is fully reproducible. The analysis script (`gap5_dimension_robustness.py`) and complete structured results (`gap5_dimension_robustness_results.json`) are archived at https://github.com/spectralbranding/sbt-papers/tree/main/r11-dimension-justification/robustness-analysis. The source data (R15 Run 5 weight profiles, 22 models, 11,298 API calls) are archived at https://github.com/spectralbranding/sbt-papers/tree/main/r15-ai-search-metamerism/experiment.
+
+---
+
 ## References
 
 Aaker, D. A. (1996). *Building strong brands*. Free Press.
