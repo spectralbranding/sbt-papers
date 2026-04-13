@@ -1,0 +1,24 @@
+{
+  "cell_id": "LVMH_Fendi_solo_qwen3_rep1",
+  "portfolio": "LVMH",
+  "brand": "Fendi",
+  "category": "luxury fashion",
+  "condition": "solo",
+  "model_id": "qwen3",
+  "model_name": "Qwen3 30B",
+  "repetition": 1,
+  "prompt": "Rate the brand Fendi on each of the following 8 perceptual dimensions using a 0-10 scale (0 = not at all associated, 10 = extremely strongly associated).\n\nDimensions:\n1. Semiotic: visual and verbal identity (logos, packaging, design language)\n2. Narrative: brand storytelling (origin story, mythology, communication style)\n3. Ideological: values, beliefs, and purpose (what the brand stands for)\n4. Experiential: sensory and interaction experience (product feel, service quality)\n5. Social: community, status signaling (who uses this brand, what it says about them)\n6. Economic: pricing and value perception (affordability, luxury, value-for-money)\n7. Cultural: cultural codes and positioning (what culture or subculture it belongs to)\n8. Temporal: heritage and history (longevity, tradition, track record)\n\nReturn ONLY a JSON object with your ratings, no other text. Example format:\n{\"semiotic\": 7, \"narrative\": 8, \"ideological\": 6, \"experiential\": 7, \"social\": 8, \"economic\": 5, \"cultural\": 7, \"temporal\": 6}",
+  "response": "Okay, let's tackle this Fendi brand rating request. The user wants 8 perceptual dimensions rated on a 0-10 scale. Hmm, I need to recall Fendi's brand identity accurately. \n\nFirst, semiotic - Fendi's double F logo is iconic, their packaging is luxurious with that signature pink and black. Definitely strong association here. I'd say 9 or 10? Wait, 10 feels right for such a recognizable visual identity. \n\nFor narrative, Fendi's origin story as a fur house in Rome since 1925 is solid. Their storytelling around craftsmanship and modern luxury feels consistent. Maybe 8? Though not as mythical as some heritage brands. \n\nIdeological values - they stand for luxury craftsmanship, but I'm not sure about deeper purpose beyond profit. Not as strong as say, Patagonia. Maybe 7? \n\nExperiential - their products feel high-quality, service is premium. But I've heard mixed things about some retail experiences. 8 seems fair. \n\nSocial status - Fendi is definitely a status symbol. Celebrities and high-net-worth individuals use it. 9 for that. \n\nEconomic - luxury pricing, no value-for-money angle. Definitely 10 for luxury perception. \n\nCultural positioning - they're deeply tied to Italian fashion culture, not subcultures. 8 feels right. \n\nTemporal heritage - 1925 founding, 100 years in business. Strong legacy. 9. \n\nWait, let me double-check economic. Some might say \"value\" but no - luxury is about exclusivity, not value. So 10 is correct. \n\n*mental note* Must avoid overrating - Fendi isn't as ubiquitous as Gucci in pop culture, so social might be 8 not 9. \n\n*checks memory* Yeah, Fendi's heritage is solid but they're not as historically deep as Herm\u00e8s. Temporal 9 is better than 10. \n\n*confirms* Yep, all ratings seem consistent with luxury fashion industry knowledge. Now to format as JSON exactly as requested.\n</think>\n\n{\"semiotic\": 10, \"narrative\": 8, \"ideological\": 7, \"experiential\": 8, \"social\": 9, \"economic\": 10, \"cultural\": 8, \"temporal\": 9}",
+  "scores": {
+    "semiotic": 10.0,
+    "narrative": 8.0,
+    "ideological": 7.0,
+    "experiential": 8.0,
+    "social": 9.0,
+    "economic": 10.0,
+    "cultural": 8.0,
+    "temporal": 9.0
+  },
+  "parse_success": true,
+  "timestamp": "2026-04-13T14:07:42Z"
+}

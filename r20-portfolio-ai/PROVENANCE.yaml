@@ -1,0 +1,24 @@
+# PROVENANCE.yaml -- R20: Spectral Immunity
+provenance:
+  paper_title: "Spectral Immunity: Portfolio Framing Does Not Alter AI Brand Perception"
+  citation_key: "2026ab"
+  repository: "spectralbranding/sbt-papers/r20-portfolio-ai"
+
+  versions:
+    - version: "1.0.0"
+      date: "2026-04-13"
+      description: >
+        Initial preprint. 378 API calls, 7 models, 9 brands, 3 portfolios.
+        Null result for portfolio interference in AI observers. Spectral
+        immunity concept introduced.
+
+  forks: []
+
+  target_venue:
+    journal: "Marketing Science"
+    publisher: "INFORMS"
+    status: "pre-submission"
+
+  target_venue_alt:
+    - journal: "International Journal of Research in Marketing"
+      publisher: "Elsevier"

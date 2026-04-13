@@ -1,0 +1,4 @@
+portfolio,type,predicted,observed,constructive,destructive,neutral,total_dims,ratio,match
+LVMH,spectral_cluster,constructive,mixed/negligible,1,0,1,2,0.5,False
+P&G,spectral_spread,negligible,destructive,0,0,2,2,0.0,False
+Unilever,spectral_contradiction,destructive,destructive,3,1,7,11,0.2727272727272727,True
