@@ -2,7 +2,7 @@
 
 **Zharnikov, D.**
 
-Working Paper -- March 2026
+Working Paper -- March 2026 (Updated April 2026)
 
 ---
 
@@ -390,7 +390,7 @@ The key claim is not that MDS is wrong but that it is incomplete. Two to three d
 
 Several limitations qualify the arguments presented in this paper.
 
-**The completeness argument is theoretical, not empirical.** The claim that eight meaning channels exhaust the relevant channels for brand perception rests on a scholarly inventory of academic traditions, not on factor analysis of perception data. It is possible that empirical investigation will reveal that some SBT dimensions merge under factor analysis -- that semiotic and cultural perception, for example, load on a common factor in survey data -- or that additional dimensions emerge from items not anticipated by the current taxonomy. The theoretical argument establishes a prior expectation; the empirical test remains to be conducted.
+**The completeness argument is theoretical, not empirical.** The claim that eight meaning channels exhaust the relevant channels for brand perception rests on a scholarly inventory of academic traditions, not on factor analysis of perception data. It is possible that empirical investigation will reveal that some SBT dimensions merge under factor analysis -- that semiotic and cultural perception, for example, load on a common factor in survey data -- or that additional dimensions emerge from items not anticipated by the current taxonomy. Section 8A partially addresses this limitation with an empirical robustness test using AI observer data: all eight dimensions carry non-trivial cross-model variance (5-19%), and the framework survives aggressive perturbation. However, a definitive test requires human-subject factor analysis, which remains to be conducted.
 
 **The independence examples are illustrative, not measured.** The counter-example brand pairs in Section 3 are selected based on the author's informed judgment about brand positioning, not on observer-rated spectral profiles. It is possible that observers rate these pairs as more similar or more different on non-focal dimensions than the argument assumes. Formal independence requires a large-scale study in which observers rate multiple brands across all eight dimensions, followed by analysis of inter-dimensional correlations. Low correlations would confirm independence; high correlations would suggest that some dimensions should be merged.
 
@@ -408,7 +408,7 @@ Several limitations qualify the arguments presented in this paper.
 
 ## 8A. Empirical Robustness Test
 
-Sections 2 through 7 establish the eight-dimension taxonomy through theoretical argument: completeness from meaning-channel enumeration, independence via counter-example brand pairs, non-redundancy through constructive proof, and resolution of the MDS dimensionality paradox. The first limitation (Section 8) acknowledges that this argument is theoretical. This section provides the first empirical test, using data from the R15 cross-cultural LLM experiment (Zharnikov, 2026v).
+Sections 2 through 7 establish the eight-dimension taxonomy through theoretical argument: completeness from meaning-channel enumeration, independence via counter-example brand pairs, non-redundancy through constructive proof, and resolution of the MDS dimensionality paradox. This section complements the theoretical argument with an empirical robustness test, using data from the R15 cross-cultural LLM experiment (Zharnikov, 2026v).
 
 *Research questions.* Three questions operationalize the completeness-and-independence argument empirically:
 
