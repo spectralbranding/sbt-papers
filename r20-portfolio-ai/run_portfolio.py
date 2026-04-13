@@ -5,19 +5,22 @@ R20 Portfolio-AI Experiment: Solo vs Portfolio Framing
 Tests whether framing a brand as part of a corporate portfolio changes
 LLM perception of that brand across 8 SBT dimensions.
 
-Design:
-  - 9 brands in 3 portfolios (LVMH, Unilever, P&G)
+Design (v2.0 extension):
+  - 17 brands in 6 portfolios (LVMH, Unilever, P&G, Toyota, L'Oreal, Geely, Yandex)
+  - 13 models from 7 training traditions (Western, Chinese, Russian, Indian, Japanese, European, Korean)
   - 3 conditions: SOLO, PORTFOLIO (user msg), SYSTEM_PORTFOLIO (system msg)
-  - 9 models from 6 training traditions
+  - Recommendation prompts: SOLO + PORTFOLIO
+  - Multi-turn: Turn 1 solo, Turn 2 reveal + re-rate
+  - Native-language ablation: home portfolios in French, Chinese, Japanese, Russian
   - 5 repetitions per cell
-  - Main experiment: 9 x 2 x 9 x 5 = 810 API calls
-  - Ablation (system prompt): 9 x 1 x 4 x 5 = 180 API calls
-  - Total: 990 API calls
 
 Usage:
-    uv run python research/R20_portfolio_ai/run_portfolio.py [--model MODEL] [--dry-run]
-    uv run python research/R20_portfolio_ai/run_portfolio.py --ablation [--model MODEL]
-    uv run python research/R20_portfolio_ai/run_portfolio.py --reparse
+    uv run python run_portfolio.py [--model MODEL] [--dry-run]
+    uv run python run_portfolio.py --recommendation [--model MODEL]
+    uv run python run_portfolio.py --multiturn [--model MODEL]
+    uv run python run_portfolio.py --native [--model MODEL]
+    uv run python run_portfolio.py --ablation [--model MODEL]
+    uv run python run_portfolio.py --reparse
 """
 
 import argparse
@@ -88,6 +91,33 @@ PORTFOLIOS = {
         "brands": [
             {"name": "Toyota", "category": "mass-market automotive"},
             {"name": "Lexus", "category": "luxury automotive"},
+        ],
+    },
+    "L'Oreal": {
+        "parent": "L'Oreal Group",
+        "descriptor": "beauty and cosmetics conglomerate",
+        "brands": [
+            {"name": "L'Oreal Paris", "category": "mass-market beauty"},
+            {"name": "Lancome", "category": "luxury beauty"},
+            {"name": "Maybelline", "category": "mass-market cosmetics"},
+        ],
+    },
+    "Geely": {
+        "parent": "Geely Automobile Holdings",
+        "descriptor": "Chinese automotive conglomerate",
+        "brands": [
+            {"name": "Volvo", "category": "premium automotive"},
+            {"name": "Polestar", "category": "electric vehicle brand"},
+            {"name": "Geely Auto", "category": "mass-market automotive"},
+        ],
+    },
+    "Yandex": {
+        "parent": "Yandex",
+        "descriptor": "Russian technology conglomerate",
+        "brands": [
+            {"name": "Yandex", "category": "search engine and technology platform"},
+            {"name": "Yandex Taxi", "category": "ride-hailing service"},
+            {"name": "Yandex Market", "category": "e-commerce platform"},
         ],
     },
 }
@@ -186,6 +216,34 @@ MODELS = [
         "temperature": 0.7,
         "max_tokens": 500,
     },
+    # --- Extension: Chinese, European, Korean ---
+    {
+        "id": "qwen3",
+        "name": "Qwen3 235B",
+        "provider": "cerebras",
+        "model_id": "qwen-3-235b-a22b-instruct-2507",
+        "tradition": "Chinese",
+        "temperature": 0.7,
+        "max_tokens": 2048,  # Qwen uses thinking tokens
+    },
+    {
+        "id": "mistral",
+        "name": "Mistral Large",
+        "provider": "mistral",
+        "model_id": "mistral-large-2512",
+        "tradition": "European",
+        "temperature": 0.7,
+        "max_tokens": 500,
+    },
+    {
+        "id": "exaone",
+        "name": "EXAONE 32B",
+        "provider": "ollama",
+        "model_id": "exaone:32b",
+        "tradition": "Korean",
+        "temperature": 0.7,
+        "max_tokens": 500,
+    },
 ]
 
 # Models used in the system-prompt ablation (4 proven models)
@@ -242,6 +300,15 @@ RECOMMENDATION_CATEGORIES = {
     "Gillette": "grooming brand",
     "Toyota": "car brand",
     "Lexus": "luxury car brand",
+    "L'Oreal Paris": "beauty brand",
+    "Lancome": "luxury beauty brand",
+    "Maybelline": "cosmetics brand",
+    "Volvo": "car brand",
+    "Polestar": "electric car brand",
+    "Geely Auto": "car brand",
+    "Yandex": "technology platform",
+    "Yandex Taxi": "ride-hailing service",
+    "Yandex Market": "e-commerce platform",
 }
 
 RECOMMENDATION_SOLO_TEMPLATE = """A friend asks you: "What do you think of {brand} as a {category}?"
@@ -271,6 +338,178 @@ Respond in JSON format:
 
 Provide only the JSON."""
 
+# ---------------------------------------------------------------------------
+# Native-Language Portfolio Templates
+# ---------------------------------------------------------------------------
+
+# Native-language prompts for "home" portfolios — tests discourse-layer activation
+NATIVE_LANGUAGE_PORTFOLIOS = {
+    "L'Oreal": {
+        "language": "fr",
+        "language_name": "French",
+        "solo_template": """Vous evaluez la marque {brand} sur huit dimensions de perception de marque.
+Pour chaque dimension, evaluez la force avec laquelle {brand} communique a travers ce canal
+sur une echelle de 1 a 5, ou 1 = Pas du tout, 2 = Legerement, 3 = Moderement,
+4 = Fortement, 5 = Tres fortement.
+
+Dimensions :
+{dimensions}
+
+Repondez au format JSON avec les cles suivantes :
+{{"semiotic": <1-5>, "narrative": <1-5>, "ideological": <1-5>, "experiential": <1-5>, "social": <1-5>, "economic": <1-5>, "cultural": <1-5>, "temporal": <1-5>}}
+
+Evaluez selon votre connaissance de la marque. Fournissez uniquement le JSON.""",
+        "portfolio_template": """Vous evaluez la marque {brand} sur huit dimensions de perception de marque.
+
+Contexte : {brand} appartient au {parent} ({descriptor}), qui possede egalement {siblings}.
+
+Pour chaque dimension, evaluez la force avec laquelle {brand} communique a travers ce canal
+sur une echelle de 1 a 5, ou 1 = Pas du tout, 2 = Legerement, 3 = Moderement,
+4 = Fortement, 5 = Tres fortement.
+
+Dimensions :
+{dimensions}
+
+Repondez au format JSON avec les cles suivantes :
+{{"semiotic": <1-5>, "narrative": <1-5>, "ideological": <1-5>, "experiential": <1-5>, "social": <1-5>, "economic": <1-5>, "cultural": <1-5>, "temporal": <1-5>}}
+
+Evaluez selon votre connaissance de la marque. Fournissez uniquement le JSON.""",
+        "dimension_descriptions": {
+            "semiotic": "identite visuelle et verbale (logos, packaging, langage de design)",
+            "narrative": "storytelling de marque (histoire d'origine, mythologie, style de communication)",
+            "ideological": "valeurs, croyances et raison d'etre (ce que la marque represente)",
+            "experiential": "experience sensorielle et d'interaction (toucher du produit, qualite de service)",
+            "social": "communaute, signalisation de statut (qui utilise cette marque, ce que cela dit d'eux)",
+            "economic": "perception de prix et de valeur (accessibilite, luxe, rapport qualite-prix)",
+            "cultural": "codes culturels et positionnement (a quelle culture ou sous-culture elle appartient)",
+            "temporal": "heritage et histoire (longevite, tradition, historique)",
+        },
+    },
+    "Geely": {
+        "language": "zh",
+        "language_name": "Chinese",
+        "solo_template": """请您对品牌 {brand} 在以下八个品牌感知维度上进行评估。
+对于每个维度，请评估 {brand} 通过该渠道传达信息的强度，
+评分标准为1到5分，其中1 = 完全没有，2 = 略微，3 = 中等，
+4 = 强烈，5 = 非常强烈。
+
+维度：
+{dimensions}
+
+请以JSON格式回复，使用以下键：
+{{"semiotic": <1-5>, "narrative": <1-5>, "ideological": <1-5>, "experiential": <1-5>, "social": <1-5>, "economic": <1-5>, "cultural": <1-5>, "temporal": <1-5>}}
+
+根据您对该品牌的了解进行评估。请仅提供JSON。""",
+        "portfolio_template": """请您对品牌 {brand} 在以下八个品牌感知维度上进行评估。
+
+背景信息：{brand} 属于{parent}（{descriptor}），该集团还拥有{siblings}。
+
+对于每个维度，请评估 {brand} 通过该渠道传达信息的强度，
+评分标准为1到5分，其中1 = 完全没有，2 = 略微，3 = 中等，
+4 = 强烈，5 = 非常强烈。
+
+维度：
+{dimensions}
+
+请以JSON格式回复，使用以下键：
+{{"semiotic": <1-5>, "narrative": <1-5>, "ideological": <1-5>, "experiential": <1-5>, "social": <1-5>, "economic": <1-5>, "cultural": <1-5>, "temporal": <1-5>}}
+
+根据您对该品牌的了解进行评估。请仅提供JSON。""",
+        "dimension_descriptions": {
+            "semiotic": "视觉和语言标识（标志、包装、设计语言）",
+            "narrative": "品牌叙事（起源故事、神话、沟通风格）",
+            "ideological": "价值观、信念和使命（品牌代表什么）",
+            "experiential": "感官和互动体验（产品触感、服务质量）",
+            "social": "社群和地位信号（谁使用这个品牌，这说明了什么）",
+            "economic": "价格和价值感知（平价、奢华、性价比）",
+            "cultural": "文化符码和定位（属于哪种文化或亚文化）",
+            "temporal": "传承和历史（持久性、传统、往绩）",
+        },
+    },
+    "Toyota": {
+        "language": "ja",
+        "language_name": "Japanese",
+        "solo_template": """ブランド {brand} を、以下の8つのブランド認知次元で評価してください。
+各次元について、{brand} がそのチャネルを通じてどの程度強くコミュニケーションしているかを
+1から5のスケールで評価してください。1 = 全くない、2 = わずかに、3 = 中程度に、
+4 = 強く、5 = 非常に強く。
+
+次元：
+{dimensions}
+
+以下のキーを使用してJSON形式で回答してください：
+{{"semiotic": <1-5>, "narrative": <1-5>, "ideological": <1-5>, "experiential": <1-5>, "social": <1-5>, "economic": <1-5>, "cultural": <1-5>, "temporal": <1-5>}}
+
+ブランドに関するあなたの知識に基づいて評価してください。JSONのみを提供してください。""",
+        "portfolio_template": """ブランド {brand} を、以下の8つのブランド認知次元で評価してください。
+
+背景情報：{brand} は{parent}（{descriptor}）に属しており、同グループには{siblings}もあります。
+
+各次元について、{brand} がそのチャネルを通じてどの程度強くコミュニケーションしているかを
+1から5のスケールで評価してください。1 = 全くない、2 = わずかに、3 = 中程度に、
+4 = 強く、5 = 非常に強く。
+
+次元：
+{dimensions}
+
+以下のキーを使用してJSON形式で回答してください：
+{{"semiotic": <1-5>, "narrative": <1-5>, "ideological": <1-5>, "experiential": <1-5>, "social": <1-5>, "economic": <1-5>, "cultural": <1-5>, "temporal": <1-5>}}
+
+ブランドに関するあなたの知識に基づいて評価してください。JSONのみを提供してください。""",
+        "dimension_descriptions": {
+            "semiotic": "視覚的・言語的アイデンティティ（ロゴ、パッケージ、デザイン言語）",
+            "narrative": "ブランドストーリーテリング（起源の物語、神話、コミュニケーションスタイル）",
+            "ideological": "価値観、信念、目的（ブランドが何を支持しているか）",
+            "experiential": "感覚的・インタラクション体験（製品の触感、サービス品質）",
+            "social": "コミュニティ、ステータスシグナル（誰がこのブランドを使い、それが何を示すか）",
+            "economic": "価格と価値の認知（手頃さ、高級感、コストパフォーマンス）",
+            "cultural": "文化的コードとポジショニング（どの文化やサブカルチャーに属するか）",
+            "temporal": "遺産と歴史（長寿、伝統、実績）",
+        },
+    },
+    "Yandex": {
+        "language": "ru",
+        "language_name": "Russian",
+        "solo_template": """Оцените бренд {brand} по восьми измерениям восприятия бренда.
+Для каждого измерения оцените, насколько сильно {brand} коммуницирует через данный канал,
+по шкале от 1 до 5, где 1 = Совсем нет, 2 = Слегка, 3 = Умеренно,
+4 = Сильно, 5 = Очень сильно.
+
+Измерения:
+{dimensions}
+
+Ответьте в формате JSON со следующими ключами:
+{{"semiotic": <1-5>, "narrative": <1-5>, "ideological": <1-5>, "experiential": <1-5>, "social": <1-5>, "economic": <1-5>, "cultural": <1-5>, "temporal": <1-5>}}
+
+Оценивайте на основе ваших знаний о бренде. Предоставьте только JSON.""",
+        "portfolio_template": """Оцените бренд {brand} по восьми измерениям восприятия бренда.
+
+Контекст: {brand} принадлежит компании {parent} ({descriptor}), которой также принадлежат {siblings}.
+
+Для каждого измерения оцените, насколько сильно {brand} коммуницирует через данный канал,
+по шкале от 1 до 5, где 1 = Совсем нет, 2 = Слегка, 3 = Умеренно,
+4 = Сильно, 5 = Очень сильно.
+
+Измерения:
+{dimensions}
+
+Ответьте в формате JSON со следующими ключами:
+{{"semiotic": <1-5>, "narrative": <1-5>, "ideological": <1-5>, "experiential": <1-5>, "social": <1-5>, "economic": <1-5>, "cultural": <1-5>, "temporal": <1-5>}}
+
+Оценивайте на основе ваших знаний о бренде. Предоставьте только JSON.""",
+        "dimension_descriptions": {
+            "semiotic": "визуальная и вербальная идентичность (логотипы, упаковка, язык дизайна)",
+            "narrative": "нарратив бренда (история происхождения, мифология, стиль коммуникации)",
+            "ideological": "ценности, убеждения и предназначение (что олицетворяет бренд)",
+            "experiential": "сенсорный опыт и взаимодействие (ощущение продукта, качество обслуживания)",
+            "social": "сообщество, сигнализация статуса (кто пользуется этим брендом, что это говорит о них)",
+            "economic": "восприятие цены и ценности (доступность, роскошь, соотношение цены и качества)",
+            "cultural": "культурные коды и позиционирование (к какой культуре или субкультуре принадлежит)",
+            "temporal": "наследие и история (долговечность, традиции, послужной список)",
+        },
+    },
+}
+
 MULTITURN_TURN1_TEMPLATE = """You are evaluating the brand {brand} on eight dimensions of brand perception.
 For each dimension, rate how strongly {brand} communicates through that channel
 on a scale of 1 to 5, where 1 = Not at all, 2 = Slightly, 3 = Moderately,
@@ -296,6 +535,15 @@ def format_dimensions() -> str:
     lines = []
     for i, dim in enumerate(DIMENSIONS, 1):
         lines.append(f"{i}. {dim.capitalize()}: {DIMENSION_DESCRIPTIONS[dim]}")
+    return "\n".join(lines)
+
+
+def format_dimensions_native(language_config: dict) -> str:
+    """Format dimension descriptions in native language."""
+    lines = []
+    for i, dim in enumerate(DIMENSIONS, 1):
+        desc = language_config["dimension_descriptions"][dim]
+        lines.append(f"{i}. {dim.capitalize()}: {desc}")
     return "\n".join(lines)
 
 
@@ -584,6 +832,53 @@ def call_sarvam(
     return data["choices"][0]["message"]["content"]
 
 
+def call_cerebras(
+    prompt: str, model_config: dict, system_prompt: str | None = None
+) -> str:
+    import openai
+
+    messages = []
+    if system_prompt:
+        messages.append({"role": "system", "content": system_prompt})
+    messages.append({"role": "user", "content": prompt})
+    client = openai.OpenAI(
+        api_key=os.environ["CEREBRAS_API_KEY"],
+        base_url="https://api.cerebras.ai/v1",
+    )
+    response = client.chat.completions.create(
+        model=model_config["model_id"],
+        max_tokens=model_config["max_tokens"],
+        temperature=model_config["temperature"],
+        messages=messages,
+    )
+    content = response.choices[0].message.content or ""
+    # Strip thinking blocks from Qwen
+    content = re.sub(r"<think>.*?</think>", "", content, flags=re.DOTALL).strip()
+    return content
+
+
+def call_mistral(
+    prompt: str, model_config: dict, system_prompt: str | None = None
+) -> str:
+    import openai
+
+    messages = []
+    if system_prompt:
+        messages.append({"role": "system", "content": system_prompt})
+    messages.append({"role": "user", "content": prompt})
+    client = openai.OpenAI(
+        api_key=os.environ["MISTRAL_API_KEY"],
+        base_url="https://api.mistral.ai/v1",
+    )
+    response = client.chat.completions.create(
+        model=model_config["model_id"],
+        max_tokens=model_config["max_tokens"],
+        temperature=model_config["temperature"],
+        messages=messages,
+    )
+    return response.choices[0].message.content
+
+
 PROVIDERS = {
     "anthropic": call_anthropic,
     "openai": call_openai,
@@ -594,6 +889,8 @@ PROVIDERS = {
     "xai": call_xai,
     "yandex": call_yandex,
     "sarvam": call_sarvam,
+    "cerebras": call_cerebras,
+    "mistral": call_mistral,
 }
 
 
@@ -773,6 +1070,10 @@ def run_experiment(
                 time.sleep(1.5)  # Conservative for Yandex
             elif provider == "sarvam":
                 time.sleep(1.0)
+            elif provider == "cerebras":
+                time.sleep(0.5)
+            elif provider == "mistral":
+                time.sleep(0.5)
             else:
                 time.sleep(0.5)
 
@@ -968,6 +1269,158 @@ def run_multiturn(model_filter: str | None = None, dry_run: bool = False):
                 time.sleep(1.5)
             elif provider == "sarvam":
                 time.sleep(1.0)
+            elif provider == "cerebras":
+                time.sleep(0.5)
+            elif provider == "mistral":
+                time.sleep(0.5)
+            else:
+                time.sleep(0.5)
+
+        except Exception as e:
+            errors += 1
+            n_done = completed + skipped + errors
+            print(f"[{n_done}/{total}] {cell['cell_id']} ERROR: {e}")
+
+    print(
+        f"\nComplete: {completed} new, {skipped} skipped, {errors} errors, {total} total"
+    )
+
+
+# ---------------------------------------------------------------------------
+# Native-Language Ablation Runner
+# ---------------------------------------------------------------------------
+
+
+def run_native_language(model_filter: str | None = None, dry_run: bool = False):
+    """Run native-language ablation: home portfolios in their native language."""
+    output_dir = Path(__file__).parent / "responses"
+    output_dir.mkdir(exist_ok=True)
+
+    cells = []
+    for portfolio_key, lang_config in NATIVE_LANGUAGE_PORTFOLIOS.items():
+        portfolio = PORTFOLIOS[portfolio_key]
+        dims_text = format_dimensions_native(lang_config)
+
+        for brand_info in portfolio["brands"]:
+            for condition in ["native_solo", "native_portfolio"]:
+                for model in MODELS:
+                    for rep in range(1, REPETITIONS + 1):
+                        cell_id = (
+                            f"{portfolio_key}_{brand_info['name'].replace(' ', '_').replace('&', 'and')}"
+                            f"_{condition}_{model['id']}_rep{rep}"
+                        )
+                        cells.append(
+                            {
+                                "cell_id": cell_id,
+                                "portfolio_key": portfolio_key,
+                                "brand": brand_info["name"],
+                                "category": brand_info["category"],
+                                "condition": condition,
+                                "model": model,
+                                "repetition": rep,
+                                "language": lang_config["language"],
+                                "language_name": lang_config["language_name"],
+                                "dims_text": dims_text,
+                                "lang_config": lang_config,
+                            }
+                        )
+
+    if model_filter:
+        cells = [c for c in cells if c["model"]["id"] == model_filter]
+
+    total = len(cells)
+    completed = 0
+    errors = 0
+    skipped = 0
+
+    print(f"R20 Native-Language Ablation: {total} cells to process")
+    print(f"Languages: {', '.join(sorted(set(c['language_name'] for c in cells)))}")
+    print(f"Models: {', '.join(sorted(set(c['model']['id'] for c in cells)))}")
+    print()
+
+    for cell in cells:
+        output_file = output_dir / f"{cell['cell_id']}.json"
+        if output_file.exists():
+            skipped += 1
+            continue
+
+        if dry_run:
+            print(f"[DRY RUN] {cell['cell_id']}")
+            completed += 1
+            continue
+
+        portfolio = PORTFOLIOS[cell["portfolio_key"]]
+        brand = cell["brand"]
+        siblings = [b["name"] for b in portfolio["brands"] if b["name"] != brand]
+        lang_config = cell["lang_config"]
+        dims_text = cell["dims_text"]
+
+        if cell["condition"] == "native_solo":
+            user_prompt = lang_config["solo_template"].format(
+                brand=brand, dimensions=dims_text
+            )
+        else:
+            user_prompt = lang_config["portfolio_template"].format(
+                brand=brand,
+                parent=portfolio["parent"],
+                descriptor=portfolio["descriptor"],
+                siblings=", ".join(siblings),
+                dimensions=dims_text,
+            )
+
+        provider_fn = PROVIDERS[cell["model"]["provider"]]
+        mid = cell["model"]["id"]
+
+        try:
+            response_text = provider_fn(user_prompt, cell["model"])
+            scores = parse_scores(response_text)
+
+            record = {
+                "cell_id": cell["cell_id"],
+                "portfolio": cell["portfolio_key"],
+                "brand": brand,
+                "category": cell["category"],
+                "condition": cell["condition"],
+                "language": cell["language"],
+                "language_name": cell["language_name"],
+                "model_id": mid,
+                "model_name": cell["model"]["name"],
+                "provider": cell["model"]["provider"],
+                "tradition": cell["model"]["tradition"],
+                "temperature": cell["model"]["temperature"],
+                "repetition": cell["repetition"],
+                "prompt": user_prompt,
+                "system_prompt": None,
+                "response": response_text,
+                "scores": scores,
+                "parse_success": scores is not None,
+                "scale": "1-5",
+                "version": "2.0",
+                "timestamp": time.strftime("%Y-%m-%dT%H:%M:%SZ"),
+            }
+
+            with open(output_file, "w") as f:
+                json.dump(record, f, indent=2)
+
+            completed += 1
+            status = "OK" if scores else "PARSE_FAIL"
+            n_done = completed + skipped + errors
+            print(
+                f"[{n_done}/{total}] {cell['cell_id']} {status}"
+                + (f" scores={list(scores.values())}" if scores else "")
+            )
+
+            provider = cell["model"]["provider"]
+            if provider == "ollama":
+                time.sleep(0.1)
+            elif provider in ("groq", "xai"):
+                time.sleep(1.0)
+            elif provider in ("cerebras", "mistral"):
+                time.sleep(0.5)
+            elif provider == "yandex":
+                time.sleep(1.5)
+            elif provider == "sarvam":
+                time.sleep(1.0)
             else:
                 time.sleep(0.5)
 
@@ -1017,12 +1470,19 @@ if __name__ == "__main__":
         action="store_true",
         help="Run multi-turn experiment (Turn 1 solo, Turn 2 reveal + re-rate)",
     )
+    parser.add_argument(
+        "--native",
+        action="store_true",
+        help="Run native-language ablation (home portfolios in native language)",
+    )
     args = parser.parse_args()
 
     if args.reparse:
         reparse_failures()
     elif args.multiturn:
         run_multiturn(model_filter=args.model, dry_run=args.dry_run)
+    elif args.native:
+        run_native_language(model_filter=args.model, dry_run=args.dry_run)
     elif args.recommendation:
         # Recommendation uses the same runner with different conditions
         run_experiment(

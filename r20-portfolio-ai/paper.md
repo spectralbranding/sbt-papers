@@ -4,7 +4,7 @@
 
 DOI: 10.5281/zenodo.19555282
 
-**Abstract** (198 words)
+**Abstract**
 
 Large language models increasingly mediate consumer access to brand information through search, recommendation, and conversational interfaces. Prior work establishes that AI systems exhibit systematic dimensional collapse when perceiving brands. Separately, portfolio theory predicts that corporate context should produce interference effects. This paper tests whether portfolio framing alters AI brand perception through a comprehensive experiment: 11 brands across 4 portfolios (LVMH, Unilever, Procter & Gamble, Toyota) rated under 6 conditions by 10 large language models from 5 training traditions---including Russian, Indian, and Japanese models---yielding 2,930 total observations. Three prompt modalities are tested: direct rating, naturalistic recommendation, and multi-turn conversation with mid-conversation portfolio reveal. Results show near-zero effect of portfolio framing across all modalities (mean |delta DCI| = .31, TOST equivalence confirmed for 8/11 brands). Western and non-Western models show identical immunity (both d < .10). Multi-turn portfolio reveal produces slightly more individual-brand effects (3/11 FDR-significant) but no systematic pattern. The sole exception is Lexus under Toyota portfolio framing (d = .64), suggesting aspiration dynamics may partially penetrate AI perception where symmetric interference does not. These findings provide evidence for spectral immunity as a structural property of AI brand perception with direct implications for portfolio management in AI-mediated markets.
 
