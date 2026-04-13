@@ -1,0 +1,30 @@
+# CONTRIBUTORS.yaml -- PRISM Instrument Specification
+# Verified contributor attribution per the Research-as-Repository protocol
+
+contributors:
+  - name: "Dmitry Zharnikov"
+    orcid: "0009-0000-6893-9231"
+    type: human
+    roles:
+      - conceptualization
+      - methodology
+      - writing-original
+      - writing-review
+      - project-administration
+    affiliation: "Independent Researcher"
+    first_commit: "2026-04-13"
+    last_commit: "2026-04-13"
+    notes: >
+      Designed the PRISM instrument family architecture, specified PRISM-B
+      items and scoring algorithm, formulated propositions P1-P4, connected
+      to Perception DOP framework, and wrote the full manuscript.
+
+  - name: "Claude (Anthropic)"
+    type: ai_tool
+    roles:
+      - writing-review
+      - consistency-checking
+    disclosure: >
+      Used for manuscript drafting assistance, citation verification, and
+      self-adversarial review (/review-paper protocol). All instrument design
+      decisions and theoretical contributions remain solely the author's work.
