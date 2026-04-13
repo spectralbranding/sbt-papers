@@ -240,7 +240,7 @@ Machine-readable citations: [SBT CITATION.cff](spectral-brand-theory/CITATION.cf
 
 **Dmitry Zharnikov** — dmitry@spectralbranding.com
 
-Brand strategist and computational framework designer. Creator of Spectral Brand Theory, an AI-native approach to modeling how brands form in the observer's mind. Background in financial systems engineering and applied epistemology.
+Brand measurement scientist and framework designer. Creator of Spectral Brand Theory, an AI-native approach to modeling how brands form in the observer's mind. Background in financial systems engineering and applied epistemology.
 
 ## License
 
