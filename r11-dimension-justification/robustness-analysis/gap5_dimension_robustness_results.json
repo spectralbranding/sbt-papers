@@ -1,0 +1,474 @@
+{
+  "metadata": {
+    "analysis": "Gap 5: Dimension Robustness",
+    "data_source": "R15 Run 5",
+    "n_models": 22,
+    "dimensions": [
+      "semiotic",
+      "narrative",
+      "ideological",
+      "experiential",
+      "social",
+      "economic",
+      "cultural",
+      "temporal"
+    ]
+  },
+  "baseline": {
+    "mean_dci": 0.3564315353568814,
+    "std_dci": 0.029350144030497162,
+    "min_dci": 0.2895833333333333,
+    "max_dci": 0.40246212121212116
+  },
+  "drop_one": [
+    {
+      "dropped": "semiotic",
+      "spearman_rho": 0.737079950318537,
+      "spearman_p": 9.110988243927375e-05,
+      "cosine_sim": 0.9976217573406638,
+      "mean_rank_displacement": 3.3636363636363638,
+      "mean_dci_delta": -0.10845105550415074,
+      "std_dci_delta": 0.018574121228378808,
+      "n_models": 22
+    },
+    {
+      "dropped": "narrative",
+      "spearman_rho": 0.9522734070782017,
+      "spearman_p": 9.083229210885533e-12,
+      "cosine_sim": 0.9998070188584909,
+      "mean_rank_displacement": 1.2727272727272727,
+      "mean_dci_delta": 0.04019145076041524,
+      "std_dci_delta": 0.008095496704044964,
+      "n_models": 22
+    },
+    {
+      "dropped": "ideological",
+      "spearman_rho": 0.9432364115187408,
+      "spearman_p": 4.953541212484227e-11,
+      "cosine_sim": 0.9996619152306206,
+      "mean_rank_displacement": 1.4545454545454546,
+      "mean_dci_delta": 0.03476139534807996,
+      "std_dci_delta": 0.008493025244539324,
+      "n_models": 22
+    },
+    {
+      "dropped": "experiential",
+      "spearman_rho": 0.9726066470869891,
+      "spearman_p": 3.835280440806327e-14,
+      "cosine_sim": 0.9997023780760211,
+      "mean_rank_displacement": 1.0909090909090908,
+      "mean_dci_delta": 0.08030618219612959,
+      "std_dci_delta": 0.01416720904052299,
+      "n_models": 22
+    },
+    {
+      "dropped": "social",
+      "spearman_rho": 0.9793843937565848,
+      "spearman_p": 2.2986444313005912e-15,
+      "cosine_sim": 0.9998662716565706,
+      "mean_rank_displacement": 0.9090909090909091,
+      "mean_dci_delta": 0.04114658113985809,
+      "std_dci_delta": 0.007520125755442026,
+      "n_models": 22
+    },
+    {
+      "dropped": "economic",
+      "spearman_rho": 0.7201355836445477,
+      "spearman_p": 0.00015734653953705972,
+      "cosine_sim": 0.9938716018739767,
+      "mean_rank_displacement": 3.5454545454545454,
+      "mean_dci_delta": -0.17353842735492497,
+      "std_dci_delta": 0.02267434330456633,
+      "n_models": 22
+    },
+    {
+      "dropped": "cultural",
+      "spearman_rho": 0.9505789704108029,
+      "spearman_p": 1.2784396275498925e-11,
+      "cosine_sim": 0.9996683798896994,
+      "mean_rank_displacement": 1.2727272727272727,
+      "mean_dci_delta": 0.02893438452896473,
+      "std_dci_delta": 0.009009784298504084,
+      "n_models": 22
+    },
+    {
+      "dropped": "temporal",
+      "spearman_rho": 0.9737362715319217,
+      "spearman_p": 2.528942924947767e-14,
+      "cosine_sim": 0.9998957766008383,
+      "mean_rank_displacement": 1.0,
+      "mean_dci_delta": 0.03573824907892129,
+      "std_dci_delta": 0.006857509735059794,
+      "n_models": 22
+    }
+  ],
+  "drop_pair": [
+    {
+      "dropped": "semiotic + narrative",
+      "spearman_rho": 0.7512002558801948,
+      "spearman_p": 5.596498975786742e-05,
+      "cosine_sim": 0.9983581528461304,
+      "mean_rank_displacement": 3.1818181818181817,
+      "mean_dci_delta": -0.07526895864102448,
+      "n_models": 22
+    },
+    {
+      "dropped": "semiotic + ideological",
+      "spearman_rho": 0.7077097147502888,
+      "spearman_p": 0.00022932933609370632,
+      "cosine_sim": 0.9978587808084163,
+      "mean_rank_displacement": 3.727272727272727,
+      "mean_dci_delta": -0.07989828575381455,
+      "n_models": 22
+    },
+    {
+      "dropped": "semiotic + experiential",
+      "spearman_rho": 0.7478113825453968,
+      "spearman_p": 6.308806889040226e-05,
+      "cosine_sim": 0.9967547574507103,
+      "mean_rank_displacement": 3.1818181818181817,
+      "mean_dci_delta": -0.04030309161186484,
+      "n_models": 22
+    },
+    {
+      "dropped": "semiotic + social",
+      "spearman_rho": 0.7647557492193863,
+      "spearman_p": 3.399399020661448e-05,
+      "cosine_sim": 0.9976026764563936,
+      "mean_rank_displacement": 3.4545454545454546,
+      "mean_dci_delta": -0.07429736662579615,
+      "n_models": 22
+    },
+    {
+      "dropped": "semiotic + economic",
+      "spearman_rho": NaN,
+      "spearman_p": NaN,
+      "cosine_sim": NaN,
+      "mean_rank_displacement": 9.272727272727273,
+      "mean_dci_delta": -0.35643153535688143,
+      "n_models": 22
+    },
+    {
+      "dropped": "semiotic + cultural",
+      "spearman_rho": 0.6162101347107463,
+      "spearman_p": 0.0022601720004069236,
+      "cosine_sim": 0.9973284799986037,
+      "mean_rank_displacement": 4.545454545454546,
+      "mean_dci_delta": -0.08464232170655006,
+      "n_models": 22
+    },
+    {
+      "dropped": "semiotic + temporal",
+      "spearman_rho": 0.7365151380960707,
+      "spearman_p": 9.284484062702716e-05,
+      "cosine_sim": 0.9973719525012982,
+      "mean_rank_displacement": 3.4545454545454546,
+      "mean_dci_delta": -0.0788088522059997,
+      "n_models": 22
+    },
+    {
+      "dropped": "narrative + ideological",
+      "spearman_rho": 0.8189777225761521,
+      "spearman_p": 3.1555589673348235e-06,
+      "cosine_sim": 0.9991804786424436,
+      "mean_rank_displacement": 2.727272727272727,
+      "mean_dci_delta": 0.08391147909312269,
+      "n_models": 22
+    },
+    {
+      "dropped": "narrative + experiential",
+      "spearman_rho": 0.9392827259614767,
+      "spearman_p": 9.55293220434423e-11,
+      "cosine_sim": 0.9996117596890778,
+      "mean_rank_displacement": 1.5454545454545454,
+      "mean_dci_delta": 0.14202562107700206,
+      "n_models": 22
+    },
+    {
+      "dropped": "narrative + social",
+      "spearman_rho": 0.9601807781927302,
+      "spearman_p": 1.5341843908093262e-12,
+      "cosine_sim": 0.9997907687940174,
+      "mean_rank_displacement": 1.0909090909090908,
+      "mean_dci_delta": 0.09167426846121686,
+      "n_models": 22
+    },
+    {
+      "dropped": "narrative + economic",
+      "spearman_rho": 0.6546173658384554,
+      "spearman_p": 0.0009475022257023334,
+      "cosine_sim": 0.9926133887985019,
+      "mean_rank_displacement": 4.090909090909091,
+      "mean_dci_delta": -0.14633234316363763,
+      "n_models": 22
+    },
+    {
+      "dropped": "narrative + cultural",
+      "spearman_rho": 0.8517368314791983,
+      "spearman_p": 4.950150612077772e-07,
+      "cosine_sim": 0.999351773636264,
+      "mean_rank_displacement": 2.272727272727273,
+      "mean_dci_delta": 0.07639976452197261,
+      "n_models": 22
+    },
+    {
+      "dropped": "narrative + temporal",
+      "spearman_rho": 0.894662560386638,
+      "spearman_p": 1.9529158783558164e-08,
+      "cosine_sim": 0.9996651606984358,
+      "mean_rank_displacement": 1.9090909090909092,
+      "mean_dci_delta": 0.08494757079592405,
+      "n_models": 22
+    },
+    {
+      "dropped": "ideological + experiential",
+      "spearman_rho": 0.8743293203778507,
+      "spearman_p": 1.0452521181965794e-07,
+      "cosine_sim": 0.9993201353569802,
+      "mean_rank_displacement": 2.3636363636363638,
+      "mean_dci_delta": 0.13358945312414258,
+      "n_models": 22
+    },
+    {
+      "dropped": "ideological + social",
+      "spearman_rho": 0.9358938526266788,
+      "spearman_p": 1.621163219425168e-10,
+      "cosine_sim": 0.9995484126027414,
+      "mean_rank_displacement": 1.7272727272727273,
+      "mean_dci_delta": 0.08483078016915868,
+      "n_models": 22
+    },
+    {
+      "dropped": "ideological + economic",
+      "spearman_rho": 0.5128494979994112,
+      "spearman_p": 0.014659180973633197,
+      "cosine_sim": 0.9938236027333203,
+      "mean_rank_displacement": 5.181818181818182,
+      "mean_dci_delta": -0.1503923081891976,
+      "n_models": 22
+    },
+    {
+      "dropped": "ideological + cultural",
+      "spearman_rho": 0.8161536614638206,
+      "spearman_p": 3.6380810438225523e-06,
+      "cosine_sim": 0.9989096141355418,
+      "mean_rank_displacement": 3.1818181818181817,
+      "mean_dci_delta": 0.07019880080419069,
+      "n_models": 22
+    },
+    {
+      "dropped": "ideological + temporal",
+      "spearman_rho": 0.9477549092984712,
+      "spearman_p": 2.202366170568669e-11,
+      "cosine_sim": 0.9996434680605292,
+      "mean_rank_displacement": 1.2727272727272727,
+      "mean_dci_delta": 0.07811060604194382,
+      "n_models": 22
+    },
+    {
+      "dropped": "experiential + social",
+      "spearman_rho": 0.9172550492852904,
+      "spearman_p": 1.9233999093566524e-09,
+      "cosine_sim": 0.9993171777681918,
+      "mean_rank_displacement": 2.0,
+      "mean_dci_delta": 0.14392900985103305,
+      "n_models": 22
+    },
+    {
+      "dropped": "experiential + economic",
+      "spearman_rho": 0.8234962203558828,
+      "spearman_p": 2.500204292374185e-06,
+      "cosine_sim": 0.9951116064415768,
+      "mean_rank_displacement": 3.090909090909091,
+      "mean_dci_delta": -0.11777108506043438,
+      "n_models": 22
+    },
+    {
+      "dropped": "experiential + cultural",
+      "spearman_rho": 0.9579215293028649,
+      "spearman_p": 2.639153343007674e-12,
+      "cosine_sim": 0.9996835355264682,
+      "mean_rank_displacement": 1.4545454545454546,
+      "mean_dci_delta": 0.12415618906128918,
+      "n_models": 22
+    },
+    {
+      "dropped": "experiential + temporal",
+      "spearman_rho": 0.9330697915143471,
+      "spearman_p": 2.4654228096754596e-10,
+      "cosine_sim": 0.9995075237947254,
+      "mean_rank_displacement": 1.7272727272727273,
+      "mean_dci_delta": 0.13522538181784804,
+      "n_models": 22
+    },
+    {
+      "dropped": "social + economic",
+      "spearman_rho": 0.7167467103097497,
+      "spearman_p": 0.00017470626454083534,
+      "cosine_sim": 0.9939900817120222,
+      "mean_rank_displacement": 4.0,
+      "mean_dci_delta": -0.14582653344109103,
+      "n_models": 22
+    },
+    {
+      "dropped": "social + cultural",
+      "spearman_rho": 0.9229031715099536,
+      "spearman_p": 9.714157198741779e-10,
+      "cosine_sim": 0.9994821749260436,
+      "mean_rank_displacement": 2.0,
+      "mean_dci_delta": 0.07748464457051481,
+      "n_models": 22
+    },
+    {
+      "dropped": "social + temporal",
+      "spearman_rho": 0.9491525423728815,
+      "spearman_p": 1.6891396783220775e-11,
+      "cosine_sim": 0.9997114646532907,
+      "mean_rank_displacement": 1.5454545454545454,
+      "mean_dci_delta": 0.08614349661239767,
+      "n_models": 22
+    },
+    {
+      "dropped": "economic + cultural",
+      "spearman_rho": 0.6734463276836159,
+      "spearman_p": 0.0005915536614513802,
+      "cosine_sim": 0.9943586641768034,
+      "mean_rank_displacement": 3.909090909090909,
+      "mean_dci_delta": -0.15445731436721008,
+      "n_models": 22
+    },
+    {
+      "dropped": "economic + temporal",
+      "spearman_rho": 0.76419093699692,
+      "spearman_p": 3.472991700711495e-05,
+      "cosine_sim": 0.9944084066579278,
+      "mean_rank_displacement": 3.090909090909091,
+      "mean_dci_delta": -0.14961808108906566,
+      "n_models": 22
+    },
+    {
+      "dropped": "cultural + temporal",
+      "spearman_rho": 0.916690237062824,
+      "spearman_p": 2.05387313411597e-09,
+      "cosine_sim": 0.9995011264991035,
+      "mean_rank_displacement": 1.9090909090909092,
+      "mean_dci_delta": 0.07106909599028198,
+      "n_models": 22
+    }
+  ],
+  "augmented_10d": {
+    "spearman_rho": 0.999717633765372,
+    "spearman_p": 5.806634913972021e-34,
+    "cosine_sim": 1.0,
+    "n_models": 22,
+    "note": "Synthetic 10D via splitting experiential and economic"
+  },
+  "variance_decomposition": [
+    {
+      "dimension": "semiotic",
+      "variance": 5.2951331911681825,
+      "fraction_of_total": 0.15414188867788714,
+      "mean_weight": 14.414306394163823,
+      "std_weight": 2.3552669468125305
+    },
+    {
+      "dimension": "narrative",
+      "variance": 3.1604827003300957,
+      "fraction_of_total": 0.09200198653646985,
+      "mean_weight": 10.12383822614339,
+      "std_weight": 1.8196103639340735
+    },
+    {
+      "dimension": "ideological",
+      "variance": 5.7317993988326235,
+      "fraction_of_total": 0.1668532882860164,
+      "mean_weight": 8.972726965423526,
+      "std_weight": 2.450457554692279
+    },
+    {
+      "dimension": "experiential",
+      "variance": 3.9269577232472255,
+      "fraction_of_total": 0.11431415572872552,
+      "mean_weight": 18.296684512928213,
+      "std_weight": 2.0282888625806046
+    },
+    {
+      "dimension": "social",
+      "variance": 2.0395323622769825,
+      "fraction_of_total": 0.05937100333290968,
+      "mean_weight": 10.326835114663925,
+      "std_weight": 1.4617294383560997
+    },
+    {
+      "dimension": "economic",
+      "variance": 6.414644397941223,
+      "fraction_of_total": 0.18673097861728244,
+      "mean_weight": 21.228847141524316,
+      "std_weight": 2.5923162721755313
+    },
+    {
+      "dimension": "cultural",
+      "variance": 5.942682468538316,
+      "fraction_of_total": 0.17299211680667437,
+      "mean_weight": 7.5613043527108355,
+      "std_weight": 2.4951287237320083
+    },
+    {
+      "dimension": "temporal",
+      "variance": 1.8410988247480353,
+      "fraction_of_total": 0.05359458201403471,
+      "mean_weight": 9.07545729244197,
+      "std_weight": 1.3888017127563907
+    }
+  ],
+  "profile_stability": [
+    {
+      "dropped": "semiotic",
+      "mean_pairwise_cosine_8d": 0.9759394533344304,
+      "mean_pairwise_cosine_7d": 0.9772019797464656,
+      "delta": 0.0012625264120351698
+    },
+    {
+      "dropped": "narrative",
+      "mean_pairwise_cosine_8d": 0.9759394533344304,
+      "mean_pairwise_cosine_7d": 0.9771279970902754,
+      "delta": 0.001188543755844984
+    },
+    {
+      "dropped": "ideological",
+      "mean_pairwise_cosine_8d": 0.9759394533344304,
+      "mean_pairwise_cosine_7d": 0.9796990686309149,
+      "delta": 0.0037596152964844975
+    },
+    {
+      "dropped": "experiential",
+      "mean_pairwise_cosine_8d": 0.9759394533344304,
+      "mean_pairwise_cosine_7d": 0.972162363570908,
+      "delta": -0.003777089763522423
+    },
+    {
+      "dropped": "social",
+      "mean_pairwise_cosine_8d": 0.9759394533344304,
+      "mean_pairwise_cosine_7d": 0.975675701633721,
+      "delta": -0.0002637517007094692
+    },
+    {
+      "dropped": "economic",
+      "mean_pairwise_cosine_8d": 0.9759394533344304,
+      "mean_pairwise_cosine_7d": 0.9718089669342358,
+      "delta": -0.004130486400194644
+    },
+    {
+      "dropped": "cultural",
+      "mean_pairwise_cosine_8d": 0.9759394533344304,
+      "mean_pairwise_cosine_7d": 0.9802968440368656,
+      "delta": 0.004357390702435127
+    },
+    {
+      "dropped": "temporal",
+      "mean_pairwise_cosine_8d": 0.9759394533344304,
+      "mean_pairwise_cosine_7d": 0.9759760804939953,
+      "delta": 3.662715956487261e-05
+    }
+  ]
+}
