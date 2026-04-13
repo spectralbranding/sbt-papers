@@ -1,0 +1,30 @@
+{
+  "cell_id": "P&G_Tide_solo_sarvam_rep5",
+  "portfolio": "P&G",
+  "brand": "Tide",
+  "category": "laundry detergent",
+  "condition": "solo",
+  "model_id": "sarvam",
+  "model_name": "Sarvam M",
+  "tradition": "Indian",
+  "repetition": 5,
+  "prompt": "You are evaluating the brand Tide on eight dimensions of brand perception.\nFor each dimension, rate how strongly Tide communicates through that channel\non a scale of 1 to 5, where 1 = Not at all, 2 = Slightly, 3 = Moderately,\n4 = Strongly, 5 = Very strongly.\n\nDimensions:\n1. Semiotic: visual and verbal identity (logos, packaging, design language)\n2. Narrative: brand storytelling (origin story, mythology, communication style)\n3. Ideological: values, beliefs, and purpose (what the brand stands for)\n4. Experiential: sensory and interaction experience (product feel, service quality)\n5. Social: community, status signaling (who uses this brand, what it says about them)\n6. Economic: pricing and value perception (affordability, luxury, value-for-money)\n7. Cultural: cultural codes and positioning (what culture or subculture it belongs to)\n8. Temporal: heritage and history (longevity, tradition, track record)\n\nRespond in JSON format with the following keys:\n{\"semiotic\": <1-5>, \"narrative\": <1-5>, \"ideological\": <1-5>, \"experiential\": <1-5>, \"social\": <1-5>, \"economic\": <1-5>, \"cultural\": <1-5>, \"temporal\": <1-5>}\n\nEvaluate based on your knowledge of the brand. Provide only the JSON.",
+  "system_prompt": null,
+  "response": "<think>\nOkay, let's tackle this evaluation of Tide. First, I need to go through each of the eight dimensions one by one and rate them on a scale from 1 to 5. Let's start with the semiotic dimension. Tide has a very recognizable logo with the blue color and the word \"Tide\" in a bold, clean font. Their packaging is usually white with blue accents, which gives a clean and effective look. So I'd rate that as 5.\n\nNext, narrative. Tide's origin story goes back to the 1940s, but I'm not sure how much they emphasize their history in their current marketing. They have some campaigns around cleanliness and care, but the storytelling isn't as prominent as other brands. Maybe a 3 or 4. Hmm, maybe 3 because they don't focus heavily on their history in their narratives.\n\nIdeological: Tide positions itself around cleanliness, care for family, and environmental responsibility. They have initiatives like the Tide Loads of Love program. So their values are clear, so probably a 4 or 5. Maybe 4 because while they communicate values, maybe not as deeply as some other brands.\n\nExperiential: The product's performance is reliable, maybe not luxury but effective. The sensory experience\u2014like the smell, texture of the detergent\u2014might be moderate. Service quality isn't really applicable here. So maybe a 3 or 4. I'll go with 4 because the product works well, but the sensory aspects might not be highlighted much.\n\nSocial: Tide is used by families and households, so it's a common brand. It's not necessarily a status symbol, but it's trusted. So maybe a 3 or 4. Let's say 4 because it's widely recognized and used by many, which might indicate a community aspect.\n\nEconomic: Tide is positioned mid-range, not the cheapest but offers good value. They have a range of products from regular to concentrated formulas. So pricing is competitive. Maybe a 4 or 5. I think 4 because while value-for-money is there, it's not necessarily premium.\n\nCultural: Tide is part of household cleaning products, which is a broad category. They might be part of the \"clean\" culture, but not tied to a specific subculture. Maybe a 3 because it's mainstream but doesn't have a unique cultural niche.\n\nTemporal: Tide has been around for nearly a century, which is a long history. They emphasize their heritage in some ads, so longevity is a key point. That's a 5 for sure.\n\nPutting it all together, the scores would be:\n\nsemiotic:5, narrative:3, ideological:4, experiential:4, social:4, economic:4, cultural:3, temporal:5.\n</think>\n\n{\n  \"semiotic\": 5,\n  \"narrative\": 3,\n  \"ideological\": 4,\n  \"experiential\": 4,\n  \"social\": 4,\n  \"economic\": 4,\n  \"cultural\": 3,\n  \"temporal\": 5\n}",
+  "scores": {
+    "semiotic": 5.0,
+    "narrative": 3.0,
+    "ideological": 4.0,
+    "experiential": 4.0,
+    "social": 4.0,
+    "economic": 4.0,
+    "cultural": 3.0,
+    "temporal": 5.0
+  },
+  "parse_success": true,
+  "scale": "1-5",
+  "version": "1.0",
+  "timestamp": "2026-04-13T18:30:22Z",
+  "temperature": 0.7,
+  "provider": "sarvam"
+}

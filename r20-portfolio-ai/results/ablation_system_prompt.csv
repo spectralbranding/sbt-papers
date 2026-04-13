@@ -1,0 +1,37 @@
+model,brand,cos_solo_user_port,cos_solo_sys_port,cos_user_sys
+claude,Axe,0.9982,0.9976,0.9981
+claude,Ben & Jerry's,0.9995,0.9995,1.0
+claude,Dior,1.0,1.0,1.0
+claude,Dove,0.9999,1.0,0.9999
+claude,Fendi,0.9999,1.0,0.9999
+claude,Gillette,0.9986,0.9992,0.9959
+claude,Louis Vuitton,0.9996,0.9999,0.9995
+claude,Pampers,0.9937,0.996,0.9953
+claude,Tide,0.9997,0.9973,0.9988
+deepseek,Axe,0.9989,0.9965,0.9978
+deepseek,Ben & Jerry's,0.9999,0.9982,0.999
+deepseek,Dior,1.0,1.0,1.0
+deepseek,Dove,0.9985,0.9999,0.9989
+deepseek,Fendi,0.9996,0.9999,0.9994
+deepseek,Gillette,0.997,0.9944,0.9981
+deepseek,Louis Vuitton,1.0,1.0,1.0
+deepseek,Pampers,0.9977,0.9952,0.9962
+deepseek,Tide,0.9966,0.999,0.9951
+gemma4,Axe,0.9984,0.9959,0.9949
+gemma4,Ben & Jerry's,0.9989,0.9997,0.9988
+gemma4,Dior,0.9998,0.9994,0.9994
+gemma4,Dove,0.9991,0.9986,0.9986
+gemma4,Fendi,0.9988,0.9984,0.9988
+gemma4,Gillette,0.9946,0.9969,0.9952
+gemma4,Louis Vuitton,0.9991,0.997,0.9987
+gemma4,Pampers,0.9967,0.994,0.9927
+gemma4,Tide,0.9991,0.9982,0.9984
+llama,Axe,0.9941,0.9912,0.9945
+llama,Ben & Jerry's,1.0,1.0,1.0
+llama,Dior,1.0,1.0,1.0
+llama,Dove,0.9999,1.0,0.9999
+llama,Fendi,0.9975,0.9964,0.9999
+llama,Gillette,0.9998,0.9998,1.0
+llama,Louis Vuitton,0.9911,0.9983,0.9911
+llama,Pampers,0.9997,0.9981,0.9986
+llama,Tide,0.9996,0.9985,0.9996

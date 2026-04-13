@@ -1,0 +1,30 @@
+{
+  "cell_id": "Unilever_Axe_solo_sarvam_rep1",
+  "portfolio": "Unilever",
+  "brand": "Axe",
+  "category": "personal care",
+  "condition": "solo",
+  "model_id": "sarvam",
+  "model_name": "Sarvam M",
+  "tradition": "Indian",
+  "repetition": 1,
+  "prompt": "You are evaluating the brand Axe on eight dimensions of brand perception.\nFor each dimension, rate how strongly Axe communicates through that channel\non a scale of 1 to 5, where 1 = Not at all, 2 = Slightly, 3 = Moderately,\n4 = Strongly, 5 = Very strongly.\n\nDimensions:\n1. Semiotic: visual and verbal identity (logos, packaging, design language)\n2. Narrative: brand storytelling (origin story, mythology, communication style)\n3. Ideological: values, beliefs, and purpose (what the brand stands for)\n4. Experiential: sensory and interaction experience (product feel, service quality)\n5. Social: community, status signaling (who uses this brand, what it says about them)\n6. Economic: pricing and value perception (affordability, luxury, value-for-money)\n7. Cultural: cultural codes and positioning (what culture or subculture it belongs to)\n8. Temporal: heritage and history (longevity, tradition, track record)\n\nRespond in JSON format with the following keys:\n{\"semiotic\": <1-5>, \"narrative\": <1-5>, \"ideological\": <1-5>, \"experiential\": <1-5>, \"social\": <1-5>, \"economic\": <1-5>, \"cultural\": <1-5>, \"temporal\": <1-5>}\n\nEvaluate based on your knowledge of the brand. Provide only the JSON.",
+  "system_prompt": null,
+  "response": "<think>\nOkay, let's tackle this evaluation of Axe's brand perception across the eight dimensions. I need to assign a rating from 1 to 5 for each. Let's go through each one step by step.\n\n1. **Semiotic**: Axe has a strong visual identity with bold logos, packaging that's often flashy and colorful. Their ads use dynamic visuals and catchy slogans. So probably a 4 or 5. Maybe 5 because they're very distinctive.\n\n2. **Narrative**: Their marketing often uses humor and exaggerated scenarios. The \"The Axe Effect\" campaign was memorable. But do they have a deep origin story or mythology? Not really. More about the product's appeal. Maybe a 3.\n\n3. **Ideological**: Axe focuses on confidence and attractiveness. Their values might be about helping men get more attention. Not sure if it's strong values beyond that. Maybe a 3 or 4. Let's say 3.\n\n4. **Experiential**: Product quality is decent, but the experience is more about the packaging and in-store presence. The actual product use might not be as strong. So maybe 3.\n\n5. **Social**: Axe is often associated with younger males, maybe peer group approval. It's a status symbol in some circles. Social signaling might be a 4.\n\n6. **Economic**: Axe products are mid-range, affordable but not cheap. Good value for the price. So maybe 4.\n\n7. **Cultural**: Axe is part of the mass-market personal care, targeting young men globally. Maybe associated with pop culture and humor. Cultural codes could be youth-oriented. So 4.\n\n8. **Temporal**: Axe has been around for a while, but not as heritage brands like Gillette. Their history isn't heavily emphasized. Maybe a 2.\n\nLet me double-check. Their semiotic is definitely strong. Social and cultural high because they target younger demographics. Economic is good value. Temporal might be lower. Yeah, that seems right.\n</think>\n\n{\n  \"semiotic\": 5,\n  \"narrative\": 3,\n  \"ideological\": 3,\n  \"experiential\": 3,\n  \"social\": 4,\n  \"economic\": 4,\n  \"cultural\": 4,\n  \"temporal\": 2\n}",
+  "scores": {
+    "semiotic": 5.0,
+    "narrative": 3.0,
+    "ideological": 3.0,
+    "experiential": 3.0,
+    "social": 4.0,
+    "economic": 4.0,
+    "cultural": 4.0,
+    "temporal": 2.0
+  },
+  "parse_success": true,
+  "scale": "1-5",
+  "version": "1.0",
+  "timestamp": "2026-04-13T18:07:40Z",
+  "temperature": 0.7,
+  "provider": "sarvam"
+}

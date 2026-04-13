@@ -6,19 +6,25 @@
   "condition": "portfolio",
   "model_id": "deepseek",
   "model_name": "DeepSeek V3",
+  "tradition": "Chinese",
   "repetition": 2,
-  "prompt": "Rate the brand Tide on each of the following 8 perceptual dimensions using a 0-10 scale (0 = not at all associated, 10 = extremely strongly associated).\n\nContext: Tide is part of the Procter & Gamble consumer goods conglomerate, which also includes Pampers, Gillette.\n\nDimensions:\n1. Semiotic: visual and verbal identity (logos, packaging, design language)\n2. Narrative: brand storytelling (origin story, mythology, communication style)\n3. Ideological: values, beliefs, and purpose (what the brand stands for)\n4. Experiential: sensory and interaction experience (product feel, service quality)\n5. Social: community, status signaling (who uses this brand, what it says about them)\n6. Economic: pricing and value perception (affordability, luxury, value-for-money)\n7. Cultural: cultural codes and positioning (what culture or subculture it belongs to)\n8. Temporal: heritage and history (longevity, tradition, track record)\n\nReturn ONLY a JSON object with your ratings, no other text. Example format:\n{\"semiotic\": 7, \"narrative\": 8, \"ideological\": 6, \"experiential\": 7, \"social\": 8, \"economic\": 5, \"cultural\": 7, \"temporal\": 6}",
-  "response": "{\"semiotic\": 9, \"narrative\": 8, \"ideological\": 7, \"experiential\": 8, \"social\": 6, \"economic\": 7, \"cultural\": 8, \"temporal\": 9}",
+  "prompt": "You are evaluating the brand Tide on eight dimensions of brand perception.\n\nContext: Tide is owned by Procter & Gamble (consumer goods conglomerate), which also owns Pampers, Gillette.\n\nFor each dimension, rate how strongly Tide communicates through that channel\non a scale of 1 to 5, where 1 = Not at all, 2 = Slightly, 3 = Moderately,\n4 = Strongly, 5 = Very strongly.\n\nDimensions:\n1. Semiotic: visual and verbal identity (logos, packaging, design language)\n2. Narrative: brand storytelling (origin story, mythology, communication style)\n3. Ideological: values, beliefs, and purpose (what the brand stands for)\n4. Experiential: sensory and interaction experience (product feel, service quality)\n5. Social: community, status signaling (who uses this brand, what it says about them)\n6. Economic: pricing and value perception (affordability, luxury, value-for-money)\n7. Cultural: cultural codes and positioning (what culture or subculture it belongs to)\n8. Temporal: heritage and history (longevity, tradition, track record)\n\nRespond in JSON format with the following keys:\n{\"semiotic\": <1-5>, \"narrative\": <1-5>, \"ideological\": <1-5>, \"experiential\": <1-5>, \"social\": <1-5>, \"economic\": <1-5>, \"cultural\": <1-5>, \"temporal\": <1-5>}\n\nEvaluate based on your knowledge of the brand. Provide only the JSON.",
+  "system_prompt": null,
+  "response": "```json\n{\n    \"semiotic\": 5,\n    \"narrative\": 4,\n    \"ideological\": 3,\n    \"experiential\": 4,\n    \"social\": 3,\n    \"economic\": 4,\n    \"cultural\": 4,\n    \"temporal\": 5\n}\n```",
   "scores": {
-    "semiotic": 9.0,
-    "narrative": 8.0,
-    "ideological": 7.0,
-    "experiential": 8.0,
-    "social": 6.0,
-    "economic": 7.0,
-    "cultural": 8.0,
-    "temporal": 9.0
+    "semiotic": 5.0,
+    "narrative": 4.0,
+    "ideological": 3.0,
+    "experiential": 4.0,
+    "social": 3.0,
+    "economic": 4.0,
+    "cultural": 4.0,
+    "temporal": 5.0
   },
   "parse_success": true,
-  "timestamp": "2026-04-13T13:34:56Z"
+  "scale": "1-5",
+  "version": "1.0",
+  "timestamp": "2026-04-13T17:33:02Z",
+  "temperature": 0.7,
+  "provider": "deepseek"
 }

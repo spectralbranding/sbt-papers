@@ -53,6 +53,10 @@ Eight companion papers establishing formal mathematical foundations for SBT, plu
 |-----|-------|------------|--------|
 | R16 | [AI-Native Brand Identity: From Visual Recognition to Cryptographic Verification](r16-ai-native-brand-identity/paper.md) | [10.5281/zenodo.19391476](https://doi.org/10.5281/zenodo.19391476) | Under review |
 | R17 | [Brand Triangulation: A Geometric Framework for Multi-Observer Brand Positioning](r17-brand-triangulation/paper.md) | Zenodo pending | Preprint |
+| R18 | [Spectral Dynamics: Velocity, Acceleration, and Phase Space in Multi-Dimensional Brand Perception](r18-spectral-dynamics/paper.md) | [10.5281/zenodo.19468204](https://doi.org/10.5281/zenodo.19468204) | Preprint |
+| R19 | [Empirical Rate-Distortion Curve for AI Brand Perception Encoders](rate-distortion/paper.md) | [10.5281/zenodo.19528833](https://doi.org/10.5281/zenodo.19528833) | Ready for Marketing Letters |
+| R20 | [Spectral Immunity: Portfolio Framing Does Not Alter AI Brand Perception](r20-portfolio-ai/paper.md) | [10.5281/zenodo.19555282](https://doi.org/10.5281/zenodo.19555282) | Preprint |
+| PRISM | [PRISM: A Structured Measurement Instrument for Multi-Dimensional Brand Perception](prism-instrument/paper.md) | [10.5281/zenodo.19555265](https://doi.org/10.5281/zenodo.19555265) | Preprint |
 
 ### Cross-Framework Synthesis
 

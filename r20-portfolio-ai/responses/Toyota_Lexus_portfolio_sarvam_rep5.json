@@ -1,0 +1,30 @@
+{
+  "cell_id": "Toyota_Lexus_portfolio_sarvam_rep5",
+  "portfolio": "Toyota",
+  "brand": "Lexus",
+  "category": "luxury automotive",
+  "condition": "portfolio",
+  "model_id": "sarvam",
+  "model_name": "Sarvam M",
+  "provider": "sarvam",
+  "tradition": "Indian",
+  "temperature": 0.7,
+  "repetition": 5,
+  "prompt": "You are evaluating the brand Lexus on eight dimensions of brand perception.\n\nContext: Lexus is owned by Toyota Motor Corporation (automotive conglomerate), which also owns Toyota.\n\nFor each dimension, rate how strongly Lexus communicates through that channel\non a scale of 1 to 5, where 1 = Not at all, 2 = Slightly, 3 = Moderately,\n4 = Strongly, 5 = Very strongly.\n\nDimensions:\n1. Semiotic: visual and verbal identity (logos, packaging, design language)\n2. Narrative: brand storytelling (origin story, mythology, communication style)\n3. Ideological: values, beliefs, and purpose (what the brand stands for)\n4. Experiential: sensory and interaction experience (product feel, service quality)\n5. Social: community, status signaling (who uses this brand, what it says about them)\n6. Economic: pricing and value perception (affordability, luxury, value-for-money)\n7. Cultural: cultural codes and positioning (what culture or subculture it belongs to)\n8. Temporal: heritage and history (longevity, tradition, track record)\n\nRespond in JSON format with the following keys:\n{\"semiotic\": <1-5>, \"narrative\": <1-5>, \"ideological\": <1-5>, \"experiential\": <1-5>, \"social\": <1-5>, \"economic\": <1-5>, \"cultural\": <1-5>, \"temporal\": <1-5>}\n\nEvaluate based on your knowledge of the brand. Provide only the JSON.",
+  "system_prompt": null,
+  "response": "<think>\nOkay, let's tackle this evaluation of Lexus on the eight dimensions. I need to rate each from 1 to 5 based on how strongly Lexus communicates through those channels. Let me start by recalling what Lexus is known for.\n\nFirst, Semiotic. Lexus has a very distinct visual identity with the big \"L\" logo, sleek design language, and premium materials. Their vehicles have a luxurious look, so I'd say this is strong. Maybe a 4 or 5. Probably 5 because their designs are very consistent and recognizable.\n\nNarrative: Lexus's origin story is about being Toyota's luxury division. They emphasize innovation and performance. Their ads often tell stories of precision and cutting-edge technology. That's a solid narrative, so maybe 4 or 5. Let's go with 4 because while they have a good story, it might not be as deeply mythologized as some brands.\n\nIdeological: Lexus stands for luxury, innovation, and reliability. They position themselves as a high-quality, advanced brand. Their values are clear, so that's probably a 4 or 5. Maybe 4 because they communicate their values effectively but might not go beyond the basics.\n\nExperiential: Lexus offers high-quality rides, quiet interiors, excellent customer service. The ownership experience is premium, so this should be strong. Definitely a 5 here.\n\nSocial: Lexus is a status symbol. It's associated with affluence and success. People buy it to signal their status. That's a strong social signal, so 5.\n\nEconomic: Priced as a luxury brand, so high but perceived as value-for-money within that segment. They emphasize value through technology and reliability. Maybe 4 because they're expensive but justify it with perceived value.\n\nCultural: Lexus is part of the luxury car culture, aligning with tech-savvy individuals and those who value prestige. It's part of the broader automotive subculture focused on performance and innovation. Maybe a 4 here, as it's part of the luxury car culture but not a subculture in itself.\n\nTemporal: Lexus has a long history under Toyota, established in the 80s, known for reliability and innovation over time. Their heritage is important, so this is a strong point. Probably 4 or 5. Let's go with 5 because they emphasize their track record in ads.\n\nWait, for Temporal, some might argue that being part of Toyota (which is older) gives them heritage, but Lexus itself is over 40 years old. That's solid. Maybe 5. Similarly, Cultural, since they're part of the luxury car scene, maybe 4. Let me double-check each.\n\nSemiotic: 5 (definitely strong visual identity)\nNarrative: 4 (good but not as deep as some)\nIdeological: 4 (clear values but not groundbreaking)\nExperiential: 5 (excellent customer experience)\nSocial: 5 (status symbol)\nEconomic: 4 (luxury pricing but good value perception)\nCultural: 4 (luxury culture, maybe not a subculture)\nTemporal: 5 (strong heritage and history)\n\nI think that's reasonable. Maybe Economic could be 4 if they emphasize value well. Yeah, that makes sense. So the JSON should reflect these ratings.\n</think>\n\n{\n  \"semiotic\": 5,\n  \"narrative\": 4,\n  \"ideological\": 4,\n  \"experiential\": 5,\n  \"social\": 5,\n  \"economic\": 4,\n  \"cultural\": 4,\n  \"temporal\": 5\n}",
+  "scores": {
+    "semiotic": 5.0,
+    "narrative": 4.0,
+    "ideological": 4.0,
+    "experiential": 5.0,
+    "social": 5.0,
+    "economic": 4.0,
+    "cultural": 4.0,
+    "temporal": 5.0
+  },
+  "parse_success": true,
+  "scale": "1-5",
+  "version": "1.0",
+  "timestamp": "2026-04-13T21:44:54Z"
+}

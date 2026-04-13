@@ -1,0 +1,30 @@
+{
+  "cell_id": "Toyota_Toyota_recommendation_solo_sarvam_rep3",
+  "portfolio": "Toyota",
+  "brand": "Toyota",
+  "category": "mass-market automotive",
+  "condition": "recommendation_solo",
+  "model_id": "sarvam",
+  "model_name": "Sarvam M",
+  "provider": "sarvam",
+  "tradition": "Indian",
+  "temperature": 0.7,
+  "repetition": 3,
+  "prompt": "A friend asks you: \"What do you think of Toyota as a car brand?\"\n\nBased on your overall impression of Toyota, rate it on each of the following\n8 perception dimensions on a scale of 1 to 5 (1 = Not at all, 5 = Very strongly).\n\nDimensions:\n1. Semiotic: visual and verbal identity (logos, packaging, design language)\n2. Narrative: brand storytelling (origin story, mythology, communication style)\n3. Ideological: values, beliefs, and purpose (what the brand stands for)\n4. Experiential: sensory and interaction experience (product feel, service quality)\n5. Social: community, status signaling (who uses this brand, what it says about them)\n6. Economic: pricing and value perception (affordability, luxury, value-for-money)\n7. Cultural: cultural codes and positioning (what culture or subculture it belongs to)\n8. Temporal: heritage and history (longevity, tradition, track record)\n\nRespond in JSON format:\n{\"semiotic\": <1-5>, \"narrative\": <1-5>, \"ideological\": <1-5>, \"experiential\": <1-5>, \"social\": <1-5>, \"economic\": <1-5>, \"cultural\": <1-5>, \"temporal\": <1-5>}\n\nProvide only the JSON.",
+  "system_prompt": null,
+  "response": "<think>\nOkay, I need to rate Toyota on each of these eight perception dimensions. Let me go through each one by one.\n\n1. **Semiotic**: Toyota's visual identity is pretty strong. Their logo is simple and iconic, instantly recognizable. Their car designs are clean and practical, especially SUVs and trucks. Packaging for their dealerships and materials seems consistent. Maybe a 4 or 5 here. I think 4 because while strong, maybe not as visually bold as some luxury brands.\n\n2. **Narrative**: Toyota's origin story is about durability and innovation. Their \"Let's Go Places\" campaign is memorable. They communicate reliability and practicality. Maybe a 4 here. It's solid but not as emotionally engaging as some brands.\n\n3. **Ideological**: Toyota stands for reliability, quality, and innovation. They have a strong commitment to sustainability now. Maybe a 4 or 5. Their \"Kaizen\" philosophy is about continuous improvement. I'll go with 5 because their values are well-established and communicated.\n\n4. **Experiential**: Toyota's cars are reliable and have good resale value. Service quality can vary by dealership. The driving experience is comfortable but not thrilling. Maybe a 4. The product itself is great, but the service experience might not be top-tier.\n\n5. **Social**: Toyota appeals to a broad audience, from families to businesses. It's seen as practical and dependable, not luxury status. Maybe a 3. It's not a status symbol but more about functionality.\n\n6. **Economic**: Toyota offers a range of prices, from affordable to premium (like Lexus). Good value-for-money, especially with reliability. Maybe a 4. They\u2019re seen as a good investment over time.\n\n7. **Cultural**: Toyota is globally present, with strong ties to Japanese engineering and efficiency. In some markets, it has a strong cultural presence, like in the US market. Maybe a 4. It's part of the mainstream automotive culture, not a subculture.\n\n8. **Temporal**: Toyota has a long history since 1937. Known for durability and long-lasting cars. Strong track record. Definitely a 5 here. Their heritage is a major selling point.\n\nPutting it all together, these ratings should reflect Toyota's strengths in reliability, value, and heritage, with slight dips in social aspects and service experience.\n</think>\n\n```json\n{\n  \"semiotic\": 4,\n  \"narrative\": 4,\n  \"ideological\": 5,\n  \"experiential\": 4,\n  \"social\": 3,\n  \"economic\": 4,\n  \"cultural\": 4,\n  \"temporal\": 5\n}\n```",
+  "scores": {
+    "semiotic": 4.0,
+    "narrative": 4.0,
+    "ideological": 5.0,
+    "experiential": 4.0,
+    "social": 3.0,
+    "economic": 4.0,
+    "cultural": 4.0,
+    "temporal": 5.0
+  },
+  "parse_success": true,
+  "scale": "1-5",
+  "version": "1.0",
+  "timestamp": "2026-04-13T22:19:31Z"
+}

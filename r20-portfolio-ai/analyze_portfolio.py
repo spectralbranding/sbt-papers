@@ -1,13 +1,19 @@
 #!/usr/bin/env python3
 """
-R20 Portfolio-AI Experiment — Analysis
+R20 Portfolio-AI Experiment -- Analysis
 
 Reads responses from responses/ and computes:
 1. Per-brand DCI (Dimensional Concentration Index) solo vs portfolio
 2. Cosine similarity between solo and portfolio profiles
 3. Portfolio interference patterns (constructive vs destructive)
-4. Cross-model consistency
+4. Cross-model consistency (ICC, variance decomposition)
 5. Statistical tests (paired t-tests, Wilcoxon, effect sizes)
+6. TOST equivalence testing
+7. Power analysis
+8. Shannon entropy and Jensen-Shannon divergence
+9. Per-dimension shifts with FDR correction
+10. Sub-group analyses (Western vs non-Western, API vs local)
+11. System-prompt ablation comparison
 
 Usage:
     uv run python research/R20_portfolio_ai/analyze_portfolio.py
@@ -35,15 +41,6 @@ DIMENSIONS = [
     "temporal",
 ]
 
-# Canonical SBT profiles for reference brands
-CANONICAL_PROFILES = {
-    "Hermes": [9.5, 9.0, 7.0, 9.0, 8.5, 3.0, 9.0, 9.5],
-    "IKEA": [8.0, 7.5, 6.0, 7.0, 5.0, 9.0, 7.5, 6.0],
-    "Patagonia": [6.0, 9.0, 9.5, 7.5, 8.0, 5.0, 7.0, 6.5],
-    "Erewhon": [7.0, 6.5, 5.0, 9.0, 8.5, 3.5, 7.5, 2.5],
-    "Tesla": [7.5, 8.5, 3.0, 6.0, 7.0, 6.0, 4.0, 2.0],
-}
-
 PORTFOLIO_META = {
     "LVMH": {
         "type": "spectral_cluster",
@@ -60,7 +57,18 @@ PORTFOLIO_META = {
         "predicted_interference": "negligible",
         "description": "Spread portfolio: brands in distant regions, minimal overlap",
     },
+    "Toyota": {
+        "type": "spectral_layer",
+        "predicted_interference": "aspirational",
+        "description": "Layered portfolio: mass (Toyota) vs luxury (Lexus) on same dimensions",
+    },
 }
+
+# Training tradition groupings (updated with Japanese)
+WESTERN_MODELS = {"claude", "gpt4omini", "gemini25flash", "grok", "llama", "gemma4"}
+NON_WESTERN_MODELS = {"deepseek", "yandex", "sarvam", "swallow"}
+
+LOCAL_MODELS = {"gemma4"}
 
 
 def load_responses():
@@ -85,6 +93,7 @@ def records_to_dataframe(records):
             "brand": r["brand"],
             "condition": r["condition"],
             "model": r["model_id"],
+            "tradition": r.get("tradition", "Western"),
             "repetition": r["repetition"],
         }
         for dim in DIMENSIONS:
@@ -99,11 +108,7 @@ def records_to_dataframe(records):
 
 
 def compute_dci(profile: np.ndarray) -> float:
-    """Dimensional Concentration Index: how concentrated vs uniform the profile is.
-
-    DCI = sum of absolute deviations from uniform distribution, normalized to [0, 100].
-    Higher = more concentrated (peakier). Lower = more uniform (flatter).
-    """
+    """Dimensional Concentration Index: how concentrated vs uniform the profile is."""
     if np.all(profile == 0):
         return 0.0
     weights = profile / profile.sum()
@@ -112,7 +117,6 @@ def compute_dci(profile: np.ndarray) -> float:
 
 
 def cosine_similarity(a: np.ndarray, b: np.ndarray) -> float:
-    """Cosine similarity between two profiles."""
     norm_a = np.linalg.norm(a)
     norm_b = np.linalg.norm(b)
     if norm_a == 0 or norm_b == 0:
@@ -137,8 +141,48 @@ def cohens_d(group1, group2):
     return float((np.mean(group1) - np.mean(group2)) / pooled_std)
 
 
+def shannon_entropy(profile: np.ndarray) -> float:
+    """Shannon entropy of the weight vector (information-theoretic diversity)."""
+    if np.all(profile == 0):
+        return 0.0
+    weights = profile / profile.sum()
+    weights = weights[weights > 0]
+    return float(-np.sum(weights * np.log2(weights)))
+
+
+def jensen_shannon_divergence(p: np.ndarray, q: np.ndarray) -> float:
+    """Jensen-Shannon divergence between two distributions."""
+    p_norm = p / p.sum() if p.sum() > 0 else p
+    q_norm = q / q.sum() if q.sum() > 0 else q
+    m = 0.5 * (p_norm + q_norm)
+    # KL divergences with epsilon to avoid log(0)
+    eps = 1e-10
+    kl_pm = np.sum(p_norm * np.log2((p_norm + eps) / (m + eps)))
+    kl_qm = np.sum(q_norm * np.log2((q_norm + eps) / (m + eps)))
+    return float(0.5 * kl_pm + 0.5 * kl_qm)
+
+
+def benjamini_hochberg(p_values, alpha=0.05):
+    """Benjamini-Hochberg FDR correction. Returns array of booleans."""
+    n = len(p_values)
+    if n == 0:
+        return np.array([], dtype=bool)
+    sorted_idx = np.argsort(p_values)
+    sorted_p = np.array(p_values)[sorted_idx]
+    thresholds = np.arange(1, n + 1) / n * alpha
+    significant = np.zeros(n, dtype=bool)
+    # Find the largest k where p(k) <= k/m * alpha
+    max_k = -1
+    for k in range(n):
+        if sorted_p[k] <= thresholds[k]:
+            max_k = k
+    if max_k >= 0:
+        significant[sorted_idx[: max_k + 1]] = True
+    return significant
+
+
 # ---------------------------------------------------------------------------
-# Analysis Functions
+# Analyses
 # ---------------------------------------------------------------------------
 
 
@@ -155,50 +199,51 @@ def analysis_1_dci_comparison(df):
         print(
             f"    Predicted: {PORTFOLIO_META[portfolio]['predicted_interference']} interference\n"
         )
-
         pdf = df[df["portfolio"] == portfolio]
 
         for brand in sorted(pdf["brand"].unique()):
             bdf = pdf[pdf["brand"] == brand]
-
             solo_profiles = []
             port_profiles = []
 
             for _, row in bdf.iterrows():
                 profile = row[DIMENSIONS].values.astype(float)
                 dci = compute_dci(profile)
+                entropy = shannon_entropy(profile)
                 if row["condition"] == "solo":
-                    solo_profiles.append({"profile": profile, "dci": dci})
-                else:
-                    port_profiles.append({"profile": profile, "dci": dci})
+                    solo_profiles.append(
+                        {"profile": profile, "dci": dci, "entropy": entropy}
+                    )
+                elif row["condition"] == "portfolio":
+                    port_profiles.append(
+                        {"profile": profile, "dci": dci, "entropy": entropy}
+                    )
 
             solo_dcis = [s["dci"] for s in solo_profiles]
             port_dcis = [p["dci"] for p in port_profiles]
 
             if len(solo_dcis) < 2 or len(port_dcis) < 2:
-                print(
-                    f"  {brand}: insufficient data (solo={len(solo_dcis)}, port={len(port_dcis)})"
-                )
                 continue
 
             solo_mean = np.mean(solo_dcis)
             port_mean = np.mean(port_dcis)
             delta = port_mean - solo_mean
-
-            # Paired by repetition within each model? No — use independent t-test
             t_stat, p_val = stats.ttest_ind(port_dcis, solo_dcis)
             d = cohens_d(port_dcis, solo_dcis)
 
-            # Also compute mean profiles for cosine
             solo_mean_profile = np.mean([s["profile"] for s in solo_profiles], axis=0)
             port_mean_profile = np.mean([p["profile"] for p in port_profiles], axis=0)
             cos_sim = cosine_similarity(solo_mean_profile, port_mean_profile)
             euc_dist = euclidean_distance(solo_mean_profile, port_mean_profile)
+            jsd = jensen_shannon_divergence(solo_mean_profile, port_mean_profile)
+
+            solo_entropy_mean = np.mean([s["entropy"] for s in solo_profiles])
+            port_entropy_mean = np.mean([p["entropy"] for p in port_profiles])
 
             print(
-                f"  {brand:20s}  Solo DCI={solo_mean:5.1f}  Portfolio DCI={port_mean:5.1f}  "
+                f"  {brand:20s}  Solo DCI={solo_mean:5.1f}  Port DCI={port_mean:5.1f}  "
                 f"Delta={delta:+5.1f}  t={t_stat:+6.2f}  p={p_val:.3f}  d={d:+.2f}  "
-                f"cos={cos_sim:.3f}  L2={euc_dist:.2f}"
+                f"cos={cos_sim:.3f}  L2={euc_dist:.2f}  JSD={jsd:.4f}"
             )
 
             results.append(
@@ -207,16 +252,19 @@ def analysis_1_dci_comparison(df):
                     "brand": brand,
                     "portfolio_type": PORTFOLIO_META[portfolio]["type"],
                     "predicted": PORTFOLIO_META[portfolio]["predicted_interference"],
-                    "solo_dci_mean": solo_mean,
-                    "solo_dci_sd": np.std(solo_dcis, ddof=1),
-                    "port_dci_mean": port_mean,
-                    "port_dci_sd": np.std(port_dcis, ddof=1),
-                    "delta_dci": delta,
-                    "t_stat": t_stat,
-                    "p_value": p_val,
-                    "cohens_d": d,
-                    "cosine_similarity": cos_sim,
-                    "euclidean_distance": euc_dist,
+                    "solo_dci_mean": round(solo_mean, 2),
+                    "solo_dci_sd": round(np.std(solo_dcis, ddof=1), 2),
+                    "port_dci_mean": round(port_mean, 2),
+                    "port_dci_sd": round(np.std(port_dcis, ddof=1), 2),
+                    "delta_dci": round(delta, 2),
+                    "t_stat": round(t_stat, 3),
+                    "p_value": round(p_val, 4),
+                    "cohens_d": round(d, 3),
+                    "cosine_similarity": round(cos_sim, 4),
+                    "euclidean_distance": round(euc_dist, 3),
+                    "jsd": round(jsd, 5),
+                    "solo_entropy_mean": round(solo_entropy_mean, 3),
+                    "port_entropy_mean": round(port_entropy_mean, 3),
                     "n_solo": len(solo_dcis),
                     "n_portfolio": len(port_dcis),
                 }
@@ -226,9 +274,9 @@ def analysis_1_dci_comparison(df):
 
 
 def analysis_2_dimension_shifts(df):
-    """Per-dimension shift analysis: which dimensions move most under portfolio framing."""
+    """Per-dimension shift with FDR correction."""
     print("\n" + "=" * 70)
-    print("ANALYSIS 2: Per-Dimension Score Shifts (Portfolio - Solo)")
+    print("ANALYSIS 2: Per-Dimension Score Shifts (Portfolio - Solo) with FDR")
     print("=" * 70)
 
     results = []
@@ -254,30 +302,35 @@ def analysis_2_dimension_shifts(df):
                 d = cohens_d(port_vals, solo_vals)
                 shifts[dim] = {"delta": delta, "t": t, "p": p, "d": d}
 
-            # Find largest shifts
+            # FDR correction within this brand
+            p_vals = [shifts[d]["p"] for d in DIMENSIONS]
+            fdr_sig = benjamini_hochberg(p_vals, 0.05)
+
             sorted_dims = sorted(
                 shifts.items(), key=lambda x: abs(x[1]["delta"]), reverse=True
             )
             top3 = sorted_dims[:3]
-
             print(f"  {brand}:")
             for dim, s in top3:
-                sig = "*" if s["p"] < 0.05 else ""
+                idx = DIMENSIONS.index(dim)
+                sig = "** (FDR)" if fdr_sig[idx] else ("*" if s["p"] < 0.05 else "")
                 print(
                     f"    {dim:14s}  delta={s['delta']:+5.2f}  t={s['t']:+5.2f}  "
                     f"p={s['p']:.3f}{sig}  d={s['d']:+.2f}"
                 )
 
-            for dim, s in shifts.items():
+            for i, dim in enumerate(DIMENSIONS):
+                s = shifts[dim]
                 results.append(
                     {
                         "portfolio": portfolio,
                         "brand": brand,
                         "dimension": dim,
-                        "delta": s["delta"],
-                        "t_stat": s["t"],
-                        "p_value": s["p"],
-                        "cohens_d": s["d"],
+                        "delta": round(s["delta"], 3),
+                        "t_stat": round(s["t"], 3),
+                        "p_value": round(s["p"], 4),
+                        "cohens_d": round(s["d"], 3),
+                        "fdr_significant": bool(fdr_sig[i]),
                     }
                 )
 
@@ -285,7 +338,7 @@ def analysis_2_dimension_shifts(df):
 
 
 def analysis_3_interference_patterns(df):
-    """Compute portfolio-level interference: constructive vs destructive by portfolio."""
+    """Portfolio-level interference: constructive vs destructive."""
     print("\n" + "=" * 70)
     print("ANALYSIS 3: Portfolio Interference Patterns")
     print("=" * 70)
@@ -300,7 +353,6 @@ def analysis_3_interference_patterns(df):
         pdf = df[df["portfolio"] == portfolio]
         brands = sorted(pdf["brand"].unique())
 
-        # Compute mean profiles per brand per condition
         profiles = {}
         for brand in brands:
             bdf = pdf[pdf["brand"] == brand]
@@ -309,7 +361,6 @@ def analysis_3_interference_patterns(df):
                 if len(cdf) > 0:
                     profiles[(brand, cond)] = cdf[DIMENSIONS].mean().values
 
-        # Cross-brand cosine similarity within each condition
         for cond in ["solo", "portfolio"]:
             cos_sims = []
             for i, b1 in enumerate(brands):
@@ -319,12 +370,9 @@ def analysis_3_interference_patterns(df):
                             profiles[(b1, cond)], profiles[(b2, cond)]
                         )
                         cos_sims.append(cs)
-                        print(f"    {cond:10s}  {b1} x {b2}: cos={cs:.3f}")
             if cos_sims:
                 print(f"    {cond:10s}  mean cross-brand cos={np.mean(cos_sims):.3f}")
 
-        # Interference direction per dimension per brand
-        print(f"\n    Dimension-level interference:")
         constructive_count = 0
         destructive_count = 0
         total_dims = 0
@@ -334,8 +382,6 @@ def analysis_3_interference_patterns(df):
                 continue
             solo_p = profiles[(brand, "solo")]
             port_p = profiles[(brand, "portfolio")]
-
-            # Category mean = mean of all solo profiles in this portfolio
             category_mean = np.mean(
                 [profiles[(b, "solo")] for b in brands if (b, "solo") in profiles],
                 axis=0,
@@ -345,17 +391,11 @@ def analysis_3_interference_patterns(df):
                 deviation_solo = solo_p[i] - category_mean[i]
                 shift = port_p[i] - solo_p[i]
 
-                # Constructive: portfolio framing moves score further from category mean
-                # (amplifies brand's distinctive position)
-                # Destructive: portfolio framing moves score toward category mean
-                # (flattens brand's distinctive position)
-                if (
-                    abs(deviation_solo) > 0.5
-                ):  # only count dimensions where brand deviates
+                if abs(deviation_solo) > 0.3:
                     total_dims += 1
                     if np.sign(shift) == np.sign(deviation_solo):
                         constructive_count += 1
-                    elif abs(shift) > 0.3:  # non-trivial destructive shift
+                    elif abs(shift) > 0.2:
                         destructive_count += 1
 
         neutral_count = total_dims - constructive_count - destructive_count
@@ -386,7 +426,7 @@ def analysis_3_interference_patterns(df):
                 "destructive": destructive_count,
                 "neutral": neutral_count,
                 "total_dims": total_dims,
-                "ratio": interference_ratio,
+                "ratio": round(interference_ratio, 3),
                 "match": match == "MATCH",
             }
         )
@@ -395,7 +435,7 @@ def analysis_3_interference_patterns(df):
 
 
 def analysis_4_cross_model(df):
-    """Cross-model consistency: do all models show the same interference direction?"""
+    """Cross-model consistency with ICC."""
     print("\n" + "=" * 70)
     print("ANALYSIS 4: Cross-Model Consistency")
     print("=" * 70)
@@ -403,7 +443,6 @@ def analysis_4_cross_model(df):
     results = []
 
     for portfolio in sorted(df["portfolio"].unique()):
-        print(f"\n--- {portfolio} ---")
         pdf = df[df["portfolio"] == portfolio]
 
         for brand in sorted(pdf["brand"].unique()):
@@ -428,10 +467,10 @@ def analysis_4_cross_model(df):
                         "portfolio": portfolio,
                         "brand": brand,
                         "model": model,
-                        "solo_dci": solo_dci,
-                        "port_dci": port_dci,
-                        "delta_dci": port_dci - solo_dci,
-                        "cosine": cos,
+                        "solo_dci": round(solo_dci, 2),
+                        "port_dci": round(port_dci, 2),
+                        "delta_dci": round(port_dci - solo_dci, 2),
+                        "cosine": round(cos, 4),
                     }
                 )
 
@@ -440,7 +479,6 @@ def analysis_4_cross_model(df):
         print("  No data available.")
         return rdf
 
-    # Summary: per-portfolio, how many models show DCI increase vs decrease
     for portfolio in sorted(rdf["portfolio"].unique()):
         pdata = rdf[rdf["portfolio"] == portfolio]
         increasing = (pdata["delta_dci"] > 0).sum()
@@ -449,7 +487,6 @@ def analysis_4_cross_model(df):
         mean_cos = pdata["cosine"].mean()
         mean_delta = pdata["delta_dci"].mean()
 
-        # Binomial test: is the direction consistent?
         p_binom = (
             stats.binomtest(max(increasing, decreasing), total, 0.5).pvalue
             if total > 0
@@ -469,92 +506,536 @@ def analysis_4_cross_model(df):
     )
     print(pivot.round(2).to_string())
 
+    # ICC calculation (two-way random, single measures)
+    print("\n  ICC (Intraclass Correlation) for DCI ratings across models:")
+    for condition in ["solo", "portfolio"]:
+        cond_df = df[df["condition"] == condition]
+        # Pivot: rows=brand, columns=model, values=mean DCI
+        brand_model_dci = {}
+        for brand in sorted(cond_df["brand"].unique()):
+            for model in sorted(cond_df["model"].unique()):
+                subset = cond_df[
+                    (cond_df["brand"] == brand) & (cond_df["model"] == model)
+                ]
+                if len(subset) > 0:
+                    profile = subset[DIMENSIONS].mean().values
+                    brand_model_dci[(brand, model)] = compute_dci(profile)
+
+        if brand_model_dci:
+            brands = sorted(set(k[0] for k in brand_model_dci))
+            models = sorted(set(k[1] for k in brand_model_dci))
+            matrix = np.full((len(brands), len(models)), np.nan)
+            for i, b in enumerate(brands):
+                for j, m in enumerate(models):
+                    if (b, m) in brand_model_dci:
+                        matrix[i, j] = brand_model_dci[(b, m)]
+
+            # Remove cols/rows with NaN
+            valid_cols = ~np.any(np.isnan(matrix), axis=0)
+            matrix = matrix[:, valid_cols]
+            if matrix.shape[1] >= 2:
+                n, k = matrix.shape
+                grand_mean = np.mean(matrix)
+                ss_rows = k * np.sum((np.mean(matrix, axis=1) - grand_mean) ** 2)
+                ss_cols = n * np.sum((np.mean(matrix, axis=0) - grand_mean) ** 2)
+                ss_total = np.sum((matrix - grand_mean) ** 2)
+                ss_error = ss_total - ss_rows - ss_cols
+                ms_rows = ss_rows / (n - 1) if n > 1 else 0
+                ms_error = (
+                    ss_error / ((n - 1) * (k - 1)) if (n - 1) * (k - 1) > 0 else 0
+                )
+                ms_cols = ss_cols / (k - 1) if k > 1 else 0
+
+                # ICC(2,1) - two-way random, single measures
+                icc = (
+                    (ms_rows - ms_error)
+                    / (ms_rows + (k - 1) * ms_error + k * (ms_cols - ms_error) / n)
+                    if (ms_rows + (k - 1) * ms_error + k * (ms_cols - ms_error) / n)
+                    != 0
+                    else 0
+                )
+
+                print(
+                    f"    {condition}: ICC(2,1) = {icc:.3f} (k={k} models, n={n} brands)"
+                )
+
     return rdf
 
 
-def analysis_5_overall_summary(dci_df, interference_df, model_df):
+def analysis_5_power_and_tost(dci_df):
+    """Power analysis and TOST equivalence testing."""
+    print("\n" + "=" * 70)
+    print("ANALYSIS 5: Power Analysis and TOST Equivalence Testing")
+    print("=" * 70)
+
+    # Post-hoc power for paired t-test
+    if not dci_df.empty:
+        n_obs = dci_df["n_solo"].iloc[0] + dci_df["n_portfolio"].iloc[0]
+        n_per_group = dci_df["n_solo"].iloc[0]
+        alpha = 0.05
+        d_target = 0.50  # medium effect
+
+        # Non-centrality parameter for independent t-test
+        ncp = d_target * np.sqrt(n_per_group / 2)
+        df_t = 2 * n_per_group - 2
+        crit = stats.t.ppf(1 - alpha / 2, df_t)
+        power = 1 - stats.t.cdf(crit, df_t, ncp) + stats.t.cdf(-crit, df_t, ncp)
+
+        print(f"\n  Post-hoc power analysis:")
+        print(
+            f"    N per group = {n_per_group}, alpha = {alpha}, target d = {d_target}"
+        )
+        print(f"    Power = {power:.3f}")
+        print(
+            f"    The experiment had {power*100:.0f}% power to detect a medium "
+            f"effect (d = {d_target:.2f}) at alpha = {alpha:.2f}"
+        )
+
+    # TOST equivalence testing
+    print(f"\n  TOST Equivalence Testing (bounds = +/-1.0 DCI points):")
+    equivalence_bound = 1.0
+    tost_results = []
+
+    for _, row in dci_df.iterrows():
+        delta = row["delta_dci"]
+        se = (
+            np.sqrt(
+                row["solo_dci_sd"] ** 2 / row["n_solo"]
+                + row["port_dci_sd"] ** 2 / row["n_portfolio"]
+            )
+            if row["solo_dci_sd"] > 0 or row["port_dci_sd"] > 0
+            else 1e-10
+        )
+
+        df_approx = row["n_solo"] + row["n_portfolio"] - 2
+
+        # Upper bound test: H0: delta >= bound
+        t_upper = (delta - equivalence_bound) / se if se > 0 else 0
+        p_upper = stats.t.cdf(t_upper, df_approx)
+
+        # Lower bound test: H0: delta <= -bound
+        t_lower = (delta + equivalence_bound) / se if se > 0 else 0
+        p_lower = 1 - stats.t.cdf(t_lower, df_approx)
+
+        p_tost = max(p_upper, p_lower)
+        equivalent = p_tost < 0.05
+
+        tost_results.append(
+            {
+                "brand": row["brand"],
+                "portfolio": row["portfolio"],
+                "delta_dci": delta,
+                "p_tost": round(p_tost, 4),
+                "equivalent": equivalent,
+            }
+        )
+
+        sig = "EQUIVALENT" if equivalent else "inconclusive"
+        print(
+            f"    {row['brand']:20s} ({row['portfolio']:10s})  "
+            f"delta={delta:+5.2f}  p_TOST={p_tost:.3f}  [{sig}]"
+        )
+
+    n_equiv = sum(1 for r in tost_results if r["equivalent"])
+    total = len(tost_results)
+    print(
+        f"\n    Equivalence confirmed for {n_equiv}/{total} brands "
+        f"within +/-{equivalence_bound} DCI bounds"
+    )
+
+    return pd.DataFrame(tost_results)
+
+
+def analysis_6_subgroups(df, dci_df):
+    """Sub-group analyses: Western vs non-Western, API vs local."""
+    print("\n" + "=" * 70)
+    print("ANALYSIS 6: Sub-Group Analyses")
+    print("=" * 70)
+
+    # Western vs non-Western
+    print("\n  --- Western vs Non-Western Models ---")
+    for group_name, model_set in [
+        ("Western", WESTERN_MODELS),
+        ("Non-Western", NON_WESTERN_MODELS),
+    ]:
+        gdf = df[df["model"].isin(model_set)]
+        if gdf.empty:
+            continue
+
+        solo = gdf[gdf["condition"] == "solo"]
+        port = gdf[gdf["condition"] == "portfolio"]
+
+        solo_dcis = [
+            compute_dci(row[DIMENSIONS].values.astype(float))
+            for _, row in solo.iterrows()
+        ]
+        port_dcis = [
+            compute_dci(row[DIMENSIONS].values.astype(float))
+            for _, row in port.iterrows()
+        ]
+
+        if solo_dcis and port_dcis:
+            delta = np.mean(port_dcis) - np.mean(solo_dcis)
+            t, p = stats.ttest_ind(port_dcis, solo_dcis)
+            d = cohens_d(port_dcis, solo_dcis)
+
+            # Mean cosine between solo and portfolio per brand
+            cos_sims = []
+            for brand in sorted(gdf["brand"].unique()):
+                bdf = gdf[gdf["brand"] == brand]
+                s = bdf[bdf["condition"] == "solo"]
+                po = bdf[bdf["condition"] == "portfolio"]
+                if len(s) > 0 and len(po) > 0:
+                    cos_sims.append(
+                        cosine_similarity(
+                            s[DIMENSIONS].mean().values, po[DIMENSIONS].mean().values
+                        )
+                    )
+
+            print(
+                f"    {group_name:15s}  n_solo={len(solo_dcis):3d}  n_port={len(port_dcis):3d}  "
+                f"delta DCI={delta:+.2f}  t={t:+.2f}  p={p:.3f}  d={d:+.2f}  "
+                f"mean cos={np.mean(cos_sims):.3f}"
+            )
+
+    # API vs Local
+    print("\n  --- API vs Local Models ---")
+    for group_name, model_set in [
+        ("API", set(m for m in df["model"].unique() if m not in LOCAL_MODELS)),
+        ("Local", LOCAL_MODELS),
+    ]:
+        gdf = df[df["model"].isin(model_set)]
+        if gdf.empty:
+            continue
+
+        solo_dcis = [
+            compute_dci(row[DIMENSIONS].values.astype(float))
+            for _, row in gdf[gdf["condition"] == "solo"].iterrows()
+        ]
+        port_dcis = [
+            compute_dci(row[DIMENSIONS].values.astype(float))
+            for _, row in gdf[gdf["condition"] == "portfolio"].iterrows()
+        ]
+
+        if solo_dcis and port_dcis:
+            delta = np.mean(port_dcis) - np.mean(solo_dcis)
+            t, p = stats.ttest_ind(port_dcis, solo_dcis)
+            d = cohens_d(port_dcis, solo_dcis)
+            print(
+                f"    {group_name:15s}  n_solo={len(solo_dcis):3d}  n_port={len(port_dcis):3d}  "
+                f"delta DCI={delta:+.2f}  t={t:+.2f}  p={p:.3f}  d={d:+.2f}"
+            )
+
+    # Variance decomposition: model, brand, condition
+    print("\n  --- Variance Decomposition (DCI) ---")
+    dci_per_obs = []
+    for _, row in df.iterrows():
+        profile = row[DIMENSIONS].values.astype(float)
+        dci_per_obs.append(
+            {
+                "model": row["model"],
+                "brand": row["brand"],
+                "condition": row["condition"],
+                "portfolio": row["portfolio"],
+                "dci": compute_dci(profile),
+            }
+        )
+    dci_obs_df = pd.DataFrame(dci_per_obs)
+
+    grand_mean = dci_obs_df["dci"].mean()
+    ss_total = np.sum((dci_obs_df["dci"] - grand_mean) ** 2)
+
+    for factor in ["model", "brand", "condition", "portfolio"]:
+        group_means = dci_obs_df.groupby(factor)["dci"].mean()
+        group_counts = dci_obs_df.groupby(factor)["dci"].count()
+        ss_factor = np.sum(group_counts * (group_means - grand_mean) ** 2)
+        pct = ss_factor / ss_total * 100 if ss_total > 0 else 0
+        print(f"    {factor:12s}  SS={ss_factor:8.1f}  %variance={pct:5.1f}%")
+
+
+def analysis_7_ablation(df):
+    """System-prompt vs user-prompt ablation analysis."""
+    print("\n" + "=" * 70)
+    print("ANALYSIS 7: System-Prompt Ablation")
+    print("=" * 70)
+
+    # Check if system_portfolio data exists
+    sys_df = df[df["condition"] == "system_portfolio"]
+    if sys_df.empty:
+        print("  No system-prompt ablation data found. Skipping.")
+        return pd.DataFrame()
+
+    ablation_models = sorted(sys_df["model"].unique())
+    results = []
+
+    for model in ablation_models:
+        mdf = df[df["model"] == model]
+        solo = mdf[mdf["condition"] == "solo"]
+        user_port = mdf[mdf["condition"] == "portfolio"]
+        sys_port = mdf[mdf["condition"] == "system_portfolio"]
+
+        if solo.empty or user_port.empty or sys_port.empty:
+            continue
+
+        for brand in sorted(mdf["brand"].unique()):
+            s = solo[solo["brand"] == brand]
+            up = user_port[user_port["brand"] == brand]
+            sp = sys_port[sys_port["brand"] == brand]
+
+            if s.empty or up.empty or sp.empty:
+                continue
+
+            s_profile = s[DIMENSIONS].mean().values
+            up_profile = up[DIMENSIONS].mean().values
+            sp_profile = sp[DIMENSIONS].mean().values
+
+            cos_user = cosine_similarity(s_profile, up_profile)
+            cos_sys = cosine_similarity(s_profile, sp_profile)
+            cos_user_sys = cosine_similarity(up_profile, sp_profile)
+
+            results.append(
+                {
+                    "model": model,
+                    "brand": brand,
+                    "cos_solo_user_port": round(cos_user, 4),
+                    "cos_solo_sys_port": round(cos_sys, 4),
+                    "cos_user_sys": round(cos_user_sys, 4),
+                }
+            )
+
+    rdf = pd.DataFrame(results)
+    if rdf.empty:
+        print("  Insufficient data for ablation analysis.")
+        return rdf
+
+    print(f"\n  Mean cosine similarities by model:")
+    for model in sorted(rdf["model"].unique()):
+        mr = rdf[rdf["model"] == model]
+        print(
+            f"    {model:15s}  solo-vs-user_port: {mr['cos_solo_user_port'].mean():.3f}  "
+            f"solo-vs-sys_port: {mr['cos_solo_sys_port'].mean():.3f}  "
+            f"user-vs-sys: {mr['cos_user_sys'].mean():.3f}"
+        )
+
+    # Overall: is system-prompt framing equivalent to user-prompt framing?
+    if len(rdf) > 1:
+        t, p = stats.ttest_rel(rdf["cos_solo_user_port"], rdf["cos_solo_sys_port"])
+        d_val = np.mean(rdf["cos_solo_user_port"] - rdf["cos_solo_sys_port"]) / np.std(
+            rdf["cos_solo_user_port"] - rdf["cos_solo_sys_port"], ddof=1
+        )
+        print(
+            f"\n  Paired t-test (user vs system framing cosine to solo):"
+            f"  t={t:.3f}  p={p:.3f}  d={d_val:.3f}"
+        )
+
+    return rdf
+
+
+def analysis_8_recommendation(df):
+    """Compare direct rating vs recommendation prompt conditions."""
+    print("\n" + "=" * 70)
+    print("ANALYSIS 8: Recommendation Prompt Comparison")
+    print("=" * 70)
+
+    reco_solo = df[df["condition"] == "recommendation_solo"]
+    reco_port = df[df["condition"] == "recommendation_portfolio"]
+    direct_solo = df[df["condition"] == "solo"]
+    direct_port = df[df["condition"] == "portfolio"]
+
+    if reco_solo.empty:
+        print("  No recommendation data found. Skipping.")
+        return pd.DataFrame()
+
+    results = []
+    print("\n  --- Direct vs Recommendation: Solo Condition ---")
+    for brand in sorted(df["brand"].unique()):
+        ds = direct_solo[direct_solo["brand"] == brand]
+        rs = reco_solo[reco_solo["brand"] == brand]
+        if ds.empty or rs.empty:
+            continue
+        ds_profile = ds[DIMENSIONS].mean().values
+        rs_profile = rs[DIMENSIONS].mean().values
+        cos = cosine_similarity(ds_profile, rs_profile)
+        ds_dci = compute_dci(ds_profile)
+        rs_dci = compute_dci(rs_profile)
+        results.append({
+            "brand": brand, "comparison": "solo_direct_vs_reco",
+            "cosine": round(cos, 4), "direct_dci": round(ds_dci, 2),
+            "reco_dci": round(rs_dci, 2), "delta_dci": round(rs_dci - ds_dci, 2),
+        })
+        print(f"    {brand:20s}  cos={cos:.3f}  direct DCI={ds_dci:.1f}  reco DCI={rs_dci:.1f}  delta={rs_dci-ds_dci:+.1f}")
+
+    print("\n  --- Recommendation: Solo vs Portfolio ---")
+    reco_results = []
+    for brand in sorted(df["brand"].unique()):
+        rs = reco_solo[reco_solo["brand"] == brand]
+        rp = reco_port[reco_port["brand"] == brand]
+        if rs.empty or rp.empty:
+            continue
+        rs_dcis = [compute_dci(row[DIMENSIONS].values.astype(float)) for _, row in rs.iterrows()]
+        rp_dcis = [compute_dci(row[DIMENSIONS].values.astype(float)) for _, row in rp.iterrows()]
+        delta = np.mean(rp_dcis) - np.mean(rs_dcis)
+        if len(rs_dcis) >= 2 and len(rp_dcis) >= 2:
+            t, p = stats.ttest_ind(rp_dcis, rs_dcis)
+            d = cohens_d(rp_dcis, rs_dcis)
+        else:
+            t = p = d = np.nan
+        cos = cosine_similarity(rs[DIMENSIONS].mean().values, rp[DIMENSIONS].mean().values)
+        reco_results.append({
+            "brand": brand, "delta_dci": round(delta, 2),
+            "t": round(t, 3), "p": round(p, 4), "d": round(d, 3), "cosine": round(cos, 4),
+        })
+        print(f"    {brand:20s}  delta={delta:+5.2f}  t={t:+5.2f}  p={p:.3f}  d={d:+.2f}  cos={cos:.3f}")
+
+    rdf = pd.DataFrame(reco_results)
+    if not rdf.empty:
+        mean_delta = rdf["delta_dci"].mean()
+        mean_cos = rdf["cosine"].mean()
+        print(f"\n    Mean delta DCI (reco solo->port): {mean_delta:+.2f}")
+        print(f"    Mean cosine: {mean_cos:.3f}")
+        sig = benjamini_hochberg(rdf["p"].dropna().values)
+        print(f"    FDR-significant: {sum(sig)}/{len(sig)}")
+
+    return rdf
+
+
+def analysis_9_multiturn(df):
+    """Multi-turn analysis: does revealing portfolio in Turn 2 change ratings?"""
+    print("\n" + "=" * 70)
+    print("ANALYSIS 9: Multi-Turn Conversation Analysis")
+    print("=" * 70)
+
+    mt_df = df[df["condition"] == "multiturn"]
+    solo_df = df[df["condition"] == "solo"]
+    if mt_df.empty:
+        print("  No multi-turn data found. Skipping.")
+        return pd.DataFrame()
+
+    # Multi-turn records have turn1_scores in the raw JSON; the 'scores' field
+    # is turn2 (post-reveal). We need to load turn1 from the raw files.
+    responses_dir = Path(__file__).parent / "responses"
+    mt_records = []
+    for f in sorted(responses_dir.glob("*_multiturn_*.json")):
+        with open(f) as fh:
+            rec = json.load(fh)
+        if not rec.get("parse_success"):
+            continue
+        t1 = rec.get("turn1_scores", {})
+        t2 = rec.get("scores", {})
+        if t1 and t2 and all(d in t1 for d in DIMENSIONS) and all(d in t2 for d in DIMENSIONS):
+            mt_records.append(rec)
+
+    if not mt_records:
+        print("  No valid multi-turn pairs found. Skipping.")
+        return pd.DataFrame()
+
+    print(f"  Loaded {len(mt_records)} multi-turn pairs\n")
+
+    results = []
+    for brand in sorted(set(r["brand"] for r in mt_records)):
+        brand_recs = [r for r in mt_records if r["brand"] == brand]
+        t1_dcis = [compute_dci(np.array([r["turn1_scores"][d] for d in DIMENSIONS])) for r in brand_recs]
+        t2_dcis = [compute_dci(np.array([r["scores"][d] for d in DIMENSIONS])) for r in brand_recs]
+
+        delta = np.mean(t2_dcis) - np.mean(t1_dcis)
+        if len(t1_dcis) >= 2:
+            t, p = stats.ttest_rel(t2_dcis, t1_dcis)
+            d_val = np.mean(np.array(t2_dcis) - np.array(t1_dcis)) / (
+                np.std(np.array(t2_dcis) - np.array(t1_dcis), ddof=1) or 1e-10
+            )
+        else:
+            t = p = d_val = np.nan
+
+        t1_mean = np.mean([np.array([r["turn1_scores"][d] for d in DIMENSIONS]) for r in brand_recs], axis=0)
+        t2_mean = np.mean([np.array([r["scores"][d] for d in DIMENSIONS]) for r in brand_recs], axis=0)
+        cos = cosine_similarity(t1_mean, t2_mean)
+
+        results.append({
+            "brand": brand, "portfolio": brand_recs[0]["portfolio"],
+            "n": len(brand_recs),
+            "t1_dci_mean": round(np.mean(t1_dcis), 2),
+            "t2_dci_mean": round(np.mean(t2_dcis), 2),
+            "delta_dci": round(delta, 2),
+            "t": round(t, 3) if not np.isnan(t) else None,
+            "p": round(p, 4) if not np.isnan(p) else None,
+            "d": round(d_val, 3) if not np.isnan(d_val) else None,
+            "cosine": round(cos, 4),
+        })
+        print(
+            f"  {brand:20s}  T1 DCI={np.mean(t1_dcis):5.1f}  T2 DCI={np.mean(t2_dcis):5.1f}  "
+            f"delta={delta:+5.2f}  t={t:+5.2f}  p={p:.3f}  d={d_val:+.2f}  cos={cos:.3f}"
+        )
+
+    rdf = pd.DataFrame(results)
+    if not rdf.empty:
+        p_vals = rdf["p"].dropna().values
+        sig = benjamini_hochberg(p_vals)
+        print(f"\n  Mean delta DCI (Turn1->Turn2): {rdf['delta_dci'].mean():+.2f}")
+        print(f"  Mean cosine (Turn1 vs Turn2): {rdf['cosine'].mean():.3f}")
+        print(f"  FDR-significant: {sum(sig)}/{len(sig)}")
+
+    return rdf
+
+
+def analysis_10_overall_summary(dci_df, interference_df, model_df):
     """Summary statistics and hypothesis testing."""
     print("\n" + "=" * 70)
-    print("ANALYSIS 5: Overall Summary and Hypothesis Tests")
+    print("ANALYSIS 8: Overall Summary and Hypothesis Tests")
     print("=" * 70)
 
     if dci_df.empty:
         print("  No DCI data available.")
         return
 
-    # H1: LVMH portfolio framing increases DCI (constructive interference)
-    lvmh = dci_df[dci_df["portfolio"] == "LVMH"]
-    if not lvmh.empty:
-        lvmh_delta = lvmh["delta_dci"].values
-        if len(lvmh_delta) > 0:
-            t, p = stats.ttest_1samp(lvmh_delta, 0)
-            d = (
-                np.mean(lvmh_delta) / np.std(lvmh_delta, ddof=1)
-                if np.std(lvmh_delta, ddof=1) > 0
-                else 0
-            )
-            print(
-                f"\n  H1 (LVMH constructive): mean delta DCI = {np.mean(lvmh_delta):+.2f}"
-            )
-            print(f"      t({len(lvmh_delta)-1}) = {t:.2f}, p = {p:.3f}, d = {d:.2f}")
-            print(
-                f"      {'SUPPORTED' if np.mean(lvmh_delta) > 0 and p < .05 else 'NOT SUPPORTED'}"
-            )
+    for portfolio_key, h_name, direction, h_num in [
+        ("LVMH", "constructive", 1, "H1"),
+        ("Unilever", "destructive", -1, "H2"),
+        ("P&G", "negligible", 0, "H3"),
+    ]:
+        pdata = dci_df[dci_df["portfolio"] == portfolio_key]
+        if pdata.empty:
+            continue
+        deltas = pdata["delta_dci"].values
+        if len(deltas) == 0:
+            continue
 
-    # H2: Unilever portfolio framing decreases DCI (destructive interference)
-    uni = dci_df[dci_df["portfolio"] == "Unilever"]
-    if not uni.empty:
-        uni_delta = uni["delta_dci"].values
-        if len(uni_delta) > 0:
-            t, p = stats.ttest_1samp(uni_delta, 0)
-            d = (
-                np.mean(uni_delta) / np.std(uni_delta, ddof=1)
-                if np.std(uni_delta, ddof=1) > 0
-                else 0
-            )
-            print(
-                f"\n  H2 (Unilever destructive): mean delta DCI = {np.mean(uni_delta):+.2f}"
-            )
-            print(f"      t({len(uni_delta)-1}) = {t:.2f}, p = {p:.3f}, d = {d:.2f}")
-            print(
-                f"      {'SUPPORTED' if np.mean(uni_delta) < 0 and p < .05 else 'NOT SUPPORTED'}"
-            )
+        t, p = stats.ttest_1samp(deltas, 0)
+        d_val = (
+            np.mean(deltas) / np.std(deltas, ddof=1)
+            if np.std(deltas, ddof=1) > 0
+            else 0
+        )
 
-    # H3: P&G portfolio framing has negligible effect (spectral spread)
-    pg = dci_df[dci_df["portfolio"] == "P&G"]
-    if not pg.empty:
-        pg_delta = pg["delta_dci"].values
-        if len(pg_delta) > 0:
-            t, p = stats.ttest_1samp(pg_delta, 0)
-            d = (
-                np.mean(pg_delta) / np.std(pg_delta, ddof=1)
-                if np.std(pg_delta, ddof=1) > 0
-                else 0
-            )
-            equivalence_bound = 2.0  # DCI points
-            print(f"\n  H3 (P&G negligible): mean delta DCI = {np.mean(pg_delta):+.2f}")
-            print(f"      t({len(pg_delta)-1}) = {t:.2f}, p = {p:.3f}, d = {d:.2f}")
-            within_bound = abs(np.mean(pg_delta)) < equivalence_bound
+        print(
+            f"\n  {h_num} ({portfolio_key} {h_name}): mean delta DCI = {np.mean(deltas):+.2f}"
+        )
+        print(f"      t({len(deltas)-1}) = {t:.2f}, p = {p:.3f}, d = {d_val:.2f}")
+
+        if direction == 0:
+            equivalence_bound = 2.0
+            within_bound = abs(np.mean(deltas)) < equivalence_bound
             print(f"      Within +/-{equivalence_bound} bound: {within_bound}")
-            print(
-                f"      {'SUPPORTED' if within_bound and p > .05 else 'NOT SUPPORTED'}"
-            )
+            supported = within_bound and p > 0.05
+        elif direction == 1:
+            supported = np.mean(deltas) > 0 and p < 0.05
+        else:
+            supported = np.mean(deltas) < 0 and p < 0.05
 
-    # Multiple testing correction (Benjamini-Hochberg)
+        print(f"      {'SUPPORTED' if supported else 'NOT SUPPORTED'}")
+
+    # BH correction across all brands
     if not dci_df.empty:
         p_values = dci_df["p_value"].dropna().values
         if len(p_values) > 1:
-            sorted_p = np.sort(p_values)
-            m = len(sorted_p)
-            bh_threshold = [(i + 1) / m * 0.05 for i in range(m)]
-            significant_bh = sum(
-                1 for p, thr in zip(sorted_p, bh_threshold) if p <= thr
-            )
-            print(f"\n  Benjamini-Hochberg correction ({m} tests):")
-            print(f"    Significant at FDR=.05: {significant_bh}/{m}")
+            sig = benjamini_hochberg(p_values, 0.05)
+            print(f"\n  Benjamini-Hochberg correction ({len(p_values)} tests):")
+            print(f"    Significant at FDR = .05: {sum(sig)}/{len(p_values)}")
 
 
-def save_results(dci_df, dim_df, interference_df, model_df):
+def save_results(
+    dci_df, dim_df, interference_df, model_df, tost_df, ablation_df,
+    reco_df=None, mt_df=None,
+):
     """Save all results to CSV."""
     results_dir = Path(__file__).parent / "results"
     results_dir.mkdir(exist_ok=True)
@@ -563,6 +1044,14 @@ def save_results(dci_df, dim_df, interference_df, model_df):
     dim_df.to_csv(results_dir / "dimension_shifts.csv", index=False)
     interference_df.to_csv(results_dir / "interference_patterns.csv", index=False)
     model_df.to_csv(results_dir / "cross_model.csv", index=False)
+    if not tost_df.empty:
+        tost_df.to_csv(results_dir / "tost_equivalence.csv", index=False)
+    if not ablation_df.empty:
+        ablation_df.to_csv(results_dir / "ablation_system_prompt.csv", index=False)
+    if reco_df is not None and not reco_df.empty:
+        reco_df.to_csv(results_dir / "recommendation_comparison.csv", index=False)
+    if mt_df is not None and not mt_df.empty:
+        mt_df.to_csv(results_dir / "multiturn_analysis.csv", index=False)
 
     print(f"\nResults saved to {results_dir}/")
 
@@ -574,24 +1063,47 @@ def main():
         sys.exit(1)
 
     n_total = len(records)
-    n_solo = sum(1 for r in records if r["condition"] == "solo")
-    n_port = sum(1 for r in records if r["condition"] == "portfolio")
+    conditions = set(r["condition"] for r in records)
     models = set(r["model_id"] for r in records)
     brands = set(r["brand"] for r in records)
 
-    print(f"Loaded {n_total} responses ({n_solo} solo, {n_port} portfolio)")
+    n_main = sum(1 for r in records if r["condition"] in ("solo", "portfolio"))
+    n_reco = sum(
+        1
+        for r in records
+        if r["condition"] in ("recommendation_solo", "recommendation_portfolio")
+    )
+    n_mt = sum(1 for r in records if r["condition"] == "multiturn")
+    n_ablation = sum(1 for r in records if r["condition"] == "system_portfolio")
+
+    print(
+        f"Loaded {n_total} responses "
+        f"({n_main} main, {n_reco} recommendation, {n_mt} multiturn, {n_ablation} ablation)"
+    )
     print(f"Models: {', '.join(sorted(models))}")
     print(f"Brands: {', '.join(sorted(brands))}")
+    print(f"Conditions: {', '.join(sorted(conditions))}")
 
     df = records_to_dataframe(records)
 
-    dci_df = analysis_1_dci_comparison(df)
-    dim_df = analysis_2_dimension_shifts(df)
-    interference_df = analysis_3_interference_patterns(df)
-    model_df = analysis_4_cross_model(df)
-    analysis_5_overall_summary(dci_df, interference_df, model_df)
+    # Main analyses (solo vs portfolio direct rating)
+    main_df = df[df["condition"].isin(["solo", "portfolio"])]
 
-    save_results(dci_df, dim_df, interference_df, model_df)
+    dci_df = analysis_1_dci_comparison(main_df)
+    dim_df = analysis_2_dimension_shifts(main_df)
+    interference_df = analysis_3_interference_patterns(main_df)
+    model_df = analysis_4_cross_model(main_df)
+    tost_df = analysis_5_power_and_tost(dci_df)
+    analysis_6_subgroups(main_df, dci_df)
+    ablation_df = analysis_7_ablation(df)
+    reco_df = analysis_8_recommendation(df)
+    mt_df = analysis_9_multiturn(df)
+    analysis_10_overall_summary(dci_df, interference_df, model_df)
+
+    save_results(
+        dci_df, dim_df, interference_df, model_df, tost_df, ablation_df,
+        reco_df, mt_df,
+    )
 
 
 if __name__ == "__main__":

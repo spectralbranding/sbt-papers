@@ -1,0 +1,30 @@
+{
+  "cell_id": "Toyota_Toyota_recommendation_solo_swallow_rep5",
+  "portfolio": "Toyota",
+  "brand": "Toyota",
+  "category": "mass-market automotive",
+  "condition": "recommendation_solo",
+  "model_id": "swallow",
+  "model_name": "GPT-OSS-Swallow 20B",
+  "provider": "yandex",
+  "tradition": "Japanese",
+  "temperature": 0.7,
+  "repetition": 5,
+  "prompt": "A friend asks you: \"What do you think of Toyota as a car brand?\"\n\nBased on your overall impression of Toyota, rate it on each of the following\n8 perception dimensions on a scale of 1 to 5 (1 = Not at all, 5 = Very strongly).\n\nDimensions:\n1. Semiotic: visual and verbal identity (logos, packaging, design language)\n2. Narrative: brand storytelling (origin story, mythology, communication style)\n3. Ideological: values, beliefs, and purpose (what the brand stands for)\n4. Experiential: sensory and interaction experience (product feel, service quality)\n5. Social: community, status signaling (who uses this brand, what it says about them)\n6. Economic: pricing and value perception (affordability, luxury, value-for-money)\n7. Cultural: cultural codes and positioning (what culture or subculture it belongs to)\n8. Temporal: heritage and history (longevity, tradition, track record)\n\nRespond in JSON format:\n{\"semiotic\": <1-5>, \"narrative\": <1-5>, \"ideological\": <1-5>, \"experiential\": <1-5>, \"social\": <1-5>, \"economic\": <1-5>, \"cultural\": <1-5>, \"temporal\": <1-5>}\n\nProvide only the JSON.",
+  "system_prompt": null,
+  "response": "{\"semiotic\":3,\"narrative\":3,\"ideological\":4,\"experiential\":4,\"social\":3,\"economic\":4,\"cultural\":3,\"temporal\":5}",
+  "scores": {
+    "semiotic": 3.0,
+    "narrative": 3.0,
+    "ideological": 4.0,
+    "experiential": 4.0,
+    "social": 3.0,
+    "economic": 4.0,
+    "cultural": 3.0,
+    "temporal": 5.0
+  },
+  "parse_success": true,
+  "scale": "1-5",
+  "version": "1.0",
+  "timestamp": "2026-04-13T22:17:41Z"
+}

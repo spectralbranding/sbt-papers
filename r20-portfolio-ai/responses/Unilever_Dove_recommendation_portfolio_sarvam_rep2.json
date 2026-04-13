@@ -1,0 +1,30 @@
+{
+  "cell_id": "Unilever_Dove_recommendation_portfolio_sarvam_rep2",
+  "portfolio": "Unilever",
+  "brand": "Dove",
+  "category": "personal care",
+  "condition": "recommendation_portfolio",
+  "model_id": "sarvam",
+  "model_name": "Sarvam M",
+  "provider": "sarvam",
+  "tradition": "Indian",
+  "temperature": 0.7,
+  "repetition": 2,
+  "prompt": "A friend asks you: \"What do you think of Dove? I know it's part of Unilever.\"\n\nBased on your overall impression of Dove \u2014 keeping in mind it belongs to\nUnilever (consumer goods conglomerate), alongside Axe, Ben & Jerry's \u2014 rate it on each of the following\n8 perception dimensions on a scale of 1 to 5 (1 = Not at all, 5 = Very strongly).\n\nDimensions:\n1. Semiotic: visual and verbal identity (logos, packaging, design language)\n2. Narrative: brand storytelling (origin story, mythology, communication style)\n3. Ideological: values, beliefs, and purpose (what the brand stands for)\n4. Experiential: sensory and interaction experience (product feel, service quality)\n5. Social: community, status signaling (who uses this brand, what it says about them)\n6. Economic: pricing and value perception (affordability, luxury, value-for-money)\n7. Cultural: cultural codes and positioning (what culture or subculture it belongs to)\n8. Temporal: heritage and history (longevity, tradition, track record)\n\nRespond in JSON format:\n{\"semiotic\": <1-5>, \"narrative\": <1-5>, \"ideological\": <1-5>, \"experiential\": <1-5>, \"social\": <1-5>, \"economic\": <1-5>, \"cultural\": <1-5>, \"temporal\": <1-5>}\n\nProvide only the JSON.",
+  "system_prompt": null,
+  "response": "<think>\nOkay, let's tackle this. The user wants a rating of Dove on 8 different dimensions, each from 1 to 5. Dove is part of Unilever, which also owns brands like Axe and Ben & Jerry's. So, I need to think about each dimension for Dove.\n\nStarting with Semiotic: visual and verbal identity. Dove has a distinct logo with the white dove and the simple packaging. Their design is clean and minimalistic, which I think is effective. So maybe a 4 or 5. I remember their ads often use simple imagery with real women, which is part of their branding. So maybe 5 for semiotic.\n\nNarrative: brand storytelling. Dove's \"Real Beauty\" campaign is iconic. They have a strong origin story around promoting self-esteem and real beauty. Their communication style is empowering. That's a strong narrative, so maybe 5.\n\nIdeological: values and purpose. Dove positions itself as promoting body positivity and self-acceptance. They focus on real beauty and inclusivity. Their values are pretty clear and strong. So again, maybe 5.\n\nExperiential: sensory and interaction. Their products like soap and moisturizers have a creamy texture, which is pleasant. The experience is good, especially the creamy lather. But is it exceptional? Maybe a 4.\n\nSocial: community and status. Dove is used by a broad audience, including those who value inclusivity. It might signal a down-to-earth, self-aware consumer. But is it a status symbol? Maybe not high-end, so maybe 3 or 4. Let's say 4.\n\nEconomic: pricing and value. Dove products are mid-range, not luxury. They offer good value for money, affordable but not cheap. So maybe 4 here.\n\nCultural: cultural codes. Dove is part of mainstream culture, promoting self-care and beauty standards that look beyond traditional beauty. It's positioned in a mainstream, inclusive cultural niche. Maybe 4.\n\nTemporal: heritage and history. Dove has been around since the 19th century, which is a long time. The brand has a solid track record, which adds trust. So maybe 5.\n\nWait, check if any of these need adjustment. Semiotic and narrative might be 5s. Temporal is definitely a 5. Experiential could be 4. Economic, maybe 4 since it's affordable but not the cheapest. Social, maybe 4 as it's popular but not a luxury status brand. Cultural is 4. Ideological and narrative are strong. So final scores: semiotic 5, narrative 5, ideological 5, experiential 4, social 4, economic 4, cultural 4, temporal 5.\n</think>\n\n{\"semiotic\": 5, \"narrative\": 5, \"ideological\": 5, \"experiential\": 4, \"social\": 4, \"economic\": 4, \"cultural\": 4, \"temporal\": 5}",
+  "scores": {
+    "semiotic": 5.0,
+    "narrative": 5.0,
+    "ideological": 5.0,
+    "experiential": 4.0,
+    "social": 4.0,
+    "economic": 4.0,
+    "cultural": 4.0,
+    "temporal": 5.0
+  },
+  "parse_success": true,
+  "scale": "1-5",
+  "version": "1.0",
+  "timestamp": "2026-04-13T22:14:10Z"
+}

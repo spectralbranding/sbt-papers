@@ -1,0 +1,12 @@
+brand,portfolio,delta_dci,p_tost,equivalent
+Dior,LVMH,0.68,0.1967,False
+Fendi,LVMH,0.1,0.001,True
+Louis Vuitton,LVMH,0.62,0.2035,False
+Gillette,P&G,-0.23,0.002,True
+Pampers,P&G,-0.41,0.0187,True
+Tide,P&G,-0.16,0.0376,True
+Lexus,Toyota,0.81,0.2259,False
+Toyota,Toyota,-0.44,0.0191,True
+Axe,Unilever,0.14,0.0205,True
+Ben & Jerry's,Unilever,-0.11,0.0,True
+Dove,Unilever,0.34,0.0138,True

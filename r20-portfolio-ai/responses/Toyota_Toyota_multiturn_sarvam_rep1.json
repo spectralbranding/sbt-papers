@@ -1,0 +1,41 @@
+{
+  "cell_id": "Toyota_Toyota_multiturn_sarvam_rep1",
+  "portfolio": "Toyota",
+  "brand": "Toyota",
+  "category": "mass-market automotive",
+  "condition": "multiturn",
+  "model_id": "sarvam",
+  "model_name": "Sarvam M",
+  "provider": "sarvam",
+  "tradition": "Indian",
+  "temperature": 0.7,
+  "repetition": 1,
+  "turn1_prompt": "You are evaluating the brand Toyota on eight dimensions of brand perception.\nFor each dimension, rate how strongly Toyota communicates through that channel\non a scale of 1 to 5, where 1 = Not at all, 2 = Slightly, 3 = Moderately,\n4 = Strongly, 5 = Very strongly.\n\nDimensions:\n1. Semiotic: visual and verbal identity (logos, packaging, design language)\n2. Narrative: brand storytelling (origin story, mythology, communication style)\n3. Ideological: values, beliefs, and purpose (what the brand stands for)\n4. Experiential: sensory and interaction experience (product feel, service quality)\n5. Social: community, status signaling (who uses this brand, what it says about them)\n6. Economic: pricing and value perception (affordability, luxury, value-for-money)\n7. Cultural: cultural codes and positioning (what culture or subculture it belongs to)\n8. Temporal: heritage and history (longevity, tradition, track record)\n\nRespond in JSON format with the following keys:\n{\"semiotic\": <1-5>, \"narrative\": <1-5>, \"ideological\": <1-5>, \"experiential\": <1-5>, \"social\": <1-5>, \"economic\": <1-5>, \"cultural\": <1-5>, \"temporal\": <1-5>}\n\nEvaluate based on your knowledge of the brand. Provide only the JSON.",
+  "turn1_response": "<think>\nOkay, let's tackle this evaluation of Toyota's brand perception across the eight dimensions. I need to rate each from 1 to 5 based on how strongly Toyota communicates through that channel.\n\nStarting with semiotic: Toyota has a very recognizable logo and consistent design language. Their vehicles have a specific look, so I think that's a 4 or 5. Maybe 4 because while strong, maybe not the most visually striking compared to some luxury brands.\n\nNarrative: Their \"Let's Go Places\" campaign and the origin story are well-known. They tell stories about innovation and reliability. That's probably a 4.\n\nIdeological: Toyota emphasizes sustainability, quality, and innovation. They have initiatives like the Toyota Environmental Challenge. This seems strong, maybe a 4 or 5. Considering their commitment, maybe 4.\n\nExperiential: The build quality, service centers, and driving experience. Toyota is known for reliability and good service. So that's likely a 4.\n\nSocial: Toyota is associated with practicality and reliability. Maybe not a status symbol like luxury brands, but some models like Lexus are. So maybe 3 or 4. Let's say 3.\n\nEconomic: They have a range from affordable to luxury. The value-for-money is high, so probably a 4.\n\nCultural: They're global but also have models tailored to different regions. Maybe a 3 as they adapt to local cultures but have a universal presence.\n\nTemporal: Toyota's been around since 1937, with a long history. Their longevity and reputation would be a 5.\n\nHmm, need to check if any of these need adjustment. Maybe semiotics is 4, narrative 4, ideological 4, experiential 4, social 3, economic 4, cultural 3, temporal 5. That seems balanced.\n</think>\n\n```json\n{\n  \"semiotic\": 4,\n  \"narrative\": 4,\n  \"ideological\": 4,\n  \"experiential\": 4,\n  \"social\": 3,\n  \"economic\": 4,\n  \"cultural\": 3,\n  \"temporal\": 5\n}\n```",
+  "turn1_scores": {
+    "semiotic": 4.0,
+    "narrative": 4.0,
+    "ideological": 4.0,
+    "experiential": 4.0,
+    "social": 3.0,
+    "economic": 4.0,
+    "cultural": 3.0,
+    "temporal": 5.0
+  },
+  "turn2_prompt": "Interesting. Did you know that Toyota is actually owned by Toyota Motor Corporation (automotive conglomerate), which also owns Lexus? Does this change how you see the brand? Please re-rate Toyota on the same 8 dimensions, using the same 1-5 scale.\n\nRespond in JSON format:\n{\"semiotic\": <1-5>, \"narrative\": <1-5>, \"ideological\": <1-5>, \"experiential\": <1-5>, \"social\": <1-5>, \"economic\": <1-5>, \"cultural\": <1-5>, \"temporal\": <1-5>}\n\nProvide only the JSON.",
+  "turn2_response": "<think>\nOkay, let's see. The user mentioned that Toyota is part of the Toyota Motor Corporation, which also owns Lexus. So, maybe the ownership structure affects the brand's perception. Let me think through each dimension again with this in mind.\n\nSemiotic: Toyota's logo and design language are still strong, but Lexus might have a different design. However, the main Toyota brand's semiotic elements remain consistent. Maybe still a 4.\n\nNarrative: Toyota's stories are separate from Lexus. Their campaigns focus on their own history and innovation. So narrative might stay at 4.\n\nIdeological: Toyota's commitment to sustainability and quality is their own. Lexus might have different ideologies, but Toyota's core values remain. Still 4.\n\nExperiential: Toyota's build quality and service are separate from Lexus. So experiential stays 4.\n\nSocial: Toyota's practicality and reliability are still their social image. Lexus affects the parent company but not directly Toyota's social perception. Maybe still 3.\n\nEconomic: Toyota's range and value are the same. They still offer various price points. Economic stays 4.\n\nCultural: Toyota adapts to local markets. Parent company's other brands might influence globally, but Toyota's direct cultural presence remains. Still 3.\n\nTemporal: Toyota's long history is unchanged. Temporal remains 5.\n\nSo the ratings might stay mostly the same, but maybe check if the ownership affects any areas. However, since Lexus is a separate brand, Toyota's own dimensions likely remain consistent.\n</think>\n\n{\"semiotic\":4, \"narrative\":4, \"ideological\":4, \"experiential\":4, \"social\":3, \"economic\":4, \"cultural\":3, \"temporal\":5}",
+  "scores": {
+    "semiotic": 4.0,
+    "narrative": 4.0,
+    "ideological": 4.0,
+    "experiential": 4.0,
+    "social": 3.0,
+    "economic": 4.0,
+    "cultural": 3.0,
+    "temporal": 5.0
+  },
+  "parse_success": true,
+  "scale": "1-5",
+  "version": "1.0",
+  "timestamp": "2026-04-13T22:56:51Z"
+}

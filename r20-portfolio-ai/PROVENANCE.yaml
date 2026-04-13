@@ -8,9 +8,14 @@ provenance:
     - version: "1.0.0"
       date: "2026-04-13"
       description: >
-        Initial preprint. 378 API calls, 7 models, 9 brands, 3 portfolios.
-        Null result for portfolio interference in AI observers. Spectral
-        immunity concept introduced.
+        Initial preprint. 2,930 observations (100% parse success), 10 models from
+        5 training traditions (Western, Chinese, Russian, Indian, Japanese),
+        11 brands, 4 portfolios (LVMH, Unilever, P&G, Toyota), 6 conditions
+        (direct solo, direct portfolio, recommendation solo, recommendation
+        portfolio, multi-turn, prompt-location ablation), 5 repetitions per cell.
+        TOST equivalence confirmed for 8/11 brands. Cross-cultural analysis
+        confirms architectural mechanism. Spectral immunity concept introduced.
+        Total cost ~$5.
 
   forks: []
 

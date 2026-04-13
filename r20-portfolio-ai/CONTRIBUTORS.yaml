@@ -20,5 +20,6 @@ contributors:
       - writing-review
       - data-collection
     disclosure: >
-      Claude Sonnet 4 was one of the 7 LLM models under study (data source).
-      Claude was also used for manuscript drafting assistance.
+      Claude Sonnet 4 was one of the 10 LLM models from 5 training traditions
+      under study (data source). Claude was also used for manuscript drafting
+      assistance.

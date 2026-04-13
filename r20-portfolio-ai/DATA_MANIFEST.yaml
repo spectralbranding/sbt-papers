@@ -1,0 +1,168 @@
+# DATA_MANIFEST.yaml — R20: Spectral Immunity: Portfolio Framing Does Not Alter AI Brand Perception
+# External data dependencies per the Research-as-Repository protocol.
+# All paths are relative to the package root (r20-portfolio-ai/).
+
+data_manifest:
+
+  # ----- HUGGINGFACE DATASET (canonical public archive) -----
+
+  - id: "hf-dataset-main"
+    description: >
+      Canonical public dataset for R20. Contains all 2,930 observations across
+      11 brands, 4 portfolios (LVMH, Unilever, P&G, Toyota), 6 conditions
+      (direct solo, direct portfolio, recommendation solo, recommendation
+      portfolio, multi-turn, prompt-location ablation), 10 LLMs from 5 training
+      traditions, 5 repetitions per cell. 100% parse success.
+    archive: "HuggingFace"
+    repository: "spectralbranding/r20-portfolio-ai"
+    doi: "10.57967/hf/8380"
+    url: "https://huggingface.co/datasets/spectralbranding/r20-portfolio-ai"
+    format: "CSV+JSONL"
+    access: public
+
+  - id: "hf-main-experiment"
+    description: >
+      Main experiment JSONL: direct solo and direct portfolio conditions.
+      11 brands x 2 conditions x 10 models x 5 reps = 1,100 observations.
+    archive: "HuggingFace"
+    repository: "spectralbranding/r20-portfolio-ai"
+    path: "main_experiment.jsonl"
+    format: "JSONL"
+    access: public
+
+  - id: "hf-recommendation"
+    description: >
+      Recommendation modality JSONL: naturalistic recommendation prompts under
+      solo and portfolio conditions. 11 brands x 2 conditions x 10 models x 5 reps.
+    archive: "HuggingFace"
+    repository: "spectralbranding/r20-portfolio-ai"
+    path: "recommendation.jsonl"
+    format: "JSONL"
+    access: public
+
+  - id: "hf-multiturn"
+    description: >
+      Multi-turn conversation JSONL: portfolio context revealed mid-conversation.
+      11 brands x 10 models x 5 reps.
+    archive: "HuggingFace"
+    repository: "spectralbranding/r20-portfolio-ai"
+    path: "multiturn.jsonl"
+    format: "JSONL"
+    access: public
+
+  - id: "hf-ablation-system-prompt"
+    description: >
+      Prompt-location ablation JSONL: system message vs. user message placement.
+      Subset of brands x 10 models x 5 reps.
+    archive: "HuggingFace"
+    repository: "spectralbranding/r20-portfolio-ai"
+    path: "ablation_system_prompt.jsonl"
+    format: "JSONL"
+    access: public
+
+  - id: "hf-data-csv"
+    description: >
+      Full combined dataset as flat CSV. All 2,930 observations with condition,
+      brand, portfolio, model, tradition, rep, and 8 SBT dimensional scores.
+    archive: "HuggingFace"
+    repository: "spectralbranding/r20-portfolio-ai"
+    path: "data.csv"
+    format: "CSV"
+    access: public
+
+  # ----- RESULTS (analysis outputs, GitHub) -----
+
+  - id: "results-dci-comparison"
+    description: >
+      DCI (Dimensional Concentration Index) comparison across solo vs. portfolio
+      conditions. Primary evidence for spectral immunity (mean |delta DCI| = .31).
+    archive: "GitHub"
+    repository: "spectralbranding/sbt-papers"
+    path: "r20-portfolio-ai/results/dci_comparison.csv"
+    format: "CSV"
+    access: public
+
+  - id: "results-tost-equivalence"
+    description: >
+      TOST equivalence test results for all 11 brands. Confirms 8/11 brands
+      equivalent within +/-1.0 DCI bounds.
+    archive: "GitHub"
+    repository: "spectralbranding/sbt-papers"
+    path: "r20-portfolio-ai/results/tost_equivalence.csv"
+    format: "CSV"
+    access: public
+
+  - id: "results-interference-patterns"
+    description: >
+      Interference pattern analysis across portfolios and conditions. Tests
+      H1 (LVMH constructive), H2 (Unilever destructive), H3 (P&G negligible).
+    archive: "GitHub"
+    repository: "spectralbranding/sbt-papers"
+    path: "r20-portfolio-ai/results/interference_patterns.csv"
+    format: "CSV"
+    access: public
+
+  - id: "results-cross-model"
+    description: >
+      Cross-model comparison of portfolio framing effects. Western vs. non-Western
+      traditions both show d < .10.
+    archive: "GitHub"
+    repository: "spectralbranding/sbt-papers"
+    path: "r20-portfolio-ai/results/cross_model.csv"
+    format: "CSV"
+    access: public
+
+  - id: "results-dimension-shifts"
+    description: >
+      Dimensional-level shift analysis across the 8 SBT dimensions
+      (Semiotic, Narrative, Ideological, Experiential, Social, Economic,
+      Cultural, Temporal) under portfolio framing.
+    archive: "GitHub"
+    repository: "spectralbranding/sbt-papers"
+    path: "r20-portfolio-ai/results/dimension_shifts.csv"
+    format: "CSV"
+    access: public
+
+  - id: "results-recommendation-comparison"
+    description: >
+      Recommendation modality results vs. direct rating modality. Tests
+      ecological validity of spectral immunity finding.
+    archive: "GitHub"
+    repository: "spectralbranding/sbt-papers"
+    path: "r20-portfolio-ai/results/recommendation_comparison.csv"
+    format: "CSV"
+    access: public
+
+  - id: "results-multiturn-analysis"
+    description: >
+      Multi-turn conversation analysis. 3/11 FDR-significant brands including
+      the Lexus exception (d = .64 under Toyota portfolio framing).
+    archive: "GitHub"
+    repository: "spectralbranding/sbt-papers"
+    path: "r20-portfolio-ai/results/multiturn_analysis.csv"
+    format: "CSV"
+    access: public
+
+  - id: "results-ablation-system-prompt"
+    description: >
+      System vs. user message placement ablation results. Confirms no
+      prompt-location effect on spectral immunity.
+    archive: "GitHub"
+    repository: "spectralbranding/sbt-papers"
+    path: "r20-portfolio-ai/results/ablation_system_prompt.csv"
+    format: "CSV"
+    access: public
+
+  # ----- RAW RESPONSES (GitHub) -----
+
+  - id: "raw-responses"
+    description: >
+      Raw JSON API responses for all 2,930 observations. Filenames encode
+      portfolio, brand, condition, model, and repetition
+      (e.g. LVMH_Dior_portfolio_claude_rep1.json). Enables full reproduction
+      of all analyses without re-running the experiment.
+    archive: "GitHub"
+    repository: "spectralbranding/sbt-papers"
+    path: "r20-portfolio-ai/responses/"
+    format: "JSON"
+    access: public

@@ -88,7 +88,7 @@ Total: 2,930 observations. All ratings used a 1--5 scale following the PRISM-B s
 
 *Models*
 
-**Table 2:** Model Panel: 10 Models From 7 Training Traditions.
+**Table 2:** Model Panel: 10 Models From 5 Training Traditions.
 
 | Model | Provider | Training Tradition | Deployment |
 |-------|----------|-------------------|------------|

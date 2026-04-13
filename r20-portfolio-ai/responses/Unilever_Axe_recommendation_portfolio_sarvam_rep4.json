@@ -1,0 +1,30 @@
+{
+  "cell_id": "Unilever_Axe_recommendation_portfolio_sarvam_rep4",
+  "portfolio": "Unilever",
+  "brand": "Axe",
+  "category": "personal care",
+  "condition": "recommendation_portfolio",
+  "model_id": "sarvam",
+  "model_name": "Sarvam M",
+  "provider": "sarvam",
+  "tradition": "Indian",
+  "temperature": 0.7,
+  "repetition": 4,
+  "prompt": "A friend asks you: \"What do you think of Axe? I know it's part of Unilever.\"\n\nBased on your overall impression of Axe \u2014 keeping in mind it belongs to\nUnilever (consumer goods conglomerate), alongside Dove, Ben & Jerry's \u2014 rate it on each of the following\n8 perception dimensions on a scale of 1 to 5 (1 = Not at all, 5 = Very strongly).\n\nDimensions:\n1. Semiotic: visual and verbal identity (logos, packaging, design language)\n2. Narrative: brand storytelling (origin story, mythology, communication style)\n3. Ideological: values, beliefs, and purpose (what the brand stands for)\n4. Experiential: sensory and interaction experience (product feel, service quality)\n5. Social: community, status signaling (who uses this brand, what it says about them)\n6. Economic: pricing and value perception (affordability, luxury, value-for-money)\n7. Cultural: cultural codes and positioning (what culture or subculture it belongs to)\n8. Temporal: heritage and history (longevity, tradition, track record)\n\nRespond in JSON format:\n{\"semiotic\": <1-5>, \"narrative\": <1-5>, \"ideological\": <1-5>, \"experiential\": <1-5>, \"social\": <1-5>, \"economic\": <1-5>, \"cultural\": <1-5>, \"temporal\": <1-5>}\n\nProvide only the JSON.",
+  "system_prompt": null,
+  "response": "<think>\nOkay, let's tackle this. The user wants a rating of Axe across eight dimensions. Since Axe is a Unilever brand like Dove and Ben & Jerry's, I need to compare it to those.\n\nStarting with semiotic: Axe's packaging is bold with bright colors and masculinity themes. Their ads use lots of humor and over-the-top scenarios. So maybe a 4 here.\n\nNarrative: Their ads are all about instant attraction and confidence. The stories are straightforward but not very deep. Probably a 3 or 4. Maybe 3 because they're a bit clich\u00e9.\n\nIdeological: Axe focuses on confidence and attractiveness. But not really about sustainability or social issues. Unilever brands like Dove have more values-driven campaigns. So maybe 2 or 3. Let's say 2.\n\nExperiential: The product is affordable and widely available. The user experience is functional, but not luxury. So 4 for being accessible and effective.\n\nSocial: Axe is associated with young men and confidence, maybe a bit of a \"laddie culture\" vibe. It's a status thing for a certain group. Maybe 3 or 4. Hmm, 4 because it's recognizable and has a clear social image.\n\nEconomic: They're mid-range, affordable, good value. Definitely 4 or 5. Probably 4 since they're not luxury.\n\nCultural: Axe is part of the broader Unilever conglomerate, which is global. But Axe specifically targets a youthful, masculine subculture. Maybe 4 for cultural relevance.\n\nTemporal: Axe has been around for decades, established in the 1980s. Long history, so 4 or 5. Let's go with 4 since it's not as heritage-focused as brands like Dove.\n\nWait, maybe adjust some. Narrative could be lower if stories are lacked depth. Experiential might be higher if they have good product reliability. Let me check again.\n\nFinal ratings:\n\nSemiotic: 4 (bold, consistent design)\nNarrative: 3 (clear but not deep)\nIdeological: 2 (not much beyond confidence)\nExperiential: 4 (effective, accessible)\nSocial: 4 (young, confident image)\nEconomic: 4 (good value)\nCultural: 4 (targeted youth culture)\nTemporal: 4 (long-standing but not deeply heritage)\n</think>\n\n{\"semiotic\": 4, \"narrative\": 3, \"ideological\": 2, \"experiential\": 4, \"social\": 4, \"economic\": 4, \"cultural\": 4, \"temporal\": 4}",
+  "scores": {
+    "semiotic": 4.0,
+    "narrative": 3.0,
+    "ideological": 2.0,
+    "experiential": 4.0,
+    "social": 4.0,
+    "economic": 4.0,
+    "cultural": 4.0,
+    "temporal": 4.0
+  },
+  "parse_success": true,
+  "scale": "1-5",
+  "version": "1.0",
+  "timestamp": "2026-04-13T22:15:12Z"
+}

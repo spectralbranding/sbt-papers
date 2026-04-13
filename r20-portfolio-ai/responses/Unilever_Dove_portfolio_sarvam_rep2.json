@@ -1,0 +1,30 @@
+{
+  "cell_id": "Unilever_Dove_portfolio_sarvam_rep2",
+  "portfolio": "Unilever",
+  "brand": "Dove",
+  "category": "personal care",
+  "condition": "portfolio",
+  "model_id": "sarvam",
+  "model_name": "Sarvam M",
+  "tradition": "Indian",
+  "repetition": 2,
+  "prompt": "You are evaluating the brand Dove on eight dimensions of brand perception.\n\nContext: Dove is owned by Unilever (consumer goods conglomerate), which also owns Axe, Ben & Jerry's.\n\nFor each dimension, rate how strongly Dove communicates through that channel\non a scale of 1 to 5, where 1 = Not at all, 2 = Slightly, 3 = Moderately,\n4 = Strongly, 5 = Very strongly.\n\nDimensions:\n1. Semiotic: visual and verbal identity (logos, packaging, design language)\n2. Narrative: brand storytelling (origin story, mythology, communication style)\n3. Ideological: values, beliefs, and purpose (what the brand stands for)\n4. Experiential: sensory and interaction experience (product feel, service quality)\n5. Social: community, status signaling (who uses this brand, what it says about them)\n6. Economic: pricing and value perception (affordability, luxury, value-for-money)\n7. Cultural: cultural codes and positioning (what culture or subculture it belongs to)\n8. Temporal: heritage and history (longevity, tradition, track record)\n\nRespond in JSON format with the following keys:\n{\"semiotic\": <1-5>, \"narrative\": <1-5>, \"ideological\": <1-5>, \"experiential\": <1-5>, \"social\": <1-5>, \"economic\": <1-5>, \"cultural\": <1-5>, \"temporal\": <1-5>}\n\nEvaluate based on your knowledge of the brand. Provide only the JSON.",
+  "system_prompt": null,
+  "response": "<think>\nOkay, let's tackle this evaluation of Dove's brand perception across the eight dimensions. First, I need to recall what each dimension means and how Dove communicates through them.\n\nStarting with Semiotic: Dove has a very distinct white and blue color scheme, the iconic silhouette of a woman's profile that's been around for ages. Their packaging is simple, clean, and easily recognizable. So I'd rate this a 5.\n\nNarrative: Dove's \"Real Beauty\" campaign is legendary. They've built a strong narrative around self-esteem, body positivity, and challenging beauty stereotypes. Their storytelling is consistent and impactful, so probably a 5 here too.\n\nIdeological: The brand stands for real beauty, inclusivity, and self-acceptance. Their campaigns and messaging are deeply rooted in empowerment. That's a strong ideological stance, so 5.\n\nExperiential: Dove products are known for being moisturizing and gentle. The product feel is soft, which is a key part of their experience. In-store displays and ads often highlight these sensory aspects. Maybe a 4 since the tactile experience is a big part of their branding but maybe not as emphasized as the other elements.\n\nSocial: Dove appeals to a broad audience but particularly targets women who value authenticity and self-care. The social status here is about being part of a movement that's against narrow beauty standards. Their social campaigns encourage sharing stories, so maybe a 4. It's strong but maybe not as deeply embedded as ideological or narrative.\n\nEconomic: Dove is positioned as affordable and accessible. They offer a range from basic bars to premium products like Dove Advanced Creamy. However, they're not luxury. So value-for-money is key. Maybe a 4 because they balance affordability with quality.\n\nCultural: Dove is part of the mainstream beauty and personal care culture but has also tapped into specific subcultures with campaigns promoting diversity and inclusion. Their influence is at the intersection of mainstream and progressive movements. So around a 4 here.\n\nTemporal: Dove has been around since the 19th century, with the iconic silhouette introduced in the 1900s. Their long history and heritage are a big part of their brand identity. The longevity and tradition are clearly communicated, so a 5.\n\nLet me double-check each. Semiotic and Temporal are definitely 5s. Narrative and Ideological as well. Experiential is strong but maybe 4. Social and Cultural around 4. Economic 4. That seems balanced.\n</think>\n\n```json\n{\n  \"semiotic\": 5,\n  \"narrative\": 5,\n  \"ideological\": 5,\n  \"experiential\": 4,\n  \"social\": 4,\n  \"economic\": 4,\n  \"cultural\": 4,\n  \"temporal\": 5\n}\n```",
+  "scores": {
+    "semiotic": 5.0,
+    "narrative": 5.0,
+    "ideological": 5.0,
+    "experiential": 4.0,
+    "social": 4.0,
+    "economic": 4.0,
+    "cultural": 4.0,
+    "temporal": 5.0
+  },
+  "parse_success": true,
+  "scale": "1-5",
+  "version": "1.0",
+  "timestamp": "2026-04-13T18:27:25Z",
+  "temperature": 0.7,
+  "provider": "sarvam"
+}
