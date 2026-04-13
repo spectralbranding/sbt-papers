@@ -1,0 +1,28 @@
+# PROVENANCE.yaml -- PRISM Instrument Specification
+# Fork history and submission records per the Research-as-Repository protocol
+
+provenance:
+  paper_title: "PRISM: A Structured Measurement Instrument for Multi-Dimensional Brand Perception"
+  repository: "spectralbranding/sbt-papers/prism-instrument"
+
+  versions:
+    - version: "1.0.0"
+      date: "2026-04-13"
+      description: >
+        Initial preprint. Complete PRISM-B specification with five-layer scaffold,
+        eight scale items, 1-5 ordinal response format, scoring algorithm (DCI +
+        cosine convergence), Perception DOP connection. Four propositions with
+        falsification conditions. Six-instrument comparison table.
+
+  forks: []
+
+  target_venue:
+    journal: "Journal of Marketing Research"
+    publisher: "SAGE / AMA"
+    status: "pre-submission"
+
+  target_venue_alt:
+    - journal: "Organizational Research Methods"
+      publisher: "SAGE"
+    - journal: "Journal of the Academy of Marketing Science"
+      publisher: "Springer"

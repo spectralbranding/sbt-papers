@@ -1,0 +1,111 @@
+# paper.yaml -- PRISM: A Structured Measurement Instrument for Multi-Dimensional Brand Perception
+# Paper Spec schema: https://github.com/spectralbranding/paper-spec/SPECIFICATION.md
+
+paper_spec_version: "0.1.0"
+
+metadata:
+  title: "PRISM: A Structured Measurement Instrument for Multi-Dimensional Brand Perception"
+  authors:
+    - name: "Dmitry Zharnikov"
+      orcid: "0009-0000-6893-9231"
+      affiliation: "Independent Researcher"
+      corresponding: true
+  doi: "[to be assigned]"
+  date: "2026-04-13"
+  version: "1.0.0"
+  status: draft
+  license: "CC-BY-NC-ND-4.0"
+  keywords:
+    - brand perception measurement
+    - psychometrics
+    - instrument design
+    - Spectral Brand Theory
+    - large language models
+    - dimensional collapse
+    - scale development
+    - observer heterogeneity
+    - PRISM
+
+claims:
+  - id: P1
+    type: proposition
+    description: >
+      Convergent Validity: PRISM-B's DCI (computed from 8 ordinal items) will
+      converge with R15's DCI (computed from 100-point allocation) at r > .80
+      when both are administered to the same AI observers on the same brand set.
+    status: proposed
+    falsification: >
+      P1 is falsified if the correlation between PRISM-B DCI and R15 allocation-DCI
+      falls below .60 across a sample of at least 10 AI models.
+
+  - id: P2
+    type: proposition
+    description: >
+      Discriminant Validity: PRISM-B's eight-dimensional profile will exhibit
+      discriminant validity from single-construct brand attitude measures
+      (correlation below .50 with first principal component).
+    status: proposed
+    falsification: >
+      P2 is falsified if the first principal component accounts for more than
+      60% of total variance and correlates above .70 with a single-item brand
+      attitude measure.
+
+  - id: P3
+    type: proposition
+    description: >
+      Observer-Type Sensitivity: PRISM-B will detect systematic dimensional
+      profile differences between AI observers and human observers of the same
+      brand, with cosine similarity below .95 between aggregate profiles.
+    status: proposed
+    falsification: >
+      P3 is falsified if aggregate AI and human profiles for the same brand
+      produce cosine similarity above .98 across a sample of at least 5 brands,
+      indicating that observer-type differences are negligible.
+
+  - id: P4
+    type: proposition
+    description: >
+      Cross-Study Reproducibility: two independent PRISM-B administrations
+      to the same AI model set, separated by at least 30 days, will produce
+      DCI vectors with cosine similarity above .95.
+    status: proposed
+    falsification: >
+      P4 is falsified if test-retest cosine similarity falls below .85.
+
+target_venue: "Journal of Marketing Research"
+target_venue_alt:
+  - "Organizational Research Methods"
+  - "Journal of the Academy of Marketing Science"
+
+submission_history: []
+
+dependencies:
+  - citation: "Zharnikov (2026a)"
+    doi: "10.5281/zenodo.18945912"
+    relationship: extends
+    critical: true
+    description: "SBT: eight-dimension framework that PRISM operationalizes"
+
+  - citation: "Zharnikov (2026v)"
+    doi: "10.5281/zenodo.19422427"
+    relationship: extends
+    critical: true
+    description: "R15: empirical data from which PRISM-B items and DCI derive"
+
+  - citation: "Zharnikov (2026aa)"
+    doi: "10.5281/zenodo.19528833"
+    relationship: extends
+    critical: true
+    description: "R19: J-curve finding establishing 1-5 ordinal as optimal format"
+
+  - citation: "Zharnikov (2026y)"
+    doi: "10.5281/zenodo.19468204"
+    relationship: cites
+    critical: false
+    description: "R17: multi-observer triangulation and Perception DOP"
+
+ai_disclosure: >
+  AI tools (Claude, Anthropic) were used for manuscript drafting assistance,
+  literature review, and self-adversarial review. All instrument design decisions,
+  propositions, scoring algorithms, and theoretical framework are solely the
+  author's intellectual contribution.
