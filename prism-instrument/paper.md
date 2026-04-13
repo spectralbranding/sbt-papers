@@ -2,6 +2,8 @@
 
 **Dmitry Zharnikov**
 
+DOI: 10.5281/zenodo.19555265
+
 Working Paper -- April 2026
 
 ---
@@ -20,15 +22,15 @@ Existing multi-dimensional instruments cannot answer this question because they 
 
 **Table 2.** Comparison of Multi-Dimensional Brand Measurement Instruments.
 
-| Instrument | Construct | Dimensions | Source | Observer Scope | Format |
-|-----------|-----------|------------|--------|---------------|--------|
-| Aaker BPS (1997) | Personality traits | 5 (factor-derived) | Human lexicon | Human only | 1--5 Likert |
-| Brakus BXS (2009) | Experiential reactions | 4 (factor-derived) | Embodied experience | Human only | 1--7 Likert |
-| Yoo-Donthu CBBE (2001) | Brand equity outcomes | 3 (factor-derived) | Consumer surveys | Human only | 1--5 Likert |
-| Geuens et al. (2009) | Personality traits | 5 (factor-derived) | Cross-cultural | Human only | 1--7 Likert |
-| **PRISM-B** | **Signal reception** | **8 (theory-derived)** | **Brand signal taxonomy** | **AI + Human** | **1--5 ordinal** |
+| Instrument | Construct (n dims) | Derivation | Observers | Format |
+|:-----------|:-------------------|:-----------|:----------|:-------|
+| Aaker BPS (1997) | Personality traits (5) | Factor analysis | Human only | 1--5 Likert |
+| Brakus BXS (2009) | Experiential reactions (4) | Factor analysis | Human only | 1--7 Likert |
+| Yoo-Donthu CBBE (2001) | Brand equity outcomes (3) | Factor analysis | Human only | 1--5 Likert |
+| Geuens et al. (2009) | Personality traits (5) | Factor analysis | Human only | 1--7 Likert |
+| **PRISM-B** | **Signal reception (8)** | **Theory-derived** | **AI + Human** | **1--5 ordinal** |
 
-*Notes:* "Factor-derived" indicates dimensions were identified through exploratory or confirmatory factor analysis of human response data. "Theory-derived" indicates dimensions were specified by the theoretical framework (SBT) prior to measurement. "Observer Scope" indicates whether the instrument can be administered to AI observers without construct mismatch.
+*Notes:* Factor analysis instruments derive dimensions from exploratory or confirmatory analysis of human response data. PRISM-B derives dimensions from the SBT signal taxonomy prior to measurement. Only PRISM-B can be administered to AI observers without construct mismatch.
 
 This paper argues that the measurement gap is not merely an absence of instruments but a consequence of how instruments have been designed. The dominant paradigm -- Churchill (1979), refined by Rossiter (2002) and implemented by Brakus et al. (2009) -- derives dimensions empirically from human response patterns. Dimensions discovered this way are necessarily human-specific: they capture variance in human responses but provide no guarantee that the same dimensional structure applies to non-human observers. An instrument designed for commensurable AI-human measurement must instead derive its dimensions from the *signal* side -- what the brand emits -- rather than the *response* side -- how one particular observer type reacts. This signal-side derivation is what Spectral Brand Theory provides.
 
@@ -80,18 +82,18 @@ Eight items, one per SBT dimension, administered for a focal brand:
 
 **Table 1.** PRISM-B Scale Items.
 
-| Item | Dimension | Stem |
-|------|-----------|------|
-| P1 | Semiotic | How strongly does [BRAND] communicate through distinctive visual identity, symbols, and design language? |
-| P2 | Narrative | How strongly does [BRAND] communicate through storytelling, founding mythology, and brand narrative? |
-| P3 | Ideological | How strongly does [BRAND] communicate through stated values, ethical commitments, and ideological positioning? |
-| P4 | Experiential | How strongly does [BRAND] communicate through product experience, sensory qualities, and functional performance? |
-| P5 | Social | How strongly does [BRAND] communicate through community belonging, status signaling, and social identity? |
-| P6 | Economic | How strongly does [BRAND] communicate through pricing strategy, value proposition, and economic positioning? |
-| P7 | Cultural | How strongly does [BRAND] communicate through cultural resonance, regional identity, and lifestyle alignment? |
-| P8 | Temporal | How strongly does [BRAND] communicate through heritage, longevity, temporal depth, and historical continuity? |
+| Item (Dimension) | Stem |
+|:-----------------|:-----|
+| P1 (Semiotic) | How strongly does [BRAND] communicate through distinctive visual identity, symbols, and design language? |
+| P2 (Narrative) | How strongly does [BRAND] communicate through storytelling, founding mythology, and brand narrative? |
+| P3 (Ideological) | How strongly does [BRAND] communicate through stated values, ethical commitments, and ideological positioning? |
+| P4 (Experiential) | How strongly does [BRAND] communicate through product experience, sensory qualities, and functional performance? |
+| P5 (Social) | How strongly does [BRAND] communicate through community belonging, status signaling, and social identity? |
+| P6 (Economic) | How strongly does [BRAND] communicate through pricing strategy, value proposition, and economic positioning? |
+| P7 (Cultural) | How strongly does [BRAND] communicate through cultural resonance, regional identity, and lifestyle alignment? |
+| P8 (Temporal) | How strongly does [BRAND] communicate through heritage, longevity, temporal depth, and historical continuity? |
 
-*Notes:* [BRAND] is replaced with the focal brand name. Items are administered in fixed order (P1--P8) for AI observers; randomized order is recommended for human respondents to control order effects. All items use identical stem structure ("How strongly does [BRAND] communicate through...") to maintain parallel construction. The stem targets perceived signal intensity, not evaluative judgment (the instrument asks "how strongly does it communicate" not "how good is it at communicating").
+*Notes:* [BRAND] is replaced with the focal brand name. Items are administered in fixed order (P1--P8) for AI observers; randomized order is recommended for human respondents to control order effects. All items use identical stem structure ("How strongly does [BRAND] communicate through...") to maintain parallel construction. The stem targets perceived signal intensity, not evaluative judgment.
 
 ### *Response Format: 1--5 Ordinal Scale*
 
@@ -426,8 +428,3 @@ Zharnikov, Dmitry (2026z), "Spectral Dynamics: Velocity, Acceleration, and Phase
 
 Zharnikov, Dmitry (2026aa), "Empirical Rate-Distortion Curve for AI Brand Perception Encoders," Working Paper, https://doi.org/10.5281/zenodo.19528833.
 
----
-
-## AI Disclosure
-
-Claude (Anthropic) was used as a drafting assistant for prose composition and literature review. All intellectual contributions, theoretical arguments, instrument design decisions, and scholarly judgments are the author's own. The PRISM instrument specification, dimensional mapping, scoring algorithm, and propositions were developed by the author; AI assistance was limited to text generation and reference formatting.

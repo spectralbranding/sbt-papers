@@ -1,0 +1,24 @@
+{
+  "cell_id": "Unilever_Ben_and_Jerry's_solo_qwen3_rep3",
+  "portfolio": "Unilever",
+  "brand": "Ben & Jerry's",
+  "category": "ice cream",
+  "condition": "solo",
+  "model_id": "qwen3",
+  "model_name": "Qwen3 30B",
+  "repetition": 3,
+  "prompt": "Rate the brand Ben & Jerry's on each of the following 8 perceptual dimensions using a 0-10 scale (0 = not at all associated, 10 = extremely strongly associated).\n\nDimensions:\n1. Semiotic: visual and verbal identity (logos, packaging, design language)\n2. Narrative: brand storytelling (origin story, mythology, communication style)\n3. Ideological: values, beliefs, and purpose (what the brand stands for)\n4. Experiential: sensory and interaction experience (product feel, service quality)\n5. Social: community, status signaling (who uses this brand, what it says about them)\n6. Economic: pricing and value perception (affordability, luxury, value-for-money)\n7. Cultural: cultural codes and positioning (what culture or subculture it belongs to)\n8. Temporal: heritage and history (longevity, tradition, track record)\n\nReturn ONLY a JSON object with your ratings, no other text. Example format:\n{\"semiotic\": 7, \"narrative\": 8, \"ideological\": 6, \"experiential\": 7, \"social\": 8, \"economic\": 5, \"cultural\": 7, \"temporal\": 6}",
+  "response": "Hmm, the user wants me to rate Ben & Jerry's on 8 specific perceptual dimensions using a 0-10 scale. They've provided clear definitions for each dimension and want only a JSON response with no additional text.\n\nLet me think about Ben & Jerry's as a brand. They're famous for their ice cream, but they're also known for their strong social activism. I need to rate each dimension based on what I know about them.\n\nFor semiotic (visual identity), they have that iconic logo with the cartoon characters and colorful packaging. That's very recognizable, so I'd say 9 out of 10.\n\nFor narrative (storytelling), their origin story is well-known - two friends starting with a small shop in Vermont. They also have that fun, quirky communication style in their marketing, so 9 seems right.\n\nIdeological is where they really shine - they're all about social justice, environmental causes, and activism. They've taken stands on issues like climate change and LGBTQ+ rights, so I'd give this a 10.\n\nExperiential (sensory experience) - their ice cream is known for being rich and chunky, with lots of mix-ins. The texture and taste are distinctive, so 8 feels accurate.\n\nSocial dimension - using Ben & Jerry's can signal that you care about social issues, so it's associated with progressive, activist types. But it's not super exclusive like luxury brands, so 7 seems fair.\n\nEconomic - their ice cream is premium-priced, not cheap. You'd pay more for it than generic brands, but it's not considered luxury like some high-end products. So 5 for value perception - it's worth the price for many, but not affordable for everyone.\n\nCultural - they're strongly tied to the American counterculture movement, especially the 70s/80s activist scene. They're also popular with younger, socially conscious crowds, so 8 fits.\n\nTemporal (heritage) - they've been around since 1978, so they have a solid history. But they're not as old as some heritage brands, so 7 seems reasonable.\n\nI should double-check if these ratings make sense. Their activism is their strongest point (ideological 10), and their visual identity is very strong (semiotic 9). The pricing is higher than average but not outrageous (economic 5). For social standing, it's more about shared values than status (social 7).\n\nNow I'll format this as a JSON object exactly as requested, with no extra text. I'll make sure the keys match the dimension names exactly as specified.\n</think>\n\n{\"semiotic\": 9, \"narrative\": 9, \"ideological\": 10, \"experiential\": 8, \"social\": 7, \"economic\": 5, \"cultural\": 8, \"temporal\": 7}",
+  "scores": {
+    "semiotic": 9.0,
+    "narrative": 9.0,
+    "ideological": 10.0,
+    "experiential": 8.0,
+    "social": 7.0,
+    "economic": 5.0,
+    "cultural": 8.0,
+    "temporal": 7.0
+  },
+  "parse_success": true,
+  "timestamp": "2026-04-13T14:13:14Z"
+}

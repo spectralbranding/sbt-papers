@@ -1,0 +1,24 @@
+{
+  "cell_id": "Unilever_Ben_and_Jerry's_solo_gemini_rep2",
+  "portfolio": "Unilever",
+  "brand": "Ben & Jerry's",
+  "category": "ice cream",
+  "condition": "solo",
+  "model_id": "gemini",
+  "model_name": "Gemini 2.0 Flash",
+  "repetition": 2,
+  "prompt": "Rate the brand Ben & Jerry's on each of the following 8 perceptual dimensions using a 0-10 scale (0 = not at all associated, 10 = extremely strongly associated).\n\nDimensions:\n1. Semiotic: visual and verbal identity (logos, packaging, design language)\n2. Narrative: brand storytelling (origin story, mythology, communication style)\n3. Ideological: values, beliefs, and purpose (what the brand stands for)\n4. Experiential: sensory and interaction experience (product feel, service quality)\n5. Social: community, status signaling (who uses this brand, what it says about them)\n6. Economic: pricing and value perception (affordability, luxury, value-for-money)\n7. Cultural: cultural codes and positioning (what culture or subculture it belongs to)\n8. Temporal: heritage and history (longevity, tradition, track record)\n\nReturn ONLY a JSON object with your ratings, no other text. Example format:\n{\"semiotic\": 7, \"narrative\": 8, \"ideological\": 6, \"experiential\": 7, \"social\": 8, \"economic\": 5, \"cultural\": 7, \"temporal\": 6}",
+  "response": "```json\n{\n  \"semiotic\": 9,\n  \"narrative\": 9,\n  \"ideological\": 9,\n  \"experiential\": 9,\n  \"social\": 8,\n  \"economic\": 7,\n  \"cultural\": 8,\n  \"temporal\": 9\n}\n```",
+  "scores": {
+    "semiotic": 9.0,
+    "narrative": 9.0,
+    "ideological": 9.0,
+    "experiential": 9.0,
+    "social": 8.0,
+    "economic": 7.0,
+    "cultural": 8.0,
+    "temporal": 9.0
+  },
+  "parse_success": true,
+  "timestamp": "2026-04-13T14:03:41Z"
+}

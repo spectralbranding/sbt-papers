@@ -10,6 +10,10 @@ title: "PRISM: A Structured Measurement Instrument for Multi-Dimensional Brand P
 version: "1.0.0"
 date-released: "2026-04-13"
 repository-code: "https://github.com/spectralbranding/sbt-papers"
+identifiers:
+  - type: doi
+    value: "10.5281/zenodo.19555265"
+    description: "Zenodo archive (primary)"
 keywords:
   - brand perception measurement
   - psychometrics

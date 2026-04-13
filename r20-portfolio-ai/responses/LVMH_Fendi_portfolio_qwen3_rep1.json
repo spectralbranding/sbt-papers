@@ -1,0 +1,24 @@
+{
+  "cell_id": "LVMH_Fendi_portfolio_qwen3_rep1",
+  "portfolio": "LVMH",
+  "brand": "Fendi",
+  "category": "luxury fashion",
+  "condition": "portfolio",
+  "model_id": "qwen3",
+  "model_name": "Qwen3 30B",
+  "repetition": 1,
+  "prompt": "Rate the brand Fendi on each of the following 8 perceptual dimensions using a 0-10 scale (0 = not at all associated, 10 = extremely strongly associated).\n\nContext: Fendi is part of the LVMH Moet Hennessy Louis Vuitton luxury conglomerate, which also includes Louis Vuitton, Dior.\n\nDimensions:\n1. Semiotic: visual and verbal identity (logos, packaging, design language)\n2. Narrative: brand storytelling (origin story, mythology, communication style)\n3. Ideological: values, beliefs, and purpose (what the brand stands for)\n4. Experiential: sensory and interaction experience (product feel, service quality)\n5. Social: community, status signaling (who uses this brand, what it says about them)\n6. Economic: pricing and value perception (affordability, luxury, value-for-money)\n7. Cultural: cultural codes and positioning (what culture or subculture it belongs to)\n8. Temporal: heritage and history (longevity, tradition, track record)\n\nReturn ONLY a JSON object with your ratings, no other text. Example format:\n{\"semiotic\": 7, \"narrative\": 8, \"ideological\": 6, \"experiential\": 7, \"social\": 8, \"economic\": 5, \"cultural\": 7, \"temporal\": 6}",
+  "response": "Okay, the user wants me to rate Fendi on eight perceptual dimensions using a 0-10 scale. They've provided a clear context about Fendi being part of LVMH, alongside Louis Vuitton and Dior. I need to be precise and stick to the guidelines.\n\nFirst, I'll go through each dimension one by one. Starting with Semiotic: Fendi's visual identity is strong with that iconic double-F logo, signature fur, and sleek packaging. They're known for high-end design, so I'd say 9. But maybe not a perfect 10 since some might not recognize it as instantly as LV.\n\nNext, Narrative: Fendi's origin story is solid\u2014they started in Rome in 1925, focusing on fur. Their modern storytelling ties heritage to innovation, like with Kim Jones' collections. So 8 seems right. Not 10 because it's not as mythic as some brands.\n\nIdeological: Fendi champions craftsmanship and innovation, especially with their sustainable initiatives. But they're not as vocal on social issues as some competitors. I'll go with 7. It's strong but not top-tier.\n\nExperiential: Their products feel luxurious\u2014soft leather, precise tailoring. Service is impeccable in boutiques. But not all touchpoints are equally perfect, so 8. Maybe not 9 because some might find it inconsistent.\n\nSocial: Fendi is a status symbol, worn by celebrities and elites. It signals high status but isn't as ubiquitous as LV. So 8. It's aspirational but not the most exclusive.\n\nEconomic: As an LVMH brand, Fendi is ultra-luxury. Prices are high, so value-for-money isn't a factor\u2014they're for the wealthy. Rating it 5 makes sense: not affordable, but the price aligns with luxury perception.\n\nCultural: They're deeply rooted in Italian culture, especially Roman elegance. But they're global, not tied to a specific subculture. So 7\u2014strong cultural roots but broad appeal.\n\nTemporal: Fendi has a long history since 1925, with continuity in craftsmanship. Heritage is well-established, but they're not as ancient as some houses. 8 seems fair\u2014strong but not the oldest.\n\nNow, double-checking against LVMH peers: Fendi is respected but not as iconic as LV, so ratings should reflect that. For example, economic is 5 because luxury brands don't aim for value\u2014high price is expected.\n\nFinally, ensuring all ratings are within 0-10 and no extra text. The JSON should match the example format exactly. I'll compile the numbers and output only the JSON.\n</think>\n\n{\"semiotic\": 9, \"narrative\": 8, \"ideological\": 7, \"experiential\": 8, \"social\": 8, \"economic\": 5, \"cultural\": 7, \"temporal\": 8}",
+  "scores": {
+    "semiotic": 9.0,
+    "narrative": 8.0,
+    "ideological": 7.0,
+    "experiential": 8.0,
+    "social": 8.0,
+    "economic": 5.0,
+    "cultural": 7.0,
+    "temporal": 8.0
+  },
+  "parse_success": true,
+  "timestamp": "2026-04-13T14:08:35Z"
+}

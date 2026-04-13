@@ -1,0 +1,77 @@
+# paper.yaml -- R20: Spectral Immunity: Portfolio Framing Does Not Alter AI Brand Perception
+# Citation key: 2026ab
+# Paper Spec schema: https://github.com/spectralbranding/paper-spec/SPECIFICATION.md
+
+paper_spec_version: "0.1.0"
+
+metadata:
+  title: "Spectral Immunity: Portfolio Framing Does Not Alter AI Brand Perception"
+  authors:
+    - name: "Dmitry Zharnikov"
+      orcid: "0009-0000-6893-9231"
+      affiliation: "Independent Researcher"
+      corresponding: true
+  citation_key: "2026ab"
+  doi: "10.5281/zenodo.19555282"
+  date: "2026-04-13"
+  version: "1.0.0"
+  status: draft
+  license: "CC-BY-NC-ND-4.0"
+  keywords:
+    - brand perception
+    - large language models
+    - portfolio interference
+    - dimensional collapse
+    - Spectral Brand Theory
+    - spectral immunity
+    - awareness gate
+
+experiment_summary:
+  total_calls: 378
+  successful_calls: 355
+  success_rate: 0.939
+  models: 7
+  brands: 9
+  portfolios: 3
+  conditions: 2
+  total_cost_usd: ~0.50
+
+hypothesis_results:
+  - id: H1
+    description: "LVMH constructive interference"
+    status: not_supported
+    note: "Mean delta DCI = +.03, t(2) = .11, p = .920, d = .07"
+  - id: H2
+    description: "Unilever destructive interference"
+    status: not_supported
+    note: "Mean delta DCI = +.27, t(2) = 3.34, p = .079, d = 1.93. Direction opposite to prediction."
+  - id: H3
+    description: "P&G negligible interference"
+    status: supported
+    note: "Mean delta DCI = -.05, t(2) = -.13, p = .911, d = -.07"
+  - id: H4
+    description: "Spectral immunity"
+    status: supported
+    note: "Mean |delta DCI| = .39 across all 9 brands, cosine > .980 for all."
+
+target_venue: "Marketing Science"
+target_venue_alt:
+  - "International Journal of Research in Marketing"
+  - "Journal of Marketing Research"
+
+dependencies:
+  - citation: "Zharnikov (2026a)"
+    doi: "10.5281/zenodo.18945912"
+    relationship: extends
+    critical: true
+    description: "SBT: eight-dimension framework"
+  - citation: "Zharnikov (2026q)"
+    doi: "10.5281/zenodo.TBD"
+    relationship: tests
+    critical: true
+    description: "R8: Spectral Portfolio Theory -- interference framework being tested"
+  - citation: "Zharnikov (2026v)"
+    doi: "10.5281/zenodo.19422427"
+    relationship: extends
+    critical: true
+    description: "R15: dimensional collapse baseline and PRISM-B instrument"
