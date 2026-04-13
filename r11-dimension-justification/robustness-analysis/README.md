@@ -4,7 +4,7 @@ Empirical stress-test of SBT's eight-dimension framework, reported in Section 8A
 
 ## Data Source
 
-R15 Run 5 weight profiles (Zharnikov, 2026v): 22 LLMs, 8 brand pairs, 3 repetitions per pair per model, 11,298 API calls. Source data in `../../../r15-ai-search-metamerism/experiment/`.
+R15 Run 5 weight profiles (Zharnikov, 2026v): 22 LLMs, 8 brand pairs, 3 repetitions per pair per model, 11,298 API calls. Source data in the [R15 experiment directory](https://github.com/spectralbranding/sbt-papers/tree/main/r15-ai-search-metamerism/experiment).
 
 ## Files
 
