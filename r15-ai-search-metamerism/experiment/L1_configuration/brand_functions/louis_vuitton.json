@@ -1,0 +1,47 @@
+{
+  "brand": "Louis Vuitton",
+  "version": "1.0",
+  "source": "Brand Function Registry (spectralbranding, 2026)",
+  "dimensions": {
+    "semiotic": {
+      "score": 9.5,
+      "positioning": "The LV monogram (1896) is the most widely recognized luxury mark in the world and among the most counterfeited, which paradoxically confirms its semiotic power. The Damier check pattern (1888) and Monogram canvas function as standalone brand identifiers visible from a distance.",
+      "key_signals": ["LV monogram canvas (1896)", "Damier check pattern (1888)", "fleur-de-lis tack detail", "Louis Vuitton wordmark in Futura typeface"]
+    },
+    "narrative": {
+      "score": 8.5,
+      "positioning": "Louis Vuitton's 1854 founding narrative — a peasant boy who walked from the Jura mountains to Paris to become a trunk-maker for Empress Eugénie — is among the most compelling founder stories in luxury. The progression from functional travel goods to high fashion under Marc Jacobs (1997) and Nicolas Ghesquière (2013) extends the narrative arc.",
+      "key_signals": ["1854 Paris trunk-maker founding", "Empress Eugénie commission", "Marc Jacobs artistic director appointment (1997)", "LVMH group acquisition and cultural strategy"]
+    },
+    "ideological": {
+      "score": 5.0,
+      "positioning": "Luxury consumption is the stated ideology, with craft and travel as its justification. Louis Vuitton does not articulate a strong ethical or social ideology; its values are aesthetic and hedonistic rather than purpose-driven. Sustainability efforts (LV Crafts) remain secondary to the consumption identity.",
+      "key_signals": ["craft-as-virtue positioning", "travel as aspiration (original trunk mission)", "LV Crafts sustainability initiative (limited)", "art collaboration program (Murakami, Koons, Yayoi Kusama)"]
+    },
+    "experiential": {
+      "score": 8.5,
+      "positioning": "Louis Vuitton flagship stores — Champs-Élysées, Fifth Avenue, Bond Street — are architectural events designed to transform purchase into cultural participation. The product itself is an experiential object: the smell of the canvas, the hardware weight, the serial number personalization.",
+      "key_signals": ["Champs-Élysées flagship as architectural landmark", "monogram canvas sensory distinctiveness", "hot-stamping personalization service", "VIP client services and bespoke trunk orders"]
+    },
+    "social": {
+      "score": 9.0,
+      "positioning": "Louis Vuitton ownership is a globally legible wealth and taste signal. The monogram's visibility from a distance makes it function as wearable social broadcasting. The brand has navigated the tension between mass luxury (accessible price tier) and ultra luxury by maintaining aspirational imagery through art partnerships and celebrity alignment.",
+      "key_signals": ["monogram as wearable status broadcast", "celebrity ambassador program (Zendaya, BTS, Léa Seydoux)", "celebrity front-row presence at LV runway shows", "resale value maintenance as social investment signal"]
+    },
+    "economic": {
+      "score": 2.5,
+      "positioning": "Entry handbags begin at ~$1,200 (Pochette Accessoires) and flagship bags (Capucines, Dauphine) range to $5,000–$10,000+. Custom trunks extend to six figures. Price is used as an aspirational filter; there is no budget tier and no discount channel, though the entry price is lower than Hermès.",
+      "key_signals": ["entry at ~$1,200 (Pochette)", "Capucines at $5,000+", "custom trunk orders at $10,000–$50,000+", "no sales or outlet channel"]
+    },
+    "cultural": {
+      "score": 9.0,
+      "positioning": "Louis Vuitton is the primary commercial expression of French luxury culture globally and the world's most valuable luxury brand by revenue (LVMH). The brand's art collaborations — Murakami (2003), Koons (2017), Yayoi Kusama (2023) — position it at the intersection of fashion and contemporary art.",
+      "key_signals": ["French luxury culture ambassador globally", "Takashi Murakami collaboration (2003)", "Jeff Koons collaboration (2017)", "Yayoi Kusama collaboration (2023)"]
+    },
+    "temporal": {
+      "score": 9.0,
+      "positioning": "Founded 1854 — 170+ years of continuous operation. The trunk archive functions as a living museum of travel history. Louis Vuitton is older than the Eiffel Tower, older than the automobile, and older than commercial aviation — the brand pre-dates the very concept of modern travel it now symbolizes.",
+      "key_signals": ["1854 founding", "170+ years continuous operation", "trunk archive (client records since 1854)", "pre-dates automobile and commercial aviation"]
+    }
+  }
+}

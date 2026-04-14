@@ -1,0 +1,47 @@
+{
+  "brand": "Huawei",
+  "version": "1.0",
+  "source": "Brand Function Registry (spectralbranding, 2026)",
+  "dimensions": {
+    "semiotic": {
+      "score": 6.0,
+      "positioning": "Flower-petal logo (stylized asterisk) redesigned 2018 for premium appeal. Visual identity is polished but lacks the iconic compression of top-tier global brands. Mate and P-series hardware design language is sophisticated and distinguishable.",
+      "key_signals": ["flower-petal logo (2018 redesign)", "Leica camera partnership branding (ended 2022)", "Mate and P-series product naming", "HarmonyOS visual identity"]
+    },
+    "narrative": {
+      "score": 7.5,
+      "positioning": "Founded 1987 by Ren Zhengfei, a former People's Liberation Army engineer. Narrative of building from nothing under pressure: US sanctions (2019-present) reframed internally as a forcing function for self-reliance. Kirin chip development under export controls is a powerful resilience story.",
+      "key_signals": ["Ren Zhengfei founding story", "US entity list (2019) as brand narrative pivot", "Kirin 9000S chip as sanctions-resilience symbol", "HarmonyOS as Android independence"]
+    },
+    "ideological": {
+      "score": 5.0,
+      "positioning": "Technology sovereignty as explicit positioning in home and allied markets. Security controversy (Western government bans) creates bifurcated ideological reception: trusted national champion in China, security risk in NATO markets. No coherent global values framework.",
+      "key_signals": ["5G infrastructure sovereignty claims", "government bans in US, UK, Australia, EU", "Chinese government R&D support", "self-reliance (zili gengsheng) as stated philosophy"]
+    },
+    "experiential": {
+      "score": 7.5,
+      "positioning": "Camera technology and HarmonyOS integration are the primary experiential differentiators. Mate 60 Pro satellite connectivity and periscope zoom lens signal technical leadership. HarmonyOS ecosystem is maturing as an Android alternative in Chinese market.",
+      "key_signals": ["periscope zoom camera systems", "satellite communication (Mate 60 Pro)", "HarmonyOS cross-device integration", "XMAGE camera processing pipeline"]
+    },
+    "social": {
+      "score": 5.0,
+      "positioning": "Deeply polarized social perception. National champion and aspirational device in China and select emerging markets. Geopolitically charged and avoided in Western markets post-sanctions. Not a globally coherent social signal.",
+      "key_signals": ["#1 smartphone brand in China (2023 return to top)", "government procurement preference in China", "banned from government use in US, UK, Australia", "strong adoption in Middle East and Africa"]
+    },
+    "economic": {
+      "score": 7.0,
+      "positioning": "Competitive pricing that undercuts Western premium brands while matching on hardware specifications. Post-sanctions, domestic sales subsidize global ambition. Revenue from B2B (enterprise networking, cloud) provides economic cushion for consumer brand investment.",
+      "key_signals": ["Mate series priced below Apple flagship", "B2B revenue (carrier infrastructure, enterprise networking)", "domestic market recovery post-sanctions", "aggressive pricing in emerging markets"]
+    },
+    "cultural": {
+      "score": 8.0,
+      "positioning": "Embodies Chinese tech nationalism and the ambition of indigenous technological capability. Zili gengsheng (self-reliance) is a deep cultural value activated by the sanctions narrative. Huawei's resilience has become a point of national pride in China.",
+      "key_signals": ["zili gengsheng (self-reliance) cultural alignment", "national pride following sanctions resilience", "Ren Zhengfei as cultural figure of determination", "Huawei as proof of Chinese deep-tech capability"]
+    },
+    "temporal": {
+      "score": 5.5,
+      "positioning": "Founded 1987 in telecom equipment. Consumer brand built primarily from ~2010. Global premium brand recognition achieved and then disrupted by sanctions (2019). Compressed brand history with an unusual mid-career geopolitical rupture that reshapes all earlier narrative.",
+      "key_signals": ["1987 founding in telecom equipment", "consumer smartphone entry ~2010", "global premium status achieved ~2015-2018", "2019 US entity list as temporal rupture"]
+    }
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "brand": "Apple",
+  "version": "1.0",
+  "source": "Brand Function Registry (spectralbranding, 2026)",
+  "dimensions": {
+    "semiotic": {
+      "score": 9.5,
+      "positioning": "The bitten apple is the most valuable brand mark in the world. Apple's visual language — white space, San Francisco typeface, product-as-object photography — is a self-consistent semiotic system requiring no explanatory text.",
+      "key_signals": ["Apple logo (bitten apple silhouette)", "white space as design principle", "San Francisco/Helvetica Neue typography", "product unboxing as ritual object"]
+    },
+    "narrative": {
+      "score": 9.0,
+      "positioning": "The garage-to-empire founding story, Jobs's return from exile, and the Think Different campaign constitute one of the most complete brand mythologies in corporate history. The 1984 Super Bowl ad remains the canonical moment of brand narrative as cultural event.",
+      "key_signals": ["1976 garage founding (Jobs + Wozniak)", "1984 Super Bowl ad", "Jobs's return from NeXT (1997)", "Think Different campaign"]
+    },
+    "ideological": {
+      "score": 7.0,
+      "positioning": "Privacy as a human right (post-2014) and creativity as the defining human attribute are Apple's two primary ideological claims. Both are genuine differentiators in the competitive landscape, though tension exists between privacy rhetoric and ad-targeting business interests.",
+      "key_signals": ["Privacy is a human right positioning", "App Tracking Transparency (iOS 14)", "Creative Pro identity (Final Cut, Logic)", "Right to Repair opposition"]
+    },
+    "experiential": {
+      "score": 9.5,
+      "positioning": "Apple Retail stores are the highest-revenue-per-square-foot retail locations in the world. The ecosystem lock-in (iPhone + Mac + iPad + Watch + AirPods) creates compounding experiential integration that makes switching costly at the habit level, not just the financial level.",
+      "key_signals": ["Apple Store Genius Bar", "ecosystem continuity (Handoff, AirDrop)", "unboxing design as sensory ritual", "Apple One subscription integration"]
+    },
+    "social": {
+      "score": 7.0,
+      "positioning": "iPhone ownership functions as a global status signal, amplified by the green vs. blue bubble dynamic in iMessage. The brand has evolved from counterculture identity to mainstream aspirational status, particularly among younger demographics.",
+      "key_signals": ["blue bubble iMessage status", "iPhone camera quality as social currency", "Apple Watch as health status signal", "Back-to-School campus dominance"]
+    },
+    "economic": {
+      "score": 3.0,
+      "positioning": "Apple operates at the premium end of every category it enters and has never competed on price. The Services revenue layer (App Store, iCloud, Apple TV+) adds margin on top of already high-margin hardware, compounding economic exclusivity.",
+      "key_signals": ["iPhone Pro pricing ($1,199+)", "no budget iPhone line", "App Store 30% commission", "Apple Care+ premium pricing"]
+    },
+    "cultural": {
+      "score": 8.5,
+      "positioning": "Silicon Valley's design philosophy is, in large part, Apple's design philosophy exported globally. The brand is culturally synonymous with the idea that technology should be beautiful, and with the creative professional as archetype.",
+      "key_signals": ["Dieter Rams influence on Jony Ive", "creative professional identity (music, film, design)", "Silicon Valley cultural export", "Shot on iPhone campaign"]
+    },
+    "temporal": {
+      "score": 7.0,
+      "positioning": "Founded 1976, Apple has 50 years of history but deliberately presents as forward-looking rather than heritage-oriented. The Jobs mythology is the primary temporal anchor; post-Jobs Apple has maintained continuity while consciously avoiding nostalgia as a brand tool.",
+      "key_signals": ["1976 founding", "Macintosh 1984", "iPod 2001 inflection", "Steve Jobs mythology (1955–2011)"]
+    }
+  }
+}

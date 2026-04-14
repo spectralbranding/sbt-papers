@@ -1,0 +1,47 @@
+{
+  "brand": "Coca-Cola",
+  "version": "1.0",
+  "source": "Brand Function Registry (spectralbranding, 2026)",
+  "dimensions": {
+    "semiotic": {
+      "score": 9.5,
+      "positioning": "Coca-Cola's semiotic system is arguably the most complete in consumer goods: Spencerian script logo (1887), contour bottle (1915 patent), Dynamic Ribbon device, and the specific red (Pantone 484) all function as standalone identifiers. The brand is legible without its name in any medium.",
+      "key_signals": ["Spencerian script logo (1887)", "contour bottle (1915 design)", "Coca-Cola red (Pantone 484)", "Dynamic Ribbon wave device"]
+    },
+    "narrative": {
+      "score": 8.0,
+      "positioning": "Invented by pharmacist John Pemberton in 1886 Atlanta, Coca-Cola's American origin story maps onto the rise of the United States as a global power. The brand's WWII presence (supplying troops globally) and its role in constructing the modern Santa Claus image are foundational narrative assets.",
+      "key_signals": ["1886 Atlanta pharmacy origin", "WWII soldier supply narrative", "Santa Claus image codification (1931 Haddon Sundblom)", "Hilltop 'I'd Like to Buy the World a Coke' (1971)"]
+    },
+    "ideological": {
+      "score": 4.0,
+      "positioning": "Happiness and togetherness are the brand's ideological claims, but these sit in increasing tension with health concerns around sugar consumption, obesity, and the environmental impact of plastic packaging. Coca-Cola occupies the uncomfortable position of selling a product with documented health negatives while advertising joy.",
+      "key_signals": ["Open Happiness campaign", "WHO sugar guidelines conflict", "plastic packaging environmental criticism", "sugar tax policy opposition"]
+    },
+    "experiential": {
+      "score": 7.0,
+      "positioning": "The taste and sensation of Coca-Cola — carbonation bite, sweetness, cold temperature — is among the most globally standardized sensory experiences in commerce. The formula's near-universal consistency across 200+ markets is itself a form of experiential engineering.",
+      "key_signals": ["formula consistency across 200+ markets", "cold-drink availability engineering", "McDonald's fountain exclusivity", "Coke Zero taste reformulation (2017)"]
+    },
+    "social": {
+      "score": 8.0,
+      "positioning": "Sharing occasions — meals, celebrations, sports events — are the primary social contexts Coca-Cola owns. The Share a Coke campaign (2011, personalized name bottles) demonstrated the brand's ability to convert social media behavior into purchase behavior at scale.",
+      "key_signals": ["Share a Coke campaign (2011)", "meal occasion dominance (McDonald's, Subway)", "FIFA/Olympics global sponsorship", "family occasion advertising"]
+    },
+    "economic": {
+      "score": 8.0,
+      "positioning": "Coca-Cola's distribution infrastructure — reaching 200+ countries with consistent cold availability — is the world's most extensive beverage logistics network. Price points are deliberately set for near-universal accessibility, making the brand economically democratic in a way few others achieve.",
+      "key_signals": ["200+ country distribution", "vending machine ubiquity", "sub-$2 single-serve pricing in most markets", "affordability in developing markets"]
+    },
+    "cultural": {
+      "score": 9.0,
+      "positioning": "Coca-Cola is the single most globally distributed symbol of American consumer culture. Its presence in markets from rural India to Arctic communities makes it a genuine measure of globalization reach. The brand is simultaneously a product and an anthropological artifact.",
+      "key_signals": ["Cold War American soft power symbol", "globalization index proxy", "Christmas advertising canon (1931–present)", "pop art subject (Warhol, 1962)"]
+    },
+    "temporal": {
+      "score": 9.5,
+      "positioning": "140 years of continuous operation, with formula continuity as a brand promise (New Coke 1985 reversal proved this). The 1886 founding predates the automobile, radio, and the modern corporation. This temporal depth gives the brand a stability signal that no competitor can replicate.",
+      "key_signals": ["1886 founding", "140 years continuous operation", "New Coke reversal (1985) as formula-permanence signal", "contour bottle unchanged since 1915"]
+    }
+  }
+}
