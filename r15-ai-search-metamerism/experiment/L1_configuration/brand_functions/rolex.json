@@ -1,0 +1,47 @@
+{
+  "brand": "Rolex",
+  "version": "1.0",
+  "source": "Brand Function Registry (spectralbranding, 2026)",
+  "dimensions": {
+    "semiotic": {
+      "score": 9.5,
+      "positioning": "The crown logo, the Oyster case profile, the Cyclops date lens, and the fluted bezel are all immediately recognizable at wrist distance without text. The crown is among the three or four most universally recognized luxury brand marks, operating across all cultures and literacy levels.",
+      "key_signals": ["crown logo (corona)", "Oyster case silhouette", "Cyclops date magnification lens", "fluted and smooth bezel variants"]
+    },
+    "narrative": {
+      "score": 9.0,
+      "positioning": "Rolex built its heritage narrative on exploration proof-points: the first waterproof watch (Oyster, 1926), the first watch worn on Everest (Hillary, 1953), and the Deepsea worn on the Mariana Trench dive (Cameron, 2012). These are authentic, not manufactured, narrative anchors.",
+      "key_signals": ["Oyster waterproof case (1926)", "Edmund Hillary / Tenzing Norgay Everest (1953)", "James Cameron Mariana Trench dive (2012)", "Roger Federer ambassador relationship"]
+    },
+    "ideological": {
+      "score": 6.0,
+      "positioning": "Excellence, precision, and the idea that a Rolex is earned rather than bought are the governing values. The brand cultivates a philosophy of quiet achievement — it is worn by people who have done things, not people who want to appear as if they have. This is enacted through understated marketing.",
+      "key_signals": ["'A Crown for Every Achievement' positioning", "no discounts, no sales", "explorer and achiever ambassador selection", "in-house movement manufacturing as precision proof"]
+    },
+    "experiential": {
+      "score": 8.5,
+      "positioning": "The weight, finish, and mechanical sensation of a Rolex are deliberate engineering outcomes. The winding resistance, the smooth sweep of the seconds hand, the crown's resistance — all are tuned as experiential signals. Authorized dealer exclusivity creates a purchase experience calibrated to the object's value.",
+      "key_signals": ["mechanical weight and finish quality", "smooth seconds hand sweep (Calibre 3235)", "authorized dealer only distribution", "presentation box and papers as ritual objects"]
+    },
+    "social": {
+      "score": 9.5,
+      "positioning": "Rolex is the single most universally understood luxury status signal across cultures. A Rolex on a wrist communicates wealth and success in boardrooms, at sporting events, and in markets where other luxury brands have no recognition. The secondary market premium (many models appreciate) reinforces status as investment.",
+      "key_signals": ["universal cross-cultural status recognition", "secondary market appreciation (Daytona, Submariner)", "Presidential (Day-Date) as political/executive signal", "waiting list as earned access"]
+    },
+    "economic": {
+      "score": 2.5,
+      "positioning": "Rolex operates at the extreme premium tier: entry models (~$7,000) require authorized dealer relationships and often waiting lists; sport models (Daytona, Submariner) trade at 2-4x retail on the secondary market due to supply restriction. Price is used as a structural exclusivity mechanism.",
+      "key_signals": ["entry at ~$7,000 (Oyster Perpetual)", "Daytona secondary market at 2–4x retail", "no outlet or discount channel", "production deliberately constrained"]
+    },
+    "cultural": {
+      "score": 8.0,
+      "positioning": "Rolex is the primary cultural ambassador of Swiss watchmaking — precision, discretion, and craft. The brand is embedded in golf (Official Timekeeper, PGA Tour), tennis (Wimbledon), and motorsport (24 Hours of Le Mans) in ways that align with achievement culture rather than display culture.",
+      "key_signals": ["Swiss manufacture in Geneva", "Wimbledon Official Timekeeper", "Le Mans / motorsport heritage", "golf culture integration (Nicklaus, Mickelson)"]
+    },
+    "temporal": {
+      "score": 9.5,
+      "positioning": "Founded 1905 by Hans Wilsdorf in London, with 120 years of continuous production. Key innovations — the Oyster (1926), Perpetual rotor (1931), Date function (1945) — were genuine industry firsts and remain in production today, making the temporal depth functional rather than decorative.",
+      "key_signals": ["1905 founding (Hans Wilsdorf)", "Oyster patent (1926)", "Perpetual self-winding rotor (1931)", "120 years of continuous production"]
+    }
+  }
+}

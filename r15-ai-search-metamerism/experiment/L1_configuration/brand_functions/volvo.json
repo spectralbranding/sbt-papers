@@ -1,0 +1,47 @@
+{
+  "brand": "Volvo",
+  "version": "1.0",
+  "source": "Brand Function Registry (spectralbranding, 2026)",
+  "dimensions": {
+    "semiotic": {
+      "score": 7.0,
+      "positioning": "Diagonal iron/steel symbol (alchemical sign for iron, referencing Swedish steel heritage). Understated Scandinavian design language: clean surfaces, functional forms, no excess ornamentation. Visual restraint communicates values rather than aspiration.",
+      "key_signals": ["diagonal slash logo (iron symbol)", "Scandinavian minimalist interior design", "Thor's Hammer daytime running lights", "restrained exterior surfacing"]
+    },
+    "narrative": {
+      "score": 8.5,
+      "positioning": "Invented the modern three-point seatbelt in 1959 and gave the patent away for free — framed as saving over one million lives. This single act anchors an exceptionally coherent narrative of safety as genuine conviction rather than marketing claim.",
+      "key_signals": ["1959 three-point seatbelt invention (Nils Bohlin)", "open patent as gift to humanity", "Vision 2020 (zero fatalities in new Volvos by 2020)", "1927 founding in Gothenburg"]
+    },
+    "ideological": {
+      "score": 8.0,
+      "positioning": "Safety as core value, not feature. Scandinavian welfare-state values (collective wellbeing over individual status) embedded in product philosophy. Commitment to full electrification by 2030 framed as ethical imperative, not market strategy.",
+      "key_signals": ["'Cars are driven by people' founding philosophy (Assar Gabrielsson)", "full electrification target by 2030", "Scandinavian social democratic values alignment", "pedestrian and cyclist safety investments"]
+    },
+    "experiential": {
+      "score": 7.0,
+      "positioning": "Safe, comfortable, and competent driving experience. Interior quality and ergonomics prioritized. Pilot Assist semi-autonomous driving and City Safety automatic braking are tangible safety features, not marketing claims.",
+      "key_signals": ["City Safety automatic emergency braking", "Pilot Assist semi-autonomous driving", "Swedish pine and wool interior materials", "quiet, refined cabin acoustics"]
+    },
+    "social": {
+      "score": 5.5,
+      "positioning": "Family-oriented and professional, not aspirational or status-signaling. Appeals to pragmatic buyers who prioritize substance over display. Not a prestige signal in the way that BMW or Mercedes-Benz are.",
+      "key_signals": ["family car category leadership", "professional and fleet use", "no celebrity aspirational marketing", "safety-first buyer profile"]
+    },
+    "economic": {
+      "score": 5.5,
+      "positioning": "Premium but not luxury pricing. Positioned above mainstream brands (Ford, VW) but below true luxury (BMW, Audi, Mercedes). Value proposition centers on safety investment and Scandinavian material quality rather than status premium.",
+      "key_signals": ["premium price band ($40k-$90k range)", "no ultra-luxury segment", "Care by Volvo subscription model", "strong resale values in safety-conscious markets"]
+    },
+    "cultural": {
+      "score": 8.5,
+      "positioning": "Swedish design and Scandinavian values as deep cultural embedding. Gothenburg manufacturing heritage. The open seatbelt patent is possibly the most culturally significant corporate act in automotive history. Geely ownership (since 2010) has not diluted Swedish identity.",
+      "key_signals": ["Gothenburg, Sweden headquarters and manufacturing", "Swedish steel heritage (logo)", "Scandinavian design principles", "Geely ownership managed with Swedish identity preservation"]
+    },
+    "temporal": {
+      "score": 7.5,
+      "positioning": "Founded 1927, approaching 100 years. Deep institutional memory includes the postwar Swedish industrial economy, multiple ownership transitions (Ford 1999-2010, Geely 2010-present), and the ongoing electrification transformation. Nearly a century of coherent safety positioning despite ownership changes.",
+      "key_signals": ["1927 founding", "Ford ownership 1999-2010", "Geely acquisition 2010", "approaching centenary (2027)"]
+    }
+  }
+}

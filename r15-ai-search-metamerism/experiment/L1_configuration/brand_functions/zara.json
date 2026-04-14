@@ -1,0 +1,47 @@
+{
+  "brand": "Zara",
+  "version": "1.0",
+  "source": "Brand Function Registry (spectralbranding, 2026)",
+  "dimensions": {
+    "semiotic": {
+      "score": 6.0,
+      "positioning": "Zara's visual identity is deliberately minimal — a clean serif wordmark with no supporting iconography. This restraint is strategic: the product and store experience carry the brand rather than a logo system. The 2019 logo refresh compressed letterforms, emphasizing typographic density.",
+      "key_signals": ["serif wordmark (minimal, logo-free)", "2019 compressed letterform refresh", "black/white in-store aesthetic", "no mascot or iconographic mark"]
+    },
+    "narrative": {
+      "score": 5.0,
+      "positioning": "Amancio Ortega's 1975 founding in La Coruña, Spain, with the original Zara store as a response to the inaccessibility of fashion, is the origin story. The fast fashion pioneer narrative has become complicated by sustainability critique, reducing its utility as a positive brand asset.",
+      "key_signals": ["1975 La Coruña founding (Amancio Ortega)", "fast fashion model pioneer narrative", "Inditex parent group scale story", "two-week runway-to-store cycle claim"]
+    },
+    "ideological": {
+      "score": 3.0,
+      "positioning": "Zara has no coherent positive ideology. The fast fashion model — high volume, low durability, rapid trend cycling — directly contradicts sustainability values. Environmental commitments (Join Life collection) are widely perceived as greenwashing given the core business model.",
+      "key_signals": ["Join Life 'sustainable' collection (criticized as greenwashing)", "no garment take-back program at scale", "fast fashion environmental criticism", "no living wage guarantee for supply chain"]
+    },
+    "experiential": {
+      "score": 7.5,
+      "positioning": "Zara's store refresh cadence — new inventory twice weekly — creates a genuine discovery experience that competitors cannot replicate. The scarcity effect (popular items sell out within days) drives purchase urgency and repeat visit frequency.",
+      "key_signals": ["twice-weekly store inventory refresh", "scarcity-driven purchase urgency", "flagship store as fashion gallery aesthetic", "online inventory parity with stores"]
+    },
+    "social": {
+      "score": 5.5,
+      "positioning": "Mass market positioning means Zara lacks the exclusivity necessary for high social signaling. Ownership communicates fashion-awareness and trend literacy rather than status or wealth. The brand is aspirational relative to H&M but not aspirational relative to mid-luxury.",
+      "key_signals": ["trend-aware rather than status-signaling", "social media product tagging culture", "no celebrity endorsement program", "accessible fashion identity"]
+    },
+    "economic": {
+      "score": 7.5,
+      "positioning": "Affordable fashion with premium aesthetic: Zara's pricing (~$20–$120 for most items) delivers runway-adjacent looks at accessible price points. The value proposition is design-for-less rather than quality-for-less, which is a distinct and defensible economic position.",
+      "key_signals": ["$20–$120 typical item range", "runway-inspired at accessible price", "no luxury aspiration", "Inditex vertical integration enabling price efficiency"]
+    },
+    "cultural": {
+      "score": 6.5,
+      "positioning": "Zara represents the Europeanization of fast fashion and carries Spanish retail innovation as a cultural identifier. Inditex's La Coruña headquarters is a point of regional Galician pride, though globally the brand reads as pan-European fashion rather than distinctly Spanish.",
+      "key_signals": ["Spanish/Galician origin pride", "European fashion aesthetic export", "Inditex as Spanish global champion", "pan-European retail expansion model"]
+    },
+    "temporal": {
+      "score": 4.0,
+      "positioning": "Founded 1975, Zara has 50 years of history but makes no meaningful investment in heritage as a brand asset. The fast fashion model is inherently anti-heritage — it values newness over continuity, which makes temporal depth structurally irrelevant to the brand proposition.",
+      "key_signals": ["1975 founding", "no heritage product lines", "no archival or anniversary collections", "trend-cycle orientation vs. heritage orientation"]
+    }
+  }
+}

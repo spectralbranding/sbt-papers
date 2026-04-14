@@ -1,0 +1,47 @@
+{
+  "brand": "Starbucks",
+  "version": "1.0",
+  "source": "Brand Function Registry (spectralbranding, 2026)",
+  "dimensions": {
+    "semiotic": {
+      "score": 8.0,
+      "positioning": "The twin-tailed siren (Siren logo) in Starbucks green is instantly legible globally. The brand dropped the wordmark from its logo in 2011, relying on the mark alone — a move that signals semiotic confidence at Nike and Apple levels.",
+      "key_signals": ["Siren logo (wordmark-free since 2011)", "Starbucks green (#00704A)", "white cup as mobile billboard", "seasonal red cup as cultural event"]
+    },
+    "narrative": {
+      "score": 7.0,
+      "positioning": "Howard Schultz's 1983 Milan espresso bar epiphany and the concept of the Third Place — neither home nor work — is the founding narrative. The story has frayed somewhat as the brand scaled to 36,000 locations, making the intimate coffeehouse origin feel distant.",
+      "key_signals": ["Howard Schultz Milan 1983 origin", "Third Place concept", "Pike Place Market first store (1971)", "Schultz memoir 'Pour Your Heart Into It'"]
+    },
+    "ideological": {
+      "score": 5.5,
+      "positioning": "Ethical sourcing (C.A.F.E. Practices) and employee benefits (healthcare, stock options for part-time workers) represent genuine commitments. However, the tension between corporate scale and third-place intimacy, plus recent union organizing drives, creates ideological dissonance.",
+      "key_signals": ["C.A.F.E. Practices ethical sourcing program", "partner healthcare + Bean Stock equity", "union organizing tension (2021–present)", "Race Together campaign (2015 failure)"]
+    },
+    "experiential": {
+      "score": 8.5,
+      "positioning": "Starbucks pioneered high-customization beverage ordering at scale — over 170,000 menu combinations. The Rewards app (34M+ active US members) creates a digital loyalty loop that integrates mobile ordering, gamification, and personalization into daily habit.",
+      "key_signals": ["Starbucks Rewards app (34M+ US members)", "custom drink culture (TikTok orders)", "seasonal limited menus (Pumpkin Spice Latte)", "Reserve Roastery flagships"]
+    },
+    "social": {
+      "score": 7.5,
+      "positioning": "Starbucks became the default venue for remote work, casual meetings, and social media content. The custom drink naming ritual creates personal identity through the order. TikTok 'secret menu' culture has amplified social engagement beyond any brand-managed channel.",
+      "key_signals": ["name-on-cup personalization", "TikTok secret menu culture", "remote work venue identity", "Starbucks as social media backdrop"]
+    },
+    "economic": {
+      "score": 5.0,
+      "positioning": "Premium-priced relative to fast food coffee (McDonald's, Dunkin') but below artisan specialty coffee. The $7 latte has become a cultural shorthand for aspirational spending, occupying an awkward middle tier that is simultaneously too expensive for daily budget consumption and not exclusive enough for true luxury positioning.",
+      "key_signals": ["$6–8 specialty drink pricing", "Rewards program drives frequency", "no value/budget menu", "price increases 2021–2023 absorbed by loyal base"]
+    },
+    "cultural": {
+      "score": 7.0,
+      "positioning": "Starbucks exported American coffeehouse culture globally — introducing espresso-based drinks to markets where drip coffee was the norm. In many countries, Starbucks is the first encounter with cafe-as-workspace culture, making it a significant cultural technology transfer.",
+      "key_signals": ["Pumpkin Spice Latte as cultural artifact", "holiday red cup controversy (annual)", "third-place work culture export", "coffeehouse WiFi normalization"]
+    },
+    "temporal": {
+      "score": 6.0,
+      "positioning": "Founded 1971 in Seattle's Pike Place Market, but the modern Starbucks identity dates from Schultz's 1987 acquisition and scaling vision. The brand treats its heritage instrumentally rather than as a primary equity driver, preferring seasonal novelty over archival depth.",
+      "key_signals": ["1971 Seattle founding", "1987 Schultz acquisition", "1992 IPO", "50+ year anniversary (2021) understated"]
+    }
+  }
+}
