@@ -1,0 +1,47 @@
+{
+  "brand": "Patagonia",
+  "version": "1.0",
+  "source": "Canonical SBT brand profile (Zharnikov 2026a), Articles 01-10",
+  "dimensions": {
+    "semiotic": {
+      "score": 6.0,
+      "positioning": "The mountain silhouette logo and muted earth-tone palette signal outdoor authenticity without luxury posturing. Patagonia gear is recognized by those who use it, not by those who display it.",
+      "key_signals": ["Fitzroy mountain wordmark", "earth-tone colorways", "simple fleece as category-defining object", "repair patches as visible brand signal"]
+    },
+    "narrative": {
+      "score": 9.0,
+      "positioning": "Yvon Chouinard's 1973 founding from a blacksmith shop making reusable climbing pitons. The story of a reluctant capitalist building a company to save the planet is Patagonia's most powerful product.",
+      "key_signals": ["1973 founding from climbing hardware roots", "Chouinard's 'Let My People Go Surfing' memoir", "2022 transfer of ownership to Earth Tax trust", "'Don't Buy This Jacket' 2011 Black Friday ad"]
+    },
+    "ideological": {
+      "score": 9.5,
+      "positioning": "Environmental activism is not a marketing position — it is the governing logic of the company. In 2022, Chouinard transferred ownership to a nonprofit trust dedicated to fighting climate change, making ideology the literal shareholder.",
+      "key_signals": ["1% for the Planet founding member", "2022 Holdfast Collective ownership transfer", "anti-growth statements in annual reports", "Worn Wear repair and resale program"]
+    },
+    "experiential": {
+      "score": 7.5,
+      "positioning": "Products are tools for genuine outdoor activity. The experiential dimension is in field performance — gear that has been tested in Patagonia the region, not just named after it.",
+      "key_signals": ["field-testing in extreme conditions", "lifetime guarantee on all products", "repair centers in stores", "Worn Wear trucks as experiential touchpoint"]
+    },
+    "social": {
+      "score": 8.0,
+      "positioning": "Tight community of outdoor athletes, environmentalists, and activists. Brand membership implies values alignment, not just product ownership. The community polices greenwashing from inside.",
+      "key_signals": ["environmental grant program ($140M+ donated)", "grassroots activism network", "Patagonia Action Works platform", "ambassador athletes as credibility anchors"]
+    },
+    "economic": {
+      "score": 5.0,
+      "positioning": "Premium pricing justified by product longevity and repair infrastructure, not exclusivity. Patagonia explicitly argues that buying less but better is the ethical consumer choice.",
+      "key_signals": ["premium price points", "no seasonal sales on core gear", "Worn Wear secondhand platform at discount", "repair cost transparency"]
+    },
+    "cultural": {
+      "score": 7.0,
+      "positioning": "West Coast American outdoor culture — Ventura, California roots, surf-and-climb ethos — combined with global environmental movement. The brand sits at the intersection of counterculture and performance gear.",
+      "key_signals": ["Ventura headquarters", "surf-to-climb culture origin", "environmental litigation participation", "film and storytelling program (Patagonia Films)"]
+    },
+    "temporal": {
+      "score": 6.5,
+      "positioning": "50+ years of consistent mission, with the 2022 ownership transfer as a permanent structural commitment to longevity beyond any founder's lifespan. The brand is now constitutionally bound to its ideology.",
+      "key_signals": ["1973 founding", "2022 Holdfast trust as permanent structure", "Worn Wear extending product lifespan", "multi-decade customer relationships via repair records"]
+    }
+  }
+}
