@@ -237,9 +237,9 @@ MODELS = [
     },
     {
         "id": "exaone",
-        "name": "EXAONE 32B",
+        "name": "EXAONE 3.5 32B",
         "provider": "ollama",
-        "model_id": "exaone:32b",
+        "model_id": "exaone3.5:32b",
         "tradition": "Korean",
         "temperature": 0.7,
         "max_tokens": 500,

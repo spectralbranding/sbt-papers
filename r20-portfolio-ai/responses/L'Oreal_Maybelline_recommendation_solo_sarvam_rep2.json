@@ -1,0 +1,30 @@
+{
+  "cell_id": "L'Oreal_Maybelline_recommendation_solo_sarvam_rep2",
+  "portfolio": "L'Oreal",
+  "brand": "Maybelline",
+  "category": "mass-market cosmetics",
+  "condition": "recommendation_solo",
+  "model_id": "sarvam",
+  "model_name": "Sarvam M",
+  "provider": "sarvam",
+  "tradition": "Indian",
+  "temperature": 0.7,
+  "repetition": 2,
+  "prompt": "A friend asks you: \"What do you think of Maybelline as a cosmetics brand?\"\n\nBased on your overall impression of Maybelline, rate it on each of the following\n8 perception dimensions on a scale of 1 to 5 (1 = Not at all, 5 = Very strongly).\n\nDimensions:\n1. Semiotic: visual and verbal identity (logos, packaging, design language)\n2. Narrative: brand storytelling (origin story, mythology, communication style)\n3. Ideological: values, beliefs, and purpose (what the brand stands for)\n4. Experiential: sensory and interaction experience (product feel, service quality)\n5. Social: community, status signaling (who uses this brand, what it says about them)\n6. Economic: pricing and value perception (affordability, luxury, value-for-money)\n7. Cultural: cultural codes and positioning (what culture or subculture it belongs to)\n8. Temporal: heritage and history (longevity, tradition, track record)\n\nRespond in JSON format:\n{\"semiotic\": <1-5>, \"narrative\": <1-5>, \"ideological\": <1-5>, \"experiential\": <1-5>, \"social\": <1-5>, \"economic\": <1-5>, \"cultural\": <1-5>, \"temporal\": <1-5>}\n\nProvide only the JSON.",
+  "system_prompt": null,
+  "response": "<think>\nOkay, I need to rate Maybelline on each of these eight perception dimensions. Let me go through each one by one.\n\n1. **Semiotic**: Maybelline's packaging is usually bright pink and black with the iconic pink-and-black logo. Their design language is very consistent\u2014modern yet approachable. Their branding is recognizable, so maybe a 4 or 5. I think 4 because it's strong but maybe not the most innovative.\n\n2. **Narrative**: Their origin story is about the founder, T.L. Parker, creating the Lash Grower. It's a bit old-school, but they emphasize empowerment and confidence. The communication style is more about \"get ready with me\" and \"achieve your look.\" Maybe a 3 or 4. I'll go with 4 since they have a clear story but not super unique.\n\n3. **Ideological**: They focus on inclusivity and empowerment, targeting a wide range of skin tones and ages. Their values seem to align with self-expression. That's pretty solid, so maybe 4. Could be a 5 if they were more impactful, but I think 4 is safe.\n\n4. **Experiential**: Their products are generally affordable and accessible. TheTexture Angel liner is a hit. The in-store experience might vary, but online and in stores they have good service. Maybe a 4 because the products are good but service might not be as premium as other brands.\n\n5. **Social**: They're popular among teens and young adults. Using Maybelline can signal being trendy but not necessarily high-end. It's more about approachable beauty. Maybe a 3 or 4. I think 3 because it's more about mass appeal than status.\n\n6. **Economic**: Definitely affordable and good value for money. Products are priced competitively. They often have sales and good bundles. So 5 here. They\u2019re known for being budget-friendly.\n\n7. **Cultural**: Part of L'Or\u00e9al, which is a global brand. They adapt to different cultures but maintain a consistent image. They\u2019re part of the mainstream beauty culture. Maybe 4 since they have a global presence but not tied to a specific subculture.\n\n8. **Temporal**: Founded in 1923, so they have a long history. They\u2019ve evolved over time, especially with digital presence. Long history adds credibility. Probably a 5, but maybe 4 if considering modern competitors. I think 5 because their heritage is strong.\n\nPutting it all together, I'll assign the numbers accordingly.\n</think>\n\n{\n  \"semiotic\": 4,\n  \"narrative\": 4,\n  \"ideological\": 4,\n  \"experiential\": 4,\n  \"social\": 3,\n  \"economic\": 5,\n  \"cultural\": 4,\n  \"temporal\": 5\n}",
+  "scores": {
+    "semiotic": 4.0,
+    "narrative": 4.0,
+    "ideological": 4.0,
+    "experiential": 4.0,
+    "social": 3.0,
+    "economic": 5.0,
+    "cultural": 4.0,
+    "temporal": 5.0
+  },
+  "parse_success": true,
+  "scale": "1-5",
+  "version": "1.0",
+  "timestamp": "2026-04-14T05:17:42Z"
+}

@@ -1,0 +1,30 @@
+{
+  "cell_id": "Yandex_Yandex_Market_recommendation_portfolio_sarvam_rep3",
+  "portfolio": "Yandex",
+  "brand": "Yandex Market",
+  "category": "e-commerce platform",
+  "condition": "recommendation_portfolio",
+  "model_id": "sarvam",
+  "model_name": "Sarvam M",
+  "provider": "sarvam",
+  "tradition": "Indian",
+  "temperature": 0.7,
+  "repetition": 3,
+  "prompt": "A friend asks you: \"What do you think of Yandex Market? I know it's part of Yandex.\"\n\nBased on your overall impression of Yandex Market \u2014 keeping in mind it belongs to\nYandex (Russian technology conglomerate), alongside Yandex, Yandex Taxi \u2014 rate it on each of the following\n8 perception dimensions on a scale of 1 to 5 (1 = Not at all, 5 = Very strongly).\n\nDimensions:\n1. Semiotic: visual and verbal identity (logos, packaging, design language)\n2. Narrative: brand storytelling (origin story, mythology, communication style)\n3. Ideological: values, beliefs, and purpose (what the brand stands for)\n4. Experiential: sensory and interaction experience (product feel, service quality)\n5. Social: community, status signaling (who uses this brand, what it says about them)\n6. Economic: pricing and value perception (affordability, luxury, value-for-money)\n7. Cultural: cultural codes and positioning (what culture or subculture it belongs to)\n8. Temporal: heritage and history (longevity, tradition, track record)\n\nRespond in JSON format:\n{\"semiotic\": <1-5>, \"narrative\": <1-5>, \"ideological\": <1-5>, \"experiential\": <1-5>, \"social\": <1-5>, \"economic\": <1-5>, \"cultural\": <1-5>, \"temporal\": <1-5>}\n\nProvide only the JSON.",
+  "system_prompt": null,
+  "response": "<think>\nOkay, I need to rate Yandex Market across these 8 dimensions. Let's start by recalling what I know about Yandex and its Market platform. Yandex is a big Russian tech company, known for search, taxi, and other services. Yandex Market is their e-commerce platform, like Amazon but in Russia.\n\n1. **Semiotic**: Their visual identity. Yandex uses a bright blue color, which is recognizable. The Market logo probably uses similar branding. Packaging and design might be standardized. I think they have a clean, modern look. Maybe a 4? Not sure if it's very distinctive beyond the blue.\n\n2. **Narrative**: Brand storytelling. Do they have a strong origin story? Yandex as a company is Russian, so maybe their narrative is about serving local needs. But Yandex Market's own story might focus on convenience and variety. Maybe a 3, since it's not as prominent as some other brands.\n\n3. **Ideological**: Values. Yandex is known for tech innovation. The Market would stand for efficiency, customer service. But as part of a Russian conglomerate, there might be political connotations? Maybe lower here, like 3. Not sure if values are strong or just corporate.\n\n4. **Experiential**: User experience. The website and app are probably user-friendly, given Yandex's tech background. Service quality might be good with reliable delivery and returns. Maybe a 4.\n\n5. **Social**: Community and status. It's a major platform in Russia, so users might trust it. But does it signal status? Maybe more practical than aspirational. Maybe a 3.\n\n6. **Economic**: Pricing and value. Competitive prices, good deals. Value for money is important for e-commerce. Probably a 4, as they offer a wide range and promotions.\n\n7. **Cultural**: Cultural positioning. Definitely tied to Russian consumers, local products. Maybe caters to specific cultural preferences. Could be a 4, since it's a major player in Russia.\n\n8. **Temporal**: Heritage. Yandex Market might have been around for several years, but Yandex itself is established. The Market might not have a very long history on its own, but as part of Yandex, maybe a 3. Not sure, maybe lower if the brand itself isn't as old.\n\nWait, adjust some scores. For example, Cultural could be higher if it's deeply embedded in Russian culture. Social might be lower since it's more about convenience than status. Economic 4 because Yandex is a big player with good deals. Maybe Temporal is 3 because Yandex Market has been around for a while but not as long as the parent company. Let me finalize:\n\n{\"semiotic\": 4, \"narrative\": 3, \"ideological\": 3, \"experiential\": 4, \"social\": 3, \"economic\": 4, \"cultural\": 4, \"temporal\": 3}\n</think>\n\n```json\n{\n  \"semiotic\": 4,\n  \"narrative\": 3,\n  \"ideological\": 3,\n  \"experiential\": 4,\n  \"social\": 3,\n  \"economic\": 4,\n  \"cultural\": 4,\n  \"temporal\": 3\n}\n```",
+  "scores": {
+    "semiotic": 4.0,
+    "narrative": 3.0,
+    "ideological": 3.0,
+    "experiential": 4.0,
+    "social": 3.0,
+    "economic": 4.0,
+    "cultural": 4.0,
+    "temporal": 3.0
+  },
+  "parse_success": true,
+  "scale": "1-5",
+  "version": "1.0",
+  "timestamp": "2026-04-14T06:46:33Z"
+}

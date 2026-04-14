@@ -1,0 +1,30 @@
+{
+  "cell_id": "Yandex_Yandex_Taxi_portfolio_sarvam_rep2",
+  "portfolio": "Yandex",
+  "brand": "Yandex Taxi",
+  "category": "ride-hailing service",
+  "condition": "portfolio",
+  "model_id": "sarvam",
+  "model_name": "Sarvam M",
+  "provider": "sarvam",
+  "tradition": "Indian",
+  "temperature": 0.7,
+  "repetition": 2,
+  "prompt": "You are evaluating the brand Yandex Taxi on eight dimensions of brand perception.\n\nContext: Yandex Taxi is owned by Yandex (Russian technology conglomerate), which also owns Yandex, Yandex Market.\n\nFor each dimension, rate how strongly Yandex Taxi communicates through that channel\non a scale of 1 to 5, where 1 = Not at all, 2 = Slightly, 3 = Moderately,\n4 = Strongly, 5 = Very strongly.\n\nDimensions:\n1. Semiotic: visual and verbal identity (logos, packaging, design language)\n2. Narrative: brand storytelling (origin story, mythology, communication style)\n3. Ideological: values, beliefs, and purpose (what the brand stands for)\n4. Experiential: sensory and interaction experience (product feel, service quality)\n5. Social: community, status signaling (who uses this brand, what it says about them)\n6. Economic: pricing and value perception (affordability, luxury, value-for-money)\n7. Cultural: cultural codes and positioning (what culture or subculture it belongs to)\n8. Temporal: heritage and history (longevity, tradition, track record)\n\nRespond in JSON format with the following keys:\n{\"semiotic\": <1-5>, \"narrative\": <1-5>, \"ideological\": <1-5>, \"experiential\": <1-5>, \"social\": <1-5>, \"economic\": <1-5>, \"cultural\": <1-5>, \"temporal\": <1-5>}\n\nEvaluate based on your knowledge of the brand. Provide only the JSON.",
+  "system_prompt": null,
+  "response": "<think>\nOkay, let's tackle this evaluation of Yandex Taxi across the eight dimensions. First, I need to understand each dimension and how Yandex Taxi communicates through them.\n\nStarting with Semiotic: This is about visual and verbal identity. Yandex Taxi is part of a larger tech conglomerate, so they probably have a consistent design language. The logo is likely simple and modern, maybe using blue and white like Yandex's main branding. Their app and in-app design would be clean and user-friendly. So, maybe a 4 here.\n\nNarrative: Brand storytelling. Yandex Taxi's origin story is part of Yandex's expansion into services. They might emphasize convenience and reliability. But I'm not sure how much they push the origin story actively. Maybe a 3, as they might have some narratives but not super prominent.\n\nIdeological: Values and purpose. They probably stand for innovation, reliability, and customer care. Since they're part of a tech giant, maybe sustainability or efficiency? Maybe a 3 or 4. If they market eco-friendly rides or tech-driven solutions, that could be higher. Let's say 4.\n\nExperiential: This is about the actual service experience. Yandex Taxi services are available in major cities, with in-app tracking, multiple vehicle options. The app interface is user-friendly, drivers are professional. So the experience is positive. Maybe a 4.\n\nSocial: Community and status. It's a taxi service, so it's accessible to a broad audience. Not particularly high-status, but reliable. Maybe a 3, as it's used by everyday people but not a luxury brand.\n\nEconomic: Pricing and value. Competitive pricing, maybe surge pricing during peak times. Value-for-money is good because of the convenience. Maybe a 4. They might not be the cheapest, but the overall value seems strong.\n\nCultural: Cultural positioning. In Russia, it's integrated into the local market. They might align with urban lifestyles, tech-savvy users. If they have local partnerships or cultural events, maybe a 3. But since it's a service, maybe lower. Let's say 3.\n\nTemporal: Heritage and history. Yandex Taxi launched in 2011, so over a decade. That's some history. Maybe a 3 or 4. If they've been around and have a track record of reliability, maybe 4.\n\nPutting it all together, I need to assign numbers from 1-5. Double-check each dimension. Maybe adjust if some are stronger or weaker than I thought. For example, if their economic aspect is strong in value perception, maybe 4. Experiential is probably a 4. Semiotic is strong because of the app and branding. Temporal maybe 4 as well. Narrative might be lower if they don't focus much on storytelling. Social maybe 3. Cultural 3. Ideological 4. Economic 4. So the JSON would reflect these scores.\n</think>\n\n```json\n{\n  \"semiotic\": 4,\n  \"narrative\": 3,\n  \"ideological\": 4,\n  \"experiential\": 4,\n  \"social\": 3,\n  \"economic\": 4,\n  \"cultural\": 3,\n  \"temporal\": 4\n}\n```",
+  "scores": {
+    "semiotic": 4.0,
+    "narrative": 3.0,
+    "ideological": 4.0,
+    "experiential": 4.0,
+    "social": 3.0,
+    "economic": 4.0,
+    "cultural": 3.0,
+    "temporal": 4.0
+  },
+  "parse_success": true,
+  "scale": "1-5",
+  "version": "1.0",
+  "timestamp": "2026-04-14T04:15:45Z"
+}

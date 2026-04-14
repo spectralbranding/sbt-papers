@@ -1,0 +1,30 @@
+{
+  "cell_id": "Yandex_Yandex_portfolio_sarvam_rep5",
+  "portfolio": "Yandex",
+  "brand": "Yandex",
+  "category": "search engine and technology platform",
+  "condition": "portfolio",
+  "model_id": "sarvam",
+  "model_name": "Sarvam M",
+  "provider": "sarvam",
+  "tradition": "Indian",
+  "temperature": 0.7,
+  "repetition": 5,
+  "prompt": "You are evaluating the brand Yandex on eight dimensions of brand perception.\n\nContext: Yandex is owned by Yandex (Russian technology conglomerate), which also owns Yandex Taxi, Yandex Market.\n\nFor each dimension, rate how strongly Yandex communicates through that channel\non a scale of 1 to 5, where 1 = Not at all, 2 = Slightly, 3 = Moderately,\n4 = Strongly, 5 = Very strongly.\n\nDimensions:\n1. Semiotic: visual and verbal identity (logos, packaging, design language)\n2. Narrative: brand storytelling (origin story, mythology, communication style)\n3. Ideological: values, beliefs, and purpose (what the brand stands for)\n4. Experiential: sensory and interaction experience (product feel, service quality)\n5. Social: community, status signaling (who uses this brand, what it says about them)\n6. Economic: pricing and value perception (affordability, luxury, value-for-money)\n7. Cultural: cultural codes and positioning (what culture or subculture it belongs to)\n8. Temporal: heritage and history (longevity, tradition, track record)\n\nRespond in JSON format with the following keys:\n{\"semiotic\": <1-5>, \"narrative\": <1-5>, \"ideological\": <1-5>, \"experiential\": <1-5>, \"social\": <1-5>, \"economic\": <1-5>, \"cultural\": <1-5>, \"temporal\": <1-5>}\n\nEvaluate based on your knowledge of the brand. Provide only the JSON.",
+  "system_prompt": null,
+  "response": "<think>\nOkay, let's tackle this evaluation of Yandex across those eight dimensions. First, I need to recall what Yandex is. It's a Russian tech conglomerate with services like Yandex Taxi and Yandex Market. They're similar to Google in the US, with their own search engine, maps, email, etc.\n\nStarting with the semiotic dimension. They have a distinct visual identity, right? The logo is a bright orange color with a bold \"Yandex\" in a modern font. Their design across services is consistent, clean, and user-friendly. So maybe a 4 or 5 here. Maybe 4 because while strong, maybe not as iconic as some global brands like Google.\n\nNarrative: Their origin story? I know Yandex was started in the 90s in Russia. They position themselves as a homegrown alternative to Western tech companies. Their communication style is probably focused on innovation and serving local needs. But how strong is their storytelling? Maybe a 3 or 4. They might have some narratives about being a tech leader in Russia, but not sure if it's as prominent as other aspects.\n\nIdeological: What do they stand for? Their values might include innovation, technological advancement, and serving consumers. Since they're a major player in Russia, maybe they emphasize local empowerment or digital transformation. Probably a 3 or 4. Maybe a 4 if they actively promote these values in their branding.\n\nExperiential: Their services like Yandex Taxi and Market. The user experience is supposed to be smooth, reliable. Their apps have good UX design. Service quality might be good, but I've heard mixed reviews about Yandex Taxi in some regions. Maybe a 4 for experiential, considering their tech-savvy approach.\n\nSocial: Community and status. Yandex is widely used in Russia, so it signifies being part of the local tech ecosystem. Maybe users associate it with staying connected and using modern services. But does it have a strong status symbol? Maybe a 3 or 4. Maybe 3 because while popular, it's more of a necessity than a status symbol.\n\nEconomic: Pricing and value. They offer competitive pricing, especially in services like Yandex Taxi which might be affordable compared to others. Value-for-money is good. Maybe a 4 or 5. Probably 4, as they are competitive but not necessarily luxurious.\n\nCultural: Cultural codes. Yandex is deeply embedded in Russian culture, catering to local needs, using Russian language support, understanding local market demands. Maybe a 4 or 5. Since they are a local player, maybe a 5 for cultural positioning.\n\nTemporal: Heritage and history. Founded in 1997, over 20 years old. Longevity in the Russian market. They've been around for a while and have a track record. Maybe a 4, as they have a solid history but not as long as some other tech giants.\n\nWait, let me check each again. Semiotic: Definitely strong, maybe 4. Narrative: Maybe they have a story about being a homegrown company, so 3. Ideological: If they emphasize innovation and helping local users, 4. Experiential: Their services are good, so 4. Social: Maybe 3, as it's more about utility. Economic: 4. Cultural: 5. Temporal: 4.\n\nI think that's the breakdown. Now, putting into JSON.\n</think>\n\n```json\n{\n  \"semiotic\": 4,\n  \"narrative\": 3,\n  \"ideological\": 4,\n  \"experiential\": 4,\n  \"social\": 3,\n  \"economic\": 4,\n  \"cultural\": 5,\n  \"temporal\": 4\n}\n```",
+  "scores": {
+    "semiotic": 4.0,
+    "narrative": 3.0,
+    "ideological": 4.0,
+    "experiential": 4.0,
+    "social": 3.0,
+    "economic": 4.0,
+    "cultural": 5.0,
+    "temporal": 4.0
+  },
+  "parse_success": true,
+  "scale": "1-5",
+  "version": "1.0",
+  "timestamp": "2026-04-14T04:02:55Z"
+}

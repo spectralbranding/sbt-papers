@@ -1,0 +1,30 @@
+{
+  "cell_id": "Yandex_Yandex_solo_sarvam_rep4",
+  "portfolio": "Yandex",
+  "brand": "Yandex",
+  "category": "search engine and technology platform",
+  "condition": "solo",
+  "model_id": "sarvam",
+  "model_name": "Sarvam M",
+  "provider": "sarvam",
+  "tradition": "Indian",
+  "temperature": 0.7,
+  "repetition": 4,
+  "prompt": "You are evaluating the brand Yandex on eight dimensions of brand perception.\nFor each dimension, rate how strongly Yandex communicates through that channel\non a scale of 1 to 5, where 1 = Not at all, 2 = Slightly, 3 = Moderately,\n4 = Strongly, 5 = Very strongly.\n\nDimensions:\n1. Semiotic: visual and verbal identity (logos, packaging, design language)\n2. Narrative: brand storytelling (origin story, mythology, communication style)\n3. Ideological: values, beliefs, and purpose (what the brand stands for)\n4. Experiential: sensory and interaction experience (product feel, service quality)\n5. Social: community, status signaling (who uses this brand, what it says about them)\n6. Economic: pricing and value perception (affordability, luxury, value-for-money)\n7. Cultural: cultural codes and positioning (what culture or subculture it belongs to)\n8. Temporal: heritage and history (longevity, tradition, track record)\n\nRespond in JSON format with the following keys:\n{\"semiotic\": <1-5>, \"narrative\": <1-5>, \"ideological\": <1-5>, \"experiential\": <1-5>, \"social\": <1-5>, \"economic\": <1-5>, \"cultural\": <1-5>, \"temporal\": <1-5>}\n\nEvaluate based on your knowledge of the brand. Provide only the JSON.",
+  "system_prompt": null,
+  "response": "<think>\nOkay, let's tackle this evaluation of Yandex across those eight dimensions. First, I need to recall what I know about Yandex. It's a major Russian technology company, similar to Google in the US and Alibaba in China. They offer various services like search, taxis, food delivery, online cinema, and more. \n\nStarting with the semiotic dimension. Yandex has a distinct logo with a bright orange color and a simple, modern design. Their visual identity is consistent across different services, so that's probably a 4 or 5. Maybe 4 because while strong, it's not as iconic as some global brands.\n\nNarrative: Their origin story is about solving problems specific to the Russian market, like accurate search in Cyrillic. But do they have a strong storytelling element? I don't recall any famous narratives or myths. Maybe a 3 here.\n\nIdeological: They focus on innovation and adapting to Russian needs. Their values might include technology for everyday life. But how strong is that communication? Maybe a 3 or 4. Maybe 4 because they emphasize being a homegrown tech leader.\n\nExperiential: Their services like Yandex.Taxi and Yandex.Eats are user-friendly but can face issues like delays or service quality problems. So maybe a 3 or 4. Probably 3 because while functional, not always stellar.\n\nSocial: Yandex is widely used in Russia, especially for search and services. It's associated with convenience and tech-savviness. So status signaling might be there. Maybe 4 for social.\n\nEconomic: They offer competitive pricing, especially in services compared to Western alternatives. But some services might be pricey. Value-for-money is good, so maybe 4.\n\nCultural: They're deeply embedded in Russian culture, tailored to local needs, language, and preferences. Definitely integrated into the Russian digital culture. That's a strong 5.\n\nTemporal: Yandex has been around since the late 90s, so over two decades. They have a long history in the market. But how much do they emphasize heritage? Maybe not a big part of their branding. So maybe a 3.\n\nPutting it all together, adjusting as needed. Let me check each dimension again to ensure consistency.\n</think>\n\n```json\n{\n  \"semiotic\": 4,\n  \"narrative\": 3,\n  \"ideological\": 4,\n  \"experiential\": 3,\n  \"social\": 4,\n  \"economic\": 4,\n  \"cultural\": 5,\n  \"temporal\": 3\n}\n```",
+  "scores": {
+    "semiotic": 4.0,
+    "narrative": 3.0,
+    "ideological": 4.0,
+    "experiential": 3.0,
+    "social": 4.0,
+    "economic": 4.0,
+    "cultural": 5.0,
+    "temporal": 3.0
+  },
+  "parse_success": true,
+  "scale": "1-5",
+  "version": "1.0",
+  "timestamp": "2026-04-14T03:55:56Z"
+}

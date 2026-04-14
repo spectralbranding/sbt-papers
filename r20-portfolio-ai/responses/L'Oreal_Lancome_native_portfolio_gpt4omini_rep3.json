@@ -1,0 +1,32 @@
+{
+  "cell_id": "L'Oreal_Lancome_native_portfolio_gpt4omini_rep3",
+  "portfolio": "L'Oreal",
+  "brand": "Lancome",
+  "category": "luxury beauty",
+  "condition": "native_portfolio",
+  "language": "fr",
+  "language_name": "French",
+  "model_id": "gpt4omini",
+  "model_name": "GPT-4o-mini",
+  "provider": "openai",
+  "tradition": "Western",
+  "temperature": 0.7,
+  "repetition": 3,
+  "prompt": "Vous evaluez la marque Lancome sur huit dimensions de perception de marque.\n\nContexte : Lancome appartient au L'Oreal Group (beauty and cosmetics conglomerate), qui possede egalement L'Oreal Paris, Maybelline.\n\nPour chaque dimension, evaluez la force avec laquelle Lancome communique a travers ce canal\nsur une echelle de 1 a 5, ou 1 = Pas du tout, 2 = Legerement, 3 = Moderement,\n4 = Fortement, 5 = Tres fortement.\n\nDimensions :\n1. Semiotic: identite visuelle et verbale (logos, packaging, langage de design)\n2. Narrative: storytelling de marque (histoire d'origine, mythologie, style de communication)\n3. Ideological: valeurs, croyances et raison d'etre (ce que la marque represente)\n4. Experiential: experience sensorielle et d'interaction (toucher du produit, qualite de service)\n5. Social: communaute, signalisation de statut (qui utilise cette marque, ce que cela dit d'eux)\n6. Economic: perception de prix et de valeur (accessibilite, luxe, rapport qualite-prix)\n7. Cultural: codes culturels et positionnement (a quelle culture ou sous-culture elle appartient)\n8. Temporal: heritage et histoire (longevite, tradition, historique)\n\nRepondez au format JSON avec les cles suivantes :\n{\"semiotic\": <1-5>, \"narrative\": <1-5>, \"ideological\": <1-5>, \"experiential\": <1-5>, \"social\": <1-5>, \"economic\": <1-5>, \"cultural\": <1-5>, \"temporal\": <1-5>}\n\nEvaluez selon votre connaissance de la marque. Fournissez uniquement le JSON.",
+  "system_prompt": null,
+  "response": "```json\n{\"semiotic\": 5, \"narrative\": 4, \"ideological\": 4, \"experiential\": 5, \"social\": 4, \"economic\": 3, \"cultural\": 4, \"temporal\": 5}\n```",
+  "scores": {
+    "semiotic": 5.0,
+    "narrative": 4.0,
+    "ideological": 4.0,
+    "experiential": 5.0,
+    "social": 4.0,
+    "economic": 3.0,
+    "cultural": 4.0,
+    "temporal": 5.0
+  },
+  "parse_success": true,
+  "scale": "1-5",
+  "version": "2.0",
+  "timestamp": "2026-04-14T09:48:31Z"
+}

@@ -1,0 +1,30 @@
+{
+  "cell_id": "L'Oreal_Maybelline_recommendation_solo_sarvam_rep5",
+  "portfolio": "L'Oreal",
+  "brand": "Maybelline",
+  "category": "mass-market cosmetics",
+  "condition": "recommendation_solo",
+  "model_id": "sarvam",
+  "model_name": "Sarvam M",
+  "provider": "sarvam",
+  "tradition": "Indian",
+  "temperature": 0.7,
+  "repetition": 5,
+  "prompt": "A friend asks you: \"What do you think of Maybelline as a cosmetics brand?\"\n\nBased on your overall impression of Maybelline, rate it on each of the following\n8 perception dimensions on a scale of 1 to 5 (1 = Not at all, 5 = Very strongly).\n\nDimensions:\n1. Semiotic: visual and verbal identity (logos, packaging, design language)\n2. Narrative: brand storytelling (origin story, mythology, communication style)\n3. Ideological: values, beliefs, and purpose (what the brand stands for)\n4. Experiential: sensory and interaction experience (product feel, service quality)\n5. Social: community, status signaling (who uses this brand, what it says about them)\n6. Economic: pricing and value perception (affordability, luxury, value-for-money)\n7. Cultural: cultural codes and positioning (what culture or subculture it belongs to)\n8. Temporal: heritage and history (longevity, tradition, track record)\n\nRespond in JSON format:\n{\"semiotic\": <1-5>, \"narrative\": <1-5>, \"ideological\": <1-5>, \"experiential\": <1-5>, \"social\": <1-5>, \"economic\": <1-5>, \"cultural\": <1-5>, \"temporal\": <1-5>}\n\nProvide only the JSON.",
+  "system_prompt": null,
+  "response": "<think>\nOkay, I need to rate Maybelline on these eight dimensions. Let me start by recalling what I know about Maybelline as a cosmetics brand.\n\nFirst, the semiotic dimension: their visual and verbal identity. Maybelline has a distinctive pink and white logo with the drippy mascara look, which is pretty iconic. Their packaging is usually modern and sleek, with clear labeling. So I'd give this a 4 or 5. Maybe 4 since it's recognizable but not as trendy as some others.\n\nNarrative: their origin story. I think they were founded in the US, maybe by a woman named Maybelline, which is a catchy name. Their communication is focused on empowerment and beauty for all. Not sure how strong their storytelling is, but it's present. Maybe a 3 or 4. Let's say 3 because it's not as compelling as some other brands.\n\nIdeological: values and purpose. They emphasize inclusivity and accessibility in beauty. They have campaigns like #MaybellineTruFit which highlight diversity. But are these values deeply ingrained or just marketing? Maybe a 3. They do some good initiatives, but maybe not leading edge.\n\nExperiential: product feel and service quality. The products are generally affordable and perform well. The application feels good, but the packaging can sometimes be a bit basic. Service-wise, widely available but not luxury. Maybe a 3.5, which I'll round to 4.\n\nSocial: community and status. Maybelline is a popular brand used by many, so it's not a status symbol but more accessible. It's seen as a go-to for everyday wear. Maybe a 3 because it's not exclusive but widely used.\n\nEconomic: pricing and value. They position themselves as affordable, which they are. Great value for money, often cheaper than higher-end brands. Definitely a 5 here since they're known for being budget-friendly.\n\nCultural: cultural codes. They're part of the mass-market beauty scene, not tied to a specific subculture. They cater to a broad audience. Maybe a 3 or 4. Since they're mainstream, maybe 3.\n\nTemporal: heritage and history. Founded in the 1930s, so they have a long history. Acquired by L'Or\u00e9al, but still have that legacy. Longevity gives them credibility. Maybe a 4 since their history is strong but not as emphasized now.\n\nPutting it all together in JSON. Let me check each again to ensure consistency.\n</think>\n\n{\n  \"semiotic\": 4,\n  \"narrative\": 3,\n  \"ideological\": 3,\n  \"experiential\": 4,\n  \"social\": 3,\n  \"economic\": 5,\n  \"cultural\": 3,\n  \"temporal\": 4\n}",
+  "scores": {
+    "semiotic": 4.0,
+    "narrative": 3.0,
+    "ideological": 3.0,
+    "experiential": 4.0,
+    "social": 3.0,
+    "economic": 5.0,
+    "cultural": 3.0,
+    "temporal": 4.0
+  },
+  "parse_success": true,
+  "scale": "1-5",
+  "version": "1.0",
+  "timestamp": "2026-04-14T05:18:00Z"
+}

@@ -1,0 +1,21 @@
+{
+  "cell_id": "L'Oreal_Maybelline_recommendation_portfolio_sarvam_rep2",
+  "portfolio": "L'Oreal",
+  "brand": "Maybelline",
+  "category": "mass-market cosmetics",
+  "condition": "recommendation_portfolio",
+  "model_id": "sarvam",
+  "model_name": "Sarvam M",
+  "provider": "sarvam",
+  "tradition": "Indian",
+  "temperature": 0.7,
+  "repetition": 2,
+  "prompt": "A friend asks you: \"What do you think of Maybelline? I know it's part of L'Oreal Group.\"\n\nBased on your overall impression of Maybelline \u2014 keeping in mind it belongs to\nL'Oreal Group (beauty and cosmetics conglomerate), alongside L'Oreal Paris, Lancome \u2014 rate it on each of the following\n8 perception dimensions on a scale of 1 to 5 (1 = Not at all, 5 = Very strongly).\n\nDimensions:\n1. Semiotic: visual and verbal identity (logos, packaging, design language)\n2. Narrative: brand storytelling (origin story, mythology, communication style)\n3. Ideological: values, beliefs, and purpose (what the brand stands for)\n4. Experiential: sensory and interaction experience (product feel, service quality)\n5. Social: community, status signaling (who uses this brand, what it says about them)\n6. Economic: pricing and value perception (affordability, luxury, value-for-money)\n7. Cultural: cultural codes and positioning (what culture or subculture it belongs to)\n8. Temporal: heritage and history (longevity, tradition, track record)\n\nRespond in JSON format:\n{\"semiotic\": <1-5>, \"narrative\": <1-5>, \"ideological\": <1-5>, \"experiential\": <1-5>, \"social\": <1-5>, \"economic\": <1-5>, \"cultural\": <1-5>, \"temporal\": <1-5>}\n\nProvide only the JSON.",
+  "system_prompt": null,
+  "response": "<think>\nOkay, let's tackle this. The user wants a rating of Maybelline across 8 perception dimensions on a 1-5 scale. I need to consider each dimension and how Maybelline, as part of L'Oreal, fits.\n\nStarting with Semiotic. Maybelline has a recognizable logo and packaging. The pink and black colors are iconic. Their design is modern but approachable. So maybe a 4.\n\nNarrative: Their origin story is interesting\u2014like the legend of Maybellene, the sister. The storytelling is part of their identity, but not as prominent as some other brands. Maybe a 3.\n\nIdeological: They focus on inclusivity and empowerment. L'Oreal is big on diversity, so Maybelline likely follows. That's a strong 4.\n\nExperiential: Products are generally well-received, but some might say they're not as luxurious as L'Oreal Paris. However, the application and quality are good. Maybe a 4.\n\nSocial: It's a mass-market brand. Not luxury, but popular. People might use it for everyday looks. Status signaling is moderate. Let's say 3.\n\nEconomic: Priced as mid-range. Good value for money, not too expensive. So 5.\n\nCultural: They're part of mainstream beauty, maybe leaning into a younger demographic. But not tied to a specific subculture. Maybe a 3.\n\nTemporal: Established since 1950s. Long history, but maybe not as heritage-focused as L'Oreal Paris. Still, the longevity is there. Let's give a 4.\n\nWait, does Maybelline have a strong narrative? Their \"Maybellene\" story is part of their history, but maybe not as actively told. Maybe narrative is a 3. Economic being 5 because they are affordable and offer good value. Yeah, that makes sense.checked",
+  "scores": null,
+  "parse_success": false,
+  "scale": "1-5",
+  "version": "1.0",
+  "timestamp": "2026-04-14T05:24:21Z"
+}

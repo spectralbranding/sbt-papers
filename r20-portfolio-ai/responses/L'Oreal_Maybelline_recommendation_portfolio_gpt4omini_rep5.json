@@ -1,0 +1,30 @@
+{
+  "cell_id": "L'Oreal_Maybelline_recommendation_portfolio_gpt4omini_rep5",
+  "portfolio": "L'Oreal",
+  "brand": "Maybelline",
+  "category": "mass-market cosmetics",
+  "condition": "recommendation_portfolio",
+  "model_id": "gpt4omini",
+  "model_name": "GPT-4o-mini",
+  "provider": "openai",
+  "tradition": "Western",
+  "temperature": 0.7,
+  "repetition": 5,
+  "prompt": "A friend asks you: \"What do you think of Maybelline? I know it's part of L'Oreal Group.\"\n\nBased on your overall impression of Maybelline \u2014 keeping in mind it belongs to\nL'Oreal Group (beauty and cosmetics conglomerate), alongside L'Oreal Paris, Lancome \u2014 rate it on each of the following\n8 perception dimensions on a scale of 1 to 5 (1 = Not at all, 5 = Very strongly).\n\nDimensions:\n1. Semiotic: visual and verbal identity (logos, packaging, design language)\n2. Narrative: brand storytelling (origin story, mythology, communication style)\n3. Ideological: values, beliefs, and purpose (what the brand stands for)\n4. Experiential: sensory and interaction experience (product feel, service quality)\n5. Social: community, status signaling (who uses this brand, what it says about them)\n6. Economic: pricing and value perception (affordability, luxury, value-for-money)\n7. Cultural: cultural codes and positioning (what culture or subculture it belongs to)\n8. Temporal: heritage and history (longevity, tradition, track record)\n\nRespond in JSON format:\n{\"semiotic\": <1-5>, \"narrative\": <1-5>, \"ideological\": <1-5>, \"experiential\": <1-5>, \"social\": <1-5>, \"economic\": <1-5>, \"cultural\": <1-5>, \"temporal\": <1-5>}\n\nProvide only the JSON.",
+  "system_prompt": null,
+  "response": "```json\n{\"semiotic\": 4, \"narrative\": 4, \"ideological\": 3, \"experiential\": 4, \"social\": 4, \"economic\": 5, \"cultural\": 4, \"temporal\": 4}\n```",
+  "scores": {
+    "semiotic": 4.0,
+    "narrative": 4.0,
+    "ideological": 3.0,
+    "experiential": 4.0,
+    "social": 4.0,
+    "economic": 5.0,
+    "cultural": 4.0,
+    "temporal": 4.0
+  },
+  "parse_success": true,
+  "scale": "1-5",
+  "version": "1.0",
+  "timestamp": "2026-04-14T05:22:21Z"
+}
