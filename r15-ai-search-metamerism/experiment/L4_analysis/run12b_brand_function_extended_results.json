@@ -1,0 +1,875 @@
+{
+  "experiment": "run12b_brand_function_extended",
+  "date": "2026-04-14T11:28:25.188805+00:00",
+  "n_records": 1248,
+  "models": [
+    "claude",
+    "gpt",
+    "gemini",
+    "deepseek"
+  ],
+  "brands": [
+    "Erewhon",
+    "Hermes",
+    "IKEA",
+    "Trader Joe's",
+    "Uniqlo",
+    "Zara",
+    "Tesla",
+    "Emirates",
+    "Volvo",
+    "Nike",
+    "Toyota",
+    "Samsung",
+    "Coca-Cola",
+    "Lululemon",
+    "Rivian",
+    "Patagonia",
+    "Netflix",
+    "Apple",
+    "Mercedes-Benz",
+    "Rolex",
+    "The North Face",
+    "Whole Foods Market",
+    "Louis Vuitton",
+    "Dove",
+    "Huawei",
+    "Starbucks"
+  ],
+  "baseline": {
+    "Hermes": {
+      "n_calls": 12,
+      "n_models": 4,
+      "mean_dci": 4.573,
+      "sd_dci": 0.806,
+      "mean_weights": {
+        "semiotic": 14.67,
+        "narrative": 12.25,
+        "ideological": 8.25,
+        "experiential": 20.92,
+        "social": 14.0,
+        "economic": 14.5,
+        "cultural": 6.33,
+        "temporal": 9.08
+      }
+    },
+    "IKEA": {
+      "n_calls": 12,
+      "n_models": 4,
+      "mean_dci": 5.844,
+      "sd_dci": 0.533,
+      "mean_weights": {
+        "semiotic": 15.5,
+        "narrative": 9.5,
+        "ideological": 11.17,
+        "experiential": 16.25,
+        "social": 8.25,
+        "economic": 26.17,
+        "cultural": 7.25,
+        "temporal": 5.92
+      }
+    },
+    "Patagonia": {
+      "n_calls": 12,
+      "n_models": 4,
+      "mean_dci": 5.073,
+      "sd_dci": 1.12,
+      "mean_weights": {
+        "semiotic": 9.83,
+        "narrative": 11.0,
+        "ideological": 26.25,
+        "experiential": 15.5,
+        "social": 12.0,
+        "economic": 10.17,
+        "cultural": 7.33,
+        "temporal": 7.92
+      }
+    },
+    "Erewhon": {
+      "n_calls": 11,
+      "n_models": 4,
+      "mean_dci": 5.057,
+      "sd_dci": 1.051,
+      "mean_weights": {
+        "semiotic": 14.18,
+        "narrative": 9.0,
+        "ideological": 13.82,
+        "experiential": 20.09,
+        "social": 15.0,
+        "economic": 14.45,
+        "cultural": 7.82,
+        "temporal": 5.64
+      }
+    },
+    "Tesla": {
+      "n_calls": 12,
+      "n_models": 4,
+      "mean_dci": 4.76,
+      "sd_dci": 0.972,
+      "mean_weights": {
+        "semiotic": 14.0,
+        "narrative": 12.25,
+        "ideological": 10.75,
+        "experiential": 18.25,
+        "social": 14.17,
+        "economic": 18.58,
+        "cultural": 6.92,
+        "temporal": 5.08
+      }
+    },
+    "Nike": {
+      "n_calls": 12,
+      "n_models": 4,
+      "mean_dci": 4.354,
+      "sd_dci": 1.316,
+      "mean_weights": {
+        "semiotic": 17.0,
+        "narrative": 11.75,
+        "ideological": 8.67,
+        "experiential": 16.75,
+        "social": 15.83,
+        "economic": 13.67,
+        "cultural": 9.58,
+        "temporal": 6.75
+      }
+    },
+    "Apple": {
+      "n_calls": 12,
+      "n_models": 4,
+      "mean_dci": 5.021,
+      "sd_dci": 1.223,
+      "mean_weights": {
+        "semiotic": 18.25,
+        "narrative": 11.33,
+        "ideological": 7.42,
+        "experiential": 23.0,
+        "social": 13.75,
+        "economic": 12.08,
+        "cultural": 8.0,
+        "temporal": 6.17
+      }
+    },
+    "Starbucks": {
+      "n_calls": 12,
+      "n_models": 4,
+      "mean_dci": 6.188,
+      "sd_dci": 0.951,
+      "mean_weights": {
+        "semiotic": 11.75,
+        "narrative": 8.92,
+        "ideological": 5.92,
+        "experiential": 20.33,
+        "social": 9.92,
+        "economic": 25.0,
+        "cultural": 9.75,
+        "temporal": 7.92
+      }
+    },
+    "Coca-Cola": {
+      "n_calls": 12,
+      "n_models": 4,
+      "mean_dci": 4.667,
+      "sd_dci": 0.999,
+      "mean_weights": {
+        "semiotic": 17.0,
+        "narrative": 11.33,
+        "ideological": 6.17,
+        "experiential": 16.08,
+        "social": 11.25,
+        "economic": 16.08,
+        "cultural": 10.83,
+        "temporal": 11.25
+      }
+    },
+    "Mercedes-Benz": {
+      "n_calls": 12,
+      "n_models": 4,
+      "mean_dci": 4.521,
+      "sd_dci": 0.746,
+      "mean_weights": {
+        "semiotic": 16.58,
+        "narrative": 11.33,
+        "ideological": 7.0,
+        "experiential": 20.92,
+        "social": 14.08,
+        "economic": 13.67,
+        "cultural": 7.08,
+        "temporal": 9.33
+      }
+    },
+    "Zara": {
+      "n_calls": 12,
+      "n_models": 4,
+      "mean_dci": 5.177,
+      "sd_dci": 0.872,
+      "mean_weights": {
+        "semiotic": 17.42,
+        "narrative": 7.0,
+        "ideological": 11.33,
+        "experiential": 16.75,
+        "social": 13.42,
+        "economic": 18.83,
+        "cultural": 8.5,
+        "temporal": 6.75
+      }
+    },
+    "Rolex": {
+      "n_calls": 12,
+      "n_models": 4,
+      "mean_dci": 4.865,
+      "sd_dci": 0.994,
+      "mean_weights": {
+        "semiotic": 14.67,
+        "narrative": 10.58,
+        "ideological": 4.92,
+        "experiential": 15.33,
+        "social": 17.75,
+        "economic": 17.58,
+        "cultural": 8.33,
+        "temporal": 10.83
+      }
+    },
+    "Netflix": {
+      "n_calls": 11,
+      "n_models": 4,
+      "mean_dci": 5.852,
+      "sd_dci": 0.506,
+      "mean_weights": {
+        "semiotic": 10.64,
+        "narrative": 8.73,
+        "ideological": 5.18,
+        "experiential": 21.91,
+        "social": 10.09,
+        "economic": 24.45,
+        "cultural": 11.82,
+        "temporal": 7.18
+      }
+    },
+    "Lululemon": {
+      "n_calls": 12,
+      "n_models": 4,
+      "mean_dci": 4.635,
+      "sd_dci": 1.112,
+      "mean_weights": {
+        "semiotic": 14.42,
+        "narrative": 11.92,
+        "ideological": 9.67,
+        "experiential": 19.67,
+        "social": 16.58,
+        "economic": 13.75,
+        "cultural": 8.0,
+        "temporal": 6.0
+      }
+    },
+    "Trader Joe's": {
+      "n_calls": 12,
+      "n_models": 4,
+      "mean_dci": 6.812,
+      "sd_dci": 0.963,
+      "mean_weights": {
+        "semiotic": 9.08,
+        "narrative": 6.67,
+        "ideological": 8.0,
+        "experiential": 16.58,
+        "social": 8.67,
+        "economic": 33.33,
+        "cultural": 7.75,
+        "temporal": 9.83
+      }
+    },
+    "Louis Vuitton": {
+      "n_calls": 12,
+      "n_models": 4,
+      "mean_dci": 3.938,
+      "sd_dci": 0.766,
+      "mean_weights": {
+        "semiotic": 17.67,
+        "narrative": 11.75,
+        "ideological": 7.0,
+        "experiential": 17.0,
+        "social": 14.33,
+        "economic": 13.5,
+        "cultural": 7.58,
+        "temporal": 11.17
+      }
+    },
+    "The North Face": {
+      "n_calls": 12,
+      "n_models": 4,
+      "mean_dci": 4.979,
+      "sd_dci": 1.502,
+      "mean_weights": {
+        "semiotic": 13.17,
+        "narrative": 10.33,
+        "ideological": 10.17,
+        "experiential": 18.67,
+        "social": 11.33,
+        "economic": 19.25,
+        "cultural": 6.67,
+        "temporal": 10.42
+      }
+    },
+    "Whole Foods Market": {
+      "n_calls": 12,
+      "n_models": 4,
+      "mean_dci": 6.312,
+      "sd_dci": 0.862,
+      "mean_weights": {
+        "semiotic": 9.58,
+        "narrative": 8.83,
+        "ideological": 12.42,
+        "experiential": 17.42,
+        "social": 7.67,
+        "economic": 30.5,
+        "cultural": 7.25,
+        "temporal": 6.33
+      }
+    },
+    "Rivian": {
+      "n_calls": 12,
+      "n_models": 4,
+      "mean_dci": 4.521,
+      "sd_dci": 0.796,
+      "mean_weights": {
+        "semiotic": 14.67,
+        "narrative": 10.42,
+        "ideological": 11.08,
+        "experiential": 18.42,
+        "social": 10.83,
+        "economic": 20.33,
+        "cultural": 7.33,
+        "temporal": 6.92
+      }
+    },
+    "Dove": {
+      "n_calls": 12,
+      "n_models": 4,
+      "mean_dci": 4.438,
+      "sd_dci": 1.136,
+      "mean_weights": {
+        "semiotic": 12.58,
+        "narrative": 9.92,
+        "ideological": 19.5,
+        "experiential": 18.0,
+        "social": 12.17,
+        "economic": 14.0,
+        "cultural": 7.58,
+        "temporal": 6.25
+      }
+    },
+    "Toyota": {
+      "n_calls": 12,
+      "n_models": 4,
+      "mean_dci": 5.885,
+      "sd_dci": 0.728,
+      "mean_weights": {
+        "semiotic": 11.08,
+        "narrative": 8.33,
+        "ideological": 8.42,
+        "experiential": 19.25,
+        "social": 8.08,
+        "economic": 28.67,
+        "cultural": 6.75,
+        "temporal": 9.42
+      }
+    },
+    "Samsung": {
+      "n_calls": 12,
+      "n_models": 4,
+      "mean_dci": 5.365,
+      "sd_dci": 1.114,
+      "mean_weights": {
+        "semiotic": 15.92,
+        "narrative": 7.58,
+        "ideological": 6.58,
+        "experiential": 19.67,
+        "social": 10.5,
+        "economic": 22.83,
+        "cultural": 8.83,
+        "temporal": 8.08
+      }
+    },
+    "Huawei": {
+      "n_calls": 12,
+      "n_models": 4,
+      "mean_dci": 6.0,
+      "sd_dci": 0.589,
+      "mean_weights": {
+        "semiotic": 11.75,
+        "narrative": 8.5,
+        "ideological": 5.25,
+        "experiential": 18.25,
+        "social": 10.58,
+        "economic": 29.5,
+        "cultural": 7.17,
+        "temporal": 9.0
+      }
+    },
+    "Volvo": {
+      "n_calls": 12,
+      "n_models": 4,
+      "mean_dci": 4.99,
+      "sd_dci": 1.005,
+      "mean_weights": {
+        "semiotic": 16.17,
+        "narrative": 9.92,
+        "ideological": 13.25,
+        "experiential": 19.25,
+        "social": 12.92,
+        "economic": 14.5,
+        "cultural": 6.17,
+        "temporal": 7.83
+      }
+    },
+    "Uniqlo": {
+      "n_calls": 11,
+      "n_models": 4,
+      "mean_dci": 5.227,
+      "sd_dci": 1.566,
+      "mean_weights": {
+        "semiotic": 16.73,
+        "narrative": 9.64,
+        "ideological": 10.27,
+        "experiential": 16.82,
+        "social": 8.55,
+        "economic": 21.45,
+        "cultural": 7.91,
+        "temporal": 8.64
+      }
+    },
+    "Emirates": {
+      "n_calls": 12,
+      "n_models": 4,
+      "mean_dci": 5.833,
+      "sd_dci": 0.973,
+      "mean_weights": {
+        "semiotic": 12.58,
+        "narrative": 8.08,
+        "ideological": 5.0,
+        "experiential": 26.67,
+        "social": 11.17,
+        "economic": 20.0,
+        "cultural": 6.92,
+        "temporal": 9.58
+      }
+    }
+  },
+  "specified": {
+    "Hermes": {
+      "n_calls": 11,
+      "n_models": 4,
+      "mean_dci": 3.716,
+      "sd_dci": 1.161,
+      "mean_weights": {
+        "semiotic": 14.18,
+        "narrative": 11.18,
+        "ideological": 9.0,
+        "experiential": 19.0,
+        "social": 12.91,
+        "economic": 12.36,
+        "cultural": 9.09,
+        "temporal": 12.27
+      }
+    },
+    "IKEA": {
+      "n_calls": 12,
+      "n_models": 4,
+      "mean_dci": 6.0,
+      "sd_dci": 0.996,
+      "mean_weights": {
+        "semiotic": 13.0,
+        "narrative": 8.08,
+        "ideological": 6.83,
+        "experiential": 17.5,
+        "social": 7.75,
+        "economic": 30.25,
+        "cultural": 8.25,
+        "temporal": 8.33
+      }
+    },
+    "Patagonia": {
+      "n_calls": 11,
+      "n_models": 4,
+      "mean_dci": 4.989,
+      "sd_dci": 0.888,
+      "mean_weights": {
+        "semiotic": 7.91,
+        "narrative": 13.73,
+        "ideological": 24.0,
+        "experiential": 17.18,
+        "social": 11.91,
+        "economic": 10.82,
+        "cultural": 7.55,
+        "temporal": 6.91
+      }
+    },
+    "Erewhon": {
+      "n_calls": 9,
+      "n_models": 3,
+      "mean_dci": 4.889,
+      "sd_dci": 0.759,
+      "mean_weights": {
+        "semiotic": 9.33,
+        "narrative": 10.67,
+        "ideological": 12.67,
+        "experiential": 16.67,
+        "social": 9.33,
+        "economic": 20.78,
+        "cultural": 11.22,
+        "temporal": 9.33
+      }
+    },
+    "Tesla": {
+      "n_calls": 10,
+      "n_models": 4,
+      "mean_dci": 4.763,
+      "sd_dci": 1.741,
+      "mean_weights": {
+        "semiotic": 12.6,
+        "narrative": 14.2,
+        "ideological": 13.4,
+        "experiential": 17.7,
+        "social": 12.1,
+        "economic": 15.3,
+        "cultural": 6.8,
+        "temporal": 5.9
+      }
+    },
+    "Nike": {
+      "n_calls": 11,
+      "n_models": 4,
+      "mean_dci": 4.057,
+      "sd_dci": 0.797,
+      "mean_weights": {
+        "semiotic": 16.09,
+        "narrative": 10.82,
+        "ideological": 5.18,
+        "experiential": 16.64,
+        "social": 16.45,
+        "economic": 14.82,
+        "cultural": 12.18,
+        "temporal": 7.82
+      }
+    },
+    "Apple": {
+      "n_calls": 10,
+      "n_models": 4,
+      "mean_dci": 4.8,
+      "sd_dci": 0.838,
+      "mean_weights": {
+        "semiotic": 17.1,
+        "narrative": 10.6,
+        "ideological": 6.7,
+        "experiential": 22.9,
+        "social": 12.6,
+        "economic": 9.1,
+        "cultural": 11.2,
+        "temporal": 9.8
+      }
+    },
+    "Starbucks": {
+      "n_calls": 10,
+      "n_models": 4,
+      "mean_dci": 5.987,
+      "sd_dci": 0.557,
+      "mean_weights": {
+        "semiotic": 11.6,
+        "narrative": 7.9,
+        "ideological": 5.0,
+        "experiential": 21.4,
+        "social": 12.1,
+        "economic": 24.4,
+        "cultural": 9.5,
+        "temporal": 8.1
+      }
+    },
+    "Coca-Cola": {
+      "n_calls": 11,
+      "n_models": 4,
+      "mean_dci": 4.602,
+      "sd_dci": 0.819,
+      "mean_weights": {
+        "semiotic": 16.27,
+        "narrative": 9.64,
+        "ideological": 4.45,
+        "experiential": 19.73,
+        "social": 10.73,
+        "economic": 18.36,
+        "cultural": 10.36,
+        "temporal": 10.45
+      }
+    },
+    "Mercedes-Benz": {
+      "n_calls": 11,
+      "n_models": 4,
+      "mean_dci": 4.114,
+      "sd_dci": 0.606,
+      "mean_weights": {
+        "semiotic": 14.18,
+        "narrative": 14.73,
+        "ideological": 5.0,
+        "experiential": 18.09,
+        "social": 12.82,
+        "economic": 8.09,
+        "cultural": 11.18,
+        "temporal": 15.91
+      }
+    },
+    "Zara": {
+      "n_calls": 12,
+      "n_models": 4,
+      "mean_dci": 7.083,
+      "sd_dci": 1.231,
+      "mean_weights": {
+        "semiotic": 10.75,
+        "narrative": 6.25,
+        "ideological": 4.33,
+        "experiential": 24.5,
+        "social": 9.92,
+        "economic": 27.17,
+        "cultural": 8.58,
+        "temporal": 8.5
+      }
+    },
+    "Rolex": {
+      "n_calls": 12,
+      "n_models": 4,
+      "mean_dci": 4.458,
+      "sd_dci": 0.876,
+      "mean_weights": {
+        "semiotic": 15.25,
+        "narrative": 11.17,
+        "ideological": 6.25,
+        "experiential": 15.75,
+        "social": 19.08,
+        "economic": 13.67,
+        "cultural": 7.33,
+        "temporal": 11.5
+      }
+    },
+    "Netflix": {
+      "n_calls": 12,
+      "n_models": 4,
+      "mean_dci": 5.938,
+      "sd_dci": 1.141,
+      "mean_weights": {
+        "semiotic": 9.75,
+        "narrative": 9.83,
+        "ideological": 4.33,
+        "experiential": 23.92,
+        "social": 13.33,
+        "economic": 19.83,
+        "cultural": 13.0,
+        "temporal": 6.0
+      }
+    },
+    "Lululemon": {
+      "n_calls": 11,
+      "n_models": 4,
+      "mean_dci": 4.943,
+      "sd_dci": 1.063,
+      "mean_weights": {
+        "semiotic": 11.91,
+        "narrative": 7.36,
+        "ideological": 8.27,
+        "experiential": 21.0,
+        "social": 15.82,
+        "economic": 16.0,
+        "cultural": 11.45,
+        "temporal": 8.18
+      }
+    },
+    "Trader Joe's": {
+      "n_calls": 12,
+      "n_models": 4,
+      "mean_dci": 5.333,
+      "sd_dci": 0.33,
+      "mean_weights": {
+        "semiotic": 13.83,
+        "narrative": 11.42,
+        "ideological": 8.25,
+        "experiential": 21.75,
+        "social": 12.0,
+        "economic": 21.58,
+        "cultural": 5.08,
+        "temporal": 6.08
+      }
+    },
+    "Louis Vuitton": {
+      "n_calls": 10,
+      "n_models": 4,
+      "mean_dci": 4.25,
+      "sd_dci": 0.71,
+      "mean_weights": {
+        "semiotic": 18.4,
+        "narrative": 12.1,
+        "ideological": 4.4,
+        "experiential": 16.8,
+        "social": 16.0,
+        "economic": 9.6,
+        "cultural": 12.0,
+        "temporal": 10.7
+      }
+    },
+    "The North Face": {
+      "n_calls": 10,
+      "n_models": 4,
+      "mean_dci": 4.125,
+      "sd_dci": 0.648,
+      "mean_weights": {
+        "semiotic": 14.1,
+        "narrative": 12.0,
+        "ideological": 6.2,
+        "experiential": 19.4,
+        "social": 13.6,
+        "economic": 15.7,
+        "cultural": 8.9,
+        "temporal": 10.1
+      }
+    },
+    "Whole Foods Market": {
+      "n_calls": 11,
+      "n_models": 4,
+      "mean_dci": 5.398,
+      "sd_dci": 1.092,
+      "mean_weights": {
+        "semiotic": 9.82,
+        "narrative": 8.36,
+        "ideological": 16.27,
+        "experiential": 18.27,
+        "social": 6.82,
+        "economic": 22.73,
+        "cultural": 9.18,
+        "temporal": 8.55
+      }
+    },
+    "Rivian": {
+      "n_calls": 10,
+      "n_models": 4,
+      "mean_dci": 4.175,
+      "sd_dci": 1.395,
+      "mean_weights": {
+        "semiotic": 10.9,
+        "narrative": 15.1,
+        "ideological": 14.7,
+        "experiential": 20.4,
+        "social": 7.6,
+        "economic": 13.0,
+        "cultural": 9.7,
+        "temporal": 8.6
+      }
+    },
+    "Dove": {
+      "n_calls": 12,
+      "n_models": 4,
+      "mean_dci": 4.073,
+      "sd_dci": 1.304,
+      "mean_weights": {
+        "semiotic": 10.92,
+        "narrative": 18.08,
+        "ideological": 17.92,
+        "experiential": 12.5,
+        "social": 14.33,
+        "economic": 12.0,
+        "cultural": 6.0,
+        "temporal": 8.25
+      }
+    },
+    "Toyota": {
+      "n_calls": 12,
+      "n_models": 4,
+      "mean_dci": 5.677,
+      "sd_dci": 0.496,
+      "mean_weights": {
+        "semiotic": 8.67,
+        "narrative": 10.5,
+        "ideological": 7.92,
+        "experiential": 18.83,
+        "social": 7.0,
+        "economic": 25.75,
+        "cultural": 9.42,
+        "temporal": 11.92
+      }
+    },
+    "Samsung": {
+      "n_calls": 12,
+      "n_models": 4,
+      "mean_dci": 5.448,
+      "sd_dci": 0.451,
+      "mean_weights": {
+        "semiotic": 14.67,
+        "narrative": 8.92,
+        "ideological": 4.58,
+        "experiential": 21.75,
+        "social": 11.25,
+        "economic": 22.25,
+        "cultural": 7.83,
+        "temporal": 8.75
+      }
+    },
+    "Huawei": {
+      "n_calls": 11,
+      "n_models": 4,
+      "mean_dci": 6.023,
+      "sd_dci": 0.506,
+      "mean_weights": {
+        "semiotic": 9.91,
+        "narrative": 10.55,
+        "ideological": 8.36,
+        "experiential": 21.09,
+        "social": 11.27,
+        "economic": 23.09,
+        "cultural": 9.27,
+        "temporal": 6.45
+      }
+    },
+    "Volvo": {
+      "n_calls": 11,
+      "n_models": 4,
+      "mean_dci": 4.011,
+      "sd_dci": 0.895,
+      "mean_weights": {
+        "semiotic": 10.82,
+        "narrative": 18.09,
+        "ideological": 15.73,
+        "experiential": 16.55,
+        "social": 6.18,
+        "economic": 11.45,
+        "cultural": 11.91,
+        "temporal": 9.27
+      }
+    },
+    "Uniqlo": {
+      "n_calls": 12,
+      "n_models": 4,
+      "mean_dci": 6.562,
+      "sd_dci": 0.979,
+      "mean_weights": {
+        "semiotic": 13.0,
+        "narrative": 8.25,
+        "ideological": 5.25,
+        "experiential": 21.75,
+        "social": 7.0,
+        "economic": 27.0,
+        "cultural": 11.25,
+        "temporal": 6.5
+      }
+    },
+    "Emirates": {
+      "n_calls": 11,
+      "n_models": 4,
+      "mean_dci": 5.795,
+      "sd_dci": 1.156,
+      "mean_weights": {
+        "semiotic": 15.09,
+        "narrative": 9.45,
+        "ideological": 4.27,
+        "experiential": 28.09,
+        "social": 12.82,
+        "economic": 14.18,
+        "cultural": 9.0,
+        "temporal": 7.09
+      }
+    }
+  }
+}
