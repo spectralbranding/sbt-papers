@@ -1,0 +1,47 @@
+{
+  "brand": "IKEA",
+  "version": "1.0",
+  "source": "Canonical SBT brand profile (Zharnikov 2026a), Articles 01-10",
+  "dimensions": {
+    "semiotic": {
+      "score": 8.0,
+      "positioning": "Blue-and-yellow Swedish palette is globally legible without language. The BILLY bookcase and POANG chair are objects of cultural recognition. Flat-pack form is itself a sign of the IKEA system.",
+      "key_signals": ["blue-and-yellow wordmark", "Swedish product names", "BILLY and POANG as cultural icons", "flat-pack box as brand signifier"]
+    },
+    "narrative": {
+      "score": 7.5,
+      "positioning": "Founded 1943 in Almhult, Sweden by Ingvar Kamprad at age 17. The origin story of democratic design — good furniture for people with thin wallets — is embedded in every product and price tag.",
+      "key_signals": ["1943 founding by teenage entrepreneur", "Almhult origin", "Kamprad's frugality mythology", "IKEA name as personal acronym (IK + farm + village)"]
+    },
+    "ideological": {
+      "score": 6.0,
+      "positioning": "Democratic design: beautiful, functional, sustainable, and affordable for the many. The ideology is explicit — IKEA openly states it exists to create 'a better everyday life for the many people.'",
+      "key_signals": ["'democratic design' as named doctrine", "People & Planet Positive sustainability strategy", "solar panels on stores", "circular economy product lines"]
+    },
+    "experiential": {
+      "score": 7.0,
+      "positioning": "The warehouse journey is a designed experience: one-way path, room vignettes, meatballs in the cafeteria, and the satisfaction of self-assembly. The store is an immersive maze with a deliberate flow.",
+      "key_signals": ["one-way store layout", "Swedish meatballs as destination", "room vignettes at scale", "flat-pack assembly as ritual"]
+    },
+    "social": {
+      "score": 5.0,
+      "positioning": "Mass-market accessibility creates universal familiarity rather than exclusivity. IKEA ownership is a near-universal life-stage marker, particularly among young adults establishing first homes.",
+      "key_signals": ["BILLY bookcase in 1-in-5 European homes", "student and first-home positioning", "IKEA hacking community", "broad demographic reach across income levels"]
+    },
+    "economic": {
+      "score": 9.0,
+      "positioning": "Price accessibility is the central value proposition and a structural design constraint. Every product starts with a target price point; design works backward from affordability.",
+      "key_signals": ["price-first design process", "IKEA Family loyalty discounts", "visible price tags in every vignette", "annual IKEA catalogue as price reference benchmark"]
+    },
+    "cultural": {
+      "score": 7.5,
+      "positioning": "Swedish design culture — minimalism, functionality, hygge-adjacent warmth — exported globally. IKEA is the world's largest exporter of Scandinavian aesthetic values.",
+      "key_signals": ["Swedish product naming convention", "Scandinavian minimalism aesthetic", "Almhult Design Centre", "Swedish food court as cultural export"]
+    },
+    "temporal": {
+      "score": 6.0,
+      "positioning": "80+ years of continuous operation with the founding philosophy intact. Products are periodically updated but the core BILLY and KALLAX lines span decades, creating generational continuity.",
+      "key_signals": ["1943 founding", "BILLY bookcase unchanged since 1979", "three-generation brand familiarity", "annual catalogue as temporal ritual (1951–2021)"]
+    }
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "brand": "Hermes",
+  "version": "1.0",
+  "source": "Canonical SBT brand profile (Zharnikov 2026a), Articles 03, 05",
+  "dimensions": {
+    "semiotic": {
+      "score": 9.5,
+      "positioning": "Handcrafted luxury with deliberate restraint. Orange box as icon. No visible logos on most products. Typography and materials communicate exclusivity without declaration.",
+      "key_signals": ["Birkin silhouette", "orange packaging", "saddle-stitching", "no visible branding on leather goods"]
+    },
+    "narrative": {
+      "score": 9.0,
+      "positioning": "Equestrian heritage since 1837. Thierry Hermes, Parisian saddler. Six generations of family stewardship. The brand story is one of continuous craft refinement, not expansion.",
+      "key_signals": ["1837 founding", "equestrian origin", "family ownership", "artisan training program (3+ years per craftsman)"]
+    },
+    "ideological": {
+      "score": 7.0,
+      "positioning": "Quiet excellence over conspicuous consumption. Anti-trend. Objects are made to last decades. Sustainability through durability rather than through messaging.",
+      "key_signals": ["lifetime repair policy", "no seasonal markdowns", "limited production", "anti-fast-fashion stance"]
+    },
+    "experiential": {
+      "score": 9.0,
+      "positioning": "Tactile luxury. Every touchpoint is choreographed: the weight of the box, the ribbon, the tissue paper, the store architecture. Purchase is a ceremony.",
+      "key_signals": ["white-glove service", "appointment-based purchasing for key items", "store as gallery", "packaging as ritual"]
+    },
+    "social": {
+      "score": 8.5,
+      "positioning": "Ultra-exclusive community. Waitlists as social filter. Ownership signals membership in a circle that cannot be bought into directly.",
+      "key_signals": ["Birkin waitlist", "purchase history requirements", "no celebrity endorsements", "word-of-mouth as primary channel"]
+    },
+    "economic": {
+      "score": 3.0,
+      "positioning": "Price is a structural barrier, not a value signal. Hermes does not compete on price. Price is set to preserve exclusivity and fund craftsmanship.",
+      "key_signals": ["no sales", "no outlet stores", "annual price increases", "secondary market premium (Birkin appreciates)"]
+    },
+    "cultural": {
+      "score": 9.0,
+      "positioning": "French haute couture tradition. Parisian craft culture. The brand is inseparable from French cultural identity and the luxury-as-art philosophy.",
+      "key_signals": ["Paris ateliers", "French craft guilds", "art collaborations", "Fondation d'entreprise Hermes"]
+    },
+    "temporal": {
+      "score": 9.5,
+      "positioning": "187 years of continuous operation under the same family. One of the oldest luxury houses. Heritage is not marketed — it is the brand.",
+      "key_signals": ["1837 founding", "six generations", "unchanged core craft methods", "leather goods still hand-stitched"]
+    }
+  }
+}
