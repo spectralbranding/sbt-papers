@@ -23,7 +23,7 @@ AI-mediated search is replacing traditional consumer search, yet no formal model
 | H7 | Geopolitical valence (Tinkoff vs PrivatBank) | 6, 7 | exploratory |
 | H8 | Thin-data floor (Mongolia highest DCI) | 5 | partial |
 | H9 | Capacity-dependent collapse (smaller models collapse more) | 5 | partial |
-| H10 | Native-language prompting reduces collapse | 5, 8 | **NOT SUPPORTED** — null result (52/116 positive, mean = -.002, p = .307) |
+| H10 | Native-language prompting reduces collapse | 5, 8 | **NOT SUPPORTED** — null result (58/121 positive (48%), mean = +.001, p = .716 (two-sided sign test). Null: native-language prompting does not systematically reduce dimensional collapse.) |
 | H11 | Same-category cross-border (Tinkoff vs PrivatBank banking pair) | 6 | tested (geopolitical signal, Run 6) |
 | H12 | Geopolitical framing — same brand in different cities | 7 | **SUPPORTED** (p < 0.0001, delta = 0.040) |
 | H13 | Temporal training stability (successive model versions) | -- | future work (proposed, not tested) |
@@ -38,7 +38,7 @@ AI-mediated search is replacing traditional consumer search, yet no formal model
 | Run 5 (cross-cultural) | 7 | 11,410 (7,999 successful) | p < 0.0001, DCI = 35.6 | cosine = 0.977 |
 | Run 6 (banking) | 1 | 1,018 | H6 p = 0.0013, d = 3.449 | cosine = 0.977 |
 | Run 7 (framing) | varies | varies | H12 p < 0.0001 | -- |
-| Run 8 (native expansion) | varies | 815 | H10 NOT SUPPORTED — null result (52/116 positive, mean = -.002, p = .307) | -- |
+| Run 8 (native expansion) | varies | 815 | H10 NOT SUPPORTED — null result (58/121 positive (48%), mean = +.001, p = .716) | -- |
 | Run 9 (temperature) | varies | varies | DCI spread = 0.012 (robust) | -- |
 | Run 10 (corrective comparators, supplementary) | 3 focal × 2 conditions | 126 | VkusVill shows largest comparator effect (ΔDCI = +7.4) | -- |
 
@@ -163,7 +163,7 @@ python L4_analysis/extract_rendered_prompts.py
 
 See [experiment README](experiment/README.md#run-it-on-your-own-brands) for a step-by-step guide.
 
-**Cost**: roughly $0.25 (5-6 models, 3 runs) to $0.80 (all 24 models, 3 runs) for a single brand pair audit at current paid-model rates. The full 9-run cross-cultural study cost ~$5.52; Run 10 supplementary (~$0.30) brings the project total to ~$5.82.
+**Cost**: roughly $0.25 (5-6 models, 3 runs) to $0.80 (all 24 models, 3 runs) for a single brand pair audit at current paid-model rates. The full 9-run cross-cultural study cost ~$5.52; Run 10 supplementary (~$0.30) and Run 11 bring the project total to ~$6.10.
 
 ## How to Cite
 
