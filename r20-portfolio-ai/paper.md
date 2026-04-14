@@ -198,7 +198,7 @@ The predominant finding is clear: 0/20 brands show FDR-significant portfolio eff
 
 **H8 (Language-dependent immunity): Mixed.** Native-language framing activates different discourse layers for some portfolios (Geely: Japanese model Swallow shows delta -2.35; Yandex: YandexGPT shows +.72). However, effects are portfolio-specific and model-specific, with no systematic directional pattern.
 
-**H9 (Home-model amplification): Mixed.** The predicted home-model amplification appears selectively. Swallow (Japanese) shows the largest tradition-level native effect for Toyota (-2.35). YandexGPT (Russian) shows modest amplification for Yandex (+.72). Qwen3 (Chinese) shows a notable effect for Volvo (+2.07). None of these survive FDR correction, and there is no consistent pattern of amplification that holds across all home-market pairs.
+**H9 (Home-model amplification): Mixed.** The predicted home-model amplification appears selectively. Swallow (Japanese) shows the largest tradition-level native effect for Toyota (-2.35). YandexGPT (Russian) shows modest amplification for Yandex (+.72). Qwen3 (Chinese) shows a conditional effect for Volvo (+2.07). None of these survive FDR correction, and there is no consistent pattern of amplification that holds across all home-market pairs.
 
 *Cross-Cultural Generalizability*
 
