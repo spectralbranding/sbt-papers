@@ -8,8 +8,8 @@ data_manifest:
 
   - id: "hf-dataset-main"
     description: >
-      Canonical public dataset for R20. Contains all 7,775 parsed observations
-      (from 7,820 response files) across 20 brands, 7 portfolios (LVMH, Unilever,
+      Canonical public dataset for R20. Contains all 7,975 parsed observations
+      (from 8,022 response files) across 20 brands, 7 portfolios (LVMH, Unilever,
       P&G, Toyota, L'Oreal, Geely, Yandex), 6 conditions (direct solo, direct
       portfolio, recommendation solo, recommendation portfolio, multi-turn,
       native-language ablation), 13 LLMs from 7 training traditions, 5
@@ -76,7 +76,7 @@ data_manifest:
 
   - id: "hf-data-csv"
     description: >
-      Full combined dataset as flat CSV. All 7,775 parsed observations with
+      Full combined dataset as flat CSV. All 7,975 parsed observations with
       condition, brand, portfolio, model, tradition, rep, and 8 SBT dimensional
       scores.
     archive: "HuggingFace"
@@ -175,7 +175,7 @@ data_manifest:
 
   - id: "raw-responses"
     description: >
-      Raw JSON API responses for all 7,820 response files (7,775 parsed). Filenames
+      Raw JSON API responses for all 8,022 response files (7,975 parsed). Filenames
       encode portfolio, brand, condition, model, and repetition
       (e.g. LVMH_Dior_portfolio_claude_rep1.json). Native-language ablation files
       use the naming pattern PORTFOLIO_Brand_native_solo_model_repN.json and

@@ -29,8 +29,8 @@ metadata:
     - Share of Model
 
 experiment_summary:
-  total_responses: 7820
-  parsed_observations: 7775
+  total_responses: 8022
+  parsed_observations: 7975
   parse_success_rate: 1.000
   models: 13
   model_names:
