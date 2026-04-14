@@ -1,0 +1,47 @@
+{
+  "brand": "Tesla",
+  "version": "1.0",
+  "source": "Canonical SBT brand profile (Zharnikov 2026a), Articles 01-10",
+  "dimensions": {
+    "semiotic": {
+      "score": 7.5,
+      "positioning": "The T-badge and Cybertruck silhouette are instantly legible as technological disruption signals. Tesla's visual language borrows from aerospace and consumer electronics, not automotive tradition.",
+      "key_signals": ["T-badge as technology marker", "Cybertruck form as radical departure", "minimalist interior as anti-dashboard statement", "no grille as visible EV signal"]
+    },
+    "narrative": {
+      "score": 8.5,
+      "positioning": "Founded 2003 by Martin Eberhard and Marc Tarpenning, then transformed under Elon Musk into a mission narrative: accelerating the world's transition to sustainable energy. The narrative is grand, technological, and founder-dependent.",
+      "key_signals": ["'accelerating sustainable energy transition' mission", "Elon Musk as narrative engine", "Roadster as proof-of-concept origin story", "SpaceX parallel as narrative amplifier"]
+    },
+    "ideological": {
+      "score": 3.0,
+      "positioning": "The founding environmental ideology has significantly eroded. Tesla began as a climate mission; by the mid-2020s the brand's ideological coherence is contested, with Musk's political positioning fragmenting the original value alignment.",
+      "key_signals": ["original 'sustainable energy' mission text", "2024-2025 sales decline in progressive markets", "owner community ideological splits", "growing separation between product and founder values"]
+    },
+    "experiential": {
+      "score": 6.0,
+      "positioning": "Over-the-air software updates, Autopilot engagement, and in-car gaming create an experience closer to a connected device than a vehicle. The experience is novel but uneven — service infrastructure lags product promise.",
+      "key_signals": ["OTA software updates as post-purchase experience", "Autopilot as feature and controversy", "17-inch touchscreen as control interface", "service center scarcity as friction point"]
+    },
+    "social": {
+      "score": 7.0,
+      "positioning": "Tesla ownership was a strong social signal of tech-forward environmental values. That signal has become ambiguous — the social meaning of a Tesla varies significantly by geography, political context, and vintage of ownership.",
+      "key_signals": ["early-adopter tech community", "shifting ownership demographics 2020-2025", "Tesla owner forums as identity community", "geographic variation in social signal valence"]
+    },
+    "economic": {
+      "score": 6.0,
+      "positioning": "Multiple price cuts since 2023 have repositioned Tesla from premium to competitive-mainstream on cost. The economic dimension is actively managed through aggressive pricing strategy tied to volume targets.",
+      "key_signals": ["2023 price cuts of 20-30% across models", "base Model 3 under $40K post-incentives", "no dealership margin extraction", "supercharger network as economic moat"]
+    },
+    "cultural": {
+      "score": 4.0,
+      "positioning": "Silicon Valley tech culture transplanted into automotive — move fast, iterate in public, dismiss legacy incumbents. The cultural roots are shallow and increasingly polarized by founder persona.",
+      "key_signals": ["Silicon Valley origin and ethos", "direct sales model as legacy disruption", "Gigafactory as cultural spectacle", "Musk persona as cultural liability/asset"]
+    },
+    "temporal": {
+      "score": 2.0,
+      "positioning": "Tesla was founded in 2003 and has no deep heritage. The brand's legitimacy is built on future promise, not historical continuity. The temporal dimension is structurally minimal — Tesla is a now-and-next brand.",
+      "key_signals": ["2003 founding with no automotive heritage", "product cycles measured in software versions not model years", "Cybertruck as 'future aesthetic' without historical anchor", "mission framed around future transition not past achievement"]
+    }
+  }
+}

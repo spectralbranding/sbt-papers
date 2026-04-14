@@ -1,0 +1,182 @@
+{
+  "experiment": "run12_brand_function",
+  "date": "2026-04-14T09:21:24.290065+00:00",
+  "n_records": 120,
+  "models": [
+    "claude",
+    "gpt",
+    "gemini",
+    "deepseek"
+  ],
+  "brands": [
+    "Hermes",
+    "IKEA",
+    "Patagonia",
+    "Erewhon",
+    "Tesla"
+  ],
+  "baseline": {
+    "Hermes": {
+      "n_calls": 12,
+      "n_models": 4,
+      "mean_dci": 4.625,
+      "sd_dci": 0.934,
+      "mean_weights": {
+        "semiotic": 14.83,
+        "narrative": 11.92,
+        "ideological": 7.33,
+        "experiential": 20.08,
+        "social": 15.25,
+        "economic": 14.92,
+        "cultural": 6.83,
+        "temporal": 8.83
+      }
+    },
+    "IKEA": {
+      "n_calls": 11,
+      "n_models": 4,
+      "mean_dci": 5.977,
+      "sd_dci": 0.625,
+      "mean_weights": {
+        "semiotic": 15.09,
+        "narrative": 9.73,
+        "ideological": 11.0,
+        "experiential": 16.36,
+        "social": 7.45,
+        "economic": 28.09,
+        "cultural": 6.73,
+        "temporal": 5.55
+      }
+    },
+    "Patagonia": {
+      "n_calls": 12,
+      "n_models": 4,
+      "mean_dci": 4.958,
+      "sd_dci": 0.847,
+      "mean_weights": {
+        "semiotic": 11.25,
+        "narrative": 9.83,
+        "ideological": 26.17,
+        "experiential": 14.67,
+        "social": 13.0,
+        "economic": 10.67,
+        "cultural": 7.58,
+        "temporal": 6.83
+      }
+    },
+    "Erewhon": {
+      "n_calls": 12,
+      "n_models": 4,
+      "mean_dci": 4.896,
+      "sd_dci": 0.68,
+      "mean_weights": {
+        "semiotic": 12.0,
+        "narrative": 9.92,
+        "ideological": 15.42,
+        "experiential": 19.25,
+        "social": 12.08,
+        "economic": 17.0,
+        "cultural": 7.83,
+        "temporal": 6.5
+      }
+    },
+    "Tesla": {
+      "n_calls": 12,
+      "n_models": 4,
+      "mean_dci": 4.948,
+      "sd_dci": 1.013,
+      "mean_weights": {
+        "semiotic": 14.25,
+        "narrative": 12.17,
+        "ideological": 10.67,
+        "experiential": 18.25,
+        "social": 13.92,
+        "economic": 19.67,
+        "cultural": 6.33,
+        "temporal": 4.75
+      }
+    }
+  },
+  "specified": {
+    "Hermes": {
+      "n_calls": 11,
+      "n_models": 4,
+      "mean_dci": 3.943,
+      "sd_dci": 1.362,
+      "mean_weights": {
+        "semiotic": 13.73,
+        "narrative": 9.82,
+        "ideological": 8.55,
+        "experiential": 19.0,
+        "social": 13.82,
+        "economic": 12.36,
+        "cultural": 9.55,
+        "temporal": 13.18
+      }
+    },
+    "IKEA": {
+      "n_calls": 12,
+      "n_models": 4,
+      "mean_dci": 6.406,
+      "sd_dci": 1.036,
+      "mean_weights": {
+        "semiotic": 13.42,
+        "narrative": 7.83,
+        "ideological": 6.83,
+        "experiential": 17.5,
+        "social": 7.0,
+        "economic": 31.67,
+        "cultural": 8.17,
+        "temporal": 7.58
+      }
+    },
+    "Patagonia": {
+      "n_calls": 12,
+      "n_models": 4,
+      "mean_dci": 5.302,
+      "sd_dci": 1.013,
+      "mean_weights": {
+        "semiotic": 7.42,
+        "narrative": 14.25,
+        "ideological": 24.67,
+        "experiential": 16.58,
+        "social": 11.75,
+        "economic": 11.83,
+        "cultural": 7.08,
+        "temporal": 6.42
+      }
+    },
+    "Erewhon": {
+      "n_calls": 10,
+      "n_models": 4,
+      "mean_dci": 5.475,
+      "sd_dci": 0.962,
+      "mean_weights": {
+        "semiotic": 9.2,
+        "narrative": 9.9,
+        "ideological": 11.9,
+        "experiential": 16.5,
+        "social": 9.4,
+        "economic": 23.0,
+        "cultural": 11.6,
+        "temporal": 8.5
+      }
+    },
+    "Tesla": {
+      "n_calls": 12,
+      "n_models": 4,
+      "mean_dci": 4.885,
+      "sd_dci": 1.502,
+      "mean_weights": {
+        "semiotic": 14.08,
+        "narrative": 14.33,
+        "ideological": 12.0,
+        "experiential": 16.5,
+        "social": 11.92,
+        "economic": 16.67,
+        "cultural": 6.25,
+        "temporal": 5.75
+      }
+    }
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "brand": "Whole Foods",
+  "version": "1.0",
+  "source": "Brand Function Registry (spectralbranding, 2026)",
+  "dimensions": {
+    "semiotic": {
+      "score": 7.0,
+      "positioning": "The green logo, natural material store aesthetic, and handwritten-font chalkboard signage communicate organic authenticity at the retail environment level. The visual system is more coherent in-store than in digital contexts, relying heavily on the physical environment as the primary semiotic channel.",
+      "key_signals": ["green wordmark logo", "chalkboard handwritten price signs", "natural wood and stone store materials", "bulk bin visual identity"]
+    },
+    "narrative": {
+      "score": 6.5,
+      "positioning": "Founded 1980 in Austin, Texas, by John Mackey with a vision of making natural foods accessible to mainstream consumers. The pioneering organic grocery narrative has been complicated by the 2017 Amazon acquisition, which introduced corporate efficiency logic into a brand built on anti-corporate natural food values.",
+      "key_signals": ["1980 Austin founding (John Mackey)", "natural food pioneer narrative", "2017 Amazon acquisition (narrative complication)", "365 Everyday Value private label (value access claim)"]
+    },
+    "ideological": {
+      "score": 7.0,
+      "positioning": "Organic, natural, and minimally processed food as a pathway to health is the core ideology — one of the strongest ideological commitments of any grocery brand. Quality standards (no artificial preservatives, colors, flavors, sweeteners) are genuine and enforced, distinguishing Whole Foods from competitors making softer claims.",
+      "key_signals": ["banned ingredients list (100+ prohibited substances)", "USDA Organic sourcing standards", "animal welfare rating system (1–5 Steps)", "non-GMO commitment in key categories"]
+    },
+    "experiential": {
+      "score": 8.0,
+      "positioning": "The Whole Foods store experience — expansive prepared foods sections, in-store restaurants and bars, specialty cheese and wine departments, and produce displayed as still-life art — elevates grocery shopping toward hospitality. The experience communicates that food selection is a pleasurable act, not a utilitarian one.",
+      "key_signals": ["prepared foods hot bar and salad bar", "in-store wine and beer bars (select locations)", "specialty cheese counter with tasting", "produce display as visual merchandising art"]
+    },
+    "social": {
+      "score": 5.5,
+      "positioning": "Whole Foods lost its countercultural social cachet after the Amazon acquisition and has not recovered a clear social identity. 'Whole Paycheck' as a cultural meme undercuts the health idealism with economic class critique. The brand increasingly signals upper-middle-class normalcy rather than conscious consumer identity.",
+      "key_signals": ["'Whole Paycheck' cultural meme (negative social signal)", "Amazon Prime discount integration (democratization attempt)", "Instacart delivery dominance", "social signaling shifted to Erewhon / specialty competitors"]
+    },
+    "economic": {
+      "score": 4.0,
+      "positioning": "Premium grocery pricing — typically 20-40% above conventional grocery for comparable items — reflects genuine supply chain costs for organic and specialty sourcing. The 'Whole Paycheck' reputation is based on actual price differentials, though Amazon Prime integration (2017) provided 5-10% discounts to Prime members.",
+      "key_signals": ["20-40% premium over conventional grocery", "Amazon Prime member discounts (5-10%)", "365 Everyday Value as value-access sub-brand", "prepared foods premium pricing ($12–20/lb hot bar)"]
+    },
+    "cultural": {
+      "score": 6.5,
+      "positioning": "Whole Foods defined health-conscious American grocery culture for three decades and is responsible for mainstreaming organic produce, kombucha, and plant-based meat alternatives before they reached conventional grocery. Post-Amazon, the brand retains cultural authority in organic standards but has ceded cultural influence to newer entrants.",
+      "key_signals": ["organic grocery mainstreaming (1980–2010)", "kombucha / kefir / fermented foods mainstreaming", "plant-based meat category development", "Austin / Texas origin as food-culture credential"]
+    },
+    "temporal": {
+      "score": 5.5,
+      "positioning": "Founded 1980, Whole Foods has 45 years of history as an organic grocery pioneer. The temporal depth is a genuine asset in terms of quality standards credibility, but the Amazon acquisition reset cultural perceptions in a way that makes the heritage feel pre-disruption rather than continuous.",
+      "key_signals": ["1980 Austin founding", "first US certified organic grocer", "45 years of natural food standards", "2017 Amazon acquisition as temporal break point"]
+    }
+  }
+}

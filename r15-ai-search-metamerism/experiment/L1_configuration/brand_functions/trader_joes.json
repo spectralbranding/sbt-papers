@@ -1,0 +1,47 @@
+{
+  "brand": "Trader Joe's",
+  "version": "1.0",
+  "source": "Brand Function Registry (spectralbranding, 2026)",
+  "dimensions": {
+    "semiotic": {
+      "score": 7.5,
+      "positioning": "Hawaiian shirts on staff, hand-lettered chalkboard signs, nautical-themed store design, and hand-drawn product illustrations form a coherent anti-corporate aesthetic. The visual system communicates warmth, quirk, and anti-pretension more effectively than many professionally designed brand systems.",
+      "key_signals": ["Hawaiian staff shirts as uniform", "hand-drawn chalkboard signs", "nautical bell customer service signal", "Trader Joe's private label as dominant shelf brand"]
+    },
+    "narrative": {
+      "score": 8.0,
+      "positioning": "Joe Coulombe's 1967 founding concept — bring the food of world travels to people who cannot afford to travel — created a discovery-shopping narrative that remains intact 57 years later. The treasure hunt experience (limited SKUs, frequent rotation, unexpected finds) makes every visit a narrative with potential for novelty.",
+      "key_signals": ["1967 founding (Joe Coulombe, Pasadena)", "world-traveler food curation concept", "treasure hunt rotation narrative", "Fearless Flyer newsletter as story vehicle"]
+    },
+    "ideological": {
+      "score": 6.0,
+      "positioning": "Affordable quality without pretension is the brand's ideological center — the democratization of good food. Unlike Whole Foods, Trader Joe's makes the implicit claim that you don't need to be wealthy to eat well or interestingly. The absence of self-congratulation on 'organic' credentials reinforces this.",
+      "key_signals": ["no loyalty program (democratic access)", "private label as quality-without-premium claim", "no online shopping (intentional friction choice)", "no food snobbery positioning"]
+    },
+    "experiential": {
+      "score": 8.5,
+      "positioning": "The small-format store (10,000–15,000 sq ft vs. 50,000+ for conventional grocery) creates navigability and serendipity simultaneously. Staff are empowered to open any product for tasting. The atmosphere — music, Hawaiian shirts, genuine friendliness — is a sensory experience designed as carefully as a luxury retailer's, but in the opposite aesthetic direction.",
+      "key_signals": ["small format stores (10,000–15,000 sq ft)", "open-any-product-for-tasting policy", "no self-checkout (human service emphasis)", "seasonal product rotation (novelty engineering)"]
+    },
+    "social": {
+      "score": 7.5,
+      "positioning": "Trader Joe's has one of the most intense cult followings in American retail — Reddit communities, Instagram fan accounts, and YouTube haul videos are brand-generated (not brand-managed) social assets. The limited regional availability amplifies social desirability through scarcity.",
+      "key_signals": ["Reddit r/traderjoes community", "YouTube haul video culture", "seasonal item cult (Mandarin Orange Chicken)", "regional scarcity amplifying desirability"]
+    },
+    "economic": {
+      "score": 8.0,
+      "positioning": "Trader Joe's private label dominance (~80% of products) eliminates the cost of national brand margins, enabling high-quality products at significantly below-market prices. The value positioning is genuine — the brand has been benchmarked consistently as offering better quality per dollar than conventional grocery.",
+      "key_signals": ["~80% private label product mix", "consistent price benchmarking studies showing value superiority", "Two-Buck Chuck ($2.99 wine) as value icon", "no sale gimmicks (everyday low price)"]
+    },
+    "cultural": {
+      "score": 7.0,
+      "positioning": "Trader Joe's represents a specifically California cultural sensibility — adventurous, casual, health-aware without being precious, and committed to value without sacrificing quality. The brand's Hawaiian shirt aesthetic is a deliberate California beach-culture reference translated into grocery retail.",
+      "key_signals": ["California casual aesthetic", "Pasadena origin (Southern California)", "health-aware without food snobbery", "Aloha cultural reference in mainland retail"]
+    },
+    "temporal": {
+      "score": 6.0,
+      "positioning": "Founded 1967, Trader Joe's has 57 years of history and uses it modestly. The brand's origin story is told through the Fearless Flyer newsletter tradition rather than through heritage marketing. Joe Coulombe's memoir (published posthumously) has added depth to the founding narrative.",
+      "key_signals": ["1967 founding", "Fearless Flyer newsletter (continuous publication)", "Aldi acquisition (1979) — understated in brand narrative", "Joe Coulombe memoir 'Becoming Trader Joe' (2021)"]
+    }
+  }
+}

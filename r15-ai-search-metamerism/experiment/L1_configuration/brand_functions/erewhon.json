@@ -1,0 +1,47 @@
+{
+  "brand": "Erewhon",
+  "version": "1.0",
+  "source": "Canonical SBT brand profile (Zharnikov 2026a), Articles 01-10",
+  "dimensions": {
+    "semiotic": {
+      "score": 7.0,
+      "positioning": "Minimalist earth-tone store aesthetic, hand-lettered signage, and brown paper bags signal ethical purity without corporate polish. The $20 smoothie cup is itself a social currency token in LA.",
+      "key_signals": ["brown paper bag as social signal", "$20+ smoothie as status object", "hand-lettered produce labels", "tonic bar as physical centerpiece"]
+    },
+    "narrative": {
+      "score": 6.5,
+      "positioning": "Founded 1966 in Boston by Aveline and Michio Kushi as a macrobiotic food store. Revived in LA by Tony and Josephine Antoci. The narrative blends 1960s counterculture health philosophy with 2020s wellness capital.",
+      "key_signals": ["1966 macrobiotic origins", "Kushi Institute lineage", "LA revival as cultural inflection point", "Hailey Bieber tonic as viral origin moment"]
+    },
+    "ideological": {
+      "score": 5.0,
+      "positioning": "Wellness as lifestyle ideology: organic, biodynamic, raw, and regenerative sourcing presented as moral choices. The ideology is real but increasingly entangled with social performance rather than lived philosophy.",
+      "key_signals": ["certified organic sourcing policy", "regenerative agriculture partnerships", "no seed oils policy", "biodynamic wine selection"]
+    },
+    "experiential": {
+      "score": 9.0,
+      "positioning": "The store is a full sensory environment — smells, sounds, textures, and social theater. Shopping at Erewhon is an activity, not a transaction. The tonic bar functions as a social salon.",
+      "key_signals": ["tonic bar as social gathering point", "store ambiance as wellness spa", "sampling culture", "celebrity sightings as experiential layer"]
+    },
+    "social": {
+      "score": 8.5,
+      "positioning": "Extreme social exclusivity through price. The Erewhon shopper is a visible status category in LA — a demographic of wellness-affluent consumers whose presence at the store is itself communicative.",
+      "key_signals": ["$20-30 smoothies as social filter", "celebrity regular customer circuit", "branded collaborations with influencers", "parking lot as social scene"]
+    },
+    "economic": {
+      "score": 3.5,
+      "positioning": "Price is a near-exclusionary barrier. Erewhon makes no concessions to affordability — the premium is structural and deliberate, functioning more like luxury goods pricing than grocery pricing.",
+      "key_signals": ["$13+ green juice standard pricing", "no discount programs", "no private label budget tier", "price premium 3-5x conventional grocery"]
+    },
+    "cultural": {
+      "score": 7.5,
+      "positioning": "LA wellness culture as its own subculture: the intersection of Hollywood, health optimization, and conspicuous virtue. Erewhon is the physical institution of this culture.",
+      "key_signals": ["Beverly Hills and Silver Lake locations as cultural nodes", "influencer content hub", "wellness culture media coverage", "Hailey Bieber strawberry glaze smoothie as cultural artifact"]
+    },
+    "temporal": {
+      "score": 2.5,
+      "positioning": "Despite a 1966 founding, Erewhon's current cultural moment is recent and acutely of-the-moment. The brand's peak relevance is tightly tied to 2020s LA wellness culture, with shallow temporal roots in its current form.",
+      "key_signals": ["2011 LA relaunch as effective brand birth", "viral moment dependency (2021-2023)", "rapidly shifting product collaborations", "trend-sensitive customer base"]
+    }
+  }
+}

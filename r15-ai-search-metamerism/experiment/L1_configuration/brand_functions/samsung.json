@@ -1,0 +1,47 @@
+{
+  "brand": "Samsung",
+  "version": "1.0",
+  "source": "Brand Function Registry (spectralbranding, 2026)",
+  "dimensions": {
+    "semiotic": {
+      "score": 7.5,
+      "positioning": "Blue wordmark on white, globally consistent. Galaxy sub-brand architecture carries aspirational weight. Infinity display and foldable form factors as semiotic innovation signals. Hardware design language signals premium without fully committing to luxury.",
+      "key_signals": ["blue Samsung wordmark", "Galaxy brand line", "Infinity display design language", "foldable phone silhouette as category-defining icon"]
+    },
+    "narrative": {
+      "score": 7.0,
+      "positioning": "From Korean trading company (1938) to global electronics leader via deliberate diversification. Chaebol-to-conglomerate arc includes semiconductors, displays, appliances, and mobile. Narrative of national and corporate ambition intertwined.",
+      "key_signals": ["1938 founding as trading company", "1969 entry into electronics", "Korean economic miracle anchor", "semiconductor leadership (supplier to competitors including Apple)"]
+    },
+    "ideological": {
+      "score": 4.5,
+      "positioning": "Technology progress as driver, without a strong values framework. Innovation is the stated ideology but it reads as market strategy rather than conviction. Corporate social responsibility efforts are present but not brand-defining.",
+      "key_signals": ["'Do What You Can't' campaign", "innovation-first messaging", "limited sustainability narrative depth", "no strong ethical differentiation"]
+    },
+    "experiential": {
+      "score": 8.0,
+      "positioning": "Display quality and ecosystem integration are flagship experiential strengths. Galaxy ecosystem (phone, watch, buds, TV) creates cross-device continuity. Retail experience in Samsung Experience Stores is high-fidelity.",
+      "key_signals": ["AMOLED display quality", "Galaxy ecosystem interoperability", "Samsung DeX desktop mode", "Experience Stores as product theater"]
+    },
+    "social": {
+      "score": 6.0,
+      "positioning": "Mass-premium positioning. Aspirational enough to signal tech-savviness, accessible enough for broad market penetration. Heavy sports and entertainment sponsorships support mainstream social visibility.",
+      "key_signals": ["Olympic Games TOP sponsor", "Chelsea FC and major sports partnerships", "broad carrier distribution globally", "Galaxy Z Fold as status device in select markets"]
+    },
+    "economic": {
+      "score": 6.5,
+      "positioning": "Premium pricing on flagship lines with substantial budget and mid-range portfolios. Vertical integration across semiconductors, displays, and assembly creates cost advantages unavailable to competitors.",
+      "key_signals": ["Galaxy S and Z flagship premium pricing", "Galaxy A series mid-range volume", "DRAM and NAND production (internal + external supply)", "display panel supply to Apple (strategic paradox)"]
+    },
+    "cultural": {
+      "score": 7.5,
+      "positioning": "Korean tech culture and hallyu (Korean wave) adjacency. Samsung is South Korea's most globally recognized brand. The brand embodies the country's postwar industrial transformation and its contemporary cultural export power.",
+      "key_signals": ["Suwon headquarters as Samsung City", "hallyu adjacency via Korean pop culture alignment", "national flagship brand identity in South Korea", "chairmans family (Lee) as Korean business institution"]
+    },
+    "temporal": {
+      "score": 7.0,
+      "positioning": "Founded 1938, but consumer electronics brand only from 1969. Global brand recognition built primarily post-1990s. Young as a premium electronics brand relative to Sony or Philips, but with rapidly accumulated institutional depth.",
+      "key_signals": ["1938 founding", "electronics division from 1969", "Galaxy brand from 2009", "consistent top-5 global brand value rankings since 2010s"]
+    }
+  }
+}

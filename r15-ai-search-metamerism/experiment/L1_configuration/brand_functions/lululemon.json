@@ -1,0 +1,47 @@
+{
+  "brand": "Lululemon",
+  "version": "1.0",
+  "source": "Brand Function Registry (spectralbranding, 2026)",
+  "dimensions": {
+    "semiotic": {
+      "score": 7.0,
+      "positioning": "The stylized A-mark (originally representing a stylized Omega or the letter A) is recognizable among the target demographic but lacks the universal recognition of Nike or Apple. The technical fabric and fit are stronger semiotic signals than the logo — the silhouette communicates brand membership before the mark is visible.",
+      "key_signals": ["stylized A-mark logo", "luon fabric distinctive silhouette", "'abc' (anti-ball-crushing) trouser identifier", "in-store bag as public signal"]
+    },
+    "narrative": {
+      "score": 7.0,
+      "positioning": "Chip Wilson's 1998 Vancouver yoga studio origin story — designing technical athletic wear for a yoga class that had none — is a genuine founder narrative. The story has been complicated by Wilson's controversial public statements (2013 leggings controversy), requiring the brand to narrate forward from its community rather than backward to its founder.",
+      "key_signals": ["1998 Vancouver yoga studio origin", "Chip Wilson founder narrative (complicated)", "women's technical athletic wear pioneer", "ambassador program as community origin"]
+    },
+    "ideological": {
+      "score": 6.5,
+      "positioning": "Mindfulness, wellness, and the integration of physical and mental health are the governing values. The brand's goals framework (10-year personal vision exercise) and its promotion of holistic wellbeing extend the ideology beyond athletic performance into life philosophy — more complete than pure performance brands.",
+      "key_signals": ["10-year life vision goals framework", "mindfulness + movement integration", "mental health advocacy", "The Sweat Life community platform"]
+    },
+    "experiential": {
+      "score": 8.5,
+      "positioning": "In-store community events (free yoga classes, run clubs) convert retail locations into community spaces. The fit and feel of the product is central to the experiential claim — the technical fabrics (Luon, Nulu, Everlux) are differentiated enough that repurchase is driven by performance experience rather than brand loyalty alone.",
+      "key_signals": ["in-store free yoga and run events", "Luon/Nulu fabric performance differentiation", "Mirror home gym integration", "ambassador-led community classes"]
+    },
+    "social": {
+      "score": 8.0,
+      "positioning": "The aspirational wellness community is Lululemon's primary social unit. Wearing Lululemon signals participation in a health-conscious, high-income lifestyle. The ambassador program (yoga teachers, athletes, wellness practitioners) creates authentic peer influence rather than top-down celebrity endorsement.",
+      "key_signals": ["ambassador program (1,500+ global ambassadors)", "wellness community identity signal", "high-income lifestyle association", "run club and yoga community membership"]
+    },
+    "economic": {
+      "score": 4.0,
+      "positioning": "Lululemon prices at 2-3x comparable athletic wear from Nike or Under Armour. Leggings at $98–$148, bras at $68–$88, and men's trousers at $128+ are deliberate premium signals. The brand does not discount, and sells direct-to-consumer without wholesale channel dilution.",
+      "key_signals": ["leggings at $98–$148", "no wholesale channel", "no sales / minimal discounting", "We Made Too Much occasional clearance (controlled)"]
+    },
+    "cultural": {
+      "score": 7.0,
+      "positioning": "Lululemon is the primary commercial expression of the wellness culture that emerged from Vancouver and California in the late 1990s. The athleisure category — athletic wear as everyday wear — was largely created and defined by Lululemon before being adopted by every apparel brand.",
+      "key_signals": ["Vancouver wellness culture origin", "athleisure category creation", "yoga-as-lifestyle cultural export", "SoulCycle + Equinox ecosystem alignment"]
+    },
+    "temporal": {
+      "score": 4.5,
+      "positioning": "Founded 1998 in Vancouver, Lululemon is 27 years old — too young for heritage positioning and too well-established to be a startup disruptor. The temporal depth is used sparingly; the brand prefers to communicate innovation (new fabric technology, new category expansion) rather than longevity.",
+      "key_signals": ["1998 Vancouver founding", "Chip Wilson first store in Kitsilano", "IPO 2007", "Men's line expansion (2014) as growth narrative"]
+    }
+  }
+}

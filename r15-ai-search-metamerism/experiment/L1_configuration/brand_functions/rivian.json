@@ -1,0 +1,47 @@
+{
+  "brand": "Rivian",
+  "version": "1.0",
+  "source": "Brand Function Registry (spectralbranding, 2026)",
+  "dimensions": {
+    "semiotic": {
+      "score": 6.0,
+      "positioning": "The compass-rose logo communicates directional orientation and adventure — a coherent semiotic choice for an adventure EV brand. The visual identity is clean and minimal, avoiding automotive cliché, but lacks the immediate global recognition of established automotive marks. Brand awareness remains limited outside the EV enthusiast demographic.",
+      "key_signals": ["compass-rose logo", "geometric wordmark", "R1T truck distinctive quad-motor badge", "Rivian blue/green color palette"]
+    },
+    "narrative": {
+      "score": 7.5,
+      "positioning": "RJ Scaringe's 2009 founding narrative — a PhD engineer who wanted to electrify adventure vehicles — is compelling and distinct from Tesla's Silicon Valley tech narrative. The Amazon $700M investment (2019) and 100,000-unit delivery van order gave Rivian a dual narrative: adventure EV for consumers and EV infrastructure for commerce.",
+      "key_signals": ["RJ Scaringe PhD founder narrative (2009)", "Amazon $700M investment and delivery van order (2019)", "R1T as world's first mass-produced electric pickup", "Normal, Illinois manufacturing plant"]
+    },
+    "ideological": {
+      "score": 7.0,
+      "positioning": "Sustainability plus outdoor access is Rivian's ideological package — the idea that adventure and environmental responsibility are not opposites. The brand avoids greenwashing through genuine product specificity: off-road electric capability, Gear Tunnel storage, Camp Kitchen integration make the outdoor ethos functional rather than decorative.",
+      "key_signals": ["Keep the World Adventurous Forever mission", "1% of equity to environmental causes", "Rivian Foundation environmental grants", "zero-emissions off-road capability as ideology-in-product"]
+    },
+    "experiential": {
+      "score": 7.0,
+      "positioning": "The R1T's Gear Tunnel, Camp Kitchen, and pass-through frunk storage are genuine experiential innovations for adventure use. The over-the-air software update capability, direct-sales model, and service van (mobile service) create a post-purchase experience designed around the adventure context rather than the dealership model.",
+      "key_signals": ["Gear Tunnel (lockable mid-bed storage)", "Camp Kitchen slide-out cooking system", "over-the-air software updates", "mobile service van (no dealership dependency)"]
+    },
+    "social": {
+      "score": 5.0,
+      "positioning": "Early adopter community with strong peer enthusiasm, but limited mass-market social reach. Rivian owners skew toward outdoor enthusiast, tech-forward, high-income demographics. The brand has not yet achieved the cultural saturation that creates broad social recognition; ownership signals niche identity rather than universal status.",
+      "key_signals": ["Rivian owner community (R1T/R1S forums)", "early adopter tech-outdoor crossover identity", "Amazon delivery van fleet sightings (urban visibility)", "limited mass-market social recognition"]
+    },
+    "economic": {
+      "score": 4.0,
+      "positioning": "R1T starting at ~$69,900 and R1S at ~$75,900 (2024) positions Rivian firmly in the premium EV segment, competing with Tesla Model X rather than Model Y. Manufacturing losses per vehicle (reported at $30,000+ per unit in early production) signal the economic fragility of the startup EV model, which is visible to sophisticated consumers.",
+      "key_signals": ["R1T starting at ~$69,900", "R1S starting at ~$75,900", "high manufacturing cost per unit (early production losses)", "premium EV tier (not accessible pricing)"]
+    },
+    "cultural": {
+      "score": 5.0,
+      "positioning": "Rivian is attempting to occupy the intersection of outdoor adventure culture and clean technology culture — a genuine cultural niche that is growing but not yet mainstream. The brand is most culturally legible in markets with both strong outdoor recreation identity and EV adoption (Colorado, Oregon, Washington state).",
+      "key_signals": ["outdoor + EV technology culture intersection", "Normal, Illinois manufacturing (Midwest authenticity)", "National Parks access and preservation alignment", "overland and overlanding community interest"]
+    },
+    "temporal": {
+      "score": 2.0,
+      "positioning": "Founded 2009 but first vehicle deliveries began November 2021 — making the brand commercially active for approximately 3 years. There is no heritage, no design archive, and no legacy narrative to draw on. Every brand equity claim must be built prospectively. This is structurally the lowest temporal score possible for a commercially operating brand.",
+      "key_signals": ["2009 founding", "2021 first R1T deliveries", "2021 IPO at $13.7B valuation", "commercially active <4 years as of 2025"]
+    }
+  }
+}

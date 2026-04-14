@@ -1,0 +1,47 @@
+{
+  "brand": "The North Face",
+  "version": "1.0",
+  "source": "Brand Function Registry (spectralbranding, 2026)",
+  "dimensions": {
+    "semiotic": {
+      "score": 7.5,
+      "positioning": "The Half Dome logo (a stylized view of Yosemite's Half Dome from the north face angle) and the wordmark in Helvetica are clean and immediately recognizable in outdoor and urban contexts. The logo works equally well on a Himalayan expedition jacket and a suburban puffer coat, which reflects its successful semiotic migration from technical to lifestyle.",
+      "key_signals": ["Half Dome logo (Yosemite north face reference)", "Helvetica wordmark", "Nuptse puffer jacket silhouette", "FUTURELIGHT and Gore-Tex material badge marks"]
+    },
+    "narrative": {
+      "score": 7.0,
+      "positioning": "Founded in 1966 by climbers in San Francisco's North Beach neighborhood to supply mountaineering equipment, the brand built its heritage narrative on Himalayan expeditions, first ascents, and exploration. The Explore Fund and athlete ambassador program (Alex Honnold) maintain genuine connection to this origin.",
+      "key_signals": ["1966 San Francisco North Beach founding", "Himalayan expedition heritage", "Alex Honnold partnership", "The North Face Explore Fund"]
+    },
+    "ideological": {
+      "score": 5.5,
+      "positioning": "Outdoor access and environmental stewardship are the stated values, supported by the Explore Fund and Clothes the Loop recycling program. The tension is the brand's success in urban markets — the majority of North Face products are worn in cities, creating a gap between the outdoor-access ideology and the suburban-lifestyle reality.",
+      "key_signals": ["Explore Fund (outdoor access grants)", "Clothes the Loop garment recycling", "1% for the Planet membership", "urban market dominance creating ideology-usage gap"]
+    },
+    "experiential": {
+      "score": 7.0,
+      "positioning": "Technical performance is the product-level claim — Gore-Tex waterproofing, DryVent technology, Summit Series for extreme conditions. The experiential gap is that most consumers never test the products at their technical limits; the experience is primarily comfort and aesthetic rather than survival performance.",
+      "key_signals": ["Gore-Tex partnership (waterproofing performance)", "Summit Series technical product tier", "FUTURELIGHT breathable material", "VF Corporation manufacturing consistency"]
+    },
+    "social": {
+      "score": 7.0,
+      "positioning": "The North Face occupies a dual social register: genuine outdoor community membership for climbers and hikers, and urban streetwear identity for the mainstream market. The Nuptse puffer jacket became a streetwear icon in the 1990s through hip-hop culture adoption, permanently expanding the social register beyond outdoors.",
+      "key_signals": ["hip-hop culture adoption (1990s)", "Nuptse as streetwear icon", "outdoor community authenticity (climbing, hiking)", "Supreme collaboration series"]
+    },
+    "economic": {
+      "score": 5.5,
+      "positioning": "Premium outdoor pricing: Nuptse jackets at $250–$350, Summit Series technical jackets at $400–$800, Gore-Tex shells at $500+. The brand is priced above mass market (Columbia, REI Co-op) but below luxury outdoor (Arc'teryx). This mid-premium positioning makes it accessible to outdoor enthusiasts and aspiring urban consumers.",
+      "key_signals": ["Nuptse at $250–$350", "Summit Series at $400–$800", "below Arc'teryx, above Columbia in price ladder", "outlet channel exists (some discount availability)"]
+    },
+    "cultural": {
+      "score": 6.5,
+      "positioning": "The North Face carries outdoor adventure culture as its primary cultural identity, with a secondary identity in urban American streetwear. The California outdoor culture (Yosemite, Sierra Nevada, Pacific Crest) is the cultural origin; the subsequent hip-hop adoption gave the brand a cross-cultural relevance that few technical brands achieve.",
+      "key_signals": ["Yosemite / California outdoor culture origin", "hip-hop streetwear crossover (Biggie, Jay-Z era)", "Pacific Crest Trail / outdoor culture", "ski and mountaineering subculture membership"]
+    },
+    "temporal": {
+      "score": 6.5,
+      "positioning": "Founded 1966, The North Face has 58 years of history with genuine expedition credentials from the 1970s–1980s (first ascents in Yosemite, Himalayas). The brand uses this heritage actively but modestly, preferring to emphasize current athlete partnerships and exploration over archival nostalgia.",
+      "key_signals": ["1966 San Francisco founding", "1970s–80s Himalayan expedition archive", "Yvon Chouinard connections (pre-Patagonia era)", "58 years of exploration-linked heritage"]
+    }
+  }
+}
