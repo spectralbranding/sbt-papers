@@ -4,28 +4,61 @@ claude,Ben & Jerry's,0.9995,0.9995,1.0
 claude,Dior,1.0,1.0,1.0
 claude,Dove,0.9999,1.0,0.9999
 claude,Fendi,0.9999,1.0,0.9999
+claude,Geely Auto,0.9916,0.9994,0.9929
 claude,Gillette,0.9986,0.9992,0.9959
+claude,L'Oreal Paris,0.9985,0.995,0.9957
+claude,Lancome,0.9975,0.9996,0.9983
+claude,Lexus,0.9878,0.9941,0.995
 claude,Louis Vuitton,0.9996,0.9999,0.9995
+claude,Maybelline,0.9985,0.995,0.9948
 claude,Pampers,0.9937,0.996,0.9953
+claude,Polestar,0.9954,0.9993,0.9971
 claude,Tide,0.9997,0.9973,0.9988
+claude,Toyota,0.9947,0.995,0.9998
+claude,Volvo,1.0,0.9981,0.9981
+claude,Yandex,0.9969,0.9937,0.9913
+claude,Yandex Market,0.9952,0.9991,0.9912
+claude,Yandex Taxi,0.994,0.9973,0.9871
 deepseek,Axe,0.9989,0.9965,0.9978
 deepseek,Ben & Jerry's,0.9999,0.9982,0.999
 deepseek,Dior,1.0,1.0,1.0
 deepseek,Dove,0.9985,0.9999,0.9989
 deepseek,Fendi,0.9996,0.9999,0.9994
+deepseek,Geely Auto,0.9833,0.9876,0.9949
 deepseek,Gillette,0.997,0.9944,0.9981
+deepseek,L'Oreal Paris,1.0,0.9942,0.9942
+deepseek,Lancome,1.0,0.9974,0.9974
+deepseek,Lexus,0.9956,0.9968,0.9986
 deepseek,Louis Vuitton,1.0,1.0,1.0
+deepseek,Maybelline,0.9978,0.9974,0.9993
 deepseek,Pampers,0.9977,0.9952,0.9962
+deepseek,Polestar,0.9961,0.9974,0.9972
 deepseek,Tide,0.9966,0.999,0.9951
+deepseek,Toyota,0.9945,0.9949,0.998
+deepseek,Volvo,0.996,0.9945,0.9997
+deepseek,Yandex,0.9984,0.9941,0.9949
+deepseek,Yandex Market,0.9961,0.9961,1.0
+deepseek,Yandex Taxi,0.9985,0.9937,0.9968
 gemma4,Axe,0.9984,0.9959,0.9949
 gemma4,Ben & Jerry's,0.9989,0.9997,0.9988
 gemma4,Dior,0.9998,0.9994,0.9994
 gemma4,Dove,0.9991,0.9986,0.9986
 gemma4,Fendi,0.9988,0.9984,0.9988
+gemma4,Geely Auto,0.9965,0.998,0.9964
 gemma4,Gillette,0.9946,0.9969,0.9952
+gemma4,L'Oreal Paris,0.997,0.9975,0.9975
+gemma4,Lancome,0.9995,0.9941,0.9941
+gemma4,Lexus,0.9968,0.9994,0.9986
 gemma4,Louis Vuitton,0.9991,0.997,0.9987
+gemma4,Maybelline,0.9976,0.9982,0.999
 gemma4,Pampers,0.9967,0.994,0.9927
+gemma4,Polestar,0.9984,0.9982,0.9986
 gemma4,Tide,0.9991,0.9982,0.9984
+gemma4,Toyota,0.9995,0.9964,0.9973
+gemma4,Volvo,0.9992,0.999,0.9995
+gemma4,Yandex,0.9985,0.9965,0.9951
+gemma4,Yandex Market,0.9969,0.9867,0.9943
+gemma4,Yandex Taxi,0.9987,0.9949,0.9962
 llama,Axe,0.9941,0.9912,0.9945
 llama,Ben & Jerry's,1.0,1.0,1.0
 llama,Dior,1.0,1.0,1.0
