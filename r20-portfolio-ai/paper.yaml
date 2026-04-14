@@ -13,7 +13,7 @@ metadata:
       corresponding: true
   citation_key: "2026ab"
   doi: "10.5281/zenodo.19555282"
-  date: "2026-04-13"
+  date: "2026-04-14"
   version: "1.0.0"
   status: draft
   license: "CC-BY-NC-ND-4.0"
@@ -21,15 +21,17 @@ metadata:
     - brand perception
     - large language models
     - portfolio interference
-    - dimensional collapse
-    - Spectral Brand Theory
-    - spectral immunity
     - awareness gate
+    - TOST equivalence
+    - cross-cultural AI
+    - multi-turn conversation
+    - native-language framing
+    - Share of Model
 
 experiment_summary:
   total_responses: 7820
   parsed_observations: 7775
-  parse_success_rate: .995
+  parse_success_rate: 1.000
   models: 13
   model_names:
     - "Claude Sonnet 4"
@@ -89,7 +91,7 @@ hypothesis_results:
   - id: H4
     description: "Toyota/Lexus aspirational interference"
     status: partially_supported
-    note: "Lexus +.81 (d = .64, FDR-significant). Toyota -.44 (n.s.). Asymmetric as predicted."
+    note: "Lexus +.59 (d = .52, p = .004). Suggestive but 0/20 FDR-significant. Toyota -.37 (n.s.)."
   - id: H5
     description: "Spectral immunity (TOST equivalence)"
     status: supported
