@@ -4,7 +4,7 @@
 
 **Author**: Dmitry Zharnikov
 
-**DOI**: Pending Zenodo upload
+**DOI**: [10.5281/zenodo.19482547](https://doi.org/10.5281/zenodo.19482547)
 
 **Citation key**: 2026y
 

@@ -1,6 +1,6 @@
 # R15: Spectral Metamerism in AI-Mediated Brand Perception
 
-**Citation key**: 2026v | **DOI**: [10.5281/zenodo.19422427](https://doi.org/10.5281/zenodo.19422427) | **Status**: Empirical results complete (21,350 total API calls across 10 runs, 24 LLMs from 7 training traditions; v2.2 adds Section 5.10 citing DeepShop benchmark (Lyu et al. 2025) on complementary task-failure evidence)
+**Citation key**: 2026v | **DOI**: [10.5281/zenodo.19422427](https://doi.org/10.5281/zenodo.19422427) | **Dataset DOI**: [10.57967/hf/8284](https://doi.org/10.57967/hf/8284) | **Status**: Empirical results complete (21,350 total API calls across 10 runs, 24 LLMs from 7 training traditions; v2.2 adds Section 5.10 citing DeepShop benchmark (Lyu et al. 2025) on complementary task-failure evidence)
 
 ## Paper
 
