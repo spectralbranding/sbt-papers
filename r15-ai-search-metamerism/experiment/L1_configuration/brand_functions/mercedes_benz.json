@@ -1,0 +1,47 @@
+{
+  "brand": "Mercedes-Benz",
+  "version": "1.0",
+  "source": "Brand Function Registry (spectralbranding, 2026)",
+  "dimensions": {
+    "semiotic": {
+      "score": 9.0,
+      "positioning": "The three-pointed star — representing dominance of land, sea, and air — is one of the most recognizable automotive marks in the world. The hood ornament functions as a standalone luxury signal requiring no supporting text or color system.",
+      "key_signals": ["three-pointed star hood ornament", "AMG badge (performance sub-brand)", "Silver Arrows racing heritage", "Maybach ultra-luxury tier mark"]
+    },
+    "narrative": {
+      "score": 8.5,
+      "positioning": "Karl Benz's Patent-Motorwagen (1886) is the legitimate claim to inventing the automobile. This singular founding narrative — 'we started it all' — gives Mercedes-Benz a narrative superiority no competitor can contest. The 1954 Gullwing and the Formula 1 Silver Arrows deepen the story.",
+      "key_signals": ["1886 Patent-Motorwagen (first automobile)", "Emil Jellinek's daughter Mercedes (name origin)", "Silver Arrows Formula 1 dominance", "300SL Gullwing (1954) as design icon"]
+    },
+    "ideological": {
+      "score": 5.0,
+      "positioning": "The best or nothing — das Beste oder nichts — is the stated ideology, emphasizing engineering excellence as a moral commitment rather than a marketing position. This is genuine in the engineering culture but sits in tension with EV transition challenges and recent quality concerns.",
+      "key_signals": ["'Das Beste oder nichts' brand motto", "engineering-first internal culture", "EQ electric vehicle transition (mixed reception)", "AMG performance engineering sub-culture"]
+    },
+    "experiential": {
+      "score": 8.0,
+      "positioning": "The driving experience — weighted steering, cabin material quality, MBUX infotainment — is consistently at the upper tier of automotive experience. The S-Class has served as the automotive industry's technology preview vehicle for four decades, introducing features that later become standard.",
+      "key_signals": ["S-Class as technology showcase", "MBUX AI interface", "Burmester sound system", "4MATIC all-wheel-drive refinement"]
+    },
+    "social": {
+      "score": 8.0,
+      "positioning": "Mercedes-Benz ownership is a broadly recognized status signal across cultures and income tiers. The C-Class serves as the entry-luxury aspiration point; the S-Class and Maybach mark the apex. The three-pointed star on the hood communicates status in markets from Frankfurt to Lagos to Seoul.",
+      "key_signals": ["E-Class as executive transport standard", "Maybach as head-of-state signal", "C-Class as aspirational entry point", "star hood ornament as universal status mark"]
+    },
+    "economic": {
+      "score": 3.5,
+      "positioning": "Pricing architecture starts at ~$45,000 (C-Class) and extends to $200,000+ (Maybach). The brand explicitly excludes value pricing; even the entry tier represents a significant financial commitment. No fleet-discount or budget positioning exists within the Mercedes-Benz brand.",
+      "key_signals": ["C-Class entry at ~$45K", "S-Class at $115K+", "Maybach at $200K+", "no budget or value sub-brand"]
+    },
+    "cultural": {
+      "score": 8.5,
+      "positioning": "German engineering culture — Gründlichkeit (thoroughness), precision, and durability — is embedded in the brand's identity. Mercedes-Benz is the primary commercial ambassador of German manufacturing philosophy globally, alongside Bosch and Zeiss in their respective categories.",
+      "key_signals": ["Stuttgart manufacturing heritage", "German engineering precision as cultural value", "Sindelfingen design studio", "Formula 1 as engineering culture expression"]
+    },
+    "temporal": {
+      "score": 9.5,
+      "positioning": "1886 is the oldest legitimate founding date of any automotive brand. 140 years of production continuity, with the same engineering-first philosophy across every decade, gives Mercedes-Benz temporal depth that is effectively impossible to manufacture or replicate.",
+      "key_signals": ["1886 founding (oldest automobile brand)", "140 years of continuous production", "pre-WWI founding predates modern industry", "design archive spanning 14 decades"]
+    }
+  }
+}

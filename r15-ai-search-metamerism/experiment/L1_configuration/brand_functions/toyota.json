@@ -1,0 +1,47 @@
+{
+  "brand": "Toyota",
+  "version": "1.0",
+  "source": "Brand Function Registry (spectralbranding, 2026)",
+  "dimensions": {
+    "semiotic": {
+      "score": 6.5,
+      "positioning": "Understated, functional design language. Three overlapping ovals signal integration of customer, product, and technology. Visual identity is legible and globally consistent without being aspirational.",
+      "key_signals": ["three-oval logo", "conservative typography", "neutral color palette", "no lifestyle imagery in core branding"]
+    },
+    "narrative": {
+      "score": 7.5,
+      "positioning": "Founded 1937 by Kiichiro Toyoda. The Toyota Production System (TPS) and Kaizen philosophy of continuous improvement form a coherent origin-to-operations story. Prius as narrative inflection point for global green credentials.",
+      "key_signals": ["Toyota Production System", "Kaizen (continuous improvement)", "Prius as green pioneer", "Kiichiro Toyoda founding story"]
+    },
+    "ideological": {
+      "score": 6.0,
+      "positioning": "Reliability as a philosophy, not merely a feature claim. Respect for people and process embedded in manufacturing culture. Pragmatic approach to electrification rather than ideological commitment.",
+      "key_signals": ["'The Toyota Way' (14 principles)", "respect for people", "long-term thinking over short-term gain", "multi-pathway electrification stance"]
+    },
+    "experiential": {
+      "score": 7.0,
+      "positioning": "Consistent, dependable ownership experience. Dealer network depth and service reliability are core to the value proposition. Low drama, high trust.",
+      "key_signals": ["global dealer network density", "low cost of ownership", "reliability reputation (J.D. Power)", "consistent resale values"]
+    },
+    "social": {
+      "score": 5.5,
+      "positioning": "Mass-market positioning with broad demographic reach. Not aspirational or status-signaling. Trusted by families, fleets, and pragmatic buyers across income levels.",
+      "key_signals": ["fleet vehicle dominance", "family car positioning", "taxi and rideshare market penetration", "no exclusivity signaling"]
+    },
+    "economic": {
+      "score": 8.0,
+      "positioning": "Superior value retention and total cost of ownership. Resale values consistently among the highest in class. Pricing strategy targets volume with accessible entry points across all segments.",
+      "key_signals": ["highest resale values in class", "low maintenance costs", "fuel efficiency", "broad price range from Yaris to Land Cruiser"]
+    },
+    "cultural": {
+      "score": 8.0,
+      "positioning": "Monozukuri (the art of making things) as cultural foundation. Japanese manufacturing excellence philosophy embedded in the brand. TPS has influenced global industrial practice far beyond automotive.",
+      "key_signals": ["monozukuri philosophy", "Jidoka (automation with human touch)", "Toyota City as company town", "TPS adopted globally by manufacturing industries"]
+    },
+    "temporal": {
+      "score": 8.5,
+      "positioning": "Nearly 90 years of continuous operation since 1937. One of the world's largest automotive manufacturers. Institutional memory spans the post-war Japanese economic miracle through to the electrification era.",
+      "key_signals": ["1937 founding", "survived post-WWII rebuilding", "Prius launched 1997 (27+ years of hybrid leadership)", "one of top 3 global automakers by volume"]
+    }
+  }
+}

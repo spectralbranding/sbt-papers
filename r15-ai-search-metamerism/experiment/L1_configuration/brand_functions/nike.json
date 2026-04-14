@@ -1,0 +1,47 @@
+{
+  "brand": "Nike",
+  "version": "1.0",
+  "source": "Brand Function Registry (spectralbranding, 2026)",
+  "dimensions": {
+    "semiotic": {
+      "score": 9.0,
+      "positioning": "The Swoosh is among the most recognized symbols in the world, designed for $35 in 1971 and now functioning without text in virtually any context. Wordmark is optional; the mark alone closes the communication loop.",
+      "key_signals": ["Swoosh standalone recognition", "Just Do It tagline", "bold primary color blocking", "Air unit visible sole window"]
+    },
+    "narrative": {
+      "score": 8.5,
+      "positioning": "Founded as Blue Ribbon Sports by a runner and his coach, the brand's origin story is inseparable from athletic ambition. The Jordan partnership (1984) became the defining commercial narrative in sports marketing history.",
+      "key_signals": ["Phil Knight + Bill Bowerman founding", "Michael Jordan partnership 1984", "athlete-as-protagonist advertising", "Breaking2 project"]
+    },
+    "ideological": {
+      "score": 5.0,
+      "positioning": "Performance meritocracy is the stated ideology — the best athlete wins, regardless of background. This coexists with ongoing criticism around labor practices in offshore manufacturing, creating a gap between declared and enacted values.",
+      "key_signals": ["Colin Kaepernick campaign (2018)", "athlete empowerment messaging", "contractor factory labor criticism", "gender pay equity claims vs. internal audits"]
+    },
+    "experiential": {
+      "score": 8.0,
+      "positioning": "Nike House of Innovation flagship stores deliver immersive product interaction with digital integration. Nike Run Club and Nike Training Club apps extend the brand into daily athletic practice, creating habit-loop touchpoints beyond purchase.",
+      "key_signals": ["House of Innovation flagships (NY, Shanghai, Paris)", "Nike Run Club app", "Nike Fit AR sizing", "customization via Nike By You"]
+    },
+    "social": {
+      "score": 8.5,
+      "positioning": "The deepest athlete endorsement portfolio in consumer goods — from LeBron to Serena to Ronaldo. Athlete partnerships function as social proof at every tier from elite to grassroots, anchoring aspirational identity across demographics.",
+      "key_signals": ["LeBron James lifetime deal", "Serena Williams partnership", "Cristiano Ronaldo sponsorship", "grassroots community running events"]
+    },
+    "economic": {
+      "score": 6.0,
+      "positioning": "Premium mass positioning: hero products (Air Jordan, Air Max) carry full premium prices while core running and training lines remain accessible. Price architecture spans $40 to $250+ systematically across consumer tiers.",
+      "key_signals": ["Air Jordan resale market", "dual-tier pricing architecture", "Nike Clearance stores", "direct-to-consumer revenue shift"]
+    },
+    "cultural": {
+      "score": 7.5,
+      "positioning": "Nike is the primary commercial language of urban athletic culture globally — from streetwear to hip-hop to professional sport. The brand has successfully migrated from sports utility into cultural identity across generations.",
+      "key_signals": ["streetwear crossover (Off-White collabs)", "hip-hop cultural integration", "sneakerhead subculture", "sport as lifestyle positioning"]
+    },
+    "temporal": {
+      "score": 8.0,
+      "positioning": "Founded 1964 as Blue Ribbon Sports; Nike brand launched 1971. The Jordan era (1984–present) established a 40-year legacy narrative that continues to drive both revenue and cultural relevance. Air Max lineage (1987) remains a living design archive.",
+      "key_signals": ["1964 founding", "1971 Swoosh introduction", "Michael Jordan legacy (1984)", "Air Max design lineage (1987–present)"]
+    }
+  }
+}

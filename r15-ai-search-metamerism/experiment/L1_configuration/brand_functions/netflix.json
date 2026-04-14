@@ -1,0 +1,47 @@
+{
+  "brand": "Netflix",
+  "version": "1.0",
+  "source": "Brand Function Registry (spectralbranding, 2026)",
+  "dimensions": {
+    "semiotic": {
+      "score": 7.0,
+      "positioning": "The N-mark (introduced 2016) and the ta-dum audio signature are the two primary brand signals, designed for small-screen legibility. The red-on-black color system is distinctive but relatively recent — the brand's semiotic system is still consolidating compared to century-old marks.",
+      "key_signals": ["N-mark (2016 introduction)", "ta-dum audio logo", "Netflix red (#E50914)", "auto-play preview as brand behavior"]
+    },
+    "narrative": {
+      "score": 7.5,
+      "positioning": "The DVD-by-mail to streaming pivot is one of the canonical disruption stories in technology. Blockbuster's rejection of a Netflix acquisition offer (2000) is now taught as a case study in incumbency failure. The Reed Hastings narrative of customer-first thinking anchors the brand's innovation identity.",
+      "key_signals": ["DVD-by-mail origin (1997)", "Blockbuster acquisition rejection (2000)", "streaming pivot (2007)", "House of Cards original content bet (2013)"]
+    },
+    "ideological": {
+      "score": 4.0,
+      "positioning": "Netflix has no strong ideological identity — the brand is content-neutral by design, preferring to represent the full spectrum of human storytelling rather than a particular viewpoint. Internal content controversies (Dave Chappelle specials) revealed the cost of this ideological neutrality when it conflicts with employee values.",
+      "key_signals": ["content-neutral stance", "global storytelling from 190+ countries", "Dave Chappelle controversy (2021) — ideology-neutral position tested", "no consistent values platform"]
+    },
+    "experiential": {
+      "score": 8.0,
+      "positioning": "The Netflix UX — recommendation algorithm, autoplay, profile personalization, and download-for-offline — is a masterclass in friction reduction. The algorithm's ability to predict and surface content creates an experience that feels individualized even at 260M subscriber scale.",
+      "key_signals": ["recommendation algorithm personalization", "autoplay next episode (introduced 2012)", "profile-level personalization", "offline download feature"]
+    },
+    "social": {
+      "score": 7.0,
+      "positioning": "Netflix originals create shared cultural moments — Squid Game, Stranger Things, Wednesday — that generate global conversation simultaneously. The simultaneous global release model (vs. regional rollout) is a structural social advantage, enabling synchronized cultural participation.",
+      "key_signals": ["Squid Game global simultaneous release (2021)", "Stranger Things cultural event seasons", "Netflix password sharing as social behavior", "binge-watching as cultural norm Netflix pioneered"]
+    },
+    "economic": {
+      "score": 7.0,
+      "positioning": "Subscription pricing ($7–$23/month depending on tier) makes Netflix accessible to the mass market in developed economies, though pricing is calibrated by purchasing power parity in emerging markets. The ad-supported tier (2022) expanded economic accessibility while adding revenue diversification.",
+      "key_signals": ["ad-supported tier at $7/month (2022)", "purchasing power parity pricing in emerging markets", "password-sharing crackdown as revenue lever (2023)", "volume content production at $17B+ annual spend"]
+    },
+    "cultural": {
+      "score": 7.5,
+      "positioning": "Netflix is the primary global infrastructure for non-English language content reaching mainstream Western audiences — Korean (Squid Game, Parasite pipeline), Spanish (Money Heist), and Nordic (Dark) content achieved cultural reach impossible before streaming. This positions Netflix as a genuine cultural multiplexer.",
+      "key_signals": ["Squid Game (Korean content global breakthrough)", "Money Heist (Spanish global hit)", "Dark (German sci-fi global audience)", "190+ country simultaneous availability"]
+    },
+    "temporal": {
+      "score": 4.0,
+      "positioning": "Founded 1997, but the Netflix brand identity that exists today — streaming, original content, global production — dates from approximately 2013. The brand is 27 years old by founding but roughly 12 years old as a cultural force. There is no heritage equity; the brand's value is entirely forward-looking.",
+      "key_signals": ["1997 founding", "2007 streaming pivot", "2013 original content launch", "brand identity essentially post-2013"]
+    }
+  }
+}

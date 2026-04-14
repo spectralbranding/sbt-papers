@@ -1,0 +1,47 @@
+{
+  "brand": "Emirates",
+  "version": "1.0",
+  "source": "Brand Function Registry (spectralbranding, 2026)",
+  "dimensions": {
+    "semiotic": {
+      "score": 8.5,
+      "positioning": "Arabic calligraphy logotype in gold on dark red — one of the most visually distinctive airline liveries globally. Aircraft tail design with gold Arabic script is instantly recognizable at any airport. Gold as a recurring semiotic element signals Gulf luxury positioning.",
+      "key_signals": ["Arabic calligraphy logo in gold", "dark red and gold livery", "A380 as brand icon (world's largest commercial aircraft)", "gold service trolleys and uniforms"]
+    },
+    "narrative": {
+      "score": 7.5,
+      "positioning": "Founded 1985 with two leased aircraft and USD 10 million from Dubai government. Narrative of a city-state with no domestic aviation market building the world's largest international airline through hub strategy at Dubai International Airport.",
+      "key_signals": ["1985 founding with 2 leased aircraft", "Dubai as global aviation hub story", "Tim Clark as architect of hub strategy", "A380 fleet as largest in world"]
+    },
+    "ideological": {
+      "score": 4.5,
+      "positioning": "Luxury commerce and connectivity as purpose, without deeper values framework. Hub strategy is explicitly transactional: maximizing passenger throughput at DXB. No meaningful sustainability ideology despite greenwashing-adjacent claims.",
+      "key_signals": ["'Fly Better' brand promise (functional not values-based)", "hub connectivity as explicit strategy", "limited credible sustainability positioning", "government ownership and UAE national interest alignment"]
+    },
+    "experiential": {
+      "score": 9.0,
+      "positioning": "Industry-leading first and business class product. A380 first class suites with closing doors, onboard shower spa, and private bar are category-defining. Ice entertainment system with 6,500+ channels is the widest in-flight entertainment selection available.",
+      "key_signals": ["A380 first class suites (private doors)", "onboard shower spa (first class)", "A380 onboard bar and lounge", "ICE entertainment system (6,500+ channels)", "multi-course dining with sommelier service"]
+    },
+    "social": {
+      "score": 8.0,
+      "positioning": "Premium status signal for frequent international travelers. Major sports sponsorships (Arsenal FC, FIFA World Cup, Formula 1, Rugby World Cup) provide mass-market visibility alongside premium positioning. Emirates branding at major sporting venues is globally ubiquitous.",
+      "key_signals": ["Arsenal FC shirt sponsor (2006-2024, 18 years)", "Emirates Stadium naming rights", "FIFA World Cup sponsorship", "Formula 1 sponsorship", "global airport lounge network"]
+    },
+    "economic": {
+      "score": 4.0,
+      "positioning": "Premium to ultra-premium pricing. First class fares regularly exceed $20,000 for long-haul routes. Business class pricing is market-leading. Economy class is competitive but not budget. Price is a qualifying barrier, not a brand differentiator.",
+      "key_signals": ["first class fares >$20k long-haul", "business class premium pricing", "no budget subsidiary strategy", "government backing enables investment without short-term profit pressure"]
+    },
+    "cultural": {
+      "score": 7.5,
+      "positioning": "Gulf luxury culture exported globally. East-meets-West synthesis: Arabic visual identity, British cabin crew English, multicultural workforce (over 160 nationalities). Dubai as a cultural concept — ambition, modernity, excess — is inseparable from the Emirates brand.",
+      "key_signals": ["Dubai as brand context", "multicultural cabin crew (160+ nationalities)", "Arabic calligraphy as luxury signal globally", "East-West synthesis in service design"]
+    },
+    "temporal": {
+      "score": 4.5,
+      "positioning": "Founded 1985, only 40 years old — young by airline standards where Lufthansa (1926), KLM (1919), and Qantas (1920) carry a century of institutional depth. Rapid growth has compressed what normally takes generations. Heritage is shallow but trajectory is steep.",
+      "key_signals": ["1985 founding", "40 years of operation", "youngest airline among global top-10 by revenue", "growth from 2 to 260+ aircraft in 40 years"]
+    }
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "brand": "Dove",
+  "version": "1.0",
+  "source": "Brand Function Registry (spectralbranding, 2026)",
+  "dimensions": {
+    "semiotic": {
+      "score": 7.0,
+      "positioning": "The dove silhouette, white-and-blue packaging, and warm skin-tone photography in advertising form a coherent visual system associated with gentleness and natural care. The semiotic system is distinctive within personal care but lacks the cross-category recognition of mass consumer brands like Coca-Cola or Nike.",
+      "key_signals": ["dove bird silhouette logo", "white and soft blue packaging palette", "skin-tone diverse photography in advertising", "1/4 moisturizing cream product identifier badge"]
+    },
+    "narrative": {
+      "score": 8.5,
+      "positioning": "The 2004 Campaign for Real Beauty is one of the most consequential brand narrative pivots in consumer goods history — moving from product-feature advertising to social impact positioning. The Dove Self-Esteem Project (10M+ young people reached) gives the narrative ongoing institutional proof, preventing it from becoming empty purpose-washing.",
+      "key_signals": ["2004 Campaign for Real Beauty launch", "Dove Self-Esteem Project (10M+ young people)", "Evolution viral film (2006)", "Real Sketches film (2013) — most-watched ad of its year"]
+    },
+    "ideological": {
+      "score": 8.0,
+      "positioning": "Body positivity, self-esteem, and the rejection of narrow beauty standards are Dove's ideological commitments — and among the most explicitly stated and consistently enacted of any mass brand. The Dove Self-Esteem Project operates as a genuine educational program in schools, giving the ideology institutional form beyond marketing.",
+      "key_signals": ["body positivity as brand founding value (2004–present)", "Dove Self-Esteem Project school programs", "no digitally altered skin in advertising (2018 commitment)", "diversity in body type, age, and ethnicity in casting"]
+    },
+    "experiential": {
+      "score": 6.5,
+      "positioning": "The core product experience — mild, moisturizing cleansing bar — is functional and differentiated from harsh soap by the 1/4 moisturizing cream formulation. The experiential gap is that the product-level experience (a bar of soap) is inherently limited in premium sensory depth compared to luxury personal care.",
+      "key_signals": ["1/4 moisturizing cream formulation", "mild pH, non-stripping bar design", "skin comfort after washing as primary sensory claim", "Dove Men+Care line extension"]
+    },
+    "social": {
+      "score": 8.0,
+      "positioning": "Dove built a social community around shared experience of body image pressure — a community of the marginalized rather than the aspirational. This is a genuinely unusual social positioning for a mass brand and creates intense loyalty among consumers who feel seen by the brand's representation choices.",
+      "key_signals": ["#RealBeauty social community", "Dove Self-Esteem Project peer ambassador network", "inclusive casting as social contract with consumers", "partnership with Crisis Text Line and NEDA"]
+    },
+    "economic": {
+      "score": 7.5,
+      "positioning": "Dove is priced at the upper end of mass market personal care — above store brands and budget lines, but below premium brands like Aesop or Tatcha. This accessible pricing makes the body-positive ideology genuinely democratic: the brand's values are available to anyone who can afford a $5 bar of soap.",
+      "key_signals": ["mass market pricing ($4–8 per product)", "widely distributed (drug stores, grocery, mass retail)", "Unilever distribution infrastructure", "accessible to income tiers across the US and Europe"]
+    },
+    "cultural": {
+      "score": 6.0,
+      "positioning": "Dove's cultural intervention — challenging Western beauty standards from within the mass market — was significant in 2004 and remains resonant but has become contested as the body positivity movement has both matured and fragmented. The brand is culturally located within Western beauty discourse in a way that limits its cultural depth in non-Western markets.",
+      "key_signals": ["Western beauty standard challenge (2004 origin)", "body positivity movement association", "feminist media criticism engagement", "cultural limitation in non-Western markets (beauty standards vary)"]
+    },
+    "temporal": {
+      "score": 7.0,
+      "positioning": "Founded 1957 as a beauty bar for burns victims in US Navy hospitals, giving the brand an authentic origin in skin care necessity. The modern Dove identity dates primarily from the 2004 Campaign for Real Beauty, which is now 21 years old — old enough to be an established ideology, young enough to still feel contemporary.",
+      "key_signals": ["1957 founding (US Navy burns treatment origin)", "1957 first beauty bar formulation", "2004 Campaign for Real Beauty (21 years)", "Ogilvy & Mather partnership (original creative relationship)"]
+    }
+  }
+}

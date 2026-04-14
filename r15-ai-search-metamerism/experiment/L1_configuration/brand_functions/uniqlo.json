@@ -1,0 +1,47 @@
+{
+  "brand": "Uniqlo",
+  "version": "1.0",
+  "source": "Brand Function Registry (spectralbranding, 2026)",
+  "dimensions": {
+    "semiotic": {
+      "score": 7.0,
+      "positioning": "Red square with katakana logotype is visually distinctive and carries Japanese identity explicitly. Store design is clean, grid-organized, and product-forward. Visual identity system communicates precision and accessibility simultaneously.",
+      "key_signals": ["red square katakana logo", "white store interiors with high product density", "minimalist product photography", "color-range product display system"]
+    },
+    "narrative": {
+      "score": 6.5,
+      "positioning": "Founded 1984 in Hiroshima by Tadashi Yanai. LifeWear concept (clothing as infrastructure, not fashion) is a coherent and differentiating narrative. Global expansion from 2000s reframed Uniqlo from Japanese retailer to philosophy-driven basics brand.",
+      "key_signals": ["Tadashi Yanai founding story", "LifeWear philosophy", "Hiroshima origin", "collaborations (Jil Sander, Christophe Lemaire, JW Anderson) as narrative enrichment"]
+    },
+    "ideological": {
+      "score": 6.0,
+      "positioning": "Democratic basics as ideology: quality clothing for everyone, function over decoration, clothing as utility infrastructure. Anti-trend positioning is implicit but not loudly declared. Sustainability efforts exist but are not brand-defining.",
+      "key_signals": ["LifeWear as 'clothing for all of life'", "seasonal basics not seasonal fashion", "RE.UNIQLO recycling program", "anti-logo minimalism"]
+    },
+    "experiential": {
+      "score": 7.5,
+      "positioning": "Fabric technology is the primary experiential differentiator. HEATTECH thermal underlayer, AIRism moisture-management, and Ultra Light Down jacket are proprietary technologies that deliver perceptible functional benefits.",
+      "key_signals": ["HEATTECH thermal technology", "AIRism moisture-management fabric", "Ultra Light Down series", "Blocktech windproof/waterproof technology"]
+    },
+    "social": {
+      "score": 5.0,
+      "positioning": "Mass-market positioning with no aspirational or exclusivity signaling. Worn by everyone from students to executives. Social invisibility is part of the value proposition — Uniqlo clothes are meant to disappear into the outfit.",
+      "key_signals": ["no visible logo on most products", "broad age and income demographic", "no scarcity marketing", "no celebrity endorsement strategy"]
+    },
+    "economic": {
+      "score": 8.5,
+      "positioning": "Accessible quality at mass-market price points. Exceptional price-to-quality ratio is the brand's primary competitive advantage. Vertical integration (SPA model: Specialty store retailer of Private label Apparel) enables quality control and cost efficiency.",
+      "key_signals": ["SPA (Specialty store of Private label Apparel) model", "HEATTECH at ~$20 price point", "price stability (minimal markdowns)", "raw material partnerships (Toray Industries for synthetic fabrics)"]
+    },
+    "cultural": {
+      "score": 8.0,
+      "positioning": "Japanese minimalism applied to clothing — wabi-sabi aesthetic of finding beauty in simplicity and function. Monozukuri (craftsmanship) expressed through fabric engineering. The LifeWear concept is a cultural export of Japanese design philosophy.",
+      "key_signals": ["wabi-sabi aesthetic principles", "Japanese monozukuri in fabric development", "Ines de la Fressange collaborations (French elegance meets Japanese precision)", "Tadashi Yanai as embodiment of Japanese retail discipline"]
+    },
+    "temporal": {
+      "score": 5.0,
+      "positioning": "Founded 1984, relatively young. Global brand recognition built post-2005 with New York and London flagship openings. Short brand history limits temporal depth, but fast-accumulated credibility through consistent execution.",
+      "key_signals": ["1984 founding in Hiroshima", "first international store 2001 (London)", "New York SoHo flagship 2006", "global presence in 25+ markets by 2020s"]
+    }
+  }
+}
