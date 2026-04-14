@@ -8,7 +8,7 @@ provenance:
     - version: "1.0.0"
       date: "2026-04-13"
       description: >
-        Final preprint (v2.0 experiment). 7,775 parsed observations from 7,820
+        Final preprint (v2.0 experiment). 7,975 parsed observations from 8,022
         response files (99.4% parse success). 13 models from 7 training traditions
         (Western, Chinese, Russian, Indian, Japanese, European, Korean). 20 brands,
         7 portfolios (LVMH, Unilever, P&G, Toyota, L'Oreal, Geely, Yandex).
