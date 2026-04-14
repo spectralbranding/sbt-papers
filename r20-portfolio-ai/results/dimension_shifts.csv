@@ -7,22 +7,22 @@ Geely,Geely Auto,social,0.013,0.121,0.9039,0.022,False
 Geely,Geely Auto,economic,-0.109,-1.071,0.2864,-0.196,False
 Geely,Geely Auto,cultural,0.17,1.528,0.1293,0.28,False
 Geely,Geely Auto,temporal,-0.265,-2.45,0.0158,-0.449,False
-Geely,Polestar,semiotic,0.093,1.049,0.2965,0.191,False
-Geely,Polestar,narrative,-0.095,-1.154,0.251,-0.21,False
-Geely,Polestar,ideological,-0.142,-1.556,0.1224,-0.283,False
-Geely,Polestar,experiential,0.067,1.438,0.153,0.262,False
-Geely,Polestar,social,-0.075,-0.816,0.416,-0.148,False
-Geely,Polestar,economic,0.061,0.612,0.5418,0.111,False
-Geely,Polestar,cultural,-0.065,-0.622,0.5351,-0.113,False
-Geely,Polestar,temporal,-0.017,-0.322,0.7477,-0.059,False
-Geely,Volvo,semiotic,-0.006,-0.068,0.9458,-0.012,False
-Geely,Volvo,narrative,-0.081,-1.163,0.2471,-0.211,False
-Geely,Volvo,ideological,-0.032,-0.629,0.5306,-0.114,False
-Geely,Volvo,experiential,-0.052,-0.75,0.4547,-0.136,False
-Geely,Volvo,social,0.156,1.733,0.0856,0.315,False
-Geely,Volvo,economic,-0.023,-0.257,0.7977,-0.047,False
-Geely,Volvo,cultural,-0.083,-0.819,0.4145,-0.149,False
-Geely,Volvo,temporal,-0.115,-2.766,0.0066,-0.503,False
+Geely,Polestar,semiotic,0.062,0.708,0.4804,0.124,False
+Geely,Polestar,narrative,-0.108,-1.384,0.1689,-0.243,False
+Geely,Polestar,ideological,-0.154,-1.768,0.0795,-0.31,False
+Geely,Polestar,experiential,0.031,0.499,0.619,0.087,False
+Geely,Polestar,social,-0.092,-1.052,0.2948,-0.185,False
+Geely,Polestar,economic,0.046,0.467,0.6416,0.082,False
+Geely,Polestar,cultural,-0.077,-0.783,0.4353,-0.137,False
+Geely,Polestar,temporal,-0.015,-0.305,0.7612,-0.053,False
+Geely,Volvo,semiotic,-0.015,-0.177,0.8597,-0.031,False
+Geely,Volvo,narrative,-0.077,-1.186,0.2379,-0.208,False
+Geely,Volvo,ideological,-0.031,-0.654,0.5141,-0.115,False
+Geely,Volvo,experiential,-0.062,-0.82,0.4139,-0.144,False
+Geely,Volvo,social,0.138,1.601,0.1118,0.281,False
+Geely,Volvo,economic,-0.031,-0.352,0.7257,-0.062,False
+Geely,Volvo,cultural,0.0,0.0,1.0,0.0,False
+Geely,Volvo,temporal,-0.108,-2.779,0.0063,-0.488,False
 L'Oreal,L'Oreal Paris,semiotic,-0.066,-0.878,0.3816,-0.155,False
 L'Oreal,L'Oreal Paris,narrative,0.062,1.158,0.2491,0.204,False
 L'Oreal,L'Oreal Paris,ideological,0.016,0.257,0.7979,0.045,False
@@ -31,22 +31,22 @@ L'Oreal,L'Oreal Paris,social,0.001,0.01,0.9922,0.002,False
 L'Oreal,L'Oreal Paris,economic,0.044,0.393,0.6952,0.069,False
 L'Oreal,L'Oreal Paris,cultural,0.113,1.144,0.255,0.201,False
 L'Oreal,L'Oreal Paris,temporal,-0.177,-1.484,0.1403,-0.261,False
-L'Oreal,Lancome,semiotic,-0.035,-0.624,0.5335,-0.11,False
-L'Oreal,Lancome,narrative,-0.0,-0.013,0.9899,-0.002,False
-L'Oreal,Lancome,ideological,-0.053,-0.737,0.4624,-0.13,False
-L'Oreal,Lancome,experiential,-0.023,-0.304,0.7616,-0.054,False
-L'Oreal,Lancome,social,-0.047,-0.527,0.5992,-0.093,False
-L'Oreal,Lancome,economic,-0.045,-0.42,0.6749,-0.074,False
-L'Oreal,Lancome,cultural,-0.006,-0.068,0.9462,-0.012,False
-L'Oreal,Lancome,temporal,-0.071,-0.831,0.4078,-0.147,False
-L'Oreal,Maybelline,semiotic,-0.021,-0.258,0.7971,-0.047,False
-L'Oreal,Maybelline,narrative,0.094,1.11,0.2692,0.202,False
-L'Oreal,Maybelline,ideological,-0.007,-0.073,0.9418,-0.013,False
-L'Oreal,Maybelline,experiential,-0.027,-0.296,0.7681,-0.054,False
-L'Oreal,Maybelline,social,0.119,1.39,0.167,0.253,False
-L'Oreal,Maybelline,economic,0.09,0.837,0.4042,0.152,False
-L'Oreal,Maybelline,cultural,0.004,0.041,0.967,0.008,False
-L'Oreal,Maybelline,temporal,-0.198,-1.232,0.2203,-0.224,False
+L'Oreal,Lancome,semiotic,-0.033,-0.593,0.5542,-0.104,False
+L'Oreal,Lancome,narrative,-0.016,-0.386,0.7002,-0.068,False
+L'Oreal,Lancome,ideological,-0.05,-0.69,0.4911,-0.122,False
+L'Oreal,Lancome,experiential,-0.019,-0.254,0.8002,-0.045,False
+L'Oreal,Lancome,social,-0.054,-0.613,0.5409,-0.108,False
+L'Oreal,Lancome,economic,-0.046,-0.428,0.6691,-0.075,False
+L'Oreal,Lancome,cultural,-0.011,-0.128,0.8984,-0.023,False
+L'Oreal,Lancome,temporal,-0.066,-0.778,0.4382,-0.137,False
+L'Oreal,Maybelline,semiotic,-0.046,-0.563,0.5747,-0.099,False
+L'Oreal,Maybelline,narrative,0.092,1.154,0.2506,0.202,False
+L'Oreal,Maybelline,ideological,-0.031,-0.34,0.7345,-0.06,False
+L'Oreal,Maybelline,experiential,-0.031,-0.361,0.7188,-0.063,False
+L'Oreal,Maybelline,social,0.108,1.336,0.1838,0.234,False
+L'Oreal,Maybelline,economic,0.092,0.895,0.3723,0.157,False
+L'Oreal,Maybelline,cultural,0.0,0.0,1.0,0.0,False
+L'Oreal,Maybelline,temporal,-0.2,-1.28,0.203,-0.224,False
 LVMH,Dior,semiotic,0.0,,,0.0,False
 LVMH,Dior,narrative,-0.092,-1.052,0.2948,-0.185,False
 LVMH,Dior,ideological,-0.092,-1.624,0.1069,-0.285,False

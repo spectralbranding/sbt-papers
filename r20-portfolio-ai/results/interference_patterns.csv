@@ -1,5 +1,5 @@
 portfolio,type,predicted,observed,constructive,destructive,neutral,total_dims,ratio,match
-Geely,reverse_aspiration,downward_suppression,destructive,4,0,13,17,0.235,False
+Geely,reverse_aspiration,downward_suppression,destructive,4,0,14,18,0.222,False
 L'Oreal,prestige_spread,gradient_flattening,mixed/negligible,5,0,6,11,0.455,False
 LVMH,spectral_cluster,constructive,constructive,1,0,0,1,1.0,True
 P&G,spectral_spread,negligible,destructive,0,0,2,2,0.0,False
