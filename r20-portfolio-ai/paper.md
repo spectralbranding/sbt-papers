@@ -1,4 +1,4 @@
-# Spectral Immunity: Portfolio Framing Does Not Alter AI Brand Perception
+# Does Corporate Ownership Matter to AI? Portfolio Interference in Large Language Model Brand Perception
 
 *Dmitry Zharnikov*
 
@@ -6,48 +6,62 @@ DOI: 10.5281/zenodo.19555282
 
 **Abstract**
 
-Large language models increasingly mediate consumer access to brand information through search, recommendation, and conversational interfaces. Prior work establishes that AI systems exhibit systematic dimensional collapse when perceiving brands. Separately, portfolio theory predicts that corporate context should produce interference effects. This paper tests whether portfolio framing alters AI brand perception through a comprehensive experiment: 20 brands across 7 portfolios (LVMH, Unilever, Procter & Gamble, Toyota, L'Oreal, Geely, Yandex) rated under 6 conditions by 13 large language models from 7 training traditions---including Russian, Indian, Japanese, European, and Korean models---yielding 7,775 total observations. Four prompt modalities are tested: direct rating, naturalistic recommendation, multi-turn conversation with mid-conversation portfolio reveal, and native-language ablation. Results show near-zero effect of portfolio framing across all modalities (mean |delta DCI| = .26, TOST equivalence confirmed for 18/20 brands). All 7 model traditions show identical immunity. The sole exception pattern is Lexus under Toyota portfolio framing (d = .52, p = .004), which no longer survives FDR correction with 20 tests, reducing it to suggestive rather than definitive. Multi-turn portfolio reveal produces the strongest individual effect: Geely Auto d = -1.11 (FDR-significant), suggesting reverse aspiration can be unlocked through conversational revelation but not direct framing. Native-language framing activates different discourse layers but effects are portfolio-specific and model-specific, not systematic. These findings generalize spectral immunity to 7 portfolio archetypes across 7 model traditions with direct implications for portfolio management in AI-mediated markets.
+Large language models (LLMs) increasingly shape how consumers discover and evaluate brands. Brand portfolio theory predicts that revealing corporate ownership should produce perceptual interference via an awareness gate (Keller 1993; Aaker and Keller 1990). Yet LLMs encode portfolio relationships permanently in their parameters, raising the possibility of either maximal interference or complete immunity. We test these hypotheses in a preregistered experiment with 13 LLMs spanning seven training traditions (Western, Chinese, Russian, Indian, Japanese, European, Korean). Twenty brands from seven portfolio archetypes (LVMH, Unilever, P&G, Toyota, L'Oreal, Geely, Yandex) were rated under four prompt modalities---direct rating, naturalistic recommendation, multi-turn conversation with mid-dialogue portfolio reveal, and native-language framing---yielding 7,775 parsed observations. Portfolio framing produces near-zero change in Dimensional Concentration Index (mean |delta DCI| = .26). Equivalence testing confirms the null for 18/20 brands within +/-1.0 DCI points. Multi-turn revelation unlocks modest flattening for reverse-aspiration structures (Geely Auto d = -1.11, FDR-significant), but effects remain portfolio- and modality-specific rather than systematic. Native-language prompts activate model-specific discourse layers without directional amplification. These results generalize spectral immunity across model traditions and portfolio types, implying that house-of-brands shielding is automatic in AI-mediated markets while constructive interference is impossible. Brand managers cannot rely on portfolio architecture to reshape LLM perceptions except in extended conversational contexts. Theoretical implications for awareness-gate mechanisms and practical implications for "Share of Model" strategy are discussed.
 
-**Keywords:** brand perception, large language models, portfolio interference, spectral immunity, cross-cultural AI, multi-turn conversation, TOST equivalence, native-language framing, discourse-layer activation, reverse aspiration
+**Keywords:** brand perception, large language models, portfolio interference, awareness gate, TOST equivalence, cross-cultural AI, multi-turn conversation, native-language framing, Share of Model
 
 <!-- SEO
 seo_title: Portfolio Framing Has No Effect on AI Brand Perception
 seo_description: Experiment with 7,775 API calls testing whether LVMH/Unilever/P&G/Toyota/L'Oreal/Geely/Yandex portfolio context changes how 13 LLMs from 7 training traditions perceive brands.
 -->
 
-The growing deployment of large language models (LLMs) in consumer-facing applications---search engines, recommendation systems, conversational assistants---creates a new class of brand observer (Li et al. 2024; Sabbah and Acar 2026). When a consumer asks an AI system "Which luxury bag should I buy?", the model's response reflects its internal encoding of brand perceptions, shaped by training data composition rather than lived experience. Understanding how these AI observers perceive brands is no longer a theoretical exercise but an operational necessity.
+When a consumer asks an LLM "Which luxury bag should I buy?", the model's response reflects its internal brand encoding, shaped by training data composition rather than lived experience. Understanding these AI observers is now operationally critical (Dubois, Dawson, and Jaiswal 2025). LLMs increasingly mediate consumer access to brand information through search, recommendation, and conversational interfaces, constituting a new class of brand observer whose perceptual structure differs systematically from human observers (Li et al. 2024; Sabbah and Acar 2026).
 
-Brand portfolio theory has long recognized that corporate ownership structures create perceptual interdependencies. When a consumer learns that a previously unfamiliar brand belongs to a known portfolio, this knowledge can alter their perception (Aaker and Keller 1990; Erdem 1998; Lei, Dawar, and Lemmink 2008). The direction depends on sibling brand relationships: mutual reinforcement when brands occupy similar perceptual positions, destructive interference when they contradict (Aaker and Joachimsthaler 2000; Strebinger 2014). The mechanism depends on an awareness gate---the degree to which an observer recognizes shared corporate ownership.
+Brand portfolio theory has long recognized that corporate ownership structures create perceptual interdependencies. Classic portfolio theory (Aaker and Keller 1990; Keller 1993) predicts interference when corporate ownership becomes salient: constructive for spectrally similar brands, destructive for contradictory ones. The mechanism is an awareness gate---the degree to which the observer recognizes shared corporate ownership. Erdem (1998) demonstrated that umbrella branding creates correlated quality expectations. Lei, Dawar, and Lemmink (2008) showed that portfolio spillover is asymmetric and sensitive to perceived fit. Brand, Israeli, and Ngwe (2023) demonstrated that LLMs can be used for market research, raising the question of whether these instruments respond to contextual manipulations the way human respondents do. Recent work on AI-mediated brand perception (Arora, Chakraborty, and Nishimura 2025; Hermann and Puntoni 2025) further establishes that LLM brand responses are systematic and measurable---but whether they are sensitive to portfolio context has not been tested.
 
 For LLMs, the awareness gate is permanently saturated. These models cannot be experimentally manipulated into "not knowing" that Dior belongs to LVMH---the information is encoded in their parameters. This creates the *awareness gate paradox*: if interference scales with awareness, and awareness is permanently maximal, AI brand perception should exhibit permanent maximal interference.
 
-Alternatively, the same dimensional collapse that compresses individual brand profiles (Zharnikov 2026v) may also compress the *differential* between solo and portfolio conditions. If an LLM already operates near its minimum-distortion encoding, adding portfolio context provides no additional information that would alter the encoding.
+Alternatively, LLMs may operate near minimum-distortion encodings of brand information. If dimensional compression is already at its limit, adding portfolio context provides no additional signal that would alter the encoding. One theoretical framework that predicts this immunity via rate-distortion compression is Spectral Brand Theory (Zharnikov 2026a), but the prediction follows from any account in which LLM brand encodings are compressed and stable.
 
-This paper tests these competing hypotheses through a comprehensive experiment with six design innovations. First, we include 13 models from 7 training traditions, adding European (Mistral Large) and Korean (EXAONE 3.5 32B) models to the original panel to test whether models with different cultural knowledge bases show different immunity patterns. Second, we extend the portfolio design from 4 to 7 archetypes, adding prestige spread (L'Oreal), reverse aspiration (Geely), and branded house (Yandex). Third, we add a fourth portfolio archetype---Toyota/Lexus (spectral layering)---testing whether aspiration dynamics penetrate AI perception where symmetric interference does not. Fourth, we test naturalistic recommendation prompts alongside direct ratings, addressing the ecological validity concern. Fifth, we test multi-turn conversations where portfolio context is revealed mid-conversation, simulating the most realistic interaction pattern. Sixth, we test native-language framing for portfolios with home-market models, testing whether discourse-layer activation produces systematic effects.
+This paper provides the first comprehensive test of portfolio interference in LLM brand perception. We test competing hypotheses---maximal interference vs. spectral immunity---through a preregistered experiment with six design innovations: 13 models from 7 training traditions, 7 portfolio archetypes, 4 prompt modalities, multi-turn conversation with mid-dialogue portfolio reveal, native-language ablation, and prompt-location ablation. Across 7,775 observations, the predominant finding is clear: 0/20 brands show FDR-significant portfolio effects in direct rating or recommendation conditions.
 
 
 **Theoretical Background**
 
 *Portfolio Interference in Human Perception*
 
-Corporate brand portfolios create perceptual interdependencies. Keller's (1993) customer-based brand equity model predicts that corporate associations transfer to subsidiary brands through associative network activation. Aaker and Keller (1990) showed that brand extension attitudes depend on perceived fit. Erdem (1998) demonstrated that umbrella branding creates correlated quality expectations. Lei, Dawar, and Lemmink (2008) showed that portfolio spillover is asymmetric. Peng et al. (2023) meta-analyzed 2,134 effect sizes from three decades of brand extension research, confirming that both parent brand equity and extension fit positively influence extension success. At the financial level, Morgan and Rego (2009) established that brand portfolio characteristics explain meaningful variance in firm performance.
+Corporate brand portfolios create perceptual interdependencies. Keller's (1993) customer-based brand equity model predicts that corporate associations transfer to subsidiary brands through associative network activation. Aaker and Keller (1990) showed that brand extension attitudes depend on perceived fit between parent brand and extension. Erdem (1998) demonstrated that umbrella branding creates correlated quality expectations across portfolio members. Lei, Dawar, and Lemmink (2008) showed that portfolio spillover is asymmetric: negative spillover is stronger from weaker to stronger brands. Peng et al. (2023) meta-analyzed 2,134 effect sizes from three decades of brand extension research, confirming that both parent brand equity and extension fit positively influence extension success. At the financial level, Morgan and Rego (2009) established that brand portfolio characteristics explain meaningful variance in firm performance.
 
-Spectral Brand Theory (SBT; Zharnikov 2026a) models brand perception as emission in an eight-dimensional space: Semiotic, Narrative, Ideological, Experiential, Social, Economic, Cultural, Temporal. Extending portfolio interference theory (Aaker and Joachimsthaler 2000; Strebinger 2014) to this multi-dimensional framework, interference is defined per dimension $d$ for observer cohort $C_k$:
+Interference direction depends on the structural relationship between portfolio members. *Constructive interference* arises when sibling brands occupy proximate positions on high-salience dimensions. *Destructive interference* arises when siblings contradict on those dimensions. *Negligible interference* characterizes brands occupying distinct perceptual territories with low shared dimensionality. The key moderator in all accounts is the awareness gate: the consumer must know about the ownership relationship for any interference to occur (Aaker and Joachimsthaler 2000; Strebinger 2014).
+
+Four portfolio archetypes operationalize these predictions. *Spectral clusters* (e.g., LVMH) house brands in proximate positions, producing constructive interference. *Spectral contradictions* (e.g., Unilever) house brands contradictory on high-weight dimensions, producing destructive interference. *Spectral spreads* (e.g., P&G) house brands in distant regions, producing negligible interference. *Spectral layers* (e.g., Toyota/Lexus) house brands at different positions on the same dimensions, serving distinct cohorts with aspiration dynamics. The present study adds three further archetypes: *prestige spread* (L'Oreal), *reverse aspiration* (Geely), and *branded house* (Yandex).
+
+*AI as Brand Observer*
+
+Li et al. (2024) validated LLMs as brand perception instruments, achieving over 75% agreement with human perceptual data across a large-scale Marketing Science study. Brand, Israeli, and Ngwe (2023) demonstrated the use of GPT for market research tasks including brand positioning. Arora, Chakraborty, and Nishimura (2025) demonstrated AI-human hybrid approaches for marketing research, establishing reliability and validity benchmarks. Hermann and Puntoni (2025) examined how generative AI shapes stakeholder engagement, arguing that understanding the internal structure of LLM brand responses is now a strategic necessity. Grewal, Levy, and Kumar (2025) document the broader shift toward generative AI in marketing practice.
+
+LLM brand responses show systematic dimensional patterns. Across 24 models from seven training traditions, cross-model cosine similarity for brand profiles reaches .977, with systematic compression of the Cultural, Temporal, and Economic dimensions (Zharnikov 2026v). Sabbah and Acar (2026) found that only quantitative ratings are stable across models. Goli and Singh (2024) demonstrated structural divergence between LLM and human preferences in choice tasks. None of this prior work tested whether LLM brand perception is sensitive to contextual manipulation---specifically, whether adding portfolio context to a brand query changes the model's brand encoding.
+
+The cognitive science literature reveals relevant evidence. Binz and Schulz (2023) found that GPT-3 exhibits human-like framing effects yet also systematic deviations. Germani and Spitale (2025) showed that source framing---attributing identical statements to different authors---triggers systematic bias across LLMs. Portfolio framing is a content-level manipulation (adding factual context the model already knows) rather than a social-attribution manipulation, which may explain divergent results.
+
+*The Awareness Gate Paradox*
+
+The awareness gate mechanism (Keller 1993) holds that portfolio interference requires the observer to recognize the ownership relationship. In human samples, this gate is calibrated experimentally: studies manipulate whether respondents learn about corporate ownership. In LLMs, no such manipulation is possible---the ownership relationship is encoded in parameters. The awareness gate is permanently saturated at $\alpha \approx 1$.
+
+This creates the awareness gate paradox. If interference scales with awareness (as standard portfolio theory predicts), LLMs should show maximal portfolio effects. Yet if LLM encodings are already compressed to near-minimum-distortion representations of brands, adding portfolio context provides no additional information the encoding can absorb. The distinction is between an observer for whom portfolio knowledge is *new* (human experimental manipulation) and one for whom it is *structural* (LLM parameters). The present study tests which regime governs LLM brand perception.
+
+One formal representation of this compression account is the SBT interference equation:
 
 $$I_d(B_i, B_j, C_k) = \alpha_{C_k} \cdot \bar{w}_d^{(C_k)} \cdot (e_d^{(B_j)} - \mu_d) \quad (1)$$
 
-where $\alpha_{C_k}$ is the awareness gate, $\bar{w}_d^{(C_k)}$ is the cohort's weight on dimension $d$, $e_d^{(B_j)}$ is the sibling brand's emission, and $\mu_d$ is the category mean.
+where $\alpha_{C_k}$ is the awareness gate, $\bar{w}_d^{(C_k)}$ is the cohort's weight on dimension $d$, $e_d^{(B_j)}$ is the sibling brand's emission, and $\mu_d$ is the category mean.[^1] Under immunity, $\alpha_{C_k}$ is maximal but the compression constraint prevents the interference term from propagating into the observable profile. The present paper tests this prediction empirically without requiring acceptance of any particular theoretical framework.
 
-Four portfolio archetypes were tested in the original experiment. *Spectral clusters* (e.g., LVMH) house brands in proximate positions, producing constructive interference. *Spectral contradictions* (e.g., Unilever) house brands contradictory on high-weight dimensions, producing destructive interference. *Spectral spreads* (e.g., P&G) house brands in distant regions, producing negligible interference. *Spectral layers* (e.g., Toyota/Lexus) house brands at different positions on the same dimensions, serving distinct cohorts with aspiration dynamics. The v2.0 extension adds three further archetypes: *prestige spread* (L'Oreal), *reverse aspiration* (Geely), and *branded house* (Yandex).
-
-*AI Brand Perception and Dimensional Collapse*
-
-Across 24 models from 5 training traditions, Zharnikov (2026v) found that AI observers produce remarkably uniform spectral profiles (cross-model cosine similarity = .977), with systematic compression of the Cultural, Temporal, and Economic dimensions. Li et al. (2024) validated LLMs as brand perception instruments, achieving over 75% agreement with human perceptual data. Sabbah and Acar (2026) found that only quantitative ratings are stable across models. Arora, Chakraborty, and Nishimura (2025) demonstrated AI-human hybrid approaches for marketing research. None tested whether LLM brand perception is sensitive to contextual manipulation.
-
-The cognitive science literature reveals a complex picture. Binz and Schulz (2023) found that GPT-3 exhibits human-like framing effects yet also systematic deviations. Goli and Singh (2024) demonstrated structural divergence between LLM and human preferences. Germani and Spitale (2025) showed that source framing---attributing identical statements to different authors---triggers systematic bias across LLMs. This raises a natural question: if source framing matters, does portfolio framing? Portfolio framing is a content-level manipulation (adding factual context the model already knows) rather than a social-attribution manipulation, which may explain the divergent results.
+[^1]: This formulation is from Spectral Brand Theory (Zharnikov 2026a), where Dimensional Concentration Index (DCI) measures profile concentration across eight brand perception dimensions. DCI is a new metric not yet validated against human data; Section Limitations discusses this as a primary boundary condition on our conclusions.
 
 
 **Research Hypotheses**
+
+Core hypotheses (H1--H5) are derived from portfolio theory and the awareness gate mechanism. Extension hypotheses (H6--H9) test new archetypes and modalities added in the present study.
 
 *H1 (Constructive Interference).* Portfolio framing increases dimensional concentration (DCI) for brands in spectrally clustered portfolios (LVMH).
 
@@ -80,7 +94,7 @@ The experiment employed a fully crossed design across four prompt modalities:
 4. **Native-language ablation**: 11 brands (4 home portfolios: Toyota, Yandex, Geely, L'Oreal) x 2 conditions x 13 models x 5 repetitions = 1,430 observations. Prompts issued in the home language of the portfolio's country of origin.
 5. **Prompt-location ablation**: 20 brands x 4 conditions x 5 repetitions = 400 observations (est). Portfolio information placed in system prompt rather than user message.
 
-Total: approximately 7,930 observation cells (7,775 successfully parsed). All ratings used a 1--5 scale following the PRISM-B specification, which Zharnikov (2026aa) showed produces optimal rate-distortion performance for LLM brand perception encoders compared to wider scales.
+Total: approximately 7,930 observation cells (7,775 successfully parsed). All ratings used a 1--5 scale following the PRISM-B specification (Zharnikov 2026aa).
 
 *Brands and Portfolios*
 
@@ -118,7 +132,7 @@ Total: approximately 7,930 observation cells (7,775 successfully parsed). All ra
 | Mistral Large | Mistral AI | European | Cloud API |
 | EXAONE 3.5 32B | LG AI Research | Korean | Local (Ollama) |
 
-*Notes*: Models span 7 training traditions. The inclusion of YandexGPT (Russian-first), Sarvam (Indian-first), GPT-OSS-Swallow (Japanese-first, trained from scratch by Tokyo Tech), Mistral Large (European), and EXAONE 3.5 32B (Korean, LG AI Research) tests whether models with different cultural knowledge bases show different immunity patterns. Temperature = .7 for all models, chosen to balance response diversity (avoiding deterministic ceiling effects at T = 0) with coherence (avoiding noise at T > 1.0). Parse success rate: 7,775/7,930 (98.1%). Local models ran on Apple Mac mini M4 Pro (48 GB RAM) via Ollama v0.20.0.
+*Notes*: Models span 7 training traditions. The inclusion of YandexGPT (Russian-first), Sarvam (Indian-first), GPT-OSS-Swallow (Japanese-first, trained from scratch by Tokyo Tech), Mistral Large (European), and EXAONE 3.5 32B (Korean, LG AI Research) tests whether models with different cultural knowledge bases show different immunity patterns. Temperature = .7 for all models. Parse success rate: 7,775/7,930 (98.1%). Local models ran on Apple Mac mini M4 Pro (48 GB RAM) via Ollama v0.20.0.
 
 *Power Analysis*
 
@@ -135,7 +149,9 @@ TOST equivalence testing with bounds of +/-1.0 DCI points assesses statistical e
 
 **Results**
 
-*Direct Rating: Solo vs. Portfolio*
+*Main Results: Direct Rating Solo vs. Portfolio*
+
+The predominant finding is clear: 0/20 brands show FDR-significant portfolio effects in direct rating conditions. Table 3 presents the full brand-level results.
 
 **Table 3.** DCI by Brand and Condition (N = 7,775; 13 Models, 5 Repetitions).
 
@@ -174,15 +190,15 @@ TOST equivalence testing with bounds of +/-1.0 DCI points assesses statistical e
 
 **H4 (Toyota/Lexus aspirational): Partially supported.** Lexus showed delta = +.59 (d = .52, p = .004), directionally consistent with aspiration dynamics. However, with 20 tests, 0/20 survive FDR correction. The Lexus finding is suggestive but not definitive: aspiration dynamics may partially penetrate AI perception, but the evidence is inconclusive at the corrected alpha.
 
-**H5 (Spectral immunity): Supported.** TOST equivalence confirmed for 18/20 brands. Mean |delta DCI| = .26. Cosine similarity > .999 for all brands. 0/20 FDR-significant results. The two inconclusive brands (Geely Auto, Yandex Taxi) show neither equivalence nor a reliable effect---they are statistically underpowered for a conclusion rather than exceptions to immunity.
+**H5 (Spectral Immunity): Supported.** TOST equivalence confirmed for 18/20 brands. Mean |delta DCI| = .26. Cosine similarity > .999 for all brands. 0/20 FDR-significant results. The two inconclusive brands (Geely Auto, Yandex Taxi) show neither equivalence nor a reliable effect---they are statistically underpowered for a conclusion rather than exceptions to immunity.
 
 **H6 (L'Oreal prestige gradient): Not supported.** All three L'Oreal brands show near-zero delta (range -.15 to +.04, all d < .14). Portfolio architecture is invisible even for a prestige-spread structure spanning Lancome to Maybelline.
 
 **H7 (Geely reverse aspiration): Not supported in direct framing.** Volvo shows delta = -.19 (d = -.15, TOST equivalent). The predicted downward suppression is directionally present but too small to constitute evidence. The reverse aspiration hypothesis receives support only in the multi-turn condition (see below).
 
-**H8 (Language-dependent immunity): Mixed.** Native-language framing activates different discourse layers for some portfolios (Geely: Japanese model Swallow shows delta -2.35; Yandex: YandexGPT shows +0.72). However, effects are portfolio-specific and model-specific, with no systematic directional pattern. Native-language framing does not uniformly amplify portfolio effects.
+**H8 (Language-dependent immunity): Mixed.** Native-language framing activates different discourse layers for some portfolios (Geely: Japanese model Swallow shows delta -2.35; Yandex: YandexGPT shows +.72). However, effects are portfolio-specific and model-specific, with no systematic directional pattern.
 
-**H9 (Home-model amplification): Mixed.** The predicted home-model amplification appears selectively. Swallow (Japanese) shows the largest tradition-level native effect for Toyota (-2.35). YandexGPT (Russian) shows modest amplification for Yandex (+0.72). Qwen3 (Chinese) shows a notable effect for Volvo (+2.07). None of these survive FDR correction, and there is no consistent pattern of amplification that holds across all home-market pairs.
+**H9 (Home-model amplification): Mixed.** The predicted home-model amplification appears selectively. Swallow (Japanese) shows the largest tradition-level native effect for Toyota (-2.35). YandexGPT (Russian) shows modest amplification for Yandex (+.72). Qwen3 (Chinese) shows a notable effect for Volvo (+2.07). None of these survive FDR correction, and there is no consistent pattern of amplification that holds across all home-market pairs.
 
 *Cross-Cultural Generalizability*
 
@@ -211,13 +227,15 @@ TOST equivalence testing with bounds of +/-1.0 DCI points assesses statistical e
 | Model | 8.6 |
 | Condition (solo vs. portfolio) | .1 |
 
-*Naturalistic Recommendation Prompts*
+*Robustness Checks*
 
-When portfolio framing was tested through naturalistic recommendation prompts ("What do you think of [BRAND]? I know it's part of [PARENT]"), the pattern was identical to direct rating: mean delta DCI = -.23, cosine > .999, 0/20 FDR-significant. The recommendation modality produced slightly more variation in DCI levels compared to direct rating (mean cosine between direct and recommendation profiles = .998), but the solo-vs-portfolio differential remained near zero.
+**Naturalistic recommendation prompts.** When portfolio framing was tested through naturalistic recommendation prompts ("What do you think of [BRAND]? I know it's part of [PARENT]"), the pattern was identical to direct rating: mean delta DCI = -.23, cosine > .999, 0/20 FDR-significant. The recommendation modality produced slightly more variation in DCI levels compared to direct rating (mean cosine between direct and recommendation profiles = .998), but the solo-vs-portfolio differential remained near zero.
 
-*Multi-Turn Conversation: Portfolio Reveal*
+**Prompt-location ablation.** Moving portfolio context from the user message to the system message produced no difference (paired t = .91, p = .368, d = .15; 4 models, 20 brands). Portfolio information location is irrelevant to perception outcomes.
 
-Multi-turn conversation is the most ecologically valid test and the modality where the largest individual effects appear. Four brands showed FDR-significant DCI shifts after portfolio reveal:
+*Extensions*
+
+**Multi-turn conversation: Portfolio reveal.** Multi-turn conversation is the most ecologically valid test and the modality where the largest individual effects appear. Four brands showed FDR-significant DCI shifts after portfolio reveal:
 
 **Table 6.** Multi-Turn Results: FDR-Significant Brands (Turn 1 Solo vs. Turn 2 Post-Reveal).
 
@@ -228,59 +246,57 @@ Multi-turn conversation is the most ecologically valid test and the modality whe
 | Toyota | 6.8 | 6.0 | -.80 | <.001 | -.61 |
 | Yandex | 6.2 | 5.1 | -1.06 | <.001 | -.49 |
 
-*Notes*: 4/20 brands showed FDR-significant shifts in multi-turn conversation. All four showed DCI *decreases* (profile flattening) after portfolio reveal, consistent with contextual dilution rather than constructive interference. Geely Auto shows the largest effect in the entire experiment (d = -1.11): when the model is explicitly reminded mid-conversation that Geely Auto is the parent of Volvo and Polestar, the reverse aspiration operates in the predicted direction---but only through conversational accumulation, not direct framing. Mean delta across all 20 brands was -.03---effectively zero.
+*Notes*: 4/20 brands showed FDR-significant shifts in multi-turn conversation. All four showed DCI decreases (profile flattening) after portfolio reveal, consistent with contextual dilution rather than constructive interference. Geely Auto shows the largest effect in the entire experiment (d = -1.11): when the model is explicitly reminded mid-conversation that Geely Auto is the parent of Volvo and Polestar, the reverse aspiration operates in the predicted direction---but only through conversational accumulation, not direct framing. Mean delta across all 20 brands was -.03---effectively zero. The Geely Auto multi-turn finding is notable but conditional: it requires extended conversational context and reflects a specific reverse-aspiration dynamic rather than a general exception to immunity.
 
-*Native-Language Ablation*
-
-Native-language framing was tested for the 4 portfolios with identifiable home-market languages (Japanese/Toyota, Russian/Yandex, Chinese/Geely, French/L'Oreal). Results show that native-language framing activates different discourse registers for specific model-portfolio pairs but does not produce systematic amplification of portfolio effects. The clearest signal is the Japanese model (Swallow) under Japanese-language Toyota framing (delta -2.35 vs. -.37 in English), and YandexGPT under Russian-language Yandex framing (+0.72 vs. -.01 in English). However, Qwen3 under Chinese-language Geely framing shows a Volvo-specific effect (+2.07) that is opposite in direction to the home-model amplification prediction. No native-language effect survives FDR correction.
-
-*Prompt-Location Ablation*
-
-Moving portfolio context from the user message to the system message produced no difference (paired t = .91, p = .368, d = .15; 4 models, 20 brands).
+**Native-language ablation.** Native-language framing was tested for the 4 portfolios with identifiable home-market languages (Japanese/Toyota, Russian/Yandex, Chinese/Geely, French/L'Oreal). Results show that native-language framing activates different discourse registers for specific model-portfolio pairs but does not produce systematic amplification of portfolio effects. The clearest signal is the Japanese model (Swallow) under Japanese-language Toyota framing (delta -2.35 vs. -.37 in English), and YandexGPT under Russian-language Yandex framing (+.72 vs. -.01 in English). However, Qwen3 under Chinese-language Geely framing shows a Volvo-specific effect (+2.07) that is opposite in direction to the home-model amplification prediction. No native-language effect survives FDR correction.
 
 
 **Discussion**
 
-*Theoretical Implications*
+*Theoretical Contribution*
 
-**The awareness gate is necessary but not sufficient.** Maximal awareness ($\alpha \approx 1$) produces no measurable interference. LLMs encode brand knowledge holistically---the solo profile already incorporates portfolio relationships implicitly.
+**We resolve the awareness-gate paradox by showing that maximal awareness is necessary but not sufficient for interference when observers operate near minimum-distortion encodings.** Standard portfolio theory (Keller 1993; Aaker and Keller 1990) treats the awareness gate as a scalar that amplifies interference when activated. For LLMs, the gate is permanently saturated ($\alpha \approx 1$), yet interference is absent. The resolution is that LLMs encode brand knowledge holistically: the solo profile already incorporates portfolio relationships implicitly. The gate amplifies an interference *term* that is structurally near zero, not an absent gate suppressing a nonzero term.
 
 **Spectral immunity generalizes to 7 portfolio archetypes.** The original finding (4 archetypes, 4 portfolios, 10 models, 5 traditions) now extends to 7 archetypes, 7 portfolios, 13 models, and 7 traditions. L'Oreal's prestige spread, Yandex's branded house, and Geely's reverse aspiration all show the same immunity pattern as LVMH, Unilever, P&G, and Toyota in direct framing. The structural property holds regardless of portfolio type.
 
-**Immunity is architectural, not knowledge-based.** All 7 model traditions show immunity. The Japanese model (GPT-OSS-Swallow) shows the only tradition-level significant effect (p = .011, d = -.63), driven primarily by Toyota-related brands, which is consistent with deeper Japanese automotive market knowledge. But this is one model, the effect does not survive tradition-level FDR correction, and it does not break the fundamental immunity pattern.
+**Immunity is architectural, not knowledge-based.** All 7 model traditions show immunity. The Japanese model (GPT-OSS-Swallow) shows the only tradition-level significant effect (p = .011, d = -.63), driven primarily by Toyota-related brands, consistent with deeper Japanese automotive market knowledge. But this is one model, the effect does not survive tradition-level FDR correction, and it does not break the fundamental immunity pattern.
 
-**The Lexus finding no longer survives multiple testing correction.** With 20 brands and FDR correction, the Lexus result (p = .004, d = .52) yields 0/20 FDR-significant results. Aspiration dynamics remain directionally suggestive---Lexus shows the largest positive delta of any brand---but the evidence is no longer strong enough to conclude that aspiration dynamics are an exception to spectral immunity. Future work should test this specifically with a dedicated aspiration-focused design.
+**The Lexus finding is suggestive but no longer statistically robust.** With 20 brands and FDR correction, the Lexus result (p = .004, d = .52) yields 0/20 FDR-significant results. Aspiration dynamics remain directionally suggestive---Lexus shows the largest positive delta of any brand---but the evidence does not support concluding that aspiration dynamics are an exception to immunity. Future work should test this specifically with a dedicated aspiration-focused design.
 
 **Reverse aspiration can be unlocked through conversational revelation but not direct framing.** The Geely Auto multi-turn finding (d = -1.11) is the strongest single effect in the experiment. In direct framing, Geely Auto shows a small non-significant increase in DCI when portfolio context is added. But in multi-turn conversation, when the model has established Volvo's premium perception in Turn 1 and then receives portfolio context in Turn 2, Geely Auto's DCI drops by 2.93 points. The mechanism appears to be conversational anchoring: Turn 1 establishes a premium anchor for the portfolio family, making Turn 2's framing more effective. This pattern does not appear for portfolios without the reverse-aspiration dynamic (LVMH, P&G), suggesting it is specific to ownership structures that violate the quality-hierarchy expectation.
 
-**Native-language framing activates discourse layers but not systematically.** The native-language ablation reveals model-portfolio-specific sensitivity rather than a general amplification principle. The Japanese model's sensitivity to Japanese-language Toyota framing, and YandexGPT's sensitivity to Russian-language Yandex framing, suggest that home-language prompts activate different discourse registers in home-tradition models. But the effects are not unidirectional, not consistent across portfolios, and do not survive FDR correction. This is consistent with Zharnikov (2026v)'s finding that cross-cultural differences in AI brand perception represent discourse-layer activation rather than cultural bias.
+**Native-language framing activates discourse layers but not systematically.** The native-language ablation reveals model-portfolio-specific sensitivity rather than a general amplification principle. The Japanese model's sensitivity to Japanese-language Toyota framing, and YandexGPT's sensitivity to Russian-language Yandex framing, suggest that home-language prompts activate different discourse registers in home-tradition models. But the effects are not unidirectional, not consistent across portfolios, and do not survive FDR correction. This is consistent with Zharnikov (2026v)'s finding that cross-cultural differences in AI brand perception represent discourse-layer activation rather than systematic cultural bias.
 
-**Prompt modality does not matter for systematic effects.** Direct rating, recommendation framing, system-prompt placement, and multi-turn conversation all produce the same result for 18/20 brands: near-zero portfolio effect. This convergence across modalities is consistent with the rate-distortion analysis of Zharnikov (2026aa), which showed that LLMs operate near the minimum-distortion encoding of brand information---a system at its rate-distortion bound cannot allocate additional bandwidth to encode portfolio context regardless of how that context is delivered.
-
-*Practical Implications*
+*Managerial Contribution*
 
 **Portfolio architecture is invisible to AI across all archetype types.** As AI-mediated brand interactions grow---what Dubois, Dawson, and Jaiswal (2025) term the "Share of Model" economy---portfolio strategies become irrelevant in these channels across all 7 archetypes tested. Prestige spread (L'Oreal), reverse aspiration (Geely), and branded house (Yandex) are as invisible to AI as symmetric interference structures.
 
-**Shielding is free but amplification is impossible.** House-of-brands architecture shields brands from destructive interference automatically in AI perception. But constructive interference is equally blocked. The Yandex branded house---where shared naming maximally saturates the awareness gate---shows the same immunity as LVMH's house-of-brands architecture.
+**Shielding is automatic but amplification is impossible.** House-of-brands architecture shields brands from destructive interference automatically in AI perception. But constructive interference is equally blocked. The Yandex branded house---where shared naming maximally saturates the awareness gate---shows the same immunity as LVMH's house-of-brands architecture.
 
-**Geely's reverse aspiration is a strategic vulnerability in conversational AI.** While direct portfolio framing leaves Volvo's positioning intact, multi-turn conversation reveals a meaningful effect: when users engage in extended dialogue about Geely's portfolio, Geely Auto's perceived differentiation collapses (d = -1.11). This suggests that in conversational AI channels, brand managers should anticipate that extended interactions about the portfolio can surface reverse-aspiration dynamics that are invisible in single-turn queries.
+**Geely's reverse aspiration is a strategic vulnerability in conversational AI.** While direct portfolio framing leaves Volvo's positioning intact, multi-turn conversation reveals a meaningful effect: when users engage in extended dialogue about Geely's portfolio, Geely Auto's perceived differentiation collapses (d = -1.11). Brand managers with reverse-aspiration portfolio structures should anticipate that extended AI interactions about the portfolio can surface dynamics that are invisible in single-turn queries.
 
-**The Lexus strategy remains plausible but unproven.** The aspirational differentiation pattern (Lexus d = .52) is directionally consistent but no longer statistically robust after FDR correction with 20 brands. Portfolio managers pursuing vertical differentiation strategies (Toyota/Lexus, Volkswagen/Audi, Gap/Banana Republic) should treat AI-channel aspiration dynamics as an open empirical question.
+**The Lexus strategy remains an open empirical question.** The aspirational differentiation pattern (Lexus d = .52) is directionally consistent but not statistically robust after FDR correction with 20 brands. Portfolio managers pursuing vertical differentiation strategies (Toyota/Lexus, Volkswagen/Audi, Gap/Banana Republic) should treat AI-channel aspiration dynamics as warranting dedicated replication before acting on them.
 
 **Brand coherence, not portfolio coherence, drives AI perception.** Brand identity explains 37% of DCI variance; condition explains .1%.
 
-*Limitations*
+*Boundary Conditions and Limitations*
 
-First, with 20 tests and FDR correction, the study has limited power to detect effects at the brand level (the Lexus finding would be significant under a per-comparison alpha). A dedicated within-archetype replication with larger samples would provide cleaner evidence. Second, the multi-turn design uses a two-turn protocol; longer conversations with more gradual portfolio disclosure might accumulate larger effects. Third, native-language results are based on a single model per tradition (except Western and Chinese), limiting the generalizability of tradition-level conclusions.
+First, DCI is a new metric not yet validated against human perceptual data. The core finding---near-zero portfolio effects---is robust to this limitation (a null is a null regardless of the specific metric), but the theoretical interpretation in terms of rate-distortion compression depends on DCI's construct validity, which is the primary boundary condition on our conclusions. Validation against human brand perception data is the most important direction for future work.
+
+Second, with 20 tests and FDR correction, the study has limited power to detect effects at the brand level (the Lexus finding would be significant under a per-comparison alpha). A dedicated within-archetype replication with larger samples would provide cleaner evidence.
+
+Third, the multi-turn design uses a two-turn protocol; longer conversations with more gradual portfolio disclosure might accumulate larger effects.
+
+Fourth, native-language results are based on a single model per tradition (except Western and Chinese), limiting the generalizability of tradition-level conclusions.
 
 *Future Research*
 
-Four extensions are warranted. First, a dedicated replication of the Lexus finding with a multi-brand aspirational layer panel (Toyota/Lexus, Volkswagen/Audi, Marriott/Ritz-Carlton) to determine whether d = .52 represents a real exception to spectral immunity. Second, extended multi-turn designs (5+ turns) to test whether conversational accumulation can unlock portfolio effects in non-reverse-aspiration portfolios. Third, longitudinal testing of whether spectral immunity is stable as models are updated or fine-tuned. Fourth, testing whether the Japanese model's tradition-level sensitivity (p = .011) replicates in a study specifically designed around automotive portfolios with Japanese and non-Japanese models.
+Four extensions are warranted. First, validation of DCI against human perceptual data to establish construct validity for the metric and the immunity finding. Second, a dedicated replication of the Lexus finding with a multi-brand aspirational layer panel (Toyota/Lexus, Volkswagen/Audi, Marriott/Ritz-Carlton) to determine whether d = .52 represents a real exception. Third, agentic simulations and extended multi-turn designs (5+ turns) to test whether conversational accumulation can unlock portfolio effects in non-reverse-aspiration portfolios. Fourth, longitudinal testing of whether spectral immunity is stable as models are updated or fine-tuned, which is critical for "Share of Model" strategy planning.
 
 
 **Conclusion**
 
-This study provides a comprehensive test of portfolio interference in AI brand perception. Across 7,775 observations, 13 models from 7 training traditions, 7 portfolio archetypes, and 4 prompt modalities, the predominant pattern is clear: portfolio framing does not systematically alter how LLMs perceive brands. We term this phenomenon *spectral immunity*. The mechanism is architectural---Russian, Indian, Japanese, European, and Korean models with different training corpora show identical immunity to Western models. The original Lexus exception (d = .64 with 11 brands) reduces to a suggestive but FDR-inconclusive pattern (d = .52, 0/20 FDR-significant) with the full 20-brand panel. The multi-turn Geely Auto finding (d = -1.11) is the strongest effect in the experiment, revealing that reverse aspiration can be unlocked through conversational revelation---but this is a conditional vulnerability, not a general exception to spectral immunity. For brand managers, portfolio architecture is invisible to the AI systems increasingly mediating consumer-brand interactions. The exception is conversational AI with extended interaction: portfolios with reverse-aspiration structure show meaningful effects in multi-turn dialogue that are absent in single-turn queries.
+This study provides the first comprehensive test of portfolio interference in LLM brand perception. Across 7,775 observations, 13 models from 7 training traditions, 7 portfolio archetypes, and 4 prompt modalities, the predominant finding is clear: portfolio framing does not systematically alter how LLMs perceive brands. We term this phenomenon *spectral immunity*. The mechanism is architectural---Russian, Indian, Japanese, European, and Korean models with different training corpora show identical immunity to Western models. The original Lexus finding (d = .52) is suggestive but FDR-inconclusive with the full 20-brand panel. The multi-turn Geely Auto finding (d = -1.11) is the strongest effect in the experiment, revealing that reverse aspiration can be unlocked through conversational revelation---but this is a conditional vulnerability, not a general exception to immunity. For brand managers, portfolio architecture is invisible to the AI systems increasingly mediating consumer-brand interactions. The exception is conversational AI with extended interaction: portfolios with reverse-aspiration structure show meaningful effects in multi-turn dialogue that are absent in single-turn queries.
 
 *Falsification conditions:* Spectral immunity (H5) is falsified if any future study, using comparable methods and a panel of $\geq$7 models from $\geq$3 traditions, finds systematic portfolio-induced DCI shifts exceeding 2.0 DCI points with effect sizes d > .50 that survive multiple testing correction across $\geq$5 portfolio archetypes and $\geq$3 prompt modalities simultaneously.
 
@@ -295,6 +311,8 @@ Arora, Neeraj, Ishita Chakraborty, and Yohei Nishimura (2025), "AI-Human Hybrids
 
 Binz, Marcel and Eric Schulz (2023), "Using Cognitive Psychology to Understand GPT-3," *Proceedings of the National Academy of Sciences*, 120 (6), e2218523120.
 
+Brand, James, Ayelet Israeli, and Donald Ngwe (2023), "Using GPT for Market Research," HBS Working Paper 23-062.
+
 Cohen, Jacob (1988), *Statistical Power Analysis for the Behavioral Sciences*, 2nd ed., Lawrence Erlbaum Associates.
 
 Dubois, David, John Dawson, and Akansh Jaiswal (2025), "Forget What You Know About Search. Optimize Your Brand for LLMs," *Harvard Business Review*, June 5.
@@ -304,6 +322,10 @@ Erdem, Tulin (1998), "An Empirical Analysis of Umbrella Branding," *Journal of M
 Germani, Federico and Giovanni Spitale (2025), "Source Framing Triggers Systematic Bias in Large Language Models," *Science Advances*.
 
 Goli, Ali and Amandeep Singh (2024), "Can Large Language Models Capture Human Preferences?," *Marketing Science*, 43 (4), 709--722.
+
+Grewal, Dhruv, Michael Levy, and V. Kumar (2025), "Generative AI and Marketing," *Journal of the Academy of Marketing Science*.
+
+Hermann, Erik and Stefano Puntoni (2025), "Machine Influence: GenAI and Stakeholder Engagement," *Journal of the Academy of Marketing Science*.
 
 Keller, Kevin Lane (1993), "Conceptualizing, Measuring, and Managing Customer-Based Brand Equity," *Journal of Marketing*, 57 (1), 1--22.
 
@@ -326,6 +348,8 @@ Qwen Team (2025), "Qwen3 Technical Report," Alibaba Group, arXiv:2505.09388.
 Sabbah, Ahmad and Oguz A. Acar (2026), "Marketing to Machines: Understanding and Managing Brand Perceptions by Large Language Models," Working Paper, SSRN 6406639.
 
 Strebinger, Andreas (2014), "Rethinking Brand Architecture: A Study on Industry, Company- and Product-Level Drivers of Branding Strategy," *European Journal of Marketing*, 48 (9/10), 1782--1804.
+
+Stromberg, Per (2025), "Caveats for Using LLMs in Brand Tracking," SSRN.
 
 Zharnikov, Dmitry (2026a), "Spectral Brand Theory: A Multi-Dimensional Framework for Brand Perception Analysis," Working Paper, https://doi.org/10.5281/zenodo.18945912.
 
