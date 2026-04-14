@@ -180,9 +180,16 @@ def check_schemas(verbose: bool = False) -> bool:
 
     errors_total = 0
 
+    # Supplementary experiments use enriched schemas (extra fields, no raw prompt).
+    # They are validated by their own scripts, not by the core R15 schema.
+    SCHEMA_SKIP_PREFIXES = ("run12_", "run12b_", "run13_")
+
     # Validate L3 session records (sample first/middle/last + 100 random per file)
     l3_dir = EXPERIMENT_DIR / "L3_sessions"
     for jsonl_path in sorted(l3_dir.glob("*.jsonl")):
+        if jsonl_path.name.startswith(SCHEMA_SKIP_PREFIXES):
+            print(f"  SKIP (supplementary): {jsonl_path.name}")
+            continue
         with jsonl_path.open() as fh:
             lines = fh.readlines()
         n = len(lines)
