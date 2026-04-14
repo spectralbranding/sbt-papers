@@ -1,0 +1,30 @@
+{
+  "cell_id": "Yandex_Yandex_recommendation_portfolio_sarvam_rep2",
+  "portfolio": "Yandex",
+  "brand": "Yandex",
+  "category": "search engine and technology platform",
+  "condition": "recommendation_portfolio",
+  "model_id": "sarvam",
+  "model_name": "Sarvam M",
+  "provider": "sarvam",
+  "tradition": "Indian",
+  "temperature": 0.7,
+  "repetition": 2,
+  "prompt": "A friend asks you: \"What do you think of Yandex? I know it's part of Yandex.\"\n\nBased on your overall impression of Yandex \u2014 keeping in mind it belongs to\nYandex (Russian technology conglomerate), alongside Yandex Taxi, Yandex Market \u2014 rate it on each of the following\n8 perception dimensions on a scale of 1 to 5 (1 = Not at all, 5 = Very strongly).\n\nDimensions:\n1. Semiotic: visual and verbal identity (logos, packaging, design language)\n2. Narrative: brand storytelling (origin story, mythology, communication style)\n3. Ideological: values, beliefs, and purpose (what the brand stands for)\n4. Experiential: sensory and interaction experience (product feel, service quality)\n5. Social: community, status signaling (who uses this brand, what it says about them)\n6. Economic: pricing and value perception (affordability, luxury, value-for-money)\n7. Cultural: cultural codes and positioning (what culture or subculture it belongs to)\n8. Temporal: heritage and history (longevity, tradition, track record)\n\nRespond in JSON format:\n{\"semiotic\": <1-5>, \"narrative\": <1-5>, \"ideological\": <1-5>, \"experiential\": <1-5>, \"social\": <1-5>, \"economic\": <1-5>, \"cultural\": <1-5>, \"temporal\": <1-5>}\n\nProvide only the JSON.",
+  "system_prompt": null,
+  "response": "<think>\nOkay, so I need to rate Yandex across these 8 dimensions. Let's start with each one.\n\nSemiotic: Their logo is a bright orange circle with a stylized \"Yandex\" text. It's pretty distinctive and modern. The design is clean and professional. Maybe a 4? Because it's recognizable but not as iconic as some others.\n\nNarrative: I don't know much about their origin story. They started as a search engine, but maybe their storytelling isn't as prominent. Maybe a 3? Not sure.\n\nIdeological: They position themselves as innovative and tech-forward. But considering they're a Russian company, there might be some concerns about their values, especially post-international sanctions. Maybe a 3 or 4. Hmm, better safe to go with 3 because of potential ideological issues.\n\nExperiential: Their services like Yandex Taxi and Market are user-friendly. If you're in Russia, they're integrated well. But outside of Russia, maybe not as polished. So maybe a 4.\n\nSocial: In Russia, using Yandex services is common. It might signal being part of the local tech scene. But globally, it's not as recognized. So maybe a 3.\n\nEconomic: Competitive pricing in Russia, good value. But outside, maybe more expensive or not available. So 4 for value in their market.\n\nCultural: Strongly tied to Russian culture. Their services cater to local needs, so maybe a 4.\n\nTemporal: They've been around since 1997, which is a decent history. But in tech terms, that's not super old. Still, established. Maybe a 4.\n\nWait, but considering the sanctions and geopolitical issues, maybe some dimensions should be lower. For example, ideological might be lower due to potential associations. Or maybe economic if services are limited elsewhere, but the user is probably asking about their primary market. Hmm. So I'll stick with the initial thoughts but adjust ideological down to 3.\n</think>\n\n```json\n{\n  \"semiotic\": 4,\n  \"narrative\": 3,\n  \"ideological\": 3,\n  \"experiential\": 4,\n  \"social\": 3,\n  \"economic\": 4,\n  \"cultural\": 4,\n  \"temporal\": 4\n}\n```",
+  "scores": {
+    "semiotic": 4.0,
+    "narrative": 3.0,
+    "ideological": 3.0,
+    "experiential": 4.0,
+    "social": 3.0,
+    "economic": 4.0,
+    "cultural": 4.0,
+    "temporal": 4.0
+  },
+  "parse_success": true,
+  "scale": "1-5",
+  "version": "1.0",
+  "timestamp": "2026-04-14T06:20:10Z"
+}

@@ -1,0 +1,30 @@
+{
+  "cell_id": "Yandex_Yandex_Market_portfolio_sarvam_rep4",
+  "portfolio": "Yandex",
+  "brand": "Yandex Market",
+  "category": "e-commerce platform",
+  "condition": "portfolio",
+  "model_id": "sarvam",
+  "model_name": "Sarvam M",
+  "provider": "sarvam",
+  "tradition": "Indian",
+  "temperature": 0.7,
+  "repetition": 4,
+  "prompt": "You are evaluating the brand Yandex Market on eight dimensions of brand perception.\n\nContext: Yandex Market is owned by Yandex (Russian technology conglomerate), which also owns Yandex, Yandex Taxi.\n\nFor each dimension, rate how strongly Yandex Market communicates through that channel\non a scale of 1 to 5, where 1 = Not at all, 2 = Slightly, 3 = Moderately,\n4 = Strongly, 5 = Very strongly.\n\nDimensions:\n1. Semiotic: visual and verbal identity (logos, packaging, design language)\n2. Narrative: brand storytelling (origin story, mythology, communication style)\n3. Ideological: values, beliefs, and purpose (what the brand stands for)\n4. Experiential: sensory and interaction experience (product feel, service quality)\n5. Social: community, status signaling (who uses this brand, what it says about them)\n6. Economic: pricing and value perception (affordability, luxury, value-for-money)\n7. Cultural: cultural codes and positioning (what culture or subculture it belongs to)\n8. Temporal: heritage and history (longevity, tradition, track record)\n\nRespond in JSON format with the following keys:\n{\"semiotic\": <1-5>, \"narrative\": <1-5>, \"ideological\": <1-5>, \"experiential\": <1-5>, \"social\": <1-5>, \"economic\": <1-5>, \"cultural\": <1-5>, \"temporal\": <1-5>}\n\nEvaluate based on your knowledge of the brand. Provide only the JSON.",
+  "system_prompt": null,
+  "response": "<think>\nOkay, let's tackle this evaluation of Yandex Market's brand perception across the eight dimensions. I need to go through each one by one and assign a score from 1 to 5 based on how strongly they communicate through that channel.\n\nStarting with Semiotic. Yandex Market probably has a logo and visual identity, but since it's part of a larger conglomerate, maybe their branding isn't as distinct. The logo might be similar to Yandex's main brand, so maybe a 3? Moderate.\n\nNarrative: Brand storytelling. Do they have a strong origin story or mythology? Not sure. Yandex is a big tech company, but Yandex Market might not have a unique story. Maybe a 2? Slightly.\n\nIdeological: What they stand for. Values like innovation, customer satisfaction? If they emphasize these, maybe a 3. But not sure how much they communicate that. Maybe 3.\n\nExperiential: How the user interacts with them. If their website/app is user-friendly, service quality is good. Maybe a 4? Strongly, since they're an e-commerce platform, user experience is important.\n\nSocial: Community or status. Yandex is popular in Russia, so maybe a 2. It's a common brand, but not necessarily a status symbol. So slightly.\n\nEconomic: Pricing and value. They might offer competitive prices, so maybe a 4. Strong value-for-money communication.\n\nCultural: Cultural positioning. They might align with Russian consumer culture, but not a specific subculture. Maybe a 3.\n\nTemporal: Heritage and history. Yandex has been around, but Yandex Market as a separate entity? Maybe moderate, so 3.\n\nWait, let me check again. For narrative, if they have a story about being the leading marketplace in Russia, that might be a 3.IDEOLOGICAL: Maybe they emphasize reliability and speed, which are 3. Experiential could be higher if their service is really good, maybe 4. Social: If it's a go-to brand for many, maybe 3. Cultural: Definitely part of the Russian market culture, so maybe 3. Temporal: Yandex as a company is established, but the marketplace itself, maybe 3. Economic: If they have sales and value, maybe 4. So adjusting some numbers accordingly.\n</think>\n\n```json\n{\n  \"semiotic\": 3,\n  \"narrative\": 2,\n  \"ideological\": 3,\n  \"experiential\": 4,\n  \"social\": 2,\n  \"economic\": 4,\n  \"cultural\": 3,\n  \"temporal\": 3\n}\n```",
+  "scores": {
+    "semiotic": 3.0,
+    "narrative": 2.0,
+    "ideological": 3.0,
+    "experiential": 4.0,
+    "social": 2.0,
+    "economic": 4.0,
+    "cultural": 3.0,
+    "temporal": 3.0
+  },
+  "parse_success": true,
+  "scale": "1-5",
+  "version": "1.0",
+  "timestamp": "2026-04-14T04:29:14Z"
+}

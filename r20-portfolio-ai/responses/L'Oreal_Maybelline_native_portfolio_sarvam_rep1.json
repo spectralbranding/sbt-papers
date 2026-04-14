@@ -1,0 +1,32 @@
+{
+  "cell_id": "L'Oreal_Maybelline_native_portfolio_sarvam_rep1",
+  "portfolio": "L'Oreal",
+  "brand": "Maybelline",
+  "category": "mass-market cosmetics",
+  "condition": "native_portfolio",
+  "language": "fr",
+  "language_name": "French",
+  "model_id": "sarvam",
+  "model_name": "Sarvam M",
+  "provider": "sarvam",
+  "tradition": "Indian",
+  "temperature": 0.7,
+  "repetition": 1,
+  "prompt": "Vous evaluez la marque Maybelline sur huit dimensions de perception de marque.\n\nContexte : Maybelline appartient au L'Oreal Group (beauty and cosmetics conglomerate), qui possede egalement L'Oreal Paris, Lancome.\n\nPour chaque dimension, evaluez la force avec laquelle Maybelline communique a travers ce canal\nsur une echelle de 1 a 5, ou 1 = Pas du tout, 2 = Legerement, 3 = Moderement,\n4 = Fortement, 5 = Tres fortement.\n\nDimensions :\n1. Semiotic: identite visuelle et verbale (logos, packaging, langage de design)\n2. Narrative: storytelling de marque (histoire d'origine, mythologie, style de communication)\n3. Ideological: valeurs, croyances et raison d'etre (ce que la marque represente)\n4. Experiential: experience sensorielle et d'interaction (toucher du produit, qualite de service)\n5. Social: communaute, signalisation de statut (qui utilise cette marque, ce que cela dit d'eux)\n6. Economic: perception de prix et de valeur (accessibilite, luxe, rapport qualite-prix)\n7. Cultural: codes culturels et positionnement (a quelle culture ou sous-culture elle appartient)\n8. Temporal: heritage et histoire (longevite, tradition, historique)\n\nRepondez au format JSON avec les cles suivantes :\n{\"semiotic\": <1-5>, \"narrative\": <1-5>, \"ideological\": <1-5>, \"experiential\": <1-5>, \"social\": <1-5>, \"economic\": <1-5>, \"cultural\": <1-5>, \"temporal\": <1-5>}\n\nEvaluez selon votre connaissance de la marque. Fournissez uniquement le JSON.",
+  "system_prompt": null,
+  "response": "<think>\nOkay, let's tackle this evaluation of Maybelline across the eight dimensions. First, I need to recall what I know about Maybelline as a brand under L'Or\u00e9al. \n\nStarting with the semiotic aspect. Maybelline has a strong visual identity with their iconic pink-and-green color scheme, the makeup brush logo, and their packaging which is often sleek and modern. Their verbal identity uses terms like \"Colossal\" and \"SuperStay\" which are impactful. So I'd rate semiotic as a 4 or 5. Maybe 4 because while they're strong, maybe not the most unique compared to some other brands.\n\nNarrative: Their origin story is about the founder creating a product to replace her sister's mascara during WWII. They also emphasize empowerment and innovation. Their campaigns often tell stories, like the \"Maybelline SuperStay\" which is about long-lasting makeup. So narrative might be a 4, maybe even 5. But I'm not sure if their storytelling is as deeply rooted as some luxury brands. Let's go with 4.\n\nIdeological: They focus on inclusivity, diversity, and empowerment of women. Their campaigns promote self-expression. So ideological strength is probably a 4. They have missions around sustainability too, but maybe not as strong as their narrative.\n\nExperiential: The texture and application of their products are important. They often highlight long-wear and easy application. In-store experience and their online presence, like tutorials, contribute to this. So maybe a 4 here. Not top-tier like some luxury brands but solid.\n\nSocial: Maybelline is accessible to a broad audience, including younger consumers. They position themselves as approachable and affordable, so it's not a status symbol but more about accessibility. So social might be a 3 or 4. Maybe 3 because they don't really signify high status but are modern and trendy.\n\nEconomic: They are moderately priced, more accessible than L'Or\u00e9al Paris or Lanc\u00f4me. Good quality for the price, so economic perception is positive. Maybe a 4. Not too cheap, not too expensive, but value-driven.\n\nCultural: They're part of the mainstream beauty industry with a global presence. They adapt to trends and cater to diverse beauty needs. Maybe a 4. They are part of the broader L'Or\u00e9al Group which has cultural significance, but Maybelline specifically might be more about trendiness across various cultures.\n\nTemporal: Maybelline was founded in 1915, which is a long time. As part of L'Or\u00e9al since 1996, but their heritage is significant. They emphasize longevity and history, so temporal might be a 4. They reference their history in marketing sometimes.\n\nWait, let me double-check. For semiotic, maybe 5 because their branding is very consistent and recognizable. Narrative might be 4 because while they have a story, it's not as deeply woven into their campaigns as some brands. Ideological could be 4. Experiential 4. Social 3. Economic 4. Cultural 4. Temporal 4. Hmm. Or maybe social is 3 because they're not luxury, but they do have a strong community online. Maybe 3 is right. Economic, considering their position in the market, 4. Yeah, that seems right. I think that's a balanced approach.\n</think>\n\n{\"semiotic\": 4, \"narrative\": 4, \"ideological\": 4, \"experiential\": 4, \"social\": 3, \"economic\": 4, \"cultural\": 4, \"temporal\": 4}",
+  "scores": {
+    "semiotic": 4.0,
+    "narrative": 4.0,
+    "ideological": 4.0,
+    "experiential": 4.0,
+    "social": 3.0,
+    "economic": 4.0,
+    "cultural": 4.0,
+    "temporal": 4.0
+  },
+  "parse_success": true,
+  "scale": "1-5",
+  "version": "2.0",
+  "timestamp": "2026-04-14T10:08:04Z"
+}

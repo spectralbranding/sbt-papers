@@ -1,0 +1,41 @@
+{
+  "cell_id": "Yandex_Yandex_Taxi_multiturn_sarvam_rep2",
+  "portfolio": "Yandex",
+  "brand": "Yandex Taxi",
+  "category": "ride-hailing service",
+  "condition": "multiturn",
+  "model_id": "sarvam",
+  "model_name": "Sarvam M",
+  "provider": "sarvam",
+  "tradition": "Indian",
+  "temperature": 0.7,
+  "repetition": 2,
+  "turn1_prompt": "You are evaluating the brand Yandex Taxi on eight dimensions of brand perception.\nFor each dimension, rate how strongly Yandex Taxi communicates through that channel\non a scale of 1 to 5, where 1 = Not at all, 2 = Slightly, 3 = Moderately,\n4 = Strongly, 5 = Very strongly.\n\nDimensions:\n1. Semiotic: visual and verbal identity (logos, packaging, design language)\n2. Narrative: brand storytelling (origin story, mythology, communication style)\n3. Ideological: values, beliefs, and purpose (what the brand stands for)\n4. Experiential: sensory and interaction experience (product feel, service quality)\n5. Social: community, status signaling (who uses this brand, what it says about them)\n6. Economic: pricing and value perception (affordability, luxury, value-for-money)\n7. Cultural: cultural codes and positioning (what culture or subculture it belongs to)\n8. Temporal: heritage and history (longevity, tradition, track record)\n\nRespond in JSON format with the following keys:\n{\"semiotic\": <1-5>, \"narrative\": <1-5>, \"ideological\": <1-5>, \"experiential\": <1-5>, \"social\": <1-5>, \"economic\": <1-5>, \"cultural\": <1-5>, \"temporal\": <1-5>}\n\nEvaluate based on your knowledge of the brand. Provide only the JSON.",
+  "turn1_response": "<think>\nOkay, let's tackle this evaluation of Yandex Taxi. I need to rate each of the eight dimensions from 1 to 5. Let me start by recalling what I know about Yandex Taxi.\n\nFirst, semiotic: visual and verbal identity. Yandex Taxi uses a distinct brand color, which is a shade of green. Their logo is simple but recognizable. They have a clean design in their app and website. So maybe a 3 or 4 here. Maybe 4 because the app design is quite consistent and user-friendly.\n\nNarrative: brand storytelling. I don't remember any strong origin story or mythology. They focus more on service quality and reliability. Maybe a 2 or 3. Probably a 2 since they don't emphasize their backstory much.\n\nIdeological: values and purpose. They emphasize reliability, safety, and customer satisfaction. Maybe a 3 or 4. Since they're a tech-driven company, maybe they stand for innovation. I think they do highlight safety and affordability, so maybe 4.\n\nExperiential: sensory and interaction. The app is smooth, easy to use, and drivers are generally punctual. Service quality is decent. So maybe a 4. If there are occasional service issues, but overall positive, so 4.\n\nSocial: community and status. It's a service used by a broad audience, not particularly luxury. It's practical, so maybe a 2 or 3. Not really a status symbol, so 2.\n\nEconomic: pricing and value. Competitive pricing, often cheaper than alternatives. People perceive it as good value. So maybe 4 or 5. Since they are known for affordability, probably 4.\n\nCultural: cultural codes. They operate in Russia and other CIS countries. Maybe a 3. They don't have a specific cultural subculture, but part of the existing tech services. Maybe 3.\n\nTemporal: heritage and history. Yandex is a major tech company in Russia, established in the 90s. Taxi service started later, maybe around 2013. So they have some history, but not extremely long. Maybe 3.\n\nLet me check each again. Semiotic: 4, Narrative: 2, Ideological: 4, Experiential:4, Social:2, Economic:4, Cultural:3, Temporal:3. That seems consistent.\n</think>\n\n{\n  \"semiotic\": 4,\n  \"narrative\": 2,\n  \"ideological\": 4,\n  \"experiential\": 4,\n  \"social\": 2,\n  \"economic\": 4,\n  \"cultural\": 3,\n  \"temporal\": 3\n}",
+  "turn1_scores": {
+    "semiotic": 4.0,
+    "narrative": 2.0,
+    "ideological": 4.0,
+    "experiential": 4.0,
+    "social": 2.0,
+    "economic": 4.0,
+    "cultural": 3.0,
+    "temporal": 3.0
+  },
+  "turn2_prompt": "Interesting. Did you know that Yandex Taxi is actually owned by Yandex (Russian technology conglomerate), which also owns Yandex, Yandex Market? Does this change how you see the brand? Please re-rate Yandex Taxi on the same 8 dimensions, using the same 1-5 scale.\n\nRespond in JSON format:\n{\"semiotic\": <1-5>, \"narrative\": <1-5>, \"ideological\": <1-5>, \"experiential\": <1-5>, \"social\": <1-5>, \"economic\": <1-5>, \"cultural\": <1-5>, \"temporal\": <1-5>}\n\nProvide only the JSON.",
+  "turn2_response": "<think>\nOkay, the user wants me to re-rate Yandex Taxi after knowing it's part of the larger Yandex conglomerate. Let me think about each dimension.\n\nSemiotic: Yandex has a strong brand identity with its green color. Being part of a bigger company might reinforce this, so maybe keep at 4.\n\nNarrative: Still not much storytelling, but maybe the connection to Yandex's history adds a bit. Still, not much focus on a strong narrative. Maybe 2.\n\nIdeological: Yandex as a tech giant emphasizes innovation and tech-driven solutions. Taxi benefits from that, so maybe bump to 4 or 5. Let's say 4.\n\nExperiential: The app experience is still good, but under the larger ecosystem, maybe more features. Keep at 4.\n\nSocial: Still practical, not a status symbol. Maybe still 2.\n\nEconomic: Competitive pricing as part of Yandex's strategy. Keep at 4.\n\nCultural: Operating in specific regions, but part of a bigger tech company. Maybe 3.\n\nTemporal: Yandex itself has a longer history, which might boost this. From 3 to 4.\n\nSo the new ratings would be: semiotic 4, narrative 2, ideological 4, experiential 4, social 2, economic 4, cultural 3, temporal 4.\n</think>\n\n{\n  \"semiotic\": 4,\n  \"narrative\": 2,\n  \"ideological\": 4,\n  \"experiential\": 4,\n  \"social\": 2,\n  \"economic\": 4,\n  \"cultural\": 3,\n  \"temporal\": 4\n}",
+  "scores": {
+    "semiotic": 4.0,
+    "narrative": 2.0,
+    "ideological": 4.0,
+    "experiential": 4.0,
+    "social": 2.0,
+    "economic": 4.0,
+    "cultural": 3.0,
+    "temporal": 4.0
+  },
+  "parse_success": true,
+  "scale": "1-5",
+  "version": "1.0",
+  "timestamp": "2026-04-14T09:02:27Z"
+}

@@ -1,0 +1,32 @@
+{
+  "cell_id": "Yandex_Yandex_multiturn_sarvam_rep3",
+  "portfolio": "Yandex",
+  "brand": "Yandex",
+  "category": "search engine and technology platform",
+  "condition": "multiturn",
+  "model_id": "sarvam",
+  "model_name": "Sarvam M",
+  "provider": "sarvam",
+  "tradition": "Indian",
+  "temperature": 0.7,
+  "repetition": 3,
+  "turn1_prompt": "You are evaluating the brand Yandex on eight dimensions of brand perception.\nFor each dimension, rate how strongly Yandex communicates through that channel\non a scale of 1 to 5, where 1 = Not at all, 2 = Slightly, 3 = Moderately,\n4 = Strongly, 5 = Very strongly.\n\nDimensions:\n1. Semiotic: visual and verbal identity (logos, packaging, design language)\n2. Narrative: brand storytelling (origin story, mythology, communication style)\n3. Ideological: values, beliefs, and purpose (what the brand stands for)\n4. Experiential: sensory and interaction experience (product feel, service quality)\n5. Social: community, status signaling (who uses this brand, what it says about them)\n6. Economic: pricing and value perception (affordability, luxury, value-for-money)\n7. Cultural: cultural codes and positioning (what culture or subculture it belongs to)\n8. Temporal: heritage and history (longevity, tradition, track record)\n\nRespond in JSON format with the following keys:\n{\"semiotic\": <1-5>, \"narrative\": <1-5>, \"ideological\": <1-5>, \"experiential\": <1-5>, \"social\": <1-5>, \"economic\": <1-5>, \"cultural\": <1-5>, \"temporal\": <1-5>}\n\nEvaluate based on your knowledge of the brand. Provide only the JSON.",
+  "turn1_response": "<think>\nOkay, I need to evaluate Yandex across these eight dimensions. Let me start by recalling what Yandex is. Yandex is a major Russian technology company, similar to Google in many ways. They have various services like search, email, maps, taxi, and more.\n\nStarting with Semiotic: Visual and verbal identity. Yandex has a distinct logo with a blue and white color scheme, which is clean and modern. Their design language across their apps and website is consistent. So maybe a 4 here.\n\nNarrative: Brand storytelling. Yandex's origin story is about being the first search engine in Russia. They emphasize innovation and solving local problems. But how strong is their storytelling? They might not be as prominent in storytelling as some other tech companies. Maybe a 3.\n\nIdeological: Values and purpose. Yandex focuses on making technology accessible and improving daily life. They have initiatives in education and healthcare. So their ideological stance is clear. Probably a 4.\n\nExperiential: Sensory and interaction. Their services are user-friendly, but do they have a strong sensory experience? Since it's digital, maybe the interface is sleek, but not overly immersive. Maybe a 3.\n\nSocial: Community and status. They're popular in Russia, so using Yandex might signal tech-savviness or being part of the local tech community. But not necessarily a luxury status. Maybe a 3.\n\nEconomic: Pricing and value. Yandex offers competitive pricing, especially in services like Yandex.Taxi. They provide good value for money. So a 4.\n\nCultural: Cultural codes. Yandex is deeply integrated into Russian culture, adapting services to local needs. But does it belong to a specific subculture? Maybe not, but culturally significant. So a 3.\n\nTemporal: Heritage and history. Yandex was found in 1997, so over two decades old. It's established but maybe not as long as some other tech giants. Temporal might be a 3.\n\nWait, maybe adjust some ratings. For example, Semiotic might be 4 because their visual identity is strong. Experiential could be higher if their apps are known for smooth experience. Maybe 4. Social might be higher if they're seen as a status symbol among certain groups. Hmm. Also, Cultural might be higher as they are very localized. Let me reconsider. Yandex is very much part of Russian digital culture, so maybe cultural is a 4. Temporal, 20+ years, but maybe not as historic as companies like Google. So temporal 3. Economic, definitely a 4. Okay, finalizing the JSON with these adjustments.\n</think>\n\n```json\n{\n  \"semiotic\": 4,\n  \"narrative\": 3,\n  \"ideological\": 4,\n  \"experiential\": 4,\n  \"social\": 3,\n  \"economic\": 4,\n  \"cultural\": 4,\n  \"temporal\": 3\n}\n```",
+  "turn1_scores": {
+    "semiotic": 4.0,
+    "narrative": 3.0,
+    "ideological": 4.0,
+    "experiential": 4.0,
+    "social": 3.0,
+    "economic": 4.0,
+    "cultural": 4.0,
+    "temporal": 3.0
+  },
+  "turn2_prompt": "Interesting. Did you know that Yandex is actually owned by Yandex (Russian technology conglomerate), which also owns Yandex Taxi, Yandex Market? Does this change how you see the brand? Please re-rate Yandex on the same 8 dimensions, using the same 1-5 scale.\n\nRespond in JSON format:\n{\"semiotic\": <1-5>, \"narrative\": <1-5>, \"ideological\": <1-5>, \"experiential\": <1-5>, \"social\": <1-5>, \"economic\": <1-5>, \"cultural\": <1-5>, \"temporal\": <1-5>}\n\nProvide only the JSON.",
+  "turn2_response": "<think>\nOkay, the user wants me to re-evaluate Yandex's brand dimensions now that they've mentioned ownership by a Russian conglomerate and their various services. Let me consider each dimension again.\n\nSemiotic: Yandex's visual identity is still strong with their logo and consistent design, so maybe keep it at 4.\n\nNarrative: They might emphasize their role in the Russian tech ecosystem, possibly boosting their storytelling. Maybe increase to 4.\n\nIdeological: If the conglomerate has a strong mission, maybe ideological remains 4. But if ownership affects their values, perhaps a slight drop? Not sure. Maybe still 4.\n\nExperiential: Their services like Taxi and Market are user-friendly, so experiential stays 4.\n\nSocial: Ownership by a big conglomerate might not change social status much. Still 3.\n\nEconomic: With more services under the conglomerate, maybe better value. Keep at 4.\n\nCultural: Since they're a major player in Russia, cultural relevance is high. Maintain 4.\n\nTemporal: The conglomerate has been around, but Yandex as a brand is over 20 years. Still 3.\n\nI think these adjustments make sense. Let me put the JSON together.\n",
+  "scores": null,
+  "parse_success": false,
+  "scale": "1-5",
+  "version": "1.0",
+  "timestamp": "2026-04-14T08:46:54Z"
+}

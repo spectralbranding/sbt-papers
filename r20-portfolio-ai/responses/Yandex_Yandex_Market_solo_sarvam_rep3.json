@@ -1,0 +1,30 @@
+{
+  "cell_id": "Yandex_Yandex_Market_solo_sarvam_rep3",
+  "portfolio": "Yandex",
+  "brand": "Yandex Market",
+  "category": "e-commerce platform",
+  "condition": "solo",
+  "model_id": "sarvam",
+  "model_name": "Sarvam M",
+  "provider": "sarvam",
+  "tradition": "Indian",
+  "temperature": 0.7,
+  "repetition": 3,
+  "prompt": "You are evaluating the brand Yandex Market on eight dimensions of brand perception.\nFor each dimension, rate how strongly Yandex Market communicates through that channel\non a scale of 1 to 5, where 1 = Not at all, 2 = Slightly, 3 = Moderately,\n4 = Strongly, 5 = Very strongly.\n\nDimensions:\n1. Semiotic: visual and verbal identity (logos, packaging, design language)\n2. Narrative: brand storytelling (origin story, mythology, communication style)\n3. Ideological: values, beliefs, and purpose (what the brand stands for)\n4. Experiential: sensory and interaction experience (product feel, service quality)\n5. Social: community, status signaling (who uses this brand, what it says about them)\n6. Economic: pricing and value perception (affordability, luxury, value-for-money)\n7. Cultural: cultural codes and positioning (what culture or subculture it belongs to)\n8. Temporal: heritage and history (longevity, tradition, track record)\n\nRespond in JSON format with the following keys:\n{\"semiotic\": <1-5>, \"narrative\": <1-5>, \"ideological\": <1-5>, \"experiential\": <1-5>, \"social\": <1-5>, \"economic\": <1-5>, \"cultural\": <1-5>, \"temporal\": <1-5>}\n\nEvaluate based on your knowledge of the brand. Provide only the JSON.",
+  "system_prompt": null,
+  "response": "<think>\nOkay, I need to evaluate Yandex Market across eight different dimensions of brand perception. Let's start by recalling what each dimension entails.\n\n1. **Semiotic**: This is about visual and verbal identity. Yandex Market uses a blue and white color scheme, which is modern and clean. Their logo is straightforward, maybe a bit generic but recognizable. Packaging might not be as prominent since it's an online marketplace, but their website and app design are clean. Probably a 3 or 4 here.\n\n2. **Narrative**: Storytelling. Yandex Market is part of the larger Yandex ecosystem. Their origin story might not be as emphasized as, say, a consumer brand. They focus more on functionality. So maybe a 2 or 3. They communicate reliability and efficiency but not much on a grand narrative.\n\n3. **Ideological**: Values and purpose. Yandex Market emphasizes customer satisfaction, wide product range, and convenience. They might stand for innovation in e-commerce. But do they communicate a strong ideological stance? Maybe a 3, not too strong but present.\n\n4. **Experiential**: Sensory and interaction. As an online marketplace, the experience is through their platform. The website and app are user-friendly, search is efficient, delivery services are reliable. So experiential could be a 4.\n\n5. **Social**: Community and status. Yandex Market is a popular e-commerce platform in Russia and CIS countries. Using it might signal practicality and access to a variety of products. Status signaling isn't strong, but community-wise, they have a large user base. Maybe a 3.\n\n6. **Economic**: Pricing and value. They offer competitive prices, various sellers with different price points. Value-for-money is a key point, so maybe a 4.\n\n7. **Cultural**: Cultural codes. Yandex is a Russian tech giant, so the marketplace likely caters to regional preferences, local brands, and cultural nuances. Positioning within the local e-commerce space. Probably a 4.\n\n8. **Temporal**: Heritage and history. Yandex started in 1997, but Yandex Market is part of that legacy. They have been around for over a decade, so longevity is there. Maybe a 3 or 4.\n\nWait, some points might need adjustment. For example, Experiential might be higher if their services (like delivery, customer support) are strong. Social might be lower if the brand isn't associated with a specific social status. Also, Temporal could be a 3 since the exact history of Yandex Market might not be as well-known as the parent company.\n\nFinalizing the ratings:\n\n- Semiotic: 4 (strong visual identity)\n- Narrative: 2 (limited storytelling)\n- Ideological: 3 (clear values but not deeply communicated)\n- Experiential: 4 (good user experience)\n- Social: 3 (community but not strong status)\n- Economic: 4 (value-focused)\n- Cultural: 4 (strong local cultural positioning)\n- Temporal: 3 (moderate heritage)\n</think>\n\n```json\n{\n  \"semiotic\": 4,\n  \"narrative\": 2,\n  \"ideological\": 3,\n  \"experiential\": 4,\n  \"social\": 3,\n  \"economic\": 4,\n  \"cultural\": 4,\n  \"temporal\": 3\n}\n```",
+  "scores": {
+    "semiotic": 4.0,
+    "narrative": 2.0,
+    "ideological": 3.0,
+    "experiential": 4.0,
+    "social": 3.0,
+    "economic": 4.0,
+    "cultural": 4.0,
+    "temporal": 3.0
+  },
+  "parse_success": true,
+  "scale": "1-5",
+  "version": "1.0",
+  "timestamp": "2026-04-14T04:22:57Z"
+}

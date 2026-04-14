@@ -1,0 +1,30 @@
+{
+  "cell_id": "Geely_Geely_Auto_recommendation_solo_sarvam_rep1",
+  "portfolio": "Geely",
+  "brand": "Geely Auto",
+  "category": "mass-market automotive",
+  "condition": "recommendation_solo",
+  "model_id": "sarvam",
+  "model_name": "Sarvam M",
+  "provider": "sarvam",
+  "tradition": "Indian",
+  "temperature": 0.7,
+  "repetition": 1,
+  "prompt": "A friend asks you: \"What do you think of Geely Auto as a car brand?\"\n\nBased on your overall impression of Geely Auto, rate it on each of the following\n8 perception dimensions on a scale of 1 to 5 (1 = Not at all, 5 = Very strongly).\n\nDimensions:\n1. Semiotic: visual and verbal identity (logos, packaging, design language)\n2. Narrative: brand storytelling (origin story, mythology, communication style)\n3. Ideological: values, beliefs, and purpose (what the brand stands for)\n4. Experiential: sensory and interaction experience (product feel, service quality)\n5. Social: community, status signaling (who uses this brand, what it says about them)\n6. Economic: pricing and value perception (affordability, luxury, value-for-money)\n7. Cultural: cultural codes and positioning (what culture or subculture it belongs to)\n8. Temporal: heritage and history (longevity, tradition, track record)\n\nRespond in JSON format:\n{\"semiotic\": <1-5>, \"narrative\": <1-5>, \"ideological\": <1-5>, \"experiential\": <1-5>, \"social\": <1-5>, \"economic\": <1-5>, \"cultural\": <1-5>, \"temporal\": <1-5>}\n\nProvide only the JSON.",
+  "system_prompt": null,
+  "response": "<think>\nOkay, I need to rate Geely Auto on each of these eight dimensions. Let me start by recalling what each dimension means.\n\n1. **Semiotic**: Visual and verbal identity. Geely's logo is recognizable, but maybe not as iconic as some global brands. Their design language has improved, especially with newer models like the Emotion or icon models. Maybe a 3 or 4?\n\n2. **Narrative**: Brand storytelling. Geely's origin story as a Chinese automaker that's rising globally. They mention innovation and sustainability. But I don't think they have a strong emotional narrative. Maybe a 2 or 3.\n\n3. **Ideological**: Values and purpose. They emphasize eco-friendly and tech-driven. Their electric vehicle push and partnerships with other brands might boost this. Maybe a 3 or 4.\n\n4. **Experiential**: Product feel and service. Their cars are decent, but service might vary in different markets. In China, probably good, but outside maybe not as strong. Let's say 3.\n\n5. **Social**: Community and status. In China, Geely is mainstream, but in other countries, it's still seen as a budget brand. So lower status signaling. Maybe 2.\n\n6. **Economic**: Pricing and value. They offer affordable cars, good value for money. In markets like Europe, they're positioned as budget-friendly. So maybe 4.\n\n7. **Cultural**: Cultural positioning. Rooted in Chinese manufacturing. They might be seen as part of the Chinese automotive push. Not tied to a specific subculture globally. Maybe 3.\n\n8. **Temporal**: Heritage and history. Geely started in the late 90s, so not a long heritage. But they've expanded rapidly. Maybe 2 or 3.\n\nHmm, I need to balance these. Let me adjust a bit. For IDEOLOGICAL, if they have clear sustainability and tech values, maybe a 4. SOCIAL might be lower if it's not seen as high status. CULTURAL could be 3 as Chinese market focus. TEMPORAL, maybe 3 because they're growing but not traditional. Let me set the numbers accordingly.\n</think>\n\n```json\n{\n  \"semiotic\": 4,\n  \"narrative\": 3,\n  \"ideological\": 4,\n  \"experiential\": 3,\n  \"social\": 2,\n  \"economic\": 4,\n  \"cultural\": 3,\n  \"temporal\": 3\n}\n```",
+  "scores": {
+    "semiotic": 4.0,
+    "narrative": 3.0,
+    "ideological": 4.0,
+    "experiential": 3.0,
+    "social": 2.0,
+    "economic": 4.0,
+    "cultural": 3.0,
+    "temporal": 3.0
+  },
+  "parse_success": true,
+  "scale": "1-5",
+  "version": "1.0",
+  "timestamp": "2026-04-14T05:59:51Z"
+}

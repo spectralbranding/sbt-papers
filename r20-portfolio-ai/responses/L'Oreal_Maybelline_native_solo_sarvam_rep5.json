@@ -1,0 +1,32 @@
+{
+  "cell_id": "L'Oreal_Maybelline_native_solo_sarvam_rep5",
+  "portfolio": "L'Oreal",
+  "brand": "Maybelline",
+  "category": "mass-market cosmetics",
+  "condition": "native_solo",
+  "language": "fr",
+  "language_name": "French",
+  "model_id": "sarvam",
+  "model_name": "Sarvam M",
+  "provider": "sarvam",
+  "tradition": "Indian",
+  "temperature": 0.7,
+  "repetition": 5,
+  "prompt": "Vous evaluez la marque Maybelline sur huit dimensions de perception de marque.\nPour chaque dimension, evaluez la force avec laquelle Maybelline communique a travers ce canal\nsur une echelle de 1 a 5, ou 1 = Pas du tout, 2 = Legerement, 3 = Moderement,\n4 = Fortement, 5 = Tres fortement.\n\nDimensions :\n1. Semiotic: identite visuelle et verbale (logos, packaging, langage de design)\n2. Narrative: storytelling de marque (histoire d'origine, mythologie, style de communication)\n3. Ideological: valeurs, croyances et raison d'etre (ce que la marque represente)\n4. Experiential: experience sensorielle et d'interaction (toucher du produit, qualite de service)\n5. Social: communaute, signalisation de statut (qui utilise cette marque, ce que cela dit d'eux)\n6. Economic: perception de prix et de valeur (accessibilite, luxe, rapport qualite-prix)\n7. Cultural: codes culturels et positionnement (a quelle culture ou sous-culture elle appartient)\n8. Temporal: heritage et histoire (longevite, tradition, historique)\n\nRepondez au format JSON avec les cles suivantes :\n{\"semiotic\": <1-5>, \"narrative\": <1-5>, \"ideological\": <1-5>, \"experiential\": <1-5>, \"social\": <1-5>, \"economic\": <1-5>, \"cultural\": <1-5>, \"temporal\": <1-5>}\n\nEvaluez selon votre connaissance de la marque. Fournissez uniquement le JSON.",
+  "system_prompt": null,
+  "response": "<think>\nOkay, I need to evaluate Maybelline across these eight dimensions of brand perception. Let me go through each one by one.\n\n1. **Semiotic**: Maybelline has a strong visual identity. Their logo is distinctive with the red and black colors, and their packaging is sleek and modern. They use bold designs and consistent typography. So probably a 4 or 5. Maybe 4 because while strong, maybe not the most iconic like Chanel or Dior.\n\n2. **Narrative**: Their storytelling isn't as prominent as some brands. They focus more on product benefits than a deep story. Maybe a 3. They have some campaigns, but not a strong mythos.\n\n3. **Ideological**: They emphasize empowerment and self-expression, especially in their ads. They promote diversity and inclusivity. That's a strong ideological stance. Maybe a 4.\n\n4. **Experiential**: The product quality is good, but customer service? Not sure. Their in-store presence and online experience are decent, but maybe not exceptional. Maybe a 3.\n\n5. **Social**: Maybelline is affordable and popular, so it's accessible. It's used by a broad audience, maybe signaling approachability rather than luxury. So social status maybe 2 or 3. Maybe 3 because it's recognized but not a status symbol.\n\n6. **Economic**: They're mid-range, not too expensive. Good value for money, so strong economic perception. Maybe 4.\n\n7. **Cultural**: They target a wide demographic, not tied to a specific culture. They might appeal to global trends but not a specific subculture. Maybe 2 or 3. Let's say 3 as they are present in many markets.\n\n8. **Temporal**: Maybelline was founded in 1935, so they have heritage. Their longevity in the industry is strong. Hmm, maybe a 4 because they've been around a long time.\n\nPutting it all together in JSON.\n</think>\n\n```json\n{\n  \"semiotic\": 4,\n  \"narrative\": 3,\n  \"ideological\": 4,\n  \"experiential\": 3,\n  \"social\": 3,\n  \"economic\": 4,\n  \"cultural\": 3,\n  \"temporal\": 4\n}\n```",
+  "scores": {
+    "semiotic": 4.0,
+    "narrative": 3.0,
+    "ideological": 4.0,
+    "experiential": 3.0,
+    "social": 3.0,
+    "economic": 4.0,
+    "cultural": 3.0,
+    "temporal": 4.0
+  },
+  "parse_success": true,
+  "scale": "1-5",
+  "version": "2.0",
+  "timestamp": "2026-04-14T09:59:58Z"
+}

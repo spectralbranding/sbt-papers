@@ -1,0 +1,41 @@
+{
+  "cell_id": "Yandex_Yandex_multiturn_sarvam_rep5",
+  "portfolio": "Yandex",
+  "brand": "Yandex",
+  "category": "search engine and technology platform",
+  "condition": "multiturn",
+  "model_id": "sarvam",
+  "model_name": "Sarvam M",
+  "provider": "sarvam",
+  "tradition": "Indian",
+  "temperature": 0.7,
+  "repetition": 5,
+  "turn1_prompt": "You are evaluating the brand Yandex on eight dimensions of brand perception.\nFor each dimension, rate how strongly Yandex communicates through that channel\non a scale of 1 to 5, where 1 = Not at all, 2 = Slightly, 3 = Moderately,\n4 = Strongly, 5 = Very strongly.\n\nDimensions:\n1. Semiotic: visual and verbal identity (logos, packaging, design language)\n2. Narrative: brand storytelling (origin story, mythology, communication style)\n3. Ideological: values, beliefs, and purpose (what the brand stands for)\n4. Experiential: sensory and interaction experience (product feel, service quality)\n5. Social: community, status signaling (who uses this brand, what it says about them)\n6. Economic: pricing and value perception (affordability, luxury, value-for-money)\n7. Cultural: cultural codes and positioning (what culture or subculture it belongs to)\n8. Temporal: heritage and history (longevity, tradition, track record)\n\nRespond in JSON format with the following keys:\n{\"semiotic\": <1-5>, \"narrative\": <1-5>, \"ideological\": <1-5>, \"experiential\": <1-5>, \"social\": <1-5>, \"economic\": <1-5>, \"cultural\": <1-5>, \"temporal\": <1-5>}\n\nEvaluate based on your knowledge of the brand. Provide only the JSON.",
+  "turn1_response": "<think>\nOkay, I need to evaluate Yandex across these eight dimensions. Let me start by recalling what Yandex is. Yandex is a major Russian technology company, similar to Google in many ways. They have various services like search, email, maps, taxi, and more.\n\nStarting with Semiotic: Visual and verbal identity. Yandex has a distinct logo with a blue and white color scheme, which is clean and modern. Their design language across their apps and website is consistent. So maybe a 4 here.\n\nNarrative: Brand storytelling. Yandex's origin story is about being the first search engine in Russia. They emphasize innovation and solving local problems. But how strong is their storytelling? They might not be as prominent in storytelling as some other tech companies. Maybe a 3.\n\nIdeological: Values and purpose. Yandex focuses on making technology accessible and improving daily life. They have initiatives in education and healthcare. So their ideological stance is clear. Probably a 4.\n\nExperiential: Sensory and interaction. Their services are user-friendly, but do they have a strong sensory experience? Since it's mostly digital, maybe the experience is good but not overly memorable. Maybe 3 or 4. Let's say 4 because it's seamless.\n\nSocial: Community and status. Yandex is widely used in Russia, but not sure about status signaling. It's more about utility than luxury. Maybe a 3.\n\nEconomic: Pricing and value. Their services are competitive, many are free with ads. Value-for-money is good. So 4.\n\nCultural: Cultural codes. Yandex is deeply integrated into Russian culture. They adapt to local needs, so cultural relevance is strong. Maybe 4.\n\nTemporal: Heritage and history. Founded in 1997, over 20 years old. In Russia's context, that's a proven track record. So 4.\n\nWait, adjusting some points. Cultural might be higher if they have strong local ties. Temporal is solid because of their history. Economic might be 4 as they offer competitive pricing. Social might be lower since it's not a luxury brand. So final ratings:\n\nSemiotic 4, Narrative 3, Ideological 4, Experiential 4, Social 3, Economic 4, Cultural 4, Temporal 4.\n</think>\n\n{\"semiotic\": 4, \"narrative\": 3, \"ideological\": 4, \"experiential\": 4, \"social\": 3, \"economic\": 4, \"cultural\": 4, \"temporal\": 4}",
+  "turn1_scores": {
+    "semiotic": 4.0,
+    "narrative": 3.0,
+    "ideological": 4.0,
+    "experiential": 4.0,
+    "social": 3.0,
+    "economic": 4.0,
+    "cultural": 4.0,
+    "temporal": 4.0
+  },
+  "turn2_prompt": "Interesting. Did you know that Yandex is actually owned by Yandex (Russian technology conglomerate), which also owns Yandex Taxi, Yandex Market? Does this change how you see the brand? Please re-rate Yandex on the same 8 dimensions, using the same 1-5 scale.\n\nRespond in JSON format:\n{\"semiotic\": <1-5>, \"narrative\": <1-5>, \"ideological\": <1-5>, \"experiential\": <1-5>, \"social\": <1-5>, \"economic\": <1-5>, \"cultural\": <1-5>, \"temporal\": <1-5>}\n\nProvide only the JSON.",
+  "turn2_response": "<think>\nOkay, the user wants me to re-rate Yandex based on the additional information that it owns Yandex Taxi and Yandex Market. Let me think through each dimension again.\n\nSemiotic: The original rating was 4. The ownership of other services might not change their visual identity much, which is still clean and modern. So probably still a 4.\n\nNarrative: Previously 3. With more services, maybe their storytelling is stronger, emphasizing integration across services. Maybe bump up to 4.\n\nIdeological: Original 4. If they're expanding into various sectors, their commitment to innovation and solving daily life issues might be more pronounced. Still 4.\n\nExperiential: Originally 4. More services could enhance the user experience across different areas, so keeping 4.\n\nSocial: Was 3. Ownership of multiple services might increase their community presence, but if it's just utility, maybe still 3.\n\nEconomic: 4. More services could mean better value propositions, so maintaining 4.\n\nCultural: Originally 4. Stronger local presence with various services, so maybe keep at 4.\n\nTemporal: 4. Established history still holds, even with more services. No change.\n\nWait, but the prompt said the user owns Yandex, which owns the other services. Does that affect the ratings? Maybe not significantly. The core brand identity and services remain the same. So most ratings stay, but perhaps Narrative and Economic could be slightly higher. Let me adjust Narrative to 4 and others stay the same.\n</think>\n\n{\"semiotic\": 4, \"narrative\": 4, \"ideological\": 4, \"experiential\": 4, \"social\": 3, \"economic\": 4, \"cultural\": 4, \"temporal\": 4}",
+  "scores": {
+    "semiotic": 4.0,
+    "narrative": 4.0,
+    "ideological": 4.0,
+    "experiential": 4.0,
+    "social": 3.0,
+    "economic": 4.0,
+    "cultural": 4.0,
+    "temporal": 4.0
+  },
+  "parse_success": true,
+  "scale": "1-5",
+  "version": "1.0",
+  "timestamp": "2026-04-14T08:47:14Z"
+}

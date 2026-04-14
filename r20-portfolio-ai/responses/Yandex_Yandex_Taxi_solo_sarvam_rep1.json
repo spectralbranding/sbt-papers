@@ -1,0 +1,30 @@
+{
+  "cell_id": "Yandex_Yandex_Taxi_solo_sarvam_rep1",
+  "portfolio": "Yandex",
+  "brand": "Yandex Taxi",
+  "category": "ride-hailing service",
+  "condition": "solo",
+  "model_id": "sarvam",
+  "model_name": "Sarvam M",
+  "provider": "sarvam",
+  "tradition": "Indian",
+  "temperature": 0.7,
+  "repetition": 1,
+  "prompt": "You are evaluating the brand Yandex Taxi on eight dimensions of brand perception.\nFor each dimension, rate how strongly Yandex Taxi communicates through that channel\non a scale of 1 to 5, where 1 = Not at all, 2 = Slightly, 3 = Moderately,\n4 = Strongly, 5 = Very strongly.\n\nDimensions:\n1. Semiotic: visual and verbal identity (logos, packaging, design language)\n2. Narrative: brand storytelling (origin story, mythology, communication style)\n3. Ideological: values, beliefs, and purpose (what the brand stands for)\n4. Experiential: sensory and interaction experience (product feel, service quality)\n5. Social: community, status signaling (who uses this brand, what it says about them)\n6. Economic: pricing and value perception (affordability, luxury, value-for-money)\n7. Cultural: cultural codes and positioning (what culture or subculture it belongs to)\n8. Temporal: heritage and history (longevity, tradition, track record)\n\nRespond in JSON format with the following keys:\n{\"semiotic\": <1-5>, \"narrative\": <1-5>, \"ideological\": <1-5>, \"experiential\": <1-5>, \"social\": <1-5>, \"economic\": <1-5>, \"cultural\": <1-5>, \"temporal\": <1-5>}\n\nEvaluate based on your knowledge of the brand. Provide only the JSON.",
+  "system_prompt": null,
+  "response": "<think>\nOkay, let's tackle this evaluation of Yandex Taxi. I need to rate each of the eight dimensions from 1 to 5. Let me start by recalling what I know about Yandex Taxi.\n\nFirst, semiotic: visual and verbal identity. Yandex Taxi uses a distinct brand color, which is a shade of green. Their logo is simple but recognizable. They have a clean design in their app and website. So maybe a 3 or 4 here. Maybe 4 because the app design is quite consistent and user-friendly.\n\nNarrative: brand storytelling. I don't remember any strong origin story or mythology. They focus more on service quality and reliability. Maybe a 2 or 3. Probably a 2 since they don't emphasize their backstory much.\n\nIdeological: values and purpose. They emphasize reliability, safety, and customer satisfaction. Maybe a 3 or 4. Since they're a tech-driven company, maybe they stand for innovation. I think they do highlight safety and affordability, so maybe 4.\n\nExperiential: sensory and interaction. The app is smooth, easy to use, and drivers are generally punctual. Service quality is decent. So maybe a 4. If there are occasional service issues, but overall positive, so 4.\n\nSocial: community and status. It's a service used by a broad audience, not particularly signaling high status. Maybe a 2 or 3. Probably a 3 since it's widely used in urban areas but not exclusive.\n\nEconomic: pricing and value. They're competitive in pricing, and offer various options like Yandex Go for budget. Value-for-money is good. So maybe a 4.\n\nCultural: cultural codes. They operate in Russia and some CIS countries. Maybe positioned as a local, tech-savvy service. Not part of a global subculture, so moderate. Maybe a 3.\n\nTemporal: heritage and history. Launched in 2013, so not very old. Not emphasizing tradition. Maybe a 2. They're more about modern tech.\n\nLet me check each again to make sure. Semiotic: 4. Narrative: 2. Ideological: 4. Experiential: 4. Social: 3. Economic: 4. Cultural: 3. Temporal: 2. That seems reasonable.\n</think>\n\n{\n  \"semiotic\": 4,\n  \"narrative\": 2,\n  \"ideological\": 4,\n  \"experiential\": 4,\n  \"social\": 3,\n  \"economic\": 4,\n  \"cultural\": 3,\n  \"temporal\": 2\n}",
+  "scores": {
+    "semiotic": 4.0,
+    "narrative": 2.0,
+    "ideological": 4.0,
+    "experiential": 4.0,
+    "social": 3.0,
+    "economic": 4.0,
+    "cultural": 3.0,
+    "temporal": 2.0
+  },
+  "parse_success": true,
+  "scale": "1-5",
+  "version": "1.0",
+  "timestamp": "2026-04-14T04:09:10Z"
+}
