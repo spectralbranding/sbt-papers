@@ -13,8 +13,8 @@ metadata:
       corresponding: true
   citation_key: "2026x"
   doi: "10.5281/zenodo.19391476"
-  date: "2026-04-06"
-  version: "1.6"
+  date: "2026-04-14"
+  version: "1.7"
   status: working_paper
   license: "CC-BY-NC-ND-4.0"
   keywords:
@@ -161,6 +161,12 @@ submission_history:
     date: "2026-04-02"
     status: published
     doi: "10.5281/zenodo.19391476"
+    note: >
+      v1.6 (2026-04-06): Brand Function product spec, behavioral metamerism
+      pilot data. v1.7 (2026-04-14): Added DeepShop benchmark citation
+      (Lyu et al. 2025) to Section 3.2 establishing task-completion failure
+      as complementary to perceptual failure. Lyu et al. (2025) added to
+      references.
   - venue: "Journal of Interactive Marketing (JIM)"
     type: journal
     date: "2026-04-TBD"
