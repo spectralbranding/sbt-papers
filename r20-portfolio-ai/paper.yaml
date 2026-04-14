@@ -1,11 +1,11 @@
-# paper.yaml -- R20: Spectral Immunity: Portfolio Framing Does Not Alter AI Brand Perception
+# paper.yaml -- R20: Does Corporate Ownership Matter to AI? Portfolio Interference in Large Language Model Brand Perception
 # Citation key: 2026ab
 # Paper Spec schema: https://github.com/spectralbranding/paper-spec/SPECIFICATION.md
 
 paper_spec_version: "0.1.0"
 
 metadata:
-  title: "Spectral Immunity: Portfolio Framing Does Not Alter AI Brand Perception"
+  title: "Does Corporate Ownership Matter to AI? Portfolio Interference in Large Language Model Brand Perception"
   authors:
     - name: "Dmitry Zharnikov"
       orcid: "0009-0000-6893-9231"
@@ -27,21 +27,51 @@ metadata:
     - awareness gate
 
 experiment_summary:
-  total_calls: 2930
-  successful_calls: 2930
-  success_rate: 1.000
-  models: 10
-  training_traditions: 5
-  brands: 11
-  portfolios: 4
+  total_responses: 7820
+  parsed_observations: 7775
+  parse_success_rate: .995
+  models: 13
+  model_names:
+    - "Claude Sonnet 4"
+    - "GPT-4o-mini"
+    - "Gemini 2.5 Flash"
+    - "Grok-3-mini"
+    - "Llama 3.3 70B"
+    - "DeepSeek V3"
+    - "YandexGPT 5 Pro"
+    - "Sarvam M"
+    - "Gemma 4 (local)"
+    - "GPT-OSS-Swallow"
+    - "Qwen3 235B"
+    - "Mistral Large"
+    - "EXAONE 3.5 32B"
+  training_traditions: 7
+  traditions_list:
+    - Western
+    - Chinese
+    - Russian
+    - Indian
+    - Japanese
+    - European
+    - Korean
+  brands: 20
+  portfolios: 7
+  portfolio_list:
+    - LVMH
+    - Unilever
+    - P&G
+    - Toyota
+    - L'Oreal
+    - Geely
+    - Yandex
   conditions: 6
   repetitions: 5
   scale: "1-5 PRISM-B"
   prompt_modalities:
-    - direct_rating: 1100
-    - recommendation: 1100
-    - multiturn: 550
-    - system_prompt_ablation: 180
+    - direct_rating
+    - naturalistic_recommendation
+    - multiturn_mid_dialogue_reveal
+    - native_language_ablation
   total_cost_usd: ~5.00
   dataset_doi: "10.57967/hf/8380"
   dataset_url: "https://huggingface.co/datasets/spectralbranding/r20-portfolio-ai-perception"
@@ -50,26 +80,32 @@ hypothesis_results:
   - id: H1
     description: "LVMH constructive interference"
     status: not_supported
-    note: "Mean delta DCI = +.47, t(2) = 2.53, p = .127, d = 1.46"
   - id: H2
     description: "Unilever destructive interference"
     status: not_supported
-    note: "Mean delta DCI = +.12, t(2) = .95, p = .443, d = .55"
   - id: H3
     description: "P&G negligible interference"
     status: supported
-    note: "Mean delta DCI = -.27, t(2) = -3.58, p = .070, d = -2.07"
   - id: H4
     description: "Toyota/Lexus aspirational interference"
     status: partially_supported
-    note: "Lexus +.81 (d=.64, FDR-significant). Toyota -.44 (n.s.). Asymmetric as predicted."
+    note: "Lexus +.81 (d = .64, FDR-significant). Toyota -.44 (n.s.). Asymmetric as predicted."
   - id: H5
     description: "Spectral immunity (TOST equivalence)"
     status: supported
-    note: "TOST equivalence confirmed for 8/11 brands within +/-1.0 DCI bounds. Mean |delta DCI| = .31."
+    note: "TOST equivalence confirmed for 18/20 brands within +/-1.0 DCI bounds. Mean |delta DCI| = .26. 0/20 FDR-significant in direct or recommendation conditions."
+  - id: H7
+    description: "Reverse aspiration (Geely Auto)"
+    status: supported
+    note: "Geely Auto multi-turn d = -1.11, FDR-significant."
+  - id: H8
+    description: "Language-dependent immunity (native-language ablation)"
+    status: partially_supported
+    note: "Native-language prompts activate model-specific discourse layers without directional amplification."
 
-target_venue: "Marketing Science"
+target_venue: "Journal of Marketing"
 target_venue_alt:
+  - "Marketing Science"
   - "International Journal of Research in Marketing"
   - "Journal of Marketing Research"
 

@@ -1,4 +1,4 @@
-# DATA_MANIFEST.yaml — R20: Spectral Immunity: Portfolio Framing Does Not Alter AI Brand Perception
+# DATA_MANIFEST.yaml — R20: Does Corporate Ownership Matter to AI? Portfolio Interference in Large Language Model Brand Perception
 # External data dependencies per the Research-as-Repository protocol.
 # All paths are relative to the package root (r20-portfolio-ai/).
 
@@ -8,11 +8,12 @@ data_manifest:
 
   - id: "hf-dataset-main"
     description: >
-      Canonical public dataset for R20. Contains all 2,930 observations across
-      11 brands, 4 portfolios (LVMH, Unilever, P&G, Toyota), 6 conditions
-      (direct solo, direct portfolio, recommendation solo, recommendation
-      portfolio, multi-turn, prompt-location ablation), 10 LLMs from 5 training
-      traditions, 5 repetitions per cell. 100% parse success.
+      Canonical public dataset for R20. Contains all 7,775 parsed observations
+      (from 7,820 response files) across 20 brands, 7 portfolios (LVMH, Unilever,
+      P&G, Toyota, L'Oreal, Geely, Yandex), 6 conditions (direct solo, direct
+      portfolio, recommendation solo, recommendation portfolio, multi-turn,
+      native-language ablation), 13 LLMs from 7 training traditions, 5
+      repetitions per cell. 99.4% parse success.
     archive: "HuggingFace"
     repository: "spectralbranding/r20-portfolio-ai"
     doi: "10.57967/hf/8380"
@@ -23,7 +24,7 @@ data_manifest:
   - id: "hf-main-experiment"
     description: >
       Main experiment JSONL: direct solo and direct portfolio conditions.
-      11 brands x 2 conditions x 10 models x 5 reps = 1,100 observations.
+      20 brands x 2 conditions x 13 models x 5 reps.
     archive: "HuggingFace"
     repository: "spectralbranding/r20-portfolio-ai"
     path: "main_experiment.jsonl"
@@ -33,7 +34,7 @@ data_manifest:
   - id: "hf-recommendation"
     description: >
       Recommendation modality JSONL: naturalistic recommendation prompts under
-      solo and portfolio conditions. 11 brands x 2 conditions x 10 models x 5 reps.
+      solo and portfolio conditions. 20 brands x 2 conditions x 13 models x 5 reps.
     archive: "HuggingFace"
     repository: "spectralbranding/r20-portfolio-ai"
     path: "recommendation.jsonl"
@@ -43,7 +44,7 @@ data_manifest:
   - id: "hf-multiturn"
     description: >
       Multi-turn conversation JSONL: portfolio context revealed mid-conversation.
-      11 brands x 10 models x 5 reps.
+      20 brands x 13 models x 5 reps.
     archive: "HuggingFace"
     repository: "spectralbranding/r20-portfolio-ai"
     path: "multiturn.jsonl"
@@ -53,17 +54,31 @@ data_manifest:
   - id: "hf-ablation-system-prompt"
     description: >
       Prompt-location ablation JSONL: system message vs. user message placement.
-      Subset of brands x 10 models x 5 reps.
+      Subset of brands x 13 models x 5 reps.
     archive: "HuggingFace"
     repository: "spectralbranding/r20-portfolio-ai"
     path: "ablation_system_prompt.jsonl"
     format: "JSONL"
     access: public
 
+  - id: "hf-native-language"
+    description: >
+      Native-language ablation JSONL: brands rated under solo and portfolio
+      conditions using model-native prompt languages (e.g. Russian for YandexGPT,
+      Korean for EXAONE, Chinese for DeepSeek/Qwen3, French for Mistral).
+      20 brands x 2 conditions x 13 models x 5 reps. Tests H8: language-dependent
+      immunity. Confirms discourse-layer activation without directional amplification.
+    archive: "HuggingFace"
+    repository: "spectralbranding/r20-portfolio-ai"
+    path: "native_language.jsonl"
+    format: "JSONL"
+    access: public
+
   - id: "hf-data-csv"
     description: >
-      Full combined dataset as flat CSV. All 2,930 observations with condition,
-      brand, portfolio, model, tradition, rep, and 8 SBT dimensional scores.
+      Full combined dataset as flat CSV. All 7,775 parsed observations with
+      condition, brand, portfolio, model, tradition, rep, and 8 SBT dimensional
+      scores.
     archive: "HuggingFace"
     repository: "spectralbranding/r20-portfolio-ai"
     path: "data.csv"
@@ -75,7 +90,7 @@ data_manifest:
   - id: "results-dci-comparison"
     description: >
       DCI (Dimensional Concentration Index) comparison across solo vs. portfolio
-      conditions. Primary evidence for spectral immunity (mean |delta DCI| = .31).
+      conditions. Primary evidence for spectral immunity (mean |delta DCI| = .26).
     archive: "GitHub"
     repository: "spectralbranding/sbt-papers"
     path: "r20-portfolio-ai/results/dci_comparison.csv"
@@ -84,8 +99,9 @@ data_manifest:
 
   - id: "results-tost-equivalence"
     description: >
-      TOST equivalence test results for all 11 brands. Confirms 8/11 brands
-      equivalent within +/-1.0 DCI bounds.
+      TOST equivalence test results for all 20 brands. Confirms 18/20 brands
+      equivalent within +/-1.0 DCI bounds. 0/20 FDR-significant in direct or
+      recommendation conditions.
     archive: "GitHub"
     repository: "spectralbranding/sbt-papers"
     path: "r20-portfolio-ai/results/tost_equivalence.csv"
@@ -135,8 +151,10 @@ data_manifest:
 
   - id: "results-multiturn-analysis"
     description: >
-      Multi-turn conversation analysis. 3/11 FDR-significant brands including
-      the Lexus exception (d = .64 under Toyota portfolio framing).
+      Multi-turn conversation analysis. Geely Auto d = -1.11 (FDR-significant,
+      reverse-aspiration). Lexus d = .64 (FDR-significant, aspirational
+      interference under Toyota portfolio framing). Effects are portfolio- and
+      modality-specific, not systematic.
     archive: "GitHub"
     repository: "spectralbranding/sbt-papers"
     path: "r20-portfolio-ai/results/multiturn_analysis.csv"
@@ -157,9 +175,11 @@ data_manifest:
 
   - id: "raw-responses"
     description: >
-      Raw JSON API responses for all 2,930 observations. Filenames encode
-      portfolio, brand, condition, model, and repetition
-      (e.g. LVMH_Dior_portfolio_claude_rep1.json). Enables full reproduction
+      Raw JSON API responses for all 7,820 response files (7,775 parsed). Filenames
+      encode portfolio, brand, condition, model, and repetition
+      (e.g. LVMH_Dior_portfolio_claude_rep1.json). Native-language ablation files
+      use the naming pattern PORTFOLIO_Brand_native_solo_model_repN.json and
+      PORTFOLIO_Brand_native_portfolio_model_repN.json. Enables full reproduction
       of all analyses without re-running the experiment.
     archive: "GitHub"
     repository: "spectralbranding/sbt-papers"

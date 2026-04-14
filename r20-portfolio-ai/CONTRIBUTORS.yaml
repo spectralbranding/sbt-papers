@@ -1,4 +1,4 @@
-# CONTRIBUTORS.yaml -- R20: Spectral Immunity
+# CONTRIBUTORS.yaml -- R20: Does Corporate Ownership Matter to AI? Portfolio Interference in Large Language Model Brand Perception
 contributors:
   - name: "Dmitry Zharnikov"
     orcid: "0009-0000-6893-9231"
@@ -20,6 +20,6 @@ contributors:
       - writing-review
       - data-collection
     disclosure: >
-      Claude Sonnet 4 was one of the 10 LLM models from 5 training traditions
+      Claude Sonnet 4 was one of the 13 LLM models from 7 training traditions
       under study (data source). Claude was also used for manuscript drafting
       assistance.
