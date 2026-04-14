@@ -1,6 +1,6 @@
-# PROVENANCE.yaml -- R20: Spectral Immunity
+# PROVENANCE.yaml -- R20: Does Corporate Ownership Matter to AI? Portfolio Interference in Large Language Model Brand Perception
 provenance:
-  paper_title: "Spectral Immunity: Portfolio Framing Does Not Alter AI Brand Perception"
+  paper_title: "Does Corporate Ownership Matter to AI? Portfolio Interference in Large Language Model Brand Perception"
   citation_key: "2026ab"
   repository: "spectralbranding/sbt-papers/r20-portfolio-ai"
 
@@ -8,22 +8,29 @@ provenance:
     - version: "1.0.0"
       date: "2026-04-13"
       description: >
-        Initial preprint. 2,930 observations (100% parse success), 10 models from
-        5 training traditions (Western, Chinese, Russian, Indian, Japanese),
-        11 brands, 4 portfolios (LVMH, Unilever, P&G, Toyota), 6 conditions
-        (direct solo, direct portfolio, recommendation solo, recommendation
-        portfolio, multi-turn, prompt-location ablation), 5 repetitions per cell.
-        TOST equivalence confirmed for 8/11 brands. Cross-cultural analysis
-        confirms architectural mechanism. Spectral immunity concept introduced.
+        Final preprint (v2.0 experiment). 7,775 parsed observations from 7,820
+        response files (99.4% parse success). 13 models from 7 training traditions
+        (Western, Chinese, Russian, Indian, Japanese, European, Korean). 20 brands,
+        7 portfolios (LVMH, Unilever, P&G, Toyota, L'Oreal, Geely, Yandex).
+        6 conditions (direct solo, direct portfolio, recommendation solo,
+        recommendation portfolio, multi-turn, native-language ablation).
+        5 repetitions per cell. New models vs. v1 experiment: Qwen3 235B,
+        Mistral Large, EXAONE 3.5 32B. TOST equivalence confirmed for 18/20
+        brands. 0/20 FDR-significant in direct or recommendation conditions.
+        Geely Auto multi-turn d = -1.11 (FDR-significant). Native-language
+        ablation activates discourse layers without directional amplification.
+        Spectral immunity concept introduced and generalized.
         Total cost ~$5.
 
   forks: []
 
   target_venue:
-    journal: "Marketing Science"
-    publisher: "INFORMS"
+    journal: "Journal of Marketing"
+    publisher: "American Marketing Association"
     status: "pre-submission"
 
   target_venue_alt:
+    - journal: "Marketing Science"
+      publisher: "INFORMS"
     - journal: "International Journal of Research in Marketing"
       publisher: "Elsevier"
