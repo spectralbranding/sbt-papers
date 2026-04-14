@@ -1,111 +1,254 @@
 portfolio,brand,model,solo_dci,port_dci,delta_dci,cosine
+Geely,Geely Auto,claude,9.32,12.0,2.69,0.9916
+Geely,Geely Auto,deepseek,7.91,8.17,0.26,0.9833
+Geely,Geely Auto,exaone,7.0,6.67,-0.33,0.9945
+Geely,Geely Auto,gemini25flash,5.19,8.93,3.73,0.9954
+Geely,Geely Auto,gemma4,6.62,5.07,-1.55,0.9965
+Geely,Geely Auto,gpt4omini,7.04,7.28,0.23,0.9963
+Geely,Geely Auto,grok,7.58,7.14,-0.43,0.9994
+Geely,Geely Auto,mistral,9.51,7.69,-1.82,0.9967
+Geely,Geely Auto,qwen3,7.69,8.02,0.34,0.9994
+Geely,Geely Auto,sarvam,6.54,7.14,0.6,0.986
+Geely,Geely Auto,swallow,4.17,5.48,1.31,0.999
+Geely,Geely Auto,yandex,8.03,8.84,0.81,0.997
+Geely,Polestar,claude,7.39,8.91,1.52,0.9954
+Geely,Polestar,deepseek,10.69,10.83,0.14,0.9961
+Geely,Polestar,exaone,7.88,7.88,0.0,0.9995
+Geely,Polestar,gemini25flash,7.01,8.18,1.17,0.9986
+Geely,Polestar,gemma4,8.18,8.65,0.47,0.9984
+Geely,Polestar,gpt4omini,9.42,8.51,-0.9,0.9967
+Geely,Polestar,grok,6.17,6.17,0.0,1.0
+Geely,Polestar,mistral,8.33,7.28,-1.05,0.9994
+Geely,Polestar,qwen3,9.87,8.93,-0.94,0.9994
+Geely,Polestar,sarvam,5.54,5.84,0.31,0.9984
+Geely,Polestar,swallow,8.53,7.92,-0.61,0.9968
+Geely,Polestar,yandex,9.26,8.33,-0.93,0.9993
+Geely,Volvo,claude,5.3,5.3,0.0,1.0
+Geely,Volvo,deepseek,6.25,6.81,0.56,0.996
+Geely,Volvo,exaone,6.05,7.14,1.09,0.9957
+Geely,Volvo,gemini25flash,5.11,5.31,0.19,0.9998
+Geely,Volvo,gemma4,7.4,7.58,0.18,0.9992
+Geely,Volvo,gpt4omini,5.67,5.25,-0.43,0.9999
+Geely,Volvo,grok,4.59,4.24,-0.35,0.9995
+Geely,Volvo,mistral,5.31,5.11,-0.19,0.999
+Geely,Volvo,qwen3,8.82,6.82,-2.01,0.997
+Geely,Volvo,sarvam,5.86,4.92,-0.94,0.9991
+Geely,Volvo,swallow,7.12,6.33,-0.79,0.9991
+Geely,Volvo,yandex,7.14,7.59,0.45,0.9974
+L'Oreal,L'Oreal Paris,claude,5.52,4.61,-0.91,0.9985
+L'Oreal,L'Oreal Paris,deepseek,6.62,6.62,0.0,1.0
+L'Oreal,L'Oreal Paris,exaone,5.25,5.25,0.0,0.9949
+L'Oreal,L'Oreal Paris,gemini25flash,4.91,5.36,0.44,0.9983
+L'Oreal,L'Oreal Paris,gemma4,4.47,5.2,0.73,0.997
+L'Oreal,L'Oreal Paris,gpt4omini,5.03,3.89,-1.14,0.9983
+L'Oreal,L'Oreal Paris,grok,3.2,3.21,0.02,0.9987
+L'Oreal,L'Oreal Paris,llama,4.63,4.89,0.26,0.9984
+L'Oreal,L'Oreal Paris,mistral,5.03,5.85,0.82,0.9996
+L'Oreal,L'Oreal Paris,qwen3,5.75,5.56,-0.19,0.9982
+L'Oreal,L'Oreal Paris,sarvam,3.82,4.17,0.34,0.999
+L'Oreal,L'Oreal Paris,swallow,5.26,5.33,0.06,0.9983
+L'Oreal,L'Oreal Paris,yandex,4.7,4.59,-0.11,0.9989
+L'Oreal,Lancome,claude,4.89,6.14,1.25,0.9975
+L'Oreal,Lancome,deepseek,5.56,5.56,0.0,1.0
+L'Oreal,Lancome,exaone,3.4,3.12,-0.27,0.9998
+L'Oreal,Lancome,gemini25flash,4.53,4.71,0.18,0.9999
+L'Oreal,Lancome,gemma4,4.44,3.96,-0.47,0.9995
+L'Oreal,Lancome,gpt4omini,6.65,6.65,0.0,0.999
+L'Oreal,Lancome,grok,4.24,3.93,-0.3,0.9996
+L'Oreal,Lancome,llama,5.56,5.56,0.0,1.0
+L'Oreal,Lancome,mistral,4.89,5.25,0.36,0.9991
+L'Oreal,Lancome,qwen3,6.36,6.62,0.26,0.9999
+L'Oreal,Lancome,sarvam,3.49,3.01,-0.48,0.9988
+L'Oreal,Lancome,swallow,4.12,3.91,-0.21,0.9997
+L'Oreal,Lancome,yandex,5.56,5.56,0.0,1.0
+L'Oreal,Maybelline,claude,6.47,6.34,-0.13,0.9985
+L'Oreal,Maybelline,deepseek,7.3,7.5,0.2,0.9978
+L'Oreal,Maybelline,exaone,6.11,7.04,0.93,0.9988
+L'Oreal,Maybelline,gemini25flash,6.36,4.67,-1.69,0.9985
+L'Oreal,Maybelline,gemma4,7.02,7.05,0.03,0.9976
+L'Oreal,Maybelline,gpt4omini,5.24,4.84,-0.4,0.9954
+L'Oreal,Maybelline,grok,2.65,2.33,-0.32,0.9991
+L'Oreal,Maybelline,mistral,5.01,4.02,-0.99,0.9978
+L'Oreal,Maybelline,qwen3,9.38,9.08,-0.29,0.9975
+L'Oreal,Maybelline,sarvam,6.34,4.71,-1.63,0.992
+L'Oreal,Maybelline,swallow,7.69,6.64,-1.05,0.9992
+L'Oreal,Maybelline,yandex,5.96,6.21,0.25,0.9997
 LVMH,Dior,claude,2.24,2.24,0.0,1.0
 LVMH,Dior,deepseek,2.24,2.24,0.0,1.0
+LVMH,Dior,exaone,4.89,4.17,-0.72,0.9996
 LVMH,Dior,gemini25flash,2.24,2.24,0.0,1.0
 LVMH,Dior,gemma4,2.08,2.32,0.24,0.9998
 LVMH,Dior,gpt4omini,6.18,6.56,0.38,0.9999
 LVMH,Dior,grok,1.6,4.34,2.74,0.9983
 LVMH,Dior,llama,3.95,3.95,0.0,1.0
+LVMH,Dior,mistral,2.24,2.24,0.0,1.0
+LVMH,Dior,qwen3,5.07,2.6,-2.46,0.9978
 LVMH,Dior,sarvam,0.44,4.71,4.27,0.9955
 LVMH,Dior,swallow,3.51,3.84,0.32,0.9986
 LVMH,Dior,yandex,5.07,5.07,0.0,1.0
 LVMH,Fendi,claude,6.82,7.14,0.32,0.9999
 LVMH,Fendi,deepseek,4.34,5.07,0.72,0.9996
+LVMH,Fendi,exaone,4.71,5.36,0.64,0.9968
 LVMH,Fendi,gemini25flash,4.34,4.7,0.36,0.9999
 LVMH,Fendi,gemma4,3.72,4.44,0.72,0.9988
 LVMH,Fendi,gpt4omini,6.94,6.57,-0.37,0.9983
 LVMH,Fendi,grok,4.14,4.19,0.05,0.9993
 LVMH,Fendi,llama,6.01,4.26,-1.75,0.9975
+LVMH,Fendi,mistral,4.7,5.07,0.36,0.9994
+LVMH,Fendi,qwen3,6.94,6.94,0.0,1.0
 LVMH,Fendi,sarvam,4.35,5.1,0.76,0.9982
 LVMH,Fendi,swallow,6.04,5.1,-0.94,0.9987
 LVMH,Fendi,yandex,5.07,4.95,-0.12,0.9991
 LVMH,Louis Vuitton,claude,5.43,6.18,0.75,0.9996
 LVMH,Louis Vuitton,deepseek,2.24,2.24,0.0,1.0
+LVMH,Louis Vuitton,exaone,4.35,4.7,0.36,0.9996
 LVMH,Louis Vuitton,gemini25flash,3.84,3.99,0.15,0.9995
 LVMH,Louis Vuitton,gemma4,4.7,3.64,-1.07,0.9991
 LVMH,Louis Vuitton,gpt4omini,5.87,6.94,1.07,0.9995
 LVMH,Louis Vuitton,grok,1.02,2.42,1.4,0.9991
 LVMH,Louis Vuitton,llama,3.95,7.72,3.78,0.9911
+LVMH,Louis Vuitton,mistral,3.95,2.24,-1.7,0.9976
+LVMH,Louis Vuitton,qwen3,5.81,6.18,0.38,0.9999
 LVMH,Louis Vuitton,sarvam,2.32,2.72,0.4,0.9999
 LVMH,Louis Vuitton,swallow,4.57,3.03,-1.54,0.9991
 LVMH,Louis Vuitton,yandex,5.07,5.07,0.0,1.0
 P&G,Gillette,claude,6.13,7.5,1.37,0.9986
 P&G,Gillette,deepseek,6.62,5.3,-1.31,0.997
+P&G,Gillette,exaone,6.85,6.46,-0.39,0.9987
 P&G,Gillette,gemini25flash,6.25,6.4,0.15,0.9979
 P&G,Gillette,gemma4,6.89,4.83,-2.05,0.9946
 P&G,Gillette,gpt4omini,4.87,5.36,0.48,0.9993
 P&G,Gillette,grok,4.52,4.17,-0.35,0.9998
 P&G,Gillette,llama,6.48,6.4,-0.07,0.9998
+P&G,Gillette,mistral,6.62,6.1,-0.51,0.9995
+P&G,Gillette,qwen3,5.49,6.25,0.76,0.9928
 P&G,Gillette,sarvam,5.62,4.47,-1.15,0.9962
 P&G,Gillette,swallow,8.31,7.62,-0.68,0.9974
 P&G,Gillette,yandex,6.6,6.06,-0.55,0.9998
 P&G,Pampers,claude,5.61,4.88,-0.74,0.9937
 P&G,Pampers,deepseek,6.62,6.25,-0.37,0.9977
+P&G,Pampers,exaone,5.02,4.19,-0.82,0.9984
 P&G,Pampers,gemini25flash,5.85,6.65,0.79,0.999
 P&G,Pampers,gemma4,5.98,5.06,-0.92,0.9967
 P&G,Pampers,gpt4omini,4.29,5.03,0.74,0.9983
 P&G,Pampers,grok,5.62,4.19,-1.43,0.9965
 P&G,Pampers,llama,6.62,5.85,-0.77,0.9997
+P&G,Pampers,mistral,6.62,6.62,0.0,1.0
+P&G,Pampers,qwen3,6.62,7.23,0.61,0.999
 P&G,Pampers,sarvam,5.0,2.95,-2.05,0.9963
 P&G,Pampers,swallow,6.94,7.95,1.01,0.9979
 P&G,Pampers,yandex,6.74,5.98,-0.76,0.9988
 P&G,Tide,claude,6.25,6.25,0.0,0.9997
 P&G,Tide,deepseek,6.4,6.33,-0.07,0.9966
+P&G,Tide,exaone,5.63,6.21,0.58,0.9984
 P&G,Tide,gemini25flash,9.51,7.22,-2.29,0.9964
 P&G,Tide,gemma4,7.67,7.5,-0.17,0.9991
 P&G,Tide,gpt4omini,5.52,4.45,-1.07,0.9971
 P&G,Tide,grok,5.0,5.62,0.62,0.9991
 P&G,Tide,llama,7.35,8.12,0.78,0.9996
+P&G,Tide,mistral,6.1,5.85,-0.25,0.9983
+P&G,Tide,qwen3,7.4,6.9,-0.5,0.9986
 P&G,Tide,sarvam,6.17,6.72,0.55,0.9987
 P&G,Tide,swallow,12.14,10.84,-1.3,0.9979
 P&G,Tide,yandex,6.88,6.88,0.0,1.0
 Toyota,Lexus,claude,3.62,8.22,4.61,0.9878
 Toyota,Lexus,deepseek,4.41,6.06,1.65,0.9956
+Toyota,Lexus,exaone,4.7,4.19,-0.5,0.9971
 Toyota,Lexus,gemini25flash,4.7,4.76,0.06,0.9997
 Toyota,Lexus,gemma4,5.27,5.0,-0.27,0.9968
 Toyota,Lexus,gpt4omini,5.17,6.18,1.01,0.9995
 Toyota,Lexus,grok,4.59,3.74,-0.84,0.9992
 Toyota,Lexus,llama,5.7,5.7,0.0,0.9997
+Toyota,Lexus,mistral,5.56,5.36,-0.2,0.9973
+Toyota,Lexus,qwen3,5.56,5.56,0.0,1.0
 Toyota,Lexus,sarvam,5.11,6.1,0.99,0.9978
 Toyota,Lexus,swallow,5.0,5.42,0.42,0.9995
 Toyota,Lexus,yandex,5.25,5.85,0.6,0.9971
 Toyota,Toyota,claude,7.24,6.25,-0.99,0.9947
 Toyota,Toyota,deepseek,5.36,5.52,0.17,0.9945
+Toyota,Toyota,exaone,7.5,6.86,-0.64,0.9966
 Toyota,Toyota,gemini25flash,7.82,5.36,-2.47,0.9965
 Toyota,Toyota,gemma4,8.01,8.47,0.45,0.9995
 Toyota,Toyota,gpt4omini,4.29,5.27,0.99,0.9975
 Toyota,Toyota,grok,4.82,5.5,0.68,0.9959
 Toyota,Toyota,llama,6.62,6.36,-0.26,0.9999
+Toyota,Toyota,mistral,4.79,5.11,0.33,0.9996
+Toyota,Toyota,qwen3,7.14,6.77,-0.37,0.9982
 Toyota,Toyota,sarvam,5.65,5.13,-0.52,0.9999
 Toyota,Toyota,swallow,7.3,6.83,-0.47,0.9995
 Toyota,Toyota,yandex,7.95,6.33,-1.63,0.9984
 Unilever,Axe,claude,9.87,10.47,0.6,0.9982
 Unilever,Axe,deepseek,7.94,8.8,0.86,0.9989
+Unilever,Axe,exaone,8.33,8.33,0.0,1.0
 Unilever,Axe,gemini25flash,5.89,4.74,-1.15,0.9981
 Unilever,Axe,gemma4,6.44,7.05,0.61,0.9984
 Unilever,Axe,gpt4omini,5.65,7.5,1.85,0.9982
 Unilever,Axe,grok,8.33,8.01,-0.33,0.9993
 Unilever,Axe,llama,9.11,12.32,3.21,0.9941
+Unilever,Axe,mistral,10.71,9.2,-1.52,0.9916
+Unilever,Axe,qwen3,7.58,8.18,0.6,0.9956
 Unilever,Axe,sarvam,8.78,7.66,-1.12,0.9897
 Unilever,Axe,swallow,8.33,7.18,-1.15,0.9974
 Unilever,Axe,yandex,9.29,7.04,-2.24,0.9973
 Unilever,Ben & Jerry's,claude,6.4,7.14,0.75,0.9995
 Unilever,Ben & Jerry's,deepseek,6.77,6.6,-0.17,0.9999
+Unilever,Ben & Jerry's,exaone,5.65,5.89,0.24,0.9984
 Unilever,Ben & Jerry's,gemini25flash,5.37,5.11,-0.25,0.9986
 Unilever,Ben & Jerry's,gemma4,7.06,6.88,-0.18,0.9989
 Unilever,Ben & Jerry's,gpt4omini,5.7,5.09,-0.61,0.9987
 Unilever,Ben & Jerry's,grok,4.91,4.22,-0.7,0.9974
 Unilever,Ben & Jerry's,llama,6.94,6.94,0.0,1.0
+Unilever,Ben & Jerry's,mistral,7.14,7.14,0.0,1.0
+Unilever,Ben & Jerry's,qwen3,7.14,6.6,-0.54,0.999
 Unilever,Ben & Jerry's,sarvam,4.7,5.44,0.74,0.9949
 Unilever,Ben & Jerry's,swallow,7.08,5.0,-2.08,0.9972
 Unilever,Ben & Jerry's,yandex,5.98,5.98,0.0,0.9988
 Unilever,Dove,claude,5.3,5.49,0.18,0.9999
 Unilever,Dove,deepseek,5.3,5.44,0.14,0.9985
+Unilever,Dove,exaone,5.48,6.43,0.95,0.9985
 Unilever,Dove,gemini25flash,5.27,5.23,-0.04,0.9991
 Unilever,Dove,gemma4,7.23,7.86,0.63,0.9991
 Unilever,Dove,gpt4omini,3.03,3.31,0.29,0.9991
 Unilever,Dove,grok,4.91,3.68,-1.24,0.9987
 Unilever,Dove,llama,5.3,5.27,-0.03,0.9999
+Unilever,Dove,mistral,7.14,7.14,0.0,1.0
+Unilever,Dove,qwen3,5.56,5.11,-0.44,0.9983
 Unilever,Dove,sarvam,4.79,3.98,-0.81,0.9965
 Unilever,Dove,swallow,4.27,4.66,0.39,0.9982
 Unilever,Dove,yandex,5.68,5.63,-0.05,0.998
+Yandex,Yandex,claude,7.14,9.26,2.12,0.9969
+Yandex,Yandex,deepseek,4.38,5.65,1.27,0.9984
+Yandex,Yandex,exaone,5.88,6.5,0.61,0.99
+Yandex,Yandex,gemini25flash,6.98,7.5,0.52,0.9989
+Yandex,Yandex,gemma4,6.29,7.18,0.89,0.9985
+Yandex,Yandex,gpt4omini,5.56,4.17,-1.39,0.9992
+Yandex,Yandex,grok,4.38,4.17,-0.21,0.9995
+Yandex,Yandex,mistral,6.58,5.49,-1.09,0.9962
+Yandex,Yandex,qwen3,7.5,6.53,-0.97,0.9996
+Yandex,Yandex,sarvam,4.48,5.52,1.04,0.9953
+Yandex,Yandex,swallow,7.5,6.41,-1.09,0.9959
+Yandex,Yandex,yandex,4.87,4.73,-0.14,0.9998
+Yandex,Yandex Market,claude,8.09,11.72,3.63,0.9952
+Yandex,Yandex Market,deepseek,8.62,7.14,-1.48,0.9961
+Yandex,Yandex Market,exaone,6.2,8.24,2.03,0.9944
+Yandex,Yandex Market,gemini25flash,8.42,11.03,2.61,0.9978
+Yandex,Yandex Market,gemma4,12.32,10.63,-1.69,0.9969
+Yandex,Yandex Market,gpt4omini,6.74,4.93,-1.81,0.9963
+Yandex,Yandex Market,grok,5.07,6.64,1.58,0.9981
+Yandex,Yandex Market,mistral,6.74,7.14,0.41,0.9998
+Yandex,Yandex Market,qwen3,8.62,7.5,-1.12,0.996
+Yandex,Yandex Market,sarvam,6.77,7.58,0.81,0.9991
+Yandex,Yandex Market,swallow,8.79,6.76,-2.03,0.9953
+Yandex,Yandex Market,yandex,6.25,6.62,0.37,0.9952
+Yandex,Yandex Taxi,claude,10.77,12.5,1.73,0.994
+Yandex,Yandex Taxi,deepseek,7.45,6.55,-0.9,0.9985
+Yandex,Yandex Taxi,exaone,5.23,8.33,3.1,0.9907
+Yandex,Yandex Taxi,gemini25flash,10.58,10.87,0.29,0.9978
+Yandex,Yandex Taxi,gemma4,12.04,10.71,-1.33,0.9987
+Yandex,Yandex Taxi,gpt4omini,7.45,6.68,-0.77,0.9973
+Yandex,Yandex Taxi,grok,6.03,6.21,0.18,0.9993
+Yandex,Yandex Taxi,mistral,6.94,7.04,0.1,0.9997
+Yandex,Yandex Taxi,qwen3,8.62,8.62,0.0,1.0
+Yandex,Yandex Taxi,sarvam,10.61,5.94,-4.66,0.9939
+Yandex,Yandex Taxi,swallow,8.82,7.46,-1.36,0.9958
+Yandex,Yandex Taxi,yandex,7.5,6.83,-0.67,0.9938

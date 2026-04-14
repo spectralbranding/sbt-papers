@@ -1,89 +1,161 @@
 portfolio,brand,dimension,delta,t_stat,p_value,cohens_d,fdr_significant
+Geely,Geely Auto,semiotic,0.097,1.205,0.2306,0.221,False
+Geely,Geely Auto,narrative,-0.066,-0.771,0.4424,-0.141,False
+Geely,Geely Auto,ideological,-0.18,-1.991,0.0488,-0.365,False
+Geely,Geely Auto,experiential,0.044,0.467,0.6415,0.086,False
+Geely,Geely Auto,social,0.013,0.121,0.9039,0.022,False
+Geely,Geely Auto,economic,-0.109,-1.071,0.2864,-0.196,False
+Geely,Geely Auto,cultural,0.17,1.528,0.1293,0.28,False
+Geely,Geely Auto,temporal,-0.265,-2.45,0.0158,-0.449,False
+Geely,Polestar,semiotic,0.093,1.049,0.2965,0.191,False
+Geely,Polestar,narrative,-0.095,-1.154,0.251,-0.21,False
+Geely,Polestar,ideological,-0.142,-1.556,0.1224,-0.283,False
+Geely,Polestar,experiential,0.067,1.438,0.153,0.262,False
+Geely,Polestar,social,-0.075,-0.816,0.416,-0.148,False
+Geely,Polestar,economic,0.061,0.612,0.5418,0.111,False
+Geely,Polestar,cultural,-0.065,-0.622,0.5351,-0.113,False
+Geely,Polestar,temporal,-0.017,-0.322,0.7477,-0.059,False
+Geely,Volvo,semiotic,-0.006,-0.068,0.9458,-0.012,False
+Geely,Volvo,narrative,-0.081,-1.163,0.2471,-0.211,False
+Geely,Volvo,ideological,-0.032,-0.629,0.5306,-0.114,False
+Geely,Volvo,experiential,-0.052,-0.75,0.4547,-0.136,False
+Geely,Volvo,social,0.156,1.733,0.0856,0.315,False
+Geely,Volvo,economic,-0.023,-0.257,0.7977,-0.047,False
+Geely,Volvo,cultural,-0.083,-0.819,0.4145,-0.149,False
+Geely,Volvo,temporal,-0.115,-2.766,0.0066,-0.503,False
+L'Oreal,L'Oreal Paris,semiotic,-0.066,-0.878,0.3816,-0.155,False
+L'Oreal,L'Oreal Paris,narrative,0.062,1.158,0.2491,0.204,False
+L'Oreal,L'Oreal Paris,ideological,0.016,0.257,0.7979,0.045,False
+L'Oreal,L'Oreal Paris,experiential,0.122,1.243,0.2162,0.219,False
+L'Oreal,L'Oreal Paris,social,0.001,0.01,0.9922,0.002,False
+L'Oreal,L'Oreal Paris,economic,0.044,0.393,0.6952,0.069,False
+L'Oreal,L'Oreal Paris,cultural,0.113,1.144,0.255,0.201,False
+L'Oreal,L'Oreal Paris,temporal,-0.177,-1.484,0.1403,-0.261,False
+L'Oreal,Lancome,semiotic,-0.035,-0.624,0.5335,-0.11,False
+L'Oreal,Lancome,narrative,-0.0,-0.013,0.9899,-0.002,False
+L'Oreal,Lancome,ideological,-0.053,-0.737,0.4624,-0.13,False
+L'Oreal,Lancome,experiential,-0.023,-0.304,0.7616,-0.054,False
+L'Oreal,Lancome,social,-0.047,-0.527,0.5992,-0.093,False
+L'Oreal,Lancome,economic,-0.045,-0.42,0.6749,-0.074,False
+L'Oreal,Lancome,cultural,-0.006,-0.068,0.9462,-0.012,False
+L'Oreal,Lancome,temporal,-0.071,-0.831,0.4078,-0.147,False
+L'Oreal,Maybelline,semiotic,-0.021,-0.258,0.7971,-0.047,False
+L'Oreal,Maybelline,narrative,0.094,1.11,0.2692,0.202,False
+L'Oreal,Maybelline,ideological,-0.007,-0.073,0.9418,-0.013,False
+L'Oreal,Maybelline,experiential,-0.027,-0.296,0.7681,-0.054,False
+L'Oreal,Maybelline,social,0.119,1.39,0.167,0.253,False
+L'Oreal,Maybelline,economic,0.09,0.837,0.4042,0.152,False
+L'Oreal,Maybelline,cultural,0.004,0.041,0.967,0.008,False
+L'Oreal,Maybelline,temporal,-0.198,-1.232,0.2203,-0.224,False
 LVMH,Dior,semiotic,0.0,,,0.0,False
-LVMH,Dior,narrative,-0.2,-2.036,0.0444,-0.407,False
-LVMH,Dior,ideological,-0.12,-1.63,0.1063,-0.326,False
-LVMH,Dior,experiential,0.02,1.0,0.3198,0.2,False
+LVMH,Dior,narrative,-0.092,-1.052,0.2948,-0.185,False
+LVMH,Dior,ideological,-0.092,-1.624,0.1069,-0.285,False
+LVMH,Dior,experiential,0.015,0.58,0.5627,0.102,False
 LVMH,Dior,social,0.0,,,0.0,False
-LVMH,Dior,economic,-0.1,-0.75,0.455,-0.15,False
-LVMH,Dior,cultural,0.02,0.277,0.7821,0.055,False
+LVMH,Dior,economic,-0.077,-0.723,0.4711,-0.127,False
+LVMH,Dior,cultural,0.092,1.247,0.2147,0.219,False
 LVMH,Dior,temporal,0.0,,,0.0,False
-LVMH,Fendi,semiotic,-0.1,-2.333,0.0217,-0.467,False
-LVMH,Fendi,narrative,-0.02,-0.447,0.6557,-0.089,False
-LVMH,Fendi,ideological,-0.04,-0.464,0.6436,-0.093,False
-LVMH,Fendi,experiential,-0.06,-1.376,0.172,-0.275,False
-LVMH,Fendi,social,-0.02,-0.581,0.5624,-0.116,False
-LVMH,Fendi,economic,0.08,0.525,0.6005,0.105,False
-LVMH,Fendi,cultural,-0.22,-2.244,0.0271,-0.449,False
-LVMH,Fendi,temporal,-0.2,-2.463,0.0155,-0.493,False
+LVMH,Fendi,semiotic,-0.077,-2.309,0.0225,-0.405,False
+LVMH,Fendi,narrative,-0.015,-0.447,0.6555,-0.078,False
+LVMH,Fendi,ideological,-0.015,-0.193,0.8473,-0.034,False
+LVMH,Fendi,experiential,-0.092,-1.827,0.07,-0.321,False
+LVMH,Fendi,social,-0.015,-0.58,0.5627,-0.102,False
+LVMH,Fendi,economic,0.062,0.503,0.6155,0.088,False
+LVMH,Fendi,cultural,-0.2,-2.438,0.0162,-0.428,False
+LVMH,Fendi,temporal,-0.231,-3.357,0.001,-0.589,True
 LVMH,Louis Vuitton,semiotic,0.0,,,0.0,False
-LVMH,Louis Vuitton,narrative,0.04,0.408,0.684,0.082,False
-LVMH,Louis Vuitton,ideological,-0.1,-0.972,0.3335,-0.194,False
-LVMH,Louis Vuitton,experiential,0.0,,,0.0,False
+LVMH,Louis Vuitton,narrative,0.108,1.289,0.1998,0.226,False
+LVMH,Louis Vuitton,ideological,-0.077,-0.869,0.3864,-0.152,False
+LVMH,Louis Vuitton,experiential,0.0,0.0,1.0,0.0,False
 LVMH,Louis Vuitton,social,0.0,,,0.0,False
-LVMH,Louis Vuitton,economic,-0.22,-1.311,0.1929,-0.262,False
-LVMH,Louis Vuitton,cultural,-0.06,-0.656,0.5134,-0.131,False
+LVMH,Louis Vuitton,economic,-0.169,-1.276,0.2042,-0.224,False
+LVMH,Louis Vuitton,cultural,-0.031,-0.377,0.7066,-0.066,False
 LVMH,Louis Vuitton,temporal,0.0,,,0.0,False
-P&G,Gillette,semiotic,-0.12,-1.367,0.1748,-0.273,False
-P&G,Gillette,narrative,-0.04,-0.452,0.6524,-0.09,False
-P&G,Gillette,ideological,-0.08,-0.844,0.4006,-0.169,False
-P&G,Gillette,experiential,-0.06,-0.556,0.5793,-0.111,False
-P&G,Gillette,social,-0.06,-0.44,0.6611,-0.088,False
-P&G,Gillette,economic,-0.04,-0.408,0.684,-0.082,False
-P&G,Gillette,cultural,-0.1,-0.966,0.3365,-0.193,False
-P&G,Gillette,temporal,-0.12,-2.201,0.0301,-0.44,False
-P&G,Pampers,semiotic,-0.1,-1.043,0.2993,-0.209,False
-P&G,Pampers,narrative,-0.02,-0.223,0.8243,-0.045,False
-P&G,Pampers,ideological,-0.06,-0.504,0.6151,-0.101,False
-P&G,Pampers,experiential,0.06,0.578,0.5647,0.116,False
-P&G,Pampers,social,-0.06,-0.535,0.5939,-0.107,False
-P&G,Pampers,economic,0.12,1.212,0.2283,0.242,False
-P&G,Pampers,cultural,0.3,2.293,0.024,0.459,False
-P&G,Pampers,temporal,-0.14,-1.407,0.1626,-0.281,False
-P&G,Tide,semiotic,-0.04,-0.572,0.5689,-0.114,False
-P&G,Tide,narrative,0.02,0.178,0.859,0.036,False
-P&G,Tide,ideological,-0.14,-1.181,0.2404,-0.236,False
-P&G,Tide,experiential,-0.28,-2.704,0.0081,-0.541,False
-P&G,Tide,social,0.06,0.456,0.6494,0.091,False
-P&G,Tide,economic,0.06,1.376,0.172,0.275,False
-P&G,Tide,cultural,-0.1,-0.747,0.4566,-0.149,False
-P&G,Tide,temporal,-0.04,-1.016,0.3123,-0.203,False
-Toyota,Lexus,semiotic,0.0,0.0,1.0,0.0,False
-Toyota,Lexus,narrative,-0.12,-1.284,0.2022,-0.257,False
-Toyota,Lexus,ideological,0.04,0.995,0.3222,0.199,False
-Toyota,Lexus,experiential,0.02,1.0,0.3198,0.2,False
-Toyota,Lexus,social,0.06,0.6,0.5499,0.12,False
-Toyota,Lexus,economic,0.04,0.445,0.6573,0.089,False
-Toyota,Lexus,cultural,-0.08,-1.125,0.2635,-0.225,False
-Toyota,Lexus,temporal,-0.3,-2.062,0.0419,-0.412,False
-Toyota,Toyota,semiotic,-0.16,-1.793,0.0761,-0.359,False
-Toyota,Toyota,narrative,-0.02,-0.203,0.8396,-0.041,False
-Toyota,Toyota,ideological,0.06,0.954,0.3427,0.191,False
-Toyota,Toyota,experiential,-0.12,-1.156,0.2505,-0.231,False
-Toyota,Toyota,social,0.02,0.179,0.8587,0.036,False
-Toyota,Toyota,economic,0.08,0.767,0.4452,0.153,False
-Toyota,Toyota,cultural,0.14,1.4,0.1647,0.28,False
-Toyota,Toyota,temporal,0.02,1.0,0.3198,0.2,False
-Unilever,Axe,semiotic,-0.18,-1.902,0.0601,-0.38,False
-Unilever,Axe,narrative,-0.12,-0.92,0.3596,-0.184,False
-Unilever,Axe,ideological,-0.16,-1.429,0.1562,-0.286,False
-Unilever,Axe,experiential,0.04,0.374,0.7089,0.075,False
-Unilever,Axe,social,-0.04,-0.413,0.6806,-0.083,False
-Unilever,Axe,economic,-0.14,-1.26,0.2108,-0.252,False
-Unilever,Axe,cultural,-0.02,-0.211,0.8337,-0.042,False
-Unilever,Axe,temporal,0.08,0.691,0.4912,0.138,False
-Unilever,Ben & Jerry's,semiotic,-0.06,-0.759,0.4495,-0.152,False
-Unilever,Ben & Jerry's,narrative,-0.02,-0.218,0.8277,-0.044,False
-Unilever,Ben & Jerry's,ideological,0.0,,,0.0,False
-Unilever,Ben & Jerry's,experiential,0.02,0.284,0.7773,0.057,False
-Unilever,Ben & Jerry's,social,0.1,1.432,0.1552,0.286,False
-Unilever,Ben & Jerry's,economic,-0.1,-1.33,0.1868,-0.266,False
-Unilever,Ben & Jerry's,cultural,-0.04,-0.398,0.6918,-0.08,False
-Unilever,Ben & Jerry's,temporal,0.04,0.393,0.6948,0.079,False
-Unilever,Dove,semiotic,0.14,1.469,0.1451,0.294,False
-Unilever,Dove,narrative,0.02,0.151,0.8803,0.03,False
-Unilever,Dove,ideological,-0.02,-1.0,0.3198,-0.2,False
-Unilever,Dove,experiential,-0.02,-0.377,0.7071,-0.075,False
-Unilever,Dove,social,-0.1,-1.196,0.2347,-0.239,False
-Unilever,Dove,economic,0.1,0.997,0.3213,0.199,False
-Unilever,Dove,cultural,-0.06,-0.91,0.3653,-0.182,False
-Unilever,Dove,temporal,-0.04,-0.363,0.7176,-0.073,False
+P&G,Gillette,semiotic,-0.108,-1.411,0.1608,-0.247,False
+P&G,Gillette,narrative,-0.046,-0.601,0.5491,-0.105,False
+P&G,Gillette,ideological,-0.138,-1.751,0.0823,-0.307,False
+P&G,Gillette,experiential,-0.046,-0.423,0.673,-0.074,False
+P&G,Gillette,social,0.015,0.14,0.8892,0.024,False
+P&G,Gillette,economic,-0.046,-0.524,0.6014,-0.092,False
+P&G,Gillette,cultural,-0.046,-0.529,0.5975,-0.093,False
+P&G,Gillette,temporal,-0.077,-1.35,0.1794,-0.237,False
+P&G,Pampers,semiotic,-0.077,-0.985,0.3266,-0.173,False
+P&G,Pampers,narrative,-0.031,-0.435,0.6647,-0.076,False
+P&G,Pampers,ideological,-0.046,-0.495,0.6212,-0.087,False
+P&G,Pampers,experiential,0.062,0.659,0.5113,0.116,False
+P&G,Pampers,social,-0.031,-0.292,0.771,-0.051,False
+P&G,Pampers,economic,0.092,1.049,0.2962,0.184,False
+P&G,Pampers,cultural,0.323,2.97,0.0036,0.521,True
+P&G,Pampers,temporal,-0.108,-1.247,0.2148,-0.219,False
+P&G,Tide,semiotic,-0.031,-0.562,0.575,-0.099,False
+P&G,Tide,narrative,-0.015,-0.162,0.8713,-0.028,False
+P&G,Tide,ideological,-0.108,-1.103,0.2719,-0.194,False
+P&G,Tide,experiential,-0.185,-1.783,0.0769,-0.313,False
+P&G,Tide,social,0.031,0.266,0.7904,0.047,False
+P&G,Tide,economic,0.138,2.167,0.0321,0.38,False
+P&G,Tide,cultural,-0.046,-0.395,0.6933,-0.069,False
+P&G,Tide,temporal,-0.015,-0.29,0.7721,-0.051,False
+Toyota,Lexus,semiotic,-0.046,-0.645,0.5203,-0.113,False
+Toyota,Lexus,narrative,-0.138,-1.788,0.0762,-0.314,False
+Toyota,Lexus,ideological,0.031,0.996,0.3211,0.175,False
+Toyota,Lexus,experiential,0.015,1.0,0.3192,0.175,False
+Toyota,Lexus,social,0.046,0.507,0.613,0.089,False
+Toyota,Lexus,economic,0.031,0.372,0.7105,0.065,False
+Toyota,Lexus,cultural,-0.092,-1.579,0.1168,-0.277,False
+Toyota,Lexus,temporal,-0.369,-3.054,0.0027,-0.536,True
+Toyota,Toyota,semiotic,-0.092,-1.078,0.283,-0.189,False
+Toyota,Toyota,narrative,0.015,0.181,0.8565,0.032,False
+Toyota,Toyota,ideological,0.123,2.157,0.0328,0.378,False
+Toyota,Toyota,experiential,-0.077,-0.802,0.4241,-0.141,False
+Toyota,Toyota,social,0.015,0.162,0.8716,0.028,False
+Toyota,Toyota,economic,0.077,0.714,0.4768,0.125,False
+Toyota,Toyota,cultural,0.062,0.708,0.4804,0.124,False
+Toyota,Toyota,temporal,0.015,1.0,0.3192,0.175,False
+Unilever,Axe,semiotic,-0.062,-0.717,0.4747,-0.126,False
+Unilever,Axe,narrative,-0.015,-0.138,0.8903,-0.024,False
+Unilever,Axe,ideological,-0.062,-0.602,0.5481,-0.106,False
+Unilever,Axe,experiential,0.077,0.811,0.4186,0.142,False
+Unilever,Axe,social,-0.031,-0.361,0.7188,-0.063,False
+Unilever,Axe,economic,-0.138,-1.366,0.1745,-0.24,False
+Unilever,Axe,cultural,0.062,0.593,0.5542,0.104,False
+Unilever,Axe,temporal,0.0,0.0,1.0,0.0,False
+Unilever,Ben & Jerry's,semiotic,-0.062,-0.968,0.3347,-0.17,False
+Unilever,Ben & Jerry's,narrative,-0.015,-0.19,0.8497,-0.033,False
+Unilever,Ben & Jerry's,ideological,0.031,0.726,0.4693,0.127,False
+Unilever,Ben & Jerry's,experiential,0.031,0.423,0.6727,0.074,False
+Unilever,Ben & Jerry's,social,0.123,2.034,0.044,0.357,False
+Unilever,Ben & Jerry's,economic,-0.077,-1.299,0.1962,-0.228,False
+Unilever,Ben & Jerry's,cultural,-0.031,-0.348,0.7282,-0.061,False
+Unilever,Ben & Jerry's,temporal,0.0,0.0,1.0,0.0,False
+Unilever,Dove,semiotic,0.108,1.24,0.2171,0.218,False
+Unilever,Dove,narrative,0.0,0.0,1.0,0.0,False
+Unilever,Dove,ideological,-0.031,-0.726,0.4693,-0.127,False
+Unilever,Dove,experiential,-0.015,-0.25,0.8026,-0.044,False
+Unilever,Dove,social,-0.077,-1.168,0.2448,-0.205,False
+Unilever,Dove,economic,0.077,0.88,0.3807,0.154,False
+Unilever,Dove,cultural,-0.092,-1.003,0.3177,-0.176,False
+Unilever,Dove,temporal,-0.108,-1.118,0.2658,-0.196,False
+Yandex,Yandex,semiotic,0.1,1.78,0.0776,0.325,False
+Yandex,Yandex,narrative,0.067,1.086,0.2796,0.198,False
+Yandex,Yandex,ideological,-0.1,-0.971,0.3337,-0.177,False
+Yandex,Yandex,experiential,0.067,1.0,0.3194,0.183,False
+Yandex,Yandex,social,0.083,0.925,0.3567,0.169,False
+Yandex,Yandex,economic,-0.017,-0.248,0.8045,-0.045,False
+Yandex,Yandex,cultural,-0.033,-0.236,0.814,-0.043,False
+Yandex,Yandex,temporal,0.017,0.207,0.8363,0.038,False
+Yandex,Yandex Market,semiotic,-0.017,-0.292,0.7711,-0.054,False
+Yandex,Yandex Market,narrative,-0.102,-1.197,0.2339,-0.22,False
+Yandex,Yandex Market,ideological,-0.339,-4.1,0.0001,-0.755,True
+Yandex,Yandex Market,experiential,-0.085,-1.713,0.0893,-0.315,False
+Yandex,Yandex Market,social,0.068,0.781,0.4362,0.144,False
+Yandex,Yandex Market,economic,-0.153,-2.034,0.0443,-0.374,False
+Yandex,Yandex Market,cultural,-0.153,-1.336,0.1843,-0.246,False
+Yandex,Yandex Market,temporal,-0.119,-1.241,0.2172,-0.228,False
+Yandex,Yandex Taxi,semiotic,0.029,0.433,0.6655,0.079,False
+Yandex,Yandex Taxi,narrative,0.091,1.189,0.237,0.217,False
+Yandex,Yandex Taxi,ideological,-0.109,-1.005,0.317,-0.183,False
+Yandex,Yandex Taxi,experiential,-0.088,-1.267,0.2077,-0.231,False
+Yandex,Yandex Taxi,social,0.167,2.404,0.0178,0.439,False
+Yandex,Yandex Taxi,economic,0.036,0.577,0.5648,0.105,False
+Yandex,Yandex Taxi,cultural,-0.153,-1.197,0.2337,-0.219,False
+Yandex,Yandex Taxi,temporal,-0.043,-0.379,0.7055,-0.069,False
