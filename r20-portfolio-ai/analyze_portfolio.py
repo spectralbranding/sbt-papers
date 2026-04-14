@@ -62,13 +62,39 @@ PORTFOLIO_META = {
         "predicted_interference": "aspirational",
         "description": "Layered portfolio: mass (Toyota) vs luxury (Lexus) on same dimensions",
     },
+    "L'Oreal": {
+        "type": "prestige_spread",
+        "predicted_interference": "gradient_flattening",
+        "description": "Prestige spread: mass (Maybelline) to luxury (Lancome) gradient",
+    },
+    "Geely": {
+        "type": "reverse_aspiration",
+        "predicted_interference": "downward_suppression",
+        "description": "Reverse aspiration: Chinese mass parent owns European premium (Volvo, Polestar)",
+    },
+    "Yandex": {
+        "type": "branded_house",
+        "predicted_interference": "shared_identity",
+        "description": "Branded house: all sub-brands share Yandex name; geopolitical overlay",
+    },
 }
 
-# Training tradition groupings (updated with Japanese)
+# Training tradition groupings (v2.0: 7 traditions, 13 models)
 WESTERN_MODELS = {"claude", "gpt4omini", "gemini25flash", "grok", "llama", "gemma4"}
-NON_WESTERN_MODELS = {"deepseek", "yandex", "sarvam", "swallow"}
+NON_WESTERN_MODELS = {"deepseek", "qwen3", "yandex", "sarvam", "swallow", "mistral", "exaone"}
 
-LOCAL_MODELS = {"gemma4"}
+# Finer tradition groupings for sub-group analysis
+TRADITION_GROUPS = {
+    "Western": {"claude", "gpt4omini", "gemini25flash", "grok", "llama", "gemma4"},
+    "Chinese": {"deepseek", "qwen3"},
+    "Russian": {"yandex"},
+    "Indian": {"sarvam"},
+    "Japanese": {"swallow"},
+    "European": {"mistral"},
+    "Korean": {"exaone"},
+}
+
+LOCAL_MODELS = {"gemma4", "exaone"}
 
 
 def load_responses():
@@ -1100,10 +1126,146 @@ def main():
     mt_df = analysis_9_multiturn(df)
     analysis_10_overall_summary(dci_df, interference_df, model_df)
 
+    # New v2.0 analyses
+    analysis_11_native_language(df)
+    analysis_12_tradition_subgroups(main_df)
+
     save_results(
         dci_df, dim_df, interference_df, model_df, tost_df, ablation_df,
         reco_df, mt_df,
     )
+
+
+def analysis_11_native_language(df):
+    """Compare English vs native-language portfolio framing for home portfolios."""
+    print("\n" + "=" * 70)
+    print("ANALYSIS 11: Native-Language Ablation (H8 + H9)")
+    print("=" * 70)
+
+    native_portfolios = {
+        "L'Oreal": {"language": "French", "home_models": {"mistral"}},
+        "Geely": {"language": "Chinese", "home_models": {"deepseek", "qwen3"}},
+        "Toyota": {"language": "Japanese", "home_models": {"swallow"}},
+        "Yandex": {"language": "Russian", "home_models": {"yandex"}},
+    }
+
+    native_df = df[df["condition"].isin(["native_solo", "native_portfolio"])]
+    english_df = df[df["condition"].isin(["solo", "portfolio"])]
+
+    if native_df.empty:
+        print("  No native-language data found. Skipping.")
+        return
+
+    print(f"\n  Native-language observations: {len(native_df)}")
+
+    for portfolio_key, meta in native_portfolios.items():
+        print(f"\n  --- {portfolio_key} ({meta['language']}) ---")
+
+        port_native = native_df[native_df["portfolio"] == portfolio_key]
+        port_english = english_df[english_df["portfolio"] == portfolio_key]
+
+        if port_native.empty or port_english.empty:
+            print("    Insufficient data")
+            continue
+
+        brands = sorted(port_native["brand"].unique())
+        for brand in brands:
+            # English: solo vs portfolio delta DCI
+            eng_solo = port_english[(port_english["brand"] == brand) & (port_english["condition"] == "solo")]
+            eng_port = port_english[(port_english["brand"] == brand) & (port_english["condition"] == "portfolio")]
+            nat_solo = port_native[(port_native["brand"] == brand) & (port_native["condition"] == "native_solo")]
+            nat_port = port_native[(port_native["brand"] == brand) & (port_native["condition"] == "native_portfolio")]
+
+            if eng_solo.empty or eng_port.empty or nat_solo.empty or nat_port.empty:
+                continue
+
+            eng_solo_dci = eng_solo[DIMENSIONS].apply(lambda row: compute_dci(row.values), axis=1)
+            eng_port_dci = eng_port[DIMENSIONS].apply(lambda row: compute_dci(row.values), axis=1)
+            nat_solo_dci = nat_solo[DIMENSIONS].apply(lambda row: compute_dci(row.values), axis=1)
+            nat_port_dci = nat_port[DIMENSIONS].apply(lambda row: compute_dci(row.values), axis=1)
+
+            eng_delta = eng_port_dci.mean() - eng_solo_dci.mean()
+            nat_delta = nat_port_dci.mean() - nat_solo_dci.mean()
+            diff = nat_delta - eng_delta
+
+            print(f"    {brand:20s}  eng_delta={eng_delta:+.2f}  nat_delta={nat_delta:+.2f}  diff={diff:+.2f}")
+
+            # H9: Home-model amplification
+            for model_id in meta["home_models"]:
+                home_nat_solo = nat_solo[nat_solo["model"] == model_id]
+                home_nat_port = nat_port[nat_port["model"] == model_id]
+                home_eng_solo = eng_solo[eng_solo["model"] == model_id]
+                home_eng_port = eng_port[eng_port["model"] == model_id]
+
+                if home_nat_solo.empty or home_nat_port.empty:
+                    continue
+
+                home_nat_solo_dci = home_nat_solo[DIMENSIONS].apply(lambda r: compute_dci(r.values), axis=1)
+                home_nat_port_dci = home_nat_port[DIMENSIONS].apply(lambda r: compute_dci(r.values), axis=1)
+                home_eng_solo_dci = home_eng_solo[DIMENSIONS].apply(lambda r: compute_dci(r.values), axis=1)
+                home_eng_port_dci = home_eng_port[DIMENSIONS].apply(lambda r: compute_dci(r.values), axis=1)
+
+                home_eng_d = home_eng_port_dci.mean() - home_eng_solo_dci.mean() if not home_eng_solo_dci.empty else 0
+                home_nat_d = home_nat_port_dci.mean() - home_nat_solo_dci.mean()
+                home_diff = home_nat_d - home_eng_d
+
+                print(f"      HOME ({model_id:10s})  eng_delta={home_eng_d:+.2f}  nat_delta={home_nat_d:+.2f}  diff={home_diff:+.2f}")
+
+
+def analysis_12_tradition_subgroups(main_df):
+    """Per-tradition subgroup analysis (7 traditions)."""
+    print("\n" + "=" * 70)
+    print("ANALYSIS 12: Per-Tradition Sub-Group Analysis (7 traditions)")
+    print("=" * 70)
+
+    for tradition, model_ids in sorted(TRADITION_GROUPS.items()):
+        trad_df = main_df[main_df["model"].isin(model_ids)]
+        if trad_df.empty:
+            continue
+
+        solo = trad_df[trad_df["condition"] == "solo"]
+        port = trad_df[trad_df["condition"] == "portfolio"]
+
+        if solo.empty or port.empty:
+            continue
+
+        solo_dcis = solo.groupby(["portfolio", "brand"]).apply(
+            lambda g: compute_dci(g[DIMENSIONS].mean().values)
+        )
+        port_dcis = port.groupby(["portfolio", "brand"]).apply(
+            lambda g: compute_dci(g[DIMENSIONS].mean().values)
+        )
+
+        # Align indices
+        common = solo_dcis.index.intersection(port_dcis.index)
+        if len(common) == 0:
+            continue
+
+        deltas = port_dcis.loc[common] - solo_dcis.loc[common]
+        mean_delta = deltas.mean()
+
+        # Cosine per brand
+        cosines = []
+        for idx in common:
+            s = solo.loc[(solo["portfolio"] == idx[0]) & (solo["brand"] == idx[1]), DIMENSIONS].mean().values
+            p = port.loc[(port["portfolio"] == idx[0]) & (port["brand"] == idx[1]), DIMENSIONS].mean().values
+            cosines.append(cosine_similarity(s, p))
+        mean_cos = np.mean(cosines) if cosines else np.nan
+
+        n_models = len(model_ids.intersection(set(main_df["model"].unique())))
+        n_obs = len(trad_df)
+
+        if len(deltas) > 1:
+            t_stat, p_val = stats.ttest_1samp(deltas.values, 0)
+            d = mean_delta / deltas.std() if deltas.std() > 0 else 0
+        else:
+            t_stat, p_val, d = np.nan, np.nan, np.nan
+
+        print(
+            f"  {tradition:12s}  models={n_models}  n={n_obs:4d}  "
+            f"delta DCI={mean_delta:+.2f}  t={t_stat:+.2f}  p={p_val:.3f}  "
+            f"d={d:+.2f}  cos={mean_cos:.3f}"
+        )
 
 
 if __name__ == "__main__":

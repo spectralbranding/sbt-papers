@@ -1,12 +1,21 @@
 brand,portfolio,delta_dci,p_tost,equivalent
-Dior,LVMH,0.68,0.1967,False
-Fendi,LVMH,0.1,0.001,True
-Louis Vuitton,LVMH,0.62,0.2035,False
-Gillette,P&G,-0.23,0.002,True
-Pampers,P&G,-0.41,0.0187,True
-Tide,P&G,-0.16,0.0376,True
-Lexus,Toyota,0.81,0.2259,False
-Toyota,Toyota,-0.44,0.0191,True
-Axe,Unilever,0.14,0.0205,True
-Ben & Jerry's,Unilever,-0.11,0.0,True
-Dove,Unilever,0.34,0.0138,True
+Geely Auto,Geely,0.54,0.1016,False
+Polestar,Geely,-0.12,0.0028,True
+Volvo,Geely,-0.19,0.0004,True
+L'Oreal Paris,L'Oreal,-0.15,0.0,True
+Lancome,L'Oreal,0.04,0.0,True
+Maybelline,L'Oreal,-0.13,0.0069,True
+Dior,LVMH,0.35,0.0199,True
+Fendi,LVMH,0.09,0.0001,True
+Louis Vuitton,LVMH,0.34,0.0427,True
+Gillette,P&G,-0.15,0.0001,True
+Pampers,P&G,-0.29,0.0013,True
+Tide,P&G,-0.2,0.0163,True
+Lexus,Toyota,0.59,0.0221,True
+Toyota,Toyota,-0.37,0.0025,True
+Axe,Unilever,0.04,0.0023,True
+Ben & Jerry's,Unilever,-0.04,0.0,True
+Dove,Unilever,0.3,0.0027,True
+Yandex,Yandex,-0.01,0.0004,True
+Yandex Market,Yandex,0.21,0.0212,True
+Yandex Taxi,Yandex,-0.36,0.0617,False
