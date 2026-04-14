@@ -38,7 +38,7 @@ Four portfolio archetypes operationalize these predictions. *Spectral clusters* 
 
 *AI as Brand Observer*
 
-Li et al. (2024) validated LLMs as brand perception instruments, achieving over 75% agreement with human perceptual data across a large-scale Marketing Science study. Brand, Israeli, and Ngwe (2023) demonstrated the use of GPT for market research tasks including brand positioning. Arora, Chakraborty, and Nishimura (2025) demonstrated AI-human hybrid approaches for marketing research, establishing reliability and validity benchmarks. Hermann and Puntoni (2025) examined how generative AI shapes stakeholder engagement, arguing that understanding the internal structure of LLM brand responses is now a strategic necessity. Grewal, Levy, and Kumar (2025) document the broader shift toward generative AI in marketing practice.
+Li et al. (2024) validated LLMs as brand perception instruments, achieving over 75% agreement with human perceptual data across a large-scale Marketing Science study. Brand, Israeli, and Ngwe (2023) demonstrated the use of GPT for market research tasks including brand positioning. Arora, Chakraborty, and Nishimura (2025) demonstrated AI-human hybrid approaches for marketing research, establishing reliability and validity benchmarks. Hermann and Puntoni (2025) examined how generative AI shapes stakeholder engagement, arguing that understanding the internal structure of LLM brand responses is now a strategic necessity. Grewal, Levy, and Kumar (2025) document the broader shift toward generative AI in marketing practice. Cillo, Verona, and Wuyts (2025) outline a research roadmap for generative AI in marketing, identifying brand perception measurement as a priority area. Estevez (2025) surveys LLM applications for market research, noting both capabilities and limitations of current approaches.
 
 LLM brand responses show systematic dimensional patterns. Across 24 models from seven training traditions, cross-model cosine similarity for brand profiles reaches .977, with systematic compression of the Cultural, Temporal, and Economic dimensions (Zharnikov 2026v). Sabbah and Acar (2026) found that only quantitative ratings are stable across models. Goli and Singh (2024) demonstrated structural divergence between LLM and human preferences in choice tasks. None of this prior work tested whether LLM brand perception is sensitive to contextual manipulation---specifically, whether adding portfolio context to a brand query changes the model's brand encoding.
 
@@ -315,7 +315,11 @@ Brand, James, Ayelet Israeli, and Donald Ngwe (2023), "Using GPT for Market Rese
 
 Cohen, Jacob (1988), *Statistical Power Analysis for the Behavioral Sciences*, 2nd ed., Lawrence Erlbaum Associates.
 
+Cillo, Paola, Gianmario Verona, and Stefan Wuyts (2025), "Generative AI and the Future of Marketing," *Journal of the Academy of Marketing Science*.
+
 Dubois, David, John Dawson, and Akansh Jaiswal (2025), "Forget What You Know About Search. Optimize Your Brand for LLMs," *Harvard Business Review*, June 5.
+
+Estevez, Victor (2025), "Large Language Models for Market Research: Applications and Limitations," Working Paper.
 
 Erdem, Tulin (1998), "An Empirical Analysis of Umbrella Branding," *Journal of Marketing Research*, 35 (3), 339--351.
 
