@@ -1,0 +1,3540 @@
+{
+  "experiment": "run14_dimension_targeting",
+  "date": "2026-04-15T15:35:42.320637+00:00",
+  "n_enhanced_records": 252,
+  "n_run12b_records": 1248,
+  "models": [
+    "claude",
+    "gpt",
+    "gemini",
+    "deepseek"
+  ],
+  "brands": [
+    "Hermes",
+    "IKEA",
+    "Patagonia",
+    "Erewhon",
+    "Tesla",
+    "Nike",
+    "Apple",
+    "Starbucks",
+    "Coca-Cola",
+    "Mercedes-Benz",
+    "Zara",
+    "Rolex",
+    "Netflix",
+    "Lululemon",
+    "Trader Joe's",
+    "Louis Vuitton",
+    "The North Face",
+    "Whole Foods Market",
+    "Rivian",
+    "Dove",
+    "Volvo"
+  ],
+  "standard": {
+    "Hermes": {
+      "n": 11,
+      "mean_dci": 3.7159,
+      "sd_dci": 1.1607,
+      "per_dim_mean_dev": {
+        "semiotic": 1.9545,
+        "narrative": 2.2273,
+        "ideological": 4.4091,
+        "experiential": 6.5,
+        "social": 2.2273,
+        "economic": 6.0455,
+        "cultural": 3.8636,
+        "temporal": 2.5
+      },
+      "by_model": {
+        "claude": {
+          "n": 3,
+          "mean_dci": 2.375,
+          "per_dim_mean_dev": {
+            "semiotic": 0.5,
+            "narrative": 1.5,
+            "ideological": 4.5,
+            "experiential": 5.5,
+            "social": 1.5,
+            "economic": 0.5,
+            "cultural": 2.5,
+            "temporal": 2.5
+          }
+        },
+        "gpt": {
+          "n": 3,
+          "mean_dci": 4.1667,
+          "per_dim_mean_dev": {
+            "semiotic": 2.5,
+            "narrative": 2.5,
+            "ideological": 4.1667,
+            "experiential": 7.5,
+            "social": 2.5,
+            "economic": 7.5,
+            "cultural": 4.1667,
+            "temporal": 2.5
+          }
+        },
+        "gemini": {
+          "n": 2,
+          "mean_dci": 5.0,
+          "per_dim_mean_dev": {
+            "semiotic": 2.5,
+            "narrative": 2.5,
+            "ideological": 7.5,
+            "experiential": 5.0,
+            "social": 2.5,
+            "economic": 10.0,
+            "cultural": 7.5,
+            "temporal": 2.5
+          }
+        },
+        "deepseek": {
+          "n": 3,
+          "mean_dci": 3.75,
+          "per_dim_mean_dev": {
+            "semiotic": 2.5,
+            "narrative": 2.5,
+            "ideological": 2.5,
+            "experiential": 7.5,
+            "social": 2.5,
+            "economic": 7.5,
+            "cultural": 2.5,
+            "temporal": 2.5
+          }
+        }
+      }
+    },
+    "IKEA": {
+      "n": 12,
+      "mean_dci": 6.0,
+      "sd_dci": 0.9957,
+      "per_dim_mean_dev": {
+        "semiotic": 2.0,
+        "narrative": 4.4167,
+        "ideological": 5.6667,
+        "experiential": 5.0,
+        "social": 4.75,
+        "economic": 17.75,
+        "cultural": 4.25,
+        "temporal": 4.1667
+      },
+      "by_model": {
+        "claude": {
+          "n": 3,
+          "mean_dci": 5.6667,
+          "per_dim_mean_dev": {
+            "semiotic": 0.5,
+            "narrative": 4.5,
+            "ideological": 5.5,
+            "experiential": 2.5,
+            "social": 3.8333,
+            "economic": 20.1667,
+            "cultural": 4.5,
+            "temporal": 3.8333
+          }
+        },
+        "gpt": {
+          "n": 3,
+          "mean_dci": 5.625,
+          "per_dim_mean_dev": {
+            "semiotic": 2.5,
+            "narrative": 2.5,
+            "ideological": 7.5,
+            "experiential": 7.5,
+            "social": 2.5,
+            "economic": 12.5,
+            "cultural": 7.5,
+            "temporal": 2.5
+          }
+        },
+        "gemini": {
+          "n": 3,
+          "mean_dci": 7.2917,
+          "per_dim_mean_dev": {
+            "semiotic": 2.5,
+            "narrative": 3.1667,
+            "ideological": 7.1667,
+            "experiential": 7.5,
+            "social": 8.5,
+            "economic": 19.1667,
+            "cultural": 2.5,
+            "temporal": 7.8333
+          }
+        },
+        "deepseek": {
+          "n": 3,
+          "mean_dci": 5.4167,
+          "per_dim_mean_dev": {
+            "semiotic": 2.5,
+            "narrative": 7.5,
+            "ideological": 2.5,
+            "experiential": 2.5,
+            "social": 4.1667,
+            "economic": 19.1667,
+            "cultural": 2.5,
+            "temporal": 2.5
+          }
+        }
+      }
+    },
+    "Patagonia": {
+      "n": 11,
+      "mean_dci": 4.9886,
+      "sd_dci": 0.8882,
+      "per_dim_mean_dev": {
+        "semiotic": 5.0455,
+        "narrative": 2.8636,
+        "ideological": 11.5,
+        "experiential": 4.6818,
+        "social": 1.9545,
+        "economic": 3.3182,
+        "cultural": 4.9545,
+        "temporal": 5.5909
+      },
+      "by_model": {
+        "claude": {
+          "n": 3,
+          "mean_dci": 4.125,
+          "per_dim_mean_dev": {
+            "semiotic": 4.5,
+            "narrative": 0.5,
+            "ideological": 8.8333,
+            "experiential": 5.5,
+            "social": 0.5,
+            "economic": 2.1667,
+            "cultural": 3.8333,
+            "temporal": 7.1667
+          }
+        },
+        "gpt": {
+          "n": 3,
+          "mean_dci": 5.8333,
+          "per_dim_mean_dev": {
+            "semiotic": 2.5,
+            "narrative": 5.8333,
+            "ideological": 12.5,
+            "experiential": 4.1667,
+            "social": 2.5,
+            "economic": 5.8333,
+            "cultural": 7.5,
+            "temporal": 5.8333
+          }
+        },
+        "gemini": {
+          "n": 2,
+          "mean_dci": 5.9375,
+          "per_dim_mean_dev": {
+            "semiotic": 6.0,
+            "narrative": 2.5,
+            "ideological": 12.5,
+            "experiential": 7.5,
+            "social": 2.5,
+            "economic": 2.5,
+            "cultural": 6.5,
+            "temporal": 7.5
+          }
+        },
+        "deepseek": {
+          "n": 3,
+          "mean_dci": 4.375,
+          "per_dim_mean_dev": {
+            "semiotic": 7.5,
+            "narrative": 2.5,
+            "ideological": 12.5,
+            "experiential": 2.5,
+            "social": 2.5,
+            "economic": 2.5,
+            "cultural": 2.5,
+            "temporal": 2.5
+          }
+        }
+      }
+    },
+    "Erewhon": {
+      "n": 9,
+      "mean_dci": 4.8889,
+      "sd_dci": 0.7589,
+      "per_dim_mean_dev": {
+        "semiotic": 4.8333,
+        "narrative": 1.8333,
+        "ideological": 5.1667,
+        "experiential": 4.1667,
+        "social": 4.8333,
+        "economic": 11.0556,
+        "cultural": 3.5,
+        "temporal": 3.7222
+      },
+      "by_model": {
+        "claude": {
+          "n": 3,
+          "mean_dci": 4.875,
+          "per_dim_mean_dev": {
+            "semiotic": 4.5,
+            "narrative": 0.5,
+            "ideological": 5.5,
+            "experiential": 2.5,
+            "social": 4.5,
+            "economic": 11.5,
+            "cultural": 3.8333,
+            "temporal": 6.1667
+          }
+        },
+        "gpt": {
+          "n": 3,
+          "mean_dci": 4.1667,
+          "per_dim_mean_dev": {
+            "semiotic": 2.5,
+            "narrative": 2.5,
+            "ideological": 7.5,
+            "experiential": 7.5,
+            "social": 2.5,
+            "economic": 4.1667,
+            "cultural": 4.1667,
+            "temporal": 2.5
+          }
+        },
+        "deepseek": {
+          "n": 3,
+          "mean_dci": 5.625,
+          "per_dim_mean_dev": {
+            "semiotic": 7.5,
+            "narrative": 2.5,
+            "ideological": 2.5,
+            "experiential": 2.5,
+            "social": 7.5,
+            "economic": 17.5,
+            "cultural": 2.5,
+            "temporal": 2.5
+          }
+        }
+      }
+    },
+    "Tesla": {
+      "n": 10,
+      "mean_dci": 4.7625,
+      "sd_dci": 1.7415,
+      "per_dim_mean_dev": {
+        "semiotic": 1.9,
+        "narrative": 3.7,
+        "ideological": 6.9,
+        "experiential": 5.2,
+        "social": 1.9,
+        "economic": 6.2,
+        "cultural": 5.7,
+        "temporal": 6.6
+      },
+      "by_model": {
+        "claude": {
+          "n": 3,
+          "mean_dci": 3.7917,
+          "per_dim_mean_dev": {
+            "semiotic": 0.5,
+            "narrative": 1.5,
+            "ideological": 5.5,
+            "experiential": 4.8333,
+            "social": 0.5,
+            "economic": 3.1667,
+            "cultural": 5.8333,
+            "temporal": 8.5
+          }
+        },
+        "gpt": {
+          "n": 3,
+          "mean_dci": 6.6667,
+          "per_dim_mean_dev": {
+            "semiotic": 2.5,
+            "narrative": 7.5,
+            "ideological": 7.5,
+            "experiential": 7.5,
+            "social": 2.5,
+            "economic": 9.1667,
+            "cultural": 8.1667,
+            "temporal": 8.5
+          }
+        },
+        "gemini": {
+          "n": 1,
+          "mean_dci": 6.875,
+          "per_dim_mean_dev": {
+            "semiotic": 2.5,
+            "narrative": 2.5,
+            "ideological": 7.5,
+            "experiential": 7.5,
+            "social": 2.5,
+            "economic": 17.5,
+            "cultural": 7.5,
+            "temporal": 7.5
+          }
+        },
+        "deepseek": {
+          "n": 3,
+          "mean_dci": 3.125,
+          "per_dim_mean_dev": {
+            "semiotic": 2.5,
+            "narrative": 2.5,
+            "ideological": 7.5,
+            "experiential": 2.5,
+            "social": 2.5,
+            "economic": 2.5,
+            "cultural": 2.5,
+            "temporal": 2.5
+          }
+        }
+      }
+    },
+    "Nike": {
+      "n": 11,
+      "mean_dci": 4.0568,
+      "sd_dci": 0.7972,
+      "per_dim_mean_dev": {
+        "semiotic": 3.5909,
+        "narrative": 2.1364,
+        "ideological": 7.3182,
+        "experiential": 4.1364,
+        "social": 4.4091,
+        "economic": 3.1364,
+        "cultural": 2.5909,
+        "temporal": 5.1364
+      },
+      "by_model": {
+        "claude": {
+          "n": 3,
+          "mean_dci": 3.9583,
+          "per_dim_mean_dev": {
+            "semiotic": 5.5,
+            "narrative": 0.5,
+            "ideological": 6.5,
+            "experiential": 3.5,
+            "social": 6.8333,
+            "economic": 0.5,
+            "cultural": 1.1667,
+            "temporal": 7.1667
+          }
+        },
+        "gpt": {
+          "n": 3,
+          "mean_dci": 5.0,
+          "per_dim_mean_dev": {
+            "semiotic": 2.5,
+            "narrative": 2.5,
+            "ideological": 7.5,
+            "experiential": 7.5,
+            "social": 2.5,
+            "economic": 7.5,
+            "cultural": 4.1667,
+            "temporal": 5.8333
+          }
+        },
+        "gemini": {
+          "n": 2,
+          "mean_dci": 4.1875,
+          "per_dim_mean_dev": {
+            "semiotic": 4.0,
+            "narrative": 3.5,
+            "ideological": 8.0,
+            "experiential": 2.5,
+            "social": 6.5,
+            "economic": 1.5,
+            "cultural": 2.5,
+            "temporal": 5.0
+          }
+        },
+        "deepseek": {
+          "n": 3,
+          "mean_dci": 3.125,
+          "per_dim_mean_dev": {
+            "semiotic": 2.5,
+            "narrative": 2.5,
+            "ideological": 7.5,
+            "experiential": 2.5,
+            "social": 2.5,
+            "economic": 2.5,
+            "cultural": 2.5,
+            "temporal": 2.5
+          }
+        }
+      }
+    },
+    "Apple": {
+      "n": 10,
+      "mean_dci": 4.8,
+      "sd_dci": 0.8379,
+      "per_dim_mean_dev": {
+        "semiotic": 4.7,
+        "narrative": 3.4,
+        "ideological": 5.8,
+        "experiential": 10.4,
+        "social": 2.4,
+        "economic": 6.1,
+        "cultural": 2.3,
+        "temporal": 3.3
+      },
+      "by_model": {
+        "claude": {
+          "n": 2,
+          "mean_dci": 4.0,
+          "per_dim_mean_dev": {
+            "semiotic": 1.0,
+            "narrative": 4.5,
+            "ideological": 6.5,
+            "experiential": 9.5,
+            "social": 2.0,
+            "economic": 5.5,
+            "cultural": 1.5,
+            "temporal": 1.5
+          }
+        },
+        "gpt": {
+          "n": 3,
+          "mean_dci": 4.375,
+          "per_dim_mean_dev": {
+            "semiotic": 7.5,
+            "narrative": 2.5,
+            "ideological": 2.5,
+            "experiential": 7.5,
+            "social": 2.5,
+            "economic": 7.5,
+            "cultural": 2.5,
+            "temporal": 2.5
+          }
+        },
+        "gemini": {
+          "n": 2,
+          "mean_dci": 6.25,
+          "per_dim_mean_dev": {
+            "semiotic": 7.5,
+            "narrative": 5.0,
+            "ideological": 7.5,
+            "experiential": 12.5,
+            "social": 2.5,
+            "economic": 5.0,
+            "cultural": 2.5,
+            "temporal": 7.5
+          }
+        },
+        "deepseek": {
+          "n": 3,
+          "mean_dci": 4.7917,
+          "per_dim_mean_dev": {
+            "semiotic": 2.5,
+            "narrative": 2.5,
+            "ideological": 7.5,
+            "experiential": 12.5,
+            "social": 2.5,
+            "economic": 5.8333,
+            "cultural": 2.5,
+            "temporal": 2.5
+          }
+        }
+      }
+    },
+    "Starbucks": {
+      "n": 10,
+      "mean_dci": 5.9875,
+      "sd_dci": 0.5573,
+      "per_dim_mean_dev": {
+        "semiotic": 3.9,
+        "narrative": 4.6,
+        "ideological": 7.5,
+        "experiential": 8.9,
+        "social": 2.2,
+        "economic": 12.4,
+        "cultural": 4.0,
+        "temporal": 4.4
+      },
+      "by_model": {
+        "claude": {
+          "n": 3,
+          "mean_dci": 5.5833,
+          "per_dim_mean_dev": {
+            "semiotic": 0.5,
+            "narrative": 4.5,
+            "ideological": 7.5,
+            "experiential": 15.5,
+            "social": 1.5,
+            "economic": 5.5,
+            "cultural": 2.5,
+            "temporal": 7.1667
+          }
+        },
+        "gpt": {
+          "n": 3,
+          "mean_dci": 5.625,
+          "per_dim_mean_dev": {
+            "semiotic": 2.5,
+            "narrative": 2.5,
+            "ideological": 7.5,
+            "experiential": 7.5,
+            "social": 2.5,
+            "economic": 12.5,
+            "cultural": 7.5,
+            "temporal": 2.5
+          }
+        },
+        "gemini": {
+          "n": 1,
+          "mean_dci": 6.25,
+          "per_dim_mean_dev": {
+            "semiotic": 7.5,
+            "narrative": 7.5,
+            "ideological": 7.5,
+            "experiential": 12.5,
+            "social": 2.5,
+            "economic": 2.5,
+            "cultural": 2.5,
+            "temporal": 7.5
+          }
+        },
+        "deepseek": {
+          "n": 3,
+          "mean_dci": 6.6667,
+          "per_dim_mean_dev": {
+            "semiotic": 7.5,
+            "narrative": 5.8333,
+            "ideological": 7.5,
+            "experiential": 2.5,
+            "social": 2.5,
+            "economic": 22.5,
+            "cultural": 2.5,
+            "temporal": 2.5
+          }
+        }
+      }
+    },
+    "Coca-Cola": {
+      "n": 11,
+      "mean_dci": 4.6023,
+      "sd_dci": 0.8193,
+      "per_dim_mean_dev": {
+        "semiotic": 3.7727,
+        "narrative": 2.8636,
+        "ideological": 8.0455,
+        "experiential": 7.2273,
+        "social": 2.0455,
+        "economic": 5.9545,
+        "cultural": 3.5,
+        "temporal": 3.4091
+      },
+      "by_model": {
+        "claude": {
+          "n": 3,
+          "mean_dci": 4.1667,
+          "per_dim_mean_dev": {
+            "semiotic": 5.5,
+            "narrative": 0.5,
+            "ideological": 9.5,
+            "experiential": 8.1667,
+            "social": 0.8333,
+            "economic": 1.8333,
+            "cultural": 4.5,
+            "temporal": 2.5
+          }
+        },
+        "gpt": {
+          "n": 3,
+          "mean_dci": 5.625,
+          "per_dim_mean_dev": {
+            "semiotic": 2.5,
+            "narrative": 2.5,
+            "ideological": 7.5,
+            "experiential": 7.5,
+            "social": 2.5,
+            "economic": 12.5,
+            "cultural": 4.1667,
+            "temporal": 5.8333
+          }
+        },
+        "gemini": {
+          "n": 2,
+          "mean_dci": 5.0,
+          "per_dim_mean_dev": {
+            "semiotic": 2.5,
+            "narrative": 7.5,
+            "ideological": 7.5,
+            "experiential": 7.5,
+            "social": 2.5,
+            "economic": 7.5,
+            "cultural": 2.5,
+            "temporal": 2.5
+          }
+        },
+        "deepseek": {
+          "n": 3,
+          "mean_dci": 3.75,
+          "per_dim_mean_dev": {
+            "semiotic": 4.1667,
+            "narrative": 2.5,
+            "ideological": 7.5,
+            "experiential": 5.8333,
+            "social": 2.5,
+            "economic": 2.5,
+            "cultural": 2.5,
+            "temporal": 2.5
+          }
+        }
+      }
+    },
+    "Mercedes-Benz": {
+      "n": 11,
+      "mean_dci": 4.1136,
+      "sd_dci": 0.6058,
+      "per_dim_mean_dev": {
+        "semiotic": 1.9545,
+        "narrative": 2.2273,
+        "ideological": 7.5,
+        "experiential": 6.0455,
+        "social": 1.9545,
+        "economic": 4.8636,
+        "cultural": 2.6818,
+        "temporal": 5.6818
+      },
+      "by_model": {
+        "claude": {
+          "n": 3,
+          "mean_dci": 3.625,
+          "per_dim_mean_dev": {
+            "semiotic": 0.5,
+            "narrative": 1.5,
+            "ideological": 7.5,
+            "experiential": 5.5,
+            "social": 0.5,
+            "economic": 4.5,
+            "cultural": 1.5,
+            "temporal": 7.5
+          }
+        },
+        "gpt": {
+          "n": 3,
+          "mean_dci": 4.5833,
+          "per_dim_mean_dev": {
+            "semiotic": 2.5,
+            "narrative": 2.5,
+            "ideological": 7.5,
+            "experiential": 10.8333,
+            "social": 2.5,
+            "economic": 2.5,
+            "cultural": 4.1667,
+            "temporal": 4.1667
+          }
+        },
+        "gemini": {
+          "n": 2,
+          "mean_dci": 4.0625,
+          "per_dim_mean_dev": {
+            "semiotic": 2.5,
+            "narrative": 2.5,
+            "ideological": 7.5,
+            "experiential": 2.5,
+            "social": 2.5,
+            "economic": 5.0,
+            "cultural": 2.5,
+            "temporal": 7.5
+          }
+        },
+        "deepseek": {
+          "n": 3,
+          "mean_dci": 4.1667,
+          "per_dim_mean_dev": {
+            "semiotic": 2.5,
+            "narrative": 2.5,
+            "ideological": 7.5,
+            "experiential": 4.1667,
+            "social": 2.5,
+            "economic": 7.5,
+            "cultural": 2.5,
+            "temporal": 4.1667
+          }
+        }
+      }
+    },
+    "Zara": {
+      "n": 12,
+      "mean_dci": 7.0833,
+      "sd_dci": 1.2309,
+      "per_dim_mean_dev": {
+        "semiotic": 3.8333,
+        "narrative": 6.25,
+        "ideological": 8.1667,
+        "experiential": 12.0,
+        "social": 3.0,
+        "economic": 14.6667,
+        "cultural": 3.9167,
+        "temporal": 4.8333
+      },
+      "by_model": {
+        "claude": {
+          "n": 3,
+          "mean_dci": 8.75,
+          "per_dim_mean_dev": {
+            "semiotic": 4.5,
+            "narrative": 7.5,
+            "ideological": 9.5,
+            "experiential": 15.5,
+            "social": 4.5,
+            "economic": 19.5,
+            "cultural": 2.5,
+            "temporal": 6.5
+          }
+        },
+        "gpt": {
+          "n": 3,
+          "mean_dci": 5.625,
+          "per_dim_mean_dev": {
+            "semiotic": 2.5,
+            "narrative": 2.5,
+            "ideological": 7.5,
+            "experiential": 7.5,
+            "social": 2.5,
+            "economic": 12.5,
+            "cultural": 7.5,
+            "temporal": 2.5
+          }
+        },
+        "gemini": {
+          "n": 3,
+          "mean_dci": 7.2917,
+          "per_dim_mean_dev": {
+            "semiotic": 2.5,
+            "narrative": 7.5,
+            "ideological": 8.1667,
+            "experiential": 12.5,
+            "social": 2.5,
+            "economic": 14.1667,
+            "cultural": 3.1667,
+            "temporal": 7.8333
+          }
+        },
+        "deepseek": {
+          "n": 3,
+          "mean_dci": 6.6667,
+          "per_dim_mean_dev": {
+            "semiotic": 5.8333,
+            "narrative": 7.5,
+            "ideological": 7.5,
+            "experiential": 12.5,
+            "social": 2.5,
+            "economic": 12.5,
+            "cultural": 2.5,
+            "temporal": 2.5
+          }
+        }
+      }
+    },
+    "Rolex": {
+      "n": 12,
+      "mean_dci": 4.4583,
+      "sd_dci": 0.8764,
+      "per_dim_mean_dev": {
+        "semiotic": 2.9167,
+        "narrative": 2.1667,
+        "ideological": 6.25,
+        "experiential": 3.25,
+        "social": 6.5833,
+        "economic": 5.8333,
+        "cultural": 5.1667,
+        "temporal": 3.5
+      },
+      "by_model": {
+        "claude": {
+          "n": 3,
+          "mean_dci": 3.6667,
+          "per_dim_mean_dev": {
+            "semiotic": 0.8333,
+            "narrative": 1.1667,
+            "ideological": 5.8333,
+            "experiential": 2.1667,
+            "social": 5.5,
+            "economic": 5.8333,
+            "cultural": 4.8333,
+            "temporal": 3.1667
+          }
+        },
+        "gpt": {
+          "n": 3,
+          "mean_dci": 4.5833,
+          "per_dim_mean_dev": {
+            "semiotic": 5.8333,
+            "narrative": 2.5,
+            "ideological": 7.5,
+            "experiential": 5.8333,
+            "social": 4.1667,
+            "economic": 2.5,
+            "cultural": 5.8333,
+            "temporal": 2.5
+          }
+        },
+        "gemini": {
+          "n": 3,
+          "mean_dci": 5.4167,
+          "per_dim_mean_dev": {
+            "semiotic": 2.5,
+            "narrative": 2.5,
+            "ideological": 7.5,
+            "experiential": 2.5,
+            "social": 9.1667,
+            "economic": 7.5,
+            "cultural": 7.5,
+            "temporal": 4.1667
+          }
+        },
+        "deepseek": {
+          "n": 3,
+          "mean_dci": 4.1667,
+          "per_dim_mean_dev": {
+            "semiotic": 2.5,
+            "narrative": 2.5,
+            "ideological": 4.1667,
+            "experiential": 2.5,
+            "social": 7.5,
+            "economic": 7.5,
+            "cultural": 2.5,
+            "temporal": 4.1667
+          }
+        }
+      }
+    },
+    "Netflix": {
+      "n": 12,
+      "mean_dci": 5.9375,
+      "sd_dci": 1.1413,
+      "per_dim_mean_dev": {
+        "semiotic": 4.0,
+        "narrative": 2.6667,
+        "ideological": 8.1667,
+        "experiential": 11.4167,
+        "social": 2.5833,
+        "economic": 7.3333,
+        "cultural": 4.8333,
+        "temporal": 6.5
+      },
+      "by_model": {
+        "claude": {
+          "n": 3,
+          "mean_dci": 5.375,
+          "per_dim_mean_dev": {
+            "semiotic": 4.5,
+            "narrative": 0.5,
+            "ideological": 8.8333,
+            "experiential": 10.5,
+            "social": 3.5,
+            "economic": 7.5,
+            "cultural": 1.1667,
+            "temporal": 6.5
+          }
+        },
+        "gpt": {
+          "n": 3,
+          "mean_dci": 5.625,
+          "per_dim_mean_dev": {
+            "semiotic": 2.5,
+            "narrative": 2.5,
+            "ideological": 7.5,
+            "experiential": 7.5,
+            "social": 2.5,
+            "economic": 12.5,
+            "cultural": 7.5,
+            "temporal": 2.5
+          }
+        },
+        "gemini": {
+          "n": 3,
+          "mean_dci": 7.75,
+          "per_dim_mean_dev": {
+            "semiotic": 6.5,
+            "narrative": 5.1667,
+            "ideological": 8.8333,
+            "experiential": 15.1667,
+            "social": 1.8333,
+            "economic": 6.8333,
+            "cultural": 8.1667,
+            "temporal": 9.5
+          }
+        },
+        "deepseek": {
+          "n": 3,
+          "mean_dci": 5.0,
+          "per_dim_mean_dev": {
+            "semiotic": 2.5,
+            "narrative": 2.5,
+            "ideological": 7.5,
+            "experiential": 12.5,
+            "social": 2.5,
+            "economic": 2.5,
+            "cultural": 2.5,
+            "temporal": 7.5
+          }
+        }
+      }
+    },
+    "Lululemon": {
+      "n": 11,
+      "mean_dci": 4.9432,
+      "sd_dci": 1.0627,
+      "per_dim_mean_dev": {
+        "semiotic": 1.9545,
+        "narrative": 5.1364,
+        "ideological": 4.2273,
+        "experiential": 8.5,
+        "social": 4.2273,
+        "economic": 6.5,
+        "cultural": 4.2273,
+        "temporal": 4.7727
+      },
+      "by_model": {
+        "claude": {
+          "n": 3,
+          "mean_dci": 3.75,
+          "per_dim_mean_dev": {
+            "semiotic": 0.5,
+            "narrative": 4.5,
+            "ideological": 2.5,
+            "experiential": 9.5,
+            "social": 5.5,
+            "economic": 0.5,
+            "cultural": 0.5,
+            "temporal": 6.5
+          }
+        },
+        "gpt": {
+          "n": 3,
+          "mean_dci": 5.4167,
+          "per_dim_mean_dev": {
+            "semiotic": 2.5,
+            "narrative": 2.5,
+            "ideological": 7.5,
+            "experiential": 7.5,
+            "social": 2.5,
+            "economic": 10.8333,
+            "cultural": 7.5,
+            "temporal": 2.5
+          }
+        },
+        "gemini": {
+          "n": 2,
+          "mean_dci": 6.25,
+          "per_dim_mean_dev": {
+            "semiotic": 2.5,
+            "narrative": 6.5,
+            "ideological": 4.5,
+            "experiential": 10.0,
+            "social": 5.0,
+            "economic": 10.0,
+            "cultural": 2.5,
+            "temporal": 9.0
+          }
+        },
+        "deepseek": {
+          "n": 3,
+          "mean_dci": 4.7917,
+          "per_dim_mean_dev": {
+            "semiotic": 2.5,
+            "narrative": 7.5,
+            "ideological": 2.5,
+            "experiential": 7.5,
+            "social": 4.1667,
+            "economic": 5.8333,
+            "cultural": 5.8333,
+            "temporal": 2.5
+          }
+        }
+      }
+    },
+    "Trader Joe's": {
+      "n": 12,
+      "mean_dci": 5.3333,
+      "sd_dci": 0.33,
+      "per_dim_mean_dev": {
+        "semiotic": 2.0,
+        "narrative": 2.25,
+        "ideological": 4.25,
+        "experiential": 9.25,
+        "social": 2.0,
+        "economic": 9.0833,
+        "cultural": 7.4167,
+        "temporal": 6.4167
+      },
+      "by_model": {
+        "claude": {
+          "n": 3,
+          "mean_dci": 5.0833,
+          "per_dim_mean_dev": {
+            "semiotic": 0.5,
+            "narrative": 1.5,
+            "ideological": 4.5,
+            "experiential": 9.5,
+            "social": 0.5,
+            "economic": 8.8333,
+            "cultural": 7.1667,
+            "temporal": 8.1667
+          }
+        },
+        "gpt": {
+          "n": 3,
+          "mean_dci": 5.625,
+          "per_dim_mean_dev": {
+            "semiotic": 2.5,
+            "narrative": 2.5,
+            "ideological": 7.5,
+            "experiential": 7.5,
+            "social": 2.5,
+            "economic": 12.5,
+            "cultural": 7.5,
+            "temporal": 2.5
+          }
+        },
+        "gemini": {
+          "n": 3,
+          "mean_dci": 5.625,
+          "per_dim_mean_dev": {
+            "semiotic": 2.5,
+            "narrative": 2.5,
+            "ideological": 2.5,
+            "experiential": 7.5,
+            "social": 2.5,
+            "economic": 12.5,
+            "cultural": 7.5,
+            "temporal": 7.5
+          }
+        },
+        "deepseek": {
+          "n": 3,
+          "mean_dci": 5.0,
+          "per_dim_mean_dev": {
+            "semiotic": 2.5,
+            "narrative": 2.5,
+            "ideological": 2.5,
+            "experiential": 12.5,
+            "social": 2.5,
+            "economic": 2.5,
+            "cultural": 7.5,
+            "temporal": 7.5
+          }
+        }
+      }
+    },
+    "Louis Vuitton": {
+      "n": 10,
+      "mean_dci": 4.25,
+      "sd_dci": 0.7096,
+      "per_dim_mean_dev": {
+        "semiotic": 5.9,
+        "narrative": 1.9,
+        "ideological": 8.1,
+        "experiential": 4.3,
+        "social": 3.5,
+        "economic": 3.4,
+        "cultural": 2.8,
+        "temporal": 4.1
+      },
+      "by_model": {
+        "claude": {
+          "n": 3,
+          "mean_dci": 3.75,
+          "per_dim_mean_dev": {
+            "semiotic": 5.5,
+            "narrative": 0.5,
+            "ideological": 9.5,
+            "experiential": 3.5,
+            "social": 2.5,
+            "economic": 0.5,
+            "cultural": 3.5,
+            "temporal": 4.5
+          }
+        },
+        "gpt": {
+          "n": 3,
+          "mean_dci": 5.0,
+          "per_dim_mean_dev": {
+            "semiotic": 7.5,
+            "narrative": 2.5,
+            "ideological": 7.5,
+            "experiential": 7.5,
+            "social": 2.5,
+            "economic": 5.8333,
+            "cultural": 2.5,
+            "temporal": 4.1667
+          }
+        },
+        "gemini": {
+          "n": 1,
+          "mean_dci": 4.375,
+          "per_dim_mean_dev": {
+            "semiotic": 2.5,
+            "narrative": 2.5,
+            "ideological": 7.5,
+            "experiential": 2.5,
+            "social": 7.5,
+            "economic": 2.5,
+            "cultural": 2.5,
+            "temporal": 7.5
+          }
+        },
+        "deepseek": {
+          "n": 3,
+          "mean_dci": 3.9583,
+          "per_dim_mean_dev": {
+            "semiotic": 5.8333,
+            "narrative": 2.5,
+            "ideological": 7.5,
+            "experiential": 2.5,
+            "social": 4.1667,
+            "economic": 4.1667,
+            "cultural": 2.5,
+            "temporal": 2.5
+          }
+        }
+      }
+    },
+    "The North Face": {
+      "n": 10,
+      "mean_dci": 4.125,
+      "sd_dci": 0.6482,
+      "per_dim_mean_dev": {
+        "semiotic": 1.9,
+        "narrative": 2.3,
+        "ideological": 6.3,
+        "experiential": 6.9,
+        "social": 2.6,
+        "economic": 4.8,
+        "cultural": 5.1,
+        "temporal": 3.1
+      },
+      "by_model": {
+        "claude": {
+          "n": 3,
+          "mean_dci": 3.75,
+          "per_dim_mean_dev": {
+            "semiotic": 0.5,
+            "narrative": 1.8333,
+            "ideological": 5.1667,
+            "experiential": 5.5,
+            "social": 2.8333,
+            "economic": 5.1667,
+            "cultural": 7.8333,
+            "temporal": 1.1667
+          }
+        },
+        "gpt": {
+          "n": 3,
+          "mean_dci": 5.0,
+          "per_dim_mean_dev": {
+            "semiotic": 2.5,
+            "narrative": 2.5,
+            "ideological": 5.8333,
+            "experiential": 7.5,
+            "social": 2.5,
+            "economic": 7.5,
+            "cultural": 5.8333,
+            "temporal": 5.8333
+          }
+        },
+        "gemini": {
+          "n": 1,
+          "mean_dci": 3.75,
+          "per_dim_mean_dev": {
+            "semiotic": 2.5,
+            "narrative": 2.5,
+            "ideological": 7.5,
+            "experiential": 7.5,
+            "social": 2.5,
+            "economic": 2.5,
+            "cultural": 2.5,
+            "temporal": 2.5
+          }
+        },
+        "deepseek": {
+          "n": 3,
+          "mean_dci": 3.75,
+          "per_dim_mean_dev": {
+            "semiotic": 2.5,
+            "narrative": 2.5,
+            "ideological": 7.5,
+            "experiential": 7.5,
+            "social": 2.5,
+            "economic": 2.5,
+            "cultural": 2.5,
+            "temporal": 2.5
+          }
+        }
+      }
+    },
+    "Whole Foods Market": {
+      "n": 11,
+      "mean_dci": 5.3977,
+      "sd_dci": 1.0923,
+      "per_dim_mean_dev": {
+        "semiotic": 4.0455,
+        "narrative": 4.1364,
+        "ideological": 4.6818,
+        "experiential": 7.1364,
+        "social": 5.6818,
+        "economic": 10.2273,
+        "cultural": 3.3182,
+        "temporal": 3.9545
+      },
+      "by_model": {
+        "claude": {
+          "n": 3,
+          "mean_dci": 4.375,
+          "per_dim_mean_dev": {
+            "semiotic": 3.1667,
+            "narrative": 5.1667,
+            "ideological": 5.5,
+            "experiential": 9.5,
+            "social": 5.8333,
+            "economic": 2.5,
+            "cultural": 0.5,
+            "temporal": 2.8333
+          }
+        },
+        "gpt": {
+          "n": 3,
+          "mean_dci": 4.5833,
+          "per_dim_mean_dev": {
+            "semiotic": 2.5,
+            "narrative": 2.5,
+            "ideological": 4.1667,
+            "experiential": 7.5,
+            "social": 7.5,
+            "economic": 5.8333,
+            "cultural": 4.1667,
+            "temporal": 2.5
+          }
+        },
+        "gemini": {
+          "n": 2,
+          "mean_dci": 6.875,
+          "per_dim_mean_dev": {
+            "semiotic": 2.5,
+            "narrative": 7.5,
+            "ideological": 7.5,
+            "experiential": 10.0,
+            "social": 7.5,
+            "economic": 10.0,
+            "cultural": 2.5,
+            "temporal": 7.5
+          }
+        },
+        "deepseek": {
+          "n": 3,
+          "mean_dci": 6.25,
+          "per_dim_mean_dev": {
+            "semiotic": 7.5,
+            "narrative": 2.5,
+            "ideological": 2.5,
+            "experiential": 2.5,
+            "social": 2.5,
+            "economic": 22.5,
+            "cultural": 5.8333,
+            "temporal": 4.1667
+          }
+        }
+      }
+    },
+    "Rivian": {
+      "n": 10,
+      "mean_dci": 4.175,
+      "sd_dci": 1.3947,
+      "per_dim_mean_dev": {
+        "semiotic": 3.1,
+        "narrative": 2.9,
+        "ideological": 2.7,
+        "experiential": 7.9,
+        "social": 4.9,
+        "economic": 3.0,
+        "cultural": 4.3,
+        "temporal": 4.6
+      },
+      "by_model": {
+        "claude": {
+          "n": 3,
+          "mean_dci": 2.6667,
+          "per_dim_mean_dev": {
+            "semiotic": 4.5,
+            "narrative": 0.5,
+            "ideological": 1.5,
+            "experiential": 5.5,
+            "social": 3.8333,
+            "economic": 2.5,
+            "cultural": 1.8333,
+            "temporal": 1.1667
+          }
+        },
+        "gpt": {
+          "n": 3,
+          "mean_dci": 5.4167,
+          "per_dim_mean_dev": {
+            "semiotic": 2.5,
+            "narrative": 5.8333,
+            "ideological": 2.5,
+            "experiential": 9.1667,
+            "social": 7.5,
+            "economic": 4.1667,
+            "cultural": 7.5,
+            "temporal": 4.1667
+          }
+        },
+        "gemini": {
+          "n": 1,
+          "mean_dci": 6.25,
+          "per_dim_mean_dev": {
+            "semiotic": 2.5,
+            "narrative": 2.5,
+            "ideological": 7.5,
+            "experiential": 12.5,
+            "social": 7.5,
+            "economic": 2.5,
+            "cultural": 7.5,
+            "temporal": 7.5
+          }
+        },
+        "deepseek": {
+          "n": 3,
+          "mean_dci": 3.75,
+          "per_dim_mean_dev": {
+            "semiotic": 2.5,
+            "narrative": 2.5,
+            "ideological": 2.5,
+            "experiential": 7.5,
+            "social": 2.5,
+            "economic": 2.5,
+            "cultural": 2.5,
+            "temporal": 7.5
+          }
+        }
+      }
+    },
+    "Dove": {
+      "n": 12,
+      "mean_dci": 4.0729,
+      "sd_dci": 1.3039,
+      "per_dim_mean_dev": {
+        "semiotic": 2.4167,
+        "narrative": 5.5833,
+        "ideological": 5.4167,
+        "experiential": 2.9167,
+        "social": 2.25,
+        "economic": 3.0,
+        "cultural": 6.5,
+        "temporal": 4.5
+      },
+      "by_model": {
+        "claude": {
+          "n": 3,
+          "mean_dci": 3.375,
+          "per_dim_mean_dev": {
+            "semiotic": 0.5,
+            "narrative": 4.8333,
+            "ideological": 4.1667,
+            "experiential": 2.5,
+            "social": 1.5,
+            "economic": 4.5,
+            "cultural": 8.5,
+            "temporal": 0.5
+          }
+        },
+        "gpt": {
+          "n": 3,
+          "mean_dci": 5.2083,
+          "per_dim_mean_dev": {
+            "semiotic": 2.5,
+            "narrative": 9.1667,
+            "ideological": 7.5,
+            "experiential": 2.5,
+            "social": 2.5,
+            "economic": 2.5,
+            "cultural": 7.5,
+            "temporal": 7.5
+          }
+        },
+        "gemini": {
+          "n": 3,
+          "mean_dci": 5.2083,
+          "per_dim_mean_dev": {
+            "semiotic": 4.1667,
+            "narrative": 5.8333,
+            "ideological": 7.5,
+            "experiential": 4.1667,
+            "social": 2.5,
+            "economic": 2.5,
+            "cultural": 7.5,
+            "temporal": 7.5
+          }
+        },
+        "deepseek": {
+          "n": 3,
+          "mean_dci": 2.5,
+          "per_dim_mean_dev": {
+            "semiotic": 2.5,
+            "narrative": 2.5,
+            "ideological": 2.5,
+            "experiential": 2.5,
+            "social": 2.5,
+            "economic": 2.5,
+            "cultural": 2.5,
+            "temporal": 2.5
+          }
+        }
+      }
+    },
+    "Toyota": {
+      "n": 12,
+      "mean_dci": 5.6771,
+      "sd_dci": 0.4956,
+      "per_dim_mean_dev": {
+        "semiotic": 5.0833,
+        "narrative": 2.0,
+        "ideological": 4.5833,
+        "experiential": 6.3333,
+        "social": 5.5,
+        "economic": 13.25,
+        "cultural": 4.75,
+        "temporal": 3.9167
+      },
+      "by_model": {
+        "claude": {
+          "n": 3,
+          "mean_dci": 6.25,
+          "per_dim_mean_dev": {
+            "semiotic": 4.5,
+            "narrative": 0.5,
+            "ideological": 2.5,
+            "experiential": 9.5,
+            "social": 4.5,
+            "economic": 15.5,
+            "cultural": 6.5,
+            "temporal": 6.5
+          }
+        },
+        "gpt": {
+          "n": 3,
+          "mean_dci": 5.625,
+          "per_dim_mean_dev": {
+            "semiotic": 2.5,
+            "narrative": 2.5,
+            "ideological": 7.5,
+            "experiential": 7.5,
+            "social": 2.5,
+            "economic": 12.5,
+            "cultural": 7.5,
+            "temporal": 2.5
+          }
+        },
+        "gemini": {
+          "n": 3,
+          "mean_dci": 5.8333,
+          "per_dim_mean_dev": {
+            "semiotic": 5.8333,
+            "narrative": 2.5,
+            "ideological": 5.8333,
+            "experiential": 5.8333,
+            "social": 7.5,
+            "economic": 12.5,
+            "cultural": 2.5,
+            "temporal": 4.1667
+          }
+        },
+        "deepseek": {
+          "n": 3,
+          "mean_dci": 5.0,
+          "per_dim_mean_dev": {
+            "semiotic": 7.5,
+            "narrative": 2.5,
+            "ideological": 2.5,
+            "experiential": 2.5,
+            "social": 7.5,
+            "economic": 12.5,
+            "cultural": 2.5,
+            "temporal": 2.5
+          }
+        }
+      }
+    },
+    "Samsung": {
+      "n": 12,
+      "mean_dci": 5.4479,
+      "sd_dci": 0.4506,
+      "per_dim_mean_dev": {
+        "semiotic": 2.4167,
+        "narrative": 3.5833,
+        "ideological": 7.9167,
+        "experiential": 9.25,
+        "social": 2.0833,
+        "economic": 9.75,
+        "cultural": 4.6667,
+        "temporal": 3.9167
+      },
+      "by_model": {
+        "claude": {
+          "n": 3,
+          "mean_dci": 5.3333,
+          "per_dim_mean_dev": {
+            "semiotic": 0.5,
+            "narrative": 4.5,
+            "ideological": 9.1667,
+            "experiential": 9.5,
+            "social": 0.8333,
+            "economic": 11.5,
+            "cultural": 6.1667,
+            "temporal": 0.5
+          }
+        },
+        "gpt": {
+          "n": 3,
+          "mean_dci": 5.625,
+          "per_dim_mean_dev": {
+            "semiotic": 2.5,
+            "narrative": 2.5,
+            "ideological": 7.5,
+            "experiential": 7.5,
+            "social": 2.5,
+            "economic": 12.5,
+            "cultural": 7.5,
+            "temporal": 2.5
+          }
+        },
+        "gemini": {
+          "n": 3,
+          "mean_dci": 5.8333,
+          "per_dim_mean_dev": {
+            "semiotic": 4.1667,
+            "narrative": 4.8333,
+            "ideological": 7.5,
+            "experiential": 12.5,
+            "social": 2.5,
+            "economic": 5.8333,
+            "cultural": 2.5,
+            "temporal": 6.8333
+          }
+        },
+        "deepseek": {
+          "n": 3,
+          "mean_dci": 5.0,
+          "per_dim_mean_dev": {
+            "semiotic": 2.5,
+            "narrative": 2.5,
+            "ideological": 7.5,
+            "experiential": 7.5,
+            "social": 2.5,
+            "economic": 9.1667,
+            "cultural": 2.5,
+            "temporal": 5.8333
+          }
+        }
+      }
+    },
+    "Huawei": {
+      "n": 11,
+      "mean_dci": 6.0227,
+      "sd_dci": 0.5056,
+      "per_dim_mean_dev": {
+        "semiotic": 3.9545,
+        "narrative": 4.6818,
+        "ideological": 5.0455,
+        "experiential": 8.5909,
+        "social": 4.6818,
+        "economic": 10.5909,
+        "cultural": 4.5909,
+        "temporal": 6.0455
+      },
+      "by_model": {
+        "claude": {
+          "n": 3,
+          "mean_dci": 6.0417,
+          "per_dim_mean_dev": {
+            "semiotic": 4.5,
+            "narrative": 7.1667,
+            "ideological": 1.8333,
+            "experiential": 8.1667,
+            "social": 5.5,
+            "economic": 8.8333,
+            "cultural": 5.1667,
+            "temporal": 7.1667
+          }
+        },
+        "gpt": {
+          "n": 3,
+          "mean_dci": 6.25,
+          "per_dim_mean_dev": {
+            "semiotic": 2.5,
+            "narrative": 2.5,
+            "ideological": 7.5,
+            "experiential": 10.8333,
+            "social": 4.1667,
+            "economic": 9.1667,
+            "cultural": 5.8333,
+            "temporal": 7.5
+          }
+        },
+        "gemini": {
+          "n": 2,
+          "mean_dci": 6.25,
+          "per_dim_mean_dev": {
+            "semiotic": 2.5,
+            "narrative": 2.5,
+            "ideological": 7.5,
+            "experiential": 12.5,
+            "social": 5.0,
+            "economic": 10.0,
+            "cultural": 2.5,
+            "temporal": 7.5
+          }
+        },
+        "deepseek": {
+          "n": 3,
+          "mean_dci": 5.625,
+          "per_dim_mean_dev": {
+            "semiotic": 5.8333,
+            "narrative": 5.8333,
+            "ideological": 4.1667,
+            "experiential": 4.1667,
+            "social": 4.1667,
+            "economic": 14.1667,
+            "cultural": 4.1667,
+            "temporal": 2.5
+          }
+        }
+      }
+    },
+    "Volvo": {
+      "n": 11,
+      "mean_dci": 4.0114,
+      "sd_dci": 0.8952,
+      "per_dim_mean_dev": {
+        "semiotic": 3.0455,
+        "narrative": 5.5909,
+        "ideological": 3.2273,
+        "experiential": 4.9545,
+        "social": 6.3182,
+        "economic": 1.9545,
+        "cultural": 2.4091,
+        "temporal": 4.5909
+      },
+      "by_model": {
+        "claude": {
+          "n": 3,
+          "mean_dci": 3.875,
+          "per_dim_mean_dev": {
+            "semiotic": 4.5,
+            "narrative": 5.5,
+            "ideological": 3.5,
+            "experiential": 6.5,
+            "social": 6.5,
+            "economic": 0.5,
+            "cultural": 0.5,
+            "temporal": 3.5
+          }
+        },
+        "gpt": {
+          "n": 3,
+          "mean_dci": 5.2083,
+          "per_dim_mean_dev": {
+            "semiotic": 2.5,
+            "narrative": 7.5,
+            "ideological": 2.5,
+            "experiential": 7.5,
+            "social": 7.5,
+            "economic": 2.5,
+            "cultural": 4.1667,
+            "temporal": 7.5
+          }
+        },
+        "gemini": {
+          "n": 2,
+          "mean_dci": 3.75,
+          "per_dim_mean_dev": {
+            "semiotic": 2.5,
+            "narrative": 7.5,
+            "ideological": 5.0,
+            "experiential": 2.5,
+            "social": 2.5,
+            "economic": 2.5,
+            "cultural": 2.5,
+            "temporal": 5.0
+          }
+        },
+        "deepseek": {
+          "n": 3,
+          "mean_dci": 3.125,
+          "per_dim_mean_dev": {
+            "semiotic": 2.5,
+            "narrative": 2.5,
+            "ideological": 2.5,
+            "experiential": 2.5,
+            "social": 7.5,
+            "economic": 2.5,
+            "cultural": 2.5,
+            "temporal": 2.5
+          }
+        }
+      }
+    },
+    "Uniqlo": {
+      "n": 12,
+      "mean_dci": 6.5625,
+      "sd_dci": 0.9792,
+      "per_dim_mean_dev": {
+        "semiotic": 2.0,
+        "narrative": 4.25,
+        "ideological": 7.25,
+        "experiential": 9.25,
+        "social": 5.5,
+        "economic": 14.5,
+        "cultural": 3.75,
+        "temporal": 6.0
+      },
+      "by_model": {
+        "claude": {
+          "n": 3,
+          "mean_dci": 6.25,
+          "per_dim_mean_dev": {
+            "semiotic": 0.5,
+            "narrative": 4.5,
+            "ideological": 6.5,
+            "experiential": 9.5,
+            "social": 4.5,
+            "economic": 15.5,
+            "cultural": 2.5,
+            "temporal": 6.5
+          }
+        },
+        "gpt": {
+          "n": 3,
+          "mean_dci": 5.625,
+          "per_dim_mean_dev": {
+            "semiotic": 2.5,
+            "narrative": 2.5,
+            "ideological": 7.5,
+            "experiential": 7.5,
+            "social": 2.5,
+            "economic": 12.5,
+            "cultural": 7.5,
+            "temporal": 2.5
+          }
+        },
+        "gemini": {
+          "n": 3,
+          "mean_dci": 6.25,
+          "per_dim_mean_dev": {
+            "semiotic": 2.5,
+            "narrative": 2.5,
+            "ideological": 7.5,
+            "experiential": 7.5,
+            "social": 7.5,
+            "economic": 12.5,
+            "cultural": 2.5,
+            "temporal": 7.5
+          }
+        },
+        "deepseek": {
+          "n": 3,
+          "mean_dci": 8.125,
+          "per_dim_mean_dev": {
+            "semiotic": 2.5,
+            "narrative": 7.5,
+            "ideological": 7.5,
+            "experiential": 12.5,
+            "social": 7.5,
+            "economic": 17.5,
+            "cultural": 2.5,
+            "temporal": 7.5
+          }
+        }
+      }
+    },
+    "Emirates": {
+      "n": 11,
+      "mean_dci": 5.7955,
+      "sd_dci": 1.1555,
+      "per_dim_mean_dev": {
+        "semiotic": 2.8636,
+        "narrative": 3.0455,
+        "ideological": 8.2273,
+        "experiential": 15.5909,
+        "social": 1.9545,
+        "economic": 5.7727,
+        "cultural": 3.5,
+        "temporal": 5.4091
+      },
+      "by_model": {
+        "claude": {
+          "n": 3,
+          "mean_dci": 6.25,
+          "per_dim_mean_dev": {
+            "semiotic": 0.5,
+            "narrative": 4.5,
+            "ideological": 9.5,
+            "experiential": 15.5,
+            "social": 0.5,
+            "economic": 9.5,
+            "cultural": 4.5,
+            "temporal": 5.5
+          }
+        },
+        "gpt": {
+          "n": 3,
+          "mean_dci": 5.625,
+          "per_dim_mean_dev": {
+            "semiotic": 2.5,
+            "narrative": 2.5,
+            "ideological": 7.5,
+            "experiential": 15.8333,
+            "social": 2.5,
+            "economic": 4.1667,
+            "cultural": 4.1667,
+            "temporal": 5.8333
+          }
+        },
+        "gemini": {
+          "n": 2,
+          "mean_dci": 7.5,
+          "per_dim_mean_dev": {
+            "semiotic": 7.5,
+            "narrative": 2.5,
+            "ideological": 8.5,
+            "experiential": 20.0,
+            "social": 2.5,
+            "economic": 7.5,
+            "cultural": 2.5,
+            "temporal": 9.0
+          }
+        },
+        "deepseek": {
+          "n": 3,
+          "mean_dci": 4.375,
+          "per_dim_mean_dev": {
+            "semiotic": 2.5,
+            "narrative": 2.5,
+            "ideological": 7.5,
+            "experiential": 12.5,
+            "social": 2.5,
+            "economic": 2.5,
+            "cultural": 2.5,
+            "temporal": 2.5
+          }
+        }
+      }
+    }
+  },
+  "enhanced": {
+    "Hermes": {
+      "n": 12,
+      "mean_dci": 4.1458,
+      "sd_dci": 1.0908,
+      "per_dim_mean_dev": {
+        "semiotic": 2.25,
+        "narrative": 2.4167,
+        "ideological": 4.5,
+        "experiential": 6.1667,
+        "social": 2.6667,
+        "economic": 7.75,
+        "cultural": 4.5833,
+        "temporal": 2.8333
+      },
+      "by_model": {
+        "claude": {
+          "n": 3,
+          "mean_dci": 3.0,
+          "per_dim_mean_dev": {
+            "semiotic": 0.5,
+            "narrative": 1.5,
+            "ideological": 4.5,
+            "experiential": 5.5,
+            "social": 2.1667,
+            "economic": 1.8333,
+            "cultural": 4.1667,
+            "temporal": 3.8333
+          }
+        },
+        "gpt": {
+          "n": 3,
+          "mean_dci": 4.375,
+          "per_dim_mean_dev": {
+            "semiotic": 2.5,
+            "narrative": 2.5,
+            "ideological": 4.1667,
+            "experiential": 7.5,
+            "social": 2.5,
+            "economic": 9.1667,
+            "cultural": 4.1667,
+            "temporal": 2.5
+          }
+        },
+        "gemini": {
+          "n": 3,
+          "mean_dci": 5.4583,
+          "per_dim_mean_dev": {
+            "semiotic": 3.5,
+            "narrative": 3.1667,
+            "ideological": 6.8333,
+            "experiential": 4.1667,
+            "social": 3.5,
+            "economic": 12.5,
+            "cultural": 7.5,
+            "temporal": 2.5
+          }
+        },
+        "deepseek": {
+          "n": 3,
+          "mean_dci": 3.75,
+          "per_dim_mean_dev": {
+            "semiotic": 2.5,
+            "narrative": 2.5,
+            "ideological": 2.5,
+            "experiential": 7.5,
+            "social": 2.5,
+            "economic": 7.5,
+            "cultural": 2.5,
+            "temporal": 2.5
+          }
+        }
+      }
+    },
+    "IKEA": {
+      "n": 12,
+      "mean_dci": 6.0417,
+      "sd_dci": 0.9359,
+      "per_dim_mean_dev": {
+        "semiotic": 2.0,
+        "narrative": 4.25,
+        "ideological": 5.75,
+        "experiential": 5.0,
+        "social": 4.25,
+        "economic": 17.9167,
+        "cultural": 4.6667,
+        "temporal": 4.5
+      },
+      "by_model": {
+        "claude": {
+          "n": 3,
+          "mean_dci": 6.25,
+          "per_dim_mean_dev": {
+            "semiotic": 0.5,
+            "narrative": 4.5,
+            "ideological": 5.5,
+            "experiential": 2.5,
+            "social": 4.5,
+            "economic": 22.5,
+            "cultural": 4.5,
+            "temporal": 5.5
+          }
+        },
+        "gpt": {
+          "n": 3,
+          "mean_dci": 5.625,
+          "per_dim_mean_dev": {
+            "semiotic": 2.5,
+            "narrative": 2.5,
+            "ideological": 7.5,
+            "experiential": 7.5,
+            "social": 2.5,
+            "economic": 12.5,
+            "cultural": 7.5,
+            "temporal": 2.5
+          }
+        },
+        "gemini": {
+          "n": 3,
+          "mean_dci": 7.2917,
+          "per_dim_mean_dev": {
+            "semiotic": 2.5,
+            "narrative": 2.5,
+            "ideological": 7.5,
+            "experiential": 7.5,
+            "social": 7.5,
+            "economic": 19.1667,
+            "cultural": 4.1667,
+            "temporal": 7.5
+          }
+        },
+        "deepseek": {
+          "n": 3,
+          "mean_dci": 5.0,
+          "per_dim_mean_dev": {
+            "semiotic": 2.5,
+            "narrative": 7.5,
+            "ideological": 2.5,
+            "experiential": 2.5,
+            "social": 2.5,
+            "economic": 17.5,
+            "cultural": 2.5,
+            "temporal": 2.5
+          }
+        }
+      }
+    },
+    "Patagonia": {
+      "n": 12,
+      "mean_dci": 5.0833,
+      "sd_dci": 0.8715,
+      "per_dim_mean_dev": {
+        "semiotic": 5.5,
+        "narrative": 3.25,
+        "ideological": 11.5833,
+        "experiential": 4.0833,
+        "social": 2.0,
+        "economic": 3.8333,
+        "cultural": 5.1667,
+        "temporal": 5.25
+      },
+      "by_model": {
+        "claude": {
+          "n": 3,
+          "mean_dci": 4.2917,
+          "per_dim_mean_dev": {
+            "semiotic": 4.5,
+            "narrative": 0.5,
+            "ideological": 8.8333,
+            "experiential": 5.5,
+            "social": 0.5,
+            "economic": 2.8333,
+            "cultural": 4.1667,
+            "temporal": 7.5
+          }
+        },
+        "gpt": {
+          "n": 3,
+          "mean_dci": 5.8333,
+          "per_dim_mean_dev": {
+            "semiotic": 2.5,
+            "narrative": 7.5,
+            "ideological": 12.5,
+            "experiential": 2.5,
+            "social": 2.5,
+            "economic": 7.5,
+            "cultural": 7.5,
+            "temporal": 4.1667
+          }
+        },
+        "gemini": {
+          "n": 3,
+          "mean_dci": 5.8333,
+          "per_dim_mean_dev": {
+            "semiotic": 7.5,
+            "narrative": 2.5,
+            "ideological": 12.5,
+            "experiential": 5.8333,
+            "social": 2.5,
+            "economic": 2.5,
+            "cultural": 6.5,
+            "temporal": 6.8333
+          }
+        },
+        "deepseek": {
+          "n": 3,
+          "mean_dci": 4.375,
+          "per_dim_mean_dev": {
+            "semiotic": 7.5,
+            "narrative": 2.5,
+            "ideological": 12.5,
+            "experiential": 2.5,
+            "social": 2.5,
+            "economic": 2.5,
+            "cultural": 2.5,
+            "temporal": 2.5
+          }
+        }
+      }
+    },
+    "Erewhon": {
+      "n": 10,
+      "mean_dci": 5.3625,
+      "sd_dci": 0.7981,
+      "per_dim_mean_dev": {
+        "semiotic": 4.6,
+        "narrative": 2.4,
+        "ideological": 5.4,
+        "experiential": 4.5,
+        "social": 5.1,
+        "economic": 12.3,
+        "cultural": 4.3,
+        "temporal": 4.3
+      },
+      "by_model": {
+        "claude": {
+          "n": 3,
+          "mean_dci": 5.375,
+          "per_dim_mean_dev": {
+            "semiotic": 4.5,
+            "narrative": 0.5,
+            "ideological": 5.5,
+            "experiential": 2.5,
+            "social": 4.5,
+            "economic": 13.5,
+            "cultural": 5.1667,
+            "temporal": 6.8333
+          }
+        },
+        "gpt": {
+          "n": 3,
+          "mean_dci": 4.5833,
+          "per_dim_mean_dev": {
+            "semiotic": 2.5,
+            "narrative": 2.5,
+            "ideological": 7.5,
+            "experiential": 7.5,
+            "social": 2.5,
+            "economic": 5.8333,
+            "cultural": 5.8333,
+            "temporal": 2.5
+          }
+        },
+        "gemini": {
+          "n": 1,
+          "mean_dci": 6.875,
+          "per_dim_mean_dev": {
+            "semiotic": 2.5,
+            "narrative": 7.5,
+            "ideological": 7.5,
+            "experiential": 7.5,
+            "social": 7.5,
+            "economic": 12.5,
+            "cultural": 2.5,
+            "temporal": 7.5
+          }
+        },
+        "deepseek": {
+          "n": 3,
+          "mean_dci": 5.625,
+          "per_dim_mean_dev": {
+            "semiotic": 7.5,
+            "narrative": 2.5,
+            "ideological": 2.5,
+            "experiential": 2.5,
+            "social": 7.5,
+            "economic": 17.5,
+            "cultural": 2.5,
+            "temporal": 2.5
+          }
+        }
+      }
+    },
+    "Tesla": {
+      "n": 10,
+      "mean_dci": 4.575,
+      "sd_dci": 1.4687,
+      "per_dim_mean_dev": {
+        "semiotic": 2.4,
+        "narrative": 3.7,
+        "ideological": 6.9,
+        "experiential": 5.2,
+        "social": 1.9,
+        "economic": 4.7,
+        "cultural": 6.1,
+        "temporal": 5.7
+      },
+      "by_model": {
+        "claude": {
+          "n": 3,
+          "mean_dci": 3.7917,
+          "per_dim_mean_dev": {
+            "semiotic": 0.5,
+            "narrative": 1.5,
+            "ideological": 5.5,
+            "experiential": 4.8333,
+            "social": 0.5,
+            "economic": 3.1667,
+            "cultural": 7.8333,
+            "temporal": 6.5
+          }
+        },
+        "gpt": {
+          "n": 3,
+          "mean_dci": 6.25,
+          "per_dim_mean_dev": {
+            "semiotic": 2.5,
+            "narrative": 7.5,
+            "ideological": 7.5,
+            "experiential": 9.1667,
+            "social": 2.5,
+            "economic": 5.8333,
+            "cultural": 7.5,
+            "temporal": 7.5
+          }
+        },
+        "gemini": {
+          "n": 1,
+          "mean_dci": 6.25,
+          "per_dim_mean_dev": {
+            "semiotic": 7.5,
+            "narrative": 2.5,
+            "ideological": 7.5,
+            "experiential": 2.5,
+            "social": 2.5,
+            "economic": 12.5,
+            "cultural": 7.5,
+            "temporal": 7.5
+          }
+        },
+        "deepseek": {
+          "n": 3,
+          "mean_dci": 3.125,
+          "per_dim_mean_dev": {
+            "semiotic": 2.5,
+            "narrative": 2.5,
+            "ideological": 7.5,
+            "experiential": 2.5,
+            "social": 2.5,
+            "economic": 2.5,
+            "cultural": 2.5,
+            "temporal": 2.5
+          }
+        }
+      }
+    },
+    "Nike": {
+      "n": 12,
+      "mean_dci": 4.1875,
+      "sd_dci": 0.9587,
+      "per_dim_mean_dev": {
+        "semiotic": 3.25,
+        "narrative": 2.0,
+        "ideological": 7.0,
+        "experiential": 3.9167,
+        "social": 4.5833,
+        "economic": 4.9167,
+        "cultural": 4.1667,
+        "temporal": 3.6667
+      },
+      "by_model": {
+        "claude": {
+          "n": 3,
+          "mean_dci": 4.0417,
+          "per_dim_mean_dev": {
+            "semiotic": 5.5,
+            "narrative": 0.5,
+            "ideological": 5.5,
+            "experiential": 3.1667,
+            "social": 7.5,
+            "economic": 0.5,
+            "cultural": 2.5,
+            "temporal": 7.1667
+          }
+        },
+        "gpt": {
+          "n": 3,
+          "mean_dci": 5.625,
+          "per_dim_mean_dev": {
+            "semiotic": 2.5,
+            "narrative": 2.5,
+            "ideological": 7.5,
+            "experiential": 7.5,
+            "social": 2.5,
+            "economic": 12.5,
+            "cultural": 7.5,
+            "temporal": 2.5
+          }
+        },
+        "gemini": {
+          "n": 3,
+          "mean_dci": 3.9583,
+          "per_dim_mean_dev": {
+            "semiotic": 2.5,
+            "narrative": 2.5,
+            "ideological": 7.5,
+            "experiential": 2.5,
+            "social": 5.8333,
+            "economic": 4.1667,
+            "cultural": 4.1667,
+            "temporal": 2.5
+          }
+        },
+        "deepseek": {
+          "n": 3,
+          "mean_dci": 3.125,
+          "per_dim_mean_dev": {
+            "semiotic": 2.5,
+            "narrative": 2.5,
+            "ideological": 7.5,
+            "experiential": 2.5,
+            "social": 2.5,
+            "economic": 2.5,
+            "cultural": 2.5,
+            "temporal": 2.5
+          }
+        }
+      }
+    },
+    "Apple": {
+      "n": 10,
+      "mean_dci": 4.9375,
+      "sd_dci": 0.5472,
+      "per_dim_mean_dev": {
+        "semiotic": 4.4,
+        "narrative": 2.3,
+        "ideological": 5.3,
+        "experiential": 10.6,
+        "social": 2.6,
+        "economic": 4.9,
+        "cultural": 4.5,
+        "temporal": 4.9
+      },
+      "by_model": {
+        "claude": {
+          "n": 3,
+          "mean_dci": 4.7917,
+          "per_dim_mean_dev": {
+            "semiotic": 3.8333,
+            "narrative": 1.8333,
+            "ideological": 5.1667,
+            "experiential": 9.5,
+            "social": 2.8333,
+            "economic": 2.1667,
+            "cultural": 5.8333,
+            "temporal": 7.1667
+          }
+        },
+        "gpt": {
+          "n": 3,
+          "mean_dci": 5.2083,
+          "per_dim_mean_dev": {
+            "semiotic": 5.8333,
+            "narrative": 2.5,
+            "ideological": 4.1667,
+            "experiential": 9.1667,
+            "social": 2.5,
+            "economic": 7.5,
+            "cultural": 5.8333,
+            "temporal": 4.1667
+          }
+        },
+        "gemini": {
+          "n": 1,
+          "mean_dci": 5.625,
+          "per_dim_mean_dev": {
+            "semiotic": 7.5,
+            "narrative": 2.5,
+            "ideological": 2.5,
+            "experiential": 12.5,
+            "social": 2.5,
+            "economic": 7.5,
+            "cultural": 2.5,
+            "temporal": 7.5
+          }
+        },
+        "deepseek": {
+          "n": 3,
+          "mean_dci": 4.5833,
+          "per_dim_mean_dev": {
+            "semiotic": 2.5,
+            "narrative": 2.5,
+            "ideological": 7.5,
+            "experiential": 12.5,
+            "social": 2.5,
+            "economic": 4.1667,
+            "cultural": 2.5,
+            "temporal": 2.5
+          }
+        }
+      }
+    },
+    "Starbucks": {
+      "n": 11,
+      "mean_dci": 5.4318,
+      "sd_dci": 0.6358,
+      "per_dim_mean_dev": {
+        "semiotic": 2.4091,
+        "narrative": 4.4091,
+        "ideological": 7.4091,
+        "experiential": 12.4091,
+        "social": 2.0455,
+        "economic": 6.2273,
+        "cultural": 4.3182,
+        "temporal": 4.2273
+      },
+      "by_model": {
+        "claude": {
+          "n": 3,
+          "mean_dci": 5.5417,
+          "per_dim_mean_dev": {
+            "semiotic": 0.5,
+            "narrative": 4.5,
+            "ideological": 7.1667,
+            "experiential": 15.5,
+            "social": 0.8333,
+            "economic": 6.1667,
+            "cultural": 3.1667,
+            "temporal": 6.5
+          }
+        },
+        "gpt": {
+          "n": 3,
+          "mean_dci": 5.625,
+          "per_dim_mean_dev": {
+            "semiotic": 2.5,
+            "narrative": 2.5,
+            "ideological": 7.5,
+            "experiential": 7.5,
+            "social": 2.5,
+            "economic": 12.5,
+            "cultural": 7.5,
+            "temporal": 2.5
+          }
+        },
+        "gemini": {
+          "n": 2,
+          "mean_dci": 5.625,
+          "per_dim_mean_dev": {
+            "semiotic": 5.0,
+            "narrative": 2.5,
+            "ideological": 7.5,
+            "experiential": 15.0,
+            "social": 2.5,
+            "economic": 2.5,
+            "cultural": 4.0,
+            "temporal": 6.0
+          }
+        },
+        "deepseek": {
+          "n": 3,
+          "mean_dci": 5.0,
+          "per_dim_mean_dev": {
+            "semiotic": 2.5,
+            "narrative": 7.5,
+            "ideological": 7.5,
+            "experiential": 12.5,
+            "social": 2.5,
+            "economic": 2.5,
+            "cultural": 2.5,
+            "temporal": 2.5
+          }
+        }
+      }
+    },
+    "Coca-Cola": {
+      "n": 12,
+      "mean_dci": 4.375,
+      "sd_dci": 0.879,
+      "per_dim_mean_dev": {
+        "semiotic": 3.3333,
+        "narrative": 2.0,
+        "ideological": 7.8333,
+        "experiential": 6.4167,
+        "social": 2.4167,
+        "economic": 5.75,
+        "cultural": 3.75,
+        "temporal": 3.5
+      },
+      "by_model": {
+        "claude": {
+          "n": 3,
+          "mean_dci": 3.5417,
+          "per_dim_mean_dev": {
+            "semiotic": 4.1667,
+            "narrative": 0.5,
+            "ideological": 8.8333,
+            "experiential": 4.8333,
+            "social": 2.1667,
+            "economic": 0.5,
+            "cultural": 2.5,
+            "temporal": 4.8333
+          }
+        },
+        "gpt": {
+          "n": 3,
+          "mean_dci": 5.625,
+          "per_dim_mean_dev": {
+            "semiotic": 2.5,
+            "narrative": 2.5,
+            "ideological": 7.5,
+            "experiential": 7.5,
+            "social": 2.5,
+            "economic": 12.5,
+            "cultural": 7.5,
+            "temporal": 2.5
+          }
+        },
+        "gemini": {
+          "n": 3,
+          "mean_dci": 4.375,
+          "per_dim_mean_dev": {
+            "semiotic": 2.5,
+            "narrative": 2.5,
+            "ideological": 7.5,
+            "experiential": 5.8333,
+            "social": 2.5,
+            "economic": 7.5,
+            "cultural": 2.5,
+            "temporal": 4.1667
+          }
+        },
+        "deepseek": {
+          "n": 3,
+          "mean_dci": 3.9583,
+          "per_dim_mean_dev": {
+            "semiotic": 4.1667,
+            "narrative": 2.5,
+            "ideological": 7.5,
+            "experiential": 7.5,
+            "social": 2.5,
+            "economic": 2.5,
+            "cultural": 2.5,
+            "temporal": 2.5
+          }
+        }
+      }
+    },
+    "Mercedes-Benz": {
+      "n": 12,
+      "mean_dci": 4.0833,
+      "sd_dci": 0.9991,
+      "per_dim_mean_dev": {
+        "semiotic": 2.0,
+        "narrative": 2.9167,
+        "ideological": 7.1667,
+        "experiential": 4.9167,
+        "social": 1.8333,
+        "economic": 5.4167,
+        "cultural": 3.0833,
+        "temporal": 5.3333
+      },
+      "by_model": {
+        "claude": {
+          "n": 3,
+          "mean_dci": 3.4167,
+          "per_dim_mean_dev": {
+            "semiotic": 0.5,
+            "narrative": 1.5,
+            "ideological": 7.1667,
+            "experiential": 5.5,
+            "social": 0.5,
+            "economic": 4.5,
+            "cultural": 2.1667,
+            "temporal": 5.5
+          }
+        },
+        "gpt": {
+          "n": 3,
+          "mean_dci": 5.0,
+          "per_dim_mean_dev": {
+            "semiotic": 2.5,
+            "narrative": 5.8333,
+            "ideological": 7.5,
+            "experiential": 9.1667,
+            "social": 2.5,
+            "economic": 4.1667,
+            "cultural": 5.8333,
+            "temporal": 2.5
+          }
+        },
+        "gemini": {
+          "n": 3,
+          "mean_dci": 3.5417,
+          "per_dim_mean_dev": {
+            "semiotic": 2.5,
+            "narrative": 1.8333,
+            "ideological": 6.5,
+            "experiential": 2.5,
+            "social": 1.8333,
+            "economic": 5.5,
+            "cultural": 1.8333,
+            "temporal": 5.8333
+          }
+        },
+        "deepseek": {
+          "n": 3,
+          "mean_dci": 4.375,
+          "per_dim_mean_dev": {
+            "semiotic": 2.5,
+            "narrative": 2.5,
+            "ideological": 7.5,
+            "experiential": 2.5,
+            "social": 2.5,
+            "economic": 7.5,
+            "cultural": 2.5,
+            "temporal": 7.5
+          }
+        }
+      }
+    },
+    "Zara": {
+      "n": 11,
+      "mean_dci": 6.9886,
+      "sd_dci": 1.1463,
+      "per_dim_mean_dev": {
+        "semiotic": 4.4091,
+        "narrative": 6.1364,
+        "ideological": 7.7727,
+        "experiential": 11.9545,
+        "social": 3.0455,
+        "economic": 14.1364,
+        "cultural": 4.2273,
+        "temporal": 4.2273
+      },
+      "by_model": {
+        "claude": {
+          "n": 3,
+          "mean_dci": 8.125,
+          "per_dim_mean_dev": {
+            "semiotic": 4.5,
+            "narrative": 7.5,
+            "ideological": 7.8333,
+            "experiential": 15.5,
+            "social": 4.5,
+            "economic": 16.8333,
+            "cultural": 3.8333,
+            "temporal": 4.5
+          }
+        },
+        "gpt": {
+          "n": 3,
+          "mean_dci": 5.625,
+          "per_dim_mean_dev": {
+            "semiotic": 2.5,
+            "narrative": 2.5,
+            "ideological": 7.5,
+            "experiential": 7.5,
+            "social": 2.5,
+            "economic": 12.5,
+            "cultural": 7.5,
+            "temporal": 2.5
+          }
+        },
+        "gemini": {
+          "n": 2,
+          "mean_dci": 7.5,
+          "per_dim_mean_dev": {
+            "semiotic": 2.5,
+            "narrative": 7.5,
+            "ideological": 8.5,
+            "experiential": 12.5,
+            "social": 2.5,
+            "economic": 15.0,
+            "cultural": 2.5,
+            "temporal": 9.0
+          }
+        },
+        "deepseek": {
+          "n": 3,
+          "mean_dci": 6.875,
+          "per_dim_mean_dev": {
+            "semiotic": 7.5,
+            "narrative": 7.5,
+            "ideological": 7.5,
+            "experiential": 12.5,
+            "social": 2.5,
+            "economic": 12.5,
+            "cultural": 2.5,
+            "temporal": 2.5
+          }
+        }
+      }
+    },
+    "Rolex": {
+      "n": 12,
+      "mean_dci": 4.8542,
+      "sd_dci": 1.0125,
+      "per_dim_mean_dev": {
+        "semiotic": 4.0833,
+        "narrative": 2.6667,
+        "ideological": 7.1667,
+        "experiential": 3.8333,
+        "social": 7.0,
+        "economic": 5.0833,
+        "cultural": 4.8333,
+        "temporal": 4.1667
+      },
+      "by_model": {
+        "claude": {
+          "n": 3,
+          "mean_dci": 3.375,
+          "per_dim_mean_dev": {
+            "semiotic": 0.5,
+            "narrative": 1.5,
+            "ideological": 5.1667,
+            "experiential": 2.8333,
+            "social": 5.5,
+            "economic": 2.8333,
+            "cultural": 6.8333,
+            "temporal": 1.8333
+          }
+        },
+        "gpt": {
+          "n": 3,
+          "mean_dci": 5.0,
+          "per_dim_mean_dev": {
+            "semiotic": 7.5,
+            "narrative": 2.5,
+            "ideological": 7.5,
+            "experiential": 7.5,
+            "social": 2.5,
+            "economic": 4.1667,
+            "cultural": 4.1667,
+            "temporal": 4.1667
+          }
+        },
+        "gemini": {
+          "n": 3,
+          "mean_dci": 5.8333,
+          "per_dim_mean_dev": {
+            "semiotic": 4.1667,
+            "narrative": 4.1667,
+            "ideological": 8.5,
+            "experiential": 2.5,
+            "social": 10.8333,
+            "economic": 5.8333,
+            "cultural": 5.8333,
+            "temporal": 4.8333
+          }
+        },
+        "deepseek": {
+          "n": 3,
+          "mean_dci": 5.2083,
+          "per_dim_mean_dev": {
+            "semiotic": 4.1667,
+            "narrative": 2.5,
+            "ideological": 7.5,
+            "experiential": 2.5,
+            "social": 9.1667,
+            "economic": 7.5,
+            "cultural": 2.5,
+            "temporal": 5.8333
+          }
+        }
+      }
+    },
+    "Netflix": {
+      "n": 12,
+      "mean_dci": 5.4583,
+      "sd_dci": 0.6131,
+      "per_dim_mean_dev": {
+        "semiotic": 3.0,
+        "narrative": 2.4167,
+        "ideological": 7.6667,
+        "experiential": 10.9167,
+        "social": 2.6667,
+        "economic": 6.75,
+        "cultural": 3.8333,
+        "temporal": 6.4167
+      },
+      "by_model": {
+        "claude": {
+          "n": 3,
+          "mean_dci": 4.9583,
+          "per_dim_mean_dev": {
+            "semiotic": 4.5,
+            "narrative": 0.5,
+            "ideological": 8.1667,
+            "experiential": 9.5,
+            "social": 3.1667,
+            "economic": 6.1667,
+            "cultural": 1.1667,
+            "temporal": 6.5
+          }
+        },
+        "gpt": {
+          "n": 3,
+          "mean_dci": 5.8333,
+          "per_dim_mean_dev": {
+            "semiotic": 2.5,
+            "narrative": 2.5,
+            "ideological": 7.5,
+            "experiential": 9.1667,
+            "social": 2.5,
+            "economic": 10.8333,
+            "cultural": 7.5,
+            "temporal": 4.1667
+          }
+        },
+        "gemini": {
+          "n": 3,
+          "mean_dci": 6.0417,
+          "per_dim_mean_dev": {
+            "semiotic": 2.5,
+            "narrative": 4.1667,
+            "ideological": 7.5,
+            "experiential": 12.5,
+            "social": 2.5,
+            "economic": 7.5,
+            "cultural": 4.1667,
+            "temporal": 7.5
+          }
+        },
+        "deepseek": {
+          "n": 3,
+          "mean_dci": 5.0,
+          "per_dim_mean_dev": {
+            "semiotic": 2.5,
+            "narrative": 2.5,
+            "ideological": 7.5,
+            "experiential": 12.5,
+            "social": 2.5,
+            "economic": 2.5,
+            "cultural": 2.5,
+            "temporal": 7.5
+          }
+        }
+      }
+    },
+    "Lululemon": {
+      "n": 10,
+      "mean_dci": 4.4375,
+      "sd_dci": 0.9057,
+      "per_dim_mean_dev": {
+        "semiotic": 1.9,
+        "narrative": 5.1,
+        "ideological": 4.0,
+        "experiential": 8.6,
+        "social": 3.4,
+        "economic": 4.9,
+        "cultural": 3.3,
+        "temporal": 4.3
+      },
+      "by_model": {
+        "claude": {
+          "n": 3,
+          "mean_dci": 3.75,
+          "per_dim_mean_dev": {
+            "semiotic": 0.5,
+            "narrative": 4.5,
+            "ideological": 2.5,
+            "experiential": 9.5,
+            "social": 5.5,
+            "economic": 0.5,
+            "cultural": 1.8333,
+            "temporal": 5.1667
+          }
+        },
+        "gpt": {
+          "n": 3,
+          "mean_dci": 5.4167,
+          "per_dim_mean_dev": {
+            "semiotic": 2.5,
+            "narrative": 2.5,
+            "ideological": 7.5,
+            "experiential": 9.1667,
+            "social": 2.5,
+            "economic": 9.1667,
+            "cultural": 5.8333,
+            "temporal": 4.1667
+          }
+        },
+        "gemini": {
+          "n": 1,
+          "mean_dci": 5.625,
+          "per_dim_mean_dev": {
+            "semiotic": 2.5,
+            "narrative": 7.5,
+            "ideological": 2.5,
+            "experiential": 7.5,
+            "social": 2.5,
+            "economic": 12.5,
+            "cultural": 2.5,
+            "temporal": 7.5
+          }
+        },
+        "deepseek": {
+          "n": 3,
+          "mean_dci": 3.75,
+          "per_dim_mean_dev": {
+            "semiotic": 2.5,
+            "narrative": 7.5,
+            "ideological": 2.5,
+            "experiential": 7.5,
+            "social": 2.5,
+            "economic": 2.5,
+            "cultural": 2.5,
+            "temporal": 2.5
+          }
+        }
+      }
+    },
+    "Trader Joe's": {
+      "n": 12,
+      "mean_dci": 5.1146,
+      "sd_dci": 0.6709,
+      "per_dim_mean_dev": {
+        "semiotic": 2.0,
+        "narrative": 2.4167,
+        "ideological": 4.5833,
+        "experiential": 9.6667,
+        "social": 2.25,
+        "economic": 8.75,
+        "cultural": 5.25,
+        "temporal": 6.0
+      },
+      "by_model": {
+        "claude": {
+          "n": 3,
+          "mean_dci": 4.625,
+          "per_dim_mean_dev": {
+            "semiotic": 0.5,
+            "narrative": 2.1667,
+            "ideological": 4.5,
+            "experiential": 9.5,
+            "social": 1.5,
+            "economic": 7.5,
+            "cultural": 4.8333,
+            "temporal": 6.5
+          }
+        },
+        "gpt": {
+          "n": 3,
+          "mean_dci": 5.625,
+          "per_dim_mean_dev": {
+            "semiotic": 2.5,
+            "narrative": 2.5,
+            "ideological": 5.8333,
+            "experiential": 7.5,
+            "social": 2.5,
+            "economic": 12.5,
+            "cultural": 7.5,
+            "temporal": 4.1667
+          }
+        },
+        "gemini": {
+          "n": 3,
+          "mean_dci": 5.8333,
+          "per_dim_mean_dev": {
+            "semiotic": 2.5,
+            "narrative": 2.5,
+            "ideological": 3.8333,
+            "experiential": 9.1667,
+            "social": 2.5,
+            "economic": 12.5,
+            "cultural": 6.1667,
+            "temporal": 7.5
+          }
+        },
+        "deepseek": {
+          "n": 3,
+          "mean_dci": 4.375,
+          "per_dim_mean_dev": {
+            "semiotic": 2.5,
+            "narrative": 2.5,
+            "ideological": 4.1667,
+            "experiential": 12.5,
+            "social": 2.5,
+            "economic": 2.5,
+            "cultural": 2.5,
+            "temporal": 5.8333
+          }
+        }
+      }
+    },
+    "Louis Vuitton": {
+      "n": 10,
+      "mean_dci": 4.2,
+      "sd_dci": 0.7051,
+      "per_dim_mean_dev": {
+        "semiotic": 6.4,
+        "narrative": 1.9,
+        "ideological": 8.1,
+        "experiential": 4.3,
+        "social": 3.2,
+        "economic": 2.4,
+        "cultural": 2.9,
+        "temporal": 4.4
+      },
+      "by_model": {
+        "claude": {
+          "n": 3,
+          "mean_dci": 3.5833,
+          "per_dim_mean_dev": {
+            "semiotic": 5.5,
+            "narrative": 0.5,
+            "ideological": 9.5,
+            "experiential": 3.5,
+            "social": 1.5,
+            "economic": 0.5,
+            "cultural": 3.8333,
+            "temporal": 3.8333
+          }
+        },
+        "gpt": {
+          "n": 3,
+          "mean_dci": 5.0,
+          "per_dim_mean_dev": {
+            "semiotic": 7.5,
+            "narrative": 2.5,
+            "ideological": 7.5,
+            "experiential": 7.5,
+            "social": 2.5,
+            "economic": 4.1667,
+            "cultural": 2.5,
+            "temporal": 5.8333
+          }
+        },
+        "gemini": {
+          "n": 1,
+          "mean_dci": 5.0,
+          "per_dim_mean_dev": {
+            "semiotic": 2.5,
+            "narrative": 2.5,
+            "ideological": 7.5,
+            "experiential": 2.5,
+            "social": 12.5,
+            "economic": 2.5,
+            "cultural": 2.5,
+            "temporal": 7.5
+          }
+        },
+        "deepseek": {
+          "n": 3,
+          "mean_dci": 3.75,
+          "per_dim_mean_dev": {
+            "semiotic": 7.5,
+            "narrative": 2.5,
+            "ideological": 7.5,
+            "experiential": 2.5,
+            "social": 2.5,
+            "economic": 2.5,
+            "cultural": 2.5,
+            "temporal": 2.5
+          }
+        }
+      }
+    },
+    "The North Face": {
+      "n": 11,
+      "mean_dci": 3.9545,
+      "sd_dci": 1.1309,
+      "per_dim_mean_dev": {
+        "semiotic": 1.9545,
+        "narrative": 2.2273,
+        "ideological": 5.7727,
+        "experiential": 5.1364,
+        "social": 2.7727,
+        "economic": 4.6818,
+        "cultural": 5.2273,
+        "temporal": 3.8636
+      },
+      "by_model": {
+        "claude": {
+          "n": 3,
+          "mean_dci": 3.25,
+          "per_dim_mean_dev": {
+            "semiotic": 0.5,
+            "narrative": 1.5,
+            "ideological": 4.5,
+            "experiential": 5.5,
+            "social": 3.5,
+            "economic": 0.5,
+            "cultural": 7.5,
+            "temporal": 2.5
+          }
+        },
+        "gpt": {
+          "n": 3,
+          "mean_dci": 4.375,
+          "per_dim_mean_dev": {
+            "semiotic": 2.5,
+            "narrative": 2.5,
+            "ideological": 4.1667,
+            "experiential": 7.5,
+            "social": 2.5,
+            "economic": 5.8333,
+            "cultural": 5.8333,
+            "temporal": 4.1667
+          }
+        },
+        "gemini": {
+          "n": 2,
+          "mean_dci": 5.625,
+          "per_dim_mean_dev": {
+            "semiotic": 2.5,
+            "narrative": 2.5,
+            "ideological": 7.5,
+            "experiential": 5.0,
+            "social": 2.5,
+            "economic": 12.5,
+            "cultural": 5.0,
+            "temporal": 7.5
+          }
+        },
+        "deepseek": {
+          "n": 3,
+          "mean_dci": 3.125,
+          "per_dim_mean_dev": {
+            "semiotic": 2.5,
+            "narrative": 2.5,
+            "ideological": 7.5,
+            "experiential": 2.5,
+            "social": 2.5,
+            "economic": 2.5,
+            "cultural": 2.5,
+            "temporal": 2.5
+          }
+        }
+      }
+    },
+    "Whole Foods Market": {
+      "n": 10,
+      "mean_dci": 5.375,
+      "sd_dci": 1.1102,
+      "per_dim_mean_dev": {
+        "semiotic": 3.4,
+        "narrative": 3.1,
+        "ideological": 5.9,
+        "experiential": 7.1,
+        "social": 5.6,
+        "economic": 8.5,
+        "cultural": 5.0,
+        "temporal": 4.4
+      },
+      "by_model": {
+        "claude": {
+          "n": 3,
+          "mean_dci": 4.375,
+          "per_dim_mean_dev": {
+            "semiotic": 0.5,
+            "narrative": 4.5,
+            "ideological": 5.5,
+            "experiential": 9.5,
+            "social": 4.5,
+            "economic": 2.5,
+            "cultural": 2.5,
+            "temporal": 5.5
+          }
+        },
+        "gpt": {
+          "n": 3,
+          "mean_dci": 4.7917,
+          "per_dim_mean_dev": {
+            "semiotic": 2.5,
+            "narrative": 2.5,
+            "ideological": 7.5,
+            "experiential": 7.5,
+            "social": 7.5,
+            "economic": 2.5,
+            "cultural": 4.1667,
+            "temporal": 4.1667
+          }
+        },
+        "gemini": {
+          "n": 1,
+          "mean_dci": 7.5,
+          "per_dim_mean_dev": {
+            "semiotic": 2.5,
+            "narrative": 2.5,
+            "ideological": 12.5,
+            "experiential": 12.5,
+            "social": 12.5,
+            "economic": 2.5,
+            "cultural": 7.5,
+            "temporal": 7.5
+          }
+        },
+        "deepseek": {
+          "n": 3,
+          "mean_dci": 6.25,
+          "per_dim_mean_dev": {
+            "semiotic": 7.5,
+            "narrative": 2.5,
+            "ideological": 2.5,
+            "experiential": 2.5,
+            "social": 2.5,
+            "economic": 22.5,
+            "cultural": 7.5,
+            "temporal": 2.5
+          }
+        }
+      }
+    },
+    "Rivian": {
+      "n": 9,
+      "mean_dci": 4.1667,
+      "sd_dci": 0.6903,
+      "per_dim_mean_dev": {
+        "semiotic": 4.5,
+        "narrative": 2.7222,
+        "ideological": 2.1667,
+        "experiential": 6.8333,
+        "social": 4.8333,
+        "economic": 5.1667,
+        "cultural": 2.8333,
+        "temporal": 4.2778
+      },
+      "by_model": {
+        "claude": {
+          "n": 3,
+          "mean_dci": 3.9583,
+          "per_dim_mean_dev": {
+            "semiotic": 4.5,
+            "narrative": 0.5,
+            "ideological": 1.5,
+            "experiential": 5.5,
+            "social": 4.5,
+            "economic": 8.8333,
+            "cultural": 1.8333,
+            "temporal": 4.5
+          }
+        },
+        "gpt": {
+          "n": 3,
+          "mean_dci": 5.0,
+          "per_dim_mean_dev": {
+            "semiotic": 2.5,
+            "narrative": 5.8333,
+            "ideological": 2.5,
+            "experiential": 7.5,
+            "social": 7.5,
+            "economic": 4.1667,
+            "cultural": 4.1667,
+            "temporal": 5.8333
+          }
+        },
+        "deepseek": {
+          "n": 3,
+          "mean_dci": 3.5417,
+          "per_dim_mean_dev": {
+            "semiotic": 6.5,
+            "narrative": 1.8333,
+            "ideological": 2.5,
+            "experiential": 7.5,
+            "social": 2.5,
+            "economic": 2.5,
+            "cultural": 2.5,
+            "temporal": 2.5
+          }
+        }
+      }
+    },
+    "Dove": {
+      "n": 12,
+      "mean_dci": 4.125,
+      "sd_dci": 1.3558,
+      "per_dim_mean_dev": {
+        "semiotic": 2.1667,
+        "narrative": 4.9167,
+        "ideological": 6.0833,
+        "experiential": 3.25,
+        "social": 2.3333,
+        "economic": 3.4167,
+        "cultural": 6.3333,
+        "temporal": 4.5
+      },
+      "by_model": {
+        "claude": {
+          "n": 3,
+          "mean_dci": 3.375,
+          "per_dim_mean_dev": {
+            "semiotic": 0.5,
+            "narrative": 5.5,
+            "ideological": 3.5,
+            "experiential": 2.1667,
+            "social": 1.8333,
+            "economic": 4.5,
+            "cultural": 8.5,
+            "temporal": 0.5
+          }
+        },
+        "gpt": {
+          "n": 3,
+          "mean_dci": 5.2083,
+          "per_dim_mean_dev": {
+            "semiotic": 2.5,
+            "narrative": 7.5,
+            "ideological": 9.1667,
+            "experiential": 2.5,
+            "social": 2.5,
+            "economic": 2.5,
+            "cultural": 7.5,
+            "temporal": 7.5
+          }
+        },
+        "gemini": {
+          "n": 3,
+          "mean_dci": 5.4167,
+          "per_dim_mean_dev": {
+            "semiotic": 3.1667,
+            "narrative": 4.1667,
+            "ideological": 9.1667,
+            "experiential": 5.8333,
+            "social": 2.5,
+            "economic": 4.1667,
+            "cultural": 6.8333,
+            "temporal": 7.5
+          }
+        },
+        "deepseek": {
+          "n": 3,
+          "mean_dci": 2.5,
+          "per_dim_mean_dev": {
+            "semiotic": 2.5,
+            "narrative": 2.5,
+            "ideological": 2.5,
+            "experiential": 2.5,
+            "social": 2.5,
+            "economic": 2.5,
+            "cultural": 2.5,
+            "temporal": 2.5
+          }
+        }
+      }
+    },
+    "Volvo": {
+      "n": 12,
+      "mean_dci": 3.9792,
+      "sd_dci": 0.7867,
+      "per_dim_mean_dev": {
+        "semiotic": 3.0,
+        "narrative": 5.3333,
+        "ideological": 4.0,
+        "experiential": 4.1667,
+        "social": 5.5,
+        "economic": 2.0,
+        "cultural": 2.9167,
+        "temporal": 4.9167
+      },
+      "by_model": {
+        "claude": {
+          "n": 3,
+          "mean_dci": 3.4167,
+          "per_dim_mean_dev": {
+            "semiotic": 4.5,
+            "narrative": 5.5,
+            "ideological": 3.5,
+            "experiential": 4.1667,
+            "social": 4.5,
+            "economic": 0.5,
+            "cultural": 0.8333,
+            "temporal": 3.8333
+          }
+        },
+        "gpt": {
+          "n": 3,
+          "mean_dci": 5.0,
+          "per_dim_mean_dev": {
+            "semiotic": 2.5,
+            "narrative": 7.5,
+            "ideological": 2.5,
+            "experiential": 7.5,
+            "social": 7.5,
+            "economic": 2.5,
+            "cultural": 4.1667,
+            "temporal": 5.8333
+          }
+        },
+        "gemini": {
+          "n": 3,
+          "mean_dci": 4.375,
+          "per_dim_mean_dev": {
+            "semiotic": 2.5,
+            "narrative": 5.8333,
+            "ideological": 7.5,
+            "experiential": 2.5,
+            "social": 2.5,
+            "economic": 2.5,
+            "cultural": 4.1667,
+            "temporal": 7.5
+          }
+        },
+        "deepseek": {
+          "n": 3,
+          "mean_dci": 3.125,
+          "per_dim_mean_dev": {
+            "semiotic": 2.5,
+            "narrative": 2.5,
+            "ideological": 2.5,
+            "experiential": 2.5,
+            "social": 7.5,
+            "economic": 2.5,
+            "cultural": 2.5,
+            "temporal": 2.5
+          }
+        }
+      }
+    }
+  },
+  "statistical_tests": {
+    "semiotic": {
+      "hypothesis": null,
+      "n_pairs": 82,
+      "mean_standard_dev": 3.2663,
+      "mean_enhanced_dev": 3.2988,
+      "delta": 0.0325,
+      "W": 84.0,
+      "p": 0.6568,
+      "rank_biserial_r": 0.5579,
+      "alternative": "two-sided",
+      "verdict": null
+    },
+    "narrative": {
+      "hypothesis": "H14c",
+      "n_pairs": 82,
+      "mean_standard_dev": 3.498,
+      "mean_enhanced_dev": 3.2724,
+      "delta": -0.2256,
+      "W": 97.5,
+      "p": 0.1328,
+      "rank_biserial_r": 0.675,
+      "alternative": "two-sided",
+      "verdict": "NO COLLATERAL DAMAGE"
+    },
+    "ideological": {
+      "hypothesis": "H14b",
+      "n_pairs": 82,
+      "mean_standard_dev": 6.3455,
+      "mean_enhanced_dev": 6.3699,
+      "delta": 0.0244,
+      "W": 233.5,
+      "p": 0.5082,
+      "rank_biserial_r": 0.4978,
+      "alternative": "less",
+      "verdict": "NOT SUPPORTED"
+    },
+    "experiential": {
+      "hypothesis": "H14a",
+      "n_pairs": 82,
+      "mean_standard_dev": 6.7378,
+      "mean_enhanced_dev": 6.6545,
+      "delta": -0.0833,
+      "W": 247.5,
+      "p": 0.7422,
+      "rank_biserial_r": 0.431,
+      "alternative": "less",
+      "verdict": "NOT SUPPORTED"
+    },
+    "social": {
+      "hypothesis": null,
+      "n_pairs": 82,
+      "mean_standard_dev": 3.4472,
+      "mean_enhanced_dev": 3.5081,
+      "delta": 0.061,
+      "W": 201.5,
+      "p": 0.9727,
+      "rank_biserial_r": 0.5037,
+      "alternative": "two-sided",
+      "verdict": null
+    },
+    "economic": {
+      "hypothesis": "H14c",
+      "n_pairs": 82,
+      "mean_standard_dev": 6.9898,
+      "mean_enhanced_dev": 6.7094,
+      "delta": -0.2805,
+      "W": 406.5,
+      "p": 0.5734,
+      "rank_biserial_r": 0.5498,
+      "alternative": "two-sided",
+      "verdict": "NO COLLATERAL DAMAGE"
+    },
+    "cultural": {
+      "hypothesis": "H14c",
+      "n_pairs": 82,
+      "mean_standard_dev": 4.1341,
+      "mean_enhanced_dev": 4.3699,
+      "delta": 0.2358,
+      "W": 319.0,
+      "p": 0.1481,
+      "rank_biserial_r": 0.6295,
+      "alternative": "two-sided",
+      "verdict": "NO COLLATERAL DAMAGE"
+    },
+    "temporal": {
+      "hypothesis": null,
+      "n_pairs": 82,
+      "mean_standard_dev": 4.6484,
+      "mean_enhanced_dev": 4.7033,
+      "delta": 0.0549,
+      "W": 633.0,
+      "p": 0.9653,
+      "rank_biserial_r": 0.5035,
+      "alternative": "two-sided",
+      "verdict": null
+    }
+  }
+}

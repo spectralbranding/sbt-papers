@@ -1,6 +1,6 @@
 # R15: Spectral Metamerism in AI-Mediated Brand Perception
 
-**Citation key**: 2026v | **DOI**: [10.5281/zenodo.19422427](https://doi.org/10.5281/zenodo.19422427) | **Dataset DOI**: [10.57967/hf/8284](https://doi.org/10.57967/hf/8284) | **Status**: Empirical results complete (21,350 total API calls across 10 runs, 24 LLMs from 7 training traditions; v2.2 adds Section 5.10 citing DeepShop benchmark (Lyu et al. 2025) on complementary task-failure evidence)
+**Citation key**: 2026v | **DOI**: [10.5281/zenodo.19422427](https://doi.org/10.5281/zenodo.19422427) | **Dataset DOI**: [10.57967/hf/8284](https://doi.org/10.57967/hf/8284) | **Status**: Empirical results complete (21,602 total API calls across 12 runs, 24 LLMs from 7 training traditions; v2.3 adds Run 14 per-dimension Brand Function targeting null result)
 
 ## Paper
 
@@ -27,6 +27,9 @@ AI-mediated search is replacing traditional consumer search, yet no formal model
 | H11 | Same-category cross-border (Tinkoff vs PrivatBank banking pair) | 6 | tested (geopolitical signal, Run 6) |
 | H12 | Geopolitical framing — same brand in different cities | 7 | **SUPPORTED** (p < 0.0001, delta = 0.040) |
 | H13 | Temporal training stability (successive model versions) | -- | future work (proposed, not tested) |
+| H14a | Enhanced Experiential BF reduces Experiential-dimension DCI | 14 | **NOT SUPPORTED** (p = .742, r = .431) |
+| H14b | Enhanced Ideological BF reduces Ideological-dimension DCI | 14 | **NOT SUPPORTED** (p = .508, r = .498) |
+| H14c | Enhanced BF causes no collateral on Economic/Cultural/Narrative | 14 | **CONFIRMED** (all p > .13) |
 
 ## Key Results
 
@@ -41,6 +44,7 @@ AI-mediated search is replacing traditional consumer search, yet no formal model
 | Run 8 (native expansion) | varies | 815 | H10 NOT SUPPORTED — null result (58/121 positive (48%), mean = +.001, p = .716) | -- |
 | Run 9 (temperature) | varies | varies | DCI spread = 0.012 (robust) | -- |
 | Run 10 (corrective comparators, supplementary) | 3 focal × 2 conditions | 126 | VkusVill shows largest comparator effect (ΔDCI = +7.4) | -- |
+| Run 14 (per-dimension targeting) | 21 | 252 | H14a/H14b NOT SUPPORTED — enriching BF signals does not reduce per-dimension DCI | H14c CONFIRMED (no collateral) |
 
 ## Repository Structure
 

@@ -2,7 +2,7 @@
 
 **Dmitry Zharnikov**
 
-Working Paper -- April 2026
+Working Paper v2.3 -- April 2026
 
 ---
 
@@ -555,9 +555,11 @@ The full experiment (21,350 total calls across 10 runs, including the Run 10 cor
 
 *Note.* Call counts are exact (validated by `experiment/validation/validate.py`). Two additional free-cloud SambaNova models (sambanova_qwen3 and sambanova_swallow) were attempted in Run 5 but each returned fewer than 25 calls before being dropped from the analysis; their 42 combined calls are included in the Free cloud row but the model count remains 6 for the analytical panel. Per-model breakdowns and the full per-call cost ledger are in the HuggingFace dataset (DOI: 10.57967/hf/8284) and on GitHub.
 
+Run 14 added 252 enhanced-condition calls (4 cloud models, 21 pairs, 3 reps; ~$0.30 estimated), bringing the cumulative total to 21,602 API calls across the full experimental program.
+
 This cost structure has methodological implications. The full study --- 24 models from 7 training traditions, 23 brand pairs, 15 native-language conditions across the dataset --- cost less than a single human-respondent focus group. The marginal cost of adding a model, a brand pair, or a cultural condition is under \$0.20. This makes longitudinal tracking of AI spectral profiles operationally feasible at a scale that human-respondent studies cannot match: a quarterly audit of how 20+ models perceive a brand portfolio costs less than \$15 per quarter.
 
-**Data Availability.** The complete dataset --- all 21,350 per-call records across 10 runs in 15 native languages plus English (JSONL), per-model cost and token summaries (CSV), statistical test results (JSON), and the reproducible PRISM-B analysis scripts --- is publicly available at https://huggingface.co/datasets/spectralbranding/r15-ai-search-metamerism (DOI: 10.57967/hf/8284). The experiment source code, prompts, model configurations, and the PRISM instrument scaffold are at https://github.com/spectralbranding/sbt-papers/tree/main/r15-ai-search-metamerism/experiment.
+**Data Availability.** The complete dataset --- all 21,350 per-call records across 10 runs in 15 native languages plus English (JSONL), per-model cost and token summaries (CSV), statistical test results (JSON), and the reproducible PRISM-B analysis scripts --- is publicly available at https://huggingface.co/datasets/spectralbranding/r15-ai-search-metamerism (DOI: 10.57967/hf/8284). The experiment source code, prompts, model configurations, and the PRISM instrument scaffold are at https://github.com/spectralbranding/sbt-papers/tree/main/r15-ai-search-metamerism/experiment. Run 14 (per-dimension targeting, 252 calls) is included in the supplementary JSONL.
 
 ### 4.6 Run 7: Geopolitical Framing (H12)
 
@@ -647,8 +649,6 @@ The dimensional collapse documented here converges with independent findings fro
 
 Sabbah and Acar also report pronounced cross-category heterogeneity within the same model: GPT-5 responds positively to bundling for fitness watches but negatively for phones. This within-model instability parallels our per-pair DCI variation (Table 3): the same model collapses more on some brand pairs than others, depending on the availability of dimensional information in the training data. Together, these studies suggest that AI-mediated commerce is neither uniformly biased nor randomly noisy --- it is *dimensionally structured*, with predictable patterns of sensitivity and collapse that depend on the verifiability of the signal, the richness of training data, and the model's architectural characteristics.
 
-The Social dimension's structural under-encoding carries real observer-facing consequences. Dharmaputri et al. (2026) find that AI relational talk --- social chit-chat inserted into commercial interactions --- decreases observer satisfaction (*d* = -.621), with expectancy violation and perceived awkwardness as the mediating mechanism; goal-relevant social talk attenuates the effect. This converges with the present study's finding that the Social dimension is among the most collapsed (62% of baseline in global pairs, 51% in local pairs): AI systems are structurally weak at encoding social signals, and when they attempt Social-dimension output, the mismatch between structural incapacity and observer expectation produces measurable harm rather than neutral absence.
-
 ### 5.7 Implications for Search Advertising
 
 The most direct implication is that search advertising strategy must account for the dimensional structure of AI mediation. Four specific implications follow from the empirical results.
@@ -716,6 +716,16 @@ Run 5 introduces additional limitations. Error rates varied substantially across
 
 Hermann, Puntoni, and Schweidel (2026) identify a defensibility asymmetry in AI-mediated brand perception: AI agents can recommend brands based on verifiable attributes (pricing, SLAs, certifications) but struggle with experiential attributes (heritage, symbolic meaning, emotional resonance). This maps directly onto the dimensional collapse measured here --- the dimensions that survive AI mediation are precisely those that are defensible in Puntoni's framework, while the dimensions that collapse are those that require subjective judgment. This convergence between independent research programs strengthens the theoretical basis for the dimensional collapse thesis.
 
+### 5.12 Brand Function Per-Dimension Targeting (Run 14)
+
+Run 12b extended the Brand Function specification test from 5 canonical brands (Run 4) to 21 brand pairs across 4 cloud models (Claude, GPT-4o-mini, Gemini 2.5 Flash, DeepSeek V3), confirming the structural DCI reduction: providing any Brand Function specification reduces collapse across the full panel relative to unspecified baseline. Run 14 tested whether *enriching specific dimensions* within the Brand Function specification produces additional per-dimension improvement.
+
+**Design.** Three conditions: (1) baseline (no specification), (2) standard Brand Function (Run 12b specification), and (3) enhanced Brand Function with 3 additional Experiential key signals (physical product interaction, sensory retail environment, unboxing moment) and 3 additional Ideological key signals (corporate values commitments, supply chain ethics, public advocacy positions). All other dimensions held constant. 252 new API calls (enhanced condition only), 21 brand pairs, 4 models, 3 repetitions. Baseline and standard conditions reused from Run 12b (1,248 observations). Pre-registered: PRE_REGISTRATION_RUN14.md.
+
+**Results.** Neither primary hypothesis was supported. Enhanced Experiential specification did not reduce Experiential-dimension DCI relative to standard specification (H14a: Wilcoxon $p = .742$, rank-biserial $r = .431$; Experiential deviation delta = $-.083$). Enhanced Ideological specification did not reduce Ideological-dimension DCI (H14b: $p = .508$, $r = .498$; Ideological deviation delta = $+.024$). The predicted null on non-targeted dimensions was confirmed: Narrative ($p = .132$), Economic ($p = .573$), and Cultural ($p = .148$) showed no collateral damage (H14c confirmed).
+
+**Interpretation.** The null result is informative: Brand Function specification operates at the *structural* level --- informing the model that a brand has multi-dimensional identity --- rather than at the *signal-detail* level. Adding richer descriptions of specific dimensions does not incrementally shift the model's per-dimension weighting. This is consistent with the shrunken variance interpretation (Section 5.5.1): the LLM's dimensional weights are determined by architectural priors and training-data distribution, not by the granularity of per-dimension input. The practical implication is that specification works; over-specification does not. A concise Brand Function that names all eight dimensions and their key signals is sufficient; exhaustive per-dimension enumeration provides no additional benefit.
+
 ---
 
 ## 7. Conclusion
@@ -761,8 +771,6 @@ Davenport, T., Guha, A., Grewal, D., & Bressgott, T. (2020). How artificial inte
 De Bruyn, A., Viswanathan, V., Beh, Y. S., Brock, J. K.-U., & von Wangenheim, F. (2020). Artificial intelligence and marketing: Pitfalls and opportunities. *Journal of Interactive Marketing*, 51, 91-105.
 
 De Freitas, J., Nave, G., & Puntoni, S. (2025). Generative AI reduces collective novelty. *Journal of Consumer Research*, forthcoming.
-
-Dharmaputri SK, Nagpal A, Nyilasy G, Lei J. Socially fluent, socially awkward: artificial intelligence relational talk backfires in commercial interactions. arXiv preprint. 2026;2604.12206. doi:10.48550/arXiv.2604.12206
 
 Diehl, K., Kornish, L. J., & Lynch, J. G. (2003). Smart agents: When lower search costs for quality information increase price sensitivity. *Journal of Consumer Research*, 30(1), 56-71.
 
@@ -835,8 +843,6 @@ Zharnikov, D. (2026l). The rendering problem: From genetic expression to brand p
 Zharnikov, D. (2026q). Spectral portfolio theory: Interference, coherence, and capacity in multi-brand perception space. Working Paper. https://doi.org/10.5281/zenodo.19145099
 
 <!-- Self-citation audit: 5 Zharnikov entries listed in reference list (2026a, 2026e, 2026f, 2026l, 2026q) out of 45 total reference entries = 11.1%. Three additional Zharnikov works cited in-text only (2026o, 2026x, 2026y); if counted, total in-text self-citations = 8/48 = 16.7%. Self-citation rate: all self-citations verified as necessary for methodological chain (SBT framework, metamerism formalization, cohort theory, rendering problem, portfolio theory, non-ergodic perception, PRISM-M instrument, temporal triangulation). No self-citation is removable without breaking the theoretical lineage. -->
-
-*This paper is part of the Spectral Brand Theory research program. For the full atlas of 20+ interconnected papers, see [spectralbranding.com/atlas](https://spectralbranding.com/atlas).*
 
 ---
 
