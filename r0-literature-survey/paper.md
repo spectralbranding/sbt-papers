@@ -1,8 +1,8 @@
 # Geometric Approaches to Brand Perception: A Critical Survey and Research Agenda
 
-**Zharnikov, D.**
+**Dmitry Zharnikov**
 
-Working Paper -- March 2026
+Working Paper -- March 2026; updated April 2026
 
 ---
 
@@ -11,12 +11,6 @@ Working Paper -- March 2026
 This paper presents a systematic survey of geometric and topological methods applied to brand perception, consumer behavior, and marketing science. Drawing on literature from multidimensional scaling, characteristics-space economics, conceptual spaces in cognitive science, non-Euclidean perceptual geometry, individual-differences modeling, topological data analysis, quantum cognition, opinion dynamics, and non-ergodicity research, we map the intellectual landscape at the intersection of formal geometry and brand theory. Our central finding is that a significant gap persists: no existing framework combines high-dimensional geometric structure, a generative signal mechanism, observer heterogeneity, and non-ergodic temporal dynamics into an integrated theory of brand perception. Multidimensional scaling, the dominant spatial method in marketing, typically operates in two to three dimensions and offers no generative mechanism. Conceptual spaces provide geometric foundations for cognition but lack temporal dynamics and observer-specific processing. Non-Euclidean perceptual geometry demonstrates that Euclidean distance is insufficient for modeling perception, yet this insight has not penetrated brand theory. Non-ergodicity has been formalized in psychology, decision science, and evolutionary biology, but has never been applied to brand perception or consumer loyalty trajectories. We propose six open problems at this intersection---concerning formal metrics on brand space, projection bounds, concentration of measure, positioning capacity, specification impossibility, and diffusion dynamics on perceptual manifolds---and argue that Spectral Brand Theory (Zharnikov, 2026a) represents a candidate framework positioned to address this compound gap.
 
 **Keywords**: brand perception, geometric methods, multidimensional scaling, conceptual spaces, non-ergodicity, high-dimensional geometry, Spectral Brand Theory
-
-**JEL Classification**: M31, C65, D91
-
-**MSC Classification**: 91B42, 51K05, 62P20
-
-**arXiv Subject Classes**: cs.LG, stat.ML
 
 ---
 
