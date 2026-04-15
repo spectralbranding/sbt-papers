@@ -213,4 +213,5 @@ Zharnikov Dmitry (2026a), "Spectral Brand Theory: An Eight-Dimensional Framework
 
 Zharnikov Dmitry (2026v), "Spectral Metamerism in AI-Mediated Brand Perception: A Cross-Architectural Study of Dimensional Collapse," working paper, doi: 10.5281/zenodo.19422427.
 
+---
 *This paper is part of the Spectral Brand Theory research program. For the full atlas of 20+ interconnected papers, see [spectralbranding.com/atlas](https://spectralbranding.com/atlas).*
