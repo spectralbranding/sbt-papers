@@ -540,6 +540,8 @@ Zharnikov, D. (2026e). Spectral metamerism in brand perception: Projection bound
 
 Zharnikov, D. (2026f). Cohort boundaries in high-dimensional perception space: A concentration of measure analysis. Working Paper. https://doi.org/10.5281/zenodo.18945477
 
+*This paper is part of the Spectral Brand Theory research program. For the full atlas of 20+ interconnected papers, see [spectralbranding.com/atlas](https://spectralbranding.com/atlas).*
+
 ---
 
 ## Appendix A: Numerical Computations

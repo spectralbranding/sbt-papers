@@ -399,3 +399,5 @@ Zharnikov, Dmitry (2026aa), "Rate-Distortion Bounds on AI Brand Perception: Why 
 **Data Availability**
 
 Experiment data (7,975 observations) are archived at https://doi.org/10.57967/hf/8380. Source code and analysis scripts are available at https://doi.org/10.5281/zenodo.19555282. The dataset contains 2,555 direct-rating observations, 2,518 recommendation-prompt observations, 1,235 multi-turn conversation observations, 1,322 native-language ablation observations, and 345 prompt-location ablation observations across 13 models from 7 training traditions. Local model experiments were conducted on Apple Mac mini M4 Pro (48 GB RAM) running Ollama v0.20.0.
+
+*This paper is part of the Spectral Brand Theory research program. For the full atlas of 20+ interconnected papers, see [spectralbranding.com/atlas](https://spectralbranding.com/atlas).*

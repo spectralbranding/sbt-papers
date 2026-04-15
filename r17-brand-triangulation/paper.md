@@ -641,6 +641,8 @@ The framework's dependence on the GPS analogy is deliberate but bounded. GPS is 
 
 Brand positioning is a geometric estimation problem. The framework proposed here characterizes the conditions under which it can be solved and provides computable criteria for evaluating whether a given observer configuration is sufficient.
 
+*This paper is part of the Spectral Brand Theory research program. For the full atlas of 20+ interconnected papers, see [spectralbranding.com/atlas](https://spectralbranding.com/atlas).*
+
 ---
 
 ## References
