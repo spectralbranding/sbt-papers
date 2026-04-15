@@ -36,7 +36,7 @@ Christodoulides & de Chernatony (2010) consolidate these equity-based approaches
 
 Sharp's (2010) empirical marketing science measures mental and physical availability — how easily the brand comes to mind and how easily it can be purchased. The structural limitation is that availability is a pre-perceptual construct: Sharp measures whether the brand passes the identity gate but does not model the perception mechanism that translates availability into conviction. Two observers with identical availability can form opposite convictions; Sharp's framework cannot explain why.
 
-The gap is not in any single framework. It is structural: brand measurement collapses multi-dimensional perception into single scores — Net Promoter Score, brand equity indices, awareness metrics — destroying the information that explains why six observers form six irreconcilable perceptions of the same brand. The information is not noise. It is the phenomenon itself.
+The gap is not in any single framework. It is structural: brand measurement collapses multi-dimensional perception into single scores — Net Promoter Score, brand equity indices, awareness metrics — destroying the information that explains why six observers form six irreconcilable perceptions of the same brand. The information is not noise. It is the phenomenon itself. This dimensional compression is an instance of what Flake and Fried (2020) term *questionable measurement practices* — decisions that raise doubts about whether the measure captures the intended construct. When brand equity indices reduce eight-dimensional perception to a single score, the measurement instrument itself becomes the primary source of information loss.
 
 Fields that study complex multi-attribute phenomena have independently developed constructs for preserving this information — *dimensional decomposition*: the systematic separation of a complex signal into independent measurement channels. While brand researchers have recognized the need for multi-dimensional approaches (France, Davcik, & Kazandjian, 2025; Guhl, 2024; Lambrecht, Baumgarth, & Henseler, 2025), no framework has formalized the observer-dependent filtering mechanism that explains why the same brand signals produce different perceptions in different cohorts.
 
@@ -545,7 +545,7 @@ Attitude strength research (Krosnick & Petty, 1995) establishes that strong atti
 
 SBT does not capture everything existing frameworks do. Sharp's (2010) empirical regularities — double jeopardy, negative binomial distribution of purchase frequency — describe aggregate market-level patterns that SBT's cohort-level architecture does not address; these phenomena may emerge from the cohort dynamics SBT models but the framework does not predict them. Similarly, the rich phenomenological detail of Fournier's (1998) relationship theory — brand relationships as lived narratives — is reduced to parameter values in SBT's observer profiles. The framework trades phenomenological richness for computational tractability.
 
-In sum, SBT contributes a unifying vocabulary that connects the sender-side frameworks (Aaker, Kapferer), receiver-side frameworks (Keller), acquisition frameworks (Sharp), and process frameworks (cognitive science, ergodicity economics) as complementary descriptions of different stages in a single perception pipeline.
+In sum, SBT contributes a unifying vocabulary that connects the sender-side frameworks (Aaker, Kapferer), receiver-side frameworks (Keller), acquisition frameworks (Sharp), and process frameworks (cognitive science, ergodicity economics) as complementary descriptions of different stages in a single perception pipeline. The formal criterion for construct validity — that variation in the attribute causally produces variation in the measurement outcome (Borsboom, Mellenbergh and van Heerden 2003) — is satisfied by spectral profiles only when the instrument preserves dimensional structure. Aggregated metrics fail this criterion by design.
 
 ### 5.2 Computational Implementability
 
@@ -665,6 +665,8 @@ Alba, J. W., & Hutchinson, J. W. (1987). Dimensions of consumer expertise. *Jour
 
 Barari, M., & Eisend, M. (2024). Computational content analysis of brand communications: A review and research agenda. *International Journal of Research in Marketing*, 41(1), 24–47.
 
+Borsboom, D., Mellenbergh, G. J., & van Heerden, J. (2003). The theoretical status of latent variables. *Psychological Review*, 110(2), 203–219. https://doi.org/10.1037/0033-295X.110.2.203
+
 Ambler, T. (2003). *Marketing and the bottom line: The marketing metrics to pump up cash flow* (2nd ed.). Financial Times/Prentice Hall.
 
 Barthes, R. (1957). *Mythologies*. Seuil.
@@ -714,6 +716,8 @@ Ehrenberg, A. S. C., Goodhardt, G. J., & Barwise, T. P. (1990). Double jeopardy 
 Feldwick, P. (1996). What is brand equity anyway, and how do you measure it? *Journal of the Market Research Society*, 38(2), 85–104.
 
 Festinger, L. (1957). *A theory of cognitive dissonance*. Stanford University Press.
+
+Flake, J. K., & Fried, E. I. (2020). Measurement schmeasurement: Questionable measurement practices and how to avoid them. *Advances in Methods and Practices in Psychological Science*, 3(4), 456–465. https://doi.org/10.1177/2515245920952393
 
 Fournier, S. (1998). Consumers and their brands: Developing relationship theory in consumer research. *Journal of Consumer Research*, 24(4), 343–373.
 
