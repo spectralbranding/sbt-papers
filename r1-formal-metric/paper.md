@@ -1,8 +1,8 @@
 # Brand Space Geometry: A Formal Metric for Multi-Dimensional Brand Perception
 
-**Zharnikov, D.**
+**Dmitry Zharnikov**
 
-Working Paper -- March 2026
+Working Paper -- March 2026; updated April 2026
 
 ---
 
@@ -11,10 +11,6 @@ Working Paper -- March 2026
 Brand theory lacks formal mathematical foundations. While frameworks such as Keller's Customer-Based Brand Equity and Aaker's brand personality dimensions provide conceptual taxonomies, none defines a metric space in which brand perception can be rigorously measured, compared, or analyzed. This paper provides the first formal metric space for multi-dimensional brand perception grounded in compositional data analysis and information geometry, building on Spectral Brand Theory (SBT), which models brands as emitters of signals across eight typed dimensions perceived by observers with heterogeneous salience profiles. We define three metric spaces: the *brand signal space* $(\mathcal{B}, d_{\mathcal{B}})$, where brand emission profiles reside in $\mathbb{R}^8_+$ equipped with the Aitchison metric via isometric log-ratio coordinates; the *observer weight space* $(\mathcal{O}, d_{\mathcal{O}})$, where observer salience profiles reside on the probability simplex $\Delta^7$ equipped with the Fisher-Rao metric, justified by Cencov's uniqueness theorem; and the *combined brand-observer space* $(\mathcal{P}, D)$, formalized as a warped product manifold that generalizes the empirically validated INDSCAL model of individual differences scaling. We prove that each space satisfies the metric axioms, derive geodesics, and establish concentration-of-measure bounds at $n = 8$: the expected squared Euclidean distance between uniformly random observer profiles is $7/36$, providing a null-model baseline for meaningful brand differentiation. We prove that the positive-octant restriction compresses brand space to $1/256$ of the full 7-sphere, quantifying the geometric constraint on brand differentiation. We extend the static framework with Jacobi field analysis of trajectory sensitivity on the perception manifold, introducing the spectral sensitivity index -- an observer-weighted curvature measure that quantifies how vulnerable a brand's trajectory is to perturbation, connecting the static metric to the non-ergodic perception dynamics formalized in subsequent work. Applications to five SBT case-study brands demonstrate that the metric recovers qualitative coherence assessments and reveals observer-dependent distance structures invisible to traditional brand-comparison methods.
 
 **Keywords**: brand perception, metric space, information geometry, Fisher-Rao metric, Aitchison geometry, compositional data, warped product manifold, Jacobi fields, trajectory sensitivity, Spectral Brand Theory
-
-**JEL Classification**: C65, M31, C02
-
-**MSC Classification**: 53C21, 62B10, 91B42
 
 ---
 
