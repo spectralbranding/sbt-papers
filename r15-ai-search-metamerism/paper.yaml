@@ -179,6 +179,12 @@ dependencies:
     critical: false
     description: "Spectral portfolio theory (portfolio self-competition)"
 
+  - citation: "Dharmaputri et al. (2026)"
+    doi: "10.48550/arXiv.2604.12206"
+    relationship: converges
+    critical: false
+    description: "AI relational talk backfires in commercial interactions (d=-.621); downstream validation that Social-dimension under-encoding has real observer-facing consequences"
+
 limitations:
   - id: L1
     description: "Prompt-based protocol does not capture multimodal AI-brand interactions"

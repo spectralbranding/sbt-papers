@@ -339,6 +339,8 @@ The brand audit extends from visual consistency (are the colors right? does the 
 
 For organizations currently investing in GEO as their primary AI-visibility strategy, this analysis suggests that GEO is a necessary transitional tactic but not a sufficient long-term strategy. GEO optimizes for statistical visibility within the current paradigm of AI-as-observer; the Brand Function addresses the deeper structural requirement of machine-verifiable behavioral identity. Under conditions where AI agents operate with delegated purchasing authority, competitive advantage becomes increasingly a function of machine-verifiable behavioral commitments (Brand Function + cryptographic signature) rather than statistical visibility optimization (GEO).
 
+The value of context-specific dimension activation in the Brand Function is underscored by recent empirical evidence on AI-mediated commercial interaction. Dharmaputri et al. (2026) find that AI relational talk in commercial contexts decreases observer satisfaction (d = -.621), with the negative effect weakening only when social talk is goal-relevant to the transaction. This pattern illustrates the dimensional mismatch risk the Brand Function is designed to prevent: rather than training AI to "be more social" uniformly, brands should specify which Social-dimension behaviors to activate per interaction context --- a function the Brand Function's context-observer mapping performs by design.
+
 **Strategic Use Cases for the Brand Function**
 
 The Brand Function's practical value is not uniform across all brands --- it varies systematically with training-data embeddedness. Four use cases emerge in order of strategic urgency:
@@ -446,6 +448,8 @@ Cover, T. M., & Thomas, J. A. (2006). *Elements of information theory* (2nd ed.)
 Davenport, T., Guha, A., Grewal, D., & Bressgott, T. (2020). How artificial intelligence will change the future of marketing. *Journal of the Academy of Marketing Science*, *48*(1), 24--42. https://doi.org/10.1007/s11747-019-00696-0
 
 De Bruyn, A., Viswanathan, V., Beh, Y. S., Brock, J. K.-U., & von Wangenheim, F. (2020). Artificial intelligence and marketing: Pitfalls and opportunities. *Journal of Interactive Marketing*, *51*, 91--105. https://doi.org/10.1016/j.intmar.2020.04.007
+
+Dharmaputri SK, Nagpal A, Nyilasy G, Lei J. Socially fluent, socially awkward: artificial intelligence relational talk backfires in commercial interactions. *arXiv preprint*. 2026;2604.12206. https://doi.org/10.48550/arXiv.2604.12206
 
 de Chernatony, L. (1999). Brand management through narrowing the gap between brand identity and brand reputation. *Journal of Marketing Management*, *15*(1--3), 157--179.
 

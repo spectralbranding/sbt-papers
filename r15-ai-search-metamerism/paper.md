@@ -647,6 +647,8 @@ The dimensional collapse documented here converges with independent findings fro
 
 Sabbah and Acar also report pronounced cross-category heterogeneity within the same model: GPT-5 responds positively to bundling for fitness watches but negatively for phones. This within-model instability parallels our per-pair DCI variation (Table 3): the same model collapses more on some brand pairs than others, depending on the availability of dimensional information in the training data. Together, these studies suggest that AI-mediated commerce is neither uniformly biased nor randomly noisy --- it is *dimensionally structured*, with predictable patterns of sensitivity and collapse that depend on the verifiability of the signal, the richness of training data, and the model's architectural characteristics.
 
+The Social dimension's structural under-encoding carries real observer-facing consequences. Dharmaputri et al. (2026) find that AI relational talk --- social chit-chat inserted into commercial interactions --- decreases observer satisfaction (*d* = -.621), with expectancy violation and perceived awkwardness as the mediating mechanism; goal-relevant social talk attenuates the effect. This converges with the present study's finding that the Social dimension is among the most collapsed (62% of baseline in global pairs, 51% in local pairs): AI systems are structurally weak at encoding social signals, and when they attempt Social-dimension output, the mismatch between structural incapacity and observer expectation produces measurable harm rather than neutral absence.
+
 ### 5.7 Implications for Search Advertising
 
 The most direct implication is that search advertising strategy must account for the dimensional structure of AI mediation. Four specific implications follow from the empirical results.
@@ -759,6 +761,8 @@ Davenport, T., Guha, A., Grewal, D., & Bressgott, T. (2020). How artificial inte
 De Bruyn, A., Viswanathan, V., Beh, Y. S., Brock, J. K.-U., & von Wangenheim, F. (2020). Artificial intelligence and marketing: Pitfalls and opportunities. *Journal of Interactive Marketing*, 51, 91-105.
 
 De Freitas, J., Nave, G., & Puntoni, S. (2025). Generative AI reduces collective novelty. *Journal of Consumer Research*, forthcoming.
+
+Dharmaputri SK, Nagpal A, Nyilasy G, Lei J. Socially fluent, socially awkward: artificial intelligence relational talk backfires in commercial interactions. arXiv preprint. 2026;2604.12206. doi:10.48550/arXiv.2604.12206
 
 Diehl, K., Kornish, L. J., & Lynch, J. G. (2003). Smart agents: When lower search costs for quality information increase price sensitivity. *Journal of Consumer Research*, 30(1), 56-71.
 

@@ -141,6 +141,12 @@ dependencies:
     critical: false
     description: "Rendering problem framework"
 
+  - citation: "Dharmaputri et al. (2026)"
+    doi: "10.48550/arXiv.2604.12206"
+    relationship: cites
+    critical: false
+    description: "AI relational talk backfires in commercial contexts (d=-.621); empirical motivation for context-specific dimension activation in Brand Function"
+
 limitations:
   - id: L1
     description: "Pilot uses synthetic brand profiles, not real-world data"
