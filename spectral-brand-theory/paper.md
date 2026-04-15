@@ -319,6 +319,8 @@ The framework as presented in Sections 1-3 operates at the level of structured q
 | Curved space, diverse observers | Electromagnetism in curved space | SBT with heterogeneous cohorts | Brand Triangulation (Zharnikov, 2026y) needed |
 | Extreme curvature, dark signals | Black holes, dark matter | Structural absence, brand singularities | Full fiber bundle + dark signal detection |
 
+**The Cross-Field Geometric Turn.** SBT's adoption of geometric methods — Fisher-Rao metric, geodesics, curvature — is not an idiosyncratic choice imported from physics. It mirrors an independent convergence across fields that discovered flat representations break when working with high-dimensional, AI-relevant data. In machine learning, Bronstein et al. (2021) demonstrated that the architectures that generalize across domains — CNNs, graph neural networks, transformers — are precisely those that preserve geometric structure rather than imposing flat coordinate representations on inherently curved data. In neuroscience, Ma et al. (2025) showed that the visual system transforms a 3-dimensional sensory manifold into a 7-dimensional perceptual manifold, providing direct empirical evidence that perception is not a linear readout but a geometric transformation — the brain encodes meaning by changing the shape of the representation space. In network science, Hansen and Ghrist (2021) applied sheaf theory to opinion dynamics, demonstrating that the consistency constraints governing how local opinions cohere into global positions are inherently topological rather than metric. SBT's geometric apparatus is a local instance of this broader convergence: across fields, high-dimensional heterogeneous data has forced the same methodological conclusion — flat representations destroy the structure that explains the phenomena.
+
 ---
 
 ## 4. Findings
@@ -677,6 +679,8 @@ Brand, J., Israeli, A., & Ngwe, D. (2023). Using LLMs for market research. *Harv
 
 Brock, T. C. (1968). Implications of commodity theory for value change. In A. G. Greenwald, T. C. Brock, & T. M. Ostrom (Eds.), *Psychological foundations of attitudes* (pp. 243–275). Academic Press.
 
+Bronstein, M. M., Bruna, J., Cohen, T., & Velickovic, P. (2021). Geometric deep learning: Grids, groups, graphs, geodesics, and gauges. arXiv preprint 2104.13478.
+
 Carroll, J. D., & Chang, J. J. (1970). Analysis of individual differences in multidimensional scaling via an N-way generalization of Eckart-Young decomposition. *Psychometrika*, 35(3), 283–319.
 
 Colladon, A. F. (2018). The Semantic Brand Score. *Journal of Business Research*, 88, 150–160.
@@ -729,6 +733,8 @@ Grier, S. A., & Brumbaugh, A. M. (1999). Noticing cultural differences: Ad meani
 
 Guhl, D. (2024). Tracking time-varying brand equity using household panel data. *Journal of Business Research*, 182, 114799.
 
+Hansen, J., & Ghrist, R. (2021). Opinion dynamics on discourse sheaves. *SIAM Journal on Applied Mathematics*, 81(5), 2033–2060. doi:10.1137/20M1341088
+
 Hatch, M. J., & Schultz, M. (2010). Toward a theory of brand co-creation with implications for brand governance. *Journal of Brand Management*, 17(8), 590–604.
 
 Hogarth, R. M., & Einhorn, H. J. (1992). Order effects in belief updating: The belief-adjustment model. *Cognitive Psychology*, 24(1), 1–55.
@@ -766,6 +772,8 @@ Lakoff, G. (2004). *Don't think of an elephant!* Chelsea Green.
 Lambrecht, A., Baumgarth, C., & Henseler, J. (2025). Holistic augmented reality brand equity (HARBE) model: Building customer-based brand equity through augmented reality. *Journal of Brand Management*, 32, 298–314.
 
 Lynn, M. (1991). Scarcity effects on value: A quantitative review of the commodity theory literature. *Psychology & Marketing*, 8(1), 43–57.
+
+Ma, H., Jiang, L., Liu, T., & Liu, J. (2025). From sensory to perceptual manifolds: The twist of neural geometry. *Science Advances*, 11(26):eadv0431. doi:10.1126/sciadv.adv0431
 
 McLuhan, M. (1964). *Understanding media: The extensions of man*. McGraw-Hill.
 

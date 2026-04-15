@@ -96,6 +96,8 @@ Third, brand perception is *compositional*. The individual dimension scores are 
 
 These three properties -- relativity, observer-dependence, and compositionality -- constrain the choice of metric and rule out naive Euclidean distance.
 
+The shift from Euclidean to Riemannian geometry is not idiosyncratic to brand perception; it reflects a broader convergence across fields that work with high-dimensional experiential data. In machine learning, Bronstein et al. (2021) show that equivariant networks on curved manifolds systematically outperform Euclidean counterparts precisely because the symmetry structure of the data is geometric, not linear. In neuroscience, Ma et al. (2025) demonstrate empirically that the three-dimensional sensory manifold of color expands to a seven-dimensional perceptual manifold -- a dimensional inflation that only makes sense in Riemannian terms, where curvature carries perceptual meaning that flat distance cannot capture. Brand perception occupies the same class of problem: the data live on a curved manifold, and Euclidean distance is the wrong distance.
+
 ---
 
 ## 3. The Brand Signal Space
@@ -835,6 +837,8 @@ Borg, I., & Groenen, P. J. F. (2005). *Modern Multidimensional Scaling: Theory a
 
 Brand Finance. (2025). *Global 500 2025: The Annual Report on the World's Most Valuable and Strongest Brands*. Brand Finance.
 
+Bronstein MM, Bruna J, Cohen T, Velickovic P. Geometric deep learning: grids, groups, graphs, geodesics, and gauges. *arXiv preprint*. 2021;2104.13478.
+
 Bujack, R., Teti, E., Miller, J., Caffrey, E., & Turton, T. L. (2022). The non-Riemannian nature of perceptual color space. *Proceedings of the National Academy of Sciences*, 119(18), e2119753119.
 
 Busemeyer, J. R., & Bruza, P. D. (2012). *Quantum Models of Cognition and Decision*. Cambridge University Press.
@@ -866,6 +870,8 @@ Karcher, H. (1977). Riemannian center of mass and mollifier smoothing. *Communic
 Keller, K. L. (1993). Conceptualizing, measuring, and managing customer-based brand equity. *Journal of Marketing*, 57(1), 1--22.
 
 Lancaster, K. J. (1966). A new approach to consumer theory. *Journal of Political Economy*, 74(2), 132--157.
+
+Ma H, Jiang L, Liu T, Liu J. From sensory to perceptual manifolds: the twist of neural geometry. *Science Advances.* 2025;11(26):eadv0431. doi:10.1126/sciadv.adv0431
 
 Marshall, A. W., Olkin, I., & Arnold, B. C. (2011). *Inequalities: Theory of Majorization and Its Applications* (2nd ed.). Springer.
 

@@ -100,7 +100,7 @@ This convexity criterion has deep implications. It provides a geometric characte
 
 Several researchers have applied conceptual-spaces ideas to marketing contexts. Warglien and Gartner (2004) used conceptual spaces to model how brand meanings are constructed and communicated. Aisbett and Gibbon (2001) explored the mathematical properties of concept combination in conceptual spaces, with implications for how consumers combine brand attributes into overall judgments.
 
-More recently, word embedding models from natural language processing (Mikolov, Sutskever, Chen, Corrado, and Dean, 2013) have been interpreted as high-dimensional conceptual spaces that encode brand meaning from textual data. Brands that are described in similar contexts end up close together in the embedding space, providing a data-driven approximation to the conceptual-spaces framework.
+More recently, word embedding models from natural language processing (Mikolov, Sutskever, Chen, Corrado, and Dean, 2013) have been interpreted as high-dimensional conceptual spaces that encode brand meaning from textual data. Brands that are described in similar contexts end up close together in the embedding space, providing a data-driven approximation to the conceptual-spaces framework. This geometric perspective has been formalized at scale in geometric deep learning (Bronstein, Bruna, Cohen, and Velickovic, 2021), which demonstrates that the most powerful modern neural architectures succeed precisely because they encode the geometric symmetries of their input domains---a principle that extends naturally to any high-dimensional perception space.
 
 Vogt (2006) and Steels (2012) explored how conceptual spaces evolve through agent interaction, using "discrimination games" in which agents negotiate the boundaries of concepts through communicative encounters. This provides a rudimentary temporal dynamic but remains focused on concept formation rather than brand perception specifically.
 
@@ -127,6 +127,8 @@ A foundational question for any geometric theory of brand perception is: What is
 Evidence from perceptual psychology challenges this assumption at every level. Todd, Oomes, Koenderink, and Kappers (2001) conducted experiments on visual perception of three-dimensional scenes and found that observers are accurate at judging topological properties (connectedness, inside/outside), ordinal properties (relative distance), and affine properties (parallelism, betweenness), but are remarkably poor at judging Euclidean metric properties such as absolute distance, angle, and shape. Their conclusion was that "the effective geometry of spatial vision is, at best, some form of Riemannian geometry rather than Euclidean."
 
 This "at best" qualification proved prescient. Bujack, Teti, Miller, Caffrey, and Turton (2022), publishing in *Proceedings of the National Academy of Sciences*, demonstrated that perceptual color space is not merely non-Euclidean but non-Riemannian. They identified a "principle of diminishing returns" along the luminance axis: large color differences appear perceptually smaller than the sum of the small perceptual steps composing them. In Riemannian geometry, global distances are computed by integrating local metric elements along geodesics; the diminishing-returns finding violates this principle, implying that the metric structure of perceptual color space cannot be captured by any Riemannian manifold.
+
+At the neural level, recent work confirms that the geometric expansion observed in perception is not a statistical artifact but a structural property of how sensory information is encoded. Ma, Jiang, Liu, and Liu (2025) showed that as signals travel from primary sensory cortex to higher perceptual areas, the brain systematically transforms a 3-dimensional sensory manifold into a 7-dimensional perceptual manifold. This dimensionality expansion directly supports the hypothesis that brand perception---which integrates signals across semiotic, narrative, ideological, experiential, social, economic, cultural, and temporal channels---inhabits a high-dimensional geometric space rather than the low-dimensional Euclidean space assumed by classical perceptual mapping.
 
 ### 5.2 Implications for Brand Perception
 
@@ -186,7 +188,7 @@ Persistence diagrams and barcodes provide compact visual summaries of topologica
 
 TDA has found applications in several domains adjacent to marketing. In financial markets, Yen and Cheong (2021) used Betti numbers and Euler characteristics to detect structural changes associated with market crashes in the Singapore and Taiwan stock exchanges. During crashes, the market topology fragments---persistent topological features disappear as correlations between assets break down.
 
-In social network analysis, persistent homology has been applied to detect community structure, identify influential nodes, and track the evolution of network topology over time. In biology, TDA has been used to analyze protein structures, neural population activity, and genomic data.
+In social network analysis, persistent homology has been applied to detect community structure, identify influential nodes, and track the evolution of network topology over time. In biology, TDA has been used to analyze protein structures, neural population activity, and genomic data; a comprehensive recent review demonstrates TDA's power for single-cell biological data, where persistent homology reveals topological structure in high-dimensional cell-state spaces that conventional clustering methods cannot recover (Hernandez-Lemus 2025).
 
 ### 7.3 The Marketing Gap
 
@@ -486,6 +488,8 @@ Brand Finance. (2025). *Global 500 2025: The Annual Report on the World's Most V
 
 Bouchaud, J.-P., and Mezard, M. (2000). "Wealth Condensation in a Simple Model of Economy." *Physica A*, 282(3-4), 536-545.
 
+Bronstein, M. M., Bruna, J., Cohen, T., and Velickovic, P. (2021). "Geometric Deep Learning: Grids, Groups, Graphs, Geodesics, and Gauges." arXiv:2104.13478.
+
 Bujack, R., Teti, E., Miller, J., Caffrey, E., and Turton, T. L. (2022). "The Non-Riemannian Nature of Perceptual Color Space." *Proceedings of the National Academy of Sciences*, 119(18), e2119753119.
 
 Busemeyer, J. R., and Bruza, P. D. (2012). *Quantum Models of Cognition and Decision*. Cambridge University Press.
@@ -530,6 +534,8 @@ Green, P. E., and Srinivasan, V. (1978). "Conjoint Analysis in Consumer Research
 
 Hegselmann, R., and Krause, U. (2002). "Opinion Dynamics and Bounded Confidence: Models, Analysis and Simulation." *Journal of Artificial Societies and Social Simulation*, 5(3), 2.
 
+Hernandez-Lemus, E. (2025). "Topological Data Analysis in Single Cell Biology." *Frontiers in Immunology*, 16, 1615278. doi:10.3389/fimmu.2025.1615278
+
 Hotelling, H. (1929). "Stability in Competition." *The Economic Journal*, 39(153), 41-57.
 
 Johnson, W. B., and Lindenstrauss, J. (1984). "Extensions of Lipschitz Mappings into a Hilbert Space." *Contemporary Mathematics*, 26, 189-206.
@@ -547,6 +553,8 @@ Lancaster, K. J. (1966). "A New Approach to Consumer Theory." *Journal of Politi
 Layton, R. A., and Duffy, S. (2018). "Path Dependent and Path Creation Perspectives on Marketing System Development." *Journal of Macromarketing*, 38(1), 23-31.
 
 Lorenz, J. (2007). "Continuous Opinion Dynamics Under Bounded Confidence: A Survey." *International Journal of Modern Physics C*, 18(12), 1819-1838.
+
+Ma, H., Jiang, L., Liu, T., and Liu, J. (2025). "From Sensory to Perceptual Manifolds: The Twist of Neural Geometry." *Science Advances*, 11(26), eadv0431. doi:10.1126/sciadv.adv0431
 
 McInnes, L., Healy, J., Saul, N., and Grossberger, L. (2018). "UMAP: Uniform Manifold Approximation and Projection." *Journal of Open Source Software*, 3(29), 861.
 
