@@ -6,7 +6,7 @@ DOI: 10.5281/zenodo.19555282
 
 **Abstract**
 
-Large language models (LLMs) increasingly shape how consumers discover and evaluate brands. Brand portfolio theory predicts that revealing corporate ownership should produce perceptual interference via an awareness gate (Keller 1993; Aaker and Keller 1990). Yet LLMs encode portfolio relationships permanently in their parameters, raising the possibility of either maximal interference or complete immunity. We test these hypotheses in a preregistered experiment with 13 LLMs spanning seven training traditions (Western, Chinese, Russian, Indian, Japanese, European, Korean). Twenty brands from seven portfolio archetypes (LVMH, Unilever, P&G, Toyota, L'Oreal, Geely, Yandex) were rated under four prompt modalities---direct rating, naturalistic recommendation, multi-turn conversation with mid-dialogue portfolio reveal, and native-language framing---yielding 7,975 parsed observations. Portfolio framing produces near-zero change in Dimensional Concentration Index (mean |delta DCI| = .26). Equivalence testing confirms the null for 18/20 brands within +/-1.0 DCI points. Multi-turn revelation unlocks modest flattening for reverse-aspiration structures (Geely Auto d = -1.11, FDR-significant), but effects remain portfolio- and modality-specific rather than systematic. Native-language prompts activate model-specific discourse layers without directional amplification. These results generalize spectral immunity across model traditions and portfolio types, implying that house-of-brands shielding is automatic in AI-mediated markets while constructive interference is impossible. Brand managers cannot rely on portfolio architecture to reshape LLM perceptions except in extended conversational contexts. Theoretical implications for awareness-gate mechanisms and practical implications for "Share of Model" strategy are discussed.
+Large language models (LLMs) increasingly shape how consumers discover and evaluate brands. Brand portfolio theory predicts that revealing corporate ownership should produce perceptual interference via an awareness gate (Keller 1993; Aaker and Keller 1990). Yet LLMs encode portfolio relationships permanently in their parameters, raising the possibility of either maximal interference or complete immunity. We test these hypotheses in a preregistered experiment with 13 LLMs spanning seven training traditions (Western, Chinese, Russian, Indian, Japanese, European, Korean). Twenty brands from seven portfolio archetypes (LVMH, Unilever, P&G, Toyota, L'Oreal, Geely, Yandex) were rated under four prompt modalities---direct rating, naturalistic recommendation, multi-turn conversation with mid-dialogue portfolio reveal, and native-language framing---yielding 7,975 parsed observations. A preregistered extension with 20 additional brands drawn from published marketing research (Aaker 1997; Brakus et al. 2009; Li et al. 2024; and others) added 1,950 observations with zero overlap, replicating immunity (0/10 |d| > .50) and bringing the combined dataset to 9,925 observations across 40 brands. Portfolio framing produces near-zero change in Dimensional Concentration Index (mean |delta DCI| = .26). Equivalence testing confirms the null for 18/20 brands within +/-1.0 DCI points. Multi-turn revelation unlocks modest flattening for reverse-aspiration structures (Geely Auto d = -1.11, FDR-significant), but effects remain portfolio- and modality-specific rather than systematic. Native-language prompts activate model-specific discourse layers without directional amplification. These results generalize spectral immunity across model traditions and portfolio types, implying that house-of-brands shielding is automatic in AI-mediated markets while constructive interference is impossible. Brand managers cannot rely on portfolio architecture to reshape LLM perceptions except in extended conversational contexts. Theoretical implications for awareness-gate mechanisms and practical implications for "Share of Model" strategy are discussed.
 
 **Keywords:** brand perception, large language models, portfolio interference, awareness gate, TOST equivalence, cross-cultural AI, multi-turn conversation, native-language framing, Share of Model
 
@@ -250,6 +250,40 @@ The predominant finding is clear: 0/20 brands show FDR-significant portfolio eff
 
 **Native-language ablation.** Native-language framing was tested for the 4 portfolios with identifiable home-market languages (Japanese/Toyota, Russian/Yandex, Chinese/Geely, French/L'Oreal). Results show that native-language framing activates different discourse registers for specific model-portfolio pairs but does not produce systematic amplification of portfolio effects. The clearest signal is the Japanese model (Swallow) under Japanese-language Toyota framing (delta -2.35 vs. -.37 in English), and YandexGPT under Russian-language Yandex framing (+.72 vs. -.01 in English). However, Qwen3 under Chinese-language Geely framing shows a Volvo-specific effect (+2.07) that is opposite in direction to the home-model amplification prediction. No native-language effect survives FDR correction.
 
+**Replication with Published Brand Stimuli**
+
+The 20 brands in the main experiment were selected to represent seven portfolio archetypes. That selection, while theoretically motivated, is concentrated in a narrow band of portfolio combinations. To address the external validity concern, we conducted an extension using an independent brand stimulus set drawn entirely from published peer-reviewed marketing research.
+
+*Brand Selection*
+
+Twenty brands were drawn from canonical empirical studies: Aaker (1997, JMR), Brakus, Schmitt, and Zarantonello (2009, JM), Li, Castelo, Katona, and Sarvary (2024, Marketing Science), Erdem (1998, JMR), Dew, Ansari, and Li (2022, Marketing Science), Morgan and Rego (2009, JM), and Malar, Krohmer, Hoyer, and Nyffenegger (2011, JM). These stimulus sets span brand personality, brand experience, brand extensions, umbrella branding, and emotional brand attachment---traditions that are empirically distinct from the portfolio interference literature. Zero overlap exists between the 20 extension brands and the 20 main-experiment brands.
+
+Ten brands were tested in both solo and portfolio conditions: Coca-Cola (Coca-Cola Co), Pepsi (PepsiCo), BMW (BMW Group), Audi (Volkswagen Group), Google (Alphabet), Disney (Walt Disney Co), Colgate (Colgate-Palmolive), Samsung (Samsung Group), H&M (H&M Group), and Dell (Dell Technologies). Ten brands were tested in solo condition only: Apple, Nike, Starbucks, IBM, Harley-Davidson, Rolex, Amazon, Adidas, McDonald's, and Red Bull. The same 13-model, 7-tradition panel and identical PRISM-B protocol were applied. Total: 1,950 observations (1,300 solo + 650 portfolio), 5 repetitions per cell.
+
+*Results*
+
+**Table 7.** Published-Brand Extension: Portfolio Immunity Test (N = 1,950).
+
+| Brand | Parent | Solo DCI | Port DCI | Delta | d |
+|-------|--------|----------|----------|-------|---|
+| Coca-Cola | Coca-Cola Co | .56 | .58 | +.02 | +.08 |
+| Pepsi | PepsiCo | .85 | .89 | +.03 | +.11 |
+| BMW | BMW Group | .46 | .43 | -.03 | -.18 |
+| Audi | VW Group | .62 | .71 | +.09 | +.49 |
+| Google | Alphabet | .57 | .58 | +.01 | +.06 |
+| Disney | Walt Disney Co | .37 | .37 | +.01 | +.04 |
+| Colgate | Colgate-Palmolive | 1.04 | 1.10 | +.06 | +.21 |
+| Samsung | Samsung Group | .73 | .75 | +.02 | +.06 |
+| H&M | H&M Group | 1.31 | 1.21 | -.10 | -.29 |
+| Dell | Dell Technologies | .92 | .98 | +.06 | +.16 |
+
+*Notes*: N = 65 per cell (13 models x 5 repetitions). 0/10 brands FDR-significant at q = .05. TOST equivalence confirmed for all 10 brands within +/-1.0 DCI bounds.
+
+The extension replicates the core immunity finding with zero exceptions. No brand shows |d| > .50 in the portfolio condition. The largest individual effect is Audi (d = +.49, Volkswagen Group framing), which falls just below the medium-effect threshold and is TOST-equivalent. Disney (d = +.04), Google (d = +.06), and Samsung (d = +.06) show near-exact immunity regardless of whether the parent conglomerate name substantially differs from the brand name. H&M (d = -.29) shows the only meaningful negative shift, consistent with profile diffusion when additional brands (COS, & Other Stories) are introduced.
+
+The Audi result echoes the suggestive Lexus finding from the main experiment: both involve premium-differentiation dynamics where the brand occupies a distinctly more premium position than its corporate sibling average, and both trend positive without reaching the medium-effect threshold.
+
+Combined with the main experiment, R20 now encompasses 9,925 observations across 40 brands (20 + 20, zero overlap), 13 models, and 7 training traditions. Spectral immunity generalizes across stimulus sets drawn from independent empirical research traditions spanning three decades of brand theory.
 
 **Discussion**
 

@@ -13,9 +13,9 @@ metadata:
       corresponding: true
   citation_key: "2026ab"
   doi: "10.5281/zenodo.19555282"
-  date: "2026-04-14"
-  version: "1.0.0"
-  status: draft
+  date: "2026-04-15"
+  version: "1.1.0"
+  status: preprint
   license: "CC-BY-NC-ND-4.0"
   keywords:
     - brand perception
@@ -29,10 +29,11 @@ metadata:
     - Share of Model
 
 experiment_summary:
-  total_responses: 8022
-  parsed_observations: 7975
-  parse_success_rate: 1.000
+  total_responses: 9972
+  parsed_observations: 9925
+  parse_success_rate: 0.995
   models: 13
+  note: "v2.0: 7,975 observations (20 brands). v3.0 extension: 1,950 observations (20 published brands, zero overlap). Combined: 9,925."
   model_names:
     - "Claude Sonnet 4"
     - "GPT-4o-mini"
@@ -56,7 +57,7 @@ experiment_summary:
     - Japanese
     - European
     - Korean
-  brands: 20
+  brands: 40
   portfolios: 7
   portfolio_list:
     - LVMH
