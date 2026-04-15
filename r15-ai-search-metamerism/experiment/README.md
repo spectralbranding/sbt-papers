@@ -24,6 +24,7 @@ applied to AI-mediated consumer search.
 | Run 8 | Native language expansion, 11 languages | 815 | **Complete** | H10 NOT SUPPORTED — null result (52/116 positive, mean = -.002, p = .307) |
 | Run 9 | Temperature sensitivity, T=0.0/0.3/1.0 | varies | **Complete** | DCI spread=0.012 (robust) |
 | Run 10 *(supplementary)* | Corrective comparators, 3 focal × 2 conditions, 7 models | 126 | **Complete (2026-04-10)** | VkusVill largest comparator effect (ΔDCI=+7.4) |
+| Run 13 *(supplementary)* | DeepShop category variation, 9 models, 5 categories, 3 complexity levels | 268 | **Complete (2026-04-15)** | H13a SUPPORTED: category modulates collapse (H=33.681, p<.001, η²=.251) |
 
 ---
 
@@ -59,6 +60,14 @@ may have structurally different perception clouds when observed directly.
 - **H8 (Thin-Data Floor)**: APU Chinggis (Mongolia) will have the highest DCI across all models
 - **H9 (Capacity-Dependent Collapse)**: Smaller models (7-8B) will exhibit higher DCI than larger models (30B+) from the same culture
 - **H10 (Prompt Language Effect)**: Culture-matched models prompted in their native language will show lower DCI for local brands than when prompted in English. **NOT SUPPORTED** — null result (52/116 model-pair combinations positive, mean reduction = -.002, p = .307 two-sided)
+
+### H13 — Category Variation (supplementary, 2026-04-15)
+
+- **H13a (Category Modulation)**: DCI varies by product category. **SUPPORTED** (H=33.681, p<.001, η²=.251)
+- **H13b (Soft > Hard Categories)**: Books show higher DCI than electronics. **NOT SUPPORTED (reversed)** — Books lowest DCI (.049)
+- **H13c (Complexity Null)**: Prompt complexity does not affect DCI. **REJECTED** — Complexity affects DCI (p=.004)
+
+Public data deposit only. Not integrated into paper text. Data: `L3_sessions/run13_category_variation.jsonl`.
 
 ### H12 — Geopolitical Framing (pre-registered 2026-04-07)
 
@@ -136,6 +145,7 @@ of the model's cultural knowledge.
 | Run 10 corrective comparators | 126 |
 | Run 11 Roshen multi-city | 315 |
 | **All runs total (Runs 2-11)** | **21,350** |
+| Run 13 category variation (supplementary) | 268 |
 | Native-language calls across full dataset | 999 (15 distinct native languages plus English) |
 
 ---
@@ -246,6 +256,7 @@ Missing keys are skipped gracefully.
 | `L1_configuration/models.yaml` | Full model registry: tier, culture, size, backend, API key env vars |
 | `L0_specification/PRE_REGISTRATION_RUN5.md` | Run 5 pre-registration protocol |
 | `L0_specification/protocol.md` | Original pre-registration (Runs 1-3) |
+| `L3_sessions/run13_category_variation.jsonl` | Run 13 session log: DeepShop category variation (268 calls, 9 models, 5 categories, 3 complexity levels) |
 | `L0_specification/resolution_protocol.md` | Run 4 pre-registration (Brand Function resolution) |
 
 ---
