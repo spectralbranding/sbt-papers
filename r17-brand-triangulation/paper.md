@@ -777,4 +777,5 @@ Zharnikov, D. (2026x). AI-native brand identity: from visual recognition to cryp
 
 Zharnikov, D. (2026aa). Empirical rate-distortion curve for AI brand perception encoders. Working Paper. https://doi.org/10.5281/zenodo.19528833
 
+---
 *This paper is part of the Spectral Brand Theory research program. For the full atlas of 20+ interconnected papers, see [spectralbranding.com/atlas](https://spectralbranding.com/atlas).*

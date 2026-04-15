@@ -526,4 +526,5 @@ Tversky, A., & Kahneman, D. (1974). Judgment under uncertainty: Heuristics and b
 
 [Author] (2026y). [Details removed for blind review].
 
+---
 *This paper is part of the Spectral Brand Theory research program. For the full atlas of 20+ interconnected papers, see [spectralbranding.com/atlas](https://spectralbranding.com/atlas).*

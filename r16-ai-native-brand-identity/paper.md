@@ -160,7 +160,7 @@ These protocols form an emerging stack: static manifests (brand.json) -> tool co
 
 Existing protocols leave three gaps that the Brand Function fills:
 
-*Perception measurement.* No existing protocol includes analysis of how the brand is perceived across dimensions by different observer cohorts. SBT's eight-dimensional spectral profile --- measuring brand emissions along Semiotic, Narrative, Ideological, Experiential, Social, Economic, Cultural, and Temporal dimensions (Zharnikov, 2026a) --- provides a perceptual measurement layer that no commerce or identity protocol addresses. Including spectral profiles in the Brand Function enables AI agents to evaluate not only what a brand sells but how it is perceived across dimensions, by which observer cohorts, and with what degree of variance.
+*Perception measurement.* No existing protocol includes analysis of how the brand is perceived across dimensions by different observer cohorts. SBT's eight-dimensional spectral profile --- measuring brand emissions along Semiotic, Narrative, Ideological, Experiential, Social, Economic, Cultural, and Temporal dimensions (Zharnikov, 2026a) --- provides a perceptual measurement layer that no commerce or identity protocol addresses. Including spectral profiles in the Brand Function enables AI agents to recognize that a brand has multi-dimensional identity --- the structural awareness that Run 14 of the R15 experimental program (Zharnikov, 2026v) shows is the operative mechanism, rather than per-dimension signal granularity.
 
 *Behavioral specification beyond commerce.* Current protocols specify commerce mechanics. The Brand Function extends to all behavioral touchpoints: communication style parameters, decision rules for edge cases, content policies, escalation behavior, refusal conditions, and how behavior varies by observer type. This is the difference between telling an AI agent "here is our product catalog" and telling it "here is how we behave."
 
@@ -339,8 +339,6 @@ The brand audit extends from visual consistency (are the colors right? does the 
 
 For organizations currently investing in GEO as their primary AI-visibility strategy, this analysis suggests that GEO is a necessary transitional tactic but not a sufficient long-term strategy. GEO optimizes for statistical visibility within the current paradigm of AI-as-observer; the Brand Function addresses the deeper structural requirement of machine-verifiable behavioral identity. Under conditions where AI agents operate with delegated purchasing authority, competitive advantage becomes increasingly a function of machine-verifiable behavioral commitments (Brand Function + cryptographic signature) rather than statistical visibility optimization (GEO).
 
-The value of context-specific dimension activation in the Brand Function is underscored by recent empirical evidence on AI-mediated commercial interaction. Dharmaputri et al. (2026) find that AI relational talk in commercial contexts decreases observer satisfaction (d = -.621), with the negative effect weakening only when social talk is goal-relevant to the transaction. This pattern illustrates the dimensional mismatch risk the Brand Function is designed to prevent: rather than training AI to "be more social" uniformly, brands should specify which Social-dimension behaviors to activate per interaction context --- a function the Brand Function's context-observer mapping performs by design.
-
 **Strategic Use Cases for the Brand Function**
 
 The Brand Function's practical value is not uniform across all brands --- it varies systematically with training-data embeddedness. Four use cases emerge in order of strategic urgency:
@@ -449,8 +447,6 @@ Davenport, T., Guha, A., Grewal, D., & Bressgott, T. (2020). How artificial inte
 
 De Bruyn, A., Viswanathan, V., Beh, Y. S., Brock, J. K.-U., & von Wangenheim, F. (2020). Artificial intelligence and marketing: Pitfalls and opportunities. *Journal of Interactive Marketing*, *51*, 91--105. https://doi.org/10.1016/j.intmar.2020.04.007
 
-Dharmaputri SK, Nagpal A, Nyilasy G, Lei J. Socially fluent, socially awkward: artificial intelligence relational talk backfires in commercial interactions. *arXiv preprint*. 2026;2604.12206. https://doi.org/10.48550/arXiv.2604.12206
-
 de Chernatony, L. (1999). Brand management through narrowing the gap between brand identity and brand reputation. *Journal of Marketing Management*, *15*(1--3), 157--179.
 
 Dijkstra, E. W. (1970). *Notes on structured programming* (EWD249). T.H.-Report 70-WSK-03. Eindhoven University of Technology.
@@ -539,4 +535,5 @@ Zharnikov, D. (2026v). Spectral metamerism in AI-mediated brand perception: How 
 
 Zhi, Y., Zhang, X., Wang, L., Jiang, S., Ma, S., Guan, X., & Shen, C. (2025). Exposing product bias in LLM investment recommendation. *arXiv preprint*. arXiv:2503.08750.
 
+---
 *This paper is part of the Spectral Brand Theory research program. For the full atlas of 20+ interconnected papers, see [spectralbranding.com/atlas](https://spectralbranding.com/atlas).*
