@@ -13,8 +13,8 @@ metadata:
       corresponding: true
   citation_key: "2026v"
   doi: "10.5281/zenodo.19422427"
-  date: "2026-04-14"
-  version: "2.2"
+  date: "2026-04-15"
+  version: "2.3"
   status: preprint  # v2.1 (2026-04-11, expanded same-day): H10 recomputed on the updated dataset including a Mongolian-language re-test of mongolia_beer and a VkusVill Brand Function specification follow-up. New H10 result: 58/121 positive (48%), mean = +.001, binomial sign test p = .716 two-sided, null result. Mongolian-language subgroup exception (8/8 models, mean -4.9 DCI). Supplementary Run 10 corrective comparators added (126 calls). VkusVill specification test added (147 calls). Native templates rewritten as natural native-speaker prose. Section 4.6.3 added: Run 11 Roshen multi-city extension (7 cities × 7 LLMs × 3 runs = 315 calls, 0 errors). Run 11 findings: (a) Kyiv uniquely low (DCI 34.78); every other city clusters 39-45 regardless of geopolitical alignment. (b) Manufacturing presence does not save the brand: Vilnius (Klaipeda factory, ~15500 t/yr) collapses MORE than Warsaw, which has no manufacturing in Poland but does have an active commercial distribution arm (Roshen-Polska Sp. z o.o. in Jarosław + Roshen Europe Sp. z o.o. in Warsaw); commercial-distribution discourse beats manufacturing-record discourse. (c) Local-language prompting reduces DCI by 3.31-9.50 across all non-Kyiv cities; biggest effect Astana kk -9.50 (p=.002, all 7 models reduce). H12 reinterpreted as discourse-layer activation rather than country-of-origin/animosity. H10 null + Run 11 native-language effect both follow from the same mechanism applied to two different discourse geometries (homogeneous-discourse vs sparse-foreign-discourse). Abstract updated.
   license: "CC-BY-NC-ND-4.0"
   keywords:
@@ -93,6 +93,45 @@ claims:
       [This is the actual result: H4 not supported; collapse is uniform.]
     depends_on: [H1]
 
+  - id: H14a
+    type: hypothesis
+    statement: >
+      Enhanced Experiential Brand Function specification (3 additional key signals)
+      reduces Experiential-dimension DCI relative to standard Brand Function.
+    testable: true
+    tested_in_paper: true
+    status: not_supported  # Wilcoxon p = .742, rank-biserial r = .431, delta = -.083
+    falsification: >
+      H14a is supported if paired Wilcoxon signed-rank test shows p < .05
+      (one-tailed, enhanced < standard) for Experiential-dimension deviation.
+    depends_on: [H1]
+
+  - id: H14b
+    type: hypothesis
+    statement: >
+      Enhanced Ideological Brand Function specification (3 additional key signals)
+      reduces Ideological-dimension DCI relative to standard Brand Function.
+    testable: true
+    tested_in_paper: true
+    status: not_supported  # Wilcoxon p = .508, rank-biserial r = .498, delta = +.024
+    falsification: >
+      H14b is supported if paired Wilcoxon signed-rank test shows p < .05
+      (one-tailed, enhanced < standard) for Ideological-dimension deviation.
+    depends_on: [H1]
+
+  - id: H14c
+    type: hypothesis
+    statement: >
+      Enhanced Brand Function does not regress Economic, Cultural, or
+      Narrative dimensions (no collateral damage on non-targeted dimensions).
+    testable: true
+    tested_in_paper: true
+    status: supported  # Narrative p = .132, Economic p = .573, Cultural p = .148; all non-significant
+    falsification: >
+      H14c is falsified if any non-targeted dimension shows p < .05
+      (two-tailed Wilcoxon) indicating significant regression.
+    depends_on: [H1]
+
 methodology:
   type: empirical
   design: >
@@ -110,10 +149,10 @@ methodology:
     allocate 100 points across SBT's eight dimensions via structured JSON output.
     Three prompt types: weighted recommendation, dimensional differentiation, and
     dimension-specific probes. Each prompt administered 3 times per model at
-    temperature 0.7. Total: 21,350 calls across all 10 runs; ~6.4M tokens;
-    ~$6.10 total cost.
+    temperature 0.7. Total: 21,602 calls across 12 runs; ~6.4M tokens;
+    ~$6.40 total cost (including Run 14 per-dimension targeting, 252 calls).
   sample:
-    size: 21350  # 17 JSONL files across Runs 2-11; canonical count from validate.py
+    size: 21602  # 17 core JSONL files (Runs 2-11) + Run 14 supplementary
     description: "10 runs across 17 JSONL files. Runs 2-4: 4,860 calls (6 models, 15 pairs). Run 5: 7,342 calls including supplementary models (22 active models, 7 cross-cultural pairs, native-language calls). Run 6: 1,018 calls (banking pair, 24 models). Run 7: 1,091 calls including Run 7d Swedish (framing experiment, H12 test). Run 8: 4,895 calls (native language expansion, 5 H10 languages: el/lv/sw/vi/sr). Run 9: 540 calls (temperature sensitivity). Run 10: 126 calls (corrective comparators, 7 models, 6 pairs). Run 11: 315 calls (Roshen 7-city framing extension, 7 models × 7 cities × native languages). Total unique models: 24; 7 training traditions; 15 native languages plus English; ~6.4M tokens; ~$6.10 total cost (paid cloud APIs only; 14/24 models were free or local)."
     models: 24  # 24 unique models across all runs; T-Pro 2.0 excluded from Run 5 analysis due to infrastructure cost
     brand_pairs: 23  # 10 global + 5 local + 7 cross-cultural + 1 banking (Run 6)
@@ -234,6 +273,13 @@ submission_history:
       benchmark. Added future research direction for category-specific DCI
       variation across product categories. Lyu et al. (2025) added to
       references. Temperature Sensitivity section renumbered 5.10 -> 5.11.
+      v2.3 (2026-04-15): Added Section 5.12 (Brand Function Per-Dimension
+      Targeting, Run 14). 252 new calls testing whether enriching
+      Experiential/Ideological Brand Function signals reduces per-dimension
+      DCI. Null result: H14a p=.742, H14b p=.508, H14c confirmed (no
+      collateral). Specification works at structural level, not signal-detail
+      level. Sections 5.5.1, 5.7, 6(d) updated for consistency with null.
+      Cost table updated: 21,602 cumulative calls.
 
   - venue: "Journal of Advertising Research"
     type: journal
