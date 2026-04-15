@@ -163,7 +163,7 @@ python L4_analysis/extract_rendered_prompts.py
 
 See [experiment README](experiment/README.md#run-it-on-your-own-brands) for a step-by-step guide.
 
-**Cost**: roughly $0.25 (5-6 models, 3 runs) to $0.80 (all 24 models, 3 runs) for a single brand pair audit at current paid-model rates. The full 9-run cross-cultural study cost ~$5.52; Run 10 supplementary (~$0.30) and Run 11 bring the project total to ~$6.10.
+**Cost**: roughly $0.25 (5-6 models, 3 runs) to $0.80 (all 24 models, 3 runs) for a single brand pair audit at current paid-model rates. The full 9-run cross-cultural study cost $5.52; Run 10 supplementary ($0.30) and Run 11 bring the project total to ~$6.10.
 
 ## How to Cite
 
