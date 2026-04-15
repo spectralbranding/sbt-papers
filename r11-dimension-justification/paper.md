@@ -530,8 +530,6 @@ The eight dimensions of SBT are neither the fewest possible (which would sacrifi
 
 The empirical robustness analysis in Section 8A is fully reproducible. The analysis script (`gap5_dimension_robustness.py`) and complete structured results (`gap5_dimension_robustness_results.json`) are archived at https://github.com/spectralbranding/sbt-papers/tree/main/r11-dimension-justification/robustness-analysis. The source data (R15 Run 5 weight profiles, 22 models, 11,298 API calls) are archived at https://github.com/spectralbranding/sbt-papers/tree/main/r15-ai-search-metamerism/experiment.
 
-*This paper is part of the Spectral Brand Theory research program. For the full atlas of 20+ interconnected papers, see [spectralbranding.com/atlas](https://spectralbranding.com/atlas).*
-
 ---
 
 ## References
@@ -621,3 +619,5 @@ Zharnikov, D. (2026f). Cohort boundaries in high-dimensional perception space: A
 Zharnikov, D. (2026v). Spectral metamerism in AI-mediated brand perception: Cross-cultural evidence from 24 models. Working Paper. https://doi.org/10.5281/zenodo.19422427
 
 Zimbardo, P. G., & Boyd, J. N. (1999). Putting time in perspective: A valid, reliable individual-differences metric. *Journal of Personality and Social Psychology*, *77*(6), 1271-1288.
+
+*This paper is part of the Spectral Brand Theory research program. For the full atlas of 20+ interconnected papers, see [spectralbranding.com/atlas](https://spectralbranding.com/atlas).*

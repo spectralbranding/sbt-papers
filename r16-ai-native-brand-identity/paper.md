@@ -425,8 +425,6 @@ Brands that prepare for this transition are positioned to build dual identity in
 
 The logo is for humans. The signature is for machines.
 
-*This paper is part of the Spectral Brand Theory research program. For the full atlas of 20+ interconnected papers, see [spectralbranding.com/atlas](https://spectralbranding.com/atlas).*
-
 ---
 
 ## Acknowledgments
@@ -540,3 +538,5 @@ Zharnikov, D. (2026q). Spectral portfolio theory: Interference, coherence, and c
 Zharnikov, D. (2026v). Spectral metamerism in AI-mediated brand perception: How large language models collapse multi-dimensional brand differentiation in consumer search. *Working Paper*. https://doi.org/10.5281/zenodo.19422427
 
 Zhi, Y., Zhang, X., Wang, L., Jiang, S., Ma, S., Guan, X., & Shen, C. (2025). Exposing product bias in LLM investment recommendation. *arXiv preprint*. arXiv:2503.08750.
+
+*This paper is part of the Spectral Brand Theory research program. For the full atlas of 20+ interconnected papers, see [spectralbranding.com/atlas](https://spectralbranding.com/atlas).*

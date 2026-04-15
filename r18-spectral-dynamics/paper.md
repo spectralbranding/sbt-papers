@@ -496,8 +496,6 @@ The Dove illustration demonstrates that velocity and acceleration reveal dynamic
 
 The framework completes the dynamics layer of Spectral Brand Theory: the SDE model (Zharnikov, 2026j) describes how perception evolves; the non-ergodicity analysis (Zharnikov, 2026o) explains why trajectories diverge; the coherence-resilience derivation (Zharnikov, 2026s) predicts crisis vulnerability from dynamic signatures; and the present paper provides the measurement framework that makes these theoretical dynamics observable and actionable.
 
-*This paper is part of the Spectral Brand Theory research program. For the full atlas of 20+ interconnected papers, see [spectralbranding.com/atlas](https://spectralbranding.com/atlas).*
-
 ---
 
 ## References
@@ -561,4 +559,6 @@ Zharnikov, D. (2026s). Coherence type as crisis predictor: A formal derivation f
 Zharnikov, D. (2026y). Brand triangulation: A geometric framework for multi-observer brand positioning. Working Paper.
 
 Zharnikov, D. (2026aa). Empirical rate-distortion curve for AI brand perception encoders. Working Paper. https://doi.org/10.5281/zenodo.19528833
+
+*This paper is part of the Spectral Brand Theory research program. For the full atlas of 20+ interconnected papers, see [spectralbranding.com/atlas](https://spectralbranding.com/atlas).*
 
