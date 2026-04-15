@@ -340,6 +340,8 @@ This paper specifies PRISM, a family of standardized instruments for multi-dimen
 
 The instrument is specified. Validation -- demonstrating that PRISM-B measures what it claims to measure in human populations -- is the necessary next step. The specification must exist first so that validation studies have a fixed target to evaluate rather than a moving one.
 
+*This paper is part of the Spectral Brand Theory research program. For the full atlas of 20+ interconnected papers, see [spectralbranding.com/atlas](https://spectralbranding.com/atlas).*
+
 ---
 
 ## References

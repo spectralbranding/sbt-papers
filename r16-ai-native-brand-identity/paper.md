@@ -425,6 +425,8 @@ Brands that prepare for this transition are positioned to build dual identity in
 
 The logo is for humans. The signature is for machines.
 
+*This paper is part of the Spectral Brand Theory research program. For the full atlas of 20+ interconnected papers, see [spectralbranding.com/atlas](https://spectralbranding.com/atlas).*
+
 ---
 
 ## Acknowledgments

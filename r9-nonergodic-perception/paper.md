@@ -466,6 +466,8 @@ The paper connects to Spectral Brand Theory's broader research program (Author, 
 
 The touchpoint sequence is not noise. It is signal.
 
+*This paper is part of the Spectral Brand Theory research program. For the full atlas of 20+ interconnected papers, see [spectralbranding.com/atlas](https://spectralbranding.com/atlas).*
+
 ---
 
 ## References

@@ -836,6 +836,8 @@ Zharnikov, D. (2026q). Spectral portfolio theory: Interference, coherence, and c
 
 <!-- Self-citation audit: 5 Zharnikov entries listed in reference list (2026a, 2026e, 2026f, 2026l, 2026q) out of 45 total reference entries = 11.1%. Three additional Zharnikov works cited in-text only (2026o, 2026x, 2026y); if counted, total in-text self-citations = 8/48 = 16.7%. Self-citation rate: all self-citations verified as necessary for methodological chain (SBT framework, metamerism formalization, cohort theory, rendering problem, portfolio theory, non-ergodic perception, PRISM-M instrument, temporal triangulation). No self-citation is removable without breaking the theoretical lineage. -->
 
+*This paper is part of the Spectral Brand Theory research program. For the full atlas of 20+ interconnected papers, see [spectralbranding.com/atlas](https://spectralbranding.com/atlas).*
+
 ---
 
 ## Appendix A: Spectral Brand Theory -- Framework Specification

@@ -316,6 +316,8 @@ The architecture is computationally implementable. The financial implementation 
 
 Dmitry Zharnikov is an independent researcher and strategist. He holds a Professional MBA (Entrepreneurship & Innovation) from Technische Universitat Wien and Wirtschaftsuniversitat Wien (dual degree, 2018), where his thesis examined strategic positioning of solar energy companies in Russia (Zharnikov, 2018). ORCID: https://orcid.org/0009-0000-6893-9231
 
+*This paper is part of the Spectral Brand Theory research program. For the full atlas of 20+ interconnected papers, see [spectralbranding.com/atlas](https://spectralbranding.com/atlas).*
+
 ---
 
 ## References

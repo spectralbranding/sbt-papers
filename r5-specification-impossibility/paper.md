@@ -499,6 +499,8 @@ The information-theoretic analysis (Corollary 2) shows that the full specificati
 
 The practical implication is a shift from enumerative to generative organizational design. The coverage impossibility theorem proves that no catalog of organizational types, no matter how extensive, can be comprehensive. Instead, organizations must generate their specifications from first principles, using cascade constraints to make the generation process cognitively manageable and fork structures to amortize the information cost across related organizations. OrgSchema Theory's activation matrix is not merely a descriptive tool but a mathematically necessary framework: the 48 parameters are not optional complexity but the minimum specification required to distinguish among the $10^{48}$ possible organizational configurations at even modest resolution.
 
+*This paper is part of the Spectral Brand Theory research program. For the full atlas of 20+ interconnected papers, see [spectralbranding.com/atlas](https://spectralbranding.com/atlas).*
+
 ---
 
 ## References

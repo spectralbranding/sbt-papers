@@ -803,6 +803,8 @@ $$\text{clr}(H) - \text{clr}(T) = (-0.191, -0.370, 0.420, -0.022, -0.233, -1.120
 
 $$d_A = \sqrt{0.036 + 0.137 + 0.177 + 0.000 + 0.054 + 1.255 + 0.147 + 1.279} = \sqrt{3.086} \approx 1.76$$
 
+*This paper is part of the Spectral Brand Theory research program. For the full atlas of 20+ interconnected papers, see [spectralbranding.com/atlas](https://spectralbranding.com/atlas).*
+
 ---
 
 ## References
