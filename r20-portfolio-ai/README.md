@@ -1,6 +1,6 @@
 # R20: Does Corporate Ownership Matter to AI? Portfolio Interference in Large Language Model Brand Perception
 
-**Citation key**: 2026ab | **DOI**: [10.5281/zenodo.19555282](https://doi.org/10.5281/zenodo.19555282) | **Dataset DOI**: [10.57967/hf/8380](https://doi.org/10.57967/hf/8380) | **Status**: Working paper v1.0
+**Citation key**: 2026ab | **DOI**: [10.5281/zenodo.19555282](https://doi.org/10.5281/zenodo.19555282) | **Dataset DOI**: [10.57967/hf/8380](https://doi.org/10.57967/hf/8380) | **Status**: Working paper v1.1
 
 ## Paper
 
@@ -8,7 +8,7 @@ Zharnikov, D. (2026ab). Does Corporate Ownership Matter to AI? Portfolio Interfe
 
 ## Abstract
 
-Large language models (LLMs) increasingly shape how consumers discover and evaluate brands. Brand portfolio theory predicts that revealing corporate ownership should produce perceptual interference via an awareness gate (Keller 1993; Aaker and Keller 1990). Yet LLMs encode portfolio relationships permanently in their parameters, raising the possibility of either maximal interference or complete immunity. We test these hypotheses in a preregistered experiment with 13 LLMs spanning seven training traditions (Western, Chinese, Russian, Indian, Japanese, European, Korean). Twenty brands from seven portfolio archetypes (LVMH, Unilever, P&G, Toyota, L'Oreal, Geely, Yandex) were rated under four prompt modalities---direct rating, naturalistic recommendation, multi-turn conversation with mid-dialogue portfolio reveal, and native-language framing---yielding 7,975 parsed observations. Portfolio framing produces near-zero change in Dimensional Concentration Index (mean |delta DCI| = .26). Equivalence testing confirms the null for 18/20 brands within +/-1.0 DCI points. Multi-turn revelation unlocks modest flattening for reverse-aspiration structures (Geely Auto d = -1.11, FDR-significant), but effects remain portfolio- and modality-specific rather than systematic. Native-language prompts activate model-specific discourse layers without directional amplification. These results generalize spectral immunity across model traditions and portfolio types, implying that house-of-brands shielding is automatic in AI-mediated markets while constructive interference is impossible. Brand managers cannot rely on portfolio architecture to reshape LLM perceptions except in extended conversational contexts.
+Large language models (LLMs) increasingly shape how consumers discover and evaluate brands. Brand portfolio theory predicts that revealing corporate ownership should produce perceptual interference via an awareness gate (Keller 1993; Aaker and Keller 1990). Yet LLMs encode portfolio relationships permanently in their parameters, raising the possibility of either maximal interference or complete immunity. We test these hypotheses in a preregistered experiment with 13 LLMs spanning seven training traditions (Western, Chinese, Russian, Indian, Japanese, European, Korean). Twenty brands from seven portfolio archetypes (LVMH, Unilever, P&G, Toyota, L'Oreal, Geely, Yandex) were rated under four prompt modalities---direct rating, naturalistic recommendation, multi-turn conversation with mid-dialogue portfolio reveal, and native-language framing---yielding 7,975 parsed observations. Portfolio framing produces near-zero change in Dimensional Concentration Index (mean |delta DCI| = .26). Equivalence testing confirms the null for 18/20 brands within +/-1.0 DCI points. Multi-turn revelation unlocks modest flattening for reverse-aspiration structures (Geely Auto d = -1.11, FDR-significant), but effects remain portfolio- and modality-specific rather than systematic. Native-language prompts activate model-specific discourse layers without directional amplification. These results generalize spectral immunity across model traditions and portfolio types, implying that house-of-brands shielding is automatic in AI-mediated markets while constructive interference is impossible. Brand managers cannot rely on portfolio architecture to reshape LLM perceptions except in extended conversational contexts. A published-brand replication (v3.0) extending the design to 20 additional brands from canonical marketing research confirms spectral immunity with an independent brand set, yielding 9,925 combined observations across 40 brands, 13 models, and 7 training traditions.
 
 ## Experiment
 
@@ -21,6 +21,15 @@ Large language models (LLMs) increasingly shape how consumers discover and evalu
 - **Training traditions**: Western, Chinese, Russian, Indian, Japanese, European, Korean (7 traditions)
 - **Parse success**: 7,975/8,022 (99.4%)
 - **Cost**: ~$5
+
+## Extension: Published-Brand Replication (v3.0)
+
+- **Design**: 20 additional brands (zero overlap) from published marketing research
+- **Brands**: Apple, Nike, Coca-Cola, Pepsi, IBM, Starbucks, BMW, Google, Disney, Harley-Davidson, Colgate, Rolex, Samsung, Amazon, McDonald's, Adidas, H&M, Audi, Red Bull, Dell
+- **Sources**: Aaker 1997 JMR, Brakus et al. 2009 JM, Li et al. 2024 Marketing Science, Erdem 1998 JMR, Dew et al. 2022 Marketing Science
+- **Observations**: 1,950 (1,300 solo + 650 portfolio)
+- **Result**: 0/10 |d| > .50. Spectral immunity replicates with independent brand set.
+- **Combined**: 9,925 observations across 40 brands, 13 models, 7 traditions
 
 ## Hypotheses
 
