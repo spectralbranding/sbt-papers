@@ -499,8 +499,6 @@ The information-theoretic analysis (Corollary 2) shows that the full specificati
 
 The practical implication is a shift from enumerative to generative organizational design. The coverage impossibility theorem proves that no catalog of organizational types, no matter how extensive, can be comprehensive. Instead, organizations must generate their specifications from first principles, using cascade constraints to make the generation process cognitively manageable and fork structures to amortize the information cost across related organizations. OrgSchema Theory's activation matrix is not merely a descriptive tool but a mathematically necessary framework: the 48 parameters are not optional complexity but the minimum specification required to distinguish among the $10^{48}$ possible organizational configurations at even modest resolution.
 
-*This paper is part of the Spectral Brand Theory research program. For the full atlas of 20+ interconnected papers, see [spectralbranding.com/atlas](https://spectralbranding.com/atlas).*
-
 ---
 
 ## References
@@ -554,3 +552,5 @@ Zharnikov, D. (2026d). Brand space geometry: A formal metric for multi-dimension
 Zharnikov, D. (2026e). Spectral metamerism in brand perception: Projection bounds from high-dimensional geometry. Working Paper. https://doi.org/10.5281/zenodo.18945352
 
 Zharnikov, D. (2026i). The Organizational Schema Theory: Test-driven business design. Working Paper. https://doi.org/10.5281/zenodo.18946043
+
+*This paper is part of the Spectral Brand Theory research program. For the full atlas of 20+ interconnected papers, see [spectralbranding.com/atlas](https://spectralbranding.com/atlas).*

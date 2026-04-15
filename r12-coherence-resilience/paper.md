@@ -430,8 +430,6 @@ A fourth, more speculative direction concerns the connection between this paper'
 
 A geometric formalization of the coherence-type distinction is suggested by the Bonnet pair phenomenon in differential geometry (Bobenko, Hoffmann & Sageman-Furnas, 2025): two surfaces can share the same metric (spectral profile) and the same mean curvature (aggregate coherence score) yet be genuinely non-congruent (different crisis trajectories). The result that coherence type predicts resilience better than coherence score is the brand perception analog — the 'shape' of emission (type) determines crisis dynamics, not the 'size' (score), just as a surface's embedding determines its mechanical properties beyond what the intrinsic metric specifies.
 
-*This paper is part of the Spectral Brand Theory research program. For the full atlas of 20+ interconnected papers, see [spectralbranding.com/atlas](https://spectralbranding.com/atlas).*
-
 ---
 
 ## References
@@ -509,3 +507,5 @@ Zharnikov, D. (2026o). Non-ergodic brand perception: Why cross-sectional brand t
 Zharnikov, D. (2026q). Spectral portfolio theory: Interference, coherence, and capacity in multi-brand perception space. Working Paper. https://doi.org/10.5281/zenodo.19145099
 
 Zharnikov, D. (2026r). Why eight? Completeness and necessity of the SBT dimensional taxonomy. Working Paper. https://doi.org/10.5281/zenodo.19207599
+
+*This paper is part of the Spectral Brand Theory research program. For the full atlas of 20+ interconnected papers, see [spectralbranding.com/atlas](https://spectralbranding.com/atlas).*

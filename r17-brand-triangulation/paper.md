@@ -641,8 +641,6 @@ The framework's dependence on the GPS analogy is deliberate but bounded. GPS is 
 
 Brand positioning is a geometric estimation problem. The framework proposed here characterizes the conditions under which it can be solved and provides computable criteria for evaluating whether a given observer configuration is sufficient.
 
-*This paper is part of the Spectral Brand Theory research program. For the full atlas of 20+ interconnected papers, see [spectralbranding.com/atlas](https://spectralbranding.com/atlas).*
-
 ---
 
 ## References
@@ -778,3 +776,5 @@ Zharnikov, D. (2026v). Spectral metamerism in AI-mediated brand perception: how 
 Zharnikov, D. (2026x). AI-native brand identity: from visual recognition to cryptographic verification. Working Paper. https://doi.org/10.5281/zenodo.19391476
 
 Zharnikov, D. (2026aa). Empirical rate-distortion curve for AI brand perception encoders. Working Paper. https://doi.org/10.5281/zenodo.19528833
+
+*This paper is part of the Spectral Brand Theory research program. For the full atlas of 20+ interconnected papers, see [spectralbranding.com/atlas](https://spectralbranding.com/atlas).*

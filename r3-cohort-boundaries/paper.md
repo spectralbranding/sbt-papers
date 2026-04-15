@@ -449,8 +449,6 @@ The results also contextualize the broader challenge of "big data" approaches to
 
 Finally, the interaction between static concentration geometry and dynamic non-ergodic evolution (Section 7) opens a research frontier. The present paper establishes the shape of the geometric arena; the dynamics within it -- diffusion, absorption, crystallization -- are the subject of future work. Together, these results move SBT from a qualitative framework with mathematical notation to a mathematical theory with proved geometric properties.
 
-*This paper is part of the Spectral Brand Theory research program. For the full atlas of 20+ interconnected papers, see [spectralbranding.com/atlas](https://spectralbranding.com/atlas).*
-
 ---
 
 ## References
@@ -518,3 +516,5 @@ Zharnikov, D. (2026d). Brand space geometry: A formal metric for multi-dimension
 Zharnikov, D. (2026i). The Organizational Schema Theory: Test-driven business design. Working Paper. https://doi.org/10.5281/zenodo.18946043
 
 Zharnikov, D. (2026e). Spectral metamerism in brand perception: Projection bounds from high-dimensional geometry. Working Paper. https://doi.org/10.5281/zenodo.18945352
+
+*This paper is part of the Spectral Brand Theory research program. For the full atlas of 20+ interconnected papers, see [spectralbranding.com/atlas](https://spectralbranding.com/atlas).*
