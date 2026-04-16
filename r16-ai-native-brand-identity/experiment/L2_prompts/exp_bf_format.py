@@ -345,31 +345,13 @@ def call_gemini(prompt: str, system_prompt: str = "") -> tuple[str, dict]:
     from google.genai import types
     client = genai.Client(api_key=os.environ["GOOGLE_API_KEY"])
     sys_instr = system_prompt or "You are a brand research assistant. Respond with valid JSON only."
-    try:
-        t0 = time.time()
-        response = client.models.generate_content(
-            model="gemini-2.5-flash", contents=prompt,
-            config=types.GenerateContentConfig(
-                temperature=TEMPERATURE, max_output_tokens=MAX_TOKENS,
-                response_mime_type="application/json",
-                system_instruction=sys_instr,
-            ),
-        )
-        elapsed = int((time.time() - t0) * 1000)
-        text = response.text
-        if text and text.strip():
-            return text, {
-                "response_time_ms": elapsed,
-                "token_count_input": getattr(getattr(response, "usage_metadata", None), "prompt_token_count", 0),
-                "token_count_output": getattr(getattr(response, "usage_metadata", None), "candidates_token_count", 0),
-            }
-    except Exception:
-        pass
     t0 = time.time()
     response = client.models.generate_content(
         model="gemini-2.5-flash", contents=prompt,
         config=types.GenerateContentConfig(
-            temperature=TEMPERATURE, max_output_tokens=MAX_TOKENS,
+            temperature=TEMPERATURE,
+            max_output_tokens=8192,
+            system_instruction=sys_instr,
         ),
     )
     elapsed = int((time.time() - t0) * 1000)
