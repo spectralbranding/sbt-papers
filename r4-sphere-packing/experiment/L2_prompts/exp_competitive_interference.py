@@ -164,6 +164,26 @@ SOLO_PROMPT = (
     "The weights MUST sum to exactly 100."
 )
 
+# Self-comparison control: uses the paired prompt FORMAT but asks about
+# what makes the brand distinctive vs "other brands in its category"
+# (no named competitor). If this differs from solo, the prompt format
+# itself biases the weights and must be controlled for.
+SELF_CONTROL_PROMPT = (
+    "You are evaluating brand perception.\n\n"
+    "Evaluate what makes the brand {brand} distinctive compared to other "
+    "brands in its category by allocating importance weights across eight "
+    "perception dimensions. The weights should reflect which dimensions "
+    "most define {brand}'s unique position. Weights must sum to 100.\n\n"
+    "Dimensions:\n{dim_block}\n\n"
+    "Respond with ONLY valid JSON:\n"
+    '{{\n'
+    '  "brand": "{brand}",\n'
+    '  "weights": {weights_example},\n'
+    '  "reasoning": "1-2 sentence explanation"\n'
+    '}}\n\n'
+    "The weights MUST sum to exactly 100."
+)
+
 PAIRED_PROMPT = (
     "You are evaluating brand perception.\n\n"
     "Evaluate the brand {brand} compared to {competitor} by allocating "
@@ -211,6 +231,12 @@ def build_prompt(
 
     if condition == "solo":
         return SOLO_PROMPT.format(
+            brand=brand,
+            dim_block=dim_block,
+            weights_example=weights_example,
+        )
+    elif condition == "self_control":
+        return SELF_CONTROL_PROMPT.format(
             brand=brand,
             dim_block=dim_block,
             weights_example=weights_example,
@@ -483,17 +509,17 @@ def run_experiment(
                 })
                 call_idx += 1
 
-    # Self-comparison control: focal brand compared to itself
-    # If this produces different weights from solo, the prompt format
-    # itself introduces bias; competitor effects must be measured as
-    # delta ABOVE this baseline.
+    # Self-comparison control: uses comparative prompt format but no
+    # named competitor. Measures prompt-format bias. If self_control
+    # differs from solo, all competitor effects must be measured as
+    # delta ABOVE this format-induced baseline.
     for brand in brands:
         for model_name in available_models:
             ordering_idx = call_idx % 8
             calls.append({
                 "brand": brand,
-                "condition": "paired",
-                "competitor": brand,  # self-comparison
+                "condition": "self_control",
+                "competitor": None,
                 "competitor_type": "self",
                 "model": model_name,
                 "run": 1,
