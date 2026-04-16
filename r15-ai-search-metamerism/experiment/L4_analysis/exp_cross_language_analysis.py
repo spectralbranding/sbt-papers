@@ -356,17 +356,17 @@ def analyze(jsonl_path: Path, output_dir: Path):
         col_arr = np.array(collectivist_social)
         ind_arr = np.array(individualist_social)
 
-        t_stat, p_val = stats.ttest_ind(col_arr, ind_arr)
-        d = cohens_d(col_arr, ind_arr)
+        h4_t, h4_p = stats.ttest_ind(col_arr, ind_arr)
+        h4_d = cohens_d(col_arr, ind_arr)
 
         print(f"  Collectivist (n={len(col_arr)}): "
               f"mean={np.mean(col_arr):.2f}, sd={np.std(col_arr, ddof=1):.2f}")
         print(f"  Individualist (n={len(ind_arr)}): "
               f"mean={np.mean(ind_arr):.2f}, sd={np.std(ind_arr, ddof=1):.2f}")
-        print(f"  t={t_stat:.3f}, df={len(col_arr)+len(ind_arr)-2}, "
-              f"p={p_val:.3f}, d={d:.3f}")
+        print(f"  t={h4_t:.3f}, df={len(col_arr)+len(ind_arr)-2}, "
+              f"p={h4_p:.3f}, d={h4_d:.3f}")
 
-        h4_pass = p_val < .05 and np.mean(col_arr) > np.mean(ind_arr)
+        h4_pass = h4_p < .05 and np.mean(col_arr) > np.mean(ind_arr)
         print(f"  H4 {'SUPPORTED' if h4_pass else 'NOT SUPPORTED'}")
     else:
         print("  H4: SKIP (insufficient data)")
@@ -425,6 +425,25 @@ def analyze(jsonl_path: Path, output_dir: Path):
     # -----------------------------------------------------------------------
     # Save results
     # -----------------------------------------------------------------------
+    # Build H4 result dict
+    h4_result = {}
+    if collectivist_social and individualist_social:
+        h4_result = {
+            "collectivist_mean": float(np.mean(col_arr)),
+            "individualist_mean": float(np.mean(ind_arr)),
+            "p_value": float(h4_p),
+            "cohens_d": float(h4_d),
+            "supported": bool(h4_pass),
+        }
+    else:
+        h4_result = {
+            "collectivist_mean": None,
+            "individualist_mean": None,
+            "p_value": None,
+            "cohens_d": None,
+            "supported": None,
+        }
+
     results = {
         "experiment": "exp_b_cross_language_drift",
         "total_valid_records": len(records),
@@ -434,33 +453,24 @@ def analyze(jsonl_path: Path, output_dir: Path):
             "supported": bool(overall_med > .90) if all_cosines else None,
         },
         "h2": {
-            "significant_languages": h2_sig_count,
+            "significant_languages": int(h2_sig_count),
             "threshold": 4,
-            "supported": h2_sig_count >= 4,
+            "supported": bool(h2_sig_count >= 4),
             "per_language": {
                 lang: {
-                    "mean_abs_drift_pct": r["mean_abs_drift_pct"],
-                    "p_value": r["p_value"],
-                    "significant": r["significant"],
+                    "mean_abs_drift_pct": float(r["mean_abs_drift_pct"]),
+                    "p_value": float(r["p_value"]),
+                    "significant": bool(r["significant"]),
                 }
                 for lang, r in h2_results.items()
             },
         },
         "h3": {
-            "confirmed_predictions": h3_confirmed,
+            "confirmed_predictions": int(h3_confirmed),
             "threshold": 1,
-            "supported": h3_confirmed >= 1,
+            "supported": bool(h3_confirmed >= 1),
         },
-        "h4": {
-            "collectivist_mean": float(np.mean(col_arr))
-            if collectivist_social else None,
-            "individualist_mean": float(np.mean(ind_arr))
-            if individualist_social else None,
-            "p_value": float(p_val) if collectivist_social else None,
-            "cohens_d": float(d) if collectivist_social else None,
-            "supported": bool(h4_pass)
-            if collectivist_social and individualist_social else None,
-        },
+        "h4": h4_result,
         "profiles": {
             f"{lang}_{cond}": [float(v) for v in profile]
             for (lang, cond), profile in profiles.items()

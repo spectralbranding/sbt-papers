@@ -1,0 +1,11 @@
+experiment: exp_b_cross_language_drift
+version: "1.1"
+date: "2026-04-16"
+languages: ["en", "zh", "ru", "ja", "ko", "ar", "hi", "es"]
+conditions: ["bilingual", "native_only"]
+brands: ["Hermes", "IKEA", "Patagonia", "Erewhon", "Tesla"]
+models: ["claude-haiku-4-5", "gpt-4o-mini", "gemini-2.5-flash"]
+reps_per_cell: 2
+total_calls: 450
+temperature: 0.7
+random_seed: 42
