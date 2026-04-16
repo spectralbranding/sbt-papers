@@ -13,9 +13,9 @@ metadata:
       corresponding: true
   citation_key: "2026x"
   doi: "10.5281/zenodo.19391476"
-  date: "2026-04-14"
-  version: "1.7"
-  status: working_paper
+  date: "2026-04-16"
+  version: "1.8"
+  status: working_paper  # v1.8 (2026-04-16): Added Experiment 2 synthetic cohort pilot (675 calls). Abstract updated. Run 14 null generalizes across 5 cohort types.
   license: "CC-BY-NC-ND-4.0"
   keywords:
     - AI-native brand identity
