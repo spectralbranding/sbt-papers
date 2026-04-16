@@ -259,6 +259,9 @@ def _call_google(
     from google.genai import types
 
     client = genai.Client(api_key=os.environ["GOOGLE_API_KEY"])
+    # Gemini 2.5 Flash uses thinking tokens that eat into max_output_tokens.
+    # Set high limit so thinking doesn't truncate the actual response.
+    gemini_max = max(max_tokens, 8192)
     t0 = time.time()
     try:
         response = client.models.generate_content(
@@ -266,7 +269,7 @@ def _call_google(
             contents=user_prompt,
             config=types.GenerateContentConfig(
                 temperature=TEMPERATURE,
-                max_output_tokens=max_tokens,
+                max_output_tokens=gemini_max,
                 response_mime_type="application/json",
                 system_instruction=system_prompt,
             ),
@@ -278,7 +281,7 @@ def _call_google(
             contents=user_prompt,
             config=types.GenerateContentConfig(
                 temperature=TEMPERATURE,
-                max_output_tokens=max_tokens,
+                max_output_tokens=gemini_max,
                 system_instruction=system_prompt,
             ),
         )
@@ -415,12 +418,33 @@ def parse_json_weights(raw: str, dim_order: list[str]) -> Optional[dict[str, flo
         found = False
         for key, val in data.items():
             if dim.lower() in key.lower():
-                try:
-                    result[dim] = float(val)
-                    found = True
+                # Handle nested objects like {"importance": "...", "weight": 15}
+                if isinstance(val, dict):
+                    for sub_key in ("weight", "percentage", "score", "value", "rating", "rank"):
+                        if sub_key in val:
+                            try:
+                                result[dim] = float(val[sub_key])
+                                found = True
+                                break
+                            except (TypeError, ValueError):
+                                pass
+                    if not found:
+                        # Try any numeric value in the dict
+                        for sv in val.values():
+                            try:
+                                result[dim] = float(sv)
+                                found = True
+                                break
+                            except (TypeError, ValueError):
+                                pass
+                else:
+                    try:
+                        result[dim] = float(val)
+                        found = True
+                    except (TypeError, ValueError):
+                        pass
+                if found:
                     break
-                except (TypeError, ValueError):
-                    pass
         if not found:
             return None
 
