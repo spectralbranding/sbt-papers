@@ -1,0 +1,61 @@
+{
+  "total_calls": 375,
+  "successful": 355,
+  "failed": 0,
+  "parse_errors": 20,
+  "total_cost": 0.13382568999999978,
+  "per_model": {
+    "claude-haiku-4-5": {
+      "calls": 75,
+      "success": 75,
+      "failed": 0,
+      "cost": 0.059183199999999984
+    },
+    "gpt-4o-mini": {
+      "calls": 75,
+      "success": 75,
+      "failed": 0,
+      "cost": 0.008647049999999998
+    },
+    "gemini-2.5-flash": {
+      "calls": 75,
+      "success": 55,
+      "failed": 20,
+      "cost": 0.009301649999999998
+    },
+    "deepseek-chat": {
+      "calls": 75,
+      "success": 75,
+      "failed": 0,
+      "cost": 0.015422790000000009
+    },
+    "grok-4-1-fast": {
+      "calls": 75,
+      "success": 75,
+      "failed": 0,
+      "cost": 0.041270999999999995
+    }
+  },
+  "per_format": {
+    "F1_json": {
+      "calls": 75,
+      "success": 72
+    },
+    "F2_prose": {
+      "calls": 75,
+      "success": 73
+    },
+    "F3_tabular": {
+      "calls": 75,
+      "success": 68
+    },
+    "F4_ranked": {
+      "calls": 75,
+      "success": 72
+    },
+    "F5_vector": {
+      "calls": 75,
+      "success": 70
+    }
+  }
+}
