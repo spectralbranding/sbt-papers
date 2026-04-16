@@ -1,0 +1,40 @@
+{
+  "canonical_profiles": {
+    "Hermes": [9.5, 9.0, 7.0, 9.0, 8.5, 3.0, 9.0, 9.5],
+    "IKEA": [8.0, 7.5, 6.0, 7.0, 5.0, 9.0, 7.5, 6.0],
+    "Patagonia": [6.0, 9.0, 9.5, 7.5, 8.0, 5.0, 7.0, 6.5],
+    "Erewhon": [7.0, 6.5, 5.0, 9.0, 8.5, 3.5, 7.5, 2.5],
+    "Tesla": [7.5, 8.5, 3.0, 6.0, 7.0, 6.0, 4.0, 2.0]
+  },
+  "dimensions": [
+    "semiotic", "narrative", "ideological", "experiential",
+    "social", "economic", "cultural", "temporal"
+  ],
+  "competitor_pairings": {
+    "Hermes": {
+      "direct": "Louis Vuitton",
+      "adjacent": "Rolex",
+      "distant": "Walmart"
+    },
+    "IKEA": {
+      "direct": "H&M Home",
+      "adjacent": "Muji",
+      "distant": "Ferrari"
+    },
+    "Patagonia": {
+      "direct": "Arc'teryx",
+      "adjacent": "REI",
+      "distant": "Shein"
+    },
+    "Erewhon": {
+      "direct": "Whole Foods",
+      "adjacent": "Blue Bottle",
+      "distant": "McDonald's"
+    },
+    "Tesla": {
+      "direct": "Rivian",
+      "adjacent": "Apple",
+      "distant": "Toyota"
+    }
+  }
+}

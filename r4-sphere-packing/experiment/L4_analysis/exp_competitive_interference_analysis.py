@@ -701,6 +701,24 @@ def main():
         "exploratory": exploratory_results,
     }
 
+    # Convert numpy types to Python natives for JSON serialization
+    def convert_types(obj):
+        if isinstance(obj, (np.bool_,)):
+            return bool(obj)
+        if isinstance(obj, (np.integer,)):
+            return int(obj)
+        if isinstance(obj, (np.floating,)):
+            return float(obj)
+        if isinstance(obj, np.ndarray):
+            return obj.tolist()
+        if isinstance(obj, dict):
+            return {k: convert_types(v) for k, v in obj.items()}
+        if isinstance(obj, list):
+            return [convert_types(i) for i in obj]
+        return obj
+
+    all_results = convert_types(all_results)
+
     results_path = script_dir / "L4_analysis" / "exp_competitive_interference_results.json"
     results_path.write_text(json.dumps(all_results, indent=2))
     print(f"\nResults JSON written to {results_path}")
