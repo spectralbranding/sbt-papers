@@ -1,0 +1,7 @@
+anthropic>=0.42.0
+openai>=1.60.0
+google-genai>=1.0.0
+numpy>=2.0.0
+scipy>=1.14.0
+# All API calls use temperature=0.7
+# Install: uv pip install -r requirements.txt
