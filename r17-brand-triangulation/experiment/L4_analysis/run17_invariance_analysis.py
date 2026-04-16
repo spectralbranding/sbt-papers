@@ -196,7 +196,7 @@ def cross_cohort_variance(records: list[dict]) -> dict:
 def main():
     # Look for Exp 1 data
     exp1_path = (
-        Path(__file__).parent.parent.parent
+        Path(__file__).parent.parent.parent.parent
         / "r15-ai-search-metamerism"
         / "experiment"
         / "L3_sessions"
@@ -266,8 +266,19 @@ def main():
     }
 
     results_path = Path(__file__).parent / "run17_invariance_results.json"
+
+    class NumpyEncoder(json.JSONEncoder):
+        def default(self, obj):
+            if isinstance(obj, (np.bool_,)):
+                return bool(obj)
+            if isinstance(obj, (np.integer,)):
+                return int(obj)
+            if isinstance(obj, (np.floating,)):
+                return float(obj)
+            return super().default(obj)
+
     with open(results_path, "w") as f:
-        json.dump(results, f, indent=2, ensure_ascii=False)
+        json.dump(results, f, indent=2, ensure_ascii=False, cls=NumpyEncoder)
     print(f"\nResults saved to {results_path}")
 
 

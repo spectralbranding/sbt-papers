@@ -1,0 +1,148 @@
+{
+  "experiment": "exp4_measurement_invariance",
+  "date": "2026-04-16",
+  "total_records": 741,
+  "h1_configural": {
+    "zeroed_dimensions": {},
+    "total_zeroed": 0,
+    "h1_confirmed": true
+  },
+  "h2_metric": {
+    "per_brand": {
+      "Hermes": {
+        "median_rho": 0.4524,
+        "mean_rho": 0.4392,
+        "min_rho": -0.1667,
+        "n_pairs": 45
+      },
+      "IKEA": {
+        "median_rho": 0.4524,
+        "mean_rho": 0.4931,
+        "min_rho": -0.0476,
+        "n_pairs": 45
+      },
+      "Patagonia": {
+        "median_rho": 0.6347,
+        "mean_rho": 0.6448,
+        "min_rho": 0.2381,
+        "n_pairs": 45
+      },
+      "Erewhon": {
+        "median_rho": 0.5238,
+        "mean_rho": 0.4365,
+        "min_rho": -0.5238,
+        "n_pairs": 45
+      },
+      "Tesla": {
+        "median_rho": 0.5476,
+        "mean_rho": 0.5234,
+        "min_rho": -0.1429,
+        "n_pairs": 45
+      }
+    },
+    "overall_median_rho": 0.5476,
+    "overall_mean_rho": 0.5074,
+    "total_pairs": 225,
+    "h2_confirmed": false
+  },
+  "h3_scalar": {
+    "per_dimension": {
+      "Semiotic": {
+        "H": 151.685,
+        "p": 0.0,
+        "epsilon_sq": 0.1952,
+        "significant": true
+      },
+      "Narrative": {
+        "H": 175.87,
+        "p": 0.0,
+        "epsilon_sq": 0.2283,
+        "significant": true
+      },
+      "Ideological": {
+        "H": 188.107,
+        "p": 0.0,
+        "epsilon_sq": 0.245,
+        "significant": true
+      },
+      "Experiential": {
+        "H": 195.823,
+        "p": 0.0,
+        "epsilon_sq": 0.2556,
+        "significant": true
+      },
+      "Social": {
+        "H": 190.368,
+        "p": 0.0,
+        "epsilon_sq": 0.2481,
+        "significant": true
+      },
+      "Economic": {
+        "H": 273.558,
+        "p": 0.0,
+        "epsilon_sq": 0.3619,
+        "significant": true
+      },
+      "Cultural": {
+        "H": 69.575,
+        "p": 0.0,
+        "epsilon_sq": 0.0829,
+        "significant": true
+      },
+      "Temporal": {
+        "H": 93.373,
+        "p": 0.0,
+        "epsilon_sq": 0.1154,
+        "significant": true
+      }
+    },
+    "significant_count": 8,
+    "h3_confirmed": true
+  },
+  "cross_cohort_variance": {
+    "per_dimension_variance": {
+      "Semiotic": 0.000595,
+      "Narrative": 0.000587,
+      "Ideological": 0.00119,
+      "Experiential": 0.000841,
+      "Social": 0.000903,
+      "Economic": 0.003949,
+      "Cultural": 0.00014,
+      "Temporal": 0.00049
+    },
+    "ranked": [
+      {
+        "dim": "Economic",
+        "variance": 0.003949
+      },
+      {
+        "dim": "Ideological",
+        "variance": 0.00119
+      },
+      {
+        "dim": "Social",
+        "variance": 0.000903
+      },
+      {
+        "dim": "Experiential",
+        "variance": 0.000841
+      },
+      {
+        "dim": "Semiotic",
+        "variance": 0.000595
+      },
+      {
+        "dim": "Narrative",
+        "variance": 0.000587
+      },
+      {
+        "dim": "Temporal",
+        "variance": 0.00049
+      },
+      {
+        "dim": "Cultural",
+        "variance": 0.00014
+      }
+    ]
+  }
+}

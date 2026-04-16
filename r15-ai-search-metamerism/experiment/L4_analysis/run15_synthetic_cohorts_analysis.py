@@ -426,8 +426,19 @@ def main():
     }
 
     results_path = Path(__file__).parent / "run15_synthetic_cohorts_results.json"
+
+    class NumpyEncoder(json.JSONEncoder):
+        def default(self, obj):
+            if isinstance(obj, (np.bool_,)):
+                return bool(obj)
+            if isinstance(obj, (np.integer,)):
+                return int(obj)
+            if isinstance(obj, (np.floating,)):
+                return float(obj)
+            return super().default(obj)
+
     with open(results_path, "w") as f:
-        json.dump(results, f, indent=2, ensure_ascii=False)
+        json.dump(results, f, indent=2, ensure_ascii=False, cls=NumpyEncoder)
     print(f"\nResults saved to {results_path}")
 
     return results
