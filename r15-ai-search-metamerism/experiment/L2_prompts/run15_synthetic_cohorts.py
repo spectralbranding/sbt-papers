@@ -237,10 +237,10 @@ MODELS = {
         "provider": "deepseek",
         "api_key_env": "DEEPSEEK_API_KEY",
     },
-    "qwen3_local": {
-        "model_id": "qwen3:30b",
-        "provider": "ollama",
-        "api_key_env": "OLLAMA_AVAILABLE",
+    "grok": {
+        "model_id": "grok-4-1-fast-non-reasoning",
+        "provider": "xai",
+        "api_key_env": "GROK_API_KEY",
     },
 }
 
@@ -407,48 +407,43 @@ def call_deepseek_two_stage(
     return text, meta
 
 
-def call_ollama_two_stage(
+def call_grok_two_stage(
     system_prompt: str, user_prompt: str
 ) -> tuple[str, dict[str, Any]]:
-    """Call local Ollama (qwen3:30b) with system and user prompts."""
-    import urllib.request
+    """Call xAI Grok with system and user prompts.
 
-    payload = json.dumps(
-        {
-            "model": "qwen3:30b",
-            "messages": [
-                {"role": "system", "content": system_prompt},
-                {
-                    "role": "user",
-                    "content": user_prompt + "\n\n/no_think",
-                },
-            ],
-            "stream": False,
-            "options": {
-                "temperature": TEMPERATURE,
-                "num_predict": 2048,
-            },
-        }
-    ).encode()
-    req = urllib.request.Request(
-        "http://localhost:11434/api/chat",
-        data=payload,
-        headers={"Content-Type": "application/json"},
+    Grok is trained on X/Twitter corpus — a social-media-first data
+    distribution distinct from web-crawl-trained models. Tests whether
+    training corpus type affects dimensional perception.
+    """
+    from openai import OpenAI
+
+    client = OpenAI(
+        api_key=os.environ["GROK_API_KEY"],
+        base_url="https://api.x.ai/v1",
     )
     t0 = time.time()
-    with urllib.request.urlopen(req, timeout=180) as resp:
-        data = json.loads(resp.read())
+    response = client.chat.completions.create(
+        model="grok-4-1-fast-non-reasoning",
+        messages=[
+            {"role": "system", "content": system_prompt},
+            {"role": "user", "content": user_prompt},
+        ],
+        max_tokens=MAX_TOKENS,
+        temperature=TEMPERATURE,
+    )
     elapsed_ms = int((time.time() - t0) * 1000)
-    text = data.get("message", {}).get("content", "")
-    # Strip thinking tags
-    text = re.sub(r"<think>.*?</think>", "", text, flags=re.DOTALL).strip()
-    text = re.sub(r"```(?:json)?\s*", "", text).strip()
-    text = re.sub(r"```\s*$", "", text).strip()
+    text = response.choices[0].message.content
+    usage = response.usage
     meta = {
         "response_time_ms": elapsed_ms,
-        "token_count_input": data.get("prompt_eval_count", 0),
-        "token_count_output": data.get("eval_count", 0),
-        "api_cost_usd": 0.0,
+        "token_count_input": usage.prompt_tokens if usage else 0,
+        "token_count_output": usage.completion_tokens if usage else 0,
+        "api_cost_usd": round(
+            (usage.prompt_tokens * 3.00 / 1_000_000 if usage else 0)
+            + (usage.completion_tokens * 15.00 / 1_000_000 if usage else 0),
+            6,
+        ),
     }
     return text, meta
 
@@ -458,7 +453,7 @@ CALLERS = {
     "gpt": call_gpt_two_stage,
     "gemini": call_gemini_two_stage,
     "deepseek": call_deepseek_two_stage,
-    "qwen3_local": call_ollama_two_stage,
+    "grok": call_grok_two_stage,
 }
 
 
@@ -557,16 +552,7 @@ def run_experiment(
     available_models = {}
     for name, cfg in MODELS.items():
         env_key = cfg["api_key_env"]
-        if env_key == "OLLAMA_AVAILABLE":
-            # Check Ollama availability
-            try:
-                import urllib.request
-
-                urllib.request.urlopen("http://localhost:11434/api/tags", timeout=5)
-                available_models[name] = cfg
-            except Exception:
-                print(f"  Skipping {name}: Ollama not available")
-        elif os.environ.get(env_key):
+        if os.environ.get(env_key):
             available_models[name] = cfg
         else:
             print(f"  Skipping {name}: {env_key} not set")
@@ -721,11 +707,8 @@ def run_experiment(
             f"{cost_str})"
         )
 
-        # Rate limiting
-        if model_name in ("claude", "gpt", "gemini", "deepseek"):
-            time.sleep(0.5)
-        elif model_name == "qwen3_local":
-            time.sleep(0.1)
+        # Rate limiting (all cloud APIs)
+        time.sleep(0.5)
 
     # Summary
     valid = sum(1 for r in records if r["weights_valid"])

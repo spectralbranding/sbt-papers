@@ -1,0 +1,166 @@
+{
+  "experiment": "exp1_cohort_differentiation",
+  "date": "2026-04-16",
+  "total_records": 790,
+  "baseline_records": 741,
+  "total_cost_usd": 0.6264,
+  "h1": {
+    "per_dimension": {
+      "Semiotic": {
+        "F": 27.429,
+        "p": 0.0,
+        "eta_sq": 0.2525,
+        "significant": true
+      },
+      "Narrative": {
+        "F": 27.237,
+        "p": 0.0,
+        "eta_sq": 0.2511,
+        "significant": true
+      },
+      "Ideological": {
+        "F": 29.076,
+        "p": 0.0,
+        "eta_sq": 0.2636,
+        "significant": true
+      },
+      "Experiential": {
+        "F": 29.83,
+        "p": 0.0,
+        "eta_sq": 0.2686,
+        "significant": true
+      },
+      "Social": {
+        "F": 26.89,
+        "p": 0.0,
+        "eta_sq": 0.2487,
+        "significant": true
+      },
+      "Economic": {
+        "F": 52.903,
+        "p": 0.0,
+        "eta_sq": 0.3944,
+        "significant": true
+      },
+      "Cultural": {
+        "F": 8.143,
+        "p": 0.0,
+        "eta_sq": 0.0911,
+        "significant": true
+      },
+      "Temporal": {
+        "F": 11.067,
+        "p": 0.0,
+        "eta_sq": 0.1199,
+        "significant": true
+      }
+    },
+    "significant_count": 8,
+    "h1_supported": true
+  },
+  "h2": {
+    "mantel_r": 0.4959,
+    "p": 0.001,
+    "n_permutations": 999,
+    "h2_supported": true
+  },
+  "h3": {
+    "predictions": {
+      "C1": {
+        "target_dim": "Ideological",
+        "target_mean": 0.2463,
+        "other_mean": 0.1526,
+        "t": 12.569,
+        "p_one_sided": 0.0,
+        "cohens_d": 1.531,
+        "confirmed": true
+      },
+      "C2": {
+        "target_dim": "Semiotic",
+        "target_mean": 0.1392,
+        "other_mean": 0.1068,
+        "t": 5.642,
+        "p_one_sided": 0.0,
+        "cohens_d": 0.687,
+        "confirmed": true
+      },
+      "C3": {
+        "target_dim": "Economic",
+        "target_mean": 0.2612,
+        "other_mean": 0.1344,
+        "t": 11.221,
+        "p_one_sided": 0.0,
+        "cohens_d": 1.367,
+        "confirmed": true
+      }
+    },
+    "confirmed_count": 3,
+    "h3_supported": true
+  },
+  "robustness": {
+    "spearman_rho": 0.4859,
+    "p": 0.0,
+    "n_pairs": 392,
+    "invariant": false
+  },
+  "cosine_similarity": {
+    "cohort_pairs": {
+      "C1-C1": 1.0,
+      "C1-C10": 0.9305,
+      "C1-C2": 0.9511,
+      "C1-C3": 0.8641,
+      "C1-C4": 0.9109,
+      "C1-C5": 0.9191,
+      "C1-C6": 0.9503,
+      "C1-C7": 0.9248,
+      "C1-C8": 0.8783,
+      "C1-C9": 0.9829,
+      "C10-C10": 1.0,
+      "C10-C2": 0.9776,
+      "C10-C3": 0.9359,
+      "C10-C4": 0.9558,
+      "C10-C5": 0.9577,
+      "C10-C6": 0.9591,
+      "C10-C7": 0.96,
+      "C10-C8": 0.9263,
+      "C10-C9": 0.9593,
+      "C2-C2": 1.0,
+      "C2-C3": 0.8813,
+      "C2-C4": 0.9907,
+      "C2-C5": 0.9206,
+      "C2-C6": 0.9856,
+      "C2-C7": 0.9745,
+      "C2-C8": 0.8788,
+      "C2-C9": 0.9737,
+      "C3-C3": 1.0,
+      "C3-C4": 0.8583,
+      "C3-C5": 0.9852,
+      "C3-C6": 0.9042,
+      "C3-C7": 0.8559,
+      "C3-C8": 0.9901,
+      "C3-C9": 0.8903,
+      "C4-C4": 1.0,
+      "C4-C5": 0.8917,
+      "C4-C6": 0.9787,
+      "C4-C7": 0.9552,
+      "C4-C8": 0.8534,
+      "C4-C9": 0.9428,
+      "C5-C5": 1.0,
+      "C5-C6": 0.9401,
+      "C5-C7": 0.9014,
+      "C5-C8": 0.9935,
+      "C5-C9": 0.9407,
+      "C6-C6": 1.0,
+      "C6-C7": 0.9603,
+      "C6-C8": 0.9094,
+      "C6-C9": 0.9649,
+      "C7-C7": 1.0,
+      "C7-C8": 0.8507,
+      "C7-C9": 0.9661,
+      "C8-C8": 1.0,
+      "C8-C9": 0.8997,
+      "C9-C9": 1.0
+    },
+    "n_cohorts": 10
+  }
+}
