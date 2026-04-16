@@ -143,7 +143,7 @@ def format_f1_json(brand: str, ordering: list[str]) -> str:
         f"{json_str}\n\n"
         f"Based on this brand specification, allocate exactly 100 points across these "
         f"eight dimensions to reflect the brand's relative emphasis. "
-        f"Respond with valid JSON only: {{{', '.join(f'\"{d}\": X' for d in ordering)}}}."
+        f"Your weights MUST sum to exactly 100. Respond with valid JSON only: {{{', '.join(f'\"{d}\": X' for d in ordering)}}}."
     )
 
 
@@ -165,7 +165,7 @@ def format_f2_prose(brand: str, ordering: list[str]) -> str:
         f"{prose}\n\n"
         f"Based on this brand description, allocate exactly 100 points across these "
         f"eight dimensions to reflect the brand's relative emphasis. "
-        f"Respond with valid JSON only: {{{', '.join(f'\"{d}\": X' for d in ordering)}}}."
+        f"Your weights MUST sum to exactly 100. Respond with valid JSON only: {{{', '.join(f'\"{d}\": X' for d in ordering)}}}."
     )
 
 
@@ -182,7 +182,7 @@ def format_f3_tabular(brand: str, ordering: list[str]) -> str:
         f"{table}\n\n"
         f"Based on these brand dimension scores, allocate exactly 100 points across these "
         f"eight dimensions to reflect the brand's relative emphasis. "
-        f"Respond with valid JSON only: {{{', '.join(f'\"{d}\": X' for d in ordering)}}}."
+        f"Your weights MUST sum to exactly 100. Respond with valid JSON only: {{{', '.join(f'\"{d}\": X' for d in ordering)}}}."
     )
 
 
@@ -204,23 +204,39 @@ def format_f4_ranked(brand: str, ordering: list[str]) -> str:
         f"{rank_text}\n\n"
         f"Based on this brand priority ranking, allocate exactly 100 points across these "
         f"eight dimensions to reflect the brand's relative emphasis. "
-        f"Respond with valid JSON only: {{{', '.join(f'\"{d}\": X' for d in ordering)}}}."
+        f"Your weights MUST sum to exactly 100. Respond with valid JSON only: {{{', '.join(f'\"{d}\": X' for d in ordering)}}}."
     )
 
 
+def _score_to_level(score: float) -> str:
+    """Convert a 0-10 score to a qualitative level (no numeric leakage)."""
+    if score >= 9.0:
+        return "Very High"
+    elif score >= 7.0:
+        return "High"
+    elif score >= 5.0:
+        return "Moderate"
+    elif score >= 3.0:
+        return "Low"
+    else:
+        return "Very Low"
+
+
 def format_f5_vector(brand: str, ordering: list[str]) -> str:
-    """F5: Score-only vector -- bare numbers with dimension labels."""
+    """F5: Qualitative levels -- ordinal descriptors without numeric scores."""
     bf = BRAND_FUNCTIONS[brand]
-    scores = [bf[dim.lower()]["score"] for dim in ordering]
-    dim_list = ", ".join(ordering)
-    score_list = ", ".join(str(s) for s in scores)
+    rows = []
+    for dim in ordering:
+        level = _score_to_level(bf[dim.lower()]["score"])
+        rows.append(f"  {dim}: {level}")
+    level_text = "\n".join(rows)
     return (
-        f"These scores represent {brand}'s positioning on eight perceptual dimensions.\n\n"
-        f"Dimensions (in order): [{dim_list}]\n"
-        f"Scores (in order): [{score_list}]\n\n"
-        f"Based on these scores, allocate exactly 100 points across the eight dimensions "
-        f"to reflect the brand's relative emphasis. "
-        f"Respond with valid JSON only: {{{', '.join(f'\"{d}\": X' for d in ordering)}}}."
+        f"Here are {brand}'s brand dimension importance levels:\n\n"
+        f"{level_text}\n\n"
+        f"Based on these importance levels, allocate exactly 100 points across the eight "
+        f"dimensions to reflect the brand's relative emphasis. Your weights MUST sum to "
+        f"exactly 100. "
+        f"Your weights MUST sum to exactly 100. Respond with valid JSON only: {{{', '.join(f'\"{d}\": X' for d in ordering)}}}."
     )
 
 
@@ -237,6 +253,7 @@ SYSTEM_PROMPT = (
     "positioning across eight perceptual dimensions. Your task is to read the brand "
     "specification and then produce a perceptual weight profile: allocate exactly 100 "
     "points across the eight dimensions to reflect the brand's relative emphasis. "
+    "IMPORTANT: Your weights MUST sum to exactly 100. Verify your total before responding. "
     "Respond with valid JSON only."
 )
 
@@ -594,7 +611,7 @@ def run_experiment(dry_run: bool = False, reps: int = 3) -> dict:
 
     output_dir = Path(__file__).parent.parent / "L3_sessions"
     output_dir.mkdir(parents=True, exist_ok=True)
-    output_path = output_dir / "exp_bf_format.jsonl"
+    output_path = output_dir / "exp_bf_format_v2.jsonl"
 
     print(f"\n{'=' * 60}")
     print(f"Experiment D: Brand Function Format Optimization")
@@ -726,7 +743,7 @@ def run_experiment(dry_run: bool = False, reps: int = 3) -> dict:
     print(f"{'=' * 60}\n")
 
     # Save stats
-    stats_path = output_dir / "exp_bf_format_stats.json"
+    stats_path = output_dir / "exp_bf_format_v2_stats.json"
     with open(stats_path, "w") as f:
         json.dump(stats, f, indent=2)
 
