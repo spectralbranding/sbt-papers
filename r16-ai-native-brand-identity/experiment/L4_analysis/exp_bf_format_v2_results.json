@@ -1,0 +1,558 @@
+{
+  "experiment": "exp_d_bf_format",
+  "total_records": 375,
+  "valid_records": 366,
+  "total_cost_usd": 0.14,
+  "total_input_tokens": 216119,
+  "total_output_tokens": 24930,
+  "format_cosines": {
+    "F1_json": {
+      "mean": 0.9726,
+      "std": 0.0576,
+      "n": 72,
+      "ci_95_low": 0.958,
+      "ci_95_high": 0.9841
+    },
+    "F2_prose": {
+      "mean": 0.9433,
+      "std": 0.0388,
+      "n": 72,
+      "ci_95_low": 0.9342,
+      "ci_95_high": 0.9518
+    },
+    "F3_tabular": {
+      "mean": 0.9354,
+      "std": 0.0261,
+      "n": 74,
+      "ci_95_low": 0.9294,
+      "ci_95_high": 0.9413
+    },
+    "F4_ranked": {
+      "mean": 0.9542,
+      "std": 0.0318,
+      "n": 75,
+      "ci_95_low": 0.947,
+      "ci_95_high": 0.9613
+    },
+    "F5_vector": {
+      "mean": 0.9769,
+      "std": 0.0209,
+      "n": 73,
+      "ci_95_low": 0.972,
+      "ci_95_high": 0.9815
+    }
+  },
+  "anova": {
+    "f_statistic": 17.189,
+    "p_value": 0.0,
+    "eta_squared": 0.16,
+    "k_groups": 5,
+    "n_total": 366
+  },
+  "pairwise_comparisons": {
+    "F1_json_vs_F2_prose": {
+      "t_statistic": 3.581,
+      "p_value": 0.000469,
+      "p_bonferroni": 0.004693,
+      "significant_bonferroni": true,
+      "cohens_d": 0.597
+    },
+    "F1_json_vs_F3_tabular": {
+      "t_statistic": 5.046,
+      "p_value": 1e-06,
+      "p_bonferroni": 1.3e-05,
+      "significant_bonferroni": true,
+      "cohens_d": 0.835
+    },
+    "F1_json_vs_F4_ranked": {
+      "t_statistic": 2.404,
+      "p_value": 0.017474,
+      "p_bonferroni": 0.174736,
+      "significant_bonferroni": false,
+      "cohens_d": 0.397
+    },
+    "F1_json_vs_F5_vector": {
+      "t_statistic": -0.606,
+      "p_value": 0.545477,
+      "p_bonferroni": 1.0,
+      "significant_bonferroni": false,
+      "cohens_d": -0.101
+    },
+    "F2_prose_vs_F3_tabular": {
+      "t_statistic": 1.439,
+      "p_value": 0.152205,
+      "p_bonferroni": 1.0,
+      "significant_bonferroni": false,
+      "cohens_d": 0.238
+    },
+    "F2_prose_vs_F4_ranked": {
+      "t_statistic": -1.874,
+      "p_value": 0.062934,
+      "p_bonferroni": 0.629344,
+      "significant_bonferroni": false,
+      "cohens_d": -0.309
+    },
+    "F2_prose_vs_F5_vector": {
+      "t_statistic": -6.51,
+      "p_value": 0.0,
+      "p_bonferroni": 0.0,
+      "significant_bonferroni": true,
+      "cohens_d": -1.081
+    },
+    "F3_tabular_vs_F4_ranked": {
+      "t_statistic": -3.943,
+      "p_value": 0.000124,
+      "p_bonferroni": 0.001243,
+      "significant_bonferroni": true,
+      "cohens_d": -0.646
+    },
+    "F3_tabular_vs_F5_vector": {
+      "t_statistic": -10.631,
+      "p_value": 0.0,
+      "p_bonferroni": 0.0,
+      "significant_bonferroni": true,
+      "cohens_d": -1.754
+    },
+    "F4_ranked_vs_F5_vector": {
+      "t_statistic": -5.112,
+      "p_value": 1e-06,
+      "p_bonferroni": 1e-05,
+      "significant_bonferroni": true,
+      "cohens_d": -0.841
+    }
+  },
+  "model_results": {
+    "claude-haiku-4-5-20251001": {
+      "F1_json": {
+        "mean": 0.9846,
+        "std": 0.0181,
+        "n": 15
+      },
+      "F2_prose": {
+        "mean": 0.9504,
+        "std": 0.0352,
+        "n": 15
+      },
+      "F3_tabular": {
+        "mean": 0.9372,
+        "std": 0.0257,
+        "n": 15
+      },
+      "F4_ranked": {
+        "mean": 0.9658,
+        "std": 0.031,
+        "n": 15
+      },
+      "F5_vector": {
+        "mean": 0.9835,
+        "std": 0.0193,
+        "n": 15
+      }
+    },
+    "gpt-4o-mini": {
+      "F1_json": {
+        "mean": 0.9559,
+        "std": 0.0442,
+        "n": 15
+      },
+      "F2_prose": {
+        "mean": 0.9085,
+        "std": 0.0539,
+        "n": 15
+      },
+      "F3_tabular": {
+        "mean": 0.9241,
+        "std": 0.0352,
+        "n": 15
+      },
+      "F4_ranked": {
+        "mean": 0.9328,
+        "std": 0.0329,
+        "n": 15
+      },
+      "F5_vector": {
+        "mean": 0.9593,
+        "std": 0.0296,
+        "n": 15
+      }
+    },
+    "deepseek-chat": {
+      "F1_json": {
+        "mean": 0.985,
+        "std": 0.0105,
+        "n": 15
+      },
+      "F2_prose": {
+        "mean": 0.9516,
+        "std": 0.0171,
+        "n": 15
+      },
+      "F3_tabular": {
+        "mean": 0.9436,
+        "std": 0.0211,
+        "n": 15
+      },
+      "F4_ranked": {
+        "mean": 0.9616,
+        "std": 0.0184,
+        "n": 15
+      },
+      "F5_vector": {
+        "mean": 0.9798,
+        "std": 0.0103,
+        "n": 15
+      }
+    },
+    "grok-4-1-fast-non-reasoning": {
+      "F1_json": {
+        "mean": 0.9454,
+        "std": 0.1118,
+        "n": 15
+      },
+      "F2_prose": {
+        "mean": 0.963,
+        "std": 0.0281,
+        "n": 15
+      },
+      "F3_tabular": {
+        "mean": 0.9458,
+        "std": 0.0228,
+        "n": 15
+      },
+      "F4_ranked": {
+        "mean": 0.9374,
+        "std": 0.0348,
+        "n": 15
+      },
+      "F5_vector": {
+        "mean": 0.9752,
+        "std": 0.0158,
+        "n": 15
+      }
+    },
+    "gemini-2.5-flash": {
+      "F1_json": {
+        "mean": 0.9968,
+        "std": 0.0062,
+        "n": 12
+      },
+      "F2_prose": {
+        "mean": 0.9426,
+        "std": 0.0273,
+        "n": 12
+      },
+      "F3_tabular": {
+        "mean": 0.9255,
+        "std": 0.017,
+        "n": 14
+      },
+      "F4_ranked": {
+        "mean": 0.9734,
+        "std": 0.0194,
+        "n": 15
+      },
+      "F5_vector": {
+        "mean": 0.9883,
+        "std": 0.0127,
+        "n": 13
+      }
+    }
+  },
+  "kendall_w": {
+    "W": 0.616,
+    "k_raters": 5,
+    "n_items": 5,
+    "interpretation": "moderate"
+  },
+  "dimension_mae_by_format": {
+    "F1_json": {
+      "Semiotic": {
+        "mean_mae": 0.9771,
+        "std_mae": 1.0583
+      },
+      "Narrative": {
+        "mean_mae": 0.9599,
+        "std_mae": 1.2128
+      },
+      "Ideological": {
+        "mean_mae": 1.4244,
+        "std_mae": 2.8673
+      },
+      "Experiential": {
+        "mean_mae": 0.7576,
+        "std_mae": 0.7883
+      },
+      "Social": {
+        "mean_mae": 0.8771,
+        "std_mae": 0.89
+      },
+      "Economic": {
+        "mean_mae": 1.1194,
+        "std_mae": 1.4658
+      },
+      "Cultural": {
+        "mean_mae": 0.7904,
+        "std_mae": 1.2373
+      },
+      "Temporal": {
+        "mean_mae": 1.0472,
+        "std_mae": 2.6557
+      }
+    },
+    "F2_prose": {
+      "Semiotic": {
+        "mean_mae": 1.7206,
+        "std_mae": 1.3397
+      },
+      "Narrative": {
+        "mean_mae": 1.9939,
+        "std_mae": 1.3718
+      },
+      "Ideological": {
+        "mean_mae": 1.9558,
+        "std_mae": 1.5419
+      },
+      "Experiential": {
+        "mean_mae": 1.6634,
+        "std_mae": 1.5074
+      },
+      "Social": {
+        "mean_mae": 1.9383,
+        "std_mae": 1.3709
+      },
+      "Economic": {
+        "mean_mae": 2.5596,
+        "std_mae": 1.969
+      },
+      "Cultural": {
+        "mean_mae": 1.3977,
+        "std_mae": 1.1962
+      },
+      "Temporal": {
+        "mean_mae": 1.565,
+        "std_mae": 1.0833
+      }
+    },
+    "F3_tabular": {
+      "Semiotic": {
+        "mean_mae": 1.926,
+        "std_mae": 1.1838
+      },
+      "Narrative": {
+        "mean_mae": 2.5174,
+        "std_mae": 1.3771
+      },
+      "Ideological": {
+        "mean_mae": 3.2878,
+        "std_mae": 1.7551
+      },
+      "Experiential": {
+        "mean_mae": 1.9475,
+        "std_mae": 1.3091
+      },
+      "Social": {
+        "mean_mae": 1.6364,
+        "std_mae": 1.2359
+      },
+      "Economic": {
+        "mean_mae": 2.2949,
+        "std_mae": 1.6928
+      },
+      "Cultural": {
+        "mean_mae": 1.5711,
+        "std_mae": 1.3036
+      },
+      "Temporal": {
+        "mean_mae": 1.709,
+        "std_mae": 1.3522
+      }
+    },
+    "F4_ranked": {
+      "Semiotic": {
+        "mean_mae": 2.3644,
+        "std_mae": 1.7633
+      },
+      "Narrative": {
+        "mean_mae": 1.7151,
+        "std_mae": 1.2249
+      },
+      "Ideological": {
+        "mean_mae": 2.2719,
+        "std_mae": 2.3024
+      },
+      "Experiential": {
+        "mean_mae": 1.5266,
+        "std_mae": 1.2498
+      },
+      "Social": {
+        "mean_mae": 1.5573,
+        "std_mae": 1.1147
+      },
+      "Economic": {
+        "mean_mae": 2.4926,
+        "std_mae": 2.1581
+      },
+      "Cultural": {
+        "mean_mae": 1.046,
+        "std_mae": 0.9946
+      },
+      "Temporal": {
+        "mean_mae": 1.3625,
+        "std_mae": 1.1958
+      }
+    },
+    "F5_vector": {
+      "Semiotic": {
+        "mean_mae": 1.1322,
+        "std_mae": 1.1551
+      },
+      "Narrative": {
+        "mean_mae": 1.3019,
+        "std_mae": 1.0419
+      },
+      "Ideological": {
+        "mean_mae": 1.0209,
+        "std_mae": 0.8723
+      },
+      "Experiential": {
+        "mean_mae": 1.1735,
+        "std_mae": 1.1402
+      },
+      "Social": {
+        "mean_mae": 1.457,
+        "std_mae": 1.1666
+      },
+      "Economic": {
+        "mean_mae": 1.3221,
+        "std_mae": 1.3037
+      },
+      "Cultural": {
+        "mean_mae": 0.9398,
+        "std_mae": 0.6671
+      },
+      "Temporal": {
+        "mean_mae": 1.1777,
+        "std_mae": 1.0994
+      }
+    }
+  },
+  "hard_vs_soft": {
+    "F1_json": {
+      "hard_mean_mae": 1.0483,
+      "soft_mean_mae": 1.0555,
+      "t_statistic": -0.037,
+      "p_value": 0.970384,
+      "soft_worse": true
+    },
+    "F2_prose": {
+      "hard_mean_mae": 2.1401,
+      "soft_mean_mae": 1.7281,
+      "t_statistic": 2.739,
+      "p_value": 0.006423,
+      "soft_worse": false
+    },
+    "F3_tabular": {
+      "hard_mean_mae": 2.1105,
+      "soft_mean_mae": 2.2713,
+      "t_statistic": -1.023,
+      "p_value": 0.306845,
+      "soft_worse": true
+    },
+    "F4_ranked": {
+      "hard_mean_mae": 2.4285,
+      "soft_mean_mae": 1.5989,
+      "t_statistic": 4.833,
+      "p_value": 2e-06,
+      "soft_worse": false
+    },
+    "F5_vector": {
+      "hard_mean_mae": 1.2272,
+      "soft_mean_mae": 1.1101,
+      "t_statistic": 1.104,
+      "p_value": 0.270384,
+      "soft_worse": false
+    }
+  },
+  "parse_rates": {
+    "F1_json": {
+      "total": 75,
+      "valid": 72,
+      "rate": 0.96
+    },
+    "F2_prose": {
+      "total": 75,
+      "valid": 72,
+      "rate": 0.96
+    },
+    "F3_tabular": {
+      "total": 75,
+      "valid": 74,
+      "rate": 0.9867
+    },
+    "F4_ranked": {
+      "total": 75,
+      "valid": 75,
+      "rate": 1.0
+    },
+    "F5_vector": {
+      "total": 75,
+      "valid": 73,
+      "rate": 0.9733
+    }
+  },
+  "response_times": {
+    "F1_json": {
+      "mean_ms": 2984.0,
+      "median_ms": 2014.0,
+      "p95_ms": 9466.0
+    },
+    "F2_prose": {
+      "mean_ms": 2693.0,
+      "median_ms": 1534.0,
+      "p95_ms": 8207.0
+    },
+    "F3_tabular": {
+      "mean_ms": 2706.0,
+      "median_ms": 1592.0,
+      "p95_ms": 7928.0
+    },
+    "F4_ranked": {
+      "mean_ms": 2483.0,
+      "median_ms": 1634.0,
+      "p95_ms": 6186.0
+    },
+    "F5_vector": {
+      "mean_ms": 2570.0,
+      "median_ms": 1566.0,
+      "p95_ms": 7412.0
+    }
+  },
+  "hypotheses": {
+    "H1_structured_advantage": {
+      "verdict": "NOT SUPPORTED",
+      "best_format": "F5_vector",
+      "best_mean_cosine": 0.9769,
+      "anova_p": 0.0
+    },
+    "H2_prose_penalty": {
+      "verdict": "SUPPORTED",
+      "f1_mean": 0.9726,
+      "f2_mean": 0.9433,
+      "p_bonferroni": 0.004693,
+      "cohens_d": 0.597
+    },
+    "H3_score_only_floor": {
+      "verdict": "NOT SUPPORTED",
+      "worst_format": "F3_tabular",
+      "worst_mean_cosine": 0.9354
+    },
+    "H4_cross_model_consistency": {
+      "verdict": "NOT SUPPORTED",
+      "kendall_w": 0.616
+    },
+    "H5_dimension_specific": {
+      "verdict": "NOT SUPPORTED",
+      "formats_where_soft_worse": 2
+    }
+  }
+}
