@@ -37,25 +37,28 @@ provenance:
       target_type: journal
       created: "2026-04-02"
       source_commit: "main"
-      status: pending
-      outcome: under_review
+      status: rejected
+      outcome: desk_rejected
       identifiers:
         manuscript_id: "25252"
+      decision_date: "2026-04-16"
       notes: >
-        Diamond OA (no APC). Theory article. Double-anonymous review.
-        Iowa State University Digital Press.
+        Diamond OA (no APC). Managing Editor: Alicia Zuniga.
+        Reason: out of scope — needs stronger tie to librarianship
+        in body text, not just implications section. Constructive:
+        invited to resubmit with librarianship emphasis. Rejection #3.
 
-    - id: "update-2026-04-05-zenodo-v1.2"
+    - id: "update-2026-04-16-zenodo-v2.0"
       target: "Zenodo"
       target_type: preprint_server
-      created: "2026-04-05"
+      created: "2026-04-16"
       source_commit: "main"
-      status: pending
-      outcome: pending_upload
+      status: merged
+      outcome: published
       identifiers:
         doi: "10.5281/zenodo.19294864"
       notes: >
-        v1.2 preprint update. Added Section 2.13: Research Wiki —
-        Karpathy (2026) three-layer pattern adapted for research.
-        Five intellectual work proof types. Correspondence handling.
-        ~17,600 words, 36 references. PDF 555K.
+        v2.0 major revision. Restructured from ~18,400 to ~7,600 words
+        (6 sections). Cross-domain reframing applied. New Related Work,
+        Implementation Evidence sections. Brembs (2023), Vuorre & Curley
+        (2018), Flake & Fried (2020) added. 36 references.
