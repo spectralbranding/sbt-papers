@@ -1,0 +1,75 @@
+{
+  "experiment": "exp2_brand_function_cohort",
+  "date": "2026-04-16",
+  "total_records": 648,
+  "total_cost_usd": 0.4434,
+  "h1": {
+    "F": 26.809,
+    "p": 0.0,
+    "partial_eta_sq": 0.3349,
+    "cohort_reductions_A_to_B": {
+      "C1": 0.0165,
+      "C2": 0.032,
+      "C3": -0.0302,
+      "C5": -0.0297,
+      "C7": -0.0153
+    },
+    "h1_supported": true
+  },
+  "h2": {
+    "dci_reduction_pct_by_cohort": {
+      "C1": 1.65,
+      "C2": 3.2,
+      "C3": -3.02,
+      "C5": -2.97,
+      "C7": -1.53
+    },
+    "range_pct": 6.22,
+    "h2_supported": false
+  },
+  "h3": {
+    "per_cohort": {
+      "C1": {
+        "b_mean": 0.1972,
+        "c_mean": 0.2055,
+        "t": -0.686,
+        "p": 0.4949,
+        "cohens_d": -0.152,
+        "c_outperforms_b": false
+      },
+      "C2": {
+        "b_mean": 0.2171,
+        "c_mean": 0.2067,
+        "t": 0.625,
+        "p": 0.5336,
+        "cohens_d": 0.134,
+        "c_outperforms_b": false
+      },
+      "C3": {
+        "b_mean": 0.3729,
+        "c_mean": 0.3284,
+        "t": 1.541,
+        "p": 0.1271,
+        "cohens_d": 0.327,
+        "c_outperforms_b": false
+      },
+      "C5": {
+        "b_mean": 0.314,
+        "c_mean": 0.284,
+        "t": 1.206,
+        "p": 0.2311,
+        "cohens_d": 0.259,
+        "c_outperforms_b": false
+      },
+      "C7": {
+        "b_mean": 0.1894,
+        "c_mean": 0.1816,
+        "t": 0.642,
+        "p": 0.5226,
+        "cohens_d": 0.142,
+        "c_outperforms_b": false
+      }
+    },
+    "h3_confirmed": true
+  }
+}
