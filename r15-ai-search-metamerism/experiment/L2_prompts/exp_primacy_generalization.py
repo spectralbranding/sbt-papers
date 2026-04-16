@@ -551,6 +551,10 @@ def make_record(
         "experiment": "primacy_effect_generalization",
         "model_id": cfg["model_id"],
         "model_provider": cfg["provider"],
+        # CI validator required fields (session_record.schema.json)
+        "model": model_name,
+        "prompt_type": "weighted_recommendation",
+        "prompt": user_prompt,
         "temperature": TEMPERATURE,
         "top_p": 1.0,
         "max_tokens": MAX_TOKENS_NL if response_format == "nl" else MAX_TOKENS,
