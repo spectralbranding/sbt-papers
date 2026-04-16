@@ -52,9 +52,19 @@ def load_data(jsonl_path: Path) -> list[dict]:
     return records
 
 
+def renormalize(weights: dict) -> dict:
+    """Renormalize weights to sum to 100."""
+    total = sum(weights.values())
+    if total == 0:
+        return weights
+    factor = 100.0 / total
+    return {k: round(v * factor, 3) for k, v in weights.items()}
+
+
 def compute_dci(weights: dict) -> float:
-    """DCI = (Economic + Semiotic) / 100."""
-    return (weights.get("Economic", 0) + weights.get("Semiotic", 0)) / 100.0
+    """DCI = (Economic + Semiotic) / 100. Weights are renormalized first."""
+    w = renormalize(weights)
+    return (w.get("Economic", 0) + w.get("Semiotic", 0)) / 100.0
 
 
 def bootstrap_ci(
@@ -251,7 +261,7 @@ def analyze(jsonl_path: Path) -> dict:
     for dim in DIMENSIONS:
         dim_trajectories[dim] = {}
         for s in [0, 2, 3]:
-            vals = [r["parsed_weights"].get(dim, 0) for r in by_step.get(s, [])]
+            vals = [renormalize(r["parsed_weights"]).get(dim, 0) for r in by_step.get(s, [])]
             if vals:
                 dim_trajectories[dim][f"step_{s}"] = {
                     "mean": round(float(np.mean(vals)), 3),

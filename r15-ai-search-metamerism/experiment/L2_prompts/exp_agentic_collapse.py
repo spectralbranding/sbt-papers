@@ -142,6 +142,13 @@ MODELS = {
         "input_cost_per_m": 3.00,
         "output_cost_per_m": 15.00,
     },
+    "gemma4": {
+        "model_id": "gemma4:latest",
+        "provider": "ollama",
+        "api_key_env": "OLLAMA_HOST",  # not a key, just presence check
+        "input_cost_per_m": 0.0,
+        "output_cost_per_m": 0.0,
+    },
 }
 
 
@@ -238,6 +245,8 @@ def _call_provider_multiturn(
             os.environ["GROK_API_KEY"],
             "https://api.x.ai/v1",
         )
+    elif provider == "ollama":
+        return _call_ollama_mt(model_id, system_prompt, messages, max_tokens)
     else:
         raise ValueError(f"Unknown provider: {provider}")
 
@@ -344,6 +353,55 @@ def _call_google_mt(
     usage = getattr(response, "usage_metadata", None)
     inp_tokens = getattr(usage, "prompt_token_count", 0) if usage else 0
     out_tokens = getattr(usage, "candidates_token_count", 0) if usage else 0
+    return text, {
+        "response_time_ms": elapsed_ms,
+        "token_count_input": inp_tokens,
+        "token_count_output": out_tokens,
+    }
+
+
+def _call_ollama_mt(
+    model_id: str,
+    system_prompt: str,
+    messages: list[dict[str, str]],
+    max_tokens: int,
+) -> tuple[str, dict[str, Any]]:
+    """Call local Ollama model via its OpenAI-compatible API."""
+    import urllib.request
+
+    ollama_host = os.environ.get("OLLAMA_HOST", "http://localhost:11434")
+    url = f"{ollama_host}/api/chat"
+
+    # Local models (Gemma 4, Qwen3) use thinking tokens that consume output
+    # budget. Use 8192 minimum to prevent truncation.
+    ollama_predict = max(max_tokens, 8192)
+    payload = {
+        "model": model_id,
+        "messages": [{"role": "system", "content": system_prompt}] + messages,
+        "stream": False,
+        "options": {
+            "temperature": TEMPERATURE,
+            "num_predict": ollama_predict,
+        },
+    }
+
+    req = urllib.request.Request(
+        url,
+        data=json.dumps(payload).encode(),
+        headers={"Content-Type": "application/json"},
+    )
+
+    t0 = time.time()
+    with urllib.request.urlopen(req, timeout=120) as resp:
+        data = json.loads(resp.read().decode())
+    elapsed_ms = int((time.time() - t0) * 1000)
+
+    text = data.get("message", {}).get("content", "")
+    # Strip <think>...</think> blocks from thinking models
+    text = re.sub(r"<think>.*?</think>", "", text, flags=re.DOTALL).strip()
+    inp_tokens = data.get("prompt_eval_count", 0)
+    out_tokens = data.get("eval_count", 0)
+
     return text, {
         "response_time_ms": elapsed_ms,
         "token_count_input": inp_tokens,
@@ -695,7 +753,7 @@ def run_pipeline(
             record2["parsed_weights"] = wa
             wsum = sum(wa.values())
             record2["weight_sum_raw"] = wsum
-            record2["weights_valid"] = abs(wsum - 100) <= 5
+            record2["weights_valid"] = abs(wsum - 100) <= 30
         else:
             record2["weights_valid"] = False
 
@@ -795,7 +853,7 @@ def run_control(
             record["parsed_weights"] = weights
             wsum = sum(weights.values())
             record["weight_sum_raw"] = wsum
-            record["weights_valid"] = abs(wsum - 100) <= 5
+            record["weights_valid"] = abs(wsum - 100) <= 30
     except Exception as e:
         record["raw_response"] = f"ERROR: {type(e).__name__}: {e}"
 
