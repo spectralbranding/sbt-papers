@@ -178,3 +178,4 @@ Note: The system prompt uses R2-equivalent response format (100-point allocation
 | Date | Amendment | Rationale |
 |------|-----------|-----------|
 | 2026-04-16 | Initial protocol | Pre-registration before data collection |
+| 2026-04-16 | v2 rerun: stricter sum enforcement + F5 redesign | Run 1 found 41% of records had weight sums outside 95-105 (range 44-177). F5 (score-only vector) produced cos .998 but 89% were near-echoes of input scores (anchoring confound). Fix: (1) system prompt + per-format prompts now include "Your weights MUST sum to exactly 100. Verify before responding." (2) F5 redesigned from bare numeric scores to qualitative levels (Very High/High/Moderate/Low/Very Low) to prevent input leakage while preserving ordinal information. Run 1 data preserved as exp_bf_format.jsonl; run 2 data at exp_bf_format_v2.jsonl. |
