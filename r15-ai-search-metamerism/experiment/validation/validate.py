@@ -182,7 +182,7 @@ def check_schemas(verbose: bool = False) -> bool:
 
     # Supplementary experiments use enriched schemas (extra fields, no raw prompt).
     # They are validated by their own scripts, not by the core R15 schema.
-    SCHEMA_SKIP_PREFIXES = ("run12_", "run12b_", "run13_", "run14_", "run15_")
+    SCHEMA_SKIP_PREFIXES = ("run12_", "run12b_", "run13_", "run14_", "run15_", "run15b_")
 
     # Validate L3 session records (sample first/middle/last + 100 random per file)
     l3_dir = EXPERIMENT_DIR / "L3_sessions"
