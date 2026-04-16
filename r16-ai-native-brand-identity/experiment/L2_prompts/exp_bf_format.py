@@ -170,24 +170,24 @@ def format_f2_prose(brand: str, ordering: list[str]) -> str:
 
 
 def format_f3_tabular(brand: str, ordering: list[str]) -> str:
-    """F3: Tabular minimal -- dimension name + score only."""
+    """F3: Tabular minimal -- dimension name + brief positioning only (no scores)."""
     bf = BRAND_FUNCTIONS[brand]
     rows = []
     for dim in ordering:
-        score = bf[dim.lower()]["score"]
-        rows.append(f"  {dim}: {score}/10")
+        pos = bf[dim.lower()]["positioning"][:100]
+        rows.append(f"  {dim}: {pos}")
     table = "\n".join(rows)
     return (
-        f"Here are {brand}'s brand dimension scores:\n\n"
+        f"Here are {brand}'s brand dimension descriptions:\n\n"
         f"{table}\n\n"
-        f"Based on these brand dimension scores, allocate exactly 100 points across these "
+        f"Based on these brand dimension descriptions, allocate exactly 100 points across these "
         f"eight dimensions to reflect the brand's relative emphasis. "
         f"Your weights MUST sum to exactly 100. Respond with valid JSON only: {{{', '.join(f'\"{d}\": X' for d in ordering)}}}."
     )
 
 
 def format_f4_ranked(brand: str, ordering: list[str]) -> str:
-    """F4: Ranked list -- dimensions ranked by score with brief rationale."""
+    """F4: Ranked list -- dimensions ranked by importance with rationale (no scores)."""
     bf = BRAND_FUNCTIONS[brand]
     ranked = sorted(
         [(dim, bf[dim.lower()]["score"], bf[dim.lower()]["positioning"][:80])
@@ -196,8 +196,8 @@ def format_f4_ranked(brand: str, ordering: list[str]) -> str:
         reverse=True,
     )
     lines = []
-    for rank, (dim, score, desc) in enumerate(ranked, 1):
-        lines.append(f"  {rank}. {dim} ({score}/10) -- {desc}")
+    for rank, (dim, _score, desc) in enumerate(ranked, 1):
+        lines.append(f"  {rank}. {dim} -- {desc}")
     rank_text = "\n".join(lines)
     return (
         f"Here is {brand}'s brand priority ranking (most to least important):\n\n"
