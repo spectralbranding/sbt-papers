@@ -1,57 +1,57 @@
 {
   "experiment": "exp_a_agentic_collapse",
   "date": "2026-04-16",
-  "total_records": 300,
-  "valid_weight_records": 176,
+  "total_records": 365,
+  "valid_weight_records": 241,
   "step_counts": {
-    "0": 59,
-    "2": 59,
-    "3": 58
+    "0": 74,
+    "2": 84,
+    "3": 83
   },
-  "total_cost_usd": 0.3506,
+  "total_cost_usd": 0.3622,
   "models": [
-    "deepseek-chat",
-    "claude-haiku-4-5",
-    "gpt-4o-mini",
     "gemini-2.5-flash",
-    "grok-4-1-fast-non-reasoning"
+    "deepseek-chat",
+    "grok-4-1-fast-non-reasoning",
+    "gpt-4o-mini",
+    "claude-haiku-4-5"
   ],
   "hypotheses": {
     "H1_monotonic_dci": {
-      "supported": false,
-      "f_stat": 3.025,
-      "p": 0.051,
-      "eta_sq": 0.034,
+      "supported": true,
+      "f_stat": 3.533,
+      "p": 0.031,
+      "eta_sq": 0.029,
       "eta_sq_ci_95": [
         0.24,
-        0.26
+        0.258
       ],
       "step_means": {
-        "step_0": 0.238,
-        "step_2": 0.246,
-        "step_3": 0.267
+        "step_0": 0.235,
+        "step_2": 0.245,
+        "step_3": 0.264
       },
       "monotonic": true,
       "pairwise": {
         "step0_vs_step2": {
-          "t": -0.715,
-          "p": 0.476,
-          "p_bonferroni": 1.0,
-          "cohens_d": 0.132,
+          "t": -0.972,
+          "p": 0.333,
+          "p_bonferroni": 0.998,
+          "cohens_d": 0.155,
           "significant": false
         },
         "step0_vs_step3": {
-          "t": -2.457,
-          "p": 0.015,
-          "p_bonferroni": 0.046,
-          "cohens_d": 0.454,
+          "t": -2.669,
+          "p": 0.008,
+          "p_bonferroni": 0.025,
+          "cohens_d": 0.427,
           "significant": true
         },
         "step2_vs_step3": {
-          "t": -1.573,
-          "p": 0.119,
-          "p_bonferroni": 0.356,
-          "cohens_d": 0.291,
+          "t": -1.611,
+          "p": 0.109,
+          "p_bonferroni": 0.327,
+          "cohens_d": 0.249,
           "significant": false
         }
       }
@@ -59,25 +59,25 @@
     "H2_dimension_specific": {
       "supported": true,
       "collapse_rates": {
-        "Cultural": -1.035,
-        "Temporal": 0.064,
-        "Economic": 0.925
+        "Cultural": -0.776,
+        "Temporal": 0.224,
+        "Economic": 1.65
       },
       "dim_means_by_step": {
         "Cultural": {
-          "step_0": 12.949,
-          "step_2": 12.051,
-          "step_3": 11.914
+          "step_0": 12.824,
+          "step_2": 12.238,
+          "step_3": 12.048
         },
         "Temporal": {
-          "step_0": 8.712,
-          "step_2": 7.847,
-          "step_3": 8.776
+          "step_0": 8.932,
+          "step_2": 8.357,
+          "step_3": 9.157
         },
         "Economic": {
-          "step_0": 13.678,
-          "step_2": 13.051,
-          "step_3": 14.603
+          "step_0": 13.23,
+          "step_2": 13.321,
+          "step_3": 14.88
         }
       },
       "cultural_collapsed_more": true,
@@ -85,155 +85,155 @@
     },
     "H3_ideological_protection": {
       "supported": true,
-      "t": 2.382,
-      "p": 0.024,
-      "cohens_d": -0.88,
+      "t": 2.656,
+      "p": 0.011,
+      "cohens_d": -0.869,
       "cohens_d_ci_95": [
-        0.003,
-        0.053
+        0.005,
+        0.045
       ],
-      "strong_ideo_mean": 0.066,
-      "strong_ideo_n": 11,
-      "weak_ideo_mean": 0.007,
-      "weak_ideo_n": 22
+      "strong_ideo_mean": 0.061,
+      "strong_ideo_n": 14,
+      "weak_ideo_mean": 0.006,
+      "weak_ideo_n": 28
     }
   },
   "secondary": {
     "dim_trajectories": {
       "Semiotic": {
         "step_0": {
-          "mean": 10.102,
-          "std": 3.423,
-          "n": 59
+          "mean": 10.27,
+          "std": 3.211,
+          "n": 74
         },
         "step_2": {
-          "mean": 11.542,
-          "std": 3.626,
-          "n": 59
+          "mean": 11.19,
+          "std": 3.406,
+          "n": 84
         },
         "step_3": {
-          "mean": 12.121,
-          "std": 4.385,
-          "n": 58
+          "mean": 11.566,
+          "std": 3.858,
+          "n": 83
         }
       },
       "Narrative": {
         "step_0": {
-          "mean": 13.0,
-          "std": 3.61,
-          "n": 59
+          "mean": 12.811,
+          "std": 3.572,
+          "n": 74
         },
         "step_2": {
-          "mean": 11.441,
-          "std": 4.599,
-          "n": 59
+          "mean": 11.274,
+          "std": 4.527,
+          "n": 84
         },
         "step_3": {
-          "mean": 10.966,
-          "std": 5.245,
-          "n": 58
+          "mean": 10.699,
+          "std": 4.958,
+          "n": 83
         }
       },
       "Ideological": {
         "step_0": {
-          "mean": 12.119,
-          "std": 5.908,
-          "n": 59
+          "mean": 12.581,
+          "std": 5.791,
+          "n": 74
         },
         "step_2": {
-          "mean": 14.966,
-          "std": 5.496,
-          "n": 59
+          "mean": 15.262,
+          "std": 5.296,
+          "n": 84
         },
         "step_3": {
-          "mean": 12.983,
-          "std": 5.366,
-          "n": 58
+          "mean": 13.711,
+          "std": 5.309,
+          "n": 83
         }
       },
       "Experiential": {
         "step_0": {
-          "mean": 17.39,
-          "std": 4.976,
-          "n": 59
+          "mean": 17.297,
+          "std": 4.733,
+          "n": 74
         },
         "step_2": {
-          "mean": 15.746,
-          "std": 5.622,
-          "n": 59
+          "mean": 15.56,
+          "std": 5.2,
+          "n": 84
         },
         "step_3": {
-          "mean": 16.586,
-          "std": 7.006,
-          "n": 58
+          "mean": 16.301,
+          "std": 6.76,
+          "n": 83
         }
       },
       "Social": {
         "step_0": {
-          "mean": 12.051,
-          "std": 4.137,
-          "n": 59
+          "mean": 12.054,
+          "std": 4.057,
+          "n": 74
         },
         "step_2": {
-          "mean": 13.356,
-          "std": 4.436,
-          "n": 59
+          "mean": 12.798,
+          "std": 4.533,
+          "n": 84
         },
         "step_3": {
-          "mean": 12.138,
-          "std": 4.744,
-          "n": 58
+          "mean": 11.699,
+          "std": 4.6,
+          "n": 83
         }
       },
       "Economic": {
         "step_0": {
-          "mean": 13.678,
-          "std": 5.208,
-          "n": 59
+          "mean": 13.23,
+          "std": 5.146,
+          "n": 74
         },
         "step_2": {
-          "mean": 13.051,
-          "std": 7.305,
-          "n": 59
+          "mean": 13.321,
+          "std": 7.336,
+          "n": 84
         },
         "step_3": {
-          "mean": 14.603,
-          "std": 7.856,
-          "n": 58
+          "mean": 14.88,
+          "std": 8.034,
+          "n": 83
         }
       },
       "Cultural": {
         "step_0": {
-          "mean": 12.949,
-          "std": 4.22,
-          "n": 59
+          "mean": 12.824,
+          "std": 3.956,
+          "n": 74
         },
         "step_2": {
-          "mean": 12.051,
-          "std": 4.301,
-          "n": 59
+          "mean": 12.238,
+          "std": 4.062,
+          "n": 84
         },
         "step_3": {
-          "mean": 11.914,
-          "std": 5.889,
-          "n": 58
+          "mean": 12.048,
+          "std": 5.229,
+          "n": 83
         }
       },
       "Temporal": {
         "step_0": {
-          "mean": 8.712,
-          "std": 2.717,
-          "n": 59
+          "mean": 8.932,
+          "std": 2.845,
+          "n": 74
         },
         "step_2": {
-          "mean": 7.847,
-          "std": 3.199,
-          "n": 59
+          "mean": 8.357,
+          "std": 3.82,
+          "n": 84
         },
         "step_3": {
-          "mean": 8.776,
-          "std": 4.235,
-          "n": 58
+          "mean": 9.157,
+          "std": 4.432,
+          "n": 83
         }
       }
     },
@@ -258,8 +258,13 @@
         "std": 0.068,
         "n": 15
       },
-      "anova_f": 2.097,
-      "anova_p": 0.112
+      "gemini-2.5-flash": {
+        "mean_compound": 0.033,
+        "std": 0.061,
+        "n": 25
+      },
+      "anova_f": 1.729,
+      "anova_p": 0.152
     }
   },
   "exploratory": {
@@ -293,23 +298,24 @@
     "recommendation_convergence": {
       "counts": {
         "Vital Farms": 3,
-        "IKEA": 12,
+        "IKEA": 18,
         "Eataly": 2,
-        "Tesla": 9,
+        "Tesla": 13,
         "Volkswagen": 1,
-        "Arc'teryx": 7,
-        "Erewhon": 5,
+        "Arc'teryx": 8,
+        "Erewhon": 9,
         "Brunello Cucinelli": 1,
         "REI Co-op": 1,
         "Chanel": 2,
         "Hermes": 2,
-        "Herm\u00e8s": 7,
+        "Herm\u00e8s": 11,
         "Chevrolet": 1,
-        "Patagonia": 4,
-        "Fly by Jing": 1
+        "Patagonia": 8,
+        "Fly by Jing": 1,
+        "Hyundai": 2
       },
-      "shannon_entropy": 3.423,
-      "max_entropy": 3.907
+      "shannon_entropy": 3.357,
+      "max_entropy": 4.0
     }
   }
 }

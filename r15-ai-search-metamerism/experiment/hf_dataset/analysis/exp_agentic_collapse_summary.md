@@ -1,40 +1,40 @@
 # Experiment A: Multi-Step Agentic Collapse -- Summary
 
 **Date**: 2026-04-16
-**Total records**: 300
-**Valid weight records**: 176
-**Total cost**: $0.35
+**Total records**: 365
+**Valid weight records**: 241
+**Total cost**: $0.36
 
 ## Step Counts
 
 | Step | Records |
 |------|---------|
-| Control | 59 |
-| Comparison | 59 |
-| Recommendation | 58 |
+| Control | 74 |
+| Comparison | 84 |
+| Recommendation | 83 |
 
 ## Hypothesis Results
 
-### H1: Monotonic DCI Increase -- NOT SUPPORTED
+### H1: Monotonic DCI Increase -- SUPPORTED
 
-F = 3.025, p = 0.051, eta-sq = 0.034 (95% CI [0.24, 0.26])
+F = 3.533, p = 0.031, eta-sq = 0.029 (95% CI [0.24, 0.258])
 Monotonic trend: True
 
 **Step means (DCI)**:
 
 | Step | Mean DCI |
 |------|----------|
-| step_0 | 0.238 |
-| step_2 | 0.246 |
-| step_3 | 0.267 |
+| step_0 | 0.235 |
+| step_2 | 0.245 |
+| step_3 | 0.264 |
 
 **Pairwise comparisons (Bonferroni-corrected)**:
 
 | Comparison | t | p | p_Bonf | Cohen's d | Sig |
 |------------|---|---|--------|-----------|-----|
-| step0_vs_step2 | -0.715 | 0.476 | 1.0 | 0.132 | No |
-| step0_vs_step3 | -2.457 | 0.015 | 0.046 | 0.454 | Yes |
-| step2_vs_step3 | -1.573 | 0.119 | 0.356 | 0.291 | No |
+| step0_vs_step2 | -0.972 | 0.333 | 0.998 | 0.155 | No |
+| step0_vs_step3 | -2.669 | 0.008 | 0.025 | 0.427 | Yes |
+| step2_vs_step3 | -1.611 | 0.109 | 0.327 | 0.249 | No |
 
 ### H2: Dimension-Specific Compounding -- SUPPORTED
 
@@ -42,31 +42,31 @@ Monotonic trend: True
 
 | Dimension | Collapse Rate |
 |-----------|---------------|
-| Cultural | -1.035 |
-| Temporal | 0.064 |
-| Economic | 0.925 |
+| Cultural | -0.776 |
+| Temporal | 0.224 |
+| Economic | 1.65 |
 
 Cultural collapsed more than Economic: True
 Temporal collapsed more than Economic: True
 
 ### H3: Ideological Signal Protection -- SUPPORTED
 
-t = 2.382, p = 0.024, Cohen's d = -0.88 (95% CI [0.003, 0.053])
-Strong Ideological (Patagonia) mean compound rate: 0.066 (n=11)
-Weak Ideological (Erewhon, Tesla) mean compound rate: 0.007 (n=22)
+t = 2.656, p = 0.011, Cohen's d = -0.869 (95% CI [0.005, 0.045])
+Strong Ideological (Patagonia) mean compound rate: 0.061 (n=14)
+Weak Ideological (Erewhon, Tesla) mean compound rate: 0.006 (n=28)
 
 ## Per-Dimension Trajectories
 
 | Dimension | Control | Step 2 | Step 3 | Delta (S3-Ctrl) |
 |-----------|---------|--------|--------|-----------------|
-| Semiotic | 10.102 | 11.542 | 12.121 | 2.019 |
-| Narrative | 13.0 | 11.441 | 10.966 | -2.034 |
-| Ideological | 12.119 | 14.966 | 12.983 | 0.864 |
-| Experiential | 17.39 | 15.746 | 16.586 | -0.804 |
-| Social | 12.051 | 13.356 | 12.138 | 0.087 |
-| Economic | 13.678 | 13.051 | 14.603 | 0.925 |
-| Cultural | 12.949 | 12.051 | 11.914 | -1.035 |
-| Temporal | 8.712 | 7.847 | 8.776 | 0.064 |
+| Semiotic | 10.27 | 11.19 | 11.566 | 1.296 |
+| Narrative | 12.811 | 11.274 | 10.699 | -2.112 |
+| Ideological | 12.581 | 15.262 | 13.711 | 1.13 |
+| Experiential | 17.297 | 15.56 | 16.301 | -0.996 |
+| Social | 12.054 | 12.798 | 11.699 | -0.355 |
+| Economic | 13.23 | 13.321 | 14.88 | 1.65 |
+| Cultural | 12.824 | 12.238 | 12.048 | -0.776 |
+| Temporal | 8.932 | 8.357 | 9.157 | 0.225 |
 
 ## Model Comparison
 
@@ -76,8 +76,9 @@ Weak Ideological (Erewhon, Tesla) mean compound rate: 0.007 (n=22)
 | gpt-4o-mini | -0.014 | 0.051 | 13 |
 | grok-4-1-fast-non-reasoning | 0.047 | 0.07 | 15 |
 | deepseek-chat | 0.036 | 0.068 | 15 |
+| gemini-2.5-flash | 0.033 | 0.061 | 25 |
 
-Model ANOVA: F = 2.097, p = 0.112
+Model ANOVA: F = 1.729, p = 0.152
 
 ## Exploratory: Retrieval Overlap
 
@@ -91,20 +92,21 @@ Model ANOVA: F = 2.097, p = 0.112
 
 ## Exploratory: Recommendation Convergence
 
-Shannon entropy: 3.423 (max: 3.907)
+Shannon entropy: 3.357 (max: 4.0)
 
 | Recommended Brand | Count |
 |-------------------|-------|
-| IKEA | 12 |
-| Tesla | 9 |
-| Arc'teryx | 7 |
-| Hermès | 7 |
-| Erewhon | 5 |
-| Patagonia | 4 |
+| IKEA | 18 |
+| Tesla | 13 |
+| Hermès | 11 |
+| Erewhon | 9 |
+| Arc'teryx | 8 |
+| Patagonia | 8 |
 | Vital Farms | 3 |
 | Eataly | 2 |
 | Chanel | 2 |
 | Hermes | 2 |
+| Hyundai | 2 |
 | Volkswagen | 1 |
 | Brunello Cucinelli | 1 |
 | REI Co-op | 1 |
