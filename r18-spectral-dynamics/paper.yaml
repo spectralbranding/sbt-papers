@@ -9,9 +9,9 @@ meta:
       orcid: "0009-0000-6893-9231"
       affiliation: "Independent Researcher"
   doi: "10.5281/zenodo.19468204"
-  date: "2026-04-08"
-  version: "1.0"
-  venue: "Zenodo preprint (target: JMR; fallback: IJRM)"
+  date: "2026-04-16"
+  version: "1.1"
+  venue: "Zenodo preprint (target: JMR; fallback: IJRM)"  # v1.1 (2026-04-16): Added Section 9 empirical pilot (300 calls, synthetic velocity detection). Bonnet pair resolution confirmed. Sections renumbered.
   license: "CC-BY-4.0"
   keywords:
     - brand dynamics
@@ -211,7 +211,7 @@ repositories:
 
 submission_history:
   - venue: "Zenodo"
-    date: "2026-04-08"
+    date: "2026-04-16"
     status: "doi_secured"
     doi: "10.5281/zenodo.19468204"
     notes: >

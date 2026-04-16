@@ -32,7 +32,7 @@ This paper makes three contributions:
 
 We illustrate the framework using Dove's brand evolution across four periods (2003--2023), computing velocity and acceleration from the dimensional activation data in Zharnikov (2026p). The illustration demonstrates both the framework's analytical power and its limitations (noise amplification, dimensional creation events, author-assigned profiles).
 
-The paper is organized as follows. Section 2 reviews the theoretical background. Section 3 develops the differential calculus. Section 4 proves the Bonnet pair resolution. Section 5 introduces trajectory-based analysis. Section 6 provides the Dove illustration. Section 7 discusses managerial implications. Section 8 addresses limitations and future research. Section 9 concludes.
+The paper is organized as follows. Section 2 reviews the theoretical background. Section 3 develops the differential calculus. Section 4 proves the Bonnet pair resolution. Section 5 introduces trajectory-based analysis. Section 6 provides the Dove illustration. Section 7 discusses managerial implications. Section 8 addresses limitations and future research. Section 9 reports the synthetic velocity detection pilot. Section 10 concludes.
 
 ---
 
@@ -100,7 +100,7 @@ The acceleration captures whether brand movement is intensifying (|**v**| increa
 
 **Remark (Smoothness and the SDE).** The SDE of Zharnikov (2026j) produces sample paths that are continuous but almost surely nowhere differentiable -- a standard property of diffusion processes. The velocity defined here is therefore not the pathwise derivative (which does not exist) but the *expected rate of change conditioned on the current state*: **v**(t) = E[d**X**/dt | **X**_t] = mu(**X**_t, t), i.e., the drift function of the SDE. In practice, velocity is estimated from discrete-time measurements via finite differences or Kalman filtering (Section 3.7), both of which produce smooth estimates of the underlying drift. This is standard in all applications of state-space models to noisy processes: the estimated velocity is the posterior mean of the drift, not a pathwise derivative. All definitions, propositions, and theorems in this paper should be understood in this sense: "velocity" denotes the estimated drift, not a classical derivative of a non-differentiable sample path.
 
-**Remark (Lossy projection of the dynamics).** The position $\mathbf{x}(t)$, velocity $\mathbf{v}(t)$, and acceleration $\mathbf{a}(t)$ are defined in the full 8-dimensional perception space $\mathbb{R}^8$. Any individual observer measurement, however, is a lossy projection of this state onto a lower-dimensional observable subspace determined by that observer's spectral weight vector. Reconstructing the full trajectory from observer-side measurements is therefore a source-coding problem with side information (Cover & Thomas, 2006): the rate of distortion depends on the observer's effective channel capacity and on the geometric diversity of the observer constellation, in the sense formalized by R17 (Zharnikov, 2026y). Velocities and accelerations recovered from a low-rank observer constellation are subject to the same rate-distortion bounds as the position estimates from which they are derived. We use this framing only to situate the differential calculus in standard information-theoretic terms; no estimator in this paper depends on it. This framing has been empirically confirmed: Zharnikov (2026aa) finds a J-shaped rate-distortion curve across 17 LLM architectures, with all models converging on the same operating point (cross-model CV = .140), demonstrating that the rate-distortion constraint governs AI brand perception encoders at scale.
+**Remark (Lossy projection of the dynamics).** The position $\mathbf{x}(t)$, velocity $\mathbf{v}(t)$, and acceleration $\mathbf{a}(t)$ are defined in the full 8-dimensional perception space $\mathbb{R}^8$. Any individual observer measurement, however, is a lossy projection of this state onto a lower-dimensional observable subspace determined by that observer's spectral weight vector. Reconstructing the full trajectory from observer-side measurements is therefore a source-coding problem with side information (Cover & Thomas, 2006): the rate of distortion depends on the observer's effective channel capacity and on the geometric diversity of the observer constellation, in the sense formalized by R17 (Zharnikov, 2026y). Velocities and accelerations recovered from a low-rank observer constellation are subject to the same rate-distortion bounds as the position estimates from which they are derived. We use this framing only to situate the differential calculus in standard information-theoretic terms; no estimator in this paper depends on it.
 
 ### 3.2 Discrete-Time Estimation
 
@@ -488,7 +488,35 @@ This correspondence principle parallels the SBT analogy stack: classical brand m
 
 ---
 
-## 9. Conclusion
+## 9. Empirical Pilot: Synthetic Velocity Detection
+
+The differential calculus developed above is purely theoretical. This section reports a pilot experiment testing whether LLMs --- used as synthetic observers --- perceive brand velocity as an independent signal, or whether trajectory information is discarded in favor of current-state evaluation.
+
+### 9.1 Design
+
+Four trajectory narratives (Rising, Falling, Stable-high, Oscillating) were crossed with five brands, five models, and three replications, producing 300 calls of which 297 were valid (99.0% success rate). Each call presented an LLM with a brand description that included explicit trajectory information (e.g., "Brand X has been steadily rising in cultural relevance and narrative strength over the past five years" versus "Brand X has experienced declining perceptions across most dimensions"). The LLM then rated the brand on all eight SBT dimensions using the PRISM-B instrument.
+
+### 9.2 Results
+
+*H1 (trajectory direction produces different profiles): SUPPORTED on 7/8 dimensions.* Rising versus Falling trajectories produced dramatically different spectral profiles. The largest effects were on Ideological (Cohen's d = 2.48), Economic (d = -2.35), Experiential (d = -1.62), and Narrative (d = 1.25). Only Temporal was invariant to trajectory direction (d = -.03). LLMs do not merely assess current brand position; they adjust dimensional ratings based on where the brand has been going.
+
+*H2 (Bonnet pair resolution --- velocity as independent signal): SUPPORTED on 5/8 dimensions.* Stable-high versus Falling brands differ despite no explicit current-state difference in the prompt. Both are described as currently well-positioned, but the Falling brand's declining trajectory produces lower ratings. Cultural (d = 1.27) and Economic (d = -1.18) show the largest effects. This validates the core theoretical claim of Section 4: velocity is an independent perceptual signal that resolves ambiguity between brands at the same position. Brands with identical current profiles but different trajectories are distinguishable in perception --- the Bonnet pair is resolvable.
+
+*H3 (Oscillating trajectories produce wider variance): EXPLORATORY.* Oscillating trajectories showed wider variance than Stable on 3/8 dimensions. Temporal variance was 6x higher for Oscillating (.00299 vs .00050) --- directional flips create maximal uncertainty about temporal positioning. This is consistent with the noise amplification analysis (Section 3.3): when the velocity vector reverses direction frequently, the acceleration is large and the signal-to-noise ratio for trajectory estimation degrades.
+
+### 9.3 Interpretation
+
+Three findings merit theoretical comment.
+
+First, LLMs perceive brand velocity, not just position. The trajectory narratives produced large, systematic effects on dimensional ratings, confirming that the differential quantities formalized in Section 3 correspond to perceptual realities --- at least in synthetic observers. Whether human observers show comparable velocity sensitivity is an empirical question for future research.
+
+Second, Falling brands collapse toward Economic. Across all models, brands on declining trajectories received elevated Economic ratings and suppressed Narrative, Ideological, and Cultural ratings. This connects directly to the Economic Default documented in the companion R15 study (Zharnikov, 2026v): when a brand's trajectory signals decline, observers default to evaluating it on its most quantifiable, functional dimension. Velocity is not merely directional --- it modulates which dimensions dominate perception.
+
+Third, Temporal is velocity-invariant. Despite large effects on all other dimensions, the Temporal dimension (longevity, tradition, perceived permanence) was unaffected by trajectory direction (d = -.03). This suggests that an observer's perception of a brand's relationship to time is a fixed attribute --- not modulated by whether the brand is currently rising or falling. Temporal positioning appears to be a deep structural property rather than a dynamic one, consistent with its theoretical role as the most slowly evolving dimension in the SBT framework.
+
+---
+
+## 10. Conclusion
 
 Brand measurement has been fundamentally static: we know where brands are but not where they are going. This paper introduces a differential calculus for multi-dimensional brand perception that extends Spectral Brand Theory from position (Order 0) to velocity (Order 1) and acceleration (Order 2). Three contributions emerge: velocity resolves the Bonnet pair ambiguity in brand measurement (Theorem 1), directional coherence quantifies strategy-trajectory alignment (Definition 5), and trajectory clustering enables dynamic competitive analysis (Section 5).
 
@@ -557,9 +585,4 @@ Zharnikov, D. (2026p). Dimensional activation and cohort divergence: A longitudi
 Zharnikov, D. (2026s). Coherence type as crisis predictor: A formal derivation from non-ergodic dynamics. Working Paper. https://doi.org/10.5281/zenodo.19208107
 
 Zharnikov, D. (2026y). Brand triangulation: A geometric framework for multi-observer brand positioning. Working Paper.
-
-Zharnikov, D. (2026aa). Empirical rate-distortion curve for AI brand perception encoders. Working Paper. https://doi.org/10.5281/zenodo.19528833
-
----
-*This paper is part of the Spectral Brand Theory research program. For the full atlas of 20+ interconnected papers, see [spectralbranding.com/atlas](https://spectralbranding.com/atlas).*
 

@@ -11,9 +11,9 @@ metadata:
       affiliation: "Independent Researcher"
       corresponding: true
   doi: "10.5281/zenodo.19555265"
-  date: "2026-04-13"
-  version: "1.0.0"
-  status: draft
+  date: "2026-04-16"
+  version: "1.1.0"
+  status: draft  # v1.1.0 (2026-04-16): Added synthetic cohort pre-pilot sensitivity evidence and Latin-square robustness finding.
   license: "CC-BY-NC-ND-4.0"
   keywords:
     - brand perception measurement
