@@ -320,35 +320,26 @@ def _call_google_mt(
         )
 
     t0 = time.time()
+    # Gemini 2.5 Flash uses internal "thinking" tokens that count against
+    # the output budget. Use 8192 min to prevent truncation. Do NOT use
+    # response_mime_type="application/json" — causes truncation in multi-turn.
+    gemini_max = max(max_tokens, 8192)
+    response = client.models.generate_content(
+        model=model_id,
+        contents=contents,
+        config=types.GenerateContentConfig(
+            temperature=TEMPERATURE,
+            max_output_tokens=gemini_max,
+            system_instruction=system_prompt,
+        ),
+    )
     try:
-        response = client.models.generate_content(
-            model=model_id,
-            contents=contents,
-            config=types.GenerateContentConfig(
-                temperature=TEMPERATURE,
-                max_output_tokens=max_tokens,
-                response_mime_type="application/json",
-                system_instruction=system_prompt,
-            ),
-        )
         text = response.text
     except Exception:
-        response = client.models.generate_content(
-            model=model_id,
-            contents=contents,
-            config=types.GenerateContentConfig(
-                temperature=TEMPERATURE,
-                max_output_tokens=max_tokens,
-                system_instruction=system_prompt,
-            ),
-        )
-        try:
-            text = response.text
-        except Exception:
-            if response.candidates:
-                text = response.candidates[0].content.parts[0].text
-            else:
-                raise ValueError("Gemini returned no usable response")
+        if response.candidates:
+            text = response.candidates[0].content.parts[0].text
+        else:
+            raise ValueError("Gemini returned no usable response")
     elapsed_ms = int((time.time() - t0) * 1000)
     usage = getattr(response, "usage_metadata", None)
     inp_tokens = getattr(usage, "prompt_token_count", 0) if usage else 0
