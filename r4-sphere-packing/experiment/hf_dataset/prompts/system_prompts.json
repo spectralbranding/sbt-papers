@@ -1,0 +1,18 @@
+{
+  "experiment": "C_competitive_interference",
+  "conditions": {
+    "solo": "Evaluate brand alone (standard PRISM-B baseline)",
+    "self_control": "Evaluate brand distinctiveness vs unnamed category peers (format bias control)",
+    "paired": "Evaluate brand compared to named competitor (explicit comparison)",
+    "context": "Evaluate brand in market that includes named competitor (ambient context)"
+  },
+  "temperature": 0.7,
+  "dimension_order": "Latin-square balanced (8 cyclic rotations)",
+  "models": [
+    {"name": "claude", "id": "claude-haiku-4-5-20251001", "provider": "Anthropic"},
+    {"name": "gpt", "id": "gpt-4o-mini", "provider": "OpenAI"},
+    {"name": "gemini", "id": "gemini-2.5-flash", "provider": "Google"},
+    {"name": "deepseek", "id": "deepseek-chat", "provider": "DeepSeek"},
+    {"name": "grok", "id": "grok-4-1-fast-non-reasoning", "provider": "xAI"}
+  ]
+}

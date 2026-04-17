@@ -1,0 +1,183 @@
+{
+  "experiment": "C_competitive_interference",
+  "n_records": 250,
+  "h1": {
+    "per_dimension": {
+      "semiotic": {
+        "solo_mean": 11.21,
+        "comp_mean": 11.36,
+        "shift": 0.15,
+        "t_stat": -0.281,
+        "p_value": 0.7787,
+        "cohens_d": -0.04,
+        "significant_bonferroni": false
+      },
+      "narrative": {
+        "solo_mean": 10.68,
+        "comp_mean": 11.44,
+        "shift": 0.76,
+        "t_stat": -1.325,
+        "p_value": 0.1864,
+        "cohens_d": -0.187,
+        "significant_bonferroni": false
+      },
+      "ideological": {
+        "solo_mean": 17.45,
+        "comp_mean": 16.5,
+        "shift": -0.95,
+        "t_stat": 0.889,
+        "p_value": 0.3749,
+        "cohens_d": 0.126,
+        "significant_bonferroni": false
+      },
+      "experiential": {
+        "solo_mean": 14.76,
+        "comp_mean": 13.93,
+        "shift": -0.83,
+        "t_stat": 1.193,
+        "p_value": 0.2342,
+        "cohens_d": 0.169,
+        "significant_bonferroni": false
+      },
+      "social": {
+        "solo_mean": 15.67,
+        "comp_mean": 14.98,
+        "shift": -0.69,
+        "t_stat": 0.891,
+        "p_value": 0.3739,
+        "cohens_d": 0.126,
+        "significant_bonferroni": false
+      },
+      "economic": {
+        "solo_mean": 11.97,
+        "comp_mean": 12.36,
+        "shift": 0.38,
+        "t_stat": -0.374,
+        "p_value": 0.7086,
+        "cohens_d": -0.053,
+        "significant_bonferroni": false
+      },
+      "cultural": {
+        "solo_mean": 10.56,
+        "comp_mean": 11.08,
+        "shift": 0.52,
+        "t_stat": -1.091,
+        "p_value": 0.2763,
+        "cohens_d": -0.154,
+        "significant_bonferroni": false
+      },
+      "temporal": {
+        "solo_mean": 7.69,
+        "comp_mean": 8.35,
+        "shift": 0.66,
+        "t_stat": -1.064,
+        "p_value": 0.2887,
+        "cohens_d": -0.15,
+        "significant_bonferroni": false
+      }
+    },
+    "significant_count": 0,
+    "supported": false,
+    "self_comparison_shift": 2.1,
+    "n_solo": 75,
+    "n_comp": 150
+  },
+  "h2": {
+    "per_type": {
+      "direct": {
+        "n": 50,
+        "mean": 10.273,
+        "std": 4.664,
+        "median": 9.055
+      },
+      "adjacent": {
+        "n": 50,
+        "mean": 9.531,
+        "std": 4.536,
+        "median": 8.544
+      },
+      "distant": {
+        "n": 50,
+        "mean": 10.495,
+        "std": 4.36,
+        "median": 9.667
+      }
+    },
+    "anova": {
+      "f_stat": 0.623,
+      "p_value": 0.5379,
+      "eta_squared": 0.0084
+    },
+    "supported": false,
+    "planned_contrast": {
+      "t_stat": -0.245,
+      "p_value": 0.8067,
+      "cohens_d": -0.049,
+      "direct_mean": 10.273,
+      "distant_mean": 10.495
+    }
+  },
+  "h3": {
+    "supported": false,
+    "contrast_mean_shift": -0.051,
+    "assimilation_mean_shift": 0.063,
+    "contrast_n": 660,
+    "assimilation_n": 540,
+    "t_stat": -0.502,
+    "p_value": 0.6161,
+    "cohens_d": -0.029
+  },
+  "exploratory": {
+    "model_susceptibility": {
+      "claude": {
+        "n": 35,
+        "mean_shift": 8.692
+      },
+      "deepseek": {
+        "n": 35,
+        "mean_shift": 8.687
+      },
+      "gemini": {
+        "n": 35,
+        "mean_shift": 8.51
+      },
+      "gpt": {
+        "n": 35,
+        "mean_shift": 15.368
+      },
+      "grok": {
+        "n": 35,
+        "mean_shift": 9.319
+      }
+    },
+    "paired_vs_context": {
+      "paired_mean": 10.586,
+      "context_mean": 9.613,
+      "t_stat": 1.325,
+      "p_value": 0.1874,
+      "cohens_d": 0.216
+    },
+    "per_brand": {
+      "Erewhon": {
+        "n": 35,
+        "mean_shift": 11.725
+      },
+      "Hermes": {
+        "n": 35,
+        "mean_shift": 10.072
+      },
+      "IKEA": {
+        "n": 35,
+        "mean_shift": 9.403
+      },
+      "Patagonia": {
+        "n": 35,
+        "mean_shift": 9.741
+      },
+      "Tesla": {
+        "n": 35,
+        "mean_shift": 9.636
+      }
+    }
+  }
+}
