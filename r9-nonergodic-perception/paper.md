@@ -26,7 +26,7 @@ Brand perception exhibits the same structural features that produce non-ergodici
 
 None of these observations is individually new. Asch (1946) demonstrated primacy effects in impression formation eight decades ago. Hogarth and Einhorn (1992) formalized order effects in belief updating. Kardes and Kalyanaram (1992) showed that order-of-entry effects persist in consumer judgment. Smith and Vogt (1995) documented that the order of advertising and word-of-mouth exposure produces different attitude outcomes. Siray (2016) developed formal models of path-dependent consumption. What is new is the recognition that these phenomena are all manifestations of a single underlying structure: non-ergodicity.
 
-The contribution of this paper is threefold. First, we identify brand perception as a non-ergodic process and specify the three structural features that produce the non-ergodicity: absorbing states, multiplicative dynamics, and path-dependent weighting. Second, we develop five formal propositions that derive testable predictions from the non-ergodic framework. Third, we connect the scattered empirical evidence from consumer psychology -- primacy effects, order effects, belief updating, path dependence -- to a unified theoretical explanation. The propositions are grounded in Spectral Brand Theory's (Author, 2026a) eight-dimensional perception space, where non-ergodicity operates across multiple dimensions simultaneously, and draw on the formal dynamic model developed in [Author] (2026j).
+The contribution of this paper is threefold. First, we identify brand perception as a non-ergodic process and specify the three structural features that produce the non-ergodicity: absorbing states, multiplicative dynamics, and path-dependent weighting. Second, we develop five formal propositions that derive testable predictions from the non-ergodic framework. Third, we connect the scattered empirical evidence from consumer psychology -- primacy effects, order effects, belief updating, path dependence -- to a unified theoretical explanation. The propositions are grounded in Spectral Brand Theory's (Author, 2026a) eight-dimensional perception space, where non-ergodicity operates across multiple dimensions simultaneously, and draw on the formal dynamic model developed in Zharnikov (2026j).
 
 The implications for practice are immediate. If brand perception is non-ergodic, then cross-sectional brand tracking is not merely noisy -- it is systematically biased. The direction of the bias is predictable: cross-sectional methods overestimate brand health for brands at risk of absorbing states and underestimate the strategic importance of touchpoint sequence. Brand managers who treat signal order as noise are discarding a first-order strategic variable.
 
@@ -68,9 +68,9 @@ These findings collectively demonstrate that brand perception violates a necessa
 
 Spectral Brand Theory (Author, 2026a) models brand perception as an eight-dimensional vector space defined by Semiotic, Narrative, Ideological, Experiential, Social, Economic, Cultural, and Temporal dimensions. Each observer forms a perception profile -- a weighted combination of brand signals filtered through their individual dimension weights (the observer spectral profile). Observers cluster into cohorts based on similar dimension weights, and cohort-level perception patterns emerge as perception clouds in eight-dimensional space.
 
-[Author] (2026j) developed the formal dynamic model, modeling perception evolution as a stochastic process on the positive octant of the 7-sphere ($S^7_+$), with signal encounters driving Brownian motion, signal decay creating drift toward a neutral prior, and negative conviction creating absorbing boundaries. That paper established four theorems: well-posedness of the stochastic differential equation, survival probability decay rates, spectral gap bounds for mixing, and formal non-ergodicity (time-average and ensemble-average divergence with probability 1).
+Zharnikov (2026j) developed the formal dynamic model, modeling perception evolution as a stochastic process on the positive octant of the 7-sphere ($S^7_+$), with signal encounters driving Brownian motion, signal decay creating drift toward a neutral prior, and negative conviction creating absorbing boundaries. That paper established four theorems: well-posedness of the stochastic differential equation, survival probability decay rates, spectral gap bounds for mixing, and formal non-ergodicity (time-average and ensemble-average divergence with probability 1).
 
-The present paper translates the mathematical machinery of [Author] (2026j) into a conceptual framework accessible to consumer psychology and brand management researchers. Where [Author] (2026j) operates in the language of stochastic differential equations and Laplace-Beltrami operators, this paper operates in the language of propositions, empirical evidence, and managerial implications. The two papers are complements: [Author] (2026j) provides the mathematical foundation; this paper provides the theoretical interpretation and connects to the empirical literature.
+The present paper translates the mathematical machinery of Zharnikov (2026j) into a conceptual framework accessible to consumer psychology and brand management researchers. Where Zharnikov (2026j) operates in the language of stochastic differential equations and Laplace-Beltrami operators, this paper operates in the language of propositions, empirical evidence, and managerial implications. The two papers are complements: Zharnikov (2026j) provides the mathematical foundation; this paper provides the theoretical interpretation and connects to the empirical literature.
 
 Three features of the SBT dynamic model are essential for the argument that follows:
 
@@ -116,7 +116,7 @@ An absorbing state is a perceptual configuration from which no transition is pos
 
 Consider an observer who, through accumulated negative experiences, reaches the conviction that a brand is fundamentally dishonest. This conviction does not occupy the same psychological space as a merely low attitude score. It functions as a categorical judgment -- a boundary crossing that restructures the observer's entire perceptual relationship to the brand. Subsequent positive signals are processed through the lens of this conviction: a generous corporate donation is interpreted as reputation-laundering; a quality improvement is dismissed as temporary; a sincere apology is perceived as strategic.
 
-In the language of SBT's dynamic model ([Author], 2026j), the absorbing state corresponds to the boundary of the positive octant $S^7_+$ -- the region where one or more perceptual dimensions reach zero. Once an observer's perception of a brand's Narrative or Ideological integrity reaches zero, the trajectory is effectively absorbed: it does not return to the interior.
+In the language of SBT's dynamic model (Zharnikov, 2026j), the absorbing state corresponds to the boundary of the positive octant $S^7_+$ -- the region where one or more perceptual dimensions reach zero. Once an observer's perception of a brand's Narrative or Ideological integrity reaches zero, the trajectory is effectively absorbed: it does not return to the interior.
 
 Absorbing states produce non-ergodicity through a selection mechanism. Over time, observers are progressively absorbed at the boundary, removing them from the active population. The ensemble average at time *t* is computed only over survivors -- those who have not yet been absorbed. But the time average for any individual includes the period before absorption and the absorbing state itself. As the population is depleted by absorption, the ensemble average increasingly represents a positively selected subpopulation, systematically diverging from typical individual trajectories.
 
@@ -188,7 +188,7 @@ In the SBT framework, this proposition has a geometric interpretation. The two s
 
 **Theoretical argument.** The asymmetry between positive and negative conviction reflects a fundamental asymmetry in human psychology: negative events are processed more deeply, weighted more heavily, and remembered longer than equivalently valenced positive events -- a pattern that Baumeister et al. (2001) term "bad is stronger than good" and document across evaluation, learning, and social relationships. In the brand context, this asymmetry is amplified by the trust asymmetry (Slovic, 1993): trust is built incrementally through repeated consistent positive signals and destroyed rapidly through single sufficiently negative signals. In SBT's language, positive conviction creates a perceptual state deep in the interior of $S^7_+$, far from absorbing boundaries. The distance from the boundary provides a buffer: negative signals move the perception toward the boundary, but if the starting position is sufficiently interior, many negative signals are required to reach absorption. The trajectory remains reversible as long as it stays in the interior.
 
-Negative conviction, by contrast, corresponds to a position at or near the boundary of $S^7_+$ -- a point where one or more dimensions are at or near zero. At the boundary, the dynamics change qualitatively. In SBT's formal model ([Author], 2026j), the boundary is absorbing: trajectories that reach it do not return. The psychological mechanism is the shift from evaluative processing to categorical processing. An observer with a slightly negative perception is still evaluating the brand incrementally, processing each new signal on its merits. An observer who has reached the conviction that the brand is "fundamentally dishonest" or "irredeemably harmful" has shifted to categorical processing: all subsequent signals are interpreted through the lens of the categorical judgment, and no individual signal is sufficient to overturn the category.
+Negative conviction, by contrast, corresponds to a position at or near the boundary of $S^7_+$ -- a point where one or more dimensions are at or near zero. At the boundary, the dynamics change qualitatively. In SBT's formal model (Zharnikov, 2026j), the boundary is absorbing: trajectories that reach it do not return. The psychological mechanism is the shift from evaluative processing to categorical processing. An observer with a slightly negative perception is still evaluating the brand incrementally, processing each new signal on its merits. An observer who has reached the conviction that the brand is "fundamentally dishonest" or "irredeemably harmful" has shifted to categorical processing: all subsequent signals are interpreted through the lens of the categorical judgment, and no individual signal is sufficient to overturn the category.
 
 This asymmetry is the direct analog of ruin in Peters' (2019) economic framework. An investor with positive wealth can always suffer losses; an investor who reaches zero (bankruptcy) is permanently removed from the game. The absorbing barrier at zero produces the divergence between time and ensemble averages that is the hallmark of non-ergodicity.
 
@@ -398,13 +398,13 @@ The practical implication is that crisis management should be evaluated not by t
 
 ### 7.1 Relationship to SBT's Formal Dynamic Model
 
-The propositions developed in this paper are conceptual translations of the formal results in [Author] (2026j). The relationship is summarized in Table 3.
+The propositions developed in this paper are conceptual translations of the formal results in Zharnikov (2026j). The relationship is summarized in Table 3.
 
 ---
 
-**Table 3: Correspondence Between Propositions and Formal Results in [Author] (2026j)**
+**Table 3: Correspondence Between Propositions and Formal Results in Zharnikov (2026j)**
 
-| This Paper | [Author] (2026j) | Mathematical Object |
+| This Paper | Zharnikov (2026j) | Mathematical Object |
 |---|---|---|
 | P1: Signal Order Effect | Path dependence of SDE solutions | Non-commutativity of stochastic integrals on $S^7_+$ |
 | P2: Absorbing State Asymmetry | Theorem 2 (survival probability) | Absorbing boundary at $\partial S^7_+$ with exponential decay |
@@ -414,7 +414,7 @@ The propositions developed in this paper are conceptual translations of the form
 
 ---
 
-The two papers serve complementary audiences. [Author] (2026j), with its stochastic differential equations and spectral theory, addresses the mathematical community and provides rigorous foundations. This paper, with its propositions and empirical mappings, addresses consumer psychology and brand management researchers and provides the interpretive framework.
+The two papers serve complementary audiences. Zharnikov (2026j), with its stochastic differential equations and spectral theory, addresses the mathematical community and provides rigorous foundations. This paper, with its propositions and empirical mappings, addresses consumer psychology and brand management researchers and provides the interpretive framework.
 
 ### 7.2 Relationship to Classical Brand Theory
 
@@ -436,7 +436,7 @@ The non-ergodic framework developed in this paper connects to a complementary co
 
 The framework developed in this paper is scoped to consumer brand perception (B2C contexts). Extension to B2B brand perception requires additional analysis: in B2B settings, purchasing decisions typically involve committees, formal evaluation processes, and contractual relationships that may introduce ergodicity-restoring mechanisms -- competitive bidding forces perceptual convergence, contractual terms create defined reset points, and formal review cycles impose structured reconsideration that can disrupt absorbing states. Whether the three sources of non-ergodicity (absorbing conviction, nonlinear dynamics, path-dependent weighting) operate with the same force in B2B perception is an open empirical question and a productive direction for future research.
 
-A geometric formalization of the non-ergodic divergence mechanism is suggested by recent work in differential geometry. Bobenko, Hoffmann, and Sageman-Furnas (2025) prove that two surfaces can share the same metric and the same mean curvature yet be genuinely non-congruent --- the Bonnet pair phenomenon. The brand perception analog is direct: two observers who arrive at identical spectral profiles via different non-ergodic trajectories are Bonnet pairs --- metrically equivalent but experientially distinct. The observer's trajectory through perception space is the "second fundamental form" that resolves the ambiguity: the metric (spectral profile) is necessary but not sufficient for brand identification in regimes where path dependence is strong. This connects the present paper's dynamic framework to the static measurement framework of brand triangulation ([Author], 2026y), which recovers the metric but requires trajectory information to resolve Bonnet-type ambiguity.
+A geometric formalization of the non-ergodic divergence mechanism is suggested by recent work in differential geometry. Bobenko, Hoffmann, and Sageman-Furnas (2025) prove that two surfaces can share the same metric and the same mean curvature yet be genuinely non-congruent --- the Bonnet pair phenomenon. The brand perception analog is direct: two observers who arrive at identical spectral profiles via different non-ergodic trajectories are Bonnet pairs --- metrically equivalent but experientially distinct. The observer's trajectory through perception space is the "second fundamental form" that resolves the ambiguity: the metric (spectral profile) is necessary but not sufficient for brand identification in regimes where path dependence is strong. This connects the present paper's dynamic framework to the static measurement framework of brand triangulation (Zharnikov, 2026y), which recovers the metric but requires trajectory information to resolve Bonnet-type ambiguity.
 
 A further limitation of this paper is that its propositions are derived theoretically and supported by existing evidence that was generated for other purposes. While the evidence is consistent with non-ergodic dynamics, it was not designed to test non-ergodicity directly. Direct tests would require:
 
@@ -468,7 +468,7 @@ The implications are both theoretical and practical. Theoretically, the non-ergo
 
 Practically, the framework identifies three high-leverage interventions. First, brand tracking should be supplemented with individual-level trajectory measurement and corrected for survivorship bias -- the divergence between what tracking reports and what consumers actually experience. Second, touchpoint sequence should be managed as a strategic variable, not treated as uncontrollable noise, with particular attention to first signals in each perceptual dimension. Third, crisis management should shift from evaluating average perception recovery (ensemble measure) to measuring absorption rate (the fraction of observers who crossed from attitude to conviction), because absorption is permanent while attitude shifts are recoverable.
 
-The paper connects to Spectral Brand Theory's broader research program (Author, 2026a, 2026d, 2026j) by providing the interpretive bridge between the formal mathematics of non-ergodic perception dynamics ([Author], 2026j) and the empirical and managerial implications. Non-ergodicity is not a mathematical curiosity; it is the reason why brand management requires trajectory-level thinking -- what SBT calls vectorized rather than rasterized brand management -- and why the distinction between these two modes is not a preference but a structural necessity.
+The paper connects to Spectral Brand Theory's broader research program (Author, 2026a, 2026d, 2026j) by providing the interpretive bridge between the formal mathematics of non-ergodic perception dynamics (Zharnikov, 2026j) and the empirical and managerial implications. Non-ergodicity is not a mathematical curiosity; it is the reason why brand management requires trajectory-level thinking -- what SBT calls vectorized rather than rasterized brand management -- and why the distinction between these two modes is not a preference but a structural necessity.
 
 The touchpoint sequence is not noise. It is signal.
 
@@ -530,13 +530,13 @@ Smith, R. E., & Vogt, C. A. (1995). The effects of integrating advertising and n
 
 Tversky, A., & Kahneman, D. (1974). Judgment under uncertainty: Heuristics and biases. *Science*, *185*(4157), 1124-1131.
 
-[Author] (2026a). [Details removed for blind review].
+Zharnikov, D. (2026a). Spectral Brand Theory: A multi-dimensional framework for brand perception analysis. Working Paper. https://doi.org/10.5281/zenodo.18945912
 
-[Author] (2026d). [Details removed for blind review].
+Zharnikov, D. (2026d). Brand space geometry: A formal metric for multi-dimensional brand perception. Working Paper. https://doi.org/10.5281/zenodo.18945295
 
-[Author] (2026j). [Details removed for blind review].
+Zharnikov, D. (2026j). Non-ergodic brand perception: Diffusion dynamics on multi-dimensional perceptual manifolds. Working Paper. https://doi.org/10.5281/zenodo.18945659
 
-[Author] (2026y). [Details removed for blind review].
+Zharnikov, D. (2026y). Brand triangulation: A geometric framework for multi-observer brand positioning. Working Paper. https://doi.org/10.5281/zenodo.19482547
 
 ---
 *This paper is part of the Spectral Brand Theory research program. For the full atlas of 20+ interconnected papers, see [spectralbranding.com/atlas](https://spectralbranding.com/atlas).*
