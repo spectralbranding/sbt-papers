@@ -551,8 +551,6 @@ Wedel, M., & Kamakura, W. A. (2000). *Market segmentation: Conceptual and method
 
 Wyszecki, G., & Stiles, W. S. (1982). *Color science: Concepts and methods, quantitative data and formulae* (2nd ed.). Wiley.
 
-Kulyk, Volodymyr (2019). National identity in Ukraine after Euromaidan. In *Paradox of Ukrainian Lviv*, edited by Tarik Amar, 267–290. Ithaca: Cornell University Press.
-
 Zharnikov, D. (2026a). Spectral Brand Theory: A multi-dimensional framework for brand perception analysis. Working Paper. https://doi.org/10.5281/zenodo.18945912
 
 Zharnikov, D. (2026aa). Empirical rate-distortion curve for AI brand perception encoders. Working Paper. https://doi.org/10.5281/zenodo.19528833
