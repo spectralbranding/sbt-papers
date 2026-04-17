@@ -1,0 +1,52 @@
+{
+  "C1": {
+    "name": "Green Advocate",
+    "implied_dims": ["Ideological", "Narrative"],
+    "vignette": "Marina cycles to work year-round and volunteers at a food co-op on weekends. She switched her bank account last year after learning her previous bank financed pipeline construction. Before buying anything packaged, she checks for third-party certifications and reads the sourcing disclosure on the company website. She keeps a notebook where she tracks which brands have changed their supply-chain practices over time."
+  },
+  "C2": {
+    "name": "Taste Curator",
+    "implied_dims": ["Semiotic", "Social"],
+    "vignette": "Dario lives in a converted loft in the gallery district and frequents a members-only dining club on Thursday evenings. He rotates between three tailors for his shirts, prefers restaurants that seat fewer than thirty, and will not carry a bag or wear a watch that he has seen on more than two other people at the same event. His apartment contains no visible branding except on book spines."
+  },
+  "C3": {
+    "name": "Spreadsheet Shopper",
+    "implied_dims": ["Economic", "Experiential"],
+    "vignette": "Jun maintains a shared spreadsheet where she logs the per-unit cost and durability rating of every household product she buys. She waits for end-of-season clearance sales, reads teardown reviews on engineering forums, and bought her current phone refurbished after comparing benchmark scores across six models. She canceled a streaming subscription when the hourly entertainment cost exceeded her threshold."
+  },
+  "C4": {
+    "name": "Feed Native",
+    "implied_dims": ["Social", "Semiotic"],
+    "vignette": "Priya posts unboxing videos for her 8,000 followers and rates every purchase on at least two platforms. She screenshots outfits and room setups that catch her eye and saves them in folders organized by color palette. She adopted three micro-trends in the past month -- each lasting about two weeks -- and tracks which of her friends reposted her recommendations."
+  },
+  "C5": {
+    "name": "Long Habit",
+    "implied_dims": ["Temporal", "Cultural"],
+    "vignette": "Gerald has ordered the same coffee at the same cafe every morning for twenty-two years. He resoled his leather shoes twice rather than replacing them, keeps a handwritten ledger of household expenses, and spends two weeks each August at the same coastal cottage his parents rented. When an appliance breaks, his first call is to a repair shop, not a retailer."
+  },
+  "C6": {
+    "name": "Collective Organizer",
+    "implied_dims": ["Social", "Cultural"],
+    "vignette": "Amara hosts a large family dinner every Sunday and coordinates a monthly potluck for her apartment building. She lends kitchen equipment and tools to neighbors without hesitation, organized a group trip for twelve relatives last summer, and keeps a rotating calendar of birthdays, name days, and local festivals so that no occasion passes unacknowledged."
+  },
+  "C7": {
+    "name": "Experience Collector",
+    "implied_dims": ["Experiential", "Narrative"],
+    "vignette": "Tomasz books flights to cities he has never visited and picks accommodation by proximity to neighborhoods not listed in guidebooks. He fills a journal per trip, tries a different restaurant every evening, and has enrolled in courses ranging from glassblowing to emergency wilderness medicine. When friends ask for a recommendation, he gives a ten-minute account of how he discovered the place."
+  },
+  "C8": {
+    "name": "Decade Planner",
+    "implied_dims": ["Economic", "Temporal"],
+    "vignette": "Sonia selects appliances by calculating the ten-year cost of ownership, including energy consumption and replacement parts availability. She maintains a detailed home-maintenance log with scheduled service dates for every major fixture, chooses products from manufacturers that have been operating for at least forty years, and built a twelve-month emergency fund before putting a single dollar into equities."
+  },
+  "C9": {
+    "name": "Deep Reader",
+    "implied_dims": ["Narrative", "Ideological"],
+    "vignette": "Mikhail annotates the margins of every book he reads and subscribes to four long-form magazines. He writes letters to editors when an article misrepresents a source, attends public lectures at the university most Thursdays, and maintains a personal reference library organized by subject rather than author. He selects products from companies whose published reports he has actually read."
+  },
+  "C10": {
+    "name": "Spec Evaluator",
+    "implied_dims": ["Experiential", "Semiotic"],
+    "vignette": "Lena reads technical documentation before purchasing any device and benchmarks her electronics against manufacturer claims. She prefers products that publish full performance data and has disassembled two laptops and a coffee machine to understand their internal design. She dismissed a well-reviewed headphone after finding that its frequency-response curve did not match the advertised specification."
+  }
+}

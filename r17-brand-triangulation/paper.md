@@ -605,6 +605,20 @@ The most pressing empirical extension is an Option B study incorporating human o
 
 Beyond the immediate human cohort extension, three research directions follow from the framework. First, implementing DOP-aware cohort selection in a live brand tracking study — selecting human cohort composition using pre-study PDOP computation — would test whether geometric optimization produces measurable precision gains relative to demographically-selected cohorts. Second, validating the calibration brand stability assumption across cultural contexts requires cross-cultural replication of the Hermes, IKEA, and Patagonia profiles, establishing whether these brands function as reliable DGPS base stations outside Western markets. Third, extending the 8-dimensional corridor proof (Section 7) to the multi-dimensional case requires the vector-valued invariant extension identified by Medesani & Macdonald (2026) as future work — a formal open problem that limits the current framework to approximation-based corridor assessment in R^8.
 
+### 10.5 Measurement Invariance Evidence
+
+A synthetic cohort pre-pilot using Experiment 1 baseline data (741 records, 10 behaviorally distinct observer cohorts, 5 brands) provides direct evidence for the measurement properties the triangulation framework requires. No additional API calls were needed; the analysis reuses existing PRISM-B data.
+
+**Configural invariance (H1): confirmed.** No dimensions are systematically zeroed by any cohort. All 10 cohorts produce non-zero weights on all 8 dimensions, confirming that PRISM-B's 8-factor structure is robust across observer types with distinct behavioral profiles.
+
+**Metric invariance (H2): fails, as SBT predicts.** The overall median within-brand Spearman rho across cohort pairs is .548, below the .70 threshold for metric invariance. Patagonia shows the strongest cross-cohort agreement (median rho = .635); Hermes and IKEA the weakest (.452). Dimension rank-ordering differs systematically across cohorts — this is precisely the observer heterogeneity that SBT predicts and that the triangulation framework exploits. Metric invariance failure is not a psychometric deficiency; it is the structural condition that makes triangulation informative.
+
+**Scalar invariance (H3): fails, as SBT predicts.** All 8 dimensions show significant Kruskal-Wallis tests across cohorts (all p < .001). Economic shows the largest effect (epsilon-squared = .362); Cultural the smallest (.083). Cross-cohort variance ranks as follows: Economic (.00395) > Ideological (.00119) > Social (.00090) > Experiential (.00084) > Semiotic (.00060) > Narrative (.00059) > Temporal (.00049) > Cultural (.00014).
+
+The variance ranking carries a substantive interpretation. Economic is the most observer-dependent dimension: cohorts with different purchasing philosophies disagree most about economic positioning. Cultural is the most stable — cultural meaning may be more inherent to the brand than projected by the observer. This ranking directly maps to Perception DOP: observer-sample composition affects measurement precision most on high-variance dimensions (Economic, Ideological) and least on low-variance dimensions (Cultural, Temporal). Study designs that seek precise Economic positioning estimates require greater observer diversity than those targeting Cultural positioning.
+
+The measurement invariance pattern — configural invariance holding while metric and scalar invariance fail — is the exact signature predicted by SBT's multi-observer framework. It confirms that different cohorts perceive the same dimensional structure (the 8 factors exist for everyone) but weight those dimensions differently (the factor loadings and intercepts vary across cohorts). This is the formal justification for the triangulation approach: if metric invariance held, simple averaging would suffice and triangulation would be unnecessary; because it fails structurally, the geometric framework developed in this paper is required to recover brand position from heterogeneous observer measurements.
+
 ---
 
 ## 11. Limitations and Future Research
