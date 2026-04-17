@@ -457,23 +457,11 @@ Aaker, J. L. (1997). Dimensions of brand personality. *Journal of Marketing Rese
 
 Acar, O. A., & Schweidel, D. A. (2026). Preparing your brand for agentic AI. *Harvard Business Review*, March-April 2026.
 
-Allouah, A., Besbes, O., Figueroa, J. D., Kanoria, Y., & Kumar, A. (2025). What is your AI agent buying? Evaluation, biases, model dependence, and emerging implications for agentic e-commerce. arXiv:2508.02630v3.
-
-Bansal, G., Hua, W., Huang, Z., Fourney, A., Swearngin, A., Epperson, W., Payne, T., Hofman, J. M., Lucier, B., Singh, C., Mobius, M., Nambi, A., Yadav, A., Gao, K., Rothschild, D. M., Slivkins, A., Goldstein, D. G., Mozannar, H., Immorlica, N., Murad, M., Vogel, M., Kambhampati, S., Horvitz, E., & Amershi, S. (2025). Magentic marketplace: An open-source environment for studying agentic markets. arXiv:2510.25779.
-
-Bilkey, W. J., & Nes, E. (1982). Country-of-origin effects on product evaluations. *Journal of International Business Studies*, 13(1), 89-99.
-
 Brakus, J. J., Schmitt, B. H., & Zarantonello, L. (2009). Brand experience: What is it? How is it measured? Does it affect loyalty? *Journal of Marketing*, 73(3), 52-68. https://doi.org/10.1509/jmkg.73.3.052
-
-Campbell, C., Plangger, K., Sands, S., Kietzmann, J., & Bates, K. (2022). How deepfakes and artificial intelligence could reshape the advertising industry. *Journal of Advertising Research*, 62(3), 241-251.
-
-Campbell, C., Sands, S., Ferraro, C., Tsao, H.-Y., & Mavrommatis, A. (2020). From data to action: How marketers can leverage AI. *Business Horizons*, 63(2), 227-243.
 
 Cover, T. M., & Thomas, J. A. (2006). *Elements of information theory* (2nd ed.). Wiley-Interscience.
 
 Dawar, N., & Bendle, N. (2018). Marketing in the age of Alexa. *Harvard Business Review*, 96(3), 80-86.
-
-Davenport, T., Guha, A., Grewal, D., & Bressgott, T. (2020). How artificial intelligence will change the future of marketing. *Journal of the Academy of Marketing Science*, 48, 24-42.
 
 De Bruyn, A., Viswanathan, V., Beh, Y. S., Brock, J. K.-U., & von Wangenheim, F. (2020). Artificial intelligence and marketing: Pitfalls and opportunities. *Journal of Interactive Marketing*, 51, 91-105.
 
@@ -487,8 +475,6 @@ Efron, B., & Morris, C. (1975). Data analysis using Stein's estimator and its ge
 
 Erdem, T., & Swait, J. (1998). Brand equity as a signaling phenomenon. *Journal of Consumer Psychology*, 7(2), 131-157.
 
-Estevez, V., Parra, D., & Locarno, A. (2025). Market research and knowledge using Generative AI: The power of Large Language Models. *Journal of Innovation & Knowledge*, 10(2), 100703. https://doi.org/10.1016/j.jik.2025.100703
-
 Gersho, A., & Gray, R. M. (1991). *Vector quantization and signal compression*. Kluwer Academic Publishers.
 
 Hagendorff, T., Fabi, S., & Kosinski, M. (2023). Human-like intuitive behavior and reasoning biases emerged in large language models but disappeared in ChatGPT. *Nature Computational Science*, 3, 833-838.
@@ -501,8 +487,6 @@ Hermann, E., & Puntoni, S. (2024). Artificial intelligence and consumer behavior
 
 Hermann, E., Puntoni, S., & Schweidel, D. A. (2026). Trusting AI agents: Uncertainty reduction by design. *Working Paper*, SSRN. https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6103206
 
-Huang, M.-H., & Rust, R. T. (2021). A strategic framework for artificial intelligence in marketing. *Journal of the Academy of Marketing Science*, 49, 30-50.
-
 James, W., & Stein, C. (1961). Estimation with quadratic loss. *Proceedings of the Fourth Berkeley Symposium on Mathematical Statistics and Probability*, 1, 361-379.
 
 Johnson, W. B., & Lindenstrauss, J. (1984). Extensions of Lipschitz mappings into a Hilbert space. In *Conference in Modern Analysis and Probability* (pp. 189-206). American Mathematical Society.
@@ -511,15 +495,7 @@ Kapferer, J.-N. (2008). *The new strategic brand management: Creating and sustai
 
 Keller, K. L. (1993). Conceptualizing, measuring, and managing customer-based brand equity. *Journal of Marketing*, 57(1), 1-22.
 
-Kim, J., & Priluck, R. (2025). Consumer responses to generative AI chatbots versus search engines for product evaluation. *Journal of Theoretical and Applied Electronic Commerce Research*, 20(2), 93.
-
-Kietzmann, J., Paschen, J., & Treen, E. (2018). Artificial intelligence in advertising: How marketers can leverage artificial intelligence along the consumer journey. *Journal of Advertising Research*, 58(3), 263-267.
-
-Klein, J. G., Ettenson, R., & Morris, M. D. (1998). The animosity model of foreign product purchase: An empirical test in the People's Republic of China. *Journal of Marketing*, 62(1), 89-100.
-
 Liu, M. (2026). The alignment tax: Response homogenization in aligned LLMs and its implications for uncertainty estimation. arXiv:2603.24124. https://arxiv.org/abs/2603.24124
-
-Lei, Y., & Liu, Y. (2025). When AI becomes a shopping advisor: A study on the impact of generative AI review on consumer purchase decision. *SAGE Open*, 15(1). https://doi.org/10.1177/21582440251357671
 
 Longoni, C., & Cian, L. (2022). Artificial intelligence in utilitarian vs. hedonic contexts: The "word-of-machine" effect. *Journal of Marketing*, 86(1), 91-108.
 
@@ -529,11 +505,7 @@ Lyu, Yougang, Zhang, Xiaoyu, Yan, Lingyong, de Rijke, Maarten, Ren, Zhaochun, & 
 
 Lynch, J. G., & Ariely, D. (2000). Wine online: Search costs affect competition on price, quality, and distribution. *Marketing Science*, 19(1), 83-103.
 
-Medesani, M., & Macdonald, J. (2026). Geometric foundations of invariant corridors and governance. Working Paper. https://doi.org/10.5281/zenodo.18822552
-
 Puntoni, S., Reczek, R. W., Giesler, M., & Botti, S. (2021). Consumers and artificial intelligence: An experiential perspective. *Journal of Marketing*, 85(1), 131-151.
-
-Ribeiro, F., Oliveira, A. S., & Mendes-Filho, L. (2025). The impact of artificial intelligence on consumer behavior towards brands: A systematic review. *Electronic Commerce Research*. https://doi.org/10.1007/s10660-025-10063-7
 
 Sabbah, J., & Acar, O. A. (2026). Marketing to machines: How AI models respond to promotional cues. Working Paper. SSRN 6406639.
 
@@ -545,8 +517,6 @@ Tversky, A. (1972). Elimination by aspects: A theory of choice. *Psychological R
 
 Van Doren, M., & Holland, C. (2025). "Be My Cheese?": Assessing cultural nuance in multilingual LLM translations. arXiv:2509.21577. https://arxiv.org/abs/2509.21577
 
-Verlegh, P. W. J., & Steenkamp, J.-B. E. M. (1999). A review and meta-analysis of country-of-origin research. *Journal of Economic Psychology*, 20(5), 521-546.
-
 Wedel, M., & Kamakura, W. A. (2000). *Market segmentation: Conceptual and methodological foundations* (2nd ed.). Kluwer Academic Publishers.
 
 Wyszecki, G., & Stiles, W. S. (1982). *Color science: Concepts and methods, quantitative data and formulae* (2nd ed.). Wiley.
@@ -555,11 +525,9 @@ Zharnikov, D. (2026a). Spectral Brand Theory: A multi-dimensional framework for 
 
 Zharnikov, D. (2026aa). Empirical rate-distortion curve for AI brand perception encoders. Working Paper. https://doi.org/10.5281/zenodo.19528833
 
-Zharnikov, D. (2026e). Spectral metamerism in brand perception: Projection bounds from high-dimensional geometry. Working Paper. https://doi.org/10.5281/zenodo.18945352
-
 Zharnikov, D. (2026x). AI-native brand identity: From visual recognition to cryptographic verification. Working Paper. https://doi.org/10.5281/zenodo.19391476
 
-<!-- Self-citation audit (updated Session 106, JMR revision): 4 Zharnikov entries retained (2026a, 2026aa, 2026e, 2026x) out of ~62 total = ~6.5%. Removed: 2026c (orphan), 2026g (orphan), 2026f (replaced with Wedel & Kamakura 2000), 2026l (replaced with information theory framing), 2026o (replaced with Peters 2019), 2026q (replaced with Erdem & Swait 1998), 2026y (cut, not essential). -->
+<!-- Self-citation audit (Session 107): 3 Zharnikov entries (2026a, 2026aa, 2026x) out of 41 total = 7.3%. 15 uncited orphan references removed after structural revision. -->
 
 ---
 
