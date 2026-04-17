@@ -1,0 +1,82 @@
+{
+  "en": {
+    "Semiotic": "Semiotic",
+    "Narrative": "Narrative",
+    "Ideological": "Ideological",
+    "Experiential": "Experiential",
+    "Social": "Social",
+    "Economic": "Economic",
+    "Cultural": "Cultural",
+    "Temporal": "Temporal"
+  },
+  "zh": {
+    "Semiotic": "符号学",
+    "Narrative": "叙事",
+    "Ideological": "意识形态",
+    "Experiential": "体验",
+    "Social": "社会",
+    "Economic": "经济",
+    "Cultural": "文化",
+    "Temporal": "时间"
+  },
+  "ru": {
+    "Semiotic": "Семиотический",
+    "Narrative": "Нарративный",
+    "Ideological": "Идеологический",
+    "Experiential": "Эмпирический",
+    "Social": "Социальный",
+    "Economic": "Экономический",
+    "Cultural": "Культурный",
+    "Temporal": "Темпоральный"
+  },
+  "ja": {
+    "Semiotic": "記号論的",
+    "Narrative": "物語的",
+    "Ideological": "イデオロギー的",
+    "Experiential": "体験的",
+    "Social": "社会的",
+    "Economic": "経済的",
+    "Cultural": "文化的",
+    "Temporal": "時間的"
+  },
+  "ko": {
+    "Semiotic": "기호학적",
+    "Narrative": "서사적",
+    "Ideological": "이념적",
+    "Experiential": "체험적",
+    "Social": "사회적",
+    "Economic": "경제적",
+    "Cultural": "문화적",
+    "Temporal": "시간적"
+  },
+  "ar": {
+    "Semiotic": "سيميائي",
+    "Narrative": "سردي",
+    "Ideological": "أيديولوجي",
+    "Experiential": "تجريبي",
+    "Social": "اجتماعي",
+    "Economic": "اقتصادي",
+    "Cultural": "ثقافي",
+    "Temporal": "زمني"
+  },
+  "hi": {
+    "Semiotic": "चिह्नशास्त्रीय",
+    "Narrative": "कथात्मक",
+    "Ideological": "वैचारिक",
+    "Experiential": "अनुभवात्मक",
+    "Social": "सामाजिक",
+    "Economic": "आर्थिक",
+    "Cultural": "सांस्कृतिक",
+    "Temporal": "कालिक"
+  },
+  "es": {
+    "Semiotic": "Semiótico",
+    "Narrative": "Narrativo",
+    "Ideological": "Ideológico",
+    "Experiential": "Experiencial",
+    "Social": "Social",
+    "Economic": "Económico",
+    "Cultural": "Cultural",
+    "Temporal": "Temporal"
+  }
+}
