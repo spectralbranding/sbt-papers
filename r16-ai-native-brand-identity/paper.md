@@ -2,7 +2,7 @@
 
 **Dmitry Zharnikov**
 
-*Working Paper v1.7 — April 2026*
+*Working Paper v1.8.1 — April 2026*
 
 *Zenodo DOI: [10.5281/zenodo.19391476](https://doi.org/10.5281/zenodo.19391476)*
 
