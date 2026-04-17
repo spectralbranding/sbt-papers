@@ -39,7 +39,6 @@ provenance:
         community: ["spectral-branding"]
       notes: >
         v1.0 preprint. 12 sections, 6 propositions, 45 references. ~14,263 words.
-        Targets: Marketing Science (primary), Journal of Marketing Research (fallback).
         v1.2 PDF update pending Zenodo upload.
 
 submission_timeline:
@@ -54,15 +53,9 @@ submission_timeline:
     notes: "v1.2 PDF regenerated. Zenodo upload pending."
 
   - date: "2026-04-15"
-    event: "Manuscript targeted for submission to Marketing Science"
+    event: "Journal submission planned"
     status: "planned"
-    notes: >
-      Estimated submission date. Allows 2 weeks from preprint for final copyedits.
-      Expected decision window: 6–8 weeks (~late May–early June 2026).
 
   - date: "2026-06-15"
-    event: "Fallback submission to Journal of Marketing Research if Marketing Science pending"
+    event: "Fallback journal submission if primary pending"
     status: "contingent"
-    notes: >
-      If Marketing Science has not responded by mid-June, submit to JMR.
-      Expected JMR turnaround: 8–10 weeks (~Aug–Sep 2026).

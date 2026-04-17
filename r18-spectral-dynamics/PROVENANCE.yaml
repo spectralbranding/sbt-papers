@@ -48,8 +48,5 @@ submission_timeline:
     notes: "v1.1 PDF regenerated. Zenodo upload pending."
 
   - date: "2026-04-15"
-    event: "Manuscript targeted for submission to JMR"
+    event: "Journal submission planned"
     status: "planned"
-    notes: >
-      Estimated submission date. Requires double-blind masking and docx generation.
-      Expected decision window: 3-6 months (~Jul-Oct 2026).

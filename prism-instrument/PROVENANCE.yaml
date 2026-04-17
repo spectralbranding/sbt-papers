@@ -29,12 +29,7 @@ provenance:
   forks: []
 
   target_venue:
-    journal: "Journal of Marketing Research"
-    publisher: "SAGE / AMA"
+    journal: "[withheld]"
     status: "pre-submission"
 
-  target_venue_alt:
-    - journal: "Organizational Research Methods"
-      publisher: "SAGE"
-    - journal: "Journal of the Academy of Marketing Science"
-      publisher: "Springer"
+  target_venue_alt: []

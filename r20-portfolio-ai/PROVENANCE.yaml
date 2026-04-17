@@ -25,12 +25,7 @@ provenance:
   forks: []
 
   target_venue:
-    journal: "Journal of Marketing"
-    publisher: "American Marketing Association"
+    journal: "[withheld]"
     status: "pre-submission"
 
-  target_venue_alt:
-    - journal: "Marketing Science"
-      publisher: "INFORMS"
-    - journal: "International Journal of Research in Marketing"
-      publisher: "Elsevier"
+  target_venue_alt: []

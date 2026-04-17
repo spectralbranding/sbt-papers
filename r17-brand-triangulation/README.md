@@ -31,10 +31,6 @@ Brand positioning research faces a fundamental measurement problem: every observ
 - **Tri-binding Admissibility**: Three simultaneous conditions (geometric, governance, temporal) for brand health
 - **Perception Kalman Filter**: Dynamic tracking of 8D brand trajectories over time
 
-## Target Venue
-
-Marketing Science (measurement methodology). Fallback: JMR, Psychometrika.
-
 ## Data
 
 This paper reanalyzes R15 experiment data (Runs 2-4: 4,860 API calls, 6 LLMs, 15 brand pairs — the subset used for the GPS-SBT illustration). No new data collection. Source data: `../r15-ai-search-metamerism/experiment/`

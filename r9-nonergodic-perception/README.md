@@ -8,7 +8,7 @@
 
 **Citation key**: 2026o
 
-**Status**: Working paper v2.1 | Submission history: JM desk-rejected, JAR desk-rejected | Next venue: IJA
+**Status**: Working paper v2.1
 
 ## Abstract
 
@@ -32,10 +32,6 @@ Brand tracking assumes cross-sectional averages (ensemble averages) yield the sa
 - **Multiplicative Signal Dynamics**: Brand signals interact with existing perception rather than adding to a blank slate
 - **Path-Dependent Dimension Weighting**: Different cohort weight vectors produce divergent trajectories from identical signal sequences
 - **Empirical Anchor**: R15 dataset (21,601 API calls, 24 LLMs) corroborates cohort divergence findings
-
-## Target Venue
-
-International Journal of Advertising (IJA). Fallback: Journal of Brand Management, Psychology & Marketing.
 
 ## Data
 

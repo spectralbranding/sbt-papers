@@ -51,7 +51,5 @@ provenance:
       note: "v1.4 uploaded 2026-04-05; v1.5 pending upload"
 
   target_venue:
-    journal: "Journal of Interactive Marketing"
-    publisher: "Elsevier/SAGE"
+    journal: "[withheld]"
     status: "pre-submission"
-    note: "Submission after Zenodo v1.2 upload"

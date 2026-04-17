@@ -11,7 +11,7 @@ meta:
   doi: "10.5281/zenodo.19294864"
   date: "2026-04-16"
   version: "2.0.1"
-  venue: "Zenodo preprint (JASIST desk-rejected 2026-04-02; JLSC desk-rejected 2026-04-16; target SRC)"
+  venue: "Zenodo preprint (under review)"
   license: "CC-BY-4.0"
   keywords:
     - scientific publishing
@@ -296,23 +296,18 @@ submission_history:
     notes: >
       v1.0 initial preprint. ~13,850 words, 35 references, 7 claims.
       Self-referential implementation. CC BY-NC-ND 4.0.
-  - venue: "JASIST (Journal of the Association for Information Science and Technology)"
+  - venue: "[withheld]"
     date: "2026-03-29"
     status: "desk_rejected"
-    manuscript_id: "JASIST-2026-03-0533"
-    decision_date: "2026-04-02"
     doi: ""
     notes: >
-      Desk rejection #1. Editor: Dr. Steve Sawyer. Reason: "not clear that the
-      work draws on information science literature." Paper read as software
-      engineering import. ~6,312 words body, 40 refs. Single-blind. ScholarOne.
-  - venue: "JLSC (Journal of Librarianship and Scholarly Communication)"
+      ~6,312 words body, 40 refs. Single-blind.
+  - venue: "[withheld]"
     date: "2026-04-02"
     status: "under_review"
-    manuscript_id: "25252"
     doi: ""
     notes: >
-      Venue #2. Diamond OA (no APC). Double-anonymous. Theory article.
+      Diamond OA (no APC). Double-anonymous. Theory article.
       Cross-domain reframing, Stodden + Altman refs added, structured abstract.
   - venue: "Zenodo"
     date: "2026-04-05"

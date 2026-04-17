@@ -11,7 +11,7 @@ meta:
   doi: "10.5281/zenodo.19482547"
   date: "2026-04-16"
   version: "1.2.1"
-  venue: "Zenodo preprint (target: Marketing Science; fallback: JMR)"
+  venue: "Zenodo preprint"
   license: "CC-BY-4.0"
   keywords:
     - brand positioning
@@ -357,7 +357,5 @@ submission_history:
       Monte Carlo PDOP validation (Section 9.6): R^2 = 0.926, Spearman rho = 0.996.
       Session 90: dark signals/PDOP blind spots, Bonnet pairs metric insufficiency,
       Karcher mean curved-space generalization (all in Section 11).
-      Target journals: Marketing Science (primary), Journal of Marketing Research (fallback).
-      After Zenodo publication, submission timeline: April 2026 (allow 3–4 weeks for decision).
       v1.2 (2026-04-16): Added supplementary experiment citations (agentic
       compounding, BF format optimization) in Section 10.3.
