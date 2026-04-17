@@ -9,8 +9,8 @@ meta:
       orcid: "0009-0000-6893-9231"
       affiliation: "Independent Researcher"
   doi: "10.5281/zenodo.18945522"
-  date: "2026-01-01"
-  version: "1.0"
+  date: "2026-04-16"
+  version: "1.1"
   venue: "Working Paper (Zenodo)"
   license: "CC-BY-4.0"
   keywords:
@@ -314,4 +314,12 @@ repositories:
   - platform: "GitHub"
     url: "https://github.com/spectralbranding/sbt-papers/tree/main/r4-sphere-packing"
 
-submission_history: []
+submission_history:
+  - venue: "Zenodo"
+    type: preprint
+    date: "2026-04-16"
+    status: published
+    doi: "10.5281/zenodo.18945522"
+    note: >
+      v1.1 (2026-04-16): Added Section 10.5 (Empirical Test: Competitive
+      Interference, 250 calls, null result validates fixed-geometry assumptions).

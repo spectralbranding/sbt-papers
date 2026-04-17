@@ -2,7 +2,7 @@
 
 **Dmitry Zharnikov**
 
-Working Paper | Citation key: 2026z | https://doi.org/10.5281/zenodo.19468204
+Working Paper v1.1 | Citation key: 2026z | https://doi.org/10.5281/zenodo.19468204
 
 ---
 
@@ -100,7 +100,7 @@ The acceleration captures whether brand movement is intensifying (|**v**| increa
 
 **Remark (Smoothness and the SDE).** The SDE of Zharnikov (2026j) produces sample paths that are continuous but almost surely nowhere differentiable -- a standard property of diffusion processes. The velocity defined here is therefore not the pathwise derivative (which does not exist) but the *expected rate of change conditioned on the current state*: **v**(t) = E[d**X**/dt | **X**_t] = mu(**X**_t, t), i.e., the drift function of the SDE. In practice, velocity is estimated from discrete-time measurements via finite differences or Kalman filtering (Section 3.7), both of which produce smooth estimates of the underlying drift. This is standard in all applications of state-space models to noisy processes: the estimated velocity is the posterior mean of the drift, not a pathwise derivative. All definitions, propositions, and theorems in this paper should be understood in this sense: "velocity" denotes the estimated drift, not a classical derivative of a non-differentiable sample path.
 
-**Remark (Lossy projection of the dynamics).** The position $\mathbf{x}(t)$, velocity $\mathbf{v}(t)$, and acceleration $\mathbf{a}(t)$ are defined in the full 8-dimensional perception space $\mathbb{R}^8$. Any individual observer measurement, however, is a lossy projection of this state onto a lower-dimensional observable subspace determined by that observer's spectral weight vector. Reconstructing the full trajectory from observer-side measurements is therefore a source-coding problem with side information (Cover & Thomas, 2006): the rate of distortion depends on the observer's effective channel capacity and on the geometric diversity of the observer constellation, in the sense formalized by R17 (Zharnikov, 2026y). Velocities and accelerations recovered from a low-rank observer constellation are subject to the same rate-distortion bounds as the position estimates from which they are derived. We use this framing only to situate the differential calculus in standard information-theoretic terms; no estimator in this paper depends on it. This framing has been empirically confirmed: Zharnikov (2026aa) finds a J-shaped rate-distortion curve across 17 LLM architectures, with all models converging on the same operating point (cross-model CV = .140), demonstrating that the rate-distortion constraint governs AI brand perception encoders at scale.
+**Remark (Lossy projection of the dynamics).** The position $\mathbf{x}(t)$, velocity $\mathbf{v}(t)$, and acceleration $\mathbf{a}(t)$ are defined in the full 8-dimensional perception space $\mathbb{R}^8$. Any individual observer measurement, however, is a lossy projection of this state onto a lower-dimensional observable subspace determined by that observer's spectral weight vector. Reconstructing the full trajectory from observer-side measurements is therefore a source-coding problem with side information (Cover & Thomas, 2006): the rate of distortion depends on the observer's effective channel capacity and on the geometric diversity of the observer constellation, in the sense formalized by R17 (Zharnikov, 2026y). Velocities and accelerations recovered from a low-rank observer constellation are subject to the same rate-distortion bounds as the position estimates from which they are derived. We use this framing only to situate the differential calculus in standard information-theoretic terms; no estimator in this paper depends on it.
 
 ### 3.2 Discrete-Time Estimation
 
@@ -476,7 +476,11 @@ The dynamic framework is needed when:
 
 This correspondence principle parallels the SBT analogy stack: classical brand measurement is the "Newtonian limit" of the full dynamic framework, valid when the "velocity" of brand perception is small relative to measurement precision. The distinction between persistent and transient marketing effects (Dekimpe & Hanssens, 1995) maps naturally onto this framework: persistent effects produce sustained velocity (the brand moves to a new equilibrium), while transient effects produce temporary velocity that decays (the brand returns to its prior position). The velocity framework thus provides the measurement language for Dekimpe and Hanssens' persistence distinction applied to multi-dimensional brand perception.
 
-### 8.4 Future Research
+### 8.4 Competitive Context Stability
+
+Empirical testing of competitive interference (Zharnikov 2026c, Section 10.5) found null effects across 5 focal brands paired with 3 competitor types (largest d = .187). Brand spectral profiles are stable regardless of competitive context, supporting the trajectory model's assumption that brand position changes are driven by internal dynamics rather than competitive field effects.
+
+### 8.5 Future Research
 
 **Spectral force.** What causes brand acceleration? Each marketing action -- advertising, product launch, pricing change, endorsement -- is a force vector in R^8. The net force is the vector sum of concurrent actions. Identifying the force contribution of individual actions requires controlled experiments or structural models that decompose the observed acceleration into causal components.
 
@@ -557,9 +561,4 @@ Zharnikov, D. (2026p). Dimensional activation and cohort divergence: A longitudi
 Zharnikov, D. (2026s). Coherence type as crisis predictor: A formal derivation from non-ergodic dynamics. Working Paper. https://doi.org/10.5281/zenodo.19208107
 
 Zharnikov, D. (2026y). Brand triangulation: A geometric framework for multi-observer brand positioning. Working Paper.
-
-Zharnikov, D. (2026aa). Empirical rate-distortion curve for AI brand perception encoders. Working Paper. https://doi.org/10.5281/zenodo.19528833
-
----
-*This paper is part of the Spectral Brand Theory research program. For the full atlas of 20+ interconnected papers, see [spectralbranding.com/atlas](https://spectralbranding.com/atlas).*
 

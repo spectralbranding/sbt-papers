@@ -1,6 +1,6 @@
 # PRISM: A Structured Measurement Instrument for Multi-Dimensional Brand Perception
 
-**DOI**: [10.5281/zenodo.19555265](https://doi.org/10.5281/zenodo.19555265) | **Status**: Working paper v1.0
+**DOI**: [10.5281/zenodo.19555265](https://doi.org/10.5281/zenodo.19555265) | **Status**: Working paper v1.0.1
 
 ## Paper
 

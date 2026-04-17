@@ -9,8 +9,8 @@ meta:
       orcid: "0009-0000-6893-9231"
       affiliation: "Independent Researcher"
   doi: "10.5281/zenodo.19468204"
-  date: "2026-04-08"
-  version: "1.0"
+  date: "2026-04-16"
+  version: "1.1"
   venue: "Zenodo preprint (target: JMR; fallback: IJRM)"
   license: "CC-BY-4.0"
   keywords:
@@ -217,3 +217,5 @@ submission_history:
     notes: >
       v1.0 preprint. 9 sections, 3 propositions, 1 theorem, 6 definitions, 29 references.
       ~7,500 words. Target: JMR (primary), IJRM (fallback).
+      v1.1 (2026-04-16): Added Section 8.4 (Competitive Context Stability)
+      citing Experiment C null results.

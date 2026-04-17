@@ -13,10 +13,10 @@ metadata:
       corresponding: true
   citation_key: "2026o"
   doi: "10.5281/zenodo.19138860"
-  date: "2026-04-10"
-  version: "2.0"
+  date: "2026-04-16"
+  version: "2.1"
   status: working_paper
-  license: "CC-BY-NC-ND-4.0"
+  license: "CC-BY-4.0"
   keywords:
     - brand purpose
     - purpose advertising
@@ -186,3 +186,6 @@ submission_history:
     status: "pre-submission"
     target_date: "2026-04-12"
     rationale: "Explicit multi-dimensional/longitudinal scope, tolerant of case method, strong Vredenburg/Mukherjee tradition"
+    note: >
+      v1.1 (2026-04-16): Added paragraph on format-mediated primacy as
+      boundary condition for first-signal premium.

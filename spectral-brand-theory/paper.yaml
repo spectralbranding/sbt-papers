@@ -9,10 +9,10 @@ meta:
       orcid: "0009-0000-6893-9231"
       affiliation: "Independent Researcher"
   doi: "10.5281/zenodo.18945912"
-  date: "2026-04-06"
-  version: "3.0"
+  date: "2026-04-16"
+  version: "3.1"
   venue: "Zenodo preprint (not yet submitted to journal)"
-  license: "CC-BY-NC-ND-4.0"
+  license: "CC-BY-4.0"
   keywords:
     - spectral brand theory
     - brand perception
@@ -166,3 +166,14 @@ companion_papers:
     title: "Spectral Resource Allocation"
     doi: "10.5281/zenodo.19009268"
     relationship: "resource_optimization"
+
+submission_history:
+  - venue: "Zenodo"
+    type: preprint
+    date: "2026-04-16"
+    status: published
+    doi: "10.5281/zenodo.18945912"
+    note: >
+      v2.4 (2026-04-16): Updated Section 5.3 (AI-mediated perception empirical
+      evidence), Section 5.4 (competitive interference null result), H7 (serial
+      position evidence). Corrected AI observer bias direction in 5.3.

@@ -12,7 +12,7 @@ meta:
   date: "2026-04-16"
   version: "2.0"
   venue: "Zenodo preprint (JASIST desk-rejected 2026-04-02; JLSC desk-rejected 2026-04-16; target SRC)"
-  license: "CC-BY-NC-ND-4.0"
+  license: "CC-BY-4.0"
   keywords:
     - scientific publishing
     - version control

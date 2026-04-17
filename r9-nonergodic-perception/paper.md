@@ -1,5 +1,9 @@
 # Non-Ergodic Brand Perception: Why Cross-Sectional Brand Tracking Systematically Misrepresents Individual Trajectories
 
+**Dmitry Zharnikov**
+
+Working Paper v2.1 -- April 2026
+
 ---
 
 ## Abstract
@@ -219,6 +223,8 @@ The proposition also connects to Kardes and Kalyanaram's (1992) order-of-entry e
 The mathematical mechanism is the interaction between structural absence and multiplicative dynamics. In a dimension with no prior signal, the observer's perception is zero or undefined. The first signal sets the initial value. Since all subsequent updates are multiplicative (they scale with the current value), the first signal's contribution is compounded into every subsequent state. Even after many updates, the influence of the first signal persists as a component of the current state -- diminished by subsequent updates but never fully eliminated.
 
 The practical implication is a "first-signal premium": the first touchpoint in any dimension has outsized influence on long-run perception. This is distinct from mere recency or primacy effects; it is a structural feature of sequential updating in a previously empty dimension.
+
+Supplementary evidence from a serial position experiment (Zharnikov 2026v, Section 5.15) reveals that format mediates the first-signal premium in LLM observers. In JSON sum-to-100 allocation, the first-listed dimension receives +6.1 points above the last (d = 1.39, p < .001), replicating the non-ergodic path dependence predicted here. However, independent 1--5 Likert ratings virtually eliminate this effect (d = .22), suggesting that the primacy mechanism operates through the sequential allocation process rather than through perceptual encoding itself. This distinction implies that non-ergodic effects in human brand perception may similarly depend on the mode of elicitation -- a methodological boundary condition for the framework.
 
 **Source of non-ergodicity:** Multiplicative dynamics (Source 2), path-dependent weighting (Source 3).
 
@@ -525,6 +531,3 @@ Tversky, A., & Kahneman, D. (1974). Judgment under uncertainty: Heuristics and b
 [Author] (2026j). [Details removed for blind review].
 
 [Author] (2026y). [Details removed for blind review].
-
----
-*This paper is part of the Spectral Brand Theory research program. For the full atlas of 20+ interconnected papers, see [spectralbranding.com/atlas](https://spectralbranding.com/atlas).*

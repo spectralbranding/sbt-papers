@@ -2,7 +2,7 @@
 
 **Zharnikov, D.**
 
-Working Paper -- March 2026
+Working Paper v1.1 -- April 2026
 
 ---
 
@@ -456,6 +456,18 @@ The two frameworks are asking different questions, and the distinction is essent
 
 Natural extensions include: (1) **empirical calibration of $\varepsilon$** via JND experiments adapted from psychophysics; (2) **anisotropic packing** with dimension-specific thresholds; (3) **observer-dependent capacity** by integrating packing bounds over observer distributions on $\Delta^7$; (4) **dynamic capacity** as the metric evolves under signal decay and crystallization, connecting to R6 (Zharnikov, forthcoming); (5) **empirical dimensionality estimation** via PCA on observed brand profiles to test Proposition 5; and (6) **category-level analysis** comparing observed saturation patterns against predicted capacity at estimated effective dimensionality.
 
+### 10.5 Empirical Test: Competitive Interference in LLM Perception Space
+
+The sphere packing model assumes that brands occupy fixed positions in perception space regardless of competitive context. If nearby competitors shift a brand's perceived profile -- through contrast effects (Simonson & Tversky, 1992) or assimilation (Herr, 1986) -- then positions would be context-dependent, and the fixed-geometry assumptions underlying Propositions 1--5 would require qualification. Experiment C tests this assumption directly.
+
+**Design.** Five focal brands (Hermes, IKEA, Patagonia, Erewhon, Tesla) were each paired with three competitor types spanning a distance gradient: *direct* competitors (Hermes/Louis Vuitton, IKEA/H&M Home, Patagonia/Arc'teryx, Erewhon/Whole Foods, Tesla/Rivian), *adjacent* competitors (Hermes/Rolex, IKEA/Muji, Patagonia/REI, Erewhon/Blue Bottle, Tesla/Apple), and *distant* competitors (Hermes/Walmart, IKEA/Ferrari, Patagonia/Shein, Erewhon/McDonald's, Tesla/Toyota). Four conditions were administered: solo (brand rated alone), self-comparison (brand rated for "distinctiveness vs. category peers" -- a prompt-format baseline), paired (brand rated alongside a named competitor), and context (competitor mentioned as market context). Five models (Claude Haiku 4.5, GPT-4o-mini, Gemini 2.5 Flash, DeepSeek V3, Grok 4.1 Fast) each completed one replication per condition-pair combination, yielding 250 calls with 250 valid responses (100% completion).
+
+**Results.** All three hypotheses returned null. H1 (profiles shift when a competitor is present): 0 of 8 dimensions reached significance at Bonferroni-corrected alpha = .00625; Cohen's d ranged from -.187 to +.169, all trivial. H2 (shift magnitude increases with competitor distance): F = .623, p = .538, eta-sq = .008. H3 (direct competitors produce contrast while distant competitors produce assimilation): t = -.502, p = .616, d = -.029. The self-comparison control confirmed that prompt-format differences alone are negligible (Euclidean shift = 2.10, no dimension significant).
+
+**Exploratory finding.** GPT-4o-mini exhibited a mean profile shift of 15.37 across conditions, nearly double the 8.5--9.3 range observed for the other four models. Erewhon was the most susceptible focal brand (shift = 11.73 vs. 9.4--10.1 for others), consistent with its weak Temporal anchoring (2.5). Neither anomaly reached per-dimension significance.
+
+**Interpretation.** The null result is scientifically valuable: PRISM-B measures stable internal representations, not context-dependent judgments. Brands occupy fixed positions in perception space regardless of which competitors are nearby, validating the geometric assumptions of sphere packing. The capacity bounds derived in Sections 4--5 hold as intrinsic constraints, not context-dependent artifacts. Had competitive interference been large, the effective dimensionality of perception space would itself be context-dependent, undermining the fixed-geometry framework on which Propositions 1--5 rest. The Erewhon finding aligns with Section 9.1 (Anisotropy): brands with weak anchoring on one or more dimensions exhibit greater volatility, even when that volatility does not reach statistical significance. The GPT-4o-mini anomaly suggests that some model architectures have more permeable perceptual boundaries, a finding that warrants investigation across a larger model sample.
+
 ---
 
 ## 11. Conclusion
@@ -504,6 +516,8 @@ Green, P. E., & Rao, V. R. (1972). *Applied Multidimensional Scaling: A Comparis
 
 Hales, T. C. (2005). A proof of the Kepler conjecture. *Annals of Mathematics*, 162(3), 1065--1185.
 
+Herr, P. M. (1986). Consequences of priming: Judgment and behavior. *Journal of Personality and Social Psychology*, 51(6), 1106--1115.
+
 Hotelling, H. (1929). Stability in competition. *Economic Journal*, 39(153), 41--57.
 
 Hurwitz, A. (1898). Uber die Composition der quadratischen Formen von beliebig vielen Variablen. *Nachrichten von der Gesellschaft der Wissenschaften zu Gottingen*, 309--316.
@@ -524,6 +538,8 @@ Ries, A., & Trout, J. (1981). *Positioning: The Battle for Your Mind*. McGraw-Hi
 
 Sharp, B. (2010). *How brands grow: What marketers don't know*. Oxford University Press.
 
+Simonson, I., & Tversky, A. (1992). Choice in context: Tradeoff contrast and extremeness aversion. *Journal of Marketing Research*, 29(3), 281--295.
+
 Viazovska, M. S. (2017). The sphere packing problem in dimension 8. *Annals of Mathematics*, 185(3), 991--1015.
 
 Weber, E. H. (1834). *De Pulsu, Resorptione, Auditu et Tactu: Annotationes Anatomicae et Physiologicae*. Koehler.
@@ -540,10 +556,7 @@ Zharnikov, D. (2026e). Spectral metamerism in brand perception: Projection bound
 
 Zharnikov, D. (2026f). Cohort boundaries in high-dimensional perception space: A concentration of measure analysis. Working Paper. https://doi.org/10.5281/zenodo.18945477
 
----
 *This paper is part of the Spectral Brand Theory research program. For the full atlas of 20+ interconnected papers, see [spectralbranding.com/atlas](https://spectralbranding.com/atlas).*
-
----
 
 ## Appendix A: Numerical Computations
 
