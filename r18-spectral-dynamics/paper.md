@@ -2,7 +2,7 @@
 
 **Dmitry Zharnikov**
 
-Working Paper v1.1 | Citation key: 2026z | https://doi.org/10.5281/zenodo.19468204
+Working Paper v1.1.1 | Citation key: 2026z | https://doi.org/10.5281/zenodo.19468204
 
 ---
 
