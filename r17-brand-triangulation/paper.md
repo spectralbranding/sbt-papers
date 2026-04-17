@@ -796,3 +796,6 @@ Zharnikov, D. (2026s). Coherence type as crisis predictor: a formal derivation f
 Zharnikov, D. (2026v). Spectral metamerism in AI-mediated brand perception: how large language models collapse multi-dimensional brand differentiation in consumer search. Working Paper. https://doi.org/10.5281/zenodo.19422427
 
 Zharnikov, D. (2026x). AI-native brand identity: from visual recognition to cryptographic verification. Working Paper. https://doi.org/10.5281/zenodo.19391476
+
+---
+*This paper is part of the Spectral Brand Theory research program. For the full atlas of 20+ interconnected papers, see [spectralbranding.com/atlas](https://spectralbranding.com/atlas).*

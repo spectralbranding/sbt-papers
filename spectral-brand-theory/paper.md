@@ -847,4 +847,3 @@ Zharnikov, D. (2026y). Brand triangulation: A geometric framework for multi-obse
 
 ---
 *This paper is part of the Spectral Brand Theory research program. For the full atlas of 20+ interconnected papers, see [spectralbranding.com/atlas](https://spectralbranding.com/atlas).*
-
