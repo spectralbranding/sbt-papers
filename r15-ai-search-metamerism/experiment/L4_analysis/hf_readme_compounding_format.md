@@ -38,7 +38,12 @@ Two experiments testing whether specification framing attenuates or amplifies di
 ### v2: Constraint Framing (600 calls)
 - **Conditions**: baseline vs information vs constraint ("distribute weight equally across all eight dimensions")
 - **Models**: Claude Haiku 4.5, GPT-4o-mini, Gemini 2.5 Flash, DeepSeek Chat, Grok 4.1 Fast
-- **Result**: [pending v2 completion]
+- **Result**: H_CF4 SUPPORTED. Constraint framing reduces collapse 42% (d = -.983, p < .001). Information = baseline (d = -.133, ns).
+
+### Supplements (240 calls)
+- **Llama 3.3 70B** (120 calls via Groq): confirms constraint pattern
+- **Qwen3 235B** (120 calls via Cerebras, 97% valid): confirms constraint pattern
+- **Combined**: 1,440 calls, 8 models, $1.48
 
 ## Pipeline Structure
 
@@ -74,6 +79,8 @@ DCI = mean(|w_i - 12.5|) for all 8 dimensions. Baseline = 12.5 (uniform allocati
 |------|---------|-------------|
 | exp_compounding_format.jsonl | 480 | v1: baseline vs information |
 | exp_compounding_format_v2.jsonl | 600 | v2: baseline vs information vs constraint |
+| exp_compounding_format_v2_llama_supplement.jsonl | 120 | Llama 3.3 70B supplement |
+| exp_compounding_format_v2_qwen_supplement.jsonl | 120 | Qwen3 235B supplement |
 
 ## Protocol
 
