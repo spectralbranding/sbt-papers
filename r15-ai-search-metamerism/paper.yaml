@@ -1,11 +1,11 @@
-# paper.yaml — R15: Spectral Metamerism in AI-Mediated Brand Perception
+# paper.yaml — R15: Dimensional Collapse in AI-Mediated Brand Perception
 # Citation key: 2026v
 # Paper Spec schema: https://github.com/spectralbranding/paper-spec/SPECIFICATION.md
 
 paper_spec_version: "0.1.0"
 
 metadata:
-  title: "Spectral Metamerism in AI-Mediated Brand Perception: How Large Language Models Collapse Multi-Dimensional Brand Differentiation in Consumer Search"
+  title: "Dimensional Collapse in AI-Mediated Brand Perception: Large Language Models as Metameric Observers"
   authors:
     - name: "Dmitry Zharnikov"
       orcid: "0009-0000-6893-9231"
@@ -13,33 +13,27 @@ metadata:
       corresponding: true
   citation_key: "2026v"
   doi: "10.5281/zenodo.19422427"
-  date: "2026-04-16"
-  version: "2.4.1"
-  status: preprint  # v2.1 (2026-04-11, expanded same-day): H10 recomputed on the updated dataset including a Mongolian-language re-test of mongolia_beer and a VkusVill Brand Function specification follow-up. New H10 result: 58/121 positive (48%), mean = +.001, binomial sign test p = .716 two-sided, null result. Mongolian-language subgroup exception (8/8 models, mean -4.9 DCI). Supplementary Run 10 corrective comparators added (126 calls). VkusVill specification test added (147 calls). Native templates rewritten as natural native-speaker prose. Section 4.6.3 added: Run 11 Roshen multi-city extension (7 cities × 7 LLMs × 3 runs = 315 calls, 0 errors). Run 11 findings: (a) Kyiv uniquely low (DCI 34.78); every other city clusters 39-45 regardless of geopolitical alignment. (b) Manufacturing presence does not save the brand: Vilnius (Klaipeda factory, ~15500 t/yr) collapses MORE than Warsaw, which has no manufacturing in Poland but does have an active commercial distribution arm (Roshen-Polska Sp. z o.o. in Jarosław + Roshen Europe Sp. z o.o. in Warsaw); commercial-distribution discourse beats manufacturing-record discourse. (c) Local-language prompting reduces DCI by 3.31-9.50 across all non-Kyiv cities; biggest effect Astana kk -9.50 (p=.002, all 7 models reduce). H12 reinterpreted as discourse-layer activation rather than country-of-origin/animosity. H10 null + Run 11 native-language effect both follow from the same mechanism applied to two different discourse geometries (homogeneous-discourse vs sparse-foreign-discourse). Abstract updated.
+  date: "2026-04-17"
+  version: "3.0"
+  status: preprint  # v3.0 JMR revision (2026-04-17). Previous: H10 recomputed on the updated dataset including a Mongolian-language re-test of mongolia_beer and a VkusVill Brand Function specification follow-up. New H10 result: 58/121 positive (48%), mean = +.001, binomial sign test p = .716 two-sided, null result. Mongolian-language subgroup exception (8/8 models, mean -4.9 DCI). Supplementary Run 10 corrective comparators added (126 calls). VkusVill specification test added (147 calls). Native templates rewritten as natural native-speaker prose. Section 4.6.3 added: Run 11 Roshen multi-city extension (7 cities × 7 LLMs × 3 runs = 315 calls, 0 errors). Run 11 findings: (a) Kyiv uniquely low (DCI 34.78); every other city clusters 39-45 regardless of geopolitical alignment. (b) Manufacturing presence does not save the brand: Vilnius (Klaipeda factory, ~15500 t/yr) collapses MORE than Warsaw, which has no manufacturing in Poland but does have an active commercial distribution arm (Roshen-Polska Sp. z o.o. in Jarosław + Roshen Europe Sp. z o.o. in Warsaw); commercial-distribution discourse beats manufacturing-record discourse. (c) Local-language prompting reduces DCI by 3.31-9.50 across all non-Kyiv cities; biggest effect Astana kk -9.50 (p=.002, all 7 models reduce). H12 reinterpreted as discourse-layer activation rather than country-of-origin/animosity. H10 null + Run 11 native-language effect both follow from the same mechanism applied to two different discourse geometries (homogeneous-discourse vs sparse-foreign-discourse). Abstract updated.
   license: "CC-BY-4.0"
   abstract: >
-    Large language models (LLMs) are rapidly replacing traditional search engines as the primary
-    intermediary in consumer brand evaluation. This paper introduces the LLM-as-observer model
-    within Spectral Brand Theory's eight-dimensional framework and demonstrates that LLMs
-    systematically collapse brand perception to Experiential and Economic dimensions, rendering
-    brands differentiated on narrative, ideological, cultural, or temporal grounds metameric ---
-    structurally distinct yet functionally equivalent in AI recommendations. Across ten runs
-    (21,350 API calls, 24 models from seven training traditions, 15 native languages plus English),
-    we elicit implicit spectral weights via the PRISM-B instrument and compute a Dimensional
-    Collapse Index (DCI). Mean DCI significantly exceeds the uniform baseline (global = .291,
-    p = .017; local = .353, p = .001; cross-cultural = .357, d = 3.449). Cross-model convergence
-    is extreme (cosine = .977 across 24 architectures). Local brands collapse 25% more severely
-    than global brands (d = .878), consistent with an Economic default. Native-language prompting
-    on home-market pairs is null (H10: 58/121 positive; mean = +.001), but a Roshen 7-city
-    extension (Run 11, 315 calls) shows native-language prompting reduces collapse by 3.31--9.50
-    DCI for every non-home-market city, with the largest single effect for Astana in Kazakh
-    (-9.50, p = .002, all 7 models reduce). Geopolitical framing modulates collapse (H12: mean
-    absolute delta = .040, p < .001), but Run 11 supports a discourse-layer reinterpretation.
-    The Patagonia--Columbia exception shows that legally verifiable ideological commitments survive
-    AI mediation. Structured Brand Function specifications reduce collapse by approximately 20%.
-    These findings establish dimensional collapse as a structural feature of text-based AI observers,
-    with implications for search advertising strategy, brand defensibility, and dual-track
-    (human + AI) measurement.
+    Large language models (LLMs) are displacing traditional search as the primary intermediary
+    in consumer brand evaluation. Within Spectral Brand Theory's eight-dimensional framework,
+    LLMs collapse brand perception to Experiential and Economic dimensions, rendering brands
+    differentiated on narrative, ideological, cultural, or temporal dimensions metameric ---
+    functionally equivalent in AI recommendations despite structural differences. The PRISM-B
+    instrument is administered across 21,350 API calls spanning 24 models, nine cultural
+    traditions, and 15 native languages to compute a Dimensional Collapse Index (DCI). Mean DCI
+    significantly exceeds the uniform baseline (global = .291, p = .017; cross-cultural = .357,
+    d = 3.449). Cross-model convergence is extreme (cosine = .977). Local brands collapse 25%
+    more severely than global brands (d = .878). Native-language prompting on home-market pairs
+    is null (p = .716), but a 7-city extension reveals strong effects on foreign-market frames
+    (up to -9.50 DCI, p = .002), supporting a discourse-layer mechanism. Geopolitical context
+    independently modulates collapse (p < .001). Legally verifiable ideological commitments
+    survive AI mediation. Structured Brand Function specifications reduce collapse by ~20%.
+    Dimensional collapse is a structural feature of text-based AI observers with direct
+    implications for search advertising strategy and dual-track brand measurement.
   keywords:
     - AI-mediated search
     - brand perception
@@ -175,8 +169,8 @@ methodology:
     temperature 0.7. Total: 21,602 calls across 12 runs; ~6.4M tokens;
     ~$6.40 total cost (including Run 14 per-dimension targeting, 252 calls).
   sample:
-    size: 21602  # 17 core JSONL files (Runs 2-11) + Run 14 supplementary
-    description: "10 runs across 17 JSONL files. Runs 2-4: 4,860 calls (6 models, 15 pairs). Run 5: 7,342 calls including supplementary models (22 active models, 7 cross-cultural pairs, native-language calls). Run 6: 1,018 calls (banking pair, 24 models). Run 7: 1,091 calls including Run 7d Swedish (framing experiment, H12 test). Run 8: 4,895 calls (native language expansion, 5 H10 languages: el/lv/sw/vi/sr). Run 9: 540 calls (temperature sensitivity). Run 10: 126 calls (corrective comparators, 7 models, 6 pairs). Run 11: 315 calls (Roshen 7-city framing extension, 7 models × 7 cities × native languages). Total unique models: 24; 7 training traditions; 15 native languages plus English; ~6.4M tokens; ~$6.10 total cost (paid cloud APIs only; 14/24 models were free or local)."
+    size: 26585  # 21,350 core (Runs 2-11) + 5,235 supplementary (Runs 12-15b + Exps A-E)
+    description: "Core: 21,350 calls across 10 runs (Runs 2-11), 24 models from 9 cultural traditions, 15 native languages, ~$6.10 cost. Supplementary: 5,235 calls across Runs 12-15b (brand function, synthetic cohorts) + Experiments A (agentic collapse, 425), B (cross-language, 450), D (specification paradox, 1,440), E (primacy generalization, 2,400). Total: 26,585 calls, 8 distinct model architectures in supplementary, ~$1.48 additional cost. HuggingFace datasets: core DOI 10.57967/hf/8284; supplementary DOIs 10.57967/hf/8435-8443."
     models: 24  # 24 unique models across all runs; T-Pro 2.0 excluded from Run 5 analysis due to infrastructure cost
     brand_pairs: 23  # 10 global + 5 local + 7 cross-cultural + 1 banking (Run 6)
   instrument: "PRISM-B (Perception Response Instrument for Structured Measurement — Brand variant)"
@@ -217,29 +211,17 @@ dependencies:
     critical: true
     description: "SBT framework: 8-dimensional model, canonical brand profiles"
 
-  - citation: "Zharnikov (2026e)"
-    doi: "10.5281/zenodo.18945352"
+  - citation: "Zharnikov (2026x)"
+    doi: "10.5281/zenodo.19391476"
     relationship: extends
     critical: true
-    description: "Spectral metamerism formalization and Johnson-Lindenstrauss bounds"
+    description: "AI-native brand identity: Brand Function specification and verification"
 
-  - citation: "Zharnikov (2026f)"
-    doi: "10.5281/zenodo.18945477"
-    relationship: extends
-    critical: true
-    description: "Cohort boundaries and observer heterogeneity"
-
-  - citation: "Zharnikov (2026l)"
-    doi: "10.5281/zenodo.19064426"
+  - citation: "Zharnikov (2026aa)"
+    doi: "10.5281/zenodo.19528833"
     relationship: extends
     critical: false
-    description: "Rendering problem framework"
-
-  - citation: "Zharnikov (2026q)"
-    doi: "10.5281/zenodo.19145099"
-    relationship: extends
-    critical: false
-    description: "Spectral portfolio theory (portfolio self-competition)"
+    description: "Rate-distortion curve for AI brand perception encoders"
 
   - citation: "Dharmaputri et al. (2026)"
     doi: "10.48550/arXiv.2604.12206"
@@ -308,6 +290,16 @@ submission_history:
       (Cross-Language Dimensional Semantics, 450 calls, 8 languages), 5.15
       (Serial Position Effects, 2,400 calls, 4 formats). Total supplementary:
       3,275 calls. Core canonical count unchanged: 21,350.
+      v3.0 (2026-04-17): JMR revision. 6-phase overhaul: (1) self-citations
+      19%->6.5%; (2) +5 external refs; (3) theory section rewritten grounding
+      SBT in Aaker/Keller/Brakus/Kapferer with framework mapping table;
+      (4) structural revision 24,869->12,128 words (-51%); (5) contribution
+      reframed as first formal perceptual model + measurement protocol;
+      (6) submission package created. Section 5.16 added: Specification
+      Paradox (1,440 calls, 8 models, $1.48). Supplementary experiments
+      moved to Web Appendix references. Title changed to "Dimensional
+      Collapse in AI-Mediated Brand Perception: Large Language Models as
+      Metameric Observers."
 
   - venue: "[withheld]"
     type: journal
