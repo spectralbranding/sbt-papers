@@ -28,6 +28,13 @@ This paper specifies PRISM (Perception Response Instrument for Structured Measur
 | PRISM-T | Temporal tracking | Outlined |
 | PRISM-C | Choice prediction | Future |
 
+## Version History
+
+| Version | Date | Notes |
+|---------|------|-------|
+| 1.0.0 | 2026-04-13 | Initial preprint on Zenodo |
+| 1.0.1 | 2026-04-16 | Added serial position validation, Latin-square recommendation, P4 preliminary support |
+
 ## License
 
-CC BY-NC-ND 4.0
+CC-BY-4.0

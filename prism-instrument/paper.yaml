@@ -25,6 +25,23 @@ metadata:
     - scale development
     - observer heterogeneity
     - PRISM
+  abstract: >
+    Measuring brand perception requires instruments that capture multi-dimensional structure
+    rather than collapsing it to a single equity score. This paper specifies PRISM (Perception
+    Response Instrument for Structured Measurement), a family of standardized instruments for
+    eliciting multi-dimensional brand perception from both artificial intelligence and human
+    observers within the Spectral Brand Theory framework. The paper makes three contributions.
+    First, it formalizes the PRISM architecture as a five-layer scaffold (L0 specification,
+    L1 configuration, L2 prompts, L3 sessions, L4 analysis) that is domain-neutral and
+    reproducible. Second, it provides the complete PRISM-B (Brand) specification: eight scale
+    items mapped one-to-one to SBT dimensions, a 1--5 ordinal response format empirically
+    demonstrated as the minimum-distortion operating point for AI observers across 17 large
+    language model architectures, an exact prompt template, and a scoring algorithm comprising
+    the Dimensional Collapse Index and cross-observer cosine convergence. Third, it situates
+    PRISM-B within a measurement family (PRISM-M for metamerism discrimination, PRISM-T for
+    temporal tracking, PRISM-C for choice prediction) and establishes connection to multi-observer
+    triangulation via Perception DOP. The instrument is specified here; validation against
+    human-subject data is a separate future study.
 
 claims:
   - id: P1

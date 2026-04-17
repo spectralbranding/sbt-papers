@@ -1,0 +1,27 @@
+# DATA_MANIFEST.yaml -- PRISM Instrument Specification
+# External data dependencies per the Research-as-Repository protocol
+
+data_manifest:
+  - id: "zenodo-preprint"
+    description: >
+      Published preprint PDF on Zenodo. No primary data collected -- this is an
+      instrument specification paper. The 1-5 ordinal format validation is based
+      on the R15 serial position experiment (exp_primacy_generalization.jsonl,
+      2,400 calls across 4 formats) imported from Zharnikov (2026v).
+    archive: "Zenodo"
+    doi: "10.5281/zenodo.19555265"
+    format: "PDF"
+    access: public
+
+  - id: "r15-serial-position-anchor"
+    description: >
+      Serial position experiment from R15 (Section 5.15, 2,400 calls, 4 formats).
+      Imported as empirical basis for the 1-5 ordinal format recommendation in
+      PRISM-B Section 4.3. See r15-ai-search-metamerism/experiment/L3_sessions/
+      exp_primacy_generalization.jsonl.
+    archive: "GitHub"
+    repository: "spectralbranding/sbt-papers"
+    path: "r15-ai-search-metamerism/experiment/L3_sessions/exp_primacy_generalization.jsonl"
+    format: "JSONL"
+    access: public
+    note: "Data imported from R15, not collected for PRISM specifically."

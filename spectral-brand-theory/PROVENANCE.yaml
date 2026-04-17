@@ -41,3 +41,11 @@ provenance:
       identifiers:
         doi: "10.5281/zenodo.18945912"
         community: ["spectral-branding"]
+
+  versions:
+    - version: "3.1"
+      date: "2026-04-17"
+      description: >
+        Session 105 quality review fixes. Abstract trimmed from ~336 to ~170 words for
+        clarity and journal alignment. paper.yaml updated with abstract field, version
+        confirmed 3.1, metadata aligned. PROVENANCE.yaml updated with this version entry.

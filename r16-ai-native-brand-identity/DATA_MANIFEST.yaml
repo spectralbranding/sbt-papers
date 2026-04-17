@@ -30,3 +30,27 @@ data_manifest:
     note: >
       Data generated 2026-04-03 (68 minutes). All 4 pre-registered
       hypotheses supported. See experiment/README.md for reproduction.
+
+  - id: "bf-format-optimization-v1"
+    description: >
+      Brand Function format optimization experiment v1 (Section 8.6). Tests whether
+      format presentation of Brand Function (prose vs ordinal levels vs structured JSON)
+      affects dimensional collapse. Initial run.
+    archive: "GitHub"
+    repository: "spectralbranding/sbt-papers"
+    path: "r16-ai-native-brand-identity/experiment/L3_sessions/exp_bf_format.jsonl"
+    format: "JSONL"
+    access: public
+    supplementary_stats: "experiment/L3_sessions/exp_bf_format_stats.json"
+
+  - id: "bf-format-optimization-v2"
+    description: >
+      Brand Function format optimization experiment v2 (Section 8.6, 375 calls). Refined
+      format comparison finding that qualitative ordinal levels outperform prose; format
+      explains 17% of dimensional collapse variance. Added Session 104 (v1.7 update).
+    archive: "GitHub"
+    repository: "spectralbranding/sbt-papers"
+    path: "r16-ai-native-brand-identity/experiment/L3_sessions/exp_bf_format_v2.jsonl"
+    format: "JSONL"
+    access: public
+    supplementary_stats: "experiment/L3_sessions/exp_bf_format_v2_stats.json"

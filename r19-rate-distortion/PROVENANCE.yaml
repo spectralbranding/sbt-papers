@@ -16,14 +16,38 @@ provenance:
         with minimum distortion at R2 (1-5 scale, 19 bits), not R1 (100-point allocation,
         26 bits). Cross-architectural codebook convergence confirmed (mean CV = .107
         across 7 LLMs from 7 distinct training pipelines).
+    - version: "1.0"
+      date: "2026-04-12"
+      description: >
+        Session 95: paper.md drafted (3,074 words, 11 refs). Full 17-model panel results
+        integrated (1,652 API calls, 1,621 valid, 98.1% parse rate). J-shaped R(D) curve
+        confirmed across all 17 models. H2 SUPPORTED (mean CV = .140). Preprint published
+        to Zenodo (DOI 10.5281/zenodo.19528833).
+    - version: "1.0.1"
+      date: "2026-04-16"
+      description: >
+        Session 104: Added bidirectional rate-distortion paragraph citing Experiment D
+        input-side results (format-mediated primacy, R2 as optimal rate condition confirmed
+        from input side). No structural changes.
 
-  forks: []
+  forks:
+    - id: "fork-2026-04-12-zenodo"
+      target: "Zenodo"
+      target_type: preprint_server
+      created: "2026-04-12"
+      source_commit: "main"
+      status: published
+      outcome: published
+      identifiers:
+        doi: "10.5281/zenodo.19528833"
+        community: ["spectral-branding"]
+      note: "v1.0 initial preprint (17-model full panel). v1.0.1 PDF update pending."
 
   target_venue:
     journal: "Marketing Letters"
     publisher: "Springer"
-    status: "pre-submission (paper not yet drafted)"
-    note: "Target after paper.md is drafted in next research session."
+    status: "pre-submission"
+    note: "v1.0.1 ready. Submit after final copyedit."
 
   target_venue_alt:
     - journal: "Quantitative Marketing and Economics"

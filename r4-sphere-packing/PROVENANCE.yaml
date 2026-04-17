@@ -6,6 +6,20 @@ provenance:
   citation_key: "2026g"
   repository: "spectralbranding/sbt-papers/r4-sphere-packing"
 
+  versions:
+    - version: "1.0"
+      date: "2026-03-11"
+      description: "Initial preprint. 5 propositions, E8 lattice capacity bounds, white space analysis, correlation-induced collapse. Published on Zenodo: 10.5281/zenodo.18945522."
+    - version: "1.1"
+      date: "2026-04-16"
+      description: "Added Section 10.5 (Empirical Test: Competitive Interference, 250 calls, null result validates fixed-geometry assumptions)."
+    - version: "1.1"
+      date: "2026-04-17"
+      description: >
+        Session 105 quality review fixes. Abstract trimmed from ~318 to ~200 words. paper.yaml
+        updated with abstract field, version confirmed 1.1. PROVENANCE.yaml updated with version
+        history entries.
+
   forks:
     - id: "fork-2026-03-11-zenodo"
       target: "Zenodo"

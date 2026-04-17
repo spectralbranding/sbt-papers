@@ -17,6 +17,19 @@ metadata:
   version: "2.1"
   status: working_paper
   license: "CC-BY-4.0"
+  abstract: >
+    Purpose campaigns are evaluated by aggregate metrics that cannot distinguish structural
+    success from surface popularity. This paper decomposes Dove's "Campaign for Real Beauty"
+    (2004--2026) across eight perceptual dimensions at four temporal cross-sections. Four
+    observer cohorts -- Purpose-Aligned, Product-Pragmatist, Social-Signal Reader, and
+    Skeptic-Critic -- receive identical signals but form structurally different brand convictions.
+    Five propositions address dimensional creation, observer heterogeneity, portfolio interference,
+    counter-cultural decay, and dimensional specificity. The framework provides advertising managers
+    with tools for predicting campaign longevity, identifying portfolio interference risks, and
+    designing dimensional activation strategies. Independent quantitative evidence from a
+    21,601-call AI observer study (Zharnikov 2026v) supports the cohort-divergence and
+    Patagonia-as-exception findings, providing the case study with an empirical anchor across
+    a controllable observer population.
   keywords:
     - brand purpose
     - purpose advertising

@@ -16,6 +16,9 @@ provenance:
     - version: "2.0"
       date: "2026-04-10"
       description: "Post-JAR rejection major revision: falsification conditions added to all 5 propositions, Empirical Anchor section (R15 21,601-call corroboration), Discussion restructured into 5-part format, substantive engagement with Vredenburg/Brakus/Holt/Mukherjee/Hermann, actionable limitations"
+    - version: "2.1"
+      date: "2026-04-16"
+      description: "Session 104: Added paragraph on format-mediated primacy as boundary condition for first-signal premium (P5). Submission history updated: IJA pre-submission added. Experiment D and E citation anchors added."
 
   forks:
     - id: "fork-2026-03-20-zenodo"

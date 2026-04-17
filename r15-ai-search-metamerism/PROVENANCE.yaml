@@ -22,6 +22,14 @@ provenance:
     - version: "3.1"
       date: "2026-04-11"
       description: "v2.1-final. H10 recomputed on updated dataset (58/121 positive, mean +.001, p=.716, null result). Mongolian-language subgroup exception (8/8 models, mean -4.9 DCI). VkusVill Brand Function spec test (147 calls). Section 4.6.3 added: Run 11 Roshen multi-city extension (315 calls, 7 cities × 7 LLMs × 3 runs, 0 errors). Run 11 findings: Kyiv uniquely low; manufacturing-anchor null (Vilnius with Klaipėda factory collapses MORE than Warsaw, which has no manufacturing in Poland but does have active commercial distribution via Roshen-Polska Sp. z o.o.); local-language prompting reduces DCI 3.31-9.50 for every non-home city (Astana kk: -9.50, p=.002). H12 reinterpreted as discourse-layer activation rather than country-of-origin animosity. v2.1-final canonical total (validate.py output): 21,350 calls across 10 runs, 17 JSONL files, 24 models, 7 training traditions, 15 native languages plus English, 999 native-language calls, ~6.4M tokens, ~$6.10."
+    - version: "2.4"
+      date: "2026-04-17"
+      description: >
+        Session 105 quality review fixes. Abstract trimmed from ~270 to ~200 words. paper.yaml
+        updated with abstract field. PROVENANCE.yaml updated with this version entry. Version 2.4
+        adds three supplementary experiment sections (5.13 agentic pipeline compounding 425 calls,
+        5.14 cross-language dimensional semantics 450 calls, 5.15 serial position effects 2,400
+        calls; total supplementary 3,275 calls). Core canonical count unchanged: 21,350.
 
   forks: []
 
