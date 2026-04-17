@@ -530,6 +530,12 @@ The framework completes the dynamics layer of Spectral Brand Theory: the SDE mod
 
 ---
 
+## Acknowledgments
+
+AI assistants (Claude Opus 4.6, Grok 4.1, Gemini 3.1) were used for initial literature search and editorial refinement; all theoretical claims, propositions, and interpretations are the author's sole responsibility.
+
+---
+
 ## References
 
 Aaker, D. A. (1991). *Managing Brand Equity: Capitalizing on the Value of a Brand Name*. Free Press.
