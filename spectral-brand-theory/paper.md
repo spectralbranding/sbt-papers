@@ -10,13 +10,13 @@ Working Paper v3.1 — February 2026 (revised April 2026)
 
 ## Abstract
 
-Brand measurement collapses multi-dimensional perception into single scores, destroying the information that explains why different observers form irreconcilable perceptions of the same brand. Despite repeated calls for multi-dimensional approaches (Keller & Lehmann, 2006; Christodoulides & de Chernatony, 2010; France, Davcik, & Kazandjian, 2025), brand perception theory lacks a formal observer-mediated dimensional decomposition --- one that models how different observers filter the same signals differently. Prior dimensional approaches --- J. Aaker's (1997) brand personality dimensions, Kervyn, Fiske, and Malone's (2012) warmth-competence framework, Brakus, Schmitt, and Zarantonello's (2009) brand experience scale --- decompose brand meaning into attribute-level dimensions but treat those dimensions as properties of the brand rather than perceptual channels through which heterogeneous observers filter signals. This paper develops Spectral Brand Theory (SBT) to address this gap, arguing that brand perception is irreducibly observer-dependent: different observer cohorts perceive structurally different brands from identical signal environments. The framework decomposes brand signals across eight perceptual dimensions (semiotic, narrative, ideological, experiential, social, economic, cultural, temporal), defines observer cohorts through formal spectral profiles (weights, tolerances, priors, identity gate), and models brand perception as probabilistic cloud formation that collapses into conviction through evidence accumulation. We derive five formal propositions --- on observer heterogeneity, non-ergodic perception, structural absence, coherence types, and conviction asymmetry --- and ten falsifiable hypotheses that constitute the empirical research agenda. An illustrative application to five brands (Hermes, IKEA, Patagonia, Tesla, Erewhon) articulates four candidate mechanisms: (1) structural absence as brand strategy, where designed signal restriction generates value through what is not emitted; (2) a five-type coherence taxonomy with qualitatively distinct resilience profiles; (3) asymmetric conviction resilience, where evidence-free negative convictions are more stable than evidence-rich positive ones; and (4) independence of brand power and brand health as measurable variables. Cross-model replication (Claude and Gemini across all five brands) suggests that structural conclusions are framework-driven rather than model-specific. SBT contributes a computationally implementable, observer-centric architecture that extends customer-based brand equity theory while preserving the explanatory power of perceptual heterogeneity. Empirical validation against independently collected consumer data remains for future work.
+Brand measurement collapses multi-dimensional perception into single scores, destroying the information that explains why different observers form irreconcilable perceptions of the same brand. Prior dimensional approaches decompose brand meaning into attribute-level dimensions but treat those dimensions as properties of the brand rather than perceptual channels through which heterogeneous observers filter signals. This paper develops Spectral Brand Theory (SBT), arguing that brand perception is irreducibly observer-dependent. The framework decomposes brand signals across eight perceptual dimensions, defines observer cohorts through formal spectral profiles, and models perception as probabilistic cloud formation that collapses into conviction through evidence accumulation. Five formal propositions address observer heterogeneity, non-ergodic perception, structural absence, coherence types, and conviction asymmetry. An illustrative application to five brands articulates four candidate mechanisms: structural absence as brand strategy, a five-type coherence taxonomy, asymmetric conviction resilience, and independence of brand power from brand health. Cross-model replication suggests structural conclusions are framework-driven rather than model-specific. SBT contributes a computationally implementable, observer-centric architecture that extends customer-based brand equity theory. Empirical validation against independently collected consumer data, including a 21,350-call multi-model study (Zharnikov 2026v), provides initial corroboration of the dimensional collapse predictions.
 
 **Keywords:** brand perception, dimensional decomposition, computational branding, observer heterogeneity, brand coherence, structural absence, non-ergodic dynamics, AI-native framework
 
 ---
 
-## 1. Introduction
+## 
 
 Consider a thought experiment. Six people are asked to describe the same brand — Tesla. One says it is the most innovative technology platform since Apple. Another calls it Elon Musk's political vehicle. A third describes a betrayal of the environmental movement. A fourth sees a practical electric car with a controversial footnote. A fifth, who has never sat in one, holds a strong conviction about exactly what kind of person drives it. A sixth, in Shanghai, sees a premium Western status symbol and is puzzled by the question.
 
@@ -70,7 +70,7 @@ The remainder of this paper is organized as follows. Section 2 presents the theo
 
 ---
 
-## 2. Theoretical Framework
+## Theoretical Framework
 
 ### 2.1 Epistemic Foundation: Brands as Perceptual Objects
 
@@ -107,7 +107,7 @@ Each signal carries three properties:
 
 The signal concept extends economic signaling theory (Spence, 1973) and its application to brand credibility (Erdem & Swait, 1998; Kirmani & Rao, 2000) from a unidimensional quality indicator to a multi-dimensional perceptual architecture. Connelly, Certo, Ireland, and Reutzel (2011) consolidate signaling theory across management disciplines — their review identifies signal observability, signal cost, and signal honesty as the three properties that determine signal effectiveness. SBT operationalizes all three: observability maps to the observer's spectral sensitivity (invisible dimensions produce no signal regardless of emission strength), cost maps to designed-versus-ambient classification, and honesty maps to the coherence between designed signals and the ambient signal field. Dawar and Parker (1994) demonstrate that signal reliance varies systematically across cultures and product categories — evidence that the observer's context shapes which signals carry information, precisely the mechanism SBT formalizes through cohort-specific weight profiles. In SBT, a brand emits not one signal but a structured field of typed signals across eight dimensions — and the observer, not the market, determines which signals are informative.
 
-The ratio of designed to ambient signals — the **designed/ambient (D/A) ratio** — has emerged as one of the framework's most diagnostic metrics. A brand whose perception is predominantly shaped by ambient signals (D/A < 0.40) faces a structural problem that no communication strategy can solve: the brand's story is being written by others.
+The ratio of designed to ambient signals — the **designed/ambient (D/A) ratio** — has emerged as one of the framework's most diagnostic metrics. A brand whose perception is predominantly shaped by ambient signals (D/A < .40) faces a structural problem that no communication strategy can solve: the brand's story is being written by others.
 
 ### 2.3 Observer Model: Spectral Profiles
 
@@ -173,15 +173,15 @@ Cohort membership is dynamic. Because priors are a profile component and priors 
                            /            \
                           /              \
             Tech Loyalist                  Progressive Boycotter
-  Experiential: 0.35                       Ideological: 0.45
-  Economic:     0.20                       Social:      0.20
-  Ideological:  0.10                       Experiential: 0.03
+  Experiential: .35                       Ideological: .45
+  Economic:     .20                       Social:      .20
+  Ideological:  .10                       Experiential: .03
   Tolerance:    High                       Tolerance:    Zero
             |                                        |
             v                                        v
      Positive Cloud                           Negative Cloud
     (Product-anchored)                      (Ideology-anchored)
-     Confidence: 0.78                        Confidence: 0.82
+     Confidence: .78                        Confidence: .82
             |                                        |
             v                                        v
   "Best EV on the market"              "CEO's political vehicle"
@@ -247,7 +247,7 @@ These five propositions are not exhaustive predictions of SBT; they formalize th
 
 ---
 
-## 3. Illustrative Application
+## Illustrative Application
 
 ### 3.1 Design
 
@@ -323,7 +323,7 @@ The framework as presented in Sections 1-3 operates at the level of structured q
 
 ---
 
-## 4. Findings
+## Findings
 
 The five-brand illustrative application identified four candidate mechanisms that the framework's constructs make visible — phenomena that are difficult to articulate through existing brand frameworks because those frameworks lack the necessary vocabulary.
 
@@ -416,9 +416,9 @@ The coherence type is determined by three structural properties: (1) cohort inte
 
 Our analysis of Tesla revealed a counterintuitive structural property of brand perception: evidence-free negative convictions can be more stable than evidence-rich positive ones.
 
-The Tesla Progressive Boycotter cohort holds a brand conviction with 0.82 confidence (classified as "strong"). This conviction is constructed from an ideological weight of 0.45 and a social weight of 0.20 — but an experiential weight of only 0.03. The Boycotter has never driven a Tesla, never visited a showroom, never used a Supercharger. Their entire brand perception is constructed from ambient ideological and social signals encountered through screens.
+The Tesla Progressive Boycotter cohort holds a brand conviction with .82 confidence (classified as "strong"). This conviction is constructed from an ideological weight of .45 and a social weight of .20 — but an experiential weight of only .03. The Boycotter has never driven a Tesla, never visited a showroom, never used a Supercharger. Their entire brand perception is constructed from ambient ideological and social signals encountered through screens.
 
-The Tesla Tech Loyalist, who drives the car daily and has extensive product data, holds a conviction with 0.78 confidence — lower than the Boycotter's.
+The Tesla Tech Loyalist, who drives the car daily and has extensive product data, holds a conviction with .78 confidence — lower than the Boycotter's.
 
 The person with the most evidence has less certainty than the person with the least.
 
@@ -428,15 +428,15 @@ The Loyalist, by contrast, has real product data. They know the car is excellent
 
 This asymmetry has a critical resilience implication. In our disruption simulations, negative convictions consistently *strengthen* under brand stress, while positive convictions *weaken*. A brand crisis confirms what the negative-conviction holder already believed. But it introduces contradicting evidence for the positive-conviction holder, who must now reconcile their favorable experience with unfavorable news. The asymmetry is directional: positive → negative is far easier than negative → positive, because the latter requires experiential evidence that the negative-conviction holder's spectral profile is designed to exclude.
 
-The strategic implication is stark: resources spent attempting to convert structurally locked negative cohorts are wasted. The Boycotter's experiential gate is effectively closed (0.03 weight). No test drive campaign will reach them because they are not evaluating the product — they are evaluating the ideology. Brands with locked negative cohorts must accept the structural constraint and invest in addressable cohorts instead.
+The strategic implication is stark: resources spent attempting to convert structurally locked negative cohorts are wasted. The Boycotter's experiential gate is effectively closed (.03 weight). No test drive campaign will reach them because they are not evaluating the product — they are evaluating the ideology. Brands with locked negative cohorts must accept the structural constraint and invest in addressable cohorts instead.
 
 **Table 9.** Asymmetric conviction resilience (Tesla case): evidence-rich Loyalist vs. evidence-free Boycotter.
 
 | | **Tech Loyalist** | **Progressive Boycotter** |
 |:--|:--|:--|
-| **Top weights** | Experiential: 0.35, Economic: 0.20 | Ideological: 0.45, Social: 0.20 |
-| **Experiential** | 0.15 (extensive product data) | 0.03 (no product contact) |
-| **Confidence** | 0.78 (mixed signals = ambivalence) | 0.82 (no contradiction = certainty) |
+| **Top weights** | Experiential: .35, Economic: .20 | Ideological: .45, Social: .20 |
+| **Experiential** | .15 (extensive product data) | .03 (no product contact) |
+| **Confidence** | .78 (mixed signals = ambivalence) | .82 (no contradiction = certainty) |
 | **Crisis effect** | Weakens (new evidence conflicts) | Strengthens (confirms prior belief) |
 
 ### 4.4 Brand Power and Brand Health as Independent Variables
@@ -496,7 +496,7 @@ Coherence
 
 ---
 
-## 5. Discussion
+## Discussion
 
 ### 5.1 Relationship to Existing Frameworks
 
@@ -637,7 +637,7 @@ The eight spectral dimensions are a coordinate system for perception space, not 
 
 ---
 
-## 6. Conclusion
+## Conclusion
 
 Spectral Brand Theory contributes a formal, computational framework for modeling brand perception as an observer-mediated process. The core claim — there is no brand-in-itself, only signals and observers — produces an analytical architecture that explains phenomena traditional frameworks cannot: how the same brand can be simultaneously powerful and fragile (Tesla), how restricting signals can create more value than emitting them (Hermès), how five qualitatively different types of brand coherence determine resilience profiles that a single coherence score cannot distinguish, and how evidence-free convictions can be more stable than evidence-rich ones.
 
@@ -853,7 +853,19 @@ Zharnikov, D. (2026aa). Empirical rate-distortion curve for AI brand perception 
 
 Zharnikov, D. (2026b). The atom-cloud-fact epistemological pipeline: From financial document processing to brand perception modeling. Working Paper. https://doi.org/10.5281/zenodo.18944770
 
+Zharnikov, D. (2026d). Formal metric structure of multi-dimensional brand perception space. Working Paper. https://doi.org/10.5281/zenodo.18945295
+
 Zharnikov, D. (2026e). Spectral metamerism in brand perception: Projection bounds from high-dimensional geometry. Working Paper. https://doi.org/10.5281/zenodo.18945352
+
+Zharnikov, D. (2026g). How many brands can a market hold? Sphere packing bounds for multi-dimensional positioning. Working Paper. https://doi.org/10.5281/zenodo.18946429
+
+Zharnikov, D. (2026v). Spectral metamerism in AI-mediated brand perception: How large language models collapse multi-dimensional brand differentiation in consumer search. Working Paper. https://doi.org/10.5281/zenodo.19422427
+
+Zharnikov, D. (2026y). Brand triangulation: A geometric framework for multi-observer brand positioning. Working Paper. https://doi.org/10.5281/zenodo.19468204
+
+## Acknowledgments
+
+AI writing assistants (Claude, GPT, Gemini) were used for editorial refinement and literature searching; all theoretical claims, propositions, and interpretations are the author's sole responsibility.
 
 ---
 *This paper is part of the Spectral Brand Theory research program. For the full atlas of 20+ interconnected papers, see [spectralbranding.com/atlas](https://spectralbranding.com/atlas).*
