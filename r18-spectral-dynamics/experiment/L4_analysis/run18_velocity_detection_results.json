@@ -1,0 +1,210 @@
+{
+  "experiment": "exp3_velocity_detection",
+  "date": "2026-04-16",
+  "total_records": 297,
+  "total_cost_usd": 0.2166,
+  "h1": {
+    "per_dimension": {
+      "Semiotic": {
+        "rising_mean": 0.0989,
+        "falling_mean": 0.1104,
+        "t": -2.264,
+        "p": 0.025,
+        "cohens_d": -0.372,
+        "significant": true
+      },
+      "Narrative": {
+        "rising_mean": 0.1681,
+        "falling_mean": 0.1369,
+        "t": 7.608,
+        "p": 0.0,
+        "cohens_d": 1.251,
+        "significant": true
+      },
+      "Ideological": {
+        "rising_mean": 0.2214,
+        "falling_mean": 0.1175,
+        "t": 15.078,
+        "p": 0.0,
+        "cohens_d": 2.479,
+        "significant": true
+      },
+      "Experiential": {
+        "rising_mean": 0.1385,
+        "falling_mean": 0.2035,
+        "t": -9.82,
+        "p": 0.0,
+        "cohens_d": -1.615,
+        "significant": true
+      },
+      "Social": {
+        "rising_mean": 0.1311,
+        "falling_mean": 0.1211,
+        "t": 2.065,
+        "p": 0.0407,
+        "cohens_d": 0.339,
+        "significant": true
+      },
+      "Economic": {
+        "rising_mean": 0.084,
+        "falling_mean": 0.1709,
+        "t": -14.277,
+        "p": 0.0,
+        "cohens_d": -2.347,
+        "significant": true
+      },
+      "Cultural": {
+        "rising_mean": 0.0927,
+        "falling_mean": 0.0736,
+        "t": 4.329,
+        "p": 0.0,
+        "cohens_d": 0.712,
+        "significant": true
+      },
+      "Temporal": {
+        "rising_mean": 0.0653,
+        "falling_mean": 0.0661,
+        "t": -0.175,
+        "p": 0.8611,
+        "cohens_d": -0.029,
+        "significant": false
+      }
+    },
+    "significant_count": 7,
+    "h1_supported": true
+  },
+  "h2": {
+    "per_dimension": {
+      "Semiotic": {
+        "stable_mean": 0.1319,
+        "falling_mean": 0.1104,
+        "t": 4.016,
+        "p": 0.0001,
+        "cohens_d": 0.658,
+        "significant": true
+      },
+      "Narrative": {
+        "stable_mean": 0.1374,
+        "falling_mean": 0.1369,
+        "t": 0.097,
+        "p": 0.9228,
+        "cohens_d": 0.016,
+        "significant": false
+      },
+      "Ideological": {
+        "stable_mean": 0.1501,
+        "falling_mean": 0.1175,
+        "t": 3.818,
+        "p": 0.0002,
+        "cohens_d": 0.626,
+        "significant": true
+      },
+      "Experiential": {
+        "stable_mean": 0.173,
+        "falling_mean": 0.2035,
+        "t": -4.188,
+        "p": 0.0,
+        "cohens_d": -0.686,
+        "significant": true
+      },
+      "Social": {
+        "stable_mean": 0.1255,
+        "falling_mean": 0.1211,
+        "t": 0.956,
+        "p": 0.3407,
+        "cohens_d": 0.157,
+        "significant": false
+      },
+      "Economic": {
+        "stable_mean": 0.1191,
+        "falling_mean": 0.1709,
+        "t": -7.215,
+        "p": 0.0,
+        "cohens_d": -1.182,
+        "significant": true
+      },
+      "Cultural": {
+        "stable_mean": 0.1032,
+        "falling_mean": 0.0736,
+        "t": 7.738,
+        "p": 0.0,
+        "cohens_d": 1.268,
+        "significant": true
+      },
+      "Temporal": {
+        "stable_mean": 0.0597,
+        "falling_mean": 0.0661,
+        "t": -1.635,
+        "p": 0.1042,
+        "cohens_d": -0.268,
+        "significant": false
+      }
+    },
+    "significant_count": 5,
+    "h2_supported": true
+  },
+  "h3": {
+    "mean_osc_variance": 0.001219,
+    "mean_stable_variance": 0.001075,
+    "per_dimension": {
+      "Semiotic": {
+        "osc_var": 0.001682,
+        "stable_var": 0.000896,
+        "levene_F": 0.583,
+        "levene_p": 0.4464,
+        "osc_wider": true
+      },
+      "Narrative": {
+        "osc_var": 0.000607,
+        "stable_var": 0.001,
+        "levene_F": 1.863,
+        "levene_p": 0.1744,
+        "osc_wider": false
+      },
+      "Ideological": {
+        "osc_var": 0.001006,
+        "stable_var": 0.002439,
+        "levene_F": 12.015,
+        "levene_p": 0.0007,
+        "osc_wider": false
+      },
+      "Experiential": {
+        "osc_var": 0.000803,
+        "stable_var": 0.001045,
+        "levene_F": 5.04,
+        "levene_p": 0.0263,
+        "osc_wider": false
+      },
+      "Social": {
+        "osc_var": 0.000408,
+        "stable_var": 0.000611,
+        "levene_F": 12.74,
+        "levene_p": 0.0005,
+        "osc_wider": false
+      },
+      "Economic": {
+        "osc_var": 0.001503,
+        "stable_var": 0.001714,
+        "levene_F": 0.09,
+        "levene_p": 0.7651,
+        "osc_wider": false
+      },
+      "Cultural": {
+        "osc_var": 0.000754,
+        "stable_var": 0.000398,
+        "levene_F": 20.961,
+        "levene_p": 0.0,
+        "osc_wider": true
+      },
+      "Temporal": {
+        "osc_var": 0.002991,
+        "stable_var": 0.000497,
+        "levene_F": 10.319,
+        "levene_p": 0.0016,
+        "osc_wider": true
+      }
+    },
+    "dims_osc_wider": 3,
+    "h3_exploratory": true
+  }
+}

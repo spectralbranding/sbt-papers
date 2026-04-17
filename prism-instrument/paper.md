@@ -32,8 +32,6 @@ Existing multi-dimensional instruments cannot answer this question because they 
 
 *Notes:* Factor analysis instruments derive dimensions from exploratory or confirmatory analysis of human response data. PRISM-B derives dimensions from the SBT signal taxonomy prior to measurement. Only PRISM-B can be administered to AI observers without construct mismatch.
 
-The measurement gap extends beyond instrument availability. Flake and Fried (2020) identify six questions that researchers must answer to avoid questionable measurement practices: what is your construct, why did you select your measure, how did you operationalize it, how did you quantify it, did you modify it, and did you create it ad hoc? For brand perception, the field systematically fails on all six: constructs are loosely defined, instrument selection is rarely justified, response formats vary without rationale, and ad hoc single-study scales are pervasive (Barry, Chaney, Piazza-Gardner and Chavarria 2014). PRISM-B is designed to satisfy all six criteria by construction: the construct is defined by SBT's dimensional taxonomy, the instrument is justified by signal-side derivation, the format is selected via rate-distortion optimization, the scoring algorithm is fixed, and the instrument is published as a versioned specification rather than created ad hoc.
-
 This paper argues that the measurement gap is not merely an absence of instruments but a consequence of how instruments have been designed. The dominant paradigm -- Churchill (1979), refined by Rossiter (2002) and implemented by Brakus et al. (2009) -- derives dimensions empirically from human response patterns. Dimensions discovered this way are necessarily human-specific: they capture variance in human responses but provide no guarantee that the same dimensional structure applies to non-human observers. An instrument designed for commensurable AI-human measurement must instead derive its dimensions from the *signal* side -- what the brand emits -- rather than the *response* side -- how one particular observer type reacts. This signal-side derivation is what Spectral Brand Theory provides.
 
 Spectral Brand Theory (SBT; Zharnikov 2026a) proposes that brand perception can be modeled as emission across eight typed dimensions (Semiotic, Narrative, Ideological, Experiential, Social, Economic, Cultural, Temporal) received by heterogeneous observer cohorts. Empirical work within SBT has demonstrated that these dimensions exhibit systematic observer-dependent variation: LLMs collapse perception toward Economic and Experiential dimensions (Zharnikov 2026v), cross-model convergence is extreme (cosine .977 across 24 architectures), and the magnitude of collapse depends on response format (Zharnikov 2026aa). Brand triangulation (Zharnikov 2026y) has formalized how multiple observers can be combined to recover brand emission profiles. A growing literature on LLMs as survey respondents (Argyle, Busby, Fulda, Gubler, Rytting, and Wingate 2023; Horton 2023; Sarstedt, Brand, Ringle, and Dolz 2024) has established that AI systems can generate survey-like responses, but has not addressed the instrument design question: what measurement format minimizes distortion across observer types?
@@ -324,6 +322,12 @@ The observer-agnostic design aligns with the emerging consensus that AI systems 
 
 The multi-observer architecture of PRISM-B connects to the stakeholder co-creation tradition in brand theory. Hatch and Schultz (2010) argued that brand meaning is jointly constructed by multiple stakeholders whose perspectives may conflict. PRISM-B operationalizes this insight: each observer cohort's dimensional profile is a distinct perspective on the brand, and the triangulation framework (Zharnikov 2026y) recovers the brand's emission profile from the pattern of stakeholder disagreement rather than averaging it away. In this sense, PRISM-B is closer to Hatch and Schultz's relational ontology than to Keller's (1993) representative-consumer model, while providing the quantitative measurement infrastructure that the co-creation tradition has lacked.
 
+### *Synthetic Cohort Pre-Pilot*
+
+A synthetic cohort pre-pilot demonstrates instrument sensitivity. Ten behaviorally distinct observer vignettes — with no SBT dimension names in any prompt — produce significantly different PRISM-B spectral profiles across all 8 dimensions (F ranging from 8.14 to 52.90, all p < .001, eta-squared .091 to .394). The Green Advocate cohort weights Ideological 61% higher than other cohorts (d = 1.53). The Spreadsheet Shopper cohort weights Economic 94% higher (d = 1.37). These effect sizes exceed conventional benchmarks for instrument sensitivity and demonstrate that PRISM-B measures observer-dependent perception, not prompt vocabulary.
+
+A 400-call Latin-square robustness check reveals a primacy effect in JSON-based elicitation (eta-squared = .217) — dimensions listed first receive higher weights. Cohort effects dominate position effects on 5 of 8 dimensions (Pearson r = .849 between balanced and canonical-order profiles). Balanced dimension ordering is recommended as standard practice for future PRISM-B administrations. The open-source sbt-framework (v2.3.1) implements three ordering modes — canonical, Latin-square, and random — as a configurable parameter in the prompt generation module. This finding refines the "Administration Protocol" specification: while fixed order (P1--P8) was originally specified for AI observers to ensure replicability, the primacy effect evidence suggests that balanced or randomized ordering — already recommended for human respondents — should be extended to AI administration to reduce systematic position bias.
+
 ---
 
 ## Limitations
@@ -338,7 +342,7 @@ Third, **cross-language equivalence is assumed but not demonstrated**. The curre
 
 ### *Robustness and Boundary Conditions*
 
-Three boundary conditions bear on the generalizability of PRISM-B results. First, order effects: for AI observers, items are administered in fixed order (P1--P8) because LLM outputs are deterministic at a given temperature seed, and randomization would introduce unnecessary variance across replications. For human respondents, the administration protocol specifies item randomization within each respondent (see "Administration Protocol"), which is the standard psychometric defense against primacy and recency effects. Second, language invariance: the R15 cross-cultural study (Zharnikov 2026v) tested native-language prompts in 15 languages and found a null result on home-market bias (H10: mean = +.001, *p* = .716), suggesting that the dimensional structure of PRISM-B is robust to prompt language for AI observers. Whether this invariance holds for human respondents requires formal measurement invariance testing across translated versions, following the configural, metric, and scalar sequence established in the developmental measurement literature (Putnick and Bornstein 2016). Scalar invariance -- equal item intercepts across groups -- is the minimum requirement for valid cross-cohort comparison of latent means; failure at the scalar level would indicate that the same item carries different baseline meaning for different observer types, inflating apparent cross-cohort differences (Borsboom, Mellenbergh and van Heerden 2003). Third, temporal stability: Proposition 4 of the PRISM specification addresses format optimality, and the PRISM-T variant (see "The PRISM Instrument Family") is designed explicitly for temporal tracking, providing a built-in mechanism for assessing test-retest reliability and detecting genuine brand perception change versus measurement instability.
+Three boundary conditions bear on the generalizability of PRISM-B results. First, order effects: the synthetic cohort Latin-square analysis (see "Synthetic Cohort Pre-Pilot") reveals a primacy effect in JSON-based AI elicitation (eta-squared = .217), recommending balanced dimension ordering for AI observers. For human respondents, the administration protocol specifies item randomization within each respondent (see "Administration Protocol"), which is the standard psychometric defense against primacy and recency effects. Second, language invariance: the R15 cross-cultural study (Zharnikov 2026v) tested native-language prompts in 15 languages and found a null result on home-market bias (H10: mean = +.001, *p* = .716), suggesting that the dimensional structure of PRISM-B is robust to prompt language for AI observers. Whether this invariance holds for human respondents requires formal measurement invariance testing across translated versions. Third, temporal stability: Proposition 4 of the PRISM specification addresses format optimality, and the PRISM-T variant (see "The PRISM Instrument Family") is designed explicitly for temporal tracking, providing a built-in mechanism for assessing test-retest reliability and detecting genuine brand perception change versus measurement instability.
 
 ---
 
@@ -362,11 +366,7 @@ Ali, Farzan (2025), "The Impact of Generative AI on Brand Authenticity and Consu
 
 Argyle, Lisa P., Ethan C. Busby, Nancy Fulda, Joshua R. Gubler, Christopher Rytting, and David Wingate (2023), "Out of One, Many: Using Language Models to Simulate Human Samples," *Political Analysis*, 31 (3), 337--351.
 
-Barry, Adam E., Beth Chaney, Anna K. Piazza-Gardner, and Essa A. Chavarria (2014), "Validity and Reliability Reporting Practices in the Field of Health Education and Behavior: A Review of Seven Journals," *Health Education & Behavior*, 41 (1), 12--18. https://doi.org/10.1177/1090198113483139
-
 Bergkvist, Lars and John R. Rossiter (2007), "The Predictive Validity of Multiple-Item Versus Single-Item Measures of the Same Constructs," *Journal of Marketing Research*, 44 (2), 175--184.
-
-Borsboom, Dirk, Gideon J. Mellenbergh, and Jaap van Heerden (2003), "The Theoretical Status of Latent Variables," *Psychological Review*, 110 (2), 203--219. https://doi.org/10.1037/0033-295X.110.2.203
 
 Brakus, J. Josko, Bernd H. Schmitt, and Lia Zarantonello (2009), "Brand Experience: What Is It? How Is It Measured? Does It Affect Loyalty?" *Journal of Marketing*, 73 (3), 52--68.
 
@@ -379,8 +379,6 @@ DeVellis, Robert F. (2017), *Scale Development: Theory and Applications*, 4th ed
 Educational Testing Service (2014), *ETS Standards for Quality and Fairness*, Educational Testing Service.
 
 Feuerriegel, Stefan, Jochen Hartmann, Christian Janiesch, and Patrick Zschech (2024), "Generative AI," *Business & Information Systems Engineering*, 66, 111--126.
-
-Flake, Jessica Kay and Eiko I. Fried (2020), "Measurement Schmeasurement: Questionable Measurement Practices and How to Avoid Them," *Advances in Methods and Practices in Psychological Science*, 3 (4), 456--465. https://doi.org/10.1177/2515245920952393
 
 France, Stephen L. (2025), "Digital Brand Equity: Conceptualization and Measurement," *Journal of Product and Brand Management*, 34 (2), 234--251.
 
@@ -415,8 +413,6 @@ Nosek, Brian A., Charles R. Ebersole, Alexander C. DeHaven, and David T. Mellor 
 Parducci, Allen (1965), "Category Judgment: A Range-Frequency Model," *Psychological Review*, 72 (6), 407--418.
 
 Pellert, Max, Clemens M. Lechner, Claudia Wagner, Beatrice Rammstedt, and Markus Strohmaier (2024), "AI Psychometrics: Assessing the Psychological Profiles of Large Language Models Through Psychometric Inventories," *Perspectives on Psychological Science*, 19 (3).
-
-Putnick, Diane L. and Marc H. Bornstein (2016), "Measurement Invariance Conventions and Reporting: The State of the Art and Future Directions for Psychological Research," *Developmental Review*, 41, 71--90. https://doi.org/10.1016/j.dr.2016.06.004
 
 Preston, Carolyn C. and Andrew M. Colman (2000), "Optimal Number of Response Categories in Rating Scales: Reliability, Validity, Discriminating Power, and Respondent Preferences," *Acta Psychologica*, 104 (1), 1--15.
 
@@ -457,7 +453,4 @@ Zharnikov, Dmitry (2026y), "Brand Triangulation: A Geometric Framework for Multi
 Zharnikov, Dmitry (2026z), "Spectral Dynamics: Velocity, Acceleration, and Phase Space in Multi-Dimensional Brand Perception," Working Paper, https://doi.org/10.5281/zenodo.19468204.
 
 Zharnikov, Dmitry (2026aa), "Empirical Rate-Distortion Curve for AI Brand Perception Encoders," Working Paper, https://doi.org/10.5281/zenodo.19528833.
-
----
-*This paper is part of the Spectral Brand Theory research program. For the full atlas of 20+ interconnected papers, see [spectralbranding.com/atlas](https://spectralbranding.com/atlas).*
 

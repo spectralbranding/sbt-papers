@@ -1,0 +1,30 @@
+experiment: exp3_dimensional_velocity
+date: "2026-04-16"
+models:
+  - id: claude-haiku-4-5
+    provider: anthropic
+  - id: gpt-4o-mini
+    provider: openai
+  - id: gemini-2.5-flash
+    provider: google
+  - id: deepseek-chat
+    provider: deepseek
+  - id: grok-4-1-fast-non-reasoning
+    provider: xai
+temperature: 0.7
+top_p: 1.0
+max_tokens: 512
+repetitions: 3
+random_seed: 42
+total_calls: 300
+trajectories:
+  - rising
+  - falling
+  - stable_high
+  - oscillating
+brands:
+  - Hermes
+  - IKEA
+  - Patagonia
+  - Erewhon
+  - Tesla

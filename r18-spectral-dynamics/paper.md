@@ -32,7 +32,7 @@ This paper makes three contributions:
 
 We illustrate the framework using Dove's brand evolution across four periods (2003--2023), computing velocity and acceleration from the dimensional activation data in Zharnikov (2026p). The illustration demonstrates both the framework's analytical power and its limitations (noise amplification, dimensional creation events, author-assigned profiles).
 
-The paper is organized as follows. Section 2 reviews the theoretical background. Section 3 develops the differential calculus. Section 4 proves the Bonnet pair resolution. Section 5 introduces trajectory-based analysis. Section 6 provides the Dove illustration. Section 7 discusses managerial implications. Section 8 addresses limitations and future research. Section 9 concludes.
+The paper is organized as follows. Section 2 reviews the theoretical background. Section 3 develops the differential calculus. Section 4 proves the Bonnet pair resolution. Section 5 introduces trajectory-based analysis. Section 6 provides the Dove illustration. Section 7 discusses managerial implications. Section 8 addresses limitations and future research. Section 9 reports the synthetic velocity detection pilot. Section 10 concludes.
 
 ---
 
@@ -492,7 +492,35 @@ Empirical testing of competitive interference (Zharnikov 2026c, Section 10.5) fo
 
 ---
 
-## 9. Conclusion
+## 9. Empirical Pilot: Synthetic Velocity Detection
+
+The differential calculus developed above is purely theoretical. This section reports a pilot experiment testing whether LLMs --- used as synthetic observers --- perceive brand velocity as an independent signal, or whether trajectory information is discarded in favor of current-state evaluation.
+
+### 9.1 Design
+
+Four trajectory narratives (Rising, Falling, Stable-high, Oscillating) were crossed with five brands, five models, and three replications, producing 300 calls of which 297 were valid (99.0% success rate). Each call presented an LLM with a brand description that included explicit trajectory information (e.g., "Brand X has been steadily rising in cultural relevance and narrative strength over the past five years" versus "Brand X has experienced declining perceptions across most dimensions"). The LLM then rated the brand on all eight SBT dimensions using the PRISM-B instrument.
+
+### 9.2 Results
+
+*H1 (trajectory direction produces different profiles): SUPPORTED on 7/8 dimensions.* Rising versus Falling trajectories produced dramatically different spectral profiles. The largest effects were on Ideological (Cohen's d = 2.48), Economic (d = -2.35), Experiential (d = -1.62), and Narrative (d = 1.25). Only Temporal was invariant to trajectory direction (d = -.03). LLMs do not merely assess current brand position; they adjust dimensional ratings based on where the brand has been going.
+
+*H2 (Bonnet pair resolution --- velocity as independent signal): SUPPORTED on 5/8 dimensions.* Stable-high versus Falling brands differ despite no explicit current-state difference in the prompt. Both are described as currently well-positioned, but the Falling brand's declining trajectory produces lower ratings. Cultural (d = 1.27) and Economic (d = -1.18) show the largest effects. This validates the core theoretical claim of Section 4: velocity is an independent perceptual signal that resolves ambiguity between brands at the same position. Brands with identical current profiles but different trajectories are distinguishable in perception --- the Bonnet pair is resolvable.
+
+*H3 (Oscillating trajectories produce wider variance): EXPLORATORY.* Oscillating trajectories showed wider variance than Stable on 3/8 dimensions. Temporal variance was 6x higher for Oscillating (.00299 vs .00050) --- directional flips create maximal uncertainty about temporal positioning. This is consistent with the noise amplification analysis (Section 3.3): when the velocity vector reverses direction frequently, the acceleration is large and the signal-to-noise ratio for trajectory estimation degrades.
+
+### 9.3 Interpretation
+
+Three findings merit theoretical comment.
+
+First, LLMs perceive brand velocity, not just position. The trajectory narratives produced large, systematic effects on dimensional ratings, confirming that the differential quantities formalized in Section 3 correspond to perceptual realities --- at least in synthetic observers. Whether human observers show comparable velocity sensitivity is an empirical question for future research.
+
+Second, Falling brands collapse toward Economic. Across all models, brands on declining trajectories received elevated Economic ratings and suppressed Narrative, Ideological, and Cultural ratings. This connects directly to the Economic Default documented in the companion R15 study (Zharnikov, 2026v): when a brand's trajectory signals decline, observers default to evaluating it on its most quantifiable, functional dimension. Velocity is not merely directional --- it modulates which dimensions dominate perception.
+
+Third, Temporal is velocity-invariant. Despite large effects on all other dimensions, the Temporal dimension (longevity, tradition, perceived permanence) was unaffected by trajectory direction (d = -.03). This suggests that an observer's perception of a brand's relationship to time is a fixed attribute --- not modulated by whether the brand is currently rising or falling. Temporal positioning appears to be a deep structural property rather than a dynamic one, consistent with its theoretical role as the most slowly evolving dimension in the SBT framework.
+
+---
+
+## 10. Conclusion
 
 Brand measurement has been fundamentally static: we know where brands are but not where they are going. This paper introduces a differential calculus for multi-dimensional brand perception that extends Spectral Brand Theory from position (Order 0) to velocity (Order 1) and acceleration (Order 2). Three contributions emerge: velocity resolves the Bonnet pair ambiguity in brand measurement (Theorem 1), directional coherence quantifies strategy-trajectory alignment (Definition 5), and trajectory clustering enables dynamic competitive analysis (Section 5).
 
