@@ -2,7 +2,7 @@
 
 **Dmitry Zharnikov**
 
-Working Paper v2.1 -- April 2026
+Working Paper v2.1.1 -- April 2026
 
 ---
 
