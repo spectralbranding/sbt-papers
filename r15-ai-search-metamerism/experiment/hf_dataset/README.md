@@ -1,5 +1,5 @@
 ---
-license: cc-by-nc-nd-4.0
+license: cc-by-4.0
 task_categories:
   - text-generation
 language:
@@ -71,4 +71,4 @@ Each record contains 29 fields including:
 
 ## License
 
-CC-BY-NC-ND-4.0
+CC-BY-4.0
