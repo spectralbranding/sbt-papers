@@ -66,7 +66,7 @@ The current pipeline has five structural gaps that are difficult to address with
 
 **Gap 4: No review attribution.** Peer reviewers contribute substantive intellectual work — identifying errors, suggesting improvements, catching methodological flaws. Their contributions are acknowledged in a single generic sentence ("We thank the anonymous reviewers") and then erased. A reviewer who saves a paper from a fatal statistical error receives the same credit as one who submits a two-sentence review: none.
 
-**Gap 5: No machine interface.** The entire pipeline is human-readable only. A PDF cannot be queried, diff'd, branched, or programmatically analyzed without lossy conversion. AI tools that could assist with literature review, consistency checking, or cross-paper analysis must first solve the extraction problem — converting unstructured text back into structured data — before doing any useful work.
+**Gap 5: No machine interface.** The entire pipeline is human-readable only. A PDF cannot be queried, diff'd, branched, or programmatically analyzed without lossy conversion. AI tools that could assist with literature review, consistency checking, or cross-paper analysis must first solve the extraction problem — converting unstructured text back into structured data — before doing any useful work. This is no longer hypothetical: Stelmakh, Shah, et al. (2026) deployed AI review at scale across 22,977 AAAI-26 submissions and were forced to apply olmOCR --- optical character recognition applied to PDFs --- as a preprocessing step precisely because papers lacked machine-readable structure. The repository protocol proposed here eliminates that step: a paper stored as a Git repository with Markdown source and `paper.yaml` is queryable without any format conversion.
 
 The protocol proposed here closes all five gaps by replacing the document assumption with a repository assumption. The paper becomes a Git repository. Submission becomes a fork. Review becomes a branch. Publication becomes a release. Every operation is versioned, attributed, and machine-readable by construction.
 
@@ -1396,5 +1396,7 @@ Zharnikov, D. (2026i). Organization as specification: A test-driven approach to 
 
 Zharnikov, D. (2026t). Paper as specification: A machine-readable standard for scientific claims. Working Paper. https://doi.org/10.5281/zenodo.19210037
 
+Stelmakh, Ivan, Shah, Nihar, et al. (2026). Deploying AI review at scale: Lessons from AAAI-26. arXiv:2604.13940v1.
+
 ---
-*This paper is part of the Spectral Brand Theory research program. For the full atlas of 20+ interconnected papers, see [spectralbranding.com/atlas](https://spectralbranding.com/atlas).*
+*This paper is part of the Spectral Brand Theory research program. For the full atlas of 30+ interconnected papers, see [spectralbranding.com/atlas](https://spectralbranding.com/atlas).*
