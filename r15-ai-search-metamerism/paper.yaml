@@ -305,7 +305,13 @@ submission_history:
     type: journal
     date: null
     status: planned
-    note: "Special call: Insights on the future of search-related advertising and AI. Submit after Run 5 data integrated (v1.1)."
+    note: "JMR submission. v3.0 manuscript (12,128 words) + Web Appendix (11,210 words)."
+
+supplementary_files:
+  - filename: "Zharnikov_2026v_Web_Appendix.pdf"
+    description: "Web Appendix: full analysis plan, per-pair results (Runs 2-3), cross-cultural extension (Run 5), geopolitical framing (Runs 7/11), robustness checks, and 4 supplementary experiments (A/B/D/E)"
+    words: 11210
+    pages: ~25
 
 ai_disclosure: >
   AI tools (Claude, Anthropic) were used for manuscript drafting, hypothesis
