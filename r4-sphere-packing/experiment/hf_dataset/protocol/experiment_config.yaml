@@ -1,0 +1,39 @@
+experiment:
+  name: "C_competitive_interference"
+  version: "1.0"
+  date: "2026-04-16"
+  paper_target: "R4 (Sphere Packing Capacity) extension"
+
+design:
+  focal_brands: 5
+  competitor_types: 3  # direct, adjacent, distant
+  conditions: 4  # solo, self_control, paired, context
+  models: 5
+  solo_reps: 3
+  competitive_reps: 1
+  estimated_calls: 250
+  temperature: 0.7
+  random_seed: 42
+
+hypotheses:
+  h1:
+    name: "Competitive Context Effect"
+    test: "Independent t-test per dimension"
+    alpha: 0.00625  # Bonferroni: 0.05/8
+    success: "At least 2/8 dimensions significant"
+  h2:
+    name: "Distance-Dependent Shift"
+    test: "One-way ANOVA on Euclidean shift magnitude"
+    alpha: 0.05
+    success: "F-test significant, direct > distant"
+  h3:
+    name: "Contrast/Assimilation"
+    test: "Independent t-test on shift direction by dimension type"
+    alpha: 0.05
+    success: "Significant interaction"
+
+statistical_requirements:
+  correction: "Bonferroni for 8-dimension tests"
+  effect_sizes: "Cohen's d (t-tests), eta-squared (ANOVA)"
+  bootstrap_ci: 10000
+  bootstrap_seed: 42
