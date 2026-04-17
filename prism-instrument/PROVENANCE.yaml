@@ -13,6 +13,18 @@ provenance:
         eight scale items, 1-5 ordinal response format, scoring algorithm (DCI +
         cosine convergence), Perception DOP connection. Four propositions with
         falsification conditions. Six-instrument comparison table.
+    - version: "1.0.1"
+      date: "2026-04-16"
+      description: >
+        Added serial position evidence validating 1-5 Likert format choice. Added
+        Latin-square recommendation for multi-study designs. Updated P4 with
+        preliminary AI-side support. Published on Zenodo: 10.5281/zenodo.19555265.
+    - version: "1.0.1"
+      date: "2026-04-17"
+      description: >
+        Session 105 quality review fixes. paper.yaml updated with abstract field,
+        version confirmed 1.0.1, license confirmed CC-BY-4.0. PROVENANCE.yaml
+        updated with version history entries.
 
   forks: []
 

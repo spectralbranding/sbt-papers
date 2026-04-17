@@ -98,6 +98,16 @@ python behavioral_metamerism_pilot.py --live --runs 3
 }
 ```
 
+## Version History
+
+| Version | Date | Notes |
+|---------|------|-------|
+| 1.0 | 2026-04-02 | Initial preprint on Zenodo |
+| 1.1--1.4 | 2026-04-03--04 | Empirical pilot, Grok fixes, ephemeris analogy, admissibility |
+| 1.5 | 2026-04-05 | Medesani invariant corridor formalization |
+| 1.6 | 2026-04-06 | Brand Function product spec, pilot data |
+| 1.7 | 2026-04-16 | Section 8.6 BF Format Optimization (375 calls v2); DeepShop citation |
+
 ## License
 
-MIT
+MIT (code); CC-BY-4.0 (paper content)

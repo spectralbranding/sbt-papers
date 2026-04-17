@@ -13,6 +13,25 @@ meta:
   version: "3.1"
   venue: "Zenodo preprint (not yet submitted to journal)"
   license: "CC-BY-4.0"
+  abstract: >
+    Brand measurement collapses multi-dimensional perception into single scores, destroying the
+    information that explains why different observers form irreconcilable perceptions of the same
+    brand. Prior dimensional approaches decompose brand meaning into attribute-level dimensions
+    but treat those dimensions as properties of the brand rather than perceptual channels through
+    which heterogeneous observers filter signals. This paper develops Spectral Brand Theory (SBT),
+    arguing that brand perception is irreducibly observer-dependent. The framework decomposes brand
+    signals across eight perceptual dimensions, defines observer cohorts through formal spectral
+    profiles, and models perception as probabilistic cloud formation that collapses into conviction
+    through evidence accumulation. Five formal propositions address observer heterogeneity,
+    non-ergodic perception, structural absence, coherence types, and conviction asymmetry. An
+    illustrative application to five brands articulates four candidate mechanisms: structural absence
+    as brand strategy, a five-type coherence taxonomy, asymmetric conviction resilience, and
+    independence of brand power from brand health. Cross-model replication suggests structural
+    conclusions are framework-driven rather than model-specific. SBT contributes a computationally
+    implementable, observer-centric architecture that extends customer-based brand equity theory.
+    Empirical validation against independently collected consumer data, including a 21,350-call
+    multi-model study (Zharnikov 2026v), provides initial corroboration of the dimensional collapse
+    predictions.
   keywords:
     - spectral brand theory
     - brand perception

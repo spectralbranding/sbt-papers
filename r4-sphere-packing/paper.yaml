@@ -13,6 +13,24 @@ meta:
   version: "1.1"
   venue: "Working Paper (Zenodo)"
   license: "CC-BY-4.0"
+  abstract: >
+    How many truly distinguishable brand positions can a market sustain? This paper applies sphere
+    packing theory to Spectral Brand Theory's eight-dimensional perception space, where each brand
+    occupies a position in R^8_+ equipped with the Aitchison metric. Two brands are distinguishable
+    if their spectral profiles differ by more than a perceptual threshold -- a just-noticeable
+    difference in brand perception space. In eight dimensions, the densest possible sphere packing
+    is the E8 lattice, whose optimality was proved by Viazovska (2017). We derive positioning
+    capacity bounds: at perceptual threshold epsilon = 0.10, the space admits at least 10^8
+    distinguishable positions; at epsilon = 0.20, at least 390,625. The E8 kissing number of 240
+    provides an upper bound on nearest-competitor positions, decomposing into 112 specialist vectors
+    and 128 generalist vectors. White space analysis reveals that even with 10,000 brands at
+    epsilon = 0.10, 99.99% of the positioning space remains unoccupied. However, dimensional
+    correlation dramatically reduces capacity: at average pairwise correlation rho = 0.3, effective
+    dimensionality drops to approximately 2.6, collapsing capacity from 10^8 to approximately 10^3.
+    We develop implications for market saturation, competitive dynamics, and white space
+    identification, while maintaining careful distinctions between mathematical bounds and their
+    interpretive application to branding. An empirical boundary condition (250-call competitive
+    interference experiment, Section 10.5) validates the fixed-geometry assumptions.
   keywords:
     - sphere packing
     - E8 lattice

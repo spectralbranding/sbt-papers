@@ -16,6 +16,14 @@ provenance:
     - version: "2.0"
       date: "2026-04-10"
       description: "Post-JAR rejection major revision: falsification conditions added to all 5 propositions, Empirical Anchor section (R15 21,601-call corroboration), Discussion restructured into 5-part format, substantive engagement with Vredenburg/Brakus/Holt/Mukherjee/Hermann, actionable limitations"
+    - version: "2.1"
+      date: "2026-04-16"
+      description: "Applied all pending updates from JAR desk rejection: Grade column added to Table 4, Exp C competitive interference boundary condition, coordinate-invariance remark, velocity tracking note, atlas reference line. Decimal formatting corrected per AMA convention."
+    - version: "2.1"
+      date: "2026-04-17"
+      description: >
+        Session 105 quality review fixes. paper.yaml updated with abstract field, version
+        confirmed 2.1. PROVENANCE.yaml updated with version history entries.
 
   forks:
     - id: "fork-2026-03-20-zenodo"

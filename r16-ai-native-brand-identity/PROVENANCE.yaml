@@ -25,6 +25,17 @@ provenance:
     - version: "1.5"
       date: "2026-04-05"
       description: "Medesani & Macdonald (2026) invariant corridor formalization in Section 7.2, tri-binding admissibility, updated Acknowledgments"
+    - version: "1.6"
+      date: "2026-04-06"
+      description: "Brand Function product spec, behavioral metamerism pilot data (684 API calls, 4 hypotheses all supported)."
+    - version: "1.7"
+      date: "2026-04-16"
+      description: "Added Section 8.6 (Brand Function Format Optimization, 375 calls v2, format explains 17% of variance, qualitative ordinal levels outperform prose). Added DeepShop benchmark citation (Lyu et al. 2025) to Section 3.2."
+    - version: "1.7"
+      date: "2026-04-17"
+      description: >
+        Session 105 quality review fixes. paper.yaml updated with abstract field, version
+        confirmed 1.7. PROVENANCE.yaml updated with version history entries for v1.6 and v1.7.
 
   forks:
     - id: "fork-2026-04-02-zenodo"

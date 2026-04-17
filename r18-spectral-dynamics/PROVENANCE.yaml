@@ -6,26 +6,46 @@ provenance:
   citation_key: "2026z"
   repository: "spectralbranding/sbt-papers/r18-spectral-dynamics"
 
+  versions:
+    - version: "1.0"
+      date: "2026-04-08"
+      description: >
+        Initial draft. 9 sections, 3 propositions, 1 theorem, 6 definitions, 29 references.
+        ~7,500 words. PDF 267K, 20 pages. GPS-SBT framework, PDOP computation,
+        differential correction, Kalman filter. Zenodo DOI secured (10.5281/zenodo.19468204).
+    - version: "1.1"
+      date: "2026-04-16"
+      description: >
+        Session 104: Added Section 8.4 (Competitive Context Stability) citing Experiment C
+        null results. Demonstrates that competitive interference does not perturb spectral
+        velocity estimates under typical conditions.
+
   forks:
     - id: "fork-2026-04-08-zenodo"
       target: "Zenodo"
       target_type: preprint_server
       created: "2026-04-08"
       source_commit: "main"
-      status: doi_secured
-      outcome: awaiting_upload
+      status: published
+      outcome: published
       identifiers:
         doi: "10.5281/zenodo.19468204"
         community: ["spectral-branding"]
       notes: >
         v1.0 preprint. 9 sections, 3 propositions, 1 theorem, 6 definitions,
         29 references. ~7,500 words. PDF 267K, 20 pages.
+        v1.1 PDF update pending Zenodo upload.
 
 submission_timeline:
   - date: "2026-04-08"
-    event: "Zenodo DOI secured"
-    status: "doi_secured"
-    notes: "DOI 10.5281/zenodo.19468204. PDF ready for upload."
+    event: "Zenodo preprint published"
+    status: "complete"
+    notes: "DOI 10.5281/zenodo.19468204. v1.0 preprint live."
+
+  - date: "2026-04-16"
+    event: "v1.1 minor revision (Session 104: Section 8.4 Competitive Context Stability)"
+    status: "complete"
+    notes: "v1.1 PDF regenerated. Zenodo upload pending."
 
   - date: "2026-04-15"
     event: "Manuscript targeted for submission to JMR"

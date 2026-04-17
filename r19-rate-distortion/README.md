@@ -70,7 +70,7 @@ This directory follows the [Research-as-Repository protocol](https://github.com/
 | `CONTRIBUTORS.yaml` | Human and AI contributor roles |
 | `PROVENANCE.yaml` | Version history and submission records |
 | `DATA_MANIFEST.yaml` | Experiment data location and description |
-| `LICENSE` | CC-BY-NC-ND-4.0 (paper content) |
+| `LICENSE` | CC-BY-4.0 (paper content) |
 
 ### Experiment cascade (`experiment/`)
 
@@ -178,4 +178,4 @@ R19, R15, and R16 form a triad examining AI brand perception from different angl
 
 ## License
 
-CC-BY-NC-ND-4.0 (paper content). MIT License (code in `experiment/`).
+CC-BY-4.0 (paper content). MIT License (code in `experiment/`).

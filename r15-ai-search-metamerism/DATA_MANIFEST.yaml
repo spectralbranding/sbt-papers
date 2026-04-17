@@ -360,6 +360,40 @@ data_manifest:
     format: "Markdown"
     access: public
 
+  # ----- SESSION 105 SUPPLEMENTARY EXPERIMENTS -----
+
+  - id: "exp-agentic-collapse"
+    description: >
+      Supplementary Experiment A (Section 5.13): Agentic pipeline compounding. 425 calls across
+      6 models. Tests whether dimensional collapse compounds through multi-step agentic pipelines.
+    archive: "GitHub"
+    repository: "spectralbranding/sbt-papers"
+    path: "r15-ai-search-metamerism/experiment/L3_sessions/exp_agentic_collapse.jsonl"
+    format: "JSONL"
+    access: public
+
+  - id: "exp-cross-language"
+    description: >
+      Supplementary Experiment B (Section 5.14): Cross-language dimensional semantics. 450 calls
+      across 8 languages. Tests whether dimensional labels carry consistent meaning across languages.
+    archive: "GitHub"
+    repository: "spectralbranding/sbt-papers"
+    path: "r15-ai-search-metamerism/experiment/L3_sessions/exp_cross_language.jsonl"
+    format: "JSONL"
+    access: public
+
+  - id: "exp-primacy-generalization"
+    description: >
+      Supplementary Experiment C (Section 5.15): Serial position effects. 2,400 calls across
+      4 prompt formats (4 x 600). Tests whether dimension order in the prompt affects weight
+      allocation (primacy/recency effects). Format experiment: identifies 1-5 ordinal as
+      minimum-distortion operating point.
+    archive: "GitHub"
+    repository: "spectralbranding/sbt-papers"
+    path: "r15-ai-search-metamerism/experiment/L3_sessions/exp_primacy_generalization.jsonl"
+    format: "JSONL"
+    access: public
+
   # ----- HUGGING FACE DATASET (mirror) -----
 
   - id: "huggingface-dataset"

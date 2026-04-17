@@ -6,27 +6,52 @@ provenance:
   citation_key: "2026y"
   repository: "spectralbranding/sbt-papers/r17-brand-triangulation"
 
+  versions:
+    - version: "1.0"
+      date: "2026-04-05"
+      description: >
+        Initial draft. 12 sections, 6 propositions, 45 references. ~14,263 words.
+        GPS-SBT framework, PDOP computation, differential correction, Kalman filter.
+        Published to Zenodo (DOI 10.5281/zenodo.19482547).
+    - version: "1.1"
+      date: "2026-04-08"
+      description: >
+        Session 91: dark signals/PDOP blind spots section added. Bonnet pairs metric
+        insufficiency discussion added. Karcher mean curved-space generalization added
+        (all in Section 11). Reference count expanded to 53. ~15,430 words.
+    - version: "1.2"
+      date: "2026-04-16"
+      description: >
+        Session 104: Added supplementary experiment citations (agentic compounding,
+        BF format optimization) in Section 10.3 as empirical corroboration for
+        observer bias direction findings.
+
   forks:
     - id: "fork-2026-04-05-zenodo"
       target: "Zenodo"
       target_type: preprint_server
       created: "2026-04-05"
       source_commit: "main"
-      status: pending
-      outcome: awaiting_publication
+      status: published
+      outcome: published
       identifiers:
-        doi: "pending"
+        doi: "10.5281/zenodo.19482547"
         community: ["spectral-branding"]
       notes: >
         v1.0 preprint. 12 sections, 6 propositions, 45 references. ~14,263 words.
         Targets: Marketing Science (primary), Journal of Marketing Research (fallback).
-        Expected Zenodo upload: 2026-04-05.
+        v1.2 PDF update pending Zenodo upload.
 
 submission_timeline:
   - date: "2026-04-05"
-    event: "Zenodo preprint uploaded"
-    status: "pending"
-    notes: "v1.0 initial preprint"
+    event: "Zenodo preprint published"
+    status: "complete"
+    notes: "v1.0 initial preprint. DOI 10.5281/zenodo.19482547."
+
+  - date: "2026-04-16"
+    event: "v1.2 minor revision (Session 104 experiment citations)"
+    status: "complete"
+    notes: "v1.2 PDF regenerated. Zenodo upload pending."
 
   - date: "2026-04-15"
     event: "Manuscript targeted for submission to Marketing Science"

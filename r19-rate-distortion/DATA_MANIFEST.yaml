@@ -70,17 +70,20 @@ data_manifest:
 
   - id: "rate-sweep-session-log"
     description: >
-      R19 rate-distortion sweep session log. 875 records: 7 models x 5 brands x 5 rate
-      conditions x 5 repetitions. 100% success rate. Each record includes: timestamp,
-      model, rate_condition, rate_bits, brand, prompt, raw response, parsed_output (8D
-      normalized vector), distortion_vs_canonical (L1/2 total variation), elapsed_ms,
-      cost_usd. Total cost $0.225; wall clock 1977s (33 min).
+      R19 rate-distortion sweep session log. 1,652 records (1,621 valid; 98.1% parse
+      rate): 17 models x 5 brands x 5 rate conditions x variable repetitions (3-5 per
+      cell). Each record includes: timestamp, model, rate_condition, rate_bits, brand,
+      prompt, raw response, parsed_output (8D normalized vector),
+      distortion_vs_canonical (L1/2 total variation), elapsed_ms, cost_usd. Total cost
+      $0.225; wall clock 1977s (33 min). Note: original pre-registration specified 7
+      confirmatory models (875 calls); final run expanded to 17 models from distinct
+      training lineages for full cross-architectural coverage.
     archive: "GitHub"
     repository: "spectralbranding/sbt-papers"
     path: "experiment/L3_sessions/r19_rate_sweep.jsonl"
     format: "JSONL"
     access: public
-    size_records: 875
+    size_records: 1652
 
   # ----- L4 ANALYSIS RESULTS (post-processed) -----
 
@@ -99,8 +102,8 @@ data_manifest:
   - id: "per-cell-csv"
     description: >
       R19 per-cell distortion data in long format. Columns: model, rate_condition,
-      rate_bits, brand, n_valid, mean_distortion, std_distortion. 175 rows
-      (7 models x 5 rate conditions x 5 brands). Direct input for stats software.
+      rate_bits, brand, n_valid, mean_distortion, std_distortion. 425 rows
+      (17 models x 5 rate conditions x 5 brands). Direct input for stats software.
     archive: "GitHub"
     repository: "spectralbranding/sbt-papers"
     path: "experiment/L4_analysis/r19_per_cell.csv"
@@ -110,7 +113,7 @@ data_manifest:
   - id: "rd-curves-csv"
     description: >
       R19 per-model R(D) curve data with power-law fit. Columns: model, rate_condition,
-      rate_bits, mean_distortion, fitted_distortion, residual. 35 rows (7 models x 5
+      rate_bits, mean_distortion, fitted_distortion, residual. 85 rows (17 models x 5
       rate conditions). Includes fitted values from D = a * R^(-b) + c.
     archive: "GitHub"
     repository: "spectralbranding/sbt-papers"
@@ -192,8 +195,8 @@ data_manifest:
       R19 main experiment script. Reuses API callers from R15 (read-only via sys.path
       insert). Implements all 5 rate-condition parsers, distortion computation, power-law
       curve fitting, Spearman/CV hypothesis tests, and JSONL/CSV/Markdown output writers.
-      Supports --demo (offline), --smoke (1 brand), --live (full 875 calls), and
-      --analyze-only (re-aggregate from existing JSONL).
+      Supports --demo (offline), --smoke (1 brand), --live (full 1,652-call run across
+      17 models), and --analyze-only (re-aggregate from existing JSONL).
     archive: "GitHub"
     repository: "spectralbranding/sbt-papers"
     path: "experiment/run19_rate_sweep.py"

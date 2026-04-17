@@ -17,6 +17,29 @@ metadata:
   version: "2.4"
   status: preprint  # v2.1 (2026-04-11, expanded same-day): H10 recomputed on the updated dataset including a Mongolian-language re-test of mongolia_beer and a VkusVill Brand Function specification follow-up. New H10 result: 58/121 positive (48%), mean = +.001, binomial sign test p = .716 two-sided, null result. Mongolian-language subgroup exception (8/8 models, mean -4.9 DCI). Supplementary Run 10 corrective comparators added (126 calls). VkusVill specification test added (147 calls). Native templates rewritten as natural native-speaker prose. Section 4.6.3 added: Run 11 Roshen multi-city extension (7 cities × 7 LLMs × 3 runs = 315 calls, 0 errors). Run 11 findings: (a) Kyiv uniquely low (DCI 34.78); every other city clusters 39-45 regardless of geopolitical alignment. (b) Manufacturing presence does not save the brand: Vilnius (Klaipeda factory, ~15500 t/yr) collapses MORE than Warsaw, which has no manufacturing in Poland but does have an active commercial distribution arm (Roshen-Polska Sp. z o.o. in Jarosław + Roshen Europe Sp. z o.o. in Warsaw); commercial-distribution discourse beats manufacturing-record discourse. (c) Local-language prompting reduces DCI by 3.31-9.50 across all non-Kyiv cities; biggest effect Astana kk -9.50 (p=.002, all 7 models reduce). H12 reinterpreted as discourse-layer activation rather than country-of-origin/animosity. H10 null + Run 11 native-language effect both follow from the same mechanism applied to two different discourse geometries (homogeneous-discourse vs sparse-foreign-discourse). Abstract updated.
   license: "CC-BY-4.0"
+  abstract: >
+    Large language models (LLMs) are rapidly replacing traditional search engines as the primary
+    intermediary in consumer brand evaluation. This paper introduces the LLM-as-observer model
+    within Spectral Brand Theory's eight-dimensional framework and demonstrates that LLMs
+    systematically collapse brand perception to Experiential and Economic dimensions, rendering
+    brands differentiated on narrative, ideological, cultural, or temporal grounds metameric ---
+    structurally distinct yet functionally equivalent in AI recommendations. Across ten runs
+    (21,350 API calls, 24 models from seven training traditions, 15 native languages plus English),
+    we elicit implicit spectral weights via the PRISM-B instrument and compute a Dimensional
+    Collapse Index (DCI). Mean DCI significantly exceeds the uniform baseline (global = .291,
+    p = .017; local = .353, p = .001; cross-cultural = .357, d = 3.449). Cross-model convergence
+    is extreme (cosine = .977 across 24 architectures). Local brands collapse 25% more severely
+    than global brands (d = .878), consistent with an Economic default. Native-language prompting
+    on home-market pairs is null (H10: 58/121 positive; mean = +.001), but a Roshen 7-city
+    extension (Run 11, 315 calls) shows native-language prompting reduces collapse by 3.31--9.50
+    DCI for every non-home-market city, with the largest single effect for Astana in Kazakh
+    (-9.50, p = .002, all 7 models reduce). Geopolitical framing modulates collapse (H12: mean
+    absolute delta = .040, p < .001), but Run 11 supports a discourse-layer reinterpretation.
+    The Patagonia--Columbia exception shows that legally verifiable ideological commitments survive
+    AI mediation. Structured Brand Function specifications reduce collapse by approximately 20%.
+    These findings establish dimensional collapse as a structural feature of text-based AI observers,
+    with implications for search advertising strategy, brand defensibility, and dual-track
+    (human + AI) measurement.
   keywords:
     - AI-mediated search
     - brand perception
