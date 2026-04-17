@@ -9,8 +9,8 @@ meta:
       orcid: "0009-0000-6893-9231"
       affiliation: "Independent Researcher"
   doi: "10.5281/zenodo.19482547"
-  date: "2026-04-07"
-  version: "1.0"
+  date: "2026-04-16"
+  version: "1.2"
   venue: "Zenodo preprint (target: Marketing Science; fallback: JMR)"
   license: "CC-BY-4.0"
   keywords:
@@ -359,3 +359,5 @@ submission_history:
       Karcher mean curved-space generalization (all in Section 11).
       Target journals: Marketing Science (primary), Journal of Marketing Research (fallback).
       After Zenodo publication, submission timeline: April 2026 (allow 3–4 weeks for decision).
+      v1.2 (2026-04-16): Added supplementary experiment citations (agentic
+      compounding, BF format optimization) in Section 10.3.

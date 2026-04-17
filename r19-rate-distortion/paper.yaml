@@ -14,10 +14,10 @@ metadata:
       corresponding: true
   citation_key: "2026aa"
   doi: "10.5281/zenodo.19528833"
-  date: "2026-04-11"
-  version: "1.0.0"
+  date: "2026-04-16"
+  version: "1.0.1"
   status: draft
-  license: "CC-BY-NC-ND-4.0"
+  license: "CC-BY-4.0"
   keywords:
     - rate-distortion theory
     - LLM brand perception
@@ -111,7 +111,15 @@ target_venue_alt:
   - "Journal of Marketing Research"
   - "Journal of the Academy of Marketing Science"
 
-submission_history: []
+submission_history:
+  - venue: "Zenodo"
+    type: preprint
+    date: "2026-04-16"
+    status: published
+    doi: "10.5281/zenodo.19528833"
+    note: >
+      v1.0.1 (2026-04-16): Added bidirectional rate-distortion paragraph
+      citing Experiment D input-side results.
 
 methodology:
   type: empirical

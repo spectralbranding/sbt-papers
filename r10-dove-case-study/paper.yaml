@@ -13,10 +13,10 @@ metadata:
       corresponding: true
   citation_key: "2026p"
   doi: "10.5281/zenodo.19139258"
-  date: "2026-04-10"
-  version: "2.0"
+  date: "2026-04-16"
+  version: "2.1"
   status: working_paper
-  license: "CC-BY-NC-ND-4.0"
+  license: "CC-BY-4.0"
   keywords:
     - brand purpose
     - purpose advertising
@@ -186,3 +186,8 @@ submission_history:
     status: "pre-submission"
     target_date: "2026-04-12"
     rationale: "Explicit multi-dimensional/longitudinal scope, tolerant of case method, strong Vredenburg/Mukherjee tradition"
+    note: >
+      v1.1 (2026-04-16): Applied all pending updates from JAR desk rejection.
+      Added Grade column to Table 4, Exp C competitive interference boundary
+      condition, coordinate-invariance remark, velocity tracking note, atlas
+      reference line. Decimal formatting corrected per AMA convention.

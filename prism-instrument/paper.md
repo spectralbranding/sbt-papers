@@ -4,7 +4,7 @@
 
 DOI: 10.5281/zenodo.19555265
 
-Working Paper -- April 2026
+Working Paper v1.0.1 -- April 2026
 
 ---
 
@@ -113,6 +113,8 @@ The mechanism is encoder bias suppression: when the response space is unconstrai
 
 For human respondents, the five-point scale has a well-established psychometric literature. Five-point Likert scales provide adequate reliability for group-level comparison while imposing minimal cognitive load (Preston and Colman 2000). The convergence of the AI-optimal format with established human survey practice is fortuitous but practically important: it means the same response format can be administered to both observer types without methodological compromise.
 
+Independent empirical evidence strengthens this format choice. A serial position experiment tested four elicitation formats (JSON sum-to-100 allocation, natural-language listing, ranking, and independent 1--5 Likert ratings) across 5 LLM architectures, 5 brands, and 8 Latin-square balanced dimension orderings (2,400 calls, 2,351 valid). JSON allocation exhibited severe primacy bias: the first-listed dimension received +6.1 weight points above the last-listed (d = 1.39, p < .001). Natural-language and ranking formats showed comparable primacy (d > 1.3). The 1--5 Likert format virtually eliminated the effect (d = .22, p < .001 but practically negligible), producing a flat position curve (slope = -.05 per position vs -.99 for JSON). The effect was consistent across all five architectures, though Gemini 2.5 Flash showed attenuated primacy (+1.61 vs +5.88 to +8.63 for others), possibly due to internal reasoning re-balancing weights before output (Zharnikov 2026v, Section 5.15). This finding confirms that the PRISM-B format choice is not merely information-theoretically optimal but also artifact-resistant -- a property that sum-to-100 allocation and ranking formats lack.
+
 ### *Prompt Template for AI Observers*
 
 The exact prompt template for PRISM-B administration to AI observers is:
@@ -147,6 +149,8 @@ Design decisions in the template:
 *Dimension labels without definitions.* The prompt uses the dimension name (e.g., "semiotic") without providing the full SBT definition. This is deliberate: it measures what the observer encodes under each dimensional label using its own trained understanding, not its ability to follow an externally provided rubric. This design choice means PRISM-B captures the observer's effective dimensional mapping rather than testing comprehension of supplied definitions. For human respondents, the full item stems (Table 1) provide sufficient context; the dimension labels alone are used only in the AI JSON schema.
 
 *No comparative framing.* Unlike the paired-comparison prompts used in the R15 empirical study (Zharnikov 2026v), the PRISM-B specification measures a single brand at a time. Paired comparisons are a research design choice layered on top of the instrument, not part of the instrument itself. Researchers using PRISM-B for brand-pair studies administer the instrument to each brand separately and compute derived measures (differences, ratios, cosine distances) from the resulting profiles.
+
+*Latin-square balanced ordering recommended for multi-study designs.* The prompt template above uses a fixed dimension ordering for simplicity in single-brand administration. For research designs involving multiple brands, conditions, or repeated measures, Latin-square balanced ordering across trials is recommended to control for serial position effects. Supplementary evidence (Section 5.15 in Zharnikov 2026v) demonstrates that first-listed dimensions receive inflated weight in constrained-allocation formats, though the 1--5 Likert format used by PRISM-B largely mitigates this concern (d = .22 vs d = 1.39 for sum-to-100 allocation).
 
 ### *Administration Protocol*
 
@@ -287,6 +291,8 @@ The following propositions are derivable from the instrument specification and t
 *Falsification*: P3 is falsified if the mean Spearman correlation between AI-generated and human-generated dimensional rank orderings across five or more brands falls below .30, indicating that PRISM-B measures fundamentally different constructs in AI and human observers.
 
 **Proposition 4 (Format Optimality).** The 1--5 ordinal format will produce lower distortion from expert-consensus brand profiles than a 1--7 format or a 100-point allocation format when administered to human respondents, replicating the J-shaped rate-distortion curve demonstrated for AI observers (Zharnikov 2026aa).
+
+Preliminary AI-side evidence supports P4: across four elicitation formats, the 1--5 ordinal format produced the most position-invariant responses (slope = -.05 per position), while higher-rate formats (sum-to-100 allocation) showed severe primacy artifacts (slope = -.99). Whether this format advantage transfers to human respondents remains the critical test.
 
 *Falsification*: P4 is falsified if human respondents produce lower distortion at any format other than 1--5, indicating that the AI-demonstrated rate-distortion optimum does not transfer to human measurement.
 

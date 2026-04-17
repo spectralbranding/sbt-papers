@@ -16,7 +16,7 @@ Brand positioning research faces a fundamental measurement problem: every observ
 
 | File | Description |
 |------|-------------|
-| `paper.md` | Full paper (v1.0, ~14,200 words, 6 propositions, 45 references) |
+| `paper.md` | Full paper (v1.2, ~14,200 words, 6 propositions, 45 references) |
 | `paper.pdf` | PDF export (304K) |
 | `paper.yaml` | Paper specification (machine-readable claims) |
 | `CITATION.cff` | Citation metadata |

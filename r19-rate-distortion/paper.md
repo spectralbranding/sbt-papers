@@ -4,6 +4,8 @@
 
 DOI: 10.5281/zenodo.19528833
 
+Working Paper v1.0.1 -- April 2026
+
 **Abstract**
 
 This study applies Shannon rate-distortion theory to measure how response-format constraints affect the fidelity of AI-generated brand perception profiles. Seventeen large language model architectures from distinct training lineages are prompted to evaluate five canonical reference brands under five response formats spanning 3 to 26 bits of information rate. Distortion is measured as total variation distance between each model's normalized output and a canonical eight-dimensional brand profile. The resulting rate-distortion curve is J-shaped: minimum distortion occurs not at the highest-rate format (100-point allocation, 26 bits) but at an intermediate bounded format (1-5 ordinal scale, 19 bits). All 17 models exhibit this pattern (paired *t*(16) = 11.92, *p* < .001, Cohen's *d*~z~ = 2.89 for R1 vs R2). Cross-model coefficient of variation averages .140, indicating codebook convergence across architectures. These findings demonstrate that structured response formats suppress encoder bias and yield higher-fidelity brand perception measurements than unconstrained elicitation, with direct implications for AI-mediated brand research instrument design.
@@ -181,6 +183,8 @@ For brand researchers adopting AI-based measurement, the finding prescribes a sp
 
 For information theorists, the J-shaped curve in a cognitive encoder represents an empirical anomaly worth further investigation. The transition from classical monotonic R(D) to non-monotonic behavior occurs precisely when the encoder possesses strong priors about the source — a condition absent from the memoryless source model underlying Shannon's theorem.
 
+The rate-distortion principle extends bidirectionally. Experiment D (Zharnikov 2026x, Section 8.6) tested five input specification formats for Brand Functions and found that format explains 17% of variance in reconstruction fidelity (eta-sq = .167, p < .001). Prose specifications produced the lowest fidelity (cosine .944), while qualitative ordinal levels (.978) and structured JSON with scores (.973) outperformed. This mirrors the output-side finding: bounded, structured representations minimize distortion on both the encoding and decoding sides of the perception channel.
+
 ## Data Availability
 
 All data, code, and pre-registration materials are publicly available at https://github.com/spectralbranding/sbt-papers/tree/main/r19-rate-distortion and on HuggingFace at https://doi.org/10.57967/hf/8362. The experiment can be reproduced for $0.225 USD in approximately 33 minutes.
@@ -212,6 +216,3 @@ Tourangeau Roger, Lance J Rips, and Kenneth A Rasinski (2000), *The Psychology o
 Zharnikov Dmitry (2026a), "Spectral Brand Theory: An Eight-Dimensional Framework for Brand Perception Analysis," working paper, doi: 10.5281/zenodo.18945912.
 
 Zharnikov Dmitry (2026v), "Spectral Metamerism in AI-Mediated Brand Perception: A Cross-Architectural Study of Dimensional Collapse," working paper, doi: 10.5281/zenodo.19422427.
-
----
-*This paper is part of the Spectral Brand Theory research program. For the full atlas of 20+ interconnected papers, see [spectralbranding.com/atlas](https://spectralbranding.com/atlas).*

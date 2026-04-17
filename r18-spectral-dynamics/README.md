@@ -16,7 +16,7 @@ Brand measurement frameworks capture where a brand is positioned but not where i
 
 | File | Description |
 |------|-------------|
-| `paper.md` | Full paper (v1.0, ~7,500 words, 3 propositions, 1 theorem, 29 references) |
+| `paper.md` | Full paper (v1.1, ~7,500 words, 3 propositions, 1 theorem, 29 references) |
 | `paper.pdf` | PDF export (267K, 20 pages) |
 | `paper.yaml` | Paper specification (machine-readable claims) |
 | `CITATION.cff` | Citation metadata |

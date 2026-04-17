@@ -13,10 +13,10 @@ metadata:
       corresponding: true
   citation_key: "2026x"
   doi: "10.5281/zenodo.19391476"
-  date: "2026-04-14"
+  date: "2026-04-16"
   version: "1.7"
   status: working_paper
-  license: "CC-BY-NC-ND-4.0"
+  license: "CC-BY-4.0"
   keywords:
     - AI-native brand identity
     - cryptographic verification
@@ -172,7 +172,9 @@ submission_history:
       pilot data. v1.7 (2026-04-14): Added DeepShop benchmark citation
       (Lyu et al. 2025) to Section 3.2 establishing task-completion failure
       as complementary to perceptual failure. Lyu et al. (2025) added to
-      references.
+      references. v1.7 (2026-04-16): Added Section 8.6 (Brand Function
+      Format Optimization, 375 calls v2, format explains 17% of variance,
+      qualitative ordinal levels outperform prose).
   - venue: "Journal of Interactive Marketing (JIM)"
     type: journal
     date: "2026-04-TBD"
