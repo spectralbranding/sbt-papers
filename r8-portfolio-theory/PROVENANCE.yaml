@@ -18,21 +18,17 @@ provenance:
         doi: "10.5281/zenodo.19145099"
         community: ["spectral-branding"]
 
-    - id: "fork-2026-03-25-mksc"
-      target: "Marketing Science"
+    - id: "fork-2026-03-25-journal1"
+      target: "[withheld]"
       target_type: journal
       created: "2026-03-25"
       source_commit: "main"
       status: closed
       outcome: desk_rejected
-      identifiers:
-        manuscript_id: "MKSC-2026-0149"
 
-    - id: "fork-2026-03-26-ijrm"
-      target: "International Journal of Research in Marketing"
+    - id: "fork-2026-03-26-journal2"
+      target: "[withheld]"
       target_type: journal
       created: "2026-03-26"
       source_commit: "main"
       status: pending
-      identifiers:
-        manuscript_id: "IJRM-D-26-00310"

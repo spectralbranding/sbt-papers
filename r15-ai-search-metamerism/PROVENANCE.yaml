@@ -34,8 +34,5 @@ provenance:
   forks: []
 
   target_venue:
-    journal: "Journal of Advertising Research"
-    publisher: "ARF / SAGE"
-    special_call: "AI + Search"
+    journal: "[withheld]"
     status: "pre-submission"
-    note: "Submit after v2.0 Zenodo upload. v1.0 DOI: 10.5281/zenodo.19422427."

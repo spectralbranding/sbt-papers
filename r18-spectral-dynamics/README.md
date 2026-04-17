@@ -32,10 +32,6 @@ Brand measurement frameworks capture where a brand is positioned but not where i
 - **Directional Coherence**: Cosine similarity between velocity and strategy vectors --- measures strategy-trajectory alignment
 - **Trajectory Clustering**: Segmenting brands by dynamic behavior rather than static position
 
-## Target Venue
-
-Journal of Marketing Research (measurement methodology). Fallback: IJRM.
-
 ## Data
 
 This paper uses Dove profiles from Zharnikov (2026p, Table 1). No new data collection. Source: `../r10-dove-case-study/`

@@ -9,13 +9,13 @@ provenance:
   versions:
     - version: "1.0"
       date: "2026-03-19"
-      description: "Initial draft with 5 propositions, Dove 4-cross-section decomposition, 4 cohort profiles, JM submission"
+      description: "Initial draft with 5 propositions, Dove 4-cross-section decomposition, 4 cohort profiles, initial submission"
     - version: "1.1"
       date: "2026-03-29"
-      description: "JAR resubmission fixes: abstract rewrite (practitioner-first), JM comparison cases expanded (Pepsi, Gillette, Patagonia), limitations section added, word count reduction"
+      description: "Resubmission revision: abstract rewrite (practitioner-first), comparison cases expanded (Pepsi, Gillette, Patagonia), limitations section added, word count reduction"
     - version: "2.0"
       date: "2026-04-10"
-      description: "Post-JAR rejection major revision: falsification conditions added to all 5 propositions, Empirical Anchor section (R15 21,601-call corroboration), Discussion restructured into 5-part format, substantive engagement with Vredenburg/Brakus/Holt/Mukherjee/Hermann, actionable limitations"
+      description: "Post-rejection major revision: falsification conditions added to all 5 propositions, Empirical Anchor section (R15 21,601-call corroboration), Discussion restructured into 5-part format, substantive engagement with Vredenburg/Brakus/Holt/Mukherjee/Hermann, actionable limitations"
     - version: "2.1"
       date: "2026-04-16"
       description: "Session 104: Added paragraph on format-mediated primacy as boundary condition for first-signal premium (P5). Submission history updated: IJA pre-submission added. Experiment D and E citation anchors added."
@@ -33,33 +33,21 @@ provenance:
         community: ["spectral-branding"]
       note: "v1.0 initial preprint; v2.0 upload pending 2026-04-10"
 
-    - id: "fork-2026-03-19-jm"
-      target: "Journal of Marketing"
+    - id: "fork-2026-03-19-journal1"
+      target: "[withheld]"
       target_type: journal
       created: "2026-03-19"
-      submission_id: "JM-26-0421"
       status: desk_rejected
       decision_date: "2026-03-28"
-      editor: "Jan-Benedict Steenkamp"
-      note: "Desk-rejected: single-case generalizability, SBT unproven, unclear contribution threshold"
 
-    - id: "fork-2026-03-29-jar"
-      target: "Journal of Advertising Research"
+    - id: "fork-2026-03-29-journal2"
+      target: "[withheld]"
       target_type: journal
       created: "2026-03-29"
-      submission_id: "261517468 / JAR Paper3686"
       status: desk_rejected
       decision_date: "2026-04-10"
-      editor: "Colin Campbell"
-      note: "Desk-rejected: theoretical grounding and empirical rigor insufficient; evidentiary base insufficient to support scope of claims"
 
   target_venue:
-    journal: "International Journal of Advertising (IJA)"
-    publisher: "Taylor & Francis"
+    journal: "[withheld]"
     status: "pre-submission"
-    target_date: "2026-04-12"
-    rationale: "Explicit multi-dimensional/longitudinal scope; tolerant of case method; strong Vredenburg/Mukherjee tradition; good fit for the new R15 empirical anchor"
-    fallbacks:
-      - "Journal of Brand Management"
-      - "Psychology & Marketing"
-      - "Journal of Advertising"
+    fallbacks: []

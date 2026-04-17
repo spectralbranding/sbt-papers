@@ -44,15 +44,7 @@ provenance:
       note: "v1.0 initial preprint (17-model full panel). v1.0.1 PDF update pending."
 
   target_venue:
-    journal: "Marketing Letters"
-    publisher: "Springer"
+    journal: "[withheld]"
     status: "pre-submission"
-    note: "v1.0.1 ready. Submit after final copyedit."
 
-  target_venue_alt:
-    - journal: "Quantitative Marketing and Economics"
-      publisher: "Springer"
-    - journal: "Journal of Marketing Research"
-      publisher: "SAGE / AMA"
-    - journal: "Journal of the Academy of Marketing Science"
-      publisher: "Springer"
+  target_venue_alt: []

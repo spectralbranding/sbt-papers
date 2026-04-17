@@ -334,10 +334,9 @@ submission_history:
     status: "preprint"
     doi: "10.5281/zenodo.19210037"
     url: "https://zenodo.org/records/19210037"
-  - venue: "Quantitative Science Studies"
-    id: "QSS-2026-0048"
+  - venue: "[withheld]"
     date_submitted: "2026-03-26"
     status: "under_review"
     notes: >
-      Article type. Gold OA (APC $1,200). 6,596 words, 4 propositions.
+      Article type. 6,596 words, 4 propositions.
       Abstract trimmed to 160 words. Table 1 headers fixed.

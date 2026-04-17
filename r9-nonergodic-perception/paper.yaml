@@ -168,24 +168,16 @@ dependencies:
     relationship: complements
 
 submission_history:
-  - venue: "Journal of Marketing"
-    id: "JM-26-0421"
+  - venue: "[withheld]"
     submitted: "2026-03-19"
     decision: "desk_reject"
     decision_date: "2026-03-28"
-    editor: "Jan-Benedict Steenkamp"
-    reason: "single-case generalizability concerns; SBT unproven"
-  - venue: "Journal of Advertising Research"
-    id: "261517468 / JAR Paper3686"
+  - venue: "[withheld]"
     submitted: "2026-03-29"
     decision: "desk_reject"
     decision_date: "2026-04-10"
-    editor: "Colin Campbell"
-    reason: "theoretical grounding and empirical rigor insufficient; evidentiary base insufficient to support scope of claims"
-  - venue: "International Journal of Advertising (IJA)"
+  - venue: "[withheld]"
     status: "pre-submission"
-    target_date: "2026-04-12"
-    rationale: "Explicit multi-dimensional/longitudinal scope, tolerant of case method, strong Vredenburg/Mukherjee tradition"
     note: >
       v1.1 (2026-04-16): Added paragraph on format-mediated primacy as
       boundary condition for first-signal premium.

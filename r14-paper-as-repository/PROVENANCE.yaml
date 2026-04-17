@@ -18,35 +18,23 @@ provenance:
         doi: "10.5281/zenodo.19294864"
         community: ["spectral-branding"]
 
-    - id: "fork-2026-03-29-jasist"
-      target: "JASIST"
+    - id: "fork-2026-03-29-journal1"
+      target: "[withheld]"
       target_type: journal
       created: "2026-03-29"
       source_commit: "main"
       status: rejected
       outcome: desk_rejected
-      identifiers:
-        manuscript_id: "JASIST-2026-03-0533"
       decision_date: "2026-04-02"
-      notes: >
-        Editor: Dr. Steve Sawyer. Reason: work does not clearly draw on
-        information science literature.
 
-    - id: "fork-2026-04-02-jlsc"
-      target: "JLSC (Journal of Librarianship and Scholarly Communication)"
+    - id: "fork-2026-04-02-journal2"
+      target: "[withheld]"
       target_type: journal
       created: "2026-04-02"
       source_commit: "main"
       status: rejected
       outcome: desk_rejected
-      identifiers:
-        manuscript_id: "25252"
       decision_date: "2026-04-16"
-      notes: >
-        Diamond OA (no APC). Managing Editor: Alicia Zuniga.
-        Reason: out of scope — needs stronger tie to librarianship
-        in body text, not just implications section. Constructive:
-        invited to resubmit with librarianship emphasis. Rejection #3.
 
     - id: "update-2026-04-16-zenodo-v2.0"
       target: "Zenodo"

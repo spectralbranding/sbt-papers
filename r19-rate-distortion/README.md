@@ -64,7 +64,7 @@ This directory follows the [Research-as-Repository protocol](https://github.com/
 
 | File | Purpose |
 |------|---------|
-| `paper.md` | Full paper v1.0 (3,074 words, 11 refs, target: Marketing Letters) |
+| `paper.md` | Full paper v1.0 (3,074 words, 11 refs) |
 | `paper.yaml` | Machine-readable claims, hypotheses, falsification criteria |
 | `CITATION.cff` | Citation metadata (version 1.0.0; DOI 10.5281/zenodo.19528833) |
 | `CONTRIBUTORS.yaml` | Human and AI contributor roles |

@@ -18,11 +18,9 @@ provenance:
         doi: "10.5281/zenodo.19064426"
         community: ["spectral-branding"]
 
-    - id: "fork-2026-03-17-srbs"
-      target: "Systems Research and Behavioral Science"
+    - id: "fork-2026-03-17-journal1"
+      target: "[withheld]"
       target_type: journal
       created: "2026-03-17"
       source_commit: "main"
       status: pending
-      identifiers:
-        manuscript_id: "8927197"

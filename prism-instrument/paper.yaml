@@ -89,10 +89,8 @@ claims:
     falsification: >
       P4 is falsified if test-retest cosine similarity falls below .85.
 
-target_venue: "Journal of Marketing Research"
-target_venue_alt:
-  - "Organizational Research Methods"
-  - "Journal of the Academy of Marketing Science"
+target_venue: "[withheld]"
+target_venue_alt: []
 
 submission_history:
   - venue: "Zenodo"

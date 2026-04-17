@@ -11,7 +11,7 @@ meta:
   doi: "10.5281/zenodo.19468204"
   date: "2026-04-16"
   version: "1.1.1"
-  venue: "Zenodo preprint (target: JMR; fallback: IJRM)"
+  venue: "Zenodo preprint"
   license: "CC-BY-4.0"
   keywords:
     - brand dynamics
@@ -216,6 +216,6 @@ submission_history:
     doi: "10.5281/zenodo.19468204"
     notes: >
       v1.0 preprint. 9 sections, 3 propositions, 1 theorem, 6 definitions, 29 references.
-      ~7,500 words. Target: JMR (primary), IJRM (fallback).
+      ~7,500 words.
       v1.1 (2026-04-16): Added Section 8.4 (Competitive Context Stability)
       citing Experiment C null results.
