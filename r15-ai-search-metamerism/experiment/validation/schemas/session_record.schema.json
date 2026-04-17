@@ -34,7 +34,8 @@
         "dimensional_differentiation",
         "dimension_probe",
         "geopolitical_framing",
-        "geopolitical_framing_native"
+        "geopolitical_framing_native",
+        "compounding_format"
       ],
       "description": "Which prompt template was used (see L2_prompts/templates/)."
     },
