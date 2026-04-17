@@ -458,10 +458,22 @@ def main():
         "brand_moderation": brand_mod,
     }
 
-    # Save JSON results
+    # Save JSON results (convert numpy types for serialization)
+    class NumpyEncoder(json.JSONEncoder):
+        def default(self, obj):
+            if isinstance(obj, (np.integer,)):
+                return int(obj)
+            if isinstance(obj, (np.floating,)):
+                return float(obj)
+            if isinstance(obj, (np.bool_,)):
+                return bool(obj)
+            if isinstance(obj, np.ndarray):
+                return obj.tolist()
+            return super().default(obj)
+
     results_path = OUTPUT_DIR / "exp_primacy_generalization_results.json"
     with open(results_path, "w") as f:
-        json.dump(results, f, indent=2)
+        json.dump(results, f, indent=2, cls=NumpyEncoder)
     print(f"\nResults saved: {results_path}")
 
     # Save markdown summary
