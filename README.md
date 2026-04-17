@@ -45,7 +45,7 @@ Eight companion papers establishing formal mathematical foundations for SBT, plu
 |-----|-------|------------|--------|
 | R9 | [Non-Ergodic Brand Perception: Diffusion Dynamics on Multi-Dimensional Perceptual Manifolds](r9-nonergodic-perception/paper.md) | [10.5281/zenodo.19138860](https://doi.org/10.5281/zenodo.19138860) | Preprint |
 | R10 | [Dimensional Activation and Cohort Divergence: A Spectral Case Study of Dove's "Real Beauty" Campaign](r10-dove-case-study/paper.md) | [10.5281/zenodo.19139258](https://doi.org/10.5281/zenodo.19139258) | Preprint |
-| R15 | [Spectral Metamerism in AI-Mediated Brand Perception](r15-ai-search-metamerism/paper.md) | [10.5281/zenodo.19422427](https://doi.org/10.5281/zenodo.19422427) | Under review |
+| R15 | [Dimensional Collapse in AI-Mediated Brand Perception: Large Language Models as Metameric Observers](r15-ai-search-metamerism/paper.md) | [10.5281/zenodo.19422427](https://doi.org/10.5281/zenodo.19422427) | Under review |
 
 ### AI-Era Extensions
 

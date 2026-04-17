@@ -1,10 +1,10 @@
-# R15: Spectral Metamerism in AI-Mediated Brand Perception
+# R15: Dimensional Collapse in AI-Mediated Brand Perception: Large Language Models as Metameric Observers
 
-**Citation key**: 2026v | **DOI**: [10.5281/zenodo.19422427](https://doi.org/10.5281/zenodo.19422427) | **Dataset DOI**: [10.57967/hf/8284](https://doi.org/10.57967/hf/8284) | **Status**: Empirical results complete (21,602+ total API calls across 12 runs, 24 LLMs from 7 training traditions; v2.4 adds three supplementary experiments: agentic pipeline compounding, cross-language dimensional semantics, serial position effects)
+**Citation key**: 2026v | **DOI**: [10.5281/zenodo.19422427](https://doi.org/10.5281/zenodo.19422427) | **Dataset DOI**: [10.57967/hf/8284](https://doi.org/10.57967/hf/8284) | **Status**: Empirical results complete (21,602+ total API calls across 12 runs, 24 LLMs from 7 training traditions; v3.0 adds three supplementary experiments: agentic pipeline compounding, cross-language dimensional semantics, serial position effects)
 
 ## Paper
 
-Zharnikov, D. (2026). Spectral Metamerism in AI-Mediated Brand Perception: How Large Language Models Collapse Multi-Dimensional Brand Differentiation in Consumer Search. Working Paper.
+Zharnikov, D. (2026). Dimensional Collapse in AI-Mediated Brand Perception: Large Language Models as Metameric Observers. Working Paper.
 
 ## Abstract
 
@@ -173,9 +173,8 @@ See [experiment README](experiment/README.md#run-it-on-your-own-brands) for a st
 
 ```bibtex
 @article{zharnikov2026v,
-  title={Spectral Metamerism in AI-Mediated Brand Perception:
-         How Large Language Models Collapse Multi-Dimensional Brand
-         Differentiation in Consumer Search},
+  title={Dimensional Collapse in AI-Mediated Brand Perception:
+         Large Language Models as Metameric Observers},
   author={Zharnikov, Dmitry},
   year={2026},
   doi={10.5281/zenodo.19422427}
