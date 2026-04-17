@@ -631,6 +631,12 @@ Dmitry Zharnikov is an independent researcher and strategist. He holds a Profess
 
 ---
 
+## Acknowledgments
+
+AI assistants (Claude Opus 4.6, Grok 4.1, Gemini 3.1) were used for initial literature search and editorial refinement; all theoretical claims, propositions, and interpretations are the author's sole responsibility.
+
+---
+
 ## References
 
 Aaker, D. A. (1991). *Managing brand equity: Capitalizing on the value of a brand name*. Free Press.
@@ -838,10 +844,6 @@ Zharnikov, D. (2026g). How many brands can a market hold? Sphere packing bounds 
 Zharnikov, D. (2026v). Spectral metamerism in AI-mediated brand perception: How large language models collapse multi-dimensional brand differentiation in consumer search. Working Paper. https://doi.org/10.5281/zenodo.19422427
 
 Zharnikov, D. (2026y). Brand triangulation: A geometric framework for multi-observer brand positioning. Working Paper. https://doi.org/10.5281/zenodo.19468204
-
-## Acknowledgments
-
-AI writing assistants (Claude, GPT, Gemini) were used for editorial refinement and literature searching; all theoretical claims, propositions, and interpretations are the author's sole responsibility.
 
 ---
 *This paper is part of the Spectral Brand Theory research program. For the full atlas of 20+ interconnected papers, see [spectralbranding.com/atlas](https://spectralbranding.com/atlas).*
