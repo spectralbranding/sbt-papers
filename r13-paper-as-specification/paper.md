@@ -340,11 +340,13 @@ The specification gap in science -- the distance between what a researcher inten
 
 ### 7.2 Scalar Metrics and Structural Alternatives
 
-The San Francisco Declaration on Research Assessment (DORA, 2012), the Leiden Manifesto (Hicks et al., 2015), and the Coalition for Advancing Research Assessment (CoARA, 2022) -- now encompassing over 700 organizations -- all argue that scalar metrics -- journal impact factors, h-indices, citation counts -- are poor proxies for research quality. A citation count treats all citations equally: a critical dependency that would invalidate downstream work if retracted is counted the same as a passing mention in a literature review. Paper Spec's dependency graph provides a structural alternative. When every citation is typed (extends, tests, contradicts) and flagged for criticality, the topology of a research field becomes visible in a way that no scalar metric can represent. This does not replace expert judgment -- DORA and the Leiden Manifesto are right that no metric can -- but it provides the structured substrate on which better assessments could be built.
+The San Francisco Declaration on Research Assessment (DORA, 2012), the Leiden Manifesto (Hicks et al., 2015), and the Coalition for Advancing Research Assessment (CoARA, 2022) -- now encompassing over 700 organizations -- all argue that scalar metrics -- journal impact factors, h-indices, citation counts -- are poor proxies for research quality. A citation count treats all citations equally: a critical dependency that would invalidate downstream work if retracted is counted the same as a passing mention in a literature review. Paper Spec's dependency graph provides a structural alternative. When every citation is typed (extends, tests, contradicts) and flagged for criticality, the topology of a research field becomes visible in a way that no scalar metric can represent. This does not replace expert judgment -- DORA and the Leiden Manifesto are right that no metric can -- but it provides the structured substrate on which better assessments could be built. This trajectory is accelerating at institutional scale: in April 2026, the Chinese Academy of Sciences discontinued its 22-year journal ranking system, shifting toward quality-oriented assessment of individual research outputs rather than journal-level metrics (Liu 2026).
 
 ### 7.3 The Future of Peer Review
 
 Paper Spec is not a replacement for peer review. It is infrastructure that makes peer review more efficient. A reviewer who receives a paper with an accompanying `paper.yaml` file can immediately see the paper's claims, their status, their acceptance criteria, and their dependencies. The reviewer can verify, before reading a single paragraph, whether the paper has stated its claims clearly enough to be evaluated. L1 and L2 validation can be run automatically as part of the editorial workflow, flagging obvious issues (missing acceptance criteria, results that do not map to claims, methodology mismatches) before the paper reaches a reviewer.
+
+The economic and quality case for specification-first review has now been demonstrated at scale. Stelmakh, Shah, et al. (2026) deployed AI review across 22,977 submissions at AAAI-26 (less than $1 per paper) and found AI reviews preferred on 6 of 9 quality criteria; crucially, a structured multi-stage pipeline outperformed single-prompt review by +.21 recall ($p < 10^{-30}$). Their SPECS benchmark --- decomposing review quality into five structured criteria --- is, in effect, a review specification standard, validating the core claim of the present paper that structured criteria outperform unstructured evaluation.
 
 This shifts the reviewer's role from extraction to evaluation. Currently, a substantial fraction of review time is spent determining what the paper claims. With a `paper.yaml` file, this extraction is done by the author and validated by machine. The reviewer can focus on what humans do best: assessing whether the evidence supports the claims, whether the methodology is appropriate, whether the interpretation is reasonable, and whether the contribution is significant.
 
@@ -463,3 +465,11 @@ Zharnikov, D. (2026a). Spectral Brand Theory: A multi-dimensional framework for 
 Zharnikov, D. (2026i). The Organizational Schema Theory: Test-driven business design. Working Paper. https://doi.org/10.5281/zenodo.18946043
 
 Zharnikov, D. (2026l). The rendering problem: From genetic expression to brand perception. Working Paper. https://doi.org/10.5281/zenodo.19064426
+
+Liu, Zheng (2026). China discontinues prominent journal ranking list. *Nature*, correspondence, 14 April 2026. https://doi.org/10.1038/d41586-026-01216-1
+
+Stelmakh, Ivan, Shah, Nihar, et al. (2026). Deploying AI review at scale: Lessons from AAAI-26. arXiv:2604.13940v1.
+
+---
+
+*This paper is part of the Spectral Brand Theory research program. For the full atlas of 30+ interconnected papers, see [spectralbranding.com/atlas](https://spectralbranding.com/atlas).*
