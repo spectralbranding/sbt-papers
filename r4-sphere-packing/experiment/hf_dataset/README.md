@@ -1,5 +1,5 @@
 ---
-license: cc-by-nc-nd-4.0
+license: cc-by-4.0
 task_categories:
   - text-classification
 language:
@@ -92,4 +92,4 @@ Each record contains 23 fields (20 standard + 3 experiment-specific):
 
 ## License
 
-CC-BY-NC-ND-4.0
+CC-BY-4.0
