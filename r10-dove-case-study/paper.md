@@ -2,7 +2,7 @@
 
 **Dmitry Zharnikov**
 
-*Working Paper v2.1 — April 2026*
+*Working Paper v2.1.1 — April 2026*
 
 *Zenodo DOI: [10.5281/zenodo.19139258](https://doi.org/10.5281/zenodo.19139258)*
 
@@ -22,8 +22,6 @@ Purpose campaigns are evaluated by aggregate metrics that cannot distinguish str
 - Advertising managers should replace aggregate sentiment tracking with cohort-specific measurement and audit dimensional profiles before launching purpose campaigns.
 
 ---
-
-## Introduction
 
 In January 2004, Dove launched the "Campaign for Real Beauty" with a series of billboards featuring photographs of women who did not conform to conventional beauty-industry standards. By 2007, Dove's global revenue had approximately doubled from ~$2B to ~$4B. By 2013, the "Real Beauty Sketches" video had accumulated over 163 million views, generating 4.6 billion public relations impressions and a 6% sales increase. By 2023, the brand reported EUR 6B in annual turnover -- its highest underlying sales growth in a decade (Unilever 2023). No other discrete purpose campaign initiative (as distinct from long-term brand positioning, such as Patagonia's) has sustained comparable commercial performance over two decades.
 
@@ -90,7 +88,7 @@ The analysis examines Dove's emission profile at four time points: **2003** (pre
 
 ### *Eight-Dimensional Signal Table*
 
-**Table 1.** Dove emission profile across eight SBT dimensions at four temporal cross-sections. Scores represent assessed signal intensity on a 1--10 scale. "null" indicates absence of signal.
+Table 1: Dove emission profile across eight SBT dimensions at four temporal cross-sections.
 
 | Dimension | 2003 | 2006 | 2013 | 2023 |
 |---|---|---|---|---|
@@ -103,9 +101,11 @@ The analysis examines Dove's emission profile at four time points: **2003** (pre
 | Cultural | 4.0 | 8.5 | 8.0 | 5.5 |
 | Temporal | 6.0 | 6.5 | 7.0 | 7.5 |
 
+*Notes*: Scores represent assessed signal intensity on a 1--10 scale. "null" indicates absence of signal. Scores are derived from qualitative assessment of brand signals; see Limitations.
+
 ### *Signal Type Analysis*
 
-The most significant finding is the transition of the Ideological dimension from *null* to *positive* between 2003 and 2006. This is not a quantitative increase on a pre-existing dimension -- it is a qualitative state change. Before 2004, Dove emitted no Ideological signal. The brand had no values position, no social stance; it was a moisturizing cream.
+The central finding is the transition of the Ideological dimension from *null* to *positive* between 2003 and 2006. This is not a quantitative increase on a pre-existing dimension -- it is a qualitative state change. Before 2004, Dove emitted no Ideological signal. The brand had no values position, no social stance; it was a moisturizing cream.
 
 The 2004 campaign created new signal space. Activating a null dimension does not compete with existing signals in the observer's perception space -- it occupies previously empty perceptual territory. The observer does not need to change an existing conviction; they need only form a new one. This mechanism is structurally different from repositioning or conventional brand building. It is closer to what SBT terms *dimensional creation* -- the opening of a new channel between brand and observer.
 
@@ -127,7 +127,7 @@ Drawing on the academic perception literature, the analysis identifies four obse
 
 **Cohort 4: Skeptic-Critic (SC).** Observers who weight Ideological dimensions heavily but assign *negative* conviction when they perceive ideological inconsistency. Supporting evidence: Murray (2013) documents genderwashing; Taylor et al. (2016) identify "faux feminism"; Garick (2023) finds 70% of comments about Dove-as-corporation (vs. campaign content) are negative.
 
-**Table 2.** Observer spectral profiles (weight vectors) for four Dove cohorts. Scores represent relative salience on a 1--10 scale.
+Table 2: Observer spectral profiles (weight vectors) for four Dove cohorts.
 
 | Dimension | PA | PP | SS | SC |
 |-----------|-----|-----|-----|-----|
@@ -139,6 +139,8 @@ Drawing on the academic perception literature, the analysis identifies four obse
 | Economic | 3.0 | 8.0 | 3.0 | 2.0 |
 | Cultural | 6.0 | 2.0 | 8.0 | 7.0 |
 | Temporal | 4.0 | 5.0 | 3.0 | 6.0 |
+
+*Notes*: PA = Purpose-Aligned; PP = Product-Pragmatist; SS = Social-Signal Reader; SC = Skeptic-Critic. Scores represent relative salience on a 1--10 scale. Weight vectors are synthesized from documented response patterns in the literature; see Limitations.
 
 The PA and SC cohorts share nearly identical spectral weight profiles on Narrative and Ideological dimensions. They differ not in *what they attend to* but in *how they evaluate what they attend to*. The Skeptic-Critic is not Ideologically indifferent (that would be the Product-Pragmatist) but Ideologically engaged -- and the brand conviction function produces opposite signs on the same dimension for the same emission profile. No framework that models brand perception as a single aggregate construct can represent this mirror structure.
 
@@ -158,7 +160,7 @@ The 2013 "Real Beauty Sketches" video produced four structurally distinct percep
 
 **Skeptic-Critic: Cloud inversion.** The higher the Ideological signal intensity, the more salient the perceived gap between Dove's messaging and Unilever's portfolio. Every emotional beat that strengthened PA conviction strengthened SC negative conviction -- the same signal, operating on the same high-weight dimension, producing opposite trajectories.
 
-**Table 3.** Perception cloud formation states across four time points.
+Table 3: Perception cloud formation states across four time points.
 
 | Cohort | 2003 | 2006 | 2013 | 2023 |
 |---|---|---|---|---|
@@ -166,6 +168,8 @@ The 2013 "Real Beauty Sketches" video produced four structurally distinct percep
 | PP | Formed | Formed | Formed | Slight shift |
 | SS | No cloud | Forming | Formed (peak) | Stalling |
 | SC | No cloud | Forming | Formed (neg.) | Formed (neg.) |
+
+*Notes*: PA = Purpose-Aligned; PP = Product-Pragmatist; SS = Social-Signal Reader; SC = Skeptic-Critic. "No cloud" = perception not yet formed; "neg." = negative conviction. States are qualitatively assessed from the academic perception literature.
 
 Bissell and Rask (2010) documented an "aversive impact" among high-BMI observers who experienced the campaign as highlighting their deviation from even the campaign's expanded beauty standards. In SBT terms, this is localized perception cloud inversion driven by Ideological-Experiential cross-dimensional dissonance -- the ideological promise exceeded the experiential reality as perceived by this observer subgroup.
 
@@ -177,7 +181,7 @@ Applying SBT's coherence classification to Dove's 2023 emission profile:
 
 **Classification: Identity coherence.** Dove's brand perception is anchored by a strong Ideological-Narrative core (7.5 each), with supporting alignment from Social (6.5) and Temporal (7.5) dimensions. Semiotic, Experiential, and Economic are competent but not distinctive. Cultural (5.5) shows eroded distinctiveness. Portfolio contamination introduces a structural dark signal.
 
-**Table 4.** Dove's spectral profile compared with canonical SBT case-study brands.
+Table 4: Dove's spectral profile compared with canonical SBT case-study brands.
 
 | Brand | Sem | Nar | Ide | Exp | Soc | Eco | Cul | Tem | Coherence | Grade |
 |-------|-----|-----|-----|-----|-----|-----|-----|-----|-----------|-------|
@@ -186,6 +190,8 @@ Applying SBT's coherence classification to Dove's 2023 emission profile:
 | Hermes | 9.5 | 9.0 | 7.0 | 9.0 | 8.5 | 3.0 | 9.0 | 9.5 | Ecosystem | A+ |
 | IKEA | 8.0 | 7.5 | 6.0 | 7.0 | 5.0 | 9.0 | 7.5 | 6.0 | Signal | B+ |
 | Tesla | 7.5 | 8.5 | 3.0 | 6.0 | 7.0 | 6.0 | 4.0 | 2.0 | Incoherent | C- |
+
+*Notes*: Sem = Semiotic; Nar = Narrative; Ide = Ideological; Exp = Experiential; Soc = Social; Eco = Economic; Cul = Cultural; Tem = Temporal. Canonical brand profiles from Zharnikov (2026a). Coherence classification follows SBT five-type taxonomy.
 
 Three vulnerabilities emerge: (1) **Ideological drift** -- intensity declined from 9.0 to 7.5 as competitors adopted similar messaging; (2) **Cultural dimension erosion** -- counter-cultural signal decayed from 8.5 to 5.5 as body positivity became normative; (3) **Portfolio contamination** -- the Unilever contradiction generates a structural dark signal unresolvable by brand-level communications.
 
@@ -201,13 +207,13 @@ The penalty is zero for unaware observers, low for the Product-Pragmatist cohort
 
 Garick's (2023) finding -- 70% negative comments about Dove-as-corporation vs. 72% positive about campaign content -- is consistent with this prediction. This maps onto what Vredenburg et al. (2020) term the authenticity-washing problem: observers evaluate not only the brand's stand but the credibility of the organizational identity behind it. Vredenburg et al.'s four-type taxonomy maps onto SBT coherence types as follows: authentic activism corresponds to Identity or Ecosystem coherence (where Ideological emissions are reinforced by product Experiential reality and portfolio Ideological consistency); silent activism corresponds to product-anchored Ideological signal without campaign mediation (a stable but invisible coherence state); absent activism corresponds to null Ideological dimension; inauthentic activism corresponds to portfolio-level Incoherence under high observer awareness, which is precisely the Dove/Unilever pattern. SBT formalizes this typology with a mechanism rather than a descriptive label, and generates quantitative predictions about which cohorts detect incoherence most acutely.
 
-Supplementary empirical testing of competitive interference across 5 focal brands paired with direct, adjacent, and distant competitors (250 API calls) found null effects on all hypotheses (largest d = .187, all p > .05 after Bonferroni correction). This suggests that portfolio spectral interference operates at the organizational/ownership level -- reflecting strategic coherence decisions within a brand portfolio -- rather than at the competitive-context level. The distinction is important: Dove's interference with Axe is a portfolio phenomenon (shared Unilever ownership creates coherence constraints), not a competitive phenomenon (the presence of L'Oreal products does not alter Dove's spectral profile). This bounds the scope of Proposition 3.
+Supplementary empirical testing of competitive interference across 5 focal brands paired with direct, adjacent, and distant competitors (250 API calls) found null effects on all hypotheses (none reached Bonferroni-corrected significance; largest d = .187). This suggests that portfolio spectral interference operates at the organizational/ownership level -- reflecting strategic coherence decisions within a brand portfolio -- rather than at the competitive-context level. The distinction is important: Dove's interference with Axe is a portfolio phenomenon (shared Unilever ownership creates coherence constraints), not a competitive phenomenon (the presence of L'Oreal products does not alter Dove's spectral profile). This bounds the scope of Proposition 3.
 
 ---
 
 ## Financial Mapping
 
-**Table 5.** Dove financial trajectory mapped to dimensional activation events.
+Table 5: Dove financial trajectory mapped to dimensional activation events.
 
 | Year | Est. Revenue | Key Dimensional Event | SBT Interpretation |
 |------|-------------|----------------------|-------------------|
@@ -217,6 +223,8 @@ Supplementary empirical testing of competitive interference across 5 focal brand
 | 2013 | +6% growth | "Real Beauty Sketches" | Four-dimension simultaneous activation |
 | 2017 | Disruption | Facebook racial controversy | Ideological dark signal event |
 | 2023 | EUR 6B | AI ethics + body wash redesign | Experiential activation + Ideological maintenance |
+
+*Notes*: Revenue figures from Unilever Annual Reports (2003--2023). Dimensional event classifications are the author's interpretive assessment. Financial correlation does not imply causation; see Limitation 3.
 
 The financial data support a central SBT prediction: growth correlates with *dimensional specificity* rather than *total signal intensity*. Ogilvy & Mather's analysis found Dove's masterbrand advertising returned $3.40 per dollar, while the Oprah partnership -- higher in dimensional specificity -- returned $6.02 per dollar. Between 2013 and 2019, sustained campaign investment without new-dimension activation produced modest growth. The 2023 Experiential dimension activation (body wash redesign) combined with refreshed Ideological content (AI ethics) produced the brand's highest underlying sales growth in a decade.
 
@@ -264,7 +272,7 @@ Aaker's (1996) brand equity framework can describe *that* Dove succeeded but not
 
 Keller's (1993) equity-as-stock metaphor implies that equity changes quantitatively but not in type. In SBT, Dove's 2004 campaign created a qualitatively new dimension -- a state change, not a quantity change. Kapferer's (2008, 4th ed.) identity prism describes brand identity but is fundamentally sender-focused: it describes what the brand *intends* to communicate, not how different observers *receive* those communications.
 
-**Table 6.** Framework capability comparison.
+Table 6: Framework capability comparison.
 
 | # | Phenomenon | Aa96 | Aa97 | Ke93 | Ka08 | SBT |
 |---|---|---|---|---|---|---|
@@ -276,7 +284,7 @@ Keller's (1993) equity-as-stock metaphor implies that equity changes quantitativ
 | 6 | Revenue-dimension link | -- | -- | -- | -- | Yes |
 | 7 | Observer-defined dims. | -- | -- | -- | -- | Yes |
 
-*Key*: Aa96 = Aaker (1996), Aa97 = Aaker (1997), Ke93 = Keller (1993), Ka08 = Kapferer (2008, 4th ed.). Yes = explicitly modeled. Part. = captures related phenomenon without specific mechanism. -- = outside framework scope.
+*Notes*: Aa96 = Aaker (1996), Aa97 = Aaker (1997), Ke93 = Keller (1993), Ka08 = Kapferer (2008, 4th ed.). Yes = explicitly modeled. Part. = captures related phenomenon without specific mechanism. -- = outside framework scope.
 
 ---
 
@@ -376,6 +384,10 @@ The four observer cohorts are structural consequences of SBT's formalism: given 
 
 Dove's trajectory over two decades is the natural history of a dimensional creation event: ignition (2004), expansion (2006--2013), peak resonance (2013), and normative absorption (2023). The campaign's most important lesson for advertising research is not that purpose works but that purpose operates through specific perceptual mechanisms that SBT's multi-dimensional architecture models and existing frameworks do not.
 
+## Acknowledgments
+
+AI assistants (Claude Opus 4.6, Grok 4.1, Gemini 3.1) were used for initial literature search and editorial refinement; all theoretical claims, propositions, and interpretations are the author's sole responsibility.
+
 ## References
 
 Aaker, David A. (1996), *Building Strong Brands*, Free Press.
@@ -446,12 +458,15 @@ Zharnikov, Dmitry (2026j), Non-ergodic brand perception: Diffusion dynamics on m
 
 Zharnikov, Dmitry (2026q), Spectral portfolio theory: Interference, coherence, and capacity in multi-brand perception space. Working Paper. https://doi.org/10.5281/zenodo.19145099
 
-Zharnikov, Dmitry (2026r), Why eight? Dimensional justification for spectral brand theory. Working Paper. https://doi.org/10.5281/zenodo.19207599
+Zharnikov, Dmitry (2026r), Why eight? Completeness and necessity of the SBT dimensional taxonomy. Working Paper. https://doi.org/10.5281/zenodo.19207599
 
-Zharnikov, Dmitry (2026v), Spectral metamerism in AI-mediated brand perception. Working Paper. https://doi.org/10.5281/zenodo.19422427
+Zharnikov, Dmitry (2026v), Spectral metamerism in AI-mediated brand perception: How large language models collapse multi-dimensional brand differentiation in consumer search. Working Paper. https://doi.org/10.5281/zenodo.19422427
 
 Zharnikov, Dmitry (2026x), AI-native brand identity: From visual recognition to cryptographic verification. Working Paper. https://doi.org/10.5281/zenodo.19391476
 
 ---
 
+*This paper is part of the Spectral Brand Theory research program. For the full atlas of 20+ interconnected papers, see [spectralbranding.com/atlas](https://spectralbranding.com/atlas).*
+
+---
 *This paper is part of the Spectral Brand Theory research program. For the full atlas of 20+ interconnected papers, see [spectralbranding.com/atlas](https://spectralbranding.com/atlas).*
