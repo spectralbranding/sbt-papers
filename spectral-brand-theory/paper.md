@@ -126,9 +126,6 @@ The weight-based observer profile is structurally analogous to multi-attribute a
 
 Cohort membership is dynamic. Because priors are a profile component and priors evolve through signal accumulation, decay, and crystallization (see Section 5.4, Temporal dynamics), an observer's position in spectral-profile space shifts over time. Differential signal exposure — arising from encounter mode, geography, media consumption, and social networks — causes observers who once shared a cohort to drift apart as their priors diverge. Signal events (a CEO controversy, a product failure, a viral campaign) do not merely change perception — they physically redistribute observers across cohort boundaries. This dynamism distinguishes SBT cohorts from traditional market segments: segments describe who the observer *is*; cohorts describe how the observer *perceives*, and perception changes.
 
-```{=typst}
-#pagebreak()
-```
 
 **Figure 1.** The Observer-Mediated Perception Pipeline
 
@@ -161,9 +158,6 @@ Cohort membership is dynamic. Because priors are a profile component and priors 
                               [back to cloud]
 ```
 
-```{=typst}
-#pagebreak()
-```
 
 **Figure 2.** Observer Heterogeneity: Same Signal Field, Different Perceptions
 
@@ -385,15 +379,9 @@ The letter grades are projections of multi-dimensional spectral profiles onto a 
 
 **Incoherence** (Tesla) exhibits amplifying fragility. Each disruption widens existing cracks. The system does not absorb disruption — it converts disruption into deeper division. This is the worst resilience profile in the taxonomy.
 
-```{=typst}
-#pagebreak()
-```
 
 The coherence type is determined by three structural properties: (1) cohort interdependence — how much one cohort's perception depends on another's behavior; (2) ideological centrality — how much coherence depends on a shared ideological commitment; and (3) encounter mode variance — how different the direct-encounter brand is from the mediated brand.
 
-```{=typst}
-#pagebreak()
-```
 
 **Figure 4.** Coherence Types: Disruption Response Patterns
 
@@ -445,9 +433,6 @@ The strategic implication is stark: resources spent attempting to convert struct
 
 The five-brand exploratory analysis produces a finding that inverts conventional brand wisdom: brand power (emission strength, awareness, cultural impact) and brand health (coherence, architectural integrity, resilience) are independent variables. A brand can maximize the first while minimizing the second.
 
-```{=typst}
-#pagebreak()
-```
 
 **Table 10.** Five-brand scorecard: brand power versus spectral health.
 
@@ -467,9 +452,6 @@ The confusion between brand power and brand health is, we argue, the central err
 
 The D/A ratio is the single metric that most powerfully discriminates between power and health. Our five-brand comparison tentatively suggests a possible optimal zone around 55–65% designed signals; this is an exploratory hypothesis requiring validation across a larger sample. High enough to maintain narrative control. Low enough to allow authentic ambient reinforcement. Tesla, at 30% designed, is 25 points below the floor of this zone — meaning no communication strategy can fix its brand problem because 65% of the signal environment is beyond its control. Hermès, at 60% designed with *aligned* ambient signals, demonstrates that the direction of ambient signals matters as much as the ratio: its ambient signals amplify rather than contradict its designed signals.
 
-```{=typst}
-#pagebreak()
-```
 
 **Figure 5.** D/A Ratio and Coherence Across Five Brands
 
@@ -510,9 +492,6 @@ Muniz and O'Guinn's (2001) brand community construct identifies the social dimen
 
 Gestalt psychology (Koffka, 1935) provides the perceptual foundations: cloud formation *is* gestalt perception applied to brand signals. Kahneman's (2011) dual-process theory maps to the collapse mechanism: strong convictions are System 1 shortcuts; weak or forming clouds require effortful System 2 processing.
 
-```{=typst}
-#pagebreak()
-```
 
 **Figure 6.** Non-Ergodic Brand Perception: Ensemble Average vs. Cohort Trajectories
 
@@ -605,9 +584,6 @@ The framework generates ten falsifiable hypotheses. H1–H5 derive from the perc
 
 **H10 (Field density threshold).** There exists a minimum signal field density below which encounter probability drops to near-zero regardless of observer receptivity, and this threshold is higher for channels with low signal-to-noise ratio. *Derivation:* the signal dissemination layer (Section 3.5) and Sharp's (2010) mental availability framework. *Test:* vary brand signal frequency in controlled environments; measure encounter rate as a function of field density and channel noise level.
 
-```{=typst}
-#pagebreak()
-```
 
 **Figure 7.** Research Agenda: Falsifiable Hypotheses and Testing Methods
 
