@@ -1,8 +1,8 @@
-# Spectral Metamerism in AI-Mediated Brand Perception: How Large Language Models Collapse Multi-Dimensional Brand Differentiation in Consumer Search
+# Dimensional Collapse in AI-Mediated Brand Perception: Large Language Models as Metameric Observers
 
 **Dmitry Zharnikov**
 
-Working Paper v2.4.1 -- April 2026
+Working Paper v3.0 -- April 2026
 
 ---
 
@@ -47,7 +47,7 @@ This flattening has a precise theoretical name. In optics, metamerism occurs whe
 
 The intersection of AI and brand perception is attracting rapid scholarly attention. The scale of AI involvement in knowledge production is accelerating: Lu et al. (2026) demonstrate a fully autonomous AI system that generates, experiments, writes, and reviews research papers end-to-end, with AI-generated papers passing peer review at a top-tier conference. Huang and Rust (2021) proposed a strategic framework for AI in marketing that identifies feeling, thinking, and doing tasks, arguing that AI will progressively absorb all three. Davenport et al. (2020) surveyed AI applications across the marketing function, including brand management. Dawar and Bendle (2018) anticipated that AI-mediated platforms would shift competitive advantage from brand awareness to algorithmic recommendation, and De Bruyn et al. (2020) identified recommendation quality as a key research gap. Campbell et al. (2022) examined AI's implications for advertising practice. Kietzmann, Paschen, and Treen (2018) mapped AI applications across the consumer journey, identifying recommendation and search as high-impact touchpoints. Hermann and Puntoni (2024) provided a comprehensive analysis of AI's impact on consumer behavior, distinguishing predictive AI from generative AI. Puntoni, Reczek, Giesler, and Botti (2021) identified four experiential modes through which consumers encounter AI --- data capture, classification, delegation, and social interaction --- and showed that AI interactions frequently trigger loss of autonomy and identity threat; their experiential framing is directly relevant here because LLM-mediated search constitutes a delegation encounter in which the AI makes perceptual judgments the consumer cannot inspect or override. The delegation mode --- where consumers offload decisions to AI agents --- maps directly to the LLM-as-observer construct employed here.
 
-The consumer search literature has long recognized that search costs shape competitive dynamics: Lynch and Ariely (2000) showed that lower search costs for quality information reduce price sensitivity, while Diehl, Kornish, and Lynch (2003) demonstrated that AI agents that reduce quality-search costs can paradoxically increase price sensitivity by making price the salient comparison dimension. These findings anticipate the dimensional asymmetry documented in the present study. Yet these contributions describe what AI does in marketing. None provides a formal model that predicts which specific dimensions of brand perception AI preserves and which it destroys. The distinction is critical: without a dimensional model, practitioners cannot diagnose which brands are vulnerable to AI-mediated flattening, and researchers cannot test whether dimensional collapse is systematic or idiosyncratic.
+The consumer search literature has long recognized that search costs shape competitive dynamics: Lynch and Ariely (2000) showed that lower search costs for quality information reduce price sensitivity, while Diehl, Kornish, and Lynch (2003) demonstrated that AI agents that reduce quality-search costs can paradoxically increase price sensitivity by making price the salient comparison dimension. These findings anticipate the dimensional asymmetry documented in the present study. Longoni and Cian (2022) showed that consumers trust AI recommendations more for utilitarian than hedonic products, establishing that the type of brand attribute matters for AI-mediated outcomes. Kim and Priluck (2025) found that consumers respond differently to generative AI chatbots than to search engines when evaluating products, and Lei and Liu (2025) demonstrated that AI-generated reviews influence purchase decisions through perceived usefulness rather than source credibility. Ribeiro, Oliveira, and Mendes-Filho (2025) provide a systematic review confirming that AI reshapes consumer-brand relationships across multiple touchpoints. Estevez, Parra, and Locarno (2025) demonstrate that LLMs can serve as effective market research tools when properly structured. Yet these contributions describe what AI does in marketing. None provides a formal model that predicts which specific dimensions of brand perception AI preserves and which it destroys. The distinction is critical: without a dimensional model, practitioners cannot diagnose which brands are vulnerable to AI-mediated flattening, and researchers cannot test whether dimensional collapse is systematic or idiosyncratic.
 
 Hermann, Puntoni, and Schweidel (2026) come closest. Their analysis of AI agents and brand defensibility argues that AI agents "cannot recommend brands they cannot defend" -- that is, AI recommendations favor brands whose value proposition can be articulated in terms the model can process. This insight is directional but lacks a formal perceptual framework. It does not specify which dimensions are defensible and which are not, nor does it provide a measurement protocol for assessing dimensional vulnerability. Acar and Schweidel (2026) document practitioner evidence for the same problem: their analysis of Pernod Ricard's discovery that LLMs systematically miscategorize premium spirits brands demonstrates that dimensional collapse has immediate commercial consequences, not merely academic ones. Their work underscores the need for a formal measurement model -- precisely what the present paper provides.
 
@@ -67,7 +67,7 @@ The paper proceeds as follows. Section 2 presents the theoretical framework, ext
 
 Spectral Brand Theory (Zharnikov, 2026a) models brand perception as emission profiles across eight typed dimensions -- Semiotic, Narrative, Ideological, Experiential, Social, Economic, Cultural, and Temporal -- received by heterogeneous observer cohorts. Extending the dimensional decomposition implicit in established brand identity frameworks (Aaker, 1991, 1996; Keller, 1993; Kapferer, 2008; Brakus et al., 2009) into a formal measurement model, SBT treats each dimension as a structurally distinct category of brand signal; together they capture what brands emit as perceptual inputs, as distinct from how consumers respond to them (brand personality, brand experience) or how brands organize their identity (brand prism). The full specification of the framework, its mathematical notation, and its relationship to these established dimensional models are provided in Appendix A. A brand's emission profile at time $t$ is the vector $\mathbf{e}(t) = [e_1(t), \ldots, e_8(t)]$, encoding signal intensity across all eight dimensions. The present study uses SBT's eight dimensions because the research question concerns which categories of brand signal survive AI mediation -- a question about emission channels, not personality traits or experience types.
 
-SBT's central contribution is the observer spectral profile --- the formalization that emission is not perception. Each observer type applies a characteristic weight vector $\mathbf{w} = [w_1, \ldots, w_8]$ on the simplex $\sum w_i = 1$, determining the relative salience of each dimension in forming brand conviction. Observers with similar weight vectors cluster into cohorts (Zharnikov, 2026f). Brand conviction --- the observer's formed assessment of a brand --- is a function of the interaction between the brand's emission profile and the observer's spectral weights: two observers encountering identical brand signals can form structurally different brand convictions if their spectral profiles weight different dimensions. The present study leverages this observer-type formalization to predict which dimensions survive when the observer is an LLM.
+SBT's central contribution is the observer spectral profile --- the formalization that emission is not perception. Each observer type applies a characteristic weight vector $\mathbf{w} = [w_1, \ldots, w_8]$ on the simplex $\sum w_i = 1$, determining the relative salience of each dimension in forming brand conviction. Observers with similar weight vectors cluster into cohorts (cf. Wedel and Kamakura, 2000, for the analogous market segmentation construct). Brand conviction --- the observer's formed assessment of a brand --- is a function of the interaction between the brand's emission profile and the observer's spectral weights: two observers encountering identical brand signals can form structurally different brand convictions if their spectral profiles weight different dimensions. The present study leverages this observer-type formalization to predict which dimensions survive when the observer is an LLM.
 
 This observer-dependent architecture produces a testable prediction: any mediating system that transforms brand information before it reaches a human observer functions as an additional observer layer. The human observer then perceives not the brand's original emission profile but the mediating system's reconstruction of it. If the mediating system has a systematically biased spectral profile, it introduces systematic distortion.
 
@@ -81,7 +81,7 @@ The dimensional collapse mechanism is structurally analogous to Tversky's (1972)
 
 ### The LLM as Observer: A New Layer in the Rendering Problem
 
-The rendering problem (Zharnikov, 2026l) describes the structural gap between specification and perception that appears at every level of brand communication: a brand specifies its intended identity, emits signals, and those signals are perceived by observers whose spectral profiles may differ from the brand's intended audience. At each transition -- specification to signal, signal to perception -- information is lost or transformed.
+The rendering problem --- the structural gap between specification and perception --- appears at every level of brand communication: a brand specifies its intended identity, emits signals, and those signals are perceived by observers whose spectral profiles may differ from the brand's intended audience. At each transition -- specification to signal, signal to perception -- information is lost or transformed.
 
 AI-mediated search introduces a fourth level. The rendering chain becomes: brand specification $\rightarrow$ brand signals $\rightarrow$ LLM perception $\rightarrow$ LLM output $\rightarrow$ human perception. The LLM is not a passive conduit. It is an observer with its own spectral profile that processes brand signals, forms an internal representation, and re-emits a compressed version to the human consumer.
 
@@ -109,7 +109,7 @@ Dimensional collapse is not unique to brand perception. Hashimoto and Oshio (202
 
 ### Implications for Search Advertising Theory
 
-If H1-H3 are supported, the implications for search advertising theory are substantial. First, the concept of "brand visibility" acquires a dimensional structure: a brand can be visible on some dimensions and invisible on others, depending on the mediating observer's spectral profile. Second, the zero-click search paradigm -- where the AI provides the answer without the consumer visiting brand-owned media -- means that the LLM's spectral profile determines which brand dimensions reach the consumer. Third, portfolio brands that are differentiated in human perception but metameric in AI perception compete against themselves in AI-mediated search (Zharnikov, 2026q). Fourth, SEO, broadly conceived, becomes spectral optimization: the task of making collapsed dimensions machine-readable so that the LLM's effective spectral profile becomes less biased.
+If H1-H3 are supported, the implications for search advertising theory are substantial. First, the concept of "brand visibility" acquires a dimensional structure: a brand can be visible on some dimensions and invisible on others, depending on the mediating observer's spectral profile. Second, the zero-click search paradigm -- where the AI provides the answer without the consumer visiting brand-owned media -- means that the LLM's spectral profile determines which brand dimensions reach the consumer. Third, portfolio brands that are differentiated in human perception but metameric in AI perception compete against themselves in AI-mediated search (cf. Erdem and Swait, 1998, on brand credibility as a signal; the portfolio implication is that AI mediation can destroy inter-brand differentiation within a portfolio). Fourth, SEO, broadly conceived, becomes spectral optimization: the task of making collapsed dimensions machine-readable so that the LLM's effective spectral profile becomes less biased.
 
 ---
 
@@ -629,7 +629,7 @@ Longoni and Cian (2022) provide complementary evidence from the consumer side: u
 
 ### Theoretical Implications
 
-The LLM-as-observer concept extends SBT's framework to a structurally new class of perception agents. Existing observer heterogeneity research (Zharnikov, 2026f) documents how human cohorts differ in their dimensional weights as a function of lived experience, cultural context, and demographic position. This paper demonstrates that the AI observer has weights determined by a different mechanism entirely: training data distribution, optimization objective, and architectural constraint. The result is an observer profile that is simultaneously less heterogeneous across platforms than human cohorts (the .975 cosine similarity) and more severely biased toward verifiable dimensions than any human cohort.
+The LLM-as-observer concept extends SBT's framework to a structurally new class of perception agents. Research on observer heterogeneity documents how human cohorts differ in their dimensional weights as a function of lived experience, cultural context, and demographic position (cf. Wedel and Kamakura, 2000; Grier and Brumbaugh, 1999). This paper demonstrates that the AI observer has weights determined by a different mechanism entirely: training data distribution, optimization objective, and architectural constraint. The result is an observer profile that is simultaneously less heterogeneous across platforms than human cohorts (the .975 cosine similarity) and more severely biased toward verifiable dimensions than any human cohort.
 
 The metameric collapse mechanism provides a formal, testable explanation for practitioner observations about AI "flattening" of brands. By connecting this flattening to the mathematical framework of spectral metamerism (Zharnikov, 2026e) and Johnson-Lindenstrauss projection bounds, the paper transforms a vague concern into a precise measurement: for a given brand, which dimensions are visible to AI mediators and which are not, and by how much does the model's spectral profile diverge from the brand's intended emission profile? More precisely, this paper establishes LLMs as a new class of metameric observer whose spectral bias is structural, convergent (cosine .977), and conditional on training-data embeddedness. This extends the homogenization and alignment-tax literatures (Sourati et al., 2026; Liu, 2026; De Freitas et al., 2025) by specifying *which* perceptual dimensions are lost and why: perception-dependent dimensions (Ideological, Cultural, Narrative, Temporal) collapse because they require embodied experience and social context that text-trained models cannot encode, while verifiable dimensions (Economic, Experiential) survive because they are explicitly quantified in training corpora.
 
@@ -655,7 +655,7 @@ The most direct implication is that search advertising strategy must account for
 
 **Zero-click risk is dimensionally asymmetric.** When AI provides a direct answer, the consumer never visits brand-owned media where narrative, cultural, and temporal dimensions are richly communicated. The risk is not uniform across brands: brands differentiated on Economic and Experiential dimensions lose less in zero-click scenarios, while brands differentiated on soft dimensions lose proportionally more, because the dimensions that define their competitive advantage are precisely those the LLM underweights.
 
-**Portfolio brands face spectral self-competition.** Zharnikov (2026q) showed that brands within the same portfolio can interfere with each other on specific dimensions. AI mediation amplifies this risk: if two portfolio brands are differentiated in human perception on Cultural and Temporal dimensions but metameric in AI perception (both reduced to their Economic and Experiential profiles), the AI recommends them interchangeably, cannibalizing the portfolio's own differentiation.
+**Portfolio brands face spectral self-competition.** Brands within the same portfolio can interfere with each other on specific dimensions (cf. Erdem and Swait, 1998; Aaker and Joachimsthaler, 2000). AI mediation amplifies this risk: if two portfolio brands are differentiated in human perception on Cultural and Temporal dimensions but metameric in AI perception (both reduced to their Economic and Experiential profiles), the AI recommends them interchangeably, cannibalizing the portfolio's own differentiation.
 
 **Measurement must become dual-track.** Brand health metrics based on human respondent surveys will increasingly diverge from AI-mediated brand effectiveness. A brand can score high on human-perceived differentiation while being metameric in AI search. Practitioners need dual-track measurement: human spectral profiles from survey-based assessment and AI spectral profiles from the prompt-based protocol described in this paper.
 
@@ -720,6 +720,20 @@ An unexpected retrieval bias emerged: Hermes and Erewhon had 0% retrieval rates 
 
 **Interpretation.** The results constitute evidence of compounding, not strong compounding. The $\eta^2 = .029$ effect size is small, indicating that pipeline stage explains roughly 3% of DCI variance. However, the monotonic pattern and the brand-specific vulnerability gradient suggest that compounding is structurally real even if modest in magnitude over three steps. For brands like Patagonia whose differentiation rests on ideological and narrative dimensions, even small per-step erosion accumulates meaningfully across the multi-step interactions that characterize agentic commerce. These findings connect directly to Sabbah and Acar (2026), who argue that "marketing to machines" requires defensible attribute encoding; the compounding result makes agent-optimization even more critical, because brands must optimize for multi-step context survival, not merely single-step retrieval.
 
+### The Specification Paradox (Supplementary Experiment D)
+
+Supplementary Experiment A established that dimensional collapse compounds across agentic pipeline stages. Supplementary Experiments D1 and D2 ask a downstream question: does the framing of a Brand Function specification --- how the model is told to use it --- modulate that compounding? The answer reveals a counterintuitive pattern termed the specification paradox: informing a model *what to know* amplifies collapse, while instructing it *what to do* attenuates it.
+
+**Design.** Experiment D1 (480 calls) tested two conditions --- baseline (no specification) and specified (Brand Function provided) --- across the same 3-step agentic pipeline structure used in Experiment A. Five brands (Hermes, IKEA, Patagonia, Erewhon, Tesla) and five models (Claude Haiku 4.5, GPT-4o-mini, Gemini 2.5 Flash, DeepSeek V3, Grok 4.1 Fast) were included; Gemma 4 27B was excluded due to a 0% parse rate on structured output. Four pipeline stages and 2 repetitions per cell were used. Total cost: \$0.61.
+
+Experiment D2 (600 calls) extended the design to three conditions: baseline, information framing ("This brand has the following characteristics..."), and constraint framing ("Distribute your assessment equally across all eight dimensions"). The same five models, brands, and pipeline structure were retained. Two supplementary validation runs added coverage: Llama 3.3 70B via Groq (120 calls) and Qwen3 235B via Cerebras (120 calls, 97% valid responses). Combined across both experiments, 1,440 calls were completed across 8 distinct model architectures at a total cost of \$1.48.
+
+**Results.** Experiment D1 produced an unexpected amplification effect. Brand Function specification increased Step 3 DCI relative to baseline (specified: 5.394 vs. baseline: 4.409; Cohen's $d = .820$, $p < .001$). Rather than reducing collapse, specification exacerbated it. Dimensional inspection revealed the mechanism: the Experiential dimension inflated by $+3.7$ weight points under specification, while Ideological ($-2.7$) and Social ($-2.0$) contracted. Providing structured identity information caused models to over-weight the dimension most concrete and accessible in the specification (Experiential) at the expense of abstract or socially defined dimensions.
+
+Experiment D2 resolved the paradox by separating framing from content. Information framing replicated the D1 amplification: Step 3 DCI under information framing (4.770) was statistically indistinguishable from baseline ($d = -.133$, $p = .412$). Constraint framing, by contrast, reduced Step 3 DCI by 42% relative to baseline (constraint: 2.766 vs. baseline: 4.770; $d = -.983$, $p < .001$). The Experiential spike that defined the amplification condition --- reaching 17.6 weight points under information framing --- was flattened to 14.8 under constraint framing. Both Llama 3.3 70B and Qwen3 235B replicated the constraint advantage in the supplementary validation runs, confirming the pattern generalizes across model families and inference providers.
+
+**Interpretation.** The specification paradox formalizes a distinction that has practical consequences for any agentic brand deployment: telling the model what the brand *is* (information framing) activates the same dimensional weighting priors that produce metamerism in the first place, because the model maps incoming descriptors onto its training-data distribution and then collapses. Telling the model what to *do* with the dimensional structure (constraint framing) overrides those priors with an explicit procedural instruction that functions as a structural counter-pressure on collapse. The practical implication is succinct: "Tell the model what to DO, not what to KNOW." In terms of Brand Function design, a specification that names dimensions and assigns distributional constraints --- rather than one that elaborates descriptive content --- is the operationally correct form. The finding also recontextualizes the null result in Run 14 (Section 5.6): over-specification of descriptive content provided no benefit beyond standard specification precisely because information framing, regardless of density, leaves the collapse mechanism intact. Constraint framing, by contrast, engages a different processing layer and reduces compounding by nearly a full standard deviation.
+
 ### Cross-Language Dimensional Semantics (Supplementary Experiment B)
 
 The PRISM-B instrument presents dimension labels as bilingual anchors --- for example, "符号学 (Semiotic)" --- to ensure that non-English models can map each dimension to its native conceptual equivalent while maintaining cross-language alignment. Supplementary Experiment B tests whether removing the English anchor alters dimensional weight profiles, and whether culturally predicted dimension shifts emerge when models respond in native-only framing.
@@ -772,7 +786,7 @@ A sixth direction --- category-specific collapse variation --- tests whether DCI
 
 A seventh direction — directly estimating the empirical R(D) curve for AI brand-perception encoders by varying response-format rate constraints — has been executed in Zharnikov (2026aa): 1,652 calls across 17 LLM architectures and 5 rate conditions (100-point allocation to single-dimension indicator) find a J-shaped curve with minimum distortion at the 1-5 scale condition (~19 bits), not at the highest-rate 100-point allocation (~26 bits). All 17 models exhibit this pattern (paired *t*(16) = 11.92, *p* < .001, Cohen's *d*~z~ = 2.89). The cross-model coefficient of variation is .140, confirming that architecturally distinct models share a common rate-distortion operating point.
 
-Direction (e) is particularly tractable given current model release cadences. Several model families have publicly accessible version pairs spanning 3--12 months of training evolution: DeepSeek V3 (December 2024) to V3-0324 (March 2025), Llama 3.1-70B (July 2024) to 3.3-70B (December 2024), Qwen 2.5-72B (September 2024) to Qwen 3-235B (April 2025), and Gemma 3-27B (March 2025) to Gemma 4-27B (June 2025). The present study's prompt protocol and brand set can be applied to each version pair without modification, measuring per-brand temporal drift via cosine distance between version profiles and per-dimension shifts to identify which dimensions are most sensitive to training data evolution. If brand perception is non-stationary across model versions, the practical implication is that brand health monitoring in AI-mediated channels requires continuous measurement rather than periodic snapshots --- connecting to the non-ergodic perception dynamics formalized in Zharnikov (2026o) and the temporal Brand Triangulation framework in Zharnikov (2026y).
+Direction (e) is particularly tractable given current model release cadences. Several model families have publicly accessible version pairs spanning 3--12 months of training evolution: DeepSeek V3 (December 2024) to V3-0324 (March 2025), Llama 3.1-70B (July 2024) to 3.3-70B (December 2024), Qwen 2.5-72B (September 2024) to Qwen 3-235B (April 2025), and Gemma 3-27B (March 2025) to Gemma 4-27B (June 2025). The present study's prompt protocol and brand set can be applied to each version pair without modification, measuring per-brand temporal drift via cosine distance between version profiles and per-dimension shifts to identify which dimensions are most sensitive to training data evolution. If brand perception is non-stationary across model versions, the practical implication is that brand health monitoring in AI-mediated channels requires continuous measurement rather than periodic snapshots --- connecting to non-ergodic dynamics in perception more broadly (Peters, 2019; Peters and Gell-Mann, 2016).
 
 Run 5 introduces additional limitations. Error rates varied substantially across model endpoints: some national-model APIs (particularly Russian and Arabic free-tier endpoints) returned invalid JSON in 20--30% of calls, potentially biasing the sample toward more reliable (and possibly more commoditized) responses. Native-language prompting was tested on only a subset of models due to language-capability constraints, and not all models received prompts in their target language for all brand pairs; the language-priming results should therefore be treated as exploratory. SambaNova rate limits forced sequential rather than parallel call scheduling, extending collection time and introducing potential non-stationarity across the experiment. Swallow 70B exhibited severe reliability issues in two forms: the SambaNova-hosted version (Llama-3.3-Swallow-70B-Instruct-v0.4) was removed from the platform during data collection, and the local 70B GGUF version timed out on 64GB RAM; combined success rate across 549 attempted calls was 3.6%, and the 70B Swallow family should not be used in future replication attempts. The smaller Swallow 8B (local, 381 successful calls) and GPT-OSS-Swallow 20B (Yandex AI Studio, 489 successful calls) performed reliably and remain active in the Japanese model cluster. Finally, Run 5 includes no Japanese Tier 1 model: GPT-OSS-Swallow (20B) is the largest Japanese-specialized model tested, and the absence of a frontier-scale Japanese model (equivalent to Sarvam 105B for Indian languages) leaves the Japanese DCI estimates potentially unrepresentative of what a larger Japanese-trained model would produce.
 
@@ -803,6 +817,8 @@ AI assistants (Claude Opus 4.6, Grok 4.1, Gemini 3.1) were used for initial lite
 Aaker, D. A. (1991). *Managing brand equity: Capitalizing on the value of a brand name*. Free Press.
 
 Aaker, D. A. (1996). *Building strong brands*. Free Press.
+
+Aaker, D. A., & Joachimsthaler, E. (2000). *Brand leadership*. Free Press.
 
 Aaker, J. L. (1997). Dimensions of brand personality. *Journal of Marketing Research*, 34(3), 347-356.
 
@@ -836,11 +852,17 @@ Doshi, A. R., & Hauser, O. P. (2024). Generative AI enhances individual creativi
 
 Efron, B., & Morris, C. (1975). Data analysis using Stein's estimator and its generalizations. *Journal of the American Statistical Association*, 70(350), 311-319.
 
+Erdem, T., & Swait, J. (1998). Brand equity as a signaling phenomenon. *Journal of Consumer Psychology*, 7(2), 131-157.
+
+Estevez, V., Parra, D., & Locarno, A. (2025). Market research and knowledge using Generative AI: The power of Large Language Models. *Journal of Innovation & Knowledge*, 10(2), 100703. https://doi.org/10.1016/j.jik.2025.100703
+
 Gersho, A., & Gray, R. M. (1991). *Vector quantization and signal compression*. Kluwer Academic Publishers.
 
 Hagendorff, T., Fabi, S., & Kosinski, M. (2023). Human-like intuitive behavior and reasoning biases emerged in large language models but disappeared in ChatGPT. *Nature Computational Science*, 3, 833-838.
 
 Hashimoto, Y., & Oshio, A. (2025). Exploring personality structure through LLM agent: A lexical perspective. *Psychological Test Adaptation and Development*, 6, 248–258. https://doi.org/10.1027/2698-1866/a000114
+
+Grier, S. A., & Brumbaugh, A. M. (1999). Noticing cultural differences: Ad meanings created by target and non-target markets. *Journal of Advertising*, 28(1), 79-93.
 
 Hermann, E., & Puntoni, S. (2024). Artificial intelligence and consumer behavior: From predictive to generative AI. *Journal of Business Research*, 180, 114720. https://doi.org/10.1016/j.jbusres.2024.114720
 
@@ -856,11 +878,15 @@ Kapferer, J.-N. (2008). *The new strategic brand management: Creating and sustai
 
 Keller, K. L. (1993). Conceptualizing, measuring, and managing customer-based brand equity. *Journal of Marketing*, 57(1), 1-22.
 
+Kim, J., & Priluck, R. (2025). Consumer responses to generative AI chatbots versus search engines for product evaluation. *Journal of Theoretical and Applied Electronic Commerce Research*, 20(2), 93.
+
 Kietzmann, J., Paschen, J., & Treen, E. (2018). Artificial intelligence in advertising: How marketers can leverage artificial intelligence along the consumer journey. *Journal of Advertising Research*, 58(3), 263-267.
 
 Klein, J. G., Ettenson, R., & Morris, M. D. (1998). The animosity model of foreign product purchase: An empirical test in the People's Republic of China. *Journal of Marketing*, 62(1), 89-100.
 
 Liu, M. (2026). The alignment tax: Response homogenization in aligned LLMs and its implications for uncertainty estimation. arXiv:2603.24124. https://arxiv.org/abs/2603.24124
+
+Lei, Y., & Liu, Y. (2025). When AI becomes a shopping advisor: A study on the impact of generative AI review on consumer purchase decision. *SAGE Open*, 15(1). https://doi.org/10.1177/21582440251357671
 
 Longoni, C., & Cian, L. (2022). Artificial intelligence in utilitarian vs. hedonic contexts: The "word-of-machine" effect. *Journal of Marketing*, 86(1), 91-108.
 
@@ -874,6 +900,8 @@ Medesani, M., & Macdonald, J. (2026). Geometric foundations of invariant corrido
 
 Puntoni, S., Reczek, R. W., Giesler, M., & Botti, S. (2021). Consumers and artificial intelligence: An experiential perspective. *Journal of Marketing*, 85(1), 131-151.
 
+Ribeiro, F., Oliveira, A. S., & Mendes-Filho, L. (2025). The impact of artificial intelligence on consumer behavior towards brands: A systematic review. *Electronic Commerce Research*. https://doi.org/10.1007/s10660-025-10063-7
+
 Sabbah, J., & Acar, O. A. (2026). Marketing to machines: How AI models respond to promotional cues. Working Paper. SSRN 6406639.
 
 Shannon, C. E. (1959). Coding theorems for a discrete source with a fidelity criterion. *IRE International Convention Record*, 7(4), 142-163.
@@ -886,6 +914,8 @@ Van Doren, M., & Holland, C. (2025). "Be My Cheese?": Assessing cultural nuance 
 
 Verlegh, P. W. J., & Steenkamp, J.-B. E. M. (1999). A review and meta-analysis of country-of-origin research. *Journal of Economic Psychology*, 20(5), 521-546.
 
+Wedel, M., & Kamakura, W. A. (2000). *Market segmentation: Conceptual and methodological foundations* (2nd ed.). Kluwer Academic Publishers.
+
 Wyszecki, G., & Stiles, W. S. (1982). *Color science: Concepts and methods, quantitative data and formulae* (2nd ed.). Wiley.
 
 Kulyk, Volodymyr (2019). National identity in Ukraine after Euromaidan. In *Paradox of Ukrainian Lviv*, edited by Tarik Amar, 267–290. Ithaca: Cornell University Press.
@@ -894,25 +924,11 @@ Zharnikov, D. (2026a). Spectral Brand Theory: A multi-dimensional framework for 
 
 Zharnikov, D. (2026aa). Empirical rate-distortion curve for AI brand perception encoders. Working Paper. https://doi.org/10.5281/zenodo.19528833
 
-Zharnikov, D. (2026c). Spectral Brand Theory: Literature review and theoretical foundations. Working Paper. https://doi.org/10.5281/zenodo.18945217
-
 Zharnikov, D. (2026e). Spectral metamerism in brand perception: Projection bounds from high-dimensional geometry. Working Paper. https://doi.org/10.5281/zenodo.18945352
-
-Zharnikov, D. (2026f). Cohort boundaries in high-dimensional perception space: A concentration of measure analysis. Working Paper. https://doi.org/10.5281/zenodo.18945477
-
-Zharnikov, D. (2026g). How many brands can a market hold? Sphere packing bounds for multi-dimensional positioning. Working Paper. https://doi.org/10.5281/zenodo.18946429
-
-Zharnikov, D. (2026l). The rendering problem: From genetic expression to brand perception. Working Paper. https://doi.org/10.5281/zenodo.19064426
-
-Zharnikov, D. (2026o). Non-ergodic brand perception: Path dependence and order effects in multi-dimensional brand evaluation. Working Paper. https://doi.org/10.5281/zenodo.19138860
-
-Zharnikov, D. (2026q). Spectral portfolio theory: Interference, coherence, and capacity in multi-brand perception space. Working Paper. https://doi.org/10.5281/zenodo.19145099
 
 Zharnikov, D. (2026x). AI-native brand identity: From visual recognition to cryptographic verification. Working Paper. https://doi.org/10.5281/zenodo.19391476
 
-Zharnikov, D. (2026y). Brand triangulation: A geometric framework for multi-observer brand positioning. Working Paper. https://doi.org/10.5281/zenodo.19468204
-
-<!-- Self-citation audit (updated Session 105): 11 Zharnikov entries in reference list (2026a, 2026aa, 2026c, 2026e, 2026f, 2026g, 2026l, 2026o, 2026q, 2026x, 2026y) out of ~58 total = ~19%. All self-citations verified as necessary for methodological chain. -->
+<!-- Self-citation audit (updated Session 106, JMR revision): 4 Zharnikov entries retained (2026a, 2026aa, 2026e, 2026x) out of ~62 total = ~6.5%. Removed: 2026c (orphan), 2026g (orphan), 2026f (replaced with Wedel & Kamakura 2000), 2026l (replaced with information theory framing), 2026o (replaced with Peters 2019), 2026q (replaced with Erdem & Swait 1998), 2026y (cut, not essential). -->
 
 ---
 
@@ -951,7 +967,7 @@ where each $e_i(t) \in [0, 10]$ represents the intensity of the brand's signal o
 
 SBT's central contribution is the formalization that emission is not perception. Each observer type applies a characteristic weight vector $\mathbf{w} = [w_1, \ldots, w_8]$ constrained to the simplex $\sum_{i=1}^{8} w_i = 1$, $w_i \geq 0$, determining the relative salience of each dimension in forming brand conviction. Brand conviction -- the observer's formed assessment of a brand -- is a function of the interaction between the brand's emission profile and the observer's spectral weights.
 
-Observers with similar weight vectors cluster into cohorts (Zharnikov, 2026f). Two observers encountering identical brand signals form structurally different brand convictions if their spectral profiles weight different dimensions. This observer-dependent architecture produces spectral metamerism: two structurally different brands can produce the same brand conviction in an observer whose spectral profile assigns near-zero weight to the dimensions on which those brands differ.
+Observers with similar weight vectors cluster into cohorts (cf. Wedel and Kamakura, 2000). Two observers encountering identical brand signals form structurally different brand convictions if their spectral profiles weight different dimensions. This observer-dependent architecture produces spectral metamerism: two structurally different brands can produce the same brand conviction in an observer whose spectral profile assigns near-zero weight to the dimensions on which those brands differ.
 
 The present study operationalizes this framework by treating each LLM as an observer cohort with an estimable spectral weight vector, and measuring the degree to which LLM weight vectors are concentrated on Economic and Experiential dimensions relative to the theoretical uniform baseline.
 
