@@ -1,0 +1,218 @@
+{
+  "h1": {
+    "status": "SUPPORTED",
+    "mean_pos_1_2": 15.13,
+    "mean_pos_7_8": 9.05,
+    "difference": 6.08,
+    "t_statistic": 33.992,
+    "p_value": 0.0,
+    "cohens_d": 1.388,
+    "d_ci_95": [
+      5.808,
+      6.341
+    ],
+    "n_early": 1200,
+    "n_late": 1200
+  },
+  "h2": {
+    "status": "SUPPORTED",
+    "significant_formats": 4,
+    "per_format": {
+      "json": {
+        "mean_pos_1_2": 15.13,
+        "mean_pos_7_8": 9.05,
+        "difference": 6.08,
+        "t_statistic": 33.992,
+        "p_value": 0.0,
+        "cohens_d": 1.388,
+        "significant_at_0125": true
+      },
+      "likert": {
+        "mean_pos_1_2": 12.84,
+        "mean_pos_7_8": 12.52,
+        "difference": 0.32,
+        "t_statistic": 5.284,
+        "p_value": 0.0,
+        "cohens_d": 0.216,
+        "significant_at_0125": true
+      },
+      "ranking": {
+        "mean_pos_1_2": 15.48,
+        "mean_pos_7_8": 9.48,
+        "difference": 6.0,
+        "t_statistic": 23.208,
+        "p_value": 0.0,
+        "cohens_d": 0.966,
+        "significant_at_0125": true
+      },
+      "nl": {
+        "mean_pos_1_2": 15.36,
+        "mean_pos_7_8": 8.97,
+        "difference": 6.39,
+        "t_statistic": 37.573,
+        "p_value": 0.0,
+        "cohens_d": 1.567,
+        "significant_at_0125": true
+      }
+    }
+  },
+  "h3": {
+    "status": "SUPPORTED",
+    "json_mean_primacy": 6.079,
+    "likert_mean_primacy": 0.316,
+    "t_statistic": 27.366,
+    "p_value": 0.0,
+    "cohens_d": 1.581,
+    "n_json": 600,
+    "n_likert": 599
+  },
+  "h4": {
+    "status": "SUPPORTED",
+    "models_with_same_direction": 5,
+    "total_models": 5,
+    "per_model": {
+      "anthropic": {
+        "mean_primacy": 8.625,
+        "ci_95": [
+          7.917,
+          9.342
+        ],
+        "n": 120,
+        "direction": "primacy"
+      },
+      "deepseek": {
+        "mean_primacy": 5.875,
+        "ci_95": [
+          5.083,
+          6.688
+        ],
+        "n": 120,
+        "direction": "primacy"
+      },
+      "google": {
+        "mean_primacy": 1.608,
+        "ci_95": [
+          0.787,
+          2.421
+        ],
+        "n": 120,
+        "direction": "primacy"
+      },
+      "openai": {
+        "mean_primacy": 8.354,
+        "ci_95": [
+          7.629,
+          9.062
+        ],
+        "n": 120,
+        "direction": "primacy"
+      },
+      "xai": {
+        "mean_primacy": 5.933,
+        "ci_95": [
+          5.079,
+          6.779
+        ],
+        "n": 120,
+        "direction": "primacy"
+      }
+    }
+  },
+  "position_curves": {
+    "json": {
+      "mean_by_position": {
+        "1": 15.42,
+        "2": 14.84,
+        "3": 14.05,
+        "4": 13.29,
+        "5": 12.55,
+        "6": 11.82,
+        "7": 10.07,
+        "8": 8.04
+      },
+      "linear_trend": {
+        "slope": -0.988,
+        "r_squared": 0.2066,
+        "p_value": 0.0
+      }
+    },
+    "likert": {
+      "mean_by_position": {
+        "1": 13.03,
+        "2": 12.64,
+        "3": 12.36,
+        "4": 12.24,
+        "5": 12.32,
+        "6": 12.36,
+        "7": 12.43,
+        "8": 12.61
+      },
+      "linear_trend": {
+        "slope": -0.046,
+        "r_squared": 0.0046,
+        "p_value": 0.0
+      }
+    },
+    "ranking": {
+      "mean_by_position": {
+        "1": 16.35,
+        "2": 14.61,
+        "3": 13.35,
+        "4": 12.92,
+        "5": 12.5,
+        "6": 11.32,
+        "7": 10.36,
+        "8": 8.59
+      },
+      "linear_trend": {
+        "slope": -0.977,
+        "r_squared": 0.1237,
+        "p_value": 0.0
+      }
+    },
+    "nl": {
+      "mean_by_position": {
+        "1": 15.77,
+        "2": 14.94,
+        "3": 14.12,
+        "4": 13.26,
+        "5": 12.62,
+        "6": 11.69,
+        "7": 9.97,
+        "8": 7.96
+      },
+      "linear_trend": {
+        "slope": -1.041,
+        "r_squared": 0.249,
+        "p_value": 0.0
+      }
+    }
+  },
+  "brand_moderation": {
+    "Erewhon": {
+      "primacy_magnitude": 6.24,
+      "mean_pos_1_2": 15.28,
+      "mean_pos_7_8": 9.04
+    },
+    "Hermes": {
+      "primacy_magnitude": 5.91,
+      "mean_pos_1_2": 14.95,
+      "mean_pos_7_8": 9.05
+    },
+    "IKEA": {
+      "primacy_magnitude": 5.13,
+      "mean_pos_1_2": 14.66,
+      "mean_pos_7_8": 9.53
+    },
+    "Patagonia": {
+      "primacy_magnitude": 6.31,
+      "mean_pos_1_2": 15.22,
+      "mean_pos_7_8": 8.9
+    },
+    "Tesla": {
+      "primacy_magnitude": 6.8,
+      "mean_pos_1_2": 15.55,
+      "mean_pos_7_8": 8.75
+    }
+  }
+}

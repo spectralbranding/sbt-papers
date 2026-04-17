@@ -1,0 +1,61 @@
+{
+  "total_calls": 2400,
+  "successful": 2351,
+  "failed": 0,
+  "parse_errors": 49,
+  "total_cost": 1.8598210000000197,
+  "per_model": {
+    "gemini": {
+      "calls": 480,
+      "success": 458,
+      "failed": 22,
+      "cost": 0.04538600000000007
+    },
+    "claude": {
+      "calls": 480,
+      "success": 456,
+      "failed": 24,
+      "cost": 0.7770799999999997
+    },
+    "grok": {
+      "calls": 480,
+      "success": 480,
+      "failed": 0,
+      "cost": 0.8776860000000021
+    },
+    "gpt": {
+      "calls": 480,
+      "success": 480,
+      "failed": 0,
+      "cost": 0.05300299999999988
+    },
+    "deepseek": {
+      "calls": 480,
+      "success": 477,
+      "failed": 3,
+      "cost": 0.10666599999999979
+    }
+  },
+  "per_format": {
+    "nl": {
+      "calls": 600,
+      "success": 575,
+      "failed": 25
+    },
+    "ranking": {
+      "calls": 600,
+      "success": 577,
+      "failed": 23
+    },
+    "likert": {
+      "calls": 600,
+      "success": 599,
+      "failed": 1
+    },
+    "json": {
+      "calls": 600,
+      "success": 600,
+      "failed": 0
+    }
+  }
+}
