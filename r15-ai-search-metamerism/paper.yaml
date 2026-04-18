@@ -23,7 +23,7 @@ metadata:
     LLMs collapse brand perception to Experiential and Economic dimensions, rendering brands
     differentiated on narrative, ideological, cultural, or temporal dimensions metameric ---
     functionally equivalent in AI recommendations despite structural differences. The PRISM-B
-    instrument is administered across 26,040 API calls spanning 24 models, nine cultural
+    instrument is administered across 21,350 API calls spanning 24 models, nine cultural
     traditions, and 15 native languages to compute a Dimensional Collapse Index (DCI). Mean DCI
     significantly exceeds the uniform baseline (global = .291, p = .017; cross-cultural = .357,
     d = 3.449). Cross-model convergence is extreme (cosine = .977). Local brands collapse 25%
