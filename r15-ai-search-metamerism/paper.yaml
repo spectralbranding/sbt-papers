@@ -149,6 +149,69 @@ claims:
       (two-tailed Wilcoxon) indicating significant regression.
     depends_on: [H1]
 
+  - id: H_Q1a
+    type: hypothesis
+    statement: >
+      Constraint framing injected at each step of a multi-turn agentic
+      pipeline reduces end-of-pipeline DCI relative to baseline.
+    testable: true
+    tested_in_paper: true
+    status: not_supported  # d = +.197, p = .169; mean not shifted. But variance reduction massive: Levene F = 64.77, p < .0001.
+    falsification: >
+      H_Q1a is supported if DCI(step_3, constraint) < DCI(step_3, baseline)
+      at p < .05 (independent-samples t-test).
+    depends_on: [H1]
+
+  - id: H_F1a
+    type: hypothesis
+    statement: >
+      Thinking-mode processing reduces JSON primacy effect (d < 1.0
+      vs d = 1.39 in Experiment E).
+    testable: true
+    tested_in_paper: true
+    status: reinterpreted  # Aggregate standard d = +.221; thinking d = +.107. But Exp E d = 1.39 was driven by GPT-4o-mini alone (d = 1.748). Other models show |d| < .30. Primacy is model-specific, not depth-of-processing.
+    falsification: >
+      H_F1a is supported if thinking-mode JSON primacy d < 1.0 across
+      3 model pairs (gemini, deepseek, grok).
+    depends_on: []
+
+  - id: H_F2a
+    type: hypothesis
+    statement: >
+      Serial position primacy exists in political attitude elicitation
+      (JSON d > 0.5) using Moral Foundations Theory dimensions.
+    testable: true
+    tested_in_paper: true
+    status: not_supported  # Political JSON d = -.020, p = .619. Primacy is domain-specific to brand perception (brand JSON d = +.193, p < .0001). Domain x position interaction p = .006.
+    falsification: >
+      H_F2a is supported if political JSON primacy d > 0.5 (one-tailed).
+    depends_on: []
+
+  - id: H_13a
+    type: hypothesis
+    statement: >
+      At least one model pair shows significant profile drift across
+      versions (cosine < .95).
+    testable: true
+    tested_in_paper: true
+    status: not_supported  # All 4 pairs show cosine > .97. Collapse is temporally stable.
+    falsification: >
+      H_13a is supported if any pair's mean profile cosine < .95.
+    depends_on: [H2]
+
+  - id: H_13d
+    type: hypothesis
+    statement: >
+      DCI direction is consistent across model versions: newer models
+      do NOT reduce dimensional collapse.
+    testable: true
+    tested_in_paper: true
+    status: supported  # No pair shows DCI reduction; western baseline pair shows increase (d = -.445, p = .041).
+    falsification: >
+      H_13d is falsified if any model pair shows significant DCI reduction
+      (newer < older at p < .05).
+    depends_on: [H1]
+
 methodology:
   type: empirical
   design: >
@@ -169,8 +232,8 @@ methodology:
     temperature 0.7. Total: 21,602 calls across 12 runs; ~6.4M tokens;
     ~$6.40 total cost (including Run 14 per-dimension targeting, 252 calls).
   sample:
-    size: 26585  # 21,350 core (Runs 2-11) + 5,235 supplementary (Runs 12-15b + Exps A-E)
-    description: "Core: 21,350 calls across 10 runs (Runs 2-11), 24 models from 9 cultural traditions, 15 native languages, ~$6.10 cost. Supplementary: 5,235 calls across Runs 12-15b (brand function, synthetic cohorts) + Experiments A (agentic collapse, 425), B (cross-language, 450), D (specification paradox, 1,440), E (primacy generalization, 2,400). Total: 26,585 calls, 8 distinct model architectures in supplementary, ~$1.48 additional cost. HuggingFace datasets: core DOI 10.57967/hf/8284; supplementary DOIs 10.57967/hf/8435-8443."
+    size: 31275  # 21,350 core (Runs 2-11) + 9,925 supplementary (Runs 12-15b + Exps A-E + Batch 2 Q1/F1/F2/H13)
+    description: "Core: 21,350 calls across 10 runs (Runs 2-11), 24 models from 9 cultural traditions, 15 native languages, ~$6.10 cost. Supplementary: 9,925 calls across Runs 12-15b (brand function, synthetic cohorts) + Experiments A (agentic collapse, 425), B (cross-language, 450), D (specification paradox, 1,440), E (primacy generalization, 2,400) + Batch 2: Q1 (compounding x specification, 1,200), F1 (thinking-mode primacy, 640), F2 (cross-domain primacy, 2,400), H13 (temporal stability, 450). Total: 31,275 calls, ~$7.76 total cost. HuggingFace datasets: core DOI 10.57967/hf/8284; supplementary DOIs 10.57967/hf/8435-8443."
     models: 24  # 24 unique models across all runs; T-Pro 2.0 excluded from Run 5 analysis due to infrastructure cost
     brand_pairs: 23  # 10 global + 5 local + 7 cross-cultural + 1 banking (Run 6)
   instrument: "PRISM-B (Perception Response Instrument for Structured Measurement — Brand variant)"
