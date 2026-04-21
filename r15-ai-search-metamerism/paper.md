@@ -415,7 +415,7 @@ Ten supplementary experiments extend and robustify the core findings. Temperatur
 
 ### Connection to Broader Trends
 
-The dimensional collapse documented here is not unique to brands. Personality perception by AI shows analogous flattening (Hashimoto & Oshio, 2025), and cultural nuance in machine translation shows analogous loss (Van Doren & Holland, 2025). The SBT framework provides a general instrument for measuring this collapse across domains: the methodological approach --- measuring the implicit spectral profile of an AI system by analyzing which dimensions it preserves in its outputs --- is domain-general.
+The dimensional collapse documented here is not unique to brands. Personality perception by AI shows analogous flattening (Hashimoto & Oshio, 2025), and cultural nuance in machine translation shows analogous loss (Van Doren & Holland, 2025). Representation collapse is also a central challenge in self-supervised learning: Joint-Embedding Predictive Architectures (JEPAs) suffer from an analogous failure mode in which encoders map structurally distinct inputs to near-identical latent representations, requiring explicit regularization to maintain dimensional diversity (Maes et al., 2026). The parallel is structural: both phenomena arise when a system optimizes a prediction objective without a constraint that forces it to preserve the full dimensionality of its input space. The SBT framework provides a general instrument for measuring this collapse across domains: the methodological approach --- measuring the implicit spectral profile of an AI system by analyzing which dimensions it preserves in its outputs --- is domain-general.
 
 The perceptual collapse documented in the present study also represents one of two independent failure modes in AI-mediated commerce. The second is task failure: even the best-performing AI shopping agents achieve only 30% holistic task success on complex product discovery queries (Lyu et al., 2025). These failure modes are structurally orthogonal: an agent can locate the correct product while systematically misrepresenting the brand's narrative, cultural, and temporal dimensions, and an agent with perfect perceptual fidelity can still fail to navigate website filters. AI shopping agents face a dual remediation challenge: structured product data and improved navigation capabilities address task failure, while Brand Function specifications and structured dimensional encoding address perceptual failure. Neither intervention addresses the other's failure mode, and both are required for AI-mediated commerce to function at the level consumers and brands expect.
 
@@ -504,6 +504,8 @@ Lu, C., Lu, C., Lange, R. T., Yamada, Y., Hu, S., Foerster, J., Ha, D., & Clune,
 Lyu, Yougang, Zhang, Xiaoyu, Yan, Lingyong, de Rijke, Maarten, Ren, Zhaochun, & Chen, Xiuying (2025). DeepShop: A benchmark for deep research shopping agents. Working Paper, arXiv:2506.02839.
 
 Lynch, J. G., & Ariely, D. (2000). Wine online: Search costs affect competition on price, quality, and distribution. *Marketing Science*, 19(1), 83-103.
+
+Maes, L., Le Lidec, Q., Scieur, D., LeCun, Y., & Balestriero, R. (2026). LeWorldModel: Stable end-to-end joint-embedding predictive architecture from pixels. arXiv:2603.19312. https://arxiv.org/abs/2603.19312
 
 Puntoni, S., Reczek, R. W., Giesler, M., & Botti, S. (2021). Consumers and artificial intelligence: An experiential perspective. *Journal of Marketing*, 85(1), 131-151.
 
