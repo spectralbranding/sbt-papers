@@ -418,7 +418,7 @@ Erdem, Tulin and Joffre Swait (1998), "Brand Equity as a Signaling Phenomenon," 
 
 Erdem, Tulin and Baohong Sun (2002), "An Empirical Investigation of the Spillover Effects of Advertising and Sales Promotions in Umbrella Branding," *Journal of Marketing Research*, 39 (4), 408-420.
 
-Farach, Abraham (2026), "On the Role of AI as Capital," Working Paper, arXiv:2602.16078v3.
+Farach, Alex (2026), "AI as Coordination-Compressing Capital: Task Reallocation, Organizational Redesign, and the Regime Fork," Working Paper, arXiv:2602.16078v3.
 
 Germani, Federico and Giovanni Spitale (2025), "Source Framing Triggers Systematic Bias in Large Language Models," *Science Advances*.
 
