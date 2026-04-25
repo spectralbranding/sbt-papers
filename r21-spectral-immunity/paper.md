@@ -370,7 +370,7 @@ Spectral immunity reframes the central question in brand portfolio theory. The q
 
 ## Acknowledgments
 
-AI assistants (Claude Opus 4.6) were used for manuscript drafting and consistency checking; all theoretical propositions, interpretations, and conclusions are the author's sole responsibility.
+AI assistants (Claude Opus 4.6, Grok 4.1, Gemini 3.1) were used for initial literature search and editorial refinement; all theoretical claims, propositions, and interpretations are the author's sole responsibility.
 
 ## Author Contributions (CRediT)
 
@@ -379,10 +379,6 @@ Dmitry Zharnikov: Conceptualization, Data curation, Formal analysis, Investigati
 ## Funding
 
 This research did not receive any specific grant from funding agencies in the public, commercial, or not-for-profit sectors.
-
-## Declaration of Competing Interests
-
-The author declares no competing interests.
 
 ## Data Availability
 
