@@ -1,4 +1,3 @@
-# Claude Code local settings
 
 # Claude decision traces
 .claude-decisions/
@@ -29,12 +28,6 @@ venv/
 # Linting
 .flake8
 
-# Claude Code local settings (keep commands/ tracked)
-.claude/*
-!.claude/commands/
-!.claude/templates/
-!.claude/skills/
-!.claude/hooks/
 
 # Machine-specific MCP config (use .mcp.json.silicon or .mcp.json.intel templates)
 .mcp.json
@@ -43,3 +36,18 @@ venv/
 *.typ
 *.lua
 
+
+# Fleet internal (public repo — nothing tracked)
+.claude/
+.claude-decisions/
+skills/
+.clinerules
+.cursorrules
+.cursorignore
+.rooignore
+.mcp.json
+.flake8
+
+# Backup files
+*.bak
+*.jsonl.bak
