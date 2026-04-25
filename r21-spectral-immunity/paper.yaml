@@ -1,4 +1,4 @@
-# paper.yaml -- R21: Spectral Immunity: Portfolio Interference Fails in AI-Mediated Brand Perception
+# paper.yaml -- R21: Spectral Immunity: Why Brand Portfolio Interference Disappears for AI Observers
 # Citation key: 2026ac
 # Supersedes: R8 (2026q) and R20 (2026ab)
 # Paper Spec schema: https://github.com/spectralbranding/paper-spec/SPECIFICATION.md
@@ -6,7 +6,7 @@
 paper_spec_version: "0.1.0"
 
 metadata:
-  title: "Spectral Immunity: Portfolio Interference Fails in AI-Mediated Brand Perception"
+  title: "Spectral Immunity: Why Brand Portfolio Interference Disappears for AI Observers"
   authors:
     - name: "Dmitry Zharnikov"
       orcid: "0009-0000-6893-9231"
