@@ -1,10 +1,10 @@
 # PENDING UPDATES -- R21 Spectral Immunity
 
-Editorial updates staged for the next R21 version (v1.1+). Apply before Marketing Science submission, or at first R&R if already submitted. Do **not** edit `paper.md` directly until ready to regenerate the PDF and bump the Zenodo record (new version of same DOI).
+Editorial updates staged for the next R21 version. Apply before Marketing Science submission, or at first R&R if already submitted. Do **not** edit `paper.md` directly until ready to regenerate the PDF and bump the Zenodo record.
 
 ---
 
-## [Session 112] DR Cross-Pollination from MaffinLab Whitepaper
+## [Session 112] DR Cross-Pollination from MaffinLab Whitepaper -- **APPLIED 2026-04-25 (paper.md only; PDF regenerated; Zenodo record kept at v1.0.0 same DOI 10.5281/zenodo.19765401)**
 
 The MaffinLab whitepaper deep-research run (DR-1, DR-5) surfaced two M&A literature anchors that strengthen R21's discussion of dimensional collapse as a value-destruction mechanism. Both are HIGH-confidence peer-reviewed and align directly with R21's spectral immunity argument.
 

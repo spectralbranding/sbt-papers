@@ -319,6 +319,8 @@ First, the variance decomposition shows that brand identity (a WHAT-layer proper
 
 The output-coordination distinction also explains the Geely Auto exception. In multi-turn conversation, the model does not merely receive DO-layer information ("Geely owns Volvo"); it engages in extended reasoning about what this ownership means for Geely Auto's product positioning. We speculate that the conversational accumulation converts DO-layer information into WHAT-layer inference: if Geely Auto's parent also makes Volvo, what does Geely Auto's product quality look like in that context? This conversion from coordination context to output inference is what enables the reverse-aspiration dynamic (d = -1.11) -- and it explains why the effect appears only in multi-turn conversation, not in direct framing. Testing this mechanism directly requires a design that manipulates the reasoning steps available to the model across turns.
 
+The output-coordination distinction also identifies a limiting case in the opposite direction from the diversified portfolios analyzed here: the founder-dependent firm, where the WHAT specification is borne by a single individual and dimensional concentration is at its maximum. Pérez-González (2006) finds, using inheritance-based natural experiments, a 2.09 percentage point industry- and performance-adjusted decline in operating return on assets following inherited family-CEO succession in U.S. public firms; Bennedsen et al. (2007), instrumenting succession with first-born child gender in a Danish sample, find an average decline of at least four percentage points (IV estimates ranging from -6.06 to -9.28). The mechanism is the same one identified here at the AI-perception layer: the WHAT specification is encoded in a low-cardinality channel -- a single observer's judgment -- and does not survive the change of observing system. Where AI compression makes the DO layer invisible, founder transition makes the WHAT layer disappear. Both are observer-side compressions of an output specification that was always finite but whose representation depended on the observer.
+
 ***Proposition Support Summary***
 
 **Proposition 1 (Interference conditionality): Conditions met but interference absent.** All three necessary conditions hold for the LLM observer: shared cohorts ($O > 0$, all brands rated by all models), maximal awareness gate ($\alpha \approx 1$), and dimensional differences between portfolio brands. Yet interference is near zero. This does not falsify P1 -- the conditions remain jointly necessary. It falsifies the assumption that these conditions are jointly *sufficient*.
@@ -330,6 +332,8 @@ The output-coordination distinction also explains the Geely Auto exception. In m
 ***Convergence With Other Evidence***
 
 The spectral immunity finding converges with four independent lines of evidence. First, Sabbah and Acar (2026) showed that only quantitative ratings are stable across LLM models, consistent with compressed encodings that preserve scalar properties while discarding relational context. Second, Goli and Singh (2024) demonstrated structural divergence between LLM and human preferences, consistent with observers operating in different compression regimes. Third, Zharnikov (2026v) showed that AI observers systematically compress the Cultural, Temporal, and Social dimensions -- precisely the dimensions most dependent on organizational and social context (the DO layer). Fourth, Peng et al. (2023) meta-analyzed 2,134 effect sizes from three decades of brand extension research, establishing the magnitude of portfolio spillover in human samples. The near-zero effects found here for AI observers (mean |delta DCI| = .26) represent a qualitative departure from this consensus, consistent with a fundamentally different encoding mechanism.
+
+A fifth line of convergence comes from corporate finance. Li et al. (2011) find that approximately 30.6% of recognized acquisition goodwill is statistically attributable to acquisition-date overpayment rather than to genuine synergies, with impairment recognition typically lagging the underlying economic deterioration by three to four years. This is the financial-reporting analogue of the result reported here: the audited financial signature is a projection of a high-dimensional operational object onto a low-dimensional surface, and the dimensions discarded by the projection are precisely those that govern the post-deal trajectory. The interference between portfolio members vanishes in AI mediation for the same structural reason that overpayment goodwill vanishes from the deal model: in both cases the observing system has compressed away the dimensions that carry the relevant information. Spectral immunity is therefore not a peculiarity of language models -- it is a specific instance of how lossy observers handle high-dimensional inputs.
 
 ***Managerial Implications***
 
@@ -396,6 +400,8 @@ Arora, Neeraj, Ishita Chakraborty, and Yohei Nishimura (2025), "AI-Human Hybrids
 
 Balachander, Subramanian and Sanjoy Ghose (2003), "Reciprocal Spillover Effects: A Strategic Benefit of Brand Extensions," *Journal of Marketing*, 67 (1), 4-13.
 
+Bennedsen, Morten, Kasper Meisner Nielsen, Francisco Pérez-González, and Daniel Wolfenzon (2007), "Inside the Family Firm: The Role of Families in Succession Decisions and Performance," *Quarterly Journal of Economics*, 122 (2), 647-691.
+
 Brakus, J. Josko, Bernd H. Schmitt, and Lia Zarantonello (2009), "Brand Experience: What Is It? How Is It Measured? Does It Affect Loyalty?," *Journal of Marketing*, 73 (3), 52-68.
 
 Brand, James, Ayelet Israeli, and Donald Ngwe (2023), "Using GPT for Market Research," HBS Working Paper 23-062.
@@ -432,6 +438,8 @@ Lei, Jing, Niraj Dawar, and Jos Lemmink (2008), "Negative Spillover in Brand Por
 
 Li, Peiyao, Noah Castelo, Zsolt Katona, and Miklos Sarvary (2024), "Determining the Validity of Large Language Models for Automated Perceptual Analysis," *Marketing Science*, 43 (2), 254-266.
 
+Li, Zining, Pervin K. Shroff, Ramgopal Venkataraman, and Ivy Xiying Zhang (2011), "Causes and Consequences of Goodwill Impairment Losses," *Review of Accounting Studies*, 16 (4), 745-778.
+
 Malar, Lucia, Harley Krohmer, Wayne D. Hoyer, and Bettina Nyffenegger (2011), "Emotional Brand Attachment and Brand Personality: The Relative Importance of the Actual and the Ideal Self," *Journal of Marketing*, 75 (4), 35-52.
 
 Matejka, Filip and Alisdair McKay (2015), "Rational Inattention to Discrete Choices: A New Foundation for the Multinomial Logit Model," *American Economic Review*, 105 (1), 272-298.
@@ -447,6 +455,8 @@ Morgan, Neil A. and Lopo L. Rego (2009), "Brand Portfolio Strategy and Firm Perf
 Nguyen, Thuy Thi Hong, Yaozhong Zhang, and Roger J. Calantone (2018), "Brand Portfolio Coherence: Scale Development and Empirical Demonstration," *International Journal of Research in Marketing*, 35 (1), 60-80.
 
 Peng, Chenming, Tammo H. A. Bijmolt, Franziska Volckner, and Hong Zhao (2023), "A Meta-Analysis of Brand Extension Success: The Effects of Parent Brand Equity and Extension Fit," *Journal of Marketing*, 87 (6), 1-17.
+
+Pérez-González, Francisco (2006), "Inherited Control and Firm Performance," *American Economic Review*, 96 (5), 1559-1588.
 
 Sabbah, Ahmad and Oguz A. Acar (2026), "Marketing to Machines: Understanding and Managing Brand Perceptions by Large Language Models," Working Paper, SSRN 6406639.
 
