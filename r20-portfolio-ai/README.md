@@ -1,6 +1,8 @@
 # R20: Does Corporate Ownership Matter to AI? Portfolio Interference in Large Language Model Brand Perception
 
-**Citation key**: 2026ab | **DOI**: [10.5281/zenodo.19555282](https://doi.org/10.5281/zenodo.19555282) | **Dataset DOI**: [10.57967/hf/8380](https://doi.org/10.57967/hf/8380) | **Status**: Working paper v1.1
+> **SUPERSEDED by [R21 (2026ac): Spectral Immunity: Why Brand Portfolio Interference Disappears for AI Observers](../r21-spectral-immunity/README.md)** — DOI [10.5281/zenodo.19765401](https://doi.org/10.5281/zenodo.19765401). R21 merges R20 empirical with R8 theory into a single analytical–empirical paper. R20 retained for archival purposes only; new citations should reference R21.
+
+**Citation key**: 2026ab | **DOI**: [10.5281/zenodo.19555282](https://doi.org/10.5281/zenodo.19555282) | **Dataset DOI**: [10.57967/hf/8380](https://doi.org/10.57967/hf/8380) | **Status**: Superseded (v1.1) | **IsObsoletedBy**: [10.5281/zenodo.19765401](https://doi.org/10.5281/zenodo.19765401)
 
 ## Paper
 

@@ -30,7 +30,7 @@ Eight companion papers establishing formal mathematical foundations for SBT, plu
 
 | Key | Paper | Zenodo DOI | Status |
 |-----|-------|------------|--------|
-| R8 | [Spectral Portfolio Theory: Interference, Coherence, and Capacity in Multi-Brand Perception Space](r8-portfolio-theory/paper.md) | [10.5281/zenodo.19145099](https://doi.org/10.5281/zenodo.19145099) | Under review |
+| R8 | ~~Spectral Portfolio Theory: Interference, Coherence, and Capacity in Multi-Brand Perception Space~~ — **SUPERSEDED by [R21](r21-spectral-immunity/paper.md)** | [10.5281/zenodo.19145099](https://doi.org/10.5281/zenodo.19145099) | Superseded |
 | R14 | [Research as Repository: A Git-Native Protocol for Scientific Knowledge Production](r14-paper-as-repository/paper.md) | [10.5281/zenodo.19294864](https://doi.org/10.5281/zenodo.19294864) | Under review |
 
 ### Methodology
@@ -55,7 +55,8 @@ Eight companion papers establishing formal mathematical foundations for SBT, plu
 | R17 | [Brand Triangulation: A Geometric Framework for Multi-Observer Brand Positioning](r17-brand-triangulation/paper.md) | [10.5281/zenodo.19482547](https://doi.org/10.5281/zenodo.19482547) | Preprint |
 | R18 | [Spectral Dynamics: Velocity, Acceleration, and Phase Space in Multi-Dimensional Brand Perception](r18-spectral-dynamics/paper.md) | [10.5281/zenodo.19468204](https://doi.org/10.5281/zenodo.19468204) | Preprint |
 | R19 | [Empirical Rate-Distortion Curve for AI Brand Perception Encoders](rate-distortion/paper.md) | [10.5281/zenodo.19528833](https://doi.org/10.5281/zenodo.19528833) | Preprint |
-| R20 | [Does Corporate Ownership Matter to AI? Portfolio Interference in LLM Brand Perception](r20-portfolio-ai/paper.md) | [10.5281/zenodo.19555282](https://doi.org/10.5281/zenodo.19555282) | Preprint |
+| R20 | ~~Does Corporate Ownership Matter to AI? Portfolio Interference in LLM Brand Perception~~ — **SUPERSEDED by [R21](r21-spectral-immunity/paper.md)** | [10.5281/zenodo.19555282](https://doi.org/10.5281/zenodo.19555282) | Superseded |
+| R21 | [Spectral Immunity: Why Brand Portfolio Interference Disappears for AI Observers](r21-spectral-immunity/paper.md) | [10.5281/zenodo.19765401](https://doi.org/10.5281/zenodo.19765401) | Preprint (supersedes R8 + R20) |
 | PRISM | [PRISM: A Structured Measurement Instrument for Multi-Dimensional Brand Perception](prism-instrument/paper.md) | [10.5281/zenodo.19555265](https://doi.org/10.5281/zenodo.19555265) | Preprint |
 
 ### Cross-Framework Synthesis
