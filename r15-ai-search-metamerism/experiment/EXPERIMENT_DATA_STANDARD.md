@@ -65,6 +65,9 @@ The `prompt_type` field MUST be one of the values registered in `validation/sche
 - `geopolitical_framing` — city-based geopolitical framing
 - `geopolitical_framing_native` — native-language geopolitical
 - `compounding_format` — multi-step agentic pipeline (specification paradox)
+- `primacy_cross_domain` — cross-domain primacy generalization (brand vs political, Exp F2)
+- `primacy_thinking` — thinking-mode vs standard primacy contrast (Exp F1)
+- `temporal_stability` — version-pair comparison (old vs new model, H13 experiment)
 
 **To add a new prompt type**: update the enum in `session_record.schema.json` BEFORE committing data.
 
