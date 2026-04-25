@@ -534,6 +534,20 @@ The closest computational precedent is Colladon's (2018) Semantic Brand Score (S
 
 SBT's constructs map directly to computational primitives: signals are typed data structures, observer profiles are parameter sets, cloud formation is a weighted clustering operation, and conviction collapse is a threshold function. The analytical pipeline operates as a structured prompt sequence for large language models, producing signal inventories, cohort profiles, perception cloud predictions, coherence scorecards, and disruption simulations. The prompt kit and YAML output templates are available from the corresponding author.
 
+### 5.2.1 The WHAT Layer: SBT Dimensions as Output Specification
+
+The eight SBT dimensions are not arbitrary measurement axes. They are the formal language of what a brand is supposed to deliver — the target perception an observer is intended to construct, independent of how the organization coordinates internally to produce it. SBT's core claim here is structural: the framework measures the *output specification* of a brand, not the coordination machinery that generates it.
+
+This distinction has antecedents in three organizational literatures that converge on the same cut. Mintzberg (1979) draws it as the difference between standardization of outputs — specifying what must be produced — and standardization of work processes — specifying how production must proceed. Iyer, Schwarz, and Zenios (2001) formalize the same cut in screening contracts as product specification versus process specification: what the downstream party is obligated to deliver versus the procedures governing delivery. Adler and Borys (1996) frame it normatively as enabling versus coercive bureaucracy — a specification that exists to serve the worker's judgment versus one that substitutes for it. Across organizational theory, contract economics, and management practice, the same boundary reappears: *what* the system outputs versus *how* the system operates to produce that output. SBT occupies one side of this boundary consistently.
+
+Organizational Schema Theory (OST; Zharnikov 2026i) makes the two-layer structure explicit. OST's L0–L1 layers define customer experience contracts and signal requirements — the output specification that SBT measures. Its L3–L5 layers define coordination procedures, workflows, and operational steps — the process specification that SBT deliberately excludes. Neither framework addresses the other's layer in isolation: OST specifies the WHAT; SBT measures whether the WHAT was perceived.
+
+The R5 impossibility result (Zharnikov 2026h) gives this boundary formal weight. Work-process standardization cannot be completed: the operational space of a modern organization is sufficiently high-dimensional that no finite set of standard operating procedures closes it — there will always be contingencies the SOP does not cover. Output standardization, by contrast, is decidable: a finite acceptance test on eight perceptual dimensions can verify whether the target perception was achieved. The WHAT is finite because it is defined at the observer's cognitive interface; the DO is unbounded because it must enumerate a causal chain through the full complexity of organizational execution.
+
+AI-mediated channels make the distinction empirically observable. R15 (Zharnikov 2026v) shows that large language models systematically collapse the coordination-related dimensions — Cultural, Temporal, Social — while preserving the output-related dimensions — Economic, Semiotic. The collapsed dimensions are precisely those that encode how a brand is embedded in social and temporal context; the preserved dimensions are those that encode what the brand delivers and signals about value. R21 (Zharnikov 2026ac) extends this result to the portfolio level: corporate ownership — an organizational coordination fact — predicts near-zero variance in AI perception of member brands (*d* ≤ .18 across all ownership conditions), while dimensional alignment at the output layer predicts the interference patterns that do emerge. The AI channel, by stripping coordination context, isolates the WHAT signal.
+
+SBT and OST are therefore not parallel frameworks describing adjacent phenomena. They are measurement and specification of a single layer — the output interface between organizational process and observer perception. The DO/WHAT distinction is the formal bridge between them.
+
 ### 5.3 AI-Mediated Brand Perception
 
 The AI era changes brand perception in three ways that SBT's architecture accommodates. First, **AI as analytical engine**: LLMs can execute multi-dimensional, multi-cohort brand analysis that would overwhelm human cognition, making frameworks of SBT's complexity operational. Second, **AI as mediation layer**: algorithms increasingly filter which signals reach which observers — an extension of McLuhan's (1964) thesis — functioning as spectral filters with their own dimensional biases. Third, **AI as synthetic observer**: LLM-powered recommendation systems constitute a new observer class with their own spectral profile (biased toward economic and semiotic signals, weak on narrative, cultural, and temporal dimensions; Zharnikov 2026v), increasingly influencing human purchase decisions.
@@ -647,6 +661,8 @@ Aaker, D. A. (1996). *Building strong brands*. Free Press.
 
 Aaker, J. L. (1997). Dimensions of brand personality. *Journal of Marketing Research*, 34(3), 347–356.
 
+Adler, P. S., & Borys, B. (1996). Two types of bureaucracy: Enabling and coercive. *Administrative Science Quarterly*, 41(1), 61–89.
+
 Alba, J. W., & Hutchinson, J. W. (1987). Dimensions of consumer expertise. *Journal of Consumer Research*, 13(4), 411–454.
 
 Barari, M., & Eisend, M. (2024). Computational content analysis of brand communications: A review and research agenda. *International Journal of Research in Marketing*, 41(1), 24–47.
@@ -735,6 +751,8 @@ Horton, J. J. (2023). Large language models as simulated economic agents: What c
 
 Huang, M.-H., & Rust, R. T. (2021). A strategic framework for artificial intelligence in marketing. *Journal of the Academy of Marketing Science*, 49(1), 30–50.
 
+Iyer, A. V., Schwarz, L. B., & Zenios, S. A. (2001). Screening contracts for product and process development: A principal-agent model. Working Paper, Krannert School of Management, Purdue University.
+
 Kahneman, D. (2011). *Thinking, fast and slow*. Farrar, Straus and Giroux.
 
 Kahneman, D., & Tversky, A. (1979). Prospect theory: An analysis of decision under risk. *Econometrica*, 47(2), 263-291.
@@ -770,6 +788,8 @@ McLuhan, M. (1964). *Understanding media: The extensions of man*. McGraw-Hill.
 Medesani, M., & Macdonald, J. (2026). Geometric foundations of invariant corridors and governance: A unified framework with empirical validation (Level 3.3). *Working Paper*. https://doi.org/10.5281/zenodo.18822552
 
 Meder, D., et al. (2021). Ergodicity-breaking reveals time optimal decision making in humans. *PLOS Computational Biology*, 17(9), e1009217.
+
+Mintzberg, H. (1979). *The structuring of organizations: A synthesis of the research*. Prentice-Hall.
 
 Mick, D. G. (1986). Consumer research and semiotics: Exploring the morphology of signs, symbols, and significance. *Journal of Consumer Research*, 13(2), 196–213.
 
@@ -835,6 +855,8 @@ Zajonc, R. B. (1980). Feeling and thinking: Preferences need no inferences. *Ame
 
 Zharnikov, D. (2026aa). Empirical rate-distortion curve for AI brand perception encoders. Working Paper. https://doi.org/10.5281/zenodo.19528833
 
+Zharnikov, D. (2026ac). Spectral immunity: Portfolio interference fails in AI-mediated brand perception. Working Paper. [DOI pending Zenodo upload]
+
 Zharnikov, D. (2026b). The atom-cloud-fact epistemological pipeline: From financial document processing to brand perception modeling. Working Paper. https://doi.org/10.5281/zenodo.18944770
 
 Zharnikov, D. (2026d). Formal metric structure of multi-dimensional brand perception space. Working Paper. https://doi.org/10.5281/zenodo.18945295
@@ -842,6 +864,10 @@ Zharnikov, D. (2026d). Formal metric structure of multi-dimensional brand percep
 Zharnikov, D. (2026e). Spectral metamerism in brand perception: Projection bounds from high-dimensional geometry. Working Paper. https://doi.org/10.5281/zenodo.18945352
 
 Zharnikov, D. (2026g). How many brands can a market hold? Sphere packing bounds for multi-dimensional positioning. Working Paper. https://doi.org/10.5281/zenodo.18946429
+
+Zharnikov, D. (2026h). Specification impossibility in organizational design: A high-dimensional geometric analysis. Working Paper. https://doi.org/10.5281/zenodo.18945591
+
+Zharnikov, D. (2026i). The Organizational Schema Theory: Test-driven business design. Working Paper. https://doi.org/10.5281/zenodo.18946043
 
 Zharnikov, D. (2026v). Spectral metamerism in AI-mediated brand perception: How large language models collapse multi-dimensional brand differentiation in consumer search. Working Paper. https://doi.org/10.5281/zenodo.19422427
 
