@@ -1,6 +1,6 @@
 # R15: Dimensional Collapse in AI-Mediated Brand Perception: Large Language Models as Metameric Observers
 
-**Citation key**: 2026v | **DOI**: [10.5281/zenodo.19422427](https://doi.org/10.5281/zenodo.19422427) | **Dataset DOI**: [10.57967/hf/8284](https://doi.org/10.57967/hf/8284) | **Status**: Empirical results complete (21,602+ total API calls across 12 runs, 24 LLMs from 7 training traditions; v3.0 adds three supplementary experiments: agentic pipeline compounding, cross-language dimensional semantics, serial position effects)
+**Citation key**: 2026v | **DOI**: [10.5281/zenodo.19422427](https://doi.org/10.5281/zenodo.19422427) | **Dataset DOI**: [10.57967/hf/8284](https://doi.org/10.57967/hf/8284) | **Status**: Empirical results complete (21,350 core API calls across 10 runs, 24 LLMs from 7 training traditions, 16 prompt languages, 999 native-language calls; supplementary Runs 11-14 + Experiments A-E add ~10,000 further calls including agentic pipeline compounding, cross-language dimensional semantics, competitive interference, BF format optimization, and primacy effect generalization)
 
 ## Paper
 
@@ -44,7 +44,15 @@ AI-mediated search is replacing traditional consumer search, yet no formal model
 | Run 8 (native expansion) | varies | 815 | H10 NOT SUPPORTED — null result (58/121 positive (48%), mean = +.001, p = .716) | -- |
 | Run 9 (temperature) | varies | varies | DCI spread = 0.012 (robust) | -- |
 | Run 10 (corrective comparators, supplementary) | 3 focal × 2 conditions | 126 | VkusVill shows largest comparator effect (ΔDCI = +7.4) | -- |
-| Run 14 (per-dimension targeting) | 21 | 252 | H14a/H14b NOT SUPPORTED — enriching BF signals does not reduce per-dimension DCI | H14c CONFIRMED (no collateral) |
+| Run 11 (Roshen multi-city, supplementary) | 1 brand × 7 cities | 315 | H12 reinterpreted as discourse-layer activation; native-language reduces collapse 3.31–9.50 DCI per non-home-market city | -- |
+| Run 12 / 12b (Brand Function test) | varies | varies | Dimensional redistribution confirmed; BF shifts weight, does not uniformly reduce DCI | -- |
+| Run 13 (category variation, supplementary) | 5 categories | 268 | H13a SUPPORTED (p < .001, η² = .251); complexity affects DCI (p = .004) | -- |
+| Run 14 (per-dimension targeting, supplementary) | 21 | 252 | H14a/H14b NOT SUPPORTED — enriching BF signals does not reduce per-dimension DCI | H14c CONFIRMED (no collateral) |
+| Exp A (agentic pipeline, parallel) | 3-step pipeline | 425 | H1-H3 SUPPORTED; DCI compounds across pipeline steps (η² = .029) | -- |
+| Exp B (cross-language semantics, parallel) | 8 languages | 450 | H1 SUPPORTED (cosine = .992); H2-H4 NULL — language does not modulate dimensional collapse | -- |
+| Exp C (competitive interference, parallel) | varies | 250 | ALL NULL (largest d = .187) — competitive context does not shift dimensional collapse | -- |
+| Exp D (BF format optimization, parallel) | varies | 375 | Format explains 17% of variance in DCI reduction | -- |
+| Exp E (primacy effect generalization, parallel) | varies | 2,400 | ALL SUPPORTED; JSON primacy d = 1.39 (strongest single effect in series) | -- |
 
 ## Repository Structure
 
@@ -70,10 +78,10 @@ This directory follows the [Research-as-Repository protocol](https://github.com/
 
 | Path | Purpose |
 |------|---------|
-| `L0_specification/` | Pre-registered protocols for Runs 2-4 and Run 5 |
+| `L0_specification/` | Pre-registered protocols for Runs 2-4, Run 5, and future experiments (F1, F2, H13, Q1 scaffolds) |
 | `L1_configuration/` | `models.yaml` — 24 model configurations |
 | `L2_prompts/` | Prompt templates (`templates/`) and rendered examples (`rendered/`) |
-| `L3_sessions/` | Raw JSONL session logs — 17 files, 21,350 records (Runs 2-9 main study + Run 10 corrective comparators + Run 11 Roshen multi-city) |
+| `L3_sessions/` | Raw JSONL session logs — 26 files, 21,350 core records + supplementary experiments (Runs 2-11 main/supplementary; Runs 12-14 + Exps A-E supplementary and parallel) |
 | `L4_analysis/` | Analysis scripts and outputs (per-run results, robustness tests) |
 | `validation/` | Schema validation, checksums, completeness checks |
 | `ai_search_metamerism.py` | Main experiment script (179K, 24 models, 4 prompt types) |
@@ -99,6 +107,24 @@ This directory follows the [Research-as-Repository protocol](https://github.com/
 | `exclude_patagonia_results.json` | Robustness: replication with Patagonia excluded |
 | `run10_corrective_results.json` | Run 10 supplementary: per-model profiles for 6 corrective-comparator pairs |
 | `run10_corrective_summary.md` | Run 10 supplementary: per-dimension delta table (corrective − control) |
+| `run11_roshen_multicity_summary.md` | Run 11: Roshen 7-city framing; discourse-layer activation; native-language DCI reduction by city |
+| `run12_brand_function_summary.md` | Run 12: Brand Function test; dimensional redistribution evidence |
+| `run12b_brand_function_extended_summary.md` | Run 12b: Brand Function extended; non-uniform redistribution confirmed |
+| `run14_summary.md` | Run 14: per-dimension targeting; H14a/H14b NULL, H14c CONFIRMED |
+| `exp_agentic_collapse_summary.md` | Exp A: agentic pipeline compounding; H1-H3 SUPPORTED (η² = .029) |
+| `exp_cross_language_summary.md` | Exp B: cross-language semantics; H1 SUPPORTED (cosine = .992), H2-H4 NULL |
+| `exp_primacy_generalization_summary.md` | Exp E: primacy effect generalization; JSON primacy d = 1.39 |
+
+### Staged experiment scaffolds (`experiment/L0_specification/`)
+
+Protocols pre-registered but not yet executed — available for replication or extension:
+
+| Protocol file | Experiment | Projected calls |
+|---------------|-----------|-----------------|
+| [`EXP_F1_THINKING_PRIMACY_PROTOCOL.md`](experiment/L0_specification/EXP_F1_THINKING_PRIMACY_PROTOCOL.md) | F1: thinking-mode primacy — does extended reasoning change dimensional collapse? | ~480 |
+| [`EXP_F2_CROSS_DOMAIN_PRIMACY_PROTOCOL.md`](experiment/L0_specification/EXP_F2_CROSS_DOMAIN_PRIMACY_PROTOCOL.md) | F2: cross-domain primacy — does the brand domain (luxury vs FMCG) moderate primacy effects? | ~800 |
+| [`EXP_H13_TEMPORAL_STABILITY_PROTOCOL.md`](experiment/L0_specification/EXP_H13_TEMPORAL_STABILITY_PROTOCOL.md) | H13: temporal training stability — do successive model versions show stable collapse profiles? | ~120 |
+| [`EXP_Q1_COMPOUNDING_SPEC_PROTOCOL.md`](experiment/L0_specification/EXP_Q1_COMPOUNDING_SPEC_PROTOCOL.md) | Q1: compounding × specification — does providing full Brand Function reduce compounding effects in agentic pipelines? | ~600 |
 
 ## Reproducing the Experiment
 
@@ -167,7 +193,7 @@ python L4_analysis/extract_rendered_prompts.py
 
 See [experiment README](experiment/README.md#run-it-on-your-own-brands) for a step-by-step guide.
 
-**Cost**: roughly $0.25 (5-6 models, 3 runs) to $0.80 (all 24 models, 3 runs) for a single brand pair audit at current paid-model rates. The full 9-run cross-cultural study cost $5.52; Run 10 supplementary ($0.30) and Run 11 bring the project total to ~$6.10.
+**Cost**: roughly $0.25 (5-6 models, 3 runs) to $0.80 (all 24 models, 3 runs) for a single brand pair audit at current paid-model rates. The full 9-run cross-cultural study cost $5.52; Runs 10-11 supplementary brought the core total to ~$6.10; Runs 12-14 + Exps A-E (~3,900 additional calls) bring the project total to ~$10.71.
 
 ## How to Cite
 
