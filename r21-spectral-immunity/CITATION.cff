@@ -1,0 +1,28 @@
+cff-version: 1.2.0
+message: "If you use this paper, please cite it as below."
+authors:
+  - family-names: Zharnikov
+    given-names: Dmitry
+    email: dmitry@spectralbranding.com
+    affiliation: "Independent Researcher"
+    orcid: "https://orcid.org/0009-0000-6893-9231"
+title: "Spectral Immunity: Portfolio Interference Fails in AI-Mediated Brand Perception"
+version: 1.0.0
+date-released: 2026-04-25
+repository-code: "https://github.com/spectralbranding/sbt-papers"
+keywords:
+  - spectral immunity
+  - brand portfolio
+  - awareness gate
+  - portfolio interference
+  - large language models
+  - TOST equivalence
+license: MIT
+type: article
+preferred-citation:
+  type: article
+  authors:
+    - family-names: Zharnikov
+      given-names: Dmitry
+  title: "Spectral Immunity: Portfolio Interference Fails in AI-Mediated Brand Perception"
+  year: 2026
