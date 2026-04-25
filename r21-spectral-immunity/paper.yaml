@@ -16,6 +16,7 @@ metadata:
   date: "2026-04-25"
   version: "1.0.0"
   status: preprint
+  doi: "10.5281/zenodo.19765401"
   license: "CC-BY-4.0"
   keywords:
     - spectral immunity

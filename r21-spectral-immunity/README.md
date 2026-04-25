@@ -26,7 +26,7 @@ Brand portfolio theory predicts that corporate ownership generates perceptual in
 ## Data
 
 - **HuggingFace**: [spectralbranding/r20-portfolio-ai-perception](https://huggingface.co/datasets/spectralbranding/r20-portfolio-ai-perception) (9,925 observations)
-- **Zenodo**: DOI pending upload
+- **Zenodo**: [10.5281/zenodo.19765401](https://doi.org/10.5281/zenodo.19765401)
 
 ## Target Venue
 
