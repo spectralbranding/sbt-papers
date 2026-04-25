@@ -1,0 +1,29 @@
+# CONTRIBUTORS.yaml -- Spectral Immunity: Portfolio Interference Fails in AI-Mediated Brand Perception
+# Verified contributor attribution per the Research-as-Repository protocol
+
+contributors:
+  - name: "Dmitry Zharnikov"
+    orcid: "0009-0000-6893-9231"
+    type: human
+    roles:
+      - conceptualization
+      - methodology
+      - writing-original
+      - formal-analysis
+      - investigation
+      - data-curation
+      - software
+      - project-administration
+    affiliation: "Independent Researcher"
+    first_commit: "2026-04-24"
+    last_commit: "2026-04-25"
+
+  - name: "Claude (Anthropic)"
+    type: ai_tool
+    roles:
+      - writing-review
+      - consistency-checking
+    disclosure: >
+      Used for manuscript drafting and consistency checking across an
+      interconnected research program. All theoretical propositions,
+      interpretations, and conclusions are solely the author's work.

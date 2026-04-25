@@ -1,0 +1,112 @@
+# paper.yaml -- R21: Spectral Immunity: Portfolio Interference Fails in AI-Mediated Brand Perception
+# Citation key: 2026ac
+# Supersedes: R8 (2026q) and R20 (2026ab)
+# Paper Spec schema: https://github.com/spectralbranding/paper-spec/SPECIFICATION.md
+
+paper_spec_version: "0.1.0"
+
+metadata:
+  title: "Spectral Immunity: Portfolio Interference Fails in AI-Mediated Brand Perception"
+  authors:
+    - name: "Dmitry Zharnikov"
+      orcid: "0009-0000-6893-9231"
+      affiliation: "Independent Researcher"
+      corresponding: true
+  citation_key: "2026ac"
+  date: "2026-04-25"
+  version: "1.0.0"
+  status: preprint
+  license: "CC-BY-4.0"
+  keywords:
+    - spectral immunity
+    - brand portfolio
+    - awareness gate
+    - portfolio interference
+    - large language models
+    - TOST equivalence
+    - cross-cultural AI
+    - Spectral Brand Theory
+  supersedes:
+    - citation_key: "2026q"
+      title: "Spectral Portfolio Theory: Interference, Coherence, and Capacity in Multi-Brand Perception Space"
+      doi: "10.5281/zenodo.19145099"
+      relationship: "R21 merges R8 theory with R20 empirical data into a single analytical-empirical paper"
+    - citation_key: "2026ab"
+      title: "Does Corporate Ownership Matter to AI? Portfolio Interference in Large Language Model Brand Perception"
+      doi: "10.5281/zenodo.19555282"
+      relationship: "R21 merges R20 empirical data with R8 theory into a single analytical-empirical paper"
+
+claims:
+  - id: P1
+    type: proposition
+    statement: >
+      Spectral interference between brands in a portfolio operates if and only if
+      three conditions hold simultaneously: shared observer cohorts, awareness gate
+      above threshold, and dimensional differences on weighted dimensions.
+    status: conditions_met_interference_absent
+    evidence:
+      - "All three conditions hold for LLM observers, yet interference is near zero"
+      - "Does not falsify P1 -- falsifies sufficiency assumption"
+
+  - id: P2
+    type: proposition
+    statement: >
+      The awareness gate is necessary but not sufficient for spectral interference.
+      When an observer's brand encoding operates near minimum-distortion compression,
+      maximal awareness does not produce interference because the portfolio context
+      provides no additional information that the compressed encoding can absorb.
+    status: supported
+    evidence:
+      - "9,925 observations, 40 brands, 13 models, 7 traditions"
+      - "Mean |delta DCI| = .26, TOST equivalent for 18/20 brands"
+      - "0/20 FDR-significant portfolio effects"
+
+  - id: P3
+    type: proposition
+    statement: >
+      Spectral interference is asymmetric: the perturbation of a higher-coherence
+      brand by a lower-coherence sibling exceeds the reverse perturbation.
+    status: insufficient_evidence
+    evidence:
+      - "Lexus d = +.52 vs Toyota d = -.30 -- directionally consistent"
+      - "Neither survives FDR correction"
+      - "Dedicated aspiration-focused design needed"
+
+  - id: H5
+    type: hypothesis
+    statement: >
+      Across all portfolios and prompt modalities, the magnitude of portfolio-induced
+      perception change is equivalent to zero within meaningful bounds.
+    status: supported
+    evidence:
+      - "TOST equivalence confirmed for 18/20 brands within +/-1.0 DCI"
+      - "Cosine similarity > .999 for all brands"
+
+design:
+  type: experiment
+  sample_size: 9925
+  brands: 40
+  models: 13
+  training_traditions: 7
+  portfolio_archetypes: 7
+  prompt_modalities: 4
+  scale: "1-5 PRISM-B"
+  instrument: "PRISM-B (Perception Response Instrument for Structured Measurement -- Brand)"
+
+data:
+  primary:
+    location: "https://doi.org/10.57967/hf/8380"
+    format: JSONL
+    records: 7975
+  extension:
+    location: "https://doi.org/10.57967/hf/8380"
+    format: JSONL
+    records: 1950
+  code:
+    location: "https://github.com/spectralbranding/sbt-papers/r21-spectral-immunity"
+
+target_venue:
+  name: "Marketing Science"
+  publisher: "INFORMS"
+  style: "AMA"
+  review_type: "double-anonymous"
