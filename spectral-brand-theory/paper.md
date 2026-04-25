@@ -855,7 +855,7 @@ Zajonc, R. B. (1980). Feeling and thinking: Preferences need no inferences. *Ame
 
 Zharnikov, D. (2026aa). Empirical rate-distortion curve for AI brand perception encoders. Working Paper. https://doi.org/10.5281/zenodo.19528833
 
-Zharnikov, D. (2026ac). Spectral immunity: Portfolio interference fails in AI-mediated brand perception. Working Paper. [DOI pending Zenodo upload]
+Zharnikov, D. (2026ac). Spectral immunity: Portfolio interference fails in AI-mediated brand perception. Working Paper. https://doi.org/10.5281/zenodo.19765401
 
 Zharnikov, D. (2026b). The atom-cloud-fact epistemological pipeline: From financial document processing to brand perception modeling. Working Paper. https://doi.org/10.5281/zenodo.18944770
 

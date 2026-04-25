@@ -16,4 +16,8 @@ provenance:
       contribution: "Empirical data -- 9,925 observations, 40 brands, 13 models, 7 training traditions, 4 prompt modalities"
 
   forks: []
-  # No submissions yet -- DOI will be assigned upon Zenodo upload
+
+  zenodo:
+    doi: "10.5281/zenodo.19765401"
+    uploaded: 2026-04-25
+    version: "1.0.0"

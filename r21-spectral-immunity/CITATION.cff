@@ -9,6 +9,7 @@ authors:
 title: "Spectral Immunity: Portfolio Interference Fails in AI-Mediated Brand Perception"
 version: 1.0.0
 date-released: 2026-04-25
+doi: 10.5281/zenodo.19765401
 repository-code: "https://github.com/spectralbranding/sbt-papers"
 keywords:
   - spectral immunity
@@ -26,3 +27,4 @@ preferred-citation:
       given-names: Dmitry
   title: "Spectral Immunity: Portfolio Interference Fails in AI-Mediated Brand Perception"
   year: 2026
+  doi: 10.5281/zenodo.19765401
