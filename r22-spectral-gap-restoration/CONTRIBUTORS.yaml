@@ -1,0 +1,43 @@
+# CONTRIBUTORS.yaml -- R22: Spectral Gap Restoration
+# Verified contributor attribution per the Research-as-Repository protocol
+
+contributors:
+  - name: "Dmitry Zharnikov"
+    orcid: "0009-0000-6893-9231"
+    type: human
+    roles:
+      - conceptualization
+      - methodology
+      - writing-original
+      - formal-analysis
+      - investigation
+      - project-administration
+    affiliation: "Independent Researcher"
+    first_commit: "2026-04-25"
+    last_commit: "2026-04-26"
+
+  - name: "Claude (Anthropic)"
+    type: ai_tool
+    roles:
+      - writing-review
+      - consistency-checking
+      - literature-verification
+    disclosure: >
+      Used for manuscript drafting, cross-source literature verification
+      (DR-6 + DR-7 with cross-check across Claude/Gemini/Grok DeepSearch
+      runs), and review-protocol execution. All theoretical propositions,
+      interpretations, mathematical derivations, and conclusions are
+      solely the author's work. References were verified against publisher
+      pages or canonical reviews; one Gemini-fabricated decimal claim
+      (Naik 1999 "Dockers" wearout values) was caught and excluded.
+
+acknowledgments:
+  - name: "James Kovalenko"
+    handle: "@deburdened (X)"
+    type: independent_convergence
+    note: >
+      Independently arrived at operator-theoretic framing of organizational
+      and epistemic dynamics with closely related vocabulary (spectral
+      leakage, invariant eigenfunction, verification operator) in a
+      numbered X thread (April 24, 2026). Acknowledged in Discussion as
+      cross-domain validity signal for the formalization.
