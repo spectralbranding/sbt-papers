@@ -7,8 +7,8 @@ authors:
     affiliation: "Independent Researcher"
     orcid: "https://orcid.org/0009-0000-6893-9231"
 title: "Spectral Gap Restoration: A Threshold Inequality for Cohort Separability Survival in Brand Perception"
-version: 0.3.0
-date-released: 2026-04-25
+version: 0.3.1
+date-released: 2026-04-26
 doi: pending
 repository-code: "https://github.com/spectralbranding/sbt-papers"
 keywords:

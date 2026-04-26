@@ -227,7 +227,7 @@ The threshold's practical value is that it converts a leading indicator of cohor
 
 **Acknowledgments**
 
-The author acknowledges that James Kovalenko (X: @deburdened) independently arrived at an operator-theoretic framing of organizational dynamics with closely related vocabulary — including spectral leakage, verification operator, and invariant eigenfunction — in a publicly posted thread on April 24, 2026. The independent convergence from organizational dynamics on essentially the same formal structure supports the cross-domain validity of the formalization presented here. This paper was drafted with assistance from Claude (Anthropic). All theoretical propositions, interpretations, and conclusions are the author's intellectual contribution.
+The author acknowledges that James Kovalenko (2026) independently developed an operator-theoretic and category-theoretic framing of structural verification with closely related vocabulary — including variation–verification coupling, verification capacity, recursive friction as a self-amplifying failure mode, the meta-cognitive operator, and the invariant submanifold $\mathcal{M}_\text{inv}$ — and formalized these in the Transport–Aggregation Adjunction $D_f \dashv R_f$ across a wide-ranging treatment of structural ontology and topology (April 2026). The independent convergence on essentially the same formal structure from a different starting domain supports the cross-domain validity of the spectral-gap inequality developed here. This paper was drafted with assistance from Claude (Anthropic). All theoretical propositions, interpretations, and conclusions are the author's intellectual contribution.
 
 ---
 
@@ -282,6 +282,8 @@ Harris, Fredric J. (1978), "On the Use of Windows for Harmonic Analysis with the
 Kato, Tosio (1995), *Perturbation Theory for Linear Operators* (reprint of 2nd ed., 1980), Springer.
 
 Keller, Kevin Lane (1993), "Conceptualizing, Measuring, and Managing Customer-Based Brand Equity," *Journal of Marketing*, 57 (1), 1–22.
+
+Kovalenko, James (2026), "Beyond the Monochord: From Pythagorean Harmony to the Transport–Aggregation Adjunction," Zenodo, https://doi.org/10.5281/zenodo.19448729.
 
 Levin, David A., and Yuval Peres (2017), *Markov Chains and Mixing Times* (2nd ed.), American Mathematical Society.
 

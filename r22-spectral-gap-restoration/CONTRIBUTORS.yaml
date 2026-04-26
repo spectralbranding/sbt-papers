@@ -33,11 +33,14 @@ contributors:
 
 acknowledgments:
   - name: "James Kovalenko"
-    handle: "@deburdened (X)"
     type: independent_convergence
+    primary_source: "Kovalenko, J. (2026). Beyond the Monochord: From Pythagorean Harmony to the Transport-Aggregation Adjunction. Zenodo. https://doi.org/10.5281/zenodo.19448729"
+    related_source: "Kovalenko, J. (2026). Excess-Threshold Detection in S&P 1500 Profit Margins: Signal Properties, Macro Conditioning, and Persistence. v1. Zenodo. https://doi.org/10.5281/zenodo.19472014"
     note: >
-      Independently arrived at operator-theoretic framing of organizational
-      and epistemic dynamics with closely related vocabulary (spectral
-      leakage, invariant eigenfunction, verification operator) in a
-      numbered X thread (April 24, 2026). Acknowledged in Discussion as
-      cross-domain validity signal for the formalization.
+      Independently developed an operator-theoretic and category-theoretic
+      framing of structural verification with closely related vocabulary
+      (variation-verification coupling, verification capacity, recursive
+      friction, meta-cognitive operator, invariant submanifold M_inv),
+      formalized in the Transport-Aggregation Adjunction D_f -| R_f
+      (April 2026, Zenodo preprint). Acknowledged in R22 as cross-domain
+      validity signal for the spectral-gap formalization.
