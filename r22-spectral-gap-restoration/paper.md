@@ -227,7 +227,9 @@ The threshold's practical value is that it converts a leading indicator of cohor
 
 **Acknowledgments**
 
-The author acknowledges that James Kovalenko (2026) independently developed an operator-theoretic and category-theoretic framing of structural verification with closely related vocabulary — including variation–verification coupling, verification capacity, recursive friction as a self-amplifying failure mode, the meta-cognitive operator, and the invariant submanifold $\mathcal{M}_\text{inv}$ — and formalized these in the Transport–Aggregation Adjunction $D_f \dashv R_f$ across a wide-ranging treatment of structural ontology and topology (April 2026). The independent convergence on essentially the same formal structure from a different starting domain supports the cross-domain validity of the spectral-gap inequality developed here. This paper was drafted with assistance from Claude (Anthropic). All theoretical propositions, interpretations, and conclusions are the author's intellectual contribution.
+The author acknowledges that James Kovalenko (2026) independently developed an operator-theoretic and category-theoretic framing of structural verification with closely related vocabulary — including variation–verification coupling, verification capacity, recursive friction as a self-amplifying failure mode, the meta-cognitive operator, and the invariant submanifold $\mathcal{M}_\text{inv}$ — and formalized these in the Transport–Aggregation Adjunction $D_f \dashv R_f$ across a wide-ranging treatment of structural ontology and topology (April 2026). The independent convergence on essentially the same formal structure from a different starting domain supports the cross-domain validity of the spectral-gap inequality developed here.
+
+AI assistants (Claude Opus 4.6, Grok 4.1, Gemini 3.1) were used for initial literature search and editorial refinement; all theoretical claims, propositions, and interpretations are the author's sole responsibility.
 
 ---
 
