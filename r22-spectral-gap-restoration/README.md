@@ -36,7 +36,17 @@ Spectral gap collapse (to 10% of initial) at mean month 46 in low regime. Convic
 
 ## Status
 
-**Working draft v0.4.** All 5 placeholder statistics resolved via Monte Carlo simulation. Real Dove longitudinal data re-analysis deferred to companion paper using R10 source data. Three limitations stated explicitly: (i) Monte Carlo substitutes for real data, (ii) cohort time-invariance assumption, (iii) linear GRP-to-perception mapping.
+**Working Paper v1.0.0.** All 5 placeholder statistics resolved via Monte Carlo simulation. Real Dove longitudinal data re-analysis deferred to companion paper using R10 source data. Three limitations stated explicitly: (i) Monte Carlo substitutes for real data, (ii) cohort time-invariance assumption, (iii) linear GRP-to-perception mapping.
+
+## Reproducibility
+
+All numerics in §4 Monte Carlo Demonstration are reproducible from the public scripts in this directory:
+
+```bash
+uv run --with statsmodels --with numpy --with scipy python3 monte_carlo_simulation.py
+```
+
+Outputs are written to `monte_carlo_results.json` (32 cells × 2 regimes × 240-month horizon, seed 2026). Terminal spectral gap, IRF half-life, ADF stationarity statistics, and gap-collapse month are all in the JSON.
 
 ## Target venue
 
