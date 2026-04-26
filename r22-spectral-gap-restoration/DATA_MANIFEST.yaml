@@ -1,0 +1,54 @@
+# DATA_MANIFEST.yaml -- R22: Spectral Gap Restoration
+# Links to data sources used in this paper
+
+datasets:
+  - name: "R10 Dove Longitudinal Case Data (2003–2023)"
+    location: "https://github.com/spectralbranding/sbt-papers/tree/main/r10-dove-case-study"
+    paper_doi: "10.5281/zenodo.19139258"
+    description: >
+      Longitudinal perception data from R10 Dove "Real Beauty" case study.
+      Five placeholder statistics in this paper require computation from
+      this data (cohort drift vectors, GRP/SOV proxies from Unilever
+      Annual Reports 2004–2006, cohort centroid distances at 2003/2006/
+      2013/2023 waves, unit-root tests across 32 cohort×dimension cells,
+      timing of dimensional shifts vs. Effie 2006).
+    used_in:
+      - "Section 4 Empirical Re-analysis"
+      - "Hypothesis H22 (separability test + lead-time test)"
+    status: "Placeholder stats marked [STAT TO BE COMPUTED FROM R10 DATA] in v0.3"
+
+  - name: "Unilever Annual Reports 2004–2006"
+    location: "https://www.unilever.com/investor-relations/annual-report-and-accounts/"
+    description: >
+      Public financial filings used to derive Share-of-Voice (SOV) and
+      campaign emission-rate (μ) proxies for the Real Beauty activation
+      window. Verify-before-citing per DR-7 punch list.
+    status: "Required for placeholder #2 computation"
+
+empirical_methods:
+  - approach: "VECM error-correction term as μ estimand"
+    primary_reference: "Srinivasan, Pauwels, Hanssens & Dekimpe (2004) Mgmt Sci"
+    supporting:
+      - "Dekimpe & Hanssens (1995) MKSC"
+      - "Ataman, van Heerde & Mela (2010) JMR (IRF half-life calibration)"
+      - "Dekimpe, Franses, Hanssens & Naik (2006) ERIM (review)"
+      - "Hanssens, Leeflang & Wittink (2005) ASMB (model selection)"
+
+  - approach: "Procrustes-aligned MDS for cohort drift (λ proxy)"
+    primary_reference: "Rohlf (2005) JASA reviewing Gower & Dijksterhuis (2004)"
+    supporting:
+      - "Moore & Winer (1987) MKSC"
+      - "DeSarbo, Manrai & Manrai (1993) Handbook OR/MS Vol 5 Ch 5"
+
+  - approach: "Adstock half-life calibration"
+    primary_reference: "Naik, Mantrala & Sawyer (1998) MKSC"
+    note: >
+      Cite qualitatively only. Specific Naik decimal values from earlier
+      Gemini DR runs (.2311 wearout, .0637 forgetting, "Dockers brand")
+      were FABRICATED — confirmed by OCR of Naik et al. (1998) PDF (the
+      empirical case is CEREAL data with values .0097–.3224).
+
+code:
+  - name: "SBT Framework"
+    location: "https://github.com/spectralbranding/sbt-framework"
+    description: "Open-source toolkit implementing the SBT computational pipeline (used for placeholder stat computation when R10 re-analysis runs)"

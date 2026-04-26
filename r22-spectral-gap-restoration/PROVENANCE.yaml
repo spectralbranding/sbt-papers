@@ -1,0 +1,50 @@
+# PROVENANCE.yaml -- R22: Spectral Gap Restoration
+# Fork history and submission records per the Research-as-Repository protocol
+
+provenance:
+  paper_title: "Spectral Gap Restoration: A Threshold Inequality for Cohort Separability Survival in Brand Perception"
+  citation_key: "2026ad"
+  repository: "spectralbranding/sbt-papers/r22-spectral-gap-restoration"
+
+  builds_on:
+    - "spectralbranding/sbt-papers/r10-dove-case-study (2026p) — empirical re-analysis target"
+    - "spectralbranding/sbt-papers/r12-coherence-resilience (2026s) — qualitative precursor (formalizes the threshold)"
+    - "spectralbranding/sbt-papers/r6-diffusion-dynamics (2026j) — flow on cohort weight space"
+    - "spectralbranding/sbt-papers/r9-nonergodic-perception (2026o) — absorbing-state dynamics below threshold"
+    - "spectralbranding/sbt-papers/r16-ai-native-brand-identity (2026x) — Brand Function as the invariant being projected onto"
+    - "spectralbranding/sbt-papers/r19-rate-distortion (2026aa) — bandwidth grounding"
+    - "spectralbranding/sbt-papers/r21-spectral-immunity (2026ac) — awareness-gate sufficiency framing"
+
+  forks: []
+
+  drafting_history:
+    - version: "0.1"
+      date: "2026-04-25"
+      summary: "Initial draft from outline + DR-6 operator-theoretic refs. ~5,500 words, 34 refs, 8.8% self-cite, 5 placeholder stats."
+    - version: "0.2"
+      date: "2026-04-25"
+      summary: "DR-7 cross-source verification applied. Added Ataman 2010, Russell-Parguel 2015, Urde 2013, Rohlf 2005, Srinivasan-Pauwels-Hanssens-Dekimpe 2004, Dekimpe-Franses-Hanssens-Naik 2006, Hanssens-Leeflang-Wittink 2005, Wind 2009, Danthinne et al., Moore-Winer 1987, DeSarbo 1993, Caplin 2025 (book only). Dropped hallucinated Caplin μ_c notation, EvoMap (authorship dispute), Naik 1999 specific decimals. ~6,550 words, 42 refs, 7.1% self-cite."
+    - version: "0.3"
+      date: "2026-04-26"
+      summary: "Review-applied. /review-paper RESEARCH PAPER 4/5; 2 CRITICAL fixed (biconditional → sufficient-only; AI λ contradiction resolved via λ(δ) scale-dependence). Ghost citation removed. Abstract trimmed 221 → 156. 3 must-add positioning sentences + 3 strengthened paragraphs from /review-literature. Added Aaker 1991, Keller 1993, Neff 2009. 50 refs, 6.0% self-cite, 8 keywords."
+
+  reviews:
+    - protocol: "/review-paper"
+      file: "spectral-branding/research/reviews/REVIEW_R22_spectral_gap_v0.2.md"
+      verdict: "RESEARCH PAPER 4/5"
+      findings: "2 CRITICAL, 14 WARNING, 12 NOTE — all CRITICAL applied in v0.3"
+    - protocol: "/review-literature"
+      file: "spectral-branding/research/reviews/REVIEW_LIT_R22_v0.2.md"
+      findings: "9 positioning gaps — top 3 sentences + top 3 paragraphs applied in v0.3"
+
+  zenodo:
+    doi: null
+    uploaded: null
+    version: "0.3 (pre-Zenodo working draft)"
+    note: "DOI to be assigned after final Marketing Letters submission preparation"
+
+  target_venue:
+    name: "Marketing Letters"
+    publisher: "Springer"
+    style: "AMA"
+    review_type: "double-anonymous"
