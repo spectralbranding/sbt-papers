@@ -45,12 +45,18 @@ acknowledgments:
   - name: "James Kovalenko"
     type: independent_convergence
     primary_source: "Kovalenko, J. (2026). Beyond the Monochord: From Pythagorean Harmony to the Transport-Aggregation Adjunction. Zenodo. https://doi.org/10.5281/zenodo.19448729"
-    related_source: "Kovalenko, J. (2026). Excess-Threshold Detection in S&P 1500 Profit Margins: Signal Properties, Macro Conditioning, and Persistence. v1. Zenodo. https://doi.org/10.5281/zenodo.19472014"
+    related_sources:
+      - "Kovalenko, J. (2026). Fold Bifurcation and Friction Divergence in Capacity-Constrained Compounding Systems. Zenodo. https://doi.org/10.5281/zenodo.19547906"
+      - "Kovalenko, J. (2026). Excess-Threshold Detection in S&P 1500 Profit Margins: Signal Properties, Macro Conditioning, and Persistence. Zenodo. https://doi.org/10.5281/zenodo.19472014"
     note: >
       Independently developed an operator-theoretic and category-theoretic
       framing of structural verification with closely related vocabulary
       (variation-verification coupling, verification capacity, recursive
       friction, meta-cognitive operator, invariant submanifold M_inv),
       formalized in the Transport-Aggregation Adjunction D_f -| R_f
-      (April 2026, Zenodo preprint). Acknowledged in R22 as cross-domain
-      validity signal for the spectral-gap formalization.
+      (April 2026, Zenodo preprint; Beyond the Monochord). In separate work,
+      independently derived fold-bifurcation dynamics for capacity-constrained
+      compounding systems (Fold Bifurcation, April 2026, Zenodo preprint),
+      providing cross-domain support for the Corollary 1 absorbing-collapse
+      regime. Both papers acknowledged in R22 as cross-domain validity signals
+      for the spectral-gap formalization.

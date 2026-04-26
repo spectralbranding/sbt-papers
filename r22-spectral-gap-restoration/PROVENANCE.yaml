@@ -34,6 +34,10 @@ provenance:
       date: "2026-04-25"
       summary: >
         Grok-review structural revision. (1) New title: 'Restoring Perceptual Separability After Coherence Shocks: A mu > lambda Threshold Inequality in Brand Perception'. (2) Title block converted to R20 prose-style (no YAML frontmatter). (3) New 248-word abstract (Grok version). (4) Introduction condensed and restructured (~1,500 words): hook/gap/contribution/roadmap. (5) All 5 placeholder stats replaced with Monte Carlo simulation results (monte_carlo_simulation.py; seed 2026; 32 cells x 2 regimes x 240 months). Terminal spectral gap: 1.10 (high) vs 0.02 (low), ratio 52x. IRF half-life: 1.4 mo (high) vs 13.1 mo (low). Gap collapse month 46 in low regime. (6) Empirical section reframed as Monte Carlo Demonstration with honest framing: Dove values are author-proposed design parameters; real data analysis deferred to companion paper using R10. (7) Mathematical Formalization moved to Mathematical Appendix at end; Theory section kept conceptual. (8) Discussion rewritten: mu-lambda dashboard, lead indicator, Dekimpe-Hanssens refinement, AI-mediated extension, OST connection, limitations. (9) Target venue updated to Marketing Science. (10) Defensive phrasing removed. (11) Internal-process language (DR-6/DR-7 references) removed from body. (12) 42 refs, 7.1% self-cite (3/42).
+    - version: "1.0.0-final-pass"
+      date: "2026-04-26"
+      summary: >
+        Pre-Zenodo-upload final cleanup (version number held at 1.0.0). Added Kovalenko (2026, Fold Bifurcation) DOI 10.5281/zenodo.19547906 as second Kovalenko cross-citation: body sentence after Corollary 1 falsification (cross-domain fold-bifurcation support for absorbing-collapse regime); reference entry added alphabetically; Acknowledgments updated to name both Kovalenko papers (Beyond the Monochord + Fold Bifurcation) jointly. Reversibility assumption now stated explicitly before Proposition 1 setup (W6 from REVIEW_R22_spectral_gap_v0.2.md). Baseline-calibration boundary condition sentence added to Limitations (Q3 generalizability warning). 52 refs, 5.8% self-cite (3/52).
 
   reviews:
     - protocol: "/review-paper"

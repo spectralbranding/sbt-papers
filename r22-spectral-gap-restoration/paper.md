@@ -52,6 +52,8 @@ The corrective coherence emission rate μ is the rate at which purposive brand e
 
 ***The Threshold Inequality***
 
+The following result holds for self-adjoint (reversible) perception operators; extensions to non-reversible dynamics are addressed in the Mathematical Appendix.
+
 *Proposition 1 (Spectral Gap Restoration Threshold).* Let P be the perception operator defined above, self-adjoint with spectral gap Δ(P) > 0 at baseline. Let a coherence shock perturb P to P̃ = P + εQ. Cohort separability survives — Δ(P̃) > 0 — if the corrective coherence emission rate μ exceeds the spectral leakage rate λ at the detection scale δ of the dominant observer cohort:
 
 μ > λ at scale δ [Inequality 1]
@@ -63,6 +65,8 @@ The Kato–Rellich argument and formal proof sketch are given in the Mathematica
 *Corollary 1 (Absorbing Collapse).* If μ < λ for an interval exceeding the mixing time τ_mix ≤ C/λ (Levin and Peres 2017; Saloff-Coste 1997), cohort-level perception distinctions almost surely collapse to the stationary distribution, recovering the absorbing-state attractor characterized in Zharnikov (2026o).
 
 *Falsification.* Corollary 1 is falsified if a brand with documented μ < λ for an interval exceeding τ_mix shows statistically significant cohort centroid separation in a post-shock measurement.
+
+Kovalenko (2026, Fold Bifurcation) independently derives a related fold-bifurcation result for capacity-constrained compounding systems, providing cross-domain support for the absorbing-collapse regime predicted by Corollary 1.
 
 *Corollary 2 (Pulse Emission Sufficiency).* Dominant brand emissions need not be monotone. Pulse emissions — periodic high-intensity activations interspersed with low-emission intervals — can maintain μ > λ on average even when the inequality fails locally during low-emission intervals, provided the pulse period is shorter than τ_mix.
 
@@ -110,15 +114,15 @@ The terminal spectral gap contrast is the primary result: cells in the high regi
 
 The spectral gap in low-regime cells reaches 10% of its initial value at a mean of 46 months post-shock (about 3.8 years). The mixing-time bound from Corollary 1 predicts the onset of irreversible separability loss at τ_mix ≤ C/λ = C/.10 — with C on the order of 1–3, this places the collapse window at 10–30 months, consistent with the simulation result. Conviction reorientation in the Dove case was documented by approximately 48 months post-launch (2004–2008 conviction tracking window); the simulated gap collapse at month 46 is consistent with a 6–18 month lead time from spectral gap collapse to conviction reorientation, supporting Hypothesis H22.
 
-*Stat 1 (replacing placeholder):* Regime-specific terminal spectral gap: mean 1.10 (high) vs mean .02 (low); ratio 52x across all 32 cohort-dimension cells (seed 2026, 240 months).
+*Stat 1.* Regime-specific terminal spectral gap: mean 1.10 (high) vs mean .02 (low); ratio 52x across all 32 cohort-dimension cells (seed 2026, 240 months).
 
-*Stat 2 (replacing placeholder):* IRF half-life contrast: 1.4 months (high regime, fast recovery) vs 13.1 months (low regime, slow collapse); ratio 9.3x across 32 cells per regime.
+*Stat 2.* IRF half-life contrast: 1.4 months (high regime, fast recovery) vs 13.1 months (low regime, slow collapse); ratio 9.3x across 32 cells per regime.
 
-*Stat 3 (replacing placeholder):* Mean spectral gap collapse to 10% of initial value occurs at month 46 in the low regime, consistent with a pre-conviction lead time of 2–18 months depending on the conviction-measurement horizon.
+*Stat 3.* Mean spectral gap collapse to 10% of initial value occurs at month 46 in the low regime, consistent with a pre-conviction lead time of 2–18 months depending on the conviction-measurement horizon.
 
-*Stat 4 (replacing placeholder):* μ/λ ratio for the high regime = 45 (by design); the simulation recovers a terminal gap ratio of 52x between regimes, confirming that the threshold correctly separates preserving from collapsing dynamics at these parameter values.
+*Stat 4.* μ/λ ratio for the high regime = 45 (by design); the simulation recovers a terminal gap ratio of 52x between regimes, confirming that the threshold correctly separates preserving from collapsing dynamics at these parameter values.
 
-*Stat 5 (replacing placeholder):* Cosine drift from initial centroid is low in both regimes (.023 high, .027 low), confirming that centroid-level MDS maps would not detect the regime difference; spectral gap dynamics — not centroid positions — are the diagnostic.
+*Stat 5.* Cosine drift from initial centroid is low in both regimes (.023 high, .027 low), confirming that centroid-level MDS maps would not detect the regime difference; spectral gap dynamics — not centroid positions — are the diagnostic.
 
 ***Illustrative Dove Calibration***
 
@@ -160,7 +164,7 @@ The Monte Carlo demonstration substitutes for real Dove data analysis, pending t
 
 Cohort compositions are assumed time-invariant across the 2003–2023 window. Cohort migration — the movement of individual observers across cohort boundaries — is itself a source of effective leakage not captured in the current λ estimator.
 
-The GRP-to-perception mapping is assumed linear in the μ estimator. Erdem and Keane (1996) demonstrate that this mapping is nonlinear near scale boundaries; the μ ≈ 4.50 estimate is derived from the Ideological dimension's ascent from near-zero, where nonlinearity is smallest. At higher baseline levels, μ would be lower for the same GRP input.
+The GRP-to-perception mapping is assumed linear in the μ estimator. Erdem and Keane (1996) demonstrate that this mapping is nonlinear near scale boundaries; the μ ≈ 4.50 estimate is derived from the Ideological dimension's ascent from near-zero, where nonlinearity is smallest. At higher baseline levels, μ would be lower for the same GRP input. These calibrations apply specifically to activations starting from low dimensional baselines; brands with established dimensional positions will exhibit lower μ per unit GRP, and the threshold inequality should be re-parameterized accordingly before application.
 
 The operator-theoretic abstraction may be over-specified for routine marketing applications. The threshold inequality is a sufficient condition from functional analysis; it does not prescribe a unique estimation procedure. Multiple approaches (VECM-based, MDS-based, cohort-drift-based) can in principle estimate λ and μ, and they will not in general agree exactly.
 
@@ -174,7 +178,7 @@ The framework's practical value is the μ–λ residual as a brand health dashbo
 
 **Acknowledgments**
 
-The author acknowledges that James Kovalenko (2026) independently developed an operator-theoretic and category-theoretic framing of structural verification with closely related vocabulary — including variation–verification coupling, verification capacity, recursive friction as a self-amplifying failure mode, the meta-cognitive operator, and the invariant submanifold $\mathcal{M}_\text{inv}$ — and formalized these in the Transport–Aggregation Adjunction $D_f \dashv R_f$ across a wide-ranging treatment of structural ontology and topology. The independent convergence on essentially the same formal structure from a different starting domain supports the cross-domain validity of the spectral-gap inequality developed here.
+The author acknowledges that James Kovalenko (2026) independently developed an operator-theoretic and category-theoretic framing of structural verification with closely related vocabulary — including variation–verification coupling, verification capacity, recursive friction as a self-amplifying failure mode, the meta-cognitive operator, and the invariant submanifold $\mathcal{M}_\text{inv}$ — and formalized these in the Transport–Aggregation Adjunction $D_f \dashv R_f$ across a wide-ranging treatment of structural ontology and topology (Kovalenko 2026, Beyond the Monochord). In separate work, Kovalenko (2026, Fold Bifurcation) independently derives fold-bifurcation dynamics for capacity-constrained compounding systems, providing a cross-domain analog to the absorbing-collapse regime formalized here in Corollary 1. Together, these two independent derivations — from structural ontology and from compounding-systems dynamics, respectively — anchor the cross-domain validity of the spectral-gap framework developed here.
 
 AI assistants (Claude Opus 4.6, Grok 4.1, Gemini 3.1) were used for initial literature search and editorial refinement; all theoretical claims, propositions, and interpretations are the author's sole responsibility.
 
@@ -233,6 +237,8 @@ Kato, Tosio (1995), *Perturbation Theory for Linear Operators* (reprint of 2nd e
 Keller, Kevin Lane (1993), "Conceptualizing, Measuring, and Managing Customer-Based Brand Equity," *Journal of Marketing*, 57 (1), 1–22.
 
 Kovalenko, James (2026), "Beyond the Monochord: From Pythagorean Harmony to the Transport–Aggregation Adjunction," Zenodo, https://doi.org/10.5281/zenodo.19448729.
+
+Kovalenko, James (2026), "Fold Bifurcation and Friction Divergence in Capacity-Constrained Compounding Systems," Zenodo, https://doi.org/10.5281/zenodo.19547906.
 
 Levin, David A., and Yuval Peres (2017), *Markov Chains and Mixing Times* (2nd ed.), American Mathematical Society.
 
