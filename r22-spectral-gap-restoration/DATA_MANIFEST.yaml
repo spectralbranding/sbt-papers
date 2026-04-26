@@ -49,6 +49,12 @@ empirical_methods:
       empirical case is CEREAL data with values .0097–.3224).
 
 code:
+  - name: "Monte Carlo simulation script"
+    location: "https://github.com/spectralbranding/sbt-papers/blob/main/r22-spectral-gap-restoration/monte_carlo_simulation.py"
+    description: "Reproducible 32-cell × 2-regime × 240-month simulation. Run with: uv run --with statsmodels --with numpy --with scipy python3 monte_carlo_simulation.py. Seed: 2026."
+  - name: "Monte Carlo full outputs"
+    location: "https://github.com/spectralbranding/sbt-papers/blob/main/r22-spectral-gap-restoration/monte_carlo_results.json"
+    description: "Per-cell outputs across all 64 cohort-dimension cells in both regimes (high-μ and sign-inverted low-μ). Includes terminal spectral gap, IRF half-life, ADF stationarity test statistics, gap-collapse month, cosine drift."
   - name: "SBT Framework"
     location: "https://github.com/spectralbranding/sbt-framework"
     description: "Open-source toolkit implementing the SBT computational pipeline (used for placeholder stat computation when R10 re-analysis runs)"

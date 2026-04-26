@@ -4,7 +4,7 @@
 
 DOI: 10.5281/zenodo.19778549
 
-Working Paper v1.0.0 -- April 26, 2026
+Working Paper v1.0.0 -- April 2026
 
 **Abstract**
 
@@ -175,6 +175,10 @@ This paper derives and demonstrates a threshold inequality for cohort separabili
 The Monte Carlo demonstration confirms that the threshold correctly predicts the regime contrast motivating its derivation: 32/32 cells with the Dove Purpose-Aligned design parameters (μ = 4.50, λ = .10) preserve their spectral gaps (terminal mean = 1.10), while 32/32 cells with the sign-inverted Skeptic-Critic parameters (μ = −.50, λ = .10) collapse (terminal mean = .02). The 52-fold terminal gap ratio and 9-fold IRF half-life difference confirm that the threshold μ = λ demarcates two qualitatively distinct dynamical regimes. These results are based on simulated data seeded with author-proposed calibration values; confirmation against real Dove longitudinal data is the first priority for a companion paper.
 
 The framework's practical value is the μ–λ residual as a brand health dashboard. Increasing μ through eigenvector-aligned emission (Hanssens and Pauwels 2016; Urde 2013) or decreasing λ through coherence-tightening of existing communications (Russell, Parguel, and Benoît-Moreau 2015) are the two levers available to practitioners. The 6–18 month early-warning window is the intervention horizon.
+
+***Reproducibility***
+
+The Monte Carlo simulation script and full numeric outputs are available in the paper's GitHub repository at <https://github.com/spectralbranding/sbt-papers/tree/main/r22-spectral-gap-restoration>: `monte_carlo_simulation.py` (the script; reproducible with `uv run --with statsmodels --with numpy --with scipy python3 monte_carlo_simulation.py` and seed 2026) and `monte_carlo_results.json` (full per-cell outputs across all 64 cohort-dimension cells in both regimes, including ADF stationarity test statistics and IRF coefficients). All numerics reported in the Monte Carlo Demonstration section are reproducible from this script. The R10 longitudinal Dove data used for design-parameter motivation is documented at <https://github.com/spectralbranding/sbt-papers/tree/main/r10-dove-case-study> and on Zenodo at DOI [10.5281/zenodo.19139258](https://doi.org/10.5281/zenodo.19139258).
 
 **Acknowledgments**
 
