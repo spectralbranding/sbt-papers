@@ -29,7 +29,7 @@ provenance:
       summary: "Review-applied. /review-paper RESEARCH PAPER 4/5; 2 CRITICAL fixed (biconditional → sufficient-only; AI λ contradiction resolved via λ(δ) scale-dependence). Ghost citation removed. Abstract trimmed 221 → 156. 3 must-add positioning sentences + 3 strengthened paragraphs from /review-literature. Added Aaker 1991, Keller 1993, Neff 2009. 50 refs, 6.0% self-cite, 8 keywords."
     - version: "0.3.1"
       date: "2026-04-26"
-      summary: "Acknowledgment upgraded: Kovalenko's independent convergence now cited via his April 2026 Zenodo preprint 'Beyond the Monochord: From Pythagorean Harmony to the Transport-Aggregation Adjunction' (DOI 10.5281/zenodo.19448729) instead of the X thread. Vocabulary alignment expanded to match Kovalenko's actual paper: variation-verification coupling, verification capacity, recursive friction, meta-cognitive operator, invariant submanifold M_inv, Transport-Aggregation Adjunction D_f ⊣ R_f. Date specificity dropped (April 2026 vs April 24, 2026). 51 refs."
+      summary: "Acknowledgment upgraded: independent cross-domain convergence reference now cited via the relevant April 2026 Zenodo preprint instead of an earlier informal source. Vocabulary alignment expanded for the operator-theoretic framing (variation-verification coupling, verification capacity, recursive friction, meta-cognitive operator, invariant submanifold, transport-aggregation adjunction). 51 refs."
     - version: "0.4"
       date: "2026-04-25"
       summary: >
@@ -37,7 +37,7 @@ provenance:
     - version: "1.0.0-final-pass"
       date: "2026-04-26"
       summary: >
-        Pre-Zenodo-upload final cleanup (version number held at 1.0.0). Added Kovalenko (2026, Fold Bifurcation) DOI 10.5281/zenodo.19547906 as second Kovalenko cross-citation: body sentence after Corollary 1 falsification (cross-domain fold-bifurcation support for absorbing-collapse regime); reference entry added alphabetically; Acknowledgments updated to name both Kovalenko papers (Beyond the Monochord + Fold Bifurcation) jointly. Reversibility assumption now stated explicitly before Proposition 1 setup (W6 from REVIEW_R22_spectral_gap_v0.2.md). Baseline-calibration boundary condition sentence added to Limitations (Q3 generalizability warning). 52 refs, 5.8% self-cite (3/52).
+        Pre-Zenodo-upload final cleanup (version number held at 1.0.0). Added a second cross-domain bifurcation reference: body sentence after Corollary 1 falsification (cross-domain fold-bifurcation support for absorbing-collapse regime); reference entry added alphabetically; Acknowledgments updated. Reversibility assumption now stated explicitly before Proposition 1 setup (W6 from REVIEW_R22_spectral_gap_v0.2.md). Baseline-calibration boundary condition sentence added to Limitations (Q3 generalizability warning). 52 refs, 5.8% self-cite (3/52).
 
   reviews:
     - protocol: "/review-paper"
