@@ -2,7 +2,7 @@
 # Fork history and submission records per the Research-as-Repository protocol
 
 provenance:
-  paper_title: "Spectral Gap Restoration: A Threshold Inequality for Cohort Separability Survival in Brand Perception"
+  paper_title: "Restoring Perceptual Separability After Coherence Shocks: A μ > λ Threshold Inequality in Brand Perception"
   citation_key: "2026ad"
   repository: "spectralbranding/sbt-papers/r22-spectral-gap-restoration"
 
@@ -45,10 +45,10 @@ provenance:
       findings: "9 positioning gaps — top 3 sentences + top 3 paragraphs applied in v0.3"
 
   zenodo:
-    doi: null
-    uploaded: null
-    version: "0.4 (pre-Zenodo working draft)"
-    note: "DOI to be assigned after final Marketing Science submission preparation"
+    doi: "10.5281/zenodo.19778549"
+    uploaded: 2026-04-26
+    version: "0.4"
+    note: "Uploaded as v0.4 working paper. Marketing Science submission to follow."
 
   target_venue:
     name: "Marketing Science"

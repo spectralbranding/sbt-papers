@@ -57,6 +57,7 @@ Eight companion papers establishing formal mathematical foundations for SBT, plu
 | R19 | [Empirical Rate-Distortion Curve for AI Brand Perception Encoders](rate-distortion/paper.md) | [10.5281/zenodo.19528833](https://doi.org/10.5281/zenodo.19528833) | Preprint |
 | R20 | ~~Does Corporate Ownership Matter to AI? Portfolio Interference in LLM Brand Perception~~ — **SUPERSEDED by [R21](r21-spectral-immunity/paper.md)** | [10.5281/zenodo.19555282](https://doi.org/10.5281/zenodo.19555282) | Superseded |
 | R21 | [Spectral Immunity: Why Brand Portfolio Interference Disappears for AI Observers](r21-spectral-immunity/paper.md) | [10.5281/zenodo.19765401](https://doi.org/10.5281/zenodo.19765401) | Preprint (supersedes R8 + R20) |
+| R22 | [Restoring Perceptual Separability After Coherence Shocks: A μ > λ Threshold Inequality in Brand Perception](r22-spectral-gap-restoration/paper.md) | [10.5281/zenodo.19778549](https://doi.org/10.5281/zenodo.19778549) | Preprint (Marketing Science target) |
 | PRISM | [PRISM: A Structured Measurement Instrument for Multi-Dimensional Brand Perception](prism-instrument/paper.md) | [10.5281/zenodo.19555265](https://doi.org/10.5281/zenodo.19555265) | Preprint |
 
 ### Cross-Framework Synthesis

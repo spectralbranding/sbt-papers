@@ -2,7 +2,7 @@
 
 *Dmitry Zharnikov*
 
-DOI: pending (Zenodo upload forthcoming)
+DOI: 10.5281/zenodo.19778549
 
 Working Paper v0.4 -- April 2026
 

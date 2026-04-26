@@ -9,7 +9,7 @@ authors:
 title: "Restoring Perceptual Separability After Coherence Shocks: A μ > λ Threshold Inequality in Brand Perception"
 version: 0.4
 date-released: 2026-04-25
-doi: pending
+doi: 10.5281/zenodo.19778549
 repository-code: "https://github.com/spectralbranding/sbt-papers"
 keywords:
   - spectral gap
@@ -29,4 +29,4 @@ preferred-citation:
       given-names: Dmitry
   title: "Restoring Perceptual Separability After Coherence Shocks: A μ > λ Threshold Inequality in Brand Perception"
   year: 2026
-  doi: pending
+  doi: 10.5281/zenodo.19778549
