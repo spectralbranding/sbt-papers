@@ -30,6 +30,10 @@ provenance:
     - version: "0.3.1"
       date: "2026-04-26"
       summary: "Acknowledgment upgraded: Kovalenko's independent convergence now cited via his April 2026 Zenodo preprint 'Beyond the Monochord: From Pythagorean Harmony to the Transport-Aggregation Adjunction' (DOI 10.5281/zenodo.19448729) instead of the X thread. Vocabulary alignment expanded to match Kovalenko's actual paper: variation-verification coupling, verification capacity, recursive friction, meta-cognitive operator, invariant submanifold M_inv, Transport-Aggregation Adjunction D_f ⊣ R_f. Date specificity dropped (April 2026 vs April 24, 2026). 51 refs."
+    - version: "0.4"
+      date: "2026-04-25"
+      summary: >
+        Grok-review structural revision. (1) New title: 'Restoring Perceptual Separability After Coherence Shocks: A mu > lambda Threshold Inequality in Brand Perception'. (2) Title block converted to R20 prose-style (no YAML frontmatter). (3) New 248-word abstract (Grok version). (4) Introduction condensed and restructured (~1,500 words): hook/gap/contribution/roadmap. (5) All 5 placeholder stats replaced with Monte Carlo simulation results (monte_carlo_simulation.py; seed 2026; 32 cells x 2 regimes x 240 months). Terminal spectral gap: 1.10 (high) vs 0.02 (low), ratio 52x. IRF half-life: 1.4 mo (high) vs 13.1 mo (low). Gap collapse month 46 in low regime. (6) Empirical section reframed as Monte Carlo Demonstration with honest framing: Dove values are author-proposed design parameters; real data analysis deferred to companion paper using R10. (7) Mathematical Formalization moved to Mathematical Appendix at end; Theory section kept conceptual. (8) Discussion rewritten: mu-lambda dashboard, lead indicator, Dekimpe-Hanssens refinement, AI-mediated extension, OST connection, limitations. (9) Target venue updated to Marketing Science. (10) Defensive phrasing removed. (11) Internal-process language (DR-6/DR-7 references) removed from body. (12) 42 refs, 7.1% self-cite (3/42).
 
   reviews:
     - protocol: "/review-paper"
@@ -43,11 +47,11 @@ provenance:
   zenodo:
     doi: null
     uploaded: null
-    version: "0.3 (pre-Zenodo working draft)"
-    note: "DOI to be assigned after final Marketing Letters submission preparation"
+    version: "0.4 (pre-Zenodo working draft)"
+    note: "DOI to be assigned after final Marketing Science submission preparation"
 
   target_venue:
-    name: "Marketing Letters"
-    publisher: "Springer"
+    name: "Marketing Science"
+    publisher: "INFORMS"
     style: "AMA"
     review_type: "double-anonymous"
