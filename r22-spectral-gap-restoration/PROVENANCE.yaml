@@ -47,8 +47,8 @@ provenance:
   zenodo:
     doi: "10.5281/zenodo.19778549"
     uploaded: 2026-04-26
-    version: "0.4"
-    note: "Uploaded as v0.4 working paper. Marketing Science submission to follow."
+    version: "1.0.0"
+    note: "Uploaded as v1.0.0 working paper (publication date 2026-04-26). Marketing Science submission to follow."
 
   target_venue:
     name: "Marketing Science"

@@ -8,9 +8,9 @@ metadata:
       affiliation: "Independent Researcher"
       corresponding: true
   citation_key: "2026ad"
-  date: "2026-04-25"
-  version: "0.4"
-  status: draft
+  date: "2026-04-26"
+  version: "1.0.0"
+  status: preprint
   doi: "10.5281/zenodo.19778549"
   license: "CC-BY-4.0"
   ref_count: 42

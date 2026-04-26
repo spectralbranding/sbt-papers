@@ -2,7 +2,7 @@
 
 **Restoring Perceptual Separability After Coherence Shocks: A μ > λ Threshold Inequality in Brand Perception**
 
-Citation key: `2026ad` | Zenodo DOI: [10.5281/zenodo.19778549](https://doi.org/10.5281/zenodo.19778549) | Status: Working draft v0.4 | Target venue: Marketing Science
+Citation key: `2026ad` | Zenodo DOI: [10.5281/zenodo.19778549](https://doi.org/10.5281/zenodo.19778549) | Working Paper v1.0.0 (Apr 26, 2026) | Target venue: Marketing Science
 
 ## Summary
 

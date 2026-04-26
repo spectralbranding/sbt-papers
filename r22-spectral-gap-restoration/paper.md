@@ -4,7 +4,7 @@
 
 DOI: 10.5281/zenodo.19778549
 
-Working Paper v0.4 -- April 2026
+Working Paper v1.0.0 -- April 26, 2026
 
 **Abstract**
 
