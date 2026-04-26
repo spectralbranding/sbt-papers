@@ -16,20 +16,30 @@ contributors:
     first_commit: "2026-04-25"
     last_commit: "2026-04-26"
 
-  - name: "Claude (Anthropic)"
+  - name: "Claude Opus 4.6 (Anthropic)"
     type: ai_tool
     roles:
-      - writing-review
+      - literature-search
+      - editorial-refinement
       - consistency-checking
-      - literature-verification
-    disclosure: >
-      Used for manuscript drafting, cross-source literature verification
-      (DR-6 + DR-7 with cross-check across Claude/Gemini/Grok DeepSearch
-      runs), and review-protocol execution. All theoretical propositions,
-      interpretations, mathematical derivations, and conclusions are
-      solely the author's work. References were verified against publisher
-      pages or canonical reviews; one Gemini-fabricated decimal claim
-      (Naik 1999 "Dockers" wearout values) was caught and excluded.
+  - name: "Grok 4.1 (xAI)"
+    type: ai_tool
+    roles:
+      - literature-search
+      - cross-source-verification
+  - name: "Gemini 3.1 (Google DeepMind)"
+    type: ai_tool
+    roles:
+      - literature-search
+      - cross-source-verification
+
+ai_disclosure: >
+  AI assistants (Claude Opus 4.6, Grok 4.1, Gemini 3.1) were used for
+  initial literature search and editorial refinement; all theoretical
+  claims, propositions, and interpretations are the author's sole
+  responsibility. Cross-source verification across the three engines
+  caught one Gemini-fabricated decimal claim (Naik 1999 "Dockers"
+  wearout values) before it reached the manuscript.
 
 acknowledgments:
   - name: "James Kovalenko"
