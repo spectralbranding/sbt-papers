@@ -1,0 +1,32 @@
+cff-version: 1.2.0
+message: "If you use this paper, please cite it as below."
+authors:
+  - family-names: Zharnikov
+    given-names: Dmitry
+    email: dmitry@spectralbranding.com
+    affiliation: "Independent Researcher"
+    orcid: "https://orcid.org/0009-0000-6893-9231"
+title: "Spectral Gap Restoration: A Threshold Inequality for Cohort Separability Survival in Brand Perception"
+version: 0.3.0
+date-released: 2026-04-25
+doi: pending
+repository-code: "https://github.com/spectralbranding/sbt-papers"
+keywords:
+  - spectral gap
+  - cohort separability
+  - threshold inequality
+  - corrective coherence emission
+  - spectral leakage
+  - Markov chain mixing
+  - operator perturbation
+  - Spectral Brand Theory
+license: CC-BY-4.0
+type: article
+preferred-citation:
+  type: article
+  authors:
+    - family-names: Zharnikov
+      given-names: Dmitry
+  title: "Spectral Gap Restoration: A Threshold Inequality for Cohort Separability Survival in Brand Perception"
+  year: 2026
+  doi: pending
