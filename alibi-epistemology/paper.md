@@ -37,6 +37,8 @@ The principles transfer to brand perception modeling without domain specializati
 
 This paper makes three contributions: (1) it specifies the atom-cloud-fact pipeline as a domain-general epistemological architecture, formalizing the three-stage progression from observation to hypothesis to knowledge; (2) it isolates the re-collapse mechanism — full dissolution and rebuild of knowledge on new evidence — as the architectural commitment that distinguishes this framework from Bayesian updating and AGM revision; and (3) it demonstrates successful cross-domain transfer from financial document reconciliation to multi-cohort brand perception modeling, with the heterogeneous-observer extension as the key parametric adaptation. Each contribution maps to the empirical sections that follow.
 
+The work can be read within the design-science tradition in information systems research (Hevner, March, Park, & Ram, 2004; Gregor & Jones, 2007): the artifact is the pipeline itself; its utility lies in enabling systems that natively support observer heterogeneity and non-incremental knowledge revision. The primary frame of the paper, however, is epistemological rather than artifact-evaluative — the pipeline is presented as a candidate general structure of knowledge formation, not solely as an IS design recommendation.
+
 ---
 
 ## 2. The Pipeline Architecture
@@ -155,7 +157,7 @@ Brand perception has *many* observers, each with different weights. A Gen-Z cons
 
 This is the critical extension that produces Spectral Brand Theory. The seven principles transfer with parametric extension: the pipeline stages are identical, but the single-observer assumption is replaced by a heterogeneous-observer model where each cohort has its own spectral profile — spectrum, weights, tolerances, and priors — that determines how they process the same signal environment.
 
-The result: the same brand produces different "facts" in different observers' minds. These are not errors or variations on a "true" brand perception. They are the only brand perceptions that exist. There is no brand-in-itself, just as there is no "true reconciliation" independent of the matching algorithm's parameters. The parameters determine the output.
+The result: the same brand produces different "facts" in different observers' minds. These are not errors or variations on a "true" brand perception — they are the brand perceptions that the architecture can recover from the available signal environment. There is no brand-in-itself accessible outside some observing system, just as there is no "true reconciliation" independent of the matching algorithm's parameters. The parameters determine the output.
 
 ### 4.3 Principle Transfer Validation
 
@@ -221,7 +223,7 @@ The financial pipeline assumes positive evidence: atoms are extracted from docum
 
 ### 6.3 Valence Asymmetry
 
-Financial facts do not have valence — a confirmed purchase is neither good nor bad, it simply is. Brand convictions carry valence: positive, negative, or ambivalent. The domain transfer reveals an asymmetric property: negative convictions (built from ideological and social signals) are more resilient than positive convictions (built from experiential and economic signals) because evidence-free negative convictions contain no contradicting dimensions that could introduce ambiguity (Zharnikov, 2026a). This asymmetry is invisible in the financial domain, where all facts are valence-neutral.
+Financial facts do not have valence — a confirmed purchase is neither good nor bad, it simply is. Brand convictions carry valence: positive, negative, or ambivalent. The domain transfer reveals a conjectured asymmetric property: negative convictions (built from ideological and social signals) may be more resilient than positive convictions (built from experiential and economic signals) because evidence-free negative convictions contain no contradicting dimensions that could introduce ambiguity (Zharnikov, 2026a). This conjecture is derived from the architecture's structural properties and remains to be tested against independent consumer data. The asymmetry is invisible in the financial domain, where all facts are valence-neutral.
 
 ---
 
@@ -306,7 +308,7 @@ A distinctive property of the atom-cloud-fact pipeline is that it can be impleme
 
 This is not trivially possible with other epistemological frameworks. Bayesian networks require explicit probability distributions. Expert systems require formal rule bases. The classical AI approach — symbolic reasoning with logical inference (Russell & Norvig, 2020) — requires formalized knowledge bases. The atom-cloud-fact pipeline's principles are expressible in natural language because they describe *cognitive operations* (perceive, cluster, weigh, decide, revise) rather than *mathematical operations* (multiply, integrate, optimize). LLMs, trained on text describing human reasoning, can execute cognitive operations with surprising fidelity.
 
-The SBT implementation demonstrates this: the seven-module analytical pipeline operates entirely as a structured prompt sequence, producing formal multi-cohort brand analysis through natural language instruction rather than code execution (Zharnikov 2026a; Zharnikov 2026t). This suggests that the atom-cloud-fact architecture is not merely computationally implementable but *linguistically implementable* — a property that may prove important as LLMs become the primary computational platform for analytical work.
+The SBT implementation demonstrates this: the seven-module analytical pipeline operates entirely as a structured prompt sequence, producing formal multi-cohort brand analysis through natural language instruction rather than code execution (Zharnikov 2026a; Zharnikov 2026t). This suggests that the atom-cloud-fact architecture is not merely computationally implementable but *linguistically implementable* — a property that may prove important as LLMs become the primary computational platform for analytical work. The claim is bounded, however: linguistic implementability has been validated in the brand perception domain with specific LLM families; systematic ablation studies across prompt reformulations and model generations are needed before the property can be asserted as general.
 
 ### 8.4 Comparative Requirements Matrix
 
@@ -336,7 +338,7 @@ The framework also argues against existing alternatives: Bayesian updating and A
 
 Future empirical work should test P1 through controlled analyst studies comparing confirmation-bias indicators across single-source and pipeline-based assessments; P2 through retest reliability comparisons of single-model vs. multi-model brand conclusions; P3 through coded review of published brand audits for category-error frequency; and P4 through correlation of cross-model disagreement locations with independent measures of brand-attribute ambiguity in consumer research. Cross-domain replication — applying the pipeline in medical diagnosis, legal evidence assessment, or intelligence analysis, as proposed in the Generalizability section — would provide the strongest test of the cross-domain transferability claim.
 
-The architecture is computationally implementable. The financial implementation processes real documents. The brand perception implementation operates as a structured prompt sequence for large language models. Both share the same seven principles and the same three-stage pipeline. The code is different. The epistemology is identical.
+The architecture is computationally implementable. The financial implementation processes real documents. The brand perception implementation operates as a structured prompt sequence for large language models. Both share the same seven principles and the same three-stage pipeline. The code is different. The epistemological structure — dimensional typing, source binding, identity gating, asymmetric tolerances, weighted scoring, re-collapse, and epistemic separation — holds across both implementations; whether it holds across additional domains remains an empirical question the four propositions are designed to open.
 
 ---
 
@@ -363,6 +365,10 @@ Enderton, H. B. (2001). *A mathematical introduction to logic* (2nd ed.). Academ
 Fellegi, I. P., & Sunter, A. B. (1969). A theory for record linkage. *Journal of the American Statistical Association*, 64(328), 1183–1210.
 
 Goldman, A. I. (1986). *Epistemology and cognition*. Harvard University Press.
+
+Gregor, S., & Jones, D. (2007). The anatomy of a design theory. *Journal of the Association for Information Systems*, 8(5), 312–335.
+
+Hevner, A. R., March, S. T., Park, J., & Ram, S. (2004). Design science in information systems research. *MIS Quarterly*, 28(1), 75–105.
 
 Kahneman, D. (2011). *Thinking, fast and slow*. Farrar, Straus and Giroux.
 
