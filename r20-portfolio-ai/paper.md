@@ -146,6 +146,8 @@ The *Dimensional Concentration Index* (DCI) measures profile concentration:
 
 $$DCI = \frac{\sum_{d=1}^{8} |w_d - \frac{1}{8}|}{2} \times 100 \quad (2)$$
 
+This generalizes the two-dimension form $DCI_{R15} = (w_{Economic} + w_{Semiotic}) / 100$ used in Zharnikov (2026v), which was specialized to the AI Economic Default; the 8-dimension L1 form here measures total concentration regardless of which dimensions absorb the mass.
+
 TOST equivalence testing with bounds of +/-1.0 DCI points assesses statistical equivalence to zero. Benjamini-Hochberg correction controls false discovery rate across all 20 brand-level tests.
 
 

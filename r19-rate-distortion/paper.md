@@ -64,7 +64,7 @@ Five response formats operationalize information rate as the number of bits requ
 
 ### Brands
 
-Five canonical SBT reference brands spanning distinct positioning archetypes: Hermes (luxury heritage), IKEA (democratic design), Patagonia (activist outdoor), Tesla (technology disruptor), and Erewhon (experiential premium). Canonical profiles are defined in the SBT framework (Zharnikov, 2026a).
+Five canonical SBT reference brands spanning distinct positioning archetypes: Hermès (luxury heritage), IKEA (democratic design), Patagonia (activist outdoor), Tesla (technology disruptor), and Erewhon (experiential premium). Canonical profiles are defined in the SBT framework (Zharnikov, 2026a).
 
 ### Models
 
@@ -153,11 +153,11 @@ H5 is **not supported** in the full 17-model panel (CV at R1 = .210, threshold .
 |-------|-----|-----|-----|-----|-----|----------------|
 | Patagonia | .165 | .055 | .083 | .133 | .838 | 66.7% |
 | IKEA | .167 | .057 | .096 | .179 | .850 | 65.9% |
-| Hermes | .144 | .062 | .073 | .089 | .860 | 56.9% |
+| Hermès | .144 | .062 | .073 | .089 | .860 | 56.9% |
 | Erewhon | .184 | .118 | .152 | .203 | .850 | 35.9% |
 | Tesla | .177 | .138 | .139 | .291 | .882 | 22.0% |
 
-*Notes:* Mean across 17 models. All five brands achieve minimum distortion at R2. The R1-to-R2 reduction is sharpest for well-known brands with dense training corpora (Patagonia, IKEA, Hermes) and shallowest for Tesla, whose anomalously low Ideological canonical value (3.0/10) is difficult for any quantized format to represent.
+*Notes:* Mean across 17 models. All five brands achieve minimum distortion at R2. The R1-to-R2 reduction is sharpest for well-known brands with dense training corpora (Patagonia, IKEA, Hermès) and shallowest for Tesla, whose anomalously low Ideological canonical value (3.0/10) is difficult for any quantized format to represent.
 
 ## Discussion
 

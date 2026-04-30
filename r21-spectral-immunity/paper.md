@@ -56,7 +56,7 @@ where $f$ is the conviction formation function mapping emission profiles and obs
 
 $$DCI = \frac{\sum_{d=1}^{8} |w_d - \frac{1}{8}|}{2} \times 100 \quad (2)$$
 
-A high DCI indicates a profile concentrated on one or two dimensions; a low DCI indicates balanced dimensionality.
+A high DCI indicates a profile concentrated on one or two dimensions; a low DCI indicates balanced dimensionality. This generalizes the two-dimension form introduced in Zharnikov (2026v), $DCI_{R15} = (w_{Economic} + w_{Semiotic}) / 100$, which was specialized to the AI Economic Default mechanism (uniform baseline $.250$, where $w_d$ is on a 0--100 scale). The 8-dimension L1 form used here measures total concentration regardless of which dimensions absorb the mass; the two definitions coincide on the special case where only Economic and Semiotic are weighted above baseline.
 
 ***The Spectral Interference Mechanism***
 
