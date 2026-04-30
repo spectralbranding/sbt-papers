@@ -10,13 +10,11 @@ Working Paper v3.2.0 — February 2026 (revised April 2026)
 
 ## Abstract
 
-Brand measurement collapses multi-dimensional perception into single scores, destroying the information that explains why different observers form irreconcilable perceptions of the same brand. Prior dimensional approaches decompose brand meaning into attribute-level dimensions but treat those dimensions as properties of the brand rather than perceptual channels through which heterogeneous observers filter signals. This paper develops Spectral Brand Theory (SBT), arguing that brand perception is irreducibly observer-dependent. The framework decomposes brand signals across eight perceptual dimensions, defines observer cohorts through formal spectral profiles, and models perception as probabilistic cloud formation that collapses into conviction through evidence accumulation. Five formal propositions address observer heterogeneity, non-ergodic perception, structural absence, coherence types, and conviction asymmetry. An illustrative application to five brands articulates four candidate mechanisms: structural absence as brand strategy, a five-type coherence taxonomy, asymmetric conviction resilience, and independence of brand power from brand health. Cross-model replication suggests structural conclusions are framework-driven rather than model-specific. SBT contributes a computationally implementable, observer-centric architecture that extends customer-based brand equity theory. Empirical validation against independently collected consumer data, including a 21,350-call multi-model study (Zharnikov 2026v), provides initial corroboration of the dimensional collapse predictions.
+Brand measurement collapses multi-dimensional perception into single scores, destroying the information that explains why different observers form irreconcilable perceptions of the same brand. Prior dimensional approaches decompose brand meaning into attribute-level dimensions but treat those dimensions as properties of the brand rather than perceptual channels through which heterogeneous observers filter signals. This paper develops Spectral Brand Theory (SBT), arguing that brand perception is irreducibly observer-dependent. The framework decomposes brand signals across eight perceptual dimensions, defines observer cohorts through formal spectral profiles, and models perception as probabilistic cloud formation that collapses into conviction through evidence accumulation. Five formal propositions address observer heterogeneity, non-ergodic perception, structural absence, coherence types, and conviction asymmetry. An illustrative application to five brands articulates four candidate mechanisms: structural absence as brand strategy, a five-type coherence taxonomy, asymmetric conviction resilience, and independence of brand power from brand health. Cross-model replication suggests structural conclusions are framework-driven rather than model-specific. SBT contributes a computationally implementable, observer-centric architecture that extends customer-based brand equity theory. Independent multi-model LLM evaluation (Zharnikov 2026v) produces replicable cohort-divergence patterns and dimensional collapse.
 
 **Keywords:** brand perception, dimensional decomposition, computational branding, observer heterogeneity, brand coherence, structural absence, non-ergodic dynamics, AI-native framework
 
 ---
-
-## 
 
 Consider a thought experiment. Six people are asked to describe the same brand — Tesla. One says it is the most innovative technology platform since Apple. Another calls it Elon Musk's political vehicle. A third describes a betrayal of the environmental movement. A fourth sees a practical electric car with a controversial footnote. A fifth, who has never sat in one, holds a strong conviction about exactly what kind of person drives it. A sixth, in Shanghai, sees a premium Western status symbol and is puzzled by the question.
 
@@ -40,7 +38,9 @@ The gap is not in any single framework. It is structural: brand measurement coll
 
 Fields that study complex multi-attribute phenomena have independently developed constructs for preserving this information — *dimensional decomposition*: the systematic separation of a complex signal into independent measurement channels. While brand researchers have recognized the need for multi-dimensional approaches (France, Davcik, & Kazandjian, 2025; Guhl, 2024; Lambrecht, Baumgarth, & Henseler, 2025), no framework has formalized the observer-dependent filtering mechanism that explains why the same brand signals produce different perceptions in different cohorts.
 
-**Table 1.** Dimensional decomposition across fields. Despite repeated calls for multi-dimensional approaches to brand perception (Keller & Lehmann, 2006; Christodoulides & de Chernatony, 2010), no formal decomposition framework preserving observer-level information has been adopted.
+Table 1: Dimensional Decomposition Across Fields.
+
+*Notes*: Despite repeated calls for multi-dimensional approaches to brand perception (Keller & Lehmann, 2006; Christodoulides & de Chernatony, 2010), no formal decomposition framework preserving observer-level information has been adopted.
 
 | Domain | Decomposition Construct | Key Work |
 |:---|:---|:---|
@@ -58,7 +58,7 @@ This paper challenges the field's deeper assumption: that "the brand" is a coher
 
 Spectral Brand Theory (SBT) proposes that there is no single brand perception that applies uniformly to all observers — each cohort assembles structurally different brand meaning from the same signal environment. The brand's signal architecture (what it emits and how) can be characterized at the brand level, while brand meaning exists only in observer-specific perception. What we call "the brand" is always already a collapse: a conviction in someone's mind, assembled from whichever signals they could perceive through their particular spectral profile. Different observers, perceiving the same signal environment through different spectral sensitivities, form structurally different brand convictions. These convictions are not errors or variations on a "true" brand — they are the only brands that exist.
 
-The framework contributes to branding theory in three ways:
+The framework contributes to branding theory in three ways. These contributions correspond to MacInnis's (2011) Integrating and Advancing categories: contributions 1 and 2 integrate and formalize existing theoretical insights; contribution 3 advances the field by enabling computational implementations not previously achievable.
 
 1. **Formal observer model.** SBT defines each observer cohort through a spectral profile: which dimensions they can perceive (spectrum), how they weight those dimensions (weights), how much inconsistency they accept (tolerances), what they already believe (priors), and whether they can recognize the brand at all (identity gate). This transforms "different people perceive differently" from a qualitative observation into a parameterized scoring function.
 
@@ -84,7 +84,7 @@ This inversion has a philosophical precedent. Peirce's semiotics (1890s) establi
 
 SBT decomposes brand signals across eight dimensions, each representing a distinct channel through which observers perceive brand meaning:
 
-**Table 2.** The eight perceptual dimensions of brand signal architecture.
+Table 2: The Eight Perceptual Dimensions of Brand Signal Architecture.
 
 | Dimension | Signal Type | Examples |
 |:----------|:------------|:---------|
@@ -96,6 +96,8 @@ SBT decomposes brand signals across eight dimensions, each representing a distin
 | **Economic** | Price and value communication | Pricing strategy, discounting behavior, perceived value |
 | **Cultural** | Aesthetic and zeitgeist positioning | Design language, cultural references, humor, taste codes |
 | **Temporal** | Heritage and time-depth signals | History, heritage, generational continuity, era associations |
+
+*Notes*: Dimensions measure brand output — signals emitted and how observers perceive them — not internal organizational process. Independence and non-redundancy of these eight dimensions is established formally in Zharnikov (2026r).
 
 The eight dimensions measure brand output --- the signals a brand emits and how observers perceive them --- not brand process, meaning how the organization internally coordinates to produce those signals. This distinguishes SBT from operations research and process measurement: a brand's coordination mechanisms are invisible to outside observers; its emitted signals are not.
 
@@ -203,7 +205,7 @@ A brand's coherence is not the consistency of its messaging but the structural r
 
 Coherence is measured through a seven-metric scorecard:
 
-**Table 3.** The seven-metric spectral scorecard.
+Table 3: The Seven-Metric Spectral Scorecard.
 
 | Metric | What It Measures |
 |:-------|:-----------------|
@@ -215,6 +217,8 @@ Coherence is measured through a seven-metric scorecard:
 | Emission efficiency | Signal-to-noise ratio of designed signals |
 | Designed/ambient ratio | Brand's control over its own signal environment |
 
+*Notes*: All seven metrics are components of the spectral coherence audit conducted in Module 4 of the analytical pipeline (Section 3.2). Grades range from A+ (highest) to F (lowest).
+
 ### 2.6 Formal Propositions
 
 The theoretical framework developed in Sections 2.1–2.5 generates five formal propositions that specify testable structural predictions. Each proposition formalizes an argument that the framework makes implicitly; stating them explicitly establishes the empirical commitments that distinguish SBT from a descriptive vocabulary.
@@ -223,21 +227,31 @@ The theoretical framework developed in Sections 2.1–2.5 generates five formal 
 
 Keller (1993) locates brand equity in the customer's mind — the most important precedent for SBT's observer-dependent approach. The structural limitation of Keller's model is that it treats "the customer" as a single model: one set of brand associations, one equity structure. Keller acknowledged individual variation but did not parameterize it. SBT formalizes the heterogeneity that Keller's framework recognized but could not model, specifying the observer's spectral profile as the mechanism through which identical signals produce different convictions. Empirical evidence for observer-dependent brand perception already exists in the advertising literature. Grier and Brumbaugh (1999) demonstrated that identical advertisements produce systematically different meanings in target versus non-target cultural groups. Puntoni, Vanhamme, and Ruber (2011) documented "purposeful polysemy" — the deliberate design of messages that activate different meanings in different audiences — providing direct evidence that what SBT formalizes as spectral metamerism is an observed phenomenon in marketing practice. Testable prediction: measuring brand conviction across cohorts with documented spectral profile differences will reveal systematic, profile-predictable divergence rather than random variation.
 
+*Falsification:* P1 is falsified if cohorts with measurably different spectral profiles (empirically verified through conjoint or behavioral instruments) produce conviction distributions that do not differ significantly from one another after controlling for signal exposure — that is, if profile variation predicts no incremental variance in conviction beyond what demographic variables already explain.
+
 **Proposition 2 (Non-ergodicity of perception).** *The temporal sequence in which brand signals are encountered affects the resulting brand conviction, even when the set of signals is identical.*
 
 Peters (2019) demonstrates that in multiplicative, path-dependent processes, the order of events matters — ensemble averages diverge from time averages. Brand perception is structurally analogous: signals compound multiplicatively through priors rather than summing additively into a running total. An observer who encounters a product failure before a brand's origin story forms a different conviction than one who encounters the same two signals in reverse order, because the first signal establishes a prior that filters interpretation of the second. In consumer psychology, Hogarth and Einhorn (1992) provided the formal precedent for order-dependent belief updating: their Belief-Adjustment Model demonstrates that step-by-step evaluation produces different outcomes from end-of-sequence evaluation, and that negative evidence has asymmetric updating power relative to positive evidence — a mechanism that SBT formalizes as conviction asymmetry. The structural limitation of cross-sectional brand measurement is that it captures ensemble averages — snapshots across many observers at one moment — which systematically misrepresent individual cohort trajectories. Guhl (2024) provides methodological precedent by tracking time-varying utility-based brand equity from household panel data, demonstrating that brand equity fluctuates at the individual level in ways that aggregate measures obscure. Testable prediction: presenting the same signal set in different temporal orders to matched cohorts will produce measurably different conviction outcomes.
+
+*Falsification:* P2 is falsified if matched cohorts exposed to the same brand signals in different temporal sequences converge on statistically indistinguishable conviction outcomes — indicating that presentation order has no incremental effect beyond signal content and cohort profile.
 
 **Proposition 3 (Structural absence as signal).** *Designed restriction of signal emission in specific dimensions generates perceived value that cannot be replicated by signal addition in other dimensions.*
 
 Veblen (1899) identified conspicuous consumption as a value-signaling mechanism; structural absence inverts this into conspicuous restriction. Commodity theory (Brock, 1968) and the scarcity principle (Cialdini, 2001) establish that scarcity enhances perceived value, but they treat scarcity as a unidimensional modifier. The structural limitation is that these accounts do not specify the cross-dimensional generation mechanism: restriction on one dimension (economic, experiential, social) produces a signal on a different dimension. The Hermès analysis in Section 4.1 demonstrates that the brand's A+ coherence grade derives not from what it emits but from what it withholds. Testable prediction: comparing perceived value of brands with designed dimensional restriction against brands with equivalent positive signal strength will reveal a value premium attributable to restriction that cannot be replicated through addition.
 
+*Falsification:* P3 is falsified if brands employing designed signal restriction show no statistically significant perceived-value premium over matched brands with equivalent positive signal strength, or if the premium can be fully replicated by adding signals in the restricted dimension's absence-created domain — indicating that restriction has no cross-dimensional generative effect beyond scarcity's unidimensional contribution.
+
 **Proposition 4 (Coherence type over coherence score).** *Brands with identical aggregate coherence scores exhibit different resilience properties depending on their coherence type (ecosystem, signal, identity, experiential asymmetry, incoherent).*
 
 Traditional brand scorecards project multi-dimensional coherence onto a single scale — a form of spectral metamerism (Zharnikov, 2026e) where structurally different brands appear identical in lower-dimensional projection. The five-brand illustrative application in Section 4.2 reveals that coherence is not a continuum from low to high but a nominal classification with qualitatively distinct resilience mechanisms. Two brands scoring 7/10 on a conventional coherence metric may exhibit radically different responses to disruption: selective absorption (ecosystem) versus uniform transmission (signal). The structural limitation of single-score coherence metrics is that they are geometrically blind to this distinction. Testable prediction: grouping brands by coherence type and subjecting them to matched disruption events will reveal type-specific resilience patterns that aggregate coherence scores fail to predict.
 
+*Falsification:* P4 is falsified if brands classified into different coherence types but matched on aggregate coherence score show statistically indistinguishable disruption-response patterns in longitudinal cohort tracking — indicating that coherence type adds no predictive information beyond coherence magnitude.
+
 **Proposition 5 (Conviction asymmetry).** *Evidence-free negative brand convictions are more resistant to disconfirmation than evidence-rich positive convictions.*
 
 Kahneman & Tversky (1979) established that losses loom larger than equivalent gains in prospect theory. SBT extends this asymmetry to brand evidence: negative convictions formed without experiential data are structurally more stable than positive convictions formed with extensive experiential data, because the negative-conviction holder's spectral profile excludes the dimensions where disconfirming evidence would need to arrive. The experiential gate is effectively closed. The structural limitation of brand management strategies that attempt to "convert" hostile cohorts is that they target dimensions the cohort cannot perceive. Testable prediction: measuring the evidence required to shift convictions from positive-to-negative versus negative-to-positive will reveal a directional asymmetry, with negative-to-positive requiring substantially more — and dimensionally different — evidence.
+
+*Falsification:* P5 is falsified if controlled experiments find that evidence-free negative convictions and evidence-rich positive convictions require equivalent amounts of counter-attitudinal information to shift by the same magnitude — that is, if the directional asymmetry in disconfirmation resistance disappears when conviction strength (rather than evidence richness) is held constant.
 
 These five propositions are not exhaustive predictions of SBT; they formalize the framework's most distinctive structural claims. The falsifiable hypotheses in Section 5.5 operationalize these and additional predictions into specific experimental designs.
 
@@ -249,7 +263,7 @@ These five propositions are not exhaustive predictions of SBT; they formalize th
 
 To illustrate the framework's analytical architecture, we applied SBT to five brands selected to span the brand architecture space. This application is illustrative rather than empirical: it demonstrates how the framework's constructs operate in practice, not that the framework's propositions have been validated.
 
-**Table 4.** Five case-study brands and selection rationale.
+Table 4: Five Case-Study Brands and Selection Rationale.
 
 | Brand | Selection Rationale | Architecture Type |
 |:------|:----------------------------------|:------------------|
@@ -258,6 +272,8 @@ To illustrate the framework's analytical architecture, we applied SBT to five br
 | IKEA | Global consistency, designed-signal dominance | Signal coherence |
 | Hermès | Scarcity-based luxury, structural absence strategy | Ecosystem coherence |
 | Erewhon | Hyperlocal niche, mediated perception dominance | Experiential asymmetry |
+
+*Notes*: All five brands are well-known global Western consumer brands. Applicability to non-Western, B2B, or newly launched brands is untested and identified as a limitation in Section 5.4.
 
 The five brands were chosen to stress-test different properties of the framework: Patagonia tests ideological filtering; Tesla tests extreme observer divergence and ambient signal dominance; IKEA tests consistent signal architecture at global scale; Hermès tests scarcity-based value creation and cross-cohort interdependence; Erewhon tests the framework's minimum viable scale and mediated perception dynamics.
 
@@ -284,7 +300,7 @@ The illustrative application has several methodological limitations. Observer we
 
 To test for model-specific biases, a full cross-model replication was conducted using Gemini 3.1 Pro (Google) across all five brands:
 
-**Table 5.** Cross-model replication convergence: coherence type and grade.
+Table 5: Cross-Model Replication Convergence: Coherence Type and Grade.
 
 | Brand | Claude Opus 4.6 | Gemini 3.1 Pro | Convergence |
 |:------|:----------------|:----------------|:------------|
@@ -294,9 +310,11 @@ To test for model-specific biases, a full cross-model replication was conducted 
 | IKEA | Signal, A- | Signal, A- | Identical |
 | Erewhon | Exp. Asymmetry, B- | Exp. Asymmetry, B- | Identical |
 
+*Notes*: Exp. = Experiential. "Identical" indicates exact agreement on both coherence type classification and letter grade. Model-sensitive variation was limited to cohort granularity and D/A ratio estimates (within 10–15 percentage points); these did not affect structural classification.
+
 Both models independently derived the structural absence mechanism for Hermès and the CEO ambient signal domination for Tesla. Model-sensitive findings were limited to cohort granularity (Claude: 5-6 cohorts per brand; Gemini: 3) and D/A ratio variance (within 10-15 percentage points). The structural diagnosis remains stable regardless of cohort resolution, though convergence may partly reflect shared training data for these well-documented brands. Replication with additional models, human analysts, and lesser-known brands would provide stronger validation.
 
-Additional limitations include: (1) all five brands are well-known Western consumer brands — applicability to non-Western, B2B, or newly launched brands is untested; (2) the illustrative application uses SBT's own pipeline to produce the findings — independent validation against consumer survey data would be stronger; (3) the eight dimensions are a working decomposition, not a proven exhaustive set — empirical factor-analytic work (cf. J. Aaker, 1997; Brakus et al., 2009 for validated dimensional scales in adjacent constructs) would be needed to establish the dimensionality of the perceptual space; and (4) dimensional weights are treated as independent, but in practice dimensions may be correlated — an observer who weights ideological signals heavily may systematically discount economic signals. The spectral analogy is strongest when dimensions are approximately independent; if substantial inter-dimensional correlations exist, the effective dimensionality of the space is lower than eight, and the framework's precision claims would need adjustment.
+Additional limitations include: (1) all five brands are well-known Western consumer brands — applicability to non-Western, B2B, or newly launched brands is untested; (2) the illustrative application uses SBT's own pipeline to produce the findings — independent validation against consumer survey data would be stronger; (3) the eight dimensions are a working decomposition, not a proven exhaustive set — empirical factor-analytic work (cf. J. Aaker, 1997; Brakus et al., 2009 for validated dimensional scales in adjacent constructs) would be needed to establish the dimensionality of the perceptual space; and (4) dimensional weights are treated as independent, but in practice dimensions may be correlated — an observer who weights ideological signals heavily may systematically discount economic signals. The spectral analogy is strongest when dimensions are approximately independent; if substantial inter-dimensional correlations exist, the effective dimensionality of the space is lower than eight, and the framework's precision claims would need adjustment. The cross-model replication reported in this section functions as an inter-rater reliability mechanism: two independent analytical instruments (Claude and Gemini) converging on identical structural classifications provides stronger evidence than single-model analysis, analogous to inter-coder agreement in qualitative research. Disagreements at the cohort-granularity level (3 vs. 5–6 cohorts) are akin to disagreements at the subordinate-category level in coding schemes — they do not affect the superordinate structural classification.
 
 ### 3.5 Mathematical Foundations
 
@@ -306,7 +324,7 @@ The framework as presented in Sections 1-3 operates at the level of structured q
 
 **The Correspondence Principle.** The relationship between SBT and classical brand frameworks is analogous to the relationship between general relativity and Newtonian mechanics: the simpler framework is the limiting case of the richer one. When observer diversity is low — when all cohorts share similar spectral weight profiles — the fiber bundle collapses to a trivial bundle, perception space is approximately flat, and classical brand measurement frameworks (Keller, 1993; Aaker, 1996) are adequate. As observer diversity increases structurally — through globalization, AI-mediated perception, and digital fragmentation — the curvature becomes non-negligible and SBT's geometric tools become necessary. Table 6 summarizes this regime hierarchy.
 
-**Table 6.** Correspondence between physical regimes and SBT measurement frameworks
+Table 6: Correspondence Between Physical Regimes and SBT Measurement Frameworks.
 
 | Physical regime | GR analog | SBT analog | Measurement framework |
 |---|---|---|---|
@@ -314,6 +332,8 @@ The framework as presented in Sections 1-3 operates at the level of structured q
 | Curved space, uniform observers | GR with test particles | SBT with homogeneous cohorts | Fisher-Rao metric (Zharnikov, 2026d) describes geometry |
 | Curved space, diverse observers | Electromagnetism in curved space | SBT with heterogeneous cohorts | Brand Triangulation (Zharnikov, 2026y) needed |
 | Extreme curvature, dark signals | Black holes, dark matter | Structural absence, brand singularities | Full fiber bundle + dark signal detection |
+
+*Notes*: GR = General Relativity. The correspondence is structural, not mathematical — brand perception does not obey the field equations of general relativity. The analogy names the regime hierarchy; see Section 3.5 for formal treatment.
 
 **The Cross-Field Geometric Turn.** SBT's adoption of geometric methods — Fisher-Rao metric, geodesics, curvature — is not an idiosyncratic choice imported from physics. It mirrors an independent convergence across fields that discovered flat representations break when working with high-dimensional, AI-relevant data. In machine learning, Bronstein et al. (2021) demonstrated that the architectures that generalize across domains — CNNs, graph neural networks, transformers — are precisely those that preserve geometric structure rather than imposing flat coordinate representations on inherently curved data. In neuroscience, Ma et al. (2025) showed that the visual system transforms a 3-dimensional sensory manifold into a 7-dimensional perceptual manifold, providing direct empirical evidence that perception is not a linear readout but a geometric transformation — the brain encodes meaning by changing the shape of the representation space. In network science, Hansen and Ghrist (2021) applied sheaf theory to opinion dynamics, demonstrating that the consistency constraints governing how local opinions cohere into global positions are inherently topological rather than metric. SBT's geometric apparatus is a local instance of this broader convergence: across fields, high-dimensional heterogeneous data has forced the same methodological conclusion — flat representations destroy the structure that explains the phenomena.
 
@@ -337,13 +357,15 @@ We formalize this as **structural absence**: the deliberate withholding of signa
 
 SBT introduces a three-type emission taxonomy:
 
-**Table 7.** Three emission types in the spectral model.
+Table 7: Three Emission Types in the Spectral Model.
 
 | Emission Type | Mechanism | Signal Present? | Example |
 |:-------------|:-------------------------------|:----------------|:-------------------------------|
 | Positive | Brand actively emits signal | Yes | Product launch, campaign |
 | Null | Signal absent, unintentional | No (neglect) | Unused heritage, dormant dimension |
 | Structural absence | Designed restriction functions as signal | No (strategy) | Wait list, no discounts, geographic scarcity |
+
+*Notes*: The distinction between null and structural absence is diagnostic: null absence is a potential strategic opportunity; structural absence is an intentional mechanism that requires heritage legitimization to function (Section 4.1).
 
 The key mechanism is cross-dimensional: restriction on one dimension generates a signal on a different dimension. Economic restriction (never discounting) produces a social signal — the product exists outside normal market forces, inverting Veblen's (1899) conspicuous consumption from display of spending to display of access. Experiential restriction (in-store purchase only) produces an economic signal (difficulty of access justifies the price). Social restriction (purchase rituals, relationship requirements) produces an experiential signal (the restriction process *is* the brand experience).
 
@@ -359,7 +381,7 @@ Structural absence amplifies the perceived weight of present signals through con
 
 Traditional brand analysis treats coherence as a single variable from low to high: how consistently is the brand perceived across audiences? Our five-brand exploratory analysis suggests that coherence is not a single variable but a structural property that comes in five qualitatively distinct types, each with different resilience profiles.
 
-**Table 8.** Five-type coherence taxonomy with resilience profiles.
+Table 8: Five-Type Coherence Taxonomy with Resilience Profiles.
 
 | Coherence Type | Grade | Pattern | Resilience Profile | Brand |
 |:--------------|:------|:--------------------------------------|:--------------------------------------|:------|
@@ -368,6 +390,8 @@ Traditional brand analysis treats coherence as a single variable from low to hig
 | Identity | B+ | Ideological core filters cohort compatibility | Binary — divides along ideology | Patagonia |
 | Experiential asymmetry | B- | Evidence gap between direct and mediated observers | Geographic — different impact by location | Erewhon |
 | Incoherent | C- | Contradictory signals → irreconcilable clouds | Amplifying — widens existing cracks | Tesla |
+
+*Notes*: Grades reflect projected disruption resilience, not overall brand value. Brands with identical grades may have structurally different resilience mechanisms — this spectral metamerism is the core finding of the coherence taxonomy (Section 4.2). The formal derivation of the five types from non-ergodic dynamics appears in Zharnikov (2026s).
 
 The letter grades are projections of multi-dimensional spectral profiles onto a disruption resilience scale. Different structural types can project to the same grade (spectral metamerism) — a brand with 7/10 signal coherence (IKEA: everyone perceives the same thing) and 7/10 ecosystem coherence (Hermès: different cohorts perceive different things that reinforce each other) would appear identical on a single-variable dashboard. Their responses to disruption are radically different. Sorensen (2002) demonstrated across more than 200 firms that the structure of cultural alignment, not its intensity, determines outcomes; Chatman, Caldwell, O'Reilly, and Doerr (2014) extended this by showing that consensus combined with adaptability outperforms consensus alone.
 
@@ -382,10 +406,10 @@ The letter grades are projections of multi-dimensional spectral profiles onto a 
 **Incoherence** (Tesla) exhibits amplifying fragility. Each disruption widens existing cracks. The system does not absorb disruption — it converts disruption into deeper division. This is the worst resilience profile in the taxonomy.
 
 
-The coherence type is determined by three structural properties: (1) cohort interdependence — how much one cohort's perception depends on another's behavior; (2) ideological centrality — how much coherence depends on a shared ideological commitment; and (3) encounter mode variance — how different the direct-encounter brand is from the mediated brand.
+The coherence type is determined by three structural properties: (1) cohort interdependence — how much one cohort's perception depends on another's behavior; (2) ideological centrality — how much coherence depends on a shared ideological commitment; and (3) encounter mode variance — how different the direct-encounter brand is from the mediated brand. The taxonomy is derived formally from drift-geometry analysis of non-ergodic conviction dynamics in Zharnikov (2026s).
 
 
-**Figure 4.** Coherence Types: Disruption Response Patterns
+**Figure 3.** Coherence Types: Disruption Response Patterns
 
 ```
                          DISRUPTION
@@ -418,9 +442,11 @@ The Loyalist, by contrast, has real product data. They know the car is excellent
 
 This asymmetry has a critical resilience implication. In our disruption simulations, negative convictions consistently *strengthen* under brand stress, while positive convictions *weaken*. A brand crisis confirms what the negative-conviction holder already believed. But it introduces contradicting evidence for the positive-conviction holder, who must now reconcile their favorable experience with unfavorable news. The asymmetry is directional: positive → negative is far easier than negative → positive, because the latter requires experiential evidence that the negative-conviction holder's spectral profile is designed to exclude.
 
+Fournier, Solomon, and Englis (2008) demonstrate in a longitudinal brand-relationship study that brand misalignment — when brand actions contradict the values of aligned cohorts — triggers disproportionate negative responses, a pattern consistent with SBT's asymmetric-resilience finding: the aligned cohort's conviction has an evidential foundation that makes disconfirmation costly, while misaligned cohorts' convictions are immune to the brand's corrective signals.
+
 The strategic implication is stark: resources spent attempting to convert structurally locked negative cohorts are wasted. The Boycotter's experiential gate is effectively closed (.03 weight). No test drive campaign will reach them because they are not evaluating the product — they are evaluating the ideology. Brands with locked negative cohorts must accept the structural constraint and invest in addressable cohorts instead.
 
-**Table 9.** Asymmetric conviction resilience (Tesla case): evidence-rich Loyalist vs. evidence-free Boycotter.
+Table 9: Asymmetric Conviction Resilience (Tesla Case): Evidence-Rich Loyalist vs. Evidence-Free Boycotter.
 
 | | **Tech Loyalist** | **Progressive Boycotter** |
 |:--|:--|:--|
@@ -429,6 +455,8 @@ The strategic implication is stark: resources spent attempting to convert struct
 | **Confidence** | .78 (mixed signals = ambivalence) | .82 (no contradiction = certainty) |
 | **Crisis effect** | Weakens (new evidence conflicts) | Strengthens (confirms prior belief) |
 
+*Notes*: Confidence scores are calibrated within the Tesla analysis; cross-brand decimal comparisons are less defensible than ordinal (weak/moderate/strong) classifications. Weights sum to 1.0 per cohort. Experiential row shows the specific weight assigned to the experiential dimension, a subset of the top-weights row.
+
 ### 4.4 Brand Power and Brand Health as Independent Variables
 
 **Illustrative context:** Cross-brand comparison (Module 4 across all five brands).
@@ -436,7 +464,7 @@ The strategic implication is stark: resources spent attempting to convert struct
 The five-brand exploratory analysis produces a finding that inverts conventional brand wisdom: brand power (emission strength, awareness, cultural impact) and brand health (coherence, architectural integrity, resilience) are independent variables. A brand can maximize the first while minimizing the second.
 
 
-**Table 10.** Five-brand scorecard: brand power versus spectral health.
+Table 10: Five-Brand Scorecard: Brand Power Versus Spectral Health.
 
 | Brand | Power | Health | D/A | Gap |
 |:----------|:------------------------------|:----------|:------|:------------------------|
@@ -446,16 +474,18 @@ The five-brand exploratory analysis produces a finding that inverts conventional
 | Patagonia | Moderate (category-bound) | B+ | 65/30 | Ideological filter |
 | Erewhon | Low-moderate (hyperlocal) | B- | 40/55 | Scale floor |
 
+*Notes*: D/A = Designed/Ambient ratio (% designed signals / % ambient signals). Health grades reflect spectral coherence audit scores. Power is a relative assessment of dimensional emission breadth and identity-gate permeability across the five-brand sample. The 55–65% optimal zone is an exploratory hypothesis from this five-brand comparison requiring validation across a larger sample (Section 4.4); the formal derivation of this range appears in Zharnikov (2026j).
+
 Traditional frameworks — BrandAsset Valuator (BAV), Interbrand's brand strength methodology, Keller's brand equity pyramid — measure dimensions of power: differentiation, relevance, esteem, knowledge, awareness, consideration. By these metrics, Tesla is among the world's most valuable brands. Seven of eight dimensions emit at strength 4 or higher. Gate permeability is 10/10 — everyone knows the brand.
 
 But the spectral scorecard reveals Tesla's cloud coherence at 2/10, its designed/ambient ratio at 30/65, and its re-collapse resistance at 4/10. Maximum emission power, minimum architectural health.
 
 The confusion between brand power and brand health is, we argue, the central error in traditional brand management. It leads to the systematic misdiagnosis of brands like Tesla (perceived as "strong" when structurally fragile) and the systematic undervaluation of brands like Hermès (perceived as "niche" when architecturally impregnable).
 
-The D/A ratio is the single metric that most powerfully discriminates between power and health. Our five-brand comparison tentatively suggests a possible optimal zone around 55–65% designed signals; this is an exploratory hypothesis requiring validation across a larger sample. High enough to maintain narrative control. Low enough to allow authentic ambient reinforcement. Tesla, at 30% designed, is 25 points below the floor of this zone — meaning no communication strategy can fix its brand problem because 65% of the signal environment is beyond its control. Hermès, at 60% designed with *aligned* ambient signals, demonstrates that the direction of ambient signals matters as much as the ratio: its ambient signals amplify rather than contradict its designed signals.
+The D/A ratio is the single metric that most powerfully discriminates between power and health. Our five-brand comparison tentatively suggests a possible optimal zone around 55–65% designed signals; this is an exploratory hypothesis requiring validation across a larger sample. Zharnikov (2026j) derives this range mathematically from the absorption-exploration tradeoff in the stochastic differential equation governing convictions on S⁷₊. High enough to maintain narrative control. Low enough to allow authentic ambient reinforcement. Tesla, at 30% designed, is 25 points below the floor of this zone — meaning no communication strategy can fix its brand problem because 65% of the signal environment is beyond its control. Hermès, at 60% designed with *aligned* ambient signals, demonstrates that the direction of ambient signals matters as much as the ratio: its ambient signals amplify rather than contradict its designed signals.
 
 
-**Figure 5.** D/A Ratio and Coherence Across Five Brands
+**Figure 4.** D/A Ratio and Coherence Across Five Brands
 
 ```
 Coherence
@@ -495,7 +525,7 @@ Muniz and O'Guinn's (2001) brand community construct identifies the social dimen
 Gestalt psychology (Koffka, 1935) provides the perceptual foundations: cloud formation *is* gestalt perception applied to brand signals. Kahneman's (2011) dual-process theory maps to the collapse mechanism: strong convictions are System 1 shortcuts; weak or forming clouds require effortful System 2 processing.
 
 
-**Figure 6.** Non-Ergodic Brand Perception: Ensemble Average vs. Cohort Trajectories
+**Figure 5.** Non-Ergodic Brand Perception: Ensemble Average vs. Cohort Trajectories
 
 ```
 Brand
@@ -526,11 +556,11 @@ Attitude strength research (Krosnick & Petty, 1995) establishes that strong atti
 
 SBT does not capture everything existing frameworks do. Sharp's (2010) empirical regularities — double jeopardy, negative binomial distribution of purchase frequency — describe aggregate market-level patterns that SBT's cohort-level architecture does not address; these phenomena may emerge from the cohort dynamics SBT models but the framework does not predict them. Similarly, the rich phenomenological detail of Fournier's (1998) relationship theory — brand relationships as lived narratives — is reduced to parameter values in SBT's observer profiles. The framework trades phenomenological richness for computational tractability.
 
-In sum, SBT contributes a unifying vocabulary that connects the sender-side frameworks (Aaker, Kapferer), receiver-side frameworks (Keller), acquisition frameworks (Sharp), and process frameworks (cognitive science, ergodicity economics) as complementary descriptions of different stages in a single perception pipeline. The formal criterion for construct validity — that variation in the attribute causally produces variation in the measurement outcome (Borsboom, Mellenbergh and van Heerden 2003) — is satisfied by spectral profiles only when the instrument preserves dimensional structure. Aggregated metrics fail this criterion by design.
+In sum, SBT contributes a unifying vocabulary that connects the sender-side frameworks (Aaker, Kapferer), receiver-side frameworks (Keller), acquisition frameworks (Sharp), and process frameworks (cognitive science, ergodicity economics) as complementary descriptions of different stages in a single perception pipeline. The formal criterion for construct validity — that variation in the attribute causally produces variation in the measurement outcome (Borsboom, Mellenbergh and van Heerden 2003) — is satisfied by spectral profiles only when the instrument preserves dimensional structure. Aggregated metrics fail this criterion by design. Each limitation identified in Section 5.4 has a companion-paper formalization: cohort boundary fuzziness in high-dimensional perception space (Zharnikov 2026f), non-ergodic conviction dynamics (Zharnikov 2026o), the Dove longitudinal case (Zharnikov 2026p), spectral dynamics including decay rates and cohort velocity (Zharnikov 2026z), and the mathematical treatment of conviction recovery after coherence shocks (Zharnikov 2026ad). The spectral resource allocation question — where to invest given measured cohort weight profiles — is addressed in Zharnikov (2026k).
 
 ### 5.2 Computational Implementability
 
-The closest computational precedent is Colladon's (2018) Semantic Brand Score (SBS), which extracts three network-based dimensions from text data. SBS measures brand *importance* in discourse networks — a salience metric. SBT measures brand *perception* across eight qualitative dimensions — a content metric. More broadly, the emerging computational branding literature — including Barari and Eisend's (2024) computational content analysis and Sarstedt, Brand, and Ring's (2024) investigation of LLMs as survey respondents — demonstrates growing recognition that brand analysis can be formalized and automated. Nguyen (2026) provides cross-national evidence that AI-generated advertising produces measurable effects on brand perception, further validating the computational approach. SBT extends this trajectory from computational *measurement* of existing constructs to computational *execution* of a formal perceptual theory.
+The closest computational precedent is Colladon's (2018) Semantic Brand Score (SBS), which extracts three network-based dimensions from text data. SBS measures brand *importance* in discourse networks — a salience metric. SBT measures brand *perception* across eight qualitative dimensions — a content metric. More broadly, the emerging computational branding literature — including Barari and Eisend's (2024) computational content analysis and Sarstedt, Adler, Rau, and Schmitt's (2024) investigation of LLMs as survey respondents — demonstrates growing recognition that brand analysis can be formalized and automated. Nguyen (2026) provides cross-national evidence that AI-generated advertising produces measurable effects on brand perception, further validating the computational approach. SBT extends this trajectory from computational *measurement* of existing constructs to computational *execution* of a formal perceptual theory.
 
 SBT's constructs map directly to computational primitives: signals are typed data structures, observer profiles are parameter sets, cloud formation is a weighted clustering operation, and conviction collapse is a threshold function. The analytical pipeline operates as a structured prompt sequence for large language models, producing signal inventories, cohort profiles, perception cloud predictions, coherence scorecards, and disruption simulations. The prompt kit and YAML output templates are available from the corresponding author.
 
@@ -554,19 +584,23 @@ The AI era changes brand perception in three ways that SBT's architecture accomm
 
 These shifts are recognized in the emerging literature. Davenport, Guha, Grewal, and Bressgott (2020) identify AI as transforming marketing from segmented to individualized. Huang and Rust (2021) predict which marketing functions AI will subsume. Puntoni, Reczek, Giesler, and Simester (2021) analyze how consumers experience AI as threatening to their autonomy — perceptual reactions that SBT models as observer-profile shifts in the ideological and social dimensions. The observer model's encounter modes (direct, mediated, mixed) and the signal taxonomy's synthetic source type accommodate these developments without retrofitting.
 
-Supplementary experiments provide initial empirical grounding for these predictions. A simulated 3-step agentic shopping pipeline (retrieval, comparison, recommendation) across 6 LLM architectures showed that dimensional collapse compounds across pipeline steps (*F* = 4.298, *p* = .015, eta-sq = .029), with Narrative and Cultural dimensions losing the most weight while Economic gains (Zharnikov 2026v, Section 5.13). The compounding effect is small but systematic — no model-specific differences were observed (*p* = .152) — suggesting that collapse is an architectural property of statistical language modeling, not an artifact of any particular training corpus.
+Supplementary experiments provide initial empirical grounding for these predictions. A simulated 3-step agentic shopping pipeline (retrieval, comparison, recommendation) across 6 LLM architectures showed that dimensional collapse compounds across pipeline steps (*F* = 4.298, *p* = .015, η² = .029), with Narrative and Cultural dimensions losing the most weight while Economic gains (Zharnikov 2026v, agentic pipeline experiment). The compounding effect is small but systematic — no model-specific differences were observed (*p* = .152) — suggesting that collapse is an architectural property of statistical language modeling, not an artifact of any particular training corpus.
 
 ### 5.4 Limitations and Future Directions
 
 Several limitations warrant discussion. The open questions identified below concerning non-ergodic dynamics, cohort boundary formalization, and resource allocation now have formal mathematical treatment in the companion papers described in Section 3.5. The limitations discussed here concern empirical validation, which remains for future work.
 
+**Computational observer validity.** SBT operates within the emerging computational-marketing tradition that uses LLMs as analytical instruments (Brand, Israeli, & Ngwe, 2023; Argyle et al., 2023). This tradition is contested: Goli and Singh (2024) document systematic divergences between LLM and human preferences. Cross-cultural replication in Zharnikov (2026v) shows that LLM cohorts share a structural Economic-Default bias absent in human samples. SBT does not assume LLMs and humans are interchangeable observers; rather, the framework's observer-parameterization makes the divergence itself measurable, converting a methodological complication into a primary observation about how different observer types perceive the same signal environment.
+
 **Weight validation.** Observer dimensional weights are currently expert estimates. Empirical validation through conjoint analysis, behavioral experiments, or large-scale survey data would strengthen the framework's credibility. The specific values assigned in the illustrative application were selected for analytical clarity; different weight assumptions would produce different outputs.
+
+**Scope limitations.** The five case-study brands are all well-known global Western consumer brands; applicability to non-Western, B2B, cooperative, or newly launched brands is untested. These represent boundary conditions for future work rather than failures of the framework — SBT's architecture is not inherently Western, but the illustrative application has not demonstrated its behavior outside this scope.
 
 **Cross-brand calibration.** Cloud confidence scores and coherence metrics are calibrated within each brand analysis but not across brands. Developing calibration benchmarks across brand categories is a priority for future work.
 
 **Temporal dynamics.** The framework captures snapshots but does not formally model rates of change. Two temporal properties require formalization: (1) *signal decay* — how signal contributions attenuate over time, varying by emotional intensity and encounter mode; and (2) *cohort velocity* — conviction migration speed for longitudinal tracking. Du and Kamakura (2015) demonstrate that dynamic factor analysis can separate true brand movement from measurement drift — a methodology applicable to cohort-level velocity aggregation in the spectral setting.
 
-**Competitive analysis.** An empirical test of competitive interference across 5 focal brands paired with direct, adjacent, and distant competitors found null effects on all hypotheses (largest *d* = .187, all *p* > .05 after Bonferroni correction; Zharnikov 2026g, Section 10.5). Brands occupy stable positions in perception space regardless of competitive context, supporting the fixed-geometry assumptions of the framework. The limitation remains that these tests used LLM observers only; human-subject competitive interference remains untested.
+**Competitive analysis.** An empirical test of competitive interference across 5 focal brands paired with direct, adjacent, and distant competitors found null effects on all hypotheses (largest *d* = .187, all *p* > .05 after Bonferroni correction; Zharnikov 2026g, competitive interference experiment). Brands occupy stable positions in perception space regardless of competitive context, supporting the fixed-geometry assumptions of the framework. The limitation remains that these tests used LLM observers only; human-subject competitive interference remains untested.
 
 **Temporal compounding.** Heritage compounds non-linearly. Urde, Greyser, and Balmer (2007) formalize brand heritage as a strategic resource; Brown, Kozinets, and Sherry (2003) demonstrate through retrobranding that heritage signals can be deliberately reconstructed. Taleb's (2007) analysis of path-dependent processes provides a framework for modeling how small early signals compound into structural priors that resist correction — the non-ergodic dynamics formalized in Proposition 2.
 
@@ -580,19 +614,19 @@ Several limitations warrant discussion. The open questions identified below conc
 
 The framework generates ten falsifiable hypotheses. H1–H5 derive from the perception-layer mechanisms reported in Section 4. H6–H10 address pre-encounter mechanics — how brand signals reach observers.
 
-**H1 (D/A Goldilocks zone).** Brands with 55–65% designed signals will show higher brand equity and disruption resilience than brands outside this range, controlling for category, age, and market position. *Derivation:* the five-brand D/A comparison (Section 4.4, Figure 5) shows the highest-health brands clustered in this range. *Test:* cross-sectional study of 50+ brands with empirically measured D/A ratios and brand equity scores (e.g., BAV, Interbrand, or bespoke spectral health metrics).
+**H1 (D/A Goldilocks zone).** Brands with 55–65% designed signals will show higher brand equity and disruption resilience than brands outside this range, controlling for category, age, and market position. *Derivation:* the five-brand D/A comparison (Section 4.4, Figure 4) shows the highest-health brands clustered in this range. *Test:* cross-sectional study of 50+ brands with empirically measured D/A ratios and brand equity scores (e.g., BAV, Interbrand, or bespoke spectral health metrics).
 
 **H2 (Asymmetric conviction resilience).** Evidence-free negative brand convictions will show higher resistance to counter-evidence than evidence-rich positive convictions. *Derivation:* the Tesla Boycotter/Loyalist asymmetry (Section 4.3, Table 9). *Test:* controlled experiment — expose participants with no product experience and participants with extensive product experience to counter-attitudinal brand information; measure pre/post conviction change magnitude.
 
-**H3 (Coherence type predicts disruption response).** Ecosystem-coherent brands will exhibit selective disruption absorption (periphery sacrificed, core strengthened); incoherent brands will exhibit disruption amplification (existing divisions widen). *Derivation:* the five-type coherence taxonomy (Section 4.2, Figure 4). *Test:* longitudinal cohort tracking before and after documented brand crisis events; compare per-cohort resilience trajectories across coherence types.
+**H3 (Coherence type predicts disruption response).** Ecosystem-coherent brands will exhibit selective disruption absorption (periphery sacrificed, core strengthened); incoherent brands will exhibit disruption amplification (existing divisions widen). *Derivation:* the five-type coherence taxonomy (Section 4.2, Figure 3). *Test:* longitudinal cohort tracking before and after documented brand crisis events; compare per-cohort resilience trajectories across coherence types.
 
-**H4 (Non-ergodic gap).** For incoherent brands, cross-sectional brand surveys will systematically overstate cohort-level resilience relative to longitudinal individual-level tracking. For signal-coherent brands, the gap will be minimal. *Derivation:* the brand power/health independence finding (Section 4.4) and the non-ergodic organizing analogy (Section 5.1, Figure 6). *Test:* paired study — compare snapshot survey scores to individual panel tracking data for the same brand across incoherent versus signal-coherent types.
+**H4 (Non-ergodic gap).** For incoherent brands, cross-sectional brand surveys will systematically overstate cohort-level resilience relative to longitudinal individual-level tracking. For signal-coherent brands, the gap will be minimal. *Derivation:* the brand power/health independence finding (Section 4.4) and the non-ergodic organizing analogy (Section 5.1, Figure 5). *Test:* paired study — compare snapshot survey scores to individual panel tracking data for the same brand across incoherent versus signal-coherent types.
 
 **H5 (Structural absence prerequisite).** Structural absence strategies (designed signal restriction) generate positive scarcity signals only when two conditions are met: (a) existing demand for the restricted dimension, and (b) a legitimizing heritage context that makes restriction legible as intention rather than incapacity. *Derivation:* the Hermès structural absence mechanism (Section 4.1). *Test:* experiment — manipulate scarcity (present vs. absent) crossed with demand level (high vs. low) and heritage context (established vs. novel); measure perceived exclusivity versus perceived arrogance.
 
 **H6 (Gate friction varies by cohort).** Identity gate friction for a given brand will differ significantly across observer cohorts, with cohorts whose dominant dimensions match the brand's strongest emission dimensions showing lower gate friction. *Derivation:* the identity gate mechanism (Section 3.3) combined with dimensional weight heterogeneity across cohorts. *Test:* exposure experiment — present brand cues to cohorts with different spectral profiles; measure recognition threshold (number of exposures to achieve recognition).
 
-**H7 (First-atom primacy).** The dimensional content of the first brand atom encountered will disproportionately determine the observer's initial spectral profile, persisting as a prior even after subsequent atoms provide evidence on other dimensions. *Derivation:* the prior formation mechanism (Section 3.3) and non-ergodic path dependence (Section 5.1). *Test:* experiment — expose different groups to different "first atoms" (experiential versus semiotic versus ideological); measure resulting spectral profiles after equal total exposure. Preliminary evidence supports this prediction in the LLM observer case. A serial position experiment across 4 elicitation formats and 5 LLM architectures found that the first-listed dimension receives +6.1 weight points above the last-listed dimension in JSON format (*d* = 1.39, *p* < .001), with similar magnitudes in natural-language and ranking formats. The effect is virtually eliminated by independent Likert ratings (*d* = .22), which remove the sequential allocation mechanism that amplifies positional primacy (Zharnikov 2026v, Section 5.15). This suggests that H7's first-atom effect operates through the encoding format, not the perceptual content itself — a distinction the original hypothesis did not make.
+**H7 (First-atom primacy).** The dimensional content of the first brand atom encountered will disproportionately determine the observer's initial spectral profile, persisting as a prior even after subsequent atoms provide evidence on other dimensions. *Derivation:* the prior formation mechanism (Section 3.3) and non-ergodic path dependence (Section 5.1). *Test:* experiment — expose different groups to different "first atoms" (experiential versus semiotic versus ideological); measure resulting spectral profiles after equal total exposure. Preliminary evidence supports this prediction in the LLM observer case. A serial position experiment across 4 elicitation formats and 5 LLM architectures found that the first-listed dimension receives +6.1 weight points above the last-listed dimension in JSON format (*d* = 1.39, *p* < .001), with similar magnitudes in natural-language and ranking formats. The effect is virtually eliminated by independent Likert ratings (*d* = .22), which remove the sequential allocation mechanism that amplifies positional primacy (Zharnikov 2026v, serial position experiment). This suggests that H7's first-atom effect operates through the encoding format, not the perceptual content itself — a distinction the original hypothesis did not make.
 
 **H8 (Amplification asymmetry).** Confirmed observers with negative-valence brand facts will have higher amplification rates (secondary emission volume) than those with positive-valence facts, creating faster signal field population for negative atoms. *Derivation:* the asymmetric conviction resilience finding (Section 4.3). *Test:* track secondary emission behavior (reviews, social posts, word-of-mouth) for positive versus negative Confirmed observers; measure volume and reach of emitted ambient atoms.
 
@@ -601,7 +635,7 @@ The framework generates ten falsifiable hypotheses. H1–H5 derive from the perc
 **H10 (Field density threshold).** There exists a minimum signal field density below which encounter probability drops to near-zero regardless of observer receptivity, and this threshold is higher for channels with low signal-to-noise ratio. *Derivation:* the signal dissemination layer (Section 3.5) and Sharp's (2010) mental availability framework. *Test:* vary brand signal frequency in controlled environments; measure encounter rate as a function of field density and channel noise level.
 
 
-**Figure 7.** Research Agenda: Falsifiable Hypotheses and Testing Methods
+**Figure 6.** Research Agenda: Falsifiable Hypotheses and Testing Methods
 
 ```
                          SBT Framework
@@ -665,19 +699,21 @@ Adler, P. S., & Borys, B. (1996). Two types of bureaucracy: Enabling and coerciv
 
 Alba, J. W., & Hutchinson, J. W. (1987). Dimensions of consumer expertise. *Journal of Consumer Research*, 13(4), 411–454.
 
-Barari, M., & Eisend, M. (2024). Computational content analysis of brand communications: A review and research agenda. *International Journal of Research in Marketing*, 41(1), 24–47.
-
-Borsboom, D., Mellenbergh, G. J., & van Heerden, J. (2003). The theoretical status of latent variables. *Psychological Review*, 110(2), 203–219. https://doi.org/10.1037/0033-295X.110.2.203
-
 Ambler, T. (2003). *Marketing and the bottom line: The marketing metrics to pump up cash flow* (2nd ed.). Financial Times/Prentice Hall.
+
+Argyle, L., Busby, E. C., Fulda, N., Gubler, J., Rytting, C., & Wingate, D. (2023). Out of one, many: Using language models to simulate human samples. *Political Analysis*, 31(3), 337–351. https://doi.org/10.1017/pan.2023.2
+
+Barari, M., & Eisend, M. (2024). Computational content analysis of brand communications: A review and research agenda. *Journal of Advertising*, 53(5), 631–651. https://doi.org/10.1080/00913367.2024.2407642
 
 Barthes, R. (1957). *Mythologies*. Seuil.
 
 Berger, J. (2013). *Contagious: Why things catch on*. Simon & Schuster.
 
-Brown, S., Kozinets, R. V., & Sherry, J. F., Jr. (2003). Teaching old brands new tricks: Retro branding and the revival of brand meaning. *Journal of Marketing*, 67(3), 19–33.
+Borsboom, D., Mellenbergh, G. J., & van Heerden, J. (2003). The theoretical status of latent variables. *Psychological Review*, 110(2), 203–219. https://doi.org/10.1037/0033-295X.110.2.203
 
 Brakus, J. J., Schmitt, B. H., & Zarantonello, L. (2009). Brand experience: What is it? How is it measured? Does it affect loyalty? *Journal of Marketing*, 73(3), 52–68.
+
+Brown, S., Kozinets, R. V., & Sherry, J. F., Jr. (2003). Teaching old brands new tricks: Retro branding and the revival of brand meaning. *Journal of Marketing*, 67(3), 19–33.
 
 Brand, J., Israeli, A., & Ngwe, D. (2023). Using LLMs for market research. *Harvard Business School Working Paper*, No. 23-062.
 
@@ -689,19 +725,17 @@ Carroll, J. D., & Chang, J. J. (1970). Analysis of individual differences in mul
 
 Colladon, A. F. (2018). The Semantic Brand Score. *Journal of Business Research*, 88, 150–160.
 
-Connelly, B. L., Certo, S. T., Ireland, R. D., & Reutzel, C. R. (2011). Signaling theory: A review and assessment. *Journal of Management*, 37(1), 39–67.
-
 Chatman, J. A., Caldwell, D. F., O'Reilly, C. A., & Doerr, B. (2014). Parsing organizational culture: How the norm for adaptability influences the relationship between culture consensus and financial performance in high-technology firms. *Journal of Organizational Behavior*, 35(6), 785–808.
 
 Christodoulides, G., & de Chernatony, L. (2010). Consumer-based brand equity conceptualization and measurement. *International Journal of Market Research*, 52(1), 43–66.
 
 Cialdini, R. B. (2001). *Influence: Science and practice* (4th ed.). Allyn & Bacon.
 
+Connelly, B. L., Certo, S. T., Ireland, R. D., & Reutzel, C. R. (2011). Signaling theory: A review and assessment. *Journal of Management*, 37(1), 39–67.
+
 Damasio, A. R. (1994). *Descartes' error: Emotion, reason, and the human brain*. Putnam.
 
 Davenport, T., Guha, A., Grewal, D., & Bressgott, T. (2020). How artificial intelligence will change the future of marketing. *Journal of the Academy of Marketing Science*, 48(1), 24–42.
-
-Du, R. Y., & Kamakura, W. A. (2015). Improving the statistical performance of tracking studies based on repeated cross-sections with primary dynamic factor analysis. *International Journal of Research in Marketing*, 32(1), 94–112. https://doi.org/10.1016/j.ijresmar.2014.10.002
 
 Dawar, N., & Parker, P. (1994). Marketing universals: Consumers' use of brand name, price, physical appearance, and retailer reputation as signals of product quality. *Journal of Marketing*, 58(2), 81–95.
 
@@ -709,27 +743,31 @@ De Chernatony, L., & McDonald, M. (2003). *Creating powerful brands*. Butterwort
 
 Doctor, J. N., Wakker, P. P., & Wang, T. V. (2020). Economists' views on the ergodicity problem. *Nature Physics*, 16, 1168.
 
+Du, R. Y., & Kamakura, W. A. (2015). Improving the statistical performance of tracking studies based on repeated cross-sections with primary dynamic factor analysis. *International Journal of Research in Marketing*, 32(1), 94–112. https://doi.org/10.1016/j.ijresmar.2014.10.002
+
 Eco, U. (1976). *A theory of semiotics*. Indiana University Press.
 
-Erdem, T., & Swait, J. (1998). Brand equity as a signaling phenomenon. *Journal of Consumer Psychology*, 7(2), 131–157.
-
 Ehrenberg, A. S. C., Goodhardt, G. J., & Barwise, T. P. (1990). Double jeopardy revisited. *Journal of Marketing*, 54(3), 82–91.
+
+Erdem, T., & Swait, J. (1998). Brand equity as a signaling phenomenon. *Journal of Consumer Psychology*, 7(2), 131–157.
 
 Feldwick, P. (1996). What is brand equity anyway, and how do you measure it? *Journal of the Market Research Society*, 38(2), 85–104.
 
 Festinger, L. (1957). *A theory of cognitive dissonance*. Stanford University Press.
 
-Flake, J. K., & Fried, E. I. (2020). Measurement schmeasurement: Questionable measurement practices and how to avoid them. *Advances in Methods and Practices in Psychological Science*, 3(4), 456–465. https://doi.org/10.1177/2515245920952393
+Fishbein, M., & Ajzen, I. (1975). *Belief, attitude, intention and behavior: An introduction to theory and research*. Addison-Wesley.
 
-Fournier, S. (1998). Consumers and their brands: Developing relationship theory in consumer research. *Journal of Consumer Research*, 24(4), 343–373.
+Flake, J. K., & Fried, E. I. (2020). Measurement schmeasurement: Questionable measurement practices and how to avoid them. *Advances in Methods and Practices in Psychological Science*, 3(4), 456–465. https://doi.org/10.1177/2515245920952393
 
 Floch, J.-M. (1990). *Semiotics, marketing and communication: Beneath the signs, the strategies*. Palgrave Macmillan.
 
+Fournier, S. (1998). Consumers and their brands: Developing relationship theory in consumer research. *Journal of Consumer Research*, 24(4), 343–373.
+
 Fournier, S., & Lee, L. (2009). Getting brand communities right. *Harvard Business Review*, 87(4), 105–111.
 
-France, S. L., Davcik, N. S., & Kazandjian, B. J. (2025). Digital brand equity: The concept, antecedents, measurement, and future development. *Journal of Business Research*, 192.
+Fournier, S., Solomon, M. R., & Englis, B. G. (2008). When good brands do bad. *Journal of Consumer Research*, 31(1), 1–16.
 
-Fishbein, M., & Ajzen, I. (1975). *Belief, attitude, intention and behavior: An introduction to theory and research*. Addison-Wesley.
+France, S. L., Davcik, N. S., & Kazandjian, B. J. (2025). Digital brand equity: The concept, antecedents, measurement, and future development. *Journal of Business Research*, 192.
 
 Green, P. E., & Srinivasan, V. (1978). Conjoint analysis in consumer research: Issues and outlook. *Journal of Consumer Research*, 5(2), 103–123.
 
@@ -783,17 +821,19 @@ Lynn, M. (1991). Scarcity effects on value: A quantitative review of the commodi
 
 Ma, H., Jiang, L., Liu, T., & Liu, J. (2025). From sensory to perceptual manifolds: The twist of neural geometry. *Science Advances*, 11(26):eadv0431. doi:10.1126/sciadv.adv0431
 
+MacInnis, D. J. (2011). A framework for conceptual contributions in marketing. *Journal of Marketing*, 75(4), 136–154.
+
 McLuhan, M. (1964). *Understanding media: The extensions of man*. McGraw-Hill.
 
 Medesani, M., & Macdonald, J. (2026). Geometric foundations of invariant corridors and governance: A unified framework with empirical validation (Level 3.3). *Working Paper*. https://doi.org/10.5281/zenodo.18822552
 
 Meder, D., et al. (2021). Ergodicity-breaking reveals time optimal decision making in humans. *PLOS Computational Biology*, 17(9), e1009217.
 
-Mintzberg, H. (1979). *The structuring of organizations: A synthesis of the research*. Prentice-Hall.
+Merz, M. A., He, Y., & Vargo, S. L. (2009). The evolving brand logic: A service-dominant logic perspective. *Journal of the Academy of Marketing Science*, 37(3), 328–344.
 
 Mick, D. G. (1986). Consumer research and semiotics: Exploring the morphology of signs, symbols, and significance. *Journal of Consumer Research*, 13(2), 196–213.
 
-Merz, M. A., He, Y., & Vargo, S. L. (2009). The evolving brand logic: A service-dominant logic perspective. *Journal of the Academy of Marketing Science*, 37(3), 328–344.
+Mintzberg, H. (1979). *The structuring of organizations: A synthesis of the research*. Prentice-Hall.
 
 Muniz, A. M., & O'Guinn, T. C. (2001). Brand community. *Journal of Consumer Research*, 27(4), 412–432.
 
@@ -801,7 +841,7 @@ Nguyen, N. T. (2026). Evaluating the efficacy of AI-generated advertising: A cro
 
 Oswald, L. R. (2012). *Marketing semiotics: Signs, strategies, and brand value*. Oxford University Press.
 
-Pagani, M., & Xie, L. (2025). Customer experiences in branded metaverse events: Effects on brand equity. *Journal of Consumer Psychology*.
+Pagani, M., & Xie, L. (2025). Customer experiences in branded metaverse events: Effects on brand equity. *Journal of Interactive Marketing*, 60, 1–18. https://doi.org/10.1177/10949968251334302
 
 Park, C. W., MacInnis, D. J., & Priester, J. R. (2010). Brand attachment and brand attitude strength: Conceptual and empirical differentiation of two critical brand equity drivers. *Journal of Marketing*, 74(6), 1–17.
 
@@ -817,7 +857,7 @@ Resnikoff, H. L. (1974). Differential geometry and color perception. *Journal of
 
 Ries, A., & Trout, J. (1981). *Positioning: The battle for your mind*. McGraw-Hill.
 
-Sarstedt, M., Brand, B. M., & Ring, C. (2024). Using large language models to generate silicon samples in consumer and marketing research: Challenges, opportunities, and guidelines. *Psychology & Marketing*, 41, 1254–1270.
+Sarstedt, M., Adler, S. J., Rau, L., & Schmitt, B. (2024). Using large language models to generate silicon samples in consumer and marketing research: Challenges, opportunities, and guidelines. *Psychology & Marketing*, 41, 1254–1270. https://doi.org/10.1002/mar.21982
 
 Sharp, B. (2010). *How brands grow: What marketers don't know*. Oxford University Press.
 
@@ -847,9 +887,9 @@ Wood, L. (2000). Brands and brand equity: Definition and management. *Management
 
 Xi, X., Yang, J., Jiao, K., Wang, S., & Lu, T. (2022). "We buy what we wanna be": Understanding the effect of brand identity driven by consumer perceived value in the luxury sector. *Frontiers in Psychology*, 13, 1002275.
 
-Yoo, B., & Donthu, N. (2001). Developing and validating a multidimensional consumer-based brand equity scale. *Journal of Business Research*, 52(1), 1–14.
-
 Yankelovich, D., & Meer, D. (2006). Rediscovering market segmentation. *Harvard Business Review*, 84(2), 122–131.
+
+Yoo, B., & Donthu, N. (2001). Developing and validating a multidimensional consumer-based brand equity scale. *Journal of Business Research*, 52(1), 1–14.
 
 Zajonc, R. B. (1980). Feeling and thinking: Preferences need no inferences. *American Psychologist*, 35(2), 151–175.
 
@@ -859,9 +899,11 @@ Zharnikov, D. (2026ac). Spectral immunity: Portfolio interference fails in AI-me
 
 Zharnikov, D. (2026b). The atom-cloud-fact epistemological pipeline: From financial document processing to brand perception modeling. Working Paper. https://doi.org/10.5281/zenodo.18944770
 
-Zharnikov, D. (2026d). Formal metric structure of multi-dimensional brand perception space. Working Paper. https://doi.org/10.5281/zenodo.18945295
+Zharnikov, D. (2026d). Brand space geometry: A formal metric for multi-dimensional brand perception. Working Paper. https://doi.org/10.5281/zenodo.18945295
 
 Zharnikov, D. (2026e). Spectral metamerism in brand perception: Projection bounds from high-dimensional geometry. Working Paper. https://doi.org/10.5281/zenodo.18945352
+
+Zharnikov, D. (2026f). Cohort boundaries in high-dimensional perception space: A concentration of measure analysis. Working Paper. https://doi.org/10.5281/zenodo.18945477
 
 Zharnikov, D. (2026g). How many brands can a market hold? Sphere packing bounds for multi-dimensional positioning. Working Paper. https://doi.org/10.5281/zenodo.18945522
 
@@ -869,9 +911,25 @@ Zharnikov, D. (2026h). Specification impossibility in organizational design: A h
 
 Zharnikov, D. (2026i). The Organizational Schema Theory: Test-driven business design. Working Paper. https://doi.org/10.5281/zenodo.18946043
 
-Zharnikov, D. (2026v). Spectral metamerism in AI-mediated brand perception: How large language models collapse multi-dimensional brand differentiation in consumer search. Working Paper. https://doi.org/10.5281/zenodo.19422427
+Zharnikov, D. (2026j). Non-ergodic brand perception: Diffusion dynamics on multi-dimensional perceptual manifolds. Working Paper. https://doi.org/10.5281/zenodo.18945659
+
+Zharnikov, D. (2026k). Spectral resource allocation: Demand-driven investment in multi-dimensional brand space. Working Paper. https://doi.org/10.5281/zenodo.19009268
+
+Zharnikov, D. (2026o). Non-ergodic brand perception: Why cross-sectional brand tracking systematically misrepresents individual trajectories. Working Paper. https://doi.org/10.5281/zenodo.19138860
+
+Zharnikov, D. (2026p). Dimensional activation and cohort divergence: A longitudinal decomposition of purpose advertising effectiveness. Working Paper. https://doi.org/10.5281/zenodo.19139258
+
+Zharnikov, D. (2026r). Why eight? Completeness and necessity of the SBT dimensional taxonomy. Working Paper. https://doi.org/10.5281/zenodo.19207599
+
+Zharnikov, D. (2026s). Coherence type as crisis predictor: A formal derivation from non-ergodic dynamics. Working Paper. https://doi.org/10.5281/zenodo.19208107
+
+Zharnikov, D. (2026v). Dimensional collapse in AI-mediated brand perception: Large language models as metameric observers. Working Paper. https://doi.org/10.5281/zenodo.19422427
 
 Zharnikov, D. (2026y). Brand triangulation: A geometric framework for multi-observer brand positioning. Working Paper. https://doi.org/10.5281/zenodo.19482547
+
+Zharnikov, D. (2026z). Spectral dynamics: Velocity, acceleration, and phase space in multi-dimensional brand perception. Working Paper. https://doi.org/10.5281/zenodo.19468204
+
+Zharnikov, D. (2026ad). Restoring perceptual separability after coherence shocks: A μ > λ threshold inequality in brand perception. Working Paper. https://doi.org/10.5281/zenodo.19778549
 
 ---
 *This paper is part of the Spectral Brand Theory research program. For the full atlas of 20+ interconnected papers, see [spectralbranding.com/atlas](https://spectralbranding.com/atlas).*
