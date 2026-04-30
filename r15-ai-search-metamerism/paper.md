@@ -130,7 +130,7 @@ Table 2: Global brand pairs (Run 2), categories, and primary differentiating dim
 
 | Pair ID | Category | Brand A | Brand B | Differentiator |
 |---------|----------|---------|---------|----------------|
-| luxury_heritage | Luxury fashion | Hermes | Coach | Temporal vs. Economic |
+| luxury_heritage | Luxury fashion | Hermès | Coach | Temporal vs. Economic |
 | purpose_driven | Outdoor apparel | Patagonia | Columbia | Ideological vs. Experiential |
 | premium_tech | Consumer tech | Apple | Samsung | Narrative vs. Experiential |
 | artisanal_food | Premium grocery | Erewhon | Whole Foods | Social vs. Economic |
@@ -141,9 +141,9 @@ Table 2: Global brand pairs (Run 2), categories, and primary differentiating dim
 | heritage_sportswear | Sportswear | Nike | Shein | Narrative vs. Economic |
 | ethical_finance | Financial services | Aspiration | Chase | Ideological vs. Economic |
 
-*Notes*: Differentiator column identifies the primary SBT dimension on which Brand A is differentiated relative to Brand B. Pairs selected to occupy similar price-function positions but differ on specific dimensional channels. Canonical brand profiles for Hermes, Patagonia, and Erewhon are fixed in Zharnikov (2026a).
+*Notes*: Differentiator column identifies the primary SBT dimension on which Brand A is differentiated relative to Brand B. Pairs selected to occupy similar price-function positions but differ on specific dimensional channels. Canonical brand profiles for Hermès, Patagonia, and Erewhon are fixed in Zharnikov (2026a).
 
-Three SBT canonical brands (Hermes, Patagonia, Erewhon) appear across the pairs, grounding the analysis in established spectral profiles (Zharnikov, 2026a). The remaining brands were selected based on published positioning analyses and expert assessment to ensure clear dimensional differentiation across categories.
+Three SBT canonical brands (Hermès, Patagonia, Erewhon) appear across the pairs, grounding the analysis in established spectral profiles (Zharnikov, 2026a). The remaining brands were selected based on published positioning analyses and expert assessment to ensure clear dimensional differentiation across categories.
 
 Table 2b: Local brand pairs (Run 3), testing the conditional metamerism hypothesis. All pairs are from small non-English-speaking markets where the local brand's English-language training-data footprint is minimal.
 
@@ -293,7 +293,7 @@ Table 2: Brand pairs used in confirmatory runs (Runs 2--3). Global pairs span te
 | 2 | Aman / Four Seasons | Boutique hotel |
 | 2 | Hendricks / Gordons | Craft spirits |
 | 2 | Nike / Shein | Heritage sportswear |
-| 2 | Hermes / Coach | Luxury fashion |
+| 2 | Hermès / Coach | Luxury fashion |
 | 2 | Glossier / Maybelline | Indie beauty |
 | 3 | AlphaMega / Carrefour | Grocery (Cyprus) |
 | 3 | Laima / Lindt | Confectionery (Latvia) |
@@ -562,7 +562,7 @@ A brand's emission profile at time $t$ is a vector encoding signal intensity acr
 
 $$\mathbf{e}(t) = [e_1(t), e_2(t), e_3(t), e_4(t), e_5(t), e_6(t), e_7(t), e_8(t)]$$
 
-where each $e_i(t) \in [0, 10]$ represents the intensity of the brand's signal on dimension $i$ at time $t$. Canonical profiles for the brands used in this study (Hermes, Patagonia, Erewhon) are established in Zharnikov (2026a) and held fixed across all analyses.
+where each $e_i(t) \in [0, 10]$ represents the intensity of the brand's signal on dimension $i$ at time $t$. Canonical profiles for the brands used in this study (Hermès, Patagonia, Erewhon) are established in Zharnikov (2026a) and held fixed across all analyses.
 
 ### A.4 Observer Spectral Profile and Cohorts
 
