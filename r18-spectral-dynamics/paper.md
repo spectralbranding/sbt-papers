@@ -588,7 +588,7 @@ Zharnikov, D. (2026e). Spectral metamerism in brand perception: Projection bound
 
 Zharnikov, D. (2026j). Non-ergodic brand perception: Diffusion dynamics on multi-dimensional perceptual manifolds. Working Paper. https://doi.org/10.5281/zenodo.18945659
 
-Zharnikov, D. (2026o). Non-ergodic brand perception: Why cross-sectional brand tracking systematically misrepresents individual trajectories. Working Paper. https://doi.org/10.5281/zenodo.19138860
+Zharnikov, D. (2026o). From order effects to absorbing states: A non-ergodic framework for multi-dimensional brand perception dynamics. Working Paper. https://doi.org/10.5281/zenodo.19138860
 
 Zharnikov, D. (2026p). Dimensional activation and cohort divergence: A longitudinal decomposition of purpose advertising effectiveness. Working Paper. https://doi.org/10.5281/zenodo.19139258
 

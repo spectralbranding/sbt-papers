@@ -1,0 +1,1143 @@
+{
+  "n_calls_total": 240,
+  "n_errors": 0,
+  "model": "gpt-4o-mini",
+  "provider": "openai",
+  "temperature": 0.7,
+  "reps_per_condition": 16,
+  "n_brands": 5,
+  "n_categories": 3,
+  "n_tests": 40,
+  "bonferroni_alpha": 0.00125,
+  "n_significant_after_bonferroni": 11,
+  "largest_effect": {
+    "focal": "Hermes",
+    "dimension": "Narrative",
+    "F": 33.142678347934904,
+    "df1": 2,
+    "df2": 45,
+    "p": 1.4204503608800622e-09,
+    "max_pairwise_d": 3.274657653759572,
+    "pairwise_ds": [
+      {
+        "pair": "direct-vs-adjacent",
+        "d": 1.7547985346961386
+      },
+      {
+        "pair": "direct-vs-distant",
+        "d": 0.6512030563201832
+      },
+      {
+        "pair": "adjacent-vs-distant",
+        "d": 3.274657653759572
+      }
+    ],
+    "n_per_group": [
+      16,
+      16,
+      16
+    ]
+  },
+  "all_anovas": [
+    {
+      "focal": "Hermes",
+      "dimension": "Semiotic",
+      "F": 3.4615384615384617,
+      "df1": 2,
+      "df2": 45,
+      "p": 0.0399642896679633,
+      "max_pairwise_d": 0.6577935144802719,
+      "pairwise_ds": [
+        {
+          "pair": "direct-vs-adjacent",
+          "d": 0.6577935144802719
+        },
+        {
+          "pair": "adjacent-vs-distant",
+          "d": 0.6577935144802719
+        }
+      ],
+      "n_per_group": [
+        16,
+        16,
+        16
+      ]
+    },
+    {
+      "focal": "Hermes",
+      "dimension": "Narrative",
+      "F": 33.142678347934904,
+      "df1": 2,
+      "df2": 45,
+      "p": 1.4204503608800622e-09,
+      "max_pairwise_d": 3.274657653759572,
+      "pairwise_ds": [
+        {
+          "pair": "direct-vs-adjacent",
+          "d": 1.7547985346961386
+        },
+        {
+          "pair": "direct-vs-distant",
+          "d": 0.6512030563201832
+        },
+        {
+          "pair": "adjacent-vs-distant",
+          "d": 3.274657653759572
+        }
+      ],
+      "n_per_group": [
+        16,
+        16,
+        16
+      ]
+    },
+    {
+      "focal": "Hermes",
+      "dimension": "Ideological",
+      "F": 0.9999999999999997,
+      "df1": 2,
+      "df2": 45,
+      "p": 0.37590643161676823,
+      "max_pairwise_d": 0.35355339059327373,
+      "pairwise_ds": [
+        {
+          "pair": "direct-vs-distant",
+          "d": 0.35355339059327373
+        },
+        {
+          "pair": "adjacent-vs-distant",
+          "d": 0.35355339059327373
+        }
+      ],
+      "n_per_group": [
+        16,
+        16,
+        16
+      ]
+    },
+    {
+      "focal": "Hermes",
+      "dimension": "Experiential",
+      "F": 0.35989434294519046,
+      "df1": 2,
+      "df2": 45,
+      "p": 0.6997400552058616,
+      "max_pairwise_d": 0.3999407539062143,
+      "pairwise_ds": [
+        {
+          "pair": "direct-vs-adjacent",
+          "d": 0.3999407539062143
+        },
+        {
+          "pair": "direct-vs-distant",
+          "d": 0.14524613892479302
+        },
+        {
+          "pair": "adjacent-vs-distant",
+          "d": 0.12411368327177927
+        }
+      ],
+      "n_per_group": [
+        16,
+        16,
+        16
+      ]
+    },
+    {
+      "focal": "Hermes",
+      "dimension": "Social",
+      "F": 10.237430167597767,
+      "df1": 2,
+      "df2": 45,
+      "p": 0.00021657259191372553,
+      "max_pairwise_d": 1.8421079180984223,
+      "pairwise_ds": [
+        {
+          "pair": "direct-vs-adjacent",
+          "d": 0.984046563677237
+        },
+        {
+          "pair": "direct-vs-distant",
+          "d": 0.5423261445466404
+        },
+        {
+          "pair": "adjacent-vs-distant",
+          "d": 1.8421079180984223
+        }
+      ],
+      "n_per_group": [
+        16,
+        16,
+        16
+      ]
+    },
+    {
+      "focal": "Hermes",
+      "dimension": "Economic",
+      "F": 1.5502793296089388,
+      "df1": 2,
+      "df2": 45,
+      "p": 0.22330777753939884,
+      "max_pairwise_d": 0.6418687682813888,
+      "pairwise_ds": [
+        {
+          "pair": "direct-vs-adjacent",
+          "d": 0.2894803666599244
+        },
+        {
+          "pair": "direct-vs-distant",
+          "d": 0.3535533905932738
+        },
+        {
+          "pair": "adjacent-vs-distant",
+          "d": 0.6418687682813888
+        }
+      ],
+      "n_per_group": [
+        16,
+        16,
+        16
+      ]
+    },
+    {
+      "focal": "Hermes",
+      "dimension": "Cultural",
+      "F": 17.093023255813957,
+      "df1": 2,
+      "df2": 45,
+      "p": 3.0039084661153885e-06,
+      "max_pairwise_d": 2.198983018531401,
+      "pairwise_ds": [
+        {
+          "pair": "direct-vs-adjacent",
+          "d": 1.4450149417283484
+        },
+        {
+          "pair": "direct-vs-distant",
+          "d": 0.6002450479987809
+        },
+        {
+          "pair": "adjacent-vs-distant",
+          "d": 2.198983018531401
+        }
+      ],
+      "n_per_group": [
+        16,
+        16,
+        16
+      ]
+    },
+    {
+      "focal": "Hermes",
+      "dimension": "Temporal",
+      "F": 21.48906560636183,
+      "df1": 2,
+      "df2": 45,
+      "p": 2.810930286031235e-07,
+      "max_pairwise_d": 1.9606142569263363,
+      "pairwise_ds": [
+        {
+          "pair": "direct-vs-adjacent",
+          "d": 1.9606142569263363
+        },
+        {
+          "pair": "direct-vs-distant",
+          "d": 0.07071067811865475
+        },
+        {
+          "pair": "adjacent-vs-distant",
+          "d": 1.950835210235019
+        }
+      ],
+      "n_per_group": [
+        16,
+        16,
+        16
+      ]
+    },
+    {
+      "focal": "IKEA",
+      "dimension": "Semiotic",
+      "F": 2.577349678925861,
+      "df1": 2,
+      "df2": 45,
+      "p": 0.08715049375599636,
+      "max_pairwise_d": 0.727799479328913,
+      "pairwise_ds": [
+        {
+          "pair": "direct-vs-adjacent",
+          "d": 0.45553785218581644
+        },
+        {
+          "pair": "direct-vs-distant",
+          "d": 0.4212826518649864
+        },
+        {
+          "pair": "adjacent-vs-distant",
+          "d": 0.727799479328913
+        }
+      ],
+      "n_per_group": [
+        16,
+        16,
+        16
+      ]
+    },
+    {
+      "focal": "IKEA",
+      "dimension": "Narrative",
+      "F": 4.208760852407261,
+      "df1": 2,
+      "df2": 45,
+      "p": 0.02110559106442022,
+      "max_pairwise_d": 0.9910836486407324,
+      "pairwise_ds": [
+        {
+          "pair": "direct-vs-adjacent",
+          "d": 0.7941793398210677
+        },
+        {
+          "pair": "direct-vs-distant",
+          "d": 0.27291947839445524
+        },
+        {
+          "pair": "adjacent-vs-distant",
+          "d": 0.9910836486407324
+        }
+      ],
+      "n_per_group": [
+        16,
+        16,
+        16
+      ]
+    },
+    {
+      "focal": "IKEA",
+      "dimension": "Ideological",
+      "F": 0.3300921187308086,
+      "df1": 2,
+      "df2": 45,
+      "p": 0.7205833461975677,
+      "max_pairwise_d": 0.28705243970224925,
+      "pairwise_ds": [
+        {
+          "pair": "direct-vs-adjacent",
+          "d": 0.22910333023627116
+        },
+        {
+          "pair": "direct-vs-distant",
+          "d": 0.035273130885164386
+        },
+        {
+          "pair": "adjacent-vs-distant",
+          "d": 0.28705243970224925
+        }
+      ],
+      "n_per_group": [
+        16,
+        16,
+        16
+      ]
+    },
+    {
+      "focal": "IKEA",
+      "dimension": "Experiential",
+      "F": 0.0,
+      "df1": 2,
+      "df2": 45,
+      "p": 1.0,
+      "max_pairwise_d": 0.0,
+      "pairwise_ds": [
+        {
+          "pair": "direct-vs-adjacent",
+          "d": 0.0
+        },
+        {
+          "pair": "direct-vs-distant",
+          "d": 0.0
+        },
+        {
+          "pair": "adjacent-vs-distant",
+          "d": 0.0
+        }
+      ],
+      "n_per_group": [
+        16,
+        16,
+        16
+      ]
+    },
+    {
+      "focal": "IKEA",
+      "dimension": "Social",
+      "F": 10.972639807576668,
+      "df1": 2,
+      "df2": 45,
+      "p": 0.00013139609646947332,
+      "max_pairwise_d": 1.6821545375958142,
+      "pairwise_ds": [
+        {
+          "pair": "direct-vs-adjacent",
+          "d": 0.5673284994147719
+        },
+        {
+          "pair": "direct-vs-distant",
+          "d": 1.0192154242057423
+        },
+        {
+          "pair": "adjacent-vs-distant",
+          "d": 1.6821545375958142
+        }
+      ],
+      "n_per_group": [
+        16,
+        16,
+        16
+      ]
+    },
+    {
+      "focal": "IKEA",
+      "dimension": "Economic",
+      "F": 4.007288263382759,
+      "df1": 2,
+      "df2": 45,
+      "p": 0.02502576631073217,
+      "max_pairwise_d": 0.8214701458349731,
+      "pairwise_ds": [
+        {
+          "pair": "direct-vs-adjacent",
+          "d": 0.09663686097878997
+        },
+        {
+          "pair": "direct-vs-distant",
+          "d": 0.7830013968561833
+        },
+        {
+          "pair": "adjacent-vs-distant",
+          "d": 0.8214701458349731
+        }
+      ],
+      "n_per_group": [
+        16,
+        16,
+        16
+      ]
+    },
+    {
+      "focal": "IKEA",
+      "dimension": "Cultural",
+      "F": 0.12239347234814142,
+      "df1": 2,
+      "df2": 45,
+      "p": 0.8850936837965696,
+      "max_pairwise_d": 0.17628768552085067,
+      "pairwise_ds": [
+        {
+          "pair": "direct-vs-adjacent",
+          "d": 0.17628768552085067
+        },
+        {
+          "pair": "direct-vs-distant",
+          "d": 0.13983519516791093
+        },
+        {
+          "pair": "adjacent-vs-distant",
+          "d": 0.0
+        }
+      ],
+      "n_per_group": [
+        16,
+        16,
+        16
+      ]
+    },
+    {
+      "focal": "IKEA",
+      "dimension": "Temporal",
+      "F": 0.8369098712446352,
+      "df1": 2,
+      "df2": 45,
+      "p": 0.4396745284005644,
+      "max_pairwise_d": 0.48977801760329664,
+      "pairwise_ds": [
+        {
+          "pair": "direct-vs-adjacent",
+          "d": 0.3141404312187716
+        },
+        {
+          "pair": "direct-vs-distant",
+          "d": 0.11785113019775793
+        },
+        {
+          "pair": "adjacent-vs-distant",
+          "d": 0.48977801760329664
+        }
+      ],
+      "n_per_group": [
+        16,
+        16,
+        16
+      ]
+    },
+    {
+      "focal": "Patagonia",
+      "dimension": "Semiotic",
+      "F": 5.52072800808898,
+      "df1": 2,
+      "df2": 45,
+      "p": 0.007174965723515055,
+      "max_pairwise_d": 0.9743547036924464,
+      "pairwise_ds": [
+        {
+          "pair": "direct-vs-adjacent",
+          "d": 0.12852946661581635
+        },
+        {
+          "pair": "direct-vs-distant",
+          "d": 0.9097563826373074
+        },
+        {
+          "pair": "adjacent-vs-distant",
+          "d": 0.9743547036924464
+        }
+      ],
+      "n_per_group": [
+        16,
+        16,
+        16
+      ]
+    },
+    {
+      "focal": "Patagonia",
+      "dimension": "Narrative",
+      "F": 4.099045346062052,
+      "df1": 2,
+      "df2": 45,
+      "p": 0.023153707143827387,
+      "max_pairwise_d": 1.081830102876732,
+      "pairwise_ds": [
+        {
+          "pair": "direct-vs-adjacent",
+          "d": 0.2459346884189824
+        },
+        {
+          "pair": "direct-vs-distant",
+          "d": 0.7851358838853205
+        },
+        {
+          "pair": "adjacent-vs-distant",
+          "d": 1.081830102876732
+        }
+      ],
+      "n_per_group": [
+        16,
+        16,
+        16
+      ]
+    },
+    {
+      "focal": "Patagonia",
+      "dimension": "Ideological",
+      "F": 5.524390243902439,
+      "df1": 2,
+      "df2": 45,
+      "p": 0.007153898733190156,
+      "max_pairwise_d": 1.228932045559371,
+      "pairwise_ds": [
+        {
+          "pair": "direct-vs-adjacent",
+          "d": 0.7095442471573096
+        },
+        {
+          "pair": "direct-vs-distant",
+          "d": 0.41286141192238524
+        },
+        {
+          "pair": "adjacent-vs-distant",
+          "d": 1.228932045559371
+        }
+      ],
+      "n_per_group": [
+        16,
+        16,
+        16
+      ]
+    },
+    {
+      "focal": "Patagonia",
+      "dimension": "Experiential",
+      "F": 10.298562027784548,
+      "df1": 2,
+      "df2": 45,
+      "p": 0.00020766991133656676,
+      "max_pairwise_d": 1.5791149974572571,
+      "pairwise_ds": [
+        {
+          "pair": "direct-vs-adjacent",
+          "d": 1.2196734422726123
+        },
+        {
+          "pair": "direct-vs-distant",
+          "d": 0.2304814979156181
+        },
+        {
+          "pair": "adjacent-vs-distant",
+          "d": 1.5791149974572571
+        }
+      ],
+      "n_per_group": [
+        16,
+        16,
+        16
+      ]
+    },
+    {
+      "focal": "Patagonia",
+      "dimension": "Social",
+      "F": 0.2571658183766408,
+      "df1": 2,
+      "df2": 45,
+      "p": 0.7743686154541152,
+      "max_pairwise_d": 0.21524880100025254,
+      "pairwise_ds": [
+        {
+          "pair": "direct-vs-adjacent",
+          "d": 0.0
+        },
+        {
+          "pair": "direct-vs-distant",
+          "d": 0.21524880100025254
+        },
+        {
+          "pair": "adjacent-vs-distant",
+          "d": 0.2088931871468374
+        }
+      ],
+      "n_per_group": [
+        16,
+        16,
+        16
+      ]
+    },
+    {
+      "focal": "Patagonia",
+      "dimension": "Economic",
+      "F": 5.725404732254048,
+      "df1": 2,
+      "df2": 45,
+      "p": 0.0060911970606022225,
+      "max_pairwise_d": 1.1946482603760062,
+      "pairwise_ds": [
+        {
+          "pair": "direct-vs-adjacent",
+          "d": 0.37657233394007533
+        },
+        {
+          "pair": "direct-vs-distant",
+          "d": 0.7805436726042203
+        },
+        {
+          "pair": "adjacent-vs-distant",
+          "d": 1.1946482603760062
+        }
+      ],
+      "n_per_group": [
+        16,
+        16,
+        16
+      ]
+    },
+    {
+      "focal": "Patagonia",
+      "dimension": "Cultural",
+      "F": 0.9020044543429844,
+      "df1": 2,
+      "df2": 45,
+      "p": 0.41296463329776245,
+      "max_pairwise_d": 0.4131954422455712,
+      "pairwise_ds": [
+        {
+          "pair": "direct-vs-adjacent",
+          "d": 0.4131954422455712
+        },
+        {
+          "pair": "direct-vs-distant",
+          "d": 0.31231931192476087
+        },
+        {
+          "pair": "adjacent-vs-distant",
+          "d": 0.12695463169978735
+        }
+      ],
+      "n_per_group": [
+        16,
+        16,
+        16
+      ]
+    },
+    {
+      "focal": "Patagonia",
+      "dimension": "Temporal",
+      "F": 1.1132606401688359,
+      "df1": 2,
+      "df2": 45,
+      "p": 0.33736306902095015,
+      "max_pairwise_d": 0.4858806668142741,
+      "pairwise_ds": [
+        {
+          "pair": "direct-vs-adjacent",
+          "d": 0.030504443804328152
+        },
+        {
+          "pair": "direct-vs-distant",
+          "d": 0.4858806668142741
+        },
+        {
+          "pair": "adjacent-vs-distant",
+          "d": 0.44166015698443517
+        }
+      ],
+      "n_per_group": [
+        16,
+        16,
+        16
+      ]
+    },
+    {
+      "focal": "Erewhon",
+      "dimension": "Semiotic",
+      "F": 0.8076923076923077,
+      "df1": 2,
+      "df2": 45,
+      "p": 0.4522441347462453,
+      "max_pairwise_d": 0.3535533905932738,
+      "pairwise_ds": [
+        {
+          "pair": "direct-vs-adjacent",
+          "d": 0.2773500981126145
+        },
+        {
+          "pair": "direct-vs-distant",
+          "d": 0.3535533905932738
+        },
+        {
+          "pair": "adjacent-vs-distant",
+          "d": 0.35355339059327373
+        }
+      ],
+      "n_per_group": [
+        16,
+        16,
+        16
+      ]
+    },
+    {
+      "focal": "Erewhon",
+      "dimension": "Narrative",
+      "F": 0.9999999999999998,
+      "df1": 2,
+      "df2": 45,
+      "p": 0.3759064316167681,
+      "max_pairwise_d": 0.35355339059327373,
+      "pairwise_ds": [
+        {
+          "pair": "direct-vs-adjacent",
+          "d": 0.35355339059327373
+        },
+        {
+          "pair": "direct-vs-distant",
+          "d": 0.35355339059327373
+        }
+      ],
+      "n_per_group": [
+        16,
+        16,
+        16
+      ]
+    },
+    {
+      "focal": "Erewhon",
+      "dimension": "Ideological",
+      "F": 8.717662801070473,
+      "df1": 2,
+      "df2": 45,
+      "p": 0.0006310997225995527,
+      "max_pairwise_d": 1.5162323742393402,
+      "pairwise_ds": [
+        {
+          "pair": "direct-vs-adjacent",
+          "d": 0.848402457479833
+        },
+        {
+          "pair": "direct-vs-distant",
+          "d": 0.5501984066277216
+        },
+        {
+          "pair": "adjacent-vs-distant",
+          "d": 1.5162323742393402
+        }
+      ],
+      "n_per_group": [
+        16,
+        16,
+        16
+      ]
+    },
+    {
+      "focal": "Erewhon",
+      "dimension": "Experiential",
+      "F": 2.0689655172413794,
+      "df1": 2,
+      "df2": 45,
+      "p": 0.13816628004797832,
+      "max_pairwise_d": 0.7231015260621871,
+      "pairwise_ds": [
+        {
+          "pair": "direct-vs-adjacent",
+          "d": 0.7231015260621871
+        },
+        {
+          "pair": "direct-vs-distant",
+          "d": 0.23127154887392007
+        },
+        {
+          "pair": "adjacent-vs-distant",
+          "d": 0.5321960432009913
+        }
+      ],
+      "n_per_group": [
+        16,
+        16,
+        16
+      ]
+    },
+    {
+      "focal": "Erewhon",
+      "dimension": "Social",
+      "F": 2.208487084870849,
+      "df1": 2,
+      "df2": 45,
+      "p": 0.12163769730241548,
+      "max_pairwise_d": 0.7631697505241485,
+      "pairwise_ds": [
+        {
+          "pair": "direct-vs-adjacent",
+          "d": 0.36833807537552493
+        },
+        {
+          "pair": "direct-vs-distant",
+          "d": 0.3683838190198257
+        },
+        {
+          "pair": "adjacent-vs-distant",
+          "d": 0.7631697505241485
+        }
+      ],
+      "n_per_group": [
+        16,
+        16,
+        16
+      ]
+    },
+    {
+      "focal": "Erewhon",
+      "dimension": "Economic",
+      "F": 1.0714285714285714,
+      "df1": 2,
+      "df2": 45,
+      "p": 0.3510943276821774,
+      "max_pairwise_d": 0.5175491695067657,
+      "pairwise_ds": [
+        {
+          "pair": "direct-vs-adjacent",
+          "d": 0.5175491695067657
+        },
+        {
+          "pair": "direct-vs-distant",
+          "d": 0.0
+        },
+        {
+          "pair": "adjacent-vs-distant",
+          "d": 0.5175491695067657
+        }
+      ],
+      "n_per_group": [
+        16,
+        16,
+        16
+      ]
+    },
+    {
+      "focal": "Erewhon",
+      "dimension": "Cultural",
+      "F": 8.95130611209739,
+      "df1": 2,
+      "df2": 45,
+      "p": 0.0005336250791406652,
+      "max_pairwise_d": 1.3315741808602017,
+      "pairwise_ds": [
+        {
+          "pair": "direct-vs-adjacent",
+          "d": 1.3315741808602017
+        },
+        {
+          "pair": "direct-vs-distant",
+          "d": 0.02635719524884426
+        },
+        {
+          "pair": "adjacent-vs-distant",
+          "d": 1.2772705036823795
+        }
+      ],
+      "n_per_group": [
+        16,
+        16,
+        16
+      ]
+    },
+    {
+      "focal": "Erewhon",
+      "dimension": "Temporal",
+      "F": 18.807106598984774,
+      "df1": 2,
+      "df2": 45,
+      "p": 1.1575751915535725e-06,
+      "max_pairwise_d": 1.679549198397891,
+      "pairwise_ds": [
+        {
+          "pair": "direct-vs-adjacent",
+          "d": 1.679549198397891
+        },
+        {
+          "pair": "direct-vs-distant",
+          "d": 0.4128614119223852
+        },
+        {
+          "pair": "adjacent-vs-distant",
+          "d": 1.6191492504713743
+        }
+      ],
+      "n_per_group": [
+        16,
+        16,
+        16
+      ]
+    },
+    {
+      "focal": "Tesla",
+      "dimension": "Semiotic",
+      "F": 1.7484662576687109,
+      "df1": 2,
+      "df2": 45,
+      "p": 0.18565664070101015,
+      "max_pairwise_d": 0.5362617710750641,
+      "pairwise_ds": [
+        {
+          "pair": "direct-vs-adjacent",
+          "d": 0.35355339059327373
+        },
+        {
+          "pair": "direct-vs-distant",
+          "d": 0.5362617710750641
+        },
+        {
+          "pair": "adjacent-vs-distant",
+          "d": 0.5175491695067657
+        }
+      ],
+      "n_per_group": [
+        16,
+        16,
+        16
+      ]
+    },
+    {
+      "focal": "Tesla",
+      "dimension": "Narrative",
+      "F": 2.1428571428571423,
+      "df1": 2,
+      "df2": 45,
+      "p": 0.1291391195464937,
+      "max_pairwise_d": 0.5175491695067657,
+      "pairwise_ds": [
+        {
+          "pair": "direct-vs-distant",
+          "d": 0.5175491695067657
+        },
+        {
+          "pair": "adjacent-vs-distant",
+          "d": 0.5175491695067657
+        }
+      ],
+      "n_per_group": [
+        16,
+        16,
+        16
+      ]
+    },
+    {
+      "focal": "Tesla",
+      "dimension": "Ideological",
+      "F": 17.227696166248656,
+      "df1": 2,
+      "df2": 45,
+      "p": 2.782951194086626e-06,
+      "max_pairwise_d": 2.2852862100959985,
+      "pairwise_ds": [
+        {
+          "pair": "direct-vs-adjacent",
+          "d": 2.2852862100959985
+        },
+        {
+          "pair": "direct-vs-distant",
+          "d": 1.737566868551471
+        },
+        {
+          "pair": "adjacent-vs-distant",
+          "d": 0.21945059822314614
+        }
+      ],
+      "n_per_group": [
+        16,
+        16,
+        16
+      ]
+    },
+    {
+      "focal": "Tesla",
+      "dimension": "Experiential",
+      "F": 8.747965589397815,
+      "df1": 2,
+      "df2": 45,
+      "p": 0.0006174720932777257,
+      "max_pairwise_d": 1.4028129351351049,
+      "pairwise_ds": [
+        {
+          "pair": "direct-vs-adjacent",
+          "d": 0.8088851538642525
+        },
+        {
+          "pair": "direct-vs-distant",
+          "d": 1.4028129351351049
+        },
+        {
+          "pair": "adjacent-vs-distant",
+          "d": 0.7358449431976782
+        }
+      ],
+      "n_per_group": [
+        16,
+        16,
+        16
+      ]
+    },
+    {
+      "focal": "Tesla",
+      "dimension": "Social",
+      "F": 1.0000000000000002,
+      "df1": 2,
+      "df2": 45,
+      "p": 0.37590643161676796,
+      "max_pairwise_d": 0.35355339059327373,
+      "pairwise_ds": [
+        {
+          "pair": "direct-vs-distant",
+          "d": 0.35355339059327373
+        },
+        {
+          "pair": "adjacent-vs-distant",
+          "d": 0.35355339059327373
+        }
+      ],
+      "n_per_group": [
+        16,
+        16,
+        16
+      ]
+    },
+    {
+      "focal": "Tesla",
+      "dimension": "Economic",
+      "F": 1.0789980732177264,
+      "df1": 2,
+      "df2": 45,
+      "p": 0.34856706599859955,
+      "max_pairwise_d": 0.486237925804197,
+      "pairwise_ds": [
+        {
+          "pair": "direct-vs-adjacent",
+          "d": 0.23354968324845685
+        },
+        {
+          "pair": "direct-vs-distant",
+          "d": 0.486237925804197
+        },
+        {
+          "pair": "adjacent-vs-distant",
+          "d": 0.29049644688706333
+        }
+      ],
+      "n_per_group": [
+        16,
+        16,
+        16
+      ]
+    },
+    {
+      "focal": "Tesla",
+      "dimension": "Cultural",
+      "F": 1.0731764157539039,
+      "df1": 2,
+      "df2": 45,
+      "p": 0.3505090730622803,
+      "max_pairwise_d": 0.468288167878314,
+      "pairwise_ds": [
+        {
+          "pair": "direct-vs-adjacent",
+          "d": 0.4415444361427002
+        },
+        {
+          "pair": "direct-vs-distant",
+          "d": 0.468288167878314
+        },
+        {
+          "pair": "adjacent-vs-distant",
+          "d": 0.025020859411221806
+        }
+      ],
+      "n_per_group": [
+        16,
+        16,
+        16
+      ]
+    },
+    {
+      "focal": "Tesla",
+      "dimension": "Temporal",
+      "F": 2.041213063763608,
+      "df1": 2,
+      "df2": 45,
+      "p": 0.14172487207264733,
+      "max_pairwise_d": 0.9231861823449954,
+      "pairwise_ds": [
+        {
+          "pair": "direct-vs-adjacent",
+          "d": 0.9231861823449954
+        },
+        {
+          "pair": "direct-vs-distant",
+          "d": 0.2434346520848071
+        },
+        {
+          "pair": "adjacent-vs-distant",
+          "d": 0.3818388837271186
+        }
+      ],
+      "n_per_group": [
+        16,
+        16,
+        16
+      ]
+    }
+  ]
+}

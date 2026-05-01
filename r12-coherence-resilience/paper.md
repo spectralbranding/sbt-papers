@@ -502,7 +502,7 @@ Zharnikov, D. (2026j). Non-ergodic brand perception: Diffusion dynamics on multi
 
 Zharnikov, D. (2026k). Spectral resource allocation: Demand-driven investment in multi-dimensional brand space. Working Paper. https://doi.org/10.5281/zenodo.19009268
 
-Zharnikov, D. (2026o). Non-ergodic brand perception: Why cross-sectional brand tracking systematically misrepresents individual trajectories. Working Paper. https://doi.org/10.5281/zenodo.19138860
+Zharnikov, D. (2026o). From order effects to absorbing states: A non-ergodic framework for multi-dimensional brand perception dynamics. Working Paper. https://doi.org/10.5281/zenodo.19138860
 
 Zharnikov, D. (2026ac). Spectral immunity: Why brand portfolio interference disappears for AI observers. Working Paper. https://doi.org/10.5281/zenodo.19765401
 

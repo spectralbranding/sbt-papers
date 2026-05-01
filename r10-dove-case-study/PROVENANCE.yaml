@@ -42,6 +42,23 @@ provenance:
         at Portfolio Management; Wedel/Kamakura 2000 at Limitation 2; Hermann DOI
         normalized. 10 new references added. Cover-letter self-cite rate note added.
         Both SSOT files updated.
+    - version: "2.4.0"
+      date: "2026-05-01"
+      description: >
+        Layer 2 Option A applied. Venue retargeted JBR(B)→JBM(A). Abstract softened:
+        "first formal application of SBT eight-dimension decomposition to a longitudinal
+        purpose-campaign case study" bounded form; "within the case set considered here"
+        hedge added. Contribution bullet 1 expanded with ~50w single-case acknowledgment
+        citing Eisenhardt (1989) and Yin (2018). Four citation corrections: (B1) Hydock
+        et al. (2022) JMR fabricated → Hydock, Paharia & Weber (2022) JPPM correct DOI;
+        (B2) Korschun et al. (2024) JCR fabricated → Guha, Korschun & Larsen Andras (2026)
+        JBR DOI 10.1016/j.jbusres.2025.115861; (B3) Mirzaei et al. (2023) JBR wrong
+        authors → Anisimova, Lee & Ramos da Silva (2025) JMM; (B4) Reczek et al. (2023)
+        unverifiable → removed from body and ref list. DCI scale unified: 35.6→.357,
+        baseline 25.0→.250, .194 vs 25.0 mean→.194 vs .250 baseline; Notes block added
+        to Empirical Anchor section. Ref list alphabetized (Anisimova, Eisenhardt, Guha,
+        Yin added; Mirzaei, Reczek, old Hydock, old Korschun removed). Word count 10,333→
+        10,482; ref count 49→50; self-cite 8/50=16.0%.
 
   forks:
     - id: "fork-2026-03-20-zenodo"
@@ -71,6 +88,6 @@ provenance:
       decision_date: "2026-04-10"
 
   target_venue:
-    journal: "[withheld]"
+    journal: "Journal of Brand Management"
     status: "pre-submission"
     fallbacks: []
