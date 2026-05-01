@@ -1,10 +1,10 @@
 # Non-Ergodic Brand Perception: Diffusion Dynamics on Multi-Dimensional Perceptual Manifolds
 
-**Zharnikov, Dmitri**
+**Dmitry Zharnikov**
 
-ORCID: 0009-0009-3389-2329
+ORCID: 0009-0000-6893-9231
 
-Working Paper v1.1.0 — March 2026
+Working Paper v1.1.0 — March 2026 (Updated May 2026)
 
 https://doi.org/10.5281/zenodo.18945659
 
@@ -323,13 +323,13 @@ The absorbed process has generator $\frac{1}{2} \Delta_{S^7}$ restricted to the 
 
 The eigenfunctions of the Dirichlet Laplacian on the positive octant $S^7_+$ are the spherical harmonics that vanish on all coordinate hyperplanes. These are the harmonics with odd parity in each coordinate -- that is, spherical harmonics $Y$ satisfying $Y(x_1, \ldots, -x_i, \ldots, x_8) = -Y(x_1, \ldots, x_i, \ldots, x_8)$ for each $i = 1, \ldots, 8$. By the symmetry of the sphere under coordinate reflections, these form a subset of the full spectral decomposition.
 
-The first Dirichlet eigenfunction on $S^7_+$ is:
+The first Dirichlet eigenfunction on $S^7_+$ is the candidate:
 
 $$\phi_1(x) = \prod_{i=1}^{8} x_i$$
 
-This function is positive on $S^7_+$, vanishes on $\partial S^7_+$, and satisfies $-\Delta_{S^7} \phi_1 = \lambda_{D,1} \phi_1$. To compute $\lambda_{D,1}$, we note that $\phi_1(x) = \prod_{i=1}^8 x_i$ is a homogeneous harmonic polynomial of degree 8 in $\mathbb{R}^8$ (since $\Delta_{\mathbb{R}^8} \phi_1 = 0$). Its restriction to the unit sphere is therefore a single spherical harmonic of degree 8.
+This function is positive on $S^7_+$, vanishes on $\partial S^7_+$, and satisfies $-\Delta_{S^7} \phi_1 = \lambda_{D,1} \phi_1$. To compute $\lambda_{D,1}$, we note that $\phi_1(x) = \prod_{i=1}^8 x_i$ is a homogeneous harmonic polynomial of degree 8 in $\mathbb{R}^8$ (since $\Delta_{\mathbb{R}^8} \phi_1 = 0$). Its restriction to the unit sphere is therefore a single spherical harmonic of degree 8. We treat $\phi_1$ as the leading candidate for the first Dirichlet eigenfunction; formal verification of minimality on the non-smooth octant (whose boundary has corners) requires specialist spectral-geometry analysis beyond the scope of this paper (see Limitations, item 5).
 
-The eigenvalues of $-\Delta_{S^{n-1}}$ for spherical harmonics of degree $\ell$ are $\lambda_\ell = \ell(\ell + n - 2)$. For the product function $\phi_1$ on $S^7_+$, we have $n=8$ and $\ell=8$, which gives the exact first Dirichlet eigenvalue:
+The eigenvalues of $-\Delta_{S^{n-1}}$ for spherical harmonics of degree $\ell$ are $\lambda_\ell = \ell(\ell + n - 2)$. For the product function $\phi_1$ on $S^7_+$, we have $n=8$ and $\ell=8$, which gives the first Dirichlet eigenvalue computed via homogeneous harmonic polynomials:
 
 $$\lambda_{D,1}(S^7_+) = 8(8 + 8 - 2) = 112$$
 
@@ -418,11 +418,11 @@ where $\phi_1$ is the first Dirichlet eigenfunction (Cattiaux et al. 2009, Defin
 
 $$\tau_{\text{mix}}(S^7_+) \asymp \frac{2}{(\lambda_{D,2} - \lambda_{D,1}) \sigma_0^2}$$
 
-*The second Dirichlet eigenfunction has degree 10 (the next even degree after 8 for which a polynomial odd in all 8 variables exists), yielding $\lambda_{D,2} = 10(10+6) = 160$. The spectral gap is $160 - 112 = 48$. This yields a mixing time faster than on the full sphere:*
+*The second Dirichlet eigenfunction candidate has degree 10 (the next even degree after 8 for which a polynomial odd in all 8 variables exists), yielding $\lambda_{D,2} = 10(10+6) = 160$. The spectral gap is $160 - 112 = 48$. This yields a mixing time faster than on the full sphere:*
 
 $$\tau_{\text{mix}}(S^7_+) \asymp \frac{2}{48 \sigma_0^2} < \frac{2}{7 \sigma_0^2} = \tau_{\text{mix}}(S^7)$$
 
-*Proof.* The mixing time to the QSD is controlled by the spectral gap of the Dirichlet Laplacian. The spectral gap is $\lambda_{D,2} - \lambda_{D,1}$, where $\lambda_{D,2}$ is the second Dirichlet eigenvalue. The first Dirichlet eigenfunction is $\phi_1(x) = \prod_{j=1}^8 x_j$ (degree 8). The next eigenfunction must also be odd in every variable; since the sum of 8 odd positive integers is always even, no degree-9 candidate exists. The degree-10 eigenspace is spanned by the harmonic projections $H_i(x) = x_i^3 \prod_{j \neq i} x_j - \frac{1}{8}|x|^2 \prod_j x_j$ for $i = 1, \ldots, 8$, subject to $\sum_i H_i = 0$, giving multiplicity 7. The resulting gap is $160 - 112 = 48$.
+*Proof.* The mixing time to the QSD is controlled by the spectral gap of the Dirichlet Laplacian. The spectral gap is $\lambda_{D,2} - \lambda_{D,1}$, where $\lambda_{D,2}$ is the second Dirichlet eigenvalue. The first Dirichlet eigenfunction candidate is $\phi_1(x) = \prod_{j=1}^8 x_j$ (degree 8). The next eigenfunction must also be odd in every variable; since the sum of 8 odd positive integers is always even, no degree-9 candidate exists. The degree-10 eigenspace candidate is spanned by the harmonic projections $H_i(x) = x_i^3 \prod_{j \neq i} x_j - \frac{1}{8}|x|^2 \prod_j x_j$ for $i = 1, \ldots, 8$, subject to $\sum_i H_i = 0$, giving multiplicity 7. The resulting gap is $160 - 112 = 48$. Both eigenfunction constructions follow from homogeneous harmonic polynomials restricted to $S^7_+$; a rigorous proof of their minimality on the octant's non-smooth boundary is reserved for specialist verification.
 
 This comparison shows that $\tau_{\text{mix}}(S^7_+) \asymp 2/(48\sigma_0^2)$ is strictly smaller than the full sphere mixing time $2/(7\sigma_0^2)$. $\square$
 
@@ -565,7 +565,7 @@ $$\circ dX_t = \left[ \mu(X_t, t) + \sum_{i=1}^{8} \mu_{\text{reflect},i}(X_t) \
 
 with the boundary condition: $X_{t,i} = 0$ remains absorbing. That is, if any component reaches exactly zero, the process is killed as before. The reflecting drift prevents approach to zero from above but cannot resurrect a dimension that has fully collapsed.
 
-This construction follows the theory of sticky-reflecting diffusions (Grothaus, Muller, & Vo 2021), where a diffusion process exhibits reflecting behavior near a boundary but absorption at the boundary itself. The key mathematical distinction is between the *open* near-death zone $(0, \epsilon)$, where the reflecting drift operates, and the *closed* boundary $\{0\}$, which remains absorbing.
+This construction relies on the analytic theory of degenerate diffusion generators on bounded domains: essential m-dissipativity arguments (Eisenhuth and Grothaus 2021) provide existence and regularity for weak solutions to the corresponding Kolmogorov backward equation, which gives well-posedness of the modified SDE. The semi-permeable behavior --- reflecting drift on the *open* near-death zone $(0, \epsilon)$ combined with absorbing dynamics at the *closed* boundary $\{0\}$ --- is induced by the construction itself: the open zone preserves probability mass while the boundary remains a killing set.
 
 #### 7.5.2 The Near-Death Zone
 
@@ -906,7 +906,7 @@ The main results are:
 
 3. **Mixing time bounds (Theorem 3).** The Dirichlet spectral gap on $S^7_+$ is $\lambda_{D,2} - \lambda_{D,1} = 160 - 112 = 48$, yielding a mixing time to the quasi-stationary distribution of $\tau_{\text{mix}} \asymp 2/(48\sigma_0^2)$, which is *faster* than the mixing time $2/(7\sigma_0^2)$ on the full sphere. Conditioned on survival, perception trajectories are confined to the deep interior of the octant, reducing the effective volume and accelerating convergence to the QSD.
 
-4. **Non-ergodicity (Theorem 4).** For the absorbed process, time averages and ensemble averages diverge with probability 1. To the best of our knowledge, this is the first formal proof of time-ensemble divergence in the context of multi-dimensional brand perception, establishing the brand-perception analogue of Peters' (2019) ergodicity economics and extending Molenaar's (2004; 2009) idiographic critique to a specific dynamical mechanism on a Riemannian manifold.
+4. **Non-ergodicity (Theorem 4).** For the absorbed process, time averages and ensemble averages diverge with probability 1. This provides a brand-perception realization of time-ensemble divergence via absorbing-boundary geometry, establishing a mechanism that is independent of Peters' (2019) multiplicative framing and that extends Molenaar's (2004; 2009) idiographic critique to a specific dynamical system on a Riemannian manifold. The result itself is a specific instance of the general quasi-stationary-distribution literature (Collet, Martinez, & San Martin 2013); the contribution is its derivation in the brand-perception context with concrete parameter values.
 
 5. **Absorption risk nearly matches coherence grades (Proposition 7).** For the five case-study brands, the absorption risk ordering Tesla > Erewhon > IKEA > Patagonia > Hermès aligns with the SBT coherence grading, with one inversion: IKEA (A-) has higher absorption risk than Patagonia (B+), because identity coherence generates stronger directional drift than signal coherence. Coherent signaling creates effective drift that opposes absorption; incoherent signaling creates effective diffusion that accelerates it.
 
@@ -958,7 +958,7 @@ Dick, A. S., & Basu, K. (1994). Customer loyalty: Toward an integrated conceptua
 
 Doctor, J. N., Wakker, P. P., & Wang, T. V. (2020). Economists' views on the ergodicity problem. *Nature Physics*, 16(12), 1168.
 
-Grothaus, M., Muller, M., & Vo, T.-G. (2021). Sticky-reflecting diffusion as a Wasserstein gradient flow. arXiv:2111.06384.
+Eisenhuth, B., and Grothaus, M. (2021). Essential m-dissipativity for generators of infinite-dimensional non-linear degenerate diffusion processes. arXiv:2104.04561 [math.FA].
 
 Hegselmann, R., & Krause, U. (2002). Opinion dynamics and bounded confidence: Models, analysis and simulation. *Journal of Artificial Societies and Social Simulation*, 5(3), 2.
 
