@@ -3,14 +3,14 @@
 spec_version: "0.1.0"
 
 meta:
-  title: "Cohort Boundaries in High-Dimensional Perception Space: A Concentration of Measure Analysis"
+  title: "Geometric Necessity of Fuzzy Cohort Boundaries: A Concentration Analysis of the 7-Simplex"
   authors:
     - name: "Zharnikov, Dmitry"
       orcid: "0009-0000-6893-9231"
       affiliation: "Independent Researcher"
   doi: "10.5281/zenodo.18945477"
-  date: "2026-01-01"
-  version: "1.0"
+  date: "2026-05-01"
+  version: "1.1"
   venue: "Working Paper (Zenodo)"
   license: "CC-BY-4.0"
   keywords:
@@ -54,10 +54,11 @@ claims:
     statement: >
       Distance concentration on Delta^7: for m i.i.d. draws from Dir(1,...,1)
       on Delta^7, the Euclidean distance contrast ratio max_d / min_d equals
-      approximately 8.35 at n=8 (versus 5801 at n=2). The coefficient of
-      variation CV_8 = 0.271. Distances concentrate but the regime at n=8 is
-      transitional — clustering is possible but inherently noisy.
-    formal: "R_8 = max_j ||w_j - w_0|| / min_j ||w_j - w_0|| approx 8.35 (Monte Carlo, m=1000)"
+      approximately 7.46 at n=8 (versus ~10^4 at n=2). The coefficient of
+      variation CV_8 = 0.247. Distances concentrate but the regime at n=8 is
+      transitional — clustering is possible but inherently noisy. Reproducible
+      from code/r3_concentration_mc.py (seed 42).
+    formal: "R_8 = max_j ||w_j - w_0|| / min_j ||w_j - w_0|| approx 7.46 (Monte Carlo, 10^4 trials, m=1000)"
     testable: true
     tested_in_paper: true
     status: supported
@@ -67,10 +68,11 @@ claims:
     type: theorem
     statement: >
       Boundary fuzziness on Delta^7: for any partition of Delta^(n-1) into k >= 2
-      convex regions, the boundary volume fraction satisfies BVF(n, delta) >= 1 - (1-delta)^n.
-      At n=8, delta=0.10: BVF(8, 0.10) >= 57.0%. A majority of the observer-weight
+      convex regions, the boundary volume fraction satisfies BVF(n, delta) >= 1 - (1-delta)^(n-1)
+      where n-1 is the intrinsic dimension of Delta^(n-1).
+      At n=8, delta=0.10: BVF(8, 0.10) >= 52.2%. A majority of the observer-weight
       space lies within 10% relative distance of a cohort boundary.
-    formal: "BVF(n, delta) >= 1 - (1-delta)^n; BVF(8, 0.10) = 57.0%"
+    formal: "BVF(n, delta) >= 1 - (1-delta)^(n-1); BVF(8, 0.10) = 52.2%"
     testable: true
     tested_in_paper: true
     status: supported
@@ -86,7 +88,7 @@ claims:
       (b) discrete assignment is unstable, and (c) the fuzzy-cohort claim of
       Zharnikov (2026a) is a geometric necessity, not merely an empirical observation,
       under Dirichlet-uniform observer-weight distributions on Delta^7.
-    formal: "BVF(8, 0.10) = 57.0% > 50%, SD[X_i] = 0.1102 implies typical perturbations cross boundaries"
+    formal: "BVF(8, 0.10) >= 52.2% > 50%, SD[X_i] = 0.1102 implies typical perturbations cross boundaries"
     testable: true
     tested_in_paper: true
     status: supported
@@ -130,9 +132,9 @@ acceptance:
   - claim_id: "T1"
     criterion: >
       Monte Carlo simulation with m >= 1000 draws from Dir(1,...,1) on Delta^7
-      produces distance contrast ratio in the range [7.0, 10.0] and mean Euclidean
-      distance approximately 0.37, consistent with the theoretical prediction
-      sqrt(7/36) = 0.4410 (Jensen inequality accounts for the gap).
+      produces distance contrast ratio in the range [6.5, 10.0] and mean Euclidean
+      distance approximately 0.42, consistent with the theoretical prediction
+      sqrt(7/36) = 0.4410 (Jensen inequality accounts for the small gap).
     falsification: >
       Empirical contrast ratio substantially exceeds 20 or falls below 2 for n=8,
       indicating the Dirichlet-uniform model is a poor null model for observer
@@ -141,11 +143,11 @@ acceptance:
   - claim_id: "T2"
     criterion: >
       For k=4 convex partition of Delta^7 (obtained by k-means on 10^5 Dirichlet
-      samples), the empirical fraction of points within relative distance 0.10
-      of the nearest boundary is >= 57.0% (matching or exceeding the theoretical
-      lower bound).
+      samples), the empirical fraction of points within absolute Euclidean distance
+      0.10 of the nearest perpendicular bisector is >= 52.2% (matching or exceeding
+      the theoretical lower bound from intrinsic-dimension exponent n-1=7).
     falsification: >
-      Empirical boundary volume fraction is substantially below 57.0% at delta=0.10
+      Empirical boundary volume fraction is substantially below 52.2% at delta=0.10
       for k >= 2 convex partitions on Delta^7, contradicting Theorem 2.
 
   - claim_id: "C1"
@@ -162,8 +164,8 @@ acceptance:
   - claim_id: "P3"
     criterion: >
       For concentrated Dirichlet(alpha,...,alpha) with alpha = 5, boundary volume
-      fraction at delta=0.10 is reduced by approximately 5^(-7/2) = 0.036 relative
-      to the alpha=1 case, yielding BVF ~ 2% (vs. 57%).
+      fraction at delta=0.10 is reduced by approximately 5^(-7/2) = 0.0036 relative
+      to the alpha=1 case, yielding BVF ~ 0.2% (vs. 52.2%).
     falsification: >
       Boundary volume fraction does not decrease systematically with alpha,
       contradicting the worst-case property of the uniform distribution.
@@ -180,13 +182,15 @@ data:
 
 code:
   available: true
-  url: "https://github.com/spectralbranding/sbt-framework"
+  url: "https://github.com/spectralbranding/sbt-papers/tree/main/r3-cohort-boundaries/code"
   notes: >
-    Monte Carlo simulations (distance ratio and boundary proximity) are
-    described in the paper with sufficient precision for independent
-    reproduction. The sbt-framework repository implements observer cohort
-    clustering using the Fisher-Rao metric on Delta^7, directly operationalizing
-    the theoretical results of this paper.
+    Monte Carlo simulations are published as r3_concentration_mc.py in the
+    code/ subdirectory of this paper's sbt-papers folder. The script reproduces
+    the figures in Tables 2, 5, and 7 (Euclidean and Fisher-Rao distance
+    statistics, and the boundary volume fractions at n=8, k=4) with seed 42.
+    The sbt-framework repository (https://github.com/spectralbranding/sbt-framework)
+    implements observer cohort clustering using the Fisher-Rao metric on Delta^7,
+    directly operationalizing the theoretical results of this paper.
 
 replication:
   feasible: true
