@@ -1,30 +1,38 @@
 # Geometric Approaches to Brand Perception: A Critical Survey and Research Agenda
 
-**Dmitry Zharnikov**
+**Zharnikov, D.**
 
-Working Paper -- March 2026; updated April 2026
+Working Paper v1.0.0 — March 2026
+
+https://doi.org/10.5281/zenodo.18945217
 
 ---
 
-## Abstract
+**Abstract**
 
-This paper presents a systematic survey of geometric and topological methods applied to brand perception, consumer behavior, and marketing science. Drawing on literature from multidimensional scaling, characteristics-space economics, conceptual spaces in cognitive science, non-Euclidean perceptual geometry, individual-differences modeling, topological data analysis, quantum cognition, opinion dynamics, and non-ergodicity research, we map the intellectual landscape at the intersection of formal geometry and brand theory. Our central finding is that a significant gap persists: no existing framework combines high-dimensional geometric structure, a generative signal mechanism, observer heterogeneity, and non-ergodic temporal dynamics into an integrated theory of brand perception. Multidimensional scaling, the dominant spatial method in marketing, typically operates in two to three dimensions and offers no generative mechanism. Conceptual spaces provide geometric foundations for cognition but lack temporal dynamics and observer-specific processing. Non-Euclidean perceptual geometry demonstrates that Euclidean distance is insufficient for modeling perception, yet this insight has not penetrated brand theory. Non-ergodicity has been formalized in psychology, decision science, and evolutionary biology, but has never been applied to brand perception or consumer loyalty trajectories. We propose six open problems at this intersection---concerning formal metrics on brand space, projection bounds, concentration of measure, positioning capacity, specification impossibility, and diffusion dynamics on perceptual manifolds---and argue that Spectral Brand Theory (Zharnikov, 2026a) represents a candidate framework positioned to address this compound gap.
+This paper surveys geometric and topological methods applied to brand perception across ten intellectual traditions: multidimensional scaling, characteristics-space economics, conceptual spaces, non-Euclidean perceptual geometry, individual-differences modeling, topological data analysis, quantum cognition, opinion dynamics, and non-ergodicity research. The central finding is that a significant compound gap persists: no existing framework combines high-dimensional geometric structure, a generative signal mechanism, observer heterogeneity, and non-ergodic temporal dynamics into an integrated theory of brand perception. Multidimensional scaling operates in two to three dimensions and offers no generative mechanism. Conceptual spaces provide geometric foundations for cognition but lack temporal dynamics and observer-specific processing. Non-Euclidean perceptual geometry demonstrates that Euclidean distance is insufficient for modeling perception, yet this insight has not penetrated brand theory. Non-ergodicity has been formalized in psychology, decision science, and evolutionary biology, but has never been applied to brand perception. Six open problems with formal mathematical statements — concerning formal metrics on brand space, projection bounds, concentration of measure, positioning capacity, specification impossibility, and diffusion dynamics on perceptual manifolds — constitute a research agenda for mathematical brand theory; companion papers (Zharnikov 2026d–h, 2026j) resolve each.
 
 **Keywords**: brand perception, geometric methods, multidimensional scaling, conceptual spaces, non-ergodicity, high-dimensional geometry, Spectral Brand Theory
 
----
+**JEL Classification**: M31, C65, D91
 
-## 1. Introduction
+**MSC Classification**: 91B42, 51K05, 62P20
+
+**arXiv Subject Classes**: cs.LG, stat.ML
+
+---
 
 Brand theory, as it has developed over the past four decades, is strikingly under-formalized. The foundational frameworks that guide both academic research and professional practice---Aaker's (1991) brand equity model, Keller's (1993) customer-based brand equity pyramid, Kapferer's (2008, 4th ed.) brand identity prism---are taxonomic rather than mathematical. They identify components, propose relationships, and offer measurement instruments, but they do not specify the formal structure of the space in which brands exist, the metric by which brand differences should be measured, or the dynamical laws governing how brand perceptions evolve over time. A recent systematic review confirmed that "no model allows comprehensive evaluation of brand equity" in a formally rigorous sense (Chernikov, 2024).
 
 This absence of mathematical structure stands in sharp contrast to adjacent fields where geometric methods have produced transformative insights. In perception science, the discovery that human perceptual space is non-Euclidean---"at best Riemannian" (Todd, Oomes, Koenderink, and Kappers, 2001) and possibly non-Riemannian (Bujack, Teti, Miller, Caffrey, and Turton, 2022)---has reshaped how researchers model visual and sensory experience. In cognitive science, Gardenfors's (2000) conceptual spaces framework demonstrated that natural concepts correspond to convex regions in geometric quality-dimension spaces, providing a formal bridge between perception and categorization. In economics, Lancaster's (1966) characteristics theory recast consumer choice as navigation through an n-dimensional attribute space, while Hotelling's (1929) spatial competition model placed firms on a geometric line. In physics and machine learning, high-dimensional geometry has revealed counterintuitive phenomena---concentration of measure, the curse of dimensionality, the Johnson-Lindenstrauss projection lemma---that fundamentally alter how systems behave as dimensions increase.
 
-Meanwhile, the non-ergodicity revolution initiated by Peters (2019) has shown that the distinction between time averages and ensemble averages, long understood in statistical mechanics, has profound consequences for economics, psychology, and decision-making. When dynamics are multiplicative or absorbing states exist, population-level statistics (ensemble averages) systematically diverge from the trajectories of individual agents (time averages). This insight has been formalized in psychology by Molenaar (2004, 2009), tested experimentally by Meder, Rabe, Morville, and Tobler (2021) and Skjold, Brewer, and Peters (2024), and applied to evolutionary biology and organizational theory---but never to brand perception.
+Meanwhile, the non-ergodicity revolution initiated by Peters (2019) has shown that the distinction between time averages and ensemble averages, long understood in statistical mechanics, has profound consequences for economics, psychology, and decision-making. When dynamics are multiplicative or absorbing states exist, population-level statistics (ensemble averages) systematically diverge from the trajectories of individual agents (time averages). This insight has been formalized in psychology by Molenaar (2004) and Molenaar and Campbell (2009), tested experimentally by Meder et al. (2021) and Skjold, Brewer, and Peters (2024), and applied to evolutionary biology and organizational theory---but never to brand perception.
 
-The purpose of this survey is to map these disparate literatures systematically and identify the precise intellectual gap that lies at their intersection. We argue that the gap is not merely an oversight but a structural consequence of disciplinary boundaries: marketing scholars have not engaged with high-dimensional geometry, while mathematicians and perception scientists have not examined brand phenomena. Spectral Brand Theory (SBT), proposed in Zharnikov (2026a), is a recent framework that models brands as eight-dimensional signal-emission profiles processed by heterogeneous observers through a generative pipeline with non-ergodic temporal dynamics. This survey establishes the intellectual genealogy for that framework and articulates six open problems that constitute a research agenda for mathematical brand theory.
+The purpose of this survey is to map these disparate literatures systematically and identify the precise intellectual gap that lies at their intersection. The gap largely reflects disciplinary boundaries: marketing scholars have not engaged with high-dimensional geometry, while mathematicians and perception scientists have not examined brand phenomena. Spectral Brand Theory (SBT), proposed in Zharnikov (2026a), is a recent framework that models brands as eight-dimensional signal-emission profiles processed by heterogeneous observers through a generative pipeline with non-ergodic temporal dynamics. This survey establishes the intellectual genealogy for that framework and articulates six open problems that constitute a research agenda for mathematical brand theory.
 
 The remainder of the paper is organized as follows. Sections 2 through 10 survey the relevant literatures in detail. Section 11 synthesizes these findings through a classification matrix assessing each tradition against six criteria. Section 12 formulates the research agenda as six specific open problems with mathematical formulations. Section 13 concludes.
+
+This paper makes three contributions to the literature. First, it provides the first compound-gap diagnosis at the ten-tradition intersection of formal geometry and brand theory, identifying not one missing ingredient but the absence of their simultaneous combination. Second, it articulates six open problems as formal mathematical statements, converting qualitative observations about missing structure into precise targets for mathematical brand theory. Third, it positions Spectral Brand Theory (Zharnikov 2026a) as a candidate framework with a companion-paper resolution for each open problem (Zharnikov 2026d, 2026e, 2026f, 2026g, 2026h, 2026j), situating SBT within the established mathematical literature it draws upon.
 
 ## 2. Multidimensional Scaling in Marketing
 
@@ -78,7 +86,7 @@ Lancaster's framework, despite its geometric elegance, embeds several restrictiv
 
 Second, the theory is static. Products have fixed positions in characteristics space; there is no mechanism for how perceptions of those positions evolve over time, how repeated exposure modifies the perceived attribute vector, or how signals decay. Third, the characteristics space is implicitly Euclidean and flat: distances are computed using the standard Euclidean metric, with no consideration of whether perceptual distances might be curved, dimension-dependent, or non-additive.
 
-Peli and Nooteboom (1999) explored what happens as the number of characteristics dimensions grows in the context of organizational ecology, demonstrating that high-dimensional resource spaces create geometric "pockets" that sustain specialist niches. This is one of the few studies to examine the geometric consequences of dimensionality in a characteristics-space framework, but it focused on organizational populations rather than individual brand perception.
+Peli and Nooteboom (1999) explored what happens as the number of characteristics dimensions grows in the context of organizational ecology, demonstrating that high-dimensional resource spaces create geometric "pockets" that sustain specialist niches. This is one of the few studies to examine the geometric consequences of dimensionality in a characteristics-space framework, but it focused on organizational populations rather than individual brand perception. The spectral resource allocation framework of Zharnikov (2026k) directly extends the characteristics-space tradition by deriving demand-driven investment rules in multi-dimensional brand space, providing a formal bridge between Lancaster's geometric perspective and optimal brand resource allocation.
 
 ## 4. Conceptual Spaces
 
@@ -94,7 +102,7 @@ This convexity criterion has deep implications. It provides a geometric characte
 
 Several researchers have applied conceptual-spaces ideas to marketing contexts. Warglien and Gartner (2004) used conceptual spaces to model how brand meanings are constructed and communicated. Aisbett and Gibbon (2001) explored the mathematical properties of concept combination in conceptual spaces, with implications for how consumers combine brand attributes into overall judgments.
 
-More recently, word embedding models from natural language processing (Mikolov, Sutskever, Chen, Corrado, and Dean, 2013) have been interpreted as high-dimensional conceptual spaces that encode brand meaning from textual data. Brands that are described in similar contexts end up close together in the embedding space, providing a data-driven approximation to the conceptual-spaces framework. This geometric perspective has been formalized at scale in geometric deep learning (Bronstein, Bruna, Cohen, and Velickovic, 2021), which demonstrates that the most powerful modern neural architectures succeed precisely because they encode the geometric symmetries of their input domains---a principle that extends naturally to any high-dimensional perception space.
+More recently, word embedding models from natural language processing (Mikolov, Sutskever, Chen, Corrado, and Dean, 2013) have been interpreted as high-dimensional conceptual spaces that encode brand meaning from textual data. Brands that are described in similar contexts end up close together in the embedding space, providing a data-driven approximation to the conceptual-spaces framework.
 
 Vogt (2006) and Steels (2012) explored how conceptual spaces evolve through agent interaction, using "discrimination games" in which agents negotiate the boundaries of concepts through communicative encounters. This provides a rudimentary temporal dynamic but remains focused on concept formation rather than brand perception specifically.
 
@@ -106,11 +114,13 @@ However, four significant gaps limit its applicability to brand perception:
 
 *No temporal dynamics*. Conceptual spaces are essentially static. While Gardenfors discusses conceptual change, the framework provides no formal model of how perceptions evolve over time in response to signal encounters, no mechanism for signal decay or memory effects, and no account of path dependence.
 
-*No observer heterogeneity*. The framework assumes a universal conceptual space shared by all cognitive agents. Individual differences in how quality dimensions are weighted, how domains are organized, or how concepts are bounded are not modeled. Recent work on "personalized value spaces" (Bechberger, 2019) has begun to address this, but the field remains in its early stages.
+*No observer heterogeneity*. The framework assumes a universal conceptual space shared by all cognitive agents. Individual differences in how quality dimensions are weighted, how domains are organized, or how concepts are bounded are not modeled. Recent work on "personalized value spaces" (Bechberger, 2023) has begun to address this, but the field remains in its early stages.
 
 *No generative mechanism*. Conceptual spaces describe the structure of concepts but not how concepts are created through the processing of signals. There is no analog to a brand emitting signals along multiple dimensions, those signals being filtered through observer-specific processing, and the result accumulating into a perception.
 
 *Euclidean assumption*. Gardenfors assumes that quality dimensions are equipped with Euclidean or at least metric structure. This is a strong assumption given the evidence that human perceptual space is non-Euclidean (see Section 6).
+
+Criterion P — the convexity claim — also receives important cross-domain empirical support. Regier, Kay, and Khetarpal (2007) demonstrated that color naming systems across 110 languages carve perceptual color space into regions that are near-optimally structured relative to a Voronoi tessellation of a perceptually uniform color space. This provides direct empirical evidence that natural perceptual categories do approximate convex Voronoi cells, lending support to Gardenfors's central theoretical claim beyond cognitive-science laboratory settings and extending it to a linguistically universal phenomenon. The result also suggests that conceptual spaces are not merely a useful theoretical fiction but may correspond to actual constraints imposed by the structure of perceptual space on categorization.
 
 ## 5. Non-Euclidean Perceptual Geometry
 
@@ -122,11 +132,9 @@ Evidence from perceptual psychology challenges this assumption at every level. T
 
 This "at best" qualification proved prescient. Bujack, Teti, Miller, Caffrey, and Turton (2022), publishing in *Proceedings of the National Academy of Sciences*, demonstrated that perceptual color space is not merely non-Euclidean but non-Riemannian. They identified a "principle of diminishing returns" along the luminance axis: large color differences appear perceptually smaller than the sum of the small perceptual steps composing them. In Riemannian geometry, global distances are computed by integrating local metric elements along geodesics; the diminishing-returns finding violates this principle, implying that the metric structure of perceptual color space cannot be captured by any Riemannian manifold.
 
-At the neural level, recent work confirms that the geometric expansion observed in perception is not a statistical artifact but a structural property of how sensory information is encoded. Ma, Jiang, Liu, and Liu (2025) showed that as signals travel from primary sensory cortex to higher perceptual areas, the brain systematically transforms a 3-dimensional sensory manifold into a 7-dimensional perceptual manifold. This dimensionality expansion directly supports the hypothesis that brand perception---which integrates signals across semiotic, narrative, ideological, experiential, social, economic, cultural, and temporal channels---inhabits a high-dimensional geometric space rather than the low-dimensional Euclidean space assumed by classical perceptual mapping.
-
 ### 5.2 Implications for Brand Perception
 
-If the geometry of perceptual space is non-Euclidean even for the relatively simple case of color (three dimensions: hue, saturation, luminance), the assumption that multi-attribute brand perception lives in a Euclidean space is almost certainly wrong. Brand perception involves dimensions that are more abstract, more culturally constructed, and more context-dependent than color. The semiotic, narrative, ideological, experiential, social, economic, cultural, and temporal dimensions proposed in SBT (Zharnikov, 2026a) are each likely to have their own metric structure, and the combined space is unlikely to be a simple product of Euclidean dimensions.
+If the geometry of perceptual space is non-Euclidean even for the relatively simple case of color (three dimensions: hue, saturation, luminance), the assumption that multi-attribute brand perception lives in a Euclidean space is almost certainly wrong. Brand perception involves dimensions that are more abstract, more culturally constructed, and more context-dependent than color. The Semiotic, Narrative, Ideological, Experiential, Social, Economic, Cultural, and Temporal dimensions proposed in SBT (Zharnikov, 2026a) are each likely to have their own metric structure, and the combined space is unlikely to be a simple product of Euclidean dimensions.
 
 The practical implication is that Euclidean distance between brand profiles---the default in perceptual mapping, conjoint analysis, and MDS---may systematically misrepresent the perceptual differences that consumers actually experience. Large repositioning moves may appear smaller than the sum of incremental steps. Differences along some dimensions may be compressed relative to others in ways that depend on the observer's current position in the space.
 
@@ -136,7 +144,13 @@ A candidate framework for modeling non-Euclidean perceptual spaces is informatio
 
 If brand perceptions are modeled as probability distributions over possible brand states (rather than as point estimates), information geometry provides a natural metric structure. The Fisher-Rao metric has desirable properties: it is invariant under sufficient statistics, it is the unique Riemannian metric invariant under Markov embeddings (Cencov, 1982), and it naturally accounts for the fact that differences in parameters have different perceptual significance depending on where one is in parameter space.
 
-Information geometry has been applied to neuroscience (Amari, Nagaoka, and Harada, 2000) and signal processing (Costa, Hero, and Vignat, 2005), but not to brand perception or marketing. This represents an opportunity for formal brand theory.
+Information geometry has been applied to neuroscience (Amari and Nagaoka, 2000) and signal processing (Costa, Hero, and Vignat, 2003), but not to brand perception or marketing. This represents an opportunity for formal brand theory.
+
+### 5.4 The Tversky Asymmetry Critique
+
+Any geometric account of perception must confront Tversky's (1977) foundational challenge to metric distance models. In "Features of Similarity," Tversky demonstrated experimentally that human similarity judgments routinely violate the axioms of a metric space: judgments are asymmetric (North Korea is judged more similar to China than China is to North Korea), and they can violate the triangle inequality (Jamaica is judged similar to Cuba and Cuba similar to the Soviet Union, yet Jamaica is judged dissimilar to the Soviet Union). These violations arise because similarity is computed over discrete, qualitatively weighted feature sets, not over continuous dimensions — a more prominent object serves as a better referent than a less prominent one, producing asymmetry.
+
+Tversky's critique has clear force against models that apply Euclidean distance to discrete feature-set representations. Its force against continuous multi-attribute dimensional models is more limited. When brand perceptions are represented as continuous weight vectors over ordered quality dimensions — as in INDSCAL, conceptual spaces, and SBT — the natural asymmetry between a prominent and a peripheral brand arises from different positions on the dimensions, not from an asymmetric distance function per se. Moreover, information geometry explicitly accommodates asymmetric divergences: the KL-divergence and the family of f-divergences on the statistical manifold are not symmetric, and the Fisher-Rao metric can be approached from asymmetric divergence geometry (Amari, 2016). A formally adequate metric for brand space should either prove symmetry holds empirically for the chosen representation, or adopt a framework — such as directed divergences on the manifold — that accommodates Tversky's documented asymmetries without abandoning geometric structure.
 
 ## 6. Individual Differences and Dimension Weighting
 
@@ -144,11 +158,13 @@ Information geometry has been applied to neuroscience (Amari, Nagaoka, and Harad
 
 The Individual Differences Scaling model (INDSCAL), introduced by Carroll and Chang (1970), was the first systematic attempt to model individual differences in perceptual space within a spatial framework. INDSCAL assumes that all individuals share a common set of perceptual dimensions but differ in the weights they assign to each dimension. Formally, the distance between stimuli $i$ and $j$ for subject $k$ is:
 
-$$d_{ijk} = \left[ \sum_{r=1}^{R} w_{kr} (x_{ir} - x_{jr})^2 \right]^{1/2}$$
+$$d_{ijk} = \left[ \sum_{r=1}^{R} w_{kr} (x_{ir} - x_{jr})^2 \right]^{1/2} \tag{1}$$
 
 where $x_{ir}$ is the coordinate of stimulus $i$ on dimension $r$, and $w_{kr} \geq 0$ is the weight that subject $k$ assigns to dimension $r$. High weight means the dimension is perceptually salient for that individual; zero weight means the dimension is ignored.
 
 INDSCAL was a significant conceptual advance because it formalized the idea that the same stimulus configuration could be perceived differently by different people. The weight vector $\mathbf{w}_k = (w_{k1}, \ldots, w_{kR})$ is a profile of dimensional salience---a precursor to what SBT calls the observer spectral profile. However, INDSCAL's weights are static (estimated from a single set of judgments), non-negative but otherwise unconstrained (no normalization requirement), and estimated within the MDS framework's typical two-to-three dimensions.
+
+A direct cognitive-psychology precursor to INDSCAL dimension weighting is Nosofsky's (1986) Generalized Context Model (GCM). The GCM formalizes how observers assign differential attention weights to perceptual dimensions when classifying stimuli: a stimulus is categorized by its summed similarity to all stored exemplars, where similarity is an exponential decay function of weighted Minkowski distance. The GCM demonstrates that selective attention — expressed as dimension weights — critically shapes classification boundaries. This is precisely the mechanism that INDSCAL operationalizes at the group level and that SBT generalizes to multi-dimensional brand signal processing.
 
 ### 6.2 Latent-Class Unfolding Models
 
@@ -170,6 +186,10 @@ The dimension-weighting literature has established, both theoretically and empir
 
 If observer profiles are normalized vectors (weights summing to one), they live on the probability simplex $\Delta^{R-1}$. If they are non-negative vectors of arbitrary magnitude, they live in the positive orthant $\mathbb{R}^R_+$. Each choice of space has different geometric properties---different notions of distance, different curvature, different concentration behavior. The dimension-weighting literature has treated weights as statistical parameters to be estimated rather than as geometric objects with intrinsic structure.
 
+A deeper mathematical motivation for dimension-weighted distance comes from Shepard's (1987) universal law of generalization. Shepard demonstrated that across species and stimulus domains, the probability of generalizing a learned response from one stimulus to another falls off exponentially with psychological distance: $P(\text{generalize}) \sim e^{-c \cdot d}$, where $d$ is the weighted distance in a Minkowski space and $c$ is a scaling parameter. This exponential decay is not an empirical regularity but a mathematical consequence of the structure of psychological space under a Bayesian model of stimulus uncertainty. Problem 6 of this survey — diffusion dynamics on perceptual manifolds — can be understood as formalizing the temporal implications of Shepard's exponential generalization: if generalization decays exponentially with distance, repeated signal encounters produce a diffusion process whose decay rate is governed by the local curvature of the perceptual manifold.
+
+A further neuroscience parallel is Representational Similarity Analysis (RSA), introduced by Kriegeskorte, Mur, and Bandettini (2008). RSA characterizes the representational geometry of neural populations by constructing dissimilarity matrices from multi-voxel activation patterns and comparing those matrices across brain regions, species, and computational models. Structurally, RSA operationalizes observer-specific geometry: different brain regions and different individuals carry different representational geometries for the same stimuli. This is precisely the observer-heterogeneity problem that the dimension-weighting literature addresses statistically and that SBT addresses theoretically. RSA does not satisfy the compound gap criteria on its own — it is neural-measurement methodology without a generative signal model or non-ergodic dynamics — but it demonstrates that observer-specific representational geometry is not merely a theoretical construct: it can be measured at the neural level with well-developed tools.
+
 ## 7. Topological Data Analysis in Marketing
 
 ### 7.1 TDA Fundamentals
@@ -182,11 +202,11 @@ Persistence diagrams and barcodes provide compact visual summaries of topologica
 
 TDA has found applications in several domains adjacent to marketing. In financial markets, Yen and Cheong (2021) used Betti numbers and Euler characteristics to detect structural changes associated with market crashes in the Singapore and Taiwan stock exchanges. During crashes, the market topology fragments---persistent topological features disappear as correlations between assets break down.
 
-In social network analysis, persistent homology has been applied to detect community structure, identify influential nodes, and track the evolution of network topology over time. In biology, TDA has been used to analyze protein structures, neural population activity, and genomic data; a comprehensive recent review demonstrates TDA's power for single-cell biological data, where persistent homology reveals topological structure in high-dimensional cell-state spaces that conventional clustering methods cannot recover (Hernandez-Lemus 2025).
+In social network analysis, persistent homology has been applied to detect community structure, identify influential nodes, and track the evolution of network topology over time. In biology, TDA has been used to analyze protein structures, neural population activity, and genomic data.
 
 ### 7.3 The Marketing Gap
 
-Despite these applications, TDA has seen minimal adoption in marketing science. A comprehensive search reveals no published applications of persistent homology, Mapper algorithms, or other TDA methods to brand perception, consumer segmentation, or competitive positioning. The closest applications are in customer network analysis, where hypergraph models (Yen and Cheong, 2021) have been used to represent multi-item consumer collections, and in sentiment analysis, where topological features of text data have been explored.
+Despite these applications, TDA has seen minimal adoption in marketing science. We are not aware of published applications of persistent homology, Mapper algorithms, or other TDA methods to brand perception, consumer segmentation, or competitive positioning. The closest applications are in customer network analysis, where hypergraph models (Yen and Cheong, 2021) have been used to represent multi-item consumer collections, and in sentiment analysis, where topological features of text data have been explored.
 
 This represents a missed opportunity. Brand perception data---multi-attribute ratings of multiple brands by multiple consumers---are naturally high-dimensional point clouds. TDA could reveal structural features of brand-perception spaces that are invisible to MDS: holes in the perceptual map (regions of brand space that no existing brand occupies), loops (cyclical patterns in brand evolution), and higher-dimensional voids (structural gaps in multi-attribute coverage). The coordinate-free nature of TDA would also sidestep the difficult question of which distance metric is "correct" for brand perception.
 
@@ -228,7 +248,7 @@ The study of opinion dynamics examines how the beliefs of interacting agents evo
 
 In the HK model, each agent holds a real-valued opinion $x_i(t) \in [0, 1]$, and at each time step, updates by averaging the opinions of all agents within a confidence bound $\epsilon$:
 
-$$x_i(t+1) = \frac{1}{|N_i(t)|} \sum_{j \in N_i(t)} x_j(t), \quad N_i(t) = \{j : |x_j(t) - x_i(t)| \leq \epsilon\}$$
+$$x_i(t+1) = \frac{1}{|N_i(t)|} \sum_{j \in N_i(t)} x_j(t), \quad N_i(t) = \{j : |x_j(t) - x_i(t)| \leq \epsilon\} \tag{2}$$
 
 The model produces three qualitative regimes depending on $\epsilon$: consensus (large $\epsilon$), polarization (intermediate $\epsilon$), and fragmentation (small $\epsilon$). These regimes have natural analogs in brand perception: consensus corresponds to a market where all consumers perceive brands similarly, fragmentation corresponds to highly heterogeneous observer cohorts.
 
@@ -266,7 +286,7 @@ This result has profound implications. "Risk aversion" in expected utility theor
 
 Molenaar (2004) published what he termed a "manifesto on psychology as idiographic science," arguing that the standard practice of inferring individual psychological processes from group-level (between-person) data is valid only if the psychological system is ergodic---that is, only if the within-person process is stationary (its statistical properties do not change over time) and the population is homogeneous (all individuals share the same process). Since psychological processes are inherently non-stationary and populations are inherently heterogeneous, the ergodic assumption almost never holds.
 
-Molenaar (2009) formalized this further and proposed person-specific (idiographic) analysis as the appropriate alternative: time-series analysis of individual trajectories rather than cross-sectional comparison of population aggregates. This has led to the development of several formal tools:
+Molenaar and Campbell (2009) formalized this further and proposed person-specific (idiographic) analysis as the appropriate alternative: time-series analysis of individual trajectories rather than cross-sectional comparison of population aggregates. This has led to the development of several formal tools:
 
 The *Ergodicity Information Index* (EII) measures the distance between within-person and between-person statistical structures (Fisher, Medaglia, and Jeronimus, 2018). When EII is near zero, the process is approximately ergodic and group-level statistics are informative about individuals. When EII is large, the process is non-ergodic and group-level statistics are misleading.
 
@@ -278,7 +298,7 @@ Research citing Molenaar has identified several psychological processes that are
 
 ### 10.3 Experimental Evidence
 
-Meder, Rabe, Morville, and Tobler (2021) provided direct experimental evidence that humans are sensitive to the distinction between ergodic and non-ergodic environments. Participants in their experiments differentiated between additive gambles (where the ensemble and time averages coincide) and multiplicative gambles (where they diverge), exhibiting higher risk aversion in multiplicative settings. This is consistent with time-average optimization and inconsistent with expected-value maximization.
+Meder et al. (2021) provided direct experimental evidence that humans are sensitive to the distinction between ergodic and non-ergodic environments. Participants in their experiments differentiated between additive gambles (where the ensemble and time averages coincide) and multiplicative gambles (where they diverge), exhibiting higher risk aversion in multiplicative settings. This is consistent with time-average optimization and inconsistent with expected-value maximization.
 
 Skjold, Brewer, and Peters (2024) extended this to additive environments with absorbing boundaries (ruin). Even when dynamics are additive, the presence of a lower wealth bound creates non-ergodicity because trajectories that reach zero are absorbed (eliminated). Participants demonstrated sensitivity to the "distance to ruin," increasing risk aversion as their wealth approached the boundary. This behavior is naturally explained by time-average optimization, which accounts for the absorbing boundary, but is anomalous under standard expected utility theory.
 
@@ -294,7 +314,7 @@ The absorbing state in evolutionary dynamics is extinction. Once a lineage or po
 
 ### 10.5 The Marketing Gap
 
-Despite the extensive application of non-ergodicity to psychology, decision science, ecology, and organizational theory, a comprehensive search reveals no published work applying Peters's formalism to brand perception, customer loyalty, or marketing metrics.
+Despite the extensive application of non-ergodicity to psychology, decision science, ecology, and organizational theory, we are not aware of published work applying Peters's formalism to brand perception, customer loyalty, or marketing metrics.
 
 This gap is significant because brand perception exhibits all the hallmarks of non-ergodic dynamics:
 
@@ -306,7 +326,7 @@ This gap is significant because brand perception exhibits all the hallmarks of n
 
 *Observer heterogeneity*. Individual consumer trajectories are governed by person-specific parameters (the observer spectral profile in SBT terms), making group-level statistics unreliable predictors of individual behavior---precisely the condition Molenaar (2004) identified as non-ergodicity in psychology.
 
-The nearest work in marketing is Layton and Duffy (2018), who discuss path dependence in marketing systems (supply chains, distribution channels) but use the concept qualitatively and system-level rather than applying Peters's mathematical formalism to individual consumer perception trajectories.
+The nearest work in marketing is Layton and Duffy (2018), who discuss path dependence in marketing systems (supply chains, distribution channels) but use the concept qualitatively and system-level rather than applying Peters's mathematical formalism to individual consumer perception trajectories. A formal derivation of how the coherence type of brand signals — whether signals reinforce or disrupt one another — predicts crisis trajectories is developed in Zharnikov (2026s), which formalizes the absorbing-state structure from a non-ergodic dynamics perspective.
 
 ## 11. Synthesis: The Geometric Brand Theory Gap
 
@@ -326,7 +346,7 @@ To systematically identify the gap, we assess each surveyed tradition against si
 
 6. **Empirical validation**: Has the framework been tested against empirical data on brand perception?
 
-**Table 1a. Classification matrix -- spatial and geometric traditions.**
+Table 1a: Classification Matrix — Spatial and Geometric Traditions.
 
 | Tradition | Dimensionality | Metric structure | Observer heterogeneity | Temporal dynamics | Generative mechanism | Empirical validation |
 |---|---|---|---|---|---|---|
@@ -337,7 +357,9 @@ To systematically identify the gap, we assess each surveyed tradition against si
 | Information Geometry (Amari) | High (parameter spaces) | Fisher-Rao | Implicit (different distributions) | Via geodesic flow | Statistical estimation | Strong (neuroscience) |
 | INDSCAL / DeSarbo | Low (2-4) | Weighted Euclidean | Dimension weights / latent classes | Static | None | Extensive |
 
-**Table 1b. Classification matrix -- dynamical, topological, and integrative traditions.**
+*Notes*: Empirical validation ratings are relative to the tradition's own criteria. "Extensive" = decades of marketing applications; "Limited" = few published cases; "Proposed" = framework exists but formal properties unproven. Static = cross-sectional estimation only; no temporal updating mechanism.
+
+Table 1b: Classification Matrix — Dynamical, Topological, and Integrative Traditions.
 
 | Tradition | Dimensionality | Metric structure | Observer heterogeneity | Temporal dynamics | Generative mechanism | Empirical validation |
 |---|---|---|---|---|---|---|
@@ -345,7 +367,9 @@ To systematically identify the gap, we assess each surveyed tradition against si
 | Quantum Cognition (Busemeyer) | Finite Hilbert space | Inner product | State vectors | Unitary evolution (single-shot) | Measurement collapse | Moderate (decision experiments) |
 | Opinion Dynamics (HK, DeGroot) | 1-D or low-D | Euclidean | Agent-specific initial conditions | Full dynamics (convergence) | Peer influence | Simulation + limited empirical |
 | Non-Ergodicity (Peters, Molenaar) | Not spatial | Not spatial | Person-specific trajectories | Full dynamics (path-dependent) | Multiplicative dynamics | Growing (experiments) |
-| SBT | 8 | Proposed | Spectral profiles | Decay, absorbing | Signal-cloud-fact | 5 brands (single-author; independent empirical validation pending) |
+| SBT | 8 | Proposed | Spectral profiles | Proposed (2026j) | Proposed (2026a) | 5 brands (illustrative) |
+
+*Notes*: SBT temporal dynamics and generative mechanism entries reflect proposed formalizations in companion papers; empirical validation is illustrative pending independent replication. "Proposed (2026X)" indicates the companion paper developing the formal property cited. All six criteria are formally defined in §11.1.
 
 ### 11.2 The Compound Gap
 
@@ -364,9 +388,23 @@ The gap is therefore not the absence of any one ingredient but the absence of th
 
 ### 11.3 SBT as a Candidate Framework
 
-SBT (Zharnikov, 2026a) is positioned to address this compound gap. It proposes eight perceptual dimensions (semiotic, narrative, ideological, experiential, social, economic, cultural, temporal), models brands as signal-emission profiles in this eight-dimensional space, processes signals through observer spectral profiles (a five-component weighting function), accumulates filtered signals into perception clouds that exhibit path-dependent dynamics, and incorporates absorbing states (permanent negative conviction) that create non-ergodic behavior.
+A terminological note is warranted before describing SBT's relationship to the compound gap. The word "spectral" in Spectral Brand Theory derives from the metaphor of multi-dimensional signal profiles — analogous to the electromagnetic spectrum, where a source emits energy at multiple frequencies simultaneously and observers perceive a weighted combination of those frequencies. This usage is distinct from two established mathematical traditions that share the same term: spectral graph theory (Chung 1997), which studies the eigenvalues of graph Laplacians to characterize network structure, and spectral clustering (von Luxburg 2007), which applies those eigenvalues to partition data points into clusters. SBT neither employs graph Laplacians nor performs eigenvalue-based data partitioning; the overlap in terminology is coincidental. Readers approaching this paper from a computer science or machine learning background should treat "spectral" in SBT as a signal-profile metaphor, not as a reference to eigenspectral methods.
 
-However, SBT as currently formulated (Zharnikov, 2026a) remains primarily a conceptual framework. Its eight-dimensional space lacks a formally defined metric. Its observer spectral profiles are described qualitatively but not situated in a well-defined geometric space with proved properties. Its non-ergodicity claims are motivated by analogy with Peters (2019) but not derived from a formal stochastic model. The research agenda proposed in the following section addresses these formalizations.
+SBT (Zharnikov, 2026a) is positioned to address this compound gap. It proposes eight perceptual dimensions (Semiotic, Narrative, Ideological, Experiential, Social, Economic, Cultural, Temporal), models brands as signal-emission profiles in this eight-dimensional space, processes signals through observer spectral profiles (a five-component weighting function), accumulates filtered signals into perception clouds that exhibit path-dependent dynamics, and incorporates absorbing states (permanent negative conviction) that create non-ergodic behavior.
+
+However, SBT as currently formulated (Zharnikov, 2026a) remains primarily a conceptual framework. Its eight-dimensional space lacks a formally defined metric. Its observer spectral profiles are described qualitatively but not situated in a well-defined geometric space with proved properties. Its non-ergodicity claims are motivated by analogy with Peters (2019) but not derived from a formal stochastic model. The research agenda proposed in the following section addresses these formalizations. The epistemological pipeline underlying SBT's conceptual framework — from financial document processing to brand perception modeling — is developed in Zharnikov (2026b). The completeness and necessity of the eight-dimensional taxonomy are examined formally in Zharnikov (2026r). Formal explorations of whether the $E_8$ dimension coincidence is structural rather than incidental are pursued in Zharnikov (2026r).
+
+### 11.4 Scope and Exclusions
+
+The ten traditions surveyed in this paper were selected because they bear directly on the compound gap criteria: high dimensionality, formal metric structure, observer heterogeneity, temporal dynamics, and a generative signal mechanism. Several adjacent literatures were deliberately excluded not because they are unimportant but because they address different research questions.
+
+Bayesian discrete-choice models (McFadden 1974; Rossi and Allenby 2003) provide powerful frameworks for modeling individual heterogeneity in choice probabilities. They are highly relevant to marketing practice and share with SBT the goal of representing consumer heterogeneity. However, their primary object is the choice probability distribution, not the perceptual geometry that precedes choice. The geometric structure of the latent attribute space is not the focus of Bayesian choice models, and non-ergodic temporal dynamics are not part of their standard formulation.
+
+Item Response Theory (Embretson and Reise 2000) models the probability of a response as a function of a latent trait and item parameters. IRT has been applied to brand measurement and consumer surveys. Its treatment of observer heterogeneity (through person-specific latent trait scores) is sophisticated, but IRT operates on a latent continuum rather than a multi-dimensional geometric space, and it does not model signal dynamics or absorbing states.
+
+The Generalized Context Model (Nosofsky 1986) and Representational Similarity Analysis (Kriegeskorte, Mur, and Bandettini 2008) are discussed in Sections 6.1 and 6.3, respectively, as precursors and parallels within the observer-heterogeneity tradition. Neither satisfies the compound gap criteria because neither integrates non-ergodic temporal dynamics with a generative signal mechanism.
+
+These exclusions define the scope of this survey: the compound gap is specifically the absence of a framework combining all five criteria simultaneously. A framework that satisfies four of the five — as Bayesian choice models come close to doing for three — is valuable but does not address the particular intersection this survey targets.
 
 ## 12. Research Agenda: Six Open Problems
 
@@ -454,7 +492,7 @@ The compound gap---the absence of a framework combining high-dimensional geometr
 
 We have articulated six open problems that collectively constitute a research agenda for mathematical brand theory. These problems draw on well-established results in high-dimensional geometry---the Johnson-Lindenstrauss lemma, concentration of measure, sphere packing, stochastic diffusion on manifolds---that have never been applied to brand perception or, in most cases, to any social science context. The fact that Spectral Brand Theory (Zharnikov, 2026a) proposes exactly eight perceptual dimensions, and that eight is the dimensionality where the $E_8$ lattice achieves optimal sphere packing, is a coincidence that merits formal exploration.
 
-The research program we propose would not merely formalize an existing framework. It would establish a new interdisciplinary connection between high-dimensional geometry and brand science, producing results with implications for perceptual psychology, marketing science, organizational theory, and the mathematics of social systems. Whether SBT proves to be the right framework for these formalizations, or whether the mathematical analysis reveals that a different framework is needed, the intellectual territory is genuinely unoccupied and the tools to explore it are available.
+The six open problems articulated in Section 12 map directly to a series of companion papers that constitute the SBT mathematical research program. Problem 1 (formal metric on brand space) is addressed in Zharnikov (2026d), which defines and proves properties of three metric spaces: brand signal space, observer weight space, and the combined brand-observer space. Problem 2 (projection bounds) is addressed in Zharnikov (2026e), which derives JL-based distortion bounds and proves that spectral metamerism is a geometric inevitability of any dimension-reducing brand assessment. Problem 3 (concentration of measure and cohort boundaries) is addressed in Zharnikov (2026f), which applies concentration inequalities on the probability simplex to derive explicit boundary fuzziness bounds. Problem 4 (sphere packing and positioning capacity) is addressed in Zharnikov (2026g), which computes capacity bounds on $S^7_+$ and interprets the $E_8$ kissing number as an upper bound on competitive adjacency. Problem 5 (specification impossibility) is addressed in Zharnikov (2026h), which proves coverage impossibility in 48-dimensional organizational specification space. Problem 6 (diffusion dynamics on perceptual manifolds) is addressed in Zharnikov (2026j), which models brand perception evolution as stochastic diffusion on the perceptual manifold with absorbing boundaries and proves non-ergodicity under those conditions. Together, these companion papers constitute a coordinated research program converting the compound gap from a diagnosis into a formally resolved set of mathematical results. Whether SBT proves to be the right framework for these formalizations, or whether the mathematical analysis reveals that a different framework is needed, the central five-way intersection — combining high-dimensional geometry, a formal metric, observer-specific processing, non-ergodic temporal dynamics, and a generative signal mechanism simultaneously — is unoccupied, and the tools to explore it are available.
 
 ---
 
@@ -466,29 +504,29 @@ Aisbett, J., and Gibbon, G. (2001). "A General Formulation of Conceptual Spaces 
 
 Amari, S.-i. (2016). *Information Geometry and Its Applications*. Springer.
 
-Amari, S.-i., Nagaoka, H., and Harada, D. (2000). *Methods of Information Geometry*. American Mathematical Society.
+Amari, S.-i., and Nagaoka, H. (2000). *Methods of Information Geometry* (D. Harada, Trans.). American Mathematical Society (Translations of Mathematical Monographs, Vol. 191).
 
 Bakker, R., and Poole, K. T. (2013). "Bayesian Metric Multidimensional Scaling." *Political Analysis*, 21(1), 125-140.
 
-Bechberger, L. (2019). "Towards Grounded Conceptual Spaces." Doctoral dissertation, University of Osnabruck.
+Bechberger, L. (2023). "Using Conceptual Spaces for Artificial Intelligence." Doctoral dissertation, University of Osnabruck. https://doi.org/10.48693/435
 
 Bernoulli, D. (1738). "Specimen Theoriae Novae de Mensura Sortis." *Commentarii Academiae Scientiarum Imperialis Petropolitanae*, 5, 175-192. Translated by L. Sommer, *Econometrica*, 22(1), 23-36 (1954).
 
-Bijmolt, T. H. A., and Wedel, M. (1999). "A Comparison of Multidimensional Scaling Methods for Perceptual Mapping." *Journal of Marketing Research*, 36(1), 137-153.
+Bijmolt, T. H. A., and Wedel, M. (1999). "A Comparison of Multidimensional Scaling Methods for Perceptual Mapping." *Journal of Marketing Research*, 36(2), 277-285.
 
-Bijmolt, T. H. A., Wedel, M., Pieters, R. G. M., and DeSarbo, W. S. (1998). "Judgments of Brand Similarity and Their Role in Brand Consideration Sets." *Marketing Letters*, 9(3), 231-246.
+Bijmolt, T. H. A., Wedel, M., Pieters, R. G. M., and DeSarbo, W. S. (1998). "Judgments of Brand Similarity and Their Role in Brand Consideration Sets." *International Journal of Research in Marketing*, 15(3), 249-268.
 
 Brand Finance. (2025). *Global 500 2025: The Annual Report on the World's Most Valuable and Strongest Brands*. Brand Finance.
 
 Bouchaud, J.-P., and Mezard, M. (2000). "Wealth Condensation in a Simple Model of Economy." *Physica A*, 282(3-4), 536-545.
-
-Bronstein, M. M., Bruna, J., Cohen, T., and Velickovic, P. (2021). "Geometric Deep Learning: Grids, Groups, Graphs, Geodesics, and Gauges." arXiv:2104.13478.
 
 Bujack, R., Teti, E., Miller, J., Caffrey, E., and Turton, T. L. (2022). "The Non-Riemannian Nature of Perceptual Color Space." *Proceedings of the National Academy of Sciences*, 119(18), e2119753119.
 
 Busemeyer, J. R., and Bruza, P. D. (2012). *Quantum Models of Cognition and Decision*. Cambridge University Press.
 
 Carlsson, G. (2009). "Topology and Data." *Bulletin of the American Mathematical Society*, 46(2), 255-308.
+
+Chung, F. R. K. (1997). *Spectral Graph Theory*. American Mathematical Society.
 
 Carroll, J. D., and Chang, J. J. (1970). "Analysis of Individual Differences in Multidimensional Scaling via an N-Way Generalization of Eckart-Young Decomposition." *Psychometrika*, 35(3), 283-319.
 
@@ -500,9 +538,9 @@ Coombs, C. H. (1964). *A Theory of Data*. Wiley.
 
 Cooper, L. G. (1983). "A Review of Multidimensional Scaling in Marketing Research." *Applied Psychological Measurement*, 7(4), 427-450.
 
-Costa, S. I. R., Hero, A. O., and Vignat, C. (2005). "On Solutions to Multivariate Maximum Alpha-Entropy Problems." In *Energy Minimization Methods in Computer Vision and Pattern Recognition*, Springer, 211-226.
+Costa, S. I. R., Hero, A. O., and Vignat, C. (2003). "On Solutions to Multivariate Maximum Alpha-Entropy Problems." In *Energy Minimization Methods in Computer Vision and Pattern Recognition* (Lecture Notes in Computer Science, Vol. 2683), Springer, 211-228.
 
-Cox, T. F., and Cox, M. A. A. (2001). *Multidimensional Scaling* (2nd ed.). Chapman and Hall/CRC.
+Cox, T. F., and Cox, M. A. A. (2000). *Multidimensional Scaling* (2nd ed.). Chapman and Hall/CRC.
 
 Deffuant, G., Neau, D., Amblard, F., and Weisbuch, G. (2000). "Mixing Beliefs Among Interacting Agents." *Advances in Complex Systems*, 3(1-4), 87-98.
 
@@ -512,9 +550,11 @@ dePalma, A., Ginsburgh, V., Papageorgiou, Y. Y., and Thisse, J.-F. (1985). "The 
 
 DeSarbo, W. S., and Hoffman, D. L. (1986). "Simple and Weighted Unfolding Threshold Models for the Spatial Representation of Binary Choice Data." *Applied Psychological Measurement*, 10(3), 247-264.
 
-DeSarbo, W. S., Kim, Y., Choi, S. C., and Spaulding, M. (2002). "A Gravity-Based Multidimensional Scaling Model for Deriving Spatial Structures Underlying Consumer Preference/Choice Judgments." *Journal of Consumer Research*, 29(1), 91-100.
+DeSarbo, W. S., Kim, J., Choi, S. C., and Spaulding, M. (2002). "A Gravity-Based Multidimensional Scaling Model for Deriving Spatial Structures Underlying Consumer Preference/Choice Judgments." *Journal of Consumer Research*, 29(1), 91-100.
 
 Edelsbrunner, H., and Harer, J. L. (2010). *Computational Topology: An Introduction*. American Mathematical Society.
+
+Embretson, S. E., and Reise, S. P. (2000). *Item Response Theory for Psychologists*. Lawrence Erlbaum Associates.
 
 Fisher, A. J., Medaglia, J. D., and Jeronimus, B. F. (2018). "Lack of Group-to-Individual Generalizability Is a Threat to Human Subjects Research." *Proceedings of the National Academy of Sciences*, 115(27), E6106-E6115.
 
@@ -528,8 +568,6 @@ Green, P. E., and Srinivasan, V. (1978). "Conjoint Analysis in Consumer Research
 
 Hegselmann, R., and Krause, U. (2002). "Opinion Dynamics and Bounded Confidence: Models, Analysis and Simulation." *Journal of Artificial Societies and Social Simulation*, 5(3), 2.
 
-Hernandez-Lemus, E. (2025). "Topological Data Analysis in Single Cell Biology." *Frontiers in Immunology*, 16, 1615278. doi:10.3389/fimmu.2025.1615278
-
 Hotelling, H. (1929). "Stability in Competition." *The Economic Journal*, 39(153), 41-57.
 
 Johnson, W. B., and Lindenstrauss, J. (1984). "Extensions of Lipschitz Mappings into a Hilbert Space." *Contemporary Mathematics*, 26, 189-206.
@@ -540,25 +578,29 @@ Keller, K. L. (1993). "Conceptualizing, Measuring, and Managing Customer-Based B
 
 Khrennikov, A. (2016). "Quantum-Like Model of Decision Making and Sense Perception Based on the Representation of the Contextual Probabilistic Model of Kolmogorovian Type in Complex Hilbert Space." *Biosystems*, 138, 49-56.
 
+Kriegeskorte, N., Mur, M., and Bandettini, P. (2008). "Representational Similarity Analysis — Connecting the Branches of Systems Neuroscience." *Frontiers in Systems Neuroscience*, 2, 4. https://doi.org/10.3389/neuro.06.004.2008
+
 Kruskal, J. B. (1964). "Multidimensional Scaling by Optimizing Goodness of Fit to a Nonmetric Hypothesis." *Psychometrika*, 29(1), 1-27.
 
 Lancaster, K. J. (1966). "A New Approach to Consumer Theory." *Journal of Political Economy*, 74(2), 132-157.
 
-Layton, R. A., and Duffy, S. (2018). "Path Dependent and Path Creation Perspectives on Marketing System Development." *Journal of Macromarketing*, 38(1), 23-31.
+Layton, R. A., and Duffy, S. (2018). "Path dependency in marketing systems: Where history matters and the future casts a shadow." *Journal of Macromarketing*, 38(4), 400-414. https://doi.org/10.1177/0276146718805804
 
 Lorenz, J. (2007). "Continuous Opinion Dynamics Under Bounded Confidence: A Survey." *International Journal of Modern Physics C*, 18(12), 1819-1838.
 
-Ma, H., Jiang, L., Liu, T., and Liu, J. (2025). "From Sensory to Perceptual Manifolds: The Twist of Neural Geometry." *Science Advances*, 11(26), eadv0431. doi:10.1126/sciadv.adv0431
+McFadden, D. (1974). "Conditional Logit Analysis of Qualitative Choice Behavior." In P. Zarembka (Ed.), *Frontiers in Econometrics*, Academic Press, 105-142.
 
 McInnes, L., Healy, J., Saul, N., and Grossberger, L. (2018). "UMAP: Uniform Manifold Approximation and Projection." *Journal of Open Source Software*, 3(29), 861.
 
-Meder, D., Rabe, F., Morville, T., and Tobler, P. N. (2021). "Ergodicity-Breaking Reveals Time Scales for Gambles in the Real World." *Chaos*, 31(2), 023122.
+Meder, D., Rabe, F., Morville, T., Madsen, K. H., Koudahl, M. T., Dolan, R. J., Siebner, H. R., and Hulme, O. J. (2021). "Ergodicity-breaking reveals time optimal decision making in humans." *PLOS Computational Biology*, 17(9), e1009217. https://doi.org/10.1371/journal.pcbi.1009217
 
 Mikolov, T., Sutskever, I., Chen, K., Corrado, G. S., and Dean, J. (2013). "Distributed Representations of Words and Phrases and Their Compositionality." *Advances in Neural Information Processing Systems*, 26, 3111-3119.
 
 Molenaar, P. C. M. (2004). "A Manifesto on Psychology as Idiographic Science: Bringing the Person Back into Scientific Psychology, This Time Forever." *Measurement*, 2(4), 201-218.
 
-Molenaar, P. C. M. (2009). "The New Person-Specific Paradigm in Psychology." *Current Directions in Psychological Science*, 18(2), 109-112.
+Molenaar, P. C. M., and Campbell, C. G. (2009). "The New Person-Specific Paradigm in Psychology." *Current Directions in Psychological Science*, 18(2), 112-117. https://doi.org/10.1111/j.1467-8721.2009.01619.x
+
+Nosofsky, R. M. (1986). "Attention, Similarity, and the Identification-Categorization Relationship." *Journal of Experimental Psychology: General*, 115(1), 39-57.
 
 Oh, M.-S., and Raftery, A. E. (2001). "Bayesian Multidimensional Scaling and Choice of Dimension." *Journal of the American Statistical Association*, 96(455), 1031-1044.
 
@@ -570,9 +612,15 @@ Peters, O., and Skjold, A. (2024). "Time-Average Cooperation in Agent-Based Mode
 
 Pothos, E. M., and Busemeyer, J. R. (2022). "Quantum Cognition." *Annual Review of Psychology*, 73, 749-778.
 
+Regier, T., Kay, P., and Khetarpal, N. (2007). "Color Naming Reflects Optimal Partitions of Color Space." *Proceedings of the National Academy of Sciences*, 104(4), 1436-1441.
+
 Rosen, S. (1974). "Hedonic Prices and Implicit Markets: Product Differentiation in Pure Competition." *Journal of Political Economy*, 82(1), 34-55.
 
+Rossi, P. E., and Allenby, G. M. (2003). "Bayesian Statistics and Marketing." *Marketing Science*, 22(3), 304-328.
+
 Shepard, R. N. (1962). "The Analysis of Proximities: Multidimensional Scaling with an Unknown Distance Function." *Psychometrika*, 27(2), 125-140.
+
+Shepard, R. N. (1987). "Toward a Universal Law of Generalization for Psychological Science." *Science*, 237(4820), 1317-1323.
 
 Skjold, A., Brewer, M., and Peters, O. (2024). "Sensitivity to Non-Ergodicity in Additive Dynamics with Risk of Ruin." *Royal Society Open Science*, 11(1), 231240.
 
@@ -584,11 +632,15 @@ Torgerson, W. S. (1952). "Multidimensional Scaling: I. Theory and Method." *Psyc
 
 Tucker, L. R. (1960). "Intra-Individual and Inter-Individual Multidimensionality." In H. Gulliksen and S. Messick (Eds.), *Psychological Scaling: Theory and Applications*, Wiley, 155-167.
 
+Tversky, A. (1977). "Features of Similarity." *Psychological Review*, 84(4), 327-352.
+
 van der Maaten, L., and Hinton, G. (2008). "Visualizing Data Using t-SNE." *Journal of Machine Learning Research*, 9, 2579-2605.
 
 Vanhoyweghen, L. (2024). "Time Averages as a Better Null Model for Stated Preference." Working paper.
 
 Viazovska, M. S. (2017). "The Sphere Packing Problem in Dimension 8." *Annals of Mathematics*, 185(3), 991-1015.
+
+von Luxburg, U. (2007). "A Tutorial on Spectral Clustering." *Statistics and Computing*, 17(4), 395-416.
 
 Vogt, P. (2006). "Language Evolution and Robotics: Issues on Symbol Grounding and Language Acquisition." In *Artificial Cognition Systems*, Idea Group, 176-209.
 
@@ -597,6 +649,8 @@ Warglien, M., and Gartner, W. B. (2004). "Entrepreneurial Leadership and the Cre
 Yen, P. T.-W., and Cheong, S. A. (2021). "Using Topological Data Analysis (TDA) and Persistent Homology to Analyze the Stock Markets in Singapore and Taiwan." *Frontiers in Physics*, 9, 572216.
 
 Zharnikov, D. (2026a). Spectral Brand Theory: A multi-dimensional framework for brand perception analysis. Working Paper. https://doi.org/10.5281/zenodo.18945912
+
+Zharnikov, D. (2026b). The Atom-Cloud-Fact Epistemological Pipeline: From financial document processing to brand perception modeling. Working Paper. https://doi.org/10.5281/zenodo.18944770
 
 Zharnikov, D. (2026d). Brand space geometry: A formal metric for multi-dimensional brand perception. Working Paper. https://doi.org/10.5281/zenodo.18945295
 
@@ -612,8 +666,17 @@ Zharnikov, D. (2026i). The Organizational Schema Theory: Test-driven business de
 
 Zharnikov, D. (2026j). Non-ergodic brand perception: Diffusion dynamics on multi-dimensional perceptual manifolds. Working Paper. https://doi.org/10.5281/zenodo.18945659
 
+Zharnikov, D. (2026k). Spectral resource allocation: Demand-driven investment in multi-dimensional brand space. Working Paper. https://doi.org/10.5281/zenodo.19009268
+
+Zharnikov, D. (2026r). Why eight? Completeness and necessity of the SBT dimensional taxonomy. Working Paper. https://doi.org/10.5281/zenodo.19207599
+
+Zharnikov, D. (2026s). Coherence type as crisis predictor: A formal derivation from non-ergodic dynamics. Working Paper. https://doi.org/10.5281/zenodo.19208107
+
 ---
-*This paper is part of the Spectral Brand Theory research program. For the full atlas of 20+ interconnected papers, see [spectralbranding.com/atlas](https://spectralbranding.com/atlas).*
+
+## Acknowledgments
+
+AI assistants (Claude Opus 4.7, Grok 4.1, Gemini 3.1) were used for initial literature search and editorial refinement; all theoretical claims, propositions, and interpretations are the author's sole responsibility.
 
 ---
 
