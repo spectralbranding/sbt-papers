@@ -56,7 +56,7 @@ A paper is not a document. It is a tagged release from a repository, frozen at a
 
 ### 1.2 What the Protocol Replaces
 
-The urgency of structural reform is well established. Ioannidis (2005) demonstrated that most published research findings are false — a conclusion driven in part by the absence of transparent, auditable research processes. The TOP Guidelines (Nosek et al., 2015) defined eight transparency standards for open research culture, but implementing those standards within the current document paradigm remains difficult because the paradigm itself lacks the infrastructure for structured transparency.
+The urgency of structural reform is well established. Ioannidis (2005) demonstrated that most published research findings are false — a conclusion driven in part by the absence of transparent, auditable research processes. The TOP Guidelines (Nosek et al., 2015) defined eight transparency standards for open research culture, but implementing those standards within the current document paradigm remains difficult because the paradigm itself lacks the infrastructure for structured transparency. Empirical work tracking submissions across rejection and acceptance shows that publication-bias signatures emerge before peer review (Brodeur, Carrell, Figlio and Lusher 2023), implying that infrastructure capable of preserving and querying the full submission record — including desk rejections — is necessary for accurate diagnosis of where bias enters.
 
 The current pipeline has five structural gaps that are difficult to address within the document paradigm:
 
@@ -851,7 +851,7 @@ The three-level separation — affiliations (person), funding (project), authors
 
 ### 2.10 Federation and Local Sovereignty
 
-A critical design constraint: scientists will not entrust their life's work to a centralized platform they do not control. Any protocol that requires a single hosting provider — even a well-intentioned one — replicates the power dynamics of the current publisher oligopoly in a new form.
+A critical design constraint: scientists will not entrust their life's work to a centralized platform they do not control. Any protocol that requires a single hosting provider — even a well-intentioned one — replicates the power dynamics of the current publisher oligopoly in a new form. The Principles for Open Scholarly Infrastructures (Bilder, Lin and Neylon 2015) articulate why: trustworthy scholarly infrastructure must operate under stakeholder governance, maintain transparent operations, and carry a formal wind-down plan — none of which are guaranteed by proprietary platforms regardless of their current intentions.
 
 Git is inherently decentralized. A Git repository is a complete, self-contained history that can be cloned, moved, and operated on without any server. The Research-as-Repository protocol leverages this property through a three-tier architecture:
 
@@ -1096,7 +1096,7 @@ The protocol does not replace prestige. It reduces reliance on prestige as a pro
 
 The chain from grant to impact — grant funds researcher, researcher commits code and text, commits aggregate into papers, papers generate citations and downstream research — is currently traceable only at the coarsest level: which grants funded which papers. The protocol makes this chain traceable at commit-level granularity. Every commit carries contributor attribution and can reference a funding source declared in `FUNDING.yaml`. The result is a verifiable lineage from specific expenditure to specific intellectual output.
 
-Compliance becomes structural rather than bureaucratic. Funder requirements — open access mandates, data sharing, preregistration, AI disclosure — are encoded as conditions in `FUNDING.yaml` and checked by the compliance gate at fork time. Progress reports become redundant: the repository's tagged releases *are* the progress reports, with full provenance showing what was accomplished, by whom, and when. ROI measurement becomes possible at a resolution that current systems cannot approach: which commits, from which researchers, funded by which grants, produced which cited results. Publicly funded research acquires a verifiable paper trail from first commit to published result.
+Compliance becomes structural rather than bureaucratic. Funder requirements — open access mandates, data sharing, preregistration, AI disclosure — are encoded as conditions in `FUNDING.yaml` and checked by the compliance gate at fork time. Progress reports become redundant: the repository's tagged releases *are* the progress reports, with full provenance showing what was accomplished, by whom, and when. ROI measurement becomes possible at a resolution that current systems cannot approach: which commits, from which researchers, funded by which grants, produced which cited results. Publicly funded research acquires a verifiable paper trail from first commit to published result. Recent meta-research (Huang, Neylon, Hosking, et al. 2020) shows that policy-effectiveness evaluation depends on the data infrastructure available — an argument the present protocol turns into actionable architecture: when funder compliance conditions are YAML fields checked at fork time, the gap between mandate and measurable outcome narrows structurally rather than administratively.
 
 ### 4.8 For Society
 
@@ -1153,7 +1153,7 @@ Results: 6 passed, 1 failed, 0 warnings
 Submission gate: BLOCKED — fix failures before submitting
 ```
 
-The example illustrates that the validator catches a specific compliance failure (self-citation ratio exceeding the journal's threshold) with an actionable diagnostic. The present paper's own self-citation ratio is 6.3% (3 of 48 references) after IS-canon restoration and cross-corpus additions.
+The example illustrates that the validator catches a specific compliance failure (self-citation ratio exceeding the journal's threshold) with an actionable diagnostic. The present paper's own self-citation ratio is 6.8% (4 of 59 references) after IS-canon restoration, cross-corpus additions, and user-confirmed citation replacements.
 
 The author sees the exact failure (self-citation ratio), fixes it in their repository, and re-runs the validator. The entire cycle takes minutes, not the weeks currently consumed by desk-rejection-and-resubmission rounds.
 
@@ -1237,7 +1237,7 @@ The Research-as-Repository protocol demonstrates that the document assumption is
 
 For electronic publishing platforms the implications are immediate. Journals can shift from PDF wrangling and formatting enforcement to semantic curation and review-quality assessment. Preprint servers and overlay journals become first-class collection curators in a federated ecosystem. Compliance, blinding, and provenance become services operating on repositories rather than bottlenecks authors must navigate. AI assistance moves from opaque disclosure statements to auditable commit histories. Research assessment bodies gain queryable data on contribution depth, review portfolios, and intellectual trajectories — precisely the multi-dimensional evidence demanded by DORA, Leiden, and CoARA but previously unavailable at scale.
 
-The largest remaining risk is adoption inertia. The protocol therefore adopts a three-tier local-first design that delivers value to individual researchers before system-level buy-in is required. The compliance gate and validator already exist; a single preprint server or society journal implementing the fork gate would create immediate network effects. Governance should follow open standards processes (IETF/NISO model) with host-agnostic reference implementations.
+The largest remaining risk is adoption inertia. The protocol therefore adopts a three-tier local-first design that delivers value to individual researchers before system-level buy-in is required. The compliance gate and validator already exist; a single preprint server or society journal implementing the fork gate would create immediate network effects. Governance should follow open standards processes (IETF/NISO model) with host-agnostic reference implementations and align with the Principles for Open Scholarly Infrastructures (Bilder, Lin and Neylon 2015): stakeholder-driven governance, transparent operations, and a documented wind-down plan.
 
 This article does not claim the protocol solves the reproducibility crisis, eliminates prestige bias, or fully domesticates AI in research. It claims only that these problems are materially harder to solve without version control, provenance, and structured metadata as foundational infrastructure. By supplying that infrastructure, the protocol makes direct evaluation of research at scale technically feasible for the first time. The scientific community can now choose whether to use it.
 
@@ -1257,9 +1257,13 @@ Auer, S., Kovtun, V., Prinz, M., Kasprzik, A., & Stocker, M. (2018). *Towards an
 
 Barker, M., Chue Hong, N. P., Katz, D. S., et al. (2022). Introducing the FAIR Principles for research software. *Scientific Data*, 9, 622. https://doi.org/10.1038/s41597-022-01710-x
 
+Bilder, G., Lin, J., & Neylon, C. (2015). Principles for Open Scholarly Infrastructure-v1. *figshare*. https://doi.org/10.6084/m9.figshare.1314859
+
 Blischak, J. D., Davenport, E. R., & Wilson, G. (2016). A quick introduction to version control with Git and GitHub. *PLOS Computational Biology*, 12(1), e1004668. https://doi.org/10.1371/journal.pcbi.1004668
 
 Borgman, C. L. (2015). *Big Data, Little Data, No Data: Scholarship in the Networked World*. MIT Press. https://doi.org/10.7551/mitpress/9963.001.0001
+
+Brodeur, A., Carrell, S., Figlio, D., & Lusher, L. (2023). Unpacking p-hacking and publication bias. *American Economic Review*, 113(11), 2974-3002. https://doi.org/10.1257/aer.20210795
 
 Bryan, J. (2018). Excuse me, do you have a moment to talk about version control? *The American Statistician*, 72(1), 20-27. https://doi.org/10.1080/00031305.2017.1399928
 
@@ -1294,6 +1298,8 @@ Hammer, M., & Champy, J. (1993). *Reengineering the Corporation: A Manifesto for
 Hicks, D., Wouters, P., Waltman, L., de Rijcke, S., & Rafols, I. (2015). Bibliometrics: The Leiden Manifesto for research metrics. *Nature*, 520(7548), 429-431.
 
 Himmelstein, D. S., Rubinetti, V., Slochower, D. R., et al. (2019). Open collaborative writing with Manubot. *PLOS Computational Biology*, 15(6), e1007128. https://doi.org/10.1371/journal.pcbi.1007128
+
+Huang, C.-K., Neylon, C., Hosking, R., Montgomery, L., Wilson, K. S., Ozaygen, A., & Brookes-Kenworthy, C. (2020). Evaluating the impact of open access policies on research institutions. *eLife*, 9, e57067. https://doi.org/10.7554/eLife.57067
 
 Ioannidis, J. P. A. (2005). Why most published research findings are false. *PLOS Medicine*, 2(8), e124. https://doi.org/10.1371/journal.pmed.0020124
 
