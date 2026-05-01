@@ -10,7 +10,7 @@ https://doi.org/10.5281/zenodo.18945522
 
 ## Abstract
 
-How many truly distinguishable brand positions can a market sustain? Despite decades of positioning theory, this question has never received a formal mathematical answer. This paper applies sphere packing theory to Spectral Brand Theory's eight-dimensional perception space, where each brand occupies a position in $\mathbb{R}^8_+$ equipped with the Aitchison metric (Zharnikov 2026d). Two brands are distinguishable if their profiles differ by more than a perceptual threshold $\varepsilon$. In eight dimensions, the densest possible packing is the $E_8$ lattice, proved optimal by Viazovska (2017). Five results are derived: (1) at threshold $\varepsilon = .10$, the space admits at least $10^8$ distinguishable positions; (2) the $E_8$ kissing number of 240 bounds nearest-competitor positions, decomposing into 112 specialist and 128 generalist competitive vectors; (3) even with 10,000 brands, 99.99% of the positioning space remains unoccupied; (4) a product category saturates when brand count approaches $(1/\varepsilon)^{d_\text{eff}}$; and (5) at average pairwise correlation $\rho = .3$, effective dimensionality drops to approximately 2.6, collapsing capacity from $10^8$ to $10^3$. An LLM stability experiment (250 calls, five models) validates the fixed-geometry assumptions. The $E_8$ connection is structural, not literal: it establishes the mathematical ceiling on positioning capacity, not a claim that brands arrange themselves as lattice points.
+How many distinguishable brand positions can a market sustain? We formalize brand perception as points in $\mathbb{R}^8_+$ under the Aitchison metric (Aitchison 1986; Egozcue et al. 2003), which is isometric to Euclidean distance on a 7-dimensional hyperplane after centered log-ratio transformation. Two brands are distinguishable if their distance exceeds perceptual threshold $\varepsilon$. The problem maps onto sphere packing. Because the $E_8$ lattice achieves the unique optimal packing in eight dimensions (Viazovska 2017), its density ($\pi^4/384 \approx .2537$) and kissing number (240) supply structural bounds. We derive five results: (1) volume-ratio capacity is at least $(1/\varepsilon)^8$, equaling $10^8$ positions at $\varepsilon = .10$; (2) each position has at most 240 nearest neighbors decomposing into 112 specialist (two-dimensional) and 128 generalist (eight-dimensional) vectors; (3) 10,000 brands occupy less than .01% of the unit 8-ball; (4) category saturation occurs near $(1/\varepsilon)^{d_\text{eff}}$; (5) average inter-dimension correlation $\rho = .3$ collapses effective dimensionality to approximately 2.6 and capacity by five orders of magnitude. An LLM stability experiment (250 calls, five models) finds null competitive-interference effects, consistent with fixed geometry. The $E_8$ connection is structural, not literal: it establishes the mathematical ceiling on positioning capacity. We discuss implications for white-space strategy, correlation management, and observer-dependent capacity.
 
 **Keywords**: sphere packing, $E_8$ lattice, brand positioning, market capacity, kissing number, perceptual threshold, high-dimensional geometry, Spectral Brand Theory
 
@@ -159,7 +159,7 @@ $$N \geq \frac{1}{\varepsilon^n}$$
 
 ### The Kissing Number Problem
 
-The kissing number $\tau(n)$ is known exactly for only a few dimensions (Pfender & Zong 2004):
+The kissing number $\tau(n)$ is known exactly for only a few dimensions (Pfender & Ziegler 2004):
 
 Table 3: Exact Kissing Numbers in Selected Dimensions.
 
@@ -172,7 +172,7 @@ Table 3: Exact Kissing Numbers in Selected Dimensions.
 | **8** | **240** | **$E_8$ lattice** |
 | 24 | 196,560 | Leech lattice |
 
-*Notes*: Kissing number is exact only in dimensions 1, 2, 3, 4, 8, and 24. In all other dimensions only bounds are known. Pfender & Zong 2004.
+*Notes*: Kissing number is exact only in dimensions 1, 2, 3, 4, 8, and 24. In all other dimensions only bounds are known. Pfender & Ziegler 2004.
 
 The kissing number is known exactly in only these dimensions plus $n = 1$. In all other dimensions, only bounds are known. The exactness in $n = 8$ and $n = 24$ is a consequence of the exceptional algebraic structures underlying the $E_8$ and Leech lattices.
 
@@ -433,7 +433,7 @@ The capacity bounds help explain the long-tail phenomenon in digital markets. Wh
 
 ### Why "White Space" Identification Is Harder Than Marketers Think
 
-Despite the mathematical abundance of white space, practical identification encounters three geometric obstacles: (1) **projection blindness** -- most tools operate in 2--3 dimensions, collapsing capacity from $10^8$ to $10^2$; (2) **feasibility constraints** -- not all positions in $\mathbb{R}^8_+$ are achievable, given category norms, resources, and observer expectations; and (3) **observer heterogeneity** -- white space for one perceptual cohort may be occupied for another, because different observer weight profiles yield different perceptual distances (Zharnikov 2026d, 2026f). These obstacles explain the gap between mathematical abundance and practical difficulty without invalidating the capacity bounds.
+Despite the mathematical abundance of white space, practical identification encounters three geometric obstacles: (1) **projection blindness** -- most tools operate in 2--3 dimensions, collapsing capacity from $10^8$ to $10^2$; (2) **feasibility constraints** -- not all positions in $\mathbb{R}^8_+$ are achievable, given category norms, resources, and observer expectations; and (3) **observer heterogeneity** -- white space for one perceptual cohort may be occupied for another, because different observer weight profiles yield different perceptual distances (Zharnikov 2026d; 2026f). These obstacles explain the gap between mathematical abundance and practical difficulty without invalidating the capacity bounds.
 
 ---
 
@@ -510,7 +510,7 @@ The sphere packing model assumes that brands occupy fixed positions in perceptio
 
 **Exploratory finding.** GPT-4o-mini exhibited a mean profile shift of 15.37 across conditions, nearly double the 8.5--9.3 range observed for the other four models. Erewhon was the most susceptible focal brand (shift = 11.73 vs. 9.4--10.1 for others), consistent with its weak Temporal anchoring (2.5). Neither anomaly reached per-dimension significance.
 
-**Interpretation.** The null result is scientifically valuable: PRISM-B measures stable internal representations, not context-dependent judgments. Brands occupy fixed positions in perception space regardless of which competitors are nearby, validating the geometric assumptions of sphere packing. The capacity bounds derived in the Positioning Capacity and White Space sections hold as intrinsic constraints, not context-dependent artifacts. Had competitive interference been large, the effective dimensionality of perception space would itself be context-dependent, undermining the fixed-geometry framework on which Propositions 1--5 rest. The Erewhon finding aligns with the Anisotropy subsection: brands with weak anchoring on one or more dimensions exhibit greater volatility, even when that volatility does not reach statistical significance. The GPT-4o-mini anomaly suggests that some model architectures have more permeable perceptual boundaries, a finding that warrants investigation across a larger model sample.
+**Interpretation.** The null result is scientifically valuable: PRISM-B measures stable internal representations, not context-dependent judgments. Brands occupy fixed positions in perception space regardless of which competitors are nearby, consistent with the fixed-geometry assumptions of sphere packing. The capacity bounds derived in the Positioning Capacity and White Space sections hold as intrinsic constraints, not context-dependent artifacts. Had competitive interference been large, the effective dimensionality of perception space would itself be context-dependent, undermining the fixed-geometry framework on which Propositions 1--5 rest. The Erewhon finding aligns with the Anisotropy subsection: brands with weak anchoring on one or more dimensions exhibit greater volatility, even when that volatility does not reach statistical significance. The GPT-4o-mini anomaly suggests that some model architectures have more permeable perceptual boundaries, a finding that warrants investigation across a larger model sample.
 
 ---
 
@@ -598,7 +598,7 @@ Keller, K. L., & Lehmann, D. R. (2006). Brands and branding: Research findings a
 
 Lancaster, K. J. (1966). A new approach to consumer theory. *Journal of Political Economy*, 74(2), 132--157.
 
-Pfender, F., & Zong, G. M. (2004). Kissing numbers, sphere packings, and some unexpected proofs. *Notices of the American Mathematical Society*, 51(8), 873--883.
+Pfender, F., & Ziegler, G. M. (2004). Kissing numbers, sphere packings, and some unexpected proofs. *Notices of the American Mathematical Society*, 51(8), 873--883.
 
 Ries, A., & Trout, J. (1981). *Positioning: The Battle for Your Mind*. McGraw-Hill.
 
