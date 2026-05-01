@@ -23,18 +23,24 @@ provenance:
       target_type: journal
       created: "2026-03-29"
       source_commit: "main"
-      status: rejected
-      outcome: desk_rejected
+      status: closed
+      outcome: not_merged
       decision_date: "2026-04-02"
+      editor: "Dr. Steve Sawyer (EiC)"
+      submission_id: "JASIST-2026-03-0533"
+      reason: "not clear that the work draws on information science literature, then connects this to other scholarly spaces"
 
     - id: "fork-2026-04-02-journal2"
       target: "[withheld]"
       target_type: journal
       created: "2026-04-02"
       source_commit: "main"
-      status: rejected
-      outcome: desk_rejected
+      status: closed
+      outcome: not_merged
       decision_date: "2026-04-16"
+      editor: "Alicia Zuniga (Managing Editor)"
+      reason: "out of scope — requires stronger tie to librarianship in the body of the manuscript"
+      note: "JLSC explicitly invited resubmission with stronger librarianship emphasis"
 
     - id: "update-2026-04-16-zenodo-v2.0"
       target: "Zenodo"
