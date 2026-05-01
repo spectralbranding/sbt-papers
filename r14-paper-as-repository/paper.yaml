@@ -10,8 +10,8 @@ meta:
       affiliation: "Independent Researcher"
   doi: "10.5281/zenodo.19294864"
   date: "2026-04-16"
-  version: "2.0.1"
-  venue: "Zenodo preprint (under review)"
+  version: "2.1.0"
+  venue: "Zenodo preprint (post-desk-reject; JEP/JLSC revision pending venue confirmation)"
   license: "CC-BY-4.0"
   keywords:
     - scientific publishing
