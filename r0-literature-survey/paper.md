@@ -24,7 +24,7 @@ This paper surveys geometric and topological methods applied to brand perception
 
 Brand theory, as it has developed over the past four decades, is strikingly under-formalized. The foundational frameworks that guide both academic research and professional practice---Aaker's (1991) brand equity model, Keller's (1993) customer-based brand equity pyramid, Kapferer's (2008, 4th ed.) brand identity prism---are taxonomic rather than mathematical. They identify components, propose relationships, and offer measurement instruments, but they do not specify the formal structure of the space in which brands exist, the metric by which brand differences should be measured, or the dynamical laws governing how brand perceptions evolve over time. A recent systematic review confirmed that "no model allows comprehensive evaluation of brand equity" in a formally rigorous sense (Chernikov, 2024).
 
-This absence of mathematical structure stands in sharp contrast to adjacent fields where geometric methods have produced transformative insights. In perception science, the discovery that human perceptual space is non-Euclidean---"at best Riemannian" (Todd, Oomes, Koenderink, and Kappers, 2001) and possibly non-Riemannian (Bujack, Teti, Miller, Caffrey, and Turton, 2022)---has reshaped how researchers model visual and sensory experience. In cognitive science, Gardenfors's (2000) conceptual spaces framework demonstrated that natural concepts correspond to convex regions in geometric quality-dimension spaces, providing a formal bridge between perception and categorization. In economics, Lancaster's (1966) characteristics theory recast consumer choice as navigation through an n-dimensional attribute space, while Hotelling's (1929) spatial competition model placed firms on a geometric line. In physics and machine learning, high-dimensional geometry has revealed counterintuitive phenomena---concentration of measure, the curse of dimensionality, the Johnson-Lindenstrauss projection lemma---that fundamentally alter how systems behave as dimensions increase.
+This absence of mathematical structure stands in sharp contrast to adjacent fields where geometric methods have produced transformative insights. In perception science, the discovery that human perceptual space is non-Euclidean---"at best Riemannian" (Todd, Oomes, Koenderink, and Kappers, 2001) and possibly non-Riemannian (Bujack, Teti, Miller, Caffrey, and Turton, 2022)---has reshaped how researchers model visual and sensory experience. In cognitive science, Gardenfors's (2000) conceptual spaces framework demonstrated that natural concepts correspond to convex regions in geometric quality-dimension spaces, providing a formal bridge between perception and categorization. In economics, Lancaster's (1966) characteristics theory recast consumer choice as navigation through an n-dimensional attribute space, while Hotelling's (1929) spatial competition model placed firms on a geometric line. In physics and machine learning, high-dimensional geometry has revealed counterintuitive phenomena---concentration of measure, the curse of dimensionality, the Johnson-Lindenstrauss projection lemma---that fundamentally alter how systems behave as dimensions increase. Most directly relevant for a cs.LG audience, the geometric deep learning program (Bronstein, Bruna, LeCun, Szlam, and Vandergheynst, 2017) has established that learning on non-Euclidean domains---graphs, manifolds, and point clouds---requires tools beyond standard convolutional architectures, positioning the brand-perception problem as a natural application domain for manifold-aware representation learning.
 
 Meanwhile, the non-ergodicity revolution initiated by Peters (2019) has shown that the distinction between time averages and ensemble averages, long understood in statistical mechanics, has profound consequences for economics, psychology, and decision-making. When dynamics are multiplicative or absorbing states exist, population-level statistics (ensemble averages) systematically diverge from the trajectories of individual agents (time averages). This insight has been formalized in psychology by Molenaar (2004) and Molenaar and Campbell (2009), tested experimentally by Meder et al. (2021) and Skjold, Brewer, and Peters (2024), and applied to evolutionary biology and organizational theory---but never to brand perception.
 
@@ -188,7 +188,7 @@ If observer profiles are normalized vectors (weights summing to one), they live 
 
 A deeper mathematical motivation for dimension-weighted distance comes from Shepard's (1987) universal law of generalization. Shepard demonstrated that across species and stimulus domains, the probability of generalizing a learned response from one stimulus to another falls off exponentially with psychological distance: $P(\text{generalize}) \sim e^{-c \cdot d}$, where $d$ is the weighted distance in a Minkowski space and $c$ is a scaling parameter. This exponential decay is not an empirical regularity but a mathematical consequence of the structure of psychological space under a Bayesian model of stimulus uncertainty. Problem 6 of this survey — diffusion dynamics on perceptual manifolds — can be understood as formalizing the temporal implications of Shepard's exponential generalization: if generalization decays exponentially with distance, repeated signal encounters produce a diffusion process whose decay rate is governed by the local curvature of the perceptual manifold.
 
-A further neuroscience parallel is Representational Similarity Analysis (RSA), introduced by Kriegeskorte, Mur, and Bandettini (2008). RSA characterizes the representational geometry of neural populations by constructing dissimilarity matrices from multi-voxel activation patterns and comparing those matrices across brain regions, species, and computational models. Structurally, RSA operationalizes observer-specific geometry: different brain regions and different individuals carry different representational geometries for the same stimuli. This is precisely the observer-heterogeneity problem that the dimension-weighting literature addresses statistically and that SBT addresses theoretically. RSA does not satisfy the compound gap criteria on its own — it is neural-measurement methodology without a generative signal model or non-ergodic dynamics — but it demonstrates that observer-specific representational geometry is not merely a theoretical construct: it can be measured at the neural level with well-developed tools.
+A further neuroscience parallel is Representational Similarity Analysis (RSA), introduced by Kriegeskorte, Mur, and Bandettini (2008). RSA characterizes the representational geometry of neural populations by constructing dissimilarity matrices from multi-voxel activation patterns and comparing those matrices across brain regions, species, and computational models. Structurally, RSA operationalizes observer-specific geometry: different brain regions and different individuals carry different representational geometries for the same stimuli. Kriegeskorte and Kievit (2013) extended this framework to a broader theory of representational geometry in the brain, making explicit the connection between neural representational spaces and behavioral similarity judgments. This is precisely the observer-heterogeneity problem that the dimension-weighting literature addresses statistically and that SBT addresses theoretically. RSA does not satisfy the compound gap criteria on its own — it is neural-measurement methodology without a generative signal model or non-ergodic dynamics — but it demonstrates that observer-specific representational geometry is not merely a theoretical construct: it can be measured at the neural level with well-developed tools.
 
 ## 7. Topological Data Analysis in Marketing
 
@@ -202,7 +202,7 @@ Persistence diagrams and barcodes provide compact visual summaries of topologica
 
 TDA has found applications in several domains adjacent to marketing. In financial markets, Yen and Cheong (2021) used Betti numbers and Euler characteristics to detect structural changes associated with market crashes in the Singapore and Taiwan stock exchanges. During crashes, the market topology fragments---persistent topological features disappear as correlations between assets break down.
 
-In social network analysis, persistent homology has been applied to detect community structure, identify influential nodes, and track the evolution of network topology over time. In biology, TDA has been used to analyze protein structures, neural population activity, and genomic data.
+In social network analysis, persistent homology has been applied to detect community structure, identify influential nodes, and track the evolution of network topology over time. In biology, TDA has been used to analyze protein structures, neural population activity, and genomic data. Notably, Carrière, Chazal, Ike, Lacombe, Royer, and Umeda (2020) applied TDA to high-dimensional task-based fMRI data, demonstrating that persistent homology captures perceptual structure in multi-dimensional neural activation spaces that standard Euclidean distance analysis misses. The methodological parallel to brand-perception data---multi-attribute ratings forming a high-dimensional point cloud---is direct: the same topological machinery that detects perceptual structure in neural spaces could reveal structural features (holes, voids, loops) in brand-perception spaces that MDS-based approaches cannot detect.
 
 ### 7.3 The Marketing Gap
 
@@ -290,7 +290,7 @@ Molenaar and Campbell (2009) formalized this further and proposed person-specifi
 
 The *Ergodicity Information Index* (EII) measures the distance between within-person and between-person statistical structures (Fisher, Medaglia, and Jeronimus, 2018). When EII is near zero, the process is approximately ergodic and group-level statistics are informative about individuals. When EII is large, the process is non-ergodic and group-level statistics are misleading.
 
-*Dynamic Factor Analysis* (DFA) allows factor structures to evolve over time within an individual, testing for factor invariance and capturing the non-stationarity that characterizes real psychological processes.
+*Dynamic Factor Analysis* (DFA) allows factor structures to evolve over time within an individual, testing for factor invariance and capturing the non-stationarity that characterizes real psychological processes. Molenaar, Lerner, and Newell (2014) provide a comprehensive treatment of applying dynamic factor analysis to multivariate time series in developmental and behavioral contexts, demonstrating the tools available for idiographic analysis once the ergodic assumption is relaxed.
 
 *P-technique Factor Analysis* captures the covariation of measures within a single person over many measurement occasions, providing idiographic factor structures that may differ qualitatively from nomothetic (group-level) factor structures.
 
@@ -324,7 +324,7 @@ This gap is significant because brand perception exhibits all the hallmarks of n
 
 *Path dependence*. The order in which brand signals are encountered matters. A consumer who first encounters a brand through a negative experience and then encounters positive signals will, in general, reach a different final perception than one who encounters the same signals in reverse order. This path dependence is a direct consequence of the multiplicative/non-linear nature of signal processing.
 
-*Observer heterogeneity*. Individual consumer trajectories are governed by person-specific parameters (the observer spectral profile in SBT terms), making group-level statistics unreliable predictors of individual behavior---precisely the condition Molenaar (2004) identified as non-ergodicity in psychology.
+*Observer heterogeneity*. Individual consumer trajectories are governed by person-specific parameters (the observer spectral profile in SBT terms), making group-level statistics unreliable predictors of individual behavior---precisely the condition Molenaar (2004) identified as non-ergodicity in psychology. A related challenge is temporal credit assignment: how a consumer attributes the current state of their brand perception to past signal encounters at different time lags. Gershman and Daw (2017) demonstrate in the context of episodic memory and reinforcement learning that temporal credit assignment is non-trivial even for relatively simple sequential dynamics, a difficulty that is amplified in brand perception contexts where signal encounters are irregularly spaced, vary in intensity, and interact with prior perceptions through nonlinear processing.
 
 The nearest work in marketing is Layton and Duffy (2018), who discuss path dependence in marketing systems (supply chains, distribution channels) but use the concept qualitatively and system-level rather than applying Peters's mathematical formalism to individual consumer perception trajectories. A formal derivation of how the coherence type of brand signals — whether signals reinforce or disrupt one another — predicts crisis trajectories is developed in Zharnikov (2026s), which formalizes the absorbing-state structure from a non-ergodic dynamics perspective.
 
@@ -450,7 +450,7 @@ The synthesis above identifies a compound gap at the intersection of high-dimens
 
 **Statement.** Apply sphere packing theory to derive upper bounds on the number of perceptually distinguishable brand positions in eight-dimensional perception space.
 
-**Context.** Two brands are perceptually distinguishable if their profiles differ by more than a just-noticeable difference (JND) threshold $\epsilon$. The maximum number of distinguishable positions is bounded by the maximum number of non-overlapping spheres of radius $\epsilon/2$ in the brand space. In eight dimensions, the densest sphere packing is the $E_8$ lattice, with kissing number 240 (Viazovska, 2017).
+**Context.** Two brands are perceptually distinguishable if their profiles differ by more than a just-noticeable difference (JND) threshold $\epsilon$. The maximum number of distinguishable positions is bounded by the maximum number of non-overlapping spheres of radius $\epsilon/2$ in the brand space. In eight dimensions, the densest sphere packing is the $E_8$ lattice, with kissing number 240 (Viazovska, 2017). Prior to Viazovska's proof, Cohn and colleagues established linear programming bounds on sphere packing density in dimensions 8 and 24, conjecturing the optimality of $E_8$ and the Leech lattice respectively (Cohn, Kumar, Miller, Radchenko, and Viazovska, 2017); these bounds supply the analytical foundation for interpreting $E_8$ as a hard geometric limit rather than a numerical approximation.
 
 **Formulation.** For perceptual threshold $\epsilon$ on the positive octant of the unit 8-sphere $S^7_+$, derive the packing capacity $N(\epsilon) = \text{vol}(S^7_+) / \text{vol}(B_8(\epsilon/2))$ as a function of $\epsilon$. Interpret the $E_8$ kissing number (240) as an upper bound on the number of nearest competitors for any brand position. Derive conditions under which a product category is "saturated" (number of brands approaches packing capacity for the category's effective dimensionality).
 
@@ -510,6 +510,8 @@ Bakker, R., and Poole, K. T. (2013). "Bayesian Metric Multidimensional Scaling."
 
 Bechberger, L. (2023). "Using Conceptual Spaces for Artificial Intelligence." Doctoral dissertation, University of Osnabruck. https://doi.org/10.48693/435
 
+Bronstein, M. M., Bruna, J., LeCun, Y., Szlam, A., and Vandergheynst, P. (2017). "Geometric Deep Learning: Going Beyond Euclidean Data." *IEEE Signal Processing Magazine*, 34(4), 18-42.
+
 Bernoulli, D. (1738). "Specimen Theoriae Novae de Mensura Sortis." *Commentarii Academiae Scientiarum Imperialis Petropolitanae*, 5, 175-192. Translated by L. Sommer, *Econometrica*, 22(1), 23-36 (1954).
 
 Bijmolt, T. H. A., and Wedel, M. (1999). "A Comparison of Multidimensional Scaling Methods for Perceptual Mapping." *Journal of Marketing Research*, 36(2), 277-285.
@@ -526,11 +528,15 @@ Busemeyer, J. R., and Bruza, P. D. (2012). *Quantum Models of Cognition and Deci
 
 Carlsson, G. (2009). "Topology and Data." *Bulletin of the American Mathematical Society*, 46(2), 255-308.
 
+Carrière, M., Chazal, F., Ike, Y., Lacombe, T., Royer, M., and Umeda, Y. (2020). "PersLay: A Neural Network Layer for Persistence Diagrams and New Graph Topological Signatures." In *Proceedings of the 23rd International Conference on Artificial Intelligence and Statistics (AISTATS)*, PMLR 108, 2786-2796.
+
 Chung, F. R. K. (1997). *Spectral Graph Theory*. American Mathematical Society.
 
 Carroll, J. D., and Chang, J. J. (1970). "Analysis of Individual Differences in Multidimensional Scaling via an N-Way Generalization of Eckart-Young Decomposition." *Psychometrika*, 35(3), 283-319.
 
 Cencov, N. N. (1982). *Statistical Decision Rules and Optimal Inference*. American Mathematical Society.
+
+Cohn, H., Kumar, A., Miller, S. D., Radchenko, D., and Viazovska, M. (2017). "The Sphere Packing Problem in Dimension 24." *Annals of Mathematics*, 185(3), 1017-1033.
 
 Chernikov, S. (2024). "Systematic Review of Brand Equity Evaluation Models." Working paper.
 
@@ -560,6 +566,8 @@ Fisher, A. J., Medaglia, J. D., and Jeronimus, B. F. (2018). "Lack of Group-to-I
 
 Gardenfors, P. (2000). *Conceptual Spaces: The Geometry of Thought*. MIT Press.
 
+Gershman, S. J., and Daw, N. D. (2017). "Reinforcement Learning and Episodic Memory in Humans and Animals: An Integrative Framework." *Annual Review of Psychology*, 68, 101-128.
+
 Golub, B., and Jackson, M. O. (2010). "Naive Learning in Social Networks and the Wisdom of Crowds." *American Economic Journal: Microeconomics*, 2(1), 112-149.
 
 Green, P. E., and Rao, V. R. (1972). *Applied Multidimensional Scaling: A Comparison of Approaches and Algorithms*. Holt, Rinehart and Winston.
@@ -575,6 +583,8 @@ Johnson, W. B., and Lindenstrauss, J. (1984). "Extensions of Lipschitz Mappings 
 Kapferer, J.-N. (2008). *The New Strategic Brand Management: Creating and Sustaining Brand Equity Long Term* (4th ed.). Kogan Page.
 
 Keller, K. L. (1993). "Conceptualizing, Measuring, and Managing Customer-Based Brand Equity." *Journal of Marketing*, 57(1), 1-22.
+
+Kriegeskorte, N., and Kievit, R. A. (2013). "Representational Geometry: Integrating Cognition, Computation, and the Brain." *Trends in Cognitive Sciences*, 17(8), 401-412.
 
 Khrennikov, A. (2016). "Quantum-Like Model of Decision Making and Sense Perception Based on the Representation of the Contextual Probabilistic Model of Kolmogorovian Type in Complex Hilbert Space." *Biosystems*, 138, 49-56.
 
@@ -597,6 +607,8 @@ Meder, D., Rabe, F., Morville, T., Madsen, K. H., Koudahl, M. T., Dolan, R. J., 
 Mikolov, T., Sutskever, I., Chen, K., Corrado, G. S., and Dean, J. (2013). "Distributed Representations of Words and Phrases and Their Compositionality." *Advances in Neural Information Processing Systems*, 26, 3111-3119.
 
 Molenaar, P. C. M. (2004). "A Manifesto on Psychology as Idiographic Science: Bringing the Person Back into Scientific Psychology, This Time Forever." *Measurement*, 2(4), 201-218.
+
+Molenaar, P. C. M., Lerner, R. M., and Newell, K. M. (Eds.). (2014). *Handbook of Developmental Systems Theory and Methodology*. Guilford Press.
 
 Molenaar, P. C. M., and Campbell, C. G. (2009). "The New Person-Specific Paradigm in Psychology." *Current Directions in Psychological Science*, 18(2), 112-117. https://doi.org/10.1111/j.1467-8721.2009.01619.x
 
