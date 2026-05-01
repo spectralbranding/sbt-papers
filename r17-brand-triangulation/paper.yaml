@@ -10,7 +10,7 @@ meta:
       affiliation: "Independent Researcher"
   doi: "10.5281/zenodo.19482547"
   date: "2026-04-16"
-  version: "1.2.1"
+  version: "1.3.0"
   venue: "Zenodo preprint"
   license: "CC-BY-4.0"
   keywords:
@@ -69,7 +69,7 @@ claims:
     depends_on: ["P1"]
 
   - id: "P4"
-    type: proposition
+    type: conjecture
     statement: >
       Multi-constellation positioning — combining human observer cohorts, AI observers, and
       behavioral proxies that possess structurally non-collinear spectral weight profiles — reduces
@@ -83,7 +83,7 @@ claims:
     depends_on: ["P2", "P3"]
 
   - id: "P5"
-    type: proposition
+    type: conjecture
     statement: >
       The admissibility corridor framework of Medesani & Macdonald (2026) extends to 8-dimensional
       brand positioning: a brand's position is admissible if and only if it satisfies the tri-binding
@@ -97,7 +97,7 @@ claims:
     depends_on: []
 
   - id: "P6"
-    type: proposition
+    type: conjecture
     statement: >
       Brand perception trajectories are estimable via a Perception Kalman filter that jointly tracks
       the 8-dimensional spectral profile and its first derivative (perception velocity). The filter's
@@ -359,3 +359,25 @@ submission_history:
       Karcher mean curved-space generalization (all in Section 11).
       v1.2 (2026-04-16): Added supplementary experiment citations (agentic
       compounding, BF format optimization) in Section 10.3.
+      v1.3 (2026-05-01, Phase 3 audit): abstract rewritten to third person and trimmed to 194 words;
+      contribution-to-section mapping at §1.4 corrected (C1+C2→§3, C3→§4, C4→§5; §9.6 = MC validation);
+      Tables 1–4 and Table 6 acquired *Note.* blocks; forward-references added for Tables 2, 3, 5, 6;
+      Companion Computation Script subsection §9.7 added per PQS 37b; §10.4/§11 redundancy cut (~170w);
+      reference list re-sorted alphabetically and standardized to APA & in multi-author entries;
+      8 orphan references removed (Aubin 2011, Bawa, Berger, Ilchmann, Martinet, Mitchell-Bayen-Tomlin,
+      Oubraham, van der Linden); Bertsekas-Rhodes retained for control-theory framing; DOI/title
+      corrections applied to BertsekaRhodes1971, DeSarboRao1986, Esterhuizen2021 (Lévine accent +
+      DOI), Resnikoff1974 (issue 2), Simons1994; §3.2 Sandor & Wedel + Cramér-Rao paragraph added;
+      §2.1 Hauser-Shugan + Choi-DeSarbo-Harker measurement-vs-strategy paragraph added;
+      §2.1 Park-DeSarbo et al. 2017 + Allenby-Rossi 1998 added; §5.1 Elrod & Keane 1995 paragraph
+      added; §8 + §8.3 cite 2026z R18 forward + Naik-Raman 2003 + Naik-Schultz-Srinivasan 2007;
+      simplex-vs-sphere PDOP qualifier added (§9.6); calibration circularity foregrounded in §4.1;
+      GPS-asymmetry generalizability boundary added at §3.4; "validation" softened to "confirmation"
+      in §9.6 / Tables; Bell analogy "precise" qualifier dropped; Acknowledgments + AI disclosure
+      added before References; word count ~19,700 (delta +2,400w from added external citations and
+      methodological grounding); ref count 67. Medesani & Macdonald 2026 DOI verification deferred
+      to manual queue (load-bearing 12× citation; hard block before MKSC submission).
+      v1.3.0 (2026-05-01, Grok round 1): abstract replaced with PDOP-foregrounded version (198w);
+      P4/P5/P6 relabeled as Conjectures C4/C5/C6 throughout; §1.2 grounded with Carroll-Chang 1970,
+      Allenby-Rossi 1998, Li 2024 alongside Zharnikov self-cites; §9.2 overclaim softened; Keywords
+      updated to MKSC-facing vocabulary.
