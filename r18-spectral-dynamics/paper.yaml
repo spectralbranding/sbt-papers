@@ -9,8 +9,8 @@ meta:
       orcid: "0009-0000-6893-9231"
       affiliation: "Independent Researcher"
   doi: "10.5281/zenodo.19468204"
-  date: "2026-04-16"
-  version: "1.1.1"
+  date: "2026-05-01"
+  version: "1.2.0"
   venue: "Zenodo preprint"
   license: "CC-BY-4.0"
   keywords:
@@ -116,10 +116,14 @@ data:
     assessment. No new primary data collected. Illustration only.
 
 code:
-  available: false
+  available: true
+  url: "https://github.com/spectralbranding/sbt-papers/tree/main/r18-spectral-dynamics/code/"
+  entry_point: "compute_velocity_acceleration.py"
   notes: >
-    Computations are finite differences (velocity, acceleration) applied to Table 1 data.
-    Reproducible by hand or in any spreadsheet/numerical environment.
+    Companion computation script reproduces Tables 2 and 3 (velocity and acceleration
+    vectors) from the Table 1 spectral profiles via centered finite differences. Python
+    3 standard library only; deterministic; fixed seed for any future Monte Carlo
+    extension. Outputs JSON and CSV for both tables.
 
 replication:
   feasible: true
@@ -219,3 +223,21 @@ submission_history:
       ~7,500 words.
       v1.1 (2026-04-16): Added Section 8.4 (Competitive Context Stability)
       citing Experiment C null results.
+      v1.2.0 (2026-05-01): Phase 3 audit revisions. AMA conversion (full first names,
+      no-comma in-text cites, AMA table captions, Notes blocks). Abstract trimmed to
+      188 words and converted to third person. "Section N" cross-refs replaced with
+      descriptive subsection names. Added Acknowledgments + AI disclosure. Added
+      §2.4 expanded engagement with Bass (1969), Mizik & Jacobson (2008, 2009),
+      Pauwels et al. (2004), and Naik-Raman tradition; added physics-analogy defense
+      remark in §2.2 citing Peters (2019). Added §8.5 Testable Predictions
+      subsection (4 falsifiable predictions). Added Cleeren-van Heerde-Dekimpe
+      (2013) at §3.6 and §8.1; Borah & Tellis (2016) at §5.2. Added 2026e cite at
+      §3.1 lossy-projection remark; 2026s cites at §3.6 and §8.6. DC leading-zero
+      fixes (+.72, +.67, -.53). Strategy-vector independence reframed as
+      methodological requirement. Line 481 evidentiary qualifier softened to
+      "preliminary evidence from a working-paper survey." Added 2026c reference
+      entry. Added 5 DOIs to Bourgeois-Eisenhardt 1988, Dekimpe-Hanssens 1995,
+      Dooley-Van de Ven 1999, Muthen-Shedden 1999, Sriram et al. 2006. 36 references
+      (was 29). ~9,711 words. Added §8.7 Companion Computation Script subsection;
+      created code/ companion script reproducing Tables 2 and 3 with run command and
+      README per PAPER_QUALITY_STANDARDS items 37a-37e.

@@ -1,0 +1,56 @@
+{
+  "Period 1: Ignition": {
+    "t_start": 2003,
+    "t_end": 2006,
+    "dt_years": 3,
+    "midpoint_year": 2004.5,
+    "velocity": {
+      "Semiotic": 0.1667,
+      "Narrative": 1.1667,
+      "Ideological": null,
+      "Experiential": 0.0,
+      "Social": 0.8333,
+      "Economic": 0.0,
+      "Cultural": 1.5,
+      "Temporal": 0.1667
+    },
+    "brand_speed": 2.0883,
+    "n_dims_used": 7
+  },
+  "Period 2: Expansion": {
+    "t_start": 2006,
+    "t_end": 2013,
+    "dt_years": 7,
+    "midpoint_year": 2009.5,
+    "velocity": {
+      "Semiotic": 0.0714,
+      "Narrative": 0.1429,
+      "Ideological": 0.1429,
+      "Experiential": 0.0,
+      "Social": 0.2143,
+      "Economic": 0.0,
+      "Cultural": -0.0714,
+      "Temporal": 0.0714
+    },
+    "brand_speed": 0.3195,
+    "n_dims_used": 8
+  },
+  "Period 3: Normative Absorption": {
+    "t_start": 2013,
+    "t_end": 2023,
+    "dt_years": 10,
+    "midpoint_year": 2018.0,
+    "velocity": {
+      "Semiotic": 0.1,
+      "Narrative": -0.1,
+      "Ideological": -0.15,
+      "Experiential": 0.05,
+      "Social": -0.1,
+      "Economic": -0.05,
+      "Cultural": -0.25,
+      "Temporal": 0.05
+    },
+    "brand_speed": 0.35,
+    "n_dims_used": 8
+  }
+}
