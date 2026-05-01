@@ -7,7 +7,7 @@ authors:
     affiliation: "Independent Researcher"
     orcid: "https://orcid.org/0009-0000-6893-9231"
 title: "Brand space geometry: A formal metric for multi-dimensional brand perception"
-version: 1.1.0
+version: 2.2.0
 date-released: 2026-05-01
 url: "https://doi.org/10.5281/zenodo.18945295"
 repository-code: "https://github.com/spectralbranding/sbt-papers"
