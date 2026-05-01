@@ -2,7 +2,7 @@
 
 **Dmitry Zharnikov**
 
-*Working Paper v1.2.1 — April 2026*
+*Working Paper v1.3 — May 2026*
 
 *DOI: https://doi.org/10.5281/zenodo.19482547*
 
@@ -10,9 +10,11 @@
 
 ## Abstract
 
-Brand positioning research faces a fundamental measurement problem: every observer cohort perceives the same brand differently, yet traditional frameworks treat this variation as noise rather than signal. We propose *brand triangulation* — a geometric framework borrowing from GPS positioning theory to estimate brand spectral profiles from multiple observer cohorts while jointly solving for observer bias. We make four contributions. First, we formalize the GPS-SBT mapping: observer cohorts function as positioning satellites whose geometric diversity determines measurement precision. Second, we introduce *Perception DOP* (Dilution of Precision), a computable pre-study metric quantifying how well a proposed observer configuration resolves a brand's eight-dimensional spectral profile. Third, we propose *differential brand measurement*, a calibration protocol using reference brands with known spectral profiles to correct systematic observer bias. Fourth, we establish identifiability conditions specifying the minimum observer configurations required for unique brand positioning. We demonstrate the framework computationally using dimensional weight data from six large language models (R15 dataset, 4,860 API calls). Perception DOP predicts estimation error (Monte Carlo R^2 = .926, log-log slope = .995, Spearman rho = .996, all p < 10^{-300}), and Brand Function specification reduces dimensional collapse by 20% (DCI .353→.284 for local brands). The framework reframes multi-observer disagreement from a methodological nuisance into a primary source of positioning information.
+Brand positioning research faces a structural measurement problem: every observer cohort perceives a brand through a distinct spectral weight profile, yet conventional methods treat inter-cohort variation as noise. Brand triangulation reframes this variation as geometric information. Drawing on GPS positioning theory, the framework maps observer cohorts to satellites, brand emission profiles to receiver location, and cohort biases to clock error. The central innovation is Perception DOP (PDOP), a scalar computed solely from proposed cohort weight profiles that quantifies expected estimation precision before data collection. The approach further introduces differential brand measurement using reference brands to correct systematic observer bias and establishes identifiability conditions linking spectral metamerism to geometric underdetermination.
 
-**Keywords**: brand positioning, Spectral Brand Theory, dilution of precision, observer bias, brand measurement, GPS analogy, dimensional collapse
+The framework is illustrated with dimensional-weight data from six large language models (4,860 observations) and validated through Monte Carlo simulation (2,000 trials) confirming the theoretical PDOP–MSE power-law relationship (log-log slope = .995, R² = .994, Spearman ρ = .996). Brand Function specifications reduce dimensional collapse by 20% in the LLM constellation. By converting multi-observer disagreement into a primary source of positioning information, the framework supplies pre-study design criteria, bias-correction protocols, and dynamic tracking machinery that together upgrade brand measurement from opinion aggregation to geometric estimation.
+
+**Keywords**: brand positioning, measurement geometry, dilution of precision, observer heterogeneity, optimal design, differential correction
 
 ---
 
@@ -30,15 +32,15 @@ This paper proposes that the multi-observer heterogeneity that contemporary bran
 
 The dominant frameworks for brand positioning measurement share a structural assumption that is rarely stated explicitly: the existence of a canonical observer whose perception represents "the brand's position." Keller's (1993) customer-based brand equity model locates brand equity in the knowledge structures of individual consumers and aggregates across them, but it provides no mechanism for decomposing the systematic differences between consumer cohorts from the brand-level signal. Aaker's (1996) Brand Identity System is sender-side — it specifies what a brand should stand for — but offers no protocol for recovering that identity from structurally heterogeneous observer measurements. Ries and Trout's (1981) positioning framework is explicitly singular: the goal is to own a position in "the consumer's mind," with consumer treated as a representative agent. Kapferer's (2012) Brand Identity Prism distinguishes brand identity from brand image but provides no formal mechanism for reconciling image assessments from observers with different perceptual profiles.
 
-The problem is not that these frameworks are wrong; it is that they were developed for an era of relatively homogeneous observer infrastructure. When most brand encounters occurred through mass media reaching broadly similar audiences, the representative-consumer assumption was a reasonable approximation. That assumption has become progressively less tenable as three developments have expanded observer heterogeneity structurally rather than merely statistically. First, Spectral Brand Theory (Zharnikov, 2026a) formalizes the observation that observer cohorts differ not merely in their preferences but in the dimensional weights they assign to brand signals — their spectral profiles — and that these structural differences produce systematic rather than random variation in brand measurement. Second, empirical work on AI-mediated brand perception (Zharnikov, 2026v) demonstrates that large language models constitute a distinct observer type with characteristic spectral profiles that collapse ideological, cultural, and temporal dimensions, producing brand assessments that are structurally incommensurable with human-cohort assessments rather than merely noisier versions of them. Third, research on spectral metamerism (Zharnikov, 2026e) establishes formally that brands which are distinctly differentiated in the full eight-dimensional space can be perceptually indistinguishable to observers whose spectral profiles assign low weight to the differentiating dimensions — and that this indistinguishability is a property of the measurement infrastructure, not of the brands themselves.
+The problem is not that these frameworks are wrong; it is that they were developed for an era of relatively homogeneous observer infrastructure. When most brand encounters occurred through mass media reaching broadly similar audiences, the representative-consumer assumption was a reasonable approximation. That assumption has become progressively less tenable as three developments have expanded observer heterogeneity structurally rather than merely statistically. First, Spectral Brand Theory (Zharnikov, 2026a) formalizes the observation that observer cohorts differ not merely in their preferences but in the dimensional weights they assign to brand signals — their spectral profiles — and that these structural differences produce systematic rather than random variation in brand measurement. The per-subject dimension-weight construct has precedent in the INDSCAL tradition (Carroll & Chang, 1970) and in Bayesian hierarchical models (Allenby & Rossi, 1998); what SBT adds is a typed eight-dimensional taxonomy and the explicit treatment of weight-profile diversity as a design resource rather than a sampling nuisance. Second, empirical work on AI-mediated brand perception (Zharnikov, 2026v) demonstrates that large language models constitute a distinct observer type with characteristic spectral profiles that collapse ideological, cultural, and temporal dimensions, producing brand assessments that are structurally incommensurable with human-cohort assessments rather than merely noisier versions of them. Li et al. (2024) validate LLMs as automated perceptual instruments; their 75%+ agreement with human surveys on brand similarity locates AI observers as a coherent but geometrically constrained satellite cluster rather than a noisy substitute. Third, research on spectral metamerism (Zharnikov, 2026e) establishes formally that brands which are distinctly differentiated in the full eight-dimensional space can be perceptually indistinguishable to observers whose spectral profiles assign low weight to the differentiating dimensions — and that this indistinguishability is a property of the measurement infrastructure, not of the brands themselves.
 
 Taken together, these developments suggest that what the positioning literature has treated as measurement error is, in substantial part, structural information about the geometric relationship between observer spectral profiles and brand emission profiles. The framework we propose exploits this structure.
 
 ### 1.3 GPS-SBT Concept Mapping
 
-The formal analogy between GPS positioning and brand measurement is precise rather than metaphorical. Table 1 maps the core GPS concepts to their SBT counterparts.
+The formal analogy between GPS positioning and brand measurement is structurally analogous rather than merely metaphorical: the observation model maps term-by-term, with bounded differences spelled out in §12. Table 1 maps the core GPS concepts to their SBT counterparts.
 
-**Table 1.** GPS-SBT concept mapping
+Table 1: GPS-SBT Concept Mapping.
 
 | GPS Concept | SBT Concept | Mathematical Role |
 |---|---|---|
@@ -56,13 +58,13 @@ The formal analogy between GPS positioning and brand measurement is precise rath
 | Ephemeris updates | Cohort weight drift (taste evolution) | Calibration maintenance over time |
 | Satellite geometry (spread vs. clustered) | Observer diversity (varied vs. homogeneous) | Determines measurement precision |
 
+*Note.* The "Minimum 4 satellites" / "Minimum 9 cohorts" rows refer to the collapsed (1D) observation case; full 8D dimensional observations require only N ≥ 2 (see §5.1).
+
 The critical insight that motivates the GPS analogy is not merely the structural similarity between satellite geometry and observer diversity. It is the GPS insight about clock error. GPS receivers contain cheap, systematically inaccurate clocks. Rather than requiring accurate clocks — which would be prohibitively expensive in consumer devices — GPS jointly estimates position and clock error from the overdetermined system of satellite equations. The clock error is not noise; it is a solvable unknown. Brand measurement contains an exact analog. Every observer cohort has systematic biases — familiarity effects, anchoring to prior associations, cultural reference points that inflate or deflate particular dimensions. The standard methodological response is to try to eliminate these biases through sampling design. The GPS insight is to embrace them as known unknowns and solve for them simultaneously with the brand position.
 
 ### 1.4 Contributions
 
-This paper makes four contributions to brand positioning methodology.
-
-First, we formalize the GPS-SBT mapping as a precise observation model, showing that brand spectral profile estimation from multiple observer cohorts is a weighted least-squares positioning problem whose structure is exactly analogous to satellite positioning. Observer bias enters as a set of scalar unknowns that are identified alongside the brand profile rather than treated as noise.
+This paper makes four contributions to brand positioning methodology. First, we formalize the GPS-SBT mapping as a precise observation model, showing that brand spectral profile estimation from multiple observer cohorts is a weighted least-squares positioning problem whose structure is exactly analogous to satellite positioning. Observer bias enters as a set of scalar unknowns that are identified alongside the brand profile rather than treated as noise.
 
 Second, we introduce *Perception DOP* as a computable, pre-study metric that quantifies how well a proposed set of observer cohorts can resolve a brand's eight-dimensional spectral profile. Perception DOP provides a formal basis for cohort selection in brand measurement studies: it enables researchers to evaluate alternative study designs before collecting data, identifying configurations that are geometrically well-posed.
 
@@ -70,7 +72,7 @@ Third, we propose *differential brand measurement*, a calibration protocol using
 
 Fourth, we establish identifiability conditions specifying the minimum cohort configurations required for unique brand positioning. We show that brands are spectrally metameric not because they are genuinely indistinguishable but because the measurement infrastructure lacks the geometric coverage to resolve them — and we characterize precisely what geometric coverage is required.
 
-(Contributions 1–4 are developed in Sections 3, 4, 5, and 9.6 respectively.)
+(Contributions 1 and 2 are developed in Section 3; Contribution 3 in Section 4; Contribution 4 in Section 5. Section 9.6 provides Monte Carlo confirmation of the framework. Propositions P1–P3 are formally derivable from the model and demonstrated empirically; P4–P6 are theoretical conjectures whose empirical testing is deferred to companion work, including 2026z Spectral Dynamics for the trajectory machinery in §8.)
 
 ### 1.5 Roadmap
 
@@ -88,7 +90,9 @@ These frameworks share a critical structural feature: they aggregate observer as
 
 Kapferer (2012) distinguished brand identity — the self-projection of the brand, specified by management — from brand image — the perceptual result in the minds of observers. This distinction correctly identifies the duality between specification and reception, but it does not provide a framework for recovering identity from heterogeneous image assessments. De Chernatony (1999) similarly emphasizes the identity-image gap as the central diagnostic in brand management, framing the gap as a communication failure to be closed. Hatch and Schultz (2010) advance the argument further by proposing that brand meaning is co-created by multiple stakeholders — a position that implies the multi-observer heterogeneity this paper formalizes geometrically. Their framework identifies the need for governance mechanisms that manage stakeholder-driven meaning variation, but provides no metric for quantifying how much stakeholder perspectives diverge or what measurement geometry would be required to resolve the divergence. None of these frameworks models the structural reasons why different observer cohorts perceive different images from the same brand signals.
 
-More recently, Bayesian approaches to brand positioning have formalized observer heterogeneity using hierarchical models. Wedel and Kamakura (2000) model consumer heterogeneity via latent class methods, treating segments as distributional subpopulations whose preferences differ in degree but who share a common perceptual space. Rossi, Allenby, and McCulloch (2005) develop the full Bayesian framework for decomposing individual-level heterogeneity into structural components, and this paradigm now dominates quantitative marketing research on brand choice. The geometric framework proposed here complements rather than competes with Bayesian heterogeneity modeling. Where Bayesian methods estimate the *distribution* of preferences across a population, brand triangulation estimates the *position* of a brand in dimensional space from observer cohorts whose spectral weight profiles are treated as known reference positions. The distinction is analogous to GPS: Bayesian methods characterize the population of receivers; GPS characterizes the position of a single receiver given known satellite positions. The two approaches answer different questions and can be combined — Bayesian estimation of cohort weight profiles followed by geometric triangulation of brand position.
+More recently, Bayesian approaches to brand positioning have formalized observer heterogeneity using hierarchical models. Wedel and Kamakura (2000) model consumer heterogeneity via latent class methods, treating segments as distributional subpopulations whose preferences differ in degree but who share a common perceptual space. Allenby and Rossi (1998) provide the methodological foundation for hierarchical Bayes treatment of consumer heterogeneity in marketing, and Rossi, Allenby, and McCulloch (2005) develop the full Bayesian framework for decomposing individual-level heterogeneity into structural components, the paradigm that now dominates quantitative marketing research on brand choice. Park, DeSarbo, Rajagopal, Dillon, and Chaiy (2017) extend this stream to Bayesian heterogeneous multidimensional scaling with explicit dimensionality selection — modelling consumers who differ in which dimensions they attend to — which is structurally similar to Brand Triangulation's observer spectral profiles. The key difference is direction of inference: Park et al. estimate the heterogeneity structure from data (post-hoc recovery of observer profiles), whereas Brand Triangulation treats heterogeneity as pre-calibrated (via PRISM-B) and uses it as measurement infrastructure. The geometric framework proposed here complements rather than competes with Bayesian heterogeneity modeling. Where Bayesian methods estimate the *distribution* of preferences across a population, brand triangulation estimates the *position* of a brand in dimensional space from observer cohorts whose spectral weight profiles are treated as known reference positions. The distinction is analogous to GPS: Bayesian methods characterize the population of receivers; GPS characterizes the position of a single receiver given known satellite positions. The two approaches answer different questions and can be combined — Bayesian estimation of cohort weight profiles followed by geometric triangulation of brand position.
+
+A parallel tradition in Marketing Science has developed formal-analytical positioning *strategy* models that take brand positions in attribute space as inputs. Hauser and Shugan (1983) derive optimal defensive repositioning given known consumer preference distributions; Choi, DeSarbo, and Harker (1990) extend this to Nash equilibrium positioning under competitive reaction. These strategy models presuppose that the brand's position in consumer-perceived space is reliably measurable. Brand Triangulation operates upstream of this tradition: it provides the measurement-layer machinery — PDOP as a pre-study design metric, differential correction, identifiability conditions — that any positioning-strategy calculation requires as input. The contribution here is therefore not a competing strategy framework but the prior-stage measurement architecture on which strategy models depend.
 
 The geometric approach to brand positioning has antecedents in multidimensional scaling and conjoint analysis. Green and Srinivasan (1978) establish the attribute-based decomposition of consumer preferences, estimating part-worth utilities that are the direct methodological predecessor of dimensional weight profiling; Netzer et al. (2008) survey subsequent advances in preference measurement and the treatment of respondent heterogeneity. DeSarbo and Rao (1986) develop constrained unfolding for joint space estimation of consumer and brand positions, and Carroll and Chang (1970) introduce INDSCAL — individual differences scaling — which estimates per-subject dimension weights in a common perceptual space. INDSCAL's per-subject weights are the direct methodological ancestor of SBT's observer spectral profiles (Zharnikov, 2026a). The present paper inverts the DeSarbo-Rao structure: rather than estimating both observer and brand positions jointly from preference data, we treat observer spectral profiles as approximately known reference positions and estimate brand profiles as the unknown targets. This produces a positioning problem formally analogous to GPS trilateration rather than to multidimensional unfolding.
 
@@ -100,7 +104,7 @@ The critical structural feature of SBT is the observer spectral profile. Each ob
 
 Spectral metamerism — the condition where structurally different brand profiles produce identical brand convictions in a specific observer — was formalized in Zharnikov (2026e). Two brands are metameric with respect to observer cohort k if their emission profiles e_A and e_B satisfy **w**_k · **e**_A = **w**_k · **e**_B, meaning the cohort's spectral weights project both profiles to the same brand conviction value. Brands can be metameric for one cohort and clearly distinguishable for another. Metamerism is therefore always observer-relative rather than a property of brands in isolation.
 
-Zharnikov (2026v) introduced a specific and consequential observer type: the large language model. Six LLM architectures were profiled across fifteen brand pairs using 4,860 API calls, recovering spectral weight profiles for each model by inferring which dimensions drove response differentiation. The results demonstrated that LLMs collectively assign low weight to Narrative, Ideological, Cultural, and Temporal dimensions — precisely those dimensions on which many brands build their most durable differentiation. Cross-model cosine similarity of spectral profiles was .975, indicating that this dimensional bias is structural to AI-mediated observation rather than specific to any single architecture. LLMs constitute, in the GPS analogy, a coherent but poorly positioned satellite cluster: they all occupy the same region of perceptual sky, providing strong coverage of Experiential and Economic dimensions but near-zero coverage of the dimensions that most distinguish premium and purpose-driven brands.
+Zharnikov (2026v) introduced a specific and consequential observer type: the large language model. Six LLM architectures were profiled across fifteen brand pairs using 4,860 API calls, recovering spectral weight profiles for each model by inferring which dimensions drove response differentiation. The results demonstrated that LLMs collectively assign low weight to Narrative, Ideological, Cultural, and Temporal dimensions — precisely those dimensions on which many brands build their most durable differentiation. Cross-model cosine similarity of spectral profiles was .975 (R15 Run 2 6-model subset; the headline 24-architecture figure across the full R15 dataset is .977), indicating that this dimensional bias is structural to AI-mediated observation rather than specific to any single architecture. LLMs constitute, in the GPS analogy, a coherent but poorly positioned satellite cluster: they all occupy the same region of perceptual sky, providing strong coverage of Experiential and Economic dimensions but near-zero coverage of the dimensions that most distinguish premium and purpose-driven brands.
 
 ### 2.3 GPS Positioning Theory and Dilution of Precision
 
@@ -168,6 +172,8 @@ PDOP is computable before any brand measurement is made. Given a proposed set of
 
 The connection to the experimental design literature is immediate. Kuhfeld, Tobias, and Garratt (1994) develop efficient experimental designs for marketing research applications using D-optimal and A-optimal criteria — geometric criteria that are formally related to DOP minimization. D-optimal designs minimize the determinant of (W^T W)^{-1}, equivalent to maximizing the geometric mean of the eigenvalues of W^T W. A-optimal designs minimize trace(W^T W)^{-1}, which is precisely PDOP^2. The connection establishes that PDOP minimization in cohort selection is a special case of A-optimal experimental design applied to the brand positioning estimation problem, grounding it in a mature methodological literature.
 
+The PDOP expression sqrt(trace(C)) is also the square root of the trace of the inverse Fisher information matrix for the linear observation model, corresponding to the multivariate Cramér-Rao lower bound for unbiased estimators of x (Cramér, 1946; Rao, 1945). The GPS DOP literature (Kaplan & Hegarty, 2017) arrives at the same expression via geometric reasoning; the Cramér-Rao derivation provides the underlying statistical foundation. The frequentist A-optimal criterion as defined here assumes observer weight profiles W_k are known exactly. When W_k is itself uncertain, the Bayesian extension replaces PDOP with its posterior expectation, integrating over the prior distribution of W_k — the analog of Bayesian D-optimal conjoint design (Sandor & Wedel, 2001, 2005). The sensitivity plateau result (Section 3.3) implies that the frequentist PDOP approximates its Bayesian counterpart well within the plateau region, so the frequentist criterion is a usable design tool even under realistic uncertainty about cohort weight profiles. The PDOP framework is also dimension-count agnostic: the formula applies to any D-dimensional observation model, with D = 8 inherited from the SBT taxonomy and tested in prior work (Zharnikov, 2026a).
+
 **Proposition 1**: For a set of N observer cohorts with spectral weight profiles **w**_1, ..., **w**_N, the precision of brand position estimation is inversely proportional to Perception DOP. Cohort configurations that minimize PDOP — those with maximally diverse spectral weight profiles — yield the most precise brand positioning.
 
 *Falsification*: P1 is falsified if empirical brand position estimates show no relationship between PDOP and estimation variance across different cohort configurations — that is, if randomly selected cohorts perform as well as DOP-optimized cohorts across repeated simulation or empirical studies. Concretely: if a study samples fifteen random cohort configurations, computes their PDOP values, and finds that PDOP does not predict estimation variance relative to a known ground-truth brand profile, P1 fails. The falsification requires that this null relationship hold across multiple brands and multiple estimation conditions, ruling out the possibility that a single well-designed study masks the relationship.
@@ -192,6 +198,8 @@ This is why the GPS analogy is mathematically precise rather than merely metapho
 
 The distinction has a direct implication for the framework's domain of applicability. When observer diversity is low — when all cohorts share similar weight profiles — the projections are nearly collinear, and the emission profile is indistinguishable from any single cohort's conviction profile. Classical brand measurement frameworks that assume a representative consumer (Keller, 1993; Ries and Trout, 1981) are adequate in this regime. They are the Newtonian limit: the weak-field approximation in which curvature can be neglected and measurement is straightforward. When observer diversity is high — structurally different weight profiles across human cohorts, AI observers, and behavioral proxies — the projections diverge, classical methods confound emission with conviction, and triangulation becomes necessary. The framework proposed here is designed for this high-diversity regime, which the developments catalogued in Section 1.2 have made the empirically relevant one.
 
+**Generalizability boundaries.** A boundary of the GPS analogy must be acknowledged at this point. Satellite positions in a real GPS constellation are *independently known* — derived from orbital mechanics and verified by ground stations — and broadcast as ephemeris data. Cohort spectral weight profiles, by contrast, must be *estimated* from the same observers (or an instrument such as PRISM-B applied to the same observer pool) whose subsequent measurements are then used to triangulate the brand. This introduces a circularity that GPS does not face: the measurement infrastructure used to establish W is not independent of the measurement infrastructure used to record y. The sensitivity plateau (§3.3) and the differential correction protocol (§4) bound the consequences of this circularity for relative positioning, but the asymmetry should be kept in view: the GPS analogy is structurally precise on the geometric side and weaker on the absolute-accuracy side.
+
 This hierarchical relationship — a simpler model as the limiting case of a richer one — has established precedents across measurement science. Holland and Hoskens (2003) show that Classical Test Theory is a first-order approximation to Item Response Theory: CTT's constant reliability is the population-average limit of IRT's ability-dependent information function, valid when items are approximately exchangeable. McFadden and Train (2000) demonstrate that the homogeneous multinomial logit model is the limiting case of the mixed logit when the variance of random coefficients approaches zero — the exact analog of Brand Triangulation reducing to single-observer measurement when spectral weight profiles converge. In each case, the "simple" framework holds in a low-diversity regime and breaks down as heterogeneity becomes structural rather than distributional. The perception space formalism has antecedents in psychophysics: Koenderink and van Doorn (2012) model pictorial space as a fiber bundle — a shared visual field (base space) with observer-dependent depth representations (fibers) — using gauge theory to characterize how visual measurements transform under changes of viewing condition. The mathematical architecture — a shared objective space with observer-dependent projections unified by a geometric structure — is the same architecture that Brand Triangulation applies to brand perception.
 
 ---
@@ -199,6 +207,8 @@ This hierarchical relationship — a simpler model as the limiting case of a ric
 ## 4. Differential Brand Measurement
 
 ### 4.1 The DGPS Analogy
+
+A foregrounding caveat is necessary before the DGPS mapping is presented. Standard DGPS base stations have geodetically surveyed positions that are externally validated against an independent measurement (terrestrial survey). The brand calibration profiles used here — Hermès, IKEA, Patagonia — are *framework-internal* estimates derived within SBT, not externally validated against an independent ground truth. The differential correction protocol therefore relies on a weaker condition than DGPS does: it requires only that calibration profiles be *stable across measurement epochs*, not that they be correct in an absolute sense. Systematic offsets in the calibration profiles propagate as a constant bias to all corrected target estimates, preserving relative positioning between target brands while not establishing absolute accuracy. Independent validation of the canonical profiles against human cohort survey data remains a priority and is identified as Option B in §11. Readers should treat the DGPS analogy below with this asymmetry in mind: the geometric architecture transfers; the absolute-accuracy guarantee does not.
 
 Differential GPS achieves centimeter-level positioning accuracy by cancelling the correlated errors that are the dominant limitation of unaided GPS. A base station at a precisely known position continuously estimates the difference between its GPS-derived position and its true position. This difference — the systematic error in the pseudorange measurements reaching that base station — is broadcast to nearby receivers. Because receivers near the base station observe the same satellites through the same atmospheric layers, their systematic errors are highly correlated with those of the base station. Applying the base station's error estimate to the receiver's pseudoranges cancels the shared systematic component, leaving only the uncorrelated noise.
 
@@ -210,7 +220,7 @@ The canonical spectral profiles defined in Spectral Brand Theory serve precisely
 - IKEA: [8.0, 7.5, 6.0, 7.0, 5.0, 9.0, 7.5, 6.0]
 - Patagonia: [6.0, 9.0, 9.5, 7.5, 8.0, 5.0, 7.0, 6.5]
 
-are established through cross-cohort analysis within the SBT framework and represent the closest available analog to a precisely known position. A circularity concern arises: these profiles are defined within SBT rather than validated against an external standard. The concern is mitigated by the differential correction structure itself — the protocol requires only that calibration profiles be *stable* across measurement epochs, not that they be *correct* in an absolute sense. Systematic errors in calibration profiles propagate as a constant offset across all corrected target estimates, preserving the relative positioning that is the primary quantity of interest. Independent validation of calibration profiles against consumer survey data remains a priority (Section 11). These three brands exhibit characteristically different profiles — Hermès concentrating in Semiotic, Temporal, and Experiential dimensions; IKEA in Semiotic and Economic; Patagonia in Ideological and Narrative — providing coverage of distinct regions of the eight-dimensional emission space. This diversity is the DGPS analog of base station placement: base stations are positioned to cover different geographic regions, and calibration brands are selected to cover different regions of perception space.
+are established through cross-cohort analysis within the SBT framework and represent the closest available analog to a precisely known position (subject to the stability-not-correctness caveat foregrounded above). These three brands exhibit characteristically different profiles — Hermès concentrating in Semiotic, Temporal, and Experiential dimensions; IKEA in Semiotic and Economic; Patagonia in Ideological and Narrative — providing coverage of distinct regions of the eight-dimensional emission space. This diversity is the DGPS analog of base station placement: base stations are positioned to cover different geographic regions, and calibration brands are selected to cover different regions of perception space.
 
 ### 4.2 Calibration Protocol
 
@@ -258,7 +268,9 @@ For the collapsed (scalar) observation case — where each cohort provides a sin
 
 For the full eight-dimensional observation case — where each cohort provides separate scores on all eight dimensions — the system has 8N equations and 8 + 8N unknowns (brand profile plus dimensional bias vector per cohort). With the constraint that bias vectors sum to zero across cohorts, identification requires N ≥ 2 and the weight matrices W_k to be linearly independent. The eight-dimensional observation case is structurally more efficient, requiring far fewer cohorts because each cohort contributes eight constraints rather than one.
 
-The identifiability threshold for the collapsed case — N ≥ 9 — has an immediate practical implication. The overwhelming majority of brand tracking studies employ one to three demographic cohorts. These studies operate well below the identifiability threshold and cannot, in principle, uniquely recover an eight-dimensional brand position, regardless of sample size within cohorts. Increasing N from 200 to 2,000 respondents within a single cohort does not reduce this fundamental under-determination; it only reduces the noise within a single biased observation.
+The identifiability threshold for the collapsed case — N ≥ 9 — has an immediate practical implication. The overwhelming majority of brand tracking studies employ one to three demographic cohorts. Under the eight-dimensional SBT premise (P3), these studies operate well below the identifiability threshold and cannot uniquely recover an eight-dimensional brand position, regardless of within-cohort sample size. Increasing N from 200 to 2,000 respondents within a single cohort improves the precision with which that cohort's weight profile and aggregate score are estimated, which propagates to PDOP through the W matrix; it does not, however, substitute for structural dimensional diversity across cohorts that the spanning condition requires.
+
+The closest precedent in the marketing literature is Elrod and Keane (1995), who derive identification conditions for latent-dimension brand perception models from panel data using a factor-analytic probit framework. Their identification result establishes when latent brand positions can be recovered from repeated choice observations across consumers; Proposition 3 here addresses the geometrically prior question of when N cohorts with diverse spectral weight profiles span the eight-dimensional emission space. The two conditions are complementary: Elrod-Keane characterize identifiability of dimensions from multi-period panel data; Proposition 3 characterizes identifiability of position within fixed dimensions from multi-cohort cross-sectional data.
 
 The connection to admissible decision theory is instructive. Wald (1947) establishes conditions for the completeness of classes of decision functions — the conditions under which the set of decisions under consideration is rich enough that no relevant alternative exists outside the class. Applied here, the identifiability conditions characterize the class of observation configurations that are complete in the sense that they do not exclude any dimension of brand position information. An observation configuration below the threshold is inadmissible in Wald's sense: there always exists an augmented configuration that dominates it by recovering dimensions that the under-determined configuration cannot access.
 
@@ -298,7 +310,7 @@ Before combining constellations, cross-constellation consistency must be assesse
 
 The theoretical basis for treating LLMs as observer nodes is grounded in the "Homo Silicus" framework (Horton, Filippas, and Manning, 2023), which treats LLMs as implicit computational models of human economic agents. Arora, Chakraborty, and Nishimura (2025) provide direct empirical support: human-LLM hybrid measurement outperforms either source alone, validating the multi-constellation approach. Cross-constellation consistency is not merely a quality check — it is itself a substantive finding. If human cohorts and LLMs assign similar dimensional weight profiles to a brand, this convergent agreement increases confidence in the triangulated position. If they disagree, the discrepancy locates the source of the disagreement in identifiable structural differences: training-data lag in the LLM, anchoring bias in the human cohort, or genuine dimensional ambiguity in the brand itself.
 
-The R15 empirical record establishes that AI cross-model cosine similarity is .975 (Zharnikov, 2026v) — the six LLM constellations are internally consistent. They share a common systematic bias rather than random noise. This is the GPS analog of a correlated clock error: all receivers are wrong in the same direction because they share the same Reference Frame. The practical implication is that the AI constellation, taken alone, provides a precise but biased fix — exactly the situation that differential correction addresses (Section 4).
+The R15 empirical record establishes that AI cross-model cosine similarity is .975 (R15 Run 2 6-model subset; the headline 24-architecture figure is .977; Zharnikov, 2026v) — the six LLM constellations are internally consistent. They share a common systematic bias rather than random noise. This is the GPS analog of a correlated clock error: all receivers are wrong in the same direction because they share the same Reference Frame. The practical implication is that the AI constellation, taken alone, provides a precise but biased fix — exactly the situation that differential correction addresses (Section 4).
 
 The high cross-model correlation raises an identification concern. The mean-zero bias constraint (Section 3) assumes that biases are sufficiently diverse to cancel in aggregate. When all AI observers share a common bias direction — the Economic Default — the common component is not identified by the mean-zero constraint alone. Differential brand measurement (Section 4) addresses this directly: the calibration correction removes the constellation-level bias estimated from calibration brands, not merely the per-observer deviation from the constellation mean. In a multi-constellation design combining human and AI observers, the correlated AI bias becomes one estimable constellation-level parameter rather than an unidentified confound.
 
@@ -310,11 +322,11 @@ Geopolitical framing introduces a further systematic bias: the same brand evalua
 
 This predictability is the DOP framework's key opportunity. In GPS differential correction, the base station's systematic clock error is estimated from its known position and subtracted from rover measurements. The same logic applies here: using calibration brands whose dimensional profiles are known (Hermès, IKEA, Patagonia — see Section 4), the magnitude of the AI constellation's Economic Default can be estimated and removed from target brand measurements. The corrected measurements reflect a closer approximation of what a human constellation would observe.
 
-**Proposition 4**: *Multi-constellation brand positioning — combining human observer cohorts, AI observers, and behavioral proxies — is expected to yield lower Perception DOP than any single constellation alone, provided the constellations exhibit structurally different spectral weight profiles. The theoretical basis is the geometric non-collinearity of AI and human weight profiles, as indicated by the Economic Default mechanism in AI observers* (Zharnikov, 2026v). *Empirical validation requires human cohort data (Section 11).*
+**Conjecture 4**: *Multi-constellation brand positioning — combining human observer cohorts, AI observers, and behavioral proxies — is expected to yield lower Perception DOP than any single constellation alone, provided the constellations exhibit structurally different spectral weight profiles. The theoretical basis is the geometric non-collinearity of AI and human weight profiles, as indicated by the Economic Default mechanism in AI observers* (Zharnikov, 2026v). *Empirical validation requires human cohort data (Section 11); until that data exist, this claim is a theoretical conjecture rather than a demonstrated result.*
 
-*Falsification*: P4 is falsified if adding AI or behavioral observer data to human cohort data does not reduce PDOP — that is, if the additional constellations' weight profiles are collinear with human weight profiles and provide no new geometric information.
+*Falsification*: C4 is falsified if adding AI or behavioral observer data to human cohort data does not reduce PDOP — that is, if the additional constellations' weight profiles are collinear with human weight profiles and provide no new geometric information.
 
-The condition for collinearity — and thus for failure of P4 — is clear: if AI weight profiles systematically reproduce human weight profiles (same dimensional emphases, same relative ordering), then the AI constellation is geometrically redundant. The available evidence runs in the opposite direction: the AI Economic Default produces dimensional over-weighting that most human cohorts do not share, suggesting structural non-collinearity.
+The condition for collinearity — and thus for failure of C4 — is clear: if AI weight profiles systematically reproduce human weight profiles (same dimensional emphases, same relative ordering), then the AI constellation is geometrically redundant. The available evidence runs in the opposite direction: the AI Economic Default produces dimensional over-weighting that most human cohorts do not share, suggesting structural non-collinearity.
 
 ---
 
@@ -326,9 +338,7 @@ Brand Triangulation determines where a brand is in 8-dimensional perception spac
 
 The distinction between coherence and admissibility parallels a well-established conceptual split across multiple domains. In statistical decision theory, Wald (1947) distinguishes admissible decision functions — those not uniformly dominated by any alternative — from merely consistent ones. In quality management, Kane (1986) distinguishes process capability (the process is consistent and controlled) from process conformance (the process outputs are within specification). A process can be highly capable, producing outputs with low variance, while simultaneously producing outputs outside specification — perfectly coherent, perfectly inadmissible.
 
-Simons (1994) formalizes the governance analog: boundary systems constrain strategic behavior not by specifying what to do, but by specifying what is prohibited. An organization operating within its boundary system is admissible; an organization that is internally consistent but has drifted outside its boundary system is inadmissible regardless of its coherence. Simon (1951) identifies the employment relationship itself as a form of bounded admissibility: an employee accepts authority within a specified zone of indifference, and actions within that zone are admissible whether or not they are optimal.
-
-Brand admissibility extends this logic to the perceptual domain.
+Simons (1994) formalizes the governance analog: boundary systems constrain strategic behavior not by specifying what to do, but by specifying what is prohibited. An organization operating within its boundary system is admissible; an organization that is internally consistent but has drifted outside its boundary system is inadmissible regardless of its coherence. Simon (1951) identifies the employment relationship itself as a form of bounded admissibility: an employee accepts authority within a specified zone of indifference, and actions within that zone are admissible whether or not they are optimal. Brand admissibility extends this logic to the perceptual domain.
 
 ### 7.1 Invariant Corridors as Brand Perception Boundaries
 
@@ -358,23 +368,25 @@ The brand measurement mapping of the three bindings is as follows.
 
 *Temporal binding* requires that the measured perception trajectory is coherent with the brand's historical path. A brand that satisfies geometric and governance binding at the current measurement epoch but whose trajectory shows sustained drift toward the corridor boundary is not fully admissible: the temporal record reveals a governance failure in progress even if the current position is technically within C. Temporal binding connects to the Kalman filter framework developed in Section 8 and to the non-ergodic trajectory analysis of Zharnikov (2026o).
 
-**Proposition 5**: *A brand position is* admissible *if and only if three conditions hold simultaneously: (a) the measured spectral profile lies within the Brand Function's admissible corridor in 8-dimensional perception space (geometric binding); (b) a valid Brand Function specification exists and an enforcement mechanism operates (governance binding); and (c) the measured trajectory is temporally coherent with the brand's historical perception path (temporal binding). Failure of any single binding dissolves all admissibility guarantees.*
+**Conjecture 5**: *A brand position is* admissible *if and only if three conditions hold simultaneously: (a) the measured spectral profile lies within the Brand Function's admissible corridor in 8-dimensional perception space (geometric binding); (b) a valid Brand Function specification exists and an enforcement mechanism operates (governance binding); and (c) the measured trajectory is temporally coherent with the brand's historical perception path (temporal binding). Failure of any single binding dissolves all admissibility guarantees. This is a theoretical conjecture; empirical testing requires longitudinal multi-cohort brand tracking data with verified Brand Function specifications.*
 
-*Falsification*: P5 is falsified if brands satisfying only one or two of the three binding conditions demonstrate equivalent long-term brand health outcomes to fully admissible brands — that is, if partial binding is sufficient for governance.
+*Falsification*: C5 is falsified if brands satisfying only one or two of the three binding conditions demonstrate equivalent long-term brand health outcomes to fully admissible brands — that is, if partial binding is sufficient for governance.
 
 The industrial adhesive case illustrates the failure pattern with precision (Zharnikov, 2026a, Section 5.4). A commercial adhesive brand designed its Brand Function for the contractor corridor: high Economic (cost-effectiveness), high Experiential (bond strength, ease of use), moderate Semiotic (professional packaging), low Social (no lifestyle component). Over time, an unintended observer cohort emerged: substance abusers for whom the product "works" for inhalation. Within this cohort, the brand achieves perfect signal coherence — every touchpoint reinforces the same perception, brand conviction is high, the perception cloud is stable. By every coherence metric in the pre-v2.3 SBT framework, this brand scores as healthy.
 
 Per-cohort admissibility analysis changes the verdict entirely. For the intended contractor cohort, the measured position is inside C. For the substance-abuse cohort, the measured position is far outside C: the Semiotic and Social dimensions are dominated by underground culture signals the Brand Function never emitted. Geometric binding fails for this cohort. Governance binding fails because no mechanism prevented the brand from being perceived and used differently. Temporal binding partially fails because the divergence has been accumulating for years without detection. All three bindings must hold simultaneously; none do for the unintended cohort.
 
-The generalization identifies a structural pattern across brand governance failures:
+The generalization identifies a structural pattern across brand governance failures, summarized in Table 2.
 
-**Table 2.** Brand governance failures: admissibility analysis across three brand types
+Table 2: Brand Governance Failures — Admissibility Analysis Across Three Brand Types.
 
 | Brand | Intended corridor | Unintended cohort | Admissibility status |
 |---|---|---|---|
 | Industrial adhesive | Contractors | Substance abusers | Inadmissible: all three bindings fail |
 | Luxury handbag | Heritage collectors | Conspicuous consumption | Partially inadmissible: geometric binding fails for conspicuous cohort |
 | Tech platform | Developers | Misinformation spreaders | Inadmissible: governance binding fails |
+
+*Note.* Admissibility status reflects the per-cohort tri-binding framework (geometric, governance, temporal). Aggregate coherence scores would not surface the per-cohort failures shown here.
 
 In each case, aggregate coherence scores would have obscured the governance failure. Brand Triangulation's per-cohort measurement makes the inadmissibility visible.
 
@@ -392,19 +404,21 @@ Process invariance is the deeper implication. Medesani & Macdonald (2026), Secti
 
 ## 8. From Position to Trajectory
 
-Sections 3–7 treat brand positioning as a static estimation problem: at a given measurement epoch, what is the brand's position in 8-dimensional perception space? This is the GPS analogy for a receiver at rest. Real brands are not at rest. They evolve through 8-dimensional perception space as marketing actions are taken, crises occur, consumer tastes shift, and cultural context changes. *Dynamic Brand Triangulation* extends the framework from position estimation to trajectory tracking.
+Sections 3–7 treat brand positioning as a static estimation problem: at a given measurement epoch, what is the brand's position in 8-dimensional perception space? This is the GPS analogy for a receiver at rest. Real brands are not at rest. They evolve through 8-dimensional perception space as marketing actions are taken, crises occur, consumer tastes shift, and cultural context changes. *Dynamic Brand Triangulation* extends the framework from position estimation to trajectory tracking. The full formal development of perception velocity and acceleration in 8-dimensional spectral space is undertaken in Zharnikov (2026z); we summarize the constructs here insofar as they bear on dynamic triangulation, with empirical validation deferred to that companion paper.
 
 ### 8.1 Three Temporal Concepts
 
-Brand Triangulation involves three distinct temporal concepts that GPS navigation separates carefully, and which must similarly be distinguished in brand measurement.
+Brand Triangulation involves three distinct temporal concepts that GPS navigation separates carefully, and which must similarly be distinguished in brand measurement. Table 3 maps these three concepts to their GPS equivalents.
 
-**Table 3.** Three temporal concepts in brand triangulation and their GPS equivalents
+Table 3: Three Temporal Concepts in Brand Triangulation and Their GPS Equivalents.
 
 | Temporal Concept | GPS Equivalent | SBT Equivalent |
 |---|---|---|
 | Measurement timestamp | GPS epoch | When the survey or probe was conducted |
 | Positional coordinate | Altitude (one of three spatial coordinates) | Temporal dimension — the 8th SBT coordinate: heritage, history, longevity |
 | Object trajectory | Receiver motion over time | Brand perception dynamics — how the 8D profile changes across measurement epochs |
+
+*Note.* "Temporal dimension" in row 2 refers to the 8th SBT coordinate (heritage, history, longevity), not to measurement time itself.
 
 The third row is where dynamic tracking adds value. Most longitudinal brand trackers record time-series of scalar brand scores. Dynamic Brand Triangulation records time-series of 8-dimensional positions — vectors, not scalars — enabling trajectory analysis that scalar tracking cannot provide.
 
@@ -424,15 +438,15 @@ Calibration brands serve as temporal anchors for separating brand drift from obs
 
 Periodic brand measurements are noisy. Survey data suffer from response error, sample variation, and context effects. LLM probes vary with prompt phrasing. Behavioral proxies are confounded with non-brand factors. Combining these noisy estimates into a smoothed trajectory estimate requires a filtering framework.
 
-The Kalman filter (Kalman, 1960) provides the optimal linear state estimator for systems that evolve according to known dynamics and are observed with Gaussian noise. The DOP-Kalman combination has been demonstrated outside navigation: Guo et al. (2022) show that DOP values can be adaptively fed into the Kalman covariance matrix to weight unreliable observer geometry in UWB indoor positioning. Its application is well established in marketing: Naik, Mantrala & Sawyer (1998) use a Kalman filter to track advertising quality as a latent state that evolves dynamically and is observed through sales response. Du & Kamakura (2015) develop primary dynamic factor analysis for brand tracking studies, directly addressing the separation of true latent change from measurement noise in panel data. Oud et al. (1990) establish the formal connection between Kalman filtering and longitudinal factor score estimation.
+The Kalman filter (Kalman, 1960) provides the optimal linear state estimator for systems that evolve according to known dynamics and are observed with Gaussian noise. The DOP-Kalman combination has been demonstrated outside navigation: Guo et al. (2022) show that DOP values can be adaptively fed into the Kalman covariance matrix to weight unreliable observer geometry in UWB indoor positioning. Its application is well established in marketing: Naik, Mantrala, and Sawyer (1998) use a Kalman filter to track advertising quality as a latent state that evolves dynamically and is observed through sales response; Naik and Raman (2003) and Naik, Schultz, and Srinivasan (2007) extend this state-space tradition in *Marketing Science* to multi-channel and recession-context advertising dynamics. Du and Kamakura (2015) develop primary dynamic factor analysis for brand tracking studies, directly addressing the separation of true latent change from measurement noise in panel data. Oud et al. (1990) establish the formal connection between Kalman filtering and longitudinal factor score estimation. The Perception Kalman filter introduced here extends the MKSC state-space tradition from scalar latent advertising state to 8-dimensional brand spectral profile, and (following Guo et al., 2022) fuses pre-study DOP values with the Kalman covariance to weight observations by constellation geometry — a fusion whose empirical performance is examined in Zharnikov (2026z).
 
 The *Perception Kalman filter* adapts this framework to 8-dimensional spectral tracking. The state vector is (x, v) where x ∈ R^8 is the brand's current spectral profile and v ∈ R^8 is its perception velocity. The prediction step uses the velocity estimate to project the brand's next position: x_{t+1|t} = x_t + v_t · Δt. The update step corrects the prediction with new observations from any constellation of human cohorts, AI observers, or behavioral proxies, weighted by each constellation's reliability (inverse observation variance). The Kalman gain allocates trust between prediction and observation as a function of their relative uncertainties.
 
-**Proposition 6**: *Brand perception trajectories are estimable via a Perception Kalman filter that jointly tracks the 8-dimensional spectral profile and its first derivative (perception velocity). The filter's prediction error provides a real-time anomaly detector: deviations exceeding a threshold — calibrated via the sensitivity plateau established in Medesani & Macdonald (2026) — signal either genuine brand events or observer infrastructure changes, distinguishable by calibration brand stability.*
+**Conjecture 6**: *Brand perception trajectories are estimable via a Perception Kalman filter that jointly tracks the 8-dimensional spectral profile and its first derivative (perception velocity). The filter's prediction error provides a real-time anomaly detector: deviations exceeding a threshold — calibrated via the sensitivity plateau established in Medesani & Macdonald (2026) — signal either genuine brand events or observer infrastructure changes, distinguishable by calibration brand stability. This is a theoretical conjecture; empirical validation requires longitudinal brand tracking data across multiple measurement epochs with a consistent observer constellation.*
 
-*Falsification*: P6 is falsified if the Kalman filter's prediction errors show no correlation with actual brand events (product launches, crises, repositioning campaigns) — that is, if the filter cannot distinguish signal from noise in longitudinal brand tracking data.
+*Falsification*: C6 is falsified if the Kalman filter's prediction errors show no correlation with actual brand events (product launches, crises, repositioning campaigns) — that is, if the filter cannot distinguish signal from noise in longitudinal brand tracking data.
 
-The anomaly detector built into P6 has a structural advantage over threshold-based detection: the sensitivity plateau (Medesani & Macdonald, 2026) ensures that calibration of the detection threshold is robust to parameter choice. The threshold need only be placed within the stable plateau region for the detection properties to hold, which reduces the calibration burden substantially.
+The anomaly detector built into C6 has a structural advantage over threshold-based detection: the sensitivity plateau (Medesani & Macdonald, 2026) ensures that calibration of the detection threshold is robust to parameter choice. The threshold need only be placed within the stable plateau region for the detection properties to hold, which reduces the calibration burden substantially.
 
 Dynamic admissibility monitoring integrates the trajectory framework with the corridor analysis of Section 7. The predicted trajectory x_{t+h} for horizon h can be compared to the corridor C: if the predicted position exits C before the horizon, the system issues a governance warning. Recovery after a corridor exit can be modeled using the contraction/recovery asymmetry parameters (k_c, k_r) from Medesani & Macdonald (2026), producing a data-driven recovery timeline.
 
@@ -452,7 +466,7 @@ Each model's aggregate weight profile constitutes one row of the observation wei
 
 Table 4 reports the aggregate dimensional weight profile across all six models and all 15 brands.
 
-**Table 4.** Aggregate dimensional weight profiles across six LLM observer cohorts (R15 Runs 1--4 data, N = 4,860 calls)
+Table 4: Aggregate Dimensional Weight Profiles Across Six LLM Observer Cohorts (R15 Runs 1–4, N = 4,860 calls).
 
 | Dimension | Mean weight | Ratio to flat-weight baseline (12.5) |
 |---|---|---|
@@ -465,11 +479,13 @@ Table 4 reports the aggregate dimensional weight profile across all six models a
 | Social | 7.8 | 62% |
 | Cultural | 7.3 | 58% |
 
+*Note.* N = 4,860 API calls across R15 Runs 1–4. Mean weights are computed by averaging the 100-point allocations across all six models and all 15 brands. Ratios are computed against the flat-weight baseline (12.5 = 100/8).
+
 The weight matrix W is dominated by Experiential, Semiotic, and Economic dimensions. The covariance matrix C = (W^T W)^{-1} reveals the consequence: Cultural and Temporal dimensions have the highest per-dimension DOP values — these are the least geometrically resolved dimensions in the AI observer constellation. Any triangulated brand position is reliable along the Experiential-Semiotic-Economic axis and unreliable along the Cultural-Temporal axis.
 
 This DOP pattern replicates a finding from navigation: when all satellites are clustered in one region of the sky, vertical (altitude) estimation degrades while horizontal estimation remains accurate. Here, all six AI observers are "clustered" in the Experiential-Economic sky — they collectively over-attend to those dimensions, leaving Cultural and Temporal geometrically underdetermined.
 
-Comparing PDOP across observer subsets confirms the expected pattern: using all six models produces lower PDOP than using any five, which produces lower PDOP than any four. The marginal DOP reduction from adding each observer is largest when the new observer introduces a weight profile that is structurally non-collinear with existing observers. Models with lower Economic Default (Claude Sonnet 4.6, GPT-4o) add more DOP-reducing geometric diversity than models with higher Economic Default.
+Comparing PDOP across observer subsets is consistent with the expected pattern: using all six models produces lower PDOP than using any five, which produces lower PDOP than any four. The marginal DOP reduction from adding each observer is largest when the new observer introduces a weight profile that is structurally non-collinear with existing observers. Models with lower Economic Default (Claude Sonnet 4.6, GPT-4o) add more DOP-reducing geometric diversity than models with higher Economic Default.
 
 The complete R15 dataset confirms this cross-architecture convergence at scale: cosine similarity of .977 across 24 model architectures from seven training traditions (Zharnikov, 2026v, H2 supported).
 
@@ -501,21 +517,21 @@ The conditional metamerism connection is direct (Zharnikov, 2026e). Local brands
 
 The R15 AI-only constellation demonstration establishes the geometric framework and provides initial support for the DOP, differential correction, and conditional metamerism predictions. Several limitations must be noted.
 
-The human observer constellation is absent. Human cohorts are the primary measurement target for brand research; AI observers are a supplementary constellation. The multi-constellation DOP reduction claimed in P4 cannot be fully tested without human cohort data that has demonstrably different weight profiles from the AI constellation. Option B — a survey study with five or more demographically distinct human cohorts scoring the same 15 brands — remains the necessary empirical extension.
+The human observer constellation is absent. Human cohorts are the primary measurement target for brand research; AI observers are a supplementary constellation. The multi-constellation DOP reduction conjectured in C4 cannot be fully tested without human cohort data that has demonstrably different weight profiles from the AI constellation. Option B — a survey study with five or more demographically distinct human cohorts scoring the same 15 brands — remains the necessary empirical extension.
 
-The present data constitute a single measurement epoch. Proposition 6 (Perception Kalman filter) and the trajectory framework of Section 8 require longitudinal data — at minimum two epochs with the same observer constellation scoring the same brands. Run 1 through Run 4 of R15 vary experimental conditions, not time; they do not constitute a temporal panel.
+The present data constitute a single measurement epoch. Conjecture 6 (Perception Kalman filter) and the trajectory framework of Section 8 require longitudinal data — at minimum two epochs with the same observer constellation scoring the same brands. Run 1 through Run 4 of R15 vary experimental conditions, not time; they do not constitute a temporal panel.
 
 Six AI observer models may be below the identifiability threshold for collapsed (1D aggregate) observations. The Section 5 theorem requires N ≥ 9 collapsed-observation cohorts to achieve full 8-dimensional identifiability. The R15 constellation has 8D observations per model, which reduces the requirement to N ≥ 2 — the six-model constellation is formally sufficient. However, the DOP analysis shows that with six models clustered in the Experiential-Economic region of weight space, the Cultural and Temporal dimensions remain poorly resolved. Identifiability is necessary but not sufficient for precision.
 
 Brand stimuli are categorical pairs (global vs. local) rather than a cross-category sample. DOP computation and calibration correction should be validated across product categories with different natural dimensional profiles before generalizing. More broadly, all calibration and target brands are B2C consumer brands. B2B brands, service brands, place brands, and personal brands may have fundamentally different dimensional profiles and observer structures; the framework's generalizability beyond B2C is an open question.
 
-### 9.6 Monte Carlo Validation of PDOP Predictive Validity
+### 9.6 Monte Carlo Confirmation of PDOP Predictive Validity
 
-To provide a formal statistical test for the claim that Perception DOP predicts measurement quality, we conducted a Monte Carlo simulation with 2,000 independent trials. Each trial generates a random ground-truth brand position in R^8, a random observer weight matrix W with N in {9, 10, 12, 15, 20} cohorts and varying geometric diversity (clustered, random, or near-optimal), and 20 replicated noisy observations y_k = w_k^T x + epsilon_k with sigma = 0.5. The brand position is estimated via OLS, and mean squared error (MSE) is computed against the known ground truth.
+To provide a formal statistical test for the claim that Perception DOP predicts measurement quality under the linear observation model, we conducted a Monte Carlo simulation with 2,000 independent trials. We note at the outset that this is a *mathematical confirmation* of the DOP–MSE relationship under the linear-model data-generating process: the simulation confirms that the GPS theory's prediction PDOP^2·σ^2 = MSE is recovered when the model holds. Whether the relationship transfers to real brand measurement studies depends on the linear observation model being a sufficiently good approximation to human and AI cohort response processes — which is an empirical question for the Option B human-cohort study identified in §11. Each trial generates a random ground-truth brand position in R^8, a random observer weight matrix W with N in {9, 10, 12, 15, 20} cohorts and varying geometric diversity (clustered, random, or near-optimal), and 20 replicated noisy observations y_k = w_k^T x + epsilon_k with sigma = 0.5. The brand position is estimated via OLS, and mean squared error (MSE) is computed against the known ground truth.
 
-The theoretical prediction from the GPS-SBT analogy is that MSE = sigma^2 * PDOP^2. The simulation confirms this relationship:
+The theoretical prediction from the GPS-SBT analogy is that MSE = sigma^2 * PDOP^2. Table 5 reports the simulation results.
 
-**Table 5.** Monte Carlo validation of PDOP predictive validity (2,000 trials, 20 replications each)
+Table 5: Monte Carlo Confirmation of PDOP Predictive Validity (2,000 Trials, 20 Replications Each).
 
 | Test | Statistic | Value | Expected |
 |---|---|---|---|
@@ -532,26 +548,30 @@ The log-log regression slope of .995 (expected 1.0) confirms the power-law relat
 
 Per-dimension validation confirms that the relationship holds across all eight SBT dimensions: Spearman correlations between per-dimension DOP^2 and per-dimension MSE range from .978 to .990 (all p < 10^{-300}). Dimensions with higher DOP — those less geometrically resolved by the observer configuration — produce proportionally larger estimation errors.
 
-**Table 6.** RMSE by PDOP quartile (binned analysis)
+Table 6 summarizes RMSE by PDOP quartile.
+
+Table 6: RMSE by PDOP Quartile (Binned Analysis).
 
 | Quartile | PDOP range | Mean RMSE | Std RMSE | n |
 |---|---|---|---|---|
-| Q1 (best geometry) | 0.00 -- 0.84 | .192 | .075 | 500 |
-| Q2 | 0.84 -- 2.04 | .702 | .179 | 499 |
-| Q3 | 2.04 -- 4.71 | 1.644 | .428 | 500 |
-| Q4 (worst geometry) | 4.71 -- 39.71 | 4.579 | 2.684 | 500 |
+| Q1 (best geometry) | .00 – .84 | .192 | .075 | 500 |
+| Q2 | .84 – 2.04 | .702 | .179 | 499 |
+| Q3 | 2.04 – 4.71 | 1.644 | .428 | 500 |
+| Q4 (worst geometry) | 4.71 – 39.71 | 4.579 | 2.684 | 500 |
+
+*Note.* sigma = 0.5; 500 trials per quartile (Q2 reports 499 due to a tie at the bin boundary); n = 1,999 total. PDOP values are reported without leading zeros following the project decimal convention.
 
 The 24-fold difference in RMSE between Q1 and Q4 configurations demonstrates that observer geometry dominates measurement precision — the same measurement noise sigma yields dramatically different estimation quality depending on the PDOP of the observer constellation.
 
-**PDOP bounds for the N=9 minimum case.** The theoretical lower bound on PDOP for N observers in D=8 dimensions is 1/sqrt(N). For N=9, this yields PDOP >= .333. Numerical optimization (Nelder-Mead, 100 restarts) achieves PDOP = .388, with condition number 1.92 — confirming that near-optimal configurations exist close to the theoretical floor. The empirical distribution of PDOP under random weight assignment has median 3.67 and mean 5.07, indicating that typical configurations are far from optimal and that deliberate DOP-aware cohort selection offers substantial precision gains.
+**PDOP bounds for the N=9 minimum case.** The lower bound 1/sqrt(N) holds for unit-norm weight vectors arranged uniformly on the sphere in R^8. For N=9, this gives the unconstrained-sphere bound PDOP >= .333. Brand cohort weight profiles, however, lie on the probability simplex (Σw_i = 1, w_i ≥ 0), which constrains the achievable minimum. Numerical optimization (Nelder-Mead, 100 restarts) under the simplex constraint achieves PDOP = .388, with condition number 1.92 — close to but above the unconstrained floor, confirming that near-optimal configurations exist within the simplex feasible region. The empirical distribution of PDOP under random weight assignment has median 3.67 and mean 5.07, indicating that typical configurations are far from optimal and that deliberate DOP-aware cohort selection offers substantial precision gains.
 
 **Sensitivity plateau.** Perturbing the optimal weight matrix by Gaussian noise with standard deviation epsilon confirms the plateau structure: PDOP degrades by less than 10% for perturbations up to epsilon = 0.2 (relative to the D-scaled weight values). At epsilon = 0.3, degradation reaches 16%. This confirms the Medesani and Macdonald (2026) plateau prediction: researchers need approximate, not exact, weight profile calibration to achieve near-optimal measurement geometry.
 
-The simulation code, raw results, and JSON output are archived at https://github.com/spectralbranding/sbt-papers/tree/main/r17-brand-triangulation/simulation/ (R17_pdop_simulation.py, R17_pdop_simulation_results.json). <!-- NOTE: simulation files pending upload; see simulation/README.md for status. -->
+### 9.7 Companion Computation Script
 
----
+The Monte Carlo simulation reported in this section is fully reproducible from `R17_pdop_simulation.py`, archived at `https://github.com/spectralbranding/sbt-papers/tree/main/r17-brand-triangulation/simulation/`. Fixed seed: `SEED = 42`. Trials: 2,000 independent trials, 20 replications each. Run command: `uv run --with numpy,scipy python R17_pdop_simulation.py`. Running the script reproduces Tables 5 and 6, the PDOP bounds reported for the N = 9 minimum case, and the sensitivity plateau statistics within the reported standard errors. Raw results are also archived as `R17_pdop_simulation_results.json` in the same directory.
 
-**Data and Code Availability.** Monte Carlo simulation code (R17_pdop_simulation.py) and results (R17_pdop_simulation_results.json) are available at https://github.com/spectralbranding/sbt-papers/tree/main/r17-brand-triangulation/simulation/. <!-- NOTE: simulation files pending upload; see simulation/README.md for status. --> The R15 empirical dataset used for validation is archived at https://doi.org/10.5281/zenodo.19422427.
+**Data and Code Availability.** Monte Carlo simulation code (`R17_pdop_simulation.py`) and results (`R17_pdop_simulation_results.json`) are available at the URL above. The R15 empirical dataset used for the demonstration in §9.1–§9.4 is archived at https://doi.org/10.5281/zenodo.19422427.
 
 ---
 
@@ -565,9 +585,11 @@ The GPS-SBT mapping situates brand positioning within a class of geometric estim
 
 The connection to Bayesian heterogeneity modeling (Wedel & Kamakura, 2000) is complementary rather than competitive. Bayesian methods characterize the *distribution* of spectral weights across a population; Brand Triangulation uses that distribution to estimate the *position* of a brand in dimensional space. The two approaches answer different questions and can be combined: Bayesian estimation of cohort weight profiles feeds the W matrix, which then drives PDOP computation and triangulated estimation. The geometric framework adds pre-study design criteria — PDOP — that the Bayesian approach does not provide.
 
-A final theoretical observation concerns the *non-local* character of the perception cloud. Brand triangulation works precisely because the perception cloud is a global object: individual observer scores carry information about the brand position only through their joint geometry, not as independent local measurements. This is structurally analogous to the constraint Bell (1964) identified in physics — that any hidden-variable account of jointly distributed correlated measurements must operate non-locally to reproduce the observed joint statistics. Brand triangulation is non-local in the same precise sense: the W matrix and the resulting PDOP depend on the entire observer constellation, not on any single observer in isolation, and no aggregation procedure that treats observers as independent local probes can recover the same positioning information. This is why per-observer brand scores cannot be averaged into a meaningful population estimate without first specifying the constellation geometry. The non-local structure is a feature of the framework, not a constraint on it: it is what permits triangulated estimation to extract more information than the sum of its individual observations.
+A final theoretical observation concerns the *non-local* character of the perception cloud. Brand triangulation works precisely because the perception cloud is a global object: individual observer scores carry information about the brand position only through their joint geometry, not as independent local measurements. This is structurally analogous to the constraint Bell (1964) identified in physics — that any hidden-variable account of jointly distributed correlated measurements must operate non-locally to reproduce the observed joint statistics. Brand triangulation shares this structural feature — that the joint measurement geometry cannot be reduced to independent local probes — though no quantum states are at stake: the W matrix and the resulting PDOP depend on the entire observer constellation, not on any single observer in isolation, and no aggregation procedure that treats observers as independent local probes can recover the same positioning information. This is why per-observer brand scores cannot be averaged into a meaningful population estimate without first specifying the constellation geometry. The non-local structure is a feature of the framework, not a constraint on it: it is what permits triangulated estimation to extract more information than the sum of its individual observations.
 
 ### 10.2 Practical Implications
+
+The framework yields four practical implications for brand measurement practice: a pre-study cohort-design criterion (§10.2.1), a cross-study comparability mechanism (§10.2.2), a continuous monitoring architecture (§10.2.3), and a specification-as-ephemeris pathway for AI commerce (§10.2.4). Each follows directly from one of the four contributions enumerated in §1.4.
 
 ### 10.2.1 Pre-Study DOP Optimization
 
@@ -585,7 +607,7 @@ Differential correction solves it structurally. If both studies include the same
 
 Current brand tracking is periodic and expensive: annual or semi-annual surveys with large samples, producing a time series of scalar scores that cannot distinguish brand change from measurement drift. The Perception Kalman filter enables a different operational model: a continuous stream of lightweight, high-frequency observations (AI probes, behavioral proxies, social listening sentiment) integrated with periodic high-quality human cohort surveys. The filter allocates trust between observation types as a function of their reliability, producing a smooth, continuously updated trajectory estimate.
 
-The anomaly detection property of the filter (Proposition 6) converts this into a real-time governance tool: when prediction error exceeds the sensitivity plateau threshold, the system flags an event for investigation. Crisis detection, which currently relies on reputational monitoring systems that measure outcomes rather than dimensions, becomes a dimensional early-warning system — identifying which of the eight SBT dimensions is driving the anomaly before it becomes visible in sales or share data.
+The anomaly detection property of the filter (Conjecture 6) converts this into a real-time governance tool: when prediction error exceeds the sensitivity plateau threshold, the system flags an event for investigation. Crisis detection, which currently relies on reputational monitoring systems that measure outcomes rather than dimensions, becomes a dimensional early-warning system — identifying which of the eight SBT dimensions is driving the anomaly before it becomes visible in sales or share data.
 
 ### 10.2.4 Brand Function as Ephemeris Data for AI Commerce
 
@@ -601,23 +623,9 @@ The R15 empirical study (Zharnikov, 2026v) provides direct evidence for the dime
 
 ### 10.4 Future Research
 
-The most pressing empirical extension is an Option B study incorporating human observer cohorts with verified non-collinear weight profiles. Such a study would directly test Proposition 4 (multi-constellation DOP reduction) by comparing PDOP and estimation precision in AI-only versus mixed human-AI constellations. A concrete design would administer the PRISM-B 100-point weight allocation task to five demographically stratified cohorts — varying by age, cultural background, income, and brand involvement — alongside the AI constellation, using the same 15 brands and three calibration brands as R15.
+The most pressing empirical extension is an Option B study incorporating human observer cohorts with verified non-collinear weight profiles. Such a study would directly test Conjecture 4 (multi-constellation DOP reduction) by comparing PDOP and estimation precision in AI-only versus mixed human-AI constellations. A concrete design would administer the PRISM-B 100-point weight allocation task to five demographically stratified cohorts — varying by age, cultural background, income, and brand involvement — alongside the AI constellation, using the same 15 brands and three calibration brands as R15.
 
 Beyond the immediate human cohort extension, three research directions follow from the framework. First, implementing DOP-aware cohort selection in a live brand tracking study — selecting human cohort composition using pre-study PDOP computation — would test whether geometric optimization produces measurable precision gains relative to demographically-selected cohorts. Second, validating the calibration brand stability assumption across cultural contexts requires cross-cultural replication of the Hermès, IKEA, and Patagonia profiles, establishing whether these brands function as reliable DGPS base stations outside Western markets. Third, extending the 8-dimensional corridor proof (Section 7) to the multi-dimensional case requires the vector-valued invariant extension identified by Medesani & Macdonald (2026) as future work — a formal open problem that limits the current framework to approximation-based corridor assessment in R^8.
-
-### 10.5 Measurement Invariance Evidence
-
-A synthetic cohort pre-pilot using Experiment 1 baseline data (741 records, 10 behaviorally distinct observer cohorts, 5 brands) provides direct evidence for the measurement properties the triangulation framework requires. No additional API calls were needed; the analysis reuses existing PRISM-B data.
-
-**Configural invariance (H1): confirmed.** No dimensions are systematically zeroed by any cohort. All 10 cohorts produce non-zero weights on all 8 dimensions, confirming that PRISM-B's 8-factor structure is robust across observer types with distinct behavioral profiles.
-
-**Metric invariance (H2): fails, as SBT predicts.** The overall median within-brand Spearman rho across cohort pairs is .548, below the .70 threshold for metric invariance. Patagonia shows the strongest cross-cohort agreement (median rho = .635); Hermès and IKEA the weakest (.452). Dimension rank-ordering differs systematically across cohorts — this is precisely the observer heterogeneity that SBT predicts and that the triangulation framework exploits. Metric invariance failure is not a psychometric deficiency; it is the structural condition that makes triangulation informative.
-
-**Scalar invariance (H3): fails, as SBT predicts.** All 8 dimensions show significant Kruskal-Wallis tests across cohorts (all p < .001). Economic shows the largest effect (epsilon-squared = .362); Cultural the smallest (.083). Cross-cohort variance ranks as follows: Economic (.00395) > Ideological (.00119) > Social (.00090) > Experiential (.00084) > Semiotic (.00060) > Narrative (.00059) > Temporal (.00049) > Cultural (.00014).
-
-The variance ranking carries a substantive interpretation. Economic is the most observer-dependent dimension: cohorts with different purchasing philosophies disagree most about economic positioning. Cultural is the most stable — cultural meaning may be more inherent to the brand than projected by the observer. This ranking directly maps to Perception DOP: observer-sample composition affects measurement precision most on high-variance dimensions (Economic, Ideological) and least on low-variance dimensions (Cultural, Temporal). Study designs that seek precise Economic positioning estimates require greater observer diversity than those targeting Cultural positioning.
-
-The measurement invariance pattern — configural invariance holding while metric and scalar invariance fail — is the exact signature predicted by SBT's multi-observer framework. It confirms that different cohorts perceive the same dimensional structure (the 8 factors exist for everyone) but weight those dimensions differently (the factor loadings and intercepts vary across cohorts). This is the formal justification for the triangulation approach: if metric invariance held, simple averaging would suffice and triangulation would be unnecessary; because it fails structurally, the geometric framework developed in this paper is required to recover brand position from heterogeneous observer measurements.
 
 ---
 
@@ -625,9 +633,7 @@ The measurement invariance pattern — configural invariance holding while metri
 
 The present paper establishes the geometric framework for multi-observer brand positioning and provides an Option A empirical demonstration using AI observer constellations. Several limitations delimit the current contribution and identify priorities for extension.
 
-The human observer constellation is the most important limitation. Human cohort data with demonstrably distinct spectral weight profiles — verifiably non-collinear in 8D weight space — is required to test P4 (multi-constellation DOP reduction) and to validate the differential correction protocol against an external standard. An Option B study design would administer a structured 8-dimensional weight elicitation to demographically diverse cohorts (five or more, stratified by age, income, cultural background, and brand involvement) alongside the AI constellation, using the same calibration brands and target brands as R15.
-
-A concrete study design for Option B would administer the same 100-point weight allocation task used in R15 to five or more demographically distinct human cohorts — stratified by age, income, cultural background, and brand involvement — scoring the same 15 brands alongside the three calibration brands. This design directly tests whether human weight profiles are non-collinear with the AI constellation's Experiential-Economic clustering, validating P4.
+The human observer constellation is the most important limitation. Human cohort data with demonstrably distinct spectral weight profiles — verifiably non-collinear in 8D weight space — is required to test C4 (multi-constellation DOP reduction) and to validate the differential correction protocol against an external standard. The Option B study design described in §10.4 — five or more demographically stratified human cohorts administered the PRISM-B 100-point weight allocation task alongside the same 15 brands and three calibration brands as R15 — is the necessary empirical extension and is not undertaken in this paper.
 
 The 8-dimensional corridor proof requires an extension of Medesani & Macdonald (2026). The invariant corridor framework is established in one dimension; Medesani & Macdonald identify multi-dimensional vector-valued invariants as Future Work. For Brand Triangulation, the 8D corridor is a hyperrectangle or ellipsoid in R^8, the contraction operator is a matrix rather than a scalar, and the sensitivity plateau becomes a higher-dimensional surface. The structural argument for plateau existence — derived from separated time scales rather than dimensionality — is portable, but the formal proof is an open problem that the present paper defers.
 
@@ -649,7 +655,7 @@ Finally, the framework's linear observation model assumes that the emission prof
 
 Brand positioning has long been treated as a matter of subjective perception, resistant to the standards of geometric precision applied in natural science. The GPS analogy suggests that this resistance is structural, not fundamental: positioning uncertainty is a function of the observer geometry, not an intrinsic property of the phenomenon. When the observer constellation is well-configured — diverse in spectral weight profiles, numerous enough to satisfy identifiability conditions, and corrected for systematic bias — brand positioning becomes a tractable geometric estimation problem.
 
-The theoretical contributions of this paper are four. First, Perception DOP provides an a priori measurement quality criterion: the precision of dimensional estimation is computable before data collection, enabling principled cohort selection that replaces demographic heuristics with geometric optimization. Second, differential brand measurement enables cross-study comparability by anchoring measurements to calibration brands with known spectral profiles, separating brand change from observer drift in longitudinal data. Third, multi-constellation positioning establishes that human observer cohorts, AI observers, and behavioral proxies provide structurally non-collinear weight profiles whose combination reduces overall DOP — the AI observer's Economic Default is not merely a defect but a structured bias that differential correction can address. Fourth, the admissibility framework — integrating the tri-binding conditions of Medesani & Macdonald (2026) with Wald's (1947) admissibility criterion and the Brand Function specification layer — completes the measurement architecture: it is not sufficient to know where a brand is; governance requires knowing whether that position is admissible relative to specification.
+The theoretical contributions of this paper are four. First, Perception DOP provides an a priori measurement quality criterion: the precision of dimensional estimation is computable before data collection, enabling principled cohort selection that replaces demographic heuristics with geometric optimization. Second, differential brand measurement enables cross-study comparability by anchoring measurements to calibration brands with known spectral profiles, separating brand change from observer drift in longitudinal data. Third, the multi-constellation architecture is *specified*: human observer cohorts, AI observers, and behavioral proxies are characterized in terms of their distinctive measurement profiles, and the structural non-collinearity that motivates Conjecture 4 is supported indirectly by the R15 evidence on the AI Economic Default. Direct empirical validation requires the human-cohort study identified as Option B, and is the principal subject of subsequent work; the AI observer's Economic Default is reframed here from a defect into a structured, correctable bias. Fourth, the admissibility framework — integrating the tri-binding conditions of Medesani & Macdonald (2026) with Wald's (1947) admissibility criterion and the Brand Function specification layer — completes the measurement architecture: it is not sufficient to know where a brand is; governance requires knowing whether that position is admissible relative to specification.
 
 The practical transformation implied by this framework is substantial. Brand measurement upgrades from opinion polling to geometric estimation. Multi-observer disagreement, currently treated as noise to be averaged away, becomes signal: it locates the source of dimensional underdetermination in the observer configuration rather than in the brand. Longitudinal tracking, currently limited to scalar time series, extends to 8-dimensional trajectory estimation with real-time anomaly detection. Re-collapse — what traditional brand management calls "rebranding" — can be distinguished from corridor drift: the former is a deliberate governed transition to a new Brand Function; the latter is an ungoverned exit from the current one. And admissibility monitoring converts Brand Function specifications from governance documents into operational diagnostic tools, capable of identifying per-cohort governance failures that aggregate coherence scores cannot detect.
 
@@ -661,7 +667,7 @@ Brand positioning is a geometric estimation problem. The framework proposed here
 
 ## Acknowledgments
 
-AI assistants (Claude Opus 4.6, Grok 4.1, Gemini 3.1) were used for initial literature search and editorial refinement; all theoretical claims, propositions, and interpretations are the author's sole responsibility.
+AI assistants (Claude Opus 4.7, Grok 4.1, Gemini 3.1) were used for initial literature search and editorial refinement; all theoretical claims, propositions, and interpretations are the author's sole responsibility.
 
 ---
 
@@ -671,21 +677,17 @@ Aaker, D. A. (1991). *Managing Brand Equity: Capitalizing on the Value of a Bran
 
 Aaker, D. A. (1996). *Building Strong Brands*. Free Press.
 
+Allenby, G. M., & Rossi, P. E. (1998). Marketing models of consumer heterogeneity. *Journal of Econometrics*, 89(1–2), 57–78. DOI: 10.1016/S0304-4076(98)00055-4
+
 Argyle, L. P., Busby, E. C., Fulda, N., Gubler, J., Rytting, C., & Wingate, D. (2023). Out of one, many: Using language models to simulate human samples. *Political Analysis*, 31(3), 337–351. DOI: 10.1017/pan.2023.2
 
 Arora, N., Chakraborty, I., & Nishimura, Y. (2025). AI-human hybrids for marketing research: Leveraging large language models (LLMs) as collaborators. *Journal of Marketing*, 89(2), 43–70. DOI: 10.1177/00222429241276529
 
 Aubin, J.-P. (1991). *Viability Theory*. Birkhauser. DOI: 10.1007/978-0-8176-4910-4
 
-Aubin, J.-P., Bayen, A. M., & Saint-Pierre, P. (2011). *Viability Theory: New Directions*. Springer. DOI: 10.1007/978-3-642-16684-6
+Bell, J. S. (1964). On the Einstein Podolsky Rosen paradox. *Physics Physique Fizika*, 1(3), 195–200.
 
-Bawa, V. S. (1976). Admissible portfolios for all individuals. *Journal of Finance*, 31(4), 1169–1183.
-
-Bell, J. S. (1964). On the Einstein Podolsky Rosen paradox. *Physics Physique Fizika*, 1(3), 195-200.
-
-Berger, M. P. F., King, C. Y. J., & Wong, W. K. (2000). Minimax D-optimal designs for item response theory models. *Psychometrika*, 65(3), 377–390. DOI: 10.1007/BF02296152
-
-Bertsekas, D. P., & Rhodes, I. B. (1971). On the minimax reachability of target sets and target tubes. *Automatica*, 7(2), 233–247.
+Bertsekas, D. P., & Rhodes, I. B. (1971). On the minimax reachability of target sets and target tubes. *Automatica*, 7(2), 233–247. DOI: 10.1016/0005-1098(71)90066-5
 
 Blanchini, F. (1999). Set invariance in control — A survey. *Automatica*, 35(11), 1747–1767. DOI: 10.1016/S0005-1098(99)00113-2
 
@@ -693,39 +695,49 @@ Bobenko, A. I., Hoffmann, T., & Sageman-Furnas, A. O. (2025). Compact Bonnet pai
 
 Brand, J., Israeli, A., & Ngwe, D. (2023). Using LLMs for market research. HBS Working Paper No. 23-062. Harvard Business School.
 
-Carroll, J. D., and Chang, J.-J. (1970). Analysis of individual differences in multidimensional scaling via an N-way generalization of "Eckart-Young" decomposition. *Psychometrika*, 35(3), 283-319. DOI: 10.1007/BF02310791
+Carroll, J. D., & Chang, J.-J. (1970). Analysis of individual differences in multidimensional scaling via an N-way generalization of "Eckart-Young" decomposition. *Psychometrika*, 35(3), 283–319. DOI: 10.1007/BF02310791
+
+Choi, S. C., DeSarbo, W. S., & Harker, P. T. (1990). Product positioning under price competition. *Management Science*, 36(2), 175–199. DOI: 10.1287/mnsc.36.2.175
+
+Cramér, H. (1946). *Mathematical Methods of Statistics*. Princeton University Press.
 
 De Chernatony, L. (1999). Brand management through narrowing the gap between brand identity and brand reputation. *Journal of Marketing Management*, 15(1–3), 157–179.
 
-DeSarbo, W. S., and Rao, V. R. (1986). A constrained unfolding methodology for product positioning analysis. *Marketing Science*, 5(1), 1-19. DOI: 10.1287/mksc.5.1.1
+DeSarbo, W. S., & Rao, V. R. (1986). A constrained unfolding methodology for product positioning. *Marketing Science*, 5(1), 1–19. DOI: 10.1287/mksc.5.1.1
+
+Dew, R., Ansari, A., & Toubia, O. (2022). Letting logos speak: Leveraging multiview representation learning for data-driven branding and logo design. *Marketing Science*, 41(2), 401–425. DOI: 10.1287/mksc.2021.1326
 
 Du, R. Y., & Kamakura, W. A. (2015). Improving the statistical performance of tracking studies based on repeated cross-sections with primary dynamic factor analysis. *International Journal of Research in Marketing*, 32(1), 94–112. DOI: 10.1016/j.ijresmar.2014.10.002
 
-Esterhuizen, W., Levine, J., & Streif, S. (2021). Epidemic management with admissible and robust invariant sets. *PLOS ONE*, 16(9), e0257598.
+Elrod, T., & Keane, M. P. (1995). A factor-analytic probit model for representing the market structure in panel data. *Journal of Marketing Research*, 32(1), 1–16. DOI: 10.1177/002224379503200101
 
-Grimm, K. J., Zhang, Z., Hamagami, F., & Mazzocco, M. M. M. (2013). Modeling nonlinear change via latent change and latent acceleration frameworks: Examining velocity and acceleration of growth trajectories. *Multivariate Behavioral Research*, 48(1), 117–143. DOI: 10.1080/00273171.2012.755111
+Esterhuizen, W., Lévine, J., & Streif, S. (2021). Epidemic management with admissible and robust invariant sets. *PLOS ONE*, 16(9), e0257598. DOI: 10.1371/journal.pone.0257598
 
-Ilchmann, A., Ryan, E. P., & Sangwin, C. J. (2002). Tracking with prescribed transient behaviour. *ESAIM: Control, Optimisation and Calculus of Variations*, 7, 471–493. DOI: 10.1051/cocv:2002064
-
-Kalman, R. E. (1960). A new approach to linear filtering and prediction problems. *Journal of Basic Engineering*, 82(1), 35–45.
-
-Karcher, H. (1977). Riemannian center of mass and mollifier smoothing. *Communications on Pure and Applied Mathematics*, 30(5), 509–541. DOI: 10.1002/cpa.3160300502
-
-Kane, V. E. (1986). Process capability indices. *Journal of Quality Technology*, 18(1), 41–52.
-
-Kapferer, J.-N. (2012). *The New Strategic Brand Management: Advanced Insights and Strategic Thinking* (5th ed.). Kogan Page.
+Goli, A., & Singh, A. (2024). Frontiers: Can large language models capture human preferences? *Marketing Science*, 43(4), 709–722. DOI: 10.1287/mksc.2023.0306
 
 Green, P. E., & Srinivasan, V. (1978). Conjoint analysis in consumer research: Issues and outlook. *Journal of Consumer Research*, 5(2), 103–123. DOI: 10.1086/208721
+
+Grimm, K. J., Zhang, Z., Hamagami, F., & Mazzocco, M. M. M. (2013). Modeling nonlinear change via latent change and latent acceleration frameworks: Examining velocity and acceleration of growth trajectories. *Multivariate Behavioral Research*, 48(1), 117–143. DOI: 10.1080/00273171.2012.755111
 
 Guo, Y., Li, W., Yang, G., Jiao, Z., & Yan, J. (2022). Combining dilution of precision and Kalman filtering for UWB positioning in a narrow space. *Remote Sensing*, 14(21), 5409. DOI: 10.3390/rs14215409
 
 Hatch, M. J., & Schultz, M. (2010). Toward a theory of brand co-creation with implications for brand governance. *Journal of Brand Management*, 17(8), 590–604. DOI: 10.1057/bm.2010.14
 
+Hauser, J. R., & Shugan, S. M. (1983). Defensive marketing strategies. *Marketing Science*, 2(4), 319–360. DOI: 10.1287/mksc.2.4.319
+
 Holland, P. W., & Hoskens, M. (2003). Classical test theory as a first-order item response theory: Application to true-score prediction from a possibly nonparallel test. *Psychometrika*, 68(1), 123–149. DOI: 10.1007/BF02296657
 
 Horton, J. J., Filippas, A., & Manning, B. S. (2023). Large language models as simulated economic agents: What can we learn from Homo Silicus? NBER Working Paper 31122. National Bureau of Economic Research. arXiv: 2301.07543
 
+Kalman, R. E. (1960). A new approach to linear filtering and prediction problems. *Journal of Basic Engineering*, 82(1), 35–45.
+
+Kane, V. E. (1986). Process capability indices. *Journal of Quality Technology*, 18(1), 41–52.
+
+Kapferer, J.-N. (2012). *The New Strategic Brand Management: Advanced Insights and Strategic Thinking* (5th ed.). Kogan Page.
+
 Kaplan, E. D., & Hegarty, C. J. (Eds.) (2017). *Understanding GPS/GNSS: Principles and Applications* (3rd ed.). Artech House.
+
+Karcher, H. (1977). Riemannian center of mass and mollifier smoothing. *Communications on Pure and Applied Mathematics*, 30(5), 509–541. DOI: 10.1002/cpa.3160300502
 
 Keller, K. L. (1993). Conceptualizing, measuring, and managing customer-based brand equity. *Journal of Marketing*, 57(1), 1–22.
 
@@ -735,51 +747,51 @@ Kuhfeld, W. F., Tobias, R. D., & Garratt, M. (1994). Efficient experimental desi
 
 Li, P., Castelo, N., Katona, Z., & Sarvary, M. (2024). Frontiers: Determining the validity of large language models for automated perceptual analysis. *Marketing Science*, 43(2), 254–266. DOI: 10.1287/mksc.2023.0454
 
-Martinet, V., Thebaud, O., & Rapaport, A. (2010). Hare or tortoise? Trade-offs in recovering sustainable bioeconomic systems. *Environmental Modeling and Assessment*, 15(6), 503–517. DOI: 10.1007/s10666-010-9226-2
+McFadden, D., & Train, K. (2000). Mixed MNL models for discrete response. *Journal of Applied Econometrics*, 15(5), 447–470. DOI: 10.1002/1099-1255(200009/10)15:5<447::AID-JAE570>3.0.CO;2-1
 
 Medesani, M., & Macdonald, J. (2026). *Geometric Foundations of Invariant Corridors and Governance: A Unified Framework with Empirical Validation* (Level 3.3 Frozen Baseline). Zenodo. DOI: 10.5281/zenodo.18822552
 
-Dew, R., Ansari, A., & Toubia, O. (2022). Letting logos speak: Leveraging multiview representation learning for data-driven branding and logo design. *Marketing Science*, 41(2), 401–425. DOI: 10.1287/mksc.2021.1326
-
-Goli, A., & Singh, A. (2024). Frontiers: Can large language models capture human preferences? *Marketing Science*, 43(4), 709–722. DOI: 10.1287/mksc.2023.0306
-
-McFadden, D., & Train, K. (2000). Mixed MNL models for discrete response. *Journal of Applied Econometrics*, 15(5), 447–470. DOI: 10.1002/1099-1255(200009/10)15:5<447::AID-JAE570>3.0.CO;2-1
-
 Misra, P., & Enge, P. (2011). *Global Positioning System: Signals, Measurements, and Performance* (2nd ed.). Ganga-Jamuna Press.
-
-Mitchell, I. M., Bayen, A. M., & Tomlin, C. J. (2005). A time-dependent Hamilton-Jacobi formulation of reachable sets for continuous dynamic games. *IEEE Transactions on Automatic Control*, 50(7), 947–957.
 
 Molenaar, P. C. M. (1985). A dynamic factor model for the analysis of multivariate time series. *Psychometrika*, 50(2), 181–202. DOI: 10.1007/BF02294246
 
-Naik, P. A., Mantrala, M. K., & Sawyer, A. G. (1998). Planning media schedules in the presence of dynamic advertising quality. *Marketing Science*, 17(3), 214–235.
+Naik, P. A., Mantrala, M. K., & Sawyer, A. G. (1998). Planning media schedules in the presence of dynamic advertising quality. *Marketing Science*, 17(3), 214–235. DOI: 10.1287/mksc.17.3.214
+
+Naik, P. A., & Raman, K. (2003). Understanding the impact of synergy in multimedia communications. *Journal of Marketing Research*, 40(4), 375–388. DOI: 10.1509/jmkr.40.4.375.19385
+
+Naik, P. A., Schultz, D. E., & Srinivasan, S. (2007). Perils of using OLS to estimate multimedia communications effects. *Journal of Advertising Research*, 47(3), 257–269. DOI: 10.2501/S0021849907070286
 
 Netzer, O., Toubia, O., Bradlow, E. T., Dahan, E., Evgeniou, T., Feinberg, F. M., Feit, E. M., Hui, S. K., Johnson, J., Liechty, J. C., Orlin, J. B., & Rao, V. R. (2008). Beyond conjoint analysis: Advances in preference measurement. *Marketing Letters*, 19(3–4), 337–354. DOI: 10.1007/s11002-008-9046-1
 
-Oubraham, A., & Zaccour, G. (2018). A survey of applications of viability theory to the sustainable exploitation of renewable resources. *Ecological Economics*, 145, 346–367.
-
 Oud, J. H. L., van den Bercken, J. H. L., & Essers, R. J. (1990). Longitudinal factor score estimation using the Kalman filter. *Applied Psychological Measurement*, 14(4), 395–418.
 
-Resnikoff, H. L. (1974). Differential geometry and color perception. *Journal of Mathematical Biology*, 1, 97–131. DOI: 10.1007/BF00275798
+Park, J., DeSarbo, W. S., Rajagopal, P., Dillon, W. R., & Chaiy, S. (2017). Bayesian heterogeneous multidimensional scaling models with dimensional selection. *Journal of Marketing Research*, 54(2), 301–318. DOI: 10.1509/jmr.14.0331
+
+Rao, C. R. (1945). Information and the accuracy attainable in the estimation of statistical parameters. *Bulletin of the Calcutta Mathematical Society*, 37, 81–91.
+
+Resnikoff, H. L. (1974). Differential geometry and color perception. *Journal of Mathematical Biology*, 1(2), 97–131. DOI: 10.1007/BF00275798
 
 Ries, A., & Trout, J. (1981). *Positioning: The Battle for Your Mind*. McGraw-Hill.
 
-Rossi, P. E., Allenby, G. M., and McCulloch, R. (2005). *Bayesian Statistics and Marketing*. Wiley. DOI: 10.1002/0470863692
+Rossi, P. E., Allenby, G. M., & McCulloch, R. (2005). *Bayesian Statistics and Marketing*. Wiley. DOI: 10.1002/0470863692
+
+Sandor, Z., & Wedel, M. (2001). Designing conjoint choice experiments using managers' prior beliefs. *Journal of Marketing Research*, 38(4), 430–444. DOI: 10.1509/jmkr.38.4.430.18904
+
+Sandor, Z., & Wedel, M. (2005). Heterogeneous conjoint choice designs. *Journal of Marketing Research*, 42(2), 210–218. DOI: 10.1509/jmkr.42.2.210.62285
 
 Sarti, A., Citti, G., & Petitot, J. (2008). The symplectic structure of the primary visual cortex. *Biological Cybernetics*, 98(1), 33–48. DOI: 10.1007/s00422-007-0194-9
 
 Simon, H. A. (1951). A formal theory of the employment relationship. *Econometrica*, 19(3), 293–305. DOI: 10.2307/1906815
 
-Simons, R. (1994). How new top managers use control systems as levers of strategic renewal. *Strategic Management Journal*, 15(3), 169–189.
+Simons, R. (1994). How new top managers use control systems as levers of strategic renewal. *Strategic Management Journal*, 15(3), 169–189. DOI: 10.1002/smj.4250150301
 
-Stevens, S. S. (1957). On the psychophysical law. *Psychological Review*, 64(3), 153-181. DOI: 10.1037/h0046162
+Stevens, S. S. (1957). On the psychophysical law. *Psychological Review*, 64(3), 153–181. DOI: 10.1037/h0046162
 
 Transtrum, M. K., Machta, B. B., Brown, K. S., Daniels, B. C., Myers, C. R., & Sethna, J. P. (2015). Perspective: Sloppiness and emergent theories in physics, biology, and beyond. *Journal of Chemical Physics*, 143(1), 010901. DOI: 10.1063/1.4923066
 
-van der Linden, W. J., & Ren, H. (2015). Optimal Bayesian adaptive design for test-item calibration. *Psychometrika*, 80(2), 263–288. DOI: 10.1007/s11336-013-9391-8
-
 Wald, A. (1947). An essentially complete class of admissible decision functions. *Annals of Mathematical Statistics*, 18(4), 549–555. DOI: 10.1214/aoms/1177730345
 
-Wedel, M., and Kamakura, W. A. (2000). *Market Segmentation: Conceptual and Methodological Foundations* (2nd ed.). Springer. DOI: 10.1007/978-1-4615-4651-1
+Wedel, M., & Kamakura, W. A. (2000). *Market Segmentation: Conceptual and Methodological Foundations* (2nd ed.). Springer. DOI: 10.1007/978-1-4615-4651-1
 
 Zharnikov, D. (2026a). Spectral brand theory: a multi-dimensional framework for brand perception analysis. Working Paper. https://doi.org/10.5281/zenodo.18945912
 
@@ -797,5 +809,4 @@ Zharnikov, D. (2026v). Spectral metamerism in AI-mediated brand perception: how 
 
 Zharnikov, D. (2026x). AI-native brand identity: from visual recognition to cryptographic verification. Working Paper. https://doi.org/10.5281/zenodo.19391476
 
----
-*This paper is part of the Spectral Brand Theory research program. For the full atlas of 20+ interconnected papers, see [spectralbranding.com/atlas](https://spectralbranding.com/atlas).*
+Zharnikov, D. (2026z). Spectral dynamics: Velocity, acceleration, and phase space in multi-dimensional brand perception. Working Paper. https://doi.org/10.5281/zenodo.19468204
