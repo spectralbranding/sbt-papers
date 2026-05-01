@@ -1,0 +1,32 @@
+{
+  "Period 1: Ignition -> Period 2: Expansion": {
+    "t_mid_a": 2004.5,
+    "t_mid_b": 2009.5,
+    "dt_mid_years": 5.0,
+    "acceleration": {
+      "Semiotic": -0.0191,
+      "Narrative": -0.2048,
+      "Ideological": null,
+      "Experiential": 0.0,
+      "Social": -0.1238,
+      "Economic": 0.0,
+      "Cultural": -0.3143,
+      "Temporal": -0.0191
+    }
+  },
+  "Period 2: Expansion -> Period 3: Normative Absorption": {
+    "t_mid_a": 2009.5,
+    "t_mid_b": 2018.0,
+    "dt_mid_years": 8.5,
+    "acceleration": {
+      "Semiotic": 0.0034,
+      "Narrative": -0.0286,
+      "Ideological": -0.0345,
+      "Experiential": 0.0059,
+      "Social": -0.037,
+      "Economic": -0.0059,
+      "Cultural": -0.021,
+      "Temporal": -0.0025
+    }
+  }
+}
