@@ -789,7 +789,7 @@ Zharnikov, D. (2026f). Cohort boundaries in high-dimensional perception space: a
 
 Zharnikov, D. (2026i). The organizational schema theory: test-driven business design. Working Paper. https://doi.org/10.5281/zenodo.18946043
 
-Zharnikov, D. (2026o). Non-ergodic brand perception: why cross-sectional brand tracking systematically misrepresents individual trajectories. Working Paper. https://doi.org/10.5281/zenodo.19138860
+Zharnikov, D. (2026o). From order effects to absorbing states: A non-ergodic framework for multi-dimensional brand perception dynamics. Working Paper. https://doi.org/10.5281/zenodo.19138860
 
 Zharnikov, D. (2026s). Coherence type as crisis predictor: a formal derivation from non-ergodic dynamics. Working Paper. https://doi.org/10.5281/zenodo.19208107
 

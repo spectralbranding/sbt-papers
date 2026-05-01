@@ -290,7 +290,7 @@ Wind, Yoram (Jerry) (2009), "Advertising a Decade of Progress and a Commentary o
 
 Zharnikov, Dmitry (2026a), Spectral brand theory: A multi-dimensional framework for brand perception analysis. Working Paper. https://doi.org/10.5281/zenodo.18945912
 
-Zharnikov, Dmitry (2026o), Non-ergodic brand perception: Why cross-sectional brand tracking systematically misrepresents individual trajectories. Working Paper. https://doi.org/10.5281/zenodo.19138860
+Zharnikov, Dmitry (2026o), From order effects to absorbing states: A non-ergodic framework for multi-dimensional brand perception dynamics. Working Paper. https://doi.org/10.5281/zenodo.19138860
 
 Zharnikov, Dmitry (2026p), Dimensional activation and cohort divergence: A longitudinal decomposition of purpose advertising effectiveness. Working Paper. https://doi.org/10.5281/zenodo.19139258
 

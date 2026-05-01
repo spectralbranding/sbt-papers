@@ -56,3 +56,15 @@ data_manifest:
       - "Patagonia/Columbia: only brand pair below baseline DCI (0.194)"
       - "Local brands collapse 25% more than global (Cohen's d = 0.878)"
       - "Temperature robustness: DCI spread 0.012 (p = 0.61)"
+
+  - id: "competitive-interference-250"
+    description: >
+      Competitive interference test: 5 SBT canonical brands x 3 competitor
+      categories x 16 reps = 240 API calls. Tests whether competitor
+      category modulates focal-brand spectral profile.
+    archive: "GitHub (sbt-papers/r10-dove-case-study/code/data/)"
+    repository: "spectralbranding/sbt-papers"
+    path: "r10-dove-case-study/code/"
+    format: "Python + JSONL"
+    access: public
+    run_command: "uv run --with 'openai,scipy,numpy' python competitive_interference_250.py"

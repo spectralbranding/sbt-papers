@@ -14,10 +14,10 @@ metadata:
   citation_key: "2026p"
   doi: "10.5281/zenodo.19139258"
   date: "2026-05-01"
-  version: "2.3.0"
+  version: "2.4.0"
   status: editable_post_rejection
-  word_count: 10333
-  ref_count: 49
+  word_count: 10482
+  ref_count: 50
   license: "CC-BY-4.0"
   abstract: >
     Purpose campaigns are evaluated by aggregate metrics that cannot distinguish structural
@@ -191,12 +191,14 @@ submission_history:
     submitted: "2026-03-29"
     decision: "desk_reject"
     decision_date: "2026-04-10"
-  - venue: "TBD"
-    status: "editable"
+  - venue: "Journal of Brand Management"
+    status: "pre-submission"
     note: >
       JAR desk-rejected 2026-04-10 (Paper3686 / 261517468; insufficient evidentiary
       base / readership fit). Previously JM desk-rejected 2026-03-28. Layer 1 audit
       fixes applied v2.2.0 2026-05-01 (Phase 3 batch 3.5). Grok r1 tactical fixes
       applied v2.3.0 2026-05-01 (+4 new external refs; abstract tightened; conclusion
-      elevated; "Practitioner Takeaways" heading). Layer 2 venue decision pending
-      (Options A/B/C; see audit/reports/03_consolidated_2026p.md).
+      elevated; "Practitioner Takeaways" heading). Layer 2 Option A applied v2.4.0
+      2026-05-01: venue retargeted to JBM; claims bounded; single-case acknowledgment
+      (Eisenhardt 1989; Yin 2018) added; 4 citation corrections (Hydock, Guha/Korschun,
+      Anisimova, Reczek removed); DCI scale unified to decimal. M13 test re-run pending.
