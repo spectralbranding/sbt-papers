@@ -24,6 +24,24 @@ provenance:
       description: >
         Session 105 quality review fixes. paper.yaml updated with abstract field, version
         confirmed 2.1. PROVENANCE.yaml updated with version history entries.
+    - version: "2.2.0"
+      date: "2026-05-01"
+      description: >
+        Phase 3 batch 3.5 Layer 1 audit fixes applied. 2026q cite re-pointed to 2026ac;
+        .976 cosine corrected to .977; Hermès accent fixed; 7 author-name/DOI corrections
+        (Bhagwat, Kietzmann, Sabbah, Vredenburg, Brakus, Taylor, Zharnikov-2026v title);
+        duplicate Discussion heading removed (now "Propositions"); singleton tertiary
+        heading demoted to inline bold; AI disclosure updated to Claude Opus 4.7;
+        3 universality hedges applied (M16/M17/M18); P1 falsification operationalized;
+        sbt-framework toolkit described as "in development / available on request";
+        2026o cross-corpus cite added at P4; "Practical Implications" renamed
+        "Managerial Implications"; Generalizability and Boundary Conditions subsection
+        added (~250w); Becker-Olsen/Cudmore/Hill 2006 cited at P1+P3; Akestam/Rosengren/
+        Dahlen 2017 at Gillette case; Vanhamme/Grobben 2009 at Patagonia case; Eyada 2020
+        at mirror-cohort finding; Keller/Lehmann 2006 at velocity tracking; Aaker 2004
+        at Portfolio Management; Wedel/Kamakura 2000 at Limitation 2; Hermann DOI
+        normalized. 10 new references added. Cover-letter self-cite rate note added.
+        Both SSOT files updated.
 
   forks:
     - id: "fork-2026-03-20-zenodo"

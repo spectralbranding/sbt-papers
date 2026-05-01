@@ -5,7 +5,7 @@
 paper_spec_version: "0.1.0"
 
 metadata:
-  title: "Non-Ergodic Brand Perception: A Longitudinal Decomposition of Purpose Advertising Effectiveness"
+  title: "From Order Effects to Absorbing States: A Non-Ergodic Framework for Multi-Dimensional Brand Perception Dynamics"
   authors:
     - name: "Dmitry Zharnikov"
       orcid: "0009-0000-6893-9231"
@@ -13,8 +13,10 @@ metadata:
       corresponding: true
   citation_key: "2026o"
   doi: "10.5281/zenodo.19138860"
-  date: "2026-04-16"
-  version: "2.1.1"
+  date: "2026-05-01"
+  version: "2.2"
+  word_count: 13350
+  ref_count: 38
   status: working_paper
   license: "CC-BY-4.0"
   keywords:

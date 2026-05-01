@@ -1,6 +1,6 @@
 # R9: Non-Ergodic Brand Perception
 
-**Paper**: Non-Ergodic Brand Perception: A Longitudinal Decomposition of Purpose Advertising Effectiveness
+**Paper**: Non-Ergodic Brand Perception: Why Cross-Sectional Brand Tracking Systematically Misrepresents Individual Trajectories
 
 **Author**: Dmitry Zharnikov
 
@@ -8,7 +8,7 @@
 
 **Citation key**: 2026o
 
-**Status**: Working paper v2.1
+**Status**: Working paper v2.2
 
 ## Abstract
 
@@ -18,7 +18,7 @@ Brand tracking assumes cross-sectional averages (ensemble averages) yield the sa
 
 | File | Description |
 |------|-------------|
-| `paper.md` | Full paper (v2.1, 5 propositions, empirical anchor from R15) |
+| `paper.md` | Full paper (v2.2, 5 propositions, 37 refs, new §3.4 boundary conditions, §6.5 JCP implications) |
 | `paper.yaml` | Paper specification (machine-readable claims, submission history) |
 | `CITATION.cff` | Citation metadata |
 | `CONTRIBUTORS.yaml` | Contributor attribution (human + AI) |
