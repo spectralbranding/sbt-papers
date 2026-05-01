@@ -8,7 +8,7 @@ Working Paper -- March 2026
 
 ## Abstract
 
-Spectral Brand Theory (SBT) classifies brands into five coherence types -- ecosystem, signal, identity, experiential asymmetry, and incoherent -- and predicts that coherence *type* determines crisis resilience better than coherence *score*. This prediction is counter-intuitive: two brands with identical total emission intensity but different emission distributions should exhibit different recovery trajectories following an equivalent shock. Yet no formal derivation connects coherence type to crisis resilience through dynamics. This paper provides that derivation by analyzing the drift structures that different coherence types produce within the stochastic differential equation (SDE) framework of Zharnikov (2026j) on the positive octant of the 7-sphere $S^7_+$. We introduce two characterizations of drift geometry -- isotropy and $k$-anisotropy -- and derive three main results. Theorem 1 establishes that absorption probability is monotonically decreasing in drift isotropy, so isotropic drift fields (ecosystem coherence) produce lower absorption risk than anisotropic fields (signal, identity) or stochastic drift (incoherent). Theorem 2 shows that recovery probability following a crisis shock of severity $\eta$ on dimension $i$ depends on the drift available on that dimension, creating asymmetric vulnerability profiles for anisotropic brands. Theorem 3 combines drift isotropy with dimension-specific volatility to derive the full resilience ordering -- ecosystem > signal > identity > experiential asymmetry > incoherent -- as a mathematical consequence of the SDE geometry rather than an ad hoc ranking. The gap between coherence types increases with crisis severity: at small perturbations, all types recover similarly; at large shocks, ecosystem-coherent brands dramatically outperform incoherent brands. We apply the framework to four well-documented brand crises (Tylenol 1982, BP 2010, Volkswagen 2015, Tesla Cybertruck 2019) and state three falsifiable predictions for empirical testing. The results formalize SBT's most distinctive claim -- that the *structure* of brand perception, not merely its *level*, determines crisis outcomes -- and connect it to the broader literature on non-ergodic dynamics in economic systems.
+Spectral Brand Theory classifies brands into five coherence types -- ecosystem, signal, identity, experiential asymmetry, and incoherent -- and predicts that coherence *type* determines crisis resilience better than coherence *score*. No formal derivation has connected this prediction to dynamics. This paper provides that derivation by analyzing the drift structures that different coherence types produce within the stochastic differential equation (SDE) framework of Zharnikov (2026j). Two characterizations of drift geometry -- isotropy and $k$-anisotropy -- yield three main results. Theorem 1 establishes that absorption probability decreases monotonically in drift isotropy: isotropic drift fields (ecosystem coherence) produce lower absorption risk than anisotropic or stochastic drift. Theorem 2 shows that recovery probability depends on dimension-specific drift, creating asymmetric vulnerability profiles -- crises on passive dimensions (e.g., the Economic dimension for Hermès) are disproportionately dangerous. Theorem 3 derives the full resilience ordering -- ecosystem > signal > identity > experiential asymmetry > incoherent -- from SDE geometry. The type-over-score principle is the central result: crisis survival depends on the minimum drift across dimensions, not the average, so two brands with identical total emission but different distributions have different resilience. The framework is applied to four documented crises and generates three falsifiable predictions.
 
 **Keywords**: crisis resilience, coherence type, brand stability, stochastic dynamics, drift geometry, non-ergodicity, Spectral Brand Theory
 
@@ -20,7 +20,7 @@ Spectral Brand Theory (SBT) classifies brands into five coherence types -- ecosy
 
 ## 1. Introduction
 
-Brand crises are asymmetric events. A product recall, a public scandal, or an environmental disaster can destroy decades of accumulated brand equity in weeks -- or it can leave a brand essentially undamaged. Consumer-brand relationships, which drive brand loyalty and repeat engagement (Khamitov, Wang, & Thomson, 2019), are differentially disrupted depending on the structural properties of the brand being attacked. The crisis management literature has extensively studied *response* strategies: the speed and sincerity of corporate apologies (Coombs, 2007), the role of prior reputation as a buffer (Dawar & Pillutla, 2000), the effectiveness of product recalls versus denials (Siomkos & Kurzbard, 1994), and the moderating influence of brand equity on crisis spillover (Cleeren, Dekimpe, & Helsen, 2008). Bundy, Pfarrer, Short, and Coombs (2017), in the definitive integrative review of crisis management research, identify the pre-crisis structural attributes of organizations as an under-theorized determinant of crisis outcomes -- a gap that the present paper addresses. Cleeren, Dekimpe, and van Heerde (2017) synthesize three decades of product-harm crisis research and consistently find that brand equity structure moderates recovery, though the mechanism remains unspecified. What the literature has not addressed is the *structural* question: whether the internal geometry of a brand's perception profile -- the pattern of strengths and weaknesses across perceptual dimensions -- predicts crisis resilience independently of crisis response strategy.
+Brand crises are asymmetric events. A product recall, a public scandal, or an environmental disaster can destroy decades of accumulated brand equity in weeks -- or it can leave a brand essentially undamaged. Consumer-brand relationships, which drive brand loyalty and repeat engagement (Khamitov, Wang, & Thomson, 2019), are differentially disrupted depending on the structural properties of the brand being attacked. The crisis management literature has extensively studied *response* strategies: the speed and sincerity of corporate apologies (Coombs, 2007), the role of prior reputation as a buffer (Dawar & Pillutla, 2000), the effectiveness of product recalls versus denials (Siomkos & Kurzbard, 1994), and the moderating influence of brand equity on crisis spillover. Bundy, Pfarrer, Short, and Coombs (2017), in the definitive integrative review of crisis management research, identify the pre-crisis structural attributes of organizations as an under-theorized determinant of crisis outcomes -- a gap that the present paper addresses. Cleeren, Dekimpe, and van Heerde (2017) synthesize three decades of product-harm crisis research and consistently find that brand equity structure moderates recovery, though the mechanism remains unspecified. What the literature has not addressed is the *structural* question: whether the internal geometry of a brand's perception profile -- the pattern of strengths and weaknesses across perceptual dimensions -- predicts crisis resilience independently of crisis response strategy.
 
 Spectral Brand Theory (Zharnikov, 2026a) provides the vocabulary for this structural question. SBT models brand perception as an eight-dimensional vector in a space defined by Semiotic, Narrative, Ideological, Experiential, Social, Economic, Cultural, and Temporal dimensions. Brands are classified not by a single coherence *score* (total intensity) but by coherence *type* -- the geometric pattern of emission across dimensions. Five types are defined: ecosystem coherence (high emission across all dimensions; e.g., Hermès), signal coherence (concentrated emission on 5--6 dimensions; e.g., IKEA), identity coherence (concentrated on ideological and narrative dimensions; e.g., Patagonia), experiential asymmetry (concentrated on experiential and social dimensions; e.g., Erewhon), and incoherent (extreme variance with no stable pattern; e.g., Tesla).
 
@@ -28,15 +28,17 @@ SBT's qualitative prediction is that coherence *type* predicts crisis resilience
 
 This paper provides that derivation. The key insight is that different coherence types produce different **drift structures** in the SDE model of brand perception dynamics developed in Zharnikov (2026j). That paper formulated a Stratonovich SDE on $S^7_+$ where signal encounters drive Brownian motion, signal decay introduces deterministic drift toward a neutral prior, and negative conviction creates absorbing boundaries at the octant boundary. The drift component $\mu_i(x)$ has two parts: signal-driven drift (toward the brand's emission profile) and decay drift (toward the neutral prior). Because different coherence types have different emission profiles, they produce different drift geometries -- and different drift geometries produce different stability properties.
 
-The gap this paper fills is specific and well-defined. The crisis management literature (Coombs, 2007; Dutta & Pullig, 2011) studies response strategy. The brand equity literature (Aaker, 1996; Keller, 1993; Kapferer, 2008, 4th ed.) studies perception structure but not dynamics. The ergodicity economics literature (Peters & Gell-Mann, 2016; Peters, 2019) provides the mathematical framework for non-ergodic processes -- specifically, that time-average and ensemble-average growth rates diverge for multiplicative processes -- but has not been applied to brand crises. Zharnikov (2026j) provides the SDE framework but derives stability results only for specific brands, not for coherence types as a class. This paper bridges all four by deriving the coherence-resilience ordering from the drift geometry of the SDE, producing a result that is structural (it follows from the mathematics, not from case analysis), general (it applies to any brand classifiable by coherence type), and falsifiable (it generates testable predictions).
+The gap this paper fills is specific and well-defined. The crisis management literature (Coombs, 2007; Dutta & Pullig, 2011) studies response strategy. The brand equity literature (Aaker, 1996; Keller, 1993; Kapferer, 2008, 4th ed.) studies perception structure but not dynamics. The ergodicity economics literature (Peters & Gell-Mann, 2016; Peters, 2019) provides the mathematical framework for non-ergodic processes -- specifically, that time-average and ensemble-average growth rates diverge for multiplicative processes -- but has not been applied to brand crises; Zharnikov (2026o) extends this non-ergodic framing to multi-dimensional brand perception dynamics. Zharnikov (2026j) provides the SDE framework but derives stability results only for specific brands, not for coherence types as a class. This paper bridges all four by deriving the coherence-resilience ordering from the drift geometry of the SDE, producing a result that is structural (it follows from the mathematics, not from case analysis), general (it applies to any brand classifiable by coherence type), and falsifiable (it generates testable predictions).
 
-The remainder of the paper proceeds as follows. Section 2 characterizes the drift structures produced by each coherence type. Section 3 analyzes the stability properties of each drift structure. Section 4 models crises as perturbations and derives recovery probabilities. Section 5 assembles the full predicted ordering. Section 6 applies the framework to four documented brand crises. Section 7 states falsifiable predictions for empirical testing.
+The remainder of the paper proceeds as follows. Section 2 (Drift Structure by Coherence Type) characterizes the drift structures produced by each coherence type. Section 3 (Stability Analysis) analyzes the stability properties of each drift structure. Section 4 (Crisis as Perturbation) models crises as perturbations and derives recovery probabilities. Section 5 (Coherence-Resilience Theorem) assembles the full predicted ordering. Section 6 (Application to Known Crises) applies the framework to four documented brand crises. Section 7 (Testable Predictions) states falsifiable predictions for empirical testing.
 
 ---
 
 ## 2. Drift Structure by Coherence Type
 
 ### 2.1 The SDE on $S^7_+$
+
+**Prior stochastic models in marketing.** Marketing Science has a long tradition of modeling brand and customer dynamics with stochastic processes. Naik and Raman (2003) formalize synergy effects in multimedia advertising using a state-space model driven by a stochastic differential equation, establishing the ODE/SDE toolkit as standard for multi-channel brand-signal dynamics. Schweidel, Fader, and Bradlow (2008) model service retention as a latent absorbing process, where customers defect once an unobserved threshold is crossed -- the absorbing-boundary logic that the present paper extends to perceptual dimensions. Pauwels, Silva-Risso, Srinivasan, and Hanssens (2004) use vector autoregressive impulse-response analysis to trace how product-launch and promotion shocks propagate through sales and firm value over time, providing an empirical anchor for the perturbation-and-recovery structure formalized here. These models treat brand strength as a unidimensional scalar or a low-dimensional latent state. The present paper extends this tradition to an eight-dimensional perceptual manifold with dimension-specific absorbing boundaries, demonstrating that the geometry of drift -- not merely its magnitude -- governs crisis resilience.
 
 We recall the framework of Zharnikov (2026j). An observer's perception profile $x(t) \in S^7_+$ evolves according to the Stratonovich SDE:
 
@@ -148,7 +150,7 @@ Since $p(T; \alpha)$ is convex in $\alpha$ (the marginal benefit of additional d
 
 Theorem 1 compares drift structures with the same total intensity, holding volatility constant. In practice, different dimensions have different intrinsic volatilities, reflecting the rate at which the underlying perceptual processes fluctuate.
 
-**Definition 3** (Dimension volatility ordering). We define the **intrinsic volatility** $\nu_i$ of dimension $i$ as the diffusion coefficient scale in the absence of signal-driven drift. The eight SBT dimensions admit a natural volatility ordering:
+**Definition 3** (Dimension volatility ordering). We define the **intrinsic volatility** $\nu_i$ of dimension $i$ as the diffusion coefficient scale in the absence of signal-driven drift. The volatility ordering across dimensions is justified theoretically in (Zharnikov, 2026r). The eight SBT dimensions admit a natural volatility ordering:
 
 $$\nu_{\text{Tem}} < \nu_{\text{Sem}} < \nu_{\text{Nar}} < \nu_{\text{Ide}} < \nu_{\text{Cul}} < \nu_{\text{Eco}} < \nu_{\text{Soc}} < \nu_{\text{Exp}}$$
 
@@ -214,7 +216,7 @@ $$P_{\text{rec}}(i \in A, \eta; \text{type}) \gg P_{\text{rec}}(j \in B, \eta; \
 
 *(d) For incoherent brands, $P_{\text{rec}}(i, \eta; \text{incoh})$ is low across all dimensions and approximately independent of $i$ -- not because all dimensions are protected (as in the ecosystem case), but because no dimension is reliably protected.*
 
-*Proof sketch.* Part (a) follows from the standard result that the survival probability of a one-dimensional diffusion with drift $\mu > 0$ away from an absorbing boundary at zero is increasing in $\mu$ (Karlin & Taylor, 1981, Chapter 15). The post-crisis state $x_i(\tau^+)$ is at distance $x_i(\tau^-) - \eta$ from the boundary, and the drift $\alpha_i + \beta_i$ pushes it away from zero. Larger $\alpha_i$ means stronger push, hence higher survival probability.
+*Proof sketch.* Part (a) follows from the standard result that the survival probability of a one-dimensional diffusion with drift $\mu > 0$ away from an absorbing boundary at zero is increasing in $\mu$ (Karlin & Taylor, 1981, Ch. 15, for the constant-drift case; the state-dependent extension follows by the comparison theorem of Ikeda & Watanabe, 1989, Theorem VI.1.1, since $\alpha_i(s, x) = \gamma s_i h(x_i)$ with $h$ non-decreasing satisfies the pointwise dominance condition required for stochastic ordering). The post-crisis state $x_i(\tau^+)$ is at distance $x_i(\tau^-) - \eta$ from the boundary, and the drift $\alpha_i + \beta_i$ pushes it away from zero. Larger $\alpha_i$ means stronger push, hence higher survival probability.
 
 Part (b) follows from the definition of ecosystem coherence: all $\alpha_i$ are substantial, so the recovery probability varies only mildly across dimensions.
 
@@ -258,7 +260,7 @@ This ordering is consistent with the qualitative observation that brands with de
 
 ### 5.1 Assembling the Full Prediction
 
-We now combine the stability analysis (Section 3) and the crisis recovery analysis (Section 4) into a single theorem that formalizes SBT's coherence-resilience prediction.
+This section combines the stability analysis (Section 3, Stability Analysis) and the crisis recovery analysis (Section 4, Crisis as Perturbation) into a single theorem that formalizes SBT's coherence-resilience prediction.
 
 **Theorem 3** (Coherence-Resilience Theorem). *Under the SDE model of Zharnikov (2026j) with drift parametrized by coherence type as in Section 2:*
 
@@ -296,7 +298,7 @@ Result (3) of Theorem 3 is the paper's central contribution. It formalizes a cla
 
 This is analogous to the structural engineering principle that a chain's strength is determined by its weakest link, not by the average strength of its links. In the context of brand perception dynamics, the "chain" is the vector of eight perceptual dimensions, and a crisis "breaks" the weakest one. Ecosystem coherence distributes strength uniformly; incoherence concentrates it unpredictably.
 
-The type-over-score principle also explains why traditional brand equity measures -- which typically aggregate across dimensions into a single score -- fail to predict crisis outcomes. A high aggregate score is compatible with both ecosystem coherence (uniform high) and signal coherence (concentrated high with gaps). The aggregate score cannot distinguish these cases; coherence type can.
+The type-over-score principle also explains why traditional brand equity measures -- which typically aggregate across dimensions into a single score -- fail to predict crisis outcomes. A high aggregate score is compatible with both ecosystem coherence (uniform high) and signal coherence (concentrated high with gaps). The aggregate score cannot distinguish these cases; coherence type can. This is the brand-equity analog of the spectral metamerism construct of Zharnikov (2026e): two brands that are perceptually indistinguishable on aggregate measures can produce divergent crisis trajectories, just as two spectral distributions that are visually metameric under one illuminant diverge under another.
 
 ---
 
@@ -392,7 +394,7 @@ Each of these predictions is specific enough to be tested with existing brand tr
 
 ### 8.1 Contribution to Crisis Management Theory
 
-The crisis management literature has developed sophisticated frameworks for classifying crisis response strategies (Coombs, 2007), measuring the moderating role of prior reputation (Dutta & Pullig, 2011), and analyzing the spillover effects of crises on competitors and category perceptions (Cleeren et al., 2008). What has been missing is a structural account of *why* some brands are more resilient than others, independent of their crisis response. This paper provides such an account.
+The crisis management literature has developed sophisticated frameworks for classifying crisis response strategies (Coombs, 2007), measuring the moderating role of prior reputation (Dutta & Pullig, 2011), and analyzing the spillover effects of crises on competitors and category perceptions (Cleeren, Dekimpe, & van Heerde, 2017). What has been missing is a structural account of *why* some brands are more resilient than others, independent of their crisis response. This paper provides such an account.
 
 The key insight is that crisis resilience is not a unidimensional property ("strong brands survive crises") but a geometric property. The *shape* of a brand's perceptual profile -- the distribution of emission across dimensions -- determines its vulnerability profile, its recovery probability, and its recovery time. Two brands of equal "strength" (equal total emission) can have dramatically different resilience if their emission is distributed differently across dimensions.
 
@@ -408,7 +410,7 @@ The paper also connects to Zharnikov (2026k), which analyzed spectral resource a
 
 Four limitations merit acknowledgment.
 
-First, the coherence-type classifications used in the case studies (Section 6) are author-assigned qualitative assessments, not empirical measurements. Until validated measurement instruments for the eight SBT dimensions are available, the framework's predictions cannot be rigorously tested. The paper specifies what data is needed and what tests apply (Section 7), but the tests themselves remain to be conducted.
+First, the coherence-type classifications used in the case studies (Section 6, Application to Known Crises) are author-assigned qualitative assessments, not empirical measurements. Until validated measurement instruments for the eight SBT dimensions are available, the framework's predictions cannot be rigorously tested. The paper specifies what data is needed and what tests apply (Section 7, Testable Predictions), but the tests themselves remain to be conducted.
 
 Second, the drift-isotropy model simplifies the relationship between emission profiles and perception dynamics. In reality, dimensions interact -- a crisis on the Ideological dimension may affect perception on the Narrative dimension through cross-dimensional coupling. The present model treats dimensions as independent conditional on the drift field, which is a first-order approximation.
 
@@ -416,7 +418,7 @@ Third, the model does not account for crisis response strategy. In practice, a b
 
 Fourth, the dimension-volatility ordering (Definition 3) is proposed on theoretical grounds and has not been empirically validated. The ordering is plausible -- heritage changes more slowly than product experience -- but the specific quantitative relationships remain to be established.
 
-### 8.3.5 Relationship to Normal Accident Theory
+### 8.5 Relationship to Normal Accident Theory
 
 An alternative structural account of crisis vulnerability is Perrow's (1984) Normal Accident Theory, which argues that tightly coupled, complex systems are inherently prone to cascading failures. The present framework shares the structural emphasis -- it is the *architecture* of the brand, not the severity of the triggering event alone, that determines outcomes -- but differs in mechanism. Perrow's coupling is operational (process dependencies); the present framework's coupling is perceptual (drift-field dependencies across dimensions). The two approaches are complementary: Normal Accident Theory predicts *when* crises occur; the Coherence-Resilience Theorem predicts *which* brands survive them.
 
@@ -428,7 +430,11 @@ Three directions for future work are immediate. First, the development of empiri
 
 A fourth, more speculative direction concerns the connection between this paper's results and the portfolio theory of Zharnikov (2026ac). If individual brands have coherence-dependent resilience, then a portfolio of brands has portfolio-level resilience that depends on the coherence types of its constituents and their correlations. A portfolio dominated by incoherent brands is more vulnerable to systemic crises than a portfolio balanced across coherence types. This connection between brand-level and portfolio-level resilience is a natural extension of the present framework.
 
-A geometric formalization of the coherence-type distinction is suggested by the Bonnet pair phenomenon in differential geometry (Bobenko, Hoffmann & Sageman-Furnas, 2025): two surfaces can share the same metric (spectral profile) and the same mean curvature (aggregate coherence score) yet be genuinely non-congruent (different crisis trajectories). The result that coherence type predicts resilience better than coherence score is the brand perception analog — the 'shape' of emission (type) determines crisis dynamics, not the 'size' (score), just as a surface's embedding determines its mechanical properties beyond what the intrinsic metric specifies.
+---
+
+## Acknowledgments
+
+AI assistants (Claude Opus 4.7, Grok 4.1, Gemini 3.1) were used for initial literature search and editorial refinement; all theoretical claims, propositions, and interpretations are the author's sole responsibility.
 
 ---
 
@@ -438,13 +444,9 @@ Aaker, D. A. (1996). *Building strong brands*. Free Press.
 
 Aaker, J., Fournier, S., & Brasel, S. A. (2004). When good brands do bad. *Journal of Consumer Research*, *31*(1), 1--16.
 
-Bobenko, A. I., Hoffmann, T., & Sageman-Furnas, A. O. (2025). Compact Bonnet pairs: Isometric tori with the same curvatures. *Publications Mathematiques de l'IHES*, 142, 241--293. DOI: 10.1007/s10240-025-00159-z
-
 Brakus, J. J., Schmitt, B. H., & Zarantonello, L. (2009). Brand experience: What is it? How is it measured? Does it affect loyalty? *Journal of Marketing*, *73*(3), 52--68.
 
 Bundy, J., Pfarrer, M. D., Short, C. E., & Coombs, W. T. (2017). Crises and crisis management: Integration, interpretation, and research development. *Journal of Management*, *43*(6), 1661--1692.
-
-Cleeren, K., Dekimpe, M. G., & Helsen, K. (2008). Inferences from brand extensions: Evidence on the informational value of the brand portfolio. *Journal of Marketing Research*, *45*(4), 397--412.
 
 Cleeren, K., Dekimpe, M. G., & van Heerde, H. J. (2017). Marketing research on product-harm crises: A review, managerial implications, and an agenda for future research. *Journal of the Academy of Marketing Science*, *45*(5), 593--615.
 
@@ -454,7 +456,7 @@ Coombs, W. T., & Holladay, S. J. (2002). Helping crisis managers protect reputat
 
 Dawar, N., & Pillutla, M. M. (2000). Impact of product-harm crises on brand equity: The moderating role of consumer expectations. *Journal of Marketing Research*, *37*(2), 215--226.
 
-Dutta, S., & Pullig, C. (2011). Effectiveness of corporate responses to brand crises: The role of crisis type and response strategies. *Journal of the Academy of Marketing Science*, *39*(5), 672--688.
+Dutta, S., & Pullig, C. (2011). Effectiveness of corporate responses to brand crises: The role of crisis type and response strategies. *Journal of Business Research*, *64*(12), 1281--1287.
 
 Ethier, S. N., & Kurtz, T. G. (1986). *Markov processes: Characterization and convergence*. Wiley.
 
@@ -474,15 +476,21 @@ Khamitov, M., Wang, X., & Thomson, M. (2019). How well do consumer-brand relatio
 
 Mitchell, M. L. (1989). The impact of external parties on brand-name capital: The 1982 Tylenol poisonings and subsequent cases. *Economic Inquiry*, *27*(4), 601--618.
 
+Naik, P. A., & Raman, K. (2003). Understanding the impact of synergy in multimedia communications. *Journal of Marketing Research*, *40*(4), 375--388.
+
 Molenaar, P. C. M. (2004). A manifesto on psychology as idiographic science: Bringing the person back into scientific psychology, this time forever. *Measurement: Interdisciplinary Research and Perspectives*, *2*(4), 201--218.
 
 Perrow, C. (1984). *Normal accidents: Living with high-risk technologies*. Basic Books.
+
+Pauwels, K., Silva-Risso, J., Srinivasan, S., & Hanssens, D. M. (2004). New products, sales promotions, and firm value: The case of the automobile industry. *Journal of Marketing*, *68*(4), 142--156.
 
 Peters, O., & Gell-Mann, M. (2016). Evaluating gambles using dynamics. *Chaos: An Interdisciplinary Journal of Nonlinear Science*, *26*(2), 023103.
 
 Peters, O. (2019). The ergodicity problem in economics. *Nature Physics*, *15*(12), 1216--1221.
 
-Roehm, M. L., & Brady, M. K. (2007). Consumer responses to performance failures by high-equity brands. *Journal of Consumer Research*, *34*(3), 537--545.
+Roehm, M. L., & Brady, M. K. (2007). Consumer responses to performance failures by high-equity brands. *Journal of Consumer Research*, *34*(4), 537--545.
+
+Schweidel, D. A., Fader, P. S., & Bradlow, E. T. (2008). Understanding service retention within and across cohorts using limited information. *Journal of Marketing*, *72*(1), 82--94.
 
 Shamma, H. M., & Hassan, S. S. (2009). Customer and non-customer perspectives for examining corporate reputation. *Journal of Product & Brand Management*, *18*(5), 326--337.
 
@@ -504,9 +512,6 @@ Zharnikov, D. (2026k). Spectral resource allocation: Demand-driven investment in
 
 Zharnikov, D. (2026o). From order effects to absorbing states: A non-ergodic framework for multi-dimensional brand perception dynamics. Working Paper. https://doi.org/10.5281/zenodo.19138860
 
-Zharnikov, D. (2026ac). Spectral immunity: Why brand portfolio interference disappears for AI observers. Working Paper. https://doi.org/10.5281/zenodo.19765401
+Zharnikov, D. (2026ac). Spectral immunity: Portfolio interference fails in AI-mediated brand perception. Working Paper. https://doi.org/10.5281/zenodo.19765401
 
 Zharnikov, D. (2026r). Why eight? Completeness and necessity of the SBT dimensional taxonomy. Working Paper. https://doi.org/10.5281/zenodo.19207599
-
----
-*This paper is part of the Spectral Brand Theory research program. For the full atlas of 20+ interconnected papers, see [spectralbranding.com/atlas](https://spectralbranding.com/atlas).*
