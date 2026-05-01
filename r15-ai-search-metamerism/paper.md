@@ -519,7 +519,7 @@ Sabbah, Jamil, and Oguz A. Acar (2026). Marketing to machines: How AI models res
 
 Shannon, Claude E. (1959). Coding theorems for a discrete source with a fidelity criterion. *IRE National Convention Record*, 7(Part 4), 142-163.
 
-Sourati, Zhivar, Saumya Venkatesh, Anil Doshi, John R. Hauser, and Joshua B. Tenenbaum (2026). LLM homogenization and epistemic collapse in AI-mediated knowledge production. *Trends in Cognitive Sciences*, forthcoming.
+Sourati, Zhivar, Alireza S. Ziabari, and Morteza Dehghani (2026). The homogenizing effect of large language models on human expression and thought. *Trends in Cognitive Sciences*, in press. https://doi.org/10.1016/j.tics.2026.01.003
 
 Tversky, Amos (1972). Elimination by aspects: A theory of choice. *Psychological Review*, 79(4), 281-299.
 

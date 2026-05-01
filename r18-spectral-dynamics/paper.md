@@ -2,7 +2,7 @@
 
 **Dmitry Zharnikov**
 
-Working Paper v1.1 | Citation key: 2026z | https://doi.org/10.5281/zenodo.19468204
+Working Paper v1.2.1 | Citation key: 2026z | https://doi.org/10.5281/zenodo.19468204
 
 ---
 
@@ -78,7 +78,7 @@ The state-space tradition supplies the closest mathematical kin. Naik and Raman 
 
 Dekimpe and Hanssens (1995) introduced the formal distinction between persistent (unit-root) and transient (stationary) marketing effects on sales time series; Pauwels et al. (2004) extended this to vector autoregressive impulse-response decomposition for multiple marketing-mix variables; and Hanssens and Pauwels (2016) provide an updated synthesis of the persistence modeling canon that spans advertising, pricing, and product actions. The persistence/transience distinction maps directly onto the velocity framework: persistent effects produce sustained velocity that moves the brand to a new equilibrium; transient effects produce temporary velocity that decays toward the prior position. The velocity framework provides the multi-dimensional measurement instrument for the Dekimpe-Hanssens persistence distinction applied to brand perception, and the Pauwels et al. (2004) VARX methodology supplies a candidate empirical estimator for the follow-on study envisioned in the limitations section.
 
-Recent advances reinforce the case for kinematic measurement. Swaminathan et al. (2020) identify real-time dynamic tracking of brand assets -- how they change over time rather than where they sit at a given moment -- as a central unresolved challenge for branding research in digital environments. Edeling and Fischer (2016) meta-analyze the marketing-finance interface and show that brand-metric changes predict firm value, providing a financial-consequence framing for exactly the velocity-based signals the present framework formalizes. Datta, Ailawadi, and van Heerde (2017) demonstrate in a Marketing Science study that consumer-based brand equity aligns with sales-based metrics differentially across marketing-mix levers, directly establishing that brand equity dynamics are multi-dimensional and that static measurement misses the velocity-level differentiation the present framework formalizes.
+Recent advances reinforce the case for kinematic measurement. Swaminathan et al. (2020) identify real-time dynamic tracking of brand assets -- how they change over time rather than where they sit at a given moment -- as a central unresolved challenge for branding research in digital environments. Edeling and Fischer (2016) meta-analyze the marketing-finance interface and show that brand-metric changes predict firm value, providing a financial-consequence framing for exactly the velocity-based signals the present framework formalizes; Edeling, Srinivasan, and Hanssens (2021) extend this review to a broader metrics-and-methods synthesis, confirming that the marketing-finance interface remains underequipped with dynamic measurement instruments. Colicev, Malshe, Pauwels, and O'Connor (2018) demonstrate that social-media owned and earned media affect consumer mindset metrics differently over time, an empirical pattern that reinforces the need for dimension-specific velocity tracking rather than aggregate brand-score monitoring. Datta, Ailawadi, and van Heerde (2017) demonstrate in a Marketing Science study that consumer-based brand equity aligns with sales-based metrics differentially across marketing-mix levers, directly establishing that brand equity dynamics are multi-dimensional and that static measurement misses the velocity-level differentiation the present framework formalizes.
 
 ### 2.5 Dynamical Systems in Strategic Management
 
@@ -550,6 +550,8 @@ Bruce, Norris I. (2008), "Pooling and Dynamic Forgetting Effects in Multitheme A
 
 Cleeren, Kathleen, Harald J. van Heerde, and Marnik G. Dekimpe (2013), "Rising from the Ashes: How Brands and Categories Can Overcome Product-Harm Crises," *Journal of Marketing*, 77 (2), 58--77. https://doi.org/10.1509/jm.10.0414
 
+Colicev, Anatoli, Ashwin Malshe, Koen Pauwels, and Peter O'Connor (2018), "Improving Consumer Mindset Metrics and Shareholder Value Through Social Media: The Different Roles of Owned and Earned Media," *Journal of Marketing*, 82 (1), 37--56. https://doi.org/10.1509/jm.16.0055
+
 Cover, Thomas M., and Joy A. Thomas (2006), *Elements of Information Theory*, 2nd ed. Hoboken, NJ: Wiley-Interscience.
 
 D'Aveni, Richard A. (1994), *Hypercompetition: Managing the Dynamics of Strategic Maneuvering*. New York: Free Press.
@@ -561,6 +563,8 @@ Dekimpe, Marnik G., and Dominique M. Hanssens (1995), "The Persistence of Market
 Dooley, Kevin J., and Andrew H. Van de Ven (1999), "Explaining Complex Organizational Dynamics," *Organization Science*, 10 (3), 358--372. https://doi.org/10.1287/orsc.10.3.358
 
 Edeling, Alexander, and Marc Fischer (2016), "Marketing's Impact on Firm Value: Generalizations from a Meta-Analysis," *Journal of Marketing Research*, 53 (4), 515--534.
+
+Edeling, Alexander, Shuba Srinivasan, and Dominique M. Hanssens (2021), "The Marketing--Finance Interface: A New Integrative Review of Metrics, Methods, and Findings and an Agenda for Future Research," *International Journal of Research in Marketing*, 38 (4), 857--876.
 
 Hanssens, Dominique M., and Koen Pauwels (2016), "Demonstrating the Value of Marketing," *Journal of Marketing*, 80 (6), 173--190.
 
