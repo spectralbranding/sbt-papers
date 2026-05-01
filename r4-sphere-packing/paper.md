@@ -1,8 +1,10 @@
 # How Many Brands Can a Market Hold? Sphere Packing Bounds for Multi-Dimensional Positioning
 
-**Zharnikov, D.**
+**Dmitry Zharnikov**
 
-Working Paper v1.1.1 -- April 2026
+ORCID: 0009-0000-6893-9231
+
+Working Paper v1.1.0 — April 2026 (Updated May 2026)
 
 https://doi.org/10.5281/zenodo.18945522
 
