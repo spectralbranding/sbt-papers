@@ -10,7 +10,7 @@ meta:
       affiliation: "Independent Researcher"
   doi: "10.5281/zenodo.19468204"
   date: "2026-05-01"
-  version: "1.2.0"
+  version: "1.2.1"
   venue: "Zenodo preprint"
   license: "CC-BY-4.0"
   keywords:
@@ -241,3 +241,10 @@ submission_history:
       (was 29). ~9,711 words. Added §8.7 Companion Computation Script subsection;
       created code/ companion script reproducing Tables 2 and 3 with run command and
       README per PAPER_QUALITY_STANDARDS items 37a-37e.
+      v1.2.1 (2026-05-01): Deferred-item (D2-D5) Perplexity verification pass. Added
+      2 verified citations: Colicev, Malshe, Pauwels, and O'Connor (2018) JM at §2.4
+      (social-media mindset metrics, DOI 10.1509/jm.16.0055); Edeling, Srinivasan, and
+      Hanssens (2021) IJRM 38(4) 857-876 at §2.4 (marketing-finance interface review).
+      Rejected D3 (Datta-Foubert 2021 Marketing Science), D4a (Gielens-Dekimpe 2022 JMR),
+      D4b (Luo-Netzer 2023 Marketing Science), D4d (Papies-Ebbes-van Heerde 2022 IJRM),
+      D5 (Kupfer 2025 JMR) — all unverifiable via Perplexity. 45 references (was 43).
