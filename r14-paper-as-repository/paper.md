@@ -1,4 +1,4 @@
-# Research as Repository: A Git-Native Protocol for Scientific Knowledge Production
+# Research as Repository: Infrastructure for Transparent, Attributed, and Machine-Readable Scholarly Communication
 
 **Dmitry Zharnikov**
 
@@ -308,7 +308,7 @@ The protocol does not mandate Markdown specifically. Any plain-text, diff-friend
 
 JATS XML (Journal Article Tag Suite) is the dominant machine-readable format for published articles. The protocol does not replace JATS — it generates JATS as one rendering output from the repository source. The submission gate (Section 2.3) can include JATS validation as a compliance check. The relationship is: the repository stores the source; JATS is one of several delivery formats the CI pipeline produces.
 
-**The two-layer architecture: text in Git, data in archives.** Scientific papers across all disciplines produce two categories of artifacts: text-based artifacts (manuscripts, code, analysis scripts, small structured data) and binary/large artifacts (microscopy images, genomic sequences, medical imaging, satellite data, audio recordings, simulation outputs). This distinction reflects Borgman's (2015) compound knowledge object framework, in which a research output is a bundle of heterogeneous artifacts linked by shared provenance rather than a single monolithic document. Git handles the first category natively. It handles the second category poorly — storing full copies of every version of every binary file makes repositories impractically large.
+**The two-layer architecture: text in Git, data in archives.** Scientific papers across all disciplines produce two categories of artifacts: text-based artifacts (manuscripts, code, analysis scripts, small structured data) and binary/large artifacts (microscopy images, genomic sequences, medical imaging, satellite data, audio recordings, simulation outputs). This distinction reflects Borgman's (2015) compound knowledge object framework, in which a research output is a bundle of heterogeneous artifacts linked by shared provenance rather than a single monolithic document — a structure that also enables the kind of data reuse that researchers find most valuable when provenance is preserved (Pasquetto, Borgman, & Wofford 2019). Git handles the first category natively. It handles the second category poorly — storing full copies of every version of every binary file makes repositories impractically large.
 
 The protocol adopts the same architecture that software engineering uses for code and assets: the repository stores the text layer; large data lives in linked external archives.
 
@@ -693,7 +693,7 @@ Each reviewer's branch is a complete, timestamped, attributed record of their re
 - **How deeply** they engaged (number of commits, lines of commentary)
 - **What they recommended** (final commit on the branch)
 
-The protocol supports all modes identified in Ross-Hellauer's (2017) systematic taxonomy of open peer review, and the structured commit model accommodates the emergent innovations catalogued by Tennant et al. (2017). The reviewer's identity on the branch is controlled by the editor:
+The protocol supports all modes identified in Ross-Hellauer's (2017) systematic taxonomy of open peer review, updated evidence on adoption and efficacy documented in Ross-Hellauer and Horbach (2024), and the structured commit model accommodates the emergent innovations catalogued by Tennant et al. (2017). The reviewer's identity on the branch is controlled by the editor:
 
 - **Open review**: real name and ORCID visible
 - **Single-blind**: reviewer identity visible to editor only; authors see "Reviewer 1"
@@ -896,7 +896,7 @@ Tier 1 is useful immediately, alone, with no institutional adoption. This is cri
 
 ### 2.11 The AI-Native Layer
 
-When every paper is a repository with structured metadata (`paper.yaml`), machine-readable content (Markdown), and auditable provenance (`PROVENANCE.yaml`), the entire corpus becomes queryable:
+When every paper is a repository with structured metadata (`paper.yaml`), machine-readable content (Markdown), and auditable provenance (`PROVENANCE.yaml`), the entire corpus becomes queryable. This extends and makes structurally verifiable the kind of machine-indexed scholarly graph that open scholarly indexes such as OpenAlex already enable at the document level (Priem, Piwowar, & Orr 2022):
 
 **Cross-paper consistency**: An AI agent can detect when Paper B's claims depend on Paper A's results, and Paper A has been retracted or revised. The dependency chain is explicit in `paper.yaml`.
 
@@ -1035,7 +1035,7 @@ The four-level hierarchy introduced in Section 1.1 — repository, paper, fork, 
 
 *Notes*: SBT = Spectral Brand Theory (Zharnikov 2026a); OST = Organizational Schema Theory (Zharnikov 2026i). The rendering-problem isomorphism across all three frameworks is formalized in Zharnikov (2026l).
 
-The rendering is lossy at every layer (Zharnikov 2026l). A brand specification cannot be fully conveyed by any finite set of signals. An organizational schema cannot be perfectly executed by any operational process. A research repository cannot be fully captured by any single paper. And the perception is observer-dependent: different consumers perceive different brands from the same signals; different employees experience different organizations from the same processes; different reviewers perceive different papers from the same manuscript.
+The rendering is lossy at every layer (Zharnikov 2026l). A brand specification cannot be fully conveyed by any finite set of signals. An organizational schema cannot be perfectly executed by any operational process. A research repository cannot be fully captured by any single paper. And the perception is observer-dependent: different consumers perceive different brands from the same signals; different employees experience different organizations from the same processes; different reviewers perceive different papers from the same manuscript. This isomorphism connects to the "between meaning and machine" problem in information science (Ribes and Bowker 2009): the gap between local epistemic practice and the formal representations machines can act on.
 
 **Self-reference.** This paper is itself an instance of the pattern it describes. The research (this repository) is rendered into a paper (this manuscript) that produces community evaluation (peer review at the target journal). The reader is currently experiencing the perception layer of a specification-implementation-perception pipeline whose specification layer is a Git repository. The rendering is lossy — several hundred commits of research development are compressed into a single manuscript. And the evaluation is observer-dependent — different reviewers will perceive different papers from this same text.
 
@@ -1157,7 +1157,7 @@ The example illustrates that the validator catches a specific compliance failure
 
 The author sees the exact failure (self-citation ratio), fixes it in their repository, and re-runs the validator. The entire cycle takes minutes, not the weeks currently consumed by desk-rejection-and-resubmission rounds.
 
-A realistic adoption sequence: (1) a preprint server or overlay journal implements the fork gate as a GitHub Action — this requires only the validator and a `journal_spec.yaml`, both of which exist; (2) an existing editorial management system (OJS is open-source and extensible) adds git-linked submission as an optional flow alongside traditional upload; (3) a funder (e.g., Wellcome Trust, which already mandates open data) requires `PROVENANCE.yaml` for funded papers, creating demand-side pressure. Each step is independently useful and does not require the others.
+A realistic adoption sequence: (1) a preprint server or overlay journal implements the fork gate as a GitHub Action — this requires only the validator and a `journal_spec.yaml`, both of which exist; (2) an existing editorial management system (OJS is open-source and extensible) adds git-linked submission as an optional flow alongside traditional upload; (3) a funder (e.g., Wellcome Trust, which already mandates open data) requires `PROVENANCE.yaml` for funded papers, creating demand-side pressure. European open-science policy has already established that infrastructure reform requires political coordination and is achievable: the European Open Science Cloud became operational through exactly this combination of mandate and incremental adoption (Burgelman 2021). Each step is independently useful and does not require the others.
 
 The companion artifacts — schemas, examples, and validator — are published as an open-source package at the paper's public repository (github.com/spectralbranding/paper-repo).
 
@@ -1233,19 +1233,13 @@ The protocol's structural advantages — transparency, traceability, machine rea
 
 ## 6. Conclusion
 
-The contribution of this paper is not the application of Git to publishing. It is the identification that scientific publishing lacks version control — a construct every other knowledge-intensive domain independently developed when it recognized that knowledge integrity requires provenance tracking.
+The Research-as-Repository protocol demonstrates that the document assumption is no longer technically necessary nor epistemically defensible. By replacing static artifacts with versioned, provenance-rich repositories, the protocol makes scientific knowledge production structurally transparent, auditable, and machine-queryable without centralizing control or mandating platform adoption. Its theoretical contribution lies in the specification-implementation-perception pipeline: a general pattern that unifies research communication with parallel frameworks in branding and organizational design. This isomorphism reveals why provenance infrastructure matters — renders are necessarily lossy, perceptions are observer-dependent, and only the underlying specification can support reliable evaluation.
 
-The structural gap in scientific publishing is not access, timing, or format. It is the document assumption — the treatment of a paper as a static file rather than a living repository with history, contributors, branches, and provenance. But the deeper gap is evaluative: the scientific community cannot evaluate research directly at scale, so it relies on journal prestige as a proxy — creating a loop that rewards publication venue over contribution quality.
+For electronic publishing platforms the implications are immediate. Journals can shift from PDF wrangling and formatting enforcement to semantic curation and review-quality assessment. Preprint servers and overlay journals become first-class collection curators in a federated ecosystem. Compliance, blinding, and provenance become services operating on repositories rather than bottlenecks authors must navigate. AI assistance moves from opaque disclosure statements to auditable commit histories. Research assessment bodies gain queryable data on contribution depth, review portfolios, and intellectual trajectories — precisely the multi-dimensional evidence demanded by DORA, Leiden, and CoARA but previously unavailable at scale.
 
-The Research-as-Repository protocol addresses both gaps. It replaces the document assumption with Git-native semantics: research programs are repositories, papers are renders, submissions are forks, reviews are attributed commits, and journals are collection curators. It breaks the prestige loop by making research contribution structurally evaluable — contribution depth, review quality, collaboration patterns, and research trajectory become queryable data, available to hiring committees, funders, and the public without relying on journal brands as shortcuts.
+The largest remaining risk is adoption inertia. The protocol therefore adopts a three-tier local-first design that delivers value to individual researchers before system-level buy-in is required. The compliance gate and validator already exist; a single preprint server or society journal implementing the fork gate would create immediate network effects. Governance should follow open standards processes (IETF/NISO model) with host-agnostic reference implementations.
 
-The protocol optimizes the knowledge production process, not the paper. Existing publishing reforms — open access, preprints, registered reports — improve the rendered artifact. This protocol makes the research itself transparent: every commit attributed, every AI contribution auditable, every grant traceable to specific results, every affiliation verified by the infrastructure rather than declared on a form.
-
-The four-level hierarchy — research program as repository, paper as render, fork as sharing, publication as merge — reveals that scientific publishing is an instance of a general specification-implementation-perception pipeline (Section 3.4). The same pattern appears in branding and organizational design. The protocol makes this pipeline's structure visible, auditable, and formally describable.
-
-Every stakeholder gains: authors own their research; reviewers build portable portfolios; editors get auditable workflows; universities can evaluate researchers directly; funders trace ROI at commit granularity; junior researchers gain visibility from day one; society gets transparent, auditable science. The protocol does not replace prestige. It reduces the dependency on prestige as a proxy, by making the underlying contribution data directly queryable.
-
-This paper proposes the conceptual architecture. A formal, implementable standard — with normative message schemas, authentication flows, and error handling — is the necessary next step. The compliance gate, schemas, and self-referential implementation are available at github.com/spectralbranding/paper-repo.
+This article does not claim the protocol solves the reproducibility crisis, eliminates prestige bias, or fully domesticates AI in research. It claims only that these problems are materially harder to solve without version control, provenance, and structured metadata as foundational infrastructure. By supplying that infrastructure, the protocol makes direct evaluation of research at scale technically feasible for the first time. The scientific community can now choose whether to use it.
 
 ---
 
@@ -1268,6 +1262,8 @@ Blischak, J. D., Davenport, E. R., & Wilson, G. (2016). A quick introduction to 
 Borgman, C. L. (2015). *Big Data, Little Data, No Data: Scholarship in the Networked World*. MIT Press. https://doi.org/10.7551/mitpress/9963.001.0001
 
 Bryan, J. (2018). Excuse me, do you have a moment to talk about version control? *The American Statistician*, 72(1), 20-27. https://doi.org/10.1080/00031305.2017.1399928
+
+Burgelman, J.-C. (2021). Politics and open science: How the European Open Science Cloud became reality (the untold story). *Data Intelligence*, 3(1), 5-16. https://doi.org/10.1162/dint_a_00069
 
 Chambers, C. D. (2013). Registered Reports: A new publishing initiative at Cortex. *Cortex*, 49(3), 609-610. https://doi.org/10.1016/j.cortex.2012.12.016
 
@@ -1317,7 +1313,11 @@ Nosek, B. A., Alter, G., Banks, G. C., et al. (2015). Promoting an open research
 
 Ohno, T. (1988). *Toyota Production System: Beyond Large-Scale Production*. Productivity Press.
 
+Pasquetto, I. V., Borgman, C. L., & Wofford, M. F. (2019). Uses and reuses of scientific data: The data creators' advantage. *Harvard Data Science Review*, 1(2). https://doi.org/10.1162/99608f92.fc14bf2d
+
 Perez-Riverol, Y., Gatto, L., Wang, R., et al. (2016). Ten simple rules for taking advantage of Git and GitHub. *PLOS Computational Biology*, 12(7), e1004947. https://doi.org/10.1371/journal.pcbi.1004947
+
+Priem, J., Piwowar, H., & Orr, R. (2022). OpenAlex: A fully-open index of scholarly works, authors, venues, institutions, and concepts. *arXiv*:2205.01833. https://doi.org/10.48550/arXiv.2205.01833
 
 PubPub. (2017). PubPub: Open publishing platform. MIT Knowledge Futures Group. https://www.pubpub.org/
 
@@ -1325,7 +1325,11 @@ Ram, K. (2013). Git can facilitate greater reproducibility and increased transpa
 
 Renear, A. H., & Palmer, C. L. (2009). Strategic reading, ontologies, and the future of scientific publishing. *Science*, 325(5942), 828–832. https://doi.org/10.1126/science.1157784
 
+Ribes, D., & Bowker, G. C. (2009). Between meaning and machine: Learning to represent the knowledge of communities. *Information and Organization*, 19(4), 199-217. https://doi.org/10.1016/j.infoandorg.2009.04.001
+
 Ross-Hellauer, T. (2017). What is open peer review? A systematic review. *F1000Research*, 6, 588. https://doi.org/10.12688/f1000research.11369.2
+
+Ross-Hellauer, T., & Horbach, S. P. J. M. (2024). Additional experiments required: A scoping review of recent evidence on key aspects of open peer review. *Research Evaluation*, 33, rvae004. https://doi.org/10.1093/reseval/rvae004
 
 San Francisco Declaration on Research Assessment (DORA). (2013).
 
@@ -1339,7 +1343,7 @@ Soiland-Reyes, S., Sefton, P., Crosas, M., et al. (2022). Packaging research art
 
 Stodden, V., Seiler, J., & Ma, Z. (2018). An empirical analysis of journal policy effectiveness for computational reproducibility. *Proceedings of the National Academy of Sciences*, 115(11), 2584-2589. https://doi.org/10.1073/pnas.1708290115
 
-Tennant, J. P., Dugan, J. M., Graziotin, D., et al. (2017). A multi-disciplinary perspective on emergent and future innovations in peer review. *F1000Research*, 6, 1151.
+Tennant, J. P., Dugan, J. M., Graziotin, D., et al. (2017). A multi-disciplinary perspective on emergent and future innovations in peer review. *F1000Research*, 6, 1151. https://doi.org/10.12688/f1000research.12037.3
 
 Torvalds, L. (2005). Git: Fast version control system [Software]. https://git-scm.com/
 

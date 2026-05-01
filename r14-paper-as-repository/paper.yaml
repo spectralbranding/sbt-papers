@@ -3,7 +3,7 @@
 spec_version: "0.1.0"
 
 meta:
-  title: "Research as Repository: A Git-Native Protocol for Scientific Knowledge Production"
+  title: "Research as Repository: Infrastructure for Transparent, Attributed, and Machine-Readable Scholarly Communication"
   authors:
     - name: "Zharnikov, Dmitry"
       orcid: "0009-0000-6893-9231"

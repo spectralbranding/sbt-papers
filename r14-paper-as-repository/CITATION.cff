@@ -6,7 +6,7 @@ authors:
     email: dmitry@spectralbranding.com
     affiliation: "Independent Researcher"
     orcid: "https://orcid.org/0009-0000-6893-9231"
-title: "Research as Repository: A Git-Native Protocol for Scientific Knowledge Production"
+title: "Research as Repository: Infrastructure for Transparent, Attributed, and Machine-Readable Scholarly Communication"
 version: 1.2.0
 date-released: 2026-04-05
 url: "https://doi.org/10.5281/zenodo.19294864"
@@ -28,6 +28,6 @@ preferred-citation:
   authors:
     - family-names: Zharnikov
       given-names: Dmitry
-  title: "Research as Repository: A Git-Native Protocol for Scientific Knowledge Production"
+  title: "Research as Repository: Infrastructure for Transparent, Attributed, and Machine-Readable Scholarly Communication"
   year: 2026
   url: "https://doi.org/10.5281/zenodo.19294864"

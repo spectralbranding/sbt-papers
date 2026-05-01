@@ -31,7 +31,7 @@ Eight companion papers establishing formal mathematical foundations for SBT, plu
 | Key | Paper | Zenodo DOI | Status |
 |-----|-------|------------|--------|
 | R8 | ~~Spectral Portfolio Theory: Interference, Coherence, and Capacity in Multi-Brand Perception Space~~ — **SUPERSEDED by [R21](r21-spectral-immunity/paper.md)** | [10.5281/zenodo.19145099](https://doi.org/10.5281/zenodo.19145099) | Superseded |
-| R14 | [Research as Repository: A Git-Native Protocol for Scientific Knowledge Production](r14-paper-as-repository/paper.md) | [10.5281/zenodo.19294864](https://doi.org/10.5281/zenodo.19294864) | Under review |
+| R14 | [Research as Repository: Infrastructure for Transparent, Attributed, and Machine-Readable Scholarly Communication](r14-paper-as-repository/paper.md) | [10.5281/zenodo.19294864](https://doi.org/10.5281/zenodo.19294864) | Under review |
 
 ### Methodology
 
