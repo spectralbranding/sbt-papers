@@ -5,7 +5,7 @@
 paper_spec_version: "0.1.0"
 
 metadata:
-  title: "R19: Empirical Rate-Distortion Curve for AI Brand Perception Encoders"
+  title: "Optimal Response Formats for AI Brand Perception Measurement: Evidence for a J-Shaped Rate-Distortion Curve"
   subtitle: "J-Shaped Distortion Curves and Cross-Architectural Codebook Convergence in LLM Brand Perception"
   authors:
     - name: "Dmitry Zharnikov"
@@ -15,7 +15,7 @@ metadata:
   citation_key: "2026aa"
   doi: "10.5281/zenodo.19528833"
   date: "2026-04-16"
-  version: "1.2.0"
+  version: "1.3.0"
   status: draft
   license: "CC-BY-4.0"
   keywords:

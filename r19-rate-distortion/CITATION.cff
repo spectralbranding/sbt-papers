@@ -6,9 +6,9 @@ authors:
     email: dmitry@spectralbranding.com
     affiliation: "Independent Researcher"
     orcid: "https://orcid.org/0009-0000-6893-9231"
-title: "R19: Empirical Rate-Distortion Curve for AI Brand Perception Encoders"
-version: "1.0.0"
-date-released: "2026-04-12"
+title: "Optimal response formats for AI brand perception measurement: Evidence for a J-shaped rate-distortion curve"
+version: "1.3.0"
+date-released: "2026-05-02"
 repository-code: "https://github.com/spectralbranding/sbt-papers"
 keywords:
   - rate-distortion
@@ -29,7 +29,7 @@ preferred-citation:
       email: dmitry@spectralbranding.com
       affiliation: "Independent Researcher"
       orcid: "https://orcid.org/0009-0000-6893-9231"
-  title: "R19: Empirical Rate-Distortion Curve for AI Brand Perception Encoders"
+  title: "Optimal response formats for AI brand perception measurement: Evidence for a J-shaped rate-distortion curve"
   year: 2026
   citation-key: "2026aa"
   doi: "10.5281/zenodo.19528833"
