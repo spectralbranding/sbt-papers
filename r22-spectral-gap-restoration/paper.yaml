@@ -9,11 +9,13 @@ metadata:
       corresponding: true
   citation_key: "2026ad"
   date: "2026-04-26"
-  version: "1.1.1"
+  version: "1.2.0"
   status: preprint
   doi: "10.5281/zenodo.19778549"
   license: "CC-BY-4.0"
   ref_count: 64
+  figure_count: 2
+  table_count: 2
   keywords:
     - spectral gap
     - cohort separability
