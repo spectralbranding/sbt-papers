@@ -4,13 +4,15 @@
 
 Working Paper -- March 2026
 
+https://doi.org/10.5281/zenodo.19064426
+
 ---
 
 ## Abstract
 
-Specifications underspecify their implementations. This paper identifies the *rendering problem* — the structural pattern in which a specification of bounded complexity is rendered into an implementation of vastly greater complexity, producing emergent phenomena that no specification contains. We identify three primary domains where the rendering problem manifests: biological (genome to phenotype to consciousness), organizational (org-schema to operations to customer experience), and perceptual (brand emission policy to signal field to perception cloud). In each domain, three structural properties hold: (1) a specification gap — the implementation contains substantially more information than the specification; (2) a configuration layer — the same specification produces different implementations depending on contextual parameters; and (3) irreducible emergence — the system produces phenomena that cannot be derived from any lower layer (Bedau, 1997). We ground these claims in established biology (Dawkins, 1976; Waddington, 1957; Fraga et al., 2005), process philosophy (Whitehead, 1929; Maturana & Varela, 1980), systems theory (Beer, 1972; Checkland, 1981; Ackoff, 1981), and non-ergodic dynamics (Peters, 2019). Six propositions are advanced, each testable within its home domain. We argue that prior organizational models — particularly Morgan's (1986) "organization as organism," Neilson et al.'s (2003) "organizational DNA," and Beer's (1972) Viable System Model — capture aspects of the same phenomenon but do not formalize the specification gap or configuration dependence as structural properties. The paper concludes that as artificial intelligence accelerates implementation speed, specification becomes the binding constraint — and therefore the locus of value — in biology, business, and beyond.
+Specifications underspecify their implementations. This paper identifies the *rendering problem* — the structural pattern in which a specification of bounded complexity is rendered into an implementation of vastly greater complexity, producing emergent phenomena no specification contains. Three primary domains are identified: biological (genome to phenotype to consciousness), organizational (org-schema to operations to customer experience), and perceptual (brand emission policy to signal field to perception cloud). In each domain, three structural properties hold: (1) a specification gap — the implementation contains substantially more information than the specification; (2) a configuration layer — identical specifications produce different implementations under different contextual parameters; and (3) irreducible emergence — phenomena not derivable from any lower layer (Bedau, 1997). These claims are grounded in biology (Dawkins, 1976; Fraga et al., 2005), process philosophy (Whitehead, 1929; Maturana & Varela, 1980), systems theory (Beer, 1972; Checkland, 1981; Ackoff, 1981), and non-ergodic dynamics (Peters, 2019). Six propositions are advanced, each testable within its home domain. Prior organizational models capture aspects of the same phenomenon but do not formalize the specification gap or configuration dependence as structural properties. As artificial intelligence accelerates implementation, specification becomes the binding constraint and locus of value in biology, business, and beyond.
 
-**Keywords**: rendering problem, specification gap, emergence, non-ergodicity, organizational specification, brand perception, epigenetics, systems theory, viable system model
+**Keywords**: rendering problem, specification gap, emergence, non-ergodicity, organizational specification, brand perception, epigenetics, systems theory
 
 ---
 
@@ -20,7 +22,7 @@ Every seven to ten years, nearly every cell in the human body is replaced. The h
 
 This observation is well established in cell biology. What has not been formalized is its structural implication: the human body is not the identity. It is a continuously rebuilt implementation of a persistent specification — the genome. The identity is in the specification and in the pattern of execution, not in the material.
 
-The same structure appears in organizational theory and brand management. In each domain, a specification of bounded complexity is *rendered* into an implementation of vastly greater complexity, and the implementation produces emergent phenomena that no specification contains. We call this the *rendering problem*.
+The same structure appears in organizational theory and brand management. In each domain, a specification of bounded complexity is *rendered* into an implementation of vastly greater complexity, and the implementation produces emergent phenomena that no specification contains. This pattern is termed the *rendering problem*.
 
 The rendering problem is not a metaphor borrowed from biology and applied to business. It is a structural pattern — formalized in this paper through six propositions — that manifests wherever three conditions hold simultaneously:
 
@@ -28,15 +30,15 @@ The rendering problem is not a metaphor borrowed from biology and applied to bus
 2. The implementation contains orders of magnitude more information than the specification
 3. An emergent phenomenon arises from the implementation that the specification does not contain
 
-This paper makes three contributions. First, we characterize the rendering problem as a domain-independent structural pattern with identifiable properties (Section 3). Second, we position this characterization against prior work — Morgan's (1986) organizational metaphors, Neilson et al.'s (2003) "organizational DNA," Beer's (1972) Viable System Model, and Dawkins' (1976, 1982) gene-centric view — and demonstrate what each captures and what each misses (Section 4). Third, we derive six testable propositions and identify the conditions under which the rendering problem's structural claims would be falsified (Section 5).
+This paper makes three contributions. First, it characterizes the rendering problem as a domain-independent structural pattern with identifiable properties (Structural Definitions). Second, it positions this characterization against prior work — Morgan's (1986) organizational metaphors, Neilson et al.'s (2003) "organizational DNA," Beer's (1972) Viable System Model, and Dawkins' (1976, 1982) gene-centric view — and demonstrates what each captures and what each misses (Positioning in the Literature). Third, it derives six testable propositions and identifies the conditions under which the rendering problem's structural claims would be falsified (Propositions).
 
-The paper proceeds as follows. Section 2 maps the rendering problem across three domains. Section 3 provides structural definitions. Section 4 positions the work in the existing literature. Section 5 states the propositions. Section 6 discusses implications, including the role of artificial intelligence as an accelerant that increases the value of specification layers. Section 7 acknowledges limitations and boundary conditions. Section 8 concludes.
+The paper develops this argument through domain mapping, structural definitions, literature positioning, six testable propositions, discussion, and limitations.
 
 ---
 
 ## 2. Three Instances of the Rendering Problem
 
-We identify three domains where the rendering problem manifests. Each exhibits the same three-layer structure: specification, implementation, and emergence. We note that other domains may also exhibit this pattern (e.g., software configuration, professional identity, urban planning) but restrict our treatment to three where the evidence is strongest and the literature most developed.
+Three domains are examined where the rendering problem manifests. Each exhibits the same three-layer structure: specification, implementation, and emergence. Other domains may also exhibit this pattern (e.g., software configuration, professional identity, urban planning), but the treatment is restricted to three where the evidence is strongest and the literature most developed.
 
 ### 2.1 Biology: Genome, Phenotype, Consciousness
 
@@ -62,13 +64,13 @@ The organizational specification gap mirrors the biological one:
 
 **Environment.** Market conditions, competitor actions, regulatory changes, and customer behavior provide information that the org-schema does not encode. These are the organizational equivalent of developmental environment.
 
-**Self-organization.** Informal coordination, working knowledge, team dynamics, and emergent culture arise from agent interaction, not from the specification. These are the organizational equivalent of cellular self-organization.
+**Self-organization.** Informal coordination, working knowledge, team dynamics, and emergent culture arise from agent interaction, not from the specification. These are the organizational equivalent of cellular self-organization. Zharnikov (2026af) extends this dual to organizations: distinct configurations that produce equivalent observable outputs constitute organizational metamerism — the specification-to-implementation chain's inverse pathway.
 
-**Configuration.** Operational parameters — pricing decisions, staffing levels, seasonal adjustments — determine which parts of the specification are active in which context. These are the organizational epigenome.
+**Configuration.** Operational parameters — pricing decisions, staffing levels, seasonal adjustments — determine which parts of the specification are active in which context. These are the organizational epigenome. Zharnikov (2026ae) formalizes this control relationship as a spectral projection operator that enforces the cascade of acceptance tests — the verification layer that compresses the implementation surface back toward the specification subspace.
 
 The emergent layer is customer experience. It arises from the whole operational system and exceeds what any specification can prescribe. Customers do not experience the specification. They experience the implementation, filtered through their own perceptual apparatus.
 
-The organizational rendering chain also illuminates the ontological status of organizational positions. A position is not an independent organizational primitive; it is a projection of the process space onto the personnel dimension. The function associated with a position — accounting, quality, marketing — is a parameter determined by which processes the position must serve, not a property of the organizational specification itself. This is structurally identical to cell differentiation in the biological domain: the same genome, projected onto different tissue coordinates via epigenetic marks, yields different expressed gene sets. In organizations, the same specification (org-schema), projected onto different process coordinates, yields different function bundles. Functional departments persist as "competence containers" (Davenport, 1993) only insofar as the underlying specifications remain tacit (Polanyi, 1966); as specifications become explicit — through Lean standardized work, organizational schema, or AI-mediated coordination — the specification-transmission function of the department becomes redundant, and the position reduces to a process node.
+The organizational rendering chain also illuminates the ontological status of organizational positions. A position is not an independent organizational primitive; it is a projection of the process space onto the personnel dimension. The function associated with a position — accounting, quality, marketing — is a parameter determined by which processes the position must serve, not a property of the organizational specification itself. This is structurally identical to cell differentiation in the biological domain: the same genome, projected onto different tissue coordinates via epigenetic marks, yields different expressed gene sets. In organizations, the same specification (org-schema), projected onto different process coordinates, yields different function bundles (Zharnikov, 2026ag). Functional departments persist as "competence containers" (Davenport, 1993) only insofar as the underlying specifications remain tacit (Polanyi, 1966); as specifications become explicit — through Lean standardized work, organizational schema, or AI-mediated coordination — the specification-transmission function of the department becomes redundant, and the position reduces to a process node.
 
 ### 2.3 Brands: Emission Policy, Signal Field, Perception Cloud
 
@@ -84,11 +86,25 @@ The brand specification gap:
 
 The emergent layer is the **perception cloud** — the observer's construction from partial information, weighted by their spectral profile, accumulated non-ergodically over time (Peters, 2019; Zharnikov, 2026j). Brand perception is not in the guidelines. It is not in the signals. It emerges from the observer's interaction with the signal field.
 
+Table 1: Cross-domain triadic mapping of specification → rendering relationships.
+
+| Layer | Biology | Organizations | Brands |
+|---|---|---|---|
+| Specification | Genome (~3.2B bp / ~800 MB) | Org-schema (L0–L5 cascade; OST) | Brand emission policy / 8-dimensional profile |
+| Configuration | Epigenome (methylation, histone marks) | Operational parameters (pricing, staffing, seasonal) | Channel-specific adaptation; D/A ratio |
+| Environment | Nutrition, temperature, stress | Market, competitors, regulation, customer behavior | Media coverage, word-of-mouth, cultural context |
+| Self-organization | Cellular morphogenesis | Informal coordination, emergent culture | Viral propagation, community formation |
+| Implementation | Phenotype (37T cells, 86B neurons) | Operations (daily interactions across all touchpoints) | Total brand experience |
+| Emergent layer | Consciousness | Customer experience | Perception cloud |
+| Persistence asymmetry | DNA persists; cells turn over | L0 contract persists; staff and process turn over | Semiotic identity persists; campaigns rebuilt |
+
+*Notes*: Each row identifies a structural component; each column instantiates that component within a specific domain. The vertical structure (specification → configuration/environment/self-organization → implementation → emergence) is invariant across columns; only the domain-specific instantiations differ. OST = Organizational Schema Theory (Zharnikov, 2026i); D/A = Designed/Ambient ratio (proportion of intentionally designed brand signals).
+
 ---
 
 ## 3. Structural Definitions
 
-We now provide definitions that apply across all three domains. These are structural characterizations, not formal mathematical definitions — the rendering problem describes a pattern of relationships between system components, not a calculable quantity. We use "complexity" informally to denote the richness of description required to fully characterize a system layer, acknowledging that different information-theoretic measures (Shannon entropy, Kolmogorov complexity, effective complexity in the sense of Gell-Mann & Lloyd, 2004) would yield different quantifications. The structural claims are independent of the specific measure chosen.
+The following definitions apply across all three domains. These are structural characterizations, not formal mathematical definitions — the rendering problem describes a pattern of relationships between system components, not a calculable quantity. "Complexity" is used informally to denote the richness of description required to fully characterize a system layer, acknowledging that different information-theoretic measures (Shannon entropy, Kolmogorov complexity, effective complexity in the sense of Gell-Mann & Lloyd, 2004) would yield different quantifications. The structural claims are independent of the specific measure chosen.
 
 **Definition 1 (Specification).** A specification *S* is a finite, explicit encoding of constraints and parameters that a system must satisfy. The key property is boundedness: *S* can be fully enumerated, inspected, and compared across instances.
 
@@ -98,7 +114,7 @@ We now provide definitions that apply across all three domains. These are struct
 
 **Definition 4 (Configuration Layer).** A configuration layer is a set of contextual parameters that determine which elements of specification *S* are active in a given context. The same specification *S* produces different implementations under different configurations — the biological proof being identical twins with divergent epigenomes (Fraga et al., 2005).
 
-**Definition 5 (Emergence).** An emergent phenomenon *E* is a property of the integrated system that satisfies Bedau's (1997) criteria for weak emergence: *E* is derivable in principle from the micro-level dynamics but is not deducible from the specification alone without simulation of the full system. This places the rendering problem's emergence claim between trivial predictability (no emergence) and ontological irreducibility (strong emergence in the sense of Chalmers, 2006). We adopt weak emergence because it is the most defensible position: brand perception, customer experience, and consciousness are not predictable from specifications alone, but neither do they violate physical law.
+**Definition 5 (Emergence).** An emergent phenomenon *E* is a property of the integrated system that satisfies Bedau's (1997) criteria for weak emergence: *E* is derivable in principle from the micro-level dynamics but is not deducible from the specification alone without simulation of the full system. This places the rendering problem's emergence claim between trivial predictability (no emergence) and ontological irreducibility (strong emergence in the sense of Chalmers, 2006). Weak emergence is adopted because it is the most defensible position: brand perception, customer experience, and consciousness are not predictable from specifications alone, but neither do they violate physical law.
 
 **Definition 6 (Rendering Problem).** A system exhibits the rendering problem if and only if all of the following hold:
 
@@ -119,7 +135,7 @@ The specification gap is filled by three information sources, each identified in
 
 **Configuration selection.** Parameters encoded in the configuration layer that determine context-specific expression of the specification. In biology: epigenetic marks (Bird, 2007). In organizations: operational parameters, what Beer (1972) calls the "variety attenuators" that filter specification into operational behavior. In brands: channel-specific adaptation.
 
-The specification provides the coordinate system. These three sources fill the space within those coordinates. The interaction among them is non-linear — small configuration changes can produce large implementation differences (Waddington's canalization; see Huang, 2012) — but we do not propose a functional form for this interaction. The rendering problem is a structural characterization, not a predictive model.
+The specification provides the coordinate system. These three sources fill the space within those coordinates. The interaction among them is non-linear — small configuration changes can produce large implementation differences (Waddington's canalization; see Huang, 2012) — but a functional form for this interaction is not proposed here; future formalization is invited. The rendering problem is a structural characterization, not a predictive model.
 
 ---
 
@@ -129,7 +145,7 @@ The specification provides the coordinate system. These three sources fill the s
 
 Morgan's *Images of Organization* (1986, revised 2006) identifies the "organization as organism" as one of eight metaphors for understanding organizational behavior. Morgan's contribution is to demonstrate that different metaphors illuminate different aspects of organizational life.
 
-The rendering problem extends Morgan in three ways. First, Morgan's organism metaphor is explicitly a metaphor — a way of seeing that reveals some features while concealing others. The rendering problem is not a metaphor but a structural claim: the same formal properties (specification gap, configuration dependence, irreducible emergence) appear in biology and organizations because both are instances of the same pattern. Second, Morgan does not formalize the specification gap or the configuration layer; his treatment remains at the level of analogy. Third, the rendering problem applies to Morgan's other metaphors as well: the "organization as machine" metaphor corresponds to a system where $\Delta \approx 0$ (the specification fully determines the implementation) — which our framework predicts is achievable only for trivially simple systems.
+The rendering problem extends Morgan in three ways. First, Morgan's organism metaphor is explicitly a metaphor — a way of seeing that reveals some features while concealing others. The rendering problem is not a metaphor but a structural claim: the same formal properties (specification gap, configuration dependence, irreducible emergence) appear in biology and organizations because both are instances of the same pattern. Second, Morgan does not formalize the specification gap or the configuration layer; his treatment remains at the level of analogy. Third, the rendering problem applies to Morgan's other metaphors as well: the "organization as machine" metaphor corresponds to a system where $\Delta \approx 0$ (the specification fully determines the implementation) — which the framework predicts is achievable only for trivially simple systems.
 
 ### 4.2 Organizational DNA: Neilson et al. (2003)
 
@@ -185,7 +201,7 @@ The rendering problem incorporates both claims. The emergent layer (consciousnes
 
 ## 5. Propositions
 
-We advance six propositions, each testable within at least one domain.
+Six propositions are advanced, each testable within at least one domain.
 
 **Proposition 1 (Structural Specification Gap).** In any system exhibiting the rendering problem, the descriptive complexity of the implementation substantially exceeds that of the specification, and this gap cannot be closed by making the specification more detailed.
 
@@ -193,7 +209,7 @@ We advance six propositions, each testable within at least one domain.
 
 *Falsification condition*: Identify a non-trivial system where adding detail to the specification closes the gap — where a sufficiently detailed specification fully determines the implementation and the system nevertheless produces emergent properties.
 
-**Proposition 2 (Configuration Independence).** Identical specifications produce non-identical implementations when the configuration layer differs: $S_1 = S_2 \land \Gamma_1 \neq \Gamma_2 \implies M_1 \neq M_2$.
+**Proposition 2 (Configuration Independence).** Identical specifications produce non-identical implementations when the configuration layer differs: $S_1 = S_2 \land \Gamma_1 \neq \Gamma_2 \implies M_1 \neq M_2$. This is the inverse of spectral metamerism (Zharnikov, 2026e), where distinct spectral profiles project to equivalent outputs; here, identical specifications project to distinct implementations through configuration variance.
 
 *Testability*: In biology, identical twins (same genome, different epigenetic configuration) diverge measurably over time (Fraga et al., 2005; Kaminsky et al., 2009). In organizations, franchise operations using identical operating manuals produce measurably different customer experiences. In brands, the same brand guidelines executed in different cultural contexts produce different perception clouds.
 
@@ -229,9 +245,9 @@ We advance six propositions, each testable within at least one domain.
 
 ### 6.1 The Rendering Problem Is Not a Metaphor
 
-The central claim of this paper is negative: the rendering problem is not a metaphor. It is not the case that organizations are "like" organisms, or that brand guidelines are "like" DNA. The claim is that biology, organizations, and brands all instantiate the same structural pattern — the rendering problem — because all involve specification-to-implementation chains where the three defining properties hold.
+The central claim of this paper is structural rather than metaphorical: the rendering problem is not an analogy borrowed from biology and applied to business. It is not the case that organizations are "like" organisms, or that brand guidelines are "like" DNA. The claim is that biology, organizations, and brands all instantiate the same structural pattern — the rendering problem — because all involve specification-to-implementation chains where the three defining properties hold.
 
-Biology provides a useful distinction here. An analogy is a surface similarity between structures that evolved independently (e.g., bird wings and insect wings). A homology is a structural identity inherited from a common origin (e.g., the forelimbs of all tetrapods). The rendering problem claims something between these: not that organizations evolved from organisms, but that both are subject to the same structural constraint — that bounded specifications cannot fully determine their implementations. This is neither analogy (surface similarity only) nor homology (shared evolutionary origin) but what we might call isomorphism: the same formal pattern arising independently because the underlying constraint (the specification gap) is universal.
+Biology provides a useful distinction here. An analogy is a surface similarity between structures that evolved independently (e.g., bird wings and insect wings). A homology is a structural identity inherited from a common origin (e.g., the forelimbs of all tetrapods). The rendering problem claims something between these: not that organizations evolved from organisms, but that both are subject to the same structural constraint — that bounded specifications cannot fully determine their implementations. This is neither analogy (surface similarity only) nor homology (shared evolutionary origin) but what may be called isomorphism: the same formal pattern arising independently because the underlying constraint (the specification gap) is universal.
 
 This distinction matters because metaphors are optional. A metaphor illuminates certain features while concealing others (Morgan, 1986), and the user may choose a different metaphor. A structural pattern is not optional — if the three properties hold, the rendering problem's predictions follow regardless of whether the analyst has adopted the biological framing. The value of the biological grounding is not that biology provides a metaphor for organizations, but that biology provides the longest-running dataset on how specification-to-implementation chains behave: 3.8 billion years of implementation turnover around persistent specifications.
 
@@ -271,27 +287,31 @@ This has a practical implication: you cannot control the emergent layer. You can
 
 **Cross-domain measurement.** The specification gap is defined as an information differential, but measuring $I(M)$ is non-trivial. In biology, no accepted quantification of phenotype information content exists. In organizations and brands, "implementation information" lacks standardized measurement. Proposition 1 requires operationalization specific to each domain.
 
-**Emergence criteria.** Definition 5's emergence criterion ("not derivable from S alone") is strong. Weak emergence — where the emergent property is in principle derivable from lower levels given sufficient computation — might satisfy the criterion technically while missing the spirit. We adopt a pragmatic stance: if no known derivation exists and the property is not predicted from specification knowledge alone, the criterion is met.
+**Emergence criteria.** Definition 5's emergence criterion ("not derivable from S alone") is strong. Weak emergence — where the emergent property is in principle derivable from lower levels given sufficient computation — might satisfy the criterion technically while missing the spirit. A pragmatic stance is adopted: if no known derivation exists and the property is not predicted from specification knowledge alone, the criterion is met.
 
-**Western bias.** The empirical grounding draws primarily on Western biology (English-language literature), Western brands (Hermès, IKEA, Patagonia, Tesla, Erewhon), and Western organizational theory. Whether the rendering problem's structural claims hold in non-Western organizational forms (keiretsu, chaebol, guanxi-based enterprises) requires separate investigation.
+**Western bias and tacit specifications.** The empirical grounding draws primarily on Western biology and Western organizational theory. Whether the structural claims hold in non-Western organizational forms — keiretsu, chaebol, guanxi-based enterprises — requires separate investigation, particularly because such forms often use relational, tacit specifications in Polanyi's (1966) sense rather than externalized, enumerable ones. Proposition 5's claim that the specification persists through implementation turnover may need to be extended to account for tacit specification persistence.
 
 **Single-author limitation.** This paper advances a theoretical framework without empirical data collection. The propositions are stated as testable but have not been tested. Empirical validation requires collaboration with domain specialists in biology, organizational behavior, and consumer psychology.
 
 **Scope conditions.** The rendering problem claims to apply wherever the three defining properties hold simultaneously. But it does not identify the conditions under which those properties fail to hold. Systems where the specification fully determines the implementation (a thermostat, a sorting algorithm, a simple recipe) do not exhibit the rendering problem. The boundary between "coordinate system" specifications and "blueprint" specifications is a matter of degree, and the theory does not yet provide a principled threshold. Future work should characterize the specification complexity below which the rendering problem's properties become negligible.
 
-**Non-Western organizational forms.** The specification-to-implementation framework assumes that the specification can be externalized — written, inspected, compared. In organizational forms where the "specification" is relational and tacit (keiretsu networks, guanxi-based enterprises), Proposition 5's claim that specification persists through implementation turnover may not hold in the same way. The rendering problem may need to be extended to account for tacit specifications, drawing on Polanyi's (1966) distinction between tacit and explicit knowledge.
-
-**Reductive risk.** By identifying a common pattern across biology and business, the rendering problem risks being read as biological determinism — the claim that organizations "should" operate like organisms. This is not our claim. The rendering problem identifies structural constraints; it does not claim that organizational design should mimic biological design. The structural pattern constrains what is possible; it does not prescribe what is desirable.
+**Reductive risk.** By identifying a common pattern across biology and business, the rendering problem risks being read as biological determinism — the claim that organizations "should" operate like organisms. This is not the paper's claim. The rendering problem identifies structural constraints; it does not claim that organizational design should mimic biological design. The structural pattern constrains what is possible; it does not prescribe what is desirable.
 
 ---
 
 ## 8. Conclusion
 
-The rendering problem is the structural pattern in which a specification of bounded complexity is rendered into an implementation of vastly greater complexity, producing emergent phenomena that no specification contains. We have formalized this pattern through six definitions and six testable propositions, grounded in established biology, process philosophy, information theory, and non-ergodic dynamics.
+The rendering problem is the structural pattern in which a specification of bounded complexity is rendered into an implementation of vastly greater complexity, producing emergent phenomena that no specification contains. The pattern has been formalized through six definitions and six testable propositions, grounded in established biology, process philosophy, information theory, and non-ergodic dynamics.
 
 The rendering problem extends prior work in three directions. It moves beyond Morgan's (1986) metaphorical treatment and Beer's (1972) Viable System Model to identify the specification gap as a structural property that recursive hierarchies cannot eliminate. It deepens Neilson et al.'s (2003) shallow biological mapping into a multi-layered framework with specification, configuration, and emergence. And it connects Dawkins' (1976) gene-centric view, Whitehead's (1929) process ontology, Checkland's (1981) social construction of specifications, and Peters' (2019) non-ergodic dynamics into a unified account of why specifications are structurally necessary and structurally incomplete.
 
 The practical implication is direct: as artificial intelligence accelerates the implementation layer, the specification layer becomes the binding constraint — and therefore the locus of value. Organizations that invest in explicit, testable, version-controlled specifications will extract more value from AI than those that deploy AI into unspecified operational space. The genome has demonstrated this principle across 3.8 billion years of implementation turnover. The rendering problem formalizes why.
+
+---
+
+## Acknowledgments
+
+AI assistants (Claude Opus 4.7, Grok 4.1, Gemini 3.1) were used for initial literature search and editorial refinement; all theoretical claims, propositions, and interpretations are the author's sole responsibility.
 
 ---
 
@@ -345,8 +365,6 @@ Jacob, F. (1977). Evolution and tinkering. *Science*, 196(4295), 1161-1166.
 
 Kaminsky, Z. A., Tang, T., Wang, S. C., Ptak, C., Oh, G. H., Wong, A. H., ... & Petronis, A. (2009). DNA methylation profiles in monozygotic and dizygotic twins. *Nature Genetics*, 41(2), 240-245.
 
-Kapferer, J.-N. (2008). *The new strategic brand management: Creating and sustaining brand equity long term* (4th ed.). Kogan Page.
-
 Kauffman, S. A. (1993). *The origins of order: Self-organization and selection in evolution*. Oxford University Press.
 
 Keller, E. F. (2000). *The century of the gene*. Harvard University Press.
@@ -357,9 +375,9 @@ Martinez Arias, A. (2023). *The master builder: How the new science of the cell 
 
 Maturana, H. R., & Varela, F. J. (1980). *Autopoiesis and cognition: The realization of the living*. D. Reidel.
 
-Morgan, G. (1986). *Images of organization*. Sage Publications.
-
 Meadows, D. H. (2008). *Thinking in systems: A primer*. Chelsea Green Publishing.
+
+Morgan, G. (1986). *Images of organization*. Sage Publications.
 
 Neilson, G. L., Pasternack, B. A., & Mendes, D. (2003). The four bases of organizational DNA. *strategy+business*, 33.
 
@@ -367,7 +385,7 @@ Noble, D. (2006). *The music of life: Biology beyond the genome*. Oxford Univers
 
 Oyama, S. (2000). *The ontogeny of information: Developmental systems and evolution* (2nd ed.). Duke University Press.
 
-Peters, O. (2019). The ergodicity problem in economics. *Nature Physics*, 15(12), 1216-1221.
+Peters, O. (2019). The ergodicity problem in economics. *Nature Physics*, 15(12), 1216-1221. https://doi.org/10.1038/s41567-019-0732-0
 
 Peters, O., & Gell-Mann, M. (2016). Evaluating gambles using dynamics. *Chaos*, 26(2), 023103.
 
@@ -379,7 +397,7 @@ Rosenthal, D. M. (2005). *Consciousness and mind*. Oxford University Press.
 
 Sender, R., & Milo, R. (2021). The distribution of cellular turnover in the human body. *Nature Medicine*, 27(1), 45-48.
 
-Spalding, K. L., Bhardwaj, R. D., Buchholz, B. A., Druid, H., & Frisen, J. (2005). Retrospective birth dating of cells in humans. *Cell*, 122(1), 133-143.
+Spalding, K. L., Bhardwaj, R. D., Buchholz, B. A., Druid, H., & Frisén, J. (2005). Retrospective birth dating of cells in humans. *Cell*, 122(1), 133-143.
 
 Sterman, J. D. (2000). *Business dynamics: Systems thinking and modeling for a complex world*. McGraw-Hill.
 
@@ -393,9 +411,17 @@ Whitehead, A. N. (1929). *Process and reality: An essay in cosmology*. Macmillan
 
 Zharnikov, D. (2026a). Spectral Brand Theory: A multi-dimensional framework for brand perception analysis. Working Paper. https://doi.org/10.5281/zenodo.18945912
 
+Zharnikov, D. (2026e). Spectral metamerism in brand perception: Projection bounds from high-dimensional geometry. Working Paper. https://doi.org/10.5281/zenodo.18945352
+
 Zharnikov, D. (2026i). The Organizational Schema Theory: Test-driven business design. Working Paper. https://doi.org/10.5281/zenodo.18946043
 
 Zharnikov, D. (2026j). Non-ergodic brand perception: Diffusion dynamics on multi-dimensional perceptual manifolds. Working Paper. https://doi.org/10.5281/zenodo.18945659
+
+Zharnikov, D. (2026ae). Verification as operator: Spectral projection, rank deficiencies, and the persistence of the audit society. Working Paper. https://doi.org/10.5281/zenodo.19778588
+
+Zharnikov, D. (2026af). Organizational metamerism: Observer-relative state equivalence in organizational configurations. Working Paper. https://doi.org/10.5281/zenodo.19869871
+
+Zharnikov, D. (2026ag). Dual hierarchies of organizational transferability: A six-tier ontology and theory of acquisition failure propagation. Working Paper. https://doi.org/10.5281/zenodo.19895813
 
 ---
 
@@ -403,6 +429,6 @@ Zharnikov, D. (2026j). Non-ergodic brand perception: Diffusion dynamics on multi
 
 Dmitry Zharnikov holds a PhD in Economics (Marketing) from the Russian State University of Trade and Economics, Moscow (2005; dissertation on communication aspects of exhibition activities) and a Professional MBA in Entrepreneurship and Innovation from TU Wien / WU Wien (dual degree, 2018). He co-authored a chapter on marketing communications in Krasyuk et al. (2012, INFRA-M). His MBA thesis on energy market strategy in the Russian Federation is available at https://repositum.tuwien.at/handle/20.500.12708/79295. He has 25 years of cross-functional experience spanning journalism, national-scale press and communications, cross-cultural manufacturing transformation (Lean/TPS), consulting, and AI-native framework building.
 
-The Spectral Brand Theory and Organizational Schema Theory frameworks were developed with AI as an architectural instrument — using large language models to maintain consistency across 8 perceptual dimensions, 5 case-study brands, 7 mathematical validators, and 11 companion papers that exceed human working memory. AI did not generate the theoretical framework; it enabled the author to hold the architecture while developing it. This methodological approach is documented in Zharnikov (2026a, Section 7).
+The Spectral Brand Theory and Organizational Schema Theory frameworks were developed with AI as an architectural instrument — using large language models to maintain consistency across 8 perceptual dimensions, 5 case-study brands, 7 mathematical validators, and 11 companion papers that exceed human working memory. AI did not generate the theoretical framework; it enabled the author to hold the architecture while developing it. This methodological approach is documented in Zharnikov (2026a).
 
 **Correspondence**: dmitry@spectralbranding.com | **ORCID**: [0009-0000-6893-9231](https://orcid.org/0009-0000-6893-9231)
