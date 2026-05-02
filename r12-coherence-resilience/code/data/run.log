@@ -1,0 +1,35 @@
+[2026-05-02T13:28:13] R12 coherence-resilience MC: seed=1729, n_paths=2000, T=60.0 months
+[2026-05-02T13:28:13] Parameters: gamma=0.02, delta=0.05, sigma0=0.08, dt=0.25
+[2026-05-02T13:28:13] Hermes: weakest dim = Economic (s=3.0); strongest dim = Semiotic (s=9.5)
+[2026-05-02T13:28:13]   severity=0.05  weak: P_abs=0.000, P_rec=1.000  strong: P_abs=0.000, P_rec=1.000
+[2026-05-02T13:28:13]   severity=0.10  weak: P_abs=0.000, P_rec=1.000  strong: P_abs=0.000, P_rec=1.000
+[2026-05-02T13:28:13]   severity=0.15  weak: P_abs=0.000, P_rec=1.000  strong: P_abs=0.000, P_rec=1.000
+[2026-05-02T13:28:14]   severity=0.20  weak: P_abs=0.000, P_rec=1.000  strong: P_abs=0.000, P_rec=1.000
+[2026-05-02T13:28:14] IKEA: weakest dim = Social (s=5.0); strongest dim = Economic (s=9.0)
+[2026-05-02T13:28:14]   severity=0.05  weak: P_abs=0.000, P_rec=1.000  strong: P_abs=0.000, P_rec=1.000
+[2026-05-02T13:28:14]   severity=0.10  weak: P_abs=0.000, P_rec=1.000  strong: P_abs=0.000, P_rec=1.000
+[2026-05-02T13:28:15]   severity=0.15  weak: P_abs=0.000, P_rec=1.000  strong: P_abs=0.000, P_rec=1.000
+[2026-05-02T13:28:15]   severity=0.20  weak: P_abs=0.000, P_rec=1.000  strong: P_abs=0.000, P_rec=1.000
+[2026-05-02T13:28:15] Patagonia: weakest dim = Economic (s=5.0); strongest dim = Ideological (s=9.5)
+[2026-05-02T13:28:15]   severity=0.05  weak: P_abs=0.000, P_rec=1.000  strong: P_abs=0.000, P_rec=1.000
+[2026-05-02T13:28:15]   severity=0.10  weak: P_abs=0.000, P_rec=1.000  strong: P_abs=0.000, P_rec=1.000
+[2026-05-02T13:28:16]   severity=0.15  weak: P_abs=0.000, P_rec=1.000  strong: P_abs=0.000, P_rec=1.000
+[2026-05-02T13:28:16]   severity=0.20  weak: P_abs=0.000, P_rec=1.000  strong: P_abs=0.000, P_rec=1.000
+[2026-05-02T13:28:16] Erewhon: weakest dim = Temporal (s=2.5); strongest dim = Experiential (s=9.0)
+[2026-05-02T13:28:16]   severity=0.05  weak: P_abs=0.000, P_rec=1.000  strong: P_abs=0.000, P_rec=1.000
+[2026-05-02T13:28:16]   severity=0.10  weak: P_abs=0.000, P_rec=1.000  strong: P_abs=0.000, P_rec=1.000
+[2026-05-02T13:28:17]   severity=0.15  weak: P_abs=0.000, P_rec=1.000  strong: P_abs=0.000, P_rec=1.000
+[2026-05-02T13:28:17]   severity=0.20  weak: P_abs=0.000, P_rec=1.000  strong: P_abs=0.000, P_rec=1.000
+[2026-05-02T13:28:17] Tesla: weakest dim = Temporal (s=2.0); strongest dim = Narrative (s=8.5)
+[2026-05-02T13:28:17]   severity=0.05  weak: P_abs=0.000, P_rec=0.000  strong: P_abs=0.000, P_rec=1.000
+[2026-05-02T13:28:17]   severity=0.10  weak: P_abs=0.000, P_rec=0.000  strong: P_abs=0.000, P_rec=1.000
+[2026-05-02T13:28:18]   severity=0.15  weak: P_abs=0.000, P_rec=0.000  strong: P_abs=0.000, P_rec=1.000
+[2026-05-02T13:28:18]   severity=0.20  weak: P_abs=0.000, P_rec=0.000  strong: P_abs=0.000, P_rec=1.000
+[2026-05-02T13:28:18] 
+Summary: brand ranking by P_absorption on weakest dimension (severity=0.15)
+[2026-05-02T13:28:18]   Hermes      P_abs=0.000  P_rec=1.000  median tau_rec=1.75
+[2026-05-02T13:28:18]   IKEA        P_abs=0.000  P_rec=1.000  median tau_rec=1.0
+[2026-05-02T13:28:18]   Patagonia   P_abs=0.000  P_rec=1.000  median tau_rec=1.0
+[2026-05-02T13:28:18]   Erewhon     P_abs=0.000  P_rec=1.000  median tau_rec=2.5
+[2026-05-02T13:28:18]   Tesla       P_abs=0.000  P_rec=0.000  median tau_rec=None
+[2026-05-02T13:28:18] Wrote /Users/d/projects/sbt-papers/r12-coherence-resilience/code/data/results.json

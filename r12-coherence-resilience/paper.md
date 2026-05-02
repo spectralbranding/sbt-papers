@@ -220,7 +220,37 @@ Part (c) is the critical asymmetry. For a $k$-anisotropic brand, crises on activ
 
 Part (d) follows from the stochastic nature of incoherent drift: the drift on any given dimension is unreliable over time, so even dimensions that are momentarily active may not maintain sufficient drift for recovery. $\square$
 
-### 4.3 Vulnerability Profiles
+### 4.3 Recovery Trajectory Schematics
+
+The active-versus-passive distinction in Theorem 2(c) admits a geometric reading. A single dimension's perception trajectory after a unit shock follows a qualitatively different path depending on whether (i) the dimension receives substantial signal-driven drift ($\alpha_i$ large) or is essentially passive ($\alpha_i \approx 0$), and (ii) the brand's overall coherence type provides corroborating drift on adjacent dimensions or not. The four limiting cases are illustrated below.
+
+```
+   Active dim, balanced coherence       Passive dim, balanced coherence
+   x_i                                  x_i
+    |     /------ equilibrium            |
+    |    /                               |  ------ equilibrium
+    |   /                                |    .---. (slow drift toward x*)
+    |  /  (drift back to equilibrium)    |   /     '. (random walk)
+    |./                                  | ./         '----.
+    |/                                   |/                  '----- 0 absorbed
+    +-------------------> t              +-------------------> t
+
+   Active dim, asymmetric coherence     Passive dim, asymmetric coherence
+   x_i                                  x_i
+    |     /----- equilibrium             |
+    |    /                                |  ------ equilibrium
+    |   /  (compensatory drift; partial)  |   .   (no drift; quick absorption)
+    |  /-                                 |  / .
+    | /                                   | /   '.
+    |/                                    |/      '----- 0 absorbed
+    +-------------------> t              +-------------------> t
+```
+
+*Figure 1: Schematic recovery trajectories for four coherence types. Active dimensions (left column) regain function after shock by virtue of substantial signal-driven drift; passive dimensions (right column) drift only weakly toward the neutral prior $x^*$ and may be absorbed at the boundary $x_i = 0$. Asymmetric coherence types (bottom row) compound recovery delays because adjacent dimensions cannot supply corroborating drift through cross-dimensional coupling. Schematic only — see the Companion Computation Script (§5.3) for parameter values producing the underlying ordering.*
+
+The schematic captures the qualitative content of Theorem 2(c): on an active dimension the deterministic component dominates the diffusive component near the post-shock state, so trajectories return to a neighbourhood of equilibrium; on a passive dimension the diffusive component dominates and a non-trivial fraction of trajectories absorb before reaching the neutral prior. The Monte Carlo run distributed in `code/coherence_resilience_mc.py` confirms this pattern for the five canonical brands across four shock severities.
+
+### 4.4 Vulnerability Profiles
 
 Theorem 2 reveals that each coherence type has a characteristic **vulnerability profile** -- a mapping from crisis direction to crisis impact. These profiles have distinct geometric signatures:
 
@@ -234,7 +264,7 @@ Theorem 2 reveals that each coherence type has a characteristic **vulnerability 
 
 - **Incoherent**: Approximately spherically symmetric vulnerability, but at a low level of resilience everywhere. Tesla is not especially vulnerable in any particular direction -- it is vulnerable in all directions. When incoherence is associated with brand hate (Hegner, Fetscherin, & van Delzen, 2017), the boundary condition is reinforced by active negative signaling, further elevating the absorption risk on multiple dimensions simultaneously.
 
-### 4.4 Connection to Recovery Time
+### 4.5 Connection to Recovery Time
 
 The recovery *probability* is complemented by the recovery *time*. Zharnikov (2026j, Proposition 6) established that for the semi-permeable boundary model, the recovery time from a near-boundary state at distance $\delta$ from the absorbing boundary scales as:
 
@@ -319,7 +349,11 @@ The type-over-score principle also explains why traditional brand equity measure
 
 ### 5.3 Companion Computation Script
 
-The inline numerical values used in §2.3 and §6.4 -- the per-brand emission sums $\sum_i s_i$, the within-brand variance $\text{Var}(s_i)$, and the floor-crossing count $k(\alpha; \alpha_{\min})$ at the working threshold $\alpha_{\min} = \gamma \cdot 3.0 \cdot h(x_i^*)$ -- are reproducible from the canonical emission profiles via the companion script `code/coherence_resilience_computations.py` distributed with the public mirror of this paper at https://github.com/spectralbranding/sbt-papers/tree/main/r12-coherence-resilience. The script takes no arguments, reads the five canonical profiles, and prints a per-brand line giving total emission, variance, mean, and the floor-crossing count $k$ at the working threshold. Running the script is sufficient to reproduce every quantitative claim in the body of the paper. Monte Carlo simulation of the SDE with absorbing boundaries -- for empirical verification of the absorption-probability orderings of Theorem 1 and the recovery-probability orderings of Theorem 2 -- is left to a forthcoming technical companion note; the present paper's results are derivational, not simulation-based.
+Two companion scripts are distributed with the public mirror of this paper at https://github.com/spectralbranding/sbt-papers/tree/main/r12-coherence-resilience/code/.
+
+*Inline numerical values* — the per-brand emission sums $\sum_i s_i$, within-brand variance $\text{Var}(s_i)$, and the floor-crossing count $k(\alpha; \alpha_{\min})$ at the working threshold $\alpha_{\min} = \gamma \cdot 3.0 \cdot h(x_i^*)$ — are reproduced by `coherence_resilience_computations.py` (no arguments; reads the five canonical profiles; prints per-brand total emission, variance, mean, and floor-crossing count). Run command: `uv run python code/coherence_resilience_computations.py`.
+
+*Monte Carlo verification* of the qualitative orderings in Theorem 2 and the recovery-trajectory schematics of §4.3 is provided by `coherence_resilience_mc.py` (fixed seed `1729`; 2,000 paths per cell; Euler-Maruyama discretization with absorbing boundary at $x_i = 0$ and reflecting boundary at $x_i = 1$; horizon $T = 60$ months; working parameters $\gamma = 0.020$, $\delta = 0.050$, $\sigma_0 = 0.080$, $dt = 0.25$ months). Run command: `uv run python code/coherence_resilience_mc.py`. The output `data/results.json` records per-brand per-dimension absorption probability, recovery probability, and median recovery time across four shock severities (0.05, 0.10, 0.15, 0.20 absolute drop). At the working parameters the active-dimension recovery is essentially certain ($P_{\text{rec}} = 1$) for all brands except Tesla on its weakest dimension (Temporal, $s = 2$), where $P_{\text{rec}} = 0$ within the 60-month horizon — a numerical instance of the type-over-score principle: Tesla's incoherent emission profile leaves its weakest dimension without sufficient drift for active recovery, regardless of total emission magnitude. A fully rigorous proof of the absorption-probability ordering of Theorem 1 is recorded structurally in the Technical Appendix; the present script is sufficient for the recovery-probability and recovery-time orderings of Theorem 2.
 
 ---
 

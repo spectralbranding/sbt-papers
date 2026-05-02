@@ -28,7 +28,15 @@ The second approach is **theoretical derivation**: argue from established theory
 
 This paper provides the formal argument for SBT's eight dimensions. Section 2 enumerates the meaning channels from established academic traditions. Section 3 establishes independence via counter-example brands. Section 4 argues non-redundancy. Section 5 demonstrates completeness by showing that candidate additional dimensions reduce to existing ones. Section 6 compares SBT's taxonomy with alternative frameworks. Section 7 resolves the apparent contradiction with MDS findings. Section 8 discusses limitations. Section 8A provides an empirical robustness test using R15 cross-cultural LLM data. Section 9 concludes.
 
-The contribution is a novel theoretical derivation that integrates psychometric and cross-disciplinary criteria to establish an eight-dimensional brand perception taxonomy -- to our knowledge, the first completeness-and-independence argument in the brand theory literature to derive the dimensional count from a cross-disciplinary enumeration of meaning-transmission channels and to verify completeness through a constructive reduction test of candidate additional dimensions, drawing on the spectral framework articulated in (Zharnikov 2026a). MacInnis (2011) identifies "explicating" contributions -- those that clarify the nature of a construct or establish its boundaries -- as among the most durable conceptual advances in marketing; this paper aims for that category. Three contributions follow from this approach. *First*, the paper introduces the **meaning-channel versus content-domain distinction** as a principled stopping rule for dimensional taxonomies: meaning channels are modes of meaning transmission, identified with established academic traditions; content domains are topic areas (environmental, digital, ethical) processed through one or more channels. This distinction prevents indefinite dimensional inflation as new content domains arise. *Second*, the paper provides a **constructive independence-and-non-redundancy proof** via brand-pair witnesses and a reduction test for five candidate ninth dimensions, establishing eight as the minimal complete set rather than an arbitrary count. *Third*, the paper supplies an **empirical robustness test using AI-observer data** (Section 8A) that subjects the eight-dimension framework to drop-one, drop-pair, and augmentation perturbations, showing that the ranking pattern is overdetermined while every dimension carries non-trivial cross-model variance. Whether the dimensions are "correct" in an empirical sense remains a question for factor-analytic studies that this paper's argument motivates but does not replace.
+The contribution is a novel theoretical derivation that integrates psychometric and cross-disciplinary criteria to establish an eight-dimensional brand perception taxonomy -- to our knowledge, the first completeness-and-independence argument in the brand theory literature to derive the dimensional count from a cross-disciplinary enumeration of meaning-transmission channels and to verify completeness through a constructive reduction test of candidate additional dimensions, drawing on the spectral framework articulated in (Zharnikov 2026a). MacInnis (2011) identifies "explicating" contributions -- those that clarify the nature of a construct or establish its boundaries -- as among the most durable conceptual advances in marketing; this paper aims for that category. Three numbered contributions follow.
+
+1. **Meaning-channel versus content-domain distinction** — a principled stopping rule derived from cross-disciplinary academic traditions rather than factor analysis, preventing indefinite dimensional inflation as new content domains arise.
+
+2. **Constructive independence-and-non-redundancy proof** via brand-pair witnesses and a reduction test for five candidate ninth dimensions, establishing eight as the minimal complete set rather than an arbitrary count.
+
+3. **Empirical robustness test using AI-observer data** (Section 8A) subjecting the framework to drop-one, drop-pair, and augmentation perturbations, showing the ranking pattern is overdetermined while every dimension carries non-trivial cross-model variance.
+
+Whether the dimensions are "correct" in an empirical sense remains a question for factor-analytic studies that this paper's argument motivates but does not replace.
 
 Churchill (1979) established the paradigm for multi-step scale development in marketing, demonstrating that sound measurement begins with conceptual domain specification before moving to item generation and factor analysis. Subsequent work on multi-dimensional brand equity measurement -- exemplified by Netemeyer et al. (2004), who developed and validated a four-facet consumer-based brand equity scale through systematic conceptual analysis followed by empirical purification -- demonstrated both the power and the limitation of the domain-first approach: scales can be psychometrically rigorous within their specified domain while the domain itself remains theoretically underspecified. Rossiter (2002) extended this logic in his C-OAR-SE procedure, arguing that conceptual analysis should precede -- and can supersede -- factor-analytic dimension identification in many theoretical contexts; dimensions derived from theory carry their own epistemic warrant and need not await factor-analytic confirmation to be considered valid candidates for empirical investigation. SBT takes a further step that Rossiter's C-OAR-SE does not: verifying domain *completeness* through a constructive reduction test. The C-OAR-SE procedure accepts the researcher's domain specification as given; this paper provides the missing argument for why the brand perception domain contains exactly eight dimensions rather than some other number. The disagreement across existing frameworks reflects what Flake and Fried (2020) identify as a questionable measurement practice: dimensionality chosen for convenience, tradition, or the output of factor analysis applied to incomplete item sets, rather than derived from a principled specification of the construct domain. The philosophical warrant for prioritizing theoretical specification before measurement rests on the recognition that factor analysis cannot identify construct domains from within; it can only recover structure placed into the item space by the researcher's prior choices (Borsboom, Mellenbergh, and van Heerden 2003).
 
@@ -260,11 +268,50 @@ We examine five candidates that arise naturally from the branding literature and
 
 ### 5.7 Synthesis
 
-None of the five candidates survives the reduction test, as summarized graphically in Figure 1. Each either decomposes into components of existing dimensions or represents a content domain processed through existing meaning channels rather than a new channel of meaning transmission. The distinction between a **meaning channel** (a mode of processing through which signals become meaning) and a **content domain** (a topic area that signals may address) is critical. Environmentalism is a content domain; ideology is a meaning channel. Digital is a medium; experience is a meaning channel. This distinction is what prevents the dimensional taxonomy from inflating indefinitely -- new topics and new media do not create new meaning channels.
+The distinction between a **meaning channel** (a mode of processing through which signals become meaning) and a **content domain** (a topic area that signals may address) is the load-bearing conceptual move underlying all five reduction arguments in Sections 5.2-5.6. Meaning channels are the rows -- the eight independent transmission pathways; content domains are the columns -- the semantic fields a brand might address. Any content domain can be transmitted through multiple channels; no content domain constitutes a channel itself. Figure 1 makes this orthogonality explicit.
+
+```mermaid
+graph TD
+  subgraph Channels ["Meaning Channels (transmission pathways)"]
+    C1[Semiotic]
+    C2[Narrative]
+    C3[Ideological]
+    C4[Experiential]
+    C5[Social]
+    C6[Economic]
+    C7[Cultural]
+    C8[Temporal]
+  end
+  subgraph Domains ["Content Domains (what signals are about)"]
+    D1[Aesthetic]
+    D2[Functional]
+    D3[Ethical]
+    D4[Digital]
+    D5[Environmental]
+  end
+  D1 --> C1
+  D1 --> C7
+  D2 --> C4
+  D2 --> C6
+  D2 --> C2
+  D3 --> C3
+  D4 --> C1
+  D4 --> C2
+  D4 --> C5
+  D4 --> C4
+  D5 --> C3
+  D5 --> C2
+  D5 --> C4
+  D5 --> C6
+```
+
+*Figure 1: The eight meaning channels (left) are independent transmission pathways; any content domain (right) can be conveyed through multiple channels. Channels and content domains are orthogonal axes -- confusing them is the most common source of dimension-counting errors.*
+
+None of the five candidates survives the reduction test, as summarized graphically in Figure 2. Each either decomposes into components of existing dimensions or represents a content domain processed through existing meaning channels rather than a new channel of meaning transmission. Environmentalism is a content domain; ideology is a meaning channel. Digital is a medium; experience is a meaning channel. This distinction is what prevents the dimensional taxonomy from inflating indefinitely -- new topics and new media do not create new meaning channels.
 
 The completeness claim is therefore: the eight dimensions of SBT correspond to the eight established meaning-transmission channels relevant to brand perception, and no candidate ninth dimension represents a genuinely new channel rather than a content domain, medium, or combination of existing channels.
 
-Figure 1: Decomposition Tree -- Candidate Ninth Dimensions Reduce to Combinations of Existing Channels.
+Figure 2: Decomposition Tree -- Candidate Ninth Dimensions Reduce to Combinations of Existing Channels.
 
 ```mermaid
 flowchart TD
@@ -381,6 +428,23 @@ The mapping exercise reveals a consistent pattern. Alternative frameworks each c
 
 The alternatives also reveal the cost of under-dimensionality. J. Aaker's (1997) five-factor model, for all its empirical grounding, cannot distinguish brands that differ primarily on economic or temporal dimensions. Kapferer's prism, for all its elegance, cannot represent price-as-signal or heritage-as-perception. These are not minor omissions -- they are entire meaning channels through which brands demonstrably emit and observers demonstrably perceive, left unrepresented by frameworks with fewer than eight dimensions.
 
+Table 5 consolidates the coverage assessment across all five frameworks surveyed in this section.
+
+Table 5: Coverage of the eight SBT meaning channels by major brand-perception frameworks.
+
+| SBT Dimension | Aaker BBE (1997) | Keller CBBE (1993) | Kapferer Prism (2008) | Brakus EBQ (2009) | SBT-only |
+|---|---|---|---|---|---|
+| Semiotic | ~ | ~ | ~ | ~ | |
+| Narrative | ~ | ~ | ~ | ~ | |
+| Ideological | ~ | ~ | ~ | -- | |
+| Experiential | ~ | ~ | ~ | yes | |
+| Social | -- | ~ | yes | -- | |
+| Economic | -- | ~ | -- | -- | yes |
+| Cultural | ~ | ~ | ~ | -- | |
+| Temporal | -- | ~ | -- | -- | yes |
+
+*Notes:* yes = explicit construct in framework; ~ = partially captured by adjacent construct; -- = no equivalent. Aaker BBE per Aaker (1997); Keller CBBE per Keller (1993); Kapferer Identity Prism per Kapferer (2008); Brakus Experiential Brand Quality per Brakus, Schmitt, and Zarantonello (2009). Economic and Temporal are SBT-only dimensions with no primary equivalent in any of the four frameworks reviewed.
+
 ---
 
 ## 7. Why Two to Three Dimensions Appear Sufficient
@@ -478,7 +542,7 @@ Table 1: DCI Ranking Stability Under Single-Dimension Removal (N = 22 Models).
 
 Three findings address RQ1. First, no single dimension is indispensable: all eight drop-one cosines exceed .994, and all Spearman rhos are significant at p < .001. Second, the DCI-component dimensions dominate disruption: removing Economic (rho = .720, displacement = 3.55 positions) or Semiotic (rho = .737, displacement = 3.36) causes substantially more disruption than removing any non-DCI dimension (all rho > .94, all displacements < 1.5). Because DCI is defined as (w_Economic + w_Semiotic) / total, removing any non-numerator dimension mechanically increases DCI while removing a numerator dimension decreases it; this structural asymmetry must be borne in mind when interpreting Table 1 results. Tables 3 and 4 are metric-agnostic and provide additional evidence of each dimension's independent contribution. The important finding from Table 1 is that even removing a numerator component preserves cosine above .994, indicating the ranking pattern is overdetermined by the remaining dimensions. Third, the six non-DCI dimensions produce cosines above .9997 when removed individually, confirming that their individual contributions to DCI ranking are marginal -- but this does not imply they carry no information (see Table 3 below).
 
-Figure 2: Robustness Trajectory -- DCI Ranking Stability Under Dimension Removal.
+Figure 3: Robustness Trajectory -- DCI Ranking Stability Under Dimension Removal.
 
 ```mermaid
 flowchart LR
@@ -560,7 +624,7 @@ Table 4: Mean Pairwise Profile Cosine Under Dimension Removal (N = 22 Models, 23
 
 Removing Ideological or Cultural *increases* mean pairwise cosine (from .976 to .980), revealing these dimensions as the primary sources of inter-model disagreement. Models agree most on Economic and Experiential weight assignments; removing this shared signal slightly reduces overall agreement. This analysis complements the variance decomposition: Cultural and Ideological contribute the most to *differentiating* models from each other (Table 3), while Economic and Experiential contribute the most to *aligning* models with each other (Table 4). A six-dimension framework omitting any two dimensions would therefore lose either differentiation power or alignment signal.
 
-*Summary.* The three experiments converge on a consistent answer to each research question, with the drop-one trajectory visualized in Figure 2. RQ1: the ranking pattern is robust to dimension reduction, with all drop-one cosines above .994 and all drop-pair cosines above .993, but each removal sacrifices some information. RQ2: expansion to ten dimensions adds no discriminative power (rho = .9997). RQ3: all eight dimensions carry 5-19% of cross-model variance, with no dimension contributing less than 5.4%. Eight dimensions sit at the resolution limit where every dimension contributes measurable cross-model variation while the overall ranking pattern remains robust to perturbation. The theoretical completeness argument of Sections 2-5 is empirically supported: reducing below eight sacrifices variance; expanding beyond eight introduces redundancy.
+*Summary.* The three experiments converge on a consistent answer to each research question, with the drop-one trajectory visualized in Figure 3. RQ1: the ranking pattern is robust to dimension reduction, with all drop-one cosines above .994 and all drop-pair cosines above .993, but each removal sacrifices some information. RQ2: expansion to ten dimensions adds no discriminative power (rho = .9997). RQ3: all eight dimensions carry 5-19% of cross-model variance, with no dimension contributing less than 5.4%. Eight dimensions sit at the resolution limit where every dimension contributes measurable cross-model variation while the overall ranking pattern remains robust to perturbation. The theoretical completeness argument of Sections 2-5 is empirically supported: reducing below eight sacrifices variance; expanding beyond eight introduces redundancy.
 
 *Companion Computation Script.* The full Section 8A analysis is reproducible from a single script. The analysis script `gap5_dimension_robustness.py` and the complete structured results `gap5_dimension_robustness_results.json` are archived at <https://github.com/spectralbranding/sbt-papers/tree/main/r11-dimension-justification/robustness-analysis>. The script uses fixed random seed `SEED = 42` (set via `np.random.seed(42)` immediately before the Experiment 3 augmentation step) so the noise-perturbed 50/50 splits in the 10D expansion are deterministic. With Python 3.12 and the `numpy` and `scipy` packages installed, the script reproduces Tables 1-4 of this section by running:
 
@@ -568,25 +632,23 @@ Removing Ideological or Cultural *increases* mean pairwise cosine (from .976 to 
 uv run --with numpy,scipy python gap5_dimension_robustness.py
 ```
 
-The source data are R15 Run 5 weight profiles archived at <https://github.com/spectralbranding/sbt-papers/tree/main/r15-ai-search-metamerism/experiment>. Two of the 24 models in the full R15 panel are absent from Run 5; the script silently skips models with insufficient observations (`len(common) < 3` for any brand-pair-level statistics), so the analysis runs over the 22 models for which Run 5 data are complete. The DCI baseline mean (.356), the dimension-drop cosines and Spearman rhos in Table 1, the dimension-pair statistics in Table 2, the augmented-10D rho (.9997), the variance decomposition in Table 3, and the profile-cosine values in Table 4 are all produced in a single deterministic run.
+The source data are R15 Run 5 weight profiles archived at <https://github.com/spectralbranding/sbt-papers/tree/main/r15-ai-search-metamerism/experiment>. Two of the 24 models in the full R15 panel are absent from Run 5; the script silently skips models with insufficient observations (`len(common) < 3` for any brand-pair-level statistics), so the analysis runs over the 22 models for which Run 5 data are complete. The DCI baseline mean (.356), the dimension-drop cosines and Spearman rhos in Table 1, the dimension-pair statistics in Table 2, the augmented-10D rho (.9997), the variance decomposition in Table 3, and the profile-cosine values in Table 4 are all produced in a single deterministic run. A standalone methodology template documenting the DCI formula, the 22-vs-24 model exclusion logic, and the dimension-volatility ranking is available at <https://github.com/spectralbranding/sbt-papers/tree/main/r11-dimension-justification/code/dimension_volatility.py>; this template is self-contained and runs without the R15 source data, printing the published Table 3 values as reference output.
 
 ---
 
 ## 9. Conclusion
 
-This paper has provided a novel theoretical derivation that integrates psychometric and cross-disciplinary criteria to justify SBT's eight-dimensional brand perception taxonomy -- to our knowledge, the first completeness-and-independence argument in the brand theory literature to derive the dimensional count from a cross-disciplinary enumeration of meaning-transmission channels and verify completeness through a constructive reduction test. The argument proceeds in five steps.
+The eight meaning channels identified here -- semiotic, narrative, ideological, experiential, social, economic, cultural, and temporal -- represent the minimal complete set of pathways through which brands transmit and consumers construct meaning. By deriving dimensionality from the independent scholarly traditions that have studied these pathways, the framework achieves a theoretical warrant that purely factor-analytic approaches cannot supply. It simultaneously explains why competing taxonomies disagree (each samples a different subset of channels) and why MDS routinely recovers only two or three dimensions (concentration of measure ensures that low-dimensional projections capture most variance while discarding profile-shape information critical to coherence types).
 
-First, we enumerated eight established academic traditions -- semiotics, narratology, ideology critique, phenomenology of experience, social identity theory, signaling theory, cultural sociology, and temporal psychology -- each studying a distinct meaning-transmission channel relevant to brand perception. The enumeration satisfies three criteria: each tradition has its own foundational literature, core constructs, and empirical methods; each is relevant to brand perception; and none is reducible to another.
+Theoretically, the taxonomy advances consumer research by offering a common language for phenomena previously studied in isolation: cultural meaning transfer (McCracken 1986), iconic branding (Holt 2004), experiential marketing (Schmitt 1999), and temporal aspects of brand heritage. It predicts, for example, that brands attempting ideological repositioning without narrative support will suffer coherence failure, and that temporal repositioning (heritage-to-innovation pivots) will be most disruptive for consumers high in nostalgia proneness. These predictions are now testable.
 
-Second, we established dimensional independence by exhibiting, for each dimension, a pair of brands that differs primarily on that dimension while remaining approximately matched on the remaining seven. The examples are illustrative rather than empirically measured, but they establish that independence is empirically credible.
+Practically, the framework enables new forms of brand tracking that capture not only overall equity but the specific channels driving it. Managers can diagnose whether a brand's weakness lies in semiotic clarity, experiential delivery, or cultural resonance -- distinctions obscured by unidimensional or low-dimensional instruments. For global brands, the taxonomy highlights channels likely to vary cross-culturally (cultural, temporal, ideological) versus those expected to be more universal (semiotic, economic).
 
-Third, we argued non-redundancy (removing any dimension reduces discriminative power) and minimal completeness (no proper subset covers all meaning channels). We further demonstrated completeness by showing that five candidate ninth dimensions -- aesthetic, functional, ethical, digital, and environmental -- each reduce to components or combinations of existing dimensions rather than representing new meaning channels.
+The argument proceeds in five steps. First, eight established academic traditions are enumerated -- semiotics, narratology, ideology critique, phenomenology of experience, social identity theory, signaling theory, cultural sociology, and temporal psychology -- each studying a distinct meaning-transmission channel relevant to brand perception. Second, dimensional independence is established by exhibiting, for each dimension, a pair of brands that differs primarily on that dimension while remaining approximately matched on the remaining seven. Third, non-redundancy and minimal completeness are demonstrated: five candidate ninth dimensions -- aesthetic, functional, ethical, digital, and environmental -- each reduce to components or combinations of existing dimensions rather than representing new meaning channels. Fourth, the apparent contradiction between SBT's eight dimensions and the two to three dimensions found by MDS is resolved: low-dimensional projections capture most variance (as concentration of measure predicts) while losing the profile-shape information that distinguishes coherence types. Fifth, an empirical robustness test using R15 cross-cultural LLM experiment data (22 models, 11,298 API calls) shows that no single-dimension removal drops DCI ranking cosine below .994, no pair removal drops it below .993, and all eight dimensions carry non-trivial cross-model variance.
 
-Fourth, we resolved the apparent contradiction between SBT's eight dimensions and the two to three dimensions found by multidimensional scaling. The resolution rests on the distinction between variance explained and information retained: low-dimensional projections capture most variance (as concentration of measure predicts) while losing the profile-shape information that distinguishes coherence types and the boundary structure that determines cohort fuzziness.
+Limitations remain. The current argument is theoretical; large-scale human factor-analytic studies are required to test whether the eight channels emerge as stable factors and whether they predict consumer outcomes beyond existing scales (Khamitov, Wang, and Thomson 2019). The brand-pair illustrations, while illustrative, must be replaced by measured spectral profiles. Non-Western meaning systems may suggest alternative carvings that future work should incorporate.
 
-Fifth, we provided an empirical robustness test using R15 cross-cultural LLM experiment data (22 models, 11,298 API calls), demonstrating that the eight-dimension framework survives aggressive perturbation. No single-dimension removal drops DCI ranking cosine below .994; no pair removal drops it below .993; augmenting to ten dimensions produces near-perfect rank preservation. All eight dimensions carry non-trivial cross-model variance, confirming that the framework is both robust (rankings survive dimension removal) and complete (every dimension contributes to inter-model differentiation).
-
-The eight dimensions of SBT are neither the fewest possible (which would sacrifice completeness) nor the most possible (which would introduce redundancy). They are the minimal complete set: the smallest number of independent meaning channels that covers all established modes of meaning transmission between brand and observer. The theoretical derivation is now supplemented by empirical evidence from AI observer data; whether human-subject factor analysis confirms the same structure remains an open question -- and is, we submit, among the most important open questions in quantitative brand theory.
+Nevertheless, by providing an exhaustive, non-redundant, and psychometrically defensible taxonomy, this paper supplies the conceptual foundation long missing from brand perception research. The eight channels do not merely describe how brands differ; they explain why meaning itself is irreducibly multi-dimensional. Consumer researchers now have both the map and the theoretical justification for exploring the full territory of brand meaning.
 
 ---
 

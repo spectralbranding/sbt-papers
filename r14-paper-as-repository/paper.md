@@ -191,6 +191,22 @@ Each claim includes a falsification condition specified in the accompanying `pap
 
 ## 2. The Protocol
 
+The four-level hierarchy is the central architectural claim of this paper. Each level is a structural transformation of the level above, preserving cryptographic provenance throughout.
+
+```mermaid
+flowchart LR
+    R[Research program<br/>= versioned repository]
+    P[Paper<br/>= tagged render of repo at commit C]
+    S[Submission<br/>= fork of repo at commit C]
+    J[Journal / preprint server<br/>= curated collection of forks]
+    R -->|tag v1.0| P
+    P -->|fork at C| S
+    S -->|merge / accept| J
+    J -.->|metadata back to repo| R
+```
+
+Figure 1: The four-level Research-as-Repository hierarchy. Each level is a structural transformation of the level above, preserving cryptographic provenance. The dashed line shows publication metadata flowing back to the source repository, closing the loop and supporting the rendering-isomorphism (§3.4).
+
 The protocol maps the scientific publishing lifecycle onto a CI/CD (Continuous Integration / Continuous Delivery) pipeline — the same architecture that transformed software from artisanal craft to engineered discipline. In software CI/CD, every code change triggers automated validation, testing, and deployment. In the paper protocol, every stage of the knowledge lifecycle triggers analogous automated operations:
 
 ```
@@ -415,7 +431,7 @@ ScholarOne / Editorial Manager / OJS
     |     structural metadata or provenance
 ```
 
-**Figure 1.** Architecture of the fork-based submission lifecycle.
+**Figure 2.** Architecture of the fork-based submission lifecycle.
 
 ```
 Research Repository (author)

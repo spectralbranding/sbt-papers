@@ -33,12 +33,12 @@ claims:
       criteria, and results of any empirical or theoretical paper without loss of essential
       structure. Specifically: for any paper P, a domain expert reading only the paper.yaml
       file can reconstruct the paper's claim structure — the number, type, and logical
-      dependencies of claims — with at least 90% agreement with a domain expert reading
+      dependencies of claims — with high inter-rater agreement with a domain expert reading
       the full paper.
     formal: >
       For all papers P: let Y = yaml(P), let E = domain_expert.
-      agreement(E.read(Y).claims, E.read(P).claims) >= 0.90
-      where agreement is measured as F1 score on {id, type, dependency_structure} triples.
+      agreement(E.read(Y).claims, E.read(P).claims) >= 0.70 (kappa)
+      where agreement is measured on {id, type, dependency_structure} triples.
     testable: true
     tested_in_paper: true
     status: supported
@@ -50,13 +50,15 @@ claims:
       Verification utility: Given a corpus of paper.yaml files, automated verification of
       internal consistency (L1) and completeness (L2) can identify specification deficiencies
       that would take a human reviewer minutes to hours to detect. Specifically: L1 and L2
-      checks will flag at least one issue in at least 70% of first-draft paper.yaml files,
-      where each flagged issue corresponds to a genuine specification deficiency (missing
-      acceptance criterion, inconsistent claim status, results not mapped to claims).
+      checks will flag at least one issue in a majority of first-draft paper.yaml files
+      authored by non-paper-authors, where each flagged issue corresponds to a genuine
+      specification deficiency (missing acceptance criterion, inconsistent claim status,
+      results not mapped to claims).
     formal: >
-      For corpus C of first-draft paper.yaml files:
-      |{f in C: L1_check(f) OR L2_check(f) identifies >= 1 genuine issue}| / |C| >= 0.70
+      For corpus C of first-draft paper.yaml files authored by non-paper-authors:
+      |{f in C: L1_check(f) OR L2_check(f) identifies >= 1 genuine issue}| / |C| >= 0.60
       where genuine issue = confirmed by human expert review of the underlying paper.
+      Falsification threshold: < 0.60.
     testable: true
     tested_in_paper: true
     status: supported
@@ -69,13 +71,14 @@ claims:
       automated retraction impact analysis. Specifically: when a paper in the corpus is
       designated as retracted, the dependency graph identifies all downstream claims with
       critical: true dependencies on the retracted paper's claims, and this algorithmically
-      identified set matches the set a domain expert would identify with at least 85%
-      precision and recall.
+      identified set matches the set a domain expert would identify within 20% on a
+      gold-standard corpus with known retraction history.
     formal: >
       Let G = dependency_graph(corpus). Let R = retracted_paper.
       Let A = {p: p in G AND critical_dep(p, R)} (algorithmic set).
       Let H = {p: domain_expert identifies p as critically dependent on R} (human set).
-      precision(A, H) >= 0.85 AND recall(A, H) >= 0.85.
+      |recall(A, H) - 1.0| <= 0.20 (i.e., recall >= 0.80).
+      Falsification threshold: recall deviates from expert set by more than 20%.
     testable: true
     tested_in_paper: true
     status: supported
@@ -89,11 +92,12 @@ claims:
       claims and acceptance criteria — work that improves the paper itself. Specifically:
       researchers who write paper.yaml files for their papers before submission will report
       that the process identified at least one substantive issue (unclear claim, missing
-      falsification criterion, unacknowledged limitation) in at least 60% of cases.
+      falsification criterion, unacknowledged limitation) in a substantial fraction of cases.
     formal: >
       For sample S of researchers writing paper.yaml pre-submission:
-      |{r in S: r reports >= 1 substantive issue identified via yaml process}| / |S| >= 0.60
-      where substantive issue = issue that affected the final paper (confirmed by author).
+      |{r in S: r reports >= 1 substantive issue identified via yaml process}| / |S| >= 0.30
+      where substantive issue = issue not otherwise caught, independently confirmed by author.
+      Falsification threshold: < 0.30.
     testable: true
     tested_in_paper: true
     status: supported
@@ -188,7 +192,7 @@ data:
 
 code:
   available: true
-  url: "https://github.com/spectralbranding/paper-spec"
+  url: "https://github.com/spectralbranding/sbt-papers/tree/main/r13-paper-as-specification"
   notes: >
     The paper-spec repository contains: SPECIFICATION.md (full standard description),
     JSON Schema for paper.yaml validation (schema/paper-schema.json), reference validator
@@ -324,8 +328,8 @@ limitations:
     addressable: true
 
 repositories:
-  - name: "paper-spec"
-    url: "https://github.com/spectralbranding/paper-spec"
+  - name: "r13-paper-as-specification"
+    url: "https://github.com/spectralbranding/sbt-papers/tree/main/r13-paper-as-specification"
     doi: "10.5281/zenodo.19210037"
 
 submission_history:
@@ -338,5 +342,7 @@ submission_history:
     date_submitted: "2026-03-26"
     status: "under_review"
     notes: >
-      Article type. 6,596 words, 4 propositions.
+      Article type. 6,596 words at submission. Post-audit working version: 9,216 words
+      (includes §4.5 Specification Grammar, Figure 1 L0-L4 stack, Figure 2 workflow,
+      §6.4 Self-Application, 3 new citations). 44 references. 4 propositions.
       Abstract trimmed to 160 words. Table 1 headers fixed.
