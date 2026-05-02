@@ -52,7 +52,7 @@ LLM brand responses show systematic dimensional patterns. Across 24 models from 
 
 ***Spectral Brand Theory: Key Constructs***
 
-The interference model builds on Spectral Brand Theory (SBT; Zharnikov 2026a), which models brands as emitters of signals across eight typed dimensions -- Semiotic, Narrative, Ideological, Experiential, Social, Economic, Cultural, and Temporal -- perceived by observers whose heterogeneous weight vectors determine which dimensions dominate their brand conviction. Three constructs are central.
+The interference model builds on Spectral Brand Theory (SBT; Zharnikov 2026a), which models brands as emitters of signals across eight typed dimensions -- Semiotic, Narrative, Ideological, Experiential, Social, Economic, Cultural, and Temporal -- perceived by observers whose heterogeneous weight vectors determine which dimensions dominate their brand conviction. The completeness and necessity of this eight-dimension taxonomy is formally justified in Zharnikov (2026r). Three constructs are central.
 
 A brand's *emission profile* at time $t$ is a vector $\mathbf{e}_B(t) = [e_1, e_2, \ldots, e_8] \in \mathbb{R}^8_+$, where each component represents signal intensity on one of SBT's eight dimensions. An observer possesses an *observer spectral profile* -- a weight vector $\mathbf{w}_j = [w_1, \ldots, w_8] \in \Delta^7$ -- that determines the relative salience of each dimension in forming brand conviction. Observers with similar spectral profiles cluster into *cohorts* $C_k$ (Zharnikov 2026f; Park, MacInnis, and Priester 2010). The *perception cloud* for cohort $C_k$ observing brand $B$ is the distribution of brand convictions across cohort members:
 
@@ -88,6 +88,23 @@ Rational inattention (Sims 2003) provides the formal behavioral tradition from w
 
 The extension to AI brand perception requires modifying two assumptions. First, the unit of capacity allocation is not the brand choice alternative but the perceptual dimension: LLMs allocate encoding capacity across eight dimensions rather than across brand alternatives. Second, the RI prediction is architectural rather than behavioral: AI observers are rationally inattentive to DO-layer information because its channel capacity cost exceeds its value for output reconstruction. Rate-distortion theory (Cover and Thomas 2006) operationalizes the architectural constraint -- a rate-distortion-optimal encoder that targets output fidelity will discard organizational-coordination signals. The rational-inattention framework formalizes the behavioral equivalent: even an encoder that could in principle process portfolio context will not, because the expected return on encoding that context is near zero. The bandwidth constraint introduced in Proposition 2 generalizes both frameworks to AI observers: the awareness gate is necessary but not sufficient; a perception channel with adequate bandwidth to encode portfolio context is also required. Zharnikov (2026aa) provides empirical evidence for the compressed nature of LLM brand encodings, documenting a rate-distortion curve that places LLM encoders close to the theoretical minimum-distortion frontier.
 
+```mermaid
+quadrantChart
+    title Awareness Gate x Encoding Bandwidth
+    x-axis Low Awareness --> High Awareness
+    y-axis Low Bandwidth --> High Bandwidth
+    quadrant-1 High awareness - high bandwidth
+    quadrant-2 Low awareness - high bandwidth
+    quadrant-3 Low awareness - low bandwidth
+    quadrant-4 High awareness - low bandwidth
+    Human pre-disclosure: [0.2, 0.75]
+    Human post-disclosure: [0.8, 0.8]
+    Naive AI: [0.25, 0.25]
+    Modern LLM: [0.85, 0.2]
+```
+
+Figure 1: The bandwidth-constraint mechanism. Spectral immunity (quadrant 4, lower right) emerges when awareness saturates while encoding bandwidth remains constrained, decoupling the awareness gate from the interference term. Human observers pre-disclosure (quadrant 2) lack sufficient awareness for interference; post-disclosure (quadrant 1) both conditions are met and interference occurs. Naive AI (quadrant 3) lacks both. Modern general-purpose LLMs (quadrant 4) have maximal awareness but insufficient bandwidth -- the spectral immunity region.
+
 ***Propositions***
 
 The interference formalism yields three testable propositions that jointly determine when portfolio effects operate. Propositions from the parent theory that cannot be tested with AI observers alone -- including interference direction predictability from emission profiles, cohort-dependent portfolio coherence, constructive interference compounding, and portfolio capacity constraints -- are deferred to future work with human observer samples.
@@ -102,7 +119,7 @@ The interference formalism yields three testable propositions that jointly deter
 
 **Proposition 2** (Awareness gate sufficiency inversion). *The awareness gate is necessary but not sufficient for spectral interference. When an observer's brand encoding operates near minimum-distortion compression, maximal awareness ($\alpha \approx 1$) does not produce interference because the portfolio context provides no additional information that the compressed encoding can absorb. A perception channel with adequate bandwidth to encode portfolio context is also required.*
 
-*Derivation.* Equation 3 shows that interference scales with $\alpha$. However, the equation models the *potential* perturbation, not the *realized* perturbation. Realization requires that the observer's encoding has sufficient representational capacity to propagate the interference term into the observable brand profile. When encoding is compressed -- as in rate-distortion-optimal representations (Cover and Thomas 2006; Sims 2003) -- the interference term exists in the model's parameter space but cannot alter the observable output. This is formally identical to the rational-inattention result: the signal exists but is not processed because its channel cost exceeds its value.
+*Derivation.* Equation 3 shows that interference scales with $\alpha$. However, the equation models the *potential* perturbation, not the *realized* perturbation. Realization requires that the observer's encoding has sufficient representational capacity to propagate the interference term into the observable brand profile. When encoding is compressed -- as in rate-distortion-optimal representations (Cover and Thomas 2006; Sims 2003) -- the interference term exists in the model's parameter space but cannot alter the observable output. This is formally identical to the rational-inattention result: the signal exists but is not processed because its channel cost exceeds its value. The bandwidth constraint also applies to the *static* case: Zharnikov (2026e) shows that projection onto a compressed dimensional representation produces metameric null spaces in which two observably equivalent profiles may differ on dimensions the encoding discards -- the portfolio context falls precisely into this null space for bandwidth-constrained AI observers.
 
 *Testability.* Compare observers with permanently saturated awareness gates (LLMs, $\alpha \approx 1$) against observers with experimentally manipulated awareness (human samples, $\alpha$ varied from 0 to 1). If P2 holds, LLMs should show near-zero portfolio effects despite maximal awareness, while human observers should show increasing effects as $\alpha$ increases above threshold.
 
@@ -116,7 +133,7 @@ The interference formalism yields three testable propositions that jointly deter
 
 ***The Output-Coordination Distinction***
 
-The three propositions can be unified through a distinction between two layers of organizational specification. *Output specification* (the WHAT layer) defines what a brand produces across perception dimensions -- its emission profile, quality gates, and category positioning. *Coordination specification* (the DO layer) defines how the organization is structured -- corporate ownership, portfolio membership, parent-brand relationships, and organizational hierarchy (Mintzberg 1979; Farach 2026). Portfolio framing is a pure DO-layer signal: it communicates organizational structure without changing what the brand produces. Proposition 2 predicts that AI observers -- whose compressed encodings optimize for output reconstruction rather than coordination fidelity -- will discard the DO layer and retain only the WHAT layer. The empirical support for this prediction is examined in the Discussion.
+The three propositions can be unified through a distinction between two layers of organizational specification. *Output specification* (the WHAT layer) defines what a brand produces across perception dimensions -- its emission profile, quality gates, and category positioning. *Coordination specification* (the DO layer) defines how the organization is structured -- corporate ownership, portfolio membership, parent-brand relationships, and organizational hierarchy (Mintzberg 1979; Farach 2026). This distinction maps onto Mintzberg's (1979) division between operating-core outputs (the WHAT) and administrative-component coordination (the DO). Portfolio framing is a pure DO-layer signal: it communicates organizational structure without changing what the brand produces. Proposition 2 predicts that AI observers -- whose compressed encodings optimize for output reconstruction rather than coordination fidelity -- will discard the DO layer and retain only the WHAT layer. The empirical support for this prediction is examined in the Discussion.
 
 
 **Method**
@@ -169,7 +186,11 @@ Table 2: Model Panel -- 13 Models From 7 Training Traditions.
 
 ***Metrics and Statistical Approach***
 
-All ratings used a 1-5 scale following the PRISM-B specification (Zharnikov 2026aa). DCI (Equation 2) measures profile concentration. DCI generalizes the two-dimension form introduced in Zharnikov (2026v) to an 8-dimension L1 concentration metric; the two definitions coincide on the special case where all weight falls on two dimensions. See the Theoretical Framework for the full derivation. The 8-dimension generalization is required here because portfolio interference may concentrate on any dimension subset -- for example, Ideological dimensions for Unilever, Cultural for LVMH, Economic for L'Oreal -- and restricting to the two-dimension form would prejudge which dimensions absorb portfolio mass. TOST equivalence testing (Lakens 2017) with bounds of +/-1.0 DCI points assesses statistical equivalence to zero. Benjamini-Hochberg correction controls the false discovery rate across all 20 brand-level tests. The experiment had 80%+ power to detect a medium effect (d = .50) at alpha = .05 with N = 65 per cell.
+All ratings used a 1-5 scale following the PRISM-B specification (Zharnikov 2026aa). DCI (Equation 2) measures profile concentration. DCI generalizes the two-dimension form introduced in Zharnikov (2026v) to an 8-dimension L1 concentration metric; the two definitions coincide on the special case where all weight falls on two dimensions. See the Theoretical Framework for the full derivation. The 8-dimension generalization is required here because portfolio interference may concentrate on any dimension subset -- for example, Ideological dimensions for Unilever, Cultural for LVMH, Economic for L'Oreal -- and restricting to the two-dimension form would prejudge which dimensions absorb portfolio mass. TOST equivalence testing (Lakens 2017; Lakens, Scheel, and Isager 2018) with bounds of +/-1.0 DCI points assesses statistical equivalence to zero. Benjamini-Hochberg correction controls the false discovery rate across all 20 brand-level tests. The experiment had 80%+ power to detect a medium effect (d = .50) at alpha = .05 with N = 65 per cell.
+
+All DCI values are reported on the 8-dimension percentage-concentration scale [0, 100], with the conservative +-1.0 TOST bound applied uniformly across Tables 3 and 7. The apparent difference in absolute DCI magnitudes between the two tables (range 3.5-8.9 in Table 3 versus .37-1.31 in Table 7) reflects profile concentration rather than a scale change; the DCI metric (Equation 2) is identical in both contexts.
+
+With N = 65 per cell (13 models x 5 repetitions), TOST equivalence-test power for +-1.0 DCI bounds at alpha = .05 exceeds .80 for population effects up to |d| = .30, computed from the standard TOST power formula (see companion script `code/compute_dci.py`). This means the study has adequate sensitivity to detect non-equivalence at population effect sizes that would be substantively meaningful (|d| >= .30) while classifying smaller effects as equivalent. "Equivalence-test power exceeds the conventional .80 threshold for non-equivalence detection at population effect sizes |d| >= .30" (Lakens, Scheel, and Isager 2018).
 
 Hypotheses H1-H7 were specified prior to data collection on the basis of the theoretical framework; H8-H9 were added after initial analysis as exploratory tests. This study was not formally preregistered.
 
@@ -318,6 +339,10 @@ Table 7: Published-Brand Extension -- Portfolio Immunity Test (N = 1,950).
 
 *Notes*: DCI values in this table are lower in magnitude than Table 3 because published brands (drawn from peer-reviewed stimulus sets) tend to have more balanced, less concentrated profiles than the portfolio-specific brands in the main experiment. The DCI metric (Equation 2) is the same scale in both tables; the difference reflects profile concentration rather than a scale change. 0/10 FDR-significant at q = .05. TOST equivalence confirmed for all 10 brands within +/-1.0 DCI bounds. For brands with baseline DCI below 1.0, the +/-1.0 equivalence bound exceeds the baseline value itself, making the immunity claim conservative relative to scale. Audi (d = +.49, Volkswagen Group) echoes the suggestive Lexus finding: both involve premium differentiation within a mass-market parent portfolio. SEs for DCI means range from .03 to .12 across cells; full SE columns available in the online appendix.
 
+Figure 2: Forest plot of portfolio-framing effect sizes (Cohen's d) across archetypes and modalities. Vertical lines at +-1.0 demarcate the TOST equivalence bounds. Spectral immunity is visible as the convergence of d values toward zero across archetypes. Generated by `code/plot_forest_effect_sizes.py`.
+
+![Figure 2: Forest plot of portfolio effect sizes](figures/figure2_forest.png)
+
 ***Robustness Checks***
 
 **Naturalistic recommendation prompts.** Mean delta DCI = -.23, cosine > .999, 0/20 FDR-significant. The recommendation modality replicates the direct-rating immunity finding.
@@ -330,6 +355,10 @@ All statistical analyses reported in Tables 3-7 are reproduced by `compute_dci.p
 
 
 **Discussion**
+
+***Theoretical Implications***
+
+The spectral immunity finding has three theoretical implications. First, the bandwidth constraint generalizes rational inattention (Sims 2003; Caplin and Dean 2015) from discrete-choice settings to continuous perceptual encodings: the unit of capacity allocation is not the brand choice alternative but the perceptual dimension, and AI observers are structurally inattentive to organizational-coordination signals because these contribute negligibly to output-fidelity reconstruction. This generalization extends the formal apparatus of information economics to a new domain -- AI-mediated brand perception -- and makes testable predictions that distinguish it from prior RI applications. Second, the awareness gate alone is necessary but insufficient for interference (Proposition 2, supported). Standard portfolio theory, from Keller (1993) through Aaker and Joachimsthaler (2000), treats awareness as the key trigger; the present results demonstrate that a second condition -- adequate encoding bandwidth -- must also be satisfied. Portfolio theory must therefore incorporate observer architecture, not only observer awareness, as a boundary condition. Third, AI observers operate as Type-I instruments (output validity: accurately encoding brand output characteristics) but not as Type-II instruments (process validity: propagating coordination context into output profiles). This instrumentation asymmetry is consequential for brand research: LLM brand profiles are valid for WHAT-layer constructs and systematically invalid for DO-layer constructs, regardless of how much awareness is manipulated.
 
 ***Resolving the Awareness Gate Paradox***
 
@@ -363,6 +392,19 @@ A fifth line of convergence comes from corporate finance. Li et al. (2011) find 
 
 The AI-level immunity also parallels the firm-level conglomerate discount documented by Berger and Ofek (1995): portfolio membership fails to add value both at the perceptual level for AI observers and at the financial level for diversified firms -- two distinct observer classes, one structural prediction. Both the conglomerate discount and spectral immunity reflect a shared underlying logic: portfolio architecture imposes a DO-layer coordination cost that is not recovered as a WHAT-layer output benefit, whether the observing system is a capital market or a language model.
 
+Table 8: Comparative frameworks for portfolio interference. The bandwidth-constraint mechanism is unique in predicting null effects at high awareness, distinguishing this paper from human-observer accounts.
+
+| Framework | Theoretical mechanism | Awareness gate role | Bandwidth role | Predicted interference | Tested at AI-observer scale? |
+|---|---|---|---|---|---|
+| Markowitz (1952) portfolio theory | Variance-covariance minimization across assets | Not applicable | Not applicable | Systematic risk reduction through diversification | No |
+| Aaker-Keller (1990) brand extension fit | Perceived fit moderates equity transfer | Necessary trigger | Not modeled | Positive at high fit; negative at low fit | No |
+| Erdem-Sun (2002) umbrella branding | Quality signal propagates from parent to siblings | Amplifier | Not modeled | Positive, proportional to awareness | No |
+| Lei-Dawar-Lemmink (2008) asymmetric spillover | Negative effects propagate more strongly than positive | Asymmetric amplifier | Not modeled | Asymmetric; negative dominates | No |
+| Berger-Ofek (1995) conglomerate discount | Portfolio coordination costs not recovered as output value | Not applicable | Not applicable | Value destruction; discount at financial-market scale | No |
+| This paper: spectral immunity | Bandwidth constraint blocks DO-layer propagation | Necessary but insufficient | Required second condition | Null for compressed AI encoders; present for bandwidth-adequate human observers | Yes (N = 9,925, 13 models, 7 archetypes) |
+
+*Notes*: "Awareness gate role" refers to how each framework treats observer recognition of shared corporate ownership. "Bandwidth role" refers to whether the framework models observer encoding capacity as a boundary condition. The bandwidth-constraint mechanism is the only framework that jointly models the awareness gate and encoding capacity as separable necessary conditions.
+
 ***Managerial Implications***
 
 **Portfolio architecture is invisible to AI across all archetype types.** As AI-mediated brand interactions grow -- what Dubois, Dawson, and Jaiswal (2025) term the "Share of Model" economy -- portfolio strategies become irrelevant in these channels across all seven archetypes tested. Investment shifts from portfolio orchestration (the DO layer) to individual brand specification (the WHAT layer): clarity of brand output characteristics accumulates in AI perception, while portfolio architecture does not.
@@ -372,6 +414,14 @@ The AI-level immunity also parallels the firm-level conglomerate discount docume
 **Geely's reverse aspiration is a strategic vulnerability in conversational AI.** While direct portfolio framing leaves Volvo's positioning intact, multi-turn conversation reveals a meaningful effect (d = -1.11). The Geely Auto finding is suggestive and warrants replication before managerial action is taken; if confirmed across additional reverse-aspiration portfolios, it implies that brand managers with such structures should monitor extended AI interactions, which can surface dynamics invisible in single-turn queries.
 
 **Brand coherence, not portfolio coherence, drives AI perception.** Brand identity explains 37.4% of DCI variance; portfolio condition explains .1%. Yu's (2021) framework optimizes architecture choice for its perceptual consequences; the immunity finding implies that this optimization is irrelevant in AI-mediated channels. The finding also implies that the branded-house vs. house-of-brands architecture distinction -- the central strategic lever in Aaker and Joachimsthaler's (2000) framework -- becomes a strategically inert variable in AI-mediated brand-perception channels, where DO-layer coordination signals are filtered out at the encoding layer regardless of portfolio design. The actionable implication is direct: for AI-mediated channels, specify the WHAT layer (brand output characteristics, positioning, quality gates) rather than the DO layer (portfolio architecture, parent signaling, sibling association).
+
+Three operational areas follow from these findings.
+
+*Diagnostic: testing whether a brand is in the BR quadrant.* A brand manager can determine whether a given brand occupies the immunity quadrant (high awareness, low bandwidth) by running a DCI stability test under prompt-context manipulation: present the same brand to a standard panel of general-purpose LLMs in solo versus portfolio-context conditions across at least three prompt modalities (direct rating, recommendation, multi-turn). If the DCI delta remains within +-1.0 points across all modalities, the brand is in the immunity region and portfolio architecture investments in AI-mediated channels have near-zero expected return. If DCI shifts exceed +-1.0 in multi-turn conditions, the brand may occupy a reverse-aspiration vulnerability zone (like Geely Auto) and requires deeper monitoring. Brands with high baseline DCI scores (concentrated profiles) are good candidates for immunity, consistent with the compression mechanism: already-concentrated encodings have less room for additional portfolio perturbation.
+
+*Monitoring: longitudinal tracking across model generations.* Because general-purpose LLMs are updated on 6-18 month cycles, immunity status is a time-varying property. A brand-tracking dashboard for AI-mediated channels should include at minimum a quarterly DCI stability check -- a lightweight version of the diagnostic above run against the current leading models (see Hermann and Puntoni 2025 on AI influence as a strategic priority requiring formal treatment). The Audi finding (d = +.49, Table 7) echoes the Lexus pattern and should be monitored in future model generations: aspiration dynamics may emerge as models acquire richer organizational-context encodings with larger training corpora. Immunity today does not guarantee immunity at the next model generation.
+
+*Hedging: investing in bandwidth-resistant brand attributes.* When a brand manager cannot be certain of immunity status (e.g., the brand occupies an aspiration-structure portfolio, or operates in a domain where fine-tuned AI models are prevalent), the optimal hedge is to invest in WHAT-layer dimensions that are least susceptible to DO-layer contamination. The variance decomposition (Table 4) shows that Semiotic and Experiential dimensions are most stable across conditions, consistent with the spectral compression pattern documented in Zharnikov (2026v), where Cultural, Temporal, and Social dimensions collapse most severely. Hedging means concentrating brand investment in the dimensions the AI encoder retains rather than the dimensions it discards.
 
 ***Boundary Conditions***
 
@@ -478,6 +528,8 @@ Keller, Kevin Lane (2008), *Strategic Brand Management: Building, Measuring, and
 
 Lakens, Daniel (2017), "Equivalence Tests: A Practical Primer for t Tests, Correlations, and Meta-Analyses," *Social Psychological and Personality Science*, 8 (4), 355-362.
 
+Lakens, Daniel, Anne M. Scheel, and Peder M. Isager (2018), "Equivalence Testing for Psychological Research: A Tutorial," *Advances in Methods and Practices in Psychological Science*, 1 (2), 259-269.
+
 Lei, Jing, Niraj Dawar, and Jos Lemmink (2008), "Negative Spillover in Brand Portfolios: Exploring the Antecedents of Asymmetric Effects," *Journal of Marketing*, 72 (3), 111-123.
 
 Li, Peiyao, Noah Castelo, Zsolt Katona, and Miklos Sarvary (2024), "Frontiers: Determining the Validity of Large Language Models for Automated Perceptual Analysis," *Marketing Science*, 43 (2), 254-266.
@@ -520,9 +572,13 @@ Zharnikov, Dmitry (2026ab), "Does Corporate Ownership Matter to AI? Spectral Imm
 
 Zharnikov, Dmitry (2026aa), "Empirical Rate-Distortion Curve for AI Brand Perception Encoders," Working Paper, https://doi.org/10.5281/zenodo.19528833.
 
+Zharnikov, Dmitry (2026e), "Spectral Metamerism in Brand Perception: Projection Bounds From High-Dimensional Geometry," Working Paper, https://doi.org/10.5281/zenodo.18945352.
+
 Zharnikov, Dmitry (2026f), "Cohort Boundaries in High-Dimensional Perception Space: A Concentration of Measure Analysis," Working Paper, https://doi.org/10.5281/zenodo.18945477.
 
 Zharnikov, Dmitry (2026q), "Spectral Portfolio Theory: Interference, Coherence, and Capacity in Multi-Brand Perception Space," Working Paper, https://doi.org/10.5281/zenodo.19145099.
+
+Zharnikov, Dmitry (2026r), "Why Eight? Completeness and Necessity of the SBT Dimensional Taxonomy," Working Paper, https://doi.org/10.5281/zenodo.19207599.
 
 Zharnikov, Dmitry (2026s), "Coherence Type as Crisis Predictor: A Formal Derivation From Non-Ergodic Dynamics," Working Paper, https://doi.org/10.5281/zenodo.19208107.
 
