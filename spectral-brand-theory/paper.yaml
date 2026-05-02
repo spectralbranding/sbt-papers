@@ -9,8 +9,8 @@ meta:
       orcid: "0009-0000-6893-9231"
       affiliation: "Independent Researcher"
   doi: "10.5281/zenodo.18945912"
-  date: "2026-04-25"
-  version: "3.2.0"
+  date: "2026-05-02"
+  version: "3.3.0"
   venue: "Zenodo preprint (not yet submitted to journal)"
   license: "CC-BY-4.0"
   abstract: >
@@ -29,9 +29,10 @@ meta:
     independence of brand power from brand health. Cross-model replication suggests structural
     conclusions are framework-driven rather than model-specific. SBT contributes a computationally
     implementable, observer-centric architecture that extends customer-based brand equity theory.
-    Empirical validation against independently collected consumer data, including a 21,350-call
-    multi-model study (Zharnikov 2026v), provides initial corroboration of the dimensional collapse
-    predictions.
+    A companion proof-of-concept study replicating SBT's cohort-divergence patterns across 17 LLM
+    architectures confirms dimensional collapse as a systematic property of AI-mediated perception
+    (Zharnikov 2026v); independent human-subject validation of the framework's propositions is
+    identified as the priority for future empirical work.
   keywords:
     - spectral brand theory
     - brand perception

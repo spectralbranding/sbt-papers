@@ -7,8 +7,8 @@ authors:
     affiliation: "Independent Researcher"
     orcid: "https://orcid.org/0009-0000-6893-9231"
 title: "How many brands can a market hold? Sphere packing bounds for multi-dimensional positioning"
-version: 1.2.0
-date-released: 2026-05-01
+version: 1.3.0
+date-released: 2026-05-02
 url: "https://doi.org/10.5281/zenodo.18945522"
 repository-code: "https://github.com/spectralbranding/sbt-papers"
 identifiers:

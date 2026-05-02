@@ -4,7 +4,7 @@
 
 ORCID: 0009-0000-6893-9231
 
-Working Paper v2.2.0 — March 2026 (Updated May 2026)
+Working Paper v2.3.0 — March 2026 (Updated May 2026)
 
 https://doi.org/10.5281/zenodo.18945295
 
@@ -94,7 +94,7 @@ An observer's **weight profile** is a vector $w = (w_1, \ldots, w_8) \in \Delta^
 
 ### 2.3 The Measurement Problem
 
-Given two brands $A$ and $B$ with emission profiles $s_A, s_B \in \mathbb{R}^8_+$, what does $d(s_A, s_B)$ mean? The question is subtle for three reasons, each with roots in the psychophysical measurement tradition (Thurstone, 1927; Fechner, 1860).
+Given two brands $A$ and $B$ with emission profiles $s_A, s_B \in \mathbb{R}^8_+$, what does $d(s_A, s_B)$ mean? The question is subtle for three reasons, each with roots in the psychophysical measurement tradition (Thurstone, 1927; Fechner, 1860; Zharnikov, 2026b).
 
 First, brand perception is *relative*, not *absolute*. An observer does not experience "50 units of semiotic signal" -- she experiences a brand as having "twice the semiotic presence" of another. This suggests a multiplicative rather than additive distance structure.
 
@@ -103,6 +103,16 @@ Second, brand perception is *observer-dependent*. Two observers with different w
 Third, brand perception is *compositional*. The individual dimension scores are not independent quantities; they form an integrated gestalt. Increasing the semiotic dimension while holding others constant changes the *proportions* of the profile, and it is the proportional structure that carries perceptual meaning.
 
 These three properties -- relativity, observer-dependence, and compositionality -- constrain the choice of metric and rule out naive Euclidean distance.
+
+```mermaid
+graph LR
+    A["R8_plus (raw signals)<br/>open positive orthant"] -->|"normalize: s -> s/norm(s)"| B["S7_plus (unit sphere)<br/>positive orthant of 7-sphere"]
+    B -->|"weight: p(w) on Delta7"| C["Delta7 (simplex)<br/>observer weight space"]
+    A -->|"clr / ilr transform"| D["R7 (Aitchison space)<br/>flat isometric image"]
+    C -->|"sqrt embedding: w -> 2sqrt(w)"| E["S7_plus (sphere)<br/>Fisher-Rao geodesics"]
+```
+
+Figure 1. The three metric spaces of the brand-perception pipeline.
 
 ---
 
@@ -242,7 +252,9 @@ Beyond Cencov's foundational result, the Fisher-Rao metric has been central to i
 
 The nearest marketing-science precedent is DeSarbo, Kim, Choi, and Spaulding (2002), who define a gravity-based distance structure on consumer-preference spaces. The present approach differs structurally: the Aitchison log-ratio transform replaces Euclidean raw coordinates, the Fisher-Rao metric replaces Euclidean distance on the observer simplex, and the Cencov uniqueness theorem provides an axiomatic justification absent from gravity-model approaches.
 
-Recent empirical work demonstrates that human perceptual color space is non-Riemannian (Bujack, Teti, Miller, Caffrey, & Turton, 2022). The present formalization adopts a Riemannian framework as a tractable first-order approximation, consistent with the INDSCAL tradition's geodesic-distance assumption. Brand perception differs structurally from color perception in two respects relevant to Riemannian admissibility: (i) brand profiles are compositional (ratio-based) rather than physical photon-count distributions; (ii) cohort-aggregated brand perception may suppress the individual-level non-Riemannian effects Bujack et al. document. Whether brand perception exhibits non-Riemannian diameter violations is an empirical question deferred to subsequent work.
+Recent empirical work demonstrates that human perceptual color space is non-Riemannian (Bujack, Teti, Miller, Caffrey, & Turton, 2022). The present formalization adopts a Riemannian framework as a tractable first-order approximation, consistent with the INDSCAL tradition's geodesic-distance assumption. Brand perception differs structurally from color perception in two respects relevant to Riemannian admissibility: (i) brand profiles are compositional (ratio-based) rather than physical photon-count distributions; (ii) cohort-aggregated brand perception may suppress the individual-level non-Riemannian effects Bujack et al. document. Whether brand perception exhibits non-Riemannian diameter violations is an empirical question deferred to subsequent work. The bridge to representational geometry in cognitive neuroscience -- where representational similarity analysis and dissimilarity matrices have been used to characterize the metric structure of neural codes (Kriegeskorte & Kievit, 2013) -- suggests that the perceptual-manifold framing developed here for brands shares methodological substrate with the neuroscience treatment of representational geometry, and that empirical instantiations of the brand metric could draw on the same dissimilarity-matrix machinery.
+
+For readers approaching from the information-geometry side, Nielsen (2020) provides an accessible introduction to Fisher-Rao geometry, warped products, and dual connections that complements the technical development of Amari and Nagaoka (2000) and Amari (2016).
 
 The Fisher-Rao metric also satisfies Criterion 1: the metric tensor $g_{ij}(w) = \delta_{ij} / w_i$ assigns large curvature near the simplex boundary (where weights are small), so small absolute changes in near-zero weights produce large distances. This aligns with the psychological observation that introducing a new, previously ignored dimension into an observer's attention structure is a more significant perceptual shift than redistributing attention among already-salient dimensions.
 
@@ -251,6 +263,17 @@ To make Criterion 2 rigorous for the SBT context: dimension-collapsing on observ
 Criterion 3 is satisfied by the closed-form formula involving only square roots and arc-cosine.
 
 The Hellinger distance, while a genuine metric, is the chord-length analog of Fisher-Rao's geodesic distance and lacks the Cencov invariance. The Jensen-Shannon distance (via its square root) satisfies the triangle inequality and is robust to zeros, but also lacks the unique invariance property. The Aitchison distance is singular at the simplex boundary ($w_i = 0$), which is problematic because boundary profiles (observers blind to certain dimensions) are psychologically meaningful in SBT. We therefore restrict Aitchison geometry to the brand signal space and adopt Fisher-Rao for the observer space.
+
+Table 2: Candidate metrics on the brand-profile simplex evaluated against Cencov-uniqueness criteria.
+
+| Metric | Invariance under sufficient statistics | Congruence with KL geometry on simplex | Behavior at simplex boundary |
+|--------|---------------------------------------|----------------------------------------|------------------------------|
+| Euclidean | None: not invariant under Markov morphisms | No: ignores log-ratio structure | Well-defined but perceptually uninformative |
+| Fisher-Rao | YES: unique invariant metric (Cencov 1982) | Yes: geodesics align with exponential-family KL divergence | Diverges to pi at orthogonal boundary points |
+| Aitchison | None: perturbation-invariant but not Markov-invariant | Partial: suited to compositional not probability structure | Singular: log-ratio undefined at boundary |
+| Wasserstein | None: invariant under transport rearrangements, not sufficient statistics | No: optimal-transport geometry differs from KL | Well-defined; penalizes support mismatch |
+
+*Notes*: Cencov uniqueness (Cencov 1972; Cencov 1982) applies to probability distributions on finite sets; Fisher-Rao is the unique Riemannian metric invariant under all Markov morphisms (sufficient-statistic embeddings). Wasserstein geometry is appropriate when observer profiles encode mass-transport cost rather than statistical uncertainty. The Aitchison metric is the correct choice for the brand signal space (open positive orthant) but not for the observer simplex.
 
 ### 4.4 Formal Definition and Metric Axioms
 
@@ -297,6 +320,21 @@ $$H(\gamma(1/2)) \geq H\left( \frac{w_A + w_B}{2} \right)$$
 *Proof sketch.* In the square-root embedding, the geodesic midpoint is proportional to $(\sqrt{w_{A,i}} + \sqrt{w_{B,i}})^2$, which is more uniform than the arithmetic mean $(w_{A,i} + w_{B,i})/2$ whenever the square roots are closer together than the original values -- a consequence of the concavity of the square root function. The entropy comparison follows from the Schur-concavity of Shannon entropy and the fact that the geodesic midpoint majorizes the arithmetic midpoint (Marshall, Olkin, & Arnold, 2011, Proposition 4.B.2). $\square$
 
 This result has a striking interpretation for SBT: the "intermediate" observer profile between two specialized observers is *more open-minded* (higher entropy, more balanced weights) than a naive average would suggest. An observer cohort that spans two specialized sub-populations has a richer attentional structure than the simple average of its members.
+
+```mermaid
+graph TD
+    e1["e1 (1,0,0)<br/>semiotic-only observer"] --- m12["geodesic arc e1-e2<br/>bulges toward center"]
+    e2["e2 (0,1,0)<br/>narrative-only observer"] --- m12
+    e2 --- m23["geodesic arc e2-e3<br/>bulges toward center"]
+    e3["e3 (0,0,1)<br/>ideological-only observer"] --- m23
+    e1 --- m13["geodesic arc e1-e3<br/>bulges toward center"]
+    e3 --- m13
+    ctr["interior point p<br/>balanced observer"] --- m12
+    ctr --- m23
+    ctr --- m13
+```
+
+Figure 2. Unit balls of the Aitchison metric on the 2-simplex Delta2_0. Vertices e1, e2, e3 represent single-dimension observers; geodesic arcs between them bulge inward toward the high-entropy center point p, reflecting Proposition 1 (geodesic entropy bulge).
 
 ---
 
@@ -389,6 +427,14 @@ The three-space construction rests on several assumptions that merit explicit co
 **Midpoint warping as second-order approximation.** The combined metric (Definition 3) uses the average weight $\bar{w}_k = (w_{A,k} + w_{B,k})/2$ as the warping factor. As detailed in Appendix A.1, this is a second-order approximation to the true Bishop-O'Neill geodesic integral; the error is $O(\|w_A - w_B\|^2)$ and vanishes for nearby observer profiles. The approximation defines a valid metric in its own right and inherits M1--M4 directly.
 
 **Riemannian admissibility.** As noted in Section 4.3, the Riemannian framework is adopted as a tractable first-order approximation. Bujack et al. (2022) demonstrate non-Riemannian behavior in perceptual color space; whether analogous violations occur for compositional brand perception -- where cohort aggregation may suppress individual-level effects -- is an empirical question deferred to subsequent work.
+
+**Continuous parameterization and ordinal data.** The metric spaces defined in Sections 3--5 assume that brand emission scores and observer weight profiles are continuous-valued quantities. In practice, brand perception surveys typically yield ordinal responses (e.g., 1--7 Likert scales). Direct application of the Aitchison metric to raw ordinal scores treats a step from scale point 3 to 4 as metrically equivalent to a step from 6 to 7, which is defensible only under interval-scale assumptions. When ordinal data are used, a continuous parameterization should be established via a monotone transformation (e.g., normal scores or Bayesian cumulative probit modeling) before applying the metric. Liddell and Kruschke (2018) demonstrate that treating ordinal Likert data as metric can produce substantially distorted inferences; their recommended latent-variable approach converts ordinal responses to continuous latent scores prior to geometric analysis, and the same precaution applies here. Where empirical measurement of brand profiles uses ordinal instruments, the Liddell-Kruschke caveat should be applied as a pre-processing step.
+
+**Cencov uniqueness on the open simplex versus the boundary.** Cencov's uniqueness theorem (Cencov 1982) establishes that the Fisher information metric is the unique Riemannian metric on the interior $\Delta^7_\circ$ invariant under all Markov morphisms. The theorem's domain is the open simplex; the boundary $\partial \Delta^7$ (where some $w_k = 0$) is not covered by the standard Riemannian argument because the Fisher-Rao metric tensor $g_{ij}(w) = \delta_{ij}/w_i$ diverges as $w_k \to 0$. Extending the metric to the boundary requires a limiting argument: the Fisher-Rao distance between an interior point and a boundary point is in general finite (the integral of the metric tensor along the geodesic converges), but the boundary itself has the structure of a lower-dimensional simplex face with its own induced Fisher-Rao metric. The uniqueness theorem applies to each open face separately. For the SBT application, observer profiles with $w_k = 0$ (dimension-blind observers) are psychologically meaningful but lie outside the strict domain of the metric; the convention adopted here is to restrict to $\Delta^7_\circ$ and note that boundary profiles are approached as limits.
+
+**Independence of cohort weights and brand position.** The warped product construction (Definition 3) combines the observer weight space $(\Delta^7_\circ, d_{FR})$ and the brand signal space $(\mathbb{R}^8_+, d_A)$ via a product structure that treats the two spaces as independent. This independence assumption holds when cohort weights $w$ are determined by observer-intrinsic factors (demographics, values, prior experiences) that are not themselves a function of the brand profile $s$. The assumption can fail if brand signals actively shift observer salience: a brand's strong semiotic signal may induce observers to up-weight the semiotic dimension, producing a feedback coupling between $w$ and $s$. In such cases, the simple warped product no longer correctly captures the joint distribution of $(w, s)$ in perception space. A full relaxation of this assumption -- modeling the observer weight as a stochastic process dependent on brand exposure -- is discussed in Section 10.3 under the connection to R9 (Zharnikov 2026o); the dynamic, non-ergodic extension in R6 (Zharnikov 2026j) provides the framework for incorporating such feedback.
+
+**Computational tractability.** All three metrics admit closed-form expressions. Aitchison distance between two brand profiles requires $O(8)$ operations per profile (geometric mean plus log-ratio transform) and $O(8)$ per pairwise distance. Fisher-Rao distance between two observer profiles requires $O(8)$ operations (square roots, dot product, arc-cosine). The combined warped product metric requires $O(8)$ per pair. For a portfolio of $m$ brands, the full pairwise distance matrix requires $O(m^2 \cdot 8)$ operations; for $m = 100$ brands this is approximately $80{,}000$ operations, negligible on modern hardware. More demanding computations (Fisher-Rao geodesic integration with variable warping, or the Mahalanobis-Aitchison extension of Section 10.2) are discussed in Section 10.4.
 
 ---
 
@@ -488,7 +534,7 @@ $$\mathbb{E}\left[ \|x - y\|_2^2 \right] = 2 - 2 \cdot \mathbb{E}\left[ \langle 
 
 To compute explicitly: for the uniform distribution on $S^7_+$, we can use the relation to the symmetric Dirichlet distribution on $\Delta^7$ via $w_i = x_i^2$ (the square map). The expected inner product $\mathbb{E}[\langle x, y \rangle] = \sum_i \mathbb{E}[x_i] \mathbb{E}[y_i] = 8 \cdot (\mathbb{E}[x_i])^2$ for independent $x, y$. Using the known moment $\mathbb{E}[|Z_i| / \|Z\|] = \sqrt{2/\pi} \cdot \Gamma((n+1)/2) / \Gamma(n/2) \cdot 1/\sqrt{n}$ for $n = 8$, this gives a positive value. The maximum geodesic distance on $S^7_+$ is $\pi/2$ (achieved between orthogonal unit vectors $e_i$ and $e_j$). $\square$
 
-The compression theorem has a direct implication for brand theory: **brand differentiation is geometrically harder than naive 8-dimensional counting suggests**. The non-negativity constraint (brands cannot have "negative semiotic intensity") restricts brand profiles to a small corner of the full sphere, reducing the effective "room" for differentiation. Two randomly positioned brands on $S^7_+$ are expected to be more similar than two randomly positioned points on the full sphere. This means that achieving meaningful differentiation requires deliberate strategic positioning, not merely random variation across dimensions.
+The compression theorem has a direct implication for brand theory: **brand differentiation is geometrically harder than naive 8-dimensional counting suggests**. The non-negativity constraint (brands cannot have "negative semiotic intensity") restricts brand profiles to a small corner of the full sphere, reducing the effective "room" for differentiation. Two randomly positioned brands on $S^7_+$ are expected to be more similar than two randomly positioned points on the full sphere. This means that achieving meaningful differentiation requires deliberate strategic positioning, not merely random variation across dimensions. The upper bound on the number of genuinely distinguishable brand positions within this compressed space is derived via sphere-packing arguments in Zharnikov (2026g).
 
 ### 7.3 Geodesics on $S^7_+$
 
@@ -582,7 +628,7 @@ Cafaro and Ali (2007) analyzed Jacobi field instability on negatively curved sta
 
 We apply the metric framework to five brands analyzed as case studies in Zharnikov (2026a). Each brand has been assessed on the SBT coherence framework with a grade and a designed/ambient (D/A) ratio:
 
-**Table 2: Case-Study Brand Coherence Assessment Summary.**
+**Table 3: Case-Study Brand Coherence Assessment Summary.**
 
 | Brand | Coherence Type | Grade | D/A Ratio |
 |-------|---------------|-------|-----------|
@@ -596,7 +642,7 @@ We apply the metric framework to five brands analyzed as case studies in Zharnik
 
 To demonstrate the metric, we construct canonical emission profiles based on the qualitative case-study assessments. These profiles are illustrative; the numerical values are chosen to reflect the qualitative descriptions in Zharnikov (2026a) rather than derived from empirical measurement. All values are on a [1, 10] scale representing relative signal intensity:
 
-**Table 3: Canonical Brand Emission Profiles (1–10 Scale).**
+**Table 4: Canonical Brand Emission Profiles (1–10 Scale).**
 
 | Dimension | Hermès | IKEA | Patagonia | Erewhon | Tesla |
 |-----------|--------|------|-----------|---------|-------|
@@ -623,7 +669,7 @@ The large negative value on the economic dimension ($-0.936$) reflects Hermès's
 
 Carrying out the full computation for all pairs:
 
-**Table 4: Pairwise Aitchison Brand Distances ($d_B$).**
+**Table 5: Pairwise Aitchison Brand Distances ($d_B$).**
 
 | | Hermès | IKEA | Patagonia | Erewhon | Tesla |
 |-----------|--------|------|-----------|---------|-------|
@@ -713,19 +759,27 @@ This paper provides the foundation for the Mathematical Foundations of Spectral 
 
 - **R9 (Non-ergodic perception)** (Zharnikov, 2026o): Extends the trajectory sensitivity framework to empirical brand tracking data, demonstrating that the spectral sensitivity index predicts which brands exhibit the strongest non-ergodic effects.
 
+- **R11 (Dimension justification)** (Zharnikov, 2026r): Addresses the completeness and necessity of the eight-dimensional SBT architecture, providing axiomatic and empirical justification for the specific dimensions formalized in this paper's metric construction.
+
+- **R12 (Coherence-resilience)** (Zharnikov, 2026s): Derives the coherence-resilience predictor from the non-ergodic dynamics framework, using the spectral sensitivity index defined in Section 8.3 as an input to crisis-prediction models.
+
 ### 10.4 Computational Complexity and Reference Implementation
 
 All three metrics admit closed-form expressions and are efficient to compute for $n = 8$.
 
 **Aitchison distance** ($d_{\mathcal{B}}$): Computing the ilr transform requires one geometric mean (8 multiplications, one 8th-root), 8 log operations, and a matrix-vector product with the $(7 \times 8)$ contrast matrix $\Psi$. The pairwise distance is then the Euclidean norm of a 7-vector. Total cost: $O(n)$ per profile, $O(n)$ per pair. For a portfolio of $m$ brands, pairwise distances require $O(mn)$ transform operations and $O(m^2 n)$ norm computations; for $m = 5$ and $n = 8$, this is negligible.
 
-**Fisher-Rao distance** ($d_{\mathcal{O}}$): Requires 8 square-root operations, one dot product, and one arc-cosine. Cost: $O(n)$ per pair.
+**Fisher-Rao distance** ($d_{\mathcal{O}}$): Closed-form computation via the square-root embedding requires 8 square-root operations, one dot product, and one arc-cosine. Cost: $O(n)$ per pair. When a geodesic path is needed (rather than just the distance value) -- for example, to interpolate between observer profiles or to integrate the warping function along the geodesic as in the full Bishop-O'Neill construction -- the geodesic must be evaluated at $k$ intermediate points along the great-circle arc on $S^7_+$, incurring $O(kn)$ cost. For the midpoint approximation used in Definition 3, $k = 1$ and the cost remains $O(n)$.
 
-**Combined metric** ($D$): Requires both distances plus 8 weighted squared differences. Cost: $O(n)$ per pair.
+**Combined metric** ($D$): Requires both distances plus 8 weighted squared differences. Cost: $O(n)$ per pair. For $m$ brands and $r$ observer profiles, the full observer-brand distance tensor has $O(m^2 r n)$ entries, each computed in $O(n)$ time; for $m = 100$, $r = 10$, $n = 8$ this is $8 \times 10^5$ operations.
 
-**Numerical stability.** Near-zero brand profile components ($s_k \to 0^+$) cause the clr transform to diverge; zero-replacement at $\varepsilon$ is required before applying the Aitchison metric. The ilr basis construction follows Egozcue et al. (2003) using Gram-Schmidt orthonormalization on the clr hyperplane; any orthonormal basis is equivalent for distance computation, so numerical stability of the basis choice does not affect distances.
+**Cohort-weighted distance with independent cohort weights.** When cohort weights $W$ are drawn independently of brand position (the independence assumption of Section 5.5), the expected observer-dependent distance over the cohort distribution reduces to the formula in Theorem 5(i): $\mathbb{E}_w[d_w^2(s_A, s_B)] = (1/8)\|\text{clr}(s_A) - \text{clr}(s_B)\|_2^2$. This requires only $O(n)$ per brand pair regardless of cohort size, because the expectation is available in closed form.
 
-A Python reference implementation of all metrics is available as supplementary material. The implementation uses NumPy for vectorized computation; pairwise distance matrices for a portfolio of 100 brands compute in under one millisecond on standard hardware.
+**Mahalanobis-Aitchison distance** (extension from Section 10.2): When an empirical correlation matrix $\Sigma \in \mathbb{R}^{7 \times 7}$ is estimated from data, the Mahalanobis-Aitchison distance replaces the standard Euclidean norm on ilr-coordinates with $\Sigma^{-1}$-weighted norm. Matrix inversion $\Sigma^{-1}$ costs $O(n^3) = O(8^3) = O(512)$ and is computed once per dataset. Each pairwise distance then requires a matrix-vector product ($O(n^2) = O(64)$ per pair) in addition to the ilr transform. The total cost for $m$ brands is $O(n^3 + m^2 n^2)$; for $m = 100$ this is dominated by $O(64{,}000)$ operations.
+
+**Numerical stability.** Near-zero brand profile components ($s_k \to 0^+$) cause the clr transform to diverge; zero-replacement at $\varepsilon$ is required before applying the Aitchison metric. The ilr basis construction follows Egozcue et al. (2003) using Gram-Schmidt orthonormalization on the clr hyperplane; any orthonormal basis is equivalent for distance computation, so numerical stability of the basis choice does not affect distances. The broader toolkit of Riemannian geometric statistics -- intrinsic mean estimation, principal geodesic analysis, parallel transport, and tangent-plane PCA -- is developed comprehensively in Pennec, Sommer, and Fletcher (2020) and applies directly when brand profiles or observer weights are pooled, averaged, or compared in the warped product space.
+
+**Reference implementation.** A Python reference implementation of all metrics defined in this paper is available at `sbt-papers/r1-formal-metric/code/` in the public mirror repository. The implementation uses NumPy for vectorized computation; pairwise distance matrices for a portfolio of 100 brands compute in under one millisecond on standard hardware. If the `code/` directory is not yet present, the implementation skeleton is pending upload (TBD).
 
 ---
 
@@ -919,7 +973,11 @@ Kapferer, J.-N. (2008). *The New Strategic Brand Management: Creating and Sustai
 
 Keller, K. L. (1993). Conceptualizing, measuring, and managing customer-based brand equity. *Journal of Marketing*, 57(1), 1--22.
 
+Kriegeskorte, N., & Kievit, R. A. (2013). Representational geometry: Integrating cognition, computation, and the brain. *Trends in Cognitive Sciences*, 17(8), 401--412. https://doi.org/10.1016/j.tics.2013.06.007
+
 Lancaster, K. J. (1966). A new approach to consumer theory. *Journal of Political Economy*, 74(2), 132--157.
+
+Liddell, T. M., & Kruschke, J. K. (2018). Analyzing ordinal data with metric models: What could possibly go wrong? *Journal of Experimental Social Psychology*, 79, 328--348.
 
 Liero, M., Mielke, A., & Savaré, G. (2018). Optimal entropy-transport problems and a new Hellinger-Kantorovich distance between positive measures. *Inventiones Mathematicae*, 211(3), 969--1117.
 
@@ -927,9 +985,13 @@ Marshall, A. W., Olkin, I., & Arnold, B. C. (2011). *Inequalities: Theory of Maj
 
 Martin-Fernandez, J. A., Palarea-Albaladejo, J., & Olea, R. A. (2011). Dealing with zeros. In V. Pawlowsky-Glahn & A. Buccianti (Eds.), *Compositional Data Analysis: Theory and Applications* (pp. 43--58). Wiley.
 
+Nielsen, F. (2020). An elementary introduction to information geometry. *Entropy*, 22(10), 1100. https://doi.org/10.3390/e22101100
+
 O'Neill, B. (1983). *Semi-Riemannian Geometry with Applications to Relativity*. Academic Press.
 
 Pawlowsky-Glahn, V., & Buccianti, A. (Eds.). (2011). *Compositional Data Analysis: Theory and Applications*. Wiley.
+
+Pennec, X., Sommer, S., & Fletcher, T. (Eds.). (2020). *Riemannian Geometric Statistics in Medical Image Analysis*. Academic Press.
 
 Rao, C. R. (1945). Information and the accuracy attainable in the estimation of statistical parameters. *Bulletin of the Calcutta Mathematical Society*, 37, 81--91.
 
@@ -944,6 +1006,8 @@ Viazovska, M. S. (2017). The sphere packing problem in dimension 8. *Annals of M
 Zaghen, O., Eijkelboom, F., Pouplin, A., Liu, C., Welling, M., van de Meent, J.-W., & Bekkers, E. J. (2025). Riemannian Variational Flow Matching for Material and Protein Design. *arXiv preprint* arXiv:2502.12981.
 
 Zharnikov, D. (2026a). Spectral Brand Theory: A multi-dimensional framework for brand perception analysis. Working Paper. https://doi.org/10.5281/zenodo.18945912
+
+Zharnikov, D. (2026b). The Atom-Cloud-Fact epistemological pipeline: From financial document processing to brand perception modeling. Working Paper. https://doi.org/10.5281/zenodo.18944770
 
 Zharnikov, D. (2026c). Geometric approaches to brand perception: A critical survey and research agenda. Working Paper. https://doi.org/10.5281/zenodo.18945217
 
@@ -960,6 +1024,10 @@ Zharnikov, D. (2026j). Non-ergodic brand perception: Diffusion dynamics on multi
 Zharnikov, D. (2026k). Spectral resource allocation: Demand-driven investment in multi-dimensional brand space. Working Paper. https://doi.org/10.5281/zenodo.19009268
 
 Zharnikov, D. (2026o). From order effects to absorbing states: A non-ergodic framework for multi-dimensional brand perception dynamics. Working Paper. https://doi.org/10.5281/zenodo.19138860
+
+Zharnikov, D. (2026r). Why eight? Completeness and necessity of the SBT dimensional taxonomy. Working Paper. https://doi.org/10.5281/zenodo.19207599
+
+Zharnikov, D. (2026s). Coherence type as crisis predictor: A formal derivation from non-ergodic dynamics. Working Paper. https://doi.org/10.5281/zenodo.19208107
 
 ---
 

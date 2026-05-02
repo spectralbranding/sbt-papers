@@ -9,8 +9,8 @@ meta:
       orcid: "0009-0000-6893-9231"
       affiliation: "Independent Researcher"
   doi: "10.5281/zenodo.18945522"
-  date: "2026-05-01"
-  version: "1.2.0"
+  date: "2026-05-02"
+  version: "1.3.0"
   venue: "Working Paper (Zenodo)"
   license: "CC-BY-4.0"
   abstract: >
@@ -341,3 +341,18 @@ submission_history:
     note: >
       v1.1 (2026-04-16): Added Section 10.5 (Empirical Test: Competitive
       Interference, 250 calls, null result validates fixed-geometry assumptions).
+  - venue: "Zenodo"
+    type: preprint
+    date: "2026-05-02"
+    status: pending_reupload
+    doi: "10.5281/zenodo.18945522"
+    note: >
+      v1.3.0 (2026-05-02): Phase 3 deferred-items pass. Inserted Figure 1
+      (Mermaid decomposition of E_8 kissing shells, 112 specialist + 128
+      generalist) at the kissing-number subsection; inserted Figure 2 (ASCII
+      capacity-collapse curve under correlation rho) at Proposition 5; added
+      Companion Computation Script subsection in Appendix A naming the public
+      script r4-sphere-packing/code/r4_capacity_bounds.py with seed 42 and
+      run command per PQS 37a-37e. Structural reorganization (collapse Sec 7/8,
+      LLM section move) and new-paper candidates (JND calibration of epsilon,
+      observer-dependent ellipsoidal packing) deferred per scope.

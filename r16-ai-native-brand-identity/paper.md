@@ -196,6 +196,49 @@ A supplementary experiment tested whether the structural *format* of the Brand F
 
 **Implications for the Brand Function specification.** For machine consumption, dimensional scores or their qualitative ordinal equivalents carry the identity signal; the positioning text and key signals that the full JSON format includes do not measurably improve AI comprehension fidelity. However, the full specification remains valuable for three functions that the experiment did not test: (1) human auditability --- stakeholders reviewing the Brand Function need interpretive context that bare scores cannot provide; (2) cross-observer calibration --- the positioning text anchors dimensional scores to behavioral intent, enabling the admissibility judgments described in the When Necessity Holds subsection; and (3) documentation of brand intent for governance and dispute resolution. The Brand Function specification thus serves dual audiences: for machine consumption, the dimensional scores carry the signal; for human stakeholders, the positioning text provides interpretive context. Organizations implementing Brand Functions should ensure that both layers are present, recognizing that the machine-facing and human-facing layers serve structurally different purposes.
 
+### Brand Function v0.1 Schema Sketch
+
+To ground the abstract specification concept in concrete structure, a minimal JSON-LD fragment is shown below. The fragment is illustrative, not normative: it is a v0.1 sketch that names the four required slots --- spectral profile, behavioral specifications, coherence metrics, and cryptographic attestation --- and shows how each could be encoded as an extension of the existing Schema.org and Brando Schema vocabularies. A full schema is open standards-track work; the design choices for context resolution, dimension namespacing, attestation suite negotiation, and revocation are deliberately left to the W3C Brand Identity Community Group draft proposed in the Limitations section.
+
+```json
+{
+  "@context": [
+    "https://schema.org",
+    "https://brandoschema.com/v1.3",
+    "https://w3.org/ns/credentials/v2"
+  ],
+  "@type": "BrandFunction",
+  "version": "0.1",
+  "issuer": "did:web:example-brand.com",
+  "spectralProfile": {
+    "framework": "SBT-8D",
+    "dimensions": {
+      "semiotic": 8.5, "narrative": 7.0, "ideological": 6.5,
+      "experiential": 9.0, "social": 7.5, "economic": 4.0,
+      "cultural": 8.0, "temporal": 6.0
+    }
+  },
+  "behavioralSpecifications": {
+    "returnPolicy": {"window_days": 30, "restocking_fee": 0},
+    "pricingRule": "MSRP_no_dynamic_surge",
+    "escalation": {"human_review_threshold_usd": 500},
+    "refusalConditions": ["resale_for_arbitrage", "unverified_jurisdiction"]
+  },
+  "coherenceMetrics": {
+    "target_dci": 0.15,
+    "audit_frequency": "monthly",
+    "attestor": "did:web:audit.example.org"
+  },
+  "attestation": {
+    "suite": "Ed25519Signature2020",
+    "proofValue": "z3FXQjecQp...",
+    "anchor": "vLEI:5493001KJTIIGC8Y1R17"
+  }
+}
+```
+
+The four slots map directly onto the framework's claims. The spectral profile operationalizes the eight-dimensional perception layer (Zharnikov 2026a). The behavioral specifications operationalize the WHAT layer that the Brand Function as Root Specification subsection identified as irreducible. The coherence metrics make the specification gap computable, with a target distance metric (DCI) and an audit cadence. The cryptographic attestation closes the loop with an unforgeable issuer binding and a trust anchor (here, a GLEIF vLEI legal-entity identifier). Reasonable implementations may differ in every field name and cardinality; what is normative is that all four slots be addressed.
+
 ---
 
 ## Cryptographic Signature as AI-Native Logo
@@ -210,11 +253,28 @@ Machine trust operates through a fundamentally different mechanism: cryptographi
 
 Marketing scholarship on trust has emphasized relational, commitment-based mechanisms (Morgan and Hunt 1994); the computational trust modeled here is structurally distinct --- mathematical proof rather than accumulated relational evidence --- suggesting that AI-mediated commerce requires a different theoretical vocabulary for trust than the relationship marketing tradition provides. For an AI purchasing agent making decisions with delegated authority, reputation-based trust is structurally inadequate. The agent cannot accumulate personal experience across platforms, cannot read social cues, and cannot fall back on human judgment for every decision without negating the efficiency gains of autonomous commerce. What the agent needs is verification: a mathematical proof that the entity it is interacting with is the entity it claims to be, and that its specified behavior matches a signed specification.
 
+The trust gap operates on the consumer side as well. Dietvorst, Simmons, and Massey (2015) show that consumers exhibit *algorithm aversion* --- abandoning algorithmic decision aids more readily than human ones after observing comparable error rates --- and Castelo, Bos, and Lehmann (2019) demonstrate that this aversion is task-dependent, intensifying for tasks consumers perceive as subjective rather than objective. Longoni, Bonezzi, and Morewedge (2019) document the same pattern in medical contexts: consumers resist AI-mediated decisions even when AI outperforms human experts. These findings establish that consumer willingness to delegate purchasing authority to AI agents is fragile and structurally tied to whether the consumer can verify that the agent is acting on a specification the consumer endorses. A signed Brand Function provides exactly the verification substrate that algorithm aversion research identifies as missing: rather than asking the consumer to trust the agent's opaque scoring, the agent can point to the brand's specification and the cryptographic proof that it has not been tampered with --- shifting the trust burden from the agent's mechanism to the brand's commitment.
+
 ### Cryptographic Identity Foundations
 
 The cryptographic verification proposal advanced here draws on a well-developed scholarly tradition that the marketing literature has not yet engaged. Diffie and Hellman (1976) established the mathematical foundation for public-key cryptography --- the asymmetric primitive that makes signatures unforgeable without the private key and verifiable by anyone with the public key. Cameron's (2005) Laws of Identity articulated seven design principles (user control, minimal disclosure, justifiable parties, directed identity, pluralism of operators, human integration, consistent experience) that any identity system, including the Brand Function, should satisfy --- the tiered disclosure proposal advanced in the Limitations section is an application of Cameron's minimal disclosure law to organizational brand identity. Allen's (2016) Path to Self-Sovereign Identity formalized ten SSI principles that motivated the W3C DID/VC stack the present paper builds on. Tobin and Reed's (2017) Sovrin specification provided the first architectural treatment of decentralized organizational identity --- the precedent for the GLEIF vLEI infrastructure cited above --- and frames the trust-anchor governance debate (CA-based versus DID-based attestation) that the Brand Function leaves architecture-agnostic. Schema.org's evolution (Guha, Brickley, and MacManus 2016) traces how structured data infrastructure succeeds through pragmatic adoption incentives rather than technical elegance, a precedent directly relevant to the adoption pathway predicted for the Brand Function.
 
 The Brand Function's contribution against this tradition is additive: where SSI and verifiable credentials attest *who* an organization is, the Brand Function adds a layer attesting *how* the organization specifies it will behave for a given observer type. The credential payload extends from organizational identity to behavioral specification.
+
+### Verification Flow
+
+The end-to-end verification pipeline that the Brand Function and cryptographic signature jointly enable is summarized in Figure 1. The brand publishes a signed Brand Function at a discoverable endpoint (e.g., `.well-known/brand.json`); the AI agent retrieves the specification and verifies the signature against the brand's public key (or a trust anchor such as a vLEI issuer); a successful verification produces an admissibility decision at the transaction boundary; and the action that follows can be justified to the consumer through a teleological explanation grounded in the specified brand purpose.
+
+```mermaid
+flowchart LR
+    A[Brand publishes<br/>signed Brand Function] --> B[AI agent retrieves<br/>specification]
+    B --> C{Cryptographic<br/>verification}
+    C -->|Valid signature| D[Admissibility<br/>decision]
+    C -->|Invalid or missing| E[Excluded from<br/>recommendation set]
+    D --> F[Action with<br/>teleological explanation]
+```
+
+*Figure 1: Verification flow for AI-native brand identity. The signed Brand Function is retrieved by an AI agent, verified cryptographically against a trust anchor, and used as the basis for an admissibility decision; admitted brands enter the recommendation set, and the resulting action is explainable in terms of the brand's specified purpose rather than the agent's internal scoring mechanism.*
 
 ### Existing Cryptographic Brand Infrastructure
 
@@ -415,7 +475,7 @@ Second, the six propositions are stated as universal claims but have not been te
 
 Third, the historical analysis in the Historical Pattern section draws primarily on Western European and North American examples (English hallmarks, European trademarks, American SSL). Non-Western identity verification traditions --- Chinese chops, Islamic calligraphic seals, Indian guild marks --- may follow different evolutionary patterns and deserve separate investigation. Future research should trace parallel identity technology genealogies in non-Western commercial traditions to determine whether the observer-driven discontinuity pattern holds universally or is an artifact of specific institutional conditions.
 
-The framework is also subject to several boundary conditions that constrain its applicability. First, the transition to open cryptographic brand standards assumes that dominant platform operators have incentives to adopt interoperable protocols. If Amazon, Google, or other major AI commerce platforms instead impose closed proprietary standards --- requiring brands to authenticate through platform-specific mechanisms rather than open cryptographic specifications --- the transition described here may be delayed indefinitely or may produce fragmented identity infrastructure rather than a unified standard. The SSL analogy is instructive in both directions: SSL succeeded because browser vendors adopted it collectively; a proprietary equivalent where each platform controls its own "trust" verification would produce a structurally different outcome.
+The framework is also subject to several boundary conditions that constrain its applicability. First, the Brand Function presupposes a coordination-equilibrium adoption pattern that is itself a load-bearing premise rather than a peripheral assumption. Open identity standards historically win when no single platform can monopolize the mediation layer and when the verification cost of a shared standard is lower than the integration cost of N proprietary ones. Cryptographic verification has multiple precedents along this trajectory: DNSSEC for domain-name authentication, BIMI/VMC for sender-identity attestation in mail (Cameron 2005; Allen 2016), and the GLEIF vLEI for legal-entity identity (Tobin and Reed 2017). Schema.org's adoption history is the closest analogue (Guha, Brickley, and MacManus 2016): a structured-data vocabulary that succeeded because the major search engines coordinated on a shared markup rather than fragmenting it across proprietary feeds, despite having every short-run incentive to defect. The adoption pathway predicted for the Brand Function depends on a similar equilibrium emerging in agentic commerce, in which Amazon, Google, OpenAI, Anthropic, and the ACP/UCP coalitions converge on a common verification primitive rather than each operating a closed registry. The failure mode is concrete: if a single platform locks in proprietary brand verification --- requiring brands to register, attest, and certify within its silo --- the Brand Function reduces to that platform's product specification, the verifier-side network effects accrue to the platform rather than to the brand, and the open-standards prediction in P5 is foreclosed. Whether the agentic-commerce stack lands in the open-coordination regime or the closed-platform regime is a research-agenda question, not an implementation detail; tracking this trajectory is itself a priority for future work.
 
 Second, the historical pattern traced in the Historical Pattern section draws primarily on Western European and North American examples. Non-Western markets where brand identity operates through different cultural mechanisms --- relational trust networks in East Asian commerce, community-embedded reputation systems, or state-mediated certification regimes --- may follow different evolutionary patterns, and the Brand Function's design assumes Western legal infrastructure (trademark law, contract enforcement) that does not transfer uniformly. Third, the observer-driven evolution thesis treats historical transitions as a general pattern, but each transition was path-dependent and contingent on specific institutional and technological conditions. The pattern may predict the direction of change without determining its timing, form, or completeness. Treating history as a reliable forecast mechanism risks overfitting to a small sample of transitions.
 
@@ -483,6 +543,8 @@ Bowker, Mark. *Brando Schema v1.3: A JSON-LD Vocabulary for Machine-Readable Bra
 
 Cameron, Kim. The laws of identity. *IEEE Computer*. 2005;38(7):86--87. https://doi.org/10.1109/MC.2005.236
 
+Castelo, Noah, Maarten W. Bos, and Donald R. Lehmann. Task-dependent algorithm aversion. *Journal of Marketing Research*. 2019;56(5):809--825. https://doi.org/10.1177/0022243719851788
+
 Clarke, Edmund M., Orna Grumberg, and Doron A. Peled. *Model Checking*. Cambridge, MA: MIT Press; 1999.
 
 Cover, Thomas M., and Joy A. Thomas. *Elements of Information Theory*. 2nd ed. Hoboken, NJ: Wiley-Interscience; 2006.
@@ -492,6 +554,8 @@ Davenport, Thomas, Abhijit Guha, Dhruv Grewal, and Timna Bressgott. How artifici
 De Bruyn, Arnaud, Vijay Viswanathan, Yean Shan Beh, Jürgen Kai-Uwe Brock, and Florian von Wangenheim. Artificial intelligence and marketing: Pitfalls and opportunities. *Journal of Interactive Marketing*. 2020;51:91--105. https://doi.org/10.1016/j.intmar.2020.04.007
 
 de Chernatony, Leslie. Brand management through narrowing the gap between brand identity and brand reputation. *Journal of Marketing Management*. 1999;15(1--3):157--179.
+
+Dietvorst, Berkeley J., Joseph P. Simmons, and Cade Massey. Algorithm aversion: People erroneously avoid algorithms after seeing them err. *Journal of Experimental Psychology: General*. 2015;144(1):114--126. https://doi.org/10.1037/xge0000033
 
 Diffie, Whitfield, and Martin E. Hellman. New directions in cryptography. *IEEE Transactions on Information Theory*. 1976;22(6):644--654. https://doi.org/10.1109/TIT.1976.1055638
 
@@ -540,6 +604,8 @@ Kovalenko, Yelena, Artem Nikitin, and Yana Kuzina. Value creation in the algorit
 Kozinets, Robert V. Algorithmic branding through platform assemblages: Core conceptions and research directions for a new era of marketing and service management. *Journal of Service Management*. 2022;33(3):437--452. https://doi.org/10.1108/JOSM-07-2021-0263
 
 Loken, Barbara, Ivan Ross, and Ronald L. Hinkle. Consumer "confusion" of origin and brand similarity perceptions. *Journal of Public Policy & Marketing*. 1986;5(1):195--211.
+
+Longoni, Chiara, Andrea Bonezzi, and Carey K. Morewedge. Resistance to medical artificial intelligence. *Journal of Consumer Research*. 2019;46(4):629--650. https://doi.org/10.1093/jcr/ucz013
 
 Lyu, Yougang, Xiaoyu Zhang, Lingyong Yan, Maarten de Rijke, Zhaochun Ren, and Xiuying Chen. DeepShop: A benchmark for deep research shopping agents. Working Paper. arXiv:2506.02839; 2025.
 
