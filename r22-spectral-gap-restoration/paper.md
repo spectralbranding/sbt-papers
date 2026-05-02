@@ -124,13 +124,13 @@ The spectral gap in low-regime cells reaches 10% of its initial value at a mean 
 
 *Stat 1.* Regime-specific terminal spectral gap: mean 1.10 (high) vs mean .02 (low); ratio 52x across all 32 cohort-dimension cells (seed 2026, 240 months).
 
-*Stat 2.* IRF half-life contrast: 1.4 months (high regime, fast recovery) vs 13.1 months (low regime, slow collapse); ratio 9.3x across 32 cells per regime.
+The IRF half-life contrast confirms the regime interpretation: high-regime cells equilibrate in 1.4 months while low-regime cells persist for 13.1 months — a 9.3x ratio across 32 cells per regime (Stat 2: 1.4 vs 13.1 months). Mean spectral gap collapse to 10% of initial value occurs at month 46 in the low regime, consistent with a pre-conviction lead time of 2–18 months depending on the conviction-measurement horizon (Stat 3). The μ/λ ratio for the high regime is 45 by design; the simulation recovers a terminal gap ratio of 52x between regimes, confirming that the threshold correctly separates preserving from collapsing dynamics at these parameter values (Stat 4). Cosine drift from initial centroid is low in both regimes (.023 high, .027 low), confirming that centroid-level MDS maps would not detect the regime difference; spectral gap dynamics — not centroid positions — are the diagnostic (Stat 5).
 
-*Stat 3.* Mean spectral gap collapse to 10% of initial value occurs at month 46 in the low regime, consistent with a pre-conviction lead time of 2–18 months depending on the conviction-measurement horizon.
+Figure 2 traces the parameter sweep across mu/lambda ∈ [0.5, 2.0] — N = 2,000 sample paths per ratio value, λ = .10 fixed, μ = ratio × λ, t = 100 equilibration steps. The bifurcation at ratio = 1.0 (μ = λ) is a sharp demarcation: mean terminal spectral gap collapses to zero as the ratio crosses below 1.0 and rises monotonically in the recoverable regime (ratio > 1.0). The curve confirms that the threshold at μ = λ is a genuine bifurcation rather than a smooth gradient, as predicted by the sign-flip condition on the Lyapunov exponent.
 
-*Stat 4.* μ/λ ratio for the high regime = 45 (by design); the simulation recovers a terminal gap ratio of 52x between regimes, confirming that the threshold correctly separates preserving from collapsing dynamics at these parameter values.
+![Figure 2: Bifurcation diagram of the spectral gap](figures/figure2_bifurcation.png)
 
-*Stat 5.* Cosine drift from initial centroid is low in both regimes (.023 high, .027 low), confirming that centroid-level MDS maps would not detect the regime difference; spectral gap dynamics — not centroid positions — are the diagnostic.
+Figure 2: Bifurcation diagram of the spectral gap as a function of mu/lambda ratio. The threshold mu equals lambda separates the recoverable (mu > lambda) and absorbing (mu < lambda) regimes; the spectral gap collapses to zero in the absorbing regime.
 
 ***Illustrative Dove Calibration***
 
@@ -138,13 +138,30 @@ The Dove design parameters — λ ≈ .10 per year and μ ≈ 4.50 per year — 
 
 Real continuous tracking data are required to confirm these estimates with confidence intervals. The GRP/SOV proxy from Unilever Annual Reports (Unilever plc 2003–2023) and the Hanssens and Pauwels (2016) bridge between GRP and perception-rate units are the appropriate future estimation inputs. This calibration should be treated as an order-of-magnitude illustration; the simulation's role is to verify that the threshold predicts the correct regime structure at these parameter values, not to substitute for data-based estimation.
 
-***Companion Computation Script***
+***Companion Computation Scripts***
 
-The simulation is fully reproducible from the companion script at https://github.com/spectralbranding/sbt-papers/tree/main/r22-spectral-gap-restoration/monte_carlo_simulation.py. Run command (`uv run --with statsmodels --with numpy --with scipy python3 monte_carlo_simulation.py`) and fixed seed (2026) are documented in the script docstring. All numerics reported in this section are reproducible from this script without modification.
+The Monte Carlo simulation (Table 1) is fully reproducible from `monte_carlo_simulation.py` at https://github.com/spectralbranding/sbt-papers/tree/main/r22-spectral-gap-restoration/code/. Run command (`uv run --with statsmodels --with numpy --with scipy python3 monte_carlo_simulation.py`) and fixed seed (2026) are documented in the script docstring. The bifurcation diagram (Figure 2) is produced by `plot_bifurcation_curve.py` in the same directory; run command: `uv run python plot_bifurcation_curve.py` (numpy + matplotlib; seed 42; outputs `figures/figure2_bifurcation.png`). All numerics and figures in this section are reproducible from these scripts without modification.
 
 **Discussion**
 
 ***The μ–λ Residual as Brand Health Dashboard***
+
+```mermaid
+quadrantChart
+    title Brand Health under Spectral Leakage and Corrective Emission
+    x-axis Low lambda --> High lambda
+    y-axis Low mu --> High mu
+    quadrant-1 Sustainable building under turbulence
+    quadrant-2 Resilient hold
+    quadrant-3 Stable but fragile audit coherence
+    quadrant-4 Absorbing collapse risk pulse intervention
+    Dove Purpose-Aligned: [0.30, 0.65]
+    Dove Skeptic-Critic: [0.75, 0.20]
+```
+
+Figure 1: The mu-lambda quadrant translates the threshold inequality into a four-state managerial action map. Brands cross from the recoverable to the absorbing basin when the spectral leakage rate exceeds the corrective emission rate at the dominant cohort's detection scale.
+
+*Notes*: Dove cohort coordinates are illustrative, based on the Numerical Illustration design values (lambda = .10/year, mu = 4.50/year for Purpose-Aligned; mu = -.50/year for Skeptic-Critic). Axis positions are normalized to [0, 1] relative to the parameter range explored in Figure 2.
 
 The threshold inequality converts a qualitative intuition — "strong brands recover" — into an empirically estimable condition. The μ–λ residual (the difference between corrective emission rate and leakage rate) is a leading indicator of cohort separability health. When the residual is large and positive, the brand is in a high-resilience regime; it can sustain a coherence shock and return to the pre-shock eigenspace configuration within a recovery horizon bounded by 1/(μ − λ). When the residual is near zero or negative, the brand is approaching the boundary of the recoverable basin, and preemptive intervention — increasing μ through emission amplification, or decreasing λ through coherence-tightening of existing emissions — is required before the shock, not after.
 
@@ -162,6 +179,19 @@ Where Naik and Raman (2003) modeled scalar brand goodwill as a latent state evol
 
 The mixing-time result of Diaconis–Stroock (1991) provides a practical campaign-duration lower bound: τ_mix ≤ C/λ* is the minimum time any corrective campaign must run before the system equilibrates to the corrected state. Campaigns shorter than τ_mix are guaranteed to be insufficient regardless of intensity. Ataman, van Heerde, and Mela (2010) provide cross-brand calibration anchors — total advertising elasticity of .13 and price-discount elasticity of .04 across 70 brands in 25 categories — that ground the magnitude of activation-induced μ effects relative to price-promotion confounds.
 
+Table 2: Comparative Frameworks for Brand-Distinctiveness Dynamics.
+
+| Framework | Unit of analysis | Static vs dynamic | Cohort-localizable? | Threshold form | Estimable from tracking data? | Lead time on collapse? |
+|---|---|---|---|---|---|---|
+| Romaniuk-Sharp (2016) distinctive assets | Brand-level asset | Dynamic (decay) | No (brand aggregate) | None (qualitative maintenance rule) | Yes (DBA link-score surveys) | No |
+| Keller (1993, 2001) CBBE resonance | Brand-consumer relationship | Static (cross-section) | Partially (cohort-level) | None (qualitative resonance stages) | Partially (tracking surveys) | No |
+| Aaker (1991) brand resilience | Equity dimensions | Static | No (brand aggregate) | None (qualitative) | Partially (equity surveys) | No |
+| Dekimpe-Hanssens (1995, 1999) persistence | Brand-aggregate sales/awareness | Dynamic (unit root) | No (brand aggregate) | Evolving vs stationary (statistical) | Yes (sales panel data) | No |
+| Brakus, Schmitt, Zarantonello (2009) brand experience | Multi-dimensional experience | Static | Partially (cohort) | None | Yes (experience scale surveys) | No |
+| *This paper* mu > lambda threshold | Cohort-level perception | Dynamic | Yes (cohort-dimension cell) | Closed-form mu > lambda | Yes (via DBA decay + activation rates) | 6–18 months |
+
+*Notes*: The mu greater-than lambda threshold is the only framework that is simultaneously dynamic, cohort-localizable, and supplies a closed-form lead-time prediction. DBA = Distinctive Brand Asset. Cohort-localizable means the diagnostic can be computed separately for distinct observer cohorts within a single brand's perception cloud.
+
 ***Extending Almost-Invariant Set Methods to Marketing***
 
 The Froyland–Padberg (2009) transfer-operator framework has been applied to fluid dynamics, atmospheric science, and oceanography to identify coherent structures that persist across time. This paper is the first to apply these methods to brand perception dynamics. The almost-invariant set representation captures a property that neither MDS-based perceptual maps nor VECM models explicitly represent: the finite lifetime of a cohort's perceptual stability under perturbation, bounded by T_sep ≤ C_F/(λ − μ). For marketing applications, this means that "cohort stability" is not a binary property but a rate-limited one: every cohort-dimension cell has a separability lifetime that can be estimated from λ and μ.
@@ -178,6 +208,16 @@ R22 is one paper in a cumulative SBT theoretical program. The program arc runs: 
 
 The OST Level 1 acceptance audit (Zharnikov 2026i) — the organizational test specifying whether brand emissions meet identity criteria — maps directly to the threshold framework. An acceptance audit is an operator-theoretic projection: it tests whether each emission falls within the invariant subspace of the brand function. The audit rate must exceed λ to maintain organizational identity under environmental drift. Under high-disruption conditions, the audit rate must scale with environmental volatility, not with internal organizational cycles.
 
+*Managerial Implications*
+
+The μ > λ threshold is not only a theoretical condition — it is a two-lever diagnostic that brand managers can estimate from existing data and act on before a coherence shock becomes visible in aggregate tracking.
+
+*Diagnostic.* The leakage rate λ is estimable from passive-drift windows in longitudinal brand tracking data: the rate at which distinctive asset link scores decay in the absence of active investment follows the DBA decay logic of Romaniuk and Sharp (2016). Brand managers running routine tracking surveys can compute λ as the annual slope of declining link scores during low-investment periods. Where tracking panels are unavailable, Clarke (1976) calibrated benchmarks — λ ∈ [.07, .33] per year for established FMCG brands — provide a prior. The corrective emission rate μ is estimable from GRP/SOV data using the activation-rate framework of Mela, Gupta, and Lehmann (1997): their finding that sustained advertising builds brand equity while sustained promotion erodes it maps directly to μ-building versus λ-elevating actions. The Hanssens and Pauwels (2016) bridge between GRP-weighted reach and perception-rate units converts media plan data into a μ estimate without requiring a tracking panel.
+
+*Monitoring.* Once λ and μ are estimated, the μ–λ residual should be tracked on a rolling basis — quarterly for high-velocity categories, annually for slower-moving brand contexts. When the residual trends negative (μ approaching λ from above), the brand is approaching the boundary of the recoverable basin. The τ_mix lead time from Corollary 1 — τ_mix ≤ C/λ, or approximately 10–30 months for λ ∈ [.07, .33] — defines the intervention window: the interval from first detection of a negative residual to the onset of irreversible separability loss. The 6–18 month window from Corollary 3 is the sub-interval within τ_mix during which spectral gap collapse precedes observable conviction reorientation in aggregate tracking. Managers who wait for conviction reorientation to appear in tracking data have already lost 6–18 months of corrective capacity.
+
+*Intervention.* Two levers are available: increase μ by amplifying eigenvector-aligned emissions, or decrease λ by tightening coherence across existing brand communications. When the brand has already crossed into the absorbing regime (μ < λ for a period exceeding τ_mix), neither lever operates smoothly — Corollary 1 predicts that recovery requires a pulse intervention (Corollary 2) rather than steady-state rebalancing. Pulse design should concentrate activation within intervals shorter than τ_mix to arrest spectral gap decay before collapse completes. The Urde (2013) Corporate Brand Identity Matrix provides the organizational diagnostic for identifying off-eigenvector emissions that inflate λ regardless of spending intensity. A longitudinal coherence audit — comparing each campaign asset's dimensional profile against the dominant eigenvector signature of the target cohort — should be run prior to any activation intended to raise μ. Ataman, van Heerde, and Mela (2010) provide cross-brand calibration anchors for the expected magnitude of μ effects from advertising investment relative to price-promotion confounds.
+
 ***Limitations***
 
 The Monte Carlo demonstration is an exploratory illustration of the threshold's predictive properties under Dove-calibrated parameters, not a confirmatory test against observed data. The confirmatory estimation of λ and μ from real Dove longitudinal tracking data, with confidence intervals, is conducted in a companion paper (Zharnikov 2026p); the present paper's contribution is the derivation of the sufficient condition and its demonstration under simulated parameters. The Dove λ and μ values are author-proposed calibrations, not statistically estimated from a continuous tracking panel; confidence intervals on these parameters are unavailable.
@@ -188,7 +228,7 @@ The GRP-to-perception mapping is assumed linear in the μ estimator. Erdem and K
 
 The self-adjoint assumption is most defensible in the steady-state regime; coherence shocks that produce asymmetric cross-cohort flows may violate it, in which case the Davies (2007) pseudospectral treatment in the Mathematical Appendix provides the appropriate extension.
 
-Calibration parameters reflect FMCG-scale brands; λ and μ will differ materially for luxury, B2B, and platform contexts where perception dynamics operate at different timescales. The operator-theoretic abstraction may be over-specified for routine marketing applications. The threshold inequality is a sufficient condition from functional analysis; it does not prescribe a unique estimation procedure. Multiple approaches (VECM-based, MDS-based, cohort-drift-based) can in principle estimate λ and μ, and they will not in general agree exactly. Derivation of the bifurcation curve showing terminal spectral gap as a function of the μ/λ ratio across a parameter sweep — demonstrating that the threshold at μ = λ is a sharp demarcation rather than a smooth gradient — is deferred to the companion empirical paper (Zharnikov 2026p).
+Calibration parameters reflect FMCG-scale brands; λ and μ will differ materially for luxury, B2B, and platform contexts where perception dynamics operate at different timescales. The operator-theoretic abstraction may be over-specified for routine marketing applications. The threshold inequality is a sufficient condition from functional analysis; it does not prescribe a unique estimation procedure. Multiple approaches (VECM-based, MDS-based, cohort-drift-based) can in principle estimate λ and μ, and they will not in general agree exactly.
 
 **Conclusion**
 
