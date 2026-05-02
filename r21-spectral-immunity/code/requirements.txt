@@ -1,0 +1,5 @@
+# R21 Spectral Immunity — Computation Script Dependencies
+# Stub mode requires no external packages (Python 3.12 stdlib only).
+# Full mode (--full flag) requires:
+pandas>=2.2.0
+scipy>=1.13.0
