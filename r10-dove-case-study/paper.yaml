@@ -13,11 +13,12 @@ metadata:
       corresponding: true
   citation_key: "2026p"
   doi: "10.5281/zenodo.19139258"
-  date: "2026-05-01"
-  version: "2.4.0"
+  date: "2026-05-02"
+  version: "2.5.0"
   status: editable_post_rejection
-  word_count: 10482
+  word_count: 10847
   ref_count: 50
+  figure_count: 1
   license: "CC-BY-4.0"
   abstract: >
     Purpose campaigns are evaluated by aggregate metrics that cannot distinguish structural
@@ -202,3 +203,9 @@ submission_history:
       2026-05-01: venue retargeted to JBM; claims bounded; single-case acknowledgment
       (Eisenhardt 1989; Yin 2018) added; 4 citation corrections (Hydock, Guha/Korschun,
       Anisimova, Reczek removed); DCI scale unified to decimal. M13 test re-run pending.
+      Phase 3 deferred-items pass v2.5.0 2026-05-02: Figure 1 Dove longitudinal trajectory
+      added (Mermaid flowchart, ASCII-only, AMA caption above + Notes below per PQS) at
+      Method section transition. Other deferred items rejected: 4-case redesign (locked
+      to Layer 2 Option A); inter-rater reliability + coordinate-invariance (require new
+      empirical work); conviction function mathematization (formal mech belongs to 2026a/2026j,
+      not empirical case paper); self-cite reduction (corpus-design conflict — load-bearing).

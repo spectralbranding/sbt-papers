@@ -9,8 +9,8 @@ meta:
       orcid: "0009-0000-6893-9231"
       affiliation: "Independent Researcher"
   doi: "10.5281/zenodo.19208107"
-  date: "2026-01-01"
-  version: "1.0"
+  date: "2026-05-02"
+  version: "1.1"
   venue: "Working Paper (Zenodo)"
   license: "CC-BY-4.0"
   keywords:
@@ -26,11 +26,14 @@ claims:
   - id: "D1"
     type: definition
     statement: >
-      A signal-driven drift field alpha is rho-isotropic if, for all pairs of dimensions
-      i and j: |alpha_i/alpha_j - 1| <= rho. Perfect isotropy corresponds to rho = 0
-      (equal drift on all dimensions). Ecosystem-coherent brands (Hermes) produce
-      approximately rho-isotropic drift fields.
-    formal: "|alpha_i/alpha_j - 1| <= rho for all i, j"
+      A signal-driven drift field alpha is (alpha_min, k)-robust if at least k of the
+      eight dimensions satisfy alpha_i >= alpha_min > 0. The active set
+      A = {i : alpha_i >= alpha_min} has cardinality |A| >= k. Robustness is highest
+      when k = 8: every dimension receives drift above the floor, leaving no
+      vulnerability corridor. Ecosystem-coherent brands (Hermes) produce
+      (alpha_min, 8)-robust drift fields at the working floor alpha_min = gamma * 3.0
+      * h(x_i^*).
+    formal: "|A| >= k where A = {i : alpha_i >= alpha_min}"
     testable: false
     tested_in_paper: false
     status: not_tested

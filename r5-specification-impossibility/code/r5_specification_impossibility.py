@@ -14,9 +14,13 @@ Reproduces all numerical values cited in the paper:
   - Table 5:  Fork depth, shared/private dimensions, and private specifications
   - Table 6:  Per-level information load under cascade at γ = 0.5
   - Table 7:  Comparison of NK landscape and specification coverage frameworks (no numerics)
+  - Table 8:  Fork × cascade interaction surface — d_private_eff(k, γ)
+  - Table 9:  Coverage ceiling — fraction of [0,1]^48 covered by M templates
   - In-text:  V_48(0.1) ≈ 1.38 × 10⁻⁶⁰, d_eff = 15.75, H_48 = 159.4 bits,
               CR = 3.04, cascade sensitivity table, fork-cascade interaction,
-              information loss of 5-dimension template projection, Corollary 1.1
+              information loss of 5-dimension template projection, Corollary 1.1,
+              Proposition 1 γ-coherence prediction
+  - Figure 3 data: log-log volume-collapse curve V_n(0.5) for n ∈ {2..48}
 
 Random seed: 42 (no stochastic computations — all closed-form; seed included for
              reproducibility policy compliance)
@@ -367,11 +371,6 @@ def intext_values():
     print("\n  All in-text assertions PASSED.")
 
 
-# ---------------------------------------------------------------------------
-# Specification entropy per level (Table 6 summary)
-# ---------------------------------------------------------------------------
-
-
 def specification_entropy_across_levels():
     """Verify specification entropy values cited in §6.1 and §6.2."""
     print("\n--- Specification Entropy Verification ---")
@@ -398,6 +397,125 @@ def specification_entropy_across_levels():
 
 
 # ---------------------------------------------------------------------------
+# Specification entropy per level (Table 6 summary)
+# ---------------------------------------------------------------------------
+
+
+# ---------------------------------------------------------------------------
+# Table 8 — Fork × Cascade Interaction Surface
+# ---------------------------------------------------------------------------
+
+
+def fork_cascade_d_private_eff(
+    k: int, gamma: float, n_levels: int = 6, dims_per_level: int = 8
+) -> float:
+    """Effective private dimensionality for a fork at level k under cascade γ.
+
+    d_private_eff(k, γ) = sum_{i=k}^{L-1} dims_per_level · (1−γ)^i
+                       = dims_per_level · (1−γ)^k · (1 − (1−γ)^(L−k)) / γ.
+
+    Special case γ = 0 returns the unconstrained private dimensionality.
+    """
+    if gamma == 0.0:
+        return float((n_levels - k) * dims_per_level)
+    return (
+        dims_per_level
+        * ((1.0 - gamma) ** k)
+        * (1.0 - (1.0 - gamma) ** (n_levels - k))
+        / gamma
+    )
+
+
+def table8_fork_cascade_surface():
+    """Reproduces Table 8 — d_private_eff over (k, γ) grid."""
+    print("\n--- Table 8: Fork × Cascade Interaction Surface (d_private_eff) ---")
+    ks = [0, 1, 2, 3, 4, 5]
+    gammas = [0.0, 0.3, 0.5, 0.7, 0.9]
+    header = "  k\\γ  " + "  ".join(f"γ={g:.1f}" for g in gammas)
+    print(header)
+    results = {}
+    for k in ks:
+        row = [fork_cascade_d_private_eff(k, g) for g in gammas]
+        cells = "  ".join(f"{v:6.2f}" for v in row)
+        print(f"  k={k}    {cells}")
+        results[k] = dict(zip(gammas, row))
+    # Anchor checks (paper-cited values)
+    assert abs(fork_cascade_d_private_eff(3, 0.5) - 1.75) < 1e-6
+    assert abs(fork_cascade_d_private_eff(0, 0.5) - 15.75) < 1e-6
+    assert abs(fork_cascade_d_private_eff(0, 0.0) - 48.0) < 1e-6
+    return results
+
+
+# ---------------------------------------------------------------------------
+# Table 9 — Coverage ceiling: fraction of [0,1]^48 covered by M templates
+# ---------------------------------------------------------------------------
+
+
+def table9_coverage_ceiling(epsilon: float = 0.1):
+    """Maximum fraction of [0,1]^48 coverable by M non-overlapping balls."""
+    print(
+        f"\n--- Table 9: Coverage Ceiling at ε = {epsilon} (fraction covered by M templates) ---"
+    )
+    v48 = ball_volume(48, epsilon)
+    Ms = [1, 1e3, 1e6, 1e10, 1e20, 1e40, 1e57]
+    results = {}
+    for M in Ms:
+        cov = M * v48
+        print(f"  M = 10^{int(math.log10(M)):>2}  coverage = {cov:.3e}")
+        results[M] = cov
+    # Sanity check: 10^57 templates approach 1% coverage
+    assert results[1e57] > 1e-3
+    assert results[1e57] < 1e-1
+    return results
+
+
+# ---------------------------------------------------------------------------
+# Figure 3 data — Volume-collapse curve V_n(0.5) for n in {2..48}
+# ---------------------------------------------------------------------------
+
+
+def figure3_volume_curve():
+    """Tabulate V_n(0.5) for n=2..48 (data backing Figure 3 in paper)."""
+    print("\n--- Figure 3 data: Inscribed-ball volume V_n(0.5), n = 2 .. 48 ---")
+    results = {}
+    for n in range(2, 49):
+        v = ball_volume(n, 0.5)
+        results[n] = v
+    # Print at a few anchor points
+    for n in [2, 4, 8, 16, 24, 32, 40, 48]:
+        print(f"  n = {n:>2}: V_n(0.5) = {results[n]:.3e}")
+    # Monotone decay check
+    for n in range(3, 49):
+        assert results[n] < results[n - 1], f"non-monotone at n={n}"
+    return results
+
+
+# ---------------------------------------------------------------------------
+# Proposition 1 — γ-coherence empirical prediction
+# ---------------------------------------------------------------------------
+
+
+def proposition1_gamma_prediction():
+    """Closed-form coherence ratio R(γ) = d_eff(γ) / 48.
+
+    Falsifiable prediction: organizations whose measured cross-level coherence
+    (operationalized as 1 − normalized cross-level variance of activation
+    parameters) tracks R(γ) within tolerance ±.10 over the γ ∈ [0, 0.9] range.
+    """
+    print("\n--- Proposition 1: γ-Coherence Prediction Schedule ---")
+    gammas = [0.0, 0.1, 0.2, 0.3, 0.5, 0.7, 0.9]
+    schedule = {}
+    for g in gammas:
+        d_eff = cascade_d_eff(g)
+        coherence = 1.0 - d_eff / 48.0
+        schedule[g] = coherence
+        print(f"  γ = {g:.1f}: predicted coherence ratio = {coherence:.3f}")
+    # Anchor: γ=0 → 0 coherence; γ=1 → coherence = 1 − 8/48 = .833
+    assert abs(schedule[0.0] - 0.0) < 1e-9
+    return schedule
+
+
+# ---------------------------------------------------------------------------
 # Main
 # ---------------------------------------------------------------------------
 
@@ -415,6 +533,10 @@ def main():
     table4_cascade_sensitivity()
     table5_fork_analysis()
     table6_information_load()
+    table8_fork_cascade_surface()
+    table9_coverage_ceiling()
+    figure3_volume_curve()
+    proposition1_gamma_prediction()
     specification_entropy_across_levels()
     intext_values()
 

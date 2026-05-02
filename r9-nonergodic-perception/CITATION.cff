@@ -7,8 +7,8 @@ authors:
     affiliation: "Independent Researcher"
     orcid: "https://orcid.org/0009-0000-6893-9231"
 title: "From Order Effects to Absorbing States: A Non-Ergodic Framework for Multi-Dimensional Brand Perception Dynamics"
-version: 1.0.0
-date-released: 2026-03-20
+version: 1.1.0
+date-released: 2026-05-02
 url: "https://doi.org/10.5281/zenodo.19138860"
 repository-code: "https://github.com/spectralbranding/sbt-papers"
 identifiers:
@@ -16,12 +16,13 @@ identifiers:
     value: "10.5281/zenodo.19138860"
     description: "Zenodo archive (primary)"
 keywords:
+  - belief updating
+  - absorbing states
   - non-ergodicity
+  - order effects
   - brand perception
   - path dependence
-  - order effects
   - brand tracking
-  - belief updating
   - Spectral Brand Theory
 license: MIT
 type: article

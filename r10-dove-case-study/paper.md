@@ -70,6 +70,26 @@ SBT's eight-dimension model relates to Brakus, Schmitt, and Zarantonello's (2009
 
 ---
 
+Figure 1: Dove longitudinal trajectory -- dimensional activation events, revenue milestones, and cultural decay (2003-2026).
+
+```mermaid
+flowchart LR
+  A["2003<br/>Pre-campaign<br/>Ideological null<br/>Revenue ~$2B"] --> B["2004-2006<br/>Real Beauty launch<br/>Ideological null-to-8.0<br/>Cultural 4.0-to-8.5<br/>Revenue ~$2B-to-$4B"]
+  B --> C["2013<br/>Real Beauty Sketches<br/>Narrative 8.5 / Ideological 9.0<br/>Cultural peak 8.0<br/>+6 percent sales lift"]
+  C --> D["2017<br/>Facebook racial controversy<br/>Ideological dark-signal event<br/>Skeptic-Critic cohort growth"]
+  D --> E["2023-2026<br/>Body positivity normative<br/>Cultural decayed to 5.5<br/>Experiential refresh<br/>EUR 6B turnover"]
+
+  style A fill:#f9f9f9,stroke:#666
+  style B fill:#d4f1d4,stroke:#2a7a2a
+  style C fill:#a8e0a8,stroke:#2a7a2a
+  style D fill:#f5d4d4,stroke:#a83232
+  style E fill:#e8e8b8,stroke:#7a7a2a
+```
+
+*Notes*: Green nodes mark positive dimensional activation phases; red nodes mark dark-signal events; yellow node marks normative-absorption phase with eroded counter-cultural distinctiveness. Revenue figures from Unilever Annual Reports (2003-2023). Dimension scores from Table 1.
+
+---
+
 ## Method: Spectral Case Analysis
 
 This paper employs spectral case analysis -- the systematic application of SBT's multi-dimensional framework to a focal brand using longitudinal data. The method involves five steps: (1) signal decomposition across eight dimensions at defined time points; (2) cohort identification from academic perception studies; (3) perception cloud reconstruction modeling how each cohort transforms brand emissions into brand conviction; (4) coherence audit classifying the brand's coherence type at each time point; and (5) financial mapping correlating dimensional activation events with revenue trajectories.
