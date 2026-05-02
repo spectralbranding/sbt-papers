@@ -36,7 +36,7 @@ This paper derives explicit non-asymptotic bounds on both phenomena under the un
 
 2. **Methodological implication for discrete versus continuous cohort representation** in moderate-dimensional perceptual spaces. The bounds quantify the information loss from rasterized cohort labels relative to vectorized observer profiles, and identify $n \approx 5$ as the dimensionality threshold beyond which discrete assignment systematically misrepresents a majority of the population.
 
-The paper proceeds as follows. Section 2 recalls the relevant geometry (with $\Delta^7$ and the Fisher-Rao metric established in Zharnikov 2026d). Section 3 develops concentration of measure on the simplex. Section 4 proves the boundary fuzziness theorems. Section 5 presents Monte Carlo verification. Section 6 develops the implications for branding practice. Section 7 connects the results to non-ergodic dynamics. Section 8 extends the analysis to concentrated Dirichlet$(\alpha,\ldots,\alpha)$ distributions, showing that the uniform case is the worst case and that real populations have sharper boundaries. Section 9 discusses limitations. Section 10 concludes.
+The paper proceeds as follows. Section 2 recalls the relevant geometry (with $\Delta^7$ and the Fisher-Rao metric established in Zharnikov 2026d) and provides a cross-paper geometry summary (Table 8). Section 3 develops concentration of measure on the simplex. Section 4 proves the boundary fuzziness theorems, including a schematic of simplex mass concentration (Figure 1) and a plot of the boundary volume fraction curve (Figure 2). Section 5 presents Monte Carlo verification. Section 6 develops the implications for branding practice. Section 7 connects the results to non-ergodic dynamics. Section 8 extends the analysis to concentrated Dirichlet$(\alpha,\ldots,\alpha)$ distributions, showing that the uniform case is the worst case and that real populations have sharper boundaries. Section 9 discusses limitations. Section 10 concludes.
 
 ---
 
@@ -69,6 +69,21 @@ Given $m$ observer profiles $w_1, \ldots, w_m \in \Delta^7$, a **$k$-partition**
 $$\text{WCSS}(k) = \sum_{j=1}^k \sum_{w \in C_j} d_{FR}(w, \mu_j)^2$$
 
 where $\mu_j$ is the Frechet mean of cluster $C_j$ in the Fisher-Rao metric. The "elbow method" and silhouette scores are commonly used to select $k$, but these depend on arbitrary thresholds and are sensitive to initialization (Arthur & Vassilvitskii, 2007). The present paper shows that this sensitivity is not a failure of particular algorithms but a consequence of the geometry of $\Delta^7$.
+
+### 2.4 Geometric Program of the SBT Foundational Papers
+
+The present paper is the third in a sequence of papers that together constitute the geometric program of SBT. Each addresses a distinct geometric structure on the brand-observer space; Table 8 provides a reader's map.
+
+Table 8: Cross-Paper Geometry Summary for SBT Foundational Papers.
+
+| Paper | Geometric structure | Main quantity | Headline result |
+|-------|--------------------|--------------|-----------------|
+| 2026d (R1) Metric Framework | Aitchison metric on $\mathbb{R}^8_+$; Fisher-Rao metric on $\Delta^7$; warped product on $\mathcal{B} \times \mathcal{O}$ | Pairwise brand distances $d_\mathcal{B}(s_A, s_B)$ | Hermès-Tesla distance 1.76; Erewhon-Hermès .88; Fisher-Rao justification via Cencov's uniqueness theorem |
+| 2026e (R2) Spectral Metamerism | Null space of projection $\phi: \mathbb{R}^8_+ \to \mathbb{R}^1$; JL distortion bound | Metameric pair fraction; null-space dimension 7 | 31--39% of brand pairs metameric under random projection; 11.6% information retention; distortion $\geq$ 152% for $N = 10$ |
+| 2026f (R3) Cohort Boundaries (this paper) | Concentration of measure on $\Delta^7$; Brunn-Minkowski peeling | Boundary volume fraction $\text{BVF}(8, \delta)$; distance contrast ratio $R_8$ | $\text{BVF}(8, .10) \geq$ 52.2%; contrast ratio 7.46; majority-near-boundary under Dirichlet-uniform null |
+| 2026g (R4) Sphere Packing | $E_8$ root lattice in $\mathbb{R}^8$; kissing number; packing density | Maximum distinguishable brand count $N_{\max}$ | $\leq$ 240 non-overlapping brand positions in spectral space at standard resolution; dual constraint to R3's cohort capacity bound |
+
+*Notes*: Papers are ordered by geometric layer, from metric (R1) through projection (R2) through measure concentration (R3) through packing capacity (R4). Together they establish the geometric foundations of the SBT framework. R3's majority-near-boundary result and R4's packing bound are dual constraints: R4 bounds how many brands are distinguishable in $\mathcal{B}$; R3 bounds how many cohort positions are simultaneously resolvable in $\mathcal{O}$.*
 
 ---
 
@@ -225,6 +240,28 @@ where $j(x)$ is the index of the region containing $x$, $d$ denotes Euclidean di
 
 ### 4.2 Boundary Fraction Theorem for Convex Partitions
 
+The following schematic illustrates the geometry formalized in Theorem 2: the simplex $\Delta^7$ projected to two dimensions, with mass concentrated near the boundary of any convex partition.
+
+```mermaid
+graph TD
+    subgraph SIMPLEX["Probability simplex Delta-7<br/>observer weight space"]
+        CTR["Centroid<br/>w = (1/8 ... 1/8)<br/>equal-weight observer"]
+        INNER["Interior region<br/>crisp assignment<br/>BVF = 47.8%"]
+        BZ["Boundary zone<br/>V boundary delta=0.10<br/>BVF at least 52.2%"]
+        CORN1["Semiotic-dominant<br/>corner observer"]
+        CORN2["Economic-dominant<br/>corner observer"]
+        CORN3["Ideological-dominant<br/>corner observer"]
+    end
+    CTR --- INNER
+    INNER --- BZ
+    BZ --- CORN1
+    BZ --- CORN2
+    BZ --- CORN3
+    BZ --> FLIP["Cohort reassignment<br/>risk zone<br/>perturbation delta = SD = 0.11"]
+```
+
+*Figure 1: Schematic of mass concentration near the boundary of $\Delta^7$. Under the Dirichlet$(1,\ldots,1)$ uniform null, at least 52.2% of observer weight profiles lie within relative distance $\delta = .10$ of any convex partition boundary (Theorem 2). Corner profiles represent dimension-dominant observers; the centroid is the equal-weight observer. The boundary zone (shaded region) contains the majority of the probability mass; profiles in this zone are at risk of cohort reassignment under perturbations of magnitude comparable to the component standard deviation SD $= .110$ (Proposition 2).*
+
 **Theorem 2** (Boundary fuzziness on $\Delta^7$). *Let $\Delta^{n-1}$ be the standard $(n-1)$-simplex and let $C_1, \ldots, C_k$ ($k \geq 2$) be a partition of $\Delta^{n-1}$ into convex regions. For the relative boundary width parameter $\delta \in (0, 1)$, define the boundary volume fraction as the fraction of $\Delta^{n-1}$ (with respect to Lebesgue measure on the simplex) lying within relative distance $\delta$ of any partition boundary. Then:*
 
 $$\text{BVF}(n, \delta) \geq 1 - (1 - \delta)^{n-1}$$
@@ -242,6 +279,16 @@ $$\text{BVF}(n, \delta) \geq 1 - (1 - \delta)^{n-1}$$
 | .30 | 91.8% | Almost all space is boundary |
 
 *Notes*: $\text{BVF}(n, \delta) = 1 - (1-\delta)^{n-1}$ with $n - 1 = 7$ for $\Delta^7$. Values are lower bounds on the fraction of $\Delta^7$ lying within relative Euclidean distance $\delta$ of any convex partition boundary.
+
+```mermaid
+xychart-beta
+    title "V_boundary(delta) at n=8 - Boundary Volume Fraction vs Threshold"
+    x-axis "delta (relative boundary width)" [0.01, 0.05, 0.10, 0.15, 0.20, 0.25, 0.30]
+    y-axis "BVF lower bound" 0 --> 1.0
+    line [0.068, 0.302, 0.522, 0.672, 0.790, 0.867, 0.918]
+```
+
+*Figure 2: Lower bound on boundary volume fraction $\text{BVF}(8, \delta) = 1 - (1-\delta)^7$ as a function of the relative boundary width $\delta$. At the operationally relevant threshold $\delta = .10$, more than half the simplex (52.2%) lies within the boundary zone. The curve is convex and approaches 1 rapidly: at $\delta = .20$ nearly four-fifths of $\Delta^7$ is boundary. This is a lower bound (Theorem 2); empirical Monte Carlo estimates consistently exceed it (Table 5 shows 62.5% at $\delta = .10$).*
 
 *Proof.* The argument uses the Brunn-Minkowski peeling technique for convex bodies (Schneider 2014, Theorem 7.1.1; Vershynin 2018, Section 5.2). Consider first the simplest case: a bisection of $\Delta^{n-1}$ by a hyperplane through its centroid into two convex regions $C_1, C_2$.
 
