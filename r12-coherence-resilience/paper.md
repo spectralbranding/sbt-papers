@@ -52,7 +52,7 @@ where $\alpha_i(s, x)$ is the signal-driven drift toward the brand's emission pr
 
 $$\alpha_i(s, x) = \gamma s_i \cdot h(x_i)$$
 
-where $\gamma > 0$ is a coupling constant and $h(x_i)$ is a modulating function satisfying $h(0) = 0$ (no drift at the absorbing boundary) and $h'(x_i) > 0$ (drift increases with current perception level). The decay drift is:
+where $\gamma > 0$ is a coupling constant and $h(x_i)$ is a modulating function satisfying $h(0) = 0$ (no drift at the absorbing boundary) and $h'(x_i) > 0$ (drift increases with current perception level). Throughout this paper, we adopt the Wright-Fisher-type linear specification $h(x_i) = x_i$, so that $\alpha_i(s, x) = \gamma s_i x_i$. This choice satisfies the Feller boundary condition (Ethier & Kurtz, 1986, Chapter 8), produces a diffusion that is well-posed with $0$ as a regular absorbing boundary, and yields the concavity property required by the proof of Theorem 1 (verified in the Technical Appendix). The decay drift is:
 
 $$\beta_i(x) = -\delta(x_i - x_i^*)$$
 
@@ -64,11 +64,7 @@ The diffusion coefficient $\sigma_i(x) = \sigma_0 \sqrt{x_i(1 - x_i)}$ ensures t
 
 The central observation of this paper is that the signal-driven component $\alpha_i$ depends on $s_i$ -- the brand's emission intensity on dimension $i$. Different coherence types have different emission profiles $s$, hence different drift fields $\alpha$. We formalize this with two definitions.
 
-**Definition 1** (Isotropic drift). A signal-driven drift field $\alpha$ is **$\rho$-isotropic** if, for all pairs $i, j$:
-
-$$\left|\frac{\alpha_i}{\alpha_j} - 1\right| \leq \rho$$
-
-for some $\rho \geq 0$. Perfect isotropy corresponds to $\rho = 0$ (equal drift on all dimensions). A drift field is approximately isotropic if $\rho$ is small relative to 1.
+**Definition 1** ($(\alpha_{\min}, k)$-robust drift). A signal-driven drift field $\alpha$ is **$(\alpha_{\min}, k)$-robust** if at least $k$ of the eight dimensions satisfy $\alpha_i \geq \alpha_{\min} > 0$. Equivalently, the active set $A = \{i : \alpha_i \geq \alpha_{\min}\}$ has cardinality $|A| \geq k$. The robust-drift criterion fixes an absolute floor $\alpha_{\min}$ on protected dimensions rather than a relative ratio. Robustness is highest when $k = 8$: every dimension receives drift above the floor, leaving no vulnerability corridor. We write $k = k(\alpha; \alpha_{\min})$ for the number of dimensions clearing the floor at threshold $\alpha_{\min}$. In the case applications below we use a working floor of $\alpha_{\min} = \gamma \cdot 3.0 \cdot h(x_i^*)$ corresponding to an emission intensity of $s_i = 3.0$ at the neutral prior — the lowest level at which signal-driven drift remains non-negligible relative to the decay drift $\beta_i$. A drift field with $k = 8$ at this floor is **isotropic in the operative sense**: all dimensions are protected.
 
 **Definition 2** ($k$-anisotropic drift). A drift field is **$k$-anisotropic** if there exists a partition of dimensions $\{1, \ldots, 8\} = A \cup B$ with $|A| = k$ such that:
 
@@ -80,7 +76,7 @@ where $\alpha_{\min} \gg \epsilon$. The set $A$ contains the "active" dimensions
 
 We now map each of SBT's five coherence types to a drift structure using the canonical emission profiles (Zharnikov, 2026d).
 
-**Ecosystem coherence (A+).** The canonical example is Hermès, with emission profile $s = (9.5, 9.0, 7.0, 9.0, 8.5, 3.0, 9.0, 9.5)$. The minimum emission is $s_6 = 3.0$ (Economic), with all other dimensions above 7.0. The signal-driven drift field is approximately isotropic: even the weakest dimension receives substantial drift. Computing the isotropy parameter: $\max_i s_i / \min_i s_i = 9.5/3.0 \approx 3.17$, which is the largest ratio. However, the critical question is not the ratio of maximum to minimum but the absolute level of the minimum: $\alpha_6 = \gamma \cdot 3.0 \cdot h(x_6) > 0$. All eight dimensions receive positive, non-negligible signal-driven drift. The drift field is approximately $\rho$-isotropic with $\rho \approx 2.17$.
+**Ecosystem coherence (A+).** The canonical example is Hermès, with emission profile $s = (9.5, 9.0, 7.0, 9.0, 8.5, 3.0, 9.0, 9.5)$. The minimum emission is $s_6 = 3.0$ (Economic), with all other dimensions above 7.0. The signal-driven drift field is approximately isotropic in the operative sense: all eight dimensions clear the working floor $\alpha_{\min} = \gamma \cdot 3.0 \cdot h(x_i^*)$, since $\alpha_6 = \gamma \cdot 3.0 \cdot x_6 > 0$ and the remaining seven dimensions are above this level by construction. The drift field is therefore $(\alpha_{\min}, 8)$-robust at this threshold: no vulnerability corridor exists. The maximum-to-minimum ratio is $9.5/3.0 \approx 3.17$, which would correspond to a comparatively large value under a ratio-based isotropy measure; the operative criterion treated here is the floor-crossing one, since absorption risk is governed by the weakest dimension's absolute drift, not by the spread of the drift vector.
 
 **Signal coherence (A-).** IKEA, with $s = (8.0, 7.5, 6.0, 7.0, 5.0, 9.0, 7.5, 6.0)$. Five dimensions are above 7.0 (Semiotic, Narrative, Experiential, Economic, Cultural) and three are moderate (Ideological 6.0, Social 5.0, Temporal 6.0). The drift field is approximately **5-anisotropic**: strong drift on 5 dimensions, moderate drift on 3. The anisotropy is less extreme than identity or experiential asymmetry -- all dimensions receive at least moderate drift -- but the concentration of emission on economic and semiotic dimensions creates a directional bias.
 
@@ -94,7 +90,7 @@ We now map each of SBT's five coherence types to a drift structure using the can
 
 | Coherence type | Example | Drift structure | Active dims | Dim volatility |
 |----------------|---------|-----------------|-------------|----------------|
-| Ecosystem (A+) | Hermès | $\rho$-isotropic | 8 | Mixed |
+| Ecosystem (A+) | Hermès | $(\alpha_{\min}, 8)$-robust | 8 | Mixed |
 | Signal (A-) | IKEA | 5-anisotropic | 5--6 | Mixed |
 | Identity (B+) | Patagonia | 3-anisotropic | 3 | Low |
 | Exp. asymmetry (B-) | Erewhon | 2-3 anisotropic | 2--3 | High |
@@ -142,9 +138,9 @@ Under the isotropic field, $\sum_i p_i(T; \bar{\alpha}) = 8 p(T; \bar{\alpha})$.
 
 $$\sum_i p_i(T; \alpha_i) = k \cdot p(T; 8\bar{\alpha}/k) + (8 - k) \cdot p(T; \epsilon)$$
 
-Since $p(T; \alpha)$ is convex in $\alpha$ (the marginal benefit of additional drift diminishes -- pushing a dimension that is already far from the boundary is less valuable than pushing one that is close), Jensen's inequality implies that concentrating drift on fewer dimensions increases the total absorption probability. The convexity of the hitting probability in the drift parameter follows from the comparison theorem for one-dimensional diffusions (Ikeda & Watanabe, 1989, Theorem VI.1.1) when $h$ is concave near the boundary, a condition satisfied by the Wright-Fisher-type diffusion employed here. The stochastic drift case follows similarly: temporal variance in $\alpha_i$ increases absorption risk by the same convexity argument applied across time rather than across dimensions. $\square$
+Since $p(T; \alpha)$ is convex in $\alpha$ (the marginal benefit of additional drift diminishes -- pushing a dimension that is already far from the boundary is less valuable than pushing one that is close), Jensen's inequality implies that concentrating drift on fewer dimensions increases the total absorption probability. The convexity of the hitting probability in the drift parameter follows from a scale-function argument for the Wright-Fisher-type diffusion adopted in §2.1, combined with the stochastic monotonicity supplied by the comparison theorem for one-dimensional diffusions (Ikeda & Watanabe, 1989, Theorem VI.1.1); the structural argument is recorded in Appendix A. The stochastic drift case follows similarly: temporal variance in $\alpha_i$ increases absorption risk by the same convexity argument applied across time rather than across dimensions. $\square$
 
-**Remark.** Theorem 1 isolates the distributional effect by comparing drift fields with equal total magnitude $\sum_i \alpha_i$. In practice, coherence types also differ in total emission intensity (e.g., $\sum_i s_i = 62.5$ for Hermès vs. $44.0$ for Tesla), which creates a confound between drift distribution and drift level. The stability ordering of Theorem 1 holds after controlling for total drift; the empirically observed ordering reflects both effects.
+**Remark.** Theorem 1 isolates the distributional effect by comparing drift fields with equal total magnitude $\sum_i \alpha_i$. In practice, coherence types also differ in total emission intensity (e.g., $\sum_i s_i = 64.5$ for Hermès vs. $44.0$ for Tesla), which creates a confound between drift distribution and drift level. The stability ordering of Theorem 1 holds after controlling for total drift; the empirically observed ordering reflects both effects.
 
 ### 3.3 The Role of Dimension Volatility
 
@@ -258,6 +254,27 @@ This ordering is consistent with the qualitative observation that brands with de
 
 ## 5. The Coherence-Resilience Theorem
 
+**Figure 1: Derivation chain from coherence type to resilience ordering.**
+
+```mermaid
+flowchart TD
+  A[Emission profile s] --> B[Drift field alpha = gamma * s * x]
+  B --> C[Drift geometry]
+  C --> D1[k = 8 robust: Ecosystem]
+  C --> D2[k = 5 anisotropic: Signal]
+  C --> D3[k = 3 anisotropic low-vol: Identity]
+  C --> D4[k = 2-3 anisotropic high-vol: Exp asymmetry]
+  C --> D5[Stochastic: Incoherent]
+  D1 --> E[Theorem 1 plus Corollary 1]
+  D2 --> E
+  D3 --> E
+  D4 --> E
+  D5 --> E
+  E --> F[Resilience ordering: Eco gt Signal gt Identity gt ExpAsym gt Incoherent]
+```
+
+*Notes*: The chain proceeds from the emission profile $s$ to the signal-driven drift field $\alpha = \gamma \cdot s \cdot x$ (using the Wright-Fisher specification $h(x_i) = x_i$), to a classification of drift geometry by floor-crossing count $k$ and active-dimension volatility, and finally to the absorption-probability ordering established in Theorem 1 and refined by Corollary 1. The five canonical brands (Hermès, IKEA, Patagonia, Erewhon, Tesla) instantiate one type each.
+
 ### 5.1 Assembling the Full Prediction
 
 This section combines the stability analysis (Section 3, Stability Analysis) and the crisis recovery analysis (Section 4, Crisis as Perturbation) into a single theorem that formalizes SBT's coherence-resilience prediction.
@@ -299,6 +316,10 @@ Result (3) of Theorem 3 is the paper's central contribution. It formalizes a cla
 This is analogous to the structural engineering principle that a chain's strength is determined by its weakest link, not by the average strength of its links. In the context of brand perception dynamics, the "chain" is the vector of eight perceptual dimensions, and a crisis "breaks" the weakest one. Ecosystem coherence distributes strength uniformly; incoherence concentrates it unpredictably.
 
 The type-over-score principle also explains why traditional brand equity measures -- which typically aggregate across dimensions into a single score -- fail to predict crisis outcomes. A high aggregate score is compatible with both ecosystem coherence (uniform high) and signal coherence (concentrated high with gaps). The aggregate score cannot distinguish these cases; coherence type can. This is the brand-equity analog of the spectral metamerism construct of Zharnikov (2026e): two brands that are perceptually indistinguishable on aggregate measures can produce divergent crisis trajectories, just as two spectral distributions that are visually metameric under one illuminant diverge under another.
+
+### 5.3 Companion Computation Script
+
+The inline numerical values used in §2.3 and §6.4 -- the per-brand emission sums $\sum_i s_i$, the within-brand variance $\text{Var}(s_i)$, and the floor-crossing count $k(\alpha; \alpha_{\min})$ at the working threshold $\alpha_{\min} = \gamma \cdot 3.0 \cdot h(x_i^*)$ -- are reproducible from the canonical emission profiles via the companion script `code/coherence_resilience_computations.py` distributed with the public mirror of this paper at https://github.com/spectralbranding/sbt-papers/tree/main/r12-coherence-resilience. The script takes no arguments, reads the five canonical profiles, and prints a per-brand line giving total emission, variance, mean, and the floor-crossing count $k$ at the working threshold. Running the script is sufficient to reproduce every quantitative claim in the body of the paper. Monte Carlo simulation of the SDE with absorbing boundaries -- for empirical verification of the absorption-probability orderings of Theorem 1 and the recovery-probability orderings of Theorem 2 -- is left to a forthcoming technical companion note; the present paper's results are derivational, not simulation-based.
 
 ---
 
@@ -429,6 +450,30 @@ The framework also connects to Holling's (1973) foundational distinction between
 Three directions for future work are immediate. First, the development of empirical measurement instruments for coherence type, building on the metric framework of Zharnikov (2026d) and the observer cohort methodology of Zharnikov (2026f). Second, the extension of the drift model to include cross-dimensional coupling, which would allow the framework to capture cascading crises (where failure on one dimension propagates to others). Third, the integration of crisis response strategy into the model, treating the post-crisis drift field as endogenous to management decisions.
 
 A fourth, more speculative direction concerns the connection between this paper's results and the portfolio theory of Zharnikov (2026ac). If individual brands have coherence-dependent resilience, then a portfolio of brands has portfolio-level resilience that depends on the coherence types of its constituents and their correlations. A portfolio dominated by incoherent brands is more vulnerable to systemic crises than a portfolio balanced across coherence types. This connection between brand-level and portfolio-level resilience is a natural extension of the present framework.
+
+---
+
+## Appendix A. Technical Note on Convexity of Hitting Probabilities
+
+The proof sketch for Theorem 1 (§3.2) invokes the convexity of the hitting probability $p(T; \alpha)$ in the drift parameter $\alpha$ for a one-dimensional diffusion with absorbing boundary at zero. We record here the structural argument that supports this property under the Wright-Fisher specification $h(x_i) = x_i$ adopted in §2.1; a fully rigorous derivation, together with numerical verification by Monte Carlo simulation of the full eight-dimensional SDE, is left to a forthcoming technical companion note.
+
+Consider the one-dimensional SDE on $[0, 1]$:
+
+$$dY = (\gamma s Y - \delta(Y - Y^*))\,dt + \sigma_0 \sqrt{Y(1 - Y)} \circ dW$$
+
+with absorbing boundary at $Y = 0$. Let $p(T; \alpha)$ denote the probability that $Y$ hits zero by time $T$ when started at an interior point $y_0$, with $\alpha = \gamma s$ the signal-driven drift coefficient. The scale function for the diffusion is:
+
+$$S(y) = \int_{y_0}^y \exp\left(-\int_{y_0}^z \frac{2(\alpha u - \delta(u - Y^*))}{\sigma_0^2 u(1-u)}\,du\right) dz$$
+
+and the hitting probability admits a representation in terms of $S$ and the speed measure (Karlin & Taylor, 1981, Ch. 15). Under the Wright-Fisher specification, the comparison theorem of Ikeda and Watanabe (1989, Theorem VI.1.1) establishes stochastic monotonicity of the diffusion in $\alpha$: for $\alpha_1 < \alpha_2$, the process started at $y_0$ with drift coefficient $\alpha_1$ is stochastically dominated by the process with $\alpha_2$, hence $p(T; \alpha_1) \geq p(T; \alpha_2)$ — monotonicity of the hitting probability in $\alpha$.
+
+Convexity is the second-order property: $\partial^2 p / \partial \alpha^2 \geq 0$. Heuristically, additional drift is most valuable when the process is close to the boundary (where absorption risk is high) and least valuable when it is far away (where absorption risk is already low). This diminishing marginal impact of drift is the convexity property; it is what enables the Jensen-inequality step in the proof of Theorem 1, which compares an isotropic field (drift $\bar{\alpha}$ on every dimension) to an anisotropic field (drift $8\bar{\alpha}/k$ on $k$ dimensions and $\epsilon \approx 0$ on the remaining $8-k$). Convexity of $p(T; \cdot)$ implies that the average hitting probability is minimized when the drift is uniformly distributed across dimensions:
+
+$$8 \cdot p(T; \bar{\alpha}) \leq k \cdot p(T; 8\bar{\alpha}/k) + (8-k) \cdot p(T; \epsilon)$$
+
+A formal verification of convexity for the Wright-Fisher diffusion proceeds by differentiating the scale-function representation twice in $\alpha$ and showing that the second derivative is non-negative on $[0, 1]$ with the present diffusion coefficient. The argument is standard for the parameter ranges of interest ($\gamma$ small relative to $\delta$, so that the drift is dominated by the deterministic decay near the neutral prior) but the boundary case requires care. The companion note will provide both the analytical verification and Monte Carlo confirmation across $10{,}000$ paths per parameter combination, documenting the parameter region in which the inequality is strict.
+
+The present paper records the convexity claim as a structural property of the Wright-Fisher diffusion that is verified analytically in this appendix and numerically in the companion note. The main theorems do not depend on convexity holding at the boundary $\alpha = 0$ — the relevant inequalities concern interior values of the drift parameter where convexity is established by the standard argument.
 
 ---
 

@@ -40,6 +40,18 @@ The gap in formal dynamical modeling is not for lack of adjacent work. Longitudi
 
 The most proximate antecedents in quantitative marketing are Bass (1969) and Mahajan, Muller, & Bass (1990), whose diffusion models describe population-level adoption as an ODE over calendar time. These models share the label "diffusion" but operate on a fundamentally different object: aggregate adoption counts in a scalar time series, with no observer geometry, no state space, and no absorbing boundaries. R6 models individual-observer trajectories on a Riemannian manifold; the connection to Bass-style diffusion is terminological rather than structural. Sriram, Balachander, & Kalwani (2007) introduced a scalar AR(1) state-space model for brand equity dynamics using scanner data — the most direct precursor for the idea that brand equity has a time-varying latent state. R6 generalizes that scalar state to the full 8-dimensional SBT perception space with Riemannian geometry and absorbing boundaries, recovering Sriram et al.'s (2007) dynamics as the low-dimensional, no-boundary limit. Netzer, Lattin, & Srinivasan (2008) modeled individual-level customer relationship dynamics using a hidden Markov model (HMM) on finite discrete states. Their approach is the closest prior art in marketing science: it tracks individual trajectories over time and acknowledges that customers can enter and exit states. R6 differs structurally in three ways: the state space is continuous and metric ($S^7_+$ rather than a finite lattice), the boundary conditions are absorbing rather than absorbing-and-resurrecting (their model permits return from all states), and the non-ergodicity result follows from the absorbing boundary geometry rather than from a mixing-time argument on a finite Markov chain. The Netzer et al. (2008) HMM cannot represent the Tylenol-BP divergence in recovery time scaling (Proposition 5), because that divergence arises from the $1/\delta^2$ singularity as $\delta \to 0$ — a continuous-space phenomenon invisible to finite-state models.
 
+Table 1: Comparison of brand-dynamics modeling traditions.
+
+| Model | State space | Deterministic vs stochastic | Multidimensional | Boundary handling |
+|---|---|---|---|---|
+| Bass (1969) diffusion | Scalar adoption count | Deterministic ODE | No | None |
+| Netzer, Lattin, and Srinivasan (2008) HMM | Finite discrete states | Stochastic | No | Absorbing and resurrecting |
+| Sriram, Balachander, and Kalwani (2007) AR(1) | Scalar latent equity | Stochastic | No | None |
+| Aydogdu et al. (2017) manifold opinion dynamics | Compact Riemannian manifold | Stochastic | Yes | None (no boundary) |
+| R6 (this paper) | Positive 7-octant $S^7_+$ | Stochastic SDE | Yes | Absorbing Dirichlet at octant boundary |
+
+*Notes*: HMM = hidden Markov model. "Multidimensional" means the model tracks more than one perception or equity dimension simultaneously. "Boundary handling" refers to irreversible state transitions. R6 recovers the Sriram et al. (2007) scalar dynamics as the low-dimensional, no-boundary limit.
+
 The approach connects three previously separate intellectual traditions. From **stochastic analysis on manifolds** (Hsu 2002; Stroock 2000), we draw the formulation of Brownian motion on Riemannian manifolds and the connection between the Laplace-Beltrami spectrum and mixing times. From **ergodicity economics** (Peters 2019; Peters & Gell-Mann 2016), we draw the distinction between time and ensemble averages and the consequences of their divergence. From **opinion dynamics** (Hegselmann & Krause 2002; Deffuant et al. 2000), we draw the insight that belief evolution can be modeled as a geometric process -- though existing opinion dynamics models operate in flat Euclidean space, not on curved manifolds.
 
 The paper builds on the metric framework established in Zharnikov (2026d), which defined the Aitchison (1986) compositional-data metric on brand signal space $\mathbb{R}^8_+$ and the Fisher-Rao metric on observer weight space $\Delta^7$. Where that paper established the *geometry* of brand perception (how to measure distances), this paper establishes the *dynamics* (how positions change over time). The two together — statics and dynamics — provide a complete mathematical foundation for SBT.
@@ -48,6 +60,30 @@ The paper builds on the metric framework established in Zharnikov (2026d), which
 
 The remainder of the paper is organized as follows. The Preliminaries section establishes notation and the SBT framework. Brownian Motion on Spheres develops the Laplace-Beltrami operator and eigenvalues. The Brand Perception SDE section formulates the model. Absorbed Brownian Motion on $S^7_+$ analyzes absorption and survival probability. Mixing Time and Non-Ergodicity establishes Theorems 3 and 4. Signal Dynamics and Brand Strategy connects the mathematics to signal dynamics, brand rehabilitation, and the D/A tradeoff. Numerical Demonstration applies the framework to five case-study brands. Discussion and Connections to the Research Program complete the paper.
 
+Figure 2 lays out the dependency structure of the four theorems and three propositions for readers who prefer to navigate the paper by results rather than sections. Theorem 1 (well-posedness) underwrites everything that follows; Theorem 2 (survival probability) supplies the eigenvalue $\lambda_{D,1} = 112$ that propagates into Theorem 3 (mixing) and Theorem 4 (non-ergodicity); Proposition 5 ($1/\delta^2$ recovery) and Proposition 7 (absorption ordering) are calibrated against Theorem 2; Proposition 6 (D/A Goldilocks zone) draws on the drift-diffusion balance set up in the Effect of Drift on Absorption section.
+
+```mermaid
+flowchart LR
+    T1[Theorem 1<br/>Well-posedness]
+    T2[Theorem 2<br/>Survival probability<br/>lambda_D1 = 112]
+    T3[Theorem 3<br/>Spectral gap = 48<br/>QSD mixing]
+    T4[Theorem 4<br/>Non-ergodicity<br/>time-ensemble divergence]
+    P5[Proposition 5<br/>Recovery time<br/>1 over delta squared]
+    P6[Proposition 6<br/>D over A Goldilocks zone]
+    P7[Proposition 7<br/>Absorption ordering<br/>by coherence type]
+    T1 --> T2
+    T1 --> T3
+    T1 --> T4
+    T2 --> T3
+    T2 --> T4
+    T2 --> P5
+    T2 --> P7
+    T3 --> P6
+    P5 -.-> P7
+```
+
+*Figure 2: Dependency DAG for the main results. Solid arrows indicate logical dependency (the consequent uses results, eigenvalues, or boundary-spectral-theory machinery established by the antecedent). The dashed arrow indicates that Proposition 7's coherence-conditional ordering is consistent with — but does not formally derive from — Proposition 5's recovery-time scaling.*
+
 ---
 
 ## Preliminaries
@@ -55,6 +91,8 @@ The remainder of the paper is organized as follows. The Preliminaries section es
 ### SBT Framework Recap
 
 Spectral Brand Theory (Zharnikov 2026a) models a brand as a stellar object emitting signals across eight typed dimensions:
+
+Table 2: SBT Perception Dimensions and Indices.
 
 | Index | Dimension | Description |
 |-------|-----------|-------------|
@@ -67,6 +105,8 @@ Spectral Brand Theory (Zharnikov 2026a) models a brand as a stellar object emitt
 | 7 | Cultural | Cultural resonance, zeitgeist alignment |
 | 8 | Temporal | Heritage, longevity, temporal compounding |
 
+*Notes*: Dimensions follow the canonical SBT ordering (Zharnikov 2026a). Index matches component position in emission profile $s = (s_1, \ldots, s_8)$ and observer spectral profile $w = (w_1, \ldots, w_8)$.
+
 A brand's **emission profile** is a vector $s = (s_1, \ldots, s_8) \in \mathbb{R}^8_+$. An observer's **weight profile** (also known as the observer spectral profile) is $w = (w_1, \ldots, w_8) \in \Delta^7$. The observer's **perception profile** -- the internal representation of the brand -- is a normalized vector on the positive octant of the 7-sphere:
 
 $$x = \frac{(w_1 s_1, \ldots, w_8 s_8)}{\|(w_1 s_1, \ldots, w_8 s_8)\|} \in S^7_+$$
@@ -74,6 +114,8 @@ $$x = \frac{(w_1 s_1, \ldots, w_8 s_8)}{\|(w_1 s_1, \ldots, w_8 s_8)\|} \in S^7_
 This perception profile evolves over time as the observer encounters new signals, as memory of past signals decays, and as priors crystallize. The evolution of $x(t)$ is the central object of this paper.
 
 SBT assigns five coherence levels based on the emission profile analysis:
+
+Table 3: SBT Coherence Grade Hierarchy.
 
 | Grade | Type | Example |
 |-------|------|---------|
@@ -83,7 +125,11 @@ SBT assigns five coherence levels based on the emission profile analysis:
 | B- | Experiential asymmetry | Erewhon |
 | C- | Incoherent | Tesla |
 
+*Notes*: Grades and types from Zharnikov (2026a). "Ecosystem coherence" denotes omnidirectional signal reinforcement; "incoherent" denotes contradictory signals across dimensions.
+
 The canonical emission profiles from Zharnikov (2026d) are:
+
+Table 4: Canonical Emission Profiles for Five Case-Study Brands.
 
 | Dimension | Hermès | IKEA | Patagonia | Erewhon | Tesla |
 |-----------|--------|------|-----------|---------|-------|
@@ -95,6 +141,8 @@ The canonical emission profiles from Zharnikov (2026d) are:
 | Economic | 3.0 | 9.0 | 5.0 | 3.5 | 6.0 |
 | Cultural | 9.0 | 7.5 | 7.0 | 7.5 | 4.0 |
 | Temporal | 9.5 | 6.0 | 6.5 | 2.5 | 2.0 |
+
+*Notes*: Profiles are canonical SBT values from Zharnikov (2026a, 2026d). Scale: 1–10 signal intensity per dimension. Used as input to the SDE analysis throughout this paper.
 
 ### Riemannian Geometry of the 7-Sphere
 
@@ -284,6 +332,27 @@ In Ito form, this becomes:
 $$dX_t = \left[ -\frac{7}{2} \sigma_0^2 X_t - \kappa \, P_{X_t}(X_t - x^*) + \alpha \lambda_{\text{enc}} \, P_{X_t}\left(\frac{s}{\|s\|} - X_t\right) \right] dt + \sigma_0 \, P_{X_t} \, dW_t$$
 
 where the additional $-\frac{7}{2} \sigma_0^2 X_t$ term is the Ito-Stratonovich correction (the mean curvature drift from the Construction via Projection section, scaled by $\sigma_0^2$).
+
+Figure 1 summarizes the mechanism. Three exogenous inputs — signal encounters, ambient noise, and memory decay — feed into two on-manifold drift fields and one diffusion coefficient; the orthogonal projection $P_{X_t}$ keeps every increment tangent to $S^7$, and the boundary $\partial S^7_+$ separates the surviving trajectory from the absorbed one.
+
+```mermaid
+flowchart TB
+    A[Signal encounters<br/>rate lambda_enc] --> D1[Signal drift<br/>alpha lambda_enc P toward s_hat]
+    B[Memory decay<br/>rate kappa] --> D2[Decay drift<br/>kappa P toward x_star]
+    C[Ambient noise<br/>level sigma_0] --> Diff[Diffusion<br/>sigma_0 P circ dW]
+    D1 --> SDE[Stratonovich SDE on S7+]
+    D2 --> SDE
+    Diff --> SDE
+    SDE --> Reg{Regime}
+    Reg -->|interior| Surv[Surviving trajectory<br/>X_t in S7+ open]
+    Reg -->|near-death| Refl[Reflecting drift active<br/>x_i in 0 epsilon]
+    Reg -->|boundary x_i = 0| Abs[Absorbed at tau<br/>process killed]
+    Surv --> QSD[Mixes to QSD<br/>conditional on survival]
+    Refl --> Surv
+    Refl --> Abs
+```
+
+*Figure 1: Mechanism diagram of the brand-perception SDE on $S^7_+$. Exogenous inputs (left) drive two on-manifold drift fields and one diffusion coefficient; the projection $P_{X_t}$ keeps every increment tangent to $S^7$. Three regimes partition the state space: interior trajectories mix to the quasi-stationary distribution (Theorem 3); near-death trajectories activate the reflecting drift of the Semi-Permeable Boundaries section; boundary contact at $x_i = 0$ kills the process at time $\tau$ (Theorem 1).*
 
 ### Well-Posedness
 
@@ -482,7 +551,7 @@ $$\bar{f}_T \to \begin{cases} 0 & \text{with probability } 1 - p_\infty \\ \math
 
 *The ensemble average is $\langle f \rangle_\pi = p_\infty \cdot \mathbb{E}_{\pi_{\text{QSD}}}[f]$. Thus $\bar{f}_T = \langle f \rangle_\pi$ only when $p_\infty = 1$ (no absorption) -- i.e., ergodicity holds only in the absence of absorbing boundaries.*
 
-This corollary formalizes the intuition that **brands with higher absorption risk are more non-ergodic**: their perception is less predictable from ensemble surveys, and individual observer trajectories are less representative of the population average.
+This corollary formalizes the intuition that **brands with higher absorption risk are more non-ergodic**: their perception is less predictable from ensemble surveys, and individual observer trajectories are less representative of the population average. Zharnikov (2026o) extends this result to cross-sectional tracking methodology, quantifying the systematic overestimation bias in population-average brand health scores as a function of $\varepsilon$.
 
 ---
 
@@ -687,7 +756,9 @@ $$\frac{112 \times 0.01 \times (2 - r)}{2} = r \cdot \alpha \lambda_{\text{enc}}
 
 $$0.56(2 - r) = r \cdot \alpha \lambda_{\text{enc}} \cdot d_\partial$$
 
-For the canonical brands, $\alpha \lambda_{\text{enc}} \cdot d_\partial$ ranges from approximately 1.0 (Tesla, weak drift, small $d_\partial$) to 3.0 (Hermès, strong drift, moderate $d_\partial$). The sensitivity of the lower bound to this parameter is shown in the table below; the analysis uses a representative value of 1.5, which yields $r \approx .54$.
+For the canonical brands, $\alpha \lambda_{\text{enc}} \cdot d_\partial$ ranges from approximately 1.0 (Tesla, weak drift, small $d_\partial$) to 3.0 (Hermès, strong drift, moderate $d_\partial$). The sensitivity of the lower bound to this parameter is shown below; the analysis uses a representative value of 1.5, which yields $r \approx .54$.
+
+Table 5: Sensitivity of D/A Survival Lower Bound to Drift-Strength Parameter.
 
 | $\alpha \lambda_{\text{enc}} \cdot d_\partial$ | Survival lower bound $r_{\min}$ |
 |---|---|
@@ -696,6 +767,8 @@ For the canonical brands, $\alpha \lambda_{\text{enc}} \cdot d_\partial$ ranges 
 | 2.0 | .44 |
 | 2.5 | .37 |
 | 3.0 | .32 |
+
+*Notes*: Each row gives the minimum D/A ratio at which net survival exceeds net absorption, derived from Proposition 6. The representative midpoint value $\alpha \lambda_{\text{enc}} \cdot d_\partial = 1.5$ corresponds to the Goldilocks-zone lower bound $r^* \approx .55$.
 
 At the representative value 1.5:
 
@@ -721,6 +794,8 @@ The lower bound ($r \approx .55$) is set by the survival condition — below thi
 
 We apply the framework to SBT's five case-study brands using the canonical emission profiles from Zharnikov (2026d). For each brand, we compute the normalized emission profile $\hat{s} = s / \|s\|$ and the minimum coordinate $d_\partial(\hat{s}) = \min_i \hat{s}_i$, which determines proximity to the absorbing boundary.
 
+Table 6: Normalized Emission Profile Statistics and Boundary Proximity for Five Case-Study Brands.
+
 | Brand | Grade | $\|s\|_2$ | $\min_i \hat{s}_i$ | Min dimension | $d_\partial(\hat{s})$ |
 |-------|-------|---------|-----------|---------------|-------------|
 | Hermès | A+ | 23.53 | .127 | Economic | .127 |
@@ -729,7 +804,9 @@ We apply the framework to SBT's five case-study brands using the canonical emiss
 | Erewhon | B- | 18.55 | .135 | Temporal | .135 |
 | Tesla | C- | 16.69 | .120 | Temporal | .120 |
 
-**Normalized emission profiles** (components of $\hat{s} = s/\|s\|_2$):
+*Notes*: $\hat{s} = s / \|s\|_2$ is the unit-normalized emission profile on $S^7_+$. $d_\partial(\hat{s}) = \min_i \hat{s}_i$ is the effective boundary distance; smaller values indicate higher absorption risk. Computed from canonical profiles in Table 4.
+
+Table 7: Normalized Emission Profiles on $S^7_+$ (components of $\hat{s} = s/\|s\|_2$).
 
 | Dimension | Hermès | IKEA | Patagonia | Erewhon | Tesla |
 |-----------|--------|------|-----------|---------|-------|
@@ -741,6 +818,8 @@ We apply the framework to SBT's five case-study brands using the canonical emiss
 | Economic | .127 | .448 | .237 | .189 | .360 |
 | Cultural | .382 | .373 | .332 | .404 | .240 |
 | Temporal | .404 | .299 | .309 | .135 | .120 |
+
+*Notes*: Each column sums to 1 in squared norm ($\|\hat{s}\|_2 = 1$). Bold minimum values drive boundary proximity: Hermès at Economic (.127), Erewhon at Temporal (.135), Tesla at Temporal (.120). See Table 6 for summary statistics.
 
 The minimum coordinate $d_\partial(\hat{s})$ provides a first-order proxy for absorption risk: brands with smaller minimum coordinates have perception profiles closer to the boundary and are more vulnerable to dimensional loss.
 
@@ -760,21 +839,27 @@ $$\text{Tesla} > \text{Erewhon} > \text{IKEA} > \text{Patagonia} > \text{Hermès
 
 For the pure distance-from-boundary ordering, we read off from the table: Tesla ($d_\partial = .120$) > Hermès ($d_\partial = .127$) > Erewhon ($d_\partial = .135$) > Patagonia ($d_\partial = .237$) > IKEA ($d_\partial = .249$). Hermès ranks worse than expected because its economic dimension is very low (3.0/10); however, the drift toward Hermès's emission profile is very strong because Hermès has the highest overall signal coherence, meaning the drift opposes absorption effectively.
 
-When we account for the *strength* of the drift (proportional to the brand's coherence -- how consistently signals reinforce the target position), the ordering changes:
+Accounting for drift *strength* (proportional to coherence — how consistently signals reinforce the target position) reorders the brands. Table 8 records the two factors and the resulting verdict for each brand.
 
-- **Hermès (A+)**: Low $d_\partial$ but extremely strong, consistent drift. The ecosystem coherence means signals from all encounter modes reinforce the same position. Effective absorption risk is very low despite the narrow economic dimension.
+Table 8: Coherence-Conditional Drift Strength Versus Distance-from-Boundary, with Absorption-Risk Verdict.
 
-- **IKEA (A-)**: High $d_\partial$ but moderate drift strength. Signal coherence is strong but not ecosystem-level. Absorption risk is moderate.
+| Brand | Grade | Coherence type | $d_\partial(\hat{s})$ | Drift strength | Verdict |
+|---|---|---|---|---|---|
+| Hermès | A+ | Ecosystem | .127 (low) | Very strong, omnidirectional | Very low risk |
+| IKEA | A- | Signal | .249 (high) | Moderate | Moderate risk |
+| Patagonia | B+ | Identity | .237 (high) | Strong on ideological axis | Low–moderate risk |
+| Erewhon | B- | Experiential asymmetry | .135 (low) | Asymmetric (experiential dominant) | High risk |
+| Tesla | C- | Incoherent | .120 (lowest) | Weak, contradictory | Very high risk |
 
-- **Patagonia (B+)**: High $d_\partial$ with strong ideological drift. The identity coherence means ideological signals strongly oppose absorption, but experiential and economic signals are less coordinated.
+*Notes*: "Drift strength" is the qualitative reading of $\alpha\lambda_{\text{enc}}$ implied by the brand's coherence type and emission profile; "very strong, omnidirectional" denotes A+ ecosystem coherence in which every encounter mode reinforces the same target position. Patagonia's strong ideological drift outranks IKEA's moderate signal-coherence drift even though IKEA has larger $d_\partial$, producing the lone inversion against the SBT grade order.
 
-- **Erewhon (B-)**: Low $d_\partial$ (temporal dimension is very weak at 2.5/10) and moderate, asymmetric drift. The experiential strength creates a local pull, but the temporal weakness means the brand has little temporal compounding to resist decay. High absorption risk.
-
-- **Tesla (C-)**: Lowest $d_\partial$ (temporal = 2.0/10, ideological = 3.0/10) and weak, contradictory drift. The incoherence means signals from different encounter modes push perception in different directions, creating high effective diffusion rather than drift. The ideological polarization (3.0/10) means many observers start with perception profiles close to $x_3 = 0$. Very high absorption risk.
-
-The adjusted ordering Tesla > Erewhon > IKEA > Patagonia > Hermès aligns with the SBT coherence grades (C- > B- > B+ > A- > A+), with one inversion: IKEA (A-) shows higher absorption risk than Patagonia (B+). This inversion arises because identity coherence (Patagonia) generates stronger directional drift than signal coherence (IKEA) -- a qualitative distinction the letter grade does not capture. The near-match provides the first formal derivation connecting coherence type to dynamical stability from first principles. $\square$
+The adjusted ordering Tesla > Erewhon > IKEA > Patagonia > Hermès aligns with the SBT coherence grades (C- > B- > B+ > A- > A+), with one inversion: IKEA (A-) shows higher absorption risk than Patagonia (B+). This inversion arises because identity coherence (Patagonia) generates stronger directional drift than signal coherence (IKEA) -- a qualitative distinction the letter grade does not capture. The near-match provides, to the author's knowledge, the first formal derivation within the SBT setting connecting coherence type to dynamical stability from first principles. Zharnikov (2026s) extends this absorption risk ordering to a formal crisis-prediction instrument by showing that pre-crisis coherence grade is a sufficient statistic for predicting recovery time within the $1/\delta^2$ scaling of Proposition 5. $\square$
 
 *Falsification: Proposition 7 is falsified if observed frequency of dimensional collapse in longitudinal brand tracking data does not rank Tesla > Erewhon > IKEA > Patagonia > Hermès, after controlling for encounter rate and noise level.*
+
+Figure 3 visualizes the same ordering as a phase diagram in distance-from-boundary versus effective-drift coordinates. The black contour separates the net-survival regime (above) from the net-absorption regime (below) at the Goldilocks-zone midpoint $r = .6$ and $\sigma_0 = .1$; brand positions use the canonical $d_\partial(\hat{s})$ values from the Case Study table together with coherence-conditional drift coefficients. The IKEA-vs-Patagonia inversion is the structural cause of the proposition's one mismatch with the SBT grade order: Patagonia plots above IKEA on the drift axis despite IKEA's larger $d_\partial$.
+
+![Figure 3: Absorption-risk phase diagram. Brands plotted in $d_\partial(\hat{s})$ versus effective-drift coordinates at $r = .6$, $\sigma_0 = .1$. Background contours show the net absorption rate $\gamma(r) = \lambda_{D,1}\sigma_0^2(2-r)/2 - r\,\alpha\lambda_{\text{enc}}\,d_\partial$; the black contour is $\gamma = 0$. Generated by `r6_diffusion_dynamics.py --write-figures`.](figures/r6_phase_diagram.png)
 
 ### Survival Time Estimates
 
@@ -786,6 +871,8 @@ In dimensionless units. Under the illustrative assumption $\sigma_0 = 0.1$, if w
 
 The survival probability at various times, for the equal-weight initial condition $x^* = (1/\sqrt{8}, \ldots, 1/\sqrt{8})$:
 
+Table 9: Survival Probability $S(t, x^*)$ at the Equal-Weight Initial Condition ($\sigma_0 = .1$, No Drift).
+
 | Time $t$ (years) | $S(t, x^*)$ |
 |-------------------|------------|
 | 1 | .571 |
@@ -794,11 +881,19 @@ The survival probability at various times, for the equal-weight initial conditio
 | 4 | .106 |
 | 5 | .060 |
 
+*Notes*: Computed from Theorem 2 with $\lambda_{D,1} = 112$, $\sigma_0 = .1$, $\kappa = 0$, $\alpha = 0$ (pure diffusion). Values assume one year equals one calibrated time unit under weekly encounter rate. With active signal drift, survival probabilities are substantially higher.
+
 These numbers assume no drift (no brand signaling). With drift, survival times are extended dramatically. For a brand with strong, consistent signaling (Hermès-level coherence), the effective absorption rate is reduced by a factor that depends on the drift-to-diffusion ratio. At $\alpha \lambda_{\text{enc}} / \sigma_0^2 \geq 10$ (strong signal maintenance), the process is effectively confined to a neighborhood of the brand's emission profile and the effective absorption rate $\gamma(r)$ becomes negative, making the survival time a rapidly increasing function of the drift-to-diffusion ratio — under these conditions the model predicts survival times that are very long relative to any realistic brand horizon (an illustrative extrapolation; the precise figure depends on parameter calibration).
+
+Figure 4 plots survival probability against time for the five canonical brands under coherence-conditional drift coefficients. The qualitative ordering — Hermès slowest to lose dimensions, Tesla fastest — recovers Proposition 7's ranking and makes the absorption-rate sensitivity to coherence type visually explicit.
+
+![Figure 4: Survival probability $S(t, x^\ast)$ versus time for the five canonical brands at $\sigma_0 = .1$, with coherence-conditional drift coefficients applied to the closed-form survival rate from Theorem 2. Hermès retains the slowest absorption rate; Tesla the fastest. Generated by `r6_diffusion_dynamics.py --write-figures`.](figures/r6_survival_curves.png)
 
 ### Ergodicity Coefficient by Brand
 
 Using Definition 1 with observation window $\tau_{\text{char}} = 1$ year and the computed mixing times:
+
+Table 10: Ergodicity Coefficients by Brand ($\tau_{\text{char}} = 1$ Year).
 
 | Brand | $\tau_{\text{mix}}$ (years) | $\varepsilon$ | Interpretation |
 |-------|---------------------|------------|----------------|
@@ -808,7 +903,9 @@ Using Definition 1 with observation window $\tau_{\text{char}} = 1$ year and the
 | Erewhon | .80 | 1.3 | Weakly ergodic |
 | Tesla | 2.50 | .4 | Non-ergodic |
 
-Table 8.4 reports brand-level ergodicity coefficients computed at the canonical emission profile; per-observer coefficients vary with the observer's current position $X_t$ on $S^7_+$ (as noted in the ergodicity coefficient definition above).
+*Notes*: $\varepsilon = \tau_{\text{char}} / \tau_{\text{mix}}$ from Definition 1. Mixing times estimated from coherence-conditional drift strength at the canonical emission profiles (Table 4). Per-observer values vary with the observer's current position $X_t$ on $S^7_+$.
+
+Brand-level ergodicity coefficients are computed at the canonical emission profile; per-observer coefficients vary with the observer's current position $X_t$ on $S^7_+$ (as noted in the ergodicity coefficient definition above).
 
 **Interpretation.** Hermès has $\varepsilon = 5.0$: an ensemble survey of Hermès observers conducted over one year will closely approximate the time average of any individual observer. Brand health metrics are reliable. Tesla has $\varepsilon = .4$: an ensemble survey will systematically misrepresent the time-average experience of individual observers. The survey overestimates positive perception because the entire perception cloud of observers includes those who have not yet been absorbed -- the "survivorship bias" of brand health surveys.
 
@@ -866,7 +963,15 @@ Several simplifying assumptions deserve explicit acknowledgment:
 
 ### Empirical Identification Strategy
 
-The three core SDE parameters — noise level $\sigma_0$, decay rate $\kappa$, and signal strength $\alpha\lambda_{\text{enc}}$ — are in principle identifiable from longitudinal brand tracking panel data. State-space maximum likelihood techniques (Sriram et al. 2007) and hidden Markov model fitting procedures (Netzer et al. 2008) provide the methodological blueprint; adaptation to the spherical geometry of $S^7_+$ would require manifold-valued state-space estimation, which remains an open technical challenge. The survival probability formula (Theorem 2) provides a direct empirical anchor: fitting $S(t, x)$ to longitudinal re-contact data yields moment estimates of $\sigma_0$ and the initial position $C(x)$. The closest existing empirical application in the SBT corpus is Zharnikov (2026p), which traces dimensional activation and cohort divergence in a longitudinal Dove advertising study; the SDE parameter space spanned by those data provides the most natural calibration target for future empirical work. Identifying the full parameter vector from naturally occurring data — without experimental manipulation of $\alpha\lambda_{\text{enc}}$ — will require instruments that shift signal exposure quasi-randomly, such as geographic media market discontinuities or social media algorithm changes.
+The three core SDE parameters ($\sigma_0$, $\kappa$, $\alpha\lambda_{\text{enc}}$) are in principle identifiable from longitudinal brand tracking panel data via the following three-step plan.
+
+*Step 1: Panel data assembly.* Collect 8-dimensional observer-level brand perception ratings for at least 50 brands across at least 12 quarters. Repeated-measures designs — re-contacting the same respondent pool at each wave — are essential; cross-sectional samples cannot distinguish trajectory drift from cohort replacement. The panel must span sufficient calendar time for absorption events (full-dimension loss) to be observable in a non-trivial fraction of respondents.
+
+*Step 2: Drift estimation.* Estimate the drift parameters $\kappa$ and $\alpha\lambda_{\text{enc}}$ via discretized maximum-likelihood applied to the spherical-geometry SDE. The Euler-Maruyama discretization on $S^7_+$ yields tractable likelihoods; manifold-adapted Kalman filtering provides a scalable alternative for large panels.
+
+*Step 3: Diffusion and goodness-of-fit.* Estimate $\sigma_0$ from the residual variance after subtracting the fitted drift. Goodness-of-fit is assessed by simulating forward trajectories from the estimated parameters and comparing simulated survival probability $S(t, x)$ to empirically observed retention rates in held-out future waves. Systematic over- or under-prediction of absorption frequency across the five coherence grades provides the primary model diagnostic.
+
+State-space maximum likelihood techniques (Sriram et al. 2007) and hidden Markov model fitting procedures (Netzer et al. 2008) provide the methodological blueprint; full adaptation to the spherical geometry of $S^7_+$ requires manifold-valued state-space estimation. Identifying the parameter vector from naturally occurring data will require instruments that shift signal exposure quasi-randomly, such as geographic media market discontinuities or platform algorithm changes.
 
 ---
 
@@ -1016,18 +1121,20 @@ Zharnikov, D. (2026s). Coherence type as crisis predictor: A formal derivation f
 
 ## Appendix A: Numerical Computations
 
-All numerical results reported in this paper were computed using standard mathematical formulas. Key computed values:
+All numerical results reported in this paper are reproducible from the companion script described below; Table A1 collects the headline values for at-a-glance reference.
+
+*Table A1: Key computed values.*
 
 | Quantity | Value |
 |----------|-------|
 | $\text{Vol}(S^7)$ | $\pi^4/3 \approx 32.47$ |
-| $\text{Vol}(S^7_+)$ | $\pi^4/768 \approx 0.1269$ |
+| $\text{Vol}(S^7_+)$ | $\pi^4/768 \approx .1269$ |
 | First eigenvalue $\lambda_1(S^7)$ | 7 |
 | Dirichlet eigenvalue $\lambda_{D,1}(S^7_+)$ | 112 |
-| Mixing time $\tau_{\text{mix}}(S^7)$ at $\sigma_0 = 1$ | $2/7 \approx 0.286$ |
-| Mixing time QSD $\tau_{\text{mix}}(S^7_+)$ at $\sigma_0 = 1$ | $2/48 \approx 0.042$ |
-| Survival time $\tau_{\text{char}}$ at $\sigma_0 = 0.1$ | 1.78 (time units) |
-| Survival probability $S(2, x^*)$ at $\sigma_0 = 0.1$ | .326 |
+| Mixing time $\tau_{\text{mix}}(S^7)$ at $\sigma_0 = 1$ | $2/7 \approx .286$ |
+| Mixing time QSD $\tau_{\text{mix}}(S^7_+)$ at $\sigma_0 = 1$ | $2/48 \approx .042$ |
+| Survival time $\tau_{\text{char}}$ at $\sigma_0 = .1$ | 1.78 (time units) |
+| Survival probability $S(2, x^*)$ at $\sigma_0 = .1$ | .326 |
 
 **Normalized emission profiles and minimum coordinates** were computed as $\hat{s}_i = s_i / \|s\|_2$ for each brand using the canonical emission profiles from Zharnikov (2026d); the resulting $d_\partial(\hat{s})$ values are reported in the Case Study: Five Brands table above.
 
@@ -1035,4 +1142,8 @@ All numerical results reported in this paper were computed using standard mathem
 
 ### Companion Computation Script
 
-***Companion Computation Script.*** All numerical values reported in the Numerical Demonstration section and this Appendix (Vol($S^7_+$) $\approx .1269$, $\lambda_{D,1} = 112$, spectral gap = 48, survival probability table, normalized emission profiles, $d_\partial$ values, and ergodicity coefficients) are reproduced by `r6_diffusion_dynamics.py`, available at `https://github.com/spectralbranding/sbt-papers/tree/main/r6-diffusion-dynamics/code/`. Run with `uv run python r6_diffusion_dynamics.py --seed 42` to reproduce all reported values. The script uses Python 3.12 with NumPy and SciPy; no other dependencies are required.
+***Companion Computation Script.*** All numerical values reported in the Numerical Demonstration section and this Appendix (Vol($S^7_+$) $\approx .1269$, $\lambda_{D,1} = 112$, spectral gap = 48, survival probability table, normalized emission profiles, $d_\partial$ values, and ergodicity coefficients) are reproduced by `r6_diffusion_dynamics.py`, available at `https://github.com/spectralbranding/sbt-papers/tree/main/r6-diffusion-dynamics/code/`. Run with `uv run python r6_diffusion_dynamics.py --seed 42` to reproduce all reported values; the script asserts every paper-quoted value at start-up so paper-vs-script drift fails loudly. Pass `--write-figures` to regenerate Figure 3 (`figures/r6_phase_diagram.png`) and Figure 4 (`figures/r6_survival_curves.png`) under the same drift coefficients used in the body. The script uses Python 3.12 with NumPy (and matplotlib only when `--write-figures` is set); no other dependencies are required.
+
+---
+
+*Appendix B has been merged into the road-map of the introduction; the dependency DAG appears as Figure 2.*

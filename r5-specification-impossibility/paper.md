@@ -26,7 +26,7 @@ Every organizational design framework faces a fundamental tension: the desire to
 
 This omission matters. When a consulting framework recommends a particular combination of strategy, structure, and process, it is selecting a single point (or a small neighborhood) in a space whose vastness has not been formally characterized in the organizational design literature. The claim that "one size does not fit all" is universally accepted in organizational theory, but the mathematical content of that claim -- *how many sizes would one need, and why is the answer always "not enough"?* -- has remained unformalized.
 
-OrgSchema Theory (OST; Zharnikov 2026i) provides the architectural framework for this formalization. OST models organizations as configurable systems with six hierarchical levels -- Purpose (L0), Values (L1), Strategy (L2), Structure (L3), Process (L4), and Artifacts (L5) -- each specified across eight configuration dimensions that parallel the eight dimensions of Spectral Brand Theory (Zharnikov 2026a). The resulting 8x6 = 48 parameters form the organization's *activation matrix*, a complete specification of how the organization is configured at every level. OST posits that higher levels constrain lower levels (the *cascade model*) and that organizations can share higher-level specifications while diverging on lower levels (the *fork model*), but these claims have been justified only qualitatively.
+OrgSchema Theory (OST; Zharnikov 2026i) provides the architectural framework for this formalization. OST models organizations as configurable systems with six hierarchical levels -- Purpose (L0), Values (L1), Strategy (L2), Structure (L3), Process (L4), and Artifacts (L5) -- each specified across eight configuration dimensions that parallel the eight dimensions of Spectral Brand Theory (Zharnikov 2026a). The resulting 8x6 = 48 parameters form the organization's *activation matrix*, a complete specification of how the organization is configured at every level. OST posits that higher levels constrain lower levels (the *cascade model*) and that organizations can share higher-level specifications while diverging on lower levels (the *fork model*), but these claims have been justified only qualitatively. (Note: the six-level hierarchy here is distinct from the six-tier acquisition-target transferability ontology of Zharnikov 2026ag, which concerns structural separability in M&A contexts; a full alignment of the two hierarchies is deferred to future work.)
 
 The present paper provides the geometric foundations. Three existing bodies of work address adjacent impossibility arguments without fully capturing the geometric case. Simon (1947) established that cognitive limits preclude optimal specification; Williamson (1975, 1985) showed that contractual incompleteness results from bounded rationality and opportunism; Suh (1990) demonstrated that information content constrains product design decomposition. The present result is strictly complementary to all three: geometric impossibility obtains regardless of cognitive capacity, contractual framing, or fitness function, and therefore holds on grounds that Simon's, Williamson's, and Suh's arguments do not address. No existing organizational design framework quantifies the volumetric coverage of its parameter space, the gap this paper fills. Drawing on the theory of high-dimensional volumes, three results are proved:
 
@@ -105,7 +105,7 @@ where $[0,1]^{8k}$ is the shared subspace and $[0,1]^{8(6-k)}$ is the private su
 
 ### Relation to Spectral Brand Theory
 
-Spectral Brand Theory (Zharnikov 2026a) models brand perception through the same eight dimensions used by OST. The relationship is generative: an organization's activation matrix determines its brand emissions. Where SBT asks "how is the brand perceived by external observers?", OST asks "how is the organization configured internally to produce those emissions?" The 8 dimensions are shared; the 6 hierarchical levels are OST's contribution.
+Spectral Brand Theory (Zharnikov 2026a) models brand perception through the same eight dimensions used by OST. The relationship is generative: an organization's activation matrix determines its brand emissions. Where SBT asks "how is the brand perceived by external observers?", OST asks "how is the organization configured internally to produce those emissions?" The 8 dimensions are shared; the 6 hierarchical levels are OST's contribution. The downstream consequences of this generative relationship -- specifically, how brand identity arises as a Tier-4 projection from the organizational hierarchy and what separability conditions permit independent brand management -- are developed in Zharnikov (2026ah).
 
 The metric framework of Zharnikov (2026d) -- the Aitchison metric on brand signal space, the Fisher-Rao metric on observer weight space -- applies to the 8-dimensional projections of the activation matrix. The present paper extends the geometric analysis to the full 48-dimensional specification space, where the relevant questions concern volume, coverage, and the structure of high-dimensional parameter spaces rather than distances between individual brands.
 
@@ -136,7 +136,19 @@ This ratio collapses dramatically with dimension:
 | 24 | $1.15 \times 10^{-10}$ | Negligible |
 | 48 | $4.89 \times 10^{-27}$ | Astronomically small |
 
-*Notes*: Ball radius = 0.5 (inscribed in unit cube). Values reproduced exactly by the companion computation script (Table 1 function). See Vershynin (2018) for the full measure-concentration theory underlying these ratios.
+*Notes*: Ball radius = 0.5 (inscribed in unit cube). Values reproduced exactly by the companion computation script (table1_ball_cube_ratios function). See Vershynin (2018) for the full measure-concentration theory underlying these ratios.
+
+The decay profile of the inscribed-ball volume across dimensions is plotted in Figure 3, which renders the super-exponential nature of the collapse on a single log-scaled axis.
+
+```mermaid
+xychart-beta
+    title "Inscribed-ball volume decays super-exponentially with dimension"
+    x-axis "Dimension n" [2, 4, 8, 16, 24, 32, 40, 48]
+    y-axis "log10 V_n(0.5)" -28 --> 1
+    line [-0.10, -0.51, -1.80, -5.45, -9.94, -15.00, -20.48, -26.31]
+```
+
+*Figure 3: Volume of the inscribed ball $V_n(0.5)$ as a function of dimension $n$, on a base-10 logarithmic vertical axis. Anchor values: $V_2(0.5) \approx .785$, $V_8(0.5) \approx .0159$, $V_{24}(0.5) \approx 1.15 \times 10^{-10}$, $V_{48}(0.5) \approx 4.89 \times 10^{-27}$. The slope steepens monotonically with $n$: each additional dimension multiplies the log-volume penalty rather than adding to it. Reproduced by the companion computation script (figure3_volume_curve function).*
 
 At $n = 48$ -- the dimensionality of OST's activation matrix -- the inscribed ball occupies approximately $4.89 \times 10^{-27}$ of the cube's volume. In plain language: in a 48-dimensional space, almost all of the volume is concentrated in the "corners" of the cube, far from any central specification. The center of the space is, in a precise volumetric sense, nowhere.
 
@@ -188,11 +200,27 @@ $$M_{1\%} = \frac{0.01}{V_{48}(0.1)} \approx \frac{0.01}{1.38 \times 10^{-60}} \
 
 **Plain-language interpretation.** Imagine that every organization that has ever existed, every consulting template, every management textbook, and every MBA case study collectively represented $10^{10}$ distinct organizational specifications. The fraction of the 48-dimensional specification space they would cover is $10^{10} \cdot 1.38 \times 10^{-60} = 1.38 \times 10^{-50}$ -- effectively zero. The space of possible organizational configurations is not merely large; it is so vast that any practical collection of examples or templates covers a negligible fraction of it.
 
+The same arithmetic, viewed across orders of magnitude in template count, makes the impossibility result immune to optimistic accounting:
+
+**Table 2: Coverage Ceiling -- Fraction of $[0,1]^{48}$ Covered by $M$ Templates at $\varepsilon = 0.1$.**
+
+| Templates $M$ | Coverage $M \cdot V_{48}(0.1)$ |
+|---------------|--------------------------------|
+| 1 | $1.38 \times 10^{-60}$ |
+| $10^{3}$ | $1.38 \times 10^{-57}$ |
+| $10^{6}$ | $1.38 \times 10^{-54}$ |
+| $10^{10}$ | $1.38 \times 10^{-50}$ |
+| $10^{20}$ | $1.38 \times 10^{-40}$ |
+| $10^{40}$ | $1.38 \times 10^{-20}$ |
+| $10^{57}$ | $1.38 \times 10^{-3}$ |
+
+*Notes*: Coverage is the upper bound under non-overlapping ball packing. To reach 1% coverage requires $M \geq 7.26 \times 10^{57}$, which exceeds the number of atomic operations in the observable universe over its lifetime by tens of orders of magnitude. Reproduced by the companion computation script (table9_coverage_ceiling function).
+
 ### Dimensional Comparison
 
 The severity of coverage impossibility depends critically on dimensionality. To illustrate, coverage properties are compared across different dimensional frameworks:
 
-**Table 2: Coverage Properties by Framework Dimensionality at $\varepsilon = 0.1$.**
+**Table 3: Coverage Properties by Framework Dimensionality at $\varepsilon = 0.1$.**
 
 | Framework | $n$ | $V_{\text{ball}}/V_{\text{cube}}$ | Specs at $\varepsilon = 0.1$ | $V_n(0.1)$ |
 |-----------|-----|-----------------------------------|------------------------------|-------------|
@@ -202,7 +230,7 @@ The severity of coverage impossibility depends critically on dimensionality. To 
 | Extended framework | 16 | $3.59 \times 10^{-6}$ | $10^{16}$ | $2.35 \times 10^{-17}$ |
 | OST (full activation matrix) | 48 | $4.89 \times 10^{-27}$ | $10^{48}$ | $1.38 \times 10^{-60}$ |
 
-*Notes*: Ball/cube ratio uses inscribed ball (radius = 0.5). Specs at $\varepsilon = 0.1$ gives the number of distinguishable specifications. $V_n(0.1)$ is the volume covered by a single specification ball of radius 0.1. All values reproduced by the companion computation script (Table 2 function).
+*Notes*: Ball/cube ratio uses inscribed ball (radius = 0.5). Specs at $\varepsilon = 0.1$ gives the number of distinguishable specifications. $V_n(0.1)$ is the volume covered by a single specification ball of radius 0.1. All values reproduced by the companion computation script (table2_coverage_properties function).
 
 At $n = 2$ or $n = 5$, exhaustive specification is challenging but conceivable -- a sufficiently large library of templates could cover a meaningful fraction of the space. At $n = 8$ (the dimensionality of SBT), coverage becomes extremely sparse but individual specifications remain volumetrically significant. At $n = 48$ (the full OST activation matrix), coverage impossibility is absolute. The transition is not gradual but exponential: each additional dimension multiplies the space by a factor of $1/\varepsilon = 10$ while shrinking the relative volume of each specification ball.
 
@@ -242,7 +270,7 @@ The reduction ratio is $d_{\text{eff}}/48 = 15.75/48 = .328$, i.e., 32.8% of the
 
 **Lemma 1 (Cascade Per-Level Dimensions).** *At cascade coupling $\gamma = 0.5$, the effective free dimensions per level are:*
 
-**Table 3: Effective Free Dimensions per Organizational Level at $\gamma = 0.5$.**
+**Table 4: Effective Free Dimensions per Organizational Level at $\gamma = 0.5$.**
 
 | Level | Name | Free dimensions |
 |-------|------|-----------------|
@@ -253,7 +281,7 @@ The reduction ratio is $d_{\text{eff}}/48 = 15.75/48 = .328$, i.e., 32.8% of the
 | L4 | Process | 0.50 |
 | L5 | Artifacts | 0.25 |
 
-*Notes*: Computed as $d_i = 8 \cdot 0.5^i$ for $i = 0, \ldots, 5$. Total $d_{\text{eff}} = 15.75$. Reproduced by the companion computation script (Table 3 function).
+*Notes*: Computed as $d_i = 8 \cdot 0.5^i$ for $i = 0, \ldots, 5$. Total $d_{\text{eff}} = 15.75$. Reproduced by the companion computation script (table3_per_level_dims function).
 
 *Proof.* Direct computation: $d_i = 8 \cdot 0.5^i$ for $i = 0, 1, \ldots, 5$, yielding $8.0, 4.0, 2.0, 1.0, 0.5, 0.25$. $\square$
 
@@ -271,7 +299,7 @@ distinguishable specifications -- roughly 5.6 quadrillion organizational configu
 
 The effective dimensionality varies substantially with $\gamma$:
 
-**Table 4: Effective Dimensionality by Cascade Coupling Strength.**
+**Table 5: Effective Dimensionality by Cascade Coupling Strength.**
 
 | $\gamma$ | $d_{\text{eff}}$ | $d_{\text{eff}}/48$ | Interpretation |
 |-----------|-------------------|----------------------|----------------|
@@ -283,9 +311,39 @@ The effective dimensionality varies substantially with $\gamma$:
 | 0.7 | 11.4 | 23.8% | Very strong cascade |
 | 0.9 | 8.9 | 18.5% | Near-deterministic cascade |
 
-*Notes*: Computed via $d_{\text{eff}} = 8(1-(1-\gamma)^6)/\gamma$. All values reproduced by the companion computation script (Table 4 function). Loose-coupling organizations (Weick 1976) correspond to the $\gamma \approx 0.1$--$0.2$ range, yielding $d_{\text{eff}} \approx 29.5$--$37.5$ -- well above cognitive working-memory capacity -- predicting measurable specification incoherence across levels in loosely coupled systems.
+*Notes*: Computed via $d_{\text{eff}} = 8(1-(1-\gamma)^6)/\gamma$. All values reproduced by the companion computation script (table4_cascade_sensitivity function). Loose-coupling organizations (Weick 1976) correspond to the $\gamma \approx 0.1$--$0.2$ range, yielding $d_{\text{eff}} \approx 29.5$--$37.5$ -- well above cognitive working-memory capacity -- predicting measurable specification incoherence across levels in loosely coupled systems.
 
 Several observations merit attention. First, even at very strong cascade coupling ($\gamma = 0.9$), the effective dimensionality does not collapse to 8 (the dimensionality of a single level) because L0 always contributes 8 free dimensions regardless of $\gamma$. The limiting value as $\gamma \to 1$ is $d_{\text{eff}} \to 8$, reached only when lower levels are perfectly determined by L0. Second, the cascade has rapidly diminishing marginal returns: increasing $\gamma$ from 0 to 0.3 reduces dimensionality by 51%, while increasing from 0.3 to 0.9 reduces it by only an additional 31%. Third, the "sweet spot" at $\gamma \approx 0.5$ provides substantial dimensionality reduction (67%) while leaving enough freedom at lower levels for meaningful organizational variation -- consistent with OST's theoretical claim that real organizations exhibit moderate but not perfect cascade coupling.
+
+### A Falsifiable Empirical Prediction
+
+The closed-form expression for $d_{\text{eff}}(\gamma)$ converts into an empirically falsifiable prediction once cascade coupling is treated as a measurable quantity rather than a fixed modeling input. Define the *cross-level coherence ratio* of an organization as
+
+$$R \;=\; 1 - \frac{d_{\text{eff}}}{nL}$$
+
+where $nL = 48$ is the unconstrained dimensionality. Under Theorem 2, $R$ is a monotone increasing function of $\gamma$:
+
+$$R(\gamma) \;=\; 1 - \frac{1 - (1-\gamma)^L}{\gamma\, L}.$$
+
+**Proposition 1 (Coherence-Coupling Correspondence).** *Let $\hat{\gamma}$ denote a sample estimate of cascade coupling -- recovered, for example, from the conditional variance ratio of consecutive-level activation parameters in a hierarchical mixed-effects model -- and let $\hat{R}$ denote the cross-level coherence ratio computed from the same sample. Theorem 2 implies that across organizations $\hat{R}$ tracks $R(\hat{\gamma})$ within a tolerance band set by sampling and measurement error.*
+
+Anchor values from the closed form: $R(.1) \approx .22$, $R(.3) \approx .51$, $R(.5) \approx .67$, $R(.7) \approx .76$, $R(.9) \approx .82$ (computed by the companion script's proposition1_gamma_prediction function). The prediction is sharper than the qualitative loose-versus-tight coupling distinction (Weick 1976): it specifies the functional form, not just the direction, of the relation between coupling and coherence.
+
+*Falsification: Proposition 1 is falsified if a paired sample $\{(\hat{\gamma}_o, \hat{R}_o)\}_{o=1}^{N}$ across organizations exhibits a Pearson correlation $r < .50$ with $R(\hat{\gamma})$, or if the residuals $\hat{R}_o - R(\hat{\gamma}_o)$ display systematic dependence on level (for example, if the $\gamma$ implied separately at each adjacent-level pair differs by more than .20 within the same organization, indicating that the uniform-$\gamma$ assumption fails).*
+
+The proposition links the geometric model to an observable that empirical researchers can construct from existing measurement instruments; methodological details are discussed in the Methodological Implications subsection below.
+
+### Boundary Conditions for the Cascade Model
+
+Four modeling assumptions bound the cascade's scope of application.
+
+*Cascade strength as a modeling parameter.* The coupling parameter $\gamma \in (0,1]$ is a modeling assumption, not a derived constant. At $\gamma = 1$, the cascade collapses to perfect determinism: all five lower levels are fully determined by L0 (Purpose), leaving only 8 free dimensions. At $\gamma \to 0$, the cascade dissolves into full independence and all 48 dimensions are free -- the model degenerates to the unconstrained baseline of Theorem 1. Empirical estimation of $\gamma$ from cross-organizational panel data is therefore essential before quantitative claims (e.g., $d_{\text{eff}} = 15.75$) are treated as descriptive rather than illustrative; the estimation methodology is discussed in §9.3.
+
+*Dimensionality is OST-specific; the volume argument is not.* The 8 × 6 = 48 dimensional structure is a feature of OST's activation matrix. The volume-collapse argument, however, generalizes to any framework with $d \gtrsim 15$ dimensions: at that threshold the ball-to-cube ratio already falls below $10^{-6}$ (see Table 1), making exhaustive coverage impossible for any practically enumerable collection of specifications. The impossibility is not specific to OST; OST happens to instantiate it with a theoretically motivated dimension count.
+
+*Uniform-prior scope.* The coverage bounds in Theorem 1 and Corollary 1.1 assume a uniform distribution over $[0,1]^{48}$ -- equivalently, that every point in the specification space is equally relevant. If real organizational specifications cluster on a low-dimensional subspace (a viability manifold), the coverage bound applies to that subspace and $V_{48}(0.1)$ would be replaced by $V_{d_{\text{sub}}}(0.1)$ for the subspace's intrinsic dimension $d_{\text{sub}}$. The impossibility persists as long as $d_{\text{sub}} \gtrsim 20$, which the diversity of real organizational forms makes plausible; empirical TDA-based estimation of $d_{\text{sub}}$ remains an open question.
+
+*Resolution and measurement scale.* The $\varepsilon = 0.1$ resolution threshold presumes that OST parameters are metric (i.e., that differences of 0.1 on a $[0,1]$ scale are meaningful and approximately equal-interval). If parameters are in fact ordinal, the volume-based coverage argument requires additional justification. Liddell and Kruschke (2018) document the conditions under which metric-model analyses of ordinal data yield valid inferences; OST's continuous $[0,1]$ parameterization is designed to satisfy those conditions, but empirical validation of the metric interpretation -- including measurement invariance tests (Putnick & Bornstein 2016) -- is necessary before applying the $\varepsilon = 0.1$ bound to specific instruments.
 
 ---
 
@@ -293,7 +351,7 @@ Several observations merit attention. First, even at very strong cascade couplin
 
 ### The Fork Model Formalized
 
-The cascade model reduces effective dimensionality within a single organization. The fork model addresses a different question: how can multiple organizations share part of a specification while diverging on the rest? OST's fork model introduced in the Preliminaries posits that organizations can share higher-level specifications (L0 through some level $k-1$) while independently specifying lower levels ($k$ through L5). This is the structure of franchises (shared L0--L2, divergent L3--L5), open-source projects (shared L0--L2, divergent L3--L5), and denominational organizations (shared L0--L1, divergent L2--L5).
+The cascade model reduces effective dimensionality within a single organization. The fork model addresses a different question: how can multiple organizations share part of a specification while diverging on the rest? OST's fork model introduced in the Preliminaries posits that organizations can share higher-level specifications (L0 through some level $k-1$) while independently specifying lower levels ($k$ through L5). This is the structure of franchises (shared L0--L2, divergent L3--L5), open-source projects (shared L0--L2, divergent L3--L5), and denominational organizations (shared L0--L1, divergent L2--L5). Felin and Zenger (2014) frame the analogous open-versus-closed innovation choice as a governance decision over which problem-solving subspaces to share with external participants; the fork model captures the structural counterpart of that decision in the activation-matrix framework.
 
 **Theorem 3 (Forkability as Subspace Decomposition).** *The fork model, sharing levels L0 through L$_{k-1}$ while diverging on levels L$_k$ through L5, is geometrically equivalent to decomposing the specification space as:*
 
@@ -317,7 +375,7 @@ The subspace decomposition has several geometric consequences.
 
 **Fork depth and organizational variety.** The fork depth $k$ determines the balance between uniformity and variety:
 
-**Table 5: Fork Depth, Shared/Private Dimensions, and Private Specifications.**
+**Table 6: Fork Depth, Shared/Private Dimensions, and Private Specifications.**
 
 | Fork type | $k$ | Shared dims | Private dims | Private specs at $\varepsilon = 0.1$ |
 |-----------|-----|-------------|--------------|---------------------------------------|
@@ -328,7 +386,7 @@ The subspace decomposition has several geometric consequences.
 | Near-clone | 5 | 40 | 8 | $10^{8}$ |
 | Perfect clone | 6 | 48 | 0 | 1 |
 
-*Notes*: Private specs = $(1/\varepsilon)^{\text{private dims}}$ at $\varepsilon = 0.1$. All values reproduced by the companion computation script (Table 5 function). The $k = 3$ canonical fork is the theoretical basis for franchise systems, open-source ecosystems, and denominational religious structures studied empirically in organizational learning research (Argote 1999).
+*Notes*: Private specs = $(1/\varepsilon)^{\text{private dims}}$ at $\varepsilon = 0.1$. All values reproduced by the companion computation script (table5_fork_analysis function). The $k = 3$ canonical fork is the theoretical basis for franchise systems, open-source ecosystems, and denominational religious structures studied empirically in organizational learning research (Argote 1999).
 
 Even at $k = 5$ (sharing everything except artifacts), the $10^8$ distinguishable artifact configurations explain why seemingly identical organizations (same purpose, values, strategy, structure, process) can feel different: the artifact layer alone provides 100 million distinguishable configurations.
 
@@ -345,6 +403,18 @@ $$d_{\text{private,eff}} = 8 \cdot 0.5^3 \cdot \frac{1 - 0.5^3}{0.5} = 1.0 \cdot
 This is a dramatic reduction: the 24 nominal private dimensions collapse to 1.75 effective dimensions under moderate cascade coupling. The combined effect of fork and cascade explains why franchise systems achieve remarkable uniformity even when they only explicitly control higher-level specifications: the cascade propagates higher-level constraints into the lower levels, reducing the effective freedom that fork participants can exercise.
 
 **Plain-language interpretation.** A franchise that specifies purpose, values, and strategy (L0--L2) and has moderate cascade coupling ($\gamma = 0.5$) effectively constrains its franchisees to about 1.75 dimensions of genuine freedom in structure, process, and artifacts. This is why well-run franchises feel similar even when they differ in details: the cascade ensures that the "details" are largely determined by the shared higher levels.
+
+**Table 7: Fork × Cascade Interaction Surface -- Effective Free Dimensions as a Function of Cascade Coupling and Fork Depth.**
+
+| $\gamma$ \ $k$ | $k=0$ (no fork) | $k=1$ (fork at L1) | $k=2$ (fork at L2) | $k=3$ (canonical) | $k=4$ (tight) |
+|----------------|-----------------|---------------------|---------------------|-------------------|----------------|
+| 0.1 (weak) | 37.48 | 29.48 | 22.28 | 15.80 | 9.97 |
+| 0.3 (mild) | 23.53 | 15.53 | 9.93 | 6.01 | 3.27 |
+| 0.5 (moderate) | 15.75 | 7.75 | 3.75 | 1.75 | 0.75 |
+| 0.7 (strong) | 11.42 | 3.42 | 1.02 | 0.30 | 0.08 |
+| 0.9 (near-det.) | 8.89 | 0.89 | 0.09 | 0.01 | 0.00 |
+
+*Notes*: Each cell reports $d_{\text{private,eff}}(\gamma, k) = 8(1-\gamma)^k [1-(1-\gamma)^{6-k}]/\gamma$, the effective free dimensions available to fork participants in the private subspace (levels $k$ through L5). At $k = 0$ (no fork), the value equals total $d_{\text{eff}}$ from Theorem 2. Column $k = 3$ is the canonical franchise / open-source fork. Near-zero cells (bottom-right) indicate that cascade coupling alone nearly eliminates private variation even without explicit fork constraints. All values are exact closed-form calculations reproduced by the companion computation script.
 
 ---
 
@@ -388,7 +458,7 @@ $$H_{\text{eff}} = d_{\text{eff}} \cdot \log_2(10) = 15.75 \cdot 3.322 = 52.3 \t
 
 This is still more than double working memory capacity, but the cascade imposes a sequential structure: the designer specifies L0 (8 dimensions = 26.6 bits), then uses it to derive L1 (4 free dimensions = 13.3 bits), and so forth. At each level, the information load is within or near working memory capacity:
 
-**Table 6: Per-Level Information Load Under Cascade at $\gamma = 0.5$.**
+**Table 8: Per-Level Information Load Under Cascade at $\gamma = 0.5$.**
 
 | Level | Free dims | Information (bits) | Within WM capacity? |
 |-------|-----------|-------------------|---------------------|
@@ -399,7 +469,7 @@ This is still more than double working memory capacity, but the cascade imposes 
 | L4 | 0.5 | 1.7 | Yes |
 | L5 | 0.25 | 0.8 | Yes |
 
-*Notes*: WM capacity = 23.2 bits (Miller 1956, 7-chunk estimate); 13.3 bits under Cowan (2001) 4-chunk estimate. Under either estimate, L1--L5 are within WM capacity at γ = 0.5; L0 is marginal under Miller and borderline under Cowan. Information per level = free dims × log₂(10). Reproduced by the companion computation script (Table 6 function).
+*Notes*: WM capacity = 23.2 bits (Miller 1956, 7-chunk estimate); 13.3 bits under Cowan (2001) 4-chunk estimate. Under either estimate, L1--L5 are within WM capacity at γ = 0.5; L0 is marginal under Miller and borderline under Cowan. Information per level = free dims × log₂(10). Reproduced by the companion computation script (table_information_load function).
 
 The cascade transforms an impossible simultaneous specification problem (159.4 bits) into a manageable sequential specification problem (at most 26.6 bits at any step). This is why hierarchical organizational design -- starting from purpose and deriving lower levels -- is not merely a philosophical preference but a cognitive necessity.
 
@@ -425,7 +495,7 @@ compared to $M \cdot 159.4$ bits for $M$ independently specified organizations.
 
 ## Comparison with NK Landscapes
 
-The most prominent mathematical framework for organizational complexity is the NK landscape model (Kauffman 1993), as applied to strategic management by Levinthal (1997), Rivkin (2000), and Rivkin and Siggelkow (2003). A careful comparison is essential to establish the novelty and complementarity of the present results.
+The most prominent mathematical framework for organizational complexity is the NK landscape model (Kauffman 1993), as applied to strategic management by Levinthal (1997), Rivkin (2000), and Rivkin and Siggelkow (2003), with subsequent empirical work showing that organizational structure affects the quality of decisions extracted from the same underlying landscape (Csaszar 2012). A careful comparison is essential to establish the novelty and complementarity of the present results.
 
 ### NK Landscapes: Search Complexity
 
@@ -442,7 +512,7 @@ The NK framework is fundamentally about *navigation*: given a fitness landscape,
 
 The present paper addresses a fundamentally different question: *how much of the specification space can any collection of configurations cover?* This question has several structural differences from the NK question:
 
-**Table 7: Comparison of NK Landscape and Specification Coverage Frameworks.**
+**Table 9: Comparison of NK Landscape and Specification Coverage Frameworks.**
 
 | Feature | NK Landscapes | Present Paper |
 |---------|--------------|---------------|
@@ -467,7 +537,7 @@ The two frameworks are complementary, not competing:
 
 2. **The present paper shows specification is impossible.** Even with continuous attributes and no fitness function, the space of possible configurations is too vast for any finite set of templates to cover. This explains why "best practices" cannot be comprehensive and why specialization is necessary.
 
-3. **Combined implication.** Organizations face a double bind: the space is too large to specify exhaustively (geometric impossibility), and the landscape within that space is too rugged to search efficiently (computational complexity). Cascade constraints and fork structures address the geometric problem (dimensionality reduction); organizational learning and adaptation address the search problem (landscape navigation).
+3. **Combined implication.** Organizations face a double bind: the space is too large to specify exhaustively (geometric impossibility), and the landscape within that space is too rugged to search efficiently (computational complexity). Cascade constraints and fork structures address the geometric problem (dimensionality reduction); organizational learning and adaptation address the search problem (landscape navigation). The cascade's role as a verification mechanism -- formalizing which lower-level specifications are accepted as valid instantiations of higher-level constraints -- is developed as a full-rank spectral projection operator in Zharnikov (2026ae).
 
 ### Comparison with Other Frameworks
 
@@ -494,7 +564,7 @@ quadrantChart
 
 **Design Structure Matrix (Eppinger & Browning 2012).** DSM represents interdependencies among design elements as a square matrix, with applications to both product and organizational architecture. DSM captures the *topology* of dependencies (which elements interact with which) but does not address the *volume* of the configuration space or the geometric impossibility of exhaustive specification. The cascade model in OST can be viewed as a special case of DSM where the dependency matrix is strictly lower-triangular (higher levels influence lower levels, not vice versa), but the volumetric analysis of the present paper goes beyond what DSM provides.
 
-**Simon (1962) and Baldwin & Clark (2000).** Simon's "Architecture of Complexity" introduced near-decomposability as a design principle: complex systems can be managed by decomposing them into nearly independent subsystems. Baldwin and Clark (2000, *Design Rules, Volume 1: The Power of Modularity*) formalized this insight for modular product design, showing that modularity creates option value by enabling independent experimentation. Langlois (2002) extended the analysis by showing that modularity is economically contingent -- not just architecturally beneficial -- depending on transaction costs and capabilities. Puranam, Raveendran, and Knudsen (2012) grounded related insights in an epistemic interdependence perspective, showing that the organizational designer's knowledge of task interdependencies determines which decomposition structures are feasible; Puranam (2018) develops this perspective into a comprehensive account of how information-processing constraints at the micro level propagate into macro organizational forms. The present paper gives geometric content to these qualitative insights: forkability (Theorem 3) is a precise formalization of modularity as subspace decomposition, and the coverage impossibility theorem explains *why* decomposition is necessary -- not merely because it is convenient or epistemically constrained, but because the undecomposed space is geometrically unmanageable.
+**Simon (1962) and Baldwin & Clark (2000).** Simon's "Architecture of Complexity" introduced near-decomposability as a design principle: complex systems can be managed by decomposing them into nearly independent subsystems. Baldwin and Clark (2000, *Design Rules, Volume 1: The Power of Modularity*) formalized this insight for modular product design, showing that modularity creates option value by enabling independent experimentation. Ethiraj and Levinthal (2004) demonstrated that the optimal degree of modularity depends sensitively on the underlying interaction structure of design elements -- a finding that complements the present paper's volumetric account: modularity is geometrically necessary (because the undecomposed cube is uncoverable) but the *form* of modularity (where to fork, at what cascade strength) remains contingent on interaction structure. Langlois (2002) extended the analysis by showing that modularity is economically contingent -- not just architecturally beneficial -- depending on transaction costs and capabilities. Puranam, Raveendran, and Knudsen (2012) grounded related insights in an epistemic interdependence perspective, showing that the organizational designer's knowledge of task interdependencies determines which decomposition structures are feasible; Puranam (2018) develops this perspective into a comprehensive account of how information-processing constraints at the micro level propagate into macro organizational forms; Raveendran, Silvestri, and Puranam (2020) survey the resulting research program. Levinthal and Workiewicz (2018) show that nearly decomposable hierarchies can be augmented by overlapping authority structures (multiple bosses) without sacrificing adaptive capacity, suggesting that the cascade model's strict $L_i \to L_{i+1}$ ordering is itself a modeling assumption that organizations may relax in practice. The present paper gives geometric content to these qualitative and computational insights: forkability (Theorem 3) is a precise formalization of modularity as subspace decomposition, and the coverage impossibility theorem explains *why* decomposition is necessary -- not merely because it is convenient or epistemically constrained, but because the undecomposed space is geometrically unmanageable.
 
 ---
 
@@ -548,13 +618,13 @@ The cascade model has a further implication for the internal structure of L3. Po
 
 Several limitations should be acknowledged.
 
-**Uniform distribution assumption.** The coverage impossibility theorem computes volumes under the assumption that all points in $[0,1]^{48}$ are equally relevant. In practice, real organizations cluster in certain regions of the specification space (not all combinations of parameter values correspond to viable organizations). A more refined analysis would weight the specification space by a viability measure, potentially reducing the effective volume that needs to be covered. The impossibility result would still hold if the viable subspace has dimensionality greater than approximately 20 (which is conjectured based on the diversity of real organizations), but the exact threshold requires empirical investigation.
+*Uniform distribution assumption.* The coverage impossibility theorem computes volumes under the assumption that all points in $[0,1]^{48}$ are equally relevant. In practice, real organizations cluster in certain regions of the specification space (not all combinations of parameter values correspond to viable organizations). A more refined analysis would weight the specification space by a viability measure, potentially reducing the effective volume that needs to be covered. The impossibility result would still hold if the viable subspace has dimensionality greater than approximately 20 (which is conjectured based on the diversity of real organizations), but the exact threshold requires empirical investigation. An analogous concentration argument on the simplex appears in Zharnikov (2026f); the same underlying mechanism applies in $[0,1]^{48}$.
 
-**Independence of dimensions.** The activation matrix treats the 8 configuration dimensions as independent at each level. In practice, some dimensions are correlated (e.g., the semiotic and narrative dimensions of L5-Artifacts may be tightly coupled). Dimension correlation reduces effective dimensionality, as shown by the cascade model. A full treatment would require empirical estimation of the within-level correlation structure, which the cascade model approximates but does not capture precisely.
+*Independence of dimensions.* The activation matrix treats the 8 configuration dimensions as independent at each level. In practice, some dimensions are correlated (e.g., the semiotic and narrative dimensions of L5-Artifacts may be tightly coupled). Dimension correlation reduces effective dimensionality, as shown by the cascade model. A full treatment would require empirical estimation of the within-level correlation structure, which the cascade model approximates but does not capture precisely.
 
-**Cascade linearity.** The cascade model assumes linear coupling ($x_{i+1} = \gamma f(x_i) + (1-\gamma)z_{i+1}$). Real organizational cascades may be nonlinear: purpose may strongly constrain values on some dimensions while leaving others free, rather than constraining all dimensions equally. A nonlinear cascade model would produce dimension-dependent reduction rather than the uniform reduction assumed here.
+*Cascade linearity.* The cascade model assumes linear coupling ($x_{i+1} = \gamma f(x_i) + (1-\gamma)z_{i+1}$). Real organizational cascades may be nonlinear: purpose may strongly constrain values on some dimensions while leaving others free, rather than constraining all dimensions equally. A nonlinear cascade model would produce dimension-dependent reduction rather than the uniform reduction assumed here.
 
-**Static analysis.** The paper analyzes the specification space at a single point in time. Real organizations evolve, and their activation matrices change as they adapt to environments, learn from experience, and respond to external pressures. A dynamic extension would model organizational evolution as trajectories in $[0,1]^{48}$, connecting to the diffusion-on-manifolds framework developed in Zharnikov (2026j). Observer-relative measurement at L1 introduces additional variability beyond geometric projection loss: response-process variability in how organizational parameters are assessed (Schwarz 1999) means that empirical estimates of activation-matrix values reflect both the true specification and measurement noise, a limitation that the static analysis does not capture.
+*Static analysis.* The paper analyzes the specification space at a single point in time. Real organizations evolve, and their activation matrices change as they adapt to environments, learn from experience, and respond to external pressures. A dynamic extension would model organizational evolution as trajectories in $[0,1]^{48}$, connecting to the diffusion-on-manifolds framework developed in Zharnikov (2026j). Observer-relative measurement at L1 introduces additional variability beyond geometric projection loss: response-process variability in how organizational parameters are assessed (Schwarz 1999) means that empirical estimates of activation-matrix values reflect both the true specification and measurement noise, a limitation that the static analysis does not capture.
 
 ### Extensions
 
@@ -568,6 +638,16 @@ Several extensions are natural.
 
 **Multi-organization ecosystems.** The fork model analyzes pairs of organizations sharing a common higher-level specification. Extending to ecosystems of many organizations, each forking at different levels and with different cascade strengths, would model the geometry of industries, supply chains, and institutional fields.
 
+### Methodological Implications for Empirical Organizational Design Research
+
+Three methodological priorities follow from the theoretical results for researchers seeking to test or apply the cascade and fork models empirically.
+
+*Estimating γ from panel data.* The cascade coupling parameter $\gamma$ is the paper's central empirical unknown. A natural estimation strategy uses a hierarchical mixed-effects model: at each organizational level $i$, the variance of level-$i$ specifications conditional on level $i-1$ provides an estimate of the residual freedom $(1-\gamma)$, and $\gamma$ is recovered as one minus that conditional variance ratio. Cross-organizational or cross-period panel designs -- comparing specification variation at L3 (Structure) conditional on shared vs. divergent L2 (Strategy) across a sample of firms -- can provide identification. Measurement invariance (Putnick & Bornstein 2016) should be verified before pooling parameter estimates across organizations.
+
+*Operationalizing the activation matrix.* The 8×6 matrix is operationalizable through the PRISM-Org instrument and existing OST measurement scales (Zharnikov 2026i), which provide structured elicitation items for each configuration dimension at each hierarchical level. Researchers should report both the raw 8×6 matrix and the derived effective-dimensionality estimate $\hat{d}_{\text{eff}}$ for each organization, enabling cross-study aggregation and replication. The metric interpretation of parameters should be validated with standard tests before computing volume-based bounds.
+
+*Testing cascade and fork predictions jointly.* The cascade and fork models generate distinct joint distributional predictions testable via multilevel modeling. Under the fork model, organizations sharing the same higher-level specification should show lower within-fork variance in lower-level specifications than between-fork variance -- a cohort-similarity prediction directly analogous to near-transfer vs. far-transfer in organizational learning (Argote 1999). Under the cascade model, within-organization cross-level correlations should follow the geometric decay of Lemma 1: the correlation between adjacent levels should approximate $\gamma$, and the correlation between levels separated by $k$ steps should approximate $\gamma^k$. Both predictions are falsifiable with multilevel structural equation modeling and a sample of organizations with measured activation matrices.
+
 ---
 
 ## Conclusion
@@ -580,11 +660,13 @@ Practically, the framework explains the repeated failure of universalistic manag
 
 The fundamental insight is geometric: organizations do not fail to specify everything because designers are lazy or boundedly rational. The space is simply too large. Cascade, fork, and specialization are the geometric responses that organizational practice has discovered. Organization theory must now take these geometric constraints as seriously as it has taken computational and contractual ones.
 
+The bridge to Spectral Brand Theory closes the theoretical loop. OST's cascade model does not merely compress the specification space; it generates the organization's brand emissions as a downstream consequence. Each of the L0-to-L5 levels contributes signals across the eight SBT dimensions -- Semiotic, Narrative, Ideological, Experiential, Social, Economic, Cultural, and Temporal -- and the cascade propagates higher-level constraints downward so that the organization's brand identity emerges as a projection of its internal configuration rather than as an independently managed signal. When an organization collapses its effective dimensionality from 48 to approximately 16 through cascade coupling, the projected brand signal in SBT's 8-dimensional perception space retains the structure that the higher levels imposed. The impossibility result thus carries a positive implication for brand strategy: coherent brand identity is not an add-on to organizational design but a geometric consequence of well-structured cascade coupling. Organizations that achieve strong purpose-to-artifact cascade alignment emit brand signals that are internally consistent across all eight spectral dimensions; organizations with weak cascade coupling emit incoherent signals whose constituent dimensions are statistically independent in the observer's perception space. The formal analysis of this projection -- from OST's 48-dimensional specification space to SBT's 8-dimensional emission space -- is developed in Zharnikov (2026ah).
+
 ---
 
 ## Companion Computation Script
 
-All numerical values cited in this paper -- Tables 1--6, $V_{48}(0.1) \approx 1.38 \times 10^{-60}$, $d_{\text{eff}} = 15.75$, $H_{48} = 159.4$ bits, $\text{CR} \approx 3.05$, $d_{\text{private,eff}} = 1.75$, and all cascade-sensitivity and fork-cascade interaction values -- are reproduced by the companion computation script at:
+All numerical values cited in this paper -- Tables 1--9, the Figure 3 data series, the Proposition 1 coherence-coupling schedule, $V_{48}(0.1) \approx 1.38 \times 10^{-60}$, $d_{\text{eff}} = 15.75$, $H_{48} = 159.4$ bits, $\text{CR} \approx 3.05$, $d_{\text{private,eff}} = 1.75$, and all cascade-sensitivity and fork-cascade interaction values -- are reproduced by the companion computation script at:
 
 `research/computation_scripts/r5_specification_impossibility.py`
 
@@ -618,7 +700,13 @@ Borsboom, Denny, Gideon J. Mellenbergh, and Jaap van Heerden (2004). The concept
 
 Cowan, Nelson (2001). The magical number 4 in short-term memory: A reconsideration of mental storage capacity. *Behavioral and Brain Sciences*, 24(1), 87--114.
 
+Csaszar, Felipe A. (2012). Organizational structure as a determinant of performance: Evidence from mutual funds. *Strategic Management Journal*, 33(6), 611--632.
+
 Eppinger, Steven D., and Tyson R. Browning (2012). *Design Structure Matrix Methods and Applications*. MIT Press.
+
+Ethiraj, Sendil K., and Daniel A. Levinthal (2004). Modularity and innovation in complex systems. *Management Science*, 50(2), 159--173.
+
+Felin, Teppo, and Todd R. Zenger (2014). Closed or open innovation? Problem solving and the governance choice. *Research Policy*, 43(5), 914--925.
 
 Flake, Jessica K., and Eiko I. Fried (2020). Measurement schmeasurement: Questionable measurement practices and how to avoid them. *Advances in Methods and Practices in Psychological Science*, 3(4), 456--465.
 
@@ -631,6 +719,8 @@ Kauffman, Stuart A. (1993). *The Origins of Order: Self-Organization and Selecti
 Langlois, Richard N. (2002). Modularity in technology and organization. *Journal of Economic Behavior and Organization*, 49(1), 19--37.
 
 Levinthal, Daniel A. (1997). Adaptation on rugged landscapes. *Management Science*, 43(7), 934--950.
+
+Levinthal, Daniel A., and Maciej Workiewicz (2018). When two bosses are better than one: Nearly decomposable systems and organizational adaptation. *Organization Science*, 29(2), 207--224.
 
 Liddell, Torrin M., and John K. Kruschke (2018). Analyzing ordinal data with metric models: What could possibly go wrong? *Journal of Experimental Social Psychology*, 79, 328--348.
 
@@ -647,6 +737,8 @@ Puranam, Phanish (2018). *The Microstructure of Organizations*. Oxford Universit
 Puranam, Phanish, Marlo Raveendran, and Thorbjørn Knudsen (2012). Organization design: The epistemic interdependence perspective. *Academy of Management Review*, 37(3), 419--440.
 
 Putnick, Diane L., and Marc H. Bornstein (2016). Measurement invariance conventions and reporting: The state of the art and future directions for psychological research. *Developmental Review*, 41, 71--90.
+
+Raveendran, Marlo, Luciana Silvestri, and Phanish Puranam (2020). The role of interdependence in the micro-foundations of organization design: Task, goal, and knowledge interdependence. *Academy of Management Annals*, 14(2), 828--868.
 
 Rivkin, Jan W. (2000). Imitation of complex strategies. *Management Science*, 46(6), 824--844.
 
