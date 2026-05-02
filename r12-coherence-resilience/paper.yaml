@@ -1,16 +1,16 @@
 # paper.yaml — Paper Spec v0.1.0
-# Zharnikov (2026s): Coherence Type as Crisis Predictor
+# Zharnikov (2026s): Coherence Type Over Coherence Score
 spec_version: "0.1.0"
 
 meta:
-  title: "Coherence Type as Crisis Predictor: A Formal Derivation from Non-Ergodic Dynamics"
+  title: "Coherence Type Over Coherence Score: A Stochastic Differential Equation Derivation of Brand Resilience"
   authors:
     - name: "Zharnikov, Dmitry"
       orcid: "0009-0000-6893-9231"
       affiliation: "Independent Researcher"
   doi: "10.5281/zenodo.19208107"
   date: "2026-05-02"
-  version: "1.1"
+  version: "1.2"
   venue: "Working Paper (Zenodo)"
   license: "CC-BY-4.0"
   keywords:

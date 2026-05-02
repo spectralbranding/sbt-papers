@@ -6,8 +6,8 @@ authors:
     email: dmitry@spectralbranding.com
     affiliation: "Independent Researcher"
     orcid: "https://orcid.org/0009-0000-6893-9231"
-title: "Coherence type as crisis predictor: A formal derivation from non-ergodic dynamics"
-version: 1.1.0
+title: "Coherence type over coherence score: A stochastic differential equation derivation of brand resilience"
+version: 1.2.0
 date-released: 2026-05-02
 url: "https://doi.org/10.5281/zenodo.19208107"
 repository-code: "https://github.com/spectralbranding/sbt-papers"
@@ -34,6 +34,6 @@ preferred-citation:
       email: dmitry@spectralbranding.com
       affiliation: "Independent Researcher"
       orcid: "https://orcid.org/0009-0000-6893-9231"
-  title: "Coherence type as crisis predictor: A formal derivation from non-ergodic dynamics"
+  title: "Coherence type over coherence score: A stochastic differential equation derivation of brand resilience"
   year: 2026
   url: "https://doi.org/10.5281/zenodo.19208107"
