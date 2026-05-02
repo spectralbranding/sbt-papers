@@ -13,8 +13,8 @@ metadata:
       corresponding: true
   citation_key: "2026x"
   doi: "10.5281/zenodo.19391476"
-  date: "2026-04-16"
-  version: "1.3.0"
+  date: "2026-05-01"
+  version: "1.4.0"
   status: working_paper
   license: "CC-BY-4.0"
   abstract: >
@@ -194,6 +194,21 @@ submission_history:
       references. v1.7 (2026-04-16): Added Section 8.6 (Brand Function
       Format Optimization, 375 calls v2, format explains 17% of variance,
       qualitative ordinal levels outperform prose).
+      v1.4.0 (2026-05-01): Orchestrator-selected deferred items applied.
+      Added Mermaid Figure 1 verification flow (signed Brand Function ->
+      retrieve -> verify -> admissibility -> teleological action) in
+      Cryptographic Signature section. Added Brand Function v0.1 JSON-LD
+      schema sketch (illustrative, not normative; four required slots:
+      spectral profile, behavioral specifications, coherence metrics,
+      cryptographic attestation) after Brand Function Format Optimization
+      results. Elevated open-standards-adoption from boundary condition
+      to ~210-word substantive argument in Limitations (DNSSEC/BIMI/vLEI
+      precedents, Schema.org coordination analogue, closed-platform
+      failure mode). Added three Perplexity-verified citations on
+      algorithm aversion in Cryptographic Signature From Reputation to
+      Verification subsection: Castelo, Bos, and Lehmann 2019 JMR;
+      Dietvorst, Simmons, and Massey 2015 JEP:G; Longoni, Bonezzi, and
+      Morewedge 2019 JCR. Reference list re-sorted alphabetically.
   - venue: "[withheld]"
     type: journal
     date: "2026-04-TBD"

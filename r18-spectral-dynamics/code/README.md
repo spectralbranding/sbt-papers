@@ -1,16 +1,23 @@
-# R18 Companion Computation Script
+# R18 Companion Computation Scripts
 
-Reproduces Tables 2 and 3 (Dove brand velocity and acceleration vectors) of the
-R18 paper *Spectral Dynamics: Velocity, Acceleration, and Phase Space in Multi-
+Reproduces Tables 2 and 3 (Dove brand velocity and acceleration vectors) and
+Figure 2 (Dove (Cultural, Ideological) phase trajectory) of the R18 paper
+*Spectral Dynamics: Velocity, Acceleration, and Phase Space in Multi-
 Dimensional Brand Perception* (Zharnikov 2026z).
 
 ## Run
+
+Tables 2 and 3 (Python standard library only):
 
 ```
 python3 compute_velocity_acceleration.py
 ```
 
-No external dependencies — Python 3 standard library only.
+Figure 2 (numpy + matplotlib via PEP 723 inline-deps):
+
+```
+uv run --script phase_portrait.py
+```
 
 ## Inputs
 
@@ -36,6 +43,10 @@ dimensions; scale 1-10). The Ideological dimension is undefined at 2003
 - `table3_acceleration.json` — acceleration vectors between consecutive period
   midpoints.
 - `table3_acceleration.csv` — flat CSV of the same.
+- `figure2_dove_phase.png` — Dove (Cultural, Ideological) phase trajectory across
+  the three time points where both dimensions are defined (2006, 2013, 2023),
+  with arrow segments showing direction of motion across the Expansion and
+  Normative-Absorption periods.
 
 ## Reference
 

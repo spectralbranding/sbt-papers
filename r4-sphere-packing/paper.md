@@ -4,7 +4,7 @@
 
 ORCID: 0009-0000-6893-9231
 
-Working Paper v1.2.0 — April 2026 (Updated May 2026)
+Working Paper v1.3.0 — May 2026
 
 https://doi.org/10.5281/zenodo.18945522
 
@@ -26,7 +26,7 @@ How many distinguishable brand positions can a market sustain? We formalize bran
 
 The concept of "positioning" is among the most influential ideas in modern marketing. Since Ries and Trout (1981) argued that brands compete for distinct positions in the consumer's mind, the metaphor of a "positioning space" has become central to brand strategy. Building on Aaker's (1991, 1997) foundational frameworks for brand equity and brand personality, subsequent research has developed rich taxonomies of brand dimensions -- yet for all the geometric language, the actual geometry has never been formalized. No one has answered the most basic quantitative question the metaphor implies: *how many distinguishable positions does the space actually contain?*
 
-Previous attempts to formalize brand positioning have been limited to low-dimensional settings. Hotelling (1929) places firms on a line. MDS in marketing (Green & Rao 1972; Bijmolt & Wedel 1999) typically produces 2- or 3-dimensional perceptual maps. Lancaster's (1966) characteristics space allows arbitrary dimensionality in principle but has not addressed the capacity question. Gardenfors (2000) provides a general theory of conceptual spaces but does not compute packing bounds.
+Previous attempts to formalize brand positioning have been limited to low-dimensional settings. Hotelling (1929) places firms on a line. MDS in marketing (Green & Rao 1972; Bijmolt & Wedel 1999) typically produces 2- or 3-dimensional perceptual maps. Lancaster's (1966) characteristics space allows arbitrary dimensionality in principle but has not addressed the capacity question. Gardenfors (2000) provides a general theory of conceptual spaces but does not compute packing bounds. Cognitive science models of structured representation (Tenenbaum et al. 2011) show that human concept learning exploits the statistical structure of high-dimensional hypothesis spaces, motivating the question of how many distinct hypotheses -- and thus how many distinct brand positions -- a structured representational space can sustain.
 
 Geometric approaches to brand perception have a long history (reviewed in Zharnikov 2026c), but none has derived capacity bounds. Spectral Brand Theory (Zharnikov 2026a) provides the framework that makes a formal treatment possible, modeling brands as emitters across eight typed dimensions perceived by observers on $\Delta^7$. Zharnikov (2026d) established the Aitchison metric on $\mathbb{R}^8_+$; Zharnikov (2026e) proved that projecting 8D profiles to scalar grades produces spectral metamerism; Zharnikov (2026f) showed that concentration of measure makes cohort boundaries inherently fuzzy.
 
@@ -253,6 +253,21 @@ This estimate treats the unit ball as if it were a large region of an infinite l
 
 **Interpretive caveat.** The 112/128 decomposition describes the geometry of the $E_8$ lattice, not an empirical observation about competitive dynamics. The specialist/generalist interpretation is structurally motivated but remains an analogy -- real competitive dynamics involve asymmetric substitution, category boundaries, and observer heterogeneity that no lattice model captures.
 
+**Figure 1: Decomposition of the 240 minimal vectors of $E_8$ into specialist and generalist shells.**
+
+``` {.mermaid width=55%}
+graph TD
+    K[E_8 kissing number = 240<br/>minimal vectors at squared norm 2]
+    K --> S[Specialist shell<br/>112 vectors<br/>form: two coordinates plus or minus 1, six zeros]
+    K --> G[Generalist shell<br/>128 vectors<br/>form: all eight coordinates plus or minus 1/2, even sign parity]
+    S --> S1[Concentrated on 2 of 8 dimensions<br/>C(8,2) times 2-squared = 28 times 4 = 112]
+    G --> G1[Distributed across all 8 dimensions<br/>2-to-the-8 divided by 2 = 128]
+    S1 -. competitive interpretation .-> SC[Sharp differentiation<br/>on a small dimension subset]
+    G1 -. competitive interpretation .-> GC[Diffuse differentiation<br/>across the full spectrum]
+```
+
+*Notes*: Solid arrows trace the algebraic decomposition (Conway & Sloane 1999, ch. 4); both shells lie at squared norm 2 and together exhaust the kissing configuration. Dashed arrows trace the structural-analogy reading flagged in the interpretive caveat above; the analogy is motivated by the geometry, not asserted as an empirical regularity. The 112:128 ratio is approximately .47:.53 by construction.
+
 *Falsification*: Proposition 2 is falsified if the $E_8$ lattice's minimal vectors can be shown to number other than 240, or if more than 240 non-overlapping unit spheres in $\mathbb{R}^8$ can simultaneously touch a central unit sphere. (Both are mathematically proved impossible; the proposition would be falsified at the mathematical level, not the empirical one.)
 
 ### Comparison Across Dimensions
@@ -370,6 +385,20 @@ Table 8: Effective Dimensionality and Positioning Capacity by Average Pairwise C
 | .7 | 1.36 | $\sim 10^1$ |
 
 *Notes*: $d_{\text{eff}} = n / (1 + (n-1)\rho)$, equicorrelation case. Capacity is approximate; computed as $(1/\varepsilon)^{d_\text{eff}}$.
+
+**Figure 2: Capacity-collapse curve under average pairwise correlation ($n = 8$, $\varepsilon = .10$).**
+
+```mermaid
+xychart-beta
+    title "Positioning capacity collapses as inter-dimension correlation rises"
+    x-axis "Average pairwise correlation rho" [".0", ".1", ".2", ".3", ".5", ".7"]
+    y-axis "log10 capacity" 0 --> 9
+    line [8, 5, 3, 3, 2, 1]
+```
+
+*Figure 2: Log-base-10 positioning capacity as a function of average pairwise correlation rho among SBT dimensions (n = 8, epsilon = .10). Plotted values are log10((1/epsilon)^d_eff) rounded to the nearest integer; exact values from Table 8 are 8.00, 4.71, 3.33, 2.58, 1.78, 1.36. The curve is steepest in the low-correlation regime (rho in [.0, .2]): even modest positive correlation collapses capacity by three or more orders of magnitude before rho = .2 is reached. Proposition 5 result.*
+
+*Notes*: Mermaid rendering of the same data shown in Table 8. The vertical axis is $\log_{10}$ of capacity; the horizontal axis is the average pairwise correlation $\rho$ (non-uniformly spaced sample points). Capacity contracts by approximately five orders of magnitude as $\rho$ moves from $.0$ to $.7$, reflecting the participation-ratio collapse of $d_{\text{eff}}$ from 8.00 to 1.36 over the same interval. The curve is steepest in the low-correlation regime ($\rho \in [.0, .2]$): a small positive correlation already costs more than three orders of magnitude of capacity.
 
 *Proof.* The effective dimensionality formula follows from the eigenvalue structure of a correlation matrix with uniform off-diagonal entries $\rho$. Such a matrix has one eigenvalue $\lambda_1 = 1 + (n-1)\rho$ and $(n-1)$ eigenvalues $\lambda_k = 1 - \rho$ for $k = 2, \ldots, n$. The "participation ratio" $d_{\text{eff}} = (\sum \lambda_k)^2 / \sum \lambda_k^2$ simplifies to $n / (1 + (n-1)\rho)$ in this equicorrelation case. Capacity at reduced dimensionality follows from Proposition 1 applied with $n = d_{\text{eff}}$ (rounding to the nearest integer for the lower bound computation). $\square$
 
@@ -606,6 +635,8 @@ Ries, A., & Trout, J. (1981). *Positioning: The Battle for Your Mind*. McGraw-Hi
 
 Shannon, C. E. (1948). A mathematical theory of communication. *Bell System Technical Journal*, 27(3), 379--423.
 
+Tenenbaum, Joshua B., Charles Kemp, Thomas L. Griffiths, and Noah D. Goodman (2011). How to grow a mind: Statistics, structure, and abstraction. *Science*, 331(6022):1279--1285. https://doi.org/10.1126/science.1192788
+
 Sharp, B. (2010). *How brands grow: What marketers don't know*. Oxford University Press.
 
 Shepard, R. N. (1987). Toward a universal law of generalization for psychological science. *Science*, 237(4820), 1317--1323. https://doi.org/10.1126/science.3629243
@@ -652,6 +683,18 @@ Table A1: Key Numerical Values.
 *Notes*: All values computed via `R4_R5_computations.py` (Python 3.12, numpy, scipy).
 
 The $E_8$-based capacity estimate (using the exact packing density) for $\varepsilon = .10$ is $6.49 \times 10^9$, which falls between the simple lower bound ($10^8$) and the upper bound ($3.78 \times 10^{10}$). All reported lower bounds use the conservative simple volume bound $(1/\varepsilon)^8$.
+
+### *Companion Computation Script*
+
+All numerical figures in this paper -- the unit-ball volumes of Table 2, the capacity bounds of Table 4, the white-space fractions of Table 6, the saturation thresholds of Table 7, the effective-dimensionality and capacity-collapse values of Table 8, the appendix tables A1 and B1, and the kissing-shell decomposition of Figure 1 -- are reproducible from a single companion script in the public mirror:
+
+`https://github.com/spectralbranding/sbt-papers/tree/main/r4-sphere-packing/code/r4_capacity_bounds.py`
+
+Run command:
+
+`uv run --with numpy --with scipy python r4_capacity_bounds.py`
+
+The script fixes `SEED = 42` at file top, exposes the volume function $V_n(r)$, the participation-ratio function $d_{\text{eff}}(n, \rho)$, the simple volume bound $(1/\varepsilon)^n$, the covering upper bound $((2 + \varepsilon)/\varepsilon)^n$, the $E_8$ packing-density estimate, and a deterministic enumeration of the 112 + 128 = 240 minimal vectors of $E_8$ at squared norm 2. All values reported in this appendix and in the body tables match the script's stdout to the displayed precision; the kissing-shell counts are exact.
 
 ## Appendix B: Dimensional Capacity Comparison
 

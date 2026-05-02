@@ -4,7 +4,7 @@
 
 ORCID: 0009-0000-6893-9231
 
-Working Paper v1.4.0 — March 2026 (Updated May 2026)
+Working Paper v1.5.0 — March 2026 (Updated May 2026)
 
 https://doi.org/10.5281/zenodo.18945217
 
@@ -35,6 +35,29 @@ The purpose of this survey is to map these disparate literatures systematically 
 The remainder of the paper is organized as follows. Sections 2 through 10 survey the relevant literatures in detail. Section 11 synthesizes these findings through a classification matrix assessing each tradition against six criteria. Section 12 formulates the research agenda as six specific open problems with mathematical formulations. Section 13 concludes.
 
 This paper makes three contributions to the literature. First, it provides the first compound-gap diagnosis at the ten-tradition intersection of formal geometry and brand theory, identifying not one missing ingredient but the absence of their simultaneous combination. Second, it articulates six open problems as formal mathematical statements, converting qualitative observations about missing structure into precise targets for mathematical brand theory. Third, it positions Spectral Brand Theory (Zharnikov 2026a) as a candidate framework with a companion-paper resolution for each open problem (Zharnikov 2026d, 2026e, 2026f, 2026g, 2026h, 2026j), situating SBT within the established mathematical literature it draws upon.
+
+```mermaid
+graph LR
+  GEO[Geometric traditions]
+  MEAS[Measurement-theoretic traditions]
+  COG[Cognitive-science traditions]
+  INFO[Information-theoretic traditions]
+
+  GEO --> SEM[Semiotic]
+  GEO --> EXP[Experiential]
+  GEO --> TMP[Temporal]
+  MEAS --> SEM
+  MEAS --> ECO[Economic]
+  MEAS --> NAR[Narrative]
+  COG --> IDE[Ideological]
+  COG --> SOC[Social]
+  COG --> SEM
+  INFO --> ECO
+  INFO --> CUL[Cultural]
+  INFO --> TMP
+```
+
+Figure 1. Cross-cluster citation pathways: each literature cluster contributes to dimensional or geometric foundations; arrows are conceptual not citation-counts.
 
 ## 2. Multidimensional Scaling in Marketing
 
@@ -388,6 +411,24 @@ The classification matrix reveals that no existing tradition satisfies all six c
 
 The gap is therefore not the absence of any one ingredient but the absence of their combination. No existing framework integrates high-dimensional geometric structure with a formal metric, observer-specific processing, non-ergodic temporal dynamics, and a generative signal mechanism.
 
+Table 2: Compound-Gap Satisfaction Matrix — Five Criteria × Surveyed Traditions.
+
+| Tradition | High-D geometry | Formal metric | Observer heterogeneity | Non-ergodic dynamics | Generative mechanism |
+|---|---|---|---|---|---|
+| MDS (Torgerson, Kruskal, Bijmolt & Wedel) | — | partial | partial (INDSCAL) | — | — |
+| Lancaster / Hotelling | partial | partial | — | — | — |
+| Conceptual Spaces (Gardenfors) | partial | partial | — | — | — |
+| Non-Euclidean Perception (Todd, Bujack) | — | yes | partial | — | — |
+| Information Geometry (Amari) | yes | yes | partial | — | partial |
+| INDSCAL / DeSarbo | — | partial | yes | — | — |
+| TDA (persistent homology) | yes | partial | — | partial | — |
+| Quantum Cognition (Busemeyer) | partial | partial | partial | — | partial |
+| Opinion Dynamics (HK, DeGroot) | partial | partial | partial | — | partial |
+| Non-Ergodicity (Peters, Molenaar) | — | — | yes | yes | partial |
+| SBT (proposed) | yes | proposed | yes | proposed | proposed |
+
+*Notes*: Cell entries are read against the five compound-gap criteria defined in §11.1 (criteria 1, 2, 3, 4, 5; criterion 6 — empirical validation — is reported separately in Tables 1a–1b). "yes" = the tradition formally satisfies the criterion; "partial" = the tradition addresses the criterion in a restricted form (e.g., low-dimensional only, single-shot only, or without proved properties); "—" = the criterion is not addressed within the tradition; "proposed" = SBT companion papers (Zharnikov 2026d–h, 2026j) develop the formal property cited. The central five-way intersection — a single tradition with "yes" entries across all five columns — is unoccupied. SBT is positioned as a candidate framework whose cells become "yes" upon the resolution of the six open problems in §12.
+
 ### 11.3 SBT as a Candidate Framework
 
 A terminological note is warranted before describing SBT's relationship to the compound gap. The word "spectral" in Spectral Brand Theory derives from the metaphor of multi-dimensional signal profiles — analogous to the electromagnetic spectrum, where a source emits energy at multiple frequencies simultaneously and observers perceive a weighted combination of those frequencies. This usage is distinct from two established mathematical traditions that share the same term: spectral graph theory (Chung 1997), which studies the eigenvalues of graph Laplacians to characterize network structure, and spectral clustering (von Luxburg 2007), which applies those eigenvalues to partition data points into clusters. SBT neither employs graph Laplacians nor performs eigenvalue-based data partitioning; the overlap in terminology is coincidental. Readers approaching this paper from a computer science or machine learning background should treat "spectral" in SBT as a signal-profile metaphor, not as a reference to eigenspectral methods.
@@ -407,6 +448,16 @@ Item Response Theory (Embretson and Reise 2000) models the probability of a resp
 The Generalized Context Model (Nosofsky 1986) and Representational Similarity Analysis (Kriegeskorte, Mur, and Bandettini 2008) are discussed in Sections 6.1 and 6.3, respectively, as precursors and parallels within the observer-heterogeneity tradition. Neither satisfies the compound gap criteria because neither integrates non-ergodic temporal dynamics with a generative signal mechanism.
 
 These exclusions define the scope of this survey: the compound gap is specifically the absence of a framework combining all five criteria simultaneously. A framework that satisfies four of the five — as Bayesian choice models come close to doing for three — is valuable but does not address the particular intersection this survey targets.
+
+Four additional boundary conditions constrain the survey's scope and should be kept in view when reading the open-problem formulations in Section 12.
+
+*Brand type*. This survey is scoped to brand perception of corporate and commercial brands. Place brands, person brands (celebrities, politicians), and NGO brands raise structurally analogous geometric questions — high-dimensional perception, observer heterogeneity, temporal dynamics — but their signal-emission mechanisms differ in important ways (institutional authority, co-authorship, narrative authenticity norms) and are not examined here except where findings are explicitly cross-applicable.
+
+*Cognitive-science traditions*. The cognitive-science literatures surveyed in Sections 4 through 6 focus on object and category perception: how observers represent, categorize, and compare stimuli along quality dimensions. Affect-only models (valence-arousal circumplex, appraisal theories of emotion) and motor-control accounts of perception (predictive coding, embodied simulation) are excluded. Their exclusion reflects a scope decision, not a denial of relevance: affect and embodiment will likely be necessary components of any fully specified model of brand perception, but they would require a separate survey of comparable scope.
+
+*Measurement-theory framework*. The metric and dimensional proposals in Sections 6 and 12 assume a Western academic measurement tradition — continuous scales, interval or ratio data, and statistical estimation procedures developed in psychometrics and mathematical psychology. Cross-cultural alternative measurement traditions (indigenous psychology, non-Western ordinal reasoning, non-individualist response-set norms) are outside the scope of this survey. These are addressed in the companion paper on dimension justification and cultural validity (Zharnikov 2026r).
+
+*Parameterization*. The metric proposals in Section 12, Problem 1, presume continuous parameterization of brand profiles and observer weight vectors. Ordinal-only frameworks — where attributes can only be ranked, not scored — fall outside the scope of the mathematical analysis. The geometric results (geodesics, curvature, concentration bounds) depend on the continuous structure of the manifold; their ordinal analogs would require a separate treatment using tools from order topology and non-metric MDS.
 
 ## 12. Research Agenda: Six Open Problems
 
@@ -484,6 +535,31 @@ The synthesis above identifies a compound gap at the intersection of high-dimens
 
 **Companion paper.** Zharnikov (2026j) develops this problem in full, modeling brand perception evolution as stochastic diffusion on the perceptual manifold with absorbing boundaries.
 
+### 12.7 The E_8 Coincidence
+
+SBT proposes exactly eight perceptual dimensions. Eight is also the dimension in which the sphere packing problem is uniquely and optimally resolved. The connection deserves explicit note, even though it cannot bear analytical weight on its own.
+
+The E_8 root system is a configuration of 240 vectors in eight-dimensional Euclidean space with exceptional symmetry properties. The sphere packing defined by E_8 achieves the highest possible packing density in eight dimensions — a fact proved by Viazovska (2017) using methods from the theory of modular forms. Prior to Viazovska's proof, Cohn, Kumar, Miller, Radchenko, and Viazovska (2017) established linear programming bounds that conjectured optimality of E_8, supplying the analytical foundation for interpreting E_8 as a hard geometric limit rather than a numerical approximation. The kissing number in eight dimensions — the maximum number of non-overlapping unit spheres simultaneously touching a central unit sphere — is exactly 240, and the E_8 lattice is the unique configuration achieving it. In the E_8 lattice, every sphere is tangent to exactly 240 others, meaning that each brand position in an idealized eight-dimensional brand space has at most 240 immediately adjacent competitors — a hard geometric ceiling on local competitive density.
+
+This coincidence between the number of SBT dimensions and the dimension where E_8 achieves its optimal properties is suggestive but not load-bearing. SBT's eight dimensions were motivated by phenomenological completeness of the brand-perception construct (Zharnikov 2026a) and by formal independence and exhaustiveness arguments (Zharnikov 2026r); the E_8 coincidence was not part of the original derivation. Taken as a heuristic, it raises an interesting question: is there a deeper structural reason why the perceptually natural dimension count for brand experience aligns with the dimension at which sphere packing, root systems, and optimal error-correcting codes converge? Formal exploration of whether the coincidence is structural rather than incidental is pursued in Zharnikov (2026g), which develops Problem 4 above and interprets the E_8 kissing number as a geometric constraint on competitive adjacency.
+
+The claim made here is strictly motivational: the same dimensionality that seems phenomenologically required for full-spectrum brand representation is the one where high-dimensional geometry achieves a remarkable, provably unique optimum. That alignment is worth noting; it does not substitute for the formal analysis in the companion paper.
+
+Table 3: Companion Paper Roadmap — Open Problem × Companion × Core Mathematical Tool.
+
+| Problem | Companion paper | Tool / result |
+|---|---|---|
+| Dimensional completeness | 2026r (R11) | 8-channel independence and exhaustiveness justification |
+| Metric structure | 2026d (R1) | Fisher-Rao + Aitchison geometry on brand and observer spaces |
+| Metameric collapse | 2026e (R2) | Johnson-Lindenstrauss projection bounds |
+| Cohort fuzziness | 2026f (R3) | Concentration of measure on the probability simplex |
+| Positioning capacity | 2026g (R4) | Sphere-packing bound; E_8 kissing number as adjacency ceiling |
+| Non-ergodic dynamics | 2026j (R6) | SDE on simplex; absorbing boundary non-ergodicity proof |
+| Coherence-resilience | 2026s (R12) | Drift geometry and crisis predictor derivation |
+| Resource allocation | 2026k (R7) | Theorem 1: demand-driven optimal investment in brand space |
+
+*Notes*: Column 1 names the compound-gap sub-problem addressed. Column 2 gives the citation key and paper label. Column 3 names the primary mathematical tool or theorem result. All entries refer to Zharnikov (2026X) working papers; DOIs are in the reference list.
+
 ## 13. Conclusion
 
 This survey has mapped the landscape of geometric methods applied to brand perception across ten intellectual traditions: multidimensional scaling, characteristics-space economics, conceptual spaces, non-Euclidean perceptual geometry, information geometry, individual-differences scaling, topological data analysis, quantum cognition, opinion dynamics, and non-ergodicity research. Each tradition contributes essential insights, but none provides a complete geometric theory of brand perception.
@@ -494,7 +570,44 @@ The compound gap---the absence of a framework combining high-dimensional geometr
 
 We have articulated six open problems that collectively constitute a research agenda for mathematical brand theory. These problems draw on well-established results in high-dimensional geometry---the Johnson-Lindenstrauss lemma, concentration of measure, sphere packing, stochastic diffusion on manifolds---that have never been applied to brand perception or, in most cases, to any social science context. The fact that Spectral Brand Theory (Zharnikov, 2026a) proposes exactly eight perceptual dimensions, and that eight is the dimensionality where the $E_8$ lattice achieves optimal sphere packing, is a coincidence that merits formal exploration.
 
-The six open problems articulated in Section 12 map directly to a series of companion papers that constitute the SBT mathematical research program. Problem 1 (formal metric on brand space) is addressed in Zharnikov (2026d), which defines and proves properties of three metric spaces: brand signal space, observer weight space, and the combined brand-observer space. Problem 2 (projection bounds) is addressed in Zharnikov (2026e), which derives JL-based distortion bounds and proves that spectral metamerism is a geometric inevitability of any dimension-reducing brand assessment. Problem 3 (concentration of measure and cohort boundaries) is addressed in Zharnikov (2026f), which applies concentration inequalities on the probability simplex to derive explicit boundary fuzziness bounds. Problem 4 (sphere packing and positioning capacity) is addressed in Zharnikov (2026g), which computes capacity bounds on $S^7_+$ and interprets the $E_8$ kissing number as an upper bound on competitive adjacency. Problem 5 (specification impossibility) is addressed in Zharnikov (2026h), which proves coverage impossibility in 48-dimensional organizational specification space. Problem 6 (diffusion dynamics on perceptual manifolds) is addressed in Zharnikov (2026j), which models brand perception evolution as stochastic diffusion on the perceptual manifold with absorbing boundaries and proves non-ergodicity under those conditions. Together, these companion papers constitute a coordinated research program converting the compound gap from a diagnosis into a formally resolved set of mathematical results. Whether SBT proves to be the right framework for these formalizations, or whether the mathematical analysis reveals that a different framework is needed, the central five-way intersection — combining high-dimensional geometry, a formal metric, observer-specific processing, non-ergodic temporal dynamics, and a generative signal mechanism simultaneously — is unoccupied, and the tools to explore it are available.
+The six open problems articulated in Section 12 map directly to a series of companion papers that constitute the SBT mathematical research program. Problem 1 (formal metric on brand space) is addressed in Zharnikov (2026d), which defines and proves properties of three metric spaces: brand signal space, observer weight space, and the combined brand-observer space. Problem 2 (projection bounds) is addressed in Zharnikov (2026e), which derives JL-based distortion bounds and proves that spectral metamerism is a geometric inevitability of any dimension-reducing brand assessment. Problem 3 (concentration of measure and cohort boundaries) is addressed in Zharnikov (2026f), which applies concentration inequalities on the probability simplex to derive explicit boundary fuzziness bounds. Problem 4 (sphere packing and positioning capacity) is addressed in Zharnikov (2026g), which computes capacity bounds on $S^7_+$ and interprets the $E_8$ kissing number as an upper bound on competitive adjacency. Problem 5 (specification impossibility) is addressed in Zharnikov (2026h), which proves coverage impossibility in 48-dimensional organizational specification space. Problem 6 (diffusion dynamics on perceptual manifolds) is addressed in Zharnikov (2026j), which models brand perception evolution as stochastic diffusion on the perceptual manifold with absorbing boundaries and proves non-ergodicity under those conditions.
+
+Three further companion papers extend the program beyond the six core problems. The epistemological scaffolding for SBT's generative pipeline — the atom-cloud-fact sequence from raw signals to perceptual facts — is developed in Zharnikov (2026b), which provides the upstream methodology that Problem 1 through Problem 6 assume. The dimensional completeness and independence of the eight-channel taxonomy are formally justified in Zharnikov (2026r), which closes the gap between the phenomenological motivation in Zharnikov (2026a) and a rigorous axiomatic account of why eight dimensions are both necessary and sufficient. The demand-side counterpart to the positioning-capacity analysis in Problem 4 is developed in Zharnikov (2026k), which derives optimal resource allocation rules for multi-dimensional brand investment given the geometric structure of the space. The organizational counterpart, Problem 5, connects to the companion OrgSchema Theory (Zharnikov 2026i), which extends the impossibility result into a full theory of specification-driven organizational design.
+
+Together, these companion papers constitute a coordinated research program converting the compound gap from a diagnosis into a formally resolved set of mathematical results. Whether SBT proves to be the right framework for these formalizations, or whether the mathematical analysis reveals that a different framework is needed, the central five-way intersection — combining high-dimensional geometry, a formal metric, observer-specific processing, non-ergodic temporal dynamics, and a generative signal mechanism simultaneously — is unoccupied, and the tools to explore it are available.
+
+Figure 2: SBT Cluster Citation Map — R0 to Mathematical Companions and SBT to Adjacent Frameworks.
+
+```mermaid
+flowchart TD
+  R0[R0 Literature Survey<br/>Zharnikov 2026c]
+  R1[R1 Brand Space Geometry<br/>Zharnikov 2026d]
+  R2[R2 Spectral Metamerism<br/>Zharnikov 2026e]
+  R3[R3 Cohort Boundaries<br/>Zharnikov 2026f]
+  R4[R4 Sphere Packing<br/>Zharnikov 2026g]
+  R5[R5 Specification Impossibility<br/>Zharnikov 2026h]
+  R6[R6 Non-Ergodic Dynamics<br/>Zharnikov 2026j]
+  SBT[SBT Spectral Brand Theory<br/>Zharnikov 2026a]
+  R7[R7 Resource Allocation<br/>Zharnikov 2026k]
+  R11[R11 Why Eight<br/>Zharnikov 2026r]
+  R12[R12 Coherence and Crisis<br/>Zharnikov 2026s]
+  OST[OST OrgSchema Theory<br/>Zharnikov 2026i]
+
+  R0 --> R1
+  R0 --> R2
+  R0 --> R3
+  R0 --> R4
+  R0 --> R5
+  R0 --> R6
+  SBT --> R0
+  SBT --> R7
+  SBT --> R11
+  SBT --> R12
+  SBT --> OST
+  R5 --> OST
+```
+
+*Notes*: Solid arrows from R0 indicate the six open problems each delegated to a mathematical companion paper (Problems 1–6 of §12 mapped to Zharnikov 2026d, 2026e, 2026f, 2026g, 2026h, 2026j). Solid arrows from SBT indicate companion papers that extend the SBT theoretical framework into adjacent domains (resource allocation, dimensional justification, coherence dynamics, organizational design). Citation keys correspond to entries in the reference list and to canonical paper labels R0–R12 + OST in the Spectral Brand Theory corpus index.
 
 ---
 

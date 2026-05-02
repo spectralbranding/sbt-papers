@@ -45,11 +45,27 @@ The work can be read within the design-science tradition in information systems 
 
 ### 2.1 Three Stages of Knowledge Formation
 
-The pipeline models knowledge formation as a three-stage progression. Each stage has formally distinct properties:
+The pipeline models knowledge formation as a three-stage progression with a feedback path from arriving evidence back to the atom layer. Figure 1 summarizes the data flow; each stage has formally distinct properties.
+
+Figure 1: The Atom-Cloud-Fact Pipeline.
+
+```mermaid
+flowchart LR
+  S[Heterogeneous Sources] --> A[Atoms typed source-bound immutable]
+  A --> G{Identity Gate}
+  G -- pass --> C[Clouds probabilistic weighted multi-source]
+  G -- fail --> X[Discarded as noise]
+  C -- score above threshold --> F[Facts threshold-based stable]
+  C -- score below threshold --> H[Open hypothesis]
+  N[New evidence arrives] --> A
+  F -. re-collapse on contradiction .-> A
+```
+
+*Notes*: Solid arrows trace the forward path from observation to knowledge. The dashed arrow from Facts back to Atoms is the re-collapse mechanism (Principle 6): on contradicting new evidence, facts are dissolved and the pipeline rebuilds from the complete atom set rather than patching the existing fact. The Identity Gate is a binary precondition (Principle 3); atoms that fail the gate do not enter cloud formation. Observer-specific weights apply at the cloud-scoring step in the multi-observer extension (Section 4.2); in the single-observer financial domain, weights are fixed.
 
 ```
 Stage 1: OBSERVATION         Stage 2: HYPOTHESIS         Stage 3: KNOWLEDGE
-─────────────────           ─────────────────           ─────────────────
+-----------------           -----------------           -----------------
 Atoms                       Clouds                      Facts
 - Typed                     - Probabilistic             - Threshold-based
 - Source-bound              - Multi-source              - Revisable
@@ -268,6 +284,8 @@ One systematic source of correlated bias must be acknowledged. All major LLM tra
 
 The overall assessment is that LLM agreement is *necessary but not sufficient* for structural validity. Convergence across architecturally distinct models on structural features across multiple prompt reformulations raises the prior that the identified features are real. It does not confirm them. Human-subject validation — presenting actual observers with brand stimuli and measuring whether their spectral profiles converge on the LLM-identified structure — is the required confirmatory test. Argyle et al. (2023) demonstrate that LLMs can simulate human population distributions on attitudinal surveys with reasonable fidelity, but also identify systematic divergences tied to training corpus composition — precisely the shared Western bias identified above. Their framework for evaluating LLM-as-simulacrum validity provides a methodological template for the human-subject validation studies proposed here.
 
+Three converging lines of evidence strengthen the multi-model claim while keeping the bounded interpretation intact. Aher, Arriaga, and Kalai (2023) show that LLMs can replicate population-level patterns from canonical psychology experiments (e.g., the Ultimatum Game and Milgram-style obedience designs), supporting the use of multiple LLMs as quasi-independent population samples — provided that the recovered structure rather than the precise numerical distribution is treated as the primary signal. Binz and Schulz (2023) probe GPT-3 with a battery of cognitive-psychology tasks and find systematic, architecture-shaped reasoning patterns that diverge from human responses on specific task families, which directly motivates Condition 2 above (architectural diversity as a precondition for treating cross-model agreement as meaningful) and the structural-not-numerical caveat in Condition 3. Together with Argyle et al. (2023), these references support a bounded reading of P2: cross-model convergence on structural features is a useful triangulation signal whose weight is set by the four conditions enumerated above, not by the number of agreeing models alone.
+
 ---
 
 ## 8. Discussion: Why Existing Frameworks Fail the Multi-Domain Requirement
@@ -310,6 +328,37 @@ This is not trivially possible with other epistemological frameworks. Bayesian n
 
 The SBT implementation demonstrates this: the seven-module analytical pipeline operates entirely as a structured prompt sequence, producing formal multi-cohort brand analysis through natural language instruction rather than code execution (Zharnikov 2026a; Zharnikov 2026t). This suggests that the atom-cloud-fact architecture is not merely computationally implementable but *linguistically implementable* — a property that may prove important as LLMs become the primary computational platform for analytical work. The claim is bounded, however: linguistic implementability has been validated in the brand perception domain with specific LLM families; systematic ablation studies across prompt reformulations and model generations are needed before the property can be asserted as general.
 
+To make the operator schema concrete, the verification step at the cloud-to-fact transition can be expressed as a typed contract that an LLM can both produce and audit:
+
+```yaml
+# Verification operator schema (cloud -> fact)
+verify_collapse:
+  inputs:
+    cloud_id: string                # candidate hypothesis cluster
+    atoms: list[atom]               # contributing observations
+    observer: observer_profile      # weights, tolerances, threshold
+  preconditions:
+    - identity_gate_passed: true    # Principle 3
+    - sources_distinct: >= 2        # Principle 2 / P1 multi-source requirement
+    - dimensions_typed: true        # Principle 1
+  scoring:
+    method: weighted_sum            # Principle 5
+    weights: observer.weights       # observer-specific
+    tolerances: observer.tolerances # asymmetric per source-pair (Principle 4)
+    cap: 1.0
+  decision:
+    collapse_if: score >= observer.threshold
+    else: hold_as_open_cloud
+  on_contradicting_atom:
+    action: dissolve_and_rebuild    # Principle 6 (re-collapse)
+    scope: all_facts_touching_atom_set
+  invariants:
+    - facts_never_patched: true     # Principle 7 (epistemic separation)
+    - atoms_immutable: true
+```
+
+The schema makes two properties explicit. First, every architectural principle maps to an enforceable contract clause rather than a hidden implementation detail; an LLM executing the pipeline can be asked to emit the contract alongside its output, and an independent verifier can check the trace. Second, the re-collapse action (`dissolve_and_rebuild`) is a first-class operator at the schema level, not a post-hoc correction; this is what distinguishes the architecture from incremental updating frameworks at the implementation layer as well as the conceptual layer.
+
 ### 8.4 Comparative Requirements Matrix
 
 The four requirements and five architectures are summarized in Table 5.
@@ -350,9 +399,13 @@ Dmitry Zharnikov is an independent researcher and strategist. He holds a Profess
 
 ## References
 
+Aher, G. V., Arriaga, R. I., & Kalai, A. T. (2023). Using large language models to simulate multiple humans and replicate human subject studies. In *Proceedings of the 40th International Conference on Machine Learning* (Vol. 202, pp. 337–371). PMLR.
+
 Alchourrón, C. E., Gärdenfors, P., & Makinson, D. (1985). On the logic of theory change: Partial meet contraction and revision functions. *The Journal of Symbolic Logic*, 50(2), 510–530.
 
 Argyle, L. P., Busby, E. C., Fulda, N., Gubler, J. R., Rytting, C., & Wingate, D. (2023). Out of one, many: Using language models to simulate human samples. *Political Analysis*, 31(3), 337–351. https://doi.org/10.1017/pan.2023.2
+
+Binz, M., & Schulz, E. (2023). Using cognitive psychology to understand GPT-3. *Proceedings of the National Academy of Sciences*, 120(6), e2218523120. https://doi.org/10.1073/pnas.2218523120
 
 Buchanan, B. G., & Shortliffe, E. H. (1984). *Rule-based expert systems: The MYCIN experiments of the Stanford Heuristic Programming Project*. Addison-Wesley.
 

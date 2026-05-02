@@ -10,7 +10,7 @@ meta:
       affiliation: "Independent Researcher"
   doi: "10.5281/zenodo.19468204"
   date: "2026-05-01"
-  version: "1.2.1"
+  version: "1.3.0"
   venue: "Zenodo preprint"
   license: "CC-BY-4.0"
   keywords:
@@ -248,3 +248,20 @@ submission_history:
       Rejected D3 (Datta-Foubert 2021 Marketing Science), D4a (Gielens-Dekimpe 2022 JMR),
       D4b (Luo-Netzer 2023 Marketing Science), D4d (Papies-Ebbes-van Heerde 2022 IJRM),
       D5 (Kupfer 2025 JMR) — all unverifiable via Perplexity. 45 references (was 43).
+      v1.3.0 (2026-05-02): Figures pass — addresses the central conceptual gap that the
+      paper had zero figures despite phase space being its core theoretical move.
+      Added Figure 1 at §3.6 (Mermaid quadrantChart of the brand-perception phase plane
+      with five dynamic regimes: Stable attractor, Growth, Saturation, Decline,
+      Recovery) with caption below per Mermaid safe-syntax rules. Added Figure 2 at §6.4
+      (Dove (Cultural, Ideological) phase trajectory across 2006-2023 with directed
+      arrows showing motion across Expansion and Normative-Absorption periods) plus
+      80-100w prose explanation. Added companion script `code/phase_portrait.py`
+      (numpy + matplotlib via PEP 723 inline-deps) reproducing Figure 2 with fixed
+      seed; figure file `code/figure2_dove_phase.png` checked in. Updated §8.7
+      Companion Computation Script subsection to document both scripts and run
+      commands. Updated `code/README.md` with figure-pipeline section. Final pass on
+      remaining D2-D5 deferred citations (Datta-Ailawadi-van Heerde 2021 MKSC,
+      Gielens-Dekimpe 2022 JMR, Luo-Vandenbosch-Boatwright 2023 MKSC, Papies-Ebbes-
+      van Heerde 2022 IJRM, Kupfer-Pähler-Kübler-Hennig-Thurau 2025 JMR) via WebSearch:
+      none verifiable; all skipped. Reference count unchanged at 45. QC terminology
+      check 0 issues.

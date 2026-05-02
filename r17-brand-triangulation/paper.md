@@ -2,7 +2,7 @@
 
 **Dmitry Zharnikov**
 
-*Working Paper v1.3 — May 2026*
+*Working Paper v1.4 — May 2026*
 
 *DOI: https://doi.org/10.5281/zenodo.19482547*
 
@@ -60,6 +60,30 @@ Table 1: GPS-SBT Concept Mapping.
 
 *Note.* The "Minimum 4 satellites" / "Minimum 9 cohorts" rows refer to the collapsed (1D) observation case; full 8D dimensional observations require only N ≥ 2 (see §5.1).
 
+The geometric intuition behind the mapping is summarized in Figure 1.
+
+```mermaid
+flowchart LR
+    subgraph constellation [Observer constellation]
+        C1[Cohort C1<br/>weight w1]
+        C2[Cohort C2<br/>weight w2]
+        C3[Cohort C3<br/>weight w3]
+        C4[Cohort C4<br/>weight w4]
+    end
+    B((Brand position B<br/>x in R^8))
+    PDOP[PDOP<br/>geometric quality<br/>= sqrt trace W^T W inverse]
+    C1 -- y1 = w1 dot x + b1 --> B
+    C2 -- y2 = w2 dot x + b2 --> B
+    C3 -- y3 = w3 dot x + b3 --> B
+    C4 -- y4 = w4 dot x + b4 --> B
+    constellation -. weight matrix W .-> PDOP
+    PDOP -. precision bound .-> B
+```
+
+Figure 1: Brand triangulation as GPS-analog measurement geometry.
+
+The brand position B is the receiver-analog target in 8-dimensional spectral space. Cohorts C1–C4 act as observation satellites, each contributing one weighted projection y_k = w_k·x + b_k of the brand's emission. The collective geometry of the cohort weight profiles — encoded in the matrix W — determines PDOP, which bounds the precision of any estimator of B before a single observation is collected. Diverse weight profiles produce low PDOP and tight bounds; clustered profiles produce high PDOP and loose bounds, regardless of within-cohort sample size.
+
 The critical insight that motivates the GPS analogy is not merely the structural similarity between satellite geometry and observer diversity. It is the GPS insight about clock error. GPS receivers contain cheap, systematically inaccurate clocks. Rather than requiring accurate clocks — which would be prohibitively expensive in consumer devices — GPS jointly estimates position and clock error from the overdetermined system of satellite equations. The clock error is not noise; it is a solvable unknown. Brand measurement contains an exact analog. Every observer cohort has systematic biases — familiarity effects, anchoring to prior associations, cultural reference points that inflate or deflate particular dimensions. The standard methodological response is to try to eliminate these biases through sampling design. The GPS insight is to embrace them as known unknowns and solve for them simultaneously with the brand position.
 
 ### 1.4 Contributions
@@ -76,7 +100,7 @@ Fourth, we establish identifiability conditions specifying the minimum cohort co
 
 ### 1.5 Roadmap
 
-The remainder of the paper proceeds as follows. Section 2 reviews the theoretical background, covering brand positioning measurement, SBT's multi-observer framework, and the relevant GPS theory. Section 3 develops the brand triangulation observation model and formalizes Perception DOP. Section 4 introduces differential brand measurement and the calibration protocol. Section 5 establishes identifiability conditions and connects the framework to spectral metamerism. Section 6 extends the framework to multi-constellation positioning, combining human, AI, and behavioral observer types. Section 7 develops dynamic brand triangulation, extending static positioning to temporal trajectories. Section 8 integrates Medesani and Macdonald's (2026) invariant corridor framework to define admissible positioning and brand health metrics. Section 9 presents an empirical demonstration using R15 data. Section 10 discusses implications for brand measurement practice and theory. Section 11 addresses limitations. Section 12 concludes.
+The remainder of the paper proceeds as follows. Section 2 reviews the theoretical background, covering brand positioning measurement, SBT's multi-observer framework, and the relevant GPS theory. Section 3 develops the brand triangulation observation model and formalizes Perception DOP. Section 4 introduces differential brand measurement and the calibration protocol. Section 5 establishes identifiability conditions and connects the framework to spectral metamerism. Section 6 extends the framework to multi-constellation positioning, combining human, AI, and behavioral observer types. Section 7 develops dynamic brand triangulation, extending static positioning to temporal trajectories. Section 8 extends Medesani and Macdonald's (2026) control-theoretic invariant corridor framework — developed for systems governance — to define admissible brand positioning and brand health metrics. Section 9 presents an empirical demonstration using R15 data. Section 10 discusses implications for brand measurement practice and theory. Section 11 addresses limitations. Section 12 concludes.
 
 ---
 
@@ -174,15 +198,47 @@ The connection to the experimental design literature is immediate. Kuhfeld, Tobi
 
 The PDOP expression sqrt(trace(C)) is also the square root of the trace of the inverse Fisher information matrix for the linear observation model, corresponding to the multivariate Cramér-Rao lower bound for unbiased estimators of x (Cramér, 1946; Rao, 1945). The GPS DOP literature (Kaplan & Hegarty, 2017) arrives at the same expression via geometric reasoning; the Cramér-Rao derivation provides the underlying statistical foundation. The frequentist A-optimal criterion as defined here assumes observer weight profiles W_k are known exactly. When W_k is itself uncertain, the Bayesian extension replaces PDOP with its posterior expectation, integrating over the prior distribution of W_k — the analog of Bayesian D-optimal conjoint design (Sandor & Wedel, 2001, 2005). The sensitivity plateau result (Section 3.3) implies that the frequentist PDOP approximates its Bayesian counterpart well within the plateau region, so the frequentist criterion is a usable design tool even under realistic uncertainty about cohort weight profiles. The PDOP framework is also dimension-count agnostic: the formula applies to any D-dimensional observation model, with D = 8 inherited from the SBT taxonomy and tested in prior work (Zharnikov, 2026a).
 
+#### Assumptions
+
+The propositions developed in §3–§5 are conditional on five modelling assumptions, stated here so subsequent claims and falsification conditions can be referenced without ambiguity:
+
+(A1) *Simplex-bounded position*. The brand emission profile **x** lies on the probability simplex Δ^7 ⊂ R^8: each component is non-negative and the eight components sum to a fixed scale (normalized to 1), reflecting the SBT convention that emission profiles are intensity allocations rather than unbounded loadings.
+
+(A2) *Linear inner-product observation*. Each cohort k reports measurements y_k = **w**_k^T **x** + b_k + ε_k with mean-zero observation noise ε_k. The linearity assumption is justified in §3.1 as a first-order approximation; nonlinear extensions follow the standard GPS linearization procedure.
+
+(A3) *Weight-matrix rank*. The cohort weight matrix W ∈ R^(K×8), with rows **w**_1, ..., **w**_K, has rank min(K, 8). For collapsed observations the spanning condition rank(W) = 8 is required for identifiability (Proposition 3).
+
+(A4) *Stable calibration profiles*. The canonical brand profiles used for differential correction (Hermès, IKEA, Patagonia per Zharnikov 2026a) are treated as known constants over the measurement epoch. Stability across epochs is sufficient; absolute correctness against an external standard is not required (see §4.1).
+
+(A5) *Independent cohort noise*. Observation noise terms ε_k are statistically independent across cohorts. Within-cohort dependence is absorbed into the cohort-level variance σ_k^2; between-cohort correlations are assumed zero, which holds when cohorts are recruited and surveyed independently.
+
+Departures from any of (A1)–(A5) — most consequentially nonlinear conviction-construction (A2) and constellation-level common bias (A5) — are addressed substantively in §3.4, §6.1, and §11.
+
 **Proposition 1**: For a set of N observer cohorts with spectral weight profiles **w**_1, ..., **w**_N, the precision of brand position estimation is inversely proportional to Perception DOP. Cohort configurations that minimize PDOP — those with maximally diverse spectral weight profiles — yield the most precise brand positioning.
 
 *Falsification*: P1 is falsified if empirical brand position estimates show no relationship between PDOP and estimation variance across different cohort configurations — that is, if randomly selected cohorts perform as well as DOP-optimized cohorts across repeated simulation or empirical studies. Concretely: if a study samples fifteen random cohort configurations, computes their PDOP values, and finds that PDOP does not predict estimation variance relative to a known ground-truth brand profile, P1 fails. The falsification requires that this null relationship hold across multiple brands and multiple estimation conditions, ruling out the possibility that a single well-designed study masks the relationship.
+
+#### Simplex-constrained PDOP lower bound
+
+The 1/√N PDOP scaling cited in earlier work and reused in §9.6 is the *unconstrained* lower bound, derived under the assumption that cohort weight vectors **w**_k are unit-norm vectors uniformly distributed on the sphere S^7 ⊂ R^8. Brand cohort weights, however, satisfy assumption (A1): **w**_k ∈ Δ^7, so Σ_d w_{k,d} = 1 with w_{k,d} ≥ 0. The simplex is a 7-dimensional affine slice of R^8: one degree of freedom is consumed by the sum-to-one constraint, and the achievable PDOP is governed by the spread of the weight vectors within this 7-dimensional tangent space rather than by spread over the full 8-sphere.
+
+To compare bounds on a common scale, normalize PDOP by √K so that the per-cohort precision is dimensionless. For K cohorts whose weight vectors are uniformly distributed on the unit sphere, the expected eigenvalues of W^T W/K are equal across all 8 directions, giving the unconstrained lower bound:
+
+PDOP_sphere ≥ √(8/K)
+
+For K cohorts whose weight vectors are uniformly distributed on Δ^7, the all-ones direction is fixed by the sum-to-one constraint and only the 7 tangent directions contribute to discrimination of x. Restricting the Cramér-Rao trace to the tangent subspace gives the simplex-constrained bound:
+
+PDOP_simplex ≥ √(7/K)
+
+The ratio PDOP_simplex / PDOP_sphere = √(7/8) ≈ .935 quantifies the correction: a properly constrained derivation predicts PDOP about 6.5% smaller than the unconstrained sphere estimate.
+
+The practical consequence is modest. Translating the bound into the §5.3 power-analysis result, K* scales as PDOP², so the simplex correction reduces the required cohort count by 7/8 ≈ 12.5% relative to the unconstrained estimate. Qualitative conclusions — that K* is in the dozens rather than hundreds for typical precision targets, that diversity dominates within-cohort sample size — are unaffected. The §9.6 numerical optimization result PDOP = .388 at K = 9 sits well below the unit-normalized simplex floor (which evaluates to .882 at K = 9 in the per-cohort-normalized convention used here), reflecting the additional precision available when weight magnitudes are themselves design variables rather than fixed at unit norm.
 
 ### 3.3 Sensitivity Plateau
 
 A practical concern in applying Perception DOP to study design is the precision required in calibrating cohort spectral weight profiles. If the precision of DOP as a design criterion degrades rapidly as weight profile estimates become imprecise, the framework becomes infeasible in practice, since cohort weight profiles are themselves estimated with uncertainty.
 
-Medesani and Macdonald (2026) establish a *sensitivity plateau* result in the context of invariant corridor governance: system behavior is robust to parameter choice within a broad stable region, and this plateau exists for structural reasons — it follows from the separation of time scales in the system rather than from any specific parameter configuration. Crucially, the plateau is dimension-independent: it holds regardless of the system's state-space dimensionality because the structural argument concerns the relationship between time scales, not dimensions.
+Medesani and Macdonald (2026) establish a *sensitivity plateau* result in the context of invariant corridor governance for dynamical systems: system behavior is robust to parameter choice within a broad stable region, and this plateau exists for structural reasons — it follows from the separation of time scales in the system rather than from any specific parameter configuration. Crucially, the plateau is dimension-independent: it holds regardless of the system's state-space dimensionality because the structural argument concerns the relationship between time scales, not dimensions. The present paper extends this structural result to brand measurement.
 
 This result applies directly to PDOP computation. The PDOP function of cohort weight profiles is not arbitrarily sensitive near optimal configurations — it has a plateau structure in which configurations near the optimum perform similarly well. Brand managers designing measurement studies do not require millimeter-precision calibration of cohort spectral weights; they require only that the proposed cohort configuration be within the plateau region. The existence of the plateau is structural rather than parameter-dependent (Medesani and Macdonald, 2026, Section 3), analogous to the sloppiness phenomenon that Transtrum et al. (2015) identify in model parameter spaces — the characteristic property that some combinations of parameters are tightly constrained while others are sloppy (poorly determined) but that sloppy directions do not degrade predictive performance.
 
@@ -290,6 +346,22 @@ Molenaar (1985) develops a dynamic factor model for the analysis of multivariate
 
 The practical consequence of the identifiability analysis is a reframing of what standard brand tracking studies can reliably claim. A study with two demographic cohorts can distinguish brands along, at most, two independent dimensions. If those dimensions happen to be Experiential and Economic — the dimensions most commonly salient to demographically defined cohorts — the study characteristically fails to recover Narrative, Ideological, Cultural, and Temporal positioning. Brands that invest heavily in these dimensions appear perceptually equivalent to brands that do not. The brand managers are not deceived by market conditions; their measurement infrastructure lacks the geometric coverage to resolve the difference.
 
+### 5.3 Power Analysis: From Identifiability to Precision
+
+Identifiability is necessary but not sufficient for useful brand measurement. A configuration that satisfies the spanning condition of P3 may still produce position estimates whose 95% confidence intervals span the entire admissible corridor — sufficient for unique recovery in principle, useless in practice. This subsection translates the geometric identifiability thresholds into managerially actionable precision targets.
+
+The Cramér-Rao derivation in §3.2 gives the per-dimension variance of the OLS estimator as σ²_obs · diag((W^T W)^{−1}), where σ²_obs is the within-cohort observation noise. Averaged across the eight SBT dimensions, the mean per-dimension variance is σ²_obs · PDOP² / 8, with PDOP² := trace((W^T W)^{−1}) following the §3.2 / §9.6 convention. For a precision target σ²_target on each dimension — the maximum tolerable estimator variance per coordinate — the cohort configuration must satisfy:
+
+PDOP² ≤ 8 · σ²_target / σ²_obs
+
+Because PDOP scales as 1/√K for diverse cohort configurations (§3.2; the unconstrained-sphere bound PDOP ≥ √(8/K), tightened to √(7/K) on the simplex), the required cohort count K* satisfies:
+
+K* ≥ 8 / PDOP_target² = σ²_obs / σ²_target
+
+This is the brand-triangulation power-analysis equation: it links the required cohort count K, the achievable geometric quality PDOP, and the precision-to-noise ratio in a single inequality. Three dependencies follow directly. Cohort count K matters as 1/PDOP²: quadrupling K halves PDOP and halves per-dimension standard error. Geometric quality PDOP matters quadratically: a configuration that achieves PDOP = 2.0 with poor cohort diversity needs four times more cohorts to match the precision of a PDOP = 1.0 well-diversified configuration. Within-cohort sample size affects σ²_obs (smaller noise) but does not substitute for cohort count K — it reduces the right-hand-side ratio but cannot compensate for a degenerate W matrix.
+
+A worked example fixes intuition. Suppose a brand manager wants position estimates with 95% confidence intervals of ±.1 on each of the 8 SBT dimensions, requiring per-dimension variance σ²_target ≈ (.1/1.96)² ≈ .0026. Calibration data on the PRISM-B instrument suggest within-cohort noise of σ²_obs ≈ .25 (a single-cohort response standard deviation of ±.5 on the dimensional scale). The required PDOP² ≤ 8 · .0026 / .25 ≈ .083, so PDOP_target ≤ .29. Achieving PDOP = .29 with the simplex bound PDOP ≥ √(7/K) requires K* ≥ 7 / .083 ≈ 84. Tolerating PDOP = 2.0 (a moderately diverse but un-optimized constellation, comparable to many real-world demographic stratifications) loosens the bound and reduces the apparent K, but at the cost of degraded per-dimension precision: at PDOP = 2.0, the achieved per-dimension standard error is .25 · √(4/8) ≈ .35, far above the .05 precision target. Equivalently, the cohort sample size required for a .1-precision brand tracking instrument is in the range K* ≈ 80–100 well-stratified observation cohorts, each contributing one weighted projection. Doubling the precision target to ±.05 quadruples K*; halving observation noise (σ_obs = .35 instead of .5) halves K*. The framework converts the qualitative call for "more diverse cohorts" into a costable line item.
+
 ---
 
 ## 6. Multi-Constellation Positioning
@@ -358,7 +430,7 @@ The sensitivity plateau result from Medesani & Macdonald (2026) has direct pract
 
 ### 7.2 Tri-Binding Admissibility
 
-A brand's position may satisfy the geometric corridor condition while still being inadmissible in a governance sense. Medesani & Macdonald (2026), Section 8.5, establish that framework guarantees require three independent binding conditions to hold simultaneously — a *tri-binding admissibility* requirement. Partial satisfaction of the conditions provides no guarantees; each binding is individually necessary and all three are jointly sufficient.
+A brand's position may satisfy the geometric corridor condition while still being inadmissible in a governance sense. Medesani & Macdonald (2026), Section 8.5, establish — in the context of systems governance — that framework guarantees require three independent binding conditions to hold simultaneously: a *tri-binding admissibility* requirement. The present paper extends this structure to brand governance. Partial satisfaction of the conditions provides no guarantees; each binding is individually necessary and all three are jointly sufficient.
 
 The brand measurement mapping of the three bindings is as follows.
 
@@ -392,13 +464,13 @@ In each case, aggregate coherence scores would have obscured the governance fail
 
 ### 7.3 Contraction/Recovery Asymmetry
 
-A further contribution of Medesani & Macdonald (2026), Section 8.5, is the formalization of asymmetry in corridor dynamics. The contraction gain k_c (the rate at which the admissible corridor narrows under strain) exceeds the recovery gain k_r (the rate at which it expands during quiescence): k_c > k_r. This asymmetry is not a calibration artifact but a structural property of the governance system: the system is designed to respond rapidly to threats and recover conservatively.
+Medesani & Macdonald (2026), Section 8.5, establish a further property of corridor dynamics in the systems-governance context: the contraction gain k_c (the rate at which the admissible corridor narrows under strain) exceeds the recovery gain k_r (the rate at which it expands during quiescence): k_c > k_r. This asymmetry is not a calibration artifact but a structural property of the governance system: the system is designed to respond rapidly to threats and recover conservatively.
 
-For brand dynamics, this formalization provides the mathematical structure for an empirical observation documented across the SBT research program. Zharnikov (2026s) establishes that coherence-resilient brands survive crises better than coherence-fragile ones — an asymmetric D/A (Dilution/Amplification) ratio describes how quickly brand signals dissipate versus accumulate. The Medesani formalization treats this asymmetry as a geometric property of the corridor dynamics rather than merely an empirical regularity.
+The present paper extends this formalization to brand dynamics. It provides the mathematical structure for an empirical observation documented across the SBT research program. Zharnikov (2026s) establishes that coherence-resilient brands survive crises better than coherence-fragile ones — an asymmetric D/A (Dilution/Amplification) ratio describes how quickly brand signals dissipate versus accumulate. Importing the Medesani & Macdonald (2026) formalization recasts this asymmetry as a geometric property of the corridor dynamics rather than merely an empirical regularity.
 
 The brand management implications follow directly. Crisis trajectory corresponds to a corridor contraction velocity spike: the admissible region narrows rapidly as strain accumulates across multiple observer cohorts simultaneously. Recovery timeline estimation is possible from the k_r parameter: given the current corridor width and the recovery gain, the time to return to pre-crisis width is estimable. Esterhuizen, Levine & Streif (2021) demonstrate the parallel in epidemic management, where admissible invariant sets provide both a governance criterion and a recovery timeline framework — the structural analogy to brand crisis and recovery is direct.
 
-Process invariance is the deeper implication. Medesani & Macdonald (2026), Section 9, state: "The true invariant is the corridor contraction operator itself." For brand governance, this reframes the notion of brand consistency. The invariant is not the brand's current position but the governing process by which the brand adapts under stress. A brand that maintains its contraction/recovery dynamics — its response process — preserves its admissibility guarantees even through significant positional change. A brand that abandons its governing process — *re-collapsing* without a valid Brand Function to anchor the new position — forfeits admissibility even if it lands in a geometrically acceptable region.
+Process invariance is the deeper implication. Medesani & Macdonald (2026), Section 9, establish — in the systems-governance context — that "the true invariant is the corridor contraction operator itself." Extended to brand governance, this reframes the notion of brand consistency. The invariant is not the brand's current position but the governing process by which the brand adapts under stress. A brand that maintains its contraction/recovery dynamics — its response process — preserves its admissibility guarantees even through significant positional change. A brand that abandons its governing process — *re-collapsing* without a valid Brand Function to anchor the new position — forfeits admissibility even if it lands in a geometrically acceptable region.
 
 ---
 
@@ -563,15 +635,25 @@ Table 6: RMSE by PDOP Quartile (Binned Analysis).
 
 The 24-fold difference in RMSE between Q1 and Q4 configurations demonstrates that observer geometry dominates measurement precision — the same measurement noise sigma yields dramatically different estimation quality depending on the PDOP of the observer constellation.
 
+The same proportionality is visible directly in Figure 2, generated by the companion script described in §9.7.
+
+![Figure 2](../sbt-papers/r17-brand-triangulation/code/figure2_pdop_rmse.png)
+
+Figure 2: PDOP versus RMSE on log-log axes (200 Monte Carlo trials per K).
+
+Figure 2 plots RMSE against PDOP on log-log axes for 630 trials spanning seven cohort counts K ∈ {9, 10, 12, 15, 20, 30, 50} and three weight-matrix priors (clustered, random, diverse). At fixed K — each color in the figure — the points fall on a straight line with empirical slope in the range .998–1.004, against the theoretical prediction slope = 1.0 derived in Theorem 1. The pooled cross-K slope is biased downward because each K curve has a distinct intercept σ · √K from the Cramér-Rao expression RMSE = σ · √K · PDOP; the appropriate test is per-K, where the agreement is essentially exact (median per-K slope = 1.000, mean of the ratio RMSE / (σ · √K · PDOP) across all 630 trials = .999). The figure visualizes what Tables 5 and 6 report numerically: PDOP is a sharp predictor of RMSE under the linear observation model, and the proportionality holds across two orders of magnitude in PDOP and across the geometric-diversity regime spanned by the three priors.
+
 **PDOP bounds for the N=9 minimum case.** The lower bound 1/sqrt(N) holds for unit-norm weight vectors arranged uniformly on the sphere in R^8. For N=9, this gives the unconstrained-sphere bound PDOP >= .333. Brand cohort weight profiles, however, lie on the probability simplex (Σw_i = 1, w_i ≥ 0), which constrains the achievable minimum. Numerical optimization (Nelder-Mead, 100 restarts) under the simplex constraint achieves PDOP = .388, with condition number 1.92 — close to but above the unconstrained floor, confirming that near-optimal configurations exist within the simplex feasible region. The empirical distribution of PDOP under random weight assignment has median 3.67 and mean 5.07, indicating that typical configurations are far from optimal and that deliberate DOP-aware cohort selection offers substantial precision gains.
 
-**Sensitivity plateau.** Perturbing the optimal weight matrix by Gaussian noise with standard deviation epsilon confirms the plateau structure: PDOP degrades by less than 10% for perturbations up to epsilon = 0.2 (relative to the D-scaled weight values). At epsilon = 0.3, degradation reaches 16%. This confirms the Medesani and Macdonald (2026) plateau prediction: researchers need approximate, not exact, weight profile calibration to achieve near-optimal measurement geometry.
+**Sensitivity plateau.** Perturbing the optimal weight matrix by Gaussian noise with standard deviation epsilon confirms the plateau structure: PDOP degrades by less than 10% for perturbations up to epsilon = 0.2 (relative to the D-scaled weight values). At epsilon = 0.3, degradation reaches 16%. This confirms the plateau property imported from Medesani and Macdonald (2026): when the structural robustness argument transfers to PDOP geometry, researchers need approximate, not exact, weight profile calibration to achieve near-optimal measurement geometry.
 
 ### 9.7 Companion Computation Script
 
 The Monte Carlo simulation reported in this section is fully reproducible from `R17_pdop_simulation.py`, archived at `https://github.com/spectralbranding/sbt-papers/tree/main/r17-brand-triangulation/simulation/`. Fixed seed: `SEED = 42`. Trials: 2,000 independent trials, 20 replications each. Run command: `uv run --with numpy,scipy python R17_pdop_simulation.py`. Running the script reproduces Tables 5 and 6, the PDOP bounds reported for the N = 9 minimum case, and the sensitivity plateau statistics within the reported standard errors. Raw results are also archived as `R17_pdop_simulation_results.json` in the same directory.
 
-**Data and Code Availability.** Monte Carlo simulation code (`R17_pdop_simulation.py`) and results (`R17_pdop_simulation_results.json`) are available at the URL above. The R15 empirical dataset used for the demonstration in §9.1–§9.4 is archived at https://doi.org/10.5281/zenodo.19422427.
+Figure 2 is regenerable from a second self-contained script `compute_pdop_rmse.py` archived at `https://github.com/spectralbranding/sbt-papers/tree/main/r17-brand-triangulation/code/` (PEP 723 inline-deps numpy + matplotlib). Fixed seed `SEED = 42`. Run command: `uv run --script compute_pdop_rmse.py`. The script writes `pdop_rmse.csv` (630 trials across K ∈ {9, 10, 12, 15, 20, 30, 50} and three weight-matrix priors, with R = 200 noisy replications per trial) and `figure2_pdop_rmse.png`. The directory README documents the per-K log-log slopes (.998–1.004) that confirm the PDOP–RMSE proportionality in Theorem 1 and that motivate the K* values reported in the §5.3 power analysis.
+
+**Data and Code Availability.** Monte Carlo simulation code (`R17_pdop_simulation.py`) and results (`R17_pdop_simulation_results.json`) are available at the URL above. Figure 2 simulation code, raw CSV, and figure (`code/compute_pdop_rmse.py`, `code/pdop_rmse.csv`, `code/figure2_pdop_rmse.png`) are at `https://github.com/spectralbranding/sbt-papers/tree/main/r17-brand-triangulation/code/`. The R15 empirical dataset used for the demonstration in §9.1–§9.4 is archived at https://doi.org/10.5281/zenodo.19422427.
 
 ---
 
@@ -615,6 +697,20 @@ Zharnikov (2026x) establishes that AI purchasing agents — operating in agentic
 
 In the triangulation framework, this is the ephemeris data analogy: when a GPS satellite's broadcast signal is weak or absent, a receiver can use stored ephemeris data to maintain positioning. When an AI agent lacks training data about a brand's dimensional profile, a publicly available Brand Function specification provides the equivalent: a direct channel from the brand owner's specification to the agent's positioning algorithm. The DOP improvement from Run 4 in the R15 data (DCI .353→.284) quantifies the effect: providing specification data improves the AI observer's geometric resolution by an amount equivalent to adding a new satellite with a well-characterized orbit.
 
+### 10.2.5 Managerial Decision Workflow
+
+The four implications above translate into a five-step workflow for brand managers planning a triangulation study. The workflow operationalizes the framework: each step has well-defined inputs, a single decision, and a measurable output.
+
+1. *Specify the Brand Function dimensions of interest.* Identify which subset of the eight SBT dimensions the study must resolve. A repositioning study tracking ideological drift requires high precision on Ideological and Cultural; a pricing study requires Economic and Experiential. The required precision per dimension determines σ²_target in the §5.3 power analysis.
+
+2. *Select calibration brands.* Choose three to five reference brands with stable, well-established spectral profiles spanning the relevant dimensional ranges (Hermès, IKEA, Patagonia per §4.1, augmented as needed for category coverage). Calibration brands anchor the differential-correction protocol and enable cross-study comparability.
+
+3. *Compute K* from the §5.3 power-analysis formula.* Given σ²_target, σ²_obs (estimated from prior PRISM-B calibration data), and the achievable PDOP for the candidate cohort pool, solve K* ≥ 8/PDOP² for the minimum cohort count. Cross-check against the identifiability floor K ≥ 9 (collapsed) or K ≥ 2 (full 8D).
+
+4. *Recruit cohorts to satisfy rank-K with minimum PDOP.* Pre-screen candidate cohorts using PRISM-B weight profiles. Apply the PDOP optimizer in the companion script directory (§9.7) to select the K-cohort subset that minimizes PDOP subject to recruitment-cost constraints. Verify that the chosen W matrix has rank 8 and PDOP within the §3.3 sensitivity plateau.
+
+5. *Execute measurement and report position estimate ± 95% CI.* Administer the dimensional rating instrument to all K cohorts on both calibration and target brands. Apply differential correction (§4.2). Compute the triangulated position estimate via OLS, report per-dimension 95% CIs derived from the diagonal of σ²_obs · (W^T W)^{−1}, and document residual cross-cohort variance after correction. Templates and a PDOP-optimizer reference implementation are archived alongside the Monte Carlo script in the companion code directory cited in §9.7.
+
 ### 10.3 Convergence with Other Evidence
 
 Supplementary experiments extend the empirical basis for these predictions. Agentic pipeline compounding (Zharnikov 2026v, Section 5.13) shows that DCI increases across multi-step shopping simulations (eta-sq = .029), while Brand Function format optimization (Zharnikov 2026x, Section 8.6) demonstrates that structured specifications reduce dimensional collapse by up to 3.4 percentage points versus unstructured prose.
@@ -655,7 +751,7 @@ Finally, the framework's linear observation model assumes that the emission prof
 
 Brand positioning has long been treated as a matter of subjective perception, resistant to the standards of geometric precision applied in natural science. The GPS analogy suggests that this resistance is structural, not fundamental: positioning uncertainty is a function of the observer geometry, not an intrinsic property of the phenomenon. When the observer constellation is well-configured — diverse in spectral weight profiles, numerous enough to satisfy identifiability conditions, and corrected for systematic bias — brand positioning becomes a tractable geometric estimation problem.
 
-The theoretical contributions of this paper are four. First, Perception DOP provides an a priori measurement quality criterion: the precision of dimensional estimation is computable before data collection, enabling principled cohort selection that replaces demographic heuristics with geometric optimization. Second, differential brand measurement enables cross-study comparability by anchoring measurements to calibration brands with known spectral profiles, separating brand change from observer drift in longitudinal data. Third, the multi-constellation architecture is *specified*: human observer cohorts, AI observers, and behavioral proxies are characterized in terms of their distinctive measurement profiles, and the structural non-collinearity that motivates Conjecture 4 is supported indirectly by the R15 evidence on the AI Economic Default. Direct empirical validation requires the human-cohort study identified as Option B, and is the principal subject of subsequent work; the AI observer's Economic Default is reframed here from a defect into a structured, correctable bias. Fourth, the admissibility framework — integrating the tri-binding conditions of Medesani & Macdonald (2026) with Wald's (1947) admissibility criterion and the Brand Function specification layer — completes the measurement architecture: it is not sufficient to know where a brand is; governance requires knowing whether that position is admissible relative to specification.
+The theoretical contributions of this paper are four. First, Perception DOP provides an a priori measurement quality criterion: the precision of dimensional estimation is computable before data collection, enabling principled cohort selection that replaces demographic heuristics with geometric optimization. Second, differential brand measurement enables cross-study comparability by anchoring measurements to calibration brands with known spectral profiles, separating brand change from observer drift in longitudinal data. Third, the multi-constellation architecture is *specified*: human observer cohorts, AI observers, and behavioral proxies are characterized in terms of their distinctive measurement profiles, and the structural non-collinearity that motivates Conjecture 4 is supported indirectly by the R15 evidence on the AI Economic Default. Direct empirical validation requires the human-cohort study identified as Option B, and is the principal subject of subsequent work; the AI observer's Economic Default is reframed here from a defect into a structured, correctable bias. Fourth, the admissibility framework — extending the tri-binding conditions that Medesani & Macdonald (2026) establish for systems governance into the brand context, and integrating them with Wald's (1947) admissibility criterion and the Brand Function specification layer — completes the measurement architecture: it is not sufficient to know where a brand is; governance requires knowing whether that position is admissible relative to specification.
 
 The practical transformation implied by this framework is substantial. Brand measurement upgrades from opinion polling to geometric estimation. Multi-observer disagreement, currently treated as noise to be averaged away, becomes signal: it locates the source of dimensional underdetermination in the observer configuration rather than in the brand. Longitudinal tracking, currently limited to scalar time series, extends to 8-dimensional trajectory estimation with real-time anomaly detection. Re-collapse — what traditional brand management calls "rebranding" — can be distinguished from corridor drift: the former is a deliberate governed transition to a new Brand Function; the latter is an ungoverned exit from the current one. And admissibility monitoring converts Brand Function specifications from governance documents into operational diagnostic tools, capable of identifying per-cohort governance failures that aggregate coherence scores cannot detect.
 
@@ -749,7 +845,7 @@ Li, P., Castelo, N., Katona, Z., & Sarvary, M. (2024). Frontiers: Determining th
 
 McFadden, D., & Train, K. (2000). Mixed MNL models for discrete response. *Journal of Applied Econometrics*, 15(5), 447–470. DOI: 10.1002/1099-1255(200009/10)15:5<447::AID-JAE570>3.0.CO;2-1
 
-Medesani, M., & Macdonald, J. (2026). *Geometric Foundations of Invariant Corridors and Governance: A Unified Framework with Empirical Validation* (Level 3.3 Frozen Baseline). Zenodo. DOI: 10.5281/zenodo.18822552
+Medesani M, Macdonald J. 2026. Geometric foundations of invariant corridors and governance: A unified framework with empirical validation (Level 3.3). Working Paper. https://doi.org/10.5281/zenodo.18822552
 
 Misra, P., & Enge, P. (2011). *Global Positioning System: Signals, Measurements, and Performance* (2nd ed.). Ganga-Jamuna Press.
 

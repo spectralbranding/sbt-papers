@@ -14,7 +14,7 @@ metadata:
   citation_key: "2026v"
   doi: "10.5281/zenodo.19422427"
   date: "2026-04-17"
-  version: "1.3.0"
+  version: "1.4.0"
   status: preprint  # v3.0 JMR revision (2026-04-17). Previous: H10 recomputed on the updated dataset including a Mongolian-language re-test of mongolia_beer and a VkusVill Brand Function specification follow-up. New H10 result: 58/121 positive (48%), mean = +.001, binomial sign test p = .716 two-sided, null result. Mongolian-language subgroup exception (8/8 models, mean -4.9 DCI). Supplementary Run 10 corrective comparators added (126 calls). VkusVill specification test added (147 calls). Native templates rewritten as natural native-speaker prose. Section 4.6.3 added: Run 11 Roshen multi-city extension (7 cities × 7 LLMs × 3 runs = 315 calls, 0 errors). Run 11 findings: (a) Kyiv uniquely low (DCI 34.78); every other city clusters 39-45 regardless of geopolitical alignment. (b) Manufacturing presence does not save the brand: Vilnius (Klaipeda factory, ~15500 t/yr) collapses MORE than Warsaw, which has no manufacturing in Poland but does have an active commercial distribution arm (Roshen-Polska Sp. z o.o. in Jarosław + Roshen Europe Sp. z o.o. in Warsaw); commercial-distribution discourse beats manufacturing-record discourse. (c) Local-language prompting reduces DCI by 3.31-9.50 across all non-Kyiv cities; biggest effect Astana kk -9.50 (p=.002, all 7 models reduce). H12 reinterpreted as discourse-layer activation rather than country-of-origin/animosity. H10 null + Run 11 native-language effect both follow from the same mechanism applied to two different discourse geometries (homogeneous-discourse vs sparse-foreign-discourse). Abstract updated.
   license: "CC-BY-4.0"
   abstract: >
@@ -363,6 +363,40 @@ submission_history:
       moved to Web Appendix references. Title changed to "Dimensional
       Collapse in AI-Mediated Brand Perception: Large Language Models as
       Metameric Observers."
+      v1.4.0 (2026-05-01): JAR clarity-pass. Added Mermaid Figure 1
+      (mechanism flowchart) at end of Theoretical Framework chaining
+      training corpora -> encoder bottleneck -> low-rank perception
+      subspace -> implicit weights -> DCI emergence -> cross-model
+      cosine convergence; ASCII-only labels per project rule, caption
+      below figure. Added Boundary Conditions subsection in Discussion
+      (4 boundary cases: multimodal models, retrieval-grounded systems,
+      cross-modal training, non-text deployment contexts). Split
+      Managerial Implications subsection out of Practical Implications
+      with 4 concrete advertiser actions (DCI audit, Brand Function
+      specifications, soft-dimension verifiability layer, cross-platform
+      consistency monitoring). Added Hatch-Schultz (2010) brand
+      co-creation distinction paragraph (AI as structurally biased
+      stakeholder class) and Hermann et al. (2026) full-engagement
+      paragraph (defensibility = dimensional verifiability) in
+      Theoretical Implications. Added Zharnikov (2026ac) cross-citation
+      at portfolio interference point in Practical Implications. Added
+      method validity-defense paragraph for forced-allocation
+      self-report (Tversky-style feature-based ranking under
+      cognitive-budget constraint, with internal convergent-validity
+      from Type 3 probes). Added DCI formula positive justification
+      paragraph in Statistical Model (Economic-plus-Semiotic = the
+      verifiability anchors of the eight-dimensional space). Added
+      Park-MacInnis-Eisingerich (2016) Brand Admiration anchor in
+      Theoretical Implications (enrichment-benefit dimensions are
+      precisely what AI suppresses). +3 references (Hatch-Schultz 2010
+      verified via Perplexity; Park-MacInnis-Eisingerich 2016 Wiley
+      book verified via Perplexity; Tversky 1977 Features of
+      Similarity). Skipped on verification: Berger 2023 JM
+      ("What Holds Attention?" — relevance to dimensional collapse
+      thin); De Vries JAR (verification returned a JM article with
+      disputed venue, not JAR). Net word count delta: +1,626
+      (12,232 -> 13,858); QC PASSED with documented Wedel-Kamakura
+      book-title exception; SSOT mirror identical.
 
   - venue: "[withheld]"
     type: journal
