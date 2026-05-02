@@ -4,7 +4,7 @@
 
 ORCID: 0009-0000-6893-9231
 
-Working Paper v1.1.0 — March 2026 (Updated May 2026)
+Working Paper v1.2.0 — March 2026 (Updated May 2026)
 
 https://doi.org/10.5281/zenodo.18945659
 
@@ -971,7 +971,7 @@ The three core SDE parameters ($\sigma_0$, $\kappa$, $\alpha\lambda_{\text{enc}}
 
 *Step 3: Diffusion and goodness-of-fit.* Estimate $\sigma_0$ from the residual variance after subtracting the fitted drift. Goodness-of-fit is assessed by simulating forward trajectories from the estimated parameters and comparing simulated survival probability $S(t, x)$ to empirically observed retention rates in held-out future waves. Systematic over- or under-prediction of absorption frequency across the five coherence grades provides the primary model diagnostic.
 
-State-space maximum likelihood techniques (Sriram et al. 2007) and hidden Markov model fitting procedures (Netzer et al. 2008) provide the methodological blueprint; full adaptation to the spherical geometry of $S^7_+$ requires manifold-valued state-space estimation. Identifying the parameter vector from naturally occurring data will require instruments that shift signal exposure quasi-randomly, such as geographic media market discontinuities or platform algorithm changes.
+State-space maximum likelihood techniques (Sriram et al. 2007) and hidden Markov model fitting procedures (Netzer et al. 2008) provide the methodological blueprint, and latent attrition models with marketing activity covariates (Schweidel and Knox 2013) extend this tradition to signal-driven state transitions; full adaptation to the spherical geometry of $S^7_+$ requires manifold-valued state-space estimation. Identifying the parameter vector from naturally occurring data will require instruments that shift signal exposure quasi-randomly, such as geographic media market discontinuities or platform algorithm changes.
 
 ---
 
@@ -1094,6 +1094,8 @@ Peters, O. (2019). The ergodicity problem in economics. *Nature Physics*, 15, 12
 Peters, O., & Gell-Mann, M. (2016). Evaluating gambles using dynamics. *Chaos*, 26(2), 023103.
 
 Petty, R. E., & Cacioppo, J. T. (1986). *Communication and Persuasion: Central and Peripheral Routes to Attitude Change*. Springer.
+
+Schweidel, David A., and George Knox. (2013). Incorporating direct marketing activity into latent attrition models. *Marketing Science*, 32(3), 471--487. DOI 10.1287/mksc.2013.0781
 
 Sriram, S., Balachander, S., & Kalwani, M. U. (2007). Monitoring the dynamics of brand equity using store-level scanner data. *Journal of Marketing*, 71(2), 61--78. DOI 10.1509/jmkg.71.2.61
 
