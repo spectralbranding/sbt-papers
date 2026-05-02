@@ -64,7 +64,7 @@ The organizational specification gap mirrors the biological one:
 
 **Environment.** Market conditions, competitor actions, regulatory changes, and customer behavior provide information that the org-schema does not encode. These are the organizational equivalent of developmental environment.
 
-**Self-organization.** Informal coordination, working knowledge, team dynamics, and emergent culture arise from agent interaction, not from the specification. These are the organizational equivalent of cellular self-organization. Zharnikov (2026af) extends this dual to organizations: distinct configurations that produce equivalent observable outputs constitute organizational metamerism — the specification-to-implementation chain's inverse pathway.
+**Self-organization.** Informal coordination, working knowledge, team dynamics, and emergent culture arise from agent interaction, not from the specification. These are the organizational equivalent of cellular self-organization (Raveendran & Puranam 2023). Zharnikov (2026af) extends this dual to organizations: distinct configurations that produce equivalent observable outputs constitute organizational metamerism — the specification-to-implementation chain's inverse pathway.
 
 **Configuration.** Operational parameters — pricing decisions, staffing levels, seasonal adjustments — determine which parts of the specification are active in which context. These are the organizational epigenome. Zharnikov (2026ae) formalizes this control relationship as a spectral projection operator that enforces the cascade of acceptance tests — the verification layer that compresses the implementation surface back toward the specification subspace.
 
@@ -197,7 +197,7 @@ Hidalgo (2021) extends the non-ergodic perspective to economic complexity, argui
 
 ### 4.7 Emergence: Anderson (1972), Kauffman (1993), Holland (2012)
 
-Anderson's "More Is Different" (1972) is the canonical statement that at each level of complexity, qualitatively new properties appear that cannot be derived from lower levels. Kauffman (1993) demonstrated that self-organization produces order "for free" — without instruction from a specification. Holland (2012) provides a formal treatment of specification-implementation boundaries in complex adaptive systems, modeling how agents generate macro-level structure from micro-level rules — a direct computational analogue of the specification gap. Epstein's (2006) generative social science offers a complementary justification for weak emergence: that emergent social phenomena can be grown from agent-based micro-specifications, but are not deducible from those specifications alone without simulation — precisely the Bedau-compatible criterion adopted in Definition 5.
+Anderson's "More Is Different" (1972) is the canonical statement that at each level of complexity, qualitatively new properties appear that cannot be derived from lower levels. Kauffman (1993) demonstrated that self-organization produces order "for free" — without instruction from a specification. Felin, Kauffman & Winter (2023) extend this result into strategy, demonstrating that resource origins and search processes under self-organization share the same generative logic — connecting biological self-organization directly to the organizational instance of the rendering problem. Holland (2012) provides a formal treatment of specification-implementation boundaries in complex adaptive systems, modeling how agents generate macro-level structure from micro-level rules — a direct computational analogue of the specification gap. Epstein's (2006) generative social science offers a complementary justification for weak emergence: that emergent social phenomena can be grown from agent-based micro-specifications, but are not deducible from those specifications alone without simulation — precisely the Bedau-compatible criterion adopted in Definition 5.
 
 The rendering problem incorporates all four contributions. The emergent layer (consciousness, customer experience, brand perception, reputation) is qualitatively new in the sense of Anderson: it cannot be derived from the specification or the implementation alone. The specification gap is filled partly through self-organizational dynamics in the sense of Kauffman: the implementation contains order that no specification encoded. Holland's signals-and-boundaries framework formalizes the mechanism by which local specification rules generate the global implementation complexity that constitutes the gap. And Epstein's generative approach establishes that "if you didn't grow it, you didn't explain it" — verification of emergent phenomena requires simulation of the full specification-to-implementation chain, not derivation from the specification alone.
 
@@ -407,6 +407,8 @@ Elowitz, M. B., Levine, A. J., Siggia, E. D., & Swain, P. S. (2002). Stochastic 
 
 Epstein, J. M. (2006). *Generative social science: Studies in agent-based computational modeling*. Princeton University Press.
 
+Felin T, Kauffman L, Winter SG. Resource origins and search. *Strategic Management Journal*. 2023;44(10):2121-2146. https://doi.org/10.1002/smj.3350
+
 Fraga, M. F., Ballestar, E., Paz, M. F., Ropero, S., Setien, F., Ballestar, M. L., ... & Esteller, M. (2005). Epigenetic differences arise during the lifetime of monozygotic twins. *Proceedings of the National Academy of Sciences*, 102(30), 10604-10609.
 
 Gell-Mann, M., & Lloyd, S. (2004). Effective complexity. In M. Gell-Mann & C. Tsallis (Eds.), *Nonextensive entropy: Interdisciplinary applications* (pp. 387-398). Oxford University Press.
@@ -456,6 +458,8 @@ Polanyi, M. (1966). *The tacit dimension*. Doubleday.
 Prigogine, I., & Stengers, I. (1984). *Order out of chaos: Man's new dialogue with nature*. Bantam Books.
 
 Raisch, S., & Krakowski, S. (2021). Artificial intelligence and management: The automation–augmentation paradox. *Academy of Management Review*, 46(1), 192-210. https://doi.org/10.5465/amr.2018.0072
+
+Raveendran M, Puranam P. The dual function of organizational structure: Aggregating and shaping individual decisions. *Organization Science*. 2023;34(6):3551-3570. https://doi.org/10.1287/orsc.2023.1653
 
 Rosenthal, D. M. (2005). *Consciousness and mind*. Oxford University Press.
 
