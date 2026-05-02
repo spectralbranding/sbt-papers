@@ -7,7 +7,7 @@ authors:
     affiliation: "Independent Researcher"
     orcid: "https://orcid.org/0009-0000-6893-9231"
 title: "The rendering problem: From genetic expression to brand perception"
-version: 1.0.0
+version: 1.3.0-pre
 date-released: 2026-03-17
 url: "https://doi.org/10.5281/zenodo.19064427"
 repository-code: "https://github.com/spectralbranding/sbt-papers"
