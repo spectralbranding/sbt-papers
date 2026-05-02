@@ -112,11 +112,40 @@ graph LR
     C -->|"sqrt embedding: w -> 2sqrt(w)"| E["S7_plus (sphere)<br/>Fisher-Rao geodesics"]
 ```
 
-Figure 1. The three metric spaces of the brand-perception pipeline.
+*Figure 2: The brand-perception pipeline: mapping from raw signals to metric spaces. $\mathbb{R}^8_+$ (raw signals) maps to $S^7_+$ (unit sphere) via normalization, and to $\mathbb{R}^7$ (Aitchison space) via the clr or ilr transform. $\Delta^7$ (observer simplex) maps to $S^7_+$ via the square-root embedding that makes Fisher-Rao geodesics into great-circle arcs.*
 
 ---
 
 ## 3. The Brand Signal Space
+
+```mermaid
+graph TD
+  subgraph AITCHISON["(a) Aitchison Space — Brand Signal Space R8_plus"]
+    BS_A["Brand A<br/>ilr(s_A) in R7"]
+    BS_B["Brand B<br/>ilr(s_B) in R7"]
+    GEO_A["Geodesic = straight line in R7<br/>Ratio structure preserved"]
+    BS_A --- GEO_A
+    BS_B --- GEO_A
+  end
+  subgraph FISHER["(b) Fisher-Rao Space — Observer Weight Space Delta7"]
+    OB_A["Observer alpha<br/>aesthete profile"]
+    OB_B["Observer beta<br/>pragmatist profile"]
+    GEO_B["Geodesic = great circle arc<br/>Entropy bulge toward center"]
+    OB_A --- GEO_B
+    OB_B --- GEO_B
+  end
+  subgraph WARPED["(c) Warped Product — Combined Perception Space P"]
+    PA["State A<br/>(w_A s_A)"]
+    PB["State B<br/>(w_B s_B)"]
+    GEO_C["D-squared = d_FR-sq + weighted clr dist<br/>Observer weight w distorts brand geometry"]
+    PA --- GEO_C
+    PB --- GEO_C
+  end
+  AITCHISON -->|"observer w warps"| WARPED
+  FISHER -->|"brand s scales"| WARPED
+```
+
+*Figure 1: Three metric spaces of the brand-perception pipeline. Panel (a) shows brand signal space $\mathcal{B} = \mathbb{R}^8_+$ equipped with the Aitchison metric, where geodesics are straight lines in ilr coordinates and preserve ratio structure. Panel (b) shows observer weight space $\mathcal{O} = \Delta^7_\circ$ equipped with the Fisher-Rao metric, where geodesics are great-circle arcs on $S^7_+$ that bulge toward the high-entropy center. Panel (c) shows the combined warped product space $\mathcal{P} = \Delta^7_\circ \times \mathbb{R}^8_+$, where the observer's weight profile $w$ distorts the effective geometry of brand space. R1 selects Aitchison for brand space (scale invariance and sub-compositional coherence) and Fisher-Rao for observer space (Cencov uniqueness); Wasserstein geometry would apply only if observer profiles encoded ordered mass-transport costs rather than statistical salience weights. Figures at §2.3 (pipeline overview) and §4.5 (entropy bulge on the simplex) elaborate each space individually.*
 
 ### 3.1 Brand Profiles as Compositional Data
 
@@ -214,6 +243,20 @@ The Aitchison geometry endows $\mathcal{B}$ with several properties relevant to 
 
 ## 4. The Observer Weight Space
 
+Table 2: Comparison of Candidate Metrics on the Brand Profile Simplex $\Delta^7$.
+
+| Metric | Scale invariance | Sub-compositional coherence | Computational tractability | Interpretability for brand context | Chosen for R1? |
+|--------|------------------|-----------------------------|----------------------------|------------------------------------|----------------|
+| Euclidean | No: changes under uniform rescaling | No: sub-composition distances inconsistent | O(n) per pair | Familiar; but treats dimensions as independent absolute values | No |
+| L1 (Manhattan) | No: changes under rescaling | No: sub-composition incoherence | O(n) per pair | Sparse-profile interpretable; no log-ratio adjustment | No |
+| KL divergence | Yes: invariant under rescaling (for normalized profiles) | Partial: directional; not a metric | O(n) per pair | Information-theoretic; lacks symmetry | No |
+| Hellinger | Yes: scale-invariant | Partial: sub-composition coherent for normalized profiles | O(n) per pair | Square-root transform; bounded; lacks Cencov invariance for observer space | No |
+| Aitchison log-ratio | Yes: scale-invariant and perturbation-invariant | Yes: sub-compositional coherence proved (Aitchison 1992) | O(n) per pair after ilr transform | Captures ratio structure; aligns with Weber-Fechner law | Yes — brand signal space $\mathcal{B}$ |
+| Wasserstein-1 | Partial: invariant under measure-preserving maps | No: optimal-transport geometry differs from log-ratio | O(n log n) per pair | Penalizes support mismatch; appropriate when dimensions are ordered | No |
+| Fisher-Rao | Yes: invariant under Markov morphisms (Cencov 1982) | Yes: unique invariant metric on probability simplex | O(n) via closed-form arccos | Geodesic entropy bulge aligns with observer attention dynamics | Yes — observer weight space $\mathcal{O}$ |
+
+*Notes*: Scale invariance column evaluates whether the metric is unchanged under uniform rescaling of the profile vector. Sub-compositional coherence column evaluates whether distances on a sub-composition are consistent with distances on the full profile. The Aitchison metric is the correct choice for the brand signal space $\mathcal{B} = \mathbb{R}^8_+$ (open positive orthant), where scale invariance and Weber-Fechner scaling are primary concerns. The Fisher-Rao metric is the correct choice for the observer weight space $\mathcal{O} = \Delta^7_\circ$ (probability simplex), where Cencov invariance under sufficient-statistic transformations is the decisive criterion. Wasserstein geometry (Peyré and Cuturi 2019) is appropriate when the observer profile encodes a mass-transport cost between ordered dimension-positions rather than a statistical uncertainty distribution, which is not the SBT interpretation. KL divergence lacks the symmetry axiom (M3) and is therefore not a metric; it is included for completeness as the information-theoretic baseline.
+
 ### 4.1 Observer Profiles on the Simplex
 
 The choice of the Fisher-Rao metric for observer space is not merely an application of a known metric -- it is the unique metric on $\Delta^7$ satisfying Criterion 2 (Cencov invariance), which no Euclidean or Hellinger alternative possesses.
@@ -262,9 +305,9 @@ To make Criterion 2 rigorous for the SBT context: dimension-collapsing on observ
 
 Criterion 3 is satisfied by the closed-form formula involving only square roots and arc-cosine.
 
-The Hellinger distance, while a genuine metric, is the chord-length analog of Fisher-Rao's geodesic distance and lacks the Cencov invariance. The Jensen-Shannon distance (via its square root) satisfies the triangle inequality and is robust to zeros, but also lacks the unique invariance property. The Aitchison distance is singular at the simplex boundary ($w_i = 0$), which is problematic because boundary profiles (observers blind to certain dimensions) are psychologically meaningful in SBT. We therefore restrict Aitchison geometry to the brand signal space and adopt Fisher-Rao for the observer space.
+The Hellinger distance, while a genuine metric, is the chord-length analog of Fisher-Rao's geodesic distance and lacks the Cencov invariance. The Jensen-Shannon distance (via its square root) satisfies the triangle inequality and is robust to zeros, but also lacks the unique invariance property. The Aitchison distance is singular at the simplex boundary ($w_i = 0$), which is problematic because boundary profiles (observers blind to certain dimensions) are psychologically meaningful in SBT. Wasserstein geometry — developed comprehensively by Peyré and Cuturi (2019) — would apply to the observer space only if observer profiles encoded a mass-transport cost between ordered dimension-positions, which is not the SBT interpretation; the observer simplex represents a statistical uncertainty distribution over attentional salience, not a spatial distribution of attention-masses to be transported. We therefore restrict Aitchison geometry to the brand signal space and adopt Fisher-Rao for the observer space.
 
-Table 2: Candidate metrics on the brand-profile simplex evaluated against Cencov-uniqueness criteria.
+Table 3: Candidate Metrics on the Observer Simplex Evaluated Against Cencov-Uniqueness Criteria.
 
 | Metric | Invariance under sufficient statistics | Congruence with KL geometry on simplex | Behavior at simplex boundary |
 |--------|---------------------------------------|----------------------------------------|------------------------------|
@@ -273,7 +316,7 @@ Table 2: Candidate metrics on the brand-profile simplex evaluated against Cencov
 | Aitchison | None: perturbation-invariant but not Markov-invariant | Partial: suited to compositional not probability structure | Singular: log-ratio undefined at boundary |
 | Wasserstein | None: invariant under transport rearrangements, not sufficient statistics | No: optimal-transport geometry differs from KL | Well-defined; penalizes support mismatch |
 
-*Notes*: Cencov uniqueness (Cencov 1972; Cencov 1982) applies to probability distributions on finite sets; Fisher-Rao is the unique Riemannian metric invariant under all Markov morphisms (sufficient-statistic embeddings). Wasserstein geometry is appropriate when observer profiles encode mass-transport cost rather than statistical uncertainty. The Aitchison metric is the correct choice for the brand signal space (open positive orthant) but not for the observer simplex.
+*Notes*: Cencov uniqueness (Cencov 1972; Cencov 1982) applies to probability distributions on finite sets; Fisher-Rao is the unique Riemannian metric invariant under all Markov morphisms (sufficient-statistic embeddings). Wasserstein geometry is appropriate when observer profiles encode mass-transport cost rather than statistical uncertainty (see Peyré and Cuturi 2019 for a comprehensive computational treatment). The Aitchison metric is the correct choice for the brand signal space (open positive orthant) but not for the observer simplex.
 
 ### 4.4 Formal Definition and Metric Axioms
 
@@ -334,7 +377,7 @@ graph TD
     ctr --- m13
 ```
 
-Figure 2. Unit balls of the Aitchison metric on the 2-simplex Delta2_0. Vertices e1, e2, e3 represent single-dimension observers; geodesic arcs between them bulge inward toward the high-entropy center point p, reflecting Proposition 1 (geodesic entropy bulge).
+*Figure 3: Entropy bulge on the 2-simplex $\Delta^2_\circ$. Vertices $e_1$, $e_2$, $e_3$ represent single-dimension observers (semiotic-only, narrative-only, ideological-only); geodesic arcs between them bulge inward toward the high-entropy center point p, reflecting Proposition 1. The center point represents a maximally balanced observer attending equally to all three dimensions. In the full 7-simplex $\Delta^7_\circ$, the same entropy bulge occurs in all geodesic directions, meaning that the "average observer" between any two specialists is more open-minded than a linear mixture would suggest.*
 
 ---
 
@@ -564,7 +607,7 @@ $$\frac{D^2 J}{dt^2} + R(J, \dot{\gamma})\dot{\gamma} = 0$$
 
 where $D/dt$ denotes the covariant derivative along $\gamma$, $\dot{\gamma}$ is the tangent vector to the trajectory, and $R$ is the Riemann curvature tensor of the perception manifold. The initial conditions $J(0)$ and $J'(0) = (DJ/dt)(0)$ specify the initial separation and relative velocity of the two brand trajectories.
 
-For $S^7_+$ with its inherited metric from the round sphere (constant sectional curvature $K = 1$), the curvature term simplifies:
+For $S^7_+$ with its inherited metric from the round sphere (constant sectional curvature $K = 1$), the curvature term simplifies. The connection between curvature of the statistical manifold and the second-order geometry of estimation was established by Efron (1975), who showed that the statistical curvature of a family of distributions governs the difficulty of estimation and the departure from Cramér-Rao attainability; the same geometric intuition applies here, where the curvature of the perceptual manifold governs the difficulty of strategic repositioning.
 
 $$R(J, \dot{\gamma})\dot{\gamma} = K \left( \langle \dot{\gamma}, \dot{\gamma} \rangle J - \langle J, \dot{\gamma} \rangle \dot{\gamma} \right) = \|\dot{\gamma}\|^2 J - \langle J, \dot{\gamma} \rangle \dot{\gamma}$$
 
@@ -628,7 +671,7 @@ Cafaro and Ali (2007) analyzed Jacobi field instability on negatively curved sta
 
 We apply the metric framework to five brands analyzed as case studies in Zharnikov (2026a). Each brand has been assessed on the SBT coherence framework with a grade and a designed/ambient (D/A) ratio:
 
-**Table 3: Case-Study Brand Coherence Assessment Summary.**
+**Table 4: Case-Study Brand Coherence Assessment Summary.**
 
 | Brand | Coherence Type | Grade | D/A Ratio |
 |-------|---------------|-------|-----------|
@@ -642,7 +685,7 @@ We apply the metric framework to five brands analyzed as case studies in Zharnik
 
 To demonstrate the metric, we construct canonical emission profiles based on the qualitative case-study assessments. These profiles are illustrative; the numerical values are chosen to reflect the qualitative descriptions in Zharnikov (2026a) rather than derived from empirical measurement. All values are on a [1, 10] scale representing relative signal intensity:
 
-**Table 4: Canonical Brand Emission Profiles (1–10 Scale).**
+**Table 5: Canonical Brand Emission Profiles (1–10 Scale).**
 
 | Dimension | Hermès | IKEA | Patagonia | Erewhon | Tesla |
 |-----------|--------|------|-----------|---------|-------|
@@ -655,7 +698,7 @@ To demonstrate the metric, we construct canonical emission profiles based on the
 | Cultural | 9.0 | 7.5 | 7.0 | 7.5 | 4.0 |
 | Temporal | 9.5 | 6.0 | 6.5 | 2.5 | 2.0 |
 
-*Notes*: Values are illustrative, derived from qualitative SBT coherence assessments in Zharnikov (2026a). Dimensions listed in canonical SBT order.
+*Notes*: Values are illustrative, derived from qualitative SBT coherence assessments in Zharnikov (2026a). Dimensions listed in canonical SBT order. Table formerly designated Table 4 in prior versions; renumbered following insertion of Tables 2 and 3 at §4.
 
 ### 9.2 Pairwise Aitchison Distances
 
@@ -669,7 +712,7 @@ The large negative value on the economic dimension ($-0.936$) reflects Hermès's
 
 Carrying out the full computation for all pairs:
 
-**Table 5: Pairwise Aitchison Brand Distances ($d_B$).**
+**Table 6: Pairwise Aitchison Brand Distances ($d_B$).**
 
 | | Hermès | IKEA | Patagonia | Erewhon | Tesla |
 |-----------|--------|------|-----------|---------|-------|
@@ -731,7 +774,7 @@ Several limitations should be noted:
 
 **Dimensional independence.** The Aitchison metric treats the eight SBT dimensions as independent coordinates. In practice, dimensions may be correlated (semiotic and cultural signals may co-vary, economic and experiential signals may be inversely related). Empirical data would be needed to estimate the correlation structure and potentially define a Mahalanobis-like variant of the Aitchison distance.
 
-**Boundary behavior.** The brand signal space is defined on the *open* positive orthant $\mathbb{R}^8_+$; structural absence in SBT terms is represented numerically via zero-replacement at $\varepsilon$ per Martin-Fernandez, Palarea-Albaladejo, and Olea (2011). The metric diverges in the limit $s_k \to 0^+$ and the space is incomplete at the boundary. In SBT terms, a brand with *no* signal whatsoever on a dimension (true zero, not merely weak) cannot be represented in the Aitchison framework without zero-replacement strategies.
+**Boundary behavior.** The brand signal space is defined on the *open* positive orthant $\mathbb{R}^8_+$; structural absence in SBT terms is represented numerically via zero-replacement at $\varepsilon$ per Martin-Fernandez, Palarea-Albaladejo, and Olea (2011). The metric diverges in the limit $s_k \to 0^+$ and the space is incomplete at the boundary. In SBT terms, a brand with *no* signal whatsoever on a dimension (true zero, not merely weak) cannot be represented in the Aitchison framework without zero-replacement strategies. The detection and handling of outliers in compositional data — brand profiles that sit anomalously far from the bulk of the distribution in Aitchison space — draws on classical compositional outlier diagnostics (Filzmoser, Hron, and Reimann 2009), which identify multivariate outliers via robustified Mahalanobis distances in the ilr-transformed space; the same methodology applies to identifying brands with atypically extreme dimensional emphasis.
 
 **Illustrative case-study data.** The numerical brand profiles in Section 9 are constructed to be consistent with qualitative assessments, not derived from empirical measurement. The metric framework provides the mathematical structure for empirical testing, but the specific numerical results should be treated as demonstrations of the framework's behavior, not as empirical findings about the brands themselves.
 
@@ -961,7 +1004,11 @@ do Carmo, M. P. (1992). *Riemannian Geometry*. Birkhauser.
 
 Egozcue, J. J., Pawlowsky-Glahn, V., Mateu-Figueras, G., & Barcelo-Vidal, C. (2003). Isometric logratio transformations for compositional data analysis. *Mathematical Geology*, 35(3), 279--300.
 
+Efron, B. (1975). Defining the curvature of a statistical problem (with applications to second order efficiency). *Annals of Statistics*, 3(6), 1189--1242.
+
 Fechner, G. T. (1860). *Elemente der Psychophysik*. Breitkopf und Hartel.
+
+Filzmoser, Peter, Karel Hron, and Clemens Reimann. (2009). Univariate statistical analysis of environmental (compositional) data: Problems and possibilities. *Science of the Total Environment*, 407(23), 6100--6108. https://doi.org/10.1016/j.scitotenv.2009.08.008
 
 Gardenfors, P. (2000). *Conceptual Spaces: The Geometry of Thought*. MIT Press.
 
@@ -992,6 +1039,8 @@ O'Neill, B. (1983). *Semi-Riemannian Geometry with Applications to Relativity*. 
 Pawlowsky-Glahn, V., & Buccianti, A. (Eds.). (2011). *Compositional Data Analysis: Theory and Applications*. Wiley.
 
 Pennec, X., Sommer, S., & Fletcher, T. (Eds.). (2020). *Riemannian Geometric Statistics in Medical Image Analysis*. Academic Press.
+
+Peyré, Gabriel, and Marco Cuturi. (2019). Computational optimal transport: With applications to data science. *Foundations and Trends in Machine Learning*, 11(5-6), 355--607. https://doi.org/10.1561/2200000073
 
 Rao, C. R. (1945). Information and the accuracy attainable in the estimation of statistical parameters. *Bulletin of the Calcutta Mathematical Society*, 37, 81--91.
 
