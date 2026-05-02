@@ -680,7 +680,7 @@ Several limitations warrant discussion. The open questions identified below conc
 
 **Resource allocation.** The framework identifies *what* observers perceive but does not specify *where* operational investment should be directed. Companion work on spectral resource allocation formalizes optimal dimensional investment given measured cohort weight profiles.
 
-**Admissibility versus coherence.** The coherence taxonomy measures internal consistency — whether brand signals align with each other. A complementary concept is *admissibility*: whether the brand's current position falls within the region its specification defines as acceptable. A brand can exhibit perfect coherence while operating in an inadmissible state. This distinction parallels the difference between *state invariance* and *process invariance* formalized in geometric governance frameworks (Medesani & Macdonald, 2026), where invariant corridors preserve system integrity through constraining the *evolution* of the system under stress. Extending the coherence hierarchy with an admissibility criterion would enable the framework to distinguish between brands that are coherently positioned correctly and brands that are coherently positioned incorrectly. The recovery path from an inadmissible state — specifically the threshold inequality that must be satisfied for perceptual separability to be restored after a coherence shock — is formally derived in Zharnikov (2026ad).
+**Admissibility versus coherence.** The coherence taxonomy measures internal consistency — whether brand signals align with each other. A complementary concept is *admissibility*: whether the brand's current position falls within the region its specification defines as acceptable. A brand can exhibit perfect coherence while operating in an inadmissible state. This distinction parallels the difference between *state invariance* and *process invariance* in geometric governance frameworks, where invariant corridors preserve system integrity through constraining the *evolution* of the system under stress. Extending the coherence hierarchy with an admissibility criterion would enable the framework to distinguish between brands that are coherently positioned correctly and brands that are coherently positioned incorrectly. The recovery path from an inadmissible state — specifically the threshold inequality that must be satisfied for perceptual separability to be restored after a coherence shock — is formally derived in Zharnikov (2026ad).
 
 ### 5.5 Falsifiable Hypotheses
 
@@ -910,8 +910,6 @@ Ma, H., Jiang, L., Liu, T., & Liu, J. (2025). From sensory to perceptual manifol
 MacInnis, D. J. (2011). A framework for conceptual contributions in marketing. *Journal of Marketing*, 75(4), 136–154.
 
 McLuhan, M. (1964). *Understanding media: The extensions of man*. McGraw-Hill.
-
-Medesani, M., & Macdonald, J. (2026). Geometric foundations of invariant corridors and governance: A unified framework with empirical validation (Level 3.3). *Working Paper*. https://doi.org/10.5281/zenodo.18822552
 
 Meder, D., et al. (2021). Ergodicity-breaking reveals time optimal decision making in humans. *PLOS Computational Biology*, 17(9), e1009217.
 
