@@ -634,7 +634,7 @@ $$\circ dX_t = \left[ \mu(X_t, t) + \sum_{i=1}^{8} \mu_{\text{reflect},i}(X_t) \
 
 with the boundary condition: $X_{t,i} = 0$ remains absorbing. That is, if any component reaches exactly zero, the process is killed as before. The reflecting drift prevents approach to zero from above but cannot resurrect a dimension that has fully collapsed.
 
-This construction relies on the analytic theory of degenerate diffusion generators on bounded domains: essential m-dissipativity arguments (Eisenhuth and Grothaus 2021) provide existence and regularity for weak solutions to the corresponding Kolmogorov backward equation, which gives well-posedness of the modified SDE. The semi-permeable behavior --- reflecting drift on the *open* near-death zone $(0, \epsilon)$ combined with absorbing dynamics at the *closed* boundary $\{0\}$ --- is induced by the construction itself: the open zone preserves probability mass while the boundary remains a killing set.
+This construction relies on the analytic theory of degenerate diffusion generators on bounded domains: essential m-dissipativity arguments (Eisenhuth and Grothaus 2021) provide existence and regularity for weak solutions to the corresponding Kolmogorov backward equation, which gives well-posedness of the modified SDE. The variational structure of the construction is grounded in the theory of sticky-reflecting diffusion as a Wasserstein gradient flow (Casteras, Monsaingeon, and Santambrogio 2024): the Fokker-Planck equation for the reflected Sticky Brownian Motion can be identified as a gradient flow of relative entropy in the space of probability measures, confirming that the semi-permeable dynamics have a rigorous variational basis. The semi-permeable behavior --- reflecting drift on the *open* near-death zone $(0, \epsilon)$ combined with absorbing dynamics at the *closed* boundary $\{0\}$ --- is induced by the construction itself: the open zone preserves probability mass while the boundary remains a killing set.
 
 #### 7.5.2 The Near-Death Zone
 
@@ -1048,6 +1048,8 @@ Bass, Frank M. (1969). A new product growth for model consumer durables. *Manage
 Berger, M., Gauduchon, P., & Mazet, E. (1971). *Le Spectre d'une Variete Riemannienne*. Lecture Notes in Mathematics, Vol. 194. Springer.
 
 Birkhoff, G. D. (1931). Proof of the ergodic theorem. *Proceedings of the National Academy of Sciences*, 17(12), 656--660. DOI 10.1073/pnas.17.2.656
+
+Casteras, J.-B., Monsaingeon, L., and Santambrogio, F. (2024). Sticky-reflecting diffusion as a Wasserstein gradient flow. Accepted, *Journal de Mathematiques Pures et Appliquees (JMPA)*. arXiv:2401.16842 [math.AP]. https://doi.org/10.48550/arXiv.2401.16842
 
 Cattiaux, P., Collet, P., Lambert, A., Martinez, S., Meleard, S., & San Martin, J. (2009). Quasi-stationary distributions and diffusion models in population dynamics. *Annals of Probability*, 37(5), 1926--1969. DOI 10.1214/09-AOP451
 
