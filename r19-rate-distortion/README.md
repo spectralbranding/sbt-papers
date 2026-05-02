@@ -72,6 +72,12 @@ This directory follows the [Research-as-Repository protocol](https://github.com/
 | `DATA_MANIFEST.yaml` | Experiment data location and description |
 | `LICENSE` | CC-BY-4.0 (paper content) |
 
+### Companion code (`code/`)
+
+| File | Purpose |
+|------|---------|
+| `code/plot_rate_distortion_curve.py` | Generates `figures/figure1_j_curve.png` (Figure 1 in paper) from Table 2 data. Run: `uv run python code/plot_rate_distortion_curve.py`. Output written to `figures/`. Seed: 42. |
+
 ### Experiment cascade (`experiment/`)
 
 | Path | Purpose |
