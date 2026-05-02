@@ -9,11 +9,11 @@ metadata:
       corresponding: true
   citation_key: "2026ad"
   date: "2026-04-26"
-  version: "1.0.0"
+  version: "1.1.0"
   status: preprint
   doi: "10.5281/zenodo.19778549"
   license: "CC-BY-4.0"
-  ref_count: 42
+  ref_count: 64
   keywords:
     - spectral gap
     - cohort separability
@@ -66,18 +66,22 @@ claims:
       - "Spectral gap decay bounded below by exp(-lambda * t); Montenegro-Tetali (2006)"
       - "Naik (1999) canonical adstock half-life treatment as qualitative pulsing precedent"
 
-  - id: H22
-    type: hypothesis
+  - id: C3
+    type: corollary
     statement: >
-      Spectral gap collapse precedes brand conviction reorientation by 6 to 18 months.
+      Spectral gap collapse under mu < lambda precedes conviction reorientation by the
+      interval in which gap magnitude falls below the detection threshold while centroid
+      positions remain visually separated. Under Dove-calibrated parameters, this lead
+      time is bounded by [0, 24] months.
     status: supported_by_simulation
     evidence:
       - "Monte Carlo: low-regime gap collapse at mean month 46; Dove conviction reorientation window ~month 48 (2004-2008)"
       - "Lead time of ~2 months in simulation; consistent with lower bound of 6-18 month range"
       - "Effie Awards (2006) case documents conviction-metric shifts approximately 12 months post-launch"
     falsification: >
-      H22 is falsified if gap collapse in R10 dimensional score data coincides with or
-      follows conviction shift documented by Effie (2006), rather than preceding it.
+      C3 is falsified if a documented brand case shows spectral gap collapse and conviction
+      reorientation with a lead time outside [0, 24] months, or if conviction reorientation
+      is documented to precede spectral gap collapse.
 
 design:
   type: theoretical_with_monte_carlo_demonstration

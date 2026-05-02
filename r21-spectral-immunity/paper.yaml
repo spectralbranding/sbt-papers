@@ -14,7 +14,7 @@ metadata:
       corresponding: true
   citation_key: "2026ac"
   date: "2026-04-25"
-  version: "1.0.0"
+  version: "1.1.0"
   status: preprint
   doi: "10.5281/zenodo.19765401"
   license: "CC-BY-4.0"
@@ -104,7 +104,10 @@ data:
     format: JSONL
     records: 1950
   code:
-    location: "https://github.com/spectralbranding/sbt-papers/r21-spectral-immunity"
+    location: "https://github.com/spectralbranding/sbt-papers/tree/main/r21-spectral-immunity/code/"
+    script: "compute_dci.py"
+    seed: 42
+    run_command: "uv run python compute_dci.py"
 
 target_venue:
   name: "Marketing Science"
