@@ -24,7 +24,7 @@ This paper surveys geometric and topological methods applied to brand perception
 
 ---
 
-Brand theory, as it has developed over the past four decades, is strikingly under-formalized. The foundational frameworks that guide both academic research and professional practice---Aaker's (1991) brand equity model, Keller's (1993) customer-based brand equity pyramid, Kapferer's (2008, 4th ed.) brand identity prism---are taxonomic rather than mathematical. They identify components, propose relationships, and offer measurement instruments, but they do not specify the formal structure of the space in which brands exist, the metric by which brand differences should be measured, or the dynamical laws governing how brand perceptions evolve over time. A recent systematic review confirmed that "no model allows comprehensive evaluation of brand equity" in a formally rigorous sense (Chernikov, 2024).
+Brand theory, as it has developed over the past four decades, is strikingly under-formalized. The foundational frameworks that guide both academic research and professional practice---Aaker's (1991) brand equity model, Keller's (1993) customer-based brand equity pyramid, Kapferer's (2008, 4th ed.) brand identity prism---are taxonomic rather than mathematical. They identify components, propose relationships, and offer measurement instruments, but they do not specify the formal structure of the space in which brands exist, the metric by which brand differences should be measured, or the dynamical laws governing how brand perceptions evolve over time. A recent systematic review of brand equity models concluded that existing frameworks fail to provide a comprehensive or formally rigorous account of brand equity (Paschina 2025).
 
 This absence of mathematical structure stands in sharp contrast to adjacent fields where geometric methods have produced transformative insights. In perception science, the discovery that human perceptual space is non-Euclidean---"at best Riemannian" (Todd, Oomes, Koenderink, and Kappers, 2001) and possibly non-Riemannian (Bujack, Teti, Miller, Caffrey, and Turton, 2022)---has reshaped how researchers model visual and sensory experience. In cognitive science, Gardenfors's (2000) conceptual spaces framework demonstrated that natural concepts correspond to convex regions in geometric quality-dimension spaces, providing a formal bridge between perception and categorization. In economics, Lancaster's (1966) characteristics theory recast consumer choice as navigation through an n-dimensional attribute space, while Hotelling's (1929) spatial competition model placed firms on a geometric line. In physics and machine learning, high-dimensional geometry has revealed counterintuitive phenomena---concentration of measure, the curse of dimensionality, the Johnson-Lindenstrauss projection lemma---that fundamentally alter how systems behave as dimensions increase. Most directly relevant for a cs.LG audience, the geometric deep learning program (Bronstein, Bruna, LeCun, Szlam, and Vandergheynst, 2017) has established that learning on non-Euclidean domains---graphs, manifolds, and point clouds---requires tools beyond standard convolutional architectures, positioning the brand-perception problem as a natural application domain for manifold-aware representation learning.
 
@@ -137,7 +137,7 @@ This convexity criterion has deep implications. It provides a geometric characte
 
 ### 4.2 Applications to Brand and Product Perception
 
-Several researchers have applied conceptual-spaces ideas to marketing contexts. Warglien and Gartner (2004) used conceptual spaces to model how brand meanings are constructed and communicated. Aisbett and Gibbon (2001) explored the mathematical properties of concept combination in conceptual spaces, with implications for how consumers combine brand attributes into overall judgments.
+Several researchers have applied conceptual-spaces ideas to marketing contexts. Aisbett and Gibbon (2001) explored the mathematical properties of concept combination in conceptual spaces, with implications for how consumers combine brand attributes into overall judgments.
 
 More recently, word embedding models from natural language processing (Mikolov, Sutskever, Chen, Corrado, and Dean, 2013) have been interpreted as high-dimensional conceptual spaces that encode brand meaning from textual data. Brands that are described in similar contexts end up close together in the embedding space, providing a data-driven approximation to the conceptual-spaces framework.
 
@@ -267,7 +267,7 @@ Busemeyer and Bruza (2012) demonstrated that quantum models account for several 
 
 ### 8.2 Applications to Brand Perception
 
-The quantum cognition framework has been applied to several aspects of consumer decision-making. Khrennikov (2016) and Pothos and Busemeyer (2022) have explored how quantum-like models capture context-dependence in preference formation. The "entanglement" concept has been used to model non-separable attribute evaluations, where the perception of one brand attribute (e.g., luxury) is intrinsically linked to another (e.g., exclusivity) in a way that exceeds classical correlation.
+The quantum cognition framework has been applied to several aspects of consumer decision-making. Pothos and Busemeyer (2022) have explored how quantum-like models capture context-dependence in preference formation. The "entanglement" concept has been used to model non-separable attribute evaluations, where the perception of one brand attribute (e.g., luxury) is intrinsically linked to another (e.g., exclusivity) in a way that exceeds classical correlation.
 
 However, quantum cognition has not been applied to brand perception formation as a temporal, cumulative process. The models are primarily concerned with single-shot decisions: at the moment of choice, the cognitive state collapses from a superposition to a definite outcome. This snapshot formalism does not address how brand perceptions are built up over time through repeated signal encounters, how signals decay, or how past experiences create priors that shape future perception.
 
@@ -363,7 +363,7 @@ This gap is significant because brand perception exhibits all the hallmarks of n
 
 *Observer heterogeneity*. Individual consumer trajectories are governed by person-specific parameters (the observer spectral profile in SBT terms), making group-level statistics unreliable predictors of individual behavior---precisely the condition Molenaar (2004) identified as non-ergodicity in psychology. A related challenge is temporal credit assignment: how a consumer attributes the current state of their brand perception to past signal encounters at different time lags. Gershman and Daw (2017) demonstrate in the context of episodic memory and reinforcement learning that temporal credit assignment is non-trivial even for relatively simple sequential dynamics, a difficulty that is amplified in brand perception contexts where signal encounters are irregularly spaced, vary in intensity, and interact with prior perceptions through nonlinear processing.
 
-The nearest work in marketing is Layton and Duffy (2018), who discuss path dependence in marketing systems (supply chains, distribution channels) but use the concept qualitatively and system-level rather than applying Peters's mathematical formalism to individual consumer perception trajectories. A formal derivation of how the coherence type of brand signals — whether signals reinforce or disrupt one another — predicts crisis trajectories is developed in Zharnikov (2026s), which formalizes the absorbing-state structure from a non-ergodic dynamics perspective.
+The nearest work in marketing is Layton and Duffy (2018), who discuss path dependence in marketing systems (supply chains, distribution channels) but use the concept qualitatively and system-level rather than applying Peters's mathematical formalism to individual consumer perception trajectories. Vanhoyweghen, Macharis, and Ginis (2025) apply the time-average framework to stated preference experiments, demonstrating that human decision-makers respond to non-ergodic dynamics in multiplicative gamble settings — the closest empirical analogue to the non-ergodic brand perception dynamics SBT posits — yet this line of work has not been extended to the formation of brand conviction. A formal derivation of how the coherence type of brand signals — whether signals reinforce or disrupt one another — predicts crisis trajectories is developed in Zharnikov (2026s), which formalizes the absorbing-state structure from a non-ergodic dynamics perspective.
 
 ## 11. Synthesis: The Geometric Brand Theory Gap
 
@@ -665,7 +665,7 @@ Cencov, N. N. (1982). *Statistical Decision Rules and Optimal Inference*. Americ
 
 Cohn, H., Kumar, A., Miller, S. D., Radchenko, D., and Viazovska, M. (2017). "The Sphere Packing Problem in Dimension 24." *Annals of Mathematics*, 185(3), 1017-1033.
 
-Chernikov, S. (2024). "Systematic Review of Brand Equity Evaluation Models." Working paper.
+Paschina, Silvia (2025). "Brand Equity Measurement Models: A Systematic Review." *International Journal of Business and Management*, 20 (5). https://doi.org/10.5539/ijbm.v20n5p1
 
 Coombs, C. H. (1964). *A Theory of Data*. Wiley.
 
@@ -712,8 +712,6 @@ Kapferer, J.-N. (2008). *The New Strategic Brand Management: Creating and Sustai
 Keller, K. L. (1993). "Conceptualizing, Measuring, and Managing Customer-Based Brand Equity." *Journal of Marketing*, 57(1), 1-22.
 
 Kriegeskorte, N., and Kievit, R. A. (2013). "Representational Geometry: Integrating Cognition, Computation, and the Brain." *Trends in Cognitive Sciences*, 17(8), 401-412.
-
-Khrennikov, A. (2016). "Quantum-Like Model of Decision Making and Sense Perception Based on the Representation of the Contextual Probabilistic Model of Kolmogorovian Type in Complex Hilbert Space." *Biosystems*, 138, 49-56.
 
 Kriegeskorte, N., Mur, M., and Bandettini, P. (2008). "Representational Similarity Analysis — Connecting the Branches of Systems Neuroscience." *Frontiers in Systems Neuroscience*, 2, 4. https://doi.org/10.3389/neuro.06.004.2008
 
@@ -775,15 +773,13 @@ Tversky, A. (1977). "Features of Similarity." *Psychological Review*, 84(4), 327
 
 van der Maaten, L., and Hinton, G. (2008). "Visualizing Data Using t-SNE." *Journal of Machine Learning Research*, 9, 2579-2605.
 
-Vanhoyweghen, L. (2024). "Time Averages as a Better Null Model for Stated Preference." Working paper.
+Vanhoyweghen, A., Macharis, C., and Ginis, V. (2025). "Investigating the origins of redistributive behaviour in non-ergodic contexts." *Proceedings of the Royal Society A*, 481 (2326), Article 20250598. https://doi.org/10.1098/rspa.2025.0598
 
 Viazovska, M. S. (2017). "The Sphere Packing Problem in Dimension 8." *Annals of Mathematics*, 185(3), 991-1015.
 
 von Luxburg, U. (2007). "A Tutorial on Spectral Clustering." *Statistics and Computing*, 17(4), 395-416.
 
 Vogt, P. (2006). "Language Evolution and Robotics: Issues on Symbol Grounding and Language Acquisition." In *Artificial Cognition Systems*, Idea Group, 176-209.
-
-Warglien, M., and Gartner, W. B. (2004). "Entrepreneurial Leadership and the Creation of New Markets: Components of a Conceptual Space Theory." Working paper.
 
 Yen, P. T.-W., and Cheong, S. A. (2021). "Using Topological Data Analysis (TDA) and Persistent Homology to Analyze the Stock Markets in Singapore and Taiwan." *Frontiers in Physics*, 9, 572216.
 
