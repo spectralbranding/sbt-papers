@@ -18,7 +18,7 @@ The verification crisis in science is a specification crisis. Papers communicate
 
 ## 1. Introduction
 
-In March 2026, Terence Tao observed that while AI was making mathematical research "richer and broader," it was not making it deeper -- and that the scientific community needed "a semi-formal language for the way that scientists actually talk to each other" (Tao, 2026, 59:20). In the same conversation, he described what he termed the "deductive overhang": the accumulation of verifiable consequences faster than the community can verify them (26:10). Tao's immediate context was mathematical proof, where verification is decidable -- a proof either satisfies the axioms or it does not. But the asymmetry he identified -- that generating candidate ideas is becoming cheap while rigorous verification remains hard -- applies with even greater force to empirical science, where verification is not decidable but depends on experimental design, statistical inference, and replication. The replication crisis, documented across psychology (Open Science Collaboration, 2015), medicine (Ioannidis, 2005), and economics (Camerer et al., 2016), and crystallized in reform manifestos (Munafò et al., 2017), had already demonstrated that the scientific ecosystem was producing claims faster than it could verify them. The scale of this strain is now quantified: peer-reviewed publications grew 5% per year between 2016 and 2022, while reviewer availability grew at less than half that rate (Hanson et al., 2024). LLMs threaten to widen this generation-verification gap by orders of magnitude -- not because they generate formal proofs, but because they generate the plausible prose in which scientific claims are expressed.
+In March 2026, Terence Tao observed that while AI was making mathematical research "richer and broader," it was not making it deeper -- and that the scientific community needed "a semi-formal language for the way that scientists actually talk to each other" (Tao, 2026, 59:20). In the same conversation, he described what he termed the "deductive overhang": the accumulation of verifiable consequences faster than the community can verify them (26:10). Tao's immediate context was mathematical proof, where verification is decidable -- a proof either satisfies the axioms or it does not. But the asymmetry he identified -- that generating candidate ideas is becoming cheap while rigorous verification remains hard -- applies with even greater force to empirical science, where verification is not decidable but depends on experimental design, statistical inference, and replication. The replication crisis, documented across psychology (Open Science Collaboration, 2015), medicine (Ioannidis, 2005), and economics (Camerer et al., 2016), and crystallized in reform manifestos (Munafò et al., 2017; Baker, 2016), had already demonstrated that the scientific ecosystem was producing claims faster than it could verify them. The reproducibility problem is not limited to social science: Peng (2011) identified computational reproducibility as a minimum standard for evaluating published findings in any field where analysis code is involved. The scale of this strain is now quantified: peer-reviewed publications grew 5% per year between 2016 and 2022, while reviewer availability grew at less than half that rate (Hanson et al., 2024). LLMs threaten to widen this generation-verification gap by orders of magnitude -- not because they generate formal proofs, but because they generate the plausible prose in which scientific claims are expressed.
 
 The standard response to the verification crisis has been methodological: pre-registration, registered reports, stricter statistical thresholds, open data mandates. These interventions address the quality of individual studies but not the scalability of verification itself. A registered report is still a PDF. Its hypotheses, acceptance criteria, and methodology are still expressed in natural language, legible to human readers but opaque to machines. When a foundational paper is retracted, identifying every downstream claim that depends on it requires a human to read every citing paper and judge the nature of the citation -- a task that is feasible for a paper with fifty citations and impossible for one with five thousand.
 
@@ -84,7 +84,7 @@ Several initiatives have addressed fragments of this problem. We review them not
 
 **RO-Crate** (Soiland-Reyes et al., 2022) packages research objects -- data, code, documentation -- with structured metadata. RO-Crate solves the bundling problem but does not address claim specification. A research object that includes a well-packaged dataset and analysis code but no machine-readable description of what the research claims is better organized but not more verifiable.
 
-**CiTO and the SPAR Ontologies** (Shotton, 2010; Peroni & Shotton, 2018) define vocabularies for typed citation relationships and scholarly publishing metadata. CiTO's relationship types -- "extends," "confirms," "disputes," "uses method in" -- are the most direct precursor to Paper Spec's `dependencies` section, which borrows its relationship-type approach. However, CiTO operates at the paper level; Paper Spec extends this to claim-level granularity, specifying not just that Paper A extends Paper B but which specific claim in A depends on which specific claim in B.
+**CiTO and the SPAR Ontologies** (Shotton, 2010; Peroni & Shotton, 2018) define vocabularies for typed citation relationships and scholarly publishing metadata. CiTO's relationship types -- "extends," "confirms," "disputes," "uses method in" -- are the most direct precursor to Paper Spec's `dependencies` section, which borrows its relationship-type approach. However, CiTO operates at the paper level; Paper Spec extends this to claim-level granularity, specifying not just that Paper A extends Paper B but which specific claim in A depends on which specific claim in B. The open citation infrastructure that makes large-scale CiTO deployment feasible is maintained by OpenCitations (Peroni & Shotton, 2020), whose open linked-data citation corpus provides the network substrate on which L4 cross-corpus dependency analysis could eventually operate at field scale.
 
 **TOP Guidelines** (Nosek et al., 2015) define eight transparency and openness standards (citation standards, data transparency, code transparency, materials transparency, design and analysis transparency, preregistration of studies, preregistration of analysis plans, and replication) with three levels of increasing stringency. TOP demonstrates that incrementally adoptable standards can gain traction in academic publishing -- the same design principle that underlies Paper Spec's "every section optional" architecture.
 
@@ -212,7 +212,47 @@ submission_history: # Publication journey.
     decision: under_review
 ```
 
-The example above is abbreviated. The full specification, including all fields, types, enums, and validation rules, is published as a standalone document with a companion JSON Schema (https://github.com/spectralbranding/paper-spec).
+The example above is abbreviated. The full specification, including all fields, types, enums, and validation rules, is published as a standalone document with a companion JSON Schema (https://github.com/spectralbranding/sbt-papers/tree/main/r13-paper-as-specification).
+
+### 4.5 Specification Grammar
+
+The Paper Spec standard defines a precise grammar for its required and optional fields. The top-level required keys are `spec_version` and `meta`; all other sections are optional but independently valuable. The following EBNF-like fragment summarizes the core structure:
+
+```
+paper_yaml     ::= spec_version meta claims? methodology? acceptance?
+                   dependencies? results? limitations? repositories?
+                   submission_history?
+
+spec_version   ::= "0.1.0" | "0.2.0" | ...
+
+meta           ::= title authors doi date version license keywords
+authors        ::= author+
+author         ::= name orcid? affiliation?
+
+claims         ::= claim+
+claim          ::= id type statement testable status
+                   tested_in_paper? depends_on? confirming_evidence?
+                   refuting_evidence? scope_conditions?
+type           ::= "proposition" | "hypothesis" | "theorem"
+                 | "empirical_claim" | "definition" | "conjecture"
+status         ::= "supported" | "refuted" | "not_tested" | "contested"
+
+dependencies   ::= dependency+
+dependency     ::= doi? reference? claim relationship critical
+relationship   ::= "extends" | "applies" | "tests" | "contradicts"
+                 | "refines" | "uses_method" | "requires_data"
+                 | "depends_theory"
+critical       ::= true | false
+
+falsification  ::= falsification_entry+
+falsification_entry ::= claim_id condition threshold?
+```
+
+The five relationship types in `dependencies` are a deliberate simplification of CiTO's forty-plus typed relationships (Shotton, 2010): sufficient for retraction-cascade analysis and contradiction detection without imposing an ontology-learning burden on the author. The `critical` boolean is the key field for L4 analysis — it distinguishes load-bearing dependencies (retraction of the source invalidates this paper's claims) from incidental citations.
+
+Claim IDs (`id` field) must be unique within a `paper.yaml` file, alphanumeric with optional hyphens (e.g., `P1`, `H2`, `T3a`), and are stable across paper versions. External references of the form `doi:claim_id` (e.g., `10.5281/zenodo.18945912:P1`) identify a specific claim in a specific paper. This stability guarantee is what makes cross-paper dependency references durable under revision.
+
+The `computation` section (not shown in the EBNF above) lists scripts that reproduce any numerically computed values in the paper: each entry includes `script_url`, `run_command`, and optionally `fixed_seed` and `expected_output_hash`. This section implements the companion computation script requirement described in PAPER_QUALITY_STANDARDS items 37a-37e.
 
 ### 4.4 A Worked Example
 
@@ -280,7 +320,22 @@ The power of this format becomes apparent when hundreds of such files exist. A m
 
 ## 5. Verification Layers: From Schema to Integrity
 
-Paper Spec enables a hierarchy of five verification layers, each building on the previous:
+Paper Spec enables a hierarchy of five verification layers, each building on the previous.
+
+```mermaid
+flowchart TD
+    L0[L0 - Lint: schema validation]
+    L1[L1 - Unit: claim-by-claim falsification]
+    L2[L2 - Integration: dependency-graph traversal]
+    L3[L3 - Human review: peer assessment]
+    L4[L4 - Audit: cross-paper coherence]
+    L0 --> L1
+    L1 --> L2
+    L2 --> L3
+    L3 --> L4
+```
+
+Figure 1: L0-L4 verification stack for Paper Spec. Each layer composes with the layer below: L1 unit checks presuppose L0 schema validity; L4 audit composes results across the corpus. The architecture is structurally isomorphic to a software CI/CD pipeline (Beck 2002): lint -> unit -> integration -> review -> deploy.
 
 The specification-first design principle underlying the L0-L4 stack is well established in software engineering, where test-driven development (Beck, 2002) requires writing acceptance criteria before producing the artifact they constrain. Paper Spec applies an analogous principle to scientific knowledge production. The five-layer stack mirrors a CI/CD pipeline: L0 corresponds to linting (syntactic validity), L1 to unit tests (internal logical consistency), L2 to integration tests (completeness against the prose), L3 to human code review (plausibility assessment), and L4 to deployment dependency audit (cross-corpus integrity). The TDD/CI lineage is not incidental -- it explains why incremental adoption works: each layer is independently runnable and independently valuable, just as a project with only unit tests is better than a project with no tests.
 
@@ -336,6 +391,43 @@ The twenty-paper corpus, once structured, reveals patterns that are invisible in
 
 **Falsification gap.** In the process of writing acceptance criteria, we identified three claims across the corpus whose falsification conditions were genuinely unclear -- not because the claims were unfalsifiable but because the original papers had not articulated the boundary between confirmation and refutation. Writing the `paper.yaml` forced this articulation, which in turn prompted revisions to the papers themselves. The specification process improved the specified artifact.
 
+### 6.4 Self-Application
+
+This paper is itself authored under the Paper Spec it proposes. The companion `paper.yaml` at https://github.com/spectralbranding/sbt-papers/tree/main/r13-paper-as-specification specifies the four propositions (P1-P4), their dependencies, and the falsification conditions in machine-readable form. The R12 (Coherence-Resilience), R14 (Research as Repository), and other R-series papers in the corpus likewise carry `paper.yaml` companions, demonstrating the spec on a 20+ paper corpus rather than a single isolated example.
+
+The following excerpt shows the `meta` and one `claims` entry from this paper's own `paper.yaml`:
+
+```yaml
+spec_version: "0.1.0"
+
+meta:
+  title: "Paper as Specification: A Machine-Readable Standard for Scientific Claims"
+  authors:
+    - name: "Zharnikov, Dmitry"
+      orcid: "0009-0000-6893-9231"
+  doi: "10.5281/zenodo.19210037"
+  version: "0.1"
+  license: "CC-BY-4.0"
+
+claims:
+  - id: "P1"
+    type: proposition
+    statement: >
+      A paper.yaml file can represent the core claims, methodology, acceptance
+      criteria, and results of any empirical or theoretical paper without loss
+      of essential structure.
+    testable: true
+    status: supported
+
+falsification:
+  - claim_id: "P1"
+    condition: >
+      Inter-rater agreement between YAML-only and full-paper reconstruction
+      falls below kappa = .70 in an independent multi-field pilot.
+```
+
+The `paper.yaml` passes L0 schema validation and L1 internal consistency checks: all `claim_id` references in `acceptance` and `results` resolve to defined `claims` entries, and the `methodology.type` (mixed) is consistent with the proposition-type claims. This self-application resolves the apparent meta-paradox that a paper proposing machine-readable specification would itself be unspecified: Paper Spec is the first structured-science standard whose own standard description is also a conformant instance of that standard.
+
 ## 7. Discussion
 
 ### 7.1 Specification Gaps Across Domains
@@ -353,6 +445,25 @@ Paper Spec is not a replacement for peer review. It is infrastructure that makes
 The economic and quality case for specification-first review has now been demonstrated at scale. Goldberg et al. (2026) deployed AI review across 22,977 submissions at AAAI-26 (less than $1 per paper) and found AI reviews preferred on 6 of 9 quality criteria; crucially, a structured multi-stage pipeline outperformed single-prompt review by +.21 recall ($p < .001$). Their SPECS benchmark --- decomposing review quality into five structured criteria --- is, in effect, a review specification standard, validating the core claim of the present paper that structured criteria outperform unstructured evaluation.
 
 This shifts the reviewer's role from extraction to evaluation. Currently, a substantial fraction of review time is spent determining what the paper claims. With a `paper.yaml` file, this extraction is done by the author and validated by machine. The reviewer can focus on what humans do best: assessing whether the evidence supports the claims, whether the methodology is appropriate, whether the interpretation is reasonable, and whether the contribution is significant.
+
+The full author-to-publication workflow enabled by Paper Spec is shown in Figure 2.
+
+```mermaid
+flowchart LR
+    A[Write paper.md and paper.yaml]
+    B[Run local L0 and L1 checks]
+    C[Submit preprint fork with paper.yaml]
+    D[Journal L2 and L3 automated review]
+    E[Human peer review on structured claims]
+    F[Publish at tagged release with provenance]
+    A --> B
+    B --> C
+    C --> D
+    D --> E
+    E --> F
+```
+
+Figure 2: Author-side workflow for Paper Spec ingestion, validation, and publication. The author writes `paper.md` and `paper.yaml` together, runs local L0/L1 checks before submission, and submits both to the preprint server and journal. The journal runs L2/L3 automated checks before routing to human reviewers. The final tagged release includes both documents, ensuring machine-readable provenance at every stage.
 
 ### 7.4 Paper.yaml as Independent Artifact
 
@@ -418,6 +529,8 @@ AI assistants (Claude Opus 4.7, Grok 4.1, Gemini 3.1) were used for initial lite
 
 Ammar, W., Groeneveld, D., Bhagavatula, C., Beltagy, I., Crawford, M., Downey, D., ... & Etzioni, O. (2018). Construction of the literature graph in Semantic Scholar. *Proceedings of the 2018 Conference of the North American Chapter of the Association for Computational Linguistics*, 84-91.
 
+Baker, M. (2016). 1,500 scientists lift the lid on reproducibility. *Nature*, 533(7604), 452-454. https://doi.org/10.1038/533452a
+
 Beck, K. (2002). *Test-Driven Development: By Example*. Addison-Wesley.
 
 Bless, C., Baimuratov, I., & Karras, O. (2023). SciKGTeX -- A LaTeX package to semantically annotate contributions in scientific publications. *Proceedings of the ACM/IEEE Joint Conference on Digital Libraries (JCDL 2023)*. https://doi.org/10.1109/JCDL57899.2023.00030
@@ -474,7 +587,11 @@ Nosek, B. A., Alter, G., Banks, G. C., Borsboom, D., Bowman, S. D., Breckler, S.
 
 Open Science Collaboration. (2015). Estimating the reproducibility of psychological science. *Science*, 349(6251), aac4716.
 
+Peng, R. D. (2011). Reproducible research in computational science. *Science*, 334(6060), 1226-1227. https://doi.org/10.1126/science.1213847
+
 Peroni, S., & Shotton, D. (2018). The SPAR ontologies. *Proceedings of the International Semantic Web Conference (ISWC 2018)*, LNCS 11137, 119-136.
+
+Peroni, S., & Shotton, D. (2020). OpenCitations, an infrastructure organization for open scholarship. *Quantitative Science Studies*, 1(1), 428-444. https://doi.org/10.1162/qss_a_00023
 
 Priem, J., Piwowar, H., & Orr, R. (2022). OpenAlex: A fully-open index of scholarly works, authors, venues, institutions, and concepts. *arXiv Preprint*, arXiv:2205.01833.
 
