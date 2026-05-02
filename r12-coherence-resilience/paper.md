@@ -1,4 +1,4 @@
-# Coherence Type as Crisis Predictor: A Formal Derivation from Non-Ergodic Dynamics
+# Coherence Type Over Coherence Score: A Stochastic Differential Equation Derivation of Brand Resilience
 
 **Zharnikov, D.**
 
