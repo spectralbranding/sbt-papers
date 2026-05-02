@@ -14,10 +14,10 @@ metadata:
   citation_key: "2026p"
   doi: "10.5281/zenodo.19139258"
   date: "2026-05-02"
-  version: "2.5.0"
+  version: "2.6.0"
   status: editable_post_rejection
   word_count: 10847
-  ref_count: 50
+  ref_count: 51
   figure_count: 1
   license: "CC-BY-4.0"
   abstract: >
@@ -208,4 +208,7 @@ submission_history:
       Method section transition. Other deferred items rejected: 4-case redesign (locked
       to Layer 2 Option A); inter-rater reliability + coordinate-invariance (require new
       empirical work); conviction function mathematization (formal mech belongs to 2026a/2026j,
-      not empirical case paper); self-cite reduction (corpus-design conflict — load-bearing).
+      not empirical case paper); self-cite reduction (corpus-design conflict -- load-bearing).
+      Phase 3.5 Step 6 ACCEPT pass v2.6.0 2026-05-03: Reczek, Fenigstein, and Serafin (2023)
+      JMR 60(5) added -- in-text at activism cluster (Introduction p.2, after Guha 2026
+      sentence); ref-list entry added alphabetically between Puntoni and Sabbah. Ref count 50->51.
