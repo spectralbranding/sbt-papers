@@ -1,10 +1,10 @@
-# R19: Empirical Rate-Distortion Curve for AI Brand Perception Encoders
+# R19: Optimal Response Formats for AI Brand Perception Measurement
 
 **Citation key**: 2026aa | **DOI**: [10.5281/zenodo.19528833](https://doi.org/10.5281/zenodo.19528833) | **Dataset DOI**: [10.57967/hf/8362](https://doi.org/10.57967/hf/8362) | **Status**: Working paper v1.0.1 (1,652 API calls, 17 LLM architectures from distinct training lineages, 98.1% parse rate)
 
 ## Paper
 
-Zharnikov, D. (2026aa). Empirical Rate-Distortion Curve for AI Brand Perception Encoders. Working Paper. https://doi.org/10.5281/zenodo.19528833
+Zharnikov, D. (2026aa). Optimal response formats for AI brand perception measurement: Evidence for a J-shaped rate-distortion curve. Working Paper. https://doi.org/10.5281/zenodo.19528833
 
 ## Abstract
 
