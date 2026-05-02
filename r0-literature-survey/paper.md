@@ -37,27 +37,19 @@ The remainder of the paper is organized as follows. Sections 2 through 10 survey
 This paper makes three contributions to the literature. First, it provides the first compound-gap diagnosis at the ten-tradition intersection of formal geometry and brand theory, identifying not one missing ingredient but the absence of their simultaneous combination. Second, it articulates six open problems as formal mathematical statements, converting qualitative observations about missing structure into precise targets for mathematical brand theory. Third, it positions Spectral Brand Theory (Zharnikov 2026a) as a candidate framework with a companion-paper resolution for each open problem (Zharnikov 2026d, 2026e, 2026f, 2026g, 2026h, 2026j), situating SBT within the established mathematical literature it draws upon.
 
 ```mermaid
-graph LR
-  GEO[Geometric traditions]
-  MEAS[Measurement-theoretic traditions]
-  COG[Cognitive-science traditions]
-  INFO[Information-theoretic traditions]
-
-  GEO --> SEM[Semiotic]
-  GEO --> EXP[Experiential]
-  GEO --> TMP[Temporal]
-  MEAS --> SEM
-  MEAS --> ECO[Economic]
-  MEAS --> NAR[Narrative]
-  COG --> IDE[Ideological]
-  COG --> SOC[Social]
-  COG --> SEM
-  INFO --> ECO
-  INFO --> CUL[Cultural]
-  INFO --> TMP
+graph TD
+  subgraph GAPS["Three Compound Gaps"]
+    GG["Geometric gap<br/>High-D geometry absent<br/>from brand theory"]
+    CG["Cohort-aware gap<br/>Observer heterogeneity<br/>not formalized"]
+    OM["Observer-mediated gap<br/>Generative signal<br/>mechanism missing"]
+  end
+  GG --- INTER["Intersection<br/>No framework<br/>combines all three"]
+  CG --- INTER
+  OM --- INTER
+  INTER --> SBT["SBT candidate<br/>8-D profiles<br/>observer spectral profiles<br/>generative pipeline"]
 ```
 
-Figure 1. Cross-cluster citation pathways: each literature cluster contributes to dimensional or geometric foundations; arrows are conceptual not citation-counts.
+*Figure 1: Compound-gap Venn schematic. Three literature gaps (geometric, cohort-aware, observer-mediated) identified by this survey have not been addressed simultaneously by any prior framework. SBT is positioned as a candidate at the intersection. Each gap corresponds to a set of open problems in §12.*
 
 ## 2. Multidimensional Scaling in Marketing
 
@@ -112,6 +104,26 @@ Lancaster's framework, despite its geometric elegance, embeds several restrictiv
 Second, the theory is static. Products have fixed positions in characteristics space; there is no mechanism for how perceptions of those positions evolve over time, how repeated exposure modifies the perceived attribute vector, or how signals decay. Third, the characteristics space is implicitly Euclidean and flat: distances are computed using the standard Euclidean metric, with no consideration of whether perceptual distances might be curved, dimension-dependent, or non-additive.
 
 Peli and Nooteboom (1999) explored what happens as the number of characteristics dimensions grows in the context of organizational ecology, demonstrating that high-dimensional resource spaces create geometric "pockets" that sustain specialist niches. This is one of the few studies to examine the geometric consequences of dimensionality in a characteristics-space framework, but it focused on organizational populations rather than individual brand perception. The spectral resource allocation framework of Zharnikov (2026k) directly extends the characteristics-space tradition by deriving demand-driven investment rules in multi-dimensional brand space, providing a formal bridge between Lancaster's geometric perspective and optimal brand resource allocation.
+
+```mermaid
+graph LR
+  GEO["Geometric traditions<br/>(MDS, Lancaster, Non-Euclidean)"]
+  MEAS["Measurement traditions<br/>(Info geometry, INDSCAL)"]
+  COG["Cognitive traditions<br/>(Conceptual spaces, Quantum)"]
+  DYN["Dynamics traditions<br/>(Opinion dynamics, Non-ergodicity)"]
+
+  GEO --> P1["Problem 1<br/>Formal metric"]
+  GEO --> P2["Problem 2<br/>Projection bounds"]
+  MEAS --> P1
+  MEAS --> P3["Problem 3<br/>Cohort fuzziness"]
+  COG --> P3
+  COG --> P4["Problem 4<br/>Positioning capacity"]
+  GEO --> P4
+  DYN --> P6["Problem 6<br/>Diffusion dynamics"]
+  MEAS --> P5["Problem 5<br/>Specification impossibility"]
+```
+
+*Figure 2: Cluster citation map. Arrows show which of the five literature clusters (left) contribute intellectual tools to each of the six open problems in §12 (right). Problems 1 and 4 draw on multiple clusters; Problem 6 is driven by the dynamics traditions alone.*
 
 ## 4. Conceptual Spaces
 
@@ -576,7 +588,7 @@ Three further companion papers extend the program beyond the six core problems. 
 
 Together, these companion papers constitute a coordinated research program converting the compound gap from a diagnosis into a formally resolved set of mathematical results. Whether SBT proves to be the right framework for these formalizations, or whether the mathematical analysis reveals that a different framework is needed, the central five-way intersection — combining high-dimensional geometry, a formal metric, observer-specific processing, non-ergodic temporal dynamics, and a generative signal mechanism simultaneously — is unoccupied, and the tools to explore it are available.
 
-Figure 2: SBT Cluster Citation Map — R0 to Mathematical Companions and SBT to Adjacent Frameworks.
+*Figure 3: SBT Cluster Citation Map — R0 to Mathematical Companions and SBT to Adjacent Frameworks.*
 
 ```mermaid
 flowchart TD
