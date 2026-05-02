@@ -274,7 +274,7 @@ Levin, David A., and Yuval Peres (2017), *Markov Chains and Mixing Times* (2nd e
 
 Lodish, Leonard M., Magid Abraham, Stuart Kalmenson, Jeanne Livelsberger, Beth Lubetkin, Bruce Richardson, and Mary Ellen Stevens (1995), "How T.V. Advertising Works: A Meta-Analysis of 389 Real World Split Cable T.V. Advertising Experiments," *Journal of Marketing Research*, 32 (2), 125–139.
 
-Maes, Tom, Philipp Dufter, Gregor Pannatier, François Fleuret, and Martin Jaggi (2026), "LeWorldModel: Learning World Models from a Single Video Stream with Latent Diffusion," arXiv:2603.19312.
+Maes, Lucas, Quentin Le Lidec, Damien Scieur, Yann LeCun, and Randall Balestriero (2026), "LeWorldModel: Stable End-to-End Joint-Embedding Predictive Architecture from Pixels," arXiv:2603.19312, doi:10.48550/arXiv.2603.19312.
 
 Matejka, Filip, and Alisdair McKay (2015), "Rational Inattention to Discrete Choices," *American Economic Review*, 105 (1), 272–298.
 

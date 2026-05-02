@@ -221,7 +221,7 @@ Krosnick Jon A (1991), "Response Strategies for Coping with the Cognitive Demand
 
 Li Peiyao, Noah Castelo, Zsolt Katona, and Miklos Sarvary (2024), "Frontiers: Determining the Validity of Large Language Models for Automated Perceptual Analysis," *Marketing Science*, 43 (2), 254-66.
 
-Sabbah Jafar and Oguz A Acar (2026), "Marketing to Machines: How AI Models Respond to Promotional Cues," SSRN working paper 6406639.
+Sabbah Jafar and Oguz A Acar (2026), "Marketing to Machines: How AI Models Respond to Promotional Cues," SSRN working paper 6406639, doi:10.2139/ssrn.6406639.
 
 Schwarz Norbert (1999), "Self-Reports: How the Questions Shape the Answers," *American Psychologist*, 54 (2), 93-105.
 
