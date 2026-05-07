@@ -773,3 +773,6 @@ Zharnikov, D. (2026e). Spectral metamerism in brand perception: Projection bound
 Zharnikov, D. (2026g). How many brands can a market hold? Sphere packing bounds for multi-dimensional positioning. Working Paper. https://doi.org/10.5281/zenodo.18945522
 
 Zharnikov, D. (2026p). The spectral anatomy of purpose: A longitudinal analysis of Dove Real Beauty through multi-dimensional brand perception theory. Working Paper. https://doi.org/10.5281/zenodo.19139258
+
+---
+*This paper is part of the Spectral Brand Theory research program. For the full atlas of 20+ interconnected papers, see [spectralbranding.com/atlas](https://spectralbranding.com/atlas).*
