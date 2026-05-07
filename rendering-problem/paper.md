@@ -495,6 +495,8 @@ Zharnikov, D. (2026af). Organizational metamerism: Observer-relative state equiv
 
 Zharnikov, D. (2026ag). Dual hierarchies of organizational transferability: A six-tier ontology and theory of acquisition failure propagation. Working Paper. https://doi.org/10.5281/zenodo.19895813
 
+*This paper is part of the Spectral Brand Theory research program. For the full atlas of 20+ interconnected papers, see [spectralbranding.com/atlas](https://spectralbranding.com/atlas).*
+
 ---
 
 ## Author Note

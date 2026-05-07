@@ -614,3 +614,6 @@ Zharnikov, D. (2026i). The Organizational Schema Theory: Test-driven business de
 Zharnikov, D. (2026l). The rendering problem: From genetic expression to brand perception. Working Paper. https://doi.org/10.5281/zenodo.19064426
 
 Zharnikov, D. (2026u). Research as repository: Infrastructure for transparent, attributed, and machine-readable scholarly communication. Working Paper. https://doi.org/10.5281/zenodo.19294864
+
+---
+*This paper is part of the Spectral Brand Theory research program. For the full atlas of 20+ interconnected papers, see [spectralbranding.com/atlas](https://spectralbranding.com/atlas).*
