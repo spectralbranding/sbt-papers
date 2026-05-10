@@ -1,0 +1,41 @@
+# CONTRIBUTORS.yaml — Canon as Repository
+# Verified contributor attribution per the Research-as-Repository protocol
+
+contributors:
+  - name: "Dmitry Zharnikov"
+    orcid: "0009-0000-6893-9231"
+    type: human
+    roles:
+      - conceptualization
+      - methodology
+      - writing-original
+      - project-administration
+    affiliation: "Independent Researcher"
+    first_commit: "2026-03-01"
+    last_commit: "2026-05-10"
+
+  - name: "Claude (Anthropic)"
+    type: ai_tool
+    roles:
+      - writing-review
+      - consistency-checking
+    disclosure: >
+      AI assistants (Claude Opus 4.7, Grok 4.1, Gemini 3.1) were used for initial
+      literature search and editorial refinement; all theoretical claims, propositions,
+      and interpretations are the author's sole responsibility.
+
+  - name: "Grok (xAI)"
+    type: ai_tool
+    roles:
+      - investigation
+      - writing-review
+    disclosure: >
+      Used for pre-draft critical review and literature search. All results
+      independently verified.
+
+  - name: "Gemini Deep Research (Google)"
+    type: ai_tool
+    roles:
+      - investigation
+    disclosure: >
+      Used for literature landscape mapping. All results independently verified.

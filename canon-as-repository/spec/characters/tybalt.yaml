@@ -1,0 +1,50 @@
+# Tybalt — canonical character specification
+# Tybalt is the honor-bound antagonist: not a villain, but a man whose code is lethal.
+# Rendering choices (physicality, costume) belong in overrides.yaml.
+
+character:
+  name: Tybalt Capulet
+  family: Capulet (nephew to Lady Capulet)
+  role: antagonist
+
+  traits:
+    - aggressive and skilled in combat
+    - fiercely loyal to Capulet family honor
+    - rigid — cannot modulate his response to insult or provocation
+    - genuinely dangerous; his reputation as a swordsman is not exaggerated
+    - not cruel for cruelty's sake — operates entirely within his own honor code
+    - contemptuous of the Montagues without nuance
+
+  arc:
+    start: spots Romeo at the Capulet ball, demands he be expelled
+    constraint: Lord Capulet restrains him — he obeys, but remembers
+    midpoint: encounters Romeo and Mercutio in the street; comes to fight Romeo
+    crisis: Romeo refuses to fight; Mercutio steps in; Tybalt kills Mercutio
+    end: killed by Romeo in the duel that follows
+
+  relationships:
+    - to: Romeo
+      type: enemy, then reluctant kin (after Romeo marries Juliet)
+      dynamic: Romeo knows he cannot be Tybalt's enemy after the marriage; Tybalt does not
+    - to: Mercutio
+      type: mutual antagonism
+      dynamic: Mercutio is the one who actually fights him; Tybalt kills him
+    - to: Juliet
+      type: protective cousin
+      dynamic: his death is what deprives Juliet of her last family ally
+
+  constraints:
+    - must be genuinely dangerous — not a buffoon whose threat is exaggerated
+    - his honor code must be internally consistent even when it is destructive
+    - killing Mercutio must read as a consequence of Romeo's interference, not pure malice
+    - his death must matter — Romeo becomes capable of murder, which is new information
+
+  speech_register:
+    default: clipped, formal, honor-focused — he does not engage in wordplay
+    when_challenged: cold and precise — he is not angry, he is correct (in his frame)
+    to_lord_capulet: deferential but barely restrained
+
+  key_lines:
+    - "What, drawn, and talk of peace? I hate the word, as I hate hell, all Montagues, and thee."
+    - "Romeo, the love I bear thee can afford no better term than this: thou art a villain."
+    - "Boy, this shall not excuse the injuries that thou hast done me; therefore turn and draw."

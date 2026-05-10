@@ -1,0 +1,65 @@
+# Juliet Capulet — canonical character specification
+# This file defines what must be true of Juliet in any rendering.
+# Rendering choices (casting, costume, staging) belong in overrides.yaml.
+
+character:
+  name: Juliet Capulet
+  family: Capulet
+  age: approximately 13-14 (per text — "not yet fourteen")
+  role: protagonist
+
+  traits:
+    - brave under pressure, more so than Romeo
+    - pragmatic beneath her passion — she asks practical questions where Romeo declaims
+    - defiant of convention when conviction demands it
+    - more emotionally mature than Romeo despite being younger
+    - loyal, but not blindly — she weighs, then commits fully
+    - capable of dissembling when necessary (the scenes with her parents after Tybalt's death)
+
+  arc:
+    start: obedient daughter, considering Paris as her mother instructs
+    catalyst: meeting Romeo at the Capulet ball
+    midpoint: secret marriage — she initiates and manages the logistics more than Romeo
+    crisis: learns Romeo has killed Tybalt, chooses Romeo over family
+    climax: awakens in the tomb beside Romeo's body
+    end: kills herself with Romeo's dagger — a deliberate, self-authored act
+
+  relationships:
+    - to: Romeo
+      type: romantic love
+      dynamic: she sees through the romanticism more quickly but commits no less absolutely
+    - to: Nurse
+      type: intimate confidant, surrogate mother
+      dynamic: the Nurse's betrayal (advising her to marry Paris) is a turning point
+    - to: Lady Capulet
+      type: formal, distant
+      dynamic: her mother communicates through the Nurse; Juliet has no ally in her
+    - to: Lord Capulet
+      type: obedient daughter until Act 3
+      dynamic: his rage at her refusal to marry Paris strips away her last options
+    - to: Paris
+      type: proposed match, unwanted
+      dynamic: polite in public, privately a problem to be solved
+    - to: Friar Lawrence
+      type: necessary accomplice
+      dynamic: she seeks his help after the Nurse's betrayal; he is her last resource
+
+  constraints:
+    - must be young but not naive — she processes information faster than most adults around her
+    - her defiance must be principled, not simply rebellious; she understands the cost
+    - the decision to take Friar Lawrence's potion must be driven by courage, not impulsiveness
+    - death must be by her own hand — a deliberate choice, not an accident
+    - the audience must understand that she is the more clear-eyed of the two lovers
+
+  speech_register:
+    default: measured, precise — she does not reach for metaphor the way Romeo does
+    with_romeo: responsive to his register; their first exchange is a shared sonnet
+    with_nurse: colloquial, warm, then cold after the betrayal
+    with_parents: formal, increasingly strained
+    in_crisis: direct and unadorned — "My dismal scene I needs must act alone"
+
+  key_lines:
+    - "What's in a name? That which we call a rose / By any other name would smell as sweet."
+    - "My only love sprung from my only hate!"
+    - "My dismal scene I needs must act alone."
+    - "O happy dagger! This is thy sheath; there rust, and let me die."

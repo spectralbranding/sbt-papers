@@ -1,0 +1,75 @@
+# World Rules — Romeo and Juliet
+# These rules define the structural logic of the world.
+# A rendering may change the surface instantiation (guns for swords, New York for Verona)
+# but must preserve the structural function of each rule or explicitly document the override.
+
+world:
+  setting: Verona, Italy
+  period: Renaissance — flexible. The spec does not require historical accuracy.
+           A rendering may relocate to any period or city provided the structural rules hold.
+
+  rules:
+
+    feud:
+      description: >
+        The Montague-Capulet enmity is ancient, structural, and non-negotiable within the play's world.
+        Its origin is never explained; it exists as a given. Individual characters did not create it
+        and cannot dissolve it by choice.
+      constraint: >
+        The feud cannot be resolved by individual action. Only tragedy — the death of both heirs —
+        provides the catalyst for reconciliation. Any rendering that resolves the feud through
+        negotiation, reason, or parental change of heart before the deaths breaks the spec.
+      structural_function: generates the impossibility that makes the love story tragic
+
+    honor_code:
+      description: >
+        Insults require physical response. Family honor supersedes individual desire.
+        Characters who decline to defend their honor lose social standing and face consequences.
+      constraint: >
+        Characters cannot simply choose not to fight. The social cost of refusing is real.
+        Romeo's attempt to refuse Tybalt's challenge (Act 3.1) is legible only because
+        the audience understands what it costs him.
+      structural_function: ensures that the feud compounds — every peace attempt creates new conflict
+
+    authority:
+      description: >
+        The Prince enforces civic order. The Church provides moral and practical guidance.
+        Both institutions are present, authoritative, and insufficient.
+      constraint: >
+        Neither the Prince's decrees nor Friar Lawrence's plans can prevent the tragedy.
+        Authority in this world is real but structurally outpaced by the feud's momentum.
+      structural_function: closes off institutional escape routes
+
+    love:
+      description: >
+        Romantic love in this world is instantaneous, total, and irreversible.
+        Romeo and Juliet do not fall gradually in love; they recognize each other at the ball
+        and the trajectory is fixed.
+      constraint: >
+        Once Romeo and Juliet meet, there is no cooling-off period, no second thoughts that hold.
+        Any rendering that introduces sustained mutual ambivalence after the first meeting
+        is modifying this rule and should document it as an override.
+      structural_function: makes the speed of the plot legible — urgency is a spec feature, not a flaw
+
+    death:
+      description: >
+        Violence has real, irreversible consequences. Deaths are permanent and transformative.
+        Each death changes what is possible for the surviving characters.
+      constraint: >
+        No character who dies returns. Mercutio's death ends the comic register.
+        Tybalt's death forces the banishment. Romeo and Juliet's deaths end the feud.
+        The causal chain is strict.
+      structural_function: gives the violence stakes; prevents the world from feeling consequence-free
+
+  tone:
+    overall: >
+      The play shifts from comic to tragic at Mercutio's death (Act 3, Scene 1).
+      The first half — including the meeting, the balcony scene, the secret marriage — permits
+      humor, lightness, and the formal pleasures of romantic comedy.
+      The second half does not permit a return to that register.
+    constraint: >
+      Any rendering that plays the second half for comedy or treats the ending as ironic
+      is overriding this rule and should document it as a tonal override.
+    structural_function: >
+      The tonal shift is the play's primary structural event, more important than any plot point.
+      It teaches the audience that what looked like comedy was always going to become tragedy.

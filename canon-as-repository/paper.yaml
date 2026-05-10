@@ -1,0 +1,161 @@
+# paper.yaml — Paper Spec v0.1.0
+# Zharnikov (2026w): Canon as Repository: A Specification-Driven Architecture for Transmedia Intellectual Property
+spec_version: "0.1.0"
+
+meta:
+  title: "Canon as Repository: A Specification-Driven Architecture for Transmedia Intellectual Property"
+  authors:
+    - name: "Zharnikov, Dmitry"
+      orcid: "0009-0000-6893-9231"
+      affiliation: "Independent Researcher"
+  doi: "10.5281/zenodo.19355800"
+  date: "2026-05-10"
+  version: "1.1.0"
+  venue: "Working Paper (Zenodo)"
+  license: "CC-BY-NC-ND-4.0"
+  keywords:
+    - transmedia storytelling
+    - intellectual property
+    - version control
+    - canon
+    - narrative consistency
+    - creative AI
+    - rendering problem
+    - franchise management
+    - story bible
+    - computational narratology
+
+claims:
+  - id: "P1"
+    type: proposition
+    statement: >
+      Every change to a creative work's specification can be represented as a commit
+      to a version-controlled repository, preserving the change, its author, its
+      timestamp, and its rationale, enabling complete reconstruction of any prior
+      canonical state.
+    testable: true
+    tested_in_paper: false
+    status: supported
+
+  - id: "P2"
+    type: proposition
+    statement: >
+      Every adaptation, translation, or derivative work from a creative specification
+      can be represented as a fork from a tagged version of the canon repository,
+      inheriting the specification's constraints while introducing medium-specific
+      rendering decisions.
+    testable: true
+    tested_in_paper: false
+    status: supported
+
+  - id: "P3"
+    type: proposition
+    statement: >
+      Canon governance — the process by which proposed changes to a creative
+      specification are reviewed, approved, or rejected — can be formalized as a
+      pull request workflow with defined approval authorities, review criteria,
+      and merge conditions.
+    testable: true
+    tested_in_paper: false
+    status: supported
+
+  - id: "P4"
+    type: proposition
+    statement: >
+      Consistency validation across renderings of a creative specification can be
+      automated through structured validation rules that check character properties,
+      timeline chronology, world rules, and cross-rendering compatibility against
+      the canonical specification.
+    testable: true
+    tested_in_paper: false
+    status: supported
+
+  - id: "P5"
+    type: proposition
+    statement: >
+      Each medium constitutes a dimensional subspace of the full specification space,
+      preserving some specification dimensions with high fidelity while structurally
+      losing others, such that every rendering is an incomplete but valid projection
+      of the canonical specification.
+    testable: true
+    tested_in_paper: false
+    status: supported
+
+  - id: "P6"
+    type: proposition
+    statement: >
+      When specification and rendering are formally separated, and rendering technology
+      is sufficiently capable, observers with access to capable rendering tools can
+      generate personalized renderings from a published canonical specification,
+      transforming the author's role from renderer to specifier.
+    testable: true
+    tested_in_paper: false
+    status: supported
+
+  - id: "P7"
+    type: proposition
+    statement: >
+      Observer-specific rendering — the generation of personalized renderings from a
+      canonical specification, parameterized by observer preferences, language, medium,
+      and reception context — preserves specification-level consistency while maximizing
+      rendering-level accessibility.
+    testable: true
+    tested_in_paper: false
+    status: supported
+
+methodology:
+  type: theoretical
+  design: >
+    Conceptual architecture paper. Develops a specification-driven architecture for
+    transmedia IP management using version control semantics (Git) as implementation
+    language. Core structural claim: the consistency-verification construct present
+    in engineering, medicine, financial auditing, software, and scientific publishing
+    is absent from creative IP management; this paper identifies the gap and proposes
+    a formal architecture to close it. Proof-of-concept demonstration at
+    https://github.com/spectralbranding/sbt-papers/tree/main/canon-as-repository
+    using Romeo and Juliet as test case.
+  analysis:
+    method: >
+      Theoretical analysis using transmedia storytelling theory (Jenkins 2006, 2011;
+      Ryan 2001, 2015; Dena 2009), world-building research (Wolf 2012), and the
+      rendering problem framework (Zharnikov 2026l). Git semantics mapped structurally
+      to IP lifecycle operations (Table 1). Cross-domain consistency-verification
+      construct comparison (Table 2). Rendering problem applied to five domains (Table 3).
+    software: "None (conceptual paper)"
+
+data:
+  available: true
+  url: "https://github.com/spectralbranding/sbt-papers/tree/main/canon-as-repository"
+  notes: >
+    No primary empirical data collected. The Romeo and Juliet demo (schema + spec +
+    examples) is a proof-of-concept implementation, not a research dataset.
+
+code:
+  available: true
+  url: "https://github.com/spectralbranding/sbt-papers/tree/main/canon-as-repository"
+  notes: >
+    YAML schemas (world.schema.yaml, character.schema.yaml) and specification files
+    for Romeo and Juliet. Three rendering examples: Globe Theatre 2024, Luhrmann 1996,
+    West Side Story 1957.
+
+repositories:
+  - platform: "Zenodo"
+    doi: "10.5281/zenodo.19355800"
+    url: "https://doi.org/10.5281/zenodo.19355800"
+    version: "v1.0.0"
+    date: "2026-03-31"
+  - platform: "GitHub"
+    url: "https://github.com/spectralbranding/sbt-papers/tree/main/canon-as-repository"
+    version: "v1.1.0"
+
+submission_history:
+  - venue: "Convergence (SAGE)"
+    manuscript_id: "CON-26-0425"
+    submitted: "2026-04-01"
+    decision: "DESK REJECTED 2026-04-30"
+    notes: "Decision cites high volume / scope / space; no content review."
+  - venue: "Next venue TBD"
+    candidates:
+      - "New Media & Society"
+      - "Television & New Media"
+    notes: "All post-rejection tasks gated on venue selection."

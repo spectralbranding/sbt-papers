@@ -1,0 +1,131 @@
+# Character Schema — Romeo and Juliet Canon Repo
+# Validates files in spec/characters/*.yaml
+# Format: JSON Schema semantics expressed in YAML
+
+$schema: "https://json-schema.org/draft/2020-12"
+$id: "https://github.com/spectralbranding/sbt-papers/tree/main/canon-as-repository/schema/character.schema.yaml"
+title: Character Specification
+description: >
+  Schema for canonical character specifications in spec/characters/.
+  A character file defines what must be true of this character in any rendering.
+
+type: object
+required:
+  - character
+additionalProperties: false
+
+properties:
+  character:
+    type: object
+    required:
+      - name
+      - role
+      - traits
+      - arc
+      - constraints
+    additionalProperties: true
+
+    properties:
+
+      name:
+        type: string
+        description: Full canonical name of the character.
+
+      family:
+        type: string
+        description: Family or affiliation. Use "none" if not applicable.
+
+      age:
+        type: string
+        description: >
+          Age as described in the text. Use a string to allow approximate descriptions
+          ("approximately 16-19", "not yet fourteen"). Do not use integer — the spec
+          does not specify exact ages.
+
+      role:
+        type: string
+        enum: [protagonist, antagonist, foil, mentor, catalyst, confidant, authority]
+        description: >
+          The character's structural role. A character may have multiple functions
+          but has one primary role for schema purposes.
+
+      traits:
+        type: array
+        items:
+          type: string
+        minItems: 3
+        description: >
+          A list of traits that must be preserved across renderings.
+          These are not suggestions — a rendering that inverts these traits
+          is changing the character spec.
+
+      arc:
+        type: object
+        required:
+          - start
+          - end
+        properties:
+          start:
+            type: string
+          catalyst:
+            type: string
+          midpoint:
+            type: string
+          crisis:
+            type: string
+          climax:
+            type: string
+          end:
+            type: string
+        description: >
+          The character's trajectory through the story. At minimum, start and end
+          must be specified. All arc fields are human-readable prose.
+
+      relationships:
+        type: array
+        items:
+          type: object
+          required:
+            - to
+            - type
+            - dynamic
+          properties:
+            to:
+              type: string
+            type:
+              type: string
+            dynamic:
+              type: string
+        description: >
+          Relationships with other characters. The dynamic field describes
+          how the relationship functions in the story — not just what it is.
+
+      constraints:
+        type: array
+        items:
+          type: string
+        minItems: 2
+        description: >
+          Hard constraints on how this character must be rendered.
+          These are the fields that a rendering validator checks.
+          Constraints use modal language: "must", "cannot", "must not".
+
+      speech_register:
+        type: object
+        properties:
+          default:
+            type: string
+        additionalProperties:
+          type: string
+        description: >
+          How this character speaks in different contexts.
+          The "default" key is required; other keys are context-specific.
+
+      key_lines:
+        type: array
+        items:
+          type: string
+        description: >
+          Lines that are strongly associated with this character.
+          A rendering that preserves these lines is preserving a key spec signal.
+          Not required — some characters have no canonical lines.

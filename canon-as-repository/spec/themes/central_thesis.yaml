@@ -1,0 +1,53 @@
+# Thematic Structure — Romeo and Juliet
+# Themes are not decorations. They are structural commitments that constrain
+# how the story must be told. A rendering that contradicts the central thesis
+# is not a different interpretation — it is a different spec.
+
+themes:
+
+  central: >
+    Love and death are structurally linked in this world. The feud ensures that total love
+    requires total sacrifice. Romeo and Juliet's love is not destroyed by the feud —
+    it is made absolute by it. The tragedy is not that they died; it is that the conditions
+    which made their love total were the same conditions that made it fatal.
+
+  secondary:
+
+    youth_vs_age:
+      description: >
+        The lovers' urgency against the elders' caution. Romeo and Juliet act at the speed
+        of love; the adults around them act at the speed of institutional interest.
+      rendering_implication: >
+        The adults must not be villains. Lord Capulet's rage is real; Lady Montague's grief
+        is real; the Prince's frustration is real. Their failure is not malice — it is speed.
+
+    fate_vs_choice:
+      description: >
+        The "star-crossed" frame ("A pair of star-crossed lovers take their life") against
+        the characters' fully deliberate decisions. Both are simultaneously true.
+      rendering_implication: >
+        Renderings that resolve this into pure fate (they were doomed) or pure choice
+        (they were just impulsive) miss the tension. The play holds both.
+
+    public_vs_private:
+      description: >
+        The secret marriage against the public feud. Romeo and Juliet create a private world
+        that the public world cannot recognize or accommodate.
+      rendering_implication: >
+        The secrecy is not cowardice — it is the only available form for their love.
+        Renderings that make the secrecy seem like a character flaw miss this.
+
+    language_vs_action:
+      description: >
+        The lovers' poetic declarations cannot prevent violence. Words are the medium
+        of love; swords are the medium of the feud. The feud's language is physical.
+      rendering_implication: >
+        The shift from verbal to physical at Mercutio's death must be jarring.
+        The contrast between the love scenes' language and the violence's physicality
+        is a spec feature.
+
+  structural_note: >
+    All four secondary themes feed the central thesis. The youth/age gap creates the
+    timing mismatch. The fate/choice tension makes the deaths legible as both inevitable
+    and chosen. The public/private split makes the secrecy structurally necessary.
+    The language/action contrast marks the tonal hinge.
