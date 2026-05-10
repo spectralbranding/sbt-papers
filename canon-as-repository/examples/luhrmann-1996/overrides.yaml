@@ -1,0 +1,57 @@
+# Rendering Parameters — Baz Luhrmann's Romeo + Juliet (1996)
+# Fields not listed here are inherited from the spec without modification.
+
+rendering:
+  title: "William Shakespeare's Romeo + Juliet"
+  year: 1996
+  medium: film
+  director: Baz Luhrmann
+  producer: Gabriella Martinelli
+  studio: 20th Century Fox
+
+  style:
+    visual: postmodern baroque, saturated color, MTV-era editing
+    audio: contemporary soundtrack (Garbage, Radiohead, Des'ree, The Cardigans)
+    pacing: frenetic in action sequences, slow-motion for emotional peaks
+    cinematography: handheld, close-up, disorienting in crowd scenes
+
+  setting_overrides:
+    location: Verona Beach (modern coastal city, unnamed country)
+    period: contemporary (1996)
+
+  prop_overrides:
+    swords: guns (branded as "Sword 9mm", "Dagger", preserving the dialogue)
+    horses: cars and motorcycles
+    torches: lighters and candles (both retained)
+    chorus: television news anchor
+
+  cast:
+    romeo: Leonardo DiCaprio
+    juliet: Claire Danes
+    mercutio: Harold Perrineau
+    tybalt: John Leguizamo
+    benvolio: Dash Mihok
+    friar_lawrence: Pete Postlethwaite
+    nurse: Miriam Margolyes
+    lord_capulet: Paul Sorvino
+    lady_capulet: Diane Venora
+    prince: Vondie Curtis-Hall
+
+  spec_compliance:
+    characters: preserved
+    dialogue: preserved — original Shakespearean verse throughout
+    world_rules:
+      feud: preserved — Montague/Capulet as rival business families with private armies
+      honor_code: modified (surface) — preserved (structural) — gang loyalty replaces Renaissance honor
+      love: preserved
+      death: preserved
+      authority: modified (surface) — police replace the Prince; civic authority is still outpaced
+    timeline: preserved
+    themes: preserved
+    tonal_hinge: preserved — Mercutio's death remains the structural pivot
+
+  overrides_requiring_documentation:
+    - field: tone.ending
+      spec_value: grief and quiet recognition
+      rendered_value: news broadcast framing with more emotional uplift; score is more triumphant
+      rationale: film audience convention; does not break structural requirements

@@ -1,0 +1,83 @@
+# Canonical Timeline — Romeo and Juliet
+# The play is compressed into approximately 4-5 days.
+# This compression is a spec feature, not a staging convenience.
+# The urgency produced by the timeline is load-bearing.
+
+timeline:
+  duration: approximately 4-5 days
+  structural_note: >
+    The compression is deliberate. Events that in "realistic" life would take weeks
+    (falling in love, marriage, banishment, the potion plan, death) happen in days.
+    This creates the pressure that makes the characters' decisions legible:
+    they are not impulsive — they are operating under real time constraints
+    with incomplete information.
+
+  events:
+
+    - day: 1 (Sunday)
+      act_scene: Act 1, Scene 1
+      event: Street brawl between Montague and Capulet servants; Prince threatens death for further fighting
+      spec_constraints_activated: [feud, honor_code, authority]
+
+    - day: 1 (Sunday evening)
+      act_scene: Act 1, Scene 5
+      event: Romeo and Juliet meet at the Capulet ball; first exchange (shared sonnet); Romeo learns she is a Capulet
+      spec_constraints_activated: [love, feud]
+      structural_note: The love that will end both of them begins here.
+
+    - day: 1 (Sunday night into Monday)
+      act_scene: Act 2, Scene 2
+      event: The balcony scene; Romeo and Juliet declare love, agree to marry
+      spec_constraints_activated: [love, locations.juliet_balcony]
+
+    - day: 2 (Monday)
+      act_scene: Act 2, Scene 6
+      event: Romeo and Juliet marry secretly in Friar Lawrence's cell
+      spec_constraints_activated: [locations.friar_lawrences_cell]
+      structural_note: The marriage makes Tybalt Romeo's kinsman — which Romeo knows and Tybalt does not.
+
+    - day: 2 (Monday afternoon)
+      act_scene: Act 3, Scene 1
+      event: Mercutio baits Tybalt; Romeo refuses to fight; Mercutio fights Tybalt and is killed; Romeo kills Tybalt; Romeo is banished
+      spec_constraints_activated: [honor_code, death, tone.shift]
+      structural_note: This is the tonal hinge. The play is now a tragedy.
+
+    - day: 2 (Monday night)
+      act_scene: Act 3, Scene 5
+      event: Romeo and Juliet's wedding night (and first meeting as husband and wife); Romeo leaves for Mantua at dawn
+      structural_note: This is their only night together. The separation begins immediately.
+
+    - day: 3 (Tuesday)
+      act_scene: Act 3, Scene 5 (continued)
+      event: Lord Capulet tells Juliet she will marry Paris on Thursday; Juliet refuses; Nurse advises compliance; Juliet goes to Friar Lawrence
+      spec_constraints_activated: [honor_code, authority]
+
+    - day: 3 (Tuesday)
+      act_scene: Act 4, Scene 1
+      event: Juliet takes Friar Lawrence's sleeping potion plan
+      spec_constraints_activated: [locations.friar_lawrences_cell]
+
+    - day: 4 (Wednesday morning)
+      act_scene: Act 4, Scene 3
+      event: Juliet drinks the potion; appears dead
+      spec_constraints_activated: [death — apparent]
+
+    - day: 4 (Wednesday)
+      structural_note: >
+        Friar John is prevented from reaching Romeo in Mantua. The message does not arrive.
+        This is the hinge of the catastrophe — not Romeo's impulsiveness, but a logistics failure.
+
+    - day: 5 (Thursday night)
+      act_scene: Act 5, Scene 3
+      event: Romeo arrives at the tomb; kills Paris; finds Juliet; drinks poison and dies; Juliet wakes, finds Romeo dead; kills herself
+      spec_constraints_activated: [death, tone.terminus, locations.the_tomb]
+      structural_note: >
+        Romeo's death is voluntary — he chooses it. Juliet's death is voluntary — she chooses it.
+        Both deaths must read as chosen, not accidental.
+
+    - day: 5 (Thursday night, aftermath)
+      act_scene: Act 5, Scene 3
+      event: The families and Prince assemble; Friar Lawrence confesses; the families reconcile
+      spec_constraints_activated: [authority, feud.resolution]
+      structural_note: >
+        The feud ends here, as the spec requires — only after the deaths, never before.

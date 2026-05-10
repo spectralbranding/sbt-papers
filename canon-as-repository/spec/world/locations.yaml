@@ -1,0 +1,57 @@
+# Canonical Locations — Romeo and Juliet
+# Locations are not set-dressing. Each carries thematic weight.
+# A rendering may change the physical instantiation (New York, Los Angeles, space)
+# but must preserve or explicitly override the thematic function of each location.
+
+locations:
+
+  capulet_house:
+    canonical: the Capulet residence, Verona
+    first_appearance: Act 1, Scene 5 — the ball
+    thematic_function: >
+      The place where the impossible meeting occurs. Romeo enters enemy territory and finds
+      the one person who makes the feud personal. Juliet's balcony is an extension of this space.
+    constraint: >
+      Must register as Capulet territory — somewhere Romeo should not be.
+      The transgression of being there must be legible.
+
+  juliet_balcony:
+    canonical: the Capulet orchard, beneath Juliet's window
+    first_appearance: Act 2, Scene 2
+    thematic_function: >
+      The threshold between private and public, between the lovers' world and the world
+      that will kill them. The balcony scene is architecturally liminal: Juliet is above,
+      Romeo is below, neither fully inside nor outside.
+    constraint: >
+      The physical separation — Romeo unable to be fully in her world, she unable to be
+      fully in his — must be preserved in some form. Staging that collapses this separation
+      changes the scene's meaning.
+
+  friar_lawrences_cell:
+    canonical: Friar Lawrence's quarters in the monastery
+    thematic_function: >
+      The place where plans are made. Associated with intention and its consequences.
+      Both the marriage and the sleeping potion plan originate here.
+    constraint: >
+      Must register as neutral ground — outside both the feud and the civic authority.
+      The Friar's cell is the space where alternative futures seem possible.
+
+  mantua:
+    canonical: the city of Mantua, to which Romeo is banished
+    thematic_function: >
+      Absence and separation. Mantua is where the communication failure happens:
+      Friar John cannot reach Romeo; the plan collapses across this distance.
+    constraint: >
+      Must be physically separated from Verona in a way that makes the communication
+      failure plausible. The distance must have real operational consequences.
+
+  the_tomb:
+    canonical: the Capulet family vault
+    first_appearance: Act 5, Scene 3
+    thematic_function: >
+      The terminus. The place associated with the Capulet family, the past, and death
+      becomes the place where the future dies. Both families' heirs end here.
+    constraint: >
+      Must be a Capulet space — Romeo is again in enemy territory, again transgressing.
+      The structural echo of the Capulet ball (Act 1.5) is not accidental.
+      The tomb must feel final and enclosed; escape is not available here.

@@ -1,0 +1,132 @@
+# World Schema — Romeo and Juliet Canon Repo
+# Validates files in spec/world/*.yaml
+# Format: JSON Schema semantics expressed in YAML
+
+$schema: "https://json-schema.org/draft/2020-12"
+$id: "https://github.com/spectralbranding/sbt-papers/tree/main/canon-as-repository/schema/world.schema.yaml"
+title: World Specification
+description: >
+  Schema for canonical world specifications in spec/world/.
+  World files define the structural rules of the story's setting.
+  Rules operate at two levels: surface (can be overridden) and structural (must be preserved).
+
+type: object
+additionalProperties: true
+
+# The world schema is intentionally permissive at the top level.
+# Romeo and Juliet's world is expressed across three files (rules, locations, timeline)
+# with different internal structures. The schema validates the shared conventions.
+
+definitions:
+
+  rule:
+    type: object
+    required:
+      - description
+      - constraint
+    properties:
+      description:
+        type: string
+        description: >
+          What this rule says about the world. Written in plain prose.
+      constraint:
+        type: string
+        description: >
+          What a rendering must preserve for this rule to be considered intact.
+          Uses modal language: "must", "cannot", "must not".
+      structural_function:
+        type: string
+        description: >
+          Why this rule exists — what story function it serves.
+          A rendering that overrides a rule should understand its structural function
+          and ensure that function is served by a different means, or document the gap.
+
+  location:
+    type: object
+    required:
+      - canonical
+      - thematic_function
+      - constraint
+    properties:
+      canonical:
+        type: string
+        description: The canonical description of this location.
+      first_appearance:
+        type: string
+        description: The act and scene where this location first appears.
+      thematic_function:
+        type: string
+        description: What this location means in the story — not just where things happen.
+      constraint:
+        type: string
+        description: What a rendering must preserve about this location.
+
+  timeline_event:
+    type: object
+    required:
+      - day
+      - event
+    properties:
+      day:
+        type: [string, integer]
+      act_scene:
+        type: string
+      event:
+        type: string
+      spec_constraints_activated:
+        type: array
+        items:
+          type: string
+        description: >
+          Which spec constraints are activated or tested by this event.
+          References use dot notation: "feud", "death", "love", "tone.shift".
+      structural_note:
+        type: string
+        description: Why this event matters beyond its plot function.
+
+# Rendering override schema (applies to overrides.yaml files)
+rendering_override:
+  type: object
+  required:
+    - rendering
+  properties:
+    rendering:
+      type: object
+      required:
+        - title
+        - year
+        - medium
+      properties:
+        title:
+          type: string
+        year:
+          type: [integer, string]
+        medium:
+          type: string
+          enum: [film, stage, musical, television, opera, ballet, other]
+        spec_compliance:
+          type: object
+          description: >
+            Summary of which spec elements are preserved, modified, or replaced.
+            Values should be: "preserved", "modified", "replaced", or a prose description.
+        overrides_requiring_documentation:
+          type: array
+          items:
+            type: object
+            required:
+              - field
+              - spec_value
+              - fork_value
+            properties:
+              field:
+                type: string
+                description: Dot-notation path to the spec field being overridden.
+              spec_value:
+                type: string
+                description: What the spec says.
+              fork_value:
+                type: string
+                description: What this rendering does instead.
+              rationale:
+                type: string
+                description: Why this override was made.

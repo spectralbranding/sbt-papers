@@ -1,0 +1,23 @@
+# DATA_MANIFEST.yaml — Canon as Repository
+# External data dependencies per the Research-as-Repository protocol
+
+data_manifest:
+  - id: "zenodo-preprint"
+    description: >
+      Published preprint PDF on Zenodo. No external datasets —
+      this is a theoretical paper with no empirical data collection.
+    archive: "Zenodo"
+    doi: "10.5281/zenodo.19355800"
+    format: "PDF"
+    access: public
+
+  - id: "romeo-juliet-demo"
+    description: >
+      Proof-of-concept specification repository for Romeo and Juliet, demonstrating
+      the canon-as-repository architecture. Includes world schema, character specs,
+      world rules, timeline, themes, constraints, and three rendering examples
+      (Globe Theatre 2024, Luhrmann 1996, West Side Story 1957 adaptation).
+    archive: "GitHub"
+    url: "https://github.com/spectralbranding/sbt-papers/tree/main/canon-as-repository"
+    format: "YAML"
+    access: public

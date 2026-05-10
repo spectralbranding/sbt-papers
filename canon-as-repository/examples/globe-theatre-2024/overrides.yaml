@@ -1,0 +1,48 @@
+# Rendering Parameters — Globe Theatre Production (2024)
+# Near-minimal rendering. Most fields are inherited from the spec without modification.
+# The fields listed here are not spec violations — they are rendering choices
+# that any production must make and that are not specified in the canon.
+
+rendering:
+  title: "Romeo and Juliet"
+  year: 2024
+  medium: live theater
+  venue: Shakespeare's Globe, London
+  staging: thrust stage with groundlings
+
+  style:
+    visual: period-adjacent Elizabethan — doublets, gowns, minimal sets
+    audio: no amplification (Globe acoustic design), no recorded soundtrack
+    pacing: full text with standard cuts only; approximately 3 hours with interval
+    lighting: natural daylight (Globe open-air design) supplemented by candles and lanterns
+
+  setting_overrides: none
+  weapon_overrides: none
+  dialogue_overrides: none
+
+  # These are rendering choices that any production makes.
+  # They are not overrides of spec constraints — the spec does not specify them.
+  # They are documented here as a demonstration that "no overrides" is never quite true.
+
+  undocumented_by_spec:
+    casting: specific to production (names withheld — this is an illustrative example)
+    mercutio_register: played with physical comedy in Act 1-2, genuine menace in Act 3.1
+    capulet_characterization: played as genuinely loving rather than merely tyrannical
+    nurse_pacing: scenes played at full comic length
+    paris_treatment: humanized — more than a plot obstacle
+    groundling_relationship: direct address maintained throughout; audience visible
+    tomb_staging: single practical tomb unit discovered in Act 4; persistent through Act 5
+
+  spec_compliance:
+    characters: preserved
+    dialogue: preserved — original verse, standard acting edition cuts only
+    world_rules: preserved
+    timeline: preserved
+    tonal_hinge: preserved
+    themes: preserved
+    tone_ending: preserved — played quietly, without emotional uplift
+
+  notes:
+    - This production has the smallest specification gap of the three examples in this repo.
+    - "Minimal overrides" is not the same as "fully determined by spec."
+    - Every production adds information not present in the spec. This one adds less than most.

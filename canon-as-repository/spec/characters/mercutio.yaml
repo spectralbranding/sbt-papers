@@ -1,0 +1,53 @@
+# Mercutio — canonical character specification
+# Mercutio is the volatile catalyst: his death is the structural hinge of the play.
+# Rendering choices (casting, physical style) belong in overrides.yaml.
+
+character:
+  name: Mercutio
+  family: none — kinsman to the Prince, friend to Romeo
+  role: foil and catalyst
+
+  traits:
+    - witty to the point of aggression
+    - provocative; he cannot let an insult pass, regardless of consequence
+    - contemptuous of romantic love and its posturing
+    - loyal to Romeo in practice, though he mocks his sentiment
+    - physically fearless — challenges Tybalt when Romeo will not
+    - his verbal brilliance masks or expresses a genuine death drive
+
+  arc:
+    start: Romeo's most entertaining companion, voice of comic skepticism
+    catalyst: Queen Mab speech — establishes linguistic virtuosity and anarchic worldview
+    midpoint: mocks Tybalt's challenge; refuses to take any of it seriously
+    crisis: Romeo intervenes in the duel; Mercutio takes Tybalt's sword under Romeo's arm
+    end: dies cursing both houses — "A plague o' both your houses!"
+    consequence: his death ends the play's comic register; tragedy begins here
+
+  relationships:
+    - to: Romeo
+      type: close friendship, comedic antagonism
+      dynamic: loves Romeo but finds his romanticism absurd; would die for him (and does)
+    - to: Tybalt
+      type: mutual antagonism
+      dynamic: Mercutio picks the fight Tybalt came for; neither will back down
+    - to: Benvolio
+      type: companions
+      dynamic: Benvolio is the cautious one; Mercutio is the accelerant
+
+  constraints:
+    - the Queen Mab speech must showcase linguistic virtuosity — it cannot be cut or rushed
+    - his contempt for romantic love must be legible; he is a structural counterweight to Romeo
+    - death must be the pivot that transforms the play's tone from comic to tragic
+    - his final curse ("A plague o' both your houses!") must land as prophecy, not mere bitterness
+    - he must be genuinely dangerous — not comic relief who gets unlucky
+
+  speech_register:
+    default: elaborate, pun-heavy, sexually charged, rapid
+    when_provoking: precise and aimed — he knows exactly how to escalate
+    dying: the wit strips away; the curse is simple and direct
+
+  key_lines:
+    - "O, then I see Queen Mab hath been with you."
+    - "A plague o' both your houses! They have made worms' meat of me."
+    - "Ask for me tomorrow, and you shall find me a grave man."
+    - "No, 'tis not so deep as a well, nor so wide as a church door, but 'tis enough, 'twill serve."

@@ -65,6 +65,7 @@ Eight companion papers establishing formal mathematical foundations for SBT, plu
 | Key | Paper | Zenodo DOI | Status |
 |-----|-------|------------|--------|
 | 2026l | [The Rendering Problem: From Genetic Expression to Brand Perception](rendering-problem/paper.md) | [10.5281/zenodo.19064427](https://doi.org/10.5281/zenodo.19064427) | Preprint |
+| 2026w | [Canon as Repository: A Specification-Driven Architecture for Transmedia Intellectual Property](canon-as-repository/paper.md) | [10.5281/zenodo.19355800](https://doi.org/10.5281/zenodo.19355800) | Preprint (v1.1.0) |
 
 Key results: formal metric (R1), metamerism inevitability (R2), fuzzy cohort boundaries (R3), positioning capacity bounds (R4), specification impossibility (R5), non-ergodic dynamics (R6), demand-driven resource allocation (R7), dimensional taxonomy justification (R11), coherence-resilience derivation (R12).
 

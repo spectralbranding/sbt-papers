@@ -1,0 +1,56 @@
+# Tone Constraints — Romeo and Juliet
+# These constraints apply across any rendering. They define the tonal envelope
+# within which rendering choices are made.
+
+tone_constraints:
+
+  overall_arc:
+    description: >
+      The play begins in comedy and ends in tragedy. This arc is not incidental —
+      it is the argument. The first half's lightness makes the second half devastating.
+      An audience that laughed at Mercutio's wit is more unprepared for his death.
+    constraint: >
+      Any rendering must preserve this arc. The first half may be lighter or darker
+      than any specific production, but it must be lighter than the second half.
+
+  the_hinge:
+    location: Act 3, Scene 1 — Mercutio's death
+    description: >
+      This is the precise tonal transition point. Before it: the register of romantic comedy.
+      After it: the register of tragedy. The hinge must be felt, not explained.
+    constraint: >
+      A rendering that smooths this transition — that makes Mercutio's death expected
+      or the first half too dark — weakens the structural argument.
+      A rendering that delays the tonal shift past Act 3.1 breaks the spec.
+
+  humor:
+    permitted_in: first half (Acts 1-2, Act 3 Scene 1 up to Mercutio's death)
+    types:
+      - bawdy wordplay (Nurse, Mercutio)
+      - romantic comedy conventions (mistaken identity, secret meetings)
+      - social satire (the party, the posturing)
+    constraint: >
+      After Mercutio's death, humor is not permitted as the primary register.
+      Dark irony is permitted. Gallows humor at the very end (the Friar's "I will be brief"
+      in his long confession) is permitted. Broad comedy is not.
+
+  love_scenes:
+    required_register: intimate, elevated, private
+    constraint: >
+      The balcony scene and the wedding night must feel genuinely private —
+      stolen from the world, not performed for it.
+      Productions that play these scenes as public spectacle miss the point.
+
+  violence:
+    required_register: sudden, physical, consequence-bearing
+    constraint: >
+      Violence must not be balletic or aestheticized in a way that removes consequence.
+      Mercutio's death must feel like an accident — it happened in a moment
+      that could have ended differently.
+
+  ending:
+    required_register: grief, recognition, quiet
+    constraint: >
+      The ending is not cathartic release — it is the slow recognition by the adults
+      of what their feud has cost. The Prince's "All are punished" is not triumphant.
+      Renderings that end on swelling music and emotional uplift are overriding this constraint.

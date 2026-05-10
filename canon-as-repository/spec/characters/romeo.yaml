@@ -1,0 +1,61 @@
+# Romeo Montague — canonical character specification
+# This file defines what must be true of Romeo in any rendering.
+# Rendering choices (casting, costume, accent) belong in overrides.yaml.
+
+character:
+  name: Romeo Montague
+  family: Montague
+  age: approximately 16-19
+  role: protagonist
+
+  traits:
+    - passionate and impulsive
+    - poetic and articulate
+    - capable of sudden emotional shifts
+    - loyal to friends
+    - prone to melancholy when lovesick
+
+  arc:
+    start: infatuated with Rosaline, performative sadness
+    catalyst: meeting Juliet at the Capulet ball
+    midpoint: secret marriage, attempts peace with Tybalt
+    crisis: kills Tybalt in rage, banished from Verona
+    climax: believes Juliet dead, chooses death over life without her
+    end: dies by poison beside Juliet in the tomb
+
+  relationships:
+    - to: Juliet
+      type: romantic love
+      dynamic: instant, total, mutual — transcends family enmity
+    - to: Mercutio
+      type: close friendship
+      dynamic: Mercutio's death triggers Romeo's violence against Tybalt
+    - to: Tybalt
+      type: enemy turned reluctant kin
+      dynamic: attempts peace after marriage to Juliet, fails
+    - to: Friar Lawrence
+      type: mentor and confidant
+      dynamic: seeks guidance, follows the Friar's plan without questioning it
+    - to: Benvolio
+      type: cousin and friend
+      dynamic: Benvolio is Romeo's foil — measured where Romeo is reckless
+
+  constraints:
+    - must be recognizably young and impetuous — not worldly or calculating
+    - love for Juliet must read as genuine, not as rebound from Rosaline
+    - violence against Tybalt must be reactive, not premeditated
+    - final death must be voluntary — chosen, not accidental or coerced
+    - the shift from lovesick comedy to tragic agency must be legible
+
+  speech_register:
+    default: elevated, poetic, prone to metaphor and hyperbole
+    with_mercutio: more playful, willing to trade wit and bawdy humor
+    with_juliet: intimate, heightened, sonnet-structured in their first exchange
+    in_grief: raw, stripped of ornament — "Then I defy you, stars"
+    in_action: terse, physical — speech gives way to movement
+
+  key_lines:
+    - "But soft, what light through yonder window breaks?"
+    - "O, I am fortune's fool!"
+    - "Then I defy you, stars."
+    - "Thus with a kiss I die."

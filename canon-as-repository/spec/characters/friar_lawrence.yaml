@@ -1,0 +1,52 @@
+# Friar Lawrence — canonical character specification
+# Friar Lawrence is the well-intentioned architect of the catastrophe.
+# Rendering choices (staging, physical presentation) belong in overrides.yaml.
+
+character:
+  name: Friar Lawrence
+  family: none — a Franciscan friar
+  role: mentor, confidant, plot architect
+
+  traits:
+    - genuinely wise in matters of philosophy and botany; limited in matters of human urgency
+    - sees the Romeo-Juliet marriage as an instrument of peace between the families
+    - overconfident — his plan is elaborate where it should be simple
+    - fundamentally sympathetic; the catastrophe is not his intention
+    - cautious by temperament yet prone to grand gestures when motivated by hope
+    - understands plants and their properties in ways that become structurally important
+
+  arc:
+    start: agrees to marry Romeo and Juliet secretly, hoping to end the feud
+    midpoint: provides Juliet with the sleeping potion — an improvised solution under pressure
+    crisis: the message to Romeo in Mantua fails to arrive
+    climax: arrives at the tomb too late; finds Romeo dead, Juliet waking
+    end: flees when he hears the watch approaching — his flight is his one moral failure
+    consequence: his plan fails from circumstance and his own limits, not from malice
+
+  relationships:
+    - to: Romeo
+      type: mentor and confidant
+      dynamic: Romeo trusts him completely; Friar Lawrence enables rather than guides
+    - to: Juliet
+      type: necessary accomplice
+      dynamic: after the Nurse betrays Juliet, Friar Lawrence is her only resource
+    - to: the Prince
+      type: subject to authority
+      dynamic: confesses everything to the Prince at the end; this is his accounting
+
+  constraints:
+    - must be sympathetic — his plan fails from circumstance, overreach, and bad luck, not malice
+    - his decision to give Juliet the potion must read as a real solution under real constraints
+    - his flight from the tomb must be morally legible as failure without making him villainous
+    - the final confession to the Prince must be full and honest — he does not minimize his role
+
+  speech_register:
+    default: measured, philosophical, prone to maxims ("These violent delights have violent ends")
+    when_counseling: patient, pedagogical
+    in_crisis: pressured, improvising — the register cracks slightly
+    in_confession: plain and direct; the philosophy is gone
+
+  key_lines:
+    - "These violent delights have violent ends, and in their triumph die, like fire and powder."
+    - "A greater power than we can contradict hath thwarted our intents."
+    - "I will be brief, for my short date of breath is not so long as is a tedious tale."

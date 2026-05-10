@@ -1,0 +1,77 @@
+# Fork Parameters — West Side Story (1957)
+# This is a FULL FORK, not a rendering. The overrides are not adjustments to the spec —
+# they are replacements of it. The spec/characters/ and spec/world/ files do not apply.
+# The structural skeleton (plot function at each story beat) is preserved.
+
+fork:
+  title: "West Side Story"
+  year: 1957
+  fork_type: full
+  source_spec: Shakespeare's Romeo and Juliet
+  medium: stage musical
+
+  creators:
+    book: Arthur Laurents
+    music: Leonard Bernstein
+    lyrics: Stephen Sondheim
+    original_direction_and_choreography: Jerome Robbins
+
+  setting:
+    location: Upper West Side, New York City
+    period: late 1950s
+
+  character_replacements:
+    romeo: Tony (co-founder of the Jets; American; wants out of gang life)
+    juliet: Maria (recent Puerto Rican immigrant; Bernardo's sister)
+    montague_family: Jets (white American gang)
+    capulet_family: Sharks (Puerto Rican gang)
+    mercutio: Riff (Jets leader; Tony's best friend; catalyst death)
+    tybalt: Bernardo (Sharks leader; Maria's brother)
+    nurse: Anita (Bernardo's girlfriend; Maria's confidant)
+    friar_lawrence: Doc (drugstore owner; Tony's mentor; insufficient to prevent tragedy)
+
+  world_replacements:
+    feud_cause: ethnic and territorial gang conflict; racism and immigration anxiety
+    feud_structure: preserved — structural, non-negotiable, cannot be resolved by individual choice
+    setting_rules: American street gang codes replace Renaissance Italian honor code
+
+  dialogue:
+    source: original — not Shakespeare's verse
+    language: American vernacular English with Puerto Rican Spanish elements
+
+  structural_skeleton_preserved:
+    - meeting across enmity (dance at the gym)
+    - secret love declared (fire escape scene)
+    - catalyst death by protagonist's friend (Riff killed)
+    - protagonist kills antagonist in retaliation (Tony kills Bernardo)
+    - lovers separated
+    - failed communication plan
+    - protagonist dies believing beloved is dead
+    - feud cost made visible at the end
+
+  spec_overrides:
+    juliet_death:
+      spec_value: "Juliet kills herself by her own hand — a deliberate choice"
+      fork_value: Maria survives; does not kill herself
+      rationale: survival as punishment; her continued existence is the indictment
+
+    reconciliation:
+      spec_value: formal reconciliation between families, presided over by Prince
+      fork_value: visual gesture only (carrying Tony's body together); no formal resolution
+      rationale: the ethnic conflict cannot be resolved by a handshake
+
+    feud_origin:
+      spec_value: ancient, unexplained — feud simply exists
+      fork_value: rooted in racism, immigration, economic competition — politically specific
+      rationale: makes the structural argument contemporary and legible to 1957 audience
+
+  spec_compliance_summary:
+    structural_skeleton: preserved
+    character_arcs: preserved at functional level; surface content replaced
+    dialogue: replaced entirely
+    world_rules: preserved at structural level; surface content replaced
+    ending_constraints:
+      juliet_self_authored_death: OVERRIDDEN
+      formal_reconciliation: OVERRIDDEN
+      feud_cannot_resolve_by_individual_action: PRESERVED (modified form)
+      tragedy_ends_the_feud: PARTIALLY PRESERVED (gesture, not resolution)
