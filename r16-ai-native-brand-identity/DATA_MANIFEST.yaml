@@ -47,7 +47,7 @@ data_manifest:
     description: >
       Brand Function format optimization experiment v2 (Section 8.6, 375 calls). Refined
       format comparison finding that qualitative ordinal levels outperform prose; format
-      explains 17% of dimensional collapse variance. Added Session 104 (v1.7 update).
+      explains 17% of dimensional collapse variance. Added in v1.7 update.
     archive: "GitHub"
     repository: "spectralbranding/sbt-papers"
     path: "r16-ai-native-brand-identity/experiment/L3_sessions/exp_bf_format_v2.jsonl"

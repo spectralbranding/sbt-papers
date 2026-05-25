@@ -1,10 +1,12 @@
 # Spectral Brand Theory: A Computational Framework for Multi-Dimensional Brand Perception
 
-**Dmitry Zharnikov**
+Dmitry Zharnikov
 
-Working Paper v3.3.0 — February 2026 (revised May 2026)
+ORCID: 0009-0000-6893-9231
 
-*Zenodo DOI: [10.5281/zenodo.18945912](https://doi.org/10.5281/zenodo.18945912)*
+DOI: [10.5281/zenodo.18945912](https://doi.org/10.5281/zenodo.18945912)
+
+Working Paper v3.3.0 – February 2026 (revised May 2026)
 
 ---
 

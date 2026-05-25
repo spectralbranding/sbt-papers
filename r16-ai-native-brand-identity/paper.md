@@ -1,10 +1,12 @@
 # AI-Native Brand Identity: From Visual Recognition to Cryptographic Verification
 
-**Dmitry Zharnikov**
+Dmitry Zharnikov
 
-*Working Paper v1.8.1 — April 2026*
+ORCID: 0009-0000-6893-9231
 
-*Zenodo DOI: [10.5281/zenodo.19391476](https://doi.org/10.5281/zenodo.19391476)*
+DOI: [10.5281/zenodo.19391476](https://doi.org/10.5281/zenodo.19391476)
+
+Working Paper v1.8.1 – April 2026
 
 ---
 

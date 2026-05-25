@@ -16,13 +16,13 @@ provenance:
     - version: "1.1"
       date: "2026-04-08"
       description: >
-        Session 91: dark signals/PDOP blind spots section added. Bonnet pairs metric
+        Dark signals/PDOP blind spots section added. Bonnet pairs metric
         insufficiency discussion added. Karcher mean curved-space generalization added
         (all in Section 11). Reference count expanded to 53. ~15,430 words.
     - version: "1.2"
       date: "2026-04-16"
       description: >
-        Session 104: Added supplementary experiment citations (agentic compounding,
+        Added supplementary experiment citations (agentic compounding,
         BF format optimization) in Section 10.3 as empirical corroboration for
         observer bias direction findings.
 
@@ -48,7 +48,7 @@ submission_timeline:
     notes: "v1.0 initial preprint. DOI 10.5281/zenodo.19482547."
 
   - date: "2026-04-16"
-    event: "v1.2 minor revision (Session 104 experiment citations)"
+    event: "v1.2 minor revision (supplementary experiment citations)"
     status: "complete"
     notes: "v1.2 PDF regenerated. Zenodo upload pending."
 

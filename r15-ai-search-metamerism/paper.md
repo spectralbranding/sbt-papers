@@ -1,8 +1,12 @@
 # Dimensional Collapse in AI-Mediated Search: Large Language Models as Metameric Observers of Brand Advertising
 
-**Dmitry Zharnikov**
+Dmitry Zharnikov
 
-Working Paper v3.1 -- April 2026 | https://doi.org/10.5281/zenodo.19422427
+ORCID: 0009-0000-6893-9231
+
+DOI: [10.5281/zenodo.19422427](https://doi.org/10.5281/zenodo.19422427)
+
+Working Paper v3.1 – April 2026
 
 ---
 

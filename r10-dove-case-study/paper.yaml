@@ -195,20 +195,9 @@ submission_history:
   - venue: "Journal of Brand Management"
     status: "pre-submission"
     note: >
-      JAR desk-rejected 2026-04-10 (Paper3686 / 261517468; insufficient evidentiary
-      base / readership fit). Previously JM desk-rejected 2026-03-28. Layer 1 audit
-      fixes applied v2.2.0 2026-05-01 (Phase 3 batch 3.5). Grok r1 tactical fixes
-      applied v2.3.0 2026-05-01 (+4 new external refs; abstract tightened; conclusion
-      elevated; "Practitioner Takeaways" heading). Layer 2 Option A applied v2.4.0
-      2026-05-01: venue retargeted to JBM; claims bounded; single-case acknowledgment
-      (Eisenhardt 1989; Yin 2018) added; 4 citation corrections (Hydock, Guha/Korschun,
-      Anisimova, Reczek removed); DCI scale unified to decimal. M13 test re-run pending.
-      Phase 3 deferred-items pass v2.5.0 2026-05-02: Figure 1 Dove longitudinal trajectory
-      added (Mermaid flowchart, ASCII-only, AMA caption above + Notes below per PQS) at
-      Method section transition. Other deferred items rejected: 4-case redesign (locked
-      to Layer 2 Option A); inter-rater reliability + coordinate-invariance (require new
-      empirical work); conviction function mathematization (formal mech belongs to 2026a/2026j,
-      not empirical case paper); self-cite reduction (corpus-design conflict -- load-bearing).
-      Phase 3.5 Step 6 ACCEPT pass v2.6.0 2026-05-03: Reczek, Fenigstein, and Serafin (2023)
-      JMR 60(5) added -- in-text at activism cluster (Introduction p.2, after Guha 2026
-      sentence); ref-list entry added alphabetically between Puntoni and Sabbah. Ref count 50->51.
+      JAR desk-rejected 2026-04-10 (insufficient evidentiary base / readership fit).
+      Previously JM desk-rejected 2026-03-28. Revisions v2.2.0–v2.6.0 (2026-05-01 to
+      2026-05-03): venue retargeted to JBM; claims bounded; single-case acknowledgment
+      (Eisenhardt 1989; Yin 2018) added; 4 citation corrections; DCI scale unified to
+      decimal; Figure 1 Dove longitudinal trajectory added; Reczek, Fenigstein, and
+      Serafin (2023) JMR 60(5) added at activism cluster. Ref count 50->51.

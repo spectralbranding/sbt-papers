@@ -158,4 +158,4 @@ target_venue:
   style: "AMA"
   review_type: "double-anonymous"
   fallback: "Marketing Letters"
-  rationale: "Grok review strongest-fit recommendation; spectral-gap + operator methods align with MKSC quantitative tradition"
+  rationale: "Spectral-gap + operator methods align with MKSC quantitative tradition"

@@ -25,12 +25,11 @@ provenance:
     - version: "3.0"
       date: "2026-04-17"
       description: >
-        Session 105 quality review fixes. Abstract trimmed from ~270 to ~200 words. paper.yaml
-        updated with abstract field. PROVENANCE.yaml updated with this version entry. Version 3.0
+        Abstract trimmed and metadata files aligned. Version 3.0
         adds three supplementary experiment sections (5.13 agentic pipeline compounding 425 calls,
         5.14 cross-language dimensional semantics 450 calls, 5.15 serial position effects 2,400
         calls; total supplementary 3,275 calls). Core canonical count unchanged: 21,350.
-        Title updated to JMR revision: "Dimensional Collapse in AI-Mediated Brand Perception:
+        Title updated to "Dimensional Collapse in AI-Mediated Brand Perception:
         Large Language Models as Metameric Observers".
 
   forks: []

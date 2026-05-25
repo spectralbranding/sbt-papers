@@ -1,8 +1,12 @@
 # Spectral Dynamics: Velocity, Acceleration, and Phase Space in Multi-Dimensional Brand Perception
 
-**Dmitry Zharnikov**
+Dmitry Zharnikov
 
-Working Paper v1.2.1 | Citation key: 2026z | https://doi.org/10.5281/zenodo.19468204
+ORCID: 0009-0000-6893-9231
+
+DOI: [10.5281/zenodo.19468204](https://doi.org/10.5281/zenodo.19468204)
+
+Working Paper v1.2.1 – April 2026
 
 ---
 

@@ -1,20 +1,22 @@
 # Restoring Perceptual Separability After Coherence Shocks: A μ > λ Threshold Inequality in Brand Perception
 
-*Dmitry Zharnikov*
+Dmitry Zharnikov
 
-DOI: 10.5281/zenodo.19778549
+ORCID: 0009-0000-6893-9231
 
-Working Paper v1.0.0 -- April 2026
+DOI: [10.5281/zenodo.19778549](https://doi.org/10.5281/zenodo.19778549)
 
-**Abstract**
+Working Paper v1.0.0 – April 2026
+
+---
+
+## Abstract
 
 Brands facing coherence shocks — repositioning campaigns or cultural shifts — confront an asymmetric recovery problem: some regain cohort separability while others enter absorbing cross-cohort interference. This paper derives a closed-form sufficient condition for separability survival — to the author's knowledge the first threshold inequality for cohort-level separability survival in a multi-dimensional brand perception space: the corrective coherence emission rate μ must exceed the spectral leakage rate λ at the observer cohort's detection scale (μ > λ at scale δ). Cohort perception clouds are modeled as almost-invariant sets in a stochastic flow on an eight-dimensional SBT perception manifold, with separability governed by the spectral gap of the perception operator. The threshold follows from Kato–Rellich perturbation theory and Diaconis–Stroock spectral-gap bounds for reversible Markov chains.
 
 Author-proposed Dove-calibrated parameters — λ ≈ .10/year and μ ≈ 4.50/year — motivate a Monte Carlo demonstration that illustrates the threshold's predictive properties. The resulting μ/λ ratio of 45 satisfies the inequality for the Purpose-Aligned cohort but is sign-inverted for the Skeptic-Critic cohort, correctly predicting the documented divergence in conviction trajectories. Spectral-gap collapse precedes conviction reorientation by 6–18 months, offering a leading indicator unavailable from traditional perceptual maps or aggregate VECMs. Implications extend to AI-mediated perception where scale-dependent leakage accelerates fine-grained separability loss.
 
 **Keywords:** spectral gap, cohort separability, threshold inequality, corrective coherence emission, spectral leakage, Markov chain mixing, operator perturbation, Spectral Brand Theory
-
----
 
 **Introduction**
 

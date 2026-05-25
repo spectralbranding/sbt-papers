@@ -183,7 +183,7 @@ submission_history:
   - venue: "JCP"
     status: "pre-submission"
     note: >
-      v2.3 (2026-05-02): Phase 3 deferred-items applied. Added Table 3
+      v2.3 (2026-05-02): Added Table 3
       (5-brand ensemble-time gap simulation across canonical SBT profiles)
       and companion computation script (code/simulate_absorption.py) per
       PQS 37a-e. Renumbered correspondence table from Table 3 to Table 4.

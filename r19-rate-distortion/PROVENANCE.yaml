@@ -19,14 +19,14 @@ provenance:
     - version: "1.0"
       date: "2026-04-12"
       description: >
-        Session 95: paper.md drafted (3,074 words, 11 refs). Full 17-model panel results
+        paper.md drafted (3,074 words, 11 refs). Full 17-model panel results
         integrated (1,652 API calls, 1,621 valid, 98.1% parse rate). J-shaped R(D) curve
         confirmed across all 17 models. H2 SUPPORTED (mean CV = .140). Preprint published
         to Zenodo (DOI 10.5281/zenodo.19528833).
     - version: "1.0.1"
       date: "2026-04-16"
       description: >
-        Session 104: Added bidirectional rate-distortion paragraph citing Experiment D
+        Added bidirectional rate-distortion paragraph citing Experiment D
         input-side results (format-mediated primacy, R2 as optimal rate condition confirmed
         from input side). No structural changes.
 

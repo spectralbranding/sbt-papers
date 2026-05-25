@@ -1,6 +1,6 @@
 # Experiment Data Standard
 
-Version: 1.0 (Session 107, 2026-04-17)
+Version: 1.0 (2026-04-17)
 
 Every experiment in this directory MUST produce JSONL data that passes the CI validation pipeline (`validation/validate.py --all`). This document is the single source of truth for data format requirements.
 

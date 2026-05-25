@@ -1,8 +1,12 @@
 # Coherence Type Over Coherence Score: A Stochastic Differential Equation Derivation of Brand Resilience
 
-**Zharnikov, D.**
+Dmitry Zharnikov
 
-Working Paper -- March 2026
+ORCID: 0009-0000-6893-9231
+
+DOI: [10.5281/zenodo.19208107](https://doi.org/10.5281/zenodo.19208107)
+
+Working Paper v1.2 – March 2026
 
 ---
 

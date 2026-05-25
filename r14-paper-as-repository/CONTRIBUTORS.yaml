@@ -19,28 +19,8 @@ contributors:
   - name: "Claude (Anthropic)"
     type: ai_tool
     roles:
-      - writing-review
-      - consistency-checking
       - software
     disclosure: >
-      Used for manuscript review, terminology consistency checking,
-      editorial feedback, and compliance gate validator development.
+      Used for compliance gate validator development.
       All theoretical propositions, protocol design, and intellectual
       contributions are solely the author's work.
-
-  - name: "Gemini Deep Research (Google)"
-    type: ai_tool
-    roles:
-      - investigation
-    disclosure: >
-      Used for literature landscape mapping (existing publishing
-      infrastructure, version control in science). All results
-      independently verified.
-
-  - name: "Grok Deep Research (xAI)"
-    type: ai_tool
-    roles:
-      - investigation
-    disclosure: >
-      Used for Round 2 literature review (RO-Crate, FAIR4RS, DataCite,
-      evaluation frameworks). All results independently verified.

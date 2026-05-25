@@ -1,10 +1,12 @@
 # Dimensional Activation and Cohort Divergence: A Longitudinal Decomposition of Purpose Advertising Effectiveness
 
-**Dmitry Zharnikov**
+Dmitry Zharnikov
 
-*Working Paper v2.6.0 — May 2026*
+ORCID: 0009-0000-6893-9231
 
-*Zenodo DOI: [10.5281/zenodo.19139258](https://doi.org/10.5281/zenodo.19139258)*
+DOI: [10.5281/zenodo.19139258](https://doi.org/10.5281/zenodo.19139258)
+
+Working Paper v2.6.0 – May 2026
 
 ---
 
@@ -415,8 +417,6 @@ Theoretically, the paper advances three contributions. It distinguishes dimensio
 The four observer cohorts are structural consequences of SBT's formalism: given eight-dimensional emission profiles and heterogeneous observer spectral weight vectors, structurally distinct perception clouds are predicted (Zharnikov 2026f). The Dove case makes this vivid: the same "Real Beauty Sketches" video simultaneously strengthened positive conviction in one cohort, was irrelevant to another, generated social currency for a third, and intensified negative conviction in a fourth -- from identical signals.
 
 Dove's trajectory over two decades is the natural history of a dimensional creation event: ignition (2004), expansion (2006--2013), peak resonance (2013), and normative absorption (2023). The framework's most important implication for advertising research is that aggregate approval metrics are structurally inadequate for diagnosing this arc: they average away the cohort divergence that is both the campaign's mechanism of success and the leading indicator of its vulnerability. Brands that understand perception as a multi-dimensional cloud shaped by emission profiles and observer weight vectors gain tools that existing frameworks cannot supply -- for predicting campaign longevity, detecting portfolio interference before it propagates, and designing purpose signals that survive AI-mediated compression.
-
-*Cover-letter note for next submission: This paper contains 8 self-citations out of 50 total references (16.0%), above the informal 15% guideline. The elevated rate reflects that R10 applies SBT's first-principles framework (2026a, 2026f, 2026j, 2026o, 2026r) to a new empirical domain and draws on a parallel empirical study (2026v, 2026x) and the superseding portfolio theory paper (2026ac) as direct evidentiary anchors. The self-citations are load-bearing: each refers to a distinct theoretical component that is not available in the external literature. This will be noted explicitly in the cover letter.*
 
 ## Companion Computation Script
 

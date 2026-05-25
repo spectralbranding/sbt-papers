@@ -1,6 +1,6 @@
 # Compounding x Format Experiment — Summary
 
-**Date**: 2026-04-17 (Session 106)
+**Date**: 2026-04-17
 **Design**: 2 (bf_condition: baseline/specified) x 4 (stage: control/step_1/step_2/step_3) x 5 brands x 6 models x 2 reps
 **Calls**: 480 total, 291/360 weight-bearing valid (80.8%)
 **Cost**: $0.61

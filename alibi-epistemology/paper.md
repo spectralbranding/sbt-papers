@@ -1,17 +1,12 @@
 # The Atom-Cloud-Fact Epistemological Pipeline: From Financial Document Processing to Brand Perception Modeling
 
-**Dmitry Zharnikov**
+Dmitry Zharnikov
 
-Working Paper — February 2026
+ORCID: 0009-0000-6893-9231
 
-*Contact: dmitry@spectralbranding.com*
+DOI: [10.5281/zenodo.18944770](https://doi.org/10.5281/zenodo.18944770)
 
-| | |
-|---|---|
-| **Applied framework** | [github.com/spectralbranding/sbt-framework](https://github.com/spectralbranding/sbt-framework) |
-| **Source code** | [github.com/viberesearch/alibi](https://github.com/viberesearch/alibi) |
-| **SBT paper** | [Zenodo DOI](https://doi.org/10.5281/zenodo.18945912) |
-| **License** | MIT |
+Working Paper v1.0.0 – February 2026
 
 ---
 

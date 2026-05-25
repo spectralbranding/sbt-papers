@@ -1,10 +1,12 @@
 # PRISM: A Structured Measurement Instrument for Multi-Dimensional Brand Perception
 
-**Dmitry Zharnikov**
+Dmitry Zharnikov
 
-DOI: 10.5281/zenodo.19555265
+ORCID: 0009-0000-6893-9231
 
-Working Paper v1.0.2 -- April 2026
+DOI: [10.5281/zenodo.19555265](https://doi.org/10.5281/zenodo.19555265)
+
+Working Paper v1.0.2 – April 2026
 
 ---
 

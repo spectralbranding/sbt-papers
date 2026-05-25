@@ -1,6 +1,6 @@
 # Compounding x Format v2 — Constraint Framing Results
 
-**Date**: 2026-04-17 (Session 106)
+**Date**: 2026-04-17
 **Design**: 3 (condition: baseline/information/constraint) x 4 (stage) x 5 brands x 5 models x 2 reps
 **Calls**: 600 total, 397/450 weight-bearing valid (88.2%)
 **Cost**: $0.87
