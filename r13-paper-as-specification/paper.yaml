@@ -164,7 +164,7 @@ acceptance:
       set. Target: precision >= 0.85 and recall >= 0.85.
     falsification: >
       Precision or recall falls below 0.70, indicating that the critical: true annotations
-      in paper.yaml files do not reliably capture which dependencies are genuinely load-bearing
+      in paper.yaml files do not reliably capture which dependencies are genuinely critical
       for downstream claims — either because authors over-annotate (low precision) or under-
       annotate (low recall) criticality.
 

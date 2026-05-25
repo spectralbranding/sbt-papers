@@ -272,7 +272,7 @@ We examine five candidates that arise naturally from the branding literature and
 
 ### 5.7 Synthesis
 
-The distinction between a **meaning channel** (a mode of processing through which signals become meaning) and a **content domain** (a topic area that signals may address) is the load-bearing conceptual move underlying all five reduction arguments in Sections 5.2-5.6. Meaning channels are the rows -- the eight independent transmission pathways; content domains are the columns -- the semantic fields a brand might address. Any content domain can be transmitted through multiple channels; no content domain constitutes a channel itself. Figure 1 makes this orthogonality explicit.
+The distinction between a **meaning channel** (a mode of processing through which signals become meaning) and a **content domain** (a topic area that signals may address) is the critical conceptual move underlying all five reduction arguments in Sections 5.2-5.6. Meaning channels are the rows -- the eight independent transmission pathways; content domains are the columns -- the semantic fields a brand might address. Any content domain can be transmitted through multiple channels; no content domain constitutes a channel itself. Figure 1 makes this orthogonality explicit.
 
 ```mermaid
 graph TD

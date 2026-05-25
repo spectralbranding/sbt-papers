@@ -1,7 +1,7 @@
 # Canonical Timeline — Romeo and Juliet
 # The play is compressed into approximately 4-5 days.
 # This compression is a spec feature, not a staging convenience.
-# The urgency produced by the timeline is load-bearing.
+# The urgency produced by the timeline is critical.
 
 timeline:
   duration: approximately 4-5 days
