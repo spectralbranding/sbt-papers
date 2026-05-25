@@ -240,7 +240,7 @@ submission_history:
       Dooley-Van de Ven 1999, Muthen-Shedden 1999, Sriram et al. 2006. 36 references
       (was 29). ~9,711 words. Added §8.7 Companion Computation Script subsection;
       created code/ companion script reproducing Tables 2 and 3 with run command and
-      README per PAPER_QUALITY_STANDARDS items 37a-37e.
+      README per the corpus computational-reproducibility standard.
       v1.2.1 (2026-05-01): Deferred-item (D2-D5) Perplexity verification pass. Added
       2 verified citations: Colicev, Malshe, Pauwels, and O'Connor (2018) JM at §2.4
       (social-media mindset metrics, DOI 10.1509/jm.16.0055); Edeling, Srinivasan, and

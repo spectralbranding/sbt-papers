@@ -71,7 +71,7 @@ The specification content is NOT invented for this experiment. It is extracted f
 
 ## Reporting standards
 
-Per `research/PAPER_QUALITY_STANDARDS.md`:
+Per the corpus reporting standard:
 - No leading zeros for values < 1
 - Exact p-values to 3 digits
 - Effect sizes mandatory alongside every test

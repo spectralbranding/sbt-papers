@@ -56,7 +56,7 @@ The pattern is identical: a generation breakthrough created a volume problem tha
 
 Large language models, widely deployed from 2023, reduce the cost of generating plausible text -- including scientific hypotheses, literature reviews, and experimental designs -- by yet another order of magnitude. A researcher with access to an LLM can produce a hundred candidate hypotheses in an afternoon, complete with literature grounding and proposed methodologies. The generation breakthrough is cognitive; the verification problem is epistemic, just as it was in the fifteenth century.
 
-The verification infrastructure, however, remains pre-digital. A scientific paper in 2026 is structurally identical to a scientific paper in 1996: a PDF containing natural language, evaluated by two to three human reviewers over a period of weeks to months. The claims are buried in prose. The acceptance criteria are implicit or absent. The dependency on prior work is expressed through citation, which indicates that a paper was read but not which specific claim is load-bearing. The conditions under which the claims would be falsified are rarely stated explicitly, and when they are, they are not machine-extractable.
+The verification infrastructure, however, remains pre-digital. A scientific paper in 2026 is structurally identical to a scientific paper in 1996: a PDF containing natural language, evaluated by two to three human reviewers over a period of weeks to months. The claims are buried in prose. The acceptance criteria are implicit or absent. The dependency on prior work is expressed through citation, which indicates that a paper was read but not which specific claim is critical. The conditions under which the claims would be falsified are rarely stated explicitly, and when they are, they are not machine-extractable.
 
 The historical pattern predicts that this generation-verification gap will be resolved not by faster reviewers but by a specification standard for scientific claims -- a standard that makes the epistemic content of papers machine-readable, just as schema.org made the semantic content of web pages machine-readable. Paper Spec is our proposal for that standard.
 
@@ -151,7 +151,7 @@ A `paper.yaml` file answers seven questions that every reader of a scientific pa
 
 4. **Can I reproduce this?** The `data`, `code`, and `replication` sections specify what is available, where it is, and what a replicator would need.
 
-5. **What does this depend on?** The `dependencies` section identifies not just cited papers but the specific claims in those papers that are load-bearing for the current work, with relationship types (extends, applies, tests, contradicts, refines) and criticality flags.
+5. **What does this depend on?** The `dependencies` section identifies not just cited papers but the specific claims in those papers that are critical for the current work, with relationship types (extends, applies, tests, contradicts, refines) and criticality flags.
 
 6. **What are its known limits?** The `limitations` and `contradictions` sections record acknowledged weaknesses and known conflicts with other published work.
 
@@ -190,7 +190,7 @@ acceptance:         # Confirmation/falsification criteria.
     criterion: "..."
     falsification: "..."
 
-dependencies:       # Load-bearing prior work.
+dependencies:       # Critical prior work.
   - doi: "10.xxxx/..."
     claim: "specific claim depended upon"
     relationship: extends
@@ -250,11 +250,11 @@ falsification  ::= falsification_entry+
 falsification_entry ::= claim_id condition threshold?
 ```
 
-The five relationship types in `dependencies` are a deliberate simplification of CiTO's forty-plus typed relationships (Shotton, 2010): sufficient for retraction-cascade analysis and contradiction detection without imposing an ontology-learning burden on the author. The `critical` boolean is the key field for L4 analysis — it distinguishes load-bearing dependencies (retraction of the source invalidates this paper's claims) from incidental citations.
+The five relationship types in `dependencies` are a deliberate simplification of CiTO's forty-plus typed relationships (Shotton, 2010): sufficient for retraction-cascade analysis and contradiction detection without imposing an ontology-learning burden on the author. The `critical` boolean is the key field for L4 analysis — it distinguishes critical dependencies (retraction of the source invalidates this paper's claims) from incidental citations.
 
 Claim IDs (`id` field) must be unique within a `paper.yaml` file, alphanumeric with optional hyphens (e.g., `P1`, `H2`, `T3a`), and are stable across paper versions. External references of the form `doi:claim_id` (e.g., `10.5281/zenodo.18945912:P1`) identify a specific claim in a specific paper. This stability guarantee is what makes cross-paper dependency references durable under revision.
 
-The `computation` section (not shown in the EBNF above) lists scripts that reproduce any numerically computed values in the paper: each entry includes `script_url`, `run_command`, and optionally `fixed_seed` and `expected_output_hash`. This section implements the companion computation script requirement described in PAPER_QUALITY_STANDARDS items 37a-37e.
+The `computation` section (not shown in the EBNF above) lists scripts that reproduce any numerically computed values in the paper: each entry includes `script_url`, `run_command`, and optionally `fixed_seed` and `expected_output_hash`. This section implements the companion-computation-script requirement: any paper reporting a numerically computed value must publish a fixed-seed, run-command-documented script alongside the paper so the value is reproducible from source.
 
 ### 4.4 A Worked Example
 
@@ -365,7 +365,7 @@ L4 operates across a corpus of `paper.yaml` files. Given a network of papers wit
 
 **Contradiction detection.** When Paper A and Paper B both depend on Paper C but draw opposite conclusions, the `contradictions` sections (supplemented by automated comparison of `results` sections) can flag the conflict. Currently, contradictions in the literature are discovered by individual readers who happen to have read both papers -- a process that depends on chance and expertise.
 
-**Dependency graph traversal.** The full dependency network reveals the load-bearing structure of a research field: which papers are foundational (many critical dependents), which are peripheral (few dependents), and which are bridges connecting otherwise separate subfields. This structural information is invisible in citation counts, which treat all citations equally.
+**Dependency graph traversal.** The full dependency network reveals the critical structure of a research field: which papers are foundational (many critical dependents), which are peripheral (few dependents), and which are bridges connecting otherwise separate subfields. This structural information is invisible in citation counts, which treat all citations equally.
 
 **Claim-level semantic search.** Instead of searching for papers by keyword, a researcher can search for specific claims: "Find all papers that claim working memory mediates the effect of sleep deprivation on decision quality." This is not possible with unstructured papers; it is trivial with a corpus of `paper.yaml` files.
 
