@@ -1,8 +1,12 @@
 # Spectral Portfolio Theory: Interference, Coherence, and Capacity in Multi-Brand Perception Space
 
-**Zharnikov, D.**
+Dmitry Zharnikov
 
-Working Paper -- March 2026
+ORCID: 0009-0000-6893-9231
+
+DOI: [10.5281/zenodo.19145099](https://doi.org/10.5281/zenodo.19145099)
+
+Working Paper v1.0.0 – March 2026
 
 ---
 

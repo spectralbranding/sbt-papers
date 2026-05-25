@@ -1,12 +1,12 @@
 # Geometric Necessity of Fuzzy Cohort Boundaries: A Concentration Analysis of the 7-Simplex
 
-**Dmitry Zharnikov**
+Dmitry Zharnikov
 
 ORCID: 0009-0000-6893-9231
 
-Working Paper v1.2.0 — March 2026 (Updated May 2026)
+DOI: [10.5281/zenodo.18945477](https://doi.org/10.5281/zenodo.18945477)
 
-https://doi.org/10.5281/zenodo.18945477
+Working Paper v1.2.0 – March 2026
 
 ---
 

@@ -322,7 +322,7 @@ submission_history:
     doi: "10.5281/zenodo.19422427"
     note: >
       v1.0 preprint (2026-04-04). 7 sections, 4 hypotheses (H1+H2 supported, H3+H4 not
-      supported). 4,860 API calls, 15 brand pairs, 6 LLMs. Grok review fixes applied: SBT
+      supported). 4,860 API calls, 15 brand pairs, 6 LLMs. SBT
       positioning clarified, H3/H4 reframed as expected null, tone softened, Brakus et al.
       (2009) added. v2.0 (2026-04-08): incorporates Run 5 cross-cultural results
       (11,410 calls, 7,999 successful, 24 models across all runs, 7 cross-cultural

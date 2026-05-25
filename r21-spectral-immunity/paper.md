@@ -1,10 +1,16 @@
 # Spectral Immunity: Why Brand Portfolio Interference Disappears for AI Observers
 
-*Dmitry Zharnikov*
+Dmitry Zharnikov
 
-Working Paper -- April 2026 -- DOI: [10.5281/zenodo.19765401](https://doi.org/10.5281/zenodo.19765401)
+ORCID: 0009-0000-6893-9231
 
-**Abstract**
+DOI: [10.5281/zenodo.19765401](https://doi.org/10.5281/zenodo.19765401)
+
+Working Paper v1.0.0 – April 2026
+
+---
+
+## Abstract
 
 Brand portfolio theory predicts perceptual interference when observers recognize shared corporate ownership, requiring only an open awareness gate. Large language models (LLMs), whose training data permanently saturate this gate, provide a critical test. This paper formalizes spectral interference across eight perceptual dimensions and tests three propositions in a fully crossed experiment with 13 LLMs from seven training traditions, 40 brands, seven portfolio archetypes, and four prompt modalities (N = 9,925). Using the Dimensional Concentration Index and two-one-sided equivalence tests, the results reveal near-zero portfolio-induced change (mean |ΔDCI| = .26; equivalence holds for 18/20 brands). Variance decomposition attributes .1% of perceptual concentration to portfolio framing versus 37.4% to brand identity. The sole exception occurs in multi-turn conversation for a reverse-aspiration structure (Geely Auto, d = -1.11), where extended context converts coordination information into output inferences. These results resolve the awareness-gate paradox: awareness is necessary but insufficient. A bandwidth constraint rooted in rate-distortion theory and rational inattention is also required. General-purpose LLMs are rationally inattentive to organizational-coordination signals because these contribute negligibly to output-fidelity reconstruction. As AI mediation of brand interactions grows, portfolio architecture becomes strategically invisible to the general-purpose LLM class tested here.
 

@@ -16,19 +16,3 @@ contributors:
     first_commit: "2026-03-20"
     last_commit: "2026-03-26"
 
-  - name: "Claude (Anthropic)"
-    type: ai_tool
-    roles:
-      - writing-review
-      - consistency-checking
-    disclosure: >
-      Used for manuscript review, terminology consistency checking,
-      and editorial feedback. All theoretical propositions and
-      intellectual contributions are solely the author's work.
-
-  - name: "Gemini Deep Research (Google)"
-    type: ai_tool
-    roles:
-      - investigation
-    disclosure: >
-      Used for literature landscape mapping. All results independently verified.

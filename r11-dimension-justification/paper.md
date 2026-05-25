@@ -1,8 +1,12 @@
 # Why Eight? Completeness and Necessity of the SBT Dimensional Taxonomy
 
-**Zharnikov, D.**
+Dmitry Zharnikov
 
-Working Paper -- March 2026 (Updated April 2026)
+ORCID: 0009-0000-6893-9231
+
+DOI: [10.5281/zenodo.19207599](https://doi.org/10.5281/zenodo.19207599)
+
+Working Paper v1.3 – April 2026
 
 ---
 

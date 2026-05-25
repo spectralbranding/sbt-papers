@@ -15,7 +15,7 @@ provenance:
       description: "Added Section 9 empirical pilot results (684 calls, 4 tables)"
     - version: "1.2"
       date: "2026-04-03"
-      description: "Grok review fixes (P3 softened, AI disclosure, power analysis, synthetic brand defense)"
+      description: "P3 softened, AI disclosure added, power analysis and synthetic brand defense integrated"
     - version: "1.3"
       date: "2026-04-04"
       description: "Ephemeris analogy (4.1), admissibility framing (7.2), 4 Brand Function use cases (8), coordinate-invariant geometry (8), temporal stability (8), conditional metamerism (9), dimensional invariance (9)"
@@ -34,8 +34,8 @@ provenance:
     - version: "1.7"
       date: "2026-04-17"
       description: >
-        Session 105 quality review fixes. paper.yaml updated with abstract field, version
-        confirmed 1.7. PROVENANCE.yaml updated with version history entries for v1.6 and v1.7.
+        paper.yaml updated with abstract field, version confirmed 1.7. PROVENANCE.yaml updated
+        with version history entries for v1.6 and v1.7.
 
   forks:
     - id: "fork-2026-04-02-zenodo"

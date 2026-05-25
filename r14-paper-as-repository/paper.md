@@ -1,8 +1,12 @@
 # Research as Repository: Infrastructure for Transparent, Attributed, and Machine-Readable Scholarly Communication
 
-**Dmitry Zharnikov**
+Dmitry Zharnikov
 
-Working Paper v2.0.1 — April 2026
+ORCID: 0009-0000-6893-9231
+
+DOI: [10.5281/zenodo.19294864](https://doi.org/10.5281/zenodo.19294864)
+
+Working Paper v2.0.1 – April 2026
 
 ---
 

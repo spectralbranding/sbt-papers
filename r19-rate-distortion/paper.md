@@ -1,12 +1,16 @@
 # Empirical Rate-Distortion Curve for AI Brand Perception Encoders
 
-**Dmitry Zharnikov**
+Dmitry Zharnikov
 
-DOI: 10.5281/zenodo.19528833
+ORCID: 0009-0000-6893-9231
 
-Working Paper v1.0.1 -- April 2026
+DOI: [10.5281/zenodo.19528833](https://doi.org/10.5281/zenodo.19528833)
 
-**Abstract**
+Working Paper v1.0.1 – April 2026
+
+---
+
+## Abstract
 
 This study applies Shannon rate-distortion theory to measure how response-format constraints affect the fidelity of AI-generated brand perception profiles. Seventeen large language model architectures from distinct training lineages are prompted to evaluate five canonical reference brands under five response formats spanning 3 to 26 bits of information rate. Distortion is measured as total variation distance between each model's normalized output and a canonical eight-dimensional brand profile. The resulting rate-distortion curve is J-shaped: minimum distortion occurs not at the highest-rate format (100-point allocation, 26 bits) but at an intermediate bounded format (1-5 ordinal scale, 19 bits), corresponding to a 49.4% reduction in mean distortion (R1 = .172 → R2 = .087). All 17 models exhibit this pattern (paired *t*(16) = 11.92, *p* < .001, Cohen's *d*~z~ = 2.89 for R1 vs R2). Cross-model coefficient of variation averages .140 across all five rate conditions (CV = .171 excluding the structurally degenerate R5 single-dimension condition), indicating codebook convergence across architectures. These findings demonstrate that structured response formats suppress encoder bias and yield higher-fidelity brand perception measurements than unconstrained elicitation, with direct implications for AI-mediated brand research instrument design.
 

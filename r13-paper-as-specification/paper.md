@@ -1,10 +1,12 @@
 # Paper as Specification: A Machine-Readable Standard for Scientific Claims
 
-**Zharnikov, D.**
+Dmitry Zharnikov
 
-Independent Researcher, ORCID 0009-0000-6893-9231
+ORCID: 0009-0000-6893-9231
 
-March 2026
+DOI: [10.5281/zenodo.19210037](https://doi.org/10.5281/zenodo.19210037)
+
+Working Paper v0.1 – March 2026
 
 ---
 

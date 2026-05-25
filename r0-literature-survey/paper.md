@@ -1,16 +1,16 @@
 # Geometric Approaches to Brand Perception: A Critical Survey and Research Agenda
 
-**Dmitry Zharnikov**
+Dmitry Zharnikov
 
 ORCID: 0009-0000-6893-9231
 
-Working Paper v1.5.0 — March 2026 (Updated May 2026)
+DOI: [10.5281/zenodo.18945217](https://doi.org/10.5281/zenodo.18945217)
 
-https://doi.org/10.5281/zenodo.18945217
+Working Paper v1.5.0 – March 2026
 
 ---
 
-**Abstract**
+## Abstract
 
 This paper surveys geometric and topological methods applied to brand perception across ten intellectual traditions: multidimensional scaling, characteristics-space economics, conceptual spaces, non-Euclidean perceptual geometry, individual-differences modeling, topological data analysis, quantum cognition, opinion dynamics, and non-ergodicity research. The central finding is that a significant compound gap persists: no existing framework combines high-dimensional geometric structure, a generative signal mechanism, observer heterogeneity, and non-ergodic temporal dynamics into an integrated theory of brand perception. Multidimensional scaling operates in two to three dimensions and offers no generative mechanism. Conceptual spaces provide geometric foundations for cognition but lack temporal dynamics and observer-specific processing. Non-Euclidean perceptual geometry demonstrates that Euclidean distance is insufficient for modeling perception, yet this insight has not penetrated brand theory. Non-ergodicity has been formalized in psychology, decision science, and evolutionary biology, but has never been applied to brand perception. Six open problems with formal mathematical statements — concerning formal metrics on brand space, projection bounds, concentration of measure, positioning capacity, specification impossibility, and diffusion dynamics on perceptual manifolds — constitute a research agenda for mathematical brand theory; companion papers (Zharnikov 2026d–h, 2026j) resolve each.
 

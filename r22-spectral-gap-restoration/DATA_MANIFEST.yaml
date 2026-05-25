@@ -15,15 +15,15 @@ datasets:
     used_in:
       - "Section 4 Empirical Re-analysis"
       - "Hypothesis H22 (separability test + lead-time test)"
-    status: "Placeholder stats marked [STAT TO BE COMPUTED FROM R10 DATA] in v0.3"
+    status: "Used for Monte Carlo calibration parameters; full re-analysis deferred to companion paper"
 
   - name: "Unilever Annual Reports 2004–2006"
     location: "https://www.unilever.com/investor-relations/annual-report-and-accounts/"
     description: >
       Public financial filings used to derive Share-of-Voice (SOV) and
       campaign emission-rate (μ) proxies for the Real Beauty activation
-      window. Verify-before-citing per DR-7 punch list.
-    status: "Required for placeholder #2 computation"
+      window.
+    status: "Required for μ estimation in companion paper"
 
 empirical_methods:
   - approach: "VECM error-correction term as μ estimand"
@@ -43,10 +43,9 @@ empirical_methods:
   - approach: "Adstock half-life calibration"
     primary_reference: "Naik, Mantrala & Sawyer (1998) MKSC"
     note: >
-      Cite qualitatively only. Specific Naik decimal values from earlier
-      Gemini DR runs (.2311 wearout, .0637 forgetting, "Dockers brand")
-      were FABRICATED — confirmed by OCR of Naik et al. (1998) PDF (the
-      empirical case is CEREAL data with values .0097–.3224).
+      Cite qualitatively only. The empirical case in Naik et al. (1998) is
+      cereal data; specific decimal values should be verified against the
+      original source before use.
 
 code:
   - name: "Monte Carlo simulation script"

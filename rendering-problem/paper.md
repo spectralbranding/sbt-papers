@@ -1,10 +1,12 @@
 # The Rendering Problem: From Genetic Expression to Brand Perception
 
-**Zharnikov, D.**
+Dmitry Zharnikov
 
-Working Paper -- March 2026
+ORCID: 0009-0000-6893-9231
 
-https://doi.org/10.5281/zenodo.19064426
+DOI: [10.5281/zenodo.19064426](https://doi.org/10.5281/zenodo.19064426)
+
+Working Paper v1.0.0 – March 2026
 
 ---
 

@@ -1,10 +1,12 @@
 # Brand Triangulation: A Geometric Framework for Multi-Observer Brand Positioning
 
-**Dmitry Zharnikov**
+Dmitry Zharnikov
 
-*Working Paper v1.4 — May 2026*
+ORCID: 0009-0000-6893-9231
 
-*DOI: https://doi.org/10.5281/zenodo.19482547*
+DOI: [10.5281/zenodo.19482547](https://doi.org/10.5281/zenodo.19482547)
+
+Working Paper v1.4 – May 2026
 
 ---
 

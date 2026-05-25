@@ -28,9 +28,8 @@ contributors:
       - consistency-checking
       - technical-validation
     disclosure: >
-      Used for manuscript drafting assistance, citation verification, mathematical consistency
-      checking, and self-adversarial review (/review-paper protocol). All conceptual and
-      theoretical contributions remain solely the author's work.
+      Used for manuscript drafting assistance, citation verification, and mathematical consistency
+      checking. All conceptual and theoretical contributions remain solely the author's work.
 
   - name: "Gemini Deep Research (Google)"
     type: ai_tool

@@ -1,8 +1,12 @@
 # Canon as Repository: A Specification-Driven Architecture for Transmedia Intellectual Property
 
-**Dmitry Zharnikov**
+Dmitry Zharnikov
 
-Working Paper v1.1.0 — 2026-05-10. https://doi.org/10.5281/zenodo.19355800
+ORCID: 0009-0000-6893-9231
+
+DOI: [10.5281/zenodo.19355800](https://doi.org/10.5281/zenodo.19355800)
+
+Working Paper v1.1.0 – May 2026
 
 ---
 

@@ -1,8 +1,12 @@
 # From Order Effects to Absorbing States: A Non-Ergodic Framework for Multi-Dimensional Brand Perception Dynamics
 
-**Dmitry Zharnikov**
+Dmitry Zharnikov
 
-Working Paper v2.2 -- May 2026
+ORCID: 0009-0000-6893-9231
+
+DOI: [10.5281/zenodo.19138860](https://doi.org/10.5281/zenodo.19138860)
+
+Working Paper v2.2 – May 2026
 
 ---
 
