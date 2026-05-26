@@ -1,6 +1,7 @@
 # paper.yaml — Paper Spec v0.1.0
 # Zharnikov (2026u): R14 — Research as Repository
 spec_version: "0.1.0"
+corpus_role: meta
 
 meta:
   title: "Research as Repository: Infrastructure for Transparent, Attributed, and Machine-Readable Scholarly Communication"
