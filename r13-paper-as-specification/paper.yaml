@@ -1,6 +1,7 @@
 # paper.yaml — Paper Spec v0.1.0
 # Zharnikov (2026t): R13 — Paper as Specification
 spec_version: "0.1.0"
+corpus_role: meta
 
 meta:
   title: "Paper as Specification: A Machine-Readable Standard for Scientific Claims"

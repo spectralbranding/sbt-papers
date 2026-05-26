@@ -1,6 +1,7 @@
 # paper.yaml — Paper Spec v0.1.0
 # Zharnikov (2026w): Canon as Repository: A Specification-Driven Architecture for Transmedia Intellectual Property
 spec_version: "0.1.0"
+corpus_role: meta
 
 meta:
   title: "Canon as Repository: A Specification-Driven Architecture for Transmedia Intellectual Property"
