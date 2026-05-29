@@ -1,0 +1,25 @@
+cff-version: 1.2.0
+message: "If you use this work, please cite it as below."
+title: "Spectral Brand Theory — Research Papers"
+version: "1.0.0"
+authors:
+  - family-names: "Zharnikov"
+    given-names: "Dmitry"
+    orcid: "0009-0000-6893-9231"
+date-released: "2026-05-29"
+license: "MIT"
+license-url: "https://opensource.org/licenses/MIT"
+repository-code: "https://github.com/spectralbranding/sbt-papers"
+url: "https://github.com/spectralbranding/sbt-papers"
+abstract: >
+  Hub index for the Spectral Brand Theory (SBT) research program. This
+  repository aggregates per-paper subdirectories, each a self-contained
+  bundle containing the manuscript, machine-readable citation, license
+  files, and reproduction scripts. SBT is a computational framework for
+  modeling brand perception as an observer-mediated, multi-dimensional
+  process. Per-paper concept DOIs and version DOIs are listed in the
+  README and in each subdirectory's CITATION.cff.
+keywords:
+  - "spectral brand theory"
+  - "brand perception"
+  - "multi-dimensional measurement"
