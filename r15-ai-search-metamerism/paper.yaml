@@ -1,5 +1,7 @@
 # paper.yaml — R15: Dimensional Collapse in AI-Mediated Brand Perception
 # Citation key: 2026v
+# Concept DOI 10.5281/zenodo.19422427 (always resolves to latest version; unchanged).
+# v3.2.0 versioned DOI 10.5281/zenodo.20448605 (2026-05-29 upload; supersedes the v3.1 record from April 2026 which had coincided with the concept DOI 19422427).
 # Paper Spec schema: https://github.com/spectralbranding/paper-spec/SPECIFICATION.md
 
 paper_spec_version: "0.1.0"
@@ -322,7 +324,7 @@ submission_history:
     doi: "10.5281/zenodo.19422427"
     note: >
       v1.0 preprint (2026-04-04). 7 sections, 4 hypotheses (H1+H2 supported, H3+H4 not
-      supported). 4,860 API calls, 15 brand pairs, 6 LLMs. SBT
+      supported). 4,860 API calls, 15 brand pairs, 6 LLMs. Grok review fixes applied: SBT
       positioning clarified, H3/H4 reframed as expected null, tone softened, Brakus et al.
       (2009) added. v2.0 (2026-04-08): incorporates Run 5 cross-cultural results
       (11,410 calls, 7,999 successful, 24 models across all runs, 7 cross-cultural
@@ -363,40 +365,6 @@ submission_history:
       moved to Web Appendix references. Title changed to "Dimensional
       Collapse in AI-Mediated Brand Perception: Large Language Models as
       Metameric Observers."
-      v1.4.0 (2026-05-01): JAR clarity-pass. Added Mermaid Figure 1
-      (mechanism flowchart) at end of Theoretical Framework chaining
-      training corpora -> encoder bottleneck -> low-rank perception
-      subspace -> implicit weights -> DCI emergence -> cross-model
-      cosine convergence; ASCII-only labels per project rule, caption
-      below figure. Added Boundary Conditions subsection in Discussion
-      (4 boundary cases: multimodal models, retrieval-grounded systems,
-      cross-modal training, non-text deployment contexts). Split
-      Managerial Implications subsection out of Practical Implications
-      with 4 concrete advertiser actions (DCI audit, Brand Function
-      specifications, soft-dimension verifiability layer, cross-platform
-      consistency monitoring). Added Hatch-Schultz (2010) brand
-      co-creation distinction paragraph (AI as structurally biased
-      stakeholder class) and Hermann et al. (2026) full-engagement
-      paragraph (defensibility = dimensional verifiability) in
-      Theoretical Implications. Added Zharnikov (2026ac) cross-citation
-      at portfolio interference point in Practical Implications. Added
-      method validity-defense paragraph for forced-allocation
-      self-report (Tversky-style feature-based ranking under
-      cognitive-budget constraint, with internal convergent-validity
-      from Type 3 probes). Added DCI formula positive justification
-      paragraph in Statistical Model (Economic-plus-Semiotic = the
-      verifiability anchors of the eight-dimensional space). Added
-      Park-MacInnis-Eisingerich (2016) Brand Admiration anchor in
-      Theoretical Implications (enrichment-benefit dimensions are
-      precisely what AI suppresses). +3 references (Hatch-Schultz 2010
-      verified via Perplexity; Park-MacInnis-Eisingerich 2016 Wiley
-      book verified via Perplexity; Tversky 1977 Features of
-      Similarity). Skipped on verification: Berger 2023 JM
-      ("What Holds Attention?" — relevance to dimensional collapse
-      thin); De Vries JAR (verification returned a JM article with
-      disputed venue, not JAR). Net word count delta: +1,626
-      (12,232 -> 13,858); QC PASSED with documented Wedel-Kamakura
-      book-title exception; SSOT mirror identical.
 
   - venue: "[withheld]"
     type: journal
