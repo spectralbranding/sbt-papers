@@ -1,3 +1,7 @@
+[![MIT License](https://img.shields.io/badge/Code-MIT-blue.svg)](LICENSE)
+[![CC-BY 4.0](https://img.shields.io/badge/Data-CC--BY_4.0-lightgrey.svg)](LICENSE-data)
+![Last Updated](https://img.shields.io/badge/updated-2026--05--29-success)
+
 # Spectral Brand Theory — Research Papers
 
 Research publications on Spectral Brand Theory (SBT), a computational framework for modeling brand perception as an observer-mediated, multi-dimensional process.
@@ -256,3 +260,72 @@ All papers are released under [MIT License](LICENSE). Use, cite, and build upon 
 ## Trademarks
 
 "Spectral Brand Theory" and "Brand Code" are trademarks of Dmitry Zharnikov. The MIT license applies to the source code and text only and does not grant permission to use the project trademarks. You may cite, reference, and build upon this work freely, but derivative works should not use these names in ways that imply endorsement or official affiliation.
+
+---
+
+## 1 | Getting Started
+
+```bash
+git clone https://github.com/spectralbranding/sbt-papers
+cd sbt-papers
+```
+
+For a specific paper, navigate to its slug directory and read its local `paper.md` (or `README.md` if shipped) for paper-specific setup, dependencies, and reproduction instructions:
+
+```bash
+cd r7-spectral-resource-allocation
+cat paper.md
+```
+
+Python tooling at the hub level uses `uv` (Python 3.12+). Install via `curl -LsSf https://astral.sh/uv/install.sh | sh`.
+
+## 2 | Project Layout
+
+This is a hub repository: each top-level subdirectory is a self-contained per-paper bundle named by paper slug (e.g., `spectral-brand-theory/`, `r0-literature-survey/`, `prism-instrument/`). Every paper-slug directory ships its own `paper.md`, `CITATION.cff`, license files, and (where applicable) `reproduce.sh` plus `output/` artifacts. The hub root provides the index (this README), the hub-level citation metadata (`CITATION.cff`), shared license declarations, and an iterating reproduction orchestrator.
+
+```
+sbt-papers/
+├── CITATION.cff          # hub-level citation
+├── LICENSE               # MIT (code)
+├── LICENSE-data          # CC BY 4.0 (data / figures / tables)
+├── README.md             # this file
+├── pyproject.toml        # hub project anchor
+├── reproduce.sh          # hub orchestrator: iterates each paper slug
+├── output/{figures,tables,logs}/
+└── <paper-slug>/         # one directory per paper (see Papers tables above)
+    ├── paper.md
+    ├── CITATION.cff
+    └── ...
+```
+
+## 3 | Quick Start
+
+Each paper-slug subdirectory that ships a computational pipeline includes its own `reproduce.sh`. The hub-level `./reproduce.sh` iterates every paper slug, invoking each slug's `reproduce.sh` if present and executable:
+
+```bash
+./reproduce.sh                # iterate all paper slugs
+./reproduce.sh --check-only   # verify per-slug dependency blocks only
+./reproduce.sh --fast         # pass --fast through to per-slug scripts
+```
+
+Hub-level run log lands in `output/logs/hub_run.log`. Per-paper outputs land under `<paper-slug>/output/` per the per-paper standard. Pure-theory papers without pipelines are skipped silently.
+
+## 4 | Dependencies
+
+The hub itself has no Python runtime dependencies — the orchestrator only iterates subdirectories and invokes their scripts. Each paper-slug subdirectory declares its own dependencies in its local `pyproject.toml` or equivalent. The hub's `pyproject.toml` exists as a project root anchor; the standard `uv` (Python 3.12+) toolchain is the only hub-level requirement.
+
+## 5 | Citation
+
+To cite the hub repository itself, see `CITATION.cff` at the root (GitHub renders a "Cite this repository" button). To cite an individual paper, use that paper's concept DOI from the tables above; full BibTeX entries are also listed in the "How to Cite" section earlier in this README, and each paper slug ships its own `CITATION.cff`.
+
+Concept DOIs always point to the latest version of a paper. Per-version DOIs (immutable) are recorded in each paper slug's `CITATION.cff` and in the corresponding Zenodo record.
+
+## 7 | Licence
+
+- **Code** — MIT License (see [`LICENSE`](LICENSE)). Applies to scripts, configurations, and computational artifacts.
+- **Data, figures, tables, rendered artifacts** — Creative Commons Attribution 4.0 International (CC BY 4.0; see [`LICENSE-data`](LICENSE-data)).
+- **Trademarks** — "Spectral Brand Theory" and "Brand Code" are trademarks of Dmitry Zharnikov; see the Trademarks section above.
+
+Per-paper subdirectories inherit the dual-license discipline. Where a paper slug has its own `LICENSE` / `LICENSE-data`, those override the hub defaults for that paper only.
+
+*Last updated: 2026-05-29*
