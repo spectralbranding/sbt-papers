@@ -6,7 +6,7 @@
 
 **Restoring Perceptual Separability After Coherence Shocks: A μ > λ Threshold Inequality in Brand Perception**
 
-Citation key: `2026ad` | Zenodo DOI: [10.5281/zenodo.19778549](https://doi.org/10.5281/zenodo.19778549) | Working Paper v1.0.0 (Apr 26, 2026) | Target venue: Marketing Science
+Citation key: `2026ad` | Zenodo DOI: [10.5281/zenodo.19778549](https://doi.org/10.5281/zenodo.19778549) | Working Paper v1.0.0 (Apr 26, 2026)
 
 ## Summary
 
@@ -51,10 +51,6 @@ uv run --with statsmodels --with numpy --with scipy python3 monte_carlo_simulati
 ```
 
 Outputs are written to `monte_carlo_results.json` (32 cells × 2 regimes × 240-month horizon, seed 2026). Terminal spectral gap, IRF half-life, ADF stationarity statistics, and gap-collapse month are all in the JSON.
-
-## Target venue
-
-Marketing Science (INFORMS). AMA reference style. Double-anonymous review. Fallback: Marketing Letters.
 
 ## Relationship to other papers
 

@@ -34,10 +34,6 @@ This version incorporates bandwidth constraint formalization grounded in rate-di
 - **HuggingFace**: [spectralbranding/r20-portfolio-ai-perception](https://huggingface.co/datasets/spectralbranding/r20-portfolio-ai-perception) (9,925 observations)
 - **Zenodo**: [10.5281/zenodo.19765401](https://doi.org/10.5281/zenodo.19765401)
 
-## Target Venue
-
-Marketing Science (INFORMS)
-
 ## Relationship to R8 and R20
 
 This paper merges R8's theoretical framework (spectral interference formalism, awareness gate mechanism, portfolio archetypes) with R20's empirical data (9,925 observations across 40 brands and 13 models). R8 and R20 remain on Zenodo as historical records but are superseded by this merged paper.
