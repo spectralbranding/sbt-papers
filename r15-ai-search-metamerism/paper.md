@@ -6,7 +6,7 @@ ORCID: 0009-0000-6893-9231
 
 DOI: [10.5281/zenodo.19422427](https://doi.org/10.5281/zenodo.19422427)
 
-Working Paper v3.1 – April 2026
+Working Paper v3.2.0 – May 2026
 
 ---
 
@@ -49,7 +49,7 @@ This paper introduces the first dimensional measurement model and replicable mea
 
 ### Brand Perception as Multi-Dimensional Construct
 
-The idea that brands are perceived along multiple distinct dimensions is well established. Aaker (1997) identified five brand personality dimensions --- sincerity, excitement, competence, sophistication, and ruggedness --- showing that consumers attribute human-like trait structures to brands. Keller (1993) proposed a complementary architecture through customer-based brand equity (CBBE), in which brand knowledge is organized into brand awareness and brand image, the latter comprising a network of associations varying in favorability, strength, and uniqueness. Brakus, Schmitt, and Zarantonello (2009) shifted the focus from cognitive structures to lived encounters, identifying four brand experience dimensions --- sensory, affective, intellectual, and behavioral --- that capture how consumers process brand stimuli through direct interaction. Kapferer (2008; 2012) offered the brand identity prism, a six-facet model (physique, personality, culture, relationship, reflection, self-image) that integrates sender and receiver perspectives into a single diagnostic.
+The idea that brands are perceived along multiple distinct dimensions is well established. Aaker (1997) identified five brand personality dimensions --- sincerity, excitement, competence, sophistication, and ruggedness --- showing that consumers attribute human-like trait structures to brands. Keller (1993) proposed a complementary architecture through customer-based brand equity (CBBE), in which brand knowledge is organized into brand awareness and brand image, the latter comprising a network of associations varying in favorability, strength, and uniqueness. Brakus, Schmitt, and Zarantonello (2009) shifted the focus from cognitive structures to lived encounters, identifying four brand experience dimensions --- sensory, affective, intellectual, and behavioral --- that capture how consumers process brand stimuli through direct interaction. Kapferer (2012) offered the brand identity prism, a six-facet model (physique, personality, culture, relationship, reflection, self-image) that integrates sender and receiver perspectives into a single diagnostic.
 
 These frameworks have proven durable because each captures a genuine facet of brand perception: personality traits, knowledge structures, experiential processing, and identity architecture, respectively. Yet they share a common structural assumption: the observer is a human consumer. Personality dimensions describe how humans project traits onto brands. CBBE models how human memory organizes brand knowledge. Brand experience measures how human senses and cognition process brand stimuli. The identity prism maps how human self-concepts interact with brand signals. None of these frameworks models what happens when a non-human mediating system --- one that lacks embodied experience, cultural embeddedness, and temporal continuity --- processes brand signals before they reach the human consumer. As AI-mediated search displaces traditional information channels (Dawar and Bendle 2018; Hermann and Puntoni 2024), this gap becomes consequential: existing dimensional frameworks cannot predict *which* dimensions of brand perception survive mediation by a structurally different observer class.
 
@@ -108,7 +108,7 @@ Hypotheses 5 through 12, addressing cross-cultural variation, geopolitical frami
 
 ### Dimensional Collapse in Related Domains
 
-Dimensional collapse is not unique to brand perception. Hashimoto and Oshio (2025) demonstrate that Big Five personality structures compress to fewer factors when mediated through LLM response generation. Van Doren and Holland (2025) show that cultural figurative meaning is systematically stripped during machine translation, reducing high-dimensional cultural constructs to functional equivalents. Liu (2026) identifies an "alignment tax" whereby RLHF training produces 40-79% response homogenization across diverse prompts, amplifying majority-pattern outputs at the expense of minority patterns. Doshi and Hauser (2024) and De Freitas, Nave, and Puntoni (2025) provide complementary evidence that generative AI reduces collective diversity of novel content, indicating that homogenization effects operate not only within but across AI-mediated outputs. Sourati et al. (2026) theorize epistemic collapse in AI-mediated knowledge production, identifying a convergent mechanism structurally analogous to spectral metamerism. Hagendorff, Fabi, and Kosinski (2023) show that human-like cognitive biases emerge in LLMs and can be modified by alignment training, suggesting that dimensional bias may be partly an artifact of training optimization rather than an inherent architectural constraint. These findings converge on a prediction: LLM-mediated brand perception should systematically over-weight quantifiable dimensions (Economic, Experiential) and under-weight perception-dependent dimensions (Cultural, Temporal, Narrative).
+Dimensional collapse is not unique to brand perception. Hashimoto and Oshio (2025) demonstrate that Big Five personality structures compress to fewer factors when mediated through LLM response generation. Van Doren and Holland (2025) show that cultural figurative meaning is systematically stripped during machine translation, reducing high-dimensional cultural constructs to functional equivalents. Liu (2026) identifies an "alignment tax" whereby RLHF training produces 40-79% response homogenization across diverse prompts, amplifying majority-pattern outputs at the expense of minority patterns. Doshi and Hauser (2024) and De Freitas, Nave, and Puntoni (2025) provide complementary evidence that generative AI reduces collective diversity of novel content, indicating that homogenization effects operate not only within but across AI-mediated outputs. Sourati et al. (2026) theorize epistemic collapse in AI-mediated knowledge production, identifying a convergent mechanism structurally analogous to spectral metamerism. Hagendorff, Fabi, and Kosinski (2023) show that human-like cognitive biases emerge in LLMs and can be modified by alignment training, suggesting that dimensional bias may be partly an artifact of training optimization rather than an inherent architectural constraint. Peng et al. (2025) document five systematic distortions in LLM-generated digital twins of human respondents --- insufficient individuation, stereotyping, representation bias, ideological bias, and hyper-rationality --- converging on an average human-twin correlation of $r \approx .20$ across 19 pre-registered studies; the five distortions are five faces of one underlying rank-collapse in the LLM-as-instrument, the same instrument-failure signature documented here for brand-perception elicitation, here applied to person-perception. Park et al. (2024) show that LLM agents grounded in two-hour structured self-report interviews reach 83% of two-week test-retest consistency on held-out General Social Survey items versus 74% for a demographics-only baseline --- a 9-percentage-point gain attributable to depth-of-prompt-context, evidencing that LLM-as-instrument output is highly dependent on input-substrate richness rather than model identity. Bai et al. (2025) report that persona-detail dominates model scale in simulation fidelity across multiple model families, directly evidencing the present study's instrument-configuration-not-model-choice framing. Bao et al. (2026) document that alignment training distorts LLM behavior in tail conditions, supplying a structural mechanism for the present study's claim that LLM-as-instrument biases are training-induced rather than transient architectural artifacts. These findings converge on a prediction: LLM-mediated brand perception should systematically over-weight quantifiable dimensions (Economic, Experiential) and under-weight perception-dependent dimensions (Cultural, Temporal, Narrative).
 
 ### Implications for Search Advertising Theory
 
@@ -457,7 +457,7 @@ Ten supplementary experiments extend and robustify the core findings. Temperatur
 
 ### Connection to Broader Trends
 
-The dimensional collapse documented here is not unique to brands. Personality perception by AI shows analogous flattening (Hashimoto and Oshio 2025), and cultural nuance in machine translation shows analogous loss (Van Doren and Holland 2025). Representation collapse is also a central challenge in self-supervised learning: Joint-Embedding Predictive Architectures (JEPAs) suffer from an analogous failure mode in which encoders map structurally distinct inputs to near-identical latent representations, requiring explicit regularization to maintain dimensional diversity (Maes et al. 2026). The parallel is structural: both phenomena arise when a system optimizes a prediction objective without a constraint that forces it to preserve the full dimensionality of its input space. The SBT framework provides a general instrument for measuring this collapse across domains: the methodological approach --- measuring the implicit spectral profile of an AI system by analyzing which dimensions it preserves in its outputs --- is domain-general.
+The dimensional collapse documented here is not unique to brands. Personality perception by AI shows analogous flattening (Hashimoto and Oshio 2025), and cultural nuance in machine translation shows analogous loss (Van Doren and Holland 2025). Representation collapse is also a central challenge in self-supervised learning: Joint-Embedding Predictive Architectures (JEPAs) suffer from an analogous failure mode in which encoders map structurally distinct inputs to near-identical latent representations, requiring explicit regularization to maintain dimensional diversity (Maes et al. 2026). The parallel is structural: both phenomena arise when a system optimizes a prediction objective without a constraint that forces it to preserve the full dimensionality of its input space. The SBT framework provides a general instrument for measuring this collapse across domains: the methodological approach --- measuring the implicit spectral profile of an AI system by analyzing which dimensions it preserves in its outputs --- is domain-general. The aggregate-good / individual-bad asymmetry the present study documents at the perceptual level mirrors Hewitt et al. (2024), who report that LLM-based predictions of social-science experimental outcomes reach aggregate-treatment-effect correlations of $r \approx .85$--$.90$ while individual-level fidelity remains markedly lower --- the textbook low-rank-projection signature of an instrument that passes aggregate-level tests precisely because the compressed dimensions align with the marginal of the full-dimensional distribution.
 
 The perceptual collapse documented in the present study also represents one of two independent failure modes in AI-mediated commerce. The second is task failure: even the best-performing AI shopping agents achieve only 30% holistic task success on complex product discovery queries (Lyu et al. 2025). These failure modes are structurally orthogonal: an agent can locate the correct product while systematically misrepresenting the brand's narrative, cultural, and temporal dimensions, and an agent with perfect perceptual fidelity can still fail to navigate website filters. AI shopping agents face a dual remediation challenge: structured product data and improved navigation capabilities address task failure, while Brand Function specifications and structured dimensional encoding address perceptual failure. Neither intervention addresses the other's failure mode, and both are required for AI-mediated commerce to function at the level consumers and brands expect.
 
@@ -501,6 +501,10 @@ Aaker, Jennifer L. (1997). Dimensions of brand personality. *Journal of Marketin
 
 Acar, Oguz A., and David A. Schweidel (2026). Preparing your brand for agentic AI. *Harvard Business Review*, March-April 2026.
 
+Bai, Yuqi, et al. (2025). Scaling law in LLM simulated personality: More detailed and realistic persona profile is all you need. arXiv:2510.11734. https://arxiv.org/abs/2510.11734
+
+Bao, Han, et al. (2026). AI alignment breaks at the edge. arXiv:2602.20042. https://arxiv.org/abs/2602.20042
+
 Brakus, J. Joško, Bernd H. Schmitt, and Lia Zarantonello (2009). Brand experience: What is it? How is it measured? Does it affect loyalty? *Journal of Marketing*, 73(3), 52-68. https://doi.org/10.1509/jmkg.73.3.052
 
 Castelo, Noah, Bram Van den Bergh, and Donald R. Lehmann (2019). Task-dependent algorithm aversion. *Journal of Marketing Research*, 56(5), 809-825. https://doi.org/10.1177/0022243719851788
@@ -519,7 +523,7 @@ Efron, Bradley, and Carl Morris (1975). Data analysis using Stein's estimator an
 
 Erdem, Tülin, and Joffre Swait (1998). Brand equity as a signaling phenomenon. *Journal of Consumer Psychology*, 7(2), 131-157.
 
-Gersho, Allen, and Robert M. Gray (1991). *Vector Quantization and Signal Compression*. The Kluwer International Series in Engineering and Computer Science, Vol. 159. Kluwer Academic Publishers. https://doi.org/10.1007/978-1-4615-3626-0
+Gersho, Allen, and Robert M. Gray (1991). *Vector Quantization and Signal Compression*. The Springer International Series in Engineering and Computer Science, Vol. 159. Springer New York. ISBN 978-0-7923-9181-4. https://doi.org/10.1007/978-1-4615-3626-0
 
 Grier, Sonya A., and Anne M. Brumbaugh (1999). Noticing cultural differences: Ad meanings created by target and non-target markets. *Journal of Advertising*, 28(1), 79-93.
 
@@ -531,6 +535,8 @@ Hatch, Mary Jo, and Majken Schultz (2010). Toward a theory of brand co-creation 
 
 Hermann, Erik, and Stefano Puntoni (2024). Artificial intelligence and consumer behavior: From predictive to generative AI. *Journal of Business Research*, 180, 114720. https://doi.org/10.1016/j.jbusres.2024.114720
 
+Hewitt, Luke, Ashwini Ashokkumar, Isaias Ghezae, and Robb Willer (2024). Predicting results of social science experiments using large language models. Working Paper. Demo at https://treatmenteffect.app.
+
 Hermann, Erik, Stefano Puntoni, and David A. Schweidel (2026). Trusting AI Agents: Uncertainty Reduction by Design. Working Paper, SSRN. https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6103206
 
 Huang, Ming-Hui, and Roland T. Rust (2021). A strategic framework for artificial intelligence in marketing. *Journal of the Academy of Marketing Science*, 49(1), 30-50. https://doi.org/10.1007/s11747-020-00749-9
@@ -539,13 +545,11 @@ James, William, and Charles Stein (1961). Estimation with quadratic loss. *Proce
 
 Johnson, William B., and Joram Lindenstrauss (1984). Extensions of Lipschitz mappings into a Hilbert space. In *Contemporary Mathematics* (Vol. 26, pp. 189-206). American Mathematical Society. https://doi.org/10.1090/conm/026/737400
 
-Kapferer, Jean-Noël (2008). *The New Strategic Brand Management: Creating and Sustaining Brand Equity Long Term* (4th ed.). Kogan Page.
-
-Kapferer, Jean-Noël (2012). *The New Strategic Brand Management: Advanced Insights and Strategic Thinking* (5th ed.). Kogan Page.
+Kapferer, Jean-Noël (2012). *The New Strategic Brand Management: Advanced Insights and Strategic Thinking* (5th ed.). Kogan Page. ISBN 978-0-7494-6515-5.
 
 Keller, Kevin Lane (1993). Conceptualizing, measuring, and managing customer-based brand equity. *Journal of Marketing*, 57(1), 1-22.
 
-Li, Yi, Sandra Castelo, Zsolt Katona, and Miklos Sarvary (2024). Determining the validity of large language models for automated perceptual analysis. *Marketing Science*, 43(2), 254-266.
+Li, Peiyao, Noah Castelo, Zsolt Katona, and Miklos Sarvary (2024). Determining the validity of large language models for automated perceptual analysis. *Marketing Science*, 43(2), 254-266. https://doi.org/10.2139/ssrn.4241291
 
 Liu, Mingfu (2026). The alignment tax: Response homogenization in aligned LLMs and its implications for uncertainty estimation. arXiv:2603.24124. https://arxiv.org/abs/2603.24124
 
@@ -559,9 +563,13 @@ Maes, Léon, Quentin Le Lidec, Damien Scieur, Yann LeCun, and Randall Balestrier
 
 Park, C. Whan, Deborah J. MacInnis, and Andreas B. Eisingerich (2016). *Brand Admiration: Building a Business People Love*. Wiley.
 
+Park, Joon Sung, Carolyn Q. Zou, Aaron Shaw, Benjamin Mako Hill, Carrie Cai, Meredith Ringel Morris, Robb Willer, Percy Liang, and Michael S. Bernstein (2024). Generative agent simulations of 1,000 people: LLM agents grounded in self-reports enable general-purpose simulation of individuals. arXiv:2411.10109. https://arxiv.org/abs/2411.10109
+
+Peng, Tianyi, et al. (2025). Digital twins are funhouse mirrors: Five systematic distortions in LLM-generated person-perception. arXiv:2509.19088. https://arxiv.org/abs/2509.19088
+
 Puntoni, Stefano, Rebecca Walker Reczek, Markus Giesler, and Simona Botti (2021). Consumers and artificial intelligence: An experiential perspective. *Journal of Marketing*, 85(1), 131-151.
 
-Sabbah, Jamil, and Oguz A. Acar (2026). Marketing to machines: How AI models respond to promotional cues. Working Paper, SSRN. https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6406639
+Sabbah, Jafar, and Oguz A. Acar (2026). Marketing to machines: How AI models respond to promotional cues. Working Paper, SSRN. https://doi.org/10.2139/ssrn.6406639
 
 Shannon, Claude E. (1959). Coding theorems for a discrete source with a fidelity criterion. *IRE National Convention Record*, 7(Part 4), 142-163.
 
@@ -577,7 +585,7 @@ Wedel, Michel, and Wagner A. Kamakura (2000). *Market Segmentation: Conceptual a
 
 Wedel, Michel, and P. K. Kannan (2016). Marketing analytics for data-rich environments. *Journal of Marketing*, 80(6), 97-121. https://doi.org/10.1509/jm.15.0413
 
-Wyszecki, Günther, and Walter S. Stiles (1982). *Color Science: Concepts and Methods, Quantitative Data and Formulae* (2nd ed.). Wiley.
+Wyszecki, Günther, and W. S. Stiles (1982). *Color Science: Concepts and Methods, Quantitative Data and Formulae* (2nd ed.). Wiley. ISBN 978-0-471-39918-6 (2000 Wiley-Interscience reprint).
 
 Zharnikov, Dmitry (2026a). Spectral Brand Theory: A multi-dimensional framework for brand perception analysis. Working Paper. https://doi.org/10.5281/zenodo.18945912
 
@@ -608,7 +616,7 @@ The eight dimensions represent structurally distinct categories of brand signal.
 | 7 | **Cultural** | Geographic, subcultural, or heritage embeddedness; cultural codes |
 | 8 | **Temporal** | Heritage depth, longevity, stability, historical continuity |
 
-This taxonomy builds on established frameworks in brand research. Aaker's (1991) foundational equity model identifies brand awareness and brand associations as the core assets through which brands create value in consumer memory; SBT's eight-dimensional framework refines the associations construct, decomposing it into typed emission channels rather than treating it as a unitary cognitive category. Kapferer's (2008) Brand Identity Prism organizes brand identity across six facets -- physique, personality, culture, relationship, reflection, and self-image; SBT's Cultural and Temporal dimensions subsume and extend Kapferer's culture facet. Aaker's (1997) five brand personality dimensions (sincerity, excitement, competence, sophistication, ruggedness) capture anthropomorphic brand attribution; SBT's dimensions capture what brands emit as perceptual inputs, not how consumers project personality onto them. Brakus, Schmitt, and Zarantonello's (2009) brand experience scale (sensory, affective, intellectual, behavioral) is subsumed within SBT's Experiential dimension as one of eight emission channels.
+This taxonomy builds on established frameworks in brand research. Aaker's (1991) foundational equity model identifies brand awareness and brand associations as the core assets through which brands create value in consumer memory; SBT's eight-dimensional framework refines the associations construct, decomposing it into typed emission channels rather than treating it as a unitary cognitive category. Kapferer's (2012) Brand Identity Prism organizes brand identity across six facets -- physique, personality, culture, relationship, reflection, and self-image; SBT's Cultural and Temporal dimensions subsume and extend Kapferer's culture facet. Aaker's (1997) five brand personality dimensions (sincerity, excitement, competence, sophistication, ruggedness) capture anthropomorphic brand attribution; SBT's dimensions capture what brands emit as perceptual inputs, not how consumers project personality onto them. Brakus, Schmitt, and Zarantonello's (2009) brand experience scale (sensory, affective, intellectual, behavioral) is subsumed within SBT's Experiential dimension as one of eight emission channels.
 
 ### A.3 Brand Emission Profile
 
