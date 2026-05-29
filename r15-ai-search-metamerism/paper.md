@@ -116,9 +116,9 @@ If the hypotheses are supported, the implications for search advertising theory 
 
 ### Mechanism Summary
 
-Figure 1 summarises the proposed causal chain that yields the dimensional collapse documented in §Results. Text-conditioned training data is dimensionally non-uniform with respect to brand signals (Economic and Experiential attributes are densely encoded; Cultural, Temporal, Ideological, and Narrative attributes are sparsely encoded). Encoders trained on such data therefore inherit a low-rank perception subspace in which only the densely-encoded directions retain effective variance. PRISM-B reads out the subspace as an implicit weight vector; the verifiability concentration is summarised by the Dimensional Collapse Index; and because all text-conditioned encoders are trained on overlapping corpora, the subspace is shared, producing the cross-model cosine convergence reported in §Results.
+The flowchart below summarises the proposed causal chain that yields the dimensional collapse documented in §Results. Text-conditioned training data is dimensionally non-uniform with respect to brand signals (Economic and Experiential attributes are densely encoded; Cultural, Temporal, Ideological, and Narrative attributes are sparsely encoded). Encoders trained on such data therefore inherit a low-rank perception subspace in which only the densely-encoded directions retain effective variance. PRISM-B reads out the subspace as an implicit weight vector; the verifiability concentration is summarised by the Dimensional Collapse Index; and because all text-conditioned encoders are trained on overlapping corpora, the subspace is shared, producing the cross-model cosine convergence reported in §Results.
 
-```mermaid
+``` {.mermaid width=45%}
 flowchart TD
     A[LLM training corpora<br/>text-only, web-scale]
     B[Encoder bottleneck<br/>verifiability-biased<br/>training signal]
@@ -134,7 +134,7 @@ flowchart TD
     E --> F
 ```
 
-*Figure 1: Mechanism of dimensional collapse in LLM-mediated brand perception. Sparse encoding of perception-dependent dimensions in training corpora produces a low-rank perception subspace shared across architectures, observed empirically as elevated DCI and near-unity cross-model cosine.*
+**Figure 1: Mechanism of dimensional collapse in LLM-mediated brand perception.** Sparse encoding of perception-dependent dimensions in training corpora produces a low-rank perception subspace shared across architectures, observed empirically as elevated DCI and near-unity cross-model cosine.
 
 ---
 
