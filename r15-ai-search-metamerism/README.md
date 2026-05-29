@@ -1,3 +1,7 @@
+[![MIT License](https://img.shields.io/badge/Code-MIT-blue.svg)](../LICENSE)
+[![CC-BY 4.0](https://img.shields.io/badge/Data-CC--BY_4.0-lightgrey.svg)](../LICENSE-data)
+![Last Updated](https://img.shields.io/badge/updated-2026--05--29-success)
+
 # R15: Dimensional Collapse in AI-Mediated Brand Perception: Large Language Models as Metameric Observers
 
 **Citation key**: 2026v | **DOI**: [10.5281/zenodo.19422427](https://doi.org/10.5281/zenodo.19422427) | **Dataset DOI**: [10.57967/hf/8284](https://doi.org/10.57967/hf/8284) | **Status**: Empirical results complete (21,350 core API calls across 10 runs, 24 LLMs from 7 training traditions, 16 prompt languages, 999 native-language calls; supplementary Runs 11-14 + Experiments A-E add ~10,000 further calls including agentic pipeline compounding, cross-language dimensional semantics, competitive interference, BF format optimization, and primacy effect generalization)
@@ -210,3 +214,49 @@ See [experiment README](experiment/README.md#run-it-on-your-own-brands) for a st
 ## License
 
 CC-BY-NC-ND-4.0 (paper content). MIT License (code in `experiment/`).
+
+---
+
+## 1 | Paper
+
+- Manuscript: [paper.md](paper.md)
+- Version: 1.4.0
+- Zenodo DOI: [10.5281/zenodo.19422427](https://doi.org/10.5281/zenodo.19422427)
+
+## 2 | Companion Data
+
+Companion HuggingFace dataset: [r15-ai-search-metamerism](https://huggingface.co/datasets/spectralbranding/r15-ai-search-metamerism) — DOI [10.57967/hf/8284](https://doi.org/10.57967/hf/8284) (21,350 records, the core R15 dataset).
+
+See also the [experiment/](experiment/) directory for raw artifacts (L3 JSONL session logs, L4 analysis outputs, validation checksums).
+
+## 3 | Reproduction
+
+The computational pipeline lives in [experiment/](experiment/); see [experiment/README.md](experiment/README.md) for the full L0-L4 cascade.
+
+Result snapshots at repository root:
+
+- `results_v2_global.json` — Run 2 aggregated results (global brand pairs)
+- `results_v3_local.json` — Run 3 aggregated results (local brand pairs)
+- `results_v4_resolution.json` — Run 4 aggregated results (Brand Function resolution test)
+
+The hub-level orchestrator at [../reproduce.sh](../reproduce.sh) iterates across all paper slugs.
+
+## 4 | Citation
+
+```bibtex
+@article{zharnikov2026v,
+  author = {Zharnikov, Dmitry},
+  title  = {Dimensional Collapse in AI-Mediated Brand Perception: Large Language Models as Metameric Observers},
+  year   = {2026},
+  doi    = {10.5281/zenodo.19422427}
+}
+```
+
+Machine-readable: [CITATION.cff](CITATION.cff).
+
+## 5 | Licence
+
+Code: MIT — slug-local [LICENSE](LICENSE) + hub-level [../LICENSE](../LICENSE).
+Data, figures, tables: CC BY 4.0 — see hub-level [../LICENSE-data](../LICENSE-data).
+
+*Last updated: 2026-05-29*
