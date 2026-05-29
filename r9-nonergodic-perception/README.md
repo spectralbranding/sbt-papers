@@ -1,6 +1,10 @@
+[![MIT License](https://img.shields.io/badge/Code-MIT-blue.svg)](../LICENSE)
+[![CC-BY 4.0](https://img.shields.io/badge/Data-CC--BY_4.0-lightgrey.svg)](../LICENSE-data)
+![Last Updated](https://img.shields.io/badge/updated-2026--05--29-success)
+
 # R9: Non-Ergodic Brand Perception
 
-**Paper**: Non-Ergodic Brand Perception: Why Cross-Sectional Brand Tracking Systematically Misrepresents Individual Trajectories
+**Paper**: From Order Effects to Absorbing States: A Non-Ergodic Framework for Multi-Dimensional Brand Perception Dynamics
 
 **Author**: Dmitry Zharnikov
 
@@ -40,3 +44,69 @@ This paper uses the R15 empirical dataset as an anchor (Zharnikov 2026v, 21,601 
 ## License
 
 CC-BY-4.0
+
+---
+
+## 1 | Getting Started
+
+This paper-slug directory lives inside the `sbt-papers` hub repository. Clone the hub and `cd` into this slug:
+
+```bash
+git clone https://github.com/spectralbranding/sbt-papers.git
+cd sbt-papers/r9-nonergodic-perception
+```
+
+Environment setup (Python 3.12 + `uv`) is anchored at the hub root. See hub-level `pyproject.toml` and `reproduce.sh`.
+
+## 2 | Project Layout
+
+```
+r9-nonergodic-perception/
+├── README.md                  # this file
+├── paper.md                   # full paper (v2.3)
+├── paper.yaml                 # machine-readable paper spec
+├── CITATION.cff               # citation metadata
+├── CONTRIBUTORS.yaml          # contributor attribution
+├── PROVENANCE.yaml            # version + submission history
+├── DATA_MANIFEST.yaml         # data sources
+└── code/
+    └── simulate_absorption.py # companion computation script (Tables 2, 3)
+```
+
+No companion dataset for this paper. R15 empirical dataset is referenced as an external anchor only — see DATA_MANIFEST.yaml.
+
+## 3 | Quick Start
+
+Reproduce Tables 2 and 3 (discrete-time absorbing Markov chain simulation, seed 42, 1000 observers, 6 periods):
+
+```bash
+cd code
+uv run python simulate_absorption.py
+```
+
+Hub-level reproduction (all slugs) is orchestrated from the hub root.
+
+## 4 | Dependencies
+
+- Python 3.12
+- `numpy`
+
+Pinned at the hub root `pyproject.toml`. Install with `uv sync` from hub root.
+
+## 5 | Script Map
+
+| Script | Reproduces |
+|---|---|
+| `code/simulate_absorption.py` | Table 2, Table 3 |
+
+## 6 | Citation
+
+Zharnikov, D. (2026). *From Order Effects to Absorbing States: A Non-Ergodic Framework for Multi-Dimensional Brand Perception Dynamics*. Working Paper v2.3. DOI: [10.5281/zenodo.19138860](https://doi.org/10.5281/zenodo.19138860).
+
+Machine-readable citation: see `CITATION.cff` in this directory.
+
+## 7 | Licence
+
+Code (if any): MIT — see hub-level [../LICENSE](../LICENSE). Data, figures, tables: CC BY 4.0 — see hub-level [../LICENSE-data](../LICENSE-data).
+
+*Last updated: 2026-05-29*
