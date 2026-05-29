@@ -1,3 +1,7 @@
+[![MIT License](https://img.shields.io/badge/Code-MIT-blue.svg)](LICENSE)
+[![CC-BY 4.0](https://img.shields.io/badge/Data-CC--BY_4.0-lightgrey.svg)](LICENSE-data)
+![Last Updated](https://img.shields.io/badge/updated-2026--05--29-success)
+
 # R20: Does Corporate Ownership Matter to AI? Portfolio Interference in Large Language Model Brand Perception
 
 > **SUPERSEDED by [R21 (2026ac): Spectral Immunity: Why Brand Portfolio Interference Disappears for AI Observers](../r21-spectral-immunity/README.md)** — DOI [10.5281/zenodo.19765401](https://doi.org/10.5281/zenodo.19765401). R21 merges R20 empirical with R8 theory into a single analytical–empirical paper. R20 retained for archival purposes only; new citations should reference R21.
@@ -61,3 +65,68 @@ uv run python analyze_portfolio.py
 ## License
 
 CC BY-NC-ND 4.0
+
+---
+
+## 1 | Getting Started
+
+This mirror archives the R20 paper sources, experiment scripts, and analysis pipeline. Python 3.12 with `uv` is required. Clone the repository, then resolve dependencies and run the orchestration commands from §3 below.
+
+**Status**: Superseded by R21 (2026ac). See banner at top of this README.
+
+## 2 | Project Layout
+
+```
+r20-portfolio-ai/
+├── paper.md                  # paper source
+├── paper.yaml                # structured paper spec
+├── CITATION.cff              # machine-readable citation
+├── CONTRIBUTORS.yaml         # contributor roles
+├── DATA_MANIFEST.yaml        # dataset manifest
+├── PROVENANCE.yaml           # provenance trail
+├── run_portfolio.py          # experiment runner
+├── analyze_portfolio.py      # statistical analysis
+├── responses/                # raw LLM response files
+└── results/                  # processed experiment results
+```
+
+Companion dataset is mirrored at Hugging Face: [10.57967/hf/8380](https://doi.org/10.57967/hf/8380).
+
+## 3 | Quick Start
+
+```bash
+uv run python run_portfolio.py             # collect responses
+uv run python run_portfolio.py --ablation  # native-language ablation arm
+uv run python analyze_portfolio.py         # produce statistics
+```
+
+## 4 | Dependencies
+
+Python 3.12 with `uv`. LLM API access requires provider keys (OpenAI, Anthropic, Google, xAI, Mistral, DeepSeek, Yandex, Sarvam, etc.) supplied via environment variables; no keys are committed to this mirror.
+
+## 5 | Script Map
+
+| Script | Output |
+|---|---|
+| `run_portfolio.py` | `responses/` raw LLM completions per brand × model × condition |
+| `run_portfolio.py --ablation` | `responses/` native-language ablation completions |
+| `analyze_portfolio.py` | `results/` DCI, TOST equivalence, FDR-adjusted effect tables |
+
+## 6 | Citation
+
+```
+Zharnikov, D. (2026ab). Does Corporate Ownership Matter to AI? Portfolio
+Interference in Large Language Model Brand Perception. Working Paper v1.1.1.
+https://doi.org/10.5281/zenodo.19555282
+```
+
+Machine-readable citation: see `CITATION.cff` at repository root. New citations should reference R21 (2026ac, DOI 10.5281/zenodo.19765401) per the supersession notice above.
+
+## 7 | Licence
+
+- Code: MIT (see `LICENSE`)
+- Data, figures, tables, paper text: CC BY 4.0 (see `LICENSE-data`)
+
+Paper-level license declared in `CITATION.cff` (CC BY-NC-ND 4.0) reflects the Zenodo archived version; this mirror's code and reproduction artefacts follow the dual-license discipline above.
+
+*Last updated: 2026-05-29*

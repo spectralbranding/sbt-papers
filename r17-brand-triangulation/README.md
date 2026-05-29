@@ -1,4 +1,8 @@
-# R17: Brand Triangulation
+[![MIT License](https://img.shields.io/badge/Code-MIT-blue.svg)](../LICENSE)
+[![CC-BY 4.0](https://img.shields.io/badge/Data-CC--BY_4.0-lightgrey.svg)](../LICENSE-data)
+![Last Updated](https://img.shields.io/badge/updated-2026--05--29-success)
+
+# Brand Triangulation: A Geometric Framework for Multi-Observer Brand Positioning
 
 **Paper**: Brand Triangulation: A Geometric Framework for Multi-Observer Brand Positioning
 
@@ -38,3 +42,44 @@ This paper reanalyzes R15 experiment data (Runs 2-4: 4,860 API calls, 6 LLMs, 15
 ## License
 
 CC-BY-4.0
+
+---
+
+## 1 | Paper
+
+- Manuscript: [paper.md](paper.md)
+- Version: 1.4.0
+- DOI: [10.5281/zenodo.19482547](https://doi.org/10.5281/zenodo.19482547)
+
+## 2 | Companion Data
+
+No companion dataset for this paper. Numerical demonstrations reanalyze R15 data: see `../r15-ai-search-metamerism/experiment/`.
+
+## 3 | Reproduction
+
+Companion computation lives under `code/` and `simulation/`:
+
+- `code/compute_pdop_rmse.py` — Figure 2 PDOP-vs-RMSE log-log scatter; outputs `code/pdop_rmse.csv` and `code/figure2_pdop_rmse.png`
+- `simulation/` — Monte Carlo PDOP validation supporting §9.6
+- `experiment/L0_specification/`, `experiment/L4_analysis/` — specification and analysis artifacts
+
+Run the PDOP script directly with Python 3.12 (see script docstring for the canonical run command).
+
+## 4 | Citation
+
+```bibtex
+@misc{zharnikov2026r17,
+  author = {Zharnikov, Dmitry},
+  title  = {Brand Triangulation: A Geometric Framework for Multi-Observer Brand Positioning},
+  year   = {2026},
+  doi    = {10.5281/zenodo.19482547}
+}
+```
+
+Machine-readable: [CITATION.cff](CITATION.cff).
+
+## 5 | Licence
+
+Code (if any): MIT — see hub-level [../LICENSE](../LICENSE). Data, figures, tables: CC BY 4.0 — see hub-level [../LICENSE-data](../LICENSE-data).
+
+*Last updated: 2026-05-29*
