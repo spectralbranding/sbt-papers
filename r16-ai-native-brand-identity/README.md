@@ -1,3 +1,7 @@
+[![MIT License](https://img.shields.io/badge/Code-MIT-blue.svg)](../LICENSE)
+[![CC-BY 4.0](https://img.shields.io/badge/Data-CC--BY_4.0-lightgrey.svg)](../LICENSE-data)
+![Last Updated](https://img.shields.io/badge/updated-2026--05--29-success)
+
 # R16: AI-Native Brand Identity
 
 **Paper**: AI-Native Brand Identity: From Visual Recognition to Cryptographic Verification
@@ -111,3 +115,51 @@ python behavioral_metamerism_pilot.py --live --runs 3
 ## License
 
 MIT (code); CC-BY-4.0 (paper content)
+
+---
+
+## 1 | Paper
+
+See [paper.md](paper.md). Working Paper v1.4.0 (paper.yaml) / v1.8.1 (paper.md header). DOI: [10.5281/zenodo.19391476](https://doi.org/10.5281/zenodo.19391476).
+
+Title: *AI-Native Brand Identity: From Visual Recognition to Cryptographic Verification*.
+
+## 2 | Companion Data
+
+No companion dataset for this paper. The behavioral metamerism pilot's raw session logs, prompts, and results are bundled in-repo under `experiment/` (see Section 3).
+
+## 3 | Reproduction
+
+Code is present under `experiment/`. The pilot script is `experiment/behavioral_metamerism_pilot.py`; dependencies in `experiment/requirements.txt`.
+
+```bash
+cd experiment
+pip install -r requirements.txt
+export ANTHROPIC_API_KEY=...
+export OPENAI_API_KEY=...
+export GOOGLE_API_KEY=...
+export DEEPSEEK_API_KEY=...
+python behavioral_metamerism_pilot.py --live --runs 3
+```
+
+Local models (Qwen3 30B, Gemma 4 27B) require a running Ollama instance. Pre-registration: `experiment/L0_specification/protocol.md`. Session logs: `experiment/L3_sessions/session_log.jsonl`.
+
+## 4 | Citation
+
+```bibtex
+@article{zharnikov2026x,
+  title={AI-Native Brand Identity: From Visual Recognition to Cryptographic Verification},
+  author={Zharnikov, Dmitry},
+  year={2026},
+  doi={10.5281/zenodo.19391476},
+  url={https://doi.org/10.5281/zenodo.19391476}
+}
+```
+
+Machine-readable: [CITATION.cff](CITATION.cff).
+
+## 5 | Licence
+
+Code (if any): MIT — see hub-level [../LICENSE](../LICENSE). Data, figures, tables: CC BY 4.0 — see hub-level [../LICENSE-data](../LICENSE-data).
+
+*Last updated: 2026-05-29*
