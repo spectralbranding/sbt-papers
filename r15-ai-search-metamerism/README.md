@@ -4,7 +4,7 @@
 
 # R15: Dimensional Collapse in AI-Mediated Brand Perception: Large Language Models as Metameric Observers
 
-**Citation key**: 2026v | **DOI**: [10.5281/zenodo.19422427](https://doi.org/10.5281/zenodo.19422427) | **Dataset DOI**: [10.57967/hf/8284](https://doi.org/10.57967/hf/8284) | **Status**: Empirical results complete (21,350 core API calls across 10 runs, 24 LLMs from 7 training traditions, 16 prompt languages, 999 native-language calls; supplementary Runs 11-14 + Experiments A-E add ~10,000 further calls including agentic pipeline compounding, cross-language dimensional semantics, competitive interference, BF format optimization, and primacy effect generalization)
+**Citation key**: 2026v | **Concept DOI**: [10.5281/zenodo.19422427](https://doi.org/10.5281/zenodo.19422427) (latest version) | **v3.2.0 DOI**: [10.5281/zenodo.20448605](https://doi.org/10.5281/zenodo.20448605) | **Dataset DOI**: [10.57967/hf/8284](https://doi.org/10.57967/hf/8284) | **Status**: Empirical results complete (21,350 core API calls across 10 runs, 24 LLMs from 7 training traditions, 16 prompt languages, 999 native-language calls; supplementary Runs 11-14 + Experiments A-E add ~10,000 further calls including agentic pipeline compounding, cross-language dimensional semantics, competitive interference, BF format optimization, and primacy effect generalization)
 
 ## Paper
 
@@ -220,8 +220,9 @@ CC-BY-NC-ND-4.0 (paper content). MIT License (code in `experiment/`).
 ## 1 | Paper
 
 - Manuscript: [paper.md](paper.md)
-- Version: 1.4.0
-- Zenodo DOI: [10.5281/zenodo.19422427](https://doi.org/10.5281/zenodo.19422427)
+- Version: 3.2.0
+- Zenodo concept DOI (latest version): [10.5281/zenodo.19422427](https://doi.org/10.5281/zenodo.19422427)
+- v3.2.0 versioned DOI: [10.5281/zenodo.20448605](https://doi.org/10.5281/zenodo.20448605)
 
 ## 2 | Companion Data
 

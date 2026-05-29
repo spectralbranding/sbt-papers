@@ -10,6 +10,13 @@ title: "Dimensional Collapse in AI-Mediated Brand Perception: Large Language Mod
 version: 3.2.0
 date-released: 2026-05-29
 repository-code: "https://github.com/spectralbranding/sbt-papers"
+identifiers:
+  - type: doi
+    value: "10.5281/zenodo.19422427"
+    description: "Zenodo concept DOI (always resolves to latest version)"
+  - type: doi
+    value: "10.5281/zenodo.20448605"
+    description: "Zenodo versioned DOI for v3.2.0 (2026-05-29 upload)"
 keywords:
   - spectral metamerism
   - AI brand perception
