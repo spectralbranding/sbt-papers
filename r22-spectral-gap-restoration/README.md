@@ -1,4 +1,8 @@
-# R22: Spectral Gap Restoration
+[![MIT License](https://img.shields.io/badge/Code-MIT-blue.svg)](../LICENSE)
+[![CC-BY 4.0](https://img.shields.io/badge/Data-CC--BY_4.0-lightgrey.svg)](../LICENSE-data)
+![Last Updated](https://img.shields.io/badge/updated-2026--05--29-success)
+
+# Restoring Perceptual Separability After Coherence Shocks: A μ > λ Threshold Inequality in Brand Perception
 
 **Restoring Perceptual Separability After Coherence Shocks: A μ > λ Threshold Inequality in Brand Perception**
 
@@ -61,3 +65,45 @@ Marketing Science (INFORMS). AMA reference style. Double-anonymous review. Fallb
 - **R16 (2026x)** Brand Function — the invariant being projected onto
 - **R19 (2026aa)** rate-distortion — bandwidth grounding
 - **R21 (2026ac)** spectral immunity — awareness-gate sufficiency framing
+
+---
+
+## 1 | Paper
+
+- Manuscript: [paper.md](paper.md)
+- Version: 1.2.0
+- Zenodo DOI: [10.5281/zenodo.19778549](https://doi.org/10.5281/zenodo.19778549)
+
+## 2 | Companion Data
+
+No companion dataset for this paper.
+
+## 3 | Reproduction
+
+Monte Carlo simulation and bifurcation plot reproduce all numerical results and figures:
+
+```bash
+uv run --with statsmodels --with numpy --with scipy python3 monte_carlo_simulation.py
+uv run --with numpy --with matplotlib python3 code/plot_bifurcation_curve.py
+```
+
+Outputs: `monte_carlo_results.json` (32 cells x 2 regimes x 240-month horizon, seed 2026) and `figures/figure2_bifurcation.png`.
+
+## 4 | Citation
+
+```bibtex
+@article{zharnikov2026spectralgaprestoration,
+  author  = {Zharnikov, Dmitry},
+  title   = {Restoring Perceptual Separability After Coherence Shocks: A {$\mu > \lambda$} Threshold Inequality in Brand Perception},
+  year    = {2026},
+  doi     = {10.5281/zenodo.19778549}
+}
+```
+
+Machine-readable: [CITATION.cff](CITATION.cff).
+
+## 5 | Licence
+
+Code (if any): MIT — see hub-level [../LICENSE](../LICENSE). Data, figures, tables: CC BY 4.0 — see hub-level [../LICENSE-data](../LICENSE-data).
+
+*Last updated: 2026-05-29*
