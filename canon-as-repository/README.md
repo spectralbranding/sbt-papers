@@ -1,4 +1,8 @@
-# Canon as Repository: Version-Controlled Specification for Creative IP
+[![MIT License](https://img.shields.io/badge/Code-MIT-blue.svg)](../LICENSE)
+[![CC-BY 4.0](https://img.shields.io/badge/Data-CC--BY_4.0-lightgrey.svg)](../LICENSE-data)
+![Last Updated](https://img.shields.io/badge/updated-2026--05--29-success)
+
+# Canon as Repository: A Specification-Driven Architecture for Transmedia Intellectual Property
 
 Creative IP is a specification. Every rendering is a fork.
 
@@ -114,3 +118,38 @@ Dmitry Zharnikov
 ## License
 
 MIT — see `LICENSE`
+
+---
+
+## 1 | Paper
+
+See [paper.md](paper.md). Working Paper v1.1.0. Zenodo DOI: [10.5281/zenodo.19355800](https://doi.org/10.5281/zenodo.19355800).
+
+## 2 | Companion Data
+
+No companion dataset for this paper. The `spec/`, `schema/`, and `examples/` directories provide a proof-of-concept Romeo and Juliet specification, not a research dataset.
+
+## 3 | Reproduction
+
+This paper has no standalone computation pipeline; it is a theoretical / conceptual architecture paper. The hub orchestrator at [../reproduce.sh](../reproduce.sh) iterates all sbt-papers slugs.
+
+## 4 | Citation
+
+```bibtex
+@article{zharnikov2026w,
+  author = {Zharnikov, Dmitry},
+  title  = {Canon as Repository: A Specification-Driven Architecture for Transmedia Intellectual Property},
+  year   = {2026},
+  doi    = {10.5281/zenodo.19355800}
+}
+```
+
+Machine-readable: [CITATION.cff](CITATION.cff).
+
+## 5 | Licence
+
+Code (if any): MIT — see hub-level [../LICENSE](../LICENSE). Data, figures, tables: CC BY 4.0 — see hub-level [../LICENSE-data](../LICENSE-data).
+
+---
+
+*Last updated: 2026-05-29*
