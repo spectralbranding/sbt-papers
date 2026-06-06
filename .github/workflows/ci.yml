@@ -16,7 +16,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v5
+        uses: actions/checkout@v4
 
       # Python tooling - only if pyproject.toml exists
       - name: Install uv
@@ -68,12 +68,12 @@ jobs:
           fi
 
       # Security scan - runs for ALL project types
-      - name: 🔒 Security (Trivy)
+      - name: Security (Trivy)
         uses: aquasecurity/trivy-action@v0.35.0
         with:
-          scan-type: fs
-          scan-ref: .
-          exit-code: 1
+          scan-type: 'fs'
+          scan-ref: '.'
+          exit-code: '1'
           ignore-unfixed: true
-          vuln-type: os,library
-          severity: CRITICAL,HIGH
+          vuln-type: 'os,library'
+          severity: 'CRITICAL,HIGH'
