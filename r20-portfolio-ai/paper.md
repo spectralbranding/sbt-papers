@@ -383,7 +383,7 @@ Keller, Kevin Lane (2013), *Strategic Brand Management: Building, Measuring, and
 
 Lei, Jing, Niraj Dawar, and Jos Lemmink (2008), "Negative Spillover in Brand Portfolios: Exploring the Antecedents of Asymmetric Effects," *Journal of Marketing*, 72 (3), 111--123.
 
-LG AI Research (2024), "EXAONE: LG AI Research's Open-Source Language Model," Technical Report, LG AI Research.
+LG AI Research (2024), "EXAONE 3.5: Series of Large Language Models for Real-world Use Cases," arXiv:2412.04862. https://doi.org/10.48550/arXiv.2412.04862
 
 Li, Peiyao, Noah Castelo, Zsolt Katona, and Miklos Sarvary (2024), "Determining the Validity of Large Language Models for Automated Perceptual Analysis," *Marketing Science*, 43 (2), 254--266.
 

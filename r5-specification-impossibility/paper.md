@@ -594,7 +594,7 @@ The coverage impossibility theorem provides the geometric foundation for OST's s
 
 3. **Organizational advice must be dimensional, not categorical.** Telling an organization to "become more agile" is categorical advice that selects a neighborhood in $[0,1]^{48}$. Telling an organization to "increase L4-Process flexibility from 0.3 to 0.6 while maintaining L2-Strategy stability above 0.7" is dimensional advice that moves the organization along specific axes in the specification space. The latter is geometrically precise; the former discards most of the relevant information.
 
-4. **Forking is geometrically efficient.** The fork model allows organizations to share the cognitively expensive higher-level specification (purpose, values, strategy = 24 dimensions = 79.7 bits) while independently exploring the lower-level implementation space. This is why franchise systems, open-source projects, and denominational structures have emerged independently across domains: they represent a geometrically efficient response to the specification impossibility problem. Satisficing behavior (March & Cyert 1963) is the behavioral consequence of the same impossibility: organizations search for specifications that are "good enough" precisely because exhaustive search across $[0,1]^{48}$ is geometrically precluded.
+4. **Forking is geometrically efficient.** The fork model allows organizations to share the cognitively expensive higher-level specification (purpose, values, strategy = 24 dimensions = 79.7 bits) while independently exploring the lower-level implementation space. This is why franchise systems, open-source projects, and denominational structures have emerged independently across domains: they represent a geometrically efficient response to the specification impossibility problem. Satisficing behavior (Cyert and March 1963) is the behavioral consequence of the same impossibility: organizations search for specifications that are "good enough" precisely because exhaustive search across $[0,1]^{48}$ is geometrically precluded.
 
 ### Output Specification Versus Coordination Specification
 
@@ -702,6 +702,8 @@ Cowan, Nelson (2001). The magical number 4 in short-term memory: A reconsiderati
 
 Csaszar, Felipe A. (2012). Organizational structure as a determinant of performance: Evidence from mutual funds. *Strategic Management Journal*, 33(6), 611--632.
 
+Cyert, Richard M., and James G. March (1963). *A Behavioral Theory of the Firm*. Prentice-Hall.
+
 Eppinger, Steven D., and Tyson R. Browning (2012). *Design Structure Matrix Methods and Applications*. MIT Press.
 
 Ethiraj, Sendil K., and Daniel A. Levinthal (2004). Modularity and innovation in complex systems. *Management Science*, 50(2), 159--173.
@@ -723,8 +725,6 @@ Levinthal, Daniel A. (1997). Adaptation on rugged landscapes. *Management Scienc
 Levinthal, Daniel A., and Maciej Workiewicz (2018). When two bosses are better than one: Nearly decomposable systems and organizational adaptation. *Organization Science*, 29(2), 207--224.
 
 Liddell, Torrin M., and John K. Kruschke (2018). Analyzing ordinal data with metric models: What could possibly go wrong? *Journal of Experimental Social Psychology*, 79, 328--348.
-
-March, James G., and Richard M. Cyert (1963). *A Behavioral Theory of the Firm*. Prentice-Hall.
 
 March, James G., and Johan P. Olsen (1976). *Ambiguity and Choice in Organizations*. Universitetsforlaget.
 

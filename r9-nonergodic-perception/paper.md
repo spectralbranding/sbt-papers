@@ -304,7 +304,7 @@ This section maps existing empirical evidence to each of the five propositions. 
 
 **Siray (2016).** Siray's formal analysis of path-dependent consumption provides evidence that certain consumption trajectories lead to states from which preferences become locked in. While Siray does not use the language of absorbing states, the mathematical structure is equivalent: certain preference states, once reached through particular consumption sequences, exhibit resistance to reversal that increases with the time spent in the state.
 
-**Brand crisis literature.** Cleeren, Dekimpe, and van Heerde (2017) provide a comprehensive review of brand crisis research demonstrating that recovery is systematically incomplete: brands suffering fundamental trust violations (e.g., Volkswagen's emissions scandal, Boeing's 737 MAX crisis) recover on average perception metrics while exhibiting a persistent cohort of consumers who never return to pre-crisis levels. This pattern is precisely what absorbing-state dynamics predict: some observers are permanently absorbed while others — those whose trajectories remain in the interior — recover. The ensemble average shows partial recovery; many individual trajectories show complete absorption. The observed heterogeneity in recovery outcomes, rather than being unexplained noise, is a direct signature of the asymmetric absorbing-boundary mechanism in P2.
+**Brand crisis literature.** Cleeren, Dekimpe, and van Heerde (2017) provide a comprehensive review of product-harm crisis research demonstrating that recovery is systematically incomplete: brands suffering fundamental trust violations (e.g., Volkswagen's emissions scandal, Boeing's 737 MAX crisis) recover on average perception metrics while exhibiting a persistent cohort of consumers who never return to pre-crisis levels. This pattern is precisely what absorbing-state dynamics predict: some observers are permanently absorbed while others — those whose trajectories remain in the interior — recover. The ensemble average shows partial recovery; many individual trajectories show complete absorption. The observed heterogeneity in recovery outcomes, rather than being unexplained noise, is a direct signature of the asymmetric absorbing-boundary mechanism in P2.
 
 ### 5.3 Evidence for P3 (Ensemble-Time Divergence)
 
@@ -559,7 +559,7 @@ Borah, A., Banerjee, S., Lin, Y.-T., Jain, A., & Eisingerich, A. B. (2020). Impr
 
 Busemeyer, J. R., & Townsend, J. T. (1993). Decision field theory: A dynamic-cognitive approach to decision making in an uncertain environment. *Psychological Review*, *100*(3), 432–459.
 
-Cleeren, K., Dekimpe, M. G., & van Heerde, H. J. (2017). Marketing research on brand crises. *Journal of the Academy of Marketing Science*, *45*(6), 771–788.
+Cleeren, K., Dekimpe, M. G., & van Heerde, H. J. (2017). Marketing research on product-harm crises: A review, managerial implications, and an agenda for future research. *Journal of the Academy of Marketing Science*, *45*(5), 593–615. https://doi.org/10.1007/s11747-017-0558-1
 
 Doctor, J. N., Wakker, P. P., & Wang, T. V. (2020). Economists' views on the ergodicity problem. *Nature Physics*, *16*(12), 1168–1169.
 
