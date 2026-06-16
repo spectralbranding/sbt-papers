@@ -6,13 +6,13 @@ ORCID: 0009-0000-6893-9231
 
 DOI: [10.5281/zenodo.19355800](https://doi.org/10.5281/zenodo.19355800)
 
-Working Paper v1.1.0 – May 2026
+Working Paper v1.1.0 – June 2026
 
 ---
 
 ## Abstract
 
-Creative intellectual property management is the conspicuous exception among mature domains of complex designed systems: engineering, medicine, software, and scientific publishing have each independently developed formal mechanisms to verify that artifacts satisfy their specifications; creative IP has not. Transmedia franchises accumulate contradictions as intellectual property is rendered across novels, films, games, and merchandise because no formal specification governs what the story *is* independently of how it is expressed. Building on transmedia storytelling theory (Jenkins, 2006, 2011; Ryan, 2001, 2015; Dena, 2009), world-building research (Wolf, 2012), and the rendering problem framework (Zharnikov, 2026l), this paper proposes a specification-driven architecture to close the gap. The canonical specification is reconceived as a version-controlled repository: editions are tagged commits; translations and adaptations are forks; canon governance operates through pull requests; and consistency validation functions as continuous integration. Style is a rendering parameter rather than a property of the specification; actors and translators function as rendering operators; and artificial intelligence clarifies the authorship question by distinguishing specification (the creative act) from rendering (the craft act). Seven testable propositions address franchise consistency, IP licensing as fork governance, and a future in which audiences become renderers — generating personalized expressions from a published canonical specification.
+Creative intellectual property management is the conspicuous exception among mature domains of complex designed systems: engineering, medicine, software, and scientific publishing have each independently developed formal mechanisms to verify that artifacts satisfy their specifications; creative IP has not. Transmedia franchises accumulate contradictions as intellectual property is rendered across novels, films, games, and merchandise because no formal specification governs what the story *is* independently of how it is expressed. Building on transmedia storytelling theory [@jenkins-2006-convergence-culture-where; @jenkins-2011-august-1-transmedia; @ryan-2001-narrative-as-virtual; @ryan-2015-transmedia-storytelling-industry; @dena-2009-transmedia-practice-theorising], world-building research [@wolf-2012-building-imaginary-worlds], and the rendering problem framework [@zharnikov-2026l-rendering-problem-genetic], this paper proposes a specification-driven architecture to close the gap. The canonical specification is reconceived as a version-controlled repository: editions are tagged commits; translations and adaptations are forks; canon governance operates through pull requests; and consistency validation functions as continuous integration. Style is a rendering parameter rather than a property of the specification; actors and translators function as rendering operators; and artificial intelligence clarifies the authorship question by distinguishing specification (the creative act) from rendering (the craft act). Seven testable propositions address franchise consistency, IP licensing as fork governance, and a future in which audiences become renderers — generating personalized expressions from a published canonical specification.
 
 **Keywords**: transmedia storytelling, intellectual property, version control, canon, narrative consistency, creative AI
 
@@ -20,9 +20,9 @@ Creative intellectual property management is the conspicuous exception among mat
 
 ## 1. Introduction
 
-Every mature domain of complex designed systems has independently developed formal mechanisms to verify that artifacts satisfy their specifications before deployment. Engineering uses tolerance inspection (standardized since the Industrial Revolution). Medicine uses clinical endpoint testing (formalized since the 1940s). Software uses continuous integration and test-driven development (Beck, 2002). Scientific publishing uses peer review (formalized since 1665). In each domain, the construct is the same — an artifact is validated against its specification before it is accepted as complete — even though each domain developed the construct independently in response to its own failure modes.
+Every mature domain of complex designed systems has independently developed formal mechanisms to verify that artifacts satisfy their specifications before deployment. Engineering uses tolerance inspection (standardized since the Industrial Revolution). Medicine uses clinical endpoint testing (formalized since the 1940s). Software uses continuous integration and test-driven development [@beck-2002-testdriven-development-by]. Scientific publishing uses peer review (formalized since 1665). In each domain, the construct is the same — an artifact is validated against its specification before it is accepted as complete — even though each domain developed the construct independently in response to its own failure modes.
 
-Creative intellectual property management is the conspicuous exception. Despite a rich theoretical literature on transmedia storytelling (Jenkins, 2006, 2011; Scolari, 2013), world-building (Wolf, 2012), and cross-media narrative (Ryan, 2001, 2015; Dena, 2009), no formal mechanism exists to verify that a new rendering of a franchise — a film, a game, a translation — is consistent with the established canon, to track when and why the canon changed, or to resolve contradictions between renderings that interpret the source differently. This absence is the gap that the present paper identifies and proposes to close.
+Creative intellectual property management is the conspicuous exception. Despite a rich theoretical literature on transmedia storytelling [@jenkins-2006-convergence-culture-where; @jenkins-2011-august-1-transmedia; @scolari-2013-narrativas-transmedia-cuando], world-building [@wolf-2012-building-imaginary-worlds], and cross-media narrative [@ryan-2001-narrative-as-virtual; @ryan-2015-transmedia-storytelling-industry; @dena-2009-transmedia-practice-theorising], no formal mechanism exists to verify that a new rendering of a franchise — a film, a game, a translation — is consistent with the established canon, to track when and why the canon changed, or to resolve contradictions between renderings that interpret the source differently. This absence is the gap that the present paper identifies and proposes to close.
 
 The consequences of this gap are visible across the creative industries. In December 2017, Lucasfilm released *The Last Jedi*, a film that divided Star Wars audiences so thoroughly that the franchise's cultural coherence — maintained for four decades across hundreds of canonical texts — fractured visibly. The debate was not about cinematic quality. It was about *specification violation*: had the film's portrayal of Luke Skywalker contradicted the character's established properties? The question presupposed that a character has properties independent of any particular rendering — that somewhere, implicitly, a specification existed against which the film could be judged.
 
@@ -30,7 +30,7 @@ The same structural problem recurs across the screen industries. The Marvel Cine
 
 The entertainment industry has developed semi-formal responses to this problem — Lucasfilm's Holocron continuity database (maintained by Leland Chee from 2000 to 2014), Marvel's continuity bible system, and community-driven wiki governance on platforms like Wookieepedia and Memory Alpha. These are real mechanisms for consistency tracking, and they demonstrate that the need for formal specification management is recognized in practice. However, they remain unversioned (lacking complete audit trails of canonical changes), unvalidated (relying on human memory rather than automated consistency checking), and medium-coupled (conflating what a story *is* with how it should appear in specific media). They are specifications in intent but not in architecture.
 
-This paper proposes that the franchise consistency problem is an instance of the rendering problem (Zharnikov, 2026l) — the structural pattern in which a specification of bounded complexity is rendered into an implementation of vastly greater complexity, producing emergent phenomena that the specification does not contain. In the creative IP domain: the specification is the canon (characters, world rules, themes, constraints); the rendering is the medium-specific expression (novel, film, game, translation); and the emergent layer is audience perception — the meaning, emotion, and cultural significance that arise from the interaction between rendering and observer.
+This paper proposes that the franchise consistency problem is an instance of the rendering problem [@zharnikov-2026l-rendering-problem-genetic] — the structural pattern in which a specification of bounded complexity is rendered into an implementation of vastly greater complexity, producing emergent phenomena that the specification does not contain. In the creative IP domain: the specification is the canon (characters, world rules, themes, constraints); the rendering is the medium-specific expression (novel, film, game, translation); and the emergent layer is audience perception — the meaning, emotion, and cultural significance that arise from the interaction between rendering and observer.
 
 This paper advances three contributions:
 
@@ -46,7 +46,7 @@ Git version control semantics are proposed as the implementation language not be
 
 ### 2.1 The Rendering Problem
 
-Zharnikov (2026l) identifies the rendering problem as a domain-independent structural pattern: a specification of bounded complexity is rendered into an implementation of vastly greater complexity, producing emergent phenomena that no specification contains. Three structural properties hold in every instance: (1) a specification gap — the implementation contains substantially more information than the specification; (2) a configuration layer — the same specification produces different implementations depending on contextual parameters; and (3) emergence — the system produces phenomena that, within the framework, cannot be predicted from the specification alone.
+Zharnikov [-@zharnikov-2026l-rendering-problem-genetic] identifies the rendering problem as a domain-independent structural pattern: a specification of bounded complexity is rendered into an implementation of vastly greater complexity, producing emergent phenomena that no specification contains. Three structural properties hold in every instance: (1) a specification gap — the implementation contains substantially more information than the specification; (2) a configuration layer — the same specification produces different implementations depending on contextual parameters; and (3) emergence — the system produces phenomena that, within the framework, cannot be predicted from the specification alone.
 
 The rendering problem has been formalized across three prior domains — biological (genome to phenotype to consciousness), organizational (org-schema to operations to customer experience), and perceptual (brand emission policy to signal field to perception cloud) — each exhibiting the same three-layer structure: specification, implementation, emergence.
 
@@ -56,29 +56,29 @@ The specification constrains without determining. The gap between constraint and
 
 ### 2.2 Transmedia Storytelling
 
-Jenkins (2006) introduced the concept of transmedia storytelling as "a process where integral elements of a fiction get dispersed systematically across multiple delivery channels for the purpose of creating a unified and coordinated entertainment experience" (p. 95-96). This definition implicitly presupposes a specification layer: "integral elements of a fiction" that exist independently of their "delivery channels." Jenkins's formulation captures the intuition that a story has properties that persist across media, but does not formalize what those properties are, how they are maintained, or how consistency is validated. In a subsequent refinement, Jenkins (2011) distinguished transmedia *storytelling* (narrative extension) from transmedia *branding* (coordinated marketing across platforms), and argued that not all transmedia projects require a unified canon — some deliberately allow contradictions between extensions. This complication is important: the architecture proposed here applies to franchises that *choose* canonical consistency as a design goal, not to all transmedia projects indiscriminately.
+Jenkins [-@jenkins-2006-convergence-culture-where] introduced the concept of transmedia storytelling as "a process where integral elements of a fiction get dispersed systematically across multiple delivery channels for the purpose of creating a unified and coordinated entertainment experience" (p. 95-96). This definition implicitly presupposes a specification layer: "integral elements of a fiction" that exist independently of their "delivery channels." Jenkins's formulation captures the intuition that a story has properties that persist across media, but does not formalize what those properties are, how they are maintained, or how consistency is validated. In a subsequent refinement, Jenkins [-@jenkins-2011-august-1-transmedia] distinguished transmedia *storytelling* (narrative extension) from transmedia *branding* (coordinated marketing across platforms), and argued that not all transmedia projects require a unified canon — some deliberately allow contradictions between extensions. This complication is important: the architecture proposed here applies to franchises that *choose* canonical consistency as a design goal, not to all transmedia projects indiscriminately.
 
-Ryan (2001) provided the foundational theoretical framework for understanding how narrative structures behave across media. Her concept of medium affordances — the narrative possibilities that each medium enables or forecloses — established that different media preserve different dimensions of a story: a novel can represent interiority directly, a film cannot; a game can offer branching paths, a novel cannot. Ryan (2015) further distinguished "transmedia storytelling" (narrative extension across platforms) from "transmedial narratology" (the study of narrative across media). This observation is precisely the specification-rendering distinction: narrative structures that persist across media belong to the specification; structures that change with the medium belong to the rendering.
+Ryan [-@ryan-2001-narrative-as-virtual] provided the foundational theoretical framework for understanding how narrative structures behave across media. Her concept of medium affordances — the narrative possibilities that each medium enables or forecloses — established that different media preserve different dimensions of a story: a novel can represent interiority directly, a film cannot; a game can offer branching paths, a novel cannot. Ryan [-@ryan-2015-transmedia-storytelling-industry] further distinguished "transmedia storytelling" (narrative extension across platforms) from "transmedial narratology" (the study of narrative across media). This observation is precisely the specification-rendering distinction: narrative structures that persist across media belong to the specification; structures that change with the medium belong to the rendering.
 
-Dena (2009) offered the most rigorous design-theory treatment, showing that transmedia practice already involves implicit specification work: production teams maintain shared understandings of what the world *is* that constrain any particular rendering. The architecture formalizes what Dena observed in practice.
+Dena [-@dena-2009-transmedia-practice-theorising] offered the most rigorous design-theory treatment, showing that transmedia practice already involves implicit specification work: production teams maintain shared understandings of what the world *is* that constrain any particular rendering. The architecture formalizes what Dena observed in practice.
 
-Scolari (2013) extended transmedia theory beyond the Anglophone tradition, showing that transmedia narratives are collaborative ecosystems in which multiple actors co-construct meaning across platforms — a property the pull request governance model (Section 4.3) is designed to formalize.
+Scolari [-@scolari-2013-narrativas-transmedia-cuando] extended transmedia theory beyond the Anglophone tradition, showing that transmedia narratives are collaborative ecosystems in which multiple actors co-construct meaning across platforms — a property the pull request governance model (Section 4.3) is designed to formalize.
 
-Wolf (2012) organized world-building into inventions, completeness, and consistency, treating world-building as an implicit specification activity in which the author constructs rules, histories, and geographies that constrain all subsequent renderings. Wolf does not formalize the specification or distinguish it architecturally from its renderings — a gap the present paper addresses.
+Wolf [-@wolf-2012-building-imaginary-worlds] organized world-building into inventions, completeness, and consistency, treating world-building as an implicit specification activity in which the author constructs rules, histories, and geographies that constrain all subsequent renderings. Wolf does not formalize the specification or distinguish it architecturally from its renderings — a gap the present paper addresses.
 
 ### 2.3 Story Grammars and Computational Narratology
 
-The idea that narrative has formal structure precedes digital computing. Propp (1928/1968) demonstrated that Russian folk tales share 31 narrative functions in a fixed sequential order — that the surface diversity of stories conceals an underlying structural specification. Propp's morphology is, in modern terms, a proto-specification: it defines WHAT happens (the function sequence) independently of HOW it is expressed (the specific characters, settings, and prose). A fairy tale in which a hero departs on a quest, encounters a donor, receives a magical agent, and defeats the villain instantiates Propp's grammar regardless of whether the hero is Ivan, Jack, or Frodo.
+The idea that narrative has formal structure precedes digital computing. Propp [-@propp-1928-1968-morphology-folktale] demonstrated that Russian folk tales share 31 narrative functions in a fixed sequential order — that the surface diversity of stories conceals an underlying structural specification. Propp's morphology is, in modern terms, a proto-specification: it defines WHAT happens (the function sequence) independently of HOW it is expressed (the specific characters, settings, and prose). A fairy tale in which a hero departs on a quest, encounters a donor, receives a magical agent, and defeats the villain instantiates Propp's grammar regardless of whether the hero is Ivan, Jack, or Frodo.
 
-Gervás (2013) formalized this as a generative grammar — a specification from which individual story instances can be generated. The grammar specifies structural constraints; each story is a rendering that satisfies those constraints while adding the detail the grammar does not determine.
+Gervás [-@gervs-2013-propps-morphology-folk] formalized this as a generative grammar — a specification from which individual story instances can be generated. The grammar specifies structural constraints; each story is a rendering that satisfies those constraints while adding the detail the grammar does not determine.
 
-More recently, Pianzola et al. (2025) developed the GOLEM ontology (Graphs, Ontologies, and Linked Entities for Monitoring narrative and fiction) for tracking narrative provenance across versions and adaptations. GOLEM provides a formal vocabulary for identifying which narrative elements are preserved, modified, or lost across renderings — addressing, in ontological terms, the consistency problem that this paper addresses architecturally.
+More recently, Pianzola et al. [-@pianzola-2025-golem-ontology-narrative] developed the GOLEM ontology (Graphs, Ontologies, and Linked Entities for Monitoring narrative and fiction) for tracking narrative provenance across versions and adaptations. GOLEM provides a formal vocabulary for identifying which narrative elements are preserved, modified, or lost across renderings — addressing, in ontological terms, the consistency problem that this paper addresses architecturally.
 
-Sterman et al. (2022) found that creative professionals develop informal versioning systems — multiple copies, parallel drafts, checkpoint versions — that recapitulate Git semantics without using Git, arguing that creative work has the same structural need for version control as software development but lacks appropriate tools — a formalization that creative IP management currently lacks (Steinhoff, 2024). This paper extends their empirical observation into a formal architecture: the specification-rendering structure of creative IP maps onto version control semantics with systematic structural correspondence.
+Sterman et al. [-@sterman-2022-towards-creative-version] found that creative professionals develop informal versioning systems — multiple copies, parallel drafts, checkpoint versions — that recapitulate Git semantics without using Git, arguing that creative work has the same structural need for version control as software development but lacks appropriate tools. This paper extends their empirical observation into a formal architecture: the specification-rendering structure of creative IP maps onto version control semantics with systematic structural correspondence.
 
 ### 2.4 The Story Bible and Its Limitations
 
-The entertainment industry's existing answer to the specification problem is the story bible — a document that records the essential properties of a fictional world for use by writers, producers, and licensees. Hayes (2011) produced a widely referenced template for transmedia production bibles, documenting the industry's best practice for capturing narrative specifications.
+The entertainment industry's existing answer to the specification problem is the story bible — a document that records the essential properties of a fictional world for use by writers, producers, and licensees. Hayes [-@hayes-2011-how-write-transmedia] produced a widely referenced template for transmedia production bibles, documenting the industry's best practice for capturing narrative specifications.
 
 Story bibles exhibit three structural limitations that a formal specification architecture would resolve:
 
@@ -92,7 +92,7 @@ The specification-driven architecture proposed in this paper addresses all three
 
 ### 2.5 Fan-Studies Positioning
 
-Fan studies has developed a parallel tradition for analyzing how audiences negotiate canon. Hills (2002) demonstrated that fan engagement is structured by evaluative hierarchies — fans distinguish "good" from "bad" canon, policing specification fidelity through community debate. Hellekson and Busse (2006) showed that fan fiction communities have developed sophisticated internal governance norms: which character properties are sacrosanct, which world rules may be violated, and which authorial decisions are subject to community revision.
+Fan studies has developed a parallel tradition for analyzing how audiences negotiate canon. Hills [-@hills-2002-fan-cultures] demonstrated that fan engagement is structured by evaluative hierarchies — fans distinguish "good" from "bad" canon, policing specification fidelity through community debate. Hellekson and Busse [-@hellekson-2006-fan-fiction-fan] showed that fan fiction communities have developed sophisticated internal governance norms: which character properties are sacrosanct, which world rules may be violated, and which authorial decisions are subject to community revision.
 
 This paper's architectural treatment of canon complements rather than replaces fan-studies analysis. Fan studies treats canon as a social negotiation — a set of contested meanings co-produced by creators, industries, and audiences. This paper treats canon as an engineering specification — a structured artifact with version history, governance procedures, and consistency requirements. The two framings address different objects: fan studies describes how audiences *experience and contest* canon; this paper proposes how producers *maintain and govern* it. A fan community that produces "fix-it fics" correcting an unwanted character death is engaged in social negotiation; in architectural terms, the same community is generating specification-divergent forks. Both framings capture something real. The architectural account makes the governance structure legible; fan studies makes the cultural politics legible. Neither is sufficient alone.
 
@@ -218,7 +218,7 @@ These validators are not hypothetical: NLP and knowledge-graph technologies alre
 
 In Git, a merge conflict occurs when two branches modify the same content in incompatible ways, requiring manual resolution. In the canon repository architecture, merge conflicts correspond to canon contradictions — situations in which two authorized renderings imply incompatible facts about the specification.
 
-Canon contradictions are endemic in long-running franchises. Proctor (2017) provides a taxonomy of strategies for managing them, distinguishing "reboot," "retcon," "relaunch," "revival," and "refresh" as distinct modes of canon regeneration, each with different implications for continuity and audience expectation. The Star Wars franchise addressed contradictions through a four-tier canonicity system (G-canon, T-canon, C-canon, S-canon), later replaced by a binary canon/Legends split in 2014 — a wholesale retcon in Proctor's terms. The Doctor Who franchise maintains a deliberately ambiguous approach to canonicity, treating contradictions as features rather than bugs. The DC and Marvel comics universes periodically undergo "crisis" events whose narrative purpose is to resolve accumulated contradictions by resetting continuity — what Proctor calls "reboots."
+Canon contradictions are endemic in long-running franchises. Proctor [-@proctor-2017-reboots-retroactive-continuity] provides a taxonomy of strategies for managing them, distinguishing "reboot," "retcon," "relaunch," "revival," and "refresh" as distinct modes of canon regeneration, each with different implications for continuity and audience expectation. The Star Wars franchise addressed contradictions through a four-tier canonicity system (G-canon, T-canon, C-canon, S-canon), later replaced by a binary canon/Legends split in 2014 — a wholesale retcon in Proctor's terms. The Doctor Who franchise maintains a deliberately ambiguous approach to canonicity, treating contradictions as features rather than bugs. The DC and Marvel comics universes periodically undergo "crisis" events whose narrative purpose is to resolve accumulated contradictions by resetting continuity — what Proctor calls "reboots."
 
 In the canon repository architecture, these approaches correspond to different merge conflict resolution strategies:
 
@@ -236,7 +236,7 @@ The canon repository architecture does not prescribe a resolution strategy; it p
 
 Each medium preserves some dimensions of the specification and loses others. This is not a failure of the medium; it is the structural consequence of projecting a high-dimensional specification into a lower-dimensional rendering space.
 
-A novel preserves interiority with high fidelity but loses visuality. A film preserves visuality but loses interiority. A game preserves interactivity but loses authorial sequence control. A musical preserves emotional intensity but loses narrative density. The specification gap at each projection is structural, not a failure of craft — no film can render interiority as richly as a novel; no novel can render visuality as richly as a film. The dimensions lost in projection are trade-offs inherent in the medium's affordances (Ryan, 2001). "The book is always better" is a misunderstanding of the rendering problem: the book is not better; it preserves different dimensions.
+A novel preserves interiority with high fidelity but loses visuality. A film preserves visuality but loses interiority. A game preserves interactivity but loses authorial sequence control. A musical preserves emotional intensity but loses narrative density. The specification gap at each projection is structural, not a failure of craft — no film can render interiority as richly as a novel; no novel can render visuality as richly as a film. The dimensions lost in projection are trade-offs inherent in the medium's affordances [@ryan-2001-narrative-as-virtual]. "The book is always better" is a misunderstanding of the rendering problem: the book is not better; it preserves different dimensions.
 
 **Proposition 5.** *Each medium constitutes a dimensional subspace of the full specification space, preserving some specification dimensions with high fidelity while structurally losing others, such that every rendering is an incomplete but valid projection of the canonical specification.*
 
@@ -262,7 +262,7 @@ This formalization clarifies several phenomena. The "Bond problem": six actors h
 
 ### 5.4 The Audience as Renderer
 
-The most consequential implication of the specification-rendering architecture is the possibility of audience-driven rendering. Murray (1997) anticipated this trajectory in *Hamlet on the Holodeck*, arguing that digital environments would eventually enable audiences to exercise agency within authored narrative structures — to become active participants in the rendering of stories rather than passive consumers of fixed expressions. The specification-rendering architecture formalizes Murray's vision: if the specification is formalized and published, and if rendering technology becomes sufficiently capable, then the audience member can generate personalized renderings from the canonical specification.
+The most consequential implication of the specification-rendering architecture is the possibility of audience-driven rendering. Murray [-@murray-1997-hamlet-holodeck-future] anticipated this trajectory in *Hamlet on the Holodeck*, arguing that digital environments would eventually enable audiences to exercise agency within authored narrative structures — to become active participants in the rendering of stories rather than passive consumers of fixed expressions. The specification-rendering architecture formalizes Murray's vision: if the specification is formalized and published, and if rendering technology becomes sufficiently capable, then the audience member can generate personalized renderings from the canonical specification.
 
 When specification and rendering are formally separated, an author can publish a story specification — characters, world rules, timeline, themes, constraints — from which different readers generate radically different renderings: a literary novel in Brazilian Portuguese, a graphic novel in Japanese manga style, an interactive text adventure. Each rendering is valid if it satisfies the specification's constraints. The pre-rendered product (the published novel, the released film) becomes one curated rendering among many possible expressions of the same specification.
 
@@ -280,7 +280,7 @@ Netflix's *Bandersnatch* (Black Mirror, 2018) represents an early partial implem
 
 Specification — the creative act of deciding what a story is about, who its characters are, what its world rules permit, and what themes it explores — remains primarily a human activity. AI can assist at the specification level: brainstorming character traits, exploring possibility spaces, identifying inconsistencies in draft specifications, generating "what-if" scenarios that the human author evaluates. But the curatorial judgment — "this is the story I want to tell; these are the constraints I choose to impose" — is a human act of intentional selection.
 
-This distinction is not merely philosophical; it has legal consequences. In *Thaler v. Perlmutter* (D.D.C. 2023), the court held that AI cannot be a copyright author — that copyright requires human authorship. The U.S. Copyright Office's Part 2 report on copyrightability (2025) established an "expressive input" threshold: copyright attaches to the degree of human creative control over the output. In the specification-rendering architecture, the specification IS the locus of human creative control. The human who writes the character specification, defines the world rules, determines the timeline, and sets the thematic constraints has exercised precisely the kind of creative judgment that copyright protects. The rendering — whether performed by a human actor, a human translator, or an AI rendering engine — is the downstream execution of that creative judgment.
+This distinction is not merely philosophical; it has legal consequences. In *Thaler v. Perlmutter* [-@thaler-2023-thaler-v-perlmutter], the court held that AI cannot be a copyright author — that copyright requires human authorship. The U.S. Copyright Office's Part 2 report on copyrightability [-@us-copyright-office-2025-copyright-artificial-intelligence] established an "expressive input" threshold: copyright attaches to the degree of human creative control over the output. In the specification-rendering architecture, the specification IS the locus of human creative control. The human who writes the character specification, defines the world rules, determines the timeline, and sets the thematic constraints has exercised precisely the kind of creative judgment that copyright protects. The rendering — whether performed by a human actor, a human translator, or an AI rendering engine — is the downstream execution of that creative judgment.
 
 AI at the specification level constitutes genuine co-authorship. If an AI system generates a character backstory that the human author adopts unchanged, the AI has contributed to the specification — it has made a creative choice that constrains all subsequent renderings. The specification-rendering architecture makes this contribution visible and attributable: the commit log records who (or what) proposed each change and who approved it.
 
@@ -300,7 +300,7 @@ This prediction is consistent with the labor provisions negotiated in recent cre
 
 The combination of formalized specification and capable AI rendering enables observer-specific rendering: instead of one novel for all readers, the specification enables personalized renderings tailored to an observer's preferred language, medium, reading level, and aesthetic preferences. A single story specification could yield a literary novel in Brazilian Portuguese with expanded interiority, a young adult version in simplified English with increased dialogue, and an audio drama in Hindi — each satisfying the same specification constraints while parameterized for a different audience.
 
-This mirrors a general pattern in observer-relative perception frameworks: the same source specification can produce different perceived outputs depending on how each rendering is parameterized for a given audience or observer context (Zharnikov, 2026a).
+This mirrors a general pattern in observer-relative perception frameworks: the same source specification can produce different perceived outputs depending on how each rendering is parameterized for a given audience or observer context [@zharnikov-2026-spectral-brand-theory-computational-framework].
 
 **Proposition 7.** *Observer-specific rendering — the generation of personalized renderings from a canonical specification, parameterized by observer preferences, language, medium, and reception context — preserves specification-level consistency while maximizing rendering-level accessibility.*
 
@@ -318,11 +318,11 @@ The most immediate application is franchise management. Current practice relies 
 
 The specification-rendering architecture enables a novel form of audience research: running rendering specifications through parameterized "audience cohorts" — AI models with specified preferences, cultural backgrounds, and tolerance profiles — to predict reception per cohort before producing the rendering.
 
-Reception varies systematically across cohorts defined by genre expectations, media literacy, and prior franchise engagement (Jenkins, 2006; Ryan, 2001). A franchise considering a tone shift could simulate reception before committing to production: the simulation predicts specification-rendering alignment per cohort — will each audience cohort perceive the rendering as consistent with the specification they have internalized — rather than commercial outcome.
+Reception varies systematically across cohorts defined by genre expectations, media literacy, and prior franchise engagement [@jenkins-2006-convergence-culture-where; @ryan-2001-narrative-as-virtual]. A franchise considering a tone shift could simulate reception before committing to production: the simulation predicts specification-rendering alignment per cohort — will each audience cohort perceive the rendering as consistent with the specification they have internalized — rather than commercial outcome.
 
 ### 7.3 IP Licensing as Fork Governance
 
-IP licensing maps directly to fork governance. Johnson (2013) shows that franchise management is a negotiated system among producers, licensees, and audiences — not a top-down control structure. The canon repository provides a formal substrate within which that negotiation can be tracked and audited.
+IP licensing maps directly to fork governance. Johnson [-@johnson-2013-media-franchising-creative] shows that franchise management is a negotiated system among producers, licensees, and audiences — not a top-down control structure. The canon repository provides a formal substrate within which that negotiation can be tracked and audited.
 
 A license is a fork authorization with constraints:
 
@@ -331,13 +331,13 @@ A license is a fork authorization with constraints:
 - **Which validation rules the licensee must satisfy** (the compliance requirements — must the derivative work pass timeline consistency checks? character consistency checks?)
 - **Whether the licensee may submit PRs to the main repository** (the contribution rights — can a game developer's narrative innovations be incorporated into the canon?)
 
-Fan fiction occupies a distinctive position in this framework. Fan works fork from the canonical specification without explicit authorization, and "fix-it fics" that override unpopular specification elements — character deaths, contested plot decisions — function structurally as community-authored pull requests that the official repository has declined to merge (Hills, 2002; Hellekson & Busse, 2006). The architecture formalizes this relationship: a fan work that respects all character specifications and world rules but adds new content is a specification-compliant fork; a fan work that rewrites character properties is specification-divergent. The distinction is structural and measurable, not evaluative.
+Fan fiction occupies a distinctive position in this framework. Fan works fork from the canonical specification without explicit authorization, and "fix-it fics" that override unpopular specification elements — character deaths, contested plot decisions — function structurally as community-authored pull requests that the official repository has declined to merge [@hills-2002-fan-cultures; @hellekson-2006-fan-fiction-fan]. The architecture formalizes this relationship: a fan work that respects all character specifications and world rules but adds new content is a specification-compliant fork; a fan work that rewrites character properties is specification-divergent. The distinction is structural and measurable, not evaluative.
 
 ### 7.4 Non-Western Transmedia Models
 
 The architecture proposed here is grounded in Western franchise management, where canonical consistency is typically treated as a design goal. However, alternative transmedia traditions challenge the assumption that consistency is always desirable, and these counterexamples help define the architecture's scope.
 
-The Japanese *media mix* model (Steinberg, 2012) offers the most instructive contrast. In the media mix, a fictional world is simultaneously expressed across manga, anime, light novels, games, and merchandise — but consistency across expressions is deliberately loose. The "world" (its aesthetic, its character types, its emotional register) is the shared specification, while narrative details vary freely across media. A character's backstory in the manga may contradict their backstory in the anime, and this is treated not as an error but as a feature of the creative ecosystem. In the terms of this paper, the Japanese media mix operates with a *thinner* specification — one that constrains world-feel and character identity but leaves narrative specifics to the rendering layer. The canon repository architecture accommodates this by treating specification thickness as a governance parameter: franchises choose how much to specify, and the architecture tracks consistency relative to whatever specification exists.
+The Japanese *media mix* model [@steinberg-2012-animes-media-mix] offers the most instructive contrast. In the media mix, a fictional world is simultaneously expressed across manga, anime, light novels, games, and merchandise — but consistency across expressions is deliberately loose. The "world" (its aesthetic, its character types, its emotional register) is the shared specification, while narrative details vary freely across media. A character's backstory in the manga may contradict their backstory in the anime, and this is treated not as an error but as a feature of the creative ecosystem. In the terms of this paper, the Japanese media mix operates with a *thinner* specification — one that constrains world-feel and character identity but leaves narrative specifics to the rendering layer. The canon repository architecture accommodates this by treating specification thickness as a governance parameter: franchises choose how much to specify, and the architecture tracks consistency relative to whatever specification exists.
 
 Korean webtoon-to-K-drama adaptations represent a different rendering model. The webtoon provides a visual and narrative specification; the live-action drama is a rendering that must project the webtoon's two-dimensional visual language into embodied performance while adapting serial pacing for broadcast rhythms. The dimensional projection is explicit: the webtoon specifies character appearance with a precision (stylized illustration) that the drama must reinterpret through casting and costume — a rendering decision constrained but not determined by the specification.
 
@@ -355,7 +355,7 @@ Git semantics are proposed as the implementation because they provide the most w
 
 ### 8.2 Connection to Adjacent Frameworks
 
-The specification-driven architecture for creative IP is an instance of the rendering problem (Zharnikov, 2026l) applied to a new domain. The structural pattern — specification, rendering, perception, with specification gap at each transition — holds across five domains now identified:
+The specification-driven architecture for creative IP is an instance of the rendering problem [@zharnikov-2026l-rendering-problem-genetic] applied to a new domain. The structural pattern — specification, rendering, perception, with specification gap at each transition — holds across five domains now identified:
 
 Table 3: The Rendering Problem Across Five Domains.
 
@@ -367,7 +367,7 @@ Table 3: The Rendering Problem Across Five Domains.
 | Creative IP | Canon repository | Novel, film, game | Audience meaning |
 | Scientific knowledge | Paper specification | Published paper | Scientific community reception |
 
-*Notes*: Organizational schema theory and brand specification theory are developed in Zharnikov (2026i) and Zharnikov (2026a) respectively. The scientific knowledge row is developed in Zharnikov (2026t, 2026u), which apply specification-driven thinking to scientific publishing — the same structural gap (absence of versioned specification) producing the same failure modes (unversioned claims, unvalidated outputs, medium-coupled reports) that this paper diagnoses in creative IP. The construct is cross-domain, not Git-specific.
+*Notes*: Organizational schema theory and brand specification theory are developed in Zharnikov [-@zharnikov-2026-organizational-schema-theory-test-driven] and Zharnikov [-@zharnikov-2026-spectral-brand-theory-computational-framework] respectively. The scientific knowledge row is developed in Zharnikov [-@zharnikov-2026m-projection-cascade-why; -@zharnikov-2026-research-as-repository-git-native], which apply specification-driven thinking to scientific publishing — the same structural gap (absence of versioned specification) producing the same failure modes (unversioned claims, unvalidated outputs, medium-coupled reports) that this paper diagnoses in creative IP. The construct is cross-domain, not Git-specific.
 
 The unifying pattern holds across all five domains: specification leads to rendering leads to perception, with a structural gap at each transition. Domain-specific phenomena — retcons in IP, brand dilution in marketing, organizational drift in management, phenotypic plasticity in biology, citation drift in science — are all manifestations of the same structural property.
 
@@ -409,61 +409,8 @@ Most fundamentally, the specification-rendering architecture clarifies the autho
 
 ## References
 
-Beck, K. (2002). *Test-driven development: By example*. Addison-Wesley.
-
-Dena, C. (2009). *Transmedia practice: Theorising the practice of expressing a fictional world across distinct media and environments* [PhD thesis, University of Sydney].
-
-Gervás, P. (2013). Propp's morphology of the folk tale as a grammar for generation. In *Proceedings of the Workshop on Computational Models of Narrative* (OASIcs, Vol. 32, pp. 106–122). Schloss Dagstuhl. https://doi.org/10.4230/OASIcs.CMN.2013.106
-
-Hayes, G. P. (2011). *How to write a transmedia production bible*. Screen Australia.
-
-Hellekson, K., & Busse, K. (Eds.). (2006). *Fan fiction and fan communities in the age of the Internet*. McFarland.
-
-Hills, M. (2002). *Fan cultures*. Routledge.
-
-Jenkins, H. (2006). *Convergence culture: Where old and new media collide*. NYU Press.
-
-Jenkins, H. (2011, August 1). Transmedia 202: Further reflections. *Confessions of an Aca-Fan*. http://henryjenkins.org/blog/2011/08/defining_transmedia_further_re.html
-
-Johnson, D. (2013). *Media franchising: Creative license and collaboration in the culture industries*. NYU Press.
-
-Murray, J. H. (1997). *Hamlet on the Holodeck: The future of narrative in cyberspace*. Free Press.
-
-Pianzola, F., Cheng, L., Pannach, F., Yang, X., and Scotti, L. (2025). The GOLEM ontology for narrative and fiction. *Humanities*, 14(10), 193. https://doi.org/10.3390/h14100193
-
-Proctor, W. (2017). Reboots and retroactive continuity. In M. J. P. Wolf (Ed.), *The Routledge companion to imaginary worlds* (pp. 361–371). Routledge.
-
-Propp, V. (1928/1968). *Morphology of the folktale* (L. Scott, Trans., 2nd ed.). University of Texas Press.
-
-Ryan, M.-L. (2001). *Narrative as virtual reality: Immersion and interactivity in literature and electronic media*. Johns Hopkins University Press.
-
-Ryan, M.-L. (2015). Transmedia storytelling: Industry buzzword or new narrative experience? *Storyworlds: A Journal of Narrative Studies*, 7(2), 1–19.
-
-Scolari, C. A. (2013). *Narrativas transmedia: Cuando todos los medios cuentan*. Deusto.
-
-Steinberg, M. (2012). *Anime's media mix: Franchising toys and characters in Japan*. University of Minnesota Press.
-
-Steinhoff, F. (2024). Version control for creative economies. *Convergence: The International Journal of Research into New Media Technologies*. https://doi.org/10.1177/13548565241234662 [VOL/PAGES TO CONFIRM]
-
-Sterman, S., Nicholas, M. J., & Paulos, E. (2022). Towards creative version control. *Proceedings of the ACM on Human-Computer Interaction*, 6(CSCW2), Article 336. https://doi.org/10.1145/3555756
-
-*Thaler v. Perlmutter*, No. 1:22-cv-01564-BAH (D.D.C. Aug. 18, 2023).
-
-U.S. Copyright Office. (2025). *Copyright and artificial intelligence, Part 2: Copyrightability*. U.S. Copyright Office / Library of Congress.
-
-Wolf, M. J. P. (2012). *Building imaginary worlds: The theory and history of subcreation*. Routledge.
-
-Zharnikov, D. (2026a). Spectral Brand Theory: A multi-dimensional framework for brand perception analysis. Working Paper. https://doi.org/10.5281/zenodo.18945912
-
-Zharnikov, D. (2026i). The Organizational Schema Theory: Test-driven business design. Working Paper. https://doi.org/10.5281/zenodo.18946043
-
-Zharnikov, D. (2026l). The rendering problem: From genetic expression to brand perception. Working Paper. https://doi.org/10.5281/zenodo.19064426
-
-Zharnikov, D. (2026t). Paper as specification: A machine-readable standard for scientific claims. Working Paper. https://doi.org/10.5281/zenodo.19210037
-
-Zharnikov, D. (2026u). Research as repository: A Git-native protocol for scientific knowledge production. Working Paper. https://doi.org/10.5281/zenodo.19294864
-
----
+::: {#refs}
+:::
 
 ## Acknowledgements
 

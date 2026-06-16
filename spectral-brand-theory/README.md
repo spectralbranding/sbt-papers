@@ -1,52 +1,39 @@
 [![MIT License](https://img.shields.io/badge/Code-MIT-blue.svg)](../LICENSE)
 [![CC-BY 4.0](https://img.shields.io/badge/Data-CC--BY_4.0-lightgrey.svg)](../LICENSE-data)
-![Last Updated](https://img.shields.io/badge/updated-2026--05--29-success)
+![Last Updated](https://img.shields.io/badge/updated-2026--06--16-success)
 
 # Spectral Brand Theory: A Computational Framework for Multi-Dimensional Brand Perception
 
-Foundational paper of the Spectral Brand Theory (SBT) corpus (Zharnikov 2026a). This slug directory holds the public artifacts for the paper.
+## 1 | Paper
 
-## 1 | Getting Started
+- Manuscript: [paper.md](paper.md)
+- Version: 3.4.0
+- DOI: [10.5281/zenodo.18945912](https://doi.org/10.5281/zenodo.18945912)
+- Machine-readable bundle: [paper.yaml](paper.yaml) (Paper Spec), [SPINE.yaml](SPINE.yaml), [ONTOLOGY.yaml](ONTOLOGY.yaml), [GLOSSARY.md](GLOSSARY.md)
 
-This is a theory paper with no companion computational pipeline at the slug level. The artifacts here are the manuscript (`paper.md`), the structured spec (`paper.yaml`), and the citation / provenance metadata files.
+## 2 | Citations
 
-Repository-wide environment setup (Python 3.12 + `uv`), licensing files, and `.gitignore` are inherited from the parent `sbt-papers/` mirror root.
+`paper.md` is the source artifact; inline citations use the `[@citation_key]` form. The full bibliography lives in the companion `.bib` file; see [CITATIONS.md](CITATIONS.md) for how to resolve and render them.
 
-## 2 | Project Layout
+## 3 | Citation
 
+```bibtex
+@article{Zharnikov2026,
+  author  = {Zharnikov, Dmitry},
+  title   = {Spectral Brand Theory: A Computational Framework for Multi-Dimensional Brand Perception},
+  year    = {2026},
+  doi     = {10.5281/zenodo.18945912},
+  url     = {https://doi.org/10.5281/zenodo.18945912},
+  version = {3.4.0},
+}
 ```
-spectral-brand-theory/
-├── README.md             # this file
-├── .here                 # project anchor for relative-path resolution
-├── paper.md              # manuscript (source of truth)
-├── paper.yaml            # structured paper spec (claims, propositions, hypotheses)
-├── CITATION.cff          # machine-readable citation
-├── CONTRIBUTORS.yaml     # contributor record
-├── DATA_MANIFEST.yaml    # data artifacts manifest
-└── PROVENANCE.yaml       # provenance record
-```
 
-## 3 | Quick Start
+Machine-readable: [CITATION.cff](CITATION.cff).
 
-No computational pipeline ships with this slug. To read the paper, open `paper.md`. To cite, see Section 6 below or the root `CITATION.cff`.
+## 4 | Licence
 
-## 4 | Dependencies
-
-None at the slug level. The paper is a pure-theory contribution.
-
-## 5 | Citation
-
-Zharnikov, Dmitry (2026). *Spectral Brand Theory: A Computational Framework for Multi-Dimensional Brand Perception*. Zenodo. https://doi.org/10.5281/zenodo.18945912
-
-Machine-readable form: see `CITATION.cff` in this directory.
-
-Concept DOI: `10.5281/zenodo.18945912`
-
-## 6 | Licence
-
-- Code: MIT (see root `LICENSE`)
-- Data, figures, tables, manuscript: CC BY 4.0 (see root `LICENSE-data`)
+Code (if any): MIT — see hub-level [../LICENSE](../LICENSE). Data, figures, tables: CC BY 4.0 — see hub-level [../LICENSE-data](../LICENSE-data).
 
 ---
 
-*Last updated: 2026-05-29*
+*Last updated: 2026-06-16*

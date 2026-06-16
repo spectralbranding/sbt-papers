@@ -1,4 +1,4 @@
-# Empirical Rate-Distortion Curve for AI Brand Perception Encoders
+# Optimal Response Formats for AI Brand Perception Measurement: Evidence for a J-Shaped Rate-Distortion Curve
 
 Dmitry Zharnikov
 
@@ -6,7 +6,7 @@ ORCID: 0009-0000-6893-9231
 
 DOI: [10.5281/zenodo.19528833](https://doi.org/10.5281/zenodo.19528833)
 
-Working Paper v1.0.1 – April 2026
+Working Paper v1.0.1 – June 2026
 
 ---
 
@@ -16,9 +16,9 @@ This study applies Shannon rate-distortion theory to measure how response-format
 
 *Keywords:* rate-distortion theory, brand perception, large language models, dimensional collapse, codebook convergence, instrument design
 
-The measurement of brand perception through AI systems has become a practical concern as large language models (LLMs) increasingly mediate consumer information search, product recommendation, and purchase decisions. Li, Castelo, Katona, and Sarvary (2024) demonstrated that LLM-generated brand similarity and attribute ratings match human survey data with greater than 75% agreement, establishing LLMs as valid perceptual instruments. However, their study treated the response format as fixed. Recent empirical work demonstrates that LLMs exhibit systematic dimensional collapse when encoding brand perceptions: multi-dimensional brand profiles are compressed toward a small number of salient dimensions, producing distortion that varies by elicitation format and model architecture (Zharnikov 2026v). The question of *how much* distortion different elicitation formats produce, and whether an optimal operating point exists, has not been addressed.
+The measurement of brand perception through AI systems has become a practical concern as large language models (LLMs) increasingly mediate consumer information search, product recommendation, and purchase decisions. Li, Castelo, Katona, and Sarvary [-@li-2024-frontiers-determining-validity] demonstrated that LLM-generated brand similarity and attribute ratings match human survey data with greater than 75% agreement, establishing LLMs as valid perceptual instruments. However, their study treated the response format as fixed. Recent empirical work demonstrates that LLMs exhibit systematic dimensional collapse when encoding brand perceptions: multi-dimensional brand profiles are compressed toward a small number of salient dimensions, producing distortion that varies by elicitation format and model architecture [@zharnikov-2026-dimensional-collapse-ai-mediated-search]. The question of *how much* distortion different elicitation formats produce, and whether an optimal operating point exists, has not been addressed.
 
-Information theory provides a natural framework. Shannon's (1959) rate-distortion function R(D) characterizes the minimum information rate required to represent a source within a given distortion tolerance. In the classical formulation, distortion decreases monotonically as rate increases: more bits always mean better reconstruction. The theory has been applied extensively to signal compression (Cover and Thomas 2006; Gersho and Gray 1991) and more recently to human perceptual cognition (Sims 2016), but not previously to the measurement of AI-generated brand perception, where the encoder's internal priors produce non-monotonic behavior absent from the classical memoryless-source formulation.
+Information theory provides a natural framework. Shannon's [-@shannon-1959-coding-theorems-discrete] rate-distortion function R(D) characterizes the minimum information rate required to represent a source within a given distortion tolerance. In the classical formulation, distortion decreases monotonically as rate increases: more bits always mean better reconstruction. The theory has been applied extensively to signal compression [@cover-2006-elements-information-theory; @gersho-1991-vector-quantization-signal] and more recently to human perceptual cognition [@sims-2016-ratedistortion-theory-human], but not previously to the measurement of AI-generated brand perception, where the encoder's internal priors produce non-monotonic behavior absent from the classical memoryless-source formulation.
 
 This paper reports the first empirical rate-distortion curve for AI brand perception encoders. The contribution is threefold. First, the study operationalizes rate as the information capacity of the response format and distortion as the distance between AI-generated and canonical brand profiles, establishing an information-theoretic measurement framework for AI brand research (Method section). Second, the empirical curve is J-shaped rather than monotonically decreasing: the intermediate 1-5 ordinal format (19 bits) outperforms the highest-rate 100-point allocation (26 bits), demonstrating that bounded quantization suppresses encoder bias (Results section). Third, 17 architectures from distinct training lineages trace essentially the same curve, demonstrating cross-architectural codebook convergence in brand perception encoding across the five tested conditions including R5 (Results section, H2).
 
@@ -26,40 +26,40 @@ This paper reports the first empirical rate-distortion curve for AI brand percep
 
 ### Rate-Distortion Theory and Brand Perception
 
-Shannon's (1959) rate-distortion theorem establishes that for a source X with distribution p(x) and a distortion measure d(x, x-hat), there exists a function R(D) giving the minimum bits per symbol needed to reproduce X within average distortion D. The classical result predicts monotonic decrease: R(D) is convex and non-increasing, meaning more bits always permit lower distortion (Cover and Thomas 2006).
+Shannon's [-@shannon-1959-coding-theorems-discrete] rate-distortion theorem establishes that for a source X with distribution p(x) and a distortion measure d(x, x-hat), there exists a function R(D) giving the minimum bits per symbol needed to reproduce X within average distortion D. The classical result predicts monotonic decrease: R(D) is convex and non-increasing, meaning more bits always permit lower distortion [@cover-2006-elements-information-theory].
 
 This paper treats each LLM as an encoder that maps a brand stimulus (the brand name and evaluation prompt) to an eight-dimensional output vector. The response format constrains the encoder's output alphabet. A 100-point allocation across eight dimensions permits approximately 26 bits of output; a 1-5 ordinal scale permits approximately 19 bits; and so on down to a single categorical choice at approximately 3 bits. The canonical brand profile serves as the reference signal. Distortion is the total variation distance between the encoder's output and this reference.
 
-The critical departure from classical rate-distortion theory is that the encoder is not a passive channel but an active agent with internal priors. When the output format is unconstrained (high rate), these priors express freely and may *increase* distortion relative to a format that bounds the output space. This mechanism predicts a non-monotonic, J-shaped curve. The information bottleneck framework (Tishby, Pereira, and Bialek 2000) formalizes a related result: an encoder that maximizes relevance while minimizing rate achieves an optimal compression point, predicting exactly the non-monotonic curve reported here. The economics formalization of Shannon capacity constraints -- rational inattention theory (Sims 2003) -- offers a complementary explanation: bounded, quantized decision strategies are optimal under capacity constraints, explaining why the 5-level ordinal format outperforms the unconstrained allocation. Note that Sims (2003) is Christopher A. Sims in economics; the perceptual-cognition Sims (2016) cited above is a distinct author.
+The critical departure from classical rate-distortion theory is that the encoder is not a passive channel but an active agent with internal priors. When the output format is unconstrained (high rate), these priors express freely and may *increase* distortion relative to a format that bounds the output space. This mechanism predicts a non-monotonic, J-shaped curve. The information bottleneck framework [@tishby-2000-information-bottleneck-method] formalizes a related result: an encoder that maximizes relevance while minimizing rate achieves an optimal compression point, predicting exactly the non-monotonic curve reported here. The economics formalization of Shannon capacity constraints -- rational inattention theory [@sims-2003-implications-rational-inattention] -- offers a complementary explanation: bounded, quantized decision strategies are optimal under capacity constraints, explaining why the 5-level ordinal format outperforms the unconstrained allocation. Note that Sims [-@sims-2003-implications-rational-inattention] is Christopher A. Sims in economics; the perceptual-cognition Sims [-@sims-2016-ratedistortion-theory-human] cited above is a distinct author.
 
-Where Sims (2016) applied Shannon rate-distortion theory to human perceptual cognition -- modeling observers as capacity-limited channels that reconstruct low-level sensory signals within a bit-rate budget -- the present study extends this framework to evaluative encoders with strong internal priors. The non-monotonic J-shape has no analog in Sims's perceptual encoder because human observers do not have training-corpus biases that amplify distortion at high rate; LLM encoders do. The departure from classical R(D) is thus mechanistic, not mathematical.
+Where Sims [-@sims-2016-ratedistortion-theory-human] applied Shannon rate-distortion theory to human perceptual cognition -- modeling observers as capacity-limited channels that reconstruct low-level sensory signals within a bit-rate budget -- the present study extends this framework to evaluative encoders with strong internal priors. The non-monotonic J-shape has no analog in Sims's perceptual encoder because human observers do not have training-corpus biases that amplify distortion at high rate; LLM encoders do. The departure from classical R(D) is thus mechanistic, not mathematical.
 
-Within the SBT corpus, the theoretical parent of the present framework is the spectral metamerism paper (Zharnikov 2026e), which derived projection-bound infrastructure for brand perception encoding: retaining 11.6% of an LLM's implicit brand representation suffices to distinguish canonical profiles. That projection bound establishes the bit-budget ceiling that the present empirical R(D) curve operationalizes. The dimensional completeness and necessity of the SBT taxonomy provide a further constraint: the eight-dimensional structure is not arbitrary but satisfies formal completeness and non-redundancy criteria (Zharnikov 2026r), which bound the distortion measure used here.
+Within the SBT corpus, the theoretical parent of the present framework is the spectral metamerism paper [@zharnikov-2026-spectral-metamerism-brand-perception-projection], which derived projection-bound infrastructure for brand perception encoding: retaining 11.6% of an LLM's implicit brand representation suffices to distinguish canonical profiles. That projection bound establishes the bit-budget ceiling that the present empirical R(D) curve operationalizes. The dimensional completeness and necessity of the SBT taxonomy provide a further constraint: the eight-dimensional structure is not arbitrary but satisfies formal completeness and non-redundancy criteria [@zharnikov-2026-why-eight-completeness-necessity-sbt], which bound the distortion measure used here.
 
 ### Response Format Effects in Survey Methodology
 
-The finding that response format affects measurement quality is well established in human survey methodology. Schwarz (1999) demonstrated that response scales shape answers by providing implicit frames of reference. Tourangeau, Rips, and Rasinski (2000) formalized how cognitive demands of different formats produce systematic response artifacts. Krosnick (1991) showed that cognitively demanding formats invite satisficing -- respondents select plausible-seeming answers rather than optimizing, introducing noise. The canonical finding that intermediate scale granularity (5-7 points) outperforms both finer and coarser scales is well established in marketing measurement (Cox 1980); the present study provides the information-theoretic mechanism for why this result extends to LLM encoders via a different pathway -- prior suppression rather than cognitive capacity. These findings establish a strong prior: format constraints can improve measurement quality by reducing degrees of freedom available for satisficing.
+The finding that response format affects measurement quality is well established in human survey methodology. Schwarz [-@schwarz-1999-selfreports-how-questions] demonstrated that response scales shape answers by providing implicit frames of reference. Tourangeau, Rips, and Rasinski [-@tourangeau-2000-psychology-survey-response] formalized how cognitive demands of different formats produce systematic response artifacts. Krosnick [-@krosnick-1991-response-strategies-coping] showed that cognitively demanding formats invite satisficing -- respondents select plausible-seeming answers rather than optimizing, introducing noise. The canonical finding that intermediate scale granularity (5-7 points) outperforms both finer and coarser scales is well established in marketing measurement [@cox-1980-optimal-number-response]; the present study provides the information-theoretic mechanism for why this result extends to LLM encoders via a different pathway -- prior suppression rather than cognitive capacity. These findings establish a strong prior: format constraints can improve measurement quality by reducing degrees of freedom available for satisficing.
 
-A growing literature validates LLMs as synthetic survey respondents with high distributional fidelity (Argyle et al. 2023); the present study extends this paradigm to brand measurement and shows that response format -- not persona conditioning -- is a primary driver of fidelity.
+A growing literature validates LLMs as synthetic survey respondents with high distributional fidelity [@argyle-2023-out-one-many]; the present study extends this paradigm to brand measurement and shows that response format -- not persona conditioning -- is a primary driver of fidelity.
 
 The present study extends this logic from human respondents to LLM encoders. When an LLM is given a 100-point allocation format, it has ample degrees of freedom to express idiosyncratic training-corpus biases -- the machine analogue of satisficing. When constrained to a 1-5 ordinal scale, these biases are suppressed. The information-theoretic framing formalizes this intuition: the rate-distortion curve quantifies the trade-off between format richness and measurement fidelity for the first time.
 
-Concurrent work on AI as brand evaluator supports this direction. Sabbah and Acar (2026) found that only structured ratings survive consistently across LLM architectures when AI agents evaluate brands -- a finding that parallels the R2 optimum reported here. Their "Marketing to Machines" framing independently identifies the same measurement challenge from a managerial perspective.
+Concurrent work on AI as brand evaluator supports this direction. Sabbah and Acar [-@sabbah-2026-marketing-machines-how] found that only structured ratings survive consistently across LLM architectures when AI agents evaluate brands -- a finding that parallels the R2 optimum reported here. Their "Marketing to Machines" framing independently identifies the same measurement challenge from a managerial perspective.
 
 ### Spectral Brand Theory
 
-The canonical profiles used as reference signals derive from Spectral Brand Theory (SBT), which models brand perception as an eight-dimensional vector: Semiotic, Narrative, Ideological, Experiential, Social, Economic, Cultural, and Temporal (Zharnikov 2026a). Each dimension captures a distinct perceptual axis. Prior empirical work with 24 LLM architectures established that AI encoders systematically over-weight the Economic and Semiotic dimensions when evaluating brands in pair-comparison format, producing a mean dimensional collapse index of .356 (Zharnikov 2026v). The present study extends this finding by varying the elicitation format rather than the brand pair and measuring distortion from canonical profiles rather than relative brand distance.
+The canonical profiles used as reference signals derive from Spectral Brand Theory (SBT), which models brand perception as an eight-dimensional vector: Semiotic, Narrative, Ideological, Experiential, Social, Economic, Cultural, and Temporal [@zharnikov-2026-spectral-brand-theory-computational-framework]. Each dimension captures a distinct perceptual axis. Prior empirical work with 24 LLM architectures established that AI encoders systematically over-weight the Economic and Semiotic dimensions when evaluating brands in pair-comparison format, producing a mean dimensional collapse index of .356 [@zharnikov-2026-dimensional-collapse-ai-mediated-search]. The present study extends this finding by varying the elicitation format rather than the brand pair and measuring distortion from canonical profiles rather than relative brand distance.
 
 Table 4: Comparison with adjacent information-theoretic treatments of perception compression.
 
 | Source | Source-distribution assumption | Distortion measure | Channel / encoder model | What is being compressed |
 |--------|-------------------------------|-------------------|------------------------|--------------------------|
-| Sims (2003) | Gaussian prior over economic states | Quadratic loss | Capacity-limited rational agent | Decision-relevant state information |
-| Sabbah and Acar (2026) | Empirical LLM output distribution | Structural rating consistency | LLM as brand evaluator | Promotional-cue response under format variation |
-| Zharnikov (2026e) | Dirichlet simplex over 8-dim profiles | Projection distance | Implicit LLM representation | Brand perception subspace dimensionality |
+| Sims [-@sims-2003-implications-rational-inattention] | Gaussian prior over economic states | Quadratic loss | Capacity-limited rational agent | Decision-relevant state information |
+| Sabbah and Acar [-@sabbah-2026-marketing-machines-how] | Empirical LLM output distribution | Structural rating consistency | LLM as brand evaluator | Promotional-cue response under format variation |
+| Zharnikov [-@zharnikov-2026-spectral-metamerism-brand-perception-projection] | Dirichlet simplex over 8-dim profiles | Projection distance | Implicit LLM representation | Brand perception subspace dimensionality |
 | This paper (2026aa) | Dirichlet simplex over 8-dim profiles | Total variation distance from canonical | LLM as active encoder with priors | Full 8-dim brand profile under format constraints |
 
-*Notes:* Sims (2003) is Christopher A. Sims (economics rational inattention); Sims (2016) cited elsewhere is Chris R. Sims (perceptual cognition) -- distinct authors. The present study is the first to vary the output-alphabet constraint (rate) while holding the source distribution and distortion measure fixed, yielding the empirical R(D) curve.
+*Notes:* Sims [-@sims-2003-implications-rational-inattention] is Christopher A. Sims (economics rational inattention); Sims [-@sims-2016-ratedistortion-theory-human] cited elsewhere is Chris R. Sims (perceptual cognition) -- distinct authors. The present study is the first to vary the output-alphabet constraint (rate) while holding the source distribution and distortion measure fixed, yielding the empirical R(D) curve.
 
 ## Method
 
@@ -85,7 +85,7 @@ Table 1: Rate Conditions and Information Capacity.
 
 ### Brands
 
-Five canonical SBT reference brands spanning distinct positioning archetypes: Hermes (luxury heritage), IKEA (democratic design), Patagonia (activist outdoor), Tesla (technology disruptor), and Erewhon (experiential premium). Canonical profiles are defined in the SBT framework (Zharnikov 2026a).
+Five canonical SBT reference brands spanning distinct positioning archetypes: Hermes (luxury heritage), IKEA (democratic design), Patagonia (activist outdoor), Tesla (technology disruptor), and Erewhon (experiential premium). Canonical profiles are defined in the SBT framework [@zharnikov-2026-spectral-brand-theory-computational-framework].
 
 ### Models
 
@@ -99,11 +99,11 @@ All models were queried at temperature 0.7 (the default creative-task setting fo
 
 ### Distortion Measure
 
-Model outputs were parsed and normalized to sum to 1 on the eight-dimensional simplex, following the SBT convention of treating brand perception as an allocation across dimensions (Zharnikov 2026a). The choice of eight dimensions reflects formal completeness and non-redundancy criteria established in the SBT dimensional justification (Zharnikov 2026r); no dimension can be dropped without loss of coverage, so the eight-dimensional structure sets the minimum space in which distortion is meaningful. Distortion was computed as total variation distance:
+Model outputs were parsed and normalized to sum to 1 on the eight-dimensional simplex, following the SBT convention of treating brand perception as an allocation across dimensions [@zharnikov-2026-spectral-brand-theory-computational-framework]. The choice of eight dimensions reflects formal completeness and non-redundancy criteria established in the SBT dimensional justification [@zharnikov-2026-why-eight-completeness-necessity-sbt]; no dimension can be dropped without loss of coverage, so the eight-dimensional structure sets the minimum space in which distortion is meaningful. Distortion was computed as total variation distance:
 
 d(w-hat, w~canon~) = 0.5 x SUM |w-hat~i~ - w~canon,i~|
 
-where w-hat is the model's normalized output and w~canon~ is the canonical profile (also normalized). This measure ranges from 0 (perfect reconstruction) to 1 (maximally distant). The canonical profiles represent the theoretically specified values in SBT (Zharnikov 2026a); validation of these profiles against human survey data is reported there; the present distortion measure captures deviation from theoretical specifications.
+where w-hat is the model's normalized output and w~canon~ is the canonical profile (also normalized). This measure ranges from 0 (perfect reconstruction) to 1 (maximally distant). The canonical profiles represent the theoretically specified values in SBT [@zharnikov-2026-spectral-brand-theory-computational-framework]; validation of these profiles against human survey data is reported there; the present distortion measure captures deviation from theoretical specifications.
 
 ### Hypotheses
 
@@ -198,11 +198,11 @@ All numerical results in Tables 1-3 and the paired t-tests are reproducible from
 
 The J-shaped curve contradicts classical rate-distortion intuition, where more bits always reduce distortion. The explanation lies in the nature of the encoder. Unlike a passive channel, an LLM has internal priors about brands that express most freely when the output format is unconstrained. The 100-point allocation (R1) gives models room to amplify these priors, producing systematic deviations from canonical profiles. The 1-5 ordinal scale (R2) quantizes the output space into five levels per dimension, suppressing within-model variance and pulling outputs closer to canonical values.
 
-The optimal operating point is not at maximum information rate but at an intermediate rate where format constraints discipline the encoder without discarding too much signal. This mechanism differs from cognitive satisficing in human respondents (Krosnick 1991): LLMs do not have fatigue or effort costs that satisficing reduces. The information-theoretic framing captures a qualitatively different phenomenon -- training-corpus prior suppression under output-alphabet constraints -- that produces the same empirical pattern (bounded formats outperform unconstrained ones) via a distinct pathway.
+The optimal operating point is not at maximum information rate but at an intermediate rate where format constraints discipline the encoder without discarding too much signal. This mechanism differs from cognitive satisficing in human respondents [@krosnick-1991-response-strategies-coping]: LLMs do not have fatigue or effort costs that satisficing reduces. The information-theoretic framing captures a qualitatively different phenomenon -- training-corpus prior suppression under output-alphabet constraints -- that produces the same empirical pattern (bounded formats outperform unconstrained ones) via a distinct pathway.
 
 ### Codebook Convergence
 
-The finding that 17 architectures from distinct training lineages (spanning Western, Chinese, Russian, Indian, Saudi, and Japanese providers) trace the same J-shaped curve (H2 supported, CV = .140) suggests that the rate-distortion trade-off is an emergent property of the LLM optimization landscape rather than a training-corpus-specific artifact. This convergence parallels the cross-architectural consistency observed in pair-comparison studies (Zharnikov 2026v, cosine similarity = .977 across 24 models) and extends it to direct elicitation formats. Convergence across architectures is further corroborated by the spectral immunity result: portfolio framing and ownership context do not shift AI brand perception profiles across a 13-model panel spanning the same training lineages (Zharnikov 2026ac), indicating that codebook stability is not confined to rate-distortion conditions but generalizes across elicitation contexts.
+The finding that 17 architectures from distinct training lineages (spanning Western, Chinese, Russian, Indian, Saudi, and Japanese providers) trace the same J-shaped curve (H2 supported, CV = .140) suggests that the rate-distortion trade-off is an emergent property of the LLM optimization landscape rather than a training-corpus-specific artifact. This convergence parallels the cross-architectural consistency observed in pair-comparison studies (Zharnikov [-@zharnikov-2026-dimensional-collapse-ai-mediated-search], cosine similarity = .977 across 24 models) and extends it to direct elicitation formats. Convergence across architectures is further corroborated by the spectral immunity result: portfolio framing and ownership context do not shift AI brand perception profiles across a 13-model panel spanning the same training lineages [@zharnikov-2026-hf-r20-portfolio-ai-perception], indicating that codebook stability is not confined to rate-distortion conditions but generalizes across elicitation contexts.
 
 The convergence has a second implication: the J-shape is not a property of any particular model but of the encoding task itself. Any sufficiently capable language model, regardless of its training data, will produce lower distortion at R2 than at R1 when asked to evaluate well-known brands with dense training-corpus representation of the magnitude tested here.
 
@@ -218,7 +218,7 @@ Third, the J-shape implies a sweet-spot capacity range: performance degrades sha
 
 ### Limitations
 
-Several limitations qualify these findings. First, canonical brand profiles are theoretically derived reference signals, not human-validated ground truth. The distortion measure captures deviation from theory, not from any specific human cohort's perception. Second, only English prompts were used; native-language effects on the R(D) curve remain untested, though prior work suggests language medium can shift operating points for brands with geographically concentrated discourse (Zharnikov 2026v). Third, the H4 test for architectural separation is severely underpowered; larger model panels are needed to determine whether Western and non-Western training lineages produce genuinely different rate-distortion slopes. Fourth, the R5 condition (single dimension) produces extreme distortion by construction, as a 1-of-8 indicator vector cannot approximate any realistic eight-dimensional profile.
+Several limitations qualify these findings. First, canonical brand profiles are theoretically derived reference signals, not human-validated ground truth. The distortion measure captures deviation from theory, not from any specific human cohort's perception. Second, only English prompts were used; native-language effects on the R(D) curve remain untested, though prior work suggests language medium can shift operating points for brands with geographically concentrated discourse [@zharnikov-2026-dimensional-collapse-ai-mediated-search]. Third, the H4 test for architectural separation is severely underpowered; larger model panels are needed to determine whether Western and non-Western training lineages produce genuinely different rate-distortion slopes. Fourth, the R5 condition (single dimension) produces extreme distortion by construction, as a 1-of-8 indicator vector cannot approximate any realistic eight-dimensional profile.
 
 *Boundary Conditions*
 
@@ -226,58 +226,21 @@ The J-shape applies to well-known brands with dense training-corpus representati
 
 ### Implications for Practice
 
-For brand researchers adopting AI-based measurement, the finding prescribes a specific instrument design: use 1-5 ordinal scales rather than point-allocation or open-ended formats when eliciting brand perception profiles from LLMs. This recommendation aligns with the classical optimal-scale-points finding in human survey design (Cox 1980) but arrives via a distinct pathway -- prior suppression rather than cognitive capacity. The recommendation applies to any application where the goal is to recover a multi-dimensional brand profile with minimal distortion, including automated brand auditing, competitive monitoring, and AI-mediated market research. The cost efficiency of this approach is notable: the entire 17-model, 5-brand, 5-condition experiment cost $0.225 USD and completed in 33 minutes, making R(D)-calibrated instrument design accessible to researchers without large compute budgets.
+For brand researchers adopting AI-based measurement, the finding prescribes a specific instrument design: use 1-5 ordinal scales rather than point-allocation or open-ended formats when eliciting brand perception profiles from LLMs. This recommendation aligns with the classical optimal-scale-points finding in human survey design [@cox-1980-optimal-number-response] but arrives via a distinct pathway -- prior suppression rather than cognitive capacity. The recommendation applies to any application where the goal is to recover a multi-dimensional brand profile with minimal distortion, including automated brand auditing, competitive monitoring, and AI-mediated market research. The cost efficiency of this approach is notable: the entire 17-model, 5-brand, 5-condition experiment cost $0.225 USD and completed in 33 minutes, making R(D)-calibrated instrument design accessible to researchers without large compute budgets.
 
 For information theorists, the J-shaped curve in a cognitive encoder represents an empirical anomaly worth further investigation. The transition from classical monotonic R(D) to non-monotonic behavior occurs precisely when the encoder possesses strong priors about the source -- a condition absent from the memoryless source model underlying Shannon's theorem.
 
-The rate-distortion principle extends bidirectionally. Experiment D (Zharnikov 2026x, Section 8.6) tested five input specification formats for Brand Functions and found that format explains 17% of variance in reconstruction fidelity (eta-sq = .167, *p* < .001). Prose specifications produced the lowest fidelity (cosine .944), while qualitative ordinal levels (.978) and structured JSON with scores (.973) outperformed. This mirrors the output-side finding: bounded, structured representations minimize distortion on both the encoding and decoding sides of the perception channel. For applications involving brand recovery after perception shocks, the relationship between rate budget and recoverable separability is formalized in a companion threshold result (Zharnikov 2026ad), which derives the minimum rate investment required to restore distinguishability after a coherence-disrupting event.
+The rate-distortion principle extends bidirectionally. Experiment D (Zharnikov [-@zharnikov-2026-ai-native-brand-identity-from], Section 8.6) tested five input specification formats for Brand Functions and found that format explains 17% of variance in reconstruction fidelity (eta-sq = .167, *p* < .001). Prose specifications produced the lowest fidelity (cosine .944), while qualitative ordinal levels (.978) and structured JSON with scores (.973) outperformed. This mirrors the output-side finding: bounded, structured representations minimize distortion on both the encoding and decoding sides of the perception channel. For applications involving brand recovery after perception shocks, the relationship between rate budget and recoverable separability is formalized in a companion threshold result [@zharnikov-2026-restoring-perceptual-separability-after-coherence], which derives the minimum rate investment required to restore distinguishability after a coherence-disrupting event.
 
 ## Data Availability
 
-All data, code, and pre-registration materials are publicly available at https://github.com/spectralbranding/sbt-papers/tree/main/r19-rate-distortion and on HuggingFace at https://doi.org/10.57967/hf/8362. The experiment can be reproduced for $0.225 USD in approximately 33 minutes.
+Code and pre-registration materials are publicly available at https://github.com/spectralbranding/sbt-papers/tree/main/r19-rate-distortion; the dataset of record is archived on HuggingFace at https://doi.org/10.57967/hf/8362. The experiment can be reproduced for $0.225 USD in approximately 33 minutes.
 
 ## AI Disclosure
 
-AI assistants (Claude Opus 4.7, Grok 4.1, Gemini 3.1) were used for initial literature search and editorial refinement. Seventeen LLMs are the subjects of the experiment -- encoders whose rate-distortion properties are measured -- not contributors to the theoretical framework. All theoretical claims, experimental design, and interpretive framing are the author's sole responsibility.
+AI assistants (Claude Opus 4.7, Grok 4.1, Gemini 3.1) were used for initial literature search, for software development — authoring the experiment harness and the analysis and scoring scripts — and for orchestrating and running the reported experiments through those scripts, as well as for editorial refinement. Seventeen LLMs are the subjects of the experiment -- encoders whose rate-distortion properties are measured -- not contributors to the theoretical framework. All theoretical claims, experimental design, and interpretive framing are the author's sole responsibility.
 
 ## References
 
-Argyle Lisa, Ethan Busby, Nancy Fulda, Joshua R Gubler, Chris Rytting, and David Wingate (2023), "Out of One, Many: Using Language Models to Simulate Human Samples," *Political Analysis*, 31 (3), 337-51.
-
-Cover Thomas M and Joy A Thomas (2006), *Elements of Information Theory*, 2nd ed. Hoboken, NJ: Wiley-Interscience.
-
-Cox Eli P (1980), "The Optimal Number of Response Alternatives for a Scale: A Review," *Journal of Marketing Research*, 17 (4), 442-56.
-
-Gersho Allen and Robert M Gray (1991), *Vector Quantization and Signal Compression*. Boston: Kluwer Academic Publishers. doi:10.1007/978-1-4615-3626-0
-
-Krosnick Jon A (1991), "Response Strategies for Coping with the Cognitive Demands of Attitude Measures in Surveys," *Applied Cognitive Psychology*, 5 (3), 213-36. doi:10.1002/acp.2350050305
-
-Li Peiyao, Noah Castelo, Zsolt Katona, and Miklos Sarvary (2024), "Frontiers: Determining the Validity of Large Language Models for Automated Perceptual Analysis," *Marketing Science*, 43 (2), 254-66. doi:10.1287/mksc.2023.0454
-
-Sabbah Jafar and Oguz A Acar (2026), "Marketing to Machines: How AI Models Respond to Promotional Cues," SSRN working paper 6406639, doi:10.2139/ssrn.6406639.
-
-Schwarz Norbert (1999), "Self-Reports: How the Questions Shape the Answers," *American Psychologist*, 54 (2), 93-105.
-
-Shannon Claude E (1959), "Coding Theorems for a Discrete Source with a Fidelity Criterion," in *IRE International Convention Record*, vol. 7, part 4, 142-63.
-
-Sims Christopher A (2003), "Implications of Rational Inattention," *Journal of Monetary Economics*, 50 (3), 665-90.
-
-Sims Chris R (2016), "Rate-Distortion Theory and Human Perception," *Cognition*, 152, 181-98. doi:10.1016/j.cognition.2016.03.020
-
-Tishby Naftali, Fernando C Pereira, and William Bialek (2000), "The Information Bottleneck Method," in *Proceedings of the 37th Annual Allerton Conference on Communication, Control, and Computing*, 368-77.
-
-Tourangeau Roger, Lance J Rips, and Kenneth A Rasinski (2000), *The Psychology of Survey Response*. Cambridge: Cambridge University Press.
-
-Zharnikov Dmitry (2026a), "Spectral Brand Theory: A multi-dimensional framework for brand perception analysis," working paper, doi: 10.5281/zenodo.18945912.
-
-Zharnikov Dmitry (2026ac), "Spectral immunity: Portfolio interference fails in AI-mediated brand perception," working paper, doi: 10.5281/zenodo.19765401.
-
-Zharnikov Dmitry (2026ad), "Restoring perceptual separability after coherence shocks: A mu > lambda threshold inequality in brand perception," working paper, doi: 10.5281/zenodo.19778549.
-
-Zharnikov Dmitry (2026e), "Spectral metamerism in brand perception: Projection bounds from high-dimensional geometry," working paper, doi: 10.5281/zenodo.18945352.
-
-Zharnikov Dmitry (2026r), "Why eight? Completeness and necessity of the SBT dimensional taxonomy," working paper, doi: 10.5281/zenodo.19207599.
-
-Zharnikov Dmitry (2026v), "Dimensional collapse in AI-mediated brand perception: Large language models as metameric observers," working paper, doi: 10.5281/zenodo.19422427.
-
-Zharnikov Dmitry (2026x), "AI-native brand identity: From visual recognition to cryptographic verification," working paper, doi: 10.5281/zenodo.19391476.
+::: {#refs}
+:::

@@ -3,27 +3,25 @@ message: "If you use this paper, please cite it as below."
 authors:
   - family-names: Zharnikov
     given-names: Dmitry
-    email: dmitry@spectralbranding.com
     affiliation: "Independent Researcher"
     orcid: "https://orcid.org/0009-0000-6893-9231"
-title: "Geometric approaches to brand perception: A critical survey and research agenda"
+title: "Geometric Approaches to Brand Perception: A Critical Survey and Research Agenda"
 version: 1.5.0
-date-released: 2026-05-02
+date-released: 2026-06-14
 url: "https://doi.org/10.5281/zenodo.18945217"
 repository-code: "https://github.com/spectralbranding/sbt-papers"
 identifiers:
   - type: doi
     value: "10.5281/zenodo.18945217"
-    description: "Zenodo archive (primary)"
-  - type: url
-    value: "https://doi.org/10.5281/zenodo.18945217"
-    description: "Zenodo preprint"
+    description: "Zenodo concept DOI (all versions)"
 keywords:
   - brand perception
   - geometric methods
-  - perception science
-  - literature survey
-  - multi-dimensional analysis
+  - multidimensional scaling
+  - conceptual spaces
+  - non-ergodicity
+  - high-dimensional geometry
+  - Spectral Brand Theory
 license: MIT
 type: article
 preferred-citation:
@@ -31,9 +29,6 @@ preferred-citation:
   authors:
     - family-names: Zharnikov
       given-names: Dmitry
-      email: dmitry@spectralbranding.com
-      affiliation: "Independent Researcher"
-      orcid: "https://orcid.org/0009-0000-6893-9231"
-  title: "Geometric approaches to brand perception: A critical survey and research agenda"
+  title: "Geometric Approaches to Brand Perception: A Critical Survey and Research Agenda"
   year: 2026
   url: "https://doi.org/10.5281/zenodo.18945217"

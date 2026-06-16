@@ -3,27 +3,25 @@ message: "If you use this paper, please cite it as below."
 authors:
   - family-names: Zharnikov
     given-names: Dmitry
-    email: dmitry@spectralbranding.com
     affiliation: "Independent Researcher"
     orcid: "https://orcid.org/0009-0000-6893-9231"
-title: "Geometric necessity of fuzzy cohort boundaries: A concentration analysis of the 7-simplex"
+title: "Geometric Necessity of Fuzzy Cohort Boundaries: A Concentration Analysis of the 7-Simplex"
 version: 1.2.0
-date-released: 2026-05-01
+date-released: 2026-06-14
 url: "https://doi.org/10.5281/zenodo.18945477"
 repository-code: "https://github.com/spectralbranding/sbt-papers"
 identifiers:
   - type: doi
     value: "10.5281/zenodo.18945477"
-    description: "Zenodo archive (primary)"
-  - type: url
-    value: "https://doi.org/10.5281/zenodo.18945477"
-    description: "Zenodo preprint"
+    description: "Zenodo concept DOI (all versions)"
 keywords:
-  - cohort boundaries
   - concentration of measure
-  - perception space
-  - fuzzy boundaries
-  - brand segmentation
+  - cohort boundaries
+  - probability simplex
+  - Lévy's lemma
+  - brand perception
+  - high-dimensional geometry
+  - Spectral Brand Theory
 license: MIT
 type: article
 preferred-citation:
@@ -31,9 +29,6 @@ preferred-citation:
   authors:
     - family-names: Zharnikov
       given-names: Dmitry
-      email: dmitry@spectralbranding.com
-      affiliation: "Independent Researcher"
-      orcid: "https://orcid.org/0009-0000-6893-9231"
-  title: "Geometric necessity of fuzzy cohort boundaries: A concentration analysis of the 7-simplex"
+  title: "Geometric Necessity of Fuzzy Cohort Boundaries: A Concentration Analysis of the 7-Simplex"
   year: 2026
   url: "https://doi.org/10.5281/zenodo.18945477"

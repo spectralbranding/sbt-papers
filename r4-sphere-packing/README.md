@@ -1,69 +1,39 @@
-[![MIT License](https://img.shields.io/badge/Code-MIT-blue.svg)](LICENSE)
-[![CC-BY 4.0](https://img.shields.io/badge/Data-CC--BY_4.0-lightgrey.svg)](LICENSE-data)
-![Last Updated](https://img.shields.io/badge/updated-2026--05--29-success)
+[![MIT License](https://img.shields.io/badge/Code-MIT-blue.svg)](../LICENSE)
+[![CC-BY 4.0](https://img.shields.io/badge/Data-CC--BY_4.0-lightgrey.svg)](../LICENSE-data)
+![Last Updated](https://img.shields.io/badge/updated-2026--06--16-success)
 
 # How Many Brands Can a Market Hold? Sphere Packing Bounds for Multi-Dimensional Positioning
 
-Public mirror for the R4 paper by Dmitry Zharnikov (2026g). This repository hosts the paper source, machine-readable citation metadata, and licensing files. Results in this paper are analytical; the companion computation script `r4_capacity_bounds.py` (referenced in Appendix A of the paper) lives in the paper's working repository and is published alongside the Zenodo upload.
+## 1 | Paper
 
-## 1 | Getting Started
-
-This is a paper-only mirror. No build step is required to read the paper.
-
-- Read `paper.md` for the full manuscript.
-- Read `paper.yaml` for the structured paper specification (claims, methodology, dependencies, results).
-- Read `CITATION.cff` for machine-readable citation metadata (rendered automatically by GitHub and Zenodo).
-
-## 2 | Project Layout
-
-```
-r4-sphere-packing/
-├── README.md              # this file
-├── LICENSE                # MIT (code)
-├── LICENSE-data           # CC BY 4.0 (data, figures, tables)
-├── CITATION.cff           # machine-readable citation metadata
-├── paper.md               # full manuscript
-├── paper.yaml             # structured paper specification
-├── CONTRIBUTORS.yaml      # contributor metadata
-├── DATA_MANIFEST.yaml     # data inventory
-├── PROVENANCE.yaml        # provenance metadata
-├── experiment/            # LLM stability experiment (Section 10.5)
-│   ├── L0_specification/
-│   ├── L2_prompts/
-│   ├── L3_sessions/
-│   ├── L4_analysis/
-│   ├── hf_dataset/
-│   └── requirements.txt
-└── .here                  # project root anchor
-```
-
-## 3 | Quick Start
-
-This paper's main results are analytical (volume-ratio capacity bounds, E_8 kissing-number decomposition, white-space fraction, correlation-induced effective dimensionality). No simulation pipeline is required to reproduce them — the bounds follow from closed-form expressions given the perceptual threshold parameter epsilon.
-
-The Section 10.5 LLM competitive-interference experiment (250 calls, five models) is documented under `experiment/`. See `experiment/requirements.txt` for the Python environment used for that single subsection.
-
-## 4 | Dependencies
-
-- For reading: any Markdown or PDF viewer.
-- For the Section 10.5 experiment: see `experiment/requirements.txt`.
-
-## 5 | Citation
-
-If you use this paper, please cite it as:
-
-> Zharnikov, D. (2026). How many brands can a market hold? Sphere packing bounds for multi-dimensional positioning. Zenodo. https://doi.org/10.5281/zenodo.18945522
-
-Machine-readable citation metadata: see `CITATION.cff` (rendered by GitHub via the "Cite this repository" button).
-
+- Manuscript: [paper.md](paper.md)
+- Version: 1.3.0
 - DOI: [10.5281/zenodo.18945522](https://doi.org/10.5281/zenodo.18945522)
-- ORCID: [0009-0000-6893-9231](https://orcid.org/0009-0000-6893-9231)
+- Machine-readable bundle: [paper.yaml](paper.yaml) (Paper Spec), [SPINE.yaml](SPINE.yaml), [ONTOLOGY.yaml](ONTOLOGY.yaml), [GLOSSARY.md](GLOSSARY.md)
 
-## 6 | Licence
+## 2 | Citations
 
-- Code: MIT — see `LICENSE`
-- Data, figures, tables, and other generated artifacts: CC BY 4.0 — see `LICENSE-data`
+`paper.md` is the source artifact; inline citations use the `[@citation_key]` form. The full bibliography lives in the companion `.bib` file; see [CITATIONS.md](CITATIONS.md) for how to resolve and render them.
+
+## 3 | Citation
+
+```bibtex
+@article{Zharnikov2026,
+  author  = {Zharnikov, Dmitry},
+  title   = {How Many Brands Can a Market Hold? Sphere Packing Bounds for Multi-Dimensional Positioning},
+  year    = {2026},
+  doi     = {10.5281/zenodo.18945522},
+  url     = {https://doi.org/10.5281/zenodo.18945522},
+  version = {1.3.0},
+}
+```
+
+Machine-readable: [CITATION.cff](CITATION.cff).
+
+## 4 | Licence
+
+Code (if any): MIT — see hub-level [../LICENSE](../LICENSE). Data, figures, tables: CC BY 4.0 — see hub-level [../LICENSE-data](../LICENSE-data).
 
 ---
 
-*Last updated: 2026-05-29*
+*Last updated: 2026-06-16*

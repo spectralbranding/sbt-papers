@@ -1,68 +1,39 @@
-[![MIT License](https://img.shields.io/badge/Code-MIT-blue.svg)](LICENSE)
-[![CC-BY 4.0](https://img.shields.io/badge/Data-CC--BY_4.0-lightgrey.svg)](LICENSE-data)
-![Last Updated](https://img.shields.io/badge/updated-2026--05--29-success)
+[![MIT License](https://img.shields.io/badge/Code-MIT-blue.svg)](../LICENSE)
+[![CC-BY 4.0](https://img.shields.io/badge/Data-CC--BY_4.0-lightgrey.svg)](../LICENSE-data)
+![Last Updated](https://img.shields.io/badge/updated-2026--06--16-success)
 
 # Geometric Necessity of Fuzzy Cohort Boundaries: A Concentration Analysis of the 7-Simplex
 
-Public mirror for Zharnikov (2026f) R3. Concentration-of-measure analysis on the probability simplex $\Delta^7$ establishing that, under the uniform Dirichlet null, a majority of observer-weight profiles lie within 10% relative distance of any cohort boundary — making discrete cohort assignment geometrically unstable in 8-dimensional perception space.
+## 1 | Paper
 
-## 1 | Getting Started
+- Manuscript: [paper.md](paper.md)
+- Version: 1.2.0
+- DOI: [10.5281/zenodo.18945477](https://doi.org/10.5281/zenodo.18945477)
+- Machine-readable bundle: [paper.yaml](paper.yaml) (Paper Spec), [SPINE.yaml](SPINE.yaml), [ONTOLOGY.yaml](ONTOLOGY.yaml), [GLOSSARY.md](GLOSSARY.md)
 
-This mirror contains the paper source (`paper.md`), structured spec (`paper.yaml`), machine-readable citation (`CITATION.cff`), and the Monte Carlo reproducibility script under `code/`. Python 3.12+ recommended; `uv` for environment management.
+## 2 | Citations
 
-## 2 | Project Layout
+`paper.md` is the source artifact; inline citations use the `[@citation_key]` form. The full bibliography lives in the companion `.bib` file; see [CITATIONS.md](CITATIONS.md) for how to resolve and render them.
 
-```
-r3-cohort-boundaries/
-├── paper.md              # Manuscript source
-├── paper.yaml            # Structured paper spec (claims, methodology, results)
-├── CITATION.cff          # Machine-readable citation
-├── CONTRIBUTORS.yaml     # Contributor record
-├── DATA_MANIFEST.yaml    # Data manifest (no primary data; synthetic only)
-├── PROVENANCE.yaml       # Provenance record
-└── code/
-    ├── r3_concentration_mc.py   # Monte Carlo: distance ratios + BVF
-    └── README.md                # Per-script reproducibility notes
-```
+## 3 | Citation
 
-## 3 | Quick Start
-
-Reproduce the numerical figures in Tables 2, 5, and 7:
-
-```bash
-uv run --with numpy --with scikit-learn python code/r3_concentration_mc.py
+```bibtex
+@article{Zharnikov2026,
+  author  = {Zharnikov, Dmitry},
+  title   = {Geometric Necessity of Fuzzy Cohort Boundaries: A Concentration Analysis of the 7-Simplex},
+  year    = {2026},
+  doi     = {10.5281/zenodo.18945477},
+  url     = {https://doi.org/10.5281/zenodo.18945477},
+  version = {1.2.0},
+}
 ```
 
-Random seed fixed at 42; output printed to stdout. See `code/README.md` for details.
+Machine-readable: [CITATION.cff](CITATION.cff).
 
-## 4 | Dependencies
+## 4 | Licence
 
-- Python 3.12+
-- NumPy
-- scikit-learn (k-means partition for boundary volume fraction)
-- `uv` (recommended; handles dependency resolution per-invocation)
-
-## 5 | Script Map
-
-| Script | Produces |
-|---|---|
-| `code/r3_concentration_mc.py` | Table 2 (distance contrast ratio by dimension), Table 5 (boundary volume fraction at $n=8$, $k=4$), Table 7 (Euclidean vs Fisher-Rao contrast at $n=8$) |
-
-## 6 | Citation
-
-Zharnikov, D. (2026). Geometric necessity of fuzzy cohort boundaries: A concentration analysis of the 7-simplex. Zenodo. https://doi.org/10.5281/zenodo.18945477
-
-DOI: [10.5281/zenodo.18945477](https://doi.org/10.5281/zenodo.18945477)
-
-See `CITATION.cff` for machine-readable form (rendered by GitHub and Zenodo).
-
-## 7 | Licence
-
-- Code: MIT License (see `LICENSE` when present at repository root)
-- Data, figures, tables, manuscript text: CC BY 4.0 (see `LICENSE-data` when present at repository root)
-
-Dual-license discipline per `PUBLIC_MIRROR_STANDARD.md` v1.0.0.
+Code (if any): MIT — see hub-level [../LICENSE](../LICENSE). Data, figures, tables: CC BY 4.0 — see hub-level [../LICENSE-data](../LICENSE-data).
 
 ---
 
-*Last updated: 2026-05-29*
+*Last updated: 2026-06-16*

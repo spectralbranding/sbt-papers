@@ -1,29 +1,27 @@
 cff-version: 1.2.0
-message: "If you use this architecture, please cite it as below."
+message: "If you use this paper, please cite it as below."
 authors:
   - family-names: Zharnikov
     given-names: Dmitry
-    email: dmitry@spectralbranding.com
     affiliation: "Independent Researcher"
     orcid: "https://orcid.org/0009-0000-6893-9231"
 title: "The Atom-Cloud-Fact Epistemological Pipeline: From Financial Document Processing to Brand Perception Modeling"
 version: 1.1.0
-date-released: 2026-05-02
+date-released: 2026-06-14
 url: "https://doi.org/10.5281/zenodo.18944770"
-repository-code: "https://github.com/viberesearch/alibi"
+repository-code: "https://github.com/spectralbranding/sbt-papers"
 identifiers:
   - type: doi
     value: "10.5281/zenodo.18944770"
-    description: "Zenodo archive (primary)"
-  - type: url
-    value: "https://doi.org/10.5281/zenodo.18944770"
-    description: "Zenodo preprint"
+    description: "Zenodo concept DOI (all versions)"
 keywords:
   - epistemology
   - probabilistic knowledge
-  - atom-cloud-fact
+  - observation pipeline
   - domain transfer
   - computational framework
+  - brand perception
+  - confirmation bias
 license: MIT
 type: article
 preferred-citation:
@@ -31,9 +29,6 @@ preferred-citation:
   authors:
     - family-names: Zharnikov
       given-names: Dmitry
-      email: dmitry@spectralbranding.com
-      affiliation: "Independent Researcher"
-      orcid: "https://orcid.org/0009-0000-6893-9231"
   title: "The Atom-Cloud-Fact Epistemological Pipeline: From Financial Document Processing to Brand Perception Modeling"
   year: 2026
   url: "https://doi.org/10.5281/zenodo.18944770"

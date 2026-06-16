@@ -1,105 +1,39 @@
 [![MIT License](https://img.shields.io/badge/Code-MIT-blue.svg)](../LICENSE)
 [![CC-BY 4.0](https://img.shields.io/badge/Data-CC--BY_4.0-lightgrey.svg)](../LICENSE-data)
-![Last Updated](https://img.shields.io/badge/updated-2026--05--29-success)
+![Last Updated](https://img.shields.io/badge/updated-2026--06--16-success)
 
 # Restoring Perceptual Separability After Coherence Shocks: A μ > λ Threshold Inequality in Brand Perception
-
-**Restoring Perceptual Separability After Coherence Shocks: A μ > λ Threshold Inequality in Brand Perception**
-
-Citation key: `2026ad` | Zenodo DOI: [10.5281/zenodo.19778549](https://doi.org/10.5281/zenodo.19778549) | Working Paper v1.0.0 (Apr 26, 2026)
-
-## Summary
-
-Cohort-perception separability survives disruption if the rate of corrective brand emission (μ) exceeds the spectral leakage rate (λ) at the observer cohort's detection scale. Below this threshold, perception cloud collapse is self-reinforcing and the invariant brand function cannot be recovered. The paper formalizes this sufficient condition via Kato perturbation theory and Diaconis–Stroock spectral-gap-mixing-time bounds, then demonstrates the threshold using Monte Carlo simulation seeded with Dove 2003–2023 design parameters (λ ≈ .10/yr, μ ≈ 4.50/yr). Hypothesis H22: spectral gap collapse precedes conviction reorientation by 6–18 months.
-
-R22 fills a gap identified by R12 (coherence-resilience as qualitative dynamic equilibrium) and R9 (non-ergodic absorbing-state attractors): neither states a sharp sufficient condition. R22 supplies one: μ > λ.
-
-## Key results
-
-Monte Carlo simulation (32 cohort-dimension cells per regime, 240 months, seed 2026):
-
-| Metric | High regime (μ = 4.50) | Low regime (μ = −.50) | Ratio |
-|---|---|---|---|
-| Terminal spectral gap | 1.10 | .02 | 52x |
-| IRF half-life (months) | 1.4 | 13.1 | 9.3x |
-
-Spectral gap collapse (to 10% of initial) at mean month 46 in low regime. Conviction reorientation horizon ~month 48 in Dove design parameters: consistent with 6–18 month lead-time prediction.
-
-## Files
-
-| File | Description |
-|------|-------------|
-| `paper.md` | Full manuscript (markdown, v0.4) |
-| `paper.yaml` | Machine-readable paper specification |
-| `monte_carlo_simulation.py` | Simulation script (uv run --with statsmodels --with numpy --with scipy) |
-| `monte_carlo_results.json` | Simulation outputs (all 64 cells) |
-| `CITATION.cff` | Citation metadata |
-| `CONTRIBUTORS.yaml` | Contributor attribution |
-| `DATA_MANIFEST.yaml` | Data sources and empirical-method anchors |
-| `PROVENANCE.yaml` | Drafting history and submission records |
-
-## Status
-
-**Working Paper v1.0.0.** All 5 placeholder statistics resolved via Monte Carlo simulation. Real Dove longitudinal data re-analysis deferred to companion paper using R10 source data. Three limitations stated explicitly: (i) Monte Carlo substitutes for real data, (ii) cohort time-invariance assumption, (iii) linear GRP-to-perception mapping.
-
-## Reproducibility
-
-All numerics in §4 Monte Carlo Demonstration are reproducible from the public scripts in this directory:
-
-```bash
-uv run --with statsmodels --with numpy --with scipy python3 monte_carlo_simulation.py
-```
-
-Outputs are written to `monte_carlo_results.json` (32 cells × 2 regimes × 240-month horizon, seed 2026). Terminal spectral gap, IRF half-life, ADF stationarity statistics, and gap-collapse month are all in the JSON.
-
-## Relationship to other papers
-
-- **R10 (2026p)** Dove longitudinal case — companion paper target for empirical re-analysis
-- **R12 (2026s)** coherence-resilience — qualitative precursor (R22 formalizes the threshold)
-- **R6 (2026j)** diffusion dynamics — flow on cohort weight space
-- **R9 (2026o)** non-ergodic perception — absorbing-state dynamics below threshold
-- **R16 (2026x)** Brand Function — the invariant being projected onto
-- **R19 (2026aa)** rate-distortion — bandwidth grounding
-- **R21 (2026ac)** spectral immunity — awareness-gate sufficiency framing
-
----
 
 ## 1 | Paper
 
 - Manuscript: [paper.md](paper.md)
-- Version: 1.2.0
-- Zenodo DOI: [10.5281/zenodo.19778549](https://doi.org/10.5281/zenodo.19778549)
+- Version: 1.0.0
+- DOI: [10.5281/zenodo.19778549](https://doi.org/10.5281/zenodo.19778549)
+- Machine-readable bundle: [paper.yaml](paper.yaml) (Paper Spec), [SPINE.yaml](SPINE.yaml), [ONTOLOGY.yaml](ONTOLOGY.yaml), [GLOSSARY.md](GLOSSARY.md)
 
-## 2 | Companion Data
+## 2 | Citations
 
-No companion dataset for this paper.
+`paper.md` is the source artifact; inline citations use the `[@citation_key]` form. The full bibliography lives in the companion `.bib` file; see [CITATIONS.md](CITATIONS.md) for how to resolve and render them.
 
-## 3 | Reproduction
-
-Monte Carlo simulation and bifurcation plot reproduce all numerical results and figures:
-
-```bash
-uv run --with statsmodels --with numpy --with scipy python3 monte_carlo_simulation.py
-uv run --with numpy --with matplotlib python3 code/plot_bifurcation_curve.py
-```
-
-Outputs: `monte_carlo_results.json` (32 cells x 2 regimes x 240-month horizon, seed 2026) and `figures/figure2_bifurcation.png`.
-
-## 4 | Citation
+## 3 | Citation
 
 ```bibtex
-@article{zharnikov2026spectralgaprestoration,
+@article{Zharnikov2026,
   author  = {Zharnikov, Dmitry},
-  title   = {Restoring Perceptual Separability After Coherence Shocks: A {$\mu > \lambda$} Threshold Inequality in Brand Perception},
+  title   = {Restoring Perceptual Separability After Coherence Shocks: A μ > λ Threshold Inequality in Brand Perception},
   year    = {2026},
-  doi     = {10.5281/zenodo.19778549}
+  doi     = {10.5281/zenodo.19778549},
+  url     = {https://doi.org/10.5281/zenodo.19778549},
+  version = {1.0.0},
 }
 ```
 
 Machine-readable: [CITATION.cff](CITATION.cff).
 
-## 5 | Licence
+## 4 | Licence
 
 Code (if any): MIT — see hub-level [../LICENSE](../LICENSE). Data, figures, tables: CC BY 4.0 — see hub-level [../LICENSE-data](../LICENSE-data).
 
-*Last updated: 2026-05-29*
+---
+
+*Last updated: 2026-06-16*

@@ -3,27 +3,25 @@ message: "If you use this paper, please cite it as below."
 authors:
   - family-names: Zharnikov
     given-names: Dmitry
-    email: dmitry@spectralbranding.com
     affiliation: "Independent Researcher"
     orcid: "https://orcid.org/0009-0000-6893-9231"
-title: "Spectral resource allocation: Demand-driven investment in multi-dimensional brand space"
+title: "Spectral Resource Allocation: Demand-Driven Investment in Multi-Dimensional Brand Space"
 version: 1.0.0
-date-released: 2026-03-13
+date-released: 2026-06-14
 url: "https://doi.org/10.5281/zenodo.19009268"
 repository-code: "https://github.com/spectralbranding/sbt-papers"
 identifiers:
   - type: doi
     value: "10.5281/zenodo.19009268"
-    description: "Zenodo archive (primary)"
-  - type: url
-    value: "https://doi.org/10.5281/zenodo.19009268"
-    description: "Zenodo preprint"
+    description: "Zenodo concept DOI (all versions)"
 keywords:
-  - resource allocation
-  - spectral brand theory
-  - demand-driven investment
+  - brand resource allocation
+  - spectral perception
   - alignment gap
-  - multi-dimensional brand space
+  - founder bias
+  - multi-dimensional optimization
+  - cohort targeting
+  - Spectral Brand Theory
 license: MIT
 type: article
 preferred-citation:
@@ -31,9 +29,6 @@ preferred-citation:
   authors:
     - family-names: Zharnikov
       given-names: Dmitry
-      email: dmitry@spectralbranding.com
-      affiliation: "Independent Researcher"
-      orcid: "https://orcid.org/0009-0000-6893-9231"
-  title: "Spectral resource allocation: Demand-driven investment in multi-dimensional brand space"
+  title: "Spectral Resource Allocation: Demand-Driven Investment in Multi-Dimensional Brand Space"
   year: 2026
   url: "https://doi.org/10.5281/zenodo.19009268"

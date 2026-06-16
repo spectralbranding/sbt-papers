@@ -1,165 +1,39 @@
 [![MIT License](https://img.shields.io/badge/Code-MIT-blue.svg)](../LICENSE)
 [![CC-BY 4.0](https://img.shields.io/badge/Data-CC--BY_4.0-lightgrey.svg)](../LICENSE-data)
-![Last Updated](https://img.shields.io/badge/updated-2026--05--29-success)
+![Last Updated](https://img.shields.io/badge/updated-2026--06--16-success)
 
-# R16: AI-Native Brand Identity
-
-**Paper**: AI-Native Brand Identity: From Visual Recognition to Cryptographic Verification
-
-**Author**: Dmitry Zharnikov
-
-**DOI**: [10.5281/zenodo.19391476](https://doi.org/10.5281/zenodo.19391476)
-
-**Citation key**: 2026x
-
-## Abstract
-
-This paper proposes the observer-driven evolution thesis --- identity verification technologies change discontinuously in response to shifts in the observer type --- and introduces behavioral metamerism as the AI-native equivalent of visual brand confusion. A pre-registered pilot study (684 API calls, 6 LLMs, 4 architectural clusters) provides initial empirical support: three of six models showed zero discrimination for the high-metamerism brand pair under statistical-only observation, rising to 100% discrimination across all models when behavioral specifications were provided (Fisher's exact *p* = 0.0009, Cohen's *d* = 0.791). The paper argues that cryptographic signatures on behavioral specifications (the Brand Function) are positioned to replace logos as the primary brand identity mechanism for AI-mediated commerce.
-
-## Repository Contents
-
-| File | Description |
-|------|-------------|
-| `paper.md` | Full paper (v1.7, ~12,800 words, 6 propositions, 4 results tables) |
-| `paper.pdf` | PDF export (263K) |
-| `paper.yaml` | Paper specification (machine-readable claims) |
-| `CITATION.cff` | Citation metadata |
-| `CONTRIBUTORS.yaml` | Contributor attribution (human + AI) |
-| `PROVENANCE.yaml` | Version history and submission records |
-| `DATA_MANIFEST.yaml` | Experiment data inventory |
-| `experiment/` | Full experiment infrastructure (see below) |
-
-## Behavioral Metamerism Pilot
-
-The pilot tests whether LLMs can distinguish brands with identical statistical profiles but different behavioral specifications. Results are reported in Section 9 of the paper.
-
-**Key results (684 API calls, 0 errors):**
-- VitaCore vs NutraPure BMI = 0.979 (high behavioral metamerism)
-- 3/6 models: 0% discrimination (statistical) -> 100% (augmented)
-- All 6 models: 100% discrimination in augmented condition
-- Fisher's exact p = 0.0009, Cohen's d = 0.791, Fleiss' kappa = 0.536
-
-### Experiment Structure
-
-```
-experiment/
-  L0_specification/protocol.md    # Pre-registration (written before data collection)
-  L3_sessions/
-    session_log.jsonl             # 684 prompt-response pairs with timestamps
-    metadata.yaml                 # Model configs, package versions, hardware
-    PRE_REGISTRATION.md           # Hypothesis statements
-  results.json                    # Full results (6,956 lines)
-  summary_tables.md               # Pre-formatted results tables
-  behavioral_metamerism_pilot.py  # Experiment script
-  requirements.txt                # Python dependencies
-```
-
-### Running the Experiment
-
-```bash
-cd experiment
-pip install -r requirements.txt
-
-# Set API keys (models with missing keys are skipped)
-export ANTHROPIC_API_KEY=sk-ant-...
-export OPENAI_API_KEY=sk-...
-export GOOGLE_API_KEY=AI...
-export DEEPSEEK_API_KEY=sk-...
-
-# Run with local models (Qwen3 30B, Gemma 4 27B via Ollama)
-python behavioral_metamerism_pilot.py --live --runs 3
-```
-
-### Models Tested
-
-| Model | Cluster | API |
-|-------|---------|-----|
-| Claude Haiku 3.5 | Western cloud | Anthropic |
-| GPT-4o-mini | Western cloud | OpenAI |
-| Gemini 2.5 Flash | Western cloud | Google |
-| DeepSeek V3 | Chinese cloud | DeepSeek |
-| Qwen3 30B | Local open-weight | Ollama |
-| Gemma 4 27B | Local open-weight | Ollama |
-
-### Measures
-
-| Measure | What it tests |
-|---------|--------------|
-| **Brand discrimination** | Can the LLM distinguish brands with identical statistics? |
-| **Behavioral prediction** | Does Brand Function access improve edge-case prediction? |
-| **Recommendation stability** | Does Brand Function reduce cross-LLM variance? |
-| **BMI** | Ratio of statistical similarity to behavioral difference (0-1) |
-
-## How to Cite
-
-```bibtex
-@article{zharnikov2026x,
-  title={AI-Native Brand Identity: From Visual Recognition to Cryptographic Verification},
-  author={Zharnikov, Dmitry},
-  year={2026},
-  doi={10.5281/zenodo.19391476},
-  url={https://doi.org/10.5281/zenodo.19391476}
-}
-```
-
-## Version History
-
-| Version | Date | Notes |
-|---------|------|-------|
-| 1.0 | 2026-04-02 | Initial preprint on Zenodo |
-| 1.1--1.4 | 2026-04-03--04 | Empirical pilot, revisions, ephemeris analogy, admissibility |
-| 1.5 | 2026-04-05 | Medesani invariant corridor formalization |
-| 1.6 | 2026-04-06 | Brand Function product spec, pilot data |
-| 1.7 | 2026-04-16 | Section 8.6 BF Format Optimization (375 calls v2); DeepShop citation |
-
-## License
-
-MIT (code); CC-BY-4.0 (paper content)
-
----
+# AI-Native Brand Identity: From Visual Recognition to Cryptographic Verification
 
 ## 1 | Paper
 
-See [paper.md](paper.md). Working Paper v1.4.0 (paper.yaml) / v1.8.1 (paper.md header). DOI: [10.5281/zenodo.19391476](https://doi.org/10.5281/zenodo.19391476).
+- Manuscript: [paper.md](paper.md)
+- Version: 1.5.0
+- DOI: [10.5281/zenodo.19391476](https://doi.org/10.5281/zenodo.19391476)
+- Machine-readable bundle: [paper.yaml](paper.yaml) (Paper Spec), [SPINE.yaml](SPINE.yaml), [ONTOLOGY.yaml](ONTOLOGY.yaml), [GLOSSARY.md](GLOSSARY.md)
 
-Title: *AI-Native Brand Identity: From Visual Recognition to Cryptographic Verification*.
+## 2 | Citations
 
-## 2 | Companion Data
+`paper.md` is the source artifact; inline citations use the `[@citation_key]` form. The full bibliography lives in the companion `.bib` file; see [CITATIONS.md](CITATIONS.md) for how to resolve and render them.
 
-No companion dataset for this paper. The behavioral metamerism pilot's raw session logs, prompts, and results are bundled in-repo under `experiment/` (see Section 3).
-
-## 3 | Reproduction
-
-Code is present under `experiment/`. The pilot script is `experiment/behavioral_metamerism_pilot.py`; dependencies in `experiment/requirements.txt`.
-
-```bash
-cd experiment
-pip install -r requirements.txt
-export ANTHROPIC_API_KEY=...
-export OPENAI_API_KEY=...
-export GOOGLE_API_KEY=...
-export DEEPSEEK_API_KEY=...
-python behavioral_metamerism_pilot.py --live --runs 3
-```
-
-Local models (Qwen3 30B, Gemma 4 27B) require a running Ollama instance. Pre-registration: `experiment/L0_specification/protocol.md`. Session logs: `experiment/L3_sessions/session_log.jsonl`.
-
-## 4 | Citation
+## 3 | Citation
 
 ```bibtex
-@article{zharnikov2026x,
-  title={AI-Native Brand Identity: From Visual Recognition to Cryptographic Verification},
-  author={Zharnikov, Dmitry},
-  year={2026},
-  doi={10.5281/zenodo.19391476},
-  url={https://doi.org/10.5281/zenodo.19391476}
+@article{Zharnikov2026,
+  author  = {Zharnikov, Dmitry},
+  title   = {AI-Native Brand Identity: From Visual Recognition to Cryptographic Verification},
+  year    = {2026},
+  doi     = {10.5281/zenodo.19391476},
+  url     = {https://doi.org/10.5281/zenodo.19391476},
+  version = {1.5.0},
 }
 ```
 
 Machine-readable: [CITATION.cff](CITATION.cff).
 
-## 5 | Licence
+## 4 | Licence
 
 Code (if any): MIT — see hub-level [../LICENSE](../LICENSE). Data, figures, tables: CC BY 4.0 — see hub-level [../LICENSE-data](../LICENSE-data).
 
-*Last updated: 2026-05-29*
+---
+
+*Last updated: 2026-06-16*
