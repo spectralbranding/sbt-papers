@@ -3,14 +3,17 @@ message: "If you use this paper, please cite it as below."
 authors:
   - family-names: Zharnikov
     given-names: Dmitry
-    email: dmitry@spectralbranding.com
     affiliation: "Independent Researcher"
     orcid: "https://orcid.org/0009-0000-6893-9231"
 title: "Restoring Perceptual Separability After Coherence Shocks: A μ > λ Threshold Inequality in Brand Perception"
 version: 1.0.0
-date-released: 2026-04-26
-doi: 10.5281/zenodo.19778549
+date-released: 2026-06-14
+url: "https://doi.org/10.5281/zenodo.19778549"
 repository-code: "https://github.com/spectralbranding/sbt-papers"
+identifiers:
+  - type: doi
+    value: "10.5281/zenodo.19778549"
+    description: "Zenodo concept DOI (all versions)"
 keywords:
   - spectral gap
   - cohort separability
@@ -20,7 +23,7 @@ keywords:
   - Markov chain mixing
   - operator perturbation
   - Spectral Brand Theory
-license: CC-BY-4.0
+license: MIT
 type: article
 preferred-citation:
   type: article
@@ -29,4 +32,4 @@ preferred-citation:
       given-names: Dmitry
   title: "Restoring Perceptual Separability After Coherence Shocks: A μ > λ Threshold Inequality in Brand Perception"
   year: 2026
-  doi: 10.5281/zenodo.19778549
+  url: "https://doi.org/10.5281/zenodo.19778549"

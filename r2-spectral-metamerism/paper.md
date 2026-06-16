@@ -6,7 +6,7 @@ ORCID: 0009-0000-6893-9231
 
 DOI: [10.5281/zenodo.18945352](https://doi.org/10.5281/zenodo.18945352)
 
-Working Paper v1.5.0 – March 2026
+Working Paper v1.5.0 – June 2026
 
 ---
 
@@ -26,11 +26,11 @@ Every brand manager has experienced the unsettling discovery that two brands wit
 
 The question is not merely academic. In industries from luxury goods to technology, brand evaluation increasingly drives capital allocation, partnership decisions, and strategic positioning. When a private equity firm evaluates acquisition targets using a single "brand value" number, or when a CMO reports brand health to the board via a composite index, the implicit assumption is that the scalar adequately represents the underlying brand reality. This paper proves that assumption is mathematically untenable.
 
-The mechanism by which scalar grades fail has a precise analogue in physics. In color science, *metamerism* refers to the phenomenon whereby physically different spectral power distributions produce identical color percepts when projected through the three cone types of the human retina (Wyszecki & Stiles, 1982). Two fabrics that match under fluorescent light but diverge under daylight are metamers: their spectra differ, but the 3-dimensional projection (through L, M, S cone sensitivities) collapses the difference. Cohen and Kappauf's (1982) Fundamental Theorem of Colorimetry formalizes this: any projection creates a null space of "invisible" spectral differences, and metamerism is not an engineering failure but a mathematical consequence of dimensionality reduction. The decomposition into fundamental metamer and metameric black traces to the algebraic treatment of smooth metameric spectra developed by van Trigt (1990).
+The mechanism by which scalar grades fail has a precise analogue in physics. In color science, *metamerism* refers to the phenomenon whereby physically different spectral power distributions produce identical color percepts when projected through the three cone types of the human retina [@wyszecki-1982-color-science-concepts]. Two fabrics that match under fluorescent light but diverge under daylight are metamers: their spectra differ, but the 3-dimensional projection (through L, M, S cone sensitivities) collapses the difference. Cohen and Kappauf's [-@cohen-1982-metameric-color-stimuli] Fundamental Theorem of Colorimetry formalizes this: any projection creates a null space of "invisible" spectral differences, and metamerism is not an engineering failure but a mathematical consequence of dimensionality reduction. The decomposition into fundamental metamer and metameric black traces to the algebraic treatment of smooth metameric spectra developed by van Trigt [-@trigt-1990-smoothest-fit-solution-fundamental].
 
-Spectral Brand Theory (Zharnikov, 2026a) provides the architecture for extending this insight to brand perception. SBT models a brand as an emitter of signals across eight typed dimensions -- Semiotic, Narrative, Ideological, Experiential, Social, Economic, Cultural, and Temporal -- perceived by observers with heterogeneous salience profiles on the probability simplex $\Delta^7$. The framework's Level 1 (L1) output is the full 8-dimensional spectral profile; its Level 2 (L2) output is a scalar grade mapped to five coherence levels (A+, A-, B+, B-, C-). The transition from L1 to L2 is precisely a projection from $\mathbb{R}^8_+$ to $\mathbb{R}^1$ -- the same operation that produces metamerism in color science.
+Spectral Brand Theory [@zharnikov-2026-spectral-brand-theory-computational-framework; @zharnikov-2026-geometric-approaches-brand-perception-critical] provides the architecture for extending this insight to brand perception. SBT models a brand as an emitter of signals across eight typed dimensions -- Semiotic, Narrative, Ideological, Experiential, Social, Economic, Cultural, and Temporal -- perceived by observers with heterogeneous salience profiles on the probability simplex $\Delta^7$. The framework's Level 1 (L1) output is the full 8-dimensional spectral profile; its Level 2 (L2) output is a scalar grade mapped to five coherence levels (A+, A-, B+, B-, C-). The transition from L1 to L2 is precisely a projection from $\mathbb{R}^8_+$ to $\mathbb{R}^1$ -- the same operation that produces metamerism in color science.
 
-This paper supplies the foundational definition of spectral metamerism in brand perception under SBT. Downstream specializations apply this construct to LLM-mediated cohorts (Zharnikov, 2026v), creative IP repositories (Zharnikov, 2026w), behavioral specifications of AI agents (Zharnikov, 2026x), and multi-brand portfolio audits. Each retains the null-space and projection-bound structure formalized here while adapting the source space to its empirical setting.
+This paper supplies the foundational definition of spectral metamerism in brand perception under SBT. Downstream specializations apply this construct to LLM-mediated cohorts [@zharnikov-2026-dimensional-collapse-ai-mediated-search], creative IP repositories [@zharnikov-2026-canon-as-repository-specification-driven], behavioral specifications of AI agents [@zharnikov-2026-ai-native-brand-identity-from], and multi-brand portfolio audits. Each retains the null-space and projection-bound structure formalized here while adapting the source space to its empirical setting.
 
 This paper formalizes the analogy and proves three core results:
 
@@ -42,7 +42,7 @@ This paper formalizes the analogy and proves three core results:
 
 These results have a direct practical consequence that we develop throughout the paper: the distinction between *rasterized* and *vectorized* brand management. In rasterized mode, a brand manager serves as a human projection operator, mentally collapsing the full brand specification into simplified narratives and then attempting to re-expand them for each context -- performing exactly the lossy projection that the JL lemma warns about. In vectorized mode, the 8-dimensional spectral profile serves as the single source of truth, and channel-specific outputs are computed projections with known, bounded information loss. The shift from rasterized to vectorized is not a preference but a mathematical necessity once one accepts that brands are multi-dimensional objects living in $\mathbb{R}^8_+$.
 
-The paper builds on the metric framework established in Zharnikov (2026d), which defined the Aitchison metric on brand signal space $\mathbb{R}^8_+$, the Fisher-Rao metric on observer weight space $\Delta^7$, and the warped product metric on the combined brand-observer space. We take these metrics as given and study what happens when the spaces they equip are projected to lower dimensions.
+The paper builds on the metric framework established in Zharnikov [-@zharnikov-2026-brand-space-geometry-formal-metric], which defined the Aitchison metric on brand signal space $\mathbb{R}^8_+$, the Fisher-Rao metric on observer weight space $\Delta^7$, and the warped product metric on the combined brand-observer space. We take these metrics as given and study what happens when the spaces they equip are projected to lower dimensions.
 
 The remainder of the paper is organized as follows. The Preliminaries section establishes notation. The Metamerism in Brand Perception section formalizes spectral metamerism, including a schematic visualization (Figure 1) and a three-regime comparison table (Table 9). The Johnson-Lindenstrauss Bounds section applies the JL lemma. The Null Space Analysis section characterizes the kernel of the projection. The Information-Theoretic Bounds section derives variance-retention, channel-capacity, and rate-distortion bounds. The Monte Carlo Verification section reports simulation evidence. The From Rasterized to Vectorized Brand Management section develops the practical implications. The Connection to MDS and Survey Design section connects the framework to multidimensional scaling and survey design, including implications for brand-tracking instruments and a canonical foundational-to-specialization map (Table 10). The Discussion and Limitations section addresses scope conditions, and the Conclusion summarizes.
 
@@ -52,7 +52,7 @@ The remainder of the paper is organized as follows. The Preliminaries section es
 
 ### SBT Framework and Notation
 
-We adopt the notation and definitions of Zharnikov (2026a, 2026d). A brand's *emission profile* (spectral profile) is a vector $s = (s_1, \ldots, s_8) \in \mathbb{R}^8_+$ representing signal strength across the eight SBT dimensions:
+We adopt the notation and definitions of Zharnikov [-@zharnikov-2026-spectral-brand-theory-computational-framework; -@zharnikov-2026-brand-space-geometry-formal-metric]. A brand's *emission profile* (spectral profile) is a vector $s = (s_1, \ldots, s_8) \in \mathbb{R}^8_+$ representing signal strength across the eight SBT dimensions:
 
 Table 1: The Eight SBT Dimensions and Their Semantic Scope.
 
@@ -67,7 +67,7 @@ Table 1: The Eight SBT Dimensions and Their Semantic Scope.
 | 7 | Cultural | Cultural resonance, zeitgeist alignment |
 | 8 | Temporal | Heritage, longevity, temporal compounding |
 
-*Notes*: Dimensions follow the canonical SBT ordering established in Zharnikov (2026a). All eight dimensions are required for a complete spectral profile; omitting any dimension reduces the representation to a sub-space of $\mathbb{R}^8_+$.
+*Notes*: Dimensions follow the canonical SBT ordering established in Zharnikov [-@zharnikov-2026-spectral-brand-theory-computational-framework]. All eight dimensions are required for a complete spectral profile; omitting any dimension reduces the representation to a sub-space of $\mathbb{R}^8_+$.
 
 An *observer spectral profile* is a weight vector $w = (w_1, \ldots, w_8) \in \Delta^7$ on the probability simplex, representing the relative salience the observer assigns to each dimension. The *cloud confidence* for observer $w$ encountering brand $s$ is the inner product $\langle s, w \rangle$, a scalar representing the observer's overall brand evaluation.
 
@@ -86,7 +86,7 @@ $$\phi: \mathbb{R}^8_+ \to \mathbb{R}$$
 
 which takes a full spectral profile and produces a scalar grade. When $\phi$ is linear, this is a standard linear projection. When $\phi$ is nonlinear (e.g., a thresholded weighted sum), the information loss is at least as severe as in the linear case, because nonlinear maps cannot generally increase the information capacity of the output space.
 
-For the case-study data from Zharnikov (2026a), we use the canonical emission profiles established in Zharnikov (2026d):
+For the case-study data from Zharnikov [-@zharnikov-2026-spectral-brand-theory-computational-framework], we use the canonical emission profiles established in Zharnikov [-@zharnikov-2026-brand-space-geometry-formal-metric]:
 
 Table 2: Canonical Emission Profiles for Five Case-Study Brands.
 
@@ -101,19 +101,19 @@ Table 2: Canonical Emission Profiles for Five Case-Study Brands.
 | Cultural | 9.0 | 7.5 | 7.0 | 7.5 | 4.0 |
 | Temporal | 9.5 | 6.0 | 6.5 | 2.5 | 2.0 |
 
-*Notes*: Canonical profiles from Zharnikov (2026a, 2026d). L2 grades are A+, A-, B+, B-, and C- respectively. All dimension scores are on the $[1, 10]$ scale.
+*Notes*: Canonical profiles from Zharnikov [-@zharnikov-2026-spectral-brand-theory-computational-framework; -@zharnikov-2026-brand-space-geometry-formal-metric]. L2 grades are A+, A-, B+, B-, and C- respectively. All dimension scores are on the $[1, 10]$ scale.
 
-These brands receive L2 grades of A+, A-, B+, B-, and C- respectively. The Aitchison distances computed in Zharnikov (2026d) range from .88 (Hermès-Patagonia) to 1.76 (Hermès-Tesla), establishing that these brands are well-separated in 8D space.
+These brands receive L2 grades of A+, A-, B+, B-, and C- respectively. The Aitchison distances computed in Zharnikov [-@zharnikov-2026-brand-space-geometry-formal-metric] range from .88 (Hermès-Patagonia) to 1.76 (Hermès-Tesla), establishing that these brands are well-separated in 8D space.
 
 ### Metrics from R1
 
-We recall the key metrics established in Zharnikov (2026d):
+We recall the key metrics established in Zharnikov [-@zharnikov-2026-brand-space-geometry-formal-metric]:
 
 - **Aitchison distance** on $\mathbb{R}^8_+$: $d_{\mathcal{B}}(s_A, s_B) = \|\text{clr}(s_A) - \text{clr}(s_B)\|_2$, where $\text{clr}_k(s) = \log(s_k / g(s))$ and $g(s)$ is the geometric mean. This metric respects the multiplicative, compositional nature of brand signal profiles.
 
-- **Fisher-Rao distance** on $\Delta^7$: $d_{\mathcal{O}}(w_A, w_B) = 2\arccos\left(\sum_{i=1}^8 \sqrt{w_{A,i} w_{B,i}}\right)$, justified by Cencov's uniqueness theorem as the unique reparameterization-invariant metric on statistical models.
+- **Fisher-Rao distance** on $\Delta^7$: $d_{\mathcal{O}}(w_A, w_B) = 2\arccos\left(\sum_{i=1}^8 \sqrt{w_{A,i} w_{B,i}}\right)$, justified by Cencov's uniqueness theorem as the unique reparameterization-invariant metric on statistical models [@amari-2016-information-geometry-its].
 
-- **Observer-dependent brand distance**: $d_w(s_A, s_B) = \sqrt{\sum_k w_k (\text{clr}_k(s_A) - \text{clr}_k(s_B))^2}$, a weighted Euclidean distance in CLR coordinates that generalizes the INDSCAL model (Carroll & Chang, 1970).
+- **Observer-dependent brand distance**: $d_w(s_A, s_B) = \sqrt{\sum_k w_k (\text{clr}_k(s_A) - \text{clr}_k(s_B))^2}$, a weighted Euclidean distance in CLR coordinates that generalizes the INDSCAL model [@carroll-1970-analysis-individual-differences].
 
 ---
 
@@ -133,7 +133,7 @@ $$|\phi(s_A) - \phi(s_B)| < \epsilon \quad \text{and} \quad d_{\mathcal{B}}(s_A,
 
 for thresholds $\epsilon$ (grade indistinguishability) and $\delta$ (profile distinctness).
 
-The terminology is deliberately borrowed from color science, where metamerism has been studied formally since Grassmann (1853) and rigorously axiomatized by Cohen and Kappauf (1982). The analogy is structural, not metaphorical: in both cases, a high-dimensional physical stimulus is projected through a lower-dimensional sensor array, and the projection's null space creates equivalence classes of physically distinct stimuli that produce identical responses.
+The terminology is deliberately borrowed from color science, where metamerism has been studied formally since Grassmann [-@grassmann-1853-zur-theorie-der] and rigorously axiomatized by Cohen and Kappauf [-@cohen-1982-metameric-color-stimuli]. The analogy is structural, not metaphorical: in both cases, a high-dimensional physical stimulus is projected through a lower-dimensional sensor array, and the projection's null space creates equivalence classes of physically distinct stimuli that produce identical responses.
 
 ### The Color Science Parallel
 
@@ -141,7 +141,7 @@ In color perception, the visible spectrum is a continuous function $S(\lambda)$ 
 
 $$T_j = \int_{380}^{780} S(\lambda) \bar{c}_j(\lambda) \, d\lambda, \quad j \in \{L, M, S\} \tag{3}$$
 
-Cohen and Kappauf's (1982) Fundamental Theorem of Colorimetry states that any spectral distribution $S$ decomposes uniquely as $S = S^* + B$, where $S^*$ is the *fundamental metamer* (projection onto the row space of the sensitivity matrix) and $B$ is the *metameric black* (component in the null space). The metameric black represents spectral information that is invisible to human color perception -- it is "there" physically but "absent" perceptually. The algebraic structure of this decomposition, and in particular the characterization of smoothest-fit solutions in the null space, was formalized by van Trigt (1990).
+Cohen and Kappauf's [-@cohen-1982-metameric-color-stimuli] Fundamental Theorem of Colorimetry states that any spectral distribution $S$ decomposes uniquely as $S = S^* + B$, where $S^*$ is the *fundamental metamer* (projection onto the row space of the sensitivity matrix) and $B$ is the *metameric black* (component in the null space). The metameric black represents spectral information that is invisible to human color perception -- it is "there" physically but "absent" perceptually. The algebraic structure of this decomposition, and in particular the characterization of smoothest-fit solutions in the null space, was formalized by van Trigt [-@trigt-1990-smoothest-fit-solution-fundamental].
 
 In brand perception under SBT, the parallel is exact:
 
@@ -185,7 +185,7 @@ Table 9: Comparison of Three Dimensionality-Reduction Regimes for Brand Profiles
 | JL-bound (random projection) | $\epsilon \geq \sqrt{\ln N}$; 152% for $N = 10$ | $k \geq C\ln N / \epsilon^2 \gg 1$ | Pairwise distances within $(1 \pm \epsilon)$ | Faithful embedding requires $k \gg 1$; projecting to $k = 1$ violates the lower bound | Approximate nearest-neighbor search; sketch embeddings |
 | Brand-grade (R2 projection) | $\epsilon \geq \sqrt{\ln N}$; null space dim 7 | $k = 1$ | One projection direction; grade ordering | Null space is 7D; 7/8 of dimensional structure is invisible; 11.6% information retained | SBT L2 coherence grade; composite brand indices |
 
-*Notes*: Distortion bound for typical DR uses the variance-retention formula from Theorem 4 (Variance Retention subsection). JL-bound uses the Larsen-Nelson (2017) tight lower bound (The JL Lemma subsection). Brand-grade regime combines the JL lower bound (Theorem 1) with the null-space analysis (Theorem 3) and information-theoretic bound (Theorem 5). All three regimes project from $\mathbb{R}^8_+$; they differ in the target rank $k$ and in which structural properties survive the projection.*
+*Notes*: Distortion bound for typical DR uses the variance-retention formula from Theorem 4 (Variance Retention subsection). JL-bound uses the Larsen-Nelson [-@larsen-2017-optimality-johnsonlindenstrauss-lemma] tight lower bound (The JL Lemma subsection). Brand-grade regime combines the JL lower bound (Theorem 1) with the null-space analysis (Theorem 3) and information-theoretic bound (Theorem 5). All three regimes project from $\mathbb{R}^8_+$; they differ in the target rank $k$ and in which structural properties survive the projection.*
 
 ### Constructive Example from Case Studies
 
@@ -203,7 +203,7 @@ This is not a pathological construction. It illustrates that every brand manager
 
 ### The JL Lemma
 
-The Johnson-Lindenstrauss lemma (Johnson & Lindenstrauss, 1984) establishes the fundamental limit on distance preservation under dimensionality reduction.
+The Johnson-Lindenstrauss lemma [@johnson-1984-extensions-lipschitz-mappings] establishes the fundamental limit on distance preservation under dimensionality reduction.
 
 **Lemma (Johnson-Lindenstrauss).** *For any $0 < \epsilon < 1$, any integer $N \geq 1$, and any set of $N$ points $V = \{x_1, \ldots, x_N\}$ in $\mathbb{R}^n$, there exists a linear map $f: \mathbb{R}^n \to \mathbb{R}^k$ with*
 
@@ -213,13 +213,13 @@ $$k \geq \frac{C \ln N}{\epsilon^2} \tag{4}$$
 
 $$(1 - \epsilon) \|x_i - x_j\|^2 \leq \|f(x_i) - f(x_j)\|^2 \leq (1 + \epsilon) \|x_i - x_j\|^2 \tag{5}$$
 
-The constant $C$ has been progressively sharpened. The Dasgupta-Gupta (2003) form gives:
+The constant $C$ has been progressively sharpened. The Dasgupta-Gupta [-@dasgupta-2003-elementary-proof-theorem] form gives:
 
 $$k \geq \frac{4 \ln N}{\epsilon^2/2 - \epsilon^3/3} \tag{6}$$
 
-The small-dimension regime $n = 8$, $k = 1$ studied here lies at the limit of the lemma's intended scope -- the Dasgupta-Gupta proof is most natural for the asymptotic large-$n$, large-$k$ setting -- but the lower-bound conclusion $\epsilon \geq \sqrt{\ln N}$ survives because Larsen and Nelson (2017) prove tightness down to $k = 1$ for arbitrary point configurations. The Larsen-Nelson (2017) tight lower bound establishes that the $\Omega(\epsilon^{-2} \log N)$ dependence is optimal: no linear map can achieve $(1 \pm \epsilon)$-distortion with fewer dimensions. Note the direction of the two results: the original Johnson-Lindenstrauss (1984) lemma is an *upper bound* -- it shows that a faithful embedding *exists* in $k \geq C\ln N / \epsilon^2$ dimensions. The Larsen-Nelson (2017) contribution is the matching *lower bound* -- showing that no linear map can achieve $(1 \pm \epsilon)$-distortion with *fewer* than $\Omega(\epsilon^{-2} \log N)$ dimensions. For our purpose (establishing that 1D scalar grades are provably unfaithful), it is the Larsen-Nelson lower bound that does the work.
+The small-dimension regime $n = 8$, $k = 1$ studied here lies at the limit of the lemma's intended scope -- the Dasgupta-Gupta proof is most natural for the asymptotic large-$n$, large-$k$ setting -- but the lower-bound conclusion $\epsilon \geq \sqrt{\ln N}$ survives because Larsen and Nelson [-@larsen-2017-optimality-johnsonlindenstrauss-lemma] prove tightness down to $k = 1$ for arbitrary point configurations. The Larsen-Nelson [-@larsen-2017-optimality-johnsonlindenstrauss-lemma] tight lower bound establishes that the $\Omega(\epsilon^{-2} \log N)$ dependence is optimal: no linear map can achieve $(1 \pm \epsilon)$-distortion with fewer dimensions. Note the direction of the two results: the original Johnson-Lindenstrauss [-@johnson-1984-extensions-lipschitz-mappings] lemma is an *upper bound* -- it shows that a faithful embedding *exists* in $k \geq C\ln N / \epsilon^2$ dimensions. The Larsen-Nelson [-@larsen-2017-optimality-johnsonlindenstrauss-lemma] contribution is the matching *lower bound* -- showing that no linear map can achieve $(1 \pm \epsilon)$-distortion with *fewer* than $\Omega(\epsilon^{-2} \log N)$ dimensions. For our purpose (establishing that 1D scalar grades are provably unfaithful), it is the Larsen-Nelson lower bound that does the work.
 
-A related line of work on structured random projections (Achlioptas, 2003; Kane & Nelson, 2014) shows that binary or sparse $\pm 1$ projection matrices achieve JL guarantees with the same $\Omega(\epsilon^{-2} \log N)$ dimension bound. Kane and Nelson (2014) establish that *sparser* JL transforms -- projection matrices in which the number of nonzero entries per column is strictly bounded -- preserve the JL distortion guarantee but do not change the lower-bound dimension requirement; sparsity buys computational efficiency, not statistical efficiency. For $k = 1$, sparsity therefore provides no escape from the $\epsilon \geq \sqrt{\ln N}$ lower bound, and structured projections do not change the infeasibility result derived below.
+A related line of work on structured random projections [@achlioptas-2003-databasefriendly-random-projections; @kane-2014-sparser-johnsonlindenstrauss-transforms] shows that binary or sparse $\pm 1$ projection matrices achieve JL guarantees with the same $\Omega(\epsilon^{-2} \log N)$ dimension bound. Kane and Nelson [-@kane-2014-sparser-johnsonlindenstrauss-transforms] establish that *sparser* JL transforms -- projection matrices in which the number of nonzero entries per column is strictly bounded -- preserve the JL distortion guarantee but do not change the lower-bound dimension requirement; sparsity buys computational efficiency, not statistical efficiency. For $k = 1$, sparsity therefore provides no escape from the $\epsilon \geq \sqrt{\ln N}$ lower bound, and structured projections do not change the infeasibility result derived below.
 
 ### Application to 8D-to-1D Projection
 
@@ -245,13 +245,13 @@ Table 4: Required Distortion for Scalar-Grade Projection by Competitive Set Size
 | 100 | $\geq 2.15$ | 215% |
 | 500 | $\geq 2.49$ | 249% |
 
-*Notes*: Distortion values are computed as $\epsilon_{\min} = \sqrt{\ln N}$ with conservative constant $C = 1$. This is a conservative choice: the true constant from Larsen and Nelson (2017) is smaller, so the actual minimum distortion may be below $\sqrt{\ln N}$. The qualitative conclusion -- that $\epsilon$ grows without bound as $N$ increases -- holds regardless of the constant. Values apply to worst-case point configurations; structured brand manifolds may permit lower distortion for specific datasets.
+*Notes*: Distortion values are computed as $\epsilon_{\min} = \sqrt{\ln N}$ with conservative constant $C = 1$. This is a conservative choice: the true constant from Larsen and Nelson [-@larsen-2017-optimality-johnsonlindenstrauss-lemma] is smaller, so the actual minimum distortion may be below $\sqrt{\ln N}$. The qualitative conclusion -- that $\epsilon$ grows without bound as $N$ increases -- holds regardless of the constant. Values apply to worst-case point configurations; structured brand manifolds may permit lower distortion for specific datasets.
 
 *Proof.* Setting $k = 1$ in the Larsen-Nelson lower bound gives $\epsilon \geq \sqrt{C \ln N / k} = \sqrt{C \ln N}$. With the conservative constant $C = 1$, we obtain $\epsilon \geq \sqrt{\ln N}$. For $N = 10$: $\epsilon \geq \sqrt{\ln 10} \approx \sqrt{2.303} \approx 1.52$. $\square$
 
 **Plain-English interpretation.** A distortion of $\epsilon = 1.52$ means the 1D grade can represent two brands as 252% of their true distance or as little as 0% (placing them at the same point). For 50 brands, the situation worsens to $\epsilon \approx 1.98$: the grade can inflate distances by nearly 3x or erase them entirely. A 1D grade is not a "rough approximation" of 8D distances; it is a geometrically unfaithful representation that can reverse orderings, collapse distinct brands, and separate similar ones.
 
-A compressed-sensing reader might object that sparse brand profiles could be recovered from a scalar grade. We note three obstacles. First, no known sparsity basis for brand profiles exists in Aitchison geometry -- the CLR transform does not produce sparse representations for the kind of structured variation observed in practice (Aitchison, 1986). Second, CS recovery requires $\Omega(k \log(8/k))$ measurements (Candès & Tao, 2006; Donoho, 2006), not one; a single scalar grade provides one measurement regardless of the profile's sparsity structure. Third, even if some brand profiles were sparse in some basis, the standard grade design does not exploit that sparsity structure, so the worst-case JL lower bound applies. The null-space argument is therefore robust to sparsity assumptions.
+A compressed-sensing reader might object that sparse brand profiles could be recovered from a scalar grade. We note three obstacles. First, no known sparsity basis for brand profiles exists in Aitchison geometry -- the CLR transform does not produce sparse representations for the kind of structured variation observed in practice [@aitchison-1986-statistical-analysis-compositional]. Second, CS recovery requires $\Omega(k \log(8/k))$ measurements [@cands-2006-nearoptimal-signal-recovery; @donoho-2006-compressed-sensing], not one; a single scalar grade provides one measurement regardless of the profile's sparsity structure. Third, even if some brand profiles were sparse in some basis, the standard grade design does not exploit that sparsity structure, so the worst-case JL lower bound applies. The null-space argument is therefore robust to sparsity assumptions.
 
 For the practitioner performing brand evaluation -- the consultant compiling a competitive analysis, the CMO presenting to the board -- Theorem 1 quantifies a known intuition: the single number is not just imprecise but *systematically misleading*. The brand manager who converts the 8-dimensional brand specification into a slide deck is performing exactly this projection, becoming a human instance of the mapping $f: \mathbb{R}^8 \to \mathbb{R}^1$. Every time they summarize the brand as "premium" or "challenger" or "heritage," they are choosing a projection direction and discarding 7 dimensions of information. The JL lemma tells us that no choice of direction avoids the distortion.
 
@@ -275,7 +275,7 @@ Table 5: Minimum Faithful Projection Dimension at 30% Distortion Tolerance.
 | 100 | $\geq 512$ |
 | 500 | $\geq 691$ |
 
-*Notes*: Values from Dasgupta-Gupta (2003) bound with $\epsilon = 0.3$. These are worst-case bounds over arbitrary point configurations. Real brand profiles constrained by market and cultural forces likely require fewer dimensions for a given distortion level.
+*Notes*: Values from Dasgupta-Gupta [-@dasgupta-2003-elementary-proof-theorem] bound with $\epsilon = 0.3$. These are worst-case bounds over arbitrary point configurations. Real brand profiles constrained by market and cultural forces likely require fewer dimensions for a given distortion level.
 
 *For $\epsilon = 0.1$ (10% distortion tolerance):*
 
@@ -288,19 +288,19 @@ Table 6: Minimum Faithful Projection Dimension at 10% Distortion Tolerance.
 | 50 | $\geq 3,353$ |
 | 100 | $\geq 3,947$ |
 
-*Notes*: Values from Dasgupta-Gupta (2003) bound with $\epsilon = 0.1$. The dimension requirements grow roughly as $\ln N$, so adding brands to a competitive set increases required dimensions only logarithmically.
+*Notes*: Values from Dasgupta-Gupta [-@dasgupta-2003-elementary-proof-theorem] bound with $\epsilon = 0.1$. The dimension requirements grow roughly as $\ln N$, so adding brands to a competitive set increases required dimensions only logarithmically.
 
 *Proof.* Direct substitution into the Dasgupta-Gupta bound. $\square$
 
-**Plain-English interpretation.** To maintain even 30% fidelity in a competitive set of 50 brands, you need at least 435 dimensions. SBT's 8 dimensions are vastly fewer. Does this mean the 8-dimensional model is itself too coarse? No -- because the JL bound applies to *arbitrary* point configurations where no structure is assumed. Brand profiles are not arbitrary points; they lie on a low-dimensional manifold within $\mathbb{R}^8$ constrained by market forces, production costs, cultural norms, and physical limits. The JL bound is a worst-case guarantee. The practical message is that 8 dimensions are far richer than 1 dimension, even if they may not be sufficient for worst-case distance preservation in very large brand sets. Sphere-packing analysis (Zharnikov, 2026g) establishes how many distinguishable brands fit in 8-dimensional spectral space; the present paper establishes how many of those become metameric under 1D projection -- the two analyses are duals.
+**Plain-English interpretation.** To maintain even 30% fidelity in a competitive set of 50 brands, you need at least 435 dimensions. SBT's 8 dimensions are vastly fewer. Does this mean the 8-dimensional model is itself too coarse? No -- because the JL bound applies to *arbitrary* point configurations where no structure is assumed. Brand profiles are not arbitrary points; they lie on a low-dimensional manifold within $\mathbb{R}^8$ constrained by market forces, production costs, cultural norms, and physical limits. The JL bound is a worst-case guarantee. The practical message is that 8 dimensions are far richer than 1 dimension, even if they may not be sufficient for worst-case distance preservation in very large brand sets. Sphere-packing analysis [@zharnikov-2026-many-brands-can-market-hold] establishes how many distinguishable brands fit in 8-dimensional spectral space; the present paper establishes how many of those become metameric under 1D projection -- the two analyses are duals.
 
-The JL minimum-dimension result also illuminates why the brand manager's task is impossible to perform faithfully in human working memory. Cognitive science establishes that human working memory capacity is approximately $4 \pm 1$ chunks (Cowan, 2001), a more conservative estimate than the earlier $7 \pm 2$ figure of Miller (1956). A brand manager attempting to hold a brand's identity "in mind" for communication is projecting from 8 continuous dimensions onto roughly 3--5 discrete chunks -- an operation that the JL lemma shows cannot preserve distances for more than a handful of brands. The human operator is not failing through incompetence but through the geometry of the task itself.
+The JL minimum-dimension result also illuminates why the brand manager's task is impossible to perform faithfully in human working memory. Cognitive science establishes that human working memory capacity is approximately $4 \pm 1$ chunks [@cowan-2001-magical-number-4], a more conservative estimate than the earlier $7 \pm 2$ figure of Miller [-@miller-1956-magical-number-seven]. A brand manager attempting to hold a brand's identity "in mind" for communication is projecting from 8 continuous dimensions onto roughly 3--5 discrete chunks -- an operation that the JL lemma shows cannot preserve distances for more than a handful of brands. The human operator is not failing through incompetence but through the geometry of the task itself.
 
 **Corollary 1** (The 5-level grade as geometric inevitability). *SBT's 5-level grade (A+, A-, B+, B-, C-) is a 1D projection that necessarily loses most of the 8D structure. The loss is not a design flaw but a geometric consequence of compressing $\mathbb{R}^8$ to $\mathbb{R}^1$. No alternative grade scale (7-point, 10-point, continuous) fundamentally resolves the problem; the null space remains 7-dimensional regardless of the output scale's granularity. This result also implies that the 11.6% information retention figure (Grade Information Capacity subsection) is an upper bound on what any scalar grade can convey, not a property of the specific 5-point discretization.*
 
 *Proof.* The null space dimension is $n - k = 8 - 1 = 7$ for any mapping from $\mathbb{R}^8$ to $\mathbb{R}^1$, independent of the discretization of the output. A finer output scale (e.g., $[0, 100]$) increases the bits available from $\log_2 5 \approx 2.32$ to $\log_2 100 \approx 6.64$, but the 7D null space persists. The information retention rises from 11.6% to 33.2%, but $\sim$67% of structural information remains irrecoverable. $\square$
 
-**Remark** (Manifold restriction). The JL bounds above assume brand profiles may occupy arbitrary positions in $\mathbb{R}^8$. In practice, real brand profiles likely concentrate on a lower-dimensional manifold within $\mathbb{R}^8_+$ -- for example, if Semiotic and Cultural dimensions co-vary, the effective dimensionality may be 5--6 rather than 8. On such a manifold, the distortion bounds would be tighter (less information lost per projection) because the null space of the scalar projection intersects a smaller fraction of the data's effective support. However, the qualitative conclusion is unchanged: the 7-dimensional null space of any $\mathbb{R}^8 \to \mathbb{R}^1$ projection exists regardless of the data manifold's intrinsic dimension, and metamerism (distinct profiles mapping to the same grade) remains inevitable for any linear or scalar evaluation scheme. Nonlinear dimensionality reduction methods such as Isomap (Tenenbaum, de Silva & Langford, 2000) can preserve local geodesic structure more faithfully than linear projections, but they optimize for visualization rather than faithful distance preservation and do not recover the lost null-space dimensions for analytical purposes. A dimension-free upper bound on Lipschitz embeddings of finite metric spaces in Hilbert space is provided by Bourgain (1985), but that bound applies to the best possible embedding, not the scalar grade case where $k$ is fixed at 1.
+**Remark** (Manifold restriction). The JL bounds above assume brand profiles may occupy arbitrary positions in $\mathbb{R}^8$. In practice, real brand profiles likely concentrate on a lower-dimensional manifold within $\mathbb{R}^8_+$ -- for example, if Semiotic and Cultural dimensions co-vary, the effective dimensionality may be 5--6 rather than 8. On such a manifold, the distortion bounds would be tighter (less information lost per projection) because the null space of the scalar projection intersects a smaller fraction of the data's effective support. However, the qualitative conclusion is unchanged: the 7-dimensional null space of any $\mathbb{R}^8 \to \mathbb{R}^1$ projection exists regardless of the data manifold's intrinsic dimension, and metamerism (distinct profiles mapping to the same grade) remains inevitable for any linear or scalar evaluation scheme. Nonlinear dimensionality reduction methods such as Isomap [@tenenbaum-2000-global-geometric-framework] can preserve local geodesic structure more faithfully than linear projections, but they optimize for visualization rather than faithful distance preservation and do not recover the lost null-space dimensions for analytical purposes. A dimension-free upper bound on Lipschitz embeddings of finite metric spaces in Hilbert space is provided by Bourgain [-@bourgain-1985-lipschitz-embedding-finite], but that bound applies to the best possible embedding, not the scalar grade case where $k$ is fixed at 1.
 
 ---
 
@@ -352,7 +352,7 @@ Different observers have different null spaces. An aesthete observer $w_\alpha =
 
 *Proof.* Each $\ker(\phi_w)$ is a hyperplane in $\mathbb{R}^8$ (dimension 7). Two distinct hyperplanes in $\mathbb{R}^8$ generically intersect in a subspace of dimension $7 + 7 - 8 = 6$. On $\Delta^7$, two observers with $w_A \neq w_B$ necessarily have non-proportional weight vectors (the simplex normalization forces this), so the generic case is the universal case here; the dimension-6 bound holds for all pairs of distinct observers. $\square$
 
-This has a striking implication for perceptual cohort formation: observers who share similar weight profiles (close on $\Delta^7$ in the Fisher-Rao metric) also share nearly identical null spaces, and therefore agree on which brands are "equivalent" and which are "different." Disagreement between cohorts about brand quality is not noise -- it is the geometrically inevitable consequence of projecting through different subspaces (Zharnikov, 2026f).
+This has a striking implication for perceptual cohort formation: observers who share similar weight profiles (close on $\Delta^7$ in the Fisher-Rao metric) also share nearly identical null spaces, and therefore agree on which brands are "equivalent" and which are "different." Disagreement between cohorts about brand quality is not noise -- it is the geometrically inevitable consequence of projecting through different subspaces [@zharnikov-2026-cohort-boundaries-high-dimensional-perception].
 
 Eight observers with weight vectors spanning the 7-dimensional affine subspace of $\Delta^7$ would reduce the effective null space to at most 1 dimension -- nearly, but not entirely, eliminating metameric ambiguity. Full null-space elimination would require observations from outside the simplex (i.e., observers who weight dimensions negatively or super-unitarily), which is outside the SBT behavioral model. This is the mathematical basis for multi-stakeholder brand assessment: diversity of perspective is not merely desirable but geometrically necessary for faithful brand representation, even if complete elimination of metamerism is not achievable within the simplex constraint.
 
@@ -370,7 +370,7 @@ For a set of brand profiles in $\mathbb{R}^8$ with independent, equal-variance d
 
 $$\frac{\text{Var}(\phi(s))}{\text{Var}(s)} \leq \frac{1}{8} = 12.5\% \tag{12}$$
 
-*The remaining $87.5\%$ of variance is lost -- distributed across the 7 null-space dimensions. The variance bound transfers to the Aitchison setting via the CLR isometry; see Appendix A.2 and Zharnikov (2026d) for details.*
+*The remaining $87.5\%$ of variance is lost -- distributed across the 7 null-space dimensions. The variance bound transfers to the Aitchison setting via the CLR isometry; see Appendix A.2 and Zharnikov [-@zharnikov-2026-brand-space-geometry-formal-metric] for details.*
 
 *Proof.* Under the independence assumption, the covariance matrix $\Sigma = \sigma^2 I_8$ has 8 equal eigenvalues. The optimal $k$-dimensional projection (PCA) captures the top $k$ eigenvalues, for a total of $k\sigma^2 / 8\sigma^2 = k/8$. For $k = 1$, this is $1/8 = 12.5\%$. $\square$
 
@@ -378,7 +378,7 @@ $$\frac{\text{Var}(\phi(s))}{\text{Var}(s)} \leq \frac{1}{8} = 12.5\% \tag{12}$$
 
 **Empirical illustration on the canonical case set.** PCA on the five canonical brand profiles tabulated above[^canonical-pca] yields PC1 = 54.9% of total variance, PC1+PC2 = 80.2%, and PC1+PC2+PC3 = 92.3%. PC1 alone exceeds the 12.5% independence bound by a factor of approximately 4.4, reflecting substantial inter-dimensional correlation among real brand profiles -- heritage, design language, and cultural resonance co-vary; price positioning anti-correlates with luxury signaling. The 1/8 bound remains the worst-case lower bound under the independence assumption of Theorem 4; practical brand sets benefit from correlation structure. Even so, PC1 leaves $\approx 45\%$ of variance unaccounted for, and the metameric collapse argument continues to apply at the finer dimensional structure that PC1 ignores.
 
-[^canonical-pca]: Canonical brand profiles for Hermès, IKEA, Patagonia, Erewhon, and Tesla as defined in Zharnikov (2026a) and reproduced in the L1/L2 Distinction subsection above.
+[^canonical-pca]: Canonical brand profiles for Hermès, IKEA, Patagonia, Erewhon, and Tesla as defined in Zharnikov [-@zharnikov-2026-spectral-brand-theory-computational-framework] and reproduced in the L1/L2 Distinction subsection above.
 
 ### Grade Information Capacity
 
@@ -400,7 +400,7 @@ $$\rho = \frac{C_{\text{grade}}}{I_{\text{profile}}} = \frac{\log_2 L}{n \cdot B
 
 $$\rho = \frac{\log_2 5}{8 \times 2.5} = \frac{2.32}{20} = 11.6\%$$
 
-*Proof.* The capacity of a discrete channel with $L$ symbols is $\log_2 L$ bits, achieved by the uniform distribution over levels. The information content of the continuous profile is the sum of per-dimension entropies. With $B = 2.5$ bits per dimension (corresponding to approximately 6 reliably distinguishable levels on a $[1, 10]$ scale), the total is $8 \times 2.5 = 20$ bits. The ratio follows directly. $\square$
+*Proof.* The capacity of a discrete channel with $L$ symbols is $\log_2 L$ bits, achieved by the uniform distribution over levels -- the standard maximum-entropy result for a noiseless discrete source [@cover-2006-elements-information-theory]. The information content of the continuous profile is the sum of per-dimension entropies. With $B = 2.5$ bits per dimension (corresponding to approximately 6 reliably distinguishable levels on a $[1, 10]$ scale), the total is $8 \times 2.5 = 20$ bits. The ratio follows directly. $\square$
 
 **Plain-English interpretation.** The 5-point grade captures 2.32 bits of a 20-bit profile. This means 88.4% of the brand's identity -- as encoded in its 8-dimensional spectral profile -- is invisible to the grade. The grade can distinguish among $2^{2.32} = 5$ brand states; the full profile can distinguish among $2^{20} \approx 10^6$ states. The grade compresses a million-state space into five bins. This is an information loss ratio that should give pause to anyone using scalar grades for consequential decisions.
 
@@ -412,7 +412,7 @@ The information-theoretic bound has a direct consequence for the vectorized-vers
 
 ### Rate-Distortion Perspective
 
-Under the rate-distortion framework (Shannon, 1948; Berger, 1971), for a Gaussian source $X \sim \mathcal{N}(0, \Sigma)$ in $\mathbb{R}^8$ with equal eigenvalues $\lambda_1 = \cdots = \lambda_8 = \sigma^2$, the rate-distortion function is:
+Under the rate-distortion framework [@shannon-1948-mathematical-theory-communication; @berger-1971-rate-distortion-theory], for a Gaussian source $X \sim \mathcal{N}(0, \Sigma)$ in $\mathbb{R}^8$ with equal eigenvalues $\lambda_1 = \cdots = \lambda_8 = \sigma^2$, the rate-distortion function is:
 
 $$R(D) = \sum_{i=1}^{8} \max\left(0, \frac{1}{2} \log_2 \frac{\lambda_i}{\theta}\right) \tag{16}$$
 
@@ -420,7 +420,7 @@ where $\theta$ is set by the distortion constraint. For a 1D representation (rat
 
 $$D = \sum_{i=2}^{8} \lambda_i = 7\sigma^2 \tag{17}$$
 
-which is $7/8 = 87.5\%$ of the total variance -- converging with the PCA analysis of the Variance Retention subsection. The "reverse water-filling" algorithm of Berger (1971) allocates all available rate to the single largest eigenvalue direction and ignores the remaining 7 dimensions entirely. The algorithm-level fact that rate-distortion-optimal coding fills the largest-variance components first is precisely the source-coding analogue of the SBT-projection claim that scalar grades preserve only the dominant projection direction; rate-distortion theory and the null-space analysis here are two expressions of the same compression bound.
+which is $7/8 = 87.5\%$ of the total variance -- converging with the PCA analysis of the Variance Retention subsection. The "reverse water-filling" algorithm of Berger [-@berger-1971-rate-distortion-theory] allocates all available rate to the single largest eigenvalue direction and ignores the remaining 7 dimensions entirely. The algorithm-level fact that rate-distortion-optimal coding fills the largest-variance components first is precisely the source-coding analogue of the SBT-projection claim that scalar grades preserve only the dominant projection direction; rate-distortion theory and the null-space analysis here are two expressions of the same compression bound.
 
 *Note on distributional assumption.* The Gaussian source is adopted as an analytical tractability assumption. A formally correct rate-distortion analysis would require log-normal or truncated-Gaussian sources to respect the positivity constraint of $\mathbb{R}^8_+$. The qualitative conclusion -- that 1D projection incurs $7\sigma^2$ expected distortion -- holds for any source with equal marginal variances, including log-normal after reparameterization in CLR coordinates.
 
@@ -430,7 +430,7 @@ which is $7/8 = 87.5\%$ of the total variance -- converging with the PCA analysi
 
 ### Simulation Design
 
-To verify the theoretical bounds, we conduct Monte Carlo simulations. The companion script `R2_R3_computations.py` in the `sbt-framework` repository (https://github.com/spectralbranding/sbt-framework) implements the metameric-fraction calculation reported below; it is shared with Zharnikov (2026f), which uses the same generator for concentration-of-measure tests. The simulation:
+To verify the theoretical bounds, we conduct Monte Carlo simulations. The companion script `R2_R3_computations.py` in the `sbt-framework` repository (https://github.com/spectralbranding/sbt-framework) implements the metameric-fraction calculation reported below; it is shared with Zharnikov [-@zharnikov-2026-cohort-boundaries-high-dimensional-perception], which uses the same generator for concentration-of-measure tests. The simulation:
 
 1. Generates $N = 50$ random brand profiles in $\mathbb{R}^8_+$ (log-normal distribution, $\mu = 0.5$, $\sigma = 0.5$, ensuring positivity).
 2. Draws a random unit projection vector $\mathbf{u} \in \mathbb{R}^8$ (Gaussian, normalized).
@@ -460,7 +460,7 @@ Table 7: Monte Carlo Metameric Pair Frequency Across Three Independent Trials.
 
 The simulation confirms that metamerism is not a rare pathology but a prevalent phenomenon. In a competitive set of 50 brands, roughly one-third of all pairwise comparisons are metameric under any given scalar grade. The specific pairs that are metameric depend on the projection direction (i.e., the weighting scheme used to compute the grade), but the *fraction* of metameric pairs is stable at $\sim$30--40% regardless of the direction.
 
-Note that the 31--39% estimate is for uniformly random projection directions. Real observer populations are not uniformly distributed on $\Delta^7$ but cluster into cohorts (Zharnikov, 2026f). The metameric fraction under a clustered observer ensemble could differ from this estimate; measuring this sensitivity is a direction for future work. Similarly, purpose-designed composites (e.g., equal-weight averages, first principal components) may have lower metameric fractions for specific brand populations where the dominant variance aligns with the projection. The null-space and channel-capacity results of the Null Space Analysis and Information-Theoretic Bounds sections are projection-independent; only the Monte Carlo estimate is direction-specific.
+Note that the 31--39% estimate is for uniformly random projection directions. Real observer populations are not uniformly distributed on $\Delta^7$ but cluster into cohorts [@zharnikov-2026-cohort-boundaries-high-dimensional-perception]. The metameric fraction under a clustered observer ensemble could differ from this estimate; measuring this sensitivity is a direction for future work. Similarly, purpose-designed composites (e.g., equal-weight averages, first principal components) may have lower metameric fractions for specific brand populations where the dominant variance aligns with the projection. The null-space and channel-capacity results of the Null Space Analysis and Information-Theoretic Bounds sections are projection-independent; only the Monte Carlo estimate is direction-specific.
 
 This has immediate practical consequences. When a brand tracking study reports that Brand A and Brand B have "similar" scores, there is approximately a one-in-three chance that the similarity is metameric -- an artifact of the projection rather than a genuine similarity in brand structure. To determine whether a similar score reflects true proximity or metameric coincidence, one must examine the full spectral profiles. The scalar grade alone cannot distinguish the two cases.
 
@@ -490,7 +490,7 @@ The brand manager operating in rasterized mode is, mathematically, a "prophet" o
 
 Vectorized brand management retains the full-dimensional specification as the single source of truth (SSOT) and produces channel-specific outputs as computed projections with known, bounded information loss.
 
-**Brand audits become vector comparisons.** Instead of subjective "does this feel on-brand?" judgments, compute $d_{\mathcal{B}}(s_{\text{intended}}, s_{\text{observed}})$ using the Aitchison metric and compare to a significance threshold. The threshold can be derived from concentration bounds in Zharnikov (2026d): the expected squared distance between random profiles on $\Delta^7$ is $7/36$, providing a null-model baseline. A measured distance significantly above this baseline indicates genuine misalignment; a distance near the baseline may be noise.
+**Brand audits become vector comparisons.** Instead of subjective "does this feel on-brand?" judgments, compute $d_{\mathcal{B}}(s_{\text{intended}}, s_{\text{observed}})$ using the Aitchison metric and compare to a significance threshold. The threshold can be derived from concentration bounds in Zharnikov [-@zharnikov-2026-brand-space-geometry-formal-metric]: the expected squared distance between random profiles on $\Delta^7$ is $7/36$, providing a null-model baseline. A measured distance significantly above this baseline indicates genuine misalignment; a distance near the baseline may be noise.
 
 **Channel briefs become subspace specifications.** Instead of "make it feel premium," specify: "For the Instagram channel, project onto the $[s_1, s_5, s_7]$ subspace (Semiotic, Social, Cultural) with minimum signal strengths $(0.7, 0.5, 0.6)$." This is a mathematically precise instruction that can be verified by measuring the output's spectral profile on the relevant dimensions. Different channels may require different subspace projections, but each projection is derived from the same 8D SSOT, with the null-space dimensions explicitly identified.
 
@@ -516,7 +516,7 @@ The vectorized approach does not eliminate scalar grades; it contextualizes them
 
 ### MDS Dimensionality Selection
 
-Multidimensional scaling (MDS) has been the dominant geometric method in marketing for half a century (Torgerson, 1958; Kruskal, 1964; Bijmolt & Wedel, 1999). Bijmolt and Wedel (1999) compare MDS estimation methods for perceptual mapping in *JMR* and document that two-dimensional MDS solutions dominate marketing practice, chosen on stress-plot heuristics rather than on a formal information-loss bound. The present results show that even a 2D MDS solution -- a 6D-to-2D linear projection from the 8D brand space -- leaves a 6-dimensional null space; this is substantially smaller than the 7D null space of scalar grades, but still nontrivial, and the JL distortion bound applies (with $k = 2$ rather than $k = 1$) to the 2D solution as well. The methodological canon for MDS-based segmentation is consolidated by Wedel and Kamakura (2000), whose treatment uses MDS as the workhorse for perceptual mapping but does not formally bound the information loss incurred by projecting brand attribute spaces into low-dimensional perceptual maps. The present paper supplies the bound their methodology has implicitly assumed: under the JL lower bound and the null-space dimension formula, 2D MDS preserves at most $2/n$ of the variance under the independence assumption and leaves a $(n - 2)$-dimensional kernel that the perceptual map cannot resolve. The standard practice is to choose the MDS dimensionality by inspecting a "stress plot" -- stress as a function of dimensions -- and selecting the "elbow" point where additional dimensions provide diminishing returns.
+Multidimensional scaling (MDS) has been the dominant geometric method in marketing for half a century [@torgerson-1958-theory-methods-scaling; @kruskal-1964-multidimensional-scaling-by; @bijmolt-1999-comparison-multidimensional-scaling]. Bijmolt and Wedel [-@bijmolt-1999-comparison-multidimensional-scaling] compare MDS estimation methods for perceptual mapping in *JMR* and document that two-dimensional MDS solutions dominate marketing practice, chosen on stress-plot heuristics rather than on a formal information-loss bound. The present results show that even a 2D MDS solution -- a 6D-to-2D linear projection from the 8D brand space -- leaves a 6-dimensional null space; this is substantially smaller than the 7D null space of scalar grades, but still nontrivial, and the JL distortion bound applies (with $k = 2$ rather than $k = 1$) to the 2D solution as well. The methodological canon for MDS-based segmentation is consolidated by Wedel and Kamakura [-@wedel-2000-market-segmentation-conceptual], whose treatment uses MDS as the workhorse for perceptual mapping but does not formally bound the information loss incurred by projecting brand attribute spaces into low-dimensional perceptual maps. The present paper supplies the bound their methodology has implicitly assumed: under the JL lower bound and the null-space dimension formula, 2D MDS preserves at most $2/n$ of the variance under the independence assumption and leaves a $(n - 2)$-dimensional kernel that the perceptual map cannot resolve. The standard practice is to choose the MDS dimensionality by inspecting a "stress plot" -- stress as a function of dimensions -- and selecting the "elbow" point where additional dimensions provide diminishing returns [@borg-2005-modern-multidimensional-scaling].
 
 The JL framework provides a principled alternative. Given $N$ brands and a desired distortion tolerance $\epsilon$, Theorem 2 gives the minimum dimension for faithful distance preservation. For marketing applications with $N = 50$ brands and $\epsilon = 0.3$:
 
@@ -528,7 +528,7 @@ SBT's contribution to the MDS dimensionality debate is to provide a theoretical 
 
 ### Survey Instrument Design
 
-The information-theoretic bounds have direct implications for survey design. A survey instrument that measures brand perception on a single composite scale (e.g., "overall brand strength on a 1-10 scale") is performing the 8D-to-1D projection at the data collection stage, before any analysis can recover the lost structure. Wedel and Kannan (2016), surveying the state of marketing analytics in data-rich environments, observe that composite brand metrics remain the default in practice despite their known limitations -- a pattern this paper's formal bounds help explain: if the fidelity ceiling of any scalar grade is 11.6%, deploying richer data collection instruments requires a parallel shift to vectorized analytics, not merely higher-resolution scalar measurement.
+The information-theoretic bounds have direct implications for survey design. A survey instrument that measures brand perception on a single composite scale (e.g., "overall brand strength on a 1-10 scale") is performing the 8D-to-1D projection at the data collection stage, before any analysis can recover the lost structure. Wedel and Kannan [-@wedel-2016-marketing-analytics-datarich], surveying the state of marketing analytics in data-rich environments, observe that composite brand metrics remain the default in practice despite their known limitations -- a pattern this paper's formal bounds help explain: if the fidelity ceiling of any scalar grade is 11.6%, deploying richer data collection instruments requires a parallel shift to vectorized analytics, not merely higher-resolution scalar measurement.
 
 The minimum survey instrument for capturing SBT's 8-dimensional structure requires at least one reliable item per dimension. With $B \approx 2.5$ bits per item (a 6-point scale), an 8-item instrument captures $\sim$20 bits -- the full information content of the spectral profile. A single-item instrument captures $\sim$2.5 bits, losing $87.5\%$ of the available information.
 
@@ -536,9 +536,9 @@ The JL perspective also implies that *composite indices* (such as those construc
 
 ### Implications for Brand-Tracking Instruments
 
-Scalar brand-tracking dashboards aggregate multi-dimensional perception signals into a single index -- net promoter score, brand health score, equity index -- for reporting convenience. From the perspective of the projection-bound results established in this paper, every such instrument performs the 8D-to-1D mapping $\phi$ formally analyzed in the Metamerism in Brand Perception, Johnson-Lindenstrauss Bounds, Null Space Analysis, and Information-Theoretic Bounds sections. The instrument is therefore subject to the same metameric collapse: two brands whose full spectral profiles differ substantially in dimensions the dashboard does not capture will appear equivalent in the tracking output.
+Scalar brand-tracking dashboards aggregate multi-dimensional perception signals -- the kind of multi-dimensional brand-equity constructs formalized by Aaker [-@aaker-1991-managing-brand-equity] and Keller [-@keller-1993-conceptualizing-measuring-managing] -- into a single index, such as net promoter score, brand health score, or equity index, for reporting convenience. From the perspective of the projection-bound results established in this paper, every such instrument performs the 8D-to-1D mapping $\phi$ formally analyzed in the Metamerism in Brand Perception, Johnson-Lindenstrauss Bounds, Null Space Analysis, and Information-Theoretic Bounds sections. The instrument is therefore subject to the same metameric collapse: two brands whose full spectral profiles differ substantially in dimensions the dashboard does not capture will appear equivalent in the tracking output.
 
-The measurement-instrument implications go further. Zharnikov (2026o) establishes that brand perception is non-ergodic: repeated measures of the same observer over time produce a time-average that diverges from the cross-sectional population average. A scalar tracking dashboard, by averaging across observers as well as collapsing across dimensions, compounds two independent sources of information loss -- the dimensional projection analyzed here and the ergodicity failure analyzed in Zharnikov (2026o). The combined effect is a tracking output whose fidelity to the underlying multi-dimensional, longitudinal perceptual reality is doubly bounded: by the 11.6% information-retention ceiling of the Grade Information Capacity subsection and by the non-ergodicity gap documented in Zharnikov (2026o).
+The measurement-instrument implications go further. Zharnikov [-@zharnikov-2026-non-ergodic-brand-perception-why] establishes that brand perception is non-ergodic: repeated measures of the same observer over time produce a time-average that diverges from the cross-sectional population average. A scalar tracking dashboard, by averaging across observers as well as collapsing across dimensions, compounds two independent sources of information loss -- the dimensional projection analyzed here and the ergodicity failure analyzed in Zharnikov [-@zharnikov-2026-non-ergodic-brand-perception-why]. The combined effect is a tracking output whose fidelity to the underlying multi-dimensional, longitudinal perceptual reality is doubly bounded: by the 11.6% information-retention ceiling of the Grade Information Capacity subsection and by the non-ergodicity gap documented in Zharnikov [-@zharnikov-2026-non-ergodic-brand-perception-why].
 
 The vectorized corrective is straightforward in principle: retain the full 8-dimensional spectral profile as the primary tracking record, and treat the scalar composite as a derived, lossy summary whose projection direction and null space are explicitly documented. Tracking changes in the scalar then have a natural interpretation -- they signal movement along the projection direction -- while changes in the null-space components remain visible through dimension-level monitoring. This dual-layer design (L1 spectral time series plus L2 grade time series) is a minimal extension to existing dashboard infrastructure that recovers the information discarded by purely scalar tracking.
 
@@ -556,7 +556,7 @@ Table 10: Spectral Metamerism Across the SBT Specialization Papers.
 | 2026w (Canon) | Creative IP repositories | Transmedia IP specification | Distinct canons producing identical audience perception profiles | Canon metamerism: different authorial intents collapse at audience projection |
 | Multi-portfolio audit | Brand portfolio management | Portfolio of spectral profiles | Distinct portfolio compositions with identical aggregate grades | Portfolio metamerism: aggregate brand value masks component-level structural differences |
 
-*Notes*: All specialization papers retain the null-space and projection-bound structure formalized in this paper (2026e) while adapting the source space to their empirical setting. Citation keys: 2026v = Zharnikov (2026v); 2026x = Zharnikov (2026x); 2026w = Zharnikov (2026w). The multi-portfolio audit setting is a direction for future work.*
+*Notes*: All specialization papers retain the null-space and projection-bound structure formalized in this paper while adapting the source space to their empirical setting. Citation keys: 2026v = Zharnikov [-@zharnikov-2026-dimensional-collapse-ai-mediated-search]; 2026x = Zharnikov [-@zharnikov-2026-ai-native-brand-identity-from]; 2026w = Zharnikov [-@zharnikov-2026-canon-as-repository-specification-driven]. The multi-portfolio audit setting is a direction for future work.*
 
 ---
 
@@ -568,23 +568,23 @@ Our analysis focuses on linear projections. Real brand evaluation may involve no
 
 ### Source Dimension Assumptions
 
-We assume $n = 8$ throughout. If the "true" dimensionality of brand perception is less than 8 (e.g., because some SBT dimensions are highly correlated), the null-space dimension is correspondingly reduced. Conversely, if brand perception is richer than 8 dimensions (as suggested by the fine-grained distinctions within individual dimensions), the metamerism problem is even more severe. The 8-dimensional model represents SBT's current theoretical commitment, and the results scale straightforwardly with the assumed dimensionality. The sphere-packing duality (Zharnikov, 2026g) provides the complementary bound: that paper establishes how many distinguishable brands fit in 8-dimensional spectral space, while the present paper establishes how many of those become metameric under 1D projection.
+We assume $n = 8$ throughout. If the "true" dimensionality of brand perception is less than 8 (e.g., because some SBT dimensions are highly correlated), the null-space dimension is correspondingly reduced. Conversely, if brand perception is richer than 8 dimensions (as suggested by the fine-grained distinctions within individual dimensions), the metamerism problem is even more severe. The 8-dimensional model represents SBT's current theoretical commitment, and the results scale straightforwardly with the assumed dimensionality. The sphere-packing duality [@zharnikov-2026-many-brands-can-market-hold] provides the complementary bound: that paper establishes how many distinguishable brands fit in 8-dimensional spectral space, while the present paper establishes how many of those become metameric under 1D projection.
 
 ### Empirical Validation
 
-The case-study profiles used in the L1/L2 Distinction subsection are illustrative, derived from qualitative assessment rather than empirical measurement. Empirical validation would require (a) survey instruments capturing 8-dimensional brand perception, (b) scalar grade instruments administered to the same respondents, and (c) direct measurement of metameric pair frequency. This is a natural direction for future work; the present paper establishes the theoretical bounds that such empirical work would test. The concentration-of-measure argument explaining why the metameric fraction is direction-stable at $\sim$30--40% is developed formally in Zharnikov (2026f). Empirical applications to AI-mediated brand perception are reported in Zharnikov (2026v) and Zharnikov (2026x).
+The case-study profiles used in the L1/L2 Distinction subsection are illustrative, derived from qualitative assessment rather than empirical measurement. Empirical validation would require (a) survey instruments capturing 8-dimensional brand perception, (b) scalar grade instruments administered to the same respondents, and (c) direct measurement of metameric pair frequency. This is a natural direction for future work; the present paper establishes the theoretical bounds that such empirical work would test. The concentration-of-measure argument explaining why the metameric fraction is direction-stable at $\sim$30--40% is developed formally in Zharnikov [-@zharnikov-2026-cohort-boundaries-high-dimensional-perception]. Empirical applications to AI-mediated brand perception are reported in Zharnikov [-@zharnikov-2026-dimensional-collapse-ai-mediated-search] and Zharnikov [-@zharnikov-2026-ai-native-brand-identity-from].
 
 ### Relationship to Factor Analysis and PCA
 
-PCA and factor analysis are data-dependent dimensionality reduction methods that choose the projection to maximize captured variance. The JL analysis is data-independent -- it provides worst-case guarantees over all possible point configurations. The two approaches are complementary: PCA tells you the best projection for a specific dataset; JL tells you the worst-case loss for any dataset. For brand management, the PCA approach risks overfitting to a specific competitive set, while the JL approach provides robust bounds that hold regardless of the specific brands being analyzed. The possibility of partially compensating for projection loss through prior knowledge of the perceptual space has a precedent in color science: Maloney (1986) showed that surface spectral reflectance functions can be approximately recovered from tristimulus values using a small number of basis functions, because natural reflectances occupy a low-dimensional subspace. Whether analogous priors exist for brand profiles -- allowing partial recovery of null-space dimensions from contextual cues -- is a direction for future work.
+PCA and factor analysis are data-dependent dimensionality reduction methods that choose the projection to maximize captured variance. The JL analysis is data-independent -- it provides worst-case guarantees over all possible point configurations. The two approaches are complementary: PCA tells you the best projection for a specific dataset; JL tells you the worst-case loss for any dataset. For brand management, the PCA approach risks overfitting to a specific competitive set, while the JL approach provides robust bounds that hold regardless of the specific brands being analyzed. The possibility of partially compensating for projection loss through prior knowledge of the perceptual space has a precedent in color science: Maloney [-@maloney-1986-evaluation-linear-models] showed that surface spectral reflectance functions can be approximately recovered from tristimulus values using a small number of basis functions, because natural reflectances occupy a low-dimensional subspace. Whether analogous priors exist for brand profiles -- allowing partial recovery of null-space dimensions from contextual cues -- is a direction for future work.
 
 ### Beyond Linear Projections
 
-Modern nonlinear dimensionality reduction methods (t-SNE, UMAP; see Tenenbaum, de Silva & Langford, 2000, for the foundational isomap approach) can embed high-dimensional data in lower dimensions while preserving local structure better than linear methods. However, these methods optimize for visualization, not for faithful distance preservation. A t-SNE embedding of 8D brand profiles in 2D may produce visually appealing clusters, but the distances in the embedding are not proportional to the Aitchison distances in the original space. For analytical purposes -- computing brand distances, detecting metamerism, measuring coherence -- the original 8D representation remains necessary.
+Modern nonlinear dimensionality reduction methods (t-SNE, UMAP; see Tenenbaum, de Silva & Langford [-@tenenbaum-2000-global-geometric-framework], for the foundational isomap approach) can embed high-dimensional data in lower dimensions while preserving local structure better than linear methods. However, these methods optimize for visualization, not for faithful distance preservation. A t-SNE embedding of 8D brand profiles in 2D may produce visually appealing clusters, but the distances in the embedding are not proportional to the Aitchison distances in the original space. For analytical purposes -- computing brand distances, detecting metamerism, measuring coherence -- the original 8D representation remains necessary.
 
 ### Observer-Dependent Metamerism
 
-This paper treats the projection $\phi$ as a fixed function. In full SBT, the projection is observer-dependent: different observers weight dimensions differently, producing different null spaces (Observer-Dependent Null Spaces subsection). The full metamerism analysis for the warped product manifold (Zharnikov, 2026d) would require studying how the null space structure varies across the observer space $\Delta^7$, a direction we leave for future work. Proposition 1 provides the first step: two distinct observers reduce the effective null space from 7D to 6D, and the general case of $m$ observers with linearly independent weight profiles reduces it to $(8 - m)$ dimensions. The cohort-clustering implications of observer-dependent null spaces are analyzed in Zharnikov (2026f).
+This paper treats the projection $\phi$ as a fixed function. In full SBT, the projection is observer-dependent: different observers weight dimensions differently, producing different null spaces (Observer-Dependent Null Spaces subsection). The full metamerism analysis for the warped product manifold [@zharnikov-2026-brand-space-geometry-formal-metric] would require studying how the null space structure varies across the observer space $\Delta^7$, a direction we leave for future work. Proposition 1 provides the first step: two distinct observers reduce the effective null space from 7D to 6D, and the general case of $m$ observers with linearly independent weight profiles reduces it to $(8 - m)$ dimensions. The cohort-clustering implications of observer-dependent null spaces are analyzed in Zharnikov [-@zharnikov-2026-cohort-boundaries-high-dimensional-perception].
 
 ---
 
@@ -596,119 +596,26 @@ Together these results formalize the distinction between rasterized and vectoriz
 
 SBT's 8-dimensional spectral profile is therefore not optional complexity. It is the minimum representation required to avoid the metameric collapse that scalar grades inevitably produce. The practical recommendation is clear: use scalar grades for coarse screening and communication, but conduct all analytical work -- brand audits, competitive analysis, consistency monitoring, strategic positioning -- in the full 8-dimensional space where metamerism cannot hide structural differences.
 
-Future work includes empirical measurement of metameric pair frequency in real brand data (testing the 31--39% prediction in Zharnikov, 2026v and Zharnikov, 2026x), extension to the warped product manifold (observer-dependent metamerism bounds in Zharnikov, 2026f), and application to organizational specification through OrgSchema Theory (Zharnikov, 2026i), where the 48-dimensional specification space makes the metamerism problem dramatically more severe. We are not aware of published work that has previously established formal distortion bounds for scalar brand grades or quantified the metameric fraction in competitive brand sets.
+Future work includes empirical measurement of metameric pair frequency in real brand data (testing the 31--39% prediction in Zharnikov, [-@zharnikov-2026-dimensional-collapse-ai-mediated-search] and Zharnikov, [-@zharnikov-2026-ai-native-brand-identity-from]), extension to the warped product manifold (observer-dependent metamerism bounds in Zharnikov, [-@zharnikov-2026-cohort-boundaries-high-dimensional-perception]), and application to organizational specification through OrgSchema Theory [@zharnikov-2026-organizational-schema-theory-test-driven], where the 48-dimensional specification space makes the metamerism problem dramatically more severe. We are not aware of published work that has previously established formal distortion bounds for scalar brand grades or quantified the metameric fraction in competitive brand sets.
 
 ---
 
 ## Acknowledgments
 
-AI assistants (Claude Opus 4.7, Grok 4.1, Gemini 3.1) were used for initial literature search and editorial refinement; all theoretical claims, propositions, and interpretations are the author's sole responsibility.
+AI assistants (Claude Opus 4.7, Grok 4.1, Gemini 3.1) were used for initial literature search, for software development — implementing and running the companion computation script(s) that reproduce the paper's reported numerical and simulation results — and for editorial refinement; all theoretical claims, propositions, and interpretations are the author's sole responsibility.
 
 ---
 
 ## References
 
-Achlioptas, D. (2003). Database-friendly random projections: Johnson-Lindenstrauss with binary coins. *Journal of Computer and System Sciences*, 66(4), 671--687.
-
-Aaker, D. A. (1991). *Managing Brand Equity*. Free Press.
-
-Aaker, J. L. (1997). Dimensions of brand personality. *Journal of Marketing Research*, 34(3), 347--356.
-
-Aitchison, J. (1986). *The Statistical Analysis of Compositional Data*. Chapman & Hall.
-
-Amari, S.-i. (2016). *Information Geometry and Its Applications*. Springer.
-
-Berger, T. (1971). *Rate Distortion Theory: A Mathematical Basis for Data Compression*. Prentice-Hall.
-
-Bijmolt, T. H. A., & Wedel, M. (1999). A comparison of multidimensional scaling methods for perceptual mapping. *Journal of Marketing Research*, 36(2), 277--285. https://doi.org/10.1177/002224379903600211
-
-Borg, I., & Groenen, P. J. F. (2005). *Modern Multidimensional Scaling* (2nd ed.). Springer.
-
-Bourgain, J. (1985). On Lipschitz embedding of finite metric spaces in Hilbert space. *Israel Journal of Mathematics*, 52(1-2), 46--52.
-
-Brand Finance. (2025). *Global 500 Brand Valuation Report*. Brand Finance.
-
-Busemeyer, J. R., & Bruza, P. D. (2012). *Quantum Models of Cognition and Decision*. Cambridge University Press.
-
-Candès, E. J., & Tao, T. (2006). Near-optimal signal recovery from random projections: Universal encoding strategies? *IEEE Transactions on Information Theory*, 52(12), 5406--5425. https://doi.org/10.1109/TIT.2006.885507
-
-Carroll, J. D., & Chang, J.-J. (1970). Analysis of individual differences in multidimensional scaling via an N-way generalization of "Eckart-Young" decomposition. *Psychometrika*, 35(3), 283--319.
-
-Cohen, J. B., & Kappauf, W. E. (1982). Metameric color stimuli, fundamental metamers, and Wyszecki's metameric blacks. *American Journal of Psychology*, 95(4), 537--564.
-
-Cowan, N. (2001). The magical number 4 in short-term memory: A reconsideration of mental storage capacity. *Behavioral and Brain Sciences*, 24(1), 87--114.
-
-Dasgupta, S., & Gupta, A. (2003). An elementary proof of a theorem of Johnson and Lindenstrauss. *Random Structures & Algorithms*, 22(1), 60--65.
-
-DeSarbo, W. S., Kim, Y., Choi, S. C., & Spaulding, M. (2002). A gravity-based multidimensional scaling model for deriving spatial structures underlying consumer preference/choice judgments. *Journal of Consumer Research*, 29(1), 91--100.
-
-Donoho, D. L. (2006). Compressed sensing. *IEEE Transactions on Information Theory*, 52(4), 1289--1306.
-
-Gardenfors, P. (2000). *Conceptual Spaces: The Geometry of Thought*. MIT Press.
-
-Grassmann, H. (1853). Zur Theorie der Farbenmischung. *Annalen der Physik*, 165(5), 69--84.
-
-Johnson, W. B., & Lindenstrauss, J. (1984). Extensions of Lipschitz mappings into a Hilbert space. *Contemporary Mathematics*, 26, 189--206.
-
-Kane, D. M., & Nelson, J. (2014). Sparser Johnson-Lindenstrauss transforms. *Journal of the ACM*, 61(1), 1--23.
-
-Kapferer, J.-N. (2008). *The New Strategic Brand Management* (4th ed.). Kogan Page.
-
-Keller, K. L. (1993). Conceptualizing, measuring, and managing customer-based brand equity. *Journal of Marketing*, 57(1), 1--22.
-
-Kruskal, J. B. (1964). Multidimensional scaling by optimizing goodness of fit to a nonmetric hypothesis. *Psychometrika*, 29(1), 1--27.
-
-Lancaster, K. J. (1966). A new approach to consumer theory. *Journal of Political Economy*, 74(2), 132--157.
-
-Larsen, K. G., & Nelson, J. (2017). Optimality of the Johnson-Lindenstrauss lemma. In *Proceedings of the 58th Annual IEEE Symposium on Foundations of Computer Science (FOCS)* (pp. 633--638).
-
-Maloney, L. T. (1986). Evaluation of linear models of surface spectral reflectance with small numbers of parameters. *Journal of the Optical Society of America A*, 3(10), 1673--1683.
-
-Miller, G. A. (1956). The magical number seven, plus or minus two: Some limits on our capacity for processing information. *Psychological Review*, 63(2), 81--97.
-
-Shannon, C. E. (1948). A mathematical theory of communication. *Bell System Technical Journal*, 27(3), 379--423.
-
-Shepard, R. N. (1987). Toward a universal law of generalization for psychological science. *Science*, 237(4820), 1317--1323.
-
-Tenenbaum, J. B., de Silva, V., & Langford, J. C. (2000). A global geometric framework for nonlinear dimensionality reduction. *Science*, 290(5500), 2319--2323. https://doi.org/10.1126/science.290.5500.2319
-
-Torgerson, W. S. (1958). *Theory and Methods of Scaling*. Wiley.
-
-van Trigt, C. (1990). Smoothest-fit solution and the fundamental metamers. *Color Research & Application*, 15(2), 68--75.
-
-Wedel, M., & Kamakura, W. A. (2000). *Market Segmentation: Conceptual and Methodological Foundations* (2nd ed.). Springer.
-
-Wedel, M., & Kannan, P. K. (2016). Marketing analytics for data-rich environments. *Journal of Marketing*, 80(6), 97--121. https://doi.org/10.1509/jm.15.0413
-
-Wyszecki, G., & Stiles, W. S. (1982). *Color Science: Concepts and Methods, Quantitative Data and Formulae* (2nd ed.). Wiley.
-
-Zharnikov, D. (2026a). Spectral Brand Theory: A multi-dimensional framework for brand perception analysis. Working Paper. https://doi.org/10.5281/zenodo.18945912
-
-Zharnikov, D. (2026c). Geometric approaches to brand perception: A critical survey and research agenda. Working Paper. https://doi.org/10.5281/zenodo.18945217
-
-Zharnikov, D. (2026d). Brand space geometry: A formal metric for multi-dimensional brand perception. Working Paper. https://doi.org/10.5281/zenodo.18945295
-
-Zharnikov, D. (2026f). Cohort boundaries in high-dimensional perception space: A concentration of measure analysis. Working Paper. https://doi.org/10.5281/zenodo.18945477
-
-Zharnikov, D. (2026o). From order effects to absorbing states: A non-ergodic framework for multi-dimensional brand perception dynamics. Working Paper. https://doi.org/10.5281/zenodo.19138860
-
-Zharnikov, D. (2026g). How many brands can a market hold? Sphere packing bounds for multi-dimensional positioning. Working Paper. https://doi.org/10.5281/zenodo.18945522
-
-Zharnikov, D. (2026i). The Organizational Schema Theory: Test-driven business design. Working Paper. https://doi.org/10.5281/zenodo.18946043
-
-Zharnikov, D. (2026v). Dimensional collapse in AI-mediated brand perception: Large language models as metameric observers. Working Paper. https://doi.org/10.5281/zenodo.19422427
-
-Zharnikov, D. (2026w). Canon as repository: A specification-driven architecture for transmedia intellectual property. Working Paper. https://doi.org/10.5281/zenodo.19355800
-
-Zharnikov, D. (2026x). AI-native brand identity: From visual recognition to cryptographic verification. Working Paper. https://doi.org/10.5281/zenodo.19391476
-
----
+::: {#refs}
+:::
 
 ## Mathematical Appendix
 
 ### A.1 Proof Details for Theorem 1
 
-The distortion bound derives from the Larsen-Nelson (2017) tight lower bound for the Johnson-Lindenstrauss lemma. For a set of $N$ points in $\mathbb{R}^n$ and any linear map $f: \mathbb{R}^n \to \mathbb{R}^k$, the distortion parameter $\epsilon$ satisfying:
+The distortion bound derives from the Larsen-Nelson [-@larsen-2017-optimality-johnsonlindenstrauss-lemma] tight lower bound for the Johnson-Lindenstrauss lemma. For a set of $N$ points in $\mathbb{R}^n$ and any linear map $f: \mathbb{R}^n \to \mathbb{R}^k$, the distortion parameter $\epsilon$ satisfying:
 
 $$(1 - \epsilon)\|x_i - x_j\|^2 \leq \|f(x_i) - f(x_j)\|^2 \leq (1 + \epsilon)\|x_i - x_j\|^2 \quad \forall i,j$$
 

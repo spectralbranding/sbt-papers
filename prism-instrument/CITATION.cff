@@ -3,32 +3,33 @@ message: "If you use this paper, please cite it as below."
 authors:
   - family-names: Zharnikov
     given-names: Dmitry
-    email: dmitry@spectralbranding.com
     affiliation: "Independent Researcher"
     orcid: "https://orcid.org/0009-0000-6893-9231"
 title: "PRISM: A Structured Measurement Instrument for Multi-Dimensional Brand Perception"
-version: "1.0.0"
-date-released: "2026-04-13"
+version: 1.0.0
+date-released: 2026-06-14
+url: "https://doi.org/10.5281/zenodo.19555265"
 repository-code: "https://github.com/spectralbranding/sbt-papers"
 identifiers:
   - type: doi
     value: "10.5281/zenodo.19555265"
-    description: "Zenodo archive (primary)"
+    description: "Zenodo concept DOI (all versions)"
 keywords:
   - brand perception measurement
   - psychometrics
   - instrument design
   - Spectral Brand Theory
-  - PRISM
-license: CC-BY-NC-ND-4.0
+  - large language models
+  - dimensional collapse
+  - scale development
+  - observer heterogeneity
+license: MIT
 type: article
 preferred-citation:
   type: article
   authors:
     - family-names: Zharnikov
       given-names: Dmitry
-      email: dmitry@spectralbranding.com
-      affiliation: "Independent Researcher"
-      orcid: "https://orcid.org/0009-0000-6893-9231"
   title: "PRISM: A Structured Measurement Instrument for Multi-Dimensional Brand Perception"
   year: 2026
+  url: "https://doi.org/10.5281/zenodo.19555265"

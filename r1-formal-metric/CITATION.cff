@@ -3,27 +3,26 @@ message: "If you use this paper, please cite it as below."
 authors:
   - family-names: Zharnikov
     given-names: Dmitry
-    email: dmitry@spectralbranding.com
     affiliation: "Independent Researcher"
     orcid: "https://orcid.org/0009-0000-6893-9231"
-title: "Brand space geometry: A formal metric for multi-dimensional brand perception"
+title: "Brand Space Geometry: A Formal Metric for Multi-Dimensional Brand Perception"
 version: 2.3.0
-date-released: 2026-05-02
+date-released: 2026-06-14
 url: "https://doi.org/10.5281/zenodo.18945295"
 repository-code: "https://github.com/spectralbranding/sbt-papers"
 identifiers:
   - type: doi
     value: "10.5281/zenodo.18945295"
-    description: "Zenodo archive (primary)"
-  - type: url
-    value: "https://doi.org/10.5281/zenodo.18945295"
-    description: "Zenodo preprint"
+    description: "Zenodo concept DOI (all versions)"
 keywords:
-  - brand metric
-  - simplex geometry
-  - Aitchison metric
+  - brand perception
+  - metric space
+  - information geometry
   - Fisher-Rao metric
-  - brand similarity
+  - compositional data
+  - warped product manifold
+  - Jacobi fields
+  - Spectral Brand Theory
 license: MIT
 type: article
 preferred-citation:
@@ -31,9 +30,6 @@ preferred-citation:
   authors:
     - family-names: Zharnikov
       given-names: Dmitry
-      email: dmitry@spectralbranding.com
-      affiliation: "Independent Researcher"
-      orcid: "https://orcid.org/0009-0000-6893-9231"
-  title: "Brand space geometry: A formal metric for multi-dimensional brand perception"
+  title: "Brand Space Geometry: A Formal Metric for Multi-Dimensional Brand Perception"
   year: 2026
   url: "https://doi.org/10.5281/zenodo.18945295"

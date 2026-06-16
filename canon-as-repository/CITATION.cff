@@ -3,24 +3,17 @@ message: "If you use this paper, please cite it as below."
 authors:
   - family-names: Zharnikov
     given-names: Dmitry
-    email: dmitry@spectralbranding.com
     affiliation: "Independent Researcher"
     orcid: "https://orcid.org/0009-0000-6893-9231"
-title: "Canon as repository: A specification-driven architecture for transmedia intellectual property"
+title: "Canon as Repository: A Specification-Driven Architecture for Transmedia Intellectual Property"
 version: 1.1.0
-date-released: 2026-05-10
+date-released: 2026-06-14
 url: "https://doi.org/10.5281/zenodo.19355800"
-repository-code: "https://github.com/spectralbranding/sbt-papers/tree/main/canon-as-repository"
+repository-code: "https://github.com/spectralbranding/sbt-papers"
 identifiers:
   - type: doi
     value: "10.5281/zenodo.19355800"
-    description: "Zenodo archive — concept DOI (primary citation target)"
-  - type: doi
-    value: "10.5281/zenodo.19355801"
-    description: "Zenodo archive — v1.0.0 version DOI"
-  - type: url
-    value: "https://doi.org/10.5281/zenodo.19355800"
-    description: "Zenodo preprint"
+    description: "Zenodo concept DOI (all versions)"
 keywords:
   - transmedia storytelling
   - intellectual property
@@ -28,17 +21,13 @@ keywords:
   - canon
   - narrative consistency
   - creative AI
-  - rendering problem
-license: CC-BY-NC-ND-4.0
+license: MIT
 type: article
 preferred-citation:
   type: article
   authors:
     - family-names: Zharnikov
       given-names: Dmitry
-      email: dmitry@spectralbranding.com
-      affiliation: "Independent Researcher"
-      orcid: "https://orcid.org/0009-0000-6893-9231"
-  title: "Canon as repository: A specification-driven architecture for transmedia intellectual property"
+  title: "Canon as Repository: A Specification-Driven Architecture for Transmedia Intellectual Property"
   year: 2026
   url: "https://doi.org/10.5281/zenodo.19355800"

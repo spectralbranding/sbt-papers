@@ -1,92 +1,39 @@
-[![MIT License](https://img.shields.io/badge/Code-MIT-blue.svg)](LICENSE)
-[![CC-BY 4.0](https://img.shields.io/badge/Data-CC--BY_4.0-lightgrey.svg)](LICENSE-data)
-![Last Updated](https://img.shields.io/badge/updated-2026--05--29-success)
+[![MIT License](https://img.shields.io/badge/Code-MIT-blue.svg)](../LICENSE)
+[![CC-BY 4.0](https://img.shields.io/badge/Data-CC--BY_4.0-lightgrey.svg)](../LICENSE-data)
+![Last Updated](https://img.shields.io/badge/updated-2026--06--16-success)
 
 # Spectral Immunity: Why Brand Portfolio Interference Disappears for AI Observers
 
-**Spectral Immunity: Why Brand Portfolio Interference Disappears for AI Observers**
+## 1 | Paper
 
-Citation key: `2026ac` | Supersedes: R8 (`2026q`) + R20 (`2026ab`)
+- Manuscript: [paper.md](paper.md)
+- Version: 1.0.0
+- DOI: [10.5281/zenodo.19765401](https://doi.org/10.5281/zenodo.19765401)
+- Machine-readable bundle: [paper.yaml](paper.yaml) (Paper Spec), [SPINE.yaml](SPINE.yaml), [ONTOLOGY.yaml](ONTOLOGY.yaml), [GLOSSARY.md](GLOSSARY.md)
 
-## Summary
+## 2 | Citations
 
-Brand portfolio theory predicts that corporate ownership generates perceptual interference when observers recognize shared parentage. This paper formalizes the interference mechanism across eight typed perception dimensions and tests it with 13 large language models from seven training traditions. Across 9,925 observations, 40 brands, and seven portfolio archetypes, portfolio framing produces near-zero perceptual change (mean |delta DCI| = .26, TOST equivalent for 18/20 brands). The awareness gate is necessary but not sufficient for interference; a perception channel with adequate bandwidth is also required.
+`paper.md` is the source artifact; inline citations use the `[@citation_key]` form. The full bibliography lives in the companion `.bib` file; see [CITATIONS.md](CITATIONS.md) for how to resolve and render them.
 
-This version incorporates bandwidth constraint formalization grounded in rate-distortion theory (Cover and Thomas 2006) and rational inattention (Sims 2003; Matejka and McKay 2015); Peng et al. (2023) meta-analytic baseline framing (2,134 effect sizes); expanded LLM-perception literature integration (Brand, Israeli and Ngwe 2023; Hermann and Puntoni 2025; Dubois, Dawson and Jaiswal 2025); and Appendix C with verbatim prompt templates for all four modalities plus a native-language example with back-translation.
+## 3 | Citation
 
-## Key Finding
+```bibtex
+@article{Zharnikov2026,
+  author  = {Zharnikov, Dmitry},
+  title   = {Spectral Immunity: Why Brand Portfolio Interference Disappears for AI Observers},
+  year    = {2026},
+  doi     = {10.5281/zenodo.19765401},
+  url     = {https://doi.org/10.5281/zenodo.19765401},
+  version = {1.0.0},
+}
+```
 
-**Spectral immunity**: AI observers encode brand output (the WHAT layer) and discard organizational coordination context (the DO layer), including corporate ownership and portfolio membership.
+Machine-readable: [CITATION.cff](CITATION.cff).
 
-## Files
+## 4 | Licence
 
-| File | Description |
-|------|-------------|
-| `paper.md` | Full manuscript (markdown) |
-| `paper.yaml` | Machine-readable paper specification |
-| `CITATION.cff` | Citation metadata |
-| `CONTRIBUTORS.yaml` | Contributor attribution |
-| `DATA_MANIFEST.yaml` | Data sources and links |
-| `PROVENANCE.yaml` | Fork history and submission records |
-
-## Data
-
-- **HuggingFace**: [spectralbranding/r20-portfolio-ai-perception](https://huggingface.co/datasets/spectralbranding/r20-portfolio-ai-perception) (9,925 observations)
-- **Zenodo**: [10.5281/zenodo.19765401](https://doi.org/10.5281/zenodo.19765401)
-
-## Relationship to R8 and R20
-
-This paper merges R8's theoretical framework (spectral interference formalism, awareness gate mechanism, portfolio archetypes) with R20's empirical data (9,925 observations across 40 brands and 13 models). R8 and R20 remain on Zenodo as historical records but are superseded by this merged paper.
+Code (if any): MIT — see hub-level [../LICENSE](../LICENSE). Data, figures, tables: CC BY 4.0 — see hub-level [../LICENSE-data](../LICENSE-data).
 
 ---
 
-## 1 | Getting Started
-
-This is a per-paper slug mirror within `sbt-papers/`. The paper manuscript (`paper.md`), specification (`paper.yaml`), and citation metadata (`CITATION.cff`) live at the slug root. Computational artifacts live under `code/`.
-
-## 2 | Project Layout
-
-```
-r21-spectral-immunity/
-├── paper.md                # Full manuscript (markdown)
-├── paper.yaml              # Machine-readable paper specification
-├── CITATION.cff            # Citation metadata
-├── CONTRIBUTORS.yaml       # Contributor attribution
-├── DATA_MANIFEST.yaml      # Data sources and links
-├── PROVENANCE.yaml         # Fork history and submission records
-├── README.md               # This file
-├── code/                   # Computation scripts
-│   ├── compute_dci.py
-│   ├── plot_forest_effect_sizes.py
-│   ├── requirements.txt
-│   └── README.md
-└── figures/                # Rendered figures cited in paper.md
-```
-
-Companion dataset on Hugging Face: [`spectralbranding/r20-portfolio-ai-perception`](https://huggingface.co/datasets/spectralbranding/r20-portfolio-ai-perception) — DOI [`10.57967/hf/8380`](https://doi.org/10.57967/hf/8380) (9,925 observations across 40 brands × 13 models × 7 portfolio archetypes × 4 prompt modalities). This dataset backs R21 and is shared with the superseded R20 (`2026ab`); R21 also supersedes R8 (`2026q`).
-
-## 3 | Quick Start
-
-```bash
-cd code/
-uv run python compute_dci.py        # seed = 42, see paper.yaml
-uv run python plot_forest_effect_sizes.py
-```
-
-See `code/README.md` for full per-script details.
-
-## 4 | Dependencies
-
-Python 3.12. Dependencies pinned in `code/requirements.txt`. Install via `uv pip install -r code/requirements.txt` or equivalent.
-
-## 5 | Citation
-
-> Zharnikov D. Spectral Immunity: Why Brand Portfolio Interference Disappears for AI Observers. 2026. doi:10.5281/zenodo.19765401
-
-Machine-readable citation in [`CITATION.cff`](CITATION.cff). GitHub and Zenodo render this natively via the "Cite this repository" widget.
-
-- Concept DOI: [10.5281/zenodo.19765401](https://doi.org/10.5281/zenodo.19765401)
-- Companion dataset DOI: [10.57967/hf/8380](https://doi.org/10.57967/hf/8380)
-- ORCID: [0009-0000-6893-9231](https://orcid.org/0009-0000-6893-9231)
-
-*Last updated: 2026-05-29*
+*Last updated: 2026-06-16*

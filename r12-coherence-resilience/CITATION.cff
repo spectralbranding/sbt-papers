@@ -3,27 +3,25 @@ message: "If you use this paper, please cite it as below."
 authors:
   - family-names: Zharnikov
     given-names: Dmitry
-    email: dmitry@spectralbranding.com
     affiliation: "Independent Researcher"
     orcid: "https://orcid.org/0009-0000-6893-9231"
-title: "Coherence type over coherence score: A stochastic differential equation derivation of brand resilience"
+title: "Coherence Type Over Coherence Score: A Stochastic Differential Equation Derivation of Brand Resilience"
 version: 1.2.0
-date-released: 2026-05-02
+date-released: 2026-06-14
 url: "https://doi.org/10.5281/zenodo.19208107"
 repository-code: "https://github.com/spectralbranding/sbt-papers"
 identifiers:
   - type: doi
     value: "10.5281/zenodo.19208107"
-    description: "Zenodo archive (primary)"
-  - type: url
-    value: "https://doi.org/10.5281/zenodo.19208107"
-    description: "Zenodo preprint"
+    description: "Zenodo concept DOI (all versions)"
 keywords:
-  - spectral brand theory
   - crisis resilience
   - coherence type
   - brand stability
-  - non-ergodic dynamics
+  - stochastic dynamics
+  - drift geometry
+  - non-ergodicity
+  - Spectral Brand Theory
 license: MIT
 type: article
 preferred-citation:
@@ -31,9 +29,6 @@ preferred-citation:
   authors:
     - family-names: Zharnikov
       given-names: Dmitry
-      email: dmitry@spectralbranding.com
-      affiliation: "Independent Researcher"
-      orcid: "https://orcid.org/0009-0000-6893-9231"
-  title: "Coherence type over coherence score: A stochastic differential equation derivation of brand resilience"
+  title: "Coherence Type Over Coherence Score: A Stochastic Differential Equation Derivation of Brand Resilience"
   year: 2026
   url: "https://doi.org/10.5281/zenodo.19208107"

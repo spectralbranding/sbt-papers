@@ -3,93 +3,31 @@ message: "If you use this paper, please cite it as below."
 authors:
   - family-names: Zharnikov
     given-names: Dmitry
-    email: dmitry@spectralbranding.com
     affiliation: "Independent Researcher"
     orcid: "https://orcid.org/0009-0000-6893-9231"
-title: "Optimal response formats for AI brand perception measurement: Evidence for a J-shaped rate-distortion curve"
-version: "1.3.0"
-date-released: "2026-05-02"
+title: "Optimal Response Formats for AI Brand Perception Measurement: Evidence for a J-Shaped Rate-Distortion Curve"
+version: 1.3.0
+date-released: 2026-06-14
+url: "https://doi.org/10.5281/zenodo.19528833"
 repository-code: "https://github.com/spectralbranding/sbt-papers"
+identifiers:
+  - type: doi
+    value: "10.5281/zenodo.19528833"
+    description: "Zenodo concept DOI (all versions)"
 keywords:
-  - rate-distortion
-  - vector quantization
+  - rate-distortion theory
+  - brand perception
+  - large language models
   - dimensional collapse
-  - LLM brand perception
-  - J-curve
-  - Spectral Brand Theory
-  - lossy encoding
   - codebook convergence
-license: CC-BY-NC-ND-4.0
+  - instrument design
+license: MIT
 type: article
 preferred-citation:
   type: article
   authors:
     - family-names: Zharnikov
       given-names: Dmitry
-      email: dmitry@spectralbranding.com
-      affiliation: "Independent Researcher"
-      orcid: "https://orcid.org/0009-0000-6893-9231"
-  title: "Optimal response formats for AI brand perception measurement: Evidence for a J-shaped rate-distortion curve"
+  title: "Optimal Response Formats for AI Brand Perception Measurement: Evidence for a J-Shaped Rate-Distortion Curve"
   year: 2026
-  citation-key: "2026aa"
-  doi: "10.5281/zenodo.19528833"
-  note: "Working paper v1.0. 17 LLMs, 5 brands, 5 rate conditions. J-shaped R(D) curve: minimum distortion at R2 (1-5 scale). DOI to be assigned at Zenodo upload."
-references:
-  - type: article
-    authors:
-      - family-names: Zharnikov
-        given-names: Dmitry
-    title: "Dimensional Collapse in AI-Mediated Brand Perception: Large Language Models as Metameric Observers"
-    year: 2026
-    citation-key: "2026v"
-    doi: "10.5281/zenodo.19422427"
-    notes: "R15 — foundational metamerism study reusing API infrastructure"
-  - type: article
-    authors:
-      - family-names: Zharnikov
-        given-names: Dmitry
-    title: "Spectral Metamerism and Brand Invariant Corridors"
-    year: 2026
-    citation-key: "2026x"
-    doi: "10.5281/zenodo.19391476"
-    notes: "R16 — invariant corridor formalization"
-  - type: article
-    authors:
-      - family-names: Zharnikov
-        given-names: Dmitry
-    title: "Spectral Brand Theory: A Mathematical Framework for Multi-Dimensional Brand Perception"
-    year: 2026
-    citation-key: "2026a"
-    doi: "10.5281/zenodo.18945912"
-    notes: "SBT main paper — 8-dimensional framework and canonical brand profiles"
-  - type: article
-    authors:
-      - family-names: Shannon
-        given-names: "Claude E."
-    title: "Coding Theorems for a Discrete Source with a Fidelity Criterion"
-    year: 1959
-    journal: "IRE International Convention Record"
-    volume: 7
-    pages: "142-163"
-    notes: "Foundational rate-distortion theorem"
-  - type: book
-    authors:
-      - family-names: Cover
-        given-names: "Thomas M."
-      - family-names: Thomas
-        given-names: "Joy A."
-    title: "Elements of Information Theory"
-    year: 2006
-    edition: 2
-    publisher: "Wiley-Interscience"
-    notes: "Standard reference for R(D) theory"
-  - type: book
-    authors:
-      - family-names: Gersho
-        given-names: Allen
-      - family-names: Gray
-        given-names: "Robert M."
-    title: "Vector Quantization and Signal Compression"
-    year: 1991
-    publisher: "Kluwer Academic Publishers"
-    notes: "Vector quantization and codebook theory"
+  url: "https://doi.org/10.5281/zenodo.19528833"

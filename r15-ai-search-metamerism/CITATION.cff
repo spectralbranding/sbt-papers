@@ -3,39 +3,33 @@ message: "If you use this paper, please cite it as below."
 authors:
   - family-names: Zharnikov
     given-names: Dmitry
-    email: dmitry@spectralbranding.com
     affiliation: "Independent Researcher"
     orcid: "https://orcid.org/0009-0000-6893-9231"
-title: "Dimensional Collapse in AI-Mediated Brand Perception: Large Language Models as Metameric Observers"
+title: "Dimensional Collapse in AI-Mediated Search: Large Language Models as Metameric Observers of Brand Advertising"
 version: 3.2.0
-date-released: 2026-05-29
+date-released: 2026-06-14
+url: "https://doi.org/10.5281/zenodo.19422427"
 repository-code: "https://github.com/spectralbranding/sbt-papers"
 identifiers:
   - type: doi
     value: "10.5281/zenodo.19422427"
-    description: "Zenodo concept DOI (always resolves to latest version)"
-  - type: doi
-    value: "10.5281/zenodo.20448605"
-    description: "Zenodo versioned DOI for v3.2.0 (2026-05-29 upload)"
+    description: "Zenodo concept DOI (all versions)"
 keywords:
+  - AI-mediated search
+  - brand perception
   - spectral metamerism
-  - AI brand perception
+  - large language models
   - dimensional collapse
-  - LLM brand recommendation
-  - consumer search
-  - Spectral Brand Theory
-  - conditional metamerism
-license: CC-BY-NC-ND-4.0
+  - observer heterogeneity
+  - cross-cultural
+  - PRISM-B
+license: MIT
 type: article
 preferred-citation:
   type: article
   authors:
     - family-names: Zharnikov
       given-names: Dmitry
-      email: dmitry@spectralbranding.com
-      affiliation: "Independent Researcher"
-      orcid: "https://orcid.org/0009-0000-6893-9231"
-  title: "Dimensional Collapse in AI-Mediated Brand Perception: Large Language Models as Metameric Observers"
+  title: "Dimensional Collapse in AI-Mediated Search: Large Language Models as Metameric Observers of Brand Advertising"
   year: 2026
-  doi: "10.5281/zenodo.19422427"
   url: "https://doi.org/10.5281/zenodo.19422427"

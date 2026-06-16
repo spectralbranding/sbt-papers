@@ -1,77 +1,39 @@
 [![MIT License](https://img.shields.io/badge/Code-MIT-blue.svg)](../LICENSE)
 [![CC-BY 4.0](https://img.shields.io/badge/Data-CC--BY_4.0-lightgrey.svg)](../LICENSE-data)
-![Last Updated](https://img.shields.io/badge/updated-2026--05--29-success)
+![Last Updated](https://img.shields.io/badge/updated-2026--06--16-success)
 
 # PRISM: A Structured Measurement Instrument for Multi-Dimensional Brand Perception
 
-**DOI**: [10.5281/zenodo.19555265](https://doi.org/10.5281/zenodo.19555265) | **Status**: Working paper v1.0.2
-
-## Paper
-
-Zharnikov, D. (2026). PRISM: A Structured Measurement Instrument for Multi-Dimensional Brand Perception. Working Paper.
-
-## Abstract
-
-This paper specifies PRISM (Perception Response Instrument for Structured Measurement), a family of standardized instruments for eliciting multi-dimensional brand perception from both artificial intelligence and human observers within the Spectral Brand Theory framework. The paper formalizes the PRISM architecture as a five-layer scaffold (L0 specification, L1 configuration, L2 prompts, L3 sessions, L4 analysis) that is domain-neutral and reproducible. It provides the complete PRISM-B (Brand) specification: eight scale items mapped one-to-one to SBT dimensions, a 1--5 ordinal response format empirically demonstrated as the minimum-distortion operating point across 17 LLM architectures, an exact prompt template, and a scoring algorithm comprising the Dimensional Collapse Index and cross-observer cosine convergence. The instrument is specified here; validation against human-subject data is a separate future study.
-
-## Propositions
-
-| ID | Statement | Status |
-|----|-----------|--------|
-| P1 | Convergent Validity: PRISM-B DCI correlates > .80 with R15 allocation-DCI | Proposed |
-| P2 | Discriminant Validity: first PC < 60% variance, r < .50 with brand attitude | Proposed |
-| P3 | Observer-Type Sensitivity: AI vs human cosine < .95 | Proposed |
-| P4 | Cross-Study Reproducibility: 30-day test-retest cosine > .95 | Proposed |
-
-## PRISM Family
-
-| Variant | Domain | Status |
-|---------|--------|--------|
-| PRISM-B | Brand perception | Specified (this paper) |
-| PRISM-M | Metamerism discrimination | Outlined |
-| PRISM-T | Temporal tracking | Outlined |
-| PRISM-C | Choice prediction | Future |
-
-## Version History
-
-| Version | Date | Notes |
-|---------|------|-------|
-| 1.0.0 | 2026-04-13 | Initial preprint on Zenodo |
-| 1.0.1 | 2026-04-16 | Added serial position validation, Latin-square recommendation, P4 preliminary support |
-
-## License
-
-CC-BY-4.0
-
----
-
 ## 1 | Paper
 
-See [paper.md](paper.md). Version 1.0.2. Zenodo DOI: [10.5281/zenodo.19555265](https://doi.org/10.5281/zenodo.19555265).
+- Manuscript: [paper.md](paper.md)
+- Version: 1.0.0
+- DOI: [10.5281/zenodo.19555265](https://doi.org/10.5281/zenodo.19555265)
+- Machine-readable bundle: [paper.yaml](paper.yaml) (Paper Spec), [SPINE.yaml](SPINE.yaml), [ONTOLOGY.yaml](ONTOLOGY.yaml), [GLOSSARY.md](GLOSSARY.md)
 
-## 2 | Companion Data
+## 2 | Citations
 
-No companion dataset for this paper. PRISM-B is a measurement instrument specification; validation against external data is future work (see Propositions table above).
+`paper.md` is the source artifact; inline citations use the `[@citation_key]` form. The full bibliography lives in the companion `.bib` file; see [CITATIONS.md](CITATIONS.md) for how to resolve and render them.
 
-## 3 | Reproduction
-
-This paper has no standalone computation pipeline; instrument-specification paper. The hub orchestrator at [../reproduce.sh](../reproduce.sh) iterates all sbt-papers slugs.
-
-## 4 | Citation
+## 3 | Citation
 
 ```bibtex
-@article{zharnikov2026prism,
-  author = {Zharnikov, Dmitry},
-  title  = {PRISM: A Structured Measurement Instrument for Multi-Dimensional Brand Perception},
-  year   = {2026},
-  doi    = {10.5281/zenodo.19555265}
+@article{Zharnikov2026,
+  author  = {Zharnikov, Dmitry},
+  title   = {PRISM: A Structured Measurement Instrument for Multi-Dimensional Brand Perception},
+  year    = {2026},
+  doi     = {10.5281/zenodo.19555265},
+  url     = {https://doi.org/10.5281/zenodo.19555265},
+  version = {1.0.0},
 }
 ```
 
 Machine-readable: [CITATION.cff](CITATION.cff).
 
-## 5 | Licence
+## 4 | Licence
 
 Code (if any): MIT — see hub-level [../LICENSE](../LICENSE). Data, figures, tables: CC BY 4.0 — see hub-level [../LICENSE-data](../LICENSE-data).
 
-*Last updated: 2026-05-29*
+---
+
+*Last updated: 2026-06-16*
