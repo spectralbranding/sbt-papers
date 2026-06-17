@@ -489,7 +489,7 @@ For (b), the symmetric Dirichlet$(\alpha,\ldots,\alpha)$ density on $\Delta^{n-1
 
 $$\frac{\Gamma(n\alpha)}{\Gamma(\alpha)^n} \sim \frac{\sqrt{2\pi n\alpha}\,(n\alpha/e)^{n\alpha}}{[\sqrt{2\pi\alpha}\,(\alpha/e)^\alpha]^n} = \frac{n^{n\alpha} \cdot \sqrt{n}}{(2\pi\alpha)^{(n-1)/2}}$$
 
-The density at the centroid $c = (1/n,\ldots,1/n)$ is therefore $f_\alpha(c) = (1/n)^{n(\alpha-1)} \cdot \Gamma(n\alpha)/\Gamma(\alpha)^n \sim n^{n} \sqrt{n}\,(2\pi\alpha)^{-(n-1)/2}$, which scales as $\alpha^{-(n-1)/2}$ at large $\alpha$ relative to $\alpha = 1$.
+The density at the centroid $c = (1/n,\ldots,1/n)$ is therefore $f_\alpha(c) = (1/n)^{n(\alpha-1)} \cdot \frac{\Gamma(n\alpha)}{\Gamma(\alpha)^{n}} \sim n^{n} \sqrt{n}\,(2\pi\alpha)^{-(n-1)/2}$, which scales as $\alpha^{-(n-1)/2}$ at large $\alpha$ relative to $\alpha = 1$.
 
 Equivalently, by Proposition 2 with general $\alpha$, the marginal variance is $\text{Var}[X_i] = (1/n)(1-1/n)/(n\alpha+1)$, so the standard deviation along each component scales as $(n\alpha)^{-1/2} \propto \alpha^{-1/2}$. The simplex has intrinsic dimension $n-1$ (Section 4.2), so the standard deviation contracts in each of the $n-1$ orthogonal directions on $\Delta^{n-1}$. Because the density $f_\alpha$ is log-concave for $\alpha \geq 1$, the Brunn-Minkowski inequality on convex bodies [@schneider-2014-convex-bodies-brunnminkowski, Theorem 7.1.1] implies that the probability mass of any fixed convex zone -- in particular the boundary zone of width $\delta$ from Theorem 2 -- contracts by the product of the $(n-1)$ contraction factors:
 
