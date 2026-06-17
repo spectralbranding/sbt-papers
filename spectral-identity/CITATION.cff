@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+message: "If you use this paper, please cite it as below."
+authors:
+  - family-names: Zharnikov
+    given-names: Dmitry
+    affiliation: "Independent Researcher"
+    orcid: "https://orcid.org/0009-0000-6893-9231"
+title: "From Brand Identity to Spectral Identity: Formalizing Aaker's Framework for Testable, AI-Operable Brand Analysis"
+date-released: 2026-06-14
+repository-code: "https://github.com/spectralbranding/sbt-papers"
+license: MIT
+type: article
+preferred-citation:
+  type: article
+  authors:
+    - family-names: Zharnikov
+      given-names: Dmitry
+  title: "From Brand Identity to Spectral Identity: Formalizing Aaker's Framework for Testable, AI-Operable Brand Analysis"
+  year: 2026
