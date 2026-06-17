@@ -27,7 +27,9 @@ keywords:
   - intellectual work proof
   - research wiki
   - scholarly communication
-license: MIT
+license:
+  - CC-BY-4.0
+  - MIT
 type: article
 preferred-citation:
   type: article
@@ -36,4 +38,5 @@ preferred-citation:
       given-names: Dmitry
   title: "Research as Repository: Infrastructure for Transparent, Attributed, and Machine-Readable Scholarly Communication"
   year: 2026
+  doi: "10.5281/zenodo.19294864"
   url: "https://doi.org/10.5281/zenodo.19294864"

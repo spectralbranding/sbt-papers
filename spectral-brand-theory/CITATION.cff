@@ -25,7 +25,9 @@ keywords:
   - AI-native framework
   - brand architecture
   - perceptual geometry
-license: MIT
+license:
+  - CC-BY-4.0
+  - MIT
 type: article
 preferred-citation:
   type: article
@@ -34,4 +36,5 @@ preferred-citation:
       given-names: Dmitry
   title: "Spectral Brand Theory: A Computational Framework for Multi-Dimensional Brand Perception"
   year: 2026
+  doi: "10.5281/zenodo.18945912"
   url: "https://doi.org/10.5281/zenodo.18945912"

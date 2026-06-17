@@ -22,7 +22,9 @@ keywords:
   - Laplace-Beltrami operator
   - mixing time
   - Spectral Brand Theory
-license: MIT
+license:
+  - CC-BY-4.0
+  - MIT
 type: article
 preferred-citation:
   type: article
@@ -31,4 +33,5 @@ preferred-citation:
       given-names: Dmitry
   title: "Non-Ergodic Brand Perception: Diffusion Dynamics on Multi-Dimensional Perceptual Manifolds"
   year: 2026
+  doi: "10.5281/zenodo.18945659"
   url: "https://doi.org/10.5281/zenodo.18945659"

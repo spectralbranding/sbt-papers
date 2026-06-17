@@ -23,7 +23,9 @@ keywords:
   - dimensional collapse
   - scale development
   - observer heterogeneity
-license: MIT
+license:
+  - CC-BY-4.0
+  - MIT
 type: article
 preferred-citation:
   type: article
@@ -32,4 +34,5 @@ preferred-citation:
       given-names: Dmitry
   title: "PRISM: A Structured Measurement Instrument for Multi-Dimensional Brand Perception"
   year: 2026
+  doi: "10.5281/zenodo.19555265"
   url: "https://doi.org/10.5281/zenodo.19555265"

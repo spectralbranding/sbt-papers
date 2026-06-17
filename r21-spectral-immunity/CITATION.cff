@@ -23,7 +23,9 @@ keywords:
   - TOST equivalence
   - cross-cultural AI
   - Spectral Brand Theory
-license: MIT
+license:
+  - CC-BY-4.0
+  - MIT
 type: article
 preferred-citation:
   type: article
@@ -32,4 +34,5 @@ preferred-citation:
       given-names: Dmitry
   title: "Spectral Immunity: Why Brand Portfolio Interference Disappears for AI Observers"
   year: 2026
+  doi: "10.5281/zenodo.19765401"
   url: "https://doi.org/10.5281/zenodo.19765401"

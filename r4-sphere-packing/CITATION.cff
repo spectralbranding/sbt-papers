@@ -23,7 +23,9 @@ keywords:
   - perceptual threshold
   - high-dimensional geometry
   - Spectral Brand Theory
-license: MIT
+license:
+  - CC-BY-4.0
+  - MIT
 type: article
 preferred-citation:
   type: article
@@ -32,4 +34,5 @@ preferred-citation:
       given-names: Dmitry
   title: "How Many Brands Can a Market Hold? Sphere Packing Bounds for Multi-Dimensional Positioning"
   year: 2026
+  doi: "10.5281/zenodo.18945522"
   url: "https://doi.org/10.5281/zenodo.18945522"

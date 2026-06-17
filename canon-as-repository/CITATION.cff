@@ -21,7 +21,9 @@ keywords:
   - canon
   - narrative consistency
   - creative AI
-license: MIT
+license:
+  - CC-BY-4.0
+  - MIT
 type: article
 preferred-citation:
   type: article
@@ -30,4 +32,5 @@ preferred-citation:
       given-names: Dmitry
   title: "Canon as Repository: A Specification-Driven Architecture for Transmedia Intellectual Property"
   year: 2026
+  doi: "10.5281/zenodo.19355800"
   url: "https://doi.org/10.5281/zenodo.19355800"
