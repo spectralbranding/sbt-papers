@@ -14,7 +14,7 @@ meta:
   doi: 10.5281/zenodo.18945912
   date: '2026-02-01'
   venue: Working paper (Zenodo; corpus conceptual hub)
-  license: CC-BY-NC-ND-4.0
+  license: CC-BY-4.0
   keywords:
   - brand perception
   - dimensional decomposition
@@ -315,17 +315,17 @@ dependencies:
   claim: R17 supplies the brand-triangulation multi-observer geometric treatment needed for singleton
     observers.
   critical: false
-  reference: Zharnikov (2026y), this corpus.
+  doi: 10.5281/zenodo.19482547
 - relationship: refines
   claim: R18 develops phase-space dynamics — velocity, acceleration, cohort-trajectory portraits — for
     the temporal scale.
   critical: false
-  reference: Zharnikov (2026z), this corpus.
+  doi: 10.5281/zenodo.19468204
 - relationship: refines
   claim: 'R21 extends the WHAT/DO result to portfolios: corporate ownership predicts near-zero AI-perception
     variance (d <= .18).'
   critical: false
-  reference: Zharnikov (2026ac), this corpus.
+  doi: 10.5281/zenodo.19765401
 - relationship: refines
   claim: R22 proves the recovery-threshold inequality for perceptual separability after coherence shocks.
   critical: false

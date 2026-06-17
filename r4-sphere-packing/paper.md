@@ -260,7 +260,7 @@ graph TD
     K[E_8 kissing number = 240<br/>minimal vectors at squared norm 2]
     K --> S[Specialist shell<br/>112 vectors<br/>form: two coordinates plus or minus 1, six zeros]
     K --> G[Generalist shell<br/>128 vectors<br/>form: all eight coordinates plus or minus 1/2, even sign parity]
-    S --> S1[Concentrated on 2 of 8 dimensions<br/>C(8,2) times 2-squared = 28 times 4 = 112]
+    S --> S1["Concentrated on 2 of 8 dimensions<br/>C(8,2) times 2-squared = 28 times 4 = 112"]
     G --> G1[Distributed across all 8 dimensions<br/>2-to-the-8 divided by 2 = 128]
     S1 -. competitive interpretation .-> SC[Sharp differentiation<br/>on a small dimension subset]
     G1 -. competitive interpretation .-> GC[Diffuse differentiation<br/>across the full spectrum]
@@ -464,7 +464,7 @@ The capacity bounds help explain the long-tail phenomenon in digital markets. Wh
 
 ### Why "White Space" Identification Is Harder Than Marketers Think
 
-Despite the mathematical abundance of white space, practical identification encounters three geometric obstacles: (1) **projection blindness** -- most tools operate in 2--3 dimensions, collapsing capacity from $10^8$ to $10^2$; (2) **feasibility constraints** -- not all positions in $\mathbb{R}^8_+$ are achievable, given category norms, resources, and observer expectations; and (3) **observer heterogeneity** -- white space for one perceptual cohort may be occupied for another, because different observer weight profiles yield different perceptual distances (Zharnikov [-@zharnikov-2026-brand-space-geometry-formal-metric]; 2026f). These obstacles explain the gap between mathematical abundance and practical difficulty without invalidating the capacity bounds.
+Despite the mathematical abundance of white space, practical identification encounters three geometric obstacles: (1) **projection blindness** -- most tools operate in 2--3 dimensions, collapsing capacity from $10^8$ to $10^2$; (2) **feasibility constraints** -- not all positions in $\mathbb{R}^8_+$ are achievable, given category norms, resources, and observer expectations; and (3) **observer heterogeneity** -- white space for one perceptual cohort may be occupied for another, because different observer weight profiles yield different perceptual distances (Zharnikov [-@zharnikov-2026-brand-space-geometry-formal-metric; -@zharnikov-2026-cohort-boundaries-high-dimensional-perception]). These obstacles explain the gap between mathematical abundance and practical difficulty without invalidating the capacity bounds.
 
 ---
 

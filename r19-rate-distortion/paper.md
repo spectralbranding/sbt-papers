@@ -141,7 +141,7 @@ Table 3: Cross-Model Distortion by Rate Condition.
 
 *Notes:* Mean, SD, and CV computed across 17 per-model means. R5 CV is low because all models converge on the same extreme distortion from the forced 1-of-8 indicator encoding.
 
-![Figure 1: Rate-distortion curve across 17 LLM architectures](figures/figure1_j_curve.png)
+![](figures/figure1_j_curve.png)
 
 Figure 1: Rate-distortion curve across 17 LLM architectures. Mean total variation distance at each information rate; minimum distortion at R2 (~19 bits, 1-5 ordinal). Error bars: +/-1 SD across models.
 

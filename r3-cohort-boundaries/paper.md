@@ -108,6 +108,7 @@ $$P\left(|f(x) - M_f| \geq \varepsilon \right) \leq 4 \exp\left( -\frac{(n-1)\va
 The practical import of Proposition 1 is that any "well-behaved" (Lipschitz) function of an observer's position on the sphere -- including, crucially, the distance from that observer to a cohort centroid -- cannot vary much from its typical value. At $n = 8$, the numerical bounds are:
 
 Table 2: Lévy Concentration Bounds on $S^7$ at Selected Deviation Thresholds.
+
 | $\varepsilon$ | $P(\|f - M_f\| \geq \varepsilon)$ (standard) | $P$ (sharp, sets of measure 1/2) |
 |---|---|---|
 | 1.0 | $\leq 1.667$ | $\leq 0.060$ |
@@ -165,6 +166,7 @@ $$E[\|w_i - w_j\|_2^2] = 2 \sum_{l=1}^n \text{Var}[X_l] = \frac{2(n-1)}{n(n+1)}$
 *(b) The distance contrast ratio degrades with dimension. Monte Carlo estimation with $m = 1000$ yields:*
 
 Table 3: Distance Contrast Ratio Degradation with Dimension on the Simplex.
+
 | $n$ | $R_n$ (contrast ratio) | Mean Euclidean distance | SD of distances |
 |---|---|---|---|
 | 2 | 9797.06 | .4681 | .3065 |
@@ -204,6 +206,7 @@ The numerical bounds in Sections 3.1–3.3 use Euclidean distance on $\Delta^7$ 
 Monte Carlo simulation with $m = 1000$ and $10^3$ trials (script: `code/r3_concentration_mc.py` in the companion repository) yields the figures in Table 4.
 
 Table 4: Distance Concentration on $\Delta^7$ under Euclidean and Fisher-Rao Metrics.
+
 | Metric | $R_8$ (contrast ratio) | Mean distance | CV |
 |---|---|---|---|
 | Euclidean | 7.46 ± .02 | .4254 | .247 |
@@ -266,6 +269,7 @@ $$\text{BVF}(n, \delta) \geq 1 - (1 - \delta)^{n-1}$$
 *The exponent $n-1$ reflects the intrinsic dimension of the simplex $\Delta^{n-1}$, which is embedded in $\mathbb{R}^n$ but lies on the affine hyperplane $\sum_i w_i = 1$ and so has dimension $n-1$ as a manifold. In particular, at $n = 8$:*
 
 Table 5: Boundary Volume Fraction at $n = 8$ Across Relative Boundary Widths.
+
 | $\delta$ | $\text{BVF}(8, \delta)$ | Interpretation |
 |---|---|---|
 | .01 | 6.8% | Extremely narrow boundary |
@@ -299,6 +303,7 @@ Taking complements gives the boundary volume fraction $\text{BVF}(n, \delta) \ge
 **Comparison across dimensions.** To appreciate the significance of the 8-dimensional result, we compare the boundary volume fraction across simplex dimensions at fixed $\delta = .10$:
 
 Table 6: Boundary Volume Fraction Across Simplex Dimensions at Fixed $\delta = .10$.
+
 | $n$ | Intrinsic dim. ($n-1$) | $\text{BVF}(n, .10)$ | Interpretation |
 |---|---|---|---|
 | 2 | 1 | 10.0% | Low-dimensional: boundaries are thin |
@@ -359,6 +364,7 @@ To verify Theorem 2, we performed the following procedure for $n = 8$, $k = 4$ c
 The empirical boundary volume fractions closely match the theoretical bound:
 
 Table 7: Monte Carlo Verification of Boundary Volume Fraction at $n = 8$.
+
 | $\delta$ | Theorem 2 prediction | Empirical ($k=4$, $10^5$ samples) |
 |---|---|---|
 | .05 | $\geq 30.2\%$ | $35.9\%$ |
@@ -504,6 +510,7 @@ For $n = 8$ this gives $\alpha^{-7/2} = \alpha^{-3.5}$. Frigyik, Kapila, and Gup
 At $n = 8$, the exponent is $(n-1)/2 = 7/2 = 3.5$. The concentration factor at representative values of $\alpha$ is:
 
 Table 8: Dirichlet Concentration Effect on Boundary Volume Fraction at $n = 8$, $\delta = .10$.
+
 | $\alpha$ | $(1/\alpha)^{3.5}$ | $V_{\text{boundary}}(\alpha) \leq$ (at $\delta = .10$) | Interpretation |
 |---|---|---|---|
 | 1 | 1.0000 | 52.2% | Uniform: worst case |
