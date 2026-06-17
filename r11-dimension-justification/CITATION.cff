@@ -22,7 +22,9 @@ keywords:
   - multi-dimensional scaling
   - meaning channels
   - Spectral Brand Theory
-license: MIT
+license:
+  - CC-BY-4.0
+  - MIT
 type: article
 preferred-citation:
   type: article
@@ -31,4 +33,5 @@ preferred-citation:
       given-names: Dmitry
   title: "Why Eight? Completeness and Necessity of the SBT Dimensional Taxonomy"
   year: 2026
+  doi: "10.5281/zenodo.19207599"
   url: "https://doi.org/10.5281/zenodo.19207599"

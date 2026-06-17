@@ -23,7 +23,9 @@ keywords:
   - agentic commerce
   - generative engine optimization
   - observational equivalence
-license: MIT
+license:
+  - CC-BY-4.0
+  - MIT
 type: article
 preferred-citation:
   type: article
@@ -32,4 +34,5 @@ preferred-citation:
       given-names: Dmitry
   title: "AI-Native Brand Identity: From Visual Recognition to Cryptographic Verification"
   year: 2026
+  doi: "10.5281/zenodo.19391476"
   url: "https://doi.org/10.5281/zenodo.19391476"

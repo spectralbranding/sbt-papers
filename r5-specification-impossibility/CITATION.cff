@@ -23,7 +23,9 @@ keywords:
   - cascade constraints
   - forkability
   - OrgSchema Theory
-license: MIT
+license:
+  - CC-BY-4.0
+  - MIT
 type: article
 preferred-citation:
   type: article
@@ -32,4 +34,5 @@ preferred-citation:
       given-names: Dmitry
   title: "Specification Impossibility in Organizational Design: A High-Dimensional Geometric Analysis"
   year: 2026
+  doi: "10.5281/zenodo.18945591"
   url: "https://doi.org/10.5281/zenodo.18945591"

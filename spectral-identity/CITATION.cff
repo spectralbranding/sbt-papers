@@ -8,7 +8,9 @@ authors:
 title: "From Brand Identity to Spectral Identity: Formalizing Aaker's Framework for Testable, AI-Operable Brand Analysis"
 date-released: 2026-06-14
 repository-code: "https://github.com/spectralbranding/sbt-papers"
-license: MIT
+license:
+  - CC-BY-4.0
+  - MIT
 type: article
 preferred-citation:
   type: article

@@ -22,7 +22,9 @@ keywords:
   - non-ergodicity
   - high-dimensional geometry
   - Spectral Brand Theory
-license: MIT
+license:
+  - CC-BY-4.0
+  - MIT
 type: article
 preferred-citation:
   type: article
@@ -31,4 +33,5 @@ preferred-citation:
       given-names: Dmitry
   title: "Geometric Approaches to Brand Perception: A Critical Survey and Research Agenda"
   year: 2026
+  doi: "10.5281/zenodo.18945217"
   url: "https://doi.org/10.5281/zenodo.18945217"

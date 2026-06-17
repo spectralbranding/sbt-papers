@@ -23,7 +23,9 @@ keywords:
   - observer heterogeneity
   - cross-cultural
   - PRISM-B
-license: MIT
+license:
+  - CC-BY-4.0
+  - MIT
 type: article
 preferred-citation:
   type: article
@@ -32,4 +34,5 @@ preferred-citation:
       given-names: Dmitry
   title: "Dimensional Collapse in AI-Mediated Search: Large Language Models as Metameric Observers of Brand Advertising"
   year: 2026
+  doi: "10.5281/zenodo.19422427"
   url: "https://doi.org/10.5281/zenodo.19422427"

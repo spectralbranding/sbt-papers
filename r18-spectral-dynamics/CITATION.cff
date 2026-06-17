@@ -23,7 +23,9 @@ keywords:
   - differential calculus
   - non-ergodic perception
   - Kalman filter
-license: MIT
+license:
+  - CC-BY-4.0
+  - MIT
 type: article
 preferred-citation:
   type: article
@@ -32,4 +34,5 @@ preferred-citation:
       given-names: Dmitry
   title: "Spectral Dynamics: Velocity, Acceleration, and Phase Space in Multi-Dimensional Brand Perception"
   year: 2026
+  doi: "10.5281/zenodo.19468204"
   url: "https://doi.org/10.5281/zenodo.19468204"

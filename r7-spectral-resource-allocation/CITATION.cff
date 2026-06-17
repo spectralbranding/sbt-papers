@@ -22,7 +22,9 @@ keywords:
   - multi-dimensional optimization
   - cohort targeting
   - Spectral Brand Theory
-license: MIT
+license:
+  - CC-BY-4.0
+  - MIT
 type: article
 preferred-citation:
   type: article
@@ -31,4 +33,5 @@ preferred-citation:
       given-names: Dmitry
   title: "Spectral Resource Allocation: Demand-Driven Investment in Multi-Dimensional Brand Space"
   year: 2026
+  doi: "10.5281/zenodo.19009268"
   url: "https://doi.org/10.5281/zenodo.19009268"

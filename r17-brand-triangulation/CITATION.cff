@@ -21,7 +21,9 @@ keywords:
   - observer heterogeneity
   - optimal design
   - differential correction
-license: MIT
+license:
+  - CC-BY-4.0
+  - MIT
 type: article
 preferred-citation:
   type: article
@@ -30,4 +32,5 @@ preferred-citation:
       given-names: Dmitry
   title: "Brand Triangulation: A Geometric Framework for Multi-Observer Brand Positioning"
   year: 2026
+  doi: "10.5281/zenodo.19482547"
   url: "https://doi.org/10.5281/zenodo.19482547"

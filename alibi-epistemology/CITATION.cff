@@ -22,7 +22,9 @@ keywords:
   - computational framework
   - brand perception
   - confirmation bias
-license: MIT
+license:
+  - CC-BY-4.0
+  - MIT
 type: article
 preferred-citation:
   type: article
@@ -31,4 +33,5 @@ preferred-citation:
       given-names: Dmitry
   title: "The Atom-Cloud-Fact Epistemological Pipeline: From Financial Document Processing to Brand Perception Modeling"
   year: 2026
+  doi: "10.5281/zenodo.18944770"
   url: "https://doi.org/10.5281/zenodo.18944770"
