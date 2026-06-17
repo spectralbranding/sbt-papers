@@ -6,7 +6,7 @@ ORCID: 0009-0000-6893-9231
 
 DOI: [10.5281/zenodo.18945591](https://doi.org/10.5281/zenodo.18945591)
 
-Working Paper v1.1.0 – June 2026 (revised June 2026)
+Working Paper v1.1.0 – March 2026 (revised June 2026)
 
 ---
 
@@ -125,7 +125,7 @@ $$\frac{V_{\text{ball}}}{V_{\text{cube}}} = \frac{\pi^{n/2}}{2^n \cdot \Gamma(n/
 
 This ratio collapses dramatically with dimension:
 
-**Table 1: Volume Ratio of Inscribed Ball to Unit Cube by Dimension.**
+Table 1: Volume Ratio of Inscribed Ball to Unit Cube by Dimension.
 
 | $n$ | $V_{\text{ball}} / V_{\text{cube}}$ | Interpretation |
 |-----|-------------------------------------|----------------|
@@ -202,7 +202,7 @@ $$M_{1\%} = \frac{0.01}{V_{48}(0.1)} \approx \frac{0.01}{1.38 \times 10^{-60}} \
 
 The same arithmetic, viewed across orders of magnitude in template count, makes the impossibility result immune to optimistic accounting:
 
-**Table 2: Coverage Ceiling -- Fraction of $[0,1]^{48}$ Covered by $M$ Templates at $\varepsilon = 0.1$.**
+Table 2: Coverage Ceiling -- Fraction of $[0,1]^{48}$ Covered by $M$ Templates at $\varepsilon = 0.1$.
 
 | Templates $M$ | Coverage $M \cdot V_{48}(0.1)$ |
 |---------------|--------------------------------|
@@ -220,7 +220,7 @@ The same arithmetic, viewed across orders of magnitude in template count, makes 
 
 The severity of coverage impossibility depends critically on dimensionality. To illustrate, coverage properties are compared across different dimensional frameworks:
 
-**Table 3: Coverage Properties by Framework Dimensionality at $\varepsilon = 0.1$.**
+Table 3: Coverage Properties by Framework Dimensionality at $\varepsilon = 0.1$.
 
 | Framework | $n$ | $V_{\text{ball}}/V_{\text{cube}}$ | Specs at $\varepsilon = 0.1$ | $V_n(0.1)$ |
 |-----------|-----|-----------------------------------|------------------------------|-------------|
@@ -270,7 +270,7 @@ The reduction ratio is $d_{\text{eff}}/48 = 15.75/48 = .328$, i.e., 32.8% of the
 
 **Lemma 1 (Cascade Per-Level Dimensions).** *At cascade coupling $\gamma = 0.5$, the effective free dimensions per level are:*
 
-**Table 4: Effective Free Dimensions per Organizational Level at $\gamma = 0.5$.**
+Table 4: Effective Free Dimensions per Organizational Level at $\gamma = 0.5$.
 
 | Level | Name | Free dimensions |
 |-------|------|-----------------|
@@ -299,7 +299,7 @@ distinguishable specifications -- roughly 5.6 quadrillion organizational configu
 
 The effective dimensionality varies substantially with $\gamma$:
 
-**Table 5: Effective Dimensionality by Cascade Coupling Strength.**
+Table 5: Effective Dimensionality by Cascade Coupling Strength.
 
 | $\gamma$ | $d_{\text{eff}}$ | $d_{\text{eff}}/48$ | Interpretation |
 |-----------|-------------------|----------------------|----------------|
@@ -375,7 +375,7 @@ The subspace decomposition has several geometric consequences.
 
 **Fork depth and organizational variety.** The fork depth $k$ determines the balance between uniformity and variety:
 
-**Table 6: Fork Depth, Shared/Private Dimensions, and Private Specifications.**
+Table 6: Fork Depth, Shared/Private Dimensions, and Private Specifications.
 
 | Fork type | $k$ | Shared dims | Private dims | Private specs at $\varepsilon = 0.1$ |
 |-----------|-----|-------------|--------------|---------------------------------------|
@@ -404,7 +404,7 @@ This is a dramatic reduction: the 24 nominal private dimensions collapse to 1.75
 
 **Plain-language interpretation.** A franchise that specifies purpose, values, and strategy (L0--L2) and has moderate cascade coupling ($\gamma = 0.5$) effectively constrains its franchisees to about 1.75 dimensions of genuine freedom in structure, process, and artifacts. This is why well-run franchises feel similar even when they differ in details: the cascade ensures that the "details" are largely determined by the shared higher levels.
 
-**Table 7: Fork × Cascade Interaction Surface -- Effective Free Dimensions as a Function of Cascade Coupling and Fork Depth.**
+Table 7: Fork × Cascade Interaction Surface -- Effective Free Dimensions as a Function of Cascade Coupling and Fork Depth.
 
 | $\gamma$ \ $k$ | $k=0$ (no fork) | $k=1$ (fork at L1) | $k=2$ (fork at L2) | $k=3$ (canonical) | $k=4$ (tight) |
 |----------------|-----------------|---------------------|---------------------|-------------------|----------------|
@@ -458,7 +458,7 @@ $$H_{\text{eff}} = d_{\text{eff}} \cdot \log_2(10) = 15.75 \cdot 3.322 = 52.3 \t
 
 This is still more than double working memory capacity, but the cascade imposes a sequential structure: the designer specifies L0 (8 dimensions = 26.6 bits), then uses it to derive L1 (4 free dimensions = 13.3 bits), and so forth. At each level, the information load is within or near working memory capacity:
 
-**Table 8: Per-Level Information Load Under Cascade at $\gamma = 0.5$.**
+Table 8: Per-Level Information Load Under Cascade at $\gamma = 0.5$.
 
 | Level | Free dims | Information (bits) | Within WM capacity? |
 |-------|-----------|-------------------|---------------------|
@@ -512,7 +512,7 @@ The NK framework is fundamentally about *navigation*: given a fitness landscape,
 
 The present paper addresses a fundamentally different question: *how much of the specification space can any collection of configurations cover?* This question has several structural differences from the NK question:
 
-**Table 9: Comparison of NK Landscape and Specification Coverage Frameworks.**
+Table 9: Comparison of NK Landscape and Specification Coverage Frameworks.
 
 | Feature | NK Landscapes | Present Paper |
 |---------|--------------|---------------|
@@ -673,7 +673,8 @@ All numerical values cited in this paper -- Tables 1--9, the Figure 3 data serie
 The script uses no random stochastic computations (all results are closed-form); the fixed seed `SEED = 42` is included for reproducibility policy compliance. Run command:
 
 ```
-uv run --with numpy,scipy python [internal path removed]
+uv run --with numpy,scipy \
+  python [internal path removed]
 ```
 
 The script includes assertion checks that verify each cited figure to stated precision. One rounding note: $H_{48} = 48 \times \log_2(10) = 159.45$ bits, which the paper rounds to 159.4; $H_{\text{eff}} = 15.75 \times \log_2(10) = 52.3$ bits (the paper's 52.5 is a less precise rounding); and the fork savings figure at $M = 100$ is approximately 50% by the formula (the paper's stated 44% appears to be a rounding artifact). The script documents these discrepancies in comments.

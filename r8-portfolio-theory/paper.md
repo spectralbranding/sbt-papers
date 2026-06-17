@@ -6,7 +6,7 @@ ORCID: 0009-0000-6893-9231
 
 DOI: [10.5281/zenodo.19145099](https://doi.org/10.5281/zenodo.19145099)
 
-Working Paper v1.0.0 – June 2026 (revised June 2026)
+Working Paper v1.2.0 – March 2026 (revised June 2026)
 
 ---
 
@@ -254,7 +254,7 @@ $$\kappa_P(\mathcal{P}, C_k) = \frac{1}{|\mathcal{P}|} \sum_{B_i \in \mathcal{P}
 
 Extending the five-level single-brand typology to portfolios:
 
-**Table 1.** Portfolio coherence types and conditions for classification
+Table 1: Portfolio coherence types and conditions for classification
 
 | Portfolio Coherence Type | Condition | Description |
 |--------------------------|-----------|-------------|
@@ -278,7 +278,7 @@ The interaction of spectral proximity (how similar brands' emission profiles are
 
 LVMH Moet Hennessy Louis Vuitton operates approximately 75 brands (maisons) across six business groups. The fashion and leather goods division -- Louis Vuitton, Dior, Fendi, Givenchy, Celine, Loewe, Kenzo, Marc Jacobs -- forms a spectral cluster in SBT's eight-dimensional space. These brands share elevated signals on the Semiotic dimension (distinctive visual identities rooted in luxury craft), the Social dimension (exclusivity and status signaling), and an inverted Economic dimension (high price as signal of inaccessibility). The Temporal dimension is elevated across the cluster, with most maisons trading on heritage narratives measured in decades or centuries.
 
-**Table 2.** Illustrative emission profiles for LVMH Fashion & Leather Goods cluster (assessed cohort-mean estimates, 0-10 scale)
+Table 2: Illustrative emission profiles for LVMH Fashion & Leather Goods cluster (assessed cohort-mean estimates, 0-10 scale)
 
 | Dimension | Louis Vuitton | Dior | Fendi | Givenchy |
 |-----------|:---:|:---:|:---:|:---:|
@@ -311,7 +311,7 @@ The cohort overlap across these brands is minimal. The observer who holds a perc
 
 Unilever presents the canonical case. Drawing on the longitudinal analysis of Dove in Zharnikov [-@zharnikov-2026-dimensional-activation-cohort-divergence-longitudinal], the spectral contradiction emerges most acutely between Dove and Axe/Lynx on the Ideological dimension.
 
-**Table 3.** Illustrative emission profiles for Unilever Dove-Axe-Ben & Jerry's triad (assessed cohort-mean estimates, 0-10 scale; Dove 2023 from Zharnikov [-@zharnikov-2026-dimensional-activation-cohort-divergence-longitudinal])
+Table 3: Illustrative emission profiles for Unilever Dove-Axe-Ben & Jerry's triad (assessed cohort-mean estimates, 0-10 scale; Dove 2023 from Zharnikov [-@zharnikov-2026-dimensional-activation-cohort-divergence-longitudinal])
 
 | Dimension | Dove (2023) | Axe/Lynx | Ben & Jerry's |
 |-----------|:---:|:---:|:---:|
@@ -336,7 +336,7 @@ The awareness gate moderates the damage. When the Purpose-Aligned cohort is unaw
 
 Toyota and Lexus exemplify this pattern. Toyota's emission profile is dominated by Economic (value, reliability, accessibility) and Experiential (product quality, durability) signals. Lexus shifts the emphasis to Experiential (refinement, comfort, driving experience) and Social (premium status signaling), while Economic signals invert from accessibility to exclusivity.
 
-**Table 4.** Illustrative emission profiles for Toyota/Lexus spectral layering (assessed cohort-mean estimates, 0-10 scale)
+Table 4: Illustrative emission profiles for Toyota/Lexus spectral layering (assessed cohort-mean estimates, 0-10 scale)
 
 | Dimension | Toyota | Lexus |
 |-----------|:---:|:---:|
@@ -475,7 +475,7 @@ LVMH's FY2023 revenue of EUR 86.2 billion [@lvmh-2023-2023-annual-report] derive
 
 **Cross-brand coherence within the core cluster.** The four Fashion & Leather Goods brands profiled in Section 5.2 produce the following pairwise cross-brand coherence scores for the luxury-connoisseur cohort (high weight on Semiotic, Experiential, Temporal):
 
-**Table 5.** Pairwise cross-brand coherence for LVMH Fashion & Leather Goods cluster (luxury-connoisseur cohort)
+Table 5: Pairwise cross-brand coherence for LVMH Fashion & Leather Goods cluster (luxury-connoisseur cohort)
 
 | Pair | $\kappa_X$ (luxury-connoisseur) | Dominant interference type |
 |------|:---:|---|
@@ -498,7 +498,7 @@ Unilever's FY2023 revenue of EUR 59.6 billion [@unilever-2023-annual-report-acco
 
 **Cross-brand coherence for the Dove-Axe-Ben & Jerry's triad.** Using the emission profiles from Section 5.4, the pairwise cross-brand coherence for the Purpose-Aligned cohort (from Zharnikov [-@zharnikov-2026-dimensional-activation-cohort-divergence-longitudinal]: high weight on Ideological [9.0], Narrative [8.0], Cultural [6.0]):
 
-**Table 6.** Pairwise cross-brand coherence for Unilever Dove-Axe-Ben & Jerry's triad (Purpose-Aligned cohort)
+Table 6: Pairwise cross-brand coherence for Unilever Dove-Axe-Ben & Jerry's triad (Purpose-Aligned cohort)
 
 | Pair | $\kappa_X$ (Purpose-Aligned) | Dominant interference type |
 |------|:---:|---|
@@ -512,7 +512,7 @@ The Dove-Axe pair and the Axe-Ben & Jerry's pair are in the spectral contradicti
 
 For the Product-Pragmatist cohort (high weight on Experiential [9.0], Economic [8.0], Semiotic [5.0]):
 
-**Table 7.** Pairwise cross-brand coherence for Unilever Dove-Axe-Ben & Jerry's triad (Product-Pragmatist cohort)
+Table 7: Pairwise cross-brand coherence for Unilever Dove-Axe-Ben & Jerry's triad (Product-Pragmatist cohort)
 
 | Pair | $\kappa_X$ (Product-Pragmatist) | Dominant interference type |
 |------|:---:|---|
@@ -538,7 +538,7 @@ The net effect is a secular increase in $\alpha$ for the Purpose-Aligned and Ske
 
 ### 8.4 Structural Comparison
 
-**Table 8.** Structural comparison of LVMH and Unilever portfolio interference profiles
+Table 8: Structural comparison of LVMH and Unilever portfolio interference profiles
 
 | Dimension | LVMH | Unilever |
 |-----------|------|----------|

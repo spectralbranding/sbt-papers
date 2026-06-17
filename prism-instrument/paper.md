@@ -6,7 +6,7 @@ ORCID: 0009-0000-6893-9231
 
 DOI: [10.5281/zenodo.19555265](https://doi.org/10.5281/zenodo.19555265)
 
-Working Paper v1.0.2 – June 2026 (revised June 2026)
+Working Paper v1.1.0 – April 2026 (revised June 2026)
 
 ---
 

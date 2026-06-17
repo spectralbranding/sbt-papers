@@ -6,7 +6,7 @@ ORCID: 0009-0000-6893-9231
 
 DOI: [10.5281/zenodo.19555282](https://doi.org/10.5281/zenodo.19555282)
 
-Working Paper v1.1.1 – June 2026 (revised June 2026)
+Working Paper v1.1.1 – April 2026 (revised June 2026)
 
 ---
 
@@ -99,7 +99,7 @@ Total: approximately 7,930 observation cells (7,975 successfully parsed). All ra
 
 ### Brands and Portfolios
 
-**Table 1.** Portfolio Composition and Predicted Interference Direction.
+Table 1: Portfolio Composition and Predicted Interference Direction.
 
 | Portfolio | Archetype | Brands | Predicted Direction |
 |-----------|-----------|--------|-------------------|
@@ -115,7 +115,7 @@ Total: approximately 7,930 observation cells (7,975 successfully parsed). All ra
 
 ### Models
 
-**Table 2.** Model Panel: 13 Models From 7 Training Traditions.
+Table 2: Model Panel: 13 Models From 7 Training Traditions.
 
 | Model | Provider | Training Tradition | Deployment |
 |-------|----------|-------------------|------------|
@@ -156,7 +156,7 @@ TOST equivalence testing with bounds of +/-1.0 DCI points assesses statistical e
 
 The predominant finding is clear: 0/20 brands show FDR-significant portfolio effects in direct rating conditions. Table 3 presents the full brand-level results.
 
-**Table 3.** DCI by Brand and Condition (N = 7,975; 13 Models, 5 Repetitions).
+Table 3: DCI by Brand and Condition (N = 7,975; 13 Models, 5 Repetitions).
 
 | Portfolio | Brand | Solo DCI | Port DCI | Delta | t | p | d | TOST p | Equivalent |
 |-----------|-------|----------|----------|-------|---|---|---|--------|------------|
@@ -205,7 +205,7 @@ The predominant finding is clear: 0/20 brands show FDR-significant portfolio eff
 
 ### Cross-Cultural Generalizability
 
-**Table 4.** Sub-Group Analysis by Training Tradition.
+Table 4: Sub-Group Analysis by Training Tradition.
 
 | Tradition | Models (n) | Delta DCI | d | p (tradition level) |
 |-----------|-----------|-----------|---|---------------------|
@@ -221,7 +221,7 @@ The predominant finding is clear: 0/20 brands show FDR-significant portfolio eff
 
 ### Variance Decomposition
 
-**Table 5.** Variance Decomposition of DCI.
+Table 5: Variance Decomposition of DCI.
 
 | Factor | % Variance |
 |--------|-----------|
@@ -240,7 +240,7 @@ The predominant finding is clear: 0/20 brands show FDR-significant portfolio eff
 
 **Multi-turn conversation: Portfolio reveal.** Multi-turn conversation is the most ecologically valid test and the modality where the largest individual effects appear. Four brands showed FDR-significant DCI shifts after portfolio reveal:
 
-**Table 6.** Multi-Turn Results: FDR-Significant Brands (Turn 1 Solo vs. Turn 2 Post-Reveal).
+Table 6: Multi-Turn Results: FDR-Significant Brands (Turn 1 Solo vs. Turn 2 Post-Reveal).
 
 | Brand | T1 DCI | T2 DCI | Delta | p | d |
 |-------|--------|--------|-------|---|---|
@@ -265,7 +265,7 @@ Ten brands were tested in both solo and portfolio conditions: Coca-Cola (Coca-Co
 
 ### Results
 
-**Table 7.** Published-Brand Extension: Portfolio Immunity Test (N = 1,950).
+Table 7: Published-Brand Extension: Portfolio Immunity Test (N = 1,950).
 
 | Brand | Parent | Solo DCI | Port DCI | Delta | d |
 |-------|--------|----------|----------|-------|---|

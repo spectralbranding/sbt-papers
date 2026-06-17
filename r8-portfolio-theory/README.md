@@ -8,7 +8,7 @@
 
 - Manuscript: [paper.md](paper.md)
 - Version: 1.0.0
-- DOI: (pending Zenodo deposit)
+- DOI: [10.5281/zenodo.19145099](https://doi.org/10.5281/zenodo.19145099)
 - Machine-readable bundle: [paper.yaml](paper.yaml) (Paper Spec), [SPINE.yaml](SPINE.yaml), [ONTOLOGY.yaml](ONTOLOGY.yaml), [GLOSSARY.md](GLOSSARY.md)
 
 ## 2 | Citations
@@ -22,6 +22,8 @@
   author  = {Zharnikov, Dmitry},
   title   = {R8: Portfolio Theory},
   year    = {2026},
+  doi     = {10.5281/zenodo.19145099},
+  url     = {https://doi.org/10.5281/zenodo.19145099},
   version = {1.0.0},
 }
 ```

@@ -6,7 +6,7 @@ ORCID: 0009-0000-6893-9231
 
 DOI: [10.5281/zenodo.19009268](https://doi.org/10.5281/zenodo.19009268)
 
-Working Paper v1.0.0 – June 2026 (revised June 2026)
+Working Paper v1.2.0 – March 2026 (revised June 2026)
 
 ---
 
@@ -38,7 +38,7 @@ The paper makes five contributions. First, the optimal dimensional allocation fo
 
 The paper then demonstrates that five established strategy frameworks -- Blue Ocean Strategy [@kim-2005-blue-ocean-strategy], Jobs to Be Done [@christensen-2016-know-your-customers], Lean Startup [@ries-2011-lean-startup-how], Porter's Five Forces [@porter-1980-competitive-strategy-techniques], and the Resource-Based View [@barney-1991-firm-resources-sustained] -- each operate on an implicit low-dimensional projection of the spectral resource allocation problem. Blue Ocean's strategy canvas is a low-resolution spectral profile. JTBD's "job" decomposition maps to weight vector identification. Lean Startup's MVP hypothesis corresponds to an L0 demand-validation gate. Porter's rivalry intensity maps to sphere-packing density [@zharnikov-2026-many-brands-can-market-hold]. The Resource-Based View's VRIN criteria map to spectral position uniqueness. These are not loose analogies; they are structural correspondences derived from the model's formal apparatus.
 
-Table 10: Comparison of resource-allocation frameworks.
+Table 1: Comparison of resource-allocation frameworks.
 
 | Framework | Domain | Decision Variable | Objective | Interaction Structure | Geometry |
 |:---|:---|:---|:---|:---|:---|
@@ -58,7 +58,7 @@ Table 10: Comparison of resource-allocation frameworks.
 
 The model adopts the SBT framework [@zharnikov-2026-spectral-brand-theory-computational-framework] and its formal metric structure [@zharnikov-2026-brand-space-geometry-formal-metric]. A brand emits a signal portfolio $s = (s_1, \ldots, s_8) \in \mathbb{R}^8_+$ across eight typed dimensions:
 
-Table 1: SBT Dimensions, Indices, and Operational Levers.
+Table 2: SBT Dimensions, Indices, and Operational Levers.
 
 | Index | Dimension | Operational Lever |
 |:-----:|:---------:|:-----------------|
@@ -141,7 +141,7 @@ $$w_i(c) = \lambda c_i'(s_i^*)$$
 
 For quadratic costs, $c_i'(s_i) = \alpha_i s_i$, so $s_i^* = w_i(c) / (\lambda \alpha_i)$. Strict convexity of $c_i$ ensures the second-order condition $-\lambda c_i''(s_i^*) < 0$ holds, confirming a maximum. Non-negativity $s_i^* \geq 0$ is automatic since $w_i(c) \geq 0$ and $\alpha_i > 0$. $\square$
 
-**Interpretation.** The optimal allocation has a transparent structure: invest in dimension $i$ proportionally to how much the cohort weights it ($w_i$) and inversely to how expensive it is to produce ($\alpha_i$). Dimensions the cohort ignores ($w_i = 0$) receive zero investment. Dimensions that are cheap to produce receive more investment per unit of cohort weight. The shadow price $\lambda$ scales the overall investment level to the budget. The relationship of this result to prior resource-allocation frameworks — including the Dorfman-Steiner [-@dorfman-1954-optimal-advertising-optimal] scalar condition and the Mantrala, Sinha, and Zoltners [-@mantrala-1992-impact-resource-allocation] response-function model — is summarized in Table 10.
+**Interpretation.** The optimal allocation has a transparent structure: invest in dimension $i$ proportionally to how much the cohort weights it ($w_i$) and inversely to how expensive it is to produce ($\alpha_i$). Dimensions the cohort ignores ($w_i = 0$) receive zero investment. Dimensions that are cheap to produce receive more investment per unit of cohort weight. The shadow price $\lambda$ scales the overall investment level to the budget. The relationship of this result to prior resource-allocation frameworks — including the Dorfman-Steiner [-@dorfman-1954-optimal-advertising-optimal] scalar condition and the Mantrala, Sinha, and Zoltners [-@mantrala-1992-impact-resource-allocation] response-function model — is summarized in Table 1.
 
 **Corollary 1** (Investment ratio). *For any two active dimensions $i, j$ with $w_i(c), w_j(c) > 0$:*
 
@@ -464,7 +464,7 @@ Porter [-@porter-1980-competitive-strategy-techniques] models industry structure
 
 **Spectral correspondence.**
 
-Table 2: Porter's Five Forces Mapped to SBT/OST Equivalents.
+Table 3: Porter's Five Forces Mapped to SBT/OST Equivalents.
 
 | Force | SBT/OST Equivalent |
 |:------|:-------------------|
@@ -482,7 +482,7 @@ Barney's [-@barney-1991-firm-resources-sustained] RBV identifies Valuable, Rare,
 
 **Spectral correspondence.**
 
-Table 3: VRIN Criteria and Their Spectral Interpretations.
+Table 4: VRIN Criteria and Their Spectral Interpretations.
 
 | VRIN Criterion | Spectral Interpretation |
 |:---------------|:-----------------------|
@@ -501,7 +501,7 @@ Table 3: VRIN Criteria and Their Spectral Interpretations.
 
 The model is applied to the five case-study brands from Zharnikov [-@zharnikov-2026-spectral-brand-theory-computational-framework; -@zharnikov-2026-brand-space-geometry-formal-metric], using the canonical emission profiles:
 
-Table 4: Canonical Emission Profiles for Five Case-Study Brands.
+Table 5: Canonical Emission Profiles for Five Case-Study Brands.
 
 | Dimension | Hermès | IKEA | Patagonia | Erewhon | Tesla |
 |:----------|:------:|:----:|:---------:|:-------:|:-----:|
@@ -520,7 +520,7 @@ Table 4: Canonical Emission Profiles for Five Case-Study Brands.
 
 To illustrate the alignment gap, hypothetical founder spectral profiles are constructed for each brand:
 
-Table 5: Hypothetical Founder Spectral Profiles (Illustrative).
+Table 6: Hypothetical Founder Spectral Profiles (Illustrative).
 
 | Dimension | Hermès Founder | IKEA Founder | Patagonia Founder | Erewhon Founder | Tesla Founder |
 |:----------|:--------------:|:------------:|:-----------------:|:---------------:|:-------------:|
@@ -541,7 +541,7 @@ These profiles are illustrative, not measured. The Hermès founder profile empha
 
 For each brand, a plausible target cohort weight profile is constructed and the alignment gap is computed. The target cohort profiles represent the observed perceptual priorities of each brand's core customer base:
 
-Table 6: Target Cohort Weight Profiles (Illustrative).
+Table 7: Target Cohort Weight Profiles (Illustrative).
 
 | Dimension | Hermès Cohort | IKEA Cohort | Patagonia Cohort | Erewhon Cohort | Tesla Cohort |
 |:----------|:------------:|:-----------:|:----------------:|:--------------:|:------------:|
@@ -556,7 +556,7 @@ Table 6: Target Cohort Weight Profiles (Illustrative).
 
 *Notes*: All profiles are illustrative, not empirically measured. Each column sums to 1.00 (probability simplex constraint). Profiles represent plausible perceptual priorities of each brand's core customer base.
 
-Table 7: Alignment Gap Results Under Uniform Costs.
+Table 8: Alignment Gap Results Under Uniform Costs.
 
 **Alignment gap results** (under uniform costs $\alpha_i = 1$, $\lambda = 1$):
 
@@ -580,7 +580,7 @@ IKEA's large gap reflects the founder's extreme economic concentration ($w_6 = .
 
 ### Blind Spot Analysis
 
-Table 8: Founder Blind Spot Analysis.
+Table 9: Founder Blind Spot Analysis.
 
 | Brand | Founder Blind Spot | Cohort Weight on That Dimension | Risk Level |
 |:------|:-------------------|:-------------------------------|:-----------|
@@ -682,7 +682,7 @@ The results connect to five established strategy frameworks, revealing each as a
 
 The paper completes the economic interpretation of the SBT mathematical foundations series (Zharnikov [-@zharnikov-2026-geometric-approaches-brand-perception-critical]-j), providing each R-paper result with a resource allocation interpretation:
 
-Table 9: Economic Interpretation of SBT Mathematical Results.
+Table 10: Economic Interpretation of SBT Mathematical Results.
 
 | Paper | Mathematical Result | Economic Interpretation |
 |:------|:-------------------|:-----------------------|
@@ -804,7 +804,8 @@ All numerical values in Tables 4–8 and Appendix A.2 are reproduced by the comp
 The script uses a fixed seed (`SEED = 42`) and requires no proprietary data. Run command:
 
 ```
-cd /path/to/spectral-branding && uv run python [internal path removed]
+cd /path/to/spectral-branding && \
+  uv run python [internal path removed]
 ```
 
 Running the script reproduces the per-brand alignment gap values, the rank ordering Hermès < Erewhon < Patagonia < Tesla < IKEA, and the Theorem 5 interaction-adjusted allocations for the heritage premium and luxury paradox examples.
