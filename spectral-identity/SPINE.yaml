@@ -1,0 +1,531 @@
+# SPINE.yaml — From Brand Identity to Spectral Identity: Formalizing Aaker's
+# Framework for Testable, AI-Operable Brand Analysis (2026n)
+#
+# RETROFIT spine (CLAUDE.md rule 0aa + D4): extracted DESCRIPTIVELY from the
+# COMPLETED paper.md, not authored generatively ahead of prose. Reviewers
+# evaluate spine and prose separately.
+#
+# Schema v0.1: this is a PURE-THEORY / formal paper. It formalizes Aaker's Brand
+# Identity Model as a special (limiting) case of Spectral Brand Theory; Appendix
+# A is a formal theorem (Aaker = linear projection T of SBT) with a DETERMINISTIC
+# worked illustration (Hermès vs Patagonia under the canonical profiles), NOT
+# author-produced empirical data or simulation. The Appendix-A theorem/corollaries
+# are captured as D (derivation) nodes. No observation→method→measurement→finding
+# empirical chain is fabricated (there is none).
+#
+# This paper REFINES 2026a (the SBT foundation): it supplies the explicit
+# Aaker-to-SBT correspondence + limiting-case relationship that 2026a's
+# dimensional framework makes possible.
+
+spine_version: "0.1"
+spine_doc_version: "0.1.0"        # retrofit spine first lock (2026-06-18)
+provenance: retrofit
+paper_key: "2026n"
+title: >-
+  From Brand Identity to Spectral Identity: Formalizing Aaker's Framework for
+  Testable, AI-Operable Brand Analysis
+target_venue_primary: "TBD (brand management / brand theory; conceptual contribution)"
+status: >-
+  Retrofit spine extracted from completed paper.md. Descriptive, not generative;
+  faithful to the paper's actual claims, boundary conditions, and limitations.
+
+thesis: |
+  Aaker's Brand Identity Model relies on practitioner judgment at three critical
+  points — perspective selection, core/extended element prioritization, and
+  identity-image gap resolution — that become structural boundaries when the model
+  is operationalized at scale, delegated to computational systems, or applied where
+  multiple cohorts perceive the same brand simultaneously. Spectral Brand Theory
+  (SBT) is a conceptual formalization that PRESERVES Aaker's multi-perspectival
+  structure while adding parametric precision, testability, and computational
+  operability: Aaker's four perspectives map onto eight parametrized perceptual
+  dimensions; core and extended identity correspond to empirically discoverable
+  spectral weights; brand essence becomes the perception-cloud centroid; and the
+  identity-image gap becomes the formally specified rendering problem. The key
+  addition is the observer spectral profile, which makes perception irreducibly
+  observer-dependent. The relationship is non-adversarial and mirrors behavioral-
+  vs-classical economics: Aaker is preserved as the LIMITING CASE of SBT under
+  spectral-profile homogeneity. Appendix A formalizes this as a theorem — the
+  Aaker representation is a linear projection T of the SBT vector — whose
+  non-injectivity yields the Aaker metamerism gap.
+
+# ============================================================================
+# Boundary conditions — where Aaker suffices and the formal relationship holds
+# ============================================================================
+boundary_conditions:
+  - id: C1
+    statement: >-
+      Aaker's framework is SUFFICIENT (SBT adds only computational overhead) when
+      observer cohorts are approximately spectrally homogeneous — when a brand's
+      primary audiences weight the eight dimensions in roughly similar proportions,
+      so the multi-cohort perception cloud collapses to a near-point and the
+      identity-image gap approaches zero for all cohorts simultaneously.
+    observable: "Demographically homogeneous markets, stable category conventions, high-design (high D/A) signal environments (e.g. IKEA)."
+    excludes: "Ideologically polarized, ambient-signal-dominated, or culturally heterogeneous audiences (Tesla, Patagonia)."
+    body_sections: ["§5.6 Boundary Conditions: When Aaker Suffices", "§7.1 The Relationship Between Frameworks"]
+  - id: C2
+    statement: >-
+      The Appendix-A limiting-case theorem applies to brand-identity CONTENT, not to
+      measurement instruments: Aaker's empirical scales (Brand Personality Scale;
+      Coleman's operationalization) use different scales than SBT spectral profiles,
+      so T is a conceptual mapping with illustrative (uncalibrated) weights, not a
+      psychometric converter.
+    observable: "Equal-weight illustrative T rows in A.3; explicit calibration deferral in A.6."
+    excludes: "Direct score-to-score conversion between the two instruments without cross-validated calibration."
+    body_sections: ["§5.6 (three limitations)", "Appendix A.6 Boundary Conditions"]
+
+# ============================================================================
+# Propositions — the theoretical backbone
+# ============================================================================
+propositions:
+  - id: P1
+    statement: >-
+      Aaker's Brand Identity Model requires unresolved practitioner judgment at three
+      decision points — perspective selection (which of the four perspectives matter),
+      element prioritization (which of the six-to-fourteen elements are core vs
+      extended), and identity-image gap resolution (why the gap exists and whether it
+      is closeable) — each useful at single-brand scale but disabling for
+      portfolio-level analysis or computational delegation.
+    conditions: ""
+    antecedents: []
+    evidence:
+      - type: citation
+        anchor: "Aaker's framework and his acknowledgment that brand management is 'more art than science'."
+        citation_keys: [aaker-1996-building-strong-brands, aaker-1991-managing-brand-equity]
+    body_sections: ["§1 Introduction: Why Formalize Aaker?", "§2 Aaker's Brand Identity Model: A Sympathetic Reading"]
+  - id: P2
+    statement: >-
+      Observer invariance fails: the assumption that one sender-defined brand identity
+      is perceived with noise by all audiences is empirically untenable. Different
+      observers processing identical signals through different perceptual apparatus
+      construct structurally different brands; the identity-image gap is a structural
+      property of perception, not a communication failure closeable through better
+      execution.
+    conditions: ""
+    antecedents: [P1]
+    evidence:
+      - type: citation
+        anchor: "Audience-specific meaning construction: target/non-target divergence, purposeful polysemy, audience-specific viral effects."
+        citation_keys: [grier-1999-noticing-cultural-differences, puntoni-2011-two-birds-one, mora-2021-segmenting-audience-cause-related]
+    body_sections: ["§3.1 Observer Invariance"]
+  - id: P3
+    statement: >-
+      Element selection cannot be verified empirically within Aaker's framework: no
+      validated instrument covers all four perspectives simultaneously, operationalization
+      requires custom scales, and the core/extended distinction can be assigned differently
+      by two practitioners with no mechanism to adjudicate — a manageable ambiguity for one
+      brand but disabling at portfolio scale.
+    conditions: ""
+    antecedents: [P1]
+    evidence:
+      - type: citation
+        anchor: "First full operationalization required a custom scale; the Brand Personality Scale conflates personality with user imagery."
+        citation_keys: [coleman-2011-service-brand-identity-definition, aaker-1997-dimensions-brand-personality, azoulay-2003-do-brand-personality-scales]
+    body_sections: ["§3.2 Element Selection"]
+  - id: P4
+    statement: >-
+      Consistency is a scalar that conflates structurally distinct types of alignment:
+      two brands can score identically on consistency yet have entirely different coherence
+      types (e.g. signal coherence vs ecosystem coherence) and therefore opposite disruption
+      responses. Aaker's framework never taxonomizes the structural types of consistency or
+      links them to differential resilience.
+    conditions: ""
+    antecedents: [P1]
+    evidence:
+      - type: citation
+        anchor: "Cultural TYPE predicts performance better than cultural STRENGTH (degree)."
+        citation_keys: [sorensen-2002-strength-corporate-culture]
+    body_sections: ["§3.3 Consistency Versus Coherence"]
+  - id: P5
+    statement: >-
+      Aaker's four perspectives are a coarser partition of the same perceptual space that
+      SBT decomposes into eight parametrized dimensions: Brand-as-Product bundles
+      Experiential + Economic (+ Semiotic); Brand-as-Organization bundles Ideological +
+      Cultural + Temporal (+ Social); Brand-as-Person bundles Narrative + Social (+ Semiotic);
+      Brand-as-Symbol bundles Semiotic + Temporal. Unbundling yields diagnostic precision
+      Aaker's bundled perspectives cannot — distinguishing which channel is failing for
+      which cohort.
+    conditions: ""
+    antecedents: [P3]
+    evidence:
+      - type: citation
+        anchor: "The eight-dimension decomposition and its mapping; Narrative grounded in narrative-processing theory."
+        citation_keys: [zharnikov-2026-spectral-brand-theory-computational-framework, zharnikov-2026-why-eight-completeness-necessity-sbt, escalas-2004-narrative-processing-building-consumer]
+    body_sections: ["§4.1 Four Perspectives, Eight Dimensions", "§3.4 Boundary-Count Justification"]
+  - id: P6
+    statement: >-
+      The dimensional count is inherited, not stipulated: SBT's eight dimensions are
+      established as complete (no dimension is a weighted combination of the others) and
+      necessary (removing any one collapses at least one distinguishable brand pair) in the
+      companion derivation; Aaker's four perspectives bundle channels that can and do behave
+      independently.
+    conditions: ""
+    antecedents: [P5]
+    evidence:
+      - type: citation
+        anchor: "Completeness-and-necessity argument for the eight dimensions."
+        citation_keys: [zharnikov-2026-why-eight-completeness-necessity-sbt]
+    body_sections: ["§3.4 Boundary-Count Justification"]
+  - id: P7
+    statement: >-
+      Aaker's core/extended distinction and brand essence have formal spectral counterparts
+      that make them empirically discoverable rather than subjectively assigned: core elements
+      = dimensions with highest cohort-average spectral weights; extended elements = moderate
+      weights; brand essence = the centroid of the perception cloud in eight-dimensional
+      spectral space (a geometric position, not a verbal summary).
+    conditions: ""
+    antecedents: [P5]
+    evidence:
+      - type: citation
+        anchor: "Spectral-weight formalization of core/extended; individual-difference dimensional weighting precedent (INDSCAL)."
+        citation_keys: [zharnikov-2026-spectral-brand-theory-computational-framework, carroll-1970-analysis-individual-differences]
+    body_sections: ["§4.2 Core and Extended Identity as Spectral Weights"]
+  - id: P8
+    statement: >-
+      Brand image is reframed as a perception cloud — a probabilistic, observer-co-constructed
+      perceptual object, not a degraded copy of intended identity — so the identity-image gap
+      becomes the RENDERING PROBLEM: the irreducible distance between brand specification and
+      perception clouds. Specification impossibility makes some of the gap structural, not
+      strategic, distinguishing closeable from irreducible gap components — a distinction
+      unavailable within Aaker's framework.
+    conditions: ""
+    antecedents: [P2, P5]
+    evidence:
+      - type: citation
+        anchor: "Rendering problem + specification impossibility; first quantitative measurement of the identity-image gap."
+        citation_keys: [zharnikov-2026-spectral-brand-theory-computational-framework, roy-2014-identification-measurement-brand-identity]
+    body_sections: ["§4.3 Brand Image as Perception Cloud"]
+  - id: P9
+    statement: >-
+      Aaker's three benefit types map onto dimensional activation patterns (functional =
+      Experiential + Economic; emotional = Narrative + Social + Cultural; self-expressive =
+      Ideological + Social + Semiotic), and which benefits actually ACTIVATE depends not only
+      on brand intent but on the observer's spectral profile — explaining why purpose-driven
+      strategies succeed with some cohorts and fail with others.
+    conditions: ""
+    antecedents: [P5, P7]
+    evidence:
+      - type: citation
+        anchor: "Benefit-type-to-dimensional-activation mapping; Social participates in both emotional and self-expressive pathways."
+        citation_keys: [zharnikov-2026-spectral-brand-theory-computational-framework]
+    body_sections: ["§4.4 Value Proposition as Dimensional Activation"]
+  - id: P10
+    statement: >-
+      The observer spectral profile is the key addition: a formal parameter set (dimensional
+      weights, tolerances, priors/existing convictions, identity gate) defining how each cohort
+      perceives brand signals. Cohorts are perceptual groupings (clusters in spectral-profile
+      space), NOT demographic segments — two demographically identical observers can occupy
+      different cohorts and vice versa.
+    conditions: ""
+    antecedents: [P2, P7]
+    evidence:
+      - type: citation
+        anchor: "CBBE locates equity in the customer's mind but treats the customer as unitary; cohorts vs segmentation; INDSCAL/latent-class ancestry."
+        citation_keys: [keller-1993-conceptualizing-measuring-managing, wedel-2000-market-segmentation-conceptual, carroll-1970-analysis-individual-differences]
+    body_sections: ["§4.5 Observer Heterogeneity: The Key Addition"]
+  - id: P11
+    statement: >-
+      SBT generates four falsifiable propositions Aaker's descriptive framework cannot express,
+      each with explicit falsification criteria: P1 observer divergence (profile distance
+      predicts perception-cloud divergence); P2 coherence TYPE (not degree) predicts disruption
+      response; P3 spectral-weight-derived core identity out-predicts strategist-assigned core
+      under disruption; P4 LLM observers exhibit systematic dimensional collapse toward
+      Experiential and Economic, producing metameric perception. Empirical validation against
+      independently collected data is reserved for follow-on work.
+    conditions: ""
+    antecedents: [P5, P7, P10]
+    evidence:
+      - type: citation
+        anchor: "The four propositions and their falsification criteria; AI dimensional-collapse anchors; recovery-threshold anchor for P2."
+        citation_keys: [zharnikov-2026-spectral-brand-theory-computational-framework, zharnikov-2026-dimensional-collapse-ai-mediated-search, zharnikov-2026-ai-native-brand-identity-from, zharnikov-2026-restoring-perceptual-separability-after-coherence]
+    body_sections: ["§5.1 Testable Predictions"]
+  - id: P12
+    statement: >-
+      SBT's dimensional decomposition is AI-operable: it can be executed by large language
+      models via a structured prompt sequence with YAML templates, providing a rapid,
+      replicable analytical layer practitioners interrogate and override. Empirically, LLM
+      observers collapse profiles toward Experiential and Economic (DCI .291 global / .357
+      cross-cultural), with cross-model replication producing identical coherence classifications
+      and grades — confirming the conclusions are framework-driven, not model-specific. This
+      augments, does not replace, practitioner judgment.
+    conditions: ""
+    antecedents: [P5, P11]
+    evidence:
+      - type: citation
+        anchor: "LLM-executable decomposition; measured AI dimensional collapse + cross-model replication."
+        citation_keys: [zharnikov-2026-spectral-brand-theory-computational-framework, zharnikov-2026-ai-native-brand-identity-from, zharnikov-2026-dimensional-collapse-ai-mediated-search]
+    body_sections: ["§5.2 AI Operability"]
+  - id: P13
+    statement: >-
+      The five-type coherence taxonomy (Ecosystem, Signal, Identity, Experiential asymmetry,
+      Incoherent) classifies brands by the structural relationship between their cohorts'
+      perception clouds and predicts distinct disruption responses (selective absorption,
+      uniform transmission, binary division, geographic variation, amplifying fragmentation).
+      It directly resolves the consistency-vs-coherence boundary and requires modeling multiple
+      cohorts simultaneously — impossible within Aaker's framework. The μ > λ threshold
+      inequality formalizes when recovery requires structural intervention rather than signal
+      correction alone.
+    conditions: ""
+    antecedents: [P4, P10]
+    evidence:
+      - type: citation
+        anchor: "Five-type coherence classification; type-over-degree precedent; recovery threshold inequality."
+        citation_keys: [zharnikov-2026-spectral-brand-theory-computational-framework, sorensen-2002-strength-corporate-culture, zharnikov-2026-restoring-perceptual-separability-after-coherence]
+    body_sections: ["§5.3 Coherence Taxonomy"]
+  - id: P14
+    statement: >-
+      SBT models brand perception as a non-ergodic process: the temporal ORDER in which signals
+      are encountered changes the resulting conviction even when the signal set is identical, so
+      ensemble averages (cross-sectional brand tracking) systematically misrepresent individual
+      cohort trajectories. Aaker's model is a static snapshot that cannot represent this path
+      dependence, perception velocity/acceleration, or conviction phase transitions.
+    conditions: ""
+    antecedents: [P10]
+    evidence:
+      - type: citation
+        anchor: "Non-ergodic perception dynamics; ensemble-vs-trajectory divergence."
+        citation_keys: [zharnikov-2026-spectral-brand-theory-computational-framework, zharnikov-2026z-spectral-dynamics]
+    body_sections: ["§5.4 Dynamic Modeling"]
+  - id: P15
+    statement: >-
+      Applied illustratively to Patagonia (Identity coherence, Ideological-dominant), IKEA
+      (Signal coherence, Semiotic-Economic dominant), and Tesla (Incoherence, Narrative-dominant
+      / Ideological-conflicted), SBT reproduces Aaker's strategic diagnoses while generating
+      coherence-type and disruption-response predictions Aaker cannot express. The cross-case
+      pattern: SBT-Aaker diagnostic divergence GROWS with ideological polarization, ambient-signal
+      dominance, and audience heterogeneity — the formalization is least redundant precisely where
+      brand management is hardest. (Profiles are expert-derived estimates, not survey measurements.)
+    conditions: "C1"
+    antecedents: [P5, P10, P13]
+    evidence:
+      - type: citation
+        anchor: "Canonical expert-derived spectral profiles for the three worked-example brands; person-brand structural risk for Tesla."
+        citation_keys: [zharnikov-2026-spectral-brand-theory-computational-framework, fournier-2019-putting-person-back]
+    body_sections: ["§6 Worked Examples", "§6.4 Cross-Case Synthesis"]
+  - id: P16
+    statement: >-
+      Aaker is preserved as the LIMITING CASE of SBT under spectral-profile homogeneity (C1),
+      mirroring behavioral-vs-classical economics and Newtonian-vs-relativistic mechanics: when
+      cohort weight vectors converge, the multi-cohort perception cloud collapses to a single
+      centroid aligned with intended identity and SBT reduces to Aaker's single-identity model.
+      Every Aaker insight has a formal SBT counterpart; any analyst using SBT is implicitly using
+      Aaker. (Stated here as a working geometric argument; the formal metric-space proof is
+      deferred — see open.)
+    conditions: "C1"
+    antecedents: [P5, P7, P8, P9, P10]
+    evidence:
+      - type: citation
+        anchor: "Limiting-case relationship; the behavioral-vs-classical-economics analogy frame."
+        citation_keys: [zharnikov-2026-spectral-brand-theory-computational-framework, kahneman-1979-prospect-theory-analysis]
+    body_sections: ["§7.1 The Relationship Between Frameworks", "§7.2 What SBT Inherits from Aaker"]
+
+# ============================================================================
+# Derivations — Appendix A: the formal Aaker-as-limiting-case theorem
+# (deterministic worked illustration, NOT empirical data)
+# ============================================================================
+derivations:
+  - id: D1
+    statement: >-
+      Theorem 1 (Aaker as Linear Projection of SBT): there exists a linear map T : R^8 → R^4
+      such that for any brand identity vector ψ, the four-dimensional Aaker representation is
+      a = T·ψ, where T is the 4×8 matrix encoding the Table-1 dimension mapping (row weights
+      ≥ 0 normalized to 1; equal weights used as the illustrative case). T is a projection that
+      loses information, not an isomorphism.
+    from: [P5, P16]
+    to: "Formal grounding of the Aaker-as-coarser-partition claim."
+    reasoning_type: "formal_proof"
+    antecedents: [P5, P16]
+    body_sections: ["Appendix A.2 Theorem 1", "Appendix A.3 Proof (Construction of T)"]
+  - id: D2
+    statement: >-
+      Corollary 1 (Aaker metamerism gap): T is non-injective because dim(R^8)=8 > dim(R^4)=4, so
+      its null space has dimension ≥ 4; distinct SBT identities ψ_1 ≠ ψ_2 with ψ_1−ψ_2 in the null
+      space map to the same Aaker score vector. Two structurally different brands can produce the
+      same four-perspective representation — a structural consequence of dimension reduction,
+      empirically observable when diverging dimensions (Ideological, Temporal, asymmetric-weight)
+      lie in null(T).
+    from: [D1]
+    to: "The metamerism-gap teeth of the theorem (falsifiable: look for identical-Aaker / divergent-SBT brand pairs)."
+    reasoning_type: "formal_proof"
+    antecedents: [D1]
+    body_sections: ["Appendix A.4 Corollary 1 (Information Loss — The Aaker Metamerism Gap)", "Appendix A.7"]
+  - id: D3
+    statement: >-
+      Corollary 2 (worked illustration, deterministic): applying the equal-weight T to the
+      canonical Hermès and Patagonia spectral profiles yields an identical Brand-as-Organization
+      score (8.17) despite markedly different Ideological (7.0 vs 9.5) and Cultural (9.0 vs 7.0)
+      profiles — the null-space displacement on Ideological (−2.5) is exactly canceled by the
+      Cultural (+2.0) and Social (+0.5) offsets. The metamerism gap is therefore not merely
+      theoretical: it appears in the canonical profiles in the precise dimensions where the two
+      frameworks' diagnostic conclusions diverge most.
+    from: [D2]
+    to: "Existence demonstration of the metamerism gap on canonical profiles (illustration, not author-collected data)."
+    reasoning_type: "deductive"
+    antecedents: [D2]
+    body_sections: ["Appendix A.5 Corollary 2 (Worked Example — Hermès vs Patagonia)"]
+  - id: D4
+    statement: >-
+      Non-invertibility / informational-loss boundary: because T collapses eight dimensions to
+      four, an Aaker representation cannot be expanded back to a unique SBT profile — practitioners
+      holding only Aaker-level measurements cannot reconstruct SBT-level diagnostics; the loss is
+      structural, not a measurement artifact. T's weights are illustrative (not calibrated), and T
+      maps conceptual content, not measurement instruments.
+    from: [D1, D2]
+    to: "Boundary conditions on the theorem's use (no converter without calibration; one-directional)."
+    reasoning_type: "deductive"
+    antecedents: [D1, D2]
+    body_sections: ["§5.6 (three explicit limitations)", "Appendix A.6 Boundary Conditions"]
+
+# ============================================================================
+# Alternative explanations / framings the paper rules out
+# ============================================================================
+alternative_explanations:
+  - id: A1
+    statement: >-
+      The Aaker-SBT relationship is "merely mapping" — Table 1 is taxonomic relabeling rather
+      than a theoretical result, and any eight-dimensional system could be mapped to any
+      four-dimensional one.
+    rules_out_required: [D1, D2]
+    ruled_out_by: [D1, D2, D3]
+    rules_out_status: "rejected"
+    reasoning: >-
+      Theorem 1 establishes a provable structural relationship (a = T·ψ for all brands
+      simultaneously), not an arbitrary correspondence; Corollary 1 gives it teeth via the
+      derived, falsifiable metamerism gap; and Corollary 2 shows the gap appears in the canonical
+      profiles. A mapping identifies correspondences; the theorem proves the correspondence is
+      specific and follows from both frameworks' dimensional structure.
+    body_sections: ["Appendix A.7 Implications for the Mapping Critique"]
+  - id: A2
+    statement: >-
+      SBT REPLACES Aaker — the formalization renders the predecessor framework obsolete.
+    rules_out_required: [P16]
+    ruled_out_by: [P16, C1]
+    rules_out_status: "rejected"
+    reasoning: >-
+      The relationship is formalization, not replacement: every Aaker insight is preserved as a
+      formal SBT counterpart and Aaker is the limiting case under spectral homogeneity (C1), where
+      SBT adds only computational overhead. The framing throughout is "extending Aaker's foundation,
+      not replacing it."
+    body_sections: ["§7.1 The Relationship Between Frameworks", "§7.5 Invitation"]
+
+# ============================================================================
+# Limitations — honest scope of the formalization
+# ============================================================================
+limitations:
+  - id: L1
+    statement: >-
+      The most important gap is empirical: the four propositions (P1–P4 in §5.1) generate testable
+      predictions that await testing against independently collected consumer data. Until then SBT
+      remains a theoretical framework with demonstrated analytical utility but unconfirmed empirical
+      validity.
+    severity: "high"
+    affects: [P11, P15]
+    body_sections: ["§7.4 Limitations and Future Directions"]
+  - id: L2
+    statement: >-
+      The eight dimensions are a working decomposition synthesized from prior frameworks, derived
+      formally in the companion paper but not yet established by human-subject factor-analytic work
+      on brand-perception data; their empirical dimensionality remains to be confirmed.
+    severity: "medium"
+    affects: [P5, P6]
+    body_sections: ["§7.4 Limitations and Future Directions"]
+  - id: L3
+    statement: >-
+      The spectral profiles in the worked examples are expert estimates, not survey/conjoint
+      measurements; the coherence taxonomy has been demonstrated on five brands and its
+      generalizability across industries, cultures, and lifecycle stages is unestablished.
+    severity: "medium"
+    affects: [P13, P15]
+    body_sections: ["§6 (illustrative caveat)", "§7.4 Limitations and Future Directions"]
+  - id: L4
+    statement: >-
+      The limiting-case claim (Aaker = SBT under spectral homogeneity) is a working geometric
+      argument, not a formal metric-space proof: how similar cohort weight vectors must be before
+      the reduction holds, and what metric-space properties are required, remain to be established.
+      T's weights are likewise illustrative and require empirical calibration on shared samples.
+    severity: "medium"
+    affects: [P16, D1, D4]
+    body_sections: ["§7.4 (formal-gap acknowledgment)", "Appendix A.6 Boundary Conditions"]
+
+# ============================================================================
+# Cross-paper engagement
+# ============================================================================
+corpus_precedents:
+  - paper_key: 2026a
+    relationship: refines
+    spine_nodes: [P5, P7, P8, P9, P10, P13, P16, D1]
+    note: >-
+      2026n REFINES the SBT foundation (2026a): it supplies the explicit Aaker-perspective-to-SBT-
+      dimension correspondence, the spectral-weight reading of core/extended identity, the
+      rendering-problem reframing of the identity-image gap, and the formal Aaker-as-limiting-case
+      theorem — making 2026a's apparatus the more general theory in which Aaker is a special case.
+  - paper_key: 2026r
+    relationship: extends
+    spine_nodes: [P6]
+    note: >-
+      Inherits the eight-dimension count from 2026r's completeness-and-necessity argument (why eight,
+      not four); treats Aaker's four perspectives as a coarser partition of the same perceptual space.
+  - paper_key: 2026v
+    relationship: applies
+    spine_nodes: [P11, P12]
+    note: >-
+      Applies the metameric-observer / dimensional-collapse results (measured DCI .291 global / .357
+      cross-cultural; cross-model replication) as the empirical grounding for P4 (AI dimensional
+      collapse) and the AI-operability claim.
+  - paper_key: 2026x
+    relationship: applies
+    spine_nodes: [P11, P12]
+    note: >-
+      Applies the AI-native brand-identity / LLM-execution work to the AI-operability and dimensional-
+      collapse propositions (structured prompt + YAML template execution).
+  - paper_key: 2026z
+    relationship: applies
+    spine_nodes: [P14]
+    note: >-
+      Applies spectral-dynamics' non-ergodicity / ensemble-vs-trajectory result to the dynamic-modeling
+      contrast with Aaker's static snapshot.
+  - paper_key: 2026ad
+    relationship: applies
+    spine_nodes: [P11, P13, P15]
+    note: >-
+      Applies the μ > λ recovery-threshold inequality (restoring perceptual separability after a
+      coherence shock) to the coherence-taxonomy disruption-response predictions and the Patagonia/
+      Tesla worked cases.
+
+# ============================================================================
+# External anchor literature
+# ============================================================================
+external_anchors:
+  - {citation_key: aaker-1996-building-strong-brands, role: theoretical_predecessor, spine_nodes: [P1, P5, D1], note: "The Brand Identity Model — the framework this paper formalizes and preserves as a limiting case"}
+  - {citation_key: aaker-1991-managing-brand-equity, role: theoretical_predecessor, spine_nodes: [P1], note: "Aaker's 'more art than science' acknowledgment that the formalization addresses"}
+  - {citation_key: aaker-1997-dimensions-brand-personality, role: definitional_source, spine_nodes: [P3, P15], note: "Brand Personality Scale — operationalizes one perspective; used in the Patagonia personality reading"}
+  - {citation_key: kapferer-2008-new-strategic-brand, role: theoretical_predecessor, spine_nodes: [P5], note: "Brand Identity Prism — complementary multi-facet architecture that also does not parameterize the observer"}
+  - {citation_key: keller-1993-conceptualizing-measuring-managing, role: theoretical_predecessor, spine_nodes: [P10], note: "CBBE — locates equity in the customer's mind but treats the customer as unitary"}
+  - {citation_key: carroll-1970-analysis-individual-differences, role: methodological_source, spine_nodes: [P7, P10], note: "INDSCAL — individual-difference dimensional weighting; the precedent for cohort spectral weights"}
+  - {citation_key: wedel-2000-market-segmentation-conceptual, role: contrast_case, spine_nodes: [P10], note: "Market segmentation — demographic segments contrasted with perceptual cohorts"}
+  - {citation_key: coleman-2011-service-brand-identity-definition, role: motivating_problem, spine_nodes: [P3], note: "First full Aaker operationalization; required a custom scale (no standardized instrument exists)"}
+  - {citation_key: azoulay-2003-do-brand-personality-scales, role: motivating_problem, spine_nodes: [P3], note: "BPS conflates personality with user imagery — the element-selection operationalization gap"}
+  - {citation_key: grier-1999-noticing-cultural-differences, role: motivating_problem, spine_nodes: [P2], note: "Identical ads produce systematically different meanings in target vs non-target groups"}
+  - {citation_key: puntoni-2011-two-birds-one, role: motivating_problem, spine_nodes: [P2], note: "Purposeful polysemy — deliberate multi-meaning brand communication"}
+  - {citation_key: mora-2021-segmenting-audience-cause-related, role: motivating_problem, spine_nodes: [P2], note: "Audience-specific viral effects aggregate tracking cannot detect"}
+  - {citation_key: sorensen-2002-strength-corporate-culture, role: theoretical_predecessor, spine_nodes: [P4, P13], note: "Cultural TYPE predicts performance better than STRENGTH — the type-over-degree principle the coherence taxonomy applies"}
+  - {citation_key: escalas-2004-narrative-processing-building-consumer, role: definitional_source, spine_nodes: [P5], note: "Narrative processing as a distinct cognitive route — grounds the Narrative-dimension mapping"}
+  - {citation_key: roy-2014-identification-measurement-brand-identity, role: methodological_source, spine_nodes: [P8], note: "First quantitative measurement of the identity-image gap"}
+  - {citation_key: fournier-2019-putting-person-back, role: theoretical_predecessor, spine_nodes: [P15], note: "Structural risk of person-brands — formalized by SBT as the Incoherence type (Tesla)"}
+  - {citation_key: kahneman-1979-prospect-theory-analysis, role: canonical_reference, spine_nodes: [P16], note: "Behavioral-vs-classical-economics analogy frame for the predecessor-as-limiting-case relationship"}
+  - {citation_key: hatch-2001-strategic-stars-aligned-your, role: contrast_case, spine_nodes: [P16], note: "VCI alignment model — a multi-gap framework whose gaps are recoverable from inter-cohort cloud distance"}
+  - {citation_key: balmer-2002-managing-multiple-identities-corporation, role: contrast_case, spine_nodes: [P16], note: "AC2ID test — multi-stakeholder identity types recoverable from cross-stakeholder cloud divergence"}
+
+# ============================================================================
+# Open questions / boundary edges
+# ============================================================================
+open:
+  - "Empirical calibration of the T matrix: the equal-weight illustrative case must be replaced by cross-validated measurement data on shared samples; calibrated weights will likely be asymmetric and category-dependent. (C2, D4, L4)"
+  - "No validated instrument covers all four Aaker perspectives simultaneously — empirical measurement of cohort spectral profiles (vs expert estimates) is required to test P3 and the core/extended spectral-weight claim. (L3, P3, P7)"
+  - "The four falsifiable propositions (P1–P4 / P11) await testing against independently collected consumer perceptual data; until then empirical validity is unconfirmed. (L1)"
+  - "Formal metric-space proof of the limiting case: how close must cohort weight vectors be before SBT reduces to Aaker, and what metric-space properties are required? (L4, P16)"
+  - "Human-subject factor-analytic confirmation of the eight-dimensional structure of brand-perception space. (L2)"
+  - "Cross-cultural generalization of T and the spectral profiles beyond the predominantly Western synthesis (Appendix A.6). (L2)"
+
+# ============================================================================
+# Spine changelog — append-only
+# ============================================================================

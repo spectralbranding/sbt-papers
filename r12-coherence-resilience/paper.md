@@ -158,7 +158,7 @@ This ordering reflects a structural property of the underlying perceptual proces
 
 **Corollary 1** (Volatility-adjusted stability). *Among $k$-anisotropic drift fields with the same $k$ and the same total drift intensity, the absorption probability is lower when the active dimensions (those receiving strong drift) have LOW intrinsic volatility than when they have HIGH intrinsic volatility.*
 
-*Proof sketch.* High intrinsic volatility on the active dimensions does not improve stability because the strong drift is partially offset by large random fluctuations. Low intrinsic volatility on the active dimensions means that the strong drift operates in a low-noise environment, producing a more deterministic trajectory away from the boundary. Meanwhile, the passive dimensions (those without strong drift) are vulnerable to absorption regardless of their volatility -- but high-volatility passive dimensions are more vulnerable than low-volatility ones. The optimal configuration is therefore strong drift on low-volatility dimensions and weak drift on low-volatility dimensions -- which is the ecosystem case (all dimensions protected). The worst configuration among equal-$k$ brands is strong drift on high-volatility dimensions, which is exactly the experiential asymmetry case. $\square$
+*Proof sketch.* High intrinsic volatility on the active dimensions does not improve stability because the strong drift is partially offset by large random fluctuations. Low intrinsic volatility on the active dimensions means that the strong drift operates in a low-noise environment, producing a more deterministic trajectory away from the boundary. Meanwhile, the passive dimensions (those without strong drift) are vulnerable to absorption regardless of their volatility -- but high-volatility passive dimensions are more vulnerable than low-volatility ones. The optimal configuration is therefore strong drift on low-volatility dimensions and weak drift on high-volatility dimensions -- which is the ecosystem case (all dimensions protected). The worst configuration among equal-$k$ brands is strong drift on high-volatility dimensions, which is exactly the experiential asymmetry case. $\square$
 
 ### 3.4 Full Stability Ordering
 
@@ -288,7 +288,7 @@ This ordering is consistent with the qualitative observation that brands with de
 
 ## 5. The Coherence-Resilience Theorem
 
-**Figure 1: Derivation chain from coherence type to resilience ordering.**
+**Figure 2: Derivation chain from coherence type to resilience ordering.**
 
 ```mermaid
 flowchart TD

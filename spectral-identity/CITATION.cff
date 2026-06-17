@@ -8,6 +8,13 @@ authors:
 title: "From Brand Identity to Spectral Identity: Formalizing Aaker's Framework for Testable, AI-Operable Brand Analysis"
 date-released: 2026-06-14
 repository-code: "https://github.com/spectralbranding/sbt-papers"
+keywords:
+  - brand coherence typology
+  - brand identity formalization
+  - brand perception measurement
+  - computational branding
+  - observer heterogeneity
+  - Spectral Brand Theory
 license:
   - CC-BY-4.0
   - MIT

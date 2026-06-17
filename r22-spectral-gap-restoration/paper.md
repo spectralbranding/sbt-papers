@@ -132,7 +132,7 @@ The IRF half-life contrast confirms the regime interpretation: high-regime cells
 
 Figure 2 traces the parameter sweep across mu/lambda ∈ [0.5, 2.0] — N = 2,000 sample paths per ratio value, λ = .10 fixed, μ = ratio × λ, t = 100 equilibration steps. The bifurcation at ratio = 1.0 (μ = λ) is a sharp demarcation: mean terminal spectral gap collapses to zero as the ratio crosses below 1.0 and rises monotonically in the recoverable regime (ratio > 1.0). The curve confirms that the threshold at μ = λ is a genuine bifurcation rather than a smooth gradient, as predicted by the sign-flip condition on the Lyapunov exponent.
 
-![Figure 2: Bifurcation diagram of the spectral gap](figures/figure2_bifurcation.png)
+![](figures/figure2_bifurcation.png)
 
 Figure 2: Bifurcation diagram of the spectral gap as a function of mu/lambda ratio. The threshold mu equals lambda separates the recoverable (mu > lambda) and absorbing (mu < lambda) regimes; the spectral gap collapses to zero in the absorbing regime.
 
