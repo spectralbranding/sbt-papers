@@ -6,7 +6,7 @@ ORCID: 0009-0000-6893-9231
 
 DOI: [10.5281/zenodo.19294864](https://doi.org/10.5281/zenodo.19294864)
 
-Working Paper v2.0.1 – June 2026 (revised June 2026)
+Working Paper v2.0.1 – March 2026 (revised June 2026)
 
 ---
 
@@ -34,7 +34,7 @@ Information science has identified this structural gap for decades. Renear and P
 
 Scientific publishing is the only knowledge-intensive domain without formal version control and provenance infrastructure. Legal systems track case law revisions. Financial auditing requires audit trails. Clinical research mandates trial registration. Supply chain management maintains chain of custody. Software engineering uses Git. Each domain independently developed provenance tracking because each discovered that knowledge integrity requires it. Publishing has not.
 
-**Table 1.** Provenance mechanisms across knowledge-intensive domains.
+Table 1: Provenance mechanisms across knowledge-intensive domains.
 
 | Domain | Provenance mechanism | When adopted |
 |--------|---------------------|-------------|
@@ -628,7 +628,7 @@ These AI checks are **advisory, not blocking**. They help the author assess fit 
 
 **Implementability.** Every check in the gate is technically straightforward:
 
-**Table 3.** Compliance gate checks and implementation difficulty.
+Table 3: Compliance gate checks and implementation difficulty.
 
 | Check | Implementation | Difficulty |
 |---|---|---|
@@ -994,7 +994,7 @@ This inverts the current hierarchy, where the published PDF is the canonical ver
 
 Every feature that the current system implements through policy, the repository protocol implements through structure:
 
-**Table 4.** Policy-based vs structure-based implementation of publishing functions.
+Table 4: Policy-based vs structure-based implementation of publishing functions.
 
 | Current approach | Repository approach |
 |---|---|
@@ -1045,7 +1045,7 @@ The four-level hierarchy introduced in Section 1.1 — repository, paper, fork, 
 3. **Fork = sharing.** The render is transmitted to the community for confirmation. The fork is lossy: no single paper captures the full repository, just as no single brand interaction captures the full brand specification.
 4. **Publication = merge.** The community (journal) evaluates the render and either merges it into its collection or closes the fork. Analogous to the perception that forms after the signal reaches its audience.
 
-**Table 5.** Cross-domain comparison: specification-rendering-perception across three sibling frameworks.
+Table 5: Cross-domain comparison: specification-rendering-perception across three sibling frameworks.
 
 | Structural layer          | Branding (SBT)             | Organization (OST)         | Research (this protocol)   |
 |---------------------------|----------------------------|----------------------------|----------------------------|
@@ -1134,7 +1134,7 @@ The protocol does not solve the pipeline problem. But it provides the infrastruc
 
 ### 4.10 Stakeholder Summary
 
-**Table 6.** Stakeholder benefit summary.
+Table 6: Stakeholder benefit summary.
 
 | Stakeholder | Current pain | Protocol benefit |
 |-------------|-------------|-----------------|
@@ -1179,7 +1179,7 @@ This paper is itself drafted under that discipline. Its structured spine was bui
 
 The realized system deliberately does not reinvent the semantic-publishing stack. About half of it aligns with, and is designed to emit into, established standards; those standards are treated as projection targets rather than competitors, consistent with the corpus's own thesis that one should publish the source of truth and render at the point of consumption. Concretely, the citation-role taxonomy aligns with CiTO [@shotton-2010-cito-citation-typing]; the spine's claim-evidence structure with micropublications [@clark-2014-micropublications-semantic-model] and the argument interchange format [@chesnevar-2006-argument-interchange-format]; the spine's claims as provenance-bearing units with nanopublications (Groth et al. [-@groth-2010-anatomy-nanopublication-information]; Kuhn et al. [-@kuhn-2021-semantic-microcontributions-with]); the content-addressed definition identity with Trusty URIs [@kuhn-dumontier-2014-trusty-uris]; the per-paper bundle with RO-Crate [@soilandreyes-2022-packaging-research-artefacts] and the FAIR principles [@wilkinson-2016-fair-guiding-principles]; the term-relation vocabulary with SKOS [@miles-bechhofer-2009-skos-reference]; typed term mappings with SSSOM [@matentzoglu-2022-sssom]; one-term-one-owner governance with OBO Foundry orthogonality [@smith-2007-obo-foundry]; and the linker's compatible-refinement check with conservative-extension theory for modular ontology reuse (Cuenca Grau et al. [-@cuencagrau-2008-modular-reuse-ontologies]). Table 7 summarizes the alignment.
 
-**Table 7.** Layers of the realized system and the established standards each aligns with or emits into.
+Table 7: Layers of the realized system and the established standards each aligns with or emits into.
 
 | Layer of the realized system | Established standard aligned with / emitted into |
 |---|---|

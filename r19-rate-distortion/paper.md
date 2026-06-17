@@ -6,7 +6,7 @@ ORCID: 0009-0000-6893-9231
 
 DOI: [10.5281/zenodo.19528833](https://doi.org/10.5281/zenodo.19528833)
 
-Working Paper v1.0.1 – June 2026 (revised June 2026)
+Working Paper v1.1.0 – April 2026 (revised June 2026)
 
 ---
 
@@ -50,7 +50,7 @@ Concurrent work on AI as brand evaluator supports this direction. Sabbah and Aca
 
 The canonical profiles used as reference signals derive from Spectral Brand Theory (SBT), which models brand perception as an eight-dimensional vector: Semiotic, Narrative, Ideological, Experiential, Social, Economic, Cultural, and Temporal [@zharnikov-2026-spectral-brand-theory-computational-framework]. Each dimension captures a distinct perceptual axis. Prior empirical work with 24 LLM architectures established that AI encoders systematically over-weight the Economic and Semiotic dimensions when evaluating brands in pair-comparison format, producing a mean dimensional collapse index of .356 [@zharnikov-2026-dimensional-collapse-ai-mediated-search]. The present study extends this finding by varying the elicitation format rather than the brand pair and measuring distortion from canonical profiles rather than relative brand distance.
 
-Table 4: Comparison with adjacent information-theoretic treatments of perception compression.
+Table 1: Comparison with adjacent information-theoretic treatments of perception compression.
 
 | Source | Source-distribution assumption | Distortion measure | Channel / encoder model | What is being compressed |
 |--------|-------------------------------|-------------------|------------------------|--------------------------|
@@ -71,7 +71,7 @@ A fully crossed factorial design: 5 response-format conditions (R1-R5) x 5 canon
 
 Five response formats operationalize information rate as the number of bits required to encode the model's output. The canonical numeric mappings used throughout are: R3 Low/Medium/High maps to 1/2/3 (then projected to the eight SBT dimensions per the canonical profile); R4 Yes/No maps to 1/0; R5 open-text dimension name is embedded via a tokenization-based projection to a one-of-eight indicator vector.
 
-Table 1: Rate Conditions and Information Capacity.
+Table 2: Rate Conditions and Information Capacity.
 
 | Code | Format | Bits |
 |------|--------|------|
@@ -129,7 +129,7 @@ H1 is **not supported**. All 17 models show directionally negative Spearman corr
 
 The central empirical finding is that all 17 models achieve minimum distortion at R2 (1-5 ordinal scale, 19 bits), not at R1 (100-point allocation, 26 bits). No model produces lower distortion at any other rate condition.
 
-Table 2: Cross-Model Distortion by Rate Condition.
+Table 3: Cross-Model Distortion by Rate Condition.
 
 | Rate | Bits | Mean *d* | SD | CV |
 |------|------|----------|----|----|
@@ -176,7 +176,7 @@ H5 is **not supported** in the full 17-model panel (CV at R1 = .210, threshold .
 
 ### Per-Brand Patterns
 
-Table 3: Mean Distortion by Brand and Rate Condition.
+Table 4: Mean Distortion by Brand and Rate Condition.
 
 | Brand | R1 | R2 | R3 | R4 | R5 | R1-to-R2 drop |
 |-------|-----|-----|-----|-----|-----|----------------|

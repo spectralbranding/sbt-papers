@@ -6,7 +6,7 @@ ORCID: 0009-0000-6893-9231
 
 DOI: [10.5281/zenodo.18945295](https://doi.org/10.5281/zenodo.18945295)
 
-Working Paper v2.3.0 – June 2026 (revised June 2026)
+Working Paper v2.3.0 – March 2026 (revised June 2026)
 
 ---
 
@@ -71,7 +71,7 @@ A **pseudo-metric** relaxes (M2) to require only $d(x, x) = 0$, permitting $d(x,
 
 Spectral Brand Theory [@zharnikov-2026-spectral-brand-theory-computational-framework] models brand perception through an eight-dimensional signal architecture. The eight dimensions are:
 
-**Table 1: SBT Eight-Dimensional Signal Architecture.**
+Table 1: SBT Eight-Dimensional Signal Architecture.
 
 | Index | Dimension | Description |
 |-------|-----------|-------------|
@@ -671,7 +671,7 @@ Cafaro and Ali [-@cafaro-2007-jacobi-fields-statistical] analyzed Jacobi field i
 
 We apply the metric framework to five brands analyzed as case studies in Zharnikov [-@zharnikov-2026-spectral-brand-theory-computational-framework]. Each brand has been assessed on the SBT coherence framework with a grade and a designed/ambient (D/A) ratio:
 
-**Table 4: Case-Study Brand Coherence Assessment Summary.**
+Table 4: Case-Study Brand Coherence Assessment Summary.
 
 | Brand | Coherence Type | Grade | D/A Ratio |
 |-------|---------------|-------|-----------|
@@ -685,7 +685,7 @@ We apply the metric framework to five brands analyzed as case studies in Zharnik
 
 To demonstrate the metric, we construct canonical emission profiles based on the qualitative case-study assessments. These profiles are illustrative; the numerical values are chosen to reflect the qualitative descriptions in Zharnikov [-@zharnikov-2026-spectral-brand-theory-computational-framework] rather than derived from empirical measurement. All values are on a [1, 10] scale representing relative signal intensity:
 
-**Table 5: Canonical Brand Emission Profiles (1–10 Scale).**
+Table 5: Canonical Brand Emission Profiles (1–10 Scale).
 
 | Dimension | Hermès | IKEA | Patagonia | Erewhon | Tesla |
 |-----------|--------|------|-----------|---------|-------|
@@ -712,7 +712,7 @@ The large negative value on the economic dimension ($-0.936$) reflects Hermès's
 
 Carrying out the full computation for all pairs:
 
-**Table 6: Pairwise Aitchison Brand Distances ($d_B$).**
+Table 6: Pairwise Aitchison Brand Distances ($d_B$).
 
 | | Hermès | IKEA | Patagonia | Erewhon | Tesla |
 |-----------|--------|------|-----------|---------|-------|

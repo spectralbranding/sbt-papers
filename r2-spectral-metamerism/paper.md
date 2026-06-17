@@ -6,7 +6,7 @@ ORCID: 0009-0000-6893-9231
 
 DOI: [10.5281/zenodo.18945352](https://doi.org/10.5281/zenodo.18945352)
 
-Working Paper v1.5.0 – June 2026 (revised June 2026)
+Working Paper v1.5.0 – March 2026 (revised June 2026)
 
 ---
 
@@ -44,7 +44,7 @@ These results have a direct practical consequence that we develop throughout the
 
 The paper builds on the metric framework established in Zharnikov [-@zharnikov-2026-brand-space-geometry-formal-metric], which defined the Aitchison metric on brand signal space $\mathbb{R}^8_+$, the Fisher-Rao metric on observer weight space $\Delta^7$, and the warped product metric on the combined brand-observer space. We take these metrics as given and study what happens when the spaces they equip are projected to lower dimensions.
 
-The remainder of the paper is organized as follows. The Preliminaries section establishes notation. The Metamerism in Brand Perception section formalizes spectral metamerism, including a schematic visualization (Figure 1) and a three-regime comparison table (Table 9). The Johnson-Lindenstrauss Bounds section applies the JL lemma. The Null Space Analysis section characterizes the kernel of the projection. The Information-Theoretic Bounds section derives variance-retention, channel-capacity, and rate-distortion bounds. The Monte Carlo Verification section reports simulation evidence. The From Rasterized to Vectorized Brand Management section develops the practical implications. The Connection to MDS and Survey Design section connects the framework to multidimensional scaling and survey design, including implications for brand-tracking instruments and a canonical foundational-to-specialization map (Table 10). The Discussion and Limitations section addresses scope conditions, and the Conclusion summarizes.
+The remainder of the paper is organized as follows. The Preliminaries section establishes notation. The Metamerism in Brand Perception section formalizes spectral metamerism, including a schematic visualization (Figure 1) and a three-regime comparison table (Table 4). The Johnson-Lindenstrauss Bounds section applies the JL lemma. The Null Space Analysis section characterizes the kernel of the projection. The Information-Theoretic Bounds section derives variance-retention, channel-capacity, and rate-distortion bounds. The Monte Carlo Verification section reports simulation evidence. The From Rasterized to Vectorized Brand Management section develops the practical implications. The Connection to MDS and Survey Design section connects the framework to multidimensional scaling and survey design, including implications for brand-tracking instruments and a canonical foundational-to-specialization map (Table 9). The Discussion and Limitations section addresses scope conditions, and the Conclusion summarizes.
 
 ---
 
@@ -177,7 +177,7 @@ graph TD
 
 *Figure 1: Schematic of the 8D-to-1D spectral projection. Eight typed SBT dimensions are mapped through the projection function $\phi: \mathbb{R}^8_+ \to \mathbb{R}^1$ to produce a scalar grade. The 7-dimensional null space $\ker(\phi)$ absorbs all profile differences invisible to the grade; distinct profiles sharing the same grade are the metameric profiles whose existence is guaranteed by Theorem 1.*
 
-Table 9: Comparison of Three Dimensionality-Reduction Regimes for Brand Profiles.
+Table 4: Comparison of Three Dimensionality-Reduction Regimes for Brand Profiles.
 
 | Regime | Distortion bound | Output rank | Preserved structure | Why metameric collapse occurs | Example application |
 |--------|-----------------|-------------|--------------------|-----------------------------|---------------------|
@@ -235,7 +235,7 @@ $$\epsilon \geq \sqrt{\ln N} \tag{8}$$
 
 *In particular:*
 
-Table 4: Required Distortion for Scalar-Grade Projection by Competitive Set Size.
+Table 5: Required Distortion for Scalar-Grade Projection by Competitive Set Size.
 
 | $N$ (brands) | $\epsilon_{\min}$ | Distortion |
 |:---:|:---:|:---:|
@@ -265,7 +265,7 @@ $$k \geq \frac{4 \ln N}{\epsilon^2/2 - \epsilon^3/3}$$
 
 *For $\epsilon = 0.3$ (30% distortion tolerance):*
 
-Table 5: Minimum Faithful Projection Dimension at 30% Distortion Tolerance.
+Table 6: Minimum Faithful Projection Dimension at 30% Distortion Tolerance.
 
 | $N$ (brands) | $k_{\min}$ |
 |:---:|:---:|
@@ -279,7 +279,7 @@ Table 5: Minimum Faithful Projection Dimension at 30% Distortion Tolerance.
 
 *For $\epsilon = 0.1$ (10% distortion tolerance):*
 
-Table 6: Minimum Faithful Projection Dimension at 10% Distortion Tolerance.
+Table 7: Minimum Faithful Projection Dimension at 10% Distortion Tolerance.
 
 | $N$ (brands) | $k_{\min}$ |
 |:---:|:---:|
@@ -444,7 +444,7 @@ The log-normal distribution ($\mu = 0.5$, $\sigma = 0.5$) is a convenient positi
 
 Three independent trials (different random seeds):
 
-Table 7: Monte Carlo Metameric Pair Frequency Across Three Independent Trials.
+Table 8: Monte Carlo Metameric Pair Frequency Across Three Independent Trials.
 
 | Trial | Metameric Pairs | Fraction | Total Pairs |
 |:---:|:---:|:---:|:---:|
@@ -546,7 +546,7 @@ The vectorized corrective is straightforward in principle: retain the full 8-dim
 
 The metamerism construct introduced in this paper generalizes to several applied settings. The following table provides a canonical glossary entry and cross-paper map, addressing the need for a consistent reference point across the specialization papers.
 
-Table 10: Spectral Metamerism Across the SBT Specialization Papers.
+Table 9: Spectral Metamerism Across the SBT Specialization Papers.
 
 | Paper | Setting | What is projected | What is metameric | Key result |
 |-------|---------|-------------------|------------------|-----------|
@@ -645,7 +645,7 @@ A pair $(s_i, s_j)$ is classified as metameric if $d_{8D}(s_i, s_j) > 1.0$ (subs
 
 For reference, the key computed values used throughout the paper:
 
-Table 8: Summary of Key Computed Values Cited Throughout the Paper.
+Table 10: Summary of Key Computed Values Cited Throughout the Paper.
 
 | Quantity | Value | Section |
 |----------|-------|---------|

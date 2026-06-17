@@ -6,7 +6,7 @@ ORCID: 0009-0000-6893-9231
 
 DOI: [10.5281/zenodo.18945477](https://doi.org/10.5281/zenodo.18945477)
 
-Working Paper v1.2.0 – June 2026 (revised June 2026)
+Working Paper v1.2.0 – March 2026 (revised June 2026)
 
 ---
 
@@ -36,7 +36,7 @@ This paper derives explicit non-asymptotic bounds on both phenomena under the un
 
 2. **Methodological implication for discrete versus continuous cohort representation** in moderate-dimensional perceptual spaces. The bounds quantify the information loss from rasterized cohort labels relative to vectorized observer profiles, and identify $n \approx 5$ as the dimensionality threshold beyond which discrete assignment systematically misrepresents a majority of the population.
 
-The paper proceeds as follows. Section 2 recalls the relevant geometry (with $\Delta^7$ and the Fisher-Rao metric established in Zharnikov [-@zharnikov-2026-brand-space-geometry-formal-metric]) and provides a cross-paper geometry summary (Table 8). Section 3 develops concentration of measure on the simplex. Section 4 proves the boundary fuzziness theorems, including a schematic of simplex mass concentration (Figure 1) and a plot of the boundary volume fraction curve (Figure 2). Section 5 presents Monte Carlo verification. Section 6 develops the implications for branding practice. Section 7 connects the results to non-ergodic dynamics. Section 8 extends the analysis to concentrated Dirichlet$(\alpha,\ldots,\alpha)$ distributions, showing that the uniform case is the worst case and that real populations have sharper boundaries. Section 9 discusses limitations. Section 10 concludes.
+The paper proceeds as follows. Section 2 recalls the relevant geometry (with $\Delta^7$ and the Fisher-Rao metric established in Zharnikov [-@zharnikov-2026-brand-space-geometry-formal-metric]) and provides a cross-paper geometry summary (Table 1). Section 3 develops concentration of measure on the simplex. Section 4 proves the boundary fuzziness theorems, including a schematic of simplex mass concentration (Figure 1) and a plot of the boundary volume fraction curve (Figure 2). Section 5 presents Monte Carlo verification. Section 6 develops the implications for branding practice. Section 7 connects the results to non-ergodic dynamics. Section 8 extends the analysis to concentrated Dirichlet$(\alpha,\ldots,\alpha)$ distributions, showing that the uniform case is the worst case and that real populations have sharper boundaries. Section 9 discusses limitations. Section 10 concludes.
 
 ---
 
@@ -72,9 +72,9 @@ where $\mu_j$ is the Frechet mean of cluster $C_j$ in the Fisher-Rao metric. The
 
 ### 2.4 Geometric Program of the SBT Foundational Papers
 
-The present paper is the third in a sequence of papers that together constitute the geometric program of SBT. Each addresses a distinct geometric structure on the brand-observer space; Table 8 provides a reader's map.
+The present paper is the third in a sequence of papers that together constitute the geometric program of SBT. Each addresses a distinct geometric structure on the brand-observer space; Table 1 provides a reader's map.
 
-Table 8: Cross-Paper Geometry Summary for SBT Foundational Papers.
+Table 1: Cross-Paper Geometry Summary for SBT Foundational Papers.
 
 | Paper | Geometric structure | Main quantity | Headline result |
 |-------|--------------------|--------------|-----------------|
@@ -107,8 +107,7 @@ $$P\left(|f(x) - M_f| \geq \varepsilon \right) \leq 4 \exp\left( -\frac{(n-1)\va
 
 The practical import of Proposition 1 is that any "well-behaved" (Lipschitz) function of an observer's position on the sphere -- including, crucially, the distance from that observer to a cohort centroid -- cannot vary much from its typical value. At $n = 8$, the numerical bounds are:
 
-**Table 1: Lévy Concentration Bounds on $S^7$ at Selected Deviation Thresholds.**
-
+Table 2: Lévy Concentration Bounds on $S^7$ at Selected Deviation Thresholds.
 | $\varepsilon$ | $P(\|f - M_f\| \geq \varepsilon)$ (standard) | $P$ (sharp, sets of measure 1/2) |
 |---|---|---|
 | 1.0 | $\leq 1.667$ | $\leq 0.060$ |
@@ -165,8 +164,7 @@ $$E[\|w_i - w_j\|_2^2] = 2 \sum_{l=1}^n \text{Var}[X_l] = \frac{2(n-1)}{n(n+1)}$
 
 *(b) The distance contrast ratio degrades with dimension. Monte Carlo estimation with $m = 1000$ yields:*
 
-**Table 2: Distance Contrast Ratio Degradation with Dimension on the Simplex.**
-
+Table 3: Distance Contrast Ratio Degradation with Dimension on the Simplex.
 | $n$ | $R_n$ (contrast ratio) | Mean Euclidean distance | SD of distances |
 |---|---|---|---|
 | 2 | 9797.06 | .4681 | .3065 |
@@ -203,10 +201,9 @@ The numerical bounds in Sections 3.1–3.3 use Euclidean distance on $\Delta^7$ 
 
 **Distance contrast under Fisher-Rao.** The square-root transform $\phi: \Delta^{n-1} \to S^{n-1}_+$, $\phi(w) = 2(\sqrt{w_1}, \ldots, \sqrt{w_n})$, sends Dir$(1,\ldots,1)$ on $\Delta^7$ to a (non-uniform) distribution on the positive orthant $S^7_+$ of radius 2, with the Fisher-Rao distance becoming the geodesic (arc-length) distance. The expected pairwise Fisher-Rao distance under uniform Dir$(1,\ldots,1)$ is computable analytically via $E[\sum_i \sqrt{p_i q_i}] = n \cdot E[\sqrt{X_i}]^2$ for $X_i \sim$ Beta$(1, n-1)$. At $n = 8$, $E[\sqrt{X_i}] = \Gamma(3/2)\Gamma(8)/\Gamma(8.5) \approx .3183$, giving $E[\sum_i \sqrt{p_i q_i}] \approx .811$ and a typical Fisher-Rao distance of $2\arccos(.811) \approx 1.255$ rad.
 
-Monte Carlo simulation with $m = 1000$ and $10^3$ trials (script: `code/r3_concentration_mc.py` in the companion repository) yields the figures in Table 7.
+Monte Carlo simulation with $m = 1000$ and $10^3$ trials (script: `code/r3_concentration_mc.py` in the companion repository) yields the figures in Table 4.
 
-**Table 7: Distance Concentration on $\Delta^7$ under Euclidean and Fisher-Rao Metrics.**
-
+Table 4: Distance Concentration on $\Delta^7$ under Euclidean and Fisher-Rao Metrics.
 | Metric | $R_8$ (contrast ratio) | Mean distance | CV |
 |---|---|---|---|
 | Euclidean | 7.46 ± .02 | .4254 | .247 |
@@ -268,8 +265,7 @@ $$\text{BVF}(n, \delta) \geq 1 - (1 - \delta)^{n-1}$$
 
 *The exponent $n-1$ reflects the intrinsic dimension of the simplex $\Delta^{n-1}$, which is embedded in $\mathbb{R}^n$ but lies on the affine hyperplane $\sum_i w_i = 1$ and so has dimension $n-1$ as a manifold. In particular, at $n = 8$:*
 
-**Table 3: Boundary Volume Fraction at $n = 8$ Across Relative Boundary Widths.**
-
+Table 5: Boundary Volume Fraction at $n = 8$ Across Relative Boundary Widths.
 | $\delta$ | $\text{BVF}(8, \delta)$ | Interpretation |
 |---|---|---|
 | .01 | 6.8% | Extremely narrow boundary |
@@ -288,7 +284,7 @@ xychart-beta
     line [0.068, 0.302, 0.522, 0.672, 0.790, 0.867, 0.918]
 ```
 
-*Figure 2: Lower bound on boundary volume fraction $\text{BVF}(8, \delta) = 1 - (1-\delta)^7$ as a function of the relative boundary width $\delta$. At the operationally relevant threshold $\delta = .10$, more than half the simplex (52.2%) lies within the boundary zone. The curve is convex and approaches 1 rapidly: at $\delta = .20$ nearly four-fifths of $\Delta^7$ is boundary. This is a lower bound (Theorem 2); empirical Monte Carlo estimates consistently exceed it (Table 5 shows 62.5% at $\delta = .10$).*
+*Figure 2: Lower bound on boundary volume fraction $\text{BVF}(8, \delta) = 1 - (1-\delta)^7$ as a function of the relative boundary width $\delta$. At the operationally relevant threshold $\delta = .10$, more than half the simplex (52.2%) lies within the boundary zone. The curve is convex and approaches 1 rapidly: at $\delta = .20$ nearly four-fifths of $\Delta^7$ is boundary. This is a lower bound (Theorem 2); empirical Monte Carlo estimates consistently exceed it (Table 7 shows 62.5% at $\delta = .10$).*
 
 *Proof.* The argument uses the Brunn-Minkowski peeling technique for convex bodies [@schneider-2014-convex-bodies-brunnminkowski, Theorem 7.1.1; @vershynin-2018-highdimensional-probability-introduction, Section 5.2]. Consider first the simplest case: a bisection of $\Delta^{n-1}$ by a hyperplane through its centroid into two convex regions $C_1, C_2$.
 
@@ -302,8 +298,7 @@ Taking complements gives the boundary volume fraction $\text{BVF}(n, \delta) \ge
 
 **Comparison across dimensions.** To appreciate the significance of the 8-dimensional result, we compare the boundary volume fraction across simplex dimensions at fixed $\delta = .10$:
 
-**Table 4: Boundary Volume Fraction Across Simplex Dimensions at Fixed $\delta = .10$.**
-
+Table 6: Boundary Volume Fraction Across Simplex Dimensions at Fixed $\delta = .10$.
 | $n$ | Intrinsic dim. ($n-1$) | $\text{BVF}(n, .10)$ | Interpretation |
 |---|---|---|---|
 | 2 | 1 | 10.0% | Low-dimensional: boundaries are thin |
@@ -363,8 +358,7 @@ To verify Theorem 2, we performed the following procedure for $n = 8$, $k = 4$ c
 
 The empirical boundary volume fractions closely match the theoretical bound:
 
-**Table 5: Monte Carlo Verification of Boundary Volume Fraction at $n = 8$.**
-
+Table 7: Monte Carlo Verification of Boundary Volume Fraction at $n = 8$.
 | $\delta$ | Theorem 2 prediction | Empirical ($k=4$, $10^5$ samples) |
 |---|---|---|
 | .05 | $\geq 30.2\%$ | $35.9\%$ |
@@ -509,8 +503,7 @@ For $n = 8$ this gives $\alpha^{-7/2} = \alpha^{-3.5}$. Frigyik, Kapila, and Gup
 
 At $n = 8$, the exponent is $(n-1)/2 = 7/2 = 3.5$. The concentration factor at representative values of $\alpha$ is:
 
-**Table 6: Dirichlet Concentration Effect on Boundary Volume Fraction at $n = 8$, $\delta = .10$.**
-
+Table 8: Dirichlet Concentration Effect on Boundary Volume Fraction at $n = 8$, $\delta = .10$.
 | $\alpha$ | $(1/\alpha)^{3.5}$ | $V_{\text{boundary}}(\alpha) \leq$ (at $\delta = .10$) | Interpretation |
 |---|---|---|---|
 | 1 | 1.0000 | 52.2% | Uniform: worst case |
