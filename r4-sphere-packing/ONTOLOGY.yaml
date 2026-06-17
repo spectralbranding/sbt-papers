@@ -1,0 +1,33 @@
+# ONTOLOGY.yaml module - 2026g
+#
+# Per-paper ontology module per [internal path removed]
+# §"ONTOLOGY.yaml schema (v0.1)". owns = terms THIS paper introduces (unique
+# authority); imports = terms owned by other modules it uses (reference only).
+# Linked into the substrate `terms` graph by build_ontology.py; rendered per-paper
+# by render_paper_glossary.py. Bootstrapped 2026-06-13 from per-paper term
+# extraction; definitions paraphrase each paper's own definitional text.
+
+paper_key: 2026g
+schema_version: 0.1
+
+owns:
+  - term_key: positioning-capacity
+    label: "Positioning Capacity"
+    canonical_form: "positioning capacity"
+    definition: "The maximum number of distinguishable (pairwise-distance exceeding the perceptual threshold) brand positions a market's brand space can sustain, bounded via sphere-packing arguments using the E8 lattice in eight dimensions."
+    first_section: "Positioning Capacity in 8 Dimensions"
+  - term_key: perceptual-threshold
+    label: "Perceptual Threshold"
+    canonical_form: "perceptual threshold"
+    definition: "The Aitchison-distance parameter epsilon below which two brands are confusable and above which they are distinguishable, grounded in the psychophysical just-noticeable-difference concept and varying with observer expertise and context."
+    first_section: "The Perceptual Threshold (Definition 1)"
+
+imports:
+  - {term_key: spectral-brand-theory}
+  - {term_key: spectral-dimensions}
+  - {term_key: observer-spectral-profile}
+  - {term_key: structural-absence}
+  - {term_key: cohort}
+
+refines: []
+

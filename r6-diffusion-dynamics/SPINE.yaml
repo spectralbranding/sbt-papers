@@ -1,0 +1,560 @@
+# SPINE.yaml — Non-Ergodic Brand Perception: Diffusion Dynamics (2026j / R6)
+#
+# extracted DESCRIPTIVELY from the completed paper.md, not authored generatively
+# before prose. The four theorems (T1–T4) and three propositions (P5–P7) are the
+# paper's stated results; the eigenvalue/spectral-gap/survival-table values and
+# the five-brand normalized profiles are author-computed (companion script
+# r6_diffusion_dynamics.py), so the schema is v0.2 — the headline computed results
+# carry an observation → method → measurement → finding chain rather than being
+# asserted as bare propositions.
+#
+# Node-id convention (SPINE_FIRST_DRAFTING_PROTOCOL.md): P proposition,
+# O observation, M method, m measurement, F finding, D derivation,
+# A alternative_explanation, RC robustness_check, L limitation, C boundary_condition.
+
+spine_version: "0.2"
+spine_doc_version: "0.1.0"      # retrofit lock (2026-06-14)
+paper_key: "2026j"
+provenance: retrofit
+title: >-
+  Non-Ergodic Brand Perception: Diffusion Dynamics on Multi-Dimensional
+  Perceptual Manifolds
+target_venue_primary: "TBD (formal-mathematical SBT foundation paper; Working Paper v1.2.0)"
+status: >-
+  Retrofit spine extracted 2026-06-14 from the completed paper.md (v1.2.0,
+  Zenodo 10.5281/zenodo.18945659). Descriptive, not generative.
+
+thesis: |
+  An observer's brand conviction can be modeled as a stochastic process on
+  S^7_+ — the positive octant of the 7-sphere — the natural state space for a
+  normalized eight-dimensional observer spectral profile. Signal encounters
+  drive Brownian motion on the manifold, signal decay introduces drift toward a
+  neutral prior, and negative conviction creates absorbing Dirichlet boundaries
+  where a perceptual dimension collapses to zero (re-collapse). A Stratonovich
+  SDE on S^7_+ is well-posed up to absorption (Theorem 1); survival probability
+  decays exponentially at rate lambda_{D,1} sigma_0^2 / 2 with exact first
+  Dirichlet eigenvalue lambda_{D,1} = 112 (Theorem 2); the Dirichlet spectral
+  gap lambda_{D,2} - lambda_{D,1} = 48 yields faster mixing to the
+  quasi-stationary distribution than on the full sphere (Theorem 3); and time
+  averages diverge from ensemble averages with probability 1, establishing
+  non-ergodicity through an absorbing-boundary mechanism independent of Peters'
+  (2019) multiplicative framing (Theorem 4). Applied to five case-study brands,
+  absorption risk nearly matches SBT coherence grading with a single inversion
+  explained by coherence-type-dependent drift (Proposition 7); recovery time
+  from a near-death dimension scales as 1/delta^2 (Proposition 5); and a
+  sensitivity analysis recovers the empirically observed D/A Goldilocks zone
+  r* in [.55, .65] from the absorption-exploration tradeoff (Proposition 6).
+  The model gives SBT its missing dynamical foundation and formalizes the
+  distinction between vectorized and rasterized brand management.
+
+# ============================================================================
+# Boundary conditions — the modeling assumptions under which the results hold
+# ============================================================================
+boundary_conditions:
+  - id: C1
+    statement: >-
+      The observer's perception state is a normalized eight-component vector on
+      the positive octant S^7_+ (all coordinates strictly positive in the
+      interior), evolving in continuous time.
+    observable: "An 8-dimensional observer spectral profile constrained to the unit sphere."
+    excludes: "Scalar attitude scales; finite discrete state lattices; unbounded Euclidean opinion space."
+    body_sections: ["Preliminaries / SBT Framework Recap", "Riemannian Geometry of the 7-Sphere"]
+  - id: C2
+    statement: >-
+      The boundary partial S^7_+ (any dimension at zero) is absorbing: once a
+      dimension collapses, no subsequent signaling restores it from the
+      observer's perspective (irreversible re-collapse).
+    observable: "A killed trajectory at the first hitting time tau of partial S^7_+."
+    excludes: "Resurrecting / fully reflecting boundaries that permit return from every state."
+    body_sections: ["The Absorption Model", "Well-Posedness"]
+  - id: C3
+    statement: >-
+      The continuous-time Brownian approximation is valid when the encounter
+      rate lambda_enc is large relative to the observation time scale, and the
+      headline theorems assume isotropic diffusion.
+    observable: "High-frequency signal encounter regime; isotropic noise sigma_0 P_x."
+    excludes: "Niche brands with very low encounter rates; strongly anisotropic Sigma without recalibration."
+    body_sections: ["Diffusion: Signal Noise", "Limitations (items 1, 4)"]
+
+# ============================================================================
+# Observations — the inputs the computed results rest on
+# ============================================================================
+observations:
+  - id: O1
+    statement: >-
+      The five case-study brands have canonical emission profiles (Hermès,
+      IKEA, Patagonia, Erewhon, Tesla; 8 dimensions on a 1–10 intensity scale)
+      carried over from the SBT framework and the formal-metric paper.
+    raw_data_pointer: "Table 4 (canonical emission profiles)"
+    instrument: "SBT canonical profiles (Zharnikov 2026a, 2026d)"
+    body_sections: ["Preliminaries / SBT Framework Recap"]
+  - id: O2
+    statement: >-
+      S^7_+ has constant sectional curvature K = 1, volume Vol(S^7) = pi^4/3,
+      and the positive octant has volume Vol(S^7_+) = pi^4/768 ≈ .1269 (a 1/256
+      compression of the full sphere), with Laplace-Beltrami eigenvalues
+      lambda_ell = ell(ell + 6) on S^7.
+    raw_data_pointer: "Riemannian Geometry of the 7-Sphere; Laplace-Beltrami section; Table A1"
+    instrument: "Spectral geometry of S^{n-1} (closed form)"
+    body_sections: ["Riemannian Geometry of the 7-Sphere", "The Laplace-Beltrami Operator on S^{n-1}"]
+
+# ============================================================================
+# Methods — how the SDE is constructed and its quantities computed
+# ============================================================================
+methods:
+  - id: M1
+    statement: >-
+      Formulate perception evolution as a Stratonovich SDE on S^7_+ with three
+      forces — signal-encounter drift toward the normalized emission profile
+      s/||s||, decay drift toward the neutral prior x* = (1,...,1)/sqrt(8), and
+      isotropic diffusion sigma_0 P_x — each kept tangent to the sphere by the
+      orthogonal projection P_x = I - x x^T; absorbing Dirichlet conditions at
+      partial S^7_+.
+    type: "stochastic_model_construction"
+    inputs: ["emission profile s", "kappa", "alpha lambda_enc", "sigma_0"]
+    outputs: ["the complete SDE on S^7_+ (Stratonovich and Ito forms)"]
+    code_anchor: "paper §The Brand Perception SDE"
+    body_sections: ["The Brand Perception SDE", "Stratonovich Formulation"]
+  - id: M2
+    statement: >-
+      Compute the first Dirichlet eigenfunction phi_1(x) = prod_i x_i (a
+      degree-8 homogeneous harmonic polynomial) and its eigenvalue via
+      lambda_ell = ell(ell + n - 2); expand survival probability in the
+      Dirichlet eigenbasis (backward heat equation), retaining the leading term
+      as t -> infinity.
+    type: "spectral_eigenvalue_computation"
+    inputs: ["Dirichlet Laplacian on S^7_+", "n = 8"]
+    outputs: ["lambda_{D,1} = 112", "lambda_{D,2} = 160", "survival asymptotics"]
+    code_anchor: "paper §The Dirichlet Laplacian on S^7_+; §Survival Probability"
+    reproducibility:
+      seed: "42"
+      runtime_environment: "Python 3.12 + NumPy (companion script r6_diffusion_dynamics.py)"
+    body_sections: ["The Dirichlet Laplacian on S^7_+", "Survival Probability"]
+  - id: M3
+    statement: >-
+      Parametrize the SDE by the designed/ambient ratio r (drift scales with r,
+      diffusion with the ambient fraction); set the net absorption rate
+      gamma(r) = lambda_{D,1} sigma_0^2 (2 - r)/2 - r alpha lambda_enc d_partial
+      to zero to read off the survival lower bound, sweep the drift-strength
+      parameter alpha lambda_enc d_partial over [1.0, 3.0], and combine with the
+      crystallization upper bound to bracket r*.
+    type: "sensitivity_analysis"
+    inputs: ["sigma_0 = .1", "lambda_{D,1} = 112", "alpha lambda_enc d_partial in [1.0, 3.0]"]
+    outputs: ["survival-lower-bound table (Table 5)", "r* in [.55, .65]"]
+    code_anchor: "paper §Deriving the D/A Goldilocks Zone; r6_diffusion_dynamics.py"
+    body_sections: ["The Absorption-Exploration Tradeoff", "The Optimal Range"]
+  - id: M4
+    statement: >-
+      For each case-study brand, compute the normalized emission profile
+      s_hat = s/||s||_2 and the boundary distance d_partial(s_hat) = min_i
+      s_hat_i, then rank absorption risk by combining distance-from-boundary
+      with coherence-conditional drift strength.
+    type: "applied_ranking_computation"
+    inputs: ["Table 4 canonical profiles", "coherence grades"]
+    outputs: ["Tables 6–8 (normalized profiles, d_partial, drift verdict)", "absorption ordering"]
+    code_anchor: "paper §Numerical Demonstration; r6_diffusion_dynamics.py"
+    body_sections: ["Case Study: Five Brands", "Absorption Risk Ordering"]
+
+# ============================================================================
+# Measurements — the headline computed values
+# ============================================================================
+measurements:
+  - id: m_eigenvalue
+    statement: >-
+      First Dirichlet eigenvalue lambda_{D,1}(S^7_+) = 8(8+6) = 112; second
+      candidate lambda_{D,2} = 10(10+6) = 160; spectral gap = 48; full-sphere
+      first eigenvalue lambda_1 = 7.
+    source_observations: [O2]
+    generating_method: M2
+    value: "lambda_{D,1} = 112 / lambda_{D,2} = 160 / gap = 48 / lambda_1 = 7"
+    units: "Laplace-Beltrami eigenvalue"
+    body_sections: ["The Dirichlet Laplacian on S^7_+", "Mixing Time and Non-Ergodicity"]
+  - id: m_survival
+    statement: >-
+      Survival probability S(t, x*) at the equal-weight initial condition with
+      sigma_0 = .1, no drift: S(1)=.571, S(2)=.326, S(3)=.186, S(4)=.106,
+      S(5)=.060; characteristic survival time tau_char = 2/(112 x .01) ≈ 1.78.
+    source_observations: [O2]
+    generating_method: M2
+    value: "tau_char ≈ 1.78; S(2,x*) = .326"
+    units: "probability / dimensionless time units"
+    body_sections: ["Survival Time Estimates", "Table 9", "Table A1"]
+  - id: m_da_zone
+    statement: >-
+      Survival lower bound r_min sweeps [.32, .72] as alpha lambda_enc d_partial
+      ranges [3.0, 1.0]; at the representative midpoint 1.5, r_min ≈ .54 and the
+      crystallization upper bound ≈ .65, placing the Goldilocks zone at
+      r* in [.55, .65].
+    source_observations: [O1]
+    generating_method: M3
+    value: "r* in [.55, .65] (representative midpoint 1.5 -> r_min ≈ .54)"
+    units: "designed/ambient ratio"
+    body_sections: ["The Optimal Range", "Table 5"]
+  - id: m_brand_dpartial
+    statement: >-
+      Boundary distances d_partial(s_hat): Tesla .120 (Temporal), Hermès .127
+      (Economic), Erewhon .135 (Temporal), Patagonia .237 (Economic), IKEA .249
+      (Social); ergodicity coefficients epsilon range from Hermès 5.0 (ergodic)
+      to Tesla .4 (non-ergodic).
+    source_observations: [O1]
+    generating_method: M4
+    value: "d_partial: Tesla .120 ... IKEA .249; epsilon: Hermès 5.0 ... Tesla .4"
+    units: "min normalized coordinate / ergodicity coefficient"
+    body_sections: ["Case Study: Five Brands", "Ergodicity Coefficient by Brand"]
+
+# ============================================================================
+# Propositions — the four theorems and three propositions (the argument backbone)
+# ============================================================================
+propositions:
+  - id: P1
+    statement: >-
+      (Theorem 1, Well-posedness) The brand-perception SDE on S^7_+ with
+      absorbing boundary conditions admits a unique strong solution up to the
+      first hitting time tau of partial S^7_+; the drift and diffusion
+      coefficients are locally Lipschitz with linear growth on compact subsets
+      of the interior.
+    conditions: "C1, C2"
+    antecedents: [M1]
+    evidence:
+      - type: derivation
+        anchor: >-
+          Smoothness of P_x, x*, and s/||s|| on the interior + standard SDE
+          existence/uniqueness on manifolds, exhausting S^7_+ by compact sets.
+        citation_keys: [hsu-2002-stochastic-analysis-manifolds, stroock-2000-introduction-analysis-paths]
+    body_sections: ["Well-Posedness"]
+  - id: P2
+    statement: >-
+      (Theorem 2, Survival probability) For zero drift and isotropic diffusion,
+      the survival probability decays as S(t,x) ~ C(x) exp(-lambda_{D,1}
+      sigma_0^2 t / 2) with lambda_{D,1} = 112; higher noise sigma_0 and
+      proximity to the boundary (smaller prefactor C(x)) both accelerate
+      absorption.
+    conditions: "C1, C2, C3"
+    antecedents: [P1, M2, m_eigenvalue]
+    evidence:
+      - type: derivation
+        anchor: "Dirichlet-eigenbasis expansion of the backward heat equation; leading-eigenfunction asymptotics."
+      - type: computed
+        anchor: "Survival probability table (Table 9) and tau_char ≈ 1.78 at sigma_0 = .1."
+    falsifier: "If absorption rate is not proportional to sigma_0^2, or the leading eigenvalue is not 112, Theorem 2 fails."
+    body_sections: ["Survival Probability", "Survival Time Estimates"]
+  - id: P2a
+    statement: >-
+      (Corollary to absorption analysis) Under pure Brownian motion (no signal
+      drift), absorption is certain — every observer eventually loses at least
+      one perceptual dimension for every brand — so signal maintenance is not
+      optional but mathematically necessary.
+    conditions: "C1, C2"
+    antecedents: [P2]
+    evidence:
+      - type: derivation
+        anchor: "Recurrence of Brownian motion on S^7 + Borel-Cantelli: A(x) = 1 for all x in S^7_+."
+    body_sections: ["Absorption Probability as a Function of Position"]
+  - id: P3
+    statement: >-
+      (Theorem 3, Mixing time) Conditioned on survival, the process mixes to a
+      quasi-stationary distribution pi_QSD ∝ phi_1 with mixing time governed by
+      the Dirichlet spectral gap lambda_{D,2} - lambda_{D,1} = 48, which is
+      FASTER than the full-sphere mixing time (gap 7): confinement to the deep
+      interior of the octant shrinks the explorable volume.
+    conditions: "C1, C2"
+    antecedents: [P1, P2, m_eigenvalue]
+    evidence:
+      - type: derivation
+        anchor: "Spectral-gap control of QSD mixing; degree-8 vs degree-10 odd-in-every-coordinate eigenfunctions."
+        citation_keys: [cattiaux-2009-quasistationary-distributions-diffusion]
+    falsifier: "If the second odd-parity Dirichlet eigenfunction is not degree 10, the gap (and the faster-mixing claim) changes."
+    body_sections: ["Mixing Time on S^7_+", "Mixing Time and Non-Ergodicity"]
+  - id: P4
+    statement: >-
+      (Theorem 4, Non-ergodicity) For the absorbed process with zero drift, the
+      time average of any bounded observable with nonzero spatial mean converges
+      to 0 almost surely while the ensemble average is generically nonzero —
+      time and ensemble averages diverge with probability 1. Ensemble surveys
+      therefore systematically overstate any individual observer's time-averaged
+      perception (brand health is not brand power).
+    conditions: "C1, C2"
+    antecedents: [P2a, P3]
+    evidence:
+      - type: derivation
+        anchor: >-
+          Absorption at finite tau freezes the time-integral numerator while the
+          1/T factor sends the time average to 0; ensemble mean is nonzero by
+          assumption.
+        citation_keys: [collet-2013-quasistationary-distributions-markov]
+    falsifier: "If absorption were not almost sure (no absorbing boundary), the time and ensemble averages would coincide."
+    body_sections: ["Non-Ergodicity Theorem", "The Ergodicity Coefficient"]
+  - id: P4a
+    statement: >-
+      (Conditional non-ergodicity corollary) With active drift, the time average
+      is 0 with probability (1 - p_inf) and equals the QSD mean with probability
+      p_inf; it equals the ensemble average only when p_inf = 1 (no absorption).
+      Brands with higher absorption risk are thus more non-ergodic — their
+      ensemble surveys are less representative of individual trajectories.
+    conditions: "C1, C2"
+    antecedents: [P4]
+    evidence:
+      - type: derivation
+        anchor: "Mixture decomposition of the long-run time average over the survival/absorption event."
+    body_sections: ["Conditional Non-Ergodicity with Drift"]
+  - id: P5
+    statement: >-
+      (Proposition 5, Recovery time scaling) Under the semi-permeable boundary
+      model (reflecting drift on the open near-death zone (0, epsilon), absorbing
+      at 0), the expected return time to threshold epsilon from residual
+      perception delta scales as tau_return(delta) ~ C_R / delta^2: halving the
+      distance to zero quadruples recovery time — a gravitational-well effect
+      near total loss.
+    conditions: "C1, C2"
+    antecedents: [P2, m_eigenvalue]
+    evidence:
+      - type: derivation
+        anchor: >-
+          One-dimensional diffusion scale-function / speed-measure hitting-time
+          analysis with degenerate drift kappa_R(epsilon - y)/y.
+        citation_keys: [collet-2013-quasistationary-distributions-markov, casteras-2024-stickyreflecting-diffusion-as]
+      - type: case_evidence
+        anchor: "Tylenol (large delta, high epsilon) recovers fast; BP (small delta, weak reserves) does not — illustrative, not a precise prediction."
+        citation_keys: [coombs-2007-protecting-organization-reputations]
+    falsifier: "Falsified if documented brand-crisis recovery times do not scale ~1/delta^2 in residual-dimension severity, controlling for response strategy and pre-crisis profile."
+    body_sections: ["Recovery Time Scaling", "Application: Tylenol vs. BP"]
+  - id: P6
+    statement: >-
+      (Proposition 6, D/A Goldilocks zone) The designed/ambient ratio r trades
+      absorption against exploration: too little design (r < .55) risks
+      absorption, too much (r > .65) suppresses the stochastic exploration that
+      crystallizes perception. A sensitivity analysis at the representative
+      drift-strength midpoint recovers r* in [.55, .65], consistent with the
+      empirically observed optimal D/A range — a calibration that is coherent
+      with the observed interval, not a unique first-principles derivation.
+    conditions: "C1, C2, C3"
+    antecedents: [M3, m_da_zone]
+    evidence:
+      - type: computed
+        anchor: "gamma(r) = 0 survival bound + crystallization upper bound; Table 5 drift-strength sensitivity sweep."
+    falsifier: "Falsified if the empirically optimal D/A ratio across 50+ brands does not concentrate in [.55, .65], or varies with sigma_0 unpredictably."
+    body_sections: ["The Optimal Range", "Deriving the D/A Goldilocks Zone"]
+  - id: P7
+    statement: >-
+      (Proposition 7, Absorption ordering) For the five case-study brands the
+      drift-adjusted absorption ordering Tesla > Erewhon > IKEA > Patagonia >
+      Hermès nearly matches the SBT coherence grading (C- > B- > B+ > A- > A+),
+      with one inversion: IKEA (A-) outranks Patagonia (B+) in risk because
+      identity coherence generates stronger directional drift than signal
+      coherence — coherence TYPE, not the letter grade, determines dynamical
+      stability.
+    conditions: "C1, C2"
+    antecedents: [M4, m_brand_dpartial, P2]
+    evidence:
+      - type: computed
+        anchor: "Distance-from-boundary ordering (Table 6) reordered by coherence-conditional drift strength (Table 8)."
+    falsifier: "Falsified if observed frequency of dimensional collapse in tracking data does not rank Tesla > Erewhon > IKEA > Patagonia > Hermès, controlling for encounter rate and noise."
+    body_sections: ["Absorption Risk Ordering"]
+  - id: P8
+    statement: >-
+      The dynamical framework formalizes the vectorized-vs-rasterized
+      distinction: a single snapshot X_t carries no information about the
+      trajectory's velocity, drift direction, boundary proximity, or absorption
+      probability — these are trajectory-level quantities, so managing a brand
+      is a trajectory-optimization problem, not a position-optimization problem.
+    conditions: "C1, C2"
+    antecedents: [P4, P7]
+    evidence:
+      - type: analytic
+        anchor: "Snapshot X_t determines none of dot-X_t, d_partial(X_t), or P[tau < t+T]."
+    body_sections: ["The Vectorized-Rasterized Distinction Revisited", "Implications for Brand Strategy"]
+
+# ============================================================================
+# Findings — what the computed results demonstrate
+# ============================================================================
+findings:
+  - id: F1
+    statement: >-
+      No prior brand-dynamics model combines a multi-dimensional metric state
+      space, Riemannian geometry, absorbing boundaries, and conditional
+      non-ergodicity simultaneously; the SDE on S^7_+ does, recovering the
+      Sriram et al. (2007) scalar AR(1) dynamics as the low-dimensional,
+      no-boundary limit and differing structurally from the Netzer et al. (2008)
+      finite-state resurrecting HMM.
+    type: "modeling_gap_closed"
+    source_measurements: [m_eigenvalue]
+    generating_method: M2
+    antecedents: [P1, P2, P3, P4]
+    citation_role_in_paper: "positioning_against_prior_art"
+    body_sections: ["Introduction (Table 1 comparison)", "Contributions"]
+  - id: F2
+    statement: >-
+      Coherence type is the determinant of absorption-risk ordering: the
+      near-match between the dynamical absorption ordering and the SBT coherence
+      grades — with the single IKEA/Patagonia inversion — is, to the author's
+      knowledge, the first formal derivation within SBT connecting coherence type
+      to dynamical stability from first principles.
+    type: "first_formal_derivation"
+    source_measurements: [m_brand_dpartial]
+    generating_method: M4
+    antecedents: [P7]
+    citation_role_in_paper: "primary_evidence_for_P7"
+    body_sections: ["Absorption Risk Ordering"]
+
+# ============================================================================
+# Alternative explanations — rivals the non-ergodicity claim must clear
+# ============================================================================
+alternative_explanations:
+  - id: A1
+    statement: >-
+      The non-ergodicity result is merely a restatement of Peters' (2019)
+      ergodicity-economics claim and stands or falls with it.
+    rules_out_required: [P4]
+    ruled_out_by: [P4]
+    rules_out_status: "rejected"
+    reasoning: >-
+      Peters' argument depends on multiplicative dynamics in unbounded wealth
+      space; Theorem 4 depends on absorbing boundaries on a compact manifold
+      (finite-time killing). The machinery — Dirichlet spectral gap, stopping
+      time tau, QSD — predates and is independent of Peters' economic model, and
+      time-ensemble divergence for absorbed processes is a standard
+      quasi-stationary-distribution result.
+    body_sections: ["The Time-Average Perspective"]
+  - id: A2
+    statement: >-
+      The non-ergodicity is just classical Birkhoff non-ergodicity (a
+      measure-preserving transformation failing to be ergodic).
+    rules_out_required: [P4]
+    ruled_out_by: [P4]
+    rules_out_status: "rejected"
+    reasoning: >-
+      Birkhoff's theorem requires a measure-preserving transformation, but
+      absorption removes probability mass from S^7_+, violating
+      measure-preservation; the mechanism is boundary-absorption, distinct from
+      both Birkhoff and Peters.
+    body_sections: ["The Time-Average Perspective"]
+
+# ============================================================================
+# Limitations — honest scope
+# ============================================================================
+limitations:
+  - id: L1
+    statement: >-
+      Headline theorems assume isotropic diffusion and scalar, constant
+      parameters (kappa, alpha, sigma_0, lambda_enc); anisotropic Sigma and
+      dimension-specific kappa_i / kappa_R(i) change absorption-risk profiles
+      (and could alter the Proposition 7 ordering) but are only sketched.
+    severity: "scope-bounding"
+    affects: [P2, P5, P7]
+    body_sections: ["Limitations (items 1, 2, 6)", "Encounter Modes and Diffusion Anisotropy"]
+  - id: L2
+    statement: >-
+      Observers are modeled independently; real observers influence each other
+      (word-of-mouth, social amplification), and positive correlation would raise
+      aggregate variance and accelerate absorption. A full treatment needs
+      interacting / mean-field SDEs on S^7_+.
+    severity: "scope-bounding"
+    affects: [P4, P7]
+    body_sections: ["Limitations (item 3)"]
+  - id: L3
+    statement: >-
+      phi_1 = prod_i x_i is treated as the leading Dirichlet eigenfunction
+      candidate, but formal minimality on the non-smooth (cornered) octant
+      boundary, and regularity of the higher eigenfunctions used for the gap,
+      are reserved for specialist spectral-geometry verification.
+    severity: "rigor-gap"
+    affects: [P2, P3]
+    body_sections: ["The Dirichlet Laplacian on S^7_+", "Limitations (item 5)"]
+  - id: L4
+    statement: >-
+      All five case studies are global English-language consumer brands; the
+      absorption ordering and drift-diffusion parameters may not generalize to
+      B2B, regional/East-Asian, or service-dominant brands without recalibration,
+      and the SDE parameters are not yet empirically estimated.
+    severity: "scope-bounding"
+    affects: [P6, P7]
+    body_sections: ["Limitations (item 7)", "Empirical Identification Strategy"]
+
+# ============================================================================
+# Cross-paper engagement
+# ============================================================================
+corpus_precedents:
+  - paper_key: 2026a
+    relationship: refines
+    spine_nodes: [P2a, P4, P6, P7]
+    note: >-
+      Supplies the dynamical proof of SBT's qualitative claims — absorbing
+      negative conviction, the ergodicity coefficient epsilon, signal decay, and
+      the D/A Goldilocks zone (paper PF2/F4). R6 turns SBT's static framework
+      into equations of motion.
+  - paper_key: 2026d
+    relationship: extends
+    spine_nodes: [C1, M1, O2]
+    note: >-
+      R1's geometry (Aitchison metric, Fisher-Rao, octant volume pi^4/768, the
+      spectral sensitivity index) is taken as given; R6 adds the dynamics that
+      evolve states within that metric structure (its dynamical completion).
+  - paper_key: 2026e
+    relationship: extends
+    spine_nodes: [P8]
+    note: >-
+      R2's static metameric loss is extended to dynamics: scalar projections of
+      X_t lose velocity, drift, and boundary-proximity information.
+  - paper_key: 2026f
+    relationship: extends
+    spine_nodes: [P3]
+    note: >-
+      R3's fuzzy cohort boundaries gain a dynamical mechanism — observers drift
+      between cohorts at rate sigma_0, making cohort membership stochastic.
+  - paper_key: 2026k
+    relationship: applies
+    spine_nodes: [P6]
+    note: >-
+      The Goldilocks zone supplies R7 the prior question — what fraction of
+      signal budget should be designed vs ambient — beneath R7's allocation of
+      the designed direction.
+  - paper_key: 2026o
+    relationship: applies
+    spine_nodes: [P4, P4a]
+    note: >-
+      R9 applies Theorem 4 to cross-sectional tracking, quantifying the
+      overestimation bias in population-average brand health as a function of
+      epsilon.
+  - paper_key: 2026s
+    relationship: applies
+    spine_nodes: [P5, P7]
+    note: >-
+      R12 turns the Proposition 7 ordering and the 1/delta^2 recovery scaling
+      into a crisis-prediction instrument (pre-crisis coherence grade as a
+      sufficient statistic).
+
+# ============================================================================
+# External anchor literature (keys verified against [internal path removed] + substrate)
+# ============================================================================
+external_anchors:
+  - {citation_key: hsu-2002-stochastic-analysis-manifolds, role: method_foundation, spine_nodes: [P1, M1], note: "Brownian motion + SDE existence on Riemannian manifolds"}
+  - {citation_key: stroock-2000-introduction-analysis-paths, role: method_foundation, spine_nodes: [P1, M1], note: "Analysis of paths on a Riemannian manifold"}
+  - {citation_key: aydogdu-2017-opinion-dynamics-general, role: closest_prior_art, spine_nodes: [M1], note: "Opinion dynamics on a compact manifold — the no-boundary base R6 extends"}
+  - {citation_key: cattiaux-2009-quasistationary-distributions-diffusion, role: method_foundation, spine_nodes: [P3], note: "QSD existence for absorbed diffusions on compact domains"}
+  - {citation_key: collet-2013-quasistationary-distributions-markov, role: method_foundation, spine_nodes: [P4, P5], note: "QSD theory; one-dimensional hitting times; time/ensemble divergence is standard"}
+  - {citation_key: peters-2019-ergodicity-problem-economics, role: contrast_anchor, spine_nodes: [P4, A1], note: "Ergodicity economics — the multiplicative framing R6 is independent of"}
+  - {citation_key: doctor-2020-economists-views-ergodicity, role: contrast_anchor, spine_nodes: [A1], note: "Economists' skepticism toward Peters — R6 stands independent of the debate"}
+  - {citation_key: sriram-2007-monitoring-dynamics-brand, role: prior_art_limit_case, spine_nodes: [F1], note: "Scalar AR(1) brand-equity state — recovered as R6's low-dim no-boundary limit"}
+  - {citation_key: netzer-2008-hidden-markov-model, role: prior_art_contrast, spine_nodes: [F1], note: "Finite-state resurrecting HMM — closest marketing prior art, structurally different"}
+  - {citation_key: bass-1969-new-product-growth, role: terminological_contrast, spine_nodes: [F1], note: "Bass diffusion — same label, different object (scalar adoption ODE)"}
+  - {citation_key: nerlove-1962-optimal-advertising-policy, role: generalized_model, spine_nodes: [P2], note: "Goodwill-decay model generalized to S^7_+ via the decay drift"}
+  - {citation_key: casteras-2024-stickyreflecting-diffusion-as, role: method_foundation, spine_nodes: [P5], note: "Sticky-reflecting diffusion as Wasserstein gradient flow — variational basis for the semi-permeable boundary"}
+  - {citation_key: coombs-2007-protecting-organization-reputations, role: case_evidence, spine_nodes: [P5], note: "Crisis communication literature underpinning the Tylenol/BP illustration"}
+  - {citation_key: keller-1993-conceptualizing-measuring-managing, role: gap_motivation, spine_nodes: [P8], note: "CBBE — temporal brand-building invoked without a formal dynamical model"}
+  - {citation_key: aaker-1991-managing-brand-equity, role: gap_motivation, spine_nodes: [P8], note: "Brand loyalty as earned over time — no equations of motion"}
+  - {citation_key: hegselmann-2002-opinion-dynamics-bounded, role: flat_space_contrast, spine_nodes: [M1], note: "Bounded-confidence opinion dynamics in flat Euclidean space"}
+  - {citation_key: molenaar-2004-manifesto-psychology-as, role: convergent_anchor, spine_nodes: [P4], note: "Idiographic (person-specific) critique extended to a specific manifold dynamical system"}
+
+# ============================================================================
+# Open questions / boundary edges
+# ============================================================================
+open:
+  - "Empirical calibration of sigma_0, kappa, alpha lambda_enc from longitudinal panel data (quasi-random signal-exposure instruments) — the model is not yet estimated. (L4)"
+  - "Anisotropic Sigma and dimension-specific kappa_i / kappa_R(i): does relaxing isotropy change the Proposition 7 absorption ordering? (L1)"
+  - "Interacting / mean-field SDEs on S^7_+ for correlated observer trajectories, and mean-field-game competition among brands sharing an observer population. (L2)"
+  - "Specialist verification of phi_1 minimality and higher-eigenfunction regularity on the cornered octant boundary. (L3)"
+  - "Optimal-control formulation: which signal strategy minimizes absorption risk subject to a budget constraint?"
+
+# ============================================================================
+# Spine changelog — append-only
+# ============================================================================

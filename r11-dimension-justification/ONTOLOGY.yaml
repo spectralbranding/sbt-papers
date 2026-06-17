@@ -1,0 +1,32 @@
+# ONTOLOGY.yaml module - 2026r
+#
+# Per-paper ontology module per [internal path removed]
+# §"ONTOLOGY.yaml schema (v0.1)". owns = terms THIS paper introduces (unique
+# authority); imports = terms owned by other modules it uses (reference only).
+# Linked into the substrate `terms` graph by build_ontology.py; rendered per-paper
+# by render_paper_glossary.py. Bootstrapped 2026-06-13 from per-paper term
+# extraction; definitions paraphrase each paper's own definitional text.
+
+paper_key: 2026r
+schema_version: 0.1
+
+owns:
+  - term_key: meaning-channel
+    label: "Meaning Channel"
+    canonical_form: "meaning channel"
+    definition: "A pathway, rooted in a distinct academic tradition, through which a brand's emissions are interpreted by an observer to form a component of perception; the unit by which SBT dimensions are counted (bandwidth of transmission), as distinct from perceptual factors."
+    first_section: "2.1 The Meaning-Channel Principle"
+  - term_key: meaning-channel-vs-content-domain
+    label: "Meaning-Channel versus Content-Domain Distinction"
+    canonical_form: "meaning-channel versus content-domain distinction"
+    definition: "A principled stopping rule that separates genuine meaning-transmission channels (which count as dimensions) from content domains (processed through existing channels), preventing indefinite dimensional inflation."
+    first_section: "5"
+
+imports:
+  - {term_key: spectral-brand-theory}
+  - {term_key: spectral-dimensions}
+  - {term_key: observer-spectral-profile}
+  - {term_key: cohort}
+
+refines: []
+

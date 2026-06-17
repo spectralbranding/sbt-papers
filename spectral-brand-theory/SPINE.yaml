@@ -1,0 +1,714 @@
+# SPINE.yaml — Spectral Brand Theory (2026a / SBT root paper)
+#
+# RETROFIT spine: extracted descriptively from the COMPLETED paper.md
+# ([internal path removed], Working Paper v3.3.0), per the
+# SPINE-for-all-active-canonical project (D4 in
+# [internal path removed]). It was NOT
+# authored generatively before prose. Reviewers should evaluate it as a
+# faithful backbone description of the foundational SBT paper — the corpus
+# root that the R-paper companions (2026b..2026ad) formalize.
+#
+# Schema v0.2 ([internal path removed] §"Schema v0.2"):
+# observations / methods / measurements / findings are first-class because
+# the paper carries an illustrative proof-of-concept (five-brand LLM
+# application + a cross-model convergence table + per-cohort confidence
+# scores). Those are author-produced analytical outputs, not consumer data,
+# and the paper is explicit that the four mechanisms are CANDIDATES, not
+# validated findings — the spine records them at that epistemic level.
+
+spine_version: "0.2"
+spine_doc_version: "0.1.0"        # retrofit lock 2026-06-14
+paper_key: "2026a"
+provenance: retrofit
+title: >-
+  Spectral Brand Theory: A Computational Framework for Multi-Dimensional
+  Brand Perception
+target_venue_primary: "Working paper (Zenodo; corpus conceptual hub)"
+status: >-
+  Retrofit backbone spine extracted from the completed paper.md (Working
+  Paper v3.3.0). The paper is the SBT corpus's conceptual hub; companion
+  R-papers supply the formal derivations its propositions state informally.
+
+thesis: |
+  Brand perception is irreducibly observer-dependent: there is no single
+  brand-in-itself with properties, only a shared signal environment and
+  heterogeneous observers who each collapse it into a structurally different
+  conviction. Spectral Brand Theory decomposes brand signals across eight
+  perceptual dimensions (Semiotic, Narrative, Ideological, Experiential,
+  Social, Economic, Cultural, Temporal), defines each observer cohort by a
+  formal spectral profile (spectrum, weights, tolerances, priors, identity
+  gate, encounter mode), and models perception as a pipeline — signal
+  emission to observer filtering to probabilistic perception-cloud formation
+  to threshold-based conviction collapse to re-collapse on new evidence.
+  Single-score brand measurement (NPS, equity indices) collapses this
+  multi-dimensional, observer-mediated structure and destroys the very
+  information that explains why observers form irreconcilable perceptions of
+  the same brand. SBT formalizes the heterogeneous observer that
+  customer-based brand equity theory acknowledged but never parameterized,
+  yields five testable structural propositions, and is computationally
+  implementable as a structured LLM prompt sequence. An illustrative
+  five-brand proof-of-concept surfaces four candidate mechanisms (structural
+  absence, a five-type coherence taxonomy, asymmetric conviction resilience,
+  and brand-power/brand-health independence); these are candidates for
+  empirical investigation, not validated findings, and human-subject
+  validation is the priority next step.
+
+# ============================================================================
+# Boundary conditions — the validated scope of the framework (paper §5.6)
+# ============================================================================
+boundary_conditions:
+  - id: C1
+    statement: >-
+      Brand type: SBT is developed against corporate / commercial consumer
+      brands that emit multi-dimensional signals to observer cohorts in
+      competitive markets. Place, person, and NGO brands are structurally
+      different and require recalibration before deployment.
+    observable: "Brand is a commercial entity controlling semiotic + experiential emission across the eight dimensions."
+    excludes: "Place brands, person brands, NGO brands (untested scope)."
+    body_sections: ["§5.6 Boundary Conditions — Brand type"]
+  - id: C2
+    statement: >-
+      Observer cohort specification: the perception pipeline is well-defined
+      only when cohorts can be characterized by measurable spectral weight
+      vectors (empirically discoverable via conjoint / behavioral / spectral
+      clustering); the framework is under-specified for unbounded one-off
+      singleton observers.
+    observable: "Recurring observer types with stable, measurable spectral profiles."
+    excludes: "Unique one-off observers with no recurring cohort; singleton LLM observers need the 2026y multi-observer treatment."
+    body_sections: ["§5.6 Boundary Conditions — Observer cohort specification"]
+  - id: C3
+    statement: >-
+      Measurement instrument: confirmatory use requires a validated
+      psychometric instrument (PRISM-B for AI observers; PRISM-H under
+      development for humans). Absent it, human-observer weights remain expert
+      estimates, not measured quantities.
+    observable: "A validated dimensional-scoring instrument exists for the observer class."
+    excludes: "Confirmatory human-observer claims before PRISM-H validation."
+    body_sections: ["§5.6 Boundary Conditions — Measurement instruments"]
+  - id: C4
+    statement: >-
+      Temporal scale: the static eight-dimensional profile is well-defined at
+      a moment; dynamic claims require the SDE machinery of the companions and
+      a cohort-stable measurement window of roughly one to two quarters.
+    observable: "Measurement window calibrated to the target brand's signal-event frequency."
+    excludes: "Dynamic / velocity claims from single snapshots or mis-scaled windows."
+    body_sections: ["§5.6 Boundary Conditions — Temporal scale"]
+
+# ============================================================================
+# Observations — the illustrative proof-of-concept run as analytical events
+# ============================================================================
+observations:
+  - id: O1
+    statement: >-
+      Five brands spanning the brand-architecture space (Patagonia, Tesla,
+      IKEA, Hermès, Erewhon) were analyzed through SBT's six-module analytical
+      pipeline using Claude Opus 4.6 as an analytical instrument (not a
+      synthetic respondent), producing structured YAML signal inventories,
+      cohort profiles, perception clouds, coherence scorecards, and
+      re-collapse simulations.
+    raw_data_pointer: "paper §3 Proof-of-Concept Demonstration; Tables 4-11"
+    instrument: "Claude Opus 4.6 (Anthropic) + structured prompt + YAML templates"
+    timestamp: "2026"
+    body_sections: ["§3.1 Design", "§3.2 Analytical Pipeline"]
+  - id: O2
+    statement: >-
+      A full cross-model replication of the five-brand pipeline was conducted
+      with Gemini 3.1 Pro (Google) to test for model-specific bias, recording
+      each brand's coherence type and letter grade under both models.
+    raw_data_pointer: "paper Table 5 (cross-model convergence)"
+    instrument: "Gemini 3.1 Pro (Google) — second analytical instrument"
+    timestamp: "2026"
+    body_sections: ["§3.4 Limitations of the Illustrative Approach"]
+  - id: O3
+    statement: >-
+      Per-cohort perception clouds with confidence scores were generated for
+      Tesla, including an evidence-free Progressive Boycotter (experiential
+      weight .03, confidence .82) and an evidence-rich Tech Loyalist
+      (experiential weight .15, confidence .78).
+    raw_data_pointer: "paper §4.3; Table 10"
+    instrument: "SBT pipeline Modules 2-3-6 (cloud prediction + re-collapse simulation)"
+    timestamp: "2026"
+    body_sections: ["§4.3 Asymmetric Conviction Resilience"]
+
+# ============================================================================
+# Methods — how the illustrative outputs are produced and validated
+# ============================================================================
+methods:
+  - id: M1
+    statement: >-
+      The six-module analytical pipeline: (1) Brand Decomposition, (2)
+      Observer Mapping, (3) Cloud Prediction, (4) Coherence Audit (seven-metric
+      scorecard + A+..F grade + coherence-type classification), (5) Emission
+      Strategy, (6) Re-collapse Simulation; each module's structured YAML
+      output feeds the next.
+    type: "structured_llm_pipeline"
+    inputs: ["public brand information", "SBT construct templates"]
+    outputs: ["per-brand signal inventory, cohort profiles, clouds, scorecard, disruption simulation"]
+    code_anchor: "paper §3.2 (prompt kit available from corresponding author)"
+    body_sections: ["§3.2 Analytical Pipeline"]
+  - id: M2
+    statement: >-
+      Insight Validation Protocol: each surfaced insight is accepted only if
+      it simultaneously satisfies four criteria — non-obvious, dimensionally
+      specific, actionable, observer-differentiated — assessed by the
+      framework's author.
+    type: "criterion_screen"
+    inputs: ["module outputs"]
+    outputs: ["accepted vs rejected insights"]
+    code_anchor: "paper §3.3 Insight Validation Protocol"
+    body_sections: ["§3.3 Insight Validation Protocol"]
+  - id: M3
+    statement: >-
+      Cross-model inter-rater reliability: run the identical pipeline under a
+      second independent analytical instrument (Gemini 3.1 Pro) and compare
+      structural classifications (coherence type + grade), treating
+      convergence as inter-coder agreement.
+    type: "inter_rater_replication"
+    inputs: ["five-brand pipeline outputs from two models"]
+    outputs: ["per-brand convergence verdict"]
+    code_anchor: "paper §3.4"
+    body_sections: ["§3.4 Limitations of the Illustrative Approach"]
+
+# ============================================================================
+# Measurements — derived values from the illustrative run (paper is explicit
+# these are within-analysis, expert-estimated, not empirically measured)
+# ============================================================================
+measurements:
+  - id: m_convergence
+    statement: >-
+      Across all five brands, Claude Opus 4.6 and Gemini 3.1 Pro produced
+      IDENTICAL coherence-type and letter-grade classifications (Tesla
+      Incoherent/C-, Hermès Ecosystem/A+, Patagonia Identity/B+, IKEA
+      Signal/A-, Erewhon Experiential-asymmetry/B-); model-sensitive variation
+      was confined to cohort granularity and D/A estimates (within 10-15
+      percentage points).
+    source_observations: [O2]
+    generating_method: M3
+    value: "5 of 5 brands — identical structural classification across two models"
+    units: "agreement count out of 5"
+    body_sections: ["§3.4", "Table 5"]
+  - id: m_insights
+    statement: >-
+      Across five brands, 25 insights were assessed against the four
+      validation criteria; all 25 were judged to satisfy all four
+      (author-assessed; independent blind practitioner evaluation noted as a
+      stronger future test).
+    source_observations: [O1]
+    generating_method: M2
+    value: "25 of 25 insights accepted (author-assessed)"
+    units: "count out of 25"
+    body_sections: ["§3.3"]
+  - id: m_tesla_asymmetry
+    statement: >-
+      The evidence-free Tesla Boycotter held a stronger conviction (confidence
+      .82) than the evidence-rich Tesla Loyalist (confidence .78), despite the
+      Loyalist's far higher experiential weight (.15 vs .03).
+    source_observations: [O3]
+    generating_method: M1
+    value: "Boycotter .82 > Loyalist .78 (within-Tesla calibrated, ordinal-defensible)"
+    units: "cloud confidence scores (0-1)"
+    body_sections: ["§4.3", "Table 10"]
+
+# ============================================================================
+# Propositions — the theoretical backbone (architecture P1.* + the five
+# formal propositions PF1..PF5 from paper §2.6)
+# ============================================================================
+propositions:
+  - id: P1
+    statement: >-
+      A brand is not an object with properties but a perceptual process with
+      observers; "the brand" as commonly understood is always already a
+      collapse — a conviction assembled in an observer's mind from whichever
+      signals they could perceive through their spectral profile. These
+      convictions are not errors against a true brand; they are the only
+      brands that exist.
+    conditions: ""
+    antecedents: []
+    evidence:
+      - type: analytic
+        anchor: "Epistemic foundation; astronomical/constellation metaphor (observer-independent in optics but observer-co-created for brands)."
+      - type: citation
+        anchor: "Meaning arises in the interpreter, not the sign; equity lives in the customer's mind."
+        citation_keys: []
+    body_sections: ["§2.1 Epistemic Foundation"]
+  - id: P2
+    statement: >-
+      Brand signals decompose across eight independent perceptual dimensions —
+      Semiotic, Narrative, Ideological, Experiential, Social, Economic,
+      Cultural, Temporal — each a distinct channel carrying information the
+      others cannot. The dimensions measure brand OUTPUT (what is emitted and
+      how it is perceived), not internal organizational process.
+    conditions: ""
+    antecedents: [P1]
+    evidence:
+      - type: analytic
+        anchor: "Eight-dimension synthesis from prior frameworks (Kapferer physique/culture/relationship; Aaker functional/emotional/self-expressive; Holt cultural branding)."
+      - type: corpus
+        anchor: "Independence and completeness/necessity of d=8 are proved formally in the R11 companion."
+    body_sections: ["§2.2 Signal Architecture: Eight Perceptual Dimensions"]
+  - id: P3
+    statement: >-
+      Each signal carries a source type (designed / ambient / synthetic), an
+      emission type (positive / null / structural absence), and a strength
+      (0-5). The designed/ambient (D/A) ratio is a diagnostic metric: a brand
+      whose perception is predominantly ambient (D/A < .40) faces a structural
+      problem no communication strategy can solve, because its story is being
+      written by others.
+    conditions: ""
+    antecedents: [P2]
+    evidence:
+      - type: analytic
+        anchor: "Three-property signal typology; extends economic signaling theory from unidimensional quality to multi-dimensional perceptual architecture."
+    body_sections: ["§2.2 (signal properties + D/A ratio)"]
+  - id: P4
+    statement: >-
+      Each observer cohort is defined by a formal spectral profile — spectrum
+      (which dimensions are visible), weights (priority per dimension, summing
+      to 1), tolerances (accepted inconsistency), priors (stored convictions),
+      identity gate (recognition), and encounter mode (direct / mediated /
+      mixed). This converts "different people perceive differently" from a
+      qualitative observation into a parameterized scoring function.
+    conditions: "C2"
+    antecedents: [P1, P2]
+    evidence:
+      - type: analytic
+        anchor: "Structurally analogous to multi-attribute attitude models + INDSCAL individual dimension weighting + elimination-by-aspects for the gate mechanism."
+    body_sections: ["§2.3 Observer Model: Spectral Profiles"]
+  - id: P5
+    statement: >-
+      A cohort is a CLUSTER IN SPECTRAL-PROFILE SPACE, not a demographic
+      segment. Demographic variables (age, income, geography) are metadata that
+      may correlate with but do not determine perceptual behavior; two
+      observers sharing every demographic attribute may belong to different
+      cohorts if their profiles diverge. Cohort membership is dynamic: signal
+      events physically redistribute observers across cohort boundaries.
+    conditions: "C2"
+    antecedents: [P4]
+    evidence:
+      - type: analytic
+        anchor: "Addresses Yankelovich-Meer critique of demographic segmentation; builds on latent-class segmentation methodology."
+      - type: corpus
+        anchor: "Formal cohort-boundary fuzziness in high-dimensional perception space derived in the R3 companion (concentration of measure)."
+    body_sections: ["§2.3 (cohort vs segment)"]
+  - id: P6
+    statement: >-
+      Brand perception follows a three-stage epistemic pipeline: (1) cloud
+      formation — perceived signals cluster, weighted by the profile, into a
+      probabilistic perception cloud with valence and confidence; (2)
+      conviction collapse — sufficient consistent evidence collapses the cloud
+      into a stable conviction at an observer-specific threshold; (3)
+      re-collapse — strong contradicting evidence dissolves the conviction,
+      which is then rebuilt from surviving + crystallized + new signals, never
+      patched.
+    conditions: ""
+    antecedents: [P4]
+    evidence:
+      - type: analytic
+        anchor: "Quantum-measurement metaphor (structural, not mathematical); cloud formation draws on expertise/familiarity + affect-precedes-cognition findings."
+      - type: corpus
+        anchor: "Re-collapse adapted from the atom-cloud-fact epistemological architecture of the Alibi companion (2026b)."
+    body_sections: ["§2.4 Cloud Formation and Conviction Collapse"]
+  - id: P7
+    statement: >-
+      Coherence is a STRUCTURAL property — the degree to which different
+      cohorts' convictions are compatible (not identical) — not the consistency
+      of messaging. It is measured by a seven-metric spectral scorecard
+      (dimensional coverage, gate permeability, cloud coherence, collapse
+      strength, re-collapse resistance, emission efficiency, D/A ratio) yielding
+      an A+..F grade.
+    conditions: ""
+    antecedents: [P5, P6]
+    evidence:
+      - type: analytic
+        anchor: "Coherence as cross-cohort cloud compatibility; signal vs ecosystem coherence both score high but diverge structurally."
+    body_sections: ["§2.5 Coherence as Structural Property"]
+  - id: PF1
+    statement: >-
+      (Formal Proposition 1 — Observer heterogeneity) Different observer
+      cohorts exposed to identical brand signal environments form
+      systematically different brand convictions as a function of their
+      spectral-profile differences (weights, tolerances, priors, encounter
+      mode) — profile-predictable divergence, not random variation.
+    conditions: ""
+    antecedents: [P4, P5]
+    evidence:
+      - type: analytic
+        anchor: "Formalizes the heterogeneity Keller's CBBE recognized but did not parameterize."
+      - type: citation
+        anchor: "Identical ads produce different meanings across target/non-target groups; 'purposeful polysemy' is observed spectral metamerism."
+        citation_keys: []
+    falsifier: >-
+      Falsified if cohorts with measurably different profiles produce conviction
+      distributions that do not differ after controlling for signal exposure —
+      i.e. profile predicts no incremental variance beyond demographics.
+    body_sections: ["§2.6 Proposition 1"]
+  - id: PF2
+    statement: >-
+      (Formal Proposition 2 — Non-ergodicity of perception) The temporal
+      sequence in which brand signals are encountered affects the resulting
+      conviction even when the signal set is identical, because signals compound
+      multiplicatively through priors rather than summing additively.
+    conditions: ""
+    antecedents: [P6]
+    evidence:
+      - type: analytic
+        anchor: "Ergodicity-economics analogy (ensemble vs time averages diverge in multiplicative path-dependent processes); belief-adjustment order effects."
+      - type: corpus
+        anchor: "Formal non-ergodic SDE dynamics + absorbing states derived in the R6/R9 companions."
+    falsifier: >-
+      Falsified if matched cohorts exposed to the same signals in different
+      temporal orders converge on statistically indistinguishable convictions.
+    body_sections: ["§2.6 Proposition 2"]
+  - id: PF3
+    statement: >-
+      (Formal Proposition 3 — Structural absence as signal) Designed
+      restriction of signal emission in specific dimensions generates perceived
+      value that cannot be replicated by signal addition in other dimensions;
+      restriction on one dimension produces a signal on a different dimension.
+    conditions: ""
+    antecedents: [P3]
+    evidence:
+      - type: analytic
+        anchor: "Inverts conspicuous consumption into conspicuous restriction; goes beyond unidimensional scarcity/commodity theory by specifying the cross-dimensional generation mechanism."
+    falsifier: >-
+      Falsified if restriction shows no perceived-value premium over matched
+      brands with equivalent positive signal strength, or the premium is fully
+      replicable by signal addition.
+    body_sections: ["§2.6 Proposition 3", "§4.1"]
+  - id: PF4
+    statement: >-
+      (Formal Proposition 4 — Coherence type over coherence score) Brands with
+      identical aggregate coherence scores exhibit different resilience
+      properties depending on coherence TYPE (ecosystem, signal, identity,
+      experiential asymmetry, incoherent). Single-score coherence metrics are
+      geometrically blind to this distinction (a form of spectral metamerism).
+    conditions: ""
+    antecedents: [P7]
+    evidence:
+      - type: analytic
+        anchor: "Two brands at 7/10 (signal vs ecosystem) respond oppositely to disruption."
+      - type: corpus
+        anchor: "Single-score collapse as metameric projection formalized in the R2 companion (2026e); five types derived from drift geometry in the R12 companion (2026s)."
+    falsifier: >-
+      Falsified if brands of different coherence type matched on aggregate score
+      show statistically indistinguishable disruption-response patterns in
+      longitudinal cohort tracking.
+    body_sections: ["§2.6 Proposition 4", "§4.2"]
+  - id: PF5
+    statement: >-
+      (Formal Proposition 5 — Conviction asymmetry) Evidence-free negative
+      brand convictions are more resistant to disconfirmation than evidence-rich
+      positive convictions, because the negative holder's profile excludes the
+      dimensions where disconfirming evidence would have to arrive (the
+      experiential gate is effectively closed).
+    conditions: ""
+    antecedents: [P4, P6]
+    evidence:
+      - type: analytic
+        anchor: "Extends prospect-theory loss asymmetry to brand evidence; the experiential gate closure makes hostile-cohort conversion target dimensions the cohort cannot perceive."
+    falsifier: >-
+      Falsified if evidence-free negative and evidence-rich positive convictions
+      require equivalent counter-attitudinal information to shift when conviction
+      strength is held constant.
+    body_sections: ["§2.6 Proposition 5", "§4.3"]
+  - id: P8
+    statement: >-
+      SBT and classical brand frameworks stand in a correspondence-principle
+      relationship: when observer diversity is low (cohorts share similar
+      profiles) perception space is approximately flat and classical
+      single-observer measurement is adequate; as diversity rises through
+      globalization, AI mediation, and digital fragmentation, curvature becomes
+      non-negligible and SBT's geometric tools become necessary.
+    conditions: ""
+    antecedents: [P5]
+    evidence:
+      - type: analytic
+        anchor: "GR-to-Newtonian limiting-case analogy (structural, not mathematical); cross-field geometric turn (geometric deep learning, perceptual manifolds, sheaf opinion dynamics)."
+      - type: corpus
+        anchor: "Fisher-Rao metric on brand space supplied by the R1 companion (2026d)."
+    body_sections: ["§3.6 Mathematical Foundations — Correspondence Principle"]
+  - id: P9
+    statement: >-
+      SBT measures the OUTPUT (WHAT) layer of a brand — the target perception
+      across eight dimensions — not the coordination machinery (DO) that
+      produces it. Output standardization is decidable (a finite acceptance
+      test on eight dimensions); process standardization is not. SBT and
+      Organizational Schema Theory are measurement and specification of one
+      shared output interface, bridged by the WHAT/DO distinction.
+    conditions: ""
+    antecedents: [P2]
+    evidence:
+      - type: analytic
+        anchor: "Mintzberg output- vs work-process standardization; product vs process specification; enabling vs coercive bureaucracy."
+      - type: corpus
+        anchor: "L0-L1 output layer + impossibility of complete process specification from the OST (2026i) and R5 (2026h) companions."
+    body_sections: ["§5.2.1 The WHAT Layer"]
+
+# ============================================================================
+# Findings — the four candidate mechanisms (paper is explicit: CANDIDATES
+# for future empirical investigation, not validated findings)
+# ============================================================================
+findings:
+  - id: F1
+    statement: >-
+      Structural absence: Hermès achieves the study's highest coherence grade
+      (A+) and emission efficiency (9/10) not through what it emits but through
+      what it withholds. Economic restriction (never discounting) produces a
+      social signal; experiential restriction (in-store only) produces an
+      economic signal; social restriction (purchase rituals) produces an
+      experiential signal — a multiplicative, cross-dimensional mechanism that
+      requires heritage legitimization and existing demand to read as intention
+      rather than failure.
+    type: "candidate_mechanism"
+    source_measurements: [m_convergence, m_insights]
+    generating_method: M1
+    antecedents: [O1, PF3]
+    statistical_strength: "illustrative single-brand case (Hermès); candidate mechanism, not validated"
+    body_sections: ["§4.1 Structural Absence"]
+  - id: F2
+    statement: >-
+      Five coherence types: coherence is not a continuum but a nominal
+      classification with qualitatively distinct resilience profiles —
+      ecosystem (selective absorption / purification, Hermès), signal (uniform
+      transmission, IKEA), identity (binary ideological split, Patagonia),
+      experiential asymmetry (geographic split by evidence base, Erewhon), and
+      incoherent (amplifying fragility, Tesla). Type is set by cohort
+      interdependence, ideological centrality, and encounter-mode variance.
+    type: "candidate_mechanism"
+    source_measurements: [m_convergence]
+    generating_method: M1
+    antecedents: [O1, PF4]
+    statistical_strength: "five-brand exploratory taxonomy; candidate, not validated"
+    body_sections: ["§4.2 Five Types of Brand Coherence"]
+  - id: F3
+    statement: >-
+      Asymmetric conviction resilience: an evidence-free negative conviction
+      (Tesla Boycotter, experiential weight .03, confidence .82) was more stable
+      than an evidence-rich positive one (Tesla Loyalist, experiential weight
+      .15, confidence .78). In disruption simulations negative convictions
+      strengthen under stress while positive convictions weaken; conversion of
+      structurally locked negative cohorts is therefore wasted effort.
+    type: "candidate_mechanism"
+    source_measurements: [m_tesla_asymmetry]
+    generating_method: M1
+    antecedents: [O3, PF5]
+    statistical_strength: "illustrative single-brand case (Tesla); candidate, not validated"
+    body_sections: ["§4.3 Asymmetric Conviction Resilience"]
+  - id: F4
+    statement: >-
+      Brand power and brand health are independent variables. Tesla has maximum
+      emission power (universal awareness, 7/8 dimensions at strength >=4, gate
+      permeability 10/10) yet minimum architectural health (cloud coherence
+      2/10, D/A 30/65, C-). The D/A ratio most powerfully discriminates power
+      from health; an exploratory 55-65% designed-signal optimal zone emerges
+      from the five-brand comparison (requiring larger-sample validation).
+    type: "candidate_mechanism"
+    source_measurements: [m_convergence]
+    generating_method: M1
+    antecedents: [O1, P3, P7]
+    statistical_strength: "five-brand exploratory comparison; the 55-65% zone is an exploratory hypothesis"
+    body_sections: ["§4.4 Brand Power and Brand Health as Independent Variables"]
+
+# ============================================================================
+# Alternative explanations / rivals the framework positions against
+# ============================================================================
+alternative_explanations:
+  - id: A1
+    statement: >-
+      Cross-model convergence reflects shared training data on these
+      well-documented Western brands rather than framework-driven structure.
+    rules_out_required: [F1, F2]
+    ruled_out_by: [m_convergence]
+    rules_out_status: "partially-mitigated"
+    reasoning: >-
+      Two independent instruments converging on identical structural
+      classifications functions as inter-rater reliability and suggests
+      conclusions are framework-driven; but the paper concedes convergence may
+      partly reflect shared training data, and recommends replication with more
+      models, human analysts, and lesser-known brands.
+    body_sections: ["§3.4 Limitations of the Illustrative Approach"]
+  - id: A2
+    statement: >-
+      Sharp's empirical regularities (double jeopardy, near-identical buyer
+      profiles, mental availability dominance) make observer-mediated
+      decomposition unnecessary.
+    rules_out_required: [PF1, PF4]
+    ruled_out_by: [P5]
+    rules_out_status: "reconciled-as-regime"
+    reasoning: >-
+      Sharp describes acquisition (passing the gate widely); SBT describes what
+      happens after the gate. Sharp's patterns hold when cohorts are spectrally
+      homogeneous and brands occupy similar positions, and weaken systematically
+      as cohort heterogeneity rises — the two frameworks are complementary
+      regime predictions, not rivals.
+    body_sections: ["§5.1 Relationship to Existing Frameworks"]
+
+# ============================================================================
+# Limitations — honest scope (paper §3.4, §5.4)
+# ============================================================================
+limitations:
+  - id: L1
+    statement: >-
+      The five-brand application is an illustrative proof-of-concept using
+      SBT's own pipeline, not an empirical study; the four mechanisms are
+      candidates, not validated findings. Independent human-subject validation
+      of the propositions — especially PF2 (non-ergodicity) and PF5 (conviction
+      asymmetry) via conjoint-based spectral weight measurement — is the
+      priority next step.
+    severity: "scope-bounding"
+    affects: [F1, F2, F3, F4, PF1, PF2, PF3, PF4, PF5]
+    body_sections: ["§3.1", "§5.4 Limitations and Future Directions", "Conclusion"]
+  - id: L2
+    statement: >-
+      Observer dimensional weights are expert estimates, not empirically
+      measured; cloud confidence scores are calibrated within each brand but
+      not across brands (ordinal weak/moderate/strong is more defensible than
+      cross-brand decimal comparison).
+    severity: "measurement"
+    affects: [P4, m_tesla_asymmetry]
+    body_sections: ["§3.4", "§5.4 — Weight validation, Cross-brand calibration"]
+  - id: L3
+    statement: >-
+      All five case brands are well-known Western consumer brands; applicability
+      to non-Western, B2B, cooperative, or newly launched brands is untested
+      (boundary condition C1).
+    severity: "external-validity"
+    affects: [F1, F2, F3, F4]
+    body_sections: ["§3.4", "§5.4 — Scope limitations", "§5.6"]
+  - id: L4
+    statement: >-
+      The eight dimensions are a working decomposition treated as independent;
+      substantial inter-dimensional correlation would lower effective
+      dimensionality below eight and require adjusting the framework's precision
+      claims. Eight is justified as the resolution needed for reliable
+      multi-observer positioning (Perception DOP), not claimed as the true
+      dimensionality of brand perception.
+    severity: "construct"
+    affects: [P2]
+    body_sections: ["§3.4", "§5.5 (Perception DOP framing)"]
+  - id: L5
+    statement: >-
+      LLM and human observers are not assumed interchangeable: LLM cohorts share
+      a structural Economic-Default bias absent in human samples. The framework's
+      illustrative findings rest on LLM analytical instruments; this divergence
+      is itself made measurable by the observer parameterization rather than
+      assumed away.
+    severity: "computational-observer-validity"
+    affects: [O1, O2, F1, F2, F3, F4]
+    body_sections: ["§5.4 — Computational observer validity"]
+
+# ============================================================================
+# Cross-paper engagement — SBT is the corpus ROOT; the companions FORMALIZE
+# the constructs this paper states informally (relationship from THIS paper's
+# perspective: it extends prior architectures and is refined-by the companions;
+# 'refines' here is recorded as the construct-formalization link it declares).
+# ============================================================================
+corpus_precedents:
+  - paper_key: 2026b
+    relationship: extends
+    spine_nodes: [P6]
+    note: >-
+      Re-collapse pipeline is adapted from the Alibi atom-cloud-fact
+      epistemological architecture (financial document processing); SBT applies
+      it to heterogeneous observers with temporally decaying signals.
+  - paper_key: 2026i
+    relationship: extends
+    spine_nodes: [P9]
+    note: >-
+      OST supplies the L0-L1 output layer (WHAT) that SBT measures; SBT and OST
+      are measurement and specification of one shared output interface.
+  - paper_key: 2026h
+    relationship: applies
+    spine_nodes: [P9]
+    note: "R5 impossibility result (process standardization cannot be completed) gives the WHAT/DO boundary formal weight."
+  - paper_key: 2026d
+    relationship: refines
+    spine_nodes: [P2, P8]
+    note: "R1 derives the Fisher-Rao information metric on the eight-dimensional brand space SBT defines informally."
+  - paper_key: 2026e
+    relationship: refines
+    spine_nodes: [PF4, P7]
+    note: "R2 proves the projection bounds / metameric equivalence classes behind single-score collapse and coherence-type metamerism."
+  - paper_key: 2026f
+    relationship: refines
+    spine_nodes: [P5]
+    note: "R3 derives concentration-of-measure results showing why cohort boundaries are inherently fuzzy in high-dimensional perception space."
+  - paper_key: 2026g
+    relationship: refines
+    spine_nodes: [F4]
+    note: "R4 establishes sphere-packing market-capacity bounds in S^7_+; also supplies the competitive-interference null result."
+  - paper_key: 2026j
+    relationship: refines
+    spine_nodes: [PF2, F4]
+    note: "R6 derives the SDE for non-ergodic conviction dynamics and the 55-65% D/A optimal zone from the absorption-exploration tradeoff on S^7_+."
+  - paper_key: 2026k
+    relationship: refines
+    spine_nodes: [P4]
+    note: "R7 solves spectral resource allocation across dimensions given measured cohort weight profiles."
+  - paper_key: 2026o
+    relationship: refines
+    spine_nodes: [PF2]
+    note: "R9 supplies the absorbing-state analysis formalizing non-ergodic conviction dynamics."
+  - paper_key: 2026r
+    relationship: refines
+    spine_nodes: [P2]
+    note: "R11 provides the completeness-and-necessity argument for d=8."
+  - paper_key: 2026s
+    relationship: refines
+    spine_nodes: [PF4, F2]
+    note: "R12 derives the five coherence types from drift-geometry analysis of the SDE system."
+  - paper_key: 2026v
+    relationship: tests
+    spine_nodes: [PF1, L5, P9]
+    note: >-
+      R15 is the empirical proof-of-concept: AI observers as a metameric class
+      across 17 LLM architectures, dimensional collapse, serial-position +
+      agentic-pipeline experiments, and the Economic-Default bias.
+  - paper_key: 2026y
+    relationship: refines
+    spine_nodes: [C2, P8]
+    note: "R17 supplies the brand-triangulation multi-observer geometric treatment needed for singleton observers."
+  - paper_key: 2026z
+    relationship: refines
+    spine_nodes: [C4]
+    note: "R18 develops phase-space dynamics — velocity, acceleration, cohort-trajectory portraits — for the temporal scale."
+  - paper_key: 2026ac
+    relationship: refines
+    spine_nodes: [P9]
+    note: "R21 extends the WHAT/DO result to portfolios: corporate ownership predicts near-zero AI-perception variance (d <= .18)."
+  - paper_key: 2026ad
+    relationship: refines
+    spine_nodes: [PF4, C4]
+    note: "R22 proves the recovery-threshold inequality for perceptual separability after coherence shocks."
+
+# ============================================================================
+# External anchor literature — predecessor frameworks SBT formalizes /
+# extends and the measurement critique it builds on. Anchors are described
+# in text; canonical citation_keys are omitted where not verified against
+# the substrate (retrofit: never invent keys).
+# ============================================================================
+external_anchors:
+  - {citation_key: "", role: predecessor_framework, spine_nodes: [P1, PF1], note: "Keller (1993) CBBE — closest predecessor; SBT parameterizes the heterogeneous observer Keller left unmodeled."}
+  - {citation_key: "", role: predecessor_framework, spine_nodes: [P2], note: "Aaker (1996) brand identity; Kapferer (2008) prism; J. Aaker (1997) personality; Brakus et al. (2009) experience — dimensions-as-brand-attributes that SBT reframes as observer channels."}
+  - {citation_key: "", role: positioned_against, spine_nodes: [P1], note: "Ries & Trout (1981) positioning — single-position limitation; Sharp (2010) availability — pre-perceptual, reconciled as a regime."}
+  - {citation_key: "", role: measurement_critique, spine_nodes: [P1, P7], note: "Flake & Fried (2020) questionable measurement practices; Borsboom et al. (2003) construct-validity criterion — ground the single-score-collapse critique."}
+  - {citation_key: "", role: mechanism_precedent, spine_nodes: [P4], note: "Fishbein & Ajzen (1975) multi-attribute attitude; Carroll & Chang (1970) INDSCAL; Tversky (1972) elimination-by-aspects (identity gate)."}
+  - {citation_key: "", role: mechanism_precedent, spine_nodes: [PF2], note: "Peters (2019) ergodicity economics; Hogarth & Einhorn (1992) belief-adjustment order effects."}
+  - {citation_key: "", role: mechanism_precedent, spine_nodes: [PF3], note: "Veblen (1899) conspicuous consumption; Cialdini (2001) scarcity; Eco (1976) communication through absence."}
+  - {citation_key: "", role: mechanism_precedent, spine_nodes: [PF5], note: "Kahneman & Tversky (1979) prospect-theory loss asymmetry; Festinger (1957) cognitive dissonance."}
+  - {citation_key: "", role: geometric_convergence, spine_nodes: [P8], note: "Resnikoff (1974) Riemannian colour space; Koenderink & van Doorn (2012) pictorial fiber bundle; Bronstein et al. (2021) geometric deep learning; Ma et al. (2025) perceptual manifolds; Hansen & Ghrist (2021) sheaf opinion dynamics."}
+  - {citation_key: "", role: computational_precedent, spine_nodes: [P2], note: "Colladon (2018) Semantic Brand Score — salience metric; SBT measures perception content, and executes (not just measures) a formal theory."}
+
+# ============================================================================
+# Open questions / boundary edges (paper §5.4-5.6)
+# ============================================================================
+open:
+  - "Human-subject validation of all five propositions, especially PF2 (non-ergodicity) and PF5 (conviction asymmetry), via conjoint-based spectral weight measurement (the priority next step)."
+  - "PRISM-H validated human-observer instrument (the primary methodological bottleneck) — until then human weights are expert estimates (C3)."
+  - "Larger-sample validation of the 55-65% D/A optimal zone (H1) and cross-brand calibration benchmarks."
+  - "Extending the coherence hierarchy with an admissibility criterion (coherently-positioned-correctly vs coherently-positioned-incorrectly)."
+  - "An ergodicity coefficient per brand-dimension pair, identifying which dimensions are safe to measure with aggregate surveys vs which need longitudinal cohort tracking."
+
+# ============================================================================
+# Spine changelog — append-only
+# ============================================================================

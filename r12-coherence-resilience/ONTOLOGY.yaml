@@ -1,0 +1,64 @@
+# ONTOLOGY.yaml module - 2026s
+#
+# Per-paper ontology module per [internal path removed]
+# §"ONTOLOGY.yaml schema (v0.1)". owns = terms THIS paper introduces (unique
+# authority); imports = terms owned by other modules it uses (reference only).
+# Linked into the substrate `terms` graph by build_ontology.py; rendered per-paper
+# by render_paper_glossary.py. Bootstrapped 2026-06-13 from per-paper term
+# extraction; definitions paraphrase each paper's own definitional text.
+
+paper_key: 2026s
+schema_version: 0.1
+
+owns:
+  - term_key: coherence-type
+    label: "Coherence Type"
+    canonical_form: "coherence type"
+    definition: "A structural classification of brands by the geometric pattern of emission across the eight dimensions, comprising five types whose ordering predicts crisis resilience better than a scalar coherence score."
+    first_section: "1. Introduction"
+  - term_key: ecosystem-coherence
+    label: "Ecosystem Coherence"
+    canonical_form: "ecosystem coherence"
+    definition: "A coherence type in which all eight dimensions emit and reinforce one another (isotropic drift), yielding the highest crisis resilience; exemplar Hermes."
+    first_section: "2.3"
+  - term_key: signal-coherence
+    label: "Signal Coherence"
+    canonical_form: "signal coherence"
+    definition: "A coherence type with concentrated emission on most (5-6) dimensions so all audiences perceive essentially the same brand; exemplar IKEA."
+    first_section: "2.3"
+  - term_key: identity-coherence
+    label: "Identity Coherence"
+    canonical_form: "identity coherence"
+    definition: "A coherence type with emission concentrated on the ideological and narrative dimensions, highly resilient except to ideological betrayal; exemplar Patagonia."
+    first_section: "2.3"
+  - term_key: experiential-asymmetry
+    label: "Experiential Asymmetry"
+    canonical_form: "experiential asymmetry"
+    definition: "A coherence type with emission concentrated on the experiential and social dimensions, producing divergent direct-encounter versus mediated perceptions; exemplar Erewhon."
+    first_section: "2.3"
+  - term_key: incoherent-coherence
+    label: "Incoherent"
+    canonical_form: "incoherent"
+    definition: "A coherence type marked by extreme cross-dimensional variance and contradictory signals yielding a stochastic drift field and lowest resilience; exemplar Tesla."
+    first_section: "2.3"
+  - term_key: type-over-score-principle
+    label: "Type-over-Score Principle"
+    canonical_form: "type-over-score principle"
+    definition: "The result that crisis survival depends on the minimum drift across dimensions (the shape of the emission profile) rather than its total magnitude, so coherence type predicts resilience better than coherence score."
+    first_section: "5.2 The Type-over-Score Principle"
+  - term_key: drift-isotropy
+    label: "Drift Isotropy"
+    canonical_form: "drift isotropy"
+    definition: "A characterization of a brand's signal-driven drift field by whether all dimensions clear an absolute drift floor (isotropic/robust) versus concentrate drift on k active dimensions leaving passive vulnerability corridors (k-anisotropic)."
+    first_section: "2.2 Drift Isotropy and Anisotropy"
+
+imports:
+  - {term_key: spectral-brand-theory}
+  - {term_key: spectral-dimensions}
+  - {term_key: absorbing-state}
+  - {term_key: non-ergodic-perception}
+  - {term_key: brand-conviction}
+  - {term_key: observer-spectral-profile}
+
+refines: []
+

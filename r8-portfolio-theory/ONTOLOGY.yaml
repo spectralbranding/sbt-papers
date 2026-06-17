@@ -1,0 +1,46 @@
+# ONTOLOGY.yaml module - 2026q
+#
+# Per-paper ontology module per [internal path removed]
+# §"ONTOLOGY.yaml schema (v0.1)". owns = terms THIS paper introduces (unique
+# authority); imports = terms owned by other modules it uses (reference only).
+# Linked into the substrate `terms` graph by build_ontology.py; rendered per-paper
+# by render_paper_glossary.py. Bootstrapped 2026-06-13 from per-paper term
+# extraction; definitions paraphrase each paper's own definitional text.
+
+paper_key: 2026q
+schema_version: 0.1
+
+owns:
+  - term_key: constructive-interference
+    label: "Constructive Interference"
+    canonical_form: "constructive interference"
+    definition: "Spectral interference on a dimension where two portfolio brands deviate from the category mean in the same direction, so awareness of the sibling reinforces the focal brand's perception on that dimension."
+    first_section: "The Spectral Interference Model — Definition 6"
+  - term_key: destructive-interference
+    label: "Destructive Interference"
+    canonical_form: "destructive interference"
+    definition: "Spectral interference on a dimension where two portfolio brands deviate from the category mean in opposite directions, so awareness of the sibling undermines the focal brand's perception on that dimension."
+    first_section: "The Spectral Interference Model — Definition 7"
+  - term_key: awareness-gate
+    label: "Awareness Gate"
+    canonical_form: "awareness gate"
+    definition: "The degree alpha in [0,1] to which an observer recognizes that two brands share a parent entity; spectral interference is zero below a minimum awareness threshold and scales linearly with alpha above it."
+    first_section: "The Spectral Interference Model — The Awareness Gate"
+  - term_key: portfolio-coherence
+    label: "Portfolio Coherence"
+    canonical_form: "portfolio coherence"
+    definition: "A three-layer measure (within-brand, cross-brand, and aggregate) extending single-brand SBT coherence to multi-brand portfolios, capturing emergent coherence arising from cross-brand interference within shared cohorts."
+    first_section: "Portfolio Coherence Metric"
+
+imports:
+  - {term_key: spectral-dimensions}
+  - {term_key: perception-cloud}
+  - {term_key: observer-spectral-profile}
+  - {term_key: brand-conviction}
+  - {term_key: cohort}
+  - {term_key: structural-absence}
+  - {term_key: spectral-brand-theory}
+  - {term_key: spectral-interference}
+
+refines: []
+

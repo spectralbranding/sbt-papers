@@ -1,0 +1,45 @@
+# ONTOLOGY.yaml module - 2026b
+#
+# Per-paper ontology module per [internal path removed]
+# §"ONTOLOGY.yaml schema (v0.1)". owns = terms THIS paper introduces (unique
+# authority); imports = terms owned by other modules it uses (reference only).
+# Linked into the substrate `terms` graph by build_ontology.py; rendered per-paper
+# by render_paper_glossary.py. Bootstrapped 2026-06-13 from per-paper term
+# extraction; definitions paraphrase each paper's own definitional text.
+
+paper_key: 2026b
+schema_version: 0.1
+
+owns:
+  - term_key: atom-cloud-fact-pipeline
+    label: "Atom-Cloud-Fact Pipeline"
+    canonical_form: "atom-cloud-fact pipeline"
+    definition: "A domain-general three-stage epistemological architecture in which knowledge forms through atomic observation (typed, source-bound data), probabilistic cloud formation (weighted multi-dimensional clustering), and fact collapse (threshold-based crystallization with full re-collapse on new evidence)."
+    first_section: "2.1 Three Stages of Knowledge Formation"
+  - term_key: atom
+    label: "Atom (typed observation)"
+    canonical_form: "atom"
+    definition: "A typed, source-bound, immutable unit of raw observation belonging to exactly one dimension and exactly one source."
+    first_section: "2.1 Three Stages of Knowledge Formation"
+  - term_key: identity-gate
+    label: "Identity Gate"
+    canonical_form: "identity gate"
+    definition: "A binary precondition requiring a core-identity match before any multi-dimensional comparison or clustering of atoms is attempted."
+    first_section: "2.2 Seven Architectural Principles"
+  - term_key: epistemic-separation
+    label: "Epistemic Separation"
+    canonical_form: "epistemic separation"
+    definition: "The architectural principle that observations, hypotheses, and knowledge (atoms, clouds, facts) are stored and processed as structurally distinct stages with no shortcut promotion or demotion between them."
+    first_section: "2.2 Seven Architectural Principles"
+
+imports:
+  - {term_key: perception-cloud}
+  - {term_key: brand-conviction}
+  - {term_key: brand-fact}
+  - {term_key: re-collapse}
+  - {term_key: cohort}
+  - {term_key: spectral-brand-theory}
+  - {term_key: observer-spectral-profile}
+
+refines: []
+

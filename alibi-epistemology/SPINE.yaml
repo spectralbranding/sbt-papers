@@ -1,0 +1,476 @@
+# SPINE.yaml — The Atom-Cloud-Fact Epistemological Pipeline (Alibi epistemology paper)
+#
+# RETROFIT spine: extracted descriptively from the completed paper.md
+# ([internal path removed]), not authored generatively before
+# prose. Part of the SPINE-for-all-active-canonical project (decision D4,
+# [internal path removed]).
+#
+# Schema v0.1 (legacy/minimal): propositions + corpus_precedents +
+# external_anchors + open + changelog. Chosen because this is a PURE-THEORY
+# paper — four theoretical propositions, a comparative-architecture analysis,
+# and a cross-domain transfer argument. It reports no author-produced data,
+# no Monte Carlo / simulation results, and no computed table values: the
+# Starbucks reconciliation walkthrough (§3.2) is an illustrative trace using
+# fixed hand-tuned weights, not author-generated empirical measurement.
+
+spine_version: "0.1"
+paper_key: "2026b"
+provenance: retrofit
+
+title: >-
+  The Atom-Cloud-Fact Epistemological Pipeline: From Financial Document
+  Processing to Brand Perception Modeling
+
+thesis: |
+  The atom-cloud-fact pipeline is a domain-general epistemological
+  architecture — a formal model of how knowledge forms from heterogeneous
+  observation — not merely a financial document-processing technique. It
+  models knowledge formation through three formally distinct stages: atomic
+  observation (typed, source-bound, immutable data extraction), probabilistic
+  cloud formation (weighted multi-dimensional clustering of revisable
+  hypotheses), and fact collapse (threshold-based crystallization subject to
+  full re-collapse on new evidence). Seven architectural principles
+  (dimensional typing, source binding, identity gating, asymmetric tolerances,
+  weighted scoring, re-collapse, epistemic separation) govern the pipeline and
+  transfer with parametric extension from financial reconciliation to
+  multi-cohort brand perception, where the single-observer assumption is
+  replaced by a heterogeneous-observer model — producing Spectral Brand
+  Theory. The architecture supports four testable propositions about
+  confirmation bias, multi-model replication, epistemic category errors, and
+  cross-model disagreement; and it satisfies four requirements
+  (path-independence, observer heterogeneity, epistemic separation, linguistic
+  implementability) that Bayesian updating, AGM revision, Dempster-Shafer
+  theory, and symbolic expert systems each fail structurally on at least one.
+
+# ============================================================================
+# Propositions — the argument backbone
+# ============================================================================
+propositions:
+
+  # ---- Architectural core (Sections 2-4) ----
+  - id: P_ARCH1
+    statement: >-
+      Knowledge formation from heterogeneous observation has a three-stage
+      structure — atoms (typed, source-bound, immutable observations), clouds
+      (probabilistic, multi-source, revisable hypotheses), and facts
+      (threshold-crossed, stable, but re-collapsible knowledge) — with a
+      feedback path from arriving evidence back to the atom layer.
+    conditions: >-
+      Domain must involve typed observations from multiple sources that
+      cluster under uncertainty into revisable knowledge.
+    antecedents: []
+    evidence:
+      - type: analytic
+        anchor: >-
+          The three-stage progression formalized in §2.1 (Figure 1), with
+          cloud formation analogized to gestalt grouping and fact collapse to
+          System-1 crystallization.
+        citation_keys: [koffka-1935-gestalt-psychology, kahneman-2011-thinking-fast-slow]
+    body_sections: ["2.1 Three Stages of Knowledge Formation"]
+
+  - id: P_ARCH2
+    statement: >-
+      Seven architectural principles — dimensional typing, source binding,
+      identity gating, asymmetric tolerances, weighted multi-dimensional
+      scoring, re-collapse on new evidence, and epistemic separation — govern
+      the pipeline's operation and were discovered through the financial
+      implementation.
+    antecedents: [P_ARCH1]
+    evidence:
+      - type: analytic
+        anchor: >-
+          Table 1 (§2.2) enumerates the seven principles with definitions and
+          their financial implementation; identity gate (graded set membership)
+          and asymmetric tolerances draw on fuzzy-set theory.
+        citation_keys: [zadeh-1965-fuzzy-sets]
+    body_sections: ["2.2 Seven Architectural Principles"]
+
+  - id: P_RECOLLAPSE
+    statement: >-
+      Re-collapse — full dissolution of facts and rebuild from the complete
+      atom set on contradicting evidence, rather than incremental patching — is
+      the architectural commitment that most strongly distinguishes the pipeline
+      from incremental updating systems and guarantees consistency with total
+      evidence regardless of arrival order.
+    conditions: >-
+      Path-independence holds only where the complete atom set remains
+      available at re-collapse (financial domain); under signal decay (brand
+      domain) the available evidence set is the decay-survivors plus
+      crystallized priors.
+    antecedents: [P_ARCH2]
+    evidence:
+      - type: analytic
+        anchor: >-
+          §2.2 Principle 6 and §8.1; re-collapse operationalizes holism (rebuild
+          from the total web), falsificationism (discard when contradicted), and
+          paradigm-shift replacement rather than minimal-change revision.
+        citation_keys: [quine-1951-two-dogmas, popper-1959-logic-scientific-discovery, kuhn-1962-structure-scientific-revolutions]
+    body_sections: ["2.2 Principle 6", "8.1 Bayesian Reasoning and AGM Revision"]
+
+  - id: P_FINIMPL
+    statement: >-
+      The financial reconciliation problem — a variant of probabilistic record
+      linkage on unstructured documents — instantiates all seven principles,
+      maintaining three-stage epistemic separation rather than collapsing to a
+      direct match/non-match decision.
+    antecedents: [P_ARCH2]
+    evidence:
+      - type: analytic
+        anchor: >-
+          §3 specifies the four-document reconciliation problem and a worked
+          Starbucks trace (illustrative, fixed hand-tuned weights), contrasted
+          with classical record-linkage theory.
+        citation_keys: [fellegi-sunter-1969-record-linkage, christen-2012-data-matching]
+    body_sections: ["3.1 The Reconciliation Problem", "3.2 Pipeline in Action"]
+
+  - id: P_TRANSFER
+    statement: >-
+      The seven principles transfer from financial reconciliation to brand
+      perception without domain specialization: atom→brand signal, source→
+      encounter type, identity gate→brand recognition, cloud→perception cloud,
+      fact→brand conviction, re-collapse→conviction rebuild — because the
+      underlying epistemic structure is identical.
+    antecedents: [P_FINIMPL, P_ARCH2]
+    evidence:
+      - type: self-application
+        anchor: >-
+          Table 3 (§4.1) maps every concept across domains; §4.3 validates each
+          of the seven principles operating identically in the brand domain.
+        citation_keys: [zharnikov-2026a-spectral-brand-theory]
+    body_sections: ["4.1 The Mapping", "4.3 Principle Transfer Validation"]
+
+  - id: P_HETOBS
+    statement: >-
+      The critical parametric extension producing Spectral Brand Theory is
+      replacing the single-observer assumption with a heterogeneous-observer
+      model: each cohort applies its own observer spectral profile (spectrum,
+      weights, tolerances, priors) to the same signal environment, so the same
+      brand produces different convictions in different observers — not errors,
+      but the perceptions the architecture recovers from available signal.
+    conditions: >-
+      Cohorts are perceptual weight-pattern groupings, not demographic
+      segments; there is no brand-in-itself accessible outside an observing
+      system.
+    antecedents: [P_TRANSFER]
+    evidence:
+      - type: analytic
+        anchor: >-
+          §4.2 contrasts fixed system weights against cohort-variable weights;
+          empirical divergence across cohorts documented in the spectral-profile
+          analysis of 2026e.
+        citation_keys: [zharnikov-2026e-observer-heterogeneity]
+    body_sections: ["4.2 The Critical Extension: Heterogeneous Observers"]
+
+  # ---- Theoretical propositions P1-P4 (Section 5) ----
+  - id: P1_CONFBIAS
+    statement: >-
+      External corroboration structurally reduces confirmation bias in brand
+      assessment, because the pipeline requires convergent evidence across
+      independently typed sources before any fact collapse, subordinating
+      single-source conclusions to the multi-source cloud.
+    conditions: >-
+      Testable; falsified if controlled experiment shows no difference in
+      prior-consistent over-weighting between pipeline and single-source
+      analysts when priors are experimentally manipulated.
+    antecedents: [P_ARCH2, P_TRANSFER]
+    evidence:
+      - type: analytic
+        anchor: >-
+          §5 Proposition 1, grounded in the mechanism of confirmation bias as
+          selective attention to prior-supporting evidence.
+        citation_keys: [nickerson-1998-confirmation-bias]
+    body_sections: ["5 Theoretical Propositions (P1)"]
+
+  - id: P2_MULTIMODEL
+    statement: >-
+      Multi-model replication produces more robust brand assessments than
+      single-model analysis: conclusions surviving across architecturally
+      distinct models (treated as distinct observation sources under source
+      binding) are high-confidence clouds approaching collapse, while
+      single-model conclusions are unconfirmed clouds possibly reflecting
+      model-specific artifacts.
+    conditions: >-
+      Bounded claim — necessary but not sufficient for structural validity;
+      weight set by four conditions (distinct training distributions, distinct
+      architectures, agreement on structural not numerical features, stability
+      across prompt variations); human-subject validation is the definitive
+      test. Falsified if cross-model agreement does not predict higher retest
+      reliability in a pre-registered study.
+    antecedents: [P_ARCH2, P_HETOBS]
+    evidence:
+      - type: analytic
+        anchor: >-
+          §5 Proposition 2 + §7.2 convergent-validity qualification; quasi-
+          independent replication framed via LLM-as-population-simulacrum work.
+        citation_keys: [argyle-2023-out-of-one-many, aher-2023-using-llms-simulate-humans, binz-schulz-2023-cognitive-psychology-gpt3]
+    body_sections: ["5 Theoretical Propositions (P2)", "7.2 Convergent Validity of Multi-Model Replication"]
+
+  - id: P3_EPISTSEP
+    statement: >-
+      Three-stage epistemic separation prevents category errors that conflate
+      brand signals (atoms), perception clouds (clouds), and brand convictions
+      (facts) — errors such as treating signals as convictions, clouds as
+      facts, or convictions as permanent.
+    conditions: >-
+      Testable; falsified if structured content analysis finds no difference in
+      category-error frequency between stage-separating and non-separating
+      brand audits.
+    antecedents: [P_ARCH2]
+    evidence:
+      - type: analytic
+        anchor: >-
+          §5 Proposition 3, derived from Principle 7 (epistemic separation).
+    body_sections: ["5 Theoretical Propositions (P3)"]
+
+  - id: P4_DISAGREE
+    statement: >-
+      Cross-model disagreement is diagnostic of evidential ambiguity (a cloud
+      below collapse threshold), not model failure: if unambiguous evidence
+      existed, all model implementations would converge, so disagreement
+      identifies where available atoms are insufficient to push the cloud past
+      threshold in all observers.
+    conditions: >-
+      Testable; falsified if disagreement locations show no higher
+      attribute-level ambiguity than agreement locations against independent
+      consumer-survey data.
+    antecedents: [P_RECOLLAPSE, P2_MULTIMODEL]
+    evidence:
+      - type: analytic
+        anchor: "§5 Proposition 4, derived from Principle 6 (re-collapse)."
+    body_sections: ["5 Theoretical Propositions (P4)"]
+
+  # ---- Emergent transfer properties (Section 6) ----
+  - id: P_EMERGENT
+    statement: >-
+      The transfer surfaces three properties latent in the financial domain but
+      central in the brand domain: observer heterogeneity as a feature (not a
+      bug), structural absence as a signal (designed restriction generating
+      perception effects, with a scarcity multiplier extending the atom model),
+      and valence asymmetry (a conjectured greater resilience of evidence-free
+      negative convictions than experientially-grounded positive convictions).
+    conditions: >-
+      Valence asymmetry is a derived conjecture, not yet tested against
+      independent consumer data.
+    antecedents: [P_HETOBS]
+    evidence:
+      - type: self-application
+        anchor: >-
+          §6.1-6.3; structural absence and valence asymmetry derived from the
+          architecture's structural properties as applied to Hermès-style
+          scarcity strategy.
+        citation_keys: [zharnikov-2026a-spectral-brand-theory]
+    body_sections: ["6.1 Observer Heterogeneity as a Feature", "6.2 Structural Absence", "6.3 Valence Asymmetry"]
+
+  # ---- Generalizability (Section 7) ----
+  - id: P_GENERAL
+    statement: >-
+      The pipeline is a candidate framework for any domain meeting one
+      structural condition — typed observations from multiple sources clustering
+      under uncertainty into revisable knowledge — with medical diagnosis, legal
+      evidence assessment, and intelligence analysis as the highest-priority
+      cross-domain replication tests.
+    conditions: >-
+      Structural analogy does not imply novelty relative to each domain's
+      mature computational literature.
+    antecedents: [P_ARCH2]
+    evidence:
+      - type: analytic
+        anchor: >-
+          §7 Table 4 lists candidate domains; §7 prioritizes medical / legal /
+          intelligence as the strongest independent-replication cases.
+    body_sections: ["7 Generalizability: Beyond Finance and Brands"]
+
+  # ---- Comparative requirements (Section 8) ----
+  - id: P_RIVALS
+    statement: >-
+      Four requirements define an adequate multi-domain knowledge-formation
+      framework — path-independence, observer heterogeneity, epistemic
+      separation, linguistic implementability — and Bayesian updating, AGM
+      revision, Dempster-Shafer theory, and symbolic expert systems each fail at
+      least one structurally; the atom-cloud-fact pipeline passes all four.
+    antecedents: [P_RECOLLAPSE, P_HETOBS]
+    evidence:
+      - type: analytic
+        anchor: >-
+          §8.1-8.4 and the four-requirement × five-architecture matrix
+          (Table 5): Bayesian/AGM fail path-independence, expert systems fail
+          observer heterogeneity, statistical models fail epistemic separation;
+          the pipeline's hybrid symbolic/probabilistic structure passes.
+        citation_keys: [pearl-1988-probabilistic-reasoning, alchourron-gardenfors-makinson-1985-logic-theory-change, dempster-1967-upper-lower-probabilities, shafer-1976-mathematical-theory-evidence, buchanan-shortliffe-1984-mycin]
+    body_sections: ["8.1 Bayesian Reasoning and AGM Revision", "8.2 Symbolic vs. Probabilistic Reasoning", "8.4 Comparative Requirements Matrix"]
+
+  - id: P_LLMIMPL
+    statement: >-
+      The pipeline is linguistically implementable: its seven principles
+      describe cognitive operations (perceive, cluster, weigh, decide, revise)
+      expressible as a natural-language system prompt, so an LLM can execute and
+      audit the cloud-to-fact transition as a typed verification contract —
+      unlike frameworks requiring explicit probability distributions or formal
+      rule bases.
+    conditions: >-
+      Bounded claim; validated in the brand perception domain with specific LLM
+      families; systematic ablation across prompt reformulations and model
+      generations still needed.
+    antecedents: [P_RIVALS, P_TRANSFER]
+    evidence:
+      - type: self-application
+        anchor: >-
+          §8.3, including the YAML verify_collapse operator schema mapping each
+          principle to an enforceable contract clause; the SBT pipeline runs as
+          a structured prompt sequence rather than code.
+        citation_keys: [zharnikov-2026a-spectral-brand-theory, zharnikov-2026t-linguistic-implementability, russell-norvig-2020-aima]
+    body_sections: ["8.3 LLM Implementability"]
+
+  # ---- Framing (design-science) ----
+  - id: P_DESIGNSCI
+    statement: >-
+      The work sits within the design-science tradition (artifact = the
+      pipeline; utility = systems natively supporting observer heterogeneity and
+      non-incremental revision), but its primary frame is epistemological — the
+      pipeline as a candidate general structure of knowledge formation, not
+      solely an IS design recommendation.
+    antecedents: [P_ARCH1]
+    evidence:
+      - type: citation
+        anchor: "Design-science framing in §1 (the introductory framing)."
+        citation_keys: [hevner-2004-design-science, gregor-jones-2007-anatomy-design-theory]
+    body_sections: ["1 (design-science framing)"]
+
+# ============================================================================
+# Cross-paper engagement (real substrate keys)
+# ============================================================================
+corpus_precedents:
+  - paper_key: 2026a
+    relationship: applies
+    spine_nodes: [P_TRANSFER, P_HETOBS, P_EMERGENT, P_LLMIMPL]
+    note: >-
+      2026a (SBT) is the framework this paper's pipeline produces via transfer;
+      2026a's re-collapse pipeline is adapted from this paper's architecture.
+      Bidirectional: epistemological origin here, brand realization there.
+  - paper_key: 2026e
+    relationship: applies
+    spine_nodes: [P_HETOBS]
+    note: "Observer-heterogeneity / cohort-divergence spectral-profile evidence cited for P_HETOBS."
+  - paper_key: 2026t
+    relationship: applies
+    spine_nodes: [P_LLMIMPL]
+    note: "Linguistic-implementability / LLM-pipeline paper grounds the natural-language executability claim."
+
+# ============================================================================
+# External anchor literature
+# ============================================================================
+external_anchors:
+  - citation_key: peirce-1931-collected-papers
+    role: foundational
+    spine_nodes: [P_ARCH1]
+  - citation_key: goldman-1986-epistemology-cognition
+    role: foundational
+    spine_nodes: [P_ARCH1]
+  - citation_key: koffka-1935-gestalt-psychology
+    role: theoretical_analogy
+    spine_nodes: [P_ARCH1]
+  - citation_key: kahneman-2011-thinking-fast-slow
+    role: theoretical_analogy
+    spine_nodes: [P_ARCH1]
+  - citation_key: zadeh-1965-fuzzy-sets
+    role: theoretical_anchor
+    spine_nodes: [P_ARCH2]
+  - citation_key: fellegi-sunter-1969-record-linkage
+    role: prior_method
+    spine_nodes: [P_FINIMPL]
+  - citation_key: christen-2012-data-matching
+    role: prior_method
+    spine_nodes: [P_FINIMPL]
+  - citation_key: nickerson-1998-confirmation-bias
+    role: mechanism_source
+    spine_nodes: [P1_CONFBIAS]
+  - citation_key: argyle-2023-out-of-one-many
+    role: methodological_template
+    spine_nodes: [P2_MULTIMODEL]
+  - citation_key: aher-2023-using-llms-simulate-humans
+    role: supporting_evidence
+    spine_nodes: [P2_MULTIMODEL]
+  - citation_key: binz-schulz-2023-cognitive-psychology-gpt3
+    role: supporting_evidence
+    spine_nodes: [P2_MULTIMODEL]
+  - citation_key: pearl-1988-probabilistic-reasoning
+    role: rival_framework
+    spine_nodes: [P_RIVALS]
+  - citation_key: pearl-2009-causality
+    role: supporting_theory
+    spine_nodes: [P_RECOLLAPSE]
+  - citation_key: alchourron-gardenfors-makinson-1985-logic-theory-change
+    role: rival_framework
+    spine_nodes: [P_RIVALS]
+  - citation_key: dempster-1967-upper-lower-probabilities
+    role: rival_framework
+    spine_nodes: [P_RIVALS]
+  - citation_key: shafer-1976-mathematical-theory-evidence
+    role: rival_framework
+    spine_nodes: [P_RIVALS]
+  - citation_key: buchanan-shortliffe-1984-mycin
+    role: rival_framework
+    spine_nodes: [P_RIVALS, P_LLMIMPL]
+  - citation_key: quine-1951-two-dogmas
+    role: foundational
+    spine_nodes: [P_RECOLLAPSE]
+  - citation_key: popper-1959-logic-scientific-discovery
+    role: foundational
+    spine_nodes: [P_RECOLLAPSE]
+  - citation_key: kuhn-1962-structure-scientific-revolutions
+    role: foundational
+    spine_nodes: [P_RECOLLAPSE]
+  - citation_key: levi-1991-fixation-belief
+    role: supporting_theory
+    spine_nodes: [P_RECOLLAPSE]
+  - citation_key: peters-2019-ergodicity-problem-economics
+    role: supporting_theory
+    spine_nodes: [P_RECOLLAPSE]
+  - citation_key: polanyi-1966-tacit-dimension
+    role: theoretical_analogy
+    spine_nodes: [P_RIVALS]
+  - citation_key: russell-norvig-2020-aima
+    role: rival_framework
+    spine_nodes: [P_LLMIMPL]
+  - citation_key: hevner-2004-design-science
+    role: framing
+    spine_nodes: [P_DESIGNSCI]
+  - citation_key: gregor-jones-2007-anatomy-design-theory
+    role: framing
+    spine_nodes: [P_DESIGNSCI]
+
+# ============================================================================
+# Open questions / boundary edges
+# ============================================================================
+open:
+  - >-
+    Self-confirming transfer: both the financial architecture and SBT were
+    developed by the same author (§7.1). Independent replication in a domain not
+    developed by this author would provide stronger transferability evidence —
+    medical diagnosis is the highest-priority case.
+  - >-
+    Weight-sensitivity at extreme settings is uncharacterized: the financial
+    weights (.30/.40/.20/.15) were hand-tuned on ~500 transactions with no
+    formal sensitivity analysis; cohort spectral profiles are characteristic
+    patterns, not validated parameters. Structured perturbation studies needed.
+  - >-
+    P2's multi-model convergence rests on partially-overlapping LLM training
+    corpora and a shared Western/English consumer-brand bias; human-subject
+    validation is the required confirmatory test, not multi-model agreement
+    alone.
+  - >-
+    Valence asymmetry (P_EMERGENT) is a structural conjecture awaiting test
+    against independent consumer data.
+  - >-
+    Linguistic implementability (P_LLMIMPL) is validated only in the brand
+    domain with specific LLM families; ablation across prompt reformulations and
+    model generations is needed before asserting it generally.
+  - >-
+    Where re-collapse path-independence breaks: in decay-bearing domains (brand
+    perception) the available evidence set is not the complete historical set,
+    making perception path-dependent / non-ergodic — the architecture transfers
+    but signal-persistence behavior is domain-specific.
+
+# ============================================================================
+# Spine changelog — append-only
+# ============================================================================

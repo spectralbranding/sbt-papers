@@ -1,0 +1,568 @@
+# SPINE.yaml — Coherence Type Over Coherence Score (2026s / R12)
+#
+# RETROFIT spine: extracted descriptively from the completed paper.md
+# ([internal path removed]), not authored generatively before
+# prose. Part of the SPINE-for-all-active-canonical project
+# ([internal path removed], decision D4).
+#
+# Schema v0.2 — the paper derives formal theorems (analytic propositions) AND
+# distributes companion computation scripts (coherence_resilience_computations.py
+# for inline numbers; coherence_resilience_mc.py for a 2,000-path Monte Carlo
+# verification of the recovery orderings). The MC run is author-produced data,
+# so the observation -> method -> measurement -> finding chain is represented
+# as first-class evidence rather than asserted in prose.
+
+spine_version: "0.2"
+spine_doc_version: "0.1.0"
+paper_key: "2026s"
+provenance: retrofit
+title: >-
+  Coherence Type Over Coherence Score: A Stochastic Differential Equation
+  Derivation of Brand Resilience
+
+thesis: |
+  Spectral Brand Theory's qualitative prediction — that coherence TYPE (the
+  geometric pattern of emission across the eight perceptual dimensions)
+  predicts crisis resilience better than coherence SCORE (total emission
+  intensity) — is here derived formally from the drift geometry of the
+  Stratonovich SDE on the positive orthant of the 7-sphere developed in
+  Zharnikov (2026j). Different coherence types produce different signal-driven
+  drift fields alpha_i = gamma * s_i * x_i; characterizing those fields by
+  drift isotropy and k-anisotropy yields three theorems: absorption
+  probability decreases monotonically in drift isotropy (Theorem 1), recovery
+  probability depends on dimension-specific drift creating asymmetric
+  vulnerability profiles (Theorem 2), and the full resilience ordering
+  ecosystem > signal > identity > experiential asymmetry > incoherent follows
+  from SDE geometry (Theorem 3). The central type-over-score principle is that
+  crisis survival depends on the MINIMUM drift across dimensions (the weakest
+  link), not the average, so two brands with identical total emission but
+  different distributions have different resilience. The framework is applied
+  to four documented crises and generates three falsifiable predictions.
+
+# ============================================================================
+# Boundary conditions — when the derivation's claims hold
+# ============================================================================
+boundary_conditions:
+  - id: C1
+    statement: >-
+      The brand is classifiable by SBT coherence type, with a canonical
+      eight-dimensional emission profile s = (s_1, ..., s_8) over the
+      dimensions Semiotic, Narrative, Ideological, Experiential, Social,
+      Economic, Cultural, Temporal.
+    observable: "An assigned coherence type and emission profile for the brand."
+    excludes: "Brands with no stable emission pattern measurable across the eight dimensions."
+  - id: C2
+    statement: >-
+      Crisis severity stays below the total-absorption threshold
+      eta* = min_i x_i(tau^-) (the pre-crisis distance to the nearest boundary),
+      so no coherence type is immediately absorbed and the ordering is
+      maintained.
+    observable: "Crisis vector norm ||eta|| < eta*."
+    excludes: "Crises so severe that every type is absorbed on impact."
+
+# ============================================================================
+# Assumption atoms — premises adopted without test (relaxable)
+# ============================================================================
+assumption_atoms:
+  - id: AA1
+    statement: >-
+      The modulating function takes the Wright-Fisher-type linear form
+      h(x_i) = x_i, so signal-driven drift is alpha_i(s, x) = gamma * s_i * x_i;
+      this satisfies the Feller boundary condition and supplies the concavity
+      property the Theorem 1 proof requires.
+    relaxation_consequence: >-
+      A different h(x_i) with h(0)=0, h'>0 preserves the qualitative ordering
+      but alters the convexity argument and the parameter region where the
+      hitting-probability inequality is strict.
+  - id: AA2
+    statement: >-
+      Dimensional dynamics are conditionally independent given the drift field
+      (cross-dimensional coupling is neglected); the minimum-coordinate process
+      is bounded by a union bound over single-coordinate hitting probabilities.
+    relaxation_consequence: >-
+      With coupling (e.g. an ideological crisis cascading to narrative),
+      absorption probabilities can exceed the predicted values, especially for
+      identity-coherent brands whose protected dimensions are tightly coupled.
+  - id: AA3
+    statement: >-
+      The drift field is held constant before and after a crisis, isolating the
+      structural effect of pre-crisis coherence type from any post-crisis
+      crisis-response strategy.
+    relaxation_consequence: >-
+      Endogenizing crisis response makes the post-crisis drift field a function
+      of management decisions; a well-managed response raises signal-driven
+      drift on the affected dimension and shifts recovery probabilities upward.
+  - id: AA4
+    statement: >-
+      The dimension intrinsic-volatility ordering
+      nu_Tem < nu_Sem < nu_Nar < nu_Ide < nu_Cul < nu_Eco < nu_Soc < nu_Exp
+      is adopted on theoretical grounds (justified in Zharnikov 2026r).
+    relaxation_consequence: >-
+      A different volatility ordering would re-rank the identity vs experiential
+      asymmetry comparison (Corollary 1), which depends on the active dimensions
+      of those two types having low vs high volatility respectively.
+
+# ============================================================================
+# Observations — the Monte Carlo simulation as a built evidence artifact
+# ============================================================================
+observations:
+  - id: O1
+    statement: >-
+      A companion Monte Carlo simulation (coherence_resilience_mc.py) evolves
+      the eight-dimensional SDE for the five canonical brands across four shock
+      severities, recording per-brand per-dimension absorption probability,
+      recovery probability, and median recovery time.
+    raw_data_pointer: "code/coherence_resilience_mc.py -> data/results.json (public mirror r12-coherence-resilience)"
+    instrument: "Euler-Maruyama discretization with absorbing boundary at x_i=0, reflecting boundary at x_i=1"
+    timestamp: "2026-03"
+    body_sections: ["§4.3 Recovery Trajectory Schematics", "§5.3 Companion Computation Script"]
+  - id: O2
+    statement: >-
+      A second companion script (coherence_resilience_computations.py) reads the
+      five canonical emission profiles and reports each brand's total emission
+      sum_i s_i, within-brand variance Var(s_i), mean, and floor-crossing count
+      k(alpha; alpha_min) at the working threshold alpha_min = gamma*3.0*h(x*).
+    raw_data_pointer: "code/coherence_resilience_computations.py (public mirror r12-coherence-resilience)"
+    instrument: "deterministic arithmetic over the five canonical profiles"
+    timestamp: "2026-03"
+    body_sections: ["§2.4 Summary of Drift Typology", "§5.3 Companion Computation Script"]
+
+# ============================================================================
+# Methods — how the evidence is generated
+# ============================================================================
+methods:
+  - id: M1
+    statement: >-
+      Monte Carlo simulation of the Stratonovich SDE on S^7_+: 2,000 paths per
+      cell, fixed seed 1729, horizon T = 60 months, working parameters
+      gamma = 0.020, delta = 0.050, sigma_0 = 0.080, dt = 0.25 months; a crisis
+      is applied as an instantaneous per-dimension drop and the trajectory is
+      classified as recovered or absorbed.
+    type: "monte_carlo_simulation"
+    inputs: ["five canonical emission profiles", "four shock severities (0.05, 0.10, 0.15, 0.20)"]
+    outputs: ["per-brand per-dimension absorption probability, recovery probability, median recovery time"]
+    code_anchor: "code/coherence_resilience_mc.py"
+    reproducibility:
+      seed: "1729"
+      runtime_environment: "Python 3.12 + uv; run: uv run python code/coherence_resilience_mc.py"
+  - id: M2
+    statement: >-
+      Scale-function / comparison-theorem analysis of the one-dimensional
+      Wright-Fisher diffusion: stochastic monotonicity of the hitting
+      probability in the drift parameter alpha (Ikeda & Watanabe 1989,
+      Theorem VI.1.1), plus a convexity claim (diminishing marginal value of
+      drift) that enables the Jensen-inequality step comparing isotropic to
+      anisotropic drift fields.
+    type: "analytic_derivation"
+    inputs: ["one-dimensional SDE dY = (gamma s Y - delta(Y - Y*)) dt + sigma_0 sqrt(Y(1-Y)) dW"]
+    outputs: ["monotonicity + convexity of p(T; alpha) -> union-bound inequalities"]
+    code_anchor: "Appendix A (structural argument; full rigor deferred to a companion technical note)"
+
+# ============================================================================
+# Measurements — derived numbers from the methods
+# ============================================================================
+measurements:
+  - id: m1
+    statement: >-
+      Per-brand within-profile statistics: Tesla has the highest within-brand
+      variance Var(s_i) = 4.56 (mean 5.5) among the five canonical brands;
+      Hermes total emission sum_i s_i = 64.5 vs Tesla 44.0.
+    source_observations: [O2]
+    generating_method: M2
+    value: "Tesla Var(s_i)=4.56, mean=5.5; Hermes sum=64.5; Tesla sum=44.0"
+    units: "emission-intensity sum and variance"
+    body_sections: ["§2.3 Mapping Coherence Types to Drift Structures", "§3.2 Remark"]
+  - id: m2
+    statement: >-
+      At the working parameters, active-dimension recovery is essentially
+      certain (P_rec = 1) for all brands EXCEPT Tesla on its weakest dimension
+      (Temporal, s=2), where P_rec = 0 within the 60-month horizon — a numerical
+      instance of the type-over-score principle.
+    source_observations: [O1]
+    generating_method: M1
+    value: "P_rec = 1 (all active dims) except Tesla Temporal P_rec = 0"
+    units: "recovery probability"
+    body_sections: ["§5.3 Companion Computation Script"]
+
+# ============================================================================
+# Propositions — the formal backbone (definitions + three theorems + corollary)
+# ============================================================================
+propositions:
+  - id: P1
+    statement: >-
+      Different SBT coherence types produce different signal-driven drift fields
+      alpha_i = gamma * s_i * x_i in the SDE of Zharnikov (2026j), because the
+      drift on dimension i is proportional to the brand's emission intensity s_i
+      on that dimension; coherence type therefore determines drift geometry.
+    conditions: "C1"
+    antecedents: [AA1]
+    evidence:
+      - type: analytic
+        anchor: "Drift decomposition mu_i = alpha_i (signal-driven) + beta_i (decay) from Zharnikov (2026j); alpha_i = gamma s_i h(x_i)."
+        citation_keys: []
+    body_sections: ["§2.1 The SDE on S^7_+", "§2.2 Drift Isotropy and Anisotropy"]
+  - id: P2
+    statement: >-
+      Each coherence type maps to a characteristic drift structure: ecosystem
+      (Hermes) is (alpha_min, 8)-robust / isotropic in the operative sense;
+      signal (IKEA) is 5-anisotropic; identity (Patagonia) is 3-anisotropic on
+      low-volatility dimensions; experiential asymmetry (Erewhon) is 2-3
+      anisotropic on high-volatility dimensions; incoherent (Tesla) is
+      effectively stochastic. Robustness is governed by the absolute drift FLOOR
+      on the weakest dimension, not the spread of the drift vector.
+    conditions: "C1"
+    antecedents: [P1]
+    evidence:
+      - type: analytic
+        anchor: "Definitions 1-2 ((alpha_min,k)-robust; k-anisotropic) applied to the five canonical profiles."
+        citation_keys: []
+      - type: empirical
+        anchor: "Floor-crossing counts and within-brand variance from coherence_resilience_computations.py."
+    assumptions: [AA1]
+    body_sections: ["§2.3 Mapping Coherence Types to Drift Structures", "§2.4 Summary of Drift Typology"]
+  - id: P3
+    statement: >-
+      (Theorem 1) Absorption probability decreases monotonically in drift
+      isotropy: holding total drift intensity constant, an isotropic field has
+      lower absorption probability than a k-anisotropic field, which is lower
+      than a stochastic field; moreover P_abs is increasing in the anisotropy
+      degree (8-k). Absorption is dominated by the weakest dimension because the
+      hitting probability is convex in the drift parameter (Jensen).
+    conditions: "C1"
+    antecedents: [P1, P2, M2]
+    evidence:
+      - type: analytic
+        anchor: "Union bound over single-coordinate hitting probabilities + convexity/Jensen argument; scale-function + comparison theorem (Ikeda & Watanabe 1989, Thm VI.1.1)."
+        citation_keys: []
+    assumptions: [AA1, AA2]
+    falsifier: "If absorption probability does not order with drift isotropy at equal total drift, Theorem 1 fails."
+    body_sections: ["§3.2 Stability Ordering by Drift Isotropy", "Appendix A"]
+  - id: P4
+    statement: >-
+      (Corollary 1) Among k-anisotropic fields with the same k and total drift,
+      absorption probability is lower when the active (strongly-driven)
+      dimensions have LOW intrinsic volatility than when they have HIGH
+      volatility, because strong drift in a low-noise environment yields a more
+      deterministic trajectory away from the boundary.
+    conditions: "C1"
+    antecedents: [P3, AA4]
+    evidence:
+      - type: analytic
+        anchor: "Volatility ordering (Definition 3) + noise-vs-drift trade-off on the active dimensions."
+        citation_keys: [urde-2007-corporate-brands-heritage, brakus-2009-brand-experience]
+    assumptions: [AA4]
+    body_sections: ["§3.3 The Role of Dimension Volatility"]
+  - id: P5
+    statement: >-
+      (Proposition 1) Combining Theorem 1 with Corollary 1 yields the
+      absorption-probability ordering across types:
+      eco < signal < identity < exp_asymmetry < incoherent, equivalently the
+      stability ordering A+ > A- > B+ > B- > C-. The identity-vs-experiential
+      step is distinguished only by Corollary 1 (both are ~3-anisotropic); the
+      remaining steps follow from Theorem 1.
+    conditions: "C1"
+    antecedents: [P3, P4]
+    evidence:
+      - type: analytic
+        anchor: "Step-by-step derivation chaining Theorem 1 (eco<sig<ident, exp_asym<incoh) and Corollary 1 (ident<exp_asym)."
+        citation_keys: []
+    body_sections: ["§3.4 Full Stability Ordering"]
+  - id: P6
+    statement: >-
+      (Theorem 2) Recovery probability after a pure crisis on dimension i is
+      increasing in the drift alpha_i available there: (a) ecosystem brands
+      recover near-uniformly across dimensions (severity-driven, not
+      direction-driven); (c) for k-anisotropic brands recovery on active
+      dimensions far exceeds recovery on passive dimensions — crises on passive
+      dimensions are disproportionately dangerous; (d) incoherent brands recover
+      poorly across all dimensions because no dimension is reliably protected.
+    conditions: "C1, C2"
+    antecedents: [P1, P2]
+    evidence:
+      - type: analytic
+        anchor: "Survival probability of a 1-D diffusion increasing in drift (Karlin & Taylor 1981 Ch.15; Ikeda & Watanabe 1989 Thm VI.1.1)."
+        citation_keys: []
+      - type: empirical
+        anchor: "MC run: P_rec=1 on active dims for all brands except Tesla Temporal (P_rec=0)."
+    assumptions: [AA1, AA2]
+    falsifier: "If recovery probability is independent of which dimension a crisis affects (controlling severity), Theorem 2(c) is falsified (= Prediction 2 null)."
+    body_sections: ["§4.2 Recovery Probability by Coherence Type", "§4.4 Vulnerability Profiles"]
+  - id: P7
+    statement: >-
+      (Proposition 2) Recovery TIME from a near-boundary state scales as
+      tau_return ~ C/delta^2 (extending Zharnikov 2026j Prop. 6), where the
+      constant C decreases in the drift alpha_i on the affected dimension; hence
+      ecosystem brands have the shortest worst-case recovery times and
+      incoherent brands the longest:
+      tau_eco < tau_sig < tau_ident < tau_exp_asym < tau_incoh.
+    conditions: "C1, C2"
+    antecedents: [P6]
+    evidence:
+      - type: analytic
+        anchor: "Recovery-time scaling from Zharnikov (2026j, Prop. 6) made C-dependent on drift."
+        citation_keys: []
+    body_sections: ["§4.5 Connection to Recovery Time"]
+  - id: P8
+    statement: >-
+      (Theorem 3) The crisis resilience ordering
+      ecosystem > signal > identity > experiential asymmetry > incoherent
+      follows from SDE geometry, where resilience = 1 - P_abs(T; mu,
+      x_post-crisis); the ordering is robust to crisis severity for eta < eta*.
+    conditions: "C1, C2"
+    antecedents: [P5, P6, P7]
+    evidence:
+      - type: analytic
+        anchor: "Theorem 3(1)-(2): assembled from Proposition 1 (stability) and Theorem 2 (recovery)."
+        citation_keys: []
+    falsifier: "If coherence-type ordering does not predict recovery beyond coherence score, Theorem 3 is falsified (= Prediction 1 null)."
+    body_sections: ["§5.1 Assembling the Full Prediction"]
+  - id: P9
+    statement: >-
+      (Theorem 3, Result 3 — the type-over-score principle, central
+      contribution) Two brands with identical total emission sum_i s_i but
+      different emission distributions have different resilience, because
+      absorption is governed by the MINIMUM drift across dimensions (the weakest
+      link), not the average: P_abs ~ max_i p_i(T; alpha_i), minimized under
+      isotropic drift. The SHAPE of the emission profile matters more than its
+      MAGNITUDE; aggregate brand-equity scores destroy precisely the
+      distributional information that predicts crisis outcomes.
+    conditions: "C1, C2"
+    antecedents: [P3, P8]
+    evidence:
+      - type: analytic
+        anchor: "Convexity of P_abs in the drift distribution; max-over-dimensions approximation; weakest-link / chain analogy."
+        citation_keys: []
+      - type: empirical
+        anchor: "Tesla Temporal P_rec=0 despite nonzero total emission — a numerical instance of type-over-score."
+    falsifier: "If recovery depends only on total emission and not on its distribution, the type-over-score principle fails."
+    body_sections: ["§5.1 (Result 3)", "§5.2 The Type-over-Score Principle"]
+  - id: P10
+    statement: >-
+      (Theorem 3, Result 4) The type gap Delta(eta) = P_abs^incoh - P_abs^eco is
+      monotonically increasing in crisis severity eta: at small perturbations
+      all types recover (Delta -> 0); at large perturbations the ecosystem type
+      still recovers with positive probability while the incoherent type is
+      near-certainly absorbed (Delta >> 0). Coherence type is therefore most
+      decisive under severe crises.
+    conditions: "C1, C2"
+    antecedents: [P8, P9]
+    evidence:
+      - type: analytic
+        anchor: "Nonlinear sensitivity of absorption probability to initial distance-to-boundary as eta grows."
+        citation_keys: []
+    falsifier: "If the severity-recovery slope is the same across types (no severity x type interaction), Result 4 is falsified (= Prediction 3 null)."
+    body_sections: ["§5.1 (Result 4)"]
+
+# ============================================================================
+# Findings — what the four documented crises and the MC run demonstrate
+# ============================================================================
+findings:
+  - id: F1
+    statement: >-
+      Four documented crises instantiate the predicted ordering: J&J/Tylenol
+      (1982, ecosystem) recovered fully within ~2 years with post-crisis share
+      above pre-crisis; BP Deepwater Horizon (2010, experiential asymmetry)
+      shows incomplete recovery a decade on after a crisis on its unprotected
+      Ideological dimension; VW Dieselgate (2015, signal) recovered sales in ~3
+      years while Ideological reputation stayed damaged and was reconstructed
+      via an EV pivot; Tesla Cybertruck window (2019, incoherent, LOW severity)
+      recovered within weeks — consistent with Result 4 (type gap small at low
+      eta).
+    type: "case_instantiation"
+    source_measurements: [m2]
+    generating_method: M1
+    antecedents: [P8, P9, P10]
+    falsifier: "If a documented crisis recovered against the type-predicted direction at matched severity, F1 weakens."
+    body_sections: ["§6 Application to Known Crises"]
+  - id: F2
+    statement: >-
+      The Monte Carlo run confirms the qualitative recovery orderings of
+      Theorem 2 and the §4.3 trajectory schematics: active-dimension recovery is
+      essentially certain while a non-trivial fraction of passive-dimension
+      trajectories absorb before reaching the neutral prior; the lone P_rec=0
+      cell (Tesla Temporal) is the type-over-score effect made numerical.
+    type: "simulation_confirmation"
+    source_measurements: [m2]
+    generating_method: M1
+    antecedents: [P6, P9]
+    falsifier: "If the MC run showed passive-dimension recovery equal to active-dimension recovery, F2 fails."
+    body_sections: ["§4.3 Recovery Trajectory Schematics", "§5.3 Companion Computation Script"]
+
+# ============================================================================
+# Alternative explanations — rivals the ordering must clear
+# ============================================================================
+alternative_explanations:
+  - id: A1
+    statement: >-
+      Aaker, Fournier & Brasel (2004) find that "sincere" brands (analogous to
+      identity-coherent) are punished MORE harshly for transgressions than
+      "exciting" brands (analogous to experiential asymmetry), apparently
+      challenging the identity > experiential-asymmetry ordering.
+    rules_out_required: [P8]
+    ruled_out_by: [P6]
+    rules_out_status: "reconciled"
+    reasoning: >-
+      The reconciliation distinguishes shock MAGNITUDE from drift PROTECTION: a
+      brand emitting strongly on the Ideological dimension sets a high observer
+      expectation, so a transgression there is a larger deviation, i.e. a larger
+      effective shock eta_Ide (Theorem 2(c)). The larger shock lowers recovery
+      probability on that dimension — consistent with Aaker et al. — without
+      contradicting the unconditional ordering, which is defined relative to
+      crises of EQUAL severity.
+    body_sections: ["§6.4 Reconciliation with Aaker, Fournier, and Brasel (2004)"]
+  - id: A2
+    statement: >-
+      Tesla (incoherent) has in fact survived higher-severity events (Autopilot
+      fatalities, SEC fraud charges) with limited lasting damage, apparently
+      contradicting the low-resilience prediction for incoherent brands.
+    rules_out_required: [P8]
+    ruled_out_by: []
+    rules_out_status: "open"
+    reasoning: >-
+      Three non-mutually-exclusive in-framework explanations are offered:
+      (a) Musk's personal brand supplies external Narrative drift not in the
+      corporate emission profile (personal/corporate confound); (b) tech-sector
+      positioning normalizes product failures (observer priors assign higher
+      Experiential variance, shrinking effective eta); (c) the
+      single-representative-observer model abstracts away a committed
+      social-dimension cohort that may act as a protective absorbing floor. These
+      are acknowledged limitations, not resolutions.
+    body_sections: ["§6.4 (Tesla high-severity discussion)", "§8.3 Limitations"]
+
+# ============================================================================
+# Limitations — honest scope of the derivation
+# ============================================================================
+limitations:
+  - id: L1
+    statement: >-
+      The coherence-type classifications in the case studies are author-assigned
+      qualitative assessments, not empirical measurements; the predictions
+      cannot be rigorously tested until validated measurement instruments for the
+      eight dimensions exist.
+    severity: "scope-bounding"
+    affects: [F1, P8]
+    body_sections: ["§6 (illustrative caveat)", "§8.3 Limitations"]
+  - id: L2
+    statement: >-
+      Dimensions are treated as conditionally independent given the drift field
+      (a first-order approximation); real cross-dimensional coupling can raise
+      absorption probabilities, especially for identity-coherent brands.
+    severity: "modeling-simplification"
+    affects: [P3, P6]
+    body_sections: ["§8.3 Limitations"]
+  - id: L3
+    statement: >-
+      The model holds the drift field constant before and after a crisis,
+      excluding crisis-response strategy (which would endogenize the post-crisis
+      drift field).
+    severity: "scope-bounding"
+    affects: [P8]
+    body_sections: ["§8.3 Limitations"]
+  - id: L4
+    statement: >-
+      The dimension-volatility ordering (Definition 3) is proposed on
+      theoretical grounds and not empirically validated; its specific
+      quantitative relationships remain to be established.
+    severity: "unvalidated-assumption"
+    affects: [P4]
+    body_sections: ["§8.3 Limitations"]
+  - id: L5
+    statement: >-
+      A fully rigorous proof of the absorption-probability ordering (the
+      convexity of the hitting probability at the boundary alpha=0) is deferred
+      to a forthcoming technical companion note; Appendix A records only the
+      structural argument plus a planned 10,000-path numerical verification.
+    severity: "proof-completeness"
+    affects: [P3]
+    body_sections: ["Appendix A. Technical Note on Convexity of Hitting Probabilities"]
+
+# ============================================================================
+# Cross-paper engagement
+# ============================================================================
+corpus_precedents:
+  - paper_key: 2026a
+    relationship: refines
+    spine_nodes: [P5, P8]
+    note: >-
+      SBT (2026a) introduced the five coherence types and the qualitative
+      coherence-resilience prediction (PF4/F2) on qualitative grounds; this
+      paper refines that prediction into a formal derivation from drift geometry,
+      recovering the A+ > A- > B+ > B- > C- grading.
+  - paper_key: 2026j
+    relationship: extends
+    spine_nodes: [P1, P3, P7]
+    note: >-
+      Extends the Stratonovich SDE on S^7_+ of Non-Ergodic Brand Perception
+      (2026j) — which derived stability only for specific brands — to coherence
+      types as a class; reuses its drift decomposition and recovery-time scaling
+      (Prop. 6).
+  - paper_key: 2026o
+    relationship: extends
+    spine_nodes: [P1]
+    note: >-
+      Extends the non-ergodic / absorbing-states framing of 2026o to the
+      crisis-resilience setting.
+  - paper_key: 2026d
+    relationship: applies
+    spine_nodes: [P2]
+    note: "Uses the canonical emission profiles / brand-space metric of 2026d to instantiate each coherence type."
+  - paper_key: 2026e
+    relationship: applies
+    spine_nodes: [P9]
+    note: >-
+      The type-over-score principle is the crisis-dynamics analog of spectral
+      metamerism (2026e): brands indistinguishable on aggregate measures diverge
+      under crisis, as metameric spectra diverge under a new illuminant.
+  - paper_key: 2026k
+    relationship: extends
+    spine_nodes: [P9]
+    note: >-
+      Provides a crisis-specific rationale for the broad-spectrum (ecosystem)
+      allocation strategy recommended in Spectral Resource Allocation (2026k).
+  - paper_key: 2026r
+    relationship: applies
+    spine_nodes: [P4]
+    note: "Imports the dimension-volatility ordering justification from 2026r (Definition 3 / AA4)."
+  - paper_key: 2026ac
+    relationship: extends
+    spine_nodes: [P8]
+    note: >-
+      Speculative future direction: lifts brand-level coherence-resilience to
+      portfolio-level resilience (2026ac, Spectral Immunity).
+
+# ============================================================================
+# External anchor literature
+# ============================================================================
+external_anchors:
+  - {citation_key: bundy-2017-crises-crisis-management, role: gap_motivation, spine_nodes: [P8], note: "Pre-crisis structural attributes as under-theorized determinant — the gap this paper fills."}
+  - {citation_key: cleeren-2017-marketing-research-product-harm, role: gap_motivation, spine_nodes: [P9], note: "Brand-equity structure moderates recovery, mechanism unspecified."}
+  - {citation_key: coombs-2007-protecting-organization-reputations, role: contrast, spine_nodes: [P8], note: "SCCT studies crisis RESPONSE; this paper studies pre-crisis STRUCTURE."}
+  - {citation_key: coombs-holladay-2002-helping-crisis-managers, role: supporting, spine_nodes: [P6], note: "SCCT crisis typology maps to crisis-direction eta-hat."}
+  - {citation_key: dawar-pillutla-2000-impact-product-harm, role: supporting, spine_nodes: [P7], note: "Prior reputation buffers / deep-equity brands recover faster — structural explanation supplied here."}
+  - {citation_key: peters-gellmann-2016-evaluating-gambles, role: framework, spine_nodes: [P1], note: "Ergodicity economics — non-ergodic multiplicative dynamics framework."}
+  - {citation_key: peters-2019-ergodicity-problem-economics, role: framework, spine_nodes: [P1], note: "The ergodicity problem; basis for absorbing-state dynamics."}
+  - {citation_key: ikeda-watanabe-1989-stochastic-differential, role: method, spine_nodes: [P3, P6], note: "Comparison theorem (Thm VI.1.1) for stochastic monotonicity of hitting probability in drift."}
+  - {citation_key: karlin-taylor-1981-second-course, role: method, spine_nodes: [P6], note: "Scale function / speed measure representation of hitting probabilities."}
+  - {citation_key: ethier-kurtz-1986-markov-processes, role: method, spine_nodes: [P1], note: "Feller boundary condition / well-posedness of the Wright-Fisher diffusion."}
+  - {citation_key: aaker-fournier-brasel-2004-when-good-brands, role: rival, spine_nodes: [P8], note: "Sincere brands punished more harshly — reconciled in A1."}
+  - {citation_key: perrow-1984-normal-accidents, role: contrast, spine_nodes: [P8], note: "Normal Accident Theory: operational coupling; complementary (predicts WHEN, not WHICH)."}
+  - {citation_key: holling-1973-resilience-stability, role: framework, spine_nodes: [P8], note: "Engineering vs ecological resilience maps to recovery vs absorption probability."}
+  - {citation_key: molenaar-2004-manifesto-psychology, role: supporting, spine_nodes: [P9], note: "Ensemble-average analyses misrepresent individual trajectories — analog of aggregate-score failure."}
+  - {citation_key: urde-2007-corporate-brands-heritage, role: supporting, spine_nodes: [P4], note: "Heritage is the most stable equity component (low Temporal volatility)."}
+  - {citation_key: brakus-2009-brand-experience, role: supporting, spine_nodes: [P4], note: "Experiential associations are the most volatile (high Experiential volatility)."}
+  - {citation_key: naik-raman-2003-understanding-impact-synergy, role: prior_method, spine_nodes: [P1], note: "SDE toolkit standard for multi-channel brand-signal dynamics."}
+  - {citation_key: schweidel-2008-understanding-service-retention, role: prior_method, spine_nodes: [P3], note: "Latent absorbing-threshold retention model — extended to perceptual dimensions."}
+
+# ============================================================================
+# Open questions / boundary edges
+# ============================================================================
+open:
+  - "Empirical measurement instruments for coherence type are needed before any of the three falsifiable predictions can be tested (L1)."
+  - "Extend the drift model to cross-dimensional coupling to capture cascading crises where failure on one dimension propagates to others (L2)."
+  - "Integrate crisis-response strategy as an endogenous post-crisis drift field (L3)."
+  - "Resolve the Tesla high-severity survival anomaly (A2): is it personal-brand drift, normalized-failure priors, or cohort-floor structure?"
+  - "Lift to portfolio-level resilience: how do constituent coherence types and their correlations determine portfolio resilience? (2026ac extension)."
+
+# ============================================================================
+# Spine changelog — append-only
+# ============================================================================

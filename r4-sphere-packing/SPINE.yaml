@@ -1,0 +1,591 @@
+# SPINE.yaml — How Many Brands Can a Market Hold? (2026g / R4)
+#
+# RETROFIT spine: extracted descriptively from the completed paper.md
+# ([internal path removed], Working Paper v1.3.0), NOT authored
+# generatively before prose. Part of the SPINE-for-all-active-canonical
+# project ([internal path removed], D4).
+#
+# Schema v0.2: the paper reports both (a) proved mathematical capacity bounds
+# with computed table values (Tables 4-8, A1, B1) and (b) an author-produced
+# LLM stability experiment (Experiment C, 250 calls, five models) returning a
+# null competitive-interference result. The computed bounds and the empirical
+# null are therefore represented as observation -> method -> measurement ->
+# finding chains, not asserted in prose.
+
+spine_version: "0.2"
+spine_doc_version: "0.1.0"
+paper_key: "2026g"
+provenance: retrofit
+title: >-
+  How Many Brands Can a Market Hold? Sphere Packing Bounds for
+  Multi-Dimensional Positioning
+target_venue_primary: "Working Paper (Zenodo); marketing-science / quant-marketing venue TBD"
+status: >-
+  Retrofit spine extracted 2026-06-14 from completed paper.md (v1.3.0). Edits
+  to the argument belong in the paper; this spine is a faithful backbone
+  description for the bundle anti-drift gate.
+
+thesis: |
+  Brand perception in Spectral Brand Theory is formalized as points in the
+  positive orthant R^8_+ under the Aitchison metric, which the centered
+  log-ratio transform renders isometric to Euclidean distance on a
+  7-dimensional hyperplane, so the question "how many distinguishable brand
+  positions can a market sustain?" maps exactly onto sphere packing in eight
+  dimensions. Because the E_8 lattice is the proved optimal packing in R^8
+  (Viazovska 2017) — packing density pi^4/384 ~ .2537, kissing number 240 —
+  it supplies structural ceilings: positioning capacity is at least
+  (1/epsilon)^8 (10^8 distinguishable positions at epsilon = .10), each
+  position has at most 240 nearest competitors decomposing into 112 specialist
+  and 128 generalist vectors, 10,000 brands occupy under .01% of the unit
+  8-ball, category saturation occurs near (1/epsilon)^d_eff, and average
+  inter-dimension correlation rho = .3 collapses effective dimensionality to
+  ~2.6 and capacity by roughly five orders of magnitude. The E_8 connection is
+  structural, not literal — a ceiling on positioning order, not a claim that
+  brands sit on lattice points. An LLM stability experiment (250 calls, five
+  models) finds null competitive-interference effects, supporting the
+  fixed-geometry assumption on which the bounds rest.
+
+# ============================================================================
+# Boundary conditions — when the capacity bounds and E_8 apparatus apply
+# ============================================================================
+boundary_conditions:
+  - id: C1
+    statement: >-
+      Dimensional independence: the eight SBT dimensions generate an
+      effectively eight-dimensional space (d_eff ~ 8); if dimensions collapse
+      through correlation, the applicable bounds are those for d_eff < 8.
+    observable: "Participation-ratio effective dimensionality of observed brand profiles ~ 8."
+    excludes: "Highly correlated categories where d_eff approaches 1-2."
+  - id: C2
+    statement: >-
+      Aitchison-metric assumption: the flat-Euclidean geometry holds only under
+      the clr transform and the compositional-ratio model of perception; an
+      observer-weighted Fisher-Rao metric would introduce curvature and require
+      spherical or hyperbolic packing bounds instead.
+    observable: "Brand-perception data satisfy the compositional / ratio-invariant distributional assumptions."
+    excludes: "Curved observer-weighted metrics; non-compositional perception models."
+  - id: C3
+    statement: >-
+      Salience-of-differentiation regime: the bounds are tight when observer
+      cohorts are sensitive to differences across all eight dimensions; in
+      low-salience categories effective capacity converges toward Sharp's
+      mental-availability model rather than the geometric ceiling.
+    observable: "Observer cohorts discriminate brands on all eight dimensions."
+    excludes: "Low-salience categories where differentiation is cognitively discounted."
+  - id: C4
+    statement: >-
+      Interior vs boundary positioning: the 240 kissing bound applies to
+      interior lattice positions; concentration of measure (Zharnikov 2026f)
+      pushes brand profiles toward the feasible-region boundary, where
+      positions have fewer nearest-competitor slots.
+    observable: "Brand profiles lie in the interior of the feasible region."
+    excludes: "Boundary-concentrated finite brand spaces."
+
+# ============================================================================
+# Observations — the inputs the capacity results and experiment rest on
+# ============================================================================
+observations:
+  - id: O1
+    statement: >-
+      The clr transform maps R^8_+ under the Aitchison metric isometrically
+      onto a 7-dimensional Euclidean hyperplane, so Euclidean sphere-packing
+      results in R^8 apply directly to brand-perception distance.
+    raw_data_pointer: "Zharnikov 2026d (Aitchison metric); Aitchison 1986; Egozcue et al. 2003"
+    instrument: "Centered log-ratio transform clr_k(s) = log(s_k / g(s))"
+    timestamp: "2026-05"
+    body_sections: ["Preliminaries — Brand Space with the Aitchison Metric"]
+  - id: O2
+    statement: >-
+      E_8 is the proved optimal sphere packing in R^8 (Viazovska 2017): packing
+      density pi^4/384 ~ .2537, kissing number 240 (exact), with 240 minimal
+      vectors at squared norm 2.
+    raw_data_pointer: "Viazovska 2017; Conway & Sloane 1999 ch. 4; Pfender & Ziegler 2004"
+    instrument: "Established results of discrete geometry / lattice theory"
+    timestamp: "2017"
+    body_sections: ["Sphere Packing Fundamentals", "Positioning Capacity — The E_8 Lattice and Its Properties"]
+  - id: O3
+    statement: >-
+      An LLM competitive-interference experiment (Experiment C): five focal
+      brands x three competitor distances (direct/adjacent/distant) x four
+      prompt conditions x five models = 250 calls, 250 valid responses (100%
+      completion).
+    raw_data_pointer: "Experiment C design; companion experiment record"
+    instrument: "Five LLMs (Claude Haiku 4.5, GPT-4o-mini, Gemini 2.5 Flash, DeepSeek V3, Grok 4.1 Fast)"
+    timestamp: "2026-05"
+    body_sections: ["Discussion — Empirical Test: Competitive Interference in LLM Perception Space"]
+
+# ============================================================================
+# Methods — derivation apparatus + the experiment's analysis
+# ============================================================================
+methods:
+  - id: M1
+    statement: >-
+      Distinguishability-to-packing reduction: two brands are distinguishable
+      iff their Aitchison distance exceeds perceptual threshold epsilon, so each
+      brand occupies an epsilon/2 ball; the maximum number of distinguishable
+      positions equals the packing number of epsilon/2 balls in the region.
+    type: "geometric_derivation"
+    inputs: ["O1", "perceptual threshold epsilon (.05 / .10 / .20)"]
+    outputs: ["capacity-as-packing-number formulation"]
+    code_anchor: "R4_R5_computations.py / r4_capacity_bounds.py (SEED = 42)"
+    body_sections: ["Preliminaries — From Distinguishability to Sphere Packing", "Sphere Packing Fundamentals — Packing Density Bounds"]
+  - id: M2
+    statement: >-
+      Volume-ratio bounding: lower bound N >= V_8(1)/V_8(epsilon) = (1/epsilon)^8
+      via the maximality/covering argument; upper bound N <= V_8(1+epsilon/2) /
+      V_8(epsilon/2) = ((2+epsilon)/epsilon)^8 via containment in B(0, 1+epsilon/2);
+      E_8 density gives the intermediate estimate Delta_8 * V_8(1)/V_8(epsilon/2).
+    type: "volume_ratio_bound"
+    inputs: ["M1", "V_n(r) = pi^(n/2)/Gamma(n/2+1) * r^n", "Delta_8 = pi^4/384"]
+    outputs: ["Table 4 capacity bounds", "E_8 estimate 6.49e9 at epsilon=.10"]
+    code_anchor: "r4_capacity_bounds.py"
+    body_sections: ["Positioning Capacity — Volume Ratio Bounds"]
+  - id: M3
+    statement: >-
+      Effective-dimensionality reduction: for an equicorrelation matrix with
+      average pairwise correlation rho, the participation ratio
+      d_eff = (sum lambda_k)^2 / sum lambda_k^2 simplifies to
+      n / (1 + (n-1) rho); capacity is then (1/epsilon)^d_eff.
+    type: "eigenvalue_participation_ratio"
+    inputs: ["correlation rho", "n = 8", "Proposition 1 bound"]
+    outputs: ["Table 8 d_eff and capacity-collapse values"]
+    code_anchor: "r4_capacity_bounds.py (d_eff(n, rho))"
+    body_sections: ["Effective Dimensionality and Correlation"]
+  - id: M4
+    statement: >-
+      Competitive-interference test (Experiment C analysis): per-dimension
+      profile shifts compared across solo / self-comparison / paired / context
+      conditions; H1 a one-sided binomial sign test over 8 dimensions, H2 an
+      ANOVA of shift magnitude vs competitor distance, H3 a t-test of
+      contrast-vs-assimilation by competitor type, with a self-comparison
+      prompt-format control.
+    type: "null_hypothesis_significance_test"
+    inputs: ["O3 (250 LLM responses)"]
+    outputs: ["m_H1", "m_H2", "m_H3", "m_control"]
+    reproducibility:
+      seed: "SEED = 42 (capacity script); experiment record archives the LLM calls"
+      runtime_environment: "Python 3.12 + numpy + scipy"
+    body_sections: ["Discussion — Empirical Test (Design / Results)"]
+
+# ============================================================================
+# Measurements — computed values from the bounds and the experiment
+# ============================================================================
+measurements:
+  - id: m_cap_010
+    statement: "Positioning-capacity lower bound at epsilon = .10 is (1/.10)^8 = 10^8 distinguishable positions in the unit 8-ball."
+    source_observations: [O1, O2]
+    generating_method: M2
+    value: ">= 1.00e8 (lower), <= 3.78e10 (upper), E_8 estimate ~6.49e9"
+    units: "distinguishable brand positions"
+    body_sections: ["Table 4", "Appendix A Table A1"]
+  - id: m_kiss
+    statement: "E_8 kissing number is 240, decomposing as 112 specialist (two-coordinate +/-1) + 128 generalist (eight-coordinate +/-1/2, even sign parity) minimal vectors at squared norm 2; ratio ~47:53."
+    source_observations: [O2]
+    generating_method: M2
+    value: "240 = 112 + 128"
+    units: "nearest-neighbor lattice vectors"
+    body_sections: ["Proposition 2", "Figure 1"]
+  - id: m_white
+    statement: "White-space fraction ~ 1 - n_b * epsilon^8; at epsilon = .10, 10,000 brands cover 10^-4 of the unit ball, leaving 99.99% unoccupied."
+    source_observations: [O1]
+    generating_method: M2
+    value: "99.9900% white space at n_b = 10,000, epsilon = .10"
+    units: "fraction of unit 8-ball unoccupied"
+    body_sections: ["Table 6"]
+  - id: m_deff_030
+    statement: "At rho = .3 (n = 8), participation-ratio effective dimensionality is d_eff = 2.58 and capacity collapses from 10^8 to ~10^3."
+    source_observations: [O1]
+    generating_method: M3
+    value: "d_eff = 2.58; capacity ~ 10^3 (collapse factor ~10^5)"
+    units: "effective dimensions; distinguishable positions"
+    body_sections: ["Table 8", "Figure 2"]
+  - id: m_H1
+    statement: "H1 (profiles shift when a competitor is present): binomial sign test 0 of 8 dimensions in predicted direction, p = 1.00 (one-sided); Cohen's d in [-.187, +.169], all trivial."
+    source_observations: [O3]
+    generating_method: M4
+    value: "0/8 directional; p = 1.00; |d| <= .187"
+    units: "sign-test count / p-value / Cohen's d"
+    body_sections: ["Discussion — Empirical Test (Results)"]
+  - id: m_H2
+    statement: "H2 (shift magnitude increases with competitor distance): F = .623, p = .538, eta-sq = .008."
+    source_observations: [O3]
+    generating_method: M4
+    value: "F = .623; p = .538; eta-sq = .008"
+    units: "ANOVA F / p / eta-squared"
+    body_sections: ["Discussion — Empirical Test (Results)"]
+  - id: m_H3
+    statement: "H3 (contrast for direct vs assimilation for distant competitors): t = -.502, p = .616, d = -.029."
+    source_observations: [O3]
+    generating_method: M4
+    value: "t = -.502; p = .616; d = -.029"
+    units: "t / p / Cohen's d"
+    body_sections: ["Discussion — Empirical Test (Results)"]
+
+# ============================================================================
+# Propositions — the five capacity results + structural framing
+# ============================================================================
+propositions:
+  - id: P0
+    statement: >-
+      The marketing metaphor of a "positioning space" has never been made
+      geometrically literal; given an 8-dimensional perception space with a
+      formal metric, the basic quantitative question — how many distinguishable
+      positions the space contains — is a sphere-packing problem and is
+      answerable with proved results.
+    conditions: ""
+    antecedents: [O1]
+    body_sections: ["Positioning in High-Dimensional Space"]
+  - id: P1
+    statement: >-
+      (Proposition 1, Positioning capacity) For perceptual threshold epsilon > 0
+      in the unit 8-ball of clr-transformed brand space, the number of
+      distinguishable positions N satisfies (1/epsilon)^8 <= N <=
+      ((2+epsilon)/epsilon)^8; at epsilon = .10 the lower bound is 10^8. The
+      argument is structurally the Hamming bound applied geometrically and is
+      formally equivalent to Shannon channel capacity.
+    conditions: "C1, C2"
+    antecedents: [M2, m_cap_010]
+    evidence:
+      - type: derivation
+        anchor: "Simple volume bound (lower) + covering bound (upper); Table 4."
+        citation_keys: [viazovska-2017-sphere-packing-problem, hamming-1950-error-detecting-error, shannon-1948-mathematical-theory-communication]
+    falsifier: >-
+      Falsified if more than ((2+epsilon)/epsilon)^8 mutually distinguishable
+      profiles (pairwise Aitchison distance > epsilon) exist in the unit 8-ball,
+      or fewer than (1/epsilon)^8 non-overlapping epsilon-balls fit.
+    body_sections: ["Positioning Capacity — Volume Ratio Bounds (Proposition 1)"]
+  - id: P2
+    statement: >-
+      (Proposition 2, Local competition) Each position in the E_8 packing has
+      exactly 240 nearest neighbors — the maximum in eight dimensions —
+      decomposing into 112 specialist vectors (two coordinates +/-1, six zeros)
+      and 128 generalist vectors (all eight coordinates +/-1/2, even sign
+      parity). Tightness tau(8) = 240 follows from the Kabatyanskii-Levenshtein
+      LP bound. The specialist/generalist competitive reading is a
+      structurally-motivated analogy, not an empirical regularity.
+    conditions: "C4"
+    antecedents: [O2, m_kiss]
+    evidence:
+      - type: derivation
+        anchor: "C(8,2)*2^2 = 112; 2^8/2 = 128; both shells at squared norm 2."
+        citation_keys: [conway-1999-sphere-packings-lattices, kabatyanskii-1978-bounds-packings-sphere]
+    falsifier: >-
+      Falsified if E_8's minimal vectors number other than 240 or more than 240
+      unit spheres can simultaneously kiss a central sphere in R^8 (both proved
+      impossible — falsification would be mathematical, not empirical).
+    body_sections: ["Positioning Capacity — The Kissing Number (Proposition 2)", "Figure 1"]
+  - id: P3
+    statement: >-
+      (Proposition 3, White space abundance) For n_b brands at threshold epsilon
+      with non-overlapping neighborhoods, the unoccupied fraction is
+      ~ 1 - n_b * epsilon^8; at epsilon = .10 even 10,000 brands leave 99.99% of
+      the positioning space unoccupied — a direct consequence of high-dimensional
+      volume (curse of dimensionality).
+    conditions: "C1, C2"
+    antecedents: [m_white]
+    evidence:
+      - type: derivation
+        anchor: "Neighborhood volume V_8(epsilon)/V_8(1) = epsilon^8; Table 6."
+    falsifier: >-
+      Falsified if the measured covered fraction of brand space exceeds
+      n_b * epsilon^8 by a margin inconsistent with the non-overlap assumption.
+    body_sections: ["White Space and Market Saturation — Proposition 3"]
+  - id: P4
+    statement: >-
+      (Proposition 4, Category saturation) A category with effective
+      dimensionality d_eff and threshold epsilon is saturated when the number of
+      brands approaches (1/epsilon)^d_eff; saturation depends on effective
+      dimensionality, not raw brand count (commodity d_eff ~ 2 saturates near
+      100; luxury d_eff ~ 8 admits 10^8).
+    conditions: "C1, C3"
+    antecedents: [P1]
+    evidence:
+      - type: derivation
+        anchor: "Proposition 1 bound applied with n = d_eff; Table 7."
+        citation_keys: [sharp-2010-how-brands-grow]
+    falsifier: >-
+      Falsified if a category's observed brand count consistently and
+      substantially exceeds (1/epsilon)^d_eff (d_eff estimated via PCA) without
+      measurable perceptual overlap.
+    body_sections: ["White Space and Market Saturation — Category Saturation (Proposition 4)"]
+  - id: P5
+    statement: >-
+      (Proposition 5, Correlation collapses capacity) If the eight SBT
+      dimensions have average pairwise correlation rho, effective dimensionality
+      is d_eff = n / (1 + (n-1) rho) and capacity is ~ (1/epsilon)^d_eff; at
+      rho = .3 (n = 8) d_eff ~ 2.6 and capacity collapses from 10^8 to ~10^3 —
+      making de-correlation of a brand's dimensional profile a primary strategic
+      asset. The capacity-collapse curve is steepest in the low-rho regime.
+    conditions: "C1"
+    antecedents: [M3, m_deff_030]
+    evidence:
+      - type: derivation
+        anchor: "Equicorrelation eigenvalues 1+(n-1)rho and (n-1) of 1-rho; participation ratio; Table 8 / Figure 2."
+    falsifier: >-
+      Falsified if an empirically estimated SBT correlation matrix yields a
+      participation-ratio d_eff that does not predict observed capacity at the
+      rate (1/epsilon)^d_eff, or if the equicorrelation assumption systematically
+      misrepresents the real eigenvalue structure.
+    body_sections: ["Effective Dimensionality and Correlation — Proposition 5"]
+  - id: P6
+    statement: >-
+      The E_8 connection is structural, not literal: it bounds the mathematical
+      ceiling of positioning order — it does NOT claim brands arrange on a
+      lattice, that 240 literally describes competition, that the 112/128
+      decomposition is a market law, or that E_8 plays any causal role. Real
+      brand distributions are noisy, irregular, non-uniform, and far from any
+      lattice.
+    conditions: ""
+    antecedents: [P2]
+    body_sections: ["Important caveat (Introduction)", "Limitations — The E_8 Connection Is Interpretive, Not Literal"]
+  - id: P7
+    statement: >-
+      Eight dimensions is mathematically exceptional: optimal packing is proved
+      only in n = 1,2,3,8,24, so in n = 8 the density (pi^4/384), kissing number
+      (240), and full nearest-neighbor configuration are known exactly; the
+      coincidence with SBT's eight (qualitatively derived) dimensions is fortunate
+      but not evidence of a deeper structural connection. SBT's dimensional choice
+      is independently grounded by the completeness/necessity argument (2026r).
+    conditions: ""
+    antecedents: [O2]
+    body_sections: ["Why Eight Dimensions Is Special"]
+  - id: P8
+    statement: >-
+      Projection from 8D to a low-dimensional perceptual map (typically 2D)
+      collapses capacity from 10^8 to ~10^2 — the positioning analog of spectral
+      metamerism (2026e). The "crowded market" complaint is largely a projection
+      artifact, not genuine scarcity of distinguishable positions.
+    conditions: ""
+    antecedents: [P1]
+    evidence:
+      - type: derivation
+        anchor: "Capacity (1/epsilon)^n by dimension; Table 5."
+    body_sections: ["Positioning Capacity — Comparison Across Dimensions", "Discussion — Connection to R2"]
+
+# ============================================================================
+# Findings — the empirical null and its support for fixed geometry
+# ============================================================================
+findings:
+  - id: F1
+    statement: >-
+      The LLM competitive-interference experiment returns a null result on all
+      three hypotheses (H1 0/8, p = 1.00; H2 F = .623, p = .538; H3 t = -.502,
+      p = .616): brand profiles do not shift with the presence, distance, or
+      type of a named competitor. PRISM-B measures stable internal
+      representations, not context-dependent judgments.
+    type: "negative_empirical_finding"
+    source_measurements: [m_H1, m_H2, m_H3]
+    generating_method: M4
+    antecedents: [O3]
+    falsifier: "If a higher-powered replication detects systematic competitor-driven profile shifts across models, F1 weakens."
+    citation_role_in_paper: "supports_fixed_geometry_assumption_of_P1_to_P5"
+    body_sections: ["Discussion — Empirical Test (Results / Interpretation)"]
+  - id: F2
+    statement: >-
+      The null competitive-interference result is the empirical warrant for the
+      fixed-geometry assumption underlying Propositions 1-5: because positions
+      are context-independent, the capacity bounds hold as intrinsic constraints
+      rather than context-dependent artifacts. Had interference been large,
+      effective dimensionality would be context-dependent and the framework
+      would require qualification.
+    type: "assumption_validation"
+    source_measurements: [m_H1, m_H2, m_H3]
+    generating_method: M4
+    antecedents: [F1]
+    falsifier: "If competitive context were shown to shift profiles materially, the fixed-geometry premise of P1-P5 fails."
+    body_sections: ["Discussion — Empirical Test (Interpretation)"]
+
+# ============================================================================
+# Negative findings — what the experiment did NOT find (the headline null)
+# ============================================================================
+negative_findings:
+  - id: NF1
+    statement: >-
+      No competitive-interference effect (contrast or assimilation) was detected
+      on aggregate cross-model tests; the self-comparison prompt-format control
+      was also null (Euclidean shift 2.10, no dimension significant). Exploratory
+      anomalies (GPT-4o-mini mean shift 15.37; Erewhon most susceptible at 11.73,
+      consistent with its weak Temporal anchoring of 2.5) did not reach
+      per-dimension significance; a high-replication single-model follow-up
+      (2026p) confirms the GPT-4o-mini instability at higher power.
+    expected_observation: "A measurable competitor-driven shift in perceived brand profiles."
+    source_method: M4
+    affects_nodes: [F1, F2]
+    motivates: [F2]
+    body_sections: ["Discussion — Empirical Test (Results / Exploratory finding)"]
+
+# ============================================================================
+# Alternative explanations — rivals the capacity claim must clear
+# ============================================================================
+alternative_explanations:
+  - id: A1
+    statement: >-
+      Mental-availability rival (Sharp 2010): markets converge on a few highly
+      salient brands regardless of theoretical positioning space, so "exploit
+      8-dimensional white space" overstates differentiation's role.
+    rules_out_required: [P3, P4]
+    ruled_out_by: [P4, P5]
+    rules_out_status: "boundary_condition_not_contradiction"
+    reasoning: >-
+      The two frameworks answer different questions — how many brands a market
+      CAN hold vs how many consumers DO consider. They are boundary conditions on
+      each other: geometric capacity governs when differentiation is salient (low
+      rho); mental availability dominates when differentiation is cognitively
+      discounted (high rho -> d_eff ~ 1-2). The gap is an opportunity cost for
+      future empirical work, not a contradiction.
+    body_sections: ["Discussion — Tension with Empirical Brand Growth Research"]
+  - id: A2
+    statement: >-
+      Context-dependence rival: contrast (Simonson & Tversky 1992) or assimilation
+      (Herr 1986) effects could make brand positions context-dependent, undermining
+      the fixed-geometry premise.
+    rules_out_required: [P1, F2]
+    ruled_out_by: [F1]
+    rules_out_status: "rejected"
+    reasoning: >-
+      Experiment C tests this directly and finds null competitive interference
+      across five models, so positions are treated as fixed for the capacity
+      derivation.
+    body_sections: ["Discussion — Empirical Test"]
+
+# ============================================================================
+# Limitations — honest scope of the bounds
+# ============================================================================
+limitations:
+  - id: L1
+    statement: >-
+      Anisotropy: the analysis assumes isotropic space, but SBT dimensions are
+      unlikely to be symmetric (per-dimension perceptual ranges and thresholds
+      differ; integral vs separable dimensions per Garner 1974 / Shepard 1987).
+      Under anisotropy the epsilon-balls become ellipsoids, E_8 no longer
+      optimal; the bounds survive as order-of-magnitude estimates but exact
+      constants change.
+    severity: "scope-bounding"
+    affects: [P1, P2]
+    body_sections: ["Limitations — Anisotropy"]
+  - id: L2
+    statement: >-
+      Observer dependence: the analysis fixes a single Aitchison metric, but
+      brand distance is observer-dependent (2026d); under the observer-weighted
+      metric the packing "spheres" become observer-dependent ellipsoids and
+      capacity is observer-dependent (a market saturated for one cohort may have
+      white space for another). Full treatment requires integrating over the
+      observer distribution on Delta^7 — future work.
+    severity: "scope-bounding"
+    affects: [P1, P3, P4]
+    body_sections: ["Limitations — Observer Dependence"]
+  - id: L3
+    statement: >-
+      Noise and bounded-region assumptions: real brand positions are
+      distributions (perception clouds), not points; noise inflates the effective
+      threshold to epsilon + 2 sigma and reduces capacity by ((epsilon+2sigma)/
+      epsilon)^8. The unit-ball / convex feasible-region assumption may overstate
+      capacity if the achievable region is smaller or non-convex.
+    severity: "scope-bounding"
+    affects: [P1, P3]
+    body_sections: ["Limitations — Noise and Measurement Uncertainty", "Limitations — Bounded Region Assumption"]
+  - id: L4
+    statement: >-
+      Empirical calibration of the perceptual threshold epsilon (via JND
+      experiments) and empirical estimation of category effective dimensionality
+      (via PCA on observer-perceived profiles to test Proposition 5) remain
+      future work; the category examples in Tables 7-8 are illustrative, not
+      empirical.
+    severity: "future-work"
+    affects: [P4, P5]
+    body_sections: ["The Perceptual Threshold", "Future Directions"]
+
+# ============================================================================
+# Cross-paper engagement
+# ============================================================================
+corpus_precedents:
+  - paper_key: 2026a
+    relationship: refines
+    spine_nodes: [P0, P1]
+    note: >-
+      SBT provides the eight-dimensional emission/observer architecture; R4
+      refines SBT's F4 (positioning) by supplying formal capacity bounds where
+      SBT had only the dimensional framework.
+  - paper_key: 2026d
+    relationship: extends
+    spine_nodes: [O1, P1, L2]
+    note: >-
+      R1 (brand space geometry) established the Aitchison metric on R^8_+ that
+      makes the clr-isometry — and thus Euclidean sphere packing — applicable;
+      R4 extends it from a metric to formal capacity bounds.
+  - paper_key: 2026e
+    relationship: applies
+    spine_nodes: [P8]
+    note: >-
+      R2 (spectral metamerism) is the projection-collapse phenomenon; R4 shows
+      the 8D->2D capacity collapse (10^8 -> 10^2) is metamerism at the
+      market-capacity scale.
+  - paper_key: 2026f
+    relationship: applies
+    spine_nodes: [C4, P3, L2]
+    note: >-
+      R3 (concentration of measure / fuzzy cohort boundaries) explains why
+      brand profiles concentrate near boundaries, qualifying interior-position
+      kissing bounds and white-space discoverability.
+  - paper_key: 2026r
+    relationship: extends
+    spine_nodes: [C1, P7]
+    note: >-
+      "Why eight?" supplies the corpus-internal completeness/necessity argument
+      for the eight-dimensional choice, converging with the E_8 mathematical
+      exceptionalism on n = 8.
+  - paper_key: 2026s
+    relationship: extends
+    spine_nodes: [P5]
+    note: >-
+      Coherence-type-as-crisis-predictor formally connects the
+      dimensional-correlation effects to coherence-resilience ordering.
+  - paper_key: 2026p
+    relationship: extends
+    spine_nodes: [NF1]
+    note: >-
+      A high-replication single-model (gpt-4o-mini, 240 calls) follow-up confirms
+      the exploratory GPT-4o-mini instability that Experiment C flagged at low power.
+  - paper_key: 2026c
+    relationship: extends
+    spine_nodes: [P0]
+    note: >-
+      R0 (geometric approaches survey) frames the prior geometric attempts that
+      never derived capacity bounds; R4 supplies the missing bounds.
+
+# ============================================================================
+# External anchor literature
+# ============================================================================
+external_anchors:
+  - {citation_key: viazovska-2017-sphere-packing-problem, role: foundational_result, spine_nodes: [O2, P1, P2, P7], note: "E_8 optimal packing in R^8 — the central mathematical anchor"}
+  - {citation_key: conway-1999-sphere-packings-lattices, role: foundational_result, spine_nodes: [O2, P2], note: "Sphere Packings, Lattices and Groups — 240 minimal-vector decomposition"}
+  - {citation_key: cohn-2003-new-upper-bounds, role: methodological_foundation, spine_nodes: [M2], note: "Cohn-Elkies LP bound framework underlying Viazovska's proof"}
+  - {citation_key: kabatyanskii-1978-bounds-packings-sphere, role: foundational_result, spine_nodes: [P2], note: "LP bound giving tau(8) <= 240"}
+  - {citation_key: pfender-2004-kissing-numbers-sphere, role: supporting_evidence, spine_nodes: [O2], note: "Exact kissing numbers table"}
+  - {citation_key: aitchison-1986-statistical-analysis-compositional, role: methodological_foundation, spine_nodes: [O1, C2], note: "Compositional-data analysis justifying the Aitchison metric"}
+  - {citation_key: egozcue-2003-isometric-logratio-transformations, role: methodological_foundation, spine_nodes: [O1], note: "clr / ilr isometry to Euclidean hyperplane"}
+  - {citation_key: hamming-1950-error-detecting-error, role: structural_analogy, spine_nodes: [P1], note: "Hamming bound — Proposition 1 is its geometric form"}
+  - {citation_key: shannon-1948-mathematical-theory-communication, role: structural_analogy, spine_nodes: [P1], note: "Channel capacity = packing number equivalence"}
+  - {citation_key: sharp-2010-how-brands-grow, role: rival_framework, spine_nodes: [A1, P4, C3], note: "Mental-availability rival; boundary condition on capacity"}
+  - {citation_key: ries-1981-positioning-battle-your, role: motivating_anchor, spine_nodes: [P0], note: "Positioning metaphor R4 makes geometrically literal"}
+  - {citation_key: gardenfors-2000-conceptual-spaces-geometry, role: motivating_anchor, spine_nodes: [P0], note: "Conceptual spaces — prior geometry without capacity bounds"}
+  - {citation_key: tenenbaum-2011-how-grow-mind, role: motivating_anchor, spine_nodes: [P0], note: "Structured high-dimensional hypothesis spaces motivate the capacity question"}
+  - {citation_key: simonson-1992-choice-context-tradeoff, role: rival_mechanism, spine_nodes: [A2], note: "Contrast effects — context-dependence rival tested by Experiment C"}
+  - {citation_key: herr-1986-consequences-priming-judgment, role: rival_mechanism, spine_nodes: [A2], note: "Assimilation effects — context-dependence rival"}
+  - {citation_key: garner-1974-processing-information-structure, role: supporting_evidence, spine_nodes: [L1], note: "Integral vs separable dimensions — anisotropy caveat"}
+  - {citation_key: shepard-1987-toward-universal-law, role: supporting_evidence, spine_nodes: [L1], note: "City-block vs Euclidean metric for separable dimensions"}
+
+# ============================================================================
+# Open questions / boundary edges
+# ============================================================================
+open:
+  - "Empirical calibration of the perceptual threshold epsilon via JND psychophysics experiments. (L4)"
+  - "Anisotropic packing bounds with dimension-specific thresholds (ellipsoidal / city-block). (L1)"
+  - "Observer-dependent capacity by integrating packing bounds over the observer distribution on Delta^7. (L2)"
+  - "Dynamic capacity as the metric evolves under signal decay / crystallization (connection to R6)."
+  - "Empirical estimation of category effective dimensionality via PCA to test Proposition 5. (L4)"
+  - "Does the 112:128 specialist:generalist ratio have any empirical relevance in real competitive dynamics? (open by construction)"
+
+# ============================================================================
+# Spine changelog — append-only
+# ============================================================================

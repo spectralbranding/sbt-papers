@@ -1,0 +1,574 @@
+# SPINE.yaml — Specification Impossibility in Organizational Design (2026h / R5)
+#
+# RETROFIT spine (CLAUDE.md rule 0aa / publication-pipeline decision D4):
+# extracted DESCRIPTIVELY from the completed paper.md, not authored
+# generatively before prose. The paper was finished (Working Paper v1.1.0,
+# March 2026) before this spine existed; every node below traces to claims
+# already present in the body.
+#
+# Schema v0.2 ([internal path removed] §"Schema v0.2"):
+# this is a pure-formal-theory paper (three theorems + corollaries proved in
+# closed form, no author-collected empirical data and no simulation), BUT it
+# reports CITED COMPUTED NUMBERS — Tables 1–9, the Figure 3 series, and the
+# headline constants V_48(0.1) ≈ 1.38e-60, d_eff = 15.75, H_48 = 159.4 bits —
+# all reproduced by a companion computation script. Per the retrofit brief,
+# a paper that reports computed numbers uses v0.2; so the derivations are
+# represented as a method (the closed-form computation) → measurements (the
+# headline values) → findings (the three impossibility/reduction results),
+# rather than asserted only in prose.
+
+spine_version: "0.2"
+spine_doc_version: "0.1.0"
+provenance: retrofit
+paper_key: "2026h"
+title: >-
+  Specification Impossibility in Organizational Design: A High-Dimensional
+  Geometric Analysis
+target_venue_primary: "TBD (organizational-design / strategy theory venue)"
+status: >-
+  Retrofit spine extracted 2026-06-14 from completed paper.md (Working Paper
+  v1.1.0, March 2026). Faithful description of the paper as written; no new
+  claims introduced.
+
+thesis: |
+  Comprehensive organizational specification is geometrically impossible.
+  OrgSchema Theory's 8×6 activation matrix is formalized as a 48-dimensional
+  specification space [0,1]^48, and three closed-form results follow. (1)
+  Coverage Impossibility: at resolution epsilon = 0.1 per dimension the space
+  admits 10^48 distinguishable specifications, each covering a ball of volume
+  V_48(0.1) ≈ 1.38e-60, so even 10^20 templates cover only ~10^-40 of the
+  space. (2) Effective Dimensionality Reduction: OST's cascade model collapses
+  effective dimensionality from 48 to d_eff = 8(1-(1-gamma)^6)/gamma, i.e.
+  15.75 at gamma = 0.5 (a 67% reduction), making per-organization specification
+  tractable without making the space coverable. (3) Forkability as Subspace
+  Decomposition: the fork model partitions [0,1]^48 into a shared and a private
+  subspace (24+24 at the canonical k=3 fork), formalizing franchises,
+  open-source ecosystems, and denominational structures. An information-theoretic
+  reading shows a full specification carries 159.4 bits — far above human
+  working-memory capacity — so cascade and fork compression is cognitively
+  necessary, not merely convenient. The results are strictly complementary to
+  Simon's bounded rationality and to NK landscape search complexity: geometric
+  impossibility holds regardless of cognitive capacity or any fitness function.
+
+# ============================================================================
+# Boundary conditions — the modeling assumptions under which the results hold
+# ============================================================================
+boundary_conditions:
+  - id: C1
+    statement: >-
+      OST parameters are metric (equal-interval) rather than ordinal, so a 0.1
+      difference on the [0,1] scale is meaningful and the volume/resolution
+      argument applies; OST's continuous [0,1] parameterization is designed to
+      satisfy the Liddell & Kruschke (2018) conditions, but empirical validation
+      of the metric interpretation remains open.
+    observable: "Parameter discriminability at ~10-point resolution per dimension."
+    excludes: "Purely ordinal OST instruments without an equal-interval metric."
+    provenance:
+      created_by: "author"
+      created_at: "2026-03"
+  - id: C2
+    statement: >-
+      The coverage bounds assume a uniform prior over [0,1]^48 (every point
+      equally relevant). If viable organizations cluster on a low-dimensional
+      viability manifold of intrinsic dimension d_sub, the bound applies to that
+      subspace with V_d_sub(0.1); impossibility persists as long as d_sub ≳ 20.
+    observable: "Intrinsic dimensionality of the viability manifold (TDA estimate)."
+    excludes: "A viability manifold of dimension below ~20."
+    provenance:
+      created_by: "author"
+      created_at: "2026-03"
+  - id: C3
+    statement: >-
+      The cascade coupling parameter gamma ∈ (0,1] is a structural modeling
+      input, not a derived constant; quantitative claims (e.g. d_eff = 15.75)
+      are illustrative at gamma = 0.5 until gamma is empirically estimated from
+      cross-organizational panel data.
+    observable: "A sample estimate gamma_hat from a hierarchical mixed-effects model."
+    excludes: "Treating d_eff = 15.75 as descriptive without estimating gamma."
+    provenance:
+      created_by: "author"
+      created_at: "2026-03"
+
+# ============================================================================
+# Methods — the closed-form computation that produces every cited number
+# ============================================================================
+methods:
+  - id: M1
+    statement: >-
+      Closed-form high-dimensional volume computation: the unit-ball volume
+      V_n(r) = (pi^{n/2}/Gamma(n/2+1)) r^n evaluated against the unit cube, the
+      geometric-series sum d_eff = 8(1-(1-gamma)^6)/gamma, the subspace-product
+      decomposition [0,1]^48 = [0,1]^{8k} × [0,1]^{8(6-k)}, and the Shannon
+      entropy H = n·log2(1/epsilon). No stochastic computation; all results are
+      exact (companion script carries a fixed SEED=42 only for policy compliance
+      and asserts each cited figure to stated precision).
+    type: "closed_form_computation"
+    inputs: ["n=48 (8×6 activation matrix)", "epsilon=0.1 resolution", "gamma cascade coupling", "fork depth k"]
+    outputs: ["Tables 1–9", "Figure 3 volume series", "V_48(0.1)", "d_eff(gamma)", "H_48", "compression ratio"]
+    code_anchor: "[internal path removed]"
+    reproducibility:
+      seed: "SEED=42 (no RNG; closed-form, included for policy compliance)"
+      runtime_environment: "uv run --with numpy,scipy python ..."
+    provenance:
+      created_by: "author + companion computation script"
+      created_at: "2026-03"
+
+# ============================================================================
+# Measurements — the headline computed values cited in the body
+# ============================================================================
+measurements:
+  - id: m_ball_volume
+    statement: >-
+      A single specification at epsilon = 0.1 covers a 48-ball of volume
+      V_48(0.1) = (pi^24/24!)·10^-48 ≈ 1.38e-60; the inscribed-ball-to-cube
+      ratio at n=48 is ≈ 4.89e-27.
+    source_observations: []
+    generating_method: M1
+    value: "V_48(0.1) ≈ 1.38e-60; ball/cube ratio ≈ 4.89e-27"
+    units: "fraction of unit-cube volume"
+    provenance:
+      created_by: "companion computation script"
+      created_at: "2026-03"
+  - id: m_coverage_ceiling
+    statement: >-
+      Maximum coverage by M non-overlapping templates is M·V_48(0.1): 10^20
+      templates cover 1.38e-40; reaching even 1% coverage requires
+      M ≈ 7.26e57 templates.
+    source_observations: []
+    generating_method: M1
+    value: "10^20 → 1.38e-40 covered; 1% coverage needs ~7.26e57 templates"
+    units: "fraction of [0,1]^48 covered"
+    provenance:
+      created_by: "companion computation script"
+      created_at: "2026-03"
+  - id: m_deff
+    statement: >-
+      Under the cascade model the effective dimensionality is
+      d_eff = 8(1-(1-gamma)^6)/gamma; at gamma = 0.5, d_eff = 15.75 (a 67.2%
+      reduction from 48), with per-level free dimensions 8, 4, 2, 1, 0.5, 0.25.
+    source_observations: []
+    generating_method: M1
+    value: "d_eff = 15.75 at gamma=0.5 (per-level 8/4/2/1/0.5/0.25)"
+    units: "effective free dimensions"
+    provenance:
+      created_by: "companion computation script"
+      created_at: "2026-03"
+  - id: m_fork_private
+    statement: >-
+      The canonical k=3 fork decomposes [0,1]^48 into a 24-dim shared and a
+      24-dim private subspace (10^24 private specs at epsilon=0.1); under
+      cascade gamma=0.5 the private subspace collapses to d_private,eff = 1.75
+      effective dimensions.
+    source_observations: []
+    generating_method: M1
+    value: "shared 24 / private 24 dims; d_private,eff = 1.75 at gamma=0.5"
+    units: "subspace dimensions"
+    provenance:
+      created_by: "companion computation script"
+      created_at: "2026-03"
+  - id: m_entropy
+    statement: >-
+      A full 48-dim specification carries H_48 = 48·log2(10) ≈ 159.4 bits,
+      against working-memory capacity ≈ 23.2 bits (Miller) or ≈ 13.3 bits
+      (Cowan); under cascade gamma=0.5 the residual load is H_eff ≈ 52.3 bits
+      (compression ratio ≈ 3.05), with per-level loads within WM capacity.
+    source_observations: []
+    generating_method: M1
+    value: "H_48 ≈ 159.4 bits; H_eff ≈ 52.3 bits; CR ≈ 3.05; WM ≈ 23.2/13.3 bits"
+    units: "bits"
+    provenance:
+      created_by: "companion computation script"
+      created_at: "2026-03"
+
+# ============================================================================
+# Propositions — the paper's theoretical backbone
+# ============================================================================
+propositions:
+  - id: P1
+    statement: >-
+      OST's organization model — six hierarchical levels (L0 Purpose, L1 Values,
+      L2 Strategy, L3 Structure, L4 Process, L5 Artifacts) each specified across
+      the eight SBT configuration dimensions — yields an 8×6 activation matrix
+      A ∈ [0,1]^{8×6} that vectorizes to a single point in a 48-dimensional
+      specification space [0,1]^48.
+    conditions: ""
+    antecedents: []
+    evidence:
+      - type: analytic
+        anchor: "Activation-matrix construction; the 8 SBT dimensions applied at each of OST's 6 levels."
+        citation_keys: []
+    body_sections: ["§Preliminaries: OrgSchema Theory — The Activation Matrix"]
+  - id: P2
+    statement: >-
+      In high dimensions the inscribed-ball volume collapses relative to the
+      cube (volume concentrates in the corners); at n=48 the ratio is ≈ 4.89e-27,
+      so the 'center' of the specification space is volumetrically nowhere and a
+      balanced specification is volumetrically rare.
+    conditions: ""
+    antecedents: [P1]
+    evidence:
+      - type: derivation
+        anchor: "V_n(1) = pi^{n/2}/Gamma(n/2+1); ratio V_ball/V_cube collapses super-exponentially with n (Table 1, Figure 3)."
+        citation_keys: []
+    body_sections: ["§The Geometry of Specification Spaces — Volume Collapse in High Dimensions"]
+  - id: P3
+    statement: >-
+      (Theorem 1, Coverage Impossibility) At resolution epsilon = 0.1 the space
+      admits 10^48 distinguishable specifications, each covering V_48(0.1) ≈
+      1.38e-60; any practically enumerable collection covers a negligible
+      fraction (10^20 templates → 1.38e-40), so exhaustive coverage is
+      geometrically impossible — not merely impractical.
+    conditions: "C1, C2"
+    antecedents: [P2]
+    evidence:
+      - type: derivation
+        anchor: "Theorem 1 proof: (1/epsilon)^48 distinguishable cubes; M·V_48(epsilon) coverage upper bound; Corollary 1.1."
+        citation_keys: []
+    falsifier: >-
+      Falsified if the OST parameter space has intrinsic dimensionality
+      substantially below 48 (e.g. <20 effective dims from empirical structural
+      dependencies), in which case V_48 is replaced by V_{d_eff} on the lower-dim
+      subspace (paper's stated falsifier).
+    body_sections: ["§The Coverage Impossibility Theorem", "§Dimensional Comparison"]
+  - id: P4
+    statement: >-
+      (Theorem 2, Effective Dimensionality Reduction) OST's cascade model, where
+      level i constrains level i+1 with strength gamma, reduces effective
+      dimensionality to d_eff = 8(1-(1-gamma)^6)/gamma — 15.75 at gamma = 0.5, a
+      67% reduction — making per-organization specification tractable (~16 rather
+      than 48 independent choices) without making the space coverable.
+    conditions: "C3"
+    antecedents: [P3]
+    evidence:
+      - type: derivation
+        anchor: "Geometric-series sum of d_i = 8(1-gamma)^i over i=0..5 (Theorem 2, Lemma 1, Table 5)."
+        citation_keys: []
+    falsifier: >-
+      Lemma 1 falsified if measured per-level effective dimensionality at gamma=0.5
+      deviates systematically from d_i = 8·0.5^i (e.g. L2 freedom substantially
+      above 2.0), indicating the uniform-gamma model fails.
+    body_sections: ["§Cascade Constraints as Dimensionality Reduction — The Effective Dimensionality Theorem"]
+  - id: P5
+    statement: >-
+      (Proposition 1, Coherence–Coupling Correspondence) The closed form converts
+      to a falsifiable empirical prediction: the cross-level coherence ratio
+      R = 1 - d_eff/(nL) is a monotone increasing function R(gamma) of cascade
+      coupling, so across organizations an estimated R_hat should track R(gamma_hat)
+      within a tolerance band (anchors R(.1)≈.22, R(.5)≈.67, R(.9)≈.82).
+    conditions: "C1, C3"
+    antecedents: [P4]
+    evidence:
+      - type: derivation
+        anchor: "R(gamma) = 1 - (1-(1-gamma)^L)/(gamma·L); functional-form prediction sharper than loose/tight coupling (Weick 1976)."
+        citation_keys: []
+    falsifier: >-
+      Falsified if a paired sample {(gamma_hat_o, R_hat_o)} shows Pearson r < .50
+      with R(gamma_hat), or residuals depend systematically on level (per-pair
+      gamma differing by >.20 within one organization).
+    body_sections: ["§A Falsifiable Empirical Prediction"]
+  - id: P6
+    statement: >-
+      (Theorem 3, Forkability as Subspace Decomposition) Sharing levels L0..L_{k-1}
+      while diverging on L_k..L5 is geometrically equivalent to factoring
+      [0,1]^48 = [0,1]^{8k} (shared) × [0,1]^{8(6-k)} (private); the canonical
+      k=3 fork gives 24 shared + 24 private dimensions, formalizing franchises,
+      open-source ecosystems, and denominational structures.
+    conditions: ""
+    antecedents: [P1]
+    evidence:
+      - type: derivation
+        anchor: "Decompose a=(a_shared,a_private); organizations sharing s occupy the affine subspace {s}×private (Theorem 3 proof, Table 6)."
+        citation_keys: []
+    body_sections: ["§Forkability as Subspace Decomposition — The Fork Model Formalized"]
+  - id: P7
+    statement: >-
+      The fork and cascade models interact multiplicatively: under cascade
+      gamma the effective private dimensionality at fork k is
+      d_private,eff = 8(1-gamma)^k[1-(1-gamma)^{6-k}]/gamma — at the canonical
+      k=3, gamma=0.5 the 24 nominal private dimensions collapse to 1.75,
+      explaining why franchises achieve uniformity while explicitly controlling
+      only higher levels.
+    conditions: "C3"
+    antecedents: [P4, P6]
+    evidence:
+      - type: derivation
+        anchor: "Fork×cascade interaction surface (Table 7); d_private,eff closed form."
+        citation_keys: []
+    body_sections: ["§Fork-Cascade Interaction"]
+  - id: P8
+    statement: >-
+      (Information-theoretic reading) A full 48-dim specification carries
+      H_48 = 48·log2(10) ≈ 159.4 bits, far exceeding human working-memory capacity
+      (≈23 bits Miller, ≈13 bits Cowan); therefore structural compression via
+      cascade and fork is COGNITIVELY NECESSARY, not merely convenient — the
+      cascade turns an impossible 159.4-bit simultaneous problem into a sequential
+      one with ≤26.6 bits at any step.
+    conditions: "C1"
+    antecedents: [P3, P4]
+    evidence:
+      - type: derivation
+        anchor: "H = n·log2(1/epsilon) (Corollary 2); WM ratio; per-level load Table 8; cascade as lossy compression, CR≈3.05 (Corollary 3)."
+        citation_keys: []
+    falsifier: >-
+      Corollary 3 falsified if a full specification's effective information is
+      substantially below 23 bits, or organizations routinely produce coherent
+      specifications with no cascade/fork compression.
+    body_sections: ["§Information-Theoretic Interpretation"]
+  - id: P9
+    statement: >-
+      The impossibility result is STRICTLY COMPLEMENTARY to bounded rationality
+      (Simon 1947), contractual incompleteness (Williamson 1975, 1985), and
+      axiomatic-design information content (Suh 1990): geometric impossibility
+      obtains for a cognitively unbounded agent and independently of contractual
+      framing or fitness function — it holds on grounds those arguments do not
+      address.
+    conditions: ""
+    antecedents: [P3]
+    evidence:
+      - type: analytic
+        anchor: "Even an oracle revealing all optimal configurations covers measure-zero of [0,1]^48."
+        citation_keys: []
+    body_sections: ["§Cognitive Constraints and Compression", "§Comparison with Other Frameworks"]
+  - id: P10
+    statement: >-
+      Coverage impossibility (geometric) is DISTINCT FROM and COMPLEMENTARY TO
+      NK landscape search complexity (computational): NK asks 'how hard is it to
+      find the optimum?' on a fitness landscape; this paper asks 'how much of the
+      space can any collection cover?' with no fitness function. Together they
+      create a double bind — too vast to specify, too rugged to search — that
+      makes specialization the only viable strategy.
+    conditions: ""
+    antecedents: [P3]
+    evidence:
+      - type: analytic
+        anchor: "Theorem 1 holds regardless of fitness function; NK requires one (Table 9 comparison; Figure 2 quadrant)."
+        citation_keys: []
+    body_sections: ["§Comparison with NK Landscapes"]
+  - id: P11
+    statement: >-
+      Templates and consulting frameworks are low-dimensional projections of
+      [0,1]^48: a 5-dimension framework retains ≈10.4% of the 159.4 bits and
+      discards 43 dimensions, so distinct 48-dim configurations producing the
+      same template projection are organizationally metameric (indistinguishable
+      by the template but genuinely different), with the lost dimensions
+      equivalent to construct-irrelevant variance.
+    conditions: ""
+    antecedents: [P3, P8]
+    evidence:
+      - type: analytic
+        anchor: "Template-as-projection; null-space = construct-irrelevant variance (Borsboom et al. 2004); metamerism construct (Zharnikov 2026e)."
+        citation_keys: []
+    body_sections: ["§Practical Implications — Template-Based Organizational Design as Subspace Projection"]
+  - id: P12
+    statement: >-
+      The activation matrix splits into output specification (L0–L2: purpose,
+      values, strategy — the irreducible, human-authored WHAT, ~14 of 15.75
+      effective dimensions at gamma=0.5) and coordination specification (L3–L5:
+      structure, process, artifacts — the derivable HOW, ~1.75 effective
+      dimensions); AI systems compress coordination overhead by making the
+      HOW derivable from the WHAT, reducing the irreducible burden to ~14 dims.
+    conditions: "C3"
+    antecedents: [P4, P7]
+    evidence:
+      - type: analytic
+        anchor: "Mintzberg (1979) output-vs-process standardization made quantitative via cascade asymmetry; position-as-projection within L3."
+        citation_keys: []
+    body_sections: ["§Output Specification Versus Coordination Specification", "§Position-as-Projection Within L3"]
+
+# ============================================================================
+# Findings — what the proved results establish
+# ============================================================================
+findings:
+  - id: F1
+    statement: >-
+      Exhaustive organizational specification is geometrically impossible: any
+      finite library of templates covers a negligible fraction of [0,1]^48, so
+      'best practices' cannot be comprehensive and organizational design must be
+      generative (derive from first principles) and dimensional (move along axes),
+      not enumerative or categorical.
+    type: "theorem_consequence"
+    source_measurements: [m_ball_volume, m_coverage_ceiling]
+    generating_method: M1
+    antecedents: [P3]
+    falsifier: "If the viable specification subspace has intrinsic dimension well below ~20, exhaustive coverage becomes feasible and F1 weakens."
+    citation_role_in_paper: "primary_result"
+    provenance:
+      created_by: "author"
+      created_at: "2026-03"
+    body_sections: ["§Why 'Best Practices' Cannot Be Comprehensive", "§The Specialization Imperative"]
+  - id: F2
+    statement: >-
+      Cascade hierarchy and forkability are geometric microfoundations for
+      modularity theory: the cascade collapses d_eff (67% at gamma=0.5) and the
+      fork factors the space into shared/private subspaces, so hierarchy IS
+      dimensionality reduction and modularity IS subspace decomposition — both
+      cognitively necessary responses to coverage impossibility, not conveniences.
+    type: "theorem_consequence"
+    source_measurements: [m_deff, m_fork_private, m_entropy]
+    generating_method: M1
+    antecedents: [P4, P6, P7, P8]
+    falsifier: "If organizations routinely specify coherently without any cascade/fork compression, the necessity claim fails."
+    citation_role_in_paper: "primary_result"
+    provenance:
+      created_by: "author"
+      created_at: "2026-03"
+    body_sections: ["§Conclusion"]
+
+# ============================================================================
+# Alternative explanations — rivals the impossibility claim must clear
+# ============================================================================
+alternative_explanations:
+  - id: A1
+    statement: >-
+      The impossibility is just bounded rationality (Simon) or contractual
+      incompleteness (Williamson) restated — a cognitive/contractual limit, not
+      a geometric one.
+    rules_out_required: [P3, P9]
+    ruled_out_by: [P9]
+    rules_out_status: "rejected"
+    reasoning: >-
+      Geometric impossibility obtains for a cognitively UNBOUNDED agent and with
+      no contract or fitness function: even an oracle that revealed every optimal
+      configuration would cover measure-zero of [0,1]^48. The argument holds on
+      grounds Simon/Williamson/Suh do not address; it is complementary, not
+      reducible.
+    provenance:
+      created_by: "author"
+      created_at: "2026-03"
+    body_sections: ["§Cognitive Constraints and Compression"]
+  - id: A2
+    statement: >-
+      The result is the NK landscape search-complexity argument under a new name
+      (configurations are hard to find).
+    rules_out_required: [P3, P10]
+    ruled_out_by: [P10]
+    rules_out_status: "rejected"
+    reasoning: >-
+      NK requires a fitness function and concerns SEARCH (how hard to find the
+      optimum); Theorem 1 requires no fitness function and concerns COVERAGE (how
+      much of the space any collection spans). They are complementary — the double
+      bind — distinguished as computational complexity (NK) vs geometric
+      impossibility (this paper).
+    provenance:
+      created_by: "author"
+      created_at: "2026-03"
+    body_sections: ["§Comparison with NK Landscapes — Complementarity"]
+
+# ============================================================================
+# Limitations — honest scope of the result
+# ============================================================================
+limitations:
+  - id: L1
+    statement: >-
+      The coverage bounds assume a uniform distribution over [0,1]^48; real
+      organizations cluster on a viability manifold. A viability-weighted analysis
+      would reduce the volume to be covered, though impossibility persists for any
+      manifold of dimension ≳ 20 (conjectured; TDA estimation is open).
+    severity: "scope-bounding"
+    affects: [P3, F1]
+    provenance:
+      created_by: "author"
+      created_at: "2026-03"
+    body_sections: ["§Limitations"]
+  - id: L2
+    statement: >-
+      gamma (cascade coupling) is treated theoretically and the cascade is
+      assumed LINEAR with a uniform gamma across dimensions and levels; real
+      cascades may be nonlinear and dimension-dependent, and the 8 within-level
+      dimensions are treated as independent. Empirical estimation of gamma and
+      the within-level correlation structure is required before quantitative
+      claims (d_eff = 15.75, H_48 = 159.4) are read as descriptive.
+    severity: "future-work"
+    affects: [P4, P5, P8, m_deff, m_entropy]
+    provenance:
+      created_by: "author"
+      created_at: "2026-03"
+    body_sections: ["§Limitations", "§Methodological Implications for Empirical Organizational Design Research"]
+  - id: L3
+    statement: >-
+      The analysis is static (a single point in time). Real organizations evolve;
+      activation matrices change as organizations adapt, learn, and respond to
+      environments, and observer-relative measurement at L1 adds response-process
+      variability beyond geometric projection loss — a dynamic extension
+      (trajectories in [0,1]^48) is left to future work.
+    severity: "scope-bounding"
+    affects: [P1]
+    provenance:
+      created_by: "author"
+      created_at: "2026-03"
+    body_sections: ["§Limitations", "§Extensions"]
+
+# ============================================================================
+# Cross-paper engagement
+# ============================================================================
+corpus_precedents:
+  - paper_key: 2026i
+    relationship: extends
+    spine_nodes: [P1, P4, P6]
+    note: >-
+      OST (Zharnikov 2026i) supplies the architectural framework — the six levels,
+      eight dimensions, activation matrix, cascade and fork models — that this
+      paper formalizes geometrically and justifies volumetrically.
+  - paper_key: 2026a
+    relationship: applies
+    spine_nodes: [P1]
+    note: >-
+      Spectral Brand Theory (Zharnikov 2026a) supplies the eight configuration
+      dimensions adopted as OST's per-level modeling primitive; the generative
+      relationship (configuration → brand emissions) is the bridge in the
+      Conclusion.
+  - paper_key: 2026d
+    relationship: extends
+    spine_nodes: [P1, P2]
+    note: >-
+      Brand-space geometry (Zharnikov 2026d) equipped the 8-dim brand space with
+      the Aitchison and Fisher-Rao metrics; this paper extends the geometric
+      analysis to the 48-dim specification space (volume/coverage rather than
+      distance).
+  - paper_key: 2026e
+    relationship: applies
+    spine_nodes: [P11]
+    note: >-
+      The template-as-projection / organizational-metamerism reading applies the
+      spectral-metamerism projection construct of Zharnikov 2026e to the 48→k
+      template projection.
+  - paper_key: 2026f
+    relationship: applies
+    spine_nodes: [P2]
+    note: >-
+      The concentration-of-measure analysis on the simplex (Zharnikov 2026f)
+      shares the underlying mechanism with the volumetric concentration in
+      [0,1]^48.
+
+# ============================================================================
+# External anchor literature
+# ============================================================================
+external_anchors:
+  - {citation_key: vershynin-2018, role: foundational_theory, spine_nodes: [P2, P3], note: "High-dimensional probability — measure-concentration / volume-collapse theory underlying Table 1"}
+  - {citation_key: kauffman-1993, role: contrast_framework, spine_nodes: [P10], note: "NK landscape model — the search-complexity framework distinguished from coverage impossibility"}
+  - {citation_key: simon-1947, role: complementary_argument, spine_nodes: [P9], note: "Administrative Behavior — bounded rationality, complementary to geometric impossibility"}
+  - {citation_key: williamson-1985, role: complementary_argument, spine_nodes: [P9], note: "Economic Institutions of Capitalism — contractual incompleteness, complementary"}
+  - {citation_key: suh-1990, role: complementary_argument, spine_nodes: [P9], note: "Principles of Design — axiomatic design / information axiom, complementary product-design account"}
+  - {citation_key: miller-1956, role: empirical_anchor, spine_nodes: [P8], note: "Magical number seven — working-memory capacity bound for the cognitive-necessity argument"}
+  - {citation_key: cowan-2001, role: empirical_anchor, spine_nodes: [P8], note: "Magical number four — revised WM capacity (tighter bound)"}
+  - {citation_key: shannon-1948, role: foundational_theory, spine_nodes: [P8], note: "Mathematical theory of communication — Shannon entropy for specification information content"}
+  - {citation_key: baldwin-clark-2000, role: extended_framework, spine_nodes: [P6, F2], note: "Design Rules — modularity, for which forkability is the subspace-decomposition formalization"}
+  - {citation_key: mintzberg-1979, role: extended_framework, spine_nodes: [P12], note: "Structuring of Organizations — output- vs process-standardization, made quantitative by the cascade asymmetry"}
+  - {citation_key: liddell-kruschke-2018, role: methodological_anchor, spine_nodes: [P3], note: "Metric models on ordinal data — conditions for the epsilon=0.1 metric interpretation (boundary condition C1)"}
+  - {citation_key: borsboom-2004, role: methodological_anchor, spine_nodes: [P11], note: "Concept of validity — construct-irrelevant variance = template projection null space"}
+
+# ============================================================================
+# Open questions / boundary edges
+# ============================================================================
+open:
+  - "Empirical estimation of cascade coupling gamma from cross-organizational panel data (conditional variance ratios), so d_eff = 15.75 becomes descriptive rather than illustrative. (L2, C3)"
+  - "TDA-based estimation of the viability-manifold intrinsic dimension d_sub to refine the coverage bound and test the d_sub ≳ 20 conjecture. (L1, C2)"
+  - "Testing Proposition 1: does R_hat track R(gamma_hat) across organizations with r ≥ .50 and level-independent residuals? (P5)"
+  - "A nonlinear, dimension-dependent cascade model (relaxing uniform-linear gamma) and the within-level correlation structure. (L2)"
+  - "A dynamic extension: organizational evolution as trajectories in [0,1]^48, connecting to diffusion-on-manifolds (Zharnikov 2026j). (L3)"
+  - "Formal alignment of OST's L0–L5 internal configuration levels with the six-tier acquisition-target ontology of Zharnikov 2026ag (explicitly deferred)."
+  - "Whether AI agents can in practice derive HOW (L3–L5 coordination) configurations from the WHAT (L0–L2 output) specification. (P12)"
+
+# ============================================================================
+# Spine changelog — append-only
+# ============================================================================

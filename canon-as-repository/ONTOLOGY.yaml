@@ -1,0 +1,31 @@
+# ONTOLOGY.yaml module - 2026w
+#
+# Per-paper ontology module per [internal path removed]
+# §"ONTOLOGY.yaml schema (v0.1)". owns = terms THIS paper introduces (unique
+# authority); imports = terms owned by other modules it uses (reference only).
+# Linked into the substrate `terms` graph by build_ontology.py; rendered per-paper
+# by render_paper_glossary.py. Bootstrapped 2026-06-13 from per-paper term
+# extraction; definitions paraphrase each paper's own definitional text.
+
+paper_key: 2026w
+schema_version: 0.1
+
+owns:
+  - term_key: canon-as-repository
+    label: "Canon as Repository"
+    canonical_form: "canon as repository"
+    definition: "A specification-driven architecture that reconceives a transmedia franchise's canonical specification as a version-controlled repository in which editions are tagged commits, translations and adaptations are forks, canon governance operates through pull requests, and consistency validation functions as continuous integration."
+    first_section: "1. Introduction"
+  - term_key: audience-as-renderer
+    label: "The Audience as Renderer"
+    canonical_form: "audiences become renderers"
+    definition: "The condition in which, once specification and rendering are formally separated and rendering technology is sufficiently capable, observers can generate personalized renderings from a published canonical specification, transforming the author's role from renderer to specifier."
+    first_section: "5.4 The Audience as Renderer"
+
+imports:
+  - {term_key: spectral-brand-theory}
+  - {term_key: perception-cloud}
+  - {term_key: research-as-repository}
+
+refines: []
+

@@ -1,0 +1,44 @@
+# ONTOLOGY.yaml module - 2026ad
+#
+# Per-paper ontology module per [internal path removed]
+# §"ONTOLOGY.yaml schema (v0.1)". owns = terms THIS paper introduces (unique
+# authority); imports = terms owned by other modules it uses (reference only).
+# Linked into the substrate `terms` graph by build_ontology.py; rendered per-paper
+# by render_paper_glossary.py. Bootstrapped 2026-06-13 from per-paper term
+# extraction; definitions paraphrase each paper's own definitional text.
+
+paper_key: 2026ad
+schema_version: 0.1
+
+owns:
+  - term_key: spectral-gap-restoration-threshold
+    label: "Spectral Gap Restoration Threshold"
+    canonical_form: "spectral gap restoration threshold"
+    definition: "A closed-form sufficient condition for cohort separability survival after a coherence shock: the corrective coherence emission rate must exceed the spectral leakage rate at the observer cohort's detection scale."
+    first_section: "Theory (The Threshold Inequality, Proposition 1)"
+  - term_key: corrective-coherence-emission-rate
+    label: "Corrective Coherence Emission Rate"
+    canonical_form: "corrective coherence emission rate"
+    definition: "The rate at which purposive brand emissions inject observer mass back into the dominant cohort eigenspace per unit time."
+    first_section: "Theory (Spectral Leakage and Corrective Emission)"
+  - term_key: spectral-leakage-rate
+    label: "Spectral Leakage Rate"
+    canonical_form: "spectral leakage rate"
+    definition: "The rate of cross-cohort perceptual mass transfer per unit time, the Frobenius norm of the off-diagonal block of the perception operator's generator under a coherence shock."
+    first_section: "Theory (Spectral Leakage and Corrective Emission)"
+  - term_key: cohort-separability
+    label: "Cohort Separability"
+    canonical_form: "cohort separability"
+    definition: "The property that cohort perception clouds remain distinct almost-invariant sets, governed by a strictly positive spectral gap of the perception operator."
+    first_section: "Theory (The Perception Operator and Spectral Separability)"
+
+imports:
+  - {term_key: spectral-brand-theory}
+  - {term_key: perception-cloud}
+  - {term_key: cohort}
+  - {term_key: spectral-dimensions}
+  - {term_key: absorbing-state}
+  - {term_key: non-ergodic-perception}
+
+refines: []
+

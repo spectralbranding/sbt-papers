@@ -1,0 +1,459 @@
+# SPINE.yaml — Spectral Dynamics (2026z / R18)
+#
+# RETROFIT spine: extracted descriptively from the completed paper.md
+# ([internal path removed]), not authored generatively before prose.
+# Part of the SPINE-for-all-active-canonical project (decision D4,
+# [internal path removed]).
+#
+# Schema v0.2 ([internal path removed] §"Schema v0.2"):
+# the paper is formal-math but reports computed (illustrative) velocity,
+# acceleration, and directional-coherence values from author-assigned Dove
+# profiles, so the observation -> method -> measurement -> finding chain is
+# represented for the headline illustration. All such values are illustrative
+# of the method, NOT validated empirical measurements (the paper says so
+# repeatedly); the spine reflects that scope.
+
+spine_version: "0.2"
+spine_doc_version: "0.1.0"          # retrofit lock (2026-06-14)
+paper_key: "2026z"
+provenance: retrofit
+title: >-
+  Spectral Dynamics: Velocity, Acceleration, and Phase Space in
+  Multi-Dimensional Brand Perception
+
+thesis: |
+  Brand tracking routinely measures static perceptual position but rarely
+  quantifies trajectory. Extending Spectral Brand Theory's eight-dimensional
+  perception space from static profiles to a formal differential calculus,
+  this paper defines brand velocity (the drift of the perception state) and
+  acceleration as vector quantities in R^8 and a 16-dimensional phase space
+  pairing position and velocity. Three theoretical results follow. First,
+  velocity resolves a metric-ambiguity (Bonnet-pair-analogous) problem: brands
+  with identical spectral profiles but different velocities are distinguishable
+  in phase space and provably diverge under the SBT diffusion dynamics. Second,
+  a directional-coherence metric quantifies alignment between a brand's actual
+  trajectory and its a-priori strategic intent. Third, trajectory clustering
+  groups brands by dynamic state rather than static position, enabling
+  detection of competitive convergence/divergence before it manifests in
+  position. The framework promotes velocity from an instrumental Kalman-filter
+  state component to a first-class theoretical quantity, embedding existing
+  state-space marketing models within a unified kinematic theory. It is
+  illustrated (not validated) on author-assigned Dove profiles across four
+  strategic periods (2003-2023).
+
+# ============================================================================
+# Boundary conditions — when the differential calculus applies
+# ============================================================================
+boundary_conditions:
+  - id: C1
+    statement: >-
+      Brand perception is measured as a multi-dimensional profile sampled at
+      discrete time points with a measurement cadence compatible with the
+      optimal interval (roughly 6-12 months for velocity), so finite-difference
+      or Kalman estimation of drift is well-posed.
+    antecedents: []
+    body_sections: ["§3.2 Discrete-Time Estimation", "§3.3 Noise Amplification"]
+  - id: C2
+    statement: >-
+      The perception dynamics are smooth enough to differentiate (the SBT SDE
+      regime); the calculus does not apply across topological discontinuities
+      such as dimensional-creation events or crisis-driven jumps.
+    antecedents: []
+    body_sections: ["§8.1 Limitations (stationarity, dimensional creation)"]
+
+# ============================================================================
+# Assumption atoms — load-bearing maintained assumptions
+# ============================================================================
+assumption_atoms:
+  - id: AA1
+    statement: >-
+      "Velocity" denotes the estimated drift mu(X_t, t) of the SBT stochastic
+      differential equation (the expected rate of change conditioned on the
+      current state), NOT a pathwise derivative — SDE sample paths are
+      continuous but almost surely nowhere differentiable.
+    antecedents: []
+    body_sections: ["§3.1 Remark (Smoothness and the SDE)"]
+  - id: AA2
+    statement: >-
+      The strategy direction vector d is defined a priori (before velocity is
+      observed), sourced from dated pre-campaign artifacts; constructing d after
+      observing movement makes directional coherence circular.
+    antecedents: []
+    body_sections: ["§3.4 Remark (Strategy-vector independence)"]
+
+# ============================================================================
+# Propositions — the core theoretical claims
+# ============================================================================
+propositions:
+  - id: P1
+    statement: >-
+      Brand velocity v(t) = dx/dt and acceleration a(t) = d2x/dt2 are
+      well-defined vector quantities in R^8, encoding both direction (which
+      dimensions are changing) and magnitude (how fast); the SDE drift term is
+      already the expected velocity, so velocity is implicit in SBT's dynamical
+      model and the calculus only makes it explicit and computable.
+    antecedents: [AA1]
+    body_sections: ["§3.1 Position, Velocity, and Acceleration", "§2.2"]
+  - id: P2
+    statement: >-
+      Differentiation amplifies measurement noise (velocity noise ~ sqrt(2)/dt,
+      acceleration noise ~ sqrt(6)/dt^2), so the velocity-estimator MSE is
+      minimized at an optimal interval balancing truncation error against noise
+      amplification; for typical brand-tracking noise this interval is roughly
+      6-12 months, consistent with standard tracking cadence. (Proposition 1.)
+    antecedents: [P1, C1]
+    body_sections: ["§3.3 Noise Amplification", "§7.4 Measurement Frequency"]
+  - id: P3
+    statement: >-
+      Brand speed s(t) = ||v(t)|| is the direction-agnostic scalar magnitude of
+      velocity; directional coherence DC = cos(angle between v and the a-priori
+      strategy vector d) ranges in [-1, +1] and distinguishes aligned progress
+      (DC -> +1) from activity without progress (DC ~ 0) and counterproductive
+      movement (DC -> -1). (Definitions 4-5.)
+    antecedents: [P1, AA2]
+    body_sections: ["§3.4 Brand Speed and Derived Scalar Quantities"]
+  - id: P4
+    statement: >-
+      The 16-dimensional phase space P = R^8 x R^8, pairing position and
+      velocity (Definition 6), is a complete description in a way position alone
+      is not: two brands at the same position but different velocity are in
+      fundamentally different states, and under the SBT SDE distinct phase-space
+      points produce distinct trajectories for all t>0 with probability 1
+      (pathwise uniqueness). (Definition 6, Proposition 2.)
+    antecedents: [P1, AA1]
+    body_sections: ["§3.5 Phase Space Representation"]
+  - id: P5
+    statement: >-
+      The per-dimension pair (v_d, a_d) defines a phase plane with five dynamic
+      regimes (stable attractor, growth, saturation, decline, recovery); a
+      manager observing saturation (v>0, a<0) on a strategic dimension gets an
+      early-warning signal before the dimension itself declines — invisible to
+      position-only tracking.
+    antecedents: [P1]
+    body_sections: ["§3.6 Dimensional Acceleration Profile (Figure 1)"]
+  - id: P6
+    statement: >-
+      The Kalman-filter state (x, v) of Brand Triangulation IS the phase-space
+      point of Definition 6, and its prediction step IS the first-order
+      kinematic equation of motion; the present framework supplies the
+      theoretical semantics that promotes velocity from an instrumental latent
+      variable (improving tracking accuracy) to a first-class observable with
+      independent diagnostic value.
+    antecedents: [P1, P4]
+    body_sections: ["§2.3", "§3.7 Correspondence to the Kalman Filter"]
+  - id: P7
+    statement: >-
+      Two brands with identical spectral profiles but different velocities are a
+      Bonnet-pair analog (structural, not exact): observationally equivalent
+      under position-only measurement yet perceived differently because they
+      arrived via different trajectories; this is an instance of observational
+      equivalence in the identification sense.
+    antecedents: [P4]
+    body_sections: ["§4.1 The Bonnet Pair Problem", "§4.2 The Identification Problem"]
+  - id: P8
+    statement: >-
+      Velocity plays the role of the second fundamental form: if x_A(t)=x_B(t)
+      but v_A(t)!=v_B(t), the brands are (a) distinguishable in phase space,
+      (b) provably divergent for t'>t with probability 1 under the SBT SDE, and
+      (c) separating to first order at rate ||v_A - v_B|| * dt. Velocity is the
+      identifying information that resolves the Bonnet ambiguity.
+      (Theorem 1.)
+    antecedents: [P7, AA1]
+    body_sections: ["§4.3 Velocity as the Second Fundamental Form (Theorem 1)"]
+  - id: P9
+    statement: >-
+      Trajectory clustering groups brands by dynamic state (x, v) rather than
+      static position, treating the eight-dimensional velocity vector as the
+      trajectory-shape parameter; it reveals dynamic archetypes (orbiting,
+      migrating, anchored, drifting) with no analog in static clustering, with
+      drifting vs migrating distinguished by directional coherence.
+    antecedents: [P1, P3]
+    body_sections: ["§5.1 Trajectory Clustering", "§5.3 Dynamic Archetypes"]
+  - id: P10
+    statement: >-
+      The convergence indicator CI(A,B), the projection of relative velocity
+      onto the relative-position direction, detects whether two brands at
+      different positions are on converging trajectories (future competitors)
+      before they meet; for CI>0 and constant velocities the time to positional
+      convergence is approximately ||x_A - x_B|| / ||v_A - v_B||.
+      (Proposition 3.)
+    antecedents: [P1, P9]
+    body_sections: ["§5.2 Convergence and Divergence Detection"]
+  - id: P11
+    statement: >-
+      Classical brand-equity measurement is the static limit (Newtonian limit)
+      of the dynamic framework: when ||v|| ~ 0 the phase-space description
+      collapses to position-only and the calculus adds no information; the
+      dynamic instrument is required only when brands are actively repositioning,
+      markets are disrupted, or non-ergodicity matters — a correspondence
+      principle delineating when dynamic instrumentation is needed.
+    antecedents: [P4]
+    body_sections: ["§8.3 The Correspondence Principle for Dynamics"]
+
+# ============================================================================
+# Observation -> Method -> Measurement -> Finding chain for the Dove
+# illustration (illustrative-of-method, NOT validated empirical measurement)
+# ============================================================================
+observations:
+  - id: O1
+    statement: >-
+      Dove spectral profiles assigned (by the author, in Zharnikov 2026p) at
+      four temporal cross-sections 2003 / 2006 / 2013 / 2023 across the eight
+      SBT dimensions, on a 1-10 scale, with the Ideological dimension null
+      ("--") in 2003 (a dimensional-creation event at the Real Beauty campaign).
+    raw_data_pointer: "[internal path removed] Table 1; Zharnikov 2026p"
+    instrument: "author-assigned qualitative profiles (not survey/experiment)"
+    timestamp: "2003-2023 cross-sections; illustration assembled 2026"
+    body_sections: ["§6.1 Data (Table 1)"]
+
+methods:
+  - id: M1
+    statement: >-
+      Centered finite-difference estimators: first-order (velocity) v_hat at the
+      interval midpoint, and second-order central difference (acceleration)
+      a_hat from three measurements; the Kalman smoother is the recommended
+      noise-optimal practical alternative. Applied to the four Dove
+      cross-sections to compute three velocity and two acceleration vectors.
+    type: "finite_difference_estimation"
+    inputs: ["O1 (Table 1 profiles)"]
+    outputs: ["velocity vectors (Table 2)", "acceleration vectors (Table 3)", "directional coherence values"]
+    code_anchor: >-
+      sbt-papers/r18-spectral-dynamics/code/compute_velocity_acceleration.py
+      and phase_portrait.py (deterministic; no RNG)
+    reproducibility:
+      seed: "deterministic (finite differences; seed only for future MC extensions)"
+      runtime_environment: "Python 3.12; numpy + matplotlib (PEP 723 inline deps)"
+    body_sections: ["§3.2 Discrete-Time Estimation", "§8.7 Companion Computation Script"]
+
+measurements:
+  - id: m_speed
+    statement: >-
+      Dove brand speed ||v|| follows an inverted-U across the three periods:
+      2.10 units/yr (Ignition, 7 computable dims), 0.31 (Expansion), 0.36
+      (Normative Absorption). All values illustrative of the method.
+    source_observations: [O1]
+    generating_method: M1
+    value: "||v|| = 2.10 / 0.31 / 0.36 units per year"
+    units: "scale-units per year (1-10 scale)"
+    body_sections: ["§6.2 Velocity Vectors (Table 2)"]
+  - id: m_cultural
+    statement: >-
+      Cultural-dimension velocity turns negative first (Period 2: v_C = -0.07)
+      with strongly negative acceleration in Period 1 (a_C = -0.314), years
+      before Cultural position visibly falls (8.5 -> 5.5). Illustrative.
+    source_observations: [O1]
+    generating_method: M1
+    value: "v_C = -0.07 (Period 2); a_C = -0.314 (Period 1 -> 2)"
+    units: "scale-units per year; per year^2"
+    body_sections: ["§6.3 Acceleration Vectors (Table 3)", "§6.4 Dynamic Interpretation"]
+  - id: m_dc
+    statement: >-
+      Directional coherence against an assumed strategy vector targeting
+      Ideological+Social shifts from aligned to counterproductive across the
+      illustration: DC = +.72 (Period 1), +.67 (Period 2), -.53 (Period 3).
+      Illustrative of the method, not a validated measurement.
+    source_observations: [O1]
+    generating_method: M1
+    value: "DC = +.72 / +.67 / -.53"
+    units: "cosine similarity (dimensionless, [-1, +1])"
+    body_sections: ["§6.4 item 5 (Directional coherence analysis)", "§7.2"]
+
+findings:
+  - id: F1
+    statement: >-
+      In the Dove illustration the velocity/acceleration layer surfaces dynamics
+      that static position cannot: Cultural is a leading indicator that
+      decelerates years before its position falls; Narrative and Social follow
+      with a lag; brand speed traces an inverted-U; and the Experiential
+      dimension stays near-zero velocity throughout, consistent with an
+      unchanged product while brand meaning transforms — demonstrating that the
+      kinematic decomposition isolates experience-level from meaning-level
+      dynamics.
+    type: "illustrative_demonstration"
+    source_measurements: [m_speed, m_cultural, m_dc]
+    generating_method: M1
+    antecedents: [P1, P5]
+    falsifier: >-
+      In a real longitudinal panel, if Cultural-dimension velocity reversal does
+      NOT precede other dimensions' position reversal in at least half of
+      repositioning brands (Prediction 1), the leading-indicator reading fails.
+    citation_role_in_paper: "illustration_of_P1_through_P11"
+    body_sections: ["§6.4 Dynamic Interpretation (Figure 2)"]
+
+# ============================================================================
+# Negative finding — the gap the contribution fills
+# ============================================================================
+negative_findings:
+  - id: NF1
+    statement: >-
+      Despite a mature marketing-dynamics canon (Bass diffusion; Mizik-Jacobson
+      brand-asset trajectories; Naik-Raman / Bruce / Sriram state-space Kalman
+      models; Dekimpe-Hanssens persistence) and pervasive metaphorical use of
+      "velocity"/"acceleration" in strategic management (Bourgeois-Eisenhardt
+      high-velocity environments; D'Aveni hypercompetition), no prior method
+      applies formal kinematic quantities (velocity, acceleration, phase space)
+      to a multi-dimensional brand-position vector as the primary analytical
+      objects. Dynamics-as-metaphor is pervasive; dynamics-as-measurement is
+      absent.
+    expected_observation: "A prior multi-dimensional brand-velocity calculus with a phase-space uniqueness theorem."
+    affects_nodes: [P1, P6]
+    motivates: [P1]
+    body_sections: ["§2.4 Relation to Dynamic Models", "§2.5 Dynamical Systems in Strategic Management"]
+
+# ============================================================================
+# Robustness check — falsifiable empirical predictions
+# ============================================================================
+robustness_checks:
+  - id: RC1
+    statement: >-
+      The framework yields four sharp falsifiable predictions for a longitudinal
+      multi-dimensional panel (e.g. YouGov BrandIndex, Kantar BrandZ): (1)
+      Cultural-dimension velocity reversal leads other dimensions by 2-7 years;
+      (2) velocity-based trajectory clusters predict convergence 2-5 years
+      before position-based clustering; (3) sustained DC<0 over >=3 waves
+      predicts campaign abandonment; (4) phase-space-distinguishable brands
+      diverge at rate ||v_A - v_B|| * dt per Theorem 1(c). A regime-transition
+      test with an explicit falsification condition (>=20 brands, >=10 quarters)
+      requires the kinematic layer to add predictive value over static position
+      or be an observationally vacuous relabeling.
+    type: "falsifiable_prediction_set"
+    sensitivity_of: [P8, P9, P10, F1]
+    falsifier: >-
+      If, on a real panel, regime transitions are uninformative about campaign
+      timing and the regime classification adds no variance to t+2 position
+      beyond t position, the velocity/acceleration constructs are falsified at
+      the level of practical utility.
+    body_sections: ["§8.5 Testable Predictions", "§8.5 Empirical Test Design / Falsification Condition"]
+
+# ============================================================================
+# Limitations — honest scope
+# ============================================================================
+limitations:
+  - id: L1
+    statement: >-
+      The Dove illustration uses author-assigned (qualitative) profiles, not
+      survey or experimental data, and only four time points over 20 years (three
+      velocity, two acceleration estimates — the bare minimum). All computed
+      velocity, acceleration, and DC values are illustrative of the method and
+      are NOT validated empirical measurements; validation requires real
+      brand-tracking data with known measurement properties and external
+      criteria.
+    severity: "scope-bounding"
+    affects: [F1, m_speed, m_cultural, m_dc]
+    body_sections: ["§6.1 Notes", "§8.1 Author-assigned profiles, Data frequency"]
+  - id: L2
+    statement: >-
+      Noise amplification under differentiation makes raw finite-difference
+      velocity (and especially acceleration) estimates unreliable from few noisy
+      measurements; raw differences should be treated as illustrative, with the
+      Kalman filter the recommended practical estimator. Third-order derivatives
+      (jerk) are impractical at current tracking frequencies.
+    severity: "methodological"
+    affects: [M1, P2]
+    body_sections: ["§3.3", "§8.1 Noise amplification"]
+  - id: L3
+    statement: >-
+      Dimensional-creation events (null-to-positive transition, e.g. Dove's
+      Ideological dimension 2003->2006) and crisis-driven jumps are topological
+      discontinuities the differential calculus cannot capture as standard
+      derivatives; a general treatment needs jump-diffusion (Poisson-driven)
+      extensions of the SBT SDE.
+    severity: "scope-bounding"
+    affects: [C2, P1]
+    body_sections: ["§8.1 Dimensional creation events, Stationarity assumption"]
+
+# ============================================================================
+# Cross-paper engagement
+# ============================================================================
+corpus_precedents:
+  - paper_key: 2026a
+    relationship: extends
+    spine_nodes: [P1, P11]
+    note: >-
+      Extends SBT's eight-dimensional static perception profile to a velocity /
+      acceleration / phase-space dynamic calculus; refines SBT's C4 temporal
+      scale into a formal kinematic layer. Classical static measurement is
+      recovered as the velocity->0 limit.
+  - paper_key: 2026j
+    relationship: applies
+    spine_nodes: [P1, P4, P8]
+    note: >-
+      The SBT diffusion SDE supplies the drift (= expected velocity) and the
+      pathwise-uniqueness (Lipschitz) result on which Proposition 2 and Theorem
+      1's divergence-with-probability-1 rest.
+  - paper_key: 2026o
+    relationship: applies
+    spine_nodes: [P1, P11]
+    note: >-
+      Non-ergodicity warrants tracking trajectories rather than snapshots:
+      cross-sectional tracking misrepresents individual paths, so dynamic
+      (velocity) measurement is required.
+  - paper_key: 2026y
+    relationship: extends
+    spine_nodes: [P6, P4]
+    note: >-
+      Brand Triangulation's Perception Kalman filter state (x, v) IS the phase
+      space; this paper supplies its theoretical semantics and resolves a
+      Triangulation boundary (the Bonnet ambiguity) constructively via velocity.
+  - paper_key: 2026p
+    relationship: applies
+    spine_nodes: [O1, F1]
+    note: >-
+      Supplies the Dove dimensional-activation profiles (Table 1) and the
+      counter-cultural-decay claim (its Proposition 4) the illustration renders
+      as a velocity/coherence reversal.
+  - paper_key: 2026d
+    relationship: applies
+    spine_nodes: [P1]
+    note: >-
+      The Fisher-Rao metric and warped-product geometry of brand-observer space
+      provide the Riemannian setting in which velocity/acceleration vectors live.
+  - paper_key: 2026e
+    relationship: applies
+    spine_nodes: [P1]
+    note: >-
+      Projection (Johnson-Lindenstrauss-type) bounds govern the rate-distortion
+      of recovering velocities/accelerations from low-rank observer
+      constellations.
+  - paper_key: 2026s
+    relationship: applies
+    spine_nodes: [P5, RC1]
+    note: >-
+      Coherence-type-as-crisis-predictor supplies a complementary structural
+      prediction linking decline-regime dimensions to coherence vulnerability,
+      a cross-paper falsification structure for the dynamics framework.
+  - paper_key: 2026c
+    relationship: tests
+    spine_nodes: [P9]
+    note: >-
+      Preliminary null competitive-context effects (largest d = .187) are cited
+      as provisional support for the internal-dynamics (not competitive-field)
+      assumption behind the trajectory model.
+
+# ============================================================================
+# External anchor literature
+# ============================================================================
+external_anchors:
+  - {citation_key: bobenko-2025-compact-bonnet-pairs, role: analogy_source, spine_nodes: [P7, P8], note: "Bonnet pairs: isometric surfaces with same curvatures — the metric-ambiguity analogy resolved by velocity (second fundamental form)."}
+  - {citation_key: peters-2019-ergodicity-problem-economics, role: foundational_warrant, spine_nodes: [P11], note: "Non-ergodicity epistemological warrant; formal-vs-metaphorical physics-terminology framing."}
+  - {citation_key: kalman-1960-new-approach-linear, role: method_foundation, spine_nodes: [P6, M1], note: "Kalman filter — the (x, v) state estimator the phase space reinterprets."}
+  - {citation_key: naik-2003-understanding-impact-synergy, role: prior_tradition, spine_nodes: [P6, NF1], note: "State-space brand-goodwill Kalman tradition — velocity as instrumental, not theoretical."}
+  - {citation_key: mizik-2008-financial-value-relevance, role: prior_tradition, spine_nodes: [NF1], note: "Brand-asset trajectory tracking; velocity is the input their financial-outcome models require."}
+  - {citation_key: bass-1969-new-product-growth, role: prior_tradition, spine_nodes: [NF1], note: "Population-aggregate scalar adoption velocity — a different analytical level."}
+  - {citation_key: nagin-1999-analyzing-developmental-trajectories, role: method_source, spine_nodes: [P9], note: "Group-based trajectory modeling — statistical methodology for trajectory clustering."}
+  - {citation_key: dekimpe-1995-persistence-marketing-effects, role: prior_tradition, spine_nodes: [P11], note: "Persistent vs transient effects map onto sustained vs decaying velocity."}
+  - {citation_key: rothenberg-1971-identification-parametric-models, role: framing, spine_nodes: [P7], note: "Observational equivalence / identification language for the Bonnet-pair problem."}
+  - {citation_key: swaminathan-2020-branding-hyperconnected-world, role: motivation, spine_nodes: [NF1], note: "Names real-time dynamic brand-asset tracking as an unresolved branding challenge."}
+
+# ============================================================================
+# Open questions / boundary edges
+# ============================================================================
+open:
+  - "Empirical validation on a real longitudinal multi-dimensional panel (YouGov BrandIndex / Kantar BrandZ) — the entire illustration is conceptual (L1, RC1)."
+  - "Spectral force / Perception Lagrangian: defining brand mass (inertia) independent of force and acceleration so F = ma is non-circular, and a potential V(x) for a variational treatment (§8.6 future work; Table 4 deliberately blank rows)."
+  - "Temporal DOP: how measurement timing, uneven spacing, and missing waves affect velocity estimation precision (analog of Perception DOP)."
+  - "Jump-diffusion extension of the SBT SDE to handle dimensional-creation events and crisis discontinuities (L3)."
+
+# ============================================================================
+# Spine changelog — append-only
+# ============================================================================

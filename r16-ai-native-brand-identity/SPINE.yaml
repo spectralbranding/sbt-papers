@@ -1,0 +1,505 @@
+# SPINE.yaml — AI-Native Brand Identity (2026x / R16)
+#
+# RETROFIT spine: extracted descriptively from the completed paper.md per the
+# Retrofit-SPINE agent brief (2026-06-14) and publication-pipeline decision D4
+# ([internal path removed]). This spine was
+# read off the finished paper, not authored generatively before prose.
+#
+# Schema v0.2: the paper is conceptual (six falsifiable propositions) but
+# carries one author-produced experiment — the Brand Function format-optimization
+# study (5 brands x 5 formats x 5 models x 3 reps, computed F/eta-sq/cosine
+# values, Run 1 vs Run 2) — so the observation -> method -> measurement ->
+# finding chain is represented as first-class evidence rather than asserted in
+# prose. The six propositions P1-P6 remain analytic design/theory claims.
+
+spine_version: "0.2"
+spine_doc_version: "0.1.0"
+paper_key: "2026x"
+provenance: retrofit
+title: >-
+  AI-Native Brand Identity: From Visual Recognition to Cryptographic
+  Verification
+target_venue_primary: "Journal of Interactive Marketing (B2C agentic commerce scope)"
+status: >-
+  Retrofit spine extracted 2026-06-14 from completed paper.md (Working Paper
+  v1.8.1, April 2026). Descriptive, not generative.
+
+thesis: |
+  Brand identity verification technology changes discontinuously whenever the
+  primary observer type changes: wax seals, hallmarks, trademarks/logos, and SSL
+  certificates each emerged in response to a new observer class. The sixth
+  observer is the text-primary AI purchasing agent, which evaluates brands
+  through structured data, behavioral signals, and third-party corroboration
+  rather than visual recognition, giving the logo near-zero informational weight.
+  The Brand Function — f(query, context, observer_type, time) -> response — is
+  the root behavioral specification AI observers require; cryptographic
+  signatures on this specification are predicted to replace logos as the
+  primary identity mechanism for machine observers. The framework names a new
+  failure mode, behavioral metamerism: brands that converge on statistically
+  indistinguishable profiles (especially under generative engine optimization)
+  while differing in structurally relevant behavioral contingencies, an
+  observational equivalence that statistical optimization cannot resolve and
+  that only access to the structural specification breaks. The paper is
+  conceptual, advances six falsifiable propositions, and is scoped to B2C
+  text-primary agentic commerce.
+
+# ============================================================================
+# Boundary conditions — where the framework's claims are scoped
+# ============================================================================
+boundary_conditions:
+  - id: C1
+    statement: >-
+      Scope is B2C agentic commerce; B2B markets, where behavioral contracts
+      already operate through procurement specs, RFPs, and ERP integration, are
+      left for separate work.
+    observable: "Transaction context is consumer-facing delegated purchasing."
+    excludes: "B2B procurement with existing contractual specification."
+    body_sections: ["Introduction (scope paragraph)"]
+  - id: C2
+    statement: >-
+      The near-zero-logo-weight and signature-replaces-logo claims apply to
+      text-based and text-primary AI agents; multimodal agents that process
+      visual brand elements are addressed only in Proposition 3's caveat and may
+      recover partial visual informational weight.
+    observable: "Observer is a text-primary agent operating over structured data."
+    excludes: "Multimodal agents with vision channels (GPT-4V, Gemini Vision)."
+    body_sections: ["Proposition 3 caveat", "Table 1 notes"]
+  - id: C3
+    statement: >-
+      Behavioral metamerism is structurally significant only where training data
+      is thin (newcomers in convergent categories, brands from underrepresented
+      markets/languages, repositioning incumbents); for well-known brands with
+      rich training data the multi-dimensional profile is already embedded in
+      model weights — the "information illuminant" boundary.
+    observable: "Sparse training-data coverage of the brand."
+    excludes: "Globally recognized brands (Nike, Apple, Hermès) under rich data."
+    body_sections: ["Conditional metamerism boundary condition", "Strategic Use Cases"]
+
+# ============================================================================
+# Observations — the format-optimization experiment as recorded events
+# ============================================================================
+observations:
+  - id: O1
+    statement: >-
+      A supplementary Brand Function format-optimization experiment was run over
+      two passes; Run 1 exposed input leakage (formats showing raw numerical
+      scores produced near-echo responses, F5 score-only at 89% near-echoes and
+      an artificially inflated cosine of .998), and Run 2 corrected this by
+      replacing raw scores with qualitative ordinal levels and adding a
+      sum-enforcement instruction, returning 375 valid responses at 100%
+      completion, total cost $0.13.
+    raw_data_pointer: "github.com/spectralbranding/sbt-papers/r16-ai-native-brand-identity/"
+    instrument: "Prompted LLM response experiment (5 brands x 5 formats x 5 models x 3 reps = 375 calls per run)"
+    timestamp: "2026 (pre-v1.8.1)"
+    body_sections: ["Brand Function Format Optimization (Supplementary)"]
+
+# ============================================================================
+# Methods — design of the format-optimization study
+# ============================================================================
+methods:
+  - id: M1
+    statement: >-
+      Cross five format conditions (F1 JSON scores+positioning+key-signals;
+      F2 prose narrative; F3 tabular; F4 ranked list; F5 score-only vector,
+      revised in Run 2 to qualitative ordinal levels) against 5 brands x 5 models
+      x 3 replications, measuring cosine fidelity of each model's reconstructed
+      profile to the canonical brand profile; analyze format effect by ANOVA with
+      Bonferroni-corrected pairwise contrasts and Kendall's W for cross-model
+      consistency.
+    type: "controlled_prompt_experiment"
+    inputs: ["5 canonical brand profiles", "5 format encodings", "5 LLMs"]
+    outputs: ["cosine fidelity per condition", "F-test", "eta-sq", "pairwise d", "Kendall's W"]
+    reproducibility:
+      runtime_environment: "LLM APIs; reference implementation in the public mirror"
+    body_sections: ["Brand Function Format Optimization (Supplementary) — Design"]
+
+# ============================================================================
+# Measurements — computed statistics from the experiment
+# ============================================================================
+measurements:
+  - id: m_format_effect
+    statement: >-
+      Format explained a medium-large share of cosine-fidelity variance:
+      F(4, 370) = 18.516, p < .001, eta-sq = .167.
+    source_observations: [O1]
+    generating_method: M1
+    value: "F(4,370)=18.516; p<.001; eta-sq=.167"
+    units: "ANOVA omnibus + effect size"
+    body_sections: ["Brand Function Format Optimization — Results"]
+  - id: m_format_ranking
+    statement: >-
+      Mean-cosine ranking: F5 qualitative levels (.978) > F1 JSON (.973) >
+      F4 ranked text (.954) > F2 prose (.944) > F3 tabular descriptions (.935);
+      F5 vs F1 non-significant (d = -.095); prose penalty F1 vs F2 d = .608,
+      p < .001 after Bonferroni; cross-model Kendall's W = .84; weight-sum
+      compliance improved 55.5% (Run 1) -> 87.7% (Run 2).
+    source_observations: [O1]
+    generating_method: M1
+    value: "F5 .978 / F1 .973 / F4 .954 / F2 .944 / F3 .935; prose penalty d=.608"
+    units: "mean cosine + pairwise effect sizes"
+    body_sections: ["Brand Function Format Optimization — Results"]
+
+# ============================================================================
+# Findings — what the experiment demonstrates
+# ============================================================================
+findings:
+  - id: F1
+    statement: >-
+      The structured-format-advantage hypothesis (JSON beats all alternatives)
+      was NOT supported — qualitative ordinal levels slightly exceeded JSON
+      (non-significant) — but the prose-penalty hypothesis WAS supported: once
+      raw scores were removed, information richness (qualitative levels or JSON)
+      beat structural precision, and prose degraded fidelity because the model
+      must lossily extract weights from narrative. For machine consumption the
+      dimensional scores or their qualitative ordinal equivalents carry the
+      identity signal; positioning text and key signals add human-auditability
+      value but do not measurably improve AI comprehension fidelity.
+    type: "experimental_result"
+    source_measurements: [m_format_effect, m_format_ranking]
+    generating_method: M1
+    antecedents: [O1]
+    falsifier: "If full JSON significantly outperforms qualitative ordinal levels on cosine fidelity, the information-richness-over-structure reading fails."
+    body_sections: ["Brand Function Format Optimization — Interpretation / Implications"]
+
+# ============================================================================
+# Propositions — the six falsifiable propositions + framing claims
+# ============================================================================
+propositions:
+  - id: P0
+    statement: >-
+      Brand identity is observer-contingent rather than brand-intrinsic: it is a
+      function of observer type, and different observer types require structurally
+      different identity technologies. This reframes customer-based brand equity,
+      which presupposes a human mind forming associative networks, as one
+      observer-specific case rather than the general model.
+    conditions: ""
+    antecedents: []
+    evidence:
+      - type: analytic
+        anchor: "Keller's CBBE, Fournier relational, Hatch-Schultz co-creation, and de Chernatony vision-perception gap each presuppose a human observer and lose their basis when the observer is a statistical agent."
+        citation_keys: [keller-1993-conceptualizing-measuring-managing, fournier-1998-consumers-their-brands, hatch-2010-toward-theory-brand, chernatony-1999-de-chernatony-leslie]
+    body_sections: ["Introduction", "Theoretical Implications"]
+  - id: P1
+    statement: >-
+      Identity verification technology characteristically changes not through
+      incremental improvement but through discontinuous response to a change in
+      the observer type (the observer-driven evolution thesis).
+    conditions: ""
+    antecedents: [P0]
+    evidence:
+      - type: historical
+        anchor: "Five transitions — wax seals, hallmarks, trademarks/logos, holograms (control: observer unchanged -> incremental), SSL certificates — establish the pattern."
+        citation_keys: [richardson-2008-brand-names-before-industrial, economides-1988-78523539, groebner-2007-who-you-identification-deception, netscape-1994-ssl-protocol]
+    falsifier: "P1 fails if the AI-observer transition produces only incremental extensions of logo-based identity (animated logos, richer visual metadata) rather than a structurally different verification mechanism."
+    body_sections: ["Historical Pattern: Observer Determines Technology"]
+  - id: P2
+    statement: >-
+      When the observer changes, the previous identity technology persists for
+      legacy observers but becomes functionally irrelevant for the new observer
+      class (wax seals in legal ceremonies, hallmarks in metals regulation, logos
+      on websites despite SSL handling actual verification).
+    conditions: ""
+    antecedents: [P1]
+    evidence:
+      - type: historical
+        anchor: "Each prior technology remains functional for its original observer while becoming irrelevant to the new one."
+    falsifier: "P2 fails if AI agents demonstrably weight logo presence/absence as an informational input that meaningfully affects recommendation quality."
+    body_sections: ["Historical Pattern"]
+  - id: P3
+    statement: >-
+      AI agents do not perceive brand identity through visual recognition but
+      through structured-data evaluation, behavioral-pattern analysis, and
+      third-party corroboration; the logo carries near-zero informational weight
+      for text-based agents and minimal weight in text-only AI mediation more
+      broadly. LLM "brand perception" is statistical (training-data frequency),
+      not perceptual.
+    conditions: "C2"
+    antecedents: [P0]
+    evidence:
+      - type: empirical
+        anchor: "Rufus/Google AI Mode/Perplexity/ChatGPT all evaluate via structured data; LLM brand bias tracks training-data frequency (luxury recommended 88-100% for high-income queries); market-dominant products amplified via neural reinforcement."
+        citation_keys: [kamruzzaman-2024-global-good-local-bad, zhi-2025-zhi-yuhao-xin-zhang, guha-2016-schemaorg-evolution-structured]
+      - type: empirical
+        anchor: "DeepShop: best deep-research agents reach only 30% holistic task success — capability failure precedes perception (perception gap addressed by 2026v)."
+        citation_keys: [lyu-2025-deepshop-benchmark-deep]
+    falsifier: "P3 fails if multimodal agents processing visual brand elements make measurably better purchasing decisions than text-only agents with identical structured data."
+    body_sections: ["The AI Agent as Observer", "Proposition 3 + caveat"]
+  - id: P4
+    statement: >-
+      The Brand Function f(query, context, observer_type, time) -> response is
+      the root specification from which all brand emissions and identity
+      artifacts derive; technologies are the primary rendering engines and
+      organizational structure is coordination overhead. It is an output (WHAT)
+      specification that AI agents can read and verify, irreducible by delegation,
+      and it extends existing AI commerce protocols (ACP, UCP, brand.json, Brando
+      Schema) by adding spectral perception dimensions, behavioral specification
+      beyond commerce, and computable coherence measurement.
+    conditions: ""
+    antecedents: [P3]
+    evidence:
+      - type: analytic
+        anchor: "Specification precedes verifiable correctness (no spec, no verifiable correctness); maps to SERVQUAL Gap 2 but is computable; three protocol levels (Brand-Code / Brand Specification / Brand Function) place Level 3 as not-yet-existing."
+        citation_keys: [dijkstra-1970-notes-structured-programming, clarke-1999-untitled, parasuraman-1985-parasuraman-valarie, bowker-2026-brando-schema-v13-json]
+      - type: experimental
+        anchor: "Format-optimization finding (F1) grounds the schema recommendation: machine-facing scores/ordinal layer vs human-facing positioning layer are separable."
+    falsifier: "P4 fails if existing protocols (brand.json, Brando Schema, ACP) prove sufficient for AI agents to measure coherence and predict behavioral responses without additional specification layers."
+    body_sections: ["The Brand Function", "What the Brand Function Adds", "v0.1 Schema Sketch"]
+  - id: P5
+    statement: >-
+      Cryptographic signatures on behavioral specifications will replace logos as
+      the primary brand identity mechanism for AI-mediated commerce, following the
+      observer-driven pattern. Machine trust is computational (cryptographic
+      proof: instant, lossless, scalable) rather than reputational; a signed
+      Brand Function supplies the verification substrate that algorithm-aversion
+      research identifies as missing, and existing infrastructure (BIMI/VMC,
+      GLEIF vLEI, GS1 VC, Aura) shows feasibility but lacks behavioral-spec
+      integration.
+    conditions: "C1"
+    antecedents: [P4]
+    evidence:
+      - type: analytic
+        anchor: "Behavioral vs computational trust distinction; reputation's structural limits (Sybil, cold-start, whitewashing); algorithm aversion as the consumer-side trust gap; public-key cryptography and SSI/DID/VC foundations."
+        citation_keys: [gligor-2011-towards-theory-trust-networks, jsang-2007-survey-trust-reputation-systems, dietvorst-2015-algorithm-aversion-people-erroneously, diffie-1976-226644654-httpsdoiorg101109tit19761055638, cameron-2005-laws-of-identity]
+    falsifier: "P5 fails if AI-mediated commerce scales past ~20% of category transactions without adopting cryptographic brand verification; conditional on agentic-commerce adoption."
+    body_sections: ["Cryptographic Signature as AI-Native Logo", "Table 1"]
+  - id: P6
+    statement: >-
+      Behavioral metamerism — two Brand Functions with equal expected values on
+      every observable aggregate statistic in observation set G yet differing on
+      at least one behavioral dimension outside G — is the AI-native equivalent of
+      visual brand confusion. It arises because statistical observation collapses
+      high-dimensional behavior into low-dimensional metrics (structurally
+      identical to color metamerism and to econometric observational equivalence)
+      and can only be resolved by access to the structural specification f itself,
+      not by statistical optimization; GEO PRODUCES the convergence metamerism
+      requires.
+    conditions: ""
+    antecedents: [P4]
+    evidence:
+      - type: analytic
+        anchor: "Color metamerism (tristimulus collapse) + observational equivalence in econometrics provide the formal structure; resolution iff the agent gains the structural specification."
+        citation_keys: [wyszecki-1982-color-science-concepts, koopmans-1949-172125144, manski-1995-untitled]
+      - type: empirical
+        anchor: "GEO raises statistical visibility up to ~40% but cannot establish identity verification; real-world misperception (Ballantine's miscategorized as mass-market)."
+        citation_keys: [aggarwal-2024-geo-generative-engine-optimization, acar-2026-preparing-your-brand]
+    falsifier: "P6 fails if LLMs with only statistical data distinguish behaviorally different brands at rates statistically indistinguishable from LLMs with Brand Function specs (no significant accuracy gain, p < .05, across >=3 categories)."
+    body_sections: ["Behavioral Metamerism", "Why GEO Cannot Resolve Metamerism"]
+
+# ============================================================================
+# Derivations — formal structure underpinning the metamerism claim
+# ============================================================================
+derivations:
+  - id: D1
+    statement: >-
+      Behavioral metamerism has a precise formal home in vector quantization: an
+      AI agent's decision function is a lossy, rate-constrained encoder whose
+      Voronoi cells are quantization metamers — two brands in the same cell cannot
+      be separated by any decoder on the quantized output. Cell boundaries are set
+      by the encoder (training distribution + decision protocol), not by the
+      brands, so the same pair can be metameric to one agent and distinguishable
+      to another; the only structural escape is to bypass the lossy channel with a
+      direct specification.
+    antecedents: [P6]
+    evidence:
+      - type: analytic
+        anchor: "VQ partition into Voronoi cells; rate-distortion below source entropy forces collapse; cross-architecture codebook convergence consistent with 2026aa's CV=.140 across 17 LLMs."
+        citation_keys: [gersho-1991-vector-quantization-signal, cover-2006-elements-information-theory]
+    body_sections: ["Metamers as Vector Quantization Cells"]
+  - id: D2
+    statement: >-
+      The Brand Function is NECESSARY (not merely useful) when three conditions
+      hold simultaneously: AI agents are primary observers, behavioral metamerism
+      is present, and autonomous transactions occur. Three structural arguments
+      establish necessity — the metamerism impossibility (information-theoretic:
+      statistical underdetermination), the verification impossibility (formal
+      methods: no spec, no verifiable correctness), and the incomplete-contracts
+      argument (mechanism design: agents lack reputation/social/legal remedies, so
+      the spec is the complete behavioral contract preventing adverse selection
+      and moral hazard).
+    antecedents: [P4, P6]
+    evidence:
+      - type: analytic
+        anchor: "Observational equivalence => identity underdetermined; Dijkstra/Clarke => correctness is conformance to spec; Hart-Moore incomplete contracts => hold-up without ex-ante contingency specification."
+        citation_keys: [koopmans-1949-172125144, dijkstra-1970-notes-structured-programming, hart-1999-661115138]
+    body_sections: ["Necessity Conditions", "When Necessity Holds"]
+
+# ============================================================================
+# Alternative explanations — rivals the framework must clear
+# ============================================================================
+alternative_explanations:
+  - id: A1
+    statement: >-
+      Generative Engine Optimization (GEO) is sufficient — brands made "visible"
+      to AI need no separate behavioral specification or verification layer.
+    rules_out_required: [P4, P6]
+    ruled_out_by: [P6, D2]
+    rules_out_status: "rejected"
+    reasoning: >-
+      GEO optimizes statistical visibility, not identity verification, and
+      actively manufactures the cross-brand convergence that produces behavioral
+      metamerism; it is a symptom and a transitional tactic, not a resolution.
+    body_sections: ["Generative Engine Optimization as Symptom", "Why GEO Cannot Resolve Metamerism"]
+  - id: A2
+    statement: >-
+      Reputation/platform-rating systems are sufficient for AI agents to establish
+      brand trust without cryptographic behavioral attestation.
+    rules_out_required: [P5]
+    ruled_out_by: [P5]
+    rules_out_status: "rejected"
+    reasoning: >-
+      Reputation-based trust is fragmented, biased, non-transferable, and inherits
+      Sybil/cold-start/whitewashing failure modes that delegated agents cannot
+      remedy; computational trust is the structurally adequate substitute.
+    body_sections: ["From Reputation to Verification"]
+
+# ============================================================================
+# Limitations — honest scope of the conceptual framework
+# ============================================================================
+limitations:
+  - id: L1
+    statement: >-
+      The paper is conceptual: the six propositions are not empirically tested
+      (only the supplementary format-optimization experiment and the companion
+      R15 study 2026v provide data), behavioral metamerism is theorized but not
+      measured in deployed commerce, and the Brand Function is not implemented at
+      scale. The format experiment is prompted-LLM, so generalization to deployed
+      agentic commerce needs further validation.
+    severity: "primary-threat-to-validity"
+    affects: [P1, P2, P3, P4, P5, P6]
+    body_sections: ["Limitations and Future Research"]
+  - id: L2
+    statement: >-
+      P5's open-coordination adoption prediction is a critical premise, not a
+      detail: if a single platform locks in proprietary brand verification, the
+      Brand Function reduces to that platform's product spec and the open-standards
+      prediction is foreclosed. Whether the agentic stack lands in the
+      open-coordination or closed-platform regime is a research-agenda question.
+    severity: "premise-dependency"
+    affects: [P5]
+    body_sections: ["Limitations (coordination-equilibrium boundary)"]
+  - id: L3
+    statement: >-
+      The historical analysis draws on Western European / North American examples
+      (English hallmarks, European trademarks, American SSL); non-Western identity
+      traditions (Chinese chops, Islamic calligraphic seals, Indian guild marks)
+      may follow different evolutionary patterns, and the Brand Function assumes
+      Western legal infrastructure (trademark law, contract enforcement).
+    severity: "external-validity"
+    affects: [P1, P2]
+    body_sections: ["Limitations (Western-bias)"]
+  - id: L4
+    statement: >-
+      Other scope gaps left to future work: privacy / tiered-disclosure of the
+      specification; ethics of concentrating specification authority in the brand
+      (large-vs-small asymmetry, strategic opacity / gaming); multi-brand
+      portfolio interactions between Brand Functions; and a behavioral-metamerism
+      index analogous to the CIE Special Metamerism Index.
+    severity: "scope-bounding"
+    affects: [P4, P6]
+    body_sections: ["Limitations (privacy / ethics / portfolio / index)"]
+
+# ============================================================================
+# Negative finding — what statistical optimization cannot do
+# ============================================================================
+negative_findings:
+  - id: NF1
+    statement: >-
+      Native-language querying does NOT systematically reduce dimensional
+      collapse (companion 2026v: formal sign test 46/115 positive, mean reduction
+      -.005), and no amount of additional statistical observation resolves
+      behavioral metamerism once observation set G converges — establishing that
+      the Brand Function specification, not language-of-query or more data, is the
+      primary resolution mechanism.
+    expected_observation: "More/native-language statistical data closing the metamerism gap."
+    affects_nodes: [P6, D2]
+    motivates: [P4]
+    body_sections: ["Behavioral Metamerism", "Companion empirical evidence"]
+
+# ============================================================================
+# Cross-paper engagement (corpus precedents — by paper_key, not citation_key)
+# ============================================================================
+corpus_precedents:
+  - paper_key: 2026e
+    relationship: extends
+    spine_nodes: [P6]
+    note: >-
+      2026e established spectral metamerism in PERCEPTUAL space (brands with
+      identical aggregate scores, different 8-D spectral profiles). R16 extends
+      the same collapse structure from perceptual space to BEHAVIORAL space.
+  - paper_key: 2026v
+    relationship: tests
+    spine_nodes: [P3, P6, L1]
+    note: >-
+      R15 (2026v) is the empirical companion: 21,600+ calls, 24 models confirm
+      structural dimensional collapse (cross-model cosine .977), local brands
+      collapse 24% more (d=.878), native-language querying does not reduce it —
+      the measured perceptual failure mode R16 theorizes behaviorally.
+  - paper_key: 2026a
+    relationship: applies
+    spine_nodes: [P0, P4]
+    note: >-
+      SBT supplies the eight-dimensional spectral profile (Semiotic..Temporal),
+      the heterogeneous observer-cohort framing, the specification gap, and the
+      coherence hierarchy that the Brand Function operationalizes for machines.
+  - paper_key: 2026l
+    relationship: applies
+    spine_nodes: [P4]
+    note: >-
+      The Rendering Problem provides the substrate: Brand Function = specification,
+      technologies/organization = rendering engines, spectral emissions = output;
+      the specification gap is the central management metric.
+  - paper_key: 2026aa
+    relationship: applies
+    spine_nodes: [D1]
+    note: >-
+      Rate-distortion curve for AI brand encoders; its cross-model CV=.140 across
+      17 architectures is the cross-architecture stability the VQ codebook-
+      convergence framing predicts.
+  - paper_key: 2026ac
+    relationship: applies
+    spine_nodes: [L4]
+    note: >-
+      Spectral portfolio theory; R16's portfolio limitation extends it to
+      inter-Brand-Function distance metrics and minimum-separation conditions that
+      prevent intra-portfolio behavioral metamerism.
+
+# ============================================================================
+# External anchor literature
+# ============================================================================
+external_anchors:
+  - {citation_key: kamruzzaman-2024-global-good-local-bad, role: empirical_support, spine_nodes: [P3], note: "LLM brand bias tracks training-data frequency (EMNLP 2024)"}
+  - {citation_key: aggarwal-2024-geo-generative-engine-optimization, role: phenomenon_defined, spine_nodes: [P6, A1], note: "GEO framework; visibility up to ~40%"}
+  - {citation_key: lyu-2025-deepshop-benchmark-deep, role: empirical_support, spine_nodes: [P3], note: "DeepShop: 30% holistic agent task success"}
+  - {citation_key: accornero-2026-agentic-commerce, role: framing_anchor, spine_nodes: [P0, P5], note: "Shopper Schism — consumer/shopper separation"}
+  - {citation_key: keller-1993-conceptualizing-measuring-managing, role: paradigm_contrasted, spine_nodes: [P0], note: "Customer-based brand equity (human-observer paradigm)"}
+  - {citation_key: koopmans-1949-172125144, role: formal_foundation, spine_nodes: [P6, D2], note: "Observational equivalence / identification"}
+  - {citation_key: manski-1995-untitled, role: formal_foundation, spine_nodes: [P6], note: "Identification in social sciences"}
+  - {citation_key: wyszecki-1982-color-science-concepts, role: formal_analogy, spine_nodes: [P6], note: "Color metamerism / tristimulus collapse"}
+  - {citation_key: gersho-1991-vector-quantization-signal, role: formal_foundation, spine_nodes: [D1], note: "Vector quantization / Voronoi cells"}
+  - {citation_key: cover-2006-elements-information-theory, role: formal_foundation, spine_nodes: [D1], note: "Rate-distortion / lossy encoding"}
+  - {citation_key: dijkstra-1970-notes-structured-programming, role: formal_foundation, spine_nodes: [P4, D2], note: "Testing shows presence not absence of bugs"}
+  - {citation_key: clarke-1999-untitled, role: formal_foundation, spine_nodes: [P4], note: "Model checking: correctness = conformance to spec"}
+  - {citation_key: hart-1999-661115138, role: formal_foundation, spine_nodes: [D2], note: "Incomplete contracts / hold-up"}
+  - {citation_key: parasuraman-1985-parasuraman-valarie, role: bridge_construct, spine_nodes: [P4], note: "SERVQUAL Gap 2 -> computable specification gap"}
+  - {citation_key: gligor-2011-towards-theory-trust-networks, role: bridge_construct, spine_nodes: [P5], note: "Behavioral vs computational trust"}
+  - {citation_key: diffie-1976-226644654-httpsdoiorg101109tit19761055638, role: formal_foundation, spine_nodes: [P5], note: "Public-key cryptography"}
+  - {citation_key: cameron-2005-laws-of-identity, role: design_principles, spine_nodes: [P5], note: "Laws of Identity (minimal disclosure)"}
+  - {citation_key: dietvorst-2015-algorithm-aversion-people-erroneously, role: empirical_support, spine_nodes: [P5], note: "Algorithm aversion = consumer-side trust gap"}
+  - {citation_key: guha-2016-schemaorg-evolution-structured, role: adoption_precedent, spine_nodes: [P3, P5], note: "Schema.org adoption-by-coordination precedent"}
+  - {citation_key: bowker-2026-brando-schema-v13-json, role: closest_prior_spec, spine_nodes: [P4], note: "Brando Schema — Brand-as-Code, closest existing spec"}
+  - {citation_key: acar-2026-preparing-your-brand, role: empirical_support, spine_nodes: [P6], note: "Real-world brand misperception (Ballantine's)"}
+  - {citation_key: sabbah-2026-marketing-machines-how, role: convergent_evidence, spine_nodes: [P5, P6], note: "Only numerical ratings survive across LLM purchasing cues"}
+
+# ============================================================================
+# Open questions / boundary edges
+# ============================================================================
+open:
+  - "Empirical pilot for P6: 10-20 brands in a convergent category x 7 LLMs (4 clusters) under statistical-only vs specification-augmented conditions; behavioral metamerism index = inter-brand statistical distance / inter-brand behavioral distance."
+  - "Does the open-coordination adoption equilibrium (P5/L2) actually emerge, or does a single platform lock in proprietary verification?"
+  - "Dimensional-system invariance: are discrimination/metamerism results preserved under alternative decompositions (Aaker 5, Kapferer 6) rather than SBT-8?"
+  - "Tiered-disclosure governance: does selective disclosure undermine the verification benefits, and does the spec increase transparency or enable strategic opacity?"
+  - "Temporal stability: does the same Brand Function yield stable discrimination across measurement epochs (training-data drift vs architecture drift)?"
+
+# ============================================================================
+# Spine changelog — append-only
+# ============================================================================

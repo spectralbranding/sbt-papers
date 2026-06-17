@@ -1,0 +1,442 @@
+# SPINE.yaml — Optimal Response Formats for AI Brand Perception Measurement (2026aa / R19)
+#
+# RETROFIT spine: extracted descriptively from the completed paper.md, not
+# decision D4). Faithful description of the paper's actual claims.
+#
+# Schema v0.2: the paper reports an author-run 17-model x 5-format x 5-brand x
+# 5-repetition experiment with computed distortion tables and paired t-tests, so
+# the observation -> method -> measurement -> finding chain is first-class.
+
+spine_version: "0.2"
+spine_doc_version: "0.1.0"
+paper_key: "2026aa"
+provenance: retrofit
+title: >-
+  Optimal Response Formats for AI Brand Perception Measurement: Evidence for a
+  J-Shaped Rate-Distortion Curve
+
+thesis: |
+  Applying Shannon rate-distortion theory to AI brand-perception measurement,
+  the response format constrains an LLM encoder's output alphabet (rate) and the
+  total-variation distance from a canonical eight-dimensional brand profile is
+  the distortion. Across 17 architectures from distinct training lineages, the
+  empirical rate-distortion curve is J-shaped rather than monotonically
+  decreasing: minimum distortion occurs at an intermediate bounded format (1-5
+  ordinal scale, ~19 bits) rather than at the highest-rate format (100-point
+  allocation, ~26 bits), a 49.4% mean-distortion reduction (.172 -> .087). The
+  departure from classical monotonic R(D) is mechanistic, not mathematical: the
+  encoder is an active agent whose training-corpus priors express most freely
+  under unconstrained high-rate formats and are suppressed by bounded
+  quantization. All 17 architectures trace essentially the same curve
+  (codebook convergence), prescribing 1-5 ordinal scales as the optimal
+  elicitation instrument for recovering brand perception profiles from LLMs.
+
+# ============================================================================
+# Boundary conditions — when the J-shape holds
+# ============================================================================
+boundary_conditions:
+  - id: C1
+    statement: >-
+      The brands evaluated are well-known with dense training-corpus
+      representation; the finding may not extend to regional, startup, fictional,
+      service, or B2B brands where prior density is sparse.
+    observable: "Brand has substantial presence in LLM training corpora."
+    excludes: "Sparse-prior brands (regional, startup, fictional, B2B)."
+  - id: C2
+    statement: >-
+      Distortion ground truth is the canonical eight-dimension theoretical SBT
+      reference profile, not human-observer cohort data; prompts are English only;
+      the tested format range spans five conditions (binary through open-text).
+    observable: "Reference signal is the theoretically specified canonical profile."
+    excludes: "Human-validated ground truth; non-English prompts; formats outside R1-R5."
+
+# ============================================================================
+# Observations — the author-run experiment as recorded events
+# ============================================================================
+observations:
+  - id: O1
+    statement: >-
+      A fully crossed factorial experiment (5 response-format conditions R1-R5 x
+      5 canonical reference brands x 17 LLM architectures x 5 repetitions) was run
+      with a pre-registered protocol; 1,621 of 1,652 API calls (98.1%) produced
+      valid parsed responses, at $0.225 USD total and 33 minutes wall-clock, with
+      zero protocol deviations.
+    raw_data_pointer: "experiment/L0_specification/PROTOCOL.md (replication archive)"
+    instrument: "17 cloud + local LLM APIs, temperature 0.7, English prompts"
+  - id: O2
+    statement: >-
+      Each LLM was treated as an encoder mapping a brand stimulus to a normalized
+      eight-dimensional simplex output; the five response formats operationalize
+      information rate from ~26 bits (R1, 100-point allocation) down to ~3 bits
+      (R5, single-dimension name).
+    raw_data_pointer: "Table 1 (rate conditions and bit capacities)"
+    instrument: "Response-format prompt templates R1-R5"
+
+# ============================================================================
+# Methods — how rate, distortion, and the curve are computed
+# ============================================================================
+methods:
+  - id: M1
+    statement: >-
+      Operationalize rate as the information capacity (bits) of the response
+      format, assuming a uniform distribution over the output alphabet:
+      log2(multinomial count) for R1 (~26), 5^8 for R2 (~19), 3^8 for R3 (~13),
+      2^8 for R4 (8), log2(8) for R5 (~3).
+    type: "information_rate_operationalization"
+    inputs: ["response-format alphabet sizes"]
+    outputs: ["per-condition bit budgets (Table 1)"]
+  - id: M2
+    statement: >-
+      Compute distortion as total variation distance d(w_hat, w_canon) =
+      0.5 * sum_i |w_hat_i - w_canon_i| between the model's normalized output and
+      the normalized canonical eight-dimensional brand profile, ranging 0 (perfect
+      reconstruction) to 1 (maximally distant).
+    type: "distortion_metric"
+    inputs: ["normalized model outputs", "canonical SBT profiles (2026a)"]
+    outputs: ["per-cell distortion values"]
+    code_anchor: "sbt-papers/r19-rate-distortion/code/analysis.py (SEED=42)"
+    reproducibility:
+      seed: "42"
+      runtime_environment: "uv run python analysis.py"
+  - id: M3
+    statement: >-
+      Test the five pre-registered hypotheses: H1 per-model Spearman rate-distortion
+      monotonicity (Bonferroni alpha .00294); H2 mean cross-model CV below .15; H4
+      Welch t-test of per-model power-law slope b (Western vs cross-cultural); H5 R1
+      CV below .20; plus paired t-tests across the 17 per-model means for the
+      J-shape, with Cohen's d_z and a Fisher combined chi-squared.
+    type: "preregistered_hypothesis_testing"
+    inputs: ["per-model x per-condition distortion means"]
+    outputs: ["t/p/d statistics (Results section)"]
+    code_anchor: "sbt-papers/r19-rate-distortion/code/analysis.py"
+
+# ============================================================================
+# Measurements — the computed table and test values
+# ============================================================================
+measurements:
+  - id: m_curve
+    statement: >-
+      Cross-model mean distortion by rate: R1 .172, R2 .087, R3 .111, R4 .181,
+      R5 .857 (Table 2); minimum at R2 in every one of the 17 models and across
+      all five brands (Table 3).
+    source_observations: [O1, O2]
+    generating_method: M2
+    value: "R1 .172 / R2 .087 / R3 .111 / R4 .181 / R5 .857"
+    units: "total variation distance (mean over 17 model means)"
+  - id: m_jshape_tests
+    statement: >-
+      Paired t-tests across 17 per-model means: R1 vs R2 t(16)=11.92, p<.001,
+      d_z=2.89 (17/17); R3 vs R2 t(16)=8.53, p<.001, d_z=2.07; R4 vs R2 t(16)=9.35,
+      p<.001, d_z=2.27; Fisher combined chi-squared(6)=69.06, p<.001; 49.4% mean
+      reduction R1 -> R2.
+    source_observations: [O1]
+    generating_method: M3
+    value: "R1vR2 t=11.92 d_z=2.89; combined chi2(6)=69.06; 49.4% reduction"
+    units: "paired-t statistics + effect sizes"
+  - id: m_convergence
+    statement: >-
+      Mean cross-model coefficient of variation across the five rate conditions is
+      .140 (below the .15 H2 threshold); .171 excluding the degenerate R5; CV at R1
+      is .210 in the full 17-model panel (.196 in the 7-model confirmatory subset).
+    source_observations: [O1]
+    generating_method: M3
+    value: "mean CV .140 (all five) / .171 (R1-R4) / R1 CV .210"
+    units: "coefficient of variation"
+  - id: m_arch_slope
+    statement: >-
+      Per-model power-law slope b (D = a*R^-b + c): Western (n=6) mean b=2.93
+      (SD 1.16) vs cross-cultural (n=11) mean b=4.64 (SD 4.43); Welch t(11.4)=-1.21,
+      p=.250, d=-.466; group difference is an outlier artifact (excluding GLM-4 and
+      ALLaM: t=.77, p=.456, d=.42).
+    source_observations: [O1]
+    generating_method: M3
+    value: "Western b=2.93 vs cross-cultural b=4.64; Welch t=-1.21 p=.250 d=-.466"
+    units: "power-law slope + Welch-t statistics"
+
+# ============================================================================
+# Propositions — the paper's theoretical claims
+# ============================================================================
+propositions:
+  - id: P1
+    statement: >-
+      An LLM evaluating a brand can be modeled as a rate-distortion encoder: the
+      brand stimulus is the source, the response format constrains the output
+      alphabet (rate), the canonical eight-dimensional profile is the reference,
+      and total variation distance is the distortion measure — establishing an
+      information-theoretic measurement framework for AI brand research.
+    conditions: ""
+    antecedents: []
+    evidence:
+      - type: analytic
+        anchor: "Encoder framing of Shannon R(D) applied to brand elicitation."
+        citation_keys: [shannon-1959-coding-theorems-discrete, cover-2006-elements-information-theory]
+    body_sections: ["Theoretical Background: Rate-Distortion Theory and Brand Perception", "Method"]
+  - id: P2
+    statement: >-
+      Unlike a classical passive channel, the LLM encoder is an active agent with
+      internal training-corpus priors; under unconstrained high-rate formats these
+      priors express freely and can increase distortion, so the rate-distortion
+      curve is predicted to be non-monotonic (J-shaped) rather than monotonically
+      decreasing.
+    conditions: "C1"
+    antecedents: [P1]
+    evidence:
+      - type: analytic
+        anchor: "Information-bottleneck optimal-compression and rational-inattention bounded-quantization arguments."
+        citation_keys: [tishby-2000-information-bottleneck-method, sims-2003-implications-rational-inattention]
+    falsifier: "If distortion decreased monotonically with rate (minimum at R1), P2 fails."
+    body_sections: ["Theoretical Background: Rate-Distortion Theory and Brand Perception"]
+  - id: P3
+    statement: >-
+      The departure from classical monotonic R(D) is mechanistic, not mathematical:
+      the J-shape extends Sims's (2016) perceptual rate-distortion model to
+      evaluative encoders with strong priors, a condition absent from human
+      observers and from Shannon's memoryless-source model.
+    conditions: ""
+    antecedents: [P2]
+    evidence:
+      - type: analytic
+        anchor: "Contrast with Sims (2016) perceptual encoder lacking training-corpus bias."
+        citation_keys: [sims-2016-ratedistortion-theory-human]
+    body_sections: ["Theoretical Background: Rate-Distortion Theory and Brand Perception"]
+  - id: P4
+    statement: >-
+      The empirical rate-distortion curve is J-shaped: minimum distortion occurs
+      at the intermediate bounded format R2 (1-5 ordinal, ~19 bits), not at the
+      highest-rate R1 (100-point allocation, ~26 bits), a 49.4% mean-distortion
+      reduction observed in all 17 architectures and all five brands.
+    conditions: "C1, C2"
+    antecedents: [P2, F1]
+    evidence:
+      - type: empirical
+        anchor: "Tables 2-3; paired t-tests; m_curve, m_jshape_tests."
+    falsifier: "If any model achieved lower distortion at a non-R2 rate, P4 fails."
+    body_sections: ["Results: J-Shaped Rate-Distortion Curve", "Discussion: The Bias-Suppression Mechanism"]
+  - id: P5
+    statement: >-
+      Bounded quantization suppresses encoder bias: the 1-5 ordinal scale
+      quantizes the output space into five levels per dimension, reducing
+      within-model variance and pulling outputs toward canonical values — the
+      machine analogue of constraining satisficing degrees of freedom, but via
+      prior suppression rather than cognitive capacity.
+    conditions: "C1"
+    antecedents: [P2, P4]
+    evidence:
+      - type: analytic
+        anchor: "Survey-methodology optimal-scale-points prior reached via a distinct pathway."
+        citation_keys: [cox-1980-optimal-number-response, krosnick-1991-response-strategies-coping]
+    body_sections: ["Theoretical Background: Response Format Effects in Survey Methodology", "Discussion: The Bias-Suppression Mechanism"]
+  - id: P6
+    statement: >-
+      Codebook convergence: 17 architectures from distinct training lineages
+      (Western, Chinese, Russian, Indian, Saudi, Japanese) trace essentially the
+      same J-shaped curve (mean cross-model CV .140), indicating the
+      rate-distortion trade-off is an emergent property of the LLM optimization
+      landscape rather than a training-corpus-specific artifact.
+    conditions: "C1"
+    antecedents: [P4, F2]
+    evidence:
+      - type: empirical
+        anchor: "H2 supported; m_convergence; parallels 2026v cosine .977 and 2026ac immunity."
+    falsifier: "If cross-model CV exceeded the .15 threshold (curves diverged by lineage), P6 weakens."
+    body_sections: ["Results: H2: Common Rate-Distortion Curve", "Discussion: Codebook Convergence"]
+  - id: P7
+    statement: >-
+      The prescribed instrument design for recovering a multi-dimensional brand
+      profile from LLMs is the 1-5 ordinal scale rather than point-allocation or
+      open-ended formats; the recommendation generalizes to any multi-dimensional
+      perception elicitation where LLM priors are a confound.
+    conditions: "C1, C2"
+    antecedents: [P4, P5, P6]
+    evidence:
+      - type: analytic
+        anchor: "Instrument-design implication; R(D)-calibrated design at $0.225 cost."
+    body_sections: ["Discussion: Managerial Implications", "Discussion: Implications for Practice"]
+  - id: P8
+    statement: >-
+      The rate-distortion principle extends bidirectionally across the perception
+      channel: input-side specification-format variation (Experiment D, 2026x)
+      mirrors the output-side finding (eta-sq=.167; prose lowest fidelity, ordinal
+      and structured-JSON highest), so bounded structured representations minimize
+      distortion on both encoding and decoding sides.
+    conditions: ""
+    antecedents: [P5]
+    evidence:
+      - type: analytic
+        anchor: "Cross-reference to 2026x input-format result and 2026ad recovery-threshold."
+    body_sections: ["Discussion: Implications for Practice"]
+
+# ============================================================================
+# Findings — what the experiment demonstrates
+# ============================================================================
+findings:
+  - id: F1
+    statement: >-
+      All 17 models achieve minimum distortion at R2 (.087) versus R1 (.172),
+      a 49.4% reduction, with paired t(16)=11.92, p<.001, d_z=2.89 for R1 vs R2
+      (17/17 models) and Fisher combined chi-squared(6)=69.06, p<.001; the J-shape
+      is robust across every architecture and brand.
+    type: "primary_empirical_result"
+    source_measurements: [m_curve, m_jshape_tests]
+    generating_method: M3
+    antecedents: [O1]
+    falsifier: "If the R1>R2 ordering reversed in any model, F1 fails."
+    citation_role_in_paper: "primary_evidence_for_P4"
+    body_sections: ["Results: J-Shaped Rate-Distortion Curve"]
+  - id: F2
+    statement: >-
+      H2 is supported: mean cross-model CV across the five rate conditions is .140
+      (.171 excluding the degenerate R5), so 17 architectures from distinct training
+      pipelines trace essentially the same curve — codebook convergence.
+    type: "convergence_result"
+    source_measurements: [m_convergence]
+    generating_method: M3
+    antecedents: [O1]
+    falsifier: "If cross-model CV exceeded .15, F2 (H2) fails."
+    citation_role_in_paper: "primary_evidence_for_P6"
+    body_sections: ["Results: H2: Common Rate-Distortion Curve"]
+
+# ============================================================================
+# Negative findings — pre-registered hypotheses not supported
+# ============================================================================
+negative_findings:
+  - id: NF1
+    statement: >-
+      H1 (monotonic decay) is not supported: all 17 models show directionally
+      negative rate-distortion Spearman correlations (rho -.3 to -.9) but none
+      reach Bonferroni-corrected significance (alpha .00294) — a power artifact of
+      only n=5 rate conditions per model, not evidence against the curve.
+    expected_observation: "Significant per-model monotonic rate-distortion correlation."
+    source_method: M3
+    affects_nodes: [P2, P4]
+    body_sections: ["Results: H1: Monotonic Rate-Distortion Shape"]
+  - id: NF2
+    statement: >-
+      H4 (architectural separation) is not supported: Western vs cross-cultural
+      power-law slopes do not differ (Welch t(11.4)=-1.21, p=.250, d=-.466); the
+      apparent gap is driven by two outlier slopes (GLM-4, ALLaM) and the test is
+      ~22% powered. H5 (R1 CV below .20) is also not supported in the full panel
+      (CV .210), marginally met in the 7-model confirmatory subset (.196).
+    expected_observation: "Distinct slopes by training lineage; R1 CV below .20."
+    source_method: M3
+    affects_nodes: [P6]
+    body_sections: ["Results: H4: Architectural Separation", "Results: H5: R1 Convergence Floor"]
+
+# ============================================================================
+# Alternative explanations — rivals the J-shape claim must clear
+# ============================================================================
+alternative_explanations:
+  - id: A1
+    statement: >-
+      The J-shape is the same cognitive-satisficing effect documented in human
+      survey methodology, where cognitively demanding formats invite satisficing.
+    rules_out_required: [P5]
+    ruled_out_by: [P5]
+    rules_out_status: "reframed"
+    reasoning: >-
+      LLMs have no fatigue or effort costs, so satisficing per se does not apply;
+      the same empirical pattern (bounded formats outperform unconstrained ones)
+      arises via a distinct mechanism — training-corpus prior suppression under
+      output-alphabet constraints — not cognitive capacity (Krosnick 1991).
+    body_sections: ["Discussion: The Bias-Suppression Mechanism"]
+
+# ============================================================================
+# Limitations — honest scope of the result
+# ============================================================================
+limitations:
+  - id: L1
+    statement: >-
+      Canonical brand profiles are theoretically derived reference signals, not
+      human-validated ground truth; the distortion measure captures deviation from
+      theory, not from any specific human cohort's perception.
+    severity: "scope-bounding"
+    affects: [P4, P7]
+    body_sections: ["Discussion: Limitations"]
+  - id: L2
+    statement: >-
+      Only English prompts were used; native-language effects on the R(D) curve are
+      untested. The H4 architectural-separation test is severely underpowered
+      (panels of 15+ models per group needed). The R5 condition produces extreme
+      distortion by construction (a 1-of-8 indicator cannot approximate any
+      realistic eight-dimensional profile).
+    severity: "future-work"
+    affects: [P6, NF2]
+    body_sections: ["Discussion: Limitations", "Discussion: Boundary Conditions"]
+  - id: L3
+    statement: >-
+      H3 (the Shannon bound) is deferred: the analytical Dirichlet-source R(D)
+      lower bound is not computed here, so the empirical curve is reported without
+      its theoretical baseline (a companion theoretical note).
+    severity: "deferred-scope"
+    affects: [P1]
+    body_sections: ["Results: H3: Shannon Bound"]
+
+# ============================================================================
+# Cross-paper engagement
+# ============================================================================
+corpus_precedents:
+  - paper_key: 2026e
+    relationship: extends
+    spine_nodes: [P1]
+    note: >-
+      Spectral metamerism (projection bounds) established that retaining 11.6% of
+      an LLM's implicit brand representation suffices to distinguish profiles; that
+      projection bound is the bit-budget ceiling this empirical R(D) curve operationalizes.
+  - paper_key: 2026v
+    relationship: extends
+    spine_nodes: [P6]
+    note: >-
+      Dimensional collapse / LLMs as metameric observers (24 models, cosine .977)
+      motivates the format question; this paper varies elicitation format rather
+      than brand pair and measures distortion from canonical profiles.
+  - paper_key: 2026a
+    relationship: applies
+    spine_nodes: [P1]
+    note: "SBT supplies the canonical eight-dimensional reference profiles and the simplex-allocation convention used as the distortion reference."
+  - paper_key: 2026r
+    relationship: applies
+    spine_nodes: [P1]
+    note: "The eight-dimensional completeness/non-redundancy result bounds the space in which the total-variation distortion measure is meaningful."
+  - paper_key: 2026ac
+    relationship: extends
+    spine_nodes: [P6]
+    note: "Spectral immunity (portfolio framing fails to shift profiles across a 13-model panel) corroborates that codebook stability generalizes beyond rate-distortion conditions."
+  - paper_key: 2026x
+    relationship: extends
+    spine_nodes: [P8]
+    note: "Experiment D's input-side specification-format result (eta-sq .167) mirrors this output-side finding; the rate-distortion principle extends bidirectionally."
+  - paper_key: 2026ad
+    relationship: extends
+    spine_nodes: [P8]
+    note: "The mu>lambda recovery threshold formalizes the minimum rate investment to restore separability after a coherence shock (companion result)."
+
+# ============================================================================
+# External anchor literature
+# ============================================================================
+external_anchors:
+  - {citation_key: shannon-1959-coding-theorems-discrete, role: foundational_theory, spine_nodes: [P1, P3], note: "Rate-distortion theorem R(D) — the framework applied."}
+  - {citation_key: cover-2006-elements-information-theory, role: foundational_theory, spine_nodes: [P1], note: "Classical monotonic R(D) convexity result."}
+  - {citation_key: gersho-1991-vector-quantization-signal, role: background, spine_nodes: [P1], note: "Vector quantization / signal compression lineage."}
+  - {citation_key: sims-2016-ratedistortion-theory-human, role: closest_prior, spine_nodes: [P3], note: "Perceptual rate-distortion in human cognition (Chris R. Sims) — extended to evaluative encoders."}
+  - {citation_key: sims-2003-implications-rational-inattention, role: complementary_theory, spine_nodes: [P2], note: "Rational inattention (Christopher A. Sims) — bounded quantization optimal under capacity constraints."}
+  - {citation_key: tishby-2000-information-bottleneck-method, role: complementary_theory, spine_nodes: [P2], note: "Information bottleneck — non-monotonic optimal-compression point."}
+  - {citation_key: cox-1980-optimal-number-response, role: empirical_prior, spine_nodes: [P5], note: "Optimal scale points (5-7) in survey measurement — same result, distinct pathway."}
+  - {citation_key: krosnick-1991-response-strategies-coping, role: contrast, spine_nodes: [P5], note: "Cognitive satisficing — the human mechanism ruled out as the LLM mechanism (A1)."}
+  - {citation_key: schwarz-1999-selfreports-how-questions, role: empirical_prior, spine_nodes: [P5], note: "Response scales shape answers (survey methodology prior)."}
+  - {citation_key: tourangeau-2000-psychology-survey-response, role: empirical_prior, spine_nodes: [P5], note: "Cognitive demands of formats produce response artifacts."}
+  - {citation_key: argyle-2023-out-one-many, role: validation_context, spine_nodes: [P7], note: "LLMs as synthetic survey respondents — paradigm extended to brand measurement."}
+  - {citation_key: li-2024-frontiers-determining-validity, role: validation_context, spine_nodes: [P1], note: "LLM brand ratings match human surveys >75% — validity premise, but treated format as fixed."}
+  - {citation_key: sabbah-2026-marketing-machines-how, role: concurrent_support, spine_nodes: [P4], note: "Only structured ratings survive across LLMs — parallels the R2 optimum."}
+
+# ============================================================================
+# Open questions / boundary edges
+# ============================================================================
+open:
+  - "H3: the analytical Dirichlet-source R(D) lower bound is uncomputed; the empirical curve lacks its theoretical baseline (companion note). (L3)"
+  - "The effect of temperature on the R(D) curve is held fixed at 0.7 and untested — an open robustness check."
+  - "Native-language effects on the rate-distortion operating point are untested (English-only). (L2)"
+  - "Architectural separation by training lineage is unresolved; panels of 15+ models per group are needed. (NF2/L2)"
+
+# ============================================================================
+# Spine changelog — append-only
+# ============================================================================

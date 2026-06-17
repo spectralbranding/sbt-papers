@@ -1,0 +1,33 @@
+# ONTOLOGY.yaml module - 2026j
+#
+# Per-paper ontology module per [internal path removed]
+# §"ONTOLOGY.yaml schema (v0.1)". owns = terms THIS paper introduces (unique
+# authority); imports = terms owned by other modules it uses (reference only).
+# Linked into the substrate `terms` graph by build_ontology.py; rendered per-paper
+# by render_paper_glossary.py. Bootstrapped 2026-06-13 from per-paper term
+# extraction; definitions paraphrase each paper's own definitional text.
+
+paper_key: 2026j
+schema_version: 0.1
+
+owns:
+  - term_key: brand-perception-sde
+    label: "Brand Perception SDE"
+    canonical_form: "brand perception SDE"
+    definition: "A Stratonovich stochastic differential equation governing an observer's perception trajectory on the positive octant of the 7-sphere, with signal-encounter diffusion, signal-decay drift, and absorbing Dirichlet boundaries representing irreversible loss of a perceptual dimension."
+    first_section: "The Brand Perception SDE"
+
+imports:
+  - {term_key: spectral-dimensions}
+  - {term_key: perception-cloud}
+  - {term_key: observer-spectral-profile}
+  - {term_key: brand-conviction}
+  - {term_key: ergodicity-coefficient}
+  - {term_key: absorbing-state}
+  - {term_key: non-ergodic-perception}
+  - {term_key: d-a-ratio}
+  - {term_key: re-collapse}
+  - {term_key: cohort}
+
+refines: []
+

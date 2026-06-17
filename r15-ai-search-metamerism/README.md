@@ -1,6 +1,6 @@
 [![MIT License](https://img.shields.io/badge/Code-MIT-blue.svg)](../LICENSE)
 [![CC-BY 4.0](https://img.shields.io/badge/Data-CC--BY_4.0-lightgrey.svg)](../LICENSE-data)
-![Last Updated](https://img.shields.io/badge/updated-2026--06--16-success)
+![Last Updated](https://img.shields.io/badge/updated-2026--06--17-success)
 
 # Dimensional Collapse in AI-Mediated Search: Large Language Models as Metameric Observers of Brand Advertising
 
@@ -36,4 +36,4 @@ Code (if any): MIT — see hub-level [../LICENSE](../LICENSE). Data, figures, ta
 
 ---
 
-*Last updated: 2026-06-16*
+*Last updated: 2026-06-17*

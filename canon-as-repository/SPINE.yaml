@@ -1,0 +1,494 @@
+# SPINE.yaml — Canon as Repository (2026w)
+#
+# RETROFIT spine: extracted descriptively from the completed paper.md
+# ([internal path removed], Working Paper v1.1.0), NOT authored
+# spine-first before prose. Part of the SPINE-for-all-active-canonical
+# project ([internal path removed], D4).
+#
+# Schema v0.1 ([internal path removed] §"Schema v0.1"):
+# this is a PURE-THEORY paper — no author-produced data, no simulations, no
+# computed table values (Tables 1-3 are conceptual mappings, not computed
+# numbers), no AI-tool output measurements. Hence propositions +
+# boundary_conditions + limitations + corpus_precedents + external_anchors +
+# open + changelog; no observations/methods/measurements/findings chain.
+
+spine_version: "0.1"
+spine_doc_version: "0.1.0"     # retrofit lock (2026-06-14, D4)
+paper_key: "2026w"
+provenance: retrofit
+title: >-
+  Canon as Repository: A Specification-Driven Architecture for Transmedia
+  Intellectual Property
+target_venue_primary: "TBD (television / new-media studies venue)"
+status: >-
+  Retrofit spine extracted from completed paper.md (Working Paper v1.1.0,
+  May 2026). Descriptive, not generative.
+
+thesis: |
+  Creative intellectual property management is the only mature domain of
+  complex designed systems that lacks a formal consistency-verification
+  construct: engineering, medicine, financial auditing, software, and
+  scientific publishing each independently developed mechanisms to verify
+  that artifacts satisfy their specifications, but creative IP has not.
+  Transmedia franchises accumulate contradictions across novels, films,
+  games, and merchandise because no formal specification governs what a
+  story IS independently of how it is expressed. This is an instance of the
+  rendering problem (Zharnikov, 2026l): a specification of bounded
+  complexity (the canon) is rendered into an implementation of vastly
+  greater complexity (medium-specific expression), producing an emergent
+  layer (audience perception) that the specification does not contain. The
+  paper proposes that the canon be reconceived as a version-controlled
+  repository — editions are tagged commits, translations and adaptations are
+  forks, canon governance is pull requests, and consistency validation is
+  continuous integration — with style as a rendering parameter, actors and
+  translators as rendering operators, and AI clarifying authorship by
+  distinguishing specification (the creative act) from rendering (the craft
+  act). The contribution is the GAP (creative IP lacks the construct), not
+  the TOOL (Git is one instrumental implementation among possible ones).
+
+# ============================================================================
+# Boundary conditions — when the architecture applies
+# ============================================================================
+boundary_conditions:
+  - id: C1
+    statement: >-
+      The work is a narrative work with identifiable, separable
+      characters, world rules, timeline, themes, and constraints — a
+      franchise, series, or transmedia property — not a work whose meaning
+      is inseparable from its form (lyric poem, abstract visual art).
+    observable: "Presence of medium-independent facts/rules that persist across renderings."
+    excludes: "Lyric poetry, abstract visual art, works with no separable specification."
+
+  - id: C2
+    statement: >-
+      Canonical consistency is CHOSEN as a design goal; the architecture
+      applies to franchises that opt for cross-rendering consistency, not to
+      all transmedia projects (some deliberately allow contradictions).
+    observable: "Stated or implied governance intent to maintain consistency across renderings."
+    excludes: "Japanese media-mix-style franchises that treat contradiction as a feature (thin specification only)."
+
+  - id: C3
+    statement: >-
+      The franchise has matured past the discovery phase, so a stable
+      specification exists to govern; for works in active creation the
+      architecture offers retrospective formalization, not prospective
+      governance.
+    observable: "A settled body of canonical texts that renderings derive from."
+    excludes: "Works in active discovery where specification and rendering co-evolve (Tolkien, Kubrick)."
+
+# ============================================================================
+# Propositions — the diagnostic claim, the rendering-problem mapping, and the
+# paper's seven numbered propositions (P-DIAG, P-RP, P1..P7)
+# ============================================================================
+propositions:
+  - id: P-DIAG
+    statement: >-
+      Creative intellectual property management is the only mature domain of
+      complex designed systems that lacks a formal consistency-verification
+      construct, despite semi-formal attempts (story bibles, continuity
+      databases, fan wikis) that demonstrate the need — these remain
+      unversioned, unvalidated, and medium-coupled (specifications in intent
+      but not in architecture).
+    conditions: ""
+    antecedents: []
+    evidence:
+      - type: analytic
+        anchor: >-
+          Cross-domain comparison (paper Table 2): engineering tolerance
+          inspection (1800s), clinical endpoints (1940s), audit criteria,
+          CI/TDD (2003), peer review (1665) — each domain independently built
+          the construct; creative IP did not.
+      - type: citation
+        anchor: "Story-bible best practice and its three structural limitations."
+        citation_keys: [hayes-2011-transmedia-production-bible]
+    body_sections: ["§1 Introduction", "§2.4 The Story Bible and Its Limitations", "§4 Table 2", "§8.1 The Gap, Not the Tool"]
+
+  - id: P-RP
+    statement: >-
+      The franchise consistency problem is an instance of the rendering
+      problem: the specification is the canon (characters, world rules,
+      timeline, themes, constraints), the rendering is the medium-specific
+      expression (novel, film, game, translation), and the emergent layer is
+      audience perception. Three structural properties hold — a specification
+      gap, a configuration layer, and emergence — making creative IP a fourth
+      (now fifth, with scientific knowledge) domain of the same cross-domain
+      pattern.
+    conditions: "C1"
+    antecedents: [P-DIAG]
+    evidence:
+      - type: citation
+        anchor: "The rendering problem as a domain-independent structural pattern."
+        citation_keys: [zharnikov-2026l-rendering-problem]
+      - type: analytic
+        anchor: "Five-domain table (paper Table 3): biological, organizational, brand, creative IP, scientific knowledge — specification → rendering → perception with a gap at each transition."
+    body_sections: ["§2.1 The Rendering Problem", "§8.2 Connection to Adjacent Frameworks", "§9 Conclusion"]
+
+  - id: P-BOUND
+    statement: >-
+      The specification-rendering boundary is defined by a single criterion —
+      medium independence: an element that must be preserved across all valid
+      renderings belongs in the specification; an element that may legitimately
+      vary between renderings belongs in the rendering. The boundary is itself
+      a governance design decision (moving an element toward specification
+      raises consistency but lowers renderer freedom, and conversely).
+    conditions: "C1"
+    antecedents: [P-RP]
+    evidence:
+      - type: analytic
+        anchor: "Five specification categories (characters, world rules, timeline, themes, constraints) vs. rendering-layer craft decisions; the medium-independence test."
+    body_sections: ["§3.1 What Belongs in the Specification", "§3.2 What Belongs in the Rendering", "§3.3 The Specification-Rendering Boundary"]
+
+  - id: P1
+    statement: >-
+      (Paper Proposition 1) Every change to a creative work's specification can
+      be represented as a commit to a version-controlled repository, preserving
+      the change, its author, its timestamp, and its rationale, enabling
+      complete reconstruction of any prior canonical state.
+    conditions: "C1, C2"
+    antecedents: [P-BOUND]
+    evidence:
+      - type: analytic
+        anchor: "Commits record canonical changes; tags mark editions. Story bibles lack a commit history, so 'what changed between editions?' is unanswerable without one."
+      - type: example
+        anchor: "Disney's 2014 reclassification of the Star Wars Expanded Universe to 'Legends' = a forced rebase discarding ~300 commits and re-tagging a new v1.0."
+    falsifier: "If a specification change cannot be recorded with attributable author + timestamp + rationale enabling prior-state reconstruction, P1 fails."
+    body_sections: ["§4.1 Commits and Tags"]
+
+  - id: P2
+    statement: >-
+      (Paper Proposition 2) Every adaptation, translation, or derivative work
+      from a creative specification can be represented as a fork from a tagged
+      version of the canon repository, inheriting the specification's
+      constraints while introducing medium-specific rendering decisions.
+    conditions: "C1"
+    antecedents: [P-BOUND]
+    evidence:
+      - type: analytic
+        anchor: "Translation = fork; film adaptation = fork with greater dimensional loss; game adaptation = fork that raises player-agency governance questions."
+      - type: example
+        anchor: "MCU Phase 4 'Sacred Timeline' main branch with timeline-variant forks; Loki / Multiverse of Madness depict fork-and-merge visibly."
+    falsifier: "If an adaptation/translation cannot be expressed as a constraint-inheriting fork from a tagged version, P2 fails."
+    body_sections: ["§4.2 Forks: Translations, Adaptations, and Derivative Works"]
+
+  - id: P3
+    statement: >-
+      (Paper Proposition 3) Canon governance — the process by which proposed
+      changes to a creative specification are reviewed, approved, or rejected —
+      can be formalized as a pull request workflow with defined approval
+      authorities, review criteria, and merge conditions, structurally resolving
+      the canonical/non-canonical ambiguity (merged-via-approved-PR = canonical;
+      fork-only = not).
+    conditions: "C1, C2"
+    antecedents: [P-BOUND]
+    evidence:
+      - type: analytic
+        anchor: "A PR is fundamentally a governance tool: review, discussion, approval/rejection before the change affects canonical state."
+      - type: example
+        anchor: "House of the Dragon showrunner/novelist/network negotiation (e.g. Targaryen dragon colors ratified by Martin's sign-off) recreates the review-approve-merge cycle informally."
+    falsifier: "If canon-change governance cannot be expressed with approval authorities, review criteria, and merge conditions, P3 fails."
+    body_sections: ["§4.3 Pull Requests: Canon Governance"]
+
+  - id: P4
+    statement: >-
+      (Paper Proposition 4) Consistency validation across renderings of a
+      creative specification can be automated through structured validation
+      rules that check character properties, timeline chronology, world rules,
+      and cross-rendering compatibility against the canonical specification,
+      transforming consistency from a human editorial process that fails at
+      scale into a governance process that scales.
+    conditions: "C1, C2"
+    antecedents: [P-BOUND]
+    evidence:
+      - type: analytic
+        anchor: "Four validator categories (character, timeline, world-rule, cross-rendering); NLP + knowledge-graph extraction provides the checking substrate."
+      - type: example
+        anchor: "Doctor Who's regeneration mechanic encodes a consistency validator into the specification: memory/values continuity preserved while appearance/personality is a rendering parameter."
+    falsifier: "If specification compliance cannot be checked by structured rules against the canon, P4 fails (Technological-maturity limitation L5 bounds this in practice)."
+    body_sections: ["§4.4 CI/CD: Consistency Validation"]
+
+  - id: P-MERGE
+    statement: >-
+      Canon contradictions correspond to merge conflicts — two authorized
+      renderings imply incompatible facts; established canon-management
+      strategies (Proctor's reboot/retcon/relaunch/revival/refresh) map onto
+      merge-conflict resolution strategies (branch-priority rules, hard reset,
+      deliberate ambiguity). The architecture does not prescribe a resolution
+      strategy; it provides tooling to detect, record, and resolve
+      contradictions transparently.
+    conditions: "C1"
+    antecedents: [P-BOUND]
+    evidence:
+      - type: citation
+        anchor: "Taxonomy of canon-regeneration strategies."
+        citation_keys: [proctor-2017-reboots-retroactive-continuity]
+      - type: example
+        anchor: "Star Wars G/T/C/S-canon tiers (branch priority); 2014 binary canon/Legends split (hard reset); Doctor Who deliberate ambiguity (unresolved conflicts left open)."
+    body_sections: ["§4.5 Merge Conflicts: Canon Contradictions"]
+
+  - id: P5
+    statement: >-
+      (Paper Proposition 5) Each medium constitutes a dimensional subspace of
+      the full specification space, preserving some specification dimensions
+      with high fidelity while structurally losing others, such that every
+      rendering is an incomplete but valid projection of the canonical
+      specification (the specification gap at each projection is structural,
+      not a failure of craft).
+    conditions: "C1"
+    antecedents: [P-RP, P-BOUND]
+    evidence:
+      - type: citation
+        anchor: "Medium affordances — narrative possibilities each medium enables or forecloses."
+        citation_keys: [ryan-2001-narrative-virtual-reality]
+      - type: example
+        anchor: "Game of Thrones HBO adaptation projects novel interiority into visual performance; Seasons 7-8 divergence (outpacing source spec) is what the rendering problem predicts — renderers without a canonical spec diverge."
+    falsifier: "If a medium could preserve all specification dimensions with no structural loss, the dimensional-subspace claim fails."
+    body_sections: ["§5.1 Medium as Dimensional Subspace"]
+
+  - id: P-STYLE
+    statement: >-
+      A rendering is a PARAMETERIZED projection: output = render(spec, medium,
+      style). The same specification in the same medium yields radically
+      different renderings under different style parameters, and style is
+      itself a formalizable specification — so a rendering function takes two
+      specifications (content + style), explaining why style transfer is
+      possible and why AI generation models (content prompt + style parameter)
+      work. Human rendering professionals — actors, translators, illustrators —
+      are rendering operators; a 'miscast' actor outputs a specification
+      violation, not a failure to match prior renderings.
+    conditions: "C1"
+    antecedents: [P5]
+    evidence:
+      - type: analytic
+        anchor: "Double-specification (content + style) structure; the Bond problem (six actors, one specification); translation loss as structural specification gap."
+    body_sections: ["§5.2 Style as Rendering Parameter", "§5.3 Actors, Translators, Illustrators as Rendering Functions"]
+
+  - id: P6
+    statement: >-
+      (Paper Proposition 6) When specification and rendering are formally
+      separated, and rendering technology is sufficiently capable, observers
+      with access to capable rendering tools can generate personalized
+      renderings from a published canonical specification, transforming the
+      author's role from renderer to specifier (the pre-rendered product
+      becomes one curated rendering among many).
+    conditions: "C1"
+    antecedents: [P-STYLE]
+    evidence:
+      - type: citation
+        anchor: "Audiences exercising agency within authored narrative structures (the audience-as-renderer trajectory)."
+        citation_keys: [murray-1997-hamlet-holodeck]
+      - type: example
+        anchor: "Netflix Bandersnatch = early partial implementation: viewers parameterize traversal within a fixed author-controlled specification, showing both the appeal and the limit (no specification publication)."
+    falsifier: "If observer-generated renderings from a published specification cannot satisfy its constraints, the audience-as-renderer claim fails."
+    body_sections: ["§5.4 The Audience as Renderer"]
+
+  - id: P-AI
+    statement: >-
+      AI clarifies the authorship question by locating originality in
+      specification (the creative act of deciding WHAT the story is), not
+      rendering (the craft act of HOW it is expressed): AI at the specification
+      level is genuine co-authorship and is attributable via the commit log;
+      AI at the rendering level is a sophisticated tool, not an author. As AI
+      rendering capability improves, human creative value moves up the stack
+      from rendering to specification.
+    conditions: "C1"
+    antecedents: [P-STYLE, P-BOUND]
+    evidence:
+      - type: citation
+        anchor: "Legal anchors: AI cannot be a copyright author; copyright attaches to human creative control / expressive input."
+        citation_keys: [thaler-v-perlmutter-2023, us-copyright-office-2025-ai-part-2]
+      - type: example
+        anchor: "WGA 2023 (AI cannot be credited as a writer = specification is human) and SAG-AFTRA 2023 (digital-replica consent = rendering function is the performer's property) both implicitly accept the specification-rendering distinction; photography moved painting from recording to meaning-making."
+    body_sections: ["§6.1 AI in Specification", "§6.2 AI in Rendering", "§6.3 Implications for Creative Labor", "§8.3 The Authorship Question"]
+
+  - id: P7
+    statement: >-
+      (Paper Proposition 7) Observer-specific rendering — the generation of
+      personalized renderings from a canonical specification, parameterized by
+      observer preferences, language, medium, and reception context — preserves
+      specification-level consistency while maximizing rendering-level
+      accessibility (mirroring observer-relative perception frameworks).
+    conditions: "C1"
+    antecedents: [P6, P-AI]
+    evidence:
+      - type: citation
+        anchor: "The same source specification produces different perceived outputs depending on how each rendering is parameterized for a given observer (SBT observer-relativity)."
+        citation_keys: [zharnikov-2026a-spectral-brand-theory]
+      - type: example
+        anchor: "Disney+ localized dubbing already renders one canonical MCU episode into dozens of language versions (different vocal operators, preserved character consistency); next steps extend parameterization to pacing and accessibility under the same validators."
+    falsifier: "If observer-parameterized renderings cannot preserve specification consistency while varying accessibility, P7 fails."
+    body_sections: ["§6.4 Observer-Specific Renderings", "§7.2 Simulated Audience Testing"]
+
+  - id: P-LICENSE
+    statement: >-
+      IP licensing maps to fork governance: a license is a fork authorization
+      with constraints (which version may be forked, which elements may be
+      modified, which validation rules must pass, whether PRs to main are
+      permitted). Fan fiction forks without authorization — 'fix-it fics' are
+      community-authored pull requests the official repository has declined to
+      merge — and the specification-compliant vs. specification-divergent
+      distinction is structural and measurable, not evaluative.
+    conditions: "C1, C2"
+    antecedents: [P2, P3]
+    evidence:
+      - type: citation
+        anchor: "Franchise management as a negotiated system among producers, licensees, and audiences."
+        citation_keys: [johnson-2013-media-franchising]
+      - type: citation
+        anchor: "Fan engagement structured by evaluative hierarchies; fan-fiction community governance norms."
+        citation_keys: [hills-2002-fan-cultures, hellekson-busse-2006-fan-fiction]
+    body_sections: ["§7.3 IP Licensing as Fork Governance"]
+
+# ============================================================================
+# Limitations — honest scope of the architecture
+# ============================================================================
+limitations:
+  - id: L1
+    statement: >-
+      Specification completeness: some creative works resist specification —
+      a lyric poem or work of abstract art may have no separable specification,
+      its meaning entirely constituted by its rendering. The architecture is
+      least applicable where meaning is inseparable from form.
+    affects: [P-RP, P-BOUND, C1]
+    body_sections: ["§8.4 Limitations (Specification completeness)"]
+
+  - id: L2
+    statement: >-
+      Specification-rendering co-evolution: specification and rendering often
+      co-evolve (works discovered through their making). The architecture is
+      most applicable to franchises past the discovery phase; for works in
+      active creation it offers retrospective formalization, not prospective
+      governance.
+    affects: [C3]
+    body_sections: ["§8.4 Limitations (Specification-rendering co-evolution)"]
+
+  - id: L3
+    statement: >-
+      Specification formalization: mood, sensibility, and aesthetic 'feel'
+      resist decomposition into discrete testable propositions. A validator can
+      check whether a character is alive at a timeline point but not whether a
+      scene 'feels like Star Wars'; the architecture handles discrete testable
+      elements better than continuous tonal ones.
+    affects: [P4]
+    body_sections: ["§8.4 Limitations (Specification formalization)"]
+
+  - id: L4
+    statement: >-
+      Creative constraint: formalization may constrain creative discovery; the
+      architecture is most useful for collaborative, multi-rendering contexts
+      where cross-renderer consistency is essential, and for single-author works
+      the overhead may exceed the benefit.
+    affects: [P-DIAG, P3]
+    body_sections: ["§8.4 Limitations (Creative constraint)"]
+
+  - id: L5
+    statement: >-
+      Technological maturity: the automated validators (§4.4) require natural
+      language understanding not yet reliable for production; current AI detects
+      simple timeline contradictions but struggles with nuanced character
+      consistency requiring interpretive judgment.
+    affects: [P4]
+    body_sections: ["§8.4 Limitations (Technological maturity)"]
+
+# ============================================================================
+# Alternative explanation / rival the paper rules out
+# ============================================================================
+alternative_explanations:
+  - id: A1
+    statement: >-
+      The contribution is merely the application of Git semantics to creative
+      IP (i.e. 'creative IP is software').
+    rules_out_required: [P-DIAG]
+    ruled_out_by: [P-DIAG, P-RP]
+    rules_out_status: "rejected"
+    reasoning: >-
+      The contribution is the GAP, not the tool: creative IP lacks a
+      consistency-verification construct that every other mature domain
+      independently built. Git is instrumental — any implementation preserving
+      version history, branching, validation, and audit trails would serve the
+      same architectural purpose. The argument depends on the gap being real and
+      the construct being widespread, not on Git being 'the right tool'.
+    body_sections: ["§1 Introduction", "§4 Table 1 Notes", "§8.1 The Gap, Not the Tool"]
+
+# ============================================================================
+# Cross-paper engagement (real corpus keys)
+# ============================================================================
+corpus_precedents:
+  - paper_key: 2026l
+    relationship: applies
+    spine_nodes: [P-RP, P5, P-DIAG]
+    note: >-
+      Canon as Repository applies the rendering problem (Zharnikov 2026l) to a
+      fourth domain (creative IP); the three structural properties
+      (specification gap, configuration layer, emergence) and the
+      specification → rendering → perception structure are inherited wholesale.
+  - paper_key: 2026a
+    relationship: applies
+    spine_nodes: [P7]
+    note: >-
+      Observer-specific rendering mirrors SBT's observer-relative perception
+      (Zharnikov 2026a): one source specification produces different perceived
+      outputs depending on per-observer parameterization.
+  - paper_key: 2026i
+    relationship: extends
+    spine_nodes: [P-RP]
+    note: >-
+      OST (Zharnikov 2026i) is the organizational instance of the rendering
+      problem (org schema → operations → customer experience); Canon as
+      Repository is the creative-IP sibling in the same five-domain table.
+  - paper_key: 2026t
+    relationship: extends
+    spine_nodes: [P-DIAG, P-RP]
+    note: >-
+      Paper-as-specification (Zharnikov 2026t) applies the same
+      missing-versioned-specification diagnosis to scientific publishing — the
+      adjacent fifth domain in the rendering-problem table.
+  - paper_key: 2026u
+    relationship: extends
+    spine_nodes: [P1, P2, P3, P-MERGE]
+    note: >-
+      Research-as-Repository (Zharnikov 2026u) is the Git-native protocol for
+      scientific knowledge; Canon as Repository is the creative-IP analog of
+      the same repository reconception (commits/forks/PRs/CI applied to canon).
+
+# ============================================================================
+# External anchor literature
+#   Theory anchors named in the paper. Some keys are descriptive placeholders
+#   pending substrate verification; where a key is uncertain the anchor is
+#   carried by its text and the citation_key best-effort (never invented to
+#   look authoritative).
+# ============================================================================
+external_anchors:
+  - {citation_key: jenkins-2006-convergence-culture, role: foundational_theory, spine_nodes: [P-DIAG, P-RP], note: "Transmedia storytelling — integral elements of a fiction dispersed across delivery channels (presupposes a specification layer)."}
+  - {citation_key: jenkins-2011-transmedia-202, role: scope_qualifier, spine_nodes: [C2], note: "Transmedia storytelling vs. branding; not all transmedia requires a unified canon — bounds the architecture to consistency-as-design-goal franchises."}
+  - {citation_key: ryan-2001-narrative-virtual-reality, role: foundational_theory, spine_nodes: [P5, P-BOUND], note: "Medium affordances — dimensions preserved/foreclosed per medium."}
+  - {citation_key: ryan-2015-transmedia-storytelling, role: supporting_theory, spine_nodes: [P-BOUND], note: "Transmedia storytelling vs. transmedial narratology = the specification-rendering distinction."}
+  - {citation_key: dena-2009-transmedia-practice, role: supporting_theory, spine_nodes: [P-BOUND], note: "Production teams maintain shared understandings of what the world IS — implicit specification work the architecture formalizes."}
+  - {citation_key: scolari-2013-narrativas-transmedia, role: supporting_theory, spine_nodes: [P3], note: "Transmedia as collaborative ecosystem co-constructing meaning — formalized by the PR governance model."}
+  - {citation_key: wolf-2012-building-imaginary-worlds, role: foundational_theory, spine_nodes: [P-BOUND], note: "World-building (inventions, completeness, consistency) as implicit specification activity."}
+  - {citation_key: propp-1968-morphology-folktale, role: historical_precedent, spine_nodes: [P-BOUND], note: "31 narrative functions = a proto-specification (WHAT happens independent of HOW expressed)."}
+  - {citation_key: gervas-2013-propp-grammar-generation, role: supporting_theory, spine_nodes: [P-STYLE], note: "Propp's morphology as a generative grammar (specification → story instances)."}
+  - {citation_key: pianzola-2025-golem-ontology, role: adjacent_formalization, spine_nodes: [P4], note: "GOLEM ontology tracks narrative provenance across versions/adaptations — the consistency problem addressed ontologically."}
+  - {citation_key: sterman-2022-towards-creative-version-control, role: empirical_support, spine_nodes: [P1, P-DIAG], note: "Creative professionals recapitulate Git semantics without Git — same structural need, no appropriate tool."}
+  - {citation_key: hayes-2011-transmedia-production-bible, role: prior_practice, spine_nodes: [P-DIAG], note: "Story-bible best-practice template — the industry's existing (unversioned/unvalidated/medium-coupled) answer."}
+  - {citation_key: hills-2002-fan-cultures, role: positioning, spine_nodes: [P-LICENSE], note: "Fan engagement structured by evaluative hierarchies (canon-fidelity policing)."}
+  - {citation_key: hellekson-busse-2006-fan-fiction, role: positioning, spine_nodes: [P-LICENSE], note: "Fan-fiction community governance norms (sacrosanct vs. revisable properties)."}
+  - {citation_key: proctor-2017-reboots-retroactive-continuity, role: taxonomy, spine_nodes: [P-MERGE], note: "Reboot/retcon/relaunch/revival/refresh = merge-conflict resolution strategies."}
+  - {citation_key: murray-1997-hamlet-holodeck, role: foundational_theory, spine_nodes: [P6], note: "Audiences as active participants in rendering authored narrative — anticipates audience-as-renderer."}
+  - {citation_key: johnson-2013-media-franchising, role: supporting_theory, spine_nodes: [P-LICENSE], note: "Franchise management as a negotiated system — the substrate fork governance tracks."}
+  - {citation_key: steinberg-2012-anime-media-mix, role: counterexample, spine_nodes: [C2], note: "Japanese media mix = a thinner specification with deliberately loose consistency — bounds the architecture's scope."}
+  - {citation_key: beck-2002-test-driven-development, role: source_formalization, spine_nodes: [P4], note: "Software CI/TDD — the mature consistency-verification construct creative IP lacks."}
+  - {citation_key: thaler-v-perlmutter-2023, role: legal_anchor, spine_nodes: [P-AI], note: "AI cannot be a copyright author — copyright requires human authorship."}
+  - {citation_key: us-copyright-office-2025-ai-part-2, role: legal_anchor, spine_nodes: [P-AI], note: "Expressive-input threshold — copyright attaches to human creative control over output."}
+
+# ============================================================================
+# Open questions / future work (paper §8.5)
+# ============================================================================
+open:
+  - "Empirical validation: apply the canon repository to a real franchise, build validators, and measure whether consistency improves vs. traditional editorial oversight."
+  - "Prototype tooling: a proof-of-concept combining version control with narrative-specific validators and audience simulation."
+  - "Specification extraction: semi-automated NLP methods to extract canonical specifications from existing renderings, making the architecture applicable to existing franchises."
+  - "Formal metrics for the specification gap: information-theoretic measures of how much information a rendering contains beyond what the specification determines (quantitative cross-media/cross-franchise comparison)."
+
+# ============================================================================
+# Spine changelog — append-only
+# ============================================================================

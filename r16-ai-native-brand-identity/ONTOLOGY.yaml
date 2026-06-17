@@ -1,0 +1,38 @@
+# ONTOLOGY.yaml module - 2026x
+#
+# Per-paper ontology module per [internal path removed]
+# §"ONTOLOGY.yaml schema (v0.1)". owns = terms THIS paper introduces (unique
+# authority); imports = terms owned by other modules it uses (reference only).
+# Linked into the substrate `terms` graph by build_ontology.py; rendered per-paper
+# by render_paper_glossary.py. Bootstrapped 2026-06-13 from per-paper term
+# extraction; definitions paraphrase each paper's own definitional text.
+
+paper_key: 2026x
+schema_version: 0.1
+
+owns:
+  - term_key: brand-function
+    label: "Brand Function"
+    canonical_form: "Brand Function"
+    definition: "A root specification concept defined as f(query, context, observer_type, time) -> response, constituting the complete machine-readable behavioral specification a brand provides for machine observers, integrating spectral perception dimensions, observer-contingent decision rules, and computable coherence metrics."
+    first_section: "The Brand Function"
+  - term_key: observer-driven-evolution-thesis
+    label: "Observer-driven evolution thesis"
+    canonical_form: "observer-driven evolution thesis"
+    definition: "A synthesizing framework holding that brand-identity verification technologies change discontinuously, not incrementally, in response to a change in the primary observer type (wax seals, hallmarks, trademarks, SSL certificates, and now AI agents)."
+    first_section: "Abstract / Historical Pattern"
+  - term_key: behavioral-metamerism
+    label: "Behavioral metamerism"
+    canonical_form: "behavioral metamerism"
+    definition: "The AI-native failure mode in which brands converge on statistically indistinguishable profiles while differing in structurally relevant behavioral contingencies, an observational equivalence that statistical optimization cannot resolve."
+    first_section: "Abstract / Behavioral Metamerism"
+
+imports:
+  - {term_key: spectral-brand-theory}
+  - {term_key: brand-conviction}
+  - {term_key: observer-spectral-profile}
+  - {term_key: spectral-dimensions}
+  - {term_key: metameric-observer}
+
+refines: []
+

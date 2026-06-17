@@ -1,0 +1,38 @@
+# ONTOLOGY.yaml module - 2026y
+#
+# Per-paper ontology module per [internal path removed]
+# §"ONTOLOGY.yaml schema (v0.1)". owns = terms THIS paper introduces (unique
+# authority); imports = terms owned by other modules it uses (reference only).
+# Linked into the substrate `terms` graph by build_ontology.py; rendered per-paper
+# by render_paper_glossary.py. Bootstrapped 2026-06-13 from per-paper term
+# extraction; definitions paraphrase each paper's own definitional text.
+
+paper_key: 2026y
+schema_version: 0.1
+
+owns:
+  - term_key: brand-triangulation
+    label: "Brand Triangulation"
+    canonical_form: "brand triangulation"
+    definition: "A geometric framework that maps observer cohorts to GPS satellites, brand emission profiles to receiver location, and cohort biases to clock error, reframing inter-cohort perceptual disagreement as the geometric information from which a brand's eight-dimensional position is triangulated via weighted least squares."
+    first_section: "1. Introduction"
+  - term_key: perception-dop
+    label: "Perception DOP"
+    canonical_form: "Perception DOP (PDOP)"
+    definition: "A scalar metric computed solely from proposed cohort weight profiles (before any data collection) that quantifies the expected precision with which a given observer-cohort configuration can resolve a brand's eight-dimensional spectral profile."
+    first_section: "1.4 Contributions"
+  - term_key: differential-brand-measurement
+    label: "Differential brand measurement"
+    canonical_form: "differential brand measurement"
+    definition: "A calibration protocol, analogous to Differential GPS, that uses reference brands with known spectral profiles to correct systematic observer bias and separate brand-position change from observer drift in longitudinal studies."
+    first_section: "Section 4"
+
+imports:
+  - {term_key: spectral-brand-theory}
+  - {term_key: observer-spectral-profile}
+  - {term_key: brand-conviction}
+  - {term_key: cohort}
+  - {term_key: spectral-dimensions}
+
+refines: []
+

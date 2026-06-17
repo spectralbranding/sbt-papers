@@ -1,0 +1,605 @@
+# SPINE.yaml — Brand Space Geometry: A Formal Metric (2026d / R1)
+#
+# RETROFIT spine. Extracted descriptively from the completed paper.md
+# ([internal path removed], Working Paper v2.3.0) per publication-pipeline
+# decision D4 ([internal path removed]),
+# following [internal path removed] This is
+# NOT a spine-first generative artifact: it captures the paper's actual claims,
+# theorems, and computed examples after the fact.
+#
+# Schema v0.2 ([internal path removed] §"Schema v0.2"):
+# the paper reports author-computed numerical results (the n=8 concentration
+# baseline ~.44, the 1/256 octant volume fraction, the case-study Aitchison
+# distance matrix, and the observer-dependent distance reversals), so the
+# observation -> method -> measurement -> finding chain is used for the headline
+# computed results, while the metric-space constructions remain analytic
+# propositions (P-nodes) carrying proved theorems.
+
+spine_version: "0.2"
+spine_doc_version: "0.1.0"     # retrofit lock 2026-06-14
+paper_key: "2026d"
+provenance: retrofit
+title: >-
+  Brand Space Geometry: A Formal Metric for Multi-Dimensional Brand Perception
+target_venue_primary: "TBD (mathematical-foundations track of the SBT program)"
+status: >-
+  Retrofit spine extracted from completed paper.md (Working Paper v2.3.0,
+  March 2026). Paper already published (Zenodo 10.5281/zenodo.18945295);
+  spine is descriptive, authored for substrate bundle alignment (D4).
+
+thesis: |
+  Brand theory has lacked a rigorous distance function capable of quantifying
+  perceptual closeness while respecting the compositional, relative, and
+  observer-dependent nature of consumer attention. This paper constructs the
+  first observer-warped metric space for multi-dimensional brand perception,
+  grounding it in Cencov's uniqueness theorem and compositional data analysis.
+  Three metric spaces are defined: the brand signal space (the positive orthant
+  R^8_+ with the Aitchison metric, justified by Weber-Fechner scaling and
+  subcompositional coherence), the observer weight space (the probability
+  simplex Delta^7 with the Fisher-Rao metric, uniquely invariant under Markov
+  morphisms by Cencov), and a warped product combining them so that brand
+  distance becomes observer-dependent, generalizing the empirically validated
+  INDSCAL model. Metric axioms are proved and geodesics derived for each.
+  Concentration-of-measure analysis at eight dimensions supplies a null
+  baseline of approximately .44 for observer pairwise distance; the
+  positive-octant restriction compresses brand space to 1/256 of the full
+  7-sphere; and Jacobi-field analysis yields a spectral sensitivity index that
+  links static geometry to dynamic trajectory vulnerability, with singularities
+  at structural-absence boundaries. The central result is that brand distance
+  is not an objective property of brands but a function of the observer's
+  attentional structure: different observer cohorts inhabit metrically distinct
+  brand landscapes. This supplies the mathematical foundation for
+  differentiation measurement, cohort definition, and positioning optimization,
+  resolving Problem 1 of the accompanying geometric survey (2026c).
+
+# ============================================================================
+# Boundary conditions — when the construction's claims hold
+# ============================================================================
+boundary_conditions:
+  - id: C1
+    statement: >-
+      Brand emission profiles lie in the OPEN positive orthant R^8_+ (all eight
+      dimension scores strictly positive); true-zero emission (structural
+      absence) is outside the Aitchison domain and must be handled by
+      zero-replacement at a small epsilon.
+    observable: "All eight emission scores > 0 for the profiles being compared."
+    excludes: "Profiles with an exact zero on some dimension (boundary of the orthant)."
+    body_sections: ["§2.2", "§3.3", "§5.5 (Strict positivity and structural absence)"]
+  - id: C2
+    statement: >-
+      Observer weight profiles lie in the OPEN interior of the 7-simplex
+      Delta^7_circ (all eight salience weights strictly positive); Cencov
+      uniqueness and the warped-product non-degeneracy require w_k > 0.
+    observable: "All eight observer weights > 0 and summing to 1."
+    excludes: "Dimension-blind observers with some w_k = 0 (boundary of the simplex)."
+    body_sections: ["§4.4", "§5.5 (Cencov uniqueness on the open simplex)"]
+  - id: C3
+    statement: >-
+      The eight SBT dimensions are treated as perceptually INDEPENDENT
+      compositional components; if they covary, the ilr basis no longer aligns
+      with the perceptual signal structure and distances mix true differences
+      with dimensional covariance.
+    observable: "No empirical correlation structure imposed on the eight dimensions."
+    excludes: "Empirically correlated dimensions (handled by a Mahalanobis-Aitchison extension, §10.2)."
+    body_sections: ["§3.5 (Remark)", "§5.5 (Dimensional independence)", "§10.2"]
+  - id: C4
+    statement: >-
+      Brand position s and observer weights w are statistically INDEPENDENT
+      (the warped product is a clean product structure); the assumption fails if
+      brand signals actively shift observer salience (feedback coupling).
+    observable: "Cohort weights determined by observer-intrinsic factors, not by the brand profile."
+    excludes: "Brand-induced salience shifts (dynamic feedback, deferred to R6/R9)."
+    body_sections: ["§5.5 (Independence of cohort weights and brand position)"]
+
+# ============================================================================
+# Propositions — the metric-space constructions and proved theorems
+# ============================================================================
+propositions:
+  - id: P1
+    statement: >-
+      Brand emission profiles are compositional data: their raw intensities are
+      meaningful only relative to one another, so the perceptual metric must be
+      scale-invariant, satisfy Weber-Fechner logarithmic scaling, and be
+      subcompositionally coherent — three properties that jointly rule out naive
+      Euclidean distance.
+    conditions: "C1"
+    antecedents: []
+    evidence:
+      - type: analytic
+        anchor: "Three failures of d_E for compositional data (scale dependence, Weber-Fechner violation, subcompositional incoherence)."
+        citation_keys: [aitchison-1986-statistical-analysis-compositional, fechner-1860-elemente-der-psychophysik, stevens-1961-honor-fechner-repeal]
+    body_sections: ["§2.3", "§3.1"]
+  - id: P2
+    statement: >-
+      (Definition 1 + Theorem 1) The brand signal space (B, d_B) with
+      B = R^8_+ and d_B the Aitchison distance (Euclidean norm of ilr-transformed
+      profiles) is a metric space satisfying axioms M1-M4; the proof is the
+      pullback of the Euclidean metric through the bijective ilr transform.
+    conditions: "C1, C3"
+    antecedents: [P1]
+    evidence:
+      - type: theorem
+        anchor: "Theorem 1: metric axioms M1-M4 for d_B via ilr-pullback."
+        citation_keys: [aitchison-1982-statistical-analysis-compositional, aitchison-1986-statistical-analysis-compositional, egozcue-2003-isometric-logratio-transformations]
+    body_sections: ["§3.2", "§3.3"]
+  - id: P3
+    statement: >-
+      Geodesics in brand space are power interpolations: because ilr is an
+      isometry to Euclidean R^7, the geodesic between two brands is a straight
+      line in ilr coordinates that preserves the ratio structure of the profile
+      at every point. The Aitchison geometry is flat (zero curvature),
+      scale-invariant, perturbation-invariant, and subcompositionally coherent.
+    conditions: "C1, C3"
+    antecedents: [P2]
+    evidence:
+      - type: analytic
+        anchor: "Power-interpolation geodesic formula; properties 1-4 (scale/perturbation invariance, subcompositional coherence, flatness)."
+        citation_keys: [aitchison-1992-criteria-measures-compositional]
+    body_sections: ["§3.4", "§3.5"]
+  - id: P4
+    statement: >-
+      (Theorem, Cencov) The Fisher-Rao metric is the UNIQUE Riemannian metric on
+      the probability simplex (up to constant scaling) invariant under Markov
+      morphisms / sufficient-statistic embeddings; for the observer simplex this
+      is the decisive selection criterion (Criterion 2, invariance under
+      dimension-collapsing), which no Euclidean, Hellinger, Jensen-Shannon, or
+      Aitchison alternative possesses.
+    conditions: "C2"
+    antecedents: []
+    evidence:
+      - type: theorem
+        anchor: "Cencov uniqueness theorem; candidate-metric comparison (Tables 2 and 3)."
+        citation_keys: [cencov-1982-statistical-decision-rules, rao-1945-information-accuracy-attainable, amari-2000-methods-information-geometry, amari-2016-information-geometry-its]
+    body_sections: ["§4.2", "§4.3"]
+  - id: P5
+    statement: >-
+      (Definition 2 + Theorem 2) The observer weight space (O, d_O) with
+      O = Delta^7_circ and d_O the Fisher-Rao distance
+      2 arccos(sum_i sqrt(w_Ai w_Bi)) is a metric space satisfying M1-M4, proved
+      via the square-root embedding w -> 2 sqrt(w) onto S^7_+ where Fisher-Rao
+      distance is geodesic (great-circle) distance; the distance is bounded in
+      [0, pi).
+    conditions: "C2"
+    antecedents: [P4]
+    evidence:
+      - type: theorem
+        anchor: "Theorem 2: M1-M4 via square-root embedding and spherical geodesic distance."
+        citation_keys: [atkinson-1981-raos-distance-measure]
+    body_sections: ["§4.4"]
+  - id: P6
+    statement: >-
+      (Proposition 1, geodesic entropy bulge) The Fisher-Rao geodesic between
+      two observer profiles bulges toward the simplex center: its midpoint has
+      higher Shannon entropy than the linear average. Interpretation: the
+      intermediate observer between two specialists is MORE open-minded
+      (higher-entropy, more balanced) than a naive average suggests.
+    conditions: "C2"
+    antecedents: [P5]
+    evidence:
+      - type: theorem
+        anchor: "Proposition 1: H(geodesic midpoint) >= H(arithmetic midpoint), via Schur-concavity / majorization."
+    body_sections: ["§4.5", "§A.3"]
+  - id: P7
+    statement: >-
+      (Definition 3 + Theorem 3) The combined brand-observer space (P, D) is a
+      WARPED PRODUCT: D^2 = d_FR^2(w_A,w_B) + sum_k mean(w_k)
+      (clr_k(s_A) - clr_k(s_B))^2, where the observer's weight profile distorts
+      brand-space geometry. It is a metric space (M1-M4 proved; M4 via Minkowski
+      on the (1+8)-vector plus the average-weight bound), generalizing INDSCAL
+      and reducing to a clean product only if the coupling term were dropped.
+    conditions: "C1, C2, C3, C4"
+    antecedents: [P2, P5]
+    evidence:
+      - type: theorem
+        anchor: "Theorem 3 + Appendix A.1: warped-product metric axioms; average-weight symmetrization."
+        citation_keys: [bishop-1969-manifolds-negative-curvature, oneill-1983-semiriemannian-geometry-with]
+    body_sections: ["§5.1", "§5.2", "§A.1"]
+  - id: P8
+    statement: >-
+      (Proposition 2) The combined metric generalizes INDSCAL: when one observer
+      perceives both brands (w_A = w_B = w), D reduces to the weighted clr
+      distance sum_k w_k (clr_k(s_A) - clr_k(s_B))^2 — the INDSCAL model applied
+      to log-ratio-transformed brand coordinates — connecting fifty years of
+      psychometric validation to the differential-geometric foundation.
+    conditions: "C3"
+    antecedents: [P7]
+    evidence:
+      - type: theorem
+        anchor: "Proposition 2: INDSCAL as a fixed-observer special case."
+        citation_keys: [carroll-1970-analysis-individual-differences, carroll-1980-multidimensional-scaling-annual]
+    body_sections: ["§5.3"]
+  - id: P9
+    statement: >-
+      (Proposition 3, observer-dependent pseudo-metric and kernel) For a fixed
+      interior observer w, the observer-dependent brand distance d_w is a metric;
+      extended to the boundary (some w_k = 0) it degenerates to a pseudo-metric
+      whose kernel consists of all brand pairs differing only on dimensions the
+      observer assigns zero weight. The kernel formalizes PERCEPTUAL
+      INDISTINGUISHABILITY: brands a given cohort cannot tell apart.
+    conditions: "C1"
+    antecedents: [P7]
+    evidence:
+      - type: theorem
+        anchor: "Proposition 3: d_w metric on interior, pseudo-metric on boundary; kernel characterization."
+    body_sections: ["§5.4"]
+  - id: P10
+    statement: >-
+      (Theorem 6, compression) The positive-octant restriction compresses the
+      available brand space to 1/256 of the full 7-sphere (Proposition 4), the
+      maximum geodesic distance on S^7_+ is pi/2 (vs pi on the full sphere), and
+      random brand profiles on S^7_+ have positive expected inner product —
+      hence are MORE similar to each other than random points on the full sphere.
+      Brand differentiation is geometrically harder than naive 8-dimensional
+      counting suggests.
+    conditions: "C1"
+    antecedents: [P2]
+    evidence:
+      - type: theorem
+        anchor: "Proposition 4 (1/256 volume fraction) + Theorem 6 (compression, positive inner-product bias)."
+    body_sections: ["§7.1", "§7.2", "§A.2"]
+  - id: P11
+    statement: >-
+      (Definition 5 + Corollary 1, spectral sensitivity index) Jacobi-field
+      analysis on the perception manifold yields the spectral sensitivity index
+      SSI(s,w) = (1/8) sum_k w_k kappa_k(s), an observer-weighted curvature
+      measure of trajectory vulnerability. On S^7_+ (constant curvature 1)
+      nearby geodesics OSCILLATE rather than diverge; but in the Aitchison
+      geometry the curvature DIVERGES as a dimension approaches structural
+      absence (s_k -> 0+), so structural absence is strategically powerful yet
+      geometrically fragile — small perturbations to a near-zero dimension have
+      outsized trajectory effects.
+    conditions: "C1, C2"
+    antecedents: [P2, P7]
+    evidence:
+      - type: theorem
+        anchor: "Jacobi field equation on S^7_+ (oscillatory); Proposition 6 (observer-dependent curvature); Definition 5 + Corollary 1 (SSI, structural-absence singularity)."
+        citation_keys: [oneill-1983-semiriemannian-geometry-with]
+    body_sections: ["§8.1", "§8.2", "§8.3"]
+
+# ============================================================================
+# Observations — the calibrated case-study profiles the computed results rest on
+# ============================================================================
+observations:
+  - id: O1
+    statement: >-
+      Five canonical brand emission profiles (Hermes, IKEA, Patagonia, Erewhon,
+      Tesla) on a [1,10] scale, constructed to be consistent with the
+      qualitative SBT coherence assessments of 2026a (Table 5). These are
+      ILLUSTRATIVE inputs chosen to reflect the case-study descriptions, NOT
+      empirical measurements.
+    raw_data_pointer: "paper §9.1 Table 5; CLAUDE.md canonical brand profiles"
+    instrument: "qualitative SBT coherence assessment (2026a), transcribed to numeric profiles"
+    timestamp: "2026-03"
+    body_sections: ["§9.1"]
+  - id: O2
+    statement: >-
+      Two canonical observer weight profiles on Delta^7: an aesthete (alpha,
+      weighting semiotic/experiential/cultural) and a pragmatist (beta, weighting
+      economic/temporal), used to demonstrate observer-dependent distance.
+    raw_data_pointer: "paper §9.3 (w_alpha, w_beta)"
+    instrument: "constructed canonical cohort profiles"
+    timestamp: "2026-03"
+    body_sections: ["§9.3"]
+
+# ============================================================================
+# Methods — the computations applied to the profiles
+# ============================================================================
+methods:
+  - id: M1
+    statement: >-
+      Compute the pairwise Aitchison distance matrix for the five brands:
+      centered-log-ratio transform each profile (geometric mean, then
+      log(s_k / g(s))), then take the Euclidean norm of clr differences.
+    type: "closed_form_metric_computation"
+    inputs: ["O1 (five brand profiles)"]
+    outputs: ["5x5 pairwise Aitchison distance matrix (Table 6)"]
+    code_anchor: "sbt-papers/r1-formal-metric/code/ (Python reference implementation; NumPy)"
+    reproducibility:
+      seed: "deterministic (no RNG)"
+      runtime_environment: "Python 3.12 + NumPy"
+    body_sections: ["§9.2", "§A.4"]
+  - id: M2
+    statement: >-
+      Compute observer-dependent brand distances
+      d_w(s_A,s_B) = sqrt(sum_k w_k (clr_k(s_A) - clr_k(s_B))^2) for the aesthete
+      and pragmatist observers on selected brand pairs (Hermes-IKEA,
+      Hermes-Patagonia).
+    type: "closed_form_metric_computation"
+    inputs: ["O1 (brand profiles)", "O2 (observer profiles)"]
+    outputs: ["observer-dependent distances per brand pair (§9.3)"]
+    code_anchor: "sbt-papers/r1-formal-metric/code/"
+    reproducibility:
+      seed: "deterministic (no RNG)"
+      runtime_environment: "Python 3.12 + NumPy"
+    body_sections: ["§9.3"]
+  - id: M3
+    statement: >-
+      Derive the n=8 distance-concentration baseline analytically: for points
+      uniform on Delta^7 (symmetric Dirichlet), use the Dirichlet moments to
+      compute E[||w_A - w_B||^2] = 2(n-1)/(n(n+1)) and the volume fraction of
+      the positive octant from sphere-orthant symmetry.
+    type: "analytic_derivation"
+    inputs: ["Dirichlet(1,...,1) moments (Johnson & Kotz 1972)"]
+    outputs: ["E[dist^2] = 7/36; E[dist] ~ .44; octant fraction 1/256"]
+    body_sections: ["§6.1", "§6.2", "§7.1"]
+
+# ============================================================================
+# Measurements — the computed numerical values
+# ============================================================================
+measurements:
+  - id: m_aitchison_matrix
+    statement: >-
+      Pairwise Aitchison distances (Table 6): Hermes-Tesla = 1.76 (maximum, the
+      A+ vs C- separation); Hermes-Patagonia = .88 (closest high-grade pair);
+      IKEA mid-positioned; full 5x5 matrix.
+    source_observations: [O1]
+    generating_method: M1
+    value: "Hermes-Tesla 1.76; Hermes-Patagonia .88; Hermes-IKEA 1.34; full 5x5 matrix in Table 6"
+    units: "Aitchison distance (dimensionless log-ratio)"
+    body_sections: ["§9.2"]
+  - id: m_observer_reversal
+    statement: >-
+      Observer-dependent distances: the pragmatist perceives Hermes-IKEA as
+      ~2.3x farther apart than the aesthete (.74 vs .32), while for
+      Hermes-Patagonia the spread is narrow (.40 vs .28) — a demonstrated
+      observer-dependent distance contrast invisible to observer-blind methods.
+    source_observations: [O1, O2]
+    generating_method: M2
+    value: "Hermes-IKEA: d_beta=.74, d_alpha=.32 (ratio ~2.3); Hermes-Patagonia: d_beta=.40, d_alpha=.28"
+    units: "observer-dependent (weighted clr) distance"
+    body_sections: ["§9.3"]
+  - id: m_concentration_baseline
+    statement: >-
+      Expected squared Euclidean distance between two uniform observer profiles
+      on Delta^7 is 2(n-1)/(n(n+1)) = 7/36 ~ .194; expected distance
+      ~ sqrt(7/36) ~ .44 — the null-model baseline for meaningful brand
+      differentiation.
+    source_observations: []
+    generating_method: M3
+    value: "E[dist^2] = 7/36 ~ .194; E[dist] ~ .441"
+    units: "Euclidean distance on the simplex"
+    body_sections: ["§6.1 (Theorem 4)"]
+  - id: m_octant_fraction
+    statement: >-
+      The positive octant S^7_+ occupies 1/2^8 = 1/256 of the full 7-sphere;
+      Vol(S^7) = pi^4/3 ~ 32.47, Vol(S^7_+) = pi^4/768 ~ .127.
+    source_observations: []
+    generating_method: M3
+    value: "1/256; Vol(S^7_+) ~ .127"
+    units: "volume fraction / surface area"
+    body_sections: ["§7.1 (Proposition 4)", "§A.2"]
+
+# ============================================================================
+# Findings — what the computed results demonstrate
+# ============================================================================
+findings:
+  - id: F1
+    statement: >-
+      Brand distance is NOT an objective property of brands but a function of
+      the observer's attentional structure: the same brand pair can be perceived
+      as close by one cohort and far by another (the Hermes-IKEA reversal). This
+      is the paper's central result — different observer cohorts inhabit
+      metrically distinct brand landscapes — turning SBT's qualitative claim into
+      a theorem.
+    type: "demonstration"
+    source_measurements: [m_observer_reversal]
+    generating_method: M2
+    antecedents: [P7, P9]
+    falsifier: "If every observer cohort assigned the same rank-order of brand distances, observer-dependence would be vacuous."
+    citation_role_in_paper: "headline_result"
+    body_sections: ["§9.3", "§11"]
+  - id: F2
+    statement: >-
+      The n=8 concentration baseline (~.44) and the 1/256 octant compression
+      jointly establish that meaningful brand differentiation is geometrically
+      constrained: random observer variation alone produces a non-trivial
+      expected distance, and the non-negativity constraint shrinks the available
+      brand space, so differentiation requires deliberate positioning, not random
+      dimensional variation.
+    type: "quantitative_baseline"
+    source_measurements: [m_concentration_baseline, m_octant_fraction]
+    generating_method: M3
+    antecedents: [P10]
+    falsifier: "If the octant did not compress distances (E[inner product]=0 on S^7_+), the differentiation-difficulty claim would fail."
+    citation_role_in_paper: "supporting_quantitative_result"
+    body_sections: ["§6.2", "§7.2"]
+
+# ============================================================================
+# Alternative explanations — rival metric choices the paper rules out
+# ============================================================================
+alternative_explanations:
+  - id: A1
+    statement: >-
+      A naive Euclidean (or L1) distance on raw brand scores would suffice; the
+      compositional machinery is unnecessary.
+    rules_out_required: [P2]
+    ruled_out_by: [P1]
+    rules_out_status: "rejected"
+    reasoning: >-
+      Euclidean distance is scale-dependent, violates Weber-Fechner logarithmic
+      scaling, and is subcompositionally incoherent (Tables 2-3); it cannot
+      represent the relative, multiplicative structure of brand perception.
+    body_sections: ["§3.1", "Table 2"]
+  - id: A2
+    statement: >-
+      An alternative simplex metric (Hellinger, Jensen-Shannon, Aitchison, or
+      Wasserstein) could serve the observer space equally well.
+    rules_out_required: [P4, P5]
+    ruled_out_by: [P4]
+    rules_out_status: "rejected"
+    reasoning: >-
+      Hellinger is the chord analog lacking Cencov invariance; Jensen-Shannon
+      lacks the unique-invariance property; Aitchison is singular at the simplex
+      boundary (psychologically meaningful dimension-blind observers); Wasserstein
+      applies only if observer profiles encoded ordered mass-transport costs,
+      which is not the SBT interpretation. Only Fisher-Rao satisfies Cencov
+      invariance (Table 3).
+    body_sections: ["§4.3", "Table 3"]
+  - id: A3
+    statement: >-
+      A Hilbert-space (quantum-cognition) framework, rather than a Riemannian
+      one, is the right model for observer-dependent perception.
+    rules_out_required: [P7]
+    ruled_out_by: [P1]
+    rules_out_status: "rejected"
+    reasoning: >-
+      Hilbert-space models target non-commutativity (order effects), a different
+      problem from compositional structure; the Riemannian framework matches the
+      ratio-based structure of brand profiles without assuming non-commutativity.
+    body_sections: ["§2.3"]
+
+# ============================================================================
+# Robustness checks
+# ============================================================================
+robustness_checks:
+  - id: RC1
+    statement: >-
+      The triangle inequality for the combined warped-product metric holds even
+      though the average-weight warping factors differ across the three pairs:
+      the full derivation (Appendix A.1) uses the bound
+      mean(w)_AC <= mean(w)_AB + mean(w)_BC together with the clr triangle
+      inequality and Minkowski on the (1+8)-vector. The midpoint-average warping
+      is a second-order approximation to the Bishop-O'Neill geodesic integral
+      (error O(||w_A - w_B||^2)) that is itself a valid metric.
+    type: "proof_robustness"
+    sensitivity_of: [P7]
+    falsifier: "If the average-weight metric violated M4 for some triple, the warped-product construction would fail."
+    body_sections: ["§A.1", "§5.5 (Midpoint warping as second-order approximation)"]
+
+# ============================================================================
+# Limitations — honest scope (paper §10.2 + §5.5)
+# ============================================================================
+limitations:
+  - id: L1
+    statement: >-
+      The Aitchison metric and warped product assume dimensional independence;
+      empirically correlated dimensions would require a Mahalanobis-Aitchison
+      variant with an estimated correlation matrix (§10.2).
+    severity: "scope-bounding"
+    affects: [P2, P7]
+    body_sections: ["§3.5", "§5.5", "§10.2"]
+  - id: L2
+    statement: >-
+      The five case-study numerical profiles are ILLUSTRATIVE (constructed from
+      qualitative assessments), not empirical measurements; the distance results
+      demonstrate the framework's behavior, not empirical facts about the brands.
+    severity: "evidential"
+    affects: [F1, F2]
+    body_sections: ["§9.1", "§10.2 (Illustrative case-study data)"]
+  - id: L3
+    statement: >-
+      The core metric treats brand profiles and observer weights as STATIC
+      points; the dynamic extension (perception evolution as an SDE on S^7_+,
+      with feedback coupling between w and s) is deferred to R6 (2026j) / R9
+      (2026o). Jacobi-field analysis (§8) is only the deterministic bridge.
+    severity: "scope-bounding"
+    affects: [P11]
+    body_sections: ["§8.4", "§10.2 (Static profiles)"]
+  - id: L4
+    statement: >-
+      Boundary incompleteness: the brand space is the OPEN orthant and the
+      observer space the OPEN simplex; true-zero structural absence and
+      dimension-blind observers lie outside the strict domain and require
+      zero-replacement / limiting arguments. The Riemannian framework is itself a
+      first-order approximation (brand perception may be non-Riemannian, an open
+      empirical question by analogy to color space).
+    severity: "scope-bounding"
+    affects: [P2, P5, P11]
+    body_sections: ["§5.5 (Strict positivity; Riemannian admissibility; Cencov on open simplex)", "§10.2"]
+  - id: L5
+    statement: >-
+      All five case-study brands are Western B2C brands; cross-cultural and B2B
+      applications (where experiential/temporal may dominate and semiotic may be
+      minimal) are untested.
+    severity: "external-validity"
+    affects: [F1]
+    body_sections: ["§10.2 (Cultural and sector scope)"]
+  - id: L6
+    statement: >-
+      Ordinal-data caveat: brand surveys typically yield ordinal (Likert)
+      responses; applying the Aitchison metric to raw ordinal scores assumes
+      interval scale. A monotone/latent-variable transformation (Liddell-Kruschke)
+      should precede metric application.
+    severity: "measurement"
+    affects: [P2]
+    body_sections: ["§5.5 (Continuous parameterization and ordinal data)"]
+
+# ============================================================================
+# Cross-paper engagement — the SBT mathematical-foundations program
+# ============================================================================
+corpus_precedents:
+  - paper_key: 2026a
+    relationship: refines
+    spine_nodes: [P1, P2, P5, P7]
+    note: >-
+      Formalizes SBT's informal architecture: emission profiles get the Aitchison
+      metric, observer weights get Fisher-Rao, and the qualitatively described
+      observer-dependence becomes the warped product. Refines 2026a's P2/P8.
+  - paper_key: 2026c
+    relationship: extends
+    spine_nodes: [P2, P5, P7]
+    note: "Provides the formal metric space that resolves Problem 1 of the geometric survey (2026c)."
+  - paper_key: 2026b
+    relationship: applies
+    spine_nodes: [P1]
+    note: "Applies the Atom-Cloud-Fact psychophysical-measurement framing (relativity/observer-dependence/compositionality)."
+  - paper_key: 2026e
+    relationship: extends
+    spine_nodes: [P2]
+    note: "R2 uses the Aitchison distance for the Johnson-Lindenstrauss projection proving metamerism is geometrically inevitable."
+  - paper_key: 2026f
+    relationship: extends
+    spine_nodes: [P5, P10]
+    note: "R3 uses Fisher-Rao + the concentration bounds (Theorem 4) to bound cohort-boundary fuzziness."
+  - paper_key: 2026g
+    relationship: extends
+    spine_nodes: [P10]
+    note: "R4 derives sphere-packing bounds on distinguishable brand positions within the compressed octant (E8 / Viazovska)."
+  - paper_key: 2026j
+    relationship: extends
+    spine_nodes: [P11]
+    note: "R6 models perception evolution as an SDE on S^7_+; the Jacobi-field analysis (§8) is the deterministic bridge to its path-dependence."
+  - paper_key: 2026o
+    relationship: extends
+    spine_nodes: [P11]
+    note: "R9 extends trajectory sensitivity to empirical tracking data; SSI predicts strongest non-ergodic effects."
+  - paper_key: 2026k
+    relationship: applies
+    spine_nodes: [P5]
+    note: "R7 applies the Fisher-Rao observer metric to spectral resource allocation across cohorts."
+
+# ============================================================================
+# External anchor literature — the load-bearing prior art
+# ============================================================================
+external_anchors:
+  - {citation_key: aitchison-1986-statistical-analysis-compositional, role: foundational_method, spine_nodes: [P1, P2, P3], note: "Compositional data analysis / Aitchison geometry"}
+  - {citation_key: aitchison-1992-criteria-measures-compositional, role: foundational_method, spine_nodes: [P3], note: "Criteria for compositional difference measures (subcompositional coherence)"}
+  - {citation_key: egozcue-2003-isometric-logratio-transformations, role: foundational_method, spine_nodes: [P2], note: "ilr transform (bijective isometry to R^7)"}
+  - {citation_key: cencov-1982-statistical-decision-rules, role: decisive_theorem, spine_nodes: [P4, P5], note: "Cencov uniqueness theorem — Fisher-Rao is the unique Markov-invariant metric"}
+  - {citation_key: rao-1945-information-accuracy-attainable, role: foundational_method, spine_nodes: [P4], note: "Fisher information as Riemannian metric (origin of Fisher-Rao)"}
+  - {citation_key: amari-2000-methods-information-geometry, role: foundational_method, spine_nodes: [P4], note: "Information geometry development"}
+  - {citation_key: atkinson-1981-raos-distance-measure, role: derivation_basis, spine_nodes: [P5], note: "Closed-form Fisher-Rao distance via square-root embedding"}
+  - {citation_key: carroll-1970-analysis-individual-differences, role: empirical_precedent, spine_nodes: [P7, P8], note: "INDSCAL — the warped product generalizes it"}
+  - {citation_key: bishop-1969-manifolds-negative-curvature, role: foundational_method, spine_nodes: [P7], note: "Warped-product Riemannian construction"}
+  - {citation_key: oneill-1983-semiriemannian-geometry-with, role: foundational_method, spine_nodes: [P7, P11], note: "Warped-product geometry + O'Neill curvature formula for the SSI"}
+  - {citation_key: fechner-1860-elemente-der-psychophysik, role: justification, spine_nodes: [P1], note: "Weber-Fechner logarithmic perceptual scaling"}
+  - {citation_key: viazovska-2017-sphere-packing-problem, role: forward_anchor, spine_nodes: [P10], note: "Optimal 8-d sphere packing (used by R4 for positioning capacity)"}
+  - {citation_key: bujack-2022-nonriemannian-nature-perceptual, role: caveat, spine_nodes: [P5], note: "Non-Riemannian color space — the Riemannian-admissibility caveat"}
+  - {citation_key: liddell-2018-analyzing-ordinal-data, role: caveat, spine_nodes: [P2], note: "Ordinal-as-metric distortion — pre-processing caveat (L6)"}
+  - {citation_key: gardenfors-2000-conceptual-spaces-geometry, role: contrast, spine_nodes: [P1], note: "Conceptual spaces — closest geometric precedent, but no compositional/observer-warping/info-geometric grounding"}
+  - {citation_key: lancaster-1966-new-approach-consumer, role: contrast, spine_nodes: [P1], note: "Characteristics approach — products as attribute bundles, but no perceptual metric"}
+  - {citation_key: desarbo-2002-gravitybased-multidimensional-scaling, role: contrast, spine_nodes: [P4], note: "Nearest marketing-science precedent (gravity-based), lacks axiomatic Cencov justification"}
+
+# ============================================================================
+# Open questions / boundary edges
+# ============================================================================
+open:
+  - "Are the eight SBT dimensions empirically independent, or is a Mahalanobis-Aitchison correlation-aware variant required? (L1 / §10.2)"
+  - "Does brand perception exhibit non-Riemannian diameter violations (as color space does), or does cohort aggregation suppress them? (L4 / §4.3)"
+  - "How should true structural absence (exact-zero emission) be represented beyond epsilon zero-replacement? (C1 / §5.5)"
+  - "Can the warping be integrated exactly (full Bishop-O'Neill geodesic) rather than via the midpoint-average second-order approximation, and does it change distances materially? (RC1 / §A.1)"
+  - "Empirical: do log-ratio (clr) INDSCAL coordinates fit brand-perception data better than raw INDSCAL coordinates? (P8 / §5.3)"
+
+# ============================================================================
+# Spine changelog — append-only
+# ============================================================================
