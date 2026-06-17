@@ -8,6 +8,7 @@
 
 - Manuscript: [paper.md](paper.md)
 - DOI: (pending Zenodo deposit)
+- **New here?** [AGENTS.md](AGENTS.md) is a file-by-file guide for any reader (human or AI agent) on how to use the paper + every metadata file.
 - Machine-readable bundle: [paper.yaml](paper.yaml) (Paper Spec), [SPINE.yaml](SPINE.yaml), [ONTOLOGY.yaml](ONTOLOGY.yaml), [GLOSSARY.md](GLOSSARY.md)
 
 ## 2 | Citations
