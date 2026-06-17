@@ -573,7 +573,7 @@ Aaker's [-@aaker-1991-managing-brand-equity; -@aaker-1996-building-strong-brands
 
 **Figure 5.** Eight SBT Dimensions Mapped to Predecessor Brand Frameworks.
 
-| Dimension | Aaker (1991/1996) | Kapferer Prism | J. Aaker (1997) | Brakus et al. (2009) | Keller CBBE |
+| Dimension | Aaker | Kapferer Prism | J. Aaker | Brakus et al. | Keller CBBE |
 |:--|:--|:--|:--|:--|:--|
 | Semiotic | Symbol | Physique | — | Sensory | Brand Salience |
 | Narrative | Organisation | Culture | — | — | Brand Imagery |
@@ -584,7 +584,7 @@ Aaker's [-@aaker-1991-managing-brand-equity; -@aaker-1996-building-strong-brands
 | Cultural | Symbol | Culture | Ruggedness | Intellectual | Brand Imagery |
 | Temporal | Organisation | — | — | — | Brand Imagery |
 
-*Notes*: Mappings indicate the closest conceptual counterpart in each predecessor framework. Blanks indicate no direct counterpart — the SBT dimension captures observer-mediated information not formalized in that framework. Predecessor frameworks treat dimensions as brand attributes; SBT treats them as observer-dependent perceptual channels. The completeness and necessity of the eight dimensions relative to predecessor taxonomies is established formally in Zharnikov [-@zharnikov-2026-why-eight-completeness-necessity-sbt].
+*Notes*: Column frameworks (full citations in Section 5.1): Aaker = brand equity and identity systems; Kapferer Prism = brand identity prism; J. Aaker = brand personality dimensions; Brakus et al. = brand experience; Keller CBBE = customer-based brand equity. Mappings indicate the closest conceptual counterpart in each predecessor framework. Blanks indicate no direct counterpart — the SBT dimension captures observer-mediated information not formalized in that framework. Predecessor frameworks treat dimensions as brand attributes; SBT treats them as observer-dependent perceptual channels. The completeness and necessity of the eight dimensions relative to predecessor taxonomies is established formally in Zharnikov [-@zharnikov-2026-why-eight-completeness-necessity-sbt].
 
 Fournier [-@fournier-1998-consumers-their-brands] established that consumers form qualitatively different relationship types with brands — a direct precursor to SBT's observer-specific convictions. Hatch & Schultz [-@hatch-2010-toward-theory-brand] anticipated SBT's observer-as-co-creator thesis. Swaminathan, Stilley & Ahluwalia [-@swaminathan-2009-when-brand-personality] demonstrate that individual differences moderate brand personality effects — direct evidence for observer heterogeneity. Xi, Yang, Jiao, Wang, and Lu [-@xi-2022-we-buy-what] show that consumer perceived value drives brand identity formation in the luxury sector, providing empirical support for the observer's role in constructing brand meaning. Park, MacInnis & Priester [-@park-2010-brand-attachment-brand] distinguish brand attachment from brand attitude strength — a distinction SBT captures as cloud stability versus collapse confidence.
 
