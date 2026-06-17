@@ -1,0 +1,536 @@
+# SPINE.yaml — Research as Repository (2026u / R14)
+#
+# Backbone spine for the Research-as-Repository protocol paper, built per
+# CLAUDE.md rule 0aa (spine-first drafting) ahead of the 2026-06-13 substantive
+# revision that adds the "realized system as existence proof" section.
+#
+# Scope of this spine: the paper's argument backbone — the seven protocol
+# claims (paper §1.6 C1–C7, here P1–P7), plus the realized-system nodes
+# (observations of the built metadata system → methods → measurements →
+# findings → the existence-proof proposition P8) added by the revision. Every
+# NEW prose claim in the realized-system section traces to a node here; the
+# pre-existing protocol prose traces to P1–P7 + the structural-diagnosis
+# propositions P0a/P0b.
+#
+# Schema v0.2 ([internal path removed] §"Schema v0.2"):
+# observations / methods / measurements / findings are first-class so the
+# realized system (a built, tested, running artifact) is represented as
+# evidence, not asserted in prose. The protocol claims P1–P7 remain analytic
+# design propositions.
+
+spine_version: "0.2"
+spine_doc_version: "0.1.0"     # backbone spine first lock (2026-06-13 realized-system revision)
+paper_key: "2026u"
+title: >-
+  Research as Repository: Infrastructure for Transparent, Attributed, and
+  Machine-Readable Scholarly Communication
+target_venue_primary: "TBD (between venues; JASIST + JLSC rejected)"
+status: >-
+  Backbone spine locked 2026-06-13 for the realized-system revision. Paper is
+  a working paper between venues, so edits go in the paper (not the internal change log).
+
+thesis: |
+  Scientific publishing is the only knowledge-intensive domain without formal
+  version-control and provenance infrastructure. Treating every research
+  program as a version-controlled repository — of which a paper is a render at
+  a point on its timeline, a submission a fork, peer review attributed commits
+  on a review branch, and publication a merge — closes five persistent
+  structural gaps (no version history, no contributor traceability, no
+  submission provenance, no review attribution, no machine interface) without
+  replacing peer review or mandating a centralized platform. The protocol
+  optimizes the knowledge-production process, not the rendered paper. As of the
+  2026-06-13 revision the protocol is no longer only a proposal: the author's
+  own corpus runs a working instantiation — a single content-addressed
+  substrate unifying terms, claims, and citations, a link-time compatibility
+  checker that treats each paper as a module in a typed codebase, and a
+  CI-style anti-drift gate — which is an existence proof of the repository
+  reconception on a live body of work. The strong claim (a new mode of
+  scholarly communication) is warranted as an existence proof and design;
+  full validation requires multi-author adoption and an explicit negotiation
+  protocol, which are future work.
+
+# ============================================================================
+# Boundary conditions — when the protocol's claims hold
+# ============================================================================
+boundary_conditions:
+  - id: C1
+    statement: "Research artifacts are authored under version control (commit/revision history with attribution exists)."
+    observable: "Presence of a commit graph with author attribution."
+    excludes: "One-shot handwritten manuscripts with no revision history."
+    provenance:
+      created_by: "author"
+      created_at: "2026-06-13"
+  - id: C2
+    statement: "The research program is an evolving body of work (an SSOT), not a single isolated artifact."
+    observable: "Multiple renders/papers derive from one maintained source over time."
+    excludes: "A single standalone paper with no surrounding program."
+    provenance:
+      created_by: "author"
+      created_at: "2026-06-13"
+
+# ============================================================================
+# Observations — the realized metadata system as built L-layer events
+# ============================================================================
+observations:
+  - id: O1
+    statement: >-
+      A single content-addressed SQLite substrate ([internal path removed])
+      holds the corpus's terms, claims, and citations graphs as one source of
+      truth, of which BibTeX, CSV, glossaries, and per-paper renders are
+      projections.
+    raw_data_pointer: "[internal path removed] + [internal path removed]"
+    instrument: "[internal path removed]* substrate pipeline"
+    timestamp: "2026-06-13"
+    provenance:
+      created_by: "tool:build_ontology.py + sync_claims_from_spine.py + verify_citations.py"
+      created_at: "2026-06-13"
+    body_sections: ["New §: A realized instance"]
+  - id: O2
+    statement: >-
+      50 ONTOLOGY.yaml modules (one per corpus paper) declare the terms each
+      paper owns / imports / refines; build_ontology.py links them into the
+      substrate as 167 terms, 7 relations, and 436 paper_terms edges (167 owns
+      + 269 imports), enforcing unique-owner / no-dangling / compatible-refine /
+      acyclic link-time compatibility.
+    raw_data_pointer: "[internal path removed]*.yaml; [internal path removed]"
+    instrument: "[internal path removed] (the linker)"
+    timestamp: "2026-06-13"
+    provenance:
+      created_by: "tool:build_ontology.py"
+      created_at: "2026-06-13"
+    body_sections: ["New §: A realized instance"]
+  - id: O3
+    statement: >-
+      verify_paper_bundle.py aggregates four per-paper consistency checks
+      (citations alignment, ontology link, spine→claims sync, surface-form scan)
+      into one PASS/DRIFT verdict and exits nonzero on hard drift; a 20-test
+      pytest suite (incl. a docs-alignment control) passes.
+    raw_data_pointer: "[internal path removed]; [internal path removed]"
+    instrument: "[internal path removed] + pytest"
+    timestamp: "2026-06-13"
+    provenance:
+      created_by: "tool:verify_paper_bundle.py + pytest"
+      created_at: "2026-06-13"
+    body_sections: ["New §: A realized instance"]
+
+# ============================================================================
+# Methods — how the realized system is constructed and checked
+# ============================================================================
+methods:
+  - id: M1
+    statement: >-
+      The linker (build_ontology.py): resolve each paper's ONTOLOGY.yaml module
+      against the others, enforcing one owner per term, no dangling import/refine,
+      compatible refinement, and acyclicity; assign each term a content-addressed
+      def_hash (sha256 of its definition) so a changed definition surfaces its
+      dependents.
+    type: "link_time_type_check"
+    inputs: ["[internal path removed]*.yaml"]
+    outputs: ["terms / term_relations / paper_terms substrate tables"]
+    code_anchor: "[internal path removed]"
+    reproducibility:
+      seed: "deterministic (no RNG)"
+      runtime_environment: "Python 3.12 + uv"
+    provenance:
+      created_by: "author + tool:build_ontology.py"
+      created_at: "2026-06-13"
+    body_sections: ["New §: A realized instance"]
+  - id: M2
+    statement: >-
+      The anti-drift gate (verify_paper_bundle.py): a read-only CI-style check
+      run after every paper create/edit and before commit, failing the build on
+      dangling import / incompatible refinement / definitional drift / a paper
+      drifting from its SPINE/ONTOLOGY companions.
+    type: "continuous_integration_gate"
+    inputs: ["paper.md", "SPINE.yaml", "ONTOLOGY.yaml", "substrate"]
+    outputs: ["PASS / DRIFT verdict; nonzero exit on hard drift"]
+    code_anchor: "[internal path removed]"
+    provenance:
+      created_by: "author + tool:verify_paper_bundle.py"
+      created_at: "2026-06-13"
+    body_sections: ["New §: A realized instance"]
+  - id: M3
+    statement: >-
+      The spine-first drafting protocol: no prose may be written without a
+      corresponding SPINE node; new claims require FORK (extend the spine first)
+      or REBASE (drop the claim) — a generative gate, not post-hoc annotation.
+    type: "drafting_discipline"
+    inputs: ["SPINE.yaml"]
+    outputs: ["prose whose every claim traces to a node"]
+    code_anchor: "[internal path removed] + sync_claims_from_spine.py"
+    provenance:
+      created_by: "author"
+      created_at: "2026-06-13"
+    body_sections: ["New §: A realized instance"]
+
+# ============================================================================
+# Measurements — derived counts from the built system
+# ============================================================================
+measurements:
+  - id: m_corpus_terms
+    statement: "167 terms / 7 relations / 436 paper_terms (167 owns + 269 imports) across 50 linked ONTOLOGY modules."
+    source_observations: [O2]
+    generating_method: M1
+    value: "167 terms / 7 relations / 436 paper_terms / 50 modules"
+    units: "graph node + edge counts"
+    provenance:
+      created_by: "tool:build_ontology.py"
+      created_at: "2026-06-13"
+  - id: m_gate_clean
+    statement: >-
+      Corpus alignment under verify_paper_substrate_alignment.py --all
+      --prefer-internal: auth_fail=0, missing=0, phantom=0; 20/20 pytest tests pass.
+    source_observations: [O3]
+    generating_method: M2
+    value: "auth_fail=0 / missing=0 / phantom=0 / 20 of 20 tests pass"
+    units: "drift counts + test pass count"
+    provenance:
+      created_by: "tool:verify_paper_substrate_alignment.py + pytest"
+      created_at: "2026-06-13"
+
+# ============================================================================
+# Propositions — the seven protocol claims (paper §1.6 C1–C7) + diagnosis +
+# the realized-system existence-proof proposition (P8)
+# ============================================================================
+propositions:
+  - id: P0a
+    statement: >-
+      Scientific publishing is the only knowledge-intensive domain that never
+      developed formal version-control and provenance infrastructure, a gap
+      visible against legal, financial, clinical, supply-chain, and software
+      domains that each independently adopted provenance tracking.
+    conditions: ""
+    antecedents: []
+    evidence:
+      - type: citation
+        anchor: "Cross-domain provenance comparison (paper Table 1)."
+        citation_keys: [renear-2009-strategic-reading, borgman-2015-big-data-little, edwards-2013-knowledge-infrastructures, torvalds-git]
+    body_sections: ["§1.1 A Gap Every Other Domain Has Already Solved"]
+  - id: P0b
+    statement: >-
+      The document assumption (a paper is a static binary artifact) is the
+      structural constraint underlying every recent publishing reform; each
+      reform improves one dimension while leaving the document form intact.
+    conditions: ""
+    antecedents: [P0a]
+    evidence:
+      - type: analytic
+        anchor: "Reform-by-reform analysis (open access, preprints, registered reports, post-publication review)."
+    body_sections: ["§1.1", "§1.2 What the Protocol Replaces"]
+  - id: P1
+    statement: >-
+      (Paper claim C1) Fork-based submission creates cryptographic provenance
+      that makes submission history structurally auditable.
+    conditions: "C1"
+    antecedents: [P0b]
+    evidence:
+      - type: analytic
+        anchor: "Fork = a commit-anchored share of a render; the fork chain records venue history."
+    falsifier: "If forks can be created without preserving a verifiable commit lineage, C1 fails."
+    body_sections: ["§2.2 Fork-Based Submission", "§2.7 Provenance by Design"]
+  - id: P2
+    statement: >-
+      (Paper claim C2) Blinding-as-function replaces manual anonymization with a
+      configurable system property.
+    conditions: "C1"
+    antecedents: [P0b]
+    evidence:
+      - type: analytic
+        anchor: "Blinding is computed from the repository on fork, not hand-applied."
+    falsifier: "If de-anonymization is recoverable from the blinded render, C2 fails."
+    body_sections: ["§2.4 Blinding as a System Function"]
+  - id: P3
+    statement: >-
+      (Paper claim C3) Review-as-commits creates attributed, portable review
+      records with measurable depth.
+    conditions: "C1"
+    antecedents: [P0b]
+    evidence:
+      - type: analytic
+        anchor: "Reviews are attributed commits on a review branch, owned by the reviewer and portable across venues."
+    falsifier: "If review commits cannot be attributed or ported, C3 fails."
+    body_sections: ["§2.5 Review as Attributed Commits", "§2.6 Reviewer Ownership"]
+  - id: P4
+    statement: >-
+      (Paper claim C4) Collections-as-users unifies preprint servers, journals,
+      and archives under a single protocol.
+    conditions: "C1"
+    antecedents: [P0b]
+    evidence:
+      - type: analytic
+        anchor: "A collection is a curating user that merges forks; eLife 'publish then review' is the closest real-world instance."
+        citation_keys: []
+    falsifier: "If a venue type cannot be expressed as a collection-user, C4 fails."
+    body_sections: ["§2.8 Collections as Users"]
+  - id: P5
+    statement: >-
+      (Paper claim C5) A compliance gate (journal_spec.yaml) substantially
+      reduces formatting-related desk rejections.
+    conditions: "C1"
+    antecedents: [P0b]
+    evidence:
+      - type: analytic
+        anchor: "Compliance is checked as CI against a journal-published spec before submission."
+    falsifier: "If formatting desk-rejection rates are unchanged under the gate, C5 fails."
+    body_sections: ["§2.3 The Submission Gate: Compliance as CI/CD"]
+  - id: P6
+    statement: >-
+      (Paper claim C6) Provenance-by-design makes dual submission structurally
+      detectable.
+    conditions: "C1"
+    antecedents: [P1]
+    evidence:
+      - type: analytic
+        anchor: "Concurrent forks of the same commit lineage to multiple collections are queryable."
+    falsifier: "If concurrent submissions leave no detectable trace, C6 fails."
+    body_sections: ["§2.7 Provenance by Design"]
+  - id: P7
+    statement: >-
+      (Paper claim C7) The protocol's machine-readable structure enables
+      structured querying across the full research lifecycle, including
+      AI-assisted cross-paper analysis.
+    conditions: "C1, C2"
+    antecedents: [P0b]
+    evidence:
+      - type: analytic
+        anchor: "Markdown + paper.yaml + substrate are queryable without lossy PDF extraction (contrast Goldberg et al. 2026 olmOCR preprocessing)."
+    falsifier: "If cross-paper queries still require lossy extraction under the protocol, C7 fails."
+    body_sections: ["§2.11 The AI-Native Layer", "§1.2 Gap 5"]
+  - id: P8
+    statement: >-
+      The author's corpus runs a working instantiation of the repository
+      reconception: the content-addressed substrate IS the repository, the
+      ontology linker (build_ontology.py) is its type-checker, the anti-drift
+      gate (verify_paper_bundle.py) is its continuous integration, the
+      spine-first protocol is its drafting discipline, and the terms / claims /
+      citations graphs are the compiled symbol tables. This is an existence
+      proof of the protocol on a live body of work, not merely a proposal.
+    conditions: "C1, C2"
+    antecedents: [P7, F1, F2]
+    evidence:
+      - type: self-application
+        anchor: "The realized system runs on this corpus and on this very paper's bundle (paper.md + SPINE.yaml + ONTOLOGY.yaml + rendered glossary), checked by the gate."
+      - type: empirical
+        anchor: "167 terms across 50 linked modules; gate clean; 20/20 tests."
+    falsifier: "If the system does not actually run on the corpus, or the gate does not fail on injected drift, P8 fails."
+    body_sections: ["New §: A realized instance"]
+
+# ============================================================================
+# Findings — what the built system demonstrates
+# ============================================================================
+findings:
+  - id: F1
+    statement: >-
+      A single-author research corpus can be operated as a typed module system:
+      each paper exports the terms and claims it introduces and imports others',
+      a linker enforces link-time compatibility, and an anti-drift gate is the
+      corpus's continuous integration. The link-time check (unique-owner,
+      no-dangling, compatible-refine, acyclic) is a software-engineering pattern
+      with no equivalent in existing ontology/publishing standards.
+    type: "system_demonstration"
+    source_measurements: [m_corpus_terms]
+    generating_method: M1
+    antecedents: [O2]
+    falsifier: "If the linker cannot resolve the 50 modules without manual override, F1 weakens to a partial demonstration."
+    citation_role_in_paper: "primary_evidence_for_P8"
+    provenance:
+      created_by: "tool:build_ontology.py"
+      created_at: "2026-06-13"
+    body_sections: ["New §: A realized instance"]
+  - id: F2
+    statement: >-
+      The bundle (paper.md + SPINE.yaml + ONTOLOGY.yaml + rendered glossary +
+      substrate) is kept from drifting by a CI gate that fails the build on
+      dangling imports, incompatible refinement, definitional drift, or a paper
+      drifting from its companions — verified clean corpus-wide (auth_fail=0,
+      missing=0, phantom=0) with a 20-test suite including a docs-alignment
+      control.
+    type: "system_demonstration"
+    source_measurements: [m_gate_clean]
+    generating_method: M2
+    antecedents: [O3]
+    falsifier: "If the gate passes on an injected dangling import or incompatible refine, F2 fails."
+    citation_role_in_paper: "primary_evidence_for_P8"
+    provenance:
+      created_by: "tool:verify_paper_bundle.py"
+      created_at: "2026-06-13"
+    body_sections: ["New §: A realized instance"]
+
+# ============================================================================
+# Robustness checks — does the result hold under the federated regime?
+# ============================================================================
+robustness_checks:
+  - id: RC1
+    statement: >-
+      The link-time compatibility check generalizes from the single-author
+      regime to the federated (multi-author) case: a cross-owner linker
+      (negotiate_modules.py) that, instead of aborting on a unique-owner
+      collision, classifies every cross-owner interaction (agreement / conflict /
+      compatible-refine / dangling) and proposes a typed, justified reconciliation
+      (SSSOM mappings + lock/fork/rebase/merge operations). Demonstrated on a
+      deliberate two-author fixture exercising all four interaction classes;
+      report mode exits 0, gate mode exits nonzero on unresolved interactions.
+      Subsequently exercised on two REAL corpus vocabularies (SBT perceptual vs OST
+      operational), presented as two independently namespaced module sets
+      (EXP-2026-06-13-NEG-SBT-OST): 6 cross-owner interactions classified, 0
+      unresolved (4 cross-import + 2 cross-refine), shared concepts matched by
+      content-addressed def_hash (manifest-verified against the live graph), the
+      program bridge recovered before any prose was read. Further exercised against
+      two GENUINELY INDEPENDENT vocabularies the author did not build for
+      compatibility — an incumbent brand-equity vocabulary (Aaker 1991/1996;
+      EXP-2026-06-14-NEG-AAKER-SBT) and information-economics signaling theory
+      (Spence 1973; EXP-2026-06-14-NEG-SPENCE-SBT) — which surfaced the adversarial
+      classes the convergent pair could not: a genuine dangling reference (an
+      incumbent primitive neither side owns) and a genuine same-key CONFLICT on a
+      shared bare term ('signal': economic costly signal vs brand signal across the
+      eight dimensions; differing def_hash), gate-failing, for which the linker
+      refused exactMatch and proposed a namespaced closeMatch curation. Across the
+      three real-corpora runs the full interaction-class set (clean import/refine,
+      dangling, conflict) is now exercised on real vocabularies. What is NOT yet
+      done is a LIVING independent co-author authoring their own modules and
+      resolving a conflict in dialogue (the modules here are author-transcribed; see
+      L2).
+    type: "generalization_check"
+    sensitivity_of: [P8]
+    mitigates: [L2]
+    falsifier: "If the federated linker cannot classify a cross-owner collision without erroring, the generalization fails."
+    provenance:
+      created_by: "author + tool:negotiate_modules.py"
+      created_at: "2026-06-13"
+    body_sections: ["New §: A realized instance (future work / federation)"]
+
+# ============================================================================
+# Alternative explanations — rivals the realized-system claim must clear
+# ============================================================================
+alternative_explanations:
+  - id: A1
+    statement: >-
+      The realized system is just an application of existing semantic-publishing
+      standards (nanopublications, RO-Crate, SKOS, SSSOM, CiTO) under new names,
+      not a distinct contribution.
+    rules_out_required: [P8]
+    ruled_out_by: [F1, F2]
+    rules_out_status: "rejected"
+    reasoning: >-
+      The standards are EMITTED as projections from the substrate and CITED, not
+      reinvented; about half the stack maps to them. What none of them provide —
+      and what the system contributes — is the per-paper-module = codebase-symbol
+      framing, the single substrate unifying terms + claims + citations, the
+      link-time compatibility checker plus anti-drift CI gate, the spine-first
+      generative drafting protocol, and the single-author temporal-rebase regime.
+    provenance:
+      created_by: "author"
+      created_at: "2026-06-13"
+    body_sections: ["New §: A realized instance (prior art + novelty)"]
+
+# ============================================================================
+# Limitations — honest scope of the existence-proof claim
+# ============================================================================
+limitations:
+  - id: L1
+    statement: >-
+      The realized system is single-author: modules are temporal slices of one
+      author's program reconciled by rebase, not the multi-author federation the
+      semantic-publishing standards assume. The strong claim (a new mode of
+      scholarly communication) is warranted as an existence proof and design, not
+      as a validated social practice.
+    severity: "scope-bounding"
+    affects: [P8]
+    provenance:
+      created_by: "author"
+      created_at: "2026-06-13"
+    body_sections: ["New §: A realized instance (limitations)", "§5.3 Limitations"]
+  - id: L2
+    statement: >-
+      Full validation requires multi-author adoption and an explicit negotiation
+      protocol (how two authors reconcile incompatible modules). The cross-owner
+      reporting mode is prototyped (RC1, negotiate_modules.py), demonstrated on a
+      two-author fixture, AND exercised on the real SBT/OST vocabularies
+      (EXP-2026-06-13-NEG-SBT-OST) — but that real run is across two namespaces of
+      ONE author and links cleanly by construction. What remains future work is
+      exercising it on two genuinely INDEPENDENT authors' corpora, where at least
+      one real conflict or dangling reference arises and must be reconciled — true
+      multi-author adoption as a validated social practice, not the mechanism itself.
+    severity: "future-work"
+    affects: [P8]
+    provenance:
+      created_by: "author"
+      created_at: "2026-06-13"
+    body_sections: ["New §: A realized instance (future work)"]
+
+# ============================================================================
+# Negative findings — what is absent in the prior art (motivates the contribution)
+# ============================================================================
+negative_findings:
+  - id: NF1
+    statement: >-
+      No existing standard provides a gate that fails the build on dangling
+      import / incompatible refinement / definitional drift across one corpus:
+      Trusty URIs make single artifacts tamper-evident, OAEI evaluates matchers,
+      OBO has QC — but the link-time compatibility check plus cross-artifact
+      anti-drift CI is a software-engineering pattern absent from
+      ontology/publishing prior art.
+    expected_observation: "A prior standard with a corpus-level link-time + drift CI gate."
+    source_method: M2
+    affects_nodes: [P8, F2]
+    motivates: [P8]
+    provenance:
+      created_by: "author"
+      created_at: "2026-06-13"
+    body_sections: ["New §: A realized instance (prior art)"]
+
+# ============================================================================
+# Cross-paper engagement
+# ============================================================================
+corpus_precedents:
+  - paper_key: 2026t
+    relationship: extends
+    spine_nodes: [P7, P8]
+    note: >-
+      Paper Spec (paper-as-specification) defines paper.yaml's internal schema;
+      Research-as-Repository is the process layer it travels in. The realized
+      bundle (paper.md + SPINE + ONTOLOGY + glossary + gate) is the spec bundle
+      Paper Spec describes, now realized.
+  - paper_key: 2026i
+    relationship: applies
+    spine_nodes: [P0b]
+    note: "OST's 'specify the process, then derive structure' applied to scholarly communication (§1.4)."
+  - paper_key: 2026ao
+    relationship: refines
+    spine_nodes: [P8]
+    note: >-
+      The ontology layer is the semantics companion to 2026ao's meaning /
+      meaningfulness split: the SPINE is the meaning, the ONTOLOGY is the
+      semantics, the prose is the meaningfulness.
+
+# ============================================================================
+# External anchor literature
+#   Standards the realized system EMITS into / aligns to (PRIOR_ART_MAP). Keys
+#   marked (verify) are pending a verify_citations.py Crossref pass (task #16)
+#   before they enter the paper body.
+# ============================================================================
+external_anchors:
+  - {citation_key: shotton-2010-cito-citation-typing, role: standard_aligned, spine_nodes: [P8], note: "CiTO — citation-role taxonomy alignment"}
+  - {citation_key: clark-2014-micropublications-semantic-model, role: standard_aligned, spine_nodes: [P8], note: "Micropublications — claim/evidence model"}
+  - {citation_key: groth-2010-anatomy-nanopublication-information, role: standard_aligned, spine_nodes: [P8], note: "Nanopublications — atomic provenance-bearing claims"}
+  - {citation_key: kuhn-2021-semantic-microcontributions-with, role: standard_aligned, spine_nodes: [P8], note: "Nanopublication services"}
+  - {citation_key: soilandreyes-2022-packaging-research-artefacts, role: standard_aligned, spine_nodes: [P8], note: "RO-Crate — bundle packaging projection target"}
+  - {citation_key: wilkinson-2016-fair-guiding-principles, role: standard_aligned, spine_nodes: [P8], note: "FAIR — the rubric the mirror standard cites"}
+  - {citation_key: chesnevar-2006-argument-interchange-format, role: standard_aligned, spine_nodes: [P8], note: "AIF — argument interchange"}
+  - {citation_key: kuhn-dumontier-2014-trusty-uris, role: standard_aligned, spine_nodes: [P8], note: "Trusty URIs — graph-normalized content-addressing for def_hash upgrade"}
+  - {citation_key: matentzoglu-2022-sssom, role: standard_aligned, spine_nodes: [P8], note: "SSSOM — typed+justified mappings projection"}
+  - {citation_key: smith-2007-obo-foundry, role: standard_aligned, spine_nodes: [P8], note: "OBO Foundry — one-term-one-owner governance"}
+  - {citation_key: cuencagrau-2008-modular-reuse-ontologies, role: standard_aligned, spine_nodes: [P8], note: "OWL modularity — conservative-extension framing of the linker"}
+  - {citation_key: miles-bechhofer-2009-skos-reference, role: standard_aligned, spine_nodes: [P8], note: "SKOS — term-relation vocabulary alignment (synonym/narrows/maps_to)"}
+
+# ============================================================================
+# Open questions / boundary edges
+# ============================================================================
+open:
+  - "The federated multi-author case (negotiation protocol) is unbuilt; how do two authors reconcile incompatible modules? (L2)"
+  - "Does the def_hash upgrade to Trusty-URI graph-normalized hashing change any dependent-surfacing behavior? (task #23, blocked by RDF emit)"
+  - "Which standards-emitting projections (RO-Crate first, then SSSOM/SKOS/nanopub) are worth shipping per public mirror?"
+
+# ============================================================================
+# Spine changelog — append-only
+# ============================================================================

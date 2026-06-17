@@ -1,0 +1,22 @@
+# ONTOLOGY.yaml module - 2026aa
+#
+# Per-paper ontology module per [internal path removed]
+# §"ONTOLOGY.yaml schema (v0.1)". owns = terms THIS paper introduces (unique
+# authority); imports = terms owned by other modules it uses (reference only).
+# Linked into the substrate `terms` graph by build_ontology.py; rendered per-paper
+# by render_paper_glossary.py. Bootstrapped 2026-06-13 from per-paper term
+# extraction; definitions paraphrase each paper's own definitional text.
+
+paper_key: 2026aa
+schema_version: 0.1
+
+owns: []
+
+imports:
+  - {term_key: spectral-brand-theory}
+  - {term_key: observer-spectral-profile}
+  - {term_key: spectral-dimensions}
+  - {term_key: cohort}
+
+refines: []
+

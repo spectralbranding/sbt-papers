@@ -1,0 +1,29 @@
+# ONTOLOGY.yaml module - 2026f
+#
+# Per-paper ontology module per [internal path removed]
+# §"ONTOLOGY.yaml schema (v0.1)". owns = terms THIS paper introduces (unique
+# authority); imports = terms owned by other modules it uses (reference only).
+# Linked into the substrate `terms` graph by build_ontology.py; rendered per-paper
+# by render_paper_glossary.py. Bootstrapped 2026-06-13 from per-paper term
+# extraction; definitions paraphrase each paper's own definitional text.
+
+paper_key: 2026f
+schema_version: 0.1
+
+owns:
+  - term_key: boundary-volume-fraction
+    label: "Boundary Volume Fraction"
+    canonical_form: "boundary volume fraction"
+    definition: "The fraction of probability mass on the simplex lying within a given relative distance of any convex partition boundary, bounded below at 52.2% for n=8 and delta=.10 under the uniform Dirichlet null, quantifying the geometric instability of discrete cohort assignment."
+    first_section: "4"
+
+imports:
+  - {term_key: spectral-brand-theory}
+  - {term_key: spectral-dimensions}
+  - {term_key: observer-spectral-profile}
+  - {term_key: cohort}
+  - {term_key: non-ergodic-perception}
+  - {term_key: absorbing-state}
+
+refines: []
+

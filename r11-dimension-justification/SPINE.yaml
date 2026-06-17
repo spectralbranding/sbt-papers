@@ -1,0 +1,600 @@
+# SPINE.yaml — Why Eight? Completeness and Necessity of the SBT Dimensional Taxonomy (2026r / R11)
+#
+# extracted descriptively from the COMPLETED paper.md ([internal path removed]),
+# not authored generatively ahead of prose. Reviewers evaluate spine and prose separately.
+#
+# Schema v0.2: the paper is mostly theory (the completeness/independence/non-redundancy
+# argument, §2–7), BUT §8A is an author-produced empirical robustness test on R15 cross-cultural
+# LLM data (22 models, 11,298 API calls) with computed Tables 1–4 reproduced by a published
+# companion script (gap5_dimension_robustness.py, SEED=42). The observation→method→
+# measurement→finding chain represents that empirical layer as evidence, not assertion.
+#
+# This paper REFINES 2026a P2 (the eight-dimension taxonomy): it supplies the missing
+# completeness-and-necessity argument for the dimensional count that 2026a asserts.
+
+spine_version: "0.2"
+spine_doc_version: "0.1.0"     # retrofit spine first lock (2026-06-14)
+provenance: retrofit
+paper_key: "2026r"
+title: >-
+  Why Eight? Completeness and Necessity of the SBT Dimensional Taxonomy
+target_venue_primary: "TBD (consumer-research / brand-theory; conceptual contribution)"
+status: >-
+  Retrofit spine extracted from completed Working Paper v1.3 (April 2026). Descriptive,
+  not generative; faithful to the paper's actual claims.
+
+thesis: |
+  Every multi-dimensional brand theory must justify its dimensional count, yet existing
+  frameworks diverge widely (five personality factors, six prism facets, two-to-three MDS
+  solutions) without theoretical warrant for the number chosen. This paper derives the SBT
+  eight-dimensional taxonomy — semiotic, narrative, ideological, experiential, social,
+  economic, cultural, temporal — from first principles, treating each dimension as a distinct
+  MEANING CHANNEL rooted in an independent academic tradition rather than an empirically
+  discovered factor. Independence is shown via counter-example brand pairs that differ on one
+  channel while matched on the others; non-redundancy because removing any channel collapses
+  discriminative power for at least one pair; completeness because five candidate ninth
+  dimensions (aesthetic, functional, ethical, digital, environmental) each reduce to
+  combinations of existing channels or to content domains processed through them. The apparent
+  conflict with low-dimensional MDS is resolved via concentration of measure: low-dimensional
+  projections capture most variance while discarding the profile-shape information that
+  distinguishes coherence types. An empirical robustness test on R15 cross-cultural LLM data
+  confirms every dimension carries non-trivial cross-model variance (5–19%) and that ranking
+  stability deteriorates below eight dimensions. The argument is theoretical and motivates,
+  but does not replace, future human-subject factor-analytic validation.
+
+# ============================================================================
+# Boundary conditions — the scope within which the eight-channel claim holds
+# ============================================================================
+boundary_conditions:
+  - id: C1
+    statement: >-
+      The taxonomy is a PERCEPTION-LEVEL theory: independence is claimed at the
+      phenomenological/behavioral level (distinct inputs to perception), not as
+      neural-substrate independence. Overlapping neural circuitry does not falsify
+      channel distinctness.
+    observable: "Phenomenologically distinct signal classes (price-signal vs cultural-code) at the observer."
+    excludes: "A neural-module reading that would require non-overlapping brain substrates."
+    body_sections: ["§2.11 From Academic Traditions to Perception Channels"]
+  - id: C2
+    statement: >-
+      The meaning-channel enumeration is drawn from established (predominantly Western)
+      academic traditions; the completeness claim is defended by scholarly inventory,
+      not logical deduction, and is explicitly the most vulnerable part of the argument.
+    observable: "Each channel maps to a tradition with multi-decade foundational literature and distinct methods."
+    excludes: "Non-Western carvings (e.g. unified aesthetic-ideological yi) that may partition the space differently."
+    body_sections: ["§2.10 Exhaustiveness of the Enumeration", "§8 Limitations (Western-traditions limitation)"]
+
+# ============================================================================
+# Observations — the empirical R15 data the §8A robustness test rests on
+# ============================================================================
+observations:
+  - id: O1
+    statement: >-
+      R15 Run 5 weight profiles: 22 large language models from 7 training traditions
+      each allocate an 8-dimensional weight vector (summing to 100) across 8
+      cross-cultural brand pairs, 3 repetitions per pair per model — 11,298 API calls
+      total. Model-level profiles are the mean weight vector across all pairs/reps.
+    raw_data_pointer: "https://github.com/spectralbranding/sbt-papers/tree/main/r15-ai-search-metamerism/experiment"
+    instrument: "R15 cross-cultural LLM experiment (Zharnikov 2026v)"
+    timestamp: "2026"
+    body_sections: ["§8A Empirical Robustness Test (Data)"]
+
+# ============================================================================
+# Methods — the three §8A perturbation experiments + variance decomposition
+# ============================================================================
+methods:
+  - id: M1
+    statement: >-
+      Drop-one dimension reduction (8D→7D): remove each dimension in turn, renormalize
+      remaining weights to 100, recompute DCI = (w_Economic + w_Semiotic)/total, and
+      measure rank stability vs the 8D baseline via Spearman rho, cosine similarity of
+      the 22-element DCI vector, and mean absolute rank displacement.
+    type: "perturbation_analysis"
+    inputs: ["O1 weight profiles"]
+    outputs: ["Table 1 drop-one stability statistics"]
+    code_anchor: "gap5_dimension_robustness.py"
+    reproducibility:
+      seed: "SEED = 42 (np.random.seed(42), deterministic)"
+      runtime_environment: "Python 3.12 + numpy + scipy (uv run --with numpy,scipy)"
+    body_sections: ["§8A Experiment 1"]
+  - id: M2
+    statement: >-
+      Drop-pair dimension reduction (8D→6D): remove all 28 dimension pairs (27 computable;
+      Semiotic+Economic leaves DCI undefined), renormalize, recompute DCI and rank
+      stability vs the 8D baseline.
+    type: "perturbation_analysis"
+    inputs: ["O1 weight profiles"]
+    outputs: ["Table 2 most/least disruptive pair removals"]
+    code_anchor: "gap5_dimension_robustness.py"
+    reproducibility:
+      seed: "SEED = 42 (deterministic)"
+      runtime_environment: "Python 3.12 + numpy + scipy"
+    body_sections: ["§8A Experiment 2"]
+  - id: M3
+    statement: >-
+      Dimension expansion (8D→10D): split Experiential into Functional/Hedonic and
+      Economic into Price/Accessibility via noise-perturbed 50/50 splits
+      (split_ratio = 0.5 + N(0,0.1), clipped [0.20,0.80]), recompute DCI from the two
+      Economic sub-dimensions, and test rank stability — testing whether subdivision adds
+      discriminative power.
+    type: "perturbation_analysis"
+    inputs: ["O1 weight profiles"]
+    outputs: ["Experiment-3 rho/cosine/displacement"]
+    code_anchor: "gap5_dimension_robustness.py"
+    reproducibility:
+      seed: "SEED = 42 (deterministic 50/50 splits)"
+      runtime_environment: "Python 3.12 + numpy + scipy"
+    body_sections: ["§8A Experiment 3"]
+  - id: M4
+    statement: >-
+      Cross-model variance decomposition: compute the variance of each dimension across
+      the 22 model-level mean weight profiles and its share of total cross-model variance;
+      supplementary mean pairwise profile-cosine across 231 model pairs under each 7D variant.
+    type: "variance_decomposition"
+    inputs: ["O1 weight profiles"]
+    outputs: ["Table 3 variance-by-dimension; Table 4 profile-cosine under removal"]
+    code_anchor: "gap5_dimension_robustness.py"
+    reproducibility:
+      seed: "deterministic (no RNG for variance step)"
+      runtime_environment: "Python 3.12 + numpy + scipy"
+    body_sections: ["§8A Variance decomposition", "§8A Profile shape stability"]
+
+# ============================================================================
+# Measurements — the headline computed values from §8A
+# ============================================================================
+measurements:
+  - id: m_dci_baseline
+    statement: "Baseline mean 8D DCI across 22 models = .356 (SD = .029, range [.290, .402]), exceeding the uniform .250 by .106."
+    source_observations: [O1]
+    generating_method: M4
+    value: ".356 (SD .029)"
+    units: "DCI ratio (Economic+Semiotic share of total weight)"
+    body_sections: ["§8A Data"]
+  - id: m_droponce_floor
+    statement: "All eight drop-one DCI cosines exceed .994 (min .994 = Economic); all Spearman rhos significant at p < .001."
+    source_observations: [O1]
+    generating_method: M1
+    value: "min drop-one cosine .994; all rho p < .001"
+    units: "cosine similarity / rank-correlation p-value"
+    body_sections: ["§8A Table 1"]
+  - id: m_droppair_floor
+    statement: "Across 27 computable pair removals, Spearman rho range [.513, .960] (mean .819), cosine range [.993, .9998] (mean .998); lowest rho = Ideological+Economic (.513)."
+    source_observations: [O1]
+    generating_method: M2
+    value: "rho min .513 / cosine min .993"
+    units: "rank-correlation / cosine"
+    body_sections: ["§8A Table 2"]
+  - id: m_expansion_null
+    statement: "10D expansion: Spearman rho = .9997 (p < .001), cosine = 1.000, mean rank displacement = 0.09 — subdivision adds no discriminative power."
+    source_observations: [O1]
+    generating_method: M3
+    value: "rho .9997 / cosine 1.000 / disp 0.09"
+    units: "rank-correlation / cosine / rank positions"
+    body_sections: ["§8A Experiment 3"]
+  - id: m_variance_share
+    statement: >-
+      Every dimension carries 5.4–18.7% of total cross-model variance (Economic 18.7%,
+      Cultural 17.3%, Ideological 16.7%, Semiotic 15.4%, Experiential 11.4%, Narrative 9.2%,
+      Social 5.9%, Temporal 5.4%); six non-DCI dimensions = 49.2% of total variance.
+    source_observations: [O1]
+    generating_method: M4
+    value: "per-dim variance share 5.4%–18.7%"
+    units: "% of total cross-model variance"
+    body_sections: ["§8A Table 3"]
+
+# ============================================================================
+# Propositions — the theoretical backbone of the completeness argument
+# ============================================================================
+propositions:
+  - id: P1
+    statement: >-
+      The dimension-selection problem is real and consequential: existing brand frameworks
+      disagree on dimensionality (Aaker 5, Kapferer 6, De Chernatony 11, MDS 2–3) with no
+      theoretical justification for the count, and choosing the wrong dimensionality is a
+      structural error that propagates through every downstream analysis.
+    conditions: ""
+    antecedents: []
+    evidence:
+      - type: citation
+        anchor: "Survey of divergent dimensionalities across the brand-theory literature."
+        citation_keys: [aaker-1997-dimensions-brand-personality, kapferer-2008-new-strategic-brand, keller-1993-conceptualizing-measuring-managing, bijmolt-1999-comparison-multidimensional-scaling]
+    body_sections: ["§1 The Dimension Selection Problem"]
+  - id: P2
+    statement: >-
+      Two routes to justifying dimensionality exist — empirical discovery (factor analysis,
+      bounded by the input items measured) and theoretical derivation (arguing channels from
+      established theory, bounded by inventory completeness). SBT takes theoretical derivation
+      because factor analysis cannot identify a construct domain from within; it only recovers
+      structure the researcher placed into the item set.
+    conditions: ""
+    antecedents: [P1]
+    evidence:
+      - type: citation
+        anchor: "Theoretical derivation as a legitimate, complementary route to factor analysis."
+        citation_keys: [rossiter-2002-coarse-procedure-scale, borsboom-2003-theoretical-status-latent, flake-2020-measurement-schmeasurement-questionable, churchill-1979-paradigm-developing-better]
+    body_sections: ["§1 The Dimension Selection Problem"]
+  - id: P3
+    statement: >-
+      A meaning channel is a pathway through which a brand's emissions are interpreted by an
+      observer to form a component of perception; observers inevitably interpret brand
+      emissions through ALL available meaning-processing systems regardless of brand intent
+      (the three-cone analogy). A channel qualifies as a distinct dimension iff it satisfies
+      three criteria: (a) it is the subject of an established academic tradition, (b) brands
+      emit signals processed through it, and (c) it does not reduce to another channel.
+    conditions: ""
+    antecedents: [P2]
+    evidence:
+      - type: citation
+        anchor: "The three qualification criteria parallel construct-domain-completeness requirements."
+        citation_keys: [slaney-2017-validating-psychological-constructs]
+    body_sections: ["§2.1 The Meaning-Channel Principle"]
+  - id: P4
+    statement: >-
+      Eight meaning channels satisfy all three criteria, each rooted in a distinct tradition:
+      Semiotic (semiotics), Narrative (narratology), Ideological (ideology critique),
+      Experiential (experience economy / phenomenology), Social (social identity theory),
+      Economic (signaling theory), Cultural (cultural sociology), Temporal (temporal psychology).
+    conditions: ""
+    antecedents: [P3]
+    evidence:
+      - type: citation
+        anchor: "Foundational anchors for the eight traditions (representative subset of the §2.2–2.9 inventory)."
+        citation_keys: [holt-2004-how-brands-become, brakus-2009-brand-experience-what, spence-1973-job-market-signaling, mccracken-1986-culture-consumption-theoretical, zimbardo-1999-putting-time-perspective, schwartz-1992-universals-content-structure]
+    body_sections: ["§2.2–2.9", "§2.10 Exhaustiveness of the Enumeration"]
+  - id: P5
+    statement: >-
+      Dimensions are MEANING CHANNELS (the bandwidth at which signal travels between brand and
+      observer), NOT perceptual FACTORS (how the signal is internally processed). Brakus et
+      al.'s four experiential sub-dimensions, and the self-congruence/group-signaling split
+      within the social channel, are internal modalities of a single channel — analogous to
+      red/green/blue cone responses within one visual channel — not separate channels.
+    conditions: ""
+    antecedents: [P3]
+    evidence:
+      - type: citation
+        anchor: "The channel-vs-factor distinction answers the multi-dimensional-sub-construct objection."
+        citation_keys: [brakus-2009-brand-experience-what]
+    body_sections: ["§2.5 Experiential", "§2.6 Social", "§8 Limitations (internal multi-dimensionality)"]
+  - id: P6
+    statement: >-
+      The eight channels are INDEPENDENT: for each dimension there exists a counter-example
+      brand pair differing primarily on that dimension while approximately matched on the other
+      seven (Apple/Samsung semiotic; Patagonia/North Face narrative; Chick-fil-A/Popeyes
+      ideological; Ritz-Carlton/Four Seasons experiential; Supreme/Carhartt social;
+      Costco/Sam's Club economic; Uniqlo/H&M cultural; Hermès/Gucci temporal). The examples
+      are illustrative judgments, not measured spectral profiles; strict psychometric
+      independence is deferred to future observer-rated work.
+    conditions: "C1"
+    antecedents: [P4]
+    evidence:
+      - type: analytic
+        anchor: "Eight one-per-dimension witness pairs (plus non-Western parallels) in lieu of all 28 pairwise proofs."
+    falsifier: "If observers rate the witness pairs as substantially different on multiple non-focal dimensions, the focal-dimension independence claim weakens for that pair."
+    body_sections: ["§3 Independence Proof via Counter-Example Brands"]
+  - id: P7
+    statement: >-
+      (Proposition 1, Dimensional Non-Redundancy) For each dimension d_i there exists a brand
+      pair distinguishable in the 8D taxonomy but indistinguishable in the 7D taxonomy obtained
+      by removing d_i: the witness pair's Euclidean distance is dominated by the d_i component,
+      so removing d_i collapses the distance to approximately zero. Each dimension is therefore
+      necessary. (Conditional on the §3 pairs being approximately matched off-focus.)
+    conditions: "C1"
+    antecedents: [P6]
+    evidence:
+      - type: analytic
+        anchor: "Distance-dominance proof sketch; Hermès/Gucci worked example for the temporal dimension."
+    falsifier: "If a large observer-rating study finds that for some d_i no pair becomes indistinguishable on its removal, Proposition 1 is falsified."
+    body_sections: ["§4.1 Dimensional Non-Redundancy"]
+  - id: P8
+    statement: >-
+      (Proposition 2, Minimal Completeness) No proper subset of the eight dimensions covers all
+      established meaning-transmission channels: the one-tradition-to-one-channel mapping is
+      injective, so removing any dimension leaves the meaning channel of its tradition uncovered
+      (e.g. removing Temporal loses heritage/nostalgia/future-orientation as perception components).
+    conditions: ""
+    antecedents: [P4]
+    evidence:
+      - type: citation
+        anchor: "Each removed channel corresponds to empirically documented, tradition-studied phenomena."
+        citation_keys: [zimbardo-1999-putting-time-perspective]
+    falsifier: "If a survey with items for all eight channels yields a stable EFA solution with fewer than eight factors (two channels load on one factor across diverse samples), Proposition 2 is falsified."
+    body_sections: ["§4.2 Minimal Completeness"]
+  - id: P9
+    statement: >-
+      (Completeness via the candidate-ninth-dimension test) Five candidate ninth dimensions —
+      aesthetic, functional, ethical, digital, environmental — each reduce to combinations of
+      existing channels (aesthetic→semiotic+cultural; functional→experiential+economic+narrative;
+      ethical→ideological; digital→a medium re-routing existing channels; environmental→a content
+      domain processed through ideological+narrative+experiential+economic). None survives the
+      reduction test, so the eight channels are complete.
+    conditions: ""
+    antecedents: [P8]
+    evidence:
+      - type: analytic
+        anchor: "Constructive reduction of each of the five candidates (Figure 2 decomposition tree)."
+    body_sections: ["§5 Completeness: The Candidate Ninth Dimension Test"]
+  - id: P10
+    statement: >-
+      The MEANING-CHANNEL versus CONTENT-DOMAIN distinction is the principled stopping rule:
+      channels are transmission pathways (rows); content domains are semantic fields a brand
+      may address (columns); any content domain travels through multiple channels and no content
+      domain is itself a channel. Confusing the two is the most common source of dimension-
+      counting errors and is what prevents indefinite dimensional inflation.
+    conditions: ""
+    antecedents: [P9]
+    evidence:
+      - type: analytic
+        anchor: "Orthogonality of channels and content domains (Figure 1)."
+    body_sections: ["§5.7 Synthesis"]
+  - id: P11
+    statement: >-
+      The eight-dimensional taxonomy is a SUPERSET of competing frameworks: every dimension of
+      Aaker's brand personality, Keller's CBBE, Kapferer's prism, De Chernatony's roles,
+      Holbrook's value typology, and Sheth et al.'s consumption values maps onto one or more SBT
+      channels, while no alternative covers all eight (Economic and Temporal are SBT-only). This
+      is the empirical signature of completeness, and it reveals the cost of under-dimensionality.
+    conditions: ""
+    antecedents: [P4]
+    evidence:
+      - type: citation
+        anchor: "Explicit framework-to-SBT mappings (Tables in §6; Table 5 coverage summary)."
+        citation_keys: [aaker-1997-dimensions-brand-personality, keller-1993-conceptualizing-measuring-managing, kapferer-2008-new-strategic-brand, holbrook-1999-consumer-value-framework, sheth-1991-why-we-buy]
+    body_sections: ["§6 Comparison with Alternative Taxonomies"]
+  - id: P12
+    statement: >-
+      (Proposition 3, Projection Consistency) Concentration of measure on the simplex predicts
+      that a k≤3 dimensional projection of 8D brand profiles captures the majority of
+      between-brand variance while losing the within-profile SHAPE information that distinguishes
+      coherence types. Low-dimensional MDS solutions are therefore a useful MAP, not the
+      TERRITORY: their "sufficiency" is a feature of the projection (and of artificially sharp
+      low-dimensional boundaries), not a property of perceptual reality.
+    conditions: ""
+    antecedents: [P4]
+    evidence:
+      - type: derivation
+        anchor: "Concentration-of-measure results imported from 2026f (boundary fractions) and 2026e (projection information bounds)."
+    falsifier: "If a survey with items for all eight channels yields lower-variance factors that carry no incremental discriminative information beyond the first 2–3 (coherence types fully recoverable from low-D projection), Proposition 3 is falsified."
+    body_sections: ["§7 Why Two to Three Dimensions Appear Sufficient"]
+
+# ============================================================================
+# Derivations — quantitative anchors imported from the geometry papers
+# ============================================================================
+derivations:
+  - id: D1
+    statement: >-
+      On the simplex Δ^7, the Euclidean distance contrast ratio max_d/min_d ≈ 8.35 at n=8 vs
+      5801 at n=2, and 57% of the volume of Δ^7 lies within relative distance δ=0.10 of a
+      partition boundary (vs 10% at n=2 on Δ^1). Projecting R^8→R^1 retains at most 11.6% of
+      the available information in bits.
+    inputs: ["2026f concentration-of-measure results", "2026e projection bounds"]
+    antecedents: [P12]
+    body_sections: ["§7.2 Concentration of Measure", "§7.3 Variance Dominance versus Information Content"]
+
+# ============================================================================
+# Findings — what the §8A empirical robustness test demonstrates
+# ============================================================================
+findings:
+  - id: F1
+    statement: >-
+      (RQ1) The DCI cross-model ranking is ROBUST to dimension reduction but every removal
+      sacrifices information: all drop-one cosines exceed .994 and all drop-pair cosines exceed
+      .993, with the DCI-component dimensions (Economic, Semiotic) most disruptive. No single
+      dimension is indispensable, yet the ranking is overdetermined rather than reducible.
+    type: "empirical_confirmation"
+    source_measurements: [m_droponce_floor, m_droppair_floor]
+    generating_method: M1
+    antecedents: [O1]
+    citation_role_in_paper: "empirical_support_for_P7"
+    body_sections: ["§8A Experiments 1–2", "§8A Summary"]
+  - id: F2
+    statement: >-
+      (RQ2) Expanding to ten dimensions by subdividing existing channels adds NO discriminative
+      power to the cross-model ranking (rho = .9997, cosine = 1.000, displacement 0.09),
+      confirming that subdivision yields granularity without new information — beyond eight is
+      redundant for the collapse phenomenon. (Whether a genuinely new orthogonal dimension would
+      add power is not tested.)
+    type: "empirical_confirmation"
+    source_measurements: [m_expansion_null]
+    generating_method: M3
+    antecedents: [O1]
+    citation_role_in_paper: "empirical_support_for_P9_P10"
+    body_sections: ["§8A Experiment 3", "§8A Summary"]
+  - id: F3
+    statement: >-
+      (RQ3) All eight dimensions carry non-trivial cross-model variance (5.4–18.7%), none below
+      5.4%; the dimensions least disruptive to DCI ranking (Cultural 17.3%, Ideological 16.7%)
+      carry the highest variance after Economic and are the primary sources of inter-model
+      DISAGREEMENT (removing them raises mean pairwise profile cosine .976→.980), while Economic
+      and Experiential are the primary sources of inter-model AGREEMENT. Eight sits at the
+      resolution limit: every dimension contributes measurable variation; below eight sacrifices
+      variance, beyond eight introduces redundancy.
+    type: "empirical_confirmation"
+    source_measurements: [m_variance_share, m_dci_baseline]
+    generating_method: M4
+    antecedents: [O1]
+    citation_role_in_paper: "empirical_support_for_P8"
+    body_sections: ["§8A Tables 3–4", "§8A Summary"]
+
+# ============================================================================
+# Alternative explanations — rivals the dimensional-count claim must clear
+# ============================================================================
+alternative_explanations:
+  - id: A1
+    statement: >-
+      The eight count is just one more arbitrary choice (like Aaker's 5 or Kapferer's 6),
+      dressed up as a derivation but really chosen for convenience or to integrate the author's
+      preferred traditions.
+    rules_out_required: [P8, P9]
+    ruled_out_by: [P9, P10, F1, F2, F3]
+    rules_out_status: "rejected"
+    reasoning: >-
+      The count is fixed by the channel-vs-content-domain stopping rule (P10) and survives the
+      constructive reduction test for five candidate ninth dimensions (P9), the superset mapping
+      of all rival frameworks (P11), AND an independent empirical perturbation test where every
+      dimension carries 5–19% variance and subdivision adds nothing (F1–F3). Holbrook's
+      independently derived eight-type value typology converging on the same count is suggestive,
+      not proof.
+    body_sections: ["§5", "§6", "§8A"]
+  - id: A2
+    statement: >-
+      MDS's robust two-to-three-dimension finding shows brand perception is genuinely
+      low-dimensional, falsifying the eight-channel claim.
+    rules_out_required: [P12]
+    ruled_out_by: [P12, D1]
+    rules_out_status: "rejected"
+    reasoning: >-
+      Resolved by concentration of measure (P12, D1): low-D projections capture most variance
+      while discarding profile-shape information; the apparent sufficiency is a map property and
+      an input-variable artifact (MDS cannot recover channels its instrument never measured), not
+      a property of the territory. MDS is incomplete, not wrong.
+    body_sections: ["§7 Why Two to Three Dimensions Appear Sufficient"]
+
+# ============================================================================
+# Limitations — honest scope of the completeness-and-necessity claim
+# ============================================================================
+limitations:
+  - id: L1
+    statement: >-
+      The completeness argument is THEORETICAL, not empirical: it rests on a scholarly inventory
+      of academic traditions, not on human-subject factor analysis. Some dimensions may merge
+      under EFA (e.g. semiotic and cultural loading on one factor), or unanticipated dimensions
+      may emerge. §8A's AI-observer test partially addresses this but a definitive test requires
+      human-subject factor analysis.
+    severity: "scope-bounding"
+    affects: [P8, P9]
+    body_sections: ["§8 Limitations"]
+  - id: L2
+    statement: >-
+      The independence examples (§3) are illustrative judgments about brand positioning, not
+      measured observer spectral profiles; formal psychometric independence requires a large-scale
+      study rating many brands across all eight dimensions and analyzing inter-dimensional
+      correlations.
+    severity: "evidential"
+    affects: [P6, P7]
+    body_sections: ["§3.1 Independence Criterion", "§8 Limitations"]
+  - id: L3
+    statement: >-
+      The enumeration assumes Western academic traditions; non-Western philosophical systems
+      (Chinese yi integrating form/meaning/morality; Islamic muamalat integrating economic and
+      ethical reasoning) and holistic-vs-analytic processing differences may carve the meaning
+      space differently. Cross-cultural brand-personality work shows culture-specific factors
+      (Peacefulness in Japan, Passion in Spain), illustrating the empirical form such variation
+      could take.
+    severity: "scope-bounding"
+    affects: [P4, P8]
+    body_sections: ["§8 Limitations (Western-traditions limitation)"]
+  - id: L4
+    statement: >-
+      The temporal dimension is the least established in prior brand theory (Zimbardo & Boyd's
+      time-perspective theory was built for individual psychology, not brands), occupying a
+      position parallel to HEXACO's theoretically motivated Honesty-Humility factor before
+      large-scale validation. It may prove to be an attribute of specific heritage/future-oriented
+      brands rather than a universal channel.
+    severity: "evidential"
+    affects: [P4]
+    body_sections: ["§8 Limitations (temporal-dimension limitation)"]
+  - id: L5
+    statement: >-
+      §8A's research questions were specified AFTER the R15 data were collected and are therefore
+      exploratory, not confirmatory; results are illustrative support for the theoretical
+      argument, not pre-registered hypothesis tests. The DCI numerator structure (Economic +
+      Semiotic) imposes a mechanical asymmetry on Table 1 that must be borne in mind.
+    severity: "methodological"
+    affects: [F1, F2, F3]
+    body_sections: ["§8A (research-questions caveat; Table 1 structural-asymmetry note)"]
+
+# ============================================================================
+# Negative findings — what under-dimensional frameworks cannot represent
+# ============================================================================
+negative_findings:
+  - id: NF1
+    statement: >-
+      No surveyed alternative framework covers the Economic (price-as-signal) or Temporal
+      (heritage/nostalgia/future) channels as primary dimensions: Aaker's five-factor model
+      cannot distinguish brands differing primarily on economic or temporal dimensions, and
+      Kapferer's prism cannot represent price-as-signal or heritage-as-perception. These are
+      entire meaning channels left unrepresented — the cost of under-dimensionality.
+    expected_observation: "A prior brand framework with a primary economic-signal or temporal-heritage dimension."
+    source_method: M4
+    affects_nodes: [P8, P11]
+    motivates: [P4, P11]
+    body_sections: ["§6.4 Assessment", "Table 5 (Economic and Temporal SBT-only)"]
+
+# ============================================================================
+# Cross-paper engagement
+# ============================================================================
+corpus_precedents:
+  - paper_key: 2026a
+    relationship: refines
+    spine_nodes: [P4, P8, P9]
+    note: >-
+      R11 supplies the completeness-and-necessity argument for the eight-dimension taxonomy that
+      Spectral Brand Theory (2026a, P2) asserts — the dimensional-justification refinement of the
+      foundational framework's dimensional count.
+  - paper_key: 2026c
+    relationship: extends
+    spine_nodes: [P1, P4]
+    note: >-
+      Synthesizes the cross-disciplinary geometric-perception survey (2026c) into the
+      meaning-channel enumeration; the dimension-selection problem is the survey's open question.
+  - paper_key: 2026e
+    relationship: applies
+    spine_nodes: [P12, D1]
+    note: >-
+      Imports the projection information-loss bound (R^8→R^1 retains ≤11.6% of bits) to show
+      low-D projections discard profile-shape information.
+  - paper_key: 2026f
+    relationship: applies
+    spine_nodes: [P12, D1]
+    note: >-
+      Imports the concentration-of-measure boundary results (57% of Δ^7 near a partition boundary;
+      contrast ratio 8.35 at n=8) to resolve the MDS dimensionality puzzle.
+  - paper_key: 2026v
+    relationship: tests
+    spine_nodes: [F1, F2, F3]
+    note: >-
+      §8A reuses R15 (2026v) cross-cultural LLM weight profiles (22 models, 11,298 calls) as the
+      empirical substrate for the dimension-robustness test; the dimensional collapse R15
+      documented is confirmed (baseline DCI .356 > .250).
+
+# ============================================================================
+# External anchor literature
+# ============================================================================
+external_anchors:
+  - {citation_key: aaker-1997-dimensions-brand-personality, role: rival_framework, spine_nodes: [P1, P11], note: "Brand personality 5 factors — the empirical-discovery exemplar SBT contrasts with"}
+  - {citation_key: kapferer-2008-new-strategic-brand, role: rival_framework, spine_nodes: [P1, P11], note: "Brand identity prism 6 facets — missing economic + temporal"}
+  - {citation_key: keller-1993-conceptualizing-measuring-managing, role: rival_framework, spine_nodes: [P11], note: "CBBE — hierarchical, not flat dimensional"}
+  - {citation_key: holbrook-1999-consumer-value-framework, role: convergent_count, spine_nodes: [P11], note: "Eight value types — independently derived count converging on eight"}
+  - {citation_key: sheth-1991-why-we-buy, role: rival_framework, spine_nodes: [P11], note: "Five consumption values — theory-derived, maps into SBT channels"}
+  - {citation_key: rossiter-2002-coarse-procedure-scale, role: methodological_warrant, spine_nodes: [P2], note: "C-OAR-SE — conceptual analysis can precede/supersede factor analysis; SBT adds the completeness test"}
+  - {citation_key: borsboom-2003-theoretical-status-latent, role: methodological_warrant, spine_nodes: [P2], note: "Factor analysis cannot identify construct domains from within"}
+  - {citation_key: flake-2020-measurement-schmeasurement-questionable, role: methodological_warrant, spine_nodes: [P2], note: "Dimensionality-by-convenience as a questionable measurement practice"}
+  - {citation_key: churchill-1979-paradigm-developing-better, role: methodological_warrant, spine_nodes: [P2], note: "Domain specification before item generation"}
+  - {citation_key: slaney-2017-validating-psychological-constructs, role: methodological_warrant, spine_nodes: [P3], note: "Construct-domain completeness = grounded + relevant + non-redundant"}
+  - {citation_key: macinnis-2011-framework-conceptual-contributions, role: contribution_framing, spine_nodes: [P10], note: "Explicating contributions as durable conceptual advances"}
+  - {citation_key: brakus-2009-brand-experience-what, role: objection_anchor, spine_nodes: [P5], note: "Four experiential sub-dimensions — the channel-vs-factor objection SBT answers"}
+  - {citation_key: spence-1973-job-market-signaling, role: tradition_anchor, spine_nodes: [P4], note: "Signaling theory — the economic channel's foundational tradition"}
+  - {citation_key: holt-2004-how-brands-become, role: tradition_anchor, spine_nodes: [P4], note: "Iconic/cultural branding — ideological and cultural channels"}
+  - {citation_key: mccracken-1986-culture-consumption-theoretical, role: tradition_anchor, spine_nodes: [P4], note: "Cultural meaning transfer — the cultural channel"}
+  - {citation_key: zimbardo-1999-putting-time-perspective, role: tradition_anchor, spine_nodes: [P4, P8, L4], note: "Time-perspective theory — the temporal channel (individual-psychology origin)"}
+  - {citation_key: schwartz-1992-universals-content-structure, role: tradition_anchor, spine_nodes: [P4], note: "Universal value structure underlying ideological positioning"}
+  - {citation_key: erdem-1998-brand-equity-as, role: tradition_anchor, spine_nodes: [P4], note: "Brand equity as signaling — direct precursor to the economic dimension"}
+  - {citation_key: ashton-2007-empirical-theoretical-practical, role: precedent_method, spine_nodes: [P4, L4], note: "HEXACO — theory-motivated dimension before factorial confirmation (temporal analogy)"}
+  - {citation_key: bijmolt-1999-comparison-multidimensional-scaling, role: empirical_challenge, spine_nodes: [P1, P12], note: "MDS 2–3 dimensions — the strongest empirical challenge resolved in §7"}
+  - {citation_key: khamitov-2019-how-well-do, role: validation_pointer, spine_nodes: [L1], note: "Meta-analysis — predictive-validity benchmark for future SBT validation"}
+  - {citation_key: aaker-2001-consumption-symbols-as, role: limitation_evidence, spine_nodes: [L3], note: "Culture-specific brand-personality factors (Japan/Spain) — cross-cultural variation form"}
+  - {citation_key: nisbett-2001-culture-systems-thought, role: limitation_evidence, spine_nodes: [L3], note: "Holistic-vs-analytic processing styles — cross-cultural channel-weighting concern"}
+
+# ============================================================================
+# Open questions / boundary edges
+# ============================================================================
+open:
+  - "Does a large-scale human-subject EFA with dedicated items for all eight channels recover eight factors, and do the lower-variance factors carry incremental discriminative information about coherence types? (the definitive test; L1)"
+  - "Do observer-rated spectral profiles confirm the §3 witness pairs are approximately matched off-focus, or do they show substantial residual non-focal distance? (L2, falsifier of P6/P7)"
+  - "Does a culturally universal version of the completeness argument hold — do non-Western traditions (yi, muamalat) address the same eight channels under different internal structure, or genuinely add/merge channels? (L3)"
+  - "Is the temporal dimension a universal channel all brands emit on, or an attribute of specific heritage/future-oriented brands? (L4)"
+  - "Would adding a genuinely NEW orthogonal dimension (not a subdivision) add discriminative power, unlike the §8A 10D subdivision test? (F2 boundary)"
+
+# ============================================================================
+# Spine changelog — append-only
+# ============================================================================

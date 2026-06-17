@@ -1,0 +1,716 @@
+# SPINE.yaml — Geometric Necessity of Fuzzy Cohort Boundaries (2026f / R3)
+#
+# RETROFIT spine: extracted descriptively from the completed paper.md, not
+# authored generatively before prose (CLAUDE.md rule 0aa / publication pipeline
+# decision D4). Reflects the paper's ACTUAL argument backbone as written.
+#
+# Schema v0.2 ([internal path removed] §"SPINE.yaml schema
+# (v0.2)"): R3 is a formal-math paper that also reports author-produced Monte
+# Carlo / simulation outputs and computed table values (Tables 2, 5, 7), so it
+# carries an observation → method → measurement → finding chain for its headline
+# results in addition to the analytic propositions/derivations.
+
+spine_version: "0.2"
+spine_doc_version: "0.1.0"     # retrofit spine first lock (2026-06-14)
+paper_key: "2026f"
+provenance: retrofit
+title: >-
+  Geometric Necessity of Fuzzy Cohort Boundaries: A Concentration Analysis of
+  the 7-Simplex
+target_venue_primary: "TBD (SBT geometric-program working paper, v1.2.0)"
+status: >-
+  Retrofit backbone spine extracted 2026-06-14 from completed paper.md
+  (Working Paper v1.2.0, March 2026; Zenodo DOI 10.5281/zenodo.18945477).
+
+thesis: |
+  In the eight-dimensional probability simplex Delta^7 that serves as Spectral
+  Brand Theory's observer weight space, the fuzziness of perceptual cohort
+  boundaries is not a measurement artifact, an algorithmic limitation, or an
+  empirical curiosity — it is a geometric necessity under the uniform
+  Dirichlet(1,...,1) null. Concentration of measure forces (i) pairwise
+  distances to concentrate around their mean, degrading the distance contrast
+  ratio to ~7.5 at n=8 (a transitional regime: clustering is informative but
+  noisy); (ii) at least 52.2% of Delta^7 to lie within relative distance
+  delta=.10 of ANY convex partition boundary, so a majority of observer
+  profiles sit near a cohort boundary and discrete assignment is inherently
+  unstable; and (iii) Levy concentration on S^7 to bound 1-Lipschitz deviations.
+  Monte Carlo with 10^5 draws confirms the bounds within sampling error. The
+  uniform null is the WORST case: symmetric Dirichlet(alpha,...,alpha) with
+  alpha>=3 reduces the boundary fraction by alpha^{-7/2}, producing
+  operationally crisp boundaries (below 2%) for empirically plausible alpha.
+  Together these give a geometric foundation for preferring continuous observer
+  profiles ("vectorized") over discrete cohort labels ("rasterized") once
+  perceptual dimensionality exceeds five, and define a capacity-resolution
+  duality dual to the R4 sphere-packing bound.
+
+# ============================================================================
+# Boundary conditions — when the claims hold
+# ============================================================================
+boundary_conditions:
+  - id: C1
+    statement: >-
+      Observer perception is represented as a compositional weight vector
+      w in Delta^{n-1} (the SBT observer spectral profile's weight component),
+      with the eight SBT dimensions taken as given (n=8); the perceptual
+      dimensionality exceeds about five.
+    observable: "An 8-dimensional sum-to-one observer weight vector on Delta^7."
+    excludes: "Low-dimensional (n<=3) perceptual maps where boundaries stay sharp."
+  - id: C2
+    statement: >-
+      Cohort regions are CONVEX partitions of Delta^{n-1} (satisfied by k-means
+      Voronoi cells and well-separated Gaussian mixtures; not by density-based
+      clustering that yields non-convex regions).
+    observable: "A convex k-partition (k>=2) of the simplex."
+    excludes: "DBSCAN/HDBSCAN non-convex regions; subspace-restricted clustering."
+  - id: C3
+    statement: >-
+      Observer weights are drawn from the symmetric Dirichlet(alpha,...,alpha)
+      family on the simplex; the headline bounds use the uniform alpha=1 null,
+      with alpha>1 treated as the empirically relevant calibration.
+    observable: "A symmetric-alpha Dirichlet model of the observer population."
+    excludes: "Asymmetric Dirichlet(alpha_1,...,alpha_8) or sparse (alpha<1) regimes (left to future work)."
+
+# ============================================================================
+# Assumption atoms — load-bearing modeling assumptions
+# ============================================================================
+assumption_atoms:
+  - id: AA1
+    statement: >-
+      The uniform Dirichlet(1,...,1) distribution is a WORST-CASE mathematical
+      null for boundary fuzziness, NOT an empirical model claiming observer
+      populations are uniformly distributed.
+    body_sections: ["§3.2 Concentration on Delta^7 via the Dirichlet Distribution"]
+  - id: AA2
+    statement: >-
+      Distance computations in §§3.1-3.3 and 4-5 use Euclidean distance on
+      Delta^{n-1} for tractability, while SBT's canonical observer-space metric
+      is Fisher-Rao; via the square-root isometry to S^7_+, Levy concentration
+      applies directly and the bounds transfer (recomputed in §3.4).
+    body_sections: ["§3.1 (Assumption box)", "§3.4 Fisher-Rao Recalculation"]
+
+# ============================================================================
+# Observations — the Monte Carlo simulation runs (author-produced evidence)
+# ============================================================================
+observations:
+  - id: O1
+    statement: >-
+      Monte Carlo simulation drawing m=1000 i.i.d. points from Dir(1,...,1) on
+      Delta^{n-1} for n in {2,4,8,16,32}, averaged over 10^4 trials, recording
+      max/min Euclidean distance ratio, mean distance, and SD (Table 2).
+    raw_data_pointer: "code/r3_concentration_mc.py (companion repo, seed 42)"
+    instrument: "numpy + scikit-learn Dirichlet sampler"
+    timestamp: "2026-03"
+    provenance:
+      created_by: "tool:r3_concentration_mc.py"
+      created_at: "2026-03"
+    body_sections: ["§5.1 Distance Ratio Simulations"]
+  - id: O2
+    statement: >-
+      Monte Carlo boundary-proximity study: m=10^5 points from Dir(1,...,1) on
+      Delta^7, k-means with k=4 to obtain convex Voronoi regions, then the
+      fraction of points within absolute Euclidean distance delta of the nearest
+      cluster boundary at delta in {.05,.10,.20} (Table 5).
+    raw_data_pointer: "code/r3_concentration_mc.py (companion repo, seed 42)"
+    instrument: "numpy + scikit-learn k-means (k=4)"
+    timestamp: "2026-03"
+    provenance:
+      created_by: "tool:r3_concentration_mc.py"
+      created_at: "2026-03"
+    body_sections: ["§5.2 Boundary Proximity Simulations"]
+  - id: O3
+    statement: >-
+      Two-metric Monte Carlo recomputation of the n=8 distance contrast ratio
+      under both Euclidean and Fisher-Rao (geodesic on S^7_+ via square-root
+      isometry), m=1000, 10^4 trials (Table 7).
+    raw_data_pointer: "code/r3_concentration_mc.py (companion repo, seed 42)"
+    instrument: "numpy; square-root transform to S^7_+ of radius 2"
+    timestamp: "2026-03"
+    provenance:
+      created_by: "tool:r3_concentration_mc.py"
+      created_at: "2026-03"
+    body_sections: ["§3.4 Fisher-Rao Recalculation"]
+
+# ============================================================================
+# Methods — analytic derivations and the simulation harness
+# ============================================================================
+methods:
+  - id: M1
+    statement: >-
+      Dirichlet moment computation: from the marginal moment formulas for
+      Dir(alpha,...,alpha), derive component mean 1/n, variance
+      (1/n)(1-1/n)/(n alpha+1), and negative covariance, then propagate to the
+      expected squared pairwise Euclidean distance E[||w_i - w_j||^2] =
+      2(n-1)/(n(n+1)) = 7/36 at n=8 (Proposition 2, Theorem 1a).
+    type: "analytic_derivation"
+    inputs: ["Dirichlet moment formulas (Johnson & Kotz 1972)"]
+    outputs: ["component moments; expected pairwise distance 7/36"]
+    code_anchor: "paper §3.2 Prop 2; §3.3 Thm 1a proof"
+    body_sections: ["§3.2", "§3.3 Beyer's Distance Contrast Phenomenon"]
+  - id: M2
+    statement: >-
+      Brunn-Minkowski peeling on convex partitions: the homothet of each cell
+      scaled by (1-delta) bounds the interior-volume fraction; since Delta^{n-1}
+      has intrinsic dimension n-1, Lebesgue measure scales as the (n-1)th power
+      of linear size, yielding the boundary volume fraction lower bound
+      BVF(n,delta) >= 1 - (1-delta)^{n-1}.
+    type: "analytic_derivation"
+    inputs: ["convex k-partition", "Schneider 2014 Brunn-Minkowski toolkit"]
+    outputs: ["BVF(n,delta) >= 1 - (1-delta)^{n-1}"]
+    code_anchor: "paper §4.2 Theorem 2 proof"
+    body_sections: ["§4.2 Boundary Fraction Theorem for Convex Partitions"]
+  - id: M3
+    statement: >-
+      Sphere-isometry route to concentration: the square-root transform maps
+      Delta^{n-1} isometrically to S^{n-1}_+ so that Fisher-Rao distance becomes
+      geodesic distance; Levy's lemma / the Gaussian isoperimetric inequality on
+      the sphere (log-Sobolev constant (n-1)^{-1}, Herbst argument) yields
+      P(|f - M_f| >= eps) <= 4 exp(-(n-1)eps^2/8). The Dirichlet is not a product
+      measure, so Talagrand's product-space bounds do not apply directly.
+    type: "analytic_derivation"
+    inputs: ["square-root isometry Delta^{n-1} -> S^{n-1}_+", "Milman-Schechtman 1986"]
+    outputs: ["Levy bound on S^7: 4 exp(-7 eps^2/8)"]
+    code_anchor: "paper §3.1 Proposition 1 proof"
+    body_sections: ["§3.1 Levy's Lemma and Spherical Concentration"]
+  - id: M4
+    statement: >-
+      Monte Carlo harness: draw Dirichlet samples, compute Euclidean and
+      Fisher-Rao distance statistics, run k-means at k=4, and report boundary
+      volume fractions under both metrics; seed fixed at 42, run via
+      `uv run --with numpy --with scikit-learn python r3_concentration_mc.py`.
+    type: "simulation"
+    inputs: ["Dir(1,...,1) on Delta^{n-1}"]
+    outputs: ["Tables 2, 5, 7"]
+    code_anchor: "code/r3_concentration_mc.py"
+    reproducibility:
+      seed: "42"
+      runtime_environment: "Python 3.12 + uv (numpy, scikit-learn)"
+    body_sections: ["§5.3 Companion Computation Script"]
+  - id: M5
+    statement: >-
+      Concentrated-Dirichlet scaling derivation: via Stirling on the normalizing
+      constant Gamma(n alpha)/Gamma(alpha)^n and log-concavity of f_alpha for
+      alpha>=1, the probability mass of a fixed convex boundary zone contracts by
+      the product of (n-1) per-direction factors alpha^{-1/2}, giving
+      V_boundary(alpha) <= V_boundary(1) * alpha^{-(n-1)/2} = alpha^{-3.5} at n=8.
+    type: "analytic_derivation"
+    inputs: ["Dir(alpha,...,alpha) density", "Frigyik et al. 2010 concentration scaling"]
+    outputs: ["V_boundary(alpha) <= V_boundary(1) * alpha^{-7/2}"]
+    code_anchor: "paper §8.2 Proposition 3 proof"
+    body_sections: ["§8.2 Boundary Volume Fraction Under Dirichlet(alpha)"]
+
+# ============================================================================
+# Measurements — the headline computed/derived numbers
+# ============================================================================
+measurements:
+  - id: m_contrast
+    statement: >-
+      Distance contrast ratio R_8 = 7.46 (Euclidean) at n=8 (mean Euclidean
+      distance .4254, SD .1052, CV .247); the transitional regime R_8 in [5,10].
+    source_observations: [O1]
+    generating_method: M4
+    value: "R_8 = 7.46 (Euclidean)"
+    units: "max/min distance ratio"
+    body_sections: ["§3.3 Table 2", "§5.1"]
+  - id: m_bvf
+    statement: >-
+      Boundary volume fraction lower bound BVF(8, .10) >= 52.2% (= 1 - .9^7) at
+      the intrinsic-dimension exponent n-1=7; the earlier ambient-dimension
+      figure 57.0% is the conservative variant.
+    source_observations: []
+    generating_method: M2
+    value: "BVF(8, .10) >= .522"
+    units: "volume fraction of Delta^7"
+    body_sections: ["§4.2 Table 3", "§4.2 Theorem 2"]
+  - id: m_bvf_empirical
+    statement: >-
+      Empirical boundary fractions (k=4 Voronoi, 10^5 samples) of 35.9% / 62.5% /
+      91.6% at delta = .05 / .10 / .20, consistently exceeding the Theorem 2
+      lower bounds (30.2% / 52.2% / 79.0%) by 6-13 points as expected for k>=3.
+    source_observations: [O2]
+    generating_method: M4
+    value: "62.5% at delta=.10 (empirical, k=4)"
+    units: "volume fraction"
+    body_sections: ["§5.2 Table 5"]
+  - id: m_fisher_rao
+    statement: >-
+      Fisher-Rao contrast ratio R_8 = 5.72 (~70% of Euclidean), mean geodesic
+      distance 1.22 rad, CV .230 — same transitional regime; the BVF bound
+      1 - (1-delta)^{n-1} transfers verbatim (52.2% at delta=.10).
+    source_observations: [O3]
+    generating_method: M4
+    value: "R_8^{FR} = 5.72; BVF^{FR}(8,.10) >= .522"
+    units: "ratio; volume fraction"
+    body_sections: ["§3.4 Table 7"]
+  - id: m_alpha_scaling
+    statement: >-
+      Concentration factor alpha^{-3.5} sends the uniform 52.2% boundary fraction
+      to <=1.12% at alpha=3 and <=.187% at alpha=5; empirical behavioral alpha in
+      [3,10] gives boundary fractions in roughly .02-3.7% (operationally crisp).
+    source_observations: []
+    generating_method: M5
+    value: "V_boundary(3) <= 1.12% ; V_boundary(5) <= .187%"
+    units: "volume fraction"
+    body_sections: ["§8.3 Table 6", "§8.4"]
+
+# ============================================================================
+# Propositions — the core theoretical claims
+# ============================================================================
+propositions:
+  - id: P1
+    statement: >-
+      The SBT observer spectral profile contains a weight vector
+      w = (w_1,...,w_8) in Delta^7 (sum-to-one finite-attention allocation across
+      the eight dimensions), and the observer weight space is the probability
+      simplex Delta^7 equipped with the Fisher-Rao metric (the unique metric
+      invariant under sufficient statistics, Cencov's theorem).
+    conditions: "C1"
+    antecedents: []
+    evidence:
+      - type: analytic
+        anchor: "SBT dimensional architecture + Fisher-Rao / Cencov uniqueness, established in 2026a and 2026d."
+    body_sections: ["§2.1 SBT Framework", "§2.2 The Observer Weight Space"]
+  - id: P2
+    statement: >-
+      A perceptual cohort is a cluster of observers whose weight profiles are
+      geometrically proximate in Delta^7 — defined by HOW observers process
+      signals (signal-interpretation), not by who they are demographically;
+      cohorts are perceptual, not demographic segments.
+    conditions: "C1"
+    antecedents: [P1]
+    evidence:
+      - type: analytic
+        anchor: "Signal-processing basis for cohort formation; brand-as-signal tradition (Erdem & Swait 1998)."
+    body_sections: ["§2.1 SBT Framework and Dimensional Architecture"]
+  - id: P3
+    statement: >-
+      Levy concentration holds on S^7: for any 1-Lipschitz f,
+      P(|f - M_f| >= eps) <= 4 exp(-7 eps^2/8). The bound becomes non-trivial
+      only for eps >= 1.07, placing n=8 in a transitional concentration regime
+      (present but not dominant), and any Lipschitz function of observer position
+      — including distance to a cohort centroid — cannot vary much from typical.
+    conditions: "C1, AA2"
+    antecedents: [P1]
+    evidence:
+      - type: analytic
+        anchor: "Proposition 1; sphere-isometry route via Milman-Schechtman; blowup inequality on sets of measure >= 1/2."
+    falsifier: "If a 1-Lipschitz function on S^7 deviates from its median more often than 4 exp(-7 eps^2/8) allows, P3 fails."
+    body_sections: ["§3.1 Levy's Lemma and Spherical Concentration"]
+  - id: P4
+    statement: >-
+      Pairwise distances on Delta^7 concentrate (Theorem 1): the expected
+      squared Euclidean distance is 2(n-1)/(n(n+1)) = 7/36 at n=8, and the
+      distance contrast ratio R_n degrades monotonically with dimension to
+      R_8 ~ 7.46 — a transitional regime where clustering is POSSIBLE (distances
+      carry discriminative information) but INHERENTLY NOISY (the nearby/far-away
+      boundary is blurred), so the recovered cluster count depends sensitively on
+      the algorithm's distance threshold.
+    conditions: "C1, C3, AA1"
+    antecedents: [P1, P3]
+    evidence:
+      - type: analytic
+        anchor: "Theorem 1; Beyer et al. (1999) distance-concentration framework; CV_n ~ O(n^{-1/2})."
+      - type: empirical
+        anchor: "Monte Carlo Table 2 / §5.1 (m_contrast)."
+    falsifier: "If empirical Dir(1,...,1) draws at n=8 show component variance differing from 1/[n(n+1)]=.012 beyond sampling error (Prop 2 falsifier), or R_8 far from 7.46, P4 fails."
+    body_sections: ["§3.3 Beyer's Distance Contrast Phenomenon", "§5.1"]
+  - id: P5
+    statement: >-
+      Boundary fuzziness theorem (Theorem 2): for ANY convex k-partition (k>=2)
+      of Delta^{n-1}, the boundary volume fraction satisfies
+      BVF(n,delta) >= 1 - (1-delta)^{n-1}; at n=8, delta=.10 this is >= 52.2%, so
+      a MAJORITY of observer profiles lie within 10% relative distance of some
+      cohort boundary. The (n-1) exponent is the simplex's intrinsic dimension;
+      the bound is conservative for k>=3.
+    conditions: "C1, C2, AA1"
+    antecedents: [P1]
+    evidence:
+      - type: analytic
+        anchor: "Theorem 2; Brunn-Minkowski peeling (Schneider 2014, Vershynin 2018)."
+      - type: empirical
+        anchor: "Monte Carlo k=4 Voronoi Table 5: empirical 62.5% at delta=.10 exceeds bound (m_bvf, m_bvf_empirical)."
+    falsifier: "If a convex k-partition of Dir(1,...,1) draws on Delta^7 puts fewer than 52% of profiles within 10% relative distance of a boundary, P5 fails."
+    body_sections: ["§4.2 Boundary Fraction Theorem for Convex Partitions"]
+  - id: P6
+    statement: >-
+      The boundary fuzziness is GEOMETRIC, not statistical: Theorem 2 holds for
+      the deterministic geometric volume of the simplex regardless of sample
+      size. Unlike LDA posterior uncertainty (which sharpens with more data), a
+      researcher with arbitrarily many observations can locate w in Delta^7 with
+      arbitrary precision and still face >= 52% of those precise profiles near a
+      partition boundary — the fuzziness derives from Brunn-Minkowski, not data
+      sparsity.
+    conditions: "C1, C2"
+    antecedents: [P5]
+    evidence:
+      - type: analytic
+        anchor: "Geometric-vs-statistical distinction; contrast with LDA (Blei, Ng & Jordan 2003)."
+    body_sections: ["§3.2 (Geometric versus statistical fuzziness)"]
+  - id: P7
+    statement: >-
+      Boundary fuzziness scales with dimension: at delta=.10 the boundary
+      fraction rises from 10% at n=2 (sharp segments) to 52.2% at n=8 (majority
+      boundary) to 99.3% at n=48 (essentially all boundary). n ~ 5 is the
+      dimensionality threshold beyond which discrete assignment systematically
+      misrepresents a majority of the population.
+    conditions: "C1, C2"
+    antecedents: [P5]
+    evidence:
+      - type: analytic
+        anchor: "Table 4 cross-dimension comparison of BVF(n,.10)."
+    body_sections: ["§4.2 (Comparison across dimensions)"]
+  - id: P8
+    statement: >-
+      The uniform Dirichlet is the WORST case (Corollary 2): for fixed partition
+      geometry V_boundary(alpha) is strictly decreasing in alpha, so
+      symmetric Dir(alpha,...,alpha) with alpha>1 has strictly sharper boundaries
+      than the uniform bound. The reduction factor is alpha^{-(n-1)/2}=alpha^{-3.5}
+      at n=8 (Proposition 3), driving boundaries below 2% for empirically
+      plausible alpha in [3,10]. The fuzziness severity is therefore a calibration
+      result: the uniform null sets the maximum, and any empirical alpha sharpens it.
+    conditions: "C3"
+    antecedents: [P5]
+    evidence:
+      - type: analytic
+        anchor: "Proposition 3 + Corollary 2; Stirling + log-concavity Brunn-Minkowski argument."
+      - type: empirical
+        anchor: "Table 6 numerical values; behavioral alpha range [3,10] (Frigyik et al. 2010, Aitchison 1986)."
+    falsifier: "If for some alpha_1 > alpha_2 >= 1 a Monte Carlo study shows V_boundary(alpha_1) >= V_boundary(alpha_2), or the rate departs from alpha^{-3.5}, P8 fails (Prop 3 / Cor 2 falsifiers)."
+    body_sections: ["§8.2-§8.4 Boundary Fuzziness Under Concentrated Distributions"]
+  - id: P9
+    statement: >-
+      Corollary 1: dynamic, fuzzy cohort membership is geometrically NECESSARY
+      under the uniform null — because BVF(8,.10) >= 52.2% and the Dirichlet
+      component SD is .110 (perturbations of boundary-crossing magnitude are
+      typical), discrete cohort assignment for the majority of observers is
+      unstable under small perturbations of the weight profile or boundary
+      placement. The claim that cohort membership is dynamic and fuzzy (2026a) is
+      thus not merely empirical but a geometric necessity in 8-D perception space.
+    conditions: "C1, C2, AA1"
+    antecedents: [P5, P4]
+    evidence:
+      - type: analytic
+        anchor: "Corollary 1; SD .1102 from Proposition 2 makes boundary-crossing perturbations typical."
+    falsifier: "If a convex partition shows fewer than 50% of Dir(1,...,1) profiles within 10% relative distance of a boundary, Corollary 1 fails."
+    body_sections: ["§4.3 Implications for Cohort Cardinality"]
+  - id: P10
+    statement: >-
+      Cohort count is resolution-dependent, not an objective population feature:
+      because distances concentrate, the elbow-method WCSS curve is smooth rather
+      than kinked and silhouette scores are depressed, so different algorithms /
+      thresholds / initializations (or different AI models) recover different k
+      from identical data without any being more "correct." This formally
+      explains the motivating observation — Claude recovered 5-6 cohorts and
+      Gemini 3 cohorts for the same five case-study brands.
+    conditions: "C1, C2"
+    antecedents: [P4, P5]
+    evidence:
+      - type: analytic
+        anchor: "WCSS smoothness + silhouette depression from Theorem 1; cross-model granularity dissociation."
+      - type: self_application
+        anchor: "Cross-model replication in 2026a (identical coherence grades, divergent cohort granularities) is exactly what the geometry predicts."
+    body_sections: ["§6.1 Why Cohort Count Is Resolution-Dependent", "§6.2 Cross-Model Agreement as Evidence"]
+  - id: P11
+    statement: >-
+      Methodological prescription: discrete ("rasterized") cohort assignment is
+      geometrically lossy in 8 dimensions — it discards how close each observer
+      is to a boundary and which adjacent cohort they are nearest — and this loss
+      is the direct analogue of the R2 metamerism bound. The "vectorized"
+      alternative retains the continuous w in Delta^7 and computes distances,
+      means, geodesics, and predicted responses on the simplex directly via the
+      Fisher-Rao metric, avoiding the loss entirely. Source-anchored alignment
+      d_FR(w_observed, w_designed) is genuinely discriminating, unlike the
+      trivially-concentrated inter-stakeholder agreement of brand workshops.
+    conditions: "C1, C2"
+    antecedents: [P5, P7]
+    evidence:
+      - type: analytic
+        anchor: "Rasterized-vs-vectorized analysis; rasterization loss as metamerism analogue (2026e); source-vector anchoring breaks trivial concentration."
+    body_sections: ["§6.4 From Categorical Segments to Continuous Profiles"]
+  - id: P12
+    statement: >-
+      Capacity-resolution duality: R3's distance-concentration (Theorem 1) and
+      boundary-volume (Theorem 2) results bound how many distinguishable cohort
+      positions Delta^7 can resolve in observer space O — finer resolution
+      (larger k) shrinks each cohort's crisp interior while distance
+      concentration caps the count — which is DUAL to R4's sphere-packing bound
+      on how many brand positions are distinguishable in brand space B. Together
+      they bound the information the SBT framework can simultaneously encode.
+    conditions: "C1, C2"
+    antecedents: [P4, P5]
+    evidence:
+      - type: analytic
+        anchor: "Capacity-resolution trade-off; dual to 2026g packing bound (Conway & Sloane 1999)."
+    body_sections: ["§6.5 Capacity-Resolution Duality"]
+  - id: P13
+    statement: >-
+      Static concentration geometry interacts with non-ergodic dynamics: the wide
+      boundary zone (>= 52%) amplifies non-ergodic effects (a single
+      signal-driven boundary crossing can trigger an irreversible cohort
+      transition), and SBT's absorbing states / crystallized priors restrict the
+      dynamics to poorly connected subsets of S^7_+, breaking the conditions
+      under which Levy's lemma would predict uniform perception — explaining why
+      observers persistently perceive the same brand differently.
+    conditions: "C1"
+    antecedents: [P3, P5]
+    evidence:
+      - type: analytic
+        anchor: "Non-ergodicity (Peters 2019); bounded-confidence fragmentation (Hegselmann & Krause 2002); full dynamics deferred to 2026j."
+    body_sections: ["§7 Connection to Non-Ergodic Dynamics"]
+
+# ============================================================================
+# Derivations — key closed-form results
+# ============================================================================
+derivations:
+  - id: D1
+    statement: >-
+      E[||w_i - w_j||^2] = 2 sum_l Var[X_l] = 2(n-1)/(n(n+1)) = 7/36 ~ .1944 at
+      n=8 (sqrt ~ .4410); first derived in 2026d for the warped-product manifold,
+      recovered here directly from Dirichlet moments.
+    derived_from: [M1]
+    antecedents: [P4]
+    body_sections: ["§3.3 Theorem 1(a) proof"]
+  - id: D2
+    statement: >-
+      BVF(n,delta) >= 1 - (1-delta)^{n-1}, the intrinsic-dimension boundary
+      volume fraction, by Brunn-Minkowski peeling and the (n-1)-power scaling of
+      Lebesgue measure on the simplex; tight for centroid hyperplane bisections,
+      conservative for k>=3.
+    derived_from: [M2]
+    antecedents: [P5]
+    body_sections: ["§4.2 Theorem 2 proof"]
+  - id: D3
+    statement: >-
+      V_boundary(alpha) <= V_boundary(1) * alpha^{-(n-1)/2} = alpha^{-3.5} at
+      n=8, via Stirling on Gamma(n alpha)/Gamma(alpha)^n and (n-1) per-direction
+      log-concave contraction factors alpha^{-1/2}.
+    derived_from: [M5]
+    antecedents: [P8]
+    body_sections: ["§8.2 Proposition 3 proof"]
+
+# ============================================================================
+# Findings — what the simulations demonstrate
+# ============================================================================
+findings:
+  - id: F1
+    statement: >-
+      Monte Carlo confirms the distance-concentration prediction within sampling
+      error: at n=8, R_8 = 7.46, mean Euclidean distance .4254 (just below the
+      theoretical sqrt(7/36)=.4410, consistent with Jensen), SD .1052; and the
+      contrast ratio degrades monotonically from ~10^4 at n=2 to 2.47 at n=32.
+    type: "simulation_confirmation"
+    source_measurements: [m_contrast]
+    generating_method: M4
+    antecedents: [O1]
+    falsifier: "If repeated runs at seed 42 do not reproduce R_8 ~ 7.46 within the reported SE, F1 fails."
+    citation_role_in_paper: "primary_evidence_for_P4"
+    body_sections: ["§5.1 Distance Ratio Simulations"]
+  - id: F2
+    statement: >-
+      Monte Carlo confirms the boundary-volume bound: empirical k=4 Voronoi
+      fractions 35.9% / 62.5% / 91.6% at delta=.05/.10/.20 consistently exceed
+      the Theorem 2 lower bounds (30.2% / 52.2% / 79.0%) by 6-13 points, as
+      expected since the bound is conservative for k>=3 and multiple boundaries
+      contribute.
+    type: "simulation_confirmation"
+    source_measurements: [m_bvf, m_bvf_empirical]
+    generating_method: M4
+    antecedents: [O2]
+    falsifier: "If empirical k=4 boundary fractions fall below the Theorem 2 lower bound, F2 (and P5) fail."
+    citation_role_in_paper: "primary_evidence_for_P5"
+    body_sections: ["§5.2 Boundary Proximity Simulations"]
+  - id: F3
+    statement: >-
+      The qualitative conclusions hold under both metrics: Fisher-Rao gives
+      R_8 = 5.72 (~70% of Euclidean) in the same transitional regime, and the
+      boundary-volume bound is identical in form and value (52.2% at delta=.10)
+      because the square-root isometry preserves intrinsic dimension.
+    type: "robustness_confirmation"
+    source_measurements: [m_fisher_rao]
+    generating_method: M4
+    antecedents: [O3]
+    citation_role_in_paper: "supports_AA2_and_P3_P5"
+    body_sections: ["§3.4 Fisher-Rao Recalculation"]
+
+# ============================================================================
+# Robustness checks
+# ============================================================================
+robustness_checks:
+  - id: RC1
+    statement: >-
+      Fisher-Rao recalculation (§3.4): SBT's canonical metric is recomputed via
+      the square-root isometry to S^7_+; both the contrast ratio (5.72 vs 7.46)
+      and the BVF bound (identical, 52.2%) confirm that the Euclidean-distance
+      simplification of §§3.1-3.3 does not change the qualitative conclusions.
+    type: "metric_sensitivity_check"
+    sensitivity_of: [P3, P4, P5]
+    mitigates: [L2]
+    body_sections: ["§3.4 Fisher-Rao Recalculation"]
+  - id: RC2
+    statement: >-
+      Concentrated-Dirichlet sensitivity (§8): replacing the uniform null with
+      symmetric Dir(alpha,...,alpha) for alpha>1 shows the headline 52.2% is the
+      worst case and real populations (alpha in [3,10]) have boundary fractions
+      below 2% — the uniform bound is conservative, not a typical-case claim.
+    type: "distributional_sensitivity_check"
+    sensitivity_of: [P5, P9]
+    mitigates: [L1]
+    body_sections: ["§8 Boundary Fuzziness Under Concentrated Distributions"]
+
+# ============================================================================
+# Alternative explanations — rivals the paper addresses
+# ============================================================================
+alternative_explanations:
+  - id: A1
+    statement: >-
+      The boundary fuzziness is just the familiar posterior uncertainty of
+      Latent Dirichlet Allocation (Blei, Ng & Jordan 2003), which sharpens with
+      more data.
+    rules_out_required: [P5, P6]
+    ruled_out_by: [P6]
+    rules_out_status: "rejected"
+    reasoning: >-
+      LDA fuzziness is statistical (data-limited; vanishes in the infinite-data
+      limit). Theorem 2's fuzziness is geometric — a property of the deterministic
+      simplex volume under any partition — and persists at arbitrary precision.
+    body_sections: ["§3.2 (Geometric versus statistical fuzziness)"]
+  - id: A2
+    statement: >-
+      The "blessing of dimensionality" (Gorban & Tyukin 2018) — individual points
+      become stochastically separable as dimension grows — contradicts the
+      majority-near-boundary result.
+    rules_out_required: [P5]
+    ruled_out_by: [P5]
+    rules_out_status: "reconciled"
+    reasoning: >-
+      The two are compatible at different levels: Gorban-Tyukin characterize
+      separability of INDIVIDUAL points from a fixed reference; Theorems 1-2
+      characterize concentration of PAIRWISE distances and the volume of boundary
+      ZONES under any partition. High point-separability does not prevent
+      voluminous boundary zones.
+    body_sections: ["§3.3 (Relation to the blessing of dimensionality)"]
+
+# ============================================================================
+# Limitations
+# ============================================================================
+limitations:
+  - id: L1
+    statement: >-
+      The headline bounds assume the uniform (or symmetric-alpha) Dirichlet null.
+      Real populations may show HETEROGENEOUS concentration (dimension-specific
+      alpha_i), for which the alpha^{-(n-1)/2} scaling no longer applies directly
+      (the effective contraction depends on the geometric mean of the alpha_i);
+      the sparse alpha<1 (vertex-concentrated) regime is also left to future work.
+    severity: "scope-bounding"
+    affects: [P8, P5]
+    body_sections: ["§9 (Uniform distribution assumption)"]
+  - id: L2
+    statement: >-
+      The Monte Carlo and contrast computations use Euclidean distance while
+      SBT's formal metric is Fisher-Rao; the two differ by a nonlinear transform,
+      and although §3.4 recomputes the headline figures under Fisher-Rao,
+      higher-precision recalculation across all dimensions is left open.
+    severity: "precision-bounding"
+    affects: [P4]
+    body_sections: ["§9 (Euclidean versus Fisher-Rao distances)"]
+  - id: L3
+    statement: >-
+      Theorem 2 assumes CONVEX cohort regions (k-means Voronoi, well-separated
+      GMMs). Density-based clustering (DBSCAN/HDBSCAN) yields non-convex regions
+      for which the bound may not hold in its current form; the Minkowski-content
+      extension is possible but needs additional machinery.
+    severity: "scope-bounding"
+    affects: [P5]
+    body_sections: ["§9 (Convexity of cohort regions)"]
+  - id: L4
+    statement: >-
+      The Dirichlet imposes only the sum-to-one negative-correlation structure
+      and does not model empirical dimension-specific correlations (e.g.,
+      Ideological-Cultural co-weighting) or integral-vs-separable perceptual
+      dimensions (Garner 1974), which could require a non-Euclidean (Minkowski
+      r<2) metric and revisiting the bounds; effective dimensionality d_eff<8 if
+      profiles cluster on a submanifold would also reduce concentration.
+    severity: "model-fidelity"
+    affects: [P4, P5]
+    body_sections: ["§9 (Independence of dimensions; Effective dimensionality)"]
+
+# ============================================================================
+# Cross-paper engagement
+# ============================================================================
+corpus_precedents:
+  - paper_key: 2026a
+    relationship: applies
+    spine_nodes: [P1, P2, P9, P10]
+    note: >-
+      Spectral Brand Theory: provides the 8-dimensional architecture, the
+      observer spectral profile, the case-study brands, and the
+      dynamic/fuzzy-cohort claim (2026a P5) that R3 upgrades from empirical
+      observation to geometric necessity; the cross-model granularity dissociation
+      is the motivating observation.
+  - paper_key: 2026d
+    relationship: extends
+    spine_nodes: [P1, D1]
+    note: >-
+      R1 (metric framework): establishes the Fisher-Rao metric on Delta^7 and
+      first derives E[||w_i-w_j||^2]=7/36 for the warped-product manifold; R3
+      takes these as given and derives the concentration consequences.
+  - paper_key: 2026e
+    relationship: extends
+    spine_nodes: [P11]
+    note: >-
+      R2 (spectral metamerism): the rasterization information-loss in R3 is the
+      direct analogue of R2's projection metamerism bound — both quantify what is
+      collapsed when a high-dimensional representation is reduced.
+  - paper_key: 2026g
+    relationship: extends
+    spine_nodes: [P12]
+    note: >-
+      R4 (sphere packing): R3's cohort-resolution bound in observer space O and
+      R4's packing/capacity bound in brand space B are dual constraints (the
+      capacity-resolution duality of §6.5).
+  - paper_key: 2026j
+    relationship: extends
+    spine_nodes: [P13]
+    note: >-
+      Non-ergodic diffusion paper: R3 supplies the static geometric arena (boundary
+      width, concentration) within which 2026j's diffusion/absorption dynamics
+      play out; resolves the open problem posed in 2026c.
+  - paper_key: 2026r
+    relationship: applies
+    spine_nodes: [P1]
+    note: >-
+      "Why eight?": justifies the n=8 dimensional taxonomy R3 takes as given.
+  - paper_key: 2026s
+    relationship: applies
+    spine_nodes: [P11, P13]
+    note: >-
+      Coherence-type-as-crisis-predictor: derives the non-ergodic resilience
+      dynamics behind the D/A-ratio cohort-compression mechanism R3 invokes (§6.3).
+
+# ============================================================================
+# External anchor literature (keys verified against corpus_substrate.sqlite)
+# ============================================================================
+external_anchors:
+  - {citation_key: beyer-1999-when-is-nearest, role: foundational_method, spine_nodes: [P4], note: "Distance contrast degradation in high dimensions (Theorem 1 framework)."}
+  - {citation_key: ledoux-2001-concentration-measure-phenomenon, role: foundational_method, spine_nodes: [P3], note: "Systematic treatment of concentration of measure."}
+  - {citation_key: milman-1986-asymptotic-theory-finite, role: foundational_method, spine_nodes: [P3], note: "Sphere isoperimetry / blowup inequality (Proposition 1 proof route)."}
+  - {citation_key: vershynin-2018-highdimensional-probability-introduction, role: foundational_method, spine_nodes: [P3, P5], note: "Non-asymptotic concentration + Brunn-Minkowski peeling reference."}
+  - {citation_key: schneider-2014-convex-bodies-brunnminkowski, role: foundational_method, spine_nodes: [P5, P8], note: "Brunn-Minkowski theory underlying Theorem 2 and Proposition 3."}
+  - {citation_key: gorban-2018-blessing-dimensionality-mathematical, role: counterpoint, spine_nodes: [P4, P5], note: "Blessing of dimensionality — reconciled rival (A2)."}
+  - {citation_key: frigyik-2010-introduction-dirichlet-distribution, role: foundational_method, spine_nodes: [P8], note: "Dirichlet concentration scaling + empirical alpha range [3,10]."}
+  - {citation_key: wedel-2000-market-segmentation-conceptual, role: prior_practice, spine_nodes: [P11], note: "Canonical latent-class/mixture segmentation that the rasterized approach inherits."}
+  - {citation_key: peters-2019-ergodicity-problem-economics, role: bridging_concept, spine_nodes: [P13], note: "Ergodic vs non-ergodic distinction applied to evolving observer profiles."}
+
+# ============================================================================
+# Open questions / boundary edges
+# ============================================================================
+open:
+  - "Extend to the asymmetric Dirichlet(alpha_1,...,alpha_8) family and estimate dimension-specific alpha_i from behavioral data (L1)."
+  - "Recalculate the distance contrast ratios fully in the Fisher-Rao metric across all dimensions for maximum precision (L2)."
+  - "Extend Theorem 2 to non-convex (DBSCAN/HDBSCAN) partitions via Minkowski content (L3)."
+  - "Incorporate empirical dimension-specific correlations (copulas on the simplex) and integral-vs-separable dimensions (L4)."
+  - "Empirically estimate alpha (MLE / ilr moment-matching) from SBT survey data to calibrate the real-population boundary fraction (§9.1)."
+  - "Concentration on the product space B x O for joint brand-observer cohorts; time-dependent bounds for evolving profiles (§9.1 extensions)."
+
+# ============================================================================
+# Spine changelog — append-only
+# ============================================================================

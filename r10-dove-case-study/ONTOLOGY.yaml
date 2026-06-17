@@ -1,0 +1,40 @@
+# ONTOLOGY.yaml module - 2026p
+#
+# Per-paper ontology module per [internal path removed]
+# §"ONTOLOGY.yaml schema (v0.1)". owns = terms THIS paper introduces (unique
+# authority); imports = terms owned by other modules it uses (reference only).
+# Linked into the substrate `terms` graph by build_ontology.py; rendered per-paper
+# by render_paper_glossary.py. Bootstrapped 2026-06-13 from per-paper term
+# extraction; definitions paraphrase each paper's own definitional text.
+
+paper_key: 2026p
+schema_version: 0.1
+
+owns:
+  - term_key: dimensional-creation
+    label: "Dimensional Creation"
+    canonical_form: "dimensional creation"
+    definition: "The activation of a previously null perceptual dimension that opens new uncrowded perceptual territory rather than competing within existing dimensional space."
+    first_section: "Introduction"
+  - term_key: portfolio-spectral-interference
+    label: "Portfolio Spectral Interference"
+    canonical_form: "portfolio-level spectral interference"
+    definition: "A mechanism whereby contradictory signals emitted on the same dimension by two brands sharing a parent company contaminate each other's perception once the observer becomes aware of the shared parentage."
+    first_section: "Introduction"
+  - term_key: counter-cultural-decay
+    label: "Counter-Cultural Decay"
+    canonical_form: "counter-cultural decay"
+    definition: "The temporal erosion of a signal's ideological distinctiveness as the cultural background field shifts and once counter-cultural positioning becomes normative."
+    first_section: "Introduction"
+
+imports:
+  - {term_key: spectral-brand-theory}
+  - {term_key: spectral-dimensions}
+  - {term_key: observer-spectral-profile}
+  - {term_key: brand-conviction}
+  - {term_key: cohort}
+  - {term_key: structural-absence}
+  - {term_key: perception-cloud}
+
+refines: []
+

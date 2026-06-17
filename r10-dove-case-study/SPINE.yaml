@@ -1,0 +1,519 @@
+# SPINE.yaml — R10 / 2026p — Dove Case Study
+#
+# RETROFIT spine: extracted descriptively from the completed paper.md
+# ([internal path removed]), per CLAUDE.md D4 (SPINE-for-all-active-
+# canonical). This is NOT a spine-first generative draft — it faithfully maps
+# the argument backbone of an already-finished paper. Reviewers evaluate spine
+# and prose separately.
+#
+# Schema v0.2 ([internal path removed] §"Schema v0.2"):
+# observations / methods / measurements / findings are first-class because the
+# paper reports author-produced computed evidence — a 240-call competitive-
+# interference test (40 one-way ANOVAs) and an interpretive eight-dimension
+# longitudinal decomposition of Dove with derived cohort weight vectors. The
+# five propositions (P1–P5) remain the paper's theoretical claims.
+
+spine_version: "0.2"
+spine_doc_version: "0.1.0"
+paper_key: "2026p"
+provenance: retrofit
+title: >-
+  Dimensional Activation and Cohort Divergence: A Longitudinal Decomposition of
+  Purpose Advertising Effectiveness
+target_venue_primary: "advertising / marketing (JAR-adjacent; purpose-advertising)"
+status: >-
+  Retrofit spine extracted from completed paper.md (Working Paper v2.6.0,
+  zenodo.19139258). Descriptive, post-hoc; the paper is already drafted.
+
+thesis: |
+  Purpose campaigns are evaluated by aggregate metrics that cannot distinguish
+  structural success from surface popularity. Applying the SBT eight-dimension
+  decomposition to Dove's "Campaign for Real Beauty" (2004–2026) across four
+  temporal cross-sections shows that the campaign's disproportionate commercial
+  impact is traceable to dimensional creation — the activation of a previously
+  null Ideological dimension that opens new perceptual territory rather than
+  competing within existing space. Four observer cohorts (Purpose-Aligned,
+  Product-Pragmatist, Social-Signal Reader, Skeptic-Critic) receive identical
+  signals but form structurally different brand convictions, with Purpose-Aligned
+  and Skeptic-Critic forming a mirror pair (near-identical weight vectors,
+  opposite conviction valence). Five propositions generalize the case:
+  dimensional creation, observer heterogeneity, portfolio spectral interference,
+  counter-cultural decay, and dimensional specificity over intensity. Independent
+  AI-observer evidence (2026v) replicates the cohort-divergence and
+  Patagonia-as-exception patterns, anchoring the interpretive case in a
+  controllable observer population.
+
+# ============================================================================
+# Boundary conditions — scope within which the propositions are offered
+# ============================================================================
+boundary_conditions:
+  - id: C1
+    statement: >-
+      The propositions are calibrated for purpose campaigns in consumer-facing
+      categories where Narrative and Ideological dimensions carry substantial
+      signal load; categories where Experiential signals dominate (B2B,
+      pharmaceuticals, financial services) may weight dimensions differently.
+    observable: "Category-level Ideological/Narrative signal baseline is non-trivial."
+    excludes: "Commodity-functional categories evaluated purely on Experiential/Economic signal."
+  - id: C2
+    statement: >-
+      The four cohorts and their spectral weight vectors are calibrated for
+      English-language US/UK observer populations synthesized from the academic
+      perception literature; cross-population stability is an open scope question.
+    observable: "Observer population is Western, English-language, consumer-facing."
+    excludes: "Non-Western markets (e.g. South Asia for Glow & Lovely) where Ideological weight likely differs."
+
+# ============================================================================
+# Observations — the empirical and documentary material the case rests on
+# ============================================================================
+observations:
+  - id: O1
+    statement: >-
+      Dove launched the "Campaign for Real Beauty" in January 2004; global
+      revenue roughly doubled (~$2B to ~$4B by 2007), "Real Beauty Sketches"
+      (2013) drew 163M+ views, 4.6B PR impressions, +6% sales, and the brand
+      reported EUR 6B turnover by 2023 — sustained commercial performance over
+      two decades unmatched among documented discrete purpose campaigns.
+    raw_data_pointer: "Unilever Annual Reports (2003, 2007, 2011, 2023); campaign records"
+    instrument: "documentary / corporate financial data"
+    timestamp: "2003–2026"
+    body_sections: ["Introduction", "Financial Mapping"]
+  - id: O2
+    statement: >-
+      The academic perception literature documents structurally divergent
+      responses to Dove: positive response clusters (Feng, Chen & He 2019),
+      aversive self-discrepancy impact in high-BMI observers (Bissell & Rask
+      2010), genderwashing and "faux feminism" critique (Murray 2013; Taylor et
+      al. 2016), and post-feminist critique (Gill 2007).
+    raw_data_pointer: "Feng/Chen/He 2019; Bissell/Rask 2010; Murray 2013; Taylor et al. 2016; Gill 2007"
+    instrument: "secondary literature synthesis"
+    timestamp: "2007–2016"
+    body_sections: ["Method: Spectral Case Analysis", "Observer Cohort Analysis"]
+  - id: O3
+    statement: >-
+      Unilever's portfolio contains brands whose Ideological emissions contradict
+      Dove's: Axe/Lynx (hypersexualized masculinity), Fair & Lovely / Glow &
+      Lovely (skin-lightening), Slim-Fast (thin-ideal) — the documented basis of
+      the "genderwashing" critique and of the portfolio-interference phenomenon.
+    raw_data_pointer: "Murray 2013; Unilever portfolio composition"
+    instrument: "documentary"
+    timestamp: "2013"
+    body_sections: ["Portfolio Interference: The Unilever Paradox"]
+
+# ============================================================================
+# Methods — how the case is decomposed and how the supplementary test is run
+# ============================================================================
+methods:
+  - id: M1
+    statement: >-
+      Spectral case analysis: a five-step interpretive procedure applying the
+      SBT eight-dimension framework to a focal brand — (1) signal decomposition
+      across eight dimensions at four time points, (2) cohort identification from
+      perception studies, (3) perception-cloud reconstruction (emission ->
+      conviction per cohort), (4) coherence audit (five-type taxonomy), and (5)
+      financial mapping of activation events to revenue. Interpretive, not
+      econometric: emission intensities are qualitative assessments, not survey
+      instrumentation.
+    type: "interpretive_case_decomposition"
+    inputs: ["O1", "O2", "O3", "SBT eight-dimension model (2026a)"]
+    outputs: ["Table 1 emission profile", "Table 2 cohort weights", "Table 3 cloud states", "Table 4 coherence audit", "Table 5 financial mapping"]
+    body_sections: ["Method: Spectral Case Analysis", "Signal Decomposition"]
+  - id: M2
+    statement: >-
+      Supplementary competitive-interference experiment: 5 focal brands paired
+      with direct, adjacent, and distant competitors; 240 API calls
+      (gpt-4o-mini, temperature .7; 16 reps per condition); 40 one-way ANOVAs,
+      Bonferroni-corrected alpha = .00125. Reproducible via the companion script
+      competitive_interference_250.py (fixed protocol, public mirror).
+    type: "monte_carlo_llm_experiment"
+    inputs: ["5 canonical brands x competitor-distance conditions"]
+    outputs: ["40 brand-dimension ANOVA cells", "effect sizes"]
+    code_anchor: "r10-dove-case-study/code/competitive_interference_250.py"
+    reproducibility:
+      seed: "fixed protocol; gpt-4o-mini temperature .7, 16 reps/condition"
+      runtime_environment: "Python 3.12 + uv (openai, scipy, numpy)"
+    body_sections: ["Portfolio Interference: The Unilever Paradox", "Companion Computation Script"]
+
+# ============================================================================
+# Measurements — the headline computed/derived values
+# ============================================================================
+measurements:
+  - id: m_ideological_activation
+    statement: >-
+      Dove's Ideological dimension transitions from null (2003) to 8.0 (2006) to
+      a 9.0 peak (2013), then 7.5 (2023); Cultural follows an inverted-U
+      (4.0 -> 8.5 -> 8.0 -> 5.5). This is the null-to-positive state change at
+      the centre of the dimensional-creation claim.
+    source_observations: [O1, O2]
+    generating_method: M1
+    value: "Ideological: null/8.0/9.0/7.5; Cultural: 4.0/8.5/8.0/5.5 across 2003/2006/2013/2023"
+    units: "1–10 assessed signal intensity ('null' = no signal)"
+    body_sections: ["Signal Decomposition (Table 1)", "Coherence Audit"]
+  - id: m_competitive_interference
+    statement: >-
+      The 240-call competitive-interference test found significant modulation in
+      11 of 40 brand-dimension cells; largest effects Hermès/Narrative
+      F(2,45)=33.14, p < .001, d=3.27; Tesla/Ideological F(2,45)=17.23, p < .001,
+      d=2.29; Erewhon/Temporal F(2,45)=18.81, p < .001, d=1.68; remaining 29
+      cells non-significant.
+    source_observations: [O3]
+    generating_method: M2
+    value: "11/40 significant cells; max d=3.27 (Hermès/Narrative)"
+    units: "ANOVA F + Cohen's d, Bonferroni alpha=.00125"
+    body_sections: ["Portfolio Interference: The Unilever Paradox"]
+  - id: m_r15_anchor
+    statement: >-
+      The AI-observer anchor study (2026v, 24 LLM cohorts, 21,601 calls) reports
+      cross-model cosine .977 for aggregate ranking but DCI .357 vs uniform
+      baseline .250 (p < .001); Patagonia/Columbia is the only pair below
+      baseline (.194); local brands collapse 25% more than global on Cultural
+      (d=.878).
+    source_observations: [O1]
+    generating_method: M1
+    value: "cosine .977; DCI .357 vs .250; Patagonia .194; local-vs-global d=.878"
+    units: "cosine / DCI (decimal, baseline .250) / Cohen's d"
+    body_sections: ["Empirical Anchor: Cohort Divergence in AI Observers"]
+
+# ============================================================================
+# Propositions — the five generalizing theoretical claims (P1–P5) + the
+# structural diagnosis (P0) the paper opens with
+# ============================================================================
+propositions:
+  - id: P0
+    statement: >-
+      Three Dove phenomena are unexplained by single-construct brand frameworks
+      (Aaker brand equity/personality, Keller equity-as-stock, Kapferer identity
+      prism): observer heterogeneity in purpose perception, portfolio-level
+      spectral interference, and temporal counter-cultural decay. Sender-focused,
+      aggregate-construct models cannot represent structurally different
+      perceptions of the same brand at the same moment.
+    conditions: ""
+    antecedents: []
+    evidence:
+      - type: analytic
+        anchor: "Framework capability comparison (Table 6: Aaker 1996/1997, Keller 1993, Kapferer 2008 vs SBT)."
+    body_sections: ["Introduction", "What Existing Frameworks Miss"]
+  - id: P1
+    statement: >-
+      (Proposition 1 — Dimensional Creation) Purpose campaigns produce
+      disproportionate commercial impact when they activate a previously null
+      dimension, creating new perceptual signal space rather than competing
+      within existing dimensional territory. Activating a null dimension requires
+      observers to form a new conviction, not overwrite an existing one — a state
+      change distinct from repositioning.
+    conditions: "C1"
+    antecedents: [P0, m_ideological_activation, F_financial]
+    evidence:
+      - type: case
+        anchor: "Dove Ideological null (2003) -> 8.0 (2006); Pepsi/Gillette inverse confirm contradiction-activation fails."
+        citation_keys: []
+      - type: citation
+        anchor: "Perceived CSR-product fit as prerequisite for positive response."
+    falsifier: >-
+      Falsified if null-activation campaigns produce equivalent-or-lower revenue
+      growth than intensity-amplification campaigns (p > .05, d < .20) in the same
+      category, controlling for spend and baseline growth.
+    body_sections: ["Propositions (P1)", "Comparison Cases"]
+  - id: P2
+    statement: >-
+      (Proposition 2 — Observer Heterogeneity) Identical brand signals produce
+      structurally different perception clouds in different observer cohorts, with
+      the divergence structure predictable from the interaction between emission
+      profiles and cohort spectral weight vectors. Purpose-Aligned and
+      Skeptic-Critic cohorts share near-identical Narrative/Ideological weights
+      but assign opposite conviction valence to the same signal (the mirror-cohort
+      structure).
+    conditions: "C2"
+    antecedents: [P0, F_mirror_cohort]
+    evidence:
+      - type: case
+        anchor: "Four Dove cohorts perceive ideological movement / soap / social currency / corporate hypocrisy from identical 'Real Beauty Sketches' signal."
+      - type: citation
+        anchor: "Formalizes advertising polysemy (Puntoni/Schroeder/Ritson 2010; Grier & Brumbaugh 1999) and cohort-contingent activism (Mukherjee & Althuizen 2020; Hydock/Paharia/Weber 2022; Guha et al. 2026)."
+    falsifier: >-
+      Falsified if PA and SC cohorts converge in conviction valence on identical
+      signals (cohort variance indistinguishable from within-cohort variance), or
+      if divergence is not predictable from independently-estimated weight vectors.
+    body_sections: ["Propositions (P2)", "Observer Cohort Analysis", "Perception Cloud Dynamics"]
+  - id: P3
+    statement: >-
+      (Proposition 3 — Portfolio Spectral Interference) When brands within a
+      corporate portfolio emit contradictory signals on the same dimension, the
+      resulting spectral interference generates a coherence penalty proportional
+      to contradiction magnitude, the observer's dimensional weight, and the
+      observer's awareness of the corporate relationship. The penalty is zero for
+      unaware observers and maximal for high-Ideological-weight Skeptic-Critics.
+    conditions: "C2"
+    antecedents: [P0, O3, m_competitive_interference]
+    evidence:
+      - type: case
+        anchor: "Unilever paradox (Dove vs Axe/Glow & Lovely/Slim-Fast); public-comment split (corporation-negative, content-positive)."
+      - type: empirical
+        anchor: "240-call competitive test qualifies (not negates) P3: competitive-context effects are real but dimension-specific (11/40 cells); portfolio interference is a distinct ownership-forced mechanism."
+    falsifier: >-
+      Falsified if the coherence penalty for observers aware of shared Dove/Axe
+      parentage is indistinguishable from unaware observers after controlling for
+      prior Ideological weight.
+    body_sections: ["Propositions (P3)", "Portfolio Interference: The Unilever Paradox"]
+  - id: P4
+    statement: >-
+      (Proposition 4 — Counter-Cultural Decay) The perceptual intensity of
+      counter-cultural brand signals decays as a function of their adoption by
+      competitors and cultural institutions, following an inverted-U trajectory on
+      the Cultural dimension. A counter-cultural signal that achieves cultural
+      victory ceases to be counter-cultural — a structural property, not a
+      campaign failure.
+    conditions: "C1"
+    antecedents: [P0, m_ideological_activation]
+    evidence:
+      - type: case
+        anchor: "Dove Cultural 8.5 (2006) -> 5.5 (2023) as body positivity became normative; brand message unchanged."
+      - type: citation
+        anchor: "Complements Holt (2002, 2004) cultural branding; non-ergodic anchoring moderates decay for early adopters (Peters 2019; 2026o)."
+    falsifier: >-
+      Falsified if Cultural dimension intensity does not decline as competitor
+      adoption of body-positive messaging rises — no inverted-U across multiple
+      purpose campaigns tracked against a competitor-adoption index.
+    body_sections: ["Propositions (P4)", "Coherence Audit"]
+  - id: P5
+    statement: >-
+      (Proposition 5 — Dimensional Specificity Over Intensity) Brand revenue
+      growth correlates with new-dimension activation events rather than with
+      total campaign investment, because new-dimension activation creates
+      perceptual territory that does not compete with existing convictions.
+    conditions: "C1"
+    antecedents: [P0, P1, F_financial]
+    evidence:
+      - type: case
+        anchor: "Explosive growth in activation periods (2004–2007, 2023) vs modest growth in maintenance (2013–2019) despite sustained spend; Oprah partnership $6.02/$ vs masterbrand $3.40/$."
+      - type: citation
+        anchor: "Supported by 2026x: machine-readable Brand Function specs reduce AI-observer collapse 20% via specificity, not intensity."
+    falsifier: >-
+      Falsified if revenue growth correlates more strongly with total campaign
+      spend than with new-dimension activation events, controlling for category
+      baseline growth.
+    body_sections: ["Propositions (P5)", "Financial Mapping"]
+
+# ============================================================================
+# Findings — what the decomposition and the anchor study demonstrate
+# ============================================================================
+findings:
+  - id: F_financial
+    statement: >-
+      Dove's revenue trajectory tracks dimensional activation events, not total
+      signal intensity: explosive growth during activation (2004–2007 null-to-
+      positive Ideological; 2023 Experiential refresh + Ideological maintenance)
+      and modest growth during maintenance (2013–2019) despite sustained spend.
+    type: "case_finding"
+    source_measurements: [m_ideological_activation]
+    generating_method: M1
+    antecedents: [O1]
+    falsifier: "If revenue growth tracks spend more than activation events, F_financial fails (= P5 falsifier)."
+    body_sections: ["Financial Mapping"]
+  - id: F_mirror_cohort
+    statement: >-
+      Purpose-Aligned and Skeptic-Critic cohorts have near-identical spectral
+      weight profiles on Narrative and Ideological dimensions yet the brand
+      conviction function produces opposite signs on the same dimension for the
+      same emission profile — a mirror structure no single-aggregate-construct
+      model can represent. Every emotional beat that strengthened PA conviction in
+      "Real Beauty Sketches" strengthened SC negative conviction.
+    type: "case_finding"
+    generating_method: M1
+    antecedents: [O2]
+    falsifier: "If PA and SC convictions co-move on identical signals, F_mirror_cohort (and P2) fail."
+    body_sections: ["Observer Cohort Analysis", "Perception Cloud Dynamics", "Discussion"]
+  - id: F_r15_replication
+    statement: >-
+      Independent AI-observer evidence (2026v) replicates three case patterns:
+      large cross-cohort dimensional collapse (DCI .357 vs .250), Patagonia as the
+      sole below-baseline pair (.194 — product-anchored Ideological signal resists
+      collapse), and local-vs-global Cultural asymmetry (d=.878) consistent with
+      cohort-contingent portfolio interference. The mechanisms differ (training
+      provenance vs corporate-transparency awareness) but the compression
+      signature is isomorphic.
+    type: "cross_study_replication"
+    source_measurements: [m_r15_anchor]
+    generating_method: M1
+    antecedents: [O1]
+    falsifier: "If the AI-observer study did not reproduce cohort divergence / Patagonia-exception, F_r15_replication fails."
+    body_sections: ["Empirical Anchor: Cohort Divergence in AI Observers"]
+
+# ============================================================================
+# Alternative explanations — rivals the case findings must clear
+# ============================================================================
+alternative_explanations:
+  - id: A1
+    statement: >-
+      Observer divergence is mere demographic variance or a moderator on a single
+      brand-conviction construct (the Mukherjee & Althuizen 2020 alignment-
+      moderator reading), not a structural cohort property.
+    rules_out_required: [P2]
+    ruled_out_by: [F_mirror_cohort]
+    rules_out_status: "rejected"
+    reasoning: >-
+      PA and SC are not the same population at different moderator positions but
+      structurally distinct observer types with mirrored weight vectors producing
+      opposite conviction from identical signals; the two readings make different
+      intervention predictions (target the alignment dimension vs design for
+      coexistent positive/negative reception).
+    body_sections: ["Discussion: Theoretical Implications"]
+  - id: A2
+    statement: >-
+      Dove's revenue growth is driven by market growth, distribution expansion,
+      media investment, or macroeconomic conditions rather than dimensional
+      activation (financial mapping is correlation, not causation).
+    rules_out_required: [P5]
+    ruled_out_by: []
+    rules_out_status: "open"
+    reasoning: >-
+      The paper concedes this as Limitation 3 and recommends difference-in-
+      differences / synthetic-control designs with matched non-activating control
+      brands; the case establishes temporal co-occurrence, not causal effect.
+    body_sections: ["Limitations (Limitation 3)", "Financial Mapping"]
+
+# ============================================================================
+# Limitations — honest scope of the case
+# ============================================================================
+limitations:
+  - id: L1
+    statement: >-
+      Interpretive emission scores: Table 1 intensities are the author's
+      assessment of secondary evidence without inter-rater reliability; different
+      priors could alter the precise trajectory without necessarily changing
+      directional findings.
+    severity: "scope-bounding"
+    affects: [P1, P4, F_financial]
+    body_sections: ["Limitations (Limitation 1)"]
+  - id: L2
+    statement: >-
+      Post-hoc cohort identification: the four cohorts and their weight vectors
+      are synthesized from existing perception studies, not survey-derived; cohort
+      sizes are not reported. Prospective assignment via a PRISM-B instrument
+      (2026v) is recommended.
+    severity: "scope-bounding"
+    affects: [P2]
+    body_sections: ["Limitations (Limitation 2)", "Empirical Anchor"]
+  - id: L3
+    statement: >-
+      Single-case design: the dimensional-activation mechanism is derived from one
+      focal case plus three sub-paragraph comparators (Pepsi, Gillette,
+      Patagonia); the propositions are theoretically grounded hypotheses requiring
+      multi-case validation, not established cross-campaign laws.
+    severity: "future-work"
+    affects: [P1, P2, P3, P4, P5]
+    body_sections: ["Generalizability and Boundary Conditions"]
+  - id: L4
+    statement: >-
+      English-language US/UK cultural scope: all sources are Western; the Glow &
+      Lovely portfolio contradiction is qualitatively different in South Asian
+      markets where colorism is lived experience, likely shifting Ideological
+      weight and predicted penalty magnitude.
+    severity: "scope-bounding"
+    affects: [P3, C2]
+    body_sections: ["Limitations (Limitation 4)", "Cultural-context sensitivity"]
+
+# ============================================================================
+# Robustness checks
+# ============================================================================
+robustness_checks:
+  - id: RC1
+    statement: >-
+      Coordinate invariance: the dimensional activation patterns (null-to-positive
+      Ideological transition, Cultural inverted-U, PA/SC mirror divergence) are
+      invariant under basis transformations — they replicate across alternative
+      dimensional decompositions, indicating real phenomena rather than artifacts
+      of the chosen eight-dimension coordinate system.
+    type: "invariance_check"
+    sensitivity_of: [P1, P2, P4]
+    falsifier: "If the activation profiles do not replicate under an alternative dimensional basis, the structural claim weakens to a coordinate artifact."
+    body_sections: ["Discussion: Coordinate Invariance and Velocity Tracking"]
+  - id: RC2
+    statement: >-
+      Model-specificity check on the competitive-interference test: the high-
+      replication per-cell 240-call run (gpt-4o-mini only) confirms the model-
+      specific instability that 2026g's broader five-model design (250 calls)
+      surfaced as an exploratory anomaly — gpt-4o-mini shows ~double the cross-
+      condition profile shift of the other four models. Replication on additional
+      architectures with comparable per-cell power is warranted.
+    type: "model_specificity_check"
+    sensitivity_of: [P3, m_competitive_interference]
+    falsifier: "If other architectures with equal power show no comparable per-cell modulation, the effect is model-idiosyncratic."
+    body_sections: ["Portfolio Interference: The Unilever Paradox"]
+
+# ============================================================================
+# Cross-paper engagement (corpus precedents — real keys)
+# ============================================================================
+corpus_precedents:
+  - paper_key: 2026a
+    relationship: applies
+    spine_nodes: [thesis, P0, M1]
+    note: >-
+      Applies SBT's eight-dimension emission model, observer spectral profiles,
+      cohorts, and the five-type coherence taxonomy to a longitudinal case.
+  - paper_key: 2026f
+    relationship: applies
+    spine_nodes: [P2, F_mirror_cohort]
+    note: >-
+      Cohort boundaries in high-dimensional perception space (concentration of
+      measure) — the formal basis for observers clustering into perceptual cohorts.
+  - paper_key: 2026j
+    relationship: applies
+    spine_nodes: [P4, RC1]
+    note: >-
+      Non-ergodic diffusion dynamics / drift vector formalism underwrites the
+      counter-cultural decay trajectory and the velocity-tracking operationalization.
+  - paper_key: 2026o
+    relationship: applies
+    spine_nodes: [P4]
+    note: "Non-ergodicity / order effects -> early-adopter convictions experience moderated decay (sequence-dependent anchoring)."
+  - paper_key: 2026r
+    relationship: refines
+    spine_nodes: [M1, RC1]
+    note: "Why Eight — dimensional necessity argument grounds the eight-dimension coordinate system used here."
+  - paper_key: 2026ac
+    relationship: extends
+    spine_nodes: [P3]
+    note: >-
+      Spectral immunity / portfolio interference under AI-mediated perception —
+      the portfolio-interference mechanism this case applies to the Unilever paradox.
+  - paper_key: 2026v
+    relationship: tests
+    spine_nodes: [P2, P3, F_r15_replication]
+    note: >-
+      AI-observer study (24 LLM cohorts, 21,601 calls) supplies independent
+      quantitative replication of cohort divergence and Patagonia-as-exception.
+  - paper_key: 2026x
+    relationship: extends
+    spine_nodes: [P5]
+    note: "Machine-readable Brand Function specs reduce AI-observer collapse 20% — supports dimensional specificity over intensity."
+
+# ============================================================================
+# External anchor literature
+# ============================================================================
+external_anchors:
+  - {citation_key: vredenburg-2020-brands-taking-stand, role: motivates, spine_nodes: [P0, P3], note: "Woke-washing / authenticity-evaluation typology mapped onto SBT coherence types"}
+  - {citation_key: mukherjee-2020-brand-activism, role: formalized_by, spine_nodes: [P2, A1], note: "Activism helps-and-hurts by ideological alignment — recast as cohort property, not moderator"}
+  - {citation_key: hydock-2022-differential-response, role: supports, spine_nodes: [P2], note: "Structurally bipolar response to corporate political advocacy"}
+  - {citation_key: holt-2002-why-brands-cause-trouble, role: complemented_by, spine_nodes: [P4], note: "Cultural branding paradigm complemented with dimension-level formalization"}
+  - {citation_key: brakus-2009-brand-experience, role: extended_by, spine_nodes: [M1], note: "Four brand-experience dimensions mapped into SBT eight"}
+  - {citation_key: becker-olsen-2006-impact-perceived-csr, role: supports, spine_nodes: [P1, P3], note: "Perceived CSR-product fit as prerequisite for positive response"}
+  - {citation_key: vanhamme-2009-too-good-to-be-true, role: supports, spine_nodes: [P1], note: "CSR history as buffer — Patagonia's operational anchor"}
+  - {citation_key: eisenhardt-1989-building-theories, role: methods_anchor, spine_nodes: [M1, L3], note: "Theory-building single-case design tradition"}
+  - {citation_key: yin-2018-case-study-research, role: methods_anchor, spine_nodes: [M1, L3], note: "Case study research design and methods"}
+  - {citation_key: puntoni-2010-meaning-matters-polysemy, role: formalized_by, spine_nodes: [P2], note: "Advertising polysemy formalized with a mechanism"}
+  - {citation_key: hermann-2026-trusting-ai-agents, role: extends, spine_nodes: [P5, F_r15_replication], note: "Agentic commerce: AI agents as a structurally distinct high-machine-readable-weight cohort"}
+
+# ============================================================================
+# Open questions / boundary edges
+# ============================================================================
+open:
+  - "Multi-case validation: does null-dimension activation outperform intensity-amplification across campaigns generally? (L3, P1 falsifier)"
+  - "Are the four cohort types stable across demographics, age cohorts, and platform contexts (TikTok vs LinkedIn)? (L2)"
+  - "Causal identification of dimensional-activation revenue effects via difference-in-differences / synthetic control. (A2, L3)"
+  - "Cross-cultural replication (South Asia, Brazil, Japan): do spectral weight vectors themselves shift by market? (L4)"
+  - "Replication of the competitive-interference per-cell effect on architectures beyond gpt-4o-mini with comparable power. (RC2)"
+
+# ============================================================================
+# Spine changelog — append-only
+# ============================================================================

@@ -1,0 +1,70 @@
+# ONTOLOGY.yaml module - 2026u
+#
+# Per-paper ontology module per [internal path removed]
+# §"ONTOLOGY.yaml schema (v0.1)". owns = terms THIS paper introduces (unique
+# authority); imports = terms owned by other modules it uses (reference only).
+# Linked into the substrate `terms` graph by build_ontology.py; rendered per-paper
+# by render_paper_glossary.py. Bootstrapped 2026-06-13 from per-paper term
+# extraction; extended 2026-06-13 with the realized-system terms the
+# "A realized instance" revision introduces (substrate-as-repository, link-time
+# compatibility check, anti-drift gate, bundle-as-render).
+#
+# Relation-vocabulary alignment (design mapping, per PRIOR_ART_MAP_2026-06-13):
+#   synonym -> skos:exactMatch   narrows -> skos:broader   maps_to -> skos:closeMatch
+#   specializes -> rdfs:subClassOf   contrasts -> owl:disjointWith
+#   replaces -> dcterms:replaces
+# The substrate stays the SSOT; SKOS/OWL/DC names are emit targets, not columns.
+
+paper_key: 2026u
+schema_version: 0.1
+
+owns:
+  - term_key: research-as-repository
+    label: "Research as Repository"
+    canonical_form: "Research-as-Repository"
+    definition: "A protocol that treats every research program as a version-controlled repository (the evolving SSOT) of which a paper is a render at a point on its timeline, a submission is a fork, peer review is attributed commits on a review branch, and publication is a merge."
+    first_section: "1. Introduction"
+  - term_key: commit-reveal-priority
+    label: "Commit-reveal privacy primitive"
+    canonical_form: "commit-reveal privacy primitive"
+    definition: "A primitive that lets researchers establish cryptographic priority and provenance through public commit hashes while keeping content disclosure under their own control."
+    first_section: "Abstract"
+  - term_key: peer-alignment-event
+    label: "Peer alignment event"
+    canonical_form: "peer alignment event"
+    definition: "A reconception of journal publication not as the endpoint of research but as a synchronization point at which the scientific community confirms that a render of the ongoing research is sound at a given stage."
+    first_section: "1.4 The Value Stream"
+  - term_key: substrate-as-repository
+    label: "Substrate as repository"
+    canonical_form: "substrate-as-repository"
+    definition: "The realized instantiation of Research-as-Repository: a single content-addressed store unifying a corpus's terms, claims, and citations graphs as one source of truth, of which papers, glossaries, BibTeX, and other artifacts are projections (renders)."
+    first_section: "A realized instance"
+    relations:
+      - {type: specializes, term_key: research-as-repository, note: "the concrete content-addressed instantiation of the repository reconception"}
+  - term_key: link-time-compatibility-check
+    label: "Link-time compatibility check"
+    canonical_form: "link-time compatibility check"
+    definition: "A check, performed by a linker over the corpus's per-paper modules, that treats each paper as a module in a typed codebase and enforces one owner per term, no dangling import or refine, compatible refinement, and acyclic narrowing — the type-checking step of the substrate-as-repository."
+    first_section: "A realized instance"
+  - term_key: anti-drift-gate
+    label: "Anti-drift gate"
+    canonical_form: "anti-drift gate"
+    definition: "A continuous-integration-style check run after every paper edit and before commit that fails the build when a paper drifts from its companion artifacts (citations, ontology module, claim graph) or when a dangling import, incompatible refinement, or definitional drift appears in the linked corpus."
+    first_section: "A realized instance"
+  - term_key: bundle-as-render
+    label: "Bundle as render"
+    canonical_form: "bundle-as-render"
+    definition: "The view that a paper's published bundle (the prose plus its claim graph, ontology module, and rendered glossary) is a render of the substrate at a point on its timeline, kept consistent with the source by the anti-drift gate."
+    first_section: "A realized instance"
+    relations:
+      - {type: contrasts, term_key: substrate-as-repository, note: "render (the bundle) vs source (the substrate) — distinct artifacts kept in sync by the gate"}
+
+imports:
+  - {term_key: spectral-brand-theory}
+  - {term_key: six-tier-ontology}
+  - {term_key: paper-spec}                      # owned by 2026t (Paper Spec)
+  - {term_key: spine}                           # owned by 2026ao
+  - {term_key: spine-first-drafting-protocol}   # owned by 2026ao
+
+refines: []
+

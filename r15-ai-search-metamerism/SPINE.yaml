@@ -1,0 +1,673 @@
+# SPINE.yaml — Dimensional Collapse in AI-Mediated Search (R15 / 2026v)
+#
+# RETROFIT spine: extracted descriptively from the completed paper.md
+# ([internal path removed], Working Paper v3.2.0), NOT authored
+# spine-first before prose. Built per the retrofit-SPINE brief
+# ([internal path removed], pipeline
+# decision D4).
+#
+# Schema v0.2: the paper is empirical — 21,350 API calls across 24 LLMs
+# produce computed DCI / cosine / effect-size statistics — so observations /
+# methods / measurements / findings are first-class so the headline numbers
+# (mean DCI = .291 global, .357 cross-cultural; cosine = .977; local-vs-global
+# d = .878; ~20% Brand-Function recovery) trace through the
+# observation→method→measurement→finding chain.
+
+spine_version: "0.2"
+spine_doc_version: "0.1.0"
+provenance: retrofit
+paper_key: "2026v"
+title: >-
+  Dimensional Collapse in AI-Mediated Search: Large Language Models as
+  Metameric Observers of Brand Advertising
+
+thesis: >-
+  Large language models increasingly mediate consumer brand evaluation in
+  search and agentic commerce, and they act as metameric observers: they
+  systematically collapse the eight-dimensional brand emission profile toward
+  the verifiability anchors (Economic and Semiotic, with Experiential inflated
+  separately), rendering brands differentiated on Narrative, Ideological,
+  Cultural, or Temporal dimensions structurally different but functionally
+  equivalent in AI recommendations. Measured with the PRISM-B forced-allocation
+  instrument across 21,350 API calls to 24 models from nine cultural traditions
+  and 15 languages, the Dimensional Collapse Index (uniform baseline = .250) is
+  elevated (mean .291 global, .357 cross-cultural) and convergent across
+  architectures (cosine .977), so the collapse is structural rather than a
+  platform quirk. Collapse is conditional on training-data embeddedness —
+  locally embedded brands collapse about 25% more — and partially recoverable
+  (~20% of lost dimensionality) by encoding soft dimensions as verifiable,
+  machine-readable Brand Function specifications. For search advertising this
+  reframes strategy from platform selection to dimensional defensibility:
+  advertisers must encode soft brand dimensions in machine-readable form or
+  risk effective erasure by LLM intermediaries. The findings are bounded to the
+  text-conditioned LLM observers tested here.
+
+# ============================================================================
+# Boundary conditions — where the collapse mechanism is specified to hold
+# (paper §Discussion "Boundary Conditions")
+# ============================================================================
+boundary_conditions:
+  - id: C1
+    statement: >-
+      The mechanism is specified for TEXT-CONDITIONED AI observers; multimodal
+      models receiving Semiotic, Experiential, and visually-encoded Cultural
+      signal through additional channels should exhibit softened collapse.
+    observable: "Whether the observer's grounding is text-only vs. multimodal."
+    excludes: "Multimodal / image-text / audio-grounded encoders."
+    body_sections: ["§Discussion: Boundary Conditions"]
+  - id: C2
+    statement: >-
+      The collapse holds at inference time absent retrieval grounding;
+      retrieval-grounded systems with verified domain feeds (legal registries,
+      B-Corp records, controlled brand-asset stores) can convert
+      perception-dependent claims into machine-readable evidence and partially
+      bypass the training-corpus asymmetry (the architectural counterpart of
+      the Patagonia exception).
+    observable: "Presence/absence of verified retrieval grounding at inference."
+    excludes: "Retrieval-augmented agents over verified soft-dimension feeds."
+    body_sections: ["§Discussion: Boundary Conditions"]
+
+# ============================================================================
+# Observations — the experimental runs (the empirical substrate)
+# ============================================================================
+observations:
+  - id: O1
+    statement: >-
+      Run 2: ten global brand pairs spanning ten product categories, selected
+      to be approximately metameric in a reduced price-function space but
+      spectrally distinct in the full eight-dimensional space, queried across
+      six LLMs (3 Western cloud + 1 Chinese cloud + 2 local open-weight) at
+      three prompt types with three repetitions = 3,240 valid API responses.
+    raw_data_pointer: "HuggingFace spectralbranding/r15-ai-search-metamerism (DOI 10.57967/hf/8284); experiment/ [session]"
+    instrument: "PRISM-B forced-allocation elicitation"
+    timestamp: "2026"
+    body_sections: ["§Method: Brand Pair Selection", "§Results: Confirmatory (Runs 2-4)"]
+  - id: O2
+    statement: >-
+      Run 3: five locally embedded brand pairs from small non-English-speaking
+      markets (Cyprus, Latvia, Kenya, Vietnam, Serbia, all FMCG), each pairing a
+      local brand with a global comparator, across the same six models =
+      1,620 valid API responses.
+    raw_data_pointer: "HuggingFace spectralbranding/r15-ai-search-metamerism (DOI 10.57967/hf/8284)"
+    instrument: "PRISM-B forced-allocation elicitation"
+    timestamp: "2026"
+    body_sections: ["§Method: Brand Pair Selection", "§Results: Conditional metamerism"]
+  - id: O3
+    statement: >-
+      Run 5 (exploratory): the panel expanded to 23 models spanning nine
+      cultural training traditions, seven cross-cultural brand comparisons, and
+      15 native-language prompting conditions = 7,342 calls; the full study
+      comprises 21,350 API calls across ten runs.
+    raw_data_pointer: "HuggingFace spectralbranding/r15-ai-search-metamerism; experiment/validation/validate.py"
+    instrument: "PRISM-B forced-allocation elicitation"
+    timestamp: "2026"
+    body_sections: ["§Results: Cross-Cultural Extension (Run 5)"]
+  - id: O4
+    statement: >-
+      Run 4: structured Brand Function specifications were provided for the five
+      local brands (353 calls) to test whether collapse is information-driven
+      and recoverable.
+    raw_data_pointer: "HuggingFace spectralbranding/r15-ai-search-metamerism; experiment/run12_brand_function.py"
+    instrument: "PRISM-B + Brand Function specification injection"
+    timestamp: "2026"
+    body_sections: ["§Results: Brand Function resolution (Run 4)"]
+
+# ============================================================================
+# Methods — the measurement and analysis protocol
+# ============================================================================
+methods:
+  - id: M1
+    statement: >-
+      PRISM-B forced-allocation elicitation: each model allocates exactly 100
+      points across the eight SBT dimensions under three prompt types (weighted
+      recommendation, dimensional differentiation, dimension-specific probes),
+      revealing its implicit observer spectral profile as a weight vector;
+      responses are JSON-parsed, validated within a 15% sum tolerance, and
+      renormalized to 100. A budget constraint elicits comparative weight
+      (which dimensions are elevated relative to alternatives), which Likert
+      importance ratings cannot identify and which pre-empts acquiescence
+      inflation.
+    type: "structured_weight_elicitation"
+    inputs: ["brand comparison queries", "per-model chat-completion API"]
+    outputs: ["per-call eight-dimensional normalized weight vector"]
+    code_anchor: "experiment/ PRISM-B pipeline (PL0-PL4 scaffold)"
+    reproducibility:
+      seed: "fixed-seed L4_analysis layer; Python 3.12 + scipy + numpy pinned"
+      runtime_environment: "paid cloud + free cloud + local Ollama on Apple M4 Pro"
+    body_sections: ["§Method: Research Design and Instrument", "§Method: Prompt Protocol", "§Method: Measurement Protocol"]
+  - id: M2
+    statement: >-
+      Dimensional Collapse Index: DCI = (w_Economic + w_Semiotic) / 100, the
+      concentration on the two verifiability anchors (attributes checkable from
+      training data alone); uniform baseline = (12.5 + 12.5)/100 = .250.
+      Experiential is reported separately because its inflation reflects
+      functional-descriptive abundance, not the verifiability asymmetry the DCI
+      isolates. Repetition-level variance yields a standard error and
+      confidence intervals on every DCI.
+    type: "derived_statistic"
+    inputs: ["per-call normalized weight vectors"]
+    outputs: ["per-model / per-pair DCI with SE"]
+    code_anchor: "experiment/L4_analysis/"
+    body_sections: ["§Method: Measurement Protocol (Step 4)", "§Method: Statistical Model"]
+  - id: M3
+    statement: >-
+      Confirmatory-vs-exploratory analysis plan: Runs 2-4 pre-registered
+      (H1-H4, alpha = .05, Benjamini-Hochberg correction); one-sample t-tests of
+      DCI against .250; pairwise cosine similarity of model spectral profiles;
+      MANOVA on the eight-dimensional vector with model identity as factor;
+      paired t-tests on soft-dimension variation; spectral entropy. Run 5
+      (H5-H12) is exploratory and pattern-confirming.
+    type: "statistical_analysis_plan"
+    inputs: ["per-model DCI and spectral profiles"]
+    outputs: ["hypothesis test statistics and effect sizes"]
+    code_anchor: "experiment/L4_analysis/run_all.py"
+    body_sections: ["§Method: Study Design", "§Method: Analysis Plan"]
+
+# ============================================================================
+# Measurements — the headline computed values
+# ============================================================================
+measurements:
+  - id: m_dci_global
+    statement: "Mean DCI for ten global brand pairs = .291 (SD .042; t(59) = 2.45, p = .017, d = 2.97); all six models exceed baseline."
+    source_observations: [O1]
+    generating_method: M2
+    value: "DCI = .291; p = .017; d = 2.97"
+    units: "verifiability-concentration index (baseline .250)"
+    body_sections: ["§Results: H1 Dimensional Bias"]
+  - id: m_dci_local
+    statement: "Mean DCI for five locally embedded brand pairs = .353 (SD .038; t(29) = 3.91, p < .001, d = 3.34), with an Economic spike to 168% of baseline."
+    source_observations: [O2]
+    generating_method: M2
+    value: "DCI = .353; p < .001; d = 3.34; Economic = 168% baseline"
+    units: "verifiability-concentration index (baseline .250)"
+    body_sections: ["§Results: H1; Conditional metamerism"]
+  - id: m_dci_crosscultural
+    statement: "Mean DCI across 23 cross-cultural models = .357 (SD .036; t(22) = 16.178, p < .001, d = 3.449) — the largest effect in the dataset; every model exceeds baseline."
+    source_observations: [O3]
+    generating_method: M2
+    value: "DCI = .357; p < .001; d = 3.449"
+    units: "verifiability-concentration index (baseline .250)"
+    body_sections: ["§Results: Cross-Cultural Extension (Run 5)"]
+  - id: m_cosine
+    statement: "Cross-model cosine similarity of spectral profiles = .975 across six confirmatory models and .977 across 24 architectures (range [.927, 1.000])."
+    source_observations: [O1, O3]
+    generating_method: M3
+    value: "cosine = .977 (24 models); .975 (6 models)"
+    units: "mean pairwise cosine similarity"
+    body_sections: ["§Results: H2 Metameric Convergence"]
+  - id: m_conditional
+    statement: "Independent-samples t-test of 10 global vs 5 local pair DCIs: t(13) = 6.483, p < .001, Cohen's d = .878; local brands collapse ~25% more than global."
+    source_observations: [O1, O2]
+    generating_method: M3
+    value: "d = .878; p < .001; ~25% more collapse"
+    units: "between-condition effect size"
+    body_sections: ["§Results: Conditional metamerism"]
+  - id: m_brandfunction
+    statement: "Brand Function specifications reduced aggregate local-brand DCI from .353 to .284 (~20% toward baseline), driven by Cultural-dimension recovery; DCI remained above .250 and Economic stayed elevated at 15.4."
+    source_observations: [O4]
+    generating_method: M2
+    value: "DCI .353 -> .284 (~20% recovery); residual above baseline"
+    units: "verifiability-concentration index (baseline .250)"
+    body_sections: ["§Results: Brand Function resolution (Run 4)"]
+  - id: m_heterogeneity_null
+    statement: "MANOVA on per-model DCI: F(5,54) = 0.59, p = .712 (Run 2); t = .221, p = .413, d = .043 (Run 5) — no AI observer heterogeneity beyond sampling noise."
+    source_observations: [O1, O3]
+    generating_method: M3
+    value: "p = .712; d = .043"
+    units: "between-model variance test"
+    body_sections: ["§Results: H3 — NOT SUPPORTED"]
+
+# ============================================================================
+# Propositions — the theoretical backbone
+# ============================================================================
+propositions:
+  - id: P1
+    statement: >-
+      Brand perception is a multi-dimensional construct that established
+      frameworks (Aaker personality, Keller CBBE, Brakus experience, Kapferer
+      prism) partition separately; Spectral Brand Theory unifies them as eight
+      typed emission dimensions (Semiotic, Narrative, Ideological, Experiential,
+      Social, Economic, Cultural, Temporal), with Temporal as SBT's unique
+      contribution having no predecessor.
+    conditions: ""
+    antecedents: []
+    evidence:
+      - type: theory_mapping
+        anchor: "Table 1 maps each established framework's constructs to SBT dimensions; Appendix A specifies the eight dimensions."
+        citation_keys: [aaker-1997-dimensions-brand-personality, keller-1993-conceptualizing-measuring-managing, brakus-2009-brand-experience-what, kapferer-2012-new-strategic-brand]
+    body_sections: ["§Theoretical Framework: Brand Perception as Multi-Dimensional Construct", "Appendix A"]
+  - id: P2
+    statement: >-
+      Emission is not perception: each observer type applies a characteristic
+      spectral weight vector on the simplex that determines which dimensions are
+      salient in forming brand conviction; observers with similar weights
+      cluster into cohorts, and two observers can form structurally different
+      brand convictions from identical emission. This replaces the
+      single-observer assumption shared by the established frameworks.
+    conditions: ""
+    antecedents: [P1]
+    evidence:
+      - type: theory
+        anchor: "SBT observer spectral profile; cohorts cf. Wedel and Kamakura (2000)."
+        citation_keys: []
+    body_sections: ["§Theoretical Framework: SBT as Dimensional Framework", "Appendix A.4"]
+  - id: P3
+    statement: >-
+      LLMs are a structurally distinct observer class that lacks embodied
+      experience, social context, and cultural memory; they operate on
+      statistical regularities in overlapping text corpora, are near-
+      deterministic, and hold a utilitarian-competence advantage. Established
+      frameworks describe what consumers perceive but cannot predict how an AI
+      mediating layer transforms perception before it reaches the consumer (the
+      prediction gap).
+    conditions: ""
+    antecedents: [P2]
+    evidence:
+      - type: analytic
+        anchor: "Three distinguishing properties of AI observers; directional prior work that lacks a perceptual measurement model."
+        citation_keys: [dawar-2018-marketing-age-alexa, hermann-2024-artificial-intelligence-consumer, hermann-2026-trusting-ai-agents, longoni-2022-artificial-intelligence-utilitarian, li-2024-frontiers-determining-validity]
+    body_sections: ["§Theoretical Framework: The AI Observer Problem"]
+  - id: P4
+    statement: >-
+      Spectral metamerism: projecting brand perception from eight dimensions to
+      fewer (Johnson-Lindenstrauss distortion) causes well-separated brands to
+      overlap, because the observer's spectral weights assign near-zero weight to
+      the differentiating dimensions — structurally analogous to optical
+      metamerism and to Tversky's elimination by aspects. The count of metameric
+      pairs increases combinatorially (not merely linearly) as effective
+      dimensionality falls.
+    conditions: ""
+    antecedents: [P2]
+    evidence:
+      - type: theory
+        anchor: "JL lemma; optical metamerism analogue; elimination-by-aspects mechanism."
+        citation_keys: [johnson-1984-extensions-lipschitz, wyszecki-1982-color-science-concepts, tversky-1972-elimination-by-aspects]
+    body_sections: ["§Theoretical Framework: Spectral Metamerism and Dimensional Collapse"]
+  - id: P5
+    statement: >-
+      The predicted LLM spectral profile is structured: high weights on
+      verifiable dimensions (Economic, Experiential) densely encoded in training
+      data; moderate weights on textually-represented dimensions (Semiotic,
+      Narrative); low weights on perception-dependent dimensions (Ideological,
+      Social, Cultural, Temporal) that require embodied/social/cultural/temporal
+      grounding text-only corpora encode sparsely. This generates four primary
+      hypotheses (H1 dimensional bias, H2 metameric collapse, H3 observer
+      heterogeneity, H4 differential collapse).
+    conditions: "C1"
+    antecedents: [P3, P4]
+    evidence:
+      - type: prediction
+        anchor: "Convergent evidence from collapse in related domains predicts over-weighting of quantifiable and under-weighting of perception-dependent dimensions."
+        citation_keys: [hashimoto-2025-exploring-personality-structure, liu-2026-alignment-tax-response, sourati-2026-homogenizing-effect-large]
+    body_sections: ["§Theoretical Framework: Hypotheses", "§Dimensional Collapse in Related Domains"]
+  - id: P6
+    statement: >-
+      Causal mechanism: text-conditioned training data is dimensionally
+      non-uniform with respect to brand signals (Economic/Experiential densely
+      encoded; Cultural/Temporal/Ideological/Narrative sparsely), so encoders
+      inherit a low-rank perception subspace in which only densely-encoded
+      directions retain variance; PRISM-B reads it out as an implicit weight
+      vector, the DCI summarises the verifiability concentration, and because all
+      text encoders train on overlapping corpora the subspace is shared,
+      producing the cross-model cosine convergence.
+    conditions: "C1"
+    antecedents: [P5]
+    evidence:
+      - type: mechanism
+        anchor: "Figure 1 flowchart: corpora -> encoder bottleneck -> low-rank subspace -> implicit weights -> DCI + shared-subspace cosine convergence."
+        citation_keys: []
+    body_sections: ["§Theoretical Framework: Mechanism Summary (Figure 1)", "§Method: Statistical Model"]
+  - id: P7
+    statement: >-
+      DCI admits an information-theoretic reading as a rate-distortion
+      functional: the collapse to Economic + Semiotic is a minimum-distortion
+      encoding given the model's effective channel capacity, and the cross-model
+      cosine quantifies independent encoders converging on the same
+      rate-distortion-optimal codebook (vector-quantization convergence under a
+      small rate budget).
+    conditions: ""
+    antecedents: [P6]
+    evidence:
+      - type: theory
+        anchor: "Rate-distortion and vector-quantization framing; full R(D) curve in companion study."
+        citation_keys: [gersho-1991-vector-quantization-signal, shannon-1959-coding-theorems-discrete]
+    body_sections: ["§Method: DCI as a rate-distortion functional"]
+  - id: P8
+    statement: >-
+      The collapse reframes search-advertising strategy from a platform-switching
+      problem to a dimensional-specification problem: brand visibility acquires
+      dimensional structure, the zero-click paradigm makes the LLM's spectral
+      profile the gate on which dimensions reach the consumer, portfolio brands
+      can compete against themselves (spectral self-competition), and the
+      operative defense is making collapsed dimensions machine-readable rather
+      than choosing the right AI vendor — AI defensibility in the Hermann et al.
+      sense is identical to dimensional verifiability in the SBT sense.
+    conditions: "C1"
+    antecedents: [F1, F2, F4, F5]
+    evidence:
+      - type: synthesis
+        anchor: "Implications for search advertising theory; managerial and practical implications; convergence with the AI-defensibility directive."
+        citation_keys: [hermann-2026-trusting-ai-agents, sabbah-2026-marketing-machines-how]
+    body_sections: ["§Implications for Search Advertising Theory", "§Discussion: Practical/Managerial Implications"]
+
+# ============================================================================
+# Findings — what the experiments demonstrate (mapped to the hypotheses)
+# ============================================================================
+findings:
+  - id: F1
+    statement: >-
+      H1 SUPPORTED — Dimensional bias: LLMs exhibit non-uniform spectral
+      profiles, systematically over-weighting Experiential (150% global / 131%
+      local) and Economic (114% global / 168% local) while suppressing Cultural,
+      Temporal, Ideological, and Social below the uniform baseline; DCI is
+      elevated above .250 in every model and both runs.
+    type: "confirmatory_result"
+    source_measurements: [m_dci_global, m_dci_local, m_dci_crosscultural]
+    generating_method: M2
+    antecedents: [O1, O2, O3]
+    falsifier: "If DCI did not exceed .250, or Experiential/Economic were not the dominant weights, H1 fails."
+    citation_role_in_paper: "primary_evidence_for_P5_P6"
+    body_sections: ["§Results: H1 Dimensional Bias"]
+  - id: F2
+    statement: >-
+      H2 SUPPORTED — Metameric convergence: cross-model cosine = .975 (six
+      confirmatory models) and .977 across 24 architectures from nine cultural
+      traditions; dimensional orderings are near-identical despite differences in
+      architecture, training corpus, and deployment, so collapse is structural
+      and platform-switching is not a hedge.
+    type: "confirmatory_result"
+    source_measurements: [m_cosine]
+    generating_method: M3
+    antecedents: [O1, O3]
+    falsifier: "If cosine fell substantially below unity across architectures, the shared-subspace claim (P6) fails."
+    citation_role_in_paper: "primary_evidence_for_P6_P8"
+    body_sections: ["§Results: H2 Metameric Convergence"]
+  - id: F3
+    statement: >-
+      Conditional metamerism SUPPORTED: locally embedded brands collapse ~25%
+      more than global brands (d = .878, p < .001), with an Economic-default
+      spike (168% of baseline) — AI substitutes price for every dimension it
+      lacks brand-specific data on. Collapse severity is conditional on
+      training-data embeddedness, which outweighs architecture, cultural origin,
+      and deployment context.
+    type: "confirmatory_result"
+    source_measurements: [m_conditional, m_dci_local]
+    generating_method: M3
+    antecedents: [O1, O2]
+    falsifier: "If local and global DCIs did not differ, the embeddedness-moderator claim fails."
+    citation_role_in_paper: "primary_evidence_for_P5_P8"
+    body_sections: ["§Results: Conditional metamerism"]
+  - id: F4
+    statement: >-
+      Brand Function resolution SUPPORTED (partial): structured Brand Function
+      specifications recover ~20% of lost dimensionality (local DCI .353 ->
+      .284), driven primarily by Cultural-dimension recovery, but DCI stays above
+      baseline and Economic stays elevated — collapse is partly information-driven
+      and partly a structural property of text-based processing.
+    type: "intervention_result"
+    source_measurements: [m_brandfunction]
+    generating_method: M2
+    antecedents: [O4]
+    falsifier: "If specification produced no DCI reduction, the recoverability/defensibility claim fails."
+    citation_role_in_paper: "primary_evidence_for_P8"
+    body_sections: ["§Results: Brand Function resolution (Run 4)"]
+  - id: F5
+    statement: >-
+      The Patagonia/Columbia pair is the diagnostic exception: DCI = .194, BELOW
+      baseline, because Patagonia's ideological dimension is grounded in legally
+      binding, machine-readable commitments (1% for the Planet pledge, the 2022
+      non-profit ownership transfer). This is the empirical signature of a
+      defensible dimension — a brand value articulable in verifiable terms the
+      model can process.
+    type: "diagnostic_exception"
+    source_measurements: [m_dci_global]
+    generating_method: M2
+    antecedents: [O1]
+    falsifier: "If a brand with legally-grounded soft-dimension signal still collapsed to baseline, the defensibility mechanism fails."
+    citation_role_in_paper: "mechanism_demonstration_for_P8"
+    body_sections: ["§Results: Confirmatory; §Discussion: Summary of Findings"]
+  - id: F6
+    statement: >-
+      Discourse-layer reinterpretation of geopolitical framing (H12, Runs 7/11):
+      same brand evaluated in different city x language contexts shows DCI deltas
+      exceeding the noise floor (mean .040, p < .001), but the mechanism is not
+      country-of-origin priming or consumer animosity — it is discourse-layer
+      activation. Kyiv is uniquely low (home-market canonical layer), every
+      foreign city collapses to a narrow band regardless of geopolitical
+      alignment, and local-language prompting unlocks the city-local layer
+      (Astana in Kazakh: -9.50 DCI points, p = .002).
+    type: "exploratory_reinterpretation"
+    source_measurements: []
+    generating_method: M3
+    antecedents: [O3]
+    falsifier: "If foreign cities differed by geopolitical alignment rather than discourse density, the discourse-layer account fails."
+    citation_role_in_paper: "refines_H10_null"
+    body_sections: ["§Results: Geopolitical Framing (Runs 7 and 11)"]
+
+# ============================================================================
+# Negative findings — the hypotheses NOT supported (load-bearing for the thesis)
+# ============================================================================
+negative_findings:
+  - id: NF1
+    statement: >-
+      H3 NOT SUPPORTED — AI observer heterogeneity: per-model DCI variation falls
+      within sampling noise (F(5,54) = 0.59, p = .712; Run 5 t = .221, p = .413,
+      d = .043). There are no distinct AI observer cohorts at the DCI level;
+      collapse is shared across architectures. This is load-bearing: it forecloses
+      platform-switching as a strategic hedge.
+    expected_observation: "Measurably different spectral profiles across architectures and training origins."
+    source_method: M3
+    affects_nodes: [P5, F2, P8]
+    motivates: [P8]
+    body_sections: ["§Results: H3 — NOT SUPPORTED"]
+  - id: NF2
+    statement: >-
+      H4 NOT SUPPORTED — differential soft-dimension collapse: paired t-tests
+      found no differential collapse among Narrative, Ideological, Cultural, and
+      Temporal (all pairwise p >= .05). Soft dimensions collapse approximately
+      uniformly, so the verifiable/non-verifiable distinction operates as a
+      binary rather than a gradient — brand managers cannot invest in surviving
+      soft dimensions as a hedge.
+    expected_observation: "Narrative/Ideological collapsing more severely than Cultural/Temporal."
+    source_method: M3
+    affects_nodes: [P5, P8]
+    motivates: [P8]
+    body_sections: ["§Results: H4 — NOT SUPPORTED"]
+  - id: NF3
+    statement: >-
+      H10 NOT SUPPORTED in aggregate — native-language prompting is null across
+      121 model-pair combinations (48% showed reduction; binomial p = .716; mean
+      reduction +.001). It is null for home-audience conditions (English already
+      accesses the canonical discourse) and substantial only for foreign-audience
+      conditions where local language is the sole path into a city-local discourse
+      layer (e.g., Mongolian APU Chinggis: 8/8 models, mean 4.9 points).
+    expected_observation: "Native-language prompting uniformly reducing collapse (language-as-key)."
+    source_method: M3
+    affects_nodes: [F6]
+    motivates: [F6]
+    body_sections: ["§Results: H10 — NOT SUPPORTED"]
+
+# ============================================================================
+# Robustness checks — supplementary experiments hardening the core result
+# ============================================================================
+robustness_checks:
+  - id: RC1
+    statement: >-
+      Temperature invariance (Run 9, 540 calls; Kruskal-Wallis H = 1.83,
+      p = .610): DCI is stable across T = 0.0, 0.3, 1.0, confirming collapse is a
+      property of learned representations, not sampling stochasticity.
+    type: "stochasticity_check"
+    sensitivity_of: [F1, F2]
+    body_sections: ["§Results: Robustness", "§Supplementary Experiments"]
+  - id: RC2
+    statement: >-
+      Temporal stability (Experiment H13, 450 calls, 4 model pairs): all pairwise
+      profile cosines > .97 across model versions, ruling out the hypothesis that
+      model scaling will naturally resolve collapse.
+    type: "version_stability_check"
+    sensitivity_of: [F2, P8]
+    body_sections: ["§Results: Robustness", "§Limitations and Future Research"]
+  - id: RC3
+    statement: >-
+      Specification-as-constraint (Experiments D1/D2/Q1): information framing
+      amplifies collapse (d = .820) while constraint framing reduces it 42%
+      (d = -.983) — "tell the model what to DO, not what to KNOW"; injecting
+      constraint framing at every pipeline step compresses DCI variance (Levene
+      F = 64.77, p < .001) rather than shifting the mean, preventing catastrophic
+      collapse events in agentic contexts.
+    type: "intervention_robustness_check"
+    sensitivity_of: [F4, P8]
+    body_sections: ["§Supplementary Experiments"]
+  - id: RC4
+    statement: >-
+      Serial-position / cross-domain controls (Experiments E, F1, F2): primacy
+      bias is driven almost entirely by one architecture (GPT-4o-mini, d = 1.748)
+      and is domain-specific to brand perception (absent in political-attitude
+      measurement), ruling out a universal LLM positional artifact; Likert-format
+      elicitation eliminates positional effects, validating PRISM-B design.
+    type: "instrument_validity_check"
+    sensitivity_of: [M1, F1]
+    body_sections: ["§Supplementary Experiments"]
+
+# ============================================================================
+# Alternative explanations — rivals the collapse claim must clear
+# ============================================================================
+alternative_explanations:
+  - id: A1
+    statement: >-
+      The collapse could be an artifact of RLHF/alignment training,
+      e-commerce-skewed training data, or commercial API safety layers (a quirk
+      of one model family) rather than a structural property of text-conditioned
+      brand observation.
+    rules_out_required: [P6, F2]
+    ruled_out_by: [F2, NF1, RC2]
+    rules_out_status: "rejected"
+    reasoning: >-
+      Cross-model cosine .977 spans cloud and local open-weight, Western and
+      Chinese and seven further traditions, and aligned and less-aligned systems;
+      H3 heterogeneity is null and the profile is stable across versions — so the
+      collapse cannot be a single-family training artifact.
+    body_sections: ["§Discussion: Summary of Findings"]
+  - id: A2
+    statement: >-
+      High aggregate agreement between LLM and human perceptual maps (>75%, Li et
+      al. 2024) could imply LLMs preserve multi-dimensional perception, making
+      the collapse claim overstated.
+    rules_out_required: [F1]
+    ruled_out_by: [F1, NF2]
+    rules_out_status: "rejected"
+    reasoning: >-
+      Aggregate ordinal agreement can persist under severe dimensional
+      compression when the compressed dimensions happen to align with the
+      full-dimensional ranking — the low-rank-projection signature; the paper
+      measures perceptual-level dimensional weight directly, not aggregate
+      ranking.
+    body_sections: ["§Theoretical Framework: The AI Observer Problem", "§Connection to Broader Trends"]
+
+# ============================================================================
+# Limitations — honest scope of the empirical claims
+# ============================================================================
+limitations:
+  - id: L1
+    statement: >-
+      All observations are LLM-generated with no human validation of dimensional
+      weight profiles; connecting AI spectral profiles to actual purchase
+      decisions requires consumer experiments beyond scope.
+    severity: "external-validity"
+    affects: [F1, P8]
+    body_sections: ["§Limitations and Future Research"]
+  - id: L2
+    statement: >-
+      All five local brand pairs are in the food and beverage sector, confounding
+      locality with category effects; the conditional-metamerism effect (n = 5
+      pairs) needs replication across additional categories.
+    severity: "confound / small-sample"
+    affects: [F3]
+    body_sections: ["§Results: Conditional metamerism", "§Limitations and Future Research"]
+  - id: L3
+    statement: >-
+      Forced-allocation self-report measures what models report as important when
+      explicitly asked, which may differ from implicit weighting in unconstrained
+      responses; responses are also sensitive to prompt engineering, and some
+      national-model APIs had 20-30% invalid-JSON rates, potentially biasing the
+      cross-cultural sample toward more reliable responders.
+    severity: "instrument / sampling"
+    affects: [M1, F2]
+    body_sections: ["§Method: Validity of forced-allocation self-report", "§Limitations and Future Research"]
+  - id: L4
+    statement: >-
+      Findings are bounded to text-conditioned LLMs of comparable training scale;
+      multimodal, retrieval-grounded, cross-modal-trained, and non-text-primary
+      (voice/AR-VR/in-store) agents may exhibit attenuated collapse — the DCI
+      estimates here are upper-bound for those settings.
+    severity: "scope-bounding"
+    affects: [P5, P6, P8]
+    body_sections: ["§Discussion: Boundary Conditions", "§Limitations and Future Research"]
+
+# ============================================================================
+# Cross-paper engagement (corpus precedents)
+# ============================================================================
+corpus_precedents:
+  - paper_key: 2026a
+    relationship: applies
+    spine_nodes: [P1, P2, P4]
+    note: >-
+      Applies Spectral Brand Theory (the eight typed dimensions, observer
+      spectral profile, spectral metamerism, fixed canonical brand profiles for
+      Hermes/Patagonia/Erewhon) to the LLM observer class.
+  - paper_key: 2026aa
+    relationship: extends
+    spine_nodes: [P7]
+    note: >-
+      Companion study estimating the empirical rate-distortion curve R(D) for AI
+      brand-perception encoders (J-shaped across 17 architectures), formalizing
+      the DCI-as-rate-distortion reading.
+  - paper_key: 2026x
+    relationship: extends
+    spine_nodes: [F4, F5, P8]
+    note: >-
+      Develops the identity-layer / cryptographic-verification response to
+      dimensional collapse (making soft-dimension claims machine-defensible) as a
+      companion design question.
+  - paper_key: 2026ac
+    relationship: refines
+    spine_nodes: [P8]
+    note: >-
+      Awareness-gate sufficiency inversion provides the complementary mechanism
+      for why portfolio interference fails in AI perception (DCI acts per-brand,
+      not per-portfolio).
+
+# ============================================================================
+# External anchor literature
+# ============================================================================
+external_anchors:
+  - {citation_key: aaker-1997-dimensions-brand-personality, role: framework_mapped, spine_nodes: [P1], note: "Brand personality dimensions — mapped into SBT space (Table 1)"}
+  - {citation_key: keller-1993-conceptualizing-measuring-managing, role: framework_mapped, spine_nodes: [P1], note: "Customer-based brand equity"}
+  - {citation_key: brakus-2009-brand-experience-what, role: framework_mapped, spine_nodes: [P1], note: "Brand experience scale — subsumed in Experiential"}
+  - {citation_key: kapferer-2012-new-strategic-brand, role: framework_mapped, spine_nodes: [P1], note: "Brand identity prism — culture facet maps to Cultural/Ideological"}
+  - {citation_key: wyszecki-1982-color-science-concepts, role: foundational_analogue, spine_nodes: [P4], note: "Optical metamerism — the perceptual analogue grounding spectral metamerism"}
+  - {citation_key: johnson-1984-extensions-lipschitz, role: foundational_theory, spine_nodes: [P4], note: "Johnson-Lindenstrauss lemma — dimension-reduction distortion"}
+  - {citation_key: tversky-1972-elimination-by-aspects, role: mechanism_analogue, spine_nodes: [P4], note: "Elimination by aspects — near-zero-weight dimensions effectively eliminated"}
+  - {citation_key: gersho-1991-vector-quantization-signal, role: foundational_theory, spine_nodes: [P7], note: "Vector quantization — independent quantizers converge on a common partition under small rate budget"}
+  - {citation_key: shannon-1959-coding-theorems-discrete, role: foundational_theory, spine_nodes: [P7], note: "Rate-distortion theory — minimum-distortion encoding under a fidelity criterion"}
+  - {citation_key: hermann-2026-trusting-ai-agents, role: directional_prior_work, spine_nodes: [P3, P8], note: "AI defensibility directive — converted here into a measurable, dimensional answer"}
+  - {citation_key: sabbah-2026-marketing-machines-how, role: convergent_evidence, spine_nodes: [P3, P8], note: "Only ratings (most verifiable cue) survive across AI models — choice-level convergence with this perception-level finding"}
+  - {citation_key: longoni-2022-artificial-intelligence-utilitarian, role: convergent_evidence, spine_nodes: [P3], note: "Utilitarian-vs-hedonic AI credibility (word-of-machine)"}
+  - {citation_key: liu-2026-alignment-tax-response, role: convergent_evidence, spine_nodes: [P5], note: "Alignment tax — RLHF response homogenization"}
+  - {citation_key: sourati-2026-homogenizing-effect-large, role: convergent_evidence, spine_nodes: [P5], note: "Homogenizing effect of LLMs — epistemic-collapse analogue"}
+  - {citation_key: hashimoto-2025-exploring-personality-structure, role: convergent_evidence, spine_nodes: [P5], note: "Personality-structure compression under LLM mediation"}
+  - {citation_key: li-2024-frontiers-determining-validity, role: rival_evidence, spine_nodes: [P3], note: "LLM/human perceptual-map agreement >75% — the aggregate-agreement rival cleared by A2"}
+  - {citation_key: dawar-2018-marketing-age-alexa, role: motivating_context, spine_nodes: [P3], note: "Marketing in the age of Alexa — channel shift to algorithmic recommendation"}
+
+# ============================================================================
+# Open questions / boundary edges
+# ============================================================================
+open:
+  - "Do AI-mediated brand encounters produce measurably different brand convictions than direct encounters? (consumer experiments — L1)"
+  - "Is the Economic Default uniform or category-modulated? (the local-pair category confound — L2)"
+  - "Which alternative specification formats beyond structural Brand Function recover the most dimensionality, given the frontier appears qualitative (causal attributions, legally-grounded commitments) rather than quantitative? (F4)"
+  - "Do multimodal / retrieval-grounded / cross-modal agents attenuate collapse as the boundary conditions predict? (C1, C2, L4)"
+
+# ============================================================================
+# Spine changelog — append-only
+# ============================================================================

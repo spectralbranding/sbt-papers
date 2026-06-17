@@ -1,0 +1,551 @@
+# SPINE.yaml — Spectral Immunity (2026ac / R8-R20 lineage)
+#
+# RETROFIT spine: extracted descriptively from the COMPLETED paper.md
+# ([internal path removed]), not authored generatively before
+# prose. Part of the SPINE-for-all-active-canonical project
+# ([internal path removed], decision D4).
+#
+# Scope: the paper's argument backbone — the three interference propositions
+# (P1 conditionality, P2 awareness-gate sufficiency inversion, P3 asymmetry),
+# the spectral-interference formalism, the bandwidth/rational-inattention
+# resolution, and the WHAT/DO output-coordination distinction — plus the
+# empirical chain (observations -> methods -> measurements -> findings) for the
+# headline H5 (spectral immunity) result and the Geely Auto multi-turn
+# exception. Schema v0.2 because the paper reports author-produced AI-tool
+# outputs (N = 9,925 LLM observations), computed DCI / TOST / variance-
+# decomposition table values, and Cohen's d effect sizes.
+
+spine_version: "0.2"
+spine_doc_version: "0.1.0"     # retrofit spine first lock (2026-06-14)
+paper_key: "2026ac"
+provenance: retrofit
+title: >-
+  Spectral Immunity: Why Brand Portfolio Interference Disappears for AI
+  Observers
+target_venue_primary: "TBD (marketing journal; AMA reference style)"
+status: >-
+  Retrofit backbone spine extracted from the completed working-paper draft
+  (v1.0.0, April 2026). Consolidates the theoretical framework (2026q) and
+  the large-scale empirical test (2026ab) into a unified treatment.
+
+thesis: |
+  Brand portfolio theory predicts perceptual interference between commonly
+  owned brands whenever an observer's awareness gate is open. Large language
+  models, whose training data permanently saturate that gate, are a critical
+  test case. Formalizing spectral interference across eight perception
+  dimensions and testing three propositions in a fully crossed experiment
+  (13 LLMs, 7 training traditions, 40 brands, 7 portfolio archetypes, 4 prompt
+  modalities; N = 9,925), the paper finds near-zero portfolio-induced change
+  (mean |ΔDCI| = .26; TOST equivalence for 18/20 brands; .1% of DCI variance
+  from portfolio framing versus 37.4% from brand identity). The sole exception
+  is a reverse-aspiration structure (Geely Auto) under multi-turn conversation
+  (d = -1.11), where extended context converts coordination information into
+  output inference. This resolves the awareness-gate paradox: awareness is
+  necessary but not sufficient; a perception channel with adequate bandwidth to
+  encode portfolio context — rooted in rate-distortion theory and rational
+  inattention — is also required. General-purpose LLMs are rationally
+  inattentive to organizational-coordination (DO-layer) signals because these
+  contribute negligibly to output-fidelity (WHAT-layer) reconstruction, so
+  portfolio architecture becomes strategically invisible in AI-mediated
+  channels.
+
+# ============================================================================
+# Boundary conditions — when the propositions / the immunity result hold
+# ============================================================================
+boundary_conditions:
+  - id: C1
+    statement: >-
+      The observer is a general-purpose LLM operating near minimum-distortion
+      compression (encoding optimized for output reconstruction). Domain-
+      specific fine-tuned models may encode organizational context with higher
+      bandwidth and fall outside the immunity prediction.
+    observable: "Model class = general-purpose LLM; compressed brand encoding."
+    excludes: "Fine-tuned e-commerce / marketing-specific models; human observers."
+    provenance:
+      created_by: "author"
+      created_at: "2026-04"
+  - id: C2
+    statement: >-
+      Awareness is operationalized via in-context ownership disclosure (a
+      minimal single-sentence DO-layer reveal), distinct from pre-training-
+      encoded ownership knowledge; richer multi-sentence portfolio framing was
+      not tested.
+    observable: "Single-sentence portfolio-context prompt in user or system message."
+    excludes: "Multi-sentence brand-architecture / cross-promotion framing; pre-training-only awareness without disclosure."
+    provenance:
+      created_by: "author"
+      created_at: "2026-04"
+
+# ============================================================================
+# Observations — the author-produced experiment events (the L-layer data)
+# ============================================================================
+observations:
+  - id: O1
+    statement: >-
+      A fully crossed AI-observer experiment produced 9,925 parsed brand-
+      perception observations: 13 LLMs from 7 training traditions rating 40
+      brands across 7 portfolio archetypes, in solo vs. portfolio conditions,
+      across 4 prompt modalities (direct rating, naturalistic recommendation,
+      multi-turn conversation, native-language ablation) plus a prompt-location
+      ablation and a 20-brand published-brand replication.
+    raw_data_pointer: "https://doi.org/10.57967/hf/8380 (HuggingFace) + https://doi.org/10.5281/zenodo.19555282 (Zenodo)"
+    instrument: "code/run_portfolio.py (experiment driver) over 13 LLM APIs"
+    timestamp: "2026-04"
+    body_sections: ["Method §Design", "Results"]
+  - id: O2
+    statement: >-
+      Each observation is an 8-dimension JSON rating vector (Semiotic,
+      Narrative, Ideological, Experiential, Social, Economic, Cultural,
+      Temporal) on the 1-5 PRISM-B scale, from which a Dimensional
+      Concentration Index (DCI) is computed per cell (N = 65 per cell;
+      13 models x 5 repetitions); parse success 7,975/8,330 (95.7%) for the
+      core panel.
+    raw_data_pointer: "archived dataset; Appendix C verbatim prompts"
+    instrument: "PRISM-B 1-5 scale; DCI per Equation 2"
+    timestamp: "2026-04"
+    body_sections: ["Method §Metrics and Statistical Approach", "Appendix C"]
+
+# ============================================================================
+# Methods — the formalism + the statistical apparatus
+# ============================================================================
+methods:
+  - id: M1
+    statement: >-
+      Formalize spectral interference: brand emission profile e_B(t) in R^8_+,
+      observer spectral profile w_j in the 7-simplex, perception cloud
+      Pi_{C_k}(B,t) as the cohort distribution of brand convictions, and per-
+      dimension interference I_d = alpha * w_d * (e_d^{B_j} - mu_d) aggregated
+      into total interference magnitude (Eqs. 1-4). Four portfolio archetypes
+      (spectral cluster / contradiction / spread / layer) follow from spectral
+      proximity x cohort overlap.
+    type: "theoretical_formalization"
+    inputs: ["SBT eight-dimension construct (2026a)", "DCI metric (Eq. 2)"]
+    outputs: ["Eqs. 1-4; archetype taxonomy; Propositions P1-P3"]
+    code_anchor: "paper Theoretical Framework"
+    body_sections: ["Theoretical Framework"]
+  - id: M2
+    statement: >-
+      Quantify portfolio-induced change per brand as ΔDCI (portfolio minus
+      solo), with paired t-tests, Cohen's d, and TOST equivalence tests
+      (Lakens 2017; Lakens, Scheel & Isager 2018) at ±1.0 DCI bounds;
+      Benjamini-Hochberg FDR correction across all 20 brand-level tests; and a
+      variance decomposition attributing DCI variance to brand / portfolio /
+      model / condition factors.
+    type: "equivalence_testing_and_variance_decomposition"
+    inputs: ["DCI per cell (O2)"]
+    outputs: ["Tables 3-7 (ΔDCI, t, p, d, TOST p, equivalence); Table 4 variance"]
+    code_anchor: "code/compute_dci.py (seed 42; uv run python compute_dci.py)"
+    reproducibility:
+      seed: "42"
+      runtime_environment: "Python 3.12 + uv; published at sbt-papers/r21-spectral-immunity/code/"
+    body_sections: ["Method §Metrics and Statistical Approach", "Companion Computation Script"]
+  - id: M3
+    statement: >-
+      Power analysis for the equivalence design: with N = 65 per cell, TOST
+      power for ±1.0 DCI bounds at alpha = .05 exceeds .80 for population
+      effects up to |d| = .30, so the study can detect substantively meaningful
+      non-equivalence while classifying smaller effects as equivalent.
+    type: "power_analysis"
+    inputs: ["TOST bounds ±1.0; N = 65/cell"]
+    outputs: ["equivalence-test power curve"]
+    code_anchor: "code/compute_dci.py"
+    body_sections: ["Method §Metrics and Statistical Approach"]
+
+# ============================================================================
+# Measurements — the headline computed values
+# ============================================================================
+measurements:
+  - id: m_immunity
+    statement: "Mean |ΔDCI| = .26; TOST equivalence confirmed for 18/20 brands; 0/20 FDR-significant in direct rating; cosine similarity > .999 for all brands."
+    source_observations: [O1, O2]
+    generating_method: M2
+    value: "mean |ΔDCI| = .26 / 18-of-20 equivalent / 0-of-20 FDR-significant"
+    units: "DCI points + brand counts"
+    body_sections: ["Results §Main Finding", "Table 3"]
+  - id: m_variance
+    statement: "Variance decomposition: brand identity 37.4%, portfolio (parent) 19.3%, model 8.6%, condition (solo vs. portfolio) .1%."
+    source_observations: [O1, O2]
+    generating_method: M2
+    value: "brand 37.4% vs. condition .1% (three orders of magnitude)"
+    units: "% of DCI variance"
+    body_sections: ["Results §Variance Decomposition", "Table 4"]
+  - id: m_geely
+    statement: "Multi-turn conversation, Geely Auto: T1 DCI 8.1 -> T2 DCI 5.1, ΔDCI = -2.93, d = -1.11, p < .001 (largest effect in the experiment); mean ΔDCI across all 20 brands in multi-turn = -.03."
+    source_observations: [O1, O2]
+    generating_method: M2
+    value: "Geely Auto d = -1.11 (multi-turn); overall multi-turn mean ΔDCI = -.03"
+    units: "DCI points + Cohen's d"
+    body_sections: ["Results §Multi-Turn Conversation: The Geely Auto Exception", "Table 6"]
+
+# ============================================================================
+# Propositions — the three interference claims + the WHAT/DO unifying claim
+# ============================================================================
+propositions:
+  - id: P0
+    statement: >-
+      The awareness-gate paradox: standard portfolio theory predicts
+      interference scales with awareness, so LLMs (permanently saturated gate)
+      should show maximal interference; but if LLM brand encodings are already
+      compressed to near-minimum-distortion representations, added portfolio
+      context provides no information the encoding can absorb, predicting
+      complete immunity. These competing predictions are testable.
+    conditions: ""
+    antecedents: []
+    evidence:
+      - type: analytic
+        anchor: "Awareness gate is the central moderator in Keller (1993), Erdem & Sun (2002), Lei et al. (2008); LLMs cannot be made unaware of ownership."
+        citation_keys: [keller-1993-conceptualizing-measuring-managing, erdem-2002-empirical-investigation-spillover, lei-2008-negative-spillover-brand]
+    body_sections: ["Introduction", "Theoretical Framework"]
+  - id: P1
+    statement: >-
+      (Proposition 1 — Interference conditionality) Spectral interference
+      between brands B_i and B_j within a portfolio operates iff three
+      conditions hold simultaneously: (a) the brands share at least one observer
+      cohort, (b) the awareness gate exceeds a minimum threshold, and (c) the
+      brands' emission profiles differ on at least one dimension weighted above
+      a salience threshold by the shared cohort. Absence of any one condition
+      suppresses interference entirely.
+    conditions: ""
+    antecedents: [P0]
+    evidence:
+      - type: derivation
+        anchor: "From Eq. 3, I_d = 0 when alpha = 0, when w_d = 0, or when e_d^{B_j} = mu_d; conditions jointly necessary, individually insufficient."
+    falsifier: "P1 falsified if, with (a) and (c) holding and alpha = 0, cohort overlap + spectral divergence alone produce non-zero perception cloud shifts."
+    body_sections: ["Theoretical Framework §Propositions (P1)"]
+  - id: P2
+    statement: >-
+      (Proposition 2 — Awareness-gate sufficiency inversion) The awareness gate
+      is necessary but not sufficient for spectral interference. When an
+      observer's brand encoding operates near minimum-distortion compression,
+      maximal awareness (alpha ≈ 1) does not produce interference because the
+      portfolio context provides no additional information the compressed
+      encoding can absorb; a perception channel with adequate bandwidth to
+      encode portfolio context is also required.
+    conditions: "C1"
+    antecedents: [P0, P1]
+    evidence:
+      - type: derivation
+        anchor: "Eq. 3 models POTENTIAL not REALIZED perturbation; realization needs representational capacity. Rate-distortion-optimal encodings discard portfolio context into a metameric null space (2026e)."
+        citation_keys: [cover-2006-elements-information-theory, sims-2003-implications-rational-inattention]
+    falsifier: "P2 falsified if human-observer experiments with varied awareness fail to produce above-threshold interference while LLMs remain immune."
+    body_sections: ["Theoretical Framework §Propositions (P2)", "Discussion §Resolving the Awareness Gate Paradox"]
+  - id: P3
+    statement: >-
+      (Proposition 3 — Interference asymmetry) Spectral interference is
+      asymmetric: the perturbation of a higher-coherence brand by a lower-
+      coherence sibling exceeds the reverse perturbation, proportional to the
+      difference in perception cloud dispersion between the two brands.
+    conditions: ""
+    antecedents: [P1]
+    evidence:
+      - type: derivation
+        anchor: "A tight (low-variance) perception cloud experiences proportionally larger perturbation; connects to conviction asymmetry (2026a) and type-over-score resilience (2026s)."
+    falsifier: "P3 falsified if, across 10+ pairs with documented coherence asymmetry, the lower-coherence brand consistently shows equal or larger proportional DCI shifts."
+    body_sections: ["Theoretical Framework §Propositions (P3)"]
+  - id: P4
+    statement: >-
+      (Bandwidth constraint as generalized rational inattention) The bandwidth
+      constraint generalizes rational inattention from discrete-choice settings
+      to continuous perceptual encodings: the unit of capacity allocation is the
+      perceptual dimension, not the brand alternative, and AI observers are
+      architecturally (rate-distortion) and behaviorally (rational-inattention)
+      inattentive to organizational-coordination signals because their expected
+      return for output reconstruction is near zero.
+    conditions: "C1"
+    antecedents: [P2]
+    evidence:
+      - type: citation
+        anchor: "Sims (2003) RI; Matejka & McKay (2015) MNL; Caplin & Dean (2015) perceptual RI; Cover & Thomas (2006) rate-distortion; 2026aa empirical RD curve near the frontier."
+        citation_keys: [sims-2003-implications-rational-inattention, matejka-2015-rational-inattention-discrete, caplin-2015-revealed-preference-rational, cover-2006-elements-information-theory]
+    body_sections: ["Theoretical Framework §Bandwidth Constraint and Rational Inattention", "Discussion §Theoretical Implications"]
+  - id: P5
+    statement: >-
+      (Output-coordination / WHAT-DO distinction) Output specification (WHAT
+      layer — emission profile, quality gates, category positioning) and
+      coordination specification (DO layer — ownership, portfolio membership,
+      parent-brand relations) are separable. Portfolio framing is a pure DO-
+      layer signal; compressed AI encoders retain the WHAT layer and discard the
+      DO layer. AI brand profiles are therefore WHAT-layer valid (Type-I
+      instruments) but DO-layer invalid (not Type-II instruments).
+    conditions: "C1"
+    antecedents: [P2, P4]
+    evidence:
+      - type: analytic
+        anchor: "Maps onto Mintzberg's (1979) operating-core output vs. administrative coordination; instance of Farach's (2026) AI-as-coordination-compressing-capital; validity boundary on Li et al. (2024)'s LLM-as-instrument result."
+        citation_keys: [mintzberg-1979-structuring-organizations-synthesis, farach-2026-ai-as-coordinationcompressing, li-2024-frontiers-determining-validity]
+    body_sections: ["Theoretical Framework §The Output-Coordination Distinction", "Discussion §The Output-Coordination Distinction"]
+
+# ============================================================================
+# Findings — what the experiment demonstrates (the empirical payload)
+# ============================================================================
+findings:
+  - id: F1
+    statement: >-
+      (H5 Spectral immunity — supported) Across all portfolios and prompt
+      modalities, portfolio framing produces near-zero change in brand
+      perception: mean |ΔDCI| = .26, TOST equivalence for 18/20 brands, 0/20
+      FDR-significant in direct rating, cosine > .999. This is the headline
+      empirical support for P2 (awareness-gate sufficiency inversion).
+    type: "equivalence_null"
+    source_measurements: [m_immunity]
+    generating_method: M2
+    antecedents: [O1, O2]
+    falsifier: "Falsified if a 7+ model / 3+ tradition study finds systematic portfolio-induced DCI shifts > 2.0 with d > .50 surviving FDR across 5+ archetypes and 3+ modalities."
+    citation_role_in_paper: "primary_evidence_for_P2"
+    body_sections: ["Results §Main Finding", "Table 3", "Conclusion"]
+  - id: F2
+    statement: >-
+      (Variance decomposition) Brand identity (a WHAT-layer property) explains
+      37.4% of DCI variance while the solo-vs-portfolio condition (a DO-layer
+      manipulation) explains .1% — three orders of magnitude less — direct
+      evidence for the WHAT/DO output-coordination distinction.
+    type: "variance_attribution"
+    source_measurements: [m_variance]
+    generating_method: M2
+    antecedents: [O1, O2]
+    citation_role_in_paper: "primary_evidence_for_P5"
+    body_sections: ["Results §Variance Decomposition", "Table 4"]
+  - id: F3
+    statement: >-
+      (Archetype confirmatory tests) Predicted archetype-graded interference
+      did NOT materialize: H1 (LVMH constructive) not supported, H2 (Unilever
+      destructive) not supported, H3 (P&G negligible) supported, H4 (Toyota/
+      Lexus aspirational) not supported at corrected alpha, H6 (L'Oreal prestige
+      gradient) not supported, H7 (Geely reverse aspiration) not supported in
+      direct framing. None materially qualifies the headline immunity finding.
+    type: "confirmatory_hypothesis_tests"
+    source_measurements: [m_immunity]
+    generating_method: M2
+    antecedents: [O1, O2]
+    body_sections: ["Results §Hypothesis Tests (Confirmatory)"]
+  - id: F4
+    statement: >-
+      (Geely Auto multi-turn exception) In multi-turn conversation — the most
+      ecologically valid modality — a reverse-aspiration structure (Geely Auto)
+      shows the largest effect in the experiment (ΔDCI = -2.93, d = -1.11,
+      p < .001), interpreted as conversational accumulation converting DO-layer
+      ownership information into WHAT-layer output inference. The overall
+      multi-turn mean ΔDCI is -.03 (effectively zero).
+    type: "boundary_exception"
+    source_measurements: [m_geely]
+    generating_method: M2
+    antecedents: [O1, O2]
+    falsifier: "If a controlled reasoning-step manipulation across turns fails to reproduce the DO->WHAT conversion, the proposed mechanism weakens."
+    body_sections: ["Results §Multi-Turn Conversation: The Geely Auto Exception", "Table 6", "Discussion §The Output-Coordination Distinction"]
+
+# ============================================================================
+# Robustness checks
+# ============================================================================
+robustness_checks:
+  - id: RC1
+    statement: >-
+      Naturalistic recommendation prompts replicate the immunity null (mean
+      ΔDCI = -.23, cosine > .999, 0/20 FDR-significant).
+    type: "modality_replication"
+    sensitivity_of: [F1]
+    body_sections: ["Results §Robustness Checks"]
+  - id: RC2
+    statement: >-
+      Prompt-location ablation: moving portfolio context from the user message
+      to the system message produced no difference (t(79) = .91, p = .368,
+      d = .15; N = 80 paired).
+    type: "prompt_placement_invariance"
+    sensitivity_of: [F1]
+    body_sections: ["Results §Robustness Checks"]
+  - id: RC3
+    statement: >-
+      Published-brand replication: an independent 20-brand stimulus set from
+      peer-reviewed marketing research (zero overlap, N = 1,950) confirms TOST
+      equivalence for all 10 reported brands, 0/10 FDR-significant; lower
+      absolute DCI (range .37-1.31) makes the ±1.0 bound conservative — a
+      stronger immunity claim, not weaker.
+    type: "independent_stimulus_replication"
+    sensitivity_of: [F1]
+    body_sections: ["Results §Published-Brand Replication", "Table 7"]
+
+# ============================================================================
+# Alternative explanations — rivals the immunity claim must clear
+# ============================================================================
+alternative_explanations:
+  - id: A1
+    statement: >-
+      The near-zero ΔDCI reflects DCI metric insensitivity rather than genuine
+      invariance to the portfolio manipulation.
+    rules_out_required: [F1]
+    ruled_out_by: [F2, RC3]
+    rules_out_status: "rejected"
+    reasoning: >-
+      DCI shows discriminant sensitivity within the dataset (solo DCI ranges 3.5
+      Dior to 8.9 Yandex Taxi), and profile cosine similarity > .999
+      independently confirms the null; the near-zero result is delta-specific,
+      not metric-wide.
+    body_sections: ["Discussion §Boundary Conditions (item 1)"]
+  - id: A2
+    statement: >-
+      The divergence from the human-sample spillover consensus is merely a
+      quantitative difference of degree (smaller-sample noise), not a
+      qualitatively different encoding mechanism.
+    rules_out_required: [F1]
+    ruled_out_by: [F1, F2]
+    rules_out_status: "rejected"
+    reasoning: >-
+      Peng et al. (2023) establish reliable positive spillover across 2,134
+      effect sizes in human samples; the AI null (mean |ΔDCI| = .26) is a
+      qualitative departure consistent with a fundamentally different
+      (compressed) encoding mechanism, not a small-sample anomaly.
+    evidence:
+      - type: citation
+        anchor: "Peng et al. (2023) meta-analysis as the human-sample benchmark."
+        citation_keys: [peng-2023-metaanalysis-brand-extension]
+    body_sections: ["Introduction", "Discussion §Convergence With Other Evidence"]
+
+# ============================================================================
+# Limitations — honest scope of the immunity claim
+# ============================================================================
+limitations:
+  - id: L1
+    statement: >-
+      DCI is a new metric not yet validated against human perceptual data; the
+      null finding is robust to this (a null is a null) but the compression/
+      bandwidth interpretation depends on DCI's construct validity.
+    severity: "scope-bounding"
+    affects: [P2, P4]
+    body_sections: ["Discussion §Boundary Conditions (item 1)"]
+  - id: L2
+    statement: >-
+      With 20 tests and FDR correction the study has limited brand-level power;
+      the Lexus effect (p = .004, d = .52) would be significant per-comparison,
+      so P3 (asymmetry) cannot be evaluated and remains insufficient-evidence.
+    severity: "power"
+    affects: [P3, F3]
+    body_sections: ["Discussion §Boundary Conditions (item 2)", "Results H4"]
+  - id: L3
+    statement: >-
+      All models are general-purpose LLMs; domain-specific fine-tuned models may
+      carry higher bandwidth for organizational context. The portfolio condition
+      uses in-context disclosure, not pre-training-only awareness, and the two
+      may differ. Native-language conclusions rest on a single model per
+      tradition, so tradition-level effects cannot be separated from model-
+      specific idiosyncrasy.
+    severity: "external-validity"
+    affects: [F1, P5]
+    body_sections: ["Discussion §Boundary Conditions (items 4, 6, 7, 8)"]
+
+# ============================================================================
+# Negative findings — predicted effects that did not appear
+# ============================================================================
+negative_findings:
+  - id: NF1
+    statement: >-
+      The archetype-graded interference predictions (constructive for spectral
+      clusters, destructive for spectral contradictions, asymmetric for spectral
+      layers, prestige-gradient flattening) produced no FDR-significant effects:
+      the predicted structure of portfolio interference is absent for AI
+      observers, leaving immunity as the dominant pattern.
+    expected_observation: "Archetype-specific ΔDCI patterns (H1, H2, H4, H6) surviving FDR."
+    source_method: M2
+    affects_nodes: [F1, F3, P1]
+    motivates: [P2]
+    body_sections: ["Results §Hypothesis Tests (Confirmatory)"]
+
+# ============================================================================
+# Cross-paper engagement (corpus precedents)
+# ============================================================================
+corpus_precedents:
+  - paper_key: 2026q
+    relationship: extends
+    spine_nodes: [M1, P1, P2, P3]
+    note: >-
+      Spectral Portfolio Theory (2026q) supplies the interference/coherence/
+      capacity framework; this paper consolidates it and isolates the awareness-
+      gate sufficiency inversion that 2026q did not.
+  - paper_key: 2026ab
+    relationship: extends
+    spine_nodes: [O1, F1, F4]
+    note: >-
+      'Does Corporate Ownership Matter to AI?' (2026ab) is the large-scale
+      empirical precursor; this paper unifies it with the theory and adds the
+      WHAT/DO formalization.
+  - paper_key: 2026a
+    relationship: refines
+    spine_nodes: [M1, P3]
+    note: >-
+      Refines SBT's portfolio prediction (the P9-style spillover expectation)
+      toward observer-completed identity: what an asset-based account predicts to
+      propagate stays confined to the brand whose output the observer
+      reconstructs.
+  - paper_key: 2026v
+    relationship: applies
+    spine_nodes: [P4, P5]
+    note: >-
+      Applies the dimensional-collapse / metameric-observer result (LLMs
+      compress Cultural, Temporal, Social — the DO-dependent dimensions) as
+      converging evidence for the bandwidth constraint.
+  - paper_key: 2026aa
+    relationship: applies
+    spine_nodes: [P2, P4]
+    note: >-
+      Uses 2026aa's empirical rate-distortion curve (LLM encoders near the
+      minimum-distortion frontier) as the compression evidence the bandwidth
+      constraint rests on.
+  - paper_key: 2026e
+    relationship: applies
+    spine_nodes: [P2]
+    note: >-
+      Spectral metamerism (2026e): portfolio context falls into the metameric
+      null space of a compressed encoding.
+  - paper_key: 2026f
+    relationship: applies
+    spine_nodes: [M1]
+    note: "Cohort boundaries / concentration-of-measure supplies the cohort construct in the interference formalism."
+  - paper_key: 2026r
+    relationship: applies
+    spine_nodes: [M1]
+    note: "Why Eight? (2026r) justifies the eight-dimension taxonomy the DCI metric concentrates over."
+  - paper_key: 2026s
+    relationship: applies
+    spine_nodes: [P3]
+    note: "Type-over-score coherence-graded resilience (2026s) grounds the interference-asymmetry derivation."
+
+# ============================================================================
+# External anchor literature
+# ============================================================================
+external_anchors:
+  - {citation_key: keller-1993-conceptualizing-measuring-managing, role: theoretical_baseline, spine_nodes: [P0, P1], note: "Awareness gate as necessary trigger (associative-network activation)."}
+  - {citation_key: aaker-2000-brand-leadership, role: theoretical_baseline, spine_nodes: [P0], note: "Brand relationship spectrum; portfolio architecture classification."}
+  - {citation_key: erdem-2002-empirical-investigation-spillover, role: theoretical_baseline, spine_nodes: [P0], note: "Umbrella branding spillover; gate as amplifier."}
+  - {citation_key: lei-2008-negative-spillover-brand, role: theoretical_baseline, spine_nodes: [P0, P3], note: "Asymmetric negative spillover; gate as asymmetric amplifier."}
+  - {citation_key: peng-2023-metaanalysis-brand-extension, role: benchmark_contrast, spine_nodes: [F1, A2], note: "2,134-effect-size human-sample spillover benchmark the AI null departs from."}
+  - {citation_key: sims-2003-implications-rational-inattention, role: formal_foundation, spine_nodes: [P2, P4], note: "Rational inattention — behavioral foundation of the bandwidth constraint."}
+  - {citation_key: cover-2006-elements-information-theory, role: formal_foundation, spine_nodes: [P2, P4], note: "Rate-distortion theory — architectural foundation of the bandwidth constraint."}
+  - {citation_key: matejka-2015-rational-inattention-discrete, role: formal_foundation, spine_nodes: [P4], note: "RI -> multinomial logit; ties RI to tractable preference structures."}
+  - {citation_key: caplin-2015-revealed-preference-rational, role: formal_foundation, spine_nodes: [P4], note: "RI extended to revealed-preference / perceptual contexts."}
+  - {citation_key: lakens-2017-equivalence-tests-practical, role: method_anchor, spine_nodes: [M2], note: "TOST equivalence testing primer."}
+  - {citation_key: lakens-2018-equivalence-testing-psychological, role: method_anchor, spine_nodes: [M2, M3], note: "TOST tutorial; power-for-non-equivalence framing."}
+  - {citation_key: mintzberg-1979-structuring-organizations-synthesis, role: framing_anchor, spine_nodes: [P5], note: "Operating-core output vs. administrative coordination = the WHAT/DO split."}
+  - {citation_key: farach-2026-ai-as-coordinationcompressing, role: framing_anchor, spine_nodes: [P5], note: "AI as coordination-compressing capital; portfolio immunity as an instance."}
+  - {citation_key: li-2024-frontiers-determining-validity, role: validity_boundary, spine_nodes: [P5], note: "LLM-as-perception-instrument validity (75%+ human agreement); this paper bounds it to WHAT-layer validity."}
+  - {citation_key: goli-2024-frontiers-can-large, role: convergence, spine_nodes: [P4, P5], note: "Structural LLM/human preference divergence; here attributed to bandwidth, not just training distribution."}
+  - {citation_key: sabbah-2026-marketing-machines-how, role: convergence, spine_nodes: [P2, P4], note: "Only quantitative ratings stable across LLMs — compressed scalars survive, relational context does not."}
+  - {citation_key: berger-1995-diversifications-effect-firm, role: convergence, spine_nodes: [P5], note: "Conglomerate discount — firm-level analogue: coordination cost not recovered as output value."}
+  - {citation_key: dubois-2025-forget-what-you, role: managerial_anchor, spine_nodes: [P5], note: "'Share of Model' economy framing for managerial implications."}
+  - {citation_key: hermann-2025-empowering-genai-stakeholders, role: managerial_anchor, spine_nodes: [P5], note: "AI influence as a strategic priority requiring formal treatment."}
+  - {citation_key: ke-2022-model-product-portfolio, role: complementary_framework, spine_nodes: [M1], note: "Portfolio design guiding consumer search (WHERE to position) — complementary to the perception-space (WHAT happens) framework."}
+  - {citation_key: yu-2021-model-brand-architecture, role: complementary_framework, spine_nodes: [P5], note: "Optimal house-of-brands vs branded-house choice; immunity implies its perceptual consequences are inert for AI observers."}
+  - {citation_key: ward-2026-keeping-it-family, role: supporting_literature, spine_nodes: [M1], note: "Portfolio brand cohesion drivers used to contextualize archetype predictions."}
+  - {citation_key: miklosthal-2012-linking-reputations-through, role: supporting_literature, spine_nodes: [M1], note: "Game-theoretic umbrella-branding credibility result."}
+  - {citation_key: kapferer-2008-new-strategic-brand, role: supporting_literature, spine_nodes: [P1], note: "Brand-identity prism — the portfolio coherence whose disclosure leaves AI encodings unperturbed."}
+
+# ============================================================================
+# Open questions / boundary edges
+# ============================================================================
+open:
+  - "Does DCI validate against human perceptual data, enabling a direct human-vs-AI interference-magnitude comparison? (L1)"
+  - "Does a dedicated multi-brand aspiration panel (Toyota/Lexus, VW/Audi, Marriott/Ritz-Carlton, Gap/Banana Republic) confirm the d ≈ .52 aspiration signal as a real exception to immunity, settling P3? (L2)"
+  - "Do human-observer experiments with awareness varied 0->1 produce interference above threshold while LLMs stay immune, as P2 predicts?"
+  - "Do extended multi-turn designs (5+ turns) unlock portfolio effects in non-reverse-aspiration portfolios, generalizing the Geely Auto DO->WHAT conversion? (F4)"
+  - "Do domain-specific fine-tuned models carry higher bandwidth for organizational context, breaking immunity? (L3, C1)"
+
+# ============================================================================
+# Spine changelog — append-only
+# ============================================================================

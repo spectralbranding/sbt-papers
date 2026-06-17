@@ -1,0 +1,685 @@
+# SPINE.yaml — Brand Triangulation (2026y / R17)
+#
+# RETROFIT spine: extracted descriptively from the completed paper.md, NOT
+# authored generatively before prose (per [internal path removed]
+# decision D4). The prose is canonical here; this backbone is a faithful
+# after-the-fact structuring of it.
+#
+# Schema v0.2 ([internal path removed] §"Schema v0.2"):
+# the paper reports author-produced computed values — a Monte Carlo
+# simulation (2,000 trials) plus numerical-optimization figures and an
+# LLM-constellation empirical demonstration (R15 data) — so observations /
+# methods / measurements / findings are first-class, alongside the analytic
+# propositions P1–P3 and the deferred conjectures C4–C6.
+
+spine_version: "0.2"
+spine_doc_version: "0.1.0"        # retrofit lock (2026-06-14)
+paper_key: "2026y"
+provenance: retrofit
+title: >-
+  Brand Triangulation: A Geometric Framework for Multi-Observer Brand
+  Positioning
+target_venue_primary: "TBD (measurement-geometry / marketing-methodology)"
+status: >-
+  Working Paper v1.4 (May 2026). Retrofit spine extracted 2026-06-14 from the
+  completed paper.md for the SPINE-for-all-active-canonical project (D4).
+
+thesis: |
+  The multi-observer heterogeneity that contemporary brand measurement treats
+  as a nuisance is, when decomposed into structural differences in observer
+  spectral weight profiles, the primary source of positioning information.
+  Mapping observer cohorts to GPS satellites, the brand emission profile to
+  receiver location, and systematic cohort bias to receiver clock error,
+  brand-spectral-profile estimation from multiple cohorts is a weighted
+  least-squares positioning problem. The framework introduces Perception DOP
+  (PDOP) — a scalar computed solely from proposed cohort weight profiles that
+  bounds estimation precision before any data are collected — differential
+  brand measurement using reference brands to cancel systematic observer bias,
+  and identifiability conditions linking spectral metamerism to geometric
+  underdetermination. PDOP's predictive validity is confirmed by Monte Carlo
+  simulation, and the geometry is demonstrated on a six-LLM observer
+  constellation; together these upgrade brand measurement from opinion
+  aggregation to geometric estimation.
+
+# ============================================================================
+# Boundary conditions — when the framework's claims hold
+# ============================================================================
+boundary_conditions:
+  - id: C_diversity
+    statement: >-
+      The framework targets the high-diversity regime — structurally different
+      weight profiles across human cohorts, AI observers, and behavioral
+      proxies. When observer diversity is low (near-collinear profiles),
+      projections are nearly collinear, emission is indistinguishable from any
+      single cohort's conviction, and classical representative-consumer methods
+      (Keller 1993; Ries & Trout 1981) are the adequate Newtonian-limit case.
+    observable: "Cohort weight matrix W has rank 8 / non-collinear rows."
+    excludes: "Single-cohort or homogeneous-cohort tracking studies."
+    body_sections: ["§3.4 What Brand Triangulation Measures"]
+  - id: C_b2c
+    statement: >-
+      Calibration and target brands are B2C consumer brands; generalization to
+      B2B, service, place, and personal brands is an open question.
+    observable: "Brand category is B2C consumer."
+    excludes: "B2B / service / place / personal brands (untested)."
+    body_sections: ["§9.5 Limitations of the Option A Demonstration"]
+
+# ============================================================================
+# Assumption atoms — the five modelling assumptions (A1)–(A5), §3.2
+# ============================================================================
+assumption_atoms:
+  - id: AA1
+    statement: >-
+      Simplex-bounded position: the brand emission profile x lies on the
+      probability simplex Δ^7 ⊂ R^8 (non-negative components summing to a fixed
+      scale), reflecting the SBT convention of intensity allocations.
+    affects_nodes: [P1, P3]
+    body_sections: ["§3.2 Assumptions (A1)"]
+  - id: AA2
+    statement: >-
+      Linear inner-product observation: each cohort k reports y_k = w_k^T x +
+      b_k + ε_k with mean-zero noise; linearity is a first-order approximation,
+      nonlinear extensions follow the GPS linearization procedure.
+    affects_nodes: [P1, P2]
+    body_sections: ["§3.1 Observation Model", "§3.2 Assumptions (A2)"]
+  - id: AA3
+    statement: >-
+      Weight-matrix rank: W has rank min(K, 8); for collapsed observations the
+      spanning condition rank(W) = 8 is required for identifiability.
+    affects_nodes: [P3]
+    body_sections: ["§3.2 Assumptions (A3)"]
+  - id: AA4
+    statement: >-
+      Stable calibration profiles: canonical profiles (Hermès, IKEA, Patagonia)
+      are treated as known constants over the measurement epoch; stability
+      across epochs is sufficient, absolute external correctness is not required.
+    affects_nodes: [P2]
+    body_sections: ["§3.2 Assumptions (A4)", "§4.1 The DGPS Analogy"]
+  - id: AA5
+    statement: >-
+      Independent cohort noise: ε_k are statistically independent across
+      cohorts; within-cohort dependence is absorbed into σ_k^2, between-cohort
+      correlation is assumed zero.
+    affects_nodes: [P1, A_commonbias]
+    body_sections: ["§3.2 Assumptions (A5)"]
+
+# ============================================================================
+# Propositions — the analytic backbone
+# ============================================================================
+propositions:
+  - id: P0
+    statement: >-
+      The GPS–SBT mapping is structurally analogous rather than metaphorical:
+      satellite/cohort, satellite-position/spectral-weight-profile, pseudorange/
+      biased-perception-score, receiver-position/brand-emission-profile, and
+      clock-error/observer-baseline-bias map term-by-term, so brand positioning
+      is a weighted least-squares (trilateration) problem, not a
+      multidimensional-unfolding one.
+    conditions: ""
+    antecedents: []
+    evidence:
+      - type: analytic
+        anchor: "GPS-SBT concept mapping (Table 1) with bounded differences spelled out in §3.4."
+        citation_keys: [kaplan-2017-understanding-gpsgnss-principles]
+    body_sections: ["§1.3 GPS-SBT Concept Mapping", "§3.1 Observation Model"]
+  - id: P_target
+    statement: >-
+      Brand Triangulation targets the brand's observer-independent EMISSION
+      profile (the signal the brand sends), not the observer-relative CONVICTION
+      profile; the observations y_k are apparatus-dependent projections of that
+      single shared source, which is what makes the GPS analogy mathematically
+      precise.
+    conditions: "C_diversity"
+    antecedents: [P0]
+    evidence:
+      - type: analytic
+        anchor: "Emission-vs-conviction distinction; shared-objective-space / observer-dependent-projection architecture, with antecedents in Koenderink-van Doorn pictorial gauge theory."
+        citation_keys: [koenderink-2012-gauge-fields-pictorial]
+    body_sections: ["§3.4 What Brand Triangulation Measures: Emission, Not Conviction"]
+  - id: P1
+    statement: >-
+      (Paper Proposition 1) For N observer cohorts with spectral weight profiles
+      w_1..w_N, the precision of brand-position estimation is inversely
+      proportional to Perception DOP = sqrt(trace((W^T W)^{-1})); cohort
+      configurations that minimize PDOP — maximally diverse weight profiles —
+      yield the most precise positioning. PDOP is computable pre-study, making
+      cohort selection an A-optimal experimental-design problem.
+    conditions: "C_diversity"
+    antecedents: [P0, AA1, AA2]
+    evidence:
+      - type: derivation
+        anchor: "PDOP = sqrt(trace of inverse Fisher information) = sqrt(A-optimal trace) = multivariate Cramér-Rao lower bound; D/A-optimal design connection."
+        citation_keys: [kuhfeld-1994-efficient-experimental-design]
+      - type: empirical
+        anchor: "Monte Carlo confirmation of the PDOP–MSE relationship (F1)."
+    falsifier: >-
+      P1 fails if PDOP does not predict estimation variance relative to a known
+      ground-truth profile across many random cohort configurations, multiple
+      brands, and multiple estimation conditions.
+    body_sections: ["§3.2 Perception DOP"]
+  - id: P_plateau
+    statement: >-
+      PDOP has a sensitivity plateau: configurations near the optimum perform
+      similarly well, so it is a usable pre-study design criterion despite
+      estimation uncertainty in cohort weight profiles — researchers need only
+      be within the plateau region, not at the exact minimum. The plateau is
+      structural (separation of time scales / parameter sloppiness), not
+      parameter-dependent.
+    conditions: ""
+    antecedents: [P1]
+    evidence:
+      - type: analytic
+        anchor: "Invariant-corridor plateau result transferred to PDOP; parallel to model-parameter sloppiness."
+        citation_keys: [transtrum-2015-perspective-sloppiness-emergent]
+      - type: empirical
+        anchor: "Perturbation result: <10% PDOP degradation at ε=0.2 (m_plateau)."
+    body_sections: ["§3.3 Sensitivity Plateau", "§9.6 (sensitivity plateau)"]
+  - id: P2
+    statement: >-
+      (Paper Proposition 2) Differential brand measurement — using calibration
+      brands with known spectral profiles to estimate each cohort's systematic
+      error and subtract it from target-brand assessments — reduces systematic
+      cross-cohort variance. The correction is exact for linear bias and
+      first-order effective for nonlinear bias, and separates brand drift from
+      observer drift in longitudinal tracking.
+    conditions: "AA4"
+    antecedents: [P0, AA2]
+    evidence:
+      - type: analytic
+        anchor: "DGPS analogy + four-stage calibration protocol (§4.2); requires only stable, not absolutely-correct, calibration profiles."
+      - type: empirical
+        anchor: "R15 differential-correction demonstration: variance reduction largest on Economic, smallest on Experiential (F2)."
+    falsifier: >-
+      P2 fails if calibration correction does not reduce cross-cohort variance
+      for target brands — i.e. if calibration-brand bias is uncorrelated with
+      target-brand bias within a cohort — assessed across multiple targets and
+      configurations.
+    body_sections: ["§4 Differential Brand Measurement"]
+  - id: P3
+    statement: >-
+      (Paper Proposition 3) A brand's 8-D spectral profile is uniquely
+      identifiable from N cohorts iff (a) for collapsed (scalar) observations,
+      N ≥ 9 and the cohort weight vectors span R^8; (b) for full 8-D
+      observations, N ≥ 2 and the weight matrices are linearly independent.
+      Most tracking studies (1–3 demographic cohorts) operate below the
+      collapsed-case threshold and cannot recover an 8-D position regardless of
+      within-cohort sample size.
+    conditions: "AA3"
+    antecedents: [P0, P_dimcount]
+    evidence:
+      - type: derivation
+        anchor: "Counting unknowns (8 + N − 1) vs equations under Σb_k=0; spanning / linear-independence conditions; Wald admissible-class framing."
+        citation_keys: [wald-1947-essentially-complete-class]
+      - type: citation
+        anchor: "Complementary to Elrod-Keane latent-dimension identification from panel data; Molenaar dynamic-factor identification."
+    falsifier: >-
+      P3 fails if unique profiles can be recovered from fewer cohorts than
+      specified — e.g. if brand profiles are constrained to a lower-dimensional
+      manifold, reducing the effective degrees of freedom below eight.
+    body_sections: ["§5.1 Minimum Observer Configurations"]
+  - id: P_dimcount
+    statement: >-
+      Brand perception is generically eight-dimensional (the SBT taxonomy:
+      Semiotic, Narrative, Ideological, Experiential, Social, Economic,
+      Cultural, Temporal); the PDOP formula is itself dimension-count agnostic,
+      with D = 8 inherited and tested in prior SBT work.
+    conditions: ""
+    antecedents: []
+    evidence:
+      - type: citation
+        anchor: "Eight typed SBT dimensions inherited from Spectral Brand Theory."
+    body_sections: ["§2.2 Multi-Observer Brand Perception in SBT", "§3.2 Perception DOP"]
+  - id: P_metamerism
+    statement: >-
+      Spectral metamerism is geometric underdetermination of the measurement
+      infrastructure, not a property of brands: brands A,B are metameric to a
+      cohort set iff (e_A − e_B) lies in the null space of W. Single-observer
+      metamerism (Zharnikov 2026e) is the extreme one-cohort case; adding a
+      cohort with non-zero weight on the differentiating dimensions resolves it.
+    conditions: ""
+    antecedents: [P3]
+    evidence:
+      - type: analytic
+        anchor: "Null-space characterization of multi-observer metamerism; Molenaar dynamic-factor identification tools."
+    body_sections: ["§5.2 Metamerism as Geometric Underdetermination"]
+  - id: P_nonlocal
+    statement: >-
+      The perception cloud is a non-local (global) object: per-observer brand
+      scores carry position information only through their joint constellation
+      geometry, so no aggregation that treats observers as independent local
+      probes can recover the same positioning information. This is a structural
+      analogy to Bell's non-locality constraint (no quantum states at stake).
+    conditions: ""
+    antecedents: [P1]
+    evidence:
+      - type: analytic
+        anchor: "Joint-geometry argument; structural parallel to Bell (1964)."
+        citation_keys: [bell-1964-einstein-podolsky-rosen]
+    body_sections: ["§10.1 Theoretical Implications"]
+
+# ============================================================================
+# Conjectures — theoretically derived, empirical testing deferred (P4–P6 in the
+# paper are explicitly conjectures requiring human-cohort / longitudinal data)
+# ============================================================================
+  - id: C4
+    statement: >-
+      (Paper Conjecture 4) Multi-constellation positioning — combining human
+      cohorts, AI observers, and behavioral proxies whose weight profiles are
+      geometrically non-collinear — is expected to yield lower PDOP than any
+      single constellation alone. Theoretical basis: the AI Economic-Default
+      mechanism makes AI and human weight profiles structurally non-collinear.
+      Empirical validation requires human-cohort data (deferred, Option B).
+    conditions: "C_diversity"
+    antecedents: [P1, P_target]
+    evidence:
+      - type: citation
+        anchor: "Human-LLM hybrid measurement outperforms either source alone; LLMs as silicon samples / Homo Silicus observer nodes."
+    falsifier: >-
+      C4 fails if adding AI/behavioral observer data to human-cohort data does
+      not reduce PDOP — i.e. if the added constellations are collinear with
+      human profiles and supply no new geometric information.
+    body_sections: ["§6 Multi-Constellation Positioning"]
+  - id: C5
+    statement: >-
+      (Paper Conjecture 5) A brand position is admissible iff three independent
+      bindings hold simultaneously: geometric (measured profile within the Brand
+      Function's admissible corridor C ⊂ R^8), governance (a valid Brand
+      Function specification + an enforcement mechanism exists), and temporal
+      (the measured trajectory is coherent with the brand's historical path).
+      Admissibility is per-cohort; failure of any single binding dissolves all
+      guarantees. Conjecture; testing requires longitudinal multi-cohort data
+      with verified Brand Function specifications.
+    conditions: ""
+    antecedents: [P3, P_corridor]
+    evidence:
+      - type: analytic
+        anchor: "Coherence-vs-admissibility split (Wald admissibility; Kane capability-vs-conformance; Simons boundary systems; Simon bounded admissibility); per-cohort industrial-adhesive case + Table 2."
+    falsifier: >-
+      C5 fails if brands satisfying only one or two bindings show equivalent
+      long-term brand-health outcomes to fully admissible brands.
+    body_sections: ["§7 Admissible Positioning", "§7.2 Tri-Binding Admissibility"]
+  - id: C6
+    statement: >-
+      (Paper Conjecture 6) Brand perception trajectories are estimable via a
+      Perception Kalman filter jointly tracking the 8-D spectral profile and its
+      first derivative (perception velocity); its prediction error is a
+      real-time anomaly detector whose threshold, calibrated via the corridor
+      sensitivity plateau, distinguishes genuine brand events from observer-
+      infrastructure changes (separable by calibration-brand stability).
+      Conjecture; validation requires longitudinal multi-epoch tracking with a
+      consistent observer constellation.
+    conditions: ""
+    antecedents: [P2, P_plateau]
+    evidence:
+      - type: citation
+        anchor: "Kalman state-estimation; DOP-fed Kalman covariance (Guo 2022); MKSC advertising state-space tradition (Naik et al.)."
+        citation_keys: [kalman-1960-new-approach-linear, naik-1998-planning-media-schedules]
+    falsifier: >-
+      C6 fails if the filter's prediction errors show no correlation with actual
+      brand events (launches, crises, repositioning campaigns).
+    body_sections: ["§8 From Position to Trajectory", "§8.3 Perception Kalman Filter"]
+
+# ============================================================================
+# Derived structural results (not the headline empirical chain)
+# ============================================================================
+derivations:
+  - id: P_corridor
+    statement: >-
+      The Brand Function specifies an admissible corridor C ⊂ R^8; corridor
+      distance d = ||x_measured − proj_C(x_measured)|| gives a per-cohort,
+      specification-relative health metric, with corridor dynamics exhibiting a
+      contraction/recovery asymmetry (k_c > k_r) that recasts the SBT empirical
+      D/A asymmetry as a geometric property.
+    derived_from: [P_target]
+    method_of_derivation: "Invariant-corridor / viability-theory transfer to perception space."
+    evidence:
+      - type: citation
+        anchor: "Aubin viability theory; Bertsekas-Rhodes target tubes; Blanchini set-invariance."
+        citation_keys: [aubin-1991-viability-theory]
+    body_sections: ["§7.1 Invariant Corridors", "§7.3 Contraction/Recovery Asymmetry"]
+  - id: P_simplexbound
+    statement: >-
+      The PDOP lower bound is tighter on the simplex than on the sphere:
+      normalized per-cohort, PDOP_sphere ≥ sqrt(8/K) but PDOP_simplex ≥
+      sqrt(7/K) (one DOF consumed by the sum-to-one constraint), a ratio
+      sqrt(7/8) ≈ .935. Consequently the required cohort count K* falls ~12.5%
+      vs the unconstrained estimate; qualitative conclusions are unaffected.
+    derived_from: [P1, AA1]
+    method_of_derivation: "Restricting the Cramér-Rao trace to the 7-D tangent subspace of Δ^7."
+    body_sections: ["§3.2 (Simplex-constrained PDOP lower bound)"]
+  - id: P_power
+    statement: >-
+      Power analysis: per-dimension variance is σ²_obs·PDOP²/8, so a precision
+      target requires PDOP² ≤ 8·σ²_target/σ²_obs and K* ≥ 8/PDOP_target². A
+      worked example (±.1 CI, σ²_obs≈.25) gives K* ≈ 80–100 well-stratified
+      cohorts; cohort count, not within-cohort N, drives precision.
+    derived_from: [P1, P3]
+    method_of_derivation: "Substituting the Cramér-Rao per-dimension variance into a precision target."
+    body_sections: ["§5.3 Power Analysis"]
+
+# ============================================================================
+# Empirical chain — the headline Monte Carlo confirmation (§9.6) + the R15
+# AI-constellation demonstration (§9.1–9.4)
+# ============================================================================
+observations:
+  - id: O1
+    statement: >-
+      The R15 dataset (Runs 1–4 subset): 4,860 API calls, six LLMs (Claude
+      Sonnet 4.6, GPT-4o, Gemini 2.5 Flash, DeepSeek V3, Qwen3 30B, Gemma 4 27B)
+      each allocating 100 points across the eight SBT dimensions for 15 brand
+      pairs (10 global, 5 local); Run 4 adds Brand Function specifications.
+    raw_data_pointer: "Zharnikov 2026v / R15 dataset; Zenodo 10.5281/zenodo.19422427"
+    instrument: "PRISM-B 100-point weight-elicitation protocol"
+    body_sections: ["§9.1 Data and Method"]
+  - id: O2
+    statement: >-
+      Monte Carlo design: 2,000 independent trials, each with a random
+      ground-truth brand position in R^8, a random weight matrix W with
+      N∈{9,10,12,15,20} cohorts of varying diversity (clustered/random/
+      near-optimal), and 20 replicated noisy observations (σ=0.5), with x
+      estimated by OLS against known ground truth.
+    raw_data_pointer: "R17_pdop_simulation.py + R17_pdop_simulation_results.json (sbt-papers/r17-brand-triangulation/simulation/)"
+    instrument: "Monte Carlo simulation, SEED=42"
+    body_sections: ["§9.6 Monte Carlo Confirmation"]
+
+methods:
+  - id: M1
+    statement: >-
+      Compute PDOP = sqrt(trace((W^T W)^{-1})) per cohort configuration; estimate
+      brand position by OLS; regress observed MSE on σ²·PDOP² (and log RMSE on
+      log PDOP) across the 2,000 trials with bootstrap CIs (1,000 resamples).
+    type: "monte_carlo_regression"
+    inputs: ["random W", "random ground-truth x", "noisy y"]
+    outputs: ["PDOP–MSE slope / R² / Spearman ρ"]
+    code_anchor: "R17_pdop_simulation.py (SEED=42; uv run --with numpy,scipy)"
+    reproducibility:
+      seed: "42"
+      runtime_environment: "Python 3.12 + uv (numpy, scipy)"
+    body_sections: ["§9.6", "§9.7 Companion Computation Script"]
+  - id: M2
+    statement: >-
+      Differential correction: for each calibration brand compute e_k = y_{k,b}
+      − x_b against canonical profiles (Hermès/IKEA/Patagonia), average across
+      the three calibration brands to a per-model systematic-error vector, then
+      subtract from target-brand scores before triangulation; compare corrected
+      vs uncorrected cross-model variance.
+    type: "calibration_correction"
+    inputs: ["R15 model profiles", "canonical calibration profiles"]
+    outputs: ["per-dimension cross-model variance reduction"]
+    body_sections: ["§9.3 Differential Correction Demonstration"]
+  - id: M3
+    statement: >-
+      Simplex-constrained PDOP optimization at the N=9 minimum case via
+      Nelder-Mead with 100 restarts; perturbation analysis (Gaussian noise of
+      s.d. ε on the optimal W) to map the sensitivity plateau.
+    type: "numerical_optimization"
+    inputs: ["N=9 simplex weight space"]
+    outputs: ["min PDOP", "plateau degradation curve"]
+    code_anchor: "R17_pdop_simulation.py / compute_pdop_rmse.py"
+    body_sections: ["§9.6 (PDOP bounds; sensitivity plateau)"]
+
+measurements:
+  - id: m_slope_loglog
+    statement: "log(RMSE)~log(PDOP) slope = .995 [.981, 1.009], R² = .994; Spearman ρ = .996 (expected slope 1.0)."
+    source_observations: [O2]
+    generating_method: M1
+    value: "slope .995 / R² .994 / ρ .996"
+    units: "regression slope, R², rank correlation"
+    body_sections: ["§9.6 Table 5"]
+  - id: m_slope_mse
+    statement: "MSE ~ σ²·PDOP² slope = .968 [.945, .991], R² = .926, p < 10^{-300}."
+    source_observations: [O2]
+    generating_method: M1
+    value: "slope .968 / R² .926"
+    units: "regression slope, R²"
+    body_sections: ["§9.6 Table 5"]
+  - id: m_quartile
+    statement: "RMSE rises 24-fold from Q1 (best geometry, mean .192) to Q4 (worst, mean 4.579) at fixed σ=0.5."
+    source_observations: [O2]
+    generating_method: M1
+    value: "Q1 .192 → Q4 4.579 (24x)"
+    units: "RMSE"
+    body_sections: ["§9.6 Table 6"]
+  - id: m_pdop_n9
+    statement: "Simplex-constrained min PDOP at N=9 = .388 (condition number 1.92); random-assignment median 3.67, mean 5.07."
+    source_observations: [O2]
+    generating_method: M3
+    value: "min .388 / median 3.67 / mean 5.07"
+    units: "PDOP"
+    body_sections: ["§9.6 (PDOP bounds for the N=9 minimum case)"]
+  - id: m_plateau
+    statement: "PDOP degrades <10% for perturbations up to ε=0.2; ~16% at ε=0.3 (plateau confirmed)."
+    source_observations: [O2]
+    generating_method: M3
+    value: "<10% at ε=.2; 16% at ε=.3"
+    units: "% PDOP degradation"
+    body_sections: ["§9.6 (sensitivity plateau)"]
+  - id: m_dci_bf
+    statement: >-
+      R15 Brand Function intervention (Run 4) reduces local-brand DCI .353→.284,
+      a 20% reduction in dimensional collapse; cross-model cosine similarity
+      .977 across 24 architectures (.975 on the 6-model subset).
+    source_observations: [O1]
+    generating_method: M2
+    value: "DCI .353→.284 (-20%); cosine .977"
+    units: "DCI; cosine similarity"
+    body_sections: ["§9.2", "§9.4 Conditional Metamerism as Underdetermination"]
+
+findings:
+  - id: F1
+    statement: >-
+      Under the linear observation model, PDOP is a sharp predictor of RMSE: the
+      log-log slope of .995 (R²=.994, ρ=.996) confirms the GPS-theory power law
+      MSE = σ²·PDOP², holding per-dimension (ρ .978–.990) and across two orders
+      of magnitude in PDOP. Observer geometry dominates measurement precision
+      (24-fold RMSE spread across PDOP quartiles at fixed noise). This is a
+      mathematical confirmation under the model's data-generating process;
+      transfer to real cohort responses is an empirical question (Option B).
+    type: "simulation_confirmation"
+    source_measurements: [m_slope_loglog, m_slope_mse, m_quartile]
+    generating_method: M1
+    antecedents: [O2, P1]
+    falsifier: "If the simulated PDOP–RMSE slope departs materially from 1.0 under a correctly-specified linear model, F1 fails."
+    citation_role_in_paper: "primary_evidence_for_P1"
+    body_sections: ["§9.6"]
+  - id: F2
+    statement: >-
+      On the R15 AI constellation, the aggregate weight matrix is dominated by
+      Experiential/Semiotic/Economic, leaving Cultural and Temporal the
+      least-resolved (highest per-dimension DOP); differential correction
+      reduces cross-model variance most on Economic (where the Economic Default
+      is active) and least on Experiential, and a Brand Function specification
+      cuts local-brand DCI by 20% — geometric evidence that metamerism is an
+      observer-infrastructure property resolvable by added dimensional
+      information.
+    type: "empirical_demonstration"
+    source_measurements: [m_dci_bf]
+    generating_method: M2
+    antecedents: [O1, P2, P_metamerism]
+    falsifier: "If differential correction did not preferentially reduce the directionally-biased dimensions, F2 weakens."
+    citation_role_in_paper: "primary_evidence_for_P2_and_P_metamerism"
+    body_sections: ["§9.2", "§9.3", "§9.4"]
+
+# ============================================================================
+# Alternative explanations / rivals the framework must clear
+# ============================================================================
+alternative_explanations:
+  - id: A_bayesian
+    statement: >-
+      Bayesian heterogeneity modeling (latent-class / hierarchical Bayes)
+      already handles observer heterogeneity, so a geometric framework adds
+      nothing.
+    rules_out_required: [P1]
+    ruled_out_by: [P0]
+    rules_out_status: "reframed-as-complementary"
+    reasoning: >-
+      Bayesian methods characterize the DISTRIBUTION of preferences across a
+      population; Brand Triangulation estimates the POSITION of a brand given
+      cohort weight profiles treated as known references (the GPS receiver-vs-
+      population distinction). They answer different questions and compose:
+      Bayesian estimation of weight profiles feeds the W matrix that drives
+      PDOP. The geometric framework adds the pre-study PDOP design criterion
+      Bayesian methods do not provide.
+    body_sections: ["§2.1", "§10.1 Theoretical Implications"]
+  - id: A_commonbias
+    statement: >-
+      The mean-zero bias constraint Σb_k=0 cannot identify a common bias shared
+      by all observers (e.g. the AI Economic Default), so triangulation is
+      confounded when observers share a bias direction.
+    rules_out_required: [P2]
+    ruled_out_by: [P2]
+    rules_out_status: "rejected"
+    reasoning: >-
+      Differential brand measurement removes the constellation-level bias
+      estimated from calibration brands, not merely the per-observer deviation
+      from the constellation mean; in a mixed human+AI design the correlated AI
+      bias becomes one estimable constellation-level parameter rather than an
+      unidentified confound.
+    body_sections: ["§6.1 Cross-Constellation Validity", "§6.2 Economic Default as Modeled Bias"]
+
+# ============================================================================
+# Limitations
+# ============================================================================
+limitations:
+  - id: L1
+    statement: >-
+      The human observer constellation is absent: the empirical demonstration is
+      AI-only (Option A). The multi-constellation DOP-reduction conjecture (C4)
+      cannot be fully tested without human-cohort data with demonstrably
+      different weight profiles (Option B).
+    severity: "scope-bounding"
+    affects: [C4, F2]
+    body_sections: ["§9.5", "§10.4 Future Research"]
+  - id: L2
+    statement: >-
+      The data are a single measurement epoch; R15 Runs 1–4 vary experimental
+      conditions, not time. The Perception Kalman filter (C6) and trajectory
+      framework (§8) require longitudinal data and remain untested.
+    severity: "future-work"
+    affects: [C6]
+    body_sections: ["§9.5"]
+  - id: L3
+    statement: >-
+      Circularity asymmetry: unlike GPS, where satellite positions are
+      independently known from orbital mechanics, cohort weight profiles must be
+      estimated from the same observer pool (or PRISM-B applied to it) whose
+      measurements then triangulate the brand. The GPS analogy is precise on the
+      geometric side and weaker on the absolute-accuracy side; calibration
+      profiles are framework-internal, requiring only stability, not external
+      correctness.
+    severity: "scope-bounding"
+    affects: [P1, P2]
+    body_sections: ["§3.4 (Generalizability boundaries)", "§4.1 (foregrounding caveat)"]
+  - id: L4
+    statement: >-
+      The linear observation model is a first-order approximation; bounded
+      scales, ceiling/floor and anchoring/order effects may induce
+      nonlinearities beyond the bias term. Six AI cohorts may sit below the
+      collapsed-case identifiability floor (N≥9), though the 8-D observation
+      case lowers the requirement to N≥2.
+    severity: "scope-bounding"
+    affects: [P1, P3]
+    body_sections: ["§3.1", "§9.5"]
+
+# ============================================================================
+# Negative findings
+# ============================================================================
+negative_findings:
+  - id: NF1
+    statement: >-
+      The six AI observers are NOT independent: cross-model cosine similarity is
+      .977 — they share a common systematic bias (the Economic Default), a
+      precise but biased fix (GPS-analog correlated clock error), so the AI
+      constellation alone cannot supply the geometric diversity triangulation
+      requires; diversity must come from non-AI constellations.
+    expected_observation: "Internally diverse AI weight profiles spanning R^8."
+    source_method: M2
+    affects_nodes: [C4, F2]
+    motivates: [C4]
+    body_sections: ["§6.1 Cross-Constellation Validity", "§9.2"]
+
+# ============================================================================
+# Cross-paper engagement
+# ============================================================================
+corpus_precedents:
+  - paper_key: 2026a
+    relationship: refines
+    spine_nodes: [P_target, P_dimcount, P2]
+    note: >-
+      Refines SBT's observer-spectral-profile / emission-profile constructs
+      (and its canonical Hermès/IKEA/Patagonia profiles as calibration anchors)
+      into a multi-observer geometric estimation framework; supplies the
+      multi-observer treatment needed where a single observer is a singleton
+      (SBT C2/P8).
+  - paper_key: 2026e
+    relationship: extends
+    spine_nodes: [P_metamerism]
+    note: >-
+      Extends single-observer spectral metamerism (w_k·(e_A−e_B)=0) to the
+      multi-observer null-space condition; reframes metamerism as measurement-
+      infrastructure underdetermination.
+  - paper_key: 2026f
+    relationship: applies
+    spine_nodes: [P0]
+    note: "Applies SBT's cohort (weight-vector cluster) construct as the satellite-analog observation node."
+  - paper_key: 2026v
+    relationship: applies
+    spine_nodes: [O1, F2, C4]
+    note: >-
+      Uses R15's six-LLM PRISM-B dataset, Economic Default, DCI, and cross-model
+      cosine results as the AI observer constellation for the empirical
+      demonstration.
+  - paper_key: 2026x
+    relationship: applies
+    spine_nodes: [C5, P_corridor, F2]
+    note: >-
+      Applies the Brand Function as the admissible-corridor specification and as
+      ephemeris-analog dimensional information for AI commerce (Run-4 DCI drop).
+  - paper_key: 2026z
+    relationship: extends
+    spine_nodes: [C6]
+    note: "Trajectory machinery (perception velocity/acceleration, Kalman tracking) developed fully in companion Spectral Dynamics."
+  - paper_key: 2026i
+    relationship: applies
+    spine_nodes: [C5]
+    note: "Governance binding's organizational-enforcement layer drawn from OST."
+  - paper_key: 2026o
+    relationship: applies
+    spine_nodes: [C5]
+    note: "Temporal binding connects to non-ergodic trajectory analysis."
+  - paper_key: 2026s
+    relationship: applies
+    spine_nodes: [P_corridor]
+    note: "Recasts the empirical D/A (Dilution/Amplification) coherence-resilience asymmetry as corridor contraction/recovery geometry."
+
+# ============================================================================
+# External anchor literature
+# ============================================================================
+external_anchors:
+  - {citation_key: kaplan-2017-understanding-gpsgnss-principles, role: foundational_analogy, spine_nodes: [P0, P1], note: "GPS positioning + DOP theory — the source analogy"}
+  - {citation_key: misra-2011-global-positioning-system, role: foundational_analogy, spine_nodes: [P1], note: "DOP interpretation thresholds"}
+  - {citation_key: kuhfeld-1994-efficient-experimental-design, role: methodological_grounding, spine_nodes: [P1], note: "A/D-optimal design = PDOP minimization"}
+  - {citation_key: wald-1947-essentially-complete-class, role: methodological_grounding, spine_nodes: [P3, C5], note: "Admissible/complete-class decision theory"}
+  - {citation_key: carroll-1970-analysis-individual-differences, role: methodological_ancestor, spine_nodes: [P_target], note: "INDSCAL per-subject dimension weights = ancestor of observer spectral profiles"}
+  - {citation_key: park-rajagopal-desarbo-2012-heterogeneous-unfolding, role: closest_precedent, spine_nodes: [A_bayesian], note: "Heterogeneous unfolding — closest dimension-attention precedent"}
+  - {citation_key: keller-1993-conceptualizing-measuring-managing, role: rival_baseline, spine_nodes: [C_diversity], note: "Representative-consumer CBBE = the low-diversity Newtonian limit"}
+  - {citation_key: transtrum-2015-perspective-sloppiness-emergent, role: structural_analogy, spine_nodes: [P_plateau], note: "Parameter sloppiness = plateau structure"}
+  - {citation_key: aubin-1991-viability-theory, role: structural_analogy, spine_nodes: [P_corridor], note: "Viability theory — admissible-corridor mathematics"}
+  - {citation_key: kalman-1960-new-approach-linear, role: methodological_grounding, spine_nodes: [C6], note: "Kalman optimal linear state estimator"}
+  - {citation_key: naik-1998-planning-media-schedules, role: methodological_grounding, spine_nodes: [C6], note: "MKSC advertising state-space tradition"}
+  - {citation_key: koenderink-2012-gauge-fields-pictorial, role: structural_analogy, spine_nodes: [P_target], note: "Pictorial space as base+fiber — shared objective space / observer projections"}
+  - {citation_key: bell-1964-einstein-podolsky-rosen, role: structural_analogy, spine_nodes: [P_nonlocal], note: "Non-locality of jointly-correlated measurement (analogy only)"}
+
+# ============================================================================
+# Open questions / boundary edges
+# ============================================================================
+open:
+  - "Option B: a human-cohort survey (≥5 demographically distinct cohorts on the same 15 brands + 3 calibration brands) to test C4 multi-constellation DOP reduction and validate the linear model on human responses."
+  - "Longitudinal panel (≥2 epochs, consistent constellation) to test the Perception Kalman filter (C6) and the §8 trajectory framework."
+  - "Independent validation of the canonical Hermès/IKEA/Patagonia calibration profiles against human survey data (resolving the stability-not-correctness caveat, §4.1)."
+  - "Generalization beyond B2C: B2B, service, place, and personal brands may have different dimensional profiles and observer structures."
+  - "Cross-category validation of PDOP and calibration correction (current stimuli are global-vs-local pairs, not a cross-category sample)."
+
+# ============================================================================
+# Spine changelog — append-only
+# ============================================================================

@@ -1,0 +1,40 @@
+# ONTOLOGY.yaml module - 2026d
+#
+# Per-paper ontology module per [internal path removed]
+# §"ONTOLOGY.yaml schema (v0.1)". owns = terms THIS paper introduces (unique
+# authority); imports = terms owned by other modules it uses (reference only).
+# Linked into the substrate `terms` graph by build_ontology.py; rendered per-paper
+# by render_paper_glossary.py. Bootstrapped 2026-06-13 from per-paper term
+# extraction; definitions paraphrase each paper's own definitional text.
+
+paper_key: 2026d
+schema_version: 0.1
+
+owns:
+  - term_key: brand-signal-space
+    label: "Brand Signal Space"
+    canonical_form: "brand signal space"
+    definition: "The positive orthant of R^8 equipped with the Aitchison metric, representing brand emission profiles with multiplicative, compositional structure justified by Weber-Fechner scaling."
+    first_section: "3 The Brand Signal Space"
+  - term_key: observer-weight-space
+    label: "Observer Weight Space"
+    canonical_form: "observer weight space"
+    definition: "The probability simplex Delta^7 equipped with the Fisher-Rao metric (unique under Cencov's theorem), representing observers' relative salience weights across the eight dimensions."
+    first_section: "2.2 SBT Dimensional Architecture"
+  - term_key: spectral-sensitivity-index
+    label: "Spectral Sensitivity Index"
+    canonical_form: "spectral sensitivity index"
+    definition: "An observer-weighted curvature measure derived from Jacobi-field analysis that links a brand's static geometric position to its dynamic trajectory vulnerability, with singularities at structural-absence boundaries."
+    first_section: "8"
+
+imports:
+  - {term_key: spectral-brand-theory}
+  - {term_key: spectral-dimensions}
+  - {term_key: observer-spectral-profile}
+  - {term_key: structural-absence}
+  - {term_key: re-collapse}
+  - {term_key: cohort}
+  - {term_key: non-ergodic-perception}
+
+refines: []
+

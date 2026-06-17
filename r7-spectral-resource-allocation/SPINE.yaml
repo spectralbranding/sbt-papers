@@ -1,0 +1,620 @@
+# SPINE.yaml — Spectral Resource Allocation (2026k / R7)
+#
+# RETROFIT spine: extracted descriptively from the completed paper.md
+# ([internal path removed]), NOT authored generatively
+# before prose. Part of the SPINE-for-all-active-canonical project
+# ([internal path removed], decision D4).
+#
+# Scope: the paper's argument backbone — five optimization theorems (T1–T5,
+# here P1/P5/P7/P9/P12), the alignment-gap construct, the multi-cohort
+# efficiency bound, the economic reading of metamerism, the strategy-framework
+# projections, plus the illustrative (non-empirical) numerical example with its
+# companion-script-reproduced figures. R7 refines 2026a's per-dimension
+# allocation premise (P4) by supplying the optimization layer SBT lacked.
+#
+# Schema v0.2 ([internal path removed] §"Schema v0.2"):
+# the paper reports computed numerical values (Tables 4–8, Appendix A.2) that
+# are reproduced by a fixed-seed companion script, so the illustrative example
+# is represented as observation → method → measurement → finding, not asserted
+# in prose. The five theorems remain analytic derivations (D-prefixed where
+# they carry a formal proof, P-prefixed for the headline propositions).
+
+spine_version: "0.2"
+spine_doc_version: "0.1.0"     # retrofit spine first lock (2026-06-14, D4)
+paper_key: "2026k"
+provenance: retrofit
+title: >-
+  Spectral Resource Allocation: Demand-Driven Investment in Multi-Dimensional
+  Brand Space
+target_venue_primary: "TBD (formal/optimization marketing-science paper)"
+status: >-
+  Retrofit backbone spine extracted from the completed Working Paper v1.0.0
+  (March 2026, DOI 10.5281/zenodo.19009268). Descriptive, not generative.
+
+thesis: |
+  Brand managers allocate operational resources across perceptual dimensions —
+  design, storytelling, pricing, heritage — yet rarely ground those decisions
+  in measured cohort salience weights. Modeling a brand's signal portfolio
+  s in R^8_+ as evaluated by observer cohorts whose weight vectors w(c) lie on
+  the probability simplex Delta^7, with perceived value the inner product
+  <w(c), s> net of a separable convex cost, yields a closed-form optimal
+  allocation (invest in proportion to cohort weight over marginal cost) that
+  generalizes Dorfman–Steiner to eight perceptual dimensions. The central
+  construct is the alignment gap: the economic loss incurred when the portfolio
+  is optimized for the founder's spectral profile rather than the cohort's,
+  which is bounded below by the Fisher–Rao distance between the two weight
+  vectors — giving "product-market fit failure" a geometric floor that improved
+  execution cannot recover, only reallocation toward the cohort's measured
+  weights closes it. The framework further characterizes when one portfolio
+  efficiently serves multiple cohorts (a Fisher–Rao ball of radius r < pi/4),
+  reads spectral metamerism as cost minimization (the cheapest portfolio
+  achieving a target perception), and extends the two-media synergy model to a
+  cohort-dependent interaction matrix W(c). It supplies the optimization layer
+  missing from current brand-tracking systems: a diagnostic (alignment audit)
+  and a prescriptive tool (dimension-specific budget ratios). The numerical
+  examples are illustrative, not empirically measured.
+
+# ============================================================================
+# Boundary conditions — the domain within which the quantitative predictions hold
+# ============================================================================
+boundary_conditions:
+  - id: C1
+    statement: >-
+      Cohort weight profiles are measurable on the probability simplex Delta^7
+      using the SBT measurement protocol (Zharnikov 2026a, Section 5).
+    observable: "An empirically identifiable, stable target cohort with an elicitable w(c)."
+    excludes: "Settings where no stable target cohort weight profile can be measured."
+    provenance:
+      created_by: "author"
+      created_at: "2026-03"
+  - id: C2
+    statement: >-
+      The operational cost function is convex and approximately separable across
+      dimensions, so cross-dimensional cost interactions are second-order
+      relative to own-dimension costs.
+    observable: "Per-dimension cost parameters alpha_i estimable from operational data."
+    excludes: "Strongly coupled production where cost cross-terms c_ij dominate."
+    provenance:
+      created_by: "author"
+      created_at: "2026-03"
+  - id: C3
+    statement: >-
+      The signal-perception map is approximately linear within the operational
+      investment range, so V(s,c) = <w(c), s> captures the dominant effects.
+    observable: "No strong perceptual saturation over the planning horizon."
+    excludes: "High-signal regimes with strong diminishing returns (Weber–Fechner)."
+    provenance:
+      created_by: "author"
+      created_at: "2026-03"
+
+# ============================================================================
+# Observations — the illustrative numerical scenario as input data
+# ============================================================================
+observations:
+  - id: O1
+    statement: >-
+      Five canonical case-study brand emission profiles (Hermès, IKEA,
+      Patagonia, Erewhon, Tesla) on the eight SBT dimensions, scale 1–10, taken
+      from Zharnikov (2026a, 2026d).
+    raw_data_pointer: "paper Table 4 (Canonical Emission Profiles)"
+    instrument: "canonical SBT brand profiles"
+    timestamp: "2026-03"
+    provenance:
+      created_by: "author"
+      created_at: "2026-03"
+    body_sections: ["§Illustrative Numerical Examples"]
+  - id: O2
+    statement: >-
+      Hypothetical founder and target-cohort weight profiles (each a probability
+      vector summing to 1.00 on Delta^7) constructed for each of the five brands;
+      explicitly illustrative, not empirically measured.
+    raw_data_pointer: "paper Tables 5–6 (Founder + Target Cohort weight profiles)"
+    instrument: "illustrative construction"
+    timestamp: "2026-03"
+    provenance:
+      created_by: "author"
+      created_at: "2026-03"
+    body_sections: ["§Hypothetical Founder Profiles", "§Alignment Gap Computation"]
+
+# ============================================================================
+# Methods — how the closed forms and the numerical values are produced
+# ============================================================================
+methods:
+  - id: M1
+    statement: >-
+      Constrained optimization of V(s,c) − lambda·C(s) with quadratic costs
+      c_i(s_i) = (alpha_i/2) s_i^2: form the Lagrangian, set first-order
+      conditions w_i(c) = lambda·c_i'(s_i*), apply strict convexity for the
+      second-order condition. Yields the Theorem 1 / Theorem 4 / Theorem 5
+      closed forms.
+    type: "analytic_derivation"
+    inputs: ["w(c) on Delta^7", "quadratic cost parameters alpha_i", "shadow price lambda"]
+    outputs: ["optimal portfolio s*(c)", "cost-minimizing metamer s†", "interaction solution s* = (Lambda − W)^{-1} w(c)"]
+    code_anchor: "[internal path removed]"
+    reproducibility:
+      seed: "SEED = 42"
+      runtime_environment: "Python 3.12 + uv"
+    provenance:
+      created_by: "author"
+      created_at: "2026-03"
+    body_sections: ["§Optimal Allocation for a Single Cohort", "§Economic Interpretation of Spectral Metamerism", "§Dimensional Interaction Effects"]
+  - id: M2
+    statement: >-
+      Alignment-gap computation: A(f,c) = ||w(f)||^2 − <w(f), w(c)>, with the
+      Hellinger distance H(f,c) = (1/sqrt2)||sqrt(w(f)) − sqrt(w(c))||_2 and the
+      Fisher–Rao floor d_FR = 2·arccos(BC); evaluated under uniform costs
+      (alpha_i = 1, lambda = 1) for the five illustrative brands and reproduced
+      by the fixed-seed companion script.
+    type: "closed_form_evaluation"
+    inputs: ["founder weights w(f)", "cohort weights w(c)"]
+    outputs: ["A(f,c)", "Hellinger H(f,c)", "rank ordering of brands"]
+    code_anchor: "[internal path removed]"
+    reproducibility:
+      seed: "SEED = 42"
+      runtime_environment: "Python 3.12 + uv"
+    provenance:
+      created_by: "author"
+      created_at: "2026-03"
+    body_sections: ["§The Alignment Gap", "§Alignment Gap Computation", "Appendix A.2"]
+
+# ============================================================================
+# Measurements — derived numbers from the illustrative scenario
+# ============================================================================
+measurements:
+  - id: m_align_gaps
+    statement: >-
+      Per-brand alignment gaps under uniform costs: Hermès .0067, Erewhon .0125,
+      Patagonia .0245, Tesla .0285, IKEA .0650; ordering Hermès < Erewhon <
+      Patagonia < Tesla < IKEA.
+    source_observations: [O2]
+    generating_method: M2
+    value: "A: .0067 / .0125 / .0245 / .0285 / .0650 (Hermès/Erewhon/Patagonia/Tesla/IKEA)"
+    units: "alignment-gap value (uniform costs, lambda = alpha = 1)"
+    provenance:
+      created_by: "author"
+      created_at: "2026-03"
+  - id: m_hellinger
+    statement: >-
+      Per-brand Hellinger distances between founder and cohort profiles: Hermès
+      .073, Erewhon .061, Patagonia .111, IKEA .127, Tesla .131.
+    source_observations: [O2]
+    generating_method: M2
+    value: "H: .073 / .061 / .111 / .127 / .131 (Hermès/Erewhon/Patagonia/IKEA/Tesla)"
+    units: "Hellinger distance on Delta^7"
+    provenance:
+      created_by: "author"
+      created_at: "2026-03"
+
+# ============================================================================
+# Propositions and derivations — the five theorems and their corollaries
+# ============================================================================
+propositions:
+  - id: P0
+    statement: >-
+      No existing brand-theory framework connects multi-dimensional brand
+      perception measurement to operational resource allocation: CBBE / identity
+      / marketing-response traditions diagnose what a brand stands for but supply
+      no prescriptive optimization layer, because they lack a formal metric space
+      in which the distance between brand position and customer preference is a
+      computable quantity.
+    conditions: ""
+    antecedents: []
+    evidence:
+      - type: analytic
+        anchor: "Survey of CBBE (Keller 1993), brand-equity assets (Aaker 1991), identity prism (Kapferer 2008), brand-personality dimensions (Aaker 1997), market-response models (Hanssens et al. 2001)."
+    body_sections: ["§ (opening), the structural-gap argument"]
+  - id: P1
+    statement: >-
+      (Theorem 1) The signal portfolio maximizing V(s,c) − lambda·C(s) under
+      quadratic costs is s_i*(c) = w_i(c) / (lambda·alpha_i): invest in dimension
+      i proportionally to cohort weight and inversely to marginal cost. For
+      general convex costs the optimum satisfies w_i(c) = lambda·c_i'(s_i*) on
+      each active dimension. This generalizes the Dorfman–Steiner (1954) scalar
+      condition to eight perceptual dimensions.
+    conditions: "C1, C2, C3"
+    antecedents: [P0]
+    evidence:
+      - type: derivation
+        anchor: "Lagrangian first-order condition; strict convexity gives the second-order condition (Theorem 1 proof)."
+    falsifier: "If the value-net-cost optimum is not proportional to w_i(c)/alpha_i under quadratic costs, Theorem 1 fails."
+    body_sections: ["§First-Order Conditions", "Theorem 1"]
+  - id: P2
+    statement: >-
+      (Corollary 1) For two active dimensions the optimal signal-strength ratio
+      depends only on the weight ratio and the inverse cost ratio:
+      s_i*/s_j* = (w_i(c)/w_j(c))·(alpha_j/alpha_i). This makes the allocation
+      decision operational at the budget-review level.
+    conditions: "C1, C2, C3"
+    antecedents: [P1]
+    evidence:
+      - type: derivation
+        anchor: "Direct ratio of the Theorem 1 closed form (Corollary 1, Remark 3)."
+    body_sections: ["Corollary 1", "Remark 3"]
+  - id: P3
+    statement: >-
+      (Proposition 1, concentration premium) Under uniform costs the optimal
+      value is V*(c) = H(c)/(lambda·alpha-bar) where H(c) = sum_i w_i(c)^2 is the
+      Herfindahl index; concentrated cohorts (high H) achieve strictly higher
+      optimal value than diffuse ones, formalizing "a narrow audience you can
+      delight beats a broad one you can only satisfy."
+    conditions: "C1, C2, C3"
+    antecedents: [P1]
+    evidence:
+      - type: derivation
+        anchor: "V*(c) = sum_i w_i(c)^2 / (lambda·alpha-bar); H(c) >= 1/8 with equality at uniform weights (Proposition 1 proof)."
+    body_sections: ["§Optimal Value and the Value of Information", "Proposition 1"]
+  - id: P4
+    statement: >-
+      The alignment gap A(f,c) = V(s*_f, f) − V(s*_f, c) is the economic loss
+      from optimizing the portfolio for the founder's weights w(f) rather than
+      the cohort's w(c); it is asymmetric and is the geometric formalization of
+      "product-market fit failure" — the cost of being in the wrong place on the
+      probability simplex, not a psychological bias.
+    conditions: "C1, C2, C3"
+    antecedents: [P1]
+    evidence:
+      - type: analytic
+        anchor: "Definition 1, Remark 4; portfolio-theoretic reading vs Markowitz (1952) tracking error."
+    body_sections: ["§The Alignment Gap", "Definition 1"]
+  - id: P5
+    statement: >-
+      (Theorem 2) The alignment gap is bounded below by a geometric quantity:
+      A(f,c) >= H(f,c)^2 / (2·lambda·alpha-bar) via the Hellinger distance, and
+      equivalently by the Fisher–Rao distance d_FR between w(f) and w(c). Perceptual
+      distance predicts economic loss; the gap has a floor that improved execution
+      on the chosen dimensions cannot recover — only reallocation toward the
+      cohort's weights closes it.
+    conditions: "C1, C2, C3"
+    antecedents: [P4]
+    evidence:
+      - type: derivation
+        anchor: "Bhattacharyya coefficient, Cauchy–Schwarz on Delta^7, ||w(f)||^2 >= 1/8, d_FR = 2·arccos(BC) (Theorem 2 + Appendix A.1)."
+    falsifier: "If a portfolio with d_FR(w(f),w(c)) large can attain a near-zero alignment gap under the model assumptions, Theorem 2 fails."
+    body_sections: ["§The Alignment Gap and Fisher-Rao Distance", "Theorem 2", "Appendix A.1"]
+  - id: P6
+    statement: >-
+      (Propositions 2–3, two failure modes) The gap decomposes into weight
+      projection (founder positive but mis-magnitude on every dimension) and
+      spectral blind spots (founder zero weight where the cohort weights
+      positively). Blind spots produce strictly larger gaps than equal-magnitude
+      projections and are additionally undetectable by the founder; SBT's
+      eight-dimensional decomposition makes blind spots testable (deliberate dark
+      signal vs invisible blind spot).
+    conditions: "C1, C2, C3"
+    antecedents: [P4]
+    evidence:
+      - type: derivation
+        anchor: "Proposition 2 (quadratic-cost gap form), Proposition 3 (blind-spot loss = full cohort-expected value on the dimension), Remark 5."
+    body_sections: ["§Two Failure Modes", "Proposition 2", "Proposition 3", "Remark 5"]
+  - id: P7
+    statement: >-
+      (Theorem 3, multi-cohort efficiency bound) A single signal portfolio
+      attains at least (1−epsilon) of the sum of individual optima iff the cohort
+      weight profiles lie within a Fisher–Rao ball of radius r(epsilon) ≈
+      sqrt(epsilon) on Delta^7 (r ≈ .32 at epsilon = .10; efficiency condition
+      r < pi/4). High-dimensional concentration of measure (Zharnikov 2026f)
+      keeps inter-cohort spread generically small, giving mass markets a
+      structural single-portfolio advantage.
+    conditions: "C1, C2, C3"
+    antecedents: [P1, P3]
+    evidence:
+      - type: derivation
+        anchor: "Convexity of V* in w bounds aggregate-portfolio loss by weight variance; Fisher–Rao distance bounds the variance (Theorem 3 proof sketch); Corollary 2 covering-number bound k_max ~ (pi/2r)^7."
+    falsifier: "If a single portfolio attains (1−epsilon) efficiency for cohorts whose Fisher–Rao spread exceeds r(epsilon), Theorem 3 fails."
+    body_sections: ["§Multi-Cohort Allocation", "Theorem 3", "Corollary 2"]
+  - id: P8
+    statement: >-
+      The sub-brand decision is a soft Fisher–Rao threshold: when cohort spread
+      exceeds r(epsilon) the firm weighs single-portfolio efficiency loss against
+      duplication, coherence, and complexity costs of separate portfolios. Fuzzy
+      cohort boundaries (Zharnikov 2026f) mitigate but do not eliminate the loss,
+      so the trigger is a soft threshold, not a binary switch.
+    conditions: "C1, C2, C3"
+    antecedents: [P7]
+    evidence:
+      - type: analytic
+        anchor: "Sub-brand cost decomposition + concentration-of-measure fuzziness (decision tree, Figure 2)."
+    body_sections: ["§The Sub-Brand Decision", "Figure 2"]
+  - id: P9
+    statement: >-
+      (Theorem 4, economic metamerism) The cost-minimizing portfolio achieving a
+      target perceived value V-hat for cohort c is unique when all weights are
+      positive: s_i† = (w_i(c)/alpha_i) / (sum_j w_j(c)^2/alpha_j) · V-hat, with
+      zero on unweighted dimensions. Spectral metamerism (Zharnikov 2026e) is
+      thus a cost-optimization lever — among portfolios yielding identical
+      perception, the brand should choose the cheapest; investment on a
+      zero-weight dimension is structural waste.
+    conditions: "C1, C2, C3"
+    antecedents: [P1]
+    evidence:
+      - type: derivation
+        anchor: "Lagrangian for min C(s) s.t. <w(c),s> = V-hat; alpha_i s_i = mu w_i; zero-weight dimensions driven to zero (Theorem 4 proof)."
+    falsifier: "If two equal-perception portfolios cannot differ in cost, or the cost-min portfolio is non-unique under all-positive weights, Theorem 4 fails."
+    body_sections: ["§Economic Interpretation of Spectral Metamerism", "Theorem 4"]
+  - id: P10
+    statement: >-
+      The linear value function excludes dimensional interactions empirically
+      attested by multiattribute-utility and scanner-data work (Lancaster 1966;
+      McAlister 1982; Chintagunta 1993). A cohort-dependent quadratic value
+      function V_Q(s,c) = sum_i w_i s_i + sum_{i<j} w_ij(c) s_i s_j captures
+      complementary (w_ij > 0, e.g. heritage premium narrative×temporal) and
+      substitutive (w_ij < 0, e.g. luxury-paradox ideological×temporal) pairs,
+      with interaction weights measurable per cohort rather than fixed media
+      properties.
+    conditions: "C1, C2, C3"
+    antecedents: [P1]
+    evidence:
+      - type: analytic
+        anchor: "Quadratic value as 2nd-order Taylor expansion (Remark 6); Naik & Raman (2003) two-channel synergy as the fixed-coefficient special case."
+    body_sections: ["§Dimensional Interaction Effects", "§The Quadratic Value Function"]
+  - id: P11
+    statement: >-
+      Each of five established strategy frameworks — Blue Ocean (Kim & Mauborgne
+      2005), Jobs-to-Be-Done (Christensen et al. 2016), Lean Startup (Ries 2011),
+      Porter's Five Forces (1980), Resource-Based View (Barney 1991) — is an
+      implicit low-dimensional projection of the spectral resource-allocation
+      problem; the structural reason each fails to yield the allocation theorem
+      is the absence of a metric on brand-perception space, which the Aitchison
+      and Fisher–Rao metrics supply.
+    conditions: "C1"
+    antecedents: [P1, P5, P7, P9]
+    evidence:
+      - type: analytic
+        anchor: "Framework-by-framework structural correspondences (strategy-canvas = low-res spectral profile; job = weight vector; MVP = L0 hypothesis; rivalry = sphere-packing density; VRIN = spectral-position properties); Tables 2, 3, 10."
+    body_sections: ["§Strategy Frameworks as Spectral Projections", "Tables 2, 3, 10"]
+  - id: P12
+    statement: >-
+      (Theorem 5, interaction-adjusted allocation) With symmetric interaction
+      matrix W and Lambda = lambda·diag(alpha), the optimum solves
+      (Lambda − W) s* = w(c), unique as s* = (Lambda − W)^{-1} w(c) when
+      Lambda − W is positive definite (diagonal dominance lambda·alpha_i >
+      sum_{j≠i}|w_ij|). By Corollary 3 the adjustment delta_i shifts investment
+      toward complementary dimensions and away from substitutive ones; W = 0
+      recovers Theorem 1. This is the eight-dimensional, cohort-dependent
+      generalization of Naik & Raman (2003).
+    conditions: "C1, C2, C3"
+    antecedents: [P10, P1]
+    evidence:
+      - type: derivation
+        anchor: "Hessian W − Lambda; strict concavity when Lambda − W positive definite; gradient zero gives the linear system (Theorem 5 + Corollary 3 proofs)."
+    falsifier: "If the interaction-adjusted optimum is not (Lambda − W)^{-1} w(c) under positive-definite Lambda − W, Theorem 5 fails."
+    body_sections: ["§Optimal Allocation with Interactions", "Theorem 5", "Corollary 3"]
+
+# ============================================================================
+# Findings — what the illustrative numerical example demonstrates
+# ============================================================================
+findings:
+  - id: F1
+    statement: >-
+      Across the five illustrative brands the alignment gap orders Hermès <
+      Erewhon < Patagonia < Tesla < IKEA, tracking founder–cohort perceptual
+      spread: IKEA's founder allocates half its weight to the economic dimension
+      against the cohort's .35, producing the largest gap; Hermès and Erewhon
+      show small spreads on every dimension and the smallest gaps. The ordering
+      illustrates (does not validate) Theorem 2's distance-predicts-loss claim.
+    type: "illustrative_demonstration"
+    source_measurements: [m_align_gaps, m_hellinger]
+    generating_method: M2
+    antecedents: [O2, P5]
+    falsifier: "If the script does not reproduce the stated gaps and ordering from Tables 5–6, F1 fails."
+    citation_role_in_paper: "illustrative_evidence_for_P5"
+    provenance:
+      created_by: "author"
+      created_at: "2026-03"
+    body_sections: ["§Alignment Gap Computation", "Figure 4"]
+  - id: F2
+    statement: >-
+      The interaction model corrects single-dimension allocation for the two
+      illustrative cases: Hermès's positive narrative×temporal interaction
+      (w = +.05) raises optimal investment in both dimensions above the linear
+      benchmark (the heritage-investment case is stronger than dimension-by-
+      dimension analysis suggests), while Tesla's negative ideological×temporal
+      interaction (w = −.03) lowers optimal temporal investment below it, so
+      Tesla's minimal temporal signal is a structurally correct response, not an
+      under-investment gap.
+    type: "illustrative_demonstration"
+    source_measurements: []
+    generating_method: M1
+    antecedents: [O1, P12]
+    falsifier: "If the interaction-adjusted allocations in Figure 3 are not reproduced by the companion script, F2 fails."
+    citation_role_in_paper: "illustrative_evidence_for_P12"
+    provenance:
+      created_by: "author"
+      created_at: "2026-03"
+    body_sections: ["§Application: Heritage Premium and Luxury Paradox", "Figure 3"]
+
+# ============================================================================
+# Alternative explanations / rivals the model must clear
+# ============================================================================
+alternative_explanations:
+  - id: A1
+    statement: >-
+      The inner product on the raw simplex is the wrong geometry: Aitchison
+      (1986) compositional data analysis prescribes log-ratio (alr/clr/ilr)
+      operations on probability vectors, so the spectral value function might
+      violate compositional structure.
+    rules_out_required: [P1, P5]
+    ruled_out_by: [P1]
+    rules_out_status: "scoped"
+    reasoning: >-
+      V(s,c) is a PERCEPTUAL inner product (a weighted sum of perceived signal
+      intensities), not a statistical model of proportions; the directional
+      implications of Theorems 1–5 depend on the relative magnitudes of w_i(c),
+      not the absolute simplex geometry, so they are expected to survive a
+      log-ratio reformulation, which is flagged as future work (Remark 1).
+    provenance:
+      created_by: "author"
+      created_at: "2026-03"
+    body_sections: ["Remark 1"]
+  - id: A2
+    statement: >-
+      Linearity of V in s is unrealistic: diminishing marginal perception
+      (Weber–Fechner) would make V concave in each s_i, potentially changing the
+      Theorem 2 bound.
+    rules_out_required: [P1, P5]
+    ruled_out_by: [P1]
+    rules_out_status: "scoped"
+    reasoning: >-
+      Diminishing returns are carried on the production side via the convex cost
+      function; the perceptual side generalizes to V = sum_i w_i(c) u_i(s_i) with
+      concave u_i and all results extend with minor modifications, though the
+      specific Hellinger bound form may change (Remark 2). Concave-utility
+      extension is future work.
+    provenance:
+      created_by: "author"
+      created_at: "2026-03"
+    body_sections: ["Remark 2"]
+
+# ============================================================================
+# Limitations — honest scope
+# ============================================================================
+limitations:
+  - id: L1
+    statement: >-
+      All numerical examples use hypothetical founder and cohort profiles, not
+      empirically measured ones; large-scale empirical validation via consumer
+      surveys (MaxDiff, conjoint) and founder self-assessment remains future
+      work.
+    severity: "scope-bounding"
+    affects: [F1, F2]
+    provenance:
+      created_by: "author"
+      created_at: "2026-03"
+    body_sections: ["§Empirical Validation"]
+  - id: L2
+    statement: >-
+      The quadratic cost assumption and separability are convenient but not
+      empirically validated; cost cross-terms c_ij and per-dimension non-
+      convexities (threshold/imperceptibility effects) are omitted, and few
+      organizations track alpha_i at the dimensional level.
+    severity: "modeling-assumption"
+    affects: [P1, P9, P12]
+    provenance:
+      created_by: "author"
+      created_at: "2026-03"
+    body_sections: ["§Cost Function Estimation", "§Interaction Effects in Value and Cost"]
+  - id: L3
+    statement: >-
+      The model is static (single-period) and treats the firm as a unified
+      optimizer; the non-ergodic, compounding dynamics of perception (Zharnikov
+      2026j), a capital-stock/depreciation dynamic extension (Nerlove–Arrow
+      1962), and the organizational coordination of distributed dimensional
+      investment are all open.
+    severity: "scope-bounding"
+    affects: [P1, P7]
+    provenance:
+      created_by: "author"
+      created_at: "2026-03"
+    body_sections: ["§Dynamic Extension", "§Organizational Context"]
+  - id: L4
+    statement: >-
+      All five case-study brands are consumer-facing (B2C); the eight SBT
+      dimensions are calibrated for consumer perception, so B2B application would
+      require dimension reweighting, though the formal apparatus of Theorems 1–5
+      is agnostic to whether a cohort is consumers or procurement committees.
+    severity: "external-validity"
+    affects: [F1, F2]
+    provenance:
+      created_by: "author"
+      created_at: "2026-03"
+    body_sections: ["§B2B Applicability"]
+
+# ============================================================================
+# Cross-paper engagement (real corpus keys; see CLAUDE.md citation-key table)
+# ============================================================================
+corpus_precedents:
+  - paper_key: 2026a
+    relationship: refines
+    spine_nodes: [P0, P1, P4]
+    note: >-
+      SBT supplies the eight-dimensional signal space, the Delta^7 observer
+      weight model, dark signals, and the measurement protocol (Section 5); R7
+      refines SBT's per-dimension allocation premise (SBT P4) into a closed-form
+      optimization, adding the prescriptive layer SBT lacked.
+  - paper_key: 2026d
+    relationship: applies
+    spine_nodes: [P5, P11]
+    note: >-
+      R1's formal metric — the Fisher–Rao metric on Delta^7 and the Aitchison
+      metric on R^8_+ — is the distance function on which the alignment-gap lower
+      bound (Theorem 2) and the framework projections rest.
+  - paper_key: 2026e
+    relationship: applies
+    spine_nodes: [P9]
+    note: >-
+      R2's spectral metamerism (distinct portfolios, identical scalar perception)
+      is given its economic interpretation as cost minimization (Theorem 4).
+  - paper_key: 2026f
+    relationship: applies
+    spine_nodes: [P7, P8]
+    note: >-
+      R3's concentration-of-measure result (cohort weights concentrate near the
+      centroid; boundaries are fuzzy) underwrites the multi-cohort efficiency
+      condition r < pi/4 and the soft sub-brand threshold.
+  - paper_key: 2026g
+    relationship: applies
+    spine_nodes: [P7, P11]
+    note: >-
+      R4's sphere-packing capacity bound supplies the cohort-coverage number
+      (Corollary 2, consistent at epsilon = .10) and the Porter rivalry-density
+      and Blue Ocean capacity correspondences.
+  - paper_key: 2026h
+    relationship: applies
+    spine_nodes: [P9, P11]
+    note: >-
+      R5's specification impossibility (only K of the 48 OST dimensions can be
+      fully specified) is resolved by Theorem 4: specify the dimensions the
+      cohort weights positively, in weight-to-cost proportion.
+  - paper_key: 2026i
+    relationship: applies
+    spine_nodes: [P5, P11]
+    note: >-
+      OST's L0 demand-validation gate is given its formal justification — using
+      founder rather than measured cohort weights as the L1–L5 input incurs an
+      expected loss of at least the alignment gap (Theorem 2).
+  - paper_key: 2026j
+    relationship: extends
+    spine_nodes: [L3]
+    note: >-
+      R6's non-ergodic perception dynamics are the basis for the (future)
+      dynamic extension: early investment in high-weight dimensions compounds and
+      is not recoverable by averaging, so static misallocation is costly.
+  - paper_key: 2026c
+    relationship: refines
+    spine_nodes: [P0]
+    note: >-
+      R0's critical survey of geometric approaches to brand perception space
+      frames the structural gap (no metric, no optimization layer) that R7 fills.
+
+# ============================================================================
+# External anchor literature
+#   citation_keys omitted: these external references are described from the
+#   paper's reference list but not verified against the citation substrate, so
+#   per the retrofit brief they are anchored in text rather than by key.
+# ============================================================================
+external_anchors:
+  - {citation_key: null, role: generalized_result, spine_nodes: [P1], note: "Dorfman & Steiner (1954) optimal advertising/quality — the scalar condition Theorem 1 generalizes to eight dimensions."}
+  - {citation_key: null, role: generalized_result, spine_nodes: [P1, P11], note: "Mantrala, Sinha & Zoltners (1992) resource-allocation response-function rules — decoupled-unit allocation R7 extends via W(c)."}
+  - {citation_key: null, role: generalized_result, spine_nodes: [P10, P12], note: "Naik & Raman (2003) two-media synergy — the fixed-coefficient special case Theorem 5 generalizes to cohort-dependent W(c)."}
+  - {citation_key: null, role: analogy_anchor, spine_nodes: [P4], note: "Markowitz (1952) mean–variance portfolio selection — the tracking-error analogy for the alignment gap (W(c) plays the role of Sigma)."}
+  - {citation_key: null, role: method_anchor, spine_nodes: [P1, A1], note: "Aitchison (1986) compositional data analysis — the log-ratio caveat (Remark 1) and the simplex geometry."}
+  - {citation_key: null, role: empirical_premise, spine_nodes: [P0], note: "Aaker (1997) factor-analytic brand-personality dimensions — the empirical case for treating brand perception as a measurable multi-dimensional object."}
+  - {citation_key: null, role: gap_contrast, spine_nodes: [P0, P11], note: "Keller (1993) CBBE, Aaker (1991) brand-equity assets, Kapferer (2008) identity prism — diagnostic frameworks lacking a prescriptive optimization layer."}
+  - {citation_key: null, role: empirical_premise, spine_nodes: [P10], note: "Lancaster (1966) characteristics approach; McAlister (1982), Chintagunta (1993) attribute-interaction evidence — motivate the quadratic value function."}
+  - {citation_key: null, role: framework_projected, spine_nodes: [P11], note: "Kim & Mauborgne (2005) Blue Ocean, Christensen et al. (2016) JTBD, Ries (2011) Lean Startup, Porter (1980) Five Forces, Barney (1991) RBV — the five frameworks read as spectral projections."}
+  - {citation_key: null, role: extension_anchor, spine_nodes: [L3], note: "Nerlove & Arrow (1962) advertising-as-capital-stock — the canonical model for the future dynamic extension; Rust, Lemon & Zeithaml (2004) return-on-marketing — managerial framing."}
+
+# ============================================================================
+# Open questions / boundary edges
+# ============================================================================
+open:
+  - "Empirical validation: measure real founder and cohort spectral profiles (MaxDiff/conjoint) and test whether perceptual distance predicts realized economic loss (L1)."
+  - "Estimate the cohort-dependent interaction matrix W(c) from survey data rather than qualitative inference (L2)."
+  - "Log-ratio (Aitchison) reformulation of the value function under the compositional metric — do Theorems 1–5 hold quantitatively, not just directionally? (A1, Remark 1)."
+  - "Concave-utility generalization V = sum_i w_i(c) u_i(s_i): does the Hellinger bound form change? (A2, Remark 2)."
+  - "Dynamic extension: integrate the static allocation with non-ergodic diffusion dynamics (2026j) and capital-stock depreciation (Nerlove–Arrow 1962) (L3)."
+  - "Cost-side interaction effects via cross-terms c_ij(s_i, s_j) (L2)."
+
+# ============================================================================
+# Spine changelog — append-only
+# ============================================================================

@@ -1,0 +1,41 @@
+# ONTOLOGY.yaml module - prism
+#
+# Per-paper ontology module per [internal path removed]
+# §"ONTOLOGY.yaml schema (v0.1)". owns = terms THIS paper introduces (unique
+# authority); imports = terms owned by other modules it uses (reference only).
+# Linked into the substrate `terms` graph by build_ontology.py; rendered per-paper
+# by render_paper_glossary.py. Bootstrapped 2026-06-13 from per-paper term
+# extraction; definitions paraphrase each paper's own definitional text.
+
+paper_key: prism
+schema_version: 0.1
+
+owns:
+  - term_key: prism-instrument
+    label: "PRISM"
+    canonical_form: "PRISM"
+    definition: "A family of standardized instruments for eliciting multi-dimensional brand perception from both AI and human observers within SBT, built on a domain-neutral five-layer scaffold."
+    first_section: "PRISM Architecture"
+  - term_key: prism-five-layer-scaffold
+    label: "PRISM Five-Layer Scaffold"
+    canonical_form: "five-layer scaffold (PL0-PL4)"
+    definition: "The reusable PRISM protocol architecture separating specification (PL0), configuration (PL1), prompts (PL2), sessions (PL3), and analysis (PL4) so instrument variants share infrastructure while varying items."
+    first_section: "PRISM Architecture: The Five-Layer Scaffold"
+  - term_key: prism-b
+    label: "PRISM-B"
+    canonical_form: "PRISM-B"
+    definition: "The brand-perception PRISM variant: eight scale items mapped one-to-one to SBT dimensions on a 1-5 ordinal format measuring perceived signal-reception intensity, with an exact prompt template and scoring algorithm."
+    first_section: "PRISM-B Specification"
+
+imports:
+  - {term_key: spectral-brand-theory}
+  - {term_key: spectral-dimensions}
+  - {term_key: observer-spectral-profile}
+  - {term_key: brand-conviction}
+  - {term_key: cohort}
+  - {term_key: perception-cloud}
+  - {term_key: dimensional-collapse-index}
+  - {term_key: perception-dop}
+
+refines: []
+

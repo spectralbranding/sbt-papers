@@ -1,0 +1,40 @@
+# ONTOLOGY.yaml module - 2026h
+#
+# Per-paper ontology module per [internal path removed]
+# §"ONTOLOGY.yaml schema (v0.1)". owns = terms THIS paper introduces (unique
+# authority); imports = terms owned by other modules it uses (reference only).
+# Linked into the substrate `terms` graph by build_ontology.py; rendered per-paper
+# by render_paper_glossary.py. Bootstrapped 2026-06-13 from per-paper term
+# extraction; definitions paraphrase each paper's own definitional text.
+
+paper_key: 2026h
+schema_version: 0.1
+
+owns:
+  - term_key: activation-matrix
+    label: "Activation Matrix"
+    canonical_form: "activation matrix"
+    definition: "The 8x6 matrix A in [0,1]^(8x6) whose entry A_ij is the activation level of spectral dimension i at organizational level j, vectorizable to a point in the 48-dimensional specification space."
+    first_section: "Preliminaries: The Activation Matrix"
+  - term_key: coverage-impossibility
+    label: "Coverage Impossibility"
+    canonical_form: "coverage impossibility"
+    definition: "The geometric result that any finite collection of organizational specifications covers a negligible fraction of the 48-dimensional specification space, making exhaustive specification geometrically impossible regardless of cognitive capacity."
+    first_section: "The Coverage Impossibility Theorem"
+  - term_key: effective-dimensionality-reduction
+    label: "Effective Dimensionality Reduction"
+    canonical_form: "effective dimensionality"
+    definition: "The reduction of the 48-dimensional specification space to d_eff = 8(1-(1-gamma)^6)/gamma free dimensions under OST cascade coupling strength gamma, yielding 15.75 dimensions at gamma=0.5."
+    first_section: "The Effective Dimensionality Theorem"
+  - term_key: forkability-decomposition
+    label: "Forkability as Subspace Decomposition"
+    canonical_form: "forkability"
+    definition: "The geometric decomposition of the 48-dimensional specification space into a shared subspace and a private subspace, formalizing how organizations share higher-level specifications while diverging on lower levels."
+    first_section: "Forkability as Subspace Decomposition"
+
+imports:
+  - {term_key: spectral-dimensions}
+  - {term_key: six-tier-ontology}
+
+refines: []
+

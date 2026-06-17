@@ -1,0 +1,127 @@
+# ONTOLOGY.yaml module — 2026a (Spectral Brand Theory, the SBT root paper)
+#
+# A paper's ontology module per [internal path removed]
+# §"ONTOLOGY.yaml schema (v0.1)". This module OWNS the canonical SBT terms that
+# 2026a introduces (it is their unique authority). 31 papers depend on 2026a, so
+# these are the corpus's root semantics. Linked into the substrate `terms` graph
+# by build_ontology.py; rendered per-paper by render_paper_glossary.py.
+#
+# Term definitions + canonical_form + replaces taken from the canonical
+# terminology map: [internal path removed] §5 + CLAUDE.md
+# "Terminology". Do not silently diverge — those are the SSOT for surface forms.
+
+paper_key: 2026a
+schema_version: 0.1
+
+owns:
+  - term_key: spectral-brand-theory
+    label: "Spectral Brand Theory"
+    canonical_form: "Spectral Brand Theory"
+    definition: >-
+      The theory that a brand is not a property of an object but a signal
+      completed in the observer: an 8-dimensional spectral profile that, when
+      received by an observer cohort, collapses into a distribution of brand
+      convictions (a perception cloud). Brand is measured, not managed.
+    replaces: ["spectral brand theory"]
+    first_section: "§1"
+
+  - term_key: perception-cloud
+    label: "perception cloud"
+    canonical_form: "perception cloud"
+    definition: >-
+      The distribution of brand convictions across an observer population for a
+      brand. Distributional, not a single fixed referent; "cloud" alone is
+      acceptable in context. Has a valence (positive / negative / ambivalent).
+    replaces: ["brand image", "brand cloud"]
+    first_section: "§2.1"
+
+  - term_key: observer-spectral-profile
+    label: "observer spectral profile"
+    canonical_form: "observer spectral profile"
+    definition: >-
+      The receiver-side object that collapses a brand signal into a conviction.
+      Five components: spectrum, weights, tolerances, priors, and an identity
+      gate. Cohorts are observers, not consumers.
+    replaces: ["consumer profile"]
+    first_section: "§2.2"
+
+  - term_key: brand-conviction
+    label: "brand conviction"
+    canonical_form: "brand conviction"
+    definition: >-
+      An observer-relative held position about a brand on one or more spectral
+      dimensions. Observer-relative, not dispositional (contrast: attitude).
+    replaces: ["brand attitude", "brand belief"]
+    first_section: "§2.1"
+
+  - term_key: brand-fact
+    label: "brand fact"
+    canonical_form: "brand fact"
+    definition: >-
+      A brand conviction treated as a held fact in an observer's perception.
+      Interchangeable with brand conviction; "conviction" is preferred in papers.
+    first_section: "§2.1"
+    relations:
+      - {type: synonym, term_key: brand-conviction, note: "conviction preferred in papers"}
+
+  - term_key: cohort
+    label: "cohort"
+    canonical_form: "cohort"
+    definition: >-
+      A perceptual grouping of observers with similar spectral profiles, with
+      dynamic membership. Cohorts are perceptual; demographics are metadata, not
+      mechanism. Also written "observer cohort".
+    replaces: ["segment", "target audience"]
+    first_section: "§3"
+
+  - term_key: re-collapse
+    label: "re-collapse"
+    canonical_form: "re-collapse"
+    definition: >-
+      The structural mechanism by which a brand signal is re-emitted and
+      re-collapsed into a changed perception cloud. Names the mechanism;
+      "rebranding" is only the conventional surface label. Always hyphenated.
+    replaces: ["rebranding", "recollapse", "re collapse"]
+    first_section: "§4"
+
+  - term_key: spectral-dimensions
+    label: "the 8 dimensions"
+    canonical_form: "8 dimensions"
+    definition: >-
+      The eight spectral dimensions of a brand signal, in canonical order:
+      semiotic, narrative, ideological, experiential, social, economic,
+      cultural, temporal. Lowercase in prose.
+    first_section: "§2"
+
+  - term_key: structural-absence
+    label: "structural absence"
+    canonical_form: "structural absence"
+    definition: >-
+      The absence of a designed signal on a dimension, which itself carries
+      perceptual information ("dark signals" is acceptable shorthand).
+    replaces: ["negative emission"]
+    first_section: "§2.3"
+
+  - term_key: d-a-ratio
+    label: "D/A ratio"
+    canonical_form: "D/A ratio"
+    definition: >-
+      The designed/ambient ratio: the proportion of a brand's received signal
+      that is intentionally designed versus ambient. Goldilocks zone 55-65%
+      designed.
+    replaces: ["signal ratio"]
+    first_section: "§2.4"
+
+  - term_key: cloud-valence
+    label: "cloud valence"
+    canonical_form: "cloud valence"
+    definition: >-
+      The valence of a perception cloud: positive, negative, or ambivalent. SBT
+      does not use "neutral" for cloud valence; an undecided cloud is ambivalent.
+    replaces: ["neutral valence"]
+    first_section: "§2.1"
+
+# 2026a is the root: it imports nothing and refines nothing.
+imports: []
+refines: []
+

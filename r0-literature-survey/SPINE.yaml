@@ -1,0 +1,499 @@
+# SPINE.yaml — Geometric Approaches to Brand Perception: A Critical Survey
+#
+# RETROFIT spine: extracted descriptively from the completed paper.md
+# (R0 / 2026c) as part of the SPINE-for-all-active-canonical project
+# ([internal path removed], decision D4).
+# Not authored generatively before prose; reflects the paper as written.
+#
+# Schema v0.1 (legacy / minimal): propositions + corpus_precedents +
+# external_anchors + open + changelog. R0 is a pure-theory critical survey:
+# no author-produced data, no simulations, no AI-tool findings — only a
+# literature synthesis, a classification matrix, and six formally-stated
+# open problems. v0.1 is the correct version per the protocol's "pure
+# theory" branch.
+
+spine_version: "0.1"
+paper_key: "2026c"
+provenance: retrofit
+title: "Geometric Approaches to Brand Perception: A Critical Survey and Research Agenda"
+
+thesis: |
+  Brand theory is strikingly under-formalized relative to adjacent fields
+  where geometric methods have produced transformative insight. Across ten
+  intellectual traditions — multidimensional scaling, characteristics-space
+  economics, conceptual spaces, non-Euclidean perceptual geometry,
+  information geometry, individual-differences scaling, topological data
+  analysis, quantum cognition, opinion dynamics, and non-ergodicity research
+  — no single framework simultaneously combines high-dimensional geometric
+  structure, a formal metric, observer heterogeneity, non-ergodic temporal
+  dynamics, and a generative signal mechanism. This compound gap is not a
+  single missing ingredient but the absence of the five ingredients in
+  combination. The survey maps the genealogy, diagnoses the gap via a
+  classification matrix, and articulates six open problems with formal
+  mathematical statements that constitute a research agenda for mathematical
+  brand theory. Spectral Brand Theory (Zharnikov 2026a) is positioned as a
+  candidate framework sitting at the five-way intersection, with companion
+  papers (Zharnikov 2026d–h, 2026j) delegated to resolve each open problem.
+
+# Each proposition is a node in the spine graph.
+propositions:
+  - id: P1
+    statement: >-
+      Foundational brand-theory frameworks (Aaker's brand equity, Keller's
+      CBBE pyramid, Kapferer's identity prism, Aaker's brand-personality
+      scale) are taxonomic and factor-analytic rather than mathematical: they
+      specify no formal space, no metric, and no dynamical law for how brand
+      perception forms and evolves.
+    conditions: "Scoped to corporate/commercial brands; Western continuous-scale measurement tradition."
+    antecedents: []
+    evidence:
+      - type: citation
+        anchor: >-
+          The canonical taxonomic frameworks and the systematic-review finding
+          that brand-equity models lack a formally rigorous account.
+        citation_keys: [aaker-1991-managing-brand-equity, keller-1993-conceptualizing-measuring-managing, kapferer-2008-new-strategic-brand, aaker-1997-dimensions-brand-personality, paschina-2025-brand-equity-measurement]
+    body_sections: ["1. Introduction"]
+
+  - id: P2
+    statement: >-
+      A comprehensive geometric theory of brand perception should satisfy
+      six criteria — high dimensionality (>3 with examined geometric
+      consequences), a formal metric with proved properties, observer
+      heterogeneity beyond preference parameters, temporal dynamics (decay,
+      compounding, path dependence), a generative signal mechanism, and
+      empirical validation. These criteria define the evaluative axes of the
+      survey.
+    conditions: "Criteria are formally defined in §11.1; criterion 6 reported separately from criteria 1–5."
+    antecedents: [P1]
+    evidence:
+      - type: analytic
+        anchor: >-
+          The six criteria are stipulated as the survey's classification
+          axes, derived from the structural absences identified in P1.
+    body_sections: ["11.1 Classification Matrix"]
+
+  - id: P3
+    statement: >-
+      Multidimensional scaling (MDS) and its Bayesian/latent-class extensions
+      operate in two-to-three dimensions, assume Euclidean structure, and are
+      purely descriptive — they embed dissimilarity data but supply no
+      generative mechanism and no temporal dynamics; the two-to-three
+      dimensional convention may reflect visual-interpretability limits rather
+      than the true dimensionality of brand perception.
+    conditions: null
+    antecedents: [P2]
+    evidence:
+      - type: citation
+        anchor: >-
+          MDS historical foundations, the dimensionality convention, and the
+          unaddressed Johnson-Lindenstrauss distortion question.
+        citation_keys: [torgerson-1952-multidimensional-scaling-i, kruskal-1964-multidimensional-scaling-by, bijmolt-1999-comparison-multidimensional-scaling, carroll-1970-analysis-individual-differences, johnson-1984-extensions-lipschitz-mappings]
+    body_sections: ["2. Multidimensional Scaling in Marketing"]
+
+  - id: P4
+    statement: >-
+      Characteristics-space economics (Lancaster, Hotelling) place products as
+      points in attribute space but assume objective, universally perceived
+      characteristics, static positions, and flat Euclidean geometry — ruling
+      out the observer heterogeneity central to brand experience.
+    conditions: null
+    antecedents: [P2]
+    evidence:
+      - type: citation
+        anchor: >-
+          Lancaster's characteristics theory, Hotelling spatial competition,
+          and the geometric-pocket result for specialist niches.
+        citation_keys: [lancaster-1966-new-approach-consumer, hotelling-1929-stability-competition-economic, rosen-1974-hedonic-prices-implicit, peli-1999-market-partitioning-geometry]
+    body_sections: ["3. Characteristics Space Models"]
+
+  - id: P5
+    statement: >-
+      Gardenfors's conceptual spaces give the most explicit geometric
+      foundation for cognition (Criterion P: natural concepts are convex
+      regions, empirically supported by cross-language color-naming), but lack
+      temporal dynamics, observer heterogeneity, a generative mechanism, and
+      assume Euclidean/metric quality dimensions.
+    conditions: null
+    antecedents: [P2]
+    evidence:
+      - type: citation
+        anchor: >-
+          The conceptual-spaces framework and the color-naming Voronoi
+          optimality result supporting the convexity criterion.
+        citation_keys: [gardenfors-2000-conceptual-spaces-geometry, regier-2007-color-naming-reflects, aisbett-2001-general-formulation-conceptual]
+    body_sections: ["4. Conceptual Spaces"]
+
+  - id: P6
+    statement: >-
+      Human perceptual space is non-Euclidean — "at best Riemannian" for
+      spatial vision and demonstrably non-Riemannian for color — so the
+      default Euclidean-distance assumption in perceptual mapping, conjoint,
+      and MDS systematically misrepresents perceptual differences in
+      multi-attribute brand space; information geometry (Fisher-Rao) is a
+      candidate metric that also accommodates Tversky's documented asymmetries
+      via directed divergences.
+    conditions: null
+    antecedents: [P2, P3]
+    evidence:
+      - type: citation
+        anchor: >-
+          Non-Euclidean/non-Riemannian perception findings, information
+          geometry, and the Tversky asymmetry critique.
+        citation_keys: [todd-2001-affine-structure-perceptual, bujack-2022-nonriemannian-nature-perceptual, amari-2016-information-geometry-its, tversky-1977-features-similarity-psychological, cencov-1982-statistical-decision-rules]
+    body_sections: ["5. Non-Euclidean Perceptual Geometry"]
+
+  - id: P7
+    statement: >-
+      Individual-differences scaling (INDSCAL) and latent-class unfolding
+      (DeSarbo) come closest to modeling observer heterogeneity via dimension
+      weights and latent classes — the statistical precursor to the observer
+      spectral profile — but their weights/classes are static, low-dimensional,
+      non-generative, and never cast as geometric objects on a formal space
+      (the simplex or positive orthant).
+    conditions: null
+    antecedents: [P2]
+    evidence:
+      - type: citation
+        anchor: >-
+          INDSCAL, the GCM attention-weight precursor, latent-class MDS, and
+          Shepard's universal generalization law motivating weighted distance.
+        citation_keys: [carroll-1970-analysis-individual-differences, nosofsky-1986-attention-similarity-identificationcategorization, desarbo-2002-gravitybased-multidimensional-scaling, shepard-1987-toward-universal-law, kriegeskorte-2008-representational-similarity-analysis]
+    body_sections: ["6. Individual Differences and Dimension Weighting"]
+
+  - id: P8
+    statement: >-
+      Topological data analysis (persistent homology) supplies coordinate-free,
+      high-dimensional tools that could reveal structural features (holes,
+      loops, voids) in brand-perception point clouds invisible to MDS, but has
+      seen essentially no adoption in marketing — a missed opportunity
+      attributable to disciplinary boundaries rather than unsuitability.
+    conditions: null
+    antecedents: [P2]
+    evidence:
+      - type: citation
+        anchor: >-
+          TDA fundamentals and adjacent-field applications (finance, neural
+          fMRI) demonstrating it captures perceptual structure.
+        citation_keys: [carlsson-2009-topology-data-bulletin, edelsbrunner-2010-computational-topology-introduction, yen-2021-using-topological-data, carrire-2020-perslay-neural-network]
+    body_sections: ["7. Topological Data Analysis in Marketing"]
+
+  - id: P9
+    statement: >-
+      Quantum cognition models observer-dependent, non-classical single
+      decisions in Hilbert space (order effects, conjunction fallacy), but its
+      snapshot collapse formalism does not address the cumulative, temporal
+      formation of brand perception through repeated signal encounters, decay,
+      and prior accumulation.
+    conditions: null
+    antecedents: [P2]
+    evidence:
+      - type: citation
+        anchor: >-
+          The Hilbert-space cognition formalism and its single-shot decision
+          scope.
+        citation_keys: [busemeyer-2012-quantum-models-cognition, pothos-2022-quantum-cognition-annual]
+    body_sections: ["8. Quantum Cognition Models"]
+
+  - id: P10
+    statement: >-
+      Opinion-dynamics and multi-agent models (Hegselmann-Krause,
+      Deffuant-Weisbuch, DeGroot) supply temporal dynamics and emergent
+      clustering, but operate in flat Euclidean space, lack absorbing states,
+      model symmetric peer influence rather than asymmetric brand-to-observer
+      signal emission, and have no generative production of meaning.
+    conditions: null
+    antecedents: [P2]
+    evidence:
+      - type: citation
+        anchor: >-
+          Bounded-confidence and DeGroot social-learning models and their
+          spectral-gap convergence behavior.
+        citation_keys: [hegselmann-2002-opinion-dynamics-bounded, deffuant-2000-mixing-beliefs-among, degroot-1974-reaching-consensus-journal, golub-2010-naive-learning-social, lorenz-2007-continuous-opinion-dynamics]
+    body_sections: ["9. Opinion Dynamics and Multi-Agent Models"]
+
+  - id: P11
+    statement: >-
+      Non-ergodicity research (Peters's ergodicity economics; Molenaar's
+      idiographic psychology) establishes that individual time-average
+      trajectories diverge from population ensemble averages under
+      multiplicative dynamics, absorbing states, and observer heterogeneity —
+      precisely the hallmarks brand perception exhibits (multiplicative
+      signal-prior interaction, permanent negative conviction as an absorbing
+      state, path dependence) — yet has never been applied to brand
+      perception or any marketing metric.
+    conditions: null
+    antecedents: [P2]
+    evidence:
+      - type: citation
+        anchor: >-
+          Peters's ergodicity problem, Molenaar's idiographic manifesto, and
+          experimental + stated-preference evidence of human non-ergodic
+          sensitivity.
+        citation_keys: [peters-2019-ergodicity-problem-economics, molenaar-2004-manifesto-psychology-as, meder-2021-ergodicitybreaking-reveals-time, vanhoyweghen-2025-investigating-origins-redistributive, fisher-2018-lack-grouptoindividual-generalizability]
+    body_sections: ["10. Non-Ergodicity Beyond Economics"]
+
+  - id: P12
+    statement: >-
+      The compound gap is the central finding: no surveyed tradition satisfies
+      all five core criteria (high-D geometry, formal metric, observer
+      heterogeneity, non-ergodic dynamics, generative mechanism)
+      simultaneously. Each tradition excels on one or two while leaving the
+      rest unaddressed; the gap is the absence of the combination, not of any
+      single ingredient. The classification matrix shows the five-way
+      intersection is unoccupied.
+    conditions: "Criterion 6 (empirical validation) reported separately; the diagnosis concerns criteria 1–5."
+    antecedents: [P3, P4, P5, P6, P7, P8, P9, P10, P11]
+    evidence:
+      - type: analytic
+        anchor: >-
+          Synthesis of P3–P11 into the classification matrix (Tables 1a–1b,
+          Table 2) showing no tradition occupies the five-way intersection.
+    body_sections: ["11.2 The Compound Gap"]
+
+  - id: P13
+    statement: >-
+      Spectral Brand Theory (Zharnikov 2026a) is positioned as a candidate
+      framework at the five-way intersection — eight signal-emission
+      dimensions, observer spectral profiles, perception clouds with
+      path-dependent dynamics, and absorbing states producing non-ergodic
+      behavior — but as currently formulated it lacks a formally defined
+      metric, a geometrically situated observer space, and a derived
+      stochastic model; the "spectral" metaphor is a signal-profile metaphor,
+      distinct from spectral graph theory and spectral clustering.
+    conditions: "SBT cells are 'proposed', not 'yes'; they become 'yes' only upon resolution of the six open problems."
+    antecedents: [P12]
+    evidence:
+      - type: citation
+        anchor: >-
+          SBT's framework as proposed, the spectral-terminology disambiguation,
+          and the epistemological pipeline upstream of it.
+        citation_keys: [zharnikov-2026-spectral-brand-theory-computational-framework, chung-1997-spectral-graph-theory, luxburg-2007-tutorial-spectral-clustering]
+    body_sections: ["11.3 SBT as a Candidate Framework"]
+
+  - id: P14
+    statement: >-
+      The compound gap is converted from diagnosis into a research agenda of
+      six formally-stated open problems — (1) a formal metric on
+      multi-dimensional brand space, (2) Johnson-Lindenstrauss projection
+      bounds proving metameric collapse is geometrically inevitable, (3)
+      concentration of measure giving cohort-boundary fuzziness, (4)
+      sphere-packing positioning capacity with the E8 kissing number as an
+      adjacency ceiling, (5) specification impossibility in high-dimensional
+      organizational space, and (6) diffusion dynamics on the perceptual
+      manifold proving non-ergodicity under absorbing boundaries — each
+      delegated to a companion paper.
+    conditions: "Each problem stated with a mathematical formulation and a target result."
+    antecedents: [P12, P13]
+    evidence:
+      - type: citation
+        anchor: >-
+          The six open problems and their mathematical anchors (JL lemma,
+          E8 sphere packing, ergodicity).
+        citation_keys: [johnson-1984-extensions-lipschitz-mappings, viazovska-2017-sphere-packing-problem, cohn-2017-sphere-packing-problem, peters-2019-ergodicity-problem-economics]
+    body_sections: ["12. Research Agenda: Six Open Problems"]
+
+  - id: P15
+    statement: >-
+      The coincidence that SBT proposes exactly eight dimensions and that
+      eight is the dimension where the E8 lattice achieves provably optimal
+      sphere packing (kissing number 240) is strictly motivational, not
+      load-bearing: SBT's eight dimensions were derived from phenomenological
+      completeness and independence/exhaustiveness arguments, and the E8
+      alignment merely suggests a question worth formal exploration in the
+      companion paper.
+    conditions: "Explicitly stated as heuristic, not analytic support."
+    antecedents: [P14]
+    evidence:
+      - type: citation
+        anchor: >-
+          Viazovska's E8 optimality proof and the Cohn et al. LP-bound
+          foundation interpreting E8 as a hard geometric limit.
+        citation_keys: [viazovska-2017-sphere-packing-problem, cohn-2017-sphere-packing-problem, zharnikov-2026-why-eight-completeness-necessity-sbt]
+    body_sections: ["12.7 The E_8 Coincidence"]
+
+# Cross-paper engagement explicit
+corpus_precedents:
+  - paper_key: 2026a
+    relationship: applies
+    spine_nodes: [P13, P12]
+    description: "SBT — the candidate framework this survey establishes the genealogy for and positions at the five-way intersection."
+  - paper_key: 2026b
+    relationship: extends
+    spine_nodes: [P13]
+    description: "Atom-Cloud-Fact epistemological pipeline — the upstream generative methodology the open problems assume."
+  - paper_key: 2026d
+    relationship: extends
+    spine_nodes: [P14]
+    description: "R1 — resolves Open Problem 1 (formal metric on brand/observer space)."
+  - paper_key: 2026e
+    relationship: extends
+    spine_nodes: [P14]
+    description: "R2 — resolves Open Problem 2 (JL projection bounds; metamerism is geometrically inevitable)."
+  - paper_key: 2026f
+    relationship: extends
+    spine_nodes: [P14]
+    description: "R3 — resolves Open Problem 3 (concentration of measure; cohort-boundary fuzziness)."
+  - paper_key: 2026g
+    relationship: extends
+    spine_nodes: [P14, P15]
+    description: "R4 — resolves Open Problem 4 (sphere packing; E8 kissing number as adjacency ceiling)."
+  - paper_key: 2026h
+    relationship: extends
+    spine_nodes: [P14]
+    description: "R5 — resolves Open Problem 5 (specification impossibility in 48-D organizational space)."
+  - paper_key: 2026j
+    relationship: extends
+    spine_nodes: [P14]
+    description: "R6 — resolves Open Problem 6 (diffusion dynamics; non-ergodicity under absorbing boundaries)."
+  - paper_key: 2026i
+    relationship: applies
+    spine_nodes: [P14]
+    description: "OST — extends the specification-impossibility result into a full theory of organizational design (Problem 5 organizational counterpart)."
+  - paper_key: 2026k
+    relationship: extends
+    spine_nodes: [P4, P14]
+    description: "R7 — demand-side resource allocation in brand space; extends the characteristics-space tradition and complements positioning capacity."
+  - paper_key: 2026r
+    relationship: extends
+    spine_nodes: [P13, P15]
+    description: "R11 — dimensional completeness and necessity of the eight-channel taxonomy underwriting P13/P15."
+  - paper_key: 2026s
+    relationship: extends
+    spine_nodes: [P11]
+    description: "R12 — coherence type as crisis predictor; formalizes the absorbing-state non-ergodic dynamics P11 motivates."
+
+# External anchor literature
+external_anchors:
+  - citation_key: aaker-1991-managing-brand-equity
+    role: foundational
+    spine_nodes: [P1]
+  - citation_key: keller-1993-conceptualizing-measuring-managing
+    role: foundational
+    spine_nodes: [P1]
+  - citation_key: kapferer-2008-new-strategic-brand
+    role: foundational
+    spine_nodes: [P1]
+  - citation_key: aaker-1997-dimensions-brand-personality
+    role: foundational
+    spine_nodes: [P1]
+  - citation_key: paschina-2025-brand-equity-measurement
+    role: supporting_evidence
+    spine_nodes: [P1]
+  - citation_key: torgerson-1952-multidimensional-scaling-i
+    role: foundational
+    spine_nodes: [P3]
+  - citation_key: kruskal-1964-multidimensional-scaling-by
+    role: foundational
+    spine_nodes: [P3]
+  - citation_key: lancaster-1966-new-approach-consumer
+    role: foundational
+    spine_nodes: [P4]
+  - citation_key: hotelling-1929-stability-competition-economic
+    role: foundational
+    spine_nodes: [P4]
+  - citation_key: gardenfors-2000-conceptual-spaces-geometry
+    role: foundational
+    spine_nodes: [P5]
+  - citation_key: regier-2007-color-naming-reflects
+    role: supporting_evidence
+    spine_nodes: [P5]
+  - citation_key: todd-2001-affine-structure-perceptual
+    role: foundational
+    spine_nodes: [P6]
+  - citation_key: bujack-2022-nonriemannian-nature-perceptual
+    role: key_evidence
+    spine_nodes: [P6]
+  - citation_key: amari-2016-information-geometry-its
+    role: candidate_tool
+    spine_nodes: [P6]
+  - citation_key: tversky-1977-features-similarity-psychological
+    role: rival_critique
+    spine_nodes: [P6]
+  - citation_key: carroll-1970-analysis-individual-differences
+    role: foundational
+    spine_nodes: [P7]
+  - citation_key: desarbo-2002-gravitybased-multidimensional-scaling
+    role: closest_precedent
+    spine_nodes: [P7]
+  - citation_key: nosofsky-1986-attention-similarity-identificationcategorization
+    role: precursor
+    spine_nodes: [P7]
+  - citation_key: shepard-1987-toward-universal-law
+    role: theoretical_motivation
+    spine_nodes: [P7]
+  - citation_key: kriegeskorte-2008-representational-similarity-analysis
+    role: parallel_method
+    spine_nodes: [P7]
+  - citation_key: carlsson-2009-topology-data-bulletin
+    role: foundational
+    spine_nodes: [P8]
+  - citation_key: yen-2021-using-topological-data
+    role: adjacent_application
+    spine_nodes: [P8]
+  - citation_key: busemeyer-2012-quantum-models-cognition
+    role: foundational
+    spine_nodes: [P9]
+  - citation_key: hegselmann-2002-opinion-dynamics-bounded
+    role: foundational
+    spine_nodes: [P10]
+  - citation_key: degroot-1974-reaching-consensus-journal
+    role: foundational
+    spine_nodes: [P10]
+  - citation_key: peters-2019-ergodicity-problem-economics
+    role: foundational
+    spine_nodes: [P11, P14]
+  - citation_key: molenaar-2004-manifesto-psychology-as
+    role: foundational
+    spine_nodes: [P11]
+  - citation_key: meder-2021-ergodicitybreaking-reveals-time
+    role: key_evidence
+    spine_nodes: [P11]
+  - citation_key: vanhoyweghen-2025-investigating-origins-redistributive
+    role: closest_empirical_analogue
+    spine_nodes: [P11]
+  - citation_key: johnson-1984-extensions-lipschitz-mappings
+    role: core_tool
+    spine_nodes: [P3, P14]
+  - citation_key: viazovska-2017-sphere-packing-problem
+    role: core_tool
+    spine_nodes: [P14, P15]
+  - citation_key: cohn-2017-sphere-packing-problem
+    role: supporting_tool
+    spine_nodes: [P14, P15]
+  - citation_key: chung-1997-spectral-graph-theory
+    role: terminology_disambiguation
+    spine_nodes: [P13]
+  - citation_key: luxburg-2007-tutorial-spectral-clustering
+    role: terminology_disambiguation
+    spine_nodes: [P13]
+  - citation_key: bronstein-2017-geometric-deep-learning
+    role: audience_anchor
+    spine_nodes: [P1]
+
+# Open questions / boundary edges
+open:
+  - >-
+    Whether SBT is the right framework to occupy the five-way intersection, or
+    whether resolving the six open problems reveals that a different framework
+    is needed — the intersection is unoccupied and the tools exist regardless
+    (P13).
+  - >-
+    Whether the E8 / eight-dimension coincidence is structural rather than
+    incidental remains open; P15 states it is strictly motivational and defers
+    formal exploration to the companion paper 2026g.
+  - >-
+    The survey is scoped to corporate/commercial brands; place, person, and
+    NGO brands raise analogous geometric questions with different
+    signal-emission mechanisms and are not examined (boundary on P1, P12).
+  - >-
+    Affect-only models, embodiment/predictive-coding accounts, and
+    cross-cultural / ordinal-only measurement traditions are excluded by scope
+    and would require separate surveys; the continuous-parameterization
+    assumption underlies all geometric results in Problem 1 (boundary on P6, P14).
+  - >-
+    The classification-matrix "yes/partial/—" coding against criteria 1–5 is
+    a qualitative assessment, not a quantitative scoring; alternative readings
+    of partial-satisfaction cells could shift individual entries without
+    changing the unoccupied-intersection conclusion (boundary on P12).
+
+# Spine changelog — append-only; every fork/rebase logged

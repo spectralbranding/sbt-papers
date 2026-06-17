@@ -1,0 +1,47 @@
+# ONTOLOGY.yaml module — 2026o (R9: Non-Ergodic Perception)
+#
+# Owns the ergodicity-related SBT terms introduced by R9. Imports the root SBT
+# terms it builds on (cohort, perception-cloud) from 2026a's module, which is
+# what exercises the linker's cross-module resolution (no-dangling-import check).
+# Canonical surface forms: [internal path removed] §5.
+
+paper_key: 2026o
+schema_version: 0.1
+
+owns:
+  - term_key: non-ergodic-perception
+    label: "non-ergodic perception"
+    canonical_form: "non-ergodic perception"
+    definition: >-
+      The property that the time-average of a single observer's brand perception
+      does not equal the ensemble-average across the cohort, so cross-sectional
+      brand measures cannot be substituted for longitudinal ones. A distinct
+      concept from non-stationarity; cite Peters (2019) when using the framing.
+    replaces: ["non-stationary"]
+    first_section: "§2"
+
+  - term_key: ergodicity-coefficient
+    label: "ergodicity coefficient"
+    canonical_form: "ergodicity coefficient (epsilon)"
+    definition: >-
+      A per-dimension metric (epsilon) quantifying how far an observer cohort's
+      perception departs from ergodicity. A reliability-of-aggregation measure,
+      not a generic reliability score.
+    replaces: ["reliability score"]
+    first_section: "§3"
+
+  - term_key: absorbing-state
+    label: "absorbing state"
+    canonical_form: "absorbing state"
+    definition: >-
+      An irreversible negative-conviction basin: a cohort state from which the
+      perception cloud cannot recover under ordinary signal emission.
+    replaces: ["locked cohort"]
+    first_section: "§4"
+
+imports:
+  - {term_key: cohort}
+  - {term_key: perception-cloud}
+
+refines: []
+

@@ -1,0 +1,638 @@
+# SPINE.yaml — Spectral Gap Restoration (2026ad / R22)
+#
+# RETROFIT spine: extracted descriptively from the completed paper.md per
+# CLAUDE.md rule 0aa + the retrofit-SPINE agent brief (D4, SPINE-for-all-active
+# -canonical project). NOT authored generatively before prose — this is a
+# faithful backbone extraction from the finished paper.
+#
+# Schema v0.2: the paper reports author-produced Monte Carlo simulation results
+# and computed table values (Table 1, the bifurcation sweep), so the
+# observation -> method -> measurement -> finding chain is represented as
+# first-class evidence, not asserted in prose. The threshold inequality and its
+# corollaries remain analytic theory propositions.
+
+spine_version: "0.2"
+spine_doc_version: "0.1.0"
+paper_key: "2026ad"
+provenance: retrofit
+title: >-
+  Restoring Perceptual Separability After Coherence Shocks: A μ > λ Threshold
+  Inequality in Brand Perception
+target_venue_primary: "MKSC (Marketing Science) — reviewer framing throughout"
+status: >-
+  Retrofit spine locked 2026-06-14 from completed paper.md (Working Paper
+  v1.0.0, April 2026; DOI 10.5281/zenodo.19778549).
+
+thesis: |
+  Brands facing coherence shocks (repositioning campaigns, cultural shifts)
+  confront an asymmetric recovery problem: some regain cohort separability while
+  others enter absorbing cross-cohort interference. Modeling cohort perception
+  clouds as almost-invariant sets in a stochastic flow on the eight-dimensional
+  SBT perception manifold — with separability governed by the spectral gap of
+  the perception operator — yields a closed-form sufficient condition for
+  separability survival: the corrective coherence emission rate μ must exceed
+  the spectral leakage rate λ at the observer cohort's detection scale δ
+  (μ > λ at scale δ). The threshold follows from Kato–Rellich perturbation
+  theory and Diaconis–Stroock spectral-gap bounds for reversible Markov chains.
+  A Monte Carlo demonstration seeded with author-proposed Dove-calibrated
+  parameters (λ ≈ .10/year, μ ≈ 4.50/year) shows the inequality correctly
+  separates a recoverable regime (terminal mean gap 1.10) from an absorbing
+  regime (terminal mean gap .02), and that spectral-gap collapse precedes
+  conviction reorientation by 6–18 months — a leading indicator unavailable
+  from traditional perceptual maps or aggregate VECMs.
+
+# ============================================================================
+# Assumption atoms — the model's standing assumptions
+# ============================================================================
+assumption_atoms:
+  - id: AA1
+    statement: >-
+      The perception operator P is self-adjoint (reversible dynamics) with
+      baseline spectral gap Δ(P) > 0; Proposition 1 is proved for this regime.
+      Non-self-adjoint perturbations are handled by the Davies pseudospectral
+      treatment in the Mathematical Appendix.
+    body_sections: ["Theory: The Threshold Inequality", "Mathematical Appendix"]
+  - id: AA2
+    statement: >-
+      Emission-side and reception-side leakage are additive to first order:
+      λ ≈ λ_emission + λ_inattention.
+    body_sections: ["Theory: Spectral Leakage and Corrective Emission"]
+  - id: AA3
+    statement: >-
+      Cohort compositions are time-invariant across the 2003–2023 window and the
+      GRP-to-perception mapping is linear in the μ estimator (defensible only
+      near low dimensional baselines, where nonlinearity is smallest).
+    body_sections: ["Limitations"]
+
+# ============================================================================
+# Boundary conditions — when the threshold's claims apply
+# ============================================================================
+boundary_conditions:
+  - id: C1
+    statement: >-
+      Perception dynamics are reversible (self-adjoint operator) and the brand
+      operates at FMCG scale; λ and μ differ materially for luxury, B2B, and
+      platform contexts operating at different timescales.
+    body_sections: ["Limitations"]
+  - id: C2
+    statement: >-
+      A baseline spectral gap exists (cohorts are spectrally separated before
+      the coherence shock) so that Riesz–Dunford eigenspace projections are
+      well-defined.
+    body_sections: ["Theory: The Perception Operator and Spectral Separability"]
+
+# ============================================================================
+# Stylized facts — the motivating empirical asymmetry
+# ============================================================================
+stylized_facts:
+  - id: SF1
+    statement: >-
+      Coherence shocks produce divergent outcomes: Dove's 2004 Real Beauty
+      activation produced an initial conviction shock followed by sustained
+      cohort divergence persisting through 2023, while Tropicana's 2009
+      packaging redesign produced near-total conviction collapse within eight
+      weeks. The asymmetry is not random.
+    evidence:
+      - type: documented_case
+        anchor: "Dove Real Beauty longitudinal divergence; Tropicana redesign failure."
+        citation_keys: [danthinne-2022, effie-2006, zmuda-2009]
+    body_sections: ["Introduction"]
+
+# ============================================================================
+# Observations — the author-produced simulation (the evidence chain)
+# ============================================================================
+observations:
+  - id: O1
+    statement: >-
+      A Monte Carlo simulation over two regimes, each 8 cohorts × 4 focal
+      dimensions = 32 cohort-dimension cells, on a 240-month horizon at monthly
+      resolution (seed 2026): high regime (μ = 4.50, λ = .10) with spectral gap
+      following a mean-reverting Ornstein–Uhlenbeck process to a positive
+      equilibrium; low regime (μ = −.50, λ = .10) with gap decaying
+      exponentially per dε/dt = (λ − μ)ε.
+    raw_data_pointer: "r22-spectral-gap-restoration/code/monte_carlo_results.json (per-cell, all 64 cells)"
+    instrument: "monte_carlo_simulation.py (seed 2026)"
+    timestamp: "2026-04"
+    body_sections: ["Numerical Illustration: Design"]
+  - id: O2
+    statement: >-
+      A parameter sweep across μ/λ ∈ [0.5, 2.0], N = 2,000 sample paths per
+      ratio value, λ = .10 fixed, μ = ratio × λ, 100 equilibration steps,
+      tracing mean terminal spectral gap against the ratio (the bifurcation
+      diagram, Figure 2).
+    raw_data_pointer: "r22-spectral-gap-restoration/figures/figure2_bifurcation.png"
+    instrument: "plot_bifurcation_curve.py (seed 42)"
+    timestamp: "2026-04"
+    body_sections: ["Numerical Illustration: Results"]
+
+# ============================================================================
+# Methods — derivation + simulation procedure
+# ============================================================================
+methods:
+  - id: M1
+    statement: >-
+      Kato–Rellich perturbation analysis: for a coherence shock −L̃ = −L + εQ
+      with Q bounded and symmetric and ε‖Q‖ < λ*/2, |λ̃₁ − λ₁| ≤ ε‖Q‖, so the
+      perturbed gap λ̃* ≥ λ* − ε‖Q‖ > 0; the correction capacity μ enters as a
+      damping term giving dε/dt = (λ_L − μ)ε, whose sign governs the entire
+      long-run trajectory. Establishes Proposition 1 constructively.
+    type: "operator_perturbation_derivation"
+    inputs: ["self-adjoint perception operator P", "perturbation εQ"]
+    outputs: ["Proposition 1 (μ > λ threshold) + recovery timescale 1/(μ − λ)"]
+    code_anchor: "Mathematical Appendix: Perturbation Analysis and Proof of Proposition 1"
+    body_sections: ["Theory: The Threshold Inequality", "Mathematical Appendix"]
+  - id: M2
+    statement: >-
+      Monte Carlo regime simulation: evolve the per-cell spectral gap series
+      under each regime's drift, identical noise SD .12, then compute per-cell
+      augmented Dickey–Fuller tests (AIC lag selection, α = .05), IRF half-lives
+      (AR(1) local linearization), terminal gap, and cosine drift from initial
+      centroid.
+    type: "monte_carlo_simulation"
+    inputs: ["regime drift parameters (μ, λ)", "noise SD .12", "seed 2026"]
+    outputs: ["Table 1 metrics: terminal gap, IRF half-life, ADF, cosine drift"]
+    code_anchor: "monte_carlo_simulation.py (uv run --with statsmodels --with numpy --with scipy; seed 2026)"
+    reproducibility:
+      seed: "2026"
+      runtime_environment: "Python 3.12 + uv (statsmodels, numpy, scipy)"
+    body_sections: ["Numerical Illustration: Design", "Companion Computation Scripts"]
+  - id: M3
+    statement: >-
+      Dove parameter calibration: λ ≈ .10/year from passive Cultural-dimension
+      drift (~3.0 units over 2013–2023) calibrated via Clarke's (1976)
+      meta-analytic range for established brands; μ ≈ 4.50/year from the
+      Ideological-dimension activation slope (near-zero to 9.0 over 2004–2006)
+      via the Srinivasan, Vanhuele, and Pauwels (2010) wear-in IRF method.
+      Author-proposed calibrations, not estimates confirmed from continuous
+      panel data.
+    type: "parameter_calibration"
+    inputs: ["Dove 2003–2023 trajectory (author-proposed)"]
+    outputs: ["λ ≈ .10/year, μ ≈ 4.50/year design seeds"]
+    code_anchor: "Numerical Illustration: Illustrative Dove Calibration"
+    body_sections: ["Numerical Illustration: Illustrative Dove Calibration"]
+
+# ============================================================================
+# Measurements — computed values from the simulation (Table 1 + sweep)
+# ============================================================================
+measurements:
+  - id: m_terminal_gap
+    statement: >-
+      Terminal spectral gap (month 240): high regime mean 1.10 vs low regime
+      mean .02 — a 52x ratio across all 32 cells per regime.
+    source_observations: [O1]
+    generating_method: M2
+    value: "high 1.10 / low .02 / ratio 52x"
+    units: "spectral gap magnitude (dimensionless)"
+    body_sections: ["Numerical Illustration: Results (Table 1, Stat 1)"]
+  - id: m_irf_halflife
+    statement: >-
+      IRF half-life (months, mean): high regime 1.4 vs low regime 13.1 — a 9.3x
+      ratio.
+    source_observations: [O1]
+    generating_method: M2
+    value: "high 1.4 / low 13.1 / ratio 9.3x"
+    units: "months"
+    body_sections: ["Numerical Illustration: Results (Table 1, Stat 2)"]
+  - id: m_adf_cosine
+    statement: >-
+      ADF classifies 32/32 cells stationary in BOTH regimes (regime contrast not
+      visible in stationarity dichotomy); cosine drift from initial centroid is
+      low and near-identical (.023 high vs .027 low), confirming MDS centroid
+      maps cannot distinguish the regimes.
+    source_observations: [O1]
+    generating_method: M2
+    value: "ADF 32/32 both; cosine .023 vs .027"
+    units: "cell count; 1 − cos(v₀, vₜ)"
+    body_sections: ["Numerical Illustration: Results (Table 1, Stat 5)"]
+  - id: m_collapse_lead
+    statement: >-
+      Low-regime spectral gap reaches 10% of initial value at a mean of 46
+      months post-shock; against the Dove documented conviction-reorientation
+      horizon (~48 months) this is consistent with a 6–18 month lead time
+      (range derived from the Clarke 1976 advertising-duration band for brands
+      with λ ∈ [.07, .33]).
+    source_observations: [O1]
+    generating_method: M2
+    value: "gap-to-10% at month 46; lead time 6–18 months"
+    units: "months"
+    body_sections: ["Numerical Illustration: Results (Stat 3)"]
+  - id: m_bifurcation
+    statement: >-
+      Across μ/λ ∈ [0.5, 2.0], mean terminal spectral gap collapses to zero as
+      the ratio crosses below 1.0 and rises monotonically above 1.0 — a sharp
+      bifurcation at ratio = 1.0 (μ = λ), not a smooth gradient.
+    source_observations: [O2]
+    generating_method: M2
+    value: "sharp bifurcation at μ/λ = 1.0"
+    units: "mean terminal gap vs ratio"
+    body_sections: ["Numerical Illustration: Results (Figure 2)"]
+
+# ============================================================================
+# Propositions — the theoretical backbone
+# ============================================================================
+propositions:
+  - id: P1
+    statement: >-
+      (Proposition 1 — Spectral Gap Restoration Threshold) For a self-adjoint
+      perception operator P with baseline gap Δ(P) > 0 perturbed by a coherence
+      shock to P̃ = P + εQ, cohort separability survives (Δ(P̃) > 0) if the
+      corrective coherence emission rate μ exceeds the spectral leakage rate λ at
+      the dominant observer cohort's detection scale δ: μ > λ at scale δ.
+    conditions: "AA1, C1, C2"
+    antecedents: [P2, P3, P4]
+    evidence:
+      - type: derivation
+        anchor: "Kato–Rellich perturbation bound + Diaconis–Stroock spectral-gap bound."
+        citation_keys: [kato-1995, diaconis-stroock-1991, reed-simon-1978]
+    falsifier: >-
+      Falsified if (a) a brand maintains cohort separability over an extended
+      post-shock window with μ < λ by independent measurement, or (b) a brand
+      with μ ≫ λ loses separability following a coherence shock.
+    body_sections: ["Theory: The Threshold Inequality"]
+  - id: P2
+    statement: >-
+      Cohort perception clouds are modeled as almost-invariant sets in a
+      stochastic flow on the eight-dimensional SBT perception manifold S⁷₊;
+      separability is characterized by the spectral gap Δ(P) = κ₁ − κ₂ of the
+      perception operator P (a kernel matrix in the spectral-clustering sense).
+      When Δ(P) > 0 cohort eigenspaces are separated; as Δ(P) → 0 they merge.
+    conditions: "C2"
+    antecedents: []
+    evidence:
+      - type: analytic
+        anchor: "Perception operator as Markov semigroup; spectral gap = cluster separability."
+        citation_keys: [von-luxburg-2007, froyland-padberg-2009]
+    body_sections: ["Theory: The Perception Operator and Spectral Separability"]
+  - id: P3
+    statement: >-
+      The spectral leakage rate λ is the rate of cross-cohort mass transfer per
+      unit time (Frobenius norm of the off-diagonal generator block under a
+      shock), with two additive sources: emission-side leakage λ_emission
+      (off-eigenvector communications, Harris window-mismatch) and
+      reception-side leakage λ_inattention (finite observer channel capacity,
+      rational inattention). λ is scale-dependent — λ(δ) rises at fine
+      resolution scales.
+    conditions: "AA2"
+    antecedents: [P2]
+    evidence:
+      - type: analytic
+        anchor: "Window-mismatch + rational inattention + spectral-bias scale dependence."
+        citation_keys: [harris-1978, sims-2003, caplin-2025, tancik-2020]
+    body_sections: ["Theory: Spectral Leakage and Corrective Emission"]
+  - id: P4
+    statement: >-
+      The corrective coherence emission rate μ is the rate at which purposive
+      brand emissions inject observer mass back into the dominant eigenspace per
+      unit time, proportional to GRP-weighted Share of Voice times the
+      eigenspace-alignment coefficient. Off-eigenvector emissions degrade μ even
+      at high volume because they contribute to leakage rather than correction.
+    conditions: ""
+    antecedents: [P2]
+    evidence:
+      - type: analytic
+        anchor: "μ ∝ SOV × eigenspace alignment; off-eigenvector emissions inflate λ (CBIM diagnostic)."
+        citation_keys: [hanssens-pauwels-2016, urde-2013, matejka-mckay-2015]
+    body_sections: ["Theory: Spectral Leakage and Corrective Emission"]
+  - id: P5
+    statement: >-
+      (Corollary 1 — Absorbing Collapse) If μ < λ for an interval exceeding the
+      mixing time τ_mix ≤ C/λ, cohort distinctions almost surely collapse to the
+      stationary distribution (the absorbing-state attractor), because the gap
+      and mixing time are inversely related — a small gap entails a long mixing
+      time — making relaxation to the collapsed distribution inevitable.
+    conditions: "AA1"
+    antecedents: [P1]
+    evidence:
+      - type: derivation
+        anchor: "Spectral-gap-to-mixing-time correspondence; absorbing state."
+        citation_keys: [levin-peres-2017, saloff-coste-1997, cover-thomas-2006]
+    falsifier: >-
+      Falsified if a brand with μ < λ for an interval exceeding τ_mix shows
+      statistically significant cohort centroid separation post-shock.
+    body_sections: ["Theory: The Threshold Inequality"]
+  - id: P6
+    statement: >-
+      (Corollary 2 — Pulse Emission Sufficiency) Dominant brand emissions need
+      not be monotone: pulse emissions (periodic high-intensity activations) can
+      maintain μ > λ on average even when the inequality fails locally, provided
+      the pulse period is shorter than τ_mix, because gap decay from a
+      perturbation is bounded below by exp(−λt) so a pulse delivered within
+      T < 1/λ arrests decay before the gap closes.
+    conditions: "AA1"
+    antecedents: [P1, P5]
+    evidence:
+      - type: derivation
+        anchor: "exp(−λt) lower bound on gap decay grounds campaign pulsing."
+        citation_keys: [montenegro-tetali-2006, naik-1999]
+    body_sections: ["Theory: The Threshold Inequality"]
+  - id: P7
+    statement: >-
+      (Corollary 3 — Spectral Lead Time) Spectral-gap collapse under μ < λ
+      precedes conviction reorientation by the interval in which gap magnitude
+      falls below the detection threshold while centroid positions remain
+      visually separated; under the Dove-calibrated parameters this lead time is
+      bounded by [0, 24] months. This early-warning window is the framework's
+      practical contribution.
+    conditions: "AA1, AA3"
+    antecedents: [P1, P5]
+    evidence:
+      - type: analytic
+        anchor: "Eigenspace collapse detectable before centroid convergence is observable."
+    falsifier: >-
+      Falsified if a documented case shows gap collapse and conviction
+      reorientation with a lead time outside [0, 24] months, or conviction
+      reorientation documented to precede gap collapse.
+    body_sections: ["Theory: The Threshold Inequality", "Discussion: The μ–λ Residual as Brand Health Dashboard"]
+  - id: P8
+    statement: >-
+      The separability lifetime under μ < λ is finite, bounded by
+      T_sep ≤ C_F/(λ − μ); the dominant Lyapunov exponent on the cohort subspace
+      has the sign of (μ − λ) — positive when μ > λ (cohorts diverge), negative
+      when μ < λ (cohorts converge toward collapse). The threshold is the
+      sign-flip condition on this exponent. Cohort stability is rate-limited, not
+      binary.
+    conditions: ""
+    antecedents: [P2, P1]
+    evidence:
+      - type: derivation
+        anchor: "Almost-invariant set lifetime bound + Oseledets Lyapunov sign condition."
+        citation_keys: [froyland-padberg-2009, oseledets-1968]
+    body_sections: ["Theory: Almost-Invariant Sets and Separability Lifetime"]
+  - id: P9
+    statement: >-
+      The threshold is the marketing-domain analog of the restricted isometry
+      property in compressed sensing: a sparse signal is recoverable from
+      incomplete/noisy measurements iff measurement capacity exceeds disruption
+      sparsity; μ > λ is the same sufficient-condition structure for spectral
+      reconstruction of cohort separability.
+    conditions: ""
+    antecedents: [P1]
+    evidence:
+      - type: analytic
+        anchor: "RIP structural parallel positioning the result for signal-processing readers."
+        citation_keys: [candes-romberg-tao-2006, donoho-2006]
+    body_sections: ["Theory: Connection to Compressed Sensing"]
+  - id: P10
+    statement: >-
+      The μ–λ residual is a brand-health dashboard and two-lever diagnostic:
+      managers increase μ (amplify eigenvector-aligned emissions) or decrease λ
+      (tighten coherence across existing communications), tracking the rolling
+      residual to act in the 6–18 month window before conviction reorientation
+      becomes visible in aggregate tracking or sales data. λ is estimable from
+      passive-drift windows (or Clarke benchmarks); μ from GRP/SOV data.
+    conditions: "C1"
+    antecedents: [P7, P3, P4]
+    evidence:
+      - type: analytic
+        anchor: "DBA decay ≈ λ, activation spend ≈ μ; GRP→perception bridge."
+        citation_keys: [romaniuk-sharp-2016, mela-gupta-lehmann-1997, hanssens-pauwels-2016, clarke-1976]
+    body_sections: ["Discussion: The μ–λ Residual as Brand Health Dashboard", "Managerial Implications"]
+
+# ============================================================================
+# Findings — what the simulation establishes
+# ============================================================================
+findings:
+  - id: F1
+    statement: >-
+      The threshold correctly predicts regime divergence at the Dove-calibrated
+      parameters: 32/32 high-regime cells preserve their spectral gaps (terminal
+      mean 1.10) while all 32 sign-inverted low-regime cells collapse (terminal
+      mean .02) — a 52-fold difference — and the IRF half-life contrast (1.4 vs
+      13.1 months) confirms the threshold separates recoverable from absorbing
+      dynamics.
+    type: "regime_separation_demonstration"
+    source_measurements: [m_terminal_gap, m_irf_halflife]
+    generating_method: M2
+    antecedents: [O1, P1]
+    falsifier: "If high- and low-regime terminal gaps were not separated at these parameters, the demonstration fails."
+    body_sections: ["Numerical Illustration: Results", "Conclusion"]
+  - id: F2
+    statement: >-
+      The regime difference is invisible to centroid-level diagnostics: ADF
+      classes all 64 cells stationary and cosine drift is near-identical
+      (.023 vs .027), so MDS-visible centroid positions do not distinguish the
+      regimes — spectral gap dynamics, not centroid positions, are the
+      diagnostic.
+    type: "diagnostic_invisibility_demonstration"
+    source_measurements: [m_adf_cosine]
+    generating_method: M2
+    antecedents: [O1, P7]
+    falsifier: "If centroid cosine drift had separated the regimes, the spectral-gap-as-sole-diagnostic claim weakens."
+    body_sections: ["Numerical Illustration: Results", "Discussion"]
+  - id: F3
+    statement: >-
+      The μ = λ threshold is a genuine bifurcation rather than a smooth
+      gradient: the parameter sweep shows mean terminal gap collapsing to zero
+      below ratio 1.0 and rising monotonically above it, consistent with the
+      Lyapunov sign-flip condition (P8).
+    type: "bifurcation_demonstration"
+    source_measurements: [m_bifurcation]
+    generating_method: M2
+    antecedents: [O2, P8]
+    falsifier: "If the sweep showed a smooth gradient through ratio 1.0, the bifurcation claim fails."
+    body_sections: ["Numerical Illustration: Results (Figure 2)"]
+  - id: F4
+    statement: >-
+      The simulated low-regime gap collapse at month 46 versus documented Dove
+      conviction reorientation at ~48 months is consistent with a 6–18 month
+      lead time, supporting Corollary 3 (P7); the mixing-time bound places the
+      irreversible-collapse window at 10–30 months for λ ∈ [.07, .33].
+    type: "lead_time_consistency"
+    source_measurements: [m_collapse_lead]
+    generating_method: M2
+    antecedents: [O1, P7]
+    body_sections: ["Numerical Illustration: Results", "Managerial Implications"]
+
+# ============================================================================
+# Alternative explanations — the rival framings the result clears
+# ============================================================================
+alternative_explanations:
+  - id: A1
+    statement: >-
+      A standard brand-aggregate VECM (Dekimpe–Hanssens persistence testing)
+      already classifies brands as evolving or stationary, so eigenvalues add
+      nothing.
+    rules_out_required: [P1, P7]
+    ruled_out_by: [F1, F2]
+    rules_out_status: "rejected"
+    reasoning: >-
+      A VECM identifies the sign of (μ − λ) only at the brand-aggregate level; it
+      cannot localize WHICH cohort-dimension cell is collapsing, at what rate, or
+      in which direction. The spectral-gap formulation adds eigenspace
+      localization — a brand can show overall "evolving" while a critical
+      sub-cohort's Ideological eigenspace crosses the threshold (Corollary 3).
+    body_sections: ["Discussion: Refining Dekimpe–Hanssens by Localizing to Cohort-Dimension Cells"]
+  - id: A2
+    statement: >-
+      Scalar latent-state brand-equity / goodwill models (Kalman-filter,
+      store-level state space) already track equity dynamics, making the
+      eigenspace machinery superfluous.
+    rules_out_required: [P1, P2]
+    ruled_out_by: [F2]
+    rules_out_status: "rejected"
+    reasoning: >-
+      Scalar goodwill has no eigenspace and therefore no separability-collapse
+      event; the present framework extends the latent state to an 8-dimensional
+      perception vector and makes eigenspace structure — not equity level — the
+      diagnostic, stating the μ > λ sufficient condition the scalar tradition
+      cannot express.
+    body_sections: ["Introduction", "Discussion: Refining Dekimpe–Hanssens"]
+
+# ============================================================================
+# Robustness checks — cross-domain corroboration of the absorbing regime
+# ============================================================================
+robustness_checks:
+  - id: RC1
+    statement: >-
+      Kovalenko (2026b) independently derives a fold-bifurcation result for
+      capacity-constrained compounding systems, providing cross-domain support
+      for the absorbing-collapse regime predicted by Corollary 1; Kovalenko
+      (2026a) independently develops a closely related operator-theoretic
+      structural framing.
+    type: "independent_cross_domain_corroboration"
+    sensitivity_of: [P5]
+    body_sections: ["Theory: The Threshold Inequality", "Acknowledgments"]
+
+# ============================================================================
+# Limitations — honest scope
+# ============================================================================
+limitations:
+  - id: L1
+    statement: >-
+      The Monte Carlo demonstration is an exploratory illustration under
+      author-proposed Dove-calibrated parameters, NOT a confirmatory test against
+      observed data; no Dove tracking-panel data were used to fit the model and
+      no confidence intervals on λ and μ are available. Confirmatory estimation
+      from real Dove longitudinal data is deferred to a companion paper using R10
+      source data (2026p).
+    severity: "scope-bounding"
+    affects: [F1, F4, P10]
+    body_sections: ["Numerical Illustration: Design", "Limitations"]
+  - id: L2
+    statement: >-
+      Cohort compositions are assumed time-invariant; cohort migration is itself
+      a source of effective leakage not captured by the current λ estimator. The
+      GRP-to-perception mapping is assumed linear, defensible only near low
+      dimensional baselines — μ would be lower per unit GRP for established
+      dimensional positions, requiring re-parameterization.
+    severity: "assumption-bounding"
+    affects: [P4, M3]
+    body_sections: ["Limitations"]
+  - id: L3
+    statement: >-
+      The self-adjoint assumption is most defensible in steady state; coherence
+      shocks producing asymmetric cross-cohort flows may violate it (Davies
+      pseudospectral extension applies). The operator-theoretic abstraction may
+      be over-specified for routine applications, and the sufficient condition
+      does not prescribe a unique estimation procedure — VECM-, MDS-, and
+      cohort-drift-based estimators of λ and μ will not in general agree exactly.
+    severity: "scope-bounding"
+    affects: [AA1, P1]
+    body_sections: ["Limitations"]
+
+# ============================================================================
+# Cross-paper engagement — the SBT program arc
+# ============================================================================
+corpus_precedents:
+  - paper_key: 2026a
+    relationship: refines
+    spine_nodes: [P1, P2]
+    note: >-
+      Refines SBT's stability claims (the paper is described as refining 2026a's
+      PF4/C4): the eight-dimensional perception manifold and cohort structure are
+      taken from SBT; R22 adds the operator-perturbation theory of separability
+      survival under coherence shocks.
+  - paper_key: 2026e
+    relationship: extends
+    spine_nodes: [P3]
+    note: >-
+      Static metamerism: when brand emissions project onto the null space of a
+      cohort's perception eigenvectors, the emission is spectrally invisible —
+      the geometric basis for leakage (contributes to λ, not μ).
+  - paper_key: 2026f
+    relationship: applies
+    spine_nodes: [P2]
+    note: >-
+      Cohort-boundary geometry: 52% of Δ⁷ lies within δ = .10 of a partition
+      boundary — the justification for treating cohorts as almost-invariant
+      rather than discrete.
+  - paper_key: 2026j
+    relationship: extends
+    spine_nodes: [P2, M1]
+    note: >-
+      Diffusion dynamics: derives the SDE on S⁷₊ and the Dirichlet spectral gap
+      λ_{D,1} as the principal separability diagnostic; R22 builds the
+      perturbation theory on top of this operator.
+  - paper_key: 2026o
+    relationship: extends
+    spine_nodes: [P5]
+    note: >-
+      Non-ergodicity / absorbing states: Corollary 1's collapse recovers the
+      absorbing-state attractor characterized there.
+  - paper_key: 2026z
+    relationship: extends
+    spine_nodes: [P8]
+    note: >-
+      Kinematic measurement (velocity, acceleration, phase space): R22 supplies
+      the stability operator governing whether that trajectory returns to a
+      separated configuration or collapses.
+  - paper_key: 2026v
+    relationship: applies
+    spine_nodes: [P3]
+    note: >-
+      AI dimensional collapse: LLMs reduce effective dimensionality from 8 to
+      3–4, an empirical analog of the elevated-λ mechanism at fine scales.
+  - paper_key: 2026ac
+    relationship: applies
+    spine_nodes: [P3]
+    note: >-
+      Portfolio immunity: AI observers exhibit elevated effective λ at
+      portfolio-coordination scale, compressing the practical separability
+      lifetime below the human-observer 6–18 month window.
+  - paper_key: 2026p
+    relationship: tests
+    spine_nodes: [L1, M3]
+    note: >-
+      R10 Dove longitudinal data: the companion empirical paper that will
+      confirm the author-proposed λ and μ calibrations with confidence intervals
+      (deferred from R22).
+  - paper_key: 2026i
+    relationship: applies
+    spine_nodes: [P1]
+    note: >-
+      OST Level 1 acceptance audit maps to the threshold: the audit rate must
+      exceed λ to maintain organizational identity under environmental drift.
+
+# ============================================================================
+# External anchor literature — the three mathematical traditions + marketing
+# ============================================================================
+external_anchors:
+  - {citation_key: kato-1995, role: derivation_basis, spine_nodes: [P1, M1], note: "Kato–Rellich perturbation theory for linear operators"}
+  - {citation_key: diaconis-stroock-1991, role: derivation_basis, spine_nodes: [P1, P5], note: "Diaconis–Stroock geometric spectral-gap bounds for reversible Markov chains"}
+  - {citation_key: reed-simon-1978, role: derivation_basis, spine_nodes: [P1], note: "Methods of Modern Mathematical Physics IV — operator analysis"}
+  - {citation_key: froyland-padberg-2009, role: framework_source, spine_nodes: [P2, P8], note: "Almost-invariant sets in stochastic flows (transfer-operator framework)"}
+  - {citation_key: von-luxburg-2007, role: framework_source, spine_nodes: [P2], note: "Spectral clustering — gap as cluster separability"}
+  - {citation_key: oseledets-1968, role: derivation_basis, spine_nodes: [P8], note: "Multiplicative ergodic theorem — Lyapunov sign condition"}
+  - {citation_key: levin-peres-2017, role: derivation_basis, spine_nodes: [P5], note: "Markov chains and mixing times (τ_mix ≤ C/λ)"}
+  - {citation_key: montenegro-tetali-2006, role: derivation_basis, spine_nodes: [P6], note: "exp(−λt) lower bound on gap decay (pulse sufficiency)"}
+  - {citation_key: candes-romberg-tao-2006, role: structural_parallel, spine_nodes: [P9], note: "Restricted isometry property / compressed sensing"}
+  - {citation_key: harris-1978, role: mechanism_source, spine_nodes: [P3], note: "Window-mismatch mechanism for emission-side leakage"}
+  - {citation_key: sims-2003, role: mechanism_source, spine_nodes: [P3], note: "Rational inattention — reception-side leakage"}
+  - {citation_key: tancik-2020, role: mechanism_source, spine_nodes: [P3], note: "Spectral bias — scale-dependent λ for neural/AI observers"}
+  - {citation_key: dekimpe-hanssens-1995, role: rival_framework, spine_nodes: [A1, P10], note: "Persistence testing — brand-aggregate evolving vs stationary"}
+  - {citation_key: romaniuk-sharp-2016, role: empirical_anchor, spine_nodes: [P10], note: "Distinctive brand assets — DBA decay ≈ λ, activation ≈ μ"}
+  - {citation_key: hanssens-pauwels-2016, role: estimation_bridge, spine_nodes: [P4, P10], note: "GRP-weighted reach → perception-rate bridge for μ"}
+  - {citation_key: cleeren-2013, role: empirical_analog, spine_nodes: [P1], note: "Asymmetric recovery from product-harm crises (behavioral analog of μ, Δ)"}
+
+# ============================================================================
+# Open questions / boundary edges
+# ============================================================================
+open:
+  - "Confirmatory estimation of λ and μ from real Dove longitudinal tracking data with confidence intervals (deferred to companion 2026p). (L1)"
+  - "How does cohort migration enter the λ estimator as effective leakage not currently captured? (L2)"
+  - "Non-self-adjoint extension: do asymmetric cross-cohort flows under coherence shocks change the threshold quantitatively beyond the Davies pseudospectral qualitative result? (L3)"
+  - "Re-parameterization of the GRP-to-μ mapping for brands with established (non-low) dimensional baselines. (L2)"
+
+# ============================================================================
+# Spine changelog — append-only
+# ============================================================================

@@ -1,0 +1,34 @@
+# ONTOLOGY.yaml module - 2026e
+#
+# Per-paper ontology module per [internal path removed]
+# §"ONTOLOGY.yaml schema (v0.1)". owns = terms THIS paper introduces (unique
+# authority); imports = terms owned by other modules it uses (reference only).
+# Linked into the substrate `terms` graph by build_ontology.py; rendered per-paper
+# by render_paper_glossary.py. Bootstrapped 2026-06-13 from per-paper term
+# extraction; definitions paraphrase each paper's own definitional text.
+
+paper_key: 2026e
+schema_version: 0.1
+
+owns:
+  - term_key: spectral-metamerism
+    label: "Spectral Metamerism"
+    canonical_form: "spectral metamerism"
+    definition: "The phenomenon whereby structurally distinct brand profiles produce identical scalar evaluations, arising as a geometric inevitability of projecting the eight-dimensional spectral profile to a lower-dimensional grade."
+    first_section: "Metamerism in Brand Perception"
+  - term_key: rasterized-vectorized-brand-management
+    label: "Rasterized vs Vectorized Brand Management"
+    canonical_form: "rasterized versus vectorized brand management"
+    definition: "The distinction between rasterized brand management (a human projecting the full brand specification through lossy cognitive bottlenecks) and vectorized brand management (treating the full 8-dimensional spectral profile as single source of truth with channel outputs as computed projections of known, bounded loss)."
+    first_section: "From Rasterized to Vectorized Brand Management"
+
+imports:
+  - {term_key: spectral-brand-theory}
+  - {term_key: spectral-dimensions}
+  - {term_key: observer-spectral-profile}
+  - {term_key: perception-cloud}
+  - {term_key: cohort}
+  - {term_key: structural-absence}
+
+refines: []
+

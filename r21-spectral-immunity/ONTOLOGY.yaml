@@ -1,0 +1,35 @@
+# ONTOLOGY.yaml module - 2026ac
+#
+# Per-paper ontology module per [internal path removed]
+# §"ONTOLOGY.yaml schema (v0.1)". owns = terms THIS paper introduces (unique
+# authority); imports = terms owned by other modules it uses (reference only).
+# Linked into the substrate `terms` graph by build_ontology.py; rendered per-paper
+# by render_paper_glossary.py. Bootstrapped 2026-06-13 from per-paper term
+# extraction; definitions paraphrase each paper's own definitional text.
+
+paper_key: 2026ac
+schema_version: 0.1
+
+owns:
+  - term_key: spectral-immunity
+    label: "Spectral Immunity"
+    canonical_form: "spectral immunity"
+    definition: "The phenomenon whereby brand portfolio interference disappears for AI observers: despite a permanently saturated awareness gate, a rate-distortion/bandwidth constraint prevents organizational-coordination context from propagating into LLM brand encodings."
+    first_section: "Theoretical Framework"
+  - term_key: spectral-interference
+    label: "Spectral Interference"
+    canonical_form: "spectral interference"
+    definition: "The formalized mechanism by which sibling brands under common ownership perturb each other's perceived emission profile across the eight perceptual dimensions, gated by observer awareness and channel bandwidth."
+    first_section: "Theoretical Framework (The Spectral Interference Mechanism)"
+
+imports:
+  - {term_key: spectral-brand-theory}
+  - {term_key: observer-spectral-profile}
+  - {term_key: perception-cloud}
+  - {term_key: cohort}
+  - {term_key: brand-conviction}
+  - {term_key: spectral-dimensions}
+  - {term_key: awareness-gate}
+
+refines: []
+
