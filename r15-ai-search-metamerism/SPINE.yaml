@@ -9,7 +9,7 @@
 # Schema v0.2: the paper is empirical — 21,350 API calls across 24 LLMs
 # produce computed DCI / cosine / effect-size statistics — so observations /
 # methods / measurements / findings are first-class so the headline numbers
-# (mean DCI = .291 global, .357 cross-cultural; cosine = .977; local-vs-global
+# (mean DCI = .291 global, .356 cross-cultural; cosine = .977; local-vs-global
 # d = .878; ~20% Brand-Function recovery) trace through the
 # observation→method→measurement→finding chain.
 
@@ -31,7 +31,7 @@ thesis: >-
   equivalent in AI recommendations. Measured with the PRISM-B forced-allocation
   instrument across 21,350 API calls to 24 models from nine cultural traditions
   and 15 languages, the Dimensional Collapse Index (uniform baseline = .250) is
-  elevated (mean .291 global, .357 cross-cultural) and convergent across
+  elevated (mean .291 global, .356 cross-cultural) and convergent across
   architectures (cosine .977), so the collapse is structural rather than a
   platform quirk. Collapse is conditional on training-data embeddedness —
   locally embedded brands collapse about 25% more — and partially recoverable
@@ -182,10 +182,10 @@ measurements:
     units: "verifiability-concentration index (baseline .250)"
     body_sections: ["§Results: H1; Conditional metamerism"]
   - id: m_dci_crosscultural
-    statement: "Mean DCI across 23 cross-cultural models = .357 (SD .036; t(22) = 16.178, p < .001, d = 3.449) — the largest effect in the dataset; every model exceeds baseline."
+    statement: "Mean DCI across 23 cross-cultural models = .356 (SD .031; t(22) = 16.178, p < .001, d = 3.373) — the largest effect in the dataset; every model exceeds baseline."
     source_observations: [O3]
     generating_method: M2
-    value: "DCI = .357; p < .001; d = 3.449"
+    value: "DCI = .356; p < .001; d = 3.373"
     units: "verifiability-concentration index (baseline .250)"
     body_sections: ["§Results: Cross-Cultural Extension (Run 5)"]
   - id: m_cosine

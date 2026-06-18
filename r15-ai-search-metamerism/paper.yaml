@@ -13,7 +13,7 @@ meta:
     orcid: 0009-0000-6893-9231
     affiliation: Independent Researcher
   doi: 10.5281/zenodo.19422427
-  date: '2026-06-01'
+  date: '2026-04-01'
   venue: Preprint
   license: CC-BY-4.0
   keywords:
@@ -31,7 +31,7 @@ meta:
     dimensions metameric --- structurally different but functionally equivalent in AI recommendations.
     Using PRISM-B across 21,350 API calls to 24 models spanning nine cultural traditions and 15 languages,
     a Dimensional Collapse Index (DCI; uniform baseline = .250) is computed. Mean DCI equals .291 for
-    global brands ($p = .017$) and .357 cross-culturally ($d = 3.449$). Cross-model convergence is near-perfect
+    global brands ($p = .017$) and .356 cross-culturally ($d = 3.373$). Cross-model convergence is near-perfect
     (cosine = .977). Local brands collapse 25% more severely than global brands ($d = .878$, in five FMCG
     pairs tested). Native-language prompting is null in home markets ($p = .716$) but reduces collapse
     up to 9.5 DCI points in foreign-market frames ($p = .002$). Geopolitical context independently modulates
@@ -185,7 +185,7 @@ dependencies:
   claim: Awareness-gate sufficiency inversion provides the complementary mechanism for why portfolio interference
     fails in AI perception (DCI acts per-brand, not per-portfolio).
   critical: false
-  reference: Zharnikov (2026ac), this corpus.
+  doi: 10.5281/zenodo.19765401
 - relationship: extends
   claim: Brand personality dimensions — mapped into SBT space (Table 1)
   doi: 10.2307/3151897
