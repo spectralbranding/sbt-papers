@@ -221,15 +221,20 @@ def test_h1(profiles: dict) -> dict:
     if len(dci_values) < 2:
         return {"supported": False, "reason": "insufficient data"}
     t_stat, p_value = stats.ttest_1samp(dci_values, 25.0)
+    # Use the SAMPLE standard deviation (ddof=1) for both the reported SD and
+    # Cohen's d, matching the denominator scipy.stats.ttest_1samp uses for t.
+    # This keeps the one-sample identity t = d * sqrt(n) exact. (A population
+    # SD, np.std default ddof=0, would inflate d and give t = d * sqrt(n-1).)
+    sd = float(np.std(dci_values, ddof=1))
     return {
         "supported": p_value < 0.05 and np.mean(dci_values) > 25.0,
         "mean": float(np.mean(dci_values)),
-        "std": float(np.std(dci_values)),
+        "std": sd,
         "baseline": 25.0,
         "t_stat": float(t_stat),
         "p_value": float(p_value),
         "n_models": len(dci_values),
-        "effect_size_d": float((np.mean(dci_values) - 25.0) / np.std(dci_values)) if np.std(dci_values) > 0 else 0,
+        "effect_size_d": float((np.mean(dci_values) - 25.0) / sd) if sd > 0 else 0,
     }
 
 

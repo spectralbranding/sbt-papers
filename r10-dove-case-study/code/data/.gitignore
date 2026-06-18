@@ -1,0 +1,3 @@
+# Raw model responses live on HuggingFace: spectralbranding/r10-dove-case-study
+# (results.json, a derived/aggregated artifact, is kept in-repo)
+*.jsonl
