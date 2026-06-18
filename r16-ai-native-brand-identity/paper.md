@@ -501,7 +501,7 @@ Future research should address five priorities: (a) empirical measurement of beh
 
 The pilot uses seven LLMs across four clusters --- Western cloud, Chinese cloud, local Chinese open-weight, and local Western open-weight --- to test whether behavioral metamerism is an artifact of shared Western training corpora or a structural property of statistical brand observation; parallel cloud-versus-local comparisons within the same model family (Alibaba's Qwen Plus vs. Qwen3 30B, Google's Gemini Flash vs. Gemma 4) further isolate whether commercial API alignment layers contribute to dimensional collapse.
 
-A reference implementation of the behavioral metamerism index computation and pilot study framework is available at github.com/spectralbranding/sbt-papers/r16-ai-native-brand-identity/.
+A reference implementation of the behavioral metamerism index computation and pilot study framework is available at https://github.com/spectralbranding/sbt-papers/tree/main/r16-ai-native-brand-identity.
 
 **Companion empirical evidence.** A companion study [@zharnikov-2026-dimensional-collapse-ai-mediated-search] provides empirical evidence for the dimensional collapse predicted by this framework. Using the PRISM-B instrument across 24 models from seven training traditions over nine experimental runs (21,601 clean API calls, 11 prompt languages), the study finds that Economic and Semiotic dimensions are systematically over-weighted while Cultural, Temporal, and Narrative dimensions collapse. The collapse pattern is structural: cross-model cosine similarity is .977 across 24 architectures, indicating near-identical dimensional bias across all model families.
 
@@ -518,6 +518,12 @@ The transition from human to AI observers requires a corresponding transition fr
 ***Managerial contributions.*** Brands must build dual identity infrastructure. Visual systems remain essential for human audiences; cryptographic Brand Functions become mandatory for agentic commerce. Managers should (1) publish signed behavioral specifications at .well-known/brand.json endpoints, (2) integrate coherence monitoring into brand dashboards, and (3) treat GEO as a transitional tactic rather than a permanent solution. Newcomer brands, cross-cultural entrants, and repositioning incumbents gain particular advantage from early adoption because the Brand Function counters training-data inertia and statistical convergence.
 
 The framework is scoped to B2C text-primary agentic commerce and remains theoretical. Future empirical work must test the six propositions using deployed agentic systems, develop behavioral metamerism indices, and examine governance of tiered disclosure. Until then, the central claim stands: when the observer changes, the identity technology must change. Brands that specify their behavior clearly and attest to that specification cryptographically will be verifiable; those that do not will become metameric --- statistically visible yet behaviorally indistinguishable --- in the eyes of the agents increasingly entrusted with purchasing authority.
+
+---
+
+## Data Availability
+
+The reference implementation of the behavioral metamerism index computation and the pilot study framework is available at https://github.com/spectralbranding/sbt-papers/tree/main/r16-ai-native-brand-identity. The pilot datasets of record are archived on HuggingFace: the Brand Function x cohort interaction pilot (DOI: 10.57967/hf/8442) and the Brand Function format-optimization runs (DOI: 10.57967/hf/8440). The raw session logs are not vendored in the GitHub repository; `reproduce.sh` downloads them from HuggingFace.
 
 ---
 
