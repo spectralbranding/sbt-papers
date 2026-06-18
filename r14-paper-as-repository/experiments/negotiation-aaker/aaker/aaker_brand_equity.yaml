@@ -1,0 +1,125 @@
+# Aaker author module for the FEDERATED ontology-negotiation experiment.
+#
+# "Aaker, the incumbent brand-theory author": owns the canonical pre-SBT
+# managerial brand-equity / brand-identity / brand-personality vocabulary of
+# David A. Aaker. This is a GENUINELY INDEPENDENT incumbent vocabulary -- it was
+# authored decades before SBT and was NOT designed to be compatible with it.
+#
+# Definitions are FAITHFUL PARAPHRASES of Aaker's real published work, with the
+# source attributed per term in the `note`. They are transcribed by the SBT
+# author from published sources -- NOT authored by Aaker himself. Sources:
+#   - Aaker, David A. (1991). "Managing Brand Equity: Capitalizing on the Value
+#     of a Brand Name." New York: The Free Press.
+#       brand equity (the 5 asset categories: brand loyalty, brand awareness,
+#       perceived quality, brand associations, other proprietary assets) +
+#       the four equity-asset terms.
+#   - Aaker, David A. (1996). "Building Strong Brands." New York: The Free Press.
+#       brand identity (the 4 perspectives: brand-as-product / -organization /
+#       -person / -symbol), brand image, positioning.
+#   - Aaker, Jennifer L. (1997). "Dimensions of Brand Personality." Journal of
+#     Marketing Research, 34(3), 347-356.
+#       the 5 brand-personality dimensions (sincerity, excitement, competence,
+#       sophistication, ruggedness). [J. Aaker; the canonical personality scale
+#       built within the Aaker brand-identity program, where personality is the
+#       "brand-as-person" perspective.]
+#
+# Deliberately NOT named ONTOLOGY.yaml and NOT under the live ontology directory , so the
+# live build_ontology.py linker never picks it up. Loaded explicitly by
+# negotiate_modules.py via --author-b. See the negotiation protocol (paper §5.5).
+#
+# Cross-owner interactions with the SBT module, exercised HONESTLY:
+#   - NONE of the bare Aaker keys exactly match an SBT-owned key. SBT uses
+#     deliberately-qualified names (perception-cloud, brand-conviction,
+#     positioning-capacity, spectral-dimensions) precisely to avoid bare-key
+#     collisions with incumbent terms -> we PREDICT no same-key CONFLICT, and we
+#     do NOT manufacture one. The genuine SBT<->Aaker relationships are cross-KEY
+#     semantic (e.g. perception-cloud vs brand-image) and are therefore INVISIBLE
+#     to this key-based linker; they are captured only in the hand-authored
+#     curated cross-walk SSSOM (sbt_aaker_crosskey_curated.sssom.tsv).
+#   - Aaker genuinely PRESUPPOSES primitives that neither author owns: `consumer`
+#     and `brand`. Importing them is honest (incumbent theory assumes these) and
+#     yields a real DANGLING_IMPORT.
+#   - Aaker does NOT import or refine any SBT term: he predates and is
+#     independent of SBT, so no cross-import / cross-refine onto SBT keys.
+
+paper_key: aaker_real
+schema_version: 0.1
+
+owns:
+  - term_key: brand-equity
+    label: "brand equity"
+    canonical_form: "brand equity"
+    definition: "A set of assets and liabilities linked to a brand, its name and symbol, that add to or subtract from the value provided by a product or service to a firm and/or its customers. The major asset categories are brand loyalty, brand awareness, perceived quality, brand associations, and other proprietary brand assets."
+    first_section: "Aaker1991.ch1"
+    note: "Aaker (1991) Managing Brand Equity, ch. 1 -- the five brand-equity asset categories."
+
+  - term_key: brand-identity
+    label: "brand identity"
+    canonical_form: "brand identity"
+    definition: "A unique set of brand associations that the brand strategist aspires to create or maintain, representing what the brand should stand for and implying a promise to customers from the organization. It is elaborated through four perspectives -- brand-as-product, brand-as-organization, brand-as-person, and brand-as-symbol -- comprising a core identity and an extended identity."
+    first_section: "Aaker1996.ch2"
+    note: "Aaker (1996) Building Strong Brands, ch. 2 -- the four brand-identity perspectives; aspirational (sender-side), contrast with image."
+
+  - term_key: brand-image
+    label: "brand image"
+    canonical_form: "brand image"
+    definition: "How a brand is currently perceived by customers: a set of associations, usually organized in some meaningful way, that customers actually hold about the brand. Image is a current, receiver-side perception, in contrast to identity, which is the aspirational sender-side association set the strategist seeks."
+    first_section: "Aaker1996.ch2"
+    note: "Aaker (1996) Building Strong Brands -- image (how the brand IS perceived) vs identity (how it ASPIRES to be perceived)."
+
+  - term_key: brand-personality
+    label: "brand personality"
+    canonical_form: "brand personality"
+    definition: "The set of human characteristics associated with a brand. It is structured along five dimensions -- sincerity, excitement, competence, sophistication, and ruggedness -- each further decomposed into facets and traits, measured on a standardized brand-personality scale."
+    first_section: "JAaker1997"
+    note: "J. Aaker (1997) Dimensions of Brand Personality, JMR 34(3):347-356 -- the five-dimension brand-personality scale; the 'brand-as-person' perspective within the brand-identity program."
+
+  - term_key: brand-awareness
+    label: "brand awareness"
+    canonical_form: "brand awareness"
+    definition: "The ability of a potential buyer to recognize or recall that a brand is a member of a certain product category, ranging from mere recognition, through brand recall, to top-of-mind and brand dominance. One of the five brand-equity asset categories."
+    first_section: "Aaker1991.ch2"
+    note: "Aaker (1991) Managing Brand Equity, ch. 2 -- awareness as a brand-equity asset (recognition -> recall -> top-of-mind)."
+
+  - term_key: brand-loyalty
+    label: "brand loyalty"
+    canonical_form: "brand loyalty"
+    definition: "A measure of the attachment that a customer has to a brand, reflecting how likely a customer is to switch to another brand, especially when that brand makes a change in price or product features. The core of brand equity and one of its five asset categories."
+    first_section: "Aaker1991.ch3"
+    note: "Aaker (1991) Managing Brand Equity, ch. 3 -- loyalty as the central brand-equity asset."
+
+  - term_key: perceived-quality
+    label: "perceived quality"
+    canonical_form: "perceived quality"
+    definition: "The customer's perception of the overall quality or superiority of a product or service with respect to its intended purpose, relative to alternatives. It is a perception, not actual or objective quality, and is one of the five brand-equity asset categories."
+    first_section: "Aaker1991.ch4"
+    note: "Aaker (1991) Managing Brand Equity, ch. 4 -- perceived (not objective) quality as a brand-equity asset."
+
+  - term_key: brand-association
+    label: "brand association"
+    canonical_form: "brand association"
+    definition: "Anything mentally linked to a brand -- attributes, benefits, use occasions, user imagery, organizational attributes, personality, or symbols. The set of associations, organized into meaningful groupings, forms the brand image and is one of the five brand-equity asset categories; it is the basis of differentiation and positioning."
+    first_section: "Aaker1991.ch5"
+    note: "Aaker (1991) Managing Brand Equity, ch. 5 -- associations as a brand-equity asset; their organized set IS the image."
+
+  - term_key: positioning
+    label: "brand position"
+    canonical_form: "brand position"
+    definition: "The part of the brand identity and value proposition that is to be actively communicated to a target audience and that demonstrates an advantage over competing brands. It is the portion of the identity the organization chooses to project, guiding communication programs."
+    first_section: "Aaker1996.ch6"
+    note: "Aaker (1996) Building Strong Brands, ch. 6 -- brand position as the actively-communicated, advantage-demonstrating slice of the identity."
+
+imports:
+  # Primitives the incumbent Aaker vocabulary genuinely PRESUPPOSES but does not
+  # itself own. NEITHER author (SBT nor Aaker) owns these -> honest DANGLING_IMPORT.
+  # Incumbent managerial brand theory assumes `consumer` and `brand` as given
+  # base concepts; it does not derive or define them within its own ontology.
+  - {term_key: consumer}   # the purchasing/perceiving agent presupposed throughout Aaker (1991/1996)
+  - {term_key: brand}      # the named entity to which equity/identity/associations attach -- assumed primitive
+
+refines: []
+# Aaker predates and is independent of SBT; he does NOT depend on, import, or
+# refine any SBT-owned term. Expect ZERO cross-import / cross-refine onto SBT keys.
+
+glossary_changelog:
+  - {date: 2026-06-14, op: lock, note: "faithful transcription of Aaker (1991/1996) + J. Aaker (1997) incumbent brand vocabulary for the federated negotiation experiment (independent second author)"}

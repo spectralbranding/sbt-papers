@@ -6,7 +6,7 @@ authors:
     affiliation: "Independent Researcher"
     orcid: "https://orcid.org/0009-0000-6893-9231"
 title: "Research as Repository: Infrastructure for Transparent, Attributed, and Machine-Readable Scholarly Communication"
-version: 1.2.0
+version: 2.2.0
 date-released: 2026-06-14
 url: "https://doi.org/10.5281/zenodo.19294864"
 repository-code: "https://github.com/spectralbranding/sbt-papers"

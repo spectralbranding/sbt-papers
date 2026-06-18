@@ -1,0 +1,68 @@
+# SBT author module for the FEDERATED ontology-negotiation experiment.
+#
+# Snapshot of the live SBT ontology's shared perceptual vocabulary (verbatim,
+# content-addressed, as of 2026-06-13) for the federated negotiation experiment.
+# The live SSOT is the live single-author ontology modules;
+# definitions here are copied EXACTLY so each term's def_hash (sha256 of the
+# stripped definition) matches the live SBT terms graph. Owning the same text =
+# owning the same content-addressed concept.
+#
+# Deliberately NOT named ONTOLOGY.yaml and NOT under the live ontology directory , so the
+# live build_ontology.py linker -- which discovers the live ontology modules +
+# research/**/ONTOLOGY.yaml -- never picks it up. Loaded explicitly by
+# negotiate_modules.py via --author-a. See the negotiation protocol (paper §5.5).
+#
+# This stands in for "SBT, the perception author": owns the receiver-side
+# vocabulary of how a brand signal is completed in an observer.
+
+paper_key: sbt_real_2026a
+schema_version: 0.1
+
+owns:
+  - term_key: cohort
+    label: "cohort"
+    canonical_form: "cohort"
+    definition: "A perceptual grouping of observers with similar spectral profiles, with dynamic membership. Cohorts are perceptual; demographics are metadata, not mechanism. Also written \"observer cohort\"."
+    first_section: "SBT.3"
+
+  - term_key: perception-cloud
+    label: "perception cloud"
+    canonical_form: "perception cloud"
+    definition: "The distribution of brand convictions across an observer population for a brand. Distributional, not a single fixed referent; \"cloud\" alone is acceptable in context. Has a valence (positive / negative / ambivalent)."
+    first_section: "SBT.2.1"
+
+  - term_key: spectral-dimensions
+    label: "the 8 dimensions"
+    canonical_form: "8 dimensions"
+    definition: "The eight spectral dimensions of a brand signal, in canonical order: semiotic, narrative, ideological, experiential, social, economic, cultural, temporal. Lowercase in prose."
+    first_section: "SBT.2"
+
+  - term_key: brand-conviction
+    label: "brand conviction"
+    canonical_form: "brand conviction"
+    definition: "An observer-relative held position about a brand on one or more spectral dimensions. Observer-relative, not dispositional (contrast: attitude)."
+    first_section: "SBT.2.1"
+
+  - term_key: observer-spectral-profile
+    label: "observer spectral profile"
+    canonical_form: "observer spectral profile"
+    definition: "The receiver-side object that collapses a brand signal into a conviction. Five components: spectrum, weights, tolerances, priors, and an identity gate. Cohorts are observers, not consumers."
+    first_section: "SBT.2.2"
+
+  - term_key: coherence-type
+    label: "coherence type"
+    canonical_form: "coherence type"
+    definition: "A structural classification of brands by the geometric pattern of emission across the eight dimensions, comprising five types whose ordering predicts crisis resilience better than a scalar coherence score."
+    first_section: "SBT.coherence"
+
+  - term_key: re-collapse
+    label: "re-collapse"
+    canonical_form: "re-collapse"
+    definition: "The structural mechanism by which a brand signal is re-emitted and re-collapsed into a changed perception cloud. Names the mechanism; \"rebranding\" is only the conventional surface label. Always hyphenated."
+    first_section: "SBT.4"
+
+imports: []
+refines: []
+
+glossary_changelog:
+  - {date: 2026-06-13, op: lock, note: "snapshot of live SBT shared perceptual vocab for the federated negotiation experiment"}

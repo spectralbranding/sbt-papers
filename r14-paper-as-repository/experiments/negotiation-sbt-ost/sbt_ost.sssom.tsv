@@ -1,0 +1,7 @@
+subject_id	predicate_id	object_id	mapping_justification	confidence	comment
+sbt:perception-cloud	skos:narrowMatch	ost:perception-cloud	semapv:ManualMappingCuration	0.5	CROSS_REFINE
+sbt:spectral-dimensions	skos:narrowMatch	ost:spectral-dimensions	semapv:ManualMappingCuration	0.5	CROSS_REFINE
+sbt:brand-conviction	skos:exactMatch	ost:brand-conviction	semapv:LexicalMatching	0.95	CROSS_IMPORT
+sbt:coherence-type	skos:exactMatch	ost:coherence-type	semapv:LexicalMatching	0.95	CROSS_IMPORT
+sbt:cohort	skos:exactMatch	ost:cohort	semapv:LexicalMatching	0.95	CROSS_IMPORT
+sbt:observer-spectral-profile	skos:exactMatch	ost:observer-spectral-profile	semapv:LexicalMatching	0.95	CROSS_IMPORT

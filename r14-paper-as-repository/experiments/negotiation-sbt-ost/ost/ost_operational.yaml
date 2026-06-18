@@ -1,0 +1,153 @@
+# OST author module for the FEDERATED ontology-negotiation experiment.
+#
+# "OST, the operations author": owns the operator-side vocabulary of how a
+# business is SPECIFIED so it emits a desired perception. Definitions are
+# faithful paraphrases of the real OST prose -- per-term source noted in the
+# `note` of the owns entry -- drawn from:
+#   - the OST paper export paper.md  (the six-level
+#     cascade L0-L5; Level 0/1/2 contract descriptions; openness / fork model)
+#   - articles/OST-02_organization_as_signal_source.md  (designed / operational
+#     / ambient signal taxonomy; "your processes are your brand"; intentional
+#     brand via full D/A control)
+#   - articles/OST-C5_eight_dimensions_one_spec.md  (every YAML parameter has a
+#     spectral address -- the 8 dimensions as the parameter groups a spec controls)
+# Canonical name: "Organizational Schema Theory" (never "Specification Theory").
+#
+# Deliberately NOT named ONTOLOGY.yaml and NOT under the live ontology directory , so the
+# live build_ontology.py linker never picks it up. Loaded explicitly by
+# negotiate_modules.py via --author-b. See the negotiation protocol (paper §5.5).
+#
+# Cross-owner interactions with the SBT module (exercised honestly):
+#   - cohort / brand-conviction / observer-spectral-profile : IMPORTED unchanged
+#       -> CROSS_IMPORT (OST uses SBT's receiver-side terms verbatim).
+#   - perception-cloud : REFINED with a narrows_to (operational reading)
+#       -> CROSS_REFINE.
+#   - spectral-dimensions : REFINED with a narrows_to (8 dims as spec params)
+#       -> CROSS_REFINE.
+#   - coherence-type : IMPORTED (OST's prose uses "signal coherence" /
+#       "spectral incoherence" as SBT's geometric coherence concept applied to a
+#       spec, NOT a divergent redefinition -- so it is an import, not a conflict;
+#       see honest-framing note in the analysis doc).
+
+paper_key: ost_real
+schema_version: 0.1
+
+owns:
+  # ---- the six-level TDD cascade (paper.md "The Six-Level TDD Cascade") ----
+  - term_key: l0-customer-experience-contract
+    label: "Level 0: customer experience contract"
+    canonical_form: "customer experience contract"
+    definition: "The top cascade level: the acceptance tests of a business. Specifies what customers should perceive, feel, and experience, stated as target perception across the eight perceptual dimensions with proxy indicators and satisfaction targets. The primary design driver from which every lower level is derived backward."
+    first_section: "L0"
+    note: "paper.md Level 0: Acceptance Contracts (experience contracts)"
+
+  - term_key: l1-signal-requirements
+    label: "Level 1: signal requirements"
+    canonical_form: "signal requirements"
+    definition: "The integration tests of a business: what signals the organization must emit to create the desired perception and satisfy constraints. Each signal traces upward to at least one Level 0 contract; a signal with no upward link is potential waste."
+    first_section: "L1"
+    note: "paper.md Level 1: Signal Requirements (Integration Tests)"
+
+  - term_key: l2-process-contracts
+    label: "Level 2: process contracts"
+    canonical_form: "process contracts"
+    definition: "The unit tests of a business: executor-invariant quality gates stating the measurable outcome each process must achieve to emit the required signals. A process contract with no upward link to a signal requirement is a process without justification."
+    first_section: "L2"
+    note: "paper.md Level 2: Process Contracts (Unit Tests)"
+
+  - term_key: l3-procedures
+    label: "Level 3: procedures"
+    canonical_form: "procedures"
+    definition: "The implementation layer: how a specific executor type achieves the contracts. Executor-dependent; different executor profiles (human artisan, hybrid, automated) yield different procedures for the same contract, which remains stable across them."
+    first_section: "L3"
+    note: "paper.md Level 3: Procedures (Implementation)"
+
+  - term_key: l4-input-specifications
+    label: "Level 4: input specifications"
+    canonical_form: "input specifications"
+    definition: "The dependencies layer: what materials, equipment, and training the procedures require, stated as measurable parameters, equipment requirements, and training certifications."
+    first_section: "L4"
+    note: "paper.md Level 4: Input Specifications (Dependencies)"
+
+  - term_key: l5-sourcing-requirements
+    label: "Level 5: sourcing requirements"
+    canonical_form: "sourcing requirements"
+    definition: "The infrastructure layer: where inputs come from. Supplier criteria, certifications, delivery frequency, and lead times; analogous to infrastructure in software, where changing a provider should not change application behavior."
+    first_section: "L5"
+    note: "paper.md Level 5: Sourcing Requirements (Infrastructure)"
+
+  # ---- structural OST concepts ----
+  - term_key: tier-architecture
+    label: "tier architecture"
+    canonical_form: "tier architecture"
+    definition: "The depreciation-depth ordering of business layers from the most stable (customer experience) to the most volatile (sourcing); a business's six cascade levels arrange along this depth so that the deeper a fork cuts, the more is rewritten."
+    first_section: "tiers"
+    note: "paper.md Forkability / Fork Depth section (Tier depth = fork depth)"
+
+  - term_key: specification
+    label: "specification"
+    canonical_form: "specification"
+    definition: "A machine-readable, version-controlled, automatically validatable statement of a business across the cascade levels; the single source of truth a business is designed as, against which consistency between levels is checked continuously rather than documented in prose."
+    first_section: "spec"
+    note: "paper.md Abstract / 'just documentation' rebuttal (testable artifact, not a Word doc)"
+
+  - term_key: designed-signal
+    label: "designed signal"
+    canonical_form: "designed signal"
+    definition: "A signal intentionally created to communicate (logo, interior design, packaging, typography) and fully specifiable in the specification; the traditional, small fraction of the signals a business emits."
+    first_section: "signals.designed"
+    note: "OST-02 'Three types of signal' -- Designed signals"
+
+  - term_key: operational-signal
+    label: "operational signal"
+    canonical_form: "operational signal"
+    definition: "A by-product of a process that customers nonetheless perceive (aroma, barista speed, cleanliness, temperature consistency); unintentionally emitted but brand-significant, made specifiable by connecting process parameters to signal requirements."
+    first_section: "signals.operational"
+    note: "OST-02 'Three types of signal' -- Operational signals"
+
+  - term_key: ambient-signal
+    label: "ambient signal"
+    canonical_form: "ambient signal"
+    definition: "An emergent property of the human element that cannot be written into a specification (genuine warmth, spontaneous humor, the feeling of being recognized); the irreducible human premium emitted through an executor's individual rendering of the spec."
+    first_section: "signals.ambient"
+    note: "OST-02 'Three types of signal' -- Ambient signals (SBT secondary analogue signals)"
+
+  - term_key: intentional-brand
+    label: "intentional brand"
+    canonical_form: "intentional brand"
+    definition: "The state in which a business's full operational specification coverage yields full control of the designed/ambient signal ratio, so that perception is engineered rather than emergent: brand becomes a specified, testable artifact instead of an undesigned consequence."
+    first_section: "brand.intentional"
+    note: "OST-C1 / convergence note: full specification coverage = full D/A ratio control = intentional brand"
+
+  - term_key: specification-drift
+    label: "specification drift"
+    canonical_form: "specification drift"
+    definition: "The divergence over time between what a specification asserts and what operations actually emit, surfaced when continuous validation finds a cascade link that the current procedures, inputs, or sourcing no longer satisfy."
+    first_section: "drift"
+    note: "paper.md CI/CD satisfaction validation (a broken link flagged as a defect) -- the drift it is designed to catch"
+
+  - term_key: rendering
+    label: "rendering"
+    canonical_form: "rendering"
+    definition: "A projection of the single source-of-truth specification for a particular audience or executor; the same spec renders into different procedures, provenance views, or openness levels without being a separate source."
+    first_section: "rendering"
+    note: "OST-05 product passport / paper.md openness taxonomy (rendering of one spec)"
+
+imports:
+  # SBT receiver-side terms OST uses WITHOUT redefining -> CROSS_IMPORT.
+  - {term_key: cohort}                       # observer cohorts (paper.md L1 four cohort profiles)
+  - {term_key: brand-conviction}             # the held position a signal collapses into
+  - {term_key: observer-spectral-profile}    # the receiver-side object OST designs FOR
+  - {term_key: coherence-type}               # OST's 'signal coherence' uses SBT's geometric concept
+
+refines:
+  # OST narrows two SBT terms to their operational reading -> CROSS_REFINE.
+  - term_key: perception-cloud
+    narrows_to: "the perception cloud restricted to the cohort a customer-experience contract (L0) is written to satisfy"
+    note: "OST reads the cloud prescriptively: the target distribution a Level 0 contract specifies, not the full descriptive cloud"
+  - term_key: spectral-dimensions
+    narrows_to: "the eight dimensions read as the parameter groups an organizational specification controls, per OST-C5 (every YAML parameter has a spectral address)"
+    note: "OST-C5: each SBT dimension maps to specific spec parameters"
+
+glossary_changelog:
+  - {date: 2026-06-13, op: lock, note: "OST operational vocab + cross-owner edges for the federated negotiation experiment"}

@@ -1,0 +1,101 @@
+# Spence author module for the THIRD federated ontology-negotiation experiment
+# (the genuine same-key CONFLICT run: SBT <-> Spence on the term "signal").
+#
+# "Spence, the economic-signaling author": owns the canonical job-market
+# signaling vocabulary of Michael Spence. This is a GENUINELY INDEPENDENT
+# vocabulary from a DIFFERENT DISCIPLINE (information economics) -- it was
+# authored in 1973, decades before SBT, won the 2001 Nobel Memorial Prize in
+# Economic Sciences, and could not have been designed to be compatible with SBT.
+# It shares the bare term `signal` with SBT, which is exactly the condition for a
+# genuine cross-disciplinary HOMONYM and a real same-key CONFLICT.
+#
+# Definitions are FAITHFUL PARAPHRASES of Spence's real published work, attributed
+# per term in the `note`. Attributed by author/year/venue only -- NO DOI is
+# asserted (per the no-fabricated-DOI rule). They are transcribed by the SBT
+# author from the published source, NOT authored by Spence himself (see the
+# experiment record's limitations). Source:
+#   - Spence, Michael (1973). "Job Market Signaling." Quarterly Journal of
+#     Economics, 87(3), 355-374.
+#
+# Spence-PURITY note: "screening" is Stiglitz / Rothschild-Stiglitz (1976), NOT
+# Spence, so it is OMITTED here to keep the module Spence-pure. Every owned term
+# below is from the Spence (1973) signaling model.
+#
+# Deliberately NOT named ONTOLOGY.yaml and NOT under the live ontology directory , so the
+# live build_ontology.py linker never picks it up. Loaded explicitly by
+# negotiate_modules.py via --author-b. See the negotiation protocol (paper §5.5).
+#
+# Cross-owner interactions with the SBT module, exercised HONESTLY:
+#   - `signal` collides SAME-KEY with SBT's `signal` but with a genuinely
+#     DIFFERENT definition (an alterable, costly observable attribute conveying
+#     unobservable type under information asymmetry -- NOT a composite perceptual
+#     ray). Same label, divergent definition -> genuine CONFLICT (closeMatch @ .5).
+#   - Spence genuinely PRESUPPOSES a primitive that neither author owns:
+#     `labor-market` (the market within which signaling occurs). Importing it is
+#     honest (the 1973 model assumes the labor market as its setting) and yields a
+#     real DANGLING_IMPORT.
+#   - Spence predates and is independent of SBT; he imports/refines ZERO SBT terms.
+
+paper_key: spence_real
+schema_version: 0.1
+
+owns:
+  # The headline term: Spence's economic-signaling sense of "signal". Genuinely
+  # incompatible with SBT's brand-signal sense (different def_hash) -> CONFLICT.
+  - term_key: signal
+    label: "signal"
+    canonical_form: "market signal"
+    definition: "An observable, ALTERABLE attribute that a sender can invest in at a COST in order to convey otherwise-unobservable type or quality to a receiver under information asymmetry. In the job market, education is the paradigm signal: a worker chooses how much to acquire, and its cost is what links the choice to underlying productive capability. A signal is informative only when its marginal cost is negatively correlated with the sender's quality (the single-crossing / Spence-Mirrlees condition), so that high-quality senders can profitably acquire more of it than low-quality senders."
+    first_section: "Spence1973.signal"
+    note: "Spence (1973) Job Market Signaling, QJE 87(3):355-374 -- a signal is an alterable, costly observable conveying unobservable type under information asymmetry."
+
+  - term_key: index
+    label: "index"
+    canonical_form: "index"
+    definition: "An observable but UNALTERABLE attribute of a sender -- such as age or sex -- that the sender cannot change at any cost. Unlike a signal, an index cannot be manipulated to convey type, because no investment can alter it; it is fixed and so cannot be chosen to separate high- from low-quality senders."
+    first_section: "Spence1973.index"
+    note: "Spence (1973) -- index = an observable UNALTERABLE attribute (age, sex), contrasted with the alterable signal."
+
+  - term_key: signaling-cost
+    label: "signaling cost"
+    canonical_form: "signaling cost"
+    definition: "The cost a sender incurs to acquire a given level of a signal, which must be NEGATIVELY correlated with the sender's underlying quality for the signal to be informative (the single-crossing / Spence-Mirrlees condition). Because higher-quality senders face a lower marginal cost of signaling, they can profitably acquire more of the signal than lower-quality senders can, which is what lets the signal level reveal type in equilibrium."
+    first_section: "Spence1973.cost"
+    note: "Spence (1973) -- signal cost must be negatively correlated with quality (single-crossing / Spence-Mirrlees) for signaling to be informative."
+
+  - term_key: separating-equilibrium
+    label: "separating equilibrium"
+    canonical_form: "separating equilibrium"
+    definition: "A signaling equilibrium in which senders of different types choose different signal levels, so that the chosen signal level fully reveals the sender's unobservable type to the receiver. High-quality senders acquire enough of the signal to distinguish themselves, and the receiver can read type off the signal level."
+    first_section: "Spence1973.separating"
+    note: "Spence (1973) -- separating equilibrium: distinct types choose distinct signal levels; the signal reveals type."
+
+  - term_key: pooling-equilibrium
+    label: "pooling equilibrium"
+    canonical_form: "pooling equilibrium"
+    definition: "A signaling equilibrium in which all sender types choose the SAME signal level, so the signal conveys no information about type: the receiver cannot distinguish high- from low-quality senders, and the signal is uninformative even though it may still be costly."
+    first_section: "Spence1973.pooling"
+    note: "Spence (1973) -- pooling equilibrium: all types choose the same signal level; the signal conveys nothing."
+
+  - term_key: productive-capability
+    label: "productive capability"
+    canonical_form: "productive capability"
+    definition: "The sender's true, payoff-relevant underlying type or quality -- in the job market, a worker's productivity -- which is UNOBSERVABLE to the receiver (the employer) at the point of hiring. Information asymmetry over this hidden type is precisely what creates the demand for a signal: the receiver wants to infer it, but cannot observe it directly."
+    first_section: "Spence1973.type"
+    note: "Spence (1973) -- the unobservable type (worker productivity) that the receiver wants to infer and that signaling is meant to reveal."
+
+imports:
+  # A primitive the Spence (1973) model genuinely PRESUPPOSES as its setting but
+  # does not itself define, and that NEITHER author owns -> honest DANGLING_IMPORT.
+  # The 1973 model takes the labor market as the given arena within which
+  # employers (receivers) and workers (senders) interact under information
+  # asymmetry; it derives signaling within that market rather than defining it.
+  - {term_key: labor-market}
+
+refines: []
+# Spence (1973) predates and is independent of SBT; he does NOT depend on,
+# import, or refine any SBT-owned term. The only cross-owner interaction Spence
+# participates in is the genuine same-key CONFLICT on `signal`.
+
+glossary_changelog:
+  - {date: 2026-06-14, op: lock, note: "faithful transcription of Spence (1973) Job Market Signaling vocabulary for the SBT<->Spence same-key CONFLICT experiment (independent cross-discipline author; no DOI asserted)"}
