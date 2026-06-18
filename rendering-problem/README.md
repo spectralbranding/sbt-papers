@@ -1,63 +1,40 @@
-# The Rendering Problem: From Genetic Expression to Brand Perception
-
 [![MIT License](https://img.shields.io/badge/Code-MIT-blue.svg)](../LICENSE)
 [![CC-BY 4.0](https://img.shields.io/badge/Data-CC--BY_4.0-lightgrey.svg)](../LICENSE-data)
-![Last Updated](https://img.shields.io/badge/updated-2026--05--29-success)
+![Last Updated](https://img.shields.io/badge/updated-2026--06--18-success)
 
-Working Paper — Dmitry Zharnikov (ORCID: [0009-0000-6893-9231](https://orcid.org/0009-0000-6893-9231))
+# The Rendering Problem: From Genetic Expression to Brand Perception
 
-DOI: [10.5281/zenodo.19064426](https://doi.org/10.5281/zenodo.19064426)
+## 1 | Paper
 
-## 1 | Getting Started
+- Manuscript: [paper.md](paper.md)
+- Version: 1.0.0
+- DOI: [10.5281/zenodo.19064426](https://doi.org/10.5281/zenodo.19064426)
+- **New here?** [AGENTS.md](AGENTS.md) is a file-by-file guide for any reader (human or AI agent) on how to use the paper + every metadata file.
+- Machine-readable bundle: [paper.yaml](paper.yaml) (Paper Spec), [SPINE.yaml](SPINE.yaml), [ONTOLOGY.yaml](ONTOLOGY.yaml), [GLOSSARY.md](GLOSSARY.md)
 
-This directory is the public mirror of the paper "The Rendering Problem: From Genetic Expression to Brand Perception". The canonical artifacts are:
+## 2 | Citations
 
-- `paper.md` — full manuscript
-- `paper.yaml` — structured paper spec (claims, methodology, acceptance criteria, dependencies)
-- `CITATION.cff` — machine-readable citation
-- `CONTRIBUTORS.yaml` — contributor metadata
-- `DATA_MANIFEST.yaml` — data declaration
-- `PROVENANCE.yaml` — provenance trail
+`paper.md` is the source artifact; inline citations use the `[@citation_key]` form. The full bibliography lives in the companion `.bib` file; see [CITATIONS.md](CITATIONS.md) for how to resolve and render them.
 
-Repository-level license files (MIT for code, CC BY 4.0 for data) live at the parent `sbt-papers/` root.
+## 3 | Citation
 
-## 2 | Project Layout
-
-```
-rendering-problem/
-├── README.md            # this file
-├── .here                # project anchor for relative-path resolution
-├── paper.md             # full manuscript
-├── paper.yaml           # structured paper spec
-├── CITATION.cff         # machine-readable citation
-├── CONTRIBUTORS.yaml    # contributor metadata
-├── DATA_MANIFEST.yaml   # data declaration
-└── PROVENANCE.yaml      # provenance trail
+```bibtex
+@article{Zharnikov2026,
+  author  = {Zharnikov, Dmitry},
+  title   = {The Rendering Problem: From Genetic Expression to Brand Perception},
+  year    = {2026},
+  doi     = {10.5281/zenodo.19064426},
+  url     = {https://doi.org/10.5281/zenodo.19064426},
+  version = {1.0.0},
+}
 ```
 
-## 3 | Quick Start
+Machine-readable: [CITATION.cff](CITATION.cff).
 
-This paper is purely theoretical. No computational pipeline accompanies the manuscript; per `paper.yaml`, `code.available: false`. To read the paper, open `paper.md`. To cite, see Section 6 below or use `CITATION.cff` directly.
+## 4 | Licence
 
-## 4 | Dependencies
-
-No software dependencies. Conceptual dependencies are declared in `paper.yaml` under `dependencies:` and include the SBT and OST corpus anchors plus the biological, systems-theory, and non-ergodic-dynamics references named in the manuscript.
-
-## 5 | Script Map
-
-Not applicable — no scripts ship with this paper.
-
-## 6 | Citation
-
-Zharnikov, D. (2026). The Rendering Problem: From Genetic Expression to Brand Perception. Working Paper. DOI: [10.5281/zenodo.19064426](https://doi.org/10.5281/zenodo.19064426).
-
-Machine-readable citation metadata is in `CITATION.cff`. GitHub and Zenodo both render this file natively; use the "Cite this repository" button on GitHub for formatted citations in 12+ formats.
-
-## 7 | Licence
-
-- **Code**: MIT License — see [`LICENSE`](../LICENSE) at the repository root.
-- **Data, figures, tables, manuscript text**: Creative Commons Attribution 4.0 International (CC BY 4.0) — see [`LICENSE-data`](../LICENSE-data) at the repository root.
+Code (if any): MIT — see hub-level [../LICENSE](../LICENSE). Data, figures, tables: CC BY 4.0 — see hub-level [../LICENSE-data](../LICENSE-data).
 
 ---
 
-*Last updated: 2026-05-29*
+*Last updated: 2026-06-18*

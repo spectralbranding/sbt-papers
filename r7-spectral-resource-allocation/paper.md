@@ -233,7 +233,7 @@ Since $w(f) \in \Delta^7$, the bound $\|w(f)\|^2 \geq 1/8$ holds (with equality 
 
 $$\mathcal{A}(f,c) \geq \frac{H(f,c)^2}{8 \lambda \bar{\alpha}}$$
 
-The Fisher-Rao distance satisfies $d_{\text{FR}} = 2 \arccos(\text{BC})$, and for small distances $d_{\text{FR}} \approx 2H$, giving the stated bound. $\square$
+The Fisher-Rao distance satisfies $d_{\text{FR}} = 2 \arccos(\text{BC})$, and for small distances $d_{\text{FR}} \approx 2H$. This sketch establishes the weaker constant $1/8$ via the uniform-weight floor $\|w(f)\|^2 \geq 1/8$; the tighter stated constant $1/2$ follows from the sharper $L^2$-Hellinger identity $\|w(f)\|^2 - \langle w(f), w(c)\rangle = \tfrac{1}{2}\|w(f) - w(c)\|^2 + \tfrac{1}{2}(\|w(f)\|^2 - \|w(c)\|^2)$ together with $\|p - q\|^2 \geq 2H(p,q)^2$, derived in full in Appendix A.1. $\square$
 
 **Interpretation.** The alignment gap has a geometric floor: it cannot be smaller than a quantity determined by how far apart the founder and cohort sit on the probability simplex. Founders who are perceptually close to their target cohort (small $d_{\text{FR}}$) have small alignment gaps. Founders who are perceptually distant face a structural economic loss that, under the model's separable cost and linear value assumptions, cannot be recovered through improved execution on the chosen dimensions — only reallocation toward the cohort's actual weights closes the gap.
 
@@ -680,7 +680,7 @@ This paper develops the economic bridge between multi-dimensional brand percepti
 
 The results connect to five established strategy frameworks, revealing each as an implicit low-dimensional projection of the spectral resource allocation problem. Blue Ocean's strategy canvas becomes a spectral profile with a metric. JTBD's job decomposition becomes weight vector identification. Lean Startup's MVP becomes an L0 demand hypothesis. Porter's rivalry becomes sphere-packing density. The RBV's VRIN criteria become spectral position properties.
 
-The paper completes the economic interpretation of the SBT mathematical foundations series (Zharnikov [-@zharnikov-2026-geometric-approaches-brand-perception-critical]-j), providing each R-paper result with a resource allocation interpretation:
+The paper completes the economic interpretation of the SBT mathematical foundations series [@zharnikov-2026-geometric-approaches-brand-perception-critical; @zharnikov-2026-brand-space-geometry-formal-metric; @zharnikov-2026-spectral-metamerism-brand-perception-projection; @zharnikov-2026-cohort-boundaries-high-dimensional-perception; @zharnikov-2026-many-brands-can-market-hold; @zharnikov-2026-specification-impossibility-organizational-design-high; @zharnikov-2026-non-ergodic-brand-perception-diffusion], providing each R-paper result with a resource allocation interpretation:
 
 Table 10: Economic Interpretation of SBT Mathematical Results.
 
@@ -703,7 +703,7 @@ Table 10: Economic Interpretation of SBT Mathematical Results.
 
 ## Acknowledgments
 
-AI assistants (Claude Opus 4.7, Grok 4.1, Gemini 3.1) were used for initial literature search, for software development — implementing and running the companion computation script(s) that reproduce the paper's reported numerical and simulation results — and for editorial refinement; all theoretical claims, propositions, and interpretations are the author's sole responsibility.
+AI assistants (Claude Opus 4.8, Grok 4.20, Gemini 2.5 Pro) were used for initial literature search, for software development — implementing and running the companion computation script(s) that reproduce the paper's reported numerical and simulation results — and for editorial refinement; all theoretical claims, propositions, and interpretations are the author's sole responsibility.
 
 ---
 

@@ -1,0 +1,43 @@
+# ONTOLOGY.yaml module - 2026l
+#
+# Per-paper ontology module per [internal path removed]
+# §"ONTOLOGY.yaml schema (v0.1)". owns = terms THIS paper introduces (unique
+# authority); imports = terms owned by other modules it uses (reference only).
+# Linked into the substrate `terms` graph by build_ontology.py; rendered per-paper
+# by render_paper_glossary.py. Bootstrapped 2026-06-13 from per-paper term
+# extraction; definitions paraphrase each paper's own definitional text.
+
+paper_key: 2026l
+schema_version: 0.1
+
+owns:
+  - term_key: rendering-problem
+    label: "Rendering Problem"
+    canonical_form: "rendering problem"
+    definition: "The domain-independent structural pattern in which a bounded specification is rendered into an implementation of vastly greater complexity through a configuration layer, producing weakly emergent phenomena that no specification contains."
+    first_section: "Structural Definitions — Definition 6"
+  - term_key: specification-gap
+    label: "Specification Gap"
+    canonical_form: "specification gap"
+    definition: "The structural complexity differential between an implementation and its specification, filled by environmental input, self-organizational dynamics, and configuration selection, and not closable by adding detail to the specification."
+    first_section: "Structural Definitions — Definition 3"
+  - term_key: configuration-layer
+    label: "Configuration Layer"
+    canonical_form: "configuration layer"
+    definition: "The set of contextual parameters (the biological epigenome, organizational operational parameters, or brand channel adaptation) that determine which elements of a specification are active in a given context, so identical specifications yield non-identical implementations."
+    first_section: "Structural Definitions — Definition 4"
+  - term_key: hardened-core
+    label: "Hardened Core"
+    canonical_form: "hardened core"
+    definition: "The subset of an implementation whose components persist far longer than the rotating layers and store the system's identity, e.g. cortical neurons, OST's L0 customer-experience contract, or a brand's semiotic identity."
+    first_section: "Discussion — The Hardened Core"
+
+imports:
+  - {term_key: spectral-dimensions}
+  - {term_key: perception-cloud}
+  - {term_key: d-a-ratio}
+  - {term_key: non-ergodic-perception}
+  - {term_key: spectral-brand-theory}
+
+refines: []
+

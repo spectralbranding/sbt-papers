@@ -412,9 +412,9 @@ Most fundamentally, the specification-rendering architecture clarifies the autho
 ::: {#refs}
 :::
 
-## Acknowledgements
+## Acknowledgments
 
-This research received no external funding. AI assistants (Claude Opus 4.7, Grok 4.1, Gemini 3.1) were used for initial literature search and editorial refinement; all theoretical claims, propositions, and interpretations are the author's sole responsibility.
+This research received no external funding. AI assistants (Claude Opus 4.8, Grok 4.20, Gemini 2.5 Pro) were used for initial literature search and editorial refinement; all theoretical claims, propositions, and interpretations are the author's sole responsibility.
 
 ## Data Availability
 

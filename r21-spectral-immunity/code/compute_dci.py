@@ -42,6 +42,7 @@ random.seed(SEED)
 # where w_d are the normalized per-dimension weights (ratings / sum of ratings)
 # ---------------------------------------------------------------------------
 
+
 def compute_dci(ratings: list[float]) -> float:
     """
     Compute the Dimensional Concentration Index for an 8-dimension profile.
@@ -82,6 +83,7 @@ def compute_dci(ratings: list[float]) -> float:
 # Returns (t_lower, t_upper, p_lower, p_upper, p_tost, equivalent)
 # ---------------------------------------------------------------------------
 
+
 def tost(
     delta_dci_values: list[float],
     bound: float = 1.0,
@@ -115,12 +117,16 @@ def tost(
     se = math.sqrt(var / n)
 
     if se == 0:
-        return {"mean_delta": mean_d, "se": 0,
-                "equivalent": abs(mean_d) < bound, "note": "zero variance"}
+        return {
+            "mean_delta": mean_d,
+            "se": 0,
+            "equivalent": abs(mean_d) < bound,
+            "note": "zero variance",
+        }
 
     # t statistics for the two one-sided tests
-    t_lower = (mean_d - (-bound)) / se   # test mean > -bound
-    t_upper = (mean_d - bound) / se      # test mean < +bound
+    t_lower = (mean_d - (-bound)) / se  # test mean > -bound
+    t_upper = (mean_d - bound) / se  # test mean < +bound
 
     # Approximate p-values using the t-distribution (df = n-1)
     # Using a simple approximation for |t| < 10
@@ -150,6 +156,7 @@ def _t_pvalue_one_sided(t: float, df: int, direction: str) -> float:
     # This is sufficient for reproducibility verification purposes.
     # A production implementation should use scipy.stats.t.sf / scipy.stats.t.cdf
     import math
+
     if df > 30:
         # Normal approximation
         z = t
@@ -160,7 +167,7 @@ def _t_pvalue_one_sided(t: float, df: int, direction: str) -> float:
             return p if z < 0 else 1.0 - p
     else:
         # Simple approximation for small df (Wilson-Hilferty)
-        x = df / (df + t ** 2)
+        x = df / (df + t**2)
         # Regularized incomplete beta approximation
         p = _betai(df / 2.0, 0.5, x) / 2.0
         if direction == "greater":
@@ -175,7 +182,7 @@ def _betai(a: float, b: float, x: float) -> float:
         return 0.0
     if x == 0.0 or x == 1.0:
         return x
-    lbeta = (math.lgamma(a) + math.lgamma(b) - math.lgamma(a + b))
+    lbeta = math.lgamma(a) + math.lgamma(b) - math.lgamma(a + b)
     front = math.exp(math.log(x) * a + math.log(1.0 - x) * b - lbeta) / a
     # Simple approximation via 50-term continued fraction
     cf = _betacf(a, b, x)
@@ -215,6 +222,7 @@ def _betacf(a: float, b: float, x: float, max_iter: int = 50) -> float:
 # Cohen's d
 # ---------------------------------------------------------------------------
 
+
 def cohens_d(group1: list[float], group2: list[float]) -> float:
     """Pooled Cohen's d for two independent groups."""
     n1, n2 = len(group1), len(group2)
@@ -236,11 +244,11 @@ def cohens_d(group1: list[float], group2: list[float]) -> float:
 # ---------------------------------------------------------------------------
 
 CANONICAL_PROFILES = {
-    "Hermes":    [9.5, 9.0, 7.0, 9.0, 8.5, 3.0, 9.0, 9.5],
-    "IKEA":      [8.0, 7.5, 6.0, 7.0, 5.0, 9.0, 7.5, 6.0],
+    "Hermes": [9.5, 9.0, 7.0, 9.0, 8.5, 3.0, 9.0, 9.5],
+    "IKEA": [8.0, 7.5, 6.0, 7.0, 5.0, 9.0, 7.5, 6.0],
     "Patagonia": [6.0, 9.0, 9.5, 7.5, 8.0, 5.0, 7.0, 6.5],
-    "Erewhon":   [7.0, 6.5, 5.0, 9.0, 8.5, 3.5, 7.5, 2.5],
-    "Tesla":     [7.5, 8.5, 3.0, 6.0, 7.0, 6.0, 4.0, 2.0],
+    "Erewhon": [7.0, 6.5, 5.0, 9.0, 8.5, 3.5, 7.5, 2.5],
+    "Tesla": [7.5, 8.5, 3.0, 6.0, 7.0, 6.0, 4.0, 2.0],
 }
 
 # ---------------------------------------------------------------------------
@@ -249,23 +257,49 @@ CANONICAL_PROFILES = {
 # ---------------------------------------------------------------------------
 
 TABLE3_SOLO_DCI = {
-    "Dior": 3.5, "Fendi": 5.7, "Louis Vuitton": 4.4,
-    "Axe": 8.6, "Ben & Jerry's": 6.4, "Dove": 5.6,
-    "Gillette": 6.4, "Pampers": 6.5, "Tide": 7.4,
-    "Toyota": 6.8, "Lexus": 5.2,
-    "L'Oreal Paris": 5.6, "Lancome": 5.4, "Maybelline": 6.8,
-    "Volvo": 6.4, "Polestar": 8.6, "Geely Auto": 8.0,
-    "Yandex": 6.6, "Yandex Market": 8.2, "Yandex Taxi": 8.9,
+    "Dior": 3.5,
+    "Fendi": 5.7,
+    "Louis Vuitton": 4.4,
+    "Axe": 8.6,
+    "Ben & Jerry's": 6.4,
+    "Dove": 5.6,
+    "Gillette": 6.4,
+    "Pampers": 6.5,
+    "Tide": 7.4,
+    "Toyota": 6.8,
+    "Lexus": 5.2,
+    "L'Oreal Paris": 5.6,
+    "Lancome": 5.4,
+    "Maybelline": 6.8,
+    "Volvo": 6.4,
+    "Polestar": 8.6,
+    "Geely Auto": 8.0,
+    "Yandex": 6.6,
+    "Yandex Market": 8.2,
+    "Yandex Taxi": 8.9,
 }
 
 TABLE3_PORT_DCI = {
-    "Dior": 3.8, "Fendi": 5.8, "Louis Vuitton": 4.7,
-    "Axe": 8.7, "Ben & Jerry's": 6.4, "Dove": 5.9,
-    "Gillette": 6.3, "Pampers": 6.2, "Tide": 7.2,
-    "Toyota": 6.4, "Lexus": 5.8,
-    "L'Oreal Paris": 5.5, "Lancome": 5.4, "Maybelline": 6.6,
-    "Volvo": 6.3, "Polestar": 8.5, "Geely Auto": 8.5,
-    "Yandex": 6.6, "Yandex Market": 8.4, "Yandex Taxi": 8.5,
+    "Dior": 3.8,
+    "Fendi": 5.8,
+    "Louis Vuitton": 4.7,
+    "Axe": 8.7,
+    "Ben & Jerry's": 6.4,
+    "Dove": 5.9,
+    "Gillette": 6.3,
+    "Pampers": 6.2,
+    "Tide": 7.2,
+    "Toyota": 6.4,
+    "Lexus": 5.8,
+    "L'Oreal Paris": 5.5,
+    "Lancome": 5.4,
+    "Maybelline": 6.6,
+    "Volvo": 6.3,
+    "Polestar": 8.5,
+    "Geely Auto": 8.5,
+    "Yandex": 6.6,
+    "Yandex Market": 8.4,
+    "Yandex Taxi": 8.5,
 }
 
 
@@ -289,16 +323,31 @@ def stub_mode() -> None:
     # 2. Check Table 3 delta DCI values
     print("2. Table 3 delta DCI verification (solo → portfolio)")
     print("-" * 60)
-    print(f"{'Brand':<16}  {'Solo':>6}  {'Port':>6}  {'Delta':>6}  {'Paper':>6}  {'Match':>5}")
+    print(
+        f"{'Brand':<16}  {'Solo':>6}  {'Port':>6}  {'Delta':>6}  {'Paper':>6}  {'Match':>5}"
+    )
 
     PAPER_DELTAS = {
-        "Dior": +.35, "Fendi": +.09, "Louis Vuitton": +.34,
-        "Axe": +.04, "Ben & Jerry's": -.04, "Dove": +.30,
-        "Gillette": -.15, "Pampers": -.29, "Tide": -.20,
-        "Toyota": -.37, "Lexus": +.59,
-        "L'Oreal Paris": -.15, "Lancome": +.04, "Maybelline": -.13,
-        "Volvo": -.19, "Polestar": -.12, "Geely Auto": +.54,
-        "Yandex": -.01, "Yandex Market": +.21, "Yandex Taxi": -.36,
+        "Dior": +0.35,
+        "Fendi": +0.09,
+        "Louis Vuitton": +0.34,
+        "Axe": +0.04,
+        "Ben & Jerry's": -0.04,
+        "Dove": +0.30,
+        "Gillette": -0.15,
+        "Pampers": -0.29,
+        "Tide": -0.20,
+        "Toyota": -0.37,
+        "Lexus": +0.59,
+        "L'Oreal Paris": -0.15,
+        "Lancome": +0.04,
+        "Maybelline": -0.13,
+        "Volvo": -0.19,
+        "Polestar": -0.12,
+        "Geely Auto": +0.54,
+        "Yandex": -0.01,
+        "Yandex Market": +0.21,
+        "Yandex Taxi": -0.36,
     }
 
     all_match = True
@@ -311,7 +360,9 @@ def stub_mode() -> None:
         if not match:
             all_match = False
         marker = "OK" if match else "MISMATCH"
-        print(f"{brand:<16}  {solo:>6.1f}  {port:>6.1f}  {delta:>+6.2f}  {paper_delta:>+6.2f}  {marker:>5}")
+        print(
+            f"{brand:<16}  {solo:>6.1f}  {port:>6.1f}  {delta:>+6.2f}  {paper_delta:>+6.2f}  {marker:>5}"
+        )
 
     print()
     if all_match:

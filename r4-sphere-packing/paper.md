@@ -6,7 +6,7 @@ ORCID: 0009-0000-6893-9231
 
 DOI: [10.5281/zenodo.18945522](https://doi.org/10.5281/zenodo.18945522)
 
-Working Paper v1.3.0 – March 2026 (revised June 2026)
+Working Paper v1.2.0 – March 2026 (revised June 2026)
 
 ---
 
@@ -176,7 +176,7 @@ Table 3: Exact Kissing Numbers in Selected Dimensions.
 
 *Notes*: Kissing number is exact only in dimensions 1, 2, 3, 4, 8, and 24. In all other dimensions only bounds are known. [@pfender-2004-kissing-numbers-sphere].
 
-The kissing number is known exactly in only these dimensions plus $n = 1$. In all other dimensions, only bounds are known. The exactness in $n = 8$ and $n = 24$ is a consequence of the exceptional algebraic structures underlying the $E_8$ and Leech lattices.
+The kissing number is known exactly in only these dimensions. In all other dimensions, only bounds are known. The exactness in $n = 8$ and $n = 24$ is a consequence of the exceptional algebraic structures underlying the $E_8$ and Leech lattices.
 
 ---
 
@@ -569,7 +569,7 @@ The answer, it turns out, depends less on the market and more on how many dimens
 
 ## Acknowledgments
 
-AI assistants (Claude Opus 4.7, Grok 4.1, Gemini 3.1) were used for initial literature search, for software development — implementing and running the companion computation script(s) that reproduce the paper's reported numerical and simulation results — and for editorial refinement; all theoretical claims, propositions, and interpretations are the author's sole responsibility.
+AI assistants (Claude Opus 4.8, Grok 4.20, Gemini 2.5 Flash) were used for initial literature search, for software development — implementing and running the companion computation script(s) that reproduce the paper's reported numerical and simulation results — and for editorial refinement; all theoretical claims, propositions, and interpretations are the author's sole responsibility.
 
 ---
 

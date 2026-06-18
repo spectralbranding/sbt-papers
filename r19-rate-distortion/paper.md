@@ -236,9 +236,9 @@ The rate-distortion principle extends bidirectionally. Experiment D (Zharnikov [
 
 Code and pre-registration materials are publicly available at https://github.com/spectralbranding/sbt-papers/tree/main/r19-rate-distortion; the dataset of record is archived on HuggingFace at https://doi.org/10.57967/hf/8362. The experiment can be reproduced for $0.225 USD in approximately 33 minutes.
 
-## AI Disclosure
+## Acknowledgments
 
-AI assistants (Claude Opus 4.7, Grok 4.1, Gemini 3.1) were used for initial literature search, for software development — authoring the experiment harness and the analysis and scoring scripts — and for orchestrating and running the reported experiments through those scripts, as well as for editorial refinement. Seventeen LLMs are the subjects of the experiment -- encoders whose rate-distortion properties are measured -- not contributors to the theoretical framework. All theoretical claims, experimental design, and interpretive framing are the author's sole responsibility.
+AI assistants (Claude Opus 4.8, Grok 4.20, Gemini 2.5 Pro) were used for initial literature search, for software development — authoring the experiment harness and the analysis and scoring scripts — and for orchestrating and running the reported experiments through those scripts, as well as for editorial refinement. Seventeen LLMs are the subjects of the experiment -- encoders whose rate-distortion properties are measured -- not contributors to the theoretical framework. All theoretical claims, experimental design, and interpretive framing are the author's sole responsibility.
 
 ## References
 

@@ -60,7 +60,7 @@ The paper builds on the metric framework established in Zharnikov [-@zharnikov-2
 
 The remainder of the paper is organized as follows. The Preliminaries section establishes notation and the SBT framework. Brownian Motion on Spheres develops the Laplace-Beltrami operator and eigenvalues. The Brand Perception SDE section formulates the model. Absorbed Brownian Motion on $S^7_+$ analyzes absorption and survival probability. Mixing Time and Non-Ergodicity establishes Theorems 3 and 4. Signal Dynamics and Brand Strategy connects the mathematics to signal dynamics, brand rehabilitation, and the D/A tradeoff. Numerical Demonstration applies the framework to five case-study brands. Discussion and Connections to the Research Program complete the paper.
 
-Figure 2 lays out the dependency structure of the four theorems and three propositions for readers who prefer to navigate the paper by results rather than sections. Theorem 1 (well-posedness) underwrites everything that follows; Theorem 2 (survival probability) supplies the eigenvalue $\lambda_{D,1} = 112$ that propagates into Theorem 3 (mixing) and Theorem 4 (non-ergodicity); Proposition 5 ($1/\delta^2$ recovery) and Proposition 7 (absorption ordering) are calibrated against Theorem 2; Proposition 6 (D/A Goldilocks zone) draws on the drift-diffusion balance set up in the Effect of Drift on Absorption section.
+Figure 1 lays out the dependency structure of the four theorems and three propositions for readers who prefer to navigate the paper by results rather than sections. Theorem 1 (well-posedness) underwrites everything that follows; Theorem 2 (survival probability) supplies the eigenvalue $\lambda_{D,1} = 112$ that propagates into Theorem 3 (mixing) and Theorem 4 (non-ergodicity); Proposition 5 ($1/\delta^2$ recovery) and Proposition 7 (absorption ordering) are calibrated against Theorem 2; Proposition 6 (D/A Goldilocks zone) draws on the drift-diffusion balance set up in the Effect of Drift on Absorption section.
 
 ```mermaid
 flowchart LR
@@ -82,7 +82,7 @@ flowchart LR
     P5 -.-> P7
 ```
 
-*Figure 2: Dependency DAG for the main results. Solid arrows indicate logical dependency (the consequent uses results, eigenvalues, or boundary-spectral-theory machinery established by the antecedent). The dashed arrow indicates that Proposition 7's coherence-conditional ordering is consistent with — but does not formally derive from — Proposition 5's recovery-time scaling.*
+*Figure 1: Dependency DAG for the main results. Solid arrows indicate logical dependency (the consequent uses results, eigenvalues, or boundary-spectral-theory machinery established by the antecedent). The dashed arrow indicates that Proposition 7's coherence-conditional ordering is consistent with — but does not formally derive from — Proposition 5's recovery-time scaling.*
 
 ---
 
@@ -333,7 +333,7 @@ $$dX_t = \left[ -\frac{7}{2} \sigma_0^2 X_t - \kappa \, P_{X_t}(X_t - x^*) + \al
 
 where the additional $-\frac{7}{2} \sigma_0^2 X_t$ term is the Ito-Stratonovich correction (the mean curvature drift from the Construction via Projection section, scaled by $\sigma_0^2$).
 
-Figure 1 summarizes the mechanism. Three exogenous inputs — signal encounters, ambient noise, and memory decay — feed into two on-manifold drift fields and one diffusion coefficient; the orthogonal projection $P_{X_t}$ keeps every increment tangent to $S^7$, and the boundary $\partial S^7_+$ separates the surviving trajectory from the absorbed one.
+Figure 2 summarizes the mechanism. Three exogenous inputs — signal encounters, ambient noise, and memory decay — feed into two on-manifold drift fields and one diffusion coefficient; the orthogonal projection $P_{X_t}$ keeps every increment tangent to $S^7$, and the boundary $\partial S^7_+$ separates the surviving trajectory from the absorbed one.
 
 ```mermaid
 flowchart TB
@@ -352,7 +352,7 @@ flowchart TB
     Refl --> Abs
 ```
 
-*Figure 1: Mechanism diagram of the brand-perception SDE on $S^7_+$. Exogenous inputs (left) drive two on-manifold drift fields and one diffusion coefficient; the projection $P_{X_t}$ keeps every increment tangent to $S^7$. Three regimes partition the state space: interior trajectories mix to the quasi-stationary distribution (Theorem 3); near-death trajectories activate the reflecting drift of the Semi-Permeable Boundaries section; boundary contact at $x_i = 0$ kills the process at time $\tau$ (Theorem 1).*
+*Figure 2: Mechanism diagram of the brand-perception SDE on $S^7_+$. Exogenous inputs (left) drive two on-manifold drift fields and one diffusion coefficient; the projection $P_{X_t}$ keeps every increment tangent to $S^7$. Three regimes partition the state space: interior trajectories mix to the quasi-stationary distribution (Theorem 3); near-death trajectories activate the reflecting drift of the Semi-Permeable Boundaries section; boundary contact at $x_i = 0$ kills the process at time $\tau$ (Theorem 1).*
 
 ### Well-Posedness
 
@@ -618,7 +618,7 @@ The ratio $\alpha \lambda_{\text{enc}} / \kappa$ determines the **effective sign
 
 The absorbing boundary model in the Absorbed Brownian Motion on $S^7_+$ section treats the octant boundary $\partial S^7_+$ as perfectly absorbing: once any perceptual dimension reaches zero, recovery is impossible. This is a useful idealization that enables clean theorems, but empirical brand history suggests a richer picture. Some brands have recovered from near-total loss of a perceptual dimension -- Tylenol restored trust after the 1982 cyanide crisis [@coombs-2007-protecting-organization-reputations], while BP's environmental credibility remains impaired more than a decade after the Deepwater Horizon disaster. The absorbing boundary cannot distinguish these cases. In this section, we introduce a semi-permeable boundary model that creates a "near-death zone" where recovery is possible but progressively slower as perception approaches zero, while retaining the absorbing condition at zero itself.
 
-#### 7.5.1 The Modified SDE with Reflecting Drift
+#### The Modified SDE with Reflecting Drift
 
 We modify the complete SDE above by introducing a reflecting drift term that activates when any perceptual dimension falls below a threshold $\epsilon > 0$. The threshold $\epsilon$ is a brand-specific parameter representing the *residual perceptual capital* -- the minimum level of dimensional perception below which recovery mechanisms engage but above which normal dynamics operate.
 
@@ -636,7 +636,7 @@ with the boundary condition: $X_{t,i} = 0$ remains absorbing. That is, if any co
 
 This construction relies on the analytic theory of degenerate diffusion generators on bounded domains: essential m-dissipativity arguments [@eisenhuth-2021-essential-mdissipativity-generators] provide existence and regularity for weak solutions to the corresponding Kolmogorov backward equation, which gives well-posedness of the modified SDE. The variational structure of the construction is grounded in the theory of sticky-reflecting diffusion as a Wasserstein gradient flow [@casteras-2024-stickyreflecting-diffusion-as]: the Fokker-Planck equation for the reflected Sticky Brownian Motion can be identified as a gradient flow of relative entropy in the space of probability measures, confirming that the semi-permeable dynamics have a rigorous variational basis. The semi-permeable behavior --- reflecting drift on the *open* near-death zone $(0, \epsilon)$ combined with absorbing dynamics at the *closed* boundary $\{0\}$ --- is induced by the construction itself: the open zone preserves probability mass while the boundary remains a killing set.
 
-#### 7.5.2 The Near-Death Zone
+#### The Near-Death Zone
 
 **Definition 2** (Near-death zone). *The near-death zone is the subset of $S^7_+$ where at least one perceptual dimension falls below the threshold:*
 
@@ -652,7 +652,7 @@ The near-death zone $\mathcal{N}_\epsilon$ partitions $S^7_+$ into three dynamic
 
 The three-regime structure resolves a tension in the basic absorbing boundary model. In that model, a brand perception at $x_i = .001$ is treated identically to one at $x_i = .499$ (both are alive), despite the former being far more precarious. The semi-permeable boundary model makes this distinction explicit: the former is in the near-death zone, subject to the reflecting drift and the slow-recovery dynamics derived below.
 
-#### 7.5.3 Recovery Time Scaling
+#### Recovery Time Scaling
 
 The central quantitative result of the semi-permeable boundary model concerns the time required for a dimension to recover from the near-death zone back to the threshold $\epsilon$.
 
@@ -692,7 +692,7 @@ The quadratic scaling $\tau_{\text{return}} \sim 1/\delta^2$ has a vivid interpr
 
 *Falsification: Proposition 5 is falsified if recovery times for documented brand crises do not scale approximately as $1/\delta^2$ in residual-dimension severity, after controlling for response strategy and pre-crisis emission profile.*
 
-#### 7.5.4 Application: Tylenol vs. BP
+#### Application: Tylenol vs. BP
 
 The semi-permeable boundary model distinguishes between brand crises with different recovery profiles.
 
@@ -706,7 +706,7 @@ The contrast illustrates the key insight: **in the model, recovery from brand cr
 
 The D/A Ratio as Drift Control section observed that the D/A ratio $r$ controls the drift-diffusion balance and that SBT's recommended range of $r \in [.55, .65]$ emerges from the requirement of sufficient drift to prevent absorption while maintaining sufficient diffusion to enable crystallization. Here we make this precise by deriving the optimal range from the SDE parameters.
 
-#### 7.6.1 Parametrizing the SDE by D/A Ratio
+#### Parametrizing the SDE by D/A Ratio
 
 We parametrize the complete SDE explicitly by the D/A ratio $r \in [0, 1]$. The designed component of signals provides directional drift, while the ambient component contributes stochastic diffusion. The parametrized coefficients are:
 
@@ -720,7 +720,7 @@ The two boundary regimes are:
 
 - **$r = 0$ (pure ambient)**: Zero drift, maximum diffusion $\sigma_0\sqrt{2}$. The process is pure Brownian motion (plus decay), and absorption is certain (see the Absorption Probability section above). Perception is maximally exploratory but unstable.
 
-#### 7.6.2 The Absorption-Exploration Tradeoff
+#### The Absorption-Exploration Tradeoff
 
 We define two competing objectives as functions of $r$:
 
@@ -740,7 +740,7 @@ $$E(r) = \mathbb{E}\left[ \text{Vol}\left( \bigcup_{t \in [0, T]} B_\rho(X_t) \c
 
 where $B_\rho(X_t)$ is a geodesic ball of radius $\rho$ around $X_t$. For high $r$ (strong drift, weak diffusion), the trajectory is confined near $s/\|s\|$ and $E(r)$ is small. For low $r$ (weak drift, strong diffusion), the trajectory explores widely and $E(r)$ is large (until absorption).
 
-#### 7.6.3 The Optimal Range
+#### The Optimal Range
 
 **Proposition 6** (D/A Goldilocks zone). *For the parametrized SDE with $\sigma_0 = 0.1$, $\lambda_{D,1} = 112$, and drift parameters calibrated to the canonical brands, a sensitivity analysis across the empirically plausible range of $\alpha \lambda_{\text{enc}} \cdot d_\partial \in [1.0, 3.0]$ yields minimum-survival D/A ratios spanning approximately $[0.32, 0.72]$. At the representative midpoint value $\alpha \lambda_{\text{enc}} \cdot d_\partial = 1.5$, the survival lower bound is $r \approx .54$ and the crystallization upper bound is $r \approx .65$, placing the Goldilocks zone at $r^* \in [0.55, 0.65]$ — consistent with the empirically observed optimal D/A range.*
 
@@ -1029,7 +1029,7 @@ The dynamical framework opens several directions for future work (see the Empiri
 
 ## Acknowledgments
 
-AI assistants (Claude Opus 4.7, Grok 4.1, Gemini 3.1) were used for initial literature search, for software development — implementing and running the companion computation script(s) that reproduce the paper's reported numerical and simulation results — and for editorial refinement; all theoretical claims, propositions, and interpretations are the author's sole responsibility.
+AI assistants (Claude Opus 4.8, Grok 4.20, Gemini 2.5 Pro) were used for initial literature search, for software development — implementing and running the companion computation script(s) that reproduce the paper's reported numerical and simulation results — and for editorial refinement; all theoretical claims, propositions, and interpretations are the author's sole responsibility.
 
 ---
 
@@ -1065,4 +1065,4 @@ All numerical results reported in this paper are reproducible from the companion
 
 ---
 
-*Appendix B has been merged into the road-map of the introduction; the dependency DAG appears as Figure 2.*
+*Appendix B has been merged into the road-map of the introduction; the dependency DAG appears as Figure 1.*

@@ -6,7 +6,7 @@ ORCID: 0009-0000-6893-9231
 
 DOI: [10.5281/zenodo.18945295](https://doi.org/10.5281/zenodo.18945295)
 
-Working Paper v2.3.0 – March 2026 (revised June 2026)
+Working Paper v2.2.0 – March 2026 (revised June 2026)
 
 ---
 
@@ -698,7 +698,7 @@ Table 5: Canonical Brand Emission Profiles (1–10 Scale).
 | Cultural | 9.0 | 7.5 | 7.0 | 7.5 | 4.0 |
 | Temporal | 9.5 | 6.0 | 6.5 | 2.5 | 2.0 |
 
-*Notes*: Values are illustrative, derived from qualitative SBT coherence assessments in Zharnikov [-@zharnikov-2026-spectral-brand-theory-computational-framework]. Dimensions listed in canonical SBT order. Table formerly designated Table 4 in prior versions; renumbered following insertion of Tables 2 and 3 at §4.
+*Notes*: Values are illustrative, derived from qualitative SBT coherence assessments in Zharnikov [-@zharnikov-2026-spectral-brand-theory-computational-framework]. Dimensions listed in canonical SBT order.
 
 ### 9.2 Pairwise Aitchison Distances
 
@@ -963,4 +963,4 @@ $$d_A = \sqrt{0.036 + 0.137 + 0.177 + 0.000 + 0.054 + 1.255 + 0.147 + 1.279} = \
 
 ## Acknowledgments
 
-AI assistants (Claude Opus 4.7, Grok 4.1, Gemini 3.1) were used for initial literature search and editorial refinement; all theoretical claims, propositions, and interpretations are the author's sole responsibility.
+AI assistants (Claude Opus 4.8, Grok 4.20, Gemini 2.5 Pro) were used for initial literature search and editorial refinement; all theoretical claims, propositions, and interpretations are the author's sole responsibility.

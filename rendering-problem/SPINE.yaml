@@ -1,0 +1,341 @@
+# SPINE.yaml — The Rendering Problem (2026l)
+#
+# RETROFIT spine: extracted descriptively from the completed paper.md
+# ([internal path removed]), NOT authored generatively before
+# prose. Part of the SPINE-for-all-active-canonical project
+# ([internal path removed], decision D4).
+#
+# Schema v0.1 ([internal path removed] §"Schema v0.1"):
+# propositions + corpus_precedents + external_anchors + open + changelog.
+# This is a PURE-THEORY paper — no author-produced data, no simulations, no
+# computed table values, no AI-tool outputs. The six propositions are stated
+# as testable but are explicitly NOT tested in the paper (§7 single-author
+# limitation). Hence v0.1, not v0.2.
+#
+# This is a flagship "render-at-consumption / source-vs-rendering" paper that
+# many later papers extend or refine. The spine captures its actual claims:
+# the rendering problem as a domain-independent structural pattern with six
+# defining properties and six testable propositions.
+
+spine_version: "0.1"
+spine_doc_version: "0.1.0"     # retrofit spine first lock (2026-06-14, D4)
+paper_key: "2026l"
+provenance: retrofit
+title: "The Rendering Problem: From Genetic Expression to Brand Perception"
+status: >-
+  Published working paper v1.0.0 (March 2026; DOI 10.5281/zenodo.19064426).
+  Retrofit spine extracted post-hoc from the completed paper.md; no prose was
+  generated from this spine.
+
+thesis: |
+  Specifications underspecify their implementations. The rendering problem is
+  the domain-independent structural pattern in which a specification of bounded
+  complexity is rendered into an implementation of vastly greater complexity,
+  producing weakly emergent phenomena that no specification contains. It is not
+  a metaphor borrowed from biology and applied to business but an isomorphism:
+  the same informational constraint operates across biological (genome →
+  phenotype → consciousness), organizational (org-schema → operations →
+  customer experience), and perceptual (brand emission policy → signal field →
+  perception cloud) chains. Three structural properties always hold: a
+  specification gap (the implementation holds far more information than the
+  specification), a configuration layer (identical specifications yield
+  different implementations under different contextual parameters), and
+  irreducible emergence in Bedau's weak-emergence sense. Six testable
+  propositions follow. As AI accelerates implementation, the specification
+  becomes the binding constraint and the locus of value — the scarce resource
+  of the AI era.
+
+# ============================================================================
+# Boundary conditions — when a system exhibits the rendering problem
+# (paper §3 Definition 6 + Boundary conditions paragraph)
+# ============================================================================
+boundary_conditions:
+  - id: C1
+    statement: >-
+      A bounded, enumerable specification S exists: it can be fully enumerated,
+      inspected, and compared across instances (paper Definition 1).
+    observable: "A finite, explicit encoding of constraints/parameters (genome, org-schema, brand emission policy)."
+    excludes: "Systems with no externalizable specification."
+  - id: C2
+    statement: >-
+      The implementation space is vastly larger than the specification can
+      constrain — the specification provides a COORDINATE SYSTEM, not a
+      blueprint. The distinction is a matter of degree, not kind.
+    observable: "Ratio of implementation descriptive complexity to specification complexity is large."
+    excludes: >-
+      Blueprint specifications that fully determine their implementation
+      (a thermostat, a sorting algorithm, a simple recipe) — Δ ≈ 0, no
+      rendering problem.
+
+# ============================================================================
+# Propositions
+#   P1-P3   = structural pattern (specification gap, configuration, emergence)
+#   P4-P9   = the six testable propositions (paper §5 Propositions 1-6)
+#   P10-P12 = positioning / refinement claims (isomorphism, hardened core,
+#             AI-as-accelerant)
+# ============================================================================
+propositions:
+  - id: P1
+    statement: >-
+      The rendering problem is a domain-independent STRUCTURAL pattern, not a
+      metaphor: biology, organizations, and brands all instantiate the same
+      pattern because each is a specification-to-implementation chain in which
+      three defining properties (specification gap, configuration dependence,
+      weak emergence) hold simultaneously (paper §1, §3 Definition 6).
+    conditions: "C1, C2"
+    antecedents: []
+    body_sections: ["§1 Introduction", "§3 Structural Definitions (Def. 6)"]
+
+  - id: P2
+    statement: >-
+      The specification gap — the descriptive-complexity differential between
+      implementation and specification — is a STRUCTURAL property of
+      specification-to-implementation chains, not an artifact of incomplete
+      specification. A specification that fully determined its implementation
+      would not exhibit the rendering problem (paper Definition 3).
+    conditions: "C1, C2"
+    antecedents: [P1]
+    body_sections: ["§3 Structural Definitions (Def. 3)"]
+
+  - id: P3
+    statement: >-
+      A configuration layer mediates between specification and implementation,
+      selecting which elements of S are active in a given context, so that
+      identical S yields non-identical implementations under varying
+      configuration (paper Definition 4). The gap is filled by three
+      information sources — environmental input, self-organizational dynamics,
+      and configuration selection — each independently identified in biology
+      and applicable across domains (paper §3.1).
+    conditions: "C1, C2"
+    antecedents: [P1]
+    body_sections: ["§3 Structural Definitions (Def. 4)", "§3.1 The Three Sources of the Gap"]
+
+  - id: P4
+    statement: >-
+      (Proposition 1 — Structural Specification Gap) In any system exhibiting
+      the rendering problem, the implementation's descriptive complexity
+      substantially exceeds the specification's, and this gap cannot be closed
+      by making the specification more detailed. Falsified by a non-trivial
+      system where adding specification detail closes the gap yet emergence
+      persists.
+    conditions: "C1, C2"
+    antecedents: [P2]
+    body_sections: ["§5 Proposition 1", "Appendix A.5"]
+
+  - id: P5
+    statement: >-
+      (Proposition 2 — Configuration Independence) Identical specifications
+      produce non-identical implementations when the configuration layer
+      differs (S1 = S2 ∧ Γ1 ≠ Γ2 ⟹ M1 ≠ M2). This is the inverse of spectral
+      metamerism, where distinct profiles project to equivalent outputs; here
+      identical specifications project to distinct implementations through
+      configuration variance. Falsified if identical specifications with
+      different configurations yield identical implementations over extended
+      time.
+    conditions: "C1, C2"
+    antecedents: [P3]
+    body_sections: ["§5 Proposition 2", "Appendix A.3"]
+
+  - id: P6
+    statement: >-
+      (Proposition 3 — Irreducible Emergence) The emergent phenomenon E cannot
+      be predicted from the specification S alone, even given complete
+      knowledge of S (P(E | S) < 1), satisfying Bedau's weak-emergence
+      criterion — derivable in principle from micro-dynamics but not deducible
+      from the specification without full-system simulation. Falsified by a
+      system where complete specification knowledge yields complete prediction
+      of the emergent layer.
+    conditions: "C1, C2"
+    antecedents: [P1]
+    body_sections: ["§5 Proposition 3", "§3 Definition 5", "Appendix A.5"]
+
+  - id: P7
+    statement: >-
+      (Proposition 4 — Temporal Divergence) For any two implementations M1, M2
+      of the same specification S, the distance d(M1, M2) increases over time
+      in expectation. Because the gap is filled partly through path-dependent
+      self-organization and time-varying environment, implementations of the
+      same specification DIVERGE rather than converge — a structural
+      consequence of non-ergodicity, not a failure of implementation fidelity.
+      Falsified by implementations of identical specifications converging over
+      time.
+    conditions: "C1, C2"
+    antecedents: [P3, P5]
+    body_sections: ["§5 Proposition 4", "§4.6 Non-Ergodicity", "Appendix A.2"]
+
+  - id: P8
+    statement: >-
+      (Proposition 5 — Specification Persistence) In systems exhibiting the
+      rendering problem, the specification persists through implementation
+      turnover: the specification's lifespan exceeds the average component
+      lifespan by at least an order of magnitude (DNA persists while cells turn
+      over; L0 contract persists while staff and process turn over; semiotic
+      identity persists while campaigns are rebuilt). In organizations the
+      persistence is conditional — specifications are revisable but persist
+      because revision is costly (Ackoff's purposeful systems; canalization).
+      Falsified by a domain where the implementation outlasts the specification.
+    conditions: "C1, C2"
+    antecedents: [P1]
+    body_sections: ["§5 Proposition 5", "§6.2 The Hardened Core"]
+
+  - id: P9
+    statement: >-
+      (Proposition 6 — Specification Value Amplification under Acceleration) As
+      the rate of implementation generation increases, the value of
+      specification quality increases; organizations with explicit, testable
+      specifications extract more coherent value from implementation
+      acceleration (including AI) than organizations without them. A
+      between-groups, testable directional hypothesis restating Meadows'
+      leverage-point hierarchy under AI acceleration. Falsified if increasing
+      implementation speed reduces the value of specification quality.
+    conditions: "C1, C2"
+    antecedents: [P2]
+    body_sections: ["§5 Proposition 6", "§6.3 AI as Implementation Accelerant"]
+
+  - id: P10
+    statement: >-
+      The cross-domain correspondence is neither analogy (surface similarity)
+      nor homology (shared evolutionary origin) but ISOMORPHISM: the same
+      formal pattern arising independently because the underlying constraint
+      (the specification gap) is universal. This is why the rendering problem
+      extends Morgan's organizational metaphors, deepens Neilson et al.'s
+      shallow "organizational DNA" mapping, and adds to Beer's Viable System
+      Model the structural impossibility of full specification.
+    conditions: "C1, C2"
+    antecedents: [P1, P2]
+    body_sections: ["§4 Positioning in the Literature", "§6.1 The Rendering Problem Is Not a Metaphor", "§8 Conclusion"]
+
+  - id: P11
+    statement: >-
+      Implementations have internal structure with component lifespans
+      distributed across a hierarchy: a HARDENED CORE that stores identity
+      (cortical neurons; OST's L0 customer-experience contract; the brand's
+      semiotic identity) surrounded by disposable layers that rotate
+      continuously. Design effort should concentrate on specification elements
+      whose persistence exceeds implementation turnover by at least an order of
+      magnitude (refines Definition 2).
+    conditions: "C1, C2"
+    antecedents: [P8]
+    body_sections: ["§6.2 The Hardened Core"]
+
+  - id: P12
+    statement: >-
+      The specification gap is not a deficiency but the phenomenon itself: the
+      emergent layer (consciousness, customer experience, perception cloud)
+      lives in the gap. One cannot control the emergent layer; one can only
+      structure the probability distribution over emergent outcomes. SBT exists
+      to measure what happens in the gap; OST exists to structure the
+      specification side; the rendering problem formalizes the gap itself as an
+      object of study.
+    conditions: "C1, C2"
+    antecedents: [P3, P6]
+    body_sections: ["§6.4 The Gap as the Phenomenon", "§8 Conclusion"]
+
+# ============================================================================
+# Cross-paper engagement (real substrate paper_keys)
+# ============================================================================
+corpus_precedents:
+  - paper_key: 2026a
+    relationship: applies
+    spine_nodes: [P3, P6, P12]
+    note: >-
+      SBT formalizes the brand instance of the rendering problem: brands emit
+      across 8 dimensions, observers filter through heterogeneous spectral
+      profiles into perception clouds. SBT's observer heterogeneity supplies
+      the Proposition 3 (irreducible emergence) evidence at the brand level.
+  - paper_key: 2026i
+    relationship: applies
+    spine_nodes: [P3, P8, P11]
+    note: >-
+      OST defines the 6-level (L0-L5) specification cascade and the L0
+      customer-experience contract that is the organizational hardened core;
+      the org-schema is the organizational specification whose operations
+      exceed it by orders of magnitude.
+  - paper_key: 2026e
+    relationship: extends
+    spine_nodes: [P5]
+    note: >-
+      Spectral metamerism (distinct emission profiles → equivalent perception
+      clouds) is the special case of the rendering operator's non-injectivity;
+      Proposition 2 (configuration independence) is its structural inverse
+      (Appendix A.4).
+  - paper_key: 2026j
+    relationship: applies
+    spine_nodes: [P7]
+    note: >-
+      Non-ergodic brand perception supplies the path-dependent, non-ergodic
+      accumulation that drives Proposition 4 (temporal divergence) at the
+      brand level.
+  - paper_key: org-as-metadata
+    relationship: extends
+    spine_nodes: [P3, P5]
+    note: >-
+      Organizational metamerism (Zharnikov 2026af) — distinct organizational
+      configurations producing equivalent observable outputs — is the
+      inverse pathway of the specification-to-implementation chain in the
+      organizational domain (paper §2.2).
+  - paper_key: 2026ae
+    relationship: refines
+    spine_nodes: [P3]
+    note: >-
+      Verification-as-operator (Zharnikov 2026ae) formalizes the configuration/
+      control relationship as a spectral projection operator enforcing the
+      acceptance-test cascade — the verification layer compressing the
+      implementation surface back toward the specification subspace (paper §2.2).
+  - paper_key: 2026ag
+    relationship: extends
+    spine_nodes: [P11]
+    note: >-
+      The six-tier ontology (Zharnikov 2026ag) supplies the position-as-
+      projection result: a position is a projection of process space onto the
+      personnel dimension, structurally identical to cell differentiation
+      (paper §2.2).
+
+# ============================================================================
+# External anchor literature (real keys verified against the paper's reference
+# list; where a stable substrate citation_key is unconfirmed, the anchor is
+# described in `note` and citation_keys are omitted rather than invented)
+# ============================================================================
+external_anchors:
+  - {citation_key: bedau-1997-weak-emergence, role: defines_emergence_criterion, spine_nodes: [P6], note: "Bedau (1997) weak emergence — Definition 5; the adopted emergence criterion between trivial predictability and strong irreducibility."}
+  - {citation_key: dawkins-1976-selfish-gene, role: supports_specification_implementation_distinction, spine_nodes: [P1, P8], note: "Dawkins (1976, 1982) gene-centric view: body as survival machine (implementation) serving the gene (specification); productively critiqued by Noble/Oyama/Gould-Lewontin (paper §4.3)."}
+  - {citation_key: fraga-2005-epigenetic-differences-monozygotic, role: empirical_anchor_for_configuration_and_divergence, spine_nodes: [P3, P5, P7], note: "Fraga et al. (2005): identical twins (same genome, divergent epigenome) diverge with age — the biological proof of configuration dependence and temporal divergence."}
+  - {citation_key: peters-2019-ergodicity-problem-economics, role: provides_nonergodicity_property, spine_nodes: [P7], note: "Peters (2019): time average diverges from ensemble average for multiplicative processes — the structural basis for predicting divergence not convergence."}
+  - {citation_key: whitehead-1929-process-and-reality, role: process_ontology_foundation, spine_nodes: [P8, P11], note: "Whitehead (1929) process philosophy + Maturana & Varela (1980) autopoiesis: reality as process not substance; the rendering problem adds the persistent-specification / renewed-implementation asymmetry (paper §4.5)."}
+  - {citation_key: beer-1972-brain-of-the-firm, role: systems_theory_precedent, spine_nodes: [P3, P10], note: "Beer's Viable System Model: recursive specification-to-implementation hierarchy; the rendering problem adds the structural impossibility of full specification (paper §4.4)."}
+  - {citation_key: meadows-2008-thinking-in-systems, role: leverage_point_anchor, spine_nodes: [P9], note: "Meadows (2008) leverage points: specification-layer interventions dominate implementation-layer ones; the leverage differential grows with implementation speed (Proposition 6)."}
+  - {citation_key: anderson-1972-more-is-different, role: emergence_precedent, spine_nodes: [P6, P12], note: "Anderson (1972) 'More Is Different' + Kauffman (1993) order-for-free + Holland (2012) + Epstein (2006): the emergence tradition the paper incorporates (paper §4.7)."}
+
+# ============================================================================
+# Open questions / boundary edges
+# ============================================================================
+open:
+  - >-
+    No functional form for the interaction among environment, self-organization,
+    and configuration is proposed; the rendering problem is a structural
+    characterization, not a predictive model (paper §3.1). Future formalization
+    is invited.
+  - >-
+    Cross-domain measurement of the specification gap is unsolved: no accepted
+    quantification of phenotype information content exists, and implementation
+    information lacks standardized measurement in organizations and brands;
+    Proposition 1 requires per-domain operationalization (paper §7).
+  - >-
+    The boundary between "coordinate system" and "blueprint" specifications is a
+    matter of degree with no principled threshold; future work should
+    characterize the specification complexity below which the rendering
+    problem's properties become negligible (paper §7).
+  - >-
+    The propositions are stated as testable but are UNTESTED (single-author
+    theoretical framework); empirical validation requires collaboration with
+    domain specialists in biology, organizational behavior, and consumer
+    psychology (paper §7).
+  - >-
+    Western bias: whether the structural claims hold for relational/tacit
+    specifications (keiretsu, chaebol, guanxi-based forms; Polanyi's tacit
+    dimension) requires separate investigation; Proposition 5 may need a
+    tacit-specification-persistence extension (paper §7).
+
+# ============================================================================
+# Spine changelog — append-only
+# ============================================================================

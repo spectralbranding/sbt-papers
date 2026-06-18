@@ -6,7 +6,7 @@ ORCID: 0009-0000-6893-9231
 
 DOI: [10.5281/zenodo.18945591](https://doi.org/10.5281/zenodo.18945591)
 
-Working Paper v1.1.0 – March 2026 (revised June 2026)
+Working Paper v1.2.0 – March 2026 (revised June 2026)
 
 ---
 
@@ -36,7 +36,7 @@ The present paper provides the geometric foundations. Three existing bodies of w
 
 3. **Forkability as subspace decomposition.** The fork model (sharing L0--L2 while diverging on L3--L5) decomposes $[0,1]^{48}$ into a 24-dimensional shared subspace and a 24-dimensional private subspace, providing the geometric foundation for franchises, open-source ecosystems, and denominational structures.
 
-These results are distinct from the NK landscape tradition [@kauffman-1993-origins-order-selforganization; @levinthal-1997-adaptation-rugged-landscapes; @rivkin-2000-imitation-complex-strategies], which models the difficulty of *searching* for optimal configurations on a fitness landscape. NK landscapes ask: "How hard is it to find the optimum?" The present analysis asks: "How much of the specification space can any collection of configurations cover?" The two questions are complementary, not competing: NK shows that search is hard; the present paper shows that even perfect search cannot produce exhaustive specification. The distinction is between computational complexity (NK) and geometric impossibility (the present paper). Together they establish what the NK landscape comparison below formalizes as the double bind that makes specialization the only viable organizational strategy. The relationship among these framework archetypes is summarized in Figure 2.
+These results are distinct from the NK landscape tradition [@kauffman-1993-origins-order-selforganization; @levinthal-1997-adaptation-rugged-landscapes; @rivkin-2000-imitation-complex-strategies], which models the difficulty of *searching* for optimal configurations on a fitness landscape. NK landscapes ask: "How hard is it to find the optimum?" The present analysis asks: "How much of the specification space can any collection of configurations cover?" The two questions are complementary, not competing: NK shows that search is hard; the present paper shows that even perfect search cannot produce exhaustive specification. The distinction is between computational complexity (NK) and geometric impossibility (the present paper). Together they establish what the NK landscape comparison below formalizes as the double bind that makes specialization the only viable organizational strategy. The relationship among these framework archetypes is summarized in Figure 3.
 
 The paper builds on the metric framework established in Zharnikov [-@zharnikov-2026-brand-space-geometry-formal-metric], which defined formal metrics for Spectral Brand Theory's 8-dimensional perception space. Whereas that paper equipped the 8-dimensional brand space with the Aitchison and Fisher-Rao metrics, the present paper extends the geometric analysis to the 48-dimensional organizational specification space that arises when the 8-dimensional framework is applied at each of six hierarchical levels.
 
@@ -138,7 +138,7 @@ Table 1: Volume Ratio of Inscribed Ball to Unit Cube by Dimension.
 
 *Notes*: Ball radius = 0.5 (inscribed in unit cube). Values reproduced exactly by the companion computation script (table1_ball_cube_ratios function). See Vershynin [-@vershynin-2018-highdimensional-probability-introduction] for the full measure-concentration theory underlying these ratios.
 
-The decay profile of the inscribed-ball volume across dimensions is plotted in Figure 3, which renders the super-exponential nature of the collapse on a single log-scaled axis.
+The decay profile of the inscribed-ball volume across dimensions is plotted in Figure 2, which renders the super-exponential nature of the collapse on a single log-scaled axis.
 
 ```mermaid
 xychart-beta
@@ -148,7 +148,7 @@ xychart-beta
     line [-0.10, -0.51, -1.80, -5.45, -9.94, -15.00, -20.48, -26.31]
 ```
 
-*Figure 3: Volume of the inscribed ball $V_n(0.5)$ as a function of dimension $n$, on a base-10 logarithmic vertical axis. Anchor values: $V_2(0.5) \approx .785$, $V_8(0.5) \approx .0159$, $V_{24}(0.5) \approx 1.15 \times 10^{-10}$, $V_{48}(0.5) \approx 4.89 \times 10^{-27}$. The slope steepens monotonically with $n$: each additional dimension multiplies the log-volume penalty rather than adding to it. Reproduced by the companion computation script (figure3_volume_curve function).*
+*Figure 2: Volume of the inscribed ball $V_n(0.5)$ as a function of dimension $n$, on a base-10 logarithmic vertical axis. Anchor values: $V_2(0.5) \approx .785$, $V_8(0.5) \approx .0159$, $V_{24}(0.5) \approx 1.15 \times 10^{-10}$, $V_{48}(0.5) \approx 4.89 \times 10^{-27}$. The slope steepens monotonically with $n$: each additional dimension multiplies the log-volume penalty rather than adding to it. Reproduced by the companion computation script (figure3_volume_curve function).*
 
 At $n = 48$ -- the dimensionality of OST's activation matrix -- the inscribed ball occupies approximately $4.89 \times 10^{-27}$ of the cube's volume. In plain language: in a 48-dimensional space, almost all of the volume is concentrated in the "corners" of the cube, far from any central specification. The center of the space is, in a precise volumetric sense, nowhere.
 
@@ -541,7 +541,7 @@ The two frameworks are complementary, not competing:
 
 ### Comparison with Other Frameworks
 
-Two additional frameworks merit differentiation. The positioning of R5 relative to four canonical framework archetypes along the search-vs-specification and discrete-vs-continuous axes is summarized in Figure 2.
+Two additional frameworks merit differentiation. The positioning of R5 relative to four canonical framework archetypes along the search-vs-specification and discrete-vs-continuous axes is summarized in Figure 3.
 
 ```mermaid
 quadrantChart
@@ -558,7 +558,7 @@ quadrantChart
     Levinthal Fitness Landscapes: [0.85, 0.15]
 ```
 
-*Figure 2: Framework-positioning quadrant. The horizontal axis runs from discrete to continuous parameter spaces; the vertical axis runs from search-based to specification-based theories. R5 occupies the specification--continuous quadrant, geometrically distinct from search-based accounts (NK landscapes, fitness landscapes) and discrete-specification accounts (Axiomatic Design, Star Model).*
+*Figure 3: Framework-positioning quadrant. The horizontal axis runs from discrete to continuous parameter spaces; the vertical axis runs from search-based to specification-based theories. R5 occupies the specification--continuous quadrant, geometrically distinct from search-based accounts (NK landscapes, fitness landscapes) and discrete-specification accounts (Axiomatic Design, Star Model).*
 
 **Axiomatic Design [@suh-1990-principles-design-oxford; @suh-2001-axiomatic-design-advances].** Suh's theory maps Functional Requirements (FRs) to Design Parameters (DPs), with the Independence Axiom requiring that FRs be independently satisfiable and the Information Axiom minimizing information content. Axiomatic Design is mathematically rigorous but applies to *product* design, not organizational design. Its FR-DP mapping is fundamentally about decomposition and independence, not about the volumetric properties of high-dimensional parameter spaces. The present paper shares Suh's concern with information content but addresses it in an organizational context with a different mathematical apparatus (volume ratios rather than FR-DP matrices). Importantly, Suh's Information Axiom quantifies the information content of design specifications, whereas the present paper quantifies the *volumetric coverage* of the specification space -- the two framings are complementary rather than equivalent.
 
@@ -654,7 +654,7 @@ Three methodological priorities follow from the theoretical results for research
 
 This paper establishes that comprehensive organizational specification is geometrically impossible in any realistically high-dimensional design space. The Coverage Impossibility Theorem demonstrates that the fraction of $[0,1]^{48}$ coverable by any feasible collection of templates is negligible. Cascade and fork mechanisms are not design conveniences but necessary compressions that reduce effective dimensionality and amortize information cost.
 
-These results carry three theoretical contributions. First, they supply a volumetric foundation for the perennial observation that "one size does not fit all," moving beyond metaphor to precise geometric bounds. Second, they formalize modularity as subspace decomposition and hierarchy as dimensionality reduction -- the L0-to-L5 cascade collapse mechanism is illustrated in Figure 1 -- providing geometric microfoundations for modularity theory [@baldwin-2000-design-rules-power; @langlois-2002-modularity-technology-organization; @puranam-2012-organization-design-epistemic; @puranam-2018-microstructure-organizations-oxford] and the epistemic interdependence perspective. Third, they distinguish specification impossibility from search complexity, showing that even perfect search cannot overcome volumetric sparsity -- the positioning of this paper relative to search-based and discrete-specification alternatives is captured in Figure 2 -- thereby establishing generative, specialization-based design as a geometric necessity, not merely a practical preference.
+These results carry three theoretical contributions. First, they supply a volumetric foundation for the perennial observation that "one size does not fit all," moving beyond metaphor to precise geometric bounds. Second, they formalize modularity as subspace decomposition and hierarchy as dimensionality reduction -- the L0-to-L5 cascade collapse mechanism is illustrated in Figure 1 -- providing geometric microfoundations for modularity theory [@baldwin-2000-design-rules-power; @langlois-2002-modularity-technology-organization; @puranam-2012-organization-design-epistemic; @puranam-2018-microstructure-organizations-oxford] and the epistemic interdependence perspective. Third, they distinguish specification impossibility from search complexity, showing that even perfect search cannot overcome volumetric sparsity -- the positioning of this paper relative to search-based and discrete-specification alternatives is captured in Figure 3 -- thereby establishing generative, specialization-based design as a geometric necessity, not merely a practical preference.
 
 Practically, the framework explains the repeated failure of universalistic management fashions, clarifies why templates function as low-dimensional projections that necessarily leave most organizational reality unspecified, and offers designers a dimensional rather than categorical language for organizational configuration. The cascade model implies that output specification (purpose--values--strategy) is irreducible while coordination specification is derivable -- with direct consequences for AI-augmented organizational design.
 
@@ -666,7 +666,7 @@ The bridge to Spectral Brand Theory closes the theoretical loop. OST's cascade m
 
 ## Companion Computation Script
 
-All numerical values cited in this paper -- Tables 1--9, the Figure 3 data series, the Proposition 1 coherence-coupling schedule, $V_{48}(0.1) \approx 1.38 \times 10^{-60}$, $d_{\text{eff}} = 15.75$, $H_{48} = 159.4$ bits, $\text{CR} \approx 3.05$, $d_{\text{private,eff}} = 1.75$, and all cascade-sensitivity and fork-cascade interaction values -- are reproduced by the companion computation script at:
+All numerical values cited in this paper -- Tables 1--9, the Figure 2 data series, the Proposition 1 coherence-coupling schedule, $V_{48}(0.1) \approx 1.38 \times 10^{-60}$, $d_{\text{eff}} = 15.75$, $H_{48} = 159.4$ bits, $\text{CR} \approx 3.05$, $d_{\text{private,eff}} = 1.75$, and all cascade-sensitivity and fork-cascade interaction values -- are reproduced by the companion computation script at:
 
 `[internal path removed]`
 
@@ -677,13 +677,13 @@ uv run --with numpy,scipy \
   python [internal path removed]
 ```
 
-The script includes assertion checks that verify each cited figure to stated precision. One rounding note: $H_{48} = 48 \times \log_2(10) = 159.45$ bits, which the paper rounds to 159.4; $H_{\text{eff}} = 15.75 \times \log_2(10) = 52.3$ bits (the paper's 52.5 is a less precise rounding); and the fork savings figure at $M = 100$ is approximately 50% by the formula (the paper's stated 44% appears to be a rounding artifact). The script documents these discrepancies in comments.
+The script includes assertion checks that verify each cited figure to stated precision. One rounding note: $H_{48} = 48 \times \log_2(10) = 159.45$ bits, which the paper rounds to 159.4, and $H_{\text{eff}} = 15.75 \times \log_2(10) = 52.3$ bits. The script documents the exact values in comments.
 
 ---
 
 ## Acknowledgments
 
-AI assistants (Claude Opus 4.7, Grok 4.1, Gemini 3.1) were used for initial literature search, for software development — implementing and running the companion computation script(s) that reproduce the paper's reported numerical and simulation results — and for editorial refinement; all theoretical claims, propositions, and interpretations are the author's sole responsibility.
+AI assistants (Claude Opus 4.8, Grok 4.20, Gemini 2.5 Pro) were used for initial literature search, for software development — implementing and running the companion computation script(s) that reproduce the paper's reported numerical and simulation results — and for editorial refinement; all theoretical claims, propositions, and interpretations are the author's sole responsibility.
 
 **CRediT**: Conceptualization, D.Z.; Formal Analysis, D.Z.; Writing -- Original Draft, D.Z.; Writing -- Review & Editing, D.Z.
 
