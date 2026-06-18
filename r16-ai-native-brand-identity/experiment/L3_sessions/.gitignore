@@ -1,0 +1,2 @@
+# Raw session logs live on HuggingFace (see DATA_MANIFEST hf_archive)
+*.jsonl
