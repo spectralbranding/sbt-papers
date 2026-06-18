@@ -4,9 +4,22 @@
 data_manifest:
   - id: "zenodo-preprint"
     description: >
-      Published preprint PDF on Zenodo. No external datasets —
-      this is a theoretical paper with no empirical data collection.
+      Published preprint PDF on Zenodo. This is a primarily theoretical paper;
+      its single empirical component is the competitive-interference stability
+      experiment below.
     archive: "Zenodo"
     doi: "10.5281/zenodo.18945523"
     format: "PDF"
     access: public
+
+  - id: "competitive-interference-stability"
+    description: >
+      LLM stability experiment supporting the fixed-geometry assumption:
+      5 focal brands x 3 competitor-distance tiers x 4 conditions across
+      5 models = 250 API calls. Returns null competitive-interference effects.
+    archive: "Hugging Face"
+    repository: "spectralbranding/exp-competitive-interference"
+    format: "JSONL (250 records)"
+    access: public
+    doi: "10.57967/hf/8435"
+    hf_dataset: "spectralbranding/exp-competitive-interference"
