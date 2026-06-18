@@ -1,0 +1,64 @@
+# SBT author module for the THIRD federated ontology-negotiation experiment
+# (the genuine same-key CONFLICT run: SBT <-> Spence on the term "signal").
+#
+# "SBT, the perception author": owns the receiver-side vocabulary of how a brand
+# signal is completed in an observer. In THIS experiment SBT OWNS the term
+# `signal` with its brand-signal definition (the composite ray a brand emits
+# across the eight perceptual dimensions, decomposed per cohort and completed
+# into a conviction by the observer's spectral profile). That bare key `signal`
+# collides -- same key, DIFFERENT def_hash -- with economic signaling theory's
+# `signal` (Spence 1973), which is the genuine cross-disciplinary homonym this
+# experiment exists to surface as a real CONFLICT.
+#
+# The three context terms (cohort, observer-spectral-profile, brand-conviction)
+# are copied VERBATIM from negotiation-sbt-ost/sbt/sbt_perceptual.yaml
+# (themselves verbatim from the live SBT ontology the live ontology module for the SBT corpus),
+# so their def_hash matches the live SBT terms graph. They put the `signal`
+# conflict in real SBT context: the brand signal IS decomposed per `cohort` and
+# completed by the `observer-spectral-profile` into a `brand-conviction`.
+#
+# Deliberately NOT named ONTOLOGY.yaml and NOT under the live ontology directory , so the
+# live build_ontology.py linker (which discovers the live ontology modules +
+# research/**/ONTOLOGY.yaml) never picks it up. Loaded explicitly by
+# negotiate_modules.py via --author-a. See the negotiation protocol (paper §5.5).
+
+paper_key: sbt_signal
+schema_version: 0.1
+
+owns:
+  # The headline term: SBT's brand-signal sense of "signal". Genuinely
+  # incompatible with Spence's economic-signaling sense (different def_hash).
+  - term_key: signal
+    label: "signal"
+    canonical_form: "brand signal"
+    definition: "The composite ray a brand emits across the eight perceptual dimensions (semiotic, narrative, ideological, experiential, social, economic, cultural, temporal), decomposed per observer cohort and completed into a brand conviction by each observer's spectral profile. The signal does not carry meaning in itself; it is collapsed into a conviction only in the observer, so the same emission yields different convictions across cohorts."
+    first_section: "SBT.2"
+
+  # --- Context terms, copied VERBATIM from the live SBT vocabulary ---
+
+  - term_key: cohort
+    label: "cohort"
+    canonical_form: "cohort"
+    definition: "A perceptual grouping of observers with similar spectral profiles, with dynamic membership. Cohorts are perceptual; demographics are metadata, not mechanism. Also written \"observer cohort\"."
+    first_section: "SBT.3"
+
+  - term_key: observer-spectral-profile
+    label: "observer spectral profile"
+    canonical_form: "observer spectral profile"
+    definition: "The receiver-side object that collapses a brand signal into a conviction. Five components: spectrum, weights, tolerances, priors, and an identity gate. Cohorts are observers, not consumers."
+    first_section: "SBT.2.2"
+
+  - term_key: brand-conviction
+    label: "brand conviction"
+    canonical_form: "brand conviction"
+    definition: "An observer-relative held position about a brand on one or more spectral dimensions. Observer-relative, not dispositional (contrast: attitude)."
+    first_section: "SBT.2.1"
+
+imports: []
+refines: []
+# SBT predates nothing of Spence here and depends on no Spence term; it imports
+# and refines ZERO of the economic-signaling terms. The only cross-owner
+# interaction SBT participates in is the genuine same-key CONFLICT on `signal`.
+
+glossary_changelog:
+  - {date: 2026-06-14, op: lock, note: "SBT signal-owner module + verbatim context terms for the SBT<->Spence same-key CONFLICT experiment (EXP-2026-06-14-NEG-SPENCE-SBT)"}

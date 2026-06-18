@@ -27,7 +27,7 @@ title: >-
 target_venue_primary: "TBD (between venues; JASIST + JLSC rejected)"
 status: >-
   Backbone spine locked 2026-06-13 for the realized-system revision. Paper is
-  a working paper between venues, so edits go in the paper (not the internal change log).
+  a working paper between venues, so edits go in the paper (not PENDING_UPDATES).
 
 thesis: |
   Scientific publishing is the only knowledge-intensive domain without formal
@@ -60,6 +60,7 @@ boundary_conditions:
     provenance:
       created_by: "author"
       created_at: "2026-06-13"
+      source_log_event: "R14 paper §2 four-level hierarchy"
   - id: C2
     statement: "The research program is an evolving body of work (an SSOT), not a single isolated artifact."
     observable: "Multiple renders/papers derive from one maintained source over time."
@@ -67,9 +68,11 @@ boundary_conditions:
     provenance:
       created_by: "author"
       created_at: "2026-06-13"
+      source_log_event: "R14 paper §1.4 value stream"
 
 # ============================================================================
 # Observations — the realized metadata system as built L-layer events
+# (the evidence the revision rests on; each points to a session commit/doc)
 # ============================================================================
 observations:
   - id: O1
@@ -84,6 +87,7 @@ observations:
     provenance:
       created_by: "tool:build_ontology.py + sync_claims_from_spine.py + verify_citations.py"
       created_at: "2026-06-13"
+      source_log_event: "commit c607d759 (ontology infra) + SUBSTRATE_ARCHITECTURE.md"
     body_sections: ["New §: A realized instance"]
   - id: O2
     statement: >-
@@ -92,12 +96,13 @@ observations:
       substrate as 167 terms, 7 relations, and 436 paper_terms edges (167 owns
       + 269 imports), enforcing unique-owner / no-dangling / compatible-refine /
       acyclic link-time compatibility.
-    raw_data_pointer: "[internal path removed]*.yaml; [internal path removed]"
-    instrument: "[internal path removed] (the linker)"
+    raw_data_pointer: "[internal path removed]*.yaml; code/build_ontology.py"
+    instrument: "code/build_ontology.py (the linker)"
     timestamp: "2026-06-13"
     provenance:
       created_by: "tool:build_ontology.py"
       created_at: "2026-06-13"
+      source_log_event: "commit e7bb49bf (corpus fan-out) + fc4a8d00 (maps_to + gate + docs)"
     body_sections: ["New §: A realized instance"]
   - id: O3
     statement: >-
@@ -105,12 +110,13 @@ observations:
       (citations alignment, ontology link, spine→claims sync, surface-form scan)
       into one PASS/DRIFT verdict and exits nonzero on hard drift; a 20-test
       pytest suite (incl. a docs-alignment control) passes.
-    raw_data_pointer: "[internal path removed]; [internal path removed]"
-    instrument: "[internal path removed] + pytest"
+    raw_data_pointer: "code/verify_paper_bundle.py; [internal path removed]"
+    instrument: "code/verify_paper_bundle.py + pytest"
     timestamp: "2026-06-13"
     provenance:
       created_by: "tool:verify_paper_bundle.py + pytest"
       created_at: "2026-06-13"
+      source_log_event: "commit fc4a8d00 + tests/test_docs_alignment.py"
     body_sections: ["New §: A realized instance"]
 
 # ============================================================================
@@ -127,13 +133,14 @@ methods:
     type: "link_time_type_check"
     inputs: ["[internal path removed]*.yaml"]
     outputs: ["terms / term_relations / paper_terms substrate tables"]
-    code_anchor: "[internal path removed]"
+    code_anchor: "code/build_ontology.py"
     reproducibility:
       seed: "deterministic (no RNG)"
       runtime_environment: "Python 3.12 + uv"
     provenance:
       created_by: "author + tool:build_ontology.py"
       created_at: "2026-06-13"
+      source_log_event: "commit c607d759"
     body_sections: ["New §: A realized instance"]
   - id: M2
     statement: >-
@@ -144,10 +151,11 @@ methods:
     type: "continuous_integration_gate"
     inputs: ["paper.md", "SPINE.yaml", "ONTOLOGY.yaml", "substrate"]
     outputs: ["PASS / DRIFT verdict; nonzero exit on hard drift"]
-    code_anchor: "[internal path removed]"
+    code_anchor: "code/verify_paper_bundle.py"
     provenance:
       created_by: "author + tool:verify_paper_bundle.py"
       created_at: "2026-06-13"
+      source_log_event: "commit fc4a8d00 + CLAUDE.md rule 5a"
     body_sections: ["New §: A realized instance"]
   - id: M3
     statement: >-
@@ -161,6 +169,7 @@ methods:
     provenance:
       created_by: "author"
       created_at: "2026-06-13"
+      source_log_event: "[internal path removed]"
     body_sections: ["New §: A realized instance"]
 
 # ============================================================================
@@ -176,6 +185,7 @@ measurements:
     provenance:
       created_by: "tool:build_ontology.py"
       created_at: "2026-06-13"
+      source_log_event: "[internal path removed] §Current state"
   - id: m_gate_clean
     statement: >-
       Corpus alignment under verify_paper_substrate_alignment.py --all
@@ -187,6 +197,7 @@ measurements:
     provenance:
       created_by: "tool:verify_paper_substrate_alignment.py + pytest"
       created_at: "2026-06-13"
+      source_log_event: "NEXT_SESSION_PROMPT_2026-06-13t.md verification block"
 
 # ============================================================================
 # Propositions — the seven protocol claims (paper §1.6 C1–C7) + diagnosis +
@@ -336,6 +347,7 @@ findings:
     provenance:
       created_by: "tool:build_ontology.py"
       created_at: "2026-06-13"
+      source_log_event: "[internal path removed] §Current state"
     body_sections: ["New §: A realized instance"]
   - id: F2
     statement: >-
@@ -354,6 +366,7 @@ findings:
     provenance:
       created_by: "tool:verify_paper_bundle.py"
       created_at: "2026-06-13"
+      source_log_event: "commit fc4a8d00"
     body_sections: ["New §: A realized instance"]
 
 # ============================================================================
@@ -365,9 +378,17 @@ robustness_checks:
       The link-time compatibility check generalizes from the single-author
       regime to the federated (multi-author) case: a cross-owner linker
       (negotiate_modules.py) that, instead of aborting on a unique-owner
-      collision, classifies every cross-owner interaction (agreement / conflict /
-      compatible-refine / dangling) and proposes a typed, justified reconciliation
-      (SSSOM mappings + lock/fork/rebase/merge operations). Demonstrated on a
+      collision, classifies every cross-owner interaction into exactly one of six
+      classes — AGREEMENT (identical def_hash; skos:exactMatch; MERGE), CONFLICT
+      (same key, divergent def_hash; skos:closeMatch/relatedMatch; NAMESPACE+FORK),
+      CROSS_REFINE (refine-with-narrows_to; skos:narrowMatch; REBASE),
+      INCOMPATIBLE_REFINE (refine-without-narrows_to; BLOCK), CROSS_IMPORT (clean
+      cross-author dependency edge), DANGLING_IMPORT (import neither author owns;
+      BLOCK) — and proposes a typed, justified reconciliation
+      (SSSOM mappings + lock/fork/rebase/merge operations); the three unresolved
+      classes (CONFLICT / INCOMPATIBLE_REFINE / DANGLING_IMPORT) are what --gate
+      fails on. The body presents this taxonomy as an interaction-class table and a
+      cross-owner decision flowchart. Demonstrated on a
       deliberate two-author fixture exercising all four interaction classes;
       report mode exits 0, gate mode exits nonzero on unresolved interactions.
       Subsequently exercised on two REAL corpus vocabularies (SBT perceptual vs OST
@@ -397,7 +418,8 @@ robustness_checks:
     provenance:
       created_by: "author + tool:negotiate_modules.py"
       created_at: "2026-06-13"
-    body_sections: ["New §: A realized instance (future work / federation)"]
+      source_log_event: "[internal path removed] + tests/test_negotiate_modules.py (8 tests) + 3 real-corpora experiment records: NEGOTIATION_REAL_CORPORA_SBT_OST_2026-06-13.md (clean), NEGOTIATION_INDEPENDENT_AAKER_SBT_2026-06-14.md (dangling), NEGOTIATION_INDEPENDENT_SPENCE_SBT_2026-06-14.md (conflict)"
+    body_sections: ["5.6 Companion Experiments and Reproducibility (interaction-class table + cross-owner decision flowchart)"]
 
 # ============================================================================
 # Alternative explanations — rivals the realized-system claim must clear
@@ -421,6 +443,7 @@ alternative_explanations:
     provenance:
       created_by: "author"
       created_at: "2026-06-13"
+      source_log_event: "[internal path removed]"
     body_sections: ["New §: A realized instance (prior art + novelty)"]
 
 # ============================================================================
@@ -439,6 +462,7 @@ limitations:
     provenance:
       created_by: "author"
       created_at: "2026-06-13"
+      source_log_event: "SPEC_NATIVE_COMMUNICATION_AND_PUBLICATION_ADVICE_2026-06-13.md §1"
     body_sections: ["New §: A realized instance (limitations)", "§5.3 Limitations"]
   - id: L2
     statement: >-
@@ -456,6 +480,7 @@ limitations:
     provenance:
       created_by: "author"
       created_at: "2026-06-13"
+      source_log_event: "NEXT_SESSION_PROMPT_2026-06-13t.md §NEGOTIATION PROTOCOL prototype + [internal path removed]"
     body_sections: ["New §: A realized instance (future work)"]
 
 # ============================================================================
@@ -477,6 +502,7 @@ negative_findings:
     provenance:
       created_by: "author"
       created_at: "2026-06-13"
+      source_log_event: "[internal path removed] §DIVERGE"
     body_sections: ["New §: A realized instance (prior art)"]
 
 # ============================================================================
@@ -534,3 +560,12 @@ open:
 # ============================================================================
 # Spine changelog — append-only
 # ============================================================================
+changelog:
+  - date: 2026-06-13
+    operation: lock
+    by: "Session t/u realized-system revision (CLAUDE.md rule 0aa spine-first)"
+    note: >-
+      Initial backbone spine: P0a/P0b diagnosis, P1–P7 = paper claims C1–C7,
+      P8 = realized-system existence proof; observations/methods/measurements/
+      findings for the built metadata system; L1/L2 scope; A1 rival; NF1
+      prior-art gap; corpus_precedents 2026t/2026i/2026ao; standards anchors.

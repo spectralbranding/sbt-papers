@@ -1,0 +1,2 @@
+subject_id	predicate_id	object_id	mapping_justification	confidence	comment
+sbt:signal	skos:closeMatch	spence:signal	semapv:ManualMappingCuration	0.5	CONFLICT

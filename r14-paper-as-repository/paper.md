@@ -6,7 +6,7 @@ ORCID: 0009-0000-6893-9231
 
 DOI: [10.5281/zenodo.19294864](https://doi.org/10.5281/zenodo.19294864)
 
-Working Paper v2.0.1 – March 2026 (revised June 2026)
+Working Paper v2.2.0 – March 2026 (revised June 2026)
 
 ---
 
@@ -30,7 +30,7 @@ The document assumption has deep historical roots: the codex as the unit of scho
 
 Each reform addresses one dimension of the publishing problem while leaving the document assumption intact. The result is a system that has been incrementally improved on six dimensions simultaneously — access, timing, sequence, commentary, data sharing, reproducibility — without any reform touching the structural foundation that constrains all of them.
 
-Information science has identified this structural gap for decades. Renear and Palmer [-@renear-2009-strategic-reading-ontologies] showed that meaningful machine mediation of scientific claims requires structured, ontology-grounded representations — not static documents. Borgman [-@borgman-2015-big-data-little] demonstrated that scholarly objects are inherently compound, bundles of heterogeneous artifacts linked by provenance rather than monolithic files. Edwards, Jackson, Bowker, and colleagues (2013) characterized knowledge infrastructures — the material and social systems through which reliable knowledge is produced — and found scholarly communication among the most underdeveloped in this regard. Leonelli [-@leonelli-2016-datacentric-biology-philosophical] showed how data-centric research practices depend on provenance-aware infrastructure to remain interpretable across communities and over time.
+Information science has identified this structural gap for decades. Renear and Palmer [-@renear-2009-strategic-reading-ontologies] showed that meaningful machine mediation of scientific claims requires structured, ontology-grounded representations — not static documents. Borgman [-@borgman-2015-big-data-little] demonstrated that scholarly objects are inherently compound, bundles of heterogeneous artifacts linked by provenance rather than monolithic files. Edwards, Jackson, Bowker, and colleagues [-@edwards-2013-knowledge-infrastructures-intellectual] characterized knowledge infrastructures — the material and social systems through which reliable knowledge is produced — and found scholarly communication among the most underdeveloped in this regard. Leonelli [-@leonelli-2016-datacentric-biology-philosophical] showed how data-centric research practices depend on provenance-aware infrastructure to remain interpretable across communities and over time.
 
 Scientific publishing is the only knowledge-intensive domain without formal version control and provenance infrastructure. Legal systems track case law revisions. Financial auditing requires audit trails. Clinical research mandates trial registration. Supply chain management maintains chain of custody. Software engineering uses Git. Each domain independently developed provenance tracking because each discovered that knowledge integrity requires it. Publishing has not.
 
@@ -132,7 +132,7 @@ This inversion shifts the value of journals to a different level. In the documen
 
 Several platforms and standards address subsets of the gaps identified above. None integrates all five into a unified protocol.
 
-**Table 2a.** Protocol feature coverage. Columns indicate whether a system supports each of the six protocol features described in Section 1.2. Full = structurally integrated; Partial = addressed but not fully integrated; No = not addressed.
+Table 2a: Protocol feature coverage. Columns indicate whether a system supports each of the six protocol features described in Section 1.2. Full = structurally integrated; Partial = addressed but not fully integrated; No = not addressed.
 
 | System | VC | Fork | Gate | Rev | Prov | Coll |
 |--------|:-:|:-:|:-:|:-:|:-:|:-:|
@@ -152,7 +152,7 @@ Several platforms and standards address subsets of the gaps identified above. No
 
 Column key: VC = version control, Fork = fork-based submission, Gate = compliance gate, Rev = reviewer attribution, Prov = provenance chain, Coll = collections as users. Dashes indicate the feature is absent.
 
-**Table 2b.** System context and adoption.
+Table 2b: System context and adoption.
 
 | System | Adoption | Key limitation |
 |--------|----------|----------------|
@@ -195,9 +195,13 @@ Each claim includes a falsification condition specified in the accompanying `pap
 
 ## 2. The Protocol
 
-The four-level hierarchy is the central architectural claim of this paper. Each level is a structural transformation of the level above, preserving cryptographic provenance throughout.
+The four-level hierarchy (Figure 1) is the central architectural claim of this paper. Each level is a structural transformation of the level above, preserving cryptographic provenance throughout.
 
-```mermaid
+```{=typst}
+#block(breakable: false)[
+```
+
+```{.mermaid width="100%"}
 flowchart LR
     R[Research program<br/>= versioned repository]
     P[Paper<br/>= tagged render of repo at commit C]
@@ -210,6 +214,10 @@ flowchart LR
 ```
 
 Figure 1: The four-level Research-as-Repository hierarchy. Each level is a structural transformation of the level above, preserving cryptographic provenance. The dashed line shows publication metadata flowing back to the source repository, closing the loop and supporting the rendering-isomorphism (§3.4).
+
+```{=typst}
+]
+```
 
 The protocol maps the scientific publishing lifecycle onto a CI/CD (Continuous Integration / Continuous Delivery) pipeline — the same architecture that transformed software from artisanal craft to engineered discipline. In software CI/CD, every code change triggers automated validation, testing, and deployment. In the paper protocol, every stage of the knowledge lifecycle triggers analogous automated operations:
 
@@ -435,7 +443,7 @@ ScholarOne / Editorial Manager / OJS
     |     structural metadata or provenance
 ```
 
-**Figure 2.** Architecture of the fork-based submission lifecycle.
+*Architecture of the fork-based submission lifecycle.*
 
 ```
 Research Repository (author)
@@ -1209,13 +1217,52 @@ Consequently, the strong reading of the protocol — that the bundle opens a *ne
 
 The federated generalization in Section 5.5 is backed by three companion experiments, each a deterministic, content-addressed run of the cross-owner linker over two namespaced module sets. They are published with this paper (see Data Availability), so a reader can reproduce the classification and the proposed mappings before reading this prose — the protocol's own claim, applied to its own evidence.
 
+The linker assigns every cross-owner interaction to exactly one of six classes. Table 8 names them with the SKOS predicate [@miles-bechhofer-2009-skos-reference] and reconciliation operation each carries; Figure 2 is the decision procedure that assigns them. Three of the six — *conflict*, *incompatible refinement*, and *dangling import* — are unresolved and fail the compatibility gate; the other three resolve mechanically. The three experiments below are organized as the evaluation of this taxonomy: a clean run that exercises the resolvable classes, and two adversarial runs that surface the unresolved ones.
+
+Table 8: The six cross-owner interaction classes of the federated linker.
+
+| Class | Trigger | Resolved? | SKOS predicate | Reconciliation operation |
+|---|---|---|---|---|
+| `AGREEMENT` | both authors own the key; identical `def_hash` | yes | `skos:exactMatch` | MERGE — assert the match; either author imports the term unchanged |
+| `CROSS_IMPORT` | one author imports a term the other owns | yes | `skos:exactMatch` | none — a clean cross-author dependency edge |
+| `CROSS_REFINE` | one author refines a term the other owns, with an explicit `narrows_to` | yes | `skos:narrowMatch` | REBASE — the refinement becomes a `narrows` edge onto the owner's term |
+| `CONFLICT` | both own the same key; divergent `def_hash` | no | `skos:closeMatch` / `relatedMatch` | NAMESPACE the colliding keys and curate the mapping; FORK the key if the concepts truly differ |
+| `INCOMPATIBLE_REFINE` | one author refines another's term with no `narrows_to` | no | — | BLOCK until an explicit narrowing is supplied |
+| `DANGLING_IMPORT` | an import or refine targets a term neither author owns | no | — | BLOCK until some author owns the term or the import is dropped |
+
+*Notes*: Identity is content-addressed — `def_hash` is the SHA-256 of the trimmed definition text — so "same definition" is mechanical, not a judgment call. The three unresolved classes are what the `--gate` mode fails the build on, the federated continuous-integration semantics. Proposed mappings are emitted in the SSSOM interchange format [@matentzoglu-2022-sssom], each carrying a justification (lexical or hash match versus a proposal a human must confirm) and a confidence.
+
+```{=typst}
+#block(breakable: false)[
+```
+
+```{.mermaid width="70%"}
+flowchart TD
+  S[Cross-owner interaction] --> Q1{Same term key owned by both?}
+  Q1 -->|no| Q2{Targets a term neither author owns?}
+  Q2 -->|yes| DI[DANGLING_IMPORT — BLOCK]
+  Q2 -->|no| Q3{Refine of the other's term?}
+  Q3 -->|no| CI[CROSS_IMPORT — clean edge]
+  Q3 -->|"yes, with narrows_to"| CR[CROSS_REFINE — REBASE]
+  Q3 -->|"yes, no narrows_to"| IR[INCOMPATIBLE_REFINE — BLOCK]
+  Q1 -->|yes| Q4{Identical def_hash?}
+  Q4 -->|yes| AG[AGREEMENT — MERGE]
+  Q4 -->|no| CF[CONFLICT — NAMESPACE + FORK]
+```
+
+Figure 2: The cross-owner linker's decision procedure. Every interaction between two authors' modules is classified into exactly one of six classes by mechanical tests on ownership, import or refine, the presence of an explicit narrowing, and the content-addressed definition hash. The three terminal states marked BLOCK or CONFLICT are the unresolved classes that fail the federated compatibility gate.
+
+```{=typst}
+]
+```
+
 - *EXP-2026-06-13-NEG-SBT-OST* (clean federation): the author's perception-side and operations-side vocabularies; six interactions, zero unresolved (four cross-imports, two compatible refinements).
 - *EXP-2026-06-14-NEG-AAKER-SBT* (dangling reference): an incumbent brand-equity vocabulary [@aaker-1991-managing-brand-equity; @aaker-1996-building-strong-brands] against the perception-side vocabulary; a genuine dangling import (an incumbent primitive neither side owns) and no same-term conflict — the qualified naming forecloses it — with the genuine cross-theory relations supplied as a hand-curated cross-key mapping the key-level linker cannot infer.
 - *EXP-2026-06-14-NEG-SPENCE-SBT* (definitional conflict): information-economics signaling theory [@spence-1973-job-market-signaling] against the perception-side vocabulary; a genuine conflict on the shared term *signal* (the two definitions hash differently), which the linker refuses to assert as an exact match and proposes as a namespaced close-match for human curation.
 
 Each run is deterministic: term identity is a content-addressed hash of the definition text and the classifier is a pure function of the two parsed module sets, so the report and the emitted mapping file reproduce byte-for-byte at a fixed tool version, with no random seed. Each experiment record states pre-registered hypotheses with falsification criteria, an integrity manifest of the shared-term hashes (checkable against the live graph), and a threats-to-validity section; the full attributions for the published brand-equity and signaling-theory vocabularies are given in those records. The compatibility gate exits nonzero on the two adversarial runs — the intended federated continuous-integration behavior when unresolved interactions remain. Together the three runs exercise the full interaction-class set (clean import and refinement, dangling reference, definitional conflict) on real, independent vocabularies.
 
-*Data availability.* The two module sets per experiment, the emitted and curated mapping files, the three experiment records, and a one-command reproduction script are published in this paper's repository under `experiments/`. The negotiation tool, the single-author linker it generalizes, and the per-paper spine and ontology bundle are in the same repository. No data download, network call, or credential is required to reproduce any run.
+*Data and code availability.* The complete experiment code and data are published with this paper under `experiments/` in its public repository (github.com/spectralbranding/sbt-papers, `r14-paper-as-repository/`): the cross-owner linker (`negotiate_modules.py`), the single-author linker it generalizes (`build_ontology.py`), the two namespaced module sets per experiment, the emitted and curated mapping files, the three experiment records, and a one-command reproduction script. All three runs reproduce with `bash experiments/reproduce.sh`; the classification is deterministic — content-addressed term identity and a pure-function classifier — and requires no data download, network call, or credential. The per-paper spine and ontology bundle are in the same repository, and software dependencies, versions, and the repository URL are recorded in `paper.yaml` following the FORCE11 software-citation principles [@smith-2016-software-citation-principles].
 
 ---
 
@@ -1243,7 +1290,7 @@ Results: 6 passed, 1 failed, 0 warnings
 Submission gate: BLOCKED — fix failures before submitting
 ```
 
-The example illustrates that the validator catches a specific compliance failure (self-citation ratio exceeding the journal's threshold) with an actionable diagnostic. The present paper's own self-citation ratio is 6.8% (4 of 59 references) after IS-canon restoration, cross-corpus additions, and user-confirmed citation replacements.
+The example illustrates that the validator catches a specific compliance failure (self-citation ratio exceeding the journal's threshold) with an actionable diagnostic. The present paper's own self-citation ratio is 5.4% (4 of 74 references) after IS-canon restoration, cross-corpus additions, and user-confirmed citation replacements.
 
 The author sees the exact failure (self-citation ratio), fixes it in their repository, and re-runs the validator. The entire cycle takes minutes, not the weeks currently consumed by desk-rejection-and-resubmission rounds.
 
@@ -1335,7 +1382,7 @@ This article does not claim the protocol solves the reproducibility crisis, elim
 
 ## Acknowledgments
 
-AI assistants (Claude Opus 4.7, Grok 4.1, Gemini 3.1) were used for initial literature search and editorial refinement; all theoretical claims, propositions, and interpretations are the author's sole responsibility.
+AI assistants (Claude Opus 4.7, Grok 4.1, Gemini 3.1) were used for initial literature search and editorial refinement, and for writing and running the companion negotiation experiments of Section 5.6 — the cross-owner linker (`negotiate_modules.py`), the single-author linker it generalizes (`build_ontology.py`), the author-transcribed module sets, and the reproduction tooling were AI-assisted, then reviewed by the author and verified to reproduce deterministically. All theoretical claims, propositions, definitions, and interpretations are the author's sole responsibility.
 
 ---
 
