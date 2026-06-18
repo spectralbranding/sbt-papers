@@ -60,11 +60,13 @@ data_manifest:
   - id: "competitive-interference-250"
     description: >
       Competitive interference test: 5 SBT canonical brands x 3 competitor
-      categories x 16 reps = 240 API calls. Tests whether competitor
-      category modulates focal-brand spectral profile.
-    archive: "GitHub (sbt-papers/r10-dove-case-study/code/data/)"
-    repository: "spectralbranding/sbt-papers"
-    path: "r10-dove-case-study/code/"
-    format: "Python + JSONL"
+      categories x 16 reps = 240 API calls (gpt-4o-mini). Tests whether
+      competitor category modulates focal-brand spectral profile.
+    archive: "Hugging Face (raw data) + GitHub (generating script)"
+    repository: "spectralbranding/r10-dove-case-study"
+    path: "data/raw_responses.jsonl (HF); r10-dove-case-study/code/competitive_interference_250.py (GitHub)"
+    format: "JSONL (240 records) + Python"
     access: public
+    doi: "10.57967/hf/9234"
+    hf_dataset: "spectralbranding/r10-dove-case-study"
     run_command: "uv run --with 'openai,scipy,numpy' python competitive_interference_250.py"

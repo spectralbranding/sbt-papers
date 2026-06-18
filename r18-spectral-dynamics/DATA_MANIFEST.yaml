@@ -2,6 +2,18 @@
 # External data dependencies per the Research-as-Repository protocol
 
 data_manifest:
+  - id: "velocity-detection-experiment"
+    description: >
+      Dimensional velocity-detection validation calls (300 records): tests whether
+      LLMs detect brand trajectory direction (improving, declining, stable,
+      oscillating) as a perceptual signal distinct from current position.
+    archive: "Hugging Face"
+    repository: "spectralbranding/r18-dimensional-velocity"
+    format: "JSONL (300 records)"
+    access: public
+    doi: "10.57967/hf/8443"
+    hf_dataset: "spectralbranding/r18-dimensional-velocity"
+
   - id: "dove-profiles"
     description: >
       Dove spectral profiles at four temporal cross-sections (2003, 2006, 2013, 2023) from
@@ -55,4 +67,6 @@ reproducibility:
 data_availability_statement: >
   The Dove dimensional profiles used in Section 6 are reproduced from Zharnikov (2026p,
   Table 1) and are available in spectralbranding/sbt-papers/r10-dove-case-study/. All
-  computations are finite differences reproducible by hand.
+  computations are finite differences reproducible by hand. The dimensional
+  velocity-detection validation calls (300 records) are archived on Hugging Face
+  (spectralbranding/r18-dimensional-velocity, DOI 10.57967/hf/8443).

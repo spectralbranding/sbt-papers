@@ -420,7 +420,7 @@ Dove's trajectory over two decades is the natural history of a dimensional creat
 
 ## Companion Computation Script
 
-The competitive-interference test reported in the Portfolio Interference section is reproducible via the script at https://github.com/spectralbranding/sbt-papers/blob/main/r10-dove-case-study/code/competitive_interference_250.py.
+The competitive-interference test reported in the Portfolio Interference section is reproducible via the script at https://github.com/spectralbranding/sbt-papers/blob/main/r10-dove-case-study/code/competitive_interference_250.py. The 240 raw model responses are archived on Hugging Face (spectralbranding/r10-dove-case-study, DOI 10.57967/hf/9234).
 
 Run command: `OPENAI_API_KEY=sk-... uv run --with "openai,scipy,numpy" python competitive_interference_250.py`
 
