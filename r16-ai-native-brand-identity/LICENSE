@@ -1,11 +1,13 @@
-Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International
+Creative Commons Attribution 4.0 International (CC BY 4.0)
 
 Copyright (c) 2026 Dmitry Zharnikov
 
-This work is licensed under the Creative Commons Attribution-NonCommercial-
-NoDerivatives 4.0 International License. To view a copy of this license,
-visit http://creativecommons.org/licenses/by-nc-nd/4.0/
+You are free to:
+- Share: copy and redistribute the material in any medium or format
+- Adapt: remix, transform, and build upon the material for any purpose, even commercially
 
-Note: The experiment code (behavioral_metamerism_pilot.py, analysis scripts)
-is licensed under MIT per the repository-level LICENSE. This CC license
-applies to the paper content (paper.md) and its companion files.
+Under the following terms:
+- Attribution: You must give appropriate credit, provide a link to the license, and indicate
+  if changes were made.
+
+Full license text: https://creativecommons.org/licenses/by/4.0/legalcode
