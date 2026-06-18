@@ -38,6 +38,32 @@ ROOT_DIR = EXPERIMENT_DIR.parent
 SCHEMA_DIR = Path(__file__).resolve().parent / "schemas"
 CHECKSUM_FILE = Path(__file__).resolve().parent / "checksums.sha256"
 
+
+def hf_archived_files() -> set[str]:
+    """Basenames of raw data files now archived on HuggingFace (the
+    DATA_MANIFEST.yaml ``hf_archive:`` map) — intentionally absent from git,
+    downloaded via reproduce.sh. Parsed without a YAML dependency so CI needs
+    no extra install. Completeness/integrity treat these as archived-OK rather
+    than missing."""
+    import re
+
+    manifest = ROOT_DIR / "DATA_MANIFEST.yaml"
+    if not manifest.exists():
+        return set()
+    names: set[str] = set()
+    in_block = False
+    for line in manifest.read_text().splitlines():
+        if line.startswith("hf_archive:"):
+            in_block = True
+            continue
+        if in_block:
+            if line and not line[0].isspace() and not line.lstrip().startswith("#"):
+                break
+            m = re.search(r'file:\s*"([^"]+)"', line)
+            if m:
+                names.add(m.group(1))
+    return names
+
 # Files that must exist for the experiment to be considered complete.
 EXPECTED_L3_SESSIONS = [
     "r19_rate_sweep.jsonl",
@@ -230,9 +256,12 @@ def check_integrity() -> bool:
 
     errors = 0
     checked = 0
+    archived = hf_archived_files()
     for rel, digest in expected.items():
         path = ROOT_DIR / rel
         if not path.exists():
+            if Path(rel).name in archived:
+                continue  # archived on HuggingFace, not vendored in git
             print(f"  ERROR: {rel}: missing on disk")
             errors += 1
             continue
@@ -259,10 +288,14 @@ def check_integrity() -> bool:
 
 def check_completeness() -> bool:
     errors = 0
+    archived = hf_archived_files()
     l3_dir = EXPERIMENT_DIR / "L3_sessions"
     for name in EXPECTED_L3_SESSIONS:
         p = l3_dir / name
         if not p.exists():
+            if name in archived:
+                print(f"  ARCHIVED (HF): {name}")
+                continue
             print(f"  ERROR: missing L3 session file: {name}")
             errors += 1
             continue
@@ -277,6 +310,9 @@ def check_completeness() -> bool:
     for name in EXPECTED_L4_RESULTS:
         p = l4_dir / name
         if not p.exists():
+            if name in archived:
+                print(f"  ARCHIVED (HF): {name}")
+                continue
             print(f"  ERROR: missing L4 result file: {name}")
             errors += 1
 
@@ -293,6 +329,8 @@ def check_completeness() -> bool:
         total_calls = 0
         for name in EXPECTED_L3_SESSIONS:
             p = l3_dir / name
+            if not p.exists():  # archived on HF, counted there
+                continue
             with p.open() as fh:
                 total_calls += sum(1 for _ in fh)
         print(
