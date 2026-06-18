@@ -1,3 +1,9 @@
+# === HF DATA ARCHIVE (raw L3 logs + oversize results; qc-l 2026-06-19) ===
+# Raw session logs + oversize result JSONs are NOT vendored in git; the
+# canonical copy lives on HuggingFace (DOI). reproduce.sh downloads them.
+hf_archive:
+  - { file: "r19_rate_sweep.jsonl", repo: "spectralbranding/r19-rate-distortion-sweep", doi: "10.57967/hf/8362" }
+
 # DATA_MANIFEST.yaml — R19: Empirical Rate-Distortion Curve for AI Brand Perception Encoders
 # External data dependencies per the Research-as-Repository protocol.
 # All paths are relative to the package root (r19-rate-distortion/).
