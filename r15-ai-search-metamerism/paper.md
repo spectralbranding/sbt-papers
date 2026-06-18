@@ -6,7 +6,7 @@ ORCID: 0009-0000-6893-9231
 
 DOI: [10.5281/zenodo.19422427](https://doi.org/10.5281/zenodo.19422427)
 
-Working Paper v3.2.0 – April 2026 (revised June 2026)
+Working Paper v3.3.0 – April 2026 (revised June 2026)
 
 ---
 
@@ -335,16 +335,18 @@ Table 6: Brand pairs used in confirmatory runs (Runs 2--3). Global pairs span te
 
 Run 5 extended the design to 23 models spanning nine cultural training traditions (Western, Chinese, Russian, Japanese, Korean, Arabic, Indian, Ukrainian, Mongolian), seven cross-cultural brand comparisons, and 15 native-language prompting conditions (7,342 calls). Models ranged from frontier systems (Claude, GPT, Gemini, Grok, DeepSeek) to nationally specialized architectures (YandexGPT, GigaChat, Jais, EXAONE, Sarvam, ALLaM, GPT-OSS-Swallow).
 
-**H1/H2 confirmed at scale.** Mean DCI across all 23 models was .357 (SD = .036; $t(22) = 16.178$, $p < .001$, $d = 3.449$) --- the largest effect in the dataset. Every model individually exceeded baseline. Cross-model cosine similarity was .977 (range [.927, 1.000]), extending the structural convergence from six Western/Chinese models to 23 architectures across nine cultural traditions. H3 remained unsupported ($t = .221$, $p = .413$, $d = .043$).
+**H1/H2 confirmed at scale.** Mean DCI across all 23 models was .357 (SD = .031; $t(22) = 16.178$, $p < .001$, $d = 3.449$) --- the largest effect in the dataset. Every model individually exceeded baseline. Cross-model cosine similarity was .977 (range [.927, 1.000]), extending the structural convergence from six Western/Chinese models to 23 architectures across nine cultural traditions. H3 remained unsupported ($t = .221$, $p = .413$, $d = .043$).
 
 Table 7: Twenty-three of the 24 active models across Runs 2--8, ranked by DCI (lower = less collapse). Model size is marked "undisclosed" where the provider does not publish parameter counts. GPT refers to GPT-4o-mini. Swallow 70B excluded (3.6% success rate).
 
 | Model | Size | Culture | Provider | DCI |
 |-------|------|---------|----------|-----|
+| fireworks_glm | undisclosed | Chinese | Fireworks | .286 |
 | grok | undisclosed | Western | xAI | .290 |
 | claude | undisclosed | Western | Anthropic | .313 |
 | gemini | undisclosed | Western | Google | .321 |
 | cerebras_qwen3 | 235B (MoE) | Chinese | Cerebras | .324 |
+| sambanova_deepseek | 671B (MoE) | Chinese | SambaNova | .338 |
 | groq_allam | 7B | Arabic | Groq | .340 |
 | yandexgpt_local | 8B | Russian | Local | .341 |
 | deepseek | 671B (MoE) | Chinese | DeepSeek | .342 |
@@ -360,6 +362,7 @@ Table 7: Twenty-three of the 24 active models across Runs 2--8, ranked by DCI (l
 | swallow_local | 8B | Japanese | Local | .383 |
 | qwen3_local | 30B | Chinese | Local | .388 |
 | exaone_local | 32B | Korean | Local | .389 |
+| dashscope_qwen_plus | undisclosed | Chinese | DashScope | .400 |
 | jais_local | 70B | Arabic | Local | .402 |
 
 *Notes*: DCI = Dimensional Collapse Index; baseline = .250. MoE = Mixture of Experts (active parameter count is lower than total). Full per-run breakdowns including tier classification and release dates are in the supplementary dataset (spectralbranding/r15-ai-search-metamerism on HuggingFace).
@@ -471,7 +474,7 @@ Future research should pursue four directions: (a) consumer experiments measurin
 
 ## Conclusion
 
-Brands are multi-dimensional perceptual objects, yet the present findings suggest that AI-mediated search systematically collapses their perception to approximately two dominant dimensions. The resulting metamerism --- brands that look identical through the AI lens despite being structurally different to human observers --- is supported empirically across 22 brand pairs (10 global, 5 local, 7 cross-cultural, and 1 banking pair), 24 model architectures, and nine cultural training traditions. The structural mechanism suggests this is unlikely to be resolved by model scaling alone. It is a geometric consequence of dimensional collapse: the same mechanism that makes physically different light spectra produce identical color percepts when observed through a narrow-band filter.
+Brands are multi-dimensional perceptual objects, yet the present findings suggest that AI-mediated search systematically collapses their perception to approximately two dominant dimensions. The resulting metamerism --- brands that look identical through the AI lens despite being structurally different to human observers --- is supported empirically across 23 brand pairs (10 global, 5 local, 7 cross-cultural, and 1 banking pair), 24 model architectures, and nine cultural training traditions. The structural mechanism suggests this is unlikely to be resolved by model scaling alone. It is a geometric consequence of dimensional collapse: the same mechanism that makes physically different light spectra produce identical color percepts when observed through a narrow-band filter.
 
 The conditional structure of this collapse is the paper's most actionable finding. Metamerism is not uniform: in the five FMCG pairs tested, local brands from underrepresented markets collapse 24.7% more severely than global brands (Cohen's $d = .878$). The Economic default mechanism --- AI substituting price for every dimension it lacks data on --- means that the brands most reliant on non-economic differentiation (cultural embeddedness, heritage, ideological positioning) face the largest exposure precisely in the markets where those dimensions matter most. And the Patagonia exception demonstrates that the collapse is not inevitable: brands that encode their soft dimensions as verifiable, machine-readable commitments can survive AI mediation.
 
@@ -487,7 +490,7 @@ All numerical values reported in this paper --- DCI point estimates, bootstrap s
 
 ## Acknowledgments
 
-AI assistants (Claude Opus 4.6, Grok 4.1, Gemini 3.1) were used for initial literature search, for software development — authoring the experiment harness and the analysis and scoring scripts — and for orchestrating and running the reported experiments through those scripts, as well as for editorial refinement; all theoretical claims, propositions, and interpretations are the author's sole responsibility.
+AI assistants (Claude Opus 4.8, Grok 4.20, Gemini 2.5 Pro) were used for initial literature search, for software development — authoring the experiment harness and the analysis and scoring scripts — and for orchestrating and running the reported experiments through those scripts, as well as for editorial refinement; all theoretical claims, propositions, and interpretations are the author's sole responsibility.
 
 ---
 

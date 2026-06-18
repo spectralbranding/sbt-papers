@@ -175,7 +175,7 @@ Table 3: Distance Contrast Ratio Degradation with Dimension on the Simplex.
 | 16 | 3.80 | .3249 | .0563 |
 | 32 | 2.47 | .2397 | .0294 |
 
-*Notes*: $R_n = \max_j D_j / \min_j D_j$ for $m = 1000$ i.i.d. draws from Dir$(1,\ldots,1)$ on $\Delta^{n-1}$. Monte Carlo estimates from $10^4$ independent trials; SEs on ratio estimates $< 1\%$ for $n \geq 4$. Distances are Euclidean. Reproducible from `code/r3_concentration_mc.py` in the companion repository (seed 42).
+*Notes*: $R_n = \max_j D_j / \min_j D_j$ for $m = 1000$ i.i.d. draws from Dir$(1,\ldots,1)$ on $\Delta^{n-1}$. Monte Carlo estimates from $10^3$ independent trials; SEs on ratio estimates $< 1\%$ for $n \geq 4$. Distances are Euclidean. Reproducible from `code/r3_concentration_mc.py` in the companion repository (seed 42).
 
 *(c) The coefficient of variation $\text{CV}_n = \text{SD}[D] / E[D]$ decreases as $\text{CV}_n \sim O(n^{-1/2})$, reflecting concentration of the distance distribution around its mean.*
 
@@ -185,7 +185,7 @@ $$E[\|w_i - w_j\|^2] = \sum_{l=1}^n E[(X_{i,l} - X_{j,l})^2] = \sum_{l=1}^n 2\te
 
 At $n = 8$: $2 \cdot 7 / (8 \cdot 9) = 14/72 = 7/36 \approx .1944$. The identity $E[\|w_i - w_j\|^2] = 7/36$ was first derived in Zharnikov [-@zharnikov-2026-brand-space-geometry-formal-metric] for the warped-product manifold structure of the observer weight space; the derivation here recovers it directly from Dirichlet moment formulas. $\square$
 
-*Proof sketch of (b).* The concentration of $R_n$ follows from Beyer et al.'s [-@beyer-1999-when-is-nearest] general framework. Under mild regularity conditions on the component distribution, $\text{Var}[D^2] / (E[D^2])^2 \to 0$ as $n \to \infty$, implying $R_n \to 1$. For finite $n$, the rate depends on the moment structure of the Dirichlet components. The values in the table are Monte Carlo estimates from $10^4$ independent trials; standard errors on the ratio estimate are below 5% for all $n$. $\square$
+*Proof sketch of (b).* The concentration of $R_n$ follows from Beyer et al.'s [-@beyer-1999-when-is-nearest] general framework. Under mild regularity conditions on the component distribution, $\text{Var}[D^2] / (E[D^2])^2 \to 0$ as $n \to \infty$, implying $R_n \to 1$. For finite $n$, the rate depends on the moment structure of the Dirichlet components. The values in the table are Monte Carlo estimates from $10^3$ independent trials; standard errors on the ratio estimate are below 5% for all $n$. $\square$
 
 **Interpretation.** At $n = 8$, the contrast ratio of 7.46 is in a transitional regime. It is far from the extreme $n = 2$ case (where the nearest and farthest points differ by a factor of nearly $10^4$, making clustering straightforward) but also far from the $n = 32$ regime (where a ratio of 2.47 makes distance-based discrimination nearly impossible). This transitional character means that:
 
@@ -212,7 +212,7 @@ Table 4: Distance Concentration on $\Delta^7$ under Euclidean and Fisher-Rao Met
 | Euclidean | 7.46 ± .02 | .4254 | .247 |
 | Fisher-Rao | 5.72 ± .01 | 1.22 rad | .230 |
 
-*Notes*: Monte Carlo with $m = 1000$ draws from Dir$(1,\ldots,1)$ at $n = 8$, $10^4$ trials in each metric (seed 42). Fisher-Rao distance is the geodesic distance on $S^7_+$ (radius 2) under the square-root isometry. Both metrics place $\Delta^7$ in the transitional regime ($R_8 \in [5, 10]$).
+*Notes*: Monte Carlo with $m = 1000$ draws from Dir$(1,\ldots,1)$ at $n = 8$, $10^3$ trials in each metric (seed 42). Fisher-Rao distance is the geodesic distance on $S^7_+$ (radius 2) under the square-root isometry. Both metrics place $\Delta^7$ in the transitional regime ($R_8 \in [5, 10]$).
 
 The Fisher-Rao contrast ratio is somewhat lower than Euclidean (5.72 vs 7.46) but in the same transitional regime: clustering is possible but noisy. The slight reduction reflects the curvature of the spherical embedding, which compresses pairwise distances near the equator of $S^7_+$ relative to the chord-length Euclidean metric.
 
@@ -288,7 +288,7 @@ xychart-beta
     line [0.068, 0.302, 0.522, 0.672, 0.790, 0.867, 0.918]
 ```
 
-*Figure 2: Lower bound on boundary volume fraction $\text{BVF}(8, \delta) = 1 - (1-\delta)^7$ as a function of the relative boundary width $\delta$. At the operationally relevant threshold $\delta = .10$, more than half the simplex (52.2%) lies within the boundary zone. The curve is convex and approaches 1 rapidly: at $\delta = .20$ nearly four-fifths of $\Delta^7$ is boundary. This is a lower bound (Theorem 2); empirical Monte Carlo estimates consistently exceed it (Table 7 shows 62.5% at $\delta = .10$).*
+*Figure 2: Lower bound on boundary volume fraction $\text{BVF}(8, \delta) = 1 - (1-\delta)^7$ as a function of the relative boundary width $\delta$. At the operationally relevant threshold $\delta = .10$, more than half the simplex (52.2%) lies within the boundary zone. The curve is concave and approaches 1 rapidly: at $\delta = .20$ nearly four-fifths of $\Delta^7$ is boundary. This is a lower bound (Theorem 2); empirical Monte Carlo estimates consistently exceed it (Table 7 shows 62.5% at $\delta = .10$).*
 
 *Proof.* The argument uses the Brunn-Minkowski peeling technique for convex bodies [@schneider-2014-convex-bodies-brunnminkowski, Theorem 7.1.1; @vershynin-2018-highdimensional-probability-introduction, Section 5.2]. Consider first the simplest case: a bisection of $\Delta^{n-1}$ by a hyperplane through its centroid into two convex regions $C_1, C_2$.
 
@@ -330,7 +330,7 @@ Theorem 2 has a direct consequence for the relationship between cohort count $k$
 
 *Proof.* By Theorem 2, $\text{BVF}(8, 0.10) \geq 52.2\% > 50\%$. An observer at distance $\leq 0.10 \cdot R$ from a boundary can be reassigned to an adjacent cohort by a shift of magnitude $0.10 \cdot R$ in their weight profile or an equivalent shift in the boundary. Since the standard deviation of Dirichlet-uniform components on $\Delta^7$ is 0.1102 (Proposition 2), perturbations of this magnitude are typical -- they correspond to the natural variability of observer profiles. Statements (a) and (b) follow directly. Statement (c) follows from the generality of the bound: it holds for *any* convex partition, not just a particular clustering algorithm. $\square$
 
-*Falsification*: Corollary 1 is falsified if a study of observer weight profiles drawn from Dir$(1,\ldots,1)$ on $\Delta^7$ demonstrates that, in any convex $k$-partition, fewer than 50% of profiles lie within 10% relative distance of a boundary — contradicting the $\geq 57\%$ prediction of Theorem 2.
+*Falsification*: Corollary 1 is falsified if a study of observer weight profiles drawn from Dir$(1,\ldots,1)$ on $\Delta^7$ demonstrates that, in any convex $k$-partition, fewer than 50% of profiles lie within 10% relative distance of a boundary — contradicting the $\geq 52.2\%$ prediction of Theorem 2.
 
 For larger $k$, the situation worsens. When $\Delta^7$ is divided into $k$ convex regions, each region has at most volume $1/k$ of the total, and its in-radius scales as $k^{-1/(n-1)}$. The boundary width $\delta$ measured relative to the in-radius must therefore increase for fixed absolute boundary width as $k$ grows. Increasing $k$ from 3 to 6 roughly doubles the total boundary surface area without proportionally increasing the total volume, which means a larger fraction of the volume falls in the boundary zone. This explains why Claude's 5--6 cohort structure and Gemini's 3-cohort structure are both geometrically valid: the finer partition simply has a wider proportional boundary zone, and the threshold at which the "boundary" observers are assigned to one cluster or the other is a free parameter.
 
@@ -340,7 +340,7 @@ For larger $k$, the situation worsens. When $\Delta^7$ is divided into $k$ conve
 
 ### 5.1 Distance Ratio Simulations
 
-To verify Theorem 1, we conducted Monte Carlo simulations drawing $m = 1000$ points from $\text{Dir}(1, \ldots, 1)$ on $\Delta^{n-1}$ for $n \in \{2, 4, 8, 16, 32\}$. For each draw, we computed the Euclidean distances from a reference point to all others and recorded $\max_d / \min_d$, the mean distance, and the standard deviation. The simulations were repeated over $10^4$ independent trials and the results averaged.
+To verify Theorem 1, we conducted Monte Carlo simulations drawing $m = 1000$ points from $\text{Dir}(1, \ldots, 1)$ on $\Delta^{n-1}$ for $n \in \{2, 4, 8, 16, 32\}$. For each draw, we computed the Euclidean distances from a reference point to all others and recorded $\max_d / \min_d$, the mean distance, and the standard deviation. The simulations were repeated over $10^3$ independent trials and the results averaged.
 
 The empirical distance statistics on $\Delta^7$ ($n = 8$, $m = 1000$):
 
@@ -602,4 +602,4 @@ Finally, the interaction between static concentration geometry and dynamic non-e
 
 ## Acknowledgments
 
-AI assistants (Claude Opus 4.7, Grok 4.1, Gemini 3.1) were used for initial literature search, for software development — implementing and running the companion computation script(s) that reproduce the paper's reported numerical and simulation results — and for editorial refinement; all theoretical claims, propositions, and interpretations are the author's sole responsibility.
+AI assistants (Claude Opus 4.8, Grok 4.20, Gemini 2.5 Pro) were used for initial literature search, for software development — implementing and running the companion computation script(s) that reproduce the paper's reported numerical and simulation results — and for editorial refinement; all theoretical claims, propositions, and interpretations are the author's sole responsibility.

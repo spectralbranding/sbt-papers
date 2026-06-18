@@ -227,7 +227,7 @@ Core hypotheses derive from the interference formalism and the awareness gate pa
 
 ***Main Finding: Spectral Immunity***
 
-The headline finding is clear: across all portfolios and prompt modalities, portfolio framing produces near-zero change in brand perception profiles. TOST equivalence is confirmed for 18/20 brands (mean |ΔDCI| = .26), and 0/20 brands show FDR-significant portfolio effects in direct rating conditions. Variance decomposition (Table 4) attributes .1% of DCI variance to the portfolio condition -- three orders of magnitude less than the 37.4% attributable to brand identity. These two results jointly constitute the core empirical support for H5 (Spectral immunity, supported) and Proposition 2 (Awareness gate sufficiency inversion, supported). The archetype-by-archetype tests that follow are presented for completeness; none materially qualifies the headline immunity finding.
+The headline finding is clear: across all portfolios and prompt modalities, portfolio framing produces near-zero change in brand perception profiles. TOST equivalence is confirmed for 18/20 brands (mean |ΔDCI| = .26), and 0/20 brands show FDR-significant portfolio effects in direct rating conditions. Variance decomposition (Table 4) attributes .1% of DCI variance to the portfolio condition -- nearly three orders of magnitude less than the 37.4% attributable to brand identity. These two results jointly constitute the core empirical support for H5 (Spectral immunity, supported) and Proposition 2 (Awareness gate sufficiency inversion, supported). The archetype-by-archetype tests that follow are presented for completeness; none materially qualifies the headline immunity finding.
 
 Table 3: DCI by Brand and Condition.
 
@@ -267,7 +267,7 @@ Table 4: Variance Decomposition of DCI.
 | Model | 8.6 |
 | Condition (solo vs. portfolio) | .1 |
 
-*Notes*: Brand identity explains 37.4% of DCI variance. Condition (solo vs. portfolio framing) explains .1% -- three orders of magnitude less than brand identity. Residual variance (34.6%) reflects within-cell variation (repetition-level noise), model x brand interactions, and condition x brand interactions not captured by the main effects.
+*Notes*: Brand identity explains 37.4% of DCI variance. Condition (solo vs. portfolio framing) explains .1% -- nearly three orders of magnitude less than brand identity. Residual variance (34.6%) reflects within-cell variation (repetition-level noise), model x brand interactions, and condition x brand interactions not captured by the main effects.
 
 ***Hypothesis Tests (Confirmatory)***
 
@@ -376,7 +376,7 @@ The bandwidth constraint formalizes this resolution. Equation 3 models the poten
 
 As introduced in the Theoretical Framework, AI observers encode brand output (the WHAT layer) and discard organizational coordination context (the DO layer), including corporate ownership, portfolio membership, and parent-brand associations. The empirical results provide direct support for this distinction across three lines of evidence.
 
-First, the variance decomposition shows that brand identity (a WHAT-layer property) explains 37.4% of DCI variance while condition (a DO-layer manipulation) explains .1% -- three orders of magnitude less. Second, the finding that coordination-influenced dimensions -- Cultural, Social, Temporal -- collapse most severely in AI brand perception [@sims-2003-implications-rational-inattention; @zharnikov-2026-dimensional-collapse-ai-mediated-search] parallels the immunity finding: both reflect AI's systematic discounting of organizational context. Third, Farach [-@farach-2026-ai-as-coordinationcompressing] formalizes AI as coordination-compressing capital, predicting that AI compresses the DO layer while preserving the WHAT layer. Portfolio immunity is a specific instance of this broader compression.
+First, the variance decomposition shows that brand identity (a WHAT-layer property) explains 37.4% of DCI variance while condition (a DO-layer manipulation) explains .1% -- nearly three orders of magnitude less. Second, the finding that coordination-influenced dimensions -- Cultural, Social, Temporal -- collapse most severely in AI brand perception [@sims-2003-implications-rational-inattention; @zharnikov-2026-dimensional-collapse-ai-mediated-search] parallels the immunity finding: both reflect AI's systematic discounting of organizational context. Third, Farach [-@farach-2026-ai-as-coordinationcompressing] formalizes AI as coordination-compressing capital, predicting that AI compresses the DO layer while preserving the WHAT layer. Portfolio immunity is a specific instance of this broader compression.
 
 The output-coordination distinction also explains the Geely Auto exception. In multi-turn conversation, the model does not merely receive DO-layer information ("Geely owns Volvo"); it engages in extended reasoning about what this ownership means for Geely Auto's product positioning. We speculate that the conversational accumulation converts DO-layer information into WHAT-layer inference: if Geely Auto's parent also makes Volvo, what does Geely Auto's product quality look like in that context? This conversion from coordination context to output inference is what enables the reverse-aspiration dynamic (d = -1.11) -- and it explains why the effect appears only in multi-turn conversation, not in direct framing. Testing this mechanism directly requires a design that manipulates the reasoning steps available to the model across turns.
 
@@ -468,7 +468,7 @@ Spectral immunity reframes the central question in brand portfolio theory. The r
 
 ## Acknowledgments
 
-AI assistants (Claude Opus 4.7, Grok 4.1, Gemini 3.1) were used for initial literature search, for software development — authoring the experiment harness and the analysis and scoring scripts — and for orchestrating and running the reported experiments through those scripts, as well as for editorial refinement; all theoretical claims, propositions, and interpretations are the author's sole responsibility.
+AI assistants (Claude Opus 4.8, Grok 4.20, Gemini 2.5 Pro) were used for initial literature search, for software development — authoring the experiment harness and the analysis and scoring scripts — and for orchestrating and running the reported experiments through those scripts, as well as for editorial refinement; all theoretical claims, propositions, and interpretations are the author's sole responsibility.
 
 ## Author Contributions (CRediT)
 

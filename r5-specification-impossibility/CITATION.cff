@@ -6,7 +6,7 @@ authors:
     affiliation: "Independent Researcher"
     orcid: "https://orcid.org/0009-0000-6893-9231"
 title: "Specification Impossibility in Organizational Design: A High-Dimensional Geometric Analysis"
-version: 1.0.0
+version: 1.2.0
 date-released: 2026-06-14
 url: "https://doi.org/10.5281/zenodo.18945591"
 repository-code: "https://github.com/spectralbranding/sbt-papers"

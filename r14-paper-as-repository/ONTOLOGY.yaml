@@ -68,6 +68,3 @@ imports:
 
 refines: []
 
-glossary_changelog:
-  - {date: 2026-06-13, op: lock, note: "initial module: corpus fan-out term extraction"}
-  - {date: 2026-06-13, op: fork, note: "realized-system revision: +substrate-as-repository, +link-time-compatibility-check, +anti-drift-gate, +bundle-as-render; import paper-spec/spine/spine-first-drafting-protocol"}

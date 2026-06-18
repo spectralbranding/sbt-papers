@@ -6,7 +6,7 @@ ORCID: 0009-0000-6893-9231
 
 DOI: [10.5281/zenodo.18944770](https://doi.org/10.5281/zenodo.18944770)
 
-Working Paper v1.0.0 – February 2026 (revised June 2026)
+Working Paper v1.3.0 – February 2026 (revised June 2026)
 
 ---
 
@@ -389,6 +389,12 @@ The architecture is computationally implementable. The financial implementation 
 ## Author Note
 
 Dmitry Zharnikov is an independent researcher and strategist. He holds a Professional MBA (Entrepreneurship & Innovation) from Technische Universitat Wien and Wirtschaftsuniversitat Wien (dual degree, 2018). ORCID: https://orcid.org/0009-0000-6893-9231
+
+---
+
+## Acknowledgments
+
+AI assistants (Claude Opus 4.8, Grok 4.20, Gemini 2.5 Pro) were used for initial literature search and editorial refinement; all theoretical claims, propositions, and interpretations are the author's sole responsibility.
 
 ---
 

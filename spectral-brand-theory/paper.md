@@ -6,7 +6,7 @@ ORCID: 0009-0000-6893-9231
 
 DOI: [10.5281/zenodo.18945912](https://doi.org/10.5281/zenodo.18945912)
 
-Working Paper v3.4.0 – February 2026 (revised June 2026)
+Working Paper v3.3.0 – February 2026 (revised June 2026)
 
 ---
 
@@ -79,7 +79,7 @@ Table 2: SBT Constructs and the Companion Papers That Formalize Them.
 | Information loss in single-score collapse (spectral metamerism) | Zharnikov [-@zharnikov-2026-spectral-metamerism-brand-perception-projection] |
 | Perception cloud formation and non-ergodic conviction dynamics | Zharnikov [-@zharnikov-2026-non-ergodic-brand-perception-diffusion]; Zharnikov [-@zharnikov-2026-non-ergodic-brand-perception-why] |
 | Brand coherence types and crisis-prediction derivation | Zharnikov [-@zharnikov-2026-coherence-type-as-crisis-predictor] |
-| Brand conviction re-collapse epistemological architecture | Zharnikov [-@zharnikov-2026-hf-r20-portfolio-ai-perception] |
+| Brand conviction re-collapse epistemological architecture | Zharnikov [-@zharnikov-2026b-atom-cloud-fact-epistemological] |
 | Market capacity for differentiated brands | Zharnikov [-@zharnikov-2026-many-brands-can-market-hold] |
 | Eight-dimension completeness and necessity | Zharnikov [-@zharnikov-2026-why-eight-completeness-necessity-sbt] |
 | Spectral resource allocation across dimensions | Zharnikov [-@zharnikov-2026-spectral-resource-allocation-demand-driven] |
@@ -221,7 +221,7 @@ Brand perception follows a three-stage epistemic pipeline:
 
 **Stage 3: Re-collapse.** New evidence (a product failure, a CEO scandal, a brilliant campaign) introduces signals that contradict the existing conviction. If the contradicting evidence is strong enough, the conviction dissolves and the observer re-forms a cloud from the available evidence — the signals that have survived temporal decay plus crystallized priors, now including the new contradicting signals. The conviction is rebuilt from this evidence, never patched. This explains both brand resilience (convictions resist moderate contradicting evidence) and brand crises (sufficient contradicting evidence forces wholesale re-evaluation).
 
-The re-collapse mechanism is adapted from an epistemological architecture developed for financial document processing [@zharnikov-2026-hf-r20-portfolio-ai-perception], where probabilistic facts about financial transactions are rebuilt from scratch whenever new evidence arrives, rather than incrementally updated. The epistemic architecture is structurally analogous — observations → hypotheses → knowledge — but the domain transfer introduces two critical differences: brand "observations" are filtered through heterogeneous observer profiles rather than a single system, and brand signals decay over time (see Section 5.4), making the available evidence at re-collapse a function of temporal dynamics rather than a complete historical record.
+The re-collapse mechanism is adapted from an epistemological architecture developed for financial document processing [@zharnikov-2026b-atom-cloud-fact-epistemological], where probabilistic facts about financial transactions are rebuilt from scratch whenever new evidence arrives, rather than incrementally updated. The epistemic architecture is structurally analogous — observations → hypotheses → knowledge — but the domain transfer introduces two critical differences: brand "observations" are filtered through heterogeneous observer profiles rather than a single system, and brand signals decay over time (see Section 5.4), making the available evidence at re-collapse a function of temporal dynamics rather than a complete historical record.
 
 ### 2.5 Coherence as Structural Property
 
@@ -381,7 +381,7 @@ Table 8: Companion-Paper Formalization of SBT Constructs.
 | Eight-dimension justification (§2.2) | Zharnikov [-@zharnikov-2026-why-eight-completeness-necessity-sbt] | Completeness and necessity argument for d = 8 |
 | Coherence-type taxonomy (§4.2; P4) | Zharnikov [-@zharnikov-2026-coherence-type-as-crisis-predictor] | Drift-geometry derivation of the five types |
 | Resource allocation across dimensions | Zharnikov [-@zharnikov-2026-spectral-resource-allocation-demand-driven] | Demand-driven optimization given measured cohort weights |
-| Re-collapse pipeline (§2.4) | Zharnikov [-@zharnikov-2026-hf-r20-portfolio-ai-perception] | Atom-cloud-fact epistemological architecture |
+| Re-collapse pipeline (§2.4) | Zharnikov [-@zharnikov-2026b-atom-cloud-fact-epistemological] | Atom-cloud-fact epistemological architecture |
 | AI observers as metameric class (§5.3) | Zharnikov [-@zharnikov-2026-dimensional-collapse-ai-mediated-search] | Empirical metamerism across 17 LLM architectures |
 | Multi-observer positioning (§5.1) | Zharnikov [-@zharnikov-2026y-brand-triangulation] | Brand triangulation — geometric multi-observer framework |
 | Velocity / acceleration of cohort drift (§5.4) | Zharnikov [-@zharnikov-2026z-spectral-dynamics] | Phase-space dynamics in perception space |
@@ -765,7 +765,7 @@ Dmitry Zharnikov is an independent researcher and strategist. He holds a Profess
 
 ## Acknowledgments
 
-AI assistants (Claude Opus 4.6, Grok 4.1, Gemini 3.1) were used for initial literature search and editorial refinement; all theoretical claims, propositions, and interpretations are the author's sole responsibility.
+AI assistants (Claude Opus 4.8, Grok 4.20, Gemini 2.5 Pro) were used for initial literature search and editorial refinement; all theoretical claims, propositions, and interpretations are the author's sole responsibility.
 
 ---
 

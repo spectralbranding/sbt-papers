@@ -27,7 +27,7 @@ title: >-
 target_venue_primary: "TBD (between venues; JASIST + JLSC rejected)"
 status: >-
   Backbone spine locked 2026-06-13 for the realized-system revision. Paper is
-  a working paper between venues, so edits go in the paper (not PENDING_UPDATES).
+  a working paper between venues, so edits go in the paper directly.
 
 thesis: |
   Scientific publishing is the only knowledge-intensive domain without formal
@@ -60,7 +60,6 @@ boundary_conditions:
     provenance:
       created_by: "author"
       created_at: "2026-06-13"
-      source_log_event: "R14 paper §2 four-level hierarchy"
   - id: C2
     statement: "The research program is an evolving body of work (an SSOT), not a single isolated artifact."
     observable: "Multiple renders/papers derive from one maintained source over time."
@@ -68,11 +67,9 @@ boundary_conditions:
     provenance:
       created_by: "author"
       created_at: "2026-06-13"
-      source_log_event: "R14 paper §1.4 value stream"
 
 # ============================================================================
 # Observations — the realized metadata system as built L-layer events
-# (the evidence the revision rests on; each points to a session commit/doc)
 # ============================================================================
 observations:
   - id: O1
@@ -87,7 +84,6 @@ observations:
     provenance:
       created_by: "tool:build_ontology.py + sync_claims_from_spine.py + verify_citations.py"
       created_at: "2026-06-13"
-      source_log_event: "commit c607d759 (ontology infra) + SUBSTRATE_ARCHITECTURE.md"
     body_sections: ["New §: A realized instance"]
   - id: O2
     statement: >-
@@ -102,7 +98,6 @@ observations:
     provenance:
       created_by: "tool:build_ontology.py"
       created_at: "2026-06-13"
-      source_log_event: "commit e7bb49bf (corpus fan-out) + fc4a8d00 (maps_to + gate + docs)"
     body_sections: ["New §: A realized instance"]
   - id: O3
     statement: >-
@@ -116,7 +111,6 @@ observations:
     provenance:
       created_by: "tool:verify_paper_bundle.py + pytest"
       created_at: "2026-06-13"
-      source_log_event: "commit fc4a8d00 + tests/test_docs_alignment.py"
     body_sections: ["New §: A realized instance"]
 
 # ============================================================================
@@ -140,7 +134,6 @@ methods:
     provenance:
       created_by: "author + tool:build_ontology.py"
       created_at: "2026-06-13"
-      source_log_event: "commit c607d759"
     body_sections: ["New §: A realized instance"]
   - id: M2
     statement: >-
@@ -155,7 +148,6 @@ methods:
     provenance:
       created_by: "author + tool:verify_paper_bundle.py"
       created_at: "2026-06-13"
-      source_log_event: "commit fc4a8d00 + CLAUDE.md rule 5a"
     body_sections: ["New §: A realized instance"]
   - id: M3
     statement: >-
@@ -169,7 +161,6 @@ methods:
     provenance:
       created_by: "author"
       created_at: "2026-06-13"
-      source_log_event: "[internal path removed]"
     body_sections: ["New §: A realized instance"]
 
 # ============================================================================
@@ -185,7 +176,6 @@ measurements:
     provenance:
       created_by: "tool:build_ontology.py"
       created_at: "2026-06-13"
-      source_log_event: "[internal path removed] §Current state"
   - id: m_gate_clean
     statement: >-
       Corpus alignment under verify_paper_substrate_alignment.py --all
@@ -197,7 +187,6 @@ measurements:
     provenance:
       created_by: "tool:verify_paper_substrate_alignment.py + pytest"
       created_at: "2026-06-13"
-      source_log_event: "NEXT_SESSION_PROMPT_2026-06-13t.md verification block"
 
 # ============================================================================
 # Propositions — the seven protocol claims (paper §1.6 C1–C7) + diagnosis +
@@ -347,7 +336,6 @@ findings:
     provenance:
       created_by: "tool:build_ontology.py"
       created_at: "2026-06-13"
-      source_log_event: "[internal path removed] §Current state"
     body_sections: ["New §: A realized instance"]
   - id: F2
     statement: >-
@@ -366,7 +354,6 @@ findings:
     provenance:
       created_by: "tool:verify_paper_bundle.py"
       created_at: "2026-06-13"
-      source_log_event: "commit fc4a8d00"
     body_sections: ["New §: A realized instance"]
 
 # ============================================================================
@@ -418,7 +405,6 @@ robustness_checks:
     provenance:
       created_by: "author + tool:negotiate_modules.py"
       created_at: "2026-06-13"
-      source_log_event: "[internal path removed] + tests/test_negotiate_modules.py (8 tests) + 3 real-corpora experiment records: NEGOTIATION_REAL_CORPORA_SBT_OST_2026-06-13.md (clean), NEGOTIATION_INDEPENDENT_AAKER_SBT_2026-06-14.md (dangling), NEGOTIATION_INDEPENDENT_SPENCE_SBT_2026-06-14.md (conflict)"
     body_sections: ["5.6 Companion Experiments and Reproducibility (interaction-class table + cross-owner decision flowchart)"]
 
 # ============================================================================
@@ -443,7 +429,6 @@ alternative_explanations:
     provenance:
       created_by: "author"
       created_at: "2026-06-13"
-      source_log_event: "[internal path removed]"
     body_sections: ["New §: A realized instance (prior art + novelty)"]
 
 # ============================================================================
@@ -462,7 +447,6 @@ limitations:
     provenance:
       created_by: "author"
       created_at: "2026-06-13"
-      source_log_event: "SPEC_NATIVE_COMMUNICATION_AND_PUBLICATION_ADVICE_2026-06-13.md §1"
     body_sections: ["New §: A realized instance (limitations)", "§5.3 Limitations"]
   - id: L2
     statement: >-
@@ -480,7 +464,6 @@ limitations:
     provenance:
       created_by: "author"
       created_at: "2026-06-13"
-      source_log_event: "NEXT_SESSION_PROMPT_2026-06-13t.md §NEGOTIATION PROTOCOL prototype + [internal path removed]"
     body_sections: ["New §: A realized instance (future work)"]
 
 # ============================================================================
@@ -502,7 +485,6 @@ negative_findings:
     provenance:
       created_by: "author"
       created_at: "2026-06-13"
-      source_log_event: "[internal path removed] §DIVERGE"
     body_sections: ["New §: A realized instance (prior art)"]
 
 # ============================================================================
@@ -560,12 +542,3 @@ open:
 # ============================================================================
 # Spine changelog — append-only
 # ============================================================================
-changelog:
-  - date: 2026-06-13
-    operation: lock
-    by: "Session t/u realized-system revision (CLAUDE.md rule 0aa spine-first)"
-    note: >-
-      Initial backbone spine: P0a/P0b diagnosis, P1–P7 = paper claims C1–C7,
-      P8 = realized-system existence proof; observations/methods/measurements/
-      findings for the built metadata system; L1/L2 scope; A1 rival; NF1
-      prior-art gap; corpus_precedents 2026t/2026i/2026ao; standards anchors.

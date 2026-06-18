@@ -6,7 +6,7 @@ ORCID: 0009-0000-6893-9231
 
 DOI: [10.5281/zenodo.19468204](https://doi.org/10.5281/zenodo.19468204)
 
-Working Paper v1.2.1 – April 2026 (revised June 2026)
+Working Paper v1.2.0 – April 2026 (revised June 2026)
 
 ---
 
@@ -433,8 +433,8 @@ quadrantChart
     quadrant-2 Ideological without cultural
     quadrant-3 Low activation
     quadrant-4 Cultural without ideological
-    Dove 2003: [0.40, 0.20]
-    Dove 2010: [0.85, 0.90]
+    Dove 2006: [0.85, 0.80]
+    Dove 2013: [0.80, 0.90]
     Dove 2023: [0.55, 0.75]
 ```
 
@@ -574,7 +574,7 @@ All computed numerical values in Tables 2 and 3 (velocity vectors and accelerati
 
 ## 9. Conclusion
 
-This paper introduces a differential calculus for multi-dimensional brand perception that elevates velocity and acceleration from instrumental latent variables to first-class theoretical constructs. By embedding the Kalman-filter state vector inside a formally defined phase space, the framework establishes metric ambiguity resolution (Theorem 1), quantifies strategy–trajectory alignment via directional coherence (Definition 5), and enables dynamic competitive mapping through trajectory clustering and convergence indicators (the trajectory-based analysis section above). Three falsifiable predictions are offered for future longitudinal panels, each specifying quantitative patterns whose absence would falsify particular components of the theory.
+This paper introduces a differential calculus for multi-dimensional brand perception that elevates velocity and acceleration from instrumental latent variables to first-class theoretical constructs. By embedding the Kalman-filter state vector inside a formally defined phase space, the framework establishes metric ambiguity resolution (Theorem 1), quantifies strategy–trajectory alignment via directional coherence (Definition 5), and enables dynamic competitive mapping through trajectory clustering and convergence indicators (the trajectory-based analysis section above). Four falsifiable predictions are offered for future longitudinal panels, each specifying quantitative patterns whose absence would falsify particular components of the theory.
 
 Theoretically, the work completes the dynamic layer of Spectral Brand Theory: the SDE model [@zharnikov-2026-non-ergodic-brand-perception-diffusion] describes how perception evolves; the non-ergodicity analysis [@zharnikov-2026-non-ergodic-brand-perception-why] explains why individual trajectories diverge; the coherence-resilience derivation [@zharnikov-2026-coherence-type-as-crisis-predictor] predicts crisis vulnerability from dynamic signatures; and the present paper provides the measurement framework that makes these theoretical dynamics observable and actionable. The static limit -- when velocity approaches zero -- recovers classical brand-equity measurement [@aaker-1991-managing-brand-equity; @keller-1993-conceptualizing-measuring-managing], providing a formal correspondence principle that delineates when dynamic instrumentation is required. The framework also reframes persistence [@dekimpe-1995-persistence-marketing-effects] as sustained velocity and supplies the multi-attribute measurement instrument required by financial-impact models [@mizik-2008-financial-value-relevance; @mizik-2009-valuing-branded-businesses].
 
@@ -591,5 +591,5 @@ Brand measurement has been static for too long. The kinematic layer developed he
 
 ## Acknowledgments
 
-AI assistants (Claude Opus 4.7, Grok 4.1, Gemini 3.1) were used for initial literature search, for software development — authoring the experiment harness and the analysis and scoring scripts — and for orchestrating and running the reported experiments through those scripts, as well as for editorial refinement; all theoretical claims, propositions, and interpretations are the author's sole responsibility.
+AI assistants (Claude Opus 4.8, Grok 4.20, Gemini 2.5 Pro) were used for initial literature search, for software development — authoring the experiment harness and the analysis and scoring scripts — and for orchestrating and running the reported experiments through those scripts, as well as for editorial refinement; all theoretical claims, propositions, and interpretations are the author's sole responsibility.
 

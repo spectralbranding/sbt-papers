@@ -1382,7 +1382,7 @@ This article does not claim the protocol solves the reproducibility crisis, elim
 
 ## Acknowledgments
 
-AI assistants (Claude Opus 4.7, Grok 4.1, Gemini 3.1) were used for initial literature search and editorial refinement, and for writing and running the companion negotiation experiments of Section 5.6 — the cross-owner linker (`negotiate_modules.py`), the single-author linker it generalizes (`build_ontology.py`), the author-transcribed module sets, and the reproduction tooling were AI-assisted, then reviewed by the author and verified to reproduce deterministically. All theoretical claims, propositions, definitions, and interpretations are the author's sole responsibility.
+AI assistants (Claude Opus 4.8, Grok 4.20, Gemini 2.5 Pro) were used for initial literature search, for software development — implementing and running the companion computation script(s) that reproduce the paper's reported numerical and simulation results — and for editorial refinement; all theoretical claims, propositions, and interpretations are the author's sole responsibility. Here the companion software is the federated cross-owner linker (`negotiate_modules.py`) and the single-author linker it generalizes (`build_ontology.py`), which produce the three negotiation experiments of Section 5.6 from author-transcribed module sets; the author reviewed the code and verified that all three runs reproduce deterministically.
 
 ---
 

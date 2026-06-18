@@ -6,7 +6,7 @@ ORCID: 0009-0000-6893-9231
 
 DOI: [10.5281/zenodo.19778549](https://doi.org/10.5281/zenodo.19778549)
 
-Working Paper v1.0.0 – April 2026 (revised June 2026)
+Working Paper v1.1.0 – April 2026 (revised June 2026)
 
 ---
 
@@ -130,11 +130,11 @@ The spectral gap in low-regime cells reaches 10% of its initial value at a mean 
 
 The IRF half-life contrast confirms the regime interpretation: high-regime cells equilibrate in 1.4 months while low-regime cells persist for 13.1 months — a 9.3x ratio across 32 cells per regime (Stat 2: 1.4 vs 13.1 months). Mean spectral gap collapse to 10% of initial value occurs at month 46 in the low regime, consistent with a pre-conviction lead time of 2–18 months depending on the conviction-measurement horizon (Stat 3). The μ/λ ratio for the high regime is 45 by design; the simulation recovers a terminal gap ratio of 52x between regimes, confirming that the threshold correctly separates preserving from collapsing dynamics at these parameter values (Stat 4). Cosine drift from initial centroid is low in both regimes (.023 high, .027 low), confirming that centroid-level MDS maps would not detect the regime difference; spectral gap dynamics — not centroid positions — are the diagnostic (Stat 5).
 
-Figure 2 traces the parameter sweep across mu/lambda ∈ [0.5, 2.0] — N = 2,000 sample paths per ratio value, λ = .10 fixed, μ = ratio × λ, t = 100 equilibration steps. The bifurcation at ratio = 1.0 (μ = λ) is a sharp demarcation: mean terminal spectral gap collapses to zero as the ratio crosses below 1.0 and rises monotonically in the recoverable regime (ratio > 1.0). The curve confirms that the threshold at μ = λ is a genuine bifurcation rather than a smooth gradient, as predicted by the sign-flip condition on the Lyapunov exponent.
+Figure 1 traces the parameter sweep across mu/lambda ∈ [0.5, 2.0] — N = 2,000 sample paths per ratio value, λ = .10 fixed, μ = ratio × λ, t = 100 equilibration steps. The bifurcation at ratio = 1.0 (μ = λ) is a sharp demarcation: mean terminal spectral gap collapses to zero as the ratio crosses below 1.0 and rises monotonically in the recoverable regime (ratio > 1.0). The curve confirms that the threshold at μ = λ is a genuine bifurcation rather than a smooth gradient, as predicted by the sign-flip condition on the Lyapunov exponent.
 
 ![](figures/figure2_bifurcation.png)
 
-Figure 2: Bifurcation diagram of the spectral gap as a function of mu/lambda ratio. The threshold mu equals lambda separates the recoverable (mu > lambda) and absorbing (mu < lambda) regimes; the spectral gap collapses to zero in the absorbing regime.
+Figure 1: Bifurcation diagram of the spectral gap as a function of mu/lambda ratio. The threshold mu equals lambda separates the recoverable (mu > lambda) and absorbing (mu < lambda) regimes; the spectral gap collapses to zero in the absorbing regime.
 
 ### Illustrative Dove Calibration
 
@@ -144,28 +144,28 @@ Real continuous tracking data are required to confirm these estimates with confi
 
 ### Companion Computation Scripts
 
-The Monte Carlo simulation (Table 1) is fully reproducible from `monte_carlo_simulation.py` at https://github.com/spectralbranding/sbt-papers/tree/main/r22-spectral-gap-restoration/code/. Run command (`uv run --with statsmodels --with numpy --with scipy python3 monte_carlo_simulation.py`) and fixed seed (2026) are documented in the script docstring. The bifurcation diagram (Figure 2) is produced by `plot_bifurcation_curve.py` in the same directory; run command: `uv run python plot_bifurcation_curve.py` (numpy + matplotlib; seed 42; outputs `figures/figure2_bifurcation.png`). All numerics and figures in this section are reproducible from these scripts without modification.
+The Monte Carlo simulation (Table 1) is fully reproducible from `monte_carlo_simulation.py` at https://github.com/spectralbranding/sbt-papers/tree/main/r22-spectral-gap-restoration/code/. Run command (`uv run --with statsmodels --with numpy --with scipy python3 monte_carlo_simulation.py`) and fixed seed (2026) are documented in the script docstring. The bifurcation diagram (Figure 1) is produced by `plot_bifurcation_curve.py` in the same directory; run command: `uv run python plot_bifurcation_curve.py` (numpy + matplotlib; seed 42; outputs `figures/figure2_bifurcation.png`). All numerics and figures in this section are reproducible from these scripts without modification.
 
 ## Discussion
 
 ### The μ–λ Residual as Brand Health Dashboard
 
-```mermaid
+```{.mermaid width=85%}
 quadrantChart
-    title Brand Health under Spectral Leakage and Corrective Emission
+    title Brand Health: Leakage vs Corrective Emission
     x-axis Low lambda --> High lambda
     y-axis Low mu --> High mu
-    quadrant-1 Sustainable building under turbulence
+    quadrant-1 Sustainable building
     quadrant-2 Resilient hold
-    quadrant-3 Stable but fragile audit coherence
-    quadrant-4 Absorbing collapse risk pulse intervention
+    quadrant-3 Stable but fragile
+    quadrant-4 Absorbing collapse risk
     Dove Purpose-Aligned: [0.30, 0.65]
     Dove Skeptic-Critic: [0.75, 0.20]
 ```
 
-Figure 1: The mu-lambda quadrant translates the threshold inequality into a four-state managerial action map. Brands cross from the recoverable to the absorbing basin when the spectral leakage rate exceeds the corrective emission rate at the dominant cohort's detection scale.
+Figure 2: The mu-lambda quadrant translates the threshold inequality into a four-state managerial action map. Brands cross from the recoverable to the absorbing basin when the spectral leakage rate exceeds the corrective emission rate at the dominant cohort's detection scale.
 
-*Notes*: Dove cohort coordinates are illustrative, based on the Numerical Illustration design values (lambda = .10/year, mu = 4.50/year for Purpose-Aligned; mu = -.50/year for Skeptic-Critic). Axis positions are normalized to [0, 1] relative to the parameter range explored in Figure 2.
+*Notes*: Dove cohort coordinates are illustrative, based on the Numerical Illustration design values (lambda = .10/year, mu = 4.50/year for Purpose-Aligned; mu = -.50/year for Skeptic-Critic). Axis positions are normalized to [0, 1] relative to the parameter range explored in Figure 1.
 
 The threshold inequality converts a qualitative intuition — "strong brands recover" — into an empirically estimable condition. The μ–λ residual (the difference between corrective emission rate and leakage rate) is a leading indicator of cohort separability health. When the residual is large and positive, the brand is in a high-resilience regime; it can sustain a coherence shock and return to the pre-shock eigenspace configuration within a recovery horizon bounded by 1/(μ − λ). When the residual is near zero or negative, the brand is approaching the boundary of the recoverable basin, and preemptive intervention — increasing μ through emission amplification, or decreasing λ through coherence-tightening of existing emissions — is required before the shock, not after.
 
@@ -250,7 +250,7 @@ The Monte Carlo simulation script and full numeric outputs are available in the 
 
 The author acknowledges that James Kovalenko independently developed an operator-theoretic and category-theoretic framing of structural verification with closely related vocabulary — including variation–verification coupling, verification capacity, recursive friction as a self-amplifying failure mode, the meta-cognitive operator, and the invariant submanifold $\mathcal{M}_\text{inv}$ — and formalized these in the Transport–Aggregation Adjunction $D_f \dashv R_f$ across a wide-ranging treatment of structural ontology and topology [@kovalenko-2026-bounded-compositional-verification]. In separate work, Kovalenko [-@kovalenko-2026-bounded-compositional-verification] independently derives fold-bifurcation dynamics for capacity-constrained compounding systems, providing a cross-domain analog to the absorbing-collapse regime formalized here in Corollary 1. Together, these two independent derivations — from structural ontology and from compounding-systems dynamics, respectively — anchor the cross-domain validity of the spectral-gap framework developed here.
 
-AI assistants (Claude Opus 4.7, Grok 4.1, Gemini 3.1) were used for initial literature search, for software development — implementing and running the companion computation script(s) that reproduce the paper's reported numerical and simulation results — and for editorial refinement; all theoretical claims, propositions, and interpretations are the author's sole responsibility.
+AI assistants (Claude Opus 4.8, Grok 4.20, Gemini 2.5 Pro) were used for initial literature search, for software development — implementing and running the companion computation script(s) that reproduce the paper's reported numerical and simulation results — and for editorial refinement; all theoretical claims, propositions, and interpretations are the author's sole responsibility.
 
 ---
 

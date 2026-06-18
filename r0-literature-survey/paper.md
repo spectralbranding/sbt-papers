@@ -6,7 +6,7 @@ ORCID: 0009-0000-6893-9231
 
 DOI: [10.5281/zenodo.18945217](https://doi.org/10.5281/zenodo.18945217)
 
-Working Paper v1.5.0 – March 2026 (revised June 2026)
+Working Paper v1.4.0 – March 2026 (revised June 2026)
 
 ---
 
@@ -564,6 +564,7 @@ Table 3: Companion Paper Roadmap — Open Problem × Companion × Core Mathemati
 | Metameric collapse | 2026e (R2) | Johnson-Lindenstrauss projection bounds |
 | Cohort fuzziness | 2026f (R3) | Concentration of measure on the probability simplex |
 | Positioning capacity | 2026g (R4) | Sphere-packing bound; E_8 kissing number as adjacency ceiling |
+| Specification impossibility | 2026h (R5) | Coverage-impossibility theorem in 48-dimensional organizational specification space |
 | Non-ergodic dynamics | 2026j (R6) | SDE on simplex; absorbing boundary non-ergodicity proof |
 | Coherence-resilience | 2026s (R12) | Drift geometry and crisis predictor derivation |
 | Resource allocation | 2026k (R7) | Theorem 1: demand-driven optimal investment in brand space |
@@ -628,7 +629,7 @@ flowchart TD
 
 ## Acknowledgments
 
-AI assistants (Claude Opus 4.7, Grok 4.1, Gemini 3.1) were used for initial literature search and editorial refinement; all theoretical claims, propositions, and interpretations are the author's sole responsibility.
+AI assistants (Claude Opus 4.8, Grok 4.20, Gemini 2.5 Pro) were used for initial literature search and editorial refinement; all theoretical claims, propositions, and interpretations are the author's sole responsibility.
 
 ---
 

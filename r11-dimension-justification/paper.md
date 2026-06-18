@@ -432,9 +432,9 @@ The mapping exercise reveals a consistent pattern. Alternative frameworks each c
 
 The alternatives also reveal the cost of under-dimensionality. J. Aaker's [-@aaker-1997-dimensions-brand-personality] five-factor model, for all its empirical grounding, cannot distinguish brands that differ primarily on economic or temporal dimensions. Kapferer's prism, for all its elegance, cannot represent price-as-signal or heritage-as-perception. These are not minor omissions -- they are entire meaning channels through which brands demonstrably emit and observers demonstrably perceive, left unrepresented by frameworks with fewer than eight dimensions.
 
-Table 5 consolidates the coverage assessment across all five frameworks surveyed in this section.
+Table 1 consolidates the coverage assessment across all five frameworks surveyed in this section.
 
-Table 5: Coverage of the eight SBT meaning channels by major brand-perception frameworks.
+Table 1: Coverage of the eight SBT meaning channels by major brand-perception frameworks.
 
 | SBT Dimension | Aaker BBE [-@aaker-1997-dimensions-brand-personality] | Keller CBBE [-@keller-1993-conceptualizing-measuring-managing] | Kapferer Prism [-@kapferer-2008-new-strategic-brand] | Brakus EBQ [-@brakus-2009-brand-experience-what] | SBT-only |
 |---|---|---|---|---|---|
@@ -529,7 +529,7 @@ These research questions were specified after the R15 data were collected and ar
 
 *Experiment 1: Dimension reduction (8D to 7D).* Each of the eight dimensions was removed in turn, producing eight 7-dimensional variants. For each variant, the remaining weights were renormalized to sum to 100, DCI was recomputed for each model, and rank stability was measured against the 8D baseline using three metrics: Spearman rho (rank-order preservation), cosine similarity of the 22-element DCI vector (magnitude-sensitive), and mean absolute rank displacement (interpretable effect size in rank positions).
 
-Table 1: DCI Ranking Stability Under Single-Dimension Removal (N = 22 Models).
+Table 2: DCI Ranking Stability Under Single-Dimension Removal (N = 22 Models).
 
 | Dropped dimension | Spearman rho | p | Cosine | Mean rank displacement | Mean DCI delta |
 |---|---|---|---|---|---|
@@ -544,7 +544,7 @@ Table 1: DCI Ranking Stability Under Single-Dimension Removal (N = 22 Models).
 
 *Notes*: Sorted by cosine similarity (ascending = most disruptive). DCI = (w_Economic + w_Semiotic) / total. Spearman rho and p computed across 22 model-level mean DCI values. Cosine similarity computed between the 22-element DCI vectors of baseline and reduced variants. Mean rank displacement is the absolute number of rank positions shifted, averaged across all 22 models.
 
-Three findings address RQ1. First, no single dimension is indispensable: all eight drop-one cosines exceed .994, and all Spearman rhos are significant at p < .001. Second, the DCI-component dimensions dominate disruption: removing Economic (rho = .720, displacement = 3.55 positions) or Semiotic (rho = .737, displacement = 3.36) causes substantially more disruption than removing any non-DCI dimension (all rho > .94, all displacements < 1.5). Because DCI is defined as (w_Economic + w_Semiotic) / total, removing any non-numerator dimension mechanically increases DCI while removing a numerator dimension decreases it; this structural asymmetry must be borne in mind when interpreting Table 1 results. Tables 3 and 4 are metric-agnostic and provide additional evidence of each dimension's independent contribution. The important finding from Table 1 is that even removing a numerator component preserves cosine above .994, indicating the ranking pattern is overdetermined by the remaining dimensions. Third, the six non-DCI dimensions produce cosines above .9997 when removed individually, confirming that their individual contributions to DCI ranking are marginal -- but this does not imply they carry no information (see Table 3 below).
+Three findings address RQ1. First, no single dimension is indispensable: all eight drop-one cosines exceed .994, and all Spearman rhos are significant at p < .001. Second, the DCI-component dimensions dominate disruption: removing Economic (rho = .720, displacement = 3.55 positions) or Semiotic (rho = .737, displacement = 3.36) causes substantially more disruption than removing any non-DCI dimension (all rho > .94, all displacements < 1.5). Because DCI is defined as (w_Economic + w_Semiotic) / total, removing any non-numerator dimension mechanically increases DCI while removing a numerator dimension decreases it; this structural asymmetry must be borne in mind when interpreting Table 2 results. Tables 4 and 5 are metric-agnostic and provide additional evidence of each dimension's independent contribution. The important finding from Table 2 is that even removing a numerator component preserves cosine above .994, indicating the ranking pattern is overdetermined by the remaining dimensions. Third, the six non-DCI dimensions produce cosines above .9997 when removed individually, confirming that their individual contributions to DCI ranking are marginal -- but this does not imply they carry no information (see Table 4 below).
 
 Figure 3: Robustness Trajectory -- DCI Ranking Stability Under Dimension Removal.
 
@@ -565,7 +565,7 @@ flowchart LR
 
 *Experiment 2: Dimension reduction (8D to 6D).* All 28 pairwise dimension combinations were removed, producing 28 six-dimensional variants. The Semiotic + Economic pair produces undefined DCI (both numerator components removed; DCI = 0/total for all models), confirming that both components are structurally necessary for the collapse metric.
 
-Table 2: Most and Least Disruptive Dimension-Pair Removals (N = 27 Computable Pairs, 22 Models).
+Table 3: Most and Least Disruptive Dimension-Pair Removals (N = 27 Computable Pairs, 22 Models).
 
 | Dropped pair | Spearman rho | Cosine | Mean rank displacement |
 |---|---|---|---|
@@ -592,7 +592,7 @@ Result: Spearman rho = .9997 (p < .001), cosine = 1.000, mean rank displacement 
 
 *Variance decomposition.* To address RQ3, the cross-model variance of each dimension was computed across the 22 model-level mean weight profiles.
 
-Table 3: Cross-Model Variance by Dimension (N = 22 Models).
+Table 4: Cross-Model Variance by Dimension (N = 22 Models).
 
 | Dimension | Mean weight | SD | Variance | % of total variance |
 |---|---|---|---|---|
@@ -611,7 +611,7 @@ All eight dimensions carry non-trivial cross-model variance, addressing RQ3 in t
 
 *Profile shape stability.* As a supplementary analysis, mean pairwise cosine similarity of full spectral profiles (not just DCI) was computed across all 231 model pairs under each 7D variant.
 
-Table 4: Mean Pairwise Profile Cosine Under Dimension Removal (N = 22 Models, 231 Pairs).
+Table 5: Mean Pairwise Profile Cosine Under Dimension Removal (N = 22 Models, 231 Pairs).
 
 | Dropped dimension | 8D cosine | 7D cosine | Delta |
 |---|---|---|---|
@@ -626,17 +626,17 @@ Table 4: Mean Pairwise Profile Cosine Under Dimension Removal (N = 22 Models, 23
 
 *Notes*: Baseline 8D cosine (.976) matches R15's reported cross-model convergence. Removing Ideological or Cultural increases mean pairwise cosine; removing Economic or Experiential decreases it.
 
-Removing Ideological or Cultural *increases* mean pairwise cosine (from .976 to .980), revealing these dimensions as the primary sources of inter-model disagreement. Models agree most on Economic and Experiential weight assignments; removing this shared signal slightly reduces overall agreement. This analysis complements the variance decomposition: Cultural and Ideological contribute the most to *differentiating* models from each other (Table 3), while Economic and Experiential contribute the most to *aligning* models with each other (Table 4). A six-dimension framework omitting any two dimensions would therefore lose either differentiation power or alignment signal.
+Removing Ideological or Cultural *increases* mean pairwise cosine (from .976 to .980), revealing these dimensions as the primary sources of inter-model disagreement. Models agree most on Economic and Experiential weight assignments; removing this shared signal slightly reduces overall agreement. This analysis complements the variance decomposition: Cultural and Ideological contribute the most to *differentiating* models from each other (Table 4), while Economic and Experiential contribute the most to *aligning* models with each other (Table 5). A six-dimension framework omitting any two dimensions would therefore lose either differentiation power or alignment signal.
 
 *Summary.* The three experiments converge on a consistent answer to each research question, with the drop-one trajectory visualized in Figure 3. RQ1: the ranking pattern is robust to dimension reduction, with all drop-one cosines above .994 and all drop-pair cosines above .993, but each removal sacrifices some information. RQ2: expansion to ten dimensions adds no discriminative power (rho = .9997). RQ3: all eight dimensions carry 5-19% of cross-model variance, with no dimension contributing less than 5.4%. Eight dimensions sit at the resolution limit where every dimension contributes measurable cross-model variation while the overall ranking pattern remains robust to perturbation. The theoretical completeness argument of Sections 2-5 is empirically supported: reducing below eight sacrifices variance; expanding beyond eight introduces redundancy.
 
-*Companion Computation Script.* The full Section 8A analysis is reproducible from a single script. The analysis script `gap5_dimension_robustness.py` and the complete structured results `gap5_dimension_robustness_results.json` are archived at <https://github.com/spectralbranding/sbt-papers/tree/main/r11-dimension-justification/robustness-analysis>. The script uses fixed random seed `SEED = 42` (set via `np.random.seed(42)` immediately before the Experiment 3 augmentation step) so the noise-perturbed 50/50 splits in the 10D expansion are deterministic. With Python 3.12 and the `numpy` and `scipy` packages installed, the script reproduces Tables 1-4 of this section by running:
+*Companion Computation Script.* The full Section 8A analysis is reproducible from a single script. The analysis script `gap5_dimension_robustness.py` and the complete structured results `gap5_dimension_robustness_results.json` are archived at <https://github.com/spectralbranding/sbt-papers/tree/main/r11-dimension-justification/robustness-analysis>. The script uses fixed random seed `SEED = 42` (set via `np.random.seed(42)` immediately before the Experiment 3 augmentation step) so the noise-perturbed 50/50 splits in the 10D expansion are deterministic. With Python 3.12 and the `numpy` and `scipy` packages installed, the script reproduces Tables 2-5 of this section by running:
 
 ```
 uv run --with numpy,scipy python gap5_dimension_robustness.py
 ```
 
-The source data are R15 Run 5 weight profiles archived as the dataset of record on HuggingFace at <https://doi.org/10.57967/hf/8284>. Two of the 24 models in the full R15 panel are absent from Run 5; the script silently skips models with insufficient observations (`len(common) < 3` for any brand-pair-level statistics), so the analysis runs over the 22 models for which Run 5 data are complete. The DCI baseline mean (.356), the dimension-drop cosines and Spearman rhos in Table 1, the dimension-pair statistics in Table 2, the augmented-10D rho (.9997), the variance decomposition in Table 3, and the profile-cosine values in Table 4 are all produced in a single deterministic run. A standalone methodology template documenting the DCI formula, the 22-vs-24 model exclusion logic, and the dimension-volatility ranking is available at <https://github.com/spectralbranding/sbt-papers/tree/main/r11-dimension-justification/code/dimension_volatility.py>; this template is self-contained and runs without the R15 source data, printing the published Table 3 values as reference output.
+The source data are R15 Run 5 weight profiles archived as the dataset of record on HuggingFace at <https://doi.org/10.57967/hf/8284>. Two of the 24 models in the full R15 panel are absent from Run 5; the script silently skips models with insufficient observations (`len(common) < 3` for any brand-pair-level statistics), so the analysis runs over the 22 models for which Run 5 data are complete. The DCI baseline mean (.356), the dimension-drop cosines and Spearman rhos in Table 2, the dimension-pair statistics in Table 3, the augmented-10D rho (.9997), the variance decomposition in Table 4, and the profile-cosine values in Table 5 are all produced in a single deterministic run. A standalone methodology template documenting the DCI formula, the 22-vs-24 model exclusion logic, and the dimension-volatility ranking is available at <https://github.com/spectralbranding/sbt-papers/tree/main/r11-dimension-justification/code/dimension_volatility.py>; this template is self-contained and runs without the R15 source data, printing the published Table 4 values as reference output.
 
 ---
 
@@ -664,7 +664,7 @@ The empirical robustness analysis in Section 8A is fully reproducible. The analy
 
 ## Acknowledgments
 
-AI assistants (Claude Opus 4.7, Grok 4.1, Gemini 3.1) were used for initial literature search, for software development — implementing and running the companion computation script(s) that reproduce the paper's reported numerical and simulation results — and for editorial refinement; all theoretical claims, propositions, and interpretations are the author's sole responsibility.
+AI assistants (Claude Opus 4.8, Grok 4.20, Gemini 2.5 Pro) were used for initial literature search, for software development — implementing and running the companion computation script(s) that reproduce the paper's reported numerical and simulation results — and for editorial refinement; all theoretical claims, propositions, and interpretations are the author's sole responsibility.
 
 ---
 

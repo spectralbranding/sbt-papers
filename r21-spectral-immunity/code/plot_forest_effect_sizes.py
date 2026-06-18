@@ -30,40 +30,40 @@ import sys
 
 TABLE3_DATA = [
     # (brand, archetype, cohen_d, tost_equivalent)
-    ("Dior",           "LVMH cluster",             +0.20, True),
-    ("Fendi",          "LVMH cluster",             +0.07, True),
-    ("Louis Vuitton",  "LVMH cluster",             +0.16, True),
-    ("Axe",            "Unilever contradiction",   +0.02, True),
-    ("Ben and Jerrys", "Unilever contradiction",   -0.04, True),
-    ("Dove",           "Unilever contradiction",   +0.21, True),
-    ("Gillette",       "P&G spread",               -0.13, True),
-    ("Pampers",        "P&G spread",               -0.22, True),
-    ("Tide",           "P&G spread",               -0.10, True),
-    ("Toyota",         "Toyota layer",             -0.30, True),
-    ("Lexus",          "Toyota layer",             +0.52, True),
-    ("LOreal Paris",   "LOreal prestige",          -0.13, True),
-    ("Lancome",        "LOreal prestige",          +0.03, True),
-    ("Maybelline",     "LOreal prestige",          -0.07, True),
-    ("Volvo",          "Geely reverse",            -0.15, True),
-    ("Polestar",       "Geely reverse",            -0.07, True),
-    ("Geely Auto",     "Geely reverse",            +0.27, False),
-    ("Yandex",         "Yandex branded house",     -0.01, True),
-    ("Yandex Market",  "Yandex branded house",     +0.10, True),
-    ("Yandex Taxi",    "Yandex branded house",     -0.16, False),
+    ("Dior", "LVMH cluster", +0.20, True),
+    ("Fendi", "LVMH cluster", +0.07, True),
+    ("Louis Vuitton", "LVMH cluster", +0.16, True),
+    ("Axe", "Unilever contradiction", +0.02, True),
+    ("Ben and Jerrys", "Unilever contradiction", -0.04, True),
+    ("Dove", "Unilever contradiction", +0.21, True),
+    ("Gillette", "P&G spread", -0.13, True),
+    ("Pampers", "P&G spread", -0.22, True),
+    ("Tide", "P&G spread", -0.10, True),
+    ("Toyota", "Toyota layer", -0.30, True),
+    ("Lexus", "Toyota layer", +0.52, True),
+    ("LOreal Paris", "LOreal prestige", -0.13, True),
+    ("Lancome", "LOreal prestige", +0.03, True),
+    ("Maybelline", "LOreal prestige", -0.07, True),
+    ("Volvo", "Geely reverse", -0.15, True),
+    ("Polestar", "Geely reverse", -0.07, True),
+    ("Geely Auto", "Geely reverse", +0.27, False),
+    ("Yandex", "Yandex branded house", -0.01, True),
+    ("Yandex Market", "Yandex branded house", +0.10, True),
+    ("Yandex Taxi", "Yandex branded house", -0.16, False),
 ]
 
 TABLE7_DATA = [
     # (brand, archetype_label, cohen_d, tost_equivalent)
-    ("Coca-Cola",  "Published brand extension", +0.08, True),
-    ("Pepsi",      "Published brand extension", +0.11, True),
-    ("BMW",        "Published brand extension", -0.18, True),
-    ("Audi",       "Published brand extension", +0.49, True),
-    ("Google",     "Published brand extension", +0.06, True),
-    ("Disney",     "Published brand extension", +0.04, True),
-    ("Colgate",    "Published brand extension", +0.21, True),
-    ("Samsung",    "Published brand extension", +0.06, True),
-    ("H&M",        "Published brand extension", -0.29, True),
-    ("Dell",       "Published brand extension", +0.16, True),
+    ("Coca-Cola", "Published brand extension", +0.08, True),
+    ("Pepsi", "Published brand extension", +0.11, True),
+    ("BMW", "Published brand extension", -0.18, True),
+    ("Audi", "Published brand extension", +0.49, True),
+    ("Google", "Published brand extension", +0.06, True),
+    ("Disney", "Published brand extension", +0.04, True),
+    ("Colgate", "Published brand extension", +0.21, True),
+    ("Samsung", "Published brand extension", +0.06, True),
+    ("H&M", "Published brand extension", -0.29, True),
+    ("Dell", "Published brand extension", +0.16, True),
 ]
 
 TOST_BOUND = 1.0
@@ -81,14 +81,14 @@ ARCHETYPE_ORDER = [
 ]
 
 ARCHETYPE_COLORS = {
-    "LVMH cluster":               "#9370DB",
-    "Unilever contradiction":     "#E07B39",
-    "P&G spread":                 "#4682B4",
-    "Toyota layer":               "#2E8B57",
-    "LOreal prestige":            "#D4317A",
-    "Geely reverse":              "#8B4513",
-    "Yandex branded house":       "#DAA520",
-    "Published brand extension":  "#708090",
+    "LVMH cluster": "#9370DB",
+    "Unilever contradiction": "#E07B39",
+    "P&G spread": "#4682B4",
+    "Toyota layer": "#2E8B57",
+    "LOreal prestige": "#D4317A",
+    "Geely reverse": "#8B4513",
+    "Yandex branded house": "#DAA520",
+    "Published brand extension": "#708090",
 }
 
 
@@ -98,7 +98,7 @@ def _ci_from_d(d: float, n: int = 65, alpha: float = 0.05) -> tuple[float, float
     se(d) ≈ sqrt((n1+n2)/(n1*n2) + d^2/(2*(n1+n2)))  for two equal groups
     For paired design: se(d) ≈ sqrt(1/n + d^2/(2*n))
     """
-    se = math.sqrt(1.0 / n + d ** 2 / (2 * n))
+    se = math.sqrt(1.0 / n + d**2 / (2 * n))
     # z_crit ≈ 1.96 for alpha=.05
     z = 1.96
     return d - z * se, d + z * se
@@ -108,6 +108,7 @@ def plot_forest(output_path: pathlib.Path) -> None:
     """Generate the forest plot and save to output_path."""
     try:
         import matplotlib
+
         matplotlib.use("Agg")
         import matplotlib.pyplot as plt
         import matplotlib.patches as mpatches
@@ -147,8 +148,13 @@ def plot_forest(output_path: pathlib.Path) -> None:
     fig, ax = plt.subplots(figsize=(10, fig_height))
 
     # Draw TOST equivalence bounds
-    ax.axvline(x=-TOST_BOUND, color="crimson", linestyle="--", linewidth=1.2,
-               label=f"TOST bound (+-{TOST_BOUND:.1f} DCI)")
+    ax.axvline(
+        x=-TOST_BOUND,
+        color="crimson",
+        linestyle="--",
+        linewidth=1.2,
+        label=f"TOST bound (+-{TOST_BOUND:.1f} DCI)",
+    )
     ax.axvline(x=+TOST_BOUND, color="crimson", linestyle="--", linewidth=1.2)
     ax.axvline(x=0, color="black", linestyle="-", linewidth=0.6, alpha=0.4)
 
@@ -160,8 +166,15 @@ def plot_forest(output_path: pathlib.Path) -> None:
         color = ARCHETYPE_COLORS.get(archetype, "gray")
         marker = "o" if equiv else "D"
         ax.plot([lo, hi], [row_y, row_y], color=color, linewidth=1.2, alpha=0.7)
-        ax.plot(d, row_y, marker=marker, color=color, markersize=7,
-                markeredgecolor="white", markeredgewidth=0.5)
+        ax.plot(
+            d,
+            row_y,
+            marker=marker,
+            color=color,
+            markersize=7,
+            markeredgecolor="white",
+            markeredgewidth=0.5,
+        )
         y_positions.append(row_y)
         y_labels.append(brand)
 
@@ -194,11 +207,17 @@ def plot_forest(output_path: pathlib.Path) -> None:
         mpatches.Patch(color=ARCHETYPE_COLORS[a], label=a) for a in ARCHETYPE_ORDER
     ]
     legend_handles.append(
-        plt.Line2D([0], [0], color="crimson", linestyle="--",
-                   label=f"TOST bound +/-{TOST_BOUND:.1f}")
+        plt.Line2D(
+            [0],
+            [0],
+            color="crimson",
+            linestyle="--",
+            label=f"TOST bound +/-{TOST_BOUND:.1f}",
+        )
     )
-    ax.legend(handles=legend_handles, loc="lower right", fontsize=7.5,
-              framealpha=0.8, ncol=2)
+    ax.legend(
+        handles=legend_handles, loc="lower right", fontsize=7.5, framealpha=0.8, ncol=2
+    )
 
     plt.tight_layout()
     output_path.parent.mkdir(parents=True, exist_ok=True)

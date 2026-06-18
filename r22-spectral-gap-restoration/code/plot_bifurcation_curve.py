@@ -19,6 +19,7 @@ Seed: 42 (fixed for reproducibility)
 
 import numpy as np
 import matplotlib
+
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import os
@@ -31,8 +32,8 @@ n_ratios = 50
 ratios = np.linspace(0.5, 2.0, n_ratios)
 N_paths = 2000
 T_steps = 100
-sigma = 0.05          # noise std for the OU process
-gap_init = 1.0        # initial spectral gap
+sigma = 0.05  # noise std for the OU process
+gap_init = 1.0  # initial spectral gap
 
 mean_terminal_gaps = np.empty(n_ratios)
 
@@ -53,21 +54,50 @@ for i, ratio in enumerate(ratios):
 # --- Plot ---
 fig, ax = plt.subplots(figsize=(7, 4.5))
 
-ax.plot(ratios, mean_terminal_gaps, color="#1f77b4", linewidth=2.0, label="Mean terminal spectral gap")
-ax.axvline(x=1.0, color="gray", linestyle="--", linewidth=1.5, label="Threshold mu = lambda")
+ax.plot(
+    ratios,
+    mean_terminal_gaps,
+    color="#1f77b4",
+    linewidth=2.0,
+    label="Mean terminal spectral gap",
+)
+ax.axvline(
+    x=1.0, color="gray", linestyle="--", linewidth=1.5, label="Threshold mu = lambda"
+)
 
 # Regime annotations
-ax.text(0.68, max(mean_terminal_gaps) * 0.55, "Absorbing\nregime",
-        ha="center", va="center", fontsize=10, color="#d62728",
-        bbox=dict(boxstyle="round,pad=0.3", facecolor="white", edgecolor="#d62728", alpha=0.8))
-ax.text(1.60, max(mean_terminal_gaps) * 0.55, "Recoverable\nregime",
-        ha="center", va="center", fontsize=10, color="#2ca02c",
-        bbox=dict(boxstyle="round,pad=0.3", facecolor="white", edgecolor="#2ca02c", alpha=0.8))
+ax.text(
+    0.68,
+    max(mean_terminal_gaps) * 0.55,
+    "Absorbing\nregime",
+    ha="center",
+    va="center",
+    fontsize=10,
+    color="#d62728",
+    bbox=dict(
+        boxstyle="round,pad=0.3", facecolor="white", edgecolor="#d62728", alpha=0.8
+    ),
+)
+ax.text(
+    1.60,
+    max(mean_terminal_gaps) * 0.55,
+    "Recoverable\nregime",
+    ha="center",
+    va="center",
+    fontsize=10,
+    color="#2ca02c",
+    bbox=dict(
+        boxstyle="round,pad=0.3", facecolor="white", edgecolor="#2ca02c", alpha=0.8
+    ),
+)
 
 ax.set_xlabel("mu / lambda ratio", fontsize=12)
 ax.set_ylabel("Mean terminal spectral gap (t = 100)", fontsize=12)
-ax.set_title("Bifurcation of Spectral Gap at mu = lambda Threshold\n"
-             "(lambda = 0.1, N = 2,000 paths per ratio, seed = 42)", fontsize=11)
+ax.set_title(
+    "Bifurcation of Spectral Gap at mu = lambda Threshold\n"
+    "(lambda = 0.1, N = 2,000 paths per ratio, seed = 42)",
+    fontsize=11,
+)
 ax.legend(fontsize=10)
 ax.grid(True, alpha=0.3)
 ax.set_xlim(0.5, 2.0)

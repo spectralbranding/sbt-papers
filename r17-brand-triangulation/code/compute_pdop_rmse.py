@@ -38,11 +38,11 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 SEED = 42
-D = 8                         # SBT spectral dimensions
-SIGMA = 0.5                   # per-cohort observation noise std
-N_REPLICATIONS = 200          # MC replications per trial
+D = 8  # SBT spectral dimensions
+SIGMA = 0.5  # per-cohort observation noise std
+N_REPLICATIONS = 200  # MC replications per trial
 K_VALUES = (9, 10, 12, 15, 20, 30, 50)  # cohort counts
-TRIALS_PER_K = 30             # weight-matrix draws per K
+TRIALS_PER_K = 30  # weight-matrix draws per K
 GEOMETRIES = ("clustered", "random", "diverse")  # weight-matrix priors
 
 
@@ -130,7 +130,9 @@ def run() -> tuple[list[dict], Path, Path]:
     csv_path = here / "pdop_rmse.csv"
     png_path = here / "figure2_pdop_rmse.png"
     with csv_path.open("w", newline="") as fh:
-        writer = csv.DictWriter(fh, fieldnames=["trial_id", "K", "geometry", "PDOP", "RMSE"])
+        writer = csv.DictWriter(
+            fh, fieldnames=["trial_id", "K", "geometry", "PDOP", "RMSE"]
+        )
         writer.writeheader()
         writer.writerows(rows)
     plot_log_log(rows, png_path)
@@ -161,22 +163,31 @@ def plot_log_log(rows: list[dict], png_path: Path) -> None:
         slope_k, intercept_k = np.polyfit(np.log(pdops[mask]), np.log(rmses[mask]), 1)
         per_k_slopes.append(slope_k)
         x_fit = np.linspace(np.log(pdops[mask].min()), np.log(pdops[mask].max()), 50)
-        ax.plot(np.exp(x_fit), np.exp(slope_k * x_fit + intercept_k), color=color, lw=1.0,
-                label=f"K = {K}  (slope = {slope_k:.3f})")
+        ax.plot(
+            np.exp(x_fit),
+            np.exp(slope_k * x_fit + intercept_k),
+            color=color,
+            lw=1.0,
+            label=f"K = {K}  (slope = {slope_k:.3f})",
+        )
 
     ax.set_xscale("log")
     ax.set_yscale("log")
     ax.set_xlabel("PDOP (log scale)")
     ax.set_ylabel("RMSE (log scale)")
     median_slope = float(np.median(per_k_slopes))
+    # Title is set short and saved with a tight bounding box; the full "Figure 2:"
+    # caption is supplied by the surrounding paper text (AMA convention), so the
+    # in-figure label is kept brief and is no longer clipped at the page margin.
     ax.set_title(
-        f"Figure 2: PDOP vs RMSE (Monte Carlo; R = {N_REPLICATIONS} per trial; "
-        f"median per-K slope = {median_slope:.3f})"
+        f"PDOP vs RMSE (Monte Carlo; R = {N_REPLICATIONS} per trial;\n"
+        f"median per-K slope = {median_slope:.3f})",
+        fontsize=9,
     )
     ax.grid(True, which="both", ls=":", lw=0.4, alpha=0.6)
     ax.legend(loc="best", fontsize=7, frameon=True, ncol=2)
     fig.tight_layout()
-    fig.savefig(png_path)
+    fig.savefig(png_path, bbox_inches="tight")
     plt.close(fig)
 
 
@@ -198,6 +209,8 @@ if __name__ == "__main__":
         s, _ = np.polyfit(np.log(pdops[m]), np.log(rmses[m]), 1)
         print(f"   K = {K:3d}  n = {m.sum():3d}  slope = {s:.4f}")
     ratios = rmses / (SIGMA * np.sqrt(Ks) * pdops)
-    print(f"RMSE / (sigma sqrt(K) PDOP) : mean = {ratios.mean():.4f}  median = {np.median(ratios):.4f}  (theory: 1.0)")
+    print(
+        f"RMSE / (sigma sqrt(K) PDOP) : mean = {ratios.mean():.4f}  median = {np.median(ratios):.4f}  (theory: 1.0)"
+    )
     print(f"wrote                : {csv_path}")
     print(f"wrote                : {png_path}")
