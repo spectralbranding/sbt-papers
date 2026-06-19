@@ -1,0 +1,493 @@
+spine_version: "0.2"
+paper_key: "2026au"
+title: "The Correspondence Principle of Brand Management"
+thesis: |
+  The incumbent brand-equity frameworks — Aaker's brand equity, Keller's customer-based
+  brand equity, Kapferer's identity prism, the Ehrenberg-Bass distinctiveness school, and
+  single-figure brand valuation — are not rivals to Spectral Brand Theory (SBT) but its
+  limiting cases. Modeling a brand as an observer-completed probability measure mu on an
+  eight-dimensional perception manifold, each incumbent is represented as a measurable
+  projection-and-aggregation operator T_k that induces a Blackwell garbling of the full
+  perception measurement (the representation lemma). Two theorems follow. The CORRESPONDENCE
+  THEOREM: the aggregate brand-health score is a sufficient statistic for the managerial
+  decision problem if and only if four regime conditions hold jointly (a tight unimodal
+  cloud; slow temporal dynamics; a human-only observer set; a firm-dominated signal); in
+  that corner SBT reduces to the incumbent, which is why the incumbent worked, and the
+  Ehrenberg-Bass "brands differ little in image" finding is relocated as an empirical
+  diagnosis of which regime a category occupies, not a universal law. The DECISION-EFFICIENCY
+  THEOREMS: outside that corner the score is a garbling of the cloud, so the full measurement
+  weakly dominates the score for every decision-maker (directed-gradient dominance), and the
+  realized decision loss is bounded below by a quantity monotone in four regime-departure
+  parameters (metameric arbitrage). The theorems entail a manager-runnable decision procedure
+  — regime test, blind-spot diagnostic, directed-intervention rule, metameric-substitution
+  rule — realized in the Brand Spectrometer. SBT is brand metrology (the astronomer), not
+  brand management (the astronaut); Blackwell's theorem is the bridge by which finer
+  measurement provably helps every mission without SBT being a theory of any mission.
+
+# ---------------------------------------------------------------------------
+# Boundary conditions (cannot be relaxed — the theory does not apply outside them)
+# ---------------------------------------------------------------------------
+boundary_conditions:
+  - id: C1
+    statement: "A brand is modeled as a probability measure mu on a measurable space (Omega, Sigma), where Omega is the eight-dimensional SBT perception manifold (Semiotic, Narrative, Ideological, Experiential, Social, Economic, Cultural, Temporal) and mu is the observer-completed distribution of perceptions across an observer population and time. Excludes any brand object for which no such distribution is defined (e.g. a brand with a single observer or no observers)."
+  - id: C2
+    statement: "The managerial decision problem is a statistical decision problem: an action a in a compact set A, a payoff g(a, mu), and a decision-maker who chooses a to maximize expected payoff given whatever measurement (experiment) is available. SBT supplies the experiment; the manager is the decision-maker. Outside a well-posed decision problem the dominance results have no referent."
+  - id: C3
+    statement: "Each incumbent framework k is representable as a measurable operator T_k = A_k o Pi_k: a projection Pi_k of mu onto a privileged sub-basis followed by an aggregation A_k to a low-order summary (typically a mean or scalar index). Frameworks with no such representation (e.g. a purely qualitative brand narrative with no measured summary) are out of scope."
+  - id: C4
+    statement: "The four regime parameters are estimable: perceptual dispersion/multimodality sigma, temporal velocity v, AI-observer share alpha, and exogenous-signal share epsilon. The correspondence and efficiency results are stated as functions of these parameters and presuppose they can be measured (the regime test); a setting where none can be estimated is outside the diagnostic's scope."
+
+# ---------------------------------------------------------------------------
+# Assumption atoms (assumed without test; relaxable, consequences traced)
+# ---------------------------------------------------------------------------
+assumption_atoms:
+  - id: AA1
+    statement: "The observer-completed measure mu is well-approximated by a von Mises-Fisher mixture on the (directional part of the) perception manifold; the classical regime is the single-component, low-concentration-spread limit."
+    type: distributional_form
+    relaxable: true
+    relaxation_consequence: "If mu is heavier-tailed or supported off the modeled manifold, the numerical loss magnitudes change but the qualitative monotonicity of the loss in the four regime parameters (P4) is preserved; tested in RC1."
+    affects: [P4, M1, F1]
+  - id: AA2
+    statement: "The payoff g is smooth in the action and the perception state in a neighborhood of the optimum (used for the directed-gradient corollary); the Blackwell dominance itself (P3) requires no smoothness."
+    type: regularity
+    relaxable: true
+    relaxation_consequence: "Under non-smooth (threshold) payoffs the gradient language is replaced by sub-differential language; the dominance ordering is unchanged because Blackwell-Sherman-Stein holds for all bounded loss functions. Tested in RC1 (threshold payoff)."
+    affects: [P3, RC1]
+  - id: AA3
+    statement: "The eight SBT dimensions are a justified measurement basis for perception, not arbitrary scaffolding (imported from R11 dimension-justification)."
+    type: construct_validity
+    relaxable: true
+    relaxation_consequence: "If fewer/more dimensions are correct, the garbling argument is unchanged (it holds for any finite dimension); dimension-count robustness (2 vs 8) is shown in RC1, so the theorems do not depend on the exact count of eight."
+    affects: [P1, P2, RC1]
+
+# ---------------------------------------------------------------------------
+# Propositions (the theoretical contributions)
+# ---------------------------------------------------------------------------
+propositions:
+  - id: P1
+    statement: "Representation lemma. Every incumbent brand-equity framework is a measurable projection-and-aggregation operator T_k = A_k o Pi_k on mu, and the experiment 'observe T_k(mu)' is a Blackwell garbling of the experiment 'observe mu': there is a stochastic (Markov) kernel carrying the full perception measurement into the incumbent summary."
+    type: ontological
+    conditions: "C1, C3"
+    antecedents: []
+    assumptions: [AA3]
+    evidence:
+      - type: analytic
+        anchor: "T_k factors as projection then aggregation; composing measurable maps with the identity-plus-noise channel exhibits the garbling kernel. The data-processing inequality gives I(decision; T_k(mu)) <= I(decision; mu)."
+      - type: citation
+        anchor: "Garbling / data-processing backbone."
+        citation_keys: [blackwell-1953-equivalent-comparisons, cover-2006-elements-information-theory]
+        citation_role: methodological_source
+      - type: citation
+        anchor: "The incumbents represented as operators."
+        citation_keys: [aaker-1991-managing-brand-equity, aaker-1996-measuring-brand-equity, keller-1993-conceptualizing-measuring-managing, kapferer-2008-new-strategic-brand, sharp-2010-how-brands-grow]
+        citation_role: theoretical_predecessor
+    falsifier: "An incumbent summary that is NOT a function of mu (carries information about the brand absent from the full perception measurement) would refute the garbling claim. None is exhibited in the brand literature."
+    body_sections: ["Theoretical Framework — The Brand as an Observer-Completed Measure", "Theoretical Framework — Incumbent Frameworks as Garbling Operators"]
+  - id: P2
+    statement: "Correspondence theorem. The aggregate brand-health score T_k(mu) is a sufficient statistic for the managerial decision problem (a, g) — SBT and the incumbent prescribe the same optimal action for every payoff g — if and only if the four regime conditions hold jointly: (i) mu is tight and unimodal (low sigma); (ii) dynamics are slow relative to the measurement cadence (low v); (iii) the observer set is human-only (alpha = 0); (iv) the signal is firm-dominated (low epsilon)."
+    type: ontological
+    conditions: "C1, C2, C3"
+    antecedents: [P1]
+    assumptions: [AA1, AA3]
+    evidence:
+      - type: analytic
+        anchor: "Sufficiency direction: under (i)-(iv) the garbling kernel of P1 is invertible on the support of mu (Blackwell-equivalence of the two experiments), so the score loses no decision-relevant information. Insufficiency direction: when any condition fails, construct a payoff and two perception measures with equal score but different optimal actions (a metamer), exhibiting strict decision loss."
+      - type: citation
+        anchor: "Sufficiency / equivalence of experiments."
+        citation_keys: [blackwell-1953-equivalent-comparisons, blackwell-1951-comparison-of-experiments, torgersen-1991-comparison-statistical-experiments]
+        citation_role: methodological_source
+      - type: citation
+        anchor: "Correspondence-principle / intertheoretic-reduction meta-structure (SBT reduces to incumbent in a limit; explains why the predecessor worked)."
+        citation_keys: [nickles-1973-two-concepts-intertheoretic, batterman-2001-devil-in-details]
+        citation_role: theoretical_predecessor
+    falsifier: "A category in which all four regime parameters are estimated at their classical-limit values yet the score and the full cloud prescribe different optimal actions would refute the sufficiency direction; a category outside the regime in which they always agree for every payoff would refute the insufficiency direction."
+    body_sections: ["The Correspondence Theorem", "Relocating Ehrenberg-Bass"]
+  - id: P3
+    statement: "Directed-gradient dominance. Outside the classical regime the score is a strict garbling of the cloud, so the full perception measurement weakly Blackwell-dominates the score for every decision-maker and every bounded payoff; equivalently, the cloud-optimizing manager moves the signal only along (dimension, cohort) directions with observable payoff, whereas the score-optimizing manager allocates part of its effort along unobserved directions ('blind spend') whose sign it cannot determine."
+    type: management_outcome
+    conditions: "C1, C2"
+    antecedents: [P1, P2]
+    assumptions: [AA2]
+    evidence:
+      - type: analytic
+        anchor: "Direct application of the Blackwell-Sherman-Stein theorem: a garbled experiment is weakly less valuable than the original for every decision problem. The directed-gradient statement is the smooth-payoff corollary: the achievable payoff gradient of the score-optimizer is the projection of the true gradient onto the measured sub-basis."
+      - type: citation
+        anchor: "Dominance of the finer experiment."
+        citation_keys: [blackwell-1953-equivalent-comparisons, torgersen-1991-comparison-statistical-experiments, cover-2006-elements-information-theory]
+        citation_role: methodological_source
+      - type: citation
+        anchor: "Marketing-side signaling precedent that gestured at information value."
+        citation_keys: [erdem-1998-brand-equity-as]
+        citation_role: theoretical_predecessor
+    falsifier: "Observe a decision-maker who, with access to the full cloud, achieves strictly LOWER expected payoff than one restricted to the score (after accounting for measurement cost) in a setting outside the classical regime. Blackwell dominance forbids this on the information alone, so a robust such observation would refute P3."
+    body_sections: ["Decision-Efficiency Theorems — Directed-Gradient Dominance"]
+  - id: P4
+    statement: "Metameric arbitrage. Signal-metamerism (distinct signals inducing equal perception) yields a cheaper-signal lever; perception-metamerism (one signal inducing divergent perception across cohorts) yields a mis-targeting loss; both are invisible to the aggregate model. The realized decision loss of score-based versus cloud-based management is bounded below by a quantity monotone non-decreasing in each of the four regime-departure parameters (sigma, v, alpha, epsilon) and equal to zero at the classical corner."
+    type: management_outcome
+    conditions: "C1, C2, C4"
+    antecedents: [P2, P3]
+    assumptions: [AA1, AA2]
+    evidence:
+      - type: analytic
+        anchor: "The lower bound is the Bayes-risk gap between the full and garbled experiments, which is monotone in the statistical distance between mu and its projection; each regime parameter increases that distance (dispersion widens the cloud, velocity desynchronizes the snapshot, AI share adds off-sub-basis mass, exogenous share decouples signal from perception)."
+      - type: code_anchor
+        anchor: "Monte Carlo loss surface, fixed seed; see F1 / M1."
+        citation_keys: []
+      - type: citation
+        anchor: "Metamerism mechanism (perceptual + brand-perceptual)."
+        citation_keys: [wyszecki-1982-color-science-concepts, zharnikov-2026-spectral-metamerism-brand-perception-projection]
+        citation_role: theoretical_predecessor
+    falsifier: "A decision-loss surface that DECREASES in one of the four parameters, or is bounded away from zero at the classical corner, would refute the monotone-lower-bound claim. The Monte Carlo (F1) computes this surface and would surface such a violation."
+    body_sections: ["Decision-Efficiency Theorems — Metameric Loss Bound", "Closed-Form Comparative Statics", "Numerical Illustration"]
+  - id: P5
+    statement: "Falsifiability. The framework is falsifiable through three observable signatures and the decision/payoff patterns that reject each theorem: (a) regime-parameter estimates (reject P2 if the score-vs-cloud action agreement does not track the four-parameter regime test); (b) blind-spend share (reject P3 if cloud access does not weakly improve realized payoff net of measurement cost outside the regime); (c) metameric-substitution opportunities and the loss surface (reject P4 if the realized loss is non-monotone in the regime parameters or non-zero at the classical corner)."
+    type: ontological
+    conditions: "C2, C4"
+    antecedents: [P2, P3, P4]
+    evidence:
+      - type: analytic
+        anchor: "Each theorem is paired with a measurable quantity and the empirical pattern that contradicts it, foreclosing ex-post regime-redefinition immunization."
+    falsifier: "By construction, the three signatures ARE the falsifiers of P2/P3/P4."
+    body_sections: ["Falsifiability"]
+  - id: P6
+    statement: "Derived managerial procedure. The two theorems entail a manager-runnable decision procedure: (a) regime test — estimate (sigma, v, alpha, epsilon) to decide whether the cheap aggregate score is sufficient for the category (do not over-prescribe SBT where the incumbent suffices); (b) blind-spot diagnostic — identify which of the eight dimensions the current framework projects away; (c) directed-intervention rule — act on the single (dimension, cohort) with the largest observable payoff-per-cost; (d) metameric-substitution rule — choose the cheapest signal in a perceptual equivalence class. The Brand Spectrometer is the realized instrument: it reads the cloud, including AI cohorts, from existing artifacts, proving the prescribed measurement is feasible today."
+    type: management_outcome
+    conditions: "C2, C4"
+    antecedents: [P2, P3, P4]
+    evidence:
+      - type: analytic
+        anchor: "Each step is the operational reading of a theorem quantity: (a) is the regime test of P2; (b)-(c) are the directed-gradient reading of P3; (d) is the metameric-arbitrage reading of P4."
+      - type: citation
+        anchor: "AI-observer regime + feasibility of reading AI cohorts from artifacts."
+        citation_keys: [zharnikov-2026-dimensional-collapse-ai-mediated-search, wang-2026-llm-market-research-data-augmentation, arora-2025-ai-human-hybrids-marketing-research]
+        citation_role: data_source
+      - type: citation
+        anchor: "Management substrate the procedure acts through: a tiered specification of the firm with the brand located at the product tier, so each directed intervention has a tier + spec to land on (the integration path that makes multidimensional measurement feasible to implement; a profession = tools + competence + intention, and this paper upgrades only the tools)."
+        citation_keys: [zharnikov-2026-brand-as-modular-layer-tiered, zharnikov-2026-dual-hierarchies-organizational-transferability-six, zharnikov-2026-organizational-schema-theory-test-driven]
+        citation_role: theoretical_predecessor
+    falsifier: "If a procedure step were NOT entailed by a theorem quantity (i.e. required an assumption beyond P2-P4), it would be a free-standing assertion rather than a derived implication; the derivation D3 makes the entailment explicit. The management-substrate integration is a feasibility pointer (companion-program scope), not a claim of this paper's theorems."
+    body_sections: ["Managerial Implications Derived from the Theorems"]
+
+# ---------------------------------------------------------------------------
+# Derivations (reasoning bridges, made explicit graph nodes)
+# ---------------------------------------------------------------------------
+derivations:
+  - id: D1
+    statement: "P2 follows from P1 by the Blackwell equivalence-of-experiments criterion specialized to the four regime conditions (sufficiency) plus a metameric counterexample construction (insufficiency)."
+    from: [P1]
+    to: P2
+    reasoning_type: formal_proof
+    formal_proof_anchor: "Main-text worked 2-D instance (Theoretical Framework) + Appendix B (its closed form) then the 8-D generalization."
+    body_sections: ["The Correspondence Theorem", "Appendix B"]
+  - id: D2
+    statement: "P3 follows from P1 by the Blackwell-Sherman-Stein dominance theorem; the directed-gradient form is its smooth-payoff corollary under AA2."
+    from: [P1]
+    to: P3
+    reasoning_type: deductive
+    body_sections: ["Decision-Efficiency Theorems — Directed-Gradient Dominance"]
+  - id: D3
+    statement: "P6 (the four-step procedure) is the operational reading of the quantities in P2 (regime test), P3 (blind-spot + directed intervention), and P4 (metameric substitution); it adds no premise beyond the theorems, which is why it inherits their authority rather than requiring independent validation."
+    from: [P2, P3, P4]
+    to: P6
+    reasoning_type: deductive
+    body_sections: ["Managerial Implications Derived from the Theorems"]
+  - id: D4
+    statement: "Closed-form dominance gap for the linear-decode score action. For a perception cloud with covariance Sigma about its mean and an incumbent score s = <u, theta> read along axis u, the quadratic-tracking dominance gap is exactly G = tr(Sigma) - ||Sigma u||^2 / (u^T Sigma u) (the off-axis residual variance the best linear decode of the scalar cannot recover; when Var(s) = 0 the decode is the mean and G = tr(Sigma)). G = 0 iff Sigma is rank-one along u (the tight-unimodal-on-axis classical corner) and is non-decreasing in every off-axis eigenvalue of Sigma. The two-dimensional bimodal toy is the special case G = sin^2(beta). Small-variance corollary: to leading order the gap equals the off-axis perceptual variance, so each regime parameter that injects off-axis variance raises it; the cadence-velocity comparative static G ~ c (v tau)^2 (perception drifting at velocity v measured every tau periods) has positive cross-partial d^2G/dv d_tau, so the value of finer/more-frequent measurement rises with temporal velocity. This is the analytic backbone that makes the Monte Carlo a VALIDATION of a closed form rather than the sole evidence."
+    from: [P4]
+    to: P4
+    reasoning_type: formal_proof
+    formal_proof_anchor: "Closed-Form Comparative Statics; Appendix B (2-D toy as special case)."
+    body_sections: ["Closed-Form Comparative Statics", "Numerical Illustration"]
+
+# ---------------------------------------------------------------------------
+# Numerical illustration (the calibrated Monte Carlo) — observation/method/finding chain
+# ---------------------------------------------------------------------------
+methods:
+  - id: M1
+    statement: "Monte Carlo computation of expected decision loss of score-based versus cloud-based management as a function of the four regime-departure parameters, with mu a von Mises-Fisher mixture on the perception manifold calibrated to a real high-frequency dataset; fixed seed, >= 5000 draws per parameter combination."
+    type: simulation
+    inputs: [O1]
+    outputs: [F1]
+    code_anchor: "[internal path removed]"
+    reproducibility:
+      seed: "fixed (published in script docstring + README)"
+      version: "Python 3.12 + numpy; uv-run"
+      runtime_environment: "deterministic given seed; no network"
+    provenance:
+      created_by: "author + ai:claude-opus-4-8 (software)"
+      created_at: "2026-06-19"
+    body_sections: ["Numerical Illustration", "Companion Computation Script"]
+observations:
+  - id: O1
+    statement: "Calibration anchor: the R15 AI-search-metamerism corpus provides empirical AI-vs-human cohort perception divergence used to set the alpha (AI-observer share) and dispersion scales of the vMF mixture, so the loss surface is anchored to a real dataset rather than purely synthetic draws."
+    raw_data_pointer: "HuggingFace dataset zharnikov-2026-hf-r15-ai-search-metamerism (DOI in reference_hf_dois)"
+    instrument: "published HF dataset (R15)"
+    timestamp: "2026"
+    conditions_at_capture: "AI-mediated search cohort vs human cohort spectral profiles"
+    provenance:
+      created_by: "author"
+      created_at: "2026-06-19"
+    body_sections: ["Numerical Illustration"]
+findings:
+  - id: F1
+    statement: "The expected decision-loss surface of score-based relative to cloud-based management is monotone non-decreasing in each of the four regime-departure parameters and approaches zero at the classical corner, numerically instantiating the P4 lower bound and the P2 zero-loss limit."
+    source_measurements: []
+    generating_method: M1
+    statistical_strength: ">= 5000 draws per parameter combination; loss surfaces stable to Monte Carlo error reported as standard errors"
+    conditions: "C1, C4; AA1; calibration via O1"
+    antecedents: [O1, M1]
+    falsifier: "A computed surface that decreases in any parameter or is bounded away from zero at the classical corner."
+    provenance:
+      created_by: "ai:claude-opus-4-8 (software) + author (interpretation)"
+      created_at: "2026-06-19"
+    body_sections: ["Numerical Illustration"]
+
+# ---------------------------------------------------------------------------
+# Robustness checks
+# ---------------------------------------------------------------------------
+robustness_checks:
+  - id: RC1
+    statement: "Robustness of the loss-surface monotonicity to (a) alternative payoff forms (quadratic, linear, threshold), (b) dimension count (2 vs 8), (c) mu distributional assumptions (vMF mixture vs alternative), and (d) comparison against the BEST POSSIBLE scalar index (not just the incumbent's particular score)."
+    varied_parameter: "payoff form; dimension count; distributional family; benchmark scalar"
+    range_explored: "three payoff forms; D in {2,8}; vMF vs alternative mixture; argmin-over-scalar-indices benchmark"
+    result_stability: "planned — executed in the companion computation script"
+    affects_nodes: [P3, P4, F1, AA1, AA2, AA3]
+    source_method: M1
+    body_sections: ["Numerical Illustration — Robustness", "Discussion"]
+
+# ---------------------------------------------------------------------------
+# Alternative explanations (rivals ruled out)
+# ---------------------------------------------------------------------------
+alternative_explanations:
+  - id: A1
+    statement: "The contribution is merely finer segmentation or a higher-resolution survey, not a new ontology or decision-theoretic result."
+    rules_out_required: [P1, P2, P3]
+    ruled_out_by: [P1, P2, P3]
+    rules_out_status: rejected
+    reasoning: "The move is ontological (the brand IS an observer-completed distribution with no privileged frame) and decision-theoretic (Blackwell dominance over a garbling), not a resolution increase on a fixed construct. STP segments by demographics and still aggregates to a privileged mean; the projection-operator unification and the correspondence theorem are not restatements of segmentation-targeting-positioning."
+    body_sections: ["Related Work and Positioning", "Discussion"]
+  - id: A2
+    statement: "The correspondence theorem is tautological once mu is assumed (it merely restates that a coarser statistic loses information)."
+    rules_out_required: [P2]
+    ruled_out_by: [P2]
+    rules_out_status: rejected
+    reasoning: "The non-trivial content is the IFF with four named, separately-estimable regime conditions and the metameric counterexample for insufficiency; the theorem locates an exact boundary and is empirically diagnostic (the regime test), not a definitional restatement. The eight-dimension basis is justified independently (AA3, R11), so mu is not free scaffolding."
+    body_sections: ["The Correspondence Theorem", "Related Work and Positioning"]
+
+# ---------------------------------------------------------------------------
+# Limitations
+# ---------------------------------------------------------------------------
+limitations:
+  - id: L1
+    statement: "This is a theory paper; the numerical illustration is an existence proof of the dominance gap, not a field validation that cloud-based management measurably beats score-based management in practice."
+    affects: [P4, F1, P6]
+    severity: medium
+    mitigation: "Field validation is earmarked as a separate empirical/methods companion paper (the R14 -> 2026at concept-to-methods pattern); the regime test bounds where SBT is even worth its measurement cost."
+    body_sections: ["Discussion — Limitations", "Future Research"]
+  - id: L2
+    statement: "SBT's measurement carries a cost; in the classical (low-sigma/slow/human/firm-signal) corner the residual information it recovers may not pay for its measurement, so SBT is not universally more efficient."
+    affects: [P6]
+    severity: low
+    mitigation: "The regime test (P6a) is precisely the rule that prevents over-prescription; the Einstein discipline (do not use relativity to throw a ball) is stated as a scope boundary."
+    body_sections: ["Discussion — Scope and Boundary", "Managerial Implications Derived from the Theorems"]
+
+# ---------------------------------------------------------------------------
+# Cross-paper engagement
+# ---------------------------------------------------------------------------
+corpus_precedents:
+  - paper_key: 2026a
+    relationship: extends
+    spine_nodes: [P1, P2]
+  - paper_key: 2026d
+    relationship: applies
+    spine_nodes: [P1, P2]
+  - paper_key: 2026e
+    relationship: applies
+    spine_nodes: [P4]
+  - paper_key: 2026v
+    relationship: applies
+    spine_nodes: [P4, P6]
+  - paper_key: 2026z
+    relationship: applies
+    spine_nodes: [P4]
+  - paper_key: 2026ac
+    relationship: applies
+    spine_nodes: [P4]
+  - paper_key: 2026ah
+    relationship: applies
+    spine_nodes: [P6]
+  - paper_key: 2026ag
+    relationship: applies
+    spine_nodes: [P6]
+  - paper_key: 2026i
+    relationship: applies
+    spine_nodes: [P6]
+  - paper_key: org-as-metadata
+    relationship: unrelated
+    spine_nodes: []
+
+# ---------------------------------------------------------------------------
+# External anchor literature
+# ---------------------------------------------------------------------------
+external_anchors:
+  - citation_key: blackwell-1953-equivalent-comparisons
+    role: foundational
+    spine_nodes: [P1, P2, P3]
+  - citation_key: blackwell-1951-comparison-of-experiments
+    role: foundational
+    spine_nodes: [P2]
+  - citation_key: torgersen-1991-comparison-statistical-experiments
+    role: canonical_textbook
+    spine_nodes: [P2, P3]
+  - citation_key: cover-2006-elements-information-theory
+    role: canonical_textbook
+    spine_nodes: [P1, P3]
+  - citation_key: nickles-1973-two-concepts-intertheoretic
+    role: foundational
+    spine_nodes: [P2]
+  - citation_key: batterman-2001-devil-in-details
+    role: foundational
+    spine_nodes: [P2]
+  - citation_key: keller-1993-conceptualizing-measuring-managing
+    role: theoretical_predecessor
+    spine_nodes: [P1]
+  - citation_key: aaker-1991-managing-brand-equity
+    role: theoretical_predecessor
+    spine_nodes: [P1]
+  - citation_key: aaker-1996-measuring-brand-equity
+    role: theoretical_predecessor
+    spine_nodes: [P1]
+  - citation_key: aaker-1997-dimensions-brand-personality
+    role: theoretical_predecessor
+    spine_nodes: [P1]
+  - citation_key: kapferer-2008-new-strategic-brand
+    role: theoretical_predecessor
+    spine_nodes: [P1]
+  - citation_key: sharp-2010-how-brands-grow
+    role: contrast_case
+    spine_nodes: [P2]
+  - citation_key: romaniuk-2007-evidence-perceived-brand
+    role: contrast_case
+    spine_nodes: [P2]
+  - citation_key: ehrenberg-2004-understanding-brand-performance
+    role: contrast_case
+    spine_nodes: [P2]
+  - citation_key: erdem-1998-brand-equity-as
+    role: theoretical_predecessor
+    spine_nodes: [P3]
+  - citation_key: mcclure-2004-neural-correlates-behavioral
+    role: motivating_problem
+    spine_nodes: [P1]
+  - citation_key: hatch-2010-toward-theory-brand-cocreation
+    role: theoretical_predecessor
+    spine_nodes: [P1]
+  - citation_key: zharnikov-2026-brand-as-modular-layer-tiered
+    role: theoretical_predecessor
+    spine_nodes: [P6]
+  - citation_key: zharnikov-2026-dual-hierarchies-organizational-transferability-six
+    role: theoretical_predecessor
+    spine_nodes: [P6]
+  - citation_key: zharnikov-2026-organizational-schema-theory-test-driven
+    role: theoretical_predecessor
+    spine_nodes: [P6]
+  # Grok-r1 literature additions (all Crossref DOI-verified 2026-06-19; metadata corrected vs Grok leads)
+  - citation_key: puntoni-2021-consumers-artificial-intelligence
+    role: motivating_problem
+    spine_nodes: [P4, P6]
+  - citation_key: huang-2021-strategic-framework-artificial
+    role: motivating_problem
+    spine_nodes: [P6]
+  - citation_key: grewal-2025-generative-ai-marketing
+    role: motivating_problem
+    spine_nodes: [P4, P6]
+  - citation_key: batra-2016-integrating-marketing-communications
+    role: theoretical_predecessor
+    spine_nodes: [P1]
+  - citation_key: edeling-2021-marketingfinance-interface-new
+    role: theoretical_predecessor
+    spine_nodes: [P1, P2]
+  - citation_key: hanssens-2016-demonstrating-value-marketing
+    role: theoretical_predecessor
+    spine_nodes: [P1, P2, P6]
+  # XL-revision (Option A, retarget JAMS/JM) literature engagement; all substrate-VERIFIED
+  - citation_key: edeling-2016-marketings-impact-firm
+    role: theoretical_predecessor
+    spine_nodes: [P1, P2]
+  - citation_key: mizik-2008-financial-value-relevance
+    role: theoretical_predecessor
+    spine_nodes: [P1]
+  - citation_key: netzer-2012-mine-your-own
+    role: contrast_case
+    spine_nodes: [P1]
+  - citation_key: bradlow-2017-role-big-data
+    role: theoretical_predecessor
+    spine_nodes: [P1, P4]
+  - citation_key: affonso-2023-marketing-by-design
+    role: motivating_problem
+    spine_nodes: [P1]
+  - citation_key: toubia-2013-intrinsic-image-utility-social-media
+    role: motivating_problem
+    spine_nodes: [P1]
+  - citation_key: rossi-2014-even-rich-make-poor
+    role: contrast_case
+    spine_nodes: [P3, P4]
+  - citation_key: orlikowski-2002-knowing-practice-enacting-collective
+    role: definitional_source
+    spine_nodes: [P6]
+  - citation_key: ajzen-1991-theory-planned-behavior
+    role: definitional_source
+    spine_nodes: [P6]
+  - citation_key: anderson-1994-customer-satisfaction-market-share
+    role: theoretical_predecessor
+    spine_nodes: [P1, P2]
+  - citation_key: rust-2020-future-of-marketing
+    role: motivating_problem
+    spine_nodes: [P4, P6]
+  - citation_key: barger-2016-social-media-consumer-engagement
+    role: motivating_problem
+    spine_nodes: [P4]
+  - citation_key: wyszecki-1982-color-science-concepts
+    role: definitional_source
+    spine_nodes: [P4]
+  - citation_key: brakus-2009-brand-experience-what
+    role: canonical_reference
+    spine_nodes: [P1]
+  - citation_key: wang-2026-llm-market-research-data-augmentation
+    role: contrast_case
+    spine_nodes: [P6]
+  - citation_key: arora-2025-ai-human-hybrids-marketing-research
+    role: contrast_case
+    spine_nodes: [P6]
+  - citation_key: zharnikov-2026-spectral-brand-theory-computational-framework
+    role: theoretical_predecessor
+    spine_nodes: [P1, P2]
+  - citation_key: zharnikov-2026-brand-space-geometry-formal-metric
+    role: theoretical_predecessor
+    spine_nodes: [P1]
+  - citation_key: zharnikov-2026-spectral-metamerism-brand-perception-projection
+    role: theoretical_predecessor
+    spine_nodes: [P4]
+  - citation_key: zharnikov-2026-dimensional-collapse-ai-mediated-search
+    role: theoretical_predecessor
+    spine_nodes: [P4, P6]
+  - citation_key: zharnikov-2026-non-ergodic-brand-perception-why
+    role: theoretical_predecessor
+    spine_nodes: [P2]
+  - citation_key: zharnikov-2026-why-eight-completeness-necessity-sbt
+    role: boundary_anchor
+    spine_nodes: [P1]
+  - citation_key: zharnikov-2026-geometric-approaches-brand-perception-critical
+    role: theoretical_predecessor
+    spine_nodes: [P1]
+
+# ---------------------------------------------------------------------------
+# Open questions
+# ---------------------------------------------------------------------------
+open:
+  - "Empirical estimation of the four regime parameters in a real category (deferred to the applied companion paper)."
+  - "A measurement-cost model that makes the regime test quantitative (when does SBT's information pay for itself?)."
+  - "Whether the exogenous-signal share epsilon admits a control-theoretic treatment (the firm no longer fully owns S)."
+
+# ---------------------------------------------------------------------------
+# Spine changelog
+# ---------------------------------------------------------------------------
