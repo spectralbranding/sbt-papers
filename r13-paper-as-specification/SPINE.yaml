@@ -1,0 +1,489 @@
+# SPINE.yaml — Paper as Specification (2026t / R13)
+#
+# RETROFIT spine: extracted descriptively from the completed paper.md, NOT
+# authored generatively before prose (SPINE-for-all-active-canonical, decision
+# D4; [internal path removed]). It captures
+# the paper's ACTUAL argument backbone as published; it does not extend or
+# aspirationally augment it.
+#
+# Schema v0.2 ([internal path removed] §"Schema v0.2"): the
+# paper is mostly theory (it proposes the Paper Spec v0.1.0 standard and the
+# L0-L4 verification stack), and its four formal propositions P1-P4 are stated
+# but explicitly NOT YET TESTED ("empirically testable as the standard
+# matures"). The one body of evidence is the §6 twenty-paper demonstration,
+# whose descriptive counts (authoring time, dependency depth, falsification
+# gap) are captured here as observations -> measurements -> findings so the
+# demonstration is represented as evidence, not asserted in prose. The
+# propositions remain analytic design claims with explicit falsifiers.
+
+spine_version: "0.2"
+spine_doc_version: "0.1.0"        # retrofit extraction first lock (2026-06-14, D4)
+paper_key: "2026t"
+title: "Paper as Specification: A Machine-Readable Standard for Scientific Claims"
+target_venue_primary: "TBD (working paper v0.1; Zenodo 10.5281/zenodo.19210037)"
+provenance: retrofit
+status: >-
+  Working paper v0.1 (March 2026), Zenodo-deposited. Retrofit spine extracted
+  from the published paper.md on 2026-06-14 under D4; reflects the paper as
+  written, including its four untested propositions and single-author
+  demonstration.
+
+thesis: |
+  The verification crisis in science is, at root, a specification crisis.
+  Scientific papers are the last major information artifact that remains
+  fundamentally unstructured: their claims, acceptance criteria, methodology,
+  dependencies, and limitations are expressed in natural language that is
+  legible to human readers but opaque to machines. Three prior
+  generation-specification cycles -- printing press answered by the scientific
+  method, the internet answered by structured data, and now LLMs -- establish a
+  pattern: each generation breakthrough in information production was resolved
+  not by faster consumption (more reviewers, faster librarians) but by a
+  structural specification that made the new volume tractable. The paper
+  introduces Paper Spec v0.1.0, an open, human-writable, machine-parseable YAML
+  companion (paper.yaml) that captures a paper's full epistemic content
+  alongside the paper without replacing it, and a five-layer verification stack
+  (L0 schema validation -> L1 internal consistency -> L2 completeness -> L3
+  plausibility -> L4 cross-corpus integrity) isomorphic to a software CI/CD
+  pipeline. The standard is human-writable in thirty minutes, incrementally
+  adoptable (every section optional except meta), and demonstrated on a
+  twenty-paper single-author corpus. Four formal propositions -- on
+  expressiveness, verification utility, dependency analysis, and cognitive
+  value -- are advanced with explicit acceptance and falsification criteria but
+  are stated, not yet empirically tested.
+
+# ============================================================================
+# Boundary conditions / assumptions
+# ============================================================================
+boundary_conditions:
+  - id: C1
+    statement: >-
+      The specification burden sits with the author -- the only party with
+      complete access to ground truth about which dependency is critical, what
+      would falsify a claim, and what the genuine limitations are.
+  - id: C2
+    statement: >-
+      Authoring cost must stay low (thirty minutes, a text editor, no RDF, no
+      ontology expertise) and every section must deliver independent value, or
+      adoption fails as it did for prior structured-science initiatives.
+
+assumption_atoms:
+  - id: AA1
+    statement: >-
+      The history of successful standards (HTML, schema.org, YAML, TOP
+      Guidelines) shows that adoption requires low authoring cost, high
+      individual benefit even without network effects, and compatibility with
+      existing workflows -- the design constraints Paper Spec is built around.
+    antecedents: []
+
+# ============================================================================
+# Observations -- the twenty-paper demonstration (§6) as recorded events
+# ============================================================================
+observations:
+  - id: O1
+    statement: >-
+      Twenty paper.yaml files were written manually (no LLM assistance) for
+      nineteen Spectral Brand Theory and Organizational Schema Theory papers
+      plus the present paper, spanning theoretical, formal, empirical,
+      survey, and cross-domain types, 4,000-12,000 words, two-to-seven formal
+      propositions each.
+    raw_data_pointer: "paper §6.1, §6.2"
+  - id: O2
+    statement: >-
+      In the authoring process, three claims across the corpus were identified
+      whose falsification conditions were genuinely unclear in the original
+      papers; writing the paper.yaml forced their articulation and prompted
+      revisions to the papers themselves.
+    raw_data_pointer: "paper §6.3 (falsification gap)"
+  - id: O3
+    statement: >-
+      The present paper is itself authored under the Paper Spec it proposes;
+      its companion paper.yaml specifies propositions P1-P4 with dependencies
+      and falsification conditions and passes L0 schema validation and L1
+      internal-consistency checks.
+    raw_data_pointer: "paper §6.4 (self-application)"
+
+# ============================================================================
+# Methods -- how the standard and stack are constructed/checked
+# ============================================================================
+methods:
+  - id: M1
+    statement: >-
+      Paper Spec v0.1.0: a YAML 1.2 companion file validatable against a JSON
+      Schema, with top-level keys spec_version + meta (required) and claims,
+      methodology, acceptance, dependencies, results, limitations,
+      contradictions, repositories, submission_history, computation (all
+      optional). Claims carry stable, unique IDs; dependencies are typed
+      (extends/applies/tests/contradicts/refines) and flagged critical:
+      true|false; external references take the form doi:claim_id.
+    type: "standard_specification"
+    code_anchor: "https://github.com/spectralbranding/sbt-papers/tree/main/r13-paper-as-specification"
+  - id: M2
+    statement: >-
+      The L0-L4 verification stack: L0 schema validation (deterministic,
+      automated, reference implementation exists), L1 internal consistency
+      (rules engine, no NLP), L2 completeness (paper.md vs paper.yaml,
+      LLM-assisted, suggestions not verdicts), L3 plausibility (cross-document
+      LLM first-pass filter, not a human replacement), L4 cross-corpus
+      integrity (retraction-cascade, contradiction detection, dependency-graph
+      traversal, claim-level semantic search over a corpus of paper.yaml files).
+    type: "verification_pipeline"
+    code_anchor: "paper §5 (Figure 1, CI/CD isomorphism)"
+
+# ============================================================================
+# Measurements -- descriptive counts from the demonstration
+# ============================================================================
+measurements:
+  - id: m_authoring_time
+    statement: >-
+      Approximately twelve hours total to author twenty paper.yaml files,
+      averaging thirty-six minutes per paper (twenty-twenty-five minutes for
+      papers with explicit propositions; forty-five-fifty for discursive ones).
+      The most time-consuming step in every case was articulating acceptance
+      (especially falsification) criteria.
+    source_observations: [O1]
+    generating_method: M1
+    value: "~12 h / 20 papers; ~36 min/paper average"
+    units: "wall-clock authoring time"
+  - id: m_dependency_depth
+    statement: >-
+      The foundational paper (Zharnikov 2026a) is a critical dependency for
+      sixteen of the remaining nineteen papers; the cascade forms a directed
+      acyclic graph of depth four, with two bridge papers (formal metric and
+      diffusion dynamics) as bottlenecks; formal-claim count per paper varies
+      from two (survey) to seven (portfolio theory).
+    source_observations: [O1]
+    generating_method: M2
+    value: "16/19 critical-on-foundational; DAG depth 4; 2 bridge bottlenecks; 2-7 claims/paper"
+    units: "dependency-graph node + edge structure"
+  - id: m_falsification_gap
+    statement: >-
+      Three claims across the twenty-paper corpus had genuinely unclear
+      falsification conditions that the paper.yaml authoring process surfaced
+      and that prompted revisions to the source papers.
+    source_observations: [O2]
+    generating_method: M1
+    value: "3 falsification gaps surfaced"
+    units: "count of claims with unclear falsifiers"
+
+# ============================================================================
+# Propositions -- diagnosis, the standard, the stack, and the four formal
+# claims (paper §8 P1-P4, here as P5-P8 to keep unique ids while preserving
+# their meaning + falsifiers verbatim)
+# ============================================================================
+propositions:
+  - id: P0
+    statement: >-
+      Every civilizational generation breakthrough in information production
+      has been resolved by a specification breakthrough, not by scaling the old
+      verification method: the printing press (1450s) by the scientific method
+      (Bacon, Royal Society, Newton), the web (1991) by structured data
+      (Dublin Core, PageRank, schema.org, knowledge graphs). The lag is real
+      (nearly two centuries for the first cycle) but the resolution pattern is
+      invariant.
+    antecedents: []
+    evidence:
+      - type: citation
+        anchor: "Historical precedent §2.1-2.2"
+        citation_keys: [eisenstein-1979-printing-press-agent, brin-1998-anatomy-large-scale, guha-2016-schema-org-evolution, bollacker-2008-freebase-collaboratively]
+    body_sections: ["§2 Historical Precedent"]
+  - id: P1
+    statement: >-
+      LLMs (deployed from 2023) have collapsed the cost of generating plausible
+      scientific text by an order of magnitude while the verification
+      infrastructure remains pre-digital (a 2026 paper is structurally
+      identical to a 1996 paper: a PDF reviewed by two-to-three humans over
+      weeks). The historical pattern predicts this generation-verification gap
+      will be closed by a specification standard for scientific claims, not by
+      faster reviewers.
+    antecedents: [P0]
+    evidence:
+      - type: citation
+        anchor: "Tao 'deductive overhang' + replication-crisis + reviewer-scaling evidence (§1, §2.3)"
+        citation_keys: [tao-2026-how-worlds-top, hanson-2024-strain-scientific-publishing, open-science-2015-estimating-reproducibility, ioannidis-2005-why-most-published]
+    body_sections: ["§1 Introduction", "§2.3 LLMs and the Specification Gap"]
+  - id: P2
+    statement: >-
+      The scientific paper is the last major information artifact that remains
+      fundamentally unstructured: optimized for sequential reading by a domain
+      expert and requiring expensive, error-prone, non-scalable manual decoding
+      for every other use case (systematic review, meta-analysis, replication
+      planning, retraction-impact analysis, contradiction detection). The
+      bottleneck is uniform -- the information is present but not machine-readable.
+    antecedents: [P1]
+    evidence:
+      - type: citation
+        anchor: "Papers as unstructured artifacts; retraction-citation burden (§3.1)"
+        citation_keys: [fang-2012-misconduct-accounts-majority]
+    body_sections: ["§3.1 Papers as Unstructured Artifacts"]
+  - id: P3
+    statement: >-
+      No existing structured-science initiative (Registered Reports, FAIR,
+      Nanopublications, Micropublications, CiTO/SPAR, scienceverse, ORKG,
+      SciKGTeX, RO-Crate, JATS, TOP, CRediT) provides a single human-writable,
+      machine-parseable, format-agnostic file capturing the full epistemic
+      content of a paper with acceptance criteria, dependency criticality, and
+      incremental adoption simultaneously. This is the missing layer (Table 1).
+    antecedents: [P2]
+    evidence:
+      - type: citation
+        anchor: "Prior-art review + Table 1 comparison (§3.2-3.3)"
+        citation_keys: [lakens-2021-improving-transparency-falsifiability, jaradeh-2019-open-research-knowledge, shotton-2010-cito-citation-typing, wilkinson-2016-fair-guiding-principles, clark-2014-micropublications-semantic-model]
+    body_sections: ["§3.2 Existing Partial Solutions", "§3.3 The Missing Layer"]
+  - id: P4
+    statement: >-
+      Paper Spec v0.1.0 fills the missing layer: a YAML companion built on six
+      design principles (human-writable, machine-parseable, incremental
+      adoption, minimal jargon, stable identifiers, no opinions on content)
+      that answers the seven questions every reader asks (what is claimed, how
+      tested, what would refute, can it be reproduced, what it depends on, its
+      known limits, where it lives). Its typed dependencies with a critical
+      boolean are the key field for L4 retraction-cascade analysis and a
+      deliberate simplification of CiTO's forty-plus relationships.
+    antecedents: [P3]
+    evidence:
+      - type: analytic
+        anchor: "Design principles, seven questions, structure overview, grammar (§4)"
+        citation_keys: [shotton-2010-cito-citation-typing]
+    body_sections: ["§4 Paper Spec: A Machine-Readable Standard"]
+  - id: P5
+    statement: >-
+      The L0-L4 verification stack is structurally isomorphic to a software
+      CI/CD pipeline (lint -> unit -> integration -> review -> deploy) and to
+      test-driven development's specification-first discipline: each layer
+      composes with the one below and is independently runnable and
+      independently valuable, which is precisely why incremental adoption works.
+    antecedents: [P4]
+    evidence:
+      - type: analytic
+        anchor: "CI/CD isomorphism + TDD lineage (§5, Figure 1)"
+        citation_keys: [beck-2002-test-driven-development]
+    body_sections: ["§5 Verification Layers"]
+  - id: P6
+    statement: >-
+      (Paper Proposition 1 -- Expressiveness) A paper.yaml file can represent
+      the core claims, methodology, acceptance criteria, and results of any
+      empirical or theoretical paper without loss of essential structure: a
+      domain expert reading only the paper.yaml can reconstruct the claim
+      structure with high inter-rater agreement against an expert reading the
+      full paper. STATED, NOT TESTED.
+    antecedents: [P4]
+    falsifier: >-
+      Falsified if inter-rater agreement between YAML-only and full-paper
+      reconstruction falls below kappa = .70 in an independent multi-field pilot.
+    body_sections: ["§8 Propositions (P1)"]
+  - id: P7
+    statement: >-
+      (Paper Proposition 2 -- Verification utility) Automated L1 (internal
+      consistency) and L2 (completeness) checks over a corpus of paper.yaml
+      files identify specification deficiencies that would take a human reviewer
+      minutes to hours to detect, flagging at least one genuine deficiency in
+      the majority of first-draft files. STATED, NOT TESTED.
+    antecedents: [P5]
+    falsifier: >-
+      Falsified if L1/L2 checks flag genuine deficiencies in fewer than 60% of
+      first-draft files authored by non-paper-authors.
+    body_sections: ["§8 Propositions (P2)"]
+  - id: P8
+    statement: >-
+      (Paper Proposition 3 -- Dependency analysis) The dependency graph built
+      from paper.yaml files enables automated retraction-impact analysis: when
+      a paper is designated retracted, the graph identifies all downstream
+      claims with critical: true dependencies, matching an expert-coded set
+      with high precision and recall. STATED, NOT TESTED.
+    antecedents: [P5]
+    falsifier: >-
+      Falsified if dependency-graph recall deviates from expert-coded
+      retraction-impact sets by more than 20% on a gold-standard corpus with
+      known retraction history.
+    body_sections: ["§8 Propositions (P3)"]
+  - id: P9
+    statement: >-
+      (Paper Proposition 4 -- Cognitive value) The thirty-to-sixty-minute
+      specification overhead is dominated by the cognitive work of articulating
+      claims and acceptance criteria -- work that improves the paper itself;
+      researchers writing paper.yaml before submission will report identifying
+      at least one substantive issue (unclear claim, missing falsifier,
+      unacknowledged limitation) in a substantial fraction of cases. STATED, NOT
+      TESTED.
+    antecedents: [P4]
+    falsifier: >-
+      Falsified if fewer than 30% of researchers completing paper.yaml before
+      submission independently identify at least one substantive issue not
+      otherwise caught.
+    body_sections: ["§8 Propositions (P4)"]
+  - id: P10
+    statement: >-
+      Paper Spec is infrastructure that makes peer review more efficient (not a
+      replacement for it), shifting the reviewer's role from extraction to
+      evaluation; the AAAI-26 AI-review pilot (22,977 submissions, structured
+      multi-stage pipeline beating single-prompt by +.21 recall, p < .001) shows
+      that structured criteria outperform unstructured evaluation at scale, and
+      typed criticality-flagged dependency graphs offer a structural alternative
+      to scalar metrics (DORA, Leiden, CoARA).
+    antecedents: [P4]
+    evidence:
+      - type: citation
+        anchor: "AAAI-26 pilot + research-assessment reform (§7.2-7.3)"
+        citation_keys: [goldberg-2026-ai-assisted-peer, hicks-2015-bibliometrics-leiden-manifesto]
+    body_sections: ["§7.2 Scalar Metrics and Structural Alternatives", "§7.3 The Future of Peer Review"]
+  - id: P11
+    statement: >-
+      A paper.yaml need not travel with the paper: as a self-contained
+      machine-readable document it functions as machine-readable
+      pre-registration (claims and falsifiers on record before results),
+      a collaboration overview, a grant-proposal description, and a structured
+      review instrument -- a meta-passport for the research that the author owns
+      and controls, not a surveillance instrument.
+    antecedents: [P4]
+    body_sections: ["§7.4 Paper.yaml as Independent Artifact"]
+  - id: P12
+    statement: >-
+      The primary adoption barrier is sociological, not technical; Paper Spec
+      mitigates it through incremental adoption (a meta-only file is already
+      useful) and immediate author-accruing cognitive yield, following the
+      schema.org precedent (individual value before network effects) and
+      Rogers' diffusion-of-innovations staged pathway (innovators -> early
+      adopters -> early majority) that maps onto the incremental architecture.
+    antecedents: [P4, C2]
+    evidence:
+      - type: citation
+        anchor: "Adoption barriers, schema.org precedent, diffusion model (§7.5)"
+        citation_keys: [guha-2016-schema-org-evolution, rogers-2003-diffusion-innovations]
+    body_sections: ["§7.5 Adoption Barriers"]
+
+# ============================================================================
+# Findings -- what the twenty-paper demonstration shows
+# ============================================================================
+findings:
+  - id: F1
+    statement: >-
+      Once structured, the twenty-paper corpus reveals dependency depth,
+      bottleneck bridges, claim-density variation, and a falsification gap that
+      are invisible in the unstructured originals -- demonstrating Paper Spec's
+      expressiveness and the practical (not merely theoretical) value of L2/L4
+      analysis on a real corpus.
+    type: "demonstration"
+    source_measurements: [m_dependency_depth, m_falsification_gap]
+    generating_method: M2
+    antecedents: [O1, O2]
+    body_sections: ["§6.3 What the Corpus Reveals"]
+  - id: F2
+    statement: >-
+      The paper is a conformant instance of its own standard: its companion
+      paper.yaml passes L0 and L1, making Paper Spec the first structured-science
+      standard whose own standard description is also a conformant instance,
+      resolving the apparent meta-paradox.
+    type: "self_application"
+    source_measurements: []
+    generating_method: M1
+    antecedents: [O3]
+    body_sections: ["§6.4 Self-Application"]
+
+# ============================================================================
+# Limitations -- the paper's own honest scope (§9)
+# ============================================================================
+limitations:
+  - id: L1
+    statement: >-
+      The paper is theoretical: the four propositions are stated but not tested,
+      and there is no adoption data. Empirical validation requires a
+      multi-author, multi-field pilot.
+    severity: "scope-bounding"
+    affects: [P6, P7, P8, P9]
+    body_sections: ["§9 Limitations (No adoption data)"]
+  - id: L2
+    statement: >-
+      The twenty-paper demonstration is single-author, single-program: the
+      author had complete access to ground truth and is maximally motivated and
+      informed (the easiest possible case), so it cannot test adoption, the
+      thirty-six-minute average may not generalize, and the dependency structure
+      is unusually rich because the papers were designed as a coherent program.
+      The falsification-gap finding is suggestive but any structured reflection
+      (a checklist, a colleague conversation) might produce similar discoveries;
+      Paper Spec's distinctive value (machine-readability + cumulative network
+      effects) cannot be shown on a self-authored corpus.
+    severity: "scope-bounding"
+    affects: [F1, m_authoring_time]
+    body_sections: ["§9 Limitations (Single-author corpus)"]
+  - id: L3
+    statement: >-
+      Theoretical papers are overrepresented (fifteen of twenty); expressiveness
+      for empirical, computational, and meta-analytic work, and for fields with
+      complex statistical designs or non-standard methodologies, is demonstrated
+      only narrowly and may require extensions to the standard.
+    severity: "scope-bounding"
+    affects: [P6]
+    body_sections: ["§9 Limitations (Theoretical papers overrepresented)"]
+  - id: L4
+    statement: >-
+      No institutional validation: it is untested whether journals would accept
+      paper.yaml as supplementary material, whether repositories would index it,
+      or whether reviewers would use it -- and the standard is at v0.1.0, so
+      field names and enums may change, exposing early adopters to specification
+      instability (mitigated by the semantic-versioning and migration commitment).
+    severity: "scope-bounding"
+    affects: [P12]
+    body_sections: ["§9 Limitations (No institutional validation; Version 0.1.0)"]
+
+# ============================================================================
+# Cross-paper engagement
+# ============================================================================
+corpus_precedents:
+  - paper_key: 2026u
+    relationship: extends
+    spine_nodes: [P4, P5]
+    note: >-
+      Research-as-Repository (2026u) is the process/infrastructure layer that
+      the paper.yaml internal schema travels in; it specifies the federation of
+      versioned machine-readable paper repositories on which L4 verification
+      operates at scale (paper §5.5 cites Zharnikov 2026u as the companion).
+  - paper_key: 2026a
+    relationship: applies
+    spine_nodes: [O1, F1]
+    note: >-
+      Spectral Brand Theory (2026a) is the foundational paper of the
+      demonstration corpus -- the critical dependency for sixteen of nineteen
+      papers whose retraction cascade the dependency graph makes explicit.
+  - paper_key: 2026i
+    relationship: applies
+    spine_nodes: [O1, P2]
+    note: >-
+      Organizational Schema Theory (2026i) supplies the second research program
+      in the twenty-paper demonstration corpus; the cross-domain
+      specification-gap pattern (intention->expression) is shared (§7.1).
+
+# ============================================================================
+# External anchor literature
+# ============================================================================
+external_anchors:
+  - {citation_key: tao-2026-how-worlds-top, role: motivating_problem, spine_nodes: [P1], note: "Tao: 'deductive overhang' + need for a semi-formal language of scientific talk"}
+  - {citation_key: hanson-2024-strain-scientific-publishing, role: motivating_evidence, spine_nodes: [P1], note: "Publication growth (5%/yr) outpacing reviewer availability"}
+  - {citation_key: ioannidis-2005-why-most-published, role: motivating_evidence, spine_nodes: [P1], note: "Replication/verification crisis"}
+  - {citation_key: open-science-2015-estimating-reproducibility, role: motivating_evidence, spine_nodes: [P1], note: "Reproducibility crisis in psychology"}
+  - {citation_key: fang-2012-misconduct-accounts-majority, role: motivating_evidence, spine_nodes: [P2], note: "Retraction-citation burden (avg 35, occasionally thousands)"}
+  - {citation_key: eisenstein-1979-printing-press-agent, role: historical_precedent, spine_nodes: [P0], note: "Printing press as agent of change"}
+  - {citation_key: brin-1998-anatomy-large-scale, role: historical_precedent, spine_nodes: [P0], note: "PageRank -- link structure as quality signal"}
+  - {citation_key: guha-2016-schema-org-evolution, role: precedent_standard, spine_nodes: [P0, P12], note: "schema.org -- individual value before network effects (adoption model)"}
+  - {citation_key: bollacker-2008-freebase-collaboratively, role: historical_precedent, spine_nodes: [P0], note: "Freebase knowledge graph"}
+  - {citation_key: shotton-2010-cito-citation-typing, role: prior_art_closest, spine_nodes: [P3, P4], note: "CiTO -- typed citations; paper-level precursor to claim-level dependencies"}
+  - {citation_key: lakens-2021-improving-transparency-falsifiability, role: prior_art_closest, spine_nodes: [P3], note: "scienceverse -- closest prior art; hypothesis-level, R-bound, no cross-paper deps"}
+  - {citation_key: jaradeh-2019-open-research-knowledge, role: prior_art_contrast, spine_nodes: [P3], note: "ORKG -- post-hoc lossy extraction vs author-authored spec"}
+  - {citation_key: wilkinson-2016-fair-guiding-principles, role: prior_art, spine_nodes: [P3], note: "FAIR -- data not claims"}
+  - {citation_key: clark-2014-micropublications-semantic-model, role: prior_art, spine_nodes: [P3], note: "Micropublications -- claim/evidence model, adoption failed"}
+  - {citation_key: beck-2002-test-driven-development, role: theoretical_anchor, spine_nodes: [P5], note: "TDD -- specification-first discipline; CI/CD lineage of L0-L4"}
+  - {citation_key: goldberg-2026-ai-assisted-peer, role: supporting_evidence, spine_nodes: [P10], note: "AAAI-26 pilot -- structured multi-stage review beats single-prompt (+.21 recall)"}
+  - {citation_key: hicks-2015-bibliometrics-leiden-manifesto, role: motivating_problem, spine_nodes: [P10], note: "Leiden Manifesto -- scalar-metric critique"}
+  - {citation_key: rogers-2003-diffusion-innovations, role: theoretical_anchor, spine_nodes: [P12], note: "Diffusion of innovations -- staged adoption pathway"}
+
+# ============================================================================
+# Open questions / boundary edges
+# ============================================================================
+open:
+  - "Do the four propositions hold under independent multi-author, multi-field testing (the explicit falsifiers in P6-P9)?"
+  - "Will journals accept paper.yaml as supplementary material and will repositories index it (institutional adoption, L4)?"
+  - "Does the standard's expressiveness extend to complex empirical/statistical designs and non-standard methodologies without extension (L3)?"
+  - "How does L4 cross-corpus verification operate at field scale -- the federation infrastructure deferred to the 2026u companion?"
+
+# ============================================================================
+# Spine changelog -- append-only
+# ============================================================================

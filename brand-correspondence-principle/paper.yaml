@@ -254,7 +254,7 @@ dependencies:
   claim: 'anchor: mcclure-2004-neural-correlates-behavioral'
   doi: 10.1016/j.neuron.2004.09.019
 - relationship: extends
-  claim: 'anchor: hatch-2010-toward-theory-brand-cocreation'
+  claim: 'anchor: hatch-2010-toward-theory-brand'
   doi: 10.1057/bm.2010.14
 - relationship: extends
   claim: 'anchor: zharnikov-2026-brand-as-modular-layer-tiered'
@@ -329,7 +329,7 @@ dependencies:
   claim: 'anchor: wang-2026-llm-market-research-data-augmentation'
   doi: 10.1287/mksc.2025.0009
 - relationship: extends
-  claim: 'anchor: arora-2025-ai-human-hybrids-marketing-research'
+  claim: 'anchor: arora-2025-aihuman-hybrids-marketing'
   doi: 10.1177/00222429241276529
 - relationship: extends
   claim: 'anchor: zharnikov-2026-spectral-brand-theory-computational-framework'

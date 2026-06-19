@@ -287,7 +287,7 @@ We consider four candidates:
 
 We select the Fisher-Rao metric on the basis of Cencov's uniqueness theorem.
 
-**Theorem** [@cencov-1972-statistical-decision-rules; @cencov-1982-statistical-decision-rules]. *The Fisher information metric is the unique Riemannian metric on the space of probability distributions (up to a constant scaling factor) that is invariant under Markov morphisms (sufficient-statistic embeddings).*
+**Theorem** [@cencov-1982-statistical-decision-rules]. *The Fisher information metric is the unique Riemannian metric on the space of probability distributions (up to a constant scaling factor) that is invariant under Markov morphisms (sufficient-statistic embeddings).*
 
 The Fisher-Rao metric originates with Rao [-@rao-1945-information-accuracy-attainable], who first proposed using the Fisher information matrix as a Riemannian metric tensor on statistical models. The uniqueness theorem above, combined with the comprehensive development of information geometry by Amari and Nagaoka [-@amari-2000-methods-information-geometry] and Amari [-@amari-2016-information-geometry-its], establishes the Fisher-Rao metric as the canonical choice for distances between probability distributions. This theorem provides the decisive justification. The invariance under Markov morphisms means that the Fisher-Rao metric is the unique metric satisfying Criterion 2: it is the only choice that gives consistent distances regardless of how the dimensional taxonomy is refined, coarsened, or rearranged, provided the underlying information is preserved. No other metric on the simplex possesses this invariance.
 
@@ -316,7 +316,7 @@ Table 3: Candidate Metrics on the Observer Simplex Evaluated Against Cencov-Uniq
 | Aitchison | None: perturbation-invariant but not Markov-invariant | Partial: suited to compositional not probability structure | Singular: log-ratio undefined at boundary |
 | Wasserstein | None: invariant under transport rearrangements, not sufficient statistics | No: optimal-transport geometry differs from KL | Well-defined; penalizes support mismatch |
 
-*Notes*: Cencov uniqueness [@cencov-1972-statistical-decision-rules; @cencov-1982-statistical-decision-rules] applies to probability distributions on finite sets; Fisher-Rao is the unique Riemannian metric invariant under all Markov morphisms (sufficient-statistic embeddings). Wasserstein geometry is appropriate when observer profiles encode mass-transport cost rather than statistical uncertainty (see Peyré and Cuturi [-@peyr-2019-computational-optimal-transport] for a comprehensive computational treatment). The Aitchison metric is the correct choice for the brand signal space (open positive orthant) but not for the observer simplex.
+*Notes*: Cencov uniqueness [@cencov-1982-statistical-decision-rules] applies to probability distributions on finite sets; Fisher-Rao is the unique Riemannian metric invariant under all Markov morphisms (sufficient-statistic embeddings). Wasserstein geometry is appropriate when observer profiles encode mass-transport cost rather than statistical uncertainty (see Peyré and Cuturi [-@peyr-2019-computational-optimal-transport] for a comprehensive computational treatment). The Aitchison metric is the correct choice for the brand signal space (open positive orthant) but not for the observer simplex.
 
 ### 4.4 Formal Definition and Metric Axioms
 

@@ -14,15 +14,6 @@ identifiers:
   - type: doi
     value: "10.5281/zenodo.18945295"
     description: "Zenodo concept DOI (all versions)"
-keywords:
-  - brand perception
-  - metric space
-  - information geometry
-  - Fisher-Rao metric
-  - compositional data
-  - warped product manifold
-  - Jacobi fields
-  - Spectral Brand Theory
 license:
   - CC-BY-4.0
   - MIT

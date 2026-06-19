@@ -525,7 +525,7 @@ external_anchors:
   - {citation_key: soilandreyes-2022-packaging-research-artefacts, role: standard_aligned, spine_nodes: [P8], note: "RO-Crate — bundle packaging projection target"}
   - {citation_key: wilkinson-2016-fair-guiding-principles, role: standard_aligned, spine_nodes: [P8], note: "FAIR — the rubric the mirror standard cites"}
   - {citation_key: chesnevar-2006-argument-interchange-format, role: standard_aligned, spine_nodes: [P8], note: "AIF — argument interchange"}
-  - {citation_key: kuhn-dumontier-2014-trusty-uris, role: standard_aligned, spine_nodes: [P8], note: "Trusty URIs — graph-normalized content-addressing for def_hash upgrade"}
+  - {citation_key: kuhn-2014-trusty-uris, role: standard_aligned, spine_nodes: [P8], note: "Trusty URIs — graph-normalized content-addressing for def_hash upgrade"}
   - {citation_key: matentzoglu-2022-sssom, role: standard_aligned, spine_nodes: [P8], note: "SSSOM — typed+justified mappings projection"}
   - {citation_key: smith-2007-obo-foundry, role: standard_aligned, spine_nodes: [P8], note: "OBO Foundry — one-term-one-owner governance"}
   - {citation_key: cuencagrau-2008-modular-reuse-ontologies, role: standard_aligned, spine_nodes: [P8], note: "OWL modularity — conservative-extension framing of the linker"}

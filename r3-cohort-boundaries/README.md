@@ -1,6 +1,6 @@
 [![MIT License](https://img.shields.io/badge/Code-MIT-blue.svg)](../LICENSE)
 [![CC-BY 4.0](https://img.shields.io/badge/Data-CC--BY_4.0-lightgrey.svg)](../LICENSE-data)
-![Last Updated](https://img.shields.io/badge/updated-2026--06--18-success)
+![Last Updated](https://img.shields.io/badge/updated-2026--06--19-success)
 
 # Geometric Necessity of Fuzzy Cohort Boundaries: A Concentration Analysis of the 7-Simplex
 
@@ -10,7 +10,7 @@
 - Version: 1.2.0
 - DOI: [10.5281/zenodo.18945477](https://doi.org/10.5281/zenodo.18945477)
 - **New here?** [AGENTS.md](AGENTS.md) is a file-by-file guide for any reader (human or AI agent) on how to use the paper + every metadata file.
-- Machine-readable bundle: [paper.yaml](paper.yaml) (Paper Spec), [SPINE.yaml](SPINE.yaml), [ONTOLOGY.yaml](ONTOLOGY.yaml), [GLOSSARY.md](GLOSSARY.md)
+- Machine-readable bundle: [SPINE.yaml](SPINE.yaml), [ONTOLOGY.yaml](ONTOLOGY.yaml), [GLOSSARY.md](GLOSSARY.md)
 
 ## 2 | Citations
 
@@ -37,4 +37,4 @@ Code (if any): MIT — see hub-level [../LICENSE](../LICENSE). Data, figures, ta
 
 ---
 
-*Last updated: 2026-06-18*
+*Last updated: 2026-06-19*

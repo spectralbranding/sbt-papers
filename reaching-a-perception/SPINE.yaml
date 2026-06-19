@@ -101,6 +101,9 @@ propositions:
     evidence:
       - type: analytic
         anchor: "2-D, 2-type broadcast-channel model (M1): channel quality is the inner product of signal and sensitivity vectors; the separating-signal over-index is sin^2(beta) by direct computation, recovering the parent paper's loss term as the filter's selectivity."
+      - type: simulation
+        anchor: "ME2 calibrated Monte Carlo (OB2): over the public-proxy-calibrated cohort population the resonance over-index is 1.202 [1.196, 1.207] with d=1.61 — a calibrated demonstration of the monotone over-index, not a field test."
+        source: ME2
       - type: citation
         anchor: "Degraded broadcast channel: one sender, receivers of differing channel quality, one signal decoded differently."
         citation_keys: [cover-1972-broadcast-channels]
@@ -138,7 +141,7 @@ propositions:
 # ---------------------------------------------------------------------------
 derivations:
   - id: M1
-    statement: "Minimal model: 2-D perceptual space, 2 observer types (peak on dim-1 vs dim-2), ternary signal (emit dim-1 / dim-2 / neutral). Extends Cover (1972) degraded broadcast channel; channel quality q_i = |<signal, w_i>|; capacity region <-> resonance bandwidth; decision loss L(P) = Blackwell garbling on the posterior over cohort membership. Yields the mandatory figure: loss surface as a function of sin^2(beta) x spill cost."
+    statement: "Minimal model: 2-D perceptual space, 2 observer types (peak on dim-1 vs dim-2), ternary signal (emit dim-1 / dim-2 / neutral). Extends Cover (1972) degraded broadcast channel; channel quality q_i = |<signal, w_i>|; capacity region <-> resonance bandwidth; decision loss L(P) = Blackwell garbling on the posterior over cohort membership. Yields Figure 1 (loss surface over sin^2(beta) x spill cost) and, under the ME2 calibration, Figure 2 (resonance over-index vs distinctiveness, with the public anchors marked)."
     supports: [P2, P3]
 
 methods:
@@ -146,15 +149,45 @@ methods:
     statement: "PRIMARY empirical spine: two-cell field experiment — dimension-strong vs dimension-neutral creative delivered via contextual slots, linked to PRE-MEASURED individual perceptual profiles (PRISM-style elicitation), >=1,500 complete profiles per cell, >=4 product categories spanning involvement x sin^2(beta). Tests P2 (resonance over-index) at the individual level."
     supports: [P2]
   - id: ME2
-    statement: "FALLBACK (JAR-acceptable for a methods companion): calibrated broadcast-channel simulation using the observed sin^2(beta) distribution from an atom-based perception corpus, plus two illustrative case studies (one maintenance campaign, one category-creation campaign) demonstrating the handoff contract in practice."
+    statement: "EXECUTED empirical spine (the realized path; no data partnership available, so the JAR-acceptable methods-companion fallback rather than ME1). Calibrated broadcast-channel Monte Carlo: the cohort single-dimension distinctiveness distribution is calibrated to an OBSERVED public proxy — the five canonical SBT brand profiles (the corpus's public anchors), NOT the WIP atom instrument — by the concentration of each centered profile on its dominant dimension; cohorts are drawn from the method-of-moments Beta and run through the M1 two-type model; over-index, effect size, and routing fraction are reported with bootstrap 95% CIs. Two case studies instantiate the P1 contract: a maintenance campaign (established distinctive brand, Hermes) and a category-creation campaign (undifferentiated new entrant, distinctiveness at the 1/8 floor). Supports P1 (contract bridge-selection) and P2 (resonance over-index)."
     supports: [P1, P2]
+    status: executed
+    script: "code/broadcast_channel_me2.py (seed 20260619)"
+    outputs: [OB1, OB2, OB3, F1, F2, F3]
   - id: ME3
     statement: "Proxy-join loss estimation: mutual information I(C;P) and decision-loss L(P) between perceptual cohort membership and addressable proxy features in the atom corpus / panel; identify P* and bound unobservables."
     supports: [P3]
 
-observations: []
-
-findings: []       # to be generated; NONE asserted until data collected
+# ME2 simulation outputs (calibrated demonstration, NOT field evidence). All
+# reproducible from code/broadcast_channel_me2.py at seed 20260619.
+observations:
+  - id: OB1
+    type: calibration
+    statement: "Observed single-dimension distinctiveness of the 5 canonical public profiles: Hermes .760, Erewhon .358, IKEA .348, Tesla .336, Patagonia .335; mean .427 (sd .186, N=5 public anchors). Method-of-moments Beta(2.59, 3.47). Routing threshold s* = 1 - L0/C_REF = .355 inherited from the Figure 1 calibration."
+    source: ME2
+  - id: OB2
+    type: simulation
+    statement: "Monte Carlo over N=10,000 calibrated cohorts: resonance over-index (matched vs off-target salience for the dimension-strong creative) mean 1.202, 95% CI [1.196, 1.207]; standardized matched-vs-off-target salience gap Cohen's d = 1.609; mean broadcast spill cost .177, 95% CI [.176, .178]."
+    source: ME2
+  - id: OB3
+    type: simulation
+    statement: "Fraction of calibrated cohorts clearing the broadcast routing threshold s*=.355: .626, 95% CI [.617, .636] — i.e., among brands with a canonical-like concentrated profile, a majority route to the address-free broadcast bridge; the complement routes to proxy/provenance."
+    source: ME2
+findings:
+  - id: F1
+    type: simulation_demonstration
+    statement: "DEMONSTRATION (not field evidence): the resonance over-index is positive and increasing in distinctiveness across the entire calibrated population (CI strictly above 1), with a large standardized matched-vs-off-target gap (d=1.61) — consistent with P2's monotonic over-index prediction. A calibrated simulation, not a test; ME1 remains the confirmatory design."
+    supports: [P2]
+    caveat: "Calibration anchored on 5 public profiles (all established, distinctive brands); the population over-represents distinctiveness. Stated as a scope limitation."
+  - id: F2
+    type: case_study
+    statement: "Maintenance case (Hermes, distinctiveness s=.760 > s*): the P1 contract recommends broadcast-a-dimension at spill cost .074, dominating the minimal-loss proxy (L0=.20); resonance over-index 1.724. An established distinctive brand is reachable address-free."
+    supports: [P1]
+  - id: F3
+    type: case_study
+    statement: "Category-creation case (undifferentiated new entrant, distinctiveness at the 1/8 floor s=.125 < s*): the P1 contract DECLINES broadcast (spill .271 > proxy loss .20) and routes to the minimal-loss proxy / provenance-as-address; resonance over-index 1.017 (no separation). Forming the distinctiveness — moving the cohort off the floor — is the perception-FORMATION problem deferred to the spectral-dynamics companion (2026z), confirming the boundary L1."
+    supports: [P1]
+    links: [L1, "boundary: Reaching versus Forming"]
 
 robustness_checks:
   - id: RC1
