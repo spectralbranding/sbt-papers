@@ -1,0 +1,85 @@
+# ONTOLOGY.yaml module - 2026au (The Correspondence Principle of Brand Management)
+#
+# Per-paper ontology module per [internal path removed]
+# §"ONTOLOGY.yaml schema (v0.1)". owns = terms THIS paper introduces (unique
+# authority); imports = terms owned by other modules it uses (reference only).
+#
+# This module owns the correspondence-principle apparatus: the brand-management
+# correspondence theorem, the classical-brand regime + its four departure
+# parameters, the incumbent-garbling operator (the representation lemma), the two
+# decision-efficiency terms (directed-gradient dominance, metameric arbitrage),
+# blind spend, the regime test, and the brand-metrology stance. It imports the SBT
+# perceptual substrate (perception cloud, dimensions, cohort, metamerism, AI
+# observers) that the theorems operate on.
+
+paper_key: 2026au
+schema_version: 0.1
+
+owns:
+  - term_key: brand-management-correspondence-theorem
+    label: "Brand-management correspondence theorem"
+    canonical_form: "correspondence theorem"
+    definition: "The result that an incumbent aggregate brand-health score is a sufficient statistic for the managerial decision problem — so the incumbent framework and Spectral Brand Theory prescribe the same optimal action for every payoff — if and only if four regime conditions hold jointly (a tight unimodal perception cloud, slow temporal dynamics, a human-only observer set, and a firm-dominated signal); in that limit Spectral Brand Theory reduces to the incumbent, which is why the incumbent worked."
+    first_section: "The Correspondence Theorem"
+    relations:
+      - {type: contrasts, term_key: spectral-brand-theory, note: "the incumbent is the limiting case of SBT, recovered at the classical regime"}
+  - term_key: classical-brand-regime
+    label: "Classical brand regime"
+    canonical_form: "classical brand regime"
+    definition: "The corner of brand conditions in which all four regime-departure parameters are at their minimum — a tight unimodal perception cloud, slow dynamics, human-only observers, and a firm-dominated signal — and in which the cheap aggregate brand-health score is a sufficient statistic for managerial decisions, so the incumbent framework is the correct and cheaper tool."
+    first_section: "The Correspondence Theorem"
+  - term_key: regime-departure-parameter
+    label: "Regime-departure parameter"
+    canonical_form: "regime-departure parameter"
+    definition: "One of four separately-estimable quantities whose joint smallness defines the classical brand regime and whose growth measures the distance from it: perceptual dispersion/multimodality (sigma), temporal velocity (v), AI-observer share (alpha), and exogenous-signal share (epsilon). The decision loss of score-based management is bounded below by a quantity monotone non-decreasing in each."
+    first_section: "The Correspondence Theorem"
+  - term_key: incumbent-garbling-operator
+    label: "Incumbent garbling operator"
+    canonical_form: "incumbent garbling operator"
+    definition: "The measurable projection-and-aggregation map T_k = A_k composed with Pi_k that represents an incumbent brand-equity framework as a low-order summary of the perception cloud; observing T_k(mu) is a Blackwell garbling of observing the full perception measurement mu, so by the data-processing inequality it is weakly less informative for every decision problem (the representation lemma)."
+    first_section: "Incumbent Frameworks as Garbling Operators"
+  - term_key: directed-gradient-dominance
+    label: "Directed-gradient dominance"
+    canonical_form: "directed-gradient dominance"
+    definition: "The decision-efficiency result that outside the classical regime the full perception measurement weakly Blackwell-dominates the aggregate score for every decision-maker, so the cloud-optimizing manager moves the signal only along dimension-and-cohort directions whose payoff is observable, while the score-optimizing manager allocates effort along unobserved directions whose sign it cannot determine."
+    first_section: "Decision-Efficiency Theorems"
+    relations:
+      - {type: contrasts, term_key: blind-spend, note: "the score-optimizer's loss is exactly the blind-spend share"}
+  - term_key: blind-spend
+    label: "Blind spend"
+    canonical_form: "blind spend"
+    definition: "Brand-management effort that an aggregate-score optimizer allocates along perception dimensions its framework projects away, so that its effect on perception and behavior is unobservable to that optimizer — it may help, hurt, or do nothing, and the manager cannot tell which."
+    first_section: "Decision-Efficiency Theorems"
+  - term_key: metameric-arbitrage
+    label: "Metameric arbitrage"
+    canonical_form: "metameric arbitrage"
+    definition: "The pair of levers that metamerism opens and the aggregate model cannot see: signal-metamerism (distinct signals inducing equal perception) yields a cheaper-signal substitution within a perceptual equivalence class, and perception-metamerism (one signal inducing divergent perception across cohorts) yields a mis-targeting loss; the realized decision loss is bounded below by a quantity monotone in the four regime-departure parameters."
+    first_section: "Decision-Efficiency Theorems"
+    relations:
+      - {type: specializes, term_key: spectral-metamerism, note: "the decision-theoretic consequence of spectral metamerism for management efficiency"}
+  - term_key: regime-test
+    label: "Regime test"
+    canonical_form: "regime test"
+    definition: "The first step of the theorem-entailed managerial procedure: estimate the four regime-departure parameters for a category to decide whether the cheap aggregate brand-health score is in fact sufficient (so Spectral Brand Theory is not over-prescribed where the incumbent suffices) or whether the category has left the classical regime far enough that cloud-based management weakly dominates net of measurement cost."
+    first_section: "Managerial Implications Derived from the Theorems"
+  - term_key: brand-metrology
+    label: "Brand metrology"
+    canonical_form: "brand metrology"
+    definition: "The stance that Spectral Brand Theory is an observational and measurement science of what a brand is and how it is read — the astronomer — rather than a brand-management practice — the astronaut; it supplies the experiment (the perception measurement) that a manager's decisions consume, and Blackwell's theorem is the bridge by which a finer measurement provably improves every decision without the measurement being a theory of any decision."
+    first_section: "Positioning — Brand Metrology, Not Brand Management"
+
+imports:
+  - {term_key: spectral-brand-theory}
+  - {term_key: perception-cloud}
+  - {term_key: spectral-dimensions}
+  - {term_key: observer-spectral-profile}
+  - {term_key: cohort}
+  - {term_key: brand-conviction}
+  - {term_key: spectral-metamerism}
+  - {term_key: metameric-observer}
+  - {term_key: dimensional-collapse}
+  - {term_key: non-ergodic-perception}
+  - {term_key: re-collapse}
+
+refines: []
+
