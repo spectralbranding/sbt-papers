@@ -803,9 +803,6 @@ All numerical values in Tables 4–8 and Appendix A.2 are reproduced by the comp
 
 The script uses a fixed seed (`SEED = 42`) and requires no proprietary data. Run command:
 
-```
-cd /path/to/spectral-branding && \
-  uv run python [internal path removed]
-```
+`uv run --with numpy python r7_spectral_resource_allocation.py`
 
 Running the script reproduces the per-brand alignment gap values, the rank ordering Hermès < Erewhon < Patagonia < Tesla < IKEA, and the Theorem 5 interaction-adjusted allocations for the heritage premium and luxury paradox examples.
