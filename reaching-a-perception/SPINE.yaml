@@ -1,0 +1,303 @@
+spine_version: "0.2"
+paper_key: "2026av"
+title: "Reaching a Perception: From Perceptual Cohort to Reachable Audience"
+self_citation_key: "zharnikov-2026av-reaching-a-perception"
+concept_doi: "10.5281/zenodo.20765556"   # reserved 2026-06-19
+version_doi: "10.5281/zenodo.20765557"   # v1.0.0
+thesis: |
+  The correspondence principle (2026au) shows that an aggregate brand score is a Blackwell
+  garbling of the eight-dimensional perception cloud and prescribes acting on the highest-
+  payoff (dimension, cohort) — the directed-intervention rule P6. But P6 presumes a cohort
+  is ACTIONABLE without showing it is REACHABLE: a cohort defined by perceptual proximity has
+  no native media address, unlike the addressable audiences (channels, cookies, lookalikes)
+  of traditional activation. This applied companion closes that gap. "Actionable" decomposes
+  into three measurable bridge mechanisms from perception space to action, unified by a
+  measurement->activation HANDOFF CONTRACT consistent with SBT's metrology posture (the
+  astronomer supplies coordinates and the bridge cost; the manager flies):
+    (b) BROADCAST-A-DIMENSION — emit on the dimension the cohort is sensitive to and let
+        self-selection route the signal; zero address required. Formally a separating signal
+        on a degraded broadcast channel (Cover 1972): the observer's channel quality is the
+        inner product of the signal vector with the observer's spectral-sensitivity vector,
+        so off-peak observers receive a metamer-to-null. The self-selection sharpness equals
+        the same sin^2(beta) that the parent paper counts as a perception-metamerism LOSS:
+        the targeting BUG becomes a self-selection FILTER. This is the headline.
+    (c) PROVENANCE-AS-ADDRESS — the atomic-perception architecture's atoms carry the surfaces (and recency)
+        where each perception was found; a cohort of atoms traces back to re-reachable channels.
+    (a) PERCEPTION->PROXY JOIN — map the cohort to addressable proxies and QUANTIFY the
+        Blackwell-garbling decision loss L(P) of doing so; report the minimal-loss proxy P*.
+  The reach answer is a structural TAILWIND, not a patch: the only route needing an address
+  (a) is a measurable, lossy projection, and the address-free route (b) is exactly where post-
+  cookie activation is already heading (the industry's own Topics-API cohort pivot), so SBT does
+  not depend on the identity-addressability the advertising industry is losing. The individual
+  observer spectral profile is the primitive; cohorts are derived clusters in that space.
+
+# ---------------------------------------------------------------------------
+# Boundary conditions (cannot be relaxed — the theory does not apply outside them)
+# ---------------------------------------------------------------------------
+boundary_conditions:
+  - id: C1
+    statement: "Inherits 2026au C1-C2: a brand is an observer-completed probability measure mu on the eight-dimensional SBT perception manifold; the managerial problem is a statistical decision problem with SBT supplying the experiment and the manager choosing the action. Reach is the delivery of an action to the observers whose perceptions constitute a target cohort."
+  - id: C2
+    statement: "The individual observer spectral profile w (a sensitivity weight vector over the eight dimensions) is the primitive; a perceptual cohort is a derived cluster of observers/atoms in profile-and-perception space. Results are stated at the individual level and aggregated to cohorts; settings with no recoverable individual profile (e.g. a single undifferentiated aggregate) are out of scope for the resonance mechanism (b)."
+  - id: C3
+    statement: "Scope conditions for broadcast-a-dimension (b) — POSITIVE: (i) the perceptual dimensions are approximately separable for the target so a dimension-strong signal is identifiable; (ii) the cohort's dimensional distinctiveness sin^2(beta) exceeds a critical threshold (~0.35) so resonance is sharper than spill. NEGATIVE (theory does not apply / route (b) fails): (iii) highly correlated dimensions (category-image collapse); (iv) high-involvement deliberate processing that swamps resonance; (v) regulatory prohibition on dimension-strong messaging. Outside the positive conditions the handoff contract routes to (c) or (a)."
+  - id: C4
+    statement: "Provenance-as-address (c) requires atoms carrying source/where/when (content_date, platform, geography); perception->proxy join (a) requires addressable proxy features stored alongside the 8-dim vector. Absent these the corresponding bridge is unavailable (the handoff contract reports it as such)."
+
+# ---------------------------------------------------------------------------
+# Assumption atoms (assumed without test; relaxable, consequences traced)
+# ---------------------------------------------------------------------------
+assumption_atoms:
+  - id: AA1
+    statement: "Salience/response is monotone increasing in the projection of the emitted signal onto the observer's spectral-sensitivity vector (graded reception, not binary). Used for P2."
+    type: response_form
+    relaxable: true
+    relaxation_consequence: "Under a threshold (binary tuning) response the over-index prediction sharpens rather than reverses; tested in RC1."
+    affects: [P2, M1]
+  - id: AA2
+    statement: "Broadcast spill cost is linear in impressions delivered to non-resonant observers (pay-per-impression). Used to price route (b) against (a)/(c)."
+    type: cost_structure
+    relaxable: true
+    relaxation_consequence: "Convex spill cost raises the relative attractiveness of (a)/(c); the bridge-selection ordering (P1) is recomputed but its form is unchanged."
+    affects: [P1, P3, M1]
+  - id: AA3
+    statement: "The eight SBT dimensions are a justified measurement basis (imported from R11 / 2026r); the garbling and channel arguments hold for any finite dimension count."
+    type: construct_validity
+    relaxable: true
+    relaxation_consequence: "Dimension-count does not affect the qualitative results; 2-vs-8 robustness shown in RC2."
+    affects: [P1, P2, P3]
+  - id: AA4
+    statement: "Observer spectral profiles have non-degenerate cross-observer variance (heterogeneous tuning). Used for self-selection to do work in (b)."
+    type: distributional
+    relaxable: true
+    relaxation_consequence: "As profile variance -> 0 the cohort is not perceptually distinct, sin^2(beta) -> 0, and (b) degenerates to undifferentiated broadcast (boundary C3-iii)."
+    affects: [P2]
+
+# ---------------------------------------------------------------------------
+# Propositions (the theoretical contributions) — 3 numbered, per Grok house-style
+# ---------------------------------------------------------------------------
+propositions:
+  - id: P1
+    statement: "The handoff-contract rule. For a target (dimension, cohort), the measurement->activation contract emits (i) the recommended bridge mechanism and (ii) its quantified cost: dimension-distinct cohort (sin^2(beta) > threshold) -> broadcast-a-dimension (b), cost = predicted spill; atoms clustered on few live surfaces -> provenance-as-address (c), cost = coverage bias; else -> minimal-loss proxy (a), cost = L(P*). SBT supplies target + bridge cost; media execution is the management layer."
+    type: decision_rule
+    conditions: "C1, C3, C4"
+    antecedents: []
+    assumptions: [AA2]
+    evidence:
+      - type: analytic
+        anchor: "Construction: the contract is the argmin over the three bridges of (targeting loss + delivery cost), each term defined in P2/P3 and the provenance coverage estimate."
+      - type: citation
+        anchor: "Metrology/management split inherited from the parent correspondence principle."
+        citation_keys: [zharnikov-2026au-correspondence-principle-brand]
+        citation_role: theoretical_predecessor
+    falsifier: "A setting where a single fixed bridge strictly dominates the contract's selection across all cohort geometries would refute the value of conditioning the bridge on cohort geometry."
+    body_sections: ["The Measurement-to-Activation Handoff Contract"]
+  - id: P2
+    statement: "Resonance over-index (broadcast-a-dimension). A signal emitted strong on dimension d produces salience/response for observer i monotone in <signal_d, w_i>; therefore a dimension-strong creative over-indexes on the dimension-d-sensitive cohort relative to a dimension-neutral control, and the magnitude of over-index is increasing in the cohort's dimensional distinctiveness sin^2(beta) — the SAME quantity that is the perception-metamerism LOSS in 2026au. The mis-targeting bug is, read forward, the self-selection filter; formally a degraded broadcast channel (Cover 1972) with channel quality |<signal, w_i>| and resonance bandwidth = sin^2(beta)."
+    type: mechanism
+    conditions: "C2, C3"
+    antecedents: [P1]
+    assumptions: [AA1, AA4]
+    evidence:
+      - type: analytic
+        anchor: "2-D, 2-type broadcast-channel model (M1): channel quality is the inner product of signal and sensitivity vectors; the separating-signal over-index is sin^2(beta) by direct computation, recovering the parent paper's loss term as the filter's selectivity."
+      - type: citation
+        anchor: "Degraded broadcast channel: one sender, receivers of differing channel quality, one signal decoded differently."
+        citation_keys: [cover-1972-broadcast-channels]
+        citation_role: methodological_source
+      - type: citation
+        anchor: "Self-selection / separating equilibrium: a costly/targeted signal sorts types."
+        citation_keys: [spence-1973-job-market-signaling, rothschild-1976-equilibrium-competitive-insurance, narasimhan-1984-price-discrimination-coupons, shaffer-1995-competitive-coupon-targeting]
+        citation_role: theoretical_predecessor
+      - type: citation
+        anchor: "The metamerism loss term being weaponized."
+        citation_keys: [zharnikov-2026-spectral-metamerism-brand-perception-projection, zharnikov-2026au-correspondence-principle-brand]
+        citation_role: theoretical_predecessor
+    falsifier: "A dimension-strong creative that does NOT over-index on the dimension-sensitive cohort vs a dimension-neutral control (over-index CI includes zero) in a positive-scope category (C3) would refute the resonance mechanism."
+    body_sections: ["Broadcast a Dimension: Self-Selection by Spectral Resonance", "A Minimal Broadcast-Channel Model"]
+  - id: P3
+    statement: "Proxy-join loss ordering. Targeting cohort C through an addressable proxy P is a Blackwell garbling of targeting on the perceptual cohort directly; the expected decision loss L(P) is non-negative and ordered by the informativeness of P about cohort membership, with a minimal-loss proxy P* identifiable from the mutual information I(C; P). When even P* leaves L(P*) above the predicted spill of route (b), the contract (P1) routes to (b) instead — making the reach choice a measured comparison, not a default to addressability."
+    type: management_outcome
+    conditions: "C1, C4"
+    antecedents: [P1]
+    assumptions: [AA2]
+    evidence:
+      - type: analytic
+        anchor: "Direct application of Blackwell-Sherman-Stein: the proxy experiment is a garbling of the perceptual experiment, hence weakly less valuable for the targeting decision; L(P) is the decision-loss gap, minimized at the highest-I(C;P) proxy."
+      - type: citation
+        anchor: "Dominance of the finer experiment (garbling)."
+        citation_keys: [blackwell-1953-equivalent-comparisons, cover-2006-elements-information-theory]
+        citation_role: methodological_source
+      - type: citation
+        anchor: "Empirical benchmark: address-based personalization lift is modest (calibrates the tailwind)."
+        citation_keys: [yeo-2025-personalized-advertising-meta-analysis]
+        citation_role: empirical_anchor
+    falsifier: "Observe targeting via a proxy strictly outperform targeting on the true perceptual cohort (same budget) outside measurement-cost differences — Blackwell forbids this on information alone, so a robust such finding would refute P3."
+    body_sections: ["Perception-to-Proxy Join and Its Quantified Loss"]
+
+# ---------------------------------------------------------------------------
+derivations:
+  - id: M1
+    statement: "Minimal model: 2-D perceptual space, 2 observer types (peak on dim-1 vs dim-2), ternary signal (emit dim-1 / dim-2 / neutral). Extends Cover (1972) degraded broadcast channel; channel quality q_i = |<signal, w_i>|; capacity region <-> resonance bandwidth; decision loss L(P) = Blackwell garbling on the posterior over cohort membership. Yields the mandatory figure: loss surface as a function of sin^2(beta) x spill cost."
+    supports: [P2, P3]
+
+methods:
+  - id: ME1
+    statement: "PRIMARY empirical spine: two-cell field experiment — dimension-strong vs dimension-neutral creative delivered via contextual slots, linked to PRE-MEASURED individual perceptual profiles (PRISM-style elicitation), >=1,500 complete profiles per cell, >=4 product categories spanning involvement x sin^2(beta). Tests P2 (resonance over-index) at the individual level."
+    supports: [P2]
+  - id: ME2
+    statement: "FALLBACK (JAR-acceptable for a methods companion): calibrated broadcast-channel simulation using the observed sin^2(beta) distribution from an atom-based perception corpus, plus two illustrative case studies (one maintenance campaign, one category-creation campaign) demonstrating the handoff contract in practice."
+    supports: [P1, P2]
+  - id: ME3
+    statement: "Proxy-join loss estimation: mutual information I(C;P) and decision-loss L(P) between perceptual cohort membership and addressable proxy features in the atom corpus / panel; identify P* and bound unobservables."
+    supports: [P3]
+
+observations: []
+
+findings: []       # to be generated; NONE asserted until data collected
+
+robustness_checks:
+  - id: RC1
+    statement: "Threshold (binary) reception vs graded reception (AA1); placebo on non-sensitive dimensions; dimension-neutral falsification creative."
+    addresses: [P2, AA1]
+  - id: RC2
+    statement: "Dimension-count robustness (2 vs 8); alternative perceptual bases (PCA on same items; Likert vs semantic-differential) to pre-empt the proprietary-instrument objection."
+    addresses: [P2, AA3]
+  - id: RC3
+    statement: "Bounding exercise on unobservables for the proxy-join loss (omitted-variable / endogenous-content threats)."
+    addresses: [P3]
+
+alternative_explanations:
+  - id: AE1
+    statement: "Content-contextual targeting (Haglund & Bjorklund 2024; Ye/Wedel/Pieters 2026 'Ad Gazer') could explain over-index without invoking perceptual resonance."
+    rebuttal: "Those operate on CONTENT features; the prediction here is keyed to PRE-MEASURED observer spectral profiles and predicts magnitude = sin^2(beta). Placebo on non-sensitive dimensions (RC1) separates resonance from content-context."
+    citation_keys: [haglund-2024-ai-contextual-advertising, ye-2026-ad-gazer-contextual]
+  - id: AE2
+    statement: "Endogenous content creation: surfaces generating atoms may already be selected by the resonant cohort (provenance-as-address survivorship)."
+    rebuttal: "Stated as a coverage-bias limitation; the handoff contract reports the reachable-fraction estimate rather than claiming full coverage."
+
+limitations:
+  - id: L1
+    statement: "Substrate-adjustment / perception-FORMATION dynamics (demand/category creation; belief maintenance; the 'stop advertising -> sales decay' relaxation) is a DISTINCT activation mode handled here only as a boundary condition + practitioner-objection pre-emption. Full treatment (campaign as forcing function + cloud relaxation-rate measurement) is DEFERRED to a 2026z spectral-dynamics companion. This paper scopes itself to activation GIVEN a perception (routing), not formation."
+    anchor_keys: [zharnikov-2026z-spectral-dynamics, gijsenberg-2011-adstock-advertising-decisions, broadbent-1979-one-way-tv-advertisements, zajonc-1968-mere-exposure, binet-2013-long-short-of-it, sharp-2010-how-brands-grow, romaniuk-2016-how-brands-grow, sethuraman-2011-advertising-elasticities-meta, durand-2017-market-categories, luffarelli-2023-brand-personality-cbbe-time]
+  - id: L2
+    statement: "The atomic-perception measurement architecture invites a replicability objection. Pre-empted by shipping an open PRISM-style elicitation script and the RC2 alternative-instrument robustness."
+  - id: L3
+    statement: "Causal threats: endogenous content creation, omitted-variable bias in proxy mapping, measurement-error attenuation in profiles — addressed (RC3), not deferred to the management layer."
+
+corpus_precedents:
+  - key: zharnikov-2026au-correspondence-principle-brand
+    relation: parent_concept
+    note: "Supplies P6 (directed-intervention rule), the garbling backbone, and the sin^2(beta) metamerism loss this paper weaponizes; the metrology/management (astronomer/astronaut) split."
+  - key: zharnikov-2026-spectral-metamerism-brand-perception-projection
+    relation: builds_on
+    note: "Perception-metamerism = mis-targeting loss; here reframed as the self-selection filter."
+  - key: zharnikov-2026-dimensional-collapse-ai-mediated-search
+    relation: builds_on
+    note: "LLM-as-metameric-observer; AI-observer cohorts are a reach surface."
+  - key: zharnikov-2026as-prism-structured-measurement
+    relation: builds_on
+    note: "PRISM is the elicitation instrument for the individual perceptual profiles in ME1; open script pre-empts the proprietary objection."
+  - key: zharnikov-2026z-spectral-dynamics
+    relation: companion_deferral
+    note: "Substrate-adjustment dynamics (L1) is deferred to a 2026z-line spectral-dynamics companion. (Corpus self-cite key is zharnikov-2026z-spectral-dynamics; the spine's earlier '-velocity-acceleration' slug was never registered.)"
+
+external_anchors:
+  - key: cover-1972-broadcast-channels
+    citation: "Cover, T. M. (1972). Broadcast channels. IEEE Transactions on Information Theory, 18(1), 2-14."
+    doi: "10.1109/TIT.1972.1054727"
+    role: methodological_source
+    status: to_register
+    note: "Formal backbone for broadcast-a-dimension; import the degraded-channel capacity-region formalism with an explicit mapping table (sender=brand, receivers=observer profiles, capacity region=resonance bandwidth). Distinct from the registered cover-2006 textbook."
+  - key: spence-1973-job-market-signaling
+    citation: "Spence, M. (1973). Job Market Signaling. QJE, 87(3), 355-374."
+    doi: "10.2307/1882010"
+    role: theoretical_predecessor
+    status: already_registered
+  - key: rothschild-1976-equilibrium-competitive-insurance
+    citation: "Rothschild, M., & Stiglitz, J. (1976). Equilibrium in Competitive Insurance Markets. QJE, 90(4), 629-649."
+    doi: "10.2307/1885326"
+    role: theoretical_predecessor
+    status: to_register
+  - key: narasimhan-1984-price-discrimination-coupons
+    citation: "Narasimhan, C. (1984). A Price Discrimination Theory of Coupons. Marketing Science, 3(2), 128-147."
+    doi: "10.1287/mksc.3.2.128"
+    role: theoretical_predecessor
+    status: to_register
+  - key: shaffer-1995-competitive-coupon-targeting
+    citation: "Shaffer, G., & Zhang, Z. J. (1995). Competitive coupon targeting. Marketing Science, 14(4), 395-416."
+    doi: "10.1287/mksc.14.4.395"
+    role: theoretical_predecessor
+    status: to_register
+  - key: blackwell-1953-equivalent-comparisons
+    citation: "Blackwell, D. (1953). Equivalent Comparisons of Experiments. Annals of Mathematical Statistics, 24(2), 265-272."
+    role: methodological_source
+    status: already_registered
+    note: "Inherited from 2026au; backbone for P3 proxy-join loss."
+  - key: yeo-2025-personalized-advertising-meta-analysis
+    citation: "Yeo, T. E. D., Chu, T. H., & Li, Q. (2025). How Persuasive Is Personalized Advertising? A Meta-Analytic Review. Journal of Advertising Research, 65(4), 616-631."
+    doi: "10.1080/00218499.2025.2467763"
+    role: empirical_anchor
+    status: to_register
+    note: "HIGH priority — personalization-lift benchmark calibrating the tailwind; target-venue fit signal."
+  - key: haglund-2024-ai-contextual-advertising
+    citation: "Haglund, E., & Bjorklund, J. (2024). AI-Driven Contextual Advertising: Toward Relevant Messaging Without Personal Data. Journal of Current Issues & Research in Advertising, 45(3), 301-319."
+    doi: "10.1080/10641734.2024.2334939"
+    role: competing_approach
+    status: to_register
+    note: "HIGH priority — closest contextual competitor; position perception-routing as strictly more precise (observer-completed vs content-feature)."
+  - key: ye-2026-ad-gazer-contextual
+    citation: "Ye, J., Wedel, M., & Pieters, R. (2026). AdGazer: Improving Contextual Advertising with Theory-Informed Machine Learning. Journal of Marketing, 90(4), 122-144."
+    doi: "10.1177/00222429251396114"
+    role: competing_approach
+    status: registered
+    note: "VERIFIED 2026-06-19 (Crossref). Title is 'AdGazer' (one word), not 'Ad Gazer'. Authors Jianping Ye, Michel Wedel, Rik Pieters."
+  - key: gijsenberg-2011-adstock-advertising-decisions
+    citation: "Gijsenberg, M. J., van Heerde, H. J., Dekimpe, M. G., & Nijs, V. R. (2011). Understanding the Role of Adstock in Advertising Decisions. SSRN Electronic Journal."
+    doi: "10.2139/ssrn.1905426"
+    role: empirical_anchor
+    status: registered
+    note: "Adstock-decay benchmark for the deferred-dynamics boundary (L1). CORRECTION (2026-06-19): the spine's original claimed published record (Marketing Science 34(5):633-649, 2015, DOI 10.1287/mksc.2015.0922) FAILED Crossref verification — that DOI resolves to a different paper (Ni & Srinivasan, 'Matching in the Sourcing Market'), and no published Marketing Science version was findable via Crossref or OpenAlex. The only verifiable record is the SSRN working paper (2011, DOI 10.2139/ssrn.1905426). Registered as that verified working_paper per anti-fabrication rule 5c."
+  - key: zajonc-1968-mere-exposure
+    citation: "Zajonc, R. B. (1968). Attitudinal Effects of Mere Exposure. JPSP, 9(2, Pt.2), 1-27."
+    doi: "10.1037/h0025848"
+    role: theoretical_predecessor
+    status: to_register
+    note: "Distinct from the registered zajonc-1980 entry; micro-mechanism for L1 boundary."
+  - key: broadbent-1979-one-way-tv-advertisements
+    citation: "Broadbent, S. (1979). One Way TV Advertisements Work. Journal of the Market Research Society, 21(3), 139-166."
+    role: theoretical_predecessor
+    status: registered
+    note: "VERIFIED 2026-06-19: genuine pre-DOI trade-journal article (adstock origin); no Crossref DOI exists. Registered DOI-less."
+  - key: sethuraman-2011-advertising-elasticities-meta
+    citation: "Sethuraman, R., Tellis, G. J., & Briesch, R. A. (2011). How Well Does Advertising Work? Generalizations from Meta-Analysis of Brand Advertising Elasticities. JMR, 48(3), 457-471."
+    doi: "10.1509/jmkr.48.3.457"
+    role: empirical_anchor
+    status: to_register
+  - key: binet-2013-long-short-of-it
+    citation: "Binet, L., & Field, P. (2013). The Long and the Short of It. IPA."
+    role: empirical_anchor
+    status: to_register
+  - key: durand-2017-market-categories
+    citation: "Durand, R., & Khaire, M. (2017). Where Do Market Categories Come From and How? Journal of Management, 43(1), 87-110."
+    doi: "10.1177/0149206316669812"
+    role: theoretical_predecessor
+    status: to_register
+  - key: luffarelli-2023-brand-personality-cbbe-time
+    citation: "Luffarelli, J., Delre, S. A., & Landgraf, P. (2023). How Has the Effect of Brand Personality on CBBE Changed over Time? JAMS, 51(3), 598-616."
+    doi: "10.1007/s11747-022-00895-2"
+    role: empirical_anchor
+    status: to_register
+  - key: google-privacy-sandbox-topics
+    citation: "Google. The Topics API. Google Privacy Sandbox (official documentation)."
+    role: institutional_evidence
+    status: registered
+    url: "https://privacysandbox.google.com/private-advertising/topics"
+    note: "Industry's own cohort/interest-based (not individual) pivot — direct evidence for the tailwind. VERIFIED 2026-06-19 (URL HTTP 200)."
+
+open:
+  - "WHEN THE BRAND SPECTROMETER IS PUBLISHED: restore the named-instrument references that were genericized to 'an atom-based perception corpus' / 'the atomic-perception measurement architecture' (paper.md provenance-as-address §, figure caption, Limitations, Data-and-Code-Availability; SPINE thesis (c), ME2, L2) and add its citation/DOI. De-branded 2026-06-19 because the Brand Spectrometer is still WIP (potential cooperation with Jared Richardson / ARA) and not a public artifact."
+  - "Phase-2 DR (2 queries): (E1) survey-perception->proxy-feature mutual-information mapping methods; (E2) two-cell creative field-experiment precedents + Topics-API natural-experiment feasibility."
+  - "Confirm [UNVERIFIED] DOIs (Ye/Wedel/Pieters 2026; Broadbent 1979; Google Topics) in the substrate before citing."
+  - "Decide ME1 (field experiment) vs ME2 (simulation + 2 case studies) as the realized empirical spine based on data-partnership feasibility."
+

@@ -1,0 +1,81 @@
+# ONTOLOGY.yaml module - 2026av (Reaching a Perception: From Perceptual Cohort to Reachable Audience)
+#
+# Per-paper ontology module per [internal path removed]
+# §"ONTOLOGY.yaml schema (v0.1)". owns = terms THIS paper introduces (unique
+# authority); imports = terms owned by other modules it uses (reference only);
+# refines = an imported term this module narrows.
+#
+# This module owns the cohort-reach activation apparatus: the measurement-to-
+# activation handoff contract, the three bridges (broadcast-a-dimension,
+# provenance-as-address, perception-to-proxy join), the resonance-bandwidth
+# quantity, the proxy-join loss, and the self-selection-filter reframe of
+# metamerism. It imports the SBT perceptual substrate and the 2026au
+# correspondence apparatus (brand-metrology stance, metameric arbitrage) it
+# builds on; it refines metameric-arbitrage's perception-metamerism lever from a
+# mis-targeting LOSS into a self-selection FILTER.
+
+paper_key: 2026av
+schema_version: 0.1
+
+owns:
+  - term_key: measurement-to-activation-handoff-contract
+    label: "Measurement-to-activation handoff contract"
+    canonical_form: "handoff contract"
+    definition: "The specification that, for a target dimension and cohort, returns the recommended bridge mechanism from perception space to delivery and its quantified cost — the argmin over the three bridges of (targeting loss + delivery cost): a dimension-distinct cohort routes to broadcast-a-dimension at a cost equal to predicted spill, an atom-surface-clustered cohort routes to provenance-as-address at a cost equal to coverage bias, else the minimal-loss proxy at a cost equal to the proxy-join loss. It keeps the brand-metrology division of labor: the instrument supplies the target and the bridge cost; the manager runs the media buy."
+    first_section: "The Measurement-to-Activation Handoff Contract"
+    relations:
+      - {type: specializes, term_key: brand-metrology, note: "the handoff contract is the brand-metrology stance applied to activation: measure the target and the cost of reaching it, do not run the campaign"}
+  - term_key: broadcast-a-dimension
+    label: "Broadcast a dimension"
+    canonical_form: "broadcast a dimension"
+    definition: "The address-free activation bridge: emit a brand signal strong on the perceptual dimension a target cohort is sensitive to and let self-selection route it, so observers whose spectral-sensitivity profile peaks on that dimension perceive a salient signal (resonate) while off-peak observers receive a metamer-to-null. Formally a separating signal on a degraded broadcast channel whose per-observer channel quality is the projection of the signal onto the observer's sensitivity vector; the cohort is selected, not addressed."
+    first_section: "Broadcast a Dimension: Self-Selection by Spectral Resonance"
+    relations:
+      - {type: contrasts, term_key: perception-to-proxy-join, note: "broadcast needs no address; the proxy join is the only bridge that does"}
+  - term_key: self-selection-filter
+    label: "Self-selection filter"
+    canonical_form: "self-selection filter"
+    definition: "The forward reading of perception-metamerism: the same off-axis perceptual distinctiveness (sin-squared-beta) that is a mis-targeting LOSS under push-targeting in the parent paper becomes, under broadcast-a-dimension, the SHARPNESS with which a dimension-strong signal sorts the responsive cohort from the rest — the targeting bug read forward as a filter. A dimension-strong creative therefore over-indexes on the dimension-sensitive cohort with magnitude increasing in that distinctiveness (resonance over-index)."
+    first_section: "Broadcast a Dimension: Self-Selection by Spectral Resonance"
+    relations:
+      - {type: specializes, term_key: spectral-metamerism, note: "the activation-side use of perception-metamerism: the divergence-across-cohorts that is a bug for measurement is the sorting mechanism for delivery"}
+  - term_key: resonance-bandwidth
+    label: "Resonance bandwidth"
+    canonical_form: "resonance bandwidth"
+    definition: "The width, over the perceptual dimensions, of the region in which a broadcast-a-dimension signal achieves separation between the target cohort and non-resonant observers; the degraded-broadcast-channel analogue of a capacity region. Set by the cohort's dimensional distinctiveness sin-squared-beta: a high-distinctiveness cohort has a narrow, sharp resonance bandwidth (clean self-selection), a low-distinctiveness cohort a broad one (spill toward undifferentiated reach)."
+    first_section: "A Minimal Broadcast-Channel Model"
+  - term_key: provenance-as-address
+    label: "Provenance as address"
+    canonical_form: "provenance as address"
+    definition: "The activation bridge that traces a perceptual cohort back to re-reachable channels using the source, platform, geography, and content-date provenance each Brand Spectrometer atom already carries: a cohort of atoms is a recency-aware list of surfaces where the perception is currently expressed. A special case of the perception-to-proxy join in which the proxy features are natively addressable rather than statistically inferred; its cost is the coverage bias of the harvested surfaces (the silent majority may not surface)."
+    first_section: "Provenance as Address"
+  - term_key: perception-to-proxy-join
+    label: "Perception-to-proxy join"
+    canonical_form: "perception-to-proxy join"
+    definition: "The activation bridge that maps a perceptual cohort onto addressable proxy features (platform, geography, register, recency, panel demographics) stored alongside the eight-dimensional vector. The map is a Blackwell garbling of the perceptual experiment, so it is weakly less valuable for the targeting decision; its cost is the proxy-join loss."
+    first_section: "Perception-to-Proxy Join and Its Quantified Loss"
+    relations:
+      - {type: specializes, term_key: incumbent-garbling-operator, note: "targeting through an addressable proxy is a garbling of targeting on the perceptual cohort, the same dominance ordering 2026au applies to brand-equity aggregation"}
+  - term_key: proxy-join-loss
+    label: "Proxy-join loss"
+    canonical_form: "proxy-join loss"
+    definition: "The expected decision loss L(P) of targeting a perceptual cohort C through an addressable proxy P, non-negative and ordered by the informativeness of P about cohort membership (the mutual information between membership and the proxy); the minimal-loss proxy P-star maximizes that information. When L(P-star) exceeds the predicted spill of broadcast-a-dimension the handoff contract routes to broadcast, making the reach choice a measured comparison rather than a default to addressability."
+    first_section: "Perception-to-Proxy Join and Its Quantified Loss"
+
+imports:
+  - {term_key: spectral-brand-theory}
+  - {term_key: perception-cloud}
+  - {term_key: spectral-dimensions}
+  - {term_key: observer-spectral-profile}
+  - {term_key: cohort}
+  - {term_key: spectral-metamerism}
+  - {term_key: metameric-observer}
+  - {term_key: dimensional-collapse}
+  - {term_key: brand-metrology}
+  - {term_key: incumbent-garbling-operator}
+  - {term_key: metameric-arbitrage}
+
+refines:
+  - term_key: metameric-arbitrage
+    note: "2026au's metameric-arbitrage names perception-metamerism as a mis-targeting LOSS the aggregate model cannot see. This module refines that lever for activation: under broadcast-a-dimension the same off-axis distinctiveness is the self-selection FILTER's selectivity, so the loss term is read forward as the delivery mechanism (self-selection-filter specializes it)."
+
