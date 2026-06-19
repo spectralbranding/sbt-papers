@@ -20,7 +20,7 @@ thesis: |
   realized decision loss is bounded below by a quantity monotone in four regime-departure
   parameters (metameric arbitrage). The theorems entail a manager-runnable decision procedure
   — regime test, blind-spot diagnostic, directed-intervention rule, metameric-substitution
-  rule — realized in the Brand Spectrometer. SBT is brand metrology (the astronomer), not
+  rule — realized in an atomic-perception measurement architecture. SBT is brand metrology (the astronomer), not
   brand management (the astronaut); Blackwell's theorem is the bridge by which finer
   measurement provably helps every mission without SBT being a theory of any mission.
 
@@ -150,7 +150,7 @@ propositions:
     falsifier: "By construction, the three signatures ARE the falsifiers of P2/P3/P4."
     body_sections: ["Falsifiability"]
   - id: P6
-    statement: "Derived managerial procedure. The two theorems entail a manager-runnable decision procedure: (a) regime test — estimate (sigma, v, alpha, epsilon) to decide whether the cheap aggregate score is sufficient for the category (do not over-prescribe SBT where the incumbent suffices); (b) blind-spot diagnostic — identify which of the eight dimensions the current framework projects away; (c) directed-intervention rule — act on the single (dimension, cohort) with the largest observable payoff-per-cost; (d) metameric-substitution rule — choose the cheapest signal in a perceptual equivalence class. The Brand Spectrometer is the realized instrument: it reads the cloud, including AI cohorts, from existing artifacts, proving the prescribed measurement is feasible today."
+    statement: "Derived managerial procedure. The two theorems entail a manager-runnable decision procedure: (a) regime test — estimate (sigma, v, alpha, epsilon) to decide whether the cheap aggregate score is sufficient for the category (do not over-prescribe SBT where the incumbent suffices); (b) blind-spot diagnostic — identify which of the eight dimensions the current framework projects away; (c) directed-intervention rule — act on the single (dimension, cohort) with the largest observable payoff-per-cost; (d) metameric-substitution rule — choose the cheapest signal in a perceptual equivalence class. An atomic-perception measurement architecture is the realized instrument: it reads the cloud, including AI cohorts, from existing artifacts, proving the prescribed measurement is feasible today."
     type: management_outcome
     conditions: "C2, C4"
     antecedents: [P2, P3, P4]
@@ -290,6 +290,13 @@ limitations:
     severity: low
     mitigation: "The regime test (P6a) is precisely the rule that prevents over-prescription; the Einstein discipline (do not use relativity to throw a ball) is stated as a scope boundary."
     body_sections: ["Discussion — Scope and Boundary", "Managerial Implications Derived from the Theorems"]
+  - id: L3
+    statement: "The directed-intervention rule (P6) presumes a target (dimension, cohort) is not only ACTIONABLE but REACHABLE; a perceptual cohort has no native media address, so P6 is silent on delivery. This reach gap is a scope limit of the present paper."
+    affects: [P6]
+    severity: low
+    mitigation: "Decomposing reach into a measurement-to-activation handoff contract — which supplies the target and the quantified cost of each bridge from perception space to delivery, leaving the media buy to the management layer — is the subject of the dedicated applied companion 2026av (added 2026-06-19, files-only, NO version bump per user directive; the parent's published v1.0.0 is unchanged until the next substantive revision)."
+    anchor_keys: [zharnikov-2026av-reaching-a-perception]
+    body_sections: ["Discussion — Limitations"]
 
 # ---------------------------------------------------------------------------
 # Cross-paper engagement
@@ -322,6 +329,10 @@ corpus_precedents:
   - paper_key: 2026i
     relationship: applies
     spine_nodes: [P6]
+  - paper_key: 2026av
+    relationship: extended_by
+    spine_nodes: [P6]
+    note: "2026av (cohort-reach applied companion) closes the reach gap L3: it decomposes the actionable-but-reachable presumption of P6 into the measurement-to-activation handoff contract (three bridges + quantified cost). The companion refines this paper's metameric-arbitrage (perception-metamerism = mis-targeting loss) into a self-selection filter for address-free delivery."
   - paper_key: org-as-metadata
     relationship: unrelated
     spine_nodes: []

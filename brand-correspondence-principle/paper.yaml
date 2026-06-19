@@ -107,9 +107,9 @@ claims:
     is sufficient for the category (do not over-prescribe SBT where the incumbent suffices); (b) blind-spot
     diagnostic — identify which of the eight dimensions the current framework projects away; (c) directed-intervention
     rule — act on the single (dimension, cohort) with the largest observable payoff-per-cost; (d) metameric-substitution
-    rule — choose the cheapest signal in a perceptual equivalence class. The Brand Spectrometer is the
-    realized instrument: it reads the cloud, including AI cohorts, from existing artifacts, proving the
-    prescribed measurement is feasible today.'
+    rule — choose the cheapest signal in a perceptual equivalence class. An atomic-perception measurement
+    architecture is the realized instrument: it reads the cloud, including AI cohorts, from existing artifacts,
+    proving the prescribed measurement is feasible today.'
   testable: true
   tested_in_paper: true
   status: not_tested
@@ -194,6 +194,13 @@ dependencies:
   claim: builds on 2026i
   critical: false
   doi: 10.5281/zenodo.18946043
+- relationship: extends
+  claim: '2026av (cohort-reach applied companion) closes the reach gap L3: it decomposes the actionable-but-reachable
+    presumption of P6 into the measurement-to-activation handoff contract (three bridges + quantified
+    cost). The companion refines this paper''s metameric-arbitrage (perception-metamerism = mis-targeting
+    loss) into a self-selection filter for address-free delivery.'
+  critical: false
+  doi: 10.5281/zenodo.20765556
 - relationship: extends
   claim: builds on org-as-metadata
   critical: false
@@ -355,6 +362,11 @@ limitations:
 - description: SBT's measurement carries a cost; in the classical (low-sigma/slow/human/firm-signal) corner
     the residual information it recovers may not pay for its measurement, so SBT is not universally more
     efficient.
+  severity: minor
+  addressable: true
+- description: The directed-intervention rule (P6) presumes a target (dimension, cohort) is not only ACTIONABLE
+    but REACHABLE; a perceptual cohort has no native media address, so P6 is silent on delivery. This
+    reach gap is a scope limit of the present paper.
   severity: minor
   addressable: true
 repositories:
