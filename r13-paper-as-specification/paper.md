@@ -6,7 +6,7 @@ ORCID: 0009-0000-6893-9231
 
 DOI: [10.5281/zenodo.19210037](https://doi.org/10.5281/zenodo.19210037)
 
-Working Paper v0.1 – March 2026
+Working Paper v1.0.0 – March 2026
 
 ---
 
@@ -20,7 +20,7 @@ The verification crisis in science is a specification crisis. Papers communicate
 
 ## 1. Introduction
 
-In March 2026, Terence Tao observed that while AI was making mathematical research "richer and broader," it was not making it deeper -- and that the scientific community needed "a semi-formal language for the way that scientists actually talk to each other" (Tao, 2026, 59:20). In the same conversation, he described what he termed the "deductive overhang": the accumulation of verifiable consequences faster than the community can verify them (26:10). Tao's immediate context was mathematical proof, where verification is decidable -- a proof either satisfies the axioms or it does not. But the asymmetry he identified -- that generating candidate ideas is becoming cheap while rigorous verification remains hard -- applies with even greater force to empirical science, where verification is not decidable but depends on experimental design, statistical inference, and replication. The replication crisis, documented across psychology (Open Science Collaboration, 2015), medicine (Ioannidis, 2005), and economics (Camerer et al., 2016), and crystallized in reform manifestos (Munafò et al., 2017; Baker, 2016), had already demonstrated that the scientific ecosystem was producing claims faster than it could verify them. The reproducibility problem is not limited to social science: Peng (2011) identified computational reproducibility as a minimum standard for evaluating published findings in any field where analysis code is involved. The scale of this strain is now quantified: peer-reviewed publications grew 5% per year between 2016 and 2022, while reviewer availability grew at less than half that rate (Hanson et al., 2024). LLMs threaten to widen this generation-verification gap by orders of magnitude -- not because they generate formal proofs, but because they generate the plausible prose in which scientific claims are expressed.
+In March 2026, Terence Tao observed that while AI was making mathematical research "richer and broader," it was not making it deeper -- and that the scientific community needed "a semi-formal language for the way that scientists actually talk to each other" [@tao-2026-how-worlds-top, 59:20]. In the same conversation, he described what he termed the "deductive overhang": the accumulation of verifiable consequences faster than the community can verify them (26:10). Tao's immediate context was mathematical proof, where verification is decidable -- a proof either satisfies the axioms or it does not. But the asymmetry he identified -- that generating candidate ideas is becoming cheap while rigorous verification remains hard -- applies with even greater force to empirical science, where verification is not decidable but depends on experimental design, statistical inference, and replication. The replication crisis, documented across psychology [@open-2015-estimating-reproducibility-psychological], medicine [@ioannidis-2005-why-most-published], and economics [@camerer-2016-evaluating-replicability-laboratory], and crystallized in reform manifestos [@munaf-2017-manifesto-reproducible-science; @baker-2016-1500-scientists-lift], had already demonstrated that the scientific ecosystem was producing claims faster than it could verify them. The reproducibility problem is not limited to social science: Peng [-@peng-2011-reproducible-research-computational] identified computational reproducibility as a minimum standard for evaluating published findings in any field where analysis code is involved. The scale of this strain is now quantified: peer-reviewed publications grew 5% per year between 2016 and 2022, while reviewer availability grew at less than half that rate [@hanson-2024-strain-scientific-publishing]. LLMs threaten to widen this generation-verification gap by orders of magnitude -- not because they generate formal proofs, but because they generate the plausible prose in which scientific claims are expressed.
 
 The standard response to the verification crisis has been methodological: pre-registration, registered reports, stricter statistical thresholds, open data mandates. These interventions address the quality of individual studies but not the scalability of verification itself. A registered report is still a PDF. Its hypotheses, acceptance criteria, and methodology are still expressed in natural language, legible to human readers but opaque to machines. When a foundational paper is retracted, identifying every downstream claim that depends on it requires a human to read every citing paper and judge the nature of the citation -- a task that is feasible for a paper with fifty citations and impossible for one with five thousand.
 
@@ -38,7 +38,7 @@ The relationship between information generation and information verification is 
 
 ### 2.1 The Printing Press and the Scientific Method
 
-The printing press, operational in Europe by the 1450s, reduced the cost of producing written documents by roughly two orders of magnitude (Eisenstein, 1979). The immediate consequence was an explosion of pamphlets, treatises, and claims of every kind -- alchemical recipes alongside astronomical observations, political propaganda alongside anatomical descriptions. The generation breakthrough was mechanical; the verification problem was epistemic. How could a reader distinguish a reliable claim from an unreliable one when both arrived in the same printed format?
+The printing press, operational in Europe by the 1450s, reduced the cost of producing written documents by roughly two orders of magnitude [@eisenstein-1979-printing-press-as]. The immediate consequence was an explosion of pamphlets, treatises, and claims of every kind -- alchemical recipes alongside astronomical observations, political propaganda alongside anatomical descriptions. The generation breakthrough was mechanical; the verification problem was epistemic. How could a reader distinguish a reliable claim from an unreliable one when both arrived in the same printed format?
 
 The specification solution emerged over the following two centuries: the scientific method. Bacon's *Novum Organum* (1620), the founding of the Royal Society (1660), and Newton's *Principia* (1687) collectively established a specification for credible knowledge claims: falsifiable predictions, controlled experiments, mathematical formalization, and independent replication. The scientific method did not reduce the volume of printed material. It provided a structural standard against which claims could be evaluated -- a specification for what counts as knowledge.
 
@@ -48,7 +48,7 @@ The lag between the generation breakthrough and the specification response is no
 
 The World Wide Web, publicly accessible from 1991, reduced the cost of publishing information by another two orders of magnitude. Early web pages were unstructured text with hyperlinks -- human-readable but machine-opaque. The generation breakthrough was connectivity; the verification problem was discovery. How could a user find reliable information when any page looked the same as any other?
 
-The specification solutions arrived over the following decade: HTML metadata standards such as Dublin Core, search engine algorithms that exploited link structure as a quality signal (PageRank; Brin & Page, 1998), structured data vocabularies such as schema.org (Guha, Brickley, & Macbeth, 2016), and knowledge graphs that represented entities and relationships in machine-readable form (Bollacker et al., 2008). These standards did not reduce the volume of web content. They made it machine-parseable, enabling automated discovery, ranking, and verification.
+The specification solutions arrived over the following decade: HTML metadata standards such as Dublin Core, search engine algorithms that exploited link structure as a quality signal (PageRank; [@brin-1998-anatomy-largescale-hypertextual]), structured data vocabularies such as schema.org [@guha-2016-schemaorg-evolution-structured], and knowledge graphs that represented entities and relationships in machine-readable form [@bollacker-2008-freebase-collaboratively-created]. These standards did not reduce the volume of web content. They made it machine-parseable, enabling automated discovery, ranking, and verification.
 
 The pattern is identical: a generation breakthrough created a volume problem that could not be solved by scaling the old verification method (human curation). The solution was a specification standard that made the new volume tractable to automated processing.
 
@@ -66,43 +66,43 @@ The historical pattern predicts that this generation-verification gap will be re
 
 A contemporary scientific paper is a remarkable artifact: it compresses months or years of intellectual work into ten to thirty pages of natural language, supported by figures, tables, and equations. It is optimized for a single use case: sequential reading by a domain expert. For every other use case -- systematic review, meta-analysis, replication planning, dependency tracking, retraction impact analysis, automated contradiction detection -- the paper must first be manually decoded by a human reader who extracts the relevant structured information.
 
-This decoding is expensive, error-prone, and non-scalable. Systematic reviews require teams of researchers spending months reading hundreds of papers to extract comparable data points. Meta-analyses depend on the accuracy of manual coding, which varies across coders and studies. When a paper is retracted, identifying the downstream impact requires reading every citing paper -- an average of 35 citations per retracted paper, but occasionally thousands (Fang, Steen, & Casadevall, 2012). In each case, the bottleneck is the same: the information needed is present in the paper but not in a form that machines can process.
+This decoding is expensive, error-prone, and non-scalable. Systematic reviews require teams of researchers spending months reading hundreds of papers to extract comparable data points. Meta-analyses depend on the accuracy of manual coding, which varies across coders and studies. When a paper is retracted, identifying the downstream impact requires reading every citing paper -- an average of 35 citations per retracted paper, but occasionally thousands [@fang-2012-misconduct-accounts-majority]. In each case, the bottleneck is the same: the information needed is present in the paper but not in a form that machines can process.
 
 ### 3.2 Existing Partial Solutions
 
 Several initiatives have addressed fragments of this problem. We review them not to diminish their contributions but to identify the gap that remains.
 
-**Registered Reports** (Chambers, 2013; Nosek & Lakens, 2014) require authors to pre-register hypotheses and analysis plans before data collection. This addresses specification of methodology and, in Stage 1, provides reviewers with explicit predictions. However, registered reports remain natural-language documents. They are not machine-parseable, and they apply only to prospective empirical studies, not to theoretical work, computational research, or post-hoc analyses.
+**Registered Reports** [@chambers-2013-registered-reports-new; @nosek-2014-registered-reports-method] require authors to pre-register hypotheses and analysis plans before data collection. This addresses specification of methodology and, in Stage 1, provides reviewers with explicit predictions. However, registered reports remain natural-language documents. They are not machine-parseable, and they apply only to prospective empirical studies, not to theoretical work, computational research, or post-hoc analyses.
 
-**FAIR Data Principles** (Wilkinson et al., 2016) establish that scientific data should be Findable, Accessible, Interoperable, and Reusable. FAIR has been enormously influential in mandating data sharing, but it applies to data, not to the claims that data supports. A FAIR dataset without a machine-readable description of what the authors conclude from it is a car without a driver.
+**FAIR Data Principles** [@wilkinson-2016-fair-guiding-principles] establish that scientific data should be Findable, Accessible, Interoperable, and Reusable. FAIR has been enormously influential in mandating data sharing, but it applies to data, not to the claims that data supports. A FAIR dataset without a machine-readable description of what the authors conclude from it is a car without a driver.
 
-**Semantic Scholar** (Ammar et al., 2018) and **OpenAlex** (Priem et al., 2022) extract structured metadata from published papers using natural language processing. These systems are valuable for bibliometric analysis, but they reconstruct structure post-hoc from unstructured text -- an inherently lossy process. They extract what they can infer, not what the authors intended.
+**Semantic Scholar** [@ammar-2018-construction-literature-graph] and **OpenAlex** [@priem-2022-openalex-fullyopen-index] extract structured metadata from published papers using natural language processing. These systems are valuable for bibliometric analysis, but they reconstruct structure post-hoc from unstructured text -- an inherently lossy process. They extract what they can infer, not what the authors intended.
 
-**Micropublications** (Clark et al., 2014) proposed decomposing papers into machine-readable claim-evidence-reasoning structures. The format was well-designed but never achieved adoption, likely because it required authors to learn a specialized vocabulary and toolchain.
+**Micropublications** [@clark-2014-micropublications-semantic-model] proposed decomposing papers into machine-readable claim-evidence-reasoning structures. The format was well-designed but never achieved adoption, likely because it required authors to learn a specialized vocabulary and toolchain.
 
-**Nanopublications** (Groth, Gibson, & Velterop, 2010; Kuhn et al., 2021) represent atomic scientific assertions as RDF triples with provenance. Nanopublications are machine-readable by design, but RDF is not human-writable. No working scientist writes RDF triples as part of their research workflow. The adoption barrier is not conceptual but practical: the format demands too much from the author.
+**Nanopublications** [@groth-2010-anatomy-nanopublication-information; @kuhn-2021-semantic-microcontributions-with] represent atomic scientific assertions as RDF triples with provenance. Nanopublications are machine-readable by design, but RDF is not human-writable. No working scientist writes RDF triples as part of their research workflow. The adoption barrier is not conceptual but practical: the format demands too much from the author.
 
-**JATS XML** (Journal Article Tag Suite; NISO, 2012) provides structural markup for journal articles -- sections, figures, tables, references. JATS describes document structure, not epistemic structure. It can tell a machine that Section 3 contains a table, but not that the table reports the results of testing Hypothesis 2.
+**JATS XML** (Journal Article Tag Suite; [@niso-2012-jats-journal-article]) provides structural markup for journal articles -- sections, figures, tables, references. JATS describes document structure, not epistemic structure. It can tell a machine that Section 3 contains a table, but not that the table reports the results of testing Hypothesis 2.
 
-**RO-Crate** (Soiland-Reyes et al., 2022) packages research objects -- data, code, documentation -- with structured metadata. RO-Crate solves the bundling problem but does not address claim specification. A research object that includes a well-packaged dataset and analysis code but no machine-readable description of what the research claims is better organized but not more verifiable.
+**RO-Crate** [@soilandreyes-2022-packaging-research-artefacts] packages research objects -- data, code, documentation -- with structured metadata. RO-Crate solves the bundling problem but does not address claim specification. A research object that includes a well-packaged dataset and analysis code but no machine-readable description of what the research claims is better organized but not more verifiable.
 
-**CiTO and the SPAR Ontologies** (Shotton, 2010; Peroni & Shotton, 2018) define vocabularies for typed citation relationships and scholarly publishing metadata. CiTO's relationship types -- "extends," "confirms," "disputes," "uses method in" -- are the most direct precursor to Paper Spec's `dependencies` section, which borrows its relationship-type approach. However, CiTO operates at the paper level; Paper Spec extends this to claim-level granularity, specifying not just that Paper A extends Paper B but which specific claim in A depends on which specific claim in B. The open citation infrastructure that makes large-scale CiTO deployment feasible is maintained by OpenCitations (Peroni & Shotton, 2020), whose open linked-data citation corpus provides the network substrate on which L4 cross-corpus dependency analysis could eventually operate at field scale.
+**CiTO and the SPAR Ontologies** [@shotton-2010-cito-citation-typing; @peroni-2018-spar-ontologies-proceedings] define vocabularies for typed citation relationships and scholarly publishing metadata. CiTO's relationship types -- "extends," "confirms," "disputes," "uses method in" -- are the most direct precursor to Paper Spec's `dependencies` section, which borrows its relationship-type approach. However, CiTO operates at the paper level; Paper Spec extends this to claim-level granularity, specifying not just that Paper A extends Paper B but which specific claim in A depends on which specific claim in B. The open citation infrastructure that makes large-scale CiTO deployment feasible is maintained by OpenCitations [@peroni-2020-opencitations-infrastructure-organization], whose open linked-data citation corpus provides the network substrate on which L4 cross-corpus dependency analysis could eventually operate at field scale.
 
-**TOP Guidelines** (Nosek et al., 2015) define eight transparency and openness standards (citation standards, data transparency, code transparency, materials transparency, design and analysis transparency, preregistration of studies, preregistration of analysis plans, and replication) with three levels of increasing stringency. TOP demonstrates that incrementally adoptable standards can gain traction in academic publishing -- the same design principle that underlies Paper Spec's "every section optional" architecture.
+**TOP Guidelines** [@nosek-2015-promoting-open-research] define eight transparency and openness standards (citation standards, data transparency, code transparency, materials transparency, design and analysis transparency, preregistration of studies, preregistration of analysis plans, and replication) with three levels of increasing stringency. TOP demonstrates that incrementally adoptable standards can gain traction in academic publishing -- the same design principle that underlies Paper Spec's "every section optional" architecture.
 
-**CRediT** (Brand et al., 2015) standardizes author contribution roles. It specifies who did what, not what was claimed or found.
+**CRediT** [@brand-2015-beyond-authorship-attribution] standardizes author contribution roles. It specifies who did what, not what was claimed or found.
 
-**Scienceverse** (Lakens & DeBruine, 2021) is the closest prior art to Paper Spec's ambition of making scientific claims machine-readable. Scienceverse provides an R package that stores hypotheses, analysis code, and data in a JSON structure, then auto-evaluates whether the results support the hypotheses. This is machine-readable hypothesis testing -- a genuine advance. However, scienceverse is limited in three ways that Paper Spec addresses: it operates at the hypothesis level, not the document level (it does not capture methodology, dependencies, acceptance criteria, or limitations as structured fields); it is bound to the R ecosystem (a researcher using Python, Julia, or no code at all cannot use it); and it does not model cross-paper dependencies (it cannot answer "which papers would be affected if this paper's hypothesis were retracted?"). Paper Spec can be understood as the document-level, language-agnostic generalization of what scienceverse achieves for individual hypothesis tests.
+**Scienceverse** [@lakens-2021-improving-transparency-falsifiability] is the closest prior art to Paper Spec's ambition of making scientific claims machine-readable. Scienceverse provides an R package that stores hypotheses, analysis code, and data in a JSON structure, then auto-evaluates whether the results support the hypotheses. This is machine-readable hypothesis testing -- a genuine advance. However, scienceverse is limited in three ways that Paper Spec addresses: it operates at the hypothesis level, not the document level (it does not capture methodology, dependencies, acceptance criteria, or limitations as structured fields); it is bound to the R ecosystem (a researcher using Python, Julia, or no code at all cannot use it); and it does not model cross-paper dependencies (it cannot answer "which papers would be affected if this paper's hypothesis were retracted?"). Paper Spec can be understood as the document-level, language-agnostic generalization of what scienceverse achieves for individual hypothesis tests.
 
-**The Open Research Knowledge Graph (ORKG)** (Jaradeh et al., 2019) takes the opposite approach to Paper Spec: rather than asking authors to specify their contributions, ORKG reconstructs structured contribution descriptions post-hoc through crowdsourcing and NLP extraction. ORKG is a valuable infrastructure project with active institutional support, and its structured representation of research problems, methods, and results is conceptually aligned with Paper Spec's goals. The design philosophy, however, differs fundamentally. Post-hoc extraction is inherently lossy: a crowd annotator or an NLP system cannot know which of a paper's twenty citations is a critical dependency whose retraction would invalidate the paper's core claims. Only the author knows this. Paper Spec places the specification burden on the author -- the only party with complete access to ground truth -- and keeps it lightweight enough (thirty minutes, a text editor) to be feasible.
+**The Open Research Knowledge Graph (ORKG)** [@jaradeh-2019-open-research-knowledge] takes the opposite approach to Paper Spec: rather than asking authors to specify their contributions, ORKG reconstructs structured contribution descriptions post-hoc through crowdsourcing and NLP extraction. ORKG is a valuable infrastructure project with active institutional support, and its structured representation of research problems, methods, and results is conceptually aligned with Paper Spec's goals. The design philosophy, however, differs fundamentally. Post-hoc extraction is inherently lossy: a crowd annotator or an NLP system cannot know which of a paper's twenty citations is a critical dependency whose retraction would invalidate the paper's core claims. Only the author knows this. Paper Spec places the specification burden on the author -- the only party with complete access to ground truth -- and keeps it lightweight enough (thirty minutes, a text editor) to be feasible.
 
-**SciKGTeX** (Bless et al., 2023) embeds structured contribution annotations directly into LaTeX source code, from which ORKG can harvest structured metadata. SciKGTeX achieves low-barrier annotation (seven minutes per paper in usability testing) and demonstrates that researchers can produce structured metadata as part of their writing workflow. However, SciKGTeX is limited to LaTeX users and produces annotations at the contribution level, not the full-document level. Paper Spec provides a standalone companion file -- independent of any authoring tool or publishing platform -- that captures claims, acceptance criteria, dependencies, and limitations.
+**SciKGTeX** [@bless-2023-scikgtex-latex-package] embeds structured contribution annotations directly into LaTeX source code, from which ORKG can harvest structured metadata. SciKGTeX achieves low-barrier annotation (seven minutes per paper in usability testing) and demonstrates that researchers can produce structured metadata as part of their writing workflow. However, SciKGTeX is limited to LaTeX users and produces annotations at the contribution level, not the full-document level. Paper Spec provides a standalone companion file -- independent of any authoring tool or publishing platform -- that captures claims, acceptance criteria, dependencies, and limitations.
 
 ### 3.3 The Missing Layer
 
 What none of these solutions provides is a single, human-writable, machine-parseable, format-agnostic file that captures the full epistemic content of a paper: what it claims, how those claims were tested, what would prove them wrong, what they depend on, and what their known limits are. Table 1 summarizes how each initiative addresses the key requirements.
 
-**Table 1. Comparison of structured science standards.** HW = human-writable; MR = machine-readable; FA = format-agnostic; AC = acceptance criteria; DC = dependency criticality; IN = incremental adoption.
+Table 1: Comparison of structured science standards. HW = human-writable; MR = machine-readable; FA = format-agnostic; AC = acceptance criteria; DC = dependency criticality; IN = incremental adoption.
 
 | Standard | HW | MR | Scope | FA | AC | DC | IN |
 |----------|:-:|:-:|--------|:-:|:-:|:-:|:-:|
@@ -250,7 +250,7 @@ falsification  ::= falsification_entry+
 falsification_entry ::= claim_id condition threshold?
 ```
 
-The five relationship types in `dependencies` are a deliberate simplification of CiTO's forty-plus typed relationships (Shotton, 2010): sufficient for retraction-cascade analysis and contradiction detection without imposing an ontology-learning burden on the author. The `critical` boolean is the key field for L4 analysis — it distinguishes critical dependencies (retraction of the source invalidates this paper's claims) from incidental citations.
+The five relationship types in `dependencies` are a deliberate simplification of CiTO's forty-plus typed relationships [@shotton-2010-cito-citation-typing]: sufficient for retraction-cascade analysis and contradiction detection without imposing an ontology-learning burden on the author. The `critical` boolean is the key field for L4 analysis — it distinguishes critical dependencies (retraction of the source invalidates this paper's claims) from incidental citations.
 
 Claim IDs (`id` field) must be unique within a `paper.yaml` file, alphanumeric with optional hyphens (e.g., `P1`, `H2`, `T3a`), and are stable across paper versions. External references of the form `doi:claim_id` (e.g., `10.5281/zenodo.18945912:P1`) identify a specific claim in a specific paper. This stability guarantee is what makes cross-paper dependency references durable under revision.
 
@@ -258,7 +258,7 @@ The `computation` section (not shown in the EBNF above) lists scripts that repro
 
 ### 4.4 A Worked Example
 
-Consider Kahneman and Tversky's (1979) prospect theory paper. The `claims` section would contain:
+Consider Kahneman and Tversky's [-@kahneman-1979-prospect-theory-analysis] prospect theory paper. The `claims` section would contain:
 
 ```yaml
 claims:
@@ -337,9 +337,9 @@ flowchart TD
     L3 --> L4
 ```
 
-Figure 1: L0-L4 verification stack for Paper Spec. Each layer composes with the layer below: L1 unit checks presuppose L0 schema validity; L4 audit composes results across the corpus. The architecture is structurally isomorphic to a software CI/CD pipeline (Beck 2002): lint -> unit -> integration -> review -> deploy.
+Figure 1: L0-L4 verification stack for Paper Spec. Each layer composes with the layer below: L1 unit checks presuppose L0 schema validity; L4 audit composes results across the corpus. The architecture is structurally isomorphic to a software CI/CD pipeline [@beck-2002-testdriven-development-by]: lint -> unit -> integration -> review -> deploy.
 
-The specification-first design principle underlying the L0-L4 stack is well established in software engineering, where test-driven development (Beck, 2002) requires writing acceptance criteria before producing the artifact they constrain. Paper Spec applies an analogous principle to scientific knowledge production. The five-layer stack mirrors a CI/CD pipeline: L0 corresponds to linting (syntactic validity), L1 to unit tests (internal logical consistency), L2 to integration tests (completeness against the prose), L3 to human code review (plausibility assessment), and L4 to deployment dependency audit (cross-corpus integrity). The TDD/CI lineage is not incidental -- it explains why incremental adoption works: each layer is independently runnable and independently valuable, just as a project with only unit tests is better than a project with no tests.
+The specification-first design principle underlying the L0-L4 stack is well established in software engineering, where test-driven development [@beck-2002-testdriven-development-by] requires writing acceptance criteria before producing the artifact they constrain. Paper Spec applies an analogous principle to scientific knowledge production. The five-layer stack mirrors a CI/CD pipeline: L0 corresponds to linting (syntactic validity), L1 to unit tests (internal logical consistency), L2 to integration tests (completeness against the prose), L3 to human code review (plausibility assessment), and L4 to deployment dependency audit (cross-corpus integrity). The TDD/CI lineage is not incidental -- it explains why incremental adoption works: each layer is independently runnable and independently valuable, just as a project with only unit tests is better than a project with no tests.
 
 ### 5.1 L0: Schema Validation
 
@@ -359,9 +359,9 @@ L3 asks whether the paper's prose actually supports the claims stated in the YAM
 
 ### 5.5 L4: External Integrity
 
-L4 operates across a corpus of `paper.yaml` files. Given a network of papers with declared dependencies, L4 enables the analyses described below. The infrastructure for L4 verification at scale -- a federation of versioned, machine-readable paper repositories -- is specified in a companion paper (Zharnikov, 2026u).
+L4 operates across a corpus of `paper.yaml` files. Given a network of papers with declared dependencies, L4 enables the analyses described below. The infrastructure for L4 verification at scale -- a federation of versioned, machine-readable paper repositories -- is specified in a companion paper [@zharnikov-2026-research-as-repository-git-native].
 
-**Retraction cascade analysis.** When Paper A is retracted, which downstream papers have claims that critically depend on Paper A's claims? The dependency graph, constructed from the `dependencies` sections of all papers in the corpus, answers this question algorithmically. Without Paper Spec, answering it requires a human to read every citing paper and judge whether the citation is critical -- a task that scales linearly with the number of citations and is practically impossible for highly cited papers. Recent evidence confirms the urgency: Woo and Walsh (2024) found that the majority of post-retraction citations are positive, suggesting that authors either do not know or do not check whether their cited sources have been retracted. A dependency graph with criticality flags would make retraction impact assessment automatic.
+**Retraction cascade analysis.** When Paper A is retracted, which downstream papers have claims that critically depend on Paper A's claims? The dependency graph, constructed from the `dependencies` sections of all papers in the corpus, answers this question algorithmically. Without Paper Spec, answering it requires a human to read every citing paper and judge whether the citation is critical -- a task that scales linearly with the number of citations and is practically impossible for highly cited papers. Recent evidence confirms the urgency: Woo and Walsh [-@woo-2024-shoulders-fallen-giants] found that the majority of post-retraction citations are positive, suggesting that authors either do not know or do not check whether their cited sources have been retracted. A dependency graph with criticality flags would make retraction impact assessment automatic.
 
 **Contradiction detection.** When Paper A and Paper B both depend on Paper C but draw opposite conclusions, the `contradictions` sections (supplemented by automated comparison of `results` sections) can flag the conflict. Currently, contradictions in the literature are discovered by individual readers who happen to have read both papers -- a process that depends on chance and expertise.
 
@@ -373,7 +373,7 @@ L4 operates across a corpus of `paper.yaml` files. Given a network of papers wit
 
 ### 6.1 The Corpus
 
-We demonstrate Paper Spec by writing `paper.yaml` files for twenty papers: nineteen papers in the Spectral Brand Theory (Zharnikov, 2026a) and Organizational Schema Theory (Zharnikov, 2026i) research programs, plus the present paper. The papers span theoretical foundations, mathematical formalizations, empirical case studies, literature surveys, and cross-domain analogies. They range from 4,000 to 12,000 words and contain between two and seven formal propositions or theorems each.
+We demonstrate Paper Spec by writing `paper.yaml` files for twenty papers: nineteen papers in the Spectral Brand Theory [@zharnikov-2026-spectral-brand-theory-computational-framework] and Organizational Schema Theory [@zharnikov-2026-organizational-schema-theory-test-driven] research programs, plus the present paper. The papers span theoretical foundations, mathematical formalizations, empirical case studies, literature surveys, and cross-domain analogies. They range from 4,000 to 12,000 words and contain between two and seven formal propositions or theorems each.
 
 The corpus is deliberately single-author and single-program. This is a limitation for generalizability but an advantage for demonstration: it provides a controlled environment where ground truth is fully known (the author wrote both the papers and the YAML files), the dependency structure is rich (the papers build on each other extensively), and the diversity of paper types is sufficient to test the standard's expressiveness. External validation across diverse research traditions and multi-author corpora is the immediate next step (see §9).
 
@@ -385,7 +385,7 @@ The twenty `paper.yaml` files were written manually, without LLM assistance, ove
 
 The twenty-paper corpus, once structured, reveals patterns that are invisible in the unstructured originals:
 
-**Dependency depth.** The foundational paper (Zharnikov, 2026a) is a critical dependency for sixteen of the remaining nineteen papers. A retraction of the foundational paper would cascade through the entire program. This is unsurprising in hindsight, but the dependency graph makes the propagation path explicit: retraction of the foundational paper would invalidate the formal metric paper, which would in turn invalidate the projection bounds, cohort boundaries, and sphere packing papers, each of which has its own dependents. The cascade is not a flat list but a directed acyclic graph with depth four.
+**Dependency depth.** The foundational paper [@zharnikov-2026-spectral-brand-theory-computational-framework] is a critical dependency for sixteen of the remaining nineteen papers. A retraction of the foundational paper would cascade through the entire program. This is unsurprising in hindsight, but the dependency graph makes the propagation path explicit: retraction of the foundational paper would invalidate the formal metric paper, which would in turn invalidate the projection bounds, cohort boundaries, and sphere packing papers, each of which has its own dependents. The cascade is not a flat list but a directed acyclic graph with depth four.
 
 **Bottleneck identification.** Two papers -- the formal metric and the diffusion dynamics paper -- serve as bridges. Most downstream papers depend on the foundational paper through one of these two intermediaries. If a flaw were found in the formal metric, the practical impact would be nearly as severe as a flaw in the foundational paper itself, even though the formal metric has fewer direct citations.
 
@@ -434,17 +434,17 @@ The `paper.yaml` passes L0 schema validation and L1 internal consistency checks:
 
 ### 7.1 Specification Gaps Across Domains
 
-The specification gap in science -- the distance between what a researcher intends to claim and what a reader can extract -- is an instance of a broader pattern. Systematic gaps between specification, implementation, and perception recur across domains from genetics to organizational design (Zharnikov, 2026i, 2026l). Paper Spec addresses the first transition in the scientific case: from intention to expression.
+The specification gap in science -- the distance between what a researcher intends to claim and what a reader can extract -- is an instance of a broader pattern. Systematic gaps between specification, implementation, and perception recur across domains from genetics to organizational design (Zharnikov, [-@zharnikov-2026-organizational-schema-theory-test-driven; -@zharnikov-2026l-rendering-problem-genetic]). Paper Spec addresses the first transition in the scientific case: from intention to expression.
 
 ### 7.2 Scalar Metrics and Structural Alternatives
 
-The San Francisco Declaration on Research Assessment (DORA, 2012), the Leiden Manifesto (Hicks et al., 2015), and the Coalition for Advancing Research Assessment (CoARA, 2022) -- now encompassing over 700 organizations -- all argue that scalar metrics -- journal impact factors, h-indices, citation counts -- are poor proxies for research quality. A citation count treats all citations equally: a critical dependency that would invalidate downstream work if retracted is counted the same as a passing mention in a literature review. Paper Spec's dependency graph provides a structural alternative. When every citation is typed (extends, tests, contradicts) and flagged for criticality, the topology of a research field becomes visible in a way that no scalar metric can represent. This does not replace expert judgment -- DORA and the Leiden Manifesto are right that no metric can -- but it provides the structured substrate on which better assessments could be built. This trajectory is accelerating at institutional scale: in April 2026, the Chinese Academy of Sciences discontinued its 22-year journal ranking system, shifting toward quality-oriented assessment of individual research outputs rather than journal-level metrics (Liu 2026). The repository-level infrastructure required to federate structured dependency graphs across institutions is addressed in the companion paper on research-as-repository (Zharnikov, 2026u).
+The San Francisco Declaration on Research Assessment [@dora-2013-san-francisco-declaration-research], the Leiden Manifesto [@hicks-2015-bibliometrics-leiden-manifesto], and the Coalition for Advancing Research Assessment [@coara-2022-agreement-reforming-research-assessment] -- now encompassing over 700 organizations -- all argue that scalar metrics -- journal impact factors, h-indices, citation counts -- are poor proxies for research quality. A citation count treats all citations equally: a critical dependency that would invalidate downstream work if retracted is counted the same as a passing mention in a literature review. Paper Spec's dependency graph provides a structural alternative. When every citation is typed (extends, tests, contradicts) and flagged for criticality, the topology of a research field becomes visible in a way that no scalar metric can represent. This does not replace expert judgment -- DORA and the Leiden Manifesto are right that no metric can -- but it provides the structured substrate on which better assessments could be built. This trajectory is accelerating at institutional scale: in April 2026, the Chinese Academy of Sciences discontinued its 22-year journal ranking system, shifting toward quality-oriented assessment of individual research outputs rather than journal-level metrics [@liu-2026-china-discontinues-prominent]. The repository-level infrastructure required to federate structured dependency graphs across institutions is addressed in the companion paper on research-as-repository [@zharnikov-2026-research-as-repository-git-native].
 
 ### 7.3 The Future of Peer Review
 
 Paper Spec is not a replacement for peer review. It is infrastructure that makes peer review more efficient. A reviewer who receives a paper with an accompanying `paper.yaml` file can immediately see the paper's claims, their status, their acceptance criteria, and their dependencies. The reviewer can verify, before reading a single paragraph, whether the paper has stated its claims clearly enough to be evaluated. L1 and L2 validation can be run automatically as part of the editorial workflow, flagging obvious issues (missing acceptance criteria, results that do not map to claims, methodology mismatches) before the paper reaches a reviewer.
 
-The economic and quality case for specification-first review has now been demonstrated at scale. Goldberg et al. (2026) deployed AI review across 22,977 submissions at AAAI-26 (less than $1 per paper) and found AI reviews preferred on 6 of 9 quality criteria; crucially, a structured multi-stage pipeline outperformed single-prompt review by +.21 recall ($p < .001$). Their SPECS benchmark --- decomposing review quality into five structured criteria --- is, in effect, a review specification standard, validating the core claim of the present paper that structured criteria outperform unstructured evaluation.
+The economic and quality case for specification-first review has now been demonstrated at scale. Goldberg et al. [-@goldberg-2026-aiassisted-peer-review] deployed AI review across 22,977 submissions at AAAI-26 (less than $1 per paper) and found AI reviews preferred on 6 of 9 quality criteria; crucially, a structured multi-stage pipeline outperformed single-prompt review by +.21 recall ($p < .001$). Their SPECS benchmark --- decomposing review quality into five structured criteria --- is, in effect, a review specification standard, validating the core claim of the present paper that structured criteria outperform unstructured evaluation.
 
 This shifts the reviewer's role from extraction to evaluation. Currently, a substantial fraction of review time is spent determining what the paper claims. With a `paper.yaml` file, this extraction is done by the author and validated by machine. The reviewer can focus on what humans do best: assessing whether the evidence supports the claims, whether the methodology is appropriate, whether the interpretation is reasonable, and whether the contribution is significant.
 
@@ -475,9 +475,9 @@ A `paper.yaml` file need not travel with the paper. Because it is a self-contain
 
 The primary barrier to adoption is not technical but sociological. Researchers already face substantial documentation burdens: data management plans, ethics approvals, FAIR compliance, CRediT statements, ORCID maintenance. Adding a `paper.yaml` requirement would meet justified resistance. Paper Spec is designed to mitigate this through incremental adoption -- a `paper.yaml` with nothing but `meta` is already useful -- and through the principle that the authoring process produces value for the author (the cognitive work of articulating claims and acceptance criteria improves the paper).
 
-A second barrier is institutional. Journals would need to accept `paper.yaml` as supplementary material, repositories would need to index it, and tooling would need to validate and visualize it. These are achievable goals, but they require coordination across stakeholders. The experience of schema.org -- which achieved adoption by providing immediate value to individual publishers (better search engine indexing) before network effects materialized (Guha, Brickley, & Macbeth, 2016) -- is the relevant precedent. Paper Spec offers an analogous first-mover incentive: the cognitive yield of writing `paper.yaml` (surfacing unclear claims, articulating falsification conditions) accrues to the author immediately, before any other paper adopts the standard.
+A second barrier is institutional. Journals would need to accept `paper.yaml` as supplementary material, repositories would need to index it, and tooling would need to validate and visualize it. These are achievable goals, but they require coordination across stakeholders. The experience of schema.org -- which achieved adoption by providing immediate value to individual publishers (better search engine indexing) before network effects materialized [@guha-2016-schemaorg-evolution-structured] -- is the relevant precedent. Paper Spec offers an analogous first-mover incentive: the cognitive yield of writing `paper.yaml` (surfacing unclear claims, articulating falsification conditions) accrues to the author immediately, before any other paper adopts the standard.
 
-Rogers' (2003) diffusion of innovations model suggests a staged adoption pathway consistent with Paper Spec's design. Innovators -- researchers already committed to open-science infrastructure -- will write self-specs for preprints voluntarily. Early adopters will emerge among journals that accept `paper.yaml` as supplementary material, incentivized by reviewer efficiency gains (§7.3). The early majority follows once tooling lowers the authoring cost further and institutional signals (funder mandates, assessment frameworks) normalize the practice. This pathway maps directly onto Paper Spec's incremental adoption architecture: each stage requires only the functionality already available at that stage, with no cliff between voluntary uptake and mandated compliance.
+Rogers' [-@rogers-2003-diffusion-innovations-5th] diffusion of innovations model suggests a staged adoption pathway consistent with Paper Spec's design. Innovators -- researchers already committed to open-science infrastructure -- will write self-specs for preprints voluntarily. Early adopters will emerge among journals that accept `paper.yaml` as supplementary material, incentivized by reviewer efficiency gains (§7.3). The early majority follows once tooling lowers the authoring cost further and institutional signals (funder mandates, assessment frameworks) normalize the practice. This pathway maps directly onto Paper Spec's incremental adoption architecture: each stage requires only the functionality already available at that stage, with no cliff between voluntary uptake and mandated compliance.
 
 ## 8. Propositions
 
@@ -525,97 +525,9 @@ The standard is not sufficient to solve the verification crisis. No specificatio
 
 ## Acknowledgments
 
-AI assistants (Claude Opus 4.7, Grok 4.1, Gemini 3.1) were used for initial literature search and editorial refinement; all theoretical claims, propositions, and interpretations are the author's sole responsibility.
+AI assistants (Claude Opus 4.8, Grok 4.20, Gemini 2.5 Pro) were used for initial literature search and editorial refinement; all theoretical claims, propositions, and interpretations are the author's sole responsibility.
 
 ## References
 
-Ammar, W., Groeneveld, D., Bhagavatula, C., Beltagy, I., Crawford, M., Downey, D., ... & Etzioni, O. (2018). Construction of the literature graph in Semantic Scholar. *Proceedings of the 2018 Conference of the North American Chapter of the Association for Computational Linguistics*, 84-91.
-
-Baker, M. (2016). 1,500 scientists lift the lid on reproducibility. *Nature*, 533(7604), 452-454. https://doi.org/10.1038/533452a
-
-Beck, K. (2002). *Test-Driven Development: By Example*. Addison-Wesley.
-
-Bless, C., Baimuratov, I., & Karras, O. (2023). SciKGTeX -- A LaTeX package to semantically annotate contributions in scientific publications. *Proceedings of the ACM/IEEE Joint Conference on Digital Libraries (JCDL 2023)*. https://doi.org/10.1109/JCDL57899.2023.00030
-
-Bollacker, K., Evans, C., Paritosh, P., Sturge, T., & Taylor, J. (2008). Freebase: A collaboratively created graph database for structuring human knowledge. *Proceedings of the 2008 ACM SIGMOD International Conference on Management of Data*, 1247-1250.
-
-Brand, A., Allen, L., Altman, M., Hlava, M., & Scott, J. (2015). Beyond authorship: Attribution, contribution, collaboration, and credit. *Learned Publishing*, 28(2), 151-155.
-
-Brin, S., & Page, L. (1998). The anatomy of a large-scale hypertextual web search engine. *Computer Networks and ISDN Systems*, 30(1-7), 107-117.
-
-Camerer, C. F., Dreber, A., Forsell, E., Ho, T. H., Huber, J., Johannesson, M., ... & Wu, H. (2016). Evaluating replicability of laboratory experiments in economics. *Science*, 351(6280), 1433-1436.
-
-Chambers, C. D. (2013). Registered reports: A new publishing initiative at Cortex. *Cortex*, 49(3), 609-610.
-
-Clark, T., Ciccarese, P. N., & Goble, C. A. (2014). Micropublications: A semantic model for claims, evidence, arguments and annotations in biomedical communications. *Journal of Biomedical Semantics*, 5, 28.
-
-CoARA. (2022). Agreement on reforming research assessment. Coalition for Advancing Research Assessment. https://coara.eu/agreement/the-agreement-full-text/
-
-DORA. (2012). San Francisco Declaration on Research Assessment. https://sfdora.org/read/
-
-Eisenstein, E. L. (1979). *The printing press as an agent of change*. Cambridge University Press.
-
-Fang, F. C., Steen, R. G., & Casadevall, A. (2012). Misconduct accounts for the majority of retracted scientific publications. *Proceedings of the National Academy of Sciences*, 109(42), 17028-17033.
-
-Goldberg, A., Stelmakh, I., Cho, K., Oh, A., Agarwal, A., Belgrave, D., & Shah, N. B. (2026). AI-Assisted Peer Review at Scale: The AAAI-26 AI Review Pilot. arXiv:2604.13940.
-
-Groth, P., Gibson, A., & Velterop, J. (2010). The anatomy of a nanopublication. *Information Services and Use*, 30(1-2), 51-56.
-
-Guha, R. V., Brickley, D., & Macbeth, S. (2016). Schema.org: Evolution of structured data on the web. *Communications of the ACM*, 59(2), 44-51. https://doi.org/10.1145/2844544
-
-Hanson, M. A., Barreiro, P. G., Crosetto, P., & Brockington, D. (2024). The strain on scientific publishing. *Quantitative Science Studies*, 5(4), 823-843.
-
-Hicks, D., Wouters, P., Waltman, L., de Rijcke, S., & Rafols, I. (2015). Bibliometrics: The Leiden Manifesto for research metrics. *Nature*, 520(7548), 429-431. https://doi.org/10.1038/520429a
-
-Ioannidis, J. P. A. (2005). Why most published research findings are false. *PLoS Medicine*, 2(8), e124.
-
-Jaradeh, M. Y., Oelen, A., Farfar, K. E., Prinz, M., D'Souza, J., Kismihok, G., ... & Auer, S. (2019). Open Research Knowledge Graph: Next generation infrastructure for semantic scholarly knowledge. *Proceedings of the 10th International Conference on Knowledge Capture (K-CAP 2019)*, 243-246.
-
-Kahneman, D., & Tversky, A. (1979). Prospect theory: An analysis of decision under risk. *Econometrica*, 47(2), 263-292.
-
-Kuhn, T., Taelman, R., Emonet, V., Hoekstra, R., Dumontier, M., & Bonino da Silva Santos, L. O. (2021). Semantic micro-contributions with decentralized nanopublication services. *PeerJ Computer Science*, 7, e387. https://doi.org/10.7717/peerj-cs.387
-
-Lakens, D., & DeBruine, L. M. (2021). Improving transparency, falsifiability, and rigor by making hypothesis tests machine-readable. *Advances in Methods and Practices in Psychological Science*, 4(2), 1-12.
-
-Liu, Z. (2026). China discontinues prominent journal ranking list. *Nature*, 652(8110), 828. https://doi.org/10.1038/d41586-026-01216-1
-
-Munafò, M. R., Nosek, B. A., Bishop, D. V. M., Button, K. S., Chambers, C. D., Percie du Sert, N., ... & Ioannidis, J. P. A. (2017). A manifesto for reproducible science. *Nature Human Behaviour*, 1, 0021. https://doi.org/10.1038/s41562-016-0021
-
-NISO (2012). *JATS: Journal Article Tag Suite* (ANSI/NISO Z39.96-2012). National Information Standards Organization.
-
-Nosek, B. A., & Lakens, D. (2014). Registered reports: A method to increase the credibility of published results. *Social Psychology*, 45(3), 137-141.
-
-Nosek, B. A., Alter, G., Banks, G. C., Borsboom, D., Bowman, S. D., Breckler, S. J., ... & Yarkoni, T. (2015). Promoting an open research culture. *Science*, 348(6242), 1422-1425.
-
-Open Science Collaboration. (2015). Estimating the reproducibility of psychological science. *Science*, 349(6251), aac4716.
-
-Peng, R. D. (2011). Reproducible research in computational science. *Science*, 334(6060), 1226-1227. https://doi.org/10.1126/science.1213847
-
-Peroni, S., & Shotton, D. (2018). The SPAR ontologies. *Proceedings of the International Semantic Web Conference (ISWC 2018)*, LNCS 11137, 119-136.
-
-Peroni, S., & Shotton, D. (2020). OpenCitations, an infrastructure organization for open scholarship. *Quantitative Science Studies*, 1(1), 428-444. https://doi.org/10.1162/qss_a_00023
-
-Priem, J., Piwowar, H., & Orr, R. (2022). OpenAlex: A fully-open index of scholarly works, authors, venues, institutions, and concepts. *arXiv Preprint*, arXiv:2205.01833.
-
-Rogers, E. M. (2003). *Diffusion of innovations* (5th ed.). Free Press.
-
-Shotton, D. (2010). CiTO, the Citation Typing Ontology. *Journal of Biomedical Semantics*, 1(Suppl 1), S6.
-
-Soiland-Reyes, S., Sefton, P., Crosas, M., Castro, L. J., Coppens, F., Fernandez, J. M., ... & Groth, P. (2022). Packaging research artefacts with RO-Crate. *Data Science*, 5(2), 97-138.
-
-Tao, T. (2026). How the world's top mathematician uses AI [Interview by D. Patel]. *Dwarkesh Podcast*. https://www.youtube.com/watch?v=Q8Fkpi18QXU
-
-Wilkinson, M. D., Dumontier, M., Aalbersberg, I. J., Appleton, G., Axton, M., Baak, A., ... & Mons, B. (2016). The FAIR guiding principles for scientific data management and stewardship. *Scientific Data*, 3, 160018.
-
-Woo, R., & Walsh, J. P. (2024). On the shoulders of fallen giants: What do references to retracted research tell us about citation behaviors? *Quantitative Science Studies*, 5(1), 1-30.
-
-Zharnikov, D. (2026a). Spectral Brand Theory: A multi-dimensional framework for brand perception analysis. Working Paper. https://doi.org/10.5281/zenodo.18945912
-
-Zharnikov, D. (2026i). The Organizational Schema Theory: Test-driven business design. Working Paper. https://doi.org/10.5281/zenodo.18946043
-
-Zharnikov, D. (2026l). The rendering problem: From genetic expression to brand perception. Working Paper. https://doi.org/10.5281/zenodo.19064426
-
-Zharnikov, D. (2026u). Research as repository: Infrastructure for transparent, attributed, and machine-readable scholarly communication. Working Paper. https://doi.org/10.5281/zenodo.19294864
-
----
-*This paper is part of the Spectral Brand Theory research program. For the full atlas of 20+ interconnected papers, see [spectralbranding.com/atlas](https://spectralbranding.com/atlas).*
+::: {#refs}
+:::

@@ -1,19 +1,42 @@
 # Companion computation — 2026av (cohort-reach handoff contract)
 
-Reproduces **Figure 1** of *Reaching a Perception: From Perceptual Cohort to
-Reachable Audience* — the total-loss surface over cohort distinctiveness
-(`sin^2(beta)`) and per-impression spill cost, and the frontier separating the
-broadcast-a-dimension bridge from the minimal-loss-proxy bridge.
+Two scripts. **Figure 1** (`broadcast_channel_loss_surface.py`) reproduces the
+total-loss surface over cohort distinctiveness (`sin^2(beta)`) and per-impression
+spill cost, and the frontier separating the broadcast-a-dimension bridge from the
+minimal-loss-proxy bridge. **Figure 2 + Table 1** (`broadcast_channel_me2.py`)
+reproduces the *Calibrated Demonstration* (the ME2 methods-companion fallback):
+the calibration to the five canonical public brand profiles, the Monte-Carlo
+resonance over-index with bootstrap CIs, and the two case studies.
 
 ## Run
 
 ```
 uv run --with numpy --with matplotlib python code/broadcast_channel_loss_surface.py
+uv run --with numpy --with matplotlib python code/broadcast_channel_me2.py
 ```
 
-Deterministic (no randomness, no network, no credentials). Outputs
-`figures/figure1_loss_surface.png` and prints the critical distinctiveness at the
-representative spill cost.
+The first is deterministic (no randomness). The second is a seeded Monte Carlo
+(`seed = 20260619`) — reproducible bit-for-bit. Neither uses the network or
+credentials. Outputs: `figures/figure1_loss_surface.png`,
+`figures/figure2_me2_overindex.png`, and `output/tables/me2_results.csv`.
+
+## ME2 calibrated demonstration (`broadcast_channel_me2.py`)
+
+Distinctiveness is calibrated to an **observed public proxy** — the five canonical
+brand profiles (Hermes, IKEA, Patagonia, Erewhon, Tesla), the corpus's public
+anchors, NOT the work-in-progress atom instrument. For a single-dimension
+broadcast, a cohort's distinctiveness is the share of its *centered* profile's
+energy carried by its dominant dimension (this removes the common positive-level
+"halo" every brand shares). The five anchors give distinctiveness
+`{.760, .358, .348, .336, .335}` (mean `.427`), fit by a method-of-moments
+`Beta(2.59, 3.47)`. Drawing 10,000 cohorts and running each through the two-type
+broadcast-channel model yields the resonance over-index `1.202` (95% CI
+`[1.196, 1.207]`, Cohen's `d = 1.61`) and the broadcast-reachable fraction `.626`.
+Two case studies instantiate the contract: a maintenance campaign (Hermes,
+`s = .760` -> broadcast, cost `.074`) and a category-creation campaign (flat new
+entrant, `s = .125` floor -> proxy/provenance). The routing threshold
+`s* = 1 - L0/c_ref = .355` is inherited from Figure 1 so the two scripts are
+calibrated consistently.
 
 ## Model
 

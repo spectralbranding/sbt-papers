@@ -1,0 +1,12 @@
+metric,value,ci_low,ci_high
+observed_distinctiveness_mean,0.4273,,
+routing_threshold_s_star,0.3548,,
+resonance_over_index_mean,1.2018,1.1965,1.2073
+over_index_strong_vs_neutral,1.1706,,
+matched_vs_off_cohens_d,1.6095,,
+fraction_above_threshold,0.6265,0.6172,0.6361
+mean_broadcast_spill,0.177,0.1759,0.1781
+
+case,distinctiveness_s,bridge,cost,over_index
+"Maintenance (established, distinctive brand: Hermes)",0.7601,broadcast-a-dimension,0.0744,1.7239
+Category creation (undifferentiated new entrant),0.125,minimal-loss proxy / provenance-as-address,0.2,1.0168

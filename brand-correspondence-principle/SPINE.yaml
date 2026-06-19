@@ -159,7 +159,7 @@ propositions:
         anchor: "Each step is the operational reading of a theorem quantity: (a) is the regime test of P2; (b)-(c) are the directed-gradient reading of P3; (d) is the metameric-arbitrage reading of P4."
       - type: citation
         anchor: "AI-observer regime + feasibility of reading AI cohorts from artifacts."
-        citation_keys: [zharnikov-2026-dimensional-collapse-ai-mediated-search, wang-2026-llm-market-research-data-augmentation, arora-2025-ai-human-hybrids-marketing-research]
+        citation_keys: [zharnikov-2026-dimensional-collapse-ai-mediated-search, wang-2026-llm-market-research-data-augmentation, arora-2025-aihuman-hybrids-marketing]
         citation_role: data_source
       - type: citation
         anchor: "Management substrate the procedure acts through: a tiered specification of the firm with the brand located at the product tier, so each directed intervention has a tier + spec to land on (the integration path that makes multidimensional measurement feasible to implement; a profession = tools + competence + intention, and this paper upgrades only the tools)."
@@ -389,7 +389,7 @@ external_anchors:
   - citation_key: mcclure-2004-neural-correlates-behavioral
     role: motivating_problem
     spine_nodes: [P1]
-  - citation_key: hatch-2010-toward-theory-brand-cocreation
+  - citation_key: hatch-2010-toward-theory-brand
     role: theoretical_predecessor
     spine_nodes: [P1]
   - citation_key: zharnikov-2026-brand-as-modular-layer-tiered
@@ -466,7 +466,7 @@ external_anchors:
   - citation_key: wang-2026-llm-market-research-data-augmentation
     role: contrast_case
     spine_nodes: [P6]
-  - citation_key: arora-2025-ai-human-hybrids-marketing-research
+  - citation_key: arora-2025-aihuman-hybrids-marketing
     role: contrast_case
     spine_nodes: [P6]
   - citation_key: zharnikov-2026-spectral-brand-theory-computational-framework
