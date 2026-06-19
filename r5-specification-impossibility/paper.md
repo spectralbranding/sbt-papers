@@ -666,16 +666,13 @@ The bridge to Spectral Brand Theory closes the theoretical loop. OST's cascade m
 
 ## Companion Computation Script
 
-All numerical values cited in this paper -- Tables 1--9, the Figure 2 data series, the Proposition 1 coherence-coupling schedule, $V_{48}(0.1) \approx 1.38 \times 10^{-60}$, $d_{\text{eff}} = 15.75$, $H_{48} = 159.4$ bits, $\text{CR} \approx 3.05$, $d_{\text{private,eff}} = 1.75$, and all cascade-sensitivity and fork-cascade interaction values -- are reproduced by the companion computation script at:
+All numerical values cited in this paper -- Tables 1--9, the Figure 2 data series, the Proposition 1 coherence-coupling schedule, $V_{48}(0.1) \approx 1.38 \times 10^{-60}$, $d_{\text{eff}} = 15.75$, $H_{48} = 159.4$ bits, $\text{CR} \approx 3.05$, $d_{\text{private,eff}} = 1.75$, and all cascade-sensitivity and fork-cascade interaction values -- are reproduced by a single companion computation script in the public mirror:
 
-`[internal path removed]`
+`https://github.com/spectralbranding/sbt-papers/tree/main/r5-specification-impossibility/code/r5_specification_impossibility.py`
 
 The script uses no random stochastic computations (all results are closed-form); the fixed seed `SEED = 42` is included for reproducibility policy compliance. Run command:
 
-```
-uv run --with numpy,scipy \
-  python [internal path removed]
-```
+`uv run --with numpy --with scipy python r5_specification_impossibility.py`
 
 The script includes assertion checks that verify each cited figure to stated precision. One rounding note: $H_{48} = 48 \times \log_2(10) = 159.45$ bits, which the paper rounds to 159.4, and $H_{\text{eff}} = 15.75 \times \log_2(10) = 52.3$ bits. The script documents the exact values in comments.
 
