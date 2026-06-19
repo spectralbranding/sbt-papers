@@ -58,7 +58,7 @@ import matplotlib.patheffects as pe
 # A stroke halo makes overlaid text legible on ANY background colour (the
 # viridis surface runs dark-purple -> green -> yellow, so neither plain white
 # nor plain black text is readable everywhere). White text + a black outline is.
-HALO = [pe.withStroke(linewidth=3.0, foreground="black")]
+HALO = [pe.withStroke(linewidth=1.6, foreground="black")]
 
 # --- calibration constants (documented; illustrative, not fit to live data) ---
 L0 = 0.20  # minimal-loss-proxy decision loss L(P*), representative level
@@ -146,7 +146,7 @@ def main():
         arrowprops=dict(
             arrowstyle="->",
             color="white",
-            path_effects=[pe.withStroke(linewidth=2.5, foreground="black")],
+            path_effects=[pe.withStroke(linewidth=1.4, foreground="black")],
         ),
     )
     ann.set_path_effects(HALO)

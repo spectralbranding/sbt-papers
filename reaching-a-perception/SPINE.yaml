@@ -209,6 +209,11 @@ external_anchors:
     role: methodological_source
     status: to_register
     note: "Formal backbone for broadcast-a-dimension; import the degraded-channel capacity-region formalism with an explicit mapping table (sender=brand, receivers=observer profiles, capacity region=resonance bandwidth). Distinct from the registered cover-2006 textbook."
+  - key: keller-2001-building-customerbased-brand
+    citation: "Keller, K. L. (2001). Building Customer-Based Brand Equity: A Blueprint for Creating Strong Brands. Marketing Science Institute Report."
+    role: distinguished_from
+    status: already_registered
+    note: "Cited in a one-line footnote to DISTINGUISH this paper's spectral/self-selection 'resonance' (a signal aligned with an observer's dimensional sensitivity; a delivery mechanism) from Keller's relational 'brand resonance' at the top of the CBBE pyramid (an end-state of consumer loyalty/attachment). Same term, different mechanism. Pre-empts the homonym objection. (Rejected the Bin Latif et al. 2014 'brand resonance' paper as the anchor: predatory venue + same homonym conflation.)"
   - key: spence-1973-job-market-signaling
     citation: "Spence, M. (1973). Job Market Signaling. QJE, 87(3), 355-374."
     doi: "10.2307/1882010"
