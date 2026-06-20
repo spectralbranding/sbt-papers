@@ -199,9 +199,8 @@ For each dimension d, the pair (v_d, a_d) defines a point in the two-dimensional
 
 These regimes are directly actionable: a marketing manager observing (v_d > 0, a_d < 0) on a strategic dimension knows the current campaign is losing effectiveness before the dimension itself starts to decline -- an early warning signal invisible to position-only tracking.
 
-```mermaid
+```{.mermaid width=55%}
 quadrantChart
-    title Brand-Perception Phase Plane
     x-axis Negative velocity --> Positive velocity
     y-axis Negative acceleration --> Positive acceleration
     quadrant-1 Growth
@@ -424,9 +423,8 @@ The velocity and acceleration vectors tell a story that position alone cannot:
 
 The trajectory geometry is visible directly in the (Cultural, Ideological) phase plane. Figure 2 plots the three time points where both dimensions are defined (2006, 2013, 2023), with directed arrows showing the direction of motion across the Expansion and Normative-Absorption periods. The Expansion arrow moves up-and-slightly-left in the plane (Ideological rising from 8.0 to 9.0 while Cultural drops marginally from 8.5 to 8.0), and the Normative-Absorption arrow then rotates sharply down-and-strongly-left (Cultural falling to 5.5 and Ideological falling to 7.5). The visible kink between the two arrows encodes a regime change that no static profile snapshot would reveal: the brand reverses direction on Cultural and on Ideological at different times, and the angle between the two velocity vectors quantifies the magnitude of that reversal. This trajectory shape is illustrative; profiles assigned by author.
 
-```mermaid
+```{.mermaid width=55%}
 quadrantChart
-    title Dove Trajectory in Cultural-Ideological Phase Plane
     x-axis Low Cultural --> High Cultural
     y-axis Low Ideological --> High Ideological
     quadrant-1 Peak activation
