@@ -147,6 +147,14 @@ propositions:
         anchor: "Measured identifier-deprecation evidence hardening the tailwind: the value of offsite/cross-site tracking data to advertisers is measurably positive but is the quantity being removed by ATT/cookie deprecation — the addressability SBT does not depend on is empirically contracting."
         citation_keys: [wernerfelt-2025-offsite-tracking-value]
         citation_role: empirical_anchor
+      - type: citation
+        anchor: "Two-edged personalization evidence reframing the tailwind: personalization CAN be strongly persuasive (largest JM meta-analysis) but most so when data are tied closely to the consumer's self-concept — exactly the identity-rich signal privacy is withdrawing — even as advertising-venue evidence finds the average lift modest. The tailwind no longer rests on personalization being weak; it rests on personalization's value being hostage to contracting identity data."
+        citation_keys: [eisend-2026-personalization-meta-analysis, yeo-2025-personalized-advertising-meta-analysis]
+        citation_role: empirical_anchor
+      - type: citation
+        anchor: "Consumer-cost side of the addressability retreat: data-driven/addressable advertising increasingly triggers perceived surveillance and its documented backlash, a second force (beyond signal loss) pushing the industry off identity-addressable targeting."
+        citation_keys: [zhang-2026-perceived-surveillance-advertising]
+        citation_role: empirical_anchor
     falsifier: "Observe targeting via a proxy strictly outperform targeting on the true perceptual cohort (same budget) outside measurement-cost differences — Blackwell forbids this on information alone, so a robust such finding would refute P3."
     body_sections: ["Perception-to-Proxy Join and Its Quantified Loss"]
 
@@ -361,6 +369,18 @@ external_anchors:
     role: methodological_context
     status: already_registered
     note: "Reused (already in the substrate) for the reach/frequency hand-off nod to the JAR media-planning audience: the instrument supplies the target and bridge cost; media-scheduling / reach-frequency planning is the management layer it hands off to. Added in the WARNINGs-fold revision."
+  - key: eisend-2026-personalization-meta-analysis
+    citation: "Eisend, M., Niewiadomska, D., & van Noort, G. (2026). Personalization in Marketing Communication: A Meta-Analysis. Journal of Marketing (forthcoming)."
+    doi: "10.1177/00222429261460888"
+    role: empirical_anchor
+    status: registered
+    note: "VERIFIED 2026-06-20 (Crossref; user-supplied DOI 10.1177/0022242926146088 was WRONG/404, corrected). Largest personalization meta-analysis (1,536 effects / 290 studies): personalization persuades (J-shaped paradox), most so when data tied to self-concept. Reframes the tailwind from 'personalization is weak' to 'personalization's value is hostage to the identity data privacy is withdrawing.' Added in the tailwind-reframe revision."
+  - key: zhang-2026-perceived-surveillance-advertising
+    citation: "Zhang, D., Strycharz, J., Boerman, S. C., Araujo, T., & Voorveld, H. A. M. (2026). Too Sensitive, Too Much? Triggers and Consequences of Perceived Surveillance in Digital Data-Driven Advertising. Journal of Advertising, 1-20."
+    doi: "10.1080/00913367.2026.2676600"
+    role: empirical_anchor
+    status: registered
+    note: "VERIFIED 2026-06-20 (Crossref). The consumer-cost side of the addressability retreat: data-driven/addressable advertising provokes perceived surveillance and backlash — a second force beyond signal loss pushing the industry off identity targeting. Added in the tailwind-reframe revision."
 
 open:
   - "WHEN THE BRAND SPECTROMETER IS PUBLISHED: restore the named-instrument references that were genericized to 'an atom-based perception corpus' / 'the atomic-perception measurement architecture' (paper.md provenance-as-address §, figure caption, Limitations, Data-and-Code-Availability; SPINE thesis (c), ME2, L2) and add its citation/DOI. De-branded 2026-06-19 because the Brand Spectrometer is still WIP (potential cooperation with Jared Richardson / ARA) and not a public artifact."
