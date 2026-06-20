@@ -1,0 +1,6 @@
+brand,distinctiveness_s,tau_true_weeks,tau_recovered_weeks,maintenance_forcing
+Patagonia,0.335,5.141,5.333,0.1945
+Tesla,0.336,5.147,5.289,0.1943
+IKEA,0.348,5.251,5.232,0.1904
+Erewhon,0.358,5.342,5.263,0.1872
+Hermes,0.760,16.508,16.812,0.0606
