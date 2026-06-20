@@ -1,0 +1,38 @@
+cff-version: 1.2.0
+message: "If you use this paper, please cite it as below."
+authors:
+  - family-names: Zharnikov
+    given-names: Dmitry
+    affiliation: "Independent Researcher"
+    orcid: "https://orcid.org/0009-0000-6893-9231"
+title: "Forming a Perception: Campaigns as Forcing Functions and the Relaxation of the Brand Perception Cloud"
+version: 1.0.0
+date-released: 2026-06-14
+url: "https://doi.org/10.5281/zenodo.20769594"
+repository-code: "https://github.com/spectralbranding/sbt-papers"
+identifiers:
+  - type: doi
+    value: "10.5281/zenodo.20769594"
+    description: "Zenodo concept DOI (all versions)"
+keywords:
+  - brand dynamics
+  - perception formation
+  - forcing function
+  - relaxation time
+  - Ornstein-Uhlenbeck process
+  - advertising decay
+  - brand distinctiveness
+  - Spectral Brand Theory
+license:
+  - CC-BY-4.0
+  - MIT
+type: article
+preferred-citation:
+  type: article
+  authors:
+    - family-names: Zharnikov
+      given-names: Dmitry
+  title: "Forming a Perception: Campaigns as Forcing Functions and the Relaxation of the Brand Perception Cloud"
+  year: 2026
+  doi: "10.5281/zenodo.20769594"
+  url: "https://doi.org/10.5281/zenodo.20769594"

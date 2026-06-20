@@ -1,0 +1,290 @@
+spine_version: "0.2"
+paper_key: "2026aw"
+title: "Forming a Perception: Campaigns as Forcing Functions and the Relaxation of the Brand Perception Cloud"
+self_citation_key: "zharnikov-2026aw-forming-a-perception"
+concept_doi: "10.5281/zenodo.20769594"   # reserved 2026-06-20 (USER)
+version_doi: "10.5281/zenodo.20769595"   # v1.0.0 reserved
+thesis: |
+  2026av (Reaching a Perception) routes a signal to a perception cloud that already exists and
+  DEFERS the distinct mode that moves the cloud itself — demand/category creation and belief
+  maintenance — to a spectral-dynamics companion (its boundary L1). R18/2026z (Spectral Dynamics)
+  supplies the KINEMATICS (drift SDE, velocity/acceleration, phase space) but leaves the forcing
+  half as an undeveloped "Spectral force" stub. This paper develops that mode as a FORCED
+  DYNAMICAL SYSTEM. The perception cloud is a probability measure mu_t on the eight-dimensional
+  SBT space; its centroid x_bar(t) = E[X_t] obeys a forced Ornstein-Uhlenbeck-type SDE
+      dX = [ -A (X - x*) + F(t) ] dt + Sigma dW,
+  where x* is the brand's intrinsic stable point (the perception it relaxes toward unforced),
+  A is the restoring/relaxation operator, and F(t) is the campaign's FORCING FUNCTION (a vector
+  in the same spectral basis as the cloud). FORMATION is the forced transient toward a target;
+  MAINTENANCE is sustained forcing balancing relaxation; the "stop advertising -> perception
+  decays" folklore is the unforced relaxation of the centroid back toward x*, with a measurable
+  PERCEPTION-DECAY TIME CONSTANT tau = 1 / lambda_min(A) (inverse of the slowest relaxation rate).
+  The instrument recovers F and tau from TIME-SLICED ATOMS around a spend pulse (the content-date
+  provenance the 2026av provenance-as-address bridge already exploits). The unifying result ties
+  formation back to reach: a brand's off-generic DISTINCTIVENESS — the same sin^2(beta) that is a
+  perception-metamerism loss in 2026au and the self-selection sharpness in 2026av — LOWER-BOUNDS
+  the persistence time tau of its formed perception, so a distinctive brand sits at a deeper,
+  better-separated stable point that needs LESS forcing to hold and decays MORE SLOWLY when
+  forcing stops. Distinctiveness is therefore simultaneously what makes a cohort self-selectable
+  (2026av) and what makes its perception persistent (here). Metrology posture holds: the
+  instrument measures cloud position, the campaign's forcing, and the forcing-vs-relaxation
+  budget; the manager runs the campaign. NARROWED lead claim: we FORMALIZE perception formation
+  as forced relaxation on a spectral manifold and DEMONSTRATE (calibrated simulation, not field
+  test) that distinctiveness lower-bounds persistence; the confirmatory panel design is a roadmap.
+
+# ---------------------------------------------------------------------------
+# Boundary conditions (incl. the market-scope 2x2)
+# ---------------------------------------------------------------------------
+boundary_conditions:
+  - id: C1
+    statement: "Inherits the SBT/2026z substrate: a brand is an observer-completed probability measure mu_t on the eight-dimensional SBT perception manifold; the cloud's drift follows the non-ergodic-diffusion SDE (2026e/2026z). The managerial problem is to move or hold mu_t; SBT supplies the measurement, the manager the campaign."
+  - id: C2
+    statement: "UNIT OF ANALYSIS: the cloud is the FIRST MOMENT of a distribution of individual observer perceptions; all dynamics are stated for the centroid x_bar(t) = E[X_t], and tau is identified from the CENTROID TRAJECTORY, not from any single observer. Cohort heterogeneity enters as the spread of mu_t (higher moments), held fixed in the minimal model and relaxed in robustness."
+  - id: C3
+    statement: "MARKET-SCOPE 2x2 (stated in the RQ paragraph, not an appendix). The tau<-distinctiveness link is SCOPED to: established consumer-packaged-goods and service categories with habitual/repeat purchase and a stable basis of perceptual dimensions. It is EXPECTED TO FAIL for (i) RADICAL INNOVATIONS that redefine the basis vectors of the perceptual space itself (e.g. iPhone-2007-type category genesis — the manifold itself moves, so a fixed-x* relaxation model does not apply); and (ii) B2B / procurement-dominated contexts where institutional routines, not perceptual drift, govern choice. Outside the positive scope the forced-relaxation model is mis-specified and the paper makes no claim."
+  - id: C4
+    statement: "Provenance/atom requirement: tau-recovery (P2) needs atoms carrying content_date (time-slicing) and a reduction from raw atoms to R^8 centroid coordinates; absent a time-resolved perceptual series the decay constant is unidentified (the confirmatory design supplies it; the demonstration uses public illustrative profiles)."
+
+# ---------------------------------------------------------------------------
+assumption_atoms:
+  - id: AA1
+    statement: "Linear restoring force: the unforced drift is -A (X - x*) with A positive-definite (Ornstein-Uhlenbeck mean reversion toward the intrinsic stable point x*). Used for closed-form tau."
+    type: dynamics_form
+    relaxable: true
+    relaxation_consequence: "A nonlinear (e.g. double-well) potential changes the closed form but preserves the qualitative tau-ordering near a stable point (local linearization); tested in RC-DRIFT."
+    affects: [P1, P3, P4, M1]
+  - id: AA2
+    statement: "Linear, additive forcing F(t) entering the drift in the same spectral basis as the cloud (a campaign is a force vector in R^8). Markov dynamics (no long memory beyond the state)."
+    type: forcing_form
+    relaxable: true
+    relaxation_consequence: "Convex/saturating forcing rescales the maintenance budget (P4) without changing its form; non-Markov carryover adds an adstock kernel, recovering the classic scalar adstock as the 1-D projection."
+    affects: [P1, P2, P4]
+  - id: AA3
+    statement: "Distinctiveness sin^2(beta) indexes the depth/separation of the brand's stable point x* from the generic perceptual centroid (the off-generic component of x*). Imported from 2026au/2026av as the off-axis perceptual variance."
+    type: construct_link
+    relaxable: true
+    relaxation_consequence: "If distinctiveness were unrelated to well geometry, P3 fails — this is the load-bearing assumption and the falsifier targets it."
+    affects: [P3, P4]
+  - id: AA4
+    statement: "The centroid is identified from time-sliced atoms up to sampling error that is mean-zero and independent of the forcing schedule (no provenance-selection co-moving with spend). Used for P2 identification; threatened by AE-ID, addressed by ME-ID."
+    type: measurement
+    relaxable: true
+    relaxation_consequence: "Provenance selection co-moving with spend biases tau; bounded by the ME-ID placebo + IV design."
+    affects: [P2]
+
+# ---------------------------------------------------------------------------
+# Propositions — 4 numbered (IJRM house style)
+# ---------------------------------------------------------------------------
+propositions:
+  - id: P1
+    statement: "Forced-SDE representation. Brand-perception formation and maintenance are represented by the forced Ornstein-Uhlenbeck SDE dX = [-A(X - x*) + F(t)] dt + Sigma dW on the eight-dimensional SBT manifold, with F(t) the campaign forcing vector. Formation = forced transient toward a target displacement; maintenance = sustained F balancing the restoring force; 'stop advertising -> decay' = the unforced (F=0) relaxation of the centroid toward x*. This subsumes the scalar advertising-stock-with-decay tradition (Nerlove-Arrow goodwill, Vidale-Wolfe response) as the one-dimensional projection onto a single sales/goodwill axis."
+    type: representation
+    conditions: "C1, C2"
+    antecedents: []
+    assumptions: [AA1, AA2]
+    evidence:
+      - type: analytic
+        anchor: "Construction: the forced OU SDE extends the 2026z drift SDE by an exogenous F(t); the unforced solution is exponential relaxation of the centroid displacement."
+      - type: citation
+        anchor: "Advertising-capital forcing+decay tradition this geometrizes (scalar goodwill/response with depreciation)."
+        citation_keys: [nerlove-1962-optimal-advertising-policy, vidale-1957-operations-research-advertising, sethi-1977-dynamic-optimal-control]
+        citation_role: theoretical_predecessor
+      - type: citation
+        anchor: "OU mean-reversion relaxation operator; non-ergodic-diffusion drift substrate."
+        citation_keys: [uhlenbeck-1930-theory-brownian-motion, zharnikov-2026-non-ergodic-brand-perception-diffusion, zharnikov-2026z-spectral-dynamics]
+        citation_role: methodological_source
+    falsifier: "A category where perceptual-centroid response to a spend pulse shows no relaxation toward a fixed point (random walk / non-mean-reverting), within the C3 positive scope, refutes the forced-OU representation."
+    body_sections: ["A Forced-Dynamics Model of Perception Formation"]
+  - id: P2
+    statement: "tau identification from time-sliced atoms. The perception-decay time constant tau = 1/lambda_min(A) is identified from the post-pulse decay of the centroid displacement: after forcing stops, ||x_bar(t) - x*|| decays as exp(-t/tau) along the slowest eigen-direction, so tau is estimable from a time-sliced atom series spanning a spend pulse and its aftermath. The estimator is the OU mean-reversion-rate fit to the centroid trajectory."
+    type: mechanism
+    conditions: "C2, C4"
+    antecedents: [P1]
+    assumptions: [AA4]
+    evidence:
+      - type: analytic
+        anchor: "Closed-form: unforced linear OU centroid relaxes exponentially; tau is the inverse slowest eigenvalue, recoverable by regressing log-displacement on time."
+      - type: simulation
+        anchor: "ME-DEMO calibrated forced-OU run reproduces a post-pulse decay curve and recovers the seeded tau (existence proof, not field test)."
+        source: ME-DEMO
+      - type: citation
+        anchor: "Persistence-estimation toolkit the perceptual-state-space estimator is the analogue of (pre-empts 'why not a VAR on perceptual indices?')."
+        citation_keys: [dekimpe-1995-persistence-marketing-effects, ataman-2010-longterm-effect-marketing, naik-2003-understanding-impact-synergy]
+        citation_role: methodological_source
+    falsifier: "If the post-pulse centroid trajectory is not better fit by exponential relaxation than by a no-decay (persistent random walk) null, tau is not identified and P2 fails."
+    body_sections: ["Recovering the Decay Constant from Time-Sliced Atoms", "Empirical Strategy"]
+  - id: P3
+    statement: "Distinctiveness lower-bounds persistence (THE UNIFYING ORDERING). The persistence time tau of a brand's off-generic perceptual displacement is increasing in its distinctiveness sin^2(beta): a more distinctive brand sits at a deeper, better-separated stable point whose basin resists relaxation toward the generic centroid, so its formed perception decays more slowly. d tau / d sin^2(beta) > 0. This is the same sin^2(beta) that is the perception-metamerism LOSS in 2026au and the self-selection SHARPNESS in 2026av — distinctiveness simultaneously sharpens reach and slows decay."
+    type: mechanism
+    conditions: "C2, C3"
+    antecedents: [P1]
+    assumptions: [AA1, AA3]
+    evidence:
+      - type: analytic
+        anchor: "Minimal model (M1): the off-generic eigen-direction's restoring rate decreases as the well separates with sin^2(beta), so tau increases; derived in the 2-brand R^2 case."
+      - type: simulation
+        anchor: "ME-DEMO: across the public-anchor-calibrated distinctiveness population, recovered tau is monotone increasing in sin^2(beta) (calibrated demonstration of the ordering)."
+        source: ME-DEMO
+      - type: citation
+        anchor: "Distinctiveness/off-axis-variance quantity imported and reused."
+        citation_keys: [zharnikov-2026au-correspondence-principle-brand, zharnikov-2026-spectral-metamerism-brand-perception-projection, zharnikov-2026av-reaching-a-perception]
+        citation_role: theoretical_predecessor
+    falsifier: "QUANTITATIVE: across >=20 brands after exogenous spend pulses, if recovered tau shows zero or negative correlation with measured sin^2(beta) — or if brands with sin^2(beta)>.6 require no less maintenance forcing than brands with sin^2(beta)<.3 — the ordering is refuted."
+    body_sections: ["Distinctiveness and Persistence", "A Forced-Dynamics Model of Perception Formation"]
+  - id: P4
+    statement: "Maintenance forcing = relaxation loss at equilibrium. To HOLD the centroid at a target displacement d from the intrinsic stable point x*, the required steady-state forcing is F_hold = A d (the forcing exactly cancels the restoring force). The maintenance budget therefore equals the relaxation loss A d and falls to zero as the target approaches the brand's own stable point. A distinctive brand whose target perception IS its stable point (d ~ 0) needs ~0 maintenance forcing; an undifferentiated brand held away from a generic x* pays continuous forcing and collapses fast when it stops."
+    type: management_outcome
+    conditions: "C1, C2"
+    antecedents: [P1, P3]
+    assumptions: [AA1, AA2]
+    evidence:
+      - type: analytic
+        anchor: "Steady state of the forced OU: dX=0 in expectation => F = A(x_target - x*); the maintenance budget is the restoring force at the held displacement."
+      - type: citation
+        anchor: "Mental-availability/adstock decay evidence that maintenance is needed and effects fade unrefreshed (the phenomenon P4 explains structurally)."
+        citation_keys: [sharp-2010-how-brands-grow, romaniuk-2016-how-brands-grow, gijsenberg-2011-adstock-advertising-decisions, broadbent-1979-one-way-tv-advertisements, binet-2013-long-short-of-it]
+        citation_role: empirical_anchor
+    falsifier: "If maintenance spend required to hold perceptual position is uncorrelated with the target's displacement from the brand's estimated stable point (or with distinctiveness), P4 fails."
+    body_sections: ["Maintenance as a Forcing Budget", "Managerial Translation"]
+
+# ---------------------------------------------------------------------------
+derivations:
+  - id: M1
+    statement: "Smallest sufficient model: two brands in R^2, one stable point each, linear restoring force with rate decreasing in (1 - sin^2(beta)) along the off-generic direction, a sinusoidal/box forcing pulse F(t). Yields analytically: (a) the closed-form exponential post-pulse relaxation (P2), (b) d tau/d sin^2(beta) > 0 (P3), (c) F_hold = A d at equilibrium (P4). Generalizes to R^8 by eigen-decomposition of A; the slowest eigen-direction sets tau. Realized numerically by ME-DEMO (fixed seed, public anchors)."
+    supports: [P1, P2, P3, P4]
+
+methods:
+  - id: ME-DEMO
+    statement: "EXECUTED demonstration (the realized path; calibrated simulation, NOT a field test — mirrors 2026av's ME2 posture). A deterministic fixed-seed forced-OU simulation calibrated to the five canonical PUBLIC brand profiles (de-branding standing; NOT the WIP atom instrument): for each anchor's distinctiveness sin^2(beta), simulate a forcing pulse + post-pulse relaxation of the centroid, recover tau by exponential fit, and show tau monotone increasing in sin^2(beta). Reports the recovered-tau ordering + a maintenance-budget curve with bootstrap intervals. Reproducible script code/forced_relaxation_demo.py (fixed seed), PAQS 37a-e."
+    supports: [P2, P3, P4]
+    status: planned
+    script: "code/forced_relaxation_demo.py"
+  - id: ME-PANEL
+    statement: "PRIMARY confirmatory design (roadmap, not executed): a high-frequency perceptual panel — weekly/biweekly perceptual batteries (YouGov BrandIndex or Kantar BrandZ) reduced to R^8 centroids via the same spectral procedure as the public demo — for >=30 brands over 24-36 months merged with GRP/spend data at the same grain; recover per-brand tau from post-pulse decay and test d tau/d sin^2(beta) > 0 with power >.8 for a .25 correlation. Constructs measured at the theory's grain (centroid in spectral space)."
+    supports: [P2, P3]
+  - id: ME-ID
+    statement: "CAUSAL IDENTIFICATION design (pre-committed): to recover F and tau causally, instrument own forcing with EXOGENOUS shifters — advertising-tax changes, competitor scandals, political-ad-cycle crowd-out of ad inventory — and run a PLACEBO on non-advertised perceptual dimensions (which should show no forced response). Addresses (1) omitted competitive forcing, (2) atom-provenance measurement error, (3) reverse causality (spend ramps when perception decays). Ranking by feasibility: natural experiments > IV (political cycles) > full structural SDE estimation (avoid as primary)."
+    supports: [P2, P3]
+
+observations:
+  - id: OB-DEMO
+    type: simulation
+    statement: "TO BE FILLED by code/forced_relaxation_demo.py at a fixed seed: recovered tau for each of the five public anchors (increasing in distinctiveness), the tau~sin^2(beta) monotonicity statistic with bootstrap CI, and the maintenance-budget-vs-displacement curve. Calibrated demonstration; magnitudes are model properties, the monotone ordering is the robust claim."
+    source: ME-DEMO
+
+findings:
+  - id: F-DEMO
+    type: simulation_demonstration
+    statement: "DEMONSTRATION (not field evidence): in the calibrated forced-OU model the recovered perception-decay time constant tau increases monotonically with distinctiveness sin^2(beta) across the public-anchor population, and the maintenance forcing to hold a fixed displacement falls toward zero as the target approaches the stable point — consistent with P3/P4. A calibrated simulation, not a test; ME-PANEL/ME-ID remain confirmatory."
+    supports: [P3, P4]
+    caveat: "Calibration anchored on 5 public profiles; the recovered magnitudes are model properties under documented constants, the monotone ordering is the robust claim."
+
+robustness_checks:
+  - id: RC-DRIFT
+    statement: "Alternative drift specifications: linear vs nonlinear (double-well) restoring force; the tau-ordering should survive local linearization near a stable point."
+    addresses: [P1, P3, AA1]
+  - id: RC-EST
+    statement: "Alternative estimators: continuous-time OU fit vs discrete-time VAR on perceptual indices (the Dekimpe-Hanssens persistence-decomposition benchmark); 2-D vs 8-D; split-sample by category."
+    addresses: [P2]
+  - id: RC-ID
+    statement: "Placebo on non-advertised dimensions; controls for competitive spend + earned-media volume; IV vs natural-experiment vs structural identification (ME-ID)."
+    addresses: [P2, P3, AA4]
+
+alternative_explanations:
+  - id: AE-LEARN
+    statement: "Scalar Bayesian learning (Erdem & Keane 1996) could be said to already model advertising-as-input updating brand beliefs with decay."
+    rebuttal: "Erdem-Keane update a SCALAR perceived quality via Bayesian learning; they cannot formulate a forced MULTI-DIMENSIONAL SDE on a perceptual manifold, and tau here is identified as the OU mean-reversion of the CENTROID (a geometric relaxation), where their Kalman approach targets a scalar latent. The distinctiveness->tau ordering has no analogue in scalar learning. Formal comparison table in the paper."
+    citation_keys: [erdem-1996-decisionmaking-under-uncertainty]
+  - id: AE-LATENT
+    statement: "A simpler latent-state model (generic state-space / VAR on perceptual indices) might suffice without the spectral geometry."
+    rebuttal: "Only the geometric distinctiveness measure sin^2(beta) recovers the tau-ordering (P3); a structure-free latent state predicts decay but not its dependence on off-generic well depth. Shown via the RC-EST VAR benchmark lacking the ordering."
+    citation_keys: [dekimpe-1995-persistence-marketing-effects]
+
+limitations:
+  - id: L1
+    statement: "JUMP-TERM / SCANDAL boundary: distinctive brands CAN decay fast if an EXOGENOUS shock RELOCATES the stable point x* itself (product-harm crisis, scandal). The forced-OU model holds x* fixed; a Poisson-jump extension (jump-diffusion relocating x*) is flagged in the discussion as a boundary extension, not developed. Connects to the 2026z stationarity/crisis remark and coherence-resilience."
+    anchor_keys: [zharnikov-2026z-spectral-dynamics]
+  - id: L2
+    statement: "Proprietary-instrument / construct-validity objection (predicted lead reviewer objection): the demonstration uses public illustrative profiles and an open reduction procedure; any perceptual tracking battery reduced via the same spectral procedure recovers cloud position. The prediction is about observer perception, not the particular instrument. De-branding standing (Brand Spectrometer WIP)."
+  - id: L3
+    statement: "Causal identification is a design, not yet executed: F and tau are recovered correlationally in the demonstration; ME-ID pre-commits the IV/natural-experiment + placebo needed for causal recovery. Magnitudes are calibrated-model properties; only the monotone tau-ordering is the robust claim."
+
+corpus_precedents:
+  - key: zharnikov-2026z-spectral-dynamics
+    relation: parent_concept
+    note: "Kinematic predecessor (R18): drift SDE, velocity/acceleration, phase space, the undeveloped 'Spectral force' + 'Perception Lagrangian' stubs this paper develops into forcing+relaxation."
+  - key: zharnikov-2026av-reaching-a-perception
+    relation: parent_concept
+    note: "Defers the formation mode (its boundary L1) to this paper; supplies the atom time-slicing (provenance-as-address) used for tau-recovery and the sin^2(beta) distinctiveness reused in P3."
+  - key: zharnikov-2026au-correspondence-principle-brand
+    relation: builds_on
+    note: "Supplies the off-axis-variance sin^2(beta) metamerism quantity that P3 reuses as the persistence driver."
+  - key: zharnikov-2026-spectral-metamerism-brand-perception-projection
+    relation: builds_on
+    note: "Perception-metamerism off-axis variance = the distinctiveness reused as the well-depth index."
+  - key: zharnikov-2026-non-ergodic-brand-perception-diffusion
+    relation: builds_on
+    note: "The drift-diffusion SDE substrate the forced OU extends."
+
+external_anchors:
+  - key: nerlove-1962-optimal-advertising-policy
+    citation: "Nerlove, M., & Arrow, K. J. (1962). Optimal Advertising Policy under Dynamic Conditions. Economica, 29(114), 129-142."
+    doi: "10.2307/2551549"
+    role: theoretical_predecessor
+    status: already_registered
+    note: "Goodwill-stock + depreciation model; the scalar forcing+decay tradition this geometrizes. VERIFIED (Crossref)."
+  - key: vidale-1957-operations-research-advertising
+    citation: "Vidale, M. L., & Wolfe, H. B. (1957). An Operations-Research Study of Sales Response to Advertising. Operations Research, 5(3), 370-381."
+    doi: "10.1287/opre.5.3.370"
+    role: theoretical_predecessor
+    status: registered
+    note: "NEW, registered 2026-06-20 (Crossref). The response/decay-constant model; scalar analogue of the forced OU."
+  - key: sethi-1977-dynamic-optimal-control
+    citation: "Sethi, S. P. (1977). Dynamic Optimal Control Models in Advertising: A Survey. SIAM Review, 19(4), 685-725."
+    doi: "10.1137/1019104"
+    role: theoretical_predecessor
+    status: already_registered
+    note: "Optimal-control-of-advertising tradition; maintenance = sustained control against decay (P4 lineage)."
+  - key: uhlenbeck-1930-theory-brownian-motion
+    citation: "Uhlenbeck, G. E., & Ornstein, L. S. (1930). On the Theory of the Brownian Motion. Physical Review, 36(5), 823-841."
+    doi: "10.1103/PhysRev.36.823"
+    role: methodological_source
+    status: already_registered
+    note: "The OU mean-reversion relaxation operator (do not reinvent the stochastic calculus)."
+  - key: bass-1969-new-product-growth
+    citation: "Bass, F. M. (1969). A New Product Growth for Model Consumer Durables. Management Science, 15(5), 215-227."
+    doi: "10.1287/mnsc.15.5.215"
+    role: theoretical_predecessor
+    status: already_registered
+    note: "Adoption/demand-creation reading (distinct from decay); the category-creation forced migration of x*."
+  - key: erdem-1996-decisionmaking-under-uncertainty
+    citation: "Erdem, T., & Keane, M. P. (1996). Decision-Making Under Uncertainty: Capturing Dynamic Brand Choice Processes in Turbulent Consumer Goods Markets. Marketing Science, 15(1), 1-20."
+    doi: "10.1287/mksc.15.1.1"
+    role: competing_approach
+    status: already_registered
+    note: "Closest dynamic-perception prior art (scalar Bayesian quality learning); AE-LEARN formal comparison — cannot formulate the forced multi-dim SDE."
+  - key: dekimpe-1995-persistence-marketing-effects
+    citation: "Dekimpe, M. G., & Hanssens, D. M. (1995). The Persistence of Marketing Effects on Sales. Marketing Science, 14(1), 1-21."
+    doi: "10.1287/mksc.14.1.1"
+    role: methodological_source
+    status: already_registered
+    note: "Persistence econometric toolkit; the tau estimator's perceptual-state-space analogue (pre-empts 'why not a VAR?'). NB an external lead mis-cited the pages; real record 14(1):1-21 (Crossref-corrected)."
+  - key: ataman-2010-longterm-effect-marketing
+    citation: "Ataman, M. B., Van Heerde, H. J., & Mela, C. F. (2010). The Long-Term Effect of Marketing Strategy on Brand Sales. Journal of Marketing Research, 47(5), 866-882."
+    doi: "10.1509/jmkr.47.5.866"
+    role: empirical_anchor
+    status: already_registered
+    note: "Modern brand-level adstock benchmark; the maintenance subsection compares explanatory power."
+  - key: keller-1993-conceptualizing-measuring-managing
+    citation: "Keller, K. L. (1993). Conceptualizing, Measuring, and Managing Customer-Based Brand Equity. Journal of Marketing, 57(1), 1-22."
+    doi: "10.1177/002224299305700101"
+    role: theoretical_predecessor
+    status: already_registered
+    note: "Brand-knowledge structures as the psychological substrate the potential well mu(x) / stable point formalizes; the static long-run equilibrium of CBBE."
+
+open:
+  - "WHEN THE BRAND SPECTROMETER IS PUBLISHED: restore named-instrument references genericized to 'an atom-based perception corpus' / 'time-sliced atoms' and add its DOI (paralleling 2026av)."
+  - "Phase-2 DR (2 queries, deferred unless drafting needs them): (E1) advertising-IV identification precedents (ad-tax / political-cycle instruments); (E2) perceptual-panel feasibility (YouGov BrandIndex / Kantar weekly batteries + GRP merge)."
+  - "Venue: IJRM primary (user GO kept venue); Marketing Science the strongest alternate for the SDE+estimator (decide at submission)."
+  - "Confirm Gijsenberg-Verhoef 2023 (IJRM) + Edeling 2024 positioning anchors via Crossref before citing (DR-UNVERIFIED)."
+

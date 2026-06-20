@@ -1,0 +1,75 @@
+# ONTOLOGY.yaml module - 2026aw (Forming a Perception: Campaigns as Forcing Functions
+# and the Relaxation of the Brand Perception Cloud)
+#
+# Per-paper ontology module per [internal path removed]
+# owns = terms THIS paper introduces; imports = terms owned elsewhere it uses;
+# refines = an imported term this module narrows.
+#
+# This module owns the perception-FORMATION apparatus: the forced-perception-dynamics
+# model (campaign as a forcing function on the perception cloud), the perception-decay
+# time constant tau, the perceptual stable point, the maintenance forcing budget, and
+# the distinctiveness-persistence ordering that unifies formation with reach. It imports
+# the SBT perceptual substrate plus the spectral-dynamics kinematics (R18/2026z) and the
+# self-selection-filter (2026av); it refines spectral-dynamics from a KINEMATIC
+# description (velocity/acceleration/phase space of a free trajectory) into a FORCED
+# dynamics (an exogenous campaign force + relaxation toward a stable point).
+
+paper_key: 2026aw
+schema_version: 0.1
+
+owns:
+  - term_key: forced-perception-dynamics
+    label: "Forced perception dynamics"
+    canonical_form: "forced perception dynamics"
+    definition: "The model of brand-perception formation and maintenance as a forced Ornstein-Uhlenbeck system on the eight-dimensional SBT manifold: the perception cloud's centroid obeys dX = [-A(X - x*) + F(t)] dt + Sigma dW, where A is the restoring (relaxation) operator, x* the intrinsic stable point, and F(t) the campaign forcing vector. Formation is the forced transient toward a target displacement, maintenance is sustained forcing balancing the restoring force, and 'stop advertising -> perception decays' is the unforced relaxation toward x*. It subsumes the scalar advertising-stock-with-decay tradition (goodwill/response models) as the one-dimensional projection."
+    first_section: "A Forced-Dynamics Model of Perception Formation"
+    relations:
+      - {type: specializes, term_key: spectral-dynamics, note: "adds an exogenous forcing term F(t) and a relaxation operator to the free kinematics of spectral-dynamics: the campaign is the force the kinematics paper left as a stub"}
+      - {type: specializes, term_key: brand-metrology, note: "the instrument measures cloud position, the campaign's forcing, and the forcing-vs-relaxation budget; the manager runs the campaign"}
+  - term_key: forcing-function
+    label: "Forcing function (campaign)"
+    canonical_form: "forcing function"
+    definition: "A marketing campaign represented as a time-varying vector F(t) in the same spectral basis as the perception cloud, entering the drift of the forced-perception-dynamics SDE. Each marketing action (advertising, launch, pricing, endorsement) contributes a force on the cloud; the net force is their vector sum. Formation and maintenance differ only in F(t)'s schedule relative to the relaxation rate."
+    first_section: "A Forced-Dynamics Model of Perception Formation"
+  - term_key: perception-decay-time-constant
+    label: "Perception-decay time constant"
+    canonical_form: "perception-decay time constant"
+    definition: "The relaxation time tau = 1 / lambda_min(A) of a brand's perception cloud — the inverse of the slowest eigenvalue of the restoring operator — governing how fast the centroid displacement relaxes toward the intrinsic stable point once forcing stops (||x_bar(t) - x*|| ~ exp(-t/tau)). The SBT-native reading of advertising adstock/mental-availability decay; recoverable from a time-sliced atom series spanning a spend pulse and its aftermath."
+    first_section: "Recovering the Decay Constant from Time-Sliced Atoms"
+  - term_key: perceptual-stable-point
+    label: "Perceptual stable point"
+    canonical_form: "perceptual stable point"
+    definition: "The intrinsic equilibrium x* of a brand's perception cloud — the perception it relaxes toward when unforced — equivalently the bottom of the potential well of the drift field. A distinctive brand's stable point is deep and well-separated from the generic perceptual centroid; the long-run equilibrium of the brand-knowledge structure the static brand-equity tradition describes."
+    first_section: "A Forced-Dynamics Model of Perception Formation"
+    relations:
+      - {type: contrasts, term_key: re-collapse, note: "re-collapse is a deliberate, measured SHIFT of x* (forming a new perception); the stable point is the equilibrium a routing campaign holds fixed"}
+  - term_key: maintenance-forcing-budget
+    label: "Maintenance forcing budget"
+    canonical_form: "maintenance forcing budget"
+    definition: "The steady-state forcing F_hold = A d required to HOLD the perception cloud at a target displacement d from the brand's intrinsic stable point: the forcing that exactly cancels the restoring force. The maintenance budget equals the relaxation loss at the held displacement and falls to zero as the target approaches the brand's own stable point, so a distinctive brand holds its perception with little forcing and an undifferentiated one pays continuous forcing or collapses."
+    first_section: "Maintenance as a Forcing Budget"
+  - term_key: distinctiveness-persistence-ordering
+    label: "Distinctiveness-persistence ordering"
+    canonical_form: "distinctiveness-persistence ordering"
+    definition: "The result that a brand's perception-decay time constant tau is increasing in its off-generic distinctiveness sin-squared-beta (d tau / d sin-squared-beta > 0): a more distinctive brand sits at a deeper, better-separated stable point whose basin resists relaxation toward the generic centroid, so its formed perception persists longer. The same sin-squared-beta that is a perception-metamerism loss (2026au) and the self-selection sharpness (2026av) is here the persistence driver, unifying reach and formation under one quantity."
+    first_section: "Distinctiveness and Persistence"
+    relations:
+      - {type: specializes, term_key: self-selection-filter, note: "the self-selection-filter uses distinctiveness as delivery selectivity (reach); this ordering uses the SAME distinctiveness as persistence (formation) — two readings of one geometric quantity"}
+      - {type: specializes, term_key: spectral-metamerism, note: "off-axis perceptual distinctiveness, the metamerism quantity, here indexes potential-well depth"}
+
+imports:
+  - {term_key: spectral-brand-theory}
+  - {term_key: perception-cloud}
+  - {term_key: spectral-dimensions}
+  - {term_key: observer-spectral-profile}
+  - {term_key: cohort}
+  - {term_key: spectral-metamerism}
+  - {term_key: brand-metrology}
+  - {term_key: spectral-dynamics}
+  - {term_key: self-selection-filter}
+  - {term_key: re-collapse}
+
+refines:
+  - term_key: spectral-dynamics
+    note: "spectral-dynamics (R18/2026z) describes the FREE kinematics of a perception trajectory (velocity, acceleration, phase space). This module refines it into a FORCED dynamics: an exogenous campaign force F(t) drives the cloud and a relaxation operator returns it to a stable point, developing the 'Spectral force' / 'Perception Lagrangian' stubs the kinematics paper left open (forced-perception-dynamics specializes it)."
+
