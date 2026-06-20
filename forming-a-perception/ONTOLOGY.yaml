@@ -35,7 +35,7 @@ owns:
     label: "Perception-decay time constant"
     canonical_form: "perception-decay time constant"
     definition: "The relaxation time tau = 1 / lambda_min(A) of a brand's perception cloud — the inverse of the slowest eigenvalue of the restoring operator — governing how fast the centroid displacement relaxes toward the intrinsic stable point once forcing stops (||x_bar(t) - x*|| ~ exp(-t/tau)). The SBT-native reading of advertising adstock/mental-availability decay; recoverable from a time-sliced atom series spanning a spend pulse and its aftermath."
-    first_section: "Recovering the Decay Constant from Time-Sliced Atoms"
+    first_section: "Recovering the Decay Constant from a Dated Perceptual Series"
   - term_key: perceptual-stable-point
     label: "Perceptual stable point"
     canonical_form: "perceptual stable point"
