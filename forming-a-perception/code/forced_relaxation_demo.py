@@ -219,19 +219,36 @@ def main() -> None:
         edgecolor="white",
         label="5 public anchors",
     )
-    for r in rows:
+    # The four near-generic anchors are nearly coincident (s ~ .335-.358), so individual
+    # labels overlap illegibly; collapse them into one grouped label with a leader line and
+    # annotate the distinctive Hermes anchor on its own.
+    cluster = [r for r in rows if r["distinctiveness"] < 0.5]
+    distinct = [r for r in rows if r["distinctiveness"] >= 0.5]
+    if cluster:
+        cx = float(np.mean([r["distinctiveness"] for r in cluster]))
+        cy = float(np.mean([r["tau_recovered"] for r in cluster]))
+        names = ", ".join(r["brand"] for r in sorted(cluster, key=lambda r: r["brand"]))
+        ax.annotate(
+            names,
+            (cx, cy),
+            textcoords="offset points",
+            xytext=(14, -20),
+            fontsize=8,
+            ha="left",
+            arrowprops=dict(arrowstyle="-", color="#888888", lw=0.6),
+        )
+    for r in distinct:
         ax.annotate(
             r["brand"],
             (r["distinctiveness"], r["tau_recovered"]),
             textcoords="offset points",
-            xytext=(6, 4),
+            xytext=(-10, 6),
             fontsize=8,
+            ha="right",
         )
     ax.set_xlabel(r"cohort distinctiveness  $s=\sin^2\beta$")
     ax.set_ylabel(r"perception-decay time constant  $\tau$ (weeks)")
-    ax.set_title(
-        "Distinctiveness lower-bounds perceptual persistence (calibrated demonstration)"
-    )
+    ax.set_title("Distinctiveness lower-bounds perceptual persistence", fontsize=11)
     ax.legend(frameon=False, fontsize=8, loc="upper left")
     fig.tight_layout()
     fig.savefig(fig_dir / "figure1_tau_vs_distinctiveness.png", dpi=150)

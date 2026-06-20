@@ -84,7 +84,7 @@ This section executes the methods-companion fallback: a calibrated simulation, n
 
 ***The recovered relaxation time and its ordering.*** Passing each cohort through a forcing pulse and recovering *τ* from the post-pulse centroid decay reproduces the ordering Proposition 3 predicts. Across the calibrated population the recovered perception-decay time constant rises monotonically with distinctiveness, with a Spearman rank correlation of .942 (bootstrap 95% confidence interval [.938, .947]); the mean recovered *τ* climbs from 5.14 weeks in the least-distinctive quartile to 11.78 weeks in the most-distinctive quartile, a 2.29-fold increase with a large standardized gap (Cohen's *d* = 3.26). The five public anchors, marked in Figure 1, span this range: the four near-generic anchors recover relaxation times near five weeks, while the most distinctive anchor recovers roughly seventeen weeks. The maintenance-budget identity shows the complementary pattern: the forcing required to hold a fixed displacement is 2.17 times larger for the least-distinctive quartile than for the most-distinctive one, because the undifferentiated brand must continuously fight a faster relaxation. These are properties of the calibrated model, not measured response magnitudes; the confirmatory recovery belongs to the panel design.
 
-![Figure 1](figures/figure1_tau_vs_distinctiveness.png)
+![](figures/figure1_tau_vs_distinctiveness.png)
 
 *Figure 1: Perception-decay time constant versus cohort distinctiveness.* The recovered relaxation time *τ* increases monotonically in distinctiveness *s* = sin²*β* across 10,000 cohorts drawn from the public-anchor-calibrated Beta(2.59, 3.47) population (light points), tracking the model curve *τ*(*s*) = 1 ⁄ [*λ*₀(1 − *κs*)] (solid); the five canonical public anchors are marked. Magnitudes are model properties under the documented constants; the robust claim is the monotone increase. Reproduced by [`code/forced_relaxation_demo.py`](https://github.com/spectralbranding/sbt-papers/blob/main/forming-a-perception/code/forced_relaxation_demo.py) at seed 20260620; the figure file is [`figures/figure1_tau_vs_distinctiveness.png`](https://github.com/spectralbranding/sbt-papers/blob/main/forming-a-perception/figures/figure1_tau_vs_distinctiveness.png).
 
@@ -131,7 +131,7 @@ One companion computation script, deterministic, dependency-light (NumPy and Mat
 
 ## Acknowledgments
 
-AI assistants (Claude Opus 4.8, Gemini 2.5 Pro, Grok 4.3) were used for initial literature search, for a pre-draft critical review of the thesis, and for software development — implementing and running the companion computation script that reproduces the paper's calibrated demonstration; all theoretical claims, propositions, and interpretations are the author's sole responsibility. The companion script is the fixed-seed forced-relaxation demonstration (`code/forced_relaxation_demo.py`).
+AI assistants (Claude Opus 4.8, Gemini 2.5 Pro, Grok 4.3) were used for initial literature search and for software development — implementing and running the companion computation script that reproduces the paper's calibrated demonstration; all theoretical claims, propositions, and interpretations are the author's sole responsibility. The companion script is the fixed-seed forced-relaxation demonstration (`code/forced_relaxation_demo.py`).
 
 CRediT contributions: Dmitry Zharnikov — conceptualization, methodology, software, formal analysis, investigation, writing (original draft), writing (review and editing).
 
