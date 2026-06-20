@@ -366,6 +366,17 @@ limitations:
 # Cross-paper engagement
 # ============================================================================
 corpus_precedents:
+  - paper_key: 2026aw
+    relationship: extended_by
+    spine_nodes: [P1]
+    note: >-
+      The §8.6 "Spectral force" and "Perception Lagrangian (future)" future-research
+      stubs are developed into a forced-dynamics model in the 2026aw formation companion
+      (Forming a Perception): a campaign is a time-varying forcing function on the
+      perception cloud, the cloud relaxes toward a stable point with a measurable
+      perception-decay time constant when the forcing stops, and a brand's distinctiveness
+      lower-bounds the persistence of its formed perception. Reciprocal forward-reference
+      added 2026-06-20 (files-only, NO version bump; mirrors 2026au->2026av).
   - paper_key: 2026a
     relationship: extends
     spine_nodes: [P1, P11]
