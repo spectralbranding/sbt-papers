@@ -2,35 +2,45 @@ spine_version: "0.2"
 paper_key: "2026aw"
 title: "Forming a Perception: Campaigns as Forcing Functions and the Relaxation of the Brand Perception Cloud"
 self_citation_key: "zharnikov-2026aw-forming-a-perception"
-concept_doi: "10.5281/zenodo.20769594"   # reserved 2026-06-20 (USER)
-version_doi: "10.5281/zenodo.20769595"   # v1.0.0 reserved
+concept_doi: "10.5281/zenodo.20769594"   # concept DOI (stays across versions)
+version_doi: "10.5281/zenodo.20769595"   # v1.0.0 (same-day file replacement on Zenodo; no version bump)
 thesis: |
-  2026av (Reaching a Perception) routes a signal to a perception cloud that already exists and
-  DEFERS the distinct mode that moves the cloud itself — demand/category creation and belief
-  maintenance — to a spectral-dynamics companion (its boundary L1). R18/2026z (Spectral Dynamics)
-  supplies the KINEMATICS (drift SDE, velocity/acceleration, phase space) but leaves the forcing
-  half as an undeveloped "Spectral force" stub. This paper develops that mode as a FORCED
-  DYNAMICAL SYSTEM. The perception cloud is a probability measure mu_t on the eight-dimensional
-  SBT space; its centroid x_bar(t) = E[X_t] obeys a forced Ornstein-Uhlenbeck-type SDE
+  A marketing campaign is an exogenous force on a multi-dimensional perceptual state, and the
+  observable practitioners call "perception decay when advertising stops" is the unforced
+  relaxation of that state back toward a brand-specific stable point. This paper formalizes
+  perception formation and maintenance as a FORCED DYNAMICAL SYSTEM whose results stand on the
+  stochastic-dynamics math alone, independent of any one perceptual instrument. The perception
+  cloud is a probability measure mu_t on a fixed K-dimensional perceptual space (here K=8, but the
+  results hold for any fixed perceptual basis); its centroid x_bar(t) = E[X_t] obeys a forced
+  Ornstein-Uhlenbeck SDE
       dX = [ -A (X - x*) + F(t) ] dt + Sigma dW,
   where x* is the brand's intrinsic stable point (the perception it relaxes toward unforced),
-  A is the restoring/relaxation operator, and F(t) is the campaign's FORCING FUNCTION (a vector
-  in the same spectral basis as the cloud). FORMATION is the forced transient toward a target;
-  MAINTENANCE is sustained forcing balancing relaxation; the "stop advertising -> perception
-  decays" folklore is the unforced relaxation of the centroid back toward x*, with a measurable
-  PERCEPTION-DECAY TIME CONSTANT tau = 1 / lambda_min(A) (inverse of the slowest relaxation rate).
-  The instrument recovers F and tau from TIME-SLICED ATOMS around a spend pulse (the content-date
-  provenance the 2026av provenance-as-address bridge already exploits). The unifying result ties
-  formation back to reach: a brand's off-generic DISTINCTIVENESS — the same sin^2(beta) that is a
-  perception-metamerism loss in 2026au and the self-selection sharpness in 2026av — LOWER-BOUNDS
-  the persistence time tau of its formed perception, so a distinctive brand sits at a deeper,
-  better-separated stable point that needs LESS forcing to hold and decays MORE SLOWLY when
-  forcing stops. Distinctiveness is therefore simultaneously what makes a cohort self-selectable
-  (2026av) and what makes its perception persistent (here). Metrology posture holds: the
-  instrument measures cloud position, the campaign's forcing, and the forcing-vs-relaxation
-  budget; the manager runs the campaign. NARROWED lead claim: we FORMALIZE perception formation
-  as forced relaxation on a spectral manifold and DEMONSTRATE (calibrated simulation, not field
-  test) that distinctiveness lower-bounds persistence; the confirmatory panel design is a roadmap.
+  A is the positive-definite restoring/relaxation operator, F(t) is the campaign's FORCING
+  FUNCTION (a vector in the same perceptual basis as the cloud), and Sigma dW is generic
+  perceptual diffusion. FORMATION is the forced transient toward a target; MAINTENANCE is sustained
+  forcing balancing relaxation; the "stop advertising -> perception decays" folklore is the
+  unforced (F=0) relaxation of the centroid toward x*, with a measurable PERCEPTION-DECAY TIME
+  CONSTANT tau = 1 / lambda_min(A) (inverse of the slowest relaxation rate). The instrument
+  recovers F and tau from a TIME-SLICED perceptual series (any dated perceptual-tracking series)
+  spanning a spend pulse. The unifying result ties formation to reach: a brand's off-generic
+  DISTINCTIVENESS — the off-generic energy share of its centered profile — LOWER-BOUNDS the
+  persistence time tau of its formed perception, because a more distinctive brand sits FARTHER
+  OUTSIDE the dense, localized generic attractor, where that attractor adds LESS restoring
+  curvature to its well, so lambda_min is smaller and the perception relaxes more slowly. This
+  ordering, ASSERTED in v1.0.0 through the toy law lambda(s)=lambda_0(1-kappa*s), is DERIVED in the
+  Electronic Companion (EC.3) from a single stated, defended curvature primitive (P-CURV: a dense
+  localized attractor contributes restoring curvature that falls with separation), and the toy law
+  is recovered as its local linearization. The forced-OU vector model NESTS the scalar prior art:
+  project onto one dimension and add an information reading of F and the Erdem-Keane Bayesian
+  scalar-quality-learning updating is recovered as the 1-D special case, just as Nerlove-Arrow
+  goodwill and Vidale-Wolfe response are its 1-D shadow. Spectral Brand Theory is named ONCE as
+  the empirical instantiation (the K=8 perceptual basis); the paper is otherwise corpus-independent
+  — a reader with zero corpus access verifies every proposition. Metrology posture holds: the
+  instrument measures cloud position, the campaign's forcing, and the forcing-vs-relaxation budget;
+  the manager runs the campaign. NARROWED lead claim: we FORMALIZE perception formation as forced
+  relaxation on a perceptual manifold and DEMONSTRATE (calibrated simulation — an existence proof
+  of the ordering mechanism, NOT a field test) that distinctiveness lower-bounds persistence; the
+  confirmatory panel design is a roadmap.
 
 # ---------------------------------------------------------------------------
 # Boundary conditions (incl. the market-scope 2x2)
@@ -60,11 +70,12 @@ assumption_atoms:
     relaxation_consequence: "Convex/saturating forcing rescales the maintenance budget (P4) without changing its form; non-Markov carryover adds an adstock kernel, recovering the classic scalar adstock as the 1-D projection."
     affects: [P1, P2, P4]
   - id: AA3
-    statement: "Distinctiveness sin^2(beta) indexes the depth/separation of the brand's stable point x* from the generic perceptual centroid (the off-generic component of x*). Imported from 2026au/2026av as the off-axis perceptual variance."
+    statement: "Distinctiveness s = sin^2(beta) is the off-generic energy share of the centered profile, a self-contained construct defined inline (NOT imported as a corpus dependency). Its link to well geometry — that larger s places x* at greater off-generic separation from the generic centroid, where the dense localized generic attractor adds LESS restoring curvature — is no longer ASSERTED but DERIVED from primitive P-CURV (see derivation EC.3 / curvature primitive). The central claim is now a theorem from a stated geometric primitive, not an imposed toy law."
     type: construct_link
     relaxable: true
-    relaxation_consequence: "If distinctiveness were unrelated to well geometry, P3 fails — this is the load-bearing assumption and the falsifier targets it."
+    relaxation_consequence: "If the generic attractor's curvature did NOT fall with separation (P-CURV false — e.g. a non-localized attractor), P3 fails — P-CURV is the central primitive and the falsifier now targets the curvature-vs-separation law g'(d)<0 directly on a fitted perceptual landscape."
     affects: [P3, P4]
+    derived_from: PRIM-CURV
   - id: AA4
     statement: "The centroid is identified from time-sliced atoms up to sampling error that is mean-zero and independent of the forcing schedule (no provenance-selection co-moving with spend). Used for P2 identification; threatened by AE-ID, addressed by ME-ID."
     type: measurement
@@ -90,8 +101,8 @@ propositions:
         citation_keys: [nerlove-1962-optimal-advertising-policy, vidale-1957-operations-research-advertising, sethi-1977-dynamic-optimal-control]
         citation_role: theoretical_predecessor
       - type: citation
-        anchor: "OU mean-reversion relaxation operator; non-ergodic-diffusion drift substrate."
-        citation_keys: [uhlenbeck-1930-theory-brownian-motion, zharnikov-2026-non-ergodic-brand-perception-diffusion, zharnikov-2026z-spectral-dynamics]
+        anchor: "OU mean-reversion relaxation operator + generic perceptual-diffusion Sigma dW (standard linear-SDE result, written out in EC.1; not corpus-dependent — the noise term is generic Brownian)."
+        citation_keys: [uhlenbeck-1930-theory-brownian-motion, ikeda-1989-stochastic-differential-equations]
         citation_role: methodological_source
     falsifier: "A category where perceptual-centroid response to a spend pulse shows no relaxation toward a fixed point (random walk / non-mean-reverting), within the C3 positive scope, refutes the forced-OU representation."
     body_sections: ["A Forced-Dynamics Model of Perception Formation"]
@@ -108,11 +119,11 @@ propositions:
         anchor: "ME-DEMO calibrated forced-OU run reproduces a post-pulse decay curve and recovers the seeded tau (existence proof, not field test)."
         source: ME-DEMO
       - type: citation
-        anchor: "Persistence-estimation toolkit the perceptual-state-space estimator is the analogue of (pre-empts 'why not a VAR on perceptual indices?')."
-        citation_keys: [dekimpe-1995-persistence-marketing-effects, ataman-2010-longterm-effect-marketing, naik-2003-understanding-impact-synergy]
+        anchor: "Persistence-estimation toolkit the perceptual-state-space estimator is the analogue of (pre-empts 'why not a VAR on perceptual indices?'); stabler-2023 = the modern brand-STRENGTH-OVER-TIME analogue (the dynamic perceptual-state object, post-2016); edeling-2016 = the firm-value persistence meta-analysis anchor."
+        citation_keys: [dekimpe-1995-persistence-marketing-effects, ataman-2010-longterm-effect-marketing, naik-2003-understanding-impact-synergy, stabler-2023-firm-communication-layoffs, edeling-2016-marketings-impact-firm]
         citation_role: methodological_source
     falsifier: "If the post-pulse centroid trajectory is not better fit by exponential relaxation than by a no-decay (persistent random walk) null, tau is not identified and P2 fails."
-    body_sections: ["Recovering the Decay Constant from Time-Sliced Atoms", "Empirical Strategy"]
+    body_sections: ["Recovering the Decay Constant from a Dated Perceptual Series", "Empirical Strategy"]
   - id: P3
     statement: "Distinctiveness lower-bounds persistence (THE UNIFYING ORDERING). The persistence time tau of a brand's off-generic perceptual displacement is increasing in its distinctiveness sin^2(beta): a more distinctive brand sits at a deeper, better-separated stable point whose basin resists relaxation toward the generic centroid, so its formed perception decays more slowly. d tau / d sin^2(beta) > 0. This is the same sin^2(beta) that is the perception-metamerism LOSS in 2026au and the self-selection SHARPNESS in 2026av — distinctiveness simultaneously sharpens reach and slows decay."
     type: mechanism
@@ -120,16 +131,15 @@ propositions:
     antecedents: [P1]
     assumptions: [AA1, AA3]
     evidence:
-      - type: analytic
-        anchor: "Minimal model (M1): the off-generic eigen-direction's restoring rate decreases as the well separates with sin^2(beta), so tau increases; derived in the 2-brand R^2 case."
+      - type: derivation
+        anchor: "EC.3 (PRIM-CURV): the off-generic direction is the SLOWEST restoring direction; a dense, localized generic attractor contributes curvature c*g(d) that DECREASES in off-generic separation d (g'(d)<0), so lambda_min(s)=kappa_b+c*g(d(s)) falls in s and tau=1/lambda_min rises: d tau/d sin^2(beta) > 0 DERIVED, not imposed. The 2-brand R^2 minimal model (M1) is the closed-form instance."
+        source: PRIM-CURV
       - type: simulation
-        anchor: "ME-DEMO: across the public-anchor-calibrated distinctiveness population, recovered tau is monotone increasing in sin^2(beta) (calibrated demonstration of the ordering)."
+        anchor: "ME-DEMO: across the public-anchor-calibrated distinctiveness population, recovered tau is monotone increasing in sin^2(beta) — an existence-proof DEMONSTRATION of the derived ordering (the toy law lambda(s)=lambda_0(1-kappa*s) is the local linearization of PRIM-CURV, not an imposed slope)."
         source: ME-DEMO
-      - type: citation
-        anchor: "Distinctiveness/off-axis-variance quantity imported and reused."
-        citation_keys: [zharnikov-2026au-correspondence-principle-brand, zharnikov-2026-spectral-metamerism-brand-perception-projection, zharnikov-2026av-reaching-a-perception]
-        citation_role: theoretical_predecessor
-    falsifier: "QUANTITATIVE: across >=20 brands after exogenous spend pulses, if recovered tau shows zero or negative correlation with measured sin^2(beta) — or if brands with sin^2(beta)>.6 require no less maintenance forcing than brands with sin^2(beta)<.3 — the ordering is refuted."
+      - type: note
+        anchor: "BROADER-PROGRAM CONTEXT (not a dependency): the same off-generic energy share appears as a perception-metamerism loss (2026au) and a self-selection sharpness (2026av) elsewhere in the author's program; P3 does NOT depend on those papers — distinctiveness is defined inline and the ordering is derived from PRIM-CURV."
+    falsifier: "QUANTITATIVE: across >=20 brands after exogenous spend pulses, if recovered tau shows zero or negative correlation with measured sin^2(beta) — or if brands with sin^2(beta)>.6 require no less maintenance forcing than brands with sin^2(beta)<.3 — the ordering is refuted. PRIMITIVE-LEVEL: if a fitted perceptual landscape shows the generic attractor's restoring curvature does NOT fall with separation (g'(d) >= 0), PRIM-CURV and hence P3 are refuted."
     body_sections: ["Distinctiveness and Persistence", "A Forced-Dynamics Model of Perception Formation"]
   - id: P4
     statement: "Maintenance forcing = relaxation loss at equilibrium. To HOLD the centroid at a target displacement d from the intrinsic stable point x*, the required steady-state forcing is F_hold = A d (the forcing exactly cancels the restoring force). The maintenance budget therefore equals the relaxation loss A d and falls to zero as the target approaches the brand's own stable point. A distinctive brand whose target perception IS its stable point (d ~ 0) needs ~0 maintenance forcing; an undifferentiated brand held away from a generic x* pays continuous forcing and collapses fast when it stops."
@@ -141,17 +151,64 @@ propositions:
       - type: analytic
         anchor: "Steady state of the forced OU: dX=0 in expectation => F = A(x_target - x*); the maintenance budget is the restoring force at the held displacement."
       - type: citation
-        anchor: "Mental-availability/adstock decay evidence that maintenance is needed and effects fade unrefreshed (the phenomenon P4 explains structurally)."
-        citation_keys: [sharp-2010-how-brands-grow, romaniuk-2016-how-brands-grow, gijsenberg-2011-adstock-advertising-decisions, broadbent-1979-one-way-tv-advertisements, binet-2013-long-short-of-it]
+        anchor: "Mental-availability/adstock decay evidence that maintenance is needed and effects fade unrefreshed (the phenomenon P4 explains structurally); becker-2023 = advertising-content/repeated-exposure dynamics supporting the forcing-and-refresh thread; aaker-1991 = the brand-equity-as-asset-to-maintain nod (static-equilibrium camp)."
+        citation_keys: [sharp-2010-how-brands-grow, romaniuk-2016-how-brands-grow, gijsenberg-2011-adstock-advertising-decisions, broadbent-1979-one-way-tv-advertisements, binet-2013-long-short-of-it, becker-2023-consistency-commonality-advertising, aaker-1991-managing-brand-equity]
         citation_role: empirical_anchor
     falsifier: "If maintenance spend required to hold perceptual position is uncorrelated with the target's displacement from the brand's estimated stable point (or with distinctiveness), P4 fails."
     body_sections: ["Maintenance as a Forcing Budget", "Managerial Translation"]
 
 # ---------------------------------------------------------------------------
+# Primitives (the defended structural assumptions the EC derivations rest on)
+# ---------------------------------------------------------------------------
+primitives:
+  - id: PRIM-CURV
+    name: "Dense-localized-attractor curvature primitive (P-CURV)"
+    statement: "The restoring curvature along the off-generic escape direction e at a brand's stable point is lambda_e(d) = kappa_b + c*g(d), where kappa_b>0 is the brand's intrinsic well curvature (fixed across brands at first order), c>0, and g(d) is the curvature CONTRIBUTED by the generic attractor at off-generic separation d, with g'(d)<0 (strictly decreasing in separation). JUSTIFICATION (not convenience): the generic attractor is a DENSE, LOCALIZED region of finite spatial scale ell (it is the mode of the brand population); any smooth localized attractor kernel — Gaussian U_gen = -G*exp(-||x-x_gen||^2/2ell^2), inverse-quadratic, or finite-support spline — has radial curvature that falls to zero for d>ell, the regime a distinctive brand lives in. So P-CURV is a property of the generic region being dense and localized, not of a functional form. Robustness check RC-KERNEL verifies kernel-independence."
+    justification_kernel: "U_gen(x) = -G*exp(-||x - x_gen||^2 / 2 ell^2); d^2 U_gen/dr^2|_d = (G/ell^2) exp(-d^2/2ell^2)(1 - d^2/ell^2) < 0-slope for d>ell."
+    derives: [AA3, P3]
+    falsifier: "On a fitted perceptual landscape, if the generic attractor's restoring curvature does NOT decrease with off-generic separation (g'(d) >= 0), P-CURV is false and P3 collapses."
+
 derivations:
   - id: M1
     statement: "Smallest sufficient model: two brands in R^2, one stable point each, linear restoring force with rate decreasing in (1 - sin^2(beta)) along the off-generic direction, a sinusoidal/box forcing pulse F(t). Yields analytically: (a) the closed-form exponential post-pulse relaxation (P2), (b) d tau/d sin^2(beta) > 0 (P3), (c) F_hold = A d at equilibrium (P4). Generalizes to R^8 by eigen-decomposition of A; the slowest eigen-direction sets tau. Realized numerically by ME-DEMO (fixed seed, public anchors)."
     supports: [P1, P2, P3, P4]
+
+# ---------------------------------------------------------------------------
+# Electronic Companion (results in body, proofs in the EC).
+# Body keeps the SDE displayed once, the four propositions as RESULTS, and the
+# managerial reading; the EC carries every derivation. So a referee verifies
+# each proposition line-by-line.
+# ---------------------------------------------------------------------------
+electronic_companion:
+  - id: EC.1
+    title: "The forced-OU solution"
+    statement: "From dX = [-A(X - x*) + F(t)] dt + Sigma dW, derive the closed form x_bar(t) = x* + e^{-At}(x_bar_0 - x*) + integral_0^t e^{-A(t-s)} F(s) ds, with the noise contributing a mean-zero Gaussian term of stationary covariance solving the Lyapunov equation A V + V A^T = Sigma Sigma^T. Standard linear-SDE result, steps written out (not imported)."
+    cites: [uhlenbeck-1930-theory-brownian-motion, ikeda-1989-stochastic-differential-equations]
+    supports: [P1]
+  - id: EC.2
+    title: "Post-pulse relaxation and the tau estimator"
+    statement: "Set F=0 after the pulse; project the centroid displacement onto the slowest eigen-direction of A; obtain ||x_bar(t) - x*|| proportional to exp(-t/tau) with tau = 1/lambda_min(A) exactly. Derive the log-linear regression estimator (regress log displacement on time) and its bias under the three identification threats (competitive co-forcing, provenance sampling error, reverse causality), upgrading P2 from assertion to derivation."
+    cites: [dekimpe-1995-persistence-marketing-effects, ataman-2010-longterm-effect-marketing]
+    supports: [P2]
+  - id: EC.3
+    title: "The distinctiveness->well-depth link (closes AA3 / review WARNING AA3)"
+    statement: "Derive d tau/d sin^2(beta) > 0 from PRIM-CURV + the linking lemma d=d(s), d'(s)>0: lambda_min(s)=kappa_b+c*g(d(s)), so dlambda_min/ds = c*g'(d)*d'(s) < 0 and dtau/ds = -(1/lambda_min^2)(dlambda_min/ds) > 0. Recover the toy law lambda(s)=lambda_0(1-kappa*s) as the LOCAL LINEARIZATION about an operating separation. The single highest-value change in the rewrite: converts the headline ordering from imposed to derived. Drafted in ec3_curvature_primitive_derivation.md."
+    source: PRIM-CURV
+    supports: [P3, AA3]
+    draft_file: "ec3_curvature_primitive_derivation.md"
+  - id: EC.4
+    title: "The maintenance-budget identity"
+    statement: "Steady-state of the forced OU: dX=0 in expectation => F_hold = A(x_target - x*) = A d, with the zero-at-the-stable-point corollary (F_hold -> 0 as d -> 0). The 2.17x quartile maintenance-forcing ratio emerges as a model property of the calibrated population."
+    supports: [P4]
+  - id: EC.5
+    title: "Nesting: scalar Bayesian learning as the 1-D belief-interpreted projection (closes review WARNING W1)"
+    statement: "Project the K-dim forced OU onto a single perceived-quality eigen-axis u of A (eigenvalue lambda_u): q(t)=<u, x_bar - x*> obeys dq = (-lambda_u q + f(t)) dt + sigma_u dW, a 1-D linear-Gaussian state equation with scalar forcing f=<u,F>. Give f an information reading (a campaign delivers signals about true quality theta); the Erdem-Keane posterior-mean belief update dm = K(t)(signal - m) dt is exactly this scalar mean-reverting equation with the reversion rate = Kalman gain / forgetting rate and the target = signal-implied belief. So the forced-OU model CONTAINS scalar Bayesian quality learning as its 1-D belief-interpreted projection, exactly as it contains Nerlove-Arrow goodwill (q=goodwill, lambda_u=depreciation, f=spend response) and Vidale-Wolfe response. What the projection CANNOT recover is P3: a single axis has no off-generic direction, so dtau/ds is undefined in the scalar reduction. Upgrades AE-LEARN from asserted to derived."
+    cites: [erdem-1996-decisionmaking-under-uncertainty, nerlove-1962-optimal-advertising-policy, vidale-1957-operations-research-advertising]
+    supports: [P1, AE-LEARN]
+  - id: RC-KERNEL
+    title: "Kernel-robustness of P-CURV"
+    statement: "Verify g'(d)<0 (and hence the tau-ordering) for two alternate localized attractor kernels — an inverse-quadratic and a finite-support spline — so a referee cannot dismiss the ordering as Gaussian-specific."
+    supports: [P3, PRIM-CURV]
 
 methods:
   - id: ME-DEMO
@@ -193,7 +250,7 @@ robustness_checks:
 alternative_explanations:
   - id: AE-LEARN
     statement: "Scalar Bayesian learning (Erdem & Keane 1996) could be said to already model advertising-as-input updating brand beliefs with decay."
-    rebuttal: "Erdem-Keane update a SCALAR perceived quality via Bayesian learning; they cannot formulate a forced MULTI-DIMENSIONAL SDE on a perceptual manifold, and tau here is identified as the OU mean-reversion of the CENTROID (a geometric relaxation), where their Kalman approach targets a scalar latent. The distinctiveness->tau ordering has no analogue in scalar learning. Formal comparison table in the paper."
+    rebuttal: "NESTING (not mere 'differs'): the forced-OU vector model CONTAINS scalar Bayesian learning as its 1-D, belief-interpreted special case. Project the forced-OU centroid onto a single perceived-quality dimension and read F(t) as an information-accumulation input; the resulting 1-D forced mean-reversion with a precision-weighted update IS the Erdem-Keane scalar-quality updating. So the vector-field model does not merely differ from scalar learning — it nests it, exactly as it nests Nerlove-Arrow goodwill and Vidale-Wolfe response as 1-D shadows. What the 1-D projection cannot recover is the distinctiveness->tau ordering (P3), which is a property of the OFF-generic eigen-direction of A and has no scalar analogue: a single dimension has no 'off-generic' geometry. The nesting is DERIVED (not asserted) in EC.5: the 1-D projection q=<u,x_bar-x*> obeys a scalar OU dq=(-lambda_u q + f) dt + sigma_u dW that, under an information reading of f, IS the Erdem-Keane precision-weighted belief update."
     citation_keys: [erdem-1996-decisionmaking-under-uncertainty]
   - id: AE-LATENT
     statement: "A simpler latent-state model (generic state-space / VAR on perceptual indices) might suffice without the spectral geometry."
@@ -215,16 +272,22 @@ corpus_precedents:
     note: "Kinematic predecessor (R18): drift SDE, velocity/acceleration, phase space, the undeveloped 'Spectral force' + 'Perception Lagrangian' stubs this paper develops into forcing+relaxation."
   - key: zharnikov-2026av-reaching-a-perception
     relation: parent_concept
-    note: "Defers the formation mode (its boundary L1) to this paper; supplies the atom time-slicing (provenance-as-address) used for tau-recovery and the sin^2(beta) distinctiveness reused in P3."
+    note: "Standalone — demoted to a single COMPANION FOOTNOTE, OUT of the citation load path. The reach companion defers the formation mode to this paper and shares the time-sliced-perceptual-series data requirement; distinctiveness is now defined INLINE here, not imported. One forward mention in a footnote only."
   - key: zharnikov-2026au-correspondence-principle-brand
     relation: builds_on
-    note: "Supplies the off-axis-variance sin^2(beta) metamerism quantity that P3 reuses as the persistence driver."
+    note: "Standalone — CUT from the load path; folded into a single 'this paper is part of a broader program' remark (the off-generic energy share appears as a metamerism loss there). Not support for any proposition."
   - key: zharnikov-2026-spectral-metamerism-brand-perception-projection
     relation: builds_on
-    note: "Perception-metamerism off-axis variance = the distinctiveness reused as the well-depth index."
+    note: "Standalone — same — folded into the single broader-program remark, not a supporting cite."
   - key: zharnikov-2026-non-ergodic-brand-perception-diffusion
     relation: builds_on
-    note: "The drift-diffusion SDE substrate the forced OU extends."
+    note: "Standalone — DROPPED from the load path. The Sigma dW term is generic Brownian diffusion; cite the standard SDE/diffusion literature (ikeda-1989, uhlenbeck-1930) instead. At most a one-line footnote."
+  - key: zharnikov-2026z-spectral-dynamics
+    relation: parent_concept
+    note: "Standalone — DROPPED as a dependency. State the unforced OU baseline directly and cite the standard OU literature; the kinematics are 'treated separately' in at most a one-line footnote, not the argument load path."
+  - key: zharnikov-2026-spectral-brand-theory-computational-framework
+    relation: builds_on
+    note: "The ONE retained self-citation in the load path — Spectral Brand Theory named ONCE as the empirical instantiation of the K=8 fixed perceptual basis. The model is stated on a generic fixed K-dimensional perceptual space; SBT is one instance, not the state-space definition."
 
 external_anchors:
   - key: nerlove-1962-optimal-advertising-policy
@@ -280,11 +343,43 @@ external_anchors:
     doi: "10.1177/002224299305700101"
     role: theoretical_predecessor
     status: already_registered
-    note: "Brand-knowledge structures as the psychological substrate the potential well mu(x) / stable point formalizes; the static long-run equilibrium of CBBE."
+    note: "Brand-knowledge structures as the psychological substrate the potential well mu(x) / stable point formalizes; the static long-run equilibrium of CBBE. Also the construct-validity anchor for the standalone K-dim perceptual-space note."
+  - key: ikeda-1989-stochastic-differential-equations
+    citation: "Ikeda, N., & Watanabe, S. (1989). Stochastic Differential Equations and Diffusion Processes (2nd ed.). North-Holland."
+    role: methodological_source
+    status: already_registered
+    note: "Standalone replacement — standard linear-SDE / diffusion-process text for EC.1's forced-OU solution and the generic Sigma dW term (replaces the self-cited diffusion substrate). Reused existing substrate source per rule 5c."
+  - key: aaker-1997-dimensions-brand-personality
+    citation: "Aaker, J. L. (1997). Dimensions of Brand Personality. Journal of Marketing Research, 34(3), 347-356."
+    doi: "10.2307/3151897"
+    role: theoretical_predecessor
+    status: already_registered
+    note: "Standalone — published perceptual-measurement construct-validity anchor (a brand perception has factor structure) for the 'fixed K-dimensional perceptual space' note — replaces leaning on the SBT paper for the state-space legitimacy."
+  - key: stabler-2023-firm-communication-layoffs
+    citation: "Stäbler, S., Himme, A., Edeling, A., & Backhaus, M. (2023). How firm communication affects the impact of layoff announcements on brand strength over time. International Journal of Research in Marketing, 40(3), 700-723."
+    doi: "10.1016/j.ijresmar.2023.06.002"
+    role: empirical_anchor
+    status: registered
+    note: "Headline recent cite (registered + Crossref-verified 2026-06-20). Brand strength OVER TIME = the dynamic-perceptual-state object, post-2016; persistence-econometrics camp."
+  - key: becker-2023-consistency-commonality-advertising
+    citation: "Becker, M., & Gijsenberg, M. J. (2023). Consistency and commonality in advertising content: Helping or Hurting? International Journal of Research in Marketing, 40(1), 128-145."
+    doi: "10.1016/j.ijresmar.2022.05.004"
+    role: empirical_anchor
+    status: registered
+    note: "Secondary recent cite (registered + Crossref-verified 2026-06-20). Advertising-content dynamics / repeated exposure; supports the forcing-and-refresh thread (P4)."
+  - key: aaker-1991-managing-brand-equity
+    citation: "Aaker, D. A. (1991). Managing Brand Equity. Free Press."
+    role: theoretical_predecessor
+    status: already_registered
+    note: "One-clause nod alongside Keller (1993) in the static-equilibrium camp. Already in substrate (ISBN 9780029001011)."
+  - key: edeling-2016-marketings-impact-firm
+    citation: "Edeling, A., & Fischer, M. (2016). Marketing's Impact on Firm Value: Generalizations from a Meta-Analysis. Journal of Marketing Research, 53(4), 515-534."
+    doi: "10.1509/jmr.14.0046"
+    role: empirical_anchor
+    status: already_registered
+    note: "Firm-value persistence meta-analysis anchor. Optional signal in the persistence camp."
 
 open:
-  - "WHEN THE BRAND SPECTROMETER IS PUBLISHED: restore named-instrument references genericized to 'an atom-based perception corpus' / 'time-sliced atoms' and add its DOI (paralleling 2026av)."
+  - "WHEN THE BRAND SPECTROMETER IS PUBLISHED: swap the generic 'any dated perceptual-tracking series' phrasing for the named instrument + its DOI (paralleling 2026av). Until then the placeholder stands; its completion triggers the swap."
   - "Phase-2 DR (2 queries, deferred unless drafting needs them): (E1) advertising-IV identification precedents (ad-tax / political-cycle instruments); (E2) perceptual-panel feasibility (YouGov BrandIndex / Kantar weekly batteries + GRP merge)."
-  - "Venue: IJRM primary (user GO kept venue); Marketing Science the strongest alternate for the SDE+estimator (decide at submission)."
-  - "Confirm Gijsenberg-Verhoef 2023 (IJRM) + Edeling 2024 positioning anchors via Crossref before citing (DR-UNVERIFIED)."
 

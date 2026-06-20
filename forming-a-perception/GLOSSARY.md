@@ -20,7 +20,7 @@ _Terms used by **2026aw** (Forming a Perception: Campaigns as Forcing Functions 
   - first use: Maintenance as a Forcing Budget
 - **Perception-decay time constant** (write: `perception-decay time constant`)
   - The relaxation time tau = 1 / lambda_min(A) of a brand's perception cloud — the inverse of the slowest eigenvalue of the restoring operator — governing how fast the centroid displacement relaxes toward the intrinsic stable point once forcing stops (||x_bar(t) - x*|| ~ exp(-t/tau)). The SBT-native reading of advertising adstock/mental-availability decay; recoverable from a time-sliced atom series spanning a spend pulse and its aftermath.
-  - first use: Recovering the Decay Constant from Time-Sliced Atoms
+  - first use: Recovering the Decay Constant from a Dated Perceptual Series
 - **Perceptual stable point** (write: `perceptual stable point`)
   - The intrinsic equilibrium x* of a brand's perception cloud — the perception it relaxes toward when unforced — equivalently the bottom of the potential well of the drift field. A distinctive brand's stable point is deep and well-separated from the generic perceptual centroid; the long-run equilibrium of the brand-knowledge structure the static brand-equity tradition describes.
   - first use: A Forced-Dynamics Model of Perception Formation

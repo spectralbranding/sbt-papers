@@ -24,21 +24,22 @@ meta:
   - Ornstein-Uhlenbeck process
   - advertising decay
   - brand distinctiveness
-  - Spectral Brand Theory
-  abstract: 'A companion paper routes a signal to a perceptual cohort that already exists and defers the
-    distinct mode that moves the perception itself — demand creation and belief maintenance — to a dynamics
-    treatment. This paper develops that mode. It represents a campaign as a time-varying forcing function
-    on the brand perception cloud, whose centroid follows a forced Ornstein-Uhlenbeck process on the eight-dimensional
-    perceptual manifold: formation is the forced transient toward a target, maintenance is sustained forcing
-    against a restoring force, and the practitioner observation that perception decays when advertising
-    stops is the unforced relaxation toward a brand-specific stable point at a measurable perception-decay
-    time constant. The instrument recovers that constant from time-sliced atoms spanning a spend pulse.
-    The unifying result ties formation to reach: a brand''s off-generic distinctiveness — the same quantity
-    that is a metamerism loss in the parent theory and a self-selection sharpness in the reach companion
-    — lower-bounds the persistence of its formed perception, so a distinctive brand holds its perception
-    with less forcing and decays more slowly. A calibrated simulation demonstrates the ordering; the confirmatory
-    panel design is specified. It keeps the metrology posture: the instrument measures the forcing-versus-relaxation
-    budget; the manager runs the campaign.'
+  - marketing-mix dynamics
+  abstract: 'A marketing campaign is an exogenous force on a multi-dimensional perceptual state, and the
+    decay observed when advertising stops is the unforced relaxation of that state toward a brand-specific
+    stable point. This paper formalizes perception formation and maintenance as a forced dynamical system
+    whose results follow from the stochastic dynamics, not any particular instrument. The centroid of
+    a brand''s perception cloud follows a forced Ornstein-Uhlenbeck process on a fixed perceptual space:
+    formation is the forced transient toward a target, maintenance is sustained forcing against a restoring
+    force, and decay is the unforced relaxation at a measurable perception-decay time constant, recoverable
+    from a dated perceptual-tracking series spanning a spend pulse. The model nests the scalar advertising-stock
+    and Bayesian-learning traditions as its one-dimensional projection. Its unifying result ties formation
+    to reach: a brand''s off-generic distinctiveness lower-bounds the persistence of its formed perception,
+    because a more distinctive brand sits farther outside the dense generic attractor, where less restoring
+    curvature is added to its well — an ordering derived from a stated curvature primitive and demonstrated
+    as an existence proof in a calibrated simulation. An identification strategy using exogenous advertising
+    shifters is outlined. The instrument measures the forcing-versus-relaxation budget; the manager runs
+    the campaign.'
 claims:
 - id: P1
   type: proposition
@@ -104,12 +105,12 @@ methodology:
     procedure as the public demo — for >=30 brands over 24-36 months merged with GRP/spend data at the
     same grain; recover per-brand tau from post-pulse decay and test d tau/d sin^2(beta) > 0 with power
     >.8 for a .25 correlation. Constructs measured at the theory''s grain (centroid in spectral space).
-    CAUSAL IDENTIFICATION design (Grok-gap-2, pre-committed): to recover F and tau causally, instrument
-    own forcing with EXOGENOUS shifters — advertising-tax changes, competitor scandals, political-ad-cycle
-    crowd-out of ad inventory — and run a PLACEBO on non-advertised perceptual dimensions (which should
-    show no forced response). Addresses (1) omitted competitive forcing, (2) atom-provenance measurement
-    error, (3) reverse causality (spend ramps when perception decays). Ranking by feasibility: natural
-    experiments > IV (political cycles) > full structural SDE estimation (avoid as primary).'
+    CAUSAL IDENTIFICATION design (pre-committed): to recover F and tau causally, instrument own forcing
+    with EXOGENOUS shifters — advertising-tax changes, competitor scandals, political-ad-cycle crowd-out
+    of ad inventory — and run a PLACEBO on non-advertised perceptual dimensions (which should show no
+    forced response). Addresses (1) omitted competitive forcing, (2) atom-provenance measurement error,
+    (3) reverse causality (spend ramps when perception decays). Ranking by feasibility: natural experiments
+    > IV (political cycles) > full structural SDE estimation (avoid as primary).'
 acceptance:
 - claim_id: P1
   criterion: Holds if forced-SDE representation.
@@ -122,19 +123,21 @@ acceptance:
     by a no-decay (persistent random walk) null, tau is not identified and P2 fails.
 - claim_id: P3
   criterion: Holds if distinctiveness lower-bounds persistence (THE UNIFYING ORDERING).
-  falsification: 'QUANTITATIVE (Grok): across >=20 brands after exogenous spend pulses, if recovered tau
-    shows zero or negative correlation with measured sin^2(beta) — or if brands with sin^2(beta)>.6 require
-    no less maintenance forcing than brands with sin^2(beta)<.3 — the ordering is refuted.'
+  falsification: 'QUANTITATIVE: across >=20 brands after exogenous spend pulses, if recovered tau shows
+    zero or negative correlation with measured sin^2(beta) — or if brands with sin^2(beta)>.6 require
+    no less maintenance forcing than brands with sin^2(beta)<.3 — the ordering is refuted. PRIMITIVE-LEVEL:
+    if a fitted perceptual landscape shows the generic attractor''s restoring curvature does NOT fall
+    with separation (g''(d) >= 0), PRIM-CURV and hence P3 are refuted.'
 - claim_id: P4
   criterion: Holds if maintenance forcing = relaxation loss at equilibrium.
   falsification: If maintenance spend required to hold perceptual position is uncorrelated with the target's
     displacement from the brand's estimated stable point (or with distinctiveness), P4 fails.
 contradictions: []
 limitations:
-- description: 'JUMP-TERM / SCANDAL boundary (Grok): distinctive brands CAN decay fast if an EXOGENOUS
-    shock RELOCATES the stable point x* itself (product-harm crisis, scandal). The forced-OU model holds
-    x* fixed; a Poisson-jump extension (jump-diffusion relocating x*) is flagged in the discussion as
-    a boundary extension, not developed. Connects to the 2026z stationarity/crisis remark and coherence-resilience.'
+- description: 'JUMP-TERM / SCANDAL boundary: distinctive brands CAN decay fast if an EXOGENOUS shock
+    RELOCATES the stable point x* itself (product-harm crisis, scandal). The forced-OU model holds x*
+    fixed; a Poisson-jump extension (jump-diffusion relocating x*) is flagged in the discussion as a boundary
+    extension, not developed. Connects to the 2026z stationarity/crisis remark and coherence-resilience.'
   severity: moderate
   addressable: true
 - description: 'Proprietary-instrument / construct-validity objection (predicted lead reviewer objection):
