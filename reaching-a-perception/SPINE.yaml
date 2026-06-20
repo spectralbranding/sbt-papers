@@ -90,6 +90,10 @@ propositions:
         anchor: "Metrology/management split inherited from the parent correspondence principle."
         citation_keys: [zharnikov-2026au-correspondence-principle-brand]
         citation_role: theoretical_predecessor
+      - type: citation
+        anchor: "Reach/frequency hand-off: the media-scheduling tradition the contract hands off to once the target and bridge cost are supplied — the instrument stops at the target and bridge cost; reach/frequency planning is the management layer the JAR audience owns."
+        citation_keys: [naik-1998-planning-media-schedules]
+        citation_role: methodological_context
     falsifier: "A setting where a single fixed bridge strictly dominates the contract's selection across all cohort geometries would refute the value of conditioning the bridge on cohort geometry."
     body_sections: ["The Measurement-to-Activation Handoff Contract"]
   - id: P2
@@ -134,6 +138,14 @@ propositions:
       - type: citation
         anchor: "Empirical benchmark: address-based personalization lift is modest (calibrates the tailwind)."
         citation_keys: [yeo-2025-personalized-advertising-meta-analysis]
+        citation_role: empirical_anchor
+      - type: citation
+        anchor: "Targeting-value economics: the proxy-join loss is situated against the known value-of-targeting results — addressable targeting has positive but bounded value, so the loss framing measures the value-of-information gap rather than denying targeting works."
+        citation_keys: [iyer-2005-targeting-advertising]
+        citation_role: theoretical_predecessor
+      - type: citation
+        anchor: "Measured identifier-deprecation evidence hardening the tailwind: the value of offsite/cross-site tracking data to advertisers is measurably positive but is the quantity being removed by ATT/cookie deprecation — the addressability SBT does not depend on is empirically contracting."
+        citation_keys: [wernerfelt-2025-offsite-tracking-value]
         citation_role: empirical_anchor
     falsifier: "Observe targeting via a proxy strictly outperform targeting on the true perceptual cohort (same budget) outside measurement-cost differences — Blackwell forbids this on information alone, so a robust such finding would refute P3."
     body_sections: ["Perception-to-Proxy Join and Its Quantified Loss"]
@@ -332,6 +344,23 @@ external_anchors:
     status: registered
     url: "https://privacysandbox.google.com/private-advertising/topics"
     note: "Industry's own cohort/interest-based (not individual) pivot — direct evidence for the tailwind. VERIFIED 2026-06-19 (URL HTTP 200)."
+  - key: iyer-2005-targeting-advertising
+    citation: "Iyer, G., Soberman, D., & Villas-Boas, J. M. (2005). The Targeting of Advertising. Marketing Science, 24(3), 461-476."
+    doi: "10.1287/mksc.1050.0117"
+    role: theoretical_predecessor
+    status: registered
+    note: "VERIFIED 2026-06-20 (Crossref). Targeting-value economics anchor flanking P3: addressable targeting has positive but bounded value, so the proxy-join loss frames the value-of-information gap rather than denying targeting works. Added in the WARNINGs-fold revision."
+  - key: wernerfelt-2025-offsite-tracking-value
+    citation: "Wernerfelt, N., Tuchman, A., Shapiro, B. T., & Moakler, R. (2025). Estimating the Value of Offsite Tracking Data to Advertisers: Evidence from Meta. Marketing Science, 44(2), 268-286."
+    doi: "10.1287/mksc.2023.0274"
+    role: empirical_anchor
+    status: registered
+    note: "VERIFIED 2026-06-20 (Crossref). The ONE measured identifier-deprecation citation hardening the tailwind from assertion to evidence: the value of offsite tracking data to advertisers is measurably positive but is the quantity removed by ATT/cookie deprecation. Source of the ATT->Meta offsite-tracking value figure the companion article uses. Published Marketing Science version (NBER w32765 / SSRN 4915952 are the working-paper twins). Added in the WARNINGs-fold revision."
+  - key: naik-1998-planning-media-schedules
+    citation: "Naik, P. A., Mantrala, M. K., & Sawyer, A. G. (1998). Planning Media Schedules in the Presence of Dynamic Advertising Quality. Marketing Science, 17(3), 214-235."
+    role: methodological_context
+    status: already_registered
+    note: "Reused (already in the substrate) for the reach/frequency hand-off nod to the JAR media-planning audience: the instrument supplies the target and bridge cost; media-scheduling / reach-frequency planning is the management layer it hands off to. Added in the WARNINGs-fold revision."
 
 open:
   - "WHEN THE BRAND SPECTROMETER IS PUBLISHED: restore the named-instrument references that were genericized to 'an atom-based perception corpus' / 'the atomic-perception measurement architecture' (paper.md provenance-as-address §, figure caption, Limitations, Data-and-Code-Availability; SPINE thesis (c), ME2, L2) and add its citation/DOI. De-branded 2026-06-19 because the Brand Spectrometer is still WIP (potential cooperation with Jared Richardson / ARA) and not a public artifact."
