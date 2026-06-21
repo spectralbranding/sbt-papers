@@ -176,6 +176,7 @@ TOL_RECONCILED_CV = 0.003
 TOL_RECONCILED_PCT = 1.0
 TOL_RECONCILED_MEAN = 0.0015
 
+
 # ---------------------------------------------------------------------------
 # Canonical profiles, simplex-normalized (sum = 1)
 # ---------------------------------------------------------------------------
@@ -551,7 +552,9 @@ def main():
     r2_disp = round(m_r2, 3)
     reduction_disp = (r1_disp - r2_disp) / r1_disp * 100.0
     reduction_raw = (m_r1 - m_r2) / m_r1 * 100.0
-    print(f"  R1 mean = {m_r1:.4f} (display {r1_disp}), R2 mean = {m_r2:.4f} (display {r2_disp})")
+    print(
+        f"  R1 mean = {m_r1:.4f} (display {r1_disp}), R2 mean = {m_r2:.4f} (display {r2_disp})"
+    )
     print(f"  reduction from raw means     = {reduction_raw:.2f}%")
     print(f"  reduction from Table 3 values= {reduction_disp:.2f}%  (paper convention)")
     check("R1->R2 reduction (%)", PAPER_R1_R2_REDUCTION_PCT, reduction_disp, TOL_PCT)
@@ -629,7 +632,9 @@ def main():
         f"             (gap <= one unit in the last printed digit; see"
         f" FROZEN_RECONCILED note in this file)."
     )
-    print(f"  => {n_ok}/{n_total} reported values reproduce from the dataset of record.")
+    print(
+        f"  => {n_ok}/{n_total} reported values reproduce from the dataset of record."
+    )
     if mismatches:
         print("\n  UNRECONCILED MISMATCHES (for author decision):")
         for lbl in mismatches:
