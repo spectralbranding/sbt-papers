@@ -14,7 +14,7 @@ Working Paper v1.3.0 – April 2026 (revised June 2026)
 
 Brand positioning research faces a structural measurement problem: every observer cohort perceives a brand through a distinct spectral weight profile, yet conventional methods treat inter-cohort variation as noise. Brand triangulation reframes this variation as geometric information. Drawing on GPS positioning theory, the framework maps observer cohorts to satellites, brand emission profiles to receiver location, and cohort biases to clock error. The central innovation is Perception DOP (PDOP), a scalar computed solely from proposed cohort weight profiles that quantifies expected estimation precision before data collection. The approach further introduces differential brand measurement using reference brands to correct systematic observer bias and establishes identifiability conditions linking spectral metamerism to geometric underdetermination.
 
-The framework is illustrated with dimensional-weight data from six large language models (4,860 observations) and validated through Monte Carlo simulation (2,000 trials) confirming the theoretical PDOP–MSE power-law relationship (log-log slope = .995, R² = .994, Spearman ρ = .996). Brand Function specifications reduce dimensional collapse by 20% in the LLM constellation. By converting multi-observer disagreement into a primary source of positioning information, the framework supplies pre-study design criteria, bias-correction protocols, and dynamic tracking machinery that together upgrade brand measurement from opinion aggregation to geometric estimation.
+The framework is illustrated with dimensional-weight data from six large language models (4,860 observations) and validated through Monte Carlo simulation (2,000 trials) confirming the theoretical PDOP–MSE power-law relationship (log-log slope = 1.000, R² = .993, Spearman ρ = .992). Brand Function specifications reduce dimensional collapse by 20% in the LLM constellation. By converting multi-observer disagreement into a primary source of positioning information, the framework supplies pre-study design criteria, bias-correction protocols, and dynamic tracking machinery that together upgrade brand measurement from opinion aggregation to geometric estimation.
 
 **Keywords**: brand positioning, measurement geometry, dilution of precision, observer heterogeneity, optimal design, differential correction
 
@@ -234,7 +234,7 @@ PDOP_simplex ≥ √(7/K)
 
 The ratio PDOP_simplex / PDOP_sphere = √(7/8) ≈ .935 quantifies the correction: a properly constrained derivation predicts PDOP about 6.5% smaller than the unconstrained sphere estimate.
 
-The practical consequence is modest. Translating the bound into the §5.3 power-analysis result, K* scales as PDOP², so the simplex correction reduces the required cohort count by 7/8 ≈ 12.5% relative to the unconstrained estimate. Qualitative conclusions — that K* is in the dozens rather than hundreds for typical precision targets, that diversity dominates within-cohort sample size — are unaffected. The §9.6 numerical optimization result PDOP = .388 at K = 9 sits well below the unit-normalized simplex floor (which evaluates to .882 at K = 9 in the per-cohort-normalized convention used here), reflecting the additional precision available when weight magnitudes are themselves design variables rather than fixed at unit norm.
+The practical consequence is modest. Translating the bound into the §5.3 power-analysis result, K* scales as PDOP², so the simplex correction reduces the required cohort count by 7/8 ≈ 12.5% relative to the unconstrained estimate. Qualitative conclusions — that K* is in the dozens rather than hundreds for typical precision targets, that diversity dominates within-cohort sample size — are unaffected. The §9.6 numerical optimization result PDOP = .913 at K = 9 sits just above the unit-magnitude simplex floor (which evaluates to √(7/9) ≈ .882 at K = 9 in the per-cohort-normalized convention used here): even when weight magnitudes are treated as free design variables, the achievable simplex-constrained optimum is close to the unit-magnitude tangent-space floor, confirming that near-optimal configurations exist within the simplex feasible region.
 
 ### 3.3 Sensitivity Plateau
 
@@ -603,24 +603,25 @@ Brand stimuli are categorical pairs (global vs. local) rather than a cross-categ
 
 To provide a formal statistical test for the claim that Perception DOP predicts measurement quality under the linear observation model, we conducted a Monte Carlo simulation with 2,000 independent trials. We note at the outset that this is a *mathematical confirmation* of the DOP–MSE relationship under the linear-model data-generating process: the simulation confirms that the GPS theory's prediction PDOP^2·σ^2 = MSE is recovered when the model holds. Whether the relationship transfers to real brand measurement studies depends on the linear observation model being a sufficiently good approximation to human and AI cohort response processes — which is an empirical question for the Option B human-cohort study identified in §11. Each trial generates a random ground-truth brand position in R^8, a random observer weight matrix W with N in {9, 10, 12, 15, 20} cohorts and varying geometric diversity (clustered, random, or near-optimal), and 20 replicated noisy observations y_k = w_k^T x + epsilon_k with sigma = 0.5. The brand position is estimated via OLS, and mean squared error (MSE) is computed against the known ground truth.
 
-The theoretical prediction from the GPS-SBT analogy is that MSE = sigma^2 * PDOP^2. Table 5 reports the simulation results.
+All PDOP values reported in this section use the per-cohort-normalized convention PDOP = sqrt(trace(C) / N), consistent with the §3.2 derivation, the 1/sqrt(N) floor below, and the companion Figure-2 script. Under this convention the exact Cramér-Rao relation for the OLS estimator is RMSE = sigma * sqrt(N) * PDOP, equivalently MSE = sigma^2 * N * PDOP^2 = sigma^2 * trace(C). Table 5 reports the simulation results.
 
 Table 5: Monte Carlo Confirmation of PDOP Predictive Validity (2,000 Trials, 20 Replications Each).
 
 | Test | Statistic | Value | Expected |
 |---|---|---|---|
-| MSE ~ sigma^2 * PDOP^2 | Slope | .968 [.945, .991] | 1.000 |
-| MSE ~ sigma^2 * PDOP^2 | R^2 | .926 | 1.000 |
-| MSE ~ sigma^2 * PDOP^2 | p-value | < 10^{-300} | -- |
-| log(RMSE) ~ log(PDOP) | Slope | .995 [.981, 1.009] | 1.000 |
-| log(RMSE) ~ log(PDOP) | R^2 | .994 | 1.000 |
-| Spearman rank | rho | .996 | 1.000 |
+| MSE ~ sigma^2 * N * PDOP^2 | Slope | .880 [.749, 1.138] | 1.000 |
+| MSE ~ sigma^2 * N * PDOP^2 | R^2 | .926 | 1.000 |
+| MSE ~ sigma^2 * N * PDOP^2 | p-value | < 10^{-300} | -- |
+| log(RMSE) ~ log(PDOP magnitude) | Slope | 1.000 [.996, 1.003] | 1.000 |
+| log(RMSE) ~ log(PDOP magnitude) | R^2 | .993 | 1.000 |
+| Spearman rank | rho | .992 | 1.000 |
+| RMSE / (sigma * sqrt(N) * PDOP) | Mean ratio | .996 | 1.000 |
 
-*Note.* 95% confidence intervals (shown in brackets) computed via bootstrap (1,000 resamples). Full results in R17_pdop_simulation_results.json.
+*Note.* 95% confidence intervals (shown in brackets) computed via bootstrap (1,000 resamples). The log-log regression uses the un-normalized PDOP magnitude sqrt(trace(C)) as the regressor so that the per-cohort √N intercepts collapse and the power-law slope is read off cleanly; the mean-ratio row is the direct per-trial confirmation of the exact Cramér-Rao relation RMSE = sigma * sqrt(N) * PDOP. Full results reproduce from R17_pdop_simulation.py (SEED = 42).
 
-The log-log regression slope of .995 (expected 1.0) confirms the power-law relationship: RMSE scales linearly with PDOP, as GPS theory predicts. The slight departure from unity in the MSE regression slope (.968) reflects the finite number of replications per trial.
+The log-log regression slope of 1.000 (R^2 = .993) confirms the power-law relationship: RMSE scales linearly with PDOP magnitude, as GPS theory predicts, and the per-trial ratio RMSE / (sigma * sqrt(N) * PDOP) concentrates at .996 — within sampling error of the exact prediction 1.0. The departure from unity in the pooled MSE regression slope (.880) reflects the heavy-tailed PDOP distribution across the three geometry priors: a small number of near-singular clustered configurations exert high leverage on the squared-error scale, which the rank-based and log-scale tests are insensitive to.
 
-Per-dimension validation confirms that the relationship holds across all eight SBT dimensions: Spearman correlations between per-dimension DOP^2 and per-dimension MSE range from .978 to .990 (all p < 10^{-300}). Dimensions with higher DOP — those less geometrically resolved by the observer configuration — produce proportionally larger estimation errors.
+Per-dimension validation confirms that the relationship holds across all eight SBT dimensions: Spearman correlations between per-dimension DOP^2 and per-dimension MSE fall in the band .985 to .995 (all p < 10^{-300}). Dimensions with higher DOP — those less geometrically resolved by the observer configuration — produce proportionally larger estimation errors.
 
 Table 6 summarizes RMSE by PDOP quartile.
 
@@ -628,14 +629,14 @@ Table 6: RMSE by PDOP Quartile (Binned Analysis).
 
 | Quartile | PDOP range | Mean RMSE | Std RMSE | n |
 |---|---|---|---|---|
-| Q1 (best geometry) | .00 – .84 | .192 | .075 | 500 |
-| Q2 | .84 – 2.04 | .702 | .179 | 499 |
-| Q3 | 2.04 – 4.71 | 1.644 | .428 | 500 |
-| Q4 (worst geometry) | 4.71 – 39.71 | 4.579 | 2.684 | 500 |
+| Q1 (best geometry) | .64 – 2.07 | 2.779 | .776 | 500 |
+| Q2 | 2.07 – 5.09 | 5.614 | 1.373 | 500 |
+| Q3 | 5.09 – 17.64 | 17.893 | 8.706 | 500 |
+| Q4 (worst geometry) | 17.64 – 379.56 | 71.862 | 51.013 | 500 |
 
-*Note.* sigma = 0.5; 500 trials per quartile (Q2 reports 499 due to a tie at the bin boundary); n = 1,999 total. PDOP values are reported without leading zeros following the project decimal convention.
+*Note.* sigma = 0.5; quartile bins of the per-cohort-normalized PDOP; 500 trials per quartile; n = 2,000 total. PDOP and sub-unit RMSE values are reported without leading zeros following the project decimal convention.
 
-The 24-fold difference in RMSE between Q1 and Q4 configurations demonstrates that observer geometry dominates measurement precision — the same measurement noise sigma yields dramatically different estimation quality depending on the PDOP of the observer constellation.
+The 26-fold difference in RMSE between Q1 and Q4 configurations (mean-RMSE ratio 25.9) demonstrates that observer geometry dominates measurement precision — the same measurement noise sigma yields dramatically different estimation quality depending on the PDOP of the observer constellation.
 
 The same proportionality is visible directly in Figure 2, generated by the companion script described in §9.7.
 
@@ -645,17 +646,17 @@ Figure 2: PDOP versus RMSE on log-log axes (90 Monte Carlo trials per K).
 
 Figure 2 plots RMSE against PDOP on log-log axes for 630 trials spanning seven cohort counts K ∈ {9, 10, 12, 15, 20, 30, 50} and three weight-matrix priors (clustered, random, diverse). At fixed K — each color in the figure — the points fall on a straight line with empirical slope in the range .998–1.004, against the theoretical prediction slope = 1.0 derived from the Cramér-Rao expression in §3.2. The pooled cross-K slope is biased downward because each K curve has a distinct intercept σ · √K from the Cramér-Rao expression RMSE = σ · √K · PDOP; the appropriate test is per-K, where the agreement is essentially exact (median per-K slope = 1.000, mean of the ratio RMSE / (σ · √K · PDOP) across all 630 trials = .999). The figure visualizes what Tables 5 and 6 report numerically: PDOP is a sharp predictor of RMSE under the linear observation model, and the proportionality holds across two orders of magnitude in PDOP and across the geometric-diversity regime spanned by the three priors.
 
-**PDOP bounds for the N=9 minimum case.** The lower bound 1/sqrt(N) holds for unit-norm weight vectors arranged uniformly on the sphere in R^8. For N=9, this gives the unconstrained-sphere bound PDOP >= .333. Brand cohort weight profiles, however, lie on the probability simplex (Σw_i = 1, w_i ≥ 0), which constrains the achievable minimum. Numerical optimization (Nelder-Mead, 100 restarts) under the simplex constraint achieves PDOP = .388, with condition number 1.92 — close to but above the unconstrained floor, confirming that near-optimal configurations exist within the simplex feasible region. The empirical distribution of PDOP under random weight assignment has median 3.67 and mean 5.07, indicating that typical configurations are far from optimal and that deliberate DOP-aware cohort selection offers substantial precision gains.
+**PDOP bounds for the N=9 minimum case.** The lower bound 1/sqrt(N) holds for unit-norm weight vectors arranged uniformly on the sphere in R^8. For N=9, this gives the unconstrained-sphere bound PDOP >= .333. Brand cohort weight profiles, however, lie on the probability simplex (Σw_i = 1, w_i ≥ 0), where the sum-to-one constraint removes one discriminating direction, raising the unit-magnitude tangent-space floor to √(7/N) = .882 at N=9 (§3.2). Numerical optimization (Nelder-Mead, 100 restarts) under the simplex constraint, with weight magnitudes treated as free design variables, achieves PDOP = .913, with condition number 2.00 — just above the unit-magnitude simplex floor, confirming that near-optimal configurations exist within the simplex feasible region and that the freedom to scale weight magnitudes buys little beyond the tangent-space floor. The empirical distribution of PDOP under random simplex weight assignment is heavy-tailed, with median 8.05 and mean ≈ 11 (sensitive to near-singular draws), indicating that typical configurations are far from optimal and that deliberate DOP-aware cohort selection offers substantial precision gains.
 
-**Sensitivity plateau.** Perturbing the optimal weight matrix by Gaussian noise with standard deviation epsilon confirms the plateau structure: PDOP degrades by less than 10% for perturbations up to epsilon = 0.2 (relative to the D-scaled weight values). At epsilon = 0.3, degradation reaches 16%. This confirms the plateau property: when the structural robustness argument transfers to PDOP geometry, researchers need approximate, not exact, weight profile calibration to achieve near-optimal measurement geometry.
+**Sensitivity plateau.** Perturbing the optimal weight matrix by Gaussian noise with standard deviation epsilon (applied to the D-scaled weight values, i.e. perturbation standard deviation epsilon / D, then re-normalized to the simplex) confirms the plateau structure: median PDOP degradation is ≈ 3.6% at epsilon = 0.1, ≈ 7.2% at epsilon = 0.2 (still under 10%), and ≈ 10.5% at epsilon = 0.3. The gentle, near-linear growth in degradation across the perturbation grid confirms the plateau property: when the structural robustness argument transfers to PDOP geometry, researchers need approximate, not exact, weight profile calibration to achieve near-optimal measurement geometry.
 
 ### 9.7 Companion Computation Script
 
-The Monte Carlo simulation reported in this section is fully reproducible from `R17_pdop_simulation.py`, archived at `https://github.com/spectralbranding/sbt-papers/tree/main/r17-brand-triangulation/simulation/`. Fixed seed: `SEED = 42`. Trials: 2,000 independent trials, 20 replications each. Run command: `uv run --with numpy,scipy python R17_pdop_simulation.py`. Running the script reproduces Tables 5 and 6, the PDOP bounds reported for the N = 9 minimum case, and the sensitivity plateau statistics within the reported standard errors. Raw results are also archived as `R17_pdop_simulation_results.json` in the same directory.
+The Monte Carlo simulation reported in this section is fully reproducible from `R17_pdop_simulation.py`, archived at `https://github.com/spectralbranding/sbt-papers/tree/main/r17-brand-triangulation/simulation/`. Fixed seed: `SEED = 42`. Trials: 2,000 independent trials, 20 replications each. The script uses a single PDOP convention throughout (per-cohort-normalized PDOP = sqrt(trace(C) / N)) and makes the observer-constellation generator fully explicit as named constants (the Dirichlet priors for the clustered, random, and near-optimal geometries plus the clustered-jitter scale). Run command: `uv run --with numpy,scipy python R17_pdop_simulation.py`. Running the script prints every value reported in Tables 5 and 6, the PDOP bounds for the N = 9 minimum case, and the sensitivity-plateau statistics next to the value it actually computes, with a MATCH/MISMATCH verdict; every paper-reported value reproduces (full MATCH), and the script exits 0.
 
 Figure 2 is regenerable from a second self-contained script `compute_pdop_rmse.py` archived at `https://github.com/spectralbranding/sbt-papers/tree/main/r17-brand-triangulation/code/` (PEP 723 inline-deps numpy + matplotlib). Fixed seed `SEED = 42`. Run command: `uv run --script compute_pdop_rmse.py`. The script writes `pdop_rmse.csv` (630 trials across K ∈ {9, 10, 12, 15, 20, 30, 50} and three weight-matrix priors, with R = 200 noisy replications per trial) and `figure2_pdop_rmse.png`. The directory README documents the per-K log-log slopes (.998–1.004) that confirm the PDOP–RMSE proportionality derived in §3.2 and that motivate the K* values reported in the §5.3 power analysis.
 
-**Data and Code Availability.** Monte Carlo simulation code (`R17_pdop_simulation.py`) and results (`R17_pdop_simulation_results.json`) are available at the URL above. Figure 2 simulation code, raw CSV, and figure (`code/compute_pdop_rmse.py`, `code/pdop_rmse.csv`, `code/figure2_pdop_rmse.png`) are at `https://github.com/spectralbranding/sbt-papers/tree/main/r17-brand-triangulation/code/`. The R15 empirical dataset used for the demonstration in §9.1–§9.4 is archived at https://doi.org/10.5281/zenodo.19422427.
+**Data and Code Availability.** Monte Carlo simulation code (`R17_pdop_simulation.py`) is available at the URL above; the script prints all reported values with MATCH verdicts on a fixed seed (`SEED = 42`). Figure 2 simulation code, raw CSV, and figure (`code/compute_pdop_rmse.py`, `code/pdop_rmse.csv`, `code/figure2_pdop_rmse.png`) are at `https://github.com/spectralbranding/sbt-papers/tree/main/r17-brand-triangulation/code/`. The R15 empirical dataset used for the demonstration in §9.1–§9.4 is archived at https://doi.org/10.5281/zenodo.19422427.
 
 ---
 
