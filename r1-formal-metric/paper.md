@@ -104,8 +104,8 @@ Third, brand perception is *compositional*. The individual dimension scores are 
 
 These three properties -- relativity, observer-dependence, and compositionality -- constrain the choice of metric and rule out naive Euclidean distance.
 
-```mermaid
-graph LR
+```{.mermaid width=65%}
+graph TD
     A["R8_plus (raw signals)<br/>open positive orthant"] -->|"normalize: s -> s/norm(s)"| B["S7_plus (unit sphere)<br/>positive orthant of 7-sphere"]
     B -->|"weight: p(w) on Delta7"| C["Delta7 (simplex)<br/>observer weight space"]
     A -->|"clr / ilr transform"| D["R7 (Aitchison space)<br/>flat isometric image"]
@@ -956,11 +956,11 @@ $$d_A = \sqrt{0.036 + 0.137 + 0.177 + 0.000 + 0.054 + 1.255 + 0.147 + 1.279} = \
 
 ---
 
+## Acknowledgments
+
+AI assistants (Claude Opus 4.8, Grok 4.20, Gemini 2.5 Pro) were used for initial literature search and editorial refinement; all theoretical claims, propositions, and interpretations are the author's sole responsibility.
+
 ## References
 
 ::: {#refs}
 :::
-
-## Acknowledgments
-
-AI assistants (Claude Opus 4.8, Grok 4.20, Gemini 2.5 Pro) were used for initial literature search and editorial refinement; all theoretical claims, propositions, and interpretations are the author's sole responsibility.

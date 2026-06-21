@@ -22,7 +22,7 @@ This paper applies concentration-of-measure techniques to the probability simple
 
 ---
 
-## 1.
+## 1. Introduction
 
 Market segmentation -- partitioning observers into discrete groups assumed to possess internally homogeneous and externally heterogeneous response profiles -- has been foundational practice since Smith [-@smith-1956-product-differentiation-market]; Wedel and Kamakura [-@wedel-2000-market-segmentation-conceptual] review the canonical latent-class and mixture-model machinery. Practitioners routinely treat cohort boundaries as sharp, membership as unambiguous, and the number of groups as an objective feature of the underlying population rather than a methodological choice. This paper demonstrates that such assumptions systematically fail in moderately high-dimensional perceptual spaces.
 
@@ -244,7 +244,7 @@ The following schematic illustrates the geometry formalized in Theorem 2: the si
 
 ```mermaid
 graph TD
-    subgraph SIMPLEX["Probability simplex Delta-7<br/>observer weight space"]
+    subgraph SIMPLEX["Probability simplex Delta-7"]
         CTR["Centroid<br/>w = (1/8 ... 1/8)<br/>equal-weight observer"]
         INNER["Interior region<br/>crisp assignment<br/>BVF = 47.8%"]
         BZ["Boundary zone<br/>V boundary delta=0.10<br/>BVF at least 52.2%"]
@@ -281,8 +281,8 @@ Table 5: Boundary Volume Fraction at $n = 8$ Across Relative Boundary Widths.
 *Notes*: $\text{BVF}(n, \delta) = 1 - (1-\delta)^{n-1}$ with $n - 1 = 7$ for $\Delta^7$. Values are lower bounds on the fraction of $\Delta^7$ lying within relative Euclidean distance $\delta$ of any convex partition boundary.
 
 ```mermaid
+%%{init: {"themeVariables": {"xyChart": {"plotColorPalette": "#1f4e79"}}}}%%
 xychart-beta
-    title "V_boundary(delta) at n=8 - Boundary Volume Fraction vs Threshold"
     x-axis "delta (relative boundary width)" [0.01, 0.05, 0.10, 0.15, 0.20, 0.25, 0.30]
     y-axis "BVF lower bound" 0 --> 1.0
     line [0.068, 0.302, 0.522, 0.672, 0.790, 0.867, 0.918]
@@ -595,11 +595,11 @@ Finally, the interaction between static concentration geometry and dynamic non-e
 
 ---
 
+## Acknowledgments
+
+AI assistants (Claude Opus 4.8, Grok 4.20, Gemini 2.5 Pro) were used for initial literature search, for software development — implementing and running the companion computation script that reproduces the paper's reported numerical and simulation results — and for editorial refinement; all theoretical claims, propositions, and interpretations are the author's sole responsibility.
+
 ## References
 
 ::: {#refs}
 :::
-
-## Acknowledgments
-
-AI assistants (Claude Opus 4.8, Grok 4.20, Gemini 2.5 Pro) were used for initial literature search, for software development — implementing and running the companion computation script(s) that reproduce the paper's reported numerical and simulation results — and for editorial refinement; all theoretical claims, propositions, and interpretations are the author's sole responsibility.
