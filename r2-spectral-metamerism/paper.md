@@ -430,7 +430,7 @@ which is $7/8 = 87.5\%$ of the total variance -- converging with the PCA analysi
 
 ### Simulation Design
 
-To verify the theoretical bounds, we conduct Monte Carlo simulations. The companion script `R2_R3_computations.py` in the `sbt-framework` repository (https://github.com/spectralbranding/sbt-framework) implements the metameric-fraction calculation reported below; it is shared with Zharnikov [-@zharnikov-2026-cohort-boundaries-high-dimensional-perception], which uses the same generator for concentration-of-measure tests. The simulation:
+To verify the theoretical bounds, we conduct Monte Carlo simulations. The companion script `R2_R3_computations.py`, published in the paper's public code mirror (https://github.com/spectralbranding/sbt-papers/tree/main/r2-spectral-metamerism/code), implements the metameric-fraction calculation reported below; it is shared with Zharnikov [-@zharnikov-2026-cohort-boundaries-high-dimensional-perception], which uses the same generator for concentration-of-measure tests. The simulation:
 
 1. Generates $N = 50$ random brand profiles in $\mathbb{R}^8_+$ (log-normal distribution, $\mu = 0.5$, $\sigma = 0.5$, ensuring positivity).
 2. Draws a random unit projection vector $\mathbf{u} \in \mathbb{R}^8$ (Gaussian, normalized).

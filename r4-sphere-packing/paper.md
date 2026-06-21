@@ -580,7 +580,7 @@ AI assistants (Claude Opus 4.8, Grok 4.20, Gemini 2.5 Flash) were used for initi
 
 ## Appendix A: Numerical Computations
 
-All numerical results reported in this paper were computed using the companion code `R4_R5_computations.py` (Python 3.12, numpy, scipy). Key computed values:
+All numerical results reported in this paper were computed using the companion code `r4_capacity_bounds.py` (Python 3.12, numpy, scipy). Key computed values:
 
 Table A1: Key Numerical Values.
 
