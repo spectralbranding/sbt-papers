@@ -389,8 +389,8 @@ Table 8: Effective Dimensionality and Positioning Capacity by Average Pairwise C
 **Figure 2: Capacity-collapse curve under average pairwise correlation ($n = 8$, $\varepsilon = .10$).**
 
 ```mermaid
+%%{init: {"themeVariables": {"xyChart": {"plotColorPalette": "#1f4e79"}}}}%%
 xychart-beta
-    title "Positioning capacity collapses as inter-dimension correlation rises"
     x-axis "Average pairwise correlation rho" [".0", ".1", ".2", ".3", ".5", ".7"]
     y-axis "log10 capacity" 0 --> 9
     line [8, 5, 3, 3, 2, 1]
@@ -398,11 +398,11 @@ xychart-beta
 
 *Figure 2: Log-base-10 positioning capacity as a function of average pairwise correlation rho among SBT dimensions (n = 8, epsilon = .10). Plotted values are log10((1/epsilon)^d_eff) rounded to the nearest integer; exact values from Table 8 are 8.00, 4.71, 3.33, 2.58, 1.78, 1.36. The curve is steepest in the low-correlation regime (rho in [.0, .2]): even modest positive correlation collapses capacity by three or more orders of magnitude before rho = .2 is reached. Proposition 5 result.*
 
-*Notes*: Mermaid rendering of the same data shown in Table 8. The vertical axis is $\log_{10}$ of capacity; the horizontal axis is the average pairwise correlation $\rho$ (non-uniformly spaced sample points). Capacity contracts by approximately five orders of magnitude as $\rho$ moves from $.0$ to $.7$, reflecting the participation-ratio collapse of $d_{\text{eff}}$ from 8.00 to 1.36 over the same interval. The curve is steepest in the low-correlation regime ($\rho \in [.0, .2]$): a small positive correlation already costs more than three orders of magnitude of capacity.
+*Notes*: Mermaid rendering of the same data shown in Table 8. The vertical axis is $\log_{10}$ of capacity; the horizontal axis is the average pairwise correlation $\rho$ (non-uniformly spaced sample points). Capacity contracts by approximately five orders of magnitude as $\rho$ moves from $.0$ to $.7$, reflecting the collapse of $d_{\text{eff}} = \operatorname{tr}/\lambda_{\max}$ from 8.00 to 1.36 over the same interval. The curve is steepest in the low-correlation regime ($\rho \in [.0, .2]$): a small positive correlation already costs more than three orders of magnitude of capacity.
 
-*Proof.* The effective dimensionality formula follows from the eigenvalue structure of a correlation matrix with uniform off-diagonal entries $\rho$. Such a matrix has one eigenvalue $\lambda_1 = 1 + (n-1)\rho$ and $(n-1)$ eigenvalues $\lambda_k = 1 - \rho$ for $k = 2, \ldots, n$. The "participation ratio" $d_{\text{eff}} = (\sum \lambda_k)^2 / \sum \lambda_k^2$ simplifies to $n / (1 + (n-1)\rho)$ in this equicorrelation case. Capacity at reduced dimensionality follows from Proposition 1 applied with $n = d_{\text{eff}}$ (rounding to the nearest integer for the lower bound computation). $\square$
+*Proof.* The effective dimensionality follows from the eigenvalue structure of a correlation matrix with uniform off-diagonal entries $\rho$. Such a matrix has one dominant eigenvalue $\lambda_1 = 1 + (n-1)\rho$ and $(n-1)$ equal eigenvalues $\lambda_k = 1 - \rho$ for $k = 2, \ldots, n$, with total variance $\sum_k \lambda_k = \operatorname{tr} = n$. We measure effective dimensionality as the ratio of total variance to the variance carried by the dominant mode, $d_{\text{eff}} = \operatorname{tr} / \lambda_{\max} = n / (1 + (n-1)\rho)$, which equals $n$ at $\rho = 0$ and contracts toward 1 as $\rho \to 1$. (This trace-to-dominant-eigenvalue ratio is a deliberately conservative effective-dimensionality measure; the participation ratio $(\sum_k \lambda_k)^2 / \sum_k \lambda_k^2$ is an alternative that yields larger values and hence a more gradual capacity decline.) Capacity at reduced dimensionality follows from Proposition 1 applied with $n = d_{\text{eff}}$ (rounding to the nearest integer for the lower-bound computation). $\square$
 
-*Falsification*: Proposition 5 is falsified if an empirically estimated correlation matrix of SBT dimension scores produces a participation-ratio effective dimensionality that does not predict observed positioning capacity (measured by independent brand counts and pairwise distinguishability) at the rate $(1/\varepsilon)^{d_\text{eff}}$ -- or if the equicorrelation assumption systematically misrepresents the eigenvalue structure of real brand-perception data.
+*Falsification*: Proposition 5 is falsified if an empirically estimated correlation matrix of SBT dimension scores produces an effective dimensionality ($\operatorname{tr}/\lambda_{\max}$) that does not predict observed positioning capacity (measured by independent brand counts and pairwise distinguishability) at the rate $(1/\varepsilon)^{d_\text{eff}}$ -- or if the equicorrelation assumption systematically misrepresents the eigenvalue structure of real brand-perception data.
 
 ### Implications for SBT
 
@@ -569,7 +569,7 @@ The answer, it turns out, depends less on the market and more on how many dimens
 
 ## Acknowledgments
 
-AI assistants (Claude Opus 4.8, Grok 4.20, Gemini 2.5 Flash) were used for initial literature search, for software development — implementing and running the companion computation script(s) that reproduce the paper's reported numerical and simulation results — and for editorial refinement; all theoretical claims, propositions, and interpretations are the author's sole responsibility.
+AI assistants (Claude Opus 4.8, Grok 4.20, Gemini 2.5 Flash) were used for initial literature search, for software development — implementing and running the companion computation script that reproduces the paper's reported numerical and simulation results — and for editorial refinement; all theoretical claims, propositions, and interpretations are the author's sole responsibility.
 
 ---
 
@@ -597,7 +597,7 @@ Table A1: Key Numerical Values.
 | Effective dim. at $\rho = .3$ | $d_{\text{eff}} = 2.58$ |
 | Capacity at $d_{\text{eff}} = 2.58$, $\varepsilon = .10$ | $\sim 10^3$ |
 
-*Notes*: All values computed via `R4_R5_computations.py` (Python 3.12, numpy, scipy).
+*Notes*: All values computed via `r4_capacity_bounds.py` (Python 3.12, numpy, scipy).
 
 The $E_8$-based capacity estimate (using the exact packing density) for $\varepsilon = .10$ is $6.49 \times 10^9$, which falls between the simple lower bound ($10^8$) and the upper bound ($3.78 \times 10^{10}$). All reported lower bounds use the conservative simple volume bound $(1/\varepsilon)^8$.
 
@@ -611,7 +611,7 @@ Run command:
 
 `uv run --with numpy --with scipy python r4_capacity_bounds.py`
 
-The script fixes `SEED = 42` at file top, exposes the volume function $V_n(r)$, the participation-ratio function $d_{\text{eff}}(n, \rho)$, the simple volume bound $(1/\varepsilon)^n$, the covering upper bound $((2 + \varepsilon)/\varepsilon)^n$, the $E_8$ packing-density estimate, and a deterministic enumeration of the 112 + 128 = 240 minimal vectors of $E_8$ at squared norm 2. All values reported in this appendix and in the body tables match the script's stdout to the displayed precision; the kissing-shell counts are exact.
+The script fixes `SEED = 42` at file top, exposes the volume function $V_n(r)$, the effective-dimensionality function $d_{\text{eff}}(n, \rho) = n/(1 + (n-1)\rho)$, the simple volume bound $(1/\varepsilon)^n$, the covering upper bound $((2 + \varepsilon)/\varepsilon)^n$, the $E_8$ packing-density estimate, and a deterministic enumeration of the 112 + 128 = 240 minimal vectors of $E_8$ at squared norm 2. All values reported in this appendix and in the body tables match the script's stdout to the displayed precision; the kissing-shell counts are exact.
 
 ## Appendix B: Dimensional Capacity Comparison
 

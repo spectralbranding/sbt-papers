@@ -4,6 +4,8 @@ Dmitry Zharnikov
 
 ORCID: 0009-0000-6893-9231
 
+DOI: [10.5281/zenodo.20741256](https://doi.org/10.5281/zenodo.20741256)
+
 Working Paper v1.0.0 – March 2026 (revised June 2026)
 
 ---
@@ -112,20 +114,6 @@ The count is not stipulated but derived. Zharnikov [-@zharnikov-2026-why-eight-c
 
 This paper inherits the count from Zharnikov [-@zharnikov-2026-why-eight-completeness-necessity-sbt] and treats Aaker's four perspectives as a coarser partition of the same perceptual space --- one that bundles channels that can, and often do, behave independently. The mapping in Table 1 makes this relationship explicit. The theoretical question of whether different cultural or market contexts might require a different dimensional basis is a legitimate open problem; Zharnikov [-@zharnikov-2026-why-eight-completeness-necessity-sbt] addresses it as a boundary condition on the framework's universality claim.
 
-Table 5: Comparison of Brand Identity Frameworks Across Structural Dimensions.
-
-| Dimension | Aaker [-@aaker-1996-building-strong-brands] | Hatch and Schultz [-@hatch-2001-strategic-stars-aligned-your] | Balmer and Greyser [-@balmer-2002-managing-multiple-identities-corporation] | Kapferer [-@kapferer-2008-new-strategic-brand] | SBT |
-|:---|:---|:---|:---|:---|:---|
-| Number of dimensions | 4 perspectives | 3 alignment gaps (Vision, Culture, Image) | 5 identity types (AC²ID) | 6 prism facets | 8 perceptual dimensions |
-| Origin discipline | Brand management | Organizational identity | Corporate identity | Brand management | Brand perception science |
-| Measurement approach | Practitioner judgment; no standardized instrument | Gap audit (managerial elicitation) | Identity audit (qualitative) | Practitioner mapping | Parametric spectral profiles; computational or survey-based |
-| Treats observer heterogeneity | No — single identity, one gap | Partial — Image facet acknowledges receiver | Partial — "Conceived" identity is receiver-side | Partial — Reflection and self-image facets | Yes — observer cohorts as primary analytical unit |
-| Treats AI observers | No | No | No | No | Yes — P4 predicts dimensional collapse in LLM observers |
-| Falsifiable propositions | None stated | None stated | None stated | None stated | P1–P4 with explicit falsification criteria |
-| Limiting-case relation to SBT | Aaker is T·ψ projection onto 4 dimensions (Appendix A) | VCI alignment gaps recoverable from inter-cohort cloud distance | AC²ID identity types recoverable from cross-stakeholder cloud divergence | Kapferer facets correspond to SBT dimension subsets | — |
-
-*Notes*: AC²ID = Actual, Communicated, Conceived, Ideal, Desired identity types. VCI = Vision-Culture-Image. Limiting-case relations are structural correspondences, not empirical equivalences; calibration is required before use as converters.
-
 ---
 
 ## 4. The Spectral Formalization
@@ -140,16 +128,16 @@ Table 1: Mapping Between Aaker's Four Identity Perspectives and SBT's Eight Perc
 
 | Aaker Perspective | What It Bundles | SBT Dimensions |
 |:---|:---|:---|
-| Brand as Product | Product scope, attributes, quality, uses, users, country of origin | Experiential (dim 4), Economic (dim 6) |
-| Brand as Organization | Organizational values, culture, capabilities, local/global orientation | Ideological (dim 3), Cultural (dim 7), Temporal (dim 8) |
-| Brand as Person | Brand personality, brand-customer relationships | Narrative (dim 2), Social (dim 5) |
-| Brand as Symbol | Visual imagery, metaphors, brand heritage | Semiotic (dim 1), Temporal (dim 8) |
+| Brand as Product | Product scope, attributes, quality, uses, users, country of origin | Semiotic (dim 1), Experiential (dim 4), Economic (dim 6) |
+| Brand as Organization | Organizational values, culture, capabilities, local/global orientation | Ideological (dim 3), Social (dim 5), Cultural (dim 7) |
+| Brand as Person | Brand personality, brand-customer relationships | Semiotic (dim 1), Narrative (dim 2) |
+| Brand as Symbol | Visual imagery, metaphors, brand heritage | Semiotic (dim 1), Cultural (dim 7), Temporal (dim 8) |
 
-*Notes*: Dimension order: Semiotic, Narrative, Ideological, Experiential, Social, Economic, Cultural, Temporal. Temporal appears in both Brand as Organization and Brand as Symbol because heritage functions simultaneously as an organizational asset and a symbolic resource. The Narrative dimension captures narrative processing as a distinct cognitive route through which consumers build brand connections, as distinct from analytical processing [@escalas-2004-narrative-processing-building-consumer]; this grounds the Brand as Person mapping in an empirically established perceptual mechanism rather than asserting it by stipulation. Mapping derived from Zharnikov [-@zharnikov-2026-spectral-brand-theory-computational-framework]; completeness and necessity of the eight dimensions established in Zharnikov [-@zharnikov-2026-why-eight-completeness-necessity-sbt].
+*Notes*: Dimension order: Semiotic, Narrative, Ideological, Experiential, Social, Economic, Cultural, Temporal. Semiotic appears across Brand as Product, Brand as Person, and Brand as Symbol, reflecting its role as the primary visual-identity channel; Cultural appears in both Brand as Organization and Brand as Symbol because cultural codes function simultaneously as an organizational asset and a symbolic resource. The Narrative dimension captures narrative processing as a distinct cognitive route through which consumers build brand connections, as distinct from analytical processing [@escalas-2004-narrative-processing-building-consumer]; this grounds the Brand as Person mapping in an empirically established perceptual mechanism rather than asserting it by stipulation. Mapping derived from Zharnikov [-@zharnikov-2026-spectral-brand-theory-computational-framework]; completeness and necessity of the eight dimensions established in Zharnikov [-@zharnikov-2026-why-eight-completeness-necessity-sbt].
 
 Figure 1: Projection from Aaker's Four Perspectives to SBT's Eight Perceptual Dimensions (Theorem 1, Appendix A).
 
-```mermaid
+```{.mermaid width=60%}
 flowchart LR
   A1[Brand-as-Product] --> S1[Experiential]
   A1 --> S2[Semiotic]
@@ -166,11 +154,11 @@ flowchart LR
 
 *Notes*: Arrows represent the non-zero weight entries in the linear map T from Appendix A. Each row of T corresponds to one Aaker perspective; each column to one SBT dimension. The Semiotic dimension (S2) receives projections from three perspectives, reflecting its role as the primary visual-identity channel across Product, Person, and Symbol. Weights are illustrative (equal within each perspective row); empirical calibration of T is an open research question.
 
-The practical consequence of unbundling is diagnostic precision. Consider Aaker's "Brand as Product," which bundles product experience and price positioning into a single perspective. Under the bundled view, a practitioner diagnosing declining product-perspective scores cannot distinguish between two structurally different problems: consumers may be dissatisfied with the product experience (Experiential), or they may perceive the price as unfair relative to value (Economic). A luxury brand scoring poorly on "Brand as Product" almost certainly has an Experiential problem, not an Economic one --- yet Aaker's framework treats both through the same lens. SBT's decomposition reveals which dimension is failing for which cohort, directing intervention precisely.
+The practical consequence of unbundling is diagnostic precision. Consider Aaker's "Brand as Product," which bundles product experience, price positioning, and product-attribute visual signals into a single perspective. Under the bundled view, a practitioner diagnosing declining product-perspective scores cannot distinguish between structurally different problems: consumers may be dissatisfied with the product experience (Experiential), or they may perceive the price as unfair relative to value (Economic). A luxury brand scoring poorly on "Brand as Product" almost certainly has an Experiential problem, not an Economic one --- yet Aaker's framework treats both through the same lens. SBT's decomposition reveals which dimension is failing for which cohort, directing intervention precisely.
 
-The same logic applies to every perspective. "Brand as Organization" bundles the organization's ethical commitments (Ideological), its aesthetic and cultural codes (Cultural), and its heritage (Temporal). These channels can be independently weighted by different observer cohorts. A purpose-driven consumer may weight the Ideological dimension heavily while being indifferent to the Cultural dimension; a design professional may do the opposite. Aaker's framework captures both through a single perspective, which obscures the divergence. Under SBT, a brand manager can ask: "Our 'Brand as Organization' is perceived as weak --- but is it the values story (Ideological), the cultural codes (Cultural), or the heritage narrative (Temporal) that is underperforming, and for which cohort?" The answer determines whether the intervention is a purpose campaign, a creative refresh, or a heritage-activation program.
+The same logic applies to every perspective. "Brand as Organization" bundles the organization's ethical commitments (Ideological), its community and social signals (Social), and its cultural codes (Cultural). These channels can be independently weighted by different observer cohorts. A purpose-driven consumer may weight the Ideological dimension heavily while being indifferent to the Cultural dimension; a design professional may do the opposite. Aaker's framework captures both through a single perspective, which obscures the divergence. Under SBT, a brand manager can ask: "Our 'Brand as Organization' is perceived as weak --- but is it the values story (Ideological), the community signal (Social), or the cultural codes (Cultural) that is underperforming, and for which cohort?" The answer determines whether the intervention is a purpose campaign, a community-building program, or a creative refresh.
 
-Similarly, "Brand as Symbol" bundles visual identity (Semiotic) with heritage (Temporal). A brand's logo and its heritage are perceived through different cognitive mechanisms and weighted differently by different audiences. A re-collapse attempt that changes visual identity (Semiotic) without addressing heritage perception (Temporal) may solve one problem while creating another --- a distinction invisible under the bundled perspective.
+Similarly, "Brand as Symbol" bundles visual identity (Semiotic), cultural codes (Cultural), and heritage (Temporal). A brand's logo and its heritage are perceived through different cognitive mechanisms and weighted differently by different audiences. A re-collapse attempt that changes visual identity (Semiotic) without addressing heritage perception (Temporal) may solve one problem while creating another --- a distinction invisible under the bundled perspective.
 
 Table 2 illustrates how the decomposition changes the diagnostic question for each perspective.
 
@@ -291,6 +279,20 @@ Table 4: Five Coherence Types and Their Disruption Response Patterns.
 
 *Notes*: Coherence type classifications derived from Zharnikov [-@zharnikov-2026-spectral-brand-theory-computational-framework]. Exemplar brands are illustrative, not exhaustive. Recovery conditions following coherence shocks are formalized by the μ > λ threshold inequality in Zharnikov [-@zharnikov-2026-restoring-perceptual-separability-after-coherence].
 
+Table 5: Comparison of Brand Identity Frameworks Across Structural Dimensions.
+
+| Dimension | Aaker [-@aaker-1996-building-strong-brands] | Hatch and Schultz [-@hatch-2001-strategic-stars-aligned-your] | Balmer and Greyser [-@balmer-2002-managing-multiple-identities-corporation] | Kapferer [-@kapferer-2008-new-strategic-brand] | SBT |
+|:---|:---|:---|:---|:---|:---|
+| Number of dimensions | 4 perspectives | 3 alignment gaps (Vision, Culture, Image) | 5 identity types (AC²ID) | 6 prism facets | 8 perceptual dimensions |
+| Origin discipline | Brand management | Organizational identity | Corporate identity | Brand management | Brand perception science |
+| Measurement approach | Practitioner judgment; no standardized instrument | Gap audit (managerial elicitation) | Identity audit (qualitative) | Practitioner mapping | Parametric spectral profiles; computational or survey-based |
+| Treats observer heterogeneity | No — single identity, one gap | Partial — Image facet acknowledges receiver | Partial — "Conceived" identity is receiver-side | Partial — Reflection and self-image facets | Yes — observer cohorts as primary analytical unit |
+| Treats AI observers | No | No | No | No | Yes — P4 predicts dimensional collapse in LLM observers |
+| Falsifiable propositions | None stated | None stated | None stated | None stated | P1–P4 with explicit falsification criteria |
+| Limiting-case relation to SBT | Aaker is T·ψ projection onto 4 dimensions (Appendix A) | VCI alignment gaps recoverable from inter-cohort cloud distance | AC²ID identity types recoverable from cross-stakeholder cloud divergence | Kapferer facets correspond to SBT dimension subsets | — |
+
+*Notes*: AC²ID = Actual, Communicated, Conceived, Ideal, Desired identity types. VCI = Vision-Culture-Image. Limiting-case relations are structural correspondences, not empirical equivalences; calibration is required before use as converters.
+
 The taxonomy addresses Section 3.3's boundary directly. Sørensen [-@sorensen-2002-strength-corporate-culture] demonstrated that cultural type predicts outcomes better than cultural strength; the coherence taxonomy applies the same principle to brand perception. Two brands scoring 7/10 on a conventional consistency metric --- one with signal coherence (IKEA), one with ecosystem coherence (Hermès) --- will respond to identical disruptions in structurally different ways. The signal-coherent brand transmits the disruption uniformly. The ecosystem-coherent brand absorbs it selectively. The consistency score is identical; the strategic implications are opposite. The μ > λ threshold inequality [@zharnikov-2026-restoring-perceptual-separability-after-coherence] formalizes the recovery condition: brands below threshold cannot restore perceptual separability through signal correction alone and require structural coherence intervention.
 
 This distinction cannot be made within Aaker's framework because it requires modeling multiple observer cohorts simultaneously and characterizing the structural relationship between their perception clouds --- capabilities that depend on the formal observer model.
@@ -349,7 +351,7 @@ Fournier and Eckhardt [-@fournier-2019-putting-person-back] identify the structu
 
 The three cases illuminate a cross-cutting pattern that neither Aaker's framework nor conventional consistency metrics can detect. Under Aaker's Brand as Symbol perspective, Patagonia and Tesla are both identifiable as "high-symbol" brands: both carry strong associative imagery, both project personality, both rely heavily on the Brand as Symbol and Brand as Person perspectives for their market identity. A traditional brand equity assessment would classify them similarly on symbolic dimensions and note their high brand salience.
 
-SBT differentiates them sharply. Patagonia's spectral profile [6.0, 9.0, 9.5, 7.5, 8.0, 5.0, 7.0, 6.5] and Tesla's [7.5, 8.5, 3.0, 6.0, 7.0, 6.0, 4.0, 2.0] diverge dramatically on the Ideological (9.5 versus 3.0), Cultural (7.0 versus 4.0), and Temporal (6.5 versus 2.0) dimensions. These are precisely the dimensions invisible to Aaker's bundled perspectives: Ideological and Cultural are both subsumed under Brand as Organization, while Temporal is split between Brand as Organization and Brand as Symbol. The bundling conceals the divergence.
+SBT differentiates them sharply. Patagonia's spectral profile [6.0, 9.0, 9.5, 7.5, 8.0, 5.0, 7.0, 6.5] and Tesla's [7.5, 8.5, 3.0, 6.0, 7.0, 6.0, 4.0, 2.0] diverge dramatically on the Ideological (9.5 versus 3.0), Cultural (7.0 versus 4.0), and Temporal (6.5 versus 2.0) dimensions. These are precisely the dimensions invisible to Aaker's bundled perspectives: Ideological is subsumed under Brand as Organization, Cultural is split between Brand as Organization and Brand as Symbol, and Temporal is subsumed under Brand as Symbol. The bundling conceals the divergence.
 
 The predictive payoff is direct. Patagonia's Identity coherence and Tesla's Incoherence are not incidental differences in brand management quality; they follow structurally from the dimensional profiles. A high-Ideological brand with purpose-aligned cohorts exhibits Identity coherence because those cohorts are selected by the Ideological signal itself. A high-Narrative, low-Ideological brand with contradictory ambient signals exhibits Incoherence because no single dimension anchors cohort formation. IKEA, with its Semiotic-Economic dominance [8.0, 7.5, 6.0, 7.0, 5.0, 9.0, 7.5, 6.0] and designed-signal control, exhibits Signal coherence because both dominant dimensions are highly controllable and audience-agnostic.
 
@@ -373,7 +375,7 @@ Aaker's framework is the special case of SBT that applies when observer heteroge
 
 ### 7.3 Practical Implications
 
-Practitioners can continue using Aaker's vocabulary while grounding it in SBT's precision. The dimensional mapping (Tables 1 and 2) provides a translation layer between the two frameworks. A brand strategist who thinks in terms of "Brand as Organization" can now specify which components of that perspective --- Ideological, Cultural, or Temporal --- are critical for which observer cohorts, and test whether those components are actually perceived as intended.
+Practitioners can continue using Aaker's vocabulary while grounding it in SBT's precision. The dimensional mapping (Tables 1 and 2) provides a translation layer between the two frameworks. A brand strategist who thinks in terms of "Brand as Organization" can now specify which components of that perspective --- Ideological, Social, or Cultural --- are critical for which observer cohorts, and test whether those components are actually perceived as intended.
 
 The coherence taxonomy (Table 4) provides a new strategic diagnostic. Instead of asking "how consistent is our brand?" (a scalar question with a scalar answer), strategists can ask "what type of coherence does our brand exhibit?" (a structural question with strategic implications). The answer determines the crisis response playbook: selective absorption for ecosystem coherence, uniform repair for signal coherence, ideological reinforcement for identity coherence, experience investment for experiential asymmetry, or structural intervention for incoherence.
 
@@ -393,16 +395,16 @@ SBT is offered as a formalization that makes Aaker's framework testable, measura
 
 ---
 
+## Acknowledgments
+
+AI assistants (Claude Opus 4.8, Grok 4.20, Gemini 2.5 Pro) were used for initial literature search and editorial refinement; all theoretical claims, propositions, and interpretations are the author's sole responsibility.
+
+---
+
 ## References
 
 ::: {#refs}
 :::
-
-## Acknowledgments
-
-AI assistants (Claude Opus 4.7, Grok 4.1, Gemini 3.1) were used for initial literature search and editorial refinement; all theoretical claims, propositions, and interpretations are the author's sole responsibility.
-
----
 
 ## Appendix A: Formal Aaker-as-Limiting-Case Theorem
 
@@ -446,10 +448,12 @@ a_BASy = (1/3)·ψ_S + (1/3)·ψ_C + (1/3)·ψ_T
 
 This defines T as the following 4×8 matrix (column order: S, N, I, E, So, Ec, C, T):
 
+```
 T = | 1/3  0    0    1/3  0    1/3  0    0   |
     | 0    0    1/3  0    1/3  0    1/3  0   |
     | 1/2  1/2  0    0    0    0    0    0   |
     | 1/3  0    0    0    0    0    1/3  1/3 |
+```
 
 The map a = T·ψ is linear by construction. □
 

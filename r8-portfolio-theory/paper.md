@@ -24,7 +24,7 @@ Brand portfolio theory classifies portfolios by architecture -- monolithic, endo
 
 A consumer walks into a department store and encounters two products on adjacent shelves: Dove body wash and Axe deodorant. Both are manufactured by Unilever. If the consumer is aware of this shared parentage, the signals emitted by Axe -- historically rooted in hypersexualized advertising -- may contaminate the consumer's perception of Dove, whose "Campaign for Real Beauty" has positioned the brand as an advocate for authentic self-image. If the consumer is unaware, the two brands exist as independent objects in perception space, generating no mutual effect.
 
-This scenario illustrates a phenomenon that brand portfolio theory has discussed qualitatively (Aaker & Joachimsthaler, 2000; Keller, 2008; Kapferer, 2008, 4th ed.) but has never formalized: the interaction of brands within a portfolio *as experienced in the observer's perception space*. Existing portfolio frameworks classify portfolios by architecture -- the organizational relationship between brands -- but not by interference -- the perceptual relationship between brands as processed by observers. Architecture describes how brands are structured by the firm; interference describes how brands interact in the mind.
+This scenario illustrates a phenomenon that brand portfolio theory has discussed qualitatively [@aaker-2000-brand-leadership; @keller-2008-strategic-brand-management; @kapferer-2008-new-strategic-brand] but has never formalized: the interaction of brands within a portfolio *as experienced in the observer's perception space*. Existing portfolio frameworks classify portfolios by architecture -- the organizational relationship between brands -- but not by interference -- the perceptual relationship between brands as processed by observers. Architecture describes how brands are structured by the firm; interference describes how brands interact in the mind.
 
 The distinction matters because architecturally identical portfolios can produce structurally opposite perceptual effects. LVMH and Unilever both operate house-of-brands architectures with dozens of product brands beneath a corporate parent. Yet LVMH's portfolio produces predominantly constructive perceptual interactions (luxury brands reinforcing each other's luxury positioning), while Unilever's portfolio produces destructive interactions on the Ideological dimension (Dove's empowerment messaging contradicted by Axe's historical objectification). The architectural classification "house of brands" captures none of this difference. The urgency of this gap has increased as heightened information access -- what Swaminathan, Sorescu, Steenkamp, O'Guinn, and Schmitt [-@swaminathan-2020-branding-hyperconnected-world] call "hyperconnectedness" -- makes ownership structures more visible to consumers, effectively raising the awareness gate for portfolio interference. A framework that models brands as objects in multi-dimensional perception space -- and formalizes the mechanisms by which they interact within that space -- is required.
 
@@ -106,7 +106,7 @@ The most recent formal model of portfolio design in the marketing literature is 
 
 Three deficiencies characterize the existing brand portfolio literature, even after accounting for the signaling approach of Erdem and Sun [-@erdem-2002-empirical-investigation-spillover], the formal optimization model of Ke, Shin, and Yu [-@ke-2022-model-product-portfolio], the extension fit literature [@aaker-1990-consumer-evaluations-brand; @vlckner-2006-drivers-brand-extension], and the portfolio coherence work of Nguyen et al. [-@nguyen-2018-brand-portfolio-coherence]:
 
-1. **No multi-dimensional formal model.** Existing frameworks classify portfolios by organizational architecture (Aaker & Joachimsthaler, 2000) or model equity transfer as a unidimensional construct (Keller, 2008; Erdem & Sun, 2002). None formalizes how brands interact across multiple independent perceptual dimensions, where a pair may be constructively interfering on some dimensions and destructively interfering on others simultaneously.
+1. **No multi-dimensional formal model.** Existing frameworks classify portfolios by organizational architecture [@aaker-2000-brand-leadership] or model equity transfer as a unidimensional construct [@keller-2008-strategic-brand-management; @erdem-2002-empirical-investigation-spillover]. None formalizes how brands interact across multiple independent perceptual dimensions, where a pair may be constructively interfering on some dimensions and destructively interfering on others simultaneously.
 
 2. **No observer heterogeneity.** The spillover literature models the "average consumer" response to cross-brand contamination. It does not account for the fact that different observer cohorts -- with different spectral weight vectors -- may experience the same portfolio in structurally different ways. An observer who weights Ideological dimensions heavily will experience the Dove-Axe contradiction differently from one who weights Experiential dimensions.
 
@@ -565,10 +565,10 @@ Using the emission profiles from Table 3 and a personal care category mean of $\
 
 | | $\alpha = 0.3$ | $\alpha = 0.8$ |
 |---|---|---|
-| Purpose-Aligned | $\mathcal{I} = 0.3 \times 0.35 \times |3.0 - 5.0| = 0.21$ (Ideological dominant) | $\mathcal{I} = 0.8 \times 0.35 \times 2.0 = 0.56$ |
-| Product-Pragmatist | $\mathcal{I} = 0.3 \times 0.05 \times |3.0 - 5.0| = 0.03$ (Ideological negligible) | $\mathcal{I} = 0.8 \times 0.05 \times 2.0 = 0.08$ |
+| Purpose-Aligned | $\mathcal{I} = 0.3 \times 0.35 \times |2.0 - 5.0| = 0.315$ (Ideological dominant) | $\mathcal{I} = 0.8 \times 0.35 \times |2.0 - 5.0| = 0.840$ |
+| Product-Pragmatist | $\mathcal{I} = 0.3 \times 0.05 \times |2.0 - 5.0| = 0.045$ (Ideological negligible) | $\mathcal{I} = 0.8 \times 0.05 \times |2.0 - 5.0| = 0.12$ |
 
-The computation illustrates three properties simultaneously: (1) the same brand pair produces an order-of-magnitude difference in interference across cohorts (Proposition 3), (2) interference scales linearly with the awareness gate (Proposition 4), and (3) whether this interference is 'destructive' depends on which dimension dominates -- the Purpose-Aligned cohort experiences substantial Ideological disruption while the Product-Pragmatist cohort barely registers it. The illustrative scores are computed from assessed profiles; empirical application would require instrumenting both the emission profiles and the cohort weight vectors.
+The computation illustrates three properties simultaneously: (1) the same brand pair produces a roughly sevenfold difference in interference across cohorts (Proposition 3), (2) interference scales linearly with the awareness gate (Proposition 4), and (3) whether this interference is 'destructive' depends on which dimension dominates -- the Purpose-Aligned cohort experiences substantial Ideological disruption while the Product-Pragmatist cohort barely registers it. The illustrative scores are computed from assessed profiles; empirical application would require instrumenting both the emission profiles and the cohort weight vectors.
 
 ---
 
@@ -632,7 +632,7 @@ The emission profiles and coherence assessments in this paper are based on perce
 
 This paper models interference at a point in time. In reality, interference dynamics evolve as awareness gates shift, emission profiles change, and cohort compositions evolve. The non-ergodic framework of Zharnikov [-@zharnikov-2026-non-ergodic-brand-perception-why] provides the mathematical foundation for modeling dynamic interference -- interference effects that compound multiplicatively over time rather than averaging ergodically. Integrating the portfolio interference model with non-ergodic dynamics is a natural next step.
 
-The Dove-Axe illustrative analysis uses emission profiles reflecting the historical peak of their Ideological dimension contradiction. Since approximately 2016, Axe/Lynx has undertaken significant repositioning, shifting from hypersexualized messaging toward inclusive masculine identity narratives (the 'Find Your Magic' campaign and subsequent messaging). Current emission profiles would likely show a narrowed Ideological gap, reducing the destructive interference magnitude computed in Tables 5-6. The structural point -- that architecturally identical portfolios can produce opposite interference dynamics depending on emission profile alignment -- remains valid regardless of any single brand's repositioning trajectory.
+The Dove-Axe illustrative analysis uses emission profiles reflecting the historical peak of their Ideological dimension contradiction. Since approximately 2016, Axe/Lynx has undertaken significant repositioning, shifting from hypersexualized messaging toward inclusive masculine identity narratives (the 'Find Your Magic' campaign and subsequent messaging). Current emission profiles would likely show a narrowed Ideological gap, reducing the destructive interference magnitude computed in Tables 6-7. The structural point -- that architecturally identical portfolios can produce opposite interference dynamics depending on emission profile alignment -- remains valid regardless of any single brand's repositioning trajectory.
 
 ### 10.5 Empirical Proxies
 
@@ -695,6 +695,10 @@ No primary data was collected. Illustrative case analyses use public corporate d
 ## Declaration of Generative AI and AI-Assisted Technologies in the Manuscript Preparation Process
 
 During the preparation of this work the author used Claude (Anthropic) in order to assist with structural verification, cross-paper consistency checking across an eight-paper research program, and copy-editing. After using this tool, the author reviewed and edited the content as needed and takes full responsibility for the content of the published article.
+
+## Acknowledgments
+
+AI assistants (Claude, Anthropic) were used for initial literature search, cross-paper consistency checking, and editorial refinement; all theoretical claims, propositions, and interpretations are the author's sole responsibility.
 
 ## References
 
