@@ -21,8 +21,8 @@ thesis: |
         so off-peak observers receive a metamer-to-null. The self-selection sharpness equals
         the same sin^2(beta) that the parent paper counts as a perception-metamerism LOSS:
         the targeting BUG becomes a self-selection FILTER. This is the headline.
-    (c) PROVENANCE-AS-ADDRESS — the atomic-perception architecture's atoms carry the surfaces (and recency)
-        where each perception was found; a cohort of atoms traces back to re-reachable channels.
+    (c) PROVENANCE-AS-ADDRESS — the reflection-based perception architecture's reflections carry the surfaces (and recency)
+        where each perception was found; a cohort of reflections traces back to re-reachable channels.
     (a) PERCEPTION->PROXY JOIN — map the cohort to addressable proxies and QUANTIFY the
         Blackwell-garbling decision loss L(P) of doing so; report the minimal-loss proxy P*.
   The reach answer is a structural TAILWIND, not a patch: the only route needing an address
@@ -38,11 +38,11 @@ boundary_conditions:
   - id: C1
     statement: "Inherits 2026au C1-C2: a brand is an observer-completed probability measure mu on the eight-dimensional SBT perception manifold; the managerial problem is a statistical decision problem with SBT supplying the experiment and the manager choosing the action. Reach is the delivery of an action to the observers whose perceptions constitute a target cohort."
   - id: C2
-    statement: "The individual observer spectral profile w (a sensitivity weight vector over the eight dimensions) is the primitive; a perceptual cohort is a derived cluster of observers/atoms in profile-and-perception space. Results are stated at the individual level and aggregated to cohorts; settings with no recoverable individual profile (e.g. a single undifferentiated aggregate) are out of scope for the resonance mechanism (b)."
+    statement: "The individual observer spectral profile w (a sensitivity weight vector over the eight dimensions) is the primitive; a perceptual cohort is a derived cluster of observers/reflections in profile-and-perception space. Results are stated at the individual level and aggregated to cohorts; settings with no recoverable individual profile (e.g. a single undifferentiated aggregate) are out of scope for the resonance mechanism (b)."
   - id: C3
     statement: "Scope conditions for broadcast-a-dimension (b) — POSITIVE: (i) the perceptual dimensions are approximately separable for the target so a dimension-strong signal is identifiable; (ii) the cohort's dimensional distinctiveness sin^2(beta) exceeds a critical threshold (~0.35) so resonance is sharper than spill. NEGATIVE (theory does not apply / route (b) fails): (iii) highly correlated dimensions (category-image collapse); (iv) high-involvement deliberate processing that swamps resonance; (v) regulatory prohibition on dimension-strong messaging. Outside the positive conditions the handoff contract routes to (c) or (a)."
   - id: C4
-    statement: "Provenance-as-address (c) requires atoms carrying source/where/when (content_date, platform, geography); perception->proxy join (a) requires addressable proxy features stored alongside the 8-dim vector. Absent these the corresponding bridge is unavailable (the handoff contract reports it as such)."
+    statement: "Provenance-as-address (c) requires reflections carrying source/where/when (content_date, platform, geography); perception->proxy join (a) requires addressable proxy features stored alongside the 8-dim vector. Absent these the corresponding bridge is unavailable (the handoff contract reports it as such)."
 
 # ---------------------------------------------------------------------------
 # Assumption atoms (assumed without test; relaxable, consequences traced)
@@ -78,7 +78,7 @@ assumption_atoms:
 # ---------------------------------------------------------------------------
 propositions:
   - id: P1
-    statement: "The handoff-contract rule. For a target (dimension, cohort), the measurement->activation contract emits (i) the recommended bridge mechanism and (ii) its quantified cost: dimension-distinct cohort (sin^2(beta) > threshold) -> broadcast-a-dimension (b), cost = predicted spill; atoms clustered on few live surfaces -> provenance-as-address (c), cost = coverage bias; else -> minimal-loss proxy (a), cost = L(P*). SBT supplies target + bridge cost; media execution is the management layer."
+    statement: "The handoff-contract rule. For a target (dimension, cohort), the measurement->activation contract emits (i) the recommended bridge mechanism and (ii) its quantified cost: dimension-distinct cohort (sin^2(beta) > threshold) -> broadcast-a-dimension (b), cost = predicted spill; reflections clustered on few live surfaces -> provenance-as-address (c), cost = coverage bias; else -> minimal-loss proxy (a), cost = L(P*). SBT supplies target + bridge cost; media execution is the management layer."
     type: decision_rule
     conditions: "C1, C3, C4"
     antecedents: []
@@ -169,13 +169,13 @@ methods:
     statement: "PRIMARY empirical spine: two-cell field experiment — dimension-strong vs dimension-neutral creative delivered via contextual slots, linked to PRE-MEASURED individual perceptual profiles (PRISM-style elicitation), >=1,500 complete profiles per cell, >=4 product categories spanning involvement x sin^2(beta). Tests P2 (resonance over-index) at the individual level."
     supports: [P2]
   - id: ME2
-    statement: "EXECUTED empirical spine (the realized path; no data partnership available, so the JAR-acceptable methods-companion fallback rather than ME1). Calibrated broadcast-channel Monte Carlo: the cohort single-dimension distinctiveness distribution is calibrated to an OBSERVED public proxy — the five canonical SBT brand profiles (the corpus's public anchors), NOT the WIP atom instrument — by the concentration of each centered profile on its dominant dimension; cohorts are drawn from the method-of-moments Beta and run through the M1 two-type model; over-index, effect size, and routing fraction are reported with bootstrap 95% CIs. Two case studies instantiate the P1 contract: a maintenance campaign (established distinctive brand, Hermes) and a category-creation campaign (undifferentiated new entrant, distinctiveness at the 1/8 floor). Supports P1 (contract bridge-selection) and P2 (resonance over-index)."
+    statement: "EXECUTED empirical spine (the realized path; no data partnership available, so the JAR-acceptable methods-companion fallback rather than ME1). Calibrated broadcast-channel Monte Carlo: the cohort single-dimension distinctiveness distribution is calibrated to an OBSERVED public proxy — the five canonical SBT brand profiles (the corpus's public anchors), NOT a non-public perception instrument — by the concentration of each centered profile on its dominant dimension; cohorts are drawn from the method-of-moments Beta and run through the M1 two-type model; over-index, effect size, and routing fraction are reported with bootstrap 95% CIs. Two case studies instantiate the P1 contract: a maintenance campaign (established distinctive brand, Hermes) and a category-creation campaign (undifferentiated new entrant, distinctiveness at the 1/8 floor). Supports P1 (contract bridge-selection) and P2 (resonance over-index)."
     supports: [P1, P2]
     status: executed
     script: "code/broadcast_channel_me2.py (seed 20260619)"
     outputs: [OB1, OB2, OB3, F1, F2, F3]
   - id: ME3
-    statement: "Proxy-join loss estimation: mutual information I(C;P) and decision-loss L(P) between perceptual cohort membership and addressable proxy features in the atom corpus / panel; identify P* and bound unobservables."
+    statement: "Proxy-join loss estimation: mutual information I(C;P) and decision-loss L(P) between perceptual cohort membership and addressable proxy features in the reflection corpus / panel; identify P* and bound unobservables."
     supports: [P3]
 
 # ME2 simulation outputs (calibrated demonstration, NOT field evidence). All
@@ -226,7 +226,7 @@ alternative_explanations:
     rebuttal: "Those operate on CONTENT features; the prediction here is keyed to PRE-MEASURED observer spectral profiles and predicts magnitude = sin^2(beta). Placebo on non-sensitive dimensions (RC1) separates resonance from content-context."
     citation_keys: [haglund-2024-ai-contextual-advertising, ye-2026-ad-gazer-contextual]
   - id: AE2
-    statement: "Endogenous content creation: surfaces generating atoms may already be selected by the resonant cohort (provenance-as-address survivorship)."
+    statement: "Endogenous content creation: surfaces generating reflections may already be selected by the resonant cohort (provenance-as-address survivorship)."
     rebuttal: "Stated as a coverage-bias limitation; the handoff contract reports the reachable-fraction estimate rather than claiming full coverage."
 
 limitations:
@@ -234,7 +234,7 @@ limitations:
     statement: "Substrate-adjustment / perception-FORMATION dynamics (demand/category creation; belief maintenance; the 'stop advertising -> sales decay' relaxation) is a DISTINCT activation mode handled here only as a boundary condition + practitioner-objection pre-emption. Full treatment (campaign as forcing function + cloud relaxation-rate measurement) is DEFERRED to a 2026z spectral-dynamics companion. This paper scopes itself to activation GIVEN a perception (routing), not formation."
     anchor_keys: [zharnikov-2026aw-forming-a-perception, gijsenberg-2011-adstock-advertising-decisions, broadbent-1979-one-way-tv-advertisements, zajonc-1968-mere-exposure, binet-2013-long-short-of-it, sharp-2010-how-brands-grow, romaniuk-2016-how-brands-grow, sethuraman-2011-advertising-elasticities-meta, durand-2017-market-categories, luffarelli-2023-brand-personality-cbbe-time]
   - id: L2
-    statement: "The atomic-perception measurement architecture invites a replicability objection. Pre-empted by shipping an open PRISM-style elicitation script and the RC2 alternative-instrument robustness."
+    statement: "The reflection-based perception measurement architecture invites a replicability objection. Pre-empted by shipping an open PRISM-style elicitation script and the RC2 alternative-instrument robustness."
   - id: L3
     statement: "Causal threats: endogenous content creation, omitted-variable bias in proxy mapping, measurement-error attenuation in profiles — addressed (RC3), not deferred to the management layer."
 
@@ -253,7 +253,7 @@ corpus_precedents:
     note: "PRISM is the elicitation instrument for the individual perceptual profiles in ME1; open script pre-empts the proprietary objection."
   - key: zharnikov-2026aw-forming-a-perception
     relation: companion_deferral
-    note: "Substrate-adjustment / perception-FORMATION dynamics (L1) is developed in the 2026aw formation companion (Forming a Perception: campaign as forcing function + perception-decay time constant from time-sliced atoms). Re-pointed 2026-06-20 from the kinematics paper 2026z to the formation paper 2026aw, which is the specific companion that realizes L1; files-only same-day refresh of 2026av, NO version bump."
+    note: "Substrate-adjustment / perception-FORMATION dynamics (L1) is developed in the 2026aw formation companion (Forming a Perception: campaign as forcing function + perception-decay time constant from time-sliced reflections). Re-pointed 2026-06-20 from the kinematics paper 2026z to the formation paper 2026aw, which is the specific companion that realizes L1; files-only same-day refresh of 2026av, NO version bump."
 
 external_anchors:
   - key: cover-1972-broadcast-channels
@@ -381,10 +381,3 @@ external_anchors:
     role: empirical_anchor
     status: registered
     note: "VERIFIED 2026-06-20 (Crossref). The consumer-cost side of the addressability retreat: data-driven/addressable advertising provokes perceived surveillance and backlash — a second force beyond signal loss pushing the industry off identity targeting. Added in the tailwind-reframe revision."
-
-open:
-  - "WHEN THE BRAND SPECTROMETER IS PUBLISHED: restore the named-instrument references that were genericized to 'an atom-based perception corpus' / 'the atomic-perception measurement architecture' (paper.md provenance-as-address §, figure caption, Limitations, Data-and-Code-Availability; SPINE thesis (c), ME2, L2) and add its citation/DOI. De-branded 2026-06-19 because the Brand Spectrometer is still WIP (potential cooperation with Jared Richardson / ARA) and not a public artifact."
-  - "Phase-2 DR (2 queries): (E1) survey-perception->proxy-feature mutual-information mapping methods; (E2) two-cell creative field-experiment precedents + Topics-API natural-experiment feasibility."
-  - "Confirm [UNVERIFIED] DOIs (Ye/Wedel/Pieters 2026; Broadbent 1979; Google Topics) in the substrate before citing."
-  - "Decide ME1 (field experiment) vs ME2 (simulation + 2 case studies) as the realized empirical spine based on data-partnership feasibility."
-

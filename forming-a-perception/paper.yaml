@@ -55,10 +55,10 @@ claims:
   status: not_tested
 - id: P2
   type: proposition
-  statement: 'tau identification from time-sliced atoms. The perception-decay time constant tau = 1/lambda_min(A)
+  statement: 'tau identification from time-sliced reflections. The perception-decay time constant tau = 1/lambda_min(A)
     is identified from the post-pulse decay of the centroid displacement: after forcing stops, ||x_bar(t)
     - x*|| decays as exp(-t/tau) along the slowest eigen-direction, so tau is estimable from a time-sliced
-    atom series spanning a spend pulse and its aftermath. The estimator is the OU mean-reversion-rate
+    reflection series spanning a spend pulse and its aftermath. The estimator is the OU mean-reversion-rate
     fit to the centroid trajectory.'
   testable: true
   tested_in_paper: true
@@ -96,7 +96,7 @@ methodology:
   type: empirical
   design: 'EXECUTED demonstration (the realized path; calibrated simulation, NOT a field test — mirrors
     2026av''s ME2 posture). A deterministic fixed-seed forced-OU simulation calibrated to the five canonical
-    PUBLIC brand profiles (de-branding standing; NOT the WIP atom instrument): for each anchor''s distinctiveness
+    PUBLIC brand profiles (NOT a non-public perception instrument): for each anchor''s distinctiveness
     sin^2(beta), simulate a forcing pulse + post-pulse relaxation of the centroid, recover tau by exponential
     fit, and show tau monotone increasing in sin^2(beta). Reports the recovered-tau ordering + a maintenance-budget
     curve with bootstrap intervals. Reproducible script code/forced_relaxation_demo.py (fixed seed), PAQS
@@ -108,7 +108,7 @@ methodology:
     CAUSAL IDENTIFICATION design (pre-committed): to recover F and tau causally, instrument own forcing
     with EXOGENOUS shifters — advertising-tax changes, competitor scandals, political-ad-cycle crowd-out
     of ad inventory — and run a PLACEBO on non-advertised perceptual dimensions (which should show no
-    forced response). Addresses (1) omitted competitive forcing, (2) atom-provenance measurement error,
+    forced response). Addresses (1) omitted competitive forcing, (2) reflection-provenance measurement error,
     (3) reverse causality (spend ramps when perception decays). Ranking by feasibility: natural experiments
     > IV (political cycles) > full structural SDE estimation (avoid as primary).'
 acceptance:
@@ -118,7 +118,7 @@ acceptance:
     a fixed point (random walk / non-mean-reverting), within the C3 positive scope, refutes the forced-OU
     representation.
 - claim_id: P2
-  criterion: Holds if tau identification from time-sliced atoms.
+  criterion: Holds if tau identification from time-sliced reflections.
   falsification: If the post-pulse centroid trajectory is not better fit by exponential relaxation than
     by a no-decay (persistent random walk) null, tau is not identified and P2 fails.
 - claim_id: P3
@@ -143,8 +143,7 @@ limitations:
 - description: 'Proprietary-instrument / construct-validity objection (predicted lead reviewer objection):
     the demonstration uses public illustrative profiles and an open reduction procedure; any perceptual
     tracking battery reduced via the same spectral procedure recovers cloud position. The prediction is
-    about observer perception, not the particular instrument. De-branding standing (Brand Spectrometer
-    WIP).'
+    about observer perception, not the particular instrument.'
   severity: moderate
   addressable: true
 - description: 'Causal identification is a design, not yet executed: F and tau are recovered correlationally

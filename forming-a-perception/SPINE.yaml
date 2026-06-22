@@ -53,7 +53,7 @@ boundary_conditions:
   - id: C3
     statement: "MARKET-SCOPE 2x2 (stated in the RQ paragraph, not an appendix). The tau<-distinctiveness link is SCOPED to: established consumer-packaged-goods and service categories with habitual/repeat purchase and a stable basis of perceptual dimensions. It is EXPECTED TO FAIL for (i) RADICAL INNOVATIONS that redefine the basis vectors of the perceptual space itself (e.g. iPhone-2007-type category genesis — the manifold itself moves, so a fixed-x* relaxation model does not apply); and (ii) B2B / procurement-dominated contexts where institutional routines, not perceptual drift, govern choice. Outside the positive scope the forced-relaxation model is mis-specified and the paper makes no claim."
   - id: C4
-    statement: "Provenance/atom requirement: tau-recovery (P2) needs atoms carrying content_date (time-slicing) and a reduction from raw atoms to R^8 centroid coordinates; absent a time-resolved perceptual series the decay constant is unidentified (the confirmatory design supplies it; the demonstration uses public illustrative profiles)."
+    statement: "Provenance/reflection requirement: tau-recovery (P2) needs reflections carrying content_date (time-slicing) and a reduction from raw reflections to R^8 centroid coordinates; absent a time-resolved perceptual series the decay constant is unidentified (the confirmatory design supplies it; the demonstration uses public illustrative profiles)."
 
 # ---------------------------------------------------------------------------
 assumption_atoms:
@@ -77,7 +77,7 @@ assumption_atoms:
     affects: [P3, P4]
     derived_from: PRIM-CURV
   - id: AA4
-    statement: "The centroid is identified from time-sliced atoms up to sampling error that is mean-zero and independent of the forcing schedule (no provenance-selection co-moving with spend). Used for P2 identification; threatened by AE-ID, addressed by ME-ID."
+    statement: "The centroid is identified from time-sliced reflections up to sampling error that is mean-zero and independent of the forcing schedule (no provenance-selection co-moving with spend). Used for P2 identification; threatened by AE-ID, addressed by ME-ID."
     type: measurement
     relaxable: true
     relaxation_consequence: "Provenance selection co-moving with spend biases tau; bounded by the ME-ID placebo + IV design."
@@ -107,7 +107,7 @@ propositions:
     falsifier: "A category where perceptual-centroid response to a spend pulse shows no relaxation toward a fixed point (random walk / non-mean-reverting), within the C3 positive scope, refutes the forced-OU representation."
     body_sections: ["A Forced-Dynamics Model of Perception Formation"]
   - id: P2
-    statement: "tau identification from time-sliced atoms. The perception-decay time constant tau = 1/lambda_min(A) is identified from the post-pulse decay of the centroid displacement: after forcing stops, ||x_bar(t) - x*|| decays as exp(-t/tau) along the slowest eigen-direction, so tau is estimable from a time-sliced atom series spanning a spend pulse and its aftermath. The estimator is the OU mean-reversion-rate fit to the centroid trajectory."
+    statement: "tau identification from time-sliced reflections. The perception-decay time constant tau = 1/lambda_min(A) is identified from the post-pulse decay of the centroid displacement: after forcing stops, ||x_bar(t) - x*|| decays as exp(-t/tau) along the slowest eigen-direction, so tau is estimable from a time-sliced reflection series spanning a spend pulse and its aftermath. The estimator is the OU mean-reversion-rate fit to the centroid trajectory."
     type: mechanism
     conditions: "C2, C4"
     antecedents: [P1]
@@ -212,7 +212,7 @@ electronic_companion:
 
 methods:
   - id: ME-DEMO
-    statement: "EXECUTED demonstration (the realized path; calibrated simulation, NOT a field test — mirrors 2026av's ME2 posture). A deterministic fixed-seed forced-OU simulation calibrated to the five canonical PUBLIC brand profiles (de-branding standing; NOT the WIP atom instrument): for each anchor's distinctiveness sin^2(beta), simulate a forcing pulse + post-pulse relaxation of the centroid, recover tau by exponential fit, and show tau monotone increasing in sin^2(beta). Reports the recovered-tau ordering + a maintenance-budget curve with bootstrap intervals. Reproducible script code/forced_relaxation_demo.py (fixed seed), PAQS 37a-e."
+    statement: "EXECUTED demonstration (the realized path; calibrated simulation, NOT a field test — mirrors 2026av's ME2 posture). A deterministic fixed-seed forced-OU simulation calibrated to the five canonical PUBLIC brand profiles (NOT a non-public perception instrument): for each anchor's distinctiveness sin^2(beta), simulate a forcing pulse + post-pulse relaxation of the centroid, recover tau by exponential fit, and show tau monotone increasing in sin^2(beta). Reports the recovered-tau ordering + a maintenance-budget curve with bootstrap intervals. Reproducible script code/forced_relaxation_demo.py (fixed seed), PAQS 37a-e."
     supports: [P2, P3, P4]
     status: planned
     script: "code/forced_relaxation_demo.py"
@@ -220,7 +220,7 @@ methods:
     statement: "PRIMARY confirmatory design (roadmap, not executed): a high-frequency perceptual panel — weekly/biweekly perceptual batteries (YouGov BrandIndex or Kantar BrandZ) reduced to R^8 centroids via the same spectral procedure as the public demo — for >=30 brands over 24-36 months merged with GRP/spend data at the same grain; recover per-brand tau from post-pulse decay and test d tau/d sin^2(beta) > 0 with power >.8 for a .25 correlation. Constructs measured at the theory's grain (centroid in spectral space)."
     supports: [P2, P3]
   - id: ME-ID
-    statement: "CAUSAL IDENTIFICATION design (pre-committed): to recover F and tau causally, instrument own forcing with EXOGENOUS shifters — advertising-tax changes, competitor scandals, political-ad-cycle crowd-out of ad inventory — and run a PLACEBO on non-advertised perceptual dimensions (which should show no forced response). Addresses (1) omitted competitive forcing, (2) atom-provenance measurement error, (3) reverse causality (spend ramps when perception decays). Ranking by feasibility: natural experiments > IV (political cycles) > full structural SDE estimation (avoid as primary)."
+    statement: "CAUSAL IDENTIFICATION design (pre-committed): to recover F and tau causally, instrument own forcing with EXOGENOUS shifters — advertising-tax changes, competitor scandals, political-ad-cycle crowd-out of ad inventory — and run a PLACEBO on non-advertised perceptual dimensions (which should show no forced response). Addresses (1) omitted competitive forcing, (2) reflection-provenance measurement error, (3) reverse causality (spend ramps when perception decays). Ranking by feasibility: natural experiments > IV (political cycles) > full structural SDE estimation (avoid as primary)."
     supports: [P2, P3]
 
 observations:
@@ -262,7 +262,7 @@ limitations:
     statement: "JUMP-TERM / SCANDAL boundary: distinctive brands CAN decay fast if an EXOGENOUS shock RELOCATES the stable point x* itself (product-harm crisis, scandal). The forced-OU model holds x* fixed; a Poisson-jump extension (jump-diffusion relocating x*) is flagged in the discussion as a boundary extension, not developed. Connects to the 2026z stationarity/crisis remark and coherence-resilience."
     anchor_keys: [zharnikov-2026z-spectral-dynamics]
   - id: L2
-    statement: "Proprietary-instrument / construct-validity objection (predicted lead reviewer objection): the demonstration uses public illustrative profiles and an open reduction procedure; any perceptual tracking battery reduced via the same spectral procedure recovers cloud position. The prediction is about observer perception, not the particular instrument. De-branding standing (Brand Spectrometer WIP)."
+    statement: "Proprietary-instrument / construct-validity objection (predicted lead reviewer objection): the demonstration uses public illustrative profiles and an open reduction procedure; any perceptual tracking battery reduced via the same spectral procedure recovers cloud position. The prediction is about observer perception, not the particular instrument."
   - id: L3
     statement: "Causal identification is a design, not yet executed: F and tau are recovered correlationally in the demonstration; ME-ID pre-commits the IV/natural-experiment + placebo needed for causal recovery. Magnitudes are calibrated-model properties; only the monotone tau-ordering is the robust claim."
 
@@ -378,8 +378,3 @@ external_anchors:
     role: empirical_anchor
     status: already_registered
     note: "Firm-value persistence meta-analysis anchor. Optional signal in the persistence camp."
-
-open:
-  - "WHEN THE BRAND SPECTROMETER IS PUBLISHED: swap the generic 'any dated perceptual-tracking series' phrasing for the named instrument + its DOI (paralleling 2026av). Until then the placeholder stands; its completion triggers the swap."
-  - "Phase-2 DR (2 queries, deferred unless drafting needs them): (E1) advertising-IV identification precedents (ad-tax / political-cycle instruments); (E2) perceptual-panel feasibility (YouGov BrandIndex / Kantar weekly batteries + GRP merge)."
-

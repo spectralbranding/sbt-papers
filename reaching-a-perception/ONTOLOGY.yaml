@@ -21,7 +21,7 @@ owns:
   - term_key: measurement-to-activation-handoff-contract
     label: "Measurement-to-activation handoff contract"
     canonical_form: "handoff contract"
-    definition: "The specification that, for a target dimension and cohort, returns the recommended bridge mechanism from perception space to delivery and its quantified cost — the argmin over the three bridges of (targeting loss + delivery cost): a dimension-distinct cohort routes to broadcast-a-dimension at a cost equal to predicted spill, an atom-surface-clustered cohort routes to provenance-as-address at a cost equal to coverage bias, else the minimal-loss proxy at a cost equal to the proxy-join loss. It keeps the brand-metrology division of labor: the instrument supplies the target and the bridge cost; the manager runs the media buy."
+    definition: "The specification that, for a target dimension and cohort, returns the recommended bridge mechanism from perception space to delivery and its quantified cost — the argmin over the three bridges of (targeting loss + delivery cost): a dimension-distinct cohort routes to broadcast-a-dimension at a cost equal to predicted spill, a reflection-surface-clustered cohort routes to provenance-as-address at a cost equal to coverage bias, else the minimal-loss proxy at a cost equal to the proxy-join loss. It keeps the brand-metrology division of labor: the instrument supplies the target and the bridge cost; the manager runs the media buy."
     first_section: "The Measurement-to-Activation Handoff Contract"
     relations:
       - {type: specializes, term_key: brand-metrology, note: "the handoff contract is the brand-metrology stance applied to activation: measure the target and the cost of reaching it, do not run the campaign"}
@@ -47,7 +47,7 @@ owns:
   - term_key: provenance-as-address
     label: "Provenance as address"
     canonical_form: "provenance as address"
-    definition: "The activation bridge that traces a perceptual cohort back to re-reachable channels using the source, platform, geography, and content-date provenance each Brand Spectrometer atom already carries: a cohort of atoms is a recency-aware list of surfaces where the perception is currently expressed. A special case of the perception-to-proxy join in which the proxy features are natively addressable rather than statistically inferred; its cost is the coverage bias of the harvested surfaces (the silent majority may not surface)."
+    definition: "The activation bridge that traces a perceptual cohort back to re-reachable channels using the source, platform, geography, and content-date provenance each Brand Spectrometer reflection already carries: a cohort of reflections is a recency-aware list of surfaces where the perception is currently expressed. A special case of the perception-to-proxy join in which the proxy features are natively addressable rather than statistically inferred; its cost is the coverage bias of the harvested surfaces (the silent majority may not surface)."
     first_section: "Provenance as Address"
   - term_key: perception-to-proxy-join
     label: "Perception-to-proxy join"
