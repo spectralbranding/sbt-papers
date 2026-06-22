@@ -34,7 +34,7 @@ meta:
     a signal strong on the dimension a cohort is sensitive to and lets self-selection route it, requiring
     no address. Formalized as a separating signal on a degraded broadcast channel, the self-selection
     sharpness equals the same off-axis variance the parent paper counts as a perception-metamerism loss:
-    the targeting bug becomes a self-selection filter. The second traces atoms back to the surfaces where
+    the targeting bug becomes a self-selection filter. The second traces reflections back to the surfaces where
     each perception was found. The third maps the cohort to addressable proxies and quantifies the garbling
     loss of doing so. Because the address-free bridge is where post-cookie activation is already moving,
     the reach answer is a structural tailwind, not a patch.'
@@ -43,7 +43,7 @@ claims:
   type: proposition
   statement: 'The handoff-contract rule. For a target (dimension, cohort), the measurement->activation
     contract emits (i) the recommended bridge mechanism and (ii) its quantified cost: dimension-distinct
-    cohort (sin^2(beta) > threshold) -> broadcast-a-dimension (b), cost = predicted spill; atoms clustered
+    cohort (sin^2(beta) > threshold) -> broadcast-a-dimension (b), cost = predicted spill; reflections clustered
     on few live surfaces -> provenance-as-address (c), cost = coverage bias; else -> minimal-loss proxy
     (a), cost = L(P*). SBT supplies target + bridge cost; media execution is the management layer.'
   testable: true
@@ -82,11 +82,11 @@ methodology:
     creative delivered via contextual slots, linked to PRE-MEASURED individual perceptual profiles (PRISM-style
     elicitation), >=1,500 complete profiles per cell, >=4 product categories spanning involvement x sin^2(beta).
     Tests P2 (resonance over-index) at the individual level. FALLBACK (JAR-acceptable for a methods companion):
-    calibrated broadcast-channel simulation using the observed sin^2(beta) distribution from an atom-based
+    calibrated broadcast-channel simulation using the observed sin^2(beta) distribution from a reflection-based
     perception corpus, plus two illustrative case studies (one maintenance campaign, one category-creation
     campaign) demonstrating the handoff contract in practice. Proxy-join loss estimation: mutual information
     I(C;P) and decision-loss L(P) between perceptual cohort membership and addressable proxy features
-    in the atom corpus / panel; identify P* and bound unobservables.'
+    in the reflection corpus / panel; identify P* and bound unobservables.'
 acceptance:
 - claim_id: P1
   criterion: Holds if the handoff-contract rule.
@@ -111,7 +111,7 @@ limitations:
     This paper scopes itself to activation GIVEN a perception (routing), not formation.
   severity: moderate
   addressable: true
-- description: The atomic-perception measurement architecture invites a replicability objection. Pre-empted
+- description: The reflection-based perception measurement architecture invites a replicability objection. Pre-empted
     by shipping an open PRISM-style elicitation script and the RC2 alternative-instrument robustness.
   severity: moderate
   addressable: true
