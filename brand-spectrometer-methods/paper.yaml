@@ -39,7 +39,7 @@ meta:
     operator-floored separation between whole cohort clouds resolves the owner cohort from the press in
     one window (signal-to-noise 3.6, permutation p = .003, triangulated) while abstaining elsewhere. The
     cohort signal lives in magnitude, not mean shape; the instrument resolves real separations and abstains
-    where none clears. The framework generalizes to perceptual constructs measured from public text without
+    where none clears. The framework may extend to perceptual constructs measured from public text without
     ground truth.'
 claims:
 - id: P1

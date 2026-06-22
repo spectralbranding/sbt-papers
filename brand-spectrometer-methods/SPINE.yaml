@@ -417,12 +417,21 @@ corpus_precedents:
   - key: "2026d"
     relationship: applies
     note: "Brand Space Geometry — the 1 - cosine metric."
-  - key: "2026g"
+  - key: "2026f"
     relationship: applies
-    note: "Cohort Boundaries / concentration-of-measure — cohort resolution + scope (C3)."
-  - key: "2026j"
+    note: "Cohort Boundaries / concentration-of-measure — floor-informativeness threshold + cohort resolution scope (C3)."
+  - key: "2026o"
     relationship: refines
-    note: "Non-Ergodic Brand Perception — window-dependence motivates P4 (two-window contrast)."
+    note: "Non-Ergodic Brand Perception (Why) — time-average-vs-ensemble window-dependence motivates the cross-window contrast (P4)."
+  - key: "2026v"
+    relationship: applies
+    note: "Dimensional Collapse / LLMs as Metameric Observers — the operator-as-rater premise (cross-model disagreement read as instrument noise)."
+  - key: "2026ap"
+    relationship: applies
+    note: "Same Meaning, Different Prose — the cross-operator render/extract discipline (renderer family != extractor family)."
+  - key: "2026au"
+    relationship: refines
+    note: "Correspondence Principle — brand-equity frameworks as garblings of the underlying perception cloud (the classical-equity distinction)."
 
 external_anchors:
   - ref: "Campbell & Fiske 1959 [VERIFY]"
