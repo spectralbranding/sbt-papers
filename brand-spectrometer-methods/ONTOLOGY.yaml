@@ -1,0 +1,112 @@
+# ONTOLOGY.yaml module - 2026ax (The Brand Spectrometer: A Reproducible Instrument
+# for Cohort-Resolved, Multi-Dimensional Brand-Perception Measurement)
+#
+# Per-paper ontology module per [internal path removed]
+# owns = terms THIS paper introduces; imports = terms owned elsewhere it uses;
+# refines = an imported term this module narrows.
+#
+# This module owns the measurement-instrument + validation apparatus: the Brand
+# Spectrometer pipeline, its two self-computed noise floors (operator + artifact),
+# the per-pair resolution criterion, the two-window falsification test, and the
+# metameric-psychometrics validation class (validation against instrument-computed
+# floors rather than a latent true score). It imports the SBT perceptual substrate
+# and refines brand-metrology into a concrete reproducible apparatus.
+
+paper_key: 2026ax
+schema_version: 0.1
+
+owns:
+  - term_key: brand-spectrometer
+    label: "Brand Spectrometer"
+    canonical_form: "Brand Spectrometer"
+    definition: "An applied measurement instrument that reconstructs cohort-resolved eight-dimensional brand-perception spec vectors from public artifacts through a fixed open pipeline (acquire -> render -> extract -> aggregate -> sensitivity) operated by cross-family LLM pairs. It is the applied apparatus built on the PRISM structured-measurement scaffold; its differentiator is not the renderer but the resolution it attaches via self-computed noise floors."
+    first_section: "The Instrument"
+    relations:
+      - {type: specializes, term_key: brand-metrology, note: "the Spectrometer is the concrete, reproducible metrology apparatus: it operationalizes brand measurement with pinned operators, two noise floors, and a deterministic aggregator"}
+  - term_key: operator-noise-floor
+    label: "Operator-noise floor"
+    canonical_form: "operator-noise floor"
+    definition: "The instrument-computed reliability floor for a cohort: the maximum cosine distance between the cohort's primary spec vector and the vectors produced by cross-family alternative operator pairs reading the same artifacts. It quantifies how much of a measured cohort difference is attributable to operator (renderer/extractor) substitution rather than to the cohort, and it is the threshold V1 (test-retest) and V2 (cross-operator) are read against."
+    first_section: "Two Self-Computed Noise Floors"
+    relations:
+      - {type: specializes, term_key: spectral-metamerism, note: "the operator floor is the operator-attributable share of perceptual metameric variance, separated from the cohort-attributable share"}
+  - term_key: artifact-noise-floor
+    label: "Artifact-noise floor"
+    canonical_form: "artifact-noise floor"
+    definition: "The instrument-computed convergent-validity floor for a cohort: the maximum cosine distance between the cohort's primary spec vector and the vectors produced under leave-one-out perturbation of its artifact set, using the primary operators. It quantifies sensitivity of the cohort vector to artifact sampling and is the threshold V3 (split-half) is read against."
+    first_section: "Two Self-Computed Noise Floors"
+  - term_key: per-pair-resolution-criterion
+    label: "Per-pair resolution criterion"
+    canonical_form: "per-pair resolution criterion"
+    definition: "The decision rule by which a cohort pair is judged resolved, marginal, or sub-resolution: per-pair signal-to-noise S/N = cohort_pairwise_distance / max(endpoint cohorts' operator-noise floors), with resolved at S/N > 2, marginal at 1 <= S/N <= 2, and sub-resolution at S/N < 1. A pair below its floor cannot be distinguished from operator noise and is reported as sub-resolution, never as a finding."
+    first_section: "Two Self-Computed Noise Floors"
+  - term_key: two-window-falsification
+    label: "Two-window falsification test"
+    canonical_form: "two-window falsification"
+    definition: "A pre-registered structural-validity test that runs the identical instrument + battery on two sampling windows of the same case expected to differ in cross-cohort divergence. The instrument passes if it resolves the predicted-different cohort pairs on the divergent-discourse window and returns sub-resolution on a convergent-discourse window; a reversed ordering (resolving a convergent window or failing a divergent one) falsifies the discriminant claim. It demonstrates the instrument resolves real differences and refuses to manufacture absent ones."
+    first_section: "Structural Validity: The Two-Window Test"
+  - term_key: metameric-psychometrics
+    label: "Metameric psychometrics"
+    canonical_form: "metameric psychometrics"
+    definition: "A validation class for ground-truth-absent perception measurement: reliability, convergent validity, reproducibility, and discriminant resolution are established against noise floors the instrument computes for itself, never against a latent true score or a human-panel oracle. Cohort metameric variance is treated as the measurement, not as error; 'is this difference real?' becomes the quantified, falsifiable question of whether a cohort distance exceeds the instrument's own operator and artifact floors. Reliability/convergent/reproducibility hold unconditionally; discriminant resolution is conditional on cohort signal exceeding noise."
+    first_section: "Metameric Psychometrics"
+    relations:
+      - {type: specializes, term_key: spectral-metamerism, note: "lifts spectral metamerism from a property of perception into a validation principle: the metameric (observer-dependent) variance is what the floors quantify and adjudicate"}
+  - term_key: reflection
+    label: "Reflection (per-artifact spectral measurement)"
+    canonical_form: "reflection"
+    definition: "The unit of measurement in the Brand Spectrometer: the brand signal as reflected through a single public artifact and read by one operator pair, yielding one eight-dimensional spec vector bound to one source. It is the data-of-record the instrument aggregates reflection -> source -> cohort, recomputable into cohorts at any resolution. The optics-native name is deliberate: a spectrometer measures reflected signal, and perception is completed in the observer (the brand 'has no colour' until reflected and read). Distinct from the atom-cloud-fact 'atom' (2026b), a single (dimension, source) cell of raw observation; a reflection bundles all eight dimensions from one source and is operator-produced, so it is not a refinement of that atom and does not edit it."
+    first_section: "Reflections, Signal-Source Clustering, and Computed Intervals"
+    relations:
+      - {type: contrasts, term_key: atom, note: "the unit was renamed away from 'atom' precisely to avoid colliding with 2026b's atom-cloud-fact 'atom' (one dimension, one source, raw). A reflection is a per-artifact eight-dimensional operator-produced measurement = a bundle of eight 2026b dimension-atoms sharing one source; an optics-native term for a spectrometer, not a refinement of the 2026b atom."}
+  - term_key: atlas
+    label: "Atlas"
+    canonical_form: "atlas"
+    definition: "The complete assembled output of the instrument for one brand and one dated sampling window: every cohort vector with its per-dimension computed intervals, the operator and source noise floors, the per-pair distances and signal-to-noise values, and the artifact manifest. The worked example comprises two atlases of one case (a fresh and a pinned window); the published atlas is what V5 re-derives byte-for-byte."
+    first_section: "The Pipeline and the Eight Dimensions"
+    relations:
+      - {type: specializes, term_key: perception-cloud, note: "an atlas is the instrument's concrete, dated, multi-cohort realization of the perception cloud — the cloud rendered as measured cohort vectors plus their floors for one window"}
+  - term_key: signal-source-clustering
+    label: "Signal-source clustering"
+    canonical_form: "signal-source clustering"
+    definition: "The hierarchical aggregation reflection -> source -> cohort that corrects pseudo-replication: reflections are averaged within a source (a verbatim outlet/venue, or for first-party data a respondent/wave/vendor pseudonym), then over distinct sources, and the cohort cluster-bootstrap resamples SOURCES not reflections. It is a within-cohort estimator correction on the SOURCES of signal; the unit of inference and output stays the cohort distribution, so it coexists with the corpus stance that the instrument measures cohorts, never individuals (no person is identified, reported, or stored)."
+    first_section: "Reflections, Signal-Source Clustering, and Computed Intervals"
+    relations:
+      - {type: contrasts, term_key: reflection, note: "clustering is the estimation correction on the sources of reflections; the reflection is the measured unit, the source is the unit of independent sampling"}
+  - term_key: distributional-separation-metric
+    label: "Distribution-level separation metric"
+    canonical_form: "distribution-level separation metric"
+    definition: "A discriminant metric that measures whole cohort CLOUDS rather than centroids: energy distance and kernel maximum-mean-discrepancy (RBF, median-heuristic) between source-level cohort samples under a shared permutation null, plus an operator-floored distributional signal-to-noise (pair energy distance / max endpoint distributional operator floor) with a source-cluster bootstrap, and a magnitude/shape decomposition. It retains the MAGNITUDE the scale-invariant mean-cosine metric discards, so it is the magnitude-sensitive companion to the per-pair (cosine) resolution criterion."
+    first_section: "The Distribution-Level Separation Metric and the Triangulation Criterion"
+    relations:
+      - {type: specializes, term_key: spectral-metamerism, note: "measures the metameric (cohort-cloud) variance directly at the distribution level, where the mean-cosine metric only sees centroid shape"}
+      - {type: contrasts, term_key: per-pair-resolution-criterion, note: "distribution-level (magnitude + distribution) vs centroid cosine (shape only); the two see different structure"}
+  - term_key: triangulation-resolution-criterion
+    label: "Triangulation resolution criterion"
+    canonical_form: "triangulation criterion"
+    definition: "The decision rule for the distribution-level metric: a cohort pair is declared RESOLVED only when three independent tests agree — a Holm-corrected energy-distance permutation p < .05 AND the operator-floored distributional signal-to-noise 95%-CI lower bound > 1 AND leave-one-source-out accuracy above chance. Conservative by construction (each test fails on a different mode); guards against metric-shopping together with Holm/BH correction, a metric ensemble, and a permutation-null false-positive calibration. Because the distributional metric was chosen after the confirmatory mean-cosine null, a resolution under this criterion is reported as EXPLORATORY and pre-registered going forward."
+    first_section: "The Distribution-Level Separation Metric and the Triangulation Criterion"
+    relations:
+      - {type: contrasts, term_key: per-pair-resolution-criterion, note: "the analogue resolution rule for the distributional metric: triangulated (three agreeing tests) and exploratory, versus the single confirmatory mean-cosine S/N > 2 gate"}
+  - term_key: metameric-degree
+    label: "Metameric degree"
+    canonical_form: "metameric degree"
+    definition: "The composite scalar 1 - mean cosine similarity across all cohort pairs of an atlas; a low value means the cohort CENTROIDS bunch in dimensional shape. On the atom-averaged fresh window it is .0158 (matching the cohort-attributable variance in the V2 decomposition) and .0079 on the pinned window. A low metameric degree is shape-convergence only; it does not preclude a magnitude separation that the distribution-level metric resolves."
+    first_section: "Fresh-Window Reliability, Convergence, and Reproducibility"
+    relations:
+      - {type: specializes, term_key: spectral-metamerism, note: "the corpus-level scalar summary of spectral-metameric cohort variance, here as a per-atlas mean cosine-distance"}
+
+imports:
+  - {term_key: spectral-brand-theory}
+  - {term_key: perception-cloud}
+  - {term_key: spectral-dimensions}
+  - {term_key: observer-spectral-profile}
+  - {term_key: cohort}
+  - {term_key: spectral-metamerism}
+  - {term_key: brand-metrology}
+  - {term_key: atom}
+
+refines:
+  - term_key: brand-metrology
+    note: "brand-metrology names the measurement-not-management stance abstractly. This module refines it into a concrete, reproducible apparatus: the Brand Spectrometer instrument with pinned cross-family operators, two self-computed noise floors, a per-pair resolution criterion, and a deterministic aggregator that re-derives the atlas byte-for-byte (brand-spectrometer specializes brand-metrology)."
+
