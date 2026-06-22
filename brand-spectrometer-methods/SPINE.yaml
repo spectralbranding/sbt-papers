@@ -1,0 +1,453 @@
+# SPINE.yaml — The Brand Spectrometer (2026ax)
+#
+# SPINE-FIRST (provenance: generative): authored BEFORE body prose, post-GO
+# (rule 0a GO 2026-06-20). Every prose claim in paper.md must trace to a node
+# here; new claims require FORK (extend spine) or REBASE (drop claim).
+#
+# Schema v0.2 ([internal path removed]): the paper reports
+# author-produced computed numbers — a pre-registered V1-V5 LLM-operated battery
+# across two sampling windows, with derived cohort vectors, operator/artifact
+# noise floors, and per-pair signal-to-noise — so observations / methods /
+# measurements / findings / negative_findings are first-class nodes.
+
+spine_version: "0.2"
+spine_doc_version: "0.3.0"
+paper_key: "2026ax"
+provenance: generative
+title: >-
+  The Brand Spectrometer: A Reproducible Instrument for Cohort-Resolved,
+  Multi-Dimensional Brand-Perception Measurement from Public Artifacts
+target_venue_primary: "Behavior Research Methods"
+status: >-
+  Spine-first backbone locked at GO (Working Paper v1.0.0, June 2026). Drafting
+  proceeds against this spine.
+
+thesis: |
+  The Brand Spectrometer is a measurement instrument, not a brand oracle. It
+  reconstructs cohort-resolved eight-dimensional brand-perception spec vectors
+  from public artifacts through a fixed open pipeline (acquire -> render ->
+  extract -> aggregate -> sensitivity) operated by cross-family LLM pairs.
+  Because brand perception is ground-truth-absent — cohort metameric variance IS
+  the measurement, not error around a latent true spec — the instrument is
+  validated for its MEASUREMENT PROPERTIES against two noise floors it computes
+  for itself (an operator floor from cross-family alt-pairs; an artifact floor
+  from leave-one-out), never for criterion accuracy. A pre-registered V1-V5
+  battery across two adjacent sampling windows of one topical case shows the
+  instrument is reliable (test-retest within the operator floor), cross-operator
+  reliable, convergent-valid, reproducible (byte-identical re-derivation, no
+  keys), and structurally valid: it resolves cohort differences exceeding its
+  floors and DECLINES to manufacture differences it cannot separate from operator
+  noise. Discriminant resolution is METRIC-dependent: a scale-invariant
+  mean-cosine signal-to-noise abstains on both windows, while a distribution-level,
+  operator-floored criterion resolves the owner cohort from the press in the fresh
+  window (a magnitude separation triangulated across an energy-distance permutation
+  test, a kernel MMD, and a bootstrap interval, and reported as EXPLORATORY because
+  the metric was chosen after the confirmatory null). We name this validation class
+  metameric psychometrics: reliability, cross-operator reliability, convergent
+  validity, and reproducibility hold unconditionally; discriminant resolution is
+  conditional on cohort signal exceeding the instrument's own noise in the
+  structure a given metric can see (shape vs magnitude-and-distribution).
+
+# ============================================================================
+# Boundary conditions (scope table — Grok fatal-gap #2)
+# ============================================================================
+boundary_conditions:
+  - id: C1
+    statement: >-
+      Applies to public, primarily-textual artifacts (press, forum, social,
+      opinion) with a datable sampling window; multimodal/image-only artifacts
+      are out of scope for the current render stage.
+    observable: "Each artifact carries a body or indexed-snippet excerpt + date."
+  - id: C2
+    statement: >-
+      Cohorts are observer/perceptual groupings (register, language, ownership),
+      NOT demographic segments; the instrument measures cohort-metameric
+      perception, not population incidence.
+  - id: C3
+    statement: >-
+      Floors are informative only when at least two cross-family operator pairs
+      and >=3 artifacts per cohort half exist; below that the instrument reports
+      sub-resolution by construction (not a finding).
+  - id: C4
+    statement: >-
+      Native-language operators are required for non-English cohorts; routing
+      non-English artifacts to a different-language family conflates
+      comprehension variance with perception variance.
+
+# ============================================================================
+# Observations (raw events lifted into the spine)
+# ============================================================================
+observations:
+  - id: O1
+    statement: >-
+      36 public artifacts were curated across 5 observer cohorts (actual-owners,
+      brand-debaters, italian-press, non-italian-press, chinese-cohort) for a
+      fresh post-announcement window (2026-05-30..06-20) of one topical case.
+    evidence:
+      - type: empirical
+        detail: "atlas v0.2.0 inventories; SHA-256 per artifact (33 body, 3 fallback, 0 missing)."
+  - id: O2
+    statement: >-
+      A pinned prior-window atlas (v0.1.4, 2025-09-01..2026-05-29) of the same
+      case exists read-only as a longitudinal/robustness baseline.
+    evidence:
+      - type: empirical
+        detail: "pinned ferrari_luce atlas (not re-run)."
+  - id: O3
+    statement: >-
+      The worked-example cohort vectors are presented as a spectrum-strip figure
+      (eight per-dimension lanes on a fixed 0-10 scale, one line per cohort, a
+      spread band), an axis-order-invariant per-dimension display that avoids the
+      enclosed-area artifact of a radar.
+    antecedents: [O1, M1]
+    evidence:
+      - type: empirical
+        detail: "figures/figure1_spectrum_worked_example.png rendered from the published ferrari_luce atlas by the open spectrum_strip.js renderer."
+
+# ============================================================================
+# Methods (the instrument + the pre-registered battery)
+# ============================================================================
+methods:
+  - id: M1
+    statement: >-
+      The instrument is a fixed pipeline acquire->render->extract->aggregate->
+      sensitivity; each cohort yields an 8-dim spec vector; pairwise cohort
+      distance = 1 - cosine similarity.
+  - id: M2
+    statement: >-
+      Two noise floors are computed by the instrument: operator floor = max
+      distance from primary over cross-family alt-pairs; artifact floor = max
+      distance from primary over leave-one-out artifact subsets.
+    antecedents: [M1]
+  - id: M3
+    statement: >-
+      Per-pair signal-to-noise = cohort distance / max(endpoint operator floors);
+      resolved (>2) / marginal (1-2) / sub-resolution (<1).
+    antecedents: [M2]
+  - id: M4
+    statement: >-
+      The V1-V6 battery, operator pins, and numeric pass thresholds were
+      pre-registered (git + Zenodo) before the fresh atlas was collected;
+      confirmatory/exploratory boundary fixed.
+    evidence:
+      - type: citation
+        detail: "PREREGISTRATION.md §2-4; Nosek et al. 2018 [VERIFY]."
+  - id: M5
+    statement: >-
+      Determinism budget: temperature 0 where the model honors it; residual
+      non-determinism is what V1 measures, not hidden.
+    antecedents: [M1]
+  - id: M6
+    statement: >-
+      Measurement note: under the reflection -> source -> cohort aggregation the
+      composite metameric degree (mean cohort-pair 1 - cosine) is .0158 on the
+      fresh window and .0079 on the pinned window; the fresh value matches the
+      cohort-attributable variance in the V2 decomposition.
+    antecedents: [M1, M3]
+    evidence: [{type: empirical, detail: "bootstrap_atoms_ci_host.json (both windows)"}]
+  - id: M7
+    statement: >-
+      A distribution-level discriminant metric complements the mean-cosine S/N:
+      energy distance and kernel MMD (RBF, median-heuristic) between source-level
+      cohort clouds with a shared 9999-permutation null, an operator-floored
+      distributional S/N (pair energy / max endpoint distributional operator floor)
+      with a source-cluster bootstrap, Holm/BH correction over the 10 pairs, and a
+      magnitude/shape decomposition. A pair is RESOLVED only under triangulation:
+      Holm energy-p < .05 AND distributional S/N 95%-CI lower > 1 AND LOO accuracy
+      > chance. The metric was specified AFTER the mean-cosine null (exploratory),
+      pre-registered going forward.
+    antecedents: [M1, M2, M3]
+    evidence: [{type: analytic, detail: "cohort_separability.py (energy+MMD+triangulation), seed 20260621"}]
+  - id: M8
+    statement: >-
+      The distributional rule is bracketed by controls and a permutation-null
+      calibration: a negative control (same-cohort source splits must abstain), a
+      positive control (a planted magnitude shift must resolve), and a Monte-Carlo
+      false-positive calibration of the S/N threshold under the pooled-split null,
+      plus a source-subsample learning curve showing the abstention is
+      operator-limited, not sample-limited.
+    antecedents: [M2, M7]
+    evidence: [{type: analytic, detail: "controls_calibration.py + resolution_scaling.py, seed 20260621"}]
+
+# ============================================================================
+# Measurements + Findings
+# ============================================================================
+findings:
+  - id: F1
+    statement: >-
+      V1 test-retest PASS 4/5: each K=5 re-render is aggregated to a replicate cohort
+      vector and the cohort-level test-retest distance sits below the operator floor
+      for 4 cohorts (.015<.057, .006<.010, .003<.013, .004<.010). The Mandarin cohort
+      FAILS (.0076 source-matched-bootstrap > its tight floor .0034): deepseek-v4-flash
+      varies more run-to-run than swapping operators does AND returns unparseable
+      output on a majority of re-renders — a reliability limit of that operator
+      (addressable; see [[F1]] limitation + operator reassessment), not the design.
+    antecedents: [M1, M2, M5]
+    evidence: [{type: empirical, detail: "retest_reliability_host.json (fresh; K=5 reflection retest)"}]
+  - id: F2
+    statement: >-
+      V3 split-half PASS 4/5: mean split-half cosine (K=200 random source splits)
+      >= .95 for 4 of 5 cohorts; actual-owners (5 sources) is the single miss at
+      .933. The floor is a fixed cosine threshold, not the LOO source floor, which
+      is too small a perturbation to bracket a half-split.
+    antecedents: [M1, M2]
+    evidence: [{type: empirical, detail: "battery_from_atoms_host.json V3 (fresh)"}]
+  - id: F3
+    statement: >-
+      V5 reproducibility PASS: the seeded key-free reflection aggregation re-derives the
+      atlas byte-identically (33/3/0 body/fallback/missing SHA-256).
+    antecedents: [M1]
+    evidence: [{type: empirical, detail: "battery_from_atoms_host.json V5; deterministic aggregate_atoms.py"}]
+  - id: F4
+    statement: >-
+      V2 cross-operator PASS on BOTH windows under reflection-averaging: fresh
+      operator-attributable var .0142 < cohort var .0158, mean cross-operator
+      cosine .986; pinned .0072 < .0079, cosine .993. (This reverses the earlier
+      whole-cohort single-render V2-fail, and is why the per-pair S/N margins are
+      razor-thin.)
+    antecedents: [M2, M3]
+    evidence: [{type: empirical, detail: "battery_from_atoms_host.json V2 (both windows)"}]
+  - id: F5
+    statement: >-
+      The mean-cosine per-pair S/N ABSTAINS on every cohort pair in BOTH windows
+      (fresh max .93 P>1=.38; pinned best 1.30 at P>1=.56, a coin flip): the
+      scale-invariant metric reads the bunched centroids as convergent.
+    antecedents: [M2, M3, M6]
+    evidence: [{type: empirical, detail: "bootstrap_atoms_ci_host.json pair_signal_to_noise (both)"}]
+  - id: F6
+    statement: >-
+      The distribution-level metric (M7) RESOLVES exactly one pair, in the fresh
+      window: actual-owners | non-italian-press, distributional S/N 3.56
+      [1.06,4.61], Holm energy-p .027 (raw .003), MMD Holm-p .027, LOO .83 —
+      triangulated. Aggregate eta^2 .276, perm p .004. The owner cohort separates
+      from every press cohort by point estimate (S/N 1.9-3.6). The pinned window
+      abstains under the distributional metric too (eta^2 .173, perm p .369; no
+      pair triangulates). EXPLORATORY (post-hoc metric).
+    antecedents: [M7]
+    evidence: [{type: empirical, detail: "cohort_separability_host.json (both windows)"}]
+  - id: F7
+    statement: >-
+      The owner-vs-press separation is MAGNITUDE, not shape: the resolved pair is
+      8.18 in norm-difference vs .033 in centroid cosine distance. Per-dimension
+      attribution shows owners read the brand LOWER than pooled press on 6 of 8
+      dimensions (Holm-significant, Cohen's d 1.36-1.83; Semiotic and Economic
+      largest), while Social (d .28) and Narrative (d .89) converge.
+    antecedents: [M7, F6]
+    evidence: [{type: empirical, detail: "cohort_separability_host.json magnitude/shape; dimension_attribution_host.json"}]
+  - id: F8
+    statement: >-
+      The mean-cosine abstention is OPERATOR-limited, not sample-limited: the
+      source-subsample learning curve is flat and tightens around a sub-1 value as
+      sources grow (.82 [.66,1.01] at 5 sources); reaching S/N>1 needs ~1.16x
+      tighter operator floor, not more artifacts. Controls + calibration: negative
+      control perm-p at nominal (bare point-S/N>1 anti-conservative at small n,
+      hence triangulation), positive control resolves a planted shift, calibrated
+      1%-FPR threshold 1.005 < the resolved pair's CI lower 1.06.
+    antecedents: [M8]
+    evidence: [{type: empirical, detail: "resolution_scaling_host.json; controls_calibration_host.json"}]
+
+negative_findings:
+  - id: NF1
+    statement: >-
+      The pre-registered confirmatory discriminant arm (mean-cosine S/N) returns a
+      NULL on the fresh window: no predicted-different pair clears its operator
+      floor. Reported as a confirmatory null, not metric-shopped away — the
+      distributional resolution (F6) is labelled exploratory.
+    antecedents: [F5]
+    evidence: [{type: empirical, detail: "Table 4 (fresh) — pre-registered confirmatory outcome"}]
+  - id: NF2
+    statement: >-
+      The earlier whole-cohort single-render analysis reported the pinned window
+      as cleanly resolved (V4 7/7); the source-clustered reflection method does NOT
+      reproduce that resolution, so the earlier verdict was a single-render
+      artifact and is superseded.
+    antecedents: [F5, F6]
+    evidence: [{type: empirical, detail: "pinned reflection recomputation supersedes v0.1.4 single-render"}]
+
+# ============================================================================
+# Propositions (theoretical claims)
+# ============================================================================
+propositions:
+  - id: P1
+    statement: >-
+      The instrument is reliable: it returns the same cohort vector to the same
+      input within its self-computed operator floor.
+    antecedents: [F1]
+    evidence: [{type: empirical, detail: "F1"}]
+  - id: P2
+    statement: >-
+      The instrument is convergent-valid and reproducible: independent artifact
+      halves agree within the artifact floor (P2a), and the atlas re-derives
+      deterministically from published code + data (P2b).
+    antecedents: [F2, F3]
+  - id: P3
+    statement: >-
+      Structural validity is conditional, not absolute: the instrument resolves
+      cohort differences that exceed its floors and abstains (reports
+      sub-resolution) when they do not — it refuses to manufacture differences it
+      cannot separate from operator noise. Demonstrated WITHIN one window: on the
+      same reflections the mean-cosine metric abstains while the distributional metric
+      resolves owners-from-press (F5, F6).
+    antecedents: [F5, F6, NF1]
+  - id: P4
+    statement: >-
+      Discriminant resolution is METRIC-dependent, not merely window-dependent:
+      the signal lives in magnitude+distribution (resolved by energy distance,
+      F6/F7), not mean shape (discarded by cosine, F5). The within-window
+      two-metric contrast plus the positive/negative controls (F8) is the
+      falsification test; it shows the floors are not trivially inflated without
+      relying on a cross-window contrast (the pinned window abstains under both
+      metrics).
+    antecedents: [F5, F6, F7, F8]
+  - id: P5
+    statement: >-
+      Metameric psychometrics: a validation framework coherent WITHOUT a latent
+      true score — two instrument-computed noise floors replace the oracle, making
+      "is this difference real?" a quantified, falsifiable, panel-free question.
+    antecedents: [M2, M3, P1, P2, P3]
+  - id: P6
+    statement: >-
+      A signal-detection resolution model formalizes P3: cohorts (Ci,Cj) are
+      resolved when d(Ci,Cj) > k * max(O, A) with pre-registered k=2; the
+      implemented per-pair S/N uses the operator-floor denominator max(O_i,O_j) and
+      V3 reads the source floor, generalizing to max(O,A). The promised Monte-Carlo
+      calibration is DELIVERED (not forthcoming): the permutation-null FPR of the
+      S/N rule and the floor's source-count stability are computed (M8, F8).
+    antecedents: [M3, P3]
+    evidence: [{type: analytic, detail: "controls_calibration.py + resolution_scaling.py"}]
+  - id: P7
+    statement: >-
+      The instrument surfaces boundary objects that survey-CBBE point estimates
+      smooth away: rapid brand-crisis discourse shifts (a same-window owner vs
+      debater divergence recorded as a cross-pair distance + resolution verdict),
+      generational brand-purpose reversals (divergence on the Ideological and
+      Cultural dimensions as a resolved cohort-pair separation), and
+      country-of-origin divergence (distinct dimensional shapes across
+      language-register cohorts that a population-level tracker cannot surface).
+    antecedents: [M1, M3, P3]
+    evidence: [{type: analytic, detail: "applications argument; contrasts cohort-pair design with scalar equity trackers"}]
+  - id: P8
+    statement: >-
+      Exploratory-vs-confirmatory honesty is itself a contribution: the
+      distributional metric was adopted after the confirmatory mean-cosine null, so
+      its resolution (F6) is exploratory and is reported as such, the triangulation
+      criterion is pre-registered going forward, and a confirmatory replication on
+      a new case is owed. Triangulation + Holm/BH + controls + calibration guard
+      against metric-shopping.
+    antecedents: [M7, M8, F6, NF1]
+    evidence: [{type: analytic, detail: "exploratory disclosure; Nosek et al. 2018; Flake & Fried 2020"}]
+
+# ============================================================================
+# Alternative explanations + robustness
+# ============================================================================
+alternative_explanations:
+  - id: AE1
+    statement: >-
+      The fresh-window mean-cosine sub-resolution could reflect prompt brittleness
+      rather than genuine operator noise (predicted lead reviewer objection).
+    addressed_by: [RC1, RC2, RC3, M5, M8]
+  - id: AE2
+    statement: >-
+      Cohort convergence could be an artifact-selection effect rather than real
+      discourse convergence.
+    addressed_by: [RC2, C3]
+robustness_checks:
+  - id: RC1
+    statement: >-
+      Cross-family operator discipline (renderer family != extractor family) plus
+      the sensitivity stage quantify prompt/operator sensitivity directly.
+    antecedents: [M2, M5]
+  - id: RC2
+    statement: >-
+      The within-window two-metric contrast plus positive/negative controls show
+      the floors are not trivially inflated: the same instrument resolves
+      owners-from-press (distributional) where the cosine metric abstains, the
+      positive control resolves a planted shift, and same-cohort splits abstain at
+      the nominal rate.
+    antecedents: [F5, F6, F8]
+  - id: RC3
+    statement: >-
+      Reviewer-robustness now REALIZED (not reserved): metric ensemble (energy +
+      kernel MMD agree under a shared null), Holm/BH multiple-comparison
+      correction, and a permutation-null false-positive calibration of the
+      resolution rule.
+    antecedents: [M7, M8]
+    evidence: [{type: empirical, detail: "cohort_separability.py (MMD+Holm/BH); controls_calibration.py"}]
+
+# ============================================================================
+# Limitations
+# ============================================================================
+limitations:
+  - id: L1
+    statement: "Single brand/case; generalization across brands/categories is future work."
+  - id: L2
+    statement: >-
+      The mean-cosine metric is scale-invariant and blind to magnitude; this is
+      now COMPLEMENTED by the distribution-level energy/MMD metric (M7), which
+      recovers the magnitude separation. Both are reported; neither is silently
+      swapped for the other.
+  - id: L3
+    statement: "n=36 artifacts/window is marginal for source-floor stability; the calibration + learning curve (M8/F8) bound it, replacing the previously promised standalone appendix; expand toward ~80 for stability."
+  - id: L4
+    statement: "V6 (public-signal criterion association, GDELT) was available but not run; the criterion claim is left open."
+  - id: L5
+    statement: >-
+      The distribution-level resolution (F6) is EXPLORATORY — the metric was chosen
+      after the confirmatory null — so it must be confirmed on a new case before it
+      is treated as established (P8).
+  - id: L6
+    statement: >-
+      The distributional test is low-powered (5-8 sources/cohort), so the
+      suggestive-but-unresolved owner-vs-press pairs may be false negatives; only
+      the single triangulated pair should be read as resolved.
+
+# ============================================================================
+# Cross-paper engagement + external anchors
+# ============================================================================
+corpus_precedents:
+  - key: "2026as"
+    relationship: extends
+    note: "PRISM structured-measurement instrument — the Spectrometer is the applied apparatus on the PRISM scaffold."
+  - key: "2026a"
+    relationship: applies
+    note: "Spectral Brand Theory — the eight measured dimensions."
+  - key: "2026e"
+    relationship: applies
+    note: "Spectral Metamerism — the cosine/metameric framing of cohort variance."
+  - key: "2026d"
+    relationship: applies
+    note: "Brand Space Geometry — the 1 - cosine metric."
+  - key: "2026g"
+    relationship: applies
+    note: "Cohort Boundaries / concentration-of-measure — cohort resolution + scope (C3)."
+  - key: "2026j"
+    relationship: refines
+    note: "Non-Ergodic Brand Perception — window-dependence motivates P4 (two-window contrast)."
+
+external_anchors:
+  - ref: "Campbell & Fiske 1959 [VERIFY]"
+    use: "convergent/discriminant validity (MTMM) — V2/V3/V4 are LLM-operator analogues."
+  - ref: "Cronbach 1951 [VERIFY]"
+    use: "reliability theory baseline."
+  - ref: "Putnick & Bornstein 2016 [VERIFY]"
+    use: "measurement invariance across observer groups."
+  - ref: "Flake & Fried 2020 [VERIFY]"
+    use: "questionable measurement practices; preregistration motivation."
+  - ref: "Nosek et al. 2018 [VERIFY]"
+    use: "preregistration revolution — confirmatory/exploratory boundary (M4)."
+  - ref: "Rathje, Mirea & Robertson 2024 (PNAS 121(34):e2308950121; DOI 10.1073/pnas.2308950121)"
+    use: >-
+      Closest prior art that an LLM can validly emit structured psychological
+      scores from text; cited in the cross-family-discipline paragraph as the
+      empirical warrant for the extract stage and the inter-model-variance
+      framing (Grok fatal-gap #3; review-paper MAJOR-3; review-lit-1).
+  - ref: "GenAI-vs-consumer-panels paper [VERIFY]"
+    use: "the assumption metameric psychometrics rejects (a panel is another cohort, not an oracle)."
+  - ref: "Keller 1993; Aaker 1991; Aaker 1997 [VERIFY]"
+    use: "classical brand-equity/personality measurement to differentiate against (the instrument measures perception, not equity)."
+
+open:
+  - "Cross-brand / cross-category generalization (more cases)."
+  - "More divergent + convergent windows to generalize the two-window result (P4)."
+  - "V6 public-signal criterion association (GDELT)."
+
