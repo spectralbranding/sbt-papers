@@ -7,13 +7,13 @@ _Terms used by **2026z** (Spectral Dynamics: Velocity, Acceleration, and Phase S
 *Terms introduced by this paper*
 
 - **Brand Acceleration** (write: `brand acceleration`)
-  - The second time derivative of a brand's spectral profile, a(t)=d^2x/dt^2, capturing whether brand movement is intensifying, stabilizing, or reversing.
+  - The second time derivative of a brand's spectral profile, $a(t)=d^2x/dt^2$, capturing whether brand movement is intensifying, stabilizing, or reversing.
   - first use: Section 3.1 (Definition 3)
 - **Brand Phase Space** (write: `brand phase space`)
-  - The 16-dimensional space P=R^8 x R^8 in which each brand occupies a point (x(t),v(t)) combining its spectral profile (position) and velocity, yielding a complete dynamic state description.
+  - The 16-dimensional space $P=\mathbb{R}^8 \times \mathbb{R}^8$ in which each brand occupies a point $(x(t),v(t))$ combining its spectral profile (position) and velocity, yielding a complete dynamic state description.
   - first use: Section 3.5 (Definition 6)
 - **Brand Velocity** (write: `brand velocity`)
-  - The first time derivative of a brand's spectral profile, v(t)=dx/dt, a vector in R^8 encoding the rate and direction of perceptual change across dimensions.
+  - The first time derivative of a brand's spectral profile, $v(t)=dx/dt$, a vector in $\mathbb{R}^8$ encoding the rate and direction of perceptual change across dimensions.
   - first use: Section 3.1 (Definition 2)
 - **Directional Coherence** (write: `directional coherence`)
   - The cosine similarity between a brand's velocity vector and an a priori strategy direction vector, quantifying alignment between actual brand movement and strategic intent.

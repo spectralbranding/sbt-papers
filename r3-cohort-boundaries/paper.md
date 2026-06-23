@@ -209,8 +209,8 @@ Table 4: Distance Concentration on $\Delta^7$ under Euclidean and Fisher-Rao Met
 
 | Metric | $R_8$ (contrast ratio) | Mean distance | CV |
 |---|---|---|---|
-| Euclidean | 7.46 ± .02 | .4254 | .247 |
-| Fisher-Rao | 5.72 ± .01 | 1.22 rad | .230 |
+| Euclidean | $7.46 \pm .02$ | .4254 | .247 |
+| Fisher-Rao | $5.72 \pm .01$ | 1.22 rad | .230 |
 
 *Notes*: Monte Carlo with $m = 1000$ draws from Dir$(1,\ldots,1)$ at $n = 8$, $10^3$ trials in each metric (seed 42). Fisher-Rao distance is the geodesic distance on $S^7_+$ (radius 2) under the square-root isometry. Both metrics place $\Delta^7$ in the transitional regime ($R_8 \in [5, 10]$).
 

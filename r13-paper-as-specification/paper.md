@@ -351,7 +351,7 @@ L1 checks logical consistency within a single `paper.yaml` file. Do all `claim_i
 
 ### 5.3 L2: Completeness
 
-L2 assesses whether the `paper.yaml` captures the paper's content adequately. Are there claims in the prose that are absent from the `claims` section? Are acceptance criteria vague ("the effect should be significant") or precise ("Cohen's d >= 0.5, p < .005")? Are major limitations acknowledged? L2 requires comparison between the `paper.yaml` and the paper text, which means it benefits from LLM assistance. An LLM can read the paper and the YAML in parallel and flag discrepancies: "Section 4 introduces Proposition 3, which is not listed in the claims section." L2 is not fully automated -- it produces suggestions, not verdicts -- but it dramatically reduces the cognitive load of completeness checking.
+L2 assesses whether the `paper.yaml` captures the paper's content adequately. Are there claims in the prose that are absent from the `claims` section? Are acceptance criteria vague ("the effect should be significant") or precise ("Cohen's $d \ge 0.5$, $p < .005$")? Are major limitations acknowledged? L2 requires comparison between the `paper.yaml` and the paper text, which means it benefits from LLM assistance. An LLM can read the paper and the YAML in parallel and flag discrepancies: "Section 4 introduces Proposition 3, which is not listed in the claims section." L2 is not fully automated -- it produces suggestions, not verdicts -- but it dramatically reduces the cognitive load of completeness checking.
 
 ### 5.4 L3: Plausibility
 
@@ -485,7 +485,7 @@ We advance four propositions that are empirically testable as the standard matur
 
 **Proposition 1 (Expressiveness).** A `paper.yaml` file can represent the core claims, methodology, acceptance criteria, and results of any empirical or theoretical paper without loss of essential structure. Specifically: for any paper P, a domain expert reading only the `paper.yaml` file can reconstruct the paper's claim structure -- the number, type, and logical dependencies of claims -- with high inter-rater agreement with a domain expert reading the full paper.
 
-*Falsification:* P1 is falsified if inter-rater agreement between YAML-only and full-paper reconstruction falls below κ = .70 in an independent multi-field pilot.
+*Falsification:* P1 is falsified if inter-rater agreement between YAML-only and full-paper reconstruction falls below $\kappa = .70$ in an independent multi-field pilot.
 
 **Proposition 2 (Verification utility).** Given a corpus of `paper.yaml` files, automated verification of internal consistency (L1) and completeness (L2) can identify specification deficiencies that would take a human reviewer minutes to hours to detect. Specifically: L1 and L2 checks will flag at least one issue in the majority of first-draft `paper.yaml` files, where each flagged issue corresponds to a genuine specification deficiency (missing acceptance criterion, inconsistent claim status, results not mapped to claims).
 
