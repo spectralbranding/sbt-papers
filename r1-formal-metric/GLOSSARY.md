@@ -7,10 +7,10 @@ _Terms used by **2026d** (Brand Space Geometry: A Formal Metric for Multi-Dimens
 *Terms introduced by this paper*
 
 - **Brand Signal Space** (write: `brand signal space`)
-  - The positive orthant of R^8 equipped with the Aitchison metric, representing brand emission profiles with multiplicative, compositional structure justified by Weber-Fechner scaling.
+  - The positive orthant of $\mathbb{R}^8$ equipped with the Aitchison metric, representing brand emission profiles with multiplicative, compositional structure justified by Weber-Fechner scaling.
   - first use: 3 The Brand Signal Space
 - **Observer Weight Space** (write: `observer weight space`)
-  - The probability simplex Delta^7 equipped with the Fisher-Rao metric (unique under Cencov's theorem), representing observers' relative salience weights across the eight dimensions.
+  - The probability simplex $\Delta^7$ equipped with the Fisher-Rao metric (unique under Cencov's theorem), representing observers' relative salience weights across the eight dimensions.
   - first use: 2.2 SBT Dimensional Architecture
 - **Spectral Sensitivity Index** (write: `spectral sensitivity index`)
   - An observer-weighted curvature measure derived from Jacobi-field analysis that links a brand's static geometric position to its dynamic trajectory vulnerability, with singularities at structural-absence boundaries.

@@ -7,13 +7,13 @@ _Terms used by **2026h** (Specification Impossibility in Organizational Design: 
 *Terms introduced by this paper*
 
 - **Activation Matrix** (write: `activation matrix`)
-  - The 8x6 matrix A in [0,1]^(8x6) whose entry A_ij is the activation level of spectral dimension i at organizational level j, vectorizable to a point in the 48-dimensional specification space.
+  - The $8\times 6$ matrix $A \in [0,1]^{8\times 6}$ whose entry $A_{ij}$ is the activation level of spectral dimension $i$ at organizational level $j$, vectorizable to a point in the 48-dimensional specification space.
   - first use: Preliminaries: The Activation Matrix
 - **Coverage Impossibility** (write: `coverage impossibility`)
   - The geometric result that any finite collection of organizational specifications covers a negligible fraction of the 48-dimensional specification space, making exhaustive specification geometrically impossible regardless of cognitive capacity.
   - first use: The Coverage Impossibility Theorem
 - **Effective Dimensionality Reduction** (write: `effective dimensionality`)
-  - The reduction of the 48-dimensional specification space to d_eff = 8(1-(1-gamma)^6)/gamma free dimensions under OST cascade coupling strength gamma, yielding 15.75 dimensions at gamma=0.5.
+  - The reduction of the 48-dimensional specification space to $d_{\text{eff}} = 8(1-(1-\gamma)^6)/\gamma$ free dimensions under OST cascade coupling strength $\gamma$, yielding 15.75 dimensions at $\gamma=0.5$.
   - first use: The Effective Dimensionality Theorem
 - **Forkability as Subspace Decomposition** (write: `forkability`)
   - The geometric decomposition of the 48-dimensional specification space into a shared subspace and a private subspace, formalizing how organizations share higher-level specifications while diverging on lower levels.

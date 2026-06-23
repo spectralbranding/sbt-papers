@@ -101,9 +101,9 @@ All models were queried at temperature 0.7 (the default creative-task setting fo
 
 Model outputs were parsed and normalized to sum to 1 on the eight-dimensional simplex, following the SBT convention of treating brand perception as an allocation across dimensions [@zharnikov-2026-spectral-brand-theory-computational-framework]. The choice of eight dimensions reflects formal completeness and non-redundancy criteria established in the SBT dimensional justification [@zharnikov-2026-why-eight-completeness-necessity-sbt]; no dimension can be dropped without loss of coverage, so the eight-dimensional structure sets the minimum space in which distortion is meaningful. Distortion was computed as total variation distance:
 
-d(w-hat, w~canon~) = 0.5 x SUM |w-hat~i~ - w~canon,i~|
+$$d(\hat{w}, w_{\text{canon}}) = 0.5 \cdot \sum_i |\hat{w}_i - w_{\text{canon},i}|$$
 
-where w-hat is the model's normalized output and w~canon~ is the canonical profile (also normalized). This measure ranges from 0 (perfect reconstruction) to 1 (maximally distant). The canonical profiles represent the theoretically specified values in SBT [@zharnikov-2026-spectral-brand-theory-computational-framework]; validation of these profiles against human survey data is reported there; the present distortion measure captures deviation from theoretical specifications.
+where $\hat{w}$ is the model's normalized output and $w_{\text{canon}}$ is the canonical profile (also normalized). This measure ranges from 0 (perfect reconstruction) to 1 (maximally distant). The canonical profiles represent the theoretically specified values in SBT [@zharnikov-2026-spectral-brand-theory-computational-framework]; validation of these profiles against human survey data is reported there; the present distortion measure captures deviation from theoretical specifications.
 
 ### Hypotheses
 
@@ -163,7 +163,7 @@ H3 requires analytical computation of the Dirichlet source R(D) lower bound and 
 
 ### H4: Architectural Separation
 
-H4 is **not supported**. Per-model power-law slope estimates (*b* in D = a x R^-b^ + c):
+H4 is **not supported**. Per-model power-law slope estimates (*b* in $D = a \cdot R^{-b} + c$):
 
 - Western (n = 6): mean *b* = 2.93 (SD = 1.16)
 - Cross-cultural (n = 11): mean *b* = 4.64 (SD = 4.43)

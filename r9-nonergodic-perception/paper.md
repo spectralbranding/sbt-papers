@@ -198,7 +198,7 @@ In the SBT framework, this proposition has a geometric interpretation. The two s
 
 **Source of non-ergodicity:** Multiplicative dynamics (Source 2), path-dependent weighting (Source 3).
 
-*Falsification.* P1 would be challenged if repeated experimental manipulations of signal order (holding the signal set constant) produce statistically indistinguishable final perception profiles across all eight SBT dimensions — that is, if a log-linear model of sequential belief updating shows no significant sequence × state interaction term, and permutation tests on longitudinal panel data yield order effects no larger than measurement noise. A finding that identical signal sets presented in different temporal orders converge to the same perception profile would challenge the multiplicative-interaction claim and reduce the framework to an additive (ergodic) special case.
+*Falsification.* P1 would be challenged if repeated experimental manipulations of signal order (holding the signal set constant) produce statistically indistinguishable final perception profiles across all eight SBT dimensions — that is, if a log-linear model of sequential belief updating shows no significant sequence $\times$ state interaction term, and permutation tests on longitudinal panel data yield order effects no larger than measurement noise. A finding that identical signal sets presented in different temporal orders converge to the same perception profile would challenge the multiplicative-interaction claim and reduce the framework to an additive (ergodic) special case.
 
 ### Proposition 2: Absorbing State Asymmetry
 
@@ -264,7 +264,7 @@ Grier and Brumbaugh's [-@grier-1999-noticing-cultural-differences] research on t
 
 **Source of non-ergodicity:** Path-dependent weighting (Source 3).
 
-*Falsification.* P5 would be challenged if cohorts defined by significantly different observer spectral profiles (verified through pre-exposure dimension-weight elicitation) converge to indistinguishable perception trajectories after exposure to a sufficient number of shared brand signals — that is, if a multi-level model of cohort-level perception over time finds no significant cohort × time interaction, and the within-cohort variance in trajectory end-states does not exceed the between-cohort variance. A finding that heterogeneous dimension weights produce only transient differences that resolve into a common attractor would indicate that the cross-cohort divergence mechanism is dominated by ergodicity-restoring forces not captured by the current framework.
+*Falsification.* P5 would be challenged if cohorts defined by significantly different observer spectral profiles (verified through pre-exposure dimension-weight elicitation) converge to indistinguishable perception trajectories after exposure to a sufficient number of shared brand signals — that is, if a multi-level model of cohort-level perception over time finds no significant cohort $\times$ time interaction, and the within-cohort variance in trajectory end-states does not exceed the between-cohort variance. A finding that heterogeneous dimension weights produce only transient differences that resolve into a common attractor would indicate that the cross-cohort divergence mechanism is dominated by ergodicity-restoring forces not captured by the current framework.
 
 ### 4.5 When Is Perception Multiplicative? Sufficiency Conditions
 
@@ -336,15 +336,15 @@ Table 1: Summary of Empirical Evidence Mapped to Propositions.
 
 | Proposition | Key Evidence | Finding | SBT Interpretation |
 |---|---|---|---|
-| P1: Signal Order | Hogarth & Einhorn [-@hogarth-1992-order-effects-belief] | Same evidence, different order → different beliefs | Multiplicative dynamics: signal impact depends on current state |
-| P1: Signal Order | Smith & Vogt [-@smith-1995-effects-integrating-advertising] | Ad-before-WOM ≠ WOM-before-ad | Cross-dimensional path dependence in processing |
+| P1: Signal Order | Hogarth & Einhorn [-@hogarth-1992-order-effects-belief] | Same evidence, different order $\to$ different beliefs | Multiplicative dynamics: signal impact depends on current state |
+| P1: Signal Order | Smith & Vogt [-@smith-1995-effects-integrating-advertising] | Ad-before-WOM $\neq$ WOM-before-ad | Cross-dimensional path dependence in processing |
 | P1: Signal Order | Asch [-@asch-1946-forming-impressions-personality] | Trait order affects impression | First-encountered traits establish interpretive frame |
 | P2: Absorbing State | Slovic [-@slovic-1993-perceived-risk-trust] | Trust destruction >> trust creation | Boundary at zero conviction is absorbing |
 | P2: Absorbing State | Siray [-@siray-2016-pathdependent-consumption-doctoral] | Preference lock-in from consumption paths | Path-dependent states resist reversal |
 | P3: Ensemble-Time | Panel attrition patterns | Negative observers drop out | Survivorship bias = ensemble-time divergence |
 | P4: First Signal | Kardes & Kalyanaram [-@kardes-1992-orderofentry-effects-consumer] | Pioneer advantage persists | First entrant fills perceptual vacuum |
 | P4: First Signal | Tversky & Kahneman [-@tversky-1974-judgment-under-uncertainty] | Anchoring heuristic | Initial values disproportionately influence updates |
-| P5: Cohort Divergence | Grier & Brumbaugh [-@grier-1999-noticing-cultural-differences] | Target vs. non-target market | Different dimension weights → different perceptions |
+| P5: Cohort Divergence | Grier & Brumbaugh [-@grier-1999-noticing-cultural-differences] | Target vs. non-target market | Different dimension weights $\to$ different perceptions |
 | P5: Cohort Divergence | Puntoni et al. [-@puntoni-2011-bilingualism-emotional-intensity] | Language activates different processing | Observer spectral profiles shape signal reception |
 
 *Notes*: Evidence was not generated to test non-ergodicity directly; findings are reinterpreted through the non-ergodic framework as convergent validation.
@@ -373,7 +373,7 @@ Table 2: Ensemble vs. Time Average Divergence (Illustrative).
 | t=5 | 906 | 94 | 7.2 | 6.6 |
 | t=6 | 895 | 105 | 7.3 | 6.5 |
 
-*Notes*: Values are simulated under a discrete-time absorbing Markov chain with N = 1000 observers, initial perception 7.0, and per-period absorption probability lambda = .020 calibrated to a low-coherence brand profile consistent with Zharnikov [-@zharnikov-2026-spectral-brand-theory-computational-framework] incoherent-type parameters. The selection mechanism (70 percent of new absorptions drawn from the lowest tertile of active observers) and the surviving-observer drift produce the diverging ensemble and population trajectories. Generative assumptions and seed are documented in the companion computation script (see Companion Computation Script subsection).
+*Notes*: Values are simulated under a discrete-time absorbing Markov chain with N = 1000 observers, initial perception 7.0, and per-period absorption probability $\lambda$ = .020 calibrated to a low-coherence brand profile consistent with Zharnikov [-@zharnikov-2026-spectral-brand-theory-computational-framework] incoherent-type parameters. The selection mechanism (70 percent of new absorptions drawn from the lowest tertile of active observers) and the surviving-observer drift produce the diverging ensemble and population trajectories. Generative assumptions and seed are documented in the companion computation script (see Companion Computation Script subsection).
 
 ---
 
@@ -387,7 +387,7 @@ To make the prediction concrete, Table 3 simulates absorption trajectories for t
 
 Table 3: Simulated Ensemble-Time Gap Across Canonical Brand Profiles.
 
-| Brand | Profile CV | Absorption rate (lambda) | Ensemble Average at t=6 | Population Average at t=6 | Gap (ensemble - population) |
+| Brand | Profile CV | Absorption rate ($\lambda$) | Ensemble Average at t=6 | Population Average at t=6 | Gap (ensemble - population) |
 |---|---|---|---|---|---|
 | IKEA | .171 | .0088 | 7.3 | 6.9 | .4 |
 | Patagonia | .193 | .0099 | 7.3 | 6.9 | .4 |
@@ -395,7 +395,7 @@ Table 3: Simulated Ensemble-Time Gap Across Canonical Brand Profiles.
 | Erewhon | .352 | .0181 | 7.3 | 6.5 | .8 |
 | Tesla | .388 | .0200 | 7.3 | 6.4 | .9 |
 
-*Notes*: Profile CV is the coefficient of variation of the eight-dimension emission vector for each brand's canonical SBT profile. Per-period absorption rate (lambda) is set proportional to the profile CV, with the highest-CV profile (Tesla) calibrated to the .020 reference rate cited in Table 2. The simulation reuses the seed and selection mechanism documented in the Companion Computation Script subsection. The pattern confirms P3: ensemble averages converge across brands while population averages stratify, producing systematically larger gaps for low-coherence (high-CV) brands. The per-brand ordering of the gap (Tesla > Erewhon > Hermès > Patagonia ~ IKEA) tracks the ordering of profile dispersion, not the ordering of profile mean — health metrics that average across surviving observers cannot recover this ordering.
+*Notes*: Profile CV is the coefficient of variation of the eight-dimension emission vector for each brand's canonical SBT profile. Per-period absorption rate ($\lambda$) is set proportional to the profile CV, with the highest-CV profile (Tesla) calibrated to the .020 reference rate cited in Table 2. The simulation reuses the seed and selection mechanism documented in the Companion Computation Script subsection. The pattern confirms P3: ensemble averages converge across brands while population averages stratify, producing systematically larger gaps for low-coherence (high-CV) brands. The per-brand ordering of the gap (Tesla > Erewhon > Hermès > Patagonia ~ IKEA) tracks the ordering of profile dispersion, not the ordering of profile mean — health metrics that average across surviving observers cannot recover this ordering.
 
 ---
 
@@ -467,7 +467,7 @@ Table 4: Correspondence Between Propositions and Formal Results in Zharnikov [-@
 | P2: Absorbing State Asymmetry | Theorem 2 (survival probability) | Absorbing boundary at $\partial S^7_+$ with exponential decay |
 | P3: Ensemble-Time Divergence | Theorem 4 (non-ergodicity) | $\lim_{T\to\infty} \bar{f}^{(T)} \neq \langle f \rangle^{(E)}$ a.s. |
 | P4: First-Signal Anchoring | Drift term dependence on initial condition | $C(x)$ factor in survival probability $S(t,x) \sim C(x) e^{-\lambda t}$ |
-| P5: Cohort Trajectory Divergence | Weight-dependent diffusion coefficient | Different $\sigma(w)$ → different trajectory distributions |
+| P5: Cohort Trajectory Divergence | Weight-dependent diffusion coefficient | Different $\sigma(w)$ $\to$ different trajectory distributions |
 
 *Notes*: Mathematical objects refer to the stochastic differential equation framework on the positive octant of the 7-sphere $S^7_+$ as specified in Zharnikov [-@zharnikov-2026-non-ergodic-brand-perception-diffusion]. Theorem numbering follows the working-paper version v1.0.
 
@@ -537,7 +537,7 @@ AI assistants (Claude Opus 4.8, Grok 4.20, Gemini 2.5 Pro) were used for initial
 
 ## Companion Computation Script
 
-The simulated values in Table 2 (illustrative absorption trajectory) and Table 3 (per-brand ensemble-time gaps across the five canonical SBT profiles) are generated by `simulate_absorption.py`, published at `https://github.com/spectralbranding/sbt-papers/tree/main/r9-nonergodic-perception/code/simulate_absorption.py`. The script implements a discrete-time absorbing Markov chain with N = 1000 observers, initial perception 7.0 on a 0–10 scale, and a per-period absorption rate calibrated to each brand's profile coefficient of variation (Tesla's high-CV profile maps to the lambda = .020 reference rate cited in Table 2). New absorptions are drawn 70 percent from the lowest tertile of active observers and 30 percent at random across the rest, modeling the survivorship-selection mechanism. Surviving observers experience a small positive drift consistent with multiplicative-update dynamics. Random seed is fixed at 42. Run command: `uv run --with numpy python simulate_absorption.py --seed 42 --periods 6`. Running the script reproduces Table 2 and Table 3 stdout exactly. A README in the same directory documents the script's provenance and the cited figures it reproduces.
+The simulated values in Table 2 (illustrative absorption trajectory) and Table 3 (per-brand ensemble-time gaps across the five canonical SBT profiles) are generated by `simulate_absorption.py`, published at `https://github.com/spectralbranding/sbt-papers/tree/main/r9-nonergodic-perception/code/simulate_absorption.py`. The script implements a discrete-time absorbing Markov chain with N = 1000 observers, initial perception 7.0 on a 0–10 scale, and a per-period absorption rate calibrated to each brand's profile coefficient of variation (Tesla's high-CV profile maps to the $\lambda$ = .020 reference rate cited in Table 2). New absorptions are drawn 70 percent from the lowest tertile of active observers and 30 percent at random across the rest, modeling the survivorship-selection mechanism. Surviving observers experience a small positive drift consistent with multiplicative-update dynamics. Random seed is fixed at 42. Run command: `uv run --with numpy python simulate_absorption.py --seed 42 --periods 6`. Running the script reproduces Table 2 and Table 3 stdout exactly. A README in the same directory documents the script's provenance and the cited figures it reproduces.
 
 ---
 

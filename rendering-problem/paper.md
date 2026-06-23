@@ -329,47 +329,47 @@ This appendix provides a formal notation for the rendering problem that is consi
 
 ### A.1 Notation
 
-Let *S* denote a specification drawn from specification space *&Sigma;* — the set of all bounded, enumerable encodings of system constraints and parameters (Definition 1). In the discrete case (genome, org-schema, brand emission policy), *S* &isin; **R**^n where *n* is the number of specification slots (base pairs, L0–L5 cascade entries, 8-dimensional brand profile).
+Let $S$ denote a specification drawn from specification space $\Sigma$ — the set of all bounded, enumerable encodings of system constraints and parameters (Definition 1). In the discrete case (genome, org-schema, brand emission policy), $S \in \mathbf{R}^n$ where $n$ is the number of specification slots (base pairs, L0–L5 cascade entries, 8-dimensional brand profile).
 
-Let *E* &isin; *&Epsilon;* denote an environment drawn from environment space *&Epsilon;* — the set of all contextual parameters that the specification does not encode. The rendering operator is the map:
+Let $E \in \mathcal{E}$ denote an environment drawn from environment space $\mathcal{E}$ — the set of all contextual parameters that the specification does not encode. The rendering operator is the map:
 
-&rho; : *&Sigma;* &times; *&Epsilon;* &rarr; *&Rho;*
+$$\rho : \Sigma \times \mathcal{E} \to \mathcal{P}$$
 
-where *&Rho;* is the space of realized configurations — phenotypes, operational states, or signal fields depending on the domain. The rendering operator *&rho;*(*&sigma;*, *E*) maps a specification and an environment to a realized configuration. The configuration layer (Definition 4) is embedded in *&rho;* as the mechanism that selects which elements of *&sigma;* are active given *E*: this is the epigenome in biology, the operational parameter set in organizations, and the channel-specific adaptation in brands.
+where $\mathcal{P}$ is the space of realized configurations — phenotypes, operational states, or signal fields depending on the domain. The rendering operator $\rho(\sigma, E)$ maps a specification and an environment to a realized configuration. The configuration layer (Definition 4) is embedded in $\rho$ as the mechanism that selects which elements of $\sigma$ are active given $E$: this is the epigenome in biology, the operational parameter set in organizations, and the channel-specific adaptation in brands.
 
 ### A.2 The Rendering Map as Stochastic Operator
 
-Because environments vary and self-organizational dynamics introduce irreducible stochasticity (Definition 5), *&rho;* is more precisely a probability distribution over *&Rho;* conditioned on *&sigma;* and *E*:
+Because environments vary and self-organizational dynamics introduce irreducible stochasticity (Definition 5), $\rho$ is more precisely a probability distribution over $\mathcal{P}$ conditioned on $\sigma$ and $E$:
 
-*&rho;*(*&sigma;*, *E*) = *P*(*r* | *&sigma;*, *E*)
+$$\rho(\sigma, E) = P(r \mid \sigma, E)$$
 
-This probability distribution formalizes observer-dependence (different observers draw from the same distribution but land at different realizations) and environmental contingency (the distribution shifts as *E* changes). The non-injectivity of the expectation *E*[*&rho;*(*&sigma;*, *E*)] in *&sigma;* — the existence of specification pairs *&sigma;*&sub;1& &ne; *&sigma;*&sub;2 with the same expected configuration — formalizes Proposition 2's configuration-independence claim.
+This probability distribution formalizes observer-dependence (different observers draw from the same distribution but land at different realizations) and environmental contingency (the distribution shifts as $E$ changes). The non-injectivity of the expectation $\mathbb{E}[\rho(\sigma, E)]$ in $\sigma$ — the existence of specification pairs $\sigma_1 \neq \sigma_2$ with the same expected configuration — formalizes Proposition 2's configuration-independence claim.
 
 For the discrete-state case, the temporal evolution of the rendered configuration is governed by a Markov process with forward equation:
 
-d*P*&sub;*t*(*r* | *&sigma;*) / d*t* = &sum;&sub;*r*' [*Q*(*r*' | *&sigma;*, *r*) *P*&sub;*t*(*r*' | *&sigma;*) &minus; *Q*(*r* | *&sigma;*, *r*') *P*&sub;*t*(*r* | *&sigma;*)]
+$$\frac{d P_t(r \mid \sigma)}{dt} = \sum_{r'} \left[ Q(r' \mid \sigma, r)\, P_t(r' \mid \sigma) - Q(r \mid \sigma, r')\, P_t(r \mid \sigma) \right]$$
 
-where *Q*(*r*' | *&sigma;*, *r*) is the rendering transition rate matrix: the rate at which the system moves from configuration *r*' to configuration *r* given specification *&sigma;*. This is the mathematical form of Proposition 4 (temporal divergence): two implementations initialized at different configurations will follow divergent trajectories under the same *Q*, because *Q* is specification-conditioned but not configuration-determinate.
+where $Q(r' \mid \sigma, r)$ is the rendering transition rate matrix: the rate at which the system moves from configuration $r'$ to configuration $r$ given specification $\sigma$. This is the mathematical form of Proposition 4 (temporal divergence): two implementations initialized at different configurations will follow divergent trajectories under the same $Q$, because $Q$ is specification-conditioned but not configuration-determinate.
 
 ### A.3 Specification Independence (Proposition 2 Formal Restatement)
 
-Two specifications *&sigma;*&sub;1 and *&sigma;*&sub;2 are rendering-equivalent under environment *E* if and only if:
+Two specifications $\sigma_1$ and $\sigma_2$ are rendering-equivalent under environment $E$ if and only if:
 
-*&rho;*(*&sigma;*&sub;1, *E*) = *&rho;*(*&sigma;*&sub;2, *E*) in distribution
+$$\rho(\sigma_1, E) = \rho(\sigma_2, E) \text{ in distribution}$$
 
-The **non-injectivity** of *&rho;* — the existence of metameric pairs *&sigma;*&sub;1 &ne; *&sigma;*&sub;2 with rendering-equivalence — formalizes Proposition 2's configuration-independence claim. Rendering non-injectivity means that the specification does not uniquely determine the implementation: multiple distinct specifications can produce identical realized configurations, and a single specification can produce multiple distinct realized configurations under different environments. This is the structural basis for the specification gap (Definition 3): the implementation space is larger than the specification space, and the rendering map is neither injective (multiple specs can produce the same output) nor surjective in practice (not all possible configurations are reachable from a given specification).
+The **non-injectivity** of $\rho$ — the existence of metameric pairs $\sigma_1 \neq \sigma_2$ with rendering-equivalence — formalizes Proposition 2's configuration-independence claim. Rendering non-injectivity means that the specification does not uniquely determine the implementation: multiple distinct specifications can produce identical realized configurations, and a single specification can produce multiple distinct realized configurations under different environments. This is the structural basis for the specification gap (Definition 3): the implementation space is larger than the specification space, and the rendering map is neither injective (multiple specs can produce the same output) nor surjective in practice (not all possible configurations are reachable from a given specification).
 
 ### A.4 Connection to Spectral Metamerism
 
-Brand metamerism [@zharnikov-2026-spectral-metamerism-brand-perception-projection] is the special case of the rendering operator where *&Sigma;* = perceptual-spectrum space (the 8-dimensional brand emission profile), *&Rho;* = brand-experience space (the observer's perception cloud), and *E* = observer-cohort. In this domain, rendering non-injectivity is spectral metamerism: two distinct emission profiles (*&sigma;*&sub;1 &ne; *&sigma;*&sub;2) that produce identical perception clouds (*&rho;*(*&sigma;*&sub;1, *E*) = *&rho;*(*&sigma;*&sub;2, *E*)) under observer cohort *E*. The rendering problem places this brand-specific result within the broader pattern: metamerism is one instantiation of the structural non-injectivity that characterizes any rendering operator.
+Brand metamerism [@zharnikov-2026-spectral-metamerism-brand-perception-projection] is the special case of the rendering operator where $\Sigma$ = perceptual-spectrum space (the 8-dimensional brand emission profile), $\mathcal{P}$ = brand-experience space (the observer's perception cloud), and $E$ = observer-cohort. In this domain, rendering non-injectivity is spectral metamerism: two distinct emission profiles ($\sigma_1 \neq \sigma_2$) that produce identical perception clouds ($\rho(\sigma_1, E) = \rho(\sigma_2, E)$) under observer cohort $E$. The rendering problem places this brand-specific result within the broader pattern: metamerism is one instantiation of the structural non-injectivity that characterizes any rendering operator.
 
 ### A.5 Falsification Anchors for Propositions 1–3
 
-**Proposition 1 (Structural Specification Gap)** is falsified if there exists a specification *&sigma;** such that increasing the dimensionality of *&sigma;** closes the gap: lim&sub;*n* &rarr; &infin; *H*(*&rho;*(*&sigma;*&sub;*n*, *E*) | *&sigma;*&sub;*n*) = 0, where *H*(&middot; | &middot;) is conditional entropy and *&sigma;*&sub;*n* is the specification extended to *n* dimensions. The rendering problem asserts this limit does not hold for living and organized systems.
+**Proposition 1 (Structural Specification Gap)** is falsified if there exists a specification $\sigma^*$ such that increasing the dimensionality of $\sigma^*$ closes the gap: $\lim_{n \to \infty} H(\rho(\sigma_n, E) \mid \sigma_n) = 0$, where $H(\cdot \mid \cdot)$ is conditional entropy and $\sigma_n$ is the specification extended to $n$ dimensions. The rendering problem asserts this limit does not hold for living and organized systems.
 
-**Proposition 2 (Configuration Independence)** is falsified if the rendering operator is injective in expectation: E[*&rho;*(*&sigma;*, *E*)] = E[*&rho;*(*&sigma;*', *E*)] only when *&sigma;* = *&sigma;*'. The rendering problem asserts that non-injectivity is generic for systems in *&Sigma;* &times; *&Epsilon;*.
+**Proposition 2 (Configuration Independence)** is falsified if the rendering operator is injective in expectation: $\mathbb{E}[\rho(\sigma, E)] = \mathbb{E}[\rho(\sigma', E)]$ only when $\sigma = \sigma'$. The rendering problem asserts that non-injectivity is generic for systems in $\Sigma \times \mathcal{E}$.
 
-**Proposition 3 (Irreducible Emergence)** is falsified if there exists a computable function *f* such that *P*(*E* | *&sigma;*) = 1 where *E* = *f*(*&sigma;*). The rendering problem asserts no such function exists for the emergent phenomena in question (consciousness, customer experience, perception cloud), consistent with Bedau's [-@bedau-1997-weak-emergence-philosophical] weak emergence criterion.
+**Proposition 3 (Irreducible Emergence)** is falsified if there exists a computable function $f$ such that $P(E \mid \sigma) = 1$ where $E = f(\sigma)$. The rendering problem asserts no such function exists for the emergent phenomena in question (consciousness, customer experience, perception cloud), consistent with Bedau's [-@bedau-1997-weak-emergence-philosophical] weak emergence criterion.
 
 ---
 

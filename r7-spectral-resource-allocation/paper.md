@@ -316,7 +316,7 @@ graph TD
     F --> I[Apply Theorem 1 independently per sub-brand]
 ```
 
-*Figure 2: Sub-brand allocation decision tree. The decision at "Spread exceeds r(ε)?" implements Theorem 3's Fisher-Rao radius condition; the cost-additive branch applies when dimensions share operational infrastructure across cohorts.*
+*Figure 2: Sub-brand allocation decision tree. The decision at "Spread exceeds $r(\epsilon)$?" implements Theorem 3's Fisher-Rao radius condition; the cost-additive branch applies when dimensions share operational infrastructure across cohorts.*
 
 ---
 

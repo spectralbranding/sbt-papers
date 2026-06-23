@@ -339,13 +339,13 @@ Yet the brands may differ fundamentally in how they handle edge cases, resolve d
 
 Behavioral metamerism is formalized using the structure of observational equivalence from econometrics [@koopmans-1949-172125144; @manski-1995-untitled].
 
-Let *f*: Q x C x O x T -> R denote a Brand Function mapping queries, contexts, observer types, and time to behavioral responses. Let G = {*g*_1, *g*_2, ..., *g*_k} denote the set of observable aggregate statistics available to an AI agent (topic distributions, sentiment scores, citation counts, review distributions, engagement metrics).
+Let $f: Q \times C \times O \times T \to R$ denote a Brand Function mapping queries, contexts, observer types, and time to behavioral responses. Let $G = \{g_1, g_2, \ldots, g_k\}$ denote the set of observable aggregate statistics available to an AI agent (topic distributions, sentiment scores, citation counts, review distributions, engagement metrics).
 
-**Definition (Behavioral metamerism).** Two Brand Functions *f*_1 and *f*_2 are *behaviorally metameric* with respect to observation set G if:
+**Definition (Behavioral metamerism).** Two Brand Functions $f_1$ and $f_2$ are *behaviorally metameric* with respect to observation set $G$ if:
 
-E[*g*(*f*_1)] = E[*g*(*f*_2)] for all *g* in G
+$$E[g(f_1)] = E[g(f_2)] \quad \text{for all } g \in G$$
 
-while there exists at least one behavioral dimension *h* not in G such that *f*_1(*h*) != *f*_2(*h*).
+while there exists at least one behavioral dimension $h \notin G$ such that $f_1(h) \neq f_2(h)$.
 
 The metamerism condition holds when the observation set G is informationally incomplete --- when it collapses the full behavioral space into a lower-dimensional statistical summary. This is structurally identical to color metamerism, where the three-channel human visual system collapses infinite spectral variation into tristimulus coordinates, and to the observational equivalence problem in econometrics, where multiple structural models generate identical reduced-form distributions.
 
@@ -387,7 +387,7 @@ The preceding sections have motivated the Brand Function as valuable. This secti
 
 ### Three Structural Arguments
 
-*The metamerism impossibility argument (information-theoretic).* When behavioral metamerism is present --- when brands in the same category produce statistically indistinguishable outputs --- no amount of statistical observation can resolve their identities. This follows directly from observational equivalence: if E[*g*(*f*_1)] = E[*g*(*f*_2)] for all observable statistics *g*, brand identity under statistical observation is formally underdetermined [@koopmans-1949-172125144; @manski-1995-untitled]. The specification is logically necessary for disambiguation. This is not a practical limitation that more data can overcome; it is a mathematical impossibility inherent in the relationship between structural models and their reduced-form distributions.
+*The metamerism impossibility argument (information-theoretic).* When behavioral metamerism is present --- when brands in the same category produce statistically indistinguishable outputs --- no amount of statistical observation can resolve their identities. This follows directly from observational equivalence: if $E[g(f_1)] = E[g(f_2)]$ for all observable statistics $g$, brand identity under statistical observation is formally underdetermined [@koopmans-1949-172125144; @manski-1995-untitled]. The specification is logically necessary for disambiguation. This is not a practical limitation that more data can overcome; it is a mathematical impossibility inherent in the relationship between structural models and their reduced-form distributions.
 
 *The verification impossibility argument (formal methods).* Brand behavior cannot be verified without a specification against which to verify. Dijkstra's [-@dijkstra-1970-notes-structured-programming] observation that testing can demonstrate the presence of bugs but never their absence applies with equal force to brand behavior: an AI agent can detect anomalies relative to past behavior (statistical process control) but cannot determine whether behavior conforms to the brand's intended identity without a specification of that identity. In model checking and formal verification, correctness is defined as conformance to a specification [@clarke-1999-untitled]. No specification, no verifiable correctness. As autonomous AI commerce scales through deployed protocols (ACP, UCP), the need for verification against specification becomes a prerequisite for accountability.
 

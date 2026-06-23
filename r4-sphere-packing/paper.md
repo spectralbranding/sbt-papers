@@ -396,7 +396,7 @@ xychart-beta
     line [8, 5, 3, 3, 2, 1]
 ```
 
-*Figure 2: Log-base-10 positioning capacity as a function of average pairwise correlation rho among SBT dimensions (n = 8, epsilon = .10). Plotted values are log10((1/epsilon)^d_eff) rounded to the nearest integer; exact values from Table 8 are 8.00, 4.71, 3.33, 2.58, 1.78, 1.36. The curve is steepest in the low-correlation regime (rho in [.0, .2]): even modest positive correlation collapses capacity by three or more orders of magnitude before rho = .2 is reached. Proposition 5 result.*
+*Figure 2: Log-base-10 positioning capacity as a function of average pairwise correlation $\rho$ among SBT dimensions ($n = 8$, $\varepsilon = .10$). Plotted values are $\log_{10}((1/\varepsilon)^{d_\text{eff}})$ rounded to the nearest integer; exact values from Table 8 are 8.00, 4.71, 3.33, 2.58, 1.78, 1.36. The curve is steepest in the low-correlation regime ($\rho \in [.0, .2]$): even modest positive correlation collapses capacity by three or more orders of magnitude before $\rho = .2$ is reached. Proposition 5 result.*
 
 *Notes*: Mermaid rendering of the same data shown in Table 8. The vertical axis is $\log_{10}$ of capacity; the horizontal axis is the average pairwise correlation $\rho$ (non-uniformly spaced sample points). Capacity contracts by approximately five orders of magnitude as $\rho$ moves from $.0$ to $.7$, reflecting the collapse of $d_{\text{eff}} = \operatorname{tr}/\lambda_{\max}$ from 8.00 to 1.36 over the same interval. The curve is steepest in the low-correlation regime ($\rho \in [.0, .2]$): a small positive correlation already costs more than three orders of magnitude of capacity.
 

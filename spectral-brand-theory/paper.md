@@ -376,7 +376,7 @@ Table 8: Companion-Paper Formalization of SBT Constructs.
 | Eight-dimensional brand space, metric structure | Zharnikov [-@zharnikov-2026-brand-space-geometry-formal-metric] | Fisher-Rao information metric on the dimension simplex |
 | Information loss in single-score collapse | Zharnikov [-@zharnikov-2026-spectral-metamerism-brand-perception-projection] | Projection bounds; metameric equivalence classes |
 | Cohort as cluster in spectral-profile space (§2.3) | Zharnikov [-@zharnikov-2026-cohort-boundaries-high-dimensional-perception] | Concentration-of-measure analysis of cohort boundary fuzziness |
-| Market capacity for differentiated brands | Zharnikov [-@zharnikov-2026-many-brands-can-market-hold] | Sphere-packing bounds in S^7_+ |
+| Market capacity for differentiated brands | Zharnikov [-@zharnikov-2026-many-brands-can-market-hold] | Sphere-packing bounds in $S^7_+$ |
 | Non-ergodic perception (P2; §5.1) | Zharnikov [-@zharnikov-2026-non-ergodic-brand-perception-diffusion; -@zharnikov-2026-non-ergodic-brand-perception-why] | Stochastic differential equations on the simplex; absorbing states |
 | Eight-dimension justification (§2.2) | Zharnikov [-@zharnikov-2026-why-eight-completeness-necessity-sbt] | Completeness and necessity argument for d = 8 |
 | Coherence-type taxonomy (§4.2; P4) | Zharnikov [-@zharnikov-2026-coherence-type-as-crisis-predictor] | Drift-geometry derivation of the five types |
@@ -387,7 +387,7 @@ Table 8: Companion-Paper Formalization of SBT Constructs.
 | Velocity / acceleration of cohort drift (§5.4) | Zharnikov [-@zharnikov-2026z-spectral-dynamics] | Phase-space dynamics in perception space |
 | Rate-distortion of AI brand encoders | Zharnikov [-@zharnikov-2026-empirical-rate-distortion-curve-ai] | Empirical R(D) curve; 1-5 ordinal scale optimum |
 | Portfolio interference and AI immunity (§5.2.1) | Zharnikov [-@zharnikov-2026-hf-r20-portfolio-ai-perception] | Spectral immunity of awareness-gated AI perception |
-| Recovery threshold after coherence shocks | Zharnikov [-@zharnikov-2026-restoring-perceptual-separability-after-coherence] | μ greater-than λ inequality for perceptual separability restoration |
+| Recovery threshold after coherence shocks | Zharnikov [-@zharnikov-2026-restoring-perceptual-separability-after-coherence] | $\mu$ greater-than $\lambda$ inequality for perceptual separability restoration |
 | Output (WHAT) vs. process (DO) layer (§5.2.1) | Zharnikov [-@zharnikov-2026-specification-impossibility-organizational-design-high; -@zharnikov-2026-organizational-schema-theory-test-driven] | OST L0 to L5 hierarchy; impossibility of complete process specification |
 
 *Notes*: This paper states each construct in informal or qualitative form; the cited companion paper supplies the formal derivation, bound, or empirical instantiation. Citation keys and DOIs follow the canonical reference list; all companion papers are available open-access at the Zenodo community page (zenodo.org/communities/spectral-branding).
