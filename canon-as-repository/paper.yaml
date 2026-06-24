@@ -12,7 +12,7 @@ meta:
     orcid: 0009-0000-6893-9231
     affiliation: Independent Researcher
   doi: 10.5281/zenodo.19355800
-  date: '2026-06-01'
+  date: '2026-03-01'
   venue: Preprint
   license: CC-BY-4.0
   keywords:
@@ -275,7 +275,7 @@ dependencies:
   claim: Paper-as-specification (Zharnikov 2026t) applies the same missing-versioned-specification diagnosis
     to scientific publishing — the adjacent fifth domain in the rendering-problem table.
   critical: false
-  reference: Zharnikov (2026t), this corpus.
+  doi: 10.5281/zenodo.19210037
 - relationship: extends
   claim: Research-as-Repository (Zharnikov 2026u) is the Git-native protocol for scientific knowledge;
     Canon as Repository is the creative-IP analog of the same repository reconception (commits/forks/PRs/CI

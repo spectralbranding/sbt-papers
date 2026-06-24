@@ -13,7 +13,7 @@ meta:
     orcid: 0009-0000-6893-9231
     affiliation: Independent Researcher
   doi: 10.5281/zenodo.18944770
-  date: '2026-06-01'
+  date: '2026-02-01'
   venue: Preprint
   license: CC-BY-4.0
   keywords:
@@ -225,7 +225,7 @@ dependencies:
 - relationship: applies
   claim: Linguistic-implementability / LLM-pipeline paper grounds the natural-language executability claim.
   critical: false
-  reference: Zharnikov (2026t), this corpus.
+  doi: 10.5281/zenodo.19210037
 - relationship: extends
   claim: 'anchor: peirce-1931-collected-papers'
   reference: peirce-1931-collected-papers

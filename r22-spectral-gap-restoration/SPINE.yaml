@@ -627,11 +627,6 @@ external_anchors:
 # ============================================================================
 # Open questions / boundary edges
 # ============================================================================
-open:
-  - "Confirmatory estimation of λ and μ from real Dove longitudinal tracking data with confidence intervals (deferred to companion 2026p). (L1)"
-  - "How does cohort migration enter the λ estimator as effective leakage not currently captured? (L2)"
-  - "Non-self-adjoint extension: do asymmetric cross-cohort flows under coherence shocks change the threshold quantitatively beyond the Davies pseudospectral qualitative result? (L3)"
-  - "Re-parameterization of the GRP-to-μ mapping for brands with established (non-low) dimensional baselines. (L2)"
 
 # ============================================================================
 # Spine changelog — append-only

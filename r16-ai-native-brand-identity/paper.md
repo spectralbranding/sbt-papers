@@ -12,7 +12,7 @@ Working Paper v1.9.0 – April 2026 (revised June 2026)
 
 ## Abstract
 
-Brand identity verification technologies have historically changed discontinuously in response to shifts in the primary observer type. This paper formalizes the *observer-driven evolution thesis* and extends it to the current transition from human to AI agents. The Brand Function is defined as *f*(query, context, observer_type, time) → response, constituting the complete behavioral specification required for machine observers. Cryptographic signatures on this function are predicted to replace logos as the primary identity mechanism for text-primary AI agents.
+Brand identity verification technologies have historically changed discontinuously in response to shifts in the primary observer type. This paper formalizes the *observer-driven evolution thesis* and extends it to the current transition from human to AI agents. The Brand Function is defined as *f*(query, context, observer_type, time) $\to$ response, constituting the complete behavioral specification required for machine observers. Cryptographic signatures on this function are predicted to replace logos as the primary identity mechanism for text-primary AI agents.
 
 The framework introduces *behavioral metamerism* --- the condition in which brands converge on statistically indistinguishable profiles while differing in structurally relevant behavioral contingencies --- an equivalence that statistical optimization (including generative engine optimization) cannot resolve. Six falsifiable propositions link observer type to identity technology, specification to coherence, and cryptographic attestation to computational trust.
 

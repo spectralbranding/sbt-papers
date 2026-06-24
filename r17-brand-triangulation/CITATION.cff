@@ -14,6 +14,13 @@ identifiers:
   - type: doi
     value: "10.5281/zenodo.19482547"
     description: "Zenodo concept DOI (all versions)"
+keywords:
+  - brand positioning
+  - measurement geometry
+  - dilution of precision
+  - observer heterogeneity
+  - optimal design
+  - differential correction
 license:
   - CC-BY-4.0
   - MIT

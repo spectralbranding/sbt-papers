@@ -14,6 +14,15 @@ identifiers:
   - type: doi
     value: "10.5281/zenodo.19422427"
     description: "Zenodo concept DOI (all versions)"
+keywords:
+  - AI-mediated search
+  - brand perception
+  - spectral metamerism
+  - large language models
+  - dimensional collapse
+  - observer heterogeneity
+  - cross-cultural
+  - PRISM-B
 license:
   - CC-BY-4.0
   - MIT

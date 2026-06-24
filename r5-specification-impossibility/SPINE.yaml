@@ -560,14 +560,6 @@ external_anchors:
 # ============================================================================
 # Open questions / boundary edges
 # ============================================================================
-open:
-  - "Empirical estimation of cascade coupling gamma from cross-organizational panel data (conditional variance ratios), so d_eff = 15.75 becomes descriptive rather than illustrative. (L2, C3)"
-  - "TDA-based estimation of the viability-manifold intrinsic dimension d_sub to refine the coverage bound and test the d_sub ≳ 20 conjecture. (L1, C2)"
-  - "Testing Proposition 1: does R_hat track R(gamma_hat) across organizations with r ≥ .50 and level-independent residuals? (P5)"
-  - "A nonlinear, dimension-dependent cascade model (relaxing uniform-linear gamma) and the within-level correlation structure. (L2)"
-  - "A dynamic extension: organizational evolution as trajectories in [0,1]^48, connecting to diffusion-on-manifolds (Zharnikov 2026j). (L3)"
-  - "Formal alignment of OST's L0–L5 internal configuration levels with the six-tier acquisition-target ontology of Zharnikov 2026ag (explicitly deferred)."
-  - "Whether AI agents can in practice derive HOW (L3–L5 coordination) configurations from the WHAT (L0–L2 output) specification. (P12)"
 
 # ============================================================================
 # Spine changelog — append-only

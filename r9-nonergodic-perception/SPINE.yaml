@@ -617,12 +617,6 @@ external_anchors:
 # ============================================================================
 # Open questions / boundary edges
 # ============================================================================
-open:
-  - "Do the three sources of non-ergodicity operate with the same force in B2B brand perception, or do committee/contractual mechanisms restore ergodicity? (L_b2c_scope)"
-  - "Direct longitudinal individual-level tracking with controlled signal exposure to measure time averages against ensemble averages (P3 direct test)."
-  - "Instruments distinguishing recoverable negative perception from absorbing negative conviction, enabling absorption-rate measurement (P2/P3 direct test). (L_measuring_absorption)"
-  - "Log-linear vs linear panel-fit test of the multiplicative-vs-additive regime at scale across brands, categories, and cohorts (A_additive_ergodic / D_multiplicative_sufficiency)."
-  - "Bonnet-pair disambiguation: empirically operationalizing trajectory (second-fundamental-form) measurement to resolve metrically equivalent observers (link to 2026y / 2026z)."
 
 # ============================================================================
 # Spine changelog — append-only

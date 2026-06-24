@@ -556,12 +556,6 @@ external_anchors:
 # ============================================================================
 # Open questions / boundary edges
 # ============================================================================
-open:
-  - "Empirical measurement instruments for coherence type are needed before any of the three falsifiable predictions can be tested (L1)."
-  - "Extend the drift model to cross-dimensional coupling to capture cascading crises where failure on one dimension propagates to others (L2)."
-  - "Integrate crisis-response strategy as an endogenous post-crisis drift field (L3)."
-  - "Resolve the Tesla high-severity survival anomaly (A2): is it personal-brand drift, normalized-failure priors, or cohort-floor structure?"
-  - "Lift to portfolio-level resilience: how do constituent coherence types and their correlations determine portfolio resilience? (2026ac extension)."
 
 # ============================================================================
 # Spine changelog — append-only

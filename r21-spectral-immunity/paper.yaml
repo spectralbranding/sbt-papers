@@ -12,7 +12,7 @@ meta:
     orcid: 0009-0000-6893-9231
     affiliation: Independent Researcher
   doi: 10.5281/zenodo.19765401
-  date: '2026-06-01'
+  date: '2026-04-01'
   venue: Preprint
   license: CC-BY-4.0
   keywords:
@@ -30,15 +30,15 @@ meta:
     across eight perceptual dimensions and tests three propositions in a fully crossed experiment with
     13 LLMs from seven training traditions, 40 brands, seven portfolio archetypes, and four prompt modalities
     (N = 9,925). Using the Dimensional Concentration Index and two-one-sided equivalence tests, the results
-    reveal near-zero portfolio-induced change (mean |ΔDCI| = .26; equivalence holds for 18/20 brands).
-    Variance decomposition attributes .1% of perceptual concentration to portfolio framing versus 37.4%
-    to brand identity. The sole exception occurs in multi-turn conversation for a reverse-aspiration structure
-    (Geely Auto, d = -1.11), where extended context converts coordination information into output inferences.
-    These results resolve the awareness-gate paradox: awareness is necessary but insufficient. A bandwidth
-    constraint rooted in rate-distortion theory and rational inattention is also required. General-purpose
-    LLMs are rationally inattentive to organizational-coordination signals because these contribute negligibly
-    to output-fidelity reconstruction. As AI mediation of brand interactions grows, portfolio architecture
-    becomes strategically invisible to the general-purpose LLM class tested here.'
+    reveal near-zero portfolio-induced change (mean $|\Delta\text{DCI}|$ = .26; equivalence holds for
+    18/20 brands). Variance decomposition attributes .1% of perceptual concentration to portfolio framing
+    versus 37.4% to brand identity. The sole exception occurs in multi-turn conversation for a reverse-aspiration
+    structure (Geely Auto, d = -1.11), where extended context converts coordination information into output
+    inferences. These results resolve the awareness-gate paradox: awareness is necessary but insufficient.
+    A bandwidth constraint rooted in rate-distortion theory and rational inattention is also required.
+    General-purpose LLMs are rationally inattentive to organizational-coordination signals because these
+    contribute negligibly to output-fidelity reconstruction. As AI mediation of brand interactions grows,
+    portfolio architecture becomes strategically invisible to the general-purpose LLM class tested here.'
 claims:
 - id: P0
   type: proposition
@@ -151,7 +151,7 @@ dependencies:
   claim: Spectral Portfolio Theory (2026q) supplies the interference/coherence/ capacity framework; this
     paper consolidates it and isolates the awareness- gate sufficiency inversion that 2026q did not.
   critical: false
-  reference: Zharnikov (2026q), this corpus.
+  doi: 10.5281/zenodo.19145099
 - relationship: extends
   claim: '''Does Corporate Ownership Matter to AI?'' (2026ab) is the large-scale empirical precursor;
     this paper unifies it with the theory and adds the WHAT/DO formalization.'

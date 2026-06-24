@@ -13,7 +13,7 @@ meta:
     orcid: 0009-0000-6893-9231
     affiliation: Independent Researcher
   doi: 10.5281/zenodo.19778549
-  date: '2026-06-01'
+  date: '2026-04-01'
   venue: MKSC (Marketing Science) — reviewer framing throughout
   license: CC-BY-4.0
   keywords:
@@ -29,18 +29,19 @@ meta:
     asymmetric recovery problem: some regain cohort separability while others enter absorbing cross-cohort
     interference. This paper derives a closed-form sufficient condition for separability survival — to
     the author''s knowledge the first threshold inequality for cohort-level separability survival in a
-    multi-dimensional brand perception space: the corrective coherence emission rate μ must exceed the
-    spectral leakage rate λ at the observer cohort''s detection scale (μ > λ at scale δ). Cohort perception
-    clouds are modeled as almost-invariant sets in a stochastic flow on an eight-dimensional SBT perception
-    manifold, with separability governed by the spectral gap of the perception operator. The threshold
-    follows from Kato–Rellich perturbation theory and Diaconis–Stroock spectral-gap bounds for reversible
-    Markov chains. Author-proposed Dove-calibrated parameters — λ ≈ .10/year and μ ≈ 4.50/year — motivate
-    a Monte Carlo demonstration that illustrates the threshold''s predictive properties. The resulting
-    μ/λ ratio of 45 satisfies the inequality for the Purpose-Aligned cohort but is sign-inverted for the
-    Skeptic-Critic cohort, correctly predicting the documented divergence in conviction trajectories.
-    Spectral-gap collapse precedes conviction reorientation by 6–18 months, offering a leading indicator
-    unavailable from traditional perceptual maps or aggregate VECMs. Implications extend to AI-mediated
-    perception where scale-dependent leakage accelerates fine-grained separability loss.'
+    multi-dimensional brand perception space: the corrective coherence emission rate $\mu$ must exceed
+    the spectral leakage rate $\lambda$ at the observer cohort''s detection scale ($\mu > \lambda$ at
+    scale $\delta$). Cohort perception clouds are modeled as almost-invariant sets in a stochastic flow
+    on an eight-dimensional SBT perception manifold, with separability governed by the spectral gap of
+    the perception operator. The threshold follows from Kato–Rellich perturbation theory and Diaconis–Stroock
+    spectral-gap bounds for reversible Markov chains. Author-proposed Dove-calibrated parameters — $\lambda
+    \approx .10$/year and $\mu \approx 4.50$/year — motivate a Monte Carlo demonstration that illustrates
+    the threshold''s predictive properties. The resulting $\mu/\lambda$ ratio of 45 satisfies the inequality
+    for the Purpose-Aligned cohort but is sign-inverted for the Skeptic-Critic cohort, correctly predicting
+    the documented divergence in conviction trajectories. Spectral-gap collapse precedes conviction reorientation
+    by 6–18 months, offering a leading indicator unavailable from traditional perceptual maps or aggregate
+    VECMs. Implications extend to AI-mediated perception where scale-dependent leakage accelerates fine-grained
+    separability loss.'
 claims:
 - id: P1
   type: proposition
@@ -231,7 +232,7 @@ dependencies:
   claim: 'Kinematic measurement (velocity, acceleration, phase space): R22 supplies the stability operator
     governing whether that trajectory returns to a separated configuration or collapses.'
   critical: false
-  reference: Zharnikov (2026z), this corpus.
+  doi: 10.5281/zenodo.19468204
 - relationship: applies
   claim: 'AI dimensional collapse: LLMs reduce effective dimensionality from 8 to 3–4, an empirical analog
     of the elevated-λ mechanism at fine scales.'
@@ -241,7 +242,7 @@ dependencies:
   claim: 'Portfolio immunity: AI observers exhibit elevated effective λ at portfolio-coordination scale,
     compressing the practical separability lifetime below the human-observer 6–18 month window.'
   critical: false
-  reference: Zharnikov (2026ac), this corpus.
+  doi: 10.5281/zenodo.19765401
 - relationship: tests
   claim: 'R10 Dove longitudinal data: the companion empirical paper that will confirm the author-proposed
     λ and μ calibrations with confidence intervals (deferred from R22).'

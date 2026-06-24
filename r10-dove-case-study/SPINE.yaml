@@ -507,12 +507,6 @@ external_anchors:
 # ============================================================================
 # Open questions / boundary edges
 # ============================================================================
-open:
-  - "Multi-case validation: does null-dimension activation outperform intensity-amplification across campaigns generally? (L3, P1 falsifier)"
-  - "Are the four cohort types stable across demographics, age cohorts, and platform contexts (TikTok vs LinkedIn)? (L2)"
-  - "Causal identification of dimensional-activation revenue effects via difference-in-differences / synthetic control. (A2, L3)"
-  - "Cross-cultural replication (South Asia, Brazil, Japan): do spectral weight vectors themselves shift by market? (L4)"
-  - "Replication of the competitive-interference per-cell effect on architectures beyond gpt-4o-mini with comparable power. (RC2)"
 
 # ============================================================================
 # Spine changelog — append-only

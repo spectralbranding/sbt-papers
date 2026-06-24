@@ -1,0 +1,714 @@
+# SPINE.yaml — Spectral Portfolio Theory (2026q / R8)
+#
+# RETROFIT spine (CLAUDE.md rule 0aa / publication-pipeline decision D4):
+# extracted DESCRIPTIVELY from the completed paper.md, not authored
+# generatively before prose. The paper was finished (Working Paper v1.2.0,
+# March 2026, revised June 2026) before this spine existed; every node below
+# traces to claims already present in the body. No new claims introduced.
+#
+# Schema v0.2 ([internal path removed] §"Schema v0.2"):
+# this is a formal-theory paper (eight definitions, one bounding theorem, a
+# three-layer coherence metric, four archetypes, seven propositions proved
+# from the definitions) but it REPORTS CITED ILLUSTRATIVE COMPUTED NUMBERS —
+# the §8.5 worked interference values (I = .21, .56, .03, .08), the pairwise
+# cross-brand coherence scores (Tables 5-7: kappa_X .10-.92), and the
+# illustrative cohort-mean emission profiles (Tables 2-4). The paper is
+# explicit that these are assessed cohort-mean estimates illustrating model
+# mechanics, NOT empirically measured values (§3.1 note, §10.1). Per the
+# retrofit brief, a paper that reports computed numbers uses v0.2; the worked
+# computation is represented as one method (the closed-form interference/
+# coherence computation) → measurements (the headline illustrative values) →
+# findings (the LVMH-vs-Unilever structural-opposition result), rather than
+# asserted only in prose, and the spine records every number at the
+# "illustrative / not validated" epistemic level the paper assigns it.
+
+spine_version: "0.2"
+spine_doc_version: "0.1.0"
+provenance: retrofit
+paper_key: "2026q"
+title: >-
+  Spectral Portfolio Theory: Interference, Coherence, and Capacity in
+  Multi-Brand Perception Space
+target_venue_primary: "TBD (brand portfolio / strategy theory venue)"
+status: >-
+  Retrofit spine extracted 2026-06-18 from completed paper.md (Working Paper
+  v1.2.0, March 2026, revised June 2026; status superseded). Faithful
+  description of the paper as written; no new claims introduced.
+
+thesis: |
+  Brand portfolio theory classifies portfolios by ARCHITECTURE (monolithic,
+  endorsed, house-of-brands) but never formalizes how brands within one
+  portfolio INTERACT in the observer's perception space. Within Spectral
+  Brand Theory — brands as emitters across eight typed dimensions perceived by
+  heterogeneous observer cohorts — this paper formalizes spectral
+  interference: signals from one portfolio brand perturbing the perception
+  cloud of a sibling within shared cohorts. Constructive interference (signals
+  compatible, same-sign deviation from category mean) reinforces mutual
+  perception; destructive interference (contradictory, opposite-sign) undermines
+  it. Interference is gated by a parent-brand recognition (awareness) gate
+  alpha, scales linearly with alpha and with the cohort's dimensional weight,
+  is bounded by cohort overlap and spectral proximity on high-weight
+  dimensions, and is generally asymmetric. Single-brand coherence is extended
+  to a three-layer portfolio coherence metric (within-brand, cross-brand,
+  aggregate), cross-brand coherence being cohort-dependent. Four interference
+  archetypes are identified — spectral cluster (LVMH), spectral spread (P&G),
+  spectral contradiction (Unilever), spectral layering (Toyota/Lexus) — and a
+  portfolio capacity bound (tighter than positioning capacity) follows. Seven
+  testable propositions are derived. The central demonstration is that
+  architecturally identical portfolios (LVMH and Unilever are both
+  house-of-brands) produce structurally opposite interference dynamics, which
+  architectural taxonomy cannot capture. The framework gives a formal basis
+  for acquisition evaluation, portfolio rationalization, and cross-brand risk
+  assessment. All emission profiles and coherence/interference numbers are
+  assessed cohort-mean estimates illustrating model mechanics, not empirically
+  measured; empirical validation is the priority next step.
+
+# ============================================================================
+# Boundary conditions — the modeling assumptions under which the results hold
+# ============================================================================
+boundary_conditions:
+  - id: C1
+    statement: >-
+      Cohort overlap is the precondition for interference: if two brands share
+      no observer cohort with non-trivial perception clouds for both
+      (O(B_i,B_j) = 0), no interference can occur regardless of spectral
+      profiles. This is the perceptual mechanism behind the house-of-brands
+      architecture (minimize shared cohorts to reduce interference).
+    observable: "Proportion of a cohort holding formed perception clouds for both brands above threshold tau."
+    excludes: "Brand pairs with disjoint observer cohorts (e.g. spectral-spread P&G pairs)."
+    provenance:
+      created_by: "author"
+      created_at: "2026-03"
+  - id: C2
+    statement: >-
+      Awareness of shared parentage is a cognitive precondition: interference
+      requires the observer to recognize that the two brands share a parent
+      entity (awareness gate alpha > 0, effectively alpha > alpha_min). Below
+      the awareness threshold the brands are independent objects in perception
+      space and interference is effectively zero; alpha_min is to be estimated
+      empirically, not derived.
+    observable: "Observed parent-brand recognition level alpha per cohort, from controlled disclosure experiments."
+    excludes: "Category interference (market-level spectral proximity without ownership awareness) — a distinct phenomenon."
+    provenance:
+      created_by: "author"
+      created_at: "2026-03"
+  - id: C3
+    statement: >-
+      Emission profiles are cohort-mean estimates, not per-observer or
+      objectively measured signals: e_B(t) models the brand's communication
+      OUTPUT, and the mapping to perception is observer-dependent. The worked
+      examples use illustrative assessed cohort-mean profiles; empirical
+      implementation would require spectral-profile instruments applied to
+      representative observer samples.
+    observable: "Cohort-mean spectral profile measured by a validated instrument on a representative sample."
+    excludes: "Treating the illustrative emission/coherence numbers as empirically measured rather than assessed estimates."
+    provenance:
+      created_by: "author"
+      created_at: "2026-03"
+
+# ============================================================================
+# Methods — the closed-form computation behind every cited illustrative number
+# ============================================================================
+methods:
+  - id: M1
+    statement: >-
+      Closed-form spectral-interference + portfolio-coherence computation:
+      the per-dimension interference I_d = alpha · w_d · (e_d^{Bj} - mu_d)
+      (Definition 5), the weighted-ell1 total interference and its triangle-
+      inequality bound (Definition 8, Theorem 1), the constructive/destructive
+      sign test (Definitions 6-7), the three-layer coherence metric kappa_W /
+      kappa_X / kappa_P (Definitions 9-11), and the portfolio-capacity /
+      interference-budget constructs (Definitions 12-13). Inputs are assessed
+      cohort-mean emission profiles, cohort weight vectors, a category-relative
+      mean, and an awareness gate; outputs are the worked interference values
+      and pairwise coherence tables. Deterministic arithmetic, no RNG.
+    type: "closed_form_computation"
+    inputs: ["assessed cohort-mean emission profiles (Tables 2-4)", "cohort weight vectors w (§8.5)", "category mean mu", "awareness gate alpha"]
+    outputs: ["§8.5 worked interference values", "Tables 5-7 pairwise cross-brand coherence", "Table 8 structural comparison"]
+    code_anchor: "https://github.com/spectralbranding/sbt-framework (SBT computational pipeline; §Data Availability)"
+    reproducibility:
+      seed: "deterministic (no RNG; closed-form arithmetic on assessed estimates)"
+      runtime_environment: "SBT framework toolkit"
+    provenance:
+      created_by: "author"
+      created_at: "2026-03"
+
+# ============================================================================
+# Measurements — the headline illustrative computed values cited in the body
+# (paper is explicit these are assessed cohort-mean estimates, not measured)
+# ============================================================================
+measurements:
+  - id: m_interference_8_5
+    statement: >-
+      The §8.5 worked Dove<-Axe interference: for the Purpose-Aligned cohort
+      (Ideological weight .35) I = .21 at alpha=0.3 and .56 at alpha=0.8; for
+      the Product-Pragmatist cohort (Ideological weight .05) I = .03 at
+      alpha=0.3 and .08 at alpha=0.8 — an order-of-magnitude cohort difference,
+      linear scaling in alpha.
+    source_observations: []
+    generating_method: M1
+    value: "PA: .21 (a=.3) / .56 (a=.8); PP: .03 (a=.3) / .08 (a=.8)"
+    units: "interference magnitude (illustrative, assessed estimates)"
+    provenance:
+      created_by: "author"
+      created_at: "2026-03"
+  - id: m_kappa_x_lvmh
+    statement: >-
+      Pairwise cross-brand coherence for the LVMH Fashion & Leather Goods
+      cluster (luxury-connoisseur cohort) ranges kappa_X = .85-.92 (minimum
+      .85), placing the portfolio in the spectral resonance P_{A+} category;
+      every pair constructively interferes on weighted dimensions.
+    source_observations: []
+    generating_method: M1
+    value: "kappa_X .85-.92 (min .85) -> P_{A+} resonance"
+    units: "cross-brand coherence (0-1, illustrative)"
+    provenance:
+      created_by: "author"
+      created_at: "2026-03"
+  - id: m_kappa_x_unilever
+    statement: >-
+      Pairwise cross-brand coherence for the Unilever Dove-Axe-Ben & Jerry's
+      triad is cohort-dependent: for the Purpose-Aligned cohort Dove-Axe = .15,
+      Axe-Ben&Jerry's = .10 (both in spectral-contradiction range kappa_X<.3),
+      Dove-Ben&Jerry's = .85; for the Product-Pragmatist cohort the same pairs
+      are .75 / .50 / .55 (moderately coherent), confirming cohort-dependence.
+    source_observations: []
+    generating_method: M1
+    value: "PA: .15/.85/.10; PP: .75/.55/.50 -> P_{C-} for PA, moderate for PP"
+    units: "cross-brand coherence (0-1, illustrative)"
+    provenance:
+      created_by: "author"
+      created_at: "2026-03"
+  - id: m_capacity_bounds
+    statement: >-
+      The positioning-capacity ceiling inherited from R4 (2026g): at perceptual
+      threshold eps=0.10 the eight-dimensional space admits at least 10^8
+      distinguishable positions, at eps=0.20 at least 390,625; the E_8 kissing
+      number 240 bounds nearest-neighbor cluster positions. Portfolio capacity
+      K is always <= this market capacity because interference constrains more
+      tightly than distinguishability.
+    source_observations: []
+    generating_method: M1
+    value: "10^8 positions at eps=.10; 390,625 at eps=.20; E_8 kissing number 240; K <= market capacity"
+    units: "distinguishable positions / portfolio brands"
+    provenance:
+      created_by: "author"
+      created_at: "2026-03"
+
+# ============================================================================
+# Propositions — the paper's theoretical backbone
+#   P1-P9  : the interference / coherence / capacity model (Sections 3-6)
+#   PF1-PF7: the seven formal propositions (Section 7)
+# ============================================================================
+propositions:
+  - id: P1
+    statement: >-
+      A brand portfolio is a set of brands under common ownership, each with an
+      eight-dimensional emission profile; portfolio theory's architectural
+      taxonomy (branded house / endorsed / house-of-brands) describes
+      organizational form but not the perceptual relationship between brands as
+      processed by observers. Architecture is how brands are structured by the
+      firm; interference is how they interact in the mind.
+    conditions: ""
+    antecedents: []
+    evidence:
+      - type: analytic
+        anchor: "Architecture vs interference distinction; Definition 1 (brand portfolio)."
+      - type: citation
+        anchor: "Architectural taxonomy that classifies form without modeling perceptual consequence."
+        citation_keys: [aaker-2000-brand-leadership]
+        citation_role: theoretical_predecessor
+    body_sections: ["§1 Introduction", "§2.1 Brand Portfolio Architecture", "§3.2 Portfolio and Cohort Overlap"]
+  - id: P2
+    statement: >-
+      Spectral interference is the perturbation to cohort C_k's perception
+      cloud for brand B_i caused by awareness of sibling B_j's signals:
+      per dimension d, I_d = alpha_{C_k} · w_d^{(C_k)} · (e_d^{Bj} - mu_d).
+      Interference operates dimension-by-dimension — a brand may interfere
+      constructively on one dimension and destructively on another — and the
+      net effect depends on the observing cohort's spectral weights.
+    conditions: "C1, C2, C3"
+    antecedents: [P1]
+    evidence:
+      - type: analytic
+        anchor: "Definition 5 (spectral interference); category-relative mu for multi-category portfolios (Remark)."
+    body_sections: ["§3.4 Spectral Interference: Formal Definition"]
+  - id: P3
+    statement: >-
+      Interference direction is fixed by sign concordance of the two brands'
+      deviations from the category mean on a dimension: same-sign deviation =
+      constructive (sibling reinforces the focal brand), opposite-sign =
+      destructive (sibling undermines it). Direction is therefore computable
+      ex ante from emission profiles and the category mean alone.
+    conditions: ""
+    antecedents: [P2]
+    evidence:
+      - type: analytic
+        anchor: "Definitions 6-7 (constructive / destructive interference) via sign(e_d^{Bi}-mu_d) vs sign(e_d^{Bj}-mu_d)."
+    body_sections: ["§3.4 (Definitions 6-7)"]
+  - id: P4
+    statement: >-
+      (Theorem 1, Interference bound) The absolute total interference is bounded
+      by |I|(B_i<-B_j,C_k) <= alpha_{C_k} · d_max · max_d w_d^{(C_k)} via the
+      triangle inequality on the weighted ell1 distance, revealing three levers
+      for managing interference: reduce awareness (house-of-brands), reduce
+      spectral distance on critical dimensions (coherence), or reduce cohort
+      overlap (different observer populations). Interference is significant when
+      it exceeds the cohort's perception-cloud dispersion sigma_{C_k}.
+    conditions: "C1, C2"
+    antecedents: [P2]
+    evidence:
+      - type: derivation
+        anchor: "Definition 8 (total interference magnitude) + Theorem 1 proof (triangle inequality, alpha<=1)."
+    body_sections: ["§3.5 Total Interference Magnitude (Theorem 1)"]
+  - id: P5
+    statement: >-
+      Spectral interference is generally asymmetric: I(B_i<-B_j) != I(B_j<-B_i),
+      because the perturbation depends on the focal brand's existing position
+      relative to the observer's conviction, not only the interfering signal. A
+      premium brand contaminated by a mass-market sibling suffers more than the
+      mass-market brand gains, connecting to the negative-faster / more-resistant
+      conviction asymmetry of SBT.
+    conditions: ""
+    antecedents: [P2]
+    evidence:
+      - type: analytic
+        anchor: "§3.6 asymmetry; conviction asymmetry (negative conviction forms faster, more resistant)."
+        citation_keys: [zharnikov-2026-spectral-brand-theory-computational-framework]
+        citation_role: theoretical_predecessor
+    body_sections: ["§3.6 Interference Asymmetry"]
+  - id: P6
+    statement: >-
+      Portfolio coherence extends single-brand SBT coherence to three layers:
+      within-brand coherence kappa_W (the standard SBT coherence type, scored
+      5..1), cross-brand coherence kappa_X (the cohort-weighted fraction of
+      constructive dimensions for a pair, in [0,1]), and aggregate portfolio
+      coherence kappa_P (within-brand coherence weighted by cohort-overlap-
+      weighted mean cross-brand coherence). A portfolio has emergent coherence
+      beyond the sum of individually coherent brands.
+    conditions: "C3"
+    antecedents: [P3]
+    evidence:
+      - type: analytic
+        anchor: "Definitions 9-11 (within-brand / cross-brand / aggregate coherence)."
+        citation_keys: [zharnikov-2026-spectral-brand-theory-computational-framework]
+        citation_role: theoretical_predecessor
+    body_sections: ["§4 Portfolio Coherence Metric"]
+  - id: P7
+    statement: >-
+      Cross-brand coherence is cohort-dependent: the same brand pair may be
+      coherent for a cohort that weights dimensions where the brands agree and
+      contradictory for a cohort that weights a dimension where they contradict.
+      Five portfolio coherence types follow (spectral resonance P_{A+},
+      alignment P_{A-}, independence P_{B+}, tension P_{B-}, contradiction
+      P_{C-}), classified by kappa_X thresholds and overlap across major cohorts.
+    conditions: "C3"
+    antecedents: [P6]
+    evidence:
+      - type: analytic
+        anchor: "Cohort-dependence of kappa_X (Definition 10); Table 1 portfolio coherence types."
+    body_sections: ["§4.2 Three Layers of Portfolio Coherence", "§4.3 Portfolio Coherence Types"]
+  - id: P8
+    statement: >-
+      The interaction of spectral proximity and cohort overlap yields four
+      structurally distinct portfolio archetypes — spectral cluster (proximate
+      profiles, high overlap, constructive: LVMH), spectral spread (distant
+      profiles, minimal overlap, negligible interference: P&G), spectral
+      contradiction (proximate enough to share cohorts but contradictory on
+      high-weight dimensions: Unilever), spectral layering (different positions
+      on the same dimensions, low overlap, constructive aspiration dynamics:
+      Toyota/Lexus) — each with a distinct risk profile (cluster-wide crisis /
+      no synergy / escalating contradiction / layer collapse).
+    conditions: "C1, C3"
+    antecedents: [P2, P7]
+    evidence:
+      - type: analytic
+        anchor: "§5 archetype definitions + illustrative emission profiles (Tables 2-4) + per-archetype risk profiles."
+    body_sections: ["§5 Four Portfolio Archetypes"]
+  - id: P9
+    statement: >-
+      Portfolio capacity — the maximum number of brands that coexist without
+      destructive interference exceeding a tolerance theta (Definition 12) — is
+      a distinct, tighter constraint than market positioning capacity: two
+      brands can be perfectly distinguishable yet generate severe destructive
+      interference if they contradict on high-weight dimensions for shared
+      cohorts. Each additional brand also incurs an interference budget
+      (Definition 13): it perturbs every sibling in every shared cohort, so the
+      marginal cost of the (n+1)-th brand includes the interference it generates.
+    conditions: "C1"
+    antecedents: [P4, P8]
+    evidence:
+      - type: derivation
+        anchor: "Definitions 12-13; capacity by archetype; K <= market positioning capacity (sphere-packing ceiling)."
+        citation_keys: [zharnikov-2026-many-brands-can-market-hold]
+        citation_role: theoretical_predecessor
+    body_sections: ["§6 Portfolio Capacity"]
+  - id: PF1
+    statement: >-
+      (Proposition 1, Interference Conditionality) Spectral interference between
+      B_i and B_j operates iff three conditions hold simultaneously: (a) they
+      share at least one cohort (O>0), (b) the awareness gate exceeds threshold
+      (alpha_{C_k} > alpha_min), and (c) their profiles differ on at least one
+      dimension the shared cohort weights above a salience threshold. The
+      conditions are jointly necessary and individually insufficient; absence of
+      any one suppresses interference entirely.
+    conditions: "C1, C2"
+    antecedents: [P2]
+    evidence:
+      - type: derivation
+        anchor: "From Definition 5: I_d = 0 when alpha=0, when w_d=0, or when e_d^{Bj}=mu_d."
+    falsifier: >-
+      Falsified if perception-cloud change upon ownership disclosure is non-trivial
+      even when one of the three conditions fails (e.g. brands sharing no cohort
+      still interfere).
+    body_sections: ["§7 Proposition 1"]
+  - id: PF2
+    statement: >-
+      (Proposition 2, Interference Direction Predictability) The constructive-vs-
+      destructive direction of interference on a dimension is determined by sign
+      concordance of the brands' deviations from the category mean, and is
+      predictable from emission profiles alone without measuring the interference
+      effect.
+    conditions: ""
+    antecedents: [P3]
+    evidence:
+      - type: derivation
+        anchor: "From Definitions 6-7; both profiles and category mean are observable, making direction computable ex ante."
+    falsifier: >-
+      Falsified if the sign-concordance-predicted direction matches observed
+      perception-cloud perturbation direction in no more than 50% of cases.
+    body_sections: ["§7 Proposition 2"]
+  - id: PF3
+    statement: >-
+      (Proposition 3, Cohort-Dependent Portfolio Coherence) The same portfolio
+      can be simultaneously coherent for one cohort (kappa_P > spectral-alignment
+      threshold) and contradictory for another (kappa_P < spectral-contradiction
+      threshold), because kappa_X depends on the cohort weight vector and SBT
+      permits arbitrary weight vectors.
+    conditions: "C3"
+    antecedents: [P7]
+    evidence:
+      - type: derivation
+        anchor: "kappa_X (Definition 10) depends on w_d^{(C_k)}; Unilever Dove-Axe is .15 for Purpose-Aligned vs .75 for Product-Pragmatist."
+    falsifier: >-
+      Falsified if cohorts identified by distinct spectral weight vectors return
+      statistically indistinguishable portfolio-coherence assessments of a
+      portfolio known to contain dimensional contradictions.
+    body_sections: ["§7 Proposition 3", "§8.3 (Tables 6-7)"]
+  - id: PF4
+    statement: >-
+      (Proposition 4, Awareness Gate Moderation + Shielding Theorem corollary)
+      Interference magnitude is moderated by alpha: below alpha_min,
+      contradictions produce no interference regardless of their magnitude;
+      above threshold, destructive interference increases monotonically (indeed
+      linearly) with alpha. Corollary: a house-of-brands architecture is an
+      interference shield iff parent recognition stays below threshold; the
+      shield degrades monotonically as alpha rises and cannot be restored once
+      exceeded — so rising corporate transparency erodes the shield.
+    conditions: "C2"
+    antecedents: [P2]
+    evidence:
+      - type: derivation
+        anchor: "From Definition 5: I_d scales linearly with alpha_{C_k}; Shielding Theorem corollary."
+    falsifier: >-
+      Falsified if perception-cloud perturbation under varying ownership
+      disclosure does not transition from negligible (below threshold) to
+      increasing (above threshold) as alpha rises.
+    body_sections: ["§7 Proposition 4 + Corollary (Shielding Theorem)"]
+  - id: PF5
+    statement: >-
+      (Proposition 5, Interference Asymmetry) Interference is asymmetric, and
+      specifically the higher-single-brand-coherence brand suffers greater
+      relative perturbation from a lower-coherence sibling than vice versa,
+      because a tight (high-coherence) perception cloud is proportionally more
+      sensitive to a given perturbation than a diffuse (incoherent) cloud.
+    conditions: ""
+    antecedents: [P5, P6]
+    evidence:
+      - type: derivation
+        anchor: "Tight cloud (A+) low-variance -> proportionally larger perturbation than dispersed cloud (C-)."
+    falsifier: >-
+      Falsified if, upon disclosure of a sibling relationship, the
+      higher-coherence brand does not exhibit a larger proportional increase in
+      cloud dispersion than the lower-coherence brand.
+    body_sections: ["§7 Proposition 5"]
+  - id: PF6
+    statement: >-
+      (Proposition 6, Constructive Interference Compounding) In a spectral
+      cluster, constructive interference compounds across pairs: each additional
+      compatible brand reinforces every existing brand, and because each new
+      compatible brand raises the observer's conviction that the parent curates
+      the category (raising the awareness gate for future acquisitions), the
+      total constructive interference scales SUPERLINEARLY with cluster size up
+      to a saturation point set by the cluster's spectral density.
+    conditions: "C1, C3"
+    antecedents: [P3, P8]
+    evidence:
+      - type: derivation
+        anchor: "Sum of pairwise constructive terms + positive feedback on alpha for future cluster acquisitions."
+    falsifier: >-
+      Falsified if conviction strength for a brand presented in progressively
+      larger compatible clusters does not increase superlinearly up to saturation.
+    body_sections: ["§7 Proposition 6"]
+  - id: PF7
+    statement: >-
+      (Proposition 7, Portfolio Capacity Constraint) The maximum number of
+      brands a portfolio can sustain without exceeding any brand's interference
+      budget in any shared cohort is constrained by spectral structure: for a
+      cluster, capacity is bounded by local packing density over the minimum
+      inter-brand distance for constructive interference; for a contradiction
+      portfolio, each additional brand on a contested dimension reduces the
+      effective capacity of all existing brands sharing that dimension.
+    conditions: "C1"
+    antecedents: [P4, P9]
+    evidence:
+      - type: derivation
+        anchor: "From Definition 12: cluster binding constraint = distinguishability (sphere packing); contradiction = budget binds earlier."
+        citation_keys: [zharnikov-2026-many-brands-can-market-hold]
+        citation_role: methodological_source
+    falsifier: >-
+      Falsified if brands divested in portfolio rationalizations (e.g. P&G's
+      2014 cut from 170 to 65 brands) are not disproportionately those that
+      generated the highest destructive interference in the remaining portfolio.
+    body_sections: ["§7 Proposition 7", "§9.1 (brand rationalization)"]
+
+# ============================================================================
+# Findings — what the worked comparative analysis establishes
+# (illustrative, not empirically validated — see L1)
+# ============================================================================
+findings:
+  - id: F1
+    statement: >-
+      Architecturally identical portfolios produce structurally OPPOSITE
+      interference dynamics: LVMH and Unilever are both house-of-brands global
+      conglomerates of comparable scale, yet LVMH's Fashion & Leather Goods
+      cluster is spectral resonance (P_{A+}, kappa_X .85-.92, constructive
+      compounding, awareness AMPLIFIED) while Unilever's Dove-Axe-Ben&Jerry's
+      triad is spectral contradiction (P_{C-} for the Purpose-Aligned cohort,
+      Dove-Axe kappa_X .15, destructive on Ideological, awareness historically
+      SUPPRESSED but secularly rising). The architectural label captures none of
+      this difference; the explanatory power resides in the interference profile.
+    type: "comparative_case_result"
+    source_measurements: [m_kappa_x_lvmh, m_kappa_x_unilever, m_interference_8_5]
+    generating_method: M1
+    antecedents: [P7, P8, PF3, PF4]
+    statistical_strength: "illustrative comparative case (LVMH vs Unilever) on assessed cohort-mean estimates; not empirically validated"
+    citation_role_in_paper: "primary_result"
+    falsifier: "If empirical perception-cloud measurement showed the two portfolios produce equivalent interference dynamics for matched cohorts, the structural-opposition claim weakens."
+    provenance:
+      created_by: "author"
+      created_at: "2026-03"
+    body_sections: ["§8 Comparative Case Analysis", "§11 Conclusion"]
+  - id: F2
+    statement: >-
+      The spectral interference model fills the portfolio-theory gap that
+      architectural taxonomies, unidimensional equity-transfer and signaling
+      models leave open: it (a) specifies the dimensions along which interference
+      operates, (b) predicts magnitude and direction from perceptual profiles,
+      and (c) accounts for observer heterogeneity in interference susceptibility
+      — moving portfolio management from architectural taxonomy to perceptual
+      engineering, with formal levers for acquisition evaluation, rationalization,
+      and cross-brand risk (contagion / contradiction / collapse).
+    type: "framework_contribution"
+    source_measurements: [m_capacity_bounds]
+    generating_method: M1
+    antecedents: [P1, P2, P6, P9]
+    statistical_strength: "theoretical contribution; testable in principle, empirical tests not yet conducted"
+    citation_role_in_paper: "primary_result"
+    provenance:
+      created_by: "author"
+      created_at: "2026-03"
+    body_sections: ["§2.7 Gap in the Literature", "§9 Discussion"]
+
+# ============================================================================
+# Alternative explanations — rivals the framework positions against
+# ============================================================================
+alternative_explanations:
+  - id: A1
+    statement: >-
+      Cross-brand effects are already handled by unidimensional signaling /
+      umbrella-branding theory (Erdem & Sun; Miklós-Thal), so a multi-dimensional
+      observer-heterogeneous interference model is unnecessary.
+    rules_out_required: [P2, F1]
+    ruled_out_by: [F1]
+    rules_out_status: "rejected"
+    reasoning: >-
+      The signaling model operates on unidimensional quality and treats all
+      consumers identically; it can only credibly signal POSITIVE quality
+      correlation. The spectral model disaggregates by dimension and cohort,
+      permitting directional interference (constructive on some dimensions,
+      destructive on others). In the Dove-Axe case the two frameworks make
+      OPPOSING predictions: signaling predicts consistent umbrella investment
+      raises credibility for both, while spectral interference predicts
+      destructive Ideological interference for the Purpose-Aligned cohort upon
+      ownership awareness. The frameworks are complementary, not reducible.
+    provenance:
+      created_by: "author"
+      created_at: "2026-03"
+    body_sections: ["§2.3 Signaling Theory and Umbrella Branding"]
+  - id: A2
+    statement: >-
+      Portfolio interference is just between-competitor perception spillover
+      (Janakiraman et al.) or generic category effects under a new name.
+    rules_out_required: [P2, PF1]
+    ruled_out_by: [C2]
+    rules_out_status: "rejected"
+    reasoning: >-
+      Portfolio interference operates THROUGH the awareness-gate mechanism —
+      conditioned on the observer's knowledge of shared parentage. Between-
+      competitor spillovers and category interference operate through
+      category-level associations / market-level spectral proximity and do NOT
+      require ownership awareness, distinguishing them from portfolio
+      interference (the awareness gate is the discriminating precondition).
+    provenance:
+      created_by: "author"
+      created_at: "2026-03"
+    body_sections: ["§2.4 Brand Spillover and Contamination", "§3.3 The Awareness Gate (Remark)"]
+
+# ============================================================================
+# Limitations — honest scope of the result
+# ============================================================================
+limitations:
+  - id: L1
+    statement: >-
+      The model has not been empirically tested through controlled measurement.
+      All emission profiles and coherence/interference numbers are assessed
+      estimates (from public communications, advertising content, academic
+      perception studies), not values measured by spectral-profile
+      instrumentation on observer samples; the precision of computed scores
+      (e.g. kappa_X = .92) reflects the model's internal arithmetic on those
+      estimates, not measurement accuracy. The propositions are testable in
+      principle but the tests have not been conducted.
+    severity: "blocking-for-confirmatory-use"
+    affects: [F1, F2, m_interference_8_5, m_kappa_x_lvmh, m_kappa_x_unilever, PF1, PF2, PF3, PF4, PF5, PF6, PF7]
+    mitigation: "Priority empirical program: awareness-gate measurement, cross-brand coherence validation, portfolio-coherence surveys, empirical proxies (dimension-coded surveys, sentiment analysis, conjoint, ownership-disclosure natural experiments)."
+    provenance:
+      created_by: "author"
+      created_at: "2026-06"
+    body_sections: ["§10.1 Empirical Validation", "§10.5 Empirical Proxies"]
+  - id: L2
+    statement: >-
+      alpha_min (the awareness threshold below which interference is zero) is a
+      parameter to be estimated empirically, not derived theoretically; the
+      illustrative computations set it to a plausible lower bound and the
+      propositions remain testable only conditional on alpha_min estimation as a
+      preliminary calibration step. Observer spectral resolution also varies and
+      its interaction with interference susceptibility is unmodeled.
+    severity: "calibration"
+    affects: [C2, PF1, PF4]
+    mitigation: "Controlled disclosure experiments varying alpha from 0 to 1, measuring perception-cloud shift onset; future modeling of observer-resolution interaction."
+    provenance:
+      created_by: "author"
+      created_at: "2026-03"
+    body_sections: ["§3.3 The Awareness Gate", "§10.2 Observer Spectral Resolution"]
+  - id: L3
+    statement: >-
+      Scope limits: profiles/assessments rest on Western academic literature
+      (cultural variation in cohort structure, dimensional salience, and
+      awareness dynamics is unmodeled); the model is static (point-in-time),
+      whereas interference dynamics evolve as awareness gates, emission profiles,
+      and cohort compositions change; the Dove-Axe profiles reflect the historic
+      peak contradiction (Axe repositioned since ~2016, narrowing the gap); and
+      digital-native platform portfolios (high alpha, algorithmic/implicit
+      awareness) are a distinct archetype the framework does not yet cover.
+    severity: "scope-bounding"
+    affects: [C3, F1, P8]
+    mitigation: "Cross-cultural extension; dynamic integration with the non-ergodic SDE framework; spectral-platform archetype; graph-theoretic recasting (homomorphism-distortion metric)."
+    provenance:
+      created_by: "author"
+      created_at: "2026-06"
+    body_sections: ["§10.3 Cultural Variation", "§10.4 Dynamic Interference", "§10.6 Digital-Native Portfolios"]
+
+# ============================================================================
+# Cross-paper engagement — 2026q extends SBT to the portfolio level and
+# applies/imports the formal results of its companions.
+# ============================================================================
+corpus_precedents:
+  - paper_key: 2026a
+    relationship: extends
+    spine_nodes: [P1, P2, P5, P6]
+    note: >-
+      Spectral Brand Theory (Zharnikov 2026a) supplies the whole foundation —
+      brands as eight-dimension emitters, observer spectral profiles, perception
+      clouds, the five single-brand coherence types, and the conviction
+      asymmetry — which this paper extends from single-brand to portfolio level.
+  - paper_key: 2026d
+    relationship: applies
+    spine_nodes: [P2, P4]
+    note: >-
+      Brand-space geometry (Zharnikov 2026d) supplies the metric structure
+      underlying the spectral-distance / weighted-ell1 interference calculations.
+  - paper_key: 2026e
+    relationship: applies
+    spine_nodes: [P6, F2]
+    note: >-
+      Metamerism / projection bounds (Zharnikov 2026e) explain why portfolio
+      contradictions are invisible to scalar brand-health metrics, and ground
+      the observer-spectral-resolution limitation.
+  - paper_key: 2026f
+    relationship: applies
+    spine_nodes: [C1, P2]
+    note: >-
+      Cohort-boundary concentration analysis (Zharnikov 2026f) formalizes the
+      cohort-overlap conditions that gate interference.
+  - paper_key: 2026g
+    relationship: extends
+    spine_nodes: [P9, PF7, m_capacity_bounds]
+    note: >-
+      Sphere-packing positioning capacity (Zharnikov 2026g) provides the market
+      positioning-capacity ceiling and E_8 kissing number that portfolio
+      capacity cannot exceed; this paper extends those bounds to the multi-brand
+      interference-constrained case. Category interference is referred there.
+  - paper_key: 2026j
+    relationship: applies
+    spine_nodes: [P2, L3]
+    note: >-
+      Non-ergodic diffusion dynamics (Zharnikov 2026j) underpin the conviction
+      formation function and provide the foundation for the deferred dynamic-
+      interference extension.
+  - paper_key: 2026o
+    relationship: applies
+    spine_nodes: [L3]
+    note: >-
+      The non-ergodic framework (Zharnikov 2026o) explains why interference
+      effects compound over time rather than averaging out — the basis for
+      modeling dynamic interference.
+  - paper_key: 2026p
+    relationship: applies
+    spine_nodes: [P7, F1]
+    note: >-
+      The longitudinal Dove decomposition (Zharnikov 2026p) supplies the primary
+      empirical illustration: the Dove 2023 emission profile, the Purpose-Aligned
+      and Skeptic-Critic cohorts, and the formalization of the Dove-Axe
+      contradiction as spectral interference on the Ideological dimension.
+
+# ============================================================================
+# External anchor literature — predecessor frameworks the paper extends /
+# positions against. Keys verified against the substrate.
+# ============================================================================
+external_anchors:
+  - {citation_key: aaker-2000-brand-leadership, role: theoretical_predecessor, spine_nodes: [P1, F1], note: "Brand relationship spectrum / architectural taxonomy — the form-without-perceptual-consequence framework this paper extends."}
+  - {citation_key: keller-2008-strategic-brand-management, role: theoretical_predecessor, spine_nodes: [P1], note: "CBBE equity-transfer model — unidimensional equity, cannot represent differential effects across dimensions."}
+  - {citation_key: kapferer-2008-new-strategic-brand, role: theoretical_predecessor, spine_nodes: [P1], note: "Brand-portfolio role assignment — strategic-not-perceptual; explains why firms hold brands, not how they interact."}
+  - {citation_key: erdem-2002-empirical-investigation-spillover, role: contrast_case, spine_nodes: [A1], note: "Umbrella-branding signaling spillover — unidimensional quality; the closest existing formal approach, extended dimension-by-dimension here."}
+  - {citation_key: erdem-1998-brand-equity-as, role: theoretical_predecessor, spine_nodes: [A1], note: "Brand equity as a credibility signal — the signaling-theory base extended by spectral interference."}
+  - {citation_key: miklosthal-2012-linking-reputations-through, role: contrast_case, spine_nodes: [A1], note: "Game-theoretic umbrella branding — proves only POSITIVE quality correlation is credibly signalable; spectral model generalizes to directional interference."}
+  - {citation_key: aaker-1990-consumer-evaluations-brand, role: theoretical_predecessor, spine_nodes: [P3], note: "Extension fit (complementarity/substitutability) — maps to spectral proximity, but category-level rather than observer-heterogeneous."}
+  - {citation_key: balachander-2003-reciprocal-spillover-effects, role: motivating_problem, spine_nodes: [P2], note: "Reciprocal spillover — empirical evidence that cross-brand perturbation is bidirectional, formalized here as interference."}
+  - {citation_key: lei-2008-negative-spillover-brand, role: motivating_problem, spine_nodes: [P2], note: "Negative publicity spillover scaling with perceived relatedness — empirical that interference occurs."}
+  - {citation_key: janakiraman-2009-perception-spillovers-across, role: contrast_case, spine_nodes: [A2], note: "Between-competitor perception spillovers — distinguished from portfolio interference by the awareness-gate (ownership) precondition."}
+  - {citation_key: nguyen-2018-brand-portfolio-coherence, role: methodological_source, spine_nodes: [P6], note: "Brand portfolio coherence scale — taps aggregate coherence kappa_P, but no within/cross split and no observer heterogeneity."}
+  - {citation_key: murray-2013-branding-real-social, role: motivating_problem, spine_nodes: [F1], note: "'Genderwashing' — documents Dove-Axe ownership awareness contaminating Dove among purpose-aligned consumers (the canonical contradiction case)."}
+  - {citation_key: ke-2022-model-product-portfolio, role: contrast_case, spine_nodes: [F2], note: "Formal product-portfolio positioning on a Hotelling line — pre-perception design; complementary to post-awareness interference in 8-D space."}
+  - {citation_key: swaminathan-2020-branding-hyperconnected-world, role: motivating_problem, spine_nodes: [P1], note: "Hyperconnectedness raising ownership visibility — the secular force raising the awareness gate for portfolio interference."}
+  - {citation_key: rao-2004-how-is-manifest, role: boundary_anchor, spine_nodes: [PF6], note: "Branded-house > house-of-brands firm value — consistent with constructive interference (maximized at high parent visibility) generating economic value."}
+  - {citation_key: morgan-2009-brand-portfolio-strategy, role: boundary_anchor, spine_nodes: [PF7], note: "Portfolio composition predicts firm performance — consistent with the capacity / interference-budget propositions."}
+  - {citation_key: carrasco-2026-graph-homomorphism-distortion, role: methodological_source, spine_nodes: [L3], note: "Graph homomorphism distortion metric — proposed basis for recasting portfolio interference graph-theoretically (future extension)."}
+
+# ============================================================================
+# Open questions / boundary edges
+# ============================================================================
+
+# ============================================================================
+# Spine changelog — append-only
+# ============================================================================

@@ -14,6 +14,15 @@ identifiers:
   - type: doi
     value: "10.5281/zenodo.19468204"
     description: "Zenodo concept DOI (all versions)"
+keywords:
+  - brand dynamics
+  - brand velocity
+  - phase space
+  - trajectory clustering
+  - Spectral Brand Theory
+  - differential calculus
+  - non-ergodic perception
+  - Kalman filter
 license:
   - CC-BY-4.0
   - MIT

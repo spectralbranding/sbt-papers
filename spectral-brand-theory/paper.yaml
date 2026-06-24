@@ -254,7 +254,7 @@ dependencies:
   claim: Re-collapse pipeline is adapted from the Alibi atom-cloud-fact epistemological architecture (financial
     document processing); SBT applies it to heterogeneous observers with temporally decaying signals.
   critical: false
-  reference: Zharnikov (2026b), this corpus.
+  doi: 10.5281/zenodo.18944770
 - relationship: extends
   claim: OST supplies the L0-L1 output layer (WHAT) that SBT measures; SBT and OST are measurement and
     specification of one shared output interface.

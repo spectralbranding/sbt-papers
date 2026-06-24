@@ -12,7 +12,7 @@ meta:
     orcid: 0009-0000-6893-9231
     affiliation: Independent Researcher
   doi: 10.5281/zenodo.19468204
-  date: '2026-06-01'
+  date: '2026-04-01'
   venue: Preprint
   license: CC-BY-4.0
   keywords:
@@ -176,6 +176,15 @@ methodology:
     method: Python 3.12; numpy + matplotlib (PEP 723 inline deps)
 dependencies:
 - relationship: extends
+  claim: 'The §8.6 "Spectral force" and "Perception Lagrangian (future)" future-research stubs are developed
+    into a forced-dynamics model in the 2026aw formation companion (Forming a Perception): a campaign
+    is a time-varying forcing function on the perception cloud, the cloud relaxes toward a stable point
+    with a measurable perception-decay time constant when the forcing stops, and a brand''s distinctiveness
+    lower-bounds the persistence of its formed perception. Reciprocal forward-reference added 2026-06-20
+    (files-only, NO version bump; mirrors 2026au->2026av).'
+  critical: false
+  doi: 10.5281/zenodo.20769594
+- relationship: extends
   claim: Extends SBT's eight-dimensional static perception profile to a velocity / acceleration / phase-space
     dynamic calculus; refines SBT's C4 temporal scale into a formal kinematic layer. Classical static
     measurement is recovered as the velocity->0 limit.
@@ -196,7 +205,7 @@ dependencies:
     its theoretical semantics and resolves a Triangulation boundary (the Bonnet ambiguity) constructively
     via velocity.
   critical: false
-  reference: Zharnikov (2026y), this corpus.
+  doi: 10.5281/zenodo.19482547
 - relationship: applies
   claim: Supplies the Dove dimensional-activation profiles (Table 1) and the counter-cultural-decay claim
     (its Proposition 4) the illustration renders as a velocity/coherence reversal.

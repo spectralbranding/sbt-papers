@@ -548,12 +548,6 @@ external_anchors:
 # ============================================================================
 # Open questions / boundary edges
 # ============================================================================
-open:
-  - "Empirical calibration of sigma_0, kappa, alpha lambda_enc from longitudinal panel data (quasi-random signal-exposure instruments) — the model is not yet estimated. (L4)"
-  - "Anisotropic Sigma and dimension-specific kappa_i / kappa_R(i): does relaxing isotropy change the Proposition 7 absorption ordering? (L1)"
-  - "Interacting / mean-field SDEs on S^7_+ for correlated observer trajectories, and mean-field-game competition among brands sharing an observer population. (L2)"
-  - "Specialist verification of phi_1 minimality and higher-eigenfunction regularity on the cornered octant boundary. (L3)"
-  - "Optimal-control formulation: which signal strategy minimizes absorption risk subject to a budget constraint?"
 
 # ============================================================================
 # Spine changelog — append-only

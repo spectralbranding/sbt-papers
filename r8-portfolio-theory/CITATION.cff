@@ -6,7 +6,7 @@ authors:
     affiliation: "Independent Researcher"
     orcid: "https://orcid.org/0009-0000-6893-9231"
 title: "R8: Portfolio Theory"
-version: 1.0.0
+version: 1.2.0
 date-released: 2026-06-14
 url: "https://doi.org/10.5281/zenodo.19145099"
 repository-code: "https://github.com/spectralbranding/sbt-papers"
@@ -14,6 +14,15 @@ identifiers:
   - type: doi
     value: "10.5281/zenodo.19145099"
     description: "Zenodo concept DOI (all versions)"
+keywords:
+  - brand portfolio
+  - spectral interference
+  - constructive interference
+  - destructive interference
+  - portfolio coherence
+  - observer cohorts
+  - multi-dimensional brand perception
+  - Spectral Brand Theory
 license:
   - CC-BY-4.0
   - MIT

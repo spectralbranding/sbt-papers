@@ -14,12 +14,12 @@ owns:
   - term_key: brand-signal-space
     label: "Brand Signal Space"
     canonical_form: "brand signal space"
-    definition: "The positive orthant of R^8 equipped with the Aitchison metric, representing brand emission profiles with multiplicative, compositional structure justified by Weber-Fechner scaling."
+    definition: "The positive orthant of $\\mathbb{R}^8$ equipped with the Aitchison metric, representing brand emission profiles with multiplicative, compositional structure justified by Weber-Fechner scaling."
     first_section: "3 The Brand Signal Space"
   - term_key: observer-weight-space
     label: "Observer Weight Space"
     canonical_form: "observer weight space"
-    definition: "The probability simplex Delta^7 equipped with the Fisher-Rao metric (unique under Cencov's theorem), representing observers' relative salience weights across the eight dimensions."
+    definition: "The probability simplex $\\Delta^7$ equipped with the Fisher-Rao metric (unique under Cencov's theorem), representing observers' relative salience weights across the eight dimensions."
     first_section: "2.2 SBT Dimensional Architecture"
   - term_key: spectral-sensitivity-index
     label: "Spectral Sensitivity Index"

@@ -1,13 +1,14 @@
 [![MIT License](https://img.shields.io/badge/Code-MIT-blue.svg)](../LICENSE)
 [![CC-BY 4.0](https://img.shields.io/badge/Data-CC--BY_4.0-lightgrey.svg)](../LICENSE-data)
-![Last Updated](https://img.shields.io/badge/updated-2026--06--18-success)
+![Last Updated](https://img.shields.io/badge/updated-2026--06--24-success)
 
 # From Brand Identity to Spectral Identity: Formalizing Aaker's Framework for Testable, AI-Operable Brand Analysis
 
 ## 1 | Paper
 
 - Manuscript: [paper.md](paper.md)
-- DOI: (pending Zenodo deposit)
+- Version: 1.0.0
+- DOI: [10.5281/zenodo.20741256](https://doi.org/10.5281/zenodo.20741256)
 - **New here?** [AGENTS.md](AGENTS.md) is a file-by-file guide for any reader (human or AI agent) on how to use the paper + every metadata file.
 - Machine-readable bundle: [paper.yaml](paper.yaml) (Paper Spec), [SPINE.yaml](SPINE.yaml), [ONTOLOGY.yaml](ONTOLOGY.yaml), [GLOSSARY.md](GLOSSARY.md)
 
@@ -22,6 +23,9 @@
   author  = {Zharnikov, Dmitry},
   title   = {From Brand Identity to Spectral Identity: Formalizing Aaker's Framework for Testable, AI-Operable Brand Analysis},
   year    = {2026},
+  doi     = {10.5281/zenodo.20741256},
+  url     = {https://doi.org/10.5281/zenodo.20741256},
+  version = {1.0.0},
 }
 ```
 
@@ -33,4 +37,4 @@ Code (if any): MIT — see hub-level [../LICENSE](../LICENSE). Data, figures, ta
 
 ---
 
-*Last updated: 2026-06-18*
+*Last updated: 2026-06-24*

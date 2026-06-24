@@ -12,7 +12,7 @@ meta:
     orcid: 0009-0000-6893-9231
     affiliation: Independent Researcher
   doi: 10.5281/zenodo.18945352
-  date: '2026-06-01'
+  date: '2026-03-01'
   venue: Preprint
   license: CC-BY-4.0
   keywords:
@@ -31,7 +31,7 @@ meta:
     of dimensionality reduction. Applying the Johnson-Lindenstrauss lemma, it establishes that projecting
     $\mathbb{R}^8$ to $\mathbb{R}^1$ requires distortion exceeding 152% for 10 brands and 198% for 50
     brands. Any such projection creates a 7-dimensional null space of "invisible" brand differences. Information-theoretically,
-    a 5-point grade captures 2.32 bits of a $\sim$20-bit spectral profile, retaining 11.6% of available
+    a 5-point grade captures 2.32 bits of a $\sim 20$-bit spectral profile, retaining 11.6% of available
     information. Monte Carlo simulations confirm that 31--39% of brand pairs are metameric under random
     projection. The analysis yields a fundamental distinction between *rasterized* brand management --
     human projection through cognitive and communicative bottlenecks -- and *vectorized* brand management,

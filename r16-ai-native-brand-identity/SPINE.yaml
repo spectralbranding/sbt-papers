@@ -493,12 +493,6 @@ external_anchors:
 # ============================================================================
 # Open questions / boundary edges
 # ============================================================================
-open:
-  - "Empirical pilot for P6: 10-20 brands in a convergent category x 7 LLMs (4 clusters) under statistical-only vs specification-augmented conditions; behavioral metamerism index = inter-brand statistical distance / inter-brand behavioral distance."
-  - "Does the open-coordination adoption equilibrium (P5/L2) actually emerge, or does a single platform lock in proprietary verification?"
-  - "Dimensional-system invariance: are discrimination/metamerism results preserved under alternative decompositions (Aaker 5, Kapferer 6) rather than SBT-8?"
-  - "Tiered-disclosure governance: does selective disclosure undermine the verification benefits, and does the spec increase transparency or enable strategic opacity?"
-  - "Temporal stability: does the same Brand Function yield stable discrimination across measurement epochs (training-data drift vs architecture drift)?"
 
 # ============================================================================
 # Spine changelog — append-only

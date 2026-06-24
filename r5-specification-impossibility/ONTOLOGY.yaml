@@ -14,7 +14,7 @@ owns:
   - term_key: activation-matrix
     label: "Activation Matrix"
     canonical_form: "activation matrix"
-    definition: "The 8x6 matrix A in [0,1]^(8x6) whose entry A_ij is the activation level of spectral dimension i at organizational level j, vectorizable to a point in the 48-dimensional specification space."
+    definition: "The $8\\times 6$ matrix $A \\in [0,1]^{8\\times 6}$ whose entry $A_{ij}$ is the activation level of spectral dimension $i$ at organizational level $j$, vectorizable to a point in the 48-dimensional specification space."
     first_section: "Preliminaries: The Activation Matrix"
   - term_key: coverage-impossibility
     label: "Coverage Impossibility"
@@ -24,7 +24,7 @@ owns:
   - term_key: effective-dimensionality-reduction
     label: "Effective Dimensionality Reduction"
     canonical_form: "effective dimensionality"
-    definition: "The reduction of the 48-dimensional specification space to d_eff = 8(1-(1-gamma)^6)/gamma free dimensions under OST cascade coupling strength gamma, yielding 15.75 dimensions at gamma=0.5."
+    definition: "The reduction of the 48-dimensional specification space to $d_{\\text{eff}} = 8(1-(1-\\gamma)^6)/\\gamma$ free dimensions under OST cascade coupling strength $\\gamma$, yielding 15.75 dimensions at $\\gamma=0.5$."
     first_section: "The Effective Dimensionality Theorem"
   - term_key: forkability-decomposition
     label: "Forkability as Subspace Decomposition"

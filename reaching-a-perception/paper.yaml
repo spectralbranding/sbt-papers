@@ -28,26 +28,26 @@ meta:
     dimension and cohort, but presumes a perceptual cohort is reachable without showing how. A cohort
     defined by perceptual proximity has no native media address, unlike the channels, cookies, and lookalike
     segments of conventional activation. This applied companion closes that gap. It demonstrates that
-    being actionable decomposes into three measurable bridges from perception space to delivery, unified
-    by a measurement-to-activation handoff contract consistent with a metrology posture: the instrument
-    supplies the target and the cost of reaching it; the manager runs the campaign. The first bridge emits
-    a signal strong on the dimension a cohort is sensitive to and lets self-selection route it, requiring
-    no address. Formalized as a separating signal on a degraded broadcast channel, the self-selection
-    sharpness equals the same off-axis variance the parent paper counts as a perception-metamerism loss:
-    the targeting bug becomes a self-selection filter. The second traces reflections back to the surfaces where
-    each perception was found. The third maps the cohort to addressable proxies and quantifies the garbling
-    loss of doing so. Because the address-free bridge is where post-cookie activation is already moving,
-    the reach answer is a structural tailwind, not a patch.'
+    being actionable decomposes into three measurable bridges, unified by a measurement-to-activation
+    handoff contract: the instrument supplies the target and the cost of reaching it; the manager runs
+    the campaign. The first bridge emits a signal strong on the dimension a cohort is sensitive to and
+    lets self-selection route it, requiring no address. Formalized on a degraded broadcast channel, the
+    self-selection sharpness equals the same off-axis variance the parent paper counts as a perception-metamerism
+    loss: the targeting bug becomes a self-selection filter. The second traces reflections back to the
+    surfaces where each perception was found. The third maps the cohort to addressable proxies and makes
+    measurable the garbling loss of doing so. A calibrated simulation and two case studies show the contract
+    selecting bridges by distinctiveness. Because the address-free bridge is where post-cookie activation
+    is already moving, the reach answer is a structural tailwind, not a patch.'
 claims:
 - id: P1
   type: proposition
   statement: 'The handoff-contract rule. For a target (dimension, cohort), the measurement->activation
     contract emits (i) the recommended bridge mechanism and (ii) its quantified cost: dimension-distinct
-    cohort (sin^2(beta) > threshold) -> broadcast-a-dimension (b), cost = predicted spill; reflections clustered
-    on few live surfaces -> provenance-as-address (c), cost = coverage bias; else -> minimal-loss proxy
-    (a), cost = L(P*). SBT supplies target + bridge cost; media execution is the management layer.'
+    cohort (sin^2(beta) > threshold) -> broadcast-a-dimension (b), cost = predicted spill; reflections
+    clustered on few live surfaces -> provenance-as-address (c), cost = coverage bias; else -> minimal-loss
+    proxy (a), cost = L(P*). SBT supplies target + bridge cost; media execution is the management layer.'
   testable: true
-  tested_in_paper: false
+  tested_in_paper: true
   status: not_tested
 - id: P2
   type: proposition
@@ -59,7 +59,7 @@ claims:
     the self-selection filter; formally a degraded broadcast channel (Cover 1972) with channel quality
     |<signal, w_i>| and resonance bandwidth = sin^2(beta).
   testable: true
-  tested_in_paper: false
+  tested_in_paper: true
   status: not_tested
   depends_on:
   - P1
@@ -72,21 +72,27 @@ claims:
     (b), the contract (P1) routes to (b) instead — making the reach choice a measured comparison, not
     a default to addressability.
   testable: true
-  tested_in_paper: false
+  tested_in_paper: true
   status: not_tested
   depends_on:
   - P1
 methodology:
-  type: theoretical
+  type: empirical
   design: 'PRIMARY empirical spine: two-cell field experiment — dimension-strong vs dimension-neutral
     creative delivered via contextual slots, linked to PRE-MEASURED individual perceptual profiles (PRISM-style
     elicitation), >=1,500 complete profiles per cell, >=4 product categories spanning involvement x sin^2(beta).
-    Tests P2 (resonance over-index) at the individual level. FALLBACK (JAR-acceptable for a methods companion):
-    calibrated broadcast-channel simulation using the observed sin^2(beta) distribution from a reflection-based
-    perception corpus, plus two illustrative case studies (one maintenance campaign, one category-creation
-    campaign) demonstrating the handoff contract in practice. Proxy-join loss estimation: mutual information
-    I(C;P) and decision-loss L(P) between perceptual cohort membership and addressable proxy features
-    in the reflection corpus / panel; identify P* and bound unobservables.'
+    Tests P2 (resonance over-index) at the individual level. EXECUTED empirical spine (the realized path;
+    no data partnership available, so the JAR-acceptable methods-companion fallback rather than ME1).
+    Calibrated broadcast-channel Monte Carlo: the cohort single-dimension distinctiveness distribution
+    is calibrated to an OBSERVED public proxy — the five canonical SBT brand profiles (the corpus''s public
+    anchors), NOT a non-public perception instrument — by the concentration of each centered profile on
+    its dominant dimension; cohorts are drawn from the method-of-moments Beta and run through the M1 two-type
+    model; over-index, effect size, and routing fraction are reported with bootstrap 95% CIs. Two case
+    studies instantiate the P1 contract: a maintenance campaign (established distinctive brand, Hermes)
+    and a category-creation campaign (undifferentiated new entrant, distinctiveness at the 1/8 floor).
+    Supports P1 (contract bridge-selection) and P2 (resonance over-index). Proxy-join loss estimation:
+    mutual information I(C;P) and decision-loss L(P) between perceptual cohort membership and addressable
+    proxy features in the reflection corpus / panel; identify P* and bound unobservables.'
 acceptance:
 - claim_id: P1
   criterion: Holds if the handoff-contract rule.
@@ -111,8 +117,8 @@ limitations:
     This paper scopes itself to activation GIVEN a perception (routing), not formation.
   severity: moderate
   addressable: true
-- description: The reflection-based perception measurement architecture invites a replicability objection. Pre-empted
-    by shipping an open PRISM-style elicitation script and the RC2 alternative-instrument robustness.
+- description: The reflection-based perception measurement architecture invites a replicability objection.
+    Pre-empted by shipping an open PRISM-style elicitation script and the RC2 alternative-instrument robustness.
   severity: moderate
   addressable: true
 - description: 'Causal threats: endogenous content creation, omitted-variable bias in proxy mapping, measurement-error
@@ -120,6 +126,9 @@ limitations:
   severity: moderate
   addressable: true
 repositories:
+- platform: GitHub
+  url: https://github.com/spectralbranding/sbt-papers/tree/main/reaching-a-perception
+  notes: machine-readable source bundle (canonical SSOT)
 - platform: Zenodo
   url: https://doi.org/10.5281/zenodo.20765556
   doi: 10.5281/zenodo.20765556

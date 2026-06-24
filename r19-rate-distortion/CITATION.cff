@@ -14,6 +14,13 @@ identifiers:
   - type: doi
     value: "10.5281/zenodo.19528833"
     description: "Zenodo concept DOI (all versions)"
+keywords:
+  - rate-distortion theory
+  - brand perception
+  - large language models
+  - dimensional collapse
+  - codebook convergence
+  - instrument design
 license:
   - CC-BY-4.0
   - MIT
