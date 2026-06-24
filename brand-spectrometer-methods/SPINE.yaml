@@ -11,7 +11,7 @@
 # measurements / findings / negative_findings are first-class nodes.
 
 spine_version: "0.2"
-spine_doc_version: "0.3.0"
+spine_doc_version: "0.3.1"
 paper_key: "2026ax"
 provenance: generative
 title: >-
@@ -168,6 +168,23 @@ methods:
       operator-limited, not sample-limited.
     antecedents: [M2, M7]
     evidence: [{type: analytic, detail: "controls_calibration.py + resolution_scaling.py, seed 20260621"}]
+  - id: M9
+    statement: >-
+      Optional per-reflection SENTIMENT/VALENCE layer (instrument extension, outside
+      the frozen V1-V6 battery). A single cross-family extractor pass (extractor
+      family != renderer family — the same 2026ap discipline as the eight-dimension
+      extract) reads the already-rendered prose and emits a per-dimension valence in
+      [-1,+1]. Valence is orthogonal to the dimension STRENGTH score (a cohort can be
+      strong on a dimension with either sign of affect) and is explicitly NOT a noise
+      floor (a floor needs multi-operator passes; M9 is a single labelling pass).
+      Demonstrated on the Ferrari Luce fresh atlas (36 primary reflections): the owner
+      cohort reads hostile (Semiotic -.53, Experiential -.57) while international press
+      reads favourable (Economic +.45) — a face-valid signal. Warrant: LLM sentiment
+      extraction is benchmarked with documented limits [Zhang et al. 2024]; the human
+      affective-norm criterion for valence is the lexical norm set [Warriner et al.
+      2013]; confirmatory validation of the layer against those norms is future work.
+    antecedents: [M1]
+    evidence: [{type: empirical, detail: "atlases/ferrari_luce_fresh_2606/scripts/extract_valence.py -> valence/measured_valence.yaml (36 reflections, cross-family, logged); single writer extract_valence, single projector make_demo_dial_channels"}]
 
 # ============================================================================
 # Measurements + Findings
@@ -450,13 +467,27 @@ external_anchors:
       scores from text; cited in the cross-family-discipline paragraph as the
       empirical warrant for the extract stage and the inter-model-variance
       framing (Grok fatal-gap #3; review-paper MAJOR-3; review-lit-1).
+  - ref: "Gilardi, Alizadeh & Kubli 2023 (PNAS 120(30):e2305016120; DOI 10.1073/pnas.2305016120)"
+    use: >-
+      LLMs match or exceed trained crowd workers as zero-shot text annotators
+      (relevance/stance/topic/frame) — the annotation-validity warrant added to the
+      cross-family-discipline paragraph alongside Rathje. Crossref-verified 2026-06-24.
+  - ref: "Ziems et al. 2024 (Computational Linguistics 50(1):237-291; DOI 10.1162/coli_a_00502)"
+    use: >-
+      LLMs zero-shot classify and explain latent social constructs across a 25-task
+      battery — the computational-social-science warrant for the extract stage.
+      Crossref-verified 2026-06-24.
+  - ref: "Zhang et al. 2024 (Findings of NAACL 2024:3881-3906; DOI 10.18653/v1/2024.findings-naacl.246)"
+    use: >-
+      Sentiment analysis in the era of LLMs, a reality check — validity warrant +
+      documented limits for the M9 valence/sentiment layer. Crossref-verified 2026-06-24.
+  - ref: "Warriner, Kuperman & Brysbaert 2013 (Behavior Research Methods 45(4):1191-1207; DOI 10.3758/s13428-012-0314-x)"
+    use: >-
+      Human valence/arousal/dominance lexical norms (13,915 lemmas) — the affective-norm
+      criterion the M9 valence layer is to be validated against (future work). Same
+      target venue as this paper. Crossref-verified 2026-06-24.
   - ref: "GenAI-vs-consumer-panels paper [VERIFY]"
     use: "the assumption metameric psychometrics rejects (a panel is another cohort, not an oracle)."
   - ref: "Keller 1993; Aaker 1991; Aaker 1997 [VERIFY]"
     use: "classical brand-equity/personality measurement to differentiate against (the instrument measures perception, not equity)."
-
-open:
-  - "Cross-brand / cross-category generalization (more cases)."
-  - "More divergent + convergent windows to generalize the two-window result (P4)."
-  - "V6 public-signal criterion association (GDELT)."
 

@@ -431,11 +431,6 @@ external_anchors:
 # ============================================================================
 # Open questions / boundary edges
 # ============================================================================
-open:
-  - "H3: the analytical Dirichlet-source R(D) lower bound is uncomputed; the empirical curve lacks its theoretical baseline (companion note). (L3)"
-  - "The effect of temperature on the R(D) curve is held fixed at 0.7 and untested — an open robustness check."
-  - "Native-language effects on the rate-distortion operating point are untested (English-only). (L2)"
-  - "Architectural separation by training lineage is unresolved; panels of 15+ models per group are needed. (NF2/L2)"
 
 # ============================================================================
 # Spine changelog — append-only

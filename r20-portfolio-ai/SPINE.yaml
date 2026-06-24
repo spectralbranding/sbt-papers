@@ -764,12 +764,6 @@ external_anchors:
 # ============================================================================
 # Open questions / boundary edges (paper §'Future Research')
 # ============================================================================
-open:
-  - "Validation of DCI against human perceptual data to establish construct validity for the metric and the rate-distortion interpretation. (L1, C2)"
-  - "Dedicated multi-brand aspirational-layer replication (Toyota/Lexus, VW/Audi, Marriott/Ritz-Carlton) to determine whether the Lexus d = .52 is a real exception. (L2, m_lexus)"
-  - "Agentic simulations and extended multi-turn designs (5+ turns) to test whether conversational accumulation unlocks effects in non-reverse-aspiration portfolios. (L3, F3)"
-  - "Longitudinal testing of whether spectral immunity is stable as models are updated or fine-tuned — critical for 'Share of Model' strategy. (P10)"
-  - "Multiple models per tradition for native-language ablation to firm up tradition-level conclusions. (L4, P9)"
 
 # ============================================================================
 # Spine changelog — append-only

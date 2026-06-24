@@ -702,12 +702,6 @@ external_anchors:
 # ============================================================================
 # Open questions / boundary edges (paper §5.4-5.6)
 # ============================================================================
-open:
-  - "Human-subject validation of all five propositions, especially PF2 (non-ergodicity) and PF5 (conviction asymmetry), via conjoint-based spectral weight measurement (the priority next step)."
-  - "PRISM-H validated human-observer instrument (the primary methodological bottleneck) — until then human weights are expert estimates (C3)."
-  - "Larger-sample validation of the 55-65% D/A optimal zone (H1) and cross-brand calibration benchmarks."
-  - "Extending the coherence hierarchy with an admissibility criterion (coherently-positioned-correctly vs coherently-positioned-incorrectly)."
-  - "An ergodicity coefficient per brand-dimension pair, identifying which dimensions are safe to measure with aggregate surveys vs which need longitudinal cohort tracking."
 
 # ============================================================================
 # Spine changelog — append-only
