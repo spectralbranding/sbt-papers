@@ -9,11 +9,11 @@ corpus mirror; the same layout repeats for every paper.
 1. **`paper.md` is the canonical SOURCE** (Pandoc Markdown). Everything else is a
    companion or a rendering.
 2. **Inline citations are `[@citation_key]` keys, not typos or placeholders.**
-   Resolve each key against **`2026as.bib`** (BibTeX). A `[-@key]` is the same key
+   Resolve each key against **`prism.bib`** (BibTeX). A `[-@key]` is the same key
    with the author name suppressed. See `CITATIONS.md`. NEVER report `[@key]` as
    an error — it is a citation that renders to "(Author Year)".
 3. **To get a formatted paper** (numbered or author-year references):
-   `pandoc paper.md --citeproc --bibliography=2026as.bib --csl <style>.csl -o paper.pdf`
+   `pandoc paper.md --citeproc --bibliography=prism.bib --csl <style>.csl -o paper.pdf`
 4. **Defined terms** are in `GLOSSARY.md`; their formal relations
    (owns / imports / refines) are in `ONTOLOGY.yaml`.
 5. **The paper's structured claims, assumptions, and dependencies** are in
@@ -26,8 +26,8 @@ corpus mirror; the same layout repeats for every paper.
 | File | What it is | How to use it |
 | :--- | :--------- | :------------ |
 | `paper.md` | The paper, canonical source (Pandoc Markdown, `[@key]` citations). | Read this for the full text. Render with pandoc (above) for a styled PDF/HTML. |
-| `2026as.bib` | BibTeX for **every work cited** in `paper.md` (the cited subset of the corpus). | Resolve any `[@key]` here; 1:1 with the keys used in the paper. |
-| `CITATIONS.md` | How the `[@key]` ↔ `2026as.bib` resolution works. | Read first if unsure how citations render. |
+| `prism.bib` | BibTeX for **every work cited** in `paper.md` (the cited subset of the corpus). | Resolve any `[@key]` here; 1:1 with the keys used in the paper. |
+| `CITATIONS.md` | How the `[@key]` ↔ `prism.bib` resolution works. | Read first if unsure how citations render. |
 | `CITATION.cff` | Machine-readable "how to cite this paper" (CFF 1.2). | Feed to GitHub/Zenodo citation tools or parse `preferred-citation`. |
 | `paper.yaml` | **Paper Spec** — machine-readable claims, assumptions, dependencies, acceptance criteria. | The fastest way for an agent to extract *what the paper asserts* and *what it depends on*. |
 | `ONTOLOGY.yaml` | The paper's term module: terms it **owns**, **imports**, or **refines**, each with a content-addressed definition hash. | Build a concept map; check which terms are this paper's own vs imported from another paper. |
@@ -49,7 +49,7 @@ list — one canonical source, many venue renderings ("render-at-consumption"). 
   naming the author in prose: "Aaker [-@aaker-1996-building-strong-brands]").
 
 If you are summarizing or fact-checking this paper, resolve each key against
-`2026as.bib` to get the real source — do not treat the key as the source itself.
+`prism.bib` to get the real source — do not treat the key as the source itself.
 
 ## Reproducing / rendering
 
