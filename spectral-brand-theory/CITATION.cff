@@ -14,17 +14,6 @@ identifiers:
   - type: doi
     value: "10.5281/zenodo.18945912"
     description: "Zenodo concept DOI (all versions)"
-keywords:
-  - brand perception
-  - dimensional decomposition
-  - computational branding
-  - observer heterogeneity
-  - brand coherence
-  - structural absence
-  - non-ergodic dynamics
-  - AI-native framework
-  - brand architecture
-  - perceptual geometry
 license:
   - CC-BY-4.0
   - MIT

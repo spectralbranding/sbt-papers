@@ -539,12 +539,6 @@ external_anchors:
 # ============================================================================
 # Open questions / boundary edges
 # ============================================================================
-open:
-  - "Does DCI validate against human perceptual data, enabling a direct human-vs-AI interference-magnitude comparison? (L1)"
-  - "Does a dedicated multi-brand aspiration panel (Toyota/Lexus, VW/Audi, Marriott/Ritz-Carlton, Gap/Banana Republic) confirm the d ≈ .52 aspiration signal as a real exception to immunity, settling P3? (L2)"
-  - "Do human-observer experiments with awareness varied 0->1 produce interference above threshold while LLMs stay immune, as P2 predicts?"
-  - "Do extended multi-turn designs (5+ turns) unlock portfolio effects in non-reverse-aspiration portfolios, generalizing the Geely Auto DO->WHAT conversion? (F4)"
-  - "Do domain-specific fine-tuned models carry higher bandwidth for organizational context, breaking immunity? (L3, C1)"
 
 # ============================================================================
 # Spine changelog — append-only

@@ -662,11 +662,6 @@ external_anchors:
 # ============================================================================
 # Open questions / boundary edges
 # ============================================================================
-open:
-  - "Do AI-mediated brand encounters produce measurably different brand convictions than direct encounters? (consumer experiments — L1)"
-  - "Is the Economic Default uniform or category-modulated? (the local-pair category confound — L2)"
-  - "Which alternative specification formats beyond structural Brand Function recover the most dimensionality, given the frontier appears qualitative (causal attributions, legally-grounded commitments) rather than quantitative? (F4)"
-  - "Do multimodal / retrieval-grounded / cross-modal agents attenuate collapse as the boundary conditions predict? (C1, C2, L4)"
 
 # ============================================================================
 # Spine changelog — append-only

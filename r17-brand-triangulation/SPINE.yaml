@@ -420,38 +420,38 @@ methods:
 
 measurements:
   - id: m_slope_loglog
-    statement: "log(RMSE)~log(PDOP) slope = .995 [.981, 1.009], R² = .994; Spearman ρ = .996 (expected slope 1.0)."
+    statement: "log(RMSE)~log(PDOP magnitude) slope = 1.000 [.996, 1.003], R² = .993; Spearman ρ = .992; per-trial mean ratio RMSE/(σ·√N·PDOP) = .996 (expected slope/ratio 1.0). Per-cohort-normalized PDOP convention throughout."
     source_observations: [O2]
     generating_method: M1
-    value: "slope .995 / R² .994 / ρ .996"
-    units: "regression slope, R², rank correlation"
+    value: "slope 1.000 / R² .993 / ρ .992 / ratio .996"
+    units: "regression slope, R², rank correlation, mean ratio"
     body_sections: ["§9.6 Table 5"]
   - id: m_slope_mse
-    statement: "MSE ~ σ²·PDOP² slope = .968 [.945, .991], R² = .926, p < 10^{-300}."
+    statement: "MSE ~ σ²·N·PDOP² (per-cohort-normalized PDOP) slope = .880 [.749, 1.138], R² = .926, p < 10^{-300}; downward leverage from heavy-tailed near-singular clustered configs."
     source_observations: [O2]
     generating_method: M1
-    value: "slope .968 / R² .926"
+    value: "slope .880 / R² .926"
     units: "regression slope, R²"
     body_sections: ["§9.6 Table 5"]
   - id: m_quartile
-    statement: "RMSE rises 24-fold from Q1 (best geometry, mean .192) to Q4 (worst, mean 4.579) at fixed σ=0.5."
+    statement: "RMSE rises 26-fold (ratio 25.9) from Q1 (best geometry, mean 2.779) to Q4 (worst, mean 71.862) at fixed σ=0.5, per-cohort-normalized PDOP quartiles."
     source_observations: [O2]
     generating_method: M1
-    value: "Q1 .192 → Q4 4.579 (24x)"
+    value: "Q1 2.779 → Q4 71.862 (25.9x)"
     units: "RMSE"
     body_sections: ["§9.6 Table 6"]
   - id: m_pdop_n9
-    statement: "Simplex-constrained min PDOP at N=9 = .388 (condition number 1.92); random-assignment median 3.67, mean 5.07."
+    statement: "Per-cohort-normalized PDOP at N=9: unconstrained-sphere floor 1/√N=.333; simplex unit-magnitude floor √(7/N)=.882; simplex-constrained numerical optimum .913 (condition number 2.00); random-assignment median 8.05, mean ≈11 (heavy-tailed)."
     source_observations: [O2]
     generating_method: M3
-    value: "min .388 / median 3.67 / mean 5.07"
+    value: "floor .333 / simplex floor .882 / opt .913 / median 8.05 / mean ≈11"
     units: "PDOP"
     body_sections: ["§9.6 (PDOP bounds for the N=9 minimum case)"]
   - id: m_plateau
-    statement: "PDOP degrades <10% for perturbations up to ε=0.2; ~16% at ε=0.3 (plateau confirmed)."
+    statement: "Median PDOP degradation ≈3.6% at ε=0.1, ≈7.2% at ε=0.2 (<10%), ≈10.5% at ε=0.3 (plateau confirmed)."
     source_observations: [O2]
     generating_method: M3
-    value: "<10% at ε=.2; 16% at ε=.3"
+    value: "3.6% at ε=.1; 7.2% at ε=.2; 10.5% at ε=.3"
     units: "% PDOP degradation"
     body_sections: ["§9.6 (sensitivity plateau)"]
   - id: m_dci_bf
@@ -469,10 +469,10 @@ findings:
   - id: F1
     statement: >-
       Under the linear observation model, PDOP is a sharp predictor of RMSE: the
-      log-log slope of .995 (R²=.994, ρ=.996) confirms the GPS-theory power law
-      MSE = σ²·PDOP², holding per-dimension (ρ .978–.990) and across two orders
+      log-log slope of 1.000 (R²=.993, ρ=.992) confirms the GPS-theory power law
+      MSE = σ²·N·PDOP² (per-cohort-normalized PDOP), holding per-dimension (ρ .985–.995) and across two orders
       of magnitude in PDOP. Observer geometry dominates measurement precision
-      (24-fold RMSE spread across PDOP quartiles at fixed noise). This is a
+      (26-fold RMSE spread across PDOP quartiles at fixed noise). This is a
       mathematical confirmation under the model's data-generating process;
       transfer to real cohort responses is an empirical question (Option B).
     type: "simulation_confirmation"
@@ -673,12 +673,6 @@ external_anchors:
 # ============================================================================
 # Open questions / boundary edges
 # ============================================================================
-open:
-  - "Option B: a human-cohort survey (≥5 demographically distinct cohorts on the same 15 brands + 3 calibration brands) to test C4 multi-constellation DOP reduction and validate the linear model on human responses."
-  - "Longitudinal panel (≥2 epochs, consistent constellation) to test the Perception Kalman filter (C6) and the §8 trajectory framework."
-  - "Independent validation of the canonical Hermès/IKEA/Patagonia calibration profiles against human survey data (resolving the stability-not-correctness caveat, §4.1)."
-  - "Generalization beyond B2C: B2B, service, place, and personal brands may have different dimensional profiles and observer structures."
-  - "Cross-category validation of PDOP and calibration correction (current stimuli are global-vs-local pairs, not a cross-category sample)."
 
 # ============================================================================
 # Spine changelog — append-only
