@@ -152,7 +152,7 @@ flowchart LR
   A4 --> S8[Temporal]
 ```
 
-*Notes*: Arrows represent the non-zero weight entries in the linear map T from Appendix A. Each row of T corresponds to one Aaker perspective; each column to one SBT dimension. The Semiotic dimension (S2) receives projections from three perspectives, reflecting its role as the primary visual-identity channel across Product, Person, and Symbol. Weights are illustrative (equal within each perspective row); empirical calibration of T is an open research question.
+*Notes*: Arrows represent the non-zero weight entries in the linear map $T$ from Appendix A. Each row of $T$ corresponds to one Aaker perspective; each column to one SBT dimension. The Semiotic dimension (S2) receives projections from three perspectives, reflecting its role as the primary visual-identity channel across Product, Person, and Symbol. Weights are illustrative (equal within each perspective row); empirical calibration of $T$ is an open research question.
 
 The practical consequence of unbundling is diagnostic precision. Consider Aaker's "Brand as Product," which bundles product experience, price positioning, and product-attribute visual signals into a single perspective. Under the bundled view, a practitioner diagnosing declining product-perspective scores cannot distinguish between structurally different problems: consumers may be dissatisfied with the product experience (Experiential), or they may perceive the price as unfair relative to value (Economic). A luxury brand scoring poorly on "Brand as Product" almost certainly has an Experiential problem, not an Economic one --- yet Aaker's framework treats both through the same lens. SBT's decomposition reveals which dimension is failing for which cohort, directing intervention precisely.
 
@@ -241,7 +241,7 @@ SBT generates falsifiable propositions. Four core propositions follow from the f
 
 **P1 (Observer divergence).** *Structurally different observer spectral profiles produce divergent perception clouds from identical brand signal environments, and the divergence is predictable from profile distance in spectral space.*
 Rationale: if perception is a function of both signal content and observer profile weights, then cohorts with orthogonal weight vectors cannot converge on the same perception cloud regardless of signal consistency.
-Falsification: P1 is falsified if observers with documented spectral profile differences of magnitude δ > ε produce perception clouds whose centroid distance is not statistically distinguishable from zero across replicated signal environments.
+Falsification: P1 is falsified if observers with documented spectral profile differences of magnitude $\delta > \epsilon$ produce perception clouds whose centroid distance is not statistically distinguishable from zero across replicated signal environments.
 
 **P2 (Coherence type predicts disruption response).** *Coherence type (not coherence degree) predicts the structural pattern of conviction change following a brand disruption event.*
 Rationale: Sørensen [-@sorensen-2002-strength-corporate-culture] showed that cultural type predicts performance better than cultural strength; the coherence taxonomy applies the same principle to brand perception. Two brands with identical consistency scores but different coherence types respond to disruption through structurally distinct mechanisms.
@@ -277,7 +277,7 @@ Table 4: Five Coherence Types and Their Disruption Response Patterns.
 | Experiential asymmetry | Direct vs. mediated perception gap | Geographic variation | Erewhon |
 | Incoherent | Contradictory signals, irreconcilable clouds | Amplifying fragmentation | Tesla |
 
-*Notes*: Coherence type classifications derived from Zharnikov [-@zharnikov-2026-spectral-brand-theory-computational-framework]. Exemplar brands are illustrative, not exhaustive. Recovery conditions following coherence shocks are formalized by the μ > λ threshold inequality in Zharnikov [-@zharnikov-2026-restoring-perceptual-separability-after-coherence].
+*Notes*: Coherence type classifications derived from Zharnikov [-@zharnikov-2026-spectral-brand-theory-computational-framework]. Exemplar brands are illustrative, not exhaustive. Recovery conditions following coherence shocks are formalized by the $\mu > \lambda$ threshold inequality in Zharnikov [-@zharnikov-2026-restoring-perceptual-separability-after-coherence].
 
 Table 5: Comparison of Brand Identity Frameworks Across Structural Dimensions.
 
@@ -289,11 +289,11 @@ Table 5: Comparison of Brand Identity Frameworks Across Structural Dimensions.
 | Treats observer heterogeneity | No — single identity, one gap | Partial — Image facet acknowledges receiver | Partial — "Conceived" identity is receiver-side | Partial — Reflection and self-image facets | Yes — observer cohorts as primary analytical unit |
 | Treats AI observers | No | No | No | No | Yes — P4 predicts dimensional collapse in LLM observers |
 | Falsifiable propositions | None stated | None stated | None stated | None stated | P1–P4 with explicit falsification criteria |
-| Limiting-case relation to SBT | Aaker is T·ψ projection onto 4 dimensions (Appendix A) | VCI alignment gaps recoverable from inter-cohort cloud distance | AC²ID identity types recoverable from cross-stakeholder cloud divergence | Kapferer facets correspond to SBT dimension subsets | — |
+| Limiting-case relation to SBT | Aaker is $T \cdot \psi$ projection onto 4 dimensions (Appendix A) | VCI alignment gaps recoverable from inter-cohort cloud distance | AC²ID identity types recoverable from cross-stakeholder cloud divergence | Kapferer facets correspond to SBT dimension subsets | — |
 
 *Notes*: AC²ID = Actual, Communicated, Conceived, Ideal, Desired identity types. VCI = Vision-Culture-Image. Limiting-case relations are structural correspondences, not empirical equivalences; calibration is required before use as converters.
 
-The taxonomy addresses Section 3.3's boundary directly. Sørensen [-@sorensen-2002-strength-corporate-culture] demonstrated that cultural type predicts outcomes better than cultural strength; the coherence taxonomy applies the same principle to brand perception. Two brands scoring 7/10 on a conventional consistency metric --- one with signal coherence (IKEA), one with ecosystem coherence (Hermès) --- will respond to identical disruptions in structurally different ways. The signal-coherent brand transmits the disruption uniformly. The ecosystem-coherent brand absorbs it selectively. The consistency score is identical; the strategic implications are opposite. The μ > λ threshold inequality [@zharnikov-2026-restoring-perceptual-separability-after-coherence] formalizes the recovery condition: brands below threshold cannot restore perceptual separability through signal correction alone and require structural coherence intervention.
+The taxonomy addresses Section 3.3's boundary directly. Sørensen [-@sorensen-2002-strength-corporate-culture] demonstrated that cultural type predicts outcomes better than cultural strength; the coherence taxonomy applies the same principle to brand perception. Two brands scoring 7/10 on a conventional consistency metric --- one with signal coherence (IKEA), one with ecosystem coherence (Hermès) --- will respond to identical disruptions in structurally different ways. The signal-coherent brand transmits the disruption uniformly. The ecosystem-coherent brand absorbs it selectively. The consistency score is identical; the strategic implications are opposite. The $\mu > \lambda$ threshold inequality [@zharnikov-2026-restoring-perceptual-separability-after-coherence] formalizes the recovery condition: brands below threshold cannot restore perceptual separability through signal correction alone and require structural coherence intervention.
 
 This distinction cannot be made within Aaker's framework because it requires modeling multiple observer cohorts simultaneously and characterizing the structural relationship between their perception clouds --- capabilities that depend on the formal observer model.
 
@@ -313,7 +313,7 @@ The formalization in this section claims that SBT adds predictive and diagnostic
 
 Aaker's framework suffices when observer cohorts are approximately spectrally homogeneous --- when the primary audiences of a brand weight the eight dimensions in roughly similar proportions. Under this condition, the multi-cohort perception cloud collapses to a near-point in spectral space, the identity-image gap approaches zero for all cohorts simultaneously, and the formalization reduces to Aaker's single-identity model (Section 7.1). Brands operating in culturally homogeneous markets with low consumer heterogeneity, stable category conventions, and high-design signal environments approximate this condition.
 
-Three explicit limitations on the formal relationship also bear stating. First, the limiting-case theorem in Appendix A applies to brand-identity content, not measurement instruments. Aaker's empirical measurement instruments (the Brand Personality Scale; Coleman's [-@coleman-2011-service-brand-identity-definition] operationalization) use different scales than SBT spectral profiles; Appendix A's T matrix is a conceptual mapping, not a psychometric converter. Second, the weights in T are illustrative: they specify which SBT dimensions contribute to each Aaker perspective but do not specify the magnitudes. Empirical calibration of T requires cross-validated measurement data. Third, the mapping is non-invertible: because T collapses eight dimensions to four, an Aaker representation cannot be expanded back to a unique SBT profile. Practitioners who have only Aaker-level measurements cannot reconstruct SBT-level diagnostics from them; the informational loss is structural, not a measurement artifact.
+Three explicit limitations on the formal relationship also bear stating. First, the limiting-case theorem in Appendix A applies to brand-identity content, not measurement instruments. Aaker's empirical measurement instruments (the Brand Personality Scale; Coleman's [-@coleman-2011-service-brand-identity-definition] operationalization) use different scales than SBT spectral profiles; Appendix A's $T$ matrix is a conceptual mapping, not a psychometric converter. Second, the weights in $T$ are illustrative: they specify which SBT dimensions contribute to each Aaker perspective but do not specify the magnitudes. Empirical calibration of $T$ requires cross-validated measurement data. Third, the mapping is non-invertible: because $T$ collapses eight dimensions to four, an Aaker representation cannot be expanded back to a unique SBT profile. Practitioners who have only Aaker-level measurements cannot reconstruct SBT-level diagnostics from them; the informational loss is structural, not a measurement artifact.
 
 ---
 
@@ -327,7 +327,7 @@ To illustrate that SBT reproduces Aaker's insights while generating additional p
 
 **SBT's analysis.** Patagonia's spectral profile is Ideological-dominant, with the canonical profile [6.0, 9.0, 9.5, 7.5, 8.0, 5.0, 7.0, 6.5] across the eight dimensions [@zharnikov-2026-spectral-brand-theory-computational-framework]. The brand exhibits Identity coherence: a strong Ideological core creates tight coherence among purpose-aligned observers but actively repels misaligned ones. The coherence is not a property of the brand alone but of the relationship between the brand's signal architecture and the spectral profiles of its primary cohorts.
 
-**What SBT adds.** Aaker's analysis identifies what Patagonia is. SBT predicts how it will behave under stress. Under Identity coherence, disruption produces a binary response: purpose-aligned cohorts rally ("this proves they're authentic"), while misaligned cohorts deepen their indifference or opposition. There is no middle ground. SBT also predicts which dimensions are critical: the brand can absorb Experiential disruptions (a product quality issue) because its primary cohorts weight Ideological signals more heavily; but an Ideological disruption (a perceived betrayal of environmental values) would trigger wholesale re-collapse in the core cohort, with no structural fallback. The type of disruption, not its magnitude, determines the outcome --- a prediction that Aaker's consistency-focused framework cannot generate. Whether the brand's coherence structure meets the μ > λ recovery threshold following such a shock is a testable question addressed by Zharnikov [-@zharnikov-2026-restoring-perceptual-separability-after-coherence].
+**What SBT adds.** Aaker's analysis identifies what Patagonia is. SBT predicts how it will behave under stress. Under Identity coherence, disruption produces a binary response: purpose-aligned cohorts rally ("this proves they're authentic"), while misaligned cohorts deepen their indifference or opposition. There is no middle ground. SBT also predicts which dimensions are critical: the brand can absorb Experiential disruptions (a product quality issue) because its primary cohorts weight Ideological signals more heavily; but an Ideological disruption (a perceived betrayal of environmental values) would trigger wholesale re-collapse in the core cohort, with no structural fallback. The type of disruption, not its magnitude, determines the outcome --- a prediction that Aaker's consistency-focused framework cannot generate. Whether the brand's coherence structure meets the $\mu > \lambda$ recovery threshold following such a shock is a testable question addressed by Zharnikov [-@zharnikov-2026-restoring-perceptual-separability-after-coherence].
 
 ### 6.2 IKEA: Signal Coherence
 
@@ -345,7 +345,7 @@ To illustrate that SBT reproduces Aaker's insights while generating additional p
 
 **What SBT adds.** This is the case that most clearly demonstrates SBT's diagnostic advantage. Aaker's framework sees a strong brand with a volatile personality. Traditional brand equity scores --- awareness, consideration, favorability --- show Tesla as one of the world's strongest brands. SBT reveals it as one of the most architecturally fragile: maximum emission power with minimum structural health. The framework identifies the CEO as the source of approximately 65% of all brand-related signals, most of them ambient (not designed by the brand), dominating the Ideological, Narrative, and Social dimensions where different cohorts diverge most. The Experiential dimension (the actual product) is the brand's only unconflicted dimension --- simultaneously its greatest strength and its last remaining firewall.
 
-Fournier and Eckhardt [-@fournier-2019-putting-person-back] identify the structural risk of person-brands: when the brand is inseparable from a single individual, the brand inherits that individual's volatility with no structural buffer. SBT formalizes this as a coherence type --- Incoherence --- and predicts its disruption behavior: amplifying. Each disruption widens existing cracks. A product recall reinforces the Boycotter's narrative. A CEO controversy reinforces the Loyalist's defensive posture. The system does not absorb disruption; it converts disruption into deeper division. This is the worst resilience profile in the taxonomy, and it cannot be diagnosed by frameworks that do not model multiple observer cohorts simultaneously. The μ > λ threshold condition [@zharnikov-2026-restoring-perceptual-separability-after-coherence] predicts that Incoherent brands fall below the recovery threshold after successive disruptions, making perceptual separability between conflicting cohorts permanent rather than recoverable.
+Fournier and Eckhardt [-@fournier-2019-putting-person-back] identify the structural risk of person-brands: when the brand is inseparable from a single individual, the brand inherits that individual's volatility with no structural buffer. SBT formalizes this as a coherence type --- Incoherence --- and predicts its disruption behavior: amplifying. Each disruption widens existing cracks. A product recall reinforces the Boycotter's narrative. A CEO controversy reinforces the Loyalist's defensive posture. The system does not absorb disruption; it converts disruption into deeper division. This is the worst resilience profile in the taxonomy, and it cannot be diagnosed by frameworks that do not model multiple observer cohorts simultaneously. The $\mu > \lambda$ threshold condition [@zharnikov-2026-restoring-perceptual-separability-after-coherence] predicts that Incoherent brands fall below the recovery threshold after successive disruptions, making perceptual separability between conflicting cohorts permanent rather than recoverable.
 
 ### 6.4 Cross-Case Synthesis: The Differential-Prediction Pattern
 
@@ -410,98 +410,93 @@ AI assistants (Claude Opus 4.8, Grok 4.20, Gemini 2.5 Pro) were used for initial
 
 ### A.1 Setup
 
-Let ψ ∈ R^8 denote the SBT brand identity vector for a given brand, with components ψ = (ψ_S, ψ_N, ψ_I, ψ_E, ψ_So, ψ_Ec, ψ_C, ψ_T) corresponding to the eight perceptual dimensions in canonical order: Semiotic, Narrative, Ideological, Experiential, Social, Economic, Cultural, Temporal.
+Let $\psi \in R^8$ denote the SBT brand identity vector for a given brand, with components $\psi = (\psi_S, \psi_N, \psi_I, \psi_E, \psi_{So}, \psi_{Ec}, \psi_C, \psi_T)$ corresponding to the eight perceptual dimensions in canonical order: Semiotic, Narrative, Ideological, Experiential, Social, Economic, Cultural, Temporal.
 
-Aaker's [-@aaker-1996-building-strong-brands] Brand Identity Model organizes brand identity through four perspectives: Brand-as-Product (BAP), Brand-as-Organization (BAO), Brand-as-Person (BAPe), and Brand-as-Symbol (BASy). Define a four-dimensional Aaker representation a ∈ R^4 as a = (a_BAP, a_BAO, a_BAPe, a_BASy), where each component aggregates the perceptual content associated with that perspective.
+Aaker's [-@aaker-1996-building-strong-brands] Brand Identity Model organizes brand identity through four perspectives: Brand-as-Product (BAP), Brand-as-Organization (BAO), Brand-as-Person (BAPe), and Brand-as-Symbol (BASy). Define a four-dimensional Aaker representation $a \in R^4$ as $a = (a_{BAP}, a_{BAO}, a_{BAPe}, a_{BASy})$, where each component aggregates the perceptual content associated with that perspective.
 
-The mapping question is: what is the formal relationship between ψ and a?
+The mapping question is: what is the formal relationship between $\psi$ and $a$?
 
 ### A.2 Theorem 1 (Aaker as Linear Projection of SBT)
 
-**Theorem 1.** *There exists a linear map T : R^8 → R^4 such that for any brand ψ, the Aaker representation a is given by a = T·ψ, where T is a 4×8 matrix encoding the dimension mapping established in Table 1.*
+**Theorem 1.** *There exists a linear map $T : R^8 \to R^4$ such that for any brand $\psi$, the Aaker representation $a$ is given by $a = T \cdot \psi$, where $T$ is a $4 \times 8$ matrix encoding the dimension mapping established in Table 1.*
 
-The map T is not an isomorphism: it is a projection that loses information. The theorem states only that the Aaker representation is recoverable from the SBT representation by linear combination; it does not state that the SBT representation is recoverable from the Aaker representation.
+The map $T$ is not an isomorphism: it is a projection that loses information. The theorem states only that the Aaker representation is recoverable from the SBT representation by linear combination; it does not state that the SBT representation is recoverable from the Aaker representation.
 
 ### A.3 Proof (Construction of T)
 
-Construct T row by row, with weights w_i ≥ 0 within each row normalized to sum to 1 (equal weights are used here as the canonical illustrative case; empirical calibration of weights is addressed in A.6).
+Construct $T$ row by row, with weights $w_i \ge 0$ within each row normalized to sum to 1 (equal weights are used here as the canonical illustrative case; empirical calibration of weights is addressed in A.6).
 
 **Row 1 (BAP — Brand-as-Product):**
-BAP is constituted by product scope, attributes, quality, uses, users, and country of origin. Per Table 1, the critical SBT dimensions are Experiential (ψ_E) and Economic (ψ_Ec), with Semiotic (ψ_S) contributing through product-attribute visual signals.
+BAP is constituted by product scope, attributes, quality, uses, users, and country of origin. Per Table 1, the critical SBT dimensions are Experiential ($\psi_E$) and Economic ($\psi_{Ec}$), with Semiotic ($\psi_S$) contributing through product-attribute visual signals.
 
-a_BAP = (1/3)·ψ_E + (1/3)·ψ_Ec + (1/3)·ψ_S
+$$a_{BAP} = (1/3) \cdot \psi_E + (1/3) \cdot \psi_{Ec} + (1/3) \cdot \psi_S$$
 
 **Row 2 (BAO — Brand-as-Organization):**
-BAO captures organizational values, culture, capabilities, and local/global orientation. Per Table 1, the critical dimensions are Cultural (ψ_C), Social (ψ_So), and Ideological (ψ_I).
+BAO captures organizational values, culture, capabilities, and local/global orientation. Per Table 1, the critical dimensions are Cultural ($\psi_C$), Social ($\psi_{So}$), and Ideological ($\psi_I$).
 
-a_BAO = (1/3)·ψ_C + (1/3)·ψ_So + (1/3)·ψ_I
+$$a_{BAO} = (1/3) \cdot \psi_C + (1/3) \cdot \psi_{So} + (1/3) \cdot \psi_I$$
 
 **Row 3 (BAPe — Brand-as-Person):**
-BAPe addresses brand personality and brand-customer relationship. Per Table 1, the critical dimensions are Narrative (ψ_N) and Semiotic (ψ_S).
+BAPe addresses brand personality and brand-customer relationship. Per Table 1, the critical dimensions are Narrative ($\psi_N$) and Semiotic ($\psi_S$).
 
-a_BAPe = (1/2)·ψ_N + (1/2)·ψ_S
+$$a_{BAPe} = (1/2) \cdot \psi_N + (1/2) \cdot \psi_S$$
 
 **Row 4 (BASy — Brand-as-Symbol):**
-BASy encompasses visual imagery, metaphors, and brand heritage. Per Table 1, the critical dimensions are Semiotic (ψ_S), Cultural (ψ_C), and Temporal (ψ_T).
+BASy encompasses visual imagery, metaphors, and brand heritage. Per Table 1, the critical dimensions are Semiotic ($\psi_S$), Cultural ($\psi_C$), and Temporal ($\psi_T$).
 
-a_BASy = (1/3)·ψ_S + (1/3)·ψ_C + (1/3)·ψ_T
+$$a_{BASy} = (1/3) \cdot \psi_S + (1/3) \cdot \psi_C + (1/3) \cdot \psi_T$$
 
-This defines T as the following 4×8 matrix (column order: S, N, I, E, So, Ec, C, T):
+This defines $T$ as the following $4 \times 8$ matrix (column order: S, N, I, E, So, Ec, C, T):
 
-```
-T = | 1/3  0    0    1/3  0    1/3  0    0   |
-    | 0    0    1/3  0    1/3  0    1/3  0   |
-    | 1/2  1/2  0    0    0    0    0    0   |
-    | 1/3  0    0    0    0    0    1/3  1/3 |
-```
+$$T = \begin{pmatrix} 1/3 & 0 & 0 & 1/3 & 0 & 1/3 & 0 & 0 \\ 0 & 0 & 1/3 & 0 & 1/3 & 0 & 1/3 & 0 \\ 1/2 & 1/2 & 0 & 0 & 0 & 0 & 0 & 0 \\ 1/3 & 0 & 0 & 0 & 0 & 0 & 1/3 & 1/3 \end{pmatrix}$$
 
-The map a = T·ψ is linear by construction. □
+The map $a = T \cdot \psi$ is linear by construction. $\square$
 
 ### A.4 Corollary 1 (Information Loss — The Aaker Metamerism Gap)
 
-**Corollary 1.** *T is non-injective: dim(R^8) = 8 > dim(R^4) = 4. There exist distinct SBT brand identities ψ_1 ≠ ψ_2 such that T·ψ_1 = T·ψ_2.*
+**Corollary 1.** *$T$ is non-injective: $\dim(R^8) = 8 > \dim(R^4) = 4$. There exist distinct SBT brand identities $\psi_1 \ne \psi_2$ such that $T \cdot \psi_1 = T \cdot \psi_2$.*
 
-**Proof.** The null space of T has dimension 8 − rank(T) ≥ 8 − 4 = 4. Any non-zero vector in the null space of T defines a displacement Δψ = ψ_1 − ψ_2 that T maps to zero. Since the null space is non-trivial, distinct brand configurations exist that are perceptually indistinguishable under Aaker's representation. □
+**Proof.** The null space of $T$ has dimension $8 - \mathrm{rank}(T) \ge 8 - 4 = 4$. Any non-zero vector in the null space of $T$ defines a displacement $\Delta\psi = \psi_1 - \psi_2$ that $T$ maps to zero. Since the null space is non-trivial, distinct brand configurations exist that are perceptually indistinguishable under Aaker's representation. $\square$
 
 This is the **Aaker metamerism gap**: just as two physically different spectral distributions can produce the same color sensation (metamers in colorimetry), two structurally different brands can produce the same Aaker score vector. The gap is not a measurement error; it is a structural consequence of projection from a higher-dimensional to a lower-dimensional space.
 
-The metamerism gap is empirically observable. It occurs when two brands score identically on all four Aaker perspectives but differ on cohort-level SBT responses --- specifically when the diverging dimensions (Ideological, Temporal, or dimensions with asymmetric cohort weights) lie in the null space of T.
+The metamerism gap is empirically observable. It occurs when two brands score identically on all four Aaker perspectives but differ on cohort-level SBT responses --- specifically when the diverging dimensions (Ideological, Temporal, or dimensions with asymmetric cohort weights) lie in the null space of $T$.
 
 ### A.5 Corollary 2 (Worked Example — Hermès vs. Patagonia)
 
 Using the canonical spectral profiles [@zharnikov-2026-spectral-brand-theory-computational-framework]:
 
-- Hermès: ψ_H = [9.5, 9.0, 7.0, 9.0, 8.5, 3.0, 9.0, 9.5]
-- Patagonia: ψ_P = [6.0, 9.0, 9.5, 7.5, 8.0, 5.0, 7.0, 6.5]
+- Hermès: $\psi_H = [9.5, 9.0, 7.0, 9.0, 8.5, 3.0, 9.0, 9.5]$
+- Patagonia: $\psi_P = [6.0, 9.0, 9.5, 7.5, 8.0, 5.0, 7.0, 6.5]$
 
-Applying T (equal-weight illustrative case):
+Applying $T$ (equal-weight illustrative case):
 
 **Hermès Aaker scores:**
-- a_BAP = (1/3)(9.5) + (1/3)(3.0) + (1/3)(9.0) = (9.5 + 3.0 + 9.0)/3 = 7.17
-- a_BAO = (1/3)(9.0) + (1/3)(8.5) + (1/3)(7.0) = (9.0 + 8.5 + 7.0)/3 = 8.17
-- a_BAPe = (1/2)(9.0) + (1/2)(9.5) = 9.25
-- a_BASy = (1/3)(9.5) + (1/3)(9.0) + (1/3)(9.5) = 9.33
+- $a_{BAP} = (1/3)(9.5) + (1/3)(3.0) + (1/3)(9.0) = (9.5 + 3.0 + 9.0)/3 = 7.17$
+- $a_{BAO} = (1/3)(9.0) + (1/3)(8.5) + (1/3)(7.0) = (9.0 + 8.5 + 7.0)/3 = 8.17$
+- $a_{BAPe} = (1/2)(9.0) + (1/2)(9.5) = 9.25$
+- $a_{BASy} = (1/3)(9.5) + (1/3)(9.0) + (1/3)(9.5) = 9.33$
 
 **Patagonia Aaker scores:**
-- a_BAP = (1/3)(6.0) + (1/3)(5.0) + (1/3)(7.5) = (6.0 + 5.0 + 7.5)/3 = 6.17
-- a_BAO = (1/3)(7.0) + (1/3)(8.0) + (1/3)(9.5) = (7.0 + 8.0 + 9.5)/3 = 8.17
-- a_BAPe = (1/2)(9.0) + (1/2)(6.0) = 7.50
-- a_BASy = (1/3)(6.0) + (1/3)(7.0) + (1/3)(6.5) = 6.50
+- $a_{BAP} = (1/3)(6.0) + (1/3)(5.0) + (1/3)(7.5) = (6.0 + 5.0 + 7.5)/3 = 6.17$
+- $a_{BAO} = (1/3)(7.0) + (1/3)(8.0) + (1/3)(9.5) = (7.0 + 8.0 + 9.5)/3 = 8.17$
+- $a_{BAPe} = (1/2)(9.0) + (1/2)(6.0) = 7.50$
+- $a_{BASy} = (1/3)(6.0) + (1/3)(7.0) + (1/3)(6.5) = 6.50$
 
 The two brands share an identical BAO score (8.17) despite having markedly different Ideological and Cultural profiles. Hermès carries high Cultural weight (9.0) combined with moderate Ideological (7.0); Patagonia carries high Ideological weight (9.5) combined with lower Cultural (7.0). Under Aaker's Brand-as-Organization perspective, both aggregate to the same organizational-identity strength score. An analyst working within Aaker's framework would diagnose them as identically strong organizational brands and prescribe similar organizational-identity interventions.
 
-Under SBT, the divergence is immediately visible. Hermès's organizational identity is primarily Cultural and Social (heritage and luxury community); Patagonia's is primarily Ideological (environmental mission). These brands require entirely different organizational-identity management strategies, respond to organizational crises through entirely different mechanisms, and are perceived through entirely different cohort filters. The metamerism gap --- the collapsed BAO score --- conceals this divergence. The null-space displacement is Δψ = ψ_H − ψ_P on the Ideological dimension: 7.0 − 9.5 = −2.5, exactly canceled in the BAO aggregate by the offsetting Cultural difference 9.0 − 7.0 = +2.0 and Social difference 8.5 − 8.0 = +0.5.
+Under SBT, the divergence is immediately visible. Hermès's organizational identity is primarily Cultural and Social (heritage and luxury community); Patagonia's is primarily Ideological (environmental mission). These brands require entirely different organizational-identity management strategies, respond to organizational crises through entirely different mechanisms, and are perceived through entirely different cohort filters. The metamerism gap --- the collapsed BAO score --- conceals this divergence. The null-space displacement is $\Delta\psi = \psi_H - \psi_P$ on the Ideological dimension: $7.0 - 9.5 = -2.5$, exactly canceled in the BAO aggregate by the offsetting Cultural difference $9.0 - 7.0 = +2.0$ and Social difference $8.5 - 8.0 = +0.5$.
 
 ### A.6 Boundary Conditions
 
-**Conceptual versus measurement equivalence.** Theorem 1 establishes a structural relationship between the conceptual content of the two frameworks, not between their empirical measurement instruments. Aaker's Brand Personality Scale [@aaker-1997-dimensions-brand-personality] and SBT spectral profile measurement use different scales, items, and response formats. T cannot be used as a direct converter between scores obtained from these instruments without cross-validated calibration on shared samples.
+**Conceptual versus measurement equivalence.** Theorem 1 establishes a structural relationship between the conceptual content of the two frameworks, not between their empirical measurement instruments. Aaker's Brand Personality Scale [@aaker-1997-dimensions-brand-personality] and SBT spectral profile measurement use different scales, items, and response formats. $T$ cannot be used as a direct converter between scores obtained from these instruments without cross-validated calibration on shared samples.
 
-**Weight calibration.** The equal-weight assumption used in A.3 and A.5 is illustrative. The actual weights in T are empirical quantities: how much each SBT dimension contributes to each Aaker perspective is a question answered by measurement data, not by conceptual mapping alone. Calibrated weights will likely be asymmetric (Semiotic may carry more weight in BAP than Experiential in some brand categories; Temporal may dominate BASy for heritage brands while being negligible for technology brands). The theorem holds for any positive weight vector within each row; the illustrative equal-weight case makes the structure maximally transparent.
+**Weight calibration.** The equal-weight assumption used in A.3 and A.5 is illustrative. The actual weights in $T$ are empirical quantities: how much each SBT dimension contributes to each Aaker perspective is a question answered by measurement data, not by conceptual mapping alone. Calibrated weights will likely be asymmetric (Semiotic may carry more weight in BAP than Experiential in some brand categories; Temporal may dominate BASy for heritage brands while being negligible for technology brands). The theorem holds for any positive weight vector within each row; the illustrative equal-weight case makes the structure maximally transparent.
 
-**Cross-cultural generalization.** The eight SBT dimensions and their mapping to Aaker's perspectives were synthesized from frameworks developed primarily in Western brand management contexts. Cross-cultural calibration of both T and the underlying spectral profiles is required before deploying the theorem in non-Western markets where the weighting of, for instance, the Social or Temporal dimension may differ systematically.
+**Cross-cultural generalization.** The eight SBT dimensions and their mapping to Aaker's perspectives were synthesized from frameworks developed primarily in Western brand management contexts. Cross-cultural calibration of both $T$ and the underlying spectral profiles is required before deploying the theorem in non-Western markets where the weighting of, for instance, the Social or Temporal dimension may differ systematically.
 
 ### A.7 Implications for the Mapping Critique
 
-The concern that the Aaker-SBT relationship is "merely mapping" --- that Table 1 is taxonomic rather than theoretical --- is directly addressed by the formal apparatus above. A mapping identifies correspondences; a theorem establishes a provable structural relationship. Theorem 1 shows that the correspondence is not arbitrary (any eight-dimensional system could be mapped to any four-dimensional system) but specific: it follows from the dimensional structure of both frameworks and holds in the mathematical sense that a = T·ψ for all brands simultaneously.
+The concern that the Aaker-SBT relationship is "merely mapping" --- that Table 1 is taxonomic rather than theoretical --- is directly addressed by the formal apparatus above. A mapping identifies correspondences; a theorem establishes a provable structural relationship. Theorem 1 shows that the correspondence is not arbitrary (any eight-dimensional system could be mapped to any four-dimensional system) but specific: it follows from the dimensional structure of both frameworks and holds in the mathematical sense that $a = T \cdot \psi$ for all brands simultaneously.
 
-Corollary 1 gives the theorem its teeth. The Aaker metamerism gap is not a rhetorical device but a derived consequence: it follows necessarily from the non-injectivity of T, and it is falsifiable --- one can look for pairs of brands with identical Aaker scores that produce divergent cohort-level SBT responses. If such pairs do not exist empirically, the conceptual mapping in Table 1 requires revision. The worked example in A.5 shows that the gap is not merely theoretical: it appears in the canonical brand profiles in the precise dimensions (Ideological and Cultural within BAO) where the two frameworks' diagnostic conclusions diverge most sharply.
+Corollary 1 gives the theorem its teeth. The Aaker metamerism gap is not a rhetorical device but a derived consequence: it follows necessarily from the non-injectivity of $T$, and it is falsifiable --- one can look for pairs of brands with identical Aaker scores that produce divergent cohort-level SBT responses. If such pairs do not exist empirically, the conceptual mapping in Table 1 requires revision. The worked example in A.5 shows that the gap is not merely theoretical: it appears in the canonical brand profiles in the precise dimensions (Ideological and Cultural within BAO) where the two frameworks' diagnostic conclusions diverge most sharply.

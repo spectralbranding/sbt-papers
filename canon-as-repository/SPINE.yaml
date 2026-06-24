@@ -483,11 +483,6 @@ external_anchors:
 # ============================================================================
 # Open questions / future work (paper §8.5)
 # ============================================================================
-open:
-  - "Empirical validation: apply the canon repository to a real franchise, build validators, and measure whether consistency improves vs. traditional editorial oversight."
-  - "Prototype tooling: a proof-of-concept combining version control with narrative-specific validators and audience simulation."
-  - "Specification extraction: semi-automated NLP methods to extract canonical specifications from existing renderings, making the architecture applicable to existing franchises."
-  - "Formal metrics for the specification gap: information-theoretic measures of how much information a rendering contains beyond what the specification determines (quantitative cross-media/cross-franchise comparison)."
 
 # ============================================================================
 # Spine changelog — append-only

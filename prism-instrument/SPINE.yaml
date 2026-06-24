@@ -575,11 +575,6 @@ external_anchors:
 # ============================================================================
 # Open questions / boundary edges
 # ============================================================================
-open:
-  - "Do PRISM-B's AI-derived psychometric properties (the 1--5 optimum, single-item-per-dimension structure) transfer to human respondents? (L1, P14)"
-  - "Are the eight SBT dimensions empirically separable for human respondents, or does a general evaluative halo dominate? (L2, P12)"
-  - "Does cross-language measurement invariance hold for human respondents, not only AI observers? (L3, P13)"
-  - "PRISM-C (choice prediction) is unspecified: does dimensional-profile difference weighted by observer spectral weights predict choice under random utility theory? (P9)"
 
 # ============================================================================
 # Spine changelog — append-only

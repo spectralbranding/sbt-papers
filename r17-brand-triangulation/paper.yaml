@@ -12,7 +12,7 @@ meta:
     orcid: 0009-0000-6893-9231
     affiliation: Independent Researcher
   doi: 10.5281/zenodo.19482547
-  date: '2026-06-01'
+  date: '2026-04-01'
   venue: Preprint
   license: CC-BY-4.0
   keywords:
@@ -32,9 +32,9 @@ meta:
     reference brands to correct systematic observer bias and establishes identifiability conditions linking
     spectral metamerism to geometric underdetermination. The framework is illustrated with dimensional-weight
     data from six large language models (4,860 observations) and validated through Monte Carlo simulation
-    (2,000 trials) confirming the theoretical PDOP–MSE power-law relationship (log-log slope = .995, R²
-    = .994, Spearman ρ = .996). Brand Function specifications reduce dimensional collapse by 20% in the
-    LLM constellation. By converting multi-observer disagreement into a primary source of positioning
+    (2,000 trials) confirming the theoretical PDOP–MSE power-law relationship (log-log slope = 1.000,
+    $R^2$ = .993, Spearman $\rho$ = .992). Brand Function specifications reduce dimensional collapse by
+    20% in the LLM constellation. By converting multi-observer disagreement into a primary source of positioning
     information, the framework supplies pre-study design criteria, bias-correction protocols, and dynamic
     tracking machinery that together upgrade brand measurement from opinion aggregation to geometric estimation.'
 claims:
@@ -257,7 +257,7 @@ dependencies:
   claim: Trajectory machinery (perception velocity/acceleration, Kalman tracking) developed fully in companion
     Spectral Dynamics.
   critical: false
-  reference: Zharnikov (2026z), this corpus.
+  doi: 10.5281/zenodo.19468204
 - relationship: applies
   claim: Governance binding's organizational-enforcement layer drawn from OST.
   critical: false
@@ -315,11 +315,11 @@ results:
 - claim_id: P1
   status: supported
   notes: 'Under the linear observation model, PDOP is a sharp predictor of RMSE: the log-log slope of
-    .995 (R²=.994, ρ=.996) confirms the GPS-theory power law MSE = σ²·PDOP², holding per-dimension (ρ
-    .978–.990) and across two orders of magnitude in PDOP. Observer geometry dominates measurement precision
-    (24-fold RMSE spread across PDOP quartiles at fixed noise). This is a mathematical confirmation under
-    the model''s data-generating process; transfer to real cohort responses is an empirical question (Option
-    B).'
+    1.000 (R²=.993, ρ=.992) confirms the GPS-theory power law MSE = σ²·N·PDOP² (per-cohort-normalized
+    PDOP), holding per-dimension (ρ .985–.995) and across two orders of magnitude in PDOP. Observer geometry
+    dominates measurement precision (26-fold RMSE spread across PDOP quartiles at fixed noise). This is
+    a mathematical confirmation under the model''s data-generating process; transfer to real cohort responses
+    is an empirical question (Option B).'
 - claim_id: P2
   status: supported
   notes: On the R15 AI constellation, the aggregate weight matrix is dominated by Experiential/Semiotic/Economic,

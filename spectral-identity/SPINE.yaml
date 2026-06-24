@@ -139,9 +139,9 @@ propositions:
     statement: >-
       Aaker's four perspectives are a coarser partition of the same perceptual space that
       SBT decomposes into eight parametrized dimensions: Brand-as-Product bundles
-      Experiential + Economic (+ Semiotic); Brand-as-Organization bundles Ideological +
-      Cultural + Temporal (+ Social); Brand-as-Person bundles Narrative + Social (+ Semiotic);
-      Brand-as-Symbol bundles Semiotic + Temporal. Unbundling yields diagnostic precision
+      Semiotic + Experiential + Economic; Brand-as-Organization bundles Ideological +
+      Social + Cultural; Brand-as-Person bundles Semiotic + Narrative;
+      Brand-as-Symbol bundles Semiotic + Cultural + Temporal. Unbundling yields diagnostic precision
       Aaker's bundled perspectives cannot — distinguishing which channel is failing for
       which cohort.
     conditions: ""
@@ -518,13 +518,6 @@ external_anchors:
 # ============================================================================
 # Open questions / boundary edges
 # ============================================================================
-open:
-  - "Empirical calibration of the T matrix: the equal-weight illustrative case must be replaced by cross-validated measurement data on shared samples; calibrated weights will likely be asymmetric and category-dependent. (C2, D4, L4)"
-  - "No validated instrument covers all four Aaker perspectives simultaneously — empirical measurement of cohort spectral profiles (vs expert estimates) is required to test P3 and the core/extended spectral-weight claim. (L3, P3, P7)"
-  - "The four falsifiable propositions (P1–P4 / P11) await testing against independently collected consumer perceptual data; until then empirical validity is unconfirmed. (L1)"
-  - "Formal metric-space proof of the limiting case: how close must cohort weight vectors be before SBT reduces to Aaker, and what metric-space properties are required? (L4, P16)"
-  - "Human-subject factor-analytic confirmation of the eight-dimensional structure of brand-perception space. (L2)"
-  - "Cross-cultural generalization of T and the spectral profiles beyond the predominantly Western synthesis (Appendix A.6). (L2)"
 
 # ============================================================================
 # Spine changelog — append-only

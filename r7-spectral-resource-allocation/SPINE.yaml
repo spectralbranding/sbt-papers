@@ -607,13 +607,6 @@ external_anchors:
 # ============================================================================
 # Open questions / boundary edges
 # ============================================================================
-open:
-  - "Empirical validation: measure real founder and cohort spectral profiles (MaxDiff/conjoint) and test whether perceptual distance predicts realized economic loss (L1)."
-  - "Estimate the cohort-dependent interaction matrix W(c) from survey data rather than qualitative inference (L2)."
-  - "Log-ratio (Aitchison) reformulation of the value function under the compositional metric — do Theorems 1–5 hold quantitatively, not just directionally? (A1, Remark 1)."
-  - "Concave-utility generalization V = sum_i w_i(c) u_i(s_i): does the Hellinger bound form change? (A2, Remark 2)."
-  - "Dynamic extension: integrate the static allocation with non-ergodic diffusion dynamics (2026j) and capital-stock depreciation (Nerlove–Arrow 1962) (L3)."
-  - "Cost-side interaction effects via cross-terms c_ij(s_i, s_j) (L2)."
 
 # ============================================================================
 # Spine changelog — append-only

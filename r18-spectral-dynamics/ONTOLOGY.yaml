@@ -19,17 +19,17 @@ owns:
   - term_key: brand-velocity
     label: "Brand Velocity"
     canonical_form: "brand velocity"
-    definition: "The first time derivative of a brand's spectral profile, v(t)=dx/dt, a vector in R^8 encoding the rate and direction of perceptual change across dimensions."
+    definition: "The first time derivative of a brand's spectral profile, $v(t)=dx/dt$, a vector in $\\mathbb{R}^8$ encoding the rate and direction of perceptual change across dimensions."
     first_section: "Section 3.1 (Definition 2)"
   - term_key: brand-acceleration
     label: "Brand Acceleration"
     canonical_form: "brand acceleration"
-    definition: "The second time derivative of a brand's spectral profile, a(t)=d^2x/dt^2, capturing whether brand movement is intensifying, stabilizing, or reversing."
+    definition: "The second time derivative of a brand's spectral profile, $a(t)=d^2x/dt^2$, capturing whether brand movement is intensifying, stabilizing, or reversing."
     first_section: "Section 3.1 (Definition 3)"
   - term_key: brand-phase-space
     label: "Brand Phase Space"
     canonical_form: "brand phase space"
-    definition: "The 16-dimensional space P=R^8 x R^8 in which each brand occupies a point (x(t),v(t)) combining its spectral profile (position) and velocity, yielding a complete dynamic state description."
+    definition: "The 16-dimensional space $P=\\mathbb{R}^8 \\times \\mathbb{R}^8$ in which each brand occupies a point $(x(t),v(t))$ combining its spectral profile (position) and velocity, yielding a complete dynamic state description."
     first_section: "Section 3.5 (Definition 6)"
   - term_key: directional-coherence
     label: "Directional Coherence"

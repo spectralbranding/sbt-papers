@@ -494,10 +494,6 @@ external_anchors:
 # ---------------------------------------------------------------------------
 # Open questions
 # ---------------------------------------------------------------------------
-open:
-  - "Empirical estimation of the four regime parameters in a real category (deferred to the applied companion paper)."
-  - "A measurement-cost model that makes the regime test quantitative (when does SBT's information pay for itself?)."
-  - "Whether the exogenous-signal share epsilon admits a control-theoretic treatment (the firm no longer fully owns S)."
 
 # ---------------------------------------------------------------------------
 # Spine changelog

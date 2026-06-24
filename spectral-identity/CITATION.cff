@@ -6,8 +6,14 @@ authors:
     affiliation: "Independent Researcher"
     orcid: "https://orcid.org/0009-0000-6893-9231"
 title: "From Brand Identity to Spectral Identity: Formalizing Aaker's Framework for Testable, AI-Operable Brand Analysis"
+version: 1.0.0
 date-released: 2026-06-14
+url: "https://doi.org/10.5281/zenodo.20741256"
 repository-code: "https://github.com/spectralbranding/sbt-papers"
+identifiers:
+  - type: doi
+    value: "10.5281/zenodo.20741256"
+    description: "Zenodo concept DOI (all versions)"
 keywords:
   - brand coherence typology
   - brand identity formalization
@@ -26,3 +32,5 @@ preferred-citation:
       given-names: Dmitry
   title: "From Brand Identity to Spectral Identity: Formalizing Aaker's Framework for Testable, AI-Operable Brand Analysis"
   year: 2026
+  doi: "10.5281/zenodo.20741256"
+  url: "https://doi.org/10.5281/zenodo.20741256"

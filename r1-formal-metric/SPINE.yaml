@@ -593,12 +593,6 @@ external_anchors:
 # ============================================================================
 # Open questions / boundary edges
 # ============================================================================
-open:
-  - "Are the eight SBT dimensions empirically independent, or is a Mahalanobis-Aitchison correlation-aware variant required? (L1 / §10.2)"
-  - "Does brand perception exhibit non-Riemannian diameter violations (as color space does), or does cohort aggregation suppress them? (L4 / §4.3)"
-  - "How should true structural absence (exact-zero emission) be represented beyond epsilon zero-replacement? (C1 / §5.5)"
-  - "Can the warping be integrated exactly (full Bishop-O'Neill geodesic) rather than via the midpoint-average second-order approximation, and does it change distances materially? (RC1 / §A.1)"
-  - "Empirical: do log-ratio (clr) INDSCAL coordinates fit brand-perception data better than raw INDSCAL coordinates? (P8 / §5.3)"
 
 # ============================================================================
 # Spine changelog — append-only

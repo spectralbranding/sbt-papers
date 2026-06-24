@@ -459,11 +459,6 @@ external_anchors:
 # ============================================================================
 # Open questions / boundary edges
 # ============================================================================
-open:
-  - "Empirical validation on a real longitudinal multi-dimensional panel (YouGov BrandIndex / Kantar BrandZ) — the entire illustration is conceptual (L1, RC1)."
-  - "Spectral force / Perception Lagrangian: defining brand mass (inertia) independent of force and acceleration so F = ma is non-circular, and a potential V(x) for a variational treatment (§8.6 future work; Table 4 deliberately blank rows)."
-  - "Temporal DOP: how measurement timing, uneven spacing, and missing waves affect velocity estimation precision (analog of Perception DOP)."
-  - "Jump-diffusion extension of the SBT SDE to handle dimensional-creation events and crisis discontinuities (L3)."
 
 # ============================================================================
 # Spine changelog — append-only

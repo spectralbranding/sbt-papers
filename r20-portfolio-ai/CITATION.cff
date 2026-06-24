@@ -14,6 +14,16 @@ identifiers:
   - type: doi
     value: "10.5281/zenodo.19555282"
     description: "Zenodo concept DOI (all versions)"
+keywords:
+  - brand perception
+  - large language models
+  - portfolio interference
+  - awareness gate
+  - TOST equivalence
+  - cross-cultural AI
+  - multi-turn conversation
+  - native-language framing
+  - Share of Model
 license:
   - CC-BY-4.0
   - MIT

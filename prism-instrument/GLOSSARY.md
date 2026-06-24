@@ -2,48 +2,4 @@
 
 ## Glossary
 
-_Terms used by **prism** (PRISM: A Structured Measurement Instrument for Multi-Dimensional Brand Perception). Defined terms this paper introduces, refines, or imports from the corpus ontology._
-
-*Terms introduced by this paper*
-
-- **PRISM-B**
-  - The brand-perception PRISM variant: eight scale items mapped one-to-one to SBT dimensions on a 1-5 ordinal format measuring perceived signal-reception intensity, with an exact prompt template and scoring algorithm.
-  - first use: PRISM-B Specification
-- **PRISM Five-Layer Scaffold** (write: `five-layer scaffold (PL0-PL4)`)
-  - The reusable PRISM protocol architecture separating specification (PL0), configuration (PL1), prompts (PL2), sessions (PL3), and analysis (PL4) so instrument variants share infrastructure while varying items.
-  - first use: PRISM Architecture: The Five-Layer Scaffold
-- **PRISM**
-  - A family of standardized instruments for eliciting multi-dimensional brand perception from both AI and human observers within SBT, built on a domain-neutral five-layer scaffold.
-  - first use: PRISM Architecture
-
-*Imported terms (defined elsewhere)*
-
-- **brand conviction**
-  - An observer-relative held position about a brand on one or more spectral dimensions. Observer-relative, not dispositional (contrast: attitude).
-  - _defined by 2026a_
-  - _not_: brand attitude; brand belief
-- **cohort**
-  - A perceptual grouping of observers with similar spectral profiles, with dynamic membership. Cohorts are perceptual; demographics are metadata, not mechanism. Also written "observer cohort".
-  - _defined by 2026a_
-  - _not_: segment; target audience
-- **Dimensional Collapse Index** (write: `Dimensional Collapse Index (DCI)`)
-  - A scalar summary statistic (uniform baseline = .250) quantifying how severely an LLM concentrates implicit spectral weight onto verifiable dimensions, measuring the extent of dimensional collapse.
-  - _defined by 2026v_
-- **observer spectral profile**
-  - The receiver-side object that collapses a brand signal into a conviction. Five components: spectrum, weights, tolerances, priors, and an identity gate. Cohorts are observers, not consumers.
-  - _defined by 2026a_
-  - _not_: consumer profile
-- **perception cloud**
-  - The distribution of brand convictions across an observer population for a brand. Distributional, not a single fixed referent; "cloud" alone is acceptable in context. Has a valence (positive / negative / ambivalent).
-  - _defined by 2026a_
-  - _not_: brand image; brand cloud
-- **Perception DOP** (write: `Perception DOP (PDOP)`)
-  - A scalar metric computed solely from proposed cohort weight profiles (before any data collection) that quantifies the expected precision with which a given observer-cohort configuration can resolve a brand's eight-dimensional spectral profile.
-  - _defined by 2026y_
-- **Spectral Brand Theory**
-  - The theory that a brand is not a property of an object but a signal completed in the observer: an 8-dimensional spectral profile that, when received by an observer cohort, collapses into a distribution of brand convictions (a perception cloud). Brand is measured, not managed.
-  - _defined by 2026a_
-  - _not_: spectral brand theory
-- **the 8 dimensions** (write: `8 dimensions`)
-  - The eight spectral dimensions of a brand signal, in canonical order: semiotic, narrative, ideological, experiential, social, economic, cultural, temporal. Lowercase in prose.
-  - _defined by 2026a_
+_No ontology module found for 2026as. Author `research/ontology/2026as.yaml` and run build_ontology.py._

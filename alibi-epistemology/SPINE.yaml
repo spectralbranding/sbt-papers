@@ -442,34 +442,6 @@ external_anchors:
 # ============================================================================
 # Open questions / boundary edges
 # ============================================================================
-open:
-  - >-
-    Self-confirming transfer: both the financial architecture and SBT were
-    developed by the same author (§7.1). Independent replication in a domain not
-    developed by this author would provide stronger transferability evidence —
-    medical diagnosis is the highest-priority case.
-  - >-
-    Weight-sensitivity at extreme settings is uncharacterized: the financial
-    weights (.30/.40/.20/.15) were hand-tuned on ~500 transactions with no
-    formal sensitivity analysis; cohort spectral profiles are characteristic
-    patterns, not validated parameters. Structured perturbation studies needed.
-  - >-
-    P2's multi-model convergence rests on partially-overlapping LLM training
-    corpora and a shared Western/English consumer-brand bias; human-subject
-    validation is the required confirmatory test, not multi-model agreement
-    alone.
-  - >-
-    Valence asymmetry (P_EMERGENT) is a structural conjecture awaiting test
-    against independent consumer data.
-  - >-
-    Linguistic implementability (P_LLMIMPL) is validated only in the brand
-    domain with specific LLM families; ablation across prompt reformulations and
-    model generations is needed before asserting it generally.
-  - >-
-    Where re-collapse path-independence breaks: in decay-bearing domains (brand
-    perception) the available evidence set is not the complete historical set,
-    making perception path-dependent / non-ergodic — the architecture transfers
-    but signal-persistence behavior is domain-specific.
 
 # ============================================================================
 # Spine changelog — append-only

@@ -13,7 +13,7 @@ meta:
     orcid: 0009-0000-6893-9231
     affiliation: Independent Researcher
   doi: 10.5281/zenodo.19139258
-  date: '2026-06-01'
+  date: '2026-03-01'
   venue: advertising / marketing (JAR-adjacent; purpose-advertising)
   license: CC-BY-4.0
   keywords:
@@ -185,7 +185,7 @@ dependencies:
   claim: Spectral immunity / portfolio interference under AI-mediated perception — the portfolio-interference
     mechanism this case applies to the Unilever paradox.
   critical: false
-  reference: Zharnikov (2026ac), this corpus.
+  doi: 10.5281/zenodo.19765401
 - relationship: tests
   claim: AI-observer study (24 LLM cohorts, 21,601 calls) supplies independent quantitative replication
     of cohort divergence and Patagonia-as-exception.

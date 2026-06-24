@@ -378,3 +378,4 @@ external_anchors:
     role: empirical_anchor
     status: already_registered
     note: "Firm-value persistence meta-analysis anchor. Optional signal in the persistence camp."
+

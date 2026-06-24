@@ -578,13 +578,6 @@ external_anchors:
 # ============================================================================
 # Open questions / boundary edges
 # ============================================================================
-open:
-  - "Empirical calibration of the perceptual threshold epsilon via JND psychophysics experiments. (L4)"
-  - "Anisotropic packing bounds with dimension-specific thresholds (ellipsoidal / city-block). (L1)"
-  - "Observer-dependent capacity by integrating packing bounds over the observer distribution on Delta^7. (L2)"
-  - "Dynamic capacity as the metric evolves under signal decay / crystallization (connection to R6)."
-  - "Empirical estimation of category effective dimensionality via PCA to test Proposition 5. (L4)"
-  - "Does the 112:128 specialist:generalist ratio have any empirical relevance in real competitive dynamics? (open by construction)"
 
 # ============================================================================
 # Spine changelog — append-only

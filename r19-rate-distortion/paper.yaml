@@ -13,7 +13,7 @@ meta:
     orcid: 0009-0000-6893-9231
     affiliation: Independent Researcher
   doi: 10.5281/zenodo.19528833
-  date: '2026-06-01'
+  date: '2026-04-01'
   venue: Preprint
   license: CC-BY-4.0
   keywords:
@@ -42,10 +42,13 @@ meta:
     consumer information search, product recommendation, and purchase decisions. Li, Castelo, Katona,
     and Sarvary [-@li-2024-frontiers-determining-validity] demonstrated that LLM-generated brand similarity
     and attribute ratings match human survey data with greater than 75% agreement, establishing LLMs as
-    valid perceptual instruments. However, their study treated the response format as fixed. Recent empirical
-    work demonstrates that LLMs exhibit systematic dimensional collapse when encoding brand perceptions:
-    multi-dimensional brand profiles are compressed toward a small number of salient dimensions, producing
-    distortion that varies by elicitation format and model architecture [@zharnikov-2026-dimensional-collapse-ai-mediated-search].
+    valid perceptual instruments; the broader computational-social-science literature corroborates the
+    underlying capability, establishing LLMs as competent zero-shot text annotators that match or exceed
+    trained crowd workers on text-classification tasks such as stance, topic, and frame detection [@gilardi-2023-chatgpt-outperforms-crowd;
+    @ziems-2024-can-large-language-models]. However, their study treated the response format as fixed.
+    Recent empirical work demonstrates that LLMs exhibit systematic dimensional collapse when encoding
+    brand perceptions: multi-dimensional brand profiles are compressed toward a small number of salient
+    dimensions, producing distortion that varies by elicitation format and model architecture [@zharnikov-2026-dimensional-collapse-ai-mediated-search].
     The question of *how much* distortion different elicitation formats produce, and whether an optimal
     operating point exists, has not been addressed. Information theory provides a natural framework. Shannon''s
     [-@shannon-1959-coding-theorems-discrete] rate-distortion function R(D) characterizes the minimum
@@ -209,7 +212,7 @@ dependencies:
   claim: Spectral immunity (portfolio framing fails to shift profiles across a 13-model panel) corroborates
     that codebook stability generalizes beyond rate-distortion conditions.
   critical: false
-  reference: Zharnikov (2026ac), this corpus.
+  doi: 10.5281/zenodo.19765401
 - relationship: extends
   claim: Experiment D's input-side specification-format result (eta-sq .167) mirrors this output-side
     finding; the rate-distortion principle extends bidirectionally.

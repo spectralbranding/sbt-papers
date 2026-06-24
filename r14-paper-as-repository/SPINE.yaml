@@ -534,10 +534,6 @@ external_anchors:
 # ============================================================================
 # Open questions / boundary edges
 # ============================================================================
-open:
-  - "The federated multi-author case (negotiation protocol) is unbuilt; how do two authors reconcile incompatible modules? (L2)"
-  - "Does the def_hash upgrade to Trusty-URI graph-normalized hashing change any dependent-surfacing behavior? (task #23, blocked by RDF emit)"
-  - "Which standards-emitting projections (RO-Crate first, then SSSOM/SKOS/nanopub) are worth shipping per public mirror?"
 
 # ============================================================================
 # Spine changelog — append-only

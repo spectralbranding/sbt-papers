@@ -588,12 +588,6 @@ external_anchors:
 # ============================================================================
 # Open questions / boundary edges
 # ============================================================================
-open:
-  - "Does a large-scale human-subject EFA with dedicated items for all eight channels recover eight factors, and do the lower-variance factors carry incremental discriminative information about coherence types? (the definitive test; L1)"
-  - "Do observer-rated spectral profiles confirm the §3 witness pairs are approximately matched off-focus, or do they show substantial residual non-focal distance? (L2, falsifier of P6/P7)"
-  - "Does a culturally universal version of the completeness argument hold — do non-Western traditions (yi, muamalat) address the same eight channels under different internal structure, or genuinely add/merge channels? (L3)"
-  - "Is the temporal dimension a universal channel all brands emit on, or an attribute of specific heritage/future-oriented brands? (L4)"
-  - "Would adding a genuinely NEW orthogonal dimension (not a subdivision) add discriminative power, unlike the §8A 10D subdivision test? (F2 boundary)"
 
 # ============================================================================
 # Spine changelog — append-only

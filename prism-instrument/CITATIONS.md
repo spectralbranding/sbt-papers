@@ -3,15 +3,15 @@
 `paper.md` is the **source** artifact. Inline citations use the
 Pandoc-Markdown `[@citation_key]` form (a stable, machine-readable key per
 cited work). The full bibliographic record for every key lives in the
-companion `prism.bib` (BibTeX), committed alongside this file.
+companion `2026as.bib` (BibTeX), committed alongside this file.
 
 To render the paper with a formatted reference list in any venue style:
 
 ```bash
-pandoc paper.md --citeproc --bibliography=prism.bib \
+pandoc paper.md --citeproc --bibliography=2026as.bib \
   --csl <your-style>.csl -o paper.pdf
 ```
 
 The rendered numbered / (Author Year) reference list is a **rendering**, not
-part of the source. Machines should resolve `[@key]` against `prism.bib`
+part of the source. Machines should resolve `[@key]` against `2026as.bib`
 directly. (Render-at-consumption: one canonical source, many venue renders.)

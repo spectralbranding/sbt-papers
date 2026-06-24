@@ -13,7 +13,7 @@ meta:
     orcid: 0009-0000-6893-9231
     affiliation: Independent Researcher
   doi: 10.5281/zenodo.19208107
-  date: '2026-06-01'
+  date: '2026-03-01'
   venue: Preprint
   license: CC-BY-4.0
   keywords:
@@ -247,7 +247,7 @@ dependencies:
   claim: 'Speculative future direction: lifts brand-level coherence-resilience to portfolio-level resilience
     (2026ac, Spectral Immunity).'
   critical: false
-  reference: Zharnikov (2026ac), this corpus.
+  doi: 10.5281/zenodo.19765401
 - relationship: extends
   claim: Pre-crisis structural attributes as under-theorized determinant — the gap this paper fills.
   doi: 10.1177/0149206316680030

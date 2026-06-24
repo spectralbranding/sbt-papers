@@ -560,12 +560,6 @@ external_anchors:
 # ============================================================================
 # Open questions / boundary edges
 # ============================================================================
-open:
-  - "Empirical measurement of the 31--39% metameric-pair prediction in real brand data (8D survey + paired scalar grade)."
-  - "The metameric fraction under a CLUSTERED (cohort) observer ensemble rather than uniformly random projection directions (2026f link)."
-  - "Sensitivity of the metameric fraction to alternative generating distributions (uniform, empirically calibrated)."
-  - "Full observer-dependent metamerism on the warped-product manifold (how the 7D null space varies across Delta^7)."
-  - "Whether brand-profile priors (cf. Maloney's reflectance recovery) permit partial recovery of null-space dimensions from contextual cues."
 
 # ============================================================================
 # Spine changelog — append-only

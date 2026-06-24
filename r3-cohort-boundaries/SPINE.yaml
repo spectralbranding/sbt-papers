@@ -703,13 +703,6 @@ external_anchors:
 # ============================================================================
 # Open questions / boundary edges
 # ============================================================================
-open:
-  - "Extend to the asymmetric Dirichlet(alpha_1,...,alpha_8) family and estimate dimension-specific alpha_i from behavioral data (L1)."
-  - "Recalculate the distance contrast ratios fully in the Fisher-Rao metric across all dimensions for maximum precision (L2)."
-  - "Extend Theorem 2 to non-convex (DBSCAN/HDBSCAN) partitions via Minkowski content (L3)."
-  - "Incorporate empirical dimension-specific correlations (copulas on the simplex) and integral-vs-separable dimensions (L4)."
-  - "Empirically estimate alpha (MLE / ilr moment-matching) from SBT survey data to calibrate the real-population boundary fraction (§9.1)."
-  - "Concentration on the product space B x O for joint brand-observer cohorts; time-dependent bounds for evolving profiles (§9.1 extensions)."
 
 # ============================================================================
 # Spine changelog — append-only

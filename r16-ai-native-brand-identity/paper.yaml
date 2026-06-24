@@ -12,7 +12,7 @@ meta:
     orcid: 0009-0000-6893-9231
     affiliation: Independent Researcher
   doi: 10.5281/zenodo.19391476
-  date: '2026-06-01'
+  date: '2026-04-01'
   venue: Journal of Interactive Marketing (B2C agentic commerce scope)
   license: CC-BY-4.0
   keywords:
@@ -27,7 +27,7 @@ meta:
   abstract: 'Brand identity verification technologies have historically changed discontinuously in response
     to shifts in the primary observer type. This paper formalizes the *observer-driven evolution thesis*
     and extends it to the current transition from human to AI agents. The Brand Function is defined as
-    *f*(query, context, observer_type, time) → response, constituting the complete behavioral specification
+    *f*(query, context, observer_type, time) $\to$ response, constituting the complete behavioral specification
     required for machine observers. Cryptographic signatures on this function are predicted to replace
     logos as the primary identity mechanism for text-primary AI agents. The framework introduces *behavioral
     metamerism* --- the condition in which brands converge on statistically indistinguishable profiles
@@ -204,7 +204,7 @@ dependencies:
   claim: Spectral portfolio theory; R16's portfolio limitation extends it to inter-Brand-Function distance
     metrics and minimum-separation conditions that prevent intra-portfolio behavioral metamerism.
   critical: false
-  reference: Zharnikov (2026ac), this corpus.
+  doi: 10.5281/zenodo.19765401
 - relationship: extends
   claim: LLM brand bias tracks training-data frequency (EMNLP 2024)
   reference: kamruzzaman-2024-global-good-local-bad

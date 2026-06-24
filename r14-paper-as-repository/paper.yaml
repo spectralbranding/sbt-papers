@@ -13,7 +13,7 @@ meta:
     orcid: 0009-0000-6893-9231
     affiliation: Independent Researcher
   doi: 10.5281/zenodo.19294864
-  date: '2026-06-01'
+  date: '2026-03-01'
   venue: Preprint
   license: CC-BY-4.0
   keywords:
@@ -190,7 +190,7 @@ dependencies:
     is the process layer it travels in. The realized bundle (paper.md + SPINE + ONTOLOGY + glossary +
     gate) is the spec bundle Paper Spec describes, now realized.
   critical: false
-  reference: Zharnikov (2026t), this corpus.
+  doi: 10.5281/zenodo.19210037
 - relationship: applies
   claim: OST's 'specify the process, then derive structure' applied to scholarly communication (§1.4).
   critical: false

@@ -14,6 +14,14 @@ identifiers:
   - type: doi
     value: "10.5281/zenodo.18945477"
     description: "Zenodo concept DOI (all versions)"
+keywords:
+  - concentration of measure
+  - cohort boundaries
+  - probability simplex
+  - Lévy's lemma
+  - brand perception
+  - high-dimensional geometry
+  - Spectral Brand Theory
 license:
   - CC-BY-4.0
   - MIT

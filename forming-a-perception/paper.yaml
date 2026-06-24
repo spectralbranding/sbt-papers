@@ -55,11 +55,11 @@ claims:
   status: not_tested
 - id: P2
   type: proposition
-  statement: 'tau identification from time-sliced reflections. The perception-decay time constant tau = 1/lambda_min(A)
-    is identified from the post-pulse decay of the centroid displacement: after forcing stops, ||x_bar(t)
-    - x*|| decays as exp(-t/tau) along the slowest eigen-direction, so tau is estimable from a time-sliced
-    reflection series spanning a spend pulse and its aftermath. The estimator is the OU mean-reversion-rate
-    fit to the centroid trajectory.'
+  statement: 'tau identification from time-sliced reflections. The perception-decay time constant tau
+    = 1/lambda_min(A) is identified from the post-pulse decay of the centroid displacement: after forcing
+    stops, ||x_bar(t) - x*|| decays as exp(-t/tau) along the slowest eigen-direction, so tau is estimable
+    from a time-sliced reflection series spanning a spend pulse and its aftermath. The estimator is the
+    OU mean-reversion-rate fit to the centroid trajectory.'
   testable: true
   tested_in_paper: true
   status: not_tested
@@ -108,9 +108,9 @@ methodology:
     CAUSAL IDENTIFICATION design (pre-committed): to recover F and tau causally, instrument own forcing
     with EXOGENOUS shifters — advertising-tax changes, competitor scandals, political-ad-cycle crowd-out
     of ad inventory — and run a PLACEBO on non-advertised perceptual dimensions (which should show no
-    forced response). Addresses (1) omitted competitive forcing, (2) reflection-provenance measurement error,
-    (3) reverse causality (spend ramps when perception decays). Ranking by feasibility: natural experiments
-    > IV (political cycles) > full structural SDE estimation (avoid as primary).'
+    forced response). Addresses (1) omitted competitive forcing, (2) reflection-provenance measurement
+    error, (3) reverse causality (spend ramps when perception decays). Ranking by feasibility: natural
+    experiments > IV (political cycles) > full structural SDE estimation (avoid as primary).'
 acceptance:
 - claim_id: P1
   criterion: Holds if forced-SDE representation.

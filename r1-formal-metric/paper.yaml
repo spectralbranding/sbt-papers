@@ -12,7 +12,7 @@ meta:
     orcid: 0009-0000-6893-9231
     affiliation: Independent Researcher
   doi: 10.5281/zenodo.18945295
-  date: '2026-06-01'
+  date: '2026-03-01'
   venue: Preprint
   license: CC-BY-4.0
   keywords:
@@ -190,7 +190,7 @@ dependencies:
 - relationship: applies
   claim: Applies the Atom-Cloud-Fact psychophysical-measurement framing (relativity/observer-dependence/compositionality).
   critical: false
-  reference: Zharnikov (2026b), this corpus.
+  doi: 10.5281/zenodo.18944770
 - relationship: extends
   claim: R2 uses the Aitchison distance for the Johnson-Lindenstrauss projection proving metamerism is
     geometrically inevitable.
@@ -230,7 +230,7 @@ dependencies:
   doi: 10.1023/a:1023818214614
 - relationship: extends
   claim: Cencov uniqueness theorem — Fisher-Rao is the unique Markov-invariant metric
-  reference: cencov-1982-statistical-decision-rules
+  doi: 10.1090/mmono/053
 - relationship: extends
   claim: Fisher information as Riemannian metric (origin of Fisher-Rao)
   doi: 10.1007/978-1-4612-0919-5_15

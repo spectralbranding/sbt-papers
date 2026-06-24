@@ -471,29 +471,5 @@ external_anchors:
     spine_nodes: [P1]
 
 # Open questions / boundary edges
-open:
-  - >-
-    Whether SBT is the right framework to occupy the five-way intersection, or
-    whether resolving the six open problems reveals that a different framework
-    is needed — the intersection is unoccupied and the tools exist regardless
-    (P13).
-  - >-
-    Whether the E8 / eight-dimension coincidence is structural rather than
-    incidental remains open; P15 states it is strictly motivational and defers
-    formal exploration to the companion paper 2026g.
-  - >-
-    The survey is scoped to corporate/commercial brands; place, person, and
-    NGO brands raise analogous geometric questions with different
-    signal-emission mechanisms and are not examined (boundary on P1, P12).
-  - >-
-    Affect-only models, embodiment/predictive-coding accounts, and
-    cross-cultural / ordinal-only measurement traditions are excluded by scope
-    and would require separate surveys; the continuous-parameterization
-    assumption underlies all geometric results in Problem 1 (boundary on P6, P14).
-  - >-
-    The classification-matrix "yes/partial/—" coding against criteria 1–5 is
-    a qualitative assessment, not a quantitative scoring; alternative readings
-    of partial-satisfaction cells could shift individual entries without
-    changing the unoccupied-intersection conclusion (boundary on P12).
 
 # Spine changelog — append-only; every fork/rebase logged
