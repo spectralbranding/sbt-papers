@@ -49,7 +49,6 @@ thesis: |
   structure a given metric can see (shape vs magnitude-and-distribution).
 
 # ============================================================================
-# Boundary conditions (scope table — Grok fatal-gap #2)
 # ============================================================================
 boundary_conditions:
   - id: C1
@@ -466,7 +465,7 @@ external_anchors:
       Closest prior art that an LLM can validly emit structured psychological
       scores from text; cited in the cross-family-discipline paragraph as the
       empirical warrant for the extract stage and the inter-model-variance
-      framing (Grok fatal-gap #3; review-paper MAJOR-3; review-lit-1).
+      framing (scope gap).
   - ref: "Gilardi, Alizadeh & Kubli 2023 (PNAS 120(30):e2305016120; DOI 10.1073/pnas.2305016120)"
     use: >-
       LLMs match or exceed trained crowd workers as zero-shot text annotators
