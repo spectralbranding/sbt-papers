@@ -1,0 +1,61 @@
+# Public-benchmark snapshot — a pinned, cited dataset for the substrate-floor worked example.
+#
+# Three frontier models scored by three PUBLIC, non-corporate benchmark instruments of different
+# KINDS (broad-knowledge MCQ / competition math / code synthesis). Each instrument exposes its own
+# noise floor: the binomial standard error of the reported accuracy, computed from the benchmark's
+# documented test-set size N (sampling noise — a conservative LOWER bound on the true floor, which
+# also includes prompt-sensitivity). The reconciliation runs on the aligned ordinal claim
+# "model A outperforms model B," never on the raw incommensurable scores (an MCQ accuracy, a
+# math-solve rate, and a code pass@1 share no output space) — the cross-KIND substrate floor.
+#
+# PROVENANCE (anti-fabrication): accuracies are as-reported in the Llama 3.1 release comparison
+# table [@dubey-2024-llama-3-herd], accessed 2026-06-25 via the public model report. They are
+# REPORTED numbers (each vendor's chosen shot/CoT setting) — that reported-condition heterogeneity
+# is itself why an instrument must expose a floor and self-certify. Test-set sizes N are the
+# documented benchmark sizes. Numbers are a pinned snapshot; the reconciliation is reproduced from
+# this committed file (public_benchmark_reconciliation.py), so it does not drift with live boards.
+#
+# This is a GENUINELY EXTERNAL demonstration: the instruments and data are outside the
+# spectral-branding corpus. Caveat: MATH N is the full test set; if a vendor evaluated on a
+# subset the floor widens (a conservative direction, noted in the paper).
+
+snapshot_date: "2026-06-25"
+source: "Llama 3.1 release comparison table (Dubey et al. 2024); accessed 2026-06-25"
+
+benchmarks:                       # instrument kind + documented test-set size N + citation
+  MMLU:
+    kind: "broad-knowledge multiple-choice"
+    n: 14042                      # Hendrycks et al. 2021 (MMLU test split)
+    cite: hendrycks-2021-mmlu
+  MATH:
+    kind: "competition mathematics (free-response)"
+    n: 5000                       # Hendrycks et al. 2021 (MATH test set)
+    cite: hendrycks-2021-math-dataset
+  HumanEval:
+    kind: "code synthesis (pass@1, execution-tested)"
+    n: 164                        # Chen et al. 2021 (HumanEval problems)
+    cite: chen-2021-evaluating-llms-code
+
+# Accuracies as proportions in [0,1].
+models:
+  Llama-3.1-405B:
+    MMLU: 0.886
+    MATH: 0.738
+    HumanEval: 0.890
+  GPT-4o:
+    MMLU: 0.887
+    MATH: 0.766
+    HumanEval: 0.902
+  Claude-3.5-Sonnet:
+    MMLU: 0.883
+    MATH: 0.711
+    HumanEval: 0.920
+
+# The pairwise ordinal claims reconciled in the paper (each: claim "A outperforms B" across a set
+# of cross-KIND instruments). Expected typed verdicts are documented in the script output, not
+# asserted here.
+claims:
+  - { a: GPT-4o,          b: Claude-3.5-Sonnet, instruments: [MMLU, MATH],      label: knowledge_and_math }
+  - { a: GPT-4o,          b: Llama-3.1-405B,    instruments: [MMLU, HumanEval], label: knowledge_and_code }
+  - { a: Llama-3.1-405B,  b: Claude-3.5-Sonnet, instruments: [MATH, HumanEval], label: math_and_code }
+  - { a: GPT-4o,          b: Claude-3.5-Sonnet, instruments: [MATH, HumanEval], label: the_code_ranking_flip }

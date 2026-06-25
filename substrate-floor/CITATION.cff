@@ -1,0 +1,38 @@
+cff-version: 1.2.0
+message: "If you use this paper, please cite it as below."
+authors:
+  - family-names: Zharnikov
+    given-names: Dmitry
+    affiliation: "Independent Researcher"
+    orcid: "https://orcid.org/0009-0000-6893-9231"
+title: "The Substrate Floor: Nested Noise Floors for Auditable Abstention Across Heterogeneous Instruments"
+version: 1.0.0
+date-released: 2026-06-14
+url: "https://doi.org/10.5281/zenodo.20840422"
+repository-code: "https://github.com/spectralbranding/sbt-papers"
+identifiers:
+  - type: doi
+    value: "10.5281/zenodo.20840422"
+    description: "Zenodo concept DOI (all versions)"
+keywords:
+  - auditable abstention
+  - noise floor
+  - heterogeneous instruments
+  - verdict reconciliation
+  - uncertainty quantification
+  - ontology alignment
+  - selective prediction
+  - reproducibility of results
+license:
+  - CC-BY-4.0
+  - MIT
+type: article
+preferred-citation:
+  type: article
+  authors:
+    - family-names: Zharnikov
+      given-names: Dmitry
+  title: "The Substrate Floor: Nested Noise Floors for Auditable Abstention Across Heterogeneous Instruments"
+  year: 2026
+  doi: "10.5281/zenodo.20840422"
+  url: "https://doi.org/10.5281/zenodo.20840422"

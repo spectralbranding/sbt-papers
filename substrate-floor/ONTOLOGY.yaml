@@ -1,0 +1,65 @@
+#
+# Per-paper ontology module per [internal path removed]
+# §"ONTOLOGY.yaml schema (v0.1)". owns = terms THIS paper introduces (unique
+# authority); imports = terms owned by other modules it uses; refines = an imported
+# term this module specializes.
+#
+# (Grok Phase-1.5 review: readiness MEDIUM, R&R_LIKELY at Patterns) and the user issued
+# GO; the §0aa SPINE-FIRST protocol is satisfied ([internal path removed]
+# authored, claims synced). A `papers` row now exists (status=draft). Owned terms below
+# carry full definitions and are LINKED into the substrate terms graph (build_ontology
+# --apply). The reference implementation already exists (code/substrate_floor.py
+# + verify_ost_contract.py + ost_floor_schema.py; specs SUBSTRATE_FLOOR.md +
+# seed origin: [internal path removed] §"Seed 7".
+
+paper_key: substrate-floor
+schema_version: 0.1
+
+# Terms this paper introduces (the reconciliation-under-uncertainty layer that sits
+# ABOVE 2026at's vocabulary-alignment layer). Definitions project to the glossary PDF,
+# so structured math is authored as LaTeX (math-notation rule).
+owns:
+  - term_key: substrate-floor
+    label: "Substrate floor"
+    canonical_form: "substrate floor"
+    definition: "The dispersion of several instruments' verdicts on one aligned claim, treated as a noise floor for the cross-instrument ensemble: the operator/artifact noise-floor move lifted one level up. Across instruments, agreement is triangulation and disagreement is the floor itself; a cross-instrument finding survives only if its consensus signal clears the substrate floor."
+    first_section: "The Nested-Floor Rule"
+    relations:
+      - {type: contrasts, term_key: cross-substrate-dispersion, note: "the substrate floor is the dispersion read as a floor"}
+  - term_key: coherence-floor
+    label: "Coherence floor"
+    canonical_form: "coherence floor"
+    definition: "The noise floor of a specification-based instrument: specification incoherence $1-\\mathrm{SCI}$ (one minus the Specification Coherence Index) plus an audit-coverage gap. A specification instrument abstains below its coherence floor; below it, the coverage-impossibility theorem makes the abstention mandated, not conventional."
+    first_section: "One Rule, Two Instrument Kinds"
+  - term_key: floor-nesting
+    label: "Floor nesting"
+    canonical_form: "floor nesting"
+    definition: "The partial order on noise floors, operator $\\subseteq$ artifact $\\subseteq$ substrate: a finding survives only if its signal clears the OUTERMOST floor in play, $\\mathrm{effective\\_floor}=\\max(\\mathrm{substrate\\_dispersion},\\, f_1,\\dots,f_n)$ over each endpoint's own combined floor $f_i$. The same criterion composes within one instrument and across instruments."
+    first_section: "The Nested-Floor Rule"
+    relations:
+      - {type: contrasts, term_key: substrate-floor, note: "the substrate floor is the outermost level of the nesting"}
+  - term_key: reconciliation-lattice
+    label: "Reconciliation lattice"
+    canonical_form: "reconciliation lattice"
+    definition: "The typed-verdict calculus returned over the cross-substrate dispersion floor on a common normalized verdict axis: corroborated (>=2 resolve, agree within floors, consensus clears the effective floor), contested (>=2 resolve, disagree beyond floors), substrate-conditional (exactly 1 resolves above its floor), jointly-unresolved (all abstain, or agreement on a consensus below the effective floor). A typed verdict, never a forced point estimate."
+    first_section: "The Reconciliation Lattice"
+    relations:
+      - {type: contrasts, term_key: cross-substrate-dispersion, note: "the lattice is computed over the dispersion floor"}
+  - term_key: cross-substrate-dispersion
+    label: "Cross-substrate dispersion"
+    canonical_form: "cross-substrate dispersion"
+    definition: "The maximum pairwise distance over the resolving instruments' verdict values on a common normalized axis in $[0,1]$ (the operator-floor move, lifted across instruments). It is the quantity read as the substrate floor and over which the reconciliation lattice is computed."
+    first_section: "The Reconciliation Lattice"
+
+# Anchors it would build on (the import set is finalized at draft time; these are the
+# against the live terms graph when the module is linked with build_ontology.py).
+imports:
+  - {term_key: spectral-metamerism}        # 2026ax — the metameric-psychometrics noise-floor move this generalizes
+  - {term_key: cohort}                     # 2026a/2026ax — the measurement space of the operator/artifact floors
+  - {term_key: federated-ontology-negotiation}  # 2026at — the six-class alignment that is the substrate floor's STEP 0
+  - {term_key: specification-coherence-index}    # 2026an — the coherence band of the OST floor
+  - {term_key: orgschema-audit}            # 2026ar — the audit-coverage band of the OST floor
+
+# Candidate refinement: the substrate floor is a noise-floor lifted across instruments.
+refines: []
+
