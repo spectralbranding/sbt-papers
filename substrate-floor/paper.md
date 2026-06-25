@@ -165,7 +165,7 @@ Honest abstention need not stop at the edge of a single instrument. Under one ne
 
 ## Acknowledgments
 
-AI assistants (Claude Opus 4.8, and earlier-generation models) were used for initial literature search, for software development — implementing and running the companion computation scripts that reproduce the paper's reported numerical, simulation, and worked-case results — and for editorial refinement; all theoretical claims, propositions, lemmas, and interpretations are the author's sole responsibility. The reference implementation's cross-instrument honesty gates — a single live floor owner per instrument and self-certification exclusion of audit-failing instruments — were applied throughout, so that no reported floor was hand-set against the value its artifact would compute.
+AI assistants (Claude Opus 4.8, Grok 4.1) were used for initial literature search, for software development — implementing and running the companion computation scripts that reproduce the paper's reported numerical, simulation, and worked-case results — and for editorial refinement; all theoretical claims, propositions, lemmas, and interpretations are the author's sole responsibility. The reference implementation's cross-instrument honesty gates — a single live floor owner per instrument and self-certification exclusion of audit-failing instruments — were applied throughout, so that no reported floor was hand-set against the value its artifact would compute.
 
 ## Data and Code Availability
 

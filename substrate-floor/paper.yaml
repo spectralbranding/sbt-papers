@@ -120,19 +120,18 @@ methodology:
     per-endpoint floor width f, k_resolve/k_marginal) at ≥10,000 draws per cell, fixed seed, published
     script (PAQS 37a-37e); map the fraction landing in each verdict region and the boundaries where the
     lattice diverges from (a) random-effects pooling, (b) Dempster-Shafer fusion, (c) a conformal abstain-or-predict
-    rule. The divergence boundaries are the empirical content of P4. SHIPPED CORPUS WORKED EXAMPLES (the
-    Grok ''keep'' — unusual evidentiary grounding for a Phase-0 paper). substrate_floor.py + the reconciliation
-    cases exercise all four verdicts incl. agreement-on-noise, audit-exclusion, and a closeMatch alignment
-    risk; both endpoints instrument-owned with LIVE floors (SBT 0.0103 from example_harbor_full; OST 0.03
-    from a spec-audit). EXAMPLE_meridian_transfer.yaml: resolves a 0.21 gap, abstains on 0.05. 302-test
-    suite green. ONE NON-CORPORATE WORKED EXAMPLE (Grok fatal-gap #3; OPEN-track #1b cross-vendor — ''do
-    it once, use it twice''). Reconcile a model-ranking claim (''model X ranks above model Y'') across
-    TWO PUBLIC, non-corporate LLM benchmark leaderboards of different kinds (e.g. a coding benchmark and
-    a reasoning benchmark) as two instruments: align rankings to a common ordinal verdict (SSSOM step-0),
-    give each its dispersion floor from public per-task variance, and run the lattice → a typed verdict
-    (expected: contested where the two public benchmarks disagree beyond their floors). Establishes the
-    cross-KIND claim on data outside the author''s corpus. Alternative if leaderboard variance is unavailable:
-    a public psychology multiverse dataset (specification-curve dispersion as the floor).'
+    rule. The divergence boundaries are the empirical content of P4. SHIPPED CORPUS WORKED EXAMPLES. substrate_floor.py
+    + the reconciliation cases exercise all four verdicts incl. agreement-on-noise, audit-exclusion, and
+    a closeMatch alignment risk; both endpoints instrument-owned with LIVE floors (SBT 0.0103 from example_harbor_full;
+    OST 0.03 from a spec-audit). EXAMPLE_meridian_transfer.yaml: resolves a 0.21 gap, abstains on 0.05.
+    Test suite green. ONE NON-CORPORATE WORKED EXAMPLE (cross-vendor — ''do it once, use it twice'').
+    Reconcile a model-ranking claim (''model X ranks above model Y'') across TWO PUBLIC, non-corporate
+    LLM benchmark leaderboards of different kinds (e.g. a coding benchmark and a reasoning benchmark)
+    as two instruments: align rankings to a common ordinal verdict (SSSOM step-0), give each its dispersion
+    floor from public per-task variance, and run the lattice → a typed verdict (expected: contested where
+    the two public benchmarks disagree beyond their floors). Establishes the cross-KIND claim on data
+    outside the author''s corpus. Alternative if leaderboard variance is unavailable: a public psychology
+    multiverse dataset (specification-curve dispersion as the floor).'
 acceptance:
 - claim_id: P1
   criterion: Holds if tHE NESTED-FLOOR RULE + NO-RESCUE LEMMA.

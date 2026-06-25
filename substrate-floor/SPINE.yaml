@@ -29,7 +29,7 @@ thesis: |
   construction, do not.
 
 # ---------------------------------------------------------------------------
-# Boundary conditions — THE SCOPE PARAGRAPH (Grok fatal-gap #2; high-priority add #2).
+# Boundary conditions — THE SCOPE PARAGRAPH.
 # 3 positive instrument criteria + ≥2 explicit non-applications. The "unifies across
 # instrument kinds" claim is only falsifiable once these state what counts as a legitimate
 # instrument. Cannot be relaxed — the rule does not apply outside them.
@@ -76,8 +76,8 @@ assumption_atoms:
     affects: [P1, P4]
 
 # ---------------------------------------------------------------------------
-# Propositions — 4 numbered (Grok house-style ≤4). P4 is the differentiation
-# backbone the review names as 'the single most important change'.
+# Propositions — 4 numbered. P4 is the differentiation
+# backbone (the single most important change).
 # ---------------------------------------------------------------------------
 propositions:
   - id: P1
@@ -170,7 +170,7 @@ propositions:
     body_sections: ["Relation to Prior Art", "Three Differentiating Lemmas", "Where the Verdicts Diverge"]
 
 # ---------------------------------------------------------------------------
-# Relation-to-prior-art contrast table (Grok high-priority add #1; the spine backbone).
+# Relation-to-prior-art contrast table (the spine backbone).
 # Each row: what the prior method does, what it CANNOT do that the lattice does, and the
 # concrete divergent verdict. Drives P4 and the Related Work section.
 # ---------------------------------------------------------------------------
@@ -205,7 +205,7 @@ relation_to_prior_art:
     cannot: "A precondition test, not a reconciliation calculus; stops at invariant/not."
     divergent_verdict: "The SSSOM step-0 + common verdict axis OPERATIONALIZE the invariance precondition AND proceed to a typed verdict (P2/P4)."
     maps_to: P4
-  # R&R additions (2026-06-24): two closer neighbors surfaced by /review-literature + Grok.
+  # Additional neighbors (2026-06-24): two closer neighbors in the positioning.
   - method: "Opinion pooling (linear/log; external Bayesianity)"
     key: genest-zidek-1986-combining-probability-distributions
     does: "Combines several probability distributions into one under aggregation axioms."
@@ -220,15 +220,15 @@ relation_to_prior_art:
     maps_to: P4
 
 # ---------------------------------------------------------------------------
-# Models / derivations (Grok high-priority add #5: smallest sufficient model).
+# Models / derivations (smallest sufficient model).
 # ---------------------------------------------------------------------------
 derivations:
   - id: M1
-    statement: "SMALLEST SUFFICIENT MODEL: two instruments on a normalized [0,1] verdict axis, each emitting {resolve(value, self_floor) | abstain}. Interval floors [value − f, value + f]; substrate dispersion D = |v_1 − v_2|; effective_floor = max(D, f_1, f_2). Four lattice rules partition the (D, |consensus|) plane into the four verdicts. Yields the verdict-region figure (verdict as a function of dispersion × floor width) and the no-rescue + coverage-impossibility lemma diagrams. Raw-8D-vector / specification-text mechanics are moved to an appendix (Grok add #4: lock the unit of analysis to a single aligned ordinal claim)."
+    statement: "SMALLEST SUFFICIENT MODEL: two instruments on a normalized [0,1] verdict axis, each emitting {resolve(value, self_floor) | abstain}. Interval floors [value − f, value + f]; substrate dispersion D = |v_1 − v_2|; effective_floor = max(D, f_1, f_2). Four lattice rules partition the (D, |consensus|) plane into the four verdicts. Yields the verdict-region figure (verdict as a function of dispersion × floor width) and the no-rescue + coverage-impossibility lemma diagrams. Raw-8D-vector / specification-text mechanics are moved to an appendix (lock the unit of analysis to a single aligned ordinal claim)."
     supports: [P1, P2, P4]
 
 # ---------------------------------------------------------------------------
-# Methods (Grok: keep the shipped implementation; add ONE non-corporate example;
+# Methods (shipped implementation + one non-corporate example;
 # right-size to a Monte-Carlo verdict-region characterization).
 # ---------------------------------------------------------------------------
 methods:
@@ -238,17 +238,17 @@ methods:
     status: planned
     script: "[internal path removed] (seed TBD at draft)"
   - id: ME2
-    statement: "SHIPPED CORPUS WORKED EXAMPLES (the Grok 'keep' — unusual evidentiary grounding for a Phase-0 paper). substrate_floor.py + the reconciliation cases exercise all four verdicts incl. agreement-on-noise, audit-exclusion, and a closeMatch alignment risk; both endpoints instrument-owned with LIVE floors (SBT 0.0103 from example_harbor_full; OST 0.03 from a spec-audit). EXAMPLE_meridian_transfer.yaml: resolves a 0.21 gap, abstains on 0.05. 302-test suite green."
+    statement: "SHIPPED CORPUS WORKED EXAMPLES. substrate_floor.py + the reconciliation cases exercise all four verdicts incl. agreement-on-noise, audit-exclusion, and a closeMatch alignment risk; both endpoints instrument-owned with LIVE floors (SBT 0.0103 from example_harbor_full; OST 0.03 from a spec-audit). EXAMPLE_meridian_transfer.yaml: resolves a 0.21 gap, abstains on 0.05. Test suite green."
     supports: [P1, P2, P3]
     status: executed
   - id: ME3
-    statement: "ONE NON-CORPORATE WORKED EXAMPLE (Grok fatal-gap #3; OPEN-track #1b cross-vendor — 'do it once, use it twice'). Reconcile a model-ranking claim ('model X ranks above model Y') across TWO PUBLIC, non-corporate LLM benchmark leaderboards of different kinds (e.g. a coding benchmark and a reasoning benchmark) as two instruments: align rankings to a common ordinal verdict (SSSOM step-0), give each its dispersion floor from public per-task variance, and run the lattice → a typed verdict (expected: contested where the two public benchmarks disagree beyond their floors). Establishes the cross-KIND claim on data outside the author's corpus. Alternative if leaderboard variance is unavailable: a public psychology multiverse dataset (specification-curve dispersion as the floor)."
+    statement: "ONE NON-CORPORATE WORKED EXAMPLE (cross-vendor — 'do it once, use it twice'). Reconcile a model-ranking claim ('model X ranks above model Y') across TWO PUBLIC, non-corporate LLM benchmark leaderboards of different kinds (e.g. a coding benchmark and a reasoning benchmark) as two instruments: align rankings to a common ordinal verdict (SSSOM step-0), give each its dispersion floor from public per-task variance, and run the lattice → a typed verdict (expected: contested where the two public benchmarks disagree beyond their floors). Establishes the cross-KIND claim on data outside the author's corpus. Alternative if leaderboard variance is unavailable: a public psychology multiverse dataset (specification-curve dispersion as the floor)."
     supports: [P3, P4]
     status: executed
     note: "EXECUTED 2026-06-25. Realized as [internal path removed] over a pinned, cited snapshot (3 frontier models x MMLU/MATH/HumanEval, Dubey 2024, accessed 2026-06-25). Floors = binomial SE from documented N. Yields corroborated / jointly-unresolved / substrate-conditional on real external data; headline = the HumanEval code ranking is NOT certified (gaps < N=164 floor). 4 benchmark/model anchors registered (hendrycks-2021-mmlu, hendrycks-2021-math-dataset, chen-2021-evaluating-llms-code, dubey-2024-llama-3-herd)."
 
 # ---------------------------------------------------------------------------
-# Findings (shipped — the Phase-0 evidentiary anchor).
+# Findings (the shipped evidentiary anchor).
 # ---------------------------------------------------------------------------
 findings:
   - id: F1
@@ -308,7 +308,7 @@ corpus_precedents:
     note: "The coverage-impossibility theorem that MANDATES abstention below the coherence floor (P3) — abstention is forced, not conventional."
 
 # ---------------------------------------------------------------------------
-# External anchors — the 6 Grok must-engage refs, all DOI-verified via Crossref/arXiv
+# External anchors — 6 refs, all DOI-verified via Crossref/arXiv
 # 2026-06-24 BEFORE entry (anti-fabrication rule 5c). Register into the substrate when
 # prose cites them (verify_citations.py), then sync + bundle gate.
 # ---------------------------------------------------------------------------
@@ -356,8 +356,8 @@ external_anchors:
     role: distinguished_from
     status: to_register
     note: "VERIFIED 2026-06-24 (Crossref: exact title/authors, Found. Trends ML). Venue-positioning anchor (conformal/selective prediction is the dominant UQ-with-coverage framework); Lemma 4c differentiates (single-model, exchangeability, no typed verdict)."
-  # R&R additions (2026-06-24) — 8 anchors DOI-verified via Crossref BEFORE entry (anti-fabrication);
-  # registered into the substrate this session. Close the /review-literature + Grok positioning gaps.
+  # Additional anchors (2026-06-24) — 8 anchors DOI-verified via Crossref BEFORE entry (anti-fabrication);
+  # registered into the substrate. Close the positioning gaps.
   - key: genest-zidek-1986-combining-probability-distributions
     citation: "Genest, C., & Zidek, J. V. (1986). Combining Probability Distributions: A Critique and an Annotated Bibliography. Statistical Science, 1(1), 114-148."
     doi: "10.1214/ss/1177013825"
@@ -406,7 +406,7 @@ external_anchors:
     role: motivates
     status: registered
     note: "Hidden-degrees-of-freedom motivation the no-rescue result speaks to (intro)."
-  # R&R round 2 (2026-06-25): the two Grok-flagged leads, user-verified + local PDFs; +Mena.
+  # Additional refs (2026-06-25): two leads, user-verified + local PDFs; +Mena.
   - key: kompa-2021-second-opinion-medical-ml
     citation: "Kompa, B., Snoek, J., & Beam, A. L. (2021). Second opinion needed: communicating uncertainty in medical machine learning. npj Digital Medicine, 4(1), 4."
     doi: "10.1038/s41746-020-00367-3"
