@@ -2,7 +2,7 @@
 
 Regenerate: see code/README.md. All commands are seeded/deterministic and read-only on committed artifacts.
 
-Date captured: 2026-06-24 (R&R revision: 3-prior MC + bootstrap CIs)
+Date captured: 2026-06-24 (3-prior MC + bootstrap CIs)
 
 ## 1. Monte-Carlo verdict regions + divergence fractions, 3 priors + 95% bootstrap CIs (paper §Monte-Carlo Verdict Regions, §Companion Computation Script)
 ```

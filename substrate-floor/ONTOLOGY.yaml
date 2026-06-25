@@ -1,16 +1,15 @@
+# ONTOLOGY.yaml module - substrate-floor
 #
 # Per-paper ontology module per [internal path removed]
 # §"ONTOLOGY.yaml schema (v0.1)". owns = terms THIS paper introduces (unique
 # authority); imports = terms owned by other modules it uses; refines = an imported
 # term this module specializes.
 #
-# (Grok Phase-1.5 review: readiness MEDIUM, R&R_LIKELY at Patterns) and the user issued
-# GO; the §0aa SPINE-FIRST protocol is satisfied ([internal path removed]
-# authored, claims synced). A `papers` row now exists (status=draft). Owned terms below
+# The §0aa SPINE-FIRST protocol is satisfied (SPINE.yaml authored, claims synced). Owned terms below
 # carry full definitions and are LINKED into the substrate terms graph (build_ontology
 # --apply). The reference implementation already exists (code/substrate_floor.py
 # + verify_ost_contract.py + ost_floor_schema.py; specs SUBSTRATE_FLOOR.md +
-# seed origin: [internal path removed] §"Seed 7".
+# OST_VERIFY_CONTRACT.md).
 
 paper_key: substrate-floor
 schema_version: 0.1
