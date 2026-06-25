@@ -1,0 +1,37 @@
+# A genuinely EXTERNAL (non-corpus) substrate — the cross-VENDOR case for the substrate floor (#9b).
+#
+# This represents a lens OUTSIDE the spectral-branding corpus: a third-party brand-equity
+# instrument with its OWN vocabulary. Its anchor concept is NOT in our terms graph, so its
+# alignment to a corpus claim CANNOT be computed from our edges (align_terms returns "absent").
+# The honest cross-boundary mechanism is therefore an SSSOM mapping the external author DECLARES
+# from its concept to a NAMED corpus term, which we VALIDATE on the corpus side (the corpus anchor
+# must exist) and then carry as a (typically non-exact) alignment — surfaced as a risk, never
+# silently trusted. This is the federated/multi-author generalization (negotiate_modules.py /
+# 2026at) applied across a vendor boundary: SSSOM (Matentzoglu et al. 2022) is exactly the standard
+# for typed, justified mappings between independently-owned vocabularies.
+#
+# Fictional / illustrative, like all cases/ examples; the mechanism is the point.
+
+substrate: ExternalEquityLens
+kind: external                       # non-corpus; self-certifying via the mapping it declares
+audit_pass: true                     # the external author self-certifies its instrument (§1)
+
+# The external lens's own anchor concept (its definition, in its own words).
+anchor:
+  term: vendor-equity-index
+  definition: >
+    A single composite brand-equity index aggregating awareness, perceived quality, and loyalty
+    into one 0-1 score per brand, pooled across all respondents (no cohort decomposition).
+
+# The cross-boundary alignment the external author DECLARES to a corpus concept, in SSSOM form.
+# closeMatch: the same conceptual territory (a measure of held brand belief) but a DIFFERENT
+# operationalization (a pooled scalar vs the corpus's cohort-decomposed, observer-relative
+# construct) — so it is explicitly NOT an exactMatch, and surfaces as an alignment risk.
+sssom_mapping:
+  subject_id: vendor-equity-index            # the external term
+  predicate_id: skos:closeMatch              # same concept area, divergent operationalization
+  object_id: brand-conviction                # the corpus term it maps to (must exist in the graph)
+  mapping_justification: semapv:ManualMappingCuration
+  comment: >
+    Pooled scalar equity vs the corpus's cohort-relative brand-conviction: overlapping concept,
+    incompatible aggregation. closeMatch, validated against the corpus anchor; carried as a risk.

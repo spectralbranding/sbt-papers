@@ -1,0 +1,48 @@
+# EXTERNAL (non-corpus) substrate reconciliation — the cross-VENDOR substrate floor (#9b).
+#
+# Until now the substrate floor reconciled two CORPUS lenses (SBT + OST), both owning terms in our
+# graph. This case adds a genuinely EXTERNAL substrate — a third-party brand-equity instrument
+# (cases/example_vendor_lens.yaml) whose anchor concept is NOT in our graph.
+# Its alignment to the shared claim cannot be COMPUTED from our edges (#9a); instead the external
+# author's DECLARED SSSOM mapping is VALIDATED against the corpus anchor (#9b): the mapped corpus
+# term must exist, and the (non-exact) predicate is carried as an alignment risk. This is the
+# cross-vendor generalization the substrate floor was built for: any agent can compose a corpus
+# lens and an outside lens on one decision, and the honest mechanism reports where they only
+# seem to agree.
+#
+# Fictional / illustrative; the mechanism is the point. Run:
+#   uv run --with pyyaml python code/substrate_floor.py --all
+
+cases:
+
+  # CORROBORATED across a vendor boundary, WITH a validated closeMatch alignment risk. The corpus
+  # SBT lens and the external equity lens resolve a real misfit and agree within their floors, so
+  # the consensus corroborates — but the external lens's concept is a closeMatch (pooled scalar
+  # equity) to the corpus's cohort-relative brand-conviction, not an exactMatch. The agreement is
+  # real AND caveated: a closeMatch is surfaced as a risk but (unlike `unaligned`) does not force a
+  # downgrade, because the two concepts DO map to each other — they are just operationalized
+  # differently. That distinction is the whole value of computing/validating alignment.
+  - name: ext_fit_corroborated_with_closematch
+    expect: corroborated
+    shared_claim:
+      id: C-experiential-fit
+      text: "Acquirer and target diverge on the experiential dimension (a fit risk)."
+      common_axis: "normalized experiential misfit distance in [0,1]; 0 = perfect fit, higher = more misfit"
+    k_resolve: 2.0
+    k_marginal: 1.0
+    substrate_verdicts:
+      - substrate: SBT
+        claim_ref: "2026au:correspondence — perceptual misfit between the two cohorts"
+        alignment: exactMatch              # corpus lens, the reference anchor for C
+        status: resolve
+        value: 0.10
+        self_floor: 0.03
+        audit_pass: true
+      - substrate: ExternalEquityLens
+        claim_ref: "vendor brand-equity index gap between the two brands"
+        external_ref: cases/example_vendor_lens.yaml  # #9b: validated, not computed
+        alignment: exactMatch              # hermetic fallback only; overridden to closeMatch live
+        status: resolve
+        value: 0.12
+        self_floor: 0.03
+        audit_pass: true

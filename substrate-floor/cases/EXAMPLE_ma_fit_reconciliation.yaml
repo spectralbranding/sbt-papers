@@ -1,0 +1,198 @@
+# EXAMPLE reconciliation cases — the SUBSTRATE FLOOR across two substrates (#9).
+#
+# The cross-substrate analogue of a contract case (verify_contract). Each case is the SAME
+# M&A-fit decision answered by TWO substrates (lenses): the SBT lens (perceptual fit — does
+# the target's perception cloud correspond to the acquirer's?) and the OST lens (operating
+# fit — do the experiential-tier specs transfer?). They answer on ONE common normalized axis
+# so their verdicts are commensurable (theory memo §4b): you cannot take a distance across an
+# 8-vector and a tier-transfer score, so the reconciliation runs on the aligned claim's
+# VERDICT, not the raw output.
+#
+# Common axis here: normalized experiential MISFIT distance in [0, 1] (0 = identical / perfect
+# fit; higher = more misfit). A "resolve" must therefore clear the floor to assert a misfit;
+# agreement on a near-zero value is agreement on noise, not a finding.
+#
+# Fictional / illustrative (like all cases/ examples), EXCEPT the floors in the FIRST case,
+# which are read LIVE from committed instrument artifacts via floor_ref — and BOTH endpoints are
+# now instrument-owned (the honest asymmetry the roadmap flagged is CLOSED):
+#   - SBT reads its measurement noise floor (combined 0.0103) from the example_harbor_full atlas
+#     via floor_ref.atlas -> floor_schema (the single owner verify_contract uses).
+#   - OST reads its specification COHERENCE floor (combined 0.03) from the northwind_full_audit
+#     spec-audit via floor_ref.spec_audit -> ost_floor_schema (the single owner verify_ost_contract
+#     uses). Where SBT's floor is measurement noise (operator/artifact dispersion), OST's is spec
+#     noise (incoherence 1-SCI + audit gap) — an OST resolution gates against the coherence floor.
+# Cases 2-5 keep DECLARED OST self_floors (hand-set, to illustrate the lattice math at chosen
+# values), the same way only some SBT contract cases read live.
+# Run:  uv run --with pyyaml python code/substrate_floor.py --all
+
+cases:
+
+  # 1) CORROBORATED — both lenses resolve a real misfit, agree within their floors, and the
+  #    consensus clears the effective (outermost nested) floor. Cross-substrate replication.
+  - name: ma_fit_corroborated
+    expect: corroborated
+    shared_claim:
+      id: C-experiential-fit
+      text: "Acquirer and target diverge on the experiential dimension (a fit risk)."
+      common_axis: "normalized experiential misfit distance in [0,1]; 0 = perfect fit, higher = more misfit"
+    k_resolve: 2.0
+    k_marginal: 1.0
+    substrate_verdicts:
+      - substrate: SBT
+        claim_ref: "2026au:correspondence — perceptual misfit between the two cohorts"
+        alignment: exactMatch              # DECLARED/illustrative: assume the two lenses align here
+        status: resolve
+        value: 0.09
+        floor_ref:                         # SBT endpoint floor read LIVE from a real atlas
+          atlas: [internal path removed]
+          band: combined
+          basis: mean                      # -> 0.0103
+        audit_pass: true
+      - substrate: OST
+        claim_ref: "2026ag:six-tier transferability — experiential-tier spec transfer gap"
+        alignment: exactMatch              # DECLARED/illustrative (see case 6 for the COMPUTED check)
+        status: resolve
+        value: 0.11
+        floor_ref:                         # OST endpoint floor read LIVE from a spec-audit
+          spec_audit: [internal path removed]
+          band: combined
+          basis: mean                      # -> 0.03 (coherence 1-SCI + audit gap; here audit=0)
+        audit_pass: true
+
+  # 2) CONTESTED — both resolve, but disagree BEYOND their floors. Not noise: a genuine
+  #    cross-substrate conflict that must be characterized and escalated to human judgment.
+  - name: ma_fit_contested
+    expect: contested
+    shared_claim:
+      id: C-experiential-fit
+      text: "Acquirer and target diverge on the experiential dimension (a fit risk)."
+      common_axis: "normalized experiential misfit distance in [0,1]; 0 = perfect fit, higher = more misfit"
+    k_resolve: 2.0
+    substrate_verdicts:
+      - substrate: SBT
+        claim_ref: "2026au:correspondence"
+        alignment: exactMatch
+        status: resolve
+        value: 0.20                        # SBT: modest perceptual misfit
+        self_floor: 0.04
+        audit_pass: true
+      - substrate: OST
+        claim_ref: "2026ag:transferability"
+        alignment: exactMatch
+        status: resolve
+        value: 0.75                        # OST: severe operating misfit -> they disagree
+        self_floor: 0.05
+        audit_pass: true
+
+  # 3) SUBSTRATE-CONDITIONAL — exactly one lens resolves above its floor; the other abstains.
+  #    The finding holds only under that apparatus; report the condition.
+  - name: ma_fit_substrate_conditional
+    expect: substrate-conditional
+    shared_claim:
+      id: C-experiential-fit
+      text: "Acquirer and target diverge on the experiential dimension (a fit risk)."
+      common_axis: "normalized experiential misfit distance in [0,1]; 0 = perfect fit, higher = more misfit"
+    k_resolve: 2.0
+    substrate_verdicts:
+      - substrate: SBT
+        claim_ref: "2026au:correspondence"
+        alignment: exactMatch
+        status: resolve
+        value: 0.40                        # SBT resolves a clear perceptual misfit
+        self_floor: 0.05
+        audit_pass: true
+      - substrate: OST
+        claim_ref: "2026ag:transferability — insufficient spec to judge transfer"
+        alignment: exactMatch
+        status: abstain                    # OST cannot specify the transfer -> abstains
+        audit_pass: true
+
+  # 4) JOINTLY-UNRESOLVED — every covering substrate abstains. Honestly unknown.
+  - name: ma_fit_jointly_unresolved
+    expect: jointly-unresolved
+    shared_claim:
+      id: C-experiential-fit
+      text: "Acquirer and target diverge on the experiential dimension (a fit risk)."
+      common_axis: "normalized experiential misfit distance in [0,1]; 0 = perfect fit, higher = more misfit"
+    k_resolve: 2.0
+    substrate_verdicts:
+      - substrate: SBT
+        claim_ref: "2026au:correspondence — artifacts too thin to resolve a cohort difference"
+        alignment: exactMatch
+        status: abstain
+        audit_pass: true
+      - substrate: OST
+        claim_ref: "2026ag:transferability — no machine-readable spec to compare"
+        alignment: exactMatch
+        status: abstain
+        audit_pass: true
+
+  # 5) JOINTLY-UNRESOLVED via AGREEMENT-ON-NOISE — both resolve, agree (within floors), but the
+  #    consensus is below the effective floor: agreeing on a difference too small to assert.
+  #    Also exercises (a) a non-exact alignment -> false-agreement RISK, and (b) audit-exclusion
+  #    of a third substrate that resolves a big value but cannot self-certify (§1).
+  - name: ma_fit_agreement_on_noise
+    expect: jointly-unresolved
+    shared_claim:
+      id: C-experiential-fit
+      text: "Acquirer and target diverge on the experiential dimension (a fit risk)."
+      common_axis: "normalized experiential misfit distance in [0,1]; 0 = perfect fit, higher = more misfit"
+    k_resolve: 2.0
+    k_marginal: 1.0
+    substrate_verdicts:
+      - substrate: SBT
+        claim_ref: "2026au:correspondence"
+        alignment: exactMatch
+        status: resolve
+        value: 0.02                        # tiny -> below floor
+        self_floor: 0.05
+        audit_pass: true
+      - substrate: OST
+        claim_ref: "2026ag:transferability (a related, not identical, claim)"
+        alignment: closeMatch              # -> ALIGNMENT RISK surfaced
+        status: resolve
+        value: 0.03
+        self_floor: 0.05
+        audit_pass: true
+      - substrate: UNVETTED-3P
+        claim_ref: "external vendor lens, calibration not auditable"
+        alignment: exactMatch
+        status: resolve
+        value: 0.80                        # would dominate — but EXCLUDED (audit fail)
+        self_floor: 0.02
+        audit_pass: false
+
+  # 6) CONTESTED via COMPUTED UNALIGNED (#9a + the alignment downgrade) — both lenses resolve and
+  #    AGREE numerically within their floors (this would be CORROBORATED on the math alone), but
+  #    each names its anchor `align_term`, and the live graph has NO edge between the SBT term
+  #    (brand-management-correspondence-theorem) and the OST term (six-tier-ontology). They are
+  #    distinct, unlinked concepts: the agreement may be a FALSE agreement across different things.
+  #    The aligner computes `unaligned`, which DOWNGRADES corroborated -> contested — a human must
+  #    judge whether the two findings are about the same thing. This is exactly the optimism a
+  #    hand-declared `exactMatch` (see case 1) would have hidden. Requires the live substrate;
+  #    the declared `alignment` below is only the hermetic (no-DB) fallback.
+  - name: ma_fit_unaligned_false_agreement
+    expect: contested
+    shared_claim:
+      id: C-experiential-fit
+      text: "Acquirer and target diverge on the experiential dimension (a fit risk)."
+      common_axis: "normalized experiential misfit distance in [0,1]; 0 = perfect fit, higher = more misfit"
+    k_resolve: 2.0
+    k_marginal: 1.0
+    substrate_verdicts:
+      - substrate: SBT
+        claim_ref: "2026au:correspondence — perceptual misfit between the two cohorts"
+        align_term: brand-management-correspondence-theorem  # COMPUTED vs the OST term
+        alignment: exactMatch                                # hermetic fallback only
+        status: resolve
+        value: 0.09
+        self_floor: 0.03
+        audit_pass: true
+      - substrate: OST
+        claim_ref: "2026ag:six-tier transferability — experiential-tier spec transfer gap"
+        align_term: six-tier-ontology      # unlinked to the SBT term in the graph -> unaligned
+        alignment: exactMatch              # hermetic fallback only
+        status: resolve
+        value: 0.11
+        self_floor: 0.03
+        audit_pass: true

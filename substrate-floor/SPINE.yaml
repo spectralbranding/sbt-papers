@@ -1,0 +1,430 @@
+spine_version: "0.2"
+paper_key: "substrate-floor"
+title: "The Substrate Floor: Nested Noise Floors for Auditable Abstention Across Heterogeneous Instruments"
+self_citation_key: zharnikov-2026ay-substrate-floor   # canonical_number 2026ay
+concept_doi: 10.5281/zenodo.20840422                  # always resolves to latest version
+version_doi: 10.5281/zenodo.20840423                  # v1.0.0
+target_venue: "Patterns (Cell Press); alternates JASIST, Psychological Methods"   # body/README carry no venue name (rule: venues in paper.yaml only)
+thesis: |
+  Honest abstention generalizes from one measurement instrument to an ensemble of
+  heterogeneous instruments under a single rule: a finding survives only if its signal clears
+  the OUTERMOST noise floor in play, where floors NEST — operator ⊆ artifact ⊆ substrate. The
+  same discipline that lets one measurement instrument abstain below its operator/artifact noise
+  floor lets a CROSS-INSTRUMENT ensemble abstain below a SUBSTRATE FLOOR (the dispersion of
+  instruments' verdicts on one aligned claim) and lets a SPECIFICATION-based instrument abstain
+  below a COHERENCE FLOOR (incoherence 1−SCI plus an audit-coverage gap). Reconciliation returns
+  a TYPED VERDICT — corroborated / contested / substrate-conditional / jointly-unresolved —
+  never a forced point estimate: cross-instrument agreement is triangulation, disagreement is the
+  floor itself. The mechanism is live meta-analysis across instruments — report the heterogeneity,
+  do not pool it away — but it goes past heterogeneity reporting in three ways that standard
+  methods cannot reproduce (P4): (i) it composes instruments of different KINDS that share no
+  output space, reconciling an 8-dimensional measurement vector and a categorical specification
+  audit on the aligned claim's verdict rather than their incommensurable raw outputs; (ii) a
+  no-rescue lemma forbids agreement among individually-noisy instruments from manufacturing a
+  finding; (iii) below the coherence floor abstention is MANDATED by a geometric
+  coverage-impossibility result, not chosen by convention. The contribution is the open-source
+  computational framework (already shipped) that operationalizes this — not a relabeling of
+  heterogeneity statistics, sensor fusion, metrology uncertainty budgets, or selective prediction,
+  but a typed-verdict lattice over nested floors that returns verdicts those four literatures, by
+  construction, do not.
+
+# ---------------------------------------------------------------------------
+# Boundary conditions — THE SCOPE PARAGRAPH (Grok fatal-gap #2; high-priority add #2).
+# 3 positive instrument criteria + ≥2 explicit non-applications. The "unifies across
+# instrument kinds" claim is only falsifiable once these state what counts as a legitimate
+# instrument. Cannot be relaxed — the rule does not apply outside them.
+# ---------------------------------------------------------------------------
+boundary_conditions:
+  - id: C1
+    statement: "INSTRUMENT CRITERION 1 — ALIGNABILITY. An instrument is admissible only if its output for the shared claim C can be aligned, via an explicit SSSOM predicate (exactMatch/closeMatch/narrowMatch/…), to a common normalized ordinal-or-binary verdict axis in [0,1]. Reconciliation runs on that aligned verdict, never on the raw output. Instruments whose verdicts cannot be brought onto a shared axis (no defensible alignment predicate exists) are out of scope."
+  - id: C2
+    statement: "INSTRUMENT CRITERION 2 — INDIVIDUALLY-COMPUTABLE FLOOR. Each admissible instrument must expose its OWN noise floor for C, computed without reference to the other instruments: a measurement instrument exposes an operator/artifact dispersion floor (read live from an atlas via floor_ref.atlas → floor_schema); a specification instrument exposes a coherence floor 1−SCI + audit gap (read live from a spec-audit via floor_ref.spec_audit → ost_floor_schema). An instrument that can emit a value but cannot state the floor below which that value is noise is inadmissible — the nested-floor rule has nothing to nest."
+  - id: C3
+    statement: "INSTRUMENT CRITERION 3 — SELF-CERTIFICATION METADATA. Each admissible instrument must carry an auditable self-certification (audit_pass) so the integrator can EXCLUDE an instrument that cannot vouch for its own calibration. A black-box instrument with no audit log is inadmissible: it can be reported but never averaged or voted into a verdict (the self-certification gate, P2)."
+  - id: C4
+    statement: "NON-APPLICATION 1 — incommensurable subjective judgment. Instruments whose outputs are irreducibly subjective aesthetic/normative verdicts with no defensible common axis (e.g. 'is this artwork beautiful', expert taste judgments) violate C1: there is no honest normalized verdict to disperse, so the substrate floor does not apply. Forcing such outputs onto a shared axis would manufacture the very false-precision the framework exists to refuse."
+  - id: C5
+    statement: "NON-APPLICATION 2 — floorless black-box models. A model that emits a point prediction with no individually-computable noise floor and no self-certification log (C2+C3 fail) is out of scope: the rule cannot decide whether its signal clears a floor it never declared. (This is the boundary that separates the substrate floor from naive ensemble-disagreement scoring, which will read confident agreement among uncalibrated black boxes as evidence.)"
+
+# ---------------------------------------------------------------------------
+# Assumption atoms (assumed without test; relaxable, consequences traced).
+# ---------------------------------------------------------------------------
+assumption_atoms:
+  - id: AA1
+    statement: "The aligned verdict axis is a metric space in [0,1] on which 'distance between two resolvers' verdicts' and 'an instrument's own floor' are comparable quantities (the substrate dispersion = max pairwise verdict distance is meaningful against each endpoint's floor)."
+    type: measurement_model
+    relaxable: true
+    relaxation_consequence: "Under a purely ordinal (non-metric) axis the dispersion becomes a rank-disagreement statistic and the lattice thresholds are recomputed on ranks; the four verdict types and the nesting rule are unchanged."
+    affects: [P1, P2, M1]
+  - id: AA2
+    statement: "Each instrument's declared self_floor is an honest upper bound on its own noise for C (it does not under-report its floor to force a resolve). Enforced operationally by reading floors LIVE from committed artifacts (floor_ref) rather than trusting hand-set values."
+    type: instrument_honesty
+    relaxable: true
+    relaxation_consequence: "If an instrument under-reports its floor, the live floor_ref read overrides the declared value; an instrument with neither a live artifact nor an honest declaration is inadmissible (C2)."
+    affects: [P1, P2, P3]
+  - id: AA3
+    statement: "SSSOM alignment predicates between each instrument's claim and the shared claim C are available upstream (declared per verdict, produced by the federated negotiator 2026at / negotiate_modules.py). A non-exactMatch predicate is a surfaced alignment RISK, not a silent trust."
+    type: alignment_availability
+    relaxable: true
+    relaxation_consequence: "Absent an explicit predicate the verdict is treated as closeMatch-at-best and flagged as an alignment risk; it cannot raise confidence, only lower it."
+    affects: [P2, P4]
+  - id: AA4
+    statement: "Instruments admitted to a reconciliation are conditionally independent given the truth of C to the degree their floors claim — i.e. shared systematic error has been pushed below each instrument's declared floor. (The honest weakening of the strong-independence assumption that fusion/ensemble methods make.)"
+    type: dependence_structure
+    relaxable: true
+    relaxation_consequence: "Under correlated instrument error the substrate dispersion UNDER-states disagreement; the no-rescue lemma (P1) still holds (it bounds rescue from above), but corroborated verdicts must be downgraded — traced in RC2."
+    affects: [P1, P4]
+
+# ---------------------------------------------------------------------------
+# Propositions — 4 numbered (Grok house-style ≤4). P4 is the differentiation
+# backbone the review names as 'the single most important change'.
+# ---------------------------------------------------------------------------
+propositions:
+  - id: P1
+    statement: "THE NESTED-FLOOR RULE + NO-RESCUE LEMMA. Floors nest operator ⊆ artifact ⊆ substrate; a finding survives only if its signal clears the OUTERMOST floor in play: effective_floor = max(substrate_dispersion, each endpoint's own combined floor). LEMMA (no rescue): if any participating endpoint's signal is below its OWN combined floor for C, no degree of cross-instrument agreement can lift the consensus above the effective floor — because the effective floor is a max that already includes that endpoint's floor. Cross-instrument agreement among individually-noisy instruments is therefore not evidence. This is the single robustness criterion that composes WITHIN one instrument (operator→artifact) and ACROSS instruments (artifact→substrate) without a new mechanism at the cross-instrument step."
+    type: theorem
+    conditions: "C1, C2"
+    antecedents: []
+    assumptions: [AA1, AA2]
+    evidence:
+      - type: analytic
+        anchor: "Proof: effective_floor = max(D, f_1, …, f_n) where D is the substrate dispersion and f_i each endpoint floor. Consensus signal |c| clears the floor iff |c| > effective_floor ≥ f_i for every i; hence if some endpoint has |c| ≤ f_i the consensus cannot clear. Monotonicity of max gives the no-rescue result directly."
+      - type: implementation
+        anchor: "code/substrate_floor.py computes effective_floor = max(substrate_dispersion, each endpoint combined floor) and bands signal-to-noise by pre-registered k_resolve/k_marginal (same shape as 2026ax)."
+      - type: citation
+        anchor: "The operator/artifact noise floor this lifts one level up (the within-instrument base case)."
+        citation_keys: [zharnikov-2026ax-brand-spectrometer]
+        citation_role: theoretical_predecessor
+    falsifier: "A construction in which agreement between two instruments, each individually below its own floor for C, legitimately raises confidence in C above the effective floor would refute the no-rescue lemma."
+    body_sections: ["The Nested-Floor Rule", "No Rescue from Agreement"]
+  - id: P2
+    statement: "THE RECONCILIATION LATTICE. On the aligned verdict axis the integrator returns a TYPED verdict, never a pooled point estimate: corroborated (≥2 resolve, agree within their floors, consensus clears the effective floor — cross-instrument replication); contested (≥2 resolve, disagree BEYOND their floors — genuine conflict, escalate to human judgment by construction); substrate-conditional (exactly 1 resolves above its floor — holds only under that apparatus, report the condition); jointly-unresolved (all abstain, OR resolvers agree but the consensus is below the effective floor — agreement on noise). Two gates precede the lattice: STEP-0 SSSOM alignment (apparent conflict is often vocabulary mismatch; a non-exactMatch predicate is surfaced as a false-(dis)agreement risk), and SELF-CERTIFICATION (an instrument with audit_pass=false is EXCLUDED, never averaged — an unvetted lens cannot pull the verdict)."
+    type: mechanism
+    conditions: "C1, C3"
+    antecedents: [P1]
+    assumptions: [AA1, AA3]
+    evidence:
+      - type: analytic
+        anchor: "Construction: the verdict is a function of (resolver count, max pairwise dispersion D, each endpoint floor f_i, |consensus|, alignment predicate, audit_pass). The four regions partition the (dispersion × consensus-vs-floor) plane; the categorical layer = normalized Shannon entropy of the {resolve, abstain} split (0 = unanimous, 1 = maximally split)."
+      - type: implementation
+        anchor: "code/substrate_floor.py + the worked cases under [internal path removed] (EXAMPLE_ma_fit_reconciliation.yaml exercises all four verdicts incl. agreement-on-noise + an audit-excluded third lens + a closeMatch alignment risk). Spec: [internal path removed]"
+      - type: citation
+        anchor: "SSSOM step-0 alignment predicates — the mandatory pre-adjudication move (vocabulary negotiation at link time)."
+        citation_keys: [zharnikov-2026at-negotiating-vocabularies-link, matentzoglu-2022-sssom]
+        citation_role: methodological_source
+    falsifier: "A pair of instruments that genuinely conflict beyond their floors yet for which the lattice returns corroborated (or a pooled mean), or an apparent conflict that is pure vocabulary mismatch yet returns contested after exactMatch alignment, would refute the lattice's correctness."
+    body_sections: ["The Reconciliation Lattice", "Two Gates: Alignment and Self-Certification"]
+  - id: P3
+    statement: "CROSS-KIND ABSTENTION (the unification). The rule holds across instrument KINDS that share no output space. A MEASUREMENT instrument's noise floor (operator/artifact dispersion over LLM operator pairs and artifact draws; 2026ax) and a SPECIFICATION instrument's COHERENCE floor (incoherence 1−SCI from 2026an + an audit-coverage gap from 2026ar) are two instances of ONE nested-floor discipline, reconciled on the aligned claim's verdict (e.g. an M&A experiential-fit misfit in [0,1]) rather than on the incommensurable 8-vector vs categorical audit. Below the coherence floor, abstention is MANDATED — not conventional — by the coverage-impossibility theorem (2026h): no specification audit can certify coverage below it, so a specification instrument that resolves below its coherence floor is provably asserting noise."
+    type: mechanism
+    conditions: "C1, C2"
+    antecedents: [P1, P2]
+    assumptions: [AA2]
+    evidence:
+      - type: implementation
+        anchor: "Both endpoints are instrument-owned: SBT reads a measurement floor (combined 0.0103) from the example_harbor_full atlas via floor_ref.atlas → floor_schema; OST reads a coherence floor (combined 0.03 = 1−SCI + audit gap) from a spec-audit via floor_ref.spec_audit → ost_floor_schema. verify_ost_contract.py + ost_floor_schema.py are the single floor owners (no drift). Worked: EXAMPLE_meridian_transfer.yaml resolves a 0.21 transfer gap and abstains on a 0.05 gap."
+      - type: citation
+        anchor: "Specification Coherence Index (the coherence band of the OST floor)."
+        citation_keys: [zharnikov-2026an-specification-coherence-index]
+        citation_role: theoretical_predecessor
+      - type: citation
+        anchor: "Six-level OrgSchema Audit (the audit-coverage band of the OST floor)."
+        citation_keys: [zharnikov-2026ar-orgschema-audit]
+        citation_role: theoretical_predecessor
+      - type: citation
+        anchor: "Coverage-impossibility theorem — why abstention below the coherence floor is FORCED, not chosen."
+        citation_keys: [zharnikov-2026h-specification-impossibility]
+        citation_role: theoretical_predecessor
+    falsifier: "A specification instrument that resolves a finding below its coherence floor and is shown to be correct (coverage demonstrably certified below the floor) would refute the mandated-abstention claim and, with it, the cross-kind unification."
+    body_sections: ["One Rule, Two Instrument Kinds", "Mandated Abstention Below the Coherence Floor"]
+  - id: P4
+    statement: "DIFFERENTIATION FROM PRIOR ART (the backbone). The typed-verdict lattice over nested floors is NOT a relabeling of (a) meta-analysis heterogeneity, (b) sensor fusion / belief combination, (c) metrology uncertainty budgets, or (d) selective/conformal prediction; it returns verdicts each of those four, by construction, does not. LEMMA 4a (NON-POOLING): where high heterogeneity (large I²/τ²; Higgins & Thompson 2002) makes a random-effects meta-analysis report a wide interval AROUND a pooled mean, the lattice emits CONTESTED and NO pooled mean — because the four verdict types are not a function of any pooled point estimate. LEMMA 4b (EXCLUSION-NOT-DOWNWEIGHTING + NO-RESCUE vs FUSION): Dempster-Shafer / sensor fusion combine all sources into one estimate (and can mask conflict, cf. Zadeh's counterexample) and down-weight a faulted source; the lattice EXCLUDES an uncertifiable source (C3 gate) and, by P1's no-rescue lemma, forbids agreement among below-floor sources from producing any verdict — a different output on the exact inputs where fusion yields a confident combined value. LEMMA 4c (CROSS-KIND): GUM (JCGM 100:2008) propagates Type A/B uncertainty within ONE measurement chain to a combined standard uncertainty and conformal/selective prediction (Angelopoulos & Bates 2023; deep ensembles, Lakshminarayanan 2017) deliver coverage/abstention for ONE model under exchangeability; neither composes instruments of different KINDS with no shared output space — the lattice reconciles an 8-vector and a categorical audit on the aligned ordinal verdict, an object none of the four constructs. Measurement invariance (Putnick & Bornstein 2016) is the PRECONDITION the SSSOM step-0 + common verdict axis operationalize, after which the lattice proceeds to a typed verdict rather than stopping at an invariant/not-invariant test."
+    type: theorem
+    conditions: "C1, C2, C3"
+    antecedents: [P1, P2, P3]
+    assumptions: [AA3, AA4]
+    evidence:
+      - type: analytic
+        anchor: "Relation-to-prior-art contrast table (see relation_to_prior_art block) + the three lemmas 4a/4b/4c, each proved by exhibiting an input on which the prior method and the lattice return DIFFERENT verdicts (a Monte-Carlo verdict-region figure marks where they diverge)."
+      - type: citation
+        anchor: "Meta-analysis heterogeneity (I²/τ²) — report heterogeneity but still pool; the non-pooling contrast."
+        citation_keys: [higgins-2002-quantifying-heterogeneity-meta-analysis]
+        citation_role: distinguished_from
+      - type: citation
+        anchor: "Dempster-Shafer belief combination / sensor fusion — combine and down-weight; the exclusion + no-rescue contrast."
+        citation_keys: [dempster-1967-upper-lower-probabilities]
+        citation_role: distinguished_from
+      - type: citation
+        anchor: "GUM metrology uncertainty budget — single-chain propagation; the cross-kind contrast."
+        citation_keys: [jcgm-2008-gum-uncertainty-measurement]
+        citation_role: distinguished_from
+      - type: citation
+        anchor: "Conformal prediction + deep ensembles — single-model coverage/abstention under exchangeability; the cross-instrument + typed-verdict contrast."
+        citation_keys: [angelopoulos-2023-conformal-prediction-gentle, lakshminarayanan-2017-deep-ensembles]
+        citation_role: distinguished_from
+      - type: citation
+        anchor: "Measurement invariance — the precondition the alignment step-0 operationalizes."
+        citation_keys: [putnick-2016-measurement-invariance]
+        citation_role: distinguished_from
+    falsifier: "Exhibiting, for any of lemmas 4a/4b/4c, that the named prior method ALREADY returns the lattice's verdict on the claimed-divergent input (i.e. the divergence is illusory) would collapse that lemma and weaken the incremental-advance claim — the lead reviewer objection made concrete and testable."
+    body_sections: ["Relation to Prior Art", "Three Differentiating Lemmas", "Where the Verdicts Diverge"]
+
+# ---------------------------------------------------------------------------
+# Relation-to-prior-art contrast table (Grok high-priority add #1; the spine backbone).
+# Each row: what the prior method does, what it CANNOT do that the lattice does, and the
+# concrete divergent verdict. Drives P4 and the Related Work section.
+# ---------------------------------------------------------------------------
+relation_to_prior_art:
+  - method: "Meta-analysis heterogeneity (I²/τ²)"
+    key: higgins-2002-quantifying-heterogeneity-meta-analysis
+    does: "Quantifies dispersion of COMMENSURABLE effect sizes; random-effects reports a pooled estimate with a heterogeneity-widened interval."
+    cannot: "Requires a common effect-size metric (no cross-KIND composition); emits a pooled mean by default even under high I²."
+    divergent_verdict: "High I² → wide CI around a pooled mean; the lattice → CONTESTED with NO pooled mean (Lemma 4a)."
+    maps_to: P4
+  - method: "Sensor fusion / Dempster-Shafer belief combination"
+    key: dempster-1967-upper-lower-probabilities
+    does: "Combines multiple sources into one estimate; identifies and down-weights a faulted sensor."
+    cannot: "Fuses to a single value (can mask conflict, Zadeh counterexample); down-weights rather than EXCLUDES; treats agreement as confidence."
+    divergent_verdict: "Two below-floor sources that agree → fusion yields a confident combined value; the lattice → jointly-unresolved (no-rescue, Lemma 4b)."
+    maps_to: P4
+  - method: "GUM metrology uncertainty budget (JCGM 100:2008)"
+    key: jcgm-2008-gum-uncertainty-measurement
+    does: "Propagates Type A/B uncertainty within ONE measurement chain to a combined standard uncertainty."
+    cannot: "Single instrument / single output space; no cross-KIND reconciliation; no abstention rule."
+    divergent_verdict: "8-vector vs categorical audit → GUM has nothing to propagate (no shared chain); the lattice reconciles on the aligned ordinal verdict (Lemma 4c)."
+    maps_to: P4
+  - method: "Conformal / selective prediction; deep ensembles"
+    key: angelopoulos-2023-conformal-prediction-gentle
+    does: "Distribution-free coverage for ONE model under exchangeability; selective prediction abstains; ensemble disagreement = uncertainty."
+    cannot: "Single model/instrument; binary abstain-or-predict, not a TYPED verdict; no cross-instrument-KIND composition."
+    divergent_verdict: "Two different-kind instruments each individually confident but mutually contesting → no joint object exists; the lattice → CONTESTED (Lemma 4c)."
+    maps_to: P4
+  - method: "Measurement invariance testing"
+    key: putnick-2016-measurement-invariance-conventions
+    does: "Tests whether a construct is measured equivalently across groups before comparison (a binary precondition)."
+    cannot: "A precondition test, not a reconciliation calculus; stops at invariant/not."
+    divergent_verdict: "The SSSOM step-0 + common verdict axis OPERATIONALIZE the invariance precondition AND proceed to a typed verdict (P2/P4)."
+    maps_to: P4
+  # R&R additions (2026-06-24): two closer neighbors surfaced by /review-literature + Grok.
+  - method: "Opinion pooling (linear/log; external Bayesianity)"
+    key: genest-zidek-1986-combining-probability-distributions
+    does: "Combines several probability distributions into one under aggregation axioms."
+    cannot: "Decline to pool; return a typed verdict (presumes pooling occurs)."
+    divergent_verdict: "Below-floor inputs -> a pooled distribution; the lattice -> jointly-unresolved (Lemma 4a/4b)."
+    maps_to: P4
+  - method: "Truth discovery / data fusion"
+    key: li-2016-survey-truth-discovery
+    does: "Infers per-source reliability and recovers a single most-credible value among conflicting sources."
+    cannot: "Align divergent vocabularies (assumes shared schema); type the disagreement instead of recovering one truth."
+    divergent_verdict: "Conflict beyond floors -> one inferred truth; the lattice -> contested over each source's declared, audited floor."
+    maps_to: P4
+
+# ---------------------------------------------------------------------------
+# Models / derivations (Grok high-priority add #5: smallest sufficient model).
+# ---------------------------------------------------------------------------
+derivations:
+  - id: M1
+    statement: "SMALLEST SUFFICIENT MODEL: two instruments on a normalized [0,1] verdict axis, each emitting {resolve(value, self_floor) | abstain}. Interval floors [value − f, value + f]; substrate dispersion D = |v_1 − v_2|; effective_floor = max(D, f_1, f_2). Four lattice rules partition the (D, |consensus|) plane into the four verdicts. Yields the verdict-region figure (verdict as a function of dispersion × floor width) and the no-rescue + coverage-impossibility lemma diagrams. Raw-8D-vector / specification-text mechanics are moved to an appendix (Grok add #4: lock the unit of analysis to a single aligned ordinal claim)."
+    supports: [P1, P2, P4]
+
+# ---------------------------------------------------------------------------
+# Methods (Grok: keep the shipped implementation; add ONE non-corporate example;
+# right-size to a Monte-Carlo verdict-region characterization).
+# ---------------------------------------------------------------------------
+methods:
+  - id: ME1
+    statement: "MONTE-CARLO VERDICT-REGION CHARACTERIZATION. Sweep two-instrument cases over (dispersion D, per-endpoint floor width f, k_resolve/k_marginal) at ≥10,000 draws per cell, fixed seed, published script (PAQS 37a-37e); map the fraction landing in each verdict region and the boundaries where the lattice diverges from (a) random-effects pooling, (b) Dempster-Shafer fusion, (c) a conformal abstain-or-predict rule. The divergence boundaries are the empirical content of P4."
+    supports: [P4, M1]
+    status: planned
+    script: "[internal path removed] (seed TBD at draft)"
+  - id: ME2
+    statement: "SHIPPED CORPUS WORKED EXAMPLES (the Grok 'keep' — unusual evidentiary grounding for a Phase-0 paper). substrate_floor.py + the reconciliation cases exercise all four verdicts incl. agreement-on-noise, audit-exclusion, and a closeMatch alignment risk; both endpoints instrument-owned with LIVE floors (SBT 0.0103 from example_harbor_full; OST 0.03 from a spec-audit). EXAMPLE_meridian_transfer.yaml: resolves a 0.21 gap, abstains on 0.05. 302-test suite green."
+    supports: [P1, P2, P3]
+    status: executed
+  - id: ME3
+    statement: "ONE NON-CORPORATE WORKED EXAMPLE (Grok fatal-gap #3; OPEN-track #1b cross-vendor — 'do it once, use it twice'). Reconcile a model-ranking claim ('model X ranks above model Y') across TWO PUBLIC, non-corporate LLM benchmark leaderboards of different kinds (e.g. a coding benchmark and a reasoning benchmark) as two instruments: align rankings to a common ordinal verdict (SSSOM step-0), give each its dispersion floor from public per-task variance, and run the lattice → a typed verdict (expected: contested where the two public benchmarks disagree beyond their floors). Establishes the cross-KIND claim on data outside the author's corpus. Alternative if leaderboard variance is unavailable: a public psychology multiverse dataset (specification-curve dispersion as the floor)."
+    supports: [P3, P4]
+    status: executed
+    note: "EXECUTED 2026-06-25. Realized as [internal path removed] over a pinned, cited snapshot (3 frontier models x MMLU/MATH/HumanEval, Dubey 2024, accessed 2026-06-25). Floors = binomial SE from documented N. Yields corroborated / jointly-unresolved / substrate-conditional on real external data; headline = the HumanEval code ranking is NOT certified (gaps < N=164 floor). 4 benchmark/model anchors registered (hendrycks-2021-mmlu, hendrycks-2021-math-dataset, chen-2021-evaluating-llms-code, dubey-2024-llama-3-herd)."
+
+# ---------------------------------------------------------------------------
+# Findings (shipped — the Phase-0 evidentiary anchor).
+# ---------------------------------------------------------------------------
+findings:
+  - id: F1
+    type: implementation_demonstration
+    statement: "The reconciliation lattice is implemented and the four verdict types are reproduced on worked cases, with both instrument kinds' floors read live from committed artifacts (SBT 0.0103, OST 0.03) and the nesting rule effective_floor = max(dispersion, endpoint floors) enforced. Demonstration that the mechanism runs end-to-end across kinds — not a field test of an external claim."
+    supports: [P1, P2, P3]
+    caveat: "All current worked examples are corpus-internal (the gap ME3 closes)."
+
+# ---------------------------------------------------------------------------
+robustness_checks:
+  - id: RC1
+    statement: "Lattice-boundary sensitivity: vary k_resolve/k_marginal and the alignment predicate (exactMatch vs closeMatch) to show the verdict types are stable away from the boundaries and the alignment risk correctly demotes confidence near them."
+    addresses: [P2, AA3]
+  - id: RC2
+    statement: "Correlated-instrument-error stress (relax AA4): inject shared systematic error below the declared floors and confirm the no-rescue lemma (P1) still bounds rescue from above while corroborated verdicts are correctly downgraded."
+    addresses: [P1, AA4]
+  - id: RC3
+    statement: "Cross-method divergence audit: on the ME1 Monte-Carlo grid, quantify the fraction of cases where the lattice verdict differs from random-effects pooling / Dempster-Shafer fusion / conformal abstain — the empirical magnitude of the P4 differentiation."
+    addresses: [P4]
+
+alternative_explanations:
+  - id: AE1
+    statement: "The lattice is 'just' heterogeneity reporting with new labels (the predicted lead-reviewer objection)."
+    rebuttal: "Lemmas 4a/4b/4c each exhibit an input on which the named prior method returns a DIFFERENT verdict (no pooled mean under CONTESTED; no-rescue vs confident fusion; cross-kind reconciliation with no shared chain). The contribution is the typed-verdict object + mandated abstention, not the heterogeneity statistic."
+    citation_keys: [higgins-2002-quantifying-heterogeneity-meta-analysis, dempster-1967-upper-lower-probabilities]
+  - id: AE2
+    statement: "Ensemble disagreement already captures 'instruments disagree → low confidence'."
+    rebuttal: "Ensemble disagreement reads confident agreement among UNCERTIFIED black boxes as evidence (C5 non-application) and has no typed verdict / no self-certification exclusion / no cross-kind axis. The substrate floor's C3 gate + no-rescue lemma are exactly the cases where naive disagreement scoring fails."
+    citation_keys: [lakshminarayanan-2017-deep-ensembles]
+
+limitations:
+  - id: L1
+    statement: "External validity of the cross-kind claim currently rests on corpus-internal instruments; ME3 (one public non-corporate example) is the single most important empirical addition and is scoped as MODEST data collection, not a field study."
+    anchor_keys: []
+  - id: L2
+    statement: "The common verdict axis assumes a defensible SSSOM alignment exists (C1); where alignment is genuinely contested, the framework surfaces the alignment risk but cannot itself adjudicate the meaning dispute — that is handed to the upstream negotiator (2026at) and, failing that, to human judgment."
+    anchor_keys: [zharnikov-2026at-negotiating-vocabularies-link]
+  - id: L3
+    statement: "Floors are only as honest as their source artifacts (AA2); an instrument with neither a live floor_ref nor a certifiable declaration is inadmissible (C2), which narrows applicability to instruments that have done the metrology work — a deliberate scope cost, not a bug."
+
+# ---------------------------------------------------------------------------
+corpus_precedents:
+  - key: zharnikov-2026ax-brand-spectrometer
+    relation: builds_on
+    note: "The operator/artifact measurement noise floor (the within-instrument base case) lifted one level up to the substrate floor; the k_resolve/k_marginal S/N banding shape is reused."
+  - key: zharnikov-2026at-negotiating-vocabularies-link
+    relation: builds_on
+    note: "The six-class link-time vocabulary negotiation IS the substrate floor's mandatory SSSOM step-0; negotiate_modules.py is the upstream aligner."
+  - key: zharnikov-2026an-specification-coherence-index
+    relation: builds_on
+    note: "The coherence band (1−SCI) of the OST coherence floor."
+  - key: zharnikov-2026ar-orgschema-audit
+    relation: builds_on
+    note: "The audit-coverage band of the OST coherence floor."
+  - key: zharnikov-2026h-specification-impossibility
+    relation: builds_on
+    note: "The coverage-impossibility theorem that MANDATES abstention below the coherence floor (P3) — abstention is forced, not conventional."
+
+# ---------------------------------------------------------------------------
+# External anchors — the 6 Grok must-engage refs, all DOI-verified via Crossref/arXiv
+# 2026-06-24 BEFORE entry (anti-fabrication rule 5c). Register into the substrate when
+# prose cites them (verify_citations.py), then sync + bundle gate.
+# ---------------------------------------------------------------------------
+external_anchors:
+  - key: higgins-2002-quantifying-heterogeneity-meta-analysis
+    citation: "Higgins, J. P. T., & Thompson, S. G. (2002). Quantifying heterogeneity in a meta-analysis. Statistics in Medicine, 21(11), 1539-1558."
+    doi: "10.1002/sim.1186"
+    role: distinguished_from
+    status: to_register
+    note: "VERIFIED 2026-06-24 (Crossref: exact title/authors/venue 21(11):1539-1558). The I²/τ² heterogeneity anchor — closest operational neighbor ('report heterogeneity, don't pool'); Lemma 4a (non-pooling) differentiates."
+  - key: lakshminarayanan-2017-deep-ensembles
+    citation: "Lakshminarayanan, B., Pritzel, A., & Blundell, C. (2017). Simple and Scalable Predictive Uncertainty Estimation using Deep Ensembles. Advances in Neural Information Processing Systems (NeurIPS) 30."
+    arxiv: "1612.01474"
+    doi: null
+    role: distinguished_from
+    status: to_register
+    note: "VERIFIED 2026-06-24 (arXiv 1612.01474: exact title/authors, published 2016-12-05; NeurIPS 2017 proceedings have NO Crossref DOI — register DOI-less / arXiv-anchored). Ensemble disagreement-as-uncertainty; the substrate floor generalizes it but adds typed verdict + self-certification (AE2)."
+  - key: matentzoglu-2022-sssom
+    citation: "Matentzoglu, N., Balhoff, J. P., Bello, S. M., Bizon, C., Brush, M., Callahan, T. J., et al. (2022). A Simple Standard for Sharing Ontological Mappings (SSSOM). Database, 2022, baac035."
+    doi: "10.1093/database/baac035"
+    role: methodological_source
+    status: to_register
+    note: "VERIFIED 2026-06-24 (Crossref: exact title, Database vol 2022, 26 authors). The mandatory step-0 alignment predicates."
+  - key: jcgm-2008-gum-uncertainty-measurement
+    citation: "JCGM 100:2008. Evaluation of measurement data — Guide to the expression of uncertainty in measurement (GUM). Joint Committee for Guides in Metrology, BIPM."
+    doi: null
+    role: distinguished_from
+    status: to_register
+    note: "Standards document — NO DOI by nature (register DOI-less as a standards reference; canonical BIPM JCGM 100:2008). Type A/B uncertainty + propagation; Lemma 4c (cross-kind) differentiates. Non-citation triggers the 'reinvention' objection — must be engaged."
+  - key: putnick-2016-measurement-invariance
+    citation: "Putnick, D. L., & Bornstein, M. H. (2016). Measurement invariance conventions and reporting: The state of the art and future directions for psychological research. Developmental Review, 41, 71-90."
+    doi: "10.1016/j.dr.2016.06.004"
+    role: distinguished_from
+    status: to_register
+    note: "VERIFIED 2026-06-24 (Crossref: exact title/authors, Dev. Review 41:71-90). The invariance precondition the SSSOM step-0 + common verdict axis operationalize."
+  - key: dempster-1967-upper-lower-probabilities
+    citation: "Dempster, A. P. (1967). Upper and Lower Probabilities Induced by a Multivalued Mapping. The Annals of Mathematical Statistics, 38(2), 325-339."
+    doi: "10.1214/aoms/1177698950"
+    role: distinguished_from
+    status: to_register
+    note: "VERIFIED 2026-06-24 (Crossref: exact title/author, Ann. Math. Stat. 1967). Belief-combination / sensor-fusion lattice ancestor; Lemma 4b (exclusion-not-downweighting + no-rescue) differentiates from fusion."
+  - key: angelopoulos-2023-conformal-prediction-gentle
+    citation: "Angelopoulos, A. N., & Bates, S. (2023). Conformal Prediction: A Gentle Introduction. Foundations and Trends in Machine Learning, 16(4), 494-591."
+    doi: "10.1561/2200000101"
+    role: distinguished_from
+    status: to_register
+    note: "VERIFIED 2026-06-24 (Crossref: exact title/authors, Found. Trends ML). Venue-positioning anchor (conformal/selective prediction is the dominant UQ-with-coverage framework); Lemma 4c differentiates (single-model, exchangeability, no typed verdict)."
+  # R&R additions (2026-06-24) — 8 anchors DOI-verified via Crossref BEFORE entry (anti-fabrication);
+  # registered into the substrate this session. Close the /review-literature + Grok positioning gaps.
+  - key: genest-zidek-1986-combining-probability-distributions
+    citation: "Genest, C., & Zidek, J. V. (1986). Combining Probability Distributions: A Critique and an Annotated Bibliography. Statistical Science, 1(1), 114-148."
+    doi: "10.1214/ss/1177013825"
+    role: distinguished_from
+    status: registered
+    note: "Opinion pooling — the 'how to combine, or decline to' anchor; reinforces Lemma 4a (decline-to-pool)."
+  - key: li-2016-survey-truth-discovery
+    citation: "Li, Y., Gao, J., Meng, C., Li, Q., Su, L., Zhao, B., Fan, W., & Han, J. (2016). A Survey on Truth Discovery. ACM SIGKDD Explorations Newsletter, 17(2), 1-16."
+    doi: "10.1145/2897350.2897352"
+    role: distinguished_from
+    status: registered
+    note: "Truth discovery / data fusion — closest CS neighbor (recover-one-truth-by-reliability vs decline-and-type-by-audited-floor); full engagement paragraph + Table 1 row."
+  - key: dawid-1979-maximum-likelihood-observer-error
+    citation: "Dawid, A. P., & Skene, A. M. (1979). Maximum Likelihood Estimation of Observer Error-Rates Using the EM Algorithm. Journal of the Royal Statistical Society: Series C (Applied Statistics), 28(1), 20-28."
+    doi: "10.2307/2346806"
+    role: distinguished_from
+    status: registered
+    note: "Multi-annotator latent-class — instruments-as-raters precedent; lattice substitutes declared/audited floor + exclusion for inferred reliability weight."
+  - key: kapoor-2023-leakage-reproducibility-crisis
+    citation: "Kapoor, S., & Narayanan, A. (2023). Leakage and the reproducibility crisis in machine-learning-based science. Patterns, 4(9), 100804."
+    doi: "10.1016/j.patter.2023.100804"
+    role: motivates
+    status: registered
+    note: "Target-venue (Patterns) anchor; the unaudited-methodological-choice failure mode the self-cert gate prevents (intro motivation)."
+  - key: huellermeier-2021-aleatoric-epistemic-uncertainty
+    citation: "Hüllermeier, E., & Waegeman, W. (2021). Aleatoric and epistemic uncertainty in machine learning: an introduction to concepts and methods. Machine Learning, 110(3), 457-506."
+    doi: "10.1007/s10994-021-05946-3"
+    role: distinguished_from
+    status: registered
+    note: "UQ taxonomy the typed verdicts extend (within-model representation/propagation vs cross-instrument typed verdict)."
+  - key: gawlikowski-2023-survey-uncertainty-deep-neural
+    citation: "Gawlikowski, J., et al. (2023). A survey of uncertainty in deep neural networks. Artificial Intelligence Review, 56(S1), 1513-1589."
+    doi: "10.1007/s10462-023-10562-9"
+    role: distinguished_from
+    status: registered
+    note: "Comprehensive UQ survey for venue currency; positions the cross-kind claim against the within-model UQ field."
+  - key: baker-2016-1500-scientists-reproducibility
+    citation: "Baker, M. (2016). 1,500 scientists lift the lid on reproducibility. Nature, 533(7604), 452-454."
+    doi: "10.1038/533452a"
+    role: motivates
+    status: registered
+    note: "Reproducibility-crisis motivation (intro)."
+  - key: ioannidis-2005-most-published-findings-false
+    citation: "Ioannidis, J. P. A. (2005). Why Most Published Research Findings Are False. PLoS Medicine, 2(8), e124."
+    doi: "10.1371/journal.pmed.0020124"
+    role: motivates
+    status: registered
+    note: "Hidden-degrees-of-freedom motivation the no-rescue result speaks to (intro)."
+  # R&R round 2 (2026-06-25): the two Grok-flagged leads, user-verified + local PDFs; +Mena.
+  - key: kompa-2021-second-opinion-medical-ml
+    citation: "Kompa, B., Snoek, J., & Beam, A. L. (2021). Second opinion needed: communicating uncertainty in medical machine learning. npj Digital Medicine, 4(1), 4."
+    doi: "10.1038/s41746-020-00367-3"
+    role: motivates
+    status: registered
+    note: "Clinical abstention / 'I don't know' as a safety property — the typed verdict's high-stakes practical relevance (Discussion). PDF in [internal path removed]"
+  - key: he-2026-survey-uncertainty-quantification-deep-learning
+    citation: "He, W., Jiang, Z., Xiao, T., Xu, Z., & Li, Y. (2026). A Survey on Uncertainty Quantification Methods for Deep Learning. ACM Computing Surveys, 58(7), 179."
+    doi: "10.1145/3786319"
+    role: distinguished_from
+    status: registered
+    note: "Recent UQ survey (LLMs + structured outputs) — venue currency for the cross-kind positioning. PDF in [internal path removed] NB: the file the user first provided as 'Mena' was actually this paper; flagged + registered correctly."
+  - key: mena-2021-survey-uncertainty-bayesian
+    citation: "Mena, J., Pujol, O., & Vitrià, J. (2021). A Survey on Uncertainty Estimation in Deep Learning Classification Systems from a Bayesian Perspective. ACM Computing Surveys, 54(9), 1-35."
+    doi: "10.1145/3477140"
+    role: distinguished_from
+    status: registered
+    note: "Bayesian-perspective UQ survey — the within-model UQ field the cross-instrument lattice is distinguished from."
+
+# ---------------------------------------------------------------------------
+
