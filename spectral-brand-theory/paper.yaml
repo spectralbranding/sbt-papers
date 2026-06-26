@@ -42,8 +42,7 @@ meta:
     that extends customer-based brand equity theory. A companion proof-of-concept study replicating SBT''s
     cohort-divergence patterns across 17 LLM architectures confirms dimensional collapse as a systematic
     property of AI-mediated perception [@zharnikov-2026-dimensional-collapse-ai-mediated-search]; independent
-    human-subject validation of the framework''s propositions is identified as the priority for future
-    empirical work.'
+    human-subject validation of the framework''s propositions is the priority for future empirical work.'
 claims:
 - id: P1
   type: proposition

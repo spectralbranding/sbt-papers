@@ -24,18 +24,18 @@ meta:
   - drift geometry
   - non-ergodicity
   - Spectral Brand Theory
-  abstract: 'Spectral Brand Theory classifies brands into five coherence types -- ecosystem, signal, identity,
-    experiential asymmetry, and incoherent -- and predicts that coherence *type* determines crisis resilience
+  abstract: 'Spectral Brand Theory classifies brands into five coherence types — ecosystem, signal, identity,
+    experiential asymmetry, and incoherent — and predicts that coherence *type* determines crisis resilience
     better than coherence *score*. No formal derivation has connected this prediction to dynamics. This
     paper provides that derivation by analyzing the drift structures that different coherence types produce
     within the stochastic differential equation (SDE) framework of Zharnikov [-@zharnikov-2026-non-ergodic-brand-perception-diffusion].
-    Two characterizations of drift geometry -- isotropy and $k$-anisotropy -- yield three main results.
+    Two characterizations of drift geometry — isotropy and $k$-anisotropy — yield three main results.
     Theorem 1 establishes that absorption probability decreases monotonically in drift isotropy: isotropic
     drift fields (ecosystem coherence) produce lower absorption risk than anisotropic or stochastic drift.
     Theorem 2 shows that recovery probability depends on dimension-specific drift, creating asymmetric
-    vulnerability profiles -- crises on passive dimensions (e.g., the Economic dimension for Hermès) are
-    disproportionately dangerous. Theorem 3 derives the full resilience ordering -- ecosystem > signal
-    > identity > experiential asymmetry > incoherent -- from SDE geometry. The type-over-score principle
+    vulnerability profiles — crises on passive dimensions (e.g., the Economic dimension for Hermès) are
+    disproportionately dangerous. Theorem 3 derives the full resilience ordering — ecosystem > signal
+    > identity > experiential asymmetry > incoherent — from SDE geometry. The type-over-score principle
     is the central result: crisis survival depends on the minimum drift across dimensions, not the average,
     so two brands with identical total emission but different distributions have different resilience.
     The framework is applied to four documented crises and generates three falsifiable predictions.'

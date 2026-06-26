@@ -16,21 +16,17 @@ How many distinguishable brand positions can a market sustain? We formalize bran
 
 ---
 
-**JEL Classification**: C65, M31, L11
-
-**MSC Classification**: 52C17, 11H31, 91B42
-
 ## Positioning in High-Dimensional Space
 
-The concept of "positioning" is among the most influential ideas in modern marketing. Since Ries and Trout [-@ries-1981-positioning-battle-your] argued that brands compete for distinct positions in the consumer's mind, the metaphor of a "positioning space" has become central to brand strategy. Building on Aaker's [-@aaker-1991-managing-brand-equity; -@aaker-1997-dimensions-brand-personality] foundational frameworks for brand equity and brand personality, subsequent research has developed rich taxonomies of brand dimensions -- yet for all the geometric language, the actual geometry has never been formalized. No one has answered the most basic quantitative question the metaphor implies: *how many distinguishable positions does the space actually contain?*
+The concept of "positioning" is among the most influential ideas in modern marketing. Since Ries and Trout [-@ries-1981-positioning-battle-your] argued that brands compete for distinct positions in the consumer's mind, the metaphor of a "positioning space" has become central to brand strategy. Building on Aaker's [-@aaker-1991-managing-brand-equity; -@aaker-1997-dimensions-brand-personality] foundational frameworks for brand equity and brand personality, subsequent research has developed rich taxonomies of brand dimensions — yet for all the geometric language, the actual geometry has never been formalized. No one has answered the most basic quantitative question the metaphor implies: *how many distinguishable positions does the space actually contain?*
 
-Previous attempts to formalize brand positioning have been limited to low-dimensional settings. Hotelling [-@hotelling-1929-stability-competition-economic] places firms on a line. MDS in marketing [@green-1972-applied-multidimensional-scaling; @bijmolt-1999-comparison-multidimensional-scaling] typically produces 2- or 3-dimensional perceptual maps. Lancaster's [-@lancaster-1966-new-approach-consumer] characteristics space allows arbitrary dimensionality in principle but has not addressed the capacity question. Gardenfors [-@gardenfors-2000-conceptual-spaces-geometry] provides a general theory of conceptual spaces but does not compute packing bounds. Cognitive science models of structured representation [@tenenbaum-2011-how-grow-mind] show that human concept learning exploits the statistical structure of high-dimensional hypothesis spaces, motivating the question of how many distinct hypotheses -- and thus how many distinct brand positions -- a structured representational space can sustain.
+Previous attempts to formalize brand positioning have been limited to low-dimensional settings. Hotelling [-@hotelling-1929-stability-competition-economic] places firms on a line. MDS in marketing [@green-1972-applied-multidimensional-scaling; @bijmolt-1999-comparison-multidimensional-scaling] typically produces 2- or 3-dimensional perceptual maps. Lancaster's [-@lancaster-1966-new-approach-consumer] characteristics space allows arbitrary dimensionality in principle but has not addressed the capacity question. Gardenfors [-@gardenfors-2000-conceptual-spaces-geometry] provides a general theory of conceptual spaces but does not compute packing bounds. Cognitive science models of structured representation [@tenenbaum-2011-how-grow-mind] show that human concept learning exploits the statistical structure of high-dimensional hypothesis spaces, motivating the question of how many distinct hypotheses — and thus how many distinct brand positions — a structured representational space can sustain.
 
 Geometric approaches to brand perception have a long history (reviewed in Zharnikov [-@zharnikov-2026-geometric-approaches-brand-perception-critical]), but none has derived capacity bounds. Spectral Brand Theory [@zharnikov-2026-spectral-brand-theory-computational-framework] provides the framework that makes a formal treatment possible, modeling brands as emitters across eight typed dimensions perceived by observers on $\Delta^7$. Zharnikov [-@zharnikov-2026-brand-space-geometry-formal-metric] established the Aitchison metric on $\mathbb{R}^8_+$; Zharnikov [-@zharnikov-2026-spectral-metamerism-brand-perception-projection] proved that projecting 8D profiles to scalar grades produces spectral metamerism; Zharnikov [-@zharnikov-2026-cohort-boundaries-high-dimensional-perception] showed that concentration of measure makes cohort boundaries inherently fuzzy.
 
-This paper asks the next natural question: given the 8-dimensional brand space with a formal metric, *how many non-overlapping positions does it contain?* The mathematical tool is sphere packing theory. In eight dimensions, the densest possible packing is known exactly: Viazovska [-@viazovska-2017-sphere-packing-problem] proved that the $E_8$ lattice is optimal, earning the Fields Medal in 2022. The $E_8$ lattice has a packing density of $\pi^4/384 \approx .2537$, a kissing number of 240, and deep connections to exceptional structures in mathematics -- properties that yield surprisingly concrete positioning bounds.
+This paper asks the next natural question: given the 8-dimensional brand space with a formal metric, *how many non-overlapping positions does it contain?* The mathematical tool is sphere packing theory. In eight dimensions, the densest possible packing is known exactly: Viazovska [-@viazovska-2017-sphere-packing-problem] proved that the $E_8$ lattice is optimal, earning the Fields Medal in 2022. The $E_8$ lattice has a packing density of $\pi^4/384 \approx .2537$, a kissing number of 240, and deep connections to exceptional structures in mathematics — properties that yield surprisingly concrete positioning bounds.
 
-**Important caveat, stated at the outset.** The $E_8$ connection is *structural*, not *literal*. It provides the mathematical ceiling on packing efficiency, not a claim that brands arrange themselves as lattice points -- any more than hexagonal optimality in 2D claims oranges form perfect hexagons. Throughout, we maintain strict separation between proved mathematical results and interpretive application to branding.
+**Important caveat, stated at the outset.** The $E_8$ connection is *structural*, not *literal*. It provides the mathematical ceiling on packing efficiency, not a claim that brands arrange themselves as lattice points — any more than hexagonal optimality in 2D claims oranges form perfect hexagons. Throughout, we maintain strict separation between proved mathematical results and interpretive application to branding.
 
 Our main contributions are:
 
@@ -50,7 +46,7 @@ The paper proceeds as follows. The Preliminaries section recalls the SBT framewo
 
 ### SBT Framework Recap
 
-Spectral Brand Theory [@zharnikov-2026-spectral-brand-theory-computational-framework] models brand perception through an eight-dimensional signal architecture:
+Spectral Brand Theory [@zharnikov-2026-spectral-brand-theory-computational-framework] models brand perception through an eight-dimensional signal architecture (Table 1):
 
 **Table 1.** SBT Eight Dimensions.
 
@@ -69,7 +65,7 @@ Spectral Brand Theory [@zharnikov-2026-spectral-brand-theory-computational-frame
 
 A brand's **emission profile** (spectral profile) is a vector $s = (s_1, \ldots, s_8) \in \mathbb{R}^8_+$ representing signal strength across each dimension. An observer's **weight profile** is a vector $w = (w_1, \ldots, w_8) \in \Delta^7$ representing the relative salience of each dimension to that observer.
 
-SBT distinguishes five coherence types -- ecosystem ($A+$), signal ($A-$), identity ($B+$), experiential asymmetry ($B-$), and incoherent ($C-$) -- assessed across five case-study brands: Hermès ($A+$), IKEA ($A-$), Patagonia ($B+$), Erewhon ($B-$), and Tesla ($C-$).
+SBT distinguishes five coherence types — ecosystem ($A+$), signal ($A-$), identity ($B+$), experiential asymmetry ($B-$), and incoherent ($C-$) — assessed across five case-study brands: Hermès ($A+$), IKEA ($A-$), Patagonia ($B+$), Erewhon ($B-$), and Tesla ($C-$).
 
 ### Brand Space with the Aitchison Metric
 
@@ -85,7 +81,7 @@ The *just-noticeable difference* (JND) concept from psychophysics [@weber-1834-d
 
 **Definition 1** (Distinguishability). *Two brands $A$ and $B$ are* distinguishable *if $d_{\mathcal{B}}(s_A, s_B) > \varepsilon$, where $\varepsilon$ is the perceptual threshold. They are* confusable *if $d_{\mathcal{B}}(s_A, s_B) \leq \varepsilon$.*
 
-The threshold $\varepsilon$ is a parameter, not a constant -- it depends on observer expertise, dimensional salience, comparison context, and engagement level. We compute bounds for $\varepsilon = .05$ (expert observers), $\varepsilon = .10$ (attentive observers), and $\varepsilon = .20$ (casual observers). Empirical calibration is a direction for future work.
+The threshold $\varepsilon$ is a parameter, not a constant — it depends on observer expertise, dimensional salience, comparison context, and engagement level. We compute bounds for $\varepsilon = .05$ (expert observers), $\varepsilon = .10$ (attentive observers), and $\varepsilon = .20$ (casual observers). Empirical calibration is a direction for future work.
 
 ### From Distinguishability to Sphere Packing
 
@@ -155,7 +151,7 @@ $$N \geq \frac{1}{\varepsilon^n}$$
 
 ### The Kissing Number Problem
 
-The kissing number $\tau(n)$ is known exactly for only a few dimensions [@pfender-2004-kissing-numbers-sphere]:
+The kissing number $\tau(n)$ is known exactly for only a few dimensions [@pfender-2004-kissing-numbers-sphere] (Table 3):
 
 **Table 3.** Exact Kissing Numbers in Selected Dimensions.
 
@@ -205,13 +201,13 @@ $$\left(\frac{1}{\varepsilon}\right)^8 \leq N \leq \left(\frac{2 + \varepsilon}{
 
 ### The $E_8$ Lattice and Its Properties
 
-The $E_8$ lattice is a remarkable mathematical object with connections to number theory, Lie algebras, string theory, and now -- we argue interpretively -- brand positioning theory. It can be defined as the set of points in $\mathbb{R}^8$ whose coordinates are either all integers or all half-integers (integers plus $1/2$), with the additional constraint that the coordinates sum to an even number.
+The $E_8$ lattice is a remarkable mathematical object with connections to number theory, Lie algebras, string theory, and now — we argue interpretively — brand positioning theory. It can be defined as the set of points in $\mathbb{R}^8$ whose coordinates are either all integers or all half-integers (integers plus $1/2$), with the additional constraint that the coordinates sum to an even number.
 
 Viazovska [-@viazovska-2017-sphere-packing-problem] proved that the $E_8$ lattice achieves the densest possible sphere packing in $\mathbb{R}^8$:
 
 $$\Delta_8 = \frac{\pi^4}{384} \approx .2537$$
 
-This means that in the densest possible arrangement, spheres cover approximately 25.37% of 8-dimensional space. The remaining 74.63% is interstitial space -- gaps between the spheres.
+This means that in the densest possible arrangement, spheres cover approximately 25.37% of 8-dimensional space. The remaining 74.63% is interstitial space — gaps between the spheres.
 
 The $E_8$ packing density provides a tighter estimate of positioning capacity than the simple volume bounds:
 
@@ -227,7 +223,7 @@ This estimate treats the unit ball as if it were a large region of an infinite l
 
 **Interpretive note.** The result that follows establishes a precise mathematical property of the $E_8$ lattice in eight dimensions. It is important to read the competitive interpretation as structurally motivated analogy, not empirical claim: real brand competition is asymmetric, category-bounded, and observer-dependent in ways that no lattice model captures. The 112/128 decomposition and the 240 kissing number describe the geometry of the optimal packing arrangement, not regularities observed in markets.
 
-**Proposition 2** (Local competition). *Each brand position in the $E_8$ lattice packing has exactly 240 nearest-neighbor positions -- the maximum possible in 8 dimensions. These 240 neighbors decompose into two structurally distinct classes:*
+**Proposition 2** (Local competition). *Each brand position in the $E_8$ lattice packing has exactly 240 nearest-neighbor positions — the maximum possible in 8 dimensions. These 240 neighbors decompose into two structurally distinct classes:*
 
 *(a) 112 "specialist" vectors of the form $(\pm 1, \pm 1, 0, 0, 0, 0, 0, 0)$ in all permutations of coordinates. These are concentrated on exactly 2 of the 8 dimensions.*
 
@@ -239,11 +235,11 @@ This estimate treats the unit ball as if it were a large region of an infinite l
 
 **Plain-English interpretation.** If a brand occupies a position in the maximally efficient packing of 8-dimensional perception space, it has at most 240 nearest competitors. These competitors come in two distinct types:
 
-- **112 specialist competitors** that match the focal brand on 6 of 8 dimensions but differ sharply on exactly 2 dimensions. In SBT terms, these are brands that share most of their spectral profile but diverge on a specific pair of dimensions -- for example, matching on narrative, ideological, experiential, social, cultural, and temporal dimensions but differing on semiotic and economic dimensions.
+- **112 specialist competitors** that match the focal brand on 6 of 8 dimensions but differ sharply on exactly 2 dimensions. In SBT terms, these are brands that share most of their spectral profile but diverge on a specific pair of dimensions — for example, matching on narrative, ideological, experiential, social, cultural, and temporal dimensions but differing on semiotic and economic dimensions.
 
-- **128 generalist competitors** that differ from the focal brand moderately on all 8 dimensions simultaneously. These are brands that occupy a slightly shifted position across the entire spectrum -- not dramatically different on any single dimension, but consistently different across all of them.
+- **128 generalist competitors** that differ from the focal brand moderately on all 8 dimensions simultaneously. These are brands that occupy a slightly shifted position across the entire spectrum — not dramatically different on any single dimension, but consistently different across all of them.
 
-**Interpretive caveat.** The 112/128 decomposition describes the geometry of the $E_8$ lattice, not an empirical observation about competitive dynamics. The specialist/generalist interpretation is structurally motivated but remains an analogy -- real competitive dynamics involve asymmetric substitution, category boundaries, and observer heterogeneity that no lattice model captures.
+**Interpretive caveat.** The 112/128 decomposition describes the geometry of the $E_8$ lattice, not an empirical observation about competitive dynamics. The specialist/generalist interpretation is structurally motivated but remains an analogy — real competitive dynamics involve asymmetric substitution, category boundaries, and observer heterogeneity that no lattice model captures.
 
 **Figure 1.** Decomposition of the 240 minimal vectors of $E_8$ into specialist and generalist shells.
 
@@ -264,7 +260,7 @@ graph TD
 
 ### Comparison Across Dimensions
 
-To appreciate the significance of eight dimensions, we compare positioning capacity across dimensionalities at a fixed perceptual threshold of $\varepsilon = .10$:
+To appreciate the significance of eight dimensions, we compare positioning capacity across dimensionalities at a fixed perceptual threshold of $\varepsilon = .10$ (Table 5):
 
 **Table 5.** Positioning Capacity by Dimensionality at $\varepsilon = .10$.
 
@@ -280,7 +276,7 @@ To appreciate the significance of eight dimensions, we compare positioning capac
 
 *Notes*: Capacity grows exponentially with dimension. Projection from 8D to 2D collapses capacity by a factor of $10^6$.
 
-The exponential growth in capacity with dimension explains a persistent puzzle in marketing practice: why do perceptual maps (typically 2D) consistently show markets as "crowded," while practitioners report finding viable new positions? The answer is that 2D maps represent a projection that collapses capacity from $10^8$ to $10^2$ -- a factor of one million. Positions that are well-separated in 8 dimensions become overlapping in 2 dimensions, exactly the spectral metamerism phenomenon formalized in Zharnikov [-@zharnikov-2026-spectral-metamerism-brand-perception-projection].
+The exponential growth in capacity with dimension explains a persistent puzzle in marketing practice: why do perceptual maps (typically 2D) consistently show markets as "crowded," while practitioners report finding viable new positions? The answer is that 2D maps represent a projection that collapses capacity from $10^8$ to $10^2$ — a factor of one million. Positions that are well-separated in 8 dimensions become overlapping in 2 dimensions, exactly the spectral metamerism phenomenon formalized in Zharnikov [-@zharnikov-2026-spectral-metamerism-brand-perception-projection].
 
 ## White Space and Market Saturation
 
@@ -308,9 +304,9 @@ $$f_{\text{white}} \approx 1 - n_b \cdot \varepsilon^8$$
 
 *Proof.* Each brand's perceptual neighborhood is a ball of radius $\varepsilon$ in the clr-transformed space. The volume of each neighborhood relative to the unit ball is $V_8(\varepsilon) / V_8(1) = \varepsilon^8$. For $n_b$ brands with non-overlapping neighborhoods, the covered fraction is $n_b \cdot \varepsilon^8$. At $\varepsilon = .10$, each neighborhood occupies a fraction $10^{-8}$ of the unit ball, so 100 brands cover $100 \times 10^{-8} = 10^{-6}$ of the space, and 10,000 brands cover $10^{-4}$. $\square$
 
-**Plain-English interpretation.** The 8-dimensional positioning space is almost entirely empty. Even with 10,000 brands -- far more than any single product category contains -- 99.99% of the space is unoccupied. This is a direct consequence of the curse of dimensionality: volumes in high dimensions are much larger than low-dimensional intuition suggests.
+**Plain-English interpretation.** The 8-dimensional positioning space is almost entirely empty. Even with 10,000 brands — far more than any single product category contains — 99.99% of the space is unoccupied. This is a direct consequence of the curse of dimensionality: volumes in high dimensions are much larger than low-dimensional intuition suggests.
 
-*Falsification*: Proposition 3 is falsified if the actual covered fraction of the 8-dimensional brand space, measured via volume integration over observed brand positions, exceeds $n_b \cdot \varepsilon^8$ by a margin inconsistent with the non-overlap assumption -- i.e., if brands cluster so densely that the approximation $f_\text{white} \approx 1 - n_b \cdot \varepsilon^8$ systematically overestimates white space.
+*Falsification*: Proposition 3 is falsified if the actual covered fraction of the 8-dimensional brand space, measured via volume integration over observed brand positions, exceeds $n_b \cdot \varepsilon^8$ by a margin inconsistent with the non-overlap assumption — i.e., if brands cluster so densely that the approximation $f_\text{white} \approx 1 - n_b \cdot \varepsilon^8$ systematically overestimates white space.
 
 ### Why White Space Identification Is Harder Than It Seems
 
@@ -318,9 +314,9 @@ The abundance of white space might seem to make positioning easy: just pick an u
 
 **The corner effect.** The ratio $V_8(1) / 2^8 = 4.059 / 256 \approx .016$. Only 1.6% of the hypercube's volume lies within the inscribed ball; the remaining 98.4% occupies "corners" that are likely outside the feasible brand space.
 
-**Concentration near boundaries.** As Zharnikov [-@zharnikov-2026-cohort-boundaries-high-dimensional-perception] showed, high-dimensional distributions concentrate near boundaries. A uniformly random point in the 8-ball has expected distance $\sqrt{8/10} \approx .89$ from the origin -- the "interior" is geometrically smaller than it appears.
+**Concentration near boundaries.** As Zharnikov [-@zharnikov-2026-cohort-boundaries-high-dimensional-perception] showed, high-dimensional distributions concentrate near boundaries. A uniformly random point in the 8-ball has expected distance $\sqrt{8/10} \approx .89$ from the origin — the "interior" is geometrically smaller than it appears.
 
-**Projection collapse.** White space that exists in 8 dimensions may be invisible in 2D projections -- the positioning analog of the metamerism result in Zharnikov [-@zharnikov-2026-spectral-metamerism-brand-perception-projection].
+**Projection collapse.** White space that exists in 8 dimensions may be invisible in 2D projections — the positioning analog of the metamerism result in Zharnikov [-@zharnikov-2026-spectral-metamerism-brand-perception-projection].
 
 ### Category Saturation
 
@@ -345,9 +341,9 @@ $$n_b \approx \left(\frac{1}{\varepsilon}\right)^{d_{\text{eff}}}$$
 
 **Plain-English interpretation.** Saturation depends on effective dimensionality, not raw brand count. A commodity market ($d_{\text{eff}} \approx 2$) saturates at approximately 100 brands. A luxury market ($d_{\text{eff}} \approx 8$) can accommodate 100 million distinguishable positions. The strategic implication is that brands should seek to activate independent dimensions, not merely more dimensions.
 
-*Falsification*: Proposition 4 is falsified if a product category's observed brand count consistently and substantially exceeds $(1/\varepsilon)^{d_\text{eff}}$ (estimated via PCA on observer-perceived brand profiles) without measurable perceptual overlap -- indicating that the effective dimensionality estimate was too low, not that capacity is unbounded.
+*Falsification*: Proposition 4 is falsified if a product category's observed brand count consistently and substantially exceeds $(1/\varepsilon)^{d_\text{eff}}$ (estimated via PCA on observer-perceived brand profiles) without measurable perceptual overlap — indicating that the effective dimensionality estimate was too low, not that capacity is unbounded.
 
-The category examples in the table above are illustrative, not empirical. Determining the effective dimensionality of a specific product category requires empirical measurement -- for example, via PCA on observer-perceived brand profiles or analysis of which SBT dimensions drive differentiation in that category. This is a direction for future empirical work.
+The category examples in the table above are illustrative, not empirical. Determining the effective dimensionality of a specific product category requires empirical measurement — for example, via PCA on observer-perceived brand profiles or analysis of which SBT dimensions drive differentiation in that category. This is a direction for future empirical work.
 
 ## Effective Dimensionality and Correlation
 
@@ -384,25 +380,25 @@ xychart-beta
     line [8, 5, 3, 3, 2, 1]
 ```
 
-**Figure 2.** Log-base-10 positioning capacity as a function of average pairwise correlation $\rho$ among SBT dimensions ($n = 8$, $\varepsilon = .10$). Plotted values are $\log_{10}((1/\varepsilon)^{d_\text{eff}})$ rounded to the nearest integer; exact values from Table 8 are 8.00, 4.71, 3.33, 2.58, 1.78, 1.36. The curve is steepest in the low-correlation regime ($\rho \in [.0, .2]$): even modest positive correlation collapses capacity by three or more orders of magnitude before $\rho = .2$ is reached. Proposition 5 result.
+Figure 2 plots log-base-10 positioning capacity as a function of average pairwise correlation $\rho$ among SBT dimensions ($n = 8$, $\varepsilon = .10$). Plotted values are $\log_{10}((1/\varepsilon)^{d_\text{eff}})$ rounded to the nearest integer; exact values from Table 8 are 8.00, 4.71, 3.33, 2.58, 1.78, 1.36. The curve is steepest in the low-correlation regime ($\rho \in [.0, .2]$): even modest positive correlation collapses capacity by three or more orders of magnitude before $\rho = .2$ is reached. Proposition 5 result.
 
 *Notes*: Mermaid rendering of the same data shown in Table 8. The vertical axis is $\log_{10}$ of capacity; the horizontal axis is the average pairwise correlation $\rho$ (non-uniformly spaced sample points). Capacity contracts by approximately five orders of magnitude as $\rho$ moves from $.0$ to $.7$, reflecting the collapse of $d_{\text{eff}} = \operatorname{tr}/\lambda_{\max}$ from 8.00 to 1.36 over the same interval. The curve is steepest in the low-correlation regime ($\rho \in [.0, .2]$): a small positive correlation already costs more than three orders of magnitude of capacity.
 
 *Proof.* The effective dimensionality follows from the eigenvalue structure of a correlation matrix with uniform off-diagonal entries $\rho$. Such a matrix has one dominant eigenvalue $\lambda_1 = 1 + (n-1)\rho$ and $(n-1)$ equal eigenvalues $\lambda_k = 1 - \rho$ for $k = 2, \ldots, n$, with total variance $\sum_k \lambda_k = \operatorname{tr} = n$. We measure effective dimensionality as the ratio of total variance to the variance carried by the dominant mode, $d_{\text{eff}} = \operatorname{tr} / \lambda_{\max} = n / (1 + (n-1)\rho)$, which equals $n$ at $\rho = 0$ and contracts toward 1 as $\rho \to 1$. (This trace-to-dominant-eigenvalue ratio is a deliberately conservative effective-dimensionality measure; the participation ratio $(\sum_k \lambda_k)^2 / \sum_k \lambda_k^2$ is an alternative that yields larger values and hence a more gradual capacity decline.) Capacity at reduced dimensionality follows from Proposition 1 applied with $n = d_{\text{eff}}$ (rounding to the nearest integer for the lower-bound computation). $\square$
 
-*Falsification*: Proposition 5 is falsified if an empirically estimated correlation matrix of SBT dimension scores produces an effective dimensionality ($\operatorname{tr}/\lambda_{\max}$) that does not predict observed positioning capacity (measured by independent brand counts and pairwise distinguishability) at the rate $(1/\varepsilon)^{d_\text{eff}}$ -- or if the equicorrelation assumption systematically misrepresents the eigenvalue structure of real brand-perception data.
+*Falsification*: Proposition 5 is falsified if an empirically estimated correlation matrix of SBT dimension scores produces an effective dimensionality ($\operatorname{tr}/\lambda_{\max}$) that does not predict observed positioning capacity (measured by independent brand counts and pairwise distinguishability) at the rate $(1/\varepsilon)^{d_\text{eff}}$ — or if the equicorrelation assumption systematically misrepresents the eigenvalue structure of real brand-perception data.
 
 ### Implications for SBT
 
 The capacity collapse under correlation has profound implications for brand strategy:
 
-**At $\rho = 0$** (fully independent dimensions): The eight SBT dimensions provide maximum differentiation power. Capacity is $10^8$, and white space is abundant. This is the theoretical ideal -- a brand that manages to differentiate on all eight dimensions simultaneously exploits the full positioning capacity.
+**At $\rho = 0$** (fully independent dimensions): The eight SBT dimensions provide maximum differentiation power. Capacity is $10^8$, and white space is abundant. This is the theoretical ideal — a brand that manages to differentiate on all eight dimensions simultaneously exploits the full positioning capacity.
 
-**At $\rho = .3$** (moderate correlation): Effective dimensionality drops to approximately 2.6, and capacity collapses from $10^8$ to approximately $10^3$ -- a reduction by a factor of 100,000. This estimate assumes uniform inter-dimension correlation; for non-uniform correlation matrices with the same average $\rho$, $d_{\text{eff}}$ may be substantially higher or lower depending on whether the dominant eigenvalue absorbs most variance or variance is distributed across several modes. If SBT dimensions are moderately correlated in a given category (e.g., luxury goods where semiotic, cultural, and temporal signals tend to be high together), the positioning space is much smaller than the nominal 8-dimensional capacity suggests.
+**At $\rho = .3$** (moderate correlation): Effective dimensionality drops to approximately 2.6, and capacity collapses from $10^8$ to approximately $10^3$ — a reduction by a factor of 100,000. This estimate assumes uniform inter-dimension correlation; for non-uniform correlation matrices with the same average $\rho$, $d_{\text{eff}}$ may be substantially higher or lower depending on whether the dominant eigenvalue absorbs most variance or variance is distributed across several modes. If SBT dimensions are moderately correlated in a given category (e.g., luxury goods where semiotic, cultural, and temporal signals tend to be high together), the positioning space is much smaller than the nominal 8-dimensional capacity suggests.
 
-**At $\rho = .7$** (high correlation): The eight dimensions effectively collapse to approximately 1.4, and the market capacity is approximately 10 -- barely a handful of distinguishable positions. This represents a category where nearly all dimensions co-vary, leaving little room for differentiation.
+**At $\rho = .7$** (high correlation): The eight dimensions effectively collapse to approximately 1.4, and the market capacity is approximately 10 — barely a handful of distinguishable positions. This represents a category where nearly all dimensions co-vary, leaving little room for differentiation.
 
-The implication is that **a brand's strategic task is not just to occupy a position but to de-correlate its dimensional profile.** A brand that achieves a profile where its eight dimension scores are relatively independent of each other -- high on some, moderate on others, low on still others, in a pattern that does not simply mirror the category's typical correlation structure -- gains disproportionate positioning advantage because it exploits more of the available dimensionality.
+The implication is that **a brand's strategic task is not just to occupy a position but to de-correlate its dimensional profile.** A brand that achieves a profile where its eight dimension scores are relatively independent of each other — high on some, moderate on others, low on still others, in a pattern that does not simply mirror the category's typical correlation structure — gains disproportionate positioning advantage because it exploits more of the available dimensionality.
 
 This connects to SBT's concept of coherence types. The $A+$ (ecosystem) coherence type, which requires strong performance across all dimensions, is rare precisely because it requires occupying a position in a high-dimensional region where most brands cluster. The $B+$ (identity) coherence type, which tolerates dimensional trade-offs, may actually be *strategically advantageous* for positioning because it creates profiles that are more dimensionally distinctive. These dimensional-correlation effects are formally connected to coherence-resilience ordering in Zharnikov [-@zharnikov-2026-coherence-type-as-crisis-predictor].
 
@@ -434,21 +430,21 @@ The specialist-to-generalist ratio is $112:128 \approx 47\%:53\%$, suggesting th
 
 ### Luxury Fashion: High Effective Dimensionality
 
-Luxury fashion brands (Hermès, Chanel, Louis Vuitton, Gucci, Prada) arguably activate all eight SBT dimensions -- from distinctive visual identity (semiotic) through heritage depth (temporal). If these dimensions are moderately independent ($\rho \approx .2$), effective dimensionality is approximately 3.3, yielding a category capacity of roughly $10^3$ -- about 1,000 distinguishable luxury positions. This is consistent with the global luxury market supporting several hundred distinct houses without apparent saturation.
+Luxury fashion brands (Hermès, Chanel, Louis Vuitton, Gucci, Prada) arguably activate all eight SBT dimensions — from distinctive visual identity (semiotic) through heritage depth (temporal). If these dimensions are moderately independent ($\rho \approx .2$), effective dimensionality is approximately 3.3, yielding a category capacity of roughly $10^3$ — about 1,000 distinguishable luxury positions. This is consistent with the global luxury market supporting several hundred distinct houses without apparent saturation.
 
-If the luxury category's dimensions are more tightly correlated ($\rho \approx .5$, reflecting a "luxury halo" where positive signals co-occur), effective dimensionality drops to 1.8 and capacity drops to approximately 100 -- suggesting approaching saturation, a claim some industry analysts have made [@kapferer-2012-luxury-strategy-break].
+If the luxury category's dimensions are more tightly correlated ($\rho \approx .5$, reflecting a "luxury halo" where positive signals co-occur), effective dimensionality drops to 1.8 and capacity drops to approximately 100 — suggesting approaching saturation, a claim some industry analysts have made [@kapferer-2012-luxury-strategy-break].
 
 ### Commodity Goods: Low Effective Dimensionality
 
-At the other extreme, commodity goods (bottled water, paper towels, basic canned goods) may activate only 2--3 SBT dimensions meaningfully -- primarily economic (price) and experiential (basic product quality), with limited differentiation on semiotic, narrative, ideological, social, cultural, or temporal dimensions. With $d_{\text{eff}} \approx 2$, the category capacity is approximately $10^2 = 100$, which saturates quickly. This is consistent with the observation that commodity categories tend to consolidate around a small number of brands, with generic/store brands capturing the undifferentiated middle.
+At the other extreme, commodity goods (bottled water, paper towels, basic canned goods) may activate only 2--3 SBT dimensions meaningfully — primarily economic (price) and experiential (basic product quality), with limited differentiation on semiotic, narrative, ideological, social, cultural, or temporal dimensions. With $d_{\text{eff}} \approx 2$, the category capacity is approximately $10^2 = 100$, which saturates quickly. This is consistent with the observation that commodity categories tend to consolidate around a small number of brands, with generic/store brands capturing the undifferentiated middle.
 
 ### Long-Tail Market Fragmentation
 
-The capacity bounds help explain the long-tail phenomenon in digital markets. When distribution costs approach zero, the vast white space (99.99% unoccupied at 10,000 brands) becomes accessible to niche brands. Long-tail brands succeed by occupying positions in high-dimensional regions that established brands ignore -- differentiating on dimension combinations (e.g., ideological + experiential + social) that mass-market competitors may not recognize as competitive axes.
+The capacity bounds help explain the long-tail phenomenon in digital markets. When distribution costs approach zero, the vast white space (99.99% unoccupied at 10,000 brands) becomes accessible to niche brands. Long-tail brands succeed by occupying positions in high-dimensional regions that established brands ignore — differentiating on dimension combinations (e.g., ideological + experiential + social) that mass-market competitors may not recognize as competitive axes.
 
 ### Why "White Space" Identification Is Harder Than Marketers Think
 
-Despite the mathematical abundance of white space, practical identification encounters three geometric obstacles: (1) **projection blindness** -- most tools operate in 2--3 dimensions, collapsing capacity from $10^8$ to $10^2$; (2) **feasibility constraints** -- not all positions in $\mathbb{R}^8_+$ are achievable, given category norms, resources, and observer expectations; and (3) **observer heterogeneity** -- white space for one perceptual cohort may be occupied for another, because different observer weight profiles yield different perceptual distances (Zharnikov [-@zharnikov-2026-brand-space-geometry-formal-metric; -@zharnikov-2026-cohort-boundaries-high-dimensional-perception]). These obstacles explain the gap between mathematical abundance and practical difficulty without invalidating the capacity bounds.
+Despite the mathematical abundance of white space, practical identification encounters three geometric obstacles: (1) **projection blindness** — most tools operate in 2--3 dimensions, collapsing capacity from $10^8$ to $10^2$; (2) **feasibility constraints** — not all positions in $\mathbb{R}^8_+$ are achievable, given category norms, resources, and observer expectations; and (3) **observer heterogeneity** — white space for one perceptual cohort may be occupied for another, because different observer weight profiles yield different perceptual distances (Zharnikov [-@zharnikov-2026-brand-space-geometry-formal-metric; -@zharnikov-2026-cohort-boundaries-high-dimensional-perception]). These obstacles explain the gap between mathematical abundance and practical difficulty without invalidating the capacity bounds.
 
 ## Limitations and Caveats
 
@@ -473,7 +469,7 @@ The correct interpretation is: $E_8$ provides an *upper bound on structural orde
 
 ### Observer Dependence
 
-The entire analysis assumes a single, fixed metric -- the Aitchison metric on brand emission profiles. But SBT's core insight is that brand distance is observer-dependent [@zharnikov-2026-brand-space-geometry-formal-metric]: the observer-weighted metric $d_k(A, B) = \|W_k \circ (\text{clr}(s_A) - \text{clr}(s_B))\|_2$, where $W_k$ is observer $k$'s weight vector, can make the same brand pair appear close or far depending on the observer.
+The entire analysis assumes a single, fixed metric — the Aitchison metric on brand emission profiles. But SBT's core insight is that brand distance is observer-dependent [@zharnikov-2026-brand-space-geometry-formal-metric]: the observer-weighted metric $d_k(A, B) = \|W_k \circ (\text{clr}(s_A) - \text{clr}(s_B))\|_2$, where $W_k$ is observer $k$'s weight vector, can make the same brand pair appear close or far depending on the observer.
 
 In the observer-dependent metric, the "spheres" of the packing problem are no longer spheres but observer-dependent ellipsoids. The positioning capacity is therefore also observer-dependent: a market that appears saturated to one perceptual cohort may have abundant white space for another. A full treatment of observer-dependent packing bounds would require integrating over the observer distribution on $\Delta^7$, which is a direction for future work.
 
@@ -503,7 +499,7 @@ Zharnikov [-@zharnikov-2026-cohort-boundaries-high-dimensional-perception] showe
 
 ### Tension with Empirical Brand Growth Research
 
-The capacity analysis above establishes a theoretical upper bound on positioning diversity. A productive tension arises from empirical work by Sharp [-@sharp-2010-how-brands-grow], whose analysis of market data shows that most real markets converge on a small number of highly salient brands regardless of the theoretical positioning space available. Sharp argues that mental availability and physical availability -- not differentiated positioning -- drive brand growth, and that brand differentiation strategies are routinely overstated as competitive advantages. This directly challenges the prescriptive implication that brands should "exploit 8-dimensional white space."
+The capacity analysis above establishes a theoretical upper bound on positioning diversity. A productive tension arises from empirical work by Sharp [-@sharp-2010-how-brands-grow], whose analysis of market data shows that most real markets converge on a small number of highly salient brands regardless of the theoretical positioning space available. Sharp argues that mental availability and physical availability — not differentiated positioning — drive brand growth, and that brand differentiation strategies are routinely overstated as competitive advantages. This directly challenges the prescriptive implication that brands should "exploit 8-dimensional white space."
 
 The two frameworks are asking different questions, and the distinction is essential. This paper asks: *how many brands CAN a market hold?* Sharp asks: *how many brands DO consumers consider?* The theoretical capacity of $10^8$ positions is a mathematical ceiling; Sharp's findings establish that the practical consideration set is bounded at far fewer alternatives, because most consumers do not perceive or value dimensional differentiation across all eight axes in any given product category. R4's geometric capacity predicts market structure when dimensional differentiation is salient to the relevant observer cohorts (low $\rho$); Sharp's mental availability dominates when brand differentiation is cognitively discounted (high $\rho \to d_{\text{eff}} \approx 1$--$2$). The two frameworks are boundary conditions on each other, not contradictions. The gap between geometric capacity and practical salience represents an opportunity cost that future empirical work should quantify.
 
@@ -513,9 +509,9 @@ Natural extensions include: (1) **empirical calibration of $\varepsilon$** via J
 
 ### Empirical Test: Competitive Interference in LLM Perception Space
 
-The sphere packing model assumes that brands occupy fixed positions in perception space regardless of competitive context. If nearby competitors shift a brand's perceived profile -- through contrast effects [@simonson-1992-choice-context-tradeoff] or assimilation [@herr-1986-consequences-priming-judgment] -- then positions would be context-dependent, and the fixed-geometry assumptions underlying Propositions 1--5 would require qualification. Experiment C tests this assumption directly.
+The sphere packing model assumes that brands occupy fixed positions in perception space regardless of competitive context. If nearby competitors shift a brand's perceived profile — through contrast effects [@simonson-1992-choice-context-tradeoff] or assimilation [@herr-1986-consequences-priming-judgment] — then positions would be context-dependent, and the fixed-geometry assumptions underlying Propositions 1--5 would require qualification. Experiment C tests this assumption directly.
 
-**Design.** Five focal brands (Hermès, IKEA, Patagonia, Erewhon, Tesla) were each paired with three competitor types spanning a distance gradient: *direct* competitors (Hermès/Louis Vuitton, IKEA/H&M Home, Patagonia/Arc'teryx, Erewhon/Whole Foods, Tesla/Rivian), *adjacent* competitors (Hermès/Rolex, IKEA/Muji, Patagonia/REI, Erewhon/Blue Bottle, Tesla/Apple), and *distant* competitors (Hermès/Walmart, IKEA/Ferrari, Patagonia/Shein, Erewhon/McDonald's, Tesla/Toyota). Four conditions were administered: solo (brand rated alone), self-comparison (brand rated for "distinctiveness vs. category peers" -- a prompt-format baseline), paired (brand rated alongside a named competitor), and context (competitor mentioned as market context). Five models (Claude Haiku 4.5, GPT-4o-mini, Gemini 2.5 Flash, DeepSeek V3, Grok 4.1 Fast) each completed one replication per condition-pair combination, yielding 250 calls with 250 valid responses (100% completion).
+**Design.** Five focal brands (Hermès, IKEA, Patagonia, Erewhon, Tesla) were each paired with three competitor types spanning a distance gradient: *direct* competitors (Hermès/Louis Vuitton, IKEA/H&M Home, Patagonia/Arc'teryx, Erewhon/Whole Foods, Tesla/Rivian), *adjacent* competitors (Hermès/Rolex, IKEA/Muji, Patagonia/REI, Erewhon/Blue Bottle, Tesla/Apple), and *distant* competitors (Hermès/Walmart, IKEA/Ferrari, Patagonia/Shein, Erewhon/McDonald's, Tesla/Toyota). Four conditions were administered: solo (brand rated alone), self-comparison (brand rated for "distinctiveness vs. category peers" — a prompt-format baseline), paired (brand rated alongside a named competitor), and context (competitor mentioned as market context). Five models (Claude Haiku 4.5, GPT-4o-mini, Gemini 2.5 Flash, DeepSeek V3, Grok 4.1 Fast) each completed one replication per condition-pair combination, yielding 250 calls with 250 valid responses (100% completion).
 
 **Results.** All three hypotheses returned null. H1 (profiles shift when a competitor is present): a binomial sign test on 8 per-dimension comparisons found 0 of 8 in the predicted direction (p = 1.00, one-sided); Cohen's d ranged from -.187 to +.169, all trivial. H2 (shift magnitude increases with competitor distance): F = .623, p = .538, eta-sq = .008. H3 (direct competitors produce contrast while distant competitors produce assimilation): t = -.502, p = .616, d = -.029. The self-comparison control confirmed that prompt-format differences alone are negligible (Euclidean shift = 2.10, no dimension significant).
 
@@ -529,17 +525,17 @@ This paper has established formal bounds on the number of distinguishable brand 
 
 The central results are:
 
-1. **Positioning capacity grows exponentially with dimension** (Proposition 1). At perceptual threshold $\varepsilon = .10$, the 8-dimensional space admits at least $10^8$ distinguishable positions -- six orders of magnitude more than a 2-dimensional perceptual map. The persistent perception that markets are "crowded" often reflects projection to an inadequately low-dimensional representation, not genuine scarcity of positions.
+1. **Positioning capacity grows exponentially with dimension** (Proposition 1). At perceptual threshold $\varepsilon = .10$, the 8-dimensional space admits at least $10^8$ distinguishable positions — six orders of magnitude more than a 2-dimensional perceptual map. The persistent perception that markets are "crowded" often reflects projection to an inadequately low-dimensional representation, not genuine scarcity of positions.
 
 2. **Local competition is bounded by the kissing number** (Proposition 2). Each position has at most 240 nearest competitors in the optimal $E_8$ packing, decomposing into 112 specialist (2-dimension) and 128 generalist (8-dimension) competitive vectors. This provides a geometric framework for analyzing competitive proximity, with the caveat that it describes mathematical structure, not empirical regularity.
 
-3. **White space is overwhelmingly abundant** (Proposition 3). Even with 10,000 brands, 99.99% of the positioning space is unoccupied. The practical difficulty of identifying white space is not a scarcity problem but a *perception* problem -- the available dimensions are not fully exploited.
+3. **White space is overwhelmingly abundant** (Proposition 3). Even with 10,000 brands, 99.99% of the positioning space is unoccupied. The practical difficulty of identifying white space is not a scarcity problem but a *perception* problem — the available dimensions are not fully exploited.
 
 4. **Category saturation depends on effective dimensionality** (Proposition 4). A commodity market with $d_{\text{eff}} \approx 2$ saturates at approximately 100 brands. A luxury market with $d_{\text{eff}} \approx 8$ can accommodate 100 million. The strategic implication: brands should seek to activate independent dimensions, not just more dimensions.
 
-5. **Dimensional correlation is the critical variable** (Proposition 5). At average correlation $\rho = .3$, capacity collapses from $10^8$ to $10^3$. A brand's most valuable strategic asset may be its ability to de-correlate its dimensional profile -- to achieve a pattern of strengths and weaknesses that does not simply mirror the category's correlation structure.
+5. **Dimensional correlation is the critical variable** (Proposition 5). At average correlation $\rho = .3$, capacity collapses from $10^8$ to $10^3$. A brand's most valuable strategic asset may be its ability to de-correlate its dimensional profile — to achieve a pattern of strengths and weaknesses that does not simply mirror the category's correlation structure.
 
-These results advance the mathematical foundations of Spectral Brand Theory from a framework with a formal metric [@zharnikov-2026-brand-space-geometry-formal-metric] to one with formal capacity bounds. The analysis is explicitly honest about its limitations: the $E_8$ connection is interpretive, not literal; real brand space is anisotropic and noisy; observer dependence complicates any single capacity number; and empirical calibration of the perceptual threshold remains to be done. The strength of the contribution lies not in claiming that markets are $E_8$ lattices but in providing the first formal answer -- grounded in proved mathematical results -- to the question with which we began: *how many brands can a market hold?*
+These results advance the mathematical foundations of Spectral Brand Theory from a framework with a formal metric [@zharnikov-2026-brand-space-geometry-formal-metric] to one with formal capacity bounds. The analysis is explicitly honest about its limitations: the $E_8$ connection is interpretive, not literal; real brand space is anisotropic and noisy; observer dependence complicates any single capacity number; and empirical calibration of the perceptual threshold remains to be done. The strength of the contribution lies not in claiming that markets are $E_8$ lattices but in providing the first formal answer — grounded in proved mathematical results — to the question with which we began: *how many brands can a market hold?*
 
 The answer, it turns out, depends less on the market and more on how many dimensions of perception are activated and how independently they vary. In the full 8-dimensional SBT space with independent dimensions, the answer is: far more than currently exist.
 
@@ -577,7 +573,7 @@ The $E_8$-based capacity estimate (using the exact packing density) for $\vareps
 
 ### *Companion Computation Script*
 
-All numerical figures in this paper -- the unit-ball volumes of Table 2, the capacity bounds of Table 4, the white-space fractions of Table 6, the saturation thresholds of Table 7, the effective-dimensionality and capacity-collapse values of Table 8, the appendix tables A1 and B1, and the kissing-shell decomposition of Figure 1 -- are reproducible from a single companion script in the public mirror:
+All numerical figures in this paper — the unit-ball volumes of Table 2, the capacity bounds of Table 4, the white-space fractions of Table 6, the saturation thresholds of Table 7, the effective-dimensionality and capacity-collapse values of Table 8, the appendix tables A1 and B1, and the kissing-shell decomposition of Figure 1 — are reproducible from a single companion script in the public mirror:
 
 `https://github.com/spectralbranding/sbt-papers/tree/main/r4-sphere-packing/code/r4_capacity_bounds.py`
 
@@ -607,6 +603,6 @@ Table B1: Dimensional Capacity, Optimal Packings, and Kissing Numbers at $\varep
 
 *Notes*: FCC = face-centered cubic; HCP = hexagonal close packing. Optimality proved only in dimensions 1, 2, 3, 8, and 24.
 
-The jump in kissing number from 72 ($n = 6$) to 240 ($n = 8$) is exceptionally large -- a factor of 3.33 for adding just 2 dimensions. This reflects the special algebraic structure of $E_8$ and is not characteristic of generic dimensional increases.
+The jump in kissing number from 72 ($n = 6$) to 240 ($n = 8$) is exceptionally large — a factor of 3.33 for adding just 2 dimensions. This reflects the special algebraic structure of $E_8$ and is not characteristic of generic dimensional increases.
 
 *This paper is part of the Spectral Brand Theory research program. For the full atlas of 20+ interconnected papers, see [spectralbranding.com/atlas](https://spectralbranding.com/atlas).*

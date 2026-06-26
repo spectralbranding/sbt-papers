@@ -16,17 +16,13 @@ Brand managers allocate resources across perceptual dimensions — design, story
 
 ---
 
-**JEL Classification**: M31, C61, L26, D21
-
-**MSC Classification**: 90C25, 91B42, 62P20
-
-Every brand investment decision implicitly answers a question: which dimensions of brand perception should receive the next unit of operational resource? A luxury house investing in heritage storytelling allocates to the temporal dimension. A mass retailer cutting prices allocates to the economic dimension. A startup crafting a founding mythology allocates to the narrative dimension. Yet the basis for these allocation decisions is almost never the measured perceptual weights of the target customer cohort. Instead, allocation follows founder intuition, competitive imitation, or categorical convention -- mechanisms that have no formal connection to what customers actually perceive and value.
+Every brand investment decision implicitly answers a question: which dimensions of brand perception should receive the next unit of operational resource? A luxury house investing in heritage storytelling allocates to the temporal dimension. A mass retailer cutting prices allocates to the economic dimension. A startup crafting a founding mythology allocates to the narrative dimension. Yet the basis for these allocation decisions is almost never the measured perceptual weights of the target customer cohort. Instead, allocation follows founder intuition, competitive imitation, or categorical convention — mechanisms that have no formal connection to what customers actually perceive and value.
 
 The disconnect is not merely a practical oversight. It reflects a structural gap in brand theory: no existing framework connects multi-dimensional brand perception measurement to operational resource allocation. Customer-based brand equity (CBBE) frameworks provide rich diagnostic tools for this task. Keller's [-@keller-1993-conceptualizing-measuring-managing] CBBE pyramid maps brand knowledge into performance, imagery, judgments, feelings, and resonance — a theoretically grounded decomposition of how consumers form associations. Aaker's [-@aaker-1991-managing-brand-equity] five-asset model identifies the brand equity dimensions a manager should monitor. Kapferer's [-@kapferer-2008-new-strategic-brand, 4th ed.] identity prism supplies a systematic vocabulary for brand positioning across six facets. The premise that brand perception decomposes into a stable dimensional structure — without which a per-dimension allocation problem cannot be posed — traces to Aaker [-@aaker-1997-dimensions-brand-personality], whose factor-analytic derivation of five brand-personality dimensions established the empirical case for treating brand perception as a measurable multi-dimensional object; the spectral allocation argument reformulates that dimensional premise as an eight-axis optimization. These frameworks excel at measuring and diagnosing what a brand stands for in consumers' minds. What they do not supply is a prescriptive optimization layer: once consumer salience weights are known, they do not specify how a manager should distribute scarce operational resources across the identified dimensions. Geometric approaches to brand perception space are surveyed in Zharnikov [-@zharnikov-2026-geometric-approaches-brand-perception-critical]. The marketing response tradition [@hanssens-2001-market-response-models] provides econometric tools for estimating response functions but operates on aggregate spend data rather than the perceptual dimensions that drive consumer evaluation. The gap persists because these frameworks lack a formal metric space in which "distance between brand position and customer preference" is a computable quantity.
 
-This paper builds on Spectral Brand Theory [@zharnikov-2026-spectral-brand-theory-computational-framework], which supplies the formal geometric apparatus for the model developed here. SBT models a brand as an emitter of signals across eight typed dimensions -- semiotic, narrative, ideological, experiential, social, economic, cultural, and temporal -- perceived by observers with heterogeneous weight profiles on the probability simplex $\Delta^7$. The companion mathematical papers establish a formal metric [@zharnikov-2026-brand-space-geometry-formal-metric], prove that scalar compression of multi-dimensional profiles destroys information [@zharnikov-2026-spectral-metamerism-brand-perception-projection], bound cohort separability in high dimensions [@zharnikov-2026-cohort-boundaries-high-dimensional-perception], derive market capacity limits [@zharnikov-2026-many-brands-can-market-hold], prove that exhaustive organizational specification is geometrically impossible [@zharnikov-2026-specification-impossibility-organizational-design-high], and model the non-ergodic dynamics of perception evolution [@zharnikov-2026-non-ergodic-brand-perception-diffusion]. The Organizational Schema Theory (OST; Zharnikov [-@zharnikov-2026-organizational-schema-theory-test-driven]) — a six-level test-driven design cascade from customer experience contracts (L0) to sourcing specifications (L5) — operationalizes SBT at the organizational level.
+This paper builds on Spectral Brand Theory [@zharnikov-2026-spectral-brand-theory-computational-framework], which supplies the formal geometric apparatus for the model developed here. SBT models a brand as an emitter of signals across eight typed dimensions — semiotic, narrative, ideological, experiential, social, economic, cultural, and temporal — perceived by observers with heterogeneous weight profiles on the probability simplex $\Delta^7$. The companion mathematical papers establish a formal metric [@zharnikov-2026-brand-space-geometry-formal-metric], prove that scalar compression of multi-dimensional profiles destroys information [@zharnikov-2026-spectral-metamerism-brand-perception-projection], bound cohort separability in high dimensions [@zharnikov-2026-cohort-boundaries-high-dimensional-perception], derive market capacity limits [@zharnikov-2026-many-brands-can-market-hold], prove that exhaustive organizational specification is geometrically impossible [@zharnikov-2026-specification-impossibility-organizational-design-high], and model the non-ergodic dynamics of perception evolution [@zharnikov-2026-non-ergodic-brand-perception-diffusion]. The Organizational Schema Theory (OST; Zharnikov [-@zharnikov-2026-organizational-schema-theory-test-driven]) — a six-level test-driven design cascade from customer experience contracts (L0) to sourcing specifications (L5) — operationalizes SBT at the organizational level.
 
-This paper builds the economic bridge. The resource allocation problem is formalised as follows: given a measured cohort weight profile $w(c) \in \Delta^7$, what signal portfolio $s^* \in \mathbb{R}^8_+$ maximises the cohort's perceived value net of operational cost? The formulation reveals a structural failure mode termed the *alignment gap* -- the value loss that occurs when the signal portfolio is optimised for the founder's spectral profile rather than the cohort's. The alignment gap is not a cognitive bias in the psychological sense; it is a geometric property of the divergence between two points on the probability simplex. A founder with high experiential sensitivity and zero economic sensitivity will systematically over-invest in product experience and under-invest in pricing -- not because they are irrational, but because they are optimizing the correct objective function with the wrong weights.
+This paper builds the economic bridge. The resource allocation problem is formalised as follows: given a measured cohort weight profile $w(c) \in \Delta^7$, what signal portfolio $s^* \in \mathbb{R}^8_+$ maximises the cohort's perceived value net of operational cost? The formulation reveals a structural failure mode termed the *alignment gap* — the value loss that occurs when the signal portfolio is optimised for the founder's spectral profile rather than the cohort's. The alignment gap is not a cognitive bias in the psychological sense; it is a geometric property of the divergence between two points on the probability simplex. A founder with high experiential sensitivity and zero economic sensitivity will systematically over-invest in product experience and under-invest in pricing — not because they are irrational, but because they are optimizing the correct objective function with the wrong weights.
 
 The alignment gap formalises what practitioners call "product-market fit failure." The term has remained informal because no framework provided a metric for the distance between "what the founder values" and "what the customer values." SBT's Fisher-Rao metric on $\Delta^7$ [@zharnikov-2026-brand-space-geometry-formal-metric] provides exactly this. Theorem 2 establishes that the economic loss from founder weight projection is bounded below by this metric distance, giving the alignment gap a geometric interpretation: it is the cost of being in the wrong place on the probability simplex.
 
@@ -34,7 +30,7 @@ The alignment gap has a natural portfolio-theoretic interpretation. In Markowitz
 
 The paper makes five contributions. First, the optimal dimensional allocation for a single cohort is derived, showing that investment should be proportional to cohort weights scaled by inverse marginal cost (Theorem 1). This result generalizes the Dorfman-Steiner [-@dorfman-1954-optimal-advertising-optimal] condition — optimal advertising/quality ratio equals the elasticity ratio — to eight perceptual dimensions, with cohort weights replacing the scalar elasticity ratio, and is the dimensional-perception analogue of the response-function rules in Mantrala, Sinha, and Zoltners [-@mantrala-1992-impact-resource-allocation]. Second, a lower bound on the alignment gap is proven in terms of the Fisher-Rao distance, establishing that perceptual distance predicts economic loss (Theorem 2). Third, the conditions under which a single signal portfolio can efficiently serve multiple cohorts are characterised, connecting to the cohort targeting literature (Theorem 3). Fourth, the economic interpretation of spectral metamerism is given as the cost-minimizing signal portfolio that achieves a target perception (Theorem 4), connecting to Zharnikov [-@zharnikov-2026-spectral-metamerism-brand-perception-projection]. Fifth, the linear value function is generalised to a quadratic form with cohort-dependent interaction matrix $W(c)$, and optimal allocation is shown to shift toward complementary dimensions and away from substitutive ones (Theorem 5); this is the eight-dimensional generalization of the two-channel synergy model of Naik and Raman [-@naik-2003-understanding-impact-synergy], with the advance that interaction weights are cohort-dependent rather than fixed media properties.
 
-The paper then demonstrates that five established strategy frameworks -- Blue Ocean Strategy [@kim-2005-blue-ocean-strategy], Jobs to Be Done [@christensen-2016-know-your-customers], Lean Startup [@ries-2011-lean-startup-how], Porter's Five Forces [@porter-1980-competitive-strategy-techniques], and the Resource-Based View [@barney-1991-firm-resources-sustained] -- each operate on an implicit low-dimensional projection of the spectral resource allocation problem. Blue Ocean's strategy canvas is a low-resolution spectral profile. JTBD's "job" decomposition maps to weight vector identification. Lean Startup's MVP hypothesis corresponds to an L0 demand-validation gate. Porter's rivalry intensity maps to sphere-packing density [@zharnikov-2026-many-brands-can-market-hold]. The Resource-Based View's VRIN criteria map to spectral position uniqueness. These are not loose analogies; they are structural correspondences derived from the model's formal apparatus.
+The paper then demonstrates that five established strategy frameworks — Blue Ocean Strategy [@kim-2005-blue-ocean-strategy], Jobs to Be Done [@christensen-2016-know-your-customers], Lean Startup [@ries-2011-lean-startup-how], Porter's Five Forces [@porter-1980-competitive-strategy-techniques], and the Resource-Based View [@barney-1991-firm-resources-sustained] — each operate on an implicit low-dimensional projection of the spectral resource allocation problem. Blue Ocean's strategy canvas is a low-resolution spectral profile. JTBD's "job" decomposition maps to weight vector identification. Lean Startup's MVP hypothesis corresponds to an L0 demand-validation gate. Porter's rivalry intensity maps to sphere-packing density [@zharnikov-2026-many-brands-can-market-hold]. The Resource-Based View's VRIN criteria map to spectral position uniqueness. These are not loose analogies; they are structural correspondences derived from the model's formal apparatus.
 
 **Table 1.** Comparison of resource-allocation frameworks.
 
@@ -52,7 +48,7 @@ The paper then demonstrates that five established strategy frameworks -- Blue Oc
 
 ### Brand Signal Space and Observer Weights
 
-The model adopts the SBT framework [@zharnikov-2026-spectral-brand-theory-computational-framework] and its formal metric structure [@zharnikov-2026-brand-space-geometry-formal-metric]. A brand emits a signal portfolio $s = (s_1, \ldots, s_8) \in \mathbb{R}^8_+$ across eight typed dimensions:
+The model adopts the SBT framework [@zharnikov-2026-spectral-brand-theory-computational-framework] and its formal metric structure [@zharnikov-2026-brand-space-geometry-formal-metric]. A brand emits a signal portfolio $s = (s_1, \ldots, s_8) \in \mathbb{R}^8_+$ across eight typed dimensions, each tied to a distinct operational lever (Table 2):
 
 **Table 2.** SBT Dimensions, Indices, and Operational Levers.
 
@@ -69,7 +65,7 @@ The model adopts the SBT framework [@zharnikov-2026-spectral-brand-theory-comput
 
 *Notes*: Dimensions follow the canonical SBT ordering [@zharnikov-2026-spectral-brand-theory-computational-framework]. Index $i$ matches the component position in signal portfolio $s = (s_1, \ldots, s_8)$ and weight vector $w(c) = (w_1(c), \ldots, w_8(c))$.
 
-An observer cohort $c$ has a weight profile $w(c) = (w_1(c), \ldots, w_8(c)) \in \Delta^7$, where $\Delta^7 = \{w \in \mathbb{R}^8_+ : \sum_i w_i = 1\}$ is the probability simplex. The weight $w_i(c)$ represents the salience cohort $c$ assigns to dimension $i$ -- the fraction of perceptual attention allocated to that dimension. Weight profiles are measured, not assumed; SBT provides the measurement methodology [@zharnikov-2026-spectral-brand-theory-computational-framework, Section 5].
+An observer cohort $c$ has a weight profile $w(c) = (w_1(c), \ldots, w_8(c)) \in \Delta^7$, where $\Delta^7 = \{w \in \mathbb{R}^8_+ : \sum_i w_i = 1\}$ is the probability simplex. The weight $w_i(c)$ represents the salience cohort $c$ assigns to dimension $i$ — the fraction of perceptual attention allocated to that dimension. Weight profiles are measured, not assumed; SBT provides the measurement methodology [@zharnikov-2026-spectral-brand-theory-computational-framework].
 
 ### Spectral Value Function
 
@@ -77,11 +73,11 @@ The perceived value of signal portfolio $s$ by cohort $c$ is:
 
 $$V(s, c) = \sum_{i=1}^{8} w_i(c) \cdot s_i = \langle w(c), s \rangle$$
 
-This is the inner product of the cohort's weight vector with the brand's signal portfolio. It represents the cohort's overall brand evaluation -- the perceptual equivalent of utility. The function is linear in $s$ for a given cohort, but the same signal portfolio produces different values for different cohorts because the weights differ.
+This is the inner product of the cohort's weight vector with the brand's signal portfolio. It represents the cohort's overall brand evaluation — the perceptual equivalent of utility. The function is linear in $s$ for a given cohort, but the same signal portfolio produces different values for different cohorts because the weights differ.
 
 **Remark 1 (Compositional geometry).** The weight vector $w(c) \in \Delta^7$ is a probability vector, and Aitchison's [-@aitchison-1986-statistical-analysis-compositional] compositional data analysis warns that standard inner products on the raw simplex may violate the geometric structure appropriate for compositional data, where the relevant operations are log-ratio transformations (alr/clr/ilr). The spectral value function $V(s, c) = \langle w(c), s \rangle$ is defined as a perceptual inner product on the raw simplex — it models the cohort's evaluation of the brand as a weighted sum of perceived signal intensities, not as a statistical model of proportional compositions. A full log-ratio reformulation under the Aitchison metric is a direction for future work; the directional implications of Theorems 1–5 are expected to hold under such reformulation because the sign structure of the optimal solution depends on the relative magnitudes of $w_i(c)$, not on the absolute geometry of the simplex.
 
-**Remark 2 (Value function linearity).** The linearity of $V$ in $s$ is a modeling choice that captures first-order effects. In practice, diminishing marginal perception (a Weber-Fechner effect) would make $V$ concave in each $s_i$. The model addresses this through the cost function (Operational Cost Function), which captures diminishing returns on the production side. The perceptual side could be generalized to $V(s, c) = \sum_i w_i(c) \cdot u_i(s_i)$ with concave $u_i$; all results extend with minor modifications. The Hellinger distance bound in Theorem 2 exploits the linearity of $V$. Extension to concave utility functions is a direction for future work; the directional implication -- that misalignment is bounded below by a geometric quantity related to the distance between founder and cohort weight profiles -- is expected to hold under concavity, but the specific bound form may change.
+**Remark 2 (Value function linearity).** The linearity of $V$ in $s$ is a modeling choice that captures first-order effects. In practice, diminishing marginal perception (a Weber-Fechner effect) would make $V$ concave in each $s_i$. The model addresses this through the cost function (Operational Cost Function), which captures diminishing returns on the production side. The perceptual side could be generalized to $V(s, c) = \sum_i w_i(c) \cdot u_i(s_i)$ with concave $u_i$; all results extend with minor modifications. The Hellinger distance bound in Theorem 2 exploits the linearity of $V$. Extension to concave utility functions is a direction for future work; the directional implication — that misalignment is bounded below by a geometric quantity related to the distance between founder and cohort weight profiles — is expected to hold under concavity, but the specific bound form may change.
 
 ### Operational Cost Function
 
@@ -95,7 +91,7 @@ where $c_i: \mathbb{R}_+ \to \mathbb{R}_+$ is the cost of producing signal stren
 2. $c_i$ is strictly increasing and twice differentiable.
 3. $c_i$ is strictly convex: $c_i''(s_i) > 0$ for all $s_i > 0$ (diminishing returns).
 
-The separability assumption ($C$ decomposes across dimensions) is a simplification. In practice, some dimensions share operational infrastructure -- e.g., semiotic and narrative signals may share a creative team. Such interactions can be modelled via cross-terms $c_{ij}(s_i, s_j)$; these are omitted here for clarity and do not affect the qualitative results.
+The separability assumption ($C$ decomposes across dimensions) is a simplification. In practice, some dimensions share operational infrastructure — e.g., semiotic and narrative signals may share a creative team. Such interactions can be modelled via cross-terms $c_{ij}(s_i, s_j)$; these are omitted here for clarity and do not affect the qualitative results.
 
 **Example.** For quadratic costs $c_i(s_i) = \frac{\alpha_i}{2} s_i^2$ with dimension-specific cost parameters $\alpha_i > 0$:
 
@@ -165,11 +161,11 @@ $$V^*(c) = \frac{H(c)}{\lambda \bar{\alpha}} \quad \text{when } \alpha_i = \bar{
 
 ### Dark Signals and Zero-Weight Dimensions
 
-When $w_i(c) = 0$ for some dimension $i$, the optimal allocation assigns $s_i^* = 0$ -- no investment. But SBT distinguishes between zero signal (the brand emits nothing on dimension $i$) and *dark signal* (the brand deliberately suppresses emission on dimension $i$; Zharnikov, [-@zharnikov-2026-spectral-brand-theory-computational-framework]). In the resource allocation model, dark signals correspond to dimensions where the brand invests in *absence* rather than *presence*:
+When $w_i(c) = 0$ for some dimension $i$, the optimal allocation assigns $s_i^* = 0$ — no investment. But SBT distinguishes between zero signal (the brand emits nothing on dimension $i$) and *dark signal* (the brand deliberately suppresses emission on dimension $i$; Zharnikov, [-@zharnikov-2026-spectral-brand-theory-computational-framework]). In the resource allocation model, dark signals correspond to dimensions where the brand invests in *absence* rather than *presence*:
 
 $$s_i^{\text{dark}} = 0, \quad \text{with explicit operational constraint ensuring no ambient signal leaks through}$$
 
-The cost of dark signals is not zero -- it is the cost of suppression. Hermès's refusal to discount (dark economic signal) requires active management of distribution channels, pricing discipline, and waitlist maintenance. The cost function for dark-signal dimensions is $c_i^{\text{dark}}(s_i) = \gamma_i \cdot (s_i - 0)^2$ for $s_i > 0$, penalizing any positive emission.
+The cost of dark signals is not zero — it is the cost of suppression. Hermès's refusal to discount (dark economic signal) requires active management of distribution channels, pricing discipline, and waitlist maintenance. The cost function for dark-signal dimensions is $c_i^{\text{dark}}(s_i) = \gamma_i \cdot (s_i - 0)^2$ for $s_i > 0$, penalizing any positive emission.
 
 ## The Alignment Gap
 
@@ -183,7 +179,7 @@ $$\mathcal{A}(f, c) = V(s^*_f, f) - V(s^*_f, c)$$
 
 *This is the difference between what the founder perceives as the value of their optimized portfolio and what the target cohort actually perceives.*
 
-**Remark 4.** The alignment gap is not symmetric: $\mathcal{A}(f, c) \neq \mathcal{A}(c, f)$ in general. It measures the loss from the founder's perspective -- "I thought my brand was worth $X$ to customers, but they perceive it as worth $Y$." The reverse gap (what happens when you optimize for the cohort but evaluate as the founder) is a different quantity with different practical implications.
+**Remark 4.** The alignment gap is not symmetric: $\mathcal{A}(f, c) \neq \mathcal{A}(c, f)$ in general. It measures the loss from the founder's perspective — "I thought my brand was worth $X$ to customers, but they perceive it as worth $Y$." The reverse gap (what happens when you optimize for the cohort but evaluate as the founder) is a different quantity with different practical implications.
 
 ### Alignment Gap Under Quadratic Costs
 
@@ -227,7 +223,7 @@ $$\mathcal{A}(f,c) \geq \frac{H(f,c)^2}{8 \lambda \bar{\alpha}}$$
 
 The Fisher-Rao distance satisfies $d_{\text{FR}} = 2 \arccos(\text{BC})$, and for small distances $d_{\text{FR}} \approx 2H$. This sketch establishes the weaker constant $1/8$ via the uniform-weight floor $\|w(f)\|^2 \geq 1/8$; the tighter stated constant $1/2$ follows from the sharper $L^2$-Hellinger identity $\|w(f)\|^2 - \langle w(f), w(c)\rangle = \tfrac{1}{2}\|w(f) - w(c)\|^2 + \tfrac{1}{2}(\|w(f)\|^2 - \|w(c)\|^2)$ together with $\|p - q\|^2 \geq 2H(p,q)^2$, derived in full in Appendix A.1. $\square$
 
-**Interpretation.** The alignment gap has a geometric floor: it cannot be smaller than a quantity determined by how far apart the founder and cohort sit on the probability simplex. Founders who are perceptually close to their target cohort (small $d_{\text{FR}}$) have small alignment gaps. Founders who are perceptually distant face a structural economic loss that, under the model's separable cost and linear value assumptions, cannot be recovered through improved execution on the chosen dimensions — only reallocation toward the cohort's actual weights closes the gap.
+**Interpretation.** The alignment gap has a geometric floor: it cannot be smaller than a quantity determined by how far apart the founder and cohort sit on the probability simplex. Founders who are perceptually close to their target cohort (small $d_{\text{FR}}$) have small alignment gaps. Founders who are perceptually distant face a structural economic loss that, under the model's separable cost and linear value assumptions, cannot be recovered through improved execution on the chosen dimensions — only reallocation toward the cohort's actual weights closes the gap. Figure 1 visualizes this geometry for the five illustrative brands, plotting each founder–cohort pair and its Fisher-Rao geodesic on a low-dimensional projection of $\Delta^7$.
 
 ![](figures/r7_alignment_gap_simplex.png)
 
@@ -245,7 +241,7 @@ The alignment gap decomposes into two structurally distinct failure modes:
 
 *Proof.* The blind-spot founder assigns $s_j^* = 0$, losing $\beta \cdot s_j^*$ in cohort-perceived value for any $s_j^* > 0$ that the cohort would value. More precisely, the blind-spot contribution to the gap is $w_j(c) \cdot s_j^{\text{opt}}(c)$, the full value of what the cohort expects on that dimension. A weight-projection founder with $w_j(f) = \epsilon > 0$ would at least allocate $s_j^* = \epsilon / (\lambda \alpha_j) > 0$, partially serving the cohort's need. The difference $w_j(c) \cdot [s_j^{\text{opt}}(c) - \epsilon/(\lambda \alpha_j)]$ is always positive for small enough $\epsilon$, so the blind spot generates strictly more loss. $\square$
 
-**Remark 5.** Blind spots are worse than projections for a second reason: they are undetectable by the founder. A founder who over-weights experiential can at least see the economic dimension and recognize they are under-investing. A founder with zero social sensitivity does not perceive social signals at all -- the dimension is invisible. SBT's eight-dimensional decomposition makes blind spots detectable: if a dimension is absent from the L0 specification [@zharnikov-2026-organizational-schema-theory-test-driven], it is either a deliberate dark signal or an invisible blind spot. The distinction is testable.
+**Remark 5.** Blind spots are worse than projections for a second reason: they are undetectable by the founder. A founder who over-weights experiential can at least see the economic dimension and recognize they are under-investing. A founder with zero social sensitivity does not perceive social signals at all — the dimension is invisible. SBT's eight-dimensional decomposition makes blind spots detectable: if a dimension is absent from the L0 specification [@zharnikov-2026-organizational-schema-theory-test-driven], it is either a deliberate dark signal or an invisible blind spot. The distinction is testable.
 
 ## Multi-Cohort Allocation
 
@@ -292,7 +288,7 @@ When the target cohorts' Fisher-Rao spread exceeds $r(\epsilon)$, the firm faces
 2. **Coherence cost**: reduced ecosystem coherence grade [@zharnikov-2026-spectral-brand-theory-computational-framework] if sub-brands emit conflicting signals.
 3. **Complexity cost**: increased organizational specification burden [@zharnikov-2026-specification-impossibility-organizational-design-high].
 
-The sub-brand is justified when the efficiency gain from targeting exceeds these costs. The spectral resource allocation model provides the quantitative inputs for this decision.
+The sub-brand is justified when the efficiency gain from targeting exceeds these costs. The spectral resource allocation model provides the quantitative inputs for this decision, summarized as a decision tree in Figure 2.
 
 ```mermaid
 graph TD
@@ -344,7 +340,7 @@ This is a system of eight linear equations in eight unknowns, stated formally as
 
 $$(\Lambda - W) \, s^* = w(c)$$
 
-*where $w(c) = (w_1(c), \ldots, w_8(c))^\top$. When the matrix $\Lambda - W$ is positive definite -- equivalently, when $\Lambda - W$ has a negative-definite Hessian with respect to $s$, i.e., $W - \Lambda \prec 0$ -- the solution is unique:*
+*where $w(c) = (w_1(c), \ldots, w_8(c))^\top$. When the matrix $\Lambda - W$ is positive definite — equivalently, when $\Lambda - W$ has a negative-definite Hessian with respect to $s$, i.e., $W - \Lambda \prec 0$ — the solution is unique:*
 
 $$s^* = (\Lambda - W)^{-1} w(c)$$
 
@@ -370,15 +366,15 @@ The interaction framework sharpens the allocation predictions for Hermès and Te
 
 By Corollary 3, the interaction adjustment is $\delta_{\text{narrative}} > 0$ and $\delta_{\text{temporal}} > 0$: optimal investment in both narrative and temporal dimensions exceeds the linear benchmark. A Hermès brand manager who treats narrative and temporal as independent would systematically under-invest in the compound asset they jointly constitute. The linear model recommends investing in narrative and temporal in proportion to their individual weights; the interaction model recommends additional investment in both, with the increment proportional to the synergy weight $w_{\text{narrative, temporal}}$ and the signal strength on the complementary dimension.
 
-The practical implication is that the heritage investment case for Hermès is stronger than it appears from a single-dimension analysis. The ROI on an additional euro invested in archive storytelling (narrative) is augmented by the amplification effect it receives from the brand's temporal depth -- and vice versa. This mutual reinforcement is why heritage luxury brands can sustain narrative investment at levels that would appear irrational if evaluated dimension by dimension.
+The practical implication is that the heritage investment case for Hermès is stronger than it appears from a single-dimension analysis. The ROI on an additional euro invested in archive storytelling (narrative) is augmented by the amplification effect it receives from the brand's temporal depth — and vice versa. This mutual reinforcement is why heritage luxury brands can sustain narrative investment at levels that would appear irrational if evaluated dimension by dimension.
 
 **Tesla: Luxury paradox.** The Tesla cohort weights ideological signals (technological disruption, environmental mission, anti-establishment positioning) highly. For this cohort, temporal signals conflict with the brand's ideological identity: claims of heritage or longevity undercut the perception of radical novelty. Formally, $w_{\text{ideological, temporal}}(c_{\mathrm{Tesla}}) < 0$.
 
-By Corollary 3, $\delta_{\text{temporal}} < 0$: optimal investment in temporal dimension is *below* the linear benchmark. A model that ignores the interaction would recommend investing in temporal signaling in proportion to its individual weight in the cohort profile. The interaction model corrects this recommendation downward. Investing in temporal signals for Tesla's core cohort generates not merely zero return on the dimension itself but negative returns through its conflict with the ideological dimension -- the single highest-weight dimension for this cohort.
+By Corollary 3, $\delta_{\text{temporal}} < 0$: optimal investment in temporal dimension is *below* the linear benchmark. A model that ignores the interaction would recommend investing in temporal signaling in proportion to its individual weight in the cohort profile. The interaction model corrects this recommendation downward. Investing in temporal signals for Tesla's core cohort generates not merely zero return on the dimension itself but negative returns through its conflict with the ideological dimension — the single highest-weight dimension for this cohort.
 
 The practical implication is that Tesla's minimal temporal investment (canonical profile: $s_8 = 2.0$, the lowest among the five case-study brands) is not a deficiency but a structurally correct response to the ideological-temporal conflict. A brand audit that identifies low temporal investment as an under-investment gap would be drawing the wrong inference. The interaction structure must be estimated from the cohort, not assumed away.
 
-**Cohort-dependence of interaction weights.** The interaction matrix $W(c)$ is estimated from cohort measurement data, not inferred from the brand's emission profile. The same brand may face positive narrative-temporal interaction from one cohort (heritage-seeking purchasers) and negative ideological-temporal interaction from a second cohort (disruption-seeking early adopters). This cohort-dependence is a feature, not a complication: it means that the optimal allocation is genuinely cohort-specific, and a brand serving multiple cohorts with heterogeneous interaction structures faces an additional dimension of multi-cohort complexity beyond the Fisher-Rao radius condition established in Theorem 3.
+**Cohort-dependence of interaction weights.** The interaction matrix $W(c)$ is estimated from cohort measurement data, not inferred from the brand's emission profile. The same brand may face positive narrative-temporal interaction from one cohort (heritage-seeking purchasers) and negative ideological-temporal interaction from a second cohort (disruption-seeking early adopters). This cohort-dependence is a feature, not a complication: it means that the optimal allocation is genuinely cohort-specific, and a brand serving multiple cohorts with heterogeneous interaction structures faces an additional dimension of multi-cohort complexity beyond the Fisher-Rao radius condition established in Theorem 3. Figure 3 contrasts the linear and interaction-adjusted allocations for both the Hermès and Tesla cases.
 
 ![](figures/r7_theorem5_interaction_adjustment.png)
 
@@ -388,7 +384,7 @@ The practical implication is that Tesla's minimal temporal investment (canonical
 
 ### Metamerism as Cost Optimization
 
-Zharnikov [-@zharnikov-2026-spectral-metamerism-brand-perception-projection] proved that structurally distinct signal portfolios can produce identical scalar perceptions -- spectral metamerism. In the resource allocation context, metamerism has a direct economic interpretation: it enables cost optimization.
+Zharnikov [-@zharnikov-2026-spectral-metamerism-brand-perception-projection] proved that structurally distinct signal portfolios can produce identical scalar perceptions — spectral metamerism. In the resource allocation context, metamerism has a direct economic interpretation: it enables cost optimization.
 
 **Theorem 4** (Cost-minimizing metamers). *Let $\hat{V}$ be a target perceived value for cohort $c$. The set of signal portfolios achieving $V(s, c) = \hat{V}$ is the hyperplane $\{s \in \mathbb{R}^8_+ : \langle w(c), s \rangle = \hat{V}\}$. The cost-minimizing portfolio on this hyperplane is unique when all weights are positive, and satisfies:*
 
@@ -398,11 +394,11 @@ $$s_i^{\dagger} = \frac{w_i(c) / \alpha_i}{\sum_j w_j(c)^2 / \alpha_j} \cdot \ha
 
 *Proof.* Minimize $C(s) = \sum_i \frac{\alpha_i}{2} s_i^2$ subject to $\sum_i w_i s_i = \hat{V}$. The Lagrangian yields $\alpha_i s_i = \mu w_i$ for each $i$, so $s_i = \mu w_i / \alpha_i$. Substituting into the constraint: $\sum_i w_i \cdot \mu w_i / \alpha_i = \hat{V}$, giving $\mu = \hat{V} / \sum_j w_j^2 / \alpha_j$. For zero-weight dimensions, the constraint does not involve $s_i$, so cost minimization drives $s_i$ to zero. $\square$
 
-**Interpretation.** Metamerism is not just an information-theoretic curiosity [@zharnikov-2026-spectral-metamerism-brand-perception-projection] -- it is the foundation of cost-efficient branding. Two signal portfolios that produce identical perception in the target cohort are *metamers*; the brand should choose the cheaper one. The cost-minimizing metamer concentrates investment on dimensions that are both highly weighted by the cohort and cheap to produce.
+**Interpretation.** Metamerism is not just an information-theoretic curiosity [@zharnikov-2026-spectral-metamerism-brand-perception-projection] — it is the foundation of cost-efficient branding. Two signal portfolios that produce identical perception in the target cohort are *metamers*; the brand should choose the cheaper one. The cost-minimizing metamer concentrates investment on dimensions that are both highly weighted by the cohort and cheap to produce.
 
 ### Unweighted Dimensions and Structural Waste
 
-When a cohort assigns zero weight to dimension $i$ ($w_i(c) = 0$), any investment in that dimension is structural waste -- it produces signal that no one in the target cohort perceives. Theorem 4 confirms that the cost-minimizing portfolio assigns zero to unweighted dimensions.
+When a cohort assigns zero weight to dimension $i$ ($w_i(c) = 0$), any investment in that dimension is structural waste — it produces signal that no one in the target cohort perceives. Theorem 4 confirms that the cost-minimizing portfolio assigns zero to unweighted dimensions.
 
 This connects to the R5 impossibility result [@zharnikov-2026-specification-impossibility-organizational-design-high]: if the organization cannot fully specify all 48 dimensions of the OST specification space, it must choose which dimensions to specify. The spectral resource allocation model tells it *which ones*: specify the dimensions that the target cohort weights positively, in proportion to the weight-to-cost ratio.
 
@@ -412,7 +408,7 @@ Each of the five frameworks examined below has been applied to brand investment 
 
 ### Blue Ocean Strategy
 
-Kim and Mauborgne's [-@kim-2005-blue-ocean-strategy] Blue Ocean Strategy centers on the *strategy canvas* -- a visual profile of how a company invests across key competing factors, with the prescription to "raise, reduce, eliminate, and create" factors to find uncontested market space.
+Kim and Mauborgne's [-@kim-2005-blue-ocean-strategy] Blue Ocean Strategy centers on the *strategy canvas* — a visual profile of how a company invests across key competing factors, with the prescription to "raise, reduce, eliminate, and create" factors to find uncontested market space.
 
 **Spectral correspondence.** The strategy canvas is a low-resolution spectral profile. "Competing factors" map to SBT dimensions (or sub-dimensions). "Raise" corresponds to increasing $s_i$. "Reduce" corresponds to decreasing $s_i$. "Eliminate" corresponds to setting $s_i = 0$ (dark signal). "Create" corresponds to activating a dimension that competitors have at zero.
 
@@ -420,7 +416,7 @@ The SBT formalization adds three elements that Blue Ocean lacks:
 
 1. **Metric**: Blue Ocean's canvas has no distance measure between profiles. SBT's Aitchison metric [@zharnikov-2026-brand-space-geometry-formal-metric] provides one.
 2. **Capacity bounds**: Blue Ocean says "find uncontested space" but cannot quantify how much space exists. The sphere-packing result [@zharnikov-2026-many-brands-can-market-hold] provides explicit capacity bounds: at perceptual threshold $\varepsilon = .10$, up to $10^8$ distinguishable positions exist in $\mathbb{R}^8_+$.
-3. **Demand validation**: Blue Ocean does not specify *whose* perceptual weights determine "value innovation." The alignment gap framework (The Alignment Gap section) shows that the founder's weights are insufficient -- the target cohort's measured weights must drive the canvas.
+3. **Demand validation**: Blue Ocean does not specify *whose* perceptual weights determine "value innovation." The alignment gap framework (The Alignment Gap section) shows that the founder's weights are insufficient — the target cohort's measured weights must drive the canvas.
 
 ### Jobs to Be Done
 
@@ -430,7 +426,7 @@ Christensen et al.'s [-@christensen-2016-know-your-customers] JTBD framework pos
 
 The SBT formalization adds:
 
-1. **Dimensional completeness**: JTBD typically identifies 2-4 jobs. SBT's eight dimensions ensure no perceptual dimension is overlooked -- including temporal (heritage/longevity) and cultural (zeitgeist), which JTBD frameworks rarely capture.
+1. **Dimensional completeness**: JTBD typically identifies 2-4 jobs. SBT's eight dimensions ensure no perceptual dimension is overlooked — including temporal (heritage/longevity) and cultural (zeitgeist), which JTBD frameworks rarely capture.
 2. **Weight measurement**: JTBD identifies jobs qualitatively. SBT measures dimensional weights quantitatively, enabling the optimization in Theorem 1.
 3. **Metamerism awareness**: JTBD assumes the job determines the product. Theorem 4 shows that multiple signal portfolios can satisfy the same job (same perceived value), so the choice among metamers is a cost-optimization problem.
 
@@ -444,7 +440,7 @@ OST [@zharnikov-2026-organizational-schema-theory-test-driven] goes further: the
 
 ### Porter's Five Forces
 
-Porter [-@porter-1980-competitive-strategy-techniques] models industry structure through five competitive forces: rivalry, buyer power, supplier power, substitutes, and entry barriers.
+Porter [-@porter-1980-competitive-strategy-techniques] models industry structure through five competitive forces — rivalry, buyer power, supplier power, substitutes, and entry barriers — each of which maps to a formal quantity in the spectral model (Table 3).
 
 #### Spectral correspondence
 
@@ -462,7 +458,7 @@ Porter [-@porter-1980-competitive-strategy-techniques] models industry structure
 
 ### Resource-Based View
 
-Barney's [-@barney-1991-firm-resources-sustained] RBV identifies Valuable, Rare, Inimitable, and Non-substitutable (VRIN) resources as the basis of sustained competitive advantage.
+Barney's [-@barney-1991-firm-resources-sustained] RBV identifies Valuable, Rare, Inimitable, and Non-substitutable (VRIN) resources as the basis of sustained competitive advantage; Table 4 gives each criterion its spectral interpretation.
 
 #### Spectral correspondence
 
@@ -481,7 +477,7 @@ Barney's [-@barney-1991-firm-resources-sustained] RBV identifies Valuable, Rare,
 
 ### Canonical Brand Profiles
 
-The model is applied to the five case-study brands from Zharnikov [-@zharnikov-2026-spectral-brand-theory-computational-framework; -@zharnikov-2026-brand-space-geometry-formal-metric], using the canonical emission profiles:
+The model is applied to the five case-study brands from Zharnikov [-@zharnikov-2026-spectral-brand-theory-computational-framework; -@zharnikov-2026-brand-space-geometry-formal-metric], using the canonical emission profiles (Table 5):
 
 **Table 5.** Canonical Emission Profiles for Five Case-Study Brands.
 
@@ -500,7 +496,7 @@ The model is applied to the five case-study brands from Zharnikov [-@zharnikov-2
 
 ### Hypothetical Founder Profiles
 
-To illustrate the alignment gap, hypothetical founder spectral profiles are constructed for each brand:
+To illustrate the alignment gap, hypothetical founder spectral profiles are constructed for each brand (Table 6):
 
 **Table 6.** Hypothetical Founder Spectral Profiles (Illustrative).
 
@@ -521,7 +517,7 @@ These profiles are illustrative, not measured. The Hermès founder profile empha
 
 ### Alignment Gap Computation (Illustrative, Non-Empirical Scenario)
 
-For each brand, a plausible target cohort weight profile is constructed and the alignment gap is computed. The target cohort profiles represent the observed perceptual priorities of each brand's core customer base:
+For each brand, a plausible target cohort weight profile is constructed and the alignment gap is computed. The target cohort profiles represent the observed perceptual priorities of each brand's core customer base (Table 7):
 
 **Table 7.** Target Cohort Weight Profiles (Illustrative).
 
@@ -540,7 +536,7 @@ For each brand, a plausible target cohort weight profile is constructed and the 
 
 **Table 8.** Alignment Gap Results Under Uniform Costs.
 
-**Alignment gap results** (under uniform costs $\alpha_i = 1$, $\lambda = 1$):
+Table 8 reports the **alignment gap results** under uniform costs ($\alpha_i = 1$, $\lambda = 1$):
 
 | Brand | $\|w(f)\|^2$ | $\langle w(f), w(c) \rangle$ | $\mathcal{A}(f,c)$ | Hellinger $H(f,c)$ | Interpretation |
 |:------|:------------:|:----------------------------:|:-------------------:|:-------------------:|:--------------|
@@ -552,7 +548,7 @@ For each brand, a plausible target cohort weight profile is constructed and the 
 
 *Notes*: $\lambda = 1$, $\bar{\alpha} = 1$ (uniform costs). All values computed from companion script (Companion Computation Script subsection). Hellinger $H(f,c) = \frac{1}{\sqrt{2}}\|\sqrt{w(f)} - \sqrt{w(c)}\|_2$. Profiles are illustrative; see Tables 5–6.
 
-**Ordering**: Hermès (.0067) < Erewhon (.0125) < Patagonia (.0245) < Tesla (.0285) < IKEA (.0650).
+**Ordering**: Hermès (.0067) < Erewhon (.0125) < Patagonia (.0245) < Tesla (.0285) < IKEA (.0650). Figure 4 plots the founder and cohort weight profiles that generate these gaps.
 
 ![](figures/r7_founder_vs_cohort_weights.png)
 
@@ -566,7 +562,7 @@ IKEA's large gap reflects the founder's extreme economic concentration ($w_6 = .
 
 | Brand | Founder Blind Spot | Cohort Weight on That Dimension | Risk Level |
 |:------|:-------------------|:-------------------------------|:-----------|
-| Hermès | None (all $w_i > 0$) | -- | Low |
+| Hermès | None (all $w_i > 0$) | — | Low |
 | IKEA | Social ($w_5 = .05$) | .07 | Low (both low) |
 | Patagonia | Economic ($w_6 = .05$) | .08 | Low-Medium |
 | Erewhon | Narrative ($w_2 = .05$) | .08 | Low-Medium |
@@ -574,7 +570,7 @@ IKEA's large gap reflects the founder's extreme economic concentration ($w_6 = .
 
 *Notes*: "Blind spot" defined as the dimension receiving the founder's lowest weight. No brand in this illustrative sample has a true zero-weight blind spot ($w_i = 0$). Risk level reflects the gap between founder weight and cohort weight on that dimension.
 
-No brand in this sample has a true blind spot ($w_i = 0$). The nearest case is Tesla's ideological dimension: the founder's low weight (.05) combined with the brand's weak signal (3.0/10) suggests near-blindness on values-based positioning. This manifests as the brand's inconsistent political and ethical signals — not because the founder intends inconsistency, but because the dimension receives minimal perceptual and operational attention.
+As Table 9 reports, no brand in this sample has a true blind spot ($w_i = 0$). The nearest case is Tesla's ideological dimension: the founder's low weight (.05) combined with the brand's weak signal (3.0/10) suggests near-blindness on values-based positioning. This manifests as the brand's inconsistent political and ethical signals — not because the founder intends inconsistency, but because the dimension receives minimal perceptual and operational attention.
 
 ## Implications for Practice
 
@@ -594,9 +590,11 @@ Theorem 1 prescribes the optimal investment ratio across dimensions. A brand can
 4. Comparing to the current allocation $s_{\text{actual}}$.
 5. The gap $s^*(c) - s_{\text{actual}}$ identifies over- and under-invested dimensions.
 
+The five steps and their decision logic are shown as a flowchart in Figure 5.
+
 ```mermaid
 graph TD
-    A[Step 1<br/>Measure cohort weights w of c<br/>SBT protocol Zharnikov 2026a Section 5] --> B[Step 2<br/>Estimate cost parameters alpha i<br/>from operational data]
+    A[Step 1<br/>Measure cohort weights w of c<br/>SBT protocol Zharnikov 2026a] --> B[Step 2<br/>Estimate cost parameters alpha i<br/>from operational data]
     B --> C[Step 3<br/>Compute s star equals w of c over lambda alpha<br/>Theorem 1]
     C --> D[Step 4<br/>Compare to current s actual]
     D --> E{Step 5<br/>Audit gap exceeds threshold}
@@ -618,13 +616,13 @@ The spectral model provides the left side; organizational cost analysis provides
 
 ### Managerial Implications
 
-Rust, Lemon, and Zeithaml [-@rust-2004-return-marketing-using] frame marketing investment as return on marketing within a customer equity framework; the spectral resource allocation model operationalizes their framework at the dimension level by identifying which specific perceptual investments drive customer equity for a given cohort. On a practical level, the five theorems translate into the following Monday-morning checklist for a Chief Marketing Officer. First, Theorem 1 informs the quarterly budget review: allocate dimension-level spend in proportion to $w_i(c) / \alpha_i$, with cost parameters $\alpha_i$ estimated from operational data. Second, Theorem 2 provides the alignment audit: if the Fisher-Rao distance between the founder profile and the cohort profile exceeds .32 radians (the $\epsilon = .10$ threshold), the expected alignment gap exceeds 10% of optimal value — a structural reallocation trigger. Third, Theorem 3 informs the sub-brand decision: if the firm serves cohorts whose Fisher-Rao spread exceeds $r(.10) \approx .32$, a separate portfolio is economically justified regardless of brand coherence preferences. Fourth, Theorem 4 provides the cost audit: identify the cheapest signal portfolio achieving the target perception and redirect savings to the highest-weight dimensions. Fifth, Theorem 5 provides the interaction adjustment: for cohorts with known complementary or substitutive dimension pairs, adjust allocations according to Corollary 3, with the interaction weight matrix estimated from spectral profiling data. Together, these translate the paper's formal apparatus into a five-step operational protocol that requires measurement infrastructure specified in Zharnikov [-@zharnikov-2026-spectral-brand-theory-computational-framework, Section 5].
+Rust, Lemon, and Zeithaml [-@rust-2004-return-marketing-using] frame marketing investment as return on marketing within a customer equity framework; the spectral resource allocation model operationalizes their framework at the dimension level by identifying which specific perceptual investments drive customer equity for a given cohort. On a practical level, the five theorems translate into the following Monday-morning checklist for a Chief Marketing Officer. First, Theorem 1 informs the quarterly budget review: allocate dimension-level spend in proportion to $w_i(c) / \alpha_i$, with cost parameters $\alpha_i$ estimated from operational data. Second, Theorem 2 provides the alignment audit: if the Fisher-Rao distance between the founder profile and the cohort profile exceeds .32 radians (the $\epsilon = .10$ threshold), the expected alignment gap exceeds 10% of optimal value — a structural reallocation trigger. Third, Theorem 3 informs the sub-brand decision: if the firm serves cohorts whose Fisher-Rao spread exceeds $r(.10) \approx .32$, a separate portfolio is economically justified regardless of brand coherence preferences. Fourth, Theorem 4 provides the cost audit: identify the cheapest signal portfolio achieving the target perception and redirect savings to the highest-weight dimensions. Fifth, Theorem 5 provides the interaction adjustment: for cohorts with known complementary or substitutive dimension pairs, adjust allocations according to Corollary 3, with the interaction weight matrix estimated from spectral profiling data. Together, these translate the paper's formal apparatus into a five-step operational protocol that requires measurement infrastructure specified in Zharnikov [-@zharnikov-2026-spectral-brand-theory-computational-framework].
 
 ## Limitations and Future Research
 
 ### Empirical Validation
 
-The case-study analysis uses hypothetical founder and cohort profiles. Empirical validation requires measuring actual spectral profiles through consumer surveys (MaxDiff analysis, conjoint studies) and founder self-assessment. The empirical validation protocol is specified in Zharnikov [-@zharnikov-2026-spectral-brand-theory-computational-framework, Section 5] and developed further in the author's internal analysis. The methodology assumes cohort weight profiles are measurable; SBT provides a specification for this measurement [@zharnikov-2026-spectral-brand-theory-computational-framework, Section 5], though large-scale empirical implementation remains future work.
+The case-study analysis uses hypothetical founder and cohort profiles. Empirical validation requires measuring actual spectral profiles through consumer surveys (MaxDiff analysis, conjoint studies) and founder self-assessment. The empirical validation protocol is specified in Zharnikov [-@zharnikov-2026-spectral-brand-theory-computational-framework] and developed further in the author's internal analysis. The methodology assumes cohort weight profiles are measurable; SBT provides a specification for this measurement [@zharnikov-2026-spectral-brand-theory-computational-framework], though large-scale empirical implementation remains future work.
 
 ### Cost Function Estimation
 
@@ -636,7 +634,7 @@ The model is static: it optimizes the signal portfolio at a single point in time
 
 ### Interaction Effects in Value and Cost
 
-Dimensional Interaction Effects introduces interaction effects on the *value* side through the quadratic value function and derives closed-form optimal allocations (Theorem 5). Interaction effects on the *cost* side remain a direction for future work. The separable cost function $C(s) = \sum_i c_i(s_i)$ ignores cross-dimensional cost dependencies: in practice, narrative and semiotic signals share creative infrastructure, and experiential and economic signals interact through pricing psychology. A full model would include cost cross-terms $c_{ij}(s_i, s_j)$, which would alter the optimal allocation but not the qualitative conclusions about alignment gaps and metamerism. Empirically estimating the interaction weight matrix $W(c)$ from cohort survey data -- rather than relying on qualitative inference -- is a further empirical extension.
+Dimensional Interaction Effects introduces interaction effects on the *value* side through the quadratic value function and derives closed-form optimal allocations (Theorem 5). Interaction effects on the *cost* side remain a direction for future work. The separable cost function $C(s) = \sum_i c_i(s_i)$ ignores cross-dimensional cost dependencies: in practice, narrative and semiotic signals share creative infrastructure, and experiential and economic signals interact through pricing psychology. A full model would include cost cross-terms $c_{ij}(s_i, s_j)$, which would alter the optimal allocation but not the qualitative conclusions about alignment gaps and metamerism. Empirically estimating the interaction weight matrix $W(c)$ from cohort survey data — rather than relying on qualitative inference — is a further empirical extension.
 
 ### Organizational Context
 
@@ -648,15 +646,15 @@ All five case-study brands in the illustrative examples — Hermès, IKEA, Patag
 
 ### Boundary Conditions
 
-The spectral resource allocation model applies under the following conditions: (a) cohort weight profiles are measurable on the probability simplex $\Delta^7$ using the SBT measurement protocol [@zharnikov-2026-spectral-brand-theory-computational-framework, Section 5]; (b) the operational cost function is convex and approximately separable across dimensions, so that cross-dimensional cost interactions are second-order relative to own-dimension costs; (c) the signal-perception map is approximately linear within the operational range of investment, so that the value function $V(s, c) = \langle w(c), s \rangle$ captures the dominant effects; and (d) the target cohort is empirically identifiable and stable over the relevant planning horizon. When condition (b) is violated, the full cost-interaction extension discussed in Interaction Effects in Value and Cost applies. When condition (c) is violated — for example, when perceptual saturation creates strong diminishing returns at high signal levels — the concave-utility extension of Remark 2 applies. When condition (a) is difficult to satisfy in practice, the Aitchison [-@aitchison-1986-statistical-analysis-compositional] log-ratio reformulation noted in Remark 1 offers an alternative compositional treatment. These boundary conditions do not undermine the qualitative conclusions of Theorems 1–5; they specify the domain within which the quantitative predictions are most reliable.
+The spectral resource allocation model applies under the following conditions: (a) cohort weight profiles are measurable on the probability simplex $\Delta^7$ using the SBT measurement protocol [@zharnikov-2026-spectral-brand-theory-computational-framework]; (b) the operational cost function is convex and approximately separable across dimensions, so that cross-dimensional cost interactions are second-order relative to own-dimension costs; (c) the signal-perception map is approximately linear within the operational range of investment, so that the value function $V(s, c) = \langle w(c), s \rangle$ captures the dominant effects; and (d) the target cohort is empirically identifiable and stable over the relevant planning horizon. When condition (b) is violated, the full cost-interaction extension discussed in Interaction Effects in Value and Cost applies. When condition (c) is violated — for example, when perceptual saturation creates strong diminishing returns at high signal levels — the concave-utility extension of Remark 2 applies. When condition (a) is difficult to satisfy in practice, the Aitchison [-@aitchison-1986-statistical-analysis-compositional] log-ratio reformulation noted in Remark 1 offers an alternative compositional treatment. These boundary conditions do not undermine the qualitative conclusions of Theorems 1–5; they specify the domain within which the quantitative predictions are most reliable.
 
 ## Conclusion
 
-This paper develops the economic bridge between multi-dimensional brand perception measurement and operational resource allocation. The spectral value function $V(s, c) = \langle w(c), s \rangle$ translates observer perception into a quantity that can be optimized against costs. The alignment gap $\mathcal{A}(f, c)$ quantifies the economic loss from founder weight projection -- the structural mechanism behind product-market fit failure. The multi-cohort efficiency bound establishes when a single brand can efficiently serve multiple cohorts and when sub-branding is economically justified. The cost-minimizing metamer gives the cheapest signal portfolio that achieves a target perception.
+This paper develops the economic bridge between multi-dimensional brand perception measurement and operational resource allocation. The spectral value function $V(s, c) = \langle w(c), s \rangle$ translates observer perception into a quantity that can be optimized against costs. The alignment gap $\mathcal{A}(f, c)$ quantifies the economic loss from founder weight projection — the structural mechanism behind product-market fit failure. The multi-cohort efficiency bound establishes when a single brand can efficiently serve multiple cohorts and when sub-branding is economically justified. The cost-minimizing metamer gives the cheapest signal portfolio that achieves a target perception.
 
 The results connect to five established strategy frameworks, revealing each as an implicit low-dimensional projection of the spectral resource allocation problem. Blue Ocean's strategy canvas becomes a spectral profile with a metric. JTBD's job decomposition becomes weight vector identification. Lean Startup's MVP becomes an L0 demand hypothesis. Porter's rivalry becomes sphere-packing density. The RBV's VRIN criteria become spectral position properties.
 
-The paper completes the economic interpretation of the SBT mathematical foundations series [@zharnikov-2026-geometric-approaches-brand-perception-critical; @zharnikov-2026-brand-space-geometry-formal-metric; @zharnikov-2026-spectral-metamerism-brand-perception-projection; @zharnikov-2026-cohort-boundaries-high-dimensional-perception; @zharnikov-2026-many-brands-can-market-hold; @zharnikov-2026-specification-impossibility-organizational-design-high; @zharnikov-2026-non-ergodic-brand-perception-diffusion], providing each R-paper result with a resource allocation interpretation:
+The paper completes the economic interpretation of the SBT mathematical foundations series [@zharnikov-2026-geometric-approaches-brand-perception-critical; @zharnikov-2026-brand-space-geometry-formal-metric; @zharnikov-2026-spectral-metamerism-brand-perception-projection; @zharnikov-2026-cohort-boundaries-high-dimensional-perception; @zharnikov-2026-many-brands-can-market-hold; @zharnikov-2026-specification-impossibility-organizational-design-high; @zharnikov-2026-non-ergodic-brand-perception-diffusion], providing each R-paper result with a resource allocation interpretation (Table 10):
 
 **Table 10.** Economic Interpretation of SBT Mathematical Results.
 
@@ -769,7 +767,7 @@ All values verified by companion computation script (see Companion Computation S
 
 ### Companion Computation Script
 
-All numerical values in Tables 4–8 and Appendix A.2 are reproduced by the companion script at:
+All numerical values in Tables 5–8 and Appendix A.2 are reproduced by the companion script at:
 
 `https://github.com/spectralbranding/sbt-papers/tree/main/r7-spectral-resource-allocation/code/r7_spectral_resource_allocation.py`
 

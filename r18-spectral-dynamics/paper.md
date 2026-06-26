@@ -16,17 +16,17 @@ Brand tracking routinely measures static position but rarely quantifies trajecto
 
 ---
 
-Brand managers track brand position obsessively but brand trajectory almost never. Quarterly tracking studies report where a brand sits on various dimensions -- awareness, consideration, preference, equity -- and whether these scores went "up" or "down" since the last wave. The conceptual toolkit stops at directional arrows: trending up, trending down, stable. There is no formal framework for asking how *fast* a brand is moving, whether that movement is *accelerating* or *decelerating*, whether the brand's *direction* of movement is aligned with strategic intent, or whether two brands currently at different positions are on *converging trajectories* that will bring them into direct competition.
+Brand managers track brand position obsessively but brand trajectory almost never. Quarterly tracking studies report where a brand sits on various dimensions — awareness, consideration, preference, equity — and whether these scores went "up" or "down" since the last wave. The conceptual toolkit stops at directional arrows: trending up, trending down, stable. There is no formal framework for asking how *fast* a brand is moving, whether that movement is *accelerating* or *decelerating*, whether the brand's *direction* of movement is aligned with strategic intent, or whether two brands currently at different positions are on *converging trajectories* that will bring them into direct competition.
 
-This gap persists despite the maturity of dynamic methods in marketing science. State-space models with Kalman filtering have been applied to brand goodwill [@naik-2003-understanding-impact-synergy], brand preference evolution [@sriram-2006-effects-brand-preference], and advertising dynamics [@bruce-2008-pooling-dynamic-forgetting]. System dynamics models track stocks and flows of brand-related variables [@sterman-2000-business-dynamics-systems]. Trajectory modeling methods -- group-based trajectory models [@nagin-1999-analyzing-developmental-trajectories; @nagin-2005-groupbased-modeling-development], latent growth mixture models [@muthen-1999-finite-mixture-modeling], functional data analysis [@ramsay-2005-functional-data-analysis] -- are well-established in the social sciences. Yet, to the best of the author's knowledge, none of these methods has been applied to a *multi-dimensional brand position vector* with formal kinematic quantities (velocity, acceleration, phase space) as the primary analytical objects.
+This gap persists despite the maturity of dynamic methods in marketing science. State-space models with Kalman filtering have been applied to brand goodwill [@naik-2003-understanding-impact-synergy], brand preference evolution [@sriram-2006-effects-brand-preference], and advertising dynamics [@bruce-2008-pooling-dynamic-forgetting]. System dynamics models track stocks and flows of brand-related variables [@sterman-2000-business-dynamics-systems]. Trajectory modeling methods — group-based trajectory models [@nagin-1999-analyzing-developmental-trajectories; @nagin-2005-groupbased-modeling-development], latent growth mixture models [@muthen-1999-finite-mixture-modeling], functional data analysis [@ramsay-2005-functional-data-analysis] — are well-established in the social sciences. Yet, to the best of the author's knowledge, none of these methods has been applied to a *multi-dimensional brand position vector* with formal kinematic quantities (velocity, acceleration, phase space) as the primary analytical objects.
 
-This paper addresses the gap by developing a differential calculus for brand perception within Spectral Brand Theory (SBT; Zharnikov [-@zharnikov-2026-spectral-brand-theory-computational-framework]). SBT represents brands as profiles in an eight-dimensional perception space -- Semiotic, Narrative, Ideological, Experiential, Social, Economic, Cultural, and Temporal -- where different observer cohorts weight these dimensions differently according to their spectral weight profiles [@zharnikov-2026-brand-space-geometry-formal-metric]. The framework has formalized the geometry of this space [@zharnikov-2026-brand-space-geometry-formal-metric], the information loss from dimensional projection [@zharnikov-2026-spectral-metamerism-brand-perception-projection], the stochastic dynamics of perception evolution [@zharnikov-2026-non-ergodic-brand-perception-diffusion], the non-ergodicity of individual trajectories [@zharnikov-2026-non-ergodic-brand-perception-why], and the multi-observer measurement problem via Brand Triangulation [@zharnikov-2026-spectral-brand-theory-computational-framework]. What is missing is a measurement framework that bridges the theoretical dynamics (stochastic differential equations on manifolds) and practical tracking (how fast is the brand moving, and where is it heading?).
+This paper addresses the gap by developing a differential calculus for brand perception within Spectral Brand Theory (SBT; Zharnikov [-@zharnikov-2026-spectral-brand-theory-computational-framework]). SBT represents brands as profiles in an eight-dimensional perception space — Semiotic, Narrative, Ideological, Experiential, Social, Economic, Cultural, and Temporal — where different observer cohorts weight these dimensions differently according to their spectral weight profiles [@zharnikov-2026-brand-space-geometry-formal-metric]. The framework has formalized the geometry of this space [@zharnikov-2026-brand-space-geometry-formal-metric], the information loss from dimensional projection [@zharnikov-2026-spectral-metamerism-brand-perception-projection], the stochastic dynamics of perception evolution [@zharnikov-2026-non-ergodic-brand-perception-diffusion], the non-ergodicity of individual trajectories [@zharnikov-2026-non-ergodic-brand-perception-why], and the multi-observer measurement problem via Brand Triangulation [@zharnikov-2026-spectral-brand-theory-computational-framework]. What is missing is a measurement framework that bridges the theoretical dynamics (stochastic differential equations on manifolds) and practical tracking (how fast is the brand moving, and where is it heading?).
 
 The paper makes three contributions:
 
 1. **Brand kinematics.** It formalizes brand velocity $\mathbf{v}(t) = d\mathbf{x}/dt$ and acceleration $\mathbf{a}(t) = d\mathbf{v}/dt$ as vector quantities in $R^8$, derives their discrete-time estimators, characterizes noise amplification under differentiation, and connects them to the Kalman filter formulation already present in Brand Triangulation (Zharnikov [-@zharnikov-2026-spectral-brand-theory-computational-framework], Proposition 6).
 
-2. **Velocity resolves metric ambiguity.** The Bonnet pair problem in differential geometry -- two surfaces with identical metrics but different shapes [@bobenko-2025-compact-bonnet-pairs] -- has an analog in brand measurement: two brands with identical spectral profiles may be perceived differently if they arrived at those profiles via different trajectories. The paper establishes, under the maintained SDE assumptions, that the phase space representation $(\mathbf{x}, \mathbf{v})$ resolves this ambiguity, providing a constructive resolution to a theoretical boundary identified in Brand Triangulation.
+2. **Velocity resolves metric ambiguity.** The Bonnet pair problem in differential geometry — two surfaces with identical metrics but different shapes [@bobenko-2025-compact-bonnet-pairs] — has an analog in brand measurement: two brands with identical spectral profiles may be perceived differently if they arrived at those profiles via different trajectories. The paper establishes, under the maintained SDE assumptions, that the phase space representation $(\mathbf{x}, \mathbf{v})$ resolves this ambiguity, providing a constructive resolution to a theoretical boundary identified in Brand Triangulation.
 
 3. **Trajectory-based competitive analysis.** The paper introduces directional coherence (the cosine similarity between velocity and strategy vectors) and trajectory clustering (grouping brands by dynamic state rather than static position), enabling detection of competitive convergence and strategy-trajectory misalignment.
 
@@ -34,15 +34,15 @@ The framework is illustrated using Dove's brand evolution across four periods (2
 
 The paper is organized as follows. Theoretical background is reviewed first, followed by the differential calculus, the Bonnet pair resolution via velocity-based identification, trajectory-based analysis, the Dove illustration, managerial implications, a discussion of limitations and future research, and a conclusion.
 
-## 2. Theoretical Background
+## Theoretical Background
 
-### 2.1 SBT Measurement Framework
+### SBT Measurement Framework
 
 Spectral Brand Theory [@zharnikov-2026-spectral-brand-theory-computational-framework] represents a brand's perceptual signature as a profile $\mathbf{x}$ in $R^8_+$, where the eight coordinates correspond to Semiotic (visual identity, logos, design language), Narrative (brand stories, origin myths, messaging), Ideological (values, purpose, ethical commitments), Experiential (product experience, service quality, sensory engagement), Social (community, tribe membership, social signaling), Economic (price positioning, value-for-money, accessibility), Cultural (cultural embeddedness, local adaptation, heritage resonance), and Temporal (longevity, tradition, perceived permanence).
 
 Each observer cohort $k$ possesses a spectral weight profile $\mathbf{w}_k$ on the probability simplex $\Delta^7$ that determines which dimensions dominate their perception. The observation model is $y_k = \mathbf{w}_k^T \mathbf{x} + b_k + \epsilon_k$, where $b_k$ captures systematic bias and $\epsilon_k$ is observation noise (Zharnikov [-@zharnikov-2026-spectral-brand-theory-computational-framework], the observation model subsection). The geometry of the observer weight space is equipped with the Fisher-Rao metric [@zharnikov-2026-brand-space-geometry-formal-metric], and the warped product structure of the combined brand-observer space provides the Riemannian framework for perception geometry.
 
-### 2.2 Non-Ergodic Perception Dynamics
+### Non-Ergodic Perception Dynamics
 
 Brand perception evolves stochastically on the positive orthant of the unit sphere $S^7_+$ [@zharnikov-2026-non-ergodic-brand-perception-diffusion]. The Ito-form stochastic differential equation governing this evolution is:
 
@@ -50,13 +50,13 @@ $$d\mathbf{X}_t = \left[-\tfrac{7}{2}\sigma_0^2 \mathbf{X}_t - \kappa P_{\mathbf
 
 where $\mathbf{x}^*$ is the neutral prior, $\mathbf{s}$ is the brand's emission signal, $\kappa$ is the decay rate, $\alpha$ is signal strength, $\lambda_{enc}$ is encounter frequency, $\sigma_0$ is diffusion intensity, and $P_{\mathbf{X}_t}$ projects onto the tangent space at $\mathbf{X}_t$ (Zharnikov [-@zharnikov-2026-non-ergodic-brand-perception-diffusion], the SDE specification subsection).
 
-The drift term $\mu(\mathbf{X}_t, t)$ in this SDE is the *expected velocity* -- the instantaneous expected rate of change of the perception state. This is the theoretical foundation for the velocity concept formalized below: velocity is not an add-on to the SBT framework but is already implicit in the dynamical model. What has been missing is the measurement framework that makes this implicit quantity explicit and practically computable.
+The drift term $\mu(\mathbf{X}_t, t)$ in this SDE is the *expected velocity* — the instantaneous expected rate of change of the perception state. This is the theoretical foundation for the velocity concept formalized below: velocity is not an add-on to the SBT framework but is already implicit in the dynamical model. What has been missing is the measurement framework that makes this implicit quantity explicit and practically computable.
 
-Critically, brand perception is non-ergodic: the long-run time average for any individual observer does not converge to the cross-sectional ensemble average (Zharnikov [-@zharnikov-2026-non-ergodic-brand-perception-why], Proposition 3; Zharnikov [-@zharnikov-2026-non-ergodic-brand-perception-diffusion], Theorem 4). This non-ergodicity arises from absorbing states (irreversible negative conviction), multiplicative dynamics (signal magnitude depends on current state), and path-dependent dimension weighting (Zharnikov [-@zharnikov-2026-non-ergodic-brand-perception-why], Conditions C1--C3). The practical consequence is that cross-sectional brand tracking -- measuring a population of observers at one time point -- systematically misrepresents individual trajectories. Dynamic measurement requires tracking *trajectories*, not *snapshots*. Peters [-@peters-2019-ergodicity-problem-economics] provides the foundational economics treatment of non-ergodicity from which the SBT framework draws its epistemological warrant.
+Critically, brand perception is non-ergodic: the long-run time average for any individual observer does not converge to the cross-sectional ensemble average (Zharnikov [-@zharnikov-2026-non-ergodic-brand-perception-why], Proposition 3; Zharnikov [-@zharnikov-2026-non-ergodic-brand-perception-diffusion], Theorem 4). This non-ergodicity arises from absorbing states (irreversible negative conviction), multiplicative dynamics (signal magnitude depends on current state), and path-dependent dimension weighting (Zharnikov [-@zharnikov-2026-non-ergodic-brand-perception-why], Conditions C1--C3). The practical consequence is that cross-sectional brand tracking — measuring a population of observers at one time point — systematically misrepresents individual trajectories. Dynamic measurement requires tracking *trajectories*, not *snapshots*. Peters [-@peters-2019-ergodicity-problem-economics] provides the foundational economics treatment of non-ergodicity from which the SBT framework draws its epistemological warrant.
 
-**Remark (Formal vs. metaphorical use of physics terminology).** The vocabulary adopted here -- velocity, acceleration, phase space -- imports formal mathematical structure rather than physical intuition. Calling $d\mathbf{x}/dt$ "velocity" rather than "rate of change" is not metaphor but the adoption of a structure that carries consequences: velocity is a vector with both magnitude (brand speed) and direction (which dimensions are changing); the pairing of position and velocity defines a phase space in which trajectory uniqueness holds (Theorem 1 below); and the geometric quantities derived from this structure -- directional coherence, convergence indicator -- are formally defined and computed, not qualitatively asserted. The question is whether the mathematical properties hold for the social-science object of study [@peters-2019-ergodicity-problem-economics], not whether the domain originated in physics. D'Aveni's [-@daveni-1994-hypercompetition-managing-dynamics] "hypercompetition velocity" is descriptive -- no derivative is computed. The velocity in this paper is formal: $d\mathbf{x}/dt$ with well-defined noise properties, estimation procedures, and uniqueness theorems.
+**Remark (Formal vs. metaphorical use of physics terminology).** The vocabulary adopted here — velocity, acceleration, phase space — imports formal mathematical structure rather than physical intuition. Calling $d\mathbf{x}/dt$ "velocity" rather than "rate of change" is not metaphor but the adoption of a structure that carries consequences: velocity is a vector with both magnitude (brand speed) and direction (which dimensions are changing); the pairing of position and velocity defines a phase space in which trajectory uniqueness holds (Theorem 1 below); and the geometric quantities derived from this structure — directional coherence, convergence indicator — are formally defined and computed, not qualitatively asserted. The question is whether the mathematical properties hold for the social-science object of study [@peters-2019-ergodicity-problem-economics], not whether the domain originated in physics. D'Aveni's [-@daveni-1994-hypercompetition-managing-dynamics] "hypercompetition velocity" is descriptive — no derivative is computed. The velocity in this paper is formal: $d\mathbf{x}/dt$ with well-defined noise properties, estimation procedures, and uniqueness theorems.
 
-### 2.3 Brand Triangulation and the Kalman Filter
+### Brand Triangulation and the Kalman Filter
 
 Brand Triangulation [@zharnikov-2026-spectral-brand-theory-computational-framework] addresses the multi-observer measurement problem: given observations from $N$ cohorts with different spectral weight profiles, recover the brand's true emission profile $\mathbf{x}$. The framework introduces Perception DOP (Dilution of Precision), which quantifies how observer geometry affects estimation quality:
 
@@ -64,9 +64,9 @@ $$\text{PDOP} = \sqrt{\operatorname{trace}((W^T W)^{-1})}$$
 
 where $W$ is the $N \times 8$ matrix of stacked observer weight profiles.
 
-For temporal tracking, Brand Triangulation introduces a Perception Kalman filter with the state vector $(\mathbf{x}, \mathbf{v})$, where $\mathbf{x}$ is the brand's spectral profile and $\mathbf{v}$ is its perception velocity (Zharnikov [-@zharnikov-2026-spectral-brand-theory-computational-framework], Proposition 6). The prediction step is $\mathbf{x}_{t+1|t} = \mathbf{x}_t + \mathbf{v}_t \Delta_t$. The Kalman filter treats velocity instrumentally -- as a component of the state that improves temporal prediction. The present paper treats velocity *conceptually* -- as a first-class theoretical quantity with independent meaning, derived quantities, and diagnostic power.
+For temporal tracking, Brand Triangulation introduces a Perception Kalman filter with the state vector $(\mathbf{x}, \mathbf{v})$, where $\mathbf{x}$ is the brand's spectral profile and $\mathbf{v}$ is its perception velocity (Zharnikov [-@zharnikov-2026-spectral-brand-theory-computational-framework], Proposition 6). The prediction step is $\mathbf{x}_{t+1|t} = \mathbf{x}_t + \mathbf{v}_t \Delta_t$. The Kalman filter treats velocity instrumentally — as a component of the state that improves temporal prediction. The present paper treats velocity *conceptually* — as a first-class theoretical quantity with independent meaning, derived quantities, and diagnostic power.
 
-### 2.4 Relation to Dynamic Models in Marketing Science
+### Relation to Dynamic Models in Marketing Science
 
 The marketing-dynamics canon contains four traditions that any framework claiming "brand dynamics" must engage: population-level diffusion modeling [@bass-1969-new-product-growth]; brand-asset trajectory tracking [@mizik-2008-financial-value-relevance; @mizik-2009-valuing-branded-businesses]; state-space and Kalman-filter models for latent brand states [@naik-2003-understanding-impact-synergy; @bruce-2008-pooling-dynamic-forgetting; @sriram-2006-effects-brand-preference]; and persistence/transience decomposition of marketing effects [@dekimpe-1995-persistence-marketing-effects; @pauwels-2004-new-products-sales]. The present paper's contribution is structural rather than incremental: it operates at a different level of analysis from the first tradition, treats velocity as a theoretical rather than instrumental quantity relative to the third, and provides the multi-dimensional geometric measurement instrument that the second and fourth traditions implicitly require.
 
@@ -78,19 +78,19 @@ The state-space tradition supplies the closest mathematical kin. Naik and Raman 
 
 Dekimpe and Hanssens [-@dekimpe-1995-persistence-marketing-effects] introduced the formal distinction between persistent (unit-root) and transient (stationary) marketing effects on sales time series; Pauwels et al. [-@pauwels-2004-new-products-sales] extended this to vector autoregressive impulse-response decomposition for multiple marketing-mix variables; and Hanssens and Pauwels [-@hanssens-2016-demonstrating-value-marketing] provide an updated synthesis of the persistence modeling canon that spans advertising, pricing, and product actions. The persistence/transience distinction maps directly onto the velocity framework: persistent effects produce sustained velocity that moves the brand to a new equilibrium; transient effects produce temporary velocity that decays toward the prior position. The velocity framework provides the multi-dimensional measurement instrument for the Dekimpe-Hanssens persistence distinction applied to brand perception, and the Pauwels et al. [-@pauwels-2004-new-products-sales] VARX methodology supplies a candidate empirical estimator for the follow-on study envisioned in the limitations section.
 
-The structural contrast with the one-dimensional time-series tradition deserves explicit statement. Bass [-@bass-1969-new-product-growth] modeled cumulative adoption as a scalar ODE; Mizik and Jacobson [-@mizik-2008-financial-value-relevance; -@mizik-2009-valuing-branded-businesses] tracked multi-attribute brand perceptions as low-dimensional latent constructs and linked their change to stock-market returns; Schweidel, Fader, and Bradlow [-@schweidel-2007-bivariate-timing-model] modeled individual-level customer acquisition and retention as a bivariate timing process on a single behavioral outcome; and Pauwels et al. [-@pauwels-2004-new-products-sales] decomposed marketing-mix effects using vector autoregression on a set of sales and share outcomes. Each tradition operates on one or a small number of outcome variables at a time -- adoption count, stock return, churn probability, unit sales. The present framework differs in kind rather than degree: it tracks velocity and acceleration jointly across all eight perceptual dimensions simultaneously, so that the direction of change in brand perception space (not merely its magnitude) becomes the primary observable. A brand whose Narrative dimension is accelerating while its Cultural dimension is decelerating is in a structurally different dynamic state from a brand where both move in the same direction -- a distinction invisible to any scalar or low-dimensional representation. Integrating across all eight velocity components to obtain a single "brand speed" is possible (Definition 4 below) but discards the directional information that is the framework's primary contribution. The present paper therefore occupies a different analytical level from these traditions: it provides the eight-dimensional measurement instrument whose outputs could be fed, as inputs, into financial-outcome models of the Mizik-Jacobson form or persistence models of the Pauwels-Hanssens form.
+The structural contrast with the one-dimensional time-series tradition deserves explicit statement. Bass [-@bass-1969-new-product-growth] modeled cumulative adoption as a scalar ODE; Mizik and Jacobson [-@mizik-2008-financial-value-relevance; -@mizik-2009-valuing-branded-businesses] tracked multi-attribute brand perceptions as low-dimensional latent constructs and linked their change to stock-market returns; Schweidel, Fader, and Bradlow [-@schweidel-2007-bivariate-timing-model] modeled individual-level customer acquisition and retention as a bivariate timing process on a single behavioral outcome; and Pauwels et al. [-@pauwels-2004-new-products-sales] decomposed marketing-mix effects using vector autoregression on a set of sales and share outcomes. Each tradition operates on one or a small number of outcome variables at a time — adoption count, stock return, churn probability, unit sales. The present framework differs in kind rather than degree: it tracks velocity and acceleration jointly across all eight perceptual dimensions simultaneously, so that the direction of change in brand perception space (not merely its magnitude) becomes the primary observable. A brand whose Narrative dimension is accelerating while its Cultural dimension is decelerating is in a structurally different dynamic state from a brand where both move in the same direction — a distinction invisible to any scalar or low-dimensional representation. Integrating across all eight velocity components to obtain a single "brand speed" is possible (Definition 4 below) but discards the directional information that is the framework's primary contribution. The present paper therefore occupies a different analytical level from these traditions: it provides the eight-dimensional measurement instrument whose outputs could be fed, as inputs, into financial-outcome models of the Mizik-Jacobson form or persistence models of the Pauwels-Hanssens form.
 
-Recent advances reinforce the case for kinematic measurement. Swaminathan et al. [-@swaminathan-2020-branding-hyperconnected-world] identify real-time dynamic tracking of brand assets -- how they change over time rather than where they sit at a given moment -- as a central unresolved challenge for branding research in digital environments. Edeling and Fischer [-@edeling-2016-marketings-impact-firm] meta-analyze the marketing-finance interface and show that brand-metric changes predict firm value, providing a financial-consequence framing for exactly the velocity-based signals the present framework formalizes; Edeling, Srinivasan, and Hanssens [-@edeling-2021-marketingfinance-interface-new] extend this review to a broader metrics-and-methods synthesis, confirming that the marketing-finance interface remains underequipped with dynamic measurement instruments. Colicev, Malshe, Pauwels, and O'Connor [-@colicev-2018-improving-consumer-mindset] demonstrate that social-media owned and earned media affect consumer mindset metrics differently over time, an empirical pattern that reinforces the need for dimension-specific velocity tracking rather than aggregate brand-score monitoring. Datta, Ailawadi, and van Heerde [-@datta-2017-how-well-does] demonstrate in a Marketing Science study that consumer-based brand equity aligns with sales-based metrics differentially across marketing-mix levers, directly establishing that brand equity dynamics are multi-dimensional and that static measurement misses the velocity-level differentiation the present framework formalizes.
+Recent advances reinforce the case for kinematic measurement. Swaminathan et al. [-@swaminathan-2020-branding-hyperconnected-world] identify real-time dynamic tracking of brand assets — how they change over time rather than where they sit at a given moment — as a central unresolved challenge for branding research in digital environments. Edeling and Fischer [-@edeling-2016-marketings-impact-firm] meta-analyze the marketing-finance interface and show that brand-metric changes predict firm value, providing a financial-consequence framing for exactly the velocity-based signals the present framework formalizes; Edeling, Srinivasan, and Hanssens [-@edeling-2021-marketingfinance-interface-new] extend this review to a broader metrics-and-methods synthesis, confirming that the marketing-finance interface remains underequipped with dynamic measurement instruments. Colicev, Malshe, Pauwels, and O'Connor [-@colicev-2018-improving-consumer-mindset] demonstrate that social-media owned and earned media affect consumer mindset metrics differently over time, an empirical pattern that reinforces the need for dimension-specific velocity tracking rather than aggregate brand-score monitoring. Datta, Ailawadi, and van Heerde [-@datta-2017-how-well-does] demonstrate in a Marketing Science study that consumer-based brand equity aligns with sales-based metrics differentially across marketing-mix levers, directly establishing that brand equity dynamics are multi-dimensional and that static measurement misses the velocity-level differentiation the present framework formalizes.
 
-### 2.5 Dynamical Systems in Strategic Management
+### Dynamical Systems in Strategic Management
 
-The strategic management literature uses dynamical systems language extensively but almost exclusively metaphorically. Bourgeois and Eisenhardt [-@bourgeois-1988-strategic-decision-processes] define "high velocity environments" as those with rapid, discontinuous change in demand, competitors, and technology -- but "velocity" here is an informal descriptor, not a computed derivative. D'Aveni [-@daveni-1994-hypercompetition-managing-dynamics] discusses "hypercompetition" with terms like "escalation" and "acceleration" but provides no mathematical formalization. Dooley and Van de Ven [-@dooley-1999-explaining-complex-organizational] come closest to formal dynamical systems analysis, defining periodic, chaotic, and noise patterns in organizational change time series, though without applying kinematic quantities to strategic positioning.
+The strategic management literature uses dynamical systems language extensively but almost exclusively metaphorically. Bourgeois and Eisenhardt [-@bourgeois-1988-strategic-decision-processes] define "high velocity environments" as those with rapid, discontinuous change in demand, competitors, and technology — but "velocity" here is an informal descriptor, not a computed derivative. D'Aveni [-@daveni-1994-hypercompetition-managing-dynamics] discusses "hypercompetition" with terms like "escalation" and "acceleration" but provides no mathematical formalization. Dooley and Van de Ven [-@dooley-1999-explaining-complex-organizational] come closest to formal dynamical systems analysis, defining periodic, chaotic, and noise patterns in organizational change time series, though without applying kinematic quantities to strategic positioning.
 
 The gap is clear: dynamics as metaphor is pervasive; dynamics as measurement is absent. This paper provides the measurement framework.
 
-## 3. The Differential Calculus of Brand Perception
+## The Differential Calculus of Brand Perception
 
-### 3.1 Position, Velocity, and Acceleration
+### Position, Velocity, and Acceleration
 
 **Definition 1 (Brand Position).** The spectral profile of a brand at time $t$ is a vector $\mathbf{x}(t) = [x_1(t), \ldots, x_8(t)]$ in $R^8_+$, where each component $x_d(t)$ represents the brand's emission intensity on dimension $d$ at time $t$.
 
@@ -106,11 +106,11 @@ $$\mathbf{a}(t) = d\mathbf{v}/dt = d^2\mathbf{x}/dt^2$$
 
 The acceleration captures whether brand movement is intensifying ($|\mathbf{v}|$ increasing), stabilizing ($|\mathbf{v}|$ decreasing toward zero), or reversing (sign change in velocity components).
 
-**Remark (Smoothness and the SDE).** The SDE of Zharnikov [-@zharnikov-2026-non-ergodic-brand-perception-diffusion] produces sample paths that are continuous but almost surely nowhere differentiable -- a standard property of diffusion processes. The velocity defined here is therefore not the pathwise derivative (which does not exist) but the *expected rate of change conditioned on the current state*: $\mathbf{v}(t) = E[d\mathbf{X}/dt \mid \mathbf{X}_t] = \mu(\mathbf{X}_t, t)$, i.e., the drift function of the SDE. In practice, velocity is estimated from discrete-time measurements via finite differences or Kalman filtering (the Kalman correspondence subsection below), both of which produce smooth estimates of the underlying drift. This is standard in all applications of state-space models to noisy processes: the estimated velocity is the posterior mean of the drift, not a pathwise derivative. All definitions, propositions, and theorems in this paper should be understood in this sense: "velocity" denotes the estimated drift, not a classical derivative of a non-differentiable sample path.
+**Remark (Smoothness and the SDE).** The SDE of Zharnikov [-@zharnikov-2026-non-ergodic-brand-perception-diffusion] produces sample paths that are continuous but almost surely nowhere differentiable — a standard property of diffusion processes. The velocity defined here is therefore not the pathwise derivative (which does not exist) but the *expected rate of change conditioned on the current state*: $\mathbf{v}(t) = E[d\mathbf{X}/dt \mid \mathbf{X}_t] = \mu(\mathbf{X}_t, t)$, i.e., the drift function of the SDE. In practice, velocity is estimated from discrete-time measurements via finite differences or Kalman filtering (the Kalman correspondence subsection below), both of which produce smooth estimates of the underlying drift. This is standard in all applications of state-space models to noisy processes: the estimated velocity is the posterior mean of the drift, not a pathwise derivative. All definitions, propositions, and theorems in this paper should be understood in this sense: "velocity" denotes the estimated drift, not a classical derivative of a non-differentiable sample path.
 
 **Remark (Lossy projection of the dynamics).** The position $\mathbf{x}(t)$, velocity $\mathbf{v}(t)$, and acceleration $\mathbf{a}(t)$ are defined in the full 8-dimensional perception space $\mathbb{R}^8$. Any individual observer measurement, however, is a lossy projection of this state onto a lower-dimensional observable subspace determined by that observer's spectral weight vector. Reconstructing the full trajectory from observer-side measurements is therefore a source-coding problem with side information [@cover-2006-elements-information-theory]: the rate of distortion depends on the observer's effective channel capacity and on the geometric diversity of the observer constellation, in the sense formalized by Brand Triangulation [@zharnikov-2026-spectral-brand-theory-computational-framework]. The information loss from this projection is bounded below by the Johnson-Lindenstrauss-type results in Zharnikov [-@zharnikov-2026-spectral-metamerism-brand-perception-projection], which establish that any projection from $R^8$ to a single scalar incurs systematic pairwise-distance distortion across realistic brand sets. Velocities and accelerations recovered from a low-rank observer constellation are subject to the same rate-distortion bounds as the position estimates from which they are derived. This framing situates the differential calculus in standard information-theoretic terms; no estimator in this paper depends on it.
 
-### 3.2 Discrete-Time Estimation
+### Discrete-Time Estimation
 
 Brand perception is measured at discrete time points $t_1, t_2, \ldots, t_M$. The continuous derivatives must be approximated from finite differences.
 
@@ -128,7 +128,7 @@ where $t_{mid,k}$ is the midpoint of the $k$-th velocity interval. This is a sec
 
 The Kalman filter [@kalman-1960-new-approach-linear; @zharnikov-2026-spectral-brand-theory-computational-framework, the Perception Kalman filter subsection] provides an optimal alternative when the system dynamics are approximately linear-Gaussian: the Kalman smoother simultaneously estimates position and velocity from a sequence of noisy observations, with the Kalman gain automatically balancing prediction (model) and correction (data). For non-linear dynamics, particle filters [@bruce-2008-pooling-dynamic-forgetting] extend this estimation.
 
-### 3.3 Noise Amplification Under Differentiation
+### Noise Amplification Under Differentiation
 
 Differentiation amplifies measurement noise. If position measurements have additive noise with standard deviation $\sigma_x$, then:
 
@@ -141,19 +141,19 @@ where $\Delta_t$ is the measurement interval. For short intervals, noise dominat
 
 $$\text{MSE}(\hat{\mathbf{v}}) = O(\Delta_t^4) + O(\sigma_x^2 / \Delta_t^2)$$
 
-The optimal interval satisfies $\Delta_t^* \sim (\sigma_x)^{1/3} / (f'')^{1/3}$, where $f''$ characterizes the curvature of the true trajectory. For brand perception with typical noise levels ($\sigma_x \sim 0.3$ on a 10-point scale) and moderate dynamics (annual change $\sim 0.5$ points), the optimal measurement interval is approximately 6--12 months -- consistent with standard brand tracking cadence.
+The optimal interval satisfies $\Delta_t^* \sim (\sigma_x)^{1/3} / (f'')^{1/3}$, where $f''$ characterizes the curvature of the true trajectory. For brand perception with typical noise levels ($\sigma_x \sim 0.3$ on a 10-point scale) and moderate dynamics (annual change $\sim 0.5$ points), the optimal measurement interval is approximately 6--12 months — consistent with standard brand tracking cadence.
 
 *Proof sketch.* The truncation error of the first-order difference estimator for a twice-differentiable function is $O(\Delta_t^2 \cdot \max|f''|)$. The noise variance is $\sigma_x^2 \cdot 2 / \Delta_t^2$. Setting $d(\text{MSE})/d(\Delta_t) = 0$ and solving yields the stated result.
 
 **Practical implication.** Velocity estimation is robust with quarterly or semi-annual measurement. Acceleration estimation, requiring at least three time points and suffering $O(1/\Delta_t^4)$ noise amplification, requires either longer observation windows or explicit smoothing (Kalman filter). Third-order derivatives (jerk) are impractical with current brand tracking data frequencies.
 
-### 3.4 Brand Speed and Derived Scalar Quantities
+### Brand Speed and Derived Scalar Quantities
 
 **Definition 4 (Brand Speed).** The brand speed is the scalar magnitude of the velocity vector:
 
 $$s(t) = \|\mathbf{v}(t)\| = \sqrt{\sum_d v_d(t)^2}$$
 
-Brand speed measures how fast the brand's perception is changing, irrespective of direction. High speed indicates a brand in transition (deliberate repositioning, crisis response, campaign launch). Low speed indicates equilibrium (established position, stable market). Moderate speed with no strategic driver suggests drift -- unintended movement requiring investigation.
+Brand speed measures how fast the brand's perception is changing, irrespective of direction. High speed indicates a brand in transition (deliberate repositioning, crisis response, campaign launch). Low speed indicates equilibrium (established position, stable market). Moderate speed with no strategic driver suggests drift — unintended movement requiring investigation.
 
 **Definition 5 (Directional Coherence).** Given a brand's velocity vector $\mathbf{v}$ and a strategy direction vector $\mathbf{d}$ (the intended direction of brand movement, defined by the brand manager), the directional coherence is:
 
@@ -165,11 +165,11 @@ Directional coherence ranges from $-1$ to $+1$:
 
 - $\text{DC} \sim +1$: The brand is moving in its intended direction. Strategy is producing aligned perception change.
 - $\text{DC} \sim 0$: The brand is moving, but orthogonally to intent. Marketing expenditure is generating *activity* (non-zero speed) but not *progress* (zero alignment with strategy).
-- $\text{DC} \sim -1$: The brand is moving opposite to intent. Marketing is counterproductive -- a situation more common than typically acknowledged, especially during purpose campaigns that trigger backlash on unintended dimensions.
+- $\text{DC} \sim -1$: The brand is moving opposite to intent. Marketing is counterproductive — a situation more common than typically acknowledged, especially during purpose campaigns that trigger backlash on unintended dimensions.
 
-**Remark (Strategy-vector independence as a methodological requirement).** The strategy direction vector $\mathbf{d}$ must be defined by the brand manager *a priori* -- before the velocity is observed -- representing the target direction of brand change. For example, "increase Ideological and Social while maintaining Economic" would be $\mathbf{d} = [0, 0, 1, 0, 1, 0, 0, 0]$ (unnormalized). Independence of $\mathbf{d}$ from the observed $\mathbf{v}$ is not a stylistic feature but a methodological requirement: directional coherence measures alignment between action and intention, and if the strategy vector is constructed *after* observing brand movement (e.g., by retrospectively rationalizing the dimensions on which the brand actually moved), DC becomes circular and degenerates to a near-$+1$ value by construction. Operationalizing the independence requirement in practice means recording the strategy vector from pre-campaign brand briefs, board-approved positioning statements, or analogous artifacts dated prior to the measurement window. Stated strategy vectors can also be aspirational and systematically biased toward dimensions the manager already believes are performing well; this bias does not invalidate DC as a diagnostic but does require analysts to verify the temporal ordering and the documentary source of the strategy vector before interpreting DC as evidence about campaign effectiveness.
+**Remark (Strategy-vector independence as a methodological requirement).** The strategy direction vector $\mathbf{d}$ must be defined by the brand manager *a priori* — before the velocity is observed — representing the target direction of brand change. For example, "increase Ideological and Social while maintaining Economic" would be $\mathbf{d} = [0, 0, 1, 0, 1, 0, 0, 0]$ (unnormalized). Independence of $\mathbf{d}$ from the observed $\mathbf{v}$ is not a stylistic feature but a methodological requirement: directional coherence measures alignment between action and intention, and if the strategy vector is constructed *after* observing brand movement (e.g., by retrospectively rationalizing the dimensions on which the brand actually moved), DC becomes circular and degenerates to a near-$+1$ value by construction. Operationalizing the independence requirement in practice means recording the strategy vector from pre-campaign brand briefs, board-approved positioning statements, or analogous artifacts dated prior to the measurement window. Stated strategy vectors can also be aspirational and systematically biased toward dimensions the manager already believes are performing well; this bias does not invalidate DC as a diagnostic but does require analysts to verify the temporal ordering and the documentary source of the strategy vector before interpreting DC as evidence about campaign effectiveness.
 
-### 3.5 Phase Space Representation
+### Phase Space Representation
 
 **Definition 6 (Brand Phase Space).** The phase space of brand perception is the 16-dimensional space $P = R^8 \times R^8$, where each brand at time $t$ occupies a point $(\mathbf{x}(t), \mathbf{v}(t))$ combining its spectral profile (position) and its velocity.
 
@@ -181,17 +181,17 @@ The phase space representation doubles the dimensionality of brand description f
 
 This uniqueness means that the phase space description is *complete* in a way that position alone is not: if you know both where a brand is and how fast it is moving on each dimension, you can (in principle) predict its short-term future trajectory. Position alone permits no such prediction.
 
-### 3.6 Dimensional Acceleration Profile
+### Dimensional Acceleration Profile
 
 For each dimension $d$, the pair $(v_d, a_d)$ defines a point in the two-dimensional *dimensional phase plane*. Plotting this pair across time reveals the dynamic regime of each dimension:
 
 - **Stable attractor** ($v_d \sim 0$, $a_d$ restoring): Small perturbations from equilibrium decay. The dimension returns to its resting value. Most dimensions for established brands in stable markets.
-- **Growth regime** ($v_d > 0$, $a_d > 0$): Dimension increasing and accelerating. Reinforcing dynamics -- a campaign gaining momentum, a viral effect compounding.
+- **Growth regime** ($v_d > 0$, $a_d > 0$): Dimension increasing and accelerating. Reinforcing dynamics — a campaign gaining momentum, a viral effect compounding.
 - **Saturation** ($v_d > 0$, $a_d < 0$): Dimension still increasing but decelerating. Approaching a ceiling. Campaign fatigue, market saturation, diminishing returns.
-- **Decline** ($v_d < 0$, $a_d < 0$): Dimension decreasing and decline accelerating. Crisis trajectory. Requires intervention. Cleeren, van Heerde, and Dekimpe [-@cleeren-2013-rising-ashes-how] document longitudinal recovery dynamics following product-harm crises and show that recovery speed depends on crisis type, brand strength, and category structure -- empirical patterns that the dimensional acceleration profile renders visible at the dimension level rather than at the aggregate-share level. Coherence-type analysis [@zharnikov-2026-coherence-type-as-crisis-predictor] supplies a complementary prediction: which coherence types are vulnerable on which dimensions during decline regimes, with the minimum drift across dimensions providing a structural anchor for crisis severity.
+- **Decline** ($v_d < 0$, $a_d < 0$): Dimension decreasing and decline accelerating. Crisis trajectory. Requires intervention. Cleeren, van Heerde, and Dekimpe [-@cleeren-2013-rising-ashes-how] document longitudinal recovery dynamics following product-harm crises and show that recovery speed depends on crisis type, brand strength, and category structure — empirical patterns that the dimensional acceleration profile renders visible at the dimension level rather than at the aggregate-share level. Coherence-type analysis [@zharnikov-2026-coherence-type-as-crisis-predictor] supplies a complementary prediction: which coherence types are vulnerable on which dimensions during decline regimes, with the minimum drift across dimensions providing a structural anchor for crisis severity.
 - **Recovery** ($v_d < 0$, $a_d > 0$): Dimension still declining but deceleration indicates a floor. The worst is passing.
 
-These regimes are directly actionable: a marketing manager observing ($v_d > 0$, $a_d < 0$) on a strategic dimension knows the current campaign is losing effectiveness before the dimension itself starts to decline -- an early warning signal invisible to position-only tracking.
+These regimes are directly actionable: a marketing manager observing ($v_d > 0$, $a_d < 0$) on a strategic dimension knows the current campaign is losing effectiveness before the dimension itself starts to decline — an early warning signal invisible to position-only tracking.
 
 ```{.mermaid width=55%}
 quadrantChart
@@ -210,7 +210,7 @@ quadrantChart
 
 **Figure 1.** Dimensional phase plane: five dynamic regimes by velocity and acceleration sign.
 
-### 3.7 Correspondence to the Kalman Filter
+### Correspondence to the Kalman Filter
 
 Brand Triangulation introduces a Perception Kalman filter with state $(\mathbf{x}, \mathbf{v})$ (Zharnikov [-@zharnikov-2026-spectral-brand-theory-computational-framework], Proposition 6). The relationship to the present framework is precise:
 
@@ -219,25 +219,25 @@ Brand Triangulation introduces a Perception Kalman filter with state $(\mathbf{x
 3. The Kalman filter's posterior covariance matrix provides uncertainty bounds on both position and velocity estimates.
 4. The Kalman gain automatically performs the noise-optimal smoothing discussed in the noise amplification subsection above.
 
-The present paper thus provides the *theoretical semantics* for the Kalman filter state: velocity is not merely a latent variable that improves tracking accuracy (instrumental role); it is a first-class observable quantity with independent diagnostic value (conceptual role). The directional coherence, phase space representation, and trajectory clustering defined here are not available from the Kalman filter alone -- they require the kinematic interpretation developed in this section.
+The present paper thus provides the *theoretical semantics* for the Kalman filter state: velocity is not merely a latent variable that improves tracking accuracy (instrumental role); it is a first-class observable quantity with independent diagnostic value (conceptual role). The directional coherence, phase space representation, and trajectory clustering defined here are not available from the Kalman filter alone — they require the kinematic interpretation developed in this section.
 
-## 4. Velocity Resolves the Bonnet Ambiguity
+## Velocity Resolves the Bonnet Ambiguity
 
-### 4.1 The Bonnet Pair Problem in Brand Measurement
+### The Bonnet Pair Problem in Brand Measurement
 
-In differential geometry, Bonnet pairs are surfaces that share the same metric (first fundamental form) and the same mean curvature but are genuinely non-congruent -- different shapes that cannot be distinguished by metric measurements alone [@bobenko-2025-compact-bonnet-pairs]. The "missing information" is the second fundamental form: how the surface is embedded in the ambient space.
+In differential geometry, Bonnet pairs are surfaces that share the same metric (first fundamental form) and the same mean curvature but are genuinely non-congruent — different shapes that cannot be distinguished by metric measurements alone [@bobenko-2025-compact-bonnet-pairs]. The "missing information" is the second fundamental form: how the surface is embedded in the ambient space.
 
-The analog in brand measurement is structural rather than exact (brand perception space is not a surface in the differential-geometric sense), but the identification problem is the same: two brands A and B may have identical spectral profiles $\mathbf{x}_A = \mathbf{x}_B$ at a given time. If the only measurement is the spectral profile (Order 0), the brands are observationally equivalent -- indistinguishable by any profile-based framework. Yet they may be perceived differently by observers who have encountered them over time, because the brands arrived at the same profile via different trajectories.
+The analog in brand measurement is structural rather than exact (brand perception space is not a surface in the differential-geometric sense), but the identification problem is the same: two brands A and B may have identical spectral profiles $\mathbf{x}_A = \mathbf{x}_B$ at a given time. If the only measurement is the spectral profile (Order 0), the brands are observationally equivalent — indistinguishable by any profile-based framework. Yet they may be perceived differently by observers who have encountered them over time, because the brands arrived at the same profile via different trajectories.
 
-This is not a hypothetical concern. Consider two brands that both score [7.0, 7.0, 7.0, 7.0, 7.0, 7.0, 7.0, 7.0] -- a flat, undifferentiated profile. One brand reached this profile by declining from a distinctive peak (loss of differentiation). The other reached it by rising from a lower baseline (improvement across the board). Observers who experienced the decline perceive the brand as "fading"; observers who experienced the rise perceive it as "emerging." The spectral profile is identical; the perception is different. This is a Bonnet pair in brand measurement.
+This is not a hypothetical concern. Consider two brands that both score [7.0, 7.0, 7.0, 7.0, 7.0, 7.0, 7.0, 7.0] — a flat, undifferentiated profile. One brand reached this profile by declining from a distinctive peak (loss of differentiation). The other reached it by rising from a lower baseline (improvement across the board). Observers who experienced the decline perceive the brand as "fading"; observers who experienced the rise perceive it as "emerging." The spectral profile is identical; the perception is different. This is a Bonnet pair in brand measurement.
 
-### 4.2 The Identification Problem
+### The Identification Problem
 
 In statistical language, the Bonnet pair problem is an instance of observational equivalence [@rothenberg-1971-identification-parametric-models]: two distinct parameter configurations produce identical observations under the available measurement model. When the measurement model captures only position $\mathbf{x}$, any two brands at the same position are observationally equivalent.
 
-The classical resolution in econometrics is to add identifying information -- instruments, exclusion restrictions, or additional observations that break the equivalence [@manski-2007-identification-prediction-decision]. In brand measurement, the additional information that resolves the equivalence is the *trajectory*: the time series of positions that reveals how the brand arrived at its current location.
+The classical resolution in econometrics is to add identifying information — instruments, exclusion restrictions, or additional observations that break the equivalence [@manski-2007-identification-prediction-decision]. In brand measurement, the additional information that resolves the equivalence is the *trajectory*: the time series of positions that reveals how the brand arrived at its current location.
 
-### 4.3 Velocity as the Second Fundamental Form
+### Velocity as the Second Fundamental Form
 
 **Theorem 1 (Velocity-Based Identification).** Let brands A and B have identical spectral profiles at time $t$: $\mathbf{x}_A(t) = \mathbf{x}_B(t)$. If their velocity vectors differ, $\mathbf{v}_A(t) \neq \mathbf{v}_B(t)$, then:
 
@@ -249,27 +249,27 @@ The classical resolution in econometrics is to add identifying information -- in
 
 *Proof.* Part (a) is immediate from Definition 6. Part (b) follows from pathwise uniqueness of the SDE (Zharnikov [-@zharnikov-2026-non-ergodic-brand-perception-diffusion], Theorem 1): distinct velocity at time $t$ implies distinct drift, which produces distinct trajectories for all subsequent times. The non-degeneracy of the diffusion coefficient ensures the probability is exactly 1, not merely positive. Part (c) is the Taylor expansion $\mathbf{x}(t + \Delta_t) = \mathbf{x}(t) + \mathbf{v}(t) \, \Delta_t + O(\Delta_t^2)$, applied to both brands and differenced.
 
-**Interpretation.** Velocity plays the role of the second fundamental form in the Bonnet pair analogy. The spectral profile (metric) tells you the brand's current configuration. The velocity tells you how that configuration is embedded in time -- how the brand is moving through perception space. Just as the second fundamental form disambiguates Bonnet pairs in geometry, velocity disambiguates brands with identical current profiles.
+**Interpretation.** Velocity plays the role of the second fundamental form in the Bonnet pair analogy. The spectral profile (metric) tells you the brand's current configuration. The velocity tells you how that configuration is embedded in time — how the brand is moving through perception space. Just as the second fundamental form disambiguates Bonnet pairs in geometry, velocity disambiguates brands with identical current profiles.
 
-### 4.4 Practical Implications
+### Practical Implications
 
 The velocity-based identification has immediate practical consequences:
 
-1. **Competitive analysis.** Two brands at similar positions are often treated as substitutes. Velocity analysis may reveal that one is moving toward this position (a new entrant) while the other is moving away (an established brand repositioning). They are passing through the same point in opposite directions -- a competitive analysis that position-only measurement misses entirely.
+1. **Competitive analysis.** Two brands at similar positions are often treated as substitutes. Velocity analysis may reveal that one is moving toward this position (a new entrant) while the other is moving away (an established brand repositioning). They are passing through the same point in opposite directions — a competitive analysis that position-only measurement misses entirely.
 
 2. **Crisis detection.** A brand at a high score on a dimension may be stable ($v \sim 0$) or decaying ($v < 0$). The position is the same; the velocity distinguishes health from impending decline.
 
 3. **M&A assessment.** Two acquisition targets with similar brand profiles may differ dramatically in velocity. One with stable velocity is a lower-risk acquisition; one with high negative velocity is a declining asset, regardless of its current profile.
 
-## 5. Trajectory-Based Analysis
+## Trajectory-Based Analysis
 
-### 5.1 Trajectory Clustering
+### Trajectory Clustering
 
-Traditional static clustering groups brands by position: brands with similar profiles are grouped together (strategic groups; Hunt [-@hunt-1972-competition-major-home]). Trajectory clustering extends this by grouping brands by their dynamic state -- brands with similar $(\mathbf{x}, \mathbf{v})$ are in the same dynamic cohort, even if their positions alone would place them in different groups.
+Traditional static clustering groups brands by position: brands with similar profiles are grouped together (strategic groups; Hunt [-@hunt-1972-competition-major-home]). Trajectory clustering extends this by grouping brands by their dynamic state — brands with similar $(\mathbf{x}, \mathbf{v})$ are in the same dynamic cohort, even if their positions alone would place them in different groups.
 
 Group-based trajectory modeling [@nagin-1999-analyzing-developmental-trajectories; @nagin-2005-groupbased-modeling-development] provides the statistical methodology: fit a finite mixture of trajectory shapes to longitudinal brand data, where each mixture component represents a distinct dynamic archetype. The extension to multi-dimensional brand profiles treats the eight-dimensional velocity vector as the trajectory shape parameter, grouping brands by their pattern of dimensional change rather than their dimensional levels.
 
-### 5.2 Convergence and Divergence Detection
+### Convergence and Divergence Detection
 
 Two brands at different positions may be on converging trajectories if their velocity vectors point toward each other. Define the convergence indicator:
 
@@ -285,9 +285,9 @@ This measures whether the relative velocity is closing or widening the gap betwe
 
 $$t_{conv} \sim \frac{\|\mathbf{x}_A - \mathbf{x}_B\|}{\|\mathbf{v}_A - \mathbf{v}_B\|}$$
 
-This provides a first-order estimate of when two brands will occupy the same perceptual territory. The estimate degrades if velocities change (acceleration effects), but serves as a planning horizon for competitive response. Borah and Tellis [-@borah-2016-halo-spillover-effects] document multi-brand competitive spillover dynamics during product-recall events and show that the directional structure of spillover depends on brand similarity and category structure -- an empirical pattern consistent with the convergence indicator's claim that relative-velocity geometry is the operative quantity for cross-brand dynamic linkage. The convergence indicator proposed here generalizes their finding from the crisis-response setting to ordinary competitive dynamics.
+This provides a first-order estimate of when two brands will occupy the same perceptual territory. The estimate degrades if velocities change (acceleration effects), but serves as a planning horizon for competitive response. Borah and Tellis [-@borah-2016-halo-spillover-effects] document multi-brand competitive spillover dynamics during product-recall events and show that the directional structure of spillover depends on brand similarity and category structure — an empirical pattern consistent with the convergence indicator's claim that relative-velocity geometry is the operative quantity for cross-brand dynamic linkage. The convergence indicator proposed here generalizes their finding from the crisis-response setting to ordinary competitive dynamics.
 
-### 5.3 Dynamic Archetypes
+### Dynamic Archetypes
 
 Trajectory clustering reveals dynamic archetypes that have no analog in static clustering:
 
@@ -296,9 +296,9 @@ Trajectory clustering reveals dynamic archetypes that have no analog in static c
 - **Anchored brands**: Low speed, low displacement. Stable position with minimal change. Heritage luxury brands.
 - **Drifting brands**: Moderate speed, no strategic direction. Movement without intent. The directional coherence metric (Definition 5) distinguishes drifting from migrating: both have non-zero speed, but drifters have low DC while migrators have high DC.
 
-## 6. Illustration: Dove 2003--2023
+## Illustration: Dove 2003--2023
 
-### 6.1 Data
+### Data
 
 The dimensional profiles are taken from Zharnikov [-@zharnikov-2026-dimensional-activation-cohort-divergence-longitudinal], which assigns spectral profiles to Dove at four temporal cross-sections based on documented campaign activity, advertising content, public reception, and expert assessment.
 
@@ -308,7 +308,7 @@ The dimensional profiles are taken from Zharnikov [-@zharnikov-2026-dimensional-
 |---|---|---|---|---|
 | Semiotic (S) | 5.0 | 5.5 | 6.0 | 7.0 |
 | Narrative (N) | 4.0 | 7.5 | 8.5 | 7.5 |
-| Ideological (I) | -- | 8.0 | 9.0 | 7.5 |
+| Ideological (I) | — | 8.0 | 9.0 | 7.5 |
 | Experiential (E) | 6.5 | 6.5 | 6.5 | 7.0 |
 | Social (So) | 3.5 | 6.0 | 7.5 | 6.5 |
 | Economic (Ec) | 7.0 | 7.0 | 7.0 | 6.5 |
@@ -317,7 +317,7 @@ The dimensional profiles are taken from Zharnikov [-@zharnikov-2026-dimensional-
 
 *Notes*: The Ideological dimension is marked "--" in 2003, indicating no meaningful ideological signal prior to the Real Beauty campaign. This dimensional creation event (null-to-positive transition) is a topological change that the differential calculus cannot capture as a standard derivative; the Limitations subsection below returns to this issue. Profiles are author-assigned based on qualitative assessment of documented campaign activity, advertising content, public reception, and expert assessment, not derived from survey data or experimental measurement. The illustration demonstrates the analytical framework, not empirical findings. The velocity and acceleration values computed below are illustrative of the method, not validated measurements of Dove's actual perceptual dynamics.
 
-### 6.2 Velocity Vectors
+### Velocity Vectors
 
 Velocity vectors for three periods are computed using the finite difference estimator (the discrete-time estimation subsection above):
 
@@ -329,14 +329,14 @@ Velocity vectors for three periods are computed using the finite difference esti
 |---|---|---|
 | S | +0.17 | Gradual semiotic evolution |
 | N | +1.17 | Rapid narrative construction |
-| I | -- | Dimensional creation (not a derivative) |
+| I | — | Dimensional creation (not a derivative) |
 | E | 0.00 | Product experience unchanged |
 | So | +0.83 | Community forming around campaign |
 | Ec | 0.00 | Price positioning unchanged |
 | C | +1.50 | Strong counter-cultural resonance |
 | T | +0.17 | Modest heritage accumulation |
 
-Brand speed (7 computable dimensions, excluding Ideological): $\|\mathbf{v}\| = 2.10$ units/yr. This is a high-speed brand -- consistent with a major campaign launch creating rapid perceptual change.
+Brand speed (7 computable dimensions, excluding Ideological): $\|\mathbf{v}\| = 2.10$ units/yr. This is a high-speed brand — consistent with a major campaign launch creating rapid perceptual change.
 
 *Panel B: Expansion (2006--2013, $\Delta_t = 7$ years)*
 
@@ -351,7 +351,7 @@ Brand speed (7 computable dimensions, excluding Ideological): $\|\mathbf{v}\| = 
 | C | -0.07 | Cultural beginning to decline |
 | T | +0.07 | Heritage accumulating |
 
-Brand speed: $\|\mathbf{v}\| = 0.31$ units/yr. The brand has decelerated dramatically -- campaign maturation. The Cultural dimension has turned negative (early counter-cultural decay, as theorized in Zharnikov [-@zharnikov-2026-dimensional-activation-cohort-divergence-longitudinal, Proposition 4]).
+Brand speed: $\|\mathbf{v}\| = 0.31$ units/yr. The brand has decelerated dramatically — campaign maturation. The Cultural dimension has turned negative (early counter-cultural decay, as theorized in Zharnikov [-@zharnikov-2026-dimensional-activation-cohort-divergence-longitudinal, Proposition 4]).
 
 *Panel C: Normative Absorption (2013--2023, $\Delta_t = 10$ years)*
 
@@ -370,7 +370,9 @@ Brand speed: $\|\mathbf{v}\| = 0.36$ units/yr. Speed is slightly higher than Per
 
 *Notes*: Brand speed in Period 1 is computed over 7 dimensions because the Ideological velocity is undefined (dimensional creation event from null to positive). Speeds in Periods 2 and 3 are computed over all 8 dimensions. Cross-period speed comparisons should account for this dimensional mismatch. All velocity values are illustrative of the method, computed from author-assigned profiles in Table 1.
 
-### 6.3 Acceleration Vectors
+### Acceleration Vectors
+
+Table 3 reports the acceleration vectors between consecutive periods.
 
 **Table 3.** Acceleration Vectors Between Consecutive Periods
 
@@ -397,15 +399,15 @@ Acceleration between Period 2 and Period 3 (midpoints 2009.5 and 2018, $\Delta_{
 
 *Notes*: Acceleration vectors are computed as second-order central differences from the velocity estimates in Table 2. Values are illustrated from author-assigned profiles and are not validated empirical measurements. Acceleration for the Ideological dimension is excluded from Period 1 → 2 due to the dimensional creation event; it appears in Period 2 → 3 once the dimension is established. Omitted dimensions (E, Ec) showed zero or near-zero velocity in both periods; their accelerations are approximately zero by construction and are excluded to avoid clutter.
 
-### 6.4 Dynamic Interpretation
+### Dynamic Interpretation
 
 The velocity and acceleration vectors tell a story that position alone cannot:
 
-1. **The Cultural dimension is the leading indicator.** Cultural velocity turned negative before any other dimension (Period 2: $v_C = -0.07$). The acceleration was strongly negative throughout ($a_C = -0.314$ in the first period). By the time Cultural decline is visible in the position data (dropping from 8.5 to 5.5), the velocity framework would have flagged the deceleration years earlier -- during the 2006-2013 period, when Cultural position was still near its peak.
+1. **The Cultural dimension is the leading indicator.** Cultural velocity turned negative before any other dimension (Period 2: $v_C = -0.07$). The acceleration was strongly negative throughout ($a_C = -0.314$ in the first period). By the time Cultural decline is visible in the position data (dropping from 8.5 to 5.5), the velocity framework would have flagged the deceleration years earlier — during the 2006-2013 period, when Cultural position was still near its peak.
 
 2. **Narrative and Social follow Cultural with a lag.** These dimensions remain positive in Period 2 ($v_N = +0.14$, $v_{So} = +0.21$) but are decelerating. By Period 3, both have turned negative. The acceleration vectors in Period 1 predicted this reversal.
 
-3. **Brand speed follows an inverted-U.** Speed peaks during ignition (2.10), drops during expansion (0.31), and rises slightly during absorption (0.36). The rising speed in Period 3 is deceptive -- the brand is not regaining momentum; it is losing ground across multiple dimensions simultaneously.
+3. **Brand speed follows an inverted-U.** Speed peaks during ignition (2.10), drops during expansion (0.31), and rises slightly during absorption (0.36). The rising speed in Period 3 is deceptive — the brand is not regaining momentum; it is losing ground across multiple dimensions simultaneously.
 
 4. **The Experiential dimension is independent.** Experiential velocity is essentially zero throughout, consistent with the product (soap, body wash) remaining unchanged while the brand's meaning undergoes radical transformation. This dimensional independence validates the SBT dimensional taxonomy: the dimensions capture distinct aspects of brand perception that can change independently. The near-zero Experiential velocity is consistent with the conceptual content of brand experience as a distinct, sensation- and behavior-based construct [@brakus-2009-brand-experience-what]: when the underlying product encounter is unchanged, the experiential signal is stable even while narrative and ideological meaning move rapidly, so the velocity decomposition isolates experience-level dynamics from meaning-level dynamics.
 
@@ -431,23 +433,23 @@ quadrantChart
    - Period 2: $\text{DC} \sim +.67$ (still aligned; both dimensions growing)
    - Period 3: $\text{DC} \sim -.53$ (misaligned; both target dimensions declining)
 
-   These DC values are computed from the author-assigned illustrative profiles in Table 1; they should be read as a demonstration of the method, not as validated measurements of Dove's actual coherence trajectory. The shift from positive to negative directional coherence marks the transition from effective to counterproductive campaigning -- the brand's continued messaging is no longer producing movement in the intended direction. This is a quantitative signal of the "counter-cultural decay" that Zharnikov [-@zharnikov-2026-dimensional-activation-cohort-divergence-longitudinal, Proposition 4] describes qualitatively.
+   These DC values are computed from the author-assigned illustrative profiles in Table 1; they should be read as a demonstration of the method, not as validated measurements of Dove's actual coherence trajectory. The shift from positive to negative directional coherence marks the transition from effective to counterproductive campaigning — the brand's continued messaging is no longer producing movement in the intended direction. This is a quantitative signal of the "counter-cultural decay" that Zharnikov [-@zharnikov-2026-dimensional-activation-cohort-divergence-longitudinal, Proposition 4] describes qualitatively.
 
-## 7. Managerial Implications
+## Managerial Implications
 
-### 7.1 The Brand Speedometer
+### The Brand Speedometer
 
 Brand speed (Definition 4) provides a simple, actionable KPI: how fast is the brand changing? A dashboard displaying brand speed over time reveals acceleration and deceleration patterns that position-only tracking misses. The speedometer is especially valuable during campaign launches (is speed increasing?), crises (is speed increasing in unintended directions?), and brand maintenance periods (is speed near zero, confirming stability?).
 
-### 7.2 Strategy-Trajectory Alignment
+### Strategy-Trajectory Alignment
 
-Directional coherence (Definition 5) answers the question every CMO should ask but rarely can: "Is our brand moving in the direction we intend?" A DC below .3 indicates that marketing expenditure is generating perceptual change but not in the strategic direction. A DC below 0 indicates actively counterproductive investment. The Dove illustration (the dynamic interpretation subsection above) shows DC declining from +.72 to -.53 over 20 years from the author-assigned illustrative profiles -- a quantitative demonstration of the kind of signal the framework can register, not a validated measurement of the campaign's actual effectiveness reversal.
+Directional coherence (Definition 5) answers the question every CMO should ask but rarely can: "Is our brand moving in the direction we intend?" A DC below .3 indicates that marketing expenditure is generating perceptual change but not in the strategic direction. A DC below 0 indicates actively counterproductive investment. The Dove illustration (the dynamic interpretation subsection above) shows DC declining from +.72 to -.53 over 20 years from the author-assigned illustrative profiles — a quantitative demonstration of the kind of signal the framework can register, not a validated measurement of the campaign's actual effectiveness reversal.
 
-### 7.3 Competitive Early Warning
+### Competitive Early Warning
 
 Convergence detection (the convergence and divergence subsection above) identifies future competitors before they become current competitors. Traditional competitive analysis compares current positions; trajectory analysis compares velocities. A brand entering your perceptual territory from a different starting position (high convergence indicator) is a strategic threat that position-only analysis would not flag until the brands are already in direct competition.
 
-### 7.4 Measurement Frequency Recommendations
+### Measurement Frequency Recommendations
 
 The noise amplification analysis (the noise amplification subsection above) implies that velocity estimation is robust at quarterly measurement intervals, while acceleration requires semi-annual or annual intervals with smoothing. Furthermore, different dimensions may require different measurement frequencies based on their characteristic timescales:
 
@@ -457,25 +459,25 @@ The noise amplification analysis (the noise amplification subsection above) impl
 
 This dimensional timescale separation reduces measurement cost while improving signal-to-noise on each dimension.
 
-> **Managerial Translation.** What does brand velocity mean in practice? Velocity tells you whether your brand profile is actively shifting or holding stable across each of the eight perceptual dimensions. A velocity near zero signals equilibrium -- the brand is where it is and staying there. A non-zero velocity signals change in progress, whether intentional (repositioning) or unintentional (drift). Acceleration tells you whether that change is gaining momentum (accelerating toward a new position) or losing momentum (decelerating and likely to stabilize). The phase plane (Figure 1) translates these two numbers into a single actionable regime: growth, saturation, stable, recovery, or decline. A brand manager who can place each dimension on that plane at each measurement wave has an early-warning system that conventional position-only tracking cannot supply: the Cultural or Ideological dimension turning from saturation to decline registers as a velocity reversal well before the position score visibly falls.
+> **Managerial Translation.** What does brand velocity mean in practice? Velocity tells you whether your brand profile is actively shifting or holding stable across each of the eight perceptual dimensions. A velocity near zero signals equilibrium — the brand is where it is and staying there. A non-zero velocity signals change in progress, whether intentional (repositioning) or unintentional (drift). Acceleration tells you whether that change is gaining momentum (accelerating toward a new position) or losing momentum (decelerating and likely to stabilize). The phase plane (Figure 1) translates these two numbers into a single actionable regime: growth, saturation, stable, recovery, or decline. A brand manager who can place each dimension on that plane at each measurement wave has an early-warning system that conventional position-only tracking cannot supply: the Cultural or Ideological dimension turning from saturation to decline registers as a velocity reversal well before the position score visibly falls.
 
-## 8. Discussion
+## Discussion
 
-### 8.1 Limitations
+### Limitations
 
-**Data frequency.** The Dove illustration uses four time points over 20 years. This provides three velocity estimates and two acceleration estimates -- the minimum for demonstrating the framework. Denser time series would improve the estimates and enable detection of nonlinear dynamics. The optimal measurement interval analysis (Proposition 1) provides guidance, but practical brand tracking rarely exceeds quarterly frequency.
+**Data frequency.** The Dove illustration uses four time points over 20 years. This provides three velocity estimates and two acceleration estimates — the minimum for demonstrating the framework. Denser time series would improve the estimates and enable detection of nonlinear dynamics. The optimal measurement interval analysis (Proposition 1) provides guidance, but practical brand tracking rarely exceeds quarterly frequency.
 
 **Noise amplification.** Differentiation amplifies measurement error (the noise amplification subsection above). Velocity estimates from two noisy measurements can be unreliable; acceleration estimates from three noisy measurements more so. The Kalman filter (the Kalman correspondence subsection above) is the recommended practical estimator, as it performs optimal noise-variance tradeoff. Raw finite differences should be treated as illustrative, not definitive.
 
 **Author-assigned profiles.** The Dove profiles are based on qualitative expert assessment, not survey or experimental data. The illustration demonstrates the analytical framework but does not validate it empirically. Validation requires application to measured brand tracking data with known measurement properties.
 
-**Dimensional creation events.** The null-to-positive transition on Dove's Ideological dimension (2003 to 2006) is a topological change -- the dimension did not exist in the brand's perceptual space and then appeared. The differential calculus requires continuity; dimensional creation is a discontinuity. The framework handles smooth evolution well but requires supplementation for creation/destruction events. These events are rare (most brands do not create new perceptual dimensions) but theoretically important.
+**Dimensional creation events.** The null-to-positive transition on Dove's Ideological dimension (2003 to 2006) is a topological change — the dimension did not exist in the brand's perceptual space and then appeared. The differential calculus requires continuity; dimensional creation is a discontinuity. The framework handles smooth evolution well but requires supplementation for creation/destruction events. These events are rare (most brands do not create new perceptual dimensions) but theoretically important.
 
 **Stationarity assumption.** The differential calculus assumes dynamics smooth enough to differentiate. Brand crises (Dieselgate, product recalls) create discontinuities where derivatives do not exist in the classical sense. Cleeren, van Heerde, and Dekimpe [-@cleeren-2013-rising-ashes-how] document that recovery dynamics following product-harm crises are non-stationary at the dimension and category level; a fully general framework must therefore accommodate such regime shifts rather than assume them away. The Kalman filter handles this through its innovation sequence: large prediction errors flag regime changes. A formal treatment would require jump-diffusion models (SDE with Poisson-driven jumps), extending Zharnikov [-@zharnikov-2026-non-ergodic-brand-perception-diffusion].
 
-### 8.2 Connection to the SBT Analogy Stack
+### Connection to the SBT Analogy Stack
 
-The differential calculus completes a parallel between SBT and classical mechanics.
+The differential calculus completes a parallel between SBT and classical mechanics, summarized in Table 4.
 
 **Table 4.** Correspondence Between Classical Mechanics and SBT Brand Dynamics
 
@@ -486,8 +488,8 @@ The differential calculus completes a parallel between SBT and classical mechani
 | Velocity $\mathbf{v} = d\mathbf{x}/dt$ | Brand velocity | This paper |
 | Acceleration $\mathbf{a} = d^2\mathbf{x}/dt^2$ | Brand acceleration | This paper |
 | Phase space $(\mathbf{x}, \mathbf{v})$ | Brand phase space | This paper |
-| Force $\mathbf{F} = m\mathbf{a}$ | Brand force (future) | -- |
-| Lagrangian $L(\mathbf{x}, \mathbf{v})$ | Perception Lagrangian (future) | -- |
+| Force $\mathbf{F} = m\mathbf{a}$ | Brand force (future) | — |
+| Lagrangian $L(\mathbf{x}, \mathbf{v})$ | Perception Lagrangian (future) | — |
 | Geodesic motion | Inertial brand trajectory | R6 (2026j) |
 | Non-ergodicity | Path-dependent perception | R9 (2026o) |
 
@@ -495,9 +497,9 @@ The differential calculus completes a parallel between SBT and classical mechani
 
 The force and Lagrangian rows are deliberately left for future work. Defining "brand force" requires a concept of "brand mass" (inertia) that does not yet have a clean SBT definition independent of force and acceleration. Without such a definition, $F = ma$ is circular. The Lagrangian requires a potential function $V(\mathbf{x})$ (the perception landscape) whose derivation from SBT primitives is a substantial theoretical program.
 
-### 8.3 The Correspondence Principle for Dynamics
+### The Correspondence Principle for Dynamics
 
-When brand velocity is negligible ($\|\mathbf{v}\| \sim 0$), the phase space representation collapses to position-only measurement, and the differential calculus adds no information. This is the "static limit" -- the regime in which classical brand measurement frameworks [@aaker-1991-managing-brand-equity; @keller-1993-conceptualizing-measuring-managing] are adequate.
+When brand velocity is negligible ($\|\mathbf{v}\| \sim 0$), the phase space representation collapses to position-only measurement, and the differential calculus adds no information. This is the "static limit" — the regime in which classical brand measurement frameworks [@aaker-1991-managing-brand-equity; @keller-1993-conceptualizing-measuring-managing] are adequate.
 
 The static limit holds for:
 
@@ -514,11 +516,11 @@ The dynamic framework is needed when:
 
 This correspondence principle parallels the SBT analogy stack: classical brand measurement is the "Newtonian limit" of the full dynamic framework, valid when the "velocity" of brand perception is small relative to measurement precision. The distinction between persistent and transient marketing effects [@dekimpe-1995-persistence-marketing-effects] maps naturally onto this framework: persistent effects produce sustained velocity (the brand moves to a new equilibrium), while transient effects produce temporary velocity that decays (the brand returns to its prior position). The velocity framework thus provides the multi-dimensional measurement language for Dekimpe and Hanssens' persistence distinction applied to brand perception. Pauwels et al. [-@pauwels-2004-new-products-sales] extended the persistence framework to vector autoregressive impulse-response decomposition for multiple marketing-mix variables, supplying the empirical methodology that a follow-on study could deploy to estimate the impulse-response of brand velocity vectors to specific marketing actions; the present paper provides the multi-dimensional perception-side state space on which such impulse-response analyses would operate.
 
-### 8.4 Competitive Context Stability
+### Competitive Context Stability
 
 Preliminary evidence from a working-paper survey (Zharnikov [-@zharnikov-2026-geometric-approaches-brand-perception-critical], the competitive context section) found null effects of competitive context across 5 focal brands paired with 3 competitor types (largest d = .187). The provisional pattern is that brand spectral profiles are stable regardless of competitive context, consistent with the trajectory model's assumption that brand position changes are driven by internal dynamics rather than competitive field effects. This preliminary finding has not been independently peer-reviewed and should not be treated as a confirmed empirical regularity; a sharper test is among the testable predictions in the next subsection.
 
-### 8.5 Testable Predictions
+### Testable Predictions
 
 The framework yields four falsifiable predictions that a follow-on empirical study, applied to a longitudinal multi-dimensional brand panel (e.g., YouGov BrandIndex, Kantar BrandZ), could test directly.
 
@@ -532,15 +534,15 @@ The framework yields four falsifiable predictions that a follow-on empirical stu
 
 These predictions are sharper than the framework-level claim that velocity is informative; they specify quantitative patterns whose absence would falsify particular components of the theory while preserving others. Testing them requires a panel with at least three measurement waves, a defined strategy vector for at least one focal brand, and ideally external criteria (campaign records, financial outcomes) for cross-validation.
 
-**Empirical Test Design.** Beyond the four predictions above, the framework generates a joint testable claim about regime transitions. Brands that transition from one phase-plane regime to another -- for example, from Growth ($v > 0$, $a > 0$) to Saturation ($v > 0$, $a < 0$) on a key dimension -- should display characteristic acceleration signatures that are detectable in standard brand-tracking panels such as YouGov BrandIndex or Kantar BrandZ. Specifically, a regime transition should manifest as a sign change in the second derivative of the relevant tracking score across consecutive measurement waves, a pattern that could be extracted from quarterly panel data without requiring any additional instrumentation beyond the scoring protocol already in use. The prediction is not that regime transitions are frequent, but that when they occur they are recognizable from the panel data and that their timing is not random with respect to documented marketing events.
+**Empirical Test Design.** Beyond the four predictions above, the framework generates a joint testable claim about regime transitions. Brands that transition from one phase-plane regime to another — for example, from Growth ($v > 0$, $a > 0$) to Saturation ($v > 0$, $a < 0$) on a key dimension — should display characteristic acceleration signatures that are detectable in standard brand-tracking panels such as YouGov BrandIndex or Kantar BrandZ. Specifically, a regime transition should manifest as a sign change in the second derivative of the relevant tracking score across consecutive measurement waves, a pattern that could be extracted from quarterly panel data without requiring any additional instrumentation beyond the scoring protocol already in use. The prediction is not that regime transitions are frequent, but that when they occur they are recognizable from the panel data and that their timing is not random with respect to documented marketing events.
 
-**Operational Implementation.** A direct empirical test would proceed as follows. Fit cubic splines to monthly tracking data for a sample of focal brands, then compute first and second derivatives of the fitted splines at each monthly knot. Classify each (brand, dimension, period) triple into one of the five regimes using the sign rules in the dimensional acceleration profile subsection above. Test whether regime-transition events -- defined as a period where the regime classification changes between consecutive measurement waves -- predict the timing of documented ad-spend peaks or major marketing campaign launches in the Pathmatics, Nielsen, or Kantar Media Intelligence records. If the transition events are uninformative about campaign timing (zero mutual information), the velocity and acceleration constructs add nothing to what the static score trajectory already conveys. The coherence-type framework in Zharnikov [-@zharnikov-2026-coherence-type-as-crisis-predictor] supplies a complementary structural prediction: brands in low-coherence regimes should be over-represented in the Decline and Recovery quadrants, providing a cross-paper falsification structure that links the dynamics framework (this paper) to the resilience framework [@zharnikov-2026-coherence-type-as-crisis-predictor].
+**Operational Implementation.** A direct empirical test would proceed as follows. Fit cubic splines to monthly tracking data for a sample of focal brands, then compute first and second derivatives of the fitted splines at each monthly knot. Classify each (brand, dimension, period) triple into one of the five regimes using the sign rules in the dimensional acceleration profile subsection above. Test whether regime-transition events — defined as a period where the regime classification changes between consecutive measurement waves — predict the timing of documented ad-spend peaks or major marketing campaign launches in the Pathmatics, Nielsen, or Kantar Media Intelligence records. If the transition events are uninformative about campaign timing (zero mutual information), the velocity and acceleration constructs add nothing to what the static score trajectory already conveys. The coherence-type framework in Zharnikov [-@zharnikov-2026-coherence-type-as-crisis-predictor] supplies a complementary structural prediction: brands in low-coherence regimes should be over-represented in the Decline and Recovery quadrants, providing a cross-paper falsification structure that links the dynamics framework (this paper) to the resilience framework [@zharnikov-2026-coherence-type-as-crisis-predictor].
 
 **Falsification Condition.** The velocity and acceleration constructs are falsified at the level of practical utility if, after applying the operational implementation above to a minimum panel of 20 brands over 10 or more consecutive quarters, fewer than 20 percent of detected regime transitions correspond to documented marketing events within a two-quarter window, and the regime classification at wave t explains no additional variance in the position score at wave t+2 beyond what the position score at wave t alone predicts. This condition is deliberately conservative: it requires the kinematic layer to add measurable predictive value over static position tracking, not merely theoretical completeness. If the condition is met, the five-regime classification is an observationally vacuous relabeling of the raw score trajectory.
 
-### 8.6 Future Research
+### Future Research
 
-**Spectral force.** What causes brand acceleration? Each marketing action -- advertising, product launch, pricing change, endorsement -- is a force vector in $R^8$. The net force is the vector sum of concurrent actions. Identifying the force contribution of individual actions requires controlled experiments or structural models that decompose the observed acceleration into causal components. Coherence-type analysis [@zharnikov-2026-coherence-type-as-crisis-predictor] characterizes drift fields by coherence type and provides a structural anchor for decomposing observed accelerations into coherence-specific drift signatures. This forcing direction is developed into a forced-dynamics model in the spectral-dynamics formation companion [@zharnikov-2026aw-forming-a-perception], which represents a campaign as a time-varying forcing function on the perception cloud, recovers a relaxation time constant when the forcing stops, and shows that a brand's distinctiveness lower-bounds the persistence of its formed perception.
+**Spectral force.** What causes brand acceleration? Each marketing action — advertising, product launch, pricing change, endorsement — is a force vector in $R^8$. The net force is the vector sum of concurrent actions. Identifying the force contribution of individual actions requires controlled experiments or structural models that decompose the observed acceleration into causal components. Coherence-type analysis [@zharnikov-2026-coherence-type-as-crisis-predictor] characterizes drift fields by coherence type and provides a structural anchor for decomposing observed accelerations into coherence-specific drift signatures. This forcing direction is developed into a forced-dynamics model in the spectral-dynamics formation companion [@zharnikov-2026aw-forming-a-perception], which represents a campaign as a time-varying forcing function on the perception cloud, recovers a relaxation time constant when the forcing stops, and shows that a brand's distinctiveness lower-bounds the persistence of its formed perception.
 
 **Perception Lagrangian.** A variational approach where brand trajectories minimize an action functional would connect SBT to optimal control theory, enabling prescriptive recommendations (what trajectory minimizes a cost function subject to resource constraints?).
 
@@ -548,17 +550,17 @@ These predictions are sharper than the framework-level claim that velocity is in
 
 **Empirical validation.** Application to measured brand tracking data (e.g., YouGov BrandIndex, Kantar BrandZ) would test whether the velocity and acceleration quantities computed from real data produce actionable and predictive insights of the form specified in the testable predictions above. The Dove illustration is conceptual; validation requires data with known measurement properties and external criteria for evaluating velocity-based predictions.
 
-### 8.7 Companion Computation Script
+### Companion Computation Script
 
 All computed numerical values in Tables 2 and 3 (velocity vectors and acceleration vectors derived from the Table 1 spectral profiles) and Figure 2 (the Dove (Cultural, Ideological) phase trajectory) are reproducible from public Python scripts. The first script (`compute_velocity_acceleration.py`) implements the centered finite-difference estimators defined in the discrete-time estimation subsection above and writes the full Tables 2 and 3 to JSON and CSV. The second script (`phase_portrait.py`) reads the same Table 1 inputs and renders Figure 2 with numpy and matplotlib via PEP 723 inline dependencies. Public location: `https://github.com/spectralbranding/sbt-papers/tree/main/r18-spectral-dynamics/code/`. Run commands: `python3 compute_velocity_acceleration.py` (tables) and `uv run --script phase_portrait.py` (figure). Neither script has a stochastic component (finite differences and trajectory plotting are deterministic given Table 1 inputs); a fixed seed is supplied only for reproducibility of any future Monte Carlo extensions. Each script's docstring documents the input table, the method, and the expected outputs.
 
-## 9. Conclusion
+## Conclusion
 
 This paper introduces a differential calculus for multi-dimensional brand perception that elevates velocity and acceleration from instrumental latent variables to first-class theoretical constructs. By embedding the Kalman-filter state vector inside a formally defined phase space, the framework establishes metric ambiguity resolution (Theorem 1), quantifies strategy–trajectory alignment via directional coherence (Definition 5), and enables dynamic competitive mapping through trajectory clustering and convergence indicators (the trajectory-based analysis section above). Four falsifiable predictions are offered for future longitudinal panels, each specifying quantitative patterns whose absence would falsify particular components of the theory.
 
-Theoretically, the work completes the dynamic layer of Spectral Brand Theory: the SDE model [@zharnikov-2026-non-ergodic-brand-perception-diffusion] describes how perception evolves; the non-ergodicity analysis [@zharnikov-2026-non-ergodic-brand-perception-why] explains why individual trajectories diverge; the coherence-resilience derivation [@zharnikov-2026-coherence-type-as-crisis-predictor] predicts crisis vulnerability from dynamic signatures; and the present paper provides the measurement framework that makes these theoretical dynamics observable and actionable. The static limit -- when velocity approaches zero -- recovers classical brand-equity measurement [@aaker-1991-managing-brand-equity; @keller-1993-conceptualizing-measuring-managing], providing a formal correspondence principle that delineates when dynamic instrumentation is required. The framework also reframes persistence [@dekimpe-1995-persistence-marketing-effects] as sustained velocity and supplies the multi-attribute measurement instrument required by financial-impact models [@mizik-2008-financial-value-relevance; @mizik-2009-valuing-branded-businesses].
+Theoretically, the work completes the dynamic layer of Spectral Brand Theory: the SDE model [@zharnikov-2026-non-ergodic-brand-perception-diffusion] describes how perception evolves; the non-ergodicity analysis [@zharnikov-2026-non-ergodic-brand-perception-why] explains why individual trajectories diverge; the coherence-resilience derivation [@zharnikov-2026-coherence-type-as-crisis-predictor] predicts crisis vulnerability from dynamic signatures; and the present paper provides the measurement framework that makes these theoretical dynamics observable and actionable. The static limit — when velocity approaches zero — recovers classical brand-equity measurement [@aaker-1991-managing-brand-equity; @keller-1993-conceptualizing-measuring-managing], providing a formal correspondence principle that delineates when dynamic instrumentation is required. The framework also reframes persistence [@dekimpe-1995-persistence-marketing-effects] as sustained velocity and supplies the multi-attribute measurement instrument required by financial-impact models [@mizik-2008-financial-value-relevance; @mizik-2009-valuing-branded-businesses].
 
-Managerially, the brand speedometer, coherence dashboard, and convergence horizon offer forward-looking KPIs that conventional tracking cannot supply. A coherence value below .3 signals marketing activity without progress; a convergence indicator above .5 flags future competitors while they remain perceptually distant. In the author-assigned Dove profiles, the Cultural dimension's deceleration would have registered years before the dimension's position turned negative -- the kind of early-warning signal that distinguishes trajectory measurement from rear-view tracking.
+Managerially, the brand speedometer, coherence dashboard, and convergence horizon offer forward-looking KPIs that conventional tracking cannot supply. A coherence value below .3 signals marketing activity without progress; a convergence indicator above .5 flags future competitors while they remain perceptually distant. In the author-assigned Dove profiles, the Cultural dimension's deceleration would have registered years before the dimension's position turned negative — the kind of early-warning signal that distinguishes trajectory measurement from rear-view tracking.
 
 Brand measurement has been static for too long. The kinematic layer developed here reveals where brands are heading, how fast they are getting there, and whether that journey aligns with intent.
 

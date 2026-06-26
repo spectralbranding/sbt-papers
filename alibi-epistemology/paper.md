@@ -26,15 +26,15 @@ The atom-cloud-fact pipeline was developed for a specific problem: reconciling f
 
 The solution required three epistemological stages with formally distinct properties: observations that are typed and source-bound (atoms), hypotheses that are probabilistic and revisable (clouds), and knowledge that is threshold-based and subject to full recalculation (facts). Seven architectural principles emerged from the implementation, governing how observations are typed, how they cluster, and how knowledge crystallizes and re-crystallizes.
 
-The principles transfer to brand perception modeling without domain specialization. When applied to brand perception — a domain with no obvious connection to receipt reconciliation — the same architecture produces a framework (Spectral Brand Theory) that generates capabilities that traditional single-observer brand frameworks cannot represent (Zharnikov [-@zharnikov-2026-spectral-brand-theory-computational-framework], §2.6). The domain transfer works because the underlying epistemic structure is identical: heterogeneous observers perceive typed signals, cluster them into probabilistic impressions, and — if sufficient evidence accumulates — crystallize those impressions into stable convictions.
+The principles transfer to brand perception modeling without domain specialization. When applied to brand perception — a domain with no obvious connection to receipt reconciliation — the same architecture produces a framework (Spectral Brand Theory) that generates capabilities that traditional single-observer brand frameworks cannot represent (Zharnikov [-@zharnikov-2026-spectral-brand-theory-computational-framework]). The domain transfer works because the underlying epistemic structure is identical: heterogeneous observers perceive typed signals, cluster them into probabilistic impressions, and — if sufficient evidence accumulates — crystallize those impressions into stable convictions.
 
 This paper makes three contributions: (1) it specifies the atom-cloud-fact pipeline as a domain-general epistemological architecture, formalizing the three-stage progression from observation to hypothesis to knowledge; (2) it isolates the re-collapse mechanism — full dissolution and rebuild of knowledge on new evidence — as the architectural commitment that distinguishes this framework from Bayesian updating and AGM revision; and (3) it demonstrates successful cross-domain transfer from financial document reconciliation to multi-cohort brand perception modeling, with the heterogeneous-observer extension as the key parametric adaptation. Each contribution maps to the empirical sections that follow.
 
 The work can be read within the design-science tradition in information systems research [@hevner-2004-design-science-information; @gregor-2007-anatomy-design-theory]: the artifact is the pipeline itself; its utility lies in enabling systems that natively support observer heterogeneity and non-incremental knowledge revision. The primary frame of the paper, however, is epistemological rather than artifact-evaluative — the pipeline is presented as a candidate general structure of knowledge formation, not solely as an IS design recommendation.
 
-## 2. The Pipeline Architecture
+## The Pipeline Architecture
 
-### 2.1 Three Stages of Knowledge Formation
+### Three Stages of Knowledge Formation
 
 The pipeline models knowledge formation as a three-stage progression with a feedback path from arriving evidence back to the atom layer. Figure 1 summarizes the data flow; each stage has formally distinct properties.
 
@@ -52,7 +52,7 @@ flowchart LR
   F -. re-collapse on contradiction .-> A
 ```
 
-*Notes*: Solid arrows trace the forward path from observation to knowledge. The dashed arrow from Facts back to Atoms is the re-collapse mechanism (Principle 6): on contradicting new evidence, facts are dissolved and the pipeline rebuilds from the complete atom set rather than patching the existing fact. The Identity Gate is a binary precondition (Principle 3); atoms that fail the gate do not enter cloud formation. Observer-specific weights apply at the cloud-scoring step in the multi-observer extension (Section 4.2); in the single-observer financial domain, weights are fixed.
+*Notes*: Solid arrows trace the forward path from observation to knowledge. The dashed arrow from Facts back to Atoms is the re-collapse mechanism (Principle 6): on contradicting new evidence, facts are dissolved and the pipeline rebuilds from the complete atom set rather than patching the existing fact. The Identity Gate is a binary precondition (Principle 3); atoms that fail the gate do not enter cloud formation. Observer-specific weights apply at the cloud-scoring step in the multi-observer extension; in the single-observer financial domain, weights are fixed.
 
 ```
 Stage 1: OBSERVATION         Stage 2: HYPOTHESIS         Stage 3: KNOWLEDGE
@@ -72,9 +72,9 @@ Observer-specificity in the rightmost column applies in the brand perception dom
 
 **Stage 3: Fact Collapse.** When a cloud's score exceeds a threshold, it collapses into a fact — confirmed knowledge. The collapse is functionally analogous to Kahneman's [-@kahneman-2011-thinking-fast-slow] System 1 processing: once the evidence threshold is met, the hypothesis becomes an automatic, low-effort conviction rather than an effortful evaluation. Facts are not permanent: when new evidence arrives that contradicts an existing fact, the fact dissolves and the system rebuilds from the full atom set. This re-collapse mechanism ensures that knowledge is always consistent with the total evidence, not incrementally patched.
 
-### 2.2 Seven Architectural Principles
+### Seven Architectural Principles
 
-Seven principles govern the pipeline's operation. Each was discovered through the financial implementation and proves transferable across domains with parametric adaptation:
+Seven principles govern the pipeline's operation, summarized in Table 1. Each was discovered through the financial implementation and proves transferable across domains with parametric adaptation:
 
 **Table 1.** Seven Principles of the Atom-Cloud-Fact Architecture.
 
@@ -102,13 +102,13 @@ Seven principles govern the pipeline's operation. Each was discovered through th
 
 **Principle 7: Epistemic separation** requires that atoms, clouds, and facts are stored and processed in separate systems with separate interfaces. An atom cannot be "promoted" to a fact — it must pass through cloud formation and collapse. A fact cannot be "demoted" to a cloud — it must be dissolved and the atoms re-clustered. This separation prevents epistemic shortcuts that would compromise the pipeline's integrity.
 
-## 3. Financial Implementation
+## Financial Implementation
 
-### 3.1 The Reconciliation Problem
+### The Reconciliation Problem
 
 The financial reconciliation problem is a variant of probabilistic record linkage — the task of identifying which records across different databases refer to the same real-world entity [@fellegi-1969-theory-record-linkage; @christen-2012-data-matching-concepts]. The atom-cloud-fact pipeline differs from classical record linkage in three respects: it operates on unstructured documents rather than database records, it maintains the three-stage epistemic separation (observation, hypothesis, knowledge) rather than collapsing directly to a match/non-match decision, and it supports the re-collapse principle (Principle 6) where established facts can be fully recalculated on new evidence. These differences are structural consequences of the pipeline's epistemological architecture rather than implementation choices.
 
-A typical business generates four document types for a single transaction: a receipt (from the vendor), an invoice (from the vendor), a bank statement (from the financial institution), and a payment confirmation (from the payment processor). These documents contain overlapping but non-identical information:
+A typical business generates four document types for a single transaction: a receipt (from the vendor), an invoice (from the vendor), a bank statement (from the financial institution), and a payment confirmation (from the payment processor). These documents contain overlapping but non-identical information, as Table 2 reports:
 
 **Table 2.** Document Types and Their Atom Dimensions in Financial Processing.
 
@@ -121,7 +121,7 @@ A typical business generates four document types for a single transaction: a rec
 
 The challenge: the same transaction appears in different documents with different representations. The receipt says "STARBUCKS #12345" while the bank statement says "SQ *STARBUCKS CORP." The receipt date is March 15; the bank posts on March 17. The receipt shows $4.95; the bank shows $5.20 (tip added). The atoms describe the same real-world event but differ on every dimension.
 
-### 3.2 Pipeline in Action
+### Pipeline in Action
 
 **Atom extraction**: Each document is parsed into typed atoms. The receipt yields: VENDOR("STARBUCKS #12345"), AMOUNT($4.95), DATETIME(2026-03-15), ITEM("Tall Latte"), PAYMENT("Visa ...4821"). The bank statement yields: VENDOR("SQ *STARBUCKS CORP"), AMOUNT($5.20), DATETIME(2026-03-17).
 
@@ -133,11 +133,11 @@ The challenge: the same transaction appears in different documents with differen
 
 **Re-collapse trigger**: If a second receipt arrives for the same Starbucks on the same day (a colleague's lunch), the system dissolves the fact and recalculates. The new atom set might produce two clouds where there was one, splitting the bank charge differently. The fact is not patched — it is rebuilt from scratch.
 
-## 4. Domain Transfer: From Financial Facts to Brand Perception
+## Domain Transfer: From Financial Facts to Brand Perception
 
-### 4.1 The Mapping
+### The Mapping
 
-The domain transfer from financial processing to brand perception preserves all seven principles while changing the domain vocabulary:
+The domain transfer from financial processing to brand perception preserves all seven principles while changing the domain vocabulary, as Table 3 sets out:
 
 **Table 3.** Domain Transfer Mapping: Financial to Brand Perception.
 
@@ -152,7 +152,7 @@ The domain transfer from financial processing to brand perception preserves all 
 | **Re-collapse** | New document forces full recalculation | New evidence (scandal, product, campaign) forces conviction rebuild |
 | **Observer** | The system (single, fixed weights) | Human cohort (heterogeneous, variable weights) |
 
-### 4.2 The Critical Extension: Heterogeneous Observers
+### The Critical Extension: Heterogeneous Observers
 
 The financial pipeline has one observer: the system. Its weights are fixed (vendor .30, amount .40, date .20, location .15) — values hand-tuned during implementation to maximize reconciliation accuracy on a development dataset of approximately 500 transactions, then held constant across all subsequent processing. No formal sensitivity analysis was conducted; different datasets or business contexts would likely require recalibration. Every atom is processed through the same scoring function.
 
@@ -162,7 +162,7 @@ This is the critical extension that produces Spectral Brand Theory. The seven pr
 
 The result: the same brand produces different "facts" in different observers' minds. These are not errors or variations on a "true" brand perception — they are the brand perceptions that the architecture can recover from the available signal environment. There is no brand-in-itself accessible outside some observing system, just as there is no "true reconciliation" independent of the matching algorithm's parameters. The parameters determine the output.
 
-### 4.3 Principle Transfer Validation
+### Principle Transfer Validation
 
 Each of the seven principles operates identically in both domains:
 
@@ -180,9 +180,9 @@ Each of the seven principles operates identically in both domains:
 
 **Epistemic separation** (Principle 7): Brand signals (atoms), brand impressions (clouds), and brand convictions (facts) are structurally distinct. A brand signal is not "the brand" — it is one observation. A brand impression is not a conviction — it is a probabilistic cluster. A brand conviction is not permanent — it can be dissolved and rebuilt.
 
-## 5. Theoretical Propositions
+## Theoretical Propositions
 
-The architecture and its cross-domain transfer support four theoretical propositions. Each is derived from the structural properties established in Sections 2–4 and is stated in a form that admits empirical testing.
+The architecture and its cross-domain transfer support four theoretical propositions. Each is derived from the structural properties established in the preceding sections and is stated in a form that admits empirical testing.
 
 **Proposition 1: External corroboration structurally reduces confirmation bias in brand assessment.**
 
@@ -208,25 +208,25 @@ When multiple model implementations of the atom-cloud-fact pipeline disagree on 
 
 *Falsification:* P4 is falsified if cross-model disagreement locations, when mapped against independent consumer-survey data, do not show higher attribute-level ambiguity scores than cross-model agreement locations — that is, if disagreement is no more predictive of genuine evidential ambiguity than agreement.
 
-## 6. Emergent Properties of the Transfer
+## Emergent Properties of the Transfer
 
 The domain transfer does not merely replicate financial processing in a new vocabulary. Three properties emerge in the brand domain that were latent in the financial domain:
 
-### 6.1 Observer Heterogeneity as a Feature
+### Observer Heterogeneity as a Feature
 
 In financial processing, having multiple observers with different weights would be a bug — it would mean the system is inconsistent. In brand perception, observer heterogeneity is *the central feature*. The fact that different cohorts form different convictions from the same signal environment is not a system failure — it is the fundamental mechanism of how brands work. The pipeline architecture handles this naturally: each observer processes the same atoms through their own scoring function, producing their own clouds and facts.
 
-### 6.2 Structural Absence
+### Structural Absence
 
 The financial pipeline assumes positive evidence: atoms are extracted from documents that exist. The brand domain introduces a phenomenon absent in the financial domain: *designed absence as a signal*. Hermès' strategy of deliberately restricting signal emission (no discounts, no online sales for core products, geographic scarcity) functions as a signal in the brand domain — the absence generates perception effects on dimensions other than the restricted one [@zharnikov-2026-spectral-brand-theory-computational-framework]. This extends the atom model with a new emission type (structural absence) and a scarcity multiplier in the cloud formation formula.
 
-### 6.3 Valence Asymmetry
+### Valence Asymmetry
 
 Financial facts do not have valence — a confirmed purchase is neither good nor bad, it simply is. Brand convictions carry valence: positive, negative, or ambivalent. The domain transfer reveals a conjectured asymmetric property: negative convictions (built from ideological and social signals) may be more resilient than positive convictions (built from experiential and economic signals) because evidence-free negative convictions contain no contradicting dimensions that could introduce ambiguity [@zharnikov-2026-spectral-brand-theory-computational-framework]. This conjecture is derived from the architecture's structural properties and remains to be tested against independent consumer data. The asymmetry is invisible in the financial domain, where all facts are valence-neutral.
 
-## 7. Generalizability: Beyond Finance and Brands
+## Generalizability: Beyond Finance and Brands
 
-The atom-cloud-fact pipeline is a candidate framework for any domain where heterogeneous observers perceive typed signals from multiple sources under uncertainty. Candidate domains include:
+The atom-cloud-fact pipeline is a candidate framework for any domain where heterogeneous observers perceive typed signals from multiple sources under uncertainty. Candidate domains are listed in Table 4:
 
 **Table 4.** Candidate Domains for the Atom-Cloud-Fact Architecture.
 
@@ -241,11 +241,11 @@ The architecture's generalizability rests on a single structural condition: the 
 
 Among the candidate domains, three warrant near-term investigation as cross-domain replication tests. Medical diagnosis is the highest-priority case: heterogeneous specialists (radiologist, internist, pathologist) each weight symptoms across typed dimensions with different tolerances, and the re-collapse mechanism maps cleanly onto the clinical practice of revising diagnosis when new test results arrive. Legal evidence assessment is a second strong candidate: jurors and judges constitute heterogeneous observers weighting typed evidence — physical, testimonial, documentary — under formal epistemic-separation requirements that parallel the pipeline's own structure. Intelligence analysis is a third: the intelligence community's tradecraft explicitly distinguishes raw intelligence (atoms), working hypotheses (clouds), and finished assessments (facts), with full re-evaluation mandated when contradicting source material surfaces. Independent application of the pipeline in any of these domains, by researchers not affiliated with SBT, would provide the strongest test of the architecture's cross-domain transferability claim.
 
-### 7.1 Limitations
+### Limitations
 
 Both the financial reconciliation architecture and SBT were developed by the same author, making the cross-domain transfer self-confirming. Independent replication of the atom-cloud-fact architecture in a domain not developed by this author would provide stronger evidence of transferability. Each candidate domain listed in the Generalizability section has its own mature computational literature; structural analogy to the atom-cloud-fact pipeline does not imply novelty relative to domain-specific approaches. The conditions under which multi-model LLM replication constitutes structural evidence — and where it does not — are examined in the following subsection.
 
-### 7.2 Convergent Validity of Multi-Model Replication
+### Convergent Validity of Multi-Model Replication
 
 Proposition P2 rests on the claim that agreement across multiple LLM implementations provides evidence of structural robustness. This claim requires qualification. LLM agreement is not equivalent to independent replication in the experimental sense. Four conditions determine whether cross-model convergence constitutes genuine structural evidence rather than correlated artifact.
 
@@ -263,11 +263,11 @@ The overall assessment is that LLM agreement is *necessary but not sufficient* f
 
 Three converging lines of evidence strengthen the multi-model claim while keeping the bounded interpretation intact. Aher, Arriaga, and Kalai [-@aher-2023-using-large-language] show that LLMs can replicate population-level patterns from canonical psychology experiments (e.g., the Ultimatum Game and Milgram-style obedience designs), supporting the use of multiple LLMs as quasi-independent population samples — provided that the recovered structure rather than the precise numerical distribution is treated as the primary signal. Binz and Schulz [-@binz-2023-using-cognitive-psychology] probe GPT-3 with a battery of cognitive-psychology tasks and find systematic, architecture-shaped reasoning patterns that diverge from human responses on specific task families, which directly motivates Condition 2 above (architectural diversity as a precondition for treating cross-model agreement as meaningful) and the structural-not-numerical caveat in Condition 3. Together with Argyle et al. [-@argyle-2023-out-one-many], these references support a bounded reading of P2: cross-model convergence on structural features is a useful triangulation signal whose weight is set by the four conditions enumerated above, not by the number of agreeing models alone.
 
-## 8. Discussion: Why Existing Frameworks Fail the Multi-Domain Requirement
+## Discussion: Why Existing Frameworks Fail the Multi-Domain Requirement
 
 Four requirements define a framework adequate for the multi-domain knowledge-formation problem addressed here: (1) path-independence — conclusions must not depend on the order in which evidence arrives; (2) observer heterogeneity — the framework must natively model multiple observers with different scoring weights; (3) epistemic separation — observations, hypotheses, and knowledge must be structurally distinct objects; and (4) linguistic implementability — the framework must be expressible as natural language instructions for an LLM without requiring formal probability distributions or rule bases. We argue that each major existing approach fails at least one of these requirements structurally — not through poor design but through fundamental architectural choices that make the requirement incompatible with the framework's core commitments.
 
-### 8.1 Bayesian Reasoning and AGM Revision
+### Bayesian Reasoning and AGM Revision
 
 The atom-cloud-fact pipeline shares structural similarities with Bayesian reasoning — particularly as formalized in probabilistic networks [@pearl-1988-probabilistic-reasoning-intelligent]: both update beliefs based on new evidence. However, Bayesian reasoning fails requirement (1) structurally. Bayesian updating is incremental — prior beliefs are updated by multiplying with likelihood ratios. This means the order in which evidence arrives permanently shapes the posterior: a prior formed from early evidence filters all subsequent evidence through the lens that early evidence established. The atom-cloud-fact pipeline is *non-incremental*: on re-collapse, facts are dissolved and rebuilt from the complete evidence set. The result is always consistent with total evidence regardless of arrival order. This is not a refinement of Bayesian updating — it is an architectural rejection of incremental updating as the appropriate mechanism for domains where early evidence should not permanently privilege itself over later evidence.
 
@@ -287,7 +287,7 @@ The path-independence argument also benefits from Pearl's [-@pearl-2009-causalit
 
 The architecture's behavior at extreme weight settings remains to be characterized. The financial weights (.30, .40, .20, .15) were hand-tuned on a single development dataset of approximately 500 transactions; their sensitivity to domain shifts, dataset characteristics, or adversarial inputs is unknown. This calibration uncertainty applies to the brand-domain weights as well, where cohort-level spectral profiles represent characteristic weight patterns rather than empirically validated parameters. Future work should characterize weight sensitivity through structured perturbation studies.
 
-### 8.2 Symbolic vs. Probabilistic Reasoning
+### Symbolic vs. Probabilistic Reasoning
 
 Classical expert systems [@buchanan-1984-rulebased-expert-systems] fail requirement (2) structurally. Expert systems operate in the symbolic regime: deterministic rules transform structured inputs into conclusions. This architecture cannot accommodate observer heterogeneity because the rules are global — the same rule fires for all observers regardless of their weight profiles. There is no mechanism by which two observers processing the same inputs through the same rule base arrive at different conclusions, yet that is precisely what observer heterogeneity requires. Introducing observer-specific rules produces rule-set combinatorial explosion and destroys the interpretability that makes expert systems useful.
 
@@ -295,7 +295,7 @@ Purely statistical models fail requirement (3) in the opposite direction: they o
 
 The atom-cloud-fact pipeline resolves both failures through its hybrid structure. Atoms are symbolic — typed, named, structured, drawing on the representational traditions formalized by Enderton [-@enderton-2001-mathematical-introduction-logic] in mathematical logic and Sowa [-@sowa-2000-knowledge-representation-logical] in knowledge representation. Clouds are probabilistic — scored, uncertain, revisable. Facts are quasi-symbolic — confirmed, stable, but subject to dissolution. This combination produces results that are both interpretable (every atom contributing to every fact is traceable) and uncertainty-aware (clouds that have not reached collapse threshold remain visible as unresolved hypotheses). The collapsed fact also contains a form of tacit knowledge [@polanyi-1966-the-tacit-dimension]: the fact "knows" more than its constituent atoms because the cloud formation process integrated contextual relationships — tolerances, temporal proximity, source interactions — that are not explicitly stored in the fact itself.
 
-### 8.3 LLM Implementability
+### LLM Implementability
 
 A distinctive property of the atom-cloud-fact pipeline is that it can be implemented through natural language instructions to a large language model, without custom code. The seven principles can be expressed as a system prompt: "Extract typed signals across these dimensions. Cluster them using these weights. Identify when the evidence threshold is met. Rebuild from scratch when new evidence contradicts existing conclusions."
 
@@ -334,7 +334,7 @@ verify_collapse:
 
 The schema makes two properties explicit. First, every architectural principle maps to an enforceable contract clause rather than a hidden implementation detail; an LLM executing the pipeline can be asked to emit the contract alongside its output, and an independent verifier can check the trace. Second, the re-collapse action (`dissolve_and_rebuild`) is a first-class operator at the schema level, not a post-hoc correction; this is what distinguishes the architecture from incremental updating frameworks at the implementation layer as well as the conceptual layer.
 
-### 8.4 Comparative Requirements Matrix
+### Comparative Requirements Matrix
 
 The four requirements and five architectures are summarized in Table 5.
 
@@ -350,7 +350,7 @@ The four requirements and five architectures are summarized in Table 5.
 
 *Notes*: PASS = requirement met by core architecture. PARTIAL = partially addressed with qualifications. FAIL = structural incompatibility. AGM = Alchourrón, Gärdenfors & Makinson [-@alchourrn-1985-logic-theory-change]. MYCIN = Buchanan & Shortliffe [-@buchanan-1984-rulebased-expert-systems].
 
-## 9. Conclusion
+## Conclusion
 
 The atom-cloud-fact pipeline is not a technique for financial document processing. It is an epistemological architecture — a formal model of how knowledge forms from heterogeneous observation. The financial domain provided the implementation context. The brand perception domain provided the demonstration through transfer. The architecture's seven principles — dimensional typing, source binding, identity gating, asymmetric tolerances, weighted scoring, re-collapse, and epistemic separation — capture general properties of observation-to-knowledge progression that are not domain-specific.
 

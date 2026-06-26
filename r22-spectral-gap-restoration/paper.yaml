@@ -28,20 +28,19 @@ meta:
   abstract: 'Brands facing coherence shocks — repositioning campaigns or cultural shifts — confront an
     asymmetric recovery problem: some regain cohort separability while others enter absorbing cross-cohort
     interference. This paper derives a closed-form sufficient condition for separability survival — to
-    the author''s knowledge the first threshold inequality for cohort-level separability survival in a
-    multi-dimensional brand perception space: the corrective coherence emission rate $\mu$ must exceed
-    the spectral leakage rate $\lambda$ at the observer cohort''s detection scale ($\mu > \lambda$ at
-    scale $\delta$). Cohort perception clouds are modeled as almost-invariant sets in a stochastic flow
-    on an eight-dimensional SBT perception manifold, with separability governed by the spectral gap of
-    the perception operator. The threshold follows from Kato–Rellich perturbation theory and Diaconis–Stroock
-    spectral-gap bounds for reversible Markov chains. Author-proposed Dove-calibrated parameters — $\lambda
-    \approx .10$/year and $\mu \approx 4.50$/year — motivate a Monte Carlo demonstration that illustrates
-    the threshold''s predictive properties. The resulting $\mu/\lambda$ ratio of 45 satisfies the inequality
-    for the Purpose-Aligned cohort but is sign-inverted for the Skeptic-Critic cohort, correctly predicting
-    the documented divergence in conviction trajectories. Spectral-gap collapse precedes conviction reorientation
-    by 6–18 months, offering a leading indicator unavailable from traditional perceptual maps or aggregate
-    VECMs. Implications extend to AI-mediated perception where scale-dependent leakage accelerates fine-grained
-    separability loss.'
+    the author''s knowledge the first threshold inequality for cohort-level separability in a multi-dimensional
+    perception space: the corrective coherence emission rate $\mu$ must exceed the spectral leakage rate
+    $\lambda$ at the observer cohort''s detection scale ($\mu > \lambda$ at scale $\delta$). Cohort perception
+    clouds are modeled as almost-invariant sets in a stochastic flow on an eight-dimensional SBT perception
+    manifold, with separability governed by the spectral gap of the perception operator. The threshold
+    follows from Kato–Rellich perturbation theory and Diaconis–Stroock spectral-gap bounds for reversible
+    Markov chains. Author-proposed Dove-calibrated parameters — $\lambda \approx .10$/year and $\mu \approx
+    4.50$/year — motivate a Monte Carlo demonstration of the threshold''s predictive properties. The $\mu/\lambda$
+    ratio of 45 satisfies the inequality for the Purpose-Aligned cohort but is sign-inverted for the Skeptic-Critic
+    cohort, correctly predicting the documented conviction divergence. Spectral-gap collapse precedes
+    conviction reorientation by 6–18 months, offering a leading indicator unavailable from perceptual
+    maps or aggregate VECMs. Implications extend to AI-mediated perception where scale-dependent leakage
+    accelerates fine-grained separability loss.'
 claims:
 - id: P1
   type: proposition
