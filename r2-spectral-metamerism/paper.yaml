@@ -22,7 +22,6 @@ meta:
   - brand perception
   - null space
   - information loss
-  - Spectral Brand Theory
   abstract: 'Scalar brand metrics compress high-dimensional perceptual signals into single numbers, yet
     the information cost of this compression has never been formally quantified. This paper introduces
     *spectral metamerism* to brand theory: structurally distinct brand profiles that produce identical

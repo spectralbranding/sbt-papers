@@ -22,7 +22,6 @@ meta:
   - founder bias
   - multi-dimensional optimization
   - cohort targeting
-  - Spectral Brand Theory
   abstract: Brand managers allocate resources across perceptual dimensions — design, storytelling, pricing,
     heritage — yet rarely ground those decisions in measured customer salience weights. This paper develops
     a resource allocation model in which a brand's signal portfolio $s \in \mathbb{R}^8_+$ is evaluated

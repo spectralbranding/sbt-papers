@@ -23,17 +23,16 @@ meta:
   - portfolio coherence
   - observer cohorts
   - multi-dimensional brand perception
-  - Spectral Brand Theory
-  abstract: Brand portfolio theory classifies portfolios by architecture -- monolithic, endorsed, house-of-brands
-    -- but does not formalize how brands within the same portfolio interact in the observer's perception
+  abstract: Brand portfolio theory classifies portfolios by architecture — monolithic, endorsed, house-of-brands
+    — but does not formalize how brands within the same portfolio interact in the observer's perception
     space. This paper develops spectral portfolio theory within Spectral Brand Theory (SBT), which models
     brands as emitters across eight typed dimensions perceived by heterogeneous observer cohorts. *Spectral
-    interference* -- signals from one brand perturbing the perception cloud of another within shared cohorts
-    -- is formalized, distinguishing *constructive interference* (compatible signals reinforcing mutual
+    interference* — signals from one brand perturbing the perception cloud of another within shared cohorts
+    — is formalized, distinguishing *constructive interference* (compatible signals reinforcing mutual
     perception) from *destructive interference* (contradictory signals undermining it). Interference magnitude
     is bounded by cohort overlap and spectral proximity on high-weight dimensions, modulated by a parent-brand
     recognition gate. Single-brand coherence is extended to portfolio-level coherence through a three-layer
-    metric (within-brand, cross-brand, and aggregate). Four portfolio archetypes are identified -- spectral
+    metric (within-brand, cross-brand, and aggregate). Four portfolio archetypes are identified — spectral
     cluster (LVMH), spectral spread (Procter & Gamble), spectral contradiction (Unilever), and spectral
     layering (Toyota/Lexus). A comparative analysis of LVMH and Unilever demonstrates that architecturally
     identical portfolios produce structurally opposite interference dynamics. Seven formal propositions

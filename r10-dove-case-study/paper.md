@@ -12,7 +12,7 @@ Working Paper v2.2.0 – March 2026 (revised June 2026)
 
 Purpose campaigns are evaluated by aggregate metrics that cannot distinguish structural success from surface popularity. This paper presents what is, to the author's knowledge, the first formal application of the SBT eight-dimension decomposition to a longitudinal purpose-campaign case study: Dove's "Campaign for Real Beauty" (2004--2026) across four temporal cross-sections. Four observer cohorts — Purpose-Aligned, Product-Pragmatist, Social-Signal Reader, and Skeptic-Critic — receive identical signals but form structurally different brand convictions. Within the case set considered here, disproportionate commercial impact is traced to *dimensional creation*: the activation of a previously null dimension that opens new perceptual territory rather than competing within existing space. Five propositions address dimensional creation, observer heterogeneity, portfolio interference, counter-cultural decay, and dimensional specificity. Independent quantitative evidence from a large-scale AI-observer study replicates the cohort-divergence and Patagonia-as-exception patterns, providing an empirical anchor across a controllable observer population. The framework extends brand-equity, authenticity, and cultural-branding literatures by supplying a formal, cohort-contingent account of simultaneous positive and negative conviction formation.
 
-**Keywords**: brand purpose, purpose advertising, brand activism, observer cohorts, portfolio interference, counter-cultural decay, multi-dimensional perception, Spectral Brand Theory
+**Keywords**: brand purpose, purpose advertising, brand activism, observer cohorts, portfolio interference, counter-cultural decay, multi-dimensional perception
 
 ---
 

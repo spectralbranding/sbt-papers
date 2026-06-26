@@ -182,6 +182,11 @@ AI assistants (Claude Opus 4.8, Gemini 2.5 Pro) were used for initial literature
 
 CRediT contributions: Dmitry Zharnikov — conceptualization, methodology, software, formal analysis, investigation, writing (original draft), writing (review and editing).
 
+## References
+
+::: {#refs}
+:::
+
 ## Appendix A: Foundations (Self-Contained)
 
 This appendix gives, in standalone terms, the argument for the central constructs the body uses, so the paper does not rest on an invisible corpus. The self-citations point to the full development; the argument below is meant to be evaluable on its own.
@@ -199,8 +204,3 @@ This appendix gives, in standalone terms, the argument for the central construct
 ## Appendix B: The Two-Dimensional Toy and Its Closed Form
 
 The worked two-dimensional instance in *Theoretical Framework* is the smallest case of the closed form $G = \operatorname{tr}(\Sigma) - \lVert \Sigma u \rVert^{2}/(u^{\top}\Sigma u)$. With the read axis $u = (1, 0)$ and the bimodal split at $(\cos\beta, \pm\sin\beta)$, the perception measure has mean $(\cos\beta, 0)$, so the read coordinate $x_1$ is constant across the two modes and carries zero variance, while the off-axis coordinate $x_2$ carries variance $\sin^{2}\beta$. Then $\Sigma = \operatorname{diag}(0, \sin^{2}\beta)$, $u^{\top}\Sigma u = 0$, the score is uninformative, the best decode is the mean, and $G = \operatorname{tr}(\Sigma) = \sin^{2}\beta$ — the gap reported in the body. As $\beta \to 0$ the modes merge onto the read axis, $\Sigma \to 0$, and $G \to 0$, recovering the classical corner. The eight-dimensional simulation in *Numerical Illustration* is the quantitative generalization, and the closed form predicts its qualitative shape: the gap is the off-axis variance the score cannot act on, monotone in every regime parameter that adds such variance.
-
-## References
-
-::: {#refs}
-:::
