@@ -10,7 +10,7 @@ Working Paper v1.2.0 – April 2026 (revised June 2026)
 
 ## Abstract
 
-Large language models (LLMs) increasingly shape how consumers discover and evaluate brands. Brand portfolio theory predicts that revealing corporate ownership should produce perceptual interference via an awareness gate [@keller-1993-conceptualizing-measuring-managing; @aaker-1990-consumer-evaluations-brand]. Yet LLMs encode portfolio relationships permanently in their parameters, raising the possibility of either maximal interference or complete immunity. We test these hypotheses in a preregistered experiment with 13 LLMs spanning seven training traditions (Western, Chinese, Russian, Indian, Japanese, European, Korean). Twenty brands from seven portfolio archetypes (LVMH, Unilever, P&G, Toyota, L'Oreal, Geely, Yandex) were rated under four prompt modalities---direct rating, naturalistic recommendation, multi-turn conversation with mid-dialogue portfolio reveal, and native-language framing---yielding 7,975 parsed observations. A preregistered extension with 20 additional brands drawn from published marketing research (Aaker [-@aaker-1997-dimensions-brand-personality]; Brakus et al. [-@brakus-2009-brand-experience-what]; Li et al. [-@li-2024-frontiers-determining-validity]; and others) added 1,950 observations with zero overlap, replicating immunity (0/10 $|d| > .50$) and bringing the combined dataset to 9,925 observations across 40 brands. Portfolio framing produces near-zero change in Dimensional Concentration Index (mean $|\Delta\mathrm{DCI}| = .26$). Equivalence testing confirms the null for 18/20 brands within $\pm 1.0$ DCI points. Multi-turn revelation unlocks modest flattening for reverse-aspiration structures (Geely Auto d = -1.11, FDR-significant), but effects remain portfolio- and modality-specific rather than systematic. Native-language prompts activate model-specific discourse layers without directional amplification. These results generalize spectral immunity across model traditions and portfolio types, implying that house-of-brands shielding is automatic in AI-mediated markets while constructive interference is impossible. Brand managers cannot rely on portfolio architecture to reshape LLM perceptions except in extended conversational contexts. Theoretical implications for awareness-gate mechanisms and practical implications for "Share of Model" strategy are discussed.
+Large language models (LLMs) increasingly shape how consumers discover and evaluate brands. Brand portfolio theory predicts that revealing corporate ownership produces perceptual interference via an awareness gate [@keller-1993-conceptualizing-measuring-managing; @aaker-1990-consumer-evaluations-brand]. Because LLMs encode portfolio relationships permanently in their parameters, they should exhibit either maximal interference or complete immunity. This preregistered study tests these hypotheses across 13 LLMs spanning seven training traditions. Twenty brands from seven portfolio archetypes were rated under four prompt modalities---direct rating, naturalistic recommendation, multi-turn conversation with mid-dialogue portfolio reveal, and native-language framing---yielding 7,975 observations. A preregistered extension added 20 brands from published marketing research (1,950 observations, zero overlap), replicating immunity and bringing the combined dataset to 9,925 observations across 40 brands. Portfolio framing produces near-zero change in Dimensional Concentration Index (mean $|\Delta\mathrm{DCI}| = .26$); equivalence testing confirms the null for 18 of 20 brands within $\pm 1.0$ DCI points. Multi-turn revelation unlocks modest flattening for reverse-aspiration structures (Geely Auto $d = -1.11$, FDR-significant), but effects remain portfolio- and modality-specific. These results generalize spectral immunity across model traditions and portfolio types: house-of-brands shielding is automatic in AI-mediated markets, while constructive interference is impossible except in extended conversational contexts. Implications for awareness-gate mechanisms and "Share of Model" strategy are discussed.
 
 **Keywords:** brand perception, large language models, portfolio interference, awareness gate, TOST equivalence, cross-cultural AI, multi-turn conversation, native-language framing, Share of Model
 
@@ -56,7 +56,7 @@ $$I_d(B_i, B_j, C_k) = \alpha_{C_k} \cdot \bar{w}_d^{(C_k)} \cdot (e_d^{(B_j)} -
 
 where $\alpha_{C_k}$ is the awareness gate, $\bar{w}_d^{(C_k)}$ is the cohort's weight on dimension $d$, $e_d^{(B_j)}$ is the sibling brand's emission, and $\mu_d$ is the category mean.[^1] Under immunity, $\alpha_{C_k}$ is maximal but the compression constraint prevents the interference term from propagating into the observable profile. The present paper tests this prediction empirically without requiring acceptance of any particular theoretical framework.
 
-[^1]: This formulation is from Spectral Brand Theory [@zharnikov-2026-spectral-brand-theory-computational-framework], where Dimensional Concentration Index (DCI) measures profile concentration across eight brand perception dimensions. DCI is a new metric not yet validated against human data; Section Limitations discusses this as a primary boundary condition on our conclusions.
+[^1]: This formulation is from Spectral Brand Theory [@zharnikov-2026-spectral-brand-theory-computational-framework], where Dimensional Concentration Index (DCI) measures profile concentration across eight brand perception dimensions. DCI is a new metric not yet validated against human data; the Boundary Conditions and Limitations section discusses this as a primary boundary condition on our conclusions.
 
 ## Research Hypotheses
 
@@ -336,13 +336,13 @@ This study provides the first comprehensive test of portfolio interference in LL
 
 AI assistants (Claude Opus 4.8, Grok 4.20, Gemini 2.5 Pro) were used for initial literature search, for software development — authoring the experiment harness and the analysis and scoring scripts — and for orchestrating and running the reported experiments through those scripts, as well as for editorial refinement; all theoretical claims, propositions, and interpretations are the author's sole responsibility.
 
-## References
-
-::: {#refs}
-:::
-
 ## Data Availability
 
 Experiment data (7,975 observations) are archived at https://doi.org/10.57967/hf/8380. Source code and analysis scripts are available at https://doi.org/10.5281/zenodo.19555282. The dataset contains 2,555 direct-rating observations, 2,518 recommendation-prompt observations, 1,235 multi-turn conversation observations, 1,322 native-language ablation observations, and 345 prompt-location ablation observations across 13 models from 7 training traditions. Local model experiments were conducted on Apple Mac mini M4 Pro (48 GB RAM) running Ollama v0.20.0.
 
 *This paper is part of the Spectral Brand Theory research program. For the full atlas of 20+ interconnected papers, see [spectralbranding.com/atlas](https://spectralbranding.com/atlas).*
+
+## References
+
+::: {#refs}
+:::
