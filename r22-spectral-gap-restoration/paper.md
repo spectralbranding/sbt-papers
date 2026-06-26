@@ -146,7 +146,7 @@ The Monte Carlo simulation (Table 1) is fully reproducible from `monte_carlo_sim
 
 ### The μ–λ Residual as Brand Health Dashboard
 
-```{.mermaid width=85%}
+```{.mermaid width=50%}
 quadrantChart
     title Brand Health: Leakage vs Corrective Emission
     x-axis Low lambda --> High lambda
