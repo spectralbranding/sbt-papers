@@ -33,8 +33,8 @@ meta:
     brands. Any such projection creates a 7-dimensional null space of "invisible" brand differences. Information-theoretically,
     a 5-point grade captures 2.32 bits of a $\sim 20$-bit spectral profile, retaining 11.6% of available
     information. Monte Carlo simulations confirm that 31--39% of brand pairs are metameric under random
-    projection. The analysis yields a fundamental distinction between *rasterized* brand management --
-    human projection through cognitive and communicative bottlenecks -- and *vectorized* brand management,
+    projection. The analysis yields a fundamental distinction between *rasterized* brand management —
+    human projection through cognitive and communicative bottlenecks — and *vectorized* brand management,
     in which the full spectral profile serves as single source of truth and channel outputs are computed
     projections with known, bounded loss. These results provide the first formal geometric and information-theoretic
     lower bounds on the fidelity of scalar brand grades.'

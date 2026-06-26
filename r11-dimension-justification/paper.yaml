@@ -24,22 +24,22 @@ meta:
   - meaning channels
   - Spectral Brand Theory
   abstract: 'How many distinct channels transmit meaning from brands to consumers? Extant frameworks diverge
-    widely -- five personality dimensions [@aaker-1997-dimensions-brand-personality], six prism facets
-    [@kapferer-2008-new-strategic-brand], two-to-three MDS solutions -- yet none provides theoretical
-    justification for its chosen dimensionality. This paper derives an eight-dimensional taxonomy from
-    first principles. Brand perception occurs through eight independent meaning channels -- semiotic,
-    narrative, ideological, experiential, social, economic, cultural, and temporal -- each rooted in a
-    distinct academic tradition. Independence is demonstrated through counter-example brand pairs differing
-    on one channel while matched on the others; non-redundancy follows because removing any channel collapses
-    discriminative power for at least one pair. Completeness is shown by reducing five proposed ninth
-    dimensions to combinations of existing channels. The apparent conflict with low-dimensional MDS solutions
-    is resolved via concentration-of-measure mathematics: low-dimensional projections capture most variance
-    while losing the profile-shape information that distinguishes coherence types. Robustness checks using
-    synthetic observers confirm that each dimension carries non-trivial variance (5-19%) and rank stability
-    deteriorates below eight dimensions. The taxonomy integrates prior meaning frameworks while satisfying
-    psychometric criteria for theoretical derivation [@borsboom-2003-theoretical-status-latent; @rossiter-2002-coarse-procedure-scale],
-    offering consumer researchers a coordinate system for studying meaning transfer, cultural branding,
-    and perceptual coherence.'
+    widely — five personality dimensions [@aaker-1997-dimensions-brand-personality], six prism facets
+    [@kapferer-2008-new-strategic-brand], two-to-three MDS solutions — yet none provides theoretical justification
+    for its chosen dimensionality. This paper derives an eight-dimensional taxonomy from first principles.
+    Brand perception occurs through eight independent meaning channels — semiotic, narrative, ideological,
+    experiential, social, economic, cultural, and temporal — each rooted in a distinct academic tradition.
+    Independence is demonstrated through counter-example brand pairs differing on one channel while matched
+    on the others; non-redundancy follows because removing any channel collapses discriminative power
+    for at least one pair. Completeness is shown by reducing five proposed ninth dimensions to combinations
+    of existing channels. The apparent conflict with low-dimensional MDS solutions is resolved via concentration-of-measure
+    mathematics: low-dimensional projections capture most variance while losing the profile-shape information
+    that distinguishes coherence types. Robustness checks using synthetic observers confirm that each
+    dimension carries non-trivial variance (5-19%) and rank stability deteriorates below eight dimensions.
+    The taxonomy integrates prior meaning frameworks while satisfying psychometric criteria for theoretical
+    derivation [@borsboom-2003-theoretical-status-latent; @rossiter-2002-coarse-procedure-scale], offering
+    consumer researchers a coordinate system for studying meaning transfer, cultural branding, and perceptual
+    coherence.'
 claims:
 - id: P1
   type: proposition

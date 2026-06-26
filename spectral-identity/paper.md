@@ -16,7 +16,7 @@ Aaker's Brand Identity Model [-@aaker-1996-building-strong-brands] remains the m
 
 ---
 
-## 1. Introduction: Why Formalize Aaker?
+## Why Formalize Aaker?
 
 When David Aaker published *Building Strong Brands* in 1996, he gave the field of brand management its most durable analytical vocabulary. The Brand Identity Model --- with its four perspectives, core and extended identity elements, brand essence, and value proposition architecture --- became the framework that practitioners reach for first and that business schools teach most frequently. Thirty years later, Aaker's conceptual architecture remains the dominant way that brand strategists think about what a brand is, what it should communicate, and how to manage it over time.
 
@@ -34,11 +34,11 @@ These are not criticisms. They are boundaries --- and boundaries that Aaker hims
 
 This paper argues that it has. Spectral Brand Theory (SBT; Zharnikov [-@zharnikov-2026-spectral-brand-theory-computational-framework]) provides a mathematical formalization of Aaker's framework that converts each of the three judgment-dependent decisions into parametrized, testable, computationally executable operations. The relationship between the two frameworks is not adversarial. It mirrors the relationship between behavioral economics and classical economics [@kahneman-1979-prospect-theory-analysis]: the predecessor framework is not replaced but preserved as a special case within a more general theory. Classical economics describes how rational agents should behave; behavioral economics describes how they actually behave. Aaker's model describes what a brand identity should be; SBT describes how brand identity is actually perceived by heterogeneous observers.
 
-The contribution is threefold. First, this paper provides an explicit mapping between Aaker's four perspectives and SBT's eight perceptual dimensions, showing why eight dimensions are needed to capture what four perspectives bundle [@zharnikov-2026-why-eight-completeness-necessity-sbt]. Second, it demonstrates that Aaker's core/extended distinction, brand essence, and value proposition architecture all have formal spectral counterparts that make them empirically discoverable rather than subjectively assigned. Third, it derives four falsifiable propositions that differentiate SBT predictions from Aaker's framework and applies both to three illustrative brands to show where additional observer-specific predictions become available. The worked examples in Section 6 reproduce Aaker's strategic diagnoses while generating coherence-type predictions the original framework cannot express; the limiting-case relationship is stated as a working geometric argument in Section 7.1, with formal metric-space conditions reserved for follow-on work.
+The contribution is threefold. First, this paper provides an explicit mapping between Aaker's four perspectives and SBT's eight perceptual dimensions, showing why eight dimensions are needed to capture what four perspectives bundle [@zharnikov-2026-why-eight-completeness-necessity-sbt]. Second, it demonstrates that Aaker's core/extended distinction, brand essence, and value proposition architecture all have formal spectral counterparts that make them empirically discoverable rather than subjectively assigned. Third, it derives four falsifiable propositions that differentiate SBT predictions from Aaker's framework and applies both to three illustrative brands to show where additional observer-specific predictions become available. The worked examples reproduce Aaker's strategic diagnoses while generating coherence-type predictions the original framework cannot express; the limiting-case relationship is stated later as a working geometric argument, with formal metric-space conditions reserved for follow-on work.
 
-## 2. Aaker's Brand Identity Model: A Sympathetic Reading
+## Aaker's Brand Identity Model: A Sympathetic Reading
 
-### 2.1 The Four Perspectives
+### The Four Perspectives
 
 Aaker's [-@aaker-1996-building-strong-brands] Brand Identity Model defines brand identity through four complementary perspectives, each illuminating a different facet of what the brand represents:
 
@@ -50,19 +50,19 @@ Aaker's [-@aaker-1996-building-strong-brands] Brand Identity Model defines brand
 
 **Brand as Symbol** encompasses visual imagery and metaphors, brand heritage, and the symbolic associations that transcend functional attributes. This perspective captures the semiotic dimension of brand meaning --- what the brand signifies beyond what it does.
 
-### 2.2 Core, Extended, and Essence
+### Core, Extended, and Essence
 
 Within these four perspectives, Aaker distinguishes between core identity elements --- the timeless essence that remains constant as the brand moves across markets and product categories --- and extended identity elements that provide texture, completeness, and context. The brand essence is the single thought that captures the soul of the brand; it is the centroid of the identity system, the element that, if removed, would render the brand unrecognizable.
 
 This architecture is powerful precisely because it is not rigid. Aaker explicitly warns against treating the model as a checklist. Not every brand needs all four perspectives to be active. The number of identity elements varies from six to fourteen depending on the brand's complexity. The framework provides vocabulary and structure without imposing uniformity --- a rare achievement in management theory.
 
-### 2.3 The Brand Identity Planning Model
+### The Brand Identity Planning Model
 
 Aaker's complete system extends beyond identity definition to include brand image analysis (what consumers currently perceive), strategic positioning (the subset of identity to be actively communicated), and execution across touchpoints. The Brand Identity Planning Model integrates these elements into a strategic workflow that connects identity to implementation.
 
 Importantly, the planning model explicitly acknowledges the identity-image gap. Aaker recognizes that what a brand intends and what consumers perceive may diverge. The strategic task is to close this gap through consistent execution. What the framework does not formalize is why the gap exists structurally, whether it is fully closeable, or how different audiences may experience different gaps simultaneously.
 
-### 2.4 Kapferer's Complementary Contribution
+### Kapferer's Complementary Contribution
 
 Kapferer's [-@kapferer-2008-new-strategic-brand] Brand Identity Prism provides a complementary architecture with six facets: physique, personality, culture, relationship, reflection, and self-image. Where Aaker's model is sender-focused (what the brand is), Kapferer explicitly includes receiver-side facets (reflection and self-image), acknowledging that brand identity is co-constructed between sender and receiver.
 
@@ -70,11 +70,11 @@ Both frameworks recognize that brands are multi-dimensional. Both resist reducti
 
 This is the boundary that invites formalization.
 
-## 3. Three Boundaries That Invite Formalization
+## Three Boundaries That Invite Formalization
 
 The following three limitations are not flaws in Aaker's framework. They are structural boundaries that become visible only when one attempts to operationalize the model at scale, delegate it to computational systems, or apply it to contexts where multiple audiences perceive the same brand simultaneously. They are, in the language of science, the empirical anomalies that a successor theory must explain.
 
-### 3.1 Observer Invariance
+### Observer Invariance
 
 Aaker's framework describes what the brand *is* --- its intended identity. Kapferer's prism describes what the brand *projects*, including its reflection in the consumer's mind. Both frameworks assume that brand identity exists as a coherent, sender-defined property that consumers perceive with varying degrees of accuracy. The strategic task is to close the perception gap: bring image closer to identity through better communication, more consistent execution, more compelling storytelling.
 
@@ -82,7 +82,7 @@ This assumption --- that there is one brand identity perceived with noise by man
 
 These findings challenge the observer-invariance assumption at its foundation. The brand identity-image gap is not a communication failure to be closed through better execution. It is a structural property of perception: different observers, processing identical signals through different perceptual apparatus, construct different brands. No amount of consistency can produce uniform perception, because perception itself is observer-dependent. Aaker's framework recognizes that the gap exists but has no mechanism for modeling systematic, predictable, observer-dependent divergence.
 
-### 3.2 Element Selection
+### Element Selection
 
 How does one determine which of Aaker's six to fourteen identity elements are core? The framework's guidance is to select elements that are "timeless" and that would remain constant across markets and product categories. In practice, this decision is made through executive workshops, strategic intuition, and competitive analysis. When a skilled practitioner makes the selection, the results are often excellent.
 
@@ -90,7 +90,7 @@ The limitation emerges at scale. Coleman [-@coleman-2011-service-brand-identity-
 
 This operationalization gap means that the core/extended distinction, however strategically useful, cannot be verified empirically. Two practitioners analyzing the same brand may designate different elements as core, with no mechanism to adjudicate between them. For individual brand strategy, this ambiguity is manageable. For portfolio-level analysis, cross-brand comparison, or computational delegation, it is disabling.
 
-### 3.3 Consistency Versus Coherence
+### Consistency Versus Coherence
 
 Aaker's framework prescribes consistency: the brand should communicate the same identity across all touchpoints, markets, and time periods. Consistency is the mechanism through which brand equity accumulates. The prescription is sound --- inconsistent brands confuse consumers and erode trust.
 
@@ -98,21 +98,21 @@ But consistency is a scalar quantity: a brand is more or less consistent. It doe
 
 Applied to brands: two brands can score identically on consistency metrics and have entirely different structural properties. A brand where all audiences perceive the same thing (what SBT terms signal coherence) and a brand where audiences perceive different things that reinforce each other (ecosystem coherence) both exhibit high consistency. But their responses to disruption diverge dramatically. The first transmits a crisis uniformly to all audiences. The second absorbs it selectively, sacrificing peripheral cohorts while strengthening core ones. Aaker's framework implicitly recognizes that consistency varies --- the core/extended distinction is one mechanism for managing it --- but it never taxonomizes the structural types of consistency or links them to differential resilience predictions.
 
-These three boundaries define the space that the spectral formalization is designed to address. Crucially, the formalization is not a replacement: when observer cohorts are approximately homogeneous --- when all significant audiences weight the same dimensions in similar proportions --- the spectral model reduces to Aaker's single-identity framework. The three boundaries become visible only when observer heterogeneity is substantial. Section 7.1 develops this limiting-case relationship in full.
+These three boundaries define the space that the spectral formalization is designed to address. Crucially, the formalization is not a replacement: when observer cohorts are approximately homogeneous --- when all significant audiences weight the same dimensions in similar proportions --- the spectral model reduces to Aaker's single-identity framework. The three boundaries become visible only when observer heterogeneity is substantial. A later section develops this limiting-case relationship in full.
 
-### 3.4 Boundary-Count Justification
+### Boundary-Count Justification
 
 The foregoing analysis identifies three structural boundaries in Aaker's framework; SBT addresses them through eight perceptual dimensions rather than four perspectives. A natural question is whether eight is the right number --- too few would replicate the bundling problems identified above, while too many would trade analytical tractability for decomposition at diminishing returns.
 
 The count is not stipulated but derived. Zharnikov [-@zharnikov-2026-why-eight-completeness-necessity-sbt] establishes the completeness and necessity of the eight dimensions through a two-part argument: completeness (no dimension in the set can be explained as a weighted combination of the others) and necessity (removing any single dimension produces at least one pair of empirically distinguishable brand configurations that collapse to identical representations). The derivation proceeds by auditing the perceptual channels implicated across Aaker's four perspectives, Kapferer's six prism facets, and Keller's customer-based brand equity model, then applying orthogonality and parsimony criteria to extract the minimal non-redundant set. Eight dimensions satisfy both criteria; seven do not.
 
-This paper inherits the count from Zharnikov [-@zharnikov-2026-why-eight-completeness-necessity-sbt] and treats Aaker's four perspectives as a coarser partition of the same perceptual space --- one that bundles channels that can, and often do, behave independently. The mapping in Table 1 makes this relationship explicit. The theoretical question of whether different cultural or market contexts might require a different dimensional basis is a legitimate open problem; Zharnikov [-@zharnikov-2026-why-eight-completeness-necessity-sbt] addresses it as a boundary condition on the framework's universality claim.
+This paper inherits the count from Zharnikov [-@zharnikov-2026-why-eight-completeness-necessity-sbt] and treats Aaker's four perspectives as a coarser partition of the same perceptual space --- one that bundles channels that can, and often do, behave independently. The mapping in Table 1 makes this relationship explicit; Figure 1 diagrams the same correspondence as a projection from Aaker's four perspectives to SBT's eight dimensions. The theoretical question of whether different cultural or market contexts might require a different dimensional basis is a legitimate open problem; Zharnikov [-@zharnikov-2026-why-eight-completeness-necessity-sbt] addresses it as a boundary condition on the framework's universality claim.
 
-## 4. The Spectral Formalization
+## The Spectral Formalization
 
 SBT [@zharnikov-2026-spectral-brand-theory-computational-framework] proposes that brand perception is irreducibly observer-dependent: different observer cohorts perceive structurally different brands from identical signal environments. The framework decomposes brand signals across eight perceptual dimensions, defines observer cohorts through formal spectral profiles, and models brand perception as probabilistic cloud formation that collapses into conviction through evidence accumulation. This section presents the explicit mapping between Aaker's conceptual architecture and SBT's formal apparatus.
 
-### 4.1 Four Perspectives, Eight Dimensions
+### Four Perspectives, Eight Dimensions
 
 Aaker's four identity perspectives each bundle multiple independent perceptual channels. SBT unbundles them into eight parametrized dimensions, each representing a distinct channel through which observers perceive brand meaning [@zharnikov-2026-why-eight-completeness-necessity-sbt].
 
@@ -169,9 +169,9 @@ The eight dimensions were synthesized from prior frameworks [@zharnikov-2026-spe
 
 The dimensional decomposition is not merely taxonomic. Each dimension has metric properties: signals can be inventoried, typed (designed, ambient, or synthetic), classified by emission type (positive, null, or structural absence), and rated for strength. This transforms Aaker's qualitative descriptions into structured data that can be computationally processed, cross-brand compared, and aggregated into portfolio-level analysis.
 
-### 4.2 Core and Extended Identity as Spectral Weights
+### Core and Extended Identity as Spectral Weights
 
-Aaker's distinction between core and extended identity elements is one of the most strategically useful concepts in brand management. Core elements define what the brand must always be; extended elements add richness and context. The limitation, as noted in Section 3.2, is that the distinction is subjectively assigned.
+Aaker's distinction between core and extended identity elements is one of the most strategically useful concepts in brand management. Core elements define what the brand must always be; extended elements add richness and context. The limitation, as noted earlier, is that the distinction is subjectively assigned.
 
 SBT formalizes this distinction through spectral weights. Each observer cohort has a weight profile across the eight dimensions --- a vector that specifies how much each dimension contributes to that cohort's brand perception. Core identity elements correspond to dimensions with the highest cohort-average weights: these are the dimensions that matter most to the brand's primary audiences and that, if altered, would destabilize the brand's perception clouds. Extended identity elements correspond to dimensions with moderate weights: present in the perception cloud but not critical.
 
@@ -179,7 +179,7 @@ Brand essence --- Aaker's "single thought that captures the soul of the brand" -
 
 The advance is epistemological. Under Aaker's framework, core elements are chosen through strategic judgment. Under SBT, they are empirically discoverable: measure the spectral profiles of the brand's primary cohorts, compute cohort-average weights, and the core dimensions reveal themselves. The strategist's judgment is not eliminated --- it is informed by data and verifiable against measurement. The methodological precedent for this approach is INDSCAL [@carroll-1970-analysis-individual-differences], which introduced individual-difference dimensional weighting in multidimensional scaling. INDSCAL demonstrated that different individuals weight perceptual dimensions differently when evaluating stimuli --- the same structural insight that SBT extends from laboratory stimuli to brand perception at the cohort level.
 
-### 4.3 Brand Image as Perception Cloud
+### Brand Image as Perception Cloud
 
 Aaker's framework treats brand image --- what consumers actually think --- as a separate construct from brand identity, with the strategic goal of aligning image to identity. The identity-image gap is the central diagnostic of brand health.
 
@@ -189,9 +189,9 @@ The identity-image gap thus becomes the rendering problem [@zharnikov-2026-spect
 
 This reframing has practical consequences. Under Aaker's framework, the strategic goal is to close the identity-image gap through better execution. Under SBT, the strategic goal shifts to understanding which components of the gap are closeable (through improved signal design) and which are structural (arising from observer heterogeneity that no communication strategy can overcome). The distinction between manageable and irreducible gap components is diagnostically important and cannot be made within the original framework.
 
-### 4.4 Value Proposition as Dimensional Activation
+### Value Proposition as Dimensional Activation
 
-Aaker's value proposition framework distinguishes three types of benefits: functional (what the product does), emotional (how the product makes the consumer feel), and self-expressive (what the product says about the consumer). SBT maps these onto dimensional activation patterns.
+Aaker's value proposition framework distinguishes three types of benefits: functional (what the product does), emotional (how the product makes the consumer feel), and self-expressive (what the product says about the consumer). SBT maps these onto dimensional activation patterns (Table 3).
 
 **Table 3.** Mapping Between Aaker's Benefit Types and SBT's Dimensional Activation Patterns.
 
@@ -207,11 +207,11 @@ The mapping reveals a structural insight that Aaker's framework implies but does
 
 The critical addition is that which benefits activate depends not only on the brand's intent but on the observer's spectral profile. A brand designed to deliver self-expressive benefits (strong Ideological and Semiotic signals) will activate those benefits only in cohorts that weight those dimensions. Cohorts that weight Experiential and Economic dimensions will perceive the same brand through a functional lens, regardless of the brand's self-expressive intent. This observer-dependent activation explains why purpose-driven brand strategies succeed with some audiences and fail with others: the strategy targets dimensions that only certain cohorts can perceive.
 
-### 4.5 Observer Heterogeneity: The Key Addition
+### Observer Heterogeneity: The Key Addition
 
 Aaker's framework describes one brand identity perceived by many audiences. Kapferer's prism acknowledges sender and receiver perspectives but treats the receiver as a single entity. Keller [-@keller-1993-conceptualizing-measuring-managing] customer-based brand equity model locates equity in the customer's mind --- the most important precedent for an observer-dependent approach --- but treats "the customer" as a unitary construct with one set of brand associations and one equity structure.
 
-The empirical foundation established in Section 3.1 applies directly here: the same signal environment produces divergent brand perceptions across cohorts not through noise but through structural differences in observer spectral profiles.
+The empirical foundation established earlier applies directly here: the same signal environment produces divergent brand perceptions across cohorts not through noise but through structural differences in observer spectral profiles.
 
 SBT introduces the observer spectral profile: a formal parameter set that defines how each cohort perceives brand signals. The profile includes dimensional weights (how the observer prioritizes the eight dimensions), tolerances (how much inconsistency the observer accepts before perception destabilizes), priors (existing brand convictions stored in memory), and an identity gate (whether the observer can recognize the brand's signals as belonging to a single entity).
 
@@ -219,11 +219,11 @@ Cohorts are perceptual groupings, not demographic segments. This distinction is 
 
 The methodological ancestry of observer profiling traces to INDSCAL [@carroll-1970-analysis-individual-differences], which demonstrated that individuals weight perceptual dimensions differently when evaluating stimuli, and to latent class segmentation methods [@wedel-2000-market-segmentation-conceptual], which cluster consumers into perceptual segments post hoc rather than imposing a priori demographic boundaries. SBT extends this ancestry by integrating individual-difference weighting with multi-dimensional brand perception and non-ergodic temporal dynamics into a unified computational framework.
 
-## 5. What the Formalization Adds
+## What the Formalization Adds
 
-SBT preserves every structural insight in Aaker's framework while adding three capabilities that the original model cannot express. Each capability addresses one or more of the boundaries identified in Section 3. The capabilities are formalized below as numbered propositions with explicit falsification criteria [@zharnikov-2026-spectral-brand-theory-computational-framework].
+SBT preserves every structural insight in Aaker's framework while adding three capabilities that the original model cannot express. Each capability addresses one or more of the boundaries identified earlier. The capabilities are formalized below as numbered propositions with explicit falsification criteria [@zharnikov-2026-spectral-brand-theory-computational-framework].
 
-### 5.1 Testable Predictions
+### Testable Predictions
 
 Aaker's framework generates descriptions: "Brand X has a strong Brand as Organization perspective with innovation at its core." These descriptions are analytically useful but not falsifiable. No observation could prove the description wrong, because the framework provides no prediction about what should follow from the description.
 
@@ -245,7 +245,7 @@ Falsification: P3 is falsified if strategist-assigned core elements and spectral
 Rationale: computational observers process brand signals through statistical patterns in training corpora rather than lived cultural experience, systematically under-weighting dimensions (Ideological, Cultural, Temporal) that require embodied cultural context to activate [@zharnikov-2026-dimensional-collapse-ai-mediated-search; @zharnikov-2026-ai-native-brand-identity-from].
 Falsification: P4 is falsified if LLM-generated spectral profiles do not differ significantly from human-generated profiles on Ideological, Cultural, and Temporal dimensions across a balanced sample of brands with varying profile types.
 
-### 5.2 AI Operability
+### AI Operability
 
 Aaker's Brand Identity Model requires human workshops, strategic discussion, and practitioner judgment at every stage. This is appropriate for high-stakes brand strategy decisions and will remain so. But the model cannot be delegated to computational systems for routine analysis, portfolio-level scanning, or real-time monitoring.
 
@@ -253,7 +253,7 @@ SBT's dimensional decomposition can be executed by large language models using a
 
 This computational implementability does not replace practitioner judgment. It augments it by providing a rapid, structured, replicable analytical layer that practitioners can interrogate, challenge, and override. The relationship is analogous to financial modeling: no competent CFO delegates investment decisions to a spreadsheet, but no competent CFO makes investment decisions without one.
 
-### 5.3 Coherence Taxonomy
+### Coherence Taxonomy
 
 Aaker prescribes consistency. SBT taxonomizes it. The five-type coherence classification [@zharnikov-2026-spectral-brand-theory-computational-framework] distinguishes brands by the structural relationship between their observer cohorts' perception clouds.
 
@@ -269,6 +269,8 @@ Aaker prescribes consistency. SBT taxonomizes it. The five-type coherence classi
 
 *Notes*: Coherence type classifications derived from Zharnikov [-@zharnikov-2026-spectral-brand-theory-computational-framework]. Exemplar brands are illustrative, not exhaustive. Recovery conditions following coherence shocks are formalized by the $\mu > \lambda$ threshold inequality in Zharnikov [-@zharnikov-2026-restoring-perceptual-separability-after-coherence].
 
+Table 5 situates SBT among the major brand-identity frameworks, comparing them across structural dimensions.
+
 **Table 5.** Comparison of Brand Identity Frameworks Across Structural Dimensions.
 
 | Dimension | Aaker [-@aaker-1996-building-strong-brands] | Hatch and Schultz [-@hatch-2001-strategic-stars-aligned-your] | Balmer and Greyser [-@balmer-2002-managing-multiple-identities-corporation] | Kapferer [-@kapferer-2008-new-strategic-brand] | SBT |
@@ -283,33 +285,33 @@ Aaker prescribes consistency. SBT taxonomizes it. The five-type coherence classi
 
 *Notes*: AC²ID = Actual, Communicated, Conceived, Ideal, Desired identity types. VCI = Vision-Culture-Image. Limiting-case relations are structural correspondences, not empirical equivalences; calibration is required before use as converters.
 
-The taxonomy addresses Section 3.3's boundary directly. Sørensen [-@sorensen-2002-strength-corporate-culture] demonstrated that cultural type predicts outcomes better than cultural strength; the coherence taxonomy applies the same principle to brand perception. Two brands scoring 7/10 on a conventional consistency metric --- one with signal coherence (IKEA), one with ecosystem coherence (Hermès) --- will respond to identical disruptions in structurally different ways. The signal-coherent brand transmits the disruption uniformly. The ecosystem-coherent brand absorbs it selectively. The consistency score is identical; the strategic implications are opposite. The $\mu > \lambda$ threshold inequality [@zharnikov-2026-restoring-perceptual-separability-after-coherence] formalizes the recovery condition: brands below threshold cannot restore perceptual separability through signal correction alone and require structural coherence intervention.
+The taxonomy addresses the consistency-versus-coherence boundary directly. Sørensen [-@sorensen-2002-strength-corporate-culture] demonstrated that cultural type predicts outcomes better than cultural strength; the coherence taxonomy applies the same principle to brand perception. Two brands scoring 7/10 on a conventional consistency metric --- one with signal coherence (IKEA), one with ecosystem coherence (Hermès) --- will respond to identical disruptions in structurally different ways. The signal-coherent brand transmits the disruption uniformly. The ecosystem-coherent brand absorbs it selectively. The consistency score is identical; the strategic implications are opposite. The $\mu > \lambda$ threshold inequality [@zharnikov-2026-restoring-perceptual-separability-after-coherence] formalizes the recovery condition: brands below threshold cannot restore perceptual separability through signal correction alone and require structural coherence intervention.
 
 This distinction cannot be made within Aaker's framework because it requires modeling multiple observer cohorts simultaneously and characterizing the structural relationship between their perception clouds --- capabilities that depend on the formal observer model.
 
-### 5.4 Dynamic Modeling
+### Dynamic Modeling
 
 Aaker's Brand Identity Model is a snapshot: it describes the brand's identity at a point in time. The framework acknowledges that brands evolve --- the core/extended distinction is partly a temporal concept, with core elements persisting through change --- but it does not model the dynamics of perception change.
 
 SBT models brand perception as a non-ergodic process [@zharnikov-2026-spectral-brand-theory-computational-framework]: the temporal sequence in which brand signals are encountered affects the resulting conviction, even when the set of signals is identical. An observer who encounters a product failure before a brand's origin story forms a different conviction than one who encounters the same two signals in reverse order, because the first signal establishes a prior that filters interpretation of the second. This path dependence means that ensemble averages (cross-sectional brand tracking studies) systematically misrepresent individual cohort trajectories [@zharnikov-2026z-spectral-dynamics]. The velocity and acceleration of perception change in spectral space --- and the phase transitions that mark permanent conviction shifts --- have direct implications for how brand health is measured and when intervention is possible.
 
-### 5.5 Portfolio Perception Interaction
+### Portfolio Perception Interaction
 
 Aaker's portfolio work classifies brand architecture types (branded house, house of brands, endorsed brands, sub-brands) but does not model how brands within a portfolio interact in observer perception space. When two brands occupy overlapping regions of spectral space, their signals interfere: an observer's perception of one brand is influenced by their perception of the other. SBT's eight-dimensional representation makes this interference visible and analyzable --- brands are positions in a shared perceptual space, and their proximity, overlap, and signal interactions can be formally characterized.
 
-### 5.6 Boundary Conditions: When Aaker Suffices
+### Boundary Conditions: When Aaker Suffices
 
 The formalization in this section claims that SBT adds predictive and diagnostic value beyond Aaker's framework. That claim requires a boundary condition: there are circumstances in which Aaker's framework is sufficient and SBT adds only computational overhead.
 
-Aaker's framework suffices when observer cohorts are approximately spectrally homogeneous --- when the primary audiences of a brand weight the eight dimensions in roughly similar proportions. Under this condition, the multi-cohort perception cloud collapses to a near-point in spectral space, the identity-image gap approaches zero for all cohorts simultaneously, and the formalization reduces to Aaker's single-identity model (Section 7.1). Brands operating in culturally homogeneous markets with low consumer heterogeneity, stable category conventions, and high-design signal environments approximate this condition.
+Aaker's framework suffices when observer cohorts are approximately spectrally homogeneous --- when the primary audiences of a brand weight the eight dimensions in roughly similar proportions. Under this condition, the multi-cohort perception cloud collapses to a near-point in spectral space, the identity-image gap approaches zero for all cohorts simultaneously, and the formalization reduces to Aaker's single-identity model. Brands operating in culturally homogeneous markets with low consumer heterogeneity, stable category conventions, and high-design signal environments approximate this condition.
 
 Three explicit limitations on the formal relationship also bear stating. First, the limiting-case theorem in Appendix A applies to brand-identity content, not measurement instruments. Aaker's empirical measurement instruments (the Brand Personality Scale; Coleman's [-@coleman-2011-service-brand-identity-definition] operationalization) use different scales than SBT spectral profiles; Appendix A's $T$ matrix is a conceptual mapping, not a psychometric converter. Second, the weights in $T$ are illustrative: they specify which SBT dimensions contribute to each Aaker perspective but do not specify the magnitudes. Empirical calibration of $T$ requires cross-validated measurement data. Third, the mapping is non-invertible: because $T$ collapses eight dimensions to four, an Aaker representation cannot be expanded back to a unique SBT profile. Practitioners who have only Aaker-level measurements cannot reconstruct SBT-level diagnostics from them; the informational loss is structural, not a measurement artifact.
 
-## 6. Worked Examples: Aaker and SBT Applied to the Same Brands
+## Worked Examples: Aaker and SBT Applied to the Same Brands
 
-To illustrate that SBT reproduces Aaker's insights while generating additional predictions, this section applies both frameworks to three brands that represent different coherence architectures. The analyses are illustrative, not empirical: the SBT spectral profiles are expert-derived estimates reported in Zharnikov [-@zharnikov-2026-spectral-brand-theory-computational-framework], not measurements from consumer surveys or conjoint studies. Their purpose is to show what observer-specific predictions become available once the dimensional decomposition is applied, not to establish the profiles as ground truth. Primary empirical validation of the propositions in Section 5.1 requires independently collected perceptual data and is reserved for follow-on work.
+To illustrate that SBT reproduces Aaker's insights while generating additional predictions, this section applies both frameworks to three brands that represent different coherence architectures. The analyses are illustrative, not empirical: the SBT spectral profiles are expert-derived estimates reported in Zharnikov [-@zharnikov-2026-spectral-brand-theory-computational-framework], not measurements from consumer surveys or conjoint studies. Their purpose is to show what observer-specific predictions become available once the dimensional decomposition is applied, not to establish the profiles as ground truth. Primary empirical validation of the propositions requires independently collected perceptual data and is reserved for follow-on work.
 
-### 6.1 Patagonia: Identity Coherence
+### Patagonia: Identity Coherence
 
 **Aaker's analysis.** Patagonia exhibits a strong "Brand as Organization" identity, anchored in environmental activism and values-driven business practices. The brand personality is sincere, rugged, and competent (in Jennifer Aaker's [-@aaker-1997-dimensions-brand-personality] terms). Core identity elements include environmental mission, product durability, and activist stance. The value proposition combines functional benefits (durable outdoor gear), emotional benefits (belonging to a values community), and self-expressive benefits (declaring environmental commitment through brand choice).
 
@@ -317,7 +319,7 @@ To illustrate that SBT reproduces Aaker's insights while generating additional p
 
 **What SBT adds.** Aaker's analysis identifies what Patagonia is. SBT predicts how it will behave under stress. Under Identity coherence, disruption produces a binary response: purpose-aligned cohorts rally ("this proves they're authentic"), while misaligned cohorts deepen their indifference or opposition. There is no middle ground. SBT also predicts which dimensions are critical: the brand can absorb Experiential disruptions (a product quality issue) because its primary cohorts weight Ideological signals more heavily; but an Ideological disruption (a perceived betrayal of environmental values) would trigger wholesale re-collapse in the core cohort, with no structural fallback. The type of disruption, not its magnitude, determines the outcome --- a prediction that Aaker's consistency-focused framework cannot generate. Whether the brand's coherence structure meets the $\mu > \lambda$ recovery threshold following such a shock is a testable question addressed by Zharnikov [-@zharnikov-2026-restoring-perceptual-separability-after-coherence].
 
-### 6.2 IKEA: Signal Coherence
+### IKEA: Signal Coherence
 
 **Aaker's analysis.** IKEA has a strong "Brand as Product" identity, supported by "Brand as Symbol" (the Swedish design aesthetic, the blue-and-yellow palette, the distinctive store experience). Core identity elements include democratic design, affordability, and Scandinavian functionality. The value proposition is primarily functional (well-designed furniture at accessible prices), with emotional benefits derived from the participatory assembly experience and the store's distinctive atmosphere.
 
@@ -325,17 +327,17 @@ To illustrate that SBT reproduces Aaker's insights while generating additional p
 
 **What SBT adds.** Aaker's analysis captures the consistency. SBT identifies a structural vulnerability invisible to the original framework. Under Signal coherence, disruption transmits uniformly to all cohorts --- there is no selective absorption, no peripheral cohort to sacrifice. A quality scandal would affect every observer approximately equally, requiring system-wide signal correction rather than targeted cohort management. SBT also identifies a signal fatigue risk: when designed signals become so consistent that they fade into background expectation, the brand loses perceptual salience without any decline in signal emission. The mechanism --- habituation through excess consistency --- is a paradoxical risk of signal coherence that Aaker's consistency prescription cannot diagnose.
 
-### 6.3 Tesla: Incoherence
+### Tesla: Incoherence
 
 **Aaker's analysis.** Tesla has a dominant "Brand as Person" identity, with the founder's personality overwhelming all other perspectives. The brand personality is exciting, innovative, and daring --- but the personality's recent evolution has introduced volatility. The value proposition combines functional benefits (electric vehicle performance), self-expressive benefits (environmental commitment, technological identity), and emotional benefits (being part of a civilizational project).
 
-**SBT's analysis.** Tesla's spectral profile is [7.5, 8.5, 3.0, 6.0, 7.0, 6.0, 4.0, 2.0], with Narrative dominant but Ideological severely conflicted [@zharnikov-2026-spectral-brand-theory-computational-framework]. The brand exhibits Incoherence: strong but contradictory signals produce irreconcilable perception clouds across cohorts. A Tech Loyalist (Experiential weight: 0.35, Ideological weight: 0.10, high tolerance) perceives the brand through the product and concludes "best EV on the market." A Progressive Boycotter (Ideological weight: 0.45, Experiential weight: 0.03, zero tolerance) perceives the brand through the founder's political activity and concludes "CEO's political vehicle." These are not different emphases on a shared brand --- they are irreconcilable convictions assembled from the same signal environment by observers with different spectral profiles.
+**SBT's analysis.** Tesla's spectral profile is [7.5, 8.5, 3.0, 6.0, 7.0, 6.0, 4.0, 2.0], with Narrative dominant but Ideological severely conflicted [@zharnikov-2026-spectral-brand-theory-computational-framework]. The brand exhibits Incoherence: strong but contradictory signals produce irreconcilable perception clouds across cohorts. A Tech Loyalist (Experiential weight: .35, Ideological weight: .10, high tolerance) perceives the brand through the product and concludes "best EV on the market." A Progressive Boycotter (Ideological weight: .45, Experiential weight: .03, zero tolerance) perceives the brand through the founder's political activity and concludes "CEO's political vehicle." These are not different emphases on a shared brand --- they are irreconcilable convictions assembled from the same signal environment by observers with different spectral profiles.
 
 **What SBT adds.** This is the case that most clearly demonstrates SBT's diagnostic advantage. Aaker's framework sees a strong brand with a volatile personality. Traditional brand equity scores --- awareness, consideration, favorability --- show Tesla as one of the world's strongest brands. SBT reveals it as one of the most architecturally fragile: maximum emission power with minimum structural health. The framework identifies the CEO as the source of approximately 65% of all brand-related signals, most of them ambient (not designed by the brand), dominating the Ideological, Narrative, and Social dimensions where different cohorts diverge most. The Experiential dimension (the actual product) is the brand's only unconflicted dimension --- simultaneously its greatest strength and its last remaining firewall.
 
 Fournier and Eckhardt [-@fournier-2019-putting-person-back] identify the structural risk of person-brands: when the brand is inseparable from a single individual, the brand inherits that individual's volatility with no structural buffer. SBT formalizes this as a coherence type --- Incoherence --- and predicts its disruption behavior: amplifying. Each disruption widens existing cracks. A product recall reinforces the Boycotter's narrative. A CEO controversy reinforces the Loyalist's defensive posture. The system does not absorb disruption; it converts disruption into deeper division. This is the worst resilience profile in the taxonomy, and it cannot be diagnosed by frameworks that do not model multiple observer cohorts simultaneously. The $\mu > \lambda$ threshold condition [@zharnikov-2026-restoring-perceptual-separability-after-coherence] predicts that Incoherent brands fall below the recovery threshold after successive disruptions, making perceptual separability between conflicting cohorts permanent rather than recoverable.
 
-### 6.4 Cross-Case Synthesis: The Differential-Prediction Pattern
+### Cross-Case Synthesis: The Differential-Prediction Pattern
 
 The three cases illuminate a cross-cutting pattern that neither Aaker's framework nor conventional consistency metrics can detect. Under Aaker's Brand as Symbol perspective, Patagonia and Tesla are both identifiable as "high-symbol" brands: both carry strong associative imagery, both project personality, both rely heavily on the Brand as Symbol and Brand as Person perspectives for their market identity. A traditional brand equity assessment would classify them similarly on symbolic dimensions and note their high brand salience.
 
@@ -345,9 +347,9 @@ The predictive payoff is direct. Patagonia's Identity coherence and Tesla's Inco
 
 The cross-case generalization is therefore: the limiting case of Aaker --- observer-homogeneous, high-design-signal brands like IKEA --- is the case where the framework performs best. The further a brand moves from that prototype, in terms of ideological polarization, ambient-signal dominance, or cultural heterogeneity of its audiences, the larger the SBT-Aaker diagnostic divergence. The formalization is least redundant precisely where brand management is most difficult.
 
-## 7. Discussion: Implications and Invitation
+## Discussion: Implications and Invitation
 
-### 7.1 The Relationship Between Frameworks
+### The Relationship Between Frameworks
 
 The relationship between Aaker's Brand Identity Model and SBT is not one of replacement but of formalization. Every insight in Aaker's framework has a formal counterpart in SBT. The four perspectives are preserved as bundled projections of eight dimensions. The core/extended distinction is preserved as the spectral weight hierarchy. The brand essence is preserved as the perception cloud centroid. The value proposition architecture is preserved as dimensional activation patterns. The identity-image gap is preserved --- and formalized --- as the rendering problem.
 
@@ -355,27 +357,27 @@ This relationship mirrors historical precedents in other fields. Classical econo
 
 Aaker's framework is the special case of SBT that applies when observer heterogeneity is minimal --- when all significant cohorts weight the same dimensions in approximately the same proportions. Under this condition, SBT's multi-cohort analysis reduces to Aaker's single-identity analysis, the perception cloud centroid aligns with the intended brand identity, and the formalization adds nothing beyond computational overhead. The condition holds for brands with high signal coherence (IKEA) operating in demographically homogeneous markets. It fails for brands with observer-dependent perception (Tesla), purpose-driven brands with ideological filtering (Patagonia), or any brand operating in markets where cultural heterogeneity produces divergent spectral profiles.
 
-### 7.2 What SBT Inherits from Aaker
+### What SBT Inherits from Aaker
 
-**What SBT inherits.** The multi-perspectival structure of brand identity. The core/extended hierarchy. The recognition that brands are simultaneously products, organizations, personalities, and symbols. The strategic principle that identity must be managed, not merely observed. These insights are preserved intact. Any analyst using SBT is implicitly using Aaker. The three capabilities SBT adds beyond this foundation are developed fully in Section 5 (testable propositions, AI operability, coherence taxonomy) and demonstrated in Section 6.
+**What SBT inherits.** The multi-perspectival structure of brand identity. The core/extended hierarchy. The recognition that brands are simultaneously products, organizations, personalities, and symbols. The strategic principle that identity must be managed, not merely observed. These insights are preserved intact. Any analyst using SBT is implicitly using Aaker. The three capabilities SBT adds beyond this foundation are developed fully earlier (testable propositions, AI operability, coherence taxonomy) and demonstrated through the worked examples.
 
-### 7.3 Practical Implications
+### Practical Implications
 
 Practitioners can continue using Aaker's vocabulary while grounding it in SBT's precision. The dimensional mapping (Tables 1 and 2) provides a translation layer between the two frameworks. A brand strategist who thinks in terms of "Brand as Organization" can now specify which components of that perspective --- Ideological, Social, or Cultural --- are critical for which observer cohorts, and test whether those components are actually perceived as intended.
 
 The coherence taxonomy (Table 4) provides a new strategic diagnostic. Instead of asking "how consistent is our brand?" (a scalar question with a scalar answer), strategists can ask "what type of coherence does our brand exhibit?" (a structural question with strategic implications). The answer determines the crisis response playbook: selective absorption for ecosystem coherence, uniform repair for signal coherence, ideological reinforcement for identity coherence, experience investment for experiential asymmetry, or structural intervention for incoherence.
 
-### 7.4 Limitations and Future Directions
+### Limitations and Future Directions
 
 The formalization introduces its own limitations. SBT's eight dimensions are a working decomposition synthesized from prior frameworks, not a proven exhaustive set. Their completeness and necessity are derived formally in Zharnikov [-@zharnikov-2026-why-eight-completeness-necessity-sbt], but empirical factor-analytic work on brand perception data would be needed to establish the dimensionality of the perceptual space in practice. The observer spectral profiles presented in the demonstration analyses are expert estimates, not empirically measured through surveys or conjoint analysis. The coherence taxonomy has been demonstrated on five brands; its generalizability across industries, cultures, and brand lifecycle stages remains to be established.
 
-Hatch and Schultz [-@hatch-2001-strategic-stars-aligned-your] VCI (Vision-Culture-Image) alignment model identifies three gap types that brands must manage simultaneously. Balmer and Greyser [-@balmer-2002-managing-multiple-identities-corporation] AC2ID test identifies five identity types (actual, communicated, conceived, ideal, desired) that may diverge within any organization. Both frameworks point to the multi-stakeholder, multi-gap nature of brand identity --- a complexity that SBT's multi-cohort analysis is designed to formalize but that requires empirical validation at each stakeholder interface.
+Hatch and Schultz [-@hatch-2001-strategic-stars-aligned-your] VCI (Vision-Culture-Image) alignment model identifies three gap types that brands must manage simultaneously. Balmer and Greyser [-@balmer-2002-managing-multiple-identities-corporation] AC²ID test identifies five identity types (actual, communicated, conceived, ideal, desired) that may diverge within any organization. Both frameworks point to the multi-stakeholder, multi-gap nature of brand identity --- a complexity that SBT's multi-cohort analysis is designed to formalize but that requires empirical validation at each stakeholder interface.
 
-The most important validation gap is empirical. The four propositions in Section 5.1 generate testable predictions --- about observer-dependent perception divergence (P1), coherence type and crisis resilience (P2), spectral weight prediction of core identity (P3), and AI-mediated dimensional collapse (P4). These predictions await testing against independently collected consumer data. Until that testing is complete, SBT remains a theoretical framework with demonstrated analytical utility but unconfirmed empirical validity.
+The most important validation gap is empirical. The four propositions generate testable predictions --- about observer-dependent perception divergence (P1), coherence type and crisis resilience (P2), spectral weight prediction of core identity (P3), and AI-mediated dimensional collapse (P4). These predictions await testing against independently collected consumer data. Until that testing is complete, SBT remains a theoretical framework with demonstrated analytical utility but unconfirmed empirical validity.
 
 A formal gap also merits explicit acknowledgment: the claim that Aaker's framework is the limiting case of SBT under spectral-profile homogeneity is a geometric argument --- when cohort weight vectors converge, the multi-cohort perception cloud collapses to a single centroid aligned with intended identity, reproducing Aaker's single-identity model --- but it is not accompanied here by a formal metric-space proof. The limit is stated as a working derivation calibrated by the three worked examples; establishing the formal boundary conditions (how similar cohort weight vectors must be before the reduction holds, and what metric space properties are required) remains a priority for follow-on theoretical work.
 
-### 7.5 Invitation
+### Invitation
 
 SBT is offered as a formalization that makes Aaker's framework testable, measurable, and computationally operable --- preserving the multi-perspectival structure that makes it powerful while supplying the parametric precision that empirical validation and portfolio-scale analysis require. The relationship between the two frameworks is like that between architectural blueprints and structural engineering calculations: the blueprints describe what the building should look like; the calculations determine whether it can stand. Both are necessary. Neither is sufficient alone. The formalization is offered in the spirit of extending Aaker's foundation, not replacing it.
 

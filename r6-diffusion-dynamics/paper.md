@@ -16,15 +16,11 @@ Brand perception is inherently dynamic, yet formal continuous-time manifold mode
 
 ---
 
-**JEL Classification**: C65, M31, C02
-
-**MSC Classification**: 58J65, 60J60, 91B42
-
-Every brand theory acknowledges that brand perception changes over time. Keller's [-@keller-1993-conceptualizing-measuring-managing] Customer-Based Brand Equity model invokes "brand building" and "brand leveraging" as temporal processes. Aaker [-@aaker-1991-managing-brand-equity] discusses brand loyalty as something earned over repeated interactions. Kapferer [-@kapferer-2008-new-strategic-brand, 4th ed.] describes the "brand identity prism" as evolving through market engagement. Yet none of these frameworks provides a formal dynamical model -- a mathematical description of *how* perception evolves, *what drives* its evolution, and *why* some trajectories are reversible while others are not.
+Every brand theory acknowledges that brand perception changes over time. Keller's [-@keller-1993-conceptualizing-measuring-managing] Customer-Based Brand Equity model invokes "brand building" and "brand leveraging" as temporal processes. Aaker [-@aaker-1991-managing-brand-equity] discusses brand loyalty as something earned over repeated interactions. Kapferer [-@kapferer-2008-new-strategic-brand, 4th ed.] describes the "brand identity prism" as evolving through market engagement. Yet none of these frameworks provides a formal dynamical model — a mathematical description of *how* perception evolves, *what drives* its evolution, and *why* some trajectories are reversible while others are not.
 
 The gap is not merely aesthetic. Without a dynamical model, brand theory cannot answer several questions that arise naturally from Spectral Brand Theory's [@zharnikov-2026-spectral-brand-theory-computational-framework] static framework:
 
-1. **Why is negative conviction absorbing?** SBT asserts that sufficiently negative brand experiences create irreversible perceptual states -- that an observer who concludes "this brand is fundamentally dishonest" cannot be brought back to neutrality by any number of positive signals. This is a dynamical claim that requires a dynamical proof.
+1. **Why is negative conviction absorbing?** SBT asserts that sufficiently negative brand experiences create irreversible perceptual states — that an observer who concludes "this brand is fundamentally dishonest" cannot be brought back to neutrality by any number of positive signals. This is a dynamical claim that requires a dynamical proof.
 
 2. **Why do time averages and ensemble averages diverge?** Peters [-@peters-2019-ergodicity-problem-economics] demonstrated that the failure of ergodicity in economic systems has profound consequences for decision theory. SBT's ergodicity coefficient $\varepsilon$ [@zharnikov-2026-spectral-brand-theory-computational-framework] claims an analogous non-ergodicity in brand perception, but the claim has remained qualitative. *When exactly* do time and ensemble averages diverge, and *by how much*?
 
@@ -32,11 +28,11 @@ The gap is not merely aesthetic. Without a dynamical model, brand theory cannot 
 
 4. **Why does the D/A ratio affect trajectory stability?** SBT's designed/ambient ratio controls how much of a brand's perception is strategically managed versus emergent. The static framework observes that D/A ratios of 55--65% produce the most stable perception. A dynamical model should provide a dynamical rationale for this from the mathematics.
 
-This paper provides the missing dynamical foundation. We model an observer's evolving perception of a brand as a trajectory on $S^7_+$, the positive octant of the 7-sphere -- the natural state space for normalized perception profiles with eight non-negative components. Signal encounters drive stochastic perturbations (Brownian motion on the manifold), signal decay introduces deterministic drift (toward a neutral prior), and negative conviction creates absorbing boundaries (at the octant boundary where any dimension reaches zero). The resulting stochastic differential equation (SDE) admits a rigorous analysis using the spectral theory of the Laplace-Beltrami operator on $S^7_+$ with Dirichlet boundary conditions.
+This paper provides the missing dynamical foundation. We model an observer's evolving perception of a brand as a trajectory on $S^7_+$, the positive octant of the 7-sphere — the natural state space for normalized perception profiles with eight non-negative components. Signal encounters drive stochastic perturbations (Brownian motion on the manifold), signal decay introduces deterministic drift (toward a neutral prior), and negative conviction creates absorbing boundaries (at the octant boundary where any dimension reaches zero). The resulting stochastic differential equation (SDE) admits a rigorous analysis using the spectral theory of the Laplace-Beltrami operator on $S^7_+$ with Dirichlet boundary conditions.
 
-The gap in formal dynamical modeling is not for lack of adjacent work. Longitudinal brand tracking studies (e.g., Young & Rubicam's BrandAsset Valuator, Millward Brown's BrandZ) measure brand perception at multiple time points, but these are sequences of static snapshots rather than dynamical systems -- they do not specify equations of motion or characterize trajectories. Brand loyalty dynamics models [@dick-1994-customer-loyalty-toward] formalize the relationship between relative attitude and patronage but operate on one-dimensional attitude scales, not on a multi-dimensional metric space; the geometry of loyalty trajectories is undefined. Attitude-change models in the persuasion literature, including the Elaboration Likelihood Model [@petty-1986-communication-persuasion-central], specify conditions under which attitude change occurs and identify central versus peripheral processing routes, but they neither produce a metric on attitude space nor model attitude evolution as a stochastic process with drift and diffusion components. The common deficiency is structural: none of these frameworks places brand perception in a formal metric space, and without a metric space, drift, diffusion, and absorbing boundaries -- the essential objects of a dynamical model -- cannot be defined.
+The gap in formal dynamical modeling is not for lack of adjacent work. Longitudinal brand tracking studies (e.g., Young & Rubicam's BrandAsset Valuator, Millward Brown's BrandZ) measure brand perception at multiple time points, but these are sequences of static snapshots rather than dynamical systems — they do not specify equations of motion or characterize trajectories. Brand loyalty dynamics models [@dick-1994-customer-loyalty-toward] formalize the relationship between relative attitude and patronage but operate on one-dimensional attitude scales, not on a multi-dimensional metric space; the geometry of loyalty trajectories is undefined. Attitude-change models in the persuasion literature, including the Elaboration Likelihood Model [@petty-1986-communication-persuasion-central], specify conditions under which attitude change occurs and identify central versus peripheral processing routes, but they neither produce a metric on attitude space nor model attitude evolution as a stochastic process with drift and diffusion components. The common deficiency is structural: none of these frameworks places brand perception in a formal metric space, and without a metric space, drift, diffusion, and absorbing boundaries — the essential objects of a dynamical model — cannot be defined.
 
-The most proximate antecedents in quantitative marketing are Bass [-@bass-1969-new-product-growth] and Mahajan, Muller, & Bass [-@mahajan-1990-new-product-diffusion], whose diffusion models describe population-level adoption as an ODE over calendar time. These models share the label "diffusion" but operate on a fundamentally different object: aggregate adoption counts in a scalar time series, with no observer geometry, no state space, and no absorbing boundaries. R6 models individual-observer trajectories on a Riemannian manifold; the connection to Bass-style diffusion is terminological rather than structural. Sriram, Balachander, & Kalwani [-@sriram-2007-monitoring-dynamics-brand] introduced a scalar AR(1) state-space model for brand equity dynamics using scanner data — the most direct precursor for the idea that brand equity has a time-varying latent state. R6 generalizes that scalar state to the full 8-dimensional SBT perception space with Riemannian geometry and absorbing boundaries, recovering Sriram et al.'s [-@sriram-2007-monitoring-dynamics-brand] dynamics as the low-dimensional, no-boundary limit. Netzer, Lattin, & Srinivasan [-@netzer-2008-hidden-markov-model] modeled individual-level customer relationship dynamics using a hidden Markov model (HMM) on finite discrete states. Their approach is the closest prior art in marketing science: it tracks individual trajectories over time and acknowledges that customers can enter and exit states. R6 differs structurally in three ways: the state space is continuous and metric ($S^7_+$ rather than a finite lattice), the boundary conditions are absorbing rather than absorbing-and-resurrecting (their model permits return from all states), and the non-ergodicity result follows from the absorbing boundary geometry rather than from a mixing-time argument on a finite Markov chain. The Netzer et al. [-@netzer-2008-hidden-markov-model] HMM cannot represent the Tylenol-BP divergence in recovery time scaling (Proposition 5), because that divergence arises from the $1/\delta^2$ singularity as $\delta \to 0$ — a continuous-space phenomenon invisible to finite-state models.
+The most proximate antecedents in quantitative marketing are Bass [-@bass-1969-new-product-growth] and Mahajan, Muller, & Bass [-@mahajan-1990-new-product-diffusion], whose diffusion models describe population-level adoption as an ODE over calendar time. These models share the label "diffusion" but operate on a fundamentally different object: aggregate adoption counts in a scalar time series, with no observer geometry, no state space, and no absorbing boundaries. R6 models individual-observer trajectories on a Riemannian manifold; the connection to Bass-style diffusion is terminological rather than structural. Sriram, Balachander, & Kalwani [-@sriram-2007-monitoring-dynamics-brand] introduced a scalar AR(1) state-space model for brand equity dynamics using scanner data — the most direct precursor for the idea that brand equity has a time-varying latent state. R6 generalizes that scalar state to the full 8-dimensional SBT perception space with Riemannian geometry and absorbing boundaries, recovering Sriram et al.'s [-@sriram-2007-monitoring-dynamics-brand] dynamics as the low-dimensional, no-boundary limit. Netzer, Lattin, & Srinivasan [-@netzer-2008-hidden-markov-model] modeled individual-level customer relationship dynamics using a hidden Markov model (HMM) on finite discrete states. Their approach is the closest prior art in marketing science: it tracks individual trajectories over time and acknowledges that customers can enter and exit states. R6 differs structurally in three ways: the state space is continuous and metric ($S^7_+$ rather than a finite lattice), the boundary conditions are absorbing rather than absorbing-and-resurrecting (their model permits return from all states), and the non-ergodicity result follows from the absorbing boundary geometry rather than from a mixing-time argument on a finite Markov chain. The Netzer et al. [-@netzer-2008-hidden-markov-model] HMM cannot represent the Tylenol-BP divergence in recovery time scaling (Proposition 5), because that divergence arises from the $1/\delta^2$ singularity as $\delta \to 0$ — a continuous-space phenomenon invisible to finite-state models. Table 1 summarizes how these traditions differ along the structural features that matter for the present model.
 
 **Table 1.** Comparison of brand-dynamics modeling traditions.
 
@@ -50,7 +46,7 @@ The most proximate antecedents in quantitative marketing are Bass [-@bass-1969-n
 
 *Notes*: HMM = hidden Markov model. "Multidimensional" means the model tracks more than one perception or equity dimension simultaneously. "Boundary handling" refers to irreversible state transitions. R6 recovers the Sriram et al. [-@sriram-2007-monitoring-dynamics-brand] scalar dynamics as the low-dimensional, no-boundary limit.
 
-The approach connects three previously separate intellectual traditions. From **stochastic analysis on manifolds** [@hsu-2002-stochastic-analysis-manifolds; @stroock-2000-introduction-analysis-paths], we draw the formulation of Brownian motion on Riemannian manifolds and the connection between the Laplace-Beltrami spectrum and mixing times. From **ergodicity economics** [@peters-2019-ergodicity-problem-economics; @peters-2016-evaluating-gambles-using], we draw the distinction between time and ensemble averages and the consequences of their divergence. From **opinion dynamics** [@hegselmann-2002-opinion-dynamics-bounded; @deffuant-2000-mixing-beliefs-among], we draw the insight that belief evolution can be modeled as a geometric process -- though existing opinion dynamics models operate in flat Euclidean space, not on curved manifolds.
+The approach connects three previously separate intellectual traditions. From **stochastic analysis on manifolds** [@hsu-2002-stochastic-analysis-manifolds; @stroock-2000-introduction-analysis-paths], we draw the formulation of Brownian motion on Riemannian manifolds and the connection between the Laplace-Beltrami spectrum and mixing times. From **ergodicity economics** [@peters-2019-ergodicity-problem-economics; @peters-2016-evaluating-gambles-using], we draw the distinction between time and ensemble averages and the consequences of their divergence. From **opinion dynamics** [@hegselmann-2002-opinion-dynamics-bounded; @deffuant-2000-mixing-beliefs-among], we draw the insight that belief evolution can be modeled as a geometric process — though existing opinion dynamics models operate in flat Euclidean space, not on curved manifolds.
 
 The paper builds on the metric framework established in Zharnikov [-@zharnikov-2026-brand-space-geometry-formal-metric], which defined the Aitchison [-@aitchison-1986-statistical-analysis-compositional] compositional-data metric on brand signal space $\mathbb{R}^8_+$ and the Fisher-Rao metric on observer weight space $\Delta^7$. Where that paper established the *geometry* of brand perception (how to measure distances), this paper establishes the *dynamics* (how positions change over time). The two together — statics and dynamics — provide a complete mathematical foundation for SBT.
 
@@ -86,7 +82,7 @@ flowchart LR
 
 ### SBT Framework Recap
 
-Spectral Brand Theory [@zharnikov-2026-spectral-brand-theory-computational-framework] models a brand as a stellar object emitting signals across eight typed dimensions:
+Spectral Brand Theory [@zharnikov-2026-spectral-brand-theory-computational-framework] models a brand as a stellar object emitting signals across eight typed dimensions (Table 2):
 
 **Table 2.** SBT Perception Dimensions and Indices.
 
@@ -103,13 +99,13 @@ Spectral Brand Theory [@zharnikov-2026-spectral-brand-theory-computational-frame
 
 *Notes*: Dimensions follow the canonical SBT ordering [@zharnikov-2026-spectral-brand-theory-computational-framework]. Index matches component position in emission profile $s = (s_1, \ldots, s_8)$ and observer spectral profile $w = (w_1, \ldots, w_8)$.
 
-A brand's **emission profile** is a vector $s = (s_1, \ldots, s_8) \in \mathbb{R}^8_+$. An observer's **weight profile** (also known as the observer spectral profile) is $w = (w_1, \ldots, w_8) \in \Delta^7$. The observer's **perception profile** -- the internal representation of the brand -- is a normalized vector on the positive octant of the 7-sphere:
+A brand's **emission profile** is a vector $s = (s_1, \ldots, s_8) \in \mathbb{R}^8_+$. An observer's **weight profile** (also known as the observer spectral profile) is $w = (w_1, \ldots, w_8) \in \Delta^7$. The observer's **perception profile** — the internal representation of the brand — is a normalized vector on the positive octant of the 7-sphere:
 
 $$x = \frac{(w_1 s_1, \ldots, w_8 s_8)}{\|(w_1 s_1, \ldots, w_8 s_8)\|} \in S^7_+$$
 
 This perception profile evolves over time as the observer encounters new signals, as memory of past signals decays, and as priors crystallize. The evolution of $x(t)$ is the central object of this paper.
 
-SBT assigns five coherence levels based on the emission profile analysis:
+SBT assigns five coherence levels based on the emission profile analysis (Table 3):
 
 **Table 3.** SBT Coherence Grade Hierarchy.
 
@@ -156,7 +152,7 @@ for $v \neq 0$, which maps tangent vectors to points on the sphere along geodesi
 
 The **positive octant** $S^7_+ = S^7 \cap \mathbb{R}^8_+$ is the subset where all coordinates are strictly positive. It is a manifold with boundary, where the boundary $\partial S^7_+$ consists of points with at least one coordinate equal to zero. The positive octant has volume:
 
-$$\text{Vol}(S^7_+) = \frac{1}{2^8} \text{Vol}(S^7) = \frac{\pi^4}{768} \approx 0.1269$$
+$$\text{Vol}(S^7_+) = \frac{1}{2^8} \text{Vol}(S^7) = \frac{\pi^4}{768} \approx .1269$$
 
 as established in Zharnikov [-@zharnikov-2026-brand-space-geometry-formal-metric], reflecting the $1/256$ compression factor from restricting to non-negative coordinates.
 
@@ -180,7 +176,7 @@ For $S^7$ (i.e., $n = 8$), the first non-trivial eigenvalue is:
 
 $$\lambda_1 = 1 \cdot (1 + 8 - 2) = 7$$
 
-with multiplicity $m_1 = 8$, corresponding to the eight coordinate functions $x_1, \ldots, x_8$ restricted to the sphere (spherical harmonics of degree 1). The eigenvalue gap $\lambda_1 = 7$ governs the rate at which Brownian motion on $S^7$ mixes -- a fact that will be central to our analysis.
+with multiplicity $m_1 = 8$, corresponding to the eight coordinate functions $x_1, \ldots, x_8$ restricted to the sphere (spherical harmonics of degree 1). The eigenvalue gap $\lambda_1 = 7$ governs the rate at which Brownian motion on $S^7$ mixes — a fact that will be central to our analysis.
 
 ### Transition Density on $S^7$
 
@@ -234,9 +230,9 @@ $$\tau_{\text{mix}} \asymp \frac{1}{\lambda_1 / 2} = \frac{2}{\lambda_1}$$
 
 For $S^7$:
 
-$$\tau_{\text{mix}}(S^7) \asymp \frac{2}{7} \approx 0.286$$
+$$\tau_{\text{mix}}(S^7) \asymp \frac{2}{7} \approx .286$$
 
-This is fast mixing -- the high curvature and connectivity of $S^7$ cause Brownian motion to rapidly "forget" its starting point. The question central to brand perception dynamics is: *what happens to the mixing time when we restrict to the positive octant $S^7_+$ and impose absorbing boundaries?*
+This is fast mixing — the high curvature and connectivity of $S^7$ cause Brownian motion to rapidly "forget" its starting point. The question central to brand perception dynamics is: *what happens to the mixing time when we restrict to the positive octant $S^7_+$ and impose absorbing boundaries?*
 
 ### Comparison with Flat Euclidean Models
 
@@ -246,7 +242,7 @@ Existing opinion dynamics models [@hegselmann-2002-opinion-dynamics-bounded; @de
 
 2. **Curvature**: The positive curvature of $S^7$ accelerates mixing relative to flat space. The Lichnerowicz theorem [@lichnerowicz-1958-geometrie-des-groupes] gives $\lambda_1 \geq \frac{n-1}{n-2} K(n-2) = n - 1$ for an $(n-1)$-dimensional manifold with Ricci curvature $\text{Ric} \geq (n-2) K$. For $S^{n-1}$ with $K = 1$, this recovers $\lambda_1 \geq n - 1$, which is tight.
 
-3. **Normalization constraint**: Points on $S^7$ satisfy $\|x\| = 1$, enforcing the principle that perception is relative -- an observer cannot increase attention to one dimension without decreasing attention to another. In Euclidean models, no such constraint exists.
+3. **Normalization constraint**: Points on $S^7$ satisfy $\|x\| = 1$, enforcing the principle that perception is relative — an observer cannot increase attention to one dimension without decreasing attention to another. In Euclidean models, no such constraint exists.
 
 4. **Boundary effects**: The positive octant $S^7_+$ introduces boundaries that trap the process, fundamentally altering the dynamics. This has no analogue in standard opinion dynamics models (though see Aydogdu et al. [-@aydogdu-2017-opinion-dynamics-general], for opinion dynamics on manifolds without boundary), which operate on unbounded Euclidean domains.
 
@@ -264,7 +260,7 @@ An observer's perception of a brand evolves under three forces:
 
 2. **Signal decay**: In the absence of new encounters, perception drifts toward a neutral prior. SBT models signal luminosity as decaying over time: the emotional intensity of a brand experience fades, the narrative arc becomes less vivid, the ideological resonance weakens. Only crystallized priors are exempt from decay.
 
-3. **Crystallization**: Sufficiently intense or repeatedly reinforced signals become permanent priors -- they no longer decay. Crystallization creates an "absorbing region" in the *opposite* direction from the boundary: the observer becomes locked into a permanent brand conviction from which further signals cannot dislodge them.
+3. **Crystallization**: Sufficiently intense or repeatedly reinforced signals become permanent priors — they no longer decay. Crystallization creates an "absorbing region" in the *opposite* direction from the boundary: the observer becomes locked into a permanent brand conviction from which further signals cannot dislodge them.
 
 We model these three forces as follows.
 
@@ -311,7 +307,7 @@ The diffusion coefficient $\sigma(X_t, t)$ models the stochastic component of si
 
 $$\sigma(X_t, t) = \sigma_0 \, P_{X_t}$$
 
-where $\sigma_0 > 0$ controls the noise level. The projection $P_{X_t}$ ensures the noise is tangent to $S^7$, maintaining the normalization constraint. Isotropic noise means the observer is equally susceptible to perceptual perturbations in all directions -- a simplifying assumption that we relax in the Signal Dynamics and Brand Strategy section.
+where $\sigma_0 > 0$ controls the noise level. The projection $P_{X_t}$ ensures the noise is tangent to $S^7$, maintaining the normalization constraint. Isotropic noise means the observer is equally susceptible to perceptual perturbations in all directions — a simplifying assumption that we relax in the Signal Dynamics and Brand Strategy section.
 
 ### The Complete SDE
 
@@ -366,9 +362,9 @@ In SBT, the boundary $\partial S^7_+$ represents the set of perception states wh
 
 - $x_1 = 0$: The brand's visual identity has become invisible to the observer.
 - $x_3 = 0$: The brand's ideological positioning has become null.
-- $x_8 = 0$: The brand has no temporal resonance -- no perceived heritage or longevity.
+- $x_8 = 0$: The brand has no temporal resonance — no perceived heritage or longevity.
 
-Any of these represents a catastrophic loss of brand perception in that dimension. SBT models this as an absorbing state: once an observer's perception of a dimension reaches zero, no amount of subsequent signaling can restore it from the observer's perspective. The signal is not merely weak -- it is *absent from the observer's perceptual vocabulary* for that brand.
+Any of these represents a catastrophic loss of brand perception in that dimension. SBT models this as an absorbing state: once an observer's perception of a dimension reaches zero, no amount of subsequent signaling can restore it from the observer's perspective. The signal is not merely weak — it is *absent from the observer's perceptual vocabulary* for that brand.
 
 Formally, we impose **Dirichlet (absorbing) boundary conditions** on $\partial S^7_+$:
 
@@ -380,7 +376,7 @@ where $\tau = \inf\{t > 0 : X_t \in \partial S^7_+\}$ is the absorption time. Th
 
 The absorbed process has generator $\frac{1}{2} \Delta_{S^7}$ restricted to the positive octant with Dirichlet boundary conditions: $f |_{\partial S^7_+} = 0$. The eigenvalues of $-\Delta_{S^7_+}^D$ (the Dirichlet Laplacian on $S^7_+$) are larger than those of $-\Delta_{S^7}$ on the full sphere, because the boundary conditions remove eigenfunctions and increase the spectral gap.
 
-The eigenfunctions of the Dirichlet Laplacian on the positive octant $S^7_+$ are the spherical harmonics that vanish on all coordinate hyperplanes. These are the harmonics with odd parity in each coordinate -- that is, spherical harmonics $Y$ satisfying $Y(x_1, \ldots, -x_i, \ldots, x_8) = -Y(x_1, \ldots, x_i, \ldots, x_8)$ for each $i = 1, \ldots, 8$. By the symmetry of the sphere under coordinate reflections, these form a subset of the full spectral decomposition.
+The eigenfunctions of the Dirichlet Laplacian on the positive octant $S^7_+$ are the spherical harmonics that vanish on all coordinate hyperplanes. These are the harmonics with odd parity in each coordinate — that is, spherical harmonics $Y$ satisfying $Y(x_1, \ldots, -x_i, \ldots, x_8) = -Y(x_1, \ldots, x_i, \ldots, x_8)$ for each $i = 1, \ldots, 8$. By the symmetry of the sphere under coordinate reflections, these form a subset of the full spectral decomposition.
 
 The first Dirichlet eigenfunction on $S^7_+$ is the candidate:
 
@@ -396,7 +392,7 @@ This far exceeds the first eigenvalue $\lambda_1 = 7$ of the full sphere. The Di
 
 ### Survival Probability
 
-**Theorem 2** (Survival probability). *For the brand perception process on $S^7_+$ with isotropic diffusion coefficient $\sigma_0$ and zero drift ($\kappa = 0$, $\alpha = 0$), the survival probability -- the probability of not being absorbed by time $t$ -- decays as:*
+**Theorem 2** (Survival probability). *For the brand perception process on $S^7_+$ with isotropic diffusion coefficient $\sigma_0$ and zero drift ($\kappa = 0$, $\alpha = 0$), the survival probability — the probability of not being absorbed by time $t$ — decays as:*
 
 $$S(t, x) = \mathbb{P}[\tau > t \mid X_0 = x] \sim C(x) \, e^{-\lambda_{D,1} \sigma_0^2 t / 2}$$
 
@@ -418,9 +414,9 @@ Setting $C(x) = c_1 \phi_1(x)$, which is positive for $x \in S^7_+$ (since $\phi
 
 **Remark.** The survival probability decays exponentially with rate $\lambda_{D,1} \sigma_0^2 / 2$. This has three immediate consequences:
 
-1. **Higher noise accelerates absorption.** The decay rate is proportional to $\sigma_0^2$. Brands operating in noisy information environments (high ambient signal volume, frequent contradictory messages, volatile media landscapes) face faster absorption -- a formalization of the intuition that brand fragility increases with noise.
+1. **Higher noise accelerates absorption.** The decay rate is proportional to $\sigma_0^2$. Brands operating in noisy information environments (high ambient signal volume, frequent contradictory messages, volatile media landscapes) face faster absorption — a formalization of the intuition that brand fragility increases with noise.
 
-2. **Position matters.** The prefactor $C(x)$ encodes the initial position's distance from the boundary. An observer whose perception is concentrated on a few dimensions (close to a face of the octant, where some coordinates are near zero) has a smaller $C(x)$ and hence lower survival probability -- they are more vulnerable to losing a marginal dimension entirely.
+2. **Position matters.** The prefactor $C(x)$ encodes the initial position's distance from the boundary. An observer whose perception is concentrated on a few dimensions (close to a face of the octant, where some coordinates are near zero) has a smaller $C(x)$ and hence lower survival probability — they are more vulnerable to losing a marginal dimension entirely.
 
 3. **The Dirichlet eigenvalue controls the rate.** Since $\lambda_{D,1} = 112$, the absorption rate on $S^7_+$ is $56\sigma_0^2$. This is an order of magnitude faster than the mixing rate on the full sphere ($\lambda_1/2 = 3.5$), reflecting the massive instability introduced by absorbing boundaries in 8 dimensions.
 
@@ -434,9 +430,9 @@ $$A(x) = \mathbb{P}[\tau < \infty \mid X_0 = x] = 1 \quad \text{for all } x \in 
 
 This follows from the recurrence of Brownian motion on $S^7$: the process visits neighborhoods of $\partial S^7_+$ infinitely often, and upon each visit, there is a positive probability of hitting the boundary. By the Borel-Cantelli lemma, absorption occurs almost surely.
 
-**Corollary.** *For pure Brownian motion on $S^7_+$ with absorbing boundaries, the model implies that every observer will eventually lose at least one perceptual dimension for every brand (in the absence of active signal drift). The relevant question is not "whether" but "how quickly" -- the survival time $\tau$, whose distribution is characterized by Theorem 2.*
+**Corollary.** *For pure Brownian motion on $S^7_+$ with absorbing boundaries, the model implies that every observer will eventually lose at least one perceptual dimension for every brand (in the absence of active signal drift). The relevant question is not "whether" but "how quickly" — the survival time $\tau$, whose distribution is characterized by Theorem 2.*
 
-This result is sharp -- it says that without active signal maintenance (the drift terms developed in the Drift: Signal Decay and Directed Encounters section), brand perception inevitably degrades to the point of losing a dimension. The practical consequence is that **signal maintenance is not optional**: a brand that ceases to emit signals will, with mathematical certainty, lose perceptual salience in at least one dimension.
+This result is sharp — it says that without active signal maintenance (the drift terms developed in the Drift: Signal Decay and Directed Encounters section), brand perception inevitably degrades to the point of losing a dimension. The practical consequence is that **signal maintenance is not optional**: a brand that ceases to emit signals will, with mathematical certainty, lose perceptual salience in at least one dimension.
 
 ### Effect of Drift on Absorption
 
@@ -452,7 +448,7 @@ The drift-diffusion balance determines whether the process survives:
 - If diffusion dominates (large $\sigma_0$), the process explores $S^7_+$ widely and eventually hits the boundary.
 - The critical regime occurs when signal drift and diffusion are comparable.
 
-The decay drift $\mu_{\text{decay}}$ pushes toward $x^* = (1, \ldots, 1)/\sqrt{8}$, which is the maximally interior point of $S^7_+$ (equidistant from all boundary faces). Thus decay drift, paradoxically, can *reduce* absorption risk by keeping the process away from the boundary -- but only if the decay target is the neutral prior $x^*$. If the decay target were instead a corner of the octant (representing an extreme prior), decay would increase absorption risk.
+The decay drift $\mu_{\text{decay}}$ pushes toward $x^* = (1, \ldots, 1)/\sqrt{8}$, which is the maximally interior point of $S^7_+$ (equidistant from all boundary faces). Thus decay drift, paradoxically, can *reduce* absorption risk by keeping the process away from the boundary — but only if the decay target is the neutral prior $x^*$. If the decay target were instead a corner of the octant (representing an extreme prior), decay would increase absorption risk.
 
 ## Mixing Time and Non-Ergodicity
 
@@ -487,7 +483,7 @@ This comparison shows that $\tau_{\text{mix}}(S^7_+) \asymp 2/(48\sigma_0^2)$ is
 
 ### The Ergodicity Coefficient
 
-SBT's ergodicity coefficient $\varepsilon$ measures the reliability of ensemble averages as proxies for individual time averages (Zharnikov [-@zharnikov-2026-spectral-brand-theory-computational-framework] §5, where the concept was introduced qualitatively). We now provide a formal definition grounded in the mixing time analysis.
+SBT's ergodicity coefficient $\varepsilon$ measures the reliability of ensemble averages as proxies for individual time averages (Zharnikov [-@zharnikov-2026-spectral-brand-theory-computational-framework], where the concept was introduced qualitatively). We now provide a formal definition grounded in the mixing time analysis.
 
 **Definition 1** (Ergodicity coefficient). *For the brand perception process on $S^7_+$, the ergodicity coefficient is:*
 
@@ -495,7 +491,7 @@ $$\varepsilon = \frac{\tau_{\text{char}}}{\tau_{\text{mix}}}$$
 
 *where $\tau_{\text{char}}$ is the characteristic time scale of the observation window and $\tau_{\text{mix}}$ is the mixing time to the QSD.*
 
-When $\varepsilon \gg 1$ (the observation window is much longer than the mixing time), the process has mixed thoroughly, and ensemble averages are reliable proxies for time averages. When $\varepsilon \ll 1$ (the observation window is short relative to mixing), the process has not mixed, and time averages diverge from ensemble averages. For the full sphere, $\tau_{\text{mix}} \approx 2/(7\sigma_0^2)$ is small, giving large $\varepsilon$ -- the process is effectively ergodic. For $S^7_+$ with absorbing boundaries, $\tau_{\text{mix}}$ is larger, giving smaller $\varepsilon$ -- the process is less ergodic.
+When $\varepsilon \gg 1$ (the observation window is much longer than the mixing time), the process has mixed thoroughly, and ensemble averages are reliable proxies for time averages. When $\varepsilon \ll 1$ (the observation window is short relative to mixing), the process has not mixed, and time averages diverge from ensemble averages. For the full sphere, $\tau_{\text{mix}} \approx 2/(7\sigma_0^2)$ is small, giving large $\varepsilon$ — the process is effectively ergodic. For $S^7_+$ with absorbing boundaries, $\tau_{\text{mix}}$ is larger, giving smaller $\varepsilon$ — the process is less ergodic.
 
 The key insight is that $\varepsilon$ is not a fixed property of a brand but depends on the observer's position, the noise level, the observation window, and crucially the presence of absorbing boundaries. Two observers of the same brand can have different ergodicity coefficients if they are at different positions on $S^7_+$ (one near the boundary, one near the center).
 
@@ -537,7 +533,7 @@ When signal drift is active ($\alpha \lambda_{\text{enc}} > 0$), absorbing bound
 
 $$\bar{f}_T \to \begin{cases} 0 & \text{with probability } 1 - p_\infty \\ \mathbb{E}_{\pi_{\text{QSD}}}[f] & \text{with probability } p_\infty \end{cases}$$
 
-*The ensemble average is $\langle f \rangle_\pi = p_\infty \cdot \mathbb{E}_{\pi_{\text{QSD}}}[f]$. Thus $\bar{f}_T = \langle f \rangle_\pi$ only when $p_\infty = 1$ (no absorption) -- i.e., ergodicity holds only in the absence of absorbing boundaries.*
+*The ensemble average is $\langle f \rangle_\pi = p_\infty \cdot \mathbb{E}_{\pi_{\text{QSD}}}[f]$. Thus $\bar{f}_T = \langle f \rangle_\pi$ only when $p_\infty = 1$ (no absorption) — i.e., ergodicity holds only in the absence of absorbing boundaries.*
 
 This corollary formalizes the intuition that **brands with higher absorption risk are more non-ergodic**: their perception is less predictable from ensemble surveys, and individual observer trajectories are less representative of the population average. Zharnikov [-@zharnikov-2026-non-ergodic-brand-perception-why] extends this result to cross-sectional tracking methodology, quantifying the systematic overestimation bias in population-average brand health scores as a function of $\varepsilon$.
 
@@ -545,19 +541,19 @@ This corollary formalizes the intuition that **brands with higher absorption ris
 
 ### Crystallization as Reflecting Boundaries
 
-SBT's crystallization mechanism -- whereby intense or repeatedly reinforced signals become permanent priors -- introduces a second type of boundary condition. While negative conviction creates absorbing boundaries at $\partial S^7_+$ (killing the process), crystallization creates **reflecting boundaries** at interior regions of $S^7_+$ where the perception state becomes "locked."
+SBT's crystallization mechanism — whereby intense or repeatedly reinforced signals become permanent priors — introduces a second type of boundary condition. While negative conviction creates absorbing boundaries at $\partial S^7_+$ (killing the process), crystallization creates **reflecting boundaries** at interior regions of $S^7_+$ where the perception state becomes "locked."
 
-Formally, let $\mathcal{C} \subset S^7_+$ be the crystallization region -- the set of perception states that are sufficiently extreme or sufficiently reinforced to become permanent. When $X_t$ reaches $\partial \mathcal{C}$, it reflects back into $\mathcal{C}$:
+Formally, let $\mathcal{C} \subset S^7_+$ be the crystallization region — the set of perception states that are sufficiently extreme or sufficiently reinforced to become permanent. When $X_t$ reaches $\partial \mathcal{C}$, it reflects back into $\mathcal{C}$:
 
 $$dX_t = \mu(X_t) \, dt + \sigma(X_t) \, dW_t + \nu(X_t) \, dL_t$$
 
-where $\nu(X_t)$ is the inward-pointing unit normal to $\partial \mathcal{C}$ and $L_t$ is the local time at $\partial \mathcal{C}$ (a process that increases only when $X_t$ is at the boundary). This is a **reflected SDE** in the interior combined with an **absorbed SDE** at the octant boundary -- a mixed boundary condition.
+where $\nu(X_t)$ is the inward-pointing unit normal to $\partial \mathcal{C}$ and $L_t$ is the local time at $\partial \mathcal{C}$ (a process that increases only when $X_t$ is at the boundary). This is a **reflected SDE** in the interior combined with an **absorbed SDE** at the octant boundary — a mixed boundary condition.
 
-The effect of crystallization is to create a "safe zone" within $S^7_+$ from which the process cannot escape. An observer whose perception has crystallized in a region $\mathcal{C}$ bounded away from $\partial S^7_+$ will never be absorbed: $p_\infty = 1$ for such observers. This is the mechanism by which strong brands create stable perception -- they push observers into crystallized states far from the boundary.
+The effect of crystallization is to create a "safe zone" within $S^7_+$ from which the process cannot escape. An observer whose perception has crystallized in a region $\mathcal{C}$ bounded away from $\partial S^7_+$ will never be absorbed: $p_\infty = 1$ for such observers. This is the mechanism by which strong brands create stable perception — they push observers into crystallized states far from the boundary.
 
 ### Encounter Modes and Diffusion Anisotropy
 
-SBT distinguishes three signal encounter modes -- direct experience, mediated encounter, and ambient exposure -- with different perceptual impacts. In the diffusion framework, these correspond to different diffusion structures:
+SBT distinguishes three signal encounter modes — direct experience, mediated encounter, and ambient exposure — with different perceptual impacts. In the diffusion framework, these correspond to different diffusion structures:
 
 **Direct experience** (e.g., purchasing and using the product) primarily affects the experiential dimension ($i = 4$), with high intensity $\alpha$ and low noise $\sigma_0$. The resulting diffusion is anisotropic, concentrated in one or two dimensions.
 
@@ -586,7 +582,7 @@ $$\circ dX_t = r \cdot \bar{\mu}_{\text{signal}}(X_t) \, dt + (1 - r) \cdot \sig
 
 where $r \in [0, 1]$ interpolates between pure drift ($r = 1$, fully designed) and pure diffusion ($r = 0$, fully ambient).
 
-At $r = 0$ (all ambient), the process is pure diffusion and absorption is certain (see the Absorption Probability as a Function of Position section). At $r = 1$ (all designed), the process is deterministic and follows the drift toward $s/\|s\|$ -- no absorption, but also no "organic" perception development. The SBT-optimal range $r \in [0.55, 0.65]$ corresponds to a regime where:
+At $r = 0$ (all ambient), the process is pure diffusion and absorption is certain (see the Absorption Probability as a Function of Position section). At $r = 1$ (all designed), the process is deterministic and follows the drift toward $s/\|s\|$ — no absorption, but also no "organic" perception development. The SBT-optimal range $r \in [.55, .65]$ corresponds to a regime where:
 
 1. Drift is strong enough to keep the process away from the boundary (low absorption risk).
 2. Diffusion is present enough to allow the perception to explore the neighborhood of $s/\|s\|$, creating "organic" variation that strengthens crystallization (repeatedly encountering the brand position from different angles reinforces the prior).
@@ -602,11 +598,11 @@ The ratio $\alpha \lambda_{\text{enc}} / \kappa$ determines the **effective sign
 
 ### Semi-Permeable Boundaries and Brand Rehabilitation
 
-The absorbing boundary model in the Absorbed Brownian Motion on $S^7_+$ section treats the octant boundary $\partial S^7_+$ as perfectly absorbing: once any perceptual dimension reaches zero, recovery is impossible. This is a useful idealization that enables clean theorems, but empirical brand history suggests a richer picture. Some brands have recovered from near-total loss of a perceptual dimension -- Tylenol restored trust after the 1982 cyanide crisis [@coombs-2007-protecting-organization-reputations], while BP's environmental credibility remains impaired more than a decade after the Deepwater Horizon disaster. The absorbing boundary cannot distinguish these cases. In this section, we introduce a semi-permeable boundary model that creates a "near-death zone" where recovery is possible but progressively slower as perception approaches zero, while retaining the absorbing condition at zero itself.
+The absorbing boundary model in the Absorbed Brownian Motion on $S^7_+$ section treats the octant boundary $\partial S^7_+$ as perfectly absorbing: once any perceptual dimension reaches zero, recovery is impossible. This is a useful idealization that enables clean theorems, but empirical brand history suggests a richer picture. Some brands have recovered from near-total loss of a perceptual dimension — Tylenol restored trust after the 1982 cyanide crisis [@coombs-2007-protecting-organization-reputations], while BP's environmental credibility remains impaired more than a decade after the Deepwater Horizon disaster. The absorbing boundary cannot distinguish these cases. In this section, we introduce a semi-permeable boundary model that creates a "near-death zone" where recovery is possible but progressively slower as perception approaches zero, while retaining the absorbing condition at zero itself.
 
 #### The Modified SDE with Reflecting Drift
 
-We modify the complete SDE above by introducing a reflecting drift term that activates when any perceptual dimension falls below a threshold $\epsilon > 0$. The threshold $\epsilon$ is a brand-specific parameter representing the *residual perceptual capital* -- the minimum level of dimensional perception below which recovery mechanisms engage but above which normal dynamics operate.
+We modify the complete SDE above by introducing a reflecting drift term that activates when any perceptual dimension falls below a threshold $\epsilon > 0$. The threshold $\epsilon$ is a brand-specific parameter representing the *residual perceptual capital* — the minimum level of dimensional perception below which recovery mechanisms engage but above which normal dynamics operate.
 
 For each dimension $i$, define the reflecting drift:
 
@@ -630,11 +626,11 @@ $$\mathcal{N}_\epsilon = \left\{ x \in S^7_+ : \min_{i=1,\ldots,8} x_i < \epsilo
 
 The near-death zone $\mathcal{N}_\epsilon$ partitions $S^7_+$ into three dynamical regimes:
 
-1. **Interior regime** ($S^7_+ \setminus \mathcal{N}_\epsilon$): All dimensions satisfy $x_i \geq \epsilon$. Normal dynamics operate -- the drift and diffusion terms from the Complete SDE govern the process without modification. This is the regime of healthy brand perception.
+1. **Interior regime** ($S^7_+ \setminus \mathcal{N}_\epsilon$): All dimensions satisfy $x_i \geq \epsilon$. Normal dynamics operate — the drift and diffusion terms from the Complete SDE govern the process without modification. This is the regime of healthy brand perception.
 
-2. **Near-death regime** ($\mathcal{N}_\epsilon \setminus \partial S^7_+$): At least one dimension satisfies $0 < x_i < \epsilon$. The reflecting drift activates, pushing the process back toward $\epsilon$. Recovery is possible but slow. This is the regime of brand crisis -- the brand is "on life support" in the affected dimension.
+2. **Near-death regime** ($\mathcal{N}_\epsilon \setminus \partial S^7_+$): At least one dimension satisfies $0 < x_i < \epsilon$. The reflecting drift activates, pushing the process back toward $\epsilon$. Recovery is possible but slow. This is the regime of brand crisis — the brand is "on life support" in the affected dimension.
 
-3. **Absorbing boundary** ($\partial S^7_+$): At least one dimension satisfies $x_i = 0$. The process is killed. This is irreversible perception loss -- the dimension has been erased from the observer's perceptual vocabulary for this brand.
+3. **Absorbing boundary** ($\partial S^7_+$): At least one dimension satisfies $x_i = 0$. The process is killed. This is irreversible perception loss — the dimension has been erased from the observer's perceptual vocabulary for this brand.
 
 The three-regime structure resolves a tension in the basic absorbing boundary model. In that model, a brand perception at $x_i = .001$ is treated identically to one at $x_i = .499$ (both are alive), despite the former being far more precarious. The semi-permeable boundary model makes this distinction explicit: the former is in the near-death zone, subject to the reflecting drift and the slow-recovery dynamics derived below.
 
@@ -674,7 +670,7 @@ $$\mathbb{E}_\delta[\tau_\epsilon] \sim \frac{C_R}{\delta^2}$$
 
 where the quadratic scaling in $1/\delta$ arises from the interplay between the reflecting drift (which provides a restoring force proportional to $1/\delta$) and the diffusion (which introduces perturbations of order $\tilde{\sigma}$). The precise exponent of 2 follows from the balance condition $b(\delta) \sim \kappa_R \epsilon / \delta$ against $\tilde{\sigma}^2 / \delta^2$ in the Fokker-Planck equation. $\square$
 
-The quadratic scaling $\tau_{\text{return}} \sim 1/\delta^2$ has a vivid interpretation: halving the distance to zero quadruples the recovery time. A brand at $\delta = .01$ (1% of threshold) requires 100 times longer to recover than a brand at $\delta = .1$ (10% of threshold). This creates a "gravitational well" effect near zero -- the closer perception falls toward total loss, the more effort is required to pull it back.
+The quadratic scaling $\tau_{\text{return}} \sim 1/\delta^2$ has a vivid interpretation: halving the distance to zero quadruples the recovery time. A brand at $\delta = .01$ (1% of threshold) requires 100 times longer to recover than a brand at $\delta = .1$ (10% of threshold). This creates a "gravitational well" effect near zero — the closer perception falls toward total loss, the more effort is required to pull it back.
 
 *Falsification: Proposition 5 is falsified if recovery times for documented brand crises do not scale approximately as $1/\delta^2$ in residual-dimension severity, after controlling for response strategy and pre-crisis emission profile.*
 
@@ -682,9 +678,9 @@ The quadratic scaling $\tau_{\text{return}} \sim 1/\delta^2$ has a vivid interpr
 
 The semi-permeable boundary model distinguishes between brand crises with different recovery profiles.
 
-**Tylenol (1982).** Before the cyanide tampering crisis, Tylenol held strong positions across all eight dimensions. In SBT terms, the experiential dimension ($x_4$) was temporarily driven toward zero by the crisis -- the product experience became associated with lethal harm. However, Tylenol's pre-crisis $\epsilon$ was high: the brand had deep reserves of trust across narrative ($x_2$), cultural ($x_7$), and temporal ($x_8$) dimensions. The strong pre-crisis profile meant that even as $x_4$ fell, the reflecting drift from high $\epsilon$ engaged quickly. Johnson & Johnson's rapid product recall and tamper-proof packaging redesign provided additional designed signal drift, reinforcing the reflecting mechanism. The recovery time was short (approximately 2 years to regain market share leadership) because $\delta$ remained relatively large -- the experiential dimension was damaged but never approached zero, and the high $\epsilon$ across other dimensions provided structural support.
+**Tylenol (1982).** Before the cyanide tampering crisis, Tylenol held strong positions across all eight dimensions. In SBT terms, the experiential dimension ($x_4$) was temporarily driven toward zero by the crisis — the product experience became associated with lethal harm. However, Tylenol's pre-crisis $\epsilon$ was high: the brand had deep reserves of trust across narrative ($x_2$), cultural ($x_7$), and temporal ($x_8$) dimensions. The strong pre-crisis profile meant that even as $x_4$ fell, the reflecting drift from high $\epsilon$ engaged quickly. Johnson & Johnson's rapid product recall and tamper-proof packaging redesign provided additional designed signal drift, reinforcing the reflecting mechanism. The recovery time was short (approximately 2 years to regain market share leadership) because $\delta$ remained relatively large — the experiential dimension was damaged but never approached zero, and the high $\epsilon$ across other dimensions provided structural support.
 
-**BP Deepwater Horizon (2010).** BP's ideological dimension ($x_3$) was already near the boundary before the crisis. The company's environmental rhetoric was widely perceived as performative ("Beyond Petroleum" branding against continued deep-water drilling), placing $x_3$ at a low level -- perhaps already within $\mathcal{N}_\epsilon$ for the ideological dimension. When the Deepwater Horizon disaster struck, $x_3$ fell to near-zero from an already-low starting point. The effective $\delta$ was very small, and the pre-crisis $\epsilon$ for the ideological dimension was low (the reflecting drift was weak because there was little genuine ideological capital to draw on). By Proposition 5, the recovery time scales as $1/\delta^2$ -- and with a small $\delta$ and weak reflecting drift, the predicted recovery time is extremely long, consistent with BP's incomplete rehabilitation more than fifteen years after the disaster.
+**BP Deepwater Horizon (2010).** BP's ideological dimension ($x_3$) was already near the boundary before the crisis. The company's environmental rhetoric was widely perceived as performative ("Beyond Petroleum" branding against continued deep-water drilling), placing $x_3$ at a low level — perhaps already within $\mathcal{N}_\epsilon$ for the ideological dimension. When the Deepwater Horizon disaster struck, $x_3$ fell to near-zero from an already-low starting point. The effective $\delta$ was very small, and the pre-crisis $\epsilon$ for the ideological dimension was low (the reflecting drift was weak because there was little genuine ideological capital to draw on). By Proposition 5, the recovery time scales as $1/\delta^2$ — and with a small $\delta$ and weak reflecting drift, the predicted recovery time is extremely long, consistent with BP's incomplete rehabilitation more than fifteen years after the disaster.
 
 The contrast illustrates the key insight: **in the model, recovery from brand crisis depends not on the severity of the crisis alone, but on the product of crisis depth ($1/\delta^2$) and pre-crisis perceptual reserves ($\epsilon$)**. The model produces survival-probability differences in the direction of the observed Tylenol-BP outcome divergence: brands with high $\epsilon$ (deep reserves across dimensions) can survive severe crises because the reflecting drift engages strongly, while brands with low $\epsilon$ (shallow reserves, especially in the affected dimension) face protracted or permanent damage even from moderate crises. The specific recovery timelines (approximately 2 years for Tylenol; incomplete rehabilitation for BP after more than fifteen years) are consistent with Coombs' [-@coombs-2007-protecting-organization-reputations] crisis communication literature and BP's documented public record, and serve as illustrative narratives rather than precise model predictions.
 
@@ -702,7 +698,7 @@ where $\mu_{\text{design}} = \alpha \lambda_{\text{enc}} P_{X_t}(s/\|s\| - X_t)$
 
 The two boundary regimes are:
 
-- **$r = 1$ (pure design)**: Maximum drift $\mu_{\text{design}}$, minimum diffusion $\sigma_0$. The process is nearly deterministic, tracking the brand's target position $s/\|s\|$ with small fluctuations. Absorption risk is minimized, but the perception trajectory is rigid -- it cannot explore the neighborhood of $s/\|s\|$, preventing the stochastic reinforcement that drives crystallization.
+- **$r = 1$ (pure design)**: Maximum drift $\mu_{\text{design}}$, minimum diffusion $\sigma_0$. The process is nearly deterministic, tracking the brand's target position $s/\|s\|$ with small fluctuations. Absorption risk is minimized, but the perception trajectory is rigid — it cannot explore the neighborhood of $s/\|s\|$, preventing the stochastic reinforcement that drives crystallization.
 
 - **$r = 0$ (pure ambient)**: Zero drift, maximum diffusion $\sigma_0\sqrt{2}$. The process is pure Brownian motion (plus decay), and absorption is certain (see the Absorption Probability section above). Perception is maximally exploratory but unstable.
 
@@ -728,7 +724,7 @@ where $B_\rho(X_t)$ is a geodesic ball of radius $\rho$ around $X_t$. For high $
 
 #### The Optimal Range
 
-**Proposition 6** (D/A Goldilocks zone). *For the parametrized SDE with $\sigma_0 = 0.1$, $\lambda_{D,1} = 112$, and drift parameters calibrated to the canonical brands, a sensitivity analysis across the empirically plausible range of $\alpha \lambda_{\text{enc}} \cdot d_\partial \in [1.0, 3.0]$ yields minimum-survival D/A ratios spanning approximately $[0.32, 0.72]$. At the representative midpoint value $\alpha \lambda_{\text{enc}} \cdot d_\partial = 1.5$, the survival lower bound is $r \approx .54$ and the crystallization upper bound is $r \approx .65$, placing the Goldilocks zone at $r^* \in [0.55, 0.65]$ — consistent with the empirically observed optimal D/A range.*
+**Proposition 6** (D/A Goldilocks zone). *For the parametrized SDE with $\sigma_0 = .1$, $\lambda_{D,1} = 112$, and drift parameters calibrated to the canonical brands, a sensitivity analysis across the empirically plausible range of $\alpha \lambda_{\text{enc}} \cdot d_\partial \in [1.0, 3.0]$ yields minimum-survival D/A ratios spanning approximately $[.32, .72]$. At the representative midpoint value $\alpha \lambda_{\text{enc}} \cdot d_\partial = 1.5$, the survival lower bound is $r \approx .54$ and the crystallization upper bound is $r \approx .65$, placing the Goldilocks zone at $r^* \in [.55, .65]$ — consistent with the empirically observed optimal D/A range.*
 
 *Derivation.* The absorption probability $P_{\text{abs}}(r)$ is a decreasing function of $r$ (more drift reduces absorption risk). The exploration metric $E(r)$ is a decreasing function of $r$ (more drift confines the trajectory). The constraint $E(r) \geq E_{\min}$ imposes an upper bound on $r$: beyond this bound, the trajectory is too confined for crystallization to occur through stochastic reinforcement.
 
@@ -736,13 +732,13 @@ The absorption rate from the parametrized model is:
 
 $$\gamma(r) = \frac{\lambda_{D,1} \sigma_0^2 (2 - r)}{2} - r \cdot \alpha \lambda_{\text{enc}} \cdot d_\partial$$
 
-Setting $\gamma(r) = 0$ (the boundary between net absorption and net survival) and substituting $\lambda_{D,1} = 112$, $\sigma_0 = 0.1$:
+Setting $\gamma(r) = 0$ (the boundary between net absorption and net survival) and substituting $\lambda_{D,1} = 112$, $\sigma_0 = .1$:
 
-$$\frac{112 \times 0.01 \times (2 - r)}{2} = r \cdot \alpha \lambda_{\text{enc}} \cdot d_\partial$$
+$$\frac{112 \times .01 \times (2 - r)}{2} = r \cdot \alpha \lambda_{\text{enc}} \cdot d_\partial$$
 
-$$0.56(2 - r) = r \cdot \alpha \lambda_{\text{enc}} \cdot d_\partial$$
+$$.56(2 - r) = r \cdot \alpha \lambda_{\text{enc}} \cdot d_\partial$$
 
-For the canonical brands, $\alpha \lambda_{\text{enc}} \cdot d_\partial$ ranges from approximately 1.0 (Tesla, weak drift, small $d_\partial$) to 3.0 (Hermès, strong drift, moderate $d_\partial$). The sensitivity of the lower bound to this parameter is shown below; the analysis uses a representative value of 1.5, which yields $r \approx .54$.
+For the canonical brands, $\alpha \lambda_{\text{enc}} \cdot d_\partial$ ranges from approximately 1.0 (Tesla, weak drift, small $d_\partial$) to 3.0 (Hermès, strong drift, moderate $d_\partial$). The sensitivity of the lower bound to this parameter is shown in Table 5; the analysis uses a representative value of 1.5, which yields $r \approx .54$.
 
 **Table 5.** Sensitivity of D/A Survival Lower Bound to Drift-Strength Parameter.
 
@@ -758,13 +754,13 @@ For the canonical brands, $\alpha \lambda_{\text{enc}} \cdot d_\partial$ ranges 
 
 At the representative value 1.5:
 
-$$1.12 - 0.56r = 1.5r$$
+$$1.12 - .56r = 1.5r$$
 
 $$r = \frac{1.12}{2.06} \approx .54$$
 
-The binding upper constraint comes from the crystallization condition: the trajectory must revisit the neighborhood of $s/\|s\|$ from sufficiently diverse angles to reinforce the prior across multiple dimensions. This requires the diffusion to be non-degenerate in all 7 tangent directions, which fails when $r > r_{\text{cryst}} \approx 0.65$ for the canonical noise level. Combining the survival bound $r \geq .54$ with the crystallization bound $r \leq .65$, and rounding the lower bound to account for variability across observer cohorts (some observers have higher $\sigma_0$ and require stronger drift):
+The binding upper constraint comes from the crystallization condition: the trajectory must revisit the neighborhood of $s/\|s\|$ from sufficiently diverse angles to reinforce the prior across multiple dimensions. This requires the diffusion to be non-degenerate in all 7 tangent directions, which fails when $r > r_{\text{cryst}} \approx .65$ for the canonical noise level. Combining the survival bound $r \geq .54$ with the crystallization bound $r \leq .65$, and rounding the lower bound to account for variability across observer cohorts (some observers have higher $\sigma_0$ and require stronger drift):
 
-$$r^* \in [0.55, 0.65]$$
+$$r^* \in [.55, .65]$$
 
 This is consistent with SBT's empirically observed D/A Goldilocks zone. The proposition should be understood as a calibration exercise showing the absorption-exploration tradeoff is quantitatively coherent with the observed range, not as a derivation that uniquely pins down the interval from first principles. $\square$
 
@@ -789,6 +785,8 @@ We apply the framework to SBT's five case-study brands using the canonical emiss
 | Tesla | C- | 16.69 | .120 | Temporal | .120 |
 
 *Notes*: $\hat{s} = s / \|s\|_2$ is the unit-normalized emission profile on $S^7_+$. $d_\partial(\hat{s}) = \min_i \hat{s}_i$ is the effective boundary distance; smaller values indicate higher absorption risk. Computed from canonical profiles in Table 4.
+
+The full per-dimension normalized profiles underlying these boundary distances are reported in Table 7.
 
 **Table 7.** Normalized Emission Profiles on $S^7_+$ (components of $\hat{s} = s/\|s\|_2$).
 
@@ -837,7 +835,7 @@ Accounting for drift *strength* (proportional to coherence — how consistently 
 
 *Notes*: "Drift strength" is the qualitative reading of $\alpha\lambda_{\text{enc}}$ implied by the brand's coherence type and emission profile; "very strong, omnidirectional" denotes A+ ecosystem coherence in which every encounter mode reinforces the same target position. Patagonia's strong ideological drift outranks IKEA's moderate signal-coherence drift even though IKEA has larger $d_\partial$, producing the lone inversion against the SBT grade order.
 
-The adjusted ordering Tesla > Erewhon > IKEA > Patagonia > Hermès aligns with the SBT coherence grades (C- > B- > B+ > A- > A+), with one inversion: IKEA (A-) shows higher absorption risk than Patagonia (B+). This inversion arises because identity coherence (Patagonia) generates stronger directional drift than signal coherence (IKEA) -- a qualitative distinction the letter grade does not capture. The near-match provides, to the author's knowledge, the first formal derivation within the SBT setting connecting coherence type to dynamical stability from first principles. Zharnikov [-@zharnikov-2026-coherence-type-as-crisis-predictor] extends this absorption risk ordering to a formal crisis-prediction instrument by showing that pre-crisis coherence grade is a sufficient statistic for predicting recovery time within the $1/\delta^2$ scaling of Proposition 5. $\square$
+The adjusted ordering Tesla > Erewhon > IKEA > Patagonia > Hermès aligns with the SBT coherence grades (C- > B- > B+ > A- > A+), with one inversion: IKEA (A-) shows higher absorption risk than Patagonia (B+). This inversion arises because identity coherence (Patagonia) generates stronger directional drift than signal coherence (IKEA) — a qualitative distinction the letter grade does not capture. The near-match provides, to the author's knowledge, the first formal derivation within the SBT setting connecting coherence type to dynamical stability from first principles. Zharnikov [-@zharnikov-2026-coherence-type-as-crisis-predictor] extends this absorption risk ordering to a formal crisis-prediction instrument by showing that pre-crisis coherence grade is a sufficient statistic for predicting recovery time within the $1/\delta^2$ scaling of Proposition 5. $\square$
 
 *Falsification: Proposition 7 is falsified if observed frequency of dimensional collapse in longitudinal brand tracking data does not rank Tesla > Erewhon > IKEA > Patagonia > Hermès, after controlling for encounter rate and noise level.*
 
@@ -847,13 +845,13 @@ Figure 3 visualizes the same ordering as a phase diagram in distance-from-bounda
 
 ### Survival Time Estimates
 
-Using Theorem 2 with the exact $\lambda_{D,1} = 112$ and $\sigma_0 = 0.1$ (moderate perceptual noise), the characteristic survival time is:
+Using Theorem 2 with the exact $\lambda_{D,1} = 112$ and $\sigma_0 = .1$ (moderate perceptual noise), the characteristic survival time is:
 
-$$\tau_{\text{char}} = \frac{2}{\lambda_{D,1} \sigma_0^2} = \frac{2}{112 \times 0.01} \approx 1.78$$
+$$\tau_{\text{char}} = \frac{2}{\lambda_{D,1} \sigma_0^2} = \frac{2}{112 \times .01} \approx 1.78$$
 
-In dimensionless units. Under the illustrative assumption $\sigma_0 = 0.1$, if we calibrate the time unit as one year (assuming the observer encounters the brand approximately weekly), then $\tau_{\text{char}} = 1.78$ years is an illustrative estimate of the characteristic time for an observer to lose a perceptual dimension through random fluctuation alone; the actual value scales as $1/\sigma_0^2$ and will differ across contexts.
+In dimensionless units. Under the illustrative assumption $\sigma_0 = .1$, if we calibrate the time unit as one year (assuming the observer encounters the brand approximately weekly), then $\tau_{\text{char}} = 1.78$ years is an illustrative estimate of the characteristic time for an observer to lose a perceptual dimension through random fluctuation alone; the actual value scales as $1/\sigma_0^2$ and will differ across contexts.
 
-The survival probability at various times, for the equal-weight initial condition $x^* = (1/\sqrt{8}, \ldots, 1/\sqrt{8})$:
+The survival probability at various times, for the equal-weight initial condition $x^* = (1/\sqrt{8}, \ldots, 1/\sqrt{8})$, is reported in Table 9:
 
 **Table 9.** Survival Probability $S(t, x^*)$ at the Equal-Weight Initial Condition ($\sigma_0 = .1$, No Drift).
 
@@ -875,7 +873,7 @@ Figure 4 plots survival probability against time for the five canonical brands u
 
 ### Ergodicity Coefficient by Brand
 
-Using Definition 1 with observation window $\tau_{\text{char}} = 1$ year and the computed mixing times:
+Using Definition 1 with observation window $\tau_{\text{char}} = 1$ year and the computed mixing times (Table 10):
 
 **Table 10.** Ergodicity Coefficients by Brand ($\tau_{\text{char}} = 1$ Year).
 
@@ -891,7 +889,7 @@ Using Definition 1 with observation window $\tau_{\text{char}} = 1$ year and the
 
 Brand-level ergodicity coefficients are computed at the canonical emission profile; per-observer coefficients vary with the observer's current position $X_t$ on $S^7_+$ (as noted in the ergodicity coefficient definition above).
 
-**Interpretation.** Hermès has $\varepsilon = 5.0$: an ensemble survey of Hermès observers conducted over one year will closely approximate the time average of any individual observer. Brand health metrics are reliable. Tesla has $\varepsilon = .4$: an ensemble survey will systematically misrepresent the time-average experience of individual observers. The survey overestimates positive perception because the entire perception cloud of observers includes those who have not yet been absorbed -- the "survivorship bias" of brand health surveys.
+**Interpretation.** Hermès has $\varepsilon = 5.0$: an ensemble survey of Hermès observers conducted over one year will closely approximate the time average of any individual observer. Brand health metrics are reliable. Tesla has $\varepsilon = .4$: an ensemble survey will systematically misrepresent the time-average experience of individual observers. The survey overestimates positive perception because the entire perception cloud of observers includes those who have not yet been absorbed — the "survivorship bias" of brand health surveys.
 
 This provides a formal basis for SBT's warning that "brand health is not brand power" [@zharnikov-2026-spectral-brand-theory-computational-framework]. Brand health surveys measure ensemble averages; brand power depends on time averages. The two diverge precisely when the ergodicity coefficient is low.
 
@@ -899,17 +897,17 @@ This provides a formal basis for SBT's warning that "brand health is not brand p
 
 ### The Vectorized-Rasterized Distinction Revisited
 
-The dynamical framework established in this paper deepens the distinction between vectorized and rasterized brand management introduced in Zharnikov [-@zharnikov-2026-spectral-metamerism-brand-perception-projection]. In the rasterized approach, a brand manager takes periodic snapshots of brand perception (annual surveys, quarterly trackers) and makes decisions based on these cross-sectional data. In the vectorized approach, the full trajectory of perception -- including its velocity, its drift direction, its proximity to absorbing boundaries, and its crystallization state -- is tracked and managed.
+The dynamical framework established in this paper deepens the distinction between vectorized and rasterized brand management introduced in Zharnikov [-@zharnikov-2026-spectral-metamerism-brand-perception-projection]. In the rasterized approach, a brand manager takes periodic snapshots of brand perception (annual surveys, quarterly trackers) and makes decisions based on these cross-sectional data. In the vectorized approach, the full trajectory of perception — including its velocity, its drift direction, its proximity to absorbing boundaries, and its crystallization state — is tracked and managed.
 
 The mathematical asymmetry is now precise: a snapshot $X_t$ at any single time $t$ contains no information about $\dot{X}_t$ (the velocity of perception change), $d_\partial(X_t)$ (proximity to irreversible loss), or the absorption probability $\mathbb{P}[\tau < t + T]$. These are trajectory-level quantities that require trajectory-level data. The SDE framework makes this concrete: knowing $X_t$ is knowing one point on a stochastic curve; managing the brand requires knowing the curve's drift, diffusion, and boundary conditions.
 
 ### The Time-Average Perspective
 
-Peters [-@peters-2019-ergodicity-problem-economics] argued that the ergodicity assumption -- the conflation of time and ensemble averages -- is the deepest error in economic theory, responsible for paradoxes from the St. Petersburg problem to the equity premium puzzle. Theorem 4 establishes an analogous claim for brand theory: brand health surveys (ensemble averages) systematically misrepresent brand reality (time averages) whenever absorbing boundaries are active.
+Peters [-@peters-2019-ergodicity-problem-economics] argued that the ergodicity assumption — the conflation of time and ensemble averages — is the deepest error in economic theory, responsible for paradoxes from the St. Petersburg problem to the equity premium puzzle. Theorem 4 establishes an analogous claim for brand theory: brand health surveys (ensemble averages) systematically misrepresent brand reality (time averages) whenever absorbing boundaries are active.
 
-The practical consequences are substantial. Consider a brand with $\varepsilon = .4$ (Tesla-level non-ergodicity). A survey of 1,000 observers at time $t$ might show 80% positive perception. But this ensemble average includes observers who are near the boundary (about to be absorbed) and observers who are safely crystallized. The time average for a randomly selected observer would be much lower: most observers will eventually be absorbed, and their long-run perception will converge to zero. The 80% figure is the "gambler's ruin" fallacy applied to brand perception -- it describes the expected wealth of a population of gamblers, not the expected experience of any individual gambler.
+The practical consequences are substantial. Consider a brand with $\varepsilon = .4$ (Tesla-level non-ergodicity). A survey of 1,000 observers at time $t$ might show 80% positive perception. But this ensemble average includes observers who are near the boundary (about to be absorbed) and observers who are safely crystallized. The time average for a randomly selected observer would be much lower: most observers will eventually be absorbed, and their long-run perception will converge to zero. The 80% figure is the "gambler's ruin" fallacy applied to brand perception — it describes the expected wealth of a population of gamblers, not the expected experience of any individual gambler.
 
-It is important to distinguish the present paper's non-ergodicity result from the broader controversy surrounding Peters' [-@peters-2019-ergodicity-problem-economics] economic claims. Doctor, Wakker, and Wang [-@doctor-2020-economists-views-ergodicity] surveyed economists and found substantial skepticism toward Peters' assertion that expected utility theory is fundamentally flawed -- their critique targets Peters' *application* of non-ergodicity to wealth dynamics and his claim that the ergodicity framework renders expected utility unnecessary. SBT's non-ergodicity arises from a fundamentally different mechanism. Peters' argument depends on multiplicative dynamics in unbounded wealth space (where geometric growth rates diverge from arithmetic growth rates). Theorem 4's proof depends on absorbing boundaries on a compact manifold: the time average converges to zero because the process is killed in finite time, not because of multiplicative growth. The mathematical machinery -- the Dirichlet spectral gap ($\lambda_{D,1} = 112$), the absorption stopping time $\tau$, and the quasi-stationary distribution -- is entirely independent of Peters' specific economic model. Indeed, the result that time averages and ensemble averages diverge for absorbed processes on bounded domains is a standard result in the theory of quasi-stationary distributions [@collet-2013-quasistationary-distributions-markov, Ch. 1--3], predating Peters' work by decades.
+It is important to distinguish the present paper's non-ergodicity result from the broader controversy surrounding Peters' [-@peters-2019-ergodicity-problem-economics] economic claims. Doctor, Wakker, and Wang [-@doctor-2020-economists-views-ergodicity] surveyed economists and found substantial skepticism toward Peters' assertion that expected utility theory is fundamentally flawed — their critique targets Peters' *application* of non-ergodicity to wealth dynamics and his claim that the ergodicity framework renders expected utility unnecessary. SBT's non-ergodicity arises from a fundamentally different mechanism. Peters' argument depends on multiplicative dynamics in unbounded wealth space (where geometric growth rates diverge from arithmetic growth rates). Theorem 4's proof depends on absorbing boundaries on a compact manifold: the time average converges to zero because the process is killed in finite time, not because of multiplicative growth. The mathematical machinery — the Dirichlet spectral gap ($\lambda_{D,1} = 112$), the absorption stopping time $\tau$, and the quasi-stationary distribution — is entirely independent of Peters' specific economic model. Indeed, the result that time averages and ensemble averages diverge for absorbed processes on bounded domains is a standard result in the theory of quasi-stationary distributions [@collet-2013-quasistationary-distributions-markov, Ch. 1--3], predating Peters' work by decades.
 
 Therefore, even if Peters' economic claims are ultimately rejected by the economics profession, SBT's non-ergodicity result stands on independent mathematical foundations: absorbing boundaries on $S^7_+$ guarantee time-ensemble divergence regardless of one's position on the ergodicity economics debate. The mechanism also differs from Birkhoff's [-@birkhoff-1931-proof-ergodic-theorem] ergodic theorem: Birkhoff's theorem requires a measure-preserving transformation, but absorption on $S^7_+$ removes probability mass from the system, violating the measure-preservation condition. R6's non-ergodicity follows from a boundary-absorption mechanism entirely distinct from both Peters' multiplicative-dynamics argument and Birkhoff's classical framework.
 
@@ -923,7 +921,7 @@ The dynamical framework yields four strategic principles:
 
 3. **The D/A ratio has an optimal range.** The dynamical rationale for the D/A Goldilocks zone provides a principled justification for SBT's 55--65% recommendation: too little design risks absorption, too much prevents crystallization. The permanent-vs-transient signal architecture echoes Dekimpe & Hanssens [-@dekimpe-1999-sustained-spending-persistent], who showed that sustained marketing spending generates persistent response; the crystallized-vs-decaying signal decomposition in the Brand Perception SDE section is the manifold-geometric counterpart of that distinction.
 
-4. **Temporal compounding is the strongest defense.** Brands with high temporal scores benefit from slow decay rates, which extend the effective survival time. Heritage brands like Hermès have built such deep temporal compounding that their perception profiles are essentially crystallized -- they are in the reflecting-boundary regime of the Crystallization as Reflecting Boundaries section, not the absorbing-boundary regime. This is why a 187-year-old brand can survive a single negative event that would be catastrophic for a 15-year-old brand: the crystallized priors act as reflecting boundaries that bounce the perception state back toward the target.
+4. **Temporal compounding is the strongest defense.** Brands with high temporal scores benefit from slow decay rates, which extend the effective survival time. Heritage brands like Hermès have built such deep temporal compounding that their perception profiles are essentially crystallized — they are in the reflecting-boundary regime of the Crystallization as Reflecting Boundaries section, not the absorbing-boundary regime. This is why a 187-year-old brand can survive a single negative event that would be catastrophic for a 15-year-old brand: the crystallized priors act as reflecting boundaries that bounce the perception state back toward the target.
 
 ### Limitations
 
@@ -939,7 +937,7 @@ Several simplifying assumptions deserve explicit acknowledgment:
 
 5. **Eigenfunction regularity**: The first Dirichlet eigenfunction $\phi_1(x) = \prod_{i=1}^8 x_i$ yields the exact eigenvalue $\lambda_{D,1} = 112$ (see the Dirichlet Laplacian section). However, the positive octant $S^7_+$ has non-smooth boundary (eight hyperplane faces meeting at corners), and the regularity of higher eigenfunctions near these corners requires careful analysis. The spectral gap estimate $\lambda_{D,2} - \lambda_{D,1} = 48$ used in Theorem 3 depends on the second eigenfunction being smooth on the interior, which holds but deserves explicit justification in a journal submission.
 
-6. **Absorbing boundary irreversibility**: The absorbing boundary assumption treats zero-dimension perception as irreversible. Empirical exceptions exist -- brands have recovered from near-zero signals on specific dimensions through sustained re-investment (e.g., deliberate re-collapse in SBT terminology). The model may underestimate recovery probability for brands that actively restructure their emission policy. The semi-permeable boundary model in the Semi-Permeable Boundaries and Brand Rehabilitation section partially addresses this limitation, but it introduces its own simplification: the reflecting drift strength $\kappa_R$ is assumed constant across dimensions, whereas in practice the ease of rehabilitation likely varies by dimension (e.g., restoring experiential perception through product redesign may be faster than restoring ideological credibility through values-based messaging). A dimension-dependent $\kappa_R(i)$ would be more realistic but substantially complicates the analysis.
+6. **Absorbing boundary irreversibility**: The absorbing boundary assumption treats zero-dimension perception as irreversible. Empirical exceptions exist — brands have recovered from near-zero signals on specific dimensions through sustained re-investment (e.g., deliberate re-collapse in SBT terminology). The model may underestimate recovery probability for brands that actively restructure their emission policy. The semi-permeable boundary model in the Semi-Permeable Boundaries and Brand Rehabilitation section partially addresses this limitation, but it introduces its own simplification: the reflecting drift strength $\kappa_R$ is assumed constant across dimensions, whereas in practice the ease of rehabilitation likely varies by dimension (e.g., restoring experiential perception through product redesign may be faster than restoring ideological credibility through values-based messaging). A dimension-dependent $\kappa_R(i)$ would be more realistic but substantially complicates the analysis.
 
 7. **Scope**: All five case studies are global English-language consumer brands. The model's absorption ordering and drift-diffusion parameters may not generalize to B2B brands (different observer noise structures), regional or East Asian cultural contexts, or service-dominant brands without recalibration.
 
@@ -959,7 +957,7 @@ State-space maximum likelihood techniques [@sriram-2007-monitoring-dynamics-bran
 
 R6 provides a dynamical component of the mathematical foundations of Spectral Brand Theory, extending the static framework established in R1--R5.
 
-**R1 (Formal Metric, Zharnikov [-@zharnikov-2026-brand-space-geometry-formal-metric])** defined the geometry of brand space -- the Aitchison metric on $\mathbb{R}^8_+$, the Fisher-Rao metric on $\Delta^7$, and the warped product metric on the combined space. R1 also develops Jacobi field analysis on the perception manifold, introducing the spectral sensitivity index -- an observer-weighted curvature measure that quantifies trajectory vulnerability. R6 takes this geometry as given and adds dynamics: the SDE on $S^7_+$ evolves perception states within the metric structure that R1 established. The Jacobi field analysis in R1 provides the deterministic skeleton of R6's stochastic model: in the low-noise limit ($\sigma \to 0$), trajectory sensitivity is governed by the curvature-based risk metric, and the spectral sensitivity index predicts which brands face the strongest path-dependence. The Laplace-Beltrami operator that governs the diffusion is determined by the Riemannian metric, making R6 the natural dynamical completion of R1.
+**R1 (Formal Metric, Zharnikov [-@zharnikov-2026-brand-space-geometry-formal-metric])** defined the geometry of brand space — the Aitchison metric on $\mathbb{R}^8_+$, the Fisher-Rao metric on $\Delta^7$, and the warped product metric on the combined space. R1 also develops Jacobi field analysis on the perception manifold, introducing the spectral sensitivity index — an observer-weighted curvature measure that quantifies trajectory vulnerability. R6 takes this geometry as given and adds dynamics: the SDE on $S^7_+$ evolves perception states within the metric structure that R1 established. The Jacobi field analysis in R1 provides the deterministic skeleton of R6's stochastic model: in the low-noise limit ($\sigma \to 0$), trajectory sensitivity is governed by the curvature-based risk metric, and the spectral sensitivity index predicts which brands face the strongest path-dependence. The Laplace-Beltrami operator that governs the diffusion is determined by the Riemannian metric, making R6 the natural dynamical completion of R1.
 
 **R2 (Spectral Metamerism, Zharnikov [-@zharnikov-2026-spectral-metamerism-brand-perception-projection])** proved that scalar projections of 8-dimensional brand profiles are necessarily lossy. R6 extends this to a dynamical setting: even if one could perfectly observe the current state $X_t$, the scalar projection $\langle w, X_t \rangle$ loses all information about the trajectory's velocity, drift direction, and boundary proximity. The "metameric loss" is even larger for dynamical quantities than for static profiles.
 
@@ -969,7 +967,7 @@ R6 provides a dynamical component of the mathematical foundations of Spectral Br
 
 **R5 (OST Impossibility, Zharnikov [-@zharnikov-2026-specification-impossibility-organizational-design-high])** proved coverage impossibility in high-dimensional specification spaces. R6 provides the SBT-side complement: just as organizations cannot exhaustively specify their configuration, observers cannot maintain stable perception across all eight dimensions simultaneously. The geometric impossibility in specification space (R5) has a dynamical counterpart in perception space (R6).
 
-**R7 (Spectral Resource Allocation, Zharnikov [-@zharnikov-2026-spectral-resource-allocation-demand-driven])** derives optimal resource allocation across SBT's eight dimensions. The D/A Goldilocks zone derived in the Deriving the D/A Goldilocks Zone section connects directly to R7's framework: the absorption-exploration tradeoff that constrains $r^* \in [0.55, 0.65]$ provides the dynamical foundation for R7's resource allocation boundaries. Where R7 asks "how should resources be distributed across dimensions?", the Goldilocks zone analysis answers the prior question "what fraction of total signal budget should be designed versus ambient?" The two results are complementary: R7 optimizes the *direction* of designed signals, while the Goldilocks zone derivation optimizes the *proportion* of designed signals relative to ambient noise.
+**R7 (Spectral Resource Allocation, Zharnikov [-@zharnikov-2026-spectral-resource-allocation-demand-driven])** derives optimal resource allocation across SBT's eight dimensions. The D/A Goldilocks zone derived in the Deriving the D/A Goldilocks Zone section connects directly to R7's framework: the absorption-exploration tradeoff that constrains $r^* \in [.55, .65]$ provides the dynamical foundation for R7's resource allocation boundaries. Where R7 asks "how should resources be distributed across dimensions?", the Goldilocks zone analysis answers the prior question "what fraction of total signal budget should be designed versus ambient?" The two results are complementary: R7 optimizes the *direction* of designed signals, while the Goldilocks zone derivation optimizes the *proportion* of designed signals relative to ambient noise.
 
 **R9 (Non-Ergodic Perception, Zharnikov [-@zharnikov-2026-non-ergodic-brand-perception-why])** applies Theorem 4 directly to cross-sectional brand tracking, showing that periodic cohort surveys systematically misrepresent individual observer trajectories whenever $\varepsilon < 1$. R9's main empirical argument draws on the formal dynamic model developed in this paper: the non-ergodicity result quantifies the systematic overestimation bias in population-average brand health scores as a function of the ergodicity coefficient computed in the Ergodicity Coefficient by Brand section.
 
@@ -997,9 +995,9 @@ These results have three immediate consequences for brand theory and practice.
 
 First, **signal maintenance is mathematically necessary**. The four strategic principles articulated in the Implications for Brand Strategy section (signal maintenance, coherence, D/A optimization, temporal compounding) follow from Theorems 2 and 4 and Proposition 7. The quantitative tool for calculating required investment is Theorem 2: the survival probability above a given risk tolerance determines the minimum signal budget needed to keep the absorption rate below that tolerance.
 
-Second, **ensemble surveys are unreliable for non-ergodic brands**. When the ergodicity coefficient $\varepsilon$ is low (below approximately 1), the time-average experience of individual observers diverges systematically from the ensemble average captured by surveys. For brands like Tesla ($\varepsilon \approx .4$), survey-based brand health metrics are not merely imprecise but fundamentally misleading -- they suffer from survivorship bias in perception space.
+Second, **ensemble surveys are unreliable for non-ergodic brands**. When the ergodicity coefficient $\varepsilon$ is low (below approximately 1), the time-average experience of individual observers diverges systematically from the ensemble average captured by surveys. For brands like Tesla ($\varepsilon \approx .4$), survey-based brand health metrics are not merely imprecise but fundamentally misleading — they suffer from survivorship bias in perception space.
 
-Third, **brand management is a trajectory optimization problem**, not a position optimization problem. The traditional framing -- "where should we position the brand?" -- is the wrong question. The right question is: "what drift and diffusion parameters keep the perception trajectory in a desirable region of $S^7_+$, away from absorbing boundaries and within crystallization basins?" This reframing is the dynamical consequence of the static insight that brands are multi-dimensional objects, not points on a perceptual map.
+Third, **brand management is a trajectory optimization problem**, not a position optimization problem. The traditional framing — "where should we position the brand?" — is the wrong question. The right question is: "what drift and diffusion parameters keep the perception trajectory in a desirable region of $S^7_+$, away from absorbing boundaries and within crystallization basins?" This reframing is the dynamical consequence of the static insight that brands are multi-dimensional objects, not points on a perceptual map.
 
 The dynamical framework opens several directions for future work (see the Empirical Identification Strategy and Limitations sections for details): empirical calibration of $\sigma_0$, $\kappa$, $\alpha\lambda_{\text{enc}}$ from longitudinal panel data; optimal control formulations (what signal strategy minimizes absorption risk subject to budget constraint?); mean-field game theory (how do competing brands' strategies interact through shared observer populations?); and mean-field interacting SDEs for correlated observer trajectories. These extensions would complete the transition from qualitative brand theory to quantitative brand dynamics — a transition that this paper, together with R1--R7, R9, and R12, has begun.
 

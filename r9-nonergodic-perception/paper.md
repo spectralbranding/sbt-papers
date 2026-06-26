@@ -32,7 +32,7 @@ The implications for practice are immediate. If brand perception is non-ergodic,
 
 ## Theoretical Background
 
-### 2.1 The Ergodicity Problem in Economics
+### The Ergodicity Problem in Economics
 
 The ergodicity concept originates in statistical mechanics, where Boltzmann's ergodic hypothesis asserts that a system's time average equals its ensemble average — that observing one particle for a long time yields the same statistical information as observing many particles at one instant [@birkhoff-1931-proof-ergodic-theorem]. Peters [-@peters-2019-ergodicity-problem-economics] demonstrated that this assumption, imported implicitly into economic theory, produces foundational errors.
 
@@ -42,7 +42,7 @@ The divergence between ensemble and time averages arises from three structural f
 
 The critical insight for brand research is methodological: whenever dynamics are non-ergodic, cross-sectional averages provide misleading information about individual trajectories. If brand perception dynamics share the structural features that produce non-ergodicity in economic systems — multiplicativity, absorbing states, heterogeneous trajectories — then brand tracking methods that rely on cross-sectional averaging are systematically biased.
 
-### 2.2 Path Dependence in Consumer Psychology
+### Path Dependence in Consumer Psychology
 
 The consumer psychology literature contains extensive evidence of order effects, primacy, and path dependence in perception formation — evidence that is consistent with non-ergodic dynamics, though it has never been interpreted through that lens.
 
@@ -64,7 +64,7 @@ Non-ergodic perception violates this convergence because absorbing states are st
 
 These findings collectively demonstrate that brand perception violates a necessary condition for ergodicity: exchangeability of observations. In an ergodic process, the order of observations does not matter — permuting the sequence produces the same long-run statistics. In brand perception, the order is a first-order determinant of outcomes.
 
-### 2.3 Spectral Brand Theory and Dynamic Perception
+### Spectral Brand Theory and Dynamic Perception
 
 Spectral Brand Theory [@zharnikov-2026-spectral-brand-theory-computational-framework] models brand perception as an eight-dimensional vector space defined by Semiotic, Narrative, Ideological, Experiential, Social, Economic, Cultural, and Temporal dimensions. Each observer forms a perception profile — a weighted combination of brand signals filtered through their individual dimension weights (the observer spectral profile). Observers cluster into cohorts based on similar dimension weights, and cohort-level perception patterns emerge as perception clouds in eight-dimensional space.
 
@@ -82,7 +82,7 @@ Three features of the SBT dynamic model are essential for the argument that foll
 
 ## The Non-Ergodic Brand Perception Model
 
-### 3.1 Formal Definition: When Time-Averages Differ from Ensemble-Averages in Brand Perception
+### Formal Definition: When Time-Averages Differ from Ensemble-Averages in Brand Perception
 
 We begin with a formal statement of what non-ergodicity means in the brand perception context. Let $x_i(t) \in \mathbb{R}^8_+$ denote observer *i*'s perception profile of a brand at time *t*. The perception profile is a normalized vector capturing the observer's internal representation of the brand across eight dimensions. The perception space and its geometric properties are formalized in Zharnikov [-@zharnikov-2026-brand-space-geometry-formal-metric]; the present model inherits that metric structure.
 
@@ -106,7 +106,7 @@ That is, the long-run time average for any individual converges to the cross-sec
 
 **Claim.** Brand perception is non-ergodic: $\bar{x}_i^{(T)} \not\to \bar{x}^{(E)}(t)$ in general. The divergence arises from three structural sources.
 
-### 3.2 Three Sources of Non-Ergodicity
+### Three Sources of Non-Ergodicity
 
 #### Source 1: Absorbing States
 
@@ -146,7 +146,7 @@ This path dependence in dimension weighting means that even within a single obse
 
 Zharnikov [-@zharnikov-2026-dimensional-collapse-ai-mediated-search] provides direct empirical evidence of degenerate weighting in non-human observers: large language models evaluated in a sequential-allocation format exhibit a first-listed dimension premium (+6.1 points, d = 1.39, p < .001) that virtually disappears under independent Likert elicitation (d = .22). This format-mediated suppression of path-dependent weighting in AI observers — a population whose priors do not accumulate across sessions — establishes a useful baseline: the path-dependence signal identified here is carried by the sequential allocation mechanism, not merely by perceptual encoding. Human observers accumulate cross-session histories, and the weighting dynamics are expected to be stronger, not weaker, than this LLM baseline.
 
-### 3.3 The Belief-Adjustment Mechanism: Connecting Hogarth and Einhorn (1992) to Peters (2019)
+### The Belief-Adjustment Mechanism: Connecting Hogarth and Einhorn (1992) to Peters (2019)
 
 The three sources of non-ergodicity identified above are not merely theoretical constructs. They connect directly to Hogarth and Einhorn's [-@hogarth-1992-order-effects-belief] belief-adjustment model, one of the most widely applied formal models of sequential belief updating in the consumer psychology literature.
 
@@ -162,7 +162,7 @@ The Hogarth-Einhorn model was developed to explain order effects in belief updat
 
 In the SBT context, the Hogarth-Einhorn mechanism operates on each of eight dimensions simultaneously. The reference point in each dimension is the observer's current perception in that dimension, which depends on the entire history of signals in that dimension (and, through cross-dimensional interactions, on signals in all other dimensions). The adjustment weight depends on the observer's dimension-specific sensitivity (captured by the observer spectral profile) and on the signal type (positive, null, or structural absence). The result is a high-dimensional belief-updating process with order dependence operating across all eight dimensions simultaneously.
 
-### 3.4 Boundary Conditions
+### Boundary Conditions
 
 The non-ergodic framework developed in this paper applies with full force under conditions that are common in high-involvement brand perception but may be weakened or absent elsewhere. Four boundary conditions govern the scope of the propositions.
 
@@ -234,7 +234,7 @@ The mathematical mechanism is the interaction between structural absence and mul
 
 The practical implication is a "first-signal premium": the first touchpoint in any dimension has outsized influence on long-run perception. This is distinct from mere recency or primacy effects; it is a structural feature of sequential updating in a previously empty dimension.
 
-An illustrative baseline is available from a serial position experiment using large language model observers (Zharnikov [-@zharnikov-2026-dimensional-collapse-ai-mediated-search], Section 5.15). In this non-human context, JSON sum-to-100 allocation produces a first-listed dimension premium of +6.1 points above the last (d = 1.39, p < .001), while independent 1–5 Likert ratings virtually eliminate the effect (d = .22). This baseline is informative not as primary evidence for P4 — LLM observers lack the cross-session memory accumulation that characterizes human brand perception — but as an elicitation-modality diagnostic: the primacy mechanism operates through the sequential allocation process rather than perceptual encoding per se. Human observers accumulate cross-session histories, and the weighting dynamics are expected to be stronger, not weaker, than this LLM baseline. The format-dependence result also establishes a methodological boundary condition for P4 tests: measurement instruments must preserve sequential structure to detect the anchoring effect (see also Boundary Conditions).
+An illustrative baseline is available from a serial position experiment using large language model observers (Zharnikov [-@zharnikov-2026-dimensional-collapse-ai-mediated-search]). In this non-human context, JSON sum-to-100 allocation produces a first-listed dimension premium of +6.1 points above the last (d = 1.39, p < .001), while independent 1–5 Likert ratings virtually eliminate the effect (d = .22). This baseline is informative not as primary evidence for P4 — LLM observers lack the cross-session memory accumulation that characterizes human brand perception — but as an elicitation-modality diagnostic: the primacy mechanism operates through the sequential allocation process rather than perceptual encoding per se. Human observers accumulate cross-session histories, and the weighting dynamics are expected to be stronger, not weaker, than this LLM baseline. The format-dependence result also establishes a methodological boundary condition for P4 tests: measurement instruments must preserve sequential structure to detect the anchoring effect (see also Boundary Conditions).
 
 **Source of non-ergodicity:** Multiplicative dynamics (Source 2), path-dependent weighting (Source 3).
 
@@ -258,7 +258,7 @@ Grier and Brumbaugh's [-@grier-1999-noticing-cultural-differences] research on t
 
 *Falsification.* P5 would be challenged if cohorts defined by significantly different observer spectral profiles (verified through pre-exposure dimension-weight elicitation) converge to indistinguishable perception trajectories after exposure to a sufficient number of shared brand signals — that is, if a multi-level model of cohort-level perception over time finds no significant cohort $\times$ time interaction, and the within-cohort variance in trajectory end-states does not exceed the between-cohort variance. A finding that heterogeneous dimension weights produce only transient differences that resolve into a common attractor would indicate that the cross-cohort divergence mechanism is dominated by ergodicity-restoring forces not captured by the current framework.
 
-### 4.5 When Is Perception Multiplicative? Sufficiency Conditions
+### When Is Perception Multiplicative? Sufficiency Conditions
 
 The non-ergodicity results in Propositions 1-5 depend on perception updates being multiplicative rather than additive. This section states sufficient conditions for the multiplicative regime and identifies the empirically testable boundary between the two regimes.
 
@@ -278,9 +278,9 @@ The accumulator dynamics developed by Busemeyer and Townsend [-@busemeyer-1993-d
 
 ## Empirical Foundations
 
-This section maps existing empirical evidence to each of the five propositions. The evidence was not generated to test non-ergodicity; it was generated to test narrower hypotheses about order effects, primacy, and path dependence. The non-ergodic framework reveals these disparate findings as manifestations of a single underlying structure.
+This section maps existing empirical evidence to each of the five propositions. The evidence was not generated to test non-ergodicity; it was generated to test narrower hypotheses about order effects, primacy, and path dependence. The non-ergodic framework reveals these disparate findings as manifestations of a single underlying structure. Table 1 summarizes this mapping.
 
-### 5.1 Evidence for P1 (Signal Order Effect)
+### Evidence for P1 (Signal Order Effect)
 
 **Hogarth and Einhorn [-@hogarth-1992-order-effects-belief].** The belief-adjustment model was tested across 128 experimental conditions varying evidence type, evidence strength, evidence length, and processing mode. The central finding — that the same evidence in different orders produces different final beliefs — directly supports P1. The effect sizes are substantial: in step-by-step processing with mixed evidence, order manipulations produce final belief differences of 10-25% of the scale range. The model's parameters (adjustment weights and reference points) provide quantitative predictions about the magnitude of the order effect as a function of evidence characteristics.
 
@@ -288,7 +288,7 @@ This section maps existing empirical evidence to each of the five propositions. 
 
 **Asch [-@asch-1946-forming-impressions-personality].** Asch's impression formation experiments are the earliest systematic demonstration of P1. The "intelligent-industrious-impulsive-critical-stubborn-envious" versus "envious-stubborn-critical-impulsive-industrious-intelligent" manipulation produced dramatically different impressions from identical trait sets. While Asch's experiments concern person perception rather than brand perception, the underlying mechanism — sequential interpretation through an evolving frame — is identical.
 
-### 5.2 Evidence for P2 (Absorbing State Asymmetry)
+### Evidence for P2 (Absorbing State Asymmetry)
 
 **Slovic [-@slovic-1993-perceived-risk-trust].** Slovic's trust asymmetry principle — that trust is destroyed more easily than it is created — provides the psychological foundation for P2. Slovic showed that a single negative event can undermine years of trust-building, while no single positive event can restore trust that has been fundamentally lost. This asymmetry between destruction and construction is the behavioral manifestation of the absorbing-state property: the boundary at zero trust is approached easily but returned from with great difficulty, if at all.
 
@@ -296,7 +296,7 @@ This section maps existing empirical evidence to each of the five propositions. 
 
 **Brand crisis literature.** Cleeren, Dekimpe, and van Heerde [-@cleeren-2017-marketing-research-productharm] provide a comprehensive review of brand crisis research demonstrating that recovery is systematically incomplete: brands suffering fundamental trust violations (e.g., Volkswagen's emissions scandal, Boeing's 737 MAX crisis) recover on average perception metrics while exhibiting a persistent cohort of consumers who never return to pre-crisis levels. This pattern is precisely what absorbing-state dynamics predict: some observers are permanently absorbed while others — those whose trajectories remain in the interior — recover. The ensemble average shows partial recovery; many individual trajectories show complete absorption. The observed heterogeneity in recovery outcomes, rather than being unexplained noise, is a direct signature of the asymmetric absorbing-boundary mechanism in P2.
 
-### 5.3 Evidence for P3 (Ensemble-Time Divergence)
+### Evidence for P3 (Ensemble-Time Divergence)
 
 Direct evidence for P3 requires longitudinal individual-level tracking data — precisely the data that traditional brand tracking does not collect. However, indirect evidence comes from two sources.
 
@@ -304,7 +304,7 @@ Direct evidence for P3 requires longitudinal individual-level tracking data — 
 
 **NPS distribution bimodality.** Net Promoter Score distributions are frequently bimodal, with clusters at the extremes (promoters and detractors) and fewer respondents in the middle. This distribution is consistent with a non-ergodic process with absorbing boundaries: over time, observers migrate toward extreme states (positive conviction or negative conviction), with the negative extreme functioning as an absorbing state. The cross-sectional NPS average, which nets promoters against detractors, obscures the fundamentally different trajectory types represented by the two groups.
 
-### 5.4 Evidence for P4 (First-Signal Anchoring)
+### Evidence for P4 (First-Signal Anchoring)
 
 **Kardes and Kalyanaram [-@kardes-1992-orderofentry-effects-consumer].** Their demonstration of order-of-entry effects provides the most direct evidence for P4 at the category level. The first brand encountered in a category enjoys a persistent memory and judgment advantage that cannot be fully explained by quality differences, advertising spending, or distribution advantages. The mechanism is anchoring: the first brand fills a perceptual vacuum and establishes the reference point for all subsequent evaluation.
 
@@ -312,7 +312,7 @@ Direct evidence for P3 requires longitudinal individual-level tracking data — 
 
 **Asch [-@asch-1946-forming-impressions-personality].** Asch's primacy findings can be reinterpreted as first-signal anchoring within the impression formation process. The first trait adjective establishes the interpretive frame; subsequent adjectives are assimilated to this frame or, if discrepant, are given reduced weight. The mechanism is identical to P4: the first signal in the dimension of personality evaluation anchors all subsequent updates.
 
-### 5.5 Evidence for P5 (Cohort Trajectory Divergence)
+### Evidence for P5 (Cohort Trajectory Divergence)
 
 **Grier and Brumbaugh [-@grier-1999-noticing-cultural-differences].** Their study of target and non-target market perceptions of advertising demonstrates that identical ad stimuli produce different perceptual outcomes depending on the observer's cultural background. African American consumers and White consumers, viewing the same advertisements, extracted different meanings, evaluated different dimensions, and formed different perception outcomes. In SBT terms, these are different observer cohorts with different dimension weights (particularly on the Social, Cultural, and Ideological dimensions) producing divergent perception from identical signals.
 
@@ -339,7 +339,7 @@ Direct evidence for P3 requires longitudinal individual-level tracking data — 
 
 ## Implications for Brand Management
 
-### 6.1 The Tracking Fallacy: Why NPS and Brand Tracking Are Non-Ergodic Artifacts
+### The Tracking Fallacy: Why NPS and Brand Tracking Are Non-Ergodic Artifacts
 
 If brand perception is non-ergodic, then the standard methodology of brand tracking — survey a cross-section, compute averages, compare across time — produces a measurement artifact rather than a measurement of brand health. The artifact has a predictable structure: it overestimates health for brands at risk of absorbing states and underestimates the dispersion of individual trajectories.
 
@@ -381,7 +381,7 @@ The ordering of the gap column is the empirical signature of P3. Hermès, despit
 
 The practical recommendation is not to abandon brand tracking but to supplement it with trajectory-level measurement — tracking individual observers over time (panel studies with careful attention to attrition), measuring the rate of absorption (how many observers cross from negative perception to negative conviction between waves), and correcting ensemble averages for survivorship bias. Sriram, Balachander, and Kalwani [-@sriram-2007-monitoring-dynamics-brand] demonstrate that store-level panel data can be used to monitor brand equity dynamics over time, recovering temporal heterogeneity that cross-sectional brand tracking conceals — the kind of individual-trajectory decomposition that the non-ergodic framework requires.
 
-### 6.2 Touchpoint Sequence as Strategic Variable
+### Touchpoint Sequence as Strategic Variable
 
 P1 (Signal Order Effect) implies that the sequence in which consumers encounter brand touchpoints is not a second-order operational detail but a first-order strategic variable. Two consumers who encounter the same set of brand touchpoints in different orders will form structurally different perceptions.
 
@@ -391,7 +391,7 @@ First, **controlled-sequence touchpoints.** In direct-to-consumer channels, reta
 
 Second, **first-signal management.** P4 (First-Signal Anchoring) implies that the highest-leverage touchpoint is the first one. Brands should invest disproportionately in the quality, dimensionality, and valence of the first signal that new observers encounter. The design of customer journey touchpoint sequences is a recognized practice [@lemon-2016-understanding-customer-experience], but the non-ergodic framework adds a specific and previously unrecognized prediction: the same touchpoints, encountered in different orders, will produce permanently divergent perception trajectories — not just different endpoints at time *t*, but structurally different long-run distributions. Existing order-effect models [@hogarth-1992-order-effects-belief] predict the direction of sequential bias (primacy versus recency) but not this systematic divergence between what population-level tracking records and what individual trajectories actually experience. The non-ergodic framework specifically predicts that brand tracking scores can improve at the population level while individual perception trajectories decline — because the tracked ensemble is progressively purified by absorption of the most negative observers. Among order-effect models that assume reversible attitude updating, none generates this prediction; the absorbing-state extension here is necessary for it to follow. This is a testable, distinctive implication of the non-ergodic framework.
 
-### 6.3 The First-Signal Premium
+### The First-Signal Premium
 
 The first-signal anchoring effect (P4) creates a structural premium for first signals in each dimension — one that is in principle measurable through longitudinal panel studies that track per-dimension perception from a consumer's first brand encounter (see Limitations and Future Empirical Research). In practical terms, this means:
 
@@ -401,7 +401,7 @@ The first-signal anchoring effect (P4) creates a structural premium for first si
 
 3. **Structural absence** (SBT's "dark signal") is particularly dangerous in the context of first-signal anchoring. A dimension where the brand has never signaled is a vacuum waiting to be filled by the first signal encountered — which may come from competitors, media, or word-of-mouth rather than from the brand itself. Managing structural absence by proactively signaling in all eight dimensions is a defensive strategy against uncontrolled first-signal anchoring.
 
-### 6.4 Absorbing States and Brand Crisis Management
+### Absorbing States and Brand Crisis Management
 
 P2 (Absorbing State Asymmetry) and P3 (Ensemble-Time Divergence) together reframe brand crisis management. The conventional view treats brand crises as events that damage brand perception — a loss of points on a scale that can be recovered through communication, reform, and time. The non-ergodic framework reveals that crises are potential absorbing-state events: they can push some fraction of observers across the boundary from negative perception to negative conviction, permanently removing them from the brand's accessible audience.
 
@@ -417,7 +417,7 @@ Cohort heterogeneity affects crisis trajectories as well. van Heerde, Gijsbrecht
 
 The practical implication is that crisis management should be evaluated not by the average perception score post-crisis (the ensemble average) but by the absorption rate: what fraction of observers crossed from perception to conviction? The absorption rate determines the permanent population loss, while the perception shift determines the recoverable damage. A crisis that produces a large perception shift but low absorption is ultimately less damaging than a crisis that produces a small perception shift but high absorption.
 
-### 6.5 Implications for Consumer-Psychology Research
+### Implications for Consumer-Psychology Research
 
 The non-ergodic framework carries direct implications for how consumer psychology constructs its measurement designs, evaluates its empirical findings, and frames its theoretical contributions.
 
@@ -429,7 +429,7 @@ The non-ergodic framework carries direct implications for how consumer psycholog
 
 ## Discussion
 
-### 7.1 Relationship to SBT's Formal Dynamic Model
+### Relationship to SBT's Formal Dynamic Model
 
 The propositions developed in this paper are conceptual translations of the formal results in Zharnikov [-@zharnikov-2026-non-ergodic-brand-perception-diffusion]. The relationship is summarized in Table 4.
 
@@ -447,7 +447,7 @@ The propositions developed in this paper are conceptual translations of the form
 
 The two papers serve complementary audiences. Zharnikov [-@zharnikov-2026-non-ergodic-brand-perception-diffusion], with its stochastic differential equations and spectral theory, addresses the mathematical community and provides rigorous foundations. This paper, with its propositions and empirical mappings, addresses consumer psychology and brand management researchers and provides the interpretive framework. Zharnikov [-@zharnikov-2026-spectral-brand-theory-computational-framework] provides a kinematic complement to the dynamic framework developed here: where this paper characterizes the divergence between time and ensemble averages, Zharnikov [-@zharnikov-2026-spectral-brand-theory-computational-framework] characterizes the velocity and acceleration of perception trajectories in phase space, enabling a more fine-grained description of how quickly observers approach absorbing boundaries. The two frameworks together suggest that the full empirical agenda requires both trajectory-level statistics (this paper) and phase-space measurement [@zharnikov-2026-spectral-brand-theory-computational-framework].
 
-### 7.2 Relationship to Classical Brand Theory
+### Relationship to Classical Brand Theory
 
 The non-ergodic framework does not invalidate Aaker [-@aaker-1991-managing-brand-equity], Keller [-@keller-1993-conceptualizing-measuring-managing], or Kapferer [-@kapferer-2008-new-strategic-brand, 4th ed.]. It identifies the implicit assumption under which their frameworks are valid and specifies when that assumption fails.
 
@@ -459,11 +459,11 @@ The non-ergodic framework does not invalidate Aaker [-@aaker-1991-managing-brand
 
 The relationship between the non-ergodic framework and classical brand theory is analogous to the relationship Peters [-@peters-2019-ergodicity-problem-economics] identifies between ergodicity economics and classical expected utility theory: the classical framework is an implicit ergodicity assumption that works well in certain regimes (high coherence, low absorption, homogeneous observers) and fails systematically in others.
 
-### 7.3 Connection to Process Invariance and Dynamic Admissibility
+### Connection to Process Invariance and Dynamic Admissibility
 
 The non-ergodic framework developed in this paper connects to a complementary construct from systems-governance theory: process invariance under temporal stress. Control-theoretic frameworks distinguish between *state invariance* (preservation at a snapshot) and *process invariance* (preservation along trajectories under perturbation) — the principle that integrity is preserved by constraining evolution under stress, not the instantaneous state. This distinction, though developed in engineering contexts, is the systems-theoretic counterpart of the present paper's central thesis: trajectories, not snapshots, carry the diagnostic information. Extending this process-invariance framing to brand perception, a brand that satisfies instantaneous coherence (all dimensions within acceptable ranges at $t$) but exhibits absorbing-state trajectories (one or more dimensions drifting toward the boundary over time) satisfies process invariance in the static sense while failing it dynamically. This trajectory-level admissibility provides the per-cohort diagnostic complement to the non-ergodic framework's population-level bias prediction: where P3 predicts that ensemble averages overestimate health for absorbing-state brands, the process-invariance condition specifies the per-observer-cohort condition under which that overestimation is most severe — namely, when the cohort's evolution path violates invariance under the signal perturbations that characterize real market conditions. Together, the two frameworks suggest that longitudinal brand health measurement should assess both the trajectory distribution across the population (non-ergodicity correction) and the admissibility of individual cohort trajectories under perturbation.
 
-### 7.4 Limitations and Future Empirical Research
+### Limitations and Future Empirical Research
 
 The framework developed in this paper is scoped to consumer brand perception (B2C contexts). Extension to B2B brand perception requires additional analysis: in B2B settings, purchasing decisions typically involve committees, formal evaluation processes, and contractual relationships that may introduce ergodicity-restoring mechanisms — competitive bidding forces perceptual convergence, contractual terms create defined reset points, and formal review cycles impose structured reconsideration that can disrupt absorbing states. Whether the three sources of non-ergodicity (absorbing conviction, nonlinear dynamics, path-dependent weighting) operate with the same force in B2B perception is an open empirical question and a productive direction for future research.
 
