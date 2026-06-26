@@ -64,7 +64,7 @@ We make the resonance claim precise in the smallest model that carries it, and c
 
 ![](figures/figure1_loss_surface.png)
 
-**Figure 1.** Total-loss surface over cohort distinctiveness ($\sin^2\beta$) and per-impression spill cost. The shaded frontier marks where the broadcast-a-dimension bridge and the minimal-loss-proxy bridge incur equal total loss; the broadcast bridge dominates above and to the left, where the cohort is distinct and spill is cheap. Calibrated to the distinctiveness distribution of a reflection-based perception corpus; reproduced by [`code/broadcast_channel_loss_surface.py`](https://github.com/spectralbranding/sbt-papers/blob/main/reaching-a-perception/code/broadcast_channel_loss_surface.py). The figure file is [`figures/figure1_loss_surface.png`](https://github.com/spectralbranding/sbt-papers/blob/main/reaching-a-perception/figures/figure1_loss_surface.png).
+**Figure 1.** Total-loss surface over cohort distinctiveness ($\sin^2\beta$) and per-impression spill cost. The shaded frontier marks where the broadcast-a-dimension bridge and the minimal-loss-proxy bridge incur equal total loss; the broadcast bridge dominates above and to the left, where the cohort is distinct and spill is cheap. Calibrated to the distinctiveness distribution of a reflection-based perception corpus; reproduced by [`code/broadcast_channel_loss_surface.py`](https://github.com/spectralbranding/sbt-papers/blob/main/reaching-a-perception/code/broadcast_channel_loss_surface.py).
 
 ## Perception-to-Proxy Join and Its Quantified Loss
 
@@ -122,7 +122,7 @@ This section executes the methods-companion fallback. It is a calibrated simulat
 
 ![](figures/figure2_me2_overindex.png)
 
-**Figure 2.** Resonance over-index versus cohort distinctiveness, with the five public anchors marked. The over-index (matched-cohort salience relative to off-target salience for a dimension-strong creative) increases monotonically in distinctiveness $s = \sin^2\beta$; the dashed line marks the routing threshold $s^\star = .355$. Reproduced by [`code/broadcast_channel_me2.py`](https://github.com/spectralbranding/sbt-papers/blob/main/reaching-a-perception/code/broadcast_channel_me2.py) at seed 20260619; the figure file is [`figures/figure2_me2_overindex.png`](https://github.com/spectralbranding/sbt-papers/blob/main/reaching-a-perception/figures/figure2_me2_overindex.png).
+**Figure 2.** Resonance over-index versus cohort distinctiveness, with the five public anchors marked. The over-index (matched-cohort salience relative to off-target salience for a dimension-strong creative) increases monotonically in distinctiveness $s = \sin^2\beta$; the dashed line marks the routing threshold $s^\star = .355$. Reproduced by [`code/broadcast_channel_me2.py`](https://github.com/spectralbranding/sbt-papers/blob/main/reaching-a-perception/code/broadcast_channel_me2.py) at seed 20260619.
 
 ***Two case studies: the contract selecting bridges.*** The same model instantiates the handoff contract on two contrasting campaigns, summarized in Table 1. These are *reaching* decisions for brands in two campaign settings, given the perception each currently holds — distinct from the *formation* dynamics of those same settings (holding a mature perception against decay, or building a new one), which the Boundary section defers to the spectral-dynamics companion. In a maintenance campaign for an established, distinctive brand — the most distinctive anchor, distinctiveness .760 — the contract recommends broadcast-a-dimension at a per-impression spill cost of .074, which dominates the minimal-loss proxy's loss of .200; the resonance over-index at that distinctiveness is 1.724. The established brand is reachable with no address at all. In a category-creation campaign for an undifferentiated new entrant whose perception is not yet formed — a flat profile with distinctiveness at the $s = 1/8 = .125$ floor — the contract declines broadcast, because the predicted spill of .271 exceeds the proxy loss of .200, and routes instead to the minimal-loss proxy or to provenance-as-address; the resonance over-index is 1.017, essentially no separation. The contrast is the point: the contract returns the address-free bridge exactly when the cohort is distinct enough to self-select, and substitutes an addressed bridge when it is not. The category-creation case also marks the boundary of this paper — moving the new entrant off the distinctiveness floor is *forming* a perception, not *reaching* one, and that forcing-function dynamics is the subject of the spectral-dynamics companion.
 
@@ -169,7 +169,9 @@ Two companion computation scripts, both deterministic, dependency-light (NumPy a
 
 AI assistants (Claude Opus 4.8, Gemini 2.5 Pro, Grok 4.3) were used for initial literature search, for software development — implementing and running the two companion computation scripts that reproduce the paper's reported loss surface and calibrated demonstration — and for editorial refinement; all theoretical claims, propositions, and interpretations are the author's sole responsibility. The companion scripts are the fixed-seed broadcast-channel loss surface (`code/broadcast_channel_loss_surface.py`) and the calibrated Monte-Carlo demonstration (`code/broadcast_channel_me2.py`).
 
-CRediT contributions: Dmitry Zharnikov — conceptualization, methodology, software, formal analysis, investigation, writing (original draft), writing (review and editing).
+## Author Contributions (CRediT)
+
+Dmitry Zharnikov — conceptualization, methodology, software, formal analysis, investigation, writing (original draft), writing (review and editing).
 
 ## References
 
