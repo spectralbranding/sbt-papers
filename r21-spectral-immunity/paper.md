@@ -355,7 +355,7 @@ Pooled across archetypes and modalities, the portfolio-framing effect sizes conv
 
 **Prompt-location ablation.** Moving portfolio context from the user message to the system message produced no difference (paired t(79) = .91, p = .368, d = .15; 4 models, 20 brands, N = 80 paired observations).
 
-***Companion Computation Script***
+## Companion Computation Script
 
 All statistical analyses reported in Tables 3-7 are reproduced by `compute_dci.py` at `https://github.com/spectralbranding/sbt-papers/tree/main/r21-spectral-immunity/code/`. Fixed random seed: 42. Run command: `uv run python compute_dci.py`. Running the script reproduces all DCI means, TOST p-values, Cohen's d, and variance decomposition figures within the reported standard errors. Raw experiment data are archived at https://doi.org/10.57967/hf/8380 (HuggingFace) and https://doi.org/10.5281/zenodo.19555282 (Zenodo); the script reads from these archived sources and includes a stub demonstration against the canonical brand profiles and Table values for users who do not download the full dataset.
 

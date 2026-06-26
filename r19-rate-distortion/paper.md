@@ -242,6 +242,10 @@ Code and pre-registration materials are publicly available at https://github.com
 
 AI assistants (Claude Opus 4.8, Grok 4.20, Gemini 2.5 Pro) were used for initial literature search, for software development — authoring the experiment harness and the analysis and scoring scripts — and for orchestrating and running the reported experiments through those scripts, as well as for editorial refinement. Seventeen LLMs are the subjects of the experiment — encoders whose rate-distortion properties are measured — not contributors to the theoretical framework. All theoretical claims, experimental design, and interpretive framing are the author's sole responsibility.
 
+## Author Contributions (CRediT)
+
+Dmitry Zharnikov: Conceptualization, Data curation, Formal analysis, Investigation, Methodology, Project administration, Software, Validation, Writing — original draft, Writing — review and editing.
+
 ## References
 
 ::: {#refs}
