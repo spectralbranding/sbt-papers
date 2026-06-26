@@ -92,13 +92,12 @@ The extension to AI brand perception requires modifying two assumptions. First, 
 
 ```{.mermaid width=60%}
 quadrantChart
-    title Awareness Gate x Encoding Bandwidth
     x-axis Low Awareness --> High Awareness
     y-axis Low Bandwidth --> High Bandwidth
-    quadrant-1 High awareness - high bandwidth
-    quadrant-2 Low awareness - high bandwidth
-    quadrant-3 Low awareness - low bandwidth
-    quadrant-4 High awareness - low bandwidth
+    quadrant-1 " "
+    quadrant-2 " "
+    quadrant-3 " "
+    quadrant-4 " "
     Human pre-disclosure: [0.2, 0.75]
     Human post-disclosure: [0.8, 0.8]
     Naive AI: [0.25, 0.25]
@@ -357,7 +356,7 @@ Pooled across archetypes and modalities, the portfolio-framing effect sizes conv
 
 ## Companion Computation Script
 
-All statistical analyses reported in Tables 3-7 are reproduced by `compute_dci.py` at `https://github.com/spectralbranding/sbt-papers/tree/main/r21-spectral-immunity/code/`. Fixed random seed: 42. Run command: `uv run python compute_dci.py`. Running the script reproduces all DCI means, TOST p-values, Cohen's d, and variance decomposition figures within the reported standard errors. Raw experiment data are archived at https://doi.org/10.57967/hf/8380 (HuggingFace) and https://doi.org/10.5281/zenodo.19555282 (Zenodo); the script reads from these archived sources and includes a stub demonstration against the canonical brand profiles and Table values for users who do not download the full dataset.
+All statistical analyses reported in Tables 3-7 are reproduced by `compute_dci.py` at `https://github.com/spectralbranding/sbt-papers/tree/main/r21-spectral-immunity/code/`. Fixed random seed: 42. Run command: `uv run python compute_dci.py`. Running the script reproduces all DCI means, TOST p-values, Cohen's d, and variance decomposition figures within the reported standard errors. Raw experiment data are archived at https://doi.org/10.57967/hf/8380 (HuggingFace); the script reads from this archived source and includes a stub demonstration against the canonical brand profiles and Table values for users who do not download the full dataset.
 
 ## Discussion
 
@@ -474,14 +473,14 @@ Dmitry Zharnikov: Conceptualization, Data curation, Formal analysis, Investigati
 
 ## Data Availability
 
-Experiment data (9,925 observations) are archived at https://doi.org/10.57967/hf/8380 (HuggingFace) and https://doi.org/10.5281/zenodo.19555282 (Zenodo). The dataset contains direct-rating, recommendation-prompt, multi-turn conversation, native-language ablation, and prompt-location ablation observations across 13 models from 7 training traditions. The open-source toolkit implementing the SBT computational pipeline is available at https://github.com/spectralbranding/sbt-framework.
+Experiment data (9,925 observations) are archived at https://doi.org/10.57967/hf/8380 (HuggingFace). The dataset contains direct-rating, recommendation-prompt, multi-turn conversation, native-language ablation, and prompt-location ablation observations across 13 models from 7 training traditions. The open-source toolkit implementing the SBT computational pipeline is available at https://github.com/spectralbranding/sbt-framework.
 
 ## References
 
 ::: {#refs}
 :::
 
-## Appendix C: Representative Prompts
+## Appendix A: Representative Prompts
 
 The following prompts are verbatim templates from the experiment driver (`run_portfolio.py`), rendered with illustrative values for Dove (Unilever portfolio). Dimension descriptions used the PRISM-B scale (1 = Not at all, 5 = Very strongly).
 
