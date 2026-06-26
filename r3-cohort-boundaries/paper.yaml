@@ -22,7 +22,6 @@ meta:
   - Lévy's lemma
   - brand perception
   - high-dimensional geometry
-  - Spectral Brand Theory
   abstract: This paper applies concentration-of-measure techniques to the probability simplex $\Delta^7$
     under the uniform Dirichlet$(1,\ldots,1)$ null. Three results follow. First, the Euclidean distance
     contrast ratio degrades to approximately 7.5 at $n = 8$, placing the space in a transitional regime

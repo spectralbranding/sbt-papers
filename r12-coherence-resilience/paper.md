@@ -12,7 +12,7 @@ Working Paper v1.1.0 – March 2026 (revised June 2026)
 
 Spectral Brand Theory classifies brands into five coherence types — ecosystem, signal, identity, experiential asymmetry, and incoherent — and predicts that coherence *type* determines crisis resilience better than coherence *score*. No formal derivation has connected this prediction to dynamics. This paper provides that derivation by analyzing the drift structures that different coherence types produce within the stochastic differential equation (SDE) framework of Zharnikov [-@zharnikov-2026-non-ergodic-brand-perception-diffusion]. Two characterizations of drift geometry — isotropy and $k$-anisotropy — yield three main results. Theorem 1 establishes that absorption probability decreases monotonically in drift isotropy: isotropic drift fields (ecosystem coherence) produce lower absorption risk than anisotropic or stochastic drift. Theorem 2 shows that recovery probability depends on dimension-specific drift, creating asymmetric vulnerability profiles — crises on passive dimensions (e.g., the Economic dimension for Hermès) are disproportionately dangerous. Theorem 3 derives the full resilience ordering — ecosystem > signal > identity > experiential asymmetry > incoherent — from SDE geometry. The type-over-score principle is the central result: crisis survival depends on the minimum drift across dimensions, not the average, so two brands with identical total emission but different distributions have different resilience. The framework is applied to four documented crises and generates three falsifiable predictions.
 
-**Keywords**: crisis resilience, coherence type, brand stability, stochastic dynamics, drift geometry, non-ergodicity, Spectral Brand Theory
+**Keywords**: crisis resilience, coherence type, brand stability, stochastic dynamics, drift geometry, non-ergodicity
 
 ---
 
@@ -473,6 +473,19 @@ Three directions for future work are immediate. First, the development of empiri
 
 A fourth, more speculative direction concerns the connection between this paper's results and the portfolio theory of Zharnikov [-@zharnikov-2026-hf-r20-portfolio-ai-perception]. If individual brands have coherence-dependent resilience, then a portfolio of brands has portfolio-level resilience that depends on the coherence types of its constituents and their correlations. A portfolio dominated by incoherent brands is more vulnerable to systemic crises than a portfolio balanced across coherence types. This connection between brand-level and portfolio-level resilience is a natural extension of the present framework.
 
+## Acknowledgments
+
+AI assistants (Claude Opus 4.8, Grok 4.20, Gemini 2.5 Pro) were used for initial literature search, for software development — implementing and running the companion computation scripts that reproduce the paper's reported numerical and simulation results — and for editorial refinement; all theoretical claims, propositions, and interpretations are the author's sole responsibility.
+
+## Author Contributions (CRediT)
+
+Dmitry Zharnikov: Conceptualization, Data curation, Formal analysis, Investigation, Methodology, Project administration, Software, Validation, Writing — original draft, Writing — review and editing.
+
+## References
+
+::: {#refs}
+:::
+
 ## Appendix A. Technical Note on Convexity of Hitting Probabilities
 
 The proof sketch for Theorem 1 invokes the convexity of the hitting probability $p(T; \alpha)$ in the drift parameter $\alpha$ for a one-dimensional diffusion with absorbing boundary at zero. We record here the structural argument that supports this property under the Wright-Fisher specification $h(x_i) = x_i$ adopted earlier; a fully rigorous derivation, together with numerical verification by Monte Carlo simulation of the full eight-dimensional SDE, is left to a forthcoming technical companion note.
@@ -494,16 +507,3 @@ $$8 \cdot p(T; \bar{\alpha}) \leq k \cdot p(T; 8\bar{\alpha}/k) + (8-k) \cdot p(
 A formal verification of convexity for the Wright-Fisher diffusion proceeds by differentiating the scale-function representation twice in $\alpha$ and showing that the second derivative is non-negative on $[0, 1]$ with the present diffusion coefficient. The argument is standard for the parameter ranges of interest ($\gamma$ small relative to $\delta$, so that the drift is dominated by the deterministic decay near the neutral prior) but the boundary case requires care. The companion note will provide both the analytical verification and Monte Carlo confirmation across $10{,}000$ paths per parameter combination, documenting the parameter region in which the inequality is strict.
 
 The present paper records the convexity claim as a structural property of the Wright-Fisher diffusion that is verified analytically in this appendix and numerically in the companion note. The main theorems do not depend on convexity holding at the boundary $\alpha = 0$ — the relevant inequalities concern interior values of the drift parameter where convexity is established by the standard argument.
-
-## Acknowledgments
-
-AI assistants (Claude Opus 4.8, Grok 4.20, Gemini 2.5 Pro) were used for initial literature search, for software development — implementing and running the companion computation scripts that reproduce the paper's reported numerical and simulation results — and for editorial refinement; all theoretical claims, propositions, and interpretations are the author's sole responsibility.
-
-## Author Contributions (CRediT)
-
-Dmitry Zharnikov: Conceptualization, Data curation, Formal analysis, Investigation, Methodology, Project administration, Software, Validation, Writing — original draft, Writing — review and editing.
-
-## References
-
-::: {#refs}
-:::

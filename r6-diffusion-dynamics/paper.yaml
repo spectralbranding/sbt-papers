@@ -22,7 +22,6 @@ meta:
   - absorbing boundaries
   - Laplace-Beltrami operator
   - mixing time
-  - Spectral Brand Theory
   abstract: 'Brand perception is inherently dynamic, yet formal continuous-time manifold models of multi-dimensional
     brand perception remain scarce. This paper models an observer''s brand perception as a stochastic
     process on $S^7_+$, the positive octant of the 7-sphere in Spectral Brand Theory''s eight-dimensional

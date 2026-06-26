@@ -14,7 +14,7 @@ Brands facing coherence shocks — repositioning campaigns or cultural shifts �
 
 Author-proposed Dove-calibrated parameters — $\lambda \approx .10$/year and $\mu \approx 4.50$/year — motivate a Monte Carlo demonstration of the threshold's predictive properties. The $\mu/\lambda$ ratio of 45 satisfies the inequality for the Purpose-Aligned cohort but is sign-inverted for the Skeptic-Critic cohort, correctly predicting the documented conviction divergence. Spectral-gap collapse precedes conviction reorientation by 6–18 months, offering a leading indicator unavailable from perceptual maps or aggregate VECMs. Implications extend to AI-mediated perception where scale-dependent leakage accelerates fine-grained separability loss.
 
-**Keywords:** spectral gap, cohort separability, threshold inequality, corrective coherence emission, spectral leakage, Markov chain mixing, operator perturbation, Spectral Brand Theory
+**Keywords:** spectral gap, cohort separability, threshold inequality, corrective coherence emission, spectral leakage, Markov chain mixing, operator perturbation
 
 ---
 

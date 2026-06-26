@@ -23,7 +23,6 @@ meta:
   - compositional data
   - warped product manifold
   - Jacobi fields
-  - Spectral Brand Theory
   abstract: Brand theory has lacked a rigorous distance function capable of quantifying perceptual closeness
     while respecting the compositional, relative, and observer-dependent nature of consumer attention.
     This paper constructs the first observer-warped metric space grounded in Cencov's uniqueness theorem

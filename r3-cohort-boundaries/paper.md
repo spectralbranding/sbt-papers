@@ -12,7 +12,7 @@ Working Paper v1.2.0 – March 2026 (revised June 2026)
 
 This paper applies concentration-of-measure techniques to the probability simplex $\Delta^7$ under the uniform Dirichlet$(1,\ldots,1)$ null. Three results follow. First, the Euclidean distance contrast ratio degrades to approximately 7.5 at $n = 8$, placing the space in a transitional regime where clustering remains informative yet noisy. Second, for any convex $k$-partition of $\Delta^7$, the volume fraction within relative Euclidean distance $\delta = .10$ of any boundary is at least 52.2%. Third, Lévy's lemma on the 7-sphere yields $P(|f - M_f| \geq \varepsilon) \leq 4\exp(-7\varepsilon^2/8)$ for 1-Lipschitz functions. Monte Carlo simulations with $10^5$ draws confirm the predictions within sampling error. These bounds imply that a majority of observer profiles lie near at least one cohort boundary under the uniform null, making discrete assignment inherently unstable. The uniform distribution maximizes boundary volume; symmetric Dirichlet$(\alpha,\ldots,\alpha)$ with $\alpha \geq 3$ reduces the fraction by $\alpha^{-7/2}$, producing operationally crisp boundaries (below 2%) for empirically plausible $\alpha$. The results give a geometric foundation for preferring continuous observer profiles over discrete cohort labels once perceptual dimensionality exceeds five. Fisher-Rao recalculation via the sphere isometry confirms the qualitative conclusions.
 
-**Keywords**: concentration of measure, cohort boundaries, probability simplex, Lévy's lemma, brand perception, high-dimensional geometry, Spectral Brand Theory
+**Keywords**: concentration of measure, cohort boundaries, probability simplex, Lévy's lemma, brand perception, high-dimensional geometry
 
 ---
 

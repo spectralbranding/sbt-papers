@@ -23,7 +23,6 @@ meta:
   - dimensionality reduction
   - cascade constraints
   - forkability
-  - OrgSchema Theory
   abstract: 'Organizational design frameworks prescribe configurations across multiple interdependent
     levels yet no existing theory quantifies the fundamental limits of exhaustive specification. This
     paper applies high-dimensional geometry to prove that comprehensive organizational specification is

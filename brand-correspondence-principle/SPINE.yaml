@@ -208,7 +208,7 @@ methods:
     type: simulation
     inputs: [O1]
     outputs: [F1]
-    code_anchor: "[internal path removed]"
+    code_anchor: "code/correspondence_loss_surface.py"
     reproducibility:
       seed: "fixed (published in script docstring + README)"
       version: "Python 3.12 + numpy; uv-run"

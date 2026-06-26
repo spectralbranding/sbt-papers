@@ -23,7 +23,6 @@ meta:
   - kissing number
   - perceptual threshold
   - high-dimensional geometry
-  - Spectral Brand Theory
   abstract: 'How many distinguishable brand positions can a market sustain? We formalize brand perception
     as points in $\mathbb{R}^8_+$ under the Aitchison metric [@aitchison-1986-statistical-analysis-compositional;
     @egozcue-2003-isometric-logratio-transformations], which is isometric to Euclidean distance on a 7-dimensional

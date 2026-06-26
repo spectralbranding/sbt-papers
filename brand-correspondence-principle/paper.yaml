@@ -123,7 +123,7 @@ methodology:
     as a function of the four regime-departure parameters, with mu a von Mises-Fisher mixture on the perception
     manifold calibrated to a real high-frequency dataset; fixed seed, >= 5000 draws per parameter combination.
   analysis:
-    software: [internal path removed]
+    software: code/correspondence_loss_surface.py
     method: deterministic given seed; no network
 acceptance:
 - claim_id: P1
