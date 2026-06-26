@@ -608,5 +608,3 @@ Table B1: Dimensional Capacity, Optimal Packings, and Kissing Numbers at $\varep
 *Notes*: FCC = face-centered cubic; HCP = hexagonal close packing. Optimality proved only in dimensions 1, 2, 3, 8, and 24.
 
 The jump in kissing number from 72 ($n = 6$) to 240 ($n = 8$) is exceptionally large — a factor of 3.33 for adding just 2 dimensions. This reflects the special algebraic structure of $E_8$ and is not characteristic of generic dimensional increases.
-
-*This paper is part of the Spectral Brand Theory research program. For the full atlas of 20+ interconnected papers, see [spectralbranding.com/atlas](https://spectralbranding.com/atlas).*

@@ -624,5 +624,3 @@ Solo condition (Russian):
 *Back-translation (English)*: "Evaluate the brand Yandex on eight dimensions of brand perception. For each dimension, rate how strongly Yandex communicates through that channel on a scale of 1 to 5, where 1 = Not at all, 2 = Slightly, 3 = Moderately, 4 = Strongly, 5 = Very strongly. [dimensions in Russian] Respond in JSON format with the following keys: [...]. Evaluate based on your knowledge of the brand. Provide only the JSON."
 
 The full prompt set for all four home-portfolio languages (French for L'Oreal, Chinese for Geely, Japanese for Toyota, Russian for Yandex) is available in the open-source toolkit at https://github.com/spectralbranding/sbt-papers/tree/main/r20-portfolio-ai.
-
-*This paper is part of the Spectral Brand Theory research program. For the full atlas of interconnected papers, see [spectralbranding.com/atlas](https://spectralbranding.com/atlas).*

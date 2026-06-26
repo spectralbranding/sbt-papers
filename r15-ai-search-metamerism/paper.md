@@ -525,5 +525,3 @@ SBT's central contribution is the formalization that emission is not perception.
 Observers with similar weight vectors cluster into cohorts (cf. [@wedel-2000-market-segmentation-conceptual]). Two observers encountering identical brand signals form structurally different brand convictions if their spectral profiles weight different dimensions. This observer-dependent architecture produces spectral metamerism: two structurally different brands can produce the same brand conviction in an observer whose spectral profile assigns near-zero weight to the dimensions on which those brands differ.
 
 The present study operationalizes this framework by treating each LLM as an observer cohort with an estimable spectral weight vector, and measuring the degree to which LLM weight vectors are concentrated on Economic and Experiential dimensions relative to the theoretical uniform baseline.
-
-*This paper is part of the Spectral Brand Theory research program. For the full atlas of 20+ interconnected papers, see [spectralbranding.com/atlas](https://spectralbranding.com/atlas).*
