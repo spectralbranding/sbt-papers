@@ -636,10 +636,6 @@ The practical consequence is a shift in the locus of portfolio strategy. The que
 
 Dmitry Zharnikov: Conceptualization, Data curation, Formal analysis, Investigation, Methodology, Project administration, Software, Validation, Writing — original draft, Writing — review and editing.
 
-## Funding
-
-This research did not receive any specific grant from funding agencies in the public, commercial, or not-for-profit sectors.
-
 ## Declaration of Competing Interests
 
 The author declares no competing interests.

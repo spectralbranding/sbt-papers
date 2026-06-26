@@ -90,7 +90,7 @@ This section reports a calibrated simulation, not a field test, and its purpose 
 
 ![](figures/figure1_tau_vs_distinctiveness.png)
 
-**Figure 1.** Perception-decay time constant versus cohort distinctiveness. The recovered relaxation time *τ* increases monotonically in distinctiveness *s* across 10,000 cohorts drawn from the public-anchor-calibrated Beta(2.59, 3.47) population (light points), tracking the model curve $\tau(s) = 1 / [\lambda_0(1 - \kappa s)]$ (solid) — the local linearization of the EC.3 curvature law; the five canonical public anchors are marked. Magnitudes are model properties under the documented constants; the robust claim is the monotone increase. Reproduced by [`code/forced_relaxation_demo.py`](https://github.com/spectralbranding/sbt-papers/blob/main/forming-a-perception/code/forced_relaxation_demo.py) at seed 20260620; the figure file is [`figures/figure1_tau_vs_distinctiveness.png`](https://github.com/spectralbranding/sbt-papers/blob/main/forming-a-perception/figures/figure1_tau_vs_distinctiveness.png).
+**Figure 1.** Perception-decay time constant versus cohort distinctiveness. The recovered relaxation time *τ* increases monotonically in distinctiveness *s* across 10,000 cohorts drawn from the public-anchor-calibrated Beta(2.59, 3.47) population (light points), tracking the model curve $\tau(s) = 1 / [\lambda_0(1 - \kappa s)]$ (solid) — the local linearization of the EC.3 curvature law; the five canonical public anchors are marked. Magnitudes are model properties under the documented constants; the robust claim is the monotone increase. Reproduced by [`code/forced_relaxation_demo.py`](https://github.com/spectralbranding/sbt-papers/blob/main/forming-a-perception/code/forced_relaxation_demo.py) at seed 20260620.
 
 **Table 1.** Calibrated Demonstration — Recovered Relaxation Time and Maintenance Budget by Distinctiveness.
 
@@ -133,7 +133,9 @@ One companion computation script, deterministic, dependency-light (NumPy and Mat
 
 AI assistants (Claude Opus 4.8, Gemini 2.5 Pro, Grok 4.3) were used for initial literature search, for software development — implementing and running the companion computation script that reproduces the paper's calibrated demonstration — and for editorial refinement; all theoretical claims, propositions, and interpretations are the author's sole responsibility. The companion script is the fixed-seed forced-relaxation demonstration (`code/forced_relaxation_demo.py`).
 
-CRediT contributions: Dmitry Zharnikov — conceptualization, methodology, software, formal analysis, investigation, writing (original draft), writing (review and editing).
+## Author Contributions (CRediT)
+
+Dmitry Zharnikov — conceptualization, methodology, software, formal analysis, investigation, writing (original draft), writing (review and editing).
 
 ## Electronic Companion
 

@@ -472,10 +472,6 @@ AI assistants (Claude Opus 4.8, Grok 4.20, Gemini 2.5 Pro) were used for initial
 
 Dmitry Zharnikov: Conceptualization, Data curation, Formal analysis, Investigation, Methodology, Project administration, Software, Validation, Writing — original draft, Writing — review and editing.
 
-## Funding
-
-This research did not receive any specific grant from funding agencies in the public, commercial, or not-for-profit sectors.
-
 ## Data Availability
 
 Experiment data (9,925 observations) are archived at https://doi.org/10.57967/hf/8380 (HuggingFace) and https://doi.org/10.5281/zenodo.19555282 (Zenodo). The dataset contains direct-rating, recommendation-prompt, multi-turn conversation, native-language ablation, and prompt-location ablation observations across 13 models from 7 training traditions. The open-source toolkit implementing the SBT computational pipeline is available at https://github.com/spectralbranding/sbt-framework.

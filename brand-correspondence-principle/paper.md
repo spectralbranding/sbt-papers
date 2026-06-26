@@ -180,7 +180,9 @@ The companion computation script (`code/correspondence_loss_surface.py`) is dete
 
 AI assistants (Claude Opus 4.8, Gemini 2.5 Pro) were used for initial literature search, for software development — implementing and running the companion computation script that reproduces the paper's reported numerical and simulation results — and for editorial refinement; all theoretical claims, propositions, and interpretations are the author's sole responsibility. The companion script is the fixed-seed Monte Carlo decision-loss surface (`code/correspondence_loss_surface.py`).
 
-CRediT contributions: Dmitry Zharnikov — conceptualization, methodology, software, formal analysis, investigation, writing (original draft), writing (review and editing).
+## Author Contributions (CRediT)
+
+Dmitry Zharnikov — conceptualization, methodology, software, formal analysis, investigation, writing (original draft), writing (review and editing).
 
 ## References
 
