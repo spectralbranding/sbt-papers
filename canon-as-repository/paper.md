@@ -8,8 +8,6 @@ DOI: [10.5281/zenodo.19355800](https://doi.org/10.5281/zenodo.19355800)
 
 Working Paper v1.1.0 – March 2026 (revised June 2026)
 
----
-
 ## Abstract
 
 Creative intellectual property management is the conspicuous exception among mature domains of complex designed systems: engineering, medicine, software, and scientific publishing have each independently developed formal mechanisms to verify that artifacts satisfy their specifications; creative IP has not. Transmedia franchises accumulate contradictions as intellectual property is rendered across novels, films, games, and merchandise because no formal specification governs what the story *is* independently of how it is expressed. Building on transmedia storytelling theory [@jenkins-2006-convergence-culture-where; @jenkins-2011-august-1-transmedia; @ryan-2001-narrative-as-virtual; @ryan-2015-transmedia-storytelling-industry; @dena-2009-transmedia-practice-theorising], world-building research [@wolf-2012-building-imaginary-worlds], and the rendering problem framework [@zharnikov-2026l-rendering-problem-genetic], this paper proposes a specification-driven architecture to close the gap. The canonical specification is reconceived as a version-controlled repository: editions are tagged commits; translations and adaptations are forks; canon governance operates through pull requests; and consistency validation functions as continuous integration. Style is a rendering parameter rather than a property of the specification; actors and translators function as rendering operators; and artificial intelligence clarifies the authorship question by distinguishing specification (the creative act) from rendering (the craft act). Seven testable propositions address franchise consistency, IP licensing as fork governance, and a future in which audiences become renderers — generating personalized expressions from a published canonical specification.
@@ -39,8 +37,6 @@ This paper advances three contributions:
 3. *(Media-studies relevance)* The framework reframes longstanding debates in transmedia and fan studies — canonicity, retcons, fix-it fics, the legitimacy of adaptation — as governance phenomena, and clarifies the authorship question raised by generative AI by locating originality in specification rather than rendering.
 
 Git version control semantics are proposed as the implementation language not because creative IP IS software, but because software has developed the most widely adopted and well-understood formalization of versioning, branching, validation, and governance — a formalization that creative IP management currently lacks. The contribution is the gap, not the tool (Section 8.1).
-
----
 
 ## 2. Theoretical Foundation
 
@@ -96,8 +92,6 @@ Fan studies has developed a parallel tradition for analyzing how audiences negot
 
 This paper's architectural treatment of canon complements rather than replaces fan-studies analysis. Fan studies treats canon as a social negotiation — a set of contested meanings co-produced by creators, industries, and audiences. This paper treats canon as an engineering specification — a structured artifact with version history, governance procedures, and consistency requirements. The two framings address different objects: fan studies describes how audiences *experience and contest* canon; this paper proposes how producers *maintain and govern* it. A fan community that produces "fix-it fics" correcting an unwanted character death is engaged in social negotiation; in architectural terms, the same community is generating specification-divergent forks. Both framings capture something real. The architectural account makes the governance structure legible; fan studies makes the cultural politics legible. Neither is sufficient alone.
 
----
-
 ## 3. The Specification Layer
 
 ### 3.1 What Belongs in the Specification
@@ -126,13 +120,11 @@ This criterion is not always easy to apply. Character appearance belongs in the 
 
 The boundary is a design decision made by the specification's maintainers. Moving an element from rendering to specification increases consistency but reduces renderer freedom; moving it the other way increases freedom but reduces cross-rendering consistency. This trade-off is itself a governance question, addressed through the pull request mechanism described in Section 4.3.
 
----
-
 ## 4. Git Semantics for IP Lifecycle
 
 The central architectural claim of this paper is that version control semantics map structurally onto intellectual property lifecycle operations. Table 1 presents the mapping; the subsections that follow develop each element.
 
-Table 1: Git-to-IP Semantic Mapping.
+**Table 1.** Git-to-IP Semantic Mapping.
 
 | Git Concept | IP Lifecycle Operation | Example |
 |---|---|---|
@@ -153,7 +145,7 @@ Table 1: Git-to-IP Semantic Mapping.
 
 Table 2 places the proposed architecture in cross-domain context, showing that the consistency verification construct proposed here is not an innovation borrowed from software but a missing instance of a construct that multiple mature domains of complex designed systems have independently developed.
 
-Table 2: Consistency Verification Constructs Across Design Domains.
+**Table 2.** Consistency Verification Constructs Across Design Domains.
 
 | Design Domain | Verification Construct | Formalized | Mechanism |
 |---|---|---|---|
@@ -228,8 +220,6 @@ In the canon repository architecture, these approaches correspond to different m
 
 The canon repository architecture does not prescribe a resolution strategy; it provides the tooling to detect, record, and resolve contradictions transparently — preserving whatever approach the franchise's governance selects.
 
----
-
 ## 5. Rendering as Parameterized Projection
 
 ### 5.1 Medium as Dimensional Subspace
@@ -272,8 +262,6 @@ Large language models already render prose from structured prompts; image and vo
 
 Netflix's *Bandersnatch* (Black Mirror, 2018) represents an early partial implementation: viewer choices navigate branching narrative paths within a fixed specification. The specification (character psychology, world rules, theme of determinism) remained author-controlled; the viewer parameterized the rendering by selecting path branches. The experiment demonstrated both the appeal and the limits of audience-driven rendering without full specification publication — viewers controlled traversal order but not specification content, and the branching structure itself was a rendering decision, not a specification change.
 
----
-
 ## 6. AI in the Specification-Rendering Architecture
 
 ### 6.1 AI in Specification
@@ -305,8 +293,6 @@ This mirrors a general pattern in observer-relative perception frameworks: the s
 **Proposition 7.** *Observer-specific rendering — the generation of personalized renderings from a canonical specification, parameterized by observer preferences, language, medium, and reception context — preserves specification-level consistency while maximizing rendering-level accessibility.*
 
 The near-term trajectory of streaming television offers a concrete instantiation: Disney+'s localized dubbing infrastructure already renders a single canonical specification — the MCU episode — into dozens of language-specific versions simultaneously, each using different vocal performance operators while preserving specification-level character consistency. The next step, currently in development across several studios, extends parameterization to pacing (longer or shorter cuts), accessibility features (audio description, signed rendering), and eventually AI-generated alternatives for elements like background dialogue — all governed by the same canonical specification, all required to pass the same consistency validators.
-
----
 
 ## 7. Industry Applications
 
@@ -343,8 +329,6 @@ Korean webtoon-to-K-drama adaptations represent a different rendering model. The
 
 These models demonstrate that the architecture is not culturally prescriptive: it provides infrastructure within which any consistency policy — from strict canonicity to deliberate looseness — can be implemented and governed transparently.
 
----
-
 ## 8. Discussion
 
 ### 8.1 The Gap, Not the Tool
@@ -357,7 +341,7 @@ Git semantics are proposed as the implementation because they provide the most w
 
 The specification-driven architecture for creative IP is an instance of the rendering problem [@zharnikov-2026l-rendering-problem-genetic] applied to a new domain. The structural pattern — specification, rendering, perception, with specification gap at each transition — holds across five domains now identified:
 
-Table 3: The Rendering Problem Across Five Domains.
+**Table 3.** The Rendering Problem Across Five Domains.
 
 | Domain | Specification | Rendering | Perception |
 |---|---|---|---|
@@ -393,8 +377,6 @@ Several limitations constrain the scope and applicability of the proposed archit
 
 Four directions merit investigation: (1) **Empirical validation** — applying the canon repository architecture to a real franchise, building validators, and measuring whether the architecture improves consistency compared to traditional editorial oversight. (2) **Prototype tooling** — a proof-of-concept combining version control with narrative-specific validators and audience simulation. (3) **Specification extraction** — semi-automated methods for extracting canonical specifications from existing renderings using NLP, making the architecture applicable to existing franchises. (4) **Formal metrics for specification gap** — information-theoretic measures of how much information a rendering contains beyond what the specification determines, enabling quantitative comparison across media and franchises.
 
----
-
 ## 9. Conclusion
 
 This paper has argued that the franchise consistency problem — the accumulation of contradictions across transmedia renderings of creative intellectual property — is a structural consequence of the rendering problem: the pattern in which a specification of bounded complexity is rendered into an implementation of vastly greater complexity. The consistency problem persists because franchises lack a formal specification layer. Story bibles are unversioned, unvalidated, and medium-coupled. The result is the familiar syndrome of retcons, contradictions, and canon disputes.
@@ -404,8 +386,6 @@ The structural diagnosis — that creative IP is missing a consistency-verificat
 For television and new media scholarship, the architecture offers three advances. Theoretically, it bridges transmedia storytelling theory with platform governance by supplying a formal language for canon as infrastructure — one that television studies can use to analyze continuity crises, retcon controversies, and streaming-era franchise expansion. Practically, it suggests concrete tooling — versioned canon repositories, automated consistency validators, simulated audience testing — that could reduce production friction and licensing disputes across screen industries. Politically, it reframes audience participation: when specifications are published, audiences equipped with capable rendering tools become co-creators rather than mere interpreters, shifting power from centralized IP owners toward distributed cultural production.
 
 Most fundamentally, the specification-rendering architecture clarifies the authorship question at a moment when that question has become urgent. Authorship is specification: the creative act of deciding WHAT the story is. Rendering is the craft act of deciding HOW the story is expressed. AI is rapidly becoming capable of rendering; specification remains a distinctively human creative activity. The author's value is not in the prose, the image, or the performance. It is in the specification — the structured creative judgment that constrains all renderings and outlives every one of them.
-
----
 
 ## Acknowledgments
 
@@ -423,8 +403,6 @@ The canon-as-repository demonstration referenced in Section 4 is publicly availa
 ## Conflict of Interest
 
 The author declares no competing interests.
-
----
 
 ## Changelog
 

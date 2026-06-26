@@ -8,8 +8,6 @@ DOI: [10.5281/zenodo.20741256](https://doi.org/10.5281/zenodo.20741256)
 
 Working Paper v1.0.0 – March 2026 (revised June 2026)
 
----
-
 ## Abstract
 
 Aaker's Brand Identity Model [-@aaker-1996-building-strong-brands] remains the most widely taught brand management framework, yet it relies on practitioner judgment at three critical points: which identity perspectives matter, which elements are core versus extended, and how to resolve the identity-image gap. This paper proposes Spectral Brand Theory (SBT) as a conceptual formalization that preserves Aaker's multi-perspectival structure while adding parametric precision, testability, and computational operability. The paper demonstrates that Aaker's four perspectives map onto eight parametrized perceptual dimensions; that core and extended elements correspond to empirically discoverable spectral weights; and that the identity-image gap becomes a formally specified rendering problem. The formalization advances a threefold contribution: an explicit perspective-to-dimension mapping showing why eight dimensions are required, spectral counterparts for Aaker's core/extended distinction and brand essence, and observer-specific predictions the original framework cannot express. Applying both frameworks illustratively to Patagonia, IKEA, and Tesla shows that SBT reproduces Aaker's strategic diagnoses while generating new predictions about coherence type, disruption response, and AI operability. The relationship mirrors behavioral economics to classical economics: the predecessor is preserved as a limiting case within a more general theory.
@@ -37,8 +35,6 @@ These are not criticisms. They are boundaries --- and boundaries that Aaker hims
 This paper argues that it has. Spectral Brand Theory (SBT; Zharnikov [-@zharnikov-2026-spectral-brand-theory-computational-framework]) provides a mathematical formalization of Aaker's framework that converts each of the three judgment-dependent decisions into parametrized, testable, computationally executable operations. The relationship between the two frameworks is not adversarial. It mirrors the relationship between behavioral economics and classical economics [@kahneman-1979-prospect-theory-analysis]: the predecessor framework is not replaced but preserved as a special case within a more general theory. Classical economics describes how rational agents should behave; behavioral economics describes how they actually behave. Aaker's model describes what a brand identity should be; SBT describes how brand identity is actually perceived by heterogeneous observers.
 
 The contribution is threefold. First, this paper provides an explicit mapping between Aaker's four perspectives and SBT's eight perceptual dimensions, showing why eight dimensions are needed to capture what four perspectives bundle [@zharnikov-2026-why-eight-completeness-necessity-sbt]. Second, it demonstrates that Aaker's core/extended distinction, brand essence, and value proposition architecture all have formal spectral counterparts that make them empirically discoverable rather than subjectively assigned. Third, it derives four falsifiable propositions that differentiate SBT predictions from Aaker's framework and applies both to three illustrative brands to show where additional observer-specific predictions become available. The worked examples in Section 6 reproduce Aaker's strategic diagnoses while generating coherence-type predictions the original framework cannot express; the limiting-case relationship is stated as a working geometric argument in Section 7.1, with formal metric-space conditions reserved for follow-on work.
-
----
 
 ## 2. Aaker's Brand Identity Model: A Sympathetic Reading
 
@@ -73,8 +69,6 @@ Kapferer's [-@kapferer-2008-new-strategic-brand] Brand Identity Prism provides a
 Both frameworks recognize that brands are multi-dimensional. Both resist reduction to a single variable. Both acknowledge that different audiences may perceive different facets. The critical limitation they share is that neither parameterizes the observer: both describe the brand's identity structure but do not formalize how or why different observers construct different meanings from the same identity signals. Kapferer's "reflection" facet gestures toward the observer, but it remains a property of the brand (the brand's typical buyer image), not a model of the observer's perceptual apparatus.
 
 This is the boundary that invites formalization.
-
----
 
 ## 3. Three Boundaries That Invite Formalization
 
@@ -114,8 +108,6 @@ The count is not stipulated but derived. Zharnikov [-@zharnikov-2026-why-eight-c
 
 This paper inherits the count from Zharnikov [-@zharnikov-2026-why-eight-completeness-necessity-sbt] and treats Aaker's four perspectives as a coarser partition of the same perceptual space --- one that bundles channels that can, and often do, behave independently. The mapping in Table 1 makes this relationship explicit. The theoretical question of whether different cultural or market contexts might require a different dimensional basis is a legitimate open problem; Zharnikov [-@zharnikov-2026-why-eight-completeness-necessity-sbt] addresses it as a boundary condition on the framework's universality claim.
 
----
-
 ## 4. The Spectral Formalization
 
 SBT [@zharnikov-2026-spectral-brand-theory-computational-framework] proposes that brand perception is irreducibly observer-dependent: different observer cohorts perceive structurally different brands from identical signal environments. The framework decomposes brand signals across eight perceptual dimensions, defines observer cohorts through formal spectral profiles, and models brand perception as probabilistic cloud formation that collapses into conviction through evidence accumulation. This section presents the explicit mapping between Aaker's conceptual architecture and SBT's formal apparatus.
@@ -124,7 +116,7 @@ SBT [@zharnikov-2026-spectral-brand-theory-computational-framework] proposes tha
 
 Aaker's four identity perspectives each bundle multiple independent perceptual channels. SBT unbundles them into eight parametrized dimensions, each representing a distinct channel through which observers perceive brand meaning [@zharnikov-2026-why-eight-completeness-necessity-sbt].
 
-Table 1: Mapping Between Aaker's Four Identity Perspectives and SBT's Eight Perceptual Dimensions.
+**Table 1.** Mapping Between Aaker's Four Identity Perspectives and SBT's Eight Perceptual Dimensions.
 
 | Aaker Perspective | What It Bundles | SBT Dimensions |
 |:---|:---|:---|
@@ -135,7 +127,7 @@ Table 1: Mapping Between Aaker's Four Identity Perspectives and SBT's Eight Perc
 
 *Notes*: Dimension order: Semiotic, Narrative, Ideological, Experiential, Social, Economic, Cultural, Temporal. Semiotic appears across Brand as Product, Brand as Person, and Brand as Symbol, reflecting its role as the primary visual-identity channel; Cultural appears in both Brand as Organization and Brand as Symbol because cultural codes function simultaneously as an organizational asset and a symbolic resource. The Narrative dimension captures narrative processing as a distinct cognitive route through which consumers build brand connections, as distinct from analytical processing [@escalas-2004-narrative-processing-building-consumer]; this grounds the Brand as Person mapping in an empirically established perceptual mechanism rather than asserting it by stipulation. Mapping derived from Zharnikov [-@zharnikov-2026-spectral-brand-theory-computational-framework]; completeness and necessity of the eight dimensions established in Zharnikov [-@zharnikov-2026-why-eight-completeness-necessity-sbt].
 
-Figure 1: Projection from Aaker's Four Perspectives to SBT's Eight Perceptual Dimensions (Theorem 1, Appendix A).
+**Figure 1.** Projection from Aaker's Four Perspectives to SBT's Eight Perceptual Dimensions (Theorem 1, Appendix A).
 
 ```{.mermaid width=60%}
 flowchart LR
@@ -162,7 +154,7 @@ Similarly, "Brand as Symbol" bundles visual identity (Semiotic), cultural codes 
 
 Table 2 illustrates how the decomposition changes the diagnostic question for each perspective.
 
-Table 2: How Dimensional Decomposition Changes the Brand Diagnostic Question.
+**Table 2.** How Dimensional Decomposition Changes the Brand Diagnostic Question.
 
 | Aaker Perspective | Bundled Diagnostic | SBT Decomposed Diagnostic |
 |:---|:---|:---|
@@ -201,7 +193,7 @@ This reframing has practical consequences. Under Aaker's framework, the strategi
 
 Aaker's value proposition framework distinguishes three types of benefits: functional (what the product does), emotional (how the product makes the consumer feel), and self-expressive (what the product says about the consumer). SBT maps these onto dimensional activation patterns.
 
-Table 3: Mapping Between Aaker's Benefit Types and SBT's Dimensional Activation Patterns.
+**Table 3.** Mapping Between Aaker's Benefit Types and SBT's Dimensional Activation Patterns.
 
 | Aaker Benefit Type | SBT Dimensional Activation |
 |:---|:---|
@@ -226,8 +218,6 @@ SBT introduces the observer spectral profile: a formal parameter set that define
 Cohorts are perceptual groupings, not demographic segments. This distinction is fundamental. Traditional market segmentation [@wedel-2000-market-segmentation-conceptual] divides audiences by observable characteristics --- age, income, geography, psychographic cluster. SBT cohorts are clusters in spectral-profile space: groups of observers whose perceptual profiles are similar enough that they form structurally similar perception clouds from the same signal environment. Two observers who share every demographic characteristic may belong to different SBT cohorts if their dimensional weights and priors diverge. Two observers from entirely different demographics may share a cohort if their spectral profiles converge.
 
 The methodological ancestry of observer profiling traces to INDSCAL [@carroll-1970-analysis-individual-differences], which demonstrated that individuals weight perceptual dimensions differently when evaluating stimuli, and to latent class segmentation methods [@wedel-2000-market-segmentation-conceptual], which cluster consumers into perceptual segments post hoc rather than imposing a priori demographic boundaries. SBT extends this ancestry by integrating individual-difference weighting with multi-dimensional brand perception and non-ergodic temporal dynamics into a unified computational framework.
-
----
 
 ## 5. What the Formalization Adds
 
@@ -267,7 +257,7 @@ This computational implementability does not replace practitioner judgment. It a
 
 Aaker prescribes consistency. SBT taxonomizes it. The five-type coherence classification [@zharnikov-2026-spectral-brand-theory-computational-framework] distinguishes brands by the structural relationship between their observer cohorts' perception clouds.
 
-Table 4: Five Coherence Types and Their Disruption Response Patterns.
+**Table 4.** Five Coherence Types and Their Disruption Response Patterns.
 
 | Coherence Type | Pattern | Disruption Response | Exemplar |
 |:---|:---|:---|:---|
@@ -279,7 +269,7 @@ Table 4: Five Coherence Types and Their Disruption Response Patterns.
 
 *Notes*: Coherence type classifications derived from Zharnikov [-@zharnikov-2026-spectral-brand-theory-computational-framework]. Exemplar brands are illustrative, not exhaustive. Recovery conditions following coherence shocks are formalized by the $\mu > \lambda$ threshold inequality in Zharnikov [-@zharnikov-2026-restoring-perceptual-separability-after-coherence].
 
-Table 5: Comparison of Brand Identity Frameworks Across Structural Dimensions.
+**Table 5.** Comparison of Brand Identity Frameworks Across Structural Dimensions.
 
 | Dimension | Aaker [-@aaker-1996-building-strong-brands] | Hatch and Schultz [-@hatch-2001-strategic-stars-aligned-your] | Balmer and Greyser [-@balmer-2002-managing-multiple-identities-corporation] | Kapferer [-@kapferer-2008-new-strategic-brand] | SBT |
 |:---|:---|:---|:---|:---|:---|
@@ -314,8 +304,6 @@ The formalization in this section claims that SBT adds predictive and diagnostic
 Aaker's framework suffices when observer cohorts are approximately spectrally homogeneous --- when the primary audiences of a brand weight the eight dimensions in roughly similar proportions. Under this condition, the multi-cohort perception cloud collapses to a near-point in spectral space, the identity-image gap approaches zero for all cohorts simultaneously, and the formalization reduces to Aaker's single-identity model (Section 7.1). Brands operating in culturally homogeneous markets with low consumer heterogeneity, stable category conventions, and high-design signal environments approximate this condition.
 
 Three explicit limitations on the formal relationship also bear stating. First, the limiting-case theorem in Appendix A applies to brand-identity content, not measurement instruments. Aaker's empirical measurement instruments (the Brand Personality Scale; Coleman's [-@coleman-2011-service-brand-identity-definition] operationalization) use different scales than SBT spectral profiles; Appendix A's $T$ matrix is a conceptual mapping, not a psychometric converter. Second, the weights in $T$ are illustrative: they specify which SBT dimensions contribute to each Aaker perspective but do not specify the magnitudes. Empirical calibration of $T$ requires cross-validated measurement data. Third, the mapping is non-invertible: because $T$ collapses eight dimensions to four, an Aaker representation cannot be expanded back to a unique SBT profile. Practitioners who have only Aaker-level measurements cannot reconstruct SBT-level diagnostics from them; the informational loss is structural, not a measurement artifact.
-
----
 
 ## 6. Worked Examples: Aaker and SBT Applied to the Same Brands
 
@@ -357,8 +345,6 @@ The predictive payoff is direct. Patagonia's Identity coherence and Tesla's Inco
 
 The cross-case generalization is therefore: the limiting case of Aaker --- observer-homogeneous, high-design-signal brands like IKEA --- is the case where the framework performs best. The further a brand moves from that prototype, in terms of ideological polarization, ambient-signal dominance, or cultural heterogeneity of its audiences, the larger the SBT-Aaker diagnostic divergence. The formalization is least redundant precisely where brand management is most difficult.
 
----
-
 ## 7. Discussion: Implications and Invitation
 
 ### 7.1 The Relationship Between Frameworks
@@ -393,13 +379,9 @@ A formal gap also merits explicit acknowledgment: the claim that Aaker's framewo
 
 SBT is offered as a formalization that makes Aaker's framework testable, measurable, and computationally operable --- preserving the multi-perspectival structure that makes it powerful while supplying the parametric precision that empirical validation and portfolio-scale analysis require. The relationship between the two frameworks is like that between architectural blueprints and structural engineering calculations: the blueprints describe what the building should look like; the calculations determine whether it can stand. Both are necessary. Neither is sufficient alone. The formalization is offered in the spirit of extending Aaker's foundation, not replacing it.
 
----
-
 ## Acknowledgments
 
 AI assistants (Claude Opus 4.8, Grok 4.20, Gemini 2.5 Pro) were used for initial literature search and editorial refinement; all theoretical claims, propositions, and interpretations are the author's sole responsibility.
-
----
 
 ## References
 

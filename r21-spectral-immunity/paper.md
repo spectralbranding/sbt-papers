@@ -8,8 +8,6 @@ DOI: [10.5281/zenodo.19765401](https://doi.org/10.5281/zenodo.19765401)
 
 Working Paper v1.1.0 – April 2026 (revised June 2026)
 
----
-
 ## Abstract
 
 Brand portfolio theory predicts perceptual interference when observers recognize shared corporate ownership, requiring only an open awareness gate. Large language models (LLMs), whose training data permanently saturate this gate, provide a critical test. This paper formalizes spectral interference across eight perceptual dimensions and tests three propositions in a fully crossed experiment with 13 LLMs from seven training traditions, 40 brands, seven portfolio archetypes, and four prompt modalities (N = 9,925). Using the Dimensional Concentration Index and two-one-sided equivalence tests, the results reveal near-zero portfolio-induced change (mean $|\Delta\text{DCI}|$ = .26; equivalence holds for 18/20 brands). Variance decomposition attributes .1% of perceptual concentration to portfolio framing versus 37.4% to brand identity. The sole exception occurs in multi-turn conversation for a reverse-aspiration structure (Geely Auto, d = -1.11), where extended context converts coordination information into output inferences. These results resolve the awareness-gate paradox: awareness is necessary but insufficient. A bandwidth constraint rooted in rate-distortion theory and rational inattention is also required. General-purpose LLMs are rationally inattentive to organizational-coordination signals because these contribute negligibly to output-fidelity reconstruction. As AI mediation of brand interactions grows, portfolio architecture becomes strategically invisible to the general-purpose LLM class tested here.
@@ -30,8 +28,7 @@ This paper consolidates the theoretical framework [@zharnikov-2026-hf-r20-portfo
 
 The resolution connects to a broader pattern. Portfolio framing is an organizational-coordination specification -- it tells the observer *how brands are organized* [@aaker-2000-brand-leadership]. Brand perception, by contrast, reflects *what each brand produces* across perception dimensions. AI observers encode brand output and discard coordination context, including corporate ownership, portfolio membership, and parent-brand associations. This output-coordination distinction parallels the specification inversion identified across multiple domains [@farach-2026-ai-as-coordinationcompressing; @mintzberg-1979-structuring-organizations-synthesis]: organizations that specify coordination mechanisms (the DO layer) without specifying output requirements (the WHAT layer) discover that AI compresses the coordination layer first.
 
-
-**Literature Review**
+## Literature Review
 
 ***Brand Portfolio Architecture and Interference***
 
@@ -53,8 +50,7 @@ Existing LLM brand perception studies have validated AI instruments against huma
 
 LLM brand responses show systematic dimensional patterns. Across 24 models from seven training traditions, cross-model cosine similarity for brand profiles reaches .977, with systematic compression of the Cultural, Temporal, and Economic dimensions [@zharnikov-2026-dimensional-collapse-ai-mediated-search]. This pattern has a natural interpretation under rate-distortion theory: a compressed encoder discards the dimensions that contribute least to output reconstruction fidelity, and Cultural, Temporal, and Social dimensions are precisely the dimensions most dependent on organizational and social context. Germani and Spitale [-@germani-2025-source-framing-triggers] showed that source framing triggers systematic bias in LLMs, but portfolio framing is a content-level manipulation rather than a social-attribution manipulation, which may explain divergent results.
 
-
-**Theoretical Framework**
+## Theoretical Framework
 
 ***Spectral Brand Theory: Key Constructs***
 
@@ -109,7 +105,7 @@ quadrantChart
     Modern LLM: [0.85, 0.2]
 ```
 
-Figure 1: The bandwidth-constraint mechanism. Spectral immunity (quadrant 4, lower right) emerges when awareness saturates while encoding bandwidth remains constrained, decoupling the awareness gate from the interference term. Human observers pre-disclosure (quadrant 2) lack sufficient awareness for interference; post-disclosure (quadrant 1) both conditions are met and interference occurs. Naive AI (quadrant 3) lacks both. Modern general-purpose LLMs (quadrant 4) have maximal awareness but insufficient bandwidth -- the spectral immunity region.
+**Figure 1.** The bandwidth-constraint mechanism. Spectral immunity (quadrant 4, lower right) emerges when awareness saturates while encoding bandwidth remains constrained, decoupling the awareness gate from the interference term. Human observers pre-disclosure (quadrant 2) lack sufficient awareness for interference; post-disclosure (quadrant 1) both conditions are met and interference occurs. Naive AI (quadrant 3) lacks both. Modern general-purpose LLMs (quadrant 4) have maximal awareness but insufficient bandwidth -- the spectral immunity region.
 
 ***Propositions***
 
@@ -141,8 +137,7 @@ The interference formalism yields three testable propositions that jointly deter
 
 The three propositions can be unified through a distinction between two layers of organizational specification. *Output specification* (the WHAT layer) defines what a brand produces across perception dimensions -- its emission profile, quality gates, and category positioning. *Coordination specification* (the DO layer) defines how the organization is structured -- corporate ownership, portfolio membership, parent-brand relationships, and organizational hierarchy [@mintzberg-1979-structuring-organizations-synthesis; @farach-2026-ai-as-coordinationcompressing]. This distinction maps onto Mintzberg's [-@mintzberg-1979-structuring-organizations-synthesis] division between operating-core outputs (the WHAT) and administrative-component coordination (the DO). Portfolio framing is a pure DO-layer signal: it communicates organizational structure without changing what the brand produces. Proposition 2 predicts that AI observers -- whose compressed encodings optimize for output reconstruction rather than coordination fidelity -- will discard the DO layer and retain only the WHAT layer. The empirical support for this prediction is examined in the Discussion.
 
-
-**Method**
+## Method
 
 ***Design***
 
@@ -154,7 +149,7 @@ An additional extension with 20 brands drawn from published marketing research [
 
 ***Brands and Portfolios***
 
-Table 1: Portfolio Composition and Predicted Interference Direction.
+**Table 1.** Portfolio Composition and Predicted Interference Direction.
 
 | Portfolio | Archetype | Brands | Predicted Direction |
 |-----------|-----------|--------|---------------------|
@@ -170,7 +165,7 @@ Table 1: Portfolio Composition and Predicted Interference Direction.
 
 ***Models***
 
-Table 2: Model Panel -- 13 Models From 7 Training Traditions.
+**Table 2.** Model Panel -- 13 Models From 7 Training Traditions.
 
 | Model | Provider | Training Tradition | Deployment |
 |-------|----------|-------------------|------------|
@@ -222,14 +217,13 @@ Core hypotheses derive from the interference formalism and the awareness gate pa
 
 *H9 (Home-model amplification).* The native-language effect is strongest when model training tradition matches the language of framing.
 
-
-**Results**
+## Results
 
 ***Main Finding: Spectral Immunity***
 
 The headline finding is clear: across all portfolios and prompt modalities, portfolio framing produces near-zero change in brand perception profiles. TOST equivalence is confirmed for 18/20 brands (mean $|\Delta\text{DCI}|$ = .26), and 0/20 brands show FDR-significant portfolio effects in direct rating conditions. Variance decomposition (Table 4) attributes .1% of DCI variance to the portfolio condition -- nearly three orders of magnitude less than the 37.4% attributable to brand identity. These two results jointly constitute the core empirical support for H5 (Spectral immunity, supported) and Proposition 2 (Awareness gate sufficiency inversion, supported). The archetype-by-archetype tests that follow are presented for completeness; none materially qualifies the headline immunity finding.
 
-Table 3: DCI by Brand and Condition.
+**Table 3.** DCI by Brand and Condition.
 
 | Portfolio | Brand | Solo DCI | Port DCI | Delta | t | p | d | TOST p | Equivalent |
 |-----------|-------|----------|----------|-------|---|---|---|--------|------------|
@@ -258,7 +252,7 @@ Table 3: DCI by Brand and Condition.
 
 ***Variance Decomposition***
 
-Table 4: Variance Decomposition of DCI.
+**Table 4.** Variance Decomposition of DCI.
 
 | Factor | % Variance |
 |--------|-----------|
@@ -295,7 +289,7 @@ Table 4: Variance Decomposition of DCI.
 
 The tradition-level analysis (Table 5) is necessarily exploratory: most traditions are represented by a single model, and tradition-level effects therefore cannot be distinguished from model-specific idiosyncrasy.
 
-Table 5: Sub-Group Analysis by Training Tradition.
+**Table 5.** Sub-Group Analysis by Training Tradition.
 
 | Tradition | Models (n) | Delta DCI | d | p |
 |-----------|-----------|-----------|---|---|
@@ -313,7 +307,7 @@ Table 5: Sub-Group Analysis by Training Tradition.
 
 Multi-turn conversation is the most ecologically valid condition and the modality where the largest individual effects appear. Four brands showed FDR-significant DCI shifts after portfolio reveal:
 
-Table 6: Multi-Turn Results -- FDR-Significant Brands (Turn 1 Solo vs. Turn 2 Post-Reveal).
+**Table 6.** Multi-Turn Results -- FDR-Significant Brands (Turn 1 Solo vs. Turn 2 Post-Reveal).
 
 | Brand | T1 DCI | T2 DCI | Delta | p | d |
 |-------|--------|--------|-------|---|---|
@@ -328,7 +322,7 @@ Table 6: Multi-Turn Results -- FDR-Significant Brands (Turn 1 Solo vs. Turn 2 Po
 
 An independent stimulus set of 20 brands drawn from published peer-reviewed marketing research (zero overlap with the main experiment) added 1,950 observations. The published-brand replication uses the same DCI metric (Equation 2) as the main experiment; the absolute values are lower because published brands have more balanced 8-dimension profiles (range .37 to 1.31 vs. 3.5 to 8.9 in Table 3). The TOST equivalence bounds of +/-1.0 DCI points apply to both tables; for Table 7 brands with baseline DCI < 1.0, a +/-1.0 bound is conservative relative to baseline -- any equivalent effect at Table 7 scale is therefore a stronger immunity claim, not a weaker one.
 
-Table 7: Published-Brand Extension -- Portfolio Immunity Test (N = 1,950).
+**Table 7.** Published-Brand Extension -- Portfolio Immunity Test (N = 1,950).
 
 | Brand | Parent | Solo DCI | Port DCI | Delta | d |
 |-------|--------|----------|----------|-------|---|
@@ -345,7 +339,7 @@ Table 7: Published-Brand Extension -- Portfolio Immunity Test (N = 1,950).
 
 *Notes*: DCI values in this table are lower in magnitude than Table 3 because published brands (drawn from peer-reviewed stimulus sets) tend to have more balanced, less concentrated profiles than the portfolio-specific brands in the main experiment. The DCI metric (Equation 2) is the same scale in both tables; the difference reflects profile concentration rather than a scale change. 0/10 FDR-significant at q = .05. TOST equivalence confirmed for all 10 brands within +/-1.0 DCI bounds. For brands with baseline DCI below 1.0, the +/-1.0 equivalence bound exceeds the baseline value itself, making the immunity claim conservative relative to scale. Audi (d = +.49, Volkswagen Group) echoes the suggestive Lexus finding: both involve premium differentiation within a mass-market parent portfolio. SEs for DCI means range from .03 to .12 across cells; full SE columns available in the online appendix.
 
-Figure 2: Forest plot of portfolio-framing effect sizes (Cohen's d) across archetypes and modalities. Vertical lines at +-1.0 demarcate the TOST equivalence bounds. Spectral immunity is visible as the convergence of d values toward zero across archetypes. Generated by `code/plot_forest_effect_sizes.py`.
+**Figure 2.** Forest plot of portfolio-framing effect sizes (Cohen's d) across archetypes and modalities. Vertical lines at +-1.0 demarcate the TOST equivalence bounds. Spectral immunity is visible as the convergence of d values toward zero across archetypes. Generated by `code/plot_forest_effect_sizes.py`.
 
 ![](figures/figure2_forest.png)
 
@@ -359,8 +353,7 @@ Figure 2: Forest plot of portfolio-framing effect sizes (Cohen's d) across arche
 
 All statistical analyses reported in Tables 3-7 are reproduced by `compute_dci.py` at `https://github.com/spectralbranding/sbt-papers/tree/main/r21-spectral-immunity/code/`. Fixed random seed: 42. Run command: `uv run python compute_dci.py`. Running the script reproduces all DCI means, TOST p-values, Cohen's d, and variance decomposition figures within the reported standard errors. Raw experiment data are archived at https://doi.org/10.57967/hf/8380 (HuggingFace) and https://doi.org/10.5281/zenodo.19555282 (Zenodo); the script reads from these archived sources and includes a stub demonstration against the canonical brand profiles and Table values for users who do not download the full dataset.
 
-
-**Discussion**
+## Discussion
 
 ***Theoretical Implications***
 
@@ -398,7 +391,7 @@ A fifth line of convergence comes from corporate finance. Li et al. [-@li-2011-c
 
 The AI-level immunity also parallels the firm-level conglomerate discount documented by Berger and Ofek [-@berger-1995-diversifications-effect-firm]: portfolio membership fails to add value both at the perceptual level for AI observers and at the financial level for diversified firms -- two distinct observer classes, one structural prediction. Both the conglomerate discount and spectral immunity reflect a shared underlying logic: portfolio architecture imposes a DO-layer coordination cost that is not recovered as a WHAT-layer output benefit, whether the observing system is a capital market or a language model.
 
-Table 8: Comparative frameworks for portfolio interference. The bandwidth-constraint mechanism is unique in predicting null effects at high awareness, distinguishing this paper from human-observer accounts.
+**Table 8.** Comparative frameworks for portfolio interference. The bandwidth-constraint mechanism is unique in predicting null effects at high awareness, distinguishing this paper from human-observer accounts.
 
 | Framework | Theoretical mechanism | Awareness gate role | Bandwidth role | Predicted interference | Tested at AI-observer scale? |
 |---|---|---|---|---|---|
@@ -453,8 +446,7 @@ Four extensions are warranted. First, validation of DCI against human perceptual
 
 *Falsification conditions.* Spectral immunity (H5) is falsified if any future study, using comparable methods and a panel of 7+ models from 3+ traditions, finds systematic portfolio-induced DCI shifts exceeding 2.0 DCI points with effect sizes d > .50 that survive multiple testing correction across 5+ portfolio archetypes and 3+ prompt modalities simultaneously. Proposition 2 (awareness gate sufficiency inversion) is falsified if human-observer experiments with experimentally varied awareness gates fail to produce interference above threshold while LLMs remain immune.
 
-
-**Conclusion**
+## Conclusion
 
 The central theoretical contribution of this paper is the resolution of the awareness-gate paradox through the introduction of a bandwidth constraint. Standard portfolio theory treats awareness of shared ownership as sufficient to trigger perceptual interference. For LLMs the awareness gate is permanently saturated, yet interference is absent. Awareness is necessary but not sufficient. Realization of interference also requires that the observer's encoding channel possess adequate capacity to propagate organizational-coordination (DO-layer) information into observable brand profiles (WHAT-layer). General-purpose LLMs, optimized for output reconstruction at the rate-distortion frontier, rationally allocate near-zero capacity to coordination signals. The empirical results -- mean $|\Delta\text{DCI}|$ = .26, .1% variance explained by portfolio condition, TOST equivalence for 18/20 brands -- provide strong support for this mechanism.
 
@@ -463,8 +455,6 @@ This bandwidth constraint generalizes rational inattention [@sims-2003-implicati
 Managerially, as AI-mediated brand interactions grow across recommendation, search, and conversation, portfolio architecture becomes strategically invisible to the general-purpose LLM class tested here. Investment should shift from orchestration across brands to crystalline specification of individual brand output characteristics. House-of-brands shielding and branded-house synergy are both nullified in these channels. The exception for reverse-aspiration structures in extended conversation -- Geely Auto (d = -1.11) -- is suggestive and warrants replication; if confirmed, it implies monitoring multi-turn interactions when portfolio logic runs counter to brand positioning.
 
 Spectral immunity reframes the central question in brand portfolio theory. The relevant question is not whether observers can be made aware of portfolio relationships -- they can -- but whether their encoding architecture allocates bandwidth to those relationships. For the rapidly growing class of general-purpose AI observers, the answer is no. Portfolio strategy must therefore adapt: in AI-mediated channels the strategic unit is the individual brand, not the portfolio. Future research establishing this asymmetry with human observers -- complementing search-based portfolio models [@ke-2022-model-product-portfolio] and the perceptual-instrument validity established by Li et al. [-@li-2024-frontiers-determining-validity] -- will determine the boundary conditions under which immunity holds and where it breaks.
-
----
 
 ## Acknowledgments
 
@@ -627,5 +617,4 @@ Solo condition (Russian):
 
 The full prompt set for all four home-portfolio languages (French for L'Oreal, Chinese for Geely, Japanese for Toyota, Russian for Yandex) is available in the open-source toolkit at https://github.com/spectralbranding/sbt-papers/tree/main/r20-portfolio-ai.
 
----
 *This paper is part of the Spectral Brand Theory research program. For the full atlas of interconnected papers, see [spectralbranding.com/atlas](https://spectralbranding.com/atlas).*

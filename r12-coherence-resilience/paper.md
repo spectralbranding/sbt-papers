@@ -8,19 +8,17 @@ DOI: [10.5281/zenodo.19208107](https://doi.org/10.5281/zenodo.19208107)
 
 Working Paper v1.1.0 – March 2026 (revised June 2026)
 
----
-
 ## Abstract
 
 Spectral Brand Theory classifies brands into five coherence types -- ecosystem, signal, identity, experiential asymmetry, and incoherent -- and predicts that coherence *type* determines crisis resilience better than coherence *score*. No formal derivation has connected this prediction to dynamics. This paper provides that derivation by analyzing the drift structures that different coherence types produce within the stochastic differential equation (SDE) framework of Zharnikov [-@zharnikov-2026-non-ergodic-brand-perception-diffusion]. Two characterizations of drift geometry -- isotropy and $k$-anisotropy -- yield three main results. Theorem 1 establishes that absorption probability decreases monotonically in drift isotropy: isotropic drift fields (ecosystem coherence) produce lower absorption risk than anisotropic or stochastic drift. Theorem 2 shows that recovery probability depends on dimension-specific drift, creating asymmetric vulnerability profiles -- crises on passive dimensions (e.g., the Economic dimension for Hermès) are disproportionately dangerous. Theorem 3 derives the full resilience ordering -- ecosystem > signal > identity > experiential asymmetry > incoherent -- from SDE geometry. The type-over-score principle is the central result: crisis survival depends on the minimum drift across dimensions, not the average, so two brands with identical total emission but different distributions have different resilience. The framework is applied to four documented crises and generates three falsifiable predictions.
 
 **Keywords**: crisis resilience, coherence type, brand stability, stochastic dynamics, drift geometry, non-ergodicity, Spectral Brand Theory
 
+---
+
 **JEL Classification**: M31, C65, D83
 
 **MSC Classification**: 60J60, 91B42
-
----
 
 ## 1. Introduction
 
@@ -35,8 +33,6 @@ This paper provides that derivation. The key insight is that different coherence
 The gap this paper fills is specific and well-defined. The crisis management literature [@coombs-2007-protecting-organization-reputations; @dutta-2011-effectiveness-corporate-responses] studies response strategy. The brand equity literature [@aaker-1996-building-strong-brands; @keller-1993-conceptualizing-measuring-managing; @kapferer-2008-new-strategic-brand, 4th ed.] studies perception structure but not dynamics. The ergodicity economics literature [@peters-2016-evaluating-gambles-using; @peters-2019-ergodicity-problem-economics] provides the mathematical framework for non-ergodic processes -- specifically, that time-average and ensemble-average growth rates diverge for multiplicative processes -- but has not been applied to brand crises; Zharnikov [-@zharnikov-2026-non-ergodic-brand-perception-why] extends this non-ergodic framing to multi-dimensional brand perception dynamics. Zharnikov [-@zharnikov-2026-non-ergodic-brand-perception-diffusion] provides the SDE framework but derives stability results only for specific brands, not for coherence types as a class. This paper bridges all four by deriving the coherence-resilience ordering from the drift geometry of the SDE, producing a result that is structural (it follows from the mathematics, not from case analysis), general (it applies to any brand classifiable by coherence type), and falsifiable (it generates testable predictions).
 
 The remainder of the paper proceeds as follows. Section 2 (Drift Structure by Coherence Type) characterizes the drift structures produced by each coherence type. Section 3 (Stability Analysis) analyzes the stability properties of each drift structure. Section 4 (Crisis as Perturbation) models crises as perturbations and derives recovery probabilities. Section 5 (Coherence-Resilience Theorem) assembles the full predicted ordering. Section 6 (Application to Known Crises) applies the framework to four documented brand crises. Section 7 (Testable Predictions) states falsifiable predictions for empirical testing.
-
----
 
 ## 2. Drift Structure by Coherence Type
 
@@ -101,8 +97,6 @@ We now map each of SBT's five coherence types to a drift structure using the can
 | Incoherent (C-) | Tesla | Stochastic | 0 (effective) | N/A |
 
 The key structural distinction is not merely the number of active dimensions but the interaction between drift coverage (how many dimensions receive substantial drift) and dimension volatility (how quickly the dimensions targeted by drift fluctuate). This interaction drives the stability ordering derived in the next section.
-
----
 
 ## 3. Stability Analysis
 
@@ -178,8 +172,6 @@ $$P_{\text{abs}}^{\text{eco}} < P_{\text{abs}}^{\text{sig}} < P_{\text{abs}}^{\t
 
 This ordering is exactly SBT's coherence grading: A+ < A- < B+ < B- < C- (in absorption probability), or equivalently A+ > A- > B+ > B- > C- (in stability). The coherence grading, introduced in Zharnikov [-@zharnikov-2026-spectral-brand-theory-computational-framework] on qualitative grounds, is here derived from the drift geometry of the SDE. $\square$
 
----
-
 ## 4. Crisis as Perturbation
 
 ### 4.1 Modeling a Brand Crisis
@@ -250,7 +242,7 @@ The active-versus-passive distinction in Theorem 2(c) admits a geometric reading
     +-------------------> t              +-------------------> t
 ```
 
-*Figure 1: Schematic recovery trajectories for four coherence types. Active dimensions (left column) regain function after shock by virtue of substantial signal-driven drift; passive dimensions (right column) drift only weakly toward the neutral prior $x^*$ and may be absorbed at the boundary $x_i = 0$. Asymmetric coherence types (bottom row) compound recovery delays because adjacent dimensions cannot supply corroborating drift through cross-dimensional coupling. Schematic only — see the Companion Computation Script (§5.3) for parameter values producing the underlying ordering.*
+**Figure 1.** Schematic recovery trajectories for four coherence types. Active dimensions (left column) regain function after shock by virtue of substantial signal-driven drift; passive dimensions (right column) drift only weakly toward the neutral prior $x^*$ and may be absorbed at the boundary $x_i = 0$. Asymmetric coherence types (bottom row) compound recovery delays because adjacent dimensions cannot supply corroborating drift through cross-dimensional coupling. Schematic only — see the Companion Computation Script (§5.3) for parameter values producing the underlying ordering.
 
 The schematic captures the qualitative content of Theorem 2(c): on an active dimension the deterministic component dominates the diffusive component near the post-shock state, so trajectories return to a neighbourhood of equilibrium; on a passive dimension the diffusive component dominates and a non-trivial fraction of trajectories absorb before reaching the neutral prior. The Monte Carlo run distributed in `code/coherence_resilience_mc.py` confirms this pattern for the five canonical brands across four shock severities.
 
@@ -284,11 +276,9 @@ $$\tau_{\text{return}}^{\text{eco}} < \tau_{\text{return}}^{\text{sig}} < \tau_{
 
 This ordering is consistent with the qualitative observation that brands with deep, multi-dimensional equity recover faster from crises than brands with shallow or concentrated equity [@dawar-2000-impact-productharm-crises; @roehm-2007-consumer-responses-performance], but it provides a structural explanation: the recovery time depends on the drift geometry, not merely on the "depth" of equity.
 
----
-
 ## 5. The Coherence-Resilience Theorem
 
-**Figure 2: Derivation chain from coherence type to resilience ordering.**
+**Figure 2.** Derivation chain from coherence type to resilience ordering.
 
 ```mermaid
 flowchart TD
@@ -359,8 +349,6 @@ Two companion scripts are distributed with the public mirror of this paper at ht
 
 *Monte Carlo verification* of the qualitative orderings in Theorem 2 and the recovery-trajectory schematics of §4.3 is provided by `coherence_resilience_mc.py` (fixed seed `1729`; 2,000 paths per cell; Euler-Maruyama discretization with absorbing boundary at $x_i = 0$ and reflecting boundary at $x_i = 1$; horizon $T = 60$ months; working parameters $\gamma = 0.020$, $\delta = 0.050$, $\sigma_0 = 0.080$, $dt = 0.25$ months). Run command: `uv run python code/coherence_resilience_mc.py`. The output `data/results.json` records per-brand per-dimension absorption probability, recovery probability, and median recovery time across four shock severities (0.05, 0.10, 0.15, 0.20 absolute drop). At the working parameters the active-dimension recovery is essentially certain ($P_{\text{rec}} = 1$) for all brands except Tesla on its weakest dimension (Temporal, $s = 2$), where $P_{\text{rec}} = 0$ within the 60-month horizon — a numerical instance of the type-over-score principle: Tesla's incoherent emission profile leaves its weakest dimension without sufficient drift for active recovery, regardless of total emission magnitude. A fully rigorous proof of the absorption-probability ordering of Theorem 1 is recorded structurally in the Technical Appendix; the present script is sufficient for the recovery-probability and recovery-time orderings of Theorem 2.
 
----
-
 ## 6. Application to Known Crises
 
 The following applications are illustrative. The coherence-type classifications are author-assigned based on qualitative assessment, not empirically measured. The formal predictions are testable once empirical coherence-type measurement is available.
@@ -409,8 +397,6 @@ The critical test for Tesla would be a *high-severity* crisis -- a safety incide
 
 **Reconciliation with Aaker, Fournier, and Brasel [-@aaker-2004-when-good-brands].** A related challenge for the coherence-resilience ordering comes from Aaker, Fournier, and Brasel [-@aaker-2004-when-good-brands], who demonstrate that "sincere" brands -- those with strong partner-type consumer relationships, analogous to SBT's identity-coherent brands -- are punished *more* harshly for transgressions than "exciting" brands (analogous to experiential-asymmetry brands). The sincere/exciting typology these authors invoke derives from the brand-personality dimensions catalogued by Aaker [-@aaker-1997-dimensions-brand-personality], which establishes sincerity and excitement as distinct trait clusters that consumers ascribe to brands; the present reconciliation treats those clusters as observable correlates of distinct SBT coherence types rather than as the perceptual construct itself. This appears to challenge the identity > experiential asymmetry ordering. The reconciliation is as follows. Aaker et al. study crises that target the *protected* dimensions of sincere brands -- specifically, values violations (Ideological breaches). Theorem 2(c) of the present paper predicts exactly this asymmetry: crises on active dimensions of $k$-anisotropic brands are more damaging than the same crisis on an incoherent brand, because the observer's prior expectation is calibrated to the brand's emission level. A brand that emits strongly on the Ideological dimension sets a high standard; a transgression on that dimension constitutes a larger deviation from expectation, hence a larger effective shock $\eta_{\text{Ide}}$. The model's prediction is lower *recovery probability* for larger shocks -- so a sincere brand facing an ideological transgression experiences a larger shock and lower recovery probability on that dimension, consistent with Aaker et al., even though the identity-coherent brand's drift protection on that dimension is higher than an incoherent brand's. The paradox is resolved by distinguishing shock *magnitude* (which is amplified by high expectations) from drift *protection* (which aids recovery given a shock): sincerity violations produce larger shocks, which can overwhelm the drift advantage. This is consistent with Aaker et al.'s finding and does not contradict the unconditional resilience ordering, which is defined relative to crises of equal severity.
 
----
-
 ## 7. Testable Predictions
 
 The Coherence-Resilience Theorem generates three concrete, falsifiable predictions that can be evaluated against longitudinal data once empirical coherence-type measurement is available.
@@ -446,8 +432,6 @@ The Coherence-Resilience Theorem generates three concrete, falsifiable predictio
 **Null hypothesis**: The severity-recovery relationship is the same across coherence types (no interaction effect). If the null is not rejected, Theorem 3, Result (4) is falsified.
 
 Each of these predictions is specific enough to be tested with existing brand tracking data supplemented by expert coding of emission profiles, or with purpose-built measurement instruments for the eight SBT dimensions [@zharnikov-2026-spectral-metamerism-brand-perception-projection]. The predictions are independent: any one can be falsified without falsifying the others, though joint rejection would cast doubt on the entire coherence-resilience framework.
-
----
 
 ## 8. Discussion
 
@@ -489,8 +473,6 @@ Three directions for future work are immediate. First, the development of empiri
 
 A fourth, more speculative direction concerns the connection between this paper's results and the portfolio theory of Zharnikov [-@zharnikov-2026-hf-r20-portfolio-ai-perception]. If individual brands have coherence-dependent resilience, then a portfolio of brands has portfolio-level resilience that depends on the coherence types of its constituents and their correlations. A portfolio dominated by incoherent brands is more vulnerable to systemic crises than a portfolio balanced across coherence types. This connection between brand-level and portfolio-level resilience is a natural extension of the present framework.
 
----
-
 ## Appendix A. Technical Note on Convexity of Hitting Probabilities
 
 The proof sketch for Theorem 1 (§3.2) invokes the convexity of the hitting probability $p(T; \alpha)$ in the drift parameter $\alpha$ for a one-dimensional diffusion with absorbing boundary at zero. We record here the structural argument that supports this property under the Wright-Fisher specification $h(x_i) = x_i$ adopted in §2.1; a fully rigorous derivation, together with numerical verification by Monte Carlo simulation of the full eight-dimensional SDE, is left to a forthcoming technical companion note.
@@ -513,13 +495,9 @@ A formal verification of convexity for the Wright-Fisher diffusion proceeds by d
 
 The present paper records the convexity claim as a structural property of the Wright-Fisher diffusion that is verified analytically in this appendix and numerically in the companion note. The main theorems do not depend on convexity holding at the boundary $\alpha = 0$ — the relevant inequalities concern interior values of the drift parameter where convexity is established by the standard argument.
 
----
-
 ## Acknowledgments
 
 AI assistants (Claude Opus 4.8, Grok 4.20, Gemini 2.5 Pro) were used for initial literature search, for software development — implementing and running the companion computation scripts that reproduce the paper's reported numerical and simulation results — and for editorial refinement; all theoretical claims, propositions, and interpretations are the author's sole responsibility.
-
----
 
 ## References
 

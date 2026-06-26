@@ -8,8 +8,6 @@ DOI: [10.5281/zenodo.19391476](https://doi.org/10.5281/zenodo.19391476)
 
 Working Paper v1.9.0 – April 2026 (revised June 2026)
 
----
-
 ## Abstract
 
 Brand identity verification technologies have historically changed discontinuously in response to shifts in the primary observer type. This paper formalizes the *observer-driven evolution thesis* and extends it to the current transition from human to AI agents. The Brand Function is defined as *f*(query, context, observer_type, time) $\to$ response, constituting the complete behavioral specification required for machine observers. Cryptographic signatures on this function are predicted to replace logos as the primary identity mechanism for text-primary AI agents.
@@ -40,8 +38,6 @@ For interactive marketers, the practical implication is immediate: AI systems ca
 
 The remainder of the paper proceeds as follows. The Historical Pattern section traces the observer-driven identity technology change across five transitions. The AI Agent as Observer section examines how AI agents currently perceive brands and why current identity infrastructure fails them. The Brand Function section introduces the root specification concept and reports a supplementary format-optimization experiment. The Cryptographic Signature section develops the AI-native equivalent of the logo and grounds it in the cryptographic identity literature. The Behavioral Metamerism section introduces the core failure mode. The Necessity Conditions section establishes when the Brand Function becomes structurally required. The Implications section discusses brand management and marketing theory implications. The Limitations section addresses future research directions.
 
----
-
 ## Historical Pattern: Observer Determines Technology
 
 Identity verification technologies do not evolve incrementally. They emerge in response to a change in the observer type. Five transitions establish the pattern that predicts the sixth. The examples trace the Western European genealogy that produced modern trademark law and digital identity infrastructure --- the direct ancestors of the AI commerce protocols under analysis. Non-Western identity verification traditions (Chinese chops, Islamic calligraphic seals, Indian guild marks) exist in parallel and deserve separate investigation, as the Limitations section acknowledges.
@@ -65,8 +61,6 @@ Identity verification technologies do not evolve incrementally. They emerge in r
 *Falsification*: P2 is falsified if AI agents demonstrably use logos as informational inputs in purchasing decisions --- not merely recognizing them as identifiers but weighting visual brand identity in recommendation quality. If logo presence/absence meaningfully affects AI recommendation accuracy, the irrelevance claim fails.
 
 The historical evidence supports both propositions. Wax seals persist in legal ceremonies; hallmarks persist in precious metals regulation; logos persist on websites despite SSL certificates handling actual identity verification. Each technology remains functional for its original observer class while becoming irrelevant for the new one. The question for marketing theory is: what happens when the observer changes again?
-
----
 
 ## The AI Agent as Observer
 
@@ -113,8 +107,6 @@ Furthermore, GEO creates a convergence dynamic. As brands in the same category a
 *Caveat on multimodal agents*: Multimodal AI agents (GPT-4V, Gemini Vision) do process visual elements including logos, packaging, and color. The near-zero weight claim applies specifically to text-based agents operating through structured data and language models. As multimodal agents gain commerce capabilities, the visual identity layer may recover partial informational weight --- though the structural data and behavioral specification layers are predicted to remain primary.
 
 *Falsification*: P3 is falsified if multimodal AI agents that process visual brand elements (logo, packaging, color) make measurably better purchasing decisions than text-only agents with identical structured data. If visual brand identity provides incremental information value to AI agents beyond what structured data conveys, the "near-zero weight" claim is too strong.
-
----
 
 ## The Brand Function
 
@@ -241,8 +233,6 @@ To ground the abstract specification concept in concrete structure, a minimal JS
 
 The four slots map directly onto the framework's claims. The spectral profile operationalizes the eight-dimensional perception layer [@zharnikov-2026-spectral-brand-theory-computational-framework]. The behavioral specifications operationalize the WHAT layer that the Brand Function as Root Specification subsection identified as irreducible. The coherence metrics make the specification gap computable, with a target distance metric (DCI) and an audit cadence. The cryptographic attestation closes the loop with an unforgeable issuer binding and a trust anchor (here, a GLEIF vLEI legal-entity identifier). Reasonable implementations may differ in every field name and cardinality; what is normative is that all four slots be addressed.
 
----
-
 ## Cryptographic Signature as AI-Native Logo
 
 If the Brand Function is the specification, it needs an identity attestation --- a mechanism for AI agents to verify that the specification they encounter actually belongs to the brand it claims to represent. For human observers, the logo serves this function (imperfectly). For machine observers, the cryptographic signature serves it (precisely).
@@ -276,7 +266,7 @@ flowchart LR
     D --> F[Action with<br/>teleological explanation]
 ```
 
-*Figure 1: Verification flow for AI-native brand identity. The signed Brand Function is retrieved by an AI agent, verified cryptographically against a trust anchor, and used as the basis for an admissibility decision; admitted brands enter the recommendation set, and the resulting action is explainable in terms of the brand's specified purpose rather than the agent's internal scoring mechanism.*
+**Figure 1.** Verification flow for AI-native brand identity. The signed Brand Function is retrieved by an AI agent, verified cryptographically against a trust anchor, and used as the basis for an admissibility decision; admitted brands enter the recommendation set, and the resulting action is explainable in terms of the brand's specified purpose rather than the agent's internal scoring mechanism.
 
 ### Existing Cryptographic Brand Infrastructure
 
@@ -296,7 +286,7 @@ These deployments demonstrate that cryptographic brand verification is technical
 
 The parallels between the logo and the cryptographic signature illuminate the nature of the transition:
 
-Table 1: Comparison of Human Logo and AI Cryptographic Signature as Identity Mechanisms.
+**Table 1.** Comparison of Human Logo and AI Cryptographic Signature as Identity Mechanisms.
 
 | Property | Human Logo | AI Signature |
 |---|---|---|
@@ -316,8 +306,6 @@ This is not a metaphor. It is a structural parallel to the SSL certificate trans
 **Proposition 5: Cryptographic signatures on behavioral specifications will replace logos as the primary brand identity mechanism for AI-mediated commerce, following the historical pattern where each observer-type change produces a new identity technology.**
 
 *Falsification*: P5 is falsified if AI-mediated commerce scales to substantial market share (>20% of category transactions) without adopting cryptographic brand verification --- i.e., if reputation systems, platform ratings, or statistical optimization prove sufficient for AI agents to establish brand trust without behavioral attestation. The prediction is conditional on agentic commerce adoption; if human-mediated purchasing remains dominant, P5's precondition is not met.
-
----
 
 ## Behavioral Metamerism
 
@@ -379,8 +367,6 @@ This is exactly the structural relationship between two brands $B_1, B_2$ that a
 
 This framing makes three things precise. First, *metamerism is not a defect* of any individual model; it is the structural consequence of any rate-constrained encoder operating below source entropy. Second, the cell boundaries are determined by the encoder, not by the brands — which is why the same two brands can be metameric to one AI agent and distinguishable to another, and why the GEO interventions surveyed in the Why GEO Cannot Resolve Metamerism subsection cannot fix the problem from the brand side alone. Third, the only structural escape is to operate *outside the encoder's source space* — to give the agent direct access to a specification that bypasses the lossy channel, which is the role of the Brand Function and the cryptographic signature. The codebook-convergence prediction implicit in this Voronoi framing — that all architectures sharing the same training distribution should produce similar cell boundaries — is consistent with results in Zharnikov [-@zharnikov-2026-empirical-rate-distortion-curve-ai], which varies response-format rate constraints across five conditions and finds a cross-model coefficient of variation of .140 across all rate conditions (1,652 calls, 17 LLM architectures); that study was not designed to test VQ convergence directly, but its cross-architecture stability is what the framing here would predict.
 
----
-
 ## Necessity Conditions
 
 The preceding sections have motivated the Brand Function as valuable. This section makes the stronger claim that it is *necessary* --- not merely useful --- when three conditions hold simultaneously.
@@ -406,8 +392,6 @@ These conditions are not hypothetical. ACP and UCP are deployed. GEO optimizatio
 Under weaker conditions --- where humans remain primary observers, categories are highly differentiated, and agents are purely advisory --- the Brand Function remains useful (it improves machine readability, reduces ambiguity, and enables quality measurement) but alternative approaches such as reputation systems, platform-mediated verification, and human-in-the-loop oversight can function adequately.
 
 A critical operational distinction follows from the necessity conditions: the Brand Function enables *admissibility judgments* at the transaction boundary. AI agents may internally score brands on gradient scales, but the principal's delegated authority constraints impose binary thresholds on those gradients --- "does the return policy meet the minimum?" yields admissible or excluded, regardless of the agent's underlying scoring mechanism. The admissibility gate sits on top of gradient evaluation, not instead of it. This is structurally analogous to legal evidence admissibility: a court may weigh admitted evidence on a gradient, but the admissibility decision itself is binary. The Brand Function makes these threshold judgments machine-computable by providing the behavioral specification against which constraints can be evaluated, which requires complete specification rather than statistical approximation.
-
----
 
 ## Implications and Dual Identity Infrastructure
 
@@ -437,7 +421,7 @@ The brand audit extends from visual consistency (are the colors right? does the 
 
 For organizations currently investing in GEO as their primary AI-visibility strategy, this analysis suggests that GEO is a necessary transitional tactic but not a sufficient long-term strategy. GEO optimizes for statistical visibility within the current paradigm of AI-as-observer; the Brand Function addresses the deeper structural requirement of machine-verifiable behavioral identity. Under conditions where AI agents operate with delegated purchasing authority, competitive advantage becomes increasingly a function of machine-verifiable behavioral commitments (Brand Function + cryptographic signature) rather than statistical visibility optimization (GEO).
 
-**Strategic Use Cases for the Brand Function**
+#### Strategic Use Cases for the Brand Function
 
 The Brand Function's practical value is not uniform across all brands --- it varies systematically with training-data embeddedness. Four use cases emerge in order of strategic urgency:
 
@@ -460,8 +444,6 @@ The theoretical arguments advanced here find empirical support in concurrent wor
 ### Consumer Welfare Implications
 
 The dual identity infrastructure argument is framed here from the brand's perspective, but the consumer welfare implications deserve acknowledgment. The Brand Function introduces a form of behavioral transparency: brands that publish a signed behavioral specification make commitments that AI agents can verify on consumers' behalf, which could benefit consumers by making brand behavior more predictable and accountable. If an AI purchasing agent can verify that a brand's return policy, pricing behavior, and communication style match its signed specification, consumers gain access to a form of pre-transaction verification that reputation-based trust cannot reliably provide. The Brand Function also supplies the substrate for a specific form of explanation that consumers value: Tomaino, Abdulhalim, Kireyev, and Wertenbroch [-@tomaino-2022-algorithm-teleological-explanations-algorithmic] demonstrate that *teleological* explanations of algorithmic decisions --- explanations grounded in the algorithm's purpose rather than its mechanism --- materially enhance customer satisfaction with algorithmic outcomes, even when the underlying mechanism remains opaque or proprietary. A signed Brand Function provides exactly such a teleological substrate: an AI agent can justify a brand-level recommendation or exclusion by appeal to the brand's specified purpose and behavioral commitments, without disclosing the agent's internal scoring mechanism. However, the same infrastructure could also enable brands to game the specification --- optimizing the stated Brand Function for AI agent approval while diverging in practice, or designing specifications that appear comprehensive while leaving consequential behaviors underspecified. Whether the Brand Function primarily increases transparency (consumers see behavioral commitments) or enables strategic opacity (brands control the specification layer) depends on governance structures, auditability requirements, and whether consumers have access to the specification or only AI agents do. These dynamics represent a priority for future research.
-
----
 
 ## Limitations and Future Research
 
@@ -507,8 +489,6 @@ A reference implementation of the behavioral metamerism index computation and pi
 
 For brands from non-Western markets, dimensional collapse amplifies significantly: mean DCI = 35.6, Cohen's d = 3.449 for the overall collapse test; Western models show DCI of .339 versus .360 for non-Western models (t = -3.243, p = .001). The conditional metamerism finding is confirmed: local brands collapse 24% more severely than global brands (Cohen's d = .878, p < .001). Geopolitical framing further modulates collapse: the same brand evaluated in different city contexts produces significantly different dimensional weight profiles (mean absolute delta = .040, t = 7.122, p < .001), and native-language querying does not systematically reduce collapse (formal sign test: 46/115 positive, mean reduction −.005), indicating that the Brand Function specification remains the primary resolution mechanism rather than language-of-query. Convergent evidence from agentic commerce research [@sabbah-2026-marketing-machines-how] shows that among eight e-commerce promotional cues tested across four AI models, only ratings --- the most quantifiable, verifiable signal --- consistently increases selection probability, paralleling the Economic Default documented here.
 
----
-
 ## Conclusion
 
 The transition from human to AI observers requires a corresponding transition from perceptual to computational brand identity. The observer-driven evolution thesis advanced here synthesizes five prior discontinuities to predict the sixth: cryptographic signatures on behavioral specifications will replace logos for AI-mediated commerce. The Brand Function *f*(query, context, observer_type, time) → response provides the missing root specification that existing commerce protocols omit. Behavioral metamerism formalizes the precise limitation of statistical approaches --- convergent profiles that no amount of generative engine optimization can disambiguate.
@@ -519,13 +499,9 @@ The transition from human to AI observers requires a corresponding transition fr
 
 The framework is scoped to B2C text-primary agentic commerce and remains theoretical. Future empirical work must test the six propositions using deployed agentic systems, develop behavioral metamerism indices, and examine governance of tiered disclosure. Until then, the central claim stands: when the observer changes, the identity technology must change. Brands that specify their behavior clearly and attest to that specification cryptographically will be verifiable; those that do not will become metameric --- statistically visible yet behaviorally indistinguishable --- in the eyes of the agents increasingly entrusted with purchasing authority.
 
----
-
 ## Data Availability
 
 The reference implementation of the behavioral metamerism index computation and the pilot study framework is available at https://github.com/spectralbranding/sbt-papers/tree/main/r16-ai-native-brand-identity. The pilot datasets of record are archived on HuggingFace: the Brand Function x cohort interaction pilot (DOI: 10.57967/hf/8442) and the Brand Function format-optimization runs (DOI: 10.57967/hf/8440). The raw session logs are not vendored in the GitHub repository; `reproduce.sh` downloads them from HuggingFace.
-
----
 
 ## Acknowledgments
 

@@ -152,8 +152,8 @@ acceptance:
   criterion: Holds if dIFFERENTIATION FROM PRIOR ART (the backbone).
   falsification: Exhibiting, for any of lemmas 4a/4b/4c, that the named prior method ALREADY returns the
     lattice's verdict on the claimed-divergent input (i.e. the divergence is illusory) would collapse
-    that lemma and weaken the incremental-advance claim — the lead reviewer objection made concrete and
-    testable.
+    that lemma and weaken the incremental-advance claim — the differentiation-from-prior-art claim made
+    concrete and testable.
 contradictions: []
 limitations:
 - description: External validity of the cross-kind claim currently rests on corpus-internal instruments;

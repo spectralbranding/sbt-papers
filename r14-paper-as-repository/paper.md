@@ -8,8 +8,6 @@ DOI: [10.5281/zenodo.19294864](https://doi.org/10.5281/zenodo.19294864)
 
 Working Paper v2.2.0 – March 2026 (revised June 2026)
 
----
-
 ## Abstract
 
 Scientific evaluation relies on a self-reinforcing loop: universities evaluate researchers by journal prestige, journals evaluate papers partly by institutional affiliation, and no one evaluates the research directly — because direct evaluation at scale has lacked the necessary infrastructure. This paper proposes a protocol that provides that infrastructure by treating every research program as a version-controlled repository. A paper is a render of the research at a point on its timeline: a frozen snapshot forked to a journal so the community can confirm the findings. Grounded in information science scholarship on structured knowledge objects [@renear-2009-strategic-reading-ontologies], compound scholarly outputs [@borgman-2015-big-data-little], and knowledge infrastructures [@edwards-2013-knowledge-infrastructures-intellectual; @leonelli-2016-datacentric-biology-philosophical], the protocol introduces fork-based submission, automated compliance gates, attributed reviewer commits, provenance chains, structural funding and affiliation metadata, AI-traceability by design, and a commit-reveal privacy primitive that lets researchers establish cryptographic priority and provenance through public commit hashes while keeping content disclosure under their control. The protocol optimizes the knowledge production process, not the paper: existing publishing reforms improve the rendered artifact; this protocol makes the research itself structurally transparent. Combined with the Paper Spec standard [@zharnikov-2026m-projection-cascade-why], which specifies what a paper claims, the repository protocol specifies how the research was built, evaluated, and decided upon.
@@ -34,7 +32,7 @@ Information science has identified this structural gap for decades. Renear and P
 
 Scientific publishing is the only knowledge-intensive domain without formal version control and provenance infrastructure. Legal systems track case law revisions. Financial auditing requires audit trails. Clinical research mandates trial registration. Supply chain management maintains chain of custody. Software engineering uses Git. Each domain independently developed provenance tracking because each discovered that knowledge integrity requires it. Publishing has not.
 
-Table 1: Provenance mechanisms across knowledge-intensive domains.
+**Table 1.** Provenance mechanisms across knowledge-intensive domains.
 
 | Domain | Provenance mechanism | When adopted |
 |--------|---------------------|-------------|
@@ -132,7 +130,7 @@ This inversion shifts the value of journals to a different level. In the documen
 
 Several platforms and standards address subsets of the gaps identified above. None integrates all five into a unified protocol.
 
-Table 2a: Protocol feature coverage. Columns indicate whether a system supports each of the six protocol features described in Section 1.2. Full = structurally integrated; Partial = addressed but not fully integrated; No = not addressed.
+**Table 2a.** Protocol feature coverage. Columns indicate whether a system supports each of the six protocol features described in Section 1.2. Full = structurally integrated; Partial = addressed but not fully integrated; No = not addressed.
 
 | System | VC | Fork | Gate | Rev | Prov | Coll |
 |--------|:-:|:-:|:-:|:-:|:-:|:-:|
@@ -152,7 +150,7 @@ Table 2a: Protocol feature coverage. Columns indicate whether a system supports 
 
 Column key: VC = version control, Fork = fork-based submission, Gate = compliance gate, Rev = reviewer attribution, Prov = provenance chain, Coll = collections as users. Dashes indicate the feature is absent.
 
-Table 2b: System context and adoption.
+**Table 2b.** System context and adoption.
 
 | System | Adoption | Key limitation |
 |--------|----------|----------------|
@@ -191,8 +189,6 @@ This paper advances seven claims:
 
 Each claim includes a falsification condition specified in the accompanying `paper.yaml`.
 
----
-
 ## 2. The Protocol
 
 The four-level hierarchy (Figure 1) is the central architectural claim of this paper. Each level is a structural transformation of the level above, preserving cryptographic provenance throughout.
@@ -213,7 +209,7 @@ flowchart LR
     J -.->|metadata back to repo| R
 ```
 
-Figure 1: The four-level Research-as-Repository hierarchy. Each level is a structural transformation of the level above, preserving cryptographic provenance. The dashed line shows publication metadata flowing back to the source repository, closing the loop and supporting the rendering-isomorphism (§3.4).
+**Figure 1.** The four-level Research-as-Repository hierarchy. Each level is a structural transformation of the level above, preserving cryptographic provenance. The dashed line shows publication metadata flowing back to the source repository, closing the loop and supporting the rendering-isomorphism (§3.4).
 
 ```{=typst}
 ]
@@ -636,7 +632,7 @@ These AI checks are **advisory, not blocking**. They help the author assess fit 
 
 **Implementability.** Every check in the gate is technically straightforward:
 
-Table 3: Compliance gate checks and implementation difficulty.
+**Table 3.** Compliance gate checks and implementation difficulty.
 
 | Check | Implementation | Difficulty |
 |---|---|---|
@@ -988,8 +984,6 @@ The `.wiki/` directory is private by default. PDF source files can be excluded f
 
 The same mechanism applies to the researcher's own work. A commit hash is a tamper-evident fingerprint: publishing the hash establishes that the work existed in that exact form at that moment, without revealing the content. This is **commit-reveal** — priority and provenance are established at commit time; disclosure is the author's to control, selectively and verifiably. A researcher can anchor commit hashes publicly at key milestones (a derivation, a pre-registration, a draft completion) and disclose content later, with any party able to verify that the revealed content matches the previously published hash. The mechanism supports embargo, consortium collaboration, hybrid public-private repositories, and misconduct prevention without requiring any centralized databank.
 
----
-
 ## 3. Design Principles
 
 ### 3.1 Single Source of Truth (SSOT)
@@ -1002,7 +996,7 @@ This inverts the current hierarchy, where the published PDF is the canonical ver
 
 Every feature that the current system implements through policy, the repository protocol implements through structure:
 
-Table 4: Policy-based vs structure-based implementation of publishing functions.
+**Table 4.** Policy-based vs structure-based implementation of publishing functions.
 
 | Current approach | Repository approach |
 |---|---|
@@ -1053,7 +1047,7 @@ The four-level hierarchy introduced in Section 1.1 — repository, paper, fork, 
 3. **Fork = sharing.** The render is transmitted to the community for confirmation. The fork is lossy: no single paper captures the full repository, just as no single brand interaction captures the full brand specification.
 4. **Publication = merge.** The community (journal) evaluates the render and either merges it into its collection or closes the fork. Analogous to the perception that forms after the signal reaches its audience.
 
-Table 5: Cross-domain comparison: specification-rendering-perception across three sibling frameworks.
+**Table 5.** Cross-domain comparison: specification-rendering-perception across three sibling frameworks.
 
 | Structural layer          | Branding (SBT)             | Organization (OST)         | Research (this protocol)   |
 |---------------------------|----------------------------|----------------------------|----------------------------|
@@ -1066,8 +1060,6 @@ Table 5: Cross-domain comparison: specification-rendering-perception across thre
 The rendering is lossy at every layer [@zharnikov-2026l-rendering-problem-genetic]. A brand specification cannot be fully conveyed by any finite set of signals. An organizational schema cannot be perfectly executed by any operational process. A research repository cannot be fully captured by any single paper. And the perception is observer-dependent: different consumers perceive different brands from the same signals; different employees experience different organizations from the same processes; different reviewers perceive different papers from the same manuscript. This isomorphism connects to the "between meaning and machine" problem in information science [@ribes-2009-between-meaning-machine]: the gap between local epistemic practice and the formal representations machines can act on.
 
 **Self-reference.** This paper is itself an instance of the pattern it describes. The research (this repository) is rendered into a paper (this manuscript) that produces community evaluation (peer review at the target journal). The reader is currently experiencing the perception layer of a specification-implementation-perception pipeline whose specification layer is a Git repository. The rendering is lossy — several hundred commits of research development are compressed into a single manuscript. And the evaluation is observer-dependent — different reviewers will perceive different papers from this same text.
-
----
 
 ## 4. Implications
 
@@ -1142,7 +1134,7 @@ The protocol does not solve the pipeline problem. But it provides the infrastruc
 
 ### 4.10 Stakeholder Summary
 
-Table 6: Stakeholder benefit summary.
+**Table 6.** Stakeholder benefit summary.
 
 | Stakeholder | Current pain | Protocol benefit |
 |-------------|-------------|-----------------|
@@ -1154,8 +1146,6 @@ Table 6: Stakeholder benefit summary.
 | Universities | Rely on journal prestige as proxy | Evaluate researchers on structural data: commits, reviews, trajectory. |
 | Funders | Compliance is bureaucratic, ROI unmeasurable | Grant-to-impact chain traceable. Compliance as YAML field. |
 | Society | Publicly funded research opaque | Transparent, auditable research. Trust through provenance. |
-
----
 
 ## 5. A Realized Instance: The Author's Corpus as a Running Repository
 
@@ -1187,7 +1177,7 @@ This paper is itself drafted under that discipline. Its structured spine was bui
 
 The realized system deliberately does not reinvent the semantic-publishing stack. About half of it aligns with, and is designed to emit into, established standards; those standards are treated as projection targets rather than competitors, consistent with the corpus's own thesis that one should publish the source of truth and render at the point of consumption. Concretely, the citation-role taxonomy aligns with CiTO [@shotton-2010-cito-citation-typing]; the spine's claim-evidence structure with micropublications [@clark-2014-micropublications-semantic-model] and the argument interchange format [@chesnevar-2006-argument-interchange-format]; the spine's claims as provenance-bearing units with nanopublications (Groth et al. [-@groth-2010-anatomy-nanopublication-information]; Kuhn et al. [-@kuhn-2021-semantic-microcontributions-with]); the content-addressed definition identity with Trusty URIs [@kuhn-2014-trusty-uris]; the per-paper bundle with RO-Crate [@soilandreyes-2022-packaging-research-artefacts] and the FAIR principles [@wilkinson-2016-fair-guiding-principles]; the term-relation vocabulary with SKOS [@miles-bechhofer-2009-skos-reference]; typed term mappings with SSSOM [@matentzoglu-2022-sssom]; one-term-one-owner governance with OBO Foundry orthogonality [@smith-2007-obo-foundry]; and the linker's compatible-refinement check with conservative-extension theory for modular ontology reuse (Cuenca Grau et al. [-@cuencagrau-2008-modular-reuse-ontologies]). Table 7 summarizes the alignment.
 
-Table 7: Layers of the realized system and the established standards each aligns with or emits into.
+**Table 7.** Layers of the realized system and the established standards each aligns with or emits into.
 
 | Layer of the realized system | Established standard aligned with / emitted into |
 |---|---|
@@ -1219,7 +1209,7 @@ The federated generalization in Section 5.5 is backed by three companion experim
 
 The linker assigns every cross-owner interaction to exactly one of six classes. Table 8 names them with the SKOS predicate [@miles-bechhofer-2009-skos-reference] and reconciliation operation each carries; Figure 2 is the decision procedure that assigns them. Three of the six — *conflict*, *incompatible refinement*, and *dangling import* — are unresolved and fail the compatibility gate; the other three resolve mechanically. The three experiments below are organized as the evaluation of this taxonomy: a clean run that exercises the resolvable classes, and two adversarial runs that surface the unresolved ones.
 
-Table 8: The six cross-owner interaction classes of the federated linker.
+**Table 8.** The six cross-owner interaction classes of the federated linker.
 
 | Class | Trigger | Resolved? | SKOS predicate | Reconciliation operation |
 |---|---|---|---|---|
@@ -1250,7 +1240,7 @@ flowchart TD
   Q4 -->|no| CF[CONFLICT — NAMESPACE + FORK]
 ```
 
-Figure 2: The cross-owner linker's decision procedure. Every interaction between two authors' modules is classified into exactly one of six classes by mechanical tests on ownership, import or refine, the presence of an explicit narrowing, and the content-addressed definition hash. The three terminal states marked BLOCK or CONFLICT are the unresolved classes that fail the federated compatibility gate.
+**Figure 2.** The cross-owner linker's decision procedure. Every interaction between two authors' modules is classified into exactly one of six classes by mechanical tests on ownership, import or refine, the presence of an explicit narrowing, and the content-addressed definition hash. The three terminal states marked BLOCK or CONFLICT are the unresolved classes that fail the federated compatibility gate.
 
 ```{=typst}
 ]
@@ -1263,8 +1253,6 @@ Figure 2: The cross-owner linker's decision procedure. Every interaction between
 Each run is deterministic: term identity is a content-addressed hash of the definition text and the classifier is a pure function of the two parsed module sets, so the report and the emitted mapping file reproduce byte-for-byte at a fixed tool version, with no random seed. Each experiment record states pre-registered hypotheses with falsification criteria, an integrity manifest of the shared-term hashes (checkable against the live graph), and a threats-to-validity section; the full attributions for the published brand-equity and signaling-theory vocabularies are given in those records. The compatibility gate exits nonzero on the two adversarial runs — the intended federated continuous-integration behavior when unresolved interactions remain. Together the three runs exercise the full interaction-class set (clean import and refinement, dangling reference, definitional conflict) on real, independent vocabularies.
 
 *Data and code availability.* The complete experiment code and data are published with this paper under `experiments/` in its public repository (github.com/spectralbranding/sbt-papers, `r14-paper-as-repository/`): the cross-owner linker (`negotiate_modules.py`), the single-author linker it generalizes (`build_ontology.py`), the two namespaced module sets per experiment, the emitted and curated mapping files, the three experiment records, and a one-command reproduction script. All three runs reproduce with `bash experiments/reproduce.sh`; the classification is deterministic — content-addressed term identity and a pure-function classifier — and requires no data download, network call, or credential. The per-paper spine and ontology bundle are in the same repository, and software dependencies, versions, and the repository URL are recorded in `paper.yaml` following the FORCE11 software-citation principles [@smith-2016-software-citation-principles].
-
----
 
 ## 6. Limitations and Open Questions
 
@@ -1366,8 +1354,6 @@ The protocol's structural advantages — transparency, traceability, machine rea
 
 **Privacy and the irrevocable record.** The provenance chain is append-only by design — this is what makes it trustworthy. But irrevocability means that submission history, rejection patterns, and review timelines are permanently recorded. A researcher who submits to ten journals before acceptance has a visible record of nine rejections (or at minimum, nine prior forks). The protocol's current design makes fork *existence* always visible while keeping *decisions* optionally visible (Section 6.3, Limitation 5). The appropriate default — how much provenance is visible to whom — should be community-configured and may vary by discipline. Clinical research, where transparency serves patient safety, may require fuller disclosure than humanities, where submission patterns carry different professional implications.
 
----
-
 ## 7. Conclusion
 
 The Research-as-Repository protocol demonstrates that the document assumption is no longer technically necessary nor epistemically defensible. By replacing static artifacts with versioned, provenance-rich repositories, the protocol makes scientific knowledge production structurally transparent, auditable, and machine-queryable without centralizing control or mandating platform adoption. Its theoretical contribution lies in the specification-implementation-perception pipeline: a general pattern that unifies research communication with parallel frameworks in branding and organizational design. This isomorphism reveals why provenance infrastructure matters — renders are necessarily lossy, perceptions are observer-dependent, and only the underlying specification can support reliable evaluation.
@@ -1378,13 +1364,9 @@ The largest remaining risk is adoption inertia. The protocol therefore adopts a 
 
 This article does not claim the protocol solves the reproducibility crisis, eliminates prestige bias, or fully domesticates AI in research. It claims only that these problems are materially harder to solve without version control, provenance, and structured metadata as foundational infrastructure. By supplying that infrastructure, the protocol makes direct evaluation of research at scale technically feasible for the first time. The scientific community can now choose whether to use it.
 
----
-
 ## Acknowledgments
 
 AI assistants (Claude Opus 4.8, Grok 4.20, Gemini 2.5 Pro) were used for initial literature search, for software development — implementing and running the companion computation scripts that reproduce the paper's reported numerical and simulation results — and for editorial refinement; all theoretical claims, propositions, and interpretations are the author's sole responsibility. Here the companion software is the federated cross-owner linker (`negotiate_modules.py`) and the single-author linker it generalizes (`build_ontology.py`), which produce the three negotiation experiments of Section 5.6 from author-transcribed module sets; the author reviewed the code and verified that all three runs reproduce deterministically.
-
----
 
 ## References
 

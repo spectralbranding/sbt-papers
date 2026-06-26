@@ -6,17 +6,15 @@ ORCID: 0009-0000-6893-9231
 
 DOI: [10.5281/zenodo.20840422](https://doi.org/10.5281/zenodo.20840422)
 
-Working Paper v1.0.0 — June 2026
-
----
+Working Paper v1.0.0 – June 2026
 
 ## Abstract
 
 An instrument abstains honestly when its signal falls below a noise floor it computes for itself. This paper generalizes that discipline to an ensemble of heterogeneous instruments: a finding survives only if its signal clears the outermost noise floor in play, where floors nest — operator within artifact within substrate. The same move lifts up a level: a cross-instrument ensemble abstains below a *substrate floor*, the dispersion of instruments' verdicts on one aligned claim. Reconciliation returns a typed verdict — corroborated, contested, substrate-conditional, or jointly-unresolved — never a forced point estimate; agreement is triangulation, disagreement is the floor itself. A no-rescue lemma forbids agreement among individually-noisy instruments from manufacturing a finding. The rule composes instruments of different kinds that share no output space, reconciling an eight-dimensional measurement vector and a categorical specification audit on an aligned ordinal verdict, and below a specification instrument's coherence floor abstention is mandated by a coverage-impossibility result. The contribution is an open-source computational framework — already shipped, with worked cases reproducing all four verdicts and a seeded Monte-Carlo map of where it diverges from meta-analysis, sensor fusion, and selective prediction. It is a typed-verdict lattice over nested floors, not a relabeling of heterogeneity statistics.
 
----
-
 **Keywords:** auditable abstention, noise floor, heterogeneous instruments, verdict reconciliation, uncertainty quantification, ontology alignment, selective prediction, reproducibility of results
+
+---
 
 Patterns in scientific data are increasingly detected not by one instrument but by an ensemble of heterogeneous ones — deep-learning embeddings, large-language-model audits, specification checklists, human-coded content analyses, public benchmark leaderboards — each carrying its own uncertainty. Consider a concrete and now-routine case: three public benchmarks rank the same set of language models, and the rankings disagree; one benchmark calls model A the strongest, another calls the contest a tie, and a downstream pipeline must report a single ordering. When such verdicts conflict, the standard resolutions reintroduce a hidden oracle. Averaging the instruments' outputs presumes a common scale and a meaningful mean; taking the most confident instrument presumes confidence tracks correctness; majority voting presumes independence and individual calibration. Each move converts a legitimate *cannot tell* into a point estimate whose provenance cannot be audited. The reproducibility literature has documented how often such hidden degrees of freedom produce findings that do not replicate [@baker-2016-1500-scientists-reproducibility; @ioannidis-2005-most-published-findings-false; @munafo-2017-manifesto-reproducible-science], a failure mode that in machine-learning-based science frequently traces to exactly this kind of unaudited methodological choice [@kapoor-2023-leakage-reproducibility-crisis] and that national science-policy bodies now treat as a systemic threat to reliable inference [@national-academies-2019-reproducibility-replicability]. The difficulty is sharpest when the instruments are genuinely heterogeneous: when one returns a numeric vector and another a categorical audit, when they were built by different parties on different vocabularies, and when none can be assumed an unbiased rater.
 
@@ -26,7 +24,7 @@ The paper makes three contributions. First, it states a *nested noise-floor rule
 
 The practical stake is reproducible, auditable pattern detection across heterogeneous data sources. When an automated pipeline composes embeddings, model audits, and benchmark scores into a reported pattern, the question of which findings are real and which are artifacts of an unaudited reconciliation step is exactly the reproducibility question the science-policy literature raises [@munafo-2017-manifesto-reproducible-science; @national-academies-2019-reproducibility-replicability]. The typed verdict makes that step auditable: every reported pattern carries, by construction, a provenance trail recording whether it was corroborated across instruments, contested between them, conditional on a single apparatus, or jointly unresolved — and the framework declines, rather than fabricates, a pattern when the evidence falls below the floor. Reproducibility, not a new statistic, is the value proposition.
 
-## **The Admissible Instrument**
+## The Admissible Instrument
 
 ***What counts, and what does not***
 
@@ -40,7 +38,7 @@ Two non-applications fix the boundary. *Incommensurable subjective judgment*: in
 
 The framework rests on four assumptions, each relaxable with traced consequences. The aligned verdict axis is treated as a metric space on which an instrument's own floor and the distance between two instruments' verdicts are comparable quantities; under a purely ordinal axis the dispersion becomes a rank-disagreement statistic and the thresholds are recomputed on ranks, leaving the four verdict types and the nesting rule unchanged. Each instrument's declared floor is assumed an honest upper bound on its own noise, enforced operationally by reading floors live from committed artifacts rather than trusting hand-set values; an instrument that under-reports its floor is overridden by the live read, and one with neither a live artifact nor an honest declaration is inadmissible. Alignment predicates between each instrument's claim and the shared claim are assumed available upstream, produced by a federated negotiator [@zharnikov-2026at-negotiating-vocabularies-link]; absent an explicit predicate the verdict is treated as a close match at best and flagged as an alignment risk that can only lower confidence, never raise it. Finally, admitted instruments are assumed conditionally independent given the truth of the claim to the degree their floors claim — the honest weakening of the strong-independence assumption that fusion methods make; under correlated instrument error the dispersion under-states disagreement, the no-rescue lemma still bounds rescue from above, and corroborated verdicts are downgraded, a case examined in the robustness analysis.
 
-## **The Nested-Floor Rule**
+## The Nested-Floor Rule
 
 ***Floors that nest***
 
@@ -60,9 +58,9 @@ Proposition 1 states formally that cross-instrument agreement counts as triangul
 
 ![Two-panel schematic: panel a shows operator, artifact, and substrate floors as nested bars with the effective floor at their maximum and two example signals, one clearing it and one below it; panel b shows two instruments that agree yet each read below their own floor, with the consensus still below the effective floor.](figures/figure1_nested_floors.png)
 
-*Figure 1: The nested-floor rule and the no-rescue property.* (a) Floors nest operator within artifact within substrate; a signal survives only if it clears the effective floor, the outermost (maximum) in play. (b) Two instruments whose readings agree but each lie below their own floor cannot lift the consensus above the effective floor — agreement on noise is not evidence (Proposition 1). *Notes*: Rendered deterministically by the published `make_figures.py`; values are illustrative.
+**Figure 1.** The nested-floor rule and the no-rescue property. (a) Floors nest operator within artifact within substrate; a signal survives only if it clears the effective floor, the outermost (maximum) in play. (b) Two instruments whose readings agree but each lie below their own floor cannot lift the consensus above the effective floor — agreement on noise is not evidence (Proposition 1). *Notes*: Rendered deterministically by the published `make_figures.py`; values are illustrative.
 
-## **The Reconciliation Lattice**
+## The Reconciliation Lattice
 
 ***The four typed verdicts***
 
@@ -74,7 +72,7 @@ Clearing or failing the effective floor is not a binary outcome but one of four 
 
 Two gates precede the lattice, each closing a failure mode that disagreement-scoring alone cannot see. The first is alignment as a mandatory step-0. Two instruments may not mean the same thing by the same term; apparent conflict is often a vocabulary mismatch (false conflict) and apparent agreement a shared word with divergent meaning (false agreement). Each verdict's alignment predicate to the shared claim is either declared by the instrument or computed from a live terms graph; a non-exact predicate is surfaced as a false-(dis)agreement risk, never silently trusted, and an alignment that cannot be established at all among the resolvers downgrades a would-be corroborated verdict to contested — one cannot corroborate across concepts a graph does not map to each other. This step operationalizes a vocabulary negotiation already specified for the corpus [@zharnikov-2026at-negotiating-vocabularies-link] and rests on a standard, typed mapping vocabulary [@matentzoglu-2022-sssom]. The second gate is self-certification: an instrument whose audit fails is excluded from the resolver set entirely, never down-weighted into the consensus. An unvetted instrument cannot pull the verdict, even toward the right answer. The verdict computation, including both gates, is given as Algorithm 1 in Appendix A; its correctness conditions are falsifiable — returning corroborated for two instruments in genuine conflict beyond their floors, or contested for an apparent conflict that exact alignment dissolves, would expose a defect.
 
-## **One Rule, Two Instrument Kinds**
+## One Rule, Two Instrument Kinds
 
 ***The measurement floor and the coherence floor***
 
@@ -84,13 +82,13 @@ The unification claim is that the rule holds across instrument kinds that share 
 
 For the specification instrument, abstention below the coherence floor is not a convention the framework adopts but a consequence it inherits. A coverage-impossibility result establishes that below a threshold no specification audit can certify coverage [@zharnikov-2026-specification-impossibility-organizational-design-high]; a specification instrument that resolved a finding below its coherence floor would therefore be asserting a result its own audit provably cannot support. Abstention is forced, not chosen. A specification instrument shown to resolve correctly below its coherence floor — coverage demonstrably certified where the impossibility result says it cannot be — would refute the mandated-abstention claim and, with it, the cross-kind unification.
 
-## **Relation to Prior Art**
+## Relation to Prior Art
 
 ***Neighboring methods, and what each cannot do***
 
 The lattice's nearest neighbors live in separate communities with no bridging construct between them; that fragmentation is itself the argument that the lattice is a new object rather than a relabeling. The broad uncertainty-quantification literature catalogs how to *represent* and *propagate* uncertainty within a model, distinguishing aleatoric from epistemic components and surveying the methods that estimate each [@huellermeier-2021-aleatoric-epistemic-uncertainty; @gawlikowski-2023-survey-uncertainty-deep-neural; @mena-2021-survey-uncertainty-bayesian; @he-2026-survey-uncertainty-quantification-deep-learning], but it stops short of a cross-instrument calculus that returns a typed verdict over heterogeneous instruments' aligned outputs. Six specific neighbors bound the contribution. *Meta-analysis heterogeneity* quantifies the dispersion of commensurable effect sizes and, under a random-effects model, reports a pooled estimate with a heterogeneity-widened interval [@higgins-2002-quantifying-heterogeneity-meta-analysis]; it requires a common effect-size metric, so it cannot compose instruments of different kinds, and it emits a pooled mean by default even under high heterogeneity. *Opinion pooling* asks how to combine several probability distributions into one under axioms such as external Bayesianity [@genest-zidek-1986-combining-probability-distributions]; it presumes that pooling occurs, where the lattice makes pooling conditional on clearing the effective floor and otherwise declines. *Sensor fusion and belief combination* combine multiple sources into a single estimate and can identify and down-weight a faulted source [@dempster-1967-upper-lower-probabilities]; but they fuse to one value, which can mask conflict, they down-weight rather than exclude, and they read agreement as confidence. *Truth discovery and data fusion* resolve conflicts among many sources by inferring each source's reliability and recovering a single most-credible value [@li-2016-survey-truth-discovery], typically assuming a shared schema; the lattice instead aligns vocabularies as an explicit step-0 and, rather than recovering one truth, types the disagreement against each source's *declared, audited* floor. *Metrology uncertainty budgets* propagate Type A and Type B uncertainty within one measurement chain to a combined standard uncertainty [@jcgm-2008-gum-uncertainty-measurement]; the construct is single-instrument and single-output-space, with no cross-kind reconciliation and no abstention rule. *Conformal and selective prediction, and deep ensembles* deliver distribution-free coverage or abstention for one model under exchangeability and treat ensemble disagreement as uncertainty [@angelopoulos-2023-conformal-prediction-gentle; @lakshminarayanan-2017-deep-ensembles]; but they operate on a single model, return a binary abstain-or-predict rather than a typed verdict, and do not compose instruments of different kinds. Two further traditions are preconditions the framework absorbs rather than competitors: *measurement invariance testing* asks whether a construct is measured equivalently across groups before they are compared [@putnick-2016-measurement-invariance-conventions] — a binary precondition the alignment step-0 operationalizes before proceeding to a typed verdict — and *multi-annotator latent-class models* estimate per-rater error rates to recover a latent label [@dawid-1979-maximum-likelihood-observer-error], where the lattice substitutes a declared, audited floor and exclusion for an inferred reliability weight. Table 1 summarizes, for each neighbor, what it does, what it structurally cannot do, and the concrete input on which its verdict and the lattice's diverge.
 
-*Table 1: Relation of the reconciliation lattice to neighboring methods.*
+**Table 1.** Relation of the reconciliation lattice to neighboring methods.
 
 | Neighboring method | What it does | What it cannot do | Divergent verdict (lattice vs. method) |
 |---|---|---|---|
@@ -107,11 +105,11 @@ The lattice's nearest neighbors live in separate communities with no bridging co
 
 Each neighbor is distinguished by a lemma that exhibits an input on which the prior method and the lattice return different verdicts. **Lemma 4a (non-pooling).** Where high heterogeneity makes a random-effects meta-analysis report a wide interval around a pooled mean, the lattice emits contested and no pooled mean, because the four verdict types are not a function of any pooled point estimate. **Lemma 4b (exclusion and no-rescue).** Sensor fusion combines all sources into one estimate and down-weights a faulted source; the lattice excludes an uncertifiable source at the self-certification gate and, by the no-rescue lemma, forbids agreement among below-floor sources from producing any verdict — a different output on the exact inputs where fusion yields a confident combined value. **Lemma 4c (cross-kind).** A metrology budget propagates uncertainty within one chain and selective prediction abstains for one model under exchangeability; neither composes instruments of different kinds with no shared output space. The lattice reconciles an eight-vector and a categorical audit on the aligned ordinal verdict — an object none of the four constructs. Exhibiting, for any of the three lemmas, that the named prior method already returns the lattice's verdict on the claimed-divergent input would collapse that lemma.
 
-## **A Smallest Sufficient Model**
+## A Smallest Sufficient Model
 
 The lemmas are characterized on the smallest model that carries them: two instruments on a normalized verdict axis in the unit interval, each emitting either a resolve with a value and a self-floor or an abstain. The interval floors are the value plus or minus the floor width; the substrate dispersion is the absolute difference of the two values; the effective floor is the maximum of the dispersion and the two floor widths. The four lattice rules partition the plane of dispersion against consensus-versus-floor into the four verdicts. This model yields the verdict-region landscape and the no-rescue and coverage-impossibility diagrams; the raw eight-vector and specification-text mechanics, which add no new structure to the verdict logic, are deferred to the reference implementation. Locking the unit of analysis to a single aligned ordinal claim is deliberate: it keeps the contribution the verdict calculus, not any one instrument's internal scale.
 
-## **Worked Demonstrations**
+## Worked Demonstrations
 
 ***Four verdicts on shipped cases***
 
@@ -127,7 +125,7 @@ The same lattice runs, unchanged, on instruments and data entirely outside the c
 
 The verdicts are instructive precisely because they refuse what the raw leaderboard asserts. For the two closest top models the lattice returns *jointly-unresolved*: their .1-point knowledge gap and 1.2-point code gap both fall within the respective floors, so the instruments are statistically silent on which is stronger. For a clear knowledge-and-math advantage the lattice returns *corroborated* (both kinds resolve in agreement, signal-to-noise 2.71). Most tellingly, the widely-cited code ranking — one model leading another by one to three points on HumanEval — is *not* certified: those gaps fall below HumanEval's .028 floor, so the code instrument abstains, and the claim resolves only on the math axis, returning *substrate-conditional* (it holds under the mathematics apparatus, not the code one). The nested-floor discipline, applied to recognizable public data, declines to read a few-point gap on a 164-item benchmark as a finding — exactly the abstention a leaderboard's point ranking omits.
 
-## **Monte-Carlo Verdict Regions**
+## Monte-Carlo Verdict Regions
 
 ***The verdict landscape***
 
@@ -135,17 +133,17 @@ The empirical content of the differentiation claim is the share of cases on whic
 
 ![Two panels, each a triangular region of the dispersion-by-consensus plane filled with the four verdict colours; the left panel has a narrow per-instrument floor and resolves more often, the right panel has a wide floor and the jointly-unresolved region grows.](figures/figure2_verdict_regions.png)
 
-*Figure 2: The four typed verdicts as regions of the (dispersion, consensus) plane.* At a fixed per-instrument floor the pair (substrate dispersion, consensus signal) determines the verdict, partitioning the achievable region into corroborated, contested, substrate-conditional, and jointly-unresolved. *Notes*: Widening the floor (right, f = .25) shrinks the resolving regions and grows jointly-unresolved relative to a narrow floor (left, f = .10) — the floor's effect made visual. Rendered deterministically by the published `make_figures.py` with `k_resolve = 2`, `k_marginal = 1`.
+**Figure 2.** The four typed verdicts as regions of the (dispersion, consensus) plane. At a fixed per-instrument floor the pair (substrate dispersion, consensus signal) determines the verdict, partitioning the achievable region into corroborated, contested, substrate-conditional, and jointly-unresolved. *Notes*: Widening the floor (right, f = .25) shrinks the resolving regions and grows jointly-unresolved relative to a narrow floor (left, f = .10) — the floor's effect made visual. Rendered deterministically by the published `make_figures.py` with `k_resolve = 2`, `k_marginal = 1`.
 
 ***Where the verdicts diverge***
 
 The divergence fractions quantify the three lemmas, each reported with a 95% nonparametric bootstrap confidence interval (1000 resamples) under the uniform prior, followed by its range across the three priors. Against a random-effects pool, which would assert a pooled point estimate on every draw, the lattice withholds that estimate on .880 of cases (95% CI [.878, .881]) — every draw it does not return corroborated — and on .87 to .97 of cases across the three priors (Lemma 4a). The no-rescue region — both instruments resolving and agreeing within their floors yet on a consensus below the effective floor, where sensor fusion would emit a confident combined value — accounts for .214 of cases ([.212, .216]; .18 to .40 across priors), the share on which the lattice returns jointly-unresolved where fusion returns a number (Lemma 4b). And .480 of cases carry a typed verdict — contested or substrate-conditional — that a binary abstain-or-predict rule cannot represent (.480, [.477, .482]; .34 to .48 across priors; Lemma 4c). These are not small residuals at the boundary: under every prior, on a third to nearly all of the space depending on the lemma, the lattice returns something the named neighbor, by construction, does not.
 
-## **Robustness**
+## Robustness
 
 Three checks probe the verdicts away from the worked points. *Boundary sensitivity*: varying the resolve and marginal multipliers and the alignment predicate (exact versus close) confirms the verdict types are stable away from the region boundaries and that the alignment risk correctly demotes confidence near them. *Correlated-error stress*: relaxing the conditional-independence assumption by injecting shared systematic error below the declared floors confirms that the no-rescue lemma still bounds rescue from above — it is a statement about each endpoint's own floor, not about independence — while corroborated verdicts are correctly downgraded, since correlated error makes the dispersion under-state true disagreement. *Cross-method divergence audit*: the Monte-Carlo grid quantifies the divergence fractions reported above under three priors with bootstrap confidence intervals, giving the magnitude of the differentiation and its stability across the value distribution rather than only its existence.
 
-## **Discussion**
+## Discussion
 
 ***What the framework refuses to do***
 
@@ -159,7 +157,7 @@ The practical contribution is a reproducible primitive for pattern detection whe
 
 Three limitations bound the claim. The demonstrations span corpus-internal instruments, one external vendor lens, and a public-benchmark reconciliation, but the latter uses reported accuracies under each model's chosen evaluation conditions and a sampling-only floor; a fully controlled study that re-runs each instrument under fixed conditions and adds prompt-sensitivity to the floor would tighten the external evidence, and remains the most valuable next addition. The common verdict axis assumes a defensible alignment exists; where alignment is genuinely contested the framework surfaces the risk but cannot itself adjudicate the meaning dispute, which is handed to the upstream negotiator [@zharnikov-2026at-negotiating-vocabularies-link] and, failing that, to human judgment. And floors are only as honest as their source artifacts; an instrument with neither a live floor reference nor a certifiable declaration is inadmissible, which narrows applicability to instruments that have done the metrology work — a deliberate scope cost, not a defect. Within these bounds the rule is general: it asks of any instrument only that it align, expose a floor, and certify itself, and in return it composes that instrument with any other on a common verdict without reintroducing a hidden oracle.
 
-## **Conclusion**
+## Conclusion
 
 Honest abstention need not stop at the edge of a single instrument. Under one nested-floor rule — clear the outermost floor among operator, artifact, and substrate — the discipline that lets one measurement instrument withhold a reading lets an ensemble of heterogeneous instruments withhold a finding, and a no-rescue lemma guarantees that agreement among noisy instruments cannot manufacture one. Reconciliation returns a typed verdict rather than a forced estimate, gated by alignment and self-certification, and the rule composes instruments of different kinds — a measurement vector and a specification audit — on an aligned verdict where their raw outputs cannot be combined. The framework is shipped and reproducible: worked cases reproduce all four verdicts, and a seeded Monte-Carlo characterization marks where the lattice returns what meta-analysis, sensor fusion, metrology, and selective prediction do not. The result is a way for an agent to compose what it knows from many sources and report, auditably, what is resolved, what is contested, and what cannot be told.
 
@@ -180,7 +178,7 @@ The verdict-region fractions and the three prior-art divergence fractions are re
 ::: {#refs}
 :::
 
-## **Appendix A. Proof of Proposition 1 and the Verdict Algorithm**
+## Appendix A. Proof of Proposition 1 and the Verdict Algorithm
 
 ***Proof of Proposition 1 (no rescue)***
 

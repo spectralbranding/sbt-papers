@@ -8,22 +8,20 @@ DOI: [10.5281/zenodo.19139258](https://doi.org/10.5281/zenodo.19139258)
 
 Working Paper v2.2.0 – March 2026 (revised June 2026)
 
----
-
 ## Abstract
 
 Purpose campaigns are evaluated by aggregate metrics that cannot distinguish structural success from surface popularity. This paper presents what is, to the author's knowledge, the first formal application of the SBT eight-dimension decomposition to a longitudinal purpose-campaign case study: Dove's "Campaign for Real Beauty" (2004--2026) across four temporal cross-sections. Four observer cohorts -- Purpose-Aligned, Product-Pragmatist, Social-Signal Reader, and Skeptic-Critic -- receive identical signals but form structurally different brand convictions. Within the case set considered here, disproportionate commercial impact is traced to *dimensional creation*: the activation of a previously null dimension that opens new perceptual territory rather than competing within existing space. Five propositions address dimensional creation, observer heterogeneity, portfolio interference, counter-cultural decay, and dimensional specificity. Independent quantitative evidence from a large-scale AI-observer study replicates the cohort-divergence and Patagonia-as-exception patterns, providing an empirical anchor across a controllable observer population. The framework extends brand-equity, authenticity, and cultural-branding literatures by supplying a formal, cohort-contingent account of simultaneous positive and negative conviction formation.
 
 **Keywords**: brand purpose, purpose advertising, brand activism, observer cohorts, portfolio interference, counter-cultural decay, multi-dimensional perception, spectral brand theory
 
-**Practitioner Takeaways**
+---
+
+## Practitioner Takeaways
 
 - Purpose campaigns succeed by activating previously dormant perceptual dimensions rather than strengthening existing ones; Dove's null-to-positive Ideological shift created uncrowded perceptual territory that drove disproportionate revenue growth.
 - The same campaign signals produce structurally opposite responses across observer cohorts: what empowers Purpose-Aligned observers simultaneously intensifies negative conviction among Skeptic-Critics.
 - Portfolio-level contradictions (e.g., Dove empowerment alongside Axe objectification) generate predictable interference on the Ideological dimension, with penalty severity proportional to observer awareness of corporate parentage.
 - Advertising managers should replace aggregate sentiment tracking with cohort-specific measurement and audit dimensional profiles before launching purpose campaigns.
-
----
 
 In January 2004, Dove launched the "Campaign for Real Beauty" with a series of billboards featuring photographs of women who did not conform to conventional beauty-industry standards. By 2007, Dove's global revenue had approximately doubled from ~$2B to ~$4B. By 2013, the "Real Beauty Sketches" video had accumulated over 163 million views, generating 4.6 billion public relations impressions and a 6% sales increase. By 2023, the brand reported EUR 6B in annual turnover -- its highest underlying sales growth in a decade [@unilever-2023-annual-report-accounts]. Among discrete purpose campaigns documented in the academic and practitioner literature, none has sustained comparable commercial performance over two decades (as distinct from long-term brand positioning, such as Patagonia's).
 
@@ -44,8 +42,6 @@ This paper applies Spectral Brand Theory (SBT; Zharnikov [-@zharnikov-2026-spect
 2. **Portfolio spectral interference** (Portfolio Interference section): The paper introduces portfolio-level spectral interference as a formal mechanism and shows that the Unilever paradox is a predictable spectral effect, with the coherence penalty quantifiable by cohort Ideological weight and corporate transparency level.
 
 3. **Cross-case comparison and empirical anchor** (Comparison Cases; Empirical Anchor sections): The paper contrasts Dove's dimensional activation pattern with two high-profile purpose campaign failures (Pepsi/Kendall Jenner 2017; Gillette "The Best Men Can Be" 2019) and a structural success (Patagonia "Don't Buy This Jacket" 2011), and anchors the case analysis in independent quantitative evidence from a 21,601-call AI observer study [@zharnikov-2026-dimensional-collapse-ai-mediated-search] that corroborates the cohort-divergence mechanism and the Patagonia-as-exception finding across a controllable observer population.
-
----
 
 ## Theoretical Framework
 
@@ -70,9 +66,7 @@ SBT defines five coherence types based on dimensional signal alignment: Ecosyste
 
 SBT's eight-dimension model relates to Brakus, Schmitt, and Zarantonello's [-@brakus-2009-brand-experience-what] four brand experience dimensions as follows: sensory experience corresponds approximately to SBT's semiotic dimension; affective experience is distributed across SBT's experiential and social dimensions; intellectual experience maps to narrative + ideological; behavioral experience maps to experiential. SBT additionally separates the economic, cultural, and temporal dimensions that Brakus et al. compress into other constructs. The eight-dimension structure is not arbitrary -- the dimensional necessity argument is developed in Zharnikov [-@zharnikov-2026-why-eight-completeness-necessity-sbt, R11 "Why Eight"].
 
----
-
-Figure 1: Dove longitudinal trajectory -- dimensional activation events, revenue milestones, and cultural decay (2003-2026).
+**Figure 1.** Dove longitudinal trajectory -- dimensional activation events, revenue milestones, and cultural decay (2003-2026).
 
 ```mermaid
 flowchart LR
@@ -90,8 +84,6 @@ flowchart LR
 
 *Notes*: Green nodes mark positive dimensional activation phases; red nodes mark dark-signal events; yellow node marks normative-absorption phase with eroded counter-cultural distinctiveness. Revenue figures from Unilever Annual Reports (2003-2023). Dimension scores from Table 1.
 
----
-
 ## Method: Spectral Case Analysis
 
 This paper employs spectral case analysis -- the systematic application of SBT's multi-dimensional framework to a focal brand using longitudinal data. The method involves five steps: (1) signal decomposition across eight dimensions at defined time points; (2) cohort identification from academic perception studies; (3) perception cloud reconstruction modeling how each cohort transforms brand emissions into brand conviction; (4) coherence audit classifying the brand's coherence type at each time point; and (5) financial mapping correlating dimensional activation events with revenue trajectories.
@@ -99,8 +91,6 @@ This paper employs spectral case analysis -- the systematic application of SBT's
 The analysis draws on three categories of evidence. **Corporate data**: Unilever Annual Reports [@unilever-2003-annual-report-accounts; @unilever-2007-annual-report-accounts; @unilever-2011-annual-report-accounts; @unilever-2023-annual-report-accounts], brand revenue and campaign expenditure data. **Academic perception studies**: Bissell and Rask [-@bissell-2010-real-women-real, self-discrepancy effects], Feng, Chen, and He [-@feng-2019-consumer-responses-femvertising, consumer response divergence], Taylor et al. [-@taylor-2016-corporation-feminist-clothing, critical discourse analysis]. **Critical and cultural studies**: Murray [-@murray-2013-branding-real-social, genderwashing analysis], Gill [-@gill-2007-postfeminist-media-culture, post-feminist critique].
 
 Spectral case analysis is interpretive rather than econometric. Emission intensities are derived from qualitative assessment of brand signals, not from survey instrumentation. Observer cohort profiles are constructed from documented response patterns in the literature. Detailed methodological caveats are addressed in the Limitations section.
-
----
 
 ## Signal Decomposition: Dove Across Eight Dimensions (2003--2026)
 
@@ -110,7 +100,7 @@ The analysis examines Dove's emission profile at four time points: **2003** (pre
 
 ### *Eight-Dimensional Signal Table*
 
-Table 1: Dove emission profile across eight SBT dimensions at four temporal cross-sections.
+**Table 1.** Dove emission profile across eight SBT dimensions at four temporal cross-sections.
 
 | Dimension | 2003 | 2006 | 2013 | 2023 |
 |---|---|---|---|---|
@@ -135,8 +125,6 @@ The 2004 campaign created new signal space. Activating a null dimension does not
 
 By 2023, two structural absences have become significant. First, **Cultural dimension decay**: the counter-cultural signal that scored 8.5 in 2006 has decayed to 5.5 -- not because Dove changed its message but because body positivity moved from counter-cultural to normative. Second, **portfolio dark signal**: the Unilever portfolio contradiction generates a structural absence on the Ideological dimension for informed observers, manifesting in the perception cloud rather than the emission profile.
 
----
-
 ## Observer Cohort Analysis
 
 Drawing on the academic perception literature, the analysis identifies four observer cohorts defined by their spectral weight vectors.
@@ -149,7 +137,7 @@ Drawing on the academic perception literature, the analysis identifies four obse
 
 **Cohort 4: Skeptic-Critic (SC).** Observers who weight Ideological dimensions heavily but assign *negative* conviction when they perceive ideological inconsistency. Supporting evidence: Murray [-@murray-2013-branding-real-social] documents genderwashing; Taylor et al. [-@taylor-2016-corporation-feminist-clothing] identify "faux feminism"; publicly accessible Dove YouTube comment threads consistently show that comments addressing the parent corporation rather than campaign content skew negative, while comments addressing the campaign message itself skew positive.
 
-Table 2: Observer spectral profiles (weight vectors) for four Dove cohorts.
+**Table 2.** Observer spectral profiles (weight vectors) for four Dove cohorts.
 
 | Dimension | PA | PP | SS | SC |
 |-----------|-----|-----|-----|-----|
@@ -166,8 +154,6 @@ Table 2: Observer spectral profiles (weight vectors) for four Dove cohorts.
 
 The PA and SC cohorts share nearly identical spectral weight profiles on Narrative and Ideological dimensions. They differ not in *what they attend to* but in *how they evaluate what they attend to*. The Skeptic-Critic is not Ideologically indifferent (that would be the Product-Pragmatist) but Ideologically engaged -- and the brand conviction function produces opposite signs on the same dimension for the same emission profile. No framework that models brand perception as a single aggregate construct can represent this mirror structure.
 
----
-
 ## Perception Cloud Dynamics
 
 **"Real Beauty Sketches" (2013): Four Perception Events.** The 2013 "Real Beauty Sketches" video produced four structurally distinct perception events:
@@ -180,7 +166,7 @@ The PA and SC cohorts share nearly identical spectral weight profiles on Narrati
 
 **Skeptic-Critic: Cloud inversion.** The higher the Ideological signal intensity, the more salient the perceived gap between Dove's messaging and Unilever's portfolio. Every emotional beat that strengthened PA conviction strengthened SC negative conviction -- the same signal, operating on the same high-weight dimension, producing opposite trajectories.
 
-Table 3: Perception cloud formation states across four time points.
+**Table 3.** Perception cloud formation states across four time points.
 
 | Cohort | 2003 | 2006 | 2013 | 2023 |
 |---|---|---|---|---|
@@ -193,15 +179,13 @@ Table 3: Perception cloud formation states across four time points.
 
 Bissell and Rask [-@bissell-2010-real-women-real] documented an "aversive impact" among high-BMI observers who experienced the campaign as highlighting their deviation from even the campaign's expanded beauty standards. In SBT terms, this is localized perception cloud inversion driven by Ideological-Experiential cross-dimensional dissonance -- the ideological promise exceeded the experiential reality as perceived by this observer subgroup.
 
----
-
 ## Coherence Audit
 
 Applying SBT's coherence classification to Dove's 2023 emission profile:
 
 **Classification: Identity coherence.** Dove's brand perception is anchored by a strong Ideological-Narrative core (7.5 each), with supporting alignment from Social (6.5) and Temporal (7.5) dimensions. Semiotic, Experiential, and Economic are competent but not distinctive. Cultural (5.5) shows eroded distinctiveness. Portfolio contamination introduces a structural dark signal.
 
-Table 4: Dove's spectral profile compared with canonical SBT case-study brands.
+**Table 4.** Dove's spectral profile compared with canonical SBT case-study brands.
 
 | Brand | Sem | Nar | Ide | Exp | Soc | Eco | Cul | Tem | Coherence | Grade |
 |-------|-----|-----|-----|-----|-----|-----|-----|-----|-----------|-------|
@@ -217,8 +201,6 @@ Three vulnerabilities emerge: (1) **Ideological drift** -- intensity declined fr
 
 The Cultural dimension trajectory follows an inverted-U: counter-cultural impact rises as the message gains attention (2006, 8.5), peaks as it approaches mainstream adoption (2013, 8.0), and declines as it becomes mainstream (2023, 5.5). A counter-cultural brand signal that achieves cultural victory ceases to be counter-cultural. This is not a campaign failure but a structural property of counter-cultural positioning.
 
----
-
 ## Portfolio Interference: The Unilever Paradox
 
 Unilever's brand portfolio contains three brands whose Ideological emissions directly contradict Dove's: Axe/Lynx (hypersexualized masculinity), Fair & Lovely/Glow & Lovely (skin-lightening), and Slim-Fast (thin-ideal weight loss). Murray [-@murray-2013-branding-real-social] termed this "genderwashing." SBT provides the formal mechanism through spectral interference: when an observer becomes aware that Dove and Axe share a parent, their perception clouds for both brands are perturbed by a coherence penalty on the Ideological dimension.
@@ -229,11 +211,9 @@ Public comment data for Dove's campaign consistently show the split this predict
 
 Supplementary empirical testing of competitive interference across 5 focal brands paired with direct, adjacent, and distant competitors (240 API calls; gpt-4o-mini, temperature .7; 16 reps per condition; 40 one-way ANOVAs, Bonferroni-corrected alpha = .00125) found significant modulation in 11 of 40 brand-dimension cells. The largest effect was Hermès/Narrative, F(2, 45) = 33.14, p < .001, d = 3.27, followed by Tesla/Ideological, F(2, 45) = 17.23, p < .001, d = 2.29, and Erewhon/Temporal, F(2, 45) = 18.81, p < .001, d = 1.68. Effects clustered on heritage, identity-intensive, and purpose-driven dimensions (Narrative, Cultural, Social, Temporal, Ideological) for brands where competitor category plausibly shifts the perceived contrast frame (Hermès, Tesla, Erewhon); commodity-functional brands (IKEA) showed effects primarily on Social. The remaining 29 cells were non-significant. This pattern qualifies rather than negates Proposition 3: competitive-context effects on spectral profiles are real but dimension-specific and brand-contingent. Portfolio interference -- reflecting strategic coherence decisions within a shared ownership structure -- is distinct from competitive-context interference and operates through a different mechanism (shared Ideological emissions forced by corporate ownership rather than voluntary contrast framing). The Dove/Unilever incoherence is a portfolio phenomenon; the present results indicate that competitive proximity can additionally modulate selected dimensions for prestige and purpose brands independently of ownership. Note on model specificity: this 240-call replication uses gpt-4o-mini exclusively, with 16 repetitions per condition; Zharnikov [-@zharnikov-2026-spectral-brand-theory-computational-framework] reports a complementary five-model design (250 calls, one rep per model-condition cell) that finds null aggregate competitive-interference effects but specifically flags gpt-4o-mini as exhibiting roughly double the cross-condition profile shift of the other four models. The per-(brand $\times$ dimension) decomposition with high replication reported here therefore confirms the model-specific instability that the broader cross-model design surfaced as an exploratory anomaly. Replication on additional architectures with comparable per-cell power is warranted before generalizing the finding.
 
----
-
 ## Financial Mapping
 
-Table 5: Dove financial trajectory mapped to dimensional activation events.
+**Table 5.** Dove financial trajectory mapped to dimensional activation events.
 
 | Year | Est. Revenue | Key Dimensional Event | SBT Interpretation |
 |------|-------------|----------------------|-------------------|
@@ -248,8 +228,6 @@ Table 5: Dove financial trajectory mapped to dimensional activation events.
 
 The financial data support a central SBT prediction: growth correlates with *dimensional specificity* rather than *total signal intensity*. Ogilvy & Mather's analysis found Dove's masterbrand advertising returned $3.40 per dollar, while the Oprah partnership -- higher in dimensional specificity -- returned $6.02 per dollar. Between 2013 and 2019, sustained campaign investment without new-dimension activation produced modest growth. The 2023 Experiential dimension activation (body wash redesign) combined with refreshed Ideological content (AI ethics) produced the brand's highest underlying sales growth in a decade.
 
----
-
 ## Comparison Cases: Pepsi, Gillette, and Patagonia
 
 Two high-profile failures and one structural success illuminate SBT's predictive mechanism by contrast with Dove.
@@ -261,8 +239,6 @@ Two high-profile failures and one structural success illuminate SBT's predictive
 **Patagonia "Don't Buy This Jacket" (2011) -- success.** Patagonia's anti-consumption campaign reinforced existing Narrative and Cultural signals rather than activating from null. Patagonia already carried a moderate-to-high Ideological dimension built through supply chain transparency and environmental commitment. The campaign maintained Ecosystem coherence type because the Ideological signal was always reinforced by product behavior (repairability, recycled materials). Revenue impact was positive despite the anti-consumption message. The contrast with Dove is instructive: Patagonia avoided counter-cultural decay because its Ideological signal was anchored in product Experiential reality, not campaign mediation alone. Dove's Ideological signal, being campaign-mediated, remains vulnerable to portfolio dark signals in a way Patagonia's product-anchored Ideological signal is not. Vanhamme and Grobben [-@vanhamme-2009-too-good-be] show that a brand's CSR history serves as a buffer against negative publicity; Patagonia's three-decade operational CSR history functions as precisely this buffer -- the Ideological signal precedes and anchors the campaign, rather than the campaign creating the signal from scratch.
 
 The three comparison cases demonstrate that SBT's framework predicts outcomes across structurally different purpose campaigns: success from null-dimension activation with coherence (Dove), success from reinforcing existing dimensions with product anchoring (Patagonia), failure from null activation without narrative foundation (Pepsi), and failure from contradicting existing dimensions (Gillette).
-
----
 
 ## Empirical Anchor: Cohort Divergence in AI Observers (R15 Evidence)
 
@@ -286,15 +262,13 @@ A further connection comes from Zharnikov [-@zharnikov-2026-ai-native-brand-iden
 
 The LLM-as-observer substitution adopted in this section is defensible because Zharnikov [-@zharnikov-2026-dimensional-collapse-ai-mediated-search] demonstrates that LLM cohort weight vectors are operationalized through training tradition, providing a controllable analog to the implicit weight vectors of human cohorts (which can only be inferred behaviorally). This is methodological corroboration across observer types, not a substitute for direct human-cohort measurement, which Limitation 2 still recommends.
 
----
-
 ## What Existing Frameworks Miss
 
 Aaker's [-@aaker-1996-building-strong-brands] brand equity framework can describe *that* Dove succeeded but not *how* the same signals produce opposite effects in different observer groups. Aaker's [-@aaker-1997-dimensions-brand-personality] brand personality dimensions -- the closest predecessor to SBT's multi-dimensional model -- represent sender-attributed trait constructs that cannot model observer heterogeneity: Dove's *sincerity* score is a single number, not a distribution across cohorts. SBT's dimensions are defined by emission type and can accommodate opposite conviction valences in PA and SC cohorts from the same signal.
 
 Keller's [-@keller-1993-conceptualizing-measuring-managing] equity-as-stock metaphor implies that equity changes quantitatively but not in type. In SBT, Dove's 2004 campaign created a qualitatively new dimension -- a state change, not a quantity change. Kapferer's [-@kapferer-2008-new-strategic-brand, 4th ed.] identity prism describes brand identity but is fundamentally sender-focused: it describes what the brand *intends* to communicate, not how different observers *receive* those communications.
 
-Table 6: Framework capability comparison.
+**Table 6.** Framework capability comparison.
 
 | # | Phenomenon | Aa96 | Aa97 | Ke93 | Ka08 | SBT |
 |---|---|---|---|---|---|---|
@@ -307,8 +281,6 @@ Table 6: Framework capability comparison.
 | 7 | Observer-defined dims. | -- | -- | -- | -- | Yes |
 
 *Notes*: Aa96 = Aaker [-@aaker-1996-building-strong-brands], Aa97 = Aaker [-@aaker-1997-dimensions-brand-personality], Ke93 = Keller [-@keller-1993-conceptualizing-measuring-managing], Ka08 = Kapferer [-@kapferer-2008-new-strategic-brand, 4th ed.]. Yes = explicitly modeled. Part. = captures related phenomenon without specific mechanism. -- = outside framework scope.
-
----
 
 ## Propositions
 
@@ -343,8 +315,6 @@ Dove's Cultural dimension declined from 8.5 (2006) to 5.5 (2023) not because the
 Dove's revenue shows explosive growth during activation periods (2004--2007, 2023) and modest growth during maintenance periods (2013--2019), despite sustained investment.
 
 *Falsification: P5 is falsified if revenue growth correlates more strongly with total campaign spend than with new-dimension activation events -- that is, if a regression of revenue growth on total spend significantly outperforms a regression of revenue growth on dimensional specificity score (new dimensions activated $\times$ activation magnitude), controlling for category baseline growth.*
-
----
 
 ## Discussion: Implications and Convergence
 
@@ -390,8 +360,6 @@ As AI shopping agents mediate an increasing share of commerce [@hermann-2026-tru
 
 Three independent research streams converge with R10's findings. Zharnikov [-@zharnikov-2026-dimensional-collapse-ai-mediated-search], reviewed in the Empirical Anchor section, provides quantitative evidence from 21,601 AI-observer evaluations that cohort divergence and dimensional collapse are structural phenomena -- not interpretive artifacts of case method -- and that Patagonia is a consistent exception across 24 distinct LLM cohorts. Sabbah and Acar [-@sabbah-2026-marketing-machines-how], studying how AI-mediated commerce affects brand signal transmission, find that only dimension-anchored attributes survive AI filtering intact -- the Economic and Semiotic dimensions are preserved while Cultural and Ideological signals are compressed. This is precisely the collapse pattern R10 would predict for AI acting as a high-Economic-weight, low-Ideological-weight observer cohort. Hermann, Puntoni, and Schweidel [-@hermann-2026-trusting-ai-agents] extend the same logic to agentic commerce: AI agents acting on behalf of human consumers function as a structurally distinct observer cohort whose weight vector is dominated by verifiable, machine-readable attributes -- exactly the conditions under which campaign-mediated Ideological signals collapse. As AI mediates an increasing share of commerce [@kietzmann-2018-artificial-intelligence-advertising], brands whose Ideological signal rests on campaign mediation alone (like Dove) face a structural compression threat, while brands with product-anchored Ideological signals (like Patagonia) are more robust to AI-mediated collapse.
 
----
-
 ## Limitations and Future Research
 
 This study has four limitations that constrain interpretation and point toward specific productive future research.
@@ -403,8 +371,6 @@ This study has four limitations that constrain interpretation and point toward s
 **Limitation 3: Correlation, not causation, in financial mapping.** The financial analysis in Table 5 establishes temporal co-occurrence between dimensional activation events and revenue growth, not causal effect. Confounds including market growth, distribution expansion, media investment levels, and macroeconomic conditions all co-vary with the activation events identified. Future research should apply difference-in-differences or synthetic control methods to isolate dimensional activation effects from category-level and macro-level confounds, using brands with similar financial trajectories that did not activate comparable dimensions as controls.
 
 **Limitation 4: English-language and US/UK cultural scope.** All sources are English-language and anchored in US/UK cultural contexts. Dove operates globally, and the portfolio interference dynamics from Glow & Lovely (skin-lightening) are qualitatively different in South Asian markets where colorism is a lived cultural reality rather than an external critique. Future research should replicate the spectral case analysis in at least three non-Western markets (South Asia, Brazil, Japan) where the Dove portfolio contradiction takes culturally specific forms, testing whether the cohort divergence structure is consistent across cultural contexts or whether the spectral weight vectors themselves shift by market.
-
----
 
 ## Conclusion
 

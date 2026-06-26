@@ -8,19 +8,17 @@ DOI: [10.5281/zenodo.18945477](https://doi.org/10.5281/zenodo.18945477)
 
 Working Paper v1.2.0 – March 2026 (revised June 2026)
 
----
-
 ## Abstract
 
 This paper applies concentration-of-measure techniques to the probability simplex $\Delta^7$ under the uniform Dirichlet$(1,\ldots,1)$ null. Three results follow. First, the Euclidean distance contrast ratio degrades to approximately 7.5 at $n = 8$, placing the space in a transitional regime where clustering remains informative yet noisy. Second, for any convex $k$-partition of $\Delta^7$, the volume fraction within relative Euclidean distance $\delta = .10$ of any boundary is at least 52.2%. Third, Lévy's lemma on the 7-sphere yields $P(|f - M_f| \geq \varepsilon) \leq 4\exp(-7\varepsilon^2/8)$ for 1-Lipschitz functions. Monte Carlo simulations with $10^5$ draws confirm the predictions within sampling error. These bounds imply that a majority of observer profiles lie near at least one cohort boundary under the uniform null, making discrete assignment inherently unstable. The uniform distribution maximizes boundary volume; symmetric Dirichlet$(\alpha,\ldots,\alpha)$ with $\alpha \geq 3$ reduces the fraction by $\alpha^{-7/2}$, producing operationally crisp boundaries (below 2%) for empirically plausible $\alpha$. The results give a geometric foundation for preferring continuous observer profiles over discrete cohort labels once perceptual dimensionality exceeds five. Fisher-Rao recalculation via the sphere isometry confirms the qualitative conclusions.
 
 **Keywords**: concentration of measure, cohort boundaries, probability simplex, Lévy's lemma, brand perception, high-dimensional geometry, Spectral Brand Theory
 
+---
+
 **JEL Classification**: C65, M31, C38
 
 **MSC Classification**: 60E15, 52A21, 91B42
-
----
 
 ## 1. Introduction
 
@@ -37,8 +35,6 @@ This paper derives explicit non-asymptotic bounds on both phenomena under the un
 2. **Methodological implication for discrete versus continuous cohort representation** in moderate-dimensional perceptual spaces. The bounds quantify the information loss from rasterized cohort labels relative to vectorized observer profiles, and identify $n \approx 5$ as the dimensionality threshold beyond which discrete assignment systematically misrepresents a majority of the population.
 
 The paper proceeds as follows. Section 2 recalls the relevant geometry (with $\Delta^7$ and the Fisher-Rao metric established in Zharnikov [-@zharnikov-2026-brand-space-geometry-formal-metric]) and provides a cross-paper geometry summary (Table 1). Section 3 develops concentration of measure on the simplex. Section 4 proves the boundary fuzziness theorems, including a schematic of simplex mass concentration (Figure 1) and a plot of the boundary volume fraction curve (Figure 2). Section 5 presents Monte Carlo verification. Section 6 develops the implications for branding practice. Section 7 connects the results to non-ergodic dynamics. Section 8 extends the analysis to concentrated Dirichlet$(\alpha,\ldots,\alpha)$ distributions, showing that the uniform case is the worst case and that real populations have sharper boundaries. Section 9 discusses limitations. Section 10 concludes.
-
----
 
 ## 2. Preliminaries
 
@@ -74,7 +70,7 @@ where $\mu_j$ is the Frechet mean of cluster $C_j$ in the Fisher-Rao metric. The
 
 The present paper is the third in a sequence of papers that together constitute the geometric program of SBT. Each addresses a distinct geometric structure on the brand-observer space; Table 1 provides a reader's map.
 
-Table 1: Cross-Paper Geometry Summary for SBT Foundational Papers.
+**Table 1.** Cross-Paper Geometry Summary for SBT Foundational Papers.
 
 | Paper | Geometric structure | Main quantity | Headline result |
 |-------|--------------------|--------------|-----------------|
@@ -84,8 +80,6 @@ Table 1: Cross-Paper Geometry Summary for SBT Foundational Papers.
 | 2026g (R4) Sphere Packing | $E_8$ root lattice in $\mathbb{R}^8$; kissing number; packing density | Maximum distinguishable brand count $N_{\max}$ | $\leq$ 240 non-overlapping brand positions in spectral space at standard resolution; dual constraint to R3's cohort capacity bound |
 
 *Notes*: Papers are ordered by geometric layer, from metric (R1) through projection (R2) through measure concentration (R3) through packing capacity (R4). Together they establish the geometric foundations of the SBT framework. R3's majority-near-boundary result and R4's packing bound are dual constraints: R4 bounds how many brands are distinguishable in $\mathcal{B}$; R3 bounds how many cohort positions are simultaneously resolvable in $\mathcal{O}$.*
-
----
 
 ## 3. Concentration of Measure on the Simplex
 
@@ -107,7 +101,7 @@ $$P\left(|f(x) - M_f| \geq \varepsilon \right) \leq 4 \exp\left( -\frac{(n-1)\va
 
 The practical import of Proposition 1 is that any "well-behaved" (Lipschitz) function of an observer's position on the sphere -- including, crucially, the distance from that observer to a cohort centroid -- cannot vary much from its typical value. At $n = 8$, the numerical bounds are:
 
-Table 2: Lévy Concentration Bounds on $S^7$ at Selected Deviation Thresholds.
+**Table 2.** Lévy Concentration Bounds on $S^7$ at Selected Deviation Thresholds.
 
 | $\varepsilon$ | $P(\|f - M_f\| \geq \varepsilon)$ (standard) | $P$ (sharp, sets of measure 1/2) |
 |---|---|---|
@@ -165,7 +159,7 @@ $$E[\|w_i - w_j\|_2^2] = 2 \sum_{l=1}^n \text{Var}[X_l] = \frac{2(n-1)}{n(n+1)}$
 
 *(b) The distance contrast ratio degrades with dimension. Monte Carlo estimation with $m = 1000$ yields:*
 
-Table 3: Distance Contrast Ratio Degradation with Dimension on the Simplex.
+**Table 3.** Distance Contrast Ratio Degradation with Dimension on the Simplex.
 
 | $n$ | $R_n$ (contrast ratio) | Mean Euclidean distance | SD of distances |
 |---|---|---|---|
@@ -205,7 +199,7 @@ The numerical bounds in Sections 3.1–3.3 use Euclidean distance on $\Delta^7$ 
 
 Monte Carlo simulation with $m = 1000$ and $10^3$ trials (script: `code/r3_concentration_mc.py` in the companion repository) yields the figures in Table 4.
 
-Table 4: Distance Concentration on $\Delta^7$ under Euclidean and Fisher-Rao Metrics.
+**Table 4.** Distance Concentration on $\Delta^7$ under Euclidean and Fisher-Rao Metrics.
 
 | Metric | $R_8$ (contrast ratio) | Mean distance | CV |
 |---|---|---|---|
@@ -223,8 +217,6 @@ $$\text{BVF}^{\text{FR}}(n, \delta) \geq 1 - (1 - \delta)^{n-1}$$
 with $\delta$ now interpreted as relative geodesic distance to the boundary, and the same numerical value 52.2% at $n = 8$, $\delta = .10$. The Lévy concentration bound (Proposition 1) is itself a Fisher-Rao result on $S^7$, so no additional translation is required.
 
 The two-metric comparison shows that the qualitative conclusions of the paper -- transitional concentration regime, majority-near-boundary, geometric necessity of fuzzy cohort assignment -- hold under both metrics. Numerical bounds on the contrast ratio differ modestly (Fisher-Rao $\approx 70\%$ of Euclidean); the boundary-volume bound is identical in form and value.
-
----
 
 ## 4. Boundary Fuzziness in Partitioned Spaces
 
@@ -260,7 +252,7 @@ graph TD
     BZ --> FLIP["Cohort reassignment<br/>risk zone<br/>perturbation delta = SD = 0.11"]
 ```
 
-*Figure 1: Schematic of mass concentration near the boundary of $\Delta^7$. Under the Dirichlet$(1,\ldots,1)$ uniform null, at least 52.2% of observer weight profiles lie within relative distance $\delta = .10$ of any convex partition boundary (Theorem 2). Corner profiles represent dimension-dominant observers; the centroid is the equal-weight observer. The boundary zone (shaded region) contains the majority of the probability mass; profiles in this zone are at risk of cohort reassignment under perturbations of magnitude comparable to the component standard deviation SD $= .110$ (Proposition 2).*
+**Figure 1.** Schematic of mass concentration near the boundary of $\Delta^7$. Under the Dirichlet$(1,\ldots,1)$ uniform null, at least 52.2% of observer weight profiles lie within relative distance $\delta = .10$ of any convex partition boundary (Theorem 2). Corner profiles represent dimension-dominant observers; the centroid is the equal-weight observer. The boundary zone (shaded region) contains the majority of the probability mass; profiles in this zone are at risk of cohort reassignment under perturbations of magnitude comparable to the component standard deviation SD $= .110$ (Proposition 2).
 
 **Theorem 2** (Boundary fuzziness on $\Delta^7$). *Let $\Delta^{n-1}$ be the standard $(n-1)$-simplex and let $C_1, \ldots, C_k$ ($k \geq 2$) be a partition of $\Delta^{n-1}$ into convex regions. For the relative boundary width parameter $\delta \in (0, 1)$, define the boundary volume fraction as the fraction of $\Delta^{n-1}$ (with respect to Lebesgue measure on the simplex) lying within relative distance $\delta$ of any partition boundary. Then:*
 
@@ -268,7 +260,7 @@ $$\text{BVF}(n, \delta) \geq 1 - (1 - \delta)^{n-1}$$
 
 *The exponent $n-1$ reflects the intrinsic dimension of the simplex $\Delta^{n-1}$, which is embedded in $\mathbb{R}^n$ but lies on the affine hyperplane $\sum_i w_i = 1$ and so has dimension $n-1$ as a manifold. In particular, at $n = 8$:*
 
-Table 5: Boundary Volume Fraction at $n = 8$ Across Relative Boundary Widths.
+**Table 5.** Boundary Volume Fraction at $n = 8$ Across Relative Boundary Widths.
 
 | $\delta$ | $\text{BVF}(8, \delta)$ | Interpretation |
 |---|---|---|
@@ -288,7 +280,7 @@ xychart-beta
     line [0.068, 0.302, 0.522, 0.672, 0.790, 0.867, 0.918]
 ```
 
-*Figure 2: Lower bound on boundary volume fraction $\text{BVF}(8, \delta) = 1 - (1-\delta)^7$ as a function of the relative boundary width $\delta$. At the operationally relevant threshold $\delta = .10$, more than half the simplex (52.2%) lies within the boundary zone. The curve is concave and approaches 1 rapidly: at $\delta = .20$ nearly four-fifths of $\Delta^7$ is boundary. This is a lower bound (Theorem 2); empirical Monte Carlo estimates consistently exceed it (Table 7 shows 62.5% at $\delta = .10$).*
+**Figure 2.** Lower bound on boundary volume fraction $\text{BVF}(8, \delta) = 1 - (1-\delta)^7$ as a function of the relative boundary width $\delta$. At the operationally relevant threshold $\delta = .10$, more than half the simplex (52.2%) lies within the boundary zone. The curve is concave and approaches 1 rapidly: at $\delta = .20$ nearly four-fifths of $\Delta^7$ is boundary. This is a lower bound (Theorem 2); empirical Monte Carlo estimates consistently exceed it (Table 7 shows 62.5% at $\delta = .10$).
 
 *Proof.* The argument uses the Brunn-Minkowski peeling technique for convex bodies [@schneider-2014-convex-bodies-brunnminkowski, Theorem 7.1.1; @vershynin-2018-highdimensional-probability-introduction, Section 5.2]. Consider first the simplest case: a bisection of $\Delta^{n-1}$ by a hyperplane through its centroid into two convex regions $C_1, C_2$.
 
@@ -302,7 +294,7 @@ Taking complements gives the boundary volume fraction $\text{BVF}(n, \delta) \ge
 
 **Comparison across dimensions.** To appreciate the significance of the 8-dimensional result, we compare the boundary volume fraction across simplex dimensions at fixed $\delta = .10$:
 
-Table 6: Boundary Volume Fraction Across Simplex Dimensions at Fixed $\delta = .10$.
+**Table 6.** Boundary Volume Fraction Across Simplex Dimensions at Fixed $\delta = .10$.
 
 | $n$ | Intrinsic dim. ($n-1$) | $\text{BVF}(n, .10)$ | Interpretation |
 |---|---|---|---|
@@ -334,8 +326,6 @@ Theorem 2 has a direct consequence for the relationship between cohort count $k$
 
 For larger $k$, the situation worsens. When $\Delta^7$ is divided into $k$ convex regions, each region has at most volume $1/k$ of the total, and its in-radius scales as $k^{-1/(n-1)}$. The boundary width $\delta$ measured relative to the in-radius must therefore increase for fixed absolute boundary width as $k$ grows. Increasing $k$ from 3 to 6 roughly doubles the total boundary surface area without proportionally increasing the total volume, which means a larger fraction of the volume falls in the boundary zone. This explains why Claude's 5--6 cohort structure and Gemini's 3-cohort structure are both geometrically valid: the finer partition simply has a wider proportional boundary zone, and the threshold at which the "boundary" observers are assigned to one cluster or the other is a free parameter.
 
----
-
 ## 5. Monte Carlo Verification
 
 ### 5.1 Distance Ratio Simulations
@@ -363,7 +353,7 @@ To verify Theorem 2, we performed the following procedure for $n = 8$, $k = 4$ c
 
 The empirical boundary volume fractions closely match the theoretical bound:
 
-Table 7: Monte Carlo Verification of Boundary Volume Fraction at $n = 8$.
+**Table 7.** Monte Carlo Verification of Boundary Volume Fraction at $n = 8$.
 
 | $\delta$ | Theorem 2 prediction | Empirical ($k=4$, $10^5$ samples) |
 |---|---|---|
@@ -382,8 +372,6 @@ All Monte Carlo figures cited in Tables 2, 5, and 7 are reproducible from a sing
 > `https://github.com/spectralbranding/sbt-papers/tree/main/r3-cohort-boundaries/code/r3_concentration_mc.py`
 
 The script draws Dirichlet samples, runs $k$-means at $k = 4$, computes Euclidean and Fisher-Rao distance statistics, and reports the boundary volume fractions under both metrics. Random seed is fixed at 42; trial counts and sample sizes are documented in the script header. Running the script with `uv run --with numpy --with scikit-learn python r3_concentration_mc.py` reproduces the cited figures within the reported standard errors. A README in the same directory documents installation and provenance.
-
----
 
 ## 6. Implications for Spectral Brand Theory
 
@@ -441,8 +429,6 @@ In the brand signal space $\mathcal{B}$, the sphere-packing problem bounds how m
 
 Together, Theorems 1 and 2 define a *capacity-resolution trade-off* in $\mathcal{O}$: finer resolution (larger $k$) reduces per-cohort interior volume, while distance concentration caps the total number of distinguishable cohort positions. R4's packing bound in $\mathcal{B}$ and R3's volume bound in $\mathcal{O}$ are therefore dual constraints on the same question: what is the maximum information that the SBT framework can simultaneously encode about a population of observers? Capacity in $\mathcal{B}$ bounds how many brands can be distinguished; resolution in $\mathcal{O}$ bounds how finely observers can be partitioned.
 
----
-
 ## 7. Connection to Non-Ergodic Dynamics
 
 The concentration of measure results derived above characterize the *static* geometry of $\Delta^7$ -- what the space looks like at a single moment. SBT, however, posits that observer profiles evolve over time as observers encounter brand signals, update their priors, and experience signal decay and crystallization [@zharnikov-2026-spectral-brand-theory-computational-framework]. The temporal dynamics introduce non-ergodicity: the trajectory of an individual observer's weight profile through $\Delta^7$ does not, in general, visit all regions of the simplex, because absorbing states and crystallized priors create barriers to exploration.
@@ -458,8 +444,6 @@ Second, **absorbing states on $S^7_+$ prevent the mixing that concentration pred
 Hegselmann and Krause [-@hegselmann-2002-opinion-dynamics-bounded] studied a related phenomenon in their bounded-confidence opinion dynamics model: when agents update their opinions only based on nearby agents (within a confidence threshold), the population fragments into disconnected clusters even though the underlying space is connected. The SBT mechanism is similar but richer: rather than a fixed confidence threshold, the effective connectivity of $\Delta^7$ depends on the history of signal encounters and the resulting crystallized priors.
 
 The full formalization of these dynamics requires the diffusion-on-manifolds framework developed in Zharnikov [-@zharnikov-2026-non-ergodic-brand-perception-diffusion], which resolves the open problem posed in Zharnikov [-@zharnikov-2026-geometric-approaches-brand-perception-critical]; the static geometric results of the present paper provide the necessary foundation: the shape of the space, the width of the boundaries, and the degree of concentration establish the geometric arena in which the dynamics play out.
-
----
 
 ## 8. Boundary Fuzziness Under Concentrated Distributions
 
@@ -509,7 +493,7 @@ For $n = 8$ this gives $\alpha^{-7/2} = \alpha^{-3.5}$. Frigyik, Kapila, and Gup
 
 At $n = 8$, the exponent is $(n-1)/2 = 7/2 = 3.5$. The concentration factor at representative values of $\alpha$ is:
 
-Table 8: Dirichlet Concentration Effect on Boundary Volume Fraction at $n = 8$, $\delta = .10$.
+**Table 8.** Dirichlet Concentration Effect on Boundary Volume Fraction at $n = 8$, $\delta = .10$.
 
 | $\alpha$ | $(1/\alpha)^{3.5}$ | $V_{\text{boundary}}(\alpha) \leq$ (at $\delta = .10$) | Interpretation |
 |---|---|---|---|
@@ -543,8 +527,6 @@ This corollary strengthens the overall argument of this paper. The claim that co
 
 The spectrum from fuzzy (uniform) to crisp (point mass) should therefore be read as a *calibration* result: the uniform model sets the theoretical maximum for boundary ambiguity, and any empirical estimate of $\alpha$ from actual data immediately sharpens that bound. SBT's recommendation to use continuous observer profiles (Section 6.4) remains correct because the simplex geometry is the foundation, but the severity of the fuzziness problem depends on the empirical $\alpha$ of the observed population.
 
----
-
 ## 9. Limitations and Extensions
 
 Several limitations of the present analysis should be noted.
@@ -571,8 +553,6 @@ Empirical $\alpha$ values for behavioral weight distributions in adjacent domain
 
 **Extensions.** Three natural extensions suggest themselves: (1) concentration of measure on the *product* space $\mathcal{B} \times \mathcal{O}$ (the combined brand-observer space from Zharnikov, [-@zharnikov-2026-brand-space-geometry-formal-metric]), which would characterize boundary fuzziness for joint brand-observer cohorts; (2) time-dependent concentration bounds for evolving observer profiles under SBT's signal dynamics, connecting to the non-ergodic results in Section 7; (3) empirical validation using survey data to estimate the actual distribution of observer profiles on $\Delta^7$ and test whether the Dirichlet null model is a reasonable approximation.
 
----
-
 ## 10. Conclusion
 
 This paper has established that the fuzziness of perceptual cohort boundaries in Spectral Brand Theory is not a measurement artifact, an algorithmic limitation, or an empirical curiosity -- it is a geometric necessity under the uniform (Dirichlet-uniform) null model on $\Delta^7$. The concentration of measure phenomenon on the 8-dimensional probability simplex $\Delta^7$ ensures that:
@@ -592,8 +572,6 @@ These results have practical consequences beyond SBT. Any brand management frame
 The results also contextualize the broader challenge of "big data" approaches to consumer understanding. Increasing the number of dimensions tracked (from 2 in traditional perceptual maps to 8 in SBT to potentially dozens in granular behavioral data) does not automatically improve segmentation quality. Beyond a dimension-specific threshold, adding dimensions makes segmentation worse by inflating the boundary volume fraction, a consequence of the curse of dimensionality that is well understood in machine learning but has not previously been connected to marketing practice.
 
 Finally, the interaction between static concentration geometry and dynamic non-ergodic evolution (Section 7) opens a research frontier. The present paper establishes the shape of the geometric arena -- contrast ratio 7.46, boundary volume 52.2% at $\delta = .10$, $\alpha^{-7/2}$ sharpening under concentration; the dynamics within it -- diffusion, absorption, crystallization -- are the subject of future work.
-
----
 
 ## Acknowledgments
 

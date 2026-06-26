@@ -140,10 +140,10 @@ limitations:
     extension, not developed. Connects to the 2026z stationarity/crisis remark and coherence-resilience.'
   severity: moderate
   addressable: true
-- description: 'Proprietary-instrument / construct-validity objection (predicted lead reviewer objection):
-    the demonstration uses public illustrative profiles and an open reduction procedure; any perceptual
-    tracking battery reduced via the same spectral procedure recovers cloud position. The prediction is
-    about observer perception, not the particular instrument.'
+- description: 'Instrument-dependence / construct-validity: the demonstration uses public illustrative
+    profiles and an open reduction procedure; any perceptual tracking battery reduced via the same spectral
+    procedure recovers cloud position. The prediction is about observer perception, not the particular
+    instrument.'
   severity: moderate
   addressable: true
 - description: 'Causal identification is a design, not yet executed: F and tau are recovered correlationally

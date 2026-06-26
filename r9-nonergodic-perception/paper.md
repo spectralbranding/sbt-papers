@@ -8,8 +8,6 @@ DOI: [10.5281/zenodo.19138860](https://doi.org/10.5281/zenodo.19138860)
 
 Working Paper v2.2.0 – March 2026 (revised June 2026)
 
----
-
 ## Abstract
 
 Brand tracking assumes cross-sectional averages (ensemble averages) yield the same information as individual trajectories over time (time averages)—an ergodicity assumption violated in brand perception. Drawing on Peters' [-@peters-2019-ergodicity-problem-economics] framework from statistical physics, this paper identifies three structural sources of non-ergodicity: absorbing states from negative brand conviction, multiplicative signal dynamics, and path-dependent dimension weighting. Five formal propositions establish that signal order produces different perception profiles from identical signals; negative conviction functions as an absorbing state while positive conviction does not; cross-sectional tracking systematically overestimates brand health for absorption-risk brands; first signals anchor all subsequent updates in a dimension; and observer cohorts with different dimension weights produce divergent trajectories from identical signals. The paper specifies sufficient conditions for multiplicative perception updates and shows these conditions are empirically testable via longitudinal panel data. These propositions unify 80 years of scattered evidence on order effects, primacy, and belief updating within Spectral Brand Theory's eight-dimensional perception framework. The measurement implication is concrete: ensemble averages systematically misrepresent individual trajectories, and the bias direction and magnitude are predictable from brand coherence.
@@ -31,8 +29,6 @@ Brand perception exhibits the same structural features that produce non-ergodici
 The contribution of this paper is threefold. First, we identify brand perception as a non-ergodic process and specify the three structural features that produce the non-ergodicity: absorbing states, multiplicative dynamics, and path-dependent weighting. Second, we develop five formal propositions that derive testable predictions from the non-ergodic framework. Third, we connect the scattered empirical evidence from consumer psychology — primacy effects, order effects, belief updating, path dependence — to a unified theoretical explanation. The propositions are grounded in Spectral Brand Theory's [@zharnikov-2026-spectral-brand-theory-computational-framework] eight-dimensional perception space, where non-ergodicity operates across multiple dimensions simultaneously, and draw on the formal dynamic model developed in Zharnikov [-@zharnikov-2026-non-ergodic-brand-perception-diffusion]. The unification claim applies to the B2C, high-involvement brand perception setting studied here; extension to commodity or low-involvement categories is a separate empirical question.
 
 The implications for practice are immediate. If brand perception is non-ergodic, then cross-sectional brand tracking is not merely noisy — it is systematically biased. The direction of the bias is predictable: cross-sectional methods overestimate brand health for brands at risk of absorbing states and underestimate the strategic importance of touchpoint sequence. Brand managers who treat signal order as noise are discarding a first-order strategic variable.
-
----
 
 ## Theoretical Background
 
@@ -83,8 +79,6 @@ Three features of the SBT dynamic model are essential for the argument that foll
 2. **Three emission types.** SBT distinguishes positive signals (active, intentional brand emissions), null signals (absence of expected signals), and structural absence (dark signals — the systematic failure to emit in a dimension where emission is expected). Structural absence is particularly important for non-ergodicity because it creates a form of path dependence invisible to traditional measurement: a brand that has never signaled on a dimension creates a perception vacuum that subsequent signals fill differently than they would in the presence of an existing perceptual anchor.
 
 3. **Coherence as trajectory stability.** SBT's coherence typology (ecosystem > signal > identity > experiential asymmetry > incoherent) maps directly to trajectory stability in the dynamic model. Ecosystem-coherent brands (e.g., Hermès) have emission profiles that produce stable, interior trajectories with low absorption risk. Incoherent brands (e.g., Tesla) have profiles that produce volatile trajectories with high absorption risk. This connection between static coherence type and dynamic trajectory stability is a key prediction of the non-ergodic framework.
-
----
 
 ## The Non-Ergodic Brand Perception Model
 
@@ -179,8 +173,6 @@ The non-ergodic framework developed in this paper applies with full force under 
 **Short-horizon decisions.** Absorbing states (Source 1) develop through sustained accumulation of negative conviction. For single-occasion purchase decisions or very short-horizon evaluations, the trajectory may not be long enough for absorbing states to form. P2 and P3 are most relevant in ongoing brand relationships where conviction builds across repeated encounters.
 
 **Elicitation modality.** As the R15 evidence [@zharnikov-2026-dimensional-collapse-ai-mediated-search] documents, the primacy mechanism operates through sequential allocation processes rather than perceptual encoding per se. Measurement designs that elicit independent ratings across dimensions may underestimate path-dependent effects compared to sequential or holistic elicitation formats. This is a methodological boundary condition: the propositions describe perceptual dynamics, but their empirical signature depends on whether measurement instruments preserve or suppress the sequential structure.
-
----
 
 ## Propositions
 
@@ -284,8 +276,6 @@ The accumulator dynamics developed by Busemeyer and Townsend [-@busemeyer-1993-d
 
 **Empirical testability.** The multiplicative versus additive distinction is directly testable via longitudinal panel data. If updating is multiplicative, repeated brand perception measurements will be better described by a log-linear model (regressing log-perception at time $t+1$ on log-perception at time $t$ and log-signal strength) than by a linear additive model (regressing perception at $t+1$ on perception at $t$ and signal strength). The log-linear model's fit advantage over the linear model quantifies the degree to which perception dynamics are multiplicative rather than additive in a given brand-market context. Panel datasets with repeated individual-level perception measurement and known signal exposure histories provide the necessary data structure. Netzer, Lattin, and Srinivasan [-@netzer-2008-hidden-markov-model] demonstrate that hidden Markov models estimated on individual-level panel data recover latent state trajectories that are systematically suppressed by cross-sectional models — directly validating the infrastructure needed to test multiplicative regime transitions in brand perception data. Erdem and Keane [-@erdem-1996-decisionmaking-under-uncertainty] provide an earlier existence proof that dynamic brand choice models estimated on individual-level panel data outperform static cross-sectional models precisely because they capture state-dependence and updating dynamics.
 
----
-
 ## Empirical Foundations
 
 This section maps existing empirical evidence to each of the five propositions. The evidence was not generated to test non-ergodicity; it was generated to test narrower hypotheses about order effects, primacy, and path dependence. The non-ergodic framework reveals these disparate findings as manifestations of a single underlying structure.
@@ -330,9 +320,7 @@ Direct evidence for P3 requires longitudinal individual-level tracking data — 
 
 **McCracken [-@mccracken-1986-culture-consumption-theoretical].** McCracken's model of meaning transfer in advertising, while not empirical in the quantitative sense, provides the theoretical framework for understanding why observer heterogeneity produces trajectory divergence: meaning is not in the signal but is constructed by the observer, and different observers construct different meanings from identical signals.
 
----
-
-Table 1: Summary of Empirical Evidence Mapped to Propositions.
+**Table 1.** Summary of Empirical Evidence Mapped to Propositions.
 
 | Proposition | Key Evidence | Finding | SBT Interpretation |
 |---|---|---|---|
@@ -349,8 +337,6 @@ Table 1: Summary of Empirical Evidence Mapped to Propositions.
 
 *Notes*: Evidence was not generated to test non-ergodicity directly; findings are reinterpreted through the non-ergodic framework as convergent validation.
 
----
-
 ## Implications for Brand Management
 
 ### 6.1 The Tracking Fallacy: Why NPS and Brand Tracking Are Non-Ergodic Artifacts
@@ -359,9 +345,7 @@ If brand perception is non-ergodic, then the standard methodology of brand track
 
 Consider Table 2, which illustrates the divergence between ensemble and time averages for a hypothetical brand with absorbing-state risk.
 
----
-
-Table 2: Ensemble vs. Time Average Divergence (Illustrative).
+**Table 2.** Ensemble vs. Time Average Divergence (Illustrative).
 
 | Time | Active Observers | Absorbed Observers | Ensemble Average (Active Only) | True Population Average (Including Absorbed) |
 |---|---|---|---|---|
@@ -375,17 +359,13 @@ Table 2: Ensemble vs. Time Average Divergence (Illustrative).
 
 *Notes*: Values are simulated under a discrete-time absorbing Markov chain with N = 1000 observers, initial perception 7.0, and per-period absorption probability $\lambda$ = .020 calibrated to a low-coherence brand profile consistent with Zharnikov [-@zharnikov-2026-spectral-brand-theory-computational-framework] incoherent-type parameters. The selection mechanism (70 percent of new absorptions drawn from the lowest tertile of active observers) and the surviving-observer drift produce the diverging ensemble and population trajectories. Generative assumptions and seed are documented in the companion computation script (see Companion Computation Script subsection).
 
----
-
 The ensemble average (what brand tracking reports) increases over time — the brand appears to be strengthening. The true population average (including absorbed observers at zero) decreases — the brand is actually deteriorating. The divergence grows over time, and the direction of the bias is consistently positive: brand tracking tells a more optimistic story than the reality.
 
 This is not a pathological edge case. Any brand with non-zero absorption risk — which is to say, any brand that can suffer a fundamental loss of trust with any fraction of its observer base — exhibits this divergence. The magnitude depends on the absorption rate, which in turn depends on the brand's coherence type. Low-coherence brands with high-variance emission profiles (Tesla, in SBT's analysis) exhibit rapid absorption and large divergence. High-coherence brands with balanced emission profiles (Hermès) exhibit slow absorption and small divergence.
 
 To make the prediction concrete, Table 3 simulates absorption trajectories for the five canonical SBT brand profiles. Per-period absorption rates are calibrated to the coefficient of variation across each brand's eight-dimension emission profile [@zharnikov-2026-spectral-brand-theory-computational-framework], so that low-coherence (high-CV) profiles drive observers to absorbing boundaries faster than high-coherence (low-CV) profiles. The simulation runs N = 1000 observers for six periods using the script described in the Companion Computation Script subsection.
 
----
-
-Table 3: Simulated Ensemble-Time Gap Across Canonical Brand Profiles.
+**Table 3.** Simulated Ensemble-Time Gap Across Canonical Brand Profiles.
 
 | Brand | Profile CV | Absorption rate ($\lambda$) | Ensemble Average at t=6 | Population Average at t=6 | Gap (ensemble - population) |
 |---|---|---|---|---|---|
@@ -396,8 +376,6 @@ Table 3: Simulated Ensemble-Time Gap Across Canonical Brand Profiles.
 | Tesla | .388 | .0200 | 7.3 | 6.4 | .9 |
 
 *Notes*: Profile CV is the coefficient of variation of the eight-dimension emission vector for each brand's canonical SBT profile. Per-period absorption rate ($\lambda$) is set proportional to the profile CV, with the highest-CV profile (Tesla) calibrated to the .020 reference rate cited in Table 2. The simulation reuses the seed and selection mechanism documented in the Companion Computation Script subsection. The pattern confirms P3: ensemble averages converge across brands while population averages stratify, producing systematically larger gaps for low-coherence (high-CV) brands. The per-brand ordering of the gap (Tesla > Erewhon > Hermès > Patagonia ~ IKEA) tracks the ordering of profile dispersion, not the ordering of profile mean — health metrics that average across surviving observers cannot recover this ordering.
-
----
 
 The ordering of the gap column is the empirical signature of P3. Hermès, despite a higher profile mean than Tesla on most dimensions, exhibits a noticeably larger gap than the lower-CV IKEA and Patagonia profiles because its dispersion across dimensions is intermediate. The pattern shows that ensemble averages can converge across brands of very different underlying populations, masking real differences that show up only when individual trajectories are tracked. This is the multi-brand version of the survivorship bias illustrated in Table 2.
 
@@ -449,17 +427,13 @@ The non-ergodic framework carries direct implications for how consumer psycholog
 
 - **Longitudinal study design.** The non-ergodic framework identifies three empirically tractable design targets: (a) individual-level time averages (requires continuous or dense repeated measurement per respondent rather than sparse cross-sectional waves); (b) absorption rate measurement (requires instruments that distinguish low perceptions from conviction-level categorical rejection — standard Likert scales may be inadequate); and (c) multi-dimensional trajectory analysis across all eight SBT dimensions (requires moving beyond single-item brand perception measures to multi-dimensional perception instruments). Panels designed with these targets will be positioned to directly test P1–P5 and to extend the non-ergodic framework into domain-specific brand-category comparisons.
 
----
-
 ## Discussion
 
 ### 7.1 Relationship to SBT's Formal Dynamic Model
 
 The propositions developed in this paper are conceptual translations of the formal results in Zharnikov [-@zharnikov-2026-non-ergodic-brand-perception-diffusion]. The relationship is summarized in Table 4.
 
----
-
-Table 4: Correspondence Between Propositions and Formal Results in Zharnikov [-@zharnikov-2026-non-ergodic-brand-perception-diffusion].
+**Table 4.** Correspondence Between Propositions and Formal Results in Zharnikov [-@zharnikov-2026-non-ergodic-brand-perception-diffusion].
 
 | This Paper | Zharnikov [-@zharnikov-2026-non-ergodic-brand-perception-diffusion] | Mathematical Object |
 |---|---|---|
@@ -470,8 +444,6 @@ Table 4: Correspondence Between Propositions and Formal Results in Zharnikov [-@
 | P5: Cohort Trajectory Divergence | Weight-dependent diffusion coefficient | Different $\sigma(w)$ $\to$ different trajectory distributions |
 
 *Notes*: Mathematical objects refer to the stochastic differential equation framework on the positive octant of the 7-sphere $S^7_+$ as specified in Zharnikov [-@zharnikov-2026-non-ergodic-brand-perception-diffusion]. Theorem numbering follows the working-paper version v1.0.
-
----
 
 The two papers serve complementary audiences. Zharnikov [-@zharnikov-2026-non-ergodic-brand-perception-diffusion], with its stochastic differential equations and spectral theory, addresses the mathematical community and provides rigorous foundations. This paper, with its propositions and empirical mappings, addresses consumer psychology and brand management researchers and provides the interpretive framework. Zharnikov [-@zharnikov-2026-spectral-brand-theory-computational-framework] provides a kinematic complement to the dynamic framework developed here: where this paper characterizes the divergence between time and ensemble averages, Zharnikov [-@zharnikov-2026-spectral-brand-theory-computational-framework] characterizes the velocity and acceleration of perception trajectories in phase space, enabling a more fine-grained description of how quickly observers approach absorbing boundaries. The two frameworks together suggest that the full empirical agenda requires both trajectory-level statistics (this paper) and phase-space measurement [@zharnikov-2026-spectral-brand-theory-computational-framework].
 
@@ -513,8 +485,6 @@ A further limitation concerns the multiplicative assumption that underlies all f
 
 A third limitation is the difficulty of measuring absorbing states empirically. Negative conviction — the categorical judgment that a brand is fundamentally flawed — is not simply a low score on a standard perception scale. It requires measurement instruments that distinguish between degrees of negative perception (recoverable) and categorical negative conviction (absorbing). Developing such instruments is a prerequisite for testing P2 and P3 directly.
 
----
-
 ## Conclusion
 
 Brand perception is non-ergodic. The time average of an individual consumer's brand perception does not converge to the cross-sectional average across consumers. This claim, formalized through five propositions and grounded in Peters' [-@peters-2019-ergodicity-problem-economics] ergodicity framework, provides a unified interpretive lens for 80 years of empirical findings — from Asch's [-@asch-1946-forming-impressions-personality] primacy effects to Hogarth and Einhorn's [-@hogarth-1992-order-effects-belief] belief-adjustment model to contemporary path-dependence research — connecting them within a single theoretical explanation.
@@ -527,19 +497,13 @@ The paper connects to Spectral Brand Theory's broader research program [@zharnik
 
 The touchpoint sequence is not noise. It is signal.
 
----
-
 ## Acknowledgments
 
 AI assistants (Claude Opus 4.8, Grok 4.20, Gemini 2.5 Pro) were used for initial literature search, for software development — implementing and running the companion computation script that reproduces the paper's reported numerical and simulation results — and for editorial refinement; all theoretical claims, propositions, and interpretations are the author's sole responsibility.
 
----
-
 ## Companion Computation Script
 
 The simulated values in Table 2 (illustrative absorption trajectory) and Table 3 (per-brand ensemble-time gaps across the five canonical SBT profiles) are generated by `simulate_absorption.py`, published at `https://github.com/spectralbranding/sbt-papers/tree/main/r9-nonergodic-perception/code/simulate_absorption.py`. The script implements a discrete-time absorbing Markov chain with N = 1000 observers, initial perception 7.0 on a 0–10 scale, and a per-period absorption rate calibrated to each brand's profile coefficient of variation (Tesla's high-CV profile maps to the $\lambda$ = .020 reference rate cited in Table 2). New absorptions are drawn 70 percent from the lowest tertile of active observers and 30 percent at random across the rest, modeling the survivorship-selection mechanism. Surviving observers experience a small positive drift consistent with multiplicative-update dynamics. Random seed is fixed at 42. Run command: `uv run --with numpy python simulate_absorption.py --seed 42 --periods 6`. Running the script reproduces Table 2 and Table 3 stdout exactly. A README in the same directory documents the script's provenance and the cited figures it reproduces.
-
----
 
 ## References
 

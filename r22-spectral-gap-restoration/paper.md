@@ -8,8 +8,6 @@ DOI: [10.5281/zenodo.19778549](https://doi.org/10.5281/zenodo.19778549)
 
 Working Paper v1.1.0 – April 2026 (revised June 2026)
 
----
-
 ## Abstract
 
 Brands facing coherence shocks — repositioning campaigns or cultural shifts — confront an asymmetric recovery problem: some regain cohort separability while others enter absorbing cross-cohort interference. This paper derives a closed-form sufficient condition for separability survival — to the author's knowledge the first threshold inequality for cohort-level separability survival in a multi-dimensional brand perception space: the corrective coherence emission rate $\mu$ must exceed the spectral leakage rate $\lambda$ at the observer cohort's detection scale ($\mu > \lambda$ at scale $\delta$). Cohort perception clouds are modeled as almost-invariant sets in a stochastic flow on an eight-dimensional SBT perception manifold, with separability governed by the spectral gap of the perception operator. The threshold follows from Kato–Rellich perturbation theory and Diaconis–Stroock spectral-gap bounds for reversible Markov chains.
@@ -111,7 +109,7 @@ The primary diagnostic metric is the spectral gap time series for each cohort-di
 
 ### Results
 
-Table 1: Monte Carlo Regime Contrast (32 cells per regime, 240 months).
+**Table 1.** Monte Carlo Regime Contrast (32 cells per regime, 240 months).
 
 | Metric | High regime ($\mu = 4.50$) | Low regime ($\mu = -.50$) | Ratio |
 |---|---|---|---|
@@ -134,7 +132,7 @@ Figure 1 traces the parameter sweep across mu/lambda $\in [0.5, 2.0]$ — N = 2,
 
 ![](figures/figure2_bifurcation.png)
 
-Figure 1: Bifurcation diagram of the spectral gap as a function of mu/lambda ratio. The threshold mu equals lambda separates the recoverable (mu > lambda) and absorbing (mu < lambda) regimes; the spectral gap collapses to zero in the absorbing regime.
+**Figure 1.** Bifurcation diagram of the spectral gap as a function of mu/lambda ratio. The threshold mu equals lambda separates the recoverable (mu > lambda) and absorbing (mu < lambda) regimes; the spectral gap collapses to zero in the absorbing regime.
 
 ### Illustrative Dove Calibration
 
@@ -163,7 +161,7 @@ quadrantChart
     Dove Skeptic-Critic: [0.75, 0.20]
 ```
 
-Figure 2: The mu-lambda quadrant translates the threshold inequality into a four-state managerial action map. Brands cross from the recoverable to the absorbing basin when the spectral leakage rate exceeds the corrective emission rate at the dominant cohort's detection scale.
+**Figure 2.** The mu-lambda quadrant translates the threshold inequality into a four-state managerial action map. Brands cross from the recoverable to the absorbing basin when the spectral leakage rate exceeds the corrective emission rate at the dominant cohort's detection scale.
 
 *Notes*: Dove cohort coordinates are illustrative, based on the Numerical Illustration design values (lambda = .10/year, mu = 4.50/year for Purpose-Aligned; mu = -.50/year for Skeptic-Critic). Axis positions are normalized to [0, 1] relative to the parameter range explored in Figure 1.
 
@@ -183,7 +181,7 @@ Where Naik and Raman [-@naik-2003-understanding-impact-synergy] modeled scalar b
 
 The mixing-time result of Diaconis–Stroock [-@diaconis-1991-geometric-bounds-eigenvalues] provides a practical campaign-duration lower bound: $\tau_\text{mix} \le C/\lambda^*$ is the minimum time any corrective campaign must run before the system equilibrates to the corrected state. Campaigns shorter than $\tau_\text{mix}$ are guaranteed to be insufficient regardless of intensity. Ataman, van Heerde, and Mela [-@ataman-2010-longterm-effect-marketing] provide cross-brand calibration anchors — total advertising elasticity of .13 and price-discount elasticity of .04 across 70 brands in 25 categories — that ground the magnitude of activation-induced $\mu$ effects relative to price-promotion confounds.
 
-Table 2: Comparative Frameworks for Brand-Distinctiveness Dynamics.
+**Table 2.** Comparative Frameworks for Brand-Distinctiveness Dynamics.
 
 | Framework | Unit of analysis | Static vs dynamic | Cohort-localizable? | Threshold form | Estimable from tracking data? | Lead time on collapse? |
 |---|---|---|---|---|---|---|
@@ -251,8 +249,6 @@ The Monte Carlo simulation script and full numeric outputs are available in the 
 The author acknowledges that James Kovalenko independently developed an operator-theoretic and category-theoretic framing of structural verification with closely related vocabulary — including variation–verification coupling, verification capacity, recursive friction as a self-amplifying failure mode, the meta-cognitive operator, and the invariant submanifold $\mathcal{M}_\text{inv}$ — and formalized these in the Transport–Aggregation Adjunction $D_f \dashv R_f$ across a wide-ranging treatment of structural ontology and topology [@kovalenko-2026-bounded-compositional-verification]. In separate work, Kovalenko [-@kovalenko-2026-bounded-compositional-verification] independently derives fold-bifurcation dynamics for capacity-constrained compounding systems, providing a cross-domain analog to the absorbing-collapse regime formalized here in Corollary 1. Together, these two independent derivations — from structural ontology and from compounding-systems dynamics, respectively — anchor the cross-domain validity of the spectral-gap framework developed here.
 
 AI assistants (Claude Opus 4.8, Grok 4.20, Gemini 2.5 Pro) were used for initial literature search, for software development — implementing and running the companion computation scripts that reproduce the paper's reported numerical and simulation results — and for editorial refinement; all theoretical claims, propositions, and interpretations are the author's sole responsibility.
-
----
 
 ## References
 

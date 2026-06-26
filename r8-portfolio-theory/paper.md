@@ -8,17 +8,15 @@ DOI: [10.5281/zenodo.19145099](https://doi.org/10.5281/zenodo.19145099)
 
 Working Paper v1.2.0 – March 2026 (revised June 2026)
 
----
-
 ## Abstract
 
 Brand portfolio theory classifies portfolios by architecture -- monolithic, endorsed, house-of-brands -- but does not formalize how brands within the same portfolio interact in the observer's perception space. This paper develops spectral portfolio theory within Spectral Brand Theory (SBT), which models brands as emitters across eight typed dimensions perceived by heterogeneous observer cohorts. *Spectral interference* -- signals from one brand perturbing the perception cloud of another within shared cohorts -- is formalized, distinguishing *constructive interference* (compatible signals reinforcing mutual perception) from *destructive interference* (contradictory signals undermining it). Interference magnitude is bounded by cohort overlap and spectral proximity on high-weight dimensions, modulated by a parent-brand recognition gate. Single-brand coherence is extended to portfolio-level coherence through a three-layer metric (within-brand, cross-brand, and aggregate). Four portfolio archetypes are identified -- spectral cluster (LVMH), spectral spread (Procter & Gamble), spectral contradiction (Unilever), and spectral layering (Toyota/Lexus). A comparative analysis of LVMH and Unilever demonstrates that architecturally identical portfolios produce structurally opposite interference dynamics. Seven formal propositions are derived. The framework provides a formal basis for acquisition evaluation, portfolio rationalization, and cross-brand risk assessment that existing taxonomies cannot support.
 
 **Keywords**: brand portfolio, spectral interference, constructive interference, destructive interference, portfolio coherence, observer cohorts, multi-dimensional brand perception, Spectral Brand Theory
 
-**JEL Classification**: M31, M37, L11
-
 ---
+
+**JEL Classification**: M31, M37, L11
 
 ## 1. Introduction
 
@@ -45,8 +43,6 @@ This paper extends SBT to the portfolio level. The core contributions are:
 6. **Comparative case analysis** (Section 8): LVMH versus Unilever as structurally opposite portfolio interference cases.
 
 The paper contributes to two literatures. In brand portfolio theory, it provides, to the author's knowledge, the first formal model of cross-brand perceptual interaction that accounts for multi-dimensional perception and observer heterogeneity, moving beyond the architectural taxonomies of Aaker and Joachimsthaler [-@aaker-2000-brand-leadership], the equity transfer models of Keller [-@keller-2008-strategic-brand-management], and the unidimensional signaling models of Erdem and Sun [-@erdem-2002-empirical-investigation-spillover]. In SBT, it extends the single-brand framework to the portfolio level, connecting to the positioning capacity bounds of Zharnikov [-@zharnikov-2026-many-brands-can-market-hold], the metamerism results of Zharnikov [-@zharnikov-2026-spectral-metamerism-brand-perception-projection], and the longitudinal Dove analysis of Zharnikov [-@zharnikov-2026-dimensional-activation-cohort-divergence-longitudinal].
-
----
 
 ## 2. Literature Review
 
@@ -113,8 +109,6 @@ Three deficiencies characterize the existing brand portfolio literature, even af
 3. **No portfolio-level coherence metric.** SBT has formalized single-brand coherence [@zharnikov-2026-spectral-brand-theory-computational-framework] and applied it to longitudinal case analysis [@zharnikov-2026-dimensional-activation-cohort-divergence-longitudinal]. No existing framework extends coherence assessment to the portfolio level, where within-brand coherence, cross-brand coherence, and aggregate coherence are distinct constructs.
 
 This paper addresses all three deficiencies.
-
----
 
 ## 3. The Spectral Interference Model
 
@@ -222,8 +216,6 @@ $$\mathcal{I}(B_i \leftarrow B_j, C_k) \neq \mathcal{I}(B_j \leftarrow B_i, C_k)
 
 The asymmetry arises because the perturbation to a brand's perception cloud depends not only on the interfering brand's signal but on the focal brand's existing position relative to the observer's conviction. A premium brand contaminated by a mass-market sibling suffers more than the mass-market brand gains, because the premium brand's perception cloud is more sensitive to downward perturbation on the Social and Semiotic dimensions than the mass-market brand's cloud is to upward perturbation. This connects to the conviction asymmetry formalized in Zharnikov [-@zharnikov-2026-spectral-brand-theory-computational-framework]: negative conviction forms faster and is more resistant to revision than positive conviction.
 
----
-
 ## 4. Portfolio Coherence Metric
 
 ### 4.1 From Single-Brand to Portfolio Coherence
@@ -254,7 +246,7 @@ $$\kappa_P(\mathcal{P}, C_k) = \frac{1}{|\mathcal{P}|} \sum_{B_i \in \mathcal{P}
 
 Extending the five-level single-brand typology to portfolios:
 
-Table 1: Portfolio coherence types and conditions for classification
+**Table 1.** Portfolio coherence types and conditions for classification
 
 | Portfolio Coherence Type | Condition | Description |
 |--------------------------|-----------|-------------|
@@ -263,8 +255,6 @@ Table 1: Portfolio coherence types and conditions for classification
 | Spectral independence ($P_{B+}$) | $O(B_i, B_j) < \tau$ for most pairs | Brands occupy non-overlapping cohorts; minimal interference |
 | Spectral tension ($P_{B-}$) | $\kappa_X \in [0.3, 0.6]$ for some major-cohort pairs | Mixed constructive/destructive; manageable contradictions |
 | Spectral contradiction ($P_{C-}$) | $\kappa_X < 0.3$ for any pair in a major cohort | Destructive interference on high-weight dimensions in shared cohorts |
-
----
 
 ## 5. Four Portfolio Archetypes
 
@@ -278,7 +268,7 @@ The interaction of spectral proximity (how similar brands' emission profiles are
 
 LVMH Moet Hennessy Louis Vuitton operates approximately 75 brands (maisons) across six business groups. The fashion and leather goods division -- Louis Vuitton, Dior, Fendi, Givenchy, Celine, Loewe, Kenzo, Marc Jacobs -- forms a spectral cluster in SBT's eight-dimensional space. These brands share elevated signals on the Semiotic dimension (distinctive visual identities rooted in luxury craft), the Social dimension (exclusivity and status signaling), and an inverted Economic dimension (high price as signal of inaccessibility). The Temporal dimension is elevated across the cluster, with most maisons trading on heritage narratives measured in decades or centuries.
 
-Table 2: Illustrative emission profiles for LVMH Fashion & Leather Goods cluster (assessed cohort-mean estimates, 0-10 scale)
+**Table 2.** Illustrative emission profiles for LVMH Fashion & Leather Goods cluster (assessed cohort-mean estimates, 0-10 scale)
 
 | Dimension | Louis Vuitton | Dior | Fendi | Givenchy |
 |-----------|:---:|:---:|:---:|:---:|
@@ -311,7 +301,7 @@ The cohort overlap across these brands is minimal. The observer who holds a perc
 
 Unilever presents the canonical case. Drawing on the longitudinal analysis of Dove in Zharnikov [-@zharnikov-2026-dimensional-activation-cohort-divergence-longitudinal], the spectral contradiction emerges most acutely between Dove and Axe/Lynx on the Ideological dimension.
 
-Table 3: Illustrative emission profiles for Unilever Dove-Axe-Ben & Jerry's triad (assessed cohort-mean estimates, 0-10 scale; Dove 2023 from Zharnikov [-@zharnikov-2026-dimensional-activation-cohort-divergence-longitudinal])
+**Table 3.** Illustrative emission profiles for Unilever Dove-Axe-Ben & Jerry's triad (assessed cohort-mean estimates, 0-10 scale; Dove 2023 from Zharnikov [-@zharnikov-2026-dimensional-activation-cohort-divergence-longitudinal])
 
 | Dimension | Dove (2023) | Axe/Lynx | Ben & Jerry's |
 |-----------|:---:|:---:|:---:|
@@ -336,7 +326,7 @@ The awareness gate moderates the damage. When the Purpose-Aligned cohort is unaw
 
 Toyota and Lexus exemplify this pattern. Toyota's emission profile is dominated by Economic (value, reliability, accessibility) and Experiential (product quality, durability) signals. Lexus shifts the emphasis to Experiential (refinement, comfort, driving experience) and Social (premium status signaling), while Economic signals invert from accessibility to exclusivity.
 
-Table 4: Illustrative emission profiles for Toyota/Lexus spectral layering (assessed cohort-mean estimates, 0-10 scale)
+**Table 4.** Illustrative emission profiles for Toyota/Lexus spectral layering (assessed cohort-mean estimates, 0-10 scale)
 
 | Dimension | Toyota | Lexus |
 |-----------|:---:|:---:|
@@ -354,8 +344,6 @@ The key feature of spectral layering is that the brands serve different cohorts 
 Where overlap does exist, the interference is constructive through an aspiration mechanism. The Toyota owner who becomes aware of the Lexus connection does not experience destructive interference; instead, the Lexus brand creates an aspiration pathway -- an upward pull in perception space that enhances the Toyota brand by association with its premium sibling. This aspiration dynamic operates because the brands' signals move in the same direction on the Experiential dimension (both high, with Lexus higher) while diverging on the Economic dimension in a way that creates a natural upgrade path rather than a contradiction.
 
 **Risk profile.** Spectral layering is vulnerable to layer collapse -- when the price or quality gap between layers narrows, the cohort separation erodes and the brands begin to compete rather than complement. If Toyota's quality and luxury features increase to the point where the Experiential gap with Lexus becomes negligible, the aspiration dynamic disappears and the brands cannibalize each other's cohorts.
-
----
 
 ## 6. Portfolio Capacity
 
@@ -394,8 +382,6 @@ $$\mathcal{I}_{\text{total}}(B_i, C_k) = \sum_{B_j \in \mathcal{P}, B_j \neq B_i
 *Brand $B_i$'s perception cloud in cohort $C_k$ is sustainable when $|\mathcal{I}_{\text{total}}| < \Theta(B_i, C_k)$, where $\Theta$ is the cloud stability threshold -- the maximum perturbation the perception cloud can absorb without undergoing state transition (from formed to forming, or from forming to stalled).*
 
 The interference budget concept formalizes a constraint that portfolio managers have long understood intuitively: each additional brand in a portfolio does not merely add its own signals to the market; it perturbs the perception of every other brand in every shared cohort. The marginal cost of the $(n+1)$-th brand is not just its own brand-building expense but the interference it generates across the existing portfolio.
-
----
 
 ## 7. Formal Propositions
 
@@ -461,8 +447,6 @@ This corollary has significant implications for corporate transparency trends. A
 
 **Testability.** Examine portfolios that have undergone brand rationalization (e.g., P&G's divestiture of 100+ brands in 2014). The divested brands should disproportionately be those that generated the highest destructive interference in the remaining portfolio.
 
----
-
 ## 8. Comparative Case Analysis: LVMH versus Unilever
 
 ### 8.1 Case Selection Rationale
@@ -475,7 +459,7 @@ LVMH's FY2023 revenue of EUR 86.2 billion [@lvmh-2023-2023-annual-report] derive
 
 **Cross-brand coherence within the core cluster.** The four Fashion & Leather Goods brands profiled in Section 5.2 produce the following pairwise cross-brand coherence scores for the luxury-connoisseur cohort (high weight on Semiotic, Experiential, Temporal):
 
-Table 5: Pairwise cross-brand coherence for LVMH Fashion & Leather Goods cluster (luxury-connoisseur cohort)
+**Table 5.** Pairwise cross-brand coherence for LVMH Fashion & Leather Goods cluster (luxury-connoisseur cohort)
 
 | Pair | $\kappa_X$ (luxury-connoisseur) | Dominant interference type |
 |------|:---:|---|
@@ -486,7 +470,7 @@ Table 5: Pairwise cross-brand coherence for LVMH Fashion & Leather Goods cluster
 | Dior -- Givenchy | 0.89 | Constructive on all weighted dimensions |
 | Fendi -- Givenchy | 0.91 | Constructive; close profiles |
 
-*Note: Coherence scores computed from assessed cohort-mean emission profiles (Tables 2-4). Values illustrate model mechanics; empirical measurement would require spectral profile instrumentation applied to representative observer samples.*
+*Notes*: Coherence scores computed from assessed cohort-mean emission profiles (Tables 2-4). Values illustrate model mechanics; empirical measurement would require spectral profile instrumentation applied to representative observer samples.
 
 The minimum pairwise $\kappa_X$ in the cluster is 0.85, placing the portfolio in the spectral resonance ($P_{A+}$) category. Every brand reinforces every other brand for the cohort that matters most to the portfolio's commercial performance.
 
@@ -498,7 +482,7 @@ Unilever's FY2023 revenue of EUR 59.6 billion [@unilever-2023-annual-report-acco
 
 **Cross-brand coherence for the Dove-Axe-Ben & Jerry's triad.** Using the emission profiles from Section 5.4, the pairwise cross-brand coherence for the Purpose-Aligned cohort (from Zharnikov [-@zharnikov-2026-dimensional-activation-cohort-divergence-longitudinal]: high weight on Ideological [9.0], Narrative [8.0], Cultural [6.0]):
 
-Table 6: Pairwise cross-brand coherence for Unilever Dove-Axe-Ben & Jerry's triad (Purpose-Aligned cohort)
+**Table 6.** Pairwise cross-brand coherence for Unilever Dove-Axe-Ben & Jerry's triad (Purpose-Aligned cohort)
 
 | Pair | $\kappa_X$ (Purpose-Aligned) | Dominant interference type |
 |------|:---:|---|
@@ -506,13 +490,13 @@ Table 6: Pairwise cross-brand coherence for Unilever Dove-Axe-Ben & Jerry's tria
 | Dove -- Ben & Jerry's | 0.85 | Constructive on Ideological, Narrative |
 | Axe -- Ben & Jerry's | 0.10 | Destructive on Ideological |
 
-*Note: Coherence scores computed from assessed cohort-mean emission profiles (Tables 2-4). Values illustrate model mechanics; empirical measurement would require spectral profile instrumentation applied to representative observer samples.*
+*Notes*: Coherence scores computed from assessed cohort-mean emission profiles (Tables 2-4). Values illustrate model mechanics; empirical measurement would require spectral profile instrumentation applied to representative observer samples.
 
 The Dove-Axe pair and the Axe-Ben & Jerry's pair are in the spectral contradiction range ($\kappa_X < 0.3$). The Dove-Ben & Jerry's pair is constructively coherent, but this partial coherence cannot compensate for the Axe contradiction. The aggregate portfolio coherence for the Purpose-Aligned cohort is pulled into $P_{C-}$ (spectral contradiction) territory by the Axe anomaly.
 
 For the Product-Pragmatist cohort (high weight on Experiential [9.0], Economic [8.0], Semiotic [5.0]):
 
-Table 7: Pairwise cross-brand coherence for Unilever Dove-Axe-Ben & Jerry's triad (Product-Pragmatist cohort)
+**Table 7.** Pairwise cross-brand coherence for Unilever Dove-Axe-Ben & Jerry's triad (Product-Pragmatist cohort)
 
 | Pair | $\kappa_X$ (Product-Pragmatist) | Dominant interference type |
 |------|:---:|---|
@@ -520,7 +504,7 @@ Table 7: Pairwise cross-brand coherence for Unilever Dove-Axe-Ben & Jerry's tria
 | Dove -- Ben & Jerry's | 0.55 | Mixed; Economic divergence |
 | Axe -- Ben & Jerry's | 0.50 | Mixed; Economic divergence |
 
-*Note: Coherence scores computed from assessed cohort-mean emission profiles (Tables 2-4). Values illustrate model mechanics; empirical measurement would require spectral profile instrumentation applied to representative observer samples.*
+*Notes*: Coherence scores computed from assessed cohort-mean emission profiles (Tables 2-4). Values illustrate model mechanics; empirical measurement would require spectral profile instrumentation applied to representative observer samples.
 
 The same portfolio that is contradictory for the Purpose-Aligned cohort is moderately coherent for the Product-Pragmatist cohort. This confirms Proposition 3: portfolio coherence is cohort-dependent.
 
@@ -538,7 +522,7 @@ The net effect is a secular increase in $\alpha$ for the Purpose-Aligned and Ske
 
 ### 8.4 Structural Comparison
 
-Table 8: Structural comparison of LVMH and Unilever portfolio interference profiles
+**Table 8.** Structural comparison of LVMH and Unilever portfolio interference profiles
 
 | Dimension | LVMH | Unilever |
 |-----------|------|----------|
@@ -569,8 +553,6 @@ Using the emission profiles from Table 3 and a personal care category mean of $\
 | Product-Pragmatist | $\mathcal{I} = 0.3 \times 0.05 \times |2.0 - 5.0| = 0.045$ (Ideological negligible) | $\mathcal{I} = 0.8 \times 0.05 \times |2.0 - 5.0| = 0.12$ |
 
 The computation illustrates three properties simultaneously: (1) the same brand pair produces a roughly sevenfold difference in interference across cohorts (Proposition 3), (2) interference scales linearly with the awareness gate (Proposition 4), and (3) whether this interference is 'destructive' depends on which dimension dominates -- the Purpose-Aligned cohort experiences substantial Ideological disruption while the Product-Pragmatist cohort barely registers it. The illustrative scores are computed from assessed profiles; empirical application would require instrumenting both the emission profiles and the cohort weight vectors.
-
----
 
 ## 9. Discussion
 
@@ -603,8 +585,6 @@ The relationship is complementary, not competitive. An optimal portfolio strateg
 ### 9.4 Connection to the SBT Research Program
 
 This paper fills a specific gap in the SBT research program by extending the framework from single-brand to portfolio-level analysis. The connection to prior work is direct: the metric structure from Zharnikov [-@zharnikov-2026-brand-space-geometry-formal-metric] underlies the spectral distance calculations; the metamerism results from Zharnikov [-@zharnikov-2026-spectral-metamerism-brand-perception-projection] explain why portfolio contradictions are invisible to scalar brand health metrics; the cohort boundary analysis from Zharnikov [-@zharnikov-2026-cohort-boundaries-high-dimensional-perception] formalizes the cohort overlap conditions; the sphere packing bounds from Zharnikov [-@zharnikov-2026-many-brands-can-market-hold] provide the positioning capacity ceiling that portfolio capacity cannot exceed; the non-ergodic dynamics from Zharnikov [-@zharnikov-2026-non-ergodic-brand-perception-why] explain why interference effects compound over time rather than averaging out; and the Dove longitudinal analysis from Zharnikov [-@zharnikov-2026-dimensional-activation-cohort-divergence-longitudinal] provides the primary empirical illustration.
-
----
 
 ## 10. Limitations and Future Directions
 
@@ -644,8 +624,6 @@ The current framework is demonstrated on physical-product portfolios (luxury goo
 
 The portfolio interference model can be recast in graph-theoretic terms. Brands are nodes with eight-dimensional emission profiles as attributes; interference relationships are edges weighted by cohort overlap and spectral proximity. The four archetypes (cluster, spread, contradiction, layering) then correspond to graph-structural classes, and portfolio coherence becomes a graph-level property. Recent work on graph homomorphism distortion [@carrasco-2026-graph-homomorphism-distortion] offers a metric that captures gradations of structural similarity between attributed graphs -- analogous to how the spectral framework captures gradations between brands that scalar brand equity treats as binary (same/different). Formalizing portfolio interference through graph homomorphism distortion would provide tighter bounds on portfolio capacity and enable computational optimization of portfolio composition.
 
----
-
 ## 11. Conclusion
 
 Brand portfolio theory has since Aaker and Joachimsthaler [-@aaker-2000-brand-leadership] classified portfolios by architecture -- how brands are organized by the firm -- without formalizing how brands interact in the observer's perception space. This paper has introduced spectral portfolio theory, extending Spectral Brand Theory to the multi-brand context through the mechanism of spectral interference.
@@ -657,8 +635,6 @@ Seven formal propositions have been derived, specifying the conditions under whi
 The framework reveals that the same architectural label -- "house of brands" -- can describe structurally opposite perceptual realities. LVMH and Unilever share the architecture but not the interference profile. The difference is not in how the brands are organized but in how they are perceived -- and specifically, in how their signals interact within the perception space of shared observer cohorts. Architectural classification alone cannot capture this difference. Spectral portfolio theory can.
 
 The practical consequence is a shift in the locus of portfolio strategy. The question for portfolio managers is not only "how should the portfolio be structured?" but "how do the portfolio's brands interact in the perception space of each observer cohort they serve?" Answering this question requires the multi-dimensional, observer-heterogeneous framework that SBT provides. Spectral portfolio theory offers the formal tools -- interference metrics, coherence types, capacity bounds, and testable propositions -- to move brand portfolio management from architectural taxonomy to perceptual engineering.
-
----
 
 ## Appendix A: SBT Notation Summary
 
@@ -673,8 +649,6 @@ This appendix summarizes the core notation and concepts of Spectral Brand Theory
 **Cohort.** A cluster of observers with similar spectral profiles -- close in the eight-dimensional weight space [@zharnikov-2026-cohort-boundaries-high-dimensional-perception]. Cohorts are perceptual, not demographic: a "Purpose-Aligned cohort" is defined by high weights on Ideological and Narrative, not by age or income.
 
 **Coherence types** (single-brand, ordered from highest to lowest): ecosystem ($A+$, all dimensions reinforce), signal ($A-$, most dimensions align), identity ($B+$, strong core on 2-3 dimensions), experiential asymmetry ($B-$, product excellent but other dimensions weak), incoherent ($C-$, dimensional signals contradict each other).
-
----
 
 ## Author Contributions (CRediT)
 

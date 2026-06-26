@@ -39,18 +39,7 @@ meta:
     Collapse is stable across model versions. For search advertising, these findings reframe strategy
     from platform selection to dimensional defensibility: advertisers must encode soft brand dimensions
     in verifiable, machine-readable form or risk effective erasure by LLM intermediaries. Patterns reflect
-    the text-conditioned LLM observers tested here. Management Slant - LLMs recommend products, not brands:
-    across 24 models from nine cultural traditions and multiple brand pairs, AI-mediated search systematically
-    collapses brand perception to Experiential and Economic dimensions, rendering brands differentiated
-    on narrative, ideology, culture, or heritage metameric (structurally different but identically recommended).
-    - The collapse is cross-platform: cosine similarity of .977 across 24 architectures from nine cultural
-    traditions means that switching AI vendors does not solve the problem. The solution must be dimensional,
-    not platform-specific. - Local and regional brands face amplified risk: brands from small non-English-speaking
-    markets collapse 25% more severely than global brands ($d = .878$), associated with an Economic default
-    in which AI substitutes price for every dimension it lacks data on. - The collapse is not inevitable:
-    encoding soft dimensions as verifiable, machine-readable claims is the operative defense. Making brand
-    value structured and defensible --- not just "felt" --- is the prerequisite for surviving agentic
-    commerce.'
+    the text-conditioned LLM observers tested here.'
 claims:
 - id: P1
   type: proposition
