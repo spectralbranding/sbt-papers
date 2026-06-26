@@ -24,7 +24,6 @@ paper_key: "2026u"
 title: >-
   Research as Repository: Infrastructure for Transparent, Attributed, and
   Machine-Readable Scholarly Communication
-target_venue_primary: "TBD (between venues; JASIST + JLSC rejected)"
 status: >-
   Backbone spine locked 2026-06-13 for the realized-system revision. Paper is
   a working paper between venues, so edits go in the paper directly.
@@ -343,7 +342,7 @@ findings:
       substrate) is kept from drifting by a CI gate that fails the build on
       dangling imports, incompatible refinement, definitional drift, or a paper
       drifting from its companions — verified clean corpus-wide (auth_fail=0,
-      missing=0, phantom=0) with a 20-test suite including a docs-alignment
+      missing=0, phantom=0) with a test suite including a docs-alignment
       control.
     type: "system_demonstration"
     source_measurements: [m_gate_clean]

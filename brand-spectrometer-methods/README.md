@@ -1,6 +1,6 @@
 [![MIT License](https://img.shields.io/badge/Code-MIT-blue.svg)](../LICENSE)
 [![CC-BY 4.0](https://img.shields.io/badge/Data-CC--BY_4.0-lightgrey.svg)](../LICENSE-data)
-![Last Updated](https://img.shields.io/badge/updated-2026--06--25-success)
+![Last Updated](https://img.shields.io/badge/updated-2026--06--26-success)
 
 # The Brand Spectrometer: A Reproducible Instrument for Cohort-Resolved, Multi-Dimensional Brand-Perception Measurement from Public Artifacts
 
@@ -37,4 +37,4 @@ Code (if any): MIT — see hub-level [../LICENSE](../LICENSE). Data, figures, ta
 
 ---
 
-*Last updated: 2026-06-25*
+*Last updated: 2026-06-26*

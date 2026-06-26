@@ -8,13 +8,13 @@ DOI: [10.5281/zenodo.19555282](https://doi.org/10.5281/zenodo.19555282)
 
 Working Paper v1.2.0 – April 2026 (revised June 2026)
 
----
-
 ## Abstract
 
 Large language models (LLMs) increasingly shape how consumers discover and evaluate brands. Brand portfolio theory predicts that revealing corporate ownership should produce perceptual interference via an awareness gate [@keller-1993-conceptualizing-measuring-managing; @aaker-1990-consumer-evaluations-brand]. Yet LLMs encode portfolio relationships permanently in their parameters, raising the possibility of either maximal interference or complete immunity. We test these hypotheses in a preregistered experiment with 13 LLMs spanning seven training traditions (Western, Chinese, Russian, Indian, Japanese, European, Korean). Twenty brands from seven portfolio archetypes (LVMH, Unilever, P&G, Toyota, L'Oreal, Geely, Yandex) were rated under four prompt modalities---direct rating, naturalistic recommendation, multi-turn conversation with mid-dialogue portfolio reveal, and native-language framing---yielding 7,975 parsed observations. A preregistered extension with 20 additional brands drawn from published marketing research (Aaker [-@aaker-1997-dimensions-brand-personality]; Brakus et al. [-@brakus-2009-brand-experience-what]; Li et al. [-@li-2024-frontiers-determining-validity]; and others) added 1,950 observations with zero overlap, replicating immunity (0/10 $|d| > .50$) and bringing the combined dataset to 9,925 observations across 40 brands. Portfolio framing produces near-zero change in Dimensional Concentration Index (mean $|\Delta\mathrm{DCI}| = .26$). Equivalence testing confirms the null for 18/20 brands within $\pm 1.0$ DCI points. Multi-turn revelation unlocks modest flattening for reverse-aspiration structures (Geely Auto d = -1.11, FDR-significant), but effects remain portfolio- and modality-specific rather than systematic. Native-language prompts activate model-specific discourse layers without directional amplification. These results generalize spectral immunity across model traditions and portfolio types, implying that house-of-brands shielding is automatic in AI-mediated markets while constructive interference is impossible. Brand managers cannot rely on portfolio architecture to reshape LLM perceptions except in extended conversational contexts. Theoretical implications for awareness-gate mechanisms and practical implications for "Share of Model" strategy are discussed.
 
 **Keywords:** brand perception, large language models, portfolio interference, awareness gate, TOST equivalence, cross-cultural AI, multi-turn conversation, native-language framing, Share of Model
+
+---
 
 When a consumer asks an LLM "Which luxury bag should I buy?", the model's response reflects its internal brand encoding, shaped by training data composition rather than lived experience. Understanding these AI observers is now operationally critical [@dubois-2025-forget-what-you]. LLMs increasingly mediate consumer access to brand information through search, recommendation, and conversational interfaces, constituting a new class of brand observer whose perceptual structure differs systematically from human observers (Li et al. [-@li-2024-frontiers-determining-validity]; Sabbah and Acar [-@sabbah-2026-marketing-machines-understanding]).
 
@@ -25,7 +25,6 @@ For LLMs, the awareness gate is permanently saturated. These models cannot be ex
 Alternatively, LLMs may operate near minimum-distortion encodings of brand information. If dimensional compression is already at its limit, adding portfolio context provides no additional signal that would alter the encoding. One theoretical framework that predicts this immunity via rate-distortion compression is Spectral Brand Theory [@zharnikov-2026-spectral-brand-theory-computational-framework], but the prediction follows from any account in which LLM brand encodings are compressed and stable.
 
 This paper provides the first comprehensive test of portfolio interference in LLM brand perception. We test competing hypotheses---maximal interference vs. spectral immunity---through a preregistered experiment with six design innovations: 13 models from 7 training traditions, 7 portfolio archetypes, 4 prompt modalities, multi-turn conversation with mid-dialogue portfolio reveal, native-language ablation, and prompt-location ablation. Across 7,975 observations, the predominant finding is clear: 0/20 brands show FDR-significant portfolio effects in direct rating or recommendation conditions.
-
 
 ## Theoretical Background
 
@@ -59,7 +58,6 @@ where $\alpha_{C_k}$ is the awareness gate, $\bar{w}_d^{(C_k)}$ is the cohort's 
 
 [^1]: This formulation is from Spectral Brand Theory [@zharnikov-2026-spectral-brand-theory-computational-framework], where Dimensional Concentration Index (DCI) measures profile concentration across eight brand perception dimensions. DCI is a new metric not yet validated against human data; Section Limitations discusses this as a primary boundary condition on our conclusions.
 
-
 ## Research Hypotheses
 
 Core hypotheses (H1--H5) are derived from portfolio theory and the awareness gate mechanism. Extension hypotheses (H6--H9) test new archetypes and modalities added in the present study.
@@ -82,7 +80,6 @@ Core hypotheses (H1--H5) are derived from portfolio theory and the awareness gat
 
 *H9 (Home-Model Amplification).* The native-language effect is strongest when model training tradition matches the language of framing.
 
-
 ## Method
 
 ### Design
@@ -99,7 +96,7 @@ Total: approximately 7,930 observation cells (7,975 successfully parsed). All ra
 
 ### Brands and Portfolios
 
-Table 1: Portfolio Composition and Predicted Interference Direction.
+**Table 1.** Portfolio Composition and Predicted Interference Direction.
 
 | Portfolio | Archetype | Brands | Predicted Direction |
 |-----------|-----------|--------|-------------------|
@@ -115,7 +112,7 @@ Table 1: Portfolio Composition and Predicted Interference Direction.
 
 ### Models
 
-Table 2: Model Panel: 13 Models From 7 Training Traditions.
+**Table 2.** Model Panel: 13 Models From 7 Training Traditions.
 
 | Model | Provider | Training Tradition | Deployment |
 |-------|----------|-------------------|------------|
@@ -149,14 +146,13 @@ This generalizes the two-dimension form $DCI_{R15} = (w_{Economic} + w_{Semiotic
 
 TOST equivalence testing with bounds of $\pm 1.0$ DCI points assesses statistical equivalence to zero. Benjamini-Hochberg correction controls false discovery rate across all 20 brand-level tests.
 
-
 ## Results
 
 ### Main Results: Direct Rating Solo vs. Portfolio
 
 The predominant finding is clear: 0/20 brands show FDR-significant portfolio effects in direct rating conditions. Table 3 presents the full brand-level results.
 
-Table 3: DCI by Brand and Condition (N = 7,975; 13 Models, 5 Repetitions).
+**Table 3.** DCI by Brand and Condition (N = 7,975; 13 Models, 5 Repetitions).
 
 | Portfolio | Brand | Solo DCI | Port DCI | Delta | t | p | d | TOST p | Equivalent |
 |-----------|-------|----------|----------|-------|---|---|---|--------|------------|
@@ -205,7 +201,7 @@ Table 3: DCI by Brand and Condition (N = 7,975; 13 Models, 5 Repetitions).
 
 ### Cross-Cultural Generalizability
 
-Table 4: Sub-Group Analysis by Training Tradition.
+**Table 4.** Sub-Group Analysis by Training Tradition.
 
 | Tradition | Models (n) | Delta DCI | d | p (tradition level) |
 |-----------|-----------|-----------|---|---------------------|
@@ -221,7 +217,7 @@ Table 4: Sub-Group Analysis by Training Tradition.
 
 ### Variance Decomposition
 
-Table 5: Variance Decomposition of DCI.
+**Table 5.** Variance Decomposition of DCI.
 
 | Factor | % Variance |
 |--------|-----------|
@@ -240,7 +236,7 @@ Table 5: Variance Decomposition of DCI.
 
 **Multi-turn conversation: Portfolio reveal.** Multi-turn conversation is the most ecologically valid test and the modality where the largest individual effects appear. Four brands showed FDR-significant DCI shifts after portfolio reveal:
 
-Table 6: Multi-Turn Results: FDR-Significant Brands (Turn 1 Solo vs. Turn 2 Post-Reveal).
+**Table 6.** Multi-Turn Results: FDR-Significant Brands (Turn 1 Solo vs. Turn 2 Post-Reveal).
 
 | Brand | T1 DCI | T2 DCI | Delta | p | d |
 |-------|--------|--------|-------|---|---|
@@ -265,7 +261,7 @@ Ten brands were tested in both solo and portfolio conditions: Coca-Cola (Coca-Co
 
 ### Results
 
-Table 7: Published-Brand Extension: Portfolio Immunity Test (N = 1,950).
+**Table 7.** Published-Brand Extension: Portfolio Immunity Test (N = 1,950).
 
 | Brand | Parent | Solo DCI | Port DCI | Delta | d |
 |-------|--------|----------|----------|-------|---|
@@ -330,13 +326,11 @@ Fourth, native-language results are based on a single model per tradition (excep
 
 Four extensions are warranted. First, validation of DCI against human perceptual data to establish construct validity for the metric and the immunity finding. Second, a dedicated replication of the Lexus finding with a multi-brand aspirational layer panel (Toyota/Lexus, Volkswagen/Audi, Marriott/Ritz-Carlton) to determine whether d = .52 represents a real exception. Third, agentic simulations and extended multi-turn designs (5+ turns) to test whether conversational accumulation can unlock portfolio effects in non-reverse-aspiration portfolios. Fourth, longitudinal testing of whether spectral immunity is stable as models are updated or fine-tuned, which is critical for "Share of Model" strategy planning.
 
-
 ## Conclusion
 
 This study provides the first comprehensive test of portfolio interference in LLM brand perception. Across 7,975 observations, 13 models from 7 training traditions, 7 portfolio archetypes, and 4 prompt modalities, the predominant finding is clear: portfolio framing does not systematically alter how LLMs perceive brands. We term this phenomenon *spectral immunity*. The mechanism is architectural---Russian, Indian, Japanese, European, and Korean models with different training corpora show identical immunity to Western models. The original Lexus finding (d = .52) is suggestive but FDR-inconclusive with the full 20-brand panel. The multi-turn Geely Auto finding (d = -1.11) is the strongest effect in the experiment, revealing that reverse aspiration can be unlocked through conversational revelation---but this is a conditional vulnerability, not a general exception to immunity. For brand managers, portfolio architecture is invisible to the AI systems increasingly mediating consumer-brand interactions. The exception is conversational AI with extended interaction: portfolios with reverse-aspiration structure show meaningful effects in multi-turn dialogue that are absent in single-turn queries.
 
 *Falsification conditions:* Spectral immunity (H5) is falsified if any future study, using comparable methods and a panel of $\geq 7$ models from $\geq 3$ traditions, finds systematic portfolio-induced DCI shifts exceeding 2.0 DCI points with effect sizes $d > .50$ that survive multiple testing correction across $\geq 5$ portfolio archetypes and $\geq 3$ prompt modalities simultaneously.
-
 
 ## Acknowledgments
 
@@ -351,5 +345,4 @@ AI assistants (Claude Opus 4.8, Grok 4.20, Gemini 2.5 Pro) were used for initial
 
 Experiment data (7,975 observations) are archived at https://doi.org/10.57967/hf/8380. Source code and analysis scripts are available at https://doi.org/10.5281/zenodo.19555282. The dataset contains 2,555 direct-rating observations, 2,518 recommendation-prompt observations, 1,235 multi-turn conversation observations, 1,322 native-language ablation observations, and 345 prompt-location ablation observations across 13 models from 7 training traditions. Local model experiments were conducted on Apple Mac mini M4 Pro (48 GB RAM) running Ollama v0.20.0.
 
----
 *This paper is part of the Spectral Brand Theory research program. For the full atlas of 20+ interconnected papers, see [spectralbranding.com/atlas](https://spectralbranding.com/atlas).*

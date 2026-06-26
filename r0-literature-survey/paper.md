@@ -8,21 +8,19 @@ DOI: [10.5281/zenodo.18945217](https://doi.org/10.5281/zenodo.18945217)
 
 Working Paper v1.4.0 – March 2026 (revised June 2026)
 
----
-
 ## Abstract
 
 This paper surveys geometric and topological methods applied to brand perception across ten intellectual traditions: multidimensional scaling, characteristics-space economics, conceptual spaces, non-Euclidean perceptual geometry, individual-differences modeling, topological data analysis, quantum cognition, opinion dynamics, and non-ergodicity research. The central finding is that a significant compound gap persists: no existing framework combines high-dimensional geometric structure, a generative signal mechanism, observer heterogeneity, and non-ergodic temporal dynamics into an integrated theory of brand perception. Multidimensional scaling operates in two to three dimensions and offers no generative mechanism. Conceptual spaces provide geometric foundations for cognition but lack temporal dynamics and observer-specific processing. Non-Euclidean perceptual geometry demonstrates that Euclidean distance is insufficient for modeling perception, yet this insight has not penetrated brand theory. Non-ergodicity has been formalized in psychology, decision science, and evolutionary biology, but has never been applied to brand perception. Six open problems with formal mathematical statements — concerning formal metrics on brand space, projection bounds, concentration of measure, positioning capacity, specification impossibility, and diffusion dynamics on perceptual manifolds — constitute a research agenda for mathematical brand theory; companion papers [@zharnikov-2026-brand-space-geometry-formal-metric; @zharnikov-2026-spectral-metamerism-brand-perception-projection; @zharnikov-2026-cohort-boundaries-high-dimensional-perception; @zharnikov-2026-many-brands-can-market-hold; @zharnikov-2026-specification-impossibility-organizational-design-high; @zharnikov-2026-non-ergodic-brand-perception-diffusion] resolve each.
 
 **Keywords**: brand perception, geometric methods, multidimensional scaling, conceptual spaces, non-ergodicity, high-dimensional geometry, Spectral Brand Theory
 
+---
+
 **JEL Classification**: M31, C65, D91
 
 **MSC Classification**: 91B42, 51K05, 62P20
 
 **arXiv Subject Classes**: cs.LG, stat.ML
-
----
 
 Brand theory, as it has developed over the past four decades, is strikingly under-formalized. The foundational frameworks that guide both academic research and professional practice---Aaker's [-@aaker-1991-managing-brand-equity] brand equity model, Keller's [-@keller-1993-conceptualizing-measuring-managing] customer-based brand equity pyramid, Kapferer's [-@kapferer-2008-new-strategic-brand, 4th ed.] brand identity prism---are taxonomic rather than mathematical. They identify components, propose relationships, and offer measurement instruments, but they do not specify the formal structure of the space in which brands exist, the metric by which brand differences should be measured, or the dynamical laws governing how brand perceptions evolve over time. Where the tradition does treat brand perception as multi-dimensional, it does so through factor-analytic scale development rather than geometric structure: Aaker's [-@aaker-1997-dimensions-brand-personality] five-factor brand personality scale, derived by exploratory factor analysis of trait ratings, established that brand perception can be operationalized along a fixed set of latent dimensions, but it yields a static, descriptive measurement instrument with no metric on the resulting space, no observer-specific processing, and no temporal dynamics. A recent systematic review of brand equity models concluded that existing frameworks fail to provide a comprehensive or formally rigorous account of brand equity [@paschina-2025-brand-equity-measurement].
 
@@ -49,7 +47,7 @@ graph TD
   INTER --> SBT["SBT candidate<br/>8-D profiles<br/>observer spectral profiles<br/>generative pipeline"]
 ```
 
-*Figure 1: Compound-gap Venn schematic. Three literature gaps (geometric, cohort-aware, observer-mediated) identified by this survey have not been addressed simultaneously by any prior framework. SBT is positioned as a candidate at the intersection. Each gap corresponds to a set of open problems in §12.*
+**Figure 1.** Compound-gap Venn schematic. Three literature gaps (geometric, cohort-aware, observer-mediated) identified by this survey have not been addressed simultaneously by any prior framework. SBT is positioned as a candidate at the intersection. Each gap corresponds to a set of open problems in §12.
 
 ## 2. Multidimensional Scaling in Marketing
 
@@ -123,7 +121,7 @@ graph LR
   MEAS --> P5["Problem 5<br/>Specification impossibility"]
 ```
 
-*Figure 2: Cluster citation map. Arrows show which of the five literature clusters (left) contribute intellectual tools to each of the six open problems in §12 (right). Problems 1 and 4 draw on multiple clusters; Problem 6 is driven by the dynamics traditions alone.*
+**Figure 2.** Cluster citation map. Arrows show which of the five literature clusters (left) contribute intellectual tools to each of the six open problems in §12 (right). Problems 1 and 4 draw on multiple clusters; Problem 6 is driven by the dynamics traditions alone.
 
 ## 4. Conceptual Spaces
 
@@ -381,7 +379,7 @@ To systematically identify the gap, we assess each surveyed tradition against si
 
 6. **Empirical validation**: Has the framework been tested against empirical data on brand perception?
 
-Table 1a: Classification Matrix — Spatial and Geometric Traditions.
+**Table 1a.** Classification Matrix — Spatial and Geometric Traditions.
 
 | Tradition | Dimensionality | Metric structure | Observer heterogeneity | Temporal dynamics | Generative mechanism | Empirical validation |
 |---|---|---|---|---|---|---|
@@ -394,7 +392,7 @@ Table 1a: Classification Matrix — Spatial and Geometric Traditions.
 
 *Notes*: Empirical validation ratings are relative to the tradition's own criteria. "Extensive" = decades of marketing applications; "Limited" = few published cases; "Proposed" = framework exists but formal properties unproven. Static = cross-sectional estimation only; no temporal updating mechanism.
 
-Table 1b: Classification Matrix — Dynamical, Topological, and Integrative Traditions.
+**Table 1b.** Classification Matrix — Dynamical, Topological, and Integrative Traditions.
 
 | Tradition | Dimensionality | Metric structure | Observer heterogeneity | Temporal dynamics | Generative mechanism | Empirical validation |
 |---|---|---|---|---|---|---|
@@ -421,7 +419,7 @@ The classification matrix reveals that no existing tradition satisfies all six c
 
 The gap is therefore not the absence of any one ingredient but the absence of their combination. No existing framework integrates high-dimensional geometric structure with a formal metric, observer-specific processing, non-ergodic temporal dynamics, and a generative signal mechanism.
 
-Table 2: Compound-Gap Satisfaction Matrix — Five Criteria × Surveyed Traditions.
+**Table 2.** Compound-Gap Satisfaction Matrix — Five Criteria × Surveyed Traditions.
 
 | Tradition | High-D geometry | Formal metric | Observer heterogeneity | Non-ergodic dynamics | Generative mechanism |
 |---|---|---|---|---|---|
@@ -555,7 +553,7 @@ This coincidence between the number of SBT dimensions and the dimension where $E
 
 The claim made here is strictly motivational: the same dimensionality that seems phenomenologically required for full-spectrum brand representation is the one where high-dimensional geometry achieves a remarkable, provably unique optimum. That alignment is worth noting; it does not substitute for the formal analysis in the companion paper.
 
-Table 3: Companion Paper Roadmap — Open Problem × Companion × Core Mathematical Tool.
+**Table 3.** Companion Paper Roadmap — Open Problem × Companion × Core Mathematical Tool.
 
 | Problem | Companion paper | Tool / result |
 |---|---|---|
@@ -587,7 +585,7 @@ Three further companion papers extend the program beyond the six core problems. 
 
 Together, these companion papers constitute a coordinated research program converting the compound gap from a diagnosis into a formally resolved set of mathematical results. Whether SBT proves to be the right framework for these formalizations, or whether the mathematical analysis reveals that a different framework is needed, the central five-way intersection — combining high-dimensional geometry, a formal metric, observer-specific processing, non-ergodic temporal dynamics, and a generative signal mechanism simultaneously — is unoccupied, and the tools to explore it are available.
 
-*Figure 3: SBT Cluster Citation Map — R0 to Mathematical Companions and SBT to Adjacent Frameworks.*
+**Figure 3.** SBT Cluster Citation Map — R0 to Mathematical Companions and SBT to Adjacent Frameworks.
 
 ```mermaid
 flowchart TD
@@ -620,13 +618,9 @@ flowchart TD
 
 *Notes*: Solid arrows from R0 indicate the six open problems each delegated to a mathematical companion paper (Problems 1–6 of §12 mapped to [@zharnikov-2026-brand-space-geometry-formal-metric; @zharnikov-2026-spectral-metamerism-brand-perception-projection; @zharnikov-2026-cohort-boundaries-high-dimensional-perception; @zharnikov-2026-many-brands-can-market-hold; @zharnikov-2026-specification-impossibility-organizational-design-high; @zharnikov-2026-non-ergodic-brand-perception-diffusion]). Solid arrows from SBT indicate companion papers that extend the SBT theoretical framework into adjacent domains (resource allocation, dimensional justification, coherence dynamics, organizational design). Citation keys correspond to entries in the reference list and to canonical paper labels R0–R12 + OST in the Spectral Brand Theory corpus index.
 
----
-
 ## Acknowledgments
 
 AI assistants (Claude Opus 4.8, Grok 4.20, Gemini 2.5 Pro) were used for initial literature search and editorial refinement; all theoretical claims, propositions, and interpretations are the author's sole responsibility.
-
----
 
 ## References
 

@@ -8,8 +8,6 @@ DOI: [10.5281/zenodo.20765556](https://doi.org/10.5281/zenodo.20765556)
 
 Working Paper v1.0.0 – June 2026
 
----
-
 ## Abstract
 
 The correspondence principle of brand management prescribes acting on the highest-payoff dimension and cohort, but presumes a perceptual cohort is reachable without showing how. A cohort defined by perceptual proximity has no native media address, unlike the channels, cookies, and lookalike segments of conventional activation. This applied companion closes that gap. It demonstrates that being actionable decomposes into three measurable bridges, unified by a measurement-to-activation handoff contract: the instrument supplies the target and the cost of reaching it; the manager runs the campaign. The first bridge emits a signal strong on the dimension a cohort is sensitive to and lets self-selection route it, requiring no address. Formalized on a degraded broadcast channel, the self-selection sharpness equals the same off-axis variance the parent paper counts as a perception-metamerism loss: the targeting bug becomes a self-selection filter. The second traces reflections back to the surfaces where each perception was found. The third maps the cohort to addressable proxies and makes measurable the garbling loss of doing so. A calibrated simulation and two case studies show the contract selecting bridges by distinctiveness. Because the address-free bridge is where post-cookie activation is already moving, the reach answer is a structural tailwind, not a patch.
@@ -24,7 +22,7 @@ This paper closes the gap, and the central claim is that closing it is a structu
 
 The argument keeps the metrology posture of the parent work. The instrument is an observational science of what a brand is and how it is read, not a piloting discipline; in the astronomer-and-navigator image, it supplies coordinates and the cost of the journey, and the manager flies. Reach is the delivery of an action to the observers whose perceptions constitute a target cohort. We do not buy media. What we demonstrate is that for a given target the instrument can emit a recommended bridge and its quantified cost, and that one of the three bridges is entailed by the theory's own machinery rather than borrowed from ad-tech. Three results follow. We supply a handoff-contract formalism that, for a target dimension and cohort, returns the recommended bridge and its cost. We demonstrate that a signal emitted strong on a dimension over-indexes on the dimension-sensitive cohort, with magnitude equal to the cohort's off-axis perceptual distinctiveness — the quantity that is a mis-targeting loss in the parent paper, read forward as a self-selection filter. And we make measurable the decision loss of reaching a perceptual cohort through an addressable proxy as a Blackwell garbling, identifying the minimal-loss proxy. Throughout, the individual observer spectral profile is the primitive and a cohort is a derived cluster of observers in that space.
 
-**Related Work**
+## Related Work
 
 The contribution sits between an activation literature that assumes addressable audiences and an information-economics tradition that models how types reveal themselves, and is best located by what each leaves open. Where the personalized-advertising meta-analysis measures personalization lift against a generic-ad baseline [@yeo-2025-personalized-advertising-meta-analysis], we price the address-free self-selection route against the addressable one, because the decisive counterfactual in the post-cookie regime is not personalized-versus-generic but addressed-versus-self-selected. Where the contextual-without-identity line keys relevance to content features [@haglund-2024-ai-contextual-advertising; @ye-2026-ad-gazer-contextual], we key delivery to the pre-measured observer spectral profile and predict the response magnitude from it, which is strictly more precise wherever the perceptual cohort is identified because content is at best a proxy for the perception an observer completes. And where the broadcast-channel formalism defines receiver channel quality physically [@cover-1972-broadcast-channels], we define it as the projection of the brand signal onto the observer's perceptual sensitivity, turning a degraded broadcast channel into a self-selection filter.
 
@@ -36,7 +34,7 @@ The contribution sits between an activation literature that assumes addressable 
 
 ***The broadcast channel.*** The delivery substrate is formally a broadcast channel: one sender, many receivers of differing channel quality, a single transmitted signal decoded differently by each [@cover-1972-broadcast-channels]. No marketing application of the broadcast-channel formalism to perceptual targeting exists, and the gap is itself an opening. We import the degraded-channel structure with an explicit mapping in which the sender is the brand, the receivers are observer spectral profiles, the per-receiver channel quality is the projection of the signal onto the observer's sensitivity vector, and the achievable separation corresponds to a resonance bandwidth. The valuation of the resulting reach choice is a comparison of experiments: targeting through an addressable proxy is a garbling of targeting on the perceptual cohort, weakly less valuable for the decision [@blackwell-1953-equivalent-comparisons; @cover-2006-elements-information-theory], which is the same ordering the parent paper applies to brand-equity aggregation [@zharnikov-2026au-correspondence-principle-brand].
 
-**The Measurement-to-Activation Handoff Contract**
+## The Measurement-to-Activation Handoff Contract
 
 The objection assumes a single route to action — convert the cohort's perceptual identity into a list of reachable individuals — and finds it impossible. The reframing is that being actionable decomposes into three bridges from perception space to delivery, which differ precisely in how much perceptual identity must be converted into a physical address before one can act, and that the instrument can price each.
 
@@ -56,7 +54,7 @@ The first and most theory-native bridge requires no address. We develop it as th
 
 The proposition is falsifiable. A dimension-strong creative that does not over-index on the dimension-sensitive cohort, relative to a dimension-neutral control, in a category satisfying the scope conditions below — an over-index confidence interval that includes zero — would refute the mechanism.
 
-**A Minimal Broadcast-Channel Model**
+## A Minimal Broadcast-Channel Model
 
 We make the resonance claim precise in the smallest model that carries it, and calibrate it against the observed distribution of perceptual distinctiveness in the reflection corpus.
 
@@ -66,9 +64,9 @@ We make the resonance claim precise in the smallest model that carries it, and c
 
 ![](figures/figure1_loss_surface.png)
 
-*Figure 1: Total-loss surface over cohort distinctiveness ($\sin^2\beta$) and per-impression spill cost.* The shaded frontier marks where the broadcast-a-dimension bridge and the minimal-loss-proxy bridge incur equal total loss; the broadcast bridge dominates above and to the left, where the cohort is distinct and spill is cheap. Calibrated to the distinctiveness distribution of a reflection-based perception corpus; reproduced by [`code/broadcast_channel_loss_surface.py`](https://github.com/spectralbranding/sbt-papers/blob/main/reaching-a-perception/code/broadcast_channel_loss_surface.py). The figure file is [`figures/figure1_loss_surface.png`](https://github.com/spectralbranding/sbt-papers/blob/main/reaching-a-perception/figures/figure1_loss_surface.png).
+**Figure 1.** Total-loss surface over cohort distinctiveness ($\sin^2\beta$) and per-impression spill cost. The shaded frontier marks where the broadcast-a-dimension bridge and the minimal-loss-proxy bridge incur equal total loss; the broadcast bridge dominates above and to the left, where the cohort is distinct and spill is cheap. Calibrated to the distinctiveness distribution of a reflection-based perception corpus; reproduced by [`code/broadcast_channel_loss_surface.py`](https://github.com/spectralbranding/sbt-papers/blob/main/reaching-a-perception/code/broadcast_channel_loss_surface.py). The figure file is [`figures/figure1_loss_surface.png`](https://github.com/spectralbranding/sbt-papers/blob/main/reaching-a-perception/figures/figure1_loss_surface.png).
 
-**Perception-to-Proxy Join and Its Quantified Loss**
+## Perception-to-Proxy Join and Its Quantified Loss
 
 The third bridge is the rigorous fallback for cohorts that are not dimension-distinct enough to self-select and not surface-clustered enough to trace. It is the only bridge that needs an address, and its contribution is to make the reach choice a measured comparison rather than a default to addressability.
 
@@ -80,7 +78,7 @@ The ordering is what makes reach a measured quantity. The instrument does not ad
 
 ***Estimating the loss.*** $L(P)$ is estimated from the mutual information between cohort membership and addressable proxy features stored alongside the eight-dimensional vector, together with the decision-loss gap that information implies under the manager's payoff. A high $L(P^\star)$ — a cohort that is perceptually distinct but addressably indistinguishable, because its addressable features are orthogonal to the perceptual split — is itself an informative output: it tells the manager that no proxy will do and that the broadcast route is forced. Section *Empirical Strategy* specifies the estimator and its identification threats.
 
-**Provenance as Address**
+## Provenance as Address
 
 The second bridge sits between the other two in the amount of inference it requires, and is the cheapest to operationalize because the data already exists in the reflection schema.
 
@@ -88,7 +86,7 @@ The second bridge sits between the other two in the amount of inference it requi
 
 ***The coverage cost and a fidelity inversion.*** Provenance shows where a perception was observed, which is a biased sample of where the cohort can be reached; the silent majority of the cohort may not surface on any harvested channel. The handoff contract therefore reports a reachable-fraction estimate rather than claiming full coverage, and treats the coverage bias as this bridge's cost term. A structural inversion sharpens the trade-off: public-artifact proxy reflections carry rich surface provenance but low perceptual fidelity, whereas consented respondent-panel reflections carry high perceptual fidelity but consent-bounded provenance — one can re-reach the panel, but the panel is not the market. Provenance-as-address is thus strongest exactly where perceptual fidelity is weakest, so addressability and perceptual fidelity trade off across the reflection tiers, and the contract makes that trade-off explicit rather than hiding it.
 
-**Scope Conditions**
+## Scope Conditions
 
 The broadcast-a-dimension bridge is the paper's most distinctive claim and also its most scope-bound; we state the conditions under which it applies and outside which the contract routes elsewhere.
 
@@ -104,9 +102,9 @@ The three bridges answer activation given a perception cloud — routing a signa
 
 ***Why it is deferred.*** A full treatment of the formation mode — the campaign as forcing function, the cloud's relaxation-rate measurement, and the recovery of a perception-decay time constant from time-sliced reflections after a spend pulse — is developed in a spectral-dynamics formation companion [@zharnikov-2026aw-forming-a-perception] and is not pursued here. Folding both routing and formation into one paper would staple two ideas together; we therefore scope this paper to activation given a perception and mark formation as a boundary condition, so the reach story is not mistaken for a claim that all activation is selection.
 
-**Empirical Strategy**
+## Empirical Strategy
 
-The propositions are stated as theory with sketched mechanism. The primary confirmatory design is a field experiment that does not yet exist, and no field findings are asserted; in its place we execute the methods-companion fallback — a calibrated broadcast-channel simulation and two case studies — and report it in the next section as a demonstration of the handoff contract in operation, not as a test of the mechanism. The distinction is load-bearing: a calibrated simulation can show that the contract behaves as specified and that its quantities are computable, but only the field design can confirm that observers resonate as predicted.
+The propositions are stated as theory with sketched mechanism. The primary confirmatory design is a field experiment that does not yet exist, and no field findings are asserted; in its place we execute the methods-companion fallback — a calibrated broadcast-channel simulation and two case studies — and report it in the next section as a demonstration of the handoff contract in operation, not as a test of the mechanism. The distinction is central: a calibrated simulation can show that the contract behaves as specified and that its quantities are computable, but only the field design can confirm that observers resonate as predicted.
 
 ***Primary design: a two-cell field experiment.*** Proposition 1 is tested at the individual level by a two-cell experiment that delivers a dimension-strong versus a dimension-neutral creative through contextual slots and links each exposure to a pre-measured individual perceptual profile elicited by an open instrument. The design targets at least 1,500 complete profiles per cell across at least four product categories spanning the involvement and distinctiveness range, so that the predicted over-index can be estimated within and across the scope conditions. The pre-measured profile is the identifying feature: the prediction is keyed to the observer's sensitivity vector and predicts an over-index magnitude equal to the cohort's distinctiveness, which separates the resonance mechanism from any content-contextual confound.
 
@@ -114,7 +112,7 @@ The propositions are stated as theory with sketched mechanism. The primary confi
 
 ***Robustness.*** Three checks guard the resonance claim. A threshold-reception specification tests the prediction under binary rather than graded reception, under which the over-index sharpens rather than reverses, and a placebo on non-sensitive dimensions plus a dimension-neutral falsification creative separate resonance from content-context. A dimension-count robustness check compares the two-dimensional model against the full eight, and alternative perceptual bases — a principal-components decomposition of the same items, and a Likert versus semantic-differential elicitation — pre-empt the objection that the result depends on a proprietary instrument. A bounding exercise on unobservables addresses omitted-variable and endogenous-content threats to the proxy-join loss.
 
-**A Calibrated Demonstration**
+## A Calibrated Demonstration
 
 This section executes the methods-companion fallback. It is a calibrated simulation and two case studies, not a field test: it shows that the handoff contract computes, behaves as specified, and selects different bridges as cohort geometry changes. Everything below is reproduced from a fixed seed by the companion script, and no claim of field evidence is made.
 
@@ -122,11 +120,13 @@ This section executes the methods-companion fallback. It is a calibrated simulat
 
 ***The simulated over-index.*** Drawing 10,000 cohorts from the calibrated Beta and passing each through the minimal two-type broadcast-channel model produces a resonance over-index — the matched cohort's salience for a dimension-strong creative relative to the off-target cohort's — of 1.202, with a bootstrap 95% confidence interval of [1.196, 1.207] that lies entirely above 1, and a large standardized matched-versus-off-target salience gap (Cohen's *d* = 1.61). The over-index rises monotonically with distinctiveness across the whole population (Figure 2), reproducing the qualitative shape Proposition 1 predicts. A majority of the calibrated cohorts, .626 (95% CI [.617, .636]), clear the broadcast routing threshold and are therefore reachable address-free; the mean per-impression spill cost is .177 (95% CI [.176, .178]). These are properties of the calibrated model, not measured response magnitudes; the confirmatory over-index belongs to the field design.
 
-*Figure 2: Resonance over-index versus cohort distinctiveness, with the five public anchors marked.* The over-index (matched-cohort salience relative to off-target salience for a dimension-strong creative) increases monotonically in distinctiveness $s = \sin^2\beta$; the dashed line marks the routing threshold $s^\star = .355$. Reproduced by [`code/broadcast_channel_me2.py`](https://github.com/spectralbranding/sbt-papers/blob/main/reaching-a-perception/code/broadcast_channel_me2.py) at seed 20260619; the figure file is [`figures/figure2_me2_overindex.png`](https://github.com/spectralbranding/sbt-papers/blob/main/reaching-a-perception/figures/figure2_me2_overindex.png).
+![](figures/figure2_me2_overindex.png)
+
+**Figure 2.** Resonance over-index versus cohort distinctiveness, with the five public anchors marked. The over-index (matched-cohort salience relative to off-target salience for a dimension-strong creative) increases monotonically in distinctiveness $s = \sin^2\beta$; the dashed line marks the routing threshold $s^\star = .355$. Reproduced by [`code/broadcast_channel_me2.py`](https://github.com/spectralbranding/sbt-papers/blob/main/reaching-a-perception/code/broadcast_channel_me2.py) at seed 20260619; the figure file is [`figures/figure2_me2_overindex.png`](https://github.com/spectralbranding/sbt-papers/blob/main/reaching-a-perception/figures/figure2_me2_overindex.png).
 
 ***Two case studies: the contract selecting bridges.*** The same model instantiates the handoff contract on two contrasting campaigns, summarized in Table 1. These are *reaching* decisions for brands in two campaign settings, given the perception each currently holds — distinct from the *formation* dynamics of those same settings (holding a mature perception against decay, or building a new one), which the Boundary section defers to the spectral-dynamics companion. In a maintenance campaign for an established, distinctive brand — the most distinctive anchor, distinctiveness .760 — the contract recommends broadcast-a-dimension at a per-impression spill cost of .074, which dominates the minimal-loss proxy's loss of .200; the resonance over-index at that distinctiveness is 1.724. The established brand is reachable with no address at all. In a category-creation campaign for an undifferentiated new entrant whose perception is not yet formed — a flat profile with distinctiveness at the $s = 1/8 = .125$ floor — the contract declines broadcast, because the predicted spill of .271 exceeds the proxy loss of .200, and routes instead to the minimal-loss proxy or to provenance-as-address; the resonance over-index is 1.017, essentially no separation. The contrast is the point: the contract returns the address-free bridge exactly when the cohort is distinct enough to self-select, and substitutes an addressed bridge when it is not. The category-creation case also marks the boundary of this paper — moving the new entrant off the distinctiveness floor is *forming* a perception, not *reaching* one, and that forcing-function dynamics is the subject of the spectral-dynamics companion.
 
-Table 1: Calibrated Demonstration — Monte-Carlo Summary and Case-Study Bridge Selection.
+**Table 1.** Calibrated Demonstration — Monte-Carlo Summary and Case-Study Bridge Selection.
 
 | Quantity | Value | 95% CI |
 |---|---|---|
@@ -141,7 +141,7 @@ Table 1: Calibrated Demonstration — Monte-Carlo Summary and Case-Study Bridge 
 
 *Notes*: All values are reproduced from `code/broadcast_channel_me2.py` at seed 20260619. CIs are 2,000-resample bootstrap percentile intervals over the 10,000 simulated cohorts. The figures are properties of a model calibrated to public brand-profile anchors, not measured field response; they demonstrate the contract's operation rather than confirm the resonance mechanism, which is the role of the primary field design. The reported magnitudes hold under the documented illustrative constants; the robust claim is the monotone increase of the over-index in distinctiveness, not the specific values.
 
-**Limitations**
+## Limitations
 
 ***Replicability of the instrument.*** The reflection-based perception measurement architecture invites a replicability objection: a result that depends on a non-public instrument is hard to reproduce. We pre-empt it by shipping an open elicitation script with the paper and by including the alternative-instrument robustness check, so that the resonance prediction can be reproduced under a non-proprietary perceptual basis. The calibrated demonstration is deliberately anchored on the public canonical profiles rather than the work-in-progress instrument for the same reason — its inputs and outputs are fully reproducible from the shipped script. The prediction is a statement about observer sensitivity, not about the particular instrument that measures it.
 
@@ -149,7 +149,7 @@ Table 1: Calibrated Demonstration — Monte-Carlo Summary and Case-Study Bridge 
 
 ***Causal threats.*** Three threats are addressed rather than deferred to the management layer. Endogenous content creation — the surfaces that generate reflections may already be selected by the resonant cohort — is reported as a coverage-bias limitation of provenance-as-address, with the contract returning a reachable-fraction estimate. Omitted-variable bias in the proxy mapping is bounded by the robustness exercise on unobservables. Measurement-error attenuation in the profiles biases the estimated over-index toward zero, making the test conservative. None of these is a reason to withhold the bridge; each is a quantity the empirical design measures.
 
-**Discussion**
+## Discussion
 
 ***What the contribution is and is not.*** The contribution is not a media-buying method and not a new targeting product. It is a measurement deliverable: a specification that, for a perceptual target, returns a recommended bridge and its measured cost, and a demonstration that one bridge is entailed by the theory's own metamerism result. We do not claim that perceptual routing is always cheaper than addressable targeting; we claim that the choice between them can be made on measured quantities — distinctiveness, spill, coverage bias, and proxy-join loss — rather than on the assumption that activation requires an address. The handoff contract is the operational step between knowing which cohort and dimension to move and realizing an outcome, and it keeps the division of labor the parent paper draws: the instrument measures the target and the cost of reaching it, and the manager runs the campaign.
 
@@ -157,25 +157,19 @@ Table 1: Calibrated Demonstration — Monte-Carlo Summary and Case-Study Bridge 
 
 ***Future research.*** Three directions follow: estimating the proxy-join loss across real categories to map where each bridge dominates; a measurement-cost model that turns the bridge choice into a threshold on distinctiveness and spill; and the deferred spectral-dynamics treatment of the formation mode, in which a campaign is a forcing function and the instrument recovers the cloud's decay time constant from time-sliced reflections.
 
-**Conclusion**
+## Conclusion
 
 A perceptual cohort has no native address and does not need one. The instrument supplies three bridges from perception to delivery — broadcast the dimension the cohort responds to and let self-selection route the signal, follow the provenance the reflections already carry, or map the cohort to the minimal-loss addressable proxy and report what that map costs — unified by a handoff contract that returns the recommended bridge and its measured cost. The headline result reads the parent paper's mis-targeting bug forward as a self-selection filter: the same off-axis perceptual distinctiveness that is a loss under push-targeting is the sharpness of self-selection under broadcast-targeting. Because the bridge that needs no address is the one the post-cookie industry is already adopting, the reach answer is a structural tailwind. Measuring where a cohort sits in perception space, and what it costs to reach it, is the instrument's job; flying the campaign there remains the manager's.
-
----
 
 ## Data and Code Availability
 
 Two companion computation scripts, both deterministic, dependency-light (NumPy and Matplotlib only), and requiring no network or credentials, reproduce every reported figure. [`code/broadcast_channel_loss_surface.py`](https://github.com/spectralbranding/sbt-papers/blob/main/reaching-a-perception/code/broadcast_channel_loss_surface.py) reproduces the loss surface of *A Minimal Broadcast-Channel Model* (Figure 1, [`figures/figure1_loss_surface.png`](https://github.com/spectralbranding/sbt-papers/blob/main/reaching-a-perception/figures/figure1_loss_surface.png)). [`code/broadcast_channel_me2.py`](https://github.com/spectralbranding/sbt-papers/blob/main/reaching-a-perception/code/broadcast_channel_me2.py) reproduces the *Calibrated Demonstration* — the calibration to the five canonical public brand profiles, the Monte-Carlo over-index and its bootstrap intervals, the two case studies (Table 1), and Figure 2 ([`figures/figure2_me2_overindex.png`](https://github.com/spectralbranding/sbt-papers/blob/main/reaching-a-perception/figures/figure2_me2_overindex.png) and the results table [`output/tables/me2_results.csv`](https://github.com/spectralbranding/sbt-papers/blob/main/reaching-a-perception/output/tables/me2_results.csv)) — from seed 20260619 and the run command in its docstring. The [`code/README.md`](https://github.com/spectralbranding/sbt-papers/blob/main/reaching-a-perception/code/README.md) documents both models, the calibration anchors, and the expected output. The full paper source, scripts, figures, and machine-readable specification (`paper.yaml`) are openly available in the public repository at [https://github.com/spectralbranding/sbt-papers/tree/main/reaching-a-perception](https://github.com/spectralbranding/sbt-papers/tree/main/reaching-a-perception), and the same archive is carried by a permanent Zenodo deposit with one-command reproduction (concept DOI [https://doi.org/10.5281/zenodo.20765556](https://doi.org/10.5281/zenodo.20765556); version 1.0.0 DOI [https://doi.org/10.5281/zenodo.20765557](https://doi.org/10.5281/zenodo.20765557)).
-
----
 
 ## Acknowledgments
 
 AI assistants (Claude Opus 4.8, Gemini 2.5 Pro, Grok 4.3) were used for initial literature search, for software development — implementing and running the two companion computation scripts that reproduce the paper's reported loss surface and calibrated demonstration — and for editorial refinement; all theoretical claims, propositions, and interpretations are the author's sole responsibility. The companion scripts are the fixed-seed broadcast-channel loss surface (`code/broadcast_channel_loss_surface.py`) and the calibrated Monte-Carlo demonstration (`code/broadcast_channel_me2.py`).
 
 CRediT contributions: Dmitry Zharnikov — conceptualization, methodology, software, formal analysis, investigation, writing (original draft), writing (review and editing).
-
----
 
 ## References
 

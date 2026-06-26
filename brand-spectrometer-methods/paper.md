@@ -6,17 +6,15 @@ ORCID: 0009-0000-6893-9231
 
 DOI: [10.5281/zenodo.20775963](https://doi.org/10.5281/zenodo.20775963)
 
-Working Paper v1.0.0 — June 2026
-
----
+Working Paper v1.0.0 – June 2026
 
 ## Abstract
 
 This paper introduces metameric psychometrics, a validation framework for instruments that operate without a latent true score. In place of an oracle it substitutes instrument-computed noise floors — operator variance across cross-family model pairs and source sensitivity under signal-source resampling — so every cohort comparison becomes a falsifiable signal-to-noise test with a computed interval. The framework is realized in the Brand Spectrometer, an open pipeline that reconstructs cohort-resolved, eight-dimensional perception vectors from dated public artifacts by aggregating per-artifact reflections over signal sources; the unit of analysis is the cohort pair. Because cohort metameric variance is the measurement, not error around a true specification, the instrument is validated for measurement properties, never criterion accuracy. A pre-registered battery across two windows shows convergent validity, reproducibility, and four-of-five test-retest reliability. Discriminant resolution depends on the metric: a scale-invariant mean-cosine signal-to-noise abstains, whereas a distribution-level, operator-floored separation between whole cohort clouds resolves the owner cohort from the press in one window (signal-to-noise 3.6, permutation p = .003, triangulated) while abstaining elsewhere. The cohort signal lives in magnitude, not mean shape; the instrument resolves real separations and abstains where none clears. The framework may extend to perceptual constructs measured from public text without ground truth.
 
----
-
 **Keywords:** brand perception, measurement instrument, metameric psychometrics, reproducibility, reliability, structural validity, large language models, noise floor
+
+---
 
 The measurement of brand perception has long relied on instruments whose internals are proprietary and whose reproducibility is asserted rather than demonstrated. Survey-based brand trackers report point estimates without a noise floor against which a reader could judge whether a difference between two groups is a real separation or an artifact of the instrument. This paper takes a different stance. The authors develop and validate a measurement instrument — the Brand Spectrometer — whose entire perceptual pipeline is open, deterministic, and reproducible from published code and data, and whose validation reports every comparison relative to a noise floor the instrument itself computes. The instrument reads public artifacts (press articles, forum posts, social posts, video reviews, official releases) and reconstructs, for each named observer cohort, an eight-dimensional perception vector on the canonical dimensions of the Spectral Brand Theory corpus. It does not claim to recover what a brand "really is."
 
@@ -24,7 +22,7 @@ The framing differs from classical brand-equity measurement in a way worth stati
 
 This paper makes three contributions. First, it specifies a reproducible measurement instrument for cohort-resolved brand perception, with two distinct noise floors and a per-pair signal-to-noise gate, described in the section on the instrument. Second, it introduces and operationalizes *metameric psychometrics* — a validation framework that evaluates reliability, convergent validity, reproducibility, and discriminant resolution against the instrument's own floors, never against a presumed truth — described in the section on the validation framework. Third, it reports an honest, contrast-based result on a worked case in which cross-operator reliability, convergent validity, and reproducibility hold across two windows (test-retest reliability on four of five cohorts, the fifth an operator-attributable failure) while discriminant resolution proves metric-dependent — a scale-invariant mean-cosine signal-to-noise abstains while a distribution-level criterion resolves the owner cohort from the press within the same window — with the confirmatory mean-cosine abstention and the exploratory distributional resolution each reported as such, described in the results and discussion sections. The work is positioned as a methodological contribution; its implications for brand theory are confined to a short subsection.
 
-## **The Instrument**
+## The Instrument
 
 ***The pipeline and the eight dimensions***
 
@@ -32,7 +30,7 @@ The Brand Spectrometer is a fixed five-stage pipeline: *acquire* (retrieve publi
 
 ![The worked-example atlas as a spectrum strip: eight per-dimension lanes on a 0–10 scale, one line per cohort, a band for the spread across cohorts.](figures/figure1_spectrum_worked_example.png)
 
-*Figure 1: The worked-example atlas as a spectrum strip.* Each of the eight canonical dimensions is an independent lane on its own 0–10 scale; each line is one of the five cohorts of the fresh-window atlas and the translucent band is the spread across cohorts on that dimension. *Notes*: The display is per-dimension and axis-order invariant, carrying none of the enclosed-area artifact a radar polygon introduces; it shows cohort vectors and their spread, while pairwise resolution against the noise floor is reported in the *Results*. Rendered deterministically by the open `spectrum_strip.js` renderer from the published `ferrari_luce_fresh_2606` atlas, both in the public code repository [github.com/spectralbranding/brand-spectrometer](https://github.com/spectralbranding/brand-spectrometer).
+**Figure 1.** The worked-example atlas as a spectrum strip. Each of the eight canonical dimensions is an independent lane on its own 0–10 scale; each line is one of the five cohorts of the fresh-window atlas and the translucent band is the spread across cohorts on that dimension. *Notes*: The display is per-dimension and axis-order invariant, carrying none of the enclosed-area artifact a radar polygon introduces; it shows cohort vectors and their spread, while pairwise resolution against the noise floor is reported in the *Results*. Rendered deterministically by the open `spectrum_strip.js` renderer from the published `ferrari_luce_fresh_2606` atlas, both in the public code repository [github.com/spectralbranding/brand-spectrometer](https://github.com/spectralbranding/brand-spectrometer).
 
 A *cohort* is a distinguishable observer class with a distinct, publicly enumerable artifact-access pattern (for example, actual owners, Italian press, Mandarin-language enthusiasts). Cohorts are observer/perceptual groupings — defined by register, language, or commercial relationship — not demographic segments, and the instrument measures cohort-metameric perception, not population incidence. The instrument's primary output is not any single cohort vector but the variance across cohorts. The pairwise distance between two cohort vectors $C_i$ and $C_j$ is
 
@@ -74,7 +72,7 @@ The distributional signal-to-noise mirrors the cosine floor logic exactly. The *
 
 The unit of analysis is the cohort *pair*, never the brand. Every reliability, convergence, and resolution statement attaches to a specific pair or to a specific cohort's repeated measurement, and no claim is made at the brand level; the instrument has no brand-level scalar to report and computes none. The instrument's domain of valid application is stated explicitly in Table 1, which fixes the artifact type, the basis on which cohorts are defined, the conditions under which the floors are informative, and the native-language requirement. The floor-informativeness condition follows the concentration-of-measure reasoning in the cohort-boundaries work of the corpus [@zharnikov-2026-cohort-boundaries-high-dimensional-perception]: below a minimum of two cross-family operator pairs and at least three artifacts per cohort half, the instrument reports sub-resolution by construction rather than as a finding.
 
-**Table 1: Scope of Valid Application for the Brand Spectrometer.**
+**Table 1.** Scope of Valid Application for the Brand Spectrometer.
 
 | Dimension of scope | Condition for valid application |
 |---|---|
@@ -89,7 +87,7 @@ The unit of analysis is the cohort *pair*, never the brand. Every reliability, c
 
 The schema and its validator, the aggregation, noise-floor, and discriminant code, the worked-example atlases together with their committed per-artifact reflection fragments, and the validation battery are published openly and are reproducible from public data with no API keys; the render-and-extract step that generates reflections from raw artifacts via model APIs is documented with pinned operators, but its orchestration is bundled with the withheld acquisition layer and is not part of the key-free public bundle. Crucially, everything required to reproduce the *published* atlases — and the downstream cohort vectors, floors, and resolution verdicts derived from them — is open: the byte-identical re-derivation reported below (V5) is direct evidence that the published outputs are fully reproducible by a third party with no privileged access. The withheld element is not any part of the published computation but the separate collection and acquisition layer (artifact discovery and retrieval at scale, plus the respondent panel); this withheld layer does not gate reproduction of any published result. Whether a result is reported as a bare shape or as a resolved difference turns on whether a noise floor has been attached: a single-operator run with no floor yields only a shape, while attaching the operator and artifact floors is what licenses the claim that a difference is resolved at a quantified resolution. Even a fully floored measurement is described as measurement-grade, resolved, and reproducible — never as "the true answer."
 
-## **The Validation Framework: Metameric Psychometrics**
+## The Validation Framework: Metameric Psychometrics
 
 ***Ground-truth-absence as the binding frame***
 
@@ -111,7 +109,7 @@ Each test fixes a claim, a design, a metric, and a numeric pass criterion stated
 
 Operators are pinned to exact model-version identifiers, never family labels, and a model-availability ping precedes every batch with no silent fallback substitution. The non-Mandarin cohorts rotate the Anthropic and OpenAI families across renderer and extractor roles; the Mandarin cohort uses a Qwen renderer and a DeepSeek extractor with native alt-pairs. One pre-registered deviation (D1, 2026-06-20) is reported: the legacy `deepseek-chat` extractor alias named for the Mandarin `chinese_variants` alt-pair was retired by the provider, whose endpoint now exposes only the v4 generation. Per the no-silent-fallback rule the substitution was recorded before any Mandarin result was computed — the `chinese_variants` alt extractor was set to `deepseek-v4-pro` (available, distinct from the primary extractor, cross-family preserved). The Mandarin cohort therefore still carries two cross-family alt-pairs for its operator floor; only the second pair's extractor identity changed.
 
-## **Results**
+## Results
 
 Results are reported for two windows: a fresh post-announcement window (the pre-registered confirmatory case) and a pinned earlier window (a robustness and longitudinal arm, read-only). The headline is a contrast between two discriminant metrics within the fresh window: the confirmatory scale-invariant mean-cosine signal-to-noise *abstains* on every cohort pair, while the exploratory distribution-level criterion *resolves* the owner cohort from the press. The mean-cosine abstention is a pre-registered confirmatory outcome and is reported as such; the distributional resolution is exploratory and is reported as such throughout.
 
@@ -147,7 +145,7 @@ Two controls bracket the distributional metric, and a permutation-null calibrati
 
 A source-subsample learning curve answers the "more data" question directly: the aggregate mean-cosine signal-to-noise is flat in the number of sources and its interval *tightens around a sub-one value* as sources grow (.803 [.56, 1.15] at three sources, .820 [.66, 1.01] at five), so additional artifacts make the abstention more confident, not less. Decomposing signal-to-noise as separation over the systematic operator floor, the binding constraint is the floor, which volume cannot shrink: reaching mean-cosine signal-to-noise above one would require an operator floor about 1.16× tighter (fresh) or a window with genuinely larger cohort divergence. More data still matters for floor *stability* — the two-operator-pair, three-source-per-half informativeness threshold — but it does not flip the verdict. The instrument abstains not for lack of data but because, on this window and metric, the cohorts read the brand within the band of cross-operator disagreement.
 
-**Table 2: Fresh-Window Test-Retest Reliability — Cohort-Level Re-Run Distance Versus the Operator Floor (V1, Pass 4/5).**
+**Table 2.** Fresh-Window Test-Retest Reliability — Cohort-Level Re-Run Distance Versus the Operator Floor (V1, Pass 4/5).
 
 | Cohort | Test-retest distance | Operator floor | Outcome |
 |---|---|---|---|
@@ -159,7 +157,7 @@ A source-subsample learning curve answers the "more data" question directly: the
 
 *Notes*: Each of the $K = 5$ independent re-renders and re-extractions is aggregated reflection → source → cohort into a replicate cohort vector, compared at the operator floor's aggregation level. For the four cohorts with complete replicates the test-retest distance is the maximum $1 - \cos$ of a replicate from the across-replicate mean (mirroring the operator floor's maximum-over-alternates). For the chinese cohort, whose primary extractor (deepseek-v4-flash) returned unparseable output on a majority of re-renders, the reps are scattered across artifacts; its distance is the 95th-percentile of a seeded source-matched bootstrap (one rep per artifact, 2,000 draws) that controls for artifact set. A cohort passes when its test-retest distance is at or below its operator floor. Four of five pass. The chinese cohort fails: its re-run variation (.0076) exceeds its unusually tight operator floor (.0034) — poor run-to-run determinism of deepseek-v4-flash on top of its parse-failure rate (see Limitations), addressable by a more reliable native-language extractor.
 
-**Table 3: Fresh-Window Split-Half Convergent Validity — Four of Five Cohorts Above the Cosine Threshold (V3, Pass 4/5).**
+**Table 3.** Fresh-Window Split-Half Convergent Validity — Four of Five Cohorts Above the Cosine Threshold (V3, Pass 4/5).
 
 | Cohort | Mean split-half cosine | Threshold | Outcome |
 |---|---|---|---|
@@ -171,7 +169,7 @@ A source-subsample learning curve answers the "more data" question directly: the
 
 *Notes*: Mean split-half cosine is averaged over $K = 200$ random disjoint splits of each cohort's signal sources (at least three per half where the source count allows), aggregated independently. A cohort passes at mean split-half cosine $\geq .95$. Four of five pass; actual-owners, the smallest cohort at five sources, is the single miss.
 
-**Table 4: Fresh-Window Discriminant Resolution Under the Mean-Cosine Metric — Every Pair Sub-Resolution (V4, Pre-Registered Confirmatory Outcome).**
+**Table 4.** Fresh-Window Discriminant Resolution Under the Mean-Cosine Metric — Every Pair Sub-Resolution (V4, Pre-Registered Confirmatory Outcome).
 
 | Cohort pair | Mean-cosine S/N | $P(\mathrm{S/N} > 1)$ | Resolution |
 |---|---|---|---|
@@ -188,7 +186,7 @@ A source-subsample learning curve answers the "more data" question directly: the
 
 *Notes*: Mean-cosine signal-to-noise is the centroid cosine distance divided by the larger endpoint operator floor; $P(\mathrm{S/N}>1)$ is the source-cluster bootstrap probability of clearing one (20,000 draws, seed 20260621). Resolved at S/N $> 2$, marginal $1$–$2$, sub-resolution $< 1$. All ten pairs fell sub-resolution; the metric abstains. The unit is the cohort pair.
 
-**Table 5: Fresh-Window Primary Cohort Vectors (Reflection-Averaged) — Owner Cohort Reads Systematically Lower.**
+**Table 5.** Fresh-Window Primary Cohort Vectors (Reflection-Averaged) — Owner Cohort Reads Systematically Lower.
 
 | Cohort | Sem | Nar | Ideo | Exp | Soc | Econ | Cult | Temp |
 |---|---|---|---|---|---|---|---|---|
@@ -200,7 +198,7 @@ A source-subsample learning curve answers the "more data" question directly: the
 
 *Notes*: Dimensions are Semiotic (Sem), Narrative (Nar), Ideological (Ideo), Experiential (Exp), Social (Soc), Economic (Econ), Cultural (Cult), Temporal (Temp), each on a 0–10 scale; values are the mean over the cohort's distinct signal sources at the URL-host grain. The cohorts are mid-range and similar in cosine shape, but the owner cohort sits systematically below the press cohorts — the magnitude gap the distributional metric in Table 6 resolves.
 
-**Table 6: Fresh-Window Distribution-Level Discriminant Resolution — Owners Resolve from Non-Italian Press (Exploratory).**
+**Table 6.** Fresh-Window Distribution-Level Discriminant Resolution — Owners Resolve from Non-Italian Press (Exploratory).
 
 | Cohort pair | Dist. S/N [95% CI] | Energy Holm $p$ | MMD Holm $p$ | LOO acc | Magnitude | Shape | Resolved |
 |---|---|---|---|---|---|---|---|
@@ -213,7 +211,7 @@ A source-subsample learning curve answers the "more data" question directly: the
 
 *Notes*: Distributional signal-to-noise is the pair energy distance over the larger endpoint distributional operator floor, with a 2,000-draw source-cluster bootstrap interval (seed 20260621). Energy and MMD (radial-basis kernel, median-heuristic bandwidth) permutation $p$ are Holm-corrected over the ten pairs (9,999 permutations). LOO acc is leave-one-source-out nearest-centroid accuracy (chance .50). Magnitude is the cohort-vector norm difference; Shape is the centroid cosine distance. A pair is *resolved* under the triangulation criterion (Holm $p < .05$ and CI lower bound $> 1$ and LOO $> .50$); only actual-owners ↔ non-italian-press qualifies. The metric was specified after the mean-cosine null, so this resolution is exploratory.
 
-**Table 7: Fresh-Window Per-Dimension Attribution — Owner Cohort Reads Lower Than Pooled Press on Six of Eight Dimensions.**
+**Table 7.** Fresh-Window Per-Dimension Attribution — Owner Cohort Reads Lower Than Pooled Press on Six of Eight Dimensions.
 
 | Dimension | Owners | Press | Gap (pts) | Cohen's $d$ | Holm $p$ |
 |---|---|---|---|---|---|
@@ -228,7 +226,7 @@ A source-subsample learning curve answers the "more data" question directly: the
 
 *Notes*: Owners and Press are the source-level means of the actual-owners cohort and the pooled press cohorts on each dimension (0–10 scale); Gap is Press minus Owners. Cohen's $d$ uses the pooled standard deviation; the permutation $p$ (9,999 source-label shuffles) is Holm-corrected over the eight dimensions. Six dimensions are Holm-significant; Narrative and Social are not.
 
-**Table 8: Fresh-Window Controls and False-Positive Calibration of the Distributional Rule.**
+**Table 8.** Fresh-Window Controls and False-Positive Calibration of the Distributional Rule.
 
 | Check | Quantity | Value |
 |---|---|---|
@@ -245,7 +243,7 @@ A source-subsample learning curve answers the "more data" question directly: the
 
 On the pinned earlier window reliability, convergence, and reproducibility again held: V2 passed (operator-attributable variance .0072 below cohort-attributable variance .0079; mean cross-operator cosine .993), V3 passed five of five (all mean split-half cosines $\geq .970$), and V5 reproduced deterministically. Discriminant resolution, however, **abstained under both metrics**. The mean-cosine signal-to-noise reached at best brand-debaters ↔ non-italian-press at 1.30 — but with only a .56 bootstrap probability of clearing one, a coin flip, not a resolution — and every other pair fell below. The distribution-level metric likewise found nothing: the aggregate variance ratio was $\eta^2 = .173$ with permutation $p = .369$, no pair survived Holm correction, and the best pair (actual-owners ↔ non-italian-press, distributional S/N 2.93) had a confidence interval spanning one. The earlier whole-cohort single-render analysis had reported this window as cleanly resolved; the reflection method, which smooths single-render idiosyncrasy and clusters by source, does not reproduce that resolution. The honest reading is that the pinned window does not resolve under either rigorous metric — and that the apparent earlier resolution was a single-render artifact, the same class of artifact the reflection aggregation is designed to remove.
 
-## **Discussion**
+## Discussion
 
 ***Theoretical implications for measurement: an instrument that both resolves and abstains***
 
@@ -275,7 +273,7 @@ The limitations are concrete and bounded. First and most important, the distribu
 
 Future work should (a) run the pre-registered confirmatory replication of the distribution-level resolution on a new brand and case, the priority that converts the present exploratory result into an established one; (b) add one or two further cross-family operator families — including on-premises open-weight families (for example Qwen, Gemma, and EXAONE served locally) that both widen the cross-family pool and keep the rendered artifacts inside a private perimeter — the operator floor being the binding constraint, so a tighter, pre-registered operator pair is the direct lever on the mean-cosine abstention; (c) collect further divergent and convergent windows to generalize the cross-window comparison; (d) run V6 against an independent public signal for the same window as an external descriptive cross-check; and (e) replace the bootstrap floor with a hierarchical mixed-effects model treating operator and source as random effects, for principled variance components and credible intervals. The magnitude-sensitive companion metric, alternative distance metrics, and permutation-null floors that earlier revisions held in reserve are realized in the present design and are no longer future work.
 
-## **Conclusion**
+## Conclusion
 
 The Brand Spectrometer is a reproducible instrument for cohort-resolved, eight-dimensional brand-perception measurement from public artifacts, developed and validated on the explicit premise that no single true brand specification exists to recover. Its validation — metameric psychometrics — characterizes measurement properties against the instrument's own noise floors rather than accuracy against a truth, and its unit of analysis is the cohort pair. On a worked case across two windows, cross-operator reliability, convergent validity, and reproducibility hold throughout, with test-retest reliability holding for four of five cohorts (the fifth an operator-attributable failure), while discriminant resolution depends on the metric: on the same reflections a scale-invariant mean-cosine signal-to-noise abstains, while a distribution-level, operator-floored criterion resolves the owner cohort from the press in one window — a magnitude separation triangulated across three tests, calibrated against a permutation null, bracketed by positive and negative controls, and reported as exploratory pending confirmatory replication. An instrument that resolves a real separation where one exists and abstains where none clears its own noise — and is explicit about which metric saw what — is the precondition for a measurement worth trusting.
 

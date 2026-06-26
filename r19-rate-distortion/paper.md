@@ -8,8 +8,6 @@ DOI: [10.5281/zenodo.19528833](https://doi.org/10.5281/zenodo.19528833)
 
 Working Paper v1.1.0 – April 2026 (revised June 2026)
 
----
-
 ## Abstract
 
 This study applies Shannon rate-distortion theory to measure how response-format constraints affect the fidelity of AI-generated brand perception profiles. Seventeen large language model architectures from distinct training lineages are prompted to evaluate five canonical reference brands under five response formats spanning 3 to 26 bits of information rate. Distortion is measured as total variation distance between each model's normalized output and a canonical eight-dimensional brand profile. The resulting rate-distortion curve is J-shaped: minimum distortion occurs not at the highest-rate format (100-point allocation, 26 bits) but at an intermediate bounded format (1-5 ordinal scale, 19 bits), corresponding to a 49.4% reduction in mean distortion (R1 = .172 → R2 = .087). All 17 models exhibit this pattern (paired *t*(16) = 11.92, *p* < .001, Cohen's *d*~z~ = 2.89 for R1 vs R2). Cross-model coefficient of variation averages .140 across all five rate conditions (CV = .171 excluding the structurally degenerate R5 single-dimension condition), indicating codebook convergence across architectures. These findings demonstrate that structured response formats suppress encoder bias and yield higher-fidelity brand perception measurements than unconstrained elicitation, with direct implications for AI-mediated brand research instrument design.
@@ -21,6 +19,8 @@ The measurement of brand perception through AI systems has become a practical co
 Information theory provides a natural framework. Shannon's [-@shannon-1959-coding-theorems-discrete] rate-distortion function R(D) characterizes the minimum information rate required to represent a source within a given distortion tolerance. In the classical formulation, distortion decreases monotonically as rate increases: more bits always mean better reconstruction. The theory has been applied extensively to signal compression [@cover-2006-elements-information-theory; @gersho-1991-vector-quantization-signal] and more recently to human perceptual cognition [@sims-2016-ratedistortion-theory-human], but not previously to the measurement of AI-generated brand perception, where the encoder's internal priors produce non-monotonic behavior absent from the classical memoryless-source formulation.
 
 This paper reports the first empirical rate-distortion curve for AI brand perception encoders. The contribution is threefold. First, the study operationalizes rate as the information capacity of the response format and distortion as the distance between AI-generated and canonical brand profiles, establishing an information-theoretic measurement framework for AI brand research (Method section). Second, the empirical curve is J-shaped rather than monotonically decreasing: the intermediate 1-5 ordinal format (19 bits) outperforms the highest-rate 100-point allocation (26 bits), demonstrating that bounded quantization suppresses encoder bias (Results section). Third, 17 architectures from distinct training lineages trace essentially the same curve, demonstrating cross-architectural codebook convergence in brand perception encoding across the five tested conditions including R5 (Results section, H2).
+
+---
 
 ## Theoretical Background
 
@@ -50,7 +50,7 @@ Concurrent work on AI as brand evaluator supports this direction. Sabbah and Aca
 
 The canonical profiles used as reference signals derive from Spectral Brand Theory (SBT), which models brand perception as an eight-dimensional vector: Semiotic, Narrative, Ideological, Experiential, Social, Economic, Cultural, and Temporal [@zharnikov-2026-spectral-brand-theory-computational-framework]. Each dimension captures a distinct perceptual axis. Prior empirical work with 24 LLM architectures established that AI encoders systematically over-weight the Economic and Semiotic dimensions when evaluating brands in pair-comparison format, producing a mean dimensional collapse index of .356 [@zharnikov-2026-dimensional-collapse-ai-mediated-search]. The present study extends this finding by varying the elicitation format rather than the brand pair and measuring distortion from canonical profiles rather than relative brand distance.
 
-Table 1: Comparison with adjacent information-theoretic treatments of perception compression.
+**Table 1.** Comparison with adjacent information-theoretic treatments of perception compression.
 
 | Source | Source-distribution assumption | Distortion measure | Channel / encoder model | What is being compressed |
 |--------|-------------------------------|-------------------|------------------------|--------------------------|
@@ -59,7 +59,7 @@ Table 1: Comparison with adjacent information-theoretic treatments of perception
 | Zharnikov [-@zharnikov-2026-spectral-metamerism-brand-perception-projection] | Dirichlet simplex over 8-dim profiles | Projection distance | Implicit LLM representation | Brand perception subspace dimensionality |
 | This paper (2026aa) | Dirichlet simplex over 8-dim profiles | Total variation distance from canonical | LLM as active encoder with priors | Full 8-dim brand profile under format constraints |
 
-*Notes:* Sims [-@sims-2003-implications-rational-inattention] is Christopher A. Sims (economics rational inattention); Sims [-@sims-2016-ratedistortion-theory-human] cited elsewhere is Chris R. Sims (perceptual cognition) -- distinct authors. The present study is the first to vary the output-alphabet constraint (rate) while holding the source distribution and distortion measure fixed, yielding the empirical R(D) curve.
+*Notes*: Sims [-@sims-2003-implications-rational-inattention] is Christopher A. Sims (economics rational inattention); Sims [-@sims-2016-ratedistortion-theory-human] cited elsewhere is Chris R. Sims (perceptual cognition) -- distinct authors. The present study is the first to vary the output-alphabet constraint (rate) while holding the source distribution and distortion measure fixed, yielding the empirical R(D) curve.
 
 ## Method
 
@@ -71,7 +71,7 @@ A fully crossed factorial design: 5 response-format conditions (R1-R5) x 5 canon
 
 Five response formats operationalize information rate as the number of bits required to encode the model's output. The canonical numeric mappings used throughout are: R3 Low/Medium/High maps to 1/2/3 (then projected to the eight SBT dimensions per the canonical profile); R4 Yes/No maps to 1/0; R5 open-text dimension name is embedded via a tokenization-based projection to a one-of-eight indicator vector.
 
-Table 2: Rate Conditions and Information Capacity.
+**Table 2.** Rate Conditions and Information Capacity.
 
 | Code | Format | Bits |
 |------|--------|------|
@@ -81,7 +81,7 @@ Table 2: Rate Conditions and Information Capacity.
 | R4 | Mark each dimension Yes/No (salient or not) | ~8 |
 | R5 | Name the single most important dimension | ~3 |
 
-*Notes:* Bit calculations assume uniform distribution over the output alphabet. R1: log~2~(multinomial coefficients for 100 among 8 bins) is approximately 26 bits. R2: 5^8^ = 390,625 possible outputs, log~2~ is approximately 19 bits. R3: 3^8^ = 6,561, approximately 13 bits. R4: 2^8^ = 256, 8 bits. R5: log~2~(8) is approximately 3 bits.
+*Notes*: Bit calculations assume uniform distribution over the output alphabet. R1: log~2~(multinomial coefficients for 100 among 8 bins) is approximately 26 bits. R2: 5^8^ = 390,625 possible outputs, log~2~ is approximately 19 bits. R3: 3^8^ = 6,561, approximately 13 bits. R4: 2^8^ = 256, 8 bits. R5: log~2~(8) is approximately 3 bits.
 
 ### Brands
 
@@ -129,7 +129,7 @@ H1 is **not supported**. All 17 models show directionally negative Spearman corr
 
 The central empirical finding is that all 17 models achieve minimum distortion at R2 (1-5 ordinal scale, 19 bits), not at R1 (100-point allocation, 26 bits). No model produces lower distortion at any other rate condition.
 
-Table 3: Cross-Model Distortion by Rate Condition.
+**Table 3.** Cross-Model Distortion by Rate Condition.
 
 | Rate | Bits | Mean *d* | SD | CV |
 |------|------|----------|----|----|
@@ -139,11 +139,11 @@ Table 3: Cross-Model Distortion by Rate Condition.
 | R4 | 8 | .181 | .036 | .198 |
 | R5 | 3 | .857 | .015 | .018 |
 
-*Notes:* Mean, SD, and CV computed across 17 per-model means. R5 CV is low because all models converge on the same extreme distortion from the forced 1-of-8 indicator encoding.
+*Notes*: Mean, SD, and CV computed across 17 per-model means. R5 CV is low because all models converge on the same extreme distortion from the forced 1-of-8 indicator encoding.
 
 ![](figures/figure1_j_curve.png)
 
-Figure 1: Rate-distortion curve across 17 LLM architectures. Mean total variation distance at each information rate; minimum distortion at R2 (~19 bits, 1-5 ordinal). Error bars: +/-1 SD across models.
+**Figure 1.** Rate-distortion curve across 17 LLM architectures. Mean total variation distance at each information rate; minimum distortion at R2 (~19 bits, 1-5 ordinal). Error bars: +/-1 SD across models.
 
 Paired t-tests across the 17 per-model means (df = 16):
 
@@ -176,7 +176,7 @@ H5 is **not supported** in the full 17-model panel (CV at R1 = .210, threshold .
 
 ### Per-Brand Patterns
 
-Table 4: Mean Distortion by Brand and Rate Condition.
+**Table 4.** Mean Distortion by Brand and Rate Condition.
 
 | Brand | R1 | R2 | R3 | R4 | R5 | R1-to-R2 drop |
 |-------|-----|-----|-----|-----|-----|----------------|
@@ -186,7 +186,7 @@ Table 4: Mean Distortion by Brand and Rate Condition.
 | Erewhon | .184 | .118 | .152 | .203 | .850 | 35.9% |
 | Tesla | .177 | .138 | .139 | .291 | .882 | 22.0% |
 
-*Notes:* Mean across 17 models. All five brands achieve minimum distortion at R2. The R1-to-R2 reduction is sharpest for well-known brands with dense training corpora (Patagonia, IKEA, Hermes) and shallowest for Tesla, whose anomalously low Ideological canonical value (3.0/10) is difficult for any quantized format to represent.
+*Notes*: Mean across 17 models. All five brands achieve minimum distortion at R2. The R1-to-R2 reduction is sharpest for well-known brands with dense training corpora (Patagonia, IKEA, Hermes) and shallowest for Tesla, whose anomalously low Ideological canonical value (3.0/10) is difficult for any quantized format to represent.
 
 ### Companion Computation Script
 

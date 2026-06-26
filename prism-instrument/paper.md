@@ -8,8 +8,6 @@ DOI: [10.5281/zenodo.19555265](https://doi.org/10.5281/zenodo.19555265)
 
 Working Paper v1.1.0 – April 2026 (revised June 2026)
 
----
-
 ## Abstract
 
 Measuring brand perception requires instruments that capture multi-dimensional structure rather than collapsing it to a single equity score. This paper specifies PRISM (Perception Response Instrument for Structured Measurement), a family of standardized instruments for eliciting multi-dimensional brand perception from both artificial intelligence and human observers within the Spectral Brand Theory framework. The paper makes three contributions. First, it formalizes the PRISM architecture as a five-layer scaffold (PL0 specification, PL1 configuration, PL2 prompts, PL3 sessions, PL4 analysis) that is domain-neutral and reproducible. Second, it provides the complete PRISM-B (Brand) specification: eight scale items mapped one-to-one to SBT dimensions, a 1--5 ordinal response format empirically demonstrated as the minimum-distortion operating point for AI observers across 17 large language model architectures (with human validation pending), an exact prompt template, and a scoring algorithm comprising the Dimensional Collapse Index and cross-observer cosine convergence. Third, it situates PRISM-B within a measurement family (PRISM-M for metamerism discrimination, PRISM-T for temporal tracking, PRISM-C for choice prediction) and establishes connection to multi-observer triangulation via Perception DOP. The instrument is specified here; validation against human-subject data is a separate future study.
@@ -22,7 +20,7 @@ Brand perception is multi-dimensional, yet existing measurement instruments face
 
 Existing multi-dimensional instruments cannot answer this question because they were not designed to. Aaker's [-@aaker-1997-dimensions-brand-personality] Brand Personality Scale measures trait attributions (sincerity, excitement, competence, sophistication, ruggedness) derived from factor analysis of human personality lexicons. Brakus, Schmitt, and Zarantonello's [-@brakus-2009-brand-experience-what] Brand Experience Scale measures experiential reactions (sensory, affective, behavioral, intellectual) that presuppose embodied consumer encounters. Yoo and Donthu's [-@yoo-2001-developing-validating-multidimensional] consumer-based brand equity scale measures loyalty, awareness, and perceived quality -- downstream outcomes of brand perception, not the dimensional structure of the perception itself. Geuens, Weijters, and De Wulf [-@geuens-2009-new-measure-brand] refined brand personality measurement but retained the personality-trait construct. None of these instruments measures which categories of brand *signal* an observer attends to, and none was designed for administration to AI observers without fundamental construct mismatch.
 
-Table 1: Comparison of Multi-Dimensional Brand Measurement Instruments.
+**Table 1.** Comparison of Multi-Dimensional Brand Measurement Instruments.
 
 | Instrument | Construct (n dims) | Derivation | Observers | Format |
 |:-----------|:-------------------|:-----------|:----------|:-------|
@@ -32,7 +30,7 @@ Table 1: Comparison of Multi-Dimensional Brand Measurement Instruments.
 | Geuens et al. [-@geuens-2009-new-measure-brand] | Personality traits (5) | Factor analysis | Human only | 1--7 Likert |
 | **PRISM-B** | **Signal reception (8)** | **Theory-derived** | **AI + Human** | **1--5 ordinal** |
 
-*Notes:* Factor analysis instruments derive dimensions from exploratory or confirmatory analysis of human response data. PRISM-B derives dimensions from the SBT signal taxonomy prior to measurement. Only PRISM-B can be administered to AI observers without construct mismatch.
+*Notes*: Factor analysis instruments derive dimensions from exploratory or confirmatory analysis of human response data. PRISM-B derives dimensions from the SBT signal taxonomy prior to measurement. Only PRISM-B can be administered to AI observers without construct mismatch.
 
 This paper argues that the measurement gap is not merely an absence of instruments but a consequence of how instruments have been designed. The dominant paradigm -- Churchill [-@churchill-1979-paradigm-developing-better], refined by Rossiter [-@rossiter-2002-coarse-procedure-scale] and implemented by Brakus et al. [-@brakus-2009-brand-experience-what] -- derives dimensions empirically from human response patterns. Dimensions discovered this way are necessarily human-specific: they capture variance in human responses but provide no guarantee that the same dimensional structure applies to non-human observers. An instrument designed for commensurable AI-human measurement must instead derive its dimensions from the *signal* side -- what the brand emits -- rather than the *response* side -- how one particular observer type reacts. This signal-side derivation is what Spectral Brand Theory provides.
 
@@ -42,11 +40,9 @@ This paper addresses that question. It specifies PRISM (Perception Response Inst
 
 Three contributions structure the paper. First, the PRISM architecture defines a reusable five-layer scaffold that separates protocol from domain content, enabling instrument variants to share infrastructure while varying items (developed in "PRISM Architecture"). Second, the PRISM-B specification provides the eight items, response format, prompt template, and scoring algorithm for brand perception measurement, with the response format justified by rate-distortion evidence as a novel application of Shannon's [-@shannon-1959-coding-theorems-discrete] rate-distortion theory to psychometric format selection -- building on Sims's [-@sims-2016-ratedistortion-theory-human] theoretical work connecting information-theoretic capacity limits to human perceptual judgment (developed in "PRISM-B Specification" and "Scoring Algorithm"). Third, the connection to multi-observer estimation via Perception DOP establishes how individual PRISM-B administrations aggregate into triangulated brand positioning (developed in "Multi-Observer Estimation and Perception DOP").
 
----
-
 ## PRISM Architecture
 
-### ***The Five-Layer Scaffold***
+### The Five-Layer Scaffold
 
 PRISM defines a five-layer measurement scaffold that separates the reusable protocol infrastructure from domain-specific content. The scaffold is the constant across all PRISM variants; specific instruments inherit the scaffold and add domain-specific prompts, items, and analysis routines.
 
@@ -60,7 +56,7 @@ PRISM defines a five-layer measurement scaffold that separates the reusable prot
 
 **PL4: Analysis.** The statistical computation layer. Contains scoring scripts that operate on PL3 data to produce dimensional profiles, collapse indices, convergence metrics, and confidence intervals. PL4 scripts are versioned alongside the instrument and are deterministic: given the same PL3 data, they produce identical outputs. The analysis layer implements the scoring algorithm specified in the instrument definition (see "Scoring Algorithm" below).
 
-### ***Design Principles***
+### Design Principles
 
 Three design principles govern the scaffold.
 
@@ -70,19 +66,17 @@ Three design principles govern the scaffold.
 
 *Observer-agnostic design.* The scaffold treats AI and human observers symmetrically. Both produce PL3 session records in a common schema. Both are scored by the same PL4 algorithms. The only differences are in PL1 (API configuration vs. survey platform configuration) and PL2 (JSON output schema vs. Likert display rendering). This symmetry enables the multi-observer estimation developed in "Multi-Observer Estimation and Perception DOP," where AI and human PRISM-B administrations are combined as distinct observer cohorts in a unified triangulation framework.
 
----
-
 ## PRISM-B Specification
 
-### ***Construct and Dimensional Mapping***
+### Construct and Dimensional Mapping
 
 PRISM-B measures the observer's perceived intensity of a focal brand's signal across each of the eight SBT dimensions. Each item targets exactly one dimension. The construct is brand emission perception -- how intensely the observer perceives the brand's signal on a specific dimensional channel -- not brand personality, brand conviction, or purchase intention. The distinction is critical: brand personality instruments [@aaker-1997-dimensions-brand-personality] measure trait attributions; brand conviction (the observer's formed assessment of a brand) is a downstream construct that depends on both the brand's emission and the observer spectral profile [@zharnikov-2026-spectral-brand-theory-computational-framework]. PRISM-B measures signal reception at the dimensional level, upstream of conviction formation.
 
-### ***Items***
+### Items
 
 Eight items, one per SBT dimension, administered for a focal brand:
 
-Table 2: PRISM-B Scale Items.
+**Table 2.** PRISM-B Scale Items.
 
 | Item | Dimension | Signal Domain |
 |:-----|:----------|:-------------|
@@ -95,9 +89,9 @@ Table 2: PRISM-B Scale Items.
 | P7 | Cultural | Cultural resonance, regional identity, and lifestyle alignment |
 | P8 | Temporal | Heritage, longevity, temporal depth, and historical continuity |
 
-*Notes:* Common stem for all items: "How strongly does [BRAND] communicate through [signal domain]?" where [BRAND] is the focal brand name. Response scale: 1 = Not at all, 2 = Slightly, 3 = Moderately, 4 = Strongly, 5 = Very strongly. Items are administered in fixed order (P1--P8) for AI observers; randomized order is recommended for human respondents. The stem targets perceived signal intensity, not evaluative judgment.
+*Notes*: Common stem for all items: "How strongly does [BRAND] communicate through [signal domain]?" where [BRAND] is the focal brand name. Response scale: 1 = Not at all, 2 = Slightly, 3 = Moderately, 4 = Strongly, 5 = Very strongly. Items are administered in fixed order (P1--P8) for AI observers; randomized order is recommended for human respondents. The stem targets perceived signal intensity, not evaluative judgment.
 
-### ***Response Format: 1--5 Ordinal Scale***
+### Response Format: 1--5 Ordinal Scale
 
 Each item is rated on a five-point ordinal scale:
 
@@ -113,7 +107,7 @@ The mechanism is encoder bias suppression: when the response space is unconstrai
 
 For human respondents, the five-point scale has a well-established psychometric literature. Five-point Likert scales provide adequate reliability for group-level comparison while imposing minimal cognitive load [@preston-2000-optimal-number-response]. The convergence of the AI-optimal format with established human survey practice is fortuitous but practically important: it means the same response format can be administered to both observer types without methodological compromise.
 
-### ***Prompt Template for AI Observers***
+### Prompt Template for AI Observers
 
 The exact prompt template for PRISM-B administration to AI observers is:
 
@@ -148,7 +142,7 @@ Design decisions in the template:
 
 *No comparative framing.* Unlike the paired-comparison prompts used in the R15 empirical study [@zharnikov-2026-dimensional-collapse-ai-mediated-search], the PRISM-B specification measures a single brand at a time. Paired comparisons are a research design choice layered on top of the instrument, not part of the instrument itself. Researchers using PRISM-B for brand-pair studies administer the instrument to each brand separately and compute derived measures (differences, ratios, cosine distances) from the resulting profiles.
 
-### ***Administration Protocol***
+### Administration Protocol
 
 **For AI observers:**
 
@@ -168,11 +162,9 @@ Design decisions in the template:
 
 **Temperature setting.** For AI observers, temperature is set to .7 (the default creative-task setting for most providers). This reflects realistic conditions: temperature .7 balances response diversity with coherence and matches the conversational setting in which consumers interact with LLMs. Deterministic settings (temperature 0) suppress the within-model variance that is itself a measurement target.
 
----
-
 ## Scoring Algorithm
 
-### ***Profile Construction***
+### Profile Construction
 
 For a given observer *m* evaluating brand *b*, each repetition *c* produces a raw response vector:
 
@@ -184,7 +176,7 @@ $$\hat{\mathbf{r}}_{mb} = \frac{1}{C} \sum_{c=1}^{C} \mathbf{r}_{mbc}$$
 
 where *C* is the number of valid repetitions. This mean vector preserves the 1--5 scale for interpretability.
 
-### ***Normalized Weight Vector***
+### Normalized Weight Vector
 
 For analyses requiring simplex-normalized profiles (e.g., cosine similarity, DCI computation), the profile is converted to a weight vector:
 
@@ -192,7 +184,7 @@ $$w_{mb,i} = \frac{\hat{r}_{mb,i}}{\sum_{j=1}^{8} \hat{r}_{mb,j}}$$
 
 The normalized weight vector $\mathbf{w}_{mb}$ lies on the probability simplex $\sum_i w_{mb,i} = 1$ and represents the proportional allocation of perceived brand signal intensity across dimensions.
 
-### ***Dimensional Collapse Index***
+### Dimensional Collapse Index
 
 The DCI measures the degree to which an observer's brand perception concentrates on the two dimensions most tied to verifiable, quantifiable brand attributes -- Economic and Semiotic:
 
@@ -208,7 +200,7 @@ where $s^2_{mb,i}$ is the sample variance of dimension *i*'s rating across repet
 
 DCI admits an information-theoretic interpretation. Treating the eight-dimensional perception as a source variable and the observer's response as a lossy encoding, the concentration of weight on Economic and Semiotic dimensions represents a minimum-distortion encoding given the observer's effective channel capacity [@shannon-1959-coding-theorems-discrete; @cover-2006-elements-information-theory]. The cross-model convergence (cosine .977 across 24 architectures; Zharnikov [-@zharnikov-2026-dimensional-collapse-ai-mediated-search]) demonstrates that independent encoders converge on the same rate-distortion-optimal codebook -- a result consistent with established vector quantization theory [@gersho-1991-vector-quantization-signal].
 
-### ***Cross-Observer Convergence***
+### Cross-Observer Convergence
 
 The mean pairwise cosine similarity across *M* observers measures structural convergence in dimensional weighting:
 
@@ -216,7 +208,7 @@ $$\bar{\rho} = \frac{2}{M(M-1)} \sum_{m < m'} \frac{\hat{\mathbf{w}}_m \cdot \ha
 
 Values approaching 1.0 indicate that observers, despite different architectures or backgrounds, weight dimensions in structurally similar proportions. In the R15 empirical study, $\bar{\rho} = .977$ across 24 LLM architectures from seven training traditions [@zharnikov-2026-dimensional-collapse-ai-mediated-search].
 
-### ***Per-Dimension Analysis***
+### Per-Dimension Analysis
 
 For each dimension *i*, the observer-level deviation from the uniform baseline is:
 
@@ -224,11 +216,9 @@ $$\Delta_i = w_{mb,i} - .125$$
 
 Positive deviations indicate dimensional inflation (the observer over-weights this dimension relative to uniform); negative deviations indicate dimensional suppression. Reporting per-dimension deviations alongside aggregate metrics (DCI, cosine) prevents the aggregate from masking meaningful dimensional heterogeneity -- a reporting requirement established in the paper quality standards (Section A.9 of the reporting guidelines).
 
----
-
 ## Multi-Observer Estimation and Perception DOP
 
-### ***From Individual Profiles to Triangulated Positioning***
+### From Individual Profiles to Triangulated Positioning
 
 A single PRISM-B administration produces one observer's perception of one brand -- a projection of the brand's emission profile through the observer's spectral weights. Multiple administrations across observers with diverse spectral profiles enable triangulation: recovering the brand's emission profile from the pattern of observer-dependent projections.
 
@@ -238,7 +228,7 @@ $$y_k = \mathbf{w}_k^T \mathbf{x} + b_k + \varepsilon_k$$
 
 where $\mathbf{x} \in \mathbb{R}^8$ is the brand's emission profile (the target), $\mathbf{w}_k$ is the observer's spectral weight profile (measurable via PRISM-B), $b_k$ is the observer's systematic bias, and $\varepsilon_k$ is observation noise. With *N* observers providing eight-dimensional PRISM-B scores rather than a scalar aggregate, the system expands to 8*N* equations with $8 + 8N$ unknowns, identifiable for $N \geq 2$ under mild conditions on the weight profile matrix.
 
-### ***Perception DOP as Study Design Metric***
+### Perception DOP as Study Design Metric
 
 The precision of the triangulated brand profile depends on the geometric diversity of the observer configuration. The Perception DOP scalar quantifies this:
 
@@ -250,13 +240,11 @@ PDOP is computable before data collection. Given a proposed set of observer coho
 
 The practical implication for PRISM-B study design is that researchers should select observer cohorts (whether AI models, human demographic groups, or mixed panels) to minimize PDOP rather than to maximize sample size within a single cohort. A study with three geometrically diverse observer cohorts can outperform a study with 1,000 respondents from a single homogeneous cohort, because the former resolves all eight dimensions while the latter resolves only the dimensions to which that cohort is sensitive.
 
-### ***Differential Calibration***
+### Differential Calibration
 
 Systematic observer bias ($b_k$) is corrected through differential calibration using reference brands with known spectral profiles. The protocol [@zharnikov-2026y-brand-triangulation] administers PRISM-B to a set of calibration brands -- brands whose emission profiles are established through prior multi-observer studies -- and computes the residual between observed and expected scores. This residual estimates $b_k$ for each observer cohort, which is then subtracted from all subsequent measurements. The procedure is analogous to Differential GPS, where base stations with known positions broadcast correction signals to nearby receivers.
 
 Five canonical SBT reference brands serve as calibration standards: Hermes [9.5, 9.0, 7.0, 9.0, 8.5, 3.0, 9.0, 9.5], IKEA [8.0, 7.5, 6.0, 7.0, 5.0, 9.0, 7.5, 6.0], Patagonia [6.0, 9.0, 9.5, 7.5, 8.0, 5.0, 7.0, 6.5], Erewhon [7.0, 6.5, 5.0, 9.0, 8.5, 3.5, 7.5, 2.5], and Tesla [7.5, 8.5, 3.0, 6.0, 7.0, 6.0, 4.0, 2.0].
-
----
 
 ## The PRISM Instrument Family
 
@@ -267,8 +255,6 @@ PRISM-B is one member of a family of instruments sharing the PL0--PL4 scaffold. 
 **PRISM-T (Temporal).** Measures the same brand at two or more time points to capture brand velocity -- the rate and direction of change in the spectral profile. The items are identical to PRISM-B but administered with explicit temporal anchoring: "As of [DATE], how strongly does [BRAND] communicate through..." PRISM-T scoring computes the first-order difference vector $\Delta\mathbf{r} = \mathbf{r}_{t_2} - \mathbf{r}_{t_1}$ and the spectral velocity norm $\|\Delta\mathbf{r}\|$, connecting to the dynamics framework [@zharnikov-2026z-spectral-dynamics] that formalizes brand velocity and acceleration.
 
 **PRISM-C (Choice).** Under development. Extends the measurement framework to choice prediction by pairing PRISM-B profiles with revealed preference data. The hypothesis is that the dimensional profile difference between two brands, weighted by the observer's spectral weights, predicts choice probability in a manner consistent with random utility theory. PRISM-C is not specified in this paper and is listed here to mark the planned scope of the family.
-
----
 
 ## Testable Propositions
 
@@ -290,11 +276,9 @@ The following propositions are derivable from the instrument specification and t
 
 *Falsification*: P4 is falsified if human respondents produce lower distortion at any format other than 1--5, indicating that the AI-demonstrated rate-distortion optimum does not transfer to human measurement.
 
----
-
 ## Discussion
 
-### ***Theoretical Implications***
+### Theoretical Implications
 
 PRISM-B provides the first standardized measurement instrument within Spectral Brand Theory's eight-dimensional framework. The instrument translates a theoretical taxonomy of brand signal categories into a measurement protocol with exact items, response format, and scoring algorithm. This transition from conceptual framework to operationalized measurement is the step that enables empirical testing: propositions about dimensional collapse, observer heterogeneity, and spectral metamerism become testable hypotheses when the constructs have a defined measurement procedure.
 
@@ -302,7 +286,7 @@ The rate-distortion justification for the 1--5 ordinal format represents, to the
 
 The design of PRISM-B as an *ab initio* dual-observer instrument distinguishes it from the growing literature on LLMs as survey respondents. Argyle et al. [-@argyle-2023-out-one-many] demonstrated that LLMs can simulate human survey responses ("silicon samples"); Horton [-@horton-2023-large-language-models] showed that LLMs behave as simulated economic agents; Pellert, Lechner, Wagner, Rammstedt, and Strohmaier [-@pellert-2024-ai-psychometrics-assessing] applied standard personality inventories to LLMs and found measurable but homogeneous profiles. These studies adapt existing human instruments for AI administration. PRISM-B inverts this: it derives dimensions from brand signal taxonomy rather than human response factors, selects the response format via cross-observer rate-distortion optimization, and scores AI and human responses identically. The distinction matters because instruments designed for human factors may not capture the dimensional structure relevant to AI observers, and instruments post-hoc adapted for AI lack format optimization evidence. As AI agents increasingly generate brand assessments that influence consumer decisions [@hermann-2024-artificial-intelligence-consumer], comparing how AI and human observers perceive the same brand on the same instrument becomes a first-order research question. PRISM-B provides the measurement infrastructure for such comparisons without requiring separate instruments or ad hoc score normalization.
 
-### ***Practical Implications***
+### Practical Implications
 
 For brand managers, PRISM-B provides a diagnostic tool for identifying which dimensions of brand perception are visible to AI search agents and which are collapsed. Administering PRISM-B to a panel of LLMs using the specified prompt template produces a dimensional profile that reveals the brand's AI-mediated perception. Dimensions with low scores relative to the brand's intended positioning represent vulnerability zones in AI-mediated consumer search: low scores on non-Economic and non-Semiotic dimensions flag vulnerability in LLM-mediated search and recommendation, because these are the dimensions that AI observers systematically collapse. A brand whose Narrative or Cultural signal is strong in human perception but invisible to LLMs faces a growing discovery gap as AI-mediated channels expand.
 
@@ -310,7 +294,7 @@ For advertising researchers, PRISM-B standardizes multi-dimensional brand percep
 
 For psychometricians, the five-layer scaffold provides a template for developing AI-compatible measurement instruments in domains beyond brand perception. Any multi-dimensional construct that can be decomposed into independent dimensional items can be measured using the PRISM architecture with domain-specific PL2 substitution.
 
-### ***Convergence with Adjacent Literature***
+### Convergence with Adjacent Literature
 
 The finding that structured, bounded response formats outperform unconstrained formats converges with several established research streams. In human survey design, Krosnick [-@krosnick-1991-response-strategies-coping] documented satisficing under cognitively demanding formats -- a mechanism that operates identically in AI encoders as training-corpus bias expression. In information retrieval, the vocabulary mismatch problem [@furnas-1987-vocabulary-problem-humansystem] demonstrates that unconstrained language production diverges from the target conceptual space. In psychophysics, the category scaling literature [@stevens-1957-psychophysical-law-psychological; @parducci-1965-category-judgment-rangefrequency] shows that bounded scales with named anchors produce more reliable cross-observer comparisons than magnitude estimation. PRISM-B's 1--5 ordinal format is consistent with all three literatures.
 
@@ -318,11 +302,9 @@ The observer-agnostic design aligns with the emerging consensus that AI systems 
 
 The multi-observer architecture of PRISM-B connects to the stakeholder co-creation tradition in brand theory. Hatch and Schultz [-@hatch-2010-toward-theory-brand] argued that brand meaning is jointly constructed by multiple stakeholders whose perspectives may conflict. PRISM-B operationalizes this insight: each observer cohort's dimensional profile is a distinct perspective on the brand, and the triangulation framework [@zharnikov-2026y-brand-triangulation] recovers the brand's emission profile from the pattern of stakeholder disagreement rather than averaging it away. In this sense, PRISM-B is closer to Hatch and Schultz's relational ontology than to Keller's [-@keller-1993-conceptualizing-measuring-managing] representative-consumer model, while providing the quantitative measurement infrastructure that the co-creation tradition has lacked.
 
----
-
 ## Limitations
 
-### ***Scope and Validation Gaps***
+### Scope and Validation Gaps
 
 Three limitations bound the present specification.
 
@@ -332,11 +314,9 @@ Second, **the items are theoretically derived, not empirically generated**. The 
 
 Third, **cross-language equivalence is assumed but not demonstrated**. The current specification is English-language. Administering PRISM-B in other languages requires translation of the item stems (Table 2) and verification that the dimensional labels carry equivalent meaning. Preliminary evidence from the R15 cross-cultural study [@zharnikov-2026-dimensional-collapse-ai-mediated-search], in which native-language prompts were administered in 15 languages, suggests that the dimensional structure is linguistically robust for AI observers, but this cannot be assumed for human respondents without formal translation-back-translation protocols and measurement invariance testing.
 
-### ***Robustness and Boundary Conditions***
+### Robustness and Boundary Conditions
 
 Three boundary conditions bear on the generalizability of PRISM-B results. First, order effects: for AI observers, items are administered in fixed order (P1--P8) because LLM outputs are deterministic at a given temperature seed, and randomization would introduce unnecessary variance across replications. For human respondents, the administration protocol specifies item randomization within each respondent (see "Administration Protocol"), which is the standard psychometric defense against primacy and recency effects. Second, language invariance: the R15 cross-cultural study [@zharnikov-2026-dimensional-collapse-ai-mediated-search] tested native-language prompts in 15 languages and found a null result on home-market bias (H10: mean = +.001, *p* = .716), suggesting that the dimensional structure of PRISM-B is robust to prompt language for AI observers. Whether this invariance holds for human respondents requires formal measurement invariance testing across translated versions. Third, temporal stability: Proposition 4 of the PRISM specification addresses format optimality, and the PRISM-T variant (see "The PRISM Instrument Family") is designed explicitly for temporal tracking, providing a built-in mechanism for assessing test-retest reliability and detecting genuine brand perception change versus measurement instability.
-
----
 
 ## Conclusion
 
@@ -344,13 +324,9 @@ This paper specifies PRISM, a family of standardized instruments for multi-dimen
 
 The instrument is specified. Validation -- demonstrating that PRISM-B measures what it claims to measure in human populations -- is the necessary next step. The specification must exist first so that validation studies have a fixed target to evaluate rather than a moving one.
 
----
-
 ## Acknowledgments
 
 AI assistants (Claude Opus 4.8, Grok 4.20, Gemini 2.5 Pro) were used for initial literature search and editorial refinement; all theoretical claims, propositions, and interpretations are the author's sole responsibility.
-
----
 
 ## References
 

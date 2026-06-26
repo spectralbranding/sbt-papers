@@ -8,8 +8,6 @@ DOI: [10.5281/zenodo.20769594](https://doi.org/10.5281/zenodo.20769594)
 
 Working Paper v1.0.0 – June 2026
 
----
-
 ## Abstract
 
 A marketing campaign is an exogenous force on a multi-dimensional perceptual state, and the decay observed when advertising stops is the unforced relaxation of that state toward a brand-specific stable point. This paper formalizes perception formation and maintenance as a forced dynamical system whose results follow from the stochastic dynamics, not any particular instrument. The centroid of a brand's perception cloud follows a forced Ornstein-Uhlenbeck process on a fixed perceptual space: formation is the forced transient toward a target, maintenance is sustained forcing against a restoring force, and decay is the unforced relaxation at a measurable perception-decay time constant, recoverable from a dated perceptual-tracking series spanning a spend pulse. The model nests the scalar advertising-stock and Bayesian-learning traditions as its one-dimensional projection. Its unifying result ties formation to reach: a brand's off-generic distinctiveness lower-bounds the persistence of its formed perception, because a more distinctive brand sits farther outside the dense generic attractor, where less restoring curvature is added to its well — an ordering derived from a stated curvature primitive and demonstrated as an existence proof in a calibrated simulation. An identification strategy using exogenous advertising shifters is outlined. The instrument measures the forcing-versus-relaxation budget; the manager runs the campaign.
@@ -24,7 +22,7 @@ The treatment is narrow and formal, and self-contained in its mathematics. We do
 
 [^reach]: The reach mode — routing a signal to a cohort that already resonates — is developed in a companion paper [@zharnikov-2026av-reaching-a-perception], which defers the formation mode treated here. The companion is context, not a dependency: distinctiveness is defined inline below and every result is self-contained.
 
-**Related Work**
+## Related Work
 
 The contribution sits between an advertising-dynamics tradition that models the decay of *sales* and a brand-equity tradition that describes the *static* structure of a formed perception, and is best located by what each leaves open.
 
@@ -34,7 +32,7 @@ The contribution sits between an advertising-dynamics tradition that models the 
 
 ***The static structure a formation model relaxes toward.*** The customer-based brand-equity tradition describes the *formed* perception — the brand-knowledge structure of associations a strong brand holds in memory [@keller-1993-conceptualizing-measuring-managing], the asset a brand accumulates and must maintain [@aaker-1991-managing-brand-equity]. That structure is, in the present model, the long-run equilibrium of the dynamics: the brand's stable point is the perception it relaxes toward when unforced, and a campaign that forms a perception is moving the cloud toward, or deepening, that equilibrium. The static tradition describes where the dynamics rest; it does not model the forcing that gets there or the rate of return when forcing stops, which is what this paper supplies. The unforced relaxation kernel and the diffusion term are the standard Ornstein-Uhlenbeck mean reversion and Brownian diffusion of the stochastic-process literature [@uhlenbeck-1930-theory-brownian-motion; @ikeda-1989-stochastic-differential-equations], imported rather than reinvented.
 
-**A Forced-Dynamics Model of Perception Formation**
+## A Forced-Dynamics Model of Perception Formation
 
 We state the model in the smallest form that carries the four propositions, then read its consequences; the derivations are written out in the Electronic Companion.
 
@@ -46,7 +44,7 @@ where $A$ is a positive-definite restoring operator and $\Sigma\, d\mathbf{W}$ i
 
 ***The minimal model and the unit of analysis.*** The smallest instance that carries every claim is two brands in a two-dimensional perceptual plane, each with one stable point, a linear restoring force, and a forcing pulse; the qualitative results — exponential post-pulse relaxation, the distinctiveness ordering, and the maintenance identity — are all derivable there and generalize to the full space by eigen-decomposition of *A*, with the slowest eigen-direction setting the relaxation time. Two precisions keep the model honest. The dynamics are stated for the *centroid*: the cloud is the first moment of a distribution of individual perceptions, and the decay constant is identified from the centroid trajectory, not from any single observer, so cohort heterogeneity enters as the spread of the cloud and is held fixed in the minimal model. And the restoring force is taken linear about the stable point; a nonlinear potential changes the closed form but, by local linearization, preserves the qualitative ordering that does the work.
 
-**Recovering the Decay Constant from a Dated Perceptual Series**
+## Recovering the Decay Constant from a Dated Perceptual Series
 
 The relaxation rate is the paper's central measurable, and it is observable from any dated perceptual-tracking series.
 
@@ -54,7 +52,7 @@ The relaxation rate is the paper's central measurable, and it is observable from
 
 [^reflections]: The requirement is generic: a perceptual series whose observations carry content dates. Any tracking instrument that timestamps its observations supplies one, whether a survey panel, a syndicated battery, or a dated artifact corpus reduced to centroid coordinates.
 
-**Distinctiveness and Persistence**
+## Distinctiveness and Persistence
 
 The result that unifies this paper with the reach mode is that the geometry which makes a cohort reachable is the geometry that makes its perception persist.
 
@@ -62,19 +60,19 @@ The result that unifies this paper with the reach mode is that the geometry whic
 
 [^program]: This paper is part of a broader program in which the same off-generic energy share is read elsewhere as a perception-metamerism loss [@zharnikov-2026au-correspondence-principle-brand; @zharnikov-2026-spectral-metamerism-brand-perception-projection]. Those readings are context, not support: Proposition 3 stands on the inline definition and the EC.3 derivation alone.
 
-**Maintenance as a Forcing Budget**
+## Maintenance as a Forcing Budget
 
 The maintenance regime yields a managerial quantity directly from the equation's steady state.
 
 ***The budget identity.*** To hold the centroid at a target displacement $\mathbf{d}$ from the brand's intrinsic stable point, the campaign must supply, in steady state, exactly the force that cancels the restoring pull: $\mathbf{F}_{\text{hold}} = A\mathbf{d}$. This is *Proposition 4*, derived in *EC.4*: the maintenance forcing budget equals the relaxation loss at the held displacement, and it falls to zero as the target approaches the brand's own stable point. A distinctive brand whose desired perception *is* its stable point pays almost nothing to hold it; an undifferentiated brand held away from a generic equilibrium pays continuous forcing and collapses toward generic when spend stops. The budget identity is the structural reading of the effectiveness-school observation that some brands sustain salience cheaply while others must keep paying [@sharp-2010-how-brands-grow; @binet-2013-long-short-of-it], and of the finding that consistent, refreshed advertising content sustains brand strength [@becker-2023-consistency-commonality-advertising; @stabler-2023-firm-communication-layoffs]: the difference is the depth of the well, which is distinctiveness. The instrument reports the budget — the forcing required to hold a target against the measured relaxation — and leaves the spend decision to the manager, keeping the metrology-and-management division.
 
-**Scope Conditions**
+## Scope Conditions
 
 The distinctiveness-persistence ordering is the paper's strongest claim and also its most scope-bound; we state where it holds and where the model is mis-specified, in the body rather than an appendix.
 
 ***Where the model applies, and where it fails.*** The forced-relaxation model and the *τ*-distinctiveness ordering are scoped to established consumer-packaged-goods and service categories with habitual or repeat purchase and a stable basis of perceptual dimensions. The model is expected to fail in two regimes. The first is radical innovation that redefines the basis vectors of the perceptual space itself: when a launch creates a new dimension along which perception is read, the manifold moves, and a model with a fixed stable point and a fixed restoring operator does not apply — this is category genesis, not formation within a fixed space. The second is business-to-business and procurement-dominated contexts, where institutional routines rather than perceptual drift govern choice, so the cloud is not the object being moved. Outside the positive scope the model is mis-specified and we make no claim; inside it, the four propositions are the content. Demand and category creation enter the model only as the forced *migration of the stable point itself* — a re-collapse operation distinct from holding or routing a fixed perception — and the model treats the within-space portion of that migration, leaving basis-redefining genesis outside scope.
 
-**Empirical Strategy**
+## Empirical Strategy
 
 The propositions are theory with a derived mechanism; the confirmatory test is a field design that does not yet exist, and no field findings are asserted. In its place we calibrate the model and report a demonstration.
 
@@ -82,7 +80,7 @@ The propositions are theory with a derived mechanism; the confirmatory test is a
 
 ***Robustness.*** Three checks guard the ordering. An alternative-drift specification compares the linear restoring force against a nonlinear potential, under which the ordering should survive local linearization; an alternative-estimator check compares the continuous-time relaxation fit against a discrete-time vector-autoregression on perceptual indices, the persistence-decomposition benchmark, which should predict decay but not its dependence on well depth; and a dimension-count check compares the two-dimensional model against the full space. A further check at the primitive level (*EC.3*, *RC-KERNEL*) verifies that the curvature-falls-with-separation mechanism is not specific to a Gaussian attractor. Where a panel cannot be obtained the calibrated demonstration below stands as an existence proof, and the empirical section is correctly read as a roadmap for testing rather than a test.
 
-**A Calibrated Demonstration**
+## A Calibrated Demonstration
 
 This section reports a calibrated simulation, not a field test, and its purpose is narrow: to show that the model computes, that the decay-constant estimator recovers a seeded relaxation time, and that the distinctiveness-persistence ordering of *EC.3* in fact appears in a calibrated population. It is an existence proof of the ordering mechanism — a demonstration that the derived law *can* produce the monotone ordering under transparent constants — and not an estimate of field magnitudes. Everything below is reproduced from a fixed seed by the companion script.
 
@@ -92,9 +90,9 @@ This section reports a calibrated simulation, not a field test, and its purpose 
 
 ![](figures/figure1_tau_vs_distinctiveness.png)
 
-*Figure 1: Perception-decay time constant versus cohort distinctiveness.* The recovered relaxation time *τ* increases monotonically in distinctiveness *s* across 10,000 cohorts drawn from the public-anchor-calibrated Beta(2.59, 3.47) population (light points), tracking the model curve $\tau(s) = 1 / [\lambda_0(1 - \kappa s)]$ (solid) — the local linearization of the EC.3 curvature law; the five canonical public anchors are marked. Magnitudes are model properties under the documented constants; the robust claim is the monotone increase. Reproduced by [`code/forced_relaxation_demo.py`](https://github.com/spectralbranding/sbt-papers/blob/main/forming-a-perception/code/forced_relaxation_demo.py) at seed 20260620; the figure file is [`figures/figure1_tau_vs_distinctiveness.png`](https://github.com/spectralbranding/sbt-papers/blob/main/forming-a-perception/figures/figure1_tau_vs_distinctiveness.png).
+**Figure 1.** Perception-decay time constant versus cohort distinctiveness. The recovered relaxation time *τ* increases monotonically in distinctiveness *s* across 10,000 cohorts drawn from the public-anchor-calibrated Beta(2.59, 3.47) population (light points), tracking the model curve $\tau(s) = 1 / [\lambda_0(1 - \kappa s)]$ (solid) — the local linearization of the EC.3 curvature law; the five canonical public anchors are marked. Magnitudes are model properties under the documented constants; the robust claim is the monotone increase. Reproduced by [`code/forced_relaxation_demo.py`](https://github.com/spectralbranding/sbt-papers/blob/main/forming-a-perception/code/forced_relaxation_demo.py) at seed 20260620; the figure file is [`figures/figure1_tau_vs_distinctiveness.png`](https://github.com/spectralbranding/sbt-papers/blob/main/forming-a-perception/figures/figure1_tau_vs_distinctiveness.png).
 
-Table 1: Calibrated Demonstration — Recovered Relaxation Time and Maintenance Budget by Distinctiveness.
+**Table 1.** Calibrated Demonstration — Recovered Relaxation Time and Maintenance Budget by Distinctiveness.
 
 | Quantity | Value | 95% CI |
 |---|---|---|
@@ -109,7 +107,7 @@ Table 1: Calibrated Demonstration — Recovered Relaxation Time and Maintenance 
 
 *Notes*: All values are reproduced from `code/forced_relaxation_demo.py` at seed 20260620. The population is drawn from a Beta fitted by method of moments to five canonical public brand profiles and clipped to their observed distinctiveness range. CIs are 2,000-resample bootstrap percentile intervals. The reported magnitudes are properties of a model calibrated to public brand-profile anchors under documented illustrative constants, not measured field response; the robust claim is the monotone increase of the relaxation time in distinctiveness, not the specific values. The confirmatory recovery of *τ* from a real time-sliced series is the role of the panel design.
 
-**Limitations**
+## Limitations
 
 ***The stable point can move.*** The model holds the brand's stable point $\mathbf{x}^*$ fixed and treats relaxation toward it; a distinctive brand can nonetheless decay fast if an exogenous shock *relocates* the stable point — a product-harm crisis or scandal that resets the equilibrium rather than displacing the cloud from it. This is a jump-diffusion extension, a Poisson-driven relocation of $\mathbf{x}^*$, which we flag as a boundary rather than develop; the fixed-stable-point model is therefore scoped to dynamics between shocks.
 
@@ -117,31 +115,25 @@ Table 1: Calibrated Demonstration — Recovered Relaxation Time and Maintenance 
 
 ***Identification is a design, not a result.*** The decay constant and the forcing are recovered correlationally in the demonstration; the causal recovery of *τ* and **F** requires the instrumental-variable and natural-experiment design specified above, which is owed to the confirmatory study. The reported magnitudes are calibrated-model properties; only the monotone distinctiveness ordering is the robust claim.
 
-**Discussion**
+## Discussion
 
 ***What the contribution is and is not.*** The contribution is not a media-planning method and not a theory of creativity. It is a measurement framework: a forced-dynamics representation in which a campaign is a force on the perception cloud, the relaxation of that cloud has a measurable time constant, and the persistence of a formed perception is governed by the same distinctiveness that governs its reach. Its standing does not rest on any one instrument or on the author's prior corpus — the four propositions are derived from the forced Ornstein-Uhlenbeck model and a single stated curvature primitive, and a reader with no corpus access can verify each. The managerial translation is a forcing-versus-relaxation budget — the instrument reports how much forcing a target perception requires against the measured rate at which it decays, and the manager decides whether to pay it. A one-line statement captures the unification: distinctiveness is what makes a cohort *findable* without an address and what makes its perception *durable* without constant spend, because both are the depth of the same well.
 
 ***Future research.*** Three directions follow: recovering *τ* across real categories from time-sliced perceptual panels to map where formation is cheap and where it is dear; the jump-diffusion extension that lets an exogenous shock relocate the stable point, closing the scandal case; and a forced-control treatment that turns the maintenance-budget identity into an optimal forcing schedule, connecting the metrology to the optimal-control-of-advertising tradition [@sethi-1977-dynamic-optimal-control].
 
-**Conclusion**
+## Conclusion
 
 Reaching a perception and forming one are different operations on the same cloud. Routing a signal addresses a perception that exists; this paper moves the perception itself, by representing a campaign as a forcing function on the cloud and measuring the rate at which the cloud relaxes when the forcing stops. The decay that practitioners observe when advertising halts is the unforced relaxation of a perceptual centroid toward a brand-specific stable point, and its time constant is recoverable from a dated perceptual-tracking series. The result that ties the two operations together is that a brand's distinctiveness — the off-generic perceptual variance — lower-bounds how long its formed perception persists, an ordering derived from the geometry of a dense, localized generic attractor rather than imposed, so the geometry that makes a cohort reachable is the geometry that makes its perception durable. Measuring the forcing a perception requires and the rate at which it decays is the instrument's job; deciding how much forcing to supply remains the manager's.
-
----
 
 ## Data and Code Availability
 
 One companion computation script, deterministic, dependency-light (NumPy and Matplotlib only), and requiring no network or credentials, reproduces every reported figure and table value. [`code/forced_relaxation_demo.py`](https://github.com/spectralbranding/sbt-papers/blob/main/forming-a-perception/code/forced_relaxation_demo.py) reproduces the *Calibrated Demonstration* — the calibration to the five canonical public brand profiles, the forced Ornstein-Uhlenbeck simulation, the recovered relaxation time and its distinctiveness ordering (Figure 1, [`figures/figure1_tau_vs_distinctiveness.png`](https://github.com/spectralbranding/sbt-papers/blob/main/forming-a-perception/figures/figure1_tau_vs_distinctiveness.png)), the maintenance-budget ratio, and the results table ([`output/tables/forced_relaxation_results.csv`](https://github.com/spectralbranding/sbt-papers/blob/main/forming-a-perception/output/tables/forced_relaxation_results.csv)) — from seed 20260620 and the run command in its docstring. The [`code/README.md`](https://github.com/spectralbranding/sbt-papers/blob/main/forming-a-perception/code/README.md) documents the model, the calibration anchors, and the expected output. The full paper source, script, figure, and machine-readable specification (`paper.yaml`) are openly available in the public repository at [https://github.com/spectralbranding/sbt-papers/tree/main/forming-a-perception](https://github.com/spectralbranding/sbt-papers/tree/main/forming-a-perception), and the same archive is carried by a permanent Zenodo deposit with one-command reproduction (concept DOI [https://doi.org/10.5281/zenodo.20769594](https://doi.org/10.5281/zenodo.20769594)).
-
----
 
 ## Acknowledgments
 
 AI assistants (Claude Opus 4.8, Gemini 2.5 Pro, Grok 4.3) were used for initial literature search, for software development — implementing and running the companion computation script that reproduces the paper's calibrated demonstration — and for editorial refinement; all theoretical claims, propositions, and interpretations are the author's sole responsibility. The companion script is the fixed-seed forced-relaxation demonstration (`code/forced_relaxation_demo.py`).
 
 CRediT contributions: Dmitry Zharnikov — conceptualization, methodology, software, formal analysis, investigation, writing (original draft), writing (review and editing).
-
----
 
 ## Electronic Companion
 
@@ -170,8 +162,6 @@ which is *Proposition 3*, now derived rather than imposed. Linearizing $\lambda_
 ***EC.5 Nesting the scalar prior art.*** The body claims the vector model nests the scalar traditions; here is the projection that shows it. Take a single perceived-quality direction $\mathbf{u}$, an eigenvector of $A$ with eigenvalue $\lambda_{\mathbf{u}}$, and let $q(t) = \langle \mathbf{u}, \bar{\mathbf{x}}(t) - \mathbf{x}^* \rangle$ be the scalar perceived-quality deviation. Projecting the centroid equation onto $\mathbf{u}$ gives $dq = (-\lambda_{\mathbf{u}}\, q + f(t))\, dt + \sigma_{\mathbf{u}}\, dW$, with scalar forcing $f = \langle \mathbf{u}, \mathbf{F} \rangle$ and projected diffusion $\sigma_{\mathbf{u}}^2$ — a one-dimensional linear-Gaussian state equation. Three readings of *f* recover three classical models. Reading *q* as goodwill, $\lambda_{\mathbf{u}}$ as the depreciation rate, and *f* as the spend response gives the Nerlove-Arrow goodwill model [@nerlove-1962-optimal-advertising-policy]; reading *q* as sales response gives Vidale-Wolfe [@vidale-1957-operations-research-advertising]; and reading *f* as a precision-weighted information signal about true quality recovers scalar Bayesian learning, because the posterior-mean belief update of that model, $dm = K(t)(\text{signal} - m)\, dt$, is exactly this scalar mean-reverting equation with the reversion rate equal to the Kalman gain and the target equal to the signal-implied belief [@erdem-1996-decisionmaking-under-uncertainty]. The forced-OU model therefore *contains* scalar Bayesian quality learning as its one-dimensional, belief-interpreted projection — it does not merely differ from it. What the projection cannot recover is *Proposition 3*: a single axis has no off-generic direction, so $\partial\tau / \partial s$ is undefined in the scalar reduction, and the distinctiveness-persistence ordering is a property only the vector model carries.
 
 ***RC-KERNEL Kernel robustness.*** P-CURV's curvature-falls-with-separation property is verified for two alternate localized attractor kernels beyond the Gaussian — an inverse-quadratic kernel $U_{\text{gen}} \propto -(1 + \|\mathbf{x} - \bar{\mathbf{x}}_{\text{gen}}\|^2 / \ell^2)^{-1}$ and a finite-support spline that vanishes outside radius $\ell$ — each of which yields $g'(d) < 0$ in the off-core regime, so the distinctiveness-persistence ordering does not depend on the Gaussian form.
-
----
 
 ## References
 
