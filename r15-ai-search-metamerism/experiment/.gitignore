@@ -30,3 +30,4 @@ __pycache__/
 # All runs (2-9) are complete and tracked.
 # L4_analysis/*_report.txt files ARE committed (human-readable text
 # summaries of the corresponding _results.json files).
+_hf/
