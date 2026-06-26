@@ -484,7 +484,7 @@ Experiment data (9,925 observations) are archived at https://doi.org/10.57967/hf
 
 The following prompts are verbatim templates from the experiment driver (`run_portfolio.py`), rendered with illustrative values for Dove (Unilever portfolio). Dimension descriptions used the PRISM-B scale (1 = Not at all, 5 = Very strongly).
 
-***C.1 Direct Rating — Solo Condition***
+***A.1 Direct Rating — Solo Condition***
 
 ```
 You are evaluating the brand Dove on eight dimensions of brand perception.
@@ -509,7 +509,7 @@ Respond in JSON format with the following keys:
 Evaluate based on your knowledge of the brand. Provide only the JSON.
 ```
 
-***C.2 Direct Rating — Portfolio Condition***
+***A.2 Direct Rating — Portfolio Condition***
 
 ```
 You are evaluating the brand Dove on eight dimensions of brand perception.
@@ -531,7 +531,7 @@ Respond in JSON format with the following keys:
 Evaluate based on your knowledge of the brand. Provide only the JSON.
 ```
 
-***C.3 Naturalistic Recommendation — Solo Condition***
+***A.3 Naturalistic Recommendation — Solo Condition***
 
 ```
 A friend asks you: "What do you think of Dove as a personal care brand?"
@@ -549,7 +549,7 @@ Respond in JSON format:
 Provide only the JSON.
 ```
 
-***C.4 Naturalistic Recommendation — Portfolio Condition***
+***A.4 Naturalistic Recommendation — Portfolio Condition***
 
 ```
 A friend asks you: "What do you think of Dove? I know it's part of Unilever."
@@ -568,11 +568,11 @@ Respond in JSON format:
 Provide only the JSON.
 ```
 
-***C.5 Multi-Turn — Turn 1***
+***A.5 Multi-Turn — Turn 1***
 
-Turn 1 prompt is identical in structure to the Direct Rating Solo prompt (C.1). The LLM responds with a JSON rating vector.
+Turn 1 prompt is identical in structure to the Direct Rating Solo prompt (A.1). The LLM responds with a JSON rating vector.
 
-***C.6 Multi-Turn — Turn 2 (Portfolio Reveal)***
+***A.6 Multi-Turn — Turn 2 (Portfolio Reveal)***
 
 ```
 Interesting. Did you know that Dove is actually owned by Unilever
@@ -589,7 +589,7 @@ Provide only the JSON.
 
 *Notes*: Turn 2 was sent as a continuation prompt with Turn 1's response prepended as context: "Previous evaluation of Dove: [Turn 1 JSON response]". This simulates conversational continuity across providers that do not natively support multi-turn chat histories in a single API call.
 
-***C.7 Native-Language Example — Russian (Yandex Portfolio)***
+***A.7 Native-Language Example — Russian (Yandex Portfolio)***
 
 Solo condition (Russian):
 
