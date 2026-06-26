@@ -30,9 +30,9 @@ meta:
     and Economic dimensions, rendering brands differentiated on narrative, ideological, cultural, or temporal
     dimensions metameric --- structurally different but functionally equivalent in AI recommendations.
     Using PRISM-B across 21,350 API calls to 24 models spanning nine cultural traditions and 15 languages,
-    a Dimensional Collapse Index (DCI; uniform baseline = .250) is computed. Mean DCI equals .291 for
-    global brands ($p = .017$) and .356 cross-culturally ($d = 3.373$). Cross-model convergence is near-perfect
-    (cosine = .977). Local brands collapse 25% more severely than global brands ($d = .878$, in five FMCG
+    a Dimensional Collapse Index (DCI; uniform baseline = .250) is computed. Mean DCI equals .294 for
+    global brands ($p < .001$) and .356 cross-culturally ($d = 3.373$). Cross-model convergence is near-perfect
+    (cosine = .977). Local brands collapse 24% more severely than global brands ($d = .92$, in five FMCG
     pairs tested). Native-language prompting is null in home markets ($p = .716$) but reduces collapse
     up to .095 in foreign-market frames ($p = .002$). Geopolitical context independently modulates weights
     ($p < .001$). Structured Brand Function specifications recover approximately 20% of lost dimensionality.

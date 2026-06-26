@@ -9,8 +9,8 @@
 # Schema v0.2: the paper is empirical — 21,350 API calls across 24 LLMs
 # produce computed DCI / cosine / effect-size statistics — so observations /
 # methods / measurements / findings are first-class so the headline numbers
-# (mean DCI = .291 global, .356 cross-cultural; cosine = .977; local-vs-global
-# d = .878; ~20% Brand-Function recovery) trace through the
+# (mean DCI = .294 global, .356 cross-cultural; cosine = .977; local-vs-global
+# d = .92; ~20% Brand-Function recovery) trace through the
 # observation→method→measurement→finding chain.
 
 spine_version: "0.2"
@@ -31,10 +31,10 @@ thesis: >-
   equivalent in AI recommendations. Measured with the PRISM-B forced-allocation
   instrument across 21,350 API calls to 24 models from nine cultural traditions
   and 15 languages, the Dimensional Collapse Index (uniform baseline = .250) is
-  elevated (mean .291 global, .356 cross-cultural) and convergent across
+  elevated (mean .294 global, .356 cross-cultural) and convergent across
   architectures (cosine .977), so the collapse is structural rather than a
   platform quirk. Collapse is conditional on training-data embeddedness —
-  locally embedded brands collapse about 25% more — and partially recoverable
+  locally embedded brands collapse about 24% more — and partially recoverable
   (~20% of lost dimensionality) by encoding soft dimensions as verifiable,
   machine-readable Brand Function specifications. For search advertising this
   reframes strategy from platform selection to dimensional defensibility:
@@ -168,17 +168,17 @@ methods:
 # ============================================================================
 measurements:
   - id: m_dci_global
-    statement: "Mean DCI for ten global brand pairs = .291 (SD .042; t(59) = 2.45, p = .017, d = 2.97); all six models exceed baseline."
+    statement: "Mean DCI for ten global brand pairs = .294 (SD .069; t(58) = 4.88, p < .001, d = .64); five of six models exceed baseline (DeepSeek V3 marginally below at .242)."
     source_observations: [O1]
     generating_method: M2
-    value: "DCI = .291; p = .017; d = 2.97"
+    value: "DCI = .294; p < .001; d = .64"
     units: "verifiability-concentration index (baseline .250)"
     body_sections: ["§Results: H1 Dimensional Bias"]
   - id: m_dci_local
-    statement: "Mean DCI for five locally embedded brand pairs = .353 (SD .038; t(29) = 3.91, p < .001, d = 3.34), with an Economic spike to 168% of baseline."
+    statement: "Mean DCI for five locally embedded brand pairs = .353 (SD .055; t(29) = 10.34, p < .001, d = 1.89), with an Economic spike to 168% of baseline."
     source_observations: [O2]
     generating_method: M2
-    value: "DCI = .353; p < .001; d = 3.34; Economic = 168% baseline"
+    value: "DCI = .353; p < .001; d = 1.89; Economic = 168% baseline"
     units: "verifiability-concentration index (baseline .250)"
     body_sections: ["§Results: H1; Conditional metamerism"]
   - id: m_dci_crosscultural
@@ -196,10 +196,10 @@ measurements:
     units: "mean pairwise cosine similarity"
     body_sections: ["§Results: H2 Metameric Convergence"]
   - id: m_conditional
-    statement: "Independent-samples t-test of 10 global vs 5 local pair DCIs: t(13) = 6.483, p < .001, Cohen's d = .878; local brands collapse ~25% more than global."
+    statement: "Independent-samples t-test of 59 global vs 30 local brand-pair × model DCIs: t(87) = 4.12, p < .001, Cohen's d = .92; local brands collapse ~24% more than global."
     source_observations: [O1, O2]
     generating_method: M3
-    value: "d = .878; p < .001; ~25% more collapse"
+    value: "d = .92; p < .001; ~24% more collapse"
     units: "between-condition effect size"
     body_sections: ["§Results: Conditional metamerism"]
   - id: m_brandfunction
@@ -357,10 +357,11 @@ findings:
   - id: F1
     statement: >-
       H1 SUPPORTED — Dimensional bias: LLMs exhibit non-uniform spectral
-      profiles, systematically over-weighting Experiential (150% global / 131%
-      local) and Economic (114% global / 168% local) while suppressing Cultural,
-      Temporal, Ideological, and Social below the uniform baseline; DCI is
-      elevated above .250 in every model and both runs.
+      profiles, systematically over-weighting Experiential (150% global / 144%
+      local) and Economic (117% global / 168% local) while suppressing Cultural
+      and Temporal below the uniform baseline in both runs (Ideological and
+      Social fall below baseline only for local brands); DCI is elevated above
+      .250 in every model in Run 3 and in five of six in Run 2.
     type: "confirmatory_result"
     source_measurements: [m_dci_global, m_dci_local, m_dci_crosscultural]
     generating_method: M2
@@ -384,8 +385,8 @@ findings:
     body_sections: ["§Results: H2 Metameric Convergence"]
   - id: F3
     statement: >-
-      Conditional metamerism SUPPORTED: locally embedded brands collapse ~25%
-      more than global brands (d = .878, p < .001), with an Economic-default
+      Conditional metamerism SUPPORTED: locally embedded brands collapse ~24%
+      more than global brands (d = .92, p < .001), with an Economic-default
       spike (168% of baseline) — AI substitutes price for every dimension it
       lacks brand-specific data on. Collapse severity is conditional on
       training-data embeddedness, which outweighs architecture, cultural origin,
