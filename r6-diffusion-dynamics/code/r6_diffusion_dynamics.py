@@ -246,7 +246,7 @@ def write_survival_curves(out_dir):
         )
     ax.set_xlabel("Time (years)")
     ax.set_ylabel(r"Survival probability $S(t,x^\ast)$")
-    ax.set_title(r"Survival under absorbing boundaries, $\sigma_0 = .1$")
+    # Figure title is carried by the paper caption (AMA: no on-image title).
     ax.set_ylim(0.0, 1.02)
     ax.grid(True, linestyle=":", alpha=0.6)
     ax.legend(loc="upper right", fontsize=8)
@@ -334,7 +334,7 @@ def write_phase_diagram(out_dir):
         )
     ax.set_xlabel(r"Distance from boundary $d_\partial(\hat s)$")
     ax.set_ylabel(r"Effective drift $\alpha\lambda_{\mathrm{enc}}\cdot d_\partial$")
-    ax.set_title(r"Absorption-risk phase diagram at $r = .6$, $\sigma_0 = .1$")
+    # Figure title is carried by the paper caption (AMA: no on-image title).
     cbar = fig.colorbar(im, ax=ax, shrink=0.85)
     cbar.set_label(r"Net absorption rate $\gamma(r)$")
     fig.tight_layout()

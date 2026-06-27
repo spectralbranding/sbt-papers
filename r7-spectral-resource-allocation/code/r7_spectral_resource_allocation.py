@@ -240,12 +240,31 @@ def write_alignment_gap_simplex(out_dir: str, founders: dict, cohorts: dict) -> 
     centred = stacked - stacked.mean(axis=0, keepdims=True)
     # PCA via SVD.
     _, _, vt = np.linalg.svd(centred, full_matrices=False)
-    basis = vt[:2]  # (2, 8)
+    basis = vt[:2].copy()  # (2, 8)
+    # Pin the SVD sign convention (largest-magnitude loading positive) so the
+    # projection orientation is reproducible and the manual label offsets below
+    # stay valid across numpy versions.
+    for i in range(basis.shape[0]):
+        if basis[i][np.argmax(np.abs(basis[i]))] < 0:
+            basis[i] = -basis[i]
 
     def project(w: np.ndarray) -> np.ndarray:
         return basis @ (w - stacked.mean(axis=0))
 
-    fig, ax = plt.subplots(figsize=(6.8, 5.2))
+    # Manual label placement (fixed illustrative data; PCA sign pinned above)
+    # keeps each "{brand} (A=...)" annotation clear of the markers and geodesics.
+    # Spec: anchor ("f"=founder dot, "c"=cohort square), (dx, dy) offset points,
+    # horizontal- and vertical-alignment.
+    label_spec = {
+        "Hermes": ("f", (0, 13), "center", "bottom"),
+        "IKEA": ("f", (-6, 13), "right", "bottom"),
+        "Patagonia": ("f", (10, 2), "left", "center"),
+        "Tesla": ("c", (10, 2), "left", "center"),
+        "Erewhon": ("c", (10, -9), "left", "center"),
+    }
+    pts = []
+
+    fig, ax = plt.subplots(figsize=(7.6, 5.8))
     for b in brands:
         wf = founders[b]
         wc = cohorts[b]
@@ -300,14 +319,22 @@ def write_alignment_gap_simplex(out_dir: str, founders: dict, cohorts: dict) -> 
             zorder=4,
         )
         gap_val = float(np.dot(wf, wf) - np.dot(wf, wc))
+        anchor_key, (dx, dy), ha, va = label_spec[b]
+        anchor = pf if anchor_key == "f" else pc
         ax.annotate(
             f"{b} (A={gap_val:.4f})",
-            xy=((pf[0] + pc[0]) / 2, (pf[1] + pc[1]) / 2),
-            xytext=(8, 6),
+            xy=(anchor[0], anchor[1]),
+            xytext=(dx, dy),
             textcoords="offset points",
+            ha=ha,
+            va=va,
             fontsize=8,
             color=color,
+            annotation_clip=False,
+            bbox=dict(boxstyle="round,pad=0.15", fc="white", ec="none", alpha=0.75),
         )
+        pts.append(pf)
+        pts.append(pc)
     # Legend proxies.
     from matplotlib.lines import Line2D
 
@@ -336,8 +363,14 @@ def write_alignment_gap_simplex(out_dir: str, founders: dict, cohorts: dict) -> 
     ax.legend(handles=legend_elems, loc="upper right", fontsize=8)
     ax.set_xlabel("PC1 of stacked weight vectors")
     ax.set_ylabel("PC2 of stacked weight vectors")
-    ax.set_title("Alignment gap on the probability simplex (Theorem 2)")
+    # Figure title is carried by the paper caption (AMA: no on-image title).
     ax.grid(True, linestyle=":", alpha=0.5)
+    # Pad the data limits so edge labels (e.g. IKEA at the right) are not clipped.
+    pts = np.array(pts)
+    xpad = 0.18 * (pts[:, 0].max() - pts[:, 0].min())
+    ypad = 0.18 * (pts[:, 1].max() - pts[:, 1].min())
+    ax.set_xlim(pts[:, 0].min() - xpad, pts[:, 0].max() + xpad)
+    ax.set_ylim(pts[:, 1].min() - ypad, pts[:, 1].max() + ypad)
     fig.tight_layout()
     path = _figure_path(out_dir, "r7_alignment_gap_simplex.png")
     fig.savefig(path, dpi=180)
@@ -380,23 +413,21 @@ def write_founder_vs_cohort_weights(out_dir: str, founders: dict, cohorts: dict)
         ax.set_ylabel(b, fontsize=9)
         ax.set_ylim(0, max(0.55, max(wf.max(), wc.max()) * 1.15))
         ax.grid(True, axis="y", linestyle=":", alpha=0.5)
+        # Top-left placement avoids colliding with the first panel's legend.
         ax.text(
-            0.99,
+            0.01,
             0.92,
             f"A(f,c) = {gap:.4f}",
             transform=ax.transAxes,
-            ha="right",
+            ha="left",
             va="top",
             fontsize=8,
         )
     axes[-1].set_xticks(x)
     axes[-1].set_xticklabels(DIM_ABBREV, fontsize=8)
     axes[0].legend(loc="upper right", fontsize=8, ncols=2)
-    fig.suptitle(
-        "Founder vs cohort weights and alignment gap A(f,c)",
-        fontsize=11,
-    )
-    fig.tight_layout(rect=(0, 0, 1, 0.97))
+    # Figure title is carried by the paper caption (AMA: no on-image title).
+    fig.tight_layout()
     path = _figure_path(out_dir, "r7_founder_vs_cohort_weights.png")
     fig.savefig(path, dpi=180)
     plt.close(fig)
@@ -463,11 +494,9 @@ def write_theorem5_interaction_adjustment(out_dir: str, cohorts: dict) -> str:
         ax.grid(True, axis="y", linestyle=":", alpha=0.5)
         ax.legend(loc="upper right", fontsize=8)
     axes[0].set_ylabel("Optimal allocation s*")
-    fig.suptitle(
-        "Theorem 5 interaction adjustment vs Theorem 1 baseline",
-        fontsize=11,
-    )
-    fig.tight_layout(rect=(0, 0, 1, 0.95))
+    # Figure title is carried by the paper caption (AMA: no on-image title);
+    # the per-panel titles label the two illustrative cases.
+    fig.tight_layout()
     path = _figure_path(out_dir, "r7_theorem5_interaction_adjustment.png")
     fig.savefig(path, dpi=180)
     plt.close(fig)
