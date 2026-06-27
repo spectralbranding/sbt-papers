@@ -28,13 +28,10 @@ generates three static figures referenced by the paper:
         and the per-dimension delta.
 
 Run command (numerics only):
-    cd /Users/d/projects/spectral-branding && uv run python \
-        research/computation_scripts/r7_spectral_resource_allocation.py
+    uv run python r7_spectral_resource_allocation.py
 
 Run command (numerics + figures):
-    cd /Users/d/projects/spectral-branding && uv run python \
-        research/computation_scripts/r7_spectral_resource_allocation.py \
-        --write-figures
+    uv run python r7_spectral_resource_allocation.py --write-figures
 
 Fixed seed: SEED = 42 (used for any stochastic elements; all
 computations here are deterministic).
