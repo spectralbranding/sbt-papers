@@ -359,7 +359,7 @@ alternative_explanations:
   - id: AE1
     statement: >-
       The fresh-window mean-cosine sub-resolution could reflect prompt brittleness
-      rather than genuine operator noise (predicted lead reviewer objection).
+      rather than genuine operator noise (a natural objection).
     addressed_by: [RC1, RC2, RC3, M5, M8]
   - id: AE2
     statement: >-
