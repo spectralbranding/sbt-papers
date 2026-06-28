@@ -32,4 +32,4 @@ Summary: brand ranking by P_absorption on weakest dimension (severity=0.15)
 [2026-05-02T13:28:18]   Patagonia   P_abs=0.000  P_rec=1.000  median tau_rec=1.0
 [2026-05-02T13:28:18]   Erewhon     P_abs=0.000  P_rec=1.000  median tau_rec=2.5
 [2026-05-02T13:28:18]   Tesla       P_abs=0.000  P_rec=0.000  median tau_rec=None
-[2026-05-02T13:28:18] Wrote /Users/d/projects/sbt-papers/r12-coherence-resilience/code/data/results.json
+[2026-05-02T13:28:18] Wrote r12-coherence-resilience/code/data/results.json
