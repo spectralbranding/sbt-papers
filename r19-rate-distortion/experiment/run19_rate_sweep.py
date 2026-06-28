@@ -73,8 +73,8 @@ import numpy as np
 # Path setup: reuse R15 infrastructure (read-only)
 # -------------------------------------------------------------------------------
 
-R15_EXPERIMENT_DIR = Path(
-    "/Users/d/projects/sbt-papers/r15-ai-search-metamerism/experiment"
+R15_EXPERIMENT_DIR = (
+    Path(__file__).resolve().parents[2] / "r15-ai-search-metamerism" / "experiment"
 )
 sys.path.insert(0, str(R15_EXPERIMENT_DIR))
 

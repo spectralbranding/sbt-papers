@@ -27,6 +27,8 @@ To make ADF discriminate regimes we simulate:
 """
 
 import json
+from pathlib import Path
+
 import numpy as np
 from scipy import stats
 from statsmodels.tsa.stattools import adfuller
@@ -323,7 +325,7 @@ if __name__ == "__main__":
     print("Running Monte Carlo simulation for R22 (Spectral Gap Restoration)...")
     results = run_simulation()
 
-    out_path = "/Users/d/projects/sbt-papers/r22-spectral-gap-restoration/monte_carlo_results.json"
+    out_path = Path(__file__).resolve().parent / "monte_carlo_results.json"
     with open(out_path, "w") as f:
         json.dump(results, f, indent=2)
 

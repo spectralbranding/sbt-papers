@@ -39,8 +39,8 @@ model output and canonical brand profiles.
 Uses the R15 virtualenv (no separate install needed):
 
 ```bash
-# Offline dry run
-/Users/d/projects/sbt-papers/r15-ai-search-metamerism/experiment/.venv/bin/python \
+# Offline dry run (reuses the R15 virtualenv, resolved relative to this paper)
+../../r15-ai-search-metamerism/experiment/.venv/bin/python \
   run19_rate_sweep.py --demo
 
 # Smoke test (1 brand, all 7 models, all 5 conditions, 1 rep)
@@ -60,7 +60,7 @@ python run19_rate_sweep.py --analyze-only
 R19 reuses R15's API callers (read-only import via sys.path):
 
 ```
-R15_EXPERIMENT_DIR = Path("/Users/d/projects/sbt-papers/r15-ai-search-metamerism/experiment")
+R15_EXPERIMENT_DIR = Path(__file__).resolve().parents[2] / "r15-ai-search-metamerism" / "experiment"
 ```
 
 This is intentional: R19 is a rate-distortion extension of the R15 infrastructure.
