@@ -1,6 +1,6 @@
 [![MIT License](https://img.shields.io/badge/Code-MIT-blue.svg)](LICENSE)
 [![CC-BY 4.0](https://img.shields.io/badge/Data-CC--BY_4.0-lightgrey.svg)](LICENSE-data)
-![Last Updated](https://img.shields.io/badge/updated-2026--05--29-success)
+![Last Updated](https://img.shields.io/badge/updated-2026--06--28-success)
 
 # Spectral Brand Theory — Research Papers
 
@@ -35,13 +35,13 @@ Eight companion papers establishing formal mathematical foundations for SBT, plu
 | Key | Paper | Zenodo DOI | Status |
 |-----|-------|------------|--------|
 | R8 | ~~Spectral Portfolio Theory: Interference, Coherence, and Capacity in Multi-Brand Perception Space~~ — **SUPERSEDED by [R21](r21-spectral-immunity/paper.md)** | [10.5281/zenodo.19145099](https://doi.org/10.5281/zenodo.19145099) | Superseded |
-| R14 | [Research as Repository: Infrastructure for Transparent, Attributed, and Machine-Readable Scholarly Communication](r14-paper-as-repository/paper.md) | [10.5281/zenodo.19294864](https://doi.org/10.5281/zenodo.19294864) | Under review |
+| R14 | [Research as Repository: Infrastructure for Transparent, Attributed, and Machine-Readable Scholarly Communication](r14-paper-as-repository/paper.md) | [10.5281/zenodo.19294864](https://doi.org/10.5281/zenodo.19294864) | Preprint |
 
 ### Methodology
 
 | Key | Paper | Zenodo DOI | Status |
 |-----|-------|------------|--------|
-| R13 | [Paper as Specification: A Machine-Readable Standard for Scientific Claims](r13-paper-as-specification/paper.md) | [10.5281/zenodo.19210037](https://doi.org/10.5281/zenodo.19210037) | Under review |
+| R13 | [Paper as Specification: A Machine-Readable Standard for Scientific Claims](r13-paper-as-specification/paper.md) | [10.5281/zenodo.19210037](https://doi.org/10.5281/zenodo.19210037) | Preprint |
 
 ### Empirical
 
@@ -49,19 +49,19 @@ Eight companion papers establishing formal mathematical foundations for SBT, plu
 |-----|-------|------------|--------|
 | R9 | [Non-Ergodic Brand Perception: Diffusion Dynamics on Multi-Dimensional Perceptual Manifolds](r9-nonergodic-perception/paper.md) | [10.5281/zenodo.19138860](https://doi.org/10.5281/zenodo.19138860) | Preprint |
 | R10 | [Dimensional Activation and Cohort Divergence: A Spectral Case Study of Dove's "Real Beauty" Campaign](r10-dove-case-study/paper.md) | [10.5281/zenodo.19139258](https://doi.org/10.5281/zenodo.19139258) | Preprint |
-| R15 | [Dimensional Collapse in AI-Mediated Brand Perception: Large Language Models as Metameric Observers](r15-ai-search-metamerism/paper.md) | [10.5281/zenodo.19422427](https://doi.org/10.5281/zenodo.19422427) | Under review |
+| R15 | [Dimensional Collapse in AI-Mediated Brand Perception: Large Language Models as Metameric Observers](r15-ai-search-metamerism/paper.md) | [10.5281/zenodo.19422427](https://doi.org/10.5281/zenodo.19422427) | Preprint |
 
 ### AI-Era Extensions
 
 | Key | Paper | Zenodo DOI | Status |
 |-----|-------|------------|--------|
-| R16 | [AI-Native Brand Identity: From Visual Recognition to Cryptographic Verification](r16-ai-native-brand-identity/paper.md) | [10.5281/zenodo.19391476](https://doi.org/10.5281/zenodo.19391476) | Under review |
+| R16 | [AI-Native Brand Identity: From Visual Recognition to Cryptographic Verification](r16-ai-native-brand-identity/paper.md) | [10.5281/zenodo.19391476](https://doi.org/10.5281/zenodo.19391476) | Preprint |
 | R17 | [Brand Triangulation: A Geometric Framework for Multi-Observer Brand Positioning](r17-brand-triangulation/paper.md) | [10.5281/zenodo.19482547](https://doi.org/10.5281/zenodo.19482547) | Preprint |
 | R18 | [Spectral Dynamics: Velocity, Acceleration, and Phase Space in Multi-Dimensional Brand Perception](r18-spectral-dynamics/paper.md) | [10.5281/zenodo.19468204](https://doi.org/10.5281/zenodo.19468204) | Preprint |
 | R19 | [Empirical Rate-Distortion Curve for AI Brand Perception Encoders](rate-distortion/paper.md) | [10.5281/zenodo.19528833](https://doi.org/10.5281/zenodo.19528833) | Preprint |
 | R20 | ~~Does Corporate Ownership Matter to AI? Portfolio Interference in LLM Brand Perception~~ — **SUPERSEDED by [R21](r21-spectral-immunity/paper.md)** | [10.5281/zenodo.19555282](https://doi.org/10.5281/zenodo.19555282) | Superseded |
 | R21 | [Spectral Immunity: Why Brand Portfolio Interference Disappears for AI Observers](r21-spectral-immunity/paper.md) | [10.5281/zenodo.19765401](https://doi.org/10.5281/zenodo.19765401) | Preprint (supersedes R8 + R20) |
-| R22 | [Restoring Perceptual Separability After Coherence Shocks: A μ > λ Threshold Inequality in Brand Perception](r22-spectral-gap-restoration/paper.md) | [10.5281/zenodo.19778549](https://doi.org/10.5281/zenodo.19778549) | Preprint (Marketing Science target) |
+| R22 | [Restoring Perceptual Separability After Coherence Shocks: A μ > λ Threshold Inequality in Brand Perception](r22-spectral-gap-restoration/paper.md) | [10.5281/zenodo.19778549](https://doi.org/10.5281/zenodo.19778549) | Preprint |
 | PRISM | [PRISM: A Structured Measurement Instrument for Multi-Dimensional Brand Perception](prism-instrument/paper.md) | [10.5281/zenodo.19555265](https://doi.org/10.5281/zenodo.19555265) | Preprint |
 
 ### Cross-Framework Synthesis
@@ -91,7 +91,6 @@ Describes the domain-agnostic epistemological architecture underlying SBT. Origi
 
 - [Read on GitHub](alibi-epistemology/paper.md)
 - [Zenodo DOI](https://doi.org/10.5281/zenodo.18944770)
-- [Source Code](https://github.com/viberesearch/alibi)
 
 ### The Rendering Problem: From Genetic Expression to Brand Perception (Zharnikov 2026l)
 
