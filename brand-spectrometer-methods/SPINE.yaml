@@ -48,6 +48,7 @@ thesis: |
   structure a given metric can see (shape vs magnitude-and-distribution).
 
 # ============================================================================
+# Boundary conditions (scope table)
 # ============================================================================
 boundary_conditions:
   - id: C1
@@ -86,7 +87,7 @@ observations:
         detail: "atlas v0.2.0 inventories; SHA-256 per artifact (33 body, 3 fallback, 0 missing)."
   - id: O2
     statement: >-
-      A pinned prior-window atlas (v0.1.4, 2025-09-01..2026-05-29) of the same
+      A pinned prior-window atlas (2025-09-01..2026-05-29) of the same
       case exists read-only as a longitudinal/robustness baseline.
     evidence:
       - type: empirical
@@ -169,20 +170,29 @@ methods:
   - id: M9
     statement: >-
       Optional per-reflection SENTIMENT/VALENCE layer (instrument extension, outside
-      the frozen V1-V6 battery). A single cross-family extractor pass (extractor
-      family != renderer family — the same 2026ap discipline as the eight-dimension
-      extract) reads the already-rendered prose and emits a per-dimension valence in
-      [-1,+1]. Valence is orthogonal to the dimension STRENGTH score (a cohort can be
-      strong on a dimension with either sign of affect) and is explicitly NOT a noise
-      floor (a floor needs multi-operator passes; M9 is a single labelling pass).
-      Demonstrated on the Ferrari Luce fresh atlas (36 primary reflections): the owner
-      cohort reads hostile (Semiotic -.53, Experiential -.57) while international press
-      reads favourable (Economic +.45) — a face-valid signal. Warrant: LLM sentiment
-      extraction is benchmarked with documented limits [Zhang et al. 2024]; the human
-      affective-norm criterion for valence is the lexical norm set [Warriner et al.
-      2013]; confirmatory validation of the layer against those norms is future work.
-    antecedents: [M1]
-    evidence: [{type: empirical, detail: "atlases/ferrari_luce_fresh_2606/scripts/extract_valence.py -> valence/measured_valence.yaml (36 reflections, cross-family, logged); single writer extract_valence, single projector make_demo_dial_channels"}]
+      the frozen V1-V6 battery). A cross-family extractor pass (extractor family !=
+      renderer family — the same 2026ap discipline as the eight-dimension extract)
+      reads the already-rendered prose and emits a per-dimension valence in [-1,+1].
+      Valence is orthogonal to the dimension STRENGTH score (a cohort can be strong on
+      a dimension with either sign of affect). The valence layer now carries its OWN
+      operator-heterogeneity noise floor, built the same way the strength floor is: the
+      valence extractor is swapped across the operator alt-pairs already run for
+      strength, and the dispersion of the cohort-mean valence across those swaps is the
+      floor. A per-dimension valence is reported as a signed lean only when |value|
+      clears that floor; below it the reading is sub-resolution ("can't tell") and a
+      consuming surface greys it — the same abstention discipline the strength channel
+      uses. Demonstrated on the Ferrari Luce fresh atlas (per-reflection extraction,
+      cross-family): the owner cohort reads hostile (Semiotic -.54, Experiential -.53,
+      Cultural -.59) while international press reads favourable (Economic +.44, Narrative
+      +.51), with 32 of 40 cohort-dimension valences clearing the floor and 8 abstaining
+      — a face-valid, honestly-gated signal. The operator floor bounds resolution against
+      operator heterogeneity; it is distinct from confirmatory validation against human
+      affect. Warrant: LLM sentiment extraction is benchmarked with documented limits
+      [Zhang et al. 2024]; the human affective-norm criterion for valence is the lexical
+      norm set [Warriner et al. 2013]; confirmatory validation of the layer against those
+      human norms remains future work.
+    antecedents: [M1, M7]
+    evidence: [{type: empirical, detail: "atlases/ferrari_luce_fresh_2606/scripts/valence_reflect.py --extract/--aggregate/--backfill -> valence/valence_aggregate.yaml + atlas.yaml inferred_spec.<dim>.valence + variance.valence_operator_floor (cross-family operator D, swapped across alt-pairs for the floor, logged); schema v0.2"}]
 
 # ============================================================================
 # Measurements + Findings
@@ -464,7 +474,7 @@ external_anchors:
       Closest prior art that an LLM can validly emit structured psychological
       scores from text; cited in the cross-family-discipline paragraph as the
       empirical warrant for the extract stage and the inter-model-variance
-      framing (scope gap).
+      framing.
   - ref: "Gilardi, Alizadeh & Kubli 2023 (PNAS 120(30):e2305016120; DOI 10.1073/pnas.2305016120)"
     use: >-
       LLMs match or exceed trained crowd workers as zero-shot text annotators
