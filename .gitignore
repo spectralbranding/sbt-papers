@@ -61,3 +61,8 @@ skills/
 .rooignore
 .mcp.json
 .flake8
+
+# Local type-checker / tooling caches (never publish)
+.mypy_cache/
+.pytest_cache/
+.ruff_cache/
