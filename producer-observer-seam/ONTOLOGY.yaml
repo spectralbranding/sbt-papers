@@ -1,0 +1,37 @@
+# ONTOLOGY.yaml module - foam-bridge-note
+#
+# Per-paper ontology module per [internal path removed]
+# §"ONTOLOGY.yaml schema (v0.1)". owns = terms THIS paper introduces (unique
+# authority); imports = terms owned by other modules it uses (reference only).
+# Linked into the substrate `terms` graph by build_ontology.py; rendered per-paper
+# by render_paper_glossary.py. Bootstrapped 2026-06-13 from per-paper term
+# extraction; definitions updated 2026-07-01 to paraphrase the drafted note
+# ([internal path removed]).
+
+paper_key: foam-bridge-note
+schema_version: 0.1
+
+owns:
+  - term_key: levels-of-reading
+    label: "Levels of Reading"
+    canonical_form: "levels of reading"
+    definition: "A four-level model of reading depth induced by the producer-observer pipeline read observer-side: an observer of the same rendered artifact may stop at their own perception, reach the meaningfulness (the rendered work as an object), reach the meaning (the recoverable specification), or reach toward the substrate (the upstream intent); ascending the levels is progressively decentering away from the observer's own projection toward the work itself."
+    first_section: "Levels of Reading"
+  - term_key: perception-cloud-as-foam
+    label: "Foam (Perception-Cloud Image)"
+    canonical_form: "foam"
+    definition: "A one-time framing image for the perception cloud's granular structure: a foam of per-observer perception bubbles whose collective surface, seen from a distance, is the cohort's perception cloud. The canonical term is perception cloud; foam is an image used once on first introduction, never a load-carrying noun."
+    first_section: "The Seam Map"
+  - term_key: observer-depth
+    label: "Observer Depth"
+    canonical_form: "observer depth"
+    definition: "The deepest level of reading an observer's extraction currently reaches, operationalizable as coverage of the source specification recovered by the observer's extraction; it increases with observer maturation, and a meaning-depth reading is exactly the reading positioned to check rendering equivalence."
+    first_section: "Levels of Reading"
+
+imports:
+  - {term_key: perception-cloud}
+  - {term_key: observer-spectral-profile}
+  - {term_key: cohort}
+
+refines: []
+

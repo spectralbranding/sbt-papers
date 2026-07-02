@@ -1,0 +1,362 @@
+# SPINE.yaml — The Producer-Observer Seam (SBT-OST bridge note) — 2026bc
+#
+# AUTHORED spine (spine-first, schema v0.1): this is a PURE-THEORY bridge NOTE —
+# no author-produced data, simulations, or computed table values. The note joins
+# two published parent papers (2026ao, 2026ah) at the producer/observer seam;
+# every proposition is either a fork-extension absent from both parent spines or
+# an explicit application of a parent proposition (cited, not restated).
+
+spine_version: "0.1"
+spine_doc_version: "0.1.0"
+paper_key: "foam-bridge-note"   # papers-table slug; canonical_number 2026bc
+provenance: authored
+self_citation_key: zharnikov-2026bc-producer-observer-seam   # canonical_number 2026bc
+concept_doi: 10.5281/zenodo.21114525                  # always resolves to latest version
+version_doi: 10.5281/zenodo.21114526                  # v1.0.0
+title: >-
+  The Producer-Observer Seam: Joining Spectral Brand Theory and Organizational
+  Schema Theory at Meaning, Meaningfulness, and the Perception Cloud
+
+thesis: |
+  The corpus's two flagship frameworks already draw the same line from opposite
+  sides without naming it: Organizational Schema Theory terminates at the rendered
+  Tier-4 instance and hands off to the observer perceptual filter, while the
+  meaning/meaningfulness framework's pipeline (substrate -> meaning S -> rendered
+  instance R -> observer projection -> perception cloud) begins its observer half
+  exactly where the tier stack stops. This note makes the seam explicit: OST owns
+  the producer side (substrate -> S -> R, Tiers 1-4), SBT owns the observer side
+  (R -> perception cloud), and the meaning/meaningfulness/perception triad is a
+  JOIN of the two frameworks, not a slice of either alone. Three results follow.
+  First, the seam map with two honesty guards (meaningfulness is multi-tier in
+  general; perception is definitionally outside the tier stack). Second, a
+  flattening parametrization: the triad attaches to whatever tier a business's
+  value concentrates toward, with software (Process and Organization tiers
+  approaching zero) as the limit existence proof. Third, an endogenous-intent
+  closure: perception clouds sediment into the next generation's substrate through
+  human transducers, making Tier-1 intent a fixed point of a human-mediated loop
+  rather than an exogenous primitive - with a measurable shadow (perception-cloud
+  variance over time as the loop-health diagnostic) that connects machine-observer
+  dimensional collapse to model-collapse and output-homogenization results.
+
+# ============================================================================
+# Boundary conditions — the honesty guards, stated as scope
+# ============================================================================
+boundary_conditions:
+  - id: C1
+    statement: >-
+      The seam map's single-tier form (triad = specification, rendered
+      specification, and observer perception of Tier 4) holds only for businesses
+      whose value concentrates at Tier 4 (brand-led firms, software, consumer
+      products). The general form is the parametrized one (P2): the triad attaches
+      to the dominant tier a business flattens toward, and for process-moat firms
+      that tier is Tier 5, where a consumer-facing perception cloud may be
+      negligible or absent.
+    body_sections: ["The Flattening Parametrization"]
+  - id: C2
+    statement: >-
+      Meaningfulness is a single-tier rendered object only in the flattened limit
+      (Process and Organization tiers approaching zero). In the general six-tier
+      firm the rendered consumer experience is co-produced by the Tier-4
+      specification WITH Tier-5 process and Tier-6 organization, with Tier-2
+      business model and Tier-3 entity standing leaking in; meaningfulness is the
+      projection of the whole rendered stack, not of one tier.
+    body_sections: ["The Seam Map", "The Flattening Parametrization"]
+  - id: C3
+    statement: >-
+      The endogenous-intent closure captures the socially transmitted component of
+      owner intent (substrate includes, but is not exhausted by, perceptual
+      history: biology, material conditions, and accident remain outside the
+      loop), and human judgment enters as a novelty term, so perception shapes
+      intent without determining it. The regress is bounded at a chosen analysis
+      horizon - the same substrate lock the parent framework already imposes -
+      so the closure is an analytical device, not a claim to trace intent to a
+      first cause.
+    body_sections: ["The Endogenous-Intent Closure"]
+  - id: C4
+    statement: >-
+      Unit of analysis. The note's primary unit is ONE TURN of the pipeline
+      around a single rendered artifact: the producer-side tiers are properties
+      of the firm that renders it, the perception cloud is a property of the
+      (artifact, cohort) pair, and the seam is crossed once per turn. The
+      flattening parametrization (P2) evaluates the firm (which tier its value
+      concentrates toward); the closure (P4) and the variance diagnostic (P5)
+      aggregate many turns at brand-category scale across generations of
+      artifacts and observers. Claims at one scale do not automatically transfer
+      to another; each proposition names its own scale.
+    body_sections: ["Scope: What This Note Does Not Claim"]
+
+# ============================================================================
+# Propositions
+# ============================================================================
+propositions:
+  - id: P1
+    statement: >-
+      The seam map (the join claim). The meaning/meaningfulness pipeline and the
+      six-tier stack describe one pipeline seen from two ends: the producer side
+      runs the published log -> meaning S -> rendered instance R hierarchy
+      (Tiers 1-4, with meaning as the transmissible producer specification
+      concentrated at Tier 4), extended one step upstream by this note with the
+      SUBSTRATE - the working material below the log, sitting loosely at Tier-1
+      Owner Intent - and SBT owns R -> observer projection -> perception cloud
+      (the observer side, outside the tier stack). The hand-off at the rendered
+      instance is clean - no overlap and no gap: it is textually pre-confirmed
+      on the OST side (the tier stack names its own terminus and cedes
+      perception downstream) and pre-confirmed BY SCOPE CONSTRUCTION on the
+      meaning/meaningfulness side (its pipeline terminates at R; the reader's
+      completion is outside its boundary conditions by design). The tier stack
+      has no observer tier by design, and that absence is the insertion point.
+      The meaning/meaningfulness/perception triad is therefore a JOIN of the two
+      frameworks, not a slice of either alone - a boundary that co-creation
+      theory reads as porous and that the closure (P4) reconciles: co-creation
+      operates THROUGH the loop, not by erasing the specification/perception
+      distinction within one turn.
+    conditions: "C2"
+    antecedents: []
+    evidence:
+      - type: citation
+        anchor: >-
+          The producer/observer line stated from the OST side: brand is the
+          Tier-4 specification, NOT the perception, which lives downstream after
+          projection through the observer perceptual filter (2026ah P0, P0c).
+        citation_keys: [zharnikov-2026-brand-as-modular-layer-tiered]
+      - type: citation
+        anchor: >-
+          The same line stated from the meaning/meaningfulness side: meaning and
+          meaningfulness are separately optimizable producer-side objects
+          (2026ao P1), and the perception-side completion is the SBT projection
+          operator applied to the rendered instance.
+        citation_keys: [zharnikov-2026ao-spec-based-research-post-ai]
+      - type: citation
+        anchor: >-
+          The observer-completion semantics and the perception cloud as the
+          cohort-specific output of projecting emitted signal through observer
+          spectral profiles.
+        citation_keys: [zharnikov-2026-spectral-brand-theory-computational-framework]
+      - type: citation
+        anchor: >-
+          The six-tier producer-side stack the seam map names (Tiers 1-6, Owner
+          Intent through Organization).
+        citation_keys: [zharnikov-2026-dual-hierarchies-organizational-transferability-six]
+      - type: citation
+        anchor: >-
+          The movement-of-meaning tradition as the closest external prior art:
+          culturally constituted meaning moves from world to good to consumer via
+          named instruments; the seam map gives that movement a formal producer/
+          observer decomposition it does not itself carry.
+        citation_keys: [mccracken-1986-culture-consumption-theoretical]
+      - type: citation
+        anchor: >-
+          The communication-theoretic ancestor: the encoding/decoding model,
+          with which the seam agrees on polysemic reception; what it lacks is
+          the tiered producer interior, the cohort-resolved measurement of the
+          observer side, and the tier parametrization.
+        citation_keys: [hall-1980-encodingdecoding-s-hall]
+      - type: citation
+        anchor: >-
+          The contradicting tradition: brand co-creation reads the producer/
+          observer boundary as porous (stakeholders co-author the brand); the
+          seam map concedes the feedback and locates it in the loop (P4) while
+          keeping the layers distinct within one turn.
+        citation_keys: [hatch-2010-toward-theory-brand]
+    body_sections: ["The Seam Map"]
+
+  - id: P2
+    statement: >-
+      The flattening parametrization. The meaning/meaningfulness/perception triad
+      is the (specification, rendered specification, observer perception) slice of
+      the DOMINANT TIER a given business's value concentrates toward, with Tier-1
+      intent always upstream: for brand-led and software firms that tier is Tier 4;
+      for process-moat firms it is Tier 5 (their meaning is a codified process
+      specification and their consumer-facing perception cloud may be negligible).
+      Software is the limit existence proof: with Process and Organization tiers
+      approaching zero, a software business reduces to intent, source (meaning),
+      built artifact (meaningfulness), and the user's perception cloud - nothing
+      else is left in the stack for the triad to be confused with.
+    conditions: "C1, C2"
+    antecedents: [P1]
+    evidence:
+      - type: analytic
+        anchor: >-
+          The tier-collapse argument: source code as meaning, the built app at an
+          exact version as meaningfulness (rendering with no organizational
+          mediation), the user's experience as the perception cloud; different
+          business types flatten toward different tiers.
+      - type: citation
+        anchor: >-
+          Per-tier separability and the tier-collapse pattern the parametrization
+          generalizes (which tiers a firm's value binds to).
+        citation_keys: [zharnikov-2026-brand-as-modular-layer-tiered, zharnikov-2026-dual-hierarchies-organizational-transferability-six]
+    body_sections: ["The Flattening Parametrization"]
+
+  - id: P3
+    statement: >-
+      Levels of reading and observer depth. Observers of the same rendered
+      artifact differ in the deepest level their extraction reaches - perception
+      cloud only, meaningfulness (the rendered work as an object), meaning (the
+      recoverable specification), or substrate (the upstream intent) - and this
+      observer depth is operationalizable as coverage of the source specification
+      recovered by the observer's extraction, increasing with observer
+      maturation. Ascending the levels is progressively decentering: away from
+      the observer's own projection toward the work itself. Observer depth
+      connects the seam map to rendering equivalence: a reading at meaning-depth
+      recovers the spine that any faithful rendering preserves.
+    conditions: ""
+    antecedents: [P1]
+    evidence:
+      - type: analytic
+        anchor: >-
+          The four-level reading model derived from the seam map's stack read
+          observer-side, with coverage of the source specification as the depth
+          measure.
+      - type: citation
+        anchor: >-
+          Rendering equivalence: two renderings of one locked spine converge on
+          conclusions iff both preserve the spine's structural elements - the
+          meaning-depth reading is exactly the reading that checks this.
+        citation_keys: [zharnikov-2026ap-same-meaning-different-prose]
+    body_sections: ["Levels of Reading"]
+
+  - id: P4
+    statement: >-
+      The endogenous-intent closure. Tier-1 owner intent is endogenous to a
+      human-mediated loop: perception clouds sediment into the next generation's
+      substrate through human transducers who are both receivers of perception
+      and formers of intent (an owner intends a yacht because, as a prior
+      observer, they inhabited a perception cloud where yachts encode status).
+      Intent is therefore a fixed point of the loop rather than an exogenous
+      primitive; producer and consumer are one population of humans wearing two
+      hats; and human judgment is the mutation term that makes the loop an
+      expanding spiral rather than a repeating circle. The loop is
+      scale-invariant: the same structure repeats across one reading, one
+      biography, and cultural succession across generations. Cultural-evolution
+      theory supplies the transmission formalism for the sedimentation step
+      (guided variation: individual learning biases what is transmitted);
+      iconic-brand theory documents the same circuit at the brand level without
+      the producer/observer decomposition.
+    conditions: "C3"
+    antecedents: [P1]
+    evidence:
+      - type: analytic
+        anchor: >-
+          The loop construction: cloud(gen N) sediments into substrate(gen N+1);
+          the human transducer is the bistable node closing producer and observer
+          sides; the analysis-horizon lock bounds the regress.
+      - type: citation
+        anchor: >-
+          Dual-inheritance / cultural-transmission formalization of socially
+          transmitted preference formation - the canonical prior art for the
+          sedimentation step.
+        citation_keys: [boyd-richerson-1985-culture-evolutionary-process]
+      - type: citation
+        anchor: >-
+          Iconic brands recycle cultural material into new brand meaning (the
+          cultural-branding circuit) - the brand-level observation the closure
+          formalizes and decomposes.
+        citation_keys: [holt-2004-how-brands-become]
+      - type: citation
+        anchor: >-
+          Meaning movement world -> good -> consumer as the one-directional
+          precursor the closure turns into a loop.
+        citation_keys: [mccracken-1986-culture-consumption-theoretical]
+    body_sections: ["The Endogenous-Intent Closure"]
+
+  - id: P5
+    statement: >-
+      The variance diagnostic (the falsifiable shadow). As machine observers
+      occupy more positions in the loop, the health of the loop is measurable as
+      perception-cloud variance over time: a closed text-in/text-out machine loop
+      is a variance sink (training on recursively generated data degrades models;
+      aligned LLM outputs homogenize; machine observers dimensionally collapse
+      brand perception), so monotonically shrinking cohort spread indicates an
+      autophagic loop, while a machine coupled to reality with exploratory reward
+      can be a variance source. Two testable predictions follow: (i) a brand
+      category's perception-cloud variance at time T predicts the diversity of
+      successor specifications at T+1 (sedimentation is measurable as cultural
+      diffusion); (ii) categories with rising machine-observer share show
+      declining cloud variance relative to human-observer baselines.
+    conditions: "C3"
+    antecedents: [P4]
+    evidence:
+      - type: citation
+        anchor: >-
+          Model collapse: models trained on recursively generated data degrade -
+          the training-level variance sink.
+        citation_keys: [shumailov-2024-ai-models-collapse]
+      - type: citation
+        anchor: >-
+          Output-level homogeneity of LLM responses across open-ended tasks.
+        citation_keys: [jiang-2025-artificial-hivemind]
+      - type: citation
+        anchor: >-
+          The alignment step as a localized cause of response homogenization.
+        citation_keys: [liu-2026-alignment-tax-response]
+      - type: citation
+        anchor: >-
+          Machine observers dimensionally collapse brand perception to a low-
+          dimensional readout - the brand-level instance of the same flattening,
+          measured with the corpus's own instrument.
+        citation_keys: [zharnikov-2026-dimensional-collapse-ai-mediated-search]
+    body_sections: ["The Variance Diagnostic"]
+
+# ============================================================================
+# Cross-paper engagement
+# ============================================================================
+corpus_precedents:
+  - paper_key: 2026i
+    relationship: applies
+    spine_nodes: [P1]
+  - paper_key: 2026ao
+    relationship: extends
+    spine_nodes: [P1, P3, P4]
+  - paper_key: 2026ah
+    relationship: extends
+    spine_nodes: [P1, P2]
+  - paper_key: 2026ag
+    relationship: applies
+    spine_nodes: [P1, P2]
+  - paper_key: 2026a
+    relationship: applies
+    spine_nodes: [P1]
+  - paper_key: 2026ap
+    relationship: applies
+    spine_nodes: [P3]
+  - paper_key: 2026v
+    relationship: applies
+    spine_nodes: [P5]
+
+# ============================================================================
+# External anchor literature
+# ============================================================================
+external_anchors:
+  - citation_key: hall-1980-encodingdecoding-s-hall
+    role: contrasting_prior_art
+    spine_nodes: [P1]
+  - citation_key: hatch-2010-toward-theory-brand
+    role: contrasting_prior_art
+    spine_nodes: [P1]
+  - citation_key: boyd-richerson-1985-culture-evolutionary-process
+    role: foundational
+    spine_nodes: [P4]
+  - citation_key: holt-2004-how-brands-become
+    role: contrasting_prior_art
+    spine_nodes: [P4]
+  - citation_key: mccracken-1986-culture-consumption-theoretical
+    role: foundational
+    spine_nodes: [P1, P4]
+  - citation_key: shumailov-2024-ai-models-collapse
+    role: empirical_mechanism
+    spine_nodes: [P5]
+  - citation_key: jiang-2025-artificial-hivemind
+    role: empirical_mechanism
+    spine_nodes: [P5]
+  - citation_key: liu-2026-alignment-tax-response
+    role: empirical_mechanism
+    spine_nodes: [P5]
+
+# ============================================================================
+# Open questions / boundary edges
+# ============================================================================
+
+# ============================================================================
+# Changelog — append-only
+# ============================================================================
