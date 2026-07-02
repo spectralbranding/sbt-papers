@@ -1,0 +1,193 @@
+# Separating Instrument Drift from Brand Signal: A Pre-Registered Model-Version Tracking Instrument for AI Brand Perception (PRISM-T)
+
+Dmitry Zharnikov
+
+ORCID: 0009-0000-6893-9231
+
+DOI: [10.5281/zenodo.21128779](https://doi.org/10.5281/zenodo.21128779)
+
+Working Paper v1.0.0 – July 2026
+
+## Abstract
+
+Every longitudinal claim made with a large-language-model observer is confounded by the observer: when a brand's measured perception moves between epochs, either the brand's public signal changed or the vendor shipped a model version that reads the same artifacts differently. PRISM-T resolves the confound with a two-panel identification strategy: a pinned panel of public artifacts captured once and hash-sealed — byte-identical inputs, so all movement is apparatus drift — and a live panel of fresh artifacts whose movement adds brand signal. The pinned panel yields a version floor, the across-time counterpart of the operator noise floor, grounded in classical test-retest reliability with the locus of error inverted from respondent to apparatus. A pre-registered campaign read a sealed 160-artifact panel under eleven real shipped versions in three model families, including an eighteen-month cross-generation pair, with controls, a mechanical operator-exclusion rule, and a simulation power analysis fixing the certifiable drift magnitude ex ante. No version pair moved the reading beyond the contemporaneous operator floor (largest signal-to-noise 1.19, CI [.89, 1.55]), a bounded, reassuring null: version-robustness is now a measured property with an interval, not an assumption.
+
+**Keywords:** instrument drift, version floor, test-retest reliability, measurement invariance, LLM observers, brand perception, preregistration, apparatus calibration
+
+---
+
+A brand tracker built on a large-language-model observer — one instance of the broader turn toward LLMs standing in for human measurement layers [@argyle-2023-out-one-many] — inherits a confound no human-panel tracker has: its panel is replaced, wholesale and without notice, every time the model vendor ships a new version. When the January reading and the June reading disagree, the difference is some mixture of the brand's public signal actually moving and the apparatus being swapped mid-series — and standard practice cannot say which. The anxiety is concrete in AI-visibility work: a dashboard step-change that coincides with a model release is uninterpretable, a perception covariate feeding a marketing-mix model carries a structural break at every vendor release, and any published LLM-observer finding is implicitly indexed by the model version that produced it. The drift itself is documented — the March and June 2023 snapshots of the same commercial models differed substantially in task behavior [@chen-2024-chatgpt-behavior-changing] — but documentation is not metrology: what longitudinal measurement needs is a *floor*, a quantity that says how much reading change a version change produces when the world is held fixed, so that observed change beyond it can be attributed to the world.
+
+This paper builds that floor as an instrument. PRISM-T, the temporal member of the PRISM instrument family [@zharnikov-2026as-prism-structured-measurement], holds the world fixed by construction: a **pinned panel** of public brand artifacts is captured once, deterministically trimmed, hash-sealed, and re-read — the same bytes, under the same frozen prompts — at every model-version epoch. Because a pinned reading is a function of the artifact bytes, the prompt bytes, and the model version alone, all pinned-panel movement is apparatus drift — version change plus the instrument's own run-to-run non-determinism, which a same-version negative control bounds separately; nothing in the world moved. A companion **live panel** re-collects fresh artifacts for the same brands at each epoch, so its movement carries apparatus drift plus brand signal, and the difference estimates the brand signal. The pinned dispersion across versions is the **version floor**: the across-time counterpart of the operator noise floor that the base instrument computes from contemporaneous cross-family operator dispersion [@zharnikov-2026ax-brand-spectrometer], nested per the no-rescue floor architecture [@zharnikov-2026ay-substrate-floor] (a reading that fails its floor abstains and is never rescued by auxiliary argument) so that operator ⊆ version — a longitudinal "the brand moved" claim must clear the version floor, not merely the operator floor.
+
+Three contributions are claimed. First, the **version floor as a metrological construct**: classical test-retest dispersion [@novick-1966-classical-test-theory] with the locus of error inverted — the stimulus is genuinely fixed, a luxury no human-respondent design has, and the apparatus is what gets replaced between administrations; equivalently, a non-parametric magnitude bound on longitudinal measurement non-invariance [@widaman-2010-factorial-invariance-longitudinal; @putnick-2016-measurement-invariance-conventions], estimable per version pair and per dimension without a factor model; equivalently again, the mirror image of concept-drift monitoring [@gama-2014-concept-drift-survey; @lu-2019-learning-concept-drift], which watches data drift under a fixed model where PRISM-T fixes the data and lets the model move. Second, the **pinned/live two-panel decomposition** as an identification strategy for the apparatus-versus-signal confound in LLM-observer measurement, pre-registered with controls, a mechanical operator-exclusion rule, and a simulation power analysis that fixes ex ante what drift magnitude the design can certify. Third, an **empirical version-robustness bound at the July-2026 epoch**: across eleven real shipped versions in three families — five Anthropic Opus releases, three OpenAI snapshots spanning eighteen months and a full model generation, three Alibaba Qwen releases — no version pair moved the pinned reading beyond the contemporaneous operator floor. The pre-registered either-way interpretation makes this null a result: version-robustness becomes a measured, interval-carrying, epoch-specific property rather than an assumption, and the floor apparatus that measured it re-measures it at every future release for tens of dollars.
+
+The paper proceeds as follows: the version floor as a metrological construct; the instrument (protocol, panels, ladders, estimator, power analysis, controls); results at epoch VE-1; alternative explanations; and discussion with limitations.
+
+## The Version Floor as a Metrological Construct
+
+***Test-retest reliability with the error locus inverted***
+
+Classical test theory decomposes an observed score into a true score and an error term and defines reliability through the dispersion of repeated parallel measurements [@novick-1966-classical-test-theory]. Test-retest designs presume the instrument is the fixed element and the respondent supplies the retest error. An LLM-observer instrument inverts the locus: the stimulus — an artifact panel plus its prompts, all text — can be held *genuinely* byte-identical across administrations, while the apparatus itself is replaced whenever the vendor ships a version. The version floor is the classical retest-dispersion quantity computed under this inversion: the dispersion across model versions of a family reading a byte-identical panel under a matched extractor. Because the input cannot have changed, the version floor is a pure apparatus-error band — the temporal sibling of the operator floor, which bounds parallel-forms error at one time point [@zharnikov-2026ax-brand-spectrometer].
+
+***Measurement invariance without a factor model***
+
+The longitudinal measurement-invariance literature asks whether an instrument measures the same construct across repeated administrations — factorial invariance is the precondition for reading observed change as construct change [@widaman-2010-factorial-invariance-longitudinal], with established reporting conventions [@putnick-2016-measurement-invariance-conventions]. A vendor version change is a potential invariance violation located in the instrument rather than the population: the same artifacts may load onto the eight perception dimensions [@zharnikov-2026-spectral-brand-theory-computational-framework; @zharnikov-2026-why-eight-completeness-necessity-sbt] differently under the successor version. PRISM-T operationalizes the violation as a magnitude bound rather than a latent-variable test: a non-parametric non-invariance band in construct units ($1-\cos$ on the eight-dimension reading [@zharnikov-2026-brand-space-geometry-formal-metric]), estimable per version pair, re-estimable at every release. The measurement-practices critique that construct validity must be interrogated rather than assumed [@flake-2017-construct-validation-practice; @flake-2020-measurement-schmeasurement-questionable] extends here to the temporal layer: an instrument that never checks its own version stability is assuming exactly what this construct measures.
+
+***Concept drift, inverted***
+
+The machine-learning drift literature monitors deployed models whose *data distribution* drifts while the model is held fixed [@gama-2014-concept-drift-survey; @lu-2019-learning-concept-drift]. PRISM-T is the mirror image: the data are fixed by construction — the pinned panel is the fixed point — and the *model* moves. Where concept-drift detection must disentangle data change from model misfit, the pinned panel removes data change entirely; the live panel then restores the ecological quantity, and live-minus-pinned recovers what the drift literature calls the signal. The closest prior demonstration, that successive snapshots of the same commercial LLMs behave differently on fixed tasks [@chen-2024-chatgpt-behavior-changing], differs on four axes: it measures task accuracy against ground truth where PRISM-T measures construct-unit drift against an instrument-computed floor; it has no contemporaneous comparison band; it is observational rather than identified by a pinned/live design; and it reports drift as a finding where PRISM-T pre-registers both outcomes. Documenting that the phenomenon exists is the predecessor; calibrating it as a reliability quantity is the contribution.
+
+***When should versions move a reading? A mechanism taxonomy***
+
+Three mechanism classes say where on the eight dimensions version drift should concentrate, if it exists. The common substrate is that LLM outputs carry systematic model-internal priors that psychological instruments can probe [@binz-2023-using-cognitive-psychology] — and that post-training updates re-shape. Alignment updates — post-training value recalibration between versions — should shift value-laden readings (Ideological, Cultural, Social). World-knowledge refresh — a new training cutoff importing new facts about the brand's trajectory — should shift knowledge-anchored readings even for a fixed artifact (Temporal, Economic). Format and decoding changes should not shift construct content at all, and are held down by byte-identical prompts and cross-family extraction [@zharnikov-2026ap-same-meaning-different-prose]. The discriminating logic: on a pinned artifact, the model's contribution to the reading is largest where the reading leans on priors beyond the text and smallest where the artifact text anchors it. The pre-registered H3 sets follow: high-drift = {Ideological, Cultural, Social, Temporal, Economic}; format-anchored = {Semiotic, Narrative, Experiential} — fixed before any collection, tested as one two-set contrast rather than eight per-dimension tests. The results section reports how one of these ex-ante assignments fails informatively.
+
+## The Instrument
+
+***Pre-registered protocol***
+
+The frozen PL0 layer [@nosek-2018-the-preregistration-revolution; @flake-2020-measurement-schmeasurement-questionable] fixes three hypotheses. **H1 (version drift exists):** some version pair moves the pinned reading beyond the contemporaneous operator floor — supported when the pinned inter-version signal-to-noise has a source-cluster bootstrap 95% CI lower bound above $k = 2$. **H2 (pinned isolation):** the pinned/live decomposition separates apparatus from brand — its live-panel side completes at the next calendar epoch by construction, since at the birth epoch the live panel coincides with the pinned capture. **H3 (dimension structure):** drift concentrates on the prior-dependent set — one Holm-corrected two-set contrast at $\alpha = .017$ (family-wise $\alpha = .05$, Bonferroni across three hypotheses). Pre-collection amendments — the back-catalog epoch interpretation, the H3 set collapse, the panel reuse, and the pilot exclusion rule — were recorded, dated, before any campaign API call. Both H1 outcomes are pre-registered as results: drift makes the version floor mandatory equipment; the null makes version-robustness a measured property.
+
+The scope conditions are calibration specifications, stated ex ante rather than discovered as caveats. The instrument is calibrated for public English-language text artifacts (official communications, press, customer-experience content, forum discourse) of prominent B2C and B2B brands; for API-served and open-weights model families whose versions pin to exact identifiers; and for epochs defined by real vendor releases — synthetic versioning (fine-tunes, quantizations, prompt variants) and any prompt change between epochs are excluded as confounds, and endpoints without a version identity support only a weaker live-endpoint design. Multimodal artifacts, non-English text, and low-prominence entities sit outside the calibrated population and constitute the empirical program for later epochs.
+
+***The pinned panel***
+
+The panel reuses the frozen 40-brand stratified bank of the companion metamerism campaign [@zharnikov-2026az-prism-m-metamerism] — a named public index frame stratified by five coherence types [@zharnikov-2026-coherence-type-as-crisis-predictor] crossed with B2C/B2B — and captures four real public web artifacts per brand, one per channel: official communications, third-party press, customer-experience content, and public forum discourse. Each artifact was captured on 2026-07-02, deterministically trimmed to at most 2,500 characters cut at a word boundary, stored byte-identical, and sealed under a SHA-256 manifest recording source URL, retrieval timestamp, length, and hash. Every subsequent artifact read is hash-verified; a mismatch aborts the run. The panel is a calibration standard, not a portrait of the current brand: its staleness is constitutive — the metrological fixed point that makes byte-identical re-reading possible — and pinned readings are never reported as current brand perception. Unlike the base instrument's elicitation mode, the PRISM-T renderer reads the artifact text *provided in the prompt*: the renderer prompt (frozen as prism-t/v1.0.0; the prompt bytes are part of the pinned input) instructs an observer to describe what an attentive member of the public would perceive of the brand from this artifact, and the extractor — the verbatim frozen PRISM-B extractor — scores the prose into the eight-dimension vector seeing only the prose.
+
+***The version ladder***
+
+A read-only catalog check on the collection date found real, already-shipped versions simultaneously servable in three families, and the pre-collection amendment fixes their interpretation: for a pinned panel, a reading depends on the artifact bytes, the prompt bytes, and the model version only — calendar time enters only through the version — so reading the panel under several shipped versions at one calendar time is a valid version-epoch set for H1 and H3. This is not synthetic versioning; every rung is a vendor release. **Table 1** lists the ladders: five Anthropic Opus versions, three OpenAI snapshots spanning eighteen months and a generation boundary, and three Alibaba Qwen releases — the open-weights family whose checkpoints make the ladder replicable. Within a ladder, only the renderer version moves; the extractor is a fixed cross-family model [@zharnikov-2026ap-same-meaning-different-prose], so inter-rung movement is renderer-version drift under a matched operator. Each ladder's top rung coincides with one contemporaneous operator pair, and the fourth family (DeepSeek) serves as an operator only, since its API exposes no back catalog. Rungs are pinned to exact model identifiers verified live on the collection date, and there is no fallback substitution — a version ladder with a silently swapped rung measures nothing — an unavailable rung is dropped and reported.
+
+**Table 1.** The VE-1 Version Ladders and Operator Pairs.
+
+| Role | Models |
+|------|--------|
+| Anthropic Opus ladder (extractor: gpt-5.4-mini-2026-03-17) | claude-opus-4-1-20250805 → 4-5-20251101 → 4-6 → 4-7 → 4-8 |
+| OpenAI ladder (extractor: claude-haiku-4-5-20251001) | gpt-4o-2024-11-20 → gpt-5-2025-08-07 → gpt-5.5-2026-04-23 |
+| Alibaba Qwen ladder (extractor: deepseek-v4-flash) | qwen3-max-2025-09-23 → qwen3.5-plus-2026-02-15 → qwen3.7-max-2026-06-08 |
+| Contemporaneous operator pairs (the floor) | OP1 claude-opus-4-8 → gpt-5.4-mini; OP2 gpt-5.5 → claude-haiku-4-5; OP3 qwen3.7-max → deepseek-v4-flash; OP4 deepseek-v4-pro → qwen3.6-flash |
+
+*Notes*: Within a ladder only the renderer version moves; the extractor is fixed and cross-family. Ladder top rungs coincide with OP1/OP2/OP3. All eleven rungs verified live on 2026-07-02; temperature 0 where honored (Anthropic 4.7+ rejects sampling parameters; omitted and logged as sent).
+
+***Pre-flight pilot and the mechanical exclusion rule***
+
+Before the configuration froze, a pilot (20 readings, 41 logged calls) screened the four operator pairs with a leave-one-out vector-concordance diagnostic under the exclusion rule fixed ex ante: an operator whose discordance score exceeds three times the median of the remaining operators is excluded from the stated floors, still collected, and reported as an exploratory observer. The rule fired on the same operator as in both prior PRISM campaigns [@zharnikov-2026az-prism-m-metamerism; @zharnikov-2026bb-prism-c-choice]: deepseek-v4-pro as renderer, discordance .556 against a median-of-others of .0055 — roughly one hundredfold, an order of magnitude more extreme on this artifact-reading variant than on the internalized-knowledge instrument — the third independent replication of the discordant-renderer finding. The pilot also surfaced a regime fact the frozen configuration carries as a per-rung override: reasoning-tier models (the dated gpt-5 base; deepseek-v4-pro) return empty content at default token allowances because the reasoning budget consumes the whole allowance before any output.
+
+***The estimator***
+
+All quantities are computed by a deterministic, seeded estimator (fixed seed 20260702) published with the paper. A brand's reading under a (renderer, extractor) cell is the channel-mean eight-vector — the four channels pool with equal weight, matching the base instrument's aggregation (channel salience is not modeled); distances are $1-\cos$. The per-brand **operator floor** is the maximum pairwise distance among the post-exclusion operator-pair readings of the pinned panel — the contemporaneous band that H1 must clear. The per-brand **version floor** is the maximum inter-rung pinned distance under the ladder's matched extractor. H1's per-pair signal-to-noise is the mean-over-brands inter-version distance over the mean-over-brands operator floor, with a 2,000-draw brand-cluster bootstrap CI; H3 is the paired two-set contrast over brands (one-sided $t$ plus bootstrap CI); robustness sweeps $k \in \{1.5, 2, 3\}$ and re-runs everything under Euclidean and diagonal-Mahalanobis distances. The live/pinned decomposition — brand signal = live drift − pinned version floor — is implemented and unit-tested on synthetic two-epoch data; it runs empirically at VE-2.
+
+***Power analysis before collection***
+
+A simulation power analysis ran before any collection, executing the real estimator on synthetic record sets whose noise scales are anchored to the empirical record — operator floors in the .0034–.057 range from the base instrument's validation [@zharnikov-2026ax-brand-spectrometer] and inter-version distances below .03 from the corpus's prior spot-check [@zharnikov-2026-dimensional-collapse-ai-mediated-search]. Across 7,200 replicates: the H3 two-set contrast reaches .80 power at a per-dimension drift near .1 scale points at every floor tested (null false-positive rate .03–.07 at $\alpha = .017$), while the H1 interval criterion (bootstrap CI lower bound above 2) requires roughly .75 scale points per rung at the tightest floors and is not certifiable at the loosest — the interval criterion is conservative by construction, and the design's certifiable magnitudes are fixed ex ante rather than discovered post hoc. A nine-test unit suite, including a planted-drift positive path and a null path, ran green before any API spend.
+
+***Controls***
+
+The **negative control** re-runs the same version (the top Anthropic rung under its matched extractor) over the full pinned panel: the re-run distance must sit within the operator floor, else the instrument's own non-determinism inflates the version floor. The **positive control** designates ex ante the most distant real pair — gpt-4o-2024-11-20 versus gpt-5.5-2026-04-23, eighteen-plus months and a generation apart — which must exceed the floor if real version change registers; it is excluded from the H1 support decision by construction. AI observers are the measurement construct here, not a proxy for human raters — the deployed-surface position established for the family [@zharnikov-2026ax-brand-spectrometer; @zharnikov-2026az-prism-m-metamerism] — so the apparatus-drift claim requires no human convergent-validity sample.
+
+## Results
+
+***VE-1 collection***
+
+Epoch VE-1 collected 2,080 parsed readings — 40 brands × 4 channels × 13 renderer-extractor cells (four operator pairs, eight non-top ladder rungs, and the negative-control second run) — complete with zero unresolved cells, from 4,376 logged model API calls at an estimated 44.67 USD against a 100 USD cap. Sixty-seven interim cells returned empty renders from the floor-excluded exploratory observer (the reasoning-budget regime fact from the pilot, on a second model) and were resolved by the per-rung token override plus a resume pass. Every artifact read during collection hash-verified against the sealed manifest.
+
+***What the floors measured***
+
+The post-exclusion contemporaneous operator floor has per-brand mean .0078, median .0059, and maximum .0206; including the excluded observer would inflate it threefold (mean .0237, maximum .0949) — the same inflation geometry the metamerism campaign measured [@zharnikov-2026az-prism-m-metamerism]. The version floors are nonzero and of the same order: mean .0124 across the five-version Anthropic ladder, .0049 across the OpenAI ladder, .0111 across the Qwen ladder — in two of three ladders above the operator floor's mean. The floors nest empirically, not just by rule: the version axis contributes real apparatus variance even in the null regime that follows, which is why subtracting the pinned version floor from live-panel movement remains the correct decomposition even when the existence test abstains.
+
+***Confirmatory results: the version-robustness null***
+
+**H1 is not supported — at any version pair, in any ladder.** **Table 2** reports every pair. The largest signal-to-noise in the study is 1.19 (qwen3-max-2025-09-23 → qwen3.7-max-2026-06-08), with bootstrap 95% CI [.89, 1.55] — the lower bound is not above 2, and not above 1. The ten Anthropic Opus pairs span S/N .44–.98; the OpenAI pairs .28–.50. A version change at this epoch moves the pinned reading *less than swapping same-generation cross-family operators does*. This is the pre-registered reassuring-null branch, and it disciplines the corpus's prior unfloored spot-check — four model pairs, profile cosines above .97 [@zharnikov-2026-dimensional-collapse-ai-mediated-search] — into a floored, interval-carrying bound measured on byte-identical inputs.
+
+**Table 2.** Pinned-Panel Version-Pair Signal-to-Noise Against the Contemporaneous Operator Floor.
+
+| Ladder | Version pair | Distance | S/N | 95% CI |
+|--------|--------------|----------|-----|--------|
+| Anthropic Opus | 4-1 → 4-5 | .0056 | .72 | [.52, .99] |
+| Anthropic Opus | 4-1 → 4-6 | .0076 | .98 | [.74, 1.32] |
+| Anthropic Opus | 4-1 → 4-7 | .0066 | .85 | [.62, 1.11] |
+| Anthropic Opus | 4-1 → 4-8 | .0055 | .71 | [.57, .86] |
+| Anthropic Opus | 4-5 → 4-6 | .0048 | .62 | [.44, .85] |
+| Anthropic Opus | 4-5 → 4-7 | .0047 | .61 | [.44, .83] |
+| Anthropic Opus | 4-5 → 4-8 | .0054 | .70 | [.55, .88] |
+| Anthropic Opus | 4-6 → 4-7 | .0034 | .44 | [.34, .57] |
+| Anthropic Opus | 4-6 → 4-8 | .0051 | .66 | [.48, .88] |
+| Anthropic Opus | 4-7 → 4-8 | .0041 | .53 | [.36, .77] |
+| OpenAI | gpt-4o → gpt-5 | .0022 | .28 | [.20, .39] |
+| OpenAI | gpt-4o → gpt-5.5 (positive control) | .0039 | .50 | [.38, .65] |
+| OpenAI | gpt-5 → gpt-5.5 | .0035 | .45 | [.32, .59] |
+| Qwen | 3-max → 3.5-plus | .0082 | 1.05 | [.81, 1.36] |
+| Qwen | 3-max → 3.7-max | .0092 | 1.19 | [.89, 1.55] |
+| Qwen | 3.5-plus → 3.7-max | .0056 | .73 | [.61, .87] |
+
+*Notes*: Distance is the mean-over-brands pinned inter-version $1-\cos$ under the ladder's matched extractor; S/N divides it by the mean post-exclusion operator floor (.0078); CIs from a 2,000-draw brand-cluster bootstrap, seed 20260702. The pre-registered drift criterion is CI lower bound > 2; no pair approaches it. The designated positive-control pair is excluded from the H1 support decision.
+
+***Controls, and what the sub-floor positive control means***
+
+The negative control passed: re-running the top Anthropic rung over the full panel produced a mean re-run distance of .0043 against the mean floor of .0078, with 32 of 40 brands' re-runs inside their own per-brand floors — the instrument's residual non-determinism sits within the operator band, so the sub-floor version distances are not an artifact of a degenerately wide floor. The designated distant-pair positive control, however, also returned sub-floor (S/N .50, CI [.38, .65]). Under the pre-registered reading this is either estimator insensitivity or genuinely deep version-robustness. Three observations locate it as the latter, bounded: the seeded synthetic positive path detects planted drift at and above the pre-computed .75-scale-point magnitude, so the estimator is not grossly insensitive; the negative control shows the floor is not inflated; and the excluded discordant observer demonstrates the pipeline registers hundred-fold reading differences when an observer actually reads differently. The honest composite verdict is a **bounded null**: real version changes at this epoch, including a cross-generation pair eighteen months apart, move pinned readings below the design's certifiable magnitude — the control designed on the assumption that surely a generation boundary drifts turned out to be the strongest statement of the finding itself.
+
+***The Semiotic reversal***
+
+**H3 is not supported — and the point direction reverses.** The format-anchored set's per-dimension drift exceeds the prior-dependent set's in all three ladders: paired contrast over brands, Anthropic mean difference −.236 (Cohen's $d = -1.02$), OpenAI −.181 ($d = -.79$), Qwen −.043 ($d = -.15$); the pre-registered one-sided tests return $p > .999$, $p > .999$, and $p = .829$. The reversal is concentrated in a single dimension: Semiotic drifts 1.25, .87, and 1.19 scale points across the three ladders — roughly double any other dimension in every ladder (**Table 3**). The reversal has a coherent reading the ex-ante taxonomy missed: on a *text-only* pinned panel, visual identity is the least text-recoverable dimension — an artifact's prose rarely states what the brand looks like — so the Semiotic reading leans most on model inference beyond the artifact, and the "format-anchored" classification was wrong for text panels specifically. Because all per-dimension movement is sub-floor, the reversal is structure in the instrument's noise, not supra-floor drift; the corrected taxonomy is a pre-registerable prediction for the next epoch and for multimodal panels, where Semiotic should re-anchor.
+
+**Table 3.** Exploratory Per-Dimension Mean Inter-Version Drift (Scale Points, Adjacent Rungs).
+
+| Dimension | Anthropic | OpenAI | Qwen |
+|-----------|-----------|--------|------|
+| Semiotic | 1.25 | .87 | 1.19 |
+| Narrative | .36 | .38 | .50 |
+| Ideological | .45 | .49 | .62 |
+| Experiential | .69 | .56 | .69 |
+| Social | .49 | .43 | .78 |
+| Economic | .64 | .54 | .84 |
+| Cultural | .56 | .30 | .82 |
+| Temporal | .52 | .35 | .68 |
+
+*Notes*: Exploratory decomposition behind the pre-registered two-set contrast (high-drift {Ideological, Cultural, Social, Temporal, Economic} vs format-anchored {Semiotic, Narrative, Experiential}); mean absolute per-dimension delta across adjacent rung pairs and brands, 0–10 scale. All movement is sub-floor (H1 null); Semiotic is the largest cell in every ladder.
+
+***Robustness***
+
+The null is not an artifact of the threshold, the metric, or the exclusion. Threshold sweep: no pair clears $k = 1.5$, $2$, or $3$ (the largest CI lower bound in the study is .89). Metric alternates: Euclidean and diagonal-Mahalanobis re-runs leave the H1 verdict and the negative-control pass unchanged. Exclusion sensitivity: including the discordant observer inflates the floor threefold and the verdict is unchanged in both directions — the null does not depend on the mechanical exclusion.
+
+## Alternative Explanations
+
+Three rivals deserve explicit treatment. First, *an insensitive estimator*: addressed above — synthetic sensitivity at pre-computed magnitudes, a passing negative control, and a pipeline that registered a hundred-fold discordance when one existed. Second, *back-catalog serving drift*: an old version read today is served through today's stack, so perhaps measured drift understates as-shipped drift. This is acknowledged as a scope condition: the design measures version identity *as served* at the reading date, which is also the quantity a practitioner's longitudinal series actually experiences; the open-weights Qwen ladder pins checkpoints by construction and shows the same null, bounding the serving-stack account. Third, *prompt anchoring*: perhaps reading provided artifact text anchors so hard that version differences cannot express. The excluded observer refutes the strong form — a renderer can read the same artifacts under the same prompt a hundred-fold differently — and the Semiotic structure shows systematic observer inference expressing through the same prompt; what does not appear is version-to-version movement above the operator band.
+
+## Discussion
+
+***What the bounded null buys a longitudinal practice***
+
+The practical rule inverts the anxiety that motivated the instrument. At the July-2026 epoch, a longitudinal series built on this instrument survives vendor version changes without a correction term: the version floor is measured, nonzero, and *below the contemporaneous operator floor* everywhere — including across a generation boundary. "Did my brand move or did the model change?" has, at this epoch, a measured answer: for the version pairs measured here, movement that clears the operator floor was not the version. But the bound is epoch-specific, and that is the instrument's point rather than its weakness: the version floor is verification equipment, re-measurable at every vendor release for a few tens of dollars against a sealed panel, and the no-rescue nesting (operator ⊆ version) stands ready for the epoch when a release does drift. The downstream stakes are concrete: the corpus's dynamics layer [@zharnikov-2026z-spectral-dynamics] and any longitudinal decomposition of brand perception [@zharnikov-2026-non-ergodic-brand-perception-why] presuppose apparatus-corrected readings, and external practice — AI-visibility dashboards, LLM-derived covariates in marketing-mix models, replication of any LLM-observer finding across model vintages — inherits the same requirement. Version-robustness claims can now cite an interval instead of an absence of complaints.
+
+***An instrument that pays either way***
+
+The pre-registered either-way interpretation did its work. Had drift appeared, the paper would deliver a mandatory correction band; the null delivers a measured license plus the machinery to notice when the license expires. The two auxiliary findings compound the value. The third replication of the discordant-renderer effect — mechanical rule, fixed ex ante, same operator, now one hundredfold on an artifact-reading variant — hardens a cross-campaign fact about the July-2026 operator population into something no single campaign could claim. And the Semiotic reversal, though sub-floor, is the kind of taxonomy correction only a pre-registered wrong prediction can produce: text panels make visual identity the *most* model-inferred dimension, not the least, which re-orders what a multimodal extension should expect and pre-registers cleanly for VE-2.
+
+***The VE-2 design***
+
+The instrument's second epoch triggers when a laddered family ships a new version: re-read the sealed pinned panel under the new rung (pure apparatus drift), re-collect the live panel (apparatus plus brand), and the decomposition — implemented and unit-tested on synthetic two-epoch data in the published estimator — returns the brand-signal estimate with its bootstrap interval. H2 completes there, on the same frozen protocol, with no new degrees of freedom.
+
+## Limitations
+
+Six limitations bound the claims. First, **the bound is epoch- and family-specific**: eleven versions, three families, July 2026; nothing licenses extrapolation to future releases — re-measurement does. Second, **as-served version identity**: API-only rungs are measured as currently served, folding any silent serving-stack change into the rung; the open-weights ladder is the guard, and a cheap later-date same-version re-run (a second negative control at a distance) would separate serving drift from version drift for API rungs. Third, **H2 is design-complete but data-pending**: at the birth epoch live ≡ pinned by construction, so the brand-signal decomposition is demonstrated synthetically and completes at VE-2. Fourth, **panel bounds**: four text artifacts per brand and forty brands from one index frame; the power analysis states exactly which drift magnitudes are certifiable at this size (the H3 contrast is well powered; the H1 interval criterion is conservative), and the calibrated population is the stated scope condition, with multimodal panels the natural extension the Semiotic reversal motivates. Fifth, **the H3 sets were partly mis-assigned ex ante**: the reversal is reported against the frozen sets, as pre-registered; the corrected taxonomy is a prediction for the next epoch, not a re-scored result of this one. Sixth, **the measured floor is a renderer-version floor**: within a ladder the extractor is pinned by design (the matched-operator isolation), so drift introduced by a version change of the extractor model is not measured at this epoch; an extractor-side ladder under a fixed renderer is the symmetric extension.
+
+## Companion Computation Script
+
+All reported numbers reproduce from the seeded campaign and analysis code published with the paper: the panel capture manifest and seal script, the pilot with the mechanical exclusion rule, the sharded collection harness, the deterministic estimator (fixed seed 20260702; floors, version distances, bootstrap CIs, the two-set contrast, controls, the live/pinned decomposition, robustness battery), the simulation power analysis, and the synthetic generators, with a nine-test unit suite that ran before any data collection. Run commands are documented in the code README; the estimator's single entry point is `estimator.py --records <records> --out <results> --excluded-ops OP4 --robustness`.
+
+## Data and Code Availability
+
+The frozen protocol layers (preregistration with dated pre-collection amendments, instrument configuration, the sealed panel manifest), the complete append-only call logs (one record per model API call: prompts, parameters, responses, token usage), the parsed measurement records, the analysis outputs, the power-analysis grid, and all computation code publish with the paper's public repository at submission. The campaign comprised 4,376 logged model API calls (pilot: 41; floor, ladders, and controls: the remainder) at an estimated total cost of 44.67 USD. The pinned artifact panel publishes byte-identical with its SHA-256 manifest — the identification guarantee — subject to source-text licensing review at mirror staging. The paper is archived under concept DOI 10.5281/zenodo.21128779 (this version: 10.5281/zenodo.21128780).
+
+## Acknowledgments
+
+AI assistants (Claude Fable 5, Grok 4.1) were used for initial literature search, for software development — authoring the campaign harness, the panel capture and seal tooling, and the analysis scripts — and for orchestrating and running the reported campaign through those scripts, as well as for editorial refinement; all theoretical claims, propositions, and interpretations are the author's sole responsibility. The rendering and extraction models named in Table 1 served as the measurement instrument's operators — study apparatus, not authorship assistance — and their outputs constitute the dataset of record.
+
+## Author Contributions (CRediT)
+
+Dmitry Zharnikov: Conceptualization, Data curation, Formal analysis, Funding acquisition, Investigation, Methodology, Project administration, Resources, Software, Supervision, Validation, Writing — original draft, Writing — review and editing.
+
+## References
+
+::: {#refs}
+:::

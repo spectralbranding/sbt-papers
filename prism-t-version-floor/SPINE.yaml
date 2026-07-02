@@ -1,0 +1,905 @@
+# SPINE.yaml — PRISM-T (2026ba)
+#
+# SPINE-FIRST (provenance: generative): authored BEFORE body prose. Every prose
+# claim in paper.md must trace to a node here; new claims require FORK (extend
+# spine first) or REBASE (drop the claim).
+#
+# Schema v0.2 ([internal path removed]): the paper reports an
+# author-produced pre-registered version-ladder campaign (sealed pinned panel
+# read under three family back-catalog ladders + contemporaneous operator
+# pairs, with controls and a simulation power analysis) — observations /
+# methods / measurements / findings are first-class nodes.
+
+spine_version: "0.2"
+spine_doc_version: "0.2.1"
+paper_key: "2026ba"
+self_citation_key: zharnikov-2026ba-prism-t-version-floor
+concept_doi: 10.5281/zenodo.21128779                  # always resolves to latest version
+version_doi: 10.5281/zenodo.21128780                  # v1.0.0
+provenance: generative
+title: >-
+  Separating Instrument Drift from Brand Signal: A Pre-Registered
+  Model-Version Tracking Instrument for AI Brand Perception (PRISM-T)
+status: >-
+  Spine locked after the frozen PL0/PL1 campaign completed VE-1 end-to-end
+  (pilot + floor + three ladders + controls + robustness, 2026-07-02;
+  2,080/2,080 cells). Drafting proceeds against this spine. H2's live-panel
+  decomposition completes at a later calendar epoch by design.
+
+thesis: |
+  Every longitudinal claim made with an LLM-observer instrument is confounded
+  by the instrument itself: when a brand's eight-dimension reading moves
+  between epochs, either the brand's public signal changed or the vendor
+  shipped a model version that reads the same artifacts differently — and
+  practice cannot tell the two apart. PRISM-T resolves the confound with a
+  two-panel identification strategy: a pinned panel (public artifacts captured
+  once, hash-sealed, byte-identical at every reading — so ALL movement is
+  apparatus drift) and a live panel (fresh artifacts each epoch — apparatus
+  drift PLUS brand signal), yielding a version floor that extends the
+  operator floor of the Brand Spectrometer from a same-time cross-model band
+  to an across-time cross-version band, with the no-rescue nesting rule
+  (operator inside version) making "the brand moved" a claim that must clear
+  the version floor. The instrument is grounded metrologically — the version
+  floor is classical test-retest dispersion with the locus of error inverted
+  from respondent to apparatus, a non-parametric bound on longitudinal
+  measurement non-invariance, and the mirror image of concept-drift
+  monitoring (data fixed by construction, model moving) — and delivered
+  empirically at epoch VE-1 across three real shipped version ladders
+  (five Anthropic Opus versions, three OpenAI snapshots spanning eighteen
+  months, three Alibaba Qwen releases) read against a sealed 160-artifact
+  panel under cross-family operator pairs, with a same-version negative
+  control, a designated distant-pair positive control, a pre-registered
+  mechanical operator-exclusion rule that replicated the known discordant
+  renderer a third time, and a simulation power analysis that fixes ex ante
+  what drift magnitude the design can certify. Both outcomes are results:
+  drift makes the version floor mandatory equipment for longitudinal LLM
+  measurement; the null makes version-robustness a measured, citable
+  property with an interval rather than an assumption.
+
+# ============================================================================
+# Boundary conditions
+# ============================================================================
+boundary_conditions:
+  - id: C1
+    statement: >-
+      Calibrated population: public digital artifacts (owned media, press,
+      review, forum text) of consumer and B2B brands, in English, read by
+      major API families with stable versioned release channels and
+      open-weights families. Non-English artifacts, multimodal artifacts, and
+      private artifact classes are out of scope.
+  - id: C2
+    statement: >-
+      Version epochs are real vendor releases only: synthetic versioning
+      (fine-tunes, quantizations, prompt variants) and any prompt change
+      between epochs are excluded as confounds — the prompt bytes are part of
+      the pinned input.
+  - id: C3
+    statement: >-
+      The version floor is defined per (family ladder, matched extractor,
+      panel); it is not a universal constant of a family, and endpoints
+      without a version identity (silently mutating aliases) support only a
+      weaker live-endpoint drift design.
+  - id: C4
+    statement: >-
+      The pinned panel is a calibration standard, not a representation of the
+      current brand: its staleness is constitutive (the metrological fixed
+      point), so pinned-panel readings must never be reported as current
+      brand perception.
+  - id: C5
+    statement: >-
+      Floors nest and the no-rescue rule governs: operator ⊆ version; a
+      longitudinal difference that fails to clear the version floor is
+      sub-resolution and is reported as such, never rescued by auxiliary
+      argument or operator re-selection after the fact.
+
+# ============================================================================
+# Assumption atoms
+# ============================================================================
+assumption_atoms:
+  - id: AA1
+    statement: >-
+      For claims about AI-mediated consumption surfaces, AI observers are the
+      measurement construct itself, not a proxy for human raters; the version
+      floor characterizes the deployed instrument's temporal reliability, so
+      no human convergent-validity sample is required for the apparatus-drift
+      claim.
+    evidence:
+      - type: citation
+        anchor: >-
+          the AI-observer-sufficiency position established for the PRISM
+          family; human panels required only for human-perception claims
+        citation_keys:
+          [
+            zharnikov-2026az-prism-m-metamerism,
+            zharnikov-2026ax-brand-spectrometer,
+          ]
+        citation_role: applies
+    provenance:
+      created_by: author
+      created_at: "2026-07-02T00:00:00Z"
+      under_conditions: "same position as the 2026az gate decision"
+    body_sections: ["The AI-Observer Surface"]
+  - id: AA2
+    statement: >-
+      Temperature-0 readings are treated as operator-deterministic within an
+      epoch; residual within-cell non-determinism is absorbed by the
+      same-version negative control, which bounds it against the operator
+      floor.
+    provenance:
+      created_by: author
+      created_at: "2026-07-02T00:00:00Z"
+      under_conditions: "Anthropic 4.7+ rejects sampling params; omitted and logged as-sent"
+    body_sections: ["Instrument Configuration"]
+  - id: AA3
+    statement: >-
+      Brand readings pool the four artifact channels with equal weight
+      (channel salience is not modeled); the reading is the channel-mean
+      eight-vector, matching the base instrument's aggregation.
+    provenance:
+      created_by: author
+      created_at: "2026-07-02T00:00:00Z"
+      under_conditions: ""
+    body_sections: ["The Version-Floor Estimator"]
+
+# ============================================================================
+# Observations (raw L-layer events)
+# ============================================================================
+observations:
+  - id: O1
+    statement: >-
+      The pinned panel was captured 2026-07-02: 160 real public web artifacts
+      (40 brands x 4 channels: official, press, experience, social; the
+      frozen 2026az stratified bank), each deterministically trimmed to at
+      most 2,500 characters, stored byte-identical and sealed under a
+      SHA-256 manifest recording source URL, retrieval timestamp, length,
+      and hash; every subsequent artifact read is hash-verified and a
+      mismatch aborts the run.
+    raw_data_pointer: "[internal path removed]"
+    instrument: "web capture (parallel agents; per-artifact fallback provenance recorded in manifest notes)"
+    timestamp: "2026-07-02"
+    conditions_at_capture: "capture BEFORE any model reading; blocked sources replaced by recorded fallbacks (e.g. review aggregators behind WAFs -> review articles; Reddit blocked -> Hacker News threads)"
+    provenance:
+      created_by: "tool:seal_panel.py"
+      created_at: "2026-07-02T00:00:00Z"
+      under_conditions: "hashes re-computed at seal time; panel immutable after seal"
+    body_sections: ["The Pinned Panel"]
+  - id: O2
+    statement: >-
+      A pre-flight operator-concordance pilot (20 readings, 40 logged calls)
+      screened the four contemporaneous operator pairs on two brands and
+      verified all eleven ladder rungs render and extract cleanly; one API
+      regime fact surfaced and was fixed before collection (the dated gpt-5
+      base model is reasoning-tier: at max_completion_tokens 1200 the
+      reasoning budget consumed the whole allowance and content returned
+      empty — a per-rung token override is part of the frozen PL1).
+    raw_data_pointer: "[internal path removed]"
+    instrument: "run_pilot.py under PL1 operator pairs + ladders"
+    timestamp: "2026-07-02"
+    conditions_at_capture: "prompt set prism-t/v1.0.0; pinned panel sealed before pilot"
+    provenance:
+      created_by: "tool:run_pilot.py"
+      created_at: "2026-07-02T00:00:00Z"
+      under_conditions: "exclusion rule fixed ex ante (PL0 §9.4) before the pilot ran"
+    body_sections: ["Pre-Flight Pilot"]
+  - id: O3
+    statement: >-
+      VE-1 collected 2,080 parsed readings (40 brands x 4 channels x 13
+      renderer-extractor cells: the 4 contemporaneous operator pairs, the 8
+      non-top ladder rungs, and the same-version negative-control second
+      run), complete with zero unresolved cells, from 4,376 logged model API
+      calls at an estimated 44.67 USD. Sixty-seven interim cells flagged
+      empty (the deepseek-v4-pro renderer returned empty content at the
+      default token allowance — the same reasoning-budget regime as the
+      gpt-5 pilot catch) were resolved by a per-rung token override plus the
+      resume pass; the affected pair is the floor-excluded exploratory
+      observer throughout.
+    raw_data_pointer: "[internal path removed]"
+    instrument: "run_ve1.py jobs floor/ladder/negcontrol under frozen PL1 prism-t/v1.0.0"
+    timestamp: "2026-07-02"
+    conditions_at_capture: "16-way sharded collection; append-only records; every artifact read hash-verified against the sealed manifest"
+    provenance:
+      created_by: "tool:run_ve1.py"
+      created_at: "2026-07-02T00:00:00Z"
+      under_conditions: "PL3 append-only; budget cap 100 USD, mechanical stop unused"
+    body_sections: ["VE-1 Collection"]
+
+# ============================================================================
+# Methods
+# ============================================================================
+methods:
+  - id: M1
+    statement: >-
+      Frozen pre-registered protocol (PL0): three hypotheses (H1 version
+      drift exists above the contemporaneous operator floor; H2 the
+      pinned/live decomposition isolates apparatus from brand; H3 drift
+      concentrates on prior-dependent dimensions), the drift criterion
+      (pinned inter-version S/N bootstrap CI lower bound > 2), family-wise
+      alpha .05 Bonferroni-split to .017 per hypothesis, stopping rules
+      (epochs added only at real vendor releases), and pre-collection
+      amendments recorded before any API call (back-catalog epoch
+      interpretation; H3 two-set collapse; panel reuse; pilot exclusion
+      rule).
+    evidence:
+      - type: citation
+        anchor: "preregistration + measurement-discipline anchors"
+        citation_keys:
+          [
+            nosek-2018-the-preregistration-revolution,
+            flake-2020-measurement-schmeasurement-questionable,
+          ]
+        citation_role: uses_method_of
+    provenance:
+      created_by: author
+      created_at: "2026-07-01T00:00:00Z"
+      under_conditions: "PL0 locked before any API spend"
+    body_sections: ["Pre-Registered Protocol"]
+  - id: M2
+    statement: >-
+      Metrological grounding of the version floor: classical test-retest
+      dispersion with the locus of error inverted from respondent to
+      apparatus (the stimulus is genuinely fixed, the instrument is
+      replaced); a non-parametric magnitude bound on longitudinal
+      measurement non-invariance in construct units; and the mirror image of
+      concept-drift monitoring (their data drift under a fixed model; here
+      the data are fixed by construction and the model moves).
+    evidence:
+      - type: citation
+        anchor: "CTT axiomatization (test-retest dispersion)"
+        citation_keys: [novick-1966-classical-test-theory]
+        citation_role: extends
+      - type: citation
+        anchor: "longitudinal factorial invariance (same construct across time)"
+        citation_keys: [widaman-2010-factorial-invariance-longitudinal]
+        citation_role: extends
+      - type: citation
+        anchor: "MI reporting conventions"
+        citation_keys: [putnick-2016-measurement-invariance-conventions]
+        citation_role: supports
+      - type: citation
+        anchor: "concept-drift monitoring, inverted"
+        citation_keys: [gama-2014-concept-drift-survey, lu-2019-learning-concept-drift]
+        citation_role: contrasts_with
+      - type: citation
+        anchor: "measurement-practices discipline"
+        citation_keys: [flake-2017-construct-validation-practice]
+        citation_role: supports
+    provenance:
+      created_by: author
+      created_at: "2026-07-02T00:00:00Z"
+      under_conditions: "authored before drafting, from the verified Phase-2 DR worklist"
+    body_sections: ["The Version Floor as a Metrological Construct"]
+  - id: M3
+    statement: >-
+      Two-panel identification: the pinned panel (byte-identical inputs)
+      isolates apparatus drift by construction; the live panel (fresh
+      artifacts per epoch) carries apparatus drift plus brand signal;
+      live-minus-pinned estimates the brand signal. At the birth epoch the
+      live panel coincides with the pinned capture, so the decomposition's
+      H2 test completes at the next real vendor release.
+    evidence:
+      - type: citation
+        anchor: "contrast: observational cross-snapshot drift without a floor or fixed panel"
+        citation_keys: [chen-2024-chatgpt-behavior-changing]
+        citation_role: contrasts_with
+    provenance:
+      created_by: author
+      created_at: "2026-07-01T00:00:00Z"
+      under_conditions: ""
+    body_sections: ["The Two-Panel Design"]
+  - id: M4
+    statement: >-
+      Version ladders from the live back-catalog: three families with real
+      shipped versions simultaneously servable at collection time (Anthropic
+      Opus 4-1/4-5/4-6/4-7/4-8; OpenAI gpt-4o-2024-11-20 /
+      gpt-5-2025-08-07 / gpt-5.5-2026-04-23; Alibaba qwen3-max-2025-09-23 /
+      qwen3.5-plus-2026-02-15 / qwen3.7-max-2026-06-08 — the open-weights
+      replicable ladder); within a ladder only the renderer version moves
+      and the cross-family extractor is fixed, so pinned-panel movement
+      across rungs is renderer-version drift under a matched operator.
+      Rungs are pinned to exact IDs verified live on the collection date;
+      no fallback substitution exists (an unavailable rung is dropped and
+      reported). DeepSeek serves only its current generation and
+      participates as an operator family only.
+    evidence:
+      - type: citation
+        anchor: "cross-family operator discipline within each epoch"
+        citation_keys: [zharnikov-2026ap-same-meaning-different-prose]
+        citation_role: uses_method_of
+    provenance:
+      created_by: author
+      created_at: "2026-07-02T00:00:00Z"
+      under_conditions: "PL0 §9.1 pre-collection amendment records the back-catalog epoch interpretation"
+    body_sections: ["The Version Ladder"]
+  - id: M5
+    statement: >-
+      Floors and estimator: per-brand contemporaneous operator floor = max
+      pairwise distance (1 − cosine on channel-mean eight-vectors) across
+      the post-exclusion operator pairs; per-brand version floor = max
+      inter-rung pinned distance under the ladder's matched extractor; H1
+      S/N per version pair = mean-over-brands distance over mean-over-brands
+      operator floor with a seeded 2,000-draw brand-cluster bootstrap CI;
+      H3 = one paired two-set contrast over brands (high-drift
+      {Ideological, Cultural, Social, Temporal, Economic} vs format-anchored
+      {Semiotic, Narrative, Experiential}, fixed ex ante) with one-sided t
+      and bootstrap CI; robustness = k in {1.5, 2, 3} and Euclidean +
+      diagonal-Mahalanobis alternates. Fixed seed 20260702.
+    evidence:
+      - type: citation
+        anchor: "operator floor + per-pair S/N criterion"
+        citation_keys: [zharnikov-2026ax-brand-spectrometer]
+        citation_role: uses_method_of
+      - type: citation
+        anchor: "nested floors + no-rescue"
+        citation_keys: [zharnikov-2026ay-substrate-floor]
+        citation_role: applies
+    provenance:
+      created_by: author
+      created_at: "2026-07-02T00:00:00Z"
+      under_conditions: "test suite green before collection"
+    body_sections: ["The Version-Floor Estimator"]
+  - id: M6
+    statement: >-
+      Simulation-based power analysis run BEFORE collection, executing the
+      real estimator on synthetic record sets whose noise scales are
+      anchored to the empirical record (2026ax operator floors .0034–.057;
+      H13 inter-version distances below .03): across 7,200 replicates the
+      H3 two-set contrast reaches .80 power at a per-dimension drift of
+      about .1 scale points at every floor tested (null false-positive .03–
+      .07), while the H1 interval criterion (S/N CI lower bound > 2)
+      requires roughly .75 scale points per rung at the tightest floors and
+      is not certifiable at the loosest — fixing ex ante what magnitude of
+      drift the design can and cannot certify.
+    provenance:
+      created_by: "tool:power_analysis.py"
+      created_at: "2026-07-02T00:00:00Z"
+      under_conditions: "published with the companion code per PAQS 37a-37e"
+    body_sections: ["Power Analysis"]
+  - id: M7
+    statement: >-
+      Pre-registered mechanical operator screen: before the PL1 freeze, a
+      pilot applies the leave-one-out vector-concordance diagnostic and the
+      fixed exclusion rule (score > 3 x median of remaining operators); an
+      excluded pair is still collected and reported as an exploratory
+      observer but enters no floor and no pooled vector.
+    evidence:
+      - type: citation
+        anchor: "the rule and its two prior applications"
+        citation_keys:
+          [
+            zharnikov-2026az-prism-m-metamerism,
+            zharnikov-2026bb-prism-c-choice,
+          ]
+        citation_role: uses_method_of
+    provenance:
+      created_by: author
+      created_at: "2026-07-02T00:00:00Z"
+      under_conditions: "rule fixed before the pilot ran"
+    body_sections: ["Pre-Flight Pilot"]
+  - id: M8
+    statement: >-
+      Controls: negative = the same version (top Anthropic rung, matched
+      extractor) run twice over the full pinned panel — the re-run distance
+      must sit within the operator floor; positive = the designated distant
+      version pair (gpt-4o-2024-11-20 vs gpt-5.5-2026-04-23, eighteen-plus
+      months apart, fixed ex ante) — it must exceed the floor, else the
+      estimator is insensitive to real version change. The positive-control
+      pair is excluded from the H1 support decision.
+    provenance:
+      created_by: author
+      created_at: "2026-07-01T00:00:00Z"
+      under_conditions: ""
+    body_sections: ["Controls"]
+
+# ============================================================================
+# Measurements (derived quantities)
+# ============================================================================
+measurements:
+  - id: m1
+    statement: >-
+      Contemporaneous operator floors (post-exclusion, three cross-family
+      pairs): per-brand mean .0078, median .0059, maximum .0206 (1 − cosine
+      on channel-mean eight-vectors). With the excluded exploratory pair
+      included the floor inflates to mean .0237 / maximum .0949 — the same
+      inflation geometry as the 2026az campaign.
+    antecedents: [O3, M5, M7]
+    provenance:
+      created_by: "tool:estimator.py"
+      created_at: "2026-07-02T00:00:00Z"
+      under_conditions: "seed 20260702; OP4 excluded per the pilot's mechanical rule"
+    body_sections: ["What the Floors Measured"]
+  - id: m2
+    statement: >-
+      Version floors (per-brand max inter-rung pinned distance under the
+      matched extractor): mean .0124 across the five-version Anthropic Opus
+      ladder, .0049 across the three-snapshot OpenAI ladder, .0111 across
+      the three-release Qwen ladder — nonzero, the same order as the
+      operator floor, and in two ladders above its mean.
+    antecedents: [O3, M4, M5]
+    provenance:
+      created_by: "tool:estimator.py"
+      created_at: "2026-07-02T00:00:00Z"
+      under_conditions: ""
+    body_sections: ["What the Floors Measured"]
+
+# ============================================================================
+# Findings
+# ============================================================================
+findings:
+  - id: F1
+    statement: >-
+      Confirmatory H1 at the pre-registered criterion: NO version pair in
+      any ladder drifts above the contemporaneous operator floor — the
+      largest signal-to-noise is 1.19 (qwen3-max-2025-09-23 →
+      qwen3.7-max-2026-06-08; bootstrap 95 percent CI [.89, 1.55]); the ten
+      Anthropic Opus pairs span S/N .44–.98 and the OpenAI pairs .28–.50.
+      H1 is not supported: a version change moves the pinned reading LESS
+      than swapping same-generation cross-family operators does. This is
+      the pre-registered reassuring-null branch, and it disciplines the
+      corpus's unfloored H13 spot-check (cosines above .97) into a floored,
+      interval-carrying bound.
+    antecedents: [O3, m1, m2, M1, M5]
+    falsifier: >-
+      Any version pair whose brand-cluster bootstrap S/N lower bound
+      exceeded 2 would overturn this finding.
+    provenance:
+      created_by: "tool:estimator.py"
+      created_at: "2026-07-02T00:00:00Z"
+      under_conditions: "k = 2, cosine, three post-exclusion operator pairs"
+    body_sections: ["Confirmatory Results"]
+  - id: F2
+    statement: >-
+      The designated distant-pair positive control (gpt-4o-2024-11-20 vs
+      gpt-5.5-2026-04-23, eighteen-plus months and a full model generation
+      apart) also returned sub-floor: S/N .50 (CI [.38, .65]). Under the
+      pre-registered reading this is either estimator insensitivity or
+      genuinely deep version-robustness; the seeded synthetic positive path
+      (the power analysis and the unit suite, which detect planted drift at
+      and above .75 scale points per rung) rules out gross insensitivity,
+      so the verdict is a BOUNDED null: real version changes at this epoch
+      move pinned readings below the design's certifiable magnitude.
+    antecedents: [M6, M8, F1]
+    provenance:
+      created_by: "tool:estimator.py"
+      created_at: "2026-07-02T00:00:00Z"
+      under_conditions: "control pair excluded from the H1 support decision by construction"
+    body_sections: ["Controls", "Confirmatory Results"]
+  - id: F3
+    statement: >-
+      The same-version negative control passed: re-running the top Anthropic
+      rung over the full pinned panel produced a mean re-run distance of
+      .0043 against a mean post-exclusion operator floor of .0078, with 32
+      of 40 brands' re-run distances inside their own per-brand floors —
+      the instrument's residual non-determinism sits within the operator
+      band, so the sub-floor version distances are not an artifact of an
+      inflated floor.
+    antecedents: [O3, M8, m1]
+    provenance:
+      created_by: "tool:estimator.py"
+      created_at: "2026-07-02T00:00:00Z"
+      under_conditions: "post-exclusion floor (the same band every test uses)"
+    body_sections: ["Controls"]
+  - id: F4
+    statement: >-
+      Confirmatory H3 is not supported — and the point direction REVERSES:
+      the format-anchored set's per-dimension drift exceeds the
+      prior-dependent set's in all three ladders (paired contrast over
+      brands: Anthropic mean difference −.236, d = −1.02; OpenAI −.181,
+      d = −.79; Qwen −.043, d = −.15; pre-registered one-sided p > .999,
+      > .999, .829). The reversal is concentrated in a single dimension:
+      Semiotic drifts 1.25 / .87 / 1.19 scale points across the three
+      ladders — roughly double any other dimension in every ladder.
+    antecedents: [O3, M5, m2]
+    provenance:
+      created_by: "tool:estimator.py"
+      created_at: "2026-07-02T00:00:00Z"
+      under_conditions: "sets fixed ex ante (PL0 §9.2); per-dimension decomposition exploratory"
+    body_sections: ["Confirmatory Results", "The Semiotic Reversal"]
+  - id: F5
+    statement: >-
+      The pre-flight pilot's mechanical exclusion rule fired on the same
+      operator pair as in both prior PRISM campaigns — deepseek-v4-pro as
+      renderer, leave-one-out vector discordance .556 against a
+      median-of-others of .0055 (roughly one hundredfold, an order of
+      magnitude more extreme than on the internalized-knowledge instrument)
+      — the third independent replication of the discordant-renderer
+      finding, now on an artifact-reading variant, plus a new regime fact:
+      the same model returns empty content at default token allowances when
+      rendering (reasoning-budget consumption), requiring a per-rung
+      override.
+    antecedents: [O2, M7]
+    provenance:
+      created_by: "tool:run_pilot.py"
+      created_at: "2026-07-02T00:00:00Z"
+      under_conditions: "rule fixed ex ante; OP4 collected and reported, excluded from floors"
+    body_sections: ["Pre-Flight Pilot", "Localizing the Discordant Operator"]
+
+negative_findings: []
+
+# ============================================================================
+# Derivations
+# ============================================================================
+derivations:
+  - id: D1
+    statement: >-
+      The H1 null is a bounded version-robustness claim, not an absolute
+      one: "no version drift above the operator floor, at magnitudes the
+      design can certify (about .75 scale points per rung at the tightest
+      floors, per the pre-collection power analysis)." Within that bound
+      the practical rule inverts the anxiety: at the July-2026 epoch a
+      longitudinal Spectrometer series survives vendor version changes
+      without a correction term — but the version floor remains mandatory
+      VERIFICATION equipment, because the bound is epoch-specific and
+      re-measurable at every release for a few tens of dollars.
+    antecedents: [F1, F2, M6]
+    provenance:
+      created_by: author
+      created_at: "2026-07-02T00:00:00Z"
+      under_conditions: ""
+    body_sections: ["Discussion"]
+  - id: D2
+    statement: >-
+      The Semiotic reversal has a coherent reading the ex-ante taxonomy
+      missed: on a TEXT-ONLY pinned panel, visual identity is the least
+      text-recoverable dimension, so its reading leans most on model
+      inference beyond the artifact — the "format-anchored" classification
+      of Semiotic was wrong for text panels specifically. Because all
+      per-dimension movement is sub-floor, the reversal is reported as
+      structure in the instrument's noise, not as supra-floor drift; the
+      taxonomy correction is a pre-registerable prediction for VE-2 and for
+      multimodal panels (where Semiotic should re-anchor).
+    antecedents: [F4, F1]
+    provenance:
+      created_by: author
+      created_at: "2026-07-02T00:00:00Z"
+      under_conditions: ""
+    body_sections: ["The Semiotic Reversal", "Discussion"]
+  - id: D3
+    statement: >-
+      The floors nest empirically, not just by rule: version floors (.0049–
+      .0124 mean) are the same order as the operator floor (.0078 mean) and
+      above it in two ladders, so the version axis contributes real,
+      nonzero apparatus variance even in a null regime — subtracting the
+      pinned version floor from live-panel movement remains the correct
+      decomposition even when the H1 existence test abstains.
+    antecedents: [m1, m2, F1]
+    provenance:
+      created_by: author
+      created_at: "2026-07-02T00:00:00Z"
+      under_conditions: ""
+    body_sections: ["What the Floors Measured", "Discussion"]
+
+# ============================================================================
+# Alternative explanations
+# ============================================================================
+alternative_explanations:
+  - id: A1
+    statement: >-
+      Rival: the null reflects an insensitive estimator rather than
+      version-robustness. Addressed three ways: the seeded synthetic
+      positive path detects planted drift at the pre-computed magnitudes
+      (power analysis + unit suite); the negative control shows the
+      instrument's own re-run noise sits BELOW the floor (so the floor is
+      not degenerate-wide); and the excluded discordant operator
+      demonstrates the pipeline registers large reading differences when
+      an observer actually reads differently (.556 discordance).
+    antecedents: [F2, F3, F5, M6]
+    provenance:
+      created_by: author
+      created_at: "2026-07-02T00:00:00Z"
+      under_conditions: ""
+    body_sections: ["Alternative Explanations"]
+  - id: A2
+    statement: >-
+      Rival: back-catalog rungs are served through updated stacks, so the
+      old version read today is not the old version as shipped, deflating
+      measured drift. Acknowledged as a scope condition (L1): the design
+      measures version identity as SERVED at the reading date; open-weights
+      rungs (the Qwen ladder) pin checkpoints by construction and show the
+      same null, which bounds the serving-stack account.
+    antecedents: [F1, C3]
+    provenance:
+      created_by: author
+      created_at: "2026-07-02T00:00:00Z"
+      under_conditions: ""
+    body_sections: ["Alternative Explanations", "Limitations"]
+  - id: A3
+    statement: >-
+      Rival: the artifact-reading renderer prompt anchors readings so hard
+      that version differences cannot express. Partially addressed: the
+      excluded operator shows a renderer CAN read the same artifacts
+      radically differently under this prompt (.556 vs .0055), and Semiotic
+      shows systematic per-dimension structure — the prompt leaves room for
+      observer differences to express; what does not appear is
+      version-to-version movement above the operator band.
+    antecedents: [F4, F5]
+    provenance:
+      created_by: author
+      created_at: "2026-07-02T00:00:00Z"
+      under_conditions: ""
+    body_sections: ["Alternative Explanations"]
+
+# ============================================================================
+# Robustness checks
+# ============================================================================
+robustness_checks:
+  - id: RC1
+    statement: "Resolution-threshold sweep k in {1.5, 2, 3}: H1 verdict unchanged (no pair clears any k; the largest CI lower bound is .89)."
+    antecedents: [F1]
+    provenance:
+      created_by: "tool:estimator.py --robustness"
+      created_at: "2026-07-02T00:00:00Z"
+      under_conditions: ""
+    body_sections: ["Robustness"]
+  - id: RC2
+    statement: "Distance-metric alternates (Euclidean, diagonal Mahalanobis): H1 verdict and negative-control pass unchanged."
+    antecedents: [F1, F3]
+    provenance:
+      created_by: "tool:estimator.py --robustness"
+      created_at: "2026-07-02T00:00:00Z"
+      under_conditions: ""
+    body_sections: ["Robustness"]
+  - id: RC3
+    statement: "Operator-exclusion sensitivity: including the discordant pair inflates the floor threefold (mean .0078 → .0237) and the H1 verdict is unchanged in both directions — the null does not depend on the exclusion."
+    antecedents: [m1, F1]
+    provenance:
+      created_by: "tool:estimator.py (exploratory re-run, excluded_ops = none)"
+      created_at: "2026-07-02T00:00:00Z"
+      under_conditions: "exploratory"
+    body_sections: ["Robustness"]
+
+# ============================================================================
+# Limitations
+# ============================================================================
+limitations:
+  - id: L1
+    statement: >-
+      VE-1 reads the back-catalog at one calendar time: version epochs are
+      real shipped versions, but any vendor-side serving change to an old
+      pinned ID (silent re-quantization, serving-stack drift) is folded into
+      that rung's reading; open-weights rungs are the replicable guard
+      against this class.
+    provenance:
+      created_by: author
+      created_at: "2026-07-02T00:00:00Z"
+      under_conditions: ""
+    body_sections: ["Limitations"]
+  - id: L2
+    statement: >-
+      H2 is design-complete but data-pending: at VE-1 the live panel
+      coincides with the pinned capture by construction, so the brand-signal
+      decomposition is demonstrated on the estimator's synthetic path and
+      completes empirically at the next real vendor release (VE-2).
+    antecedents: [M3]
+    provenance:
+      created_by: author
+      created_at: "2026-07-02T00:00:00Z"
+      under_conditions: ""
+    body_sections: ["Limitations", "The Two-Panel Design"]
+  - id: L3
+    statement: >-
+      Four artifacts per brand bound the panel's channel resolution, and 40
+      brands bound the brand-cluster bootstrap; the power analysis reports
+      exactly which drift magnitudes are certifiable at this size (H3 well
+      powered; the H1 interval criterion conservative).
+    antecedents: [M6]
+    provenance:
+      created_by: author
+      created_at: "2026-07-02T00:00:00Z"
+      under_conditions: ""
+    body_sections: ["Limitations", "Power Analysis"]
+  - id: L4
+    statement: >-
+      English-language, text-only readings of prominent global brands from
+      one index frame; the calibrated population is stated as a scope
+      condition and travel beyond it is untested.
+    antecedents: [C1]
+    provenance:
+      created_by: author
+      created_at: "2026-07-02T00:00:00Z"
+      under_conditions: ""
+    body_sections: ["Limitations"]
+  - id: L5
+    statement: >-
+      The measured floor is a RENDERER-version floor: within a ladder the
+      extractor is pinned by design (matched-operator isolation), so drift
+      introduced by a version change of the extractor model is not measured
+      at VE-1; an extractor-side ladder under a fixed renderer is the
+      symmetric VE-2+ extension.
+    antecedents: [M4, M5]
+    provenance:
+      created_by: author
+      created_at: "2026-07-02T00:00:00Z"
+      under_conditions: ""
+    body_sections: ["Limitations"]
+
+# ============================================================================
+# Propositions
+# ============================================================================
+propositions:
+  - id: P1
+    statement: >-
+      The version floor is a well-posed metrological construct: classical
+      test-retest dispersion with the locus of error inverted from
+      respondent to apparatus, made estimable for LLM observers by the fact
+      that a text stimulus plus prompt can be held genuinely byte-identical
+      while the vendor replaces the apparatus — no human-instrument analogue
+      permits this isolation.
+    depends_on: [M2, M3]
+    evidence:
+      - type: method
+        anchor: "THEORY_GROUNDING.md §1-§3; the pinned-panel identification"
+    provenance:
+      created_by: author
+      created_at: "2026-07-02T00:00:00Z"
+      under_conditions: ""
+    body_sections: ["The Version Floor as a Metrological Construct"]
+  - id: P2
+    statement: >-
+      Floors nest across time: operator ⊆ version, so a longitudinal
+      "the brand moved" claim is licensed only when live-panel movement
+      clears the version floor measured on the pinned panel for the same
+      epoch pair — the no-rescue rule extended to the temporal axis.
+    depends_on: [M5, C5]
+    evidence:
+      - type: citation
+        anchor: "nested-floor architecture"
+        citation_keys: [zharnikov-2026ay-substrate-floor]
+        citation_role: extends
+    provenance:
+      created_by: author
+      created_at: "2026-07-02T00:00:00Z"
+      under_conditions: ""
+    body_sections: ["The Version Floor", "The Two-Panel Design"]
+  - id: P3
+    statement: >-
+      Version drift, where it exists, is dimension-structured rather than
+      uniform: the model's contribution to a pinned-artifact reading is
+      largest where the reading leans on model priors beyond the text
+      (Ideological, Cultural, Social, Temporal, Economic) and smallest where
+      the artifact text anchors it (Semiotic, Narrative, Experiential) — the
+      mechanism taxonomy (alignment updates vs world-knowledge refresh vs
+      format change) makes the two-set contrast a discriminating test, not a
+      descriptive split.
+    depends_on: [M2, M5]
+    provenance:
+      created_by: author
+      created_at: "2026-07-02T00:00:00Z"
+      under_conditions: "sets fixed ex ante before collection"
+    body_sections: ["Hypotheses", "The Version Floor as a Metrological Construct"]
+  - id: P4
+    statement: >-
+      Both H1 outcomes are results a longitudinal measurement practice
+      needs: measured drift makes the version floor mandatory equipment
+      (subtract it before attributing movement to the brand); a measured
+      null makes version-robustness a citable property with an interval —
+      the pre-registered either-way interpretation, with the power analysis
+      stating exactly which magnitudes the design can certify.
+    depends_on: [M1, M6]
+    evidence:
+      - type: citation
+        anchor: "the boundary-result-as-validation precedent"
+        citation_keys: [zharnikov-2026az-prism-m-metamerism]
+        citation_role: applies
+    provenance:
+      created_by: author
+      created_at: "2026-07-02T00:00:00Z"
+      under_conditions: ""
+    body_sections: ["Pre-Registered Protocol", "Discussion"]
+  - id: P5
+    statement: >-
+      At the July-2026 epoch, LLM brand instruments are version-robust on
+      pinned text panels within the design's certifiable bound: across
+      eleven real shipped versions in three families — including an
+      eighteen-month cross-generation pair — no version change moved the
+      pinned reading beyond the contemporaneous operator floor.
+      Version-robustness is thereby a measured, interval-carrying property
+      rather than an assumption, and the version floor's role at this epoch
+      is verification equipment: re-measure at each release, subtract when
+      it ever binds.
+    depends_on: [P1, P2, P4]
+    evidence:
+      - type: finding
+        anchor: "F1 (H1 null across all ladders), F2 (bounded-null reading), F3 (negative control), RC1-RC3 (robustness)"
+    provenance:
+      created_by: author
+      created_at: "2026-07-02T00:00:00Z"
+      under_conditions: "epoch-specific; re-measurable at every vendor release"
+    body_sections: ["Confirmatory Results", "Discussion"]
+
+# ============================================================================
+# Corpus precedents
+# ============================================================================
+corpus_precedents:
+  - citation_key: zharnikov-2026ax-brand-spectrometer
+    claim: >-
+      The base instrument and the operator floor PRISM-T extends across
+      time; metameric psychometrics supplies the validation frame (floors,
+      not oracles).
+  - citation_key: zharnikov-2026ay-substrate-floor
+    claim: >-
+      Nested noise floors and the no-rescue abstention rule; the version
+      floor is the temporal member of the nest.
+  - citation_key: zharnikov-2026-dimensional-collapse-ai-mediated-search
+    claim: >-
+      Experiment H13: the prior unfloored version-stability spot-check
+      (four model pairs, profile cosines above .97) that PRISM-T promotes
+      to a floored instrument.
+  - citation_key: zharnikov-2026as-prism-structured-measurement
+    claim: "The PRISM family and the PL0-PL4 scaffold PRISM-T instantiates."
+  - citation_key: zharnikov-2026ap-same-meaning-different-prose
+    claim: "Cross-family operator discipline (renderer/extractor family inequality) within each epoch."
+  - citation_key: zharnikov-2026az-prism-m-metamerism
+    claim: >-
+      The stratified 40-brand bank reused as the panel frame; the mechanical
+      operator-exclusion rule and the discordant-renderer finding PRISM-T
+      re-tests on an artifact-reading variant.
+  - citation_key: zharnikov-2026bb-prism-c-choice
+    claim: "Second application of the mechanical exclusion rule (pilot unanimity + OP4 exclusion)."
+  - citation_key: zharnikov-2026-coherence-type-as-crisis-predictor
+    claim: "The five coherence types stratifying the brand panel."
+  - citation_key: zharnikov-2026z-spectral-dynamics
+    claim: >-
+      The dynamics layer that consumes apparatus-corrected readings; any
+      spectral velocity claim presupposes the version floor.
+  - citation_key: zharnikov-2026-non-ergodic-brand-perception-why
+    claim: "Why longitudinal (not cross-sectional) measurement carries the load for brand perception."
+  - citation_key: zharnikov-2026-brand-space-geometry-formal-metric
+    claim: "The distance metric on the eight-dimension space."
+  - citation_key: zharnikov-2026-why-eight-completeness-necessity-sbt
+    claim: "The dimensional basis the per-dimension decomposition presupposes."
+  - citation_key: zharnikov-2026-spectral-brand-theory-computational-framework
+    claim: "The eight-dimension construct (brand as spectral emission)."
+
+# ============================================================================
+# External anchors
+# ============================================================================
+external_anchors:
+  - citation_key: chen-2024-chatgpt-behavior-changing
+    use: >-
+      The canonical LLM behavioral-drift demonstration (GPT-3.5/GPT-4
+      March-vs-June 2023 snapshots differ substantially on task behavior);
+      PRISM-T's contrast case — observational, task-accuracy units, no
+      contemporaneous floor, no fixed-panel identification, no
+      pre-registered either-way reading.
+  - citation_key: novick-1966-classical-test-theory
+    use: >-
+      CTT axiomatization: the version floor is test-retest dispersion with
+      the error locus inverted from respondent to apparatus.
+  - citation_key: widaman-2010-factorial-invariance-longitudinal
+    use: >-
+      Longitudinal factorial invariance (measuring the same construct across
+      time): the version floor as a non-parametric magnitude bound on
+      instrument non-invariance over time.
+  - citation_key: putnick-2016-measurement-invariance-conventions
+    use: "MI reporting conventions backing the invariance framing."
+  - citation_key: gama-2014-concept-drift-survey
+    use: >-
+      Concept-drift monitoring (data drift under a fixed model) — the frame
+      PRISM-T inverts: data fixed by construction, model moving.
+  - citation_key: lu-2019-learning-concept-drift
+    use: "The updated concept-drift review; same inversion contrast."
+  - citation_key: flake-2017-construct-validation-practice
+    use: >-
+      Measurement-practices discipline: construct validity requires the
+      measurement layer to be interrogated, not assumed — extended here to
+      the temporal layer.
+  - citation_key: flake-2020-measurement-schmeasurement-questionable
+    use: "Measurement-quality discipline for the protocol layer."
+  - citation_key: nosek-2018-the-preregistration-revolution
+    use: "Preregistration frame for the frozen PL0 + pre-collection amendments."
+  - citation_key: binz-2023-using-cognitive-psychology
+    use: >-
+      Cognitive grounding for the prior-dependence mechanism taxonomy: LLM
+      responses carry systematic model-internal priors probeable with
+      psychological instruments — the leakage channel T1/T2 predict version
+      changes to move.
+  - citation_key: argyle-2023-out-one-many
+    use: >-
+      Stakes anchor for LLM observers replacing human measurement layers
+      (cited for the deployment fact and its calibration burden, not as
+      endorsement of silicon-sampling designs).
+
+# ============================================================================
+# Open (internal; dropped on public export)
+# ============================================================================
+

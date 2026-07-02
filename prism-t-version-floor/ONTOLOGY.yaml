@@ -1,0 +1,57 @@
+# ONTOLOGY.yaml module - 2026ba (PRISM-T)
+#
+# Per-paper ontology module per [internal path removed]
+# §"ONTOLOGY.yaml schema (v0.1)". owns = terms THIS artifact introduces (unique
+# authority); imports = terms owned by other modules it uses (reference only).
+#
+# PRISM-T = the temporal member of the PRISM instrument family. It owns the
+# version-floor construct and the pinned/live two-panel decomposition; it
+# imports the PRISM scaffold, the 2026ax floor apparatus, and the 2026ay
+# floor-nesting substrate.
+
+paper_key: 2026ba
+schema_version: 0.1
+
+owns:
+  - term_key: prism-t
+    label: "PRISM-T"
+    canonical_form: "PRISM-T"
+    definition: "The temporal member of the PRISM instrument family: an AI-observer instrument that separates apparatus drift (the same artifacts read differently by a new model version) from brand-signal change (the artifacts themselves changed) when a vendor ships a new model version. Its unit is the (brand, version-epoch) reading and its output is the version floor plus the pinned/live drift decomposition."
+    first_section: "PRISM-T Specification"
+  - term_key: version-floor
+    label: "Version floor"
+    canonical_form: "version floor"
+    definition: "The reliability band for longitudinal LLM measurement: the dispersion across model versions of a family reading a byte-identical artifact panel under a matched extractor - the across-time counterpart of the operator floor. Because the pinned input cannot have changed, the version floor is a pure apparatus-drift band; a longitudinal 'the brand moved' claim must clear it, not merely the contemporaneous operator floor (floor nesting: operator within version)."
+    first_section: "The Version Floor"
+    relations:
+      - {type: specializes, term_key: operator-noise-floor, note: "extends the same-time cross-family dispersion band across time: version pairs replace operator pairs as the replicate axis"}
+  - term_key: pinned-panel
+    label: "Pinned panel"
+    canonical_form: "pinned panel"
+    definition: "An artifact panel captured once and stored byte-identical (hash-sealed), re-read at every model-version epoch. Since the input never changes, ALL movement on the pinned panel is apparatus drift - the identification guarantee of the pinned/live decomposition. The pinned panel is a calibration standard, not a representation of the current brand; its staleness is the point."
+    first_section: "The Two-Panel Design"
+  - term_key: live-panel
+    label: "Live panel"
+    canonical_form: "live panel"
+    definition: "The companion panel of fresh artifacts re-collected for the same brands at each version epoch. Its inter-epoch movement carries apparatus drift PLUS brand signal; subtracting the pinned version floor estimates the brand signal. At the birth epoch the live panel coincides with the pinned capture by construction."
+    first_section: "The Two-Panel Design"
+  - term_key: version-epoch
+    label: "Version epoch"
+    canonical_form: "version epoch"
+    definition: "One rung of the model-version ladder: a real, shipped vendor version under which the panels are read (labelled VE-<n>). Epochs are added only when a vendor ships a real version - synthetic versioning (fine-tunes, quantizations, prompt variants) is excluded by protocol. For a pinned panel the reading depends on (artifact bytes, prompt bytes, model version) only, so already-shipped back-catalog versions constitute valid epochs."
+    first_section: "The Version Ladder"
+
+imports:
+  - {term_key: prism-instrument}
+  - {term_key: prism-five-layer-scaffold}
+  - {term_key: operator-noise-floor}
+  - {term_key: artifact-noise-floor}
+  - {term_key: substrate-floor}
+  - {term_key: floor-nesting}
+  - {term_key: per-pair-resolution-criterion}
+  - {term_key: coherence-type}
+  - {term_key: spectral-dimensions}
+  - {term_key: reflection}
+
+refines: []
+

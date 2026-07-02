@@ -1,0 +1,983 @@
+# SPINE.yaml — PRISM-M (2026az)
+#
+# SPINE-FIRST (provenance: generative): authored BEFORE body prose. Every prose
+# claim in paper.md must trace to a node here; new claims require FORK (extend
+# spine first) or REBASE (drop the claim).
+#
+# Schema v0.2 ([internal path removed]): the paper reports an
+# author-produced pre-registered two-stage LLM campaign (Stage-1 bank
+# construction + Stage-2 confirmatory battery under four cross-family operator
+# pairs) with derived floors, fractions, and controls — observations / methods /
+# measurements / findings / negative_findings are first-class nodes.
+
+spine_version: "0.2"
+spine_doc_version: "0.1.0"
+paper_key: "2026az"
+self_citation_key: zharnikov-2026az-prism-m-metamerism
+concept_doi: 10.5281/zenodo.21125785                  # always resolves to latest version
+version_doi: 10.5281/zenodo.21125786                  # v1.0.0
+provenance: generative
+title: >-
+  Measuring Perceptual Indistinguishability: A Pre-Registered Metamerism
+  Instrument for AI Brand Perception (PRISM-M)
+status: >-
+  Spine locked after the frozen PL0 campaign completed (Stage 1 + Stage 2 +
+  controls + robustness, 2026-07-02). Drafting proceeds against this spine.
+
+thesis: |
+  Indistinguishability under a coarse readout is measurable, not assertable.
+  PRISM-M supplies a general dual-floor procedure for testing observational
+  equivalence in any high-dimensional perceptual instrument — a pair of
+  entities counts as a measured metamer only when the full readout resolves
+  them beyond the instrument's own operator noise floor while the coarse
+  readout (its own floor measured separately) does not — and demonstrates the
+  procedure end-to-end on AI brand perception, where the eight-dimension
+  profile is the full readout and a brand-health score, a recommendation
+  ranking, and a binary pick are the aggregators under test. The pre-registered
+  campaign returns a boundary result that showcases the discipline: with four
+  cross-family operator pairs, one renderer reads brands so differently that
+  every brand's operator floor swallows every pairwise distinction — the
+  instrument reports wholesale sub-resolution rather than manufacturing
+  findings (the no-rescue rule), while its diagnostics localize the discordance
+  to a single operator role and its exploratory concordant-triplet analysis
+  shows the predicted metameric structure (half of resolvable distinctions
+  destroyed by the scalar score; the binary pick destroying nearly all;
+  the ranking fewest) below confirmatory strength. The metameric fraction is
+  thereby delivered as an instrument: frozen protocol, measured floors,
+  planted-positive and same-brand-negative controls, seeded estimator, and a
+  concordance diagnostic that tells the consumer of any aggregate metric
+  exactly when the question "what did this number destroy?" can and cannot be
+  answered.
+
+# ============================================================================
+# Boundary conditions
+# ============================================================================
+boundary_conditions:
+  - id: C1
+    statement: >-
+      PRISM-M measures the deployed AI-observer surface: model-internalized
+      public-artifact exposure elicited through four standardized artifact
+      channels (official communications, press, experience reports, social
+      discourse). Human-panel metamerism is out of scope (a separate
+      human-subjects instrument is required for human-perception claims).
+  - id: C2
+    statement: >-
+      Metameric fractions are reported per frozen bank and per aggregator,
+      never as universal constants; the bank spans five coherence types and
+      two sectors under an explicit stratified frame.
+  - id: C3
+    statement: >-
+      Floors are informative only with at least two cross-family operator
+      pairs and at least two artifact channels per brand; below that the
+      instrument reports sub-resolution by construction.
+  - id: C4
+    statement: >-
+      Single-epoch instrument: all readings taken from one model generation
+      (pinned operator IDs, July 2026); temporal drift across model versions
+      is a separate instrument's province.
+  - id: C5
+    statement: >-
+      Resolution claims are conditional on cross-family operator concordance;
+      a discordant operator pair legitimately suppresses resolution under the
+      no-rescue floor rule rather than being dropped to rescue findings.
+
+# ============================================================================
+# Assumption atoms
+# ============================================================================
+assumption_atoms:
+  - id: AA1
+    statement: >-
+      For claims about AI-mediated consumption surfaces, AI observers are the
+      measurement construct itself, not a proxy for human raters; human
+      convergent validity is required only for human-perception claims.
+    evidence:
+      - type: citation
+        anchor: >-
+          LLM-derived psychological measurement validates against human gold
+          standards where humans are the construct; the deployed-surface
+          argument inverts the direction of validity burden.
+        citation_keys:
+          [
+            rathje-2024-gpt-effective-multilingual,
+            abdurahman-2024-perils-opportunities-llms,
+            trott-2024-augment-psycholinguistic-datasets,
+          ]
+        citation_role: supports
+    provenance:
+      created_by: author
+      created_at: "2026-07-02T00:00:00Z"
+      under_conditions: "resolved at drafting per the gate decision"
+    body_sections: ["Convergent Validity and the AI-Observer Surface"]
+  - id: AA2
+    statement: >-
+      Temperature-0 readings are treated as operator-deterministic; repeat-draw
+      variance within one (brand, channel, operator-pair) cell is not
+      separately estimable in this design and is absorbed into the channel
+      dimension of the floors.
+    provenance:
+      created_by: author
+      created_at: "2026-07-02T00:00:00Z"
+      under_conditions: "Anthropic 4.7+ rejects sampling params; parameter omitted and logged as-sent"
+    body_sections: ["Instrument Configuration"]
+
+# ============================================================================
+# Observations (raw L-layer events)
+# ============================================================================
+observations:
+  - id: O1
+    statement: >-
+      Stage 1 collected 640 parsed records (40 brands x 4 artifact channels x
+      2 cross-family operator pairs x 2 readouts) with zero malformed
+      extractions, from 960 logged model API calls.
+    raw_data_pointer: "[internal path removed]"
+    instrument: "PL1 operator pairs OP1 (claude-opus-4-8 -> gpt-5.4-mini-2026-03-17), OP3 (qwen3.7-max-2026-06-08 -> deepseek-v4-flash)"
+    timestamp: "2026-07-02"
+    conditions_at_capture: "prompt set prism-m/v1.0.0; temperature 0 where honored; append-only JSONL logging"
+    provenance:
+      created_by: "tool:run_stage1.py"
+      created_at: "2026-07-02T00:00:00Z"
+      under_conditions: "frozen PL0 + PL1 + PL2 bank v1.0.0"
+    body_sections: ["Stage 1: Bank Construction"]
+  - id: O2
+    statement: >-
+      Stage 2 collected 1,088 parsed main-variant records (17 brands x 4
+      channels x 4 operator pairs x 4 readouts) plus 40 prompt-ablation
+      records, zero malformed, from 1,421 logged calls; full campaign
+      totalled 2,416 logged calls at an estimated 13.40 USD.
+    raw_data_pointer: "[internal path removed]"
+    instrument: "OP1-OP4 per PL1_CONFIG.yaml (four families: Anthropic, OpenAI, Alibaba, DeepSeek)"
+    timestamp: "2026-07-02"
+    conditions_at_capture: "frozen PAIR_BANK v1.0.0 (Stage-1 retention rule applied before Stage 2)"
+    provenance:
+      created_by: "tool:run_stage2.py"
+      created_at: "2026-07-02T00:00:00Z"
+      under_conditions: "PL3 append-only; per-call cost telemetry from provider usage fields"
+    body_sections: ["Stage 2: Confirmatory Battery"]
+  - id: O3
+    statement: >-
+      A cross-extractor diagnostic (8 logged calls) re-scored one OP1-rendered
+      and one OP4-rendered prose with all four extractor families: on the OP1
+      prose the four extractors agreed within roughly 2 scale points on every
+      dimension; on the OP4 prose all four extractors produced markedly lower
+      Economic/Temporal readings, with the OP4 extractor the most extreme.
+    raw_data_pointer: "[internal path removed]*_calls.jsonl"
+    instrument: "extractors gpt-5.4-mini, qwen3.6-flash, claude-haiku-4-5, deepseek-v4-flash on fixed prose"
+    timestamp: "2026-07-02"
+    conditions_at_capture: "exploratory diagnostic; prose drawn from logged Stage-2 renders (Basecamp, official channel)"
+    provenance:
+      created_by: "tool:crossextract diagnostic (logged)"
+      created_at: "2026-07-02T00:00:00Z"
+      under_conditions: "post-hoc localization of operator discordance"
+    body_sections: ["Localizing the Discordant Operator"]
+
+# ============================================================================
+# Methods
+# ============================================================================
+methods:
+  - id: M1
+    statement: >-
+      Frozen pre-registered protocol (PL0): three hypotheses (H1 existence of
+      measured metamers; H2 garbling-severity monotonicity; H3 cross-operator
+      stability), the metamer criterion (resolved on the full readout at
+      S/N > 2 AND unresolved on the aggregator at S/N < 1, floors measured),
+      the Stage-1 retention rule, family-wise alpha .05 Bonferroni-split to
+      .017 per hypothesis, stopping rules, and the confirmatory/exploratory
+      boundary.
+    evidence:
+      - type: citation
+        anchor: "preregistration + measurement-discipline anchors"
+        citation_keys:
+          [
+            nosek-2018-the-preregistration-revolution,
+            flake-2020-measurement-schmeasurement-questionable,
+          ]
+        citation_role: uses_method_of
+    provenance:
+      created_by: author
+      created_at: "2026-07-01T00:00:00Z"
+      under_conditions: "PL0 locked before any API spend"
+    body_sections: ["Pre-Registered Protocol"]
+  - id: M2
+    statement: >-
+      Stratified stimulus frame: a named public brand index (Interbrand Best
+      Global Brands top-100) stratified by five SBT coherence types x
+      B2C/B2B, four brands per cell (40 total), with a pre-registered
+      supplementation rule for structurally thin strata, per-brand goods-type
+      covariate, and balance diagnostics reported at PL4.
+    evidence:
+      - type: citation
+        anchor: "coherence-type typology spanning the bank"
+        citation_keys: [zharnikov-2026-coherence-type-as-crisis-predictor]
+        citation_role: uses_method_of
+      - type: citation
+        anchor: "brand stimulus norms precedent for explicit stimulus frames"
+        citation_keys: [raffaelli-2024-brand-recognition-norms]
+        citation_role: supports
+    provenance:
+      created_by: author
+      created_at: "2026-07-02T00:00:00Z"
+      under_conditions: "assignments made from public brand knowledge before any Stage-1 readout"
+    body_sections: ["The Stimulus Frame"]
+  - id: M3
+    statement: >-
+      Channel-conditioned AI-observer reading: each brand is read through four
+      standardized public-artifact channels (official, press, experience,
+      social); a renderer model writes 250-400 words of channel-conditioned
+      analytical prose from its public-artifact exposure, and a
+      different-family extractor converts the prose to the eight-dimension
+      vector — renderer and extractor families never coincide, and each family
+      carries both roles across the operator set.
+    evidence:
+      - type: citation
+        anchor: "cross-family renderer/extractor discipline"
+        citation_keys: [zharnikov-2026ap-same-meaning-different-prose]
+        citation_role: uses_method_of
+      - type: citation
+        anchor: "direct-elicitation precedent: models queried about brands as observers"
+        citation_keys: [zharnikov-2026-dimensional-collapse-ai-mediated-search]
+        citation_role: extends
+      - type: citation
+        anchor: "LLM-as-experimental-subject paradigm"
+        citation_keys:
+          [horton-2023-large-language-models, filippas-2024-large-language-models]
+        citation_role: supports
+    provenance:
+      created_by: author
+      created_at: "2026-07-02T00:00:00Z"
+      under_conditions: "operator IDs pinned to exact model-version strings; live catalog ping before launch"
+    body_sections: ["Reading Brands Through Channels"]
+  - id: M4
+    statement: >-
+      The aggregator battery: A-SCORE (11-grade brand-health scalar mapped to
+      [0,1]), A-RANK (ten-slot recommendation ranking position), A-PICK
+      (binary recommend call), each extracted from the same rendered prose by
+      the same cross-family extractor and each carrying its OWN operator
+      floor, so "unresolved on the aggregator" is measured, never asserted.
+    evidence:
+      - type: citation
+        anchor: "aggregators as projection operators; the garbling account under test"
+        citation_keys: [zharnikov-2026au-correspondence-principle-brand]
+        citation_role: tests
+      - type: citation
+        anchor: "comparison-of-experiments ordering behind the severity ladder"
+        citation_keys:
+          [blackwell-1951-comparison-of-experiments, blackwell-1953-equivalent-comparisons]
+        citation_role: uses_method_of
+    provenance:
+      created_by: author
+      created_at: "2026-07-02T00:00:00Z"
+      under_conditions: "structured-JSON outputs; redraw-once-then-flag policy"
+    body_sections: ["The Aggregator Battery"]
+  - id: M5
+    statement: >-
+      Deterministic seeded estimator (PL4): full-readout distance = 1 - cosine
+      between brand vectors; aggregator distance = absolute difference of
+      normalized scalars; operator floor per brand per readout = maximum
+      pairwise distance among the brand's per-operator-pair values; pair floor
+      = max of the endpoints' floors; S/N = distance / pair floor; metameric
+      fraction per aggregator over resolved pairs; source-cluster bootstrap
+      (brands as clusters, 2,000 replicates, seed 20260702) for 95 percent
+      intervals.
+    evidence:
+      - type: citation
+        anchor: "floor apparatus and per-pair S/N rule inherited from the base instrument"
+        citation_keys: [zharnikov-2026ax-brand-spectrometer]
+        citation_role: uses_method_of
+      - type: citation
+        anchor: "cluster-robust bootstrap precedent for non-independent observations"
+        citation_keys:
+          [
+            mackinnon-2023-cluster-robust-inference,
+            cheung-2023-diy-bootstrapping,
+            yang-2026-bootstrap-confidence-intervals,
+          ]
+        citation_role: uses_method_of
+    provenance:
+      created_by: "tool:estimator.py"
+      created_at: "2026-07-02T00:00:00Z"
+      under_conditions: "unit-tested on synthetic data before any API spend (10 tests incl. both controls)"
+    body_sections: ["The Metameric-Fraction Estimator"]
+  - id: M6
+    statement: >-
+      Two pre-registered controls: a planted positive (synthetic scalar-equal,
+      profile-distinct pair the estimator MUST flag) and a same-brand negative
+      (cross-channel pseudo-pairs of one brand must NOT be flagged metameric),
+      both evaluated against the same measured floors as real pairs.
+    provenance:
+      created_by: author
+      created_at: "2026-07-01T00:00:00Z"
+      under_conditions: "positive control synthetic by design; negative control uses collected data"
+    body_sections: ["Controls"]
+  - id: M7
+    statement: >-
+      Robustness battery: resolution-threshold sweep k in {1.5, 2, 3};
+      Euclidean and Mahalanobis full-readout distance alternates; a
+      prompt-ablation subsample (10 brands, terse renderer prompt) read
+      against the operator floor; and a symmetric leave-one-operator-out
+      sensitivity analysis re-running the full frozen pipeline with each
+      operator pair held out.
+    provenance:
+      created_by: "tool:estimator.py --robustness"
+      created_at: "2026-07-02T00:00:00Z"
+      under_conditions: "all exploratory analyses labelled per PL0 section 1"
+    body_sections: ["Robustness"]
+
+# ============================================================================
+# Measurements (derived quantities)
+# ============================================================================
+measurements:
+  - id: m1
+    statement: >-
+      Per-(brand, channel, operator-pair) eight-dimension vectors plus
+      A-SCORE / A-RANK / A-PICK readouts for the 17 frozen-bank brands under
+      all four operator pairs (Stage 2), and for all 40 bank brands under two
+      operator pairs (Stage 1).
+    antecedents: [O1, O2, M3, M4]
+    provenance:
+      created_by: "tool:run_stage1.py + run_stage2.py"
+      created_at: "2026-07-02T00:00:00Z"
+      under_conditions: "zero malformed after redraw policy; 2,416 total logged calls"
+    body_sections: ["Stage 2: Confirmatory Battery"]
+  - id: m2
+    statement: >-
+      Stage-1 metamer-pair bank: of 780 candidate pairs, 23 retained under the
+      frozen retention rule (full S/N > 2 AND provisional scalar S/N < 1), 19
+      flagged marginal; the retained pairs span 17 distinct brands and are
+      dominated by cross-sector pairs sharing mid-range scalar grades.
+    antecedents: [O1, M5]
+    provenance:
+      created_by: "tool:freeze_pair_bank.py"
+      created_at: "2026-07-02T00:00:00Z"
+      under_conditions: "retention on Stage-1 two-pair provisional floors"
+    body_sections: ["Stage 1: Bank Construction"]
+  - id: m3
+    statement: >-
+      Stage-2 operator floors: per-brand full-readout floors range .0014 to
+      .0755 with every brand's floor dominated by an OP4-involving distance;
+      the median brand-pair full-readout distance (.0024) sits below the
+      typical floor, and the maximum pair S/N is 1.63.
+    antecedents: [m1, M5]
+    provenance:
+      created_by: "tool:estimator.py"
+      created_at: "2026-07-02T00:00:00Z"
+      under_conditions: "floors = max pairwise across the four operator pairs"
+    body_sections: ["What the Floors Measured"]
+
+# ============================================================================
+# Findings
+# ============================================================================
+findings:
+  - id: F1
+    statement: >-
+      Confirmatory H1 at the pre-registered criterion: 0 of 136 frozen-bank
+      pairs resolved on the full readout above the four-operator floor
+      (maximum S/N 1.63 < 2), so no measured metamer exists at the four-family
+      floor and H1 is not supported under the frozen criterion.
+    antecedents: [m1, m3, M1, M5]
+    falsifier: >-
+      Any pair whose channel-bootstrap full-readout S/N lower bound exceeded 2
+      under the four-operator floor would overturn this finding.
+    provenance:
+      created_by: "tool:estimator.py"
+      created_at: "2026-07-02T00:00:00Z"
+      under_conditions: "k = 2, cosine distance, all four operator pairs"
+    body_sections: ["Confirmatory Results"]
+  - id: F2
+    statement: >-
+      Both pre-registered controls behaved: the planted scalar-equal,
+      profile-distinct pair was flagged metameric (estimator sensitivity), and
+      0 of 102 same-brand cross-channel pseudo-pairs were flagged metameric at
+      the four-operator floor (estimator specificity).
+    antecedents: [M6, m1]
+    provenance:
+      created_by: "tool:estimator.py"
+      created_at: "2026-07-02T00:00:00Z"
+      under_conditions: "positive control on seeded synthetic records; negative on collected data"
+    body_sections: ["Controls"]
+  - id: F3
+    statement: >-
+      The sub-resolution verdict is robust: k = 3, Euclidean distance, and
+      Mahalanobis distance all yield 0 resolved pairs; relaxing to k = 1.5
+      resolves exactly one pair (which the scalar then collapses, fraction
+      1/1).
+    antecedents: [F1, M7]
+    provenance:
+      created_by: "tool:estimator.py --robustness"
+      created_at: "2026-07-02T00:00:00Z"
+      under_conditions: "same data, alternate thresholds/metrics"
+    body_sections: ["Robustness"]
+  - id: F4
+    statement: >-
+      Exploratory operator-concordance diagnostic: three of four operator
+      pairs are mutually concordant (median per-brand full-readout distance
+      .0009-.0020 across OP1/OP2/OP3 combinations) while every OP4-involving
+      combination is five-to-ten-fold larger (median .0101-.0125, max .0755) —
+      the floor inflation localizes to one operator pair.
+    antecedents: [m1, m3]
+    provenance:
+      created_by: "tool:estimator.py exploratory.operator_concordance"
+      created_at: "2026-07-02T00:00:00Z"
+      under_conditions: "exploratory; no protected alpha"
+    body_sections: ["Localizing the Discordant Operator"]
+  - id: F5
+    statement: >-
+      The cross-extractor diagnostic localizes the OP4 discordance primarily
+      to the renderer role: all four extractor families score the
+      OP4-rendered prose substantially lower on Economic and Temporal
+      dimensions than the OP1-rendered prose of the same brand-channel cell,
+      while on OP1 prose the four extractors agree; the OP4 extractor
+      additionally amplifies the divergence with the most extreme readings.
+    antecedents: [O3, F4]
+    provenance:
+      created_by: "tool:crossextract diagnostic"
+      created_at: "2026-07-02T00:00:00Z"
+      under_conditions: "exploratory; single brand-channel cell; 8 calls"
+    body_sections: ["Localizing the Discordant Operator"]
+  - id: F6
+    statement: >-
+      Exploratory leave-one-operator-out sensitivity: holding out OP4 restores
+      resolution (14 of 136 pairs resolved) while holding out any concordant
+      pair leaves 0 resolved; within the concordant triplet the metameric
+      fractions are .500 for the scalar score (7/14; bootstrap 95 percent CI
+      .000-.846), .286 for the ranking (4/14; CI .000-1.000), and .929 for the
+      binary pick (13/14; CI .750-1.000).
+    antecedents: [F4, M7, m1]
+    provenance:
+      created_by: "tool:estimator.py exploratory.leave_one_operator_out + concordant_subset"
+      created_at: "2026-07-02T00:00:00Z"
+      under_conditions: "exploratory; operator subset selected post hoc by the symmetric leave-one-out table"
+    body_sections: ["The Concordant-Triplet Picture"]
+  - id: F7
+    statement: >-
+      Within the concordant triplet the severity ordering runs in the frozen
+      prediction's direction — fraction(pick) > fraction(score) >
+      fraction(rank) > fraction(full) = 0 — but the score-versus-rank paired
+      contrast does not reach the pre-registered threshold (McNemar exact,
+      6 score-only vs 3 rank-only discordant pairs, p = .254), while
+      fraction(rank) > 0 does (Holm-adjusted p < .001).
+    antecedents: [F6]
+    provenance:
+      created_by: "tool:estimator.py test_h2 on the concordant subset"
+      created_at: "2026-07-02T00:00:00Z"
+      under_conditions: "exploratory; n_resolved = 14 limits power"
+    body_sections: ["The Concordant-Triplet Picture"]
+  - id: F8
+    statement: >-
+      Within the concordant triplet the scalar fraction is stable across
+      operator pairs (per-pair fractions .277 / .563 / .419 under
+      leave-one-operator-out floors; dispersion .286 within the pooled
+      bootstrap half-width .423) — the H3 stability pattern holds
+      exploratorily where concordance holds.
+    antecedents: [F6]
+    provenance:
+      created_by: "tool:estimator.py test_h3 on the concordant subset"
+      created_at: "2026-07-02T00:00:00Z"
+      under_conditions: "exploratory"
+    body_sections: ["The Concordant-Triplet Picture"]
+  - id: F9
+    statement: >-
+      Prompt-ablation robustness: 19 of 20 ablated-prompt readings (95
+      percent) sit within one operator floor of their main-prompt readings
+      (median shift .24 floors, maximum 1.99), so prompt wording is not the
+      dominant noise source.
+    antecedents: [O2, M7]
+    provenance:
+      created_by: "tool:estimator.py exploratory.prompt_ablation"
+      created_at: "2026-07-02T00:00:00Z"
+      under_conditions: "10 brands x official channel x OP1+OP3, terse renderer prompt"
+    body_sections: ["Robustness"]
+  - id: F10
+    statement: >-
+      At the tighter concordant-triplet floor, 10 of 102 same-brand
+      cross-channel pseudo-pairs flag as metameric (9.8 percent): a brand's
+      official-channel and social-channel readings can be structurally
+      distinct on the full readout yet carry identical scalar grades —
+      within-brand channel-facet metamerism that doubles as the specificity
+      boundary of the tighter floor.
+    antecedents: [F6, M6]
+    provenance:
+      created_by: "tool:estimator.py negative_control on the concordant subset"
+      created_at: "2026-07-02T00:00:00Z"
+      under_conditions: "exploratory"
+    body_sections: ["The Concordant-Triplet Picture", "Limitations"]
+
+negative_findings:
+  - id: NF1
+    statement: >-
+      Even within the concordant triplet no single pair clears the strict
+      pre-registered H1 interval criterion (channel-resampled bootstrap
+      full-readout S/N lower bound > 2 AND aggregator S/N upper bound < 1):
+      with four channels per brand the per-pair bootstrap intervals are too
+      wide, so H1 remains unconfirmed at every floor tested.
+    antecedents: [F6]
+    provenance:
+      created_by: "tool:estimator.py test_h1 on the concordant subset"
+      created_at: "2026-07-02T00:00:00Z"
+      under_conditions: "4 channels/brand bounds the resampling resolution"
+    body_sections: ["Confirmatory Results", "Limitations"]
+
+# ============================================================================
+# Derivations
+# ============================================================================
+derivations:
+  - id: D1
+    statement: >-
+      The wholesale sub-resolution verdict is the no-rescue floor rule
+      operating as designed: one discordant cross-family operator inflates
+      every brand's operator floor (floor = max pairwise across operator
+      pairs), and the pre-registered discipline forbids dropping the
+      discordant operator to rescue findings — the instrument's refusal IS the
+      measurement.
+    antecedents: [F1, F4, C5]
+    evidence:
+      - type: citation
+        anchor: "nested-floor no-rescue logic"
+        citation_keys: [zharnikov-2026ay-substrate-floor]
+        citation_role: applies
+    provenance:
+      created_by: author
+      created_at: "2026-07-02T00:00:00Z"
+      under_conditions: ""
+    body_sections: ["What the Floors Measured"]
+  - id: D2
+    statement: >-
+      The concordant-triplet point estimates are consistent with the
+      garbling-severity account (coarser readouts destroy more resolvable
+      structure) but the design's resolved-pair count (14) is below the n
+      needed for the paired ladder contrast at alpha .017 — the ladder is
+      demonstrated as instrument output, not confirmed as hypothesis.
+    antecedents: [F6, F7]
+    provenance:
+      created_by: author
+      created_at: "2026-07-02T00:00:00Z"
+      under_conditions: ""
+    body_sections: ["The Concordant-Triplet Picture"]
+
+# ============================================================================
+# Alternative explanations
+# ============================================================================
+alternative_explanations:
+  - id: A1
+    statement: >-
+      Rival: scalar collisions merely reflect the 11-grade quantization of the
+      score, not perceptual garbling. Partially addressed: the scalar floor is
+      measured on the same quantized scale, so sub-floor collisions are the
+      deployed readout's real behavior; and the ten-slot ranking (comparable
+      cardinality) destroys fewer distinctions than the eleven-grade score,
+      which a pure-quantization account does not predict.
+    antecedents: [F6, F7]
+    provenance:
+      created_by: author
+      created_at: "2026-07-02T00:00:00Z"
+      under_conditions: ""
+    body_sections: ["Alternative Explanations"]
+  - id: A2
+    statement: >-
+      Rival: OP4 is a malfunctioning operator rather than a different
+      observer. Rejected: its renders are coherent prose that all four
+      extractor families read consistently (lower on the same dimensions), it
+      passed the same smoke and parse gates as the other operators, and its
+      extreme-but-systematic readings are exactly what a differently-trained
+      observer looks like to a metameric instrument.
+    antecedents: [F5, O3]
+    provenance:
+      created_by: author
+      created_at: "2026-07-02T00:00:00Z"
+      under_conditions: ""
+    body_sections: ["Localizing the Discordant Operator"]
+  - id: A3
+    statement: >-
+      Rival: the concordant extractors' positivity compression (readings
+      concentrated in the 6-9 band) could deflate true profile distances and
+      thereby inflate apparent scalar collisions. Acknowledged as a
+      limitation; the planted positive control shows the estimator flags
+      genuinely distinct profiles when they exist, but compression bounds the
+      separations the full readout can exhibit for real prominent brands.
+    antecedents: [F6]
+    provenance:
+      created_by: author
+      created_at: "2026-07-02T00:00:00Z"
+      under_conditions: ""
+    body_sections: ["Alternative Explanations", "Limitations"]
+
+# ============================================================================
+# Robustness checks
+# ============================================================================
+robustness_checks:
+  - id: RC1
+    statement: "Resolution-threshold sweep k in {1.5, 2, 3}: verdict unchanged (0 resolved at k >= 2; one pair at k = 1.5)."
+    antecedents: [F3]
+    provenance:
+      created_by: "tool:estimator.py --robustness"
+      created_at: "2026-07-02T00:00:00Z"
+      under_conditions: ""
+    body_sections: ["Robustness"]
+  - id: RC2
+    statement: "Distance-metric alternates (Euclidean, Mahalanobis): verdict unchanged (0 resolved)."
+    antecedents: [F3]
+    provenance:
+      created_by: "tool:estimator.py --robustness"
+      created_at: "2026-07-02T00:00:00Z"
+      under_conditions: ""
+    body_sections: ["Robustness"]
+  - id: RC3
+    statement: "Prompt ablation: 95 percent of readings within one operator floor of the main prompt's."
+    antecedents: [F9]
+    provenance:
+      created_by: "tool:estimator.py"
+      created_at: "2026-07-02T00:00:00Z"
+      under_conditions: ""
+    body_sections: ["Robustness"]
+  - id: RC4
+    statement: "Symmetric leave-one-operator-out: resolution returns only when OP4 is held out; holding out any concordant pair changes nothing."
+    antecedents: [F6]
+    provenance:
+      created_by: "tool:estimator.py"
+      created_at: "2026-07-02T00:00:00Z"
+      under_conditions: ""
+    body_sections: ["Robustness"]
+
+# ============================================================================
+# Limitations
+# ============================================================================
+limitations:
+  - id: L1
+    statement: >-
+      Single epoch, four pinned operator pairs: the concordance structure is a
+      property of these model versions at this date, not of the families in
+      general.
+    provenance:
+      created_by: author
+      created_at: "2026-07-02T00:00:00Z"
+      under_conditions: ""
+    body_sections: ["Limitations"]
+  - id: L2
+    statement: >-
+      Four artifact channels per brand bound the channel-resampled bootstrap:
+      the strict H1 interval criterion is underpowered at this design size, so
+      H1's failure at the interval criterion is partly a design-resolution
+      statement (a larger channel set is the remedy, not a different
+      criterion).
+    antecedents: [NF1]
+    provenance:
+      created_by: author
+      created_at: "2026-07-02T00:00:00Z"
+      under_conditions: ""
+    body_sections: ["Limitations"]
+  - id: L3
+    statement: >-
+      AI-observer surface only: readings elicit the models' internalized
+      public-artifact exposure through channel-conditioned prompts rather than
+      grounding on fetched artifact excerpts; fetched-artifact grounding and
+      human panels are separate instruments' provinces.
+    antecedents: [AA1, C1]
+    provenance:
+      created_by: author
+      created_at: "2026-07-02T00:00:00Z"
+      under_conditions: ""
+    body_sections: ["Limitations", "Convergent Validity and the AI-Observer Surface"]
+  - id: L4
+    statement: >-
+      Fractions are bank-relative: the frozen bank spans five coherence types
+      and two sectors but is 40 brands from one index frame; the fraction is a
+      property of (bank, aggregator, operator set), reported as such.
+    antecedents: [C2]
+    provenance:
+      created_by: author
+      created_at: "2026-07-02T00:00:00Z"
+      under_conditions: ""
+    body_sections: ["Limitations"]
+  - id: L5
+    statement: >-
+      English-language readings only: all renders and extractions are
+      English-prompted, so the measured surface is the English-language
+      AI-observer surface; native-language operators are required before any
+      claim extends to non-English observation, per the base instrument's own
+      language discipline.
+    provenance:
+      created_by: author
+      created_at: "2026-07-02T00:00:00Z"
+      under_conditions: ""
+    body_sections: ["Limitations"]
+  - id: AA3
+    statement: >-
+      Two stated modeling choices: brand vectors pool the four channels with
+      equal weight (channel salience is not modeled), and the eleven-grade
+      A-SCORE scale maps linearly onto [0,1] (ordinal-to-interval linearity
+      assumed, mitigated by measuring the scalar floor on the same mapped
+      scale).
+    provenance:
+      created_by: author
+      created_at: "2026-07-02T00:00:00Z"
+      under_conditions: ""
+    body_sections: ["The Metameric-Fraction Estimator", "The Aggregator Battery"]
+
+# ============================================================================
+# Propositions
+# ============================================================================
+propositions:
+  - id: P1
+    statement: >-
+      Indistinguishability under a coarse readout is a measurable quantity:
+      the dual-floor procedure (full-instrument operator floor + the coarse
+      readout's own floor, both measured from cross-family operator
+      dispersion) turns "these two are indistinguishable" from an assertion
+      into a falsifiable classification with planted-positive and same-brand
+      negative controls, and the procedure is instrument-general — any
+      high-dimensional perceptual readout paired with any coarser projection
+      of it can be tested the same way.
+    conditions: "C3, C5"
+    antecedents: [M5, M6, F2]
+    evidence:
+      - type: citation
+        anchor: "observational-equivalence formal family"
+        citation_keys:
+          [koopmans-1949-172125144, manski-1995-untitled]
+        citation_role: extends
+      - type: citation
+        anchor: "color metamerism source structure"
+        citation_keys: [wyszecki-1982-color-science-concepts]
+        citation_role: uses_method_of
+    falsifier: >-
+      A planted scalar-equal profile-distinct pair the estimator fails to
+      flag, or a same-brand pseudo-pair population it flags at the frozen
+      floor, falsifies the procedure's sensitivity/specificity claims.
+    provenance:
+      created_by: author
+      created_at: "2026-07-02T00:00:00Z"
+      under_conditions: ""
+    body_sections: ["A Dual-Floor Procedure for Indistinguishability"]
+  - id: P2
+    statement: >-
+      The metameric fraction operationalizes spectral metamerism for AI brand
+      perception: the share of resolvable brand distinctions an aggregate
+      readout destroys, per frozen bank and aggregator, with a source-cluster
+      bootstrap interval — moving the corpus claim "aggregate scores destroy
+      brand distinctions" from geometric theorem and demonstration to a
+      reusable measured quantity, whose first pre-registered campaign returns
+      sub-resolution at the four-family floor and .500 (scalar) within the
+      concordant triplet, exploratorily.
+    conditions: "C1, C2, C4"
+    antecedents: [P1, F1, F6]
+    evidence:
+      - type: citation
+        anchor: "the geometric prediction being operationalized"
+        citation_keys: [zharnikov-2026-spectral-metamerism-brand-perception-projection]
+        citation_role: operationalizes
+      - type: citation
+        anchor: "behavioral metamerism and the observational-equivalence formalization"
+        citation_keys: [zharnikov-2026-ai-native-brand-identity-from]
+        citation_role: extends
+      - type: citation
+        anchor: "the demonstration runs being standardized"
+        citation_keys: [zharnikov-2026-dimensional-collapse-ai-mediated-search]
+        citation_role: extends
+    falsifier: >-
+      A campaign under the same frozen protocol finding the scalar fraction
+      indistinguishable from zero at a concordant floor would bound the
+      garbling claim at the measured scale.
+    provenance:
+      created_by: author
+      created_at: "2026-07-02T00:00:00Z"
+      under_conditions: ""
+    body_sections: ["The Metameric Fraction as an Instrument Output"]
+  - id: P3
+    statement: >-
+      Garbling severity is an ordered, testable property of aggregators: the
+      battery formalizes scalar score, ranking, and binary pick as projections
+      with measured floors, and the campaign's point estimates run in the
+      predicted monotone direction (binary > scalar > ranking > full = 0),
+      with the paired scalar-versus-ranking contrast below confirmatory
+      strength at the achieved resolved-pair count.
+    conditions: "C2"
+    antecedents: [M4, F7, D2]
+    evidence:
+      - type: citation
+        anchor: "aggregators as garbling operators of the perception vector"
+        citation_keys: [zharnikov-2026au-correspondence-principle-brand]
+        citation_role: tests
+      - type: citation
+        anchor: "single-item versus multi-attribute predictive-validity literature the ladder speaks to"
+        citation_keys:
+          [
+            bergkvist-2007-predictive-validity-multipleitem,
+            diamantopoulos-2012-guidelines-single-item,
+            ailawadi-2003-revenue-premium-outcome,
+          ]
+        citation_role: engages
+    falsifier: >-
+      A reversed ordering (ranking destroying more than the scalar, or the
+      full readout destroying anything) under a concordant floor.
+    provenance:
+      created_by: author
+      created_at: "2026-07-02T00:00:00Z"
+      under_conditions: ""
+    body_sections: ["The Aggregator Battery", "The Concordant-Triplet Picture"]
+  - id: P4
+    statement: >-
+      Resolution claims are operator-conditional, and that conditionality is
+      itself measurable: the concordance diagnostic (per-operator-pair
+      distance table plus cross-extractor localization) tells the consumer of
+      an aggregate metric whether the instrument's floors permit any
+      distinction claims at all, and localizes discordance to a role
+      (renderer versus extractor) when they do not — the refusal-to-resolve
+      discipline of the substrate-floor account applied to indistinguishability
+      measurement.
+    conditions: "C5"
+    antecedents: [D1, F4, F5, F8]
+    evidence:
+      - type: citation
+        anchor: "no-rescue nested-floor logic"
+        citation_keys: [zharnikov-2026ay-substrate-floor]
+        citation_role: applies
+      - type: citation
+        anchor: "cross-family operator discipline that makes the diagnostic possible"
+        citation_keys: [zharnikov-2026ap-same-meaning-different-prose]
+        citation_role: applies
+    falsifier: >-
+      An operator set whose concordance diagnostic shows tight agreement while
+      leave-one-out floors still flip the resolution verdict.
+    provenance:
+      created_by: author
+      created_at: "2026-07-02T00:00:00Z"
+      under_conditions: ""
+    body_sections: ["What the Floors Measured", "Localizing the Discordant Operator"]
+  - id: P5
+    statement: >-
+      For claims about the deployed AI-mediated surface, AI observers are the
+      construct rather than a proxy: the readouts under test (scores,
+      rankings, picks produced by AI systems) are consumed as-is downstream,
+      so validating them against human panels would validate a different
+      construct; human convergent validity becomes necessary exactly when the
+      claim extends to human perception.
+    conditions: "C1"
+    antecedents: [AA1]
+    evidence:
+      - type: citation
+        anchor: "validity conditions for LLM-based measurement"
+        citation_keys:
+          [
+            abdurahman-2024-perils-opportunities-llms,
+            rathje-2024-gpt-effective-multilingual,
+            trott-2024-augment-psycholinguistic-datasets,
+          ]
+        citation_role: engages
+    falsifier: >-
+      Evidence that downstream consumption surfaces re-anchor on human panels
+      rather than AI readouts would shift the validity burden back.
+    provenance:
+      created_by: author
+      created_at: "2026-07-02T00:00:00Z"
+      under_conditions: ""
+    body_sections: ["Convergent Validity and the AI-Observer Surface"]
+
+# ============================================================================
+# Corpus precedents
+# ============================================================================
+corpus_precedents:
+  - paper_key: 2026e
+    relationship: operationalizes
+    spine_nodes: [P2]
+  - paper_key: 2026v
+    relationship: extends
+    spine_nodes: [M3, P2]
+  - paper_key: 2026x
+    relationship: extends
+    spine_nodes: [P2]
+  - paper_key: prism
+    relationship: applies
+    spine_nodes: [M1, M5]
+  - paper_key: 2026ax
+    relationship: applies
+    spine_nodes: [M5, P1]
+  - paper_key: 2026au
+    relationship: tests
+    spine_nodes: [M4, P3]
+  - paper_key: 2026ap
+    relationship: applies
+    spine_nodes: [M3, P4]
+  - paper_key: substrate-floor
+    relationship: applies
+    spine_nodes: [D1, P4]
+  - paper_key: 2026s
+    relationship: applies
+    spine_nodes: [M2]
+  - paper_key: 2026a
+    relationship: applies
+    spine_nodes: [M3]
+  - paper_key: 2026d
+    relationship: applies
+    spine_nodes: [M5]
+
+# ============================================================================
+# External anchors
+# ============================================================================
+external_anchors:
+  - citation_key: wyszecki-1982-color-science-concepts
+    use: "Color metamerism: the source structure the construct generalizes."
+    spine_nodes: [P1]
+  - citation_key: koopmans-1949-172125144
+    use: "Observational equivalence in econometrics: the formal family."
+    spine_nodes: [P1]
+  - citation_key: manski-1995-untitled
+    use: "Identification-problem framing of indistinguishability."
+    spine_nodes: [P1]
+  - citation_key: blackwell-1951-comparison-of-experiments
+    use: "Comparison-of-experiments ordering behind the severity ladder; the dual-floor test is stated as its empirical companion, not a theorem within it."
+    spine_nodes: [M4, P1]
+  - citation_key: green-1966-signal-detection-theory
+    use: "Signal detection theory: the discriminability ancestor of the dual-floor criterion; kinship and the no-ground-truth difference stated at the criterion definition."
+    spine_nodes: [P1, M5]
+  - citation_key: blackwell-1953-equivalent-comparisons
+    use: "Garbling formalization."
+    spine_nodes: [M4]
+  - citation_key: nosek-2018-the-preregistration-revolution
+    use: "Preregistration discipline; confirmatory/exploratory boundary."
+    spine_nodes: [M1]
+  - citation_key: flake-2020-measurement-schmeasurement-questionable
+    use: "Measurement-validity discipline the instrument answers."
+    spine_nodes: [M1]
+  - citation_key: rathje-2024-gpt-effective-multilingual
+    use: "LLM psychological measurement against human gold standards; the validity direction P5 inverts for deployed surfaces."
+    spine_nodes: [AA1, P5]
+  - citation_key: abdurahman-2024-perils-opportunities-llms
+    use: "Conditions under which LLM-based measurement is and is not defensible."
+    spine_nodes: [AA1, P5]
+  - citation_key: trott-2024-augment-psycholinguistic-datasets
+    use: "In-venue precedent for LLM-derived norm validation."
+    spine_nodes: [AA1, P5]
+  - citation_key: mackinnon-2023-cluster-robust-inference
+    use: "Cluster-robust inference guide anchoring the source-cluster bootstrap."
+    spine_nodes: [M5]
+  - citation_key: cheung-2023-diy-bootstrapping
+    use: "In-venue bootstrap-CI precedent including appropriateness boundaries."
+    spine_nodes: [M5]
+  - citation_key: yang-2026-bootstrap-confidence-intervals
+    use: "Current in-venue bootstrap-CI workflow precedent."
+    spine_nodes: [M5]
+  - citation_key: flora-2020-coefficient-omega-tutorial
+    use: "Reliability-coefficient CI practice; the floor plays the reliability role for ground-truth-absent readouts."
+    spine_nodes: [M5]
+  - citation_key: bergkvist-2007-predictive-validity-multipleitem
+    use: "Single-item versus multi-item validity debate the fraction quantifies from the information side."
+    spine_nodes: [P3]
+  - citation_key: diamantopoulos-2012-guidelines-single-item
+    use: "Conditions favoring multi-item measurement; the fraction is the destroyed-information complement."
+    spine_nodes: [P3]
+  - citation_key: ailawadi-2003-revenue-premium-outcome
+    use: "The single-number brand-health pole of the score-versus-spectrum contrast."
+    spine_nodes: [P3]
+  - citation_key: raffaelli-2024-brand-recognition-norms
+    use: "Brand stimulus-norms precedent for explicit stimulus frames."
+    spine_nodes: [M2]
+  - citation_key: horton-2023-large-language-models
+    use: "LLM-as-experimental-subject paradigm."
+    spine_nodes: [M3]
+  - citation_key: filippas-2024-large-language-models
+    use: "Peer-reviewed version of the homo-silicus paradigm."
+    spine_nodes: [M3]
+
+# ============================================================================
+# Open items
+# ============================================================================
+

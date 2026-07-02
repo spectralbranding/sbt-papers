@@ -1,0 +1,864 @@
+# SPINE.yaml — PRISM-C (2026bb)
+#
+# SPINE-FIRST (provenance: generative): authored BEFORE body prose. Every prose
+# claim in paper.md must trace to a node here; new claims require FORK (extend
+# spine first) or REBASE (drop the claim).
+#
+# Schema v0.2 ([internal path removed]): the paper reports an
+# author-produced pre-registered choice campaign (pilot + confirmatory battery
+# under cross-family operators and choosers) with derived floors, a divergence
+# estimator, a conditional-logit choice-weight model, and controls —
+# observations / methods / measurements / findings / negative_findings are
+# first-class nodes.
+
+spine_version: "0.2"
+spine_doc_version: "0.1.0"
+paper_key: "2026bb"
+provenance: generative
+title: >-
+  From Stated Perception to Revealed Choice: A Pre-Registered Instrument for
+  the Choice-Perception Gap in AI Brand Perception (PRISM-C)
+status: >-
+  Spine locked after the frozen PL0 campaign completed (pilot + confirmatory
+  battery + controls + robustness, 2026-07-02). Drafting proceeds against this
+  spine.
+
+thesis: |
+  What an AI observer says about brands does not predict what it does when it
+  chooses among them — and the size and structure of that wedge is measurable,
+  not assertable. PRISM-C measures the choice-perception gap: the rate at
+  which a model's revealed pick in a simulated agentic choice task diverges
+  from the pick its own stated eight-dimension readings predict, evaluated
+  against the choice elicitation's own cross-family operator floor. The
+  pre-registered campaign returns an unusually clean verdict: four chooser
+  families are near-unanimous with one another (mean within-scenario pick
+  unanimity .972; choice floor .044) yet diverge from the cosine-predicted
+  pick on .633 of 1,144 trials — a gap fourteen times the instrument's noise
+  floor, surviving counterbalancing, threshold and metric alternates, and
+  both controls. The dimensional choice-weight model localizes the wedge:
+  choice weights the stated dimensions unequally, with sign reversals, and a
+  pre-registered mechanism battery rules out presentation order and
+  tie-breaking noise while implicating a systematic brand-level choice policy
+  the stated profile only partially carries. The practical payload is a
+  validity bound the agentic-commerce era needs: perception-level measurement
+  does not transfer to choice-level prediction for free, and the gap between
+  them is now an instrument-measured quantity with controls and floors rather
+  than an anecdote.
+
+# ============================================================================
+# Boundary conditions
+# ============================================================================
+boundary_conditions:
+  - id: C1
+    statement: >-
+      PRISM-C measures the AI-observer surface under controlled simulated
+      elicitation: stated readings and choices are elicited from models via
+      standardized prompts, not harvested from deployed agentic-commerce
+      transaction logs. Deployment validity is a scoped boundary, the same
+      boundary the simulated choice-audit environments accept for the same
+      reason (control and reproducibility).
+  - id: C2
+    statement: >-
+      Single-epoch instrument: all readings and choices come from pinned model
+      versions (July 2026); version drift across model generations is a
+      separate instrument's province.
+  - id: C3
+    statement: >-
+      The gap is predictor-relative and bank-relative: it is measured against
+      the pre-registered cosine-nearest-need predictor (and, secondarily, the
+      fitted choice-weight model) over a frozen 40-brand / 40-scenario bank
+      from one public index frame, and is reported per (bank, predictor,
+      operator set), never as a universal constant.
+  - id: C4
+    statement: >-
+      English-language elicitation only; non-English agentic surfaces require
+      native-language operators before any claim extends to them.
+  - id: C5
+    statement: >-
+      Resolution claims are conditional on the pre-registered operator
+      screening: the stated-reading floor spans the operator pairs kept by the
+      mechanical exclusion rule, with the excluded discordant pair collected
+      and reported as an exploratory observer.
+
+# ============================================================================
+# Assumption atoms
+# ============================================================================
+assumption_atoms:
+  - id: AA1
+    statement: >-
+      For claims about AI-mediated choice surfaces, AI observers are the
+      measurement construct itself, not a proxy for human raters; human
+      convergent validity is required only for human-perception or
+      human-choice claims (the human-subjects companion line).
+    evidence:
+      - type: citation
+        anchor: >-
+          LLM-derived measurement validates against human gold standards where
+          humans are the construct; the deployed-surface argument inverts the
+          direction of the validity burden.
+        citation_keys:
+          [
+            rathje-2024-gpt-effective-multilingual,
+            abdurahman-2024-perils-opportunities-llms,
+            trott-2024-augment-psycholinguistic-datasets,
+          ]
+        citation_role: supports
+    provenance:
+      created_by: author
+      created_at: "2026-07-02T00:00:00Z"
+      under_conditions: "carried unchanged from the 2026az validity argument"
+    body_sections: ["The AI-Observer Surface"]
+  - id: AA2
+    statement: >-
+      Temperature-0 elicitation is treated as operator-deterministic; repeat
+      draws of an identical prompt are not separately estimable and are
+      absorbed into the cross-family and cross-arrangement dispersion.
+    provenance:
+      created_by: author
+      created_at: "2026-07-02T00:00:00Z"
+      under_conditions: "Anthropic 4.7+ rejects sampling params; omitted and logged as-sent"
+    body_sections: ["The Instrument"]
+  - id: AA3
+    statement: >-
+      A buyer need is expressible in the same eight-dimension space as brand
+      readings: the need-vector elicitation (ideal-brand prose rendered from
+      the stated need, extracted with the unchanged PRISM-B extractor) is
+      taken as the stated instrument's own account of the need, so the
+      cosine-nearest brand is the prediction the stated instrument itself
+      implies.
+    provenance:
+      created_by: author
+      created_at: "2026-07-01T00:00:00Z"
+      under_conditions: "need renderer forbids naming real brands"
+    body_sections: ["Scenario Bank and Need Vectors"]
+  - id: AA4
+    statement: >-
+      Because every trial is an independent stateless API call, cross-set
+      order carryover is removed by construction; option position within the
+      presented list is the operative presentation factor and is the one
+      counterbalanced.
+    provenance:
+      created_by: author
+      created_at: "2026-07-02T00:00:00Z"
+      under_conditions: "PL0 §9.1 pre-collection amendment"
+    body_sections: ["The Choice Battery"]
+
+# ============================================================================
+# Observations (raw L-layer events)
+# ============================================================================
+observations:
+  - id: O1
+    statement: >-
+      The pre-flight operator-concordance pilot (56 logged calls: 5 spread
+      scenarios x 2 arrangements x 4 chooser families; 2 brands x 1 channel x
+      4 operator pairs) found the four chooser families fully unanimous on all
+      40 pilot trials (per-family majority-pick discordance 0; choice floor
+      0), and one operator pair's stated-reading discordance (.0146) exceeding
+      three times the median of the others (.0036) — the deepseek-v4-pro
+      renderer, replicating the discordance the sibling metamerism campaign
+      localized to the same renderer role.
+    raw_data_pointer: "[internal path removed] + pilot_report.json"
+    instrument: "PL1 choosers CH-ANT/CH-OAI/CH-ALI/CH-DSK; operator pairs OP1-OP4"
+    timestamp: "2026-07-02"
+    conditions_at_capture: "prompt set prism-c/v1.0.0; banks provisional pending the gate"
+    provenance:
+      created_by: "tool:run_pilot.py"
+      created_at: "2026-07-02T00:00:00Z"
+      under_conditions: "exclusion rule and pilot gate frozen ex ante (PL0 §9.2) before the pilot ran"
+    body_sections: ["The Pre-Flight Pilot"]
+  - id: O2
+    statement: >-
+      The confirmatory campaign collected 2,104 parsed records with zero
+      malformed after the redraw policy: 160 stated readings x 4 operator
+      pairs (40 brands x 4 channels), 40 need vectors x 4 operator pairs,
+      1,144 choice trials (40 scenarios x counterbalanced arrangements x 4
+      chooser families), and 160 control trials; the full campaign totalled
+      2,981 logged model API calls at an estimated 19.90 USD.
+    raw_data_pointer: "[internal path removed]*.jsonl + choice_records_*.jsonl"
+    instrument: "OP1-OP4 + CH-ANT/CH-OAI/CH-ALI/CH-DSK per PL1_CONFIG.yaml (four families: Anthropic, OpenAI, Alibaba, DeepSeek)"
+    timestamp: "2026-07-02"
+    conditions_at_capture: "banks frozen prism-c/v1.0.0 after the pilot gate passed; PL3 append-only JSONL"
+    provenance:
+      created_by: "tool:run_stated.py + run_choice.py"
+      created_at: "2026-07-02T00:00:00Z"
+      under_conditions: "resumable sharded collection; per-call logging with prompts, parameters, responses"
+    body_sections: ["The Confirmatory Campaign"]
+
+# ============================================================================
+# Methods
+# ============================================================================
+methods:
+  - id: M1
+    statement: >-
+      Frozen pre-registered protocol (PL0): H1 (a choice-perception gap exists
+      beyond the choice operator floor at S/N > 2), H2 (a pre-registered
+      choice-weighty dimension subset — Economic, Experiential, Social —
+      carries incremental predictive weight in a conditional-logit choice
+      model, alpha .017), H3 (the stated-to-revealed relationship survives
+      position/order counterbalancing, alpha .017); family-wise alpha .05
+      Bonferroni-split; stopping rules; confirmatory/exploratory boundary; and
+      a pre-collection amendment (frozen before any pilot or confirmatory
+      call) fixing the design constants, the mechanical operator-exclusion
+      rule, four candidate mechanisms with discriminating secondary contrasts,
+      and two boundary-condition heterogeneity tests.
+    evidence:
+      - type: citation
+        anchor: "preregistration + measurement-discipline anchors"
+        citation_keys:
+          [
+            nosek-2018-the-preregistration-revolution,
+            flake-2020-measurement-schmeasurement-questionable,
+          ]
+        citation_role: uses_method_of
+    provenance:
+      created_by: author
+      created_at: "2026-07-02T00:00:00Z"
+      under_conditions: "amendment authored 2026-07-02 before any pilot or confirmatory API call"
+    body_sections: ["Pre-Registered Protocol"]
+  - id: M2
+    statement: >-
+      Reused frozen stimulus frame: the 40-brand stratified bank of the
+      sibling metamerism campaign (a named public brand index stratified by
+      five coherence types x B2C/B2B with a pre-registered supplementation
+      rule) is reused unchanged as the brand pool, and 40 pre-registered need
+      scenarios (20 consumer, 20 business) each carry a 3-5 brand choice-set
+      from that pool, mixing coherence types and price tiers, with no brand
+      named in any need text.
+    evidence:
+      - type: citation
+        anchor: "coherence-type typology spanning the bank"
+        citation_keys: [zharnikov-2026-coherence-type-as-crisis-predictor]
+        citation_role: uses_method_of
+    provenance:
+      created_by: author
+      created_at: "2026-07-02T00:00:00Z"
+      under_conditions: "scenario bank authored before the pilot; frozen after the pilot gate"
+    body_sections: ["Scenario Bank and Need Vectors"]
+  - id: M3
+    statement: >-
+      Stated side: every bank brand is read through four standardized
+      public-artifact channels by cross-family renderer-extractor operator
+      pairs (renderer and extractor families never coincide), using the
+      unchanged PRISM-B prompt set; every scenario's need is rendered as
+      ideal-brand prose (no real brand nameable) and extracted with the same
+      unchanged extractor, so brand and need live in one eight-dimension
+      space.
+    evidence:
+      - type: citation
+        anchor: "cross-family renderer/extractor discipline"
+        citation_keys: [zharnikov-2026ap-same-meaning-different-prose]
+        citation_role: uses_method_of
+      - type: citation
+        anchor: "the base stated-reading instrument and its floor apparatus"
+        citation_keys: [zharnikov-2026ax-brand-spectrometer]
+        citation_role: uses_method_of
+      - type: citation
+        anchor: "LLM-as-experimental-subject paradigm"
+        citation_keys:
+          [horton-2023-large-language-models, filippas-2024-large-language-models]
+        citation_role: supports
+    provenance:
+      created_by: author
+      created_at: "2026-07-02T00:00:00Z"
+      under_conditions: "operator IDs pinned; four artifact channels as in the sibling campaign"
+    body_sections: ["The Instrument"]
+  - id: M4
+    statement: >-
+      Choice side: for each (scenario, choice-set) trial, one chooser model
+      per family receives the need and the option list ('<Brand> - <category>'
+      lines, nominative reference only) in a counterbalanced position
+      arrangement (the rotation + reversed-rotation scheme: 8 arrangements for
+      4-5 option sets, the full 6 for 3-option sets), and returns a structured
+      pick + ranking; picks are matched to options tolerantly (models echo the
+      option line verbatim); every trial is an independent stateless call.
+    evidence:
+      - type: citation
+        anchor: "first-proposal and position biases motivating the counterbalancing"
+        citation_keys:
+          [bansal-2025-magentic-marketplace-open, allouah-2025-ai-agent-buying]
+        citation_role: uses_method_of
+    provenance:
+      created_by: author
+      created_at: "2026-07-02T00:00:00Z"
+      under_conditions: "8+ arrangements per interval-criterion lesson from the sibling campaign"
+    body_sections: ["The Choice Battery"]
+  - id: M5
+    statement: >-
+      Deterministic seeded estimator (PL4): stated brand vector = pooled mean
+      over channels and kept operator pairs (per-brand floor = max pairwise
+      cosine distance among per-pair vectors); need vector analogous;
+      predicted pick = cosine-nearest brand to the need vector; divergence =
+      revealed pick differs from predicted; choice operator floor = mean
+      pairwise disagreement rate between chooser families on identical
+      (scenario, arrangement) trials; scenario-cluster bootstrap (2,000
+      replicates, seed 20260702) for 95 percent intervals; conditional logit
+      by maximum likelihood on the eight per-dimension |brand - need|
+      distances with likelihood-ratio tests, plus position-covariate and
+      brand-intercept variants and logistic mechanism contrasts.
+    evidence:
+      - type: citation
+        anchor: "conditional-logit grounding of the choice model"
+        citation_keys: [mcfadden-1974-conditional-logit-analysis]
+        citation_role: uses_method_of
+      - type: citation
+        anchor: "revealed-preference and stated-choice anchors for the stated-vs-revealed design"
+        citation_keys:
+          [samuelson-1938-note-pure-theory, louviere-2000-stated-choice-methods]
+        citation_role: uses_method_of
+      - type: citation
+        anchor: "cluster-robust bootstrap precedent"
+        citation_keys:
+          [mackinnon-2023-cluster-robust-inference, cheung-2023-diy-bootstrapping]
+        citation_role: uses_method_of
+    provenance:
+      created_by: "tool:estimator.py"
+      created_at: "2026-07-02T00:00:00Z"
+      under_conditions: "unit-tested on synthetic data before any API spend (23 tests incl. both controls and weight recovery)"
+    body_sections: ["The Gap Criterion", "The Dimensional Choice-Weight Model"]
+  - id: M6
+    statement: >-
+      Two pre-registered controls, both collected: a positive control (five
+      dominating-option sets — one high-fit brand among low-fit alternatives —
+      that must be reliably chosen) and a negative control (five fictional
+      near-duplicate twin pairs with identical one-line descriptions that must
+      show no stable preference beyond chance after counterbalancing, with
+      per-position pick rates doubling as a position-bias calibration).
+    provenance:
+      created_by: author
+      created_at: "2026-07-01T00:00:00Z"
+      under_conditions: "controls outside the confirmatory 40 scenarios"
+    body_sections: ["Controls"]
+  - id: M7
+    statement: >-
+      Pre-flight operator screening with a mechanical exclusion rule frozen
+      before the pilot: any operator family or pair whose pilot concordance
+      dispersion exceeds 3x the median of the remaining units is excluded from
+      the floor and retained only as a reported exploratory observer; a pilot
+      gate (post-exclusion choice floor at most .25) must pass before the
+      banks freeze, else collection stops.
+    provenance:
+      created_by: author
+      created_at: "2026-07-02T00:00:00Z"
+      under_conditions: "rule applied mechanically to pilot scores; no post-hoc judgment"
+    body_sections: ["The Pre-Flight Pilot"]
+  - id: M8
+    statement: >-
+      Robustness battery: resolution-threshold sweep k in {1.5, 2, 3};
+      Euclidean and Mahalanobis predicted-pick alternates; re-inclusion of the
+      excluded operator pair in the stated pool; per-family divergence rates
+      and leave-one-family-out floors.
+    provenance:
+      created_by: "tool:estimator.py --robustness"
+      created_at: "2026-07-02T00:00:00Z"
+      under_conditions: "all analyses outside PL0 labelled exploratory"
+    body_sections: ["Robustness"]
+
+# ============================================================================
+# Measurements (derived quantities)
+# ============================================================================
+measurements:
+  - id: m1
+    statement: >-
+      Stated readings and floors over the kept operator triplet: 40 brand
+      vectors with per-brand operator floors from .0011 to .0173 (median
+      .0028); 40 need vectors with floors from .0018 to .0733 (median .0096).
+    antecedents: [O2, M3, M5]
+    provenance:
+      created_by: "tool:estimator.py"
+      created_at: "2026-07-02T00:00:00Z"
+      under_conditions: "OP4 excluded per the pilot rule; collected and reported separately"
+    body_sections: ["The Confirmatory Campaign"]
+  - id: m2
+    statement: >-
+      Predicted picks and margins: for every scenario the cosine-nearest brand
+      is well-defined, but the top-2 cosine margin is tiny — median .0010
+      (range .0001 to .0074) — sitting below the median stated-reading floor
+      (.0028), so the naive predictor's decisions are mostly sub-resolution
+      with respect to the stated instrument's own noise.
+    antecedents: [m1, M5]
+    provenance:
+      created_by: "tool:estimator.py"
+      created_at: "2026-07-02T00:00:00Z"
+      under_conditions: "margins computed on pooled kept-triplet vectors"
+    body_sections: ["What the Floors Measured"]
+  - id: m3
+    statement: >-
+      Choice behavior: 1,144 confirmatory trials; mean within-scenario pick
+      unanimity .972 across the four families; choice operator floor .0437;
+      per-family divergence rates .619 to .640; 724 of 1,144 trials diverge
+      from the predicted pick, and at the scenario level the unanimous
+      consensus pick differs from the predicted pick in 25 of 40 scenarios.
+    antecedents: [O2, M4, M5]
+    provenance:
+      created_by: "tool:estimator.py"
+      created_at: "2026-07-02T00:00:00Z"
+      under_conditions: "divergence computed against the kept-triplet predicted picks"
+    body_sections: ["Confirmatory Results"]
+
+# ============================================================================
+# Findings
+# ============================================================================
+findings:
+  - id: F1
+    statement: >-
+      H1 supported: the choice-perception gap exists and is large. The
+      divergence rate is .633 (724/1,144), the choice operator floor .0437,
+      signal-to-noise 14.48, with a scenario-cluster bootstrap 95 percent CI
+      of [.483, .779] whose lower bound exceeds k = 2 times the floor by a
+      factor of 5.5.
+    antecedents: [m3, M5, M1]
+    provenance:
+      created_by: "tool:estimator.py"
+      created_at: "2026-07-02T00:00:00Z"
+      under_conditions: "pre-registered criterion; seed 20260702"
+    body_sections: ["Confirmatory Results"]
+  - id: F2
+    statement: >-
+      H2 supported: choice weights the stated dimensions unequally, and the
+      pre-registered choice-weighty set (Economic, Experiential, Social)
+      carries incremental predictive weight — likelihood ratio 204.86 on 3
+      degrees of freedom, p < .001, delta-log-likelihood 102.4, delta-AIC
+      198.9, McFadden pseudo-R-squared .125. The fitted weights include sign
+      reversals (greater stated distance on Experiential and Cultural
+      predicts being CHOSEN), and the weight vector's effective
+      dimensionality is 5.95 of 8.
+    antecedents: [m3, M5, M1]
+    provenance:
+      created_by: "tool:estimator.py"
+      created_at: "2026-07-02T00:00:00Z"
+      under_conditions: "conditional logit converged; SEs from numerical Hessian"
+    body_sections: ["The Dimensional Choice-Weight Model"]
+  - id: F3
+    statement: >-
+      H3 supported: the gap is not a presentation artifact. The single-index
+      stated-to-revealed coefficient stays significant with position
+      covariates entered (gamma 39.21, SE 15.45, p = .011 < .017) and shifts
+      by less than .005 standard errors; the position coefficients themselves
+      are indistinguishable from zero on real-brand trials (first-position
+      beta -.010, SE .113).
+    antecedents: [m3, M5, M1]
+    provenance:
+      created_by: "tool:estimator.py"
+      created_at: "2026-07-02T00:00:00Z"
+      under_conditions: "pre-registered criterion (significance + shift within CI)"
+    body_sections: ["Position and Order"]
+  - id: F4
+    statement: >-
+      Both pre-registered controls pass, and the negative control doubles as a
+      position-bias calibration: the positive control's dominating option is
+      chosen on 120 of 120 trials (rate 1.0), while the near-duplicate twins
+      show no stable brand preference beyond chance (all per-set two-sided
+      binomial p at or above .070) but strong FIRST-POSITION pick rates (.625
+      to .875) — position bias governs the pick exactly and only when
+      perception has nothing to distinguish.
+    antecedents: [m3, M6]
+    provenance:
+      created_by: "tool:estimator.py"
+      created_at: "2026-07-02T00:00:00Z"
+      under_conditions: "controls evaluated per PL0 §5"
+    body_sections: ["Controls"]
+  - id: F5
+    statement: >-
+      The gap is scenario-structured and facially sensible: in 25 of 40
+      scenarios the four families' unanimous consensus pick differs from the
+      cosine-predicted pick, and the divergent picks read as reasonable
+      category judgments (a quick family dinner predicted to a premium
+      grocer is picked to the fast-food chain; a public-listing mandate
+      predicted to a payments-infrastructure firm is picked to the investment
+      bank) — the choosers behave like informed agents, and it is the
+      stated-reading predictor that fails to carry the need into the choice.
+    antecedents: [m3, m2]
+    provenance:
+      created_by: author
+      created_at: "2026-07-02T00:00:00Z"
+      under_conditions: "descriptive reading of the divergence table"
+    body_sections: ["What the Gap Looks Like"]
+  - id: F6
+    statement: >-
+      The pre-registered mechanism battery separates the candidate accounts:
+      presentation-order residue (M2) is ruled out (divergence is unrelated to
+      the predicted pick's presented position, p = .672, and H3 holds);
+      readout tie-noise (M4) is ruled out (divergence is unrelated to the
+      stated top-2 margin, p = .628, and divergence in the dominance region is
+      0 of 120); decision-subspace reweighting (M1) is partially supported
+      (unequal weights, effective dimensionality 5.95, but divergence is not
+      concentrated where non-choice-weighty dimensions carry the prediction,
+      p = .755); and the surviving account is a systematic brand-level choice
+      policy (M3): brand intercepts absorb massive fit (likelihood ratio
+      2,204 on 38 df over the dimensional model, with complete-separation
+      caveats from near-unanimous picks), while the intercepts' correlation
+      with index membership is not significant (Spearman rho -.263, p = .111).
+    antecedents: [m3, M5, M1]
+    provenance:
+      created_by: "tool:estimator.py"
+      created_at: "2026-07-02T00:00:00Z"
+      under_conditions: "pre-registered secondary analyses (PL0 §9.3), alpha .05 uncorrected, pattern evidence"
+    body_sections: ["Mechanisms"]
+
+# ============================================================================
+# Negative findings
+# ============================================================================
+negative_findings:
+  - id: NF1
+    statement: >-
+      Boundary prediction B1 (the gap widens with need-vector ambiguity) is
+      NOT supported: divergence across need-entropy terciles is non-monotone
+      (.640 low, .800 mid, .435 high) — the most ambiguous needs show the
+      LOWEST divergence, contrary to the pre-registered direction.
+    antecedents: [m3, M5]
+    provenance:
+      created_by: "tool:estimator.py"
+      created_at: "2026-07-02T00:00:00Z"
+      under_conditions: "pre-registered heterogeneity contrast (PL0 §9.4)"
+    body_sections: ["Boundary Conditions"]
+  - id: NF2
+    statement: >-
+      Boundary prediction B2 (the gap vanishes for dominating options) IS
+      supported in its pre-registered direction — divergence in the
+      positive-control dominance region is .000 (0/120) — which simultaneously
+      bounds the gap: it is a phenomenon of contested choice-sets, not of
+      one-sided ones.
+    antecedents: [m3, M6]
+    provenance:
+      created_by: "tool:estimator.py"
+      created_at: "2026-07-02T00:00:00Z"
+      under_conditions: "pre-registered heterogeneity contrast (PL0 §9.4)"
+    body_sections: ["Boundary Conditions"]
+
+# ============================================================================
+# Derivations
+# ============================================================================
+derivations:
+  - id: D1
+    statement: >-
+      The naive predictor is sub-resolution by the stated instrument's own
+      standard: the median top-2 cosine margin (.0010) sits below the median
+      stated-reading operator floor (.0028), so for most scenarios the stated
+      readings cannot certify WHICH brand is nearest the need — stated-space
+      compression (prominent brands' readings concentrate in a narrow
+      high-intensity band) makes nearest-need prediction noise-dominated even
+      while revealed choice separates the same options decisively. The gap is
+      therefore two wedges at once: what choice weights differently, and what
+      the stated reading cannot resolve at all.
+    antecedents: [m1, m2, F1]
+    provenance:
+      created_by: author
+      created_at: "2026-07-02T00:00:00Z"
+      under_conditions: "descriptive derivation; echoes the positivity-compression caveat of the sibling campaign"
+    body_sections: ["What the Floors Measured"]
+
+  - id: D2
+    statement: >-
+      Post-hoc theoretical reading (explicitly NOT pre-registered): the
+      observed signature pattern — sign-reversed dimensional weights plus
+      large brand-intercept fit under cross-family unanimity — is what two
+      deeper accounts of the M1/M3 families would produce: an OBJECTIVE
+      mismatch (descriptive pretraining rewards accurate portrayal of a
+      brand's cultural and experiential richness, while assistant alignment
+      rewards choices that serve the immediate need, deprioritizing exactly
+      those dimensions) and a REPRESENTATIONAL mismatch (stated readings probe
+      a description-shaped representation; choice runs a decision policy over
+      brand-level knowledge the eight-dimension projection only partially
+      spans). Both are candidate generative processes for the measured gap,
+      stated as motivation for the designated probes (frame ablation; logged
+      choice rationales), not as tested claims.
+    antecedents: [F2, F6]
+    provenance:
+      created_by: author
+      created_at: "2026-07-02T00:00:00Z"
+      under_conditions: "labelled post-hoc interpretation; no protocol or claim change"
+    body_sections: ["Mechanisms", "Discussion"]
+
+# ============================================================================
+# Alternative explanations
+# ============================================================================
+alternative_explanations:
+  - id: AE1
+    statement: >-
+      "The cosine predictor is a straw man." Answered three ways: it is the
+      pre-registered null predictor the stated instrument itself implies
+      (AA3); the FITTED choice-weight model — the best linear
+      stated-perception predictor — still explains only McFadden .125 of
+      choice; and the robustness battery shows the verdict is not an artifact
+      of the cosine functional form (Euclidean and Mahalanobis alternates
+      change 11 and 17 of 40 predicted picks yet the gap grows, not shrinks).
+    provenance:
+      created_by: author
+      created_at: "2026-07-02T00:00:00Z"
+      under_conditions: "pre-empted at gate; quantified post-campaign"
+    body_sections: ["Alternative Explanations"]
+  - id: AE2
+    statement: >-
+      "The need vectors, not the choices, are invalid." Partially conceded and
+      bounded: need-vector floors (median .0096) are larger than brand floors
+      (median .0028), and the elicitation is one construction of the need. But
+      the choosers' picks are near-unanimous and facially sensible across four
+      independent model families given the SAME need text (F5), so the need
+      text carries decision-relevant information; it is the projection into
+      the eight-dimension space that loses it — which is the finding, not a
+      confound (the stated space under-represents what choice uses).
+    provenance:
+      created_by: author
+      created_at: "2026-07-02T00:00:00Z"
+      under_conditions: "addressed in Discussion with the compression account (D1)"
+    body_sections: ["Alternative Explanations"]
+  - id: AE3
+    statement: >-
+      "Choosers just pick the famous brand." Tested and not confirmed as
+      stated: brand intercepts do absorb large fit (F6/M3), but their
+      correlation with index-membership status is not significant (rho -.263,
+      p = .111), and the positive control shows choosers reliably pick a
+      LOW-fame dominating option over famous low-fit alternatives when fit is
+      one-sided. The brand-level policy tracks category fit, not raw
+      prominence.
+    provenance:
+      created_by: author
+      created_at: "2026-07-02T00:00:00Z"
+      under_conditions: "prevalence proxy = index membership from the frozen bank"
+    body_sections: ["Alternative Explanations"]
+
+# ============================================================================
+# Robustness checks
+# ============================================================================
+robustness_checks:
+  - id: R1
+    statement: >-
+      The H1 verdict is threshold- and metric-invariant: supported at k = 1.5,
+      2, and 3; under Euclidean distance (rate .707) and Mahalanobis distance
+      (rate .728); and with the excluded operator pair re-included in the
+      stated pool (rate .756, 10 of 40 predicted picks change) — every
+      alternate predictor diverges MORE, so the cosine kept-triplet
+      configuration reported as primary is the most conservative.
+    antecedents: [F1, M8]
+    provenance:
+      created_by: "tool:estimator.py --robustness"
+      created_at: "2026-07-02T00:00:00Z"
+      under_conditions: "same frozen records, seeded estimator"
+    body_sections: ["Robustness"]
+  - id: R2
+    statement: >-
+      The gap is operator-stable on the choice side: per-family divergence
+      rates span .619 to .640 across the four chooser families, and
+      leave-one-family-out choice floors span .0385 to .0501 — no single
+      family drives either the gap or the floor.
+    antecedents: [m3, M8]
+    provenance:
+      created_by: "tool:estimator.py"
+      created_at: "2026-07-02T00:00:00Z"
+      under_conditions: "exploratory label per PL0 §1"
+    body_sections: ["Robustness"]
+
+# ============================================================================
+# Limitations
+# ============================================================================
+limitations:
+  - id: L1
+    statement: >-
+      Single epoch, pinned operators: the concordance structure (four
+      unanimous choosers; one discordant stated-side renderer) is a property
+      of these model versions at this date.
+    body_sections: ["Limitations"]
+  - id: L2
+    statement: >-
+      Simulated elicitation, not deployed logs: choices are elicited under a
+      controlled assistant frame with nominative option lists, not harvested
+      from production agentic checkouts; the boundary is scoped (C1) and
+      shared with the choice-audit environments.
+    body_sections: ["Limitations"]
+  - id: L3
+    statement: >-
+      The gap is predictor-relative, and part of it is the stated
+      instrument's compression rather than choice-side reweighting (D1);
+      anchor-calibrated extraction is the designated protocol remedy before
+      the stated space is blamed alone.
+    body_sections: ["Limitations"]
+  - id: L4
+    statement: >-
+      Bank-relative and English-only: 40 brands from one index frame, 40
+      authored scenarios, English prompts; the fraction is a property of the
+      (bank, predictor, operator set) triple.
+    body_sections: ["Limitations"]
+  - id: L5
+    statement: >-
+      The brand-intercept diagnostic suffers complete separation (choosers
+      are near-unanimous, so some brands are never chosen given the
+      features); its likelihood ratio is reported as a diagnostic magnitude,
+      not a calibrated test.
+    body_sections: ["Limitations"]
+
+# ============================================================================
+# Propositions
+# ============================================================================
+propositions:
+  - id: P1
+    statement: >-
+      The choice-perception gap is an instrument-measured quantity: revealed
+      agentic choice diverges from stated-perception prediction at a rate
+      measurable against the choice elicitation's own cross-family operator
+      floor, with controls certifying sensitivity and specificity.
+    status: supported
+    evidence_findings: [F1, F4]
+    body_sections: ["Confirmatory Results", "Discussion"]
+  - id: P2
+    statement: >-
+      Agentic choice weights the stated dimensions unequally — the
+      pre-registered choice-weighty set carries incremental weight, the
+      effective dimensionality of choice is below the full eight, and some
+      dimensions reverse sign — so the eight-dimension stated profile is
+      consumed selectively, not uniformly, by choice.
+    status: supported
+    evidence_findings: [F2]
+    body_sections: ["The Dimensional Choice-Weight Model", "Discussion"]
+  - id: P3
+    statement: >-
+      The gap is a perception-policy phenomenon, not a presentation artifact:
+      position effects are confined to perception-free option sets (the twin
+      calibration), vanish on real brands, and the stated-to-revealed
+      relationship survives counterbalancing unchanged.
+    status: supported
+    evidence_findings: [F3, F4]
+    body_sections: ["Position and Order"]
+  - id: P4
+    statement: >-
+      The dominant residual account is a systematic brand-level choice policy
+      — informed, near-unanimous across model families, tracking category fit
+      rather than raw prominence — that the eight-dimension stated reading
+      only partially carries; presentation order and tie-breaking noise are
+      excluded as accounts by the pre-registered contrasts.
+    status: supported_secondary
+    evidence_findings: [F5, F6, NF2]
+    body_sections: ["Mechanisms", "Discussion"]
+  - id: P5
+    statement: >-
+      Stated-perception instruments under-resolve agentic choice: the
+      nearest-need predictor's margins sit below the stated instrument's own
+      operator floor for most contested choice-sets, so perception-level
+      measurement does not transfer to choice-level prediction without a
+      choice-side model — the validity bound PRISM-C exists to measure.
+    status: supported
+    evidence_findings: [F1, F5]
+    derivations: [D1]
+    body_sections: ["What the Floors Measured", "Discussion"]
+
+# ============================================================================
+# Corpus precedents
+# ============================================================================
+corpus_precedents:
+  - paper_key: 2026as
+    claim: >-
+      The PRISM family scaffold and the stated-reading instrument PRISM-C
+      reuses unchanged; PRISM-C is the family's choice member.
+    citation_key: zharnikov-2026as-prism-structured-measurement
+  - paper_key: 2026ax
+    claim: >-
+      The operator-floor discipline and per-pair resolution rule: every
+      quantity is judged against the instrument's own measured noise, never
+      asserted.
+    citation_key: zharnikov-2026ax-brand-spectrometer
+  - paper_key: 2026az
+    claim: >-
+      The sibling metamerism instrument: the reused stratified brand bank,
+      the discordant-renderer localization this campaign's pilot replicates,
+      and the compression caveat the margin analysis extends.
+    citation_key: zharnikov-2026az-prism-m-metamerism
+  - paper_key: 2026v
+    claim: >-
+      The perception-side dimensional collapse in AI-mediated search whose
+      choice-side counterpart the weight model estimates.
+    citation_key: zharnikov-2026-dimensional-collapse-ai-mediated-search
+  - paper_key: 2026x
+    claim: >-
+      The agentic-commerce framing: brands read and chosen by AI observers
+      acting for users.
+    citation_key: zharnikov-2026-ai-native-brand-identity-from
+  - paper_key: 2026ap
+    claim: "Cross-family operator discipline for renderer/extractor separation."
+    citation_key: zharnikov-2026ap-same-meaning-different-prose
+  - paper_key: 2026ay
+    claim: "Nested floors and the no-rescue abstention logic."
+    citation_key: zharnikov-2026ay-substrate-floor
+  - paper_key: 2026s
+    claim: "The five coherence types stratifying the reused brand bank."
+    citation_key: zharnikov-2026-coherence-type-as-crisis-predictor
+  - paper_key: 2026a
+    claim: "The eight-dimension construct."
+    citation_key: zharnikov-2026-spectral-brand-theory-computational-framework
+  - paper_key: 2026d
+    claim: "The brand-space metric the cosine predictor lives in."
+    citation_key: zharnikov-2026-brand-space-geometry-formal-metric
+  - paper_key: 2026e
+    claim: >-
+      Spectral metamerism: the converse positioning — a large gap is
+      choice-side divergence among stated-similar options.
+    citation_key: zharnikov-2026-spectral-metamerism-brand-perception-projection
+
+# ============================================================================
+# External anchors
+# ============================================================================
+external_anchors:
+  - citation_key: bansal-2025-magentic-marketplace-open
+    use: >-
+      The first-proposal advantage (60-100 percent selection rates) motivating
+      the counterbalanced design; this campaign refines the picture — position
+      bias appears at full strength only when options are perceptually
+      indistinguishable (the twin calibration) and vanishes on real brands.
+  - citation_key: allouah-2025-ai-agent-buying
+    use: >-
+      The ACES choice-audit line: position effects, choice homogeneity, and
+      model-dependent demand concentration; the .972 cross-family pick
+      unanimity measured here replicates the homogeneity finding at the brand
+      level and extends it across four provider families.
+  - citation_key: sabbah-2026-marketing-machines-how
+    use: >-
+      The machine-audience framing (models as targets of marketing cues) and
+      the simulated-choice-platform precedent.
+  - citation_key: samuelson-1938-note-pure-theory
+    use: >-
+      The classical revealed-preference anchor: choice as the primitive that
+      reveals preference, transplanted to a setting where the same observer
+      also states its perception.
+  - citation_key: mcfadden-1974-conditional-logit-analysis
+    use: "The conditional-logit foundation of the H2 choice-weight model."
+  - citation_key: louviere-2000-stated-choice-methods
+    use: >-
+      The stated-choice-methods tradition: the stated-vs-revealed comparison
+      as a designed measurement, not an observational accident.
+  - citation_key: horton-2023-large-language-models
+    use: >-
+      The LLM-as-simulated-economic-agent paradigm — and the contrast case:
+      utility-parameter elicitation asks whether the model's preferences match
+      economic theory or human subjects; PRISM-C asks whether the model's
+      stated perception matches ITS OWN revealed choice, an intra-observer
+      question the utility-prompt design does not pose.
+  - citation_key: filippas-2024-large-language-models
+    use: "Peer-reviewed form of the simulated-agent paradigm."
+  - citation_key: goli-2024-llms-capture-human-preferences
+    use: >-
+      Nearest non-family benchmark: LLM-elicited preferences tested against
+      HUMAN preference structure (cross-observer alignment); PRISM-C measures
+      the within-observer seam instead — stated perception against the same
+      observer's revealed choice — so the two designs bracket the alignment
+      question from complementary sides.
+  - citation_key: debruyn-2020-artificial-intelligence-marketing-pitfalls
+    use: >-
+      The AI-and-marketing pitfalls frame: deploying AI intermediaries without
+      measuring what they actually optimize.
+  - citation_key: nosek-2018-the-preregistration-revolution
+    use: "Preregistration discipline."
+  - citation_key: flake-2020-measurement-schmeasurement-questionable
+    use: "Questionable-measurement safeguards."
+  - citation_key: rathje-2024-gpt-effective-multilingual
+    use: "LLM-measurement validity literature (direction of validity burden)."
+  - citation_key: abdurahman-2024-perils-opportunities-llms
+    use: "Conditions for defensible LLM-based measurement."
+  - citation_key: trott-2024-augment-psycholinguistic-datasets
+    use: "Human-gold-standard validation precedent (contrast case)."
+  - citation_key: mackinnon-2023-cluster-robust-inference
+    use: "Cluster-robust inference precedent for the scenario-cluster bootstrap."
+  - citation_key: cheung-2023-diy-bootstrapping
+    use: "In-venue bootstrap-interval precedent."
+
+# ============================================================================
+# Open items
+# ============================================================================
+

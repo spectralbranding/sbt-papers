@@ -1,0 +1,61 @@
+# ONTOLOGY.yaml module - 2026az (PRISM-M)
+#
+# Per-paper ontology module per [internal path removed]
+# §"ONTOLOGY.yaml schema (v0.1)". owns = terms THIS artifact introduces (unique
+# authority); imports = terms owned by other modules it uses (reference only).
+#
+# PRISM-M = the metamerism member of the PRISM instrument family. It owns the
+# metameric-fraction measurement concept and the PRISM-M variant handle; it imports the
+# PRISM scaffold (prism) and the metamerism substrate (2026e spectral / 2026x behavioral).
+
+paper_key: 2026az
+schema_version: 0.1
+
+owns:
+  - term_key: prism-m
+    label: "PRISM-M"
+    canonical_form: "PRISM-M"
+    definition: "The metamerism member of the PRISM instrument family: an AI-observer instrument that measures when two brands with structurally distinct eight-dimension perception profiles become perceptually indistinguishable under an aggregating readout (a scalar health score, a search ranking, a recommendation pick). Its unit is the metamer pair and its output is the metameric fraction."
+    first_section: "PRISM-M Specification"
+  - term_key: metameric-fraction
+    label: "Metameric fraction"
+    canonical_form: "metameric fraction"
+    definition: "The share of resolvable brand distinctions that an aggregating readout destroys: the proportion of brand pairs resolved as distinct on the full eight-dimension readout (distance clears the operator floor) that the aggregator renders unresolved (within the aggregator's own floor). It operationalizes spectral metamerism as a measured quantity with an operator-floored bootstrap interval, monotone in the garbling severity of the aggregator."
+    first_section: "The Metameric-Fraction Estimator"
+    relations:
+      - {type: specializes, term_key: spectral-metamerism, note: "the metameric fraction is spectral metamerism measured: the fraction of distinctions the scalar garbling collapses"}
+
+  - term_key: metamer-pair
+    label: "Metamer pair"
+    canonical_form: "metamer pair"
+    definition: "The unit of measurement of PRISM-M: two brands whose full eight-dimension perception profiles are resolved distinct (pairwise distance exceeds k times the operator floor, pre-registered k = 2) while an aggregating readout leaves them unresolved (within the aggregator's own floor). Labelled MP-<n> in the frozen pair bank; both halves of the criterion are measured against noise floors, never asserted."
+    first_section: "The Metamer Criterion"
+    relations:
+      - {type: specializes, term_key: spectral-metamerism, note: "a metamer pair is a measured instance of spectral metamerism: the aggregator maps resolved-distinct profiles to indistinguishable readouts"}
+  - term_key: aggregator-battery
+    label: "Aggregator battery"
+    canonical_form: "aggregator battery"
+    definition: "The three coarse readouts PRISM-M tests as garbling operators, each matched to a real consumption surface and each carrying its OWN measured noise floor: A-SCORE (a single brand-health grade mapped to [0,1]; the scalar scorecard surface), A-RANK (position in a ten-slot recommendation ranking; the AI-search surface), and A-PICK (a binary recommend/do-not-recommend call; the agentic recommendation surface). Formalized as projection operators of the full eight-dimension readout."
+    first_section: "The Aggregator Battery"
+  - term_key: garbling-severity-ladder
+    label: "Garbling-severity ladder"
+    canonical_form: "garbling-severity ladder"
+    definition: "The pre-registered ordering of aggregators by how much resolvable structure they destroy: the metameric fraction is predicted monotone in aggregator coarseness - fraction(scalar score) > fraction(ranking) > fraction(full readout) = 0 by construction. Making garbling severity an ordered, testable property is what upgrades the garbling account from interpretation to measurement."
+    first_section: "The Severity Ladder (H2)"
+
+imports:
+  - {term_key: prism-instrument}
+  - {term_key: prism-five-layer-scaffold}
+  - {term_key: spectral-metamerism}
+  - {term_key: behavioral-metamerism}
+  - {term_key: dimensional-collapse-index}
+  - {term_key: spectral-dimensions}
+  - {term_key: cohort}
+  - {term_key: operator-noise-floor}
+  - {term_key: per-pair-resolution-criterion}
+  - {term_key: coherence-type}
+  - {term_key: incumbent-garbling-operator}
+  - {term_key: metameric-observer}
+
+refines: []
+

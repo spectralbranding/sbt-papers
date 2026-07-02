@@ -1,0 +1,58 @@
+# ONTOLOGY.yaml module - 2026bb (PRISM-C)
+#
+# Per-paper ontology module per [internal path removed]
+# §"ONTOLOGY.yaml schema (v0.1)". owns = terms THIS artifact introduces (unique
+# authority); imports = terms owned by other modules it uses (reference only).
+#
+# PRISM-C = the choice member of the PRISM instrument family. It owns the
+# choice-perception gap concept, the PRISM-C handle, the choice operator floor,
+# and the dimensional choice-weight model; it imports the PRISM scaffold, the
+# perception substrate, and the 2026ax floor apparatus.
+
+paper_key: 2026bb
+schema_version: 0.1
+
+owns:
+  - term_key: prism-c
+    label: "PRISM-C"
+    canonical_form: "PRISM-C"
+    definition: "The choice member of the PRISM instrument family: an AI-observer instrument that measures a model's revealed choice among brands in a simulated agentic task and compares it to the model's stated eight-dimension perception (PRISM-B), quantifying the choice-perception gap and the dimensional weights that map stated perception to revealed choice."
+    first_section: "The Instrument"
+  - term_key: choice-perception-gap
+    label: "Choice-perception gap"
+    canonical_form: "choice-perception gap"
+    definition: "The part of an AI observer's revealed brand choice that its stated eight-dimension perception does not predict: the rate at which the model's actual pick in a simulated choice task diverges, beyond the choice operator floor, from the cosine-nearest brand to the elicited need vector under the stated readings. It measures the wedge between perception-level and choice-level measurement as agentic systems move from describing brands to choosing them."
+    first_section: "The Gap Criterion"
+    relations:
+      - {type: contrasts, term_key: perception-dop, note: "the perception degree-of-presence is the stated reading; the choice-perception gap is where the revealed choice departs from what that stated reading predicts"}
+  - term_key: choice-operator-floor
+    label: "Choice operator floor"
+    canonical_form: "choice operator floor"
+    definition: "The noise floor of a choice elicitation: the mean pairwise disagreement rate between cross-family chooser models presented with identical (scenario, arrangement) trials. A divergence between revealed and predicted picks counts as a measured gap only when it exceeds k times this floor - so the gap is measured against choice noise, never asserted."
+    first_section: "The Gap Criterion"
+    relations:
+      - {type: specializes, term_key: operator-noise-floor, note: "the operator-floor construct instantiated for a discrete pick readout: dispersion = pairwise disagreement rate rather than vector distance"}
+  - term_key: need-vector
+    label: "Need vector"
+    canonical_form: "need vector"
+    definition: "A buyer need expressed in the same eight-dimension space as brand readings: the scenario's stated need is rendered as ideal-brand prose and extracted with the unchanged PRISM-B extractor, so need and brand live in one space and the cosine-nearest brand is a well-defined predicted pick."
+    first_section: "Scenario Bank and Need Vectors"
+  - term_key: dimensional-choice-weights
+    label: "Dimensional choice weights"
+    canonical_form: "dimensional choice weights"
+    definition: "The conditional-logit coefficients mapping per-dimension stated distances between brand and need onto revealed choice: the estimable answer to which of the eight dimensions agentic choice actually weights, including sign reversals where greater stated distance predicts being chosen. The choice-side analogue of the perception-side dimensional-collapse measurement."
+    first_section: "The Dimensional Choice-Weight Model"
+
+imports:
+  - {term_key: prism-instrument}
+  - {term_key: prism-five-layer-scaffold}
+  - {term_key: prism-b}
+  - {term_key: perception-dop}
+  - {term_key: spectral-dimensions}
+  - {term_key: cohort}
+  - {term_key: operator-noise-floor}
+  - {term_key: coherence-type}
+  - {term_key: metameric-observer}
+
+refines: []
+

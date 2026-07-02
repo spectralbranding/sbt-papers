@@ -1,0 +1,38 @@
+cff-version: 1.2.0
+message: "If you use this paper, please cite it as below."
+authors:
+  - family-names: Zharnikov
+    given-names: Dmitry
+    affiliation: "Independent Researcher"
+    orcid: "https://orcid.org/0009-0000-6893-9231"
+title: "Measuring Perceptual Indistinguishability: A Pre-Registered Metamerism Instrument for AI Brand Perception (PRISM-M)"
+version: 1.0.0
+date-released: 2026-06-14
+url: "https://doi.org/10.5281/zenodo.21125785"
+repository-code: "https://github.com/spectralbranding/sbt-papers"
+identifiers:
+  - type: doi
+    value: "10.5281/zenodo.21125785"
+    description: "Zenodo concept DOI (all versions)"
+keywords:
+  - metamerism
+  - observational equivalence
+  - measurement instrument
+  - noise floor
+  - signal detection
+  - brand perception
+  - AI observers
+  - preregistration
+license:
+  - CC-BY-4.0
+  - MIT
+type: article
+preferred-citation:
+  type: article
+  authors:
+    - family-names: Zharnikov
+      given-names: Dmitry
+  title: "Measuring Perceptual Indistinguishability: A Pre-Registered Metamerism Instrument for AI Brand Perception (PRISM-M)"
+  year: 2026
+  doi: "10.5281/zenodo.21125785"
+  url: "https://doi.org/10.5281/zenodo.21125785"
