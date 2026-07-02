@@ -11,7 +11,7 @@
 # measurements / findings / negative_findings are first-class nodes.
 
 spine_version: "0.2"
-spine_doc_version: "0.3.1"
+spine_doc_version: "0.3.2"
 paper_key: "2026ax"
 provenance: generative
 title: >-
@@ -193,6 +193,48 @@ methods:
       human norms remains future work.
     antecedents: [M1, M7]
     evidence: [{type: empirical, detail: "atlases/ferrari_luce_fresh_2606/scripts/valence_reflect.py --extract/--aggregate/--backfill -> valence/valence_aggregate.yaml + atlas.yaml inferred_spec.<dim>.valence + variance.valence_operator_floor (cross-family operator D, swapped across alt-pairs for the floor, logged); schema v0.2"}]
+  - id: M10
+    statement: >-
+      Run-protocol VERIFICATION EQUIPMENT (instrument methodology 0.3.0; additive
+      atlas schema v0.3), adopted from companion instrument studies on the same
+      structured-measurement scaffold; none of it forks the reading instrument, and
+      the published v0.1/v0.2 atlases and the V1-V6 battery reported here predate it
+      and remain valid as published. (a) Pre-flight operator concordance: before a
+      campaign every configured operator reads the same small pilot stimulus set and
+      its leave-one-out concordance is scored; a mechanical exclusion rule fixed ex
+      ante — an operator whose discordance exceeds three times the median of the
+      remaining operators is excluded from every noise floor and every pooled vector,
+      retained only as a reported exploratory observer — is invoked, never judged
+      case by case. Motivated by the measured boundary result that one systematically
+      discordant operator inflates every floor it enters and silently destroys the
+      instrument's resolution (2026az). (b) Pre-run version check + epoch-stamped
+      readings: alongside the within-epoch operator floor the protocol carries a
+      VERSION FLOOR — the dispersion of readings of a sealed, byte-identical artifact
+      panel re-read across model versions, a pure apparatus-drift band because the
+      input cannot have changed (2026ba). Before a campaign the configured operator
+      version strings are checked against the versions that floor was last measured
+      under; a mismatch marks the floor stale and the run report calls for a
+      sealed-panel re-read. An atlas MAY carry an optional additive model-epoch block
+      stamping the reading with its version epoch and that epoch's version floor, so
+      an across-epoch delta is tested against the version floor and not only the
+      operator floor; the nesting for longitudinal claims is operator within version,
+      the operator floor being measured among contemporaneous operators and blind to
+      version drift. (c) The gap between stated perception readings and revealed
+      choice is measured by a companion instrument on the same scaffold (2026bb),
+      not by this one: the instrument's scope stays perception and valence only.
+    antecedents: [M1, M2]
+    evidence:
+      - type: citation
+        detail: >-
+          Zharnikov 2026az (concordance screen + mechanical exclusion rule, DOI
+          10.5281/zenodo.21125785); Zharnikov 2026ba (version floor, sealed-panel
+          two-panel logic, epoch stamping, DOI 10.5281/zenodo.21128779); Zharnikov
+          2026bb (companion choice instrument, DOI 10.5281/zenodo.21128342).
+      - type: empirical
+        detail: >-
+          Public code repository code/preflight.py (concordance + version-floor
+          subcommands, invoking the prism_core instrument-family base library) +
+          atlas schema v0.3 model_epoch block and its validator rules.
 
 # ============================================================================
 # Measurements + Findings
@@ -457,6 +499,15 @@ corpus_precedents:
   - key: "2026au"
     relationship: refines
     note: "Correspondence Principle — brand-equity frameworks as garblings of the underlying perception cloud (the classical-equity distinction)."
+  - key: "2026az"
+    relationship: applies
+    note: "PRISM-M — the pre-flight operator concordance screen and the mechanical three-times-median exclusion rule adopted into the run protocol (M10a)."
+  - key: "2026ba"
+    relationship: applies
+    note: "PRISM-T — the version floor, sealed-panel two-panel logic, and model-epoch stamping adopted as run-protocol verification equipment (M10b)."
+  - key: "2026bb"
+    relationship: applies
+    note: "PRISM-C — companion choice instrument; the stated-to-revealed gap sits outside this instrument's perception-and-valence scope (M10c)."
 
 external_anchors:
   - ref: "Campbell & Fiske 1959 [VERIFY]"

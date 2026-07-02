@@ -69,6 +69,15 @@ _Terms used by **2026ax** (The Brand Spectrometer: A Reproducible Instrument for
   - The distribution of brand convictions across an observer population for a brand. Distributional, not a single fixed referent; "cloud" alone is acceptable in context. Has a valence (positive / negative / ambivalent).
   - _defined by 2026a_
   - _not_: brand image; brand cloud
+- **PRISM-C**
+  - The choice member of the PRISM instrument family: an AI-observer instrument that measures a model's revealed choice among brands in a simulated agentic task and compares it to the model's stated eight-dimension perception (PRISM-B), quantifying the choice-perception gap and the dimensional weights that map stated perception to revealed choice.
+  - _defined by 2026bb_
+- **PRISM-M**
+  - The metamerism member of the PRISM instrument family: an AI-observer instrument that measures when two brands with structurally distinct eight-dimension perception profiles become perceptually indistinguishable under an aggregating readout (a scalar health score, a search ranking, a recommendation pick). Its unit is the metamer pair and its output is the metameric fraction.
+  - _defined by 2026az_
+- **PRISM-T**
+  - The temporal member of the PRISM instrument family: an AI-observer instrument that separates apparatus drift (the same artifacts read differently by a new model version) from brand-signal change (the artifacts themselves changed) when a vendor ships a new model version. Its unit is the (brand, version-epoch) reading and its output is the version floor plus the pinned/live drift decomposition.
+  - _defined by 2026ba_
 - **Spectral Brand Theory**
   - The theory that a brand is not a property of an object but a signal completed in the observer: an 8-dimensional spectral profile that, when received by an observer cohort, collapses into a distribution of brand convictions (a perception cloud). Brand is measured, not managed.
   - _defined by 2026a_
@@ -79,3 +88,9 @@ _Terms used by **2026ax** (The Brand Spectrometer: A Reproducible Instrument for
 - **Spectral Metamerism** (write: `spectral metamerism`)
   - The phenomenon whereby structurally distinct brand profiles produce identical scalar evaluations, arising as a geometric inevitability of projecting the eight-dimensional spectral profile to a lower-dimensional grade.
   - _defined by 2026e_
+- **Version epoch** (write: `version epoch`)
+  - One rung of the model-version ladder: a real, shipped vendor version under which the panels are read (labelled VE-<n>). Epochs are added only when a vendor ships a real version - synthetic versioning (fine-tunes, quantizations, prompt variants) is excluded by protocol. For a pinned panel the reading depends on (artifact bytes, prompt bytes, model version) only, so already-shipped back-catalog versions constitute valid epochs.
+  - _defined by 2026ba_
+- **Version floor** (write: `version floor`)
+  - The reliability band for longitudinal LLM measurement: the dispersion across model versions of a family reading a byte-identical artifact panel under a matched extractor - the across-time counterpart of the operator floor. Because the pinned input cannot have changed, the version floor is a pure apparatus-drift band; a longitudinal 'the brand moved' claim must clear it, not merely the contemporaneous operator floor (floor nesting: operator within version).
+  - _defined by 2026ba_

@@ -105,6 +105,11 @@ imports:
   - {term_key: spectral-metamerism}
   - {term_key: brand-metrology}
   - {term_key: atom}
+  - {term_key: prism-m}
+  - {term_key: prism-t}
+  - {term_key: prism-c}
+  - {term_key: version-floor}
+  - {term_key: version-epoch}
 
 refines:
   - term_key: brand-metrology
