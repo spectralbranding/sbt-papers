@@ -166,7 +166,7 @@ All reported numbers reproduce from the seeded estimator and campaign scripts pu
 
 ## Data and Code Availability
 
-The frozen protocol layers (preregistration with its pre-collection amendment, instrument configuration, scenario and choice-set bank, the reused brand bank), the complete append-only call logs (one record per model API call: prompts, parameters, responses), the parsed measurement and choice records, the pilot report, the analysis outputs, and all computation code publish with the paper's public repository at submission. The campaign comprised 2,981 logged model API calls (pilot: 56; confirmatory and controls: 2,925 including redraws) at an estimated total cost of 19.90 USD. The paper is archived under concept DOI 10.5281/zenodo.21128342 (this version: 10.5281/zenodo.21128343).
+The frozen protocol layers (preregistration with its pre-collection amendment, instrument configuration, scenario and choice-set bank, the reused brand bank), the parsed measurement and choice records, the pilot report, the analysis outputs, and all computation code are published in the paper's public repository at https://github.com/spectralbranding/sbt-papers/tree/main/prism-c-choice; the complete append-only call logs (one record per model API call: prompts, parameters, responses), together with the protocol layers and records, are archived as a Hugging Face dataset at https://huggingface.co/datasets/spectralbranding/prism-c-choice. The campaign comprised 2,981 logged model API calls (pilot: 56; confirmatory and controls: 2,925 including redraws) at an estimated total cost of 19.90 USD. The paper is archived under concept DOI 10.5281/zenodo.21128342 (this version: 10.5281/zenodo.21128343).
 
 ## Acknowledgments
 
