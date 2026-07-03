@@ -7,7 +7,9 @@ authors:
     given-names: "Dmitry"
     orcid: "0009-0000-6893-9231"
 date-released: "2026-05-29"
-license: "MIT"
+license:
+  - MIT
+  - CC-BY-4.0
 license-url: "https://opensource.org/licenses/MIT"
 repository-code: "https://github.com/spectralbranding/sbt-papers"
 url: "https://github.com/spectralbranding/sbt-papers"
