@@ -2,7 +2,7 @@
 
 **Date**: 2026-04-05 (written before data collection)
 **Paper**: Zharnikov, D. (2026v). Spectral Metamerism in AI-Mediated Brand Perception.
-**Target**: Under review
+**Status**: Published as a working paper (DOI 10.5281/zenodo.19422427)
 **DOI (Runs 1-4)**: 10.5281/zenodo.19422427
 
 ---

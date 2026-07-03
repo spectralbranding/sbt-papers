@@ -240,7 +240,7 @@ terms, narrow the two boundary terms) is itself the statement of the SBT/OST rel
 
 ## 7. Threats to validity and limitations
 
-**Construct / external validity — the single-author caveat (the load-bearing limitation).** SBT
+**Construct / external validity — the single-author caveat (the central limitation).** SBT
 and OST are two programs by **one author**. This is therefore a **real-vocabulary demonstration
 across two namespaces**, not yet a genuine two-*independent*-author validation. The clean
 federation (H4) is partly a product of the same mind having built both vocabularies to be

@@ -62,7 +62,7 @@ boundary_conditions:
     body_sections: ["§8.1 Limitations (stationarity, dimensional creation)"]
 
 # ============================================================================
-# Assumption atoms — load-bearing maintained assumptions
+# Assumption atoms — central maintained assumptions
 # ============================================================================
 assumption_atoms:
   - id: AA1

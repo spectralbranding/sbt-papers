@@ -294,7 +294,7 @@ cross-walks *within* brand theory; the Spence run shows what happens when the co
 **The independence ladder — where this rung sits.** Spence (1973) is the **most independent** vocabulary
 negotiated against SBT so far: a different author, decades earlier, in a different discipline, with a
 construct (`signal`) that genuinely collides on the bare key. It delivers the genuine same-key `CONFLICT`
-the two prior runs structurally could not. **But the load-bearing caveat is unchanged from the Aaker run:**
+the two prior runs structurally could not. **But the central caveat is unchanged from the Aaker run:**
 
 1. **Still transcribed, not authored by Spence.** The Spence module's definitions are faithful paraphrases
    *the SBT author wrote* from Spence (1973) — not modules Spence authored himself in this schema. A

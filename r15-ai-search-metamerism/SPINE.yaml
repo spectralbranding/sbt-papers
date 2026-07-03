@@ -446,7 +446,7 @@ findings:
     body_sections: ["§Results: Geopolitical Framing (Runs 7 and 11)"]
 
 # ============================================================================
-# Negative findings — the hypotheses NOT supported (load-bearing for the thesis)
+# Negative findings — the hypotheses NOT supported (central for the thesis)
 # ============================================================================
 negative_findings:
   - id: NF1
@@ -454,7 +454,7 @@ negative_findings:
       H3 NOT SUPPORTED — AI observer heterogeneity: per-model DCI variation falls
       within sampling noise (F(5,54) = 0.59, p = .712; Run 5 t = .221, p = .413,
       d = .043). There are no distinct AI observer cohorts at the DCI level;
-      collapse is shared across architectures. This is load-bearing: it forecloses
+      collapse is shared across architectures. This is central: it forecloses
       platform-switching as a strategic hedge.
     expected_observation: "Measurably different spectral profiles across architectures and training origins."
     source_method: M3

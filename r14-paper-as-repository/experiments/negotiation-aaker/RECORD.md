@@ -17,7 +17,7 @@
 
 ## 1. Research question and hypotheses
 
-**Research question.** The SBT/OST companion run (EXP-2026-06-13) was honest about its load-bearing
+**Research question.** The SBT/OST companion run (EXP-2026-06-13) was honest about its central
 limitation: SBT and OST are two programs by **one author**, intentionally built to converge, so the
 federation was clean *by design* and could not exhibit the adversarial interaction classes
 (`CONFLICT` / `DANGLING_IMPORT`) that are the harder half of the protocol. This experiment asks the
@@ -284,7 +284,7 @@ shows up mechanically: the two programs do not even share an owner for the base 
 
 **CONFLICT — honestly, none.** The pre-run worry was that a bare incumbent key (`brand-image`,
 `positioning`, the Aaker-era `brand-attitude`) might collide same-key with an SBT key and divergent
-definition, producing a genuine `CONFLICT`. It does not, and the reason is the load-bearing finding:
+definition, producing a genuine `CONFLICT`. It does not, and the reason is the central finding:
 **SBT renamed at exactly these boundaries.** SBT owns `perception-cloud` (not `brand-image`),
 `brand-conviction` (not `brand-attitude`), `positioning-capacity` (not `positioning`), `cohort`
 (not `segment`). The qualified keys mean the key-based linker sees *no shared key* to conflict on.
@@ -317,7 +317,7 @@ to confirm; absent it, the curated SSSOM is authored directly.
 
 ## 7. Threats to validity and limitations
 
-**The independence ladder — where this rung sits (the load-bearing framing).** This incumbent
+**The independence ladder — where this rung sits (the central framing).** This incumbent
 vocabulary is **more independent** than the SBT/OST pair: it was authored by a different person
 (David A. Aaker), decades earlier, and was **not** built to be compatible with SBT. So it is a
 genuine step up the evidence ladder from the single-author SBT/OST run, and it delivers what that

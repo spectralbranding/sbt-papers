@@ -70,7 +70,7 @@ boundary_conditions:
     excludes: "Asymmetric Dirichlet(alpha_1,...,alpha_8) or sparse (alpha<1) regimes (left to future work)."
 
 # ============================================================================
-# Assumption atoms — load-bearing modeling assumptions
+# Assumption atoms — central modeling assumptions
 # ============================================================================
 assumption_atoms:
   - id: AA1

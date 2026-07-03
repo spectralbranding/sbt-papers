@@ -69,7 +69,7 @@ boundary_conditions:
       awareness gate is structurally saturated (alpha approx 1) because
       portfolio ownership is encoded in parameters and cannot be experimentally
       manipulated into "not knowing." The distinction from human observers (for
-      whom portfolio knowledge is experimentally NEW) is the load-bearing
+      whom portfolio knowledge is experimentally NEW) is the central
       boundary; findings do not transfer to human samples.
     observable: "Observer is an LLM whose brand encoding already incorporates ownership relations."
     excludes: "Human respondents whose awareness gate can be experimentally manipulated."

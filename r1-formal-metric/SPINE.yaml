@@ -568,7 +568,7 @@ corpus_precedents:
     note: "R7 applies the Fisher-Rao observer metric to spectral resource allocation across cohorts."
 
 # ============================================================================
-# External anchor literature — the load-bearing prior art
+# External anchor literature — the central prior art
 # ============================================================================
 external_anchors:
   - {citation_key: aitchison-1986-statistical-analysis-compositional, role: foundational_method, spine_nodes: [P1, P2, P3], note: "Compositional data analysis / Aitchison geometry"}
