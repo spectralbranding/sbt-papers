@@ -1,0 +1,96 @@
+# PRISM-M PL2 Brand Bank — stratified stimulus frame, frozen before Stage 1
+# Version: prism-m/v1.0.0
+# Date locked: 2026-07-02
+#
+# SAMPLING FRAME (closes the convenience-sample gap): the primary frame is the
+# Interbrand Best Global Brands published top-100 ranking (most recent public
+# list at lock date). Strata = five SBT coherence types (2026s) x market
+# orientation (B2C/B2B), 4 brands per cell, 40 brands total.
+#
+# SUPPLEMENTATION RULE (pre-registered): where a stratum contains fewer than 4
+# qualifying index members (structural, not accidental: identity-concentrated,
+# experiential-asymmetric, and incoherent brands rarely sustain top-global-brand
+# value), the cell is completed with (a) the canonical SBT exemplar for the type
+# (2026s Table 1) and (b) prominent brands matching the assignment rubric with
+# abundant public artifacts in all four PL1 channels. index_status records
+# member / supplemental / unverified; unverified entries are counted as
+# supplemental in the PL4 balance report.
+#
+# COHERENCE-TYPE ASSIGNMENT RUBRIC (ex-ante, frozen; from 2026s Table 1):
+#   ecosystem      - strong emission across ~all 8 dimensions (no weak corridor)
+#   signal         - concentrated on 5-6 dimensions, remainder moderate
+#   identity       - concentrated on Ideological + Narrative (+ Social)
+#   experiential   - concentrated on Experiential + Social; weak Temporal/Economic
+#   incoherent     - extreme cross-dimension variance, contradictory signals
+# Assignments were made from public brand knowledge BEFORE any Stage-1 readout;
+# Stage 1 measures the profiles, so assignment-vs-measured-shape agreement is
+# reported as a validation diagnostic at PL4 (exploratory).
+#
+# EX-ANTE MODERATOR PREDICTIONS (exploratory, PL0 section 5(b) extension):
+#   M1: within-coherence-type pairs show a HIGHER metameric fraction than
+#       cross-type pairs (similar profile shape -> scalar collapse more likely
+#       while the full readout still resolves).
+#   M2: B2C experience-good pairs show a HIGHER metameric fraction than B2C
+#       search-good pairs (experience brands differentiate on high-volatility
+#       Experiential/Social dimensions that scalar health scores average away).
+#
+# goods_type: experience | search | credence (Nelson/Darby-Karni covariate for
+# the balance table; recorded per brand, not a stratum).
+
+strata:
+  ecosystem_b2c:
+    - {brand: Hermès, category: luxury fashion, goods_type: experience, index_status: member, note: canonical 2026s exemplar}
+    - {brand: Apple, category: consumer technology, goods_type: experience, index_status: member}
+    - {brand: LEGO, category: toys, goods_type: experience, index_status: member}
+    - {brand: Rolex, category: luxury watches, goods_type: search, index_status: member}
+  signal_b2c:
+    - {brand: IKEA, category: home furnishing, goods_type: search, index_status: member, note: canonical 2026s exemplar}
+    - {brand: McDonald's, category: quick-service restaurants, goods_type: experience, index_status: member}
+    - {brand: Toyota, category: automotive, goods_type: search, index_status: member}
+    - {brand: Visa, category: consumer payments, goods_type: search, index_status: member}
+  identity_b2c:
+    - {brand: Nike, category: sportswear, goods_type: experience, index_status: member}
+    - {brand: Starbucks, category: coffee retail, goods_type: experience, index_status: member}
+    - {brand: Patagonia, category: outdoor apparel, goods_type: experience, index_status: supplemental, note: canonical 2026s exemplar}
+    - {brand: Harley-Davidson, category: motorcycles, goods_type: experience, index_status: supplemental, note: former index member; identity-concentrated per rubric}
+  experiential_b2c:
+    - {brand: Erewhon, category: premium grocery, goods_type: experience, index_status: supplemental, note: canonical 2026s exemplar}
+    - {brand: Airbnb, category: travel platform, goods_type: experience, index_status: member}
+    - {brand: Sephora, category: beauty retail, goods_type: experience, index_status: unverified}
+    - {brand: Uber, category: mobility platform, goods_type: experience, index_status: member}
+  incoherent_b2c:
+    - {brand: Tesla, category: automotive, goods_type: search, index_status: member, note: canonical 2026s exemplar}
+    - {brand: Meta (Facebook), category: social platform, goods_type: experience, index_status: member}
+    - {brand: X (Twitter), category: social platform, goods_type: experience, index_status: supplemental}
+    - {brand: Ryanair, category: airline, goods_type: experience, index_status: supplemental}
+  ecosystem_b2b:
+    - {brand: Microsoft, category: enterprise software, goods_type: search, index_status: member}
+    - {brand: IBM, category: enterprise technology, goods_type: credence, index_status: member}
+    - {brand: Siemens, category: industrial technology, goods_type: search, index_status: member}
+    - {brand: SAP, category: enterprise software, goods_type: credence, index_status: member}
+  signal_b2b:
+    - {brand: Cisco, category: networking, goods_type: search, index_status: member}
+    - {brand: Oracle, category: enterprise software, goods_type: search, index_status: member}
+    - {brand: FedEx, category: logistics, goods_type: experience, index_status: member}
+    - {brand: Caterpillar, category: heavy equipment, goods_type: search, index_status: member}
+  identity_b2b:
+    - {brand: Salesforce, category: enterprise software, goods_type: credence, index_status: member}
+    - {brand: Nvidia, category: semiconductors, goods_type: search, index_status: member}
+    - {brand: Goldman Sachs, category: investment banking, goods_type: credence, index_status: member}
+    - {brand: Basecamp, category: project-management software, goods_type: search, index_status: supplemental, note: opinionated identity-concentrated positioning per rubric}
+  experiential_b2b:
+    - {brand: Zoom, category: communications software, goods_type: experience, index_status: supplemental}
+    - {brand: Slack, category: communications software, goods_type: experience, index_status: supplemental}
+    - {brand: WeWork, category: workspace services, goods_type: experience, index_status: supplemental}
+    - {brand: Stripe, category: payments infrastructure, goods_type: experience, index_status: supplemental, note: developer-experience-concentrated per rubric}
+  incoherent_b2b:
+    - {brand: Boeing, category: aerospace, goods_type: credence, index_status: supplemental, note: contradictory narrative-vs-experiential signals per rubric}
+    - {brand: GE, category: industrial conglomerate, goods_type: search, index_status: supplemental, note: post-breakup signal incoherence per rubric}
+    - {brand: Intel, category: semiconductors, goods_type: search, index_status: unverified}
+    - {brand: Huawei, category: telecom equipment, goods_type: search, index_status: unverified, note: contradictory cross-market signals per rubric}
+
+balance_report_at_pl4:
+  - cell counts (type x sector) and per-cell index-member share
+  - goods_type distribution by cell
+  - category dispersion (no category contributes more than 3 brands)
+  - assignment-vs-measured-shape agreement (Stage-1 profiles vs rubric type)
