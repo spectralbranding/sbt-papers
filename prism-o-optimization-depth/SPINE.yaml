@@ -1,0 +1,1278 @@
+# SPINE.yaml — PRISM-O (2026bd)
+#
+# SPINE-FIRST (provenance: generative): authored BEFORE body prose. Every prose
+# claim in paper.md must trace to a node here; new claims require FORK (extend
+# spine first) or REBASE (drop the claim).
+#
+# Schema v0.2 ([internal path removed]). POST-CAMPAIGN STATE
+# (FORK 2026-07-03): the frozen-PL0 campaign ran end-to-end (O1 Stage-1, O2
+# Stage-2); findings F1-F8 carry the empirical layer; P3 resolved partially,
+# P4/P5 DEMOTED TO DESCRIPTIVE by the frozen minimum-resolved rule (F2).
+# Measurement rows live in the committed PL4 results JSONs the findings
+# anchor to (estimator seed 20260703).
+
+spine_version: "0.2"
+spine_doc_version: "0.2.0"
+paper_key: "2026bd"
+provenance: generative
+title: >-
+  Measuring Optimization Depth: A Pre-Registered Instrument for the
+  Stated-Actual Optimization Gap in Organizational Self-Description (PRISM-O)
+
+thesis: |
+  What organizations say about how they improve themselves and what they
+  actually do are two registers of one public record, and the depth at which
+  improvement interventions bind — economic outputs, coordination structure,
+  activity chains, or delivered value — is readable from that record. PRISM-O
+  turns both claims into floored measurements: AI operators classify every
+  improvement intervention in a frozen two-channel panel of public artifacts
+  onto a four-rung optimization-depth ladder under a fixed mechanical rubric,
+  and the instrument reports the stated-actual optimization gap — the signed
+  depth difference between strategy prose and reported interventions — only
+  when it clears twice the measured operator noise floor. The construct
+  promotes two long-asserted organizational claims to measured quantities: the
+  lean/reengineering doctrine that deep interventions are the durable ones,
+  and the decoupling tradition's claim that organizational talk systematically
+  outruns organizational action. The instrument never claims access to
+  internal ground truth: it measures communicated decoupling in the public
+  record, with constructed-ground-truth vignettes supplying validation where
+  ground truth is needed.
+
+# ============================================================================
+# Boundary conditions
+# ============================================================================
+boundary_conditions:
+  - id: C1
+    statement: >-
+      PRISM-O measures the organization's PUBLIC signal: the stated and
+      enacted registers of its public record. Internal configuration is
+      formally out of reach from bounded outside observation, and no claim in
+      this paper concerns what the organization internally is or does — only
+      what its public record specifies.
+  - id: C2
+    statement: >-
+      Single-window instrument: both channels draw from one fixed 12-month
+      window per organization; depth trajectories and drift across windows
+      are outside scope.
+  - id: C3
+    statement: >-
+      The panel frame is organizations with sufficient public artifact
+      coverage in BOTH channels under the ex-ante artifact-class rules;
+      conclusions do not extend to organizations that publish too little for
+      the channel split to be satisfiable.
+  - id: C4
+    statement: >-
+      The depth ladder spans the operational stack (product/value, process,
+      organization) plus its economic output surface; the meta rung (adopting
+      a specification framework itself) is out of instrument scope and codes
+      UNCLASSIFIED.
+  - id: C5
+    statement: >-
+      Gap claims are conditional on cross-family operator concordance and the
+      per-pair resolution criterion; a gap that does not clear twice the
+      operator floor is reported unresolved, never rescued by a single
+      family's reading.
+
+# ============================================================================
+# Assumption atoms
+# ============================================================================
+assumption_atoms:
+  - id: AA1
+    statement: >-
+      Rubric-guided classification of business text is within current LLM
+      capability at the reliability level social-science annotation work
+      reports; the vignette bank measures, rather than assumes, the residual.
+    type: "instrument_capability"
+    relaxable: true
+    relaxation_consequence: >-
+      If operators cannot code depth reliably, H1 fails at Stage 1 and the
+      instrument claim is withdrawn — the paper publishes the measured
+      capability bound instead.
+    affects: [M2, P3]
+    evidence:
+      - type: citation
+        anchor: >-
+          LLM annotation matches or exceeds crowd-worker reliability on
+          political/social text classification; LLMs as social-science
+          measurement instruments.
+        citation_keys:
+          [gilardi-2023-chatgpt-outperforms-crowd, ziems-2024-can-large-language-models]
+        citation_role: methodological_source
+    provenance:
+      created_by: author
+      created_at: "2026-07-03T00:00:00Z"
+      under_conditions: "pre-campaign spine lock"
+    body_sections: ["The AI Operator as Coder"]
+  - id: AA2
+    statement: >-
+      The ex-ante artifact-class rules separate the stated register (strategy
+      prose) from the enacted register (reports of executed interventions)
+      well enough that the two channels measure different things; ambiguous
+      artifact classes are excluded by rule.
+    type: "measurement_design"
+    relaxable: true
+    relaxation_consequence: >-
+      If the registers do not separate, the gap attenuates toward zero —
+      channel-label permutation (RC5) and the same-organization negative
+      control (RC3) measure the separation empirically.
+    affects: [M1, P4]
+    provenance:
+      created_by: author
+      created_at: "2026-07-03T00:00:00Z"
+      under_conditions: "pre-campaign spine lock"
+    body_sections: ["Two Channels of the Public Record"]
+  - id: AA3
+    statement: >-
+      Enacted-channel artifacts (restructuring filings, layoff notices,
+      executed-reorganization and shipped-change reports) are reports of
+      verifiable, consequential events and therefore closer to behavior than
+      strategy prose, without being behavior itself.
+    type: "data_source_trust"
+    relaxable: true
+    relaxation_consequence: >-
+      If enacted-channel reports are themselves systematically rhetorical,
+      the instrument measures a talk-talk gap rather than a talk-action gap;
+      the construct then still measures register decoupling but the
+      Argyris/Meyer-Rowan interpretation weakens (recorded as L1).
+    affects: [M1, P4]
+    provenance:
+      created_by: author
+      created_at: "2026-07-03T00:00:00Z"
+      under_conditions: "pre-campaign spine lock"
+    body_sections: ["Two Channels of the Public Record", "Limitations"]
+  - id: AA4
+    statement: >-
+      Cross-family operator pairs are sufficiently independent that agreement
+      across families reflects the artifact signal rather than shared model
+      priors; the masked-identity arm bounds the prior-knowledge residual.
+    type: "operator_independence"
+    relaxable: true
+    relaxation_consequence: >-
+      If families share priors about famous organizations, agreement
+      overstates signal; the masked-vs-named delta (RC2) is the measured
+      bound, and masked-arm readings are the conservative reference.
+    affects: [M2, M3, P5]
+    provenance:
+      created_by: author
+      created_at: "2026-07-03T00:00:00Z"
+      under_conditions: "pre-campaign spine lock"
+    body_sections: ["The AI Operator as Coder"]
+  - id: AA5
+    statement: >-
+      For claims about how the public record reads under AI observation, AI
+      observers are the measurement construct itself, not a proxy for human
+      raters: analysts, counterparties, and AI agents consume the same public
+      record the instrument reads, and human gold standards are required only
+      for human-perception claims, which this paper does not make.
+    type: "construct_validity"
+    relaxable: true
+    relaxation_consequence: >-
+      If a consumer of the instrument needs human-interpretability of the
+      depth readings, the deferred human-coded subsample (M6 placeholder)
+      must be collected before that use; until then such claims are out of
+      scope.
+    affects: [M2, M6, P3]
+    evidence:
+      - type: citation
+        anchor: >-
+          LLM-derived psychological measurement validates against human gold
+          standards where humans are the construct; the deployed-surface
+          argument inverts the direction of the validity burden for
+          machine-consumed records.
+        citation_keys:
+          [
+            rathje-2024-gpt-effective-multilingual,
+            abdurahman-2024-perils-opportunities-llms,
+            trott-2024-augment-psycholinguistic-datasets,
+          ]
+        citation_role: methodological_source
+    provenance:
+      created_by: author
+      created_at: "2026-07-03T00:00:00Z"
+      under_conditions: "pre-collection amendment v1.1"
+    body_sections: ["The AI Operator as Coder"]
+
+# ============================================================================
+# Methods (all pre-registered; frozen in PL0 v1.0 before any data)
+# ============================================================================
+methods:
+  - id: M1
+    statement: >-
+      Two-channel artifact-panel construction: at least 60 sector- and
+      size-stratified public organizations, one STATED and one ENACTED
+      artifact set each from a fixed 12-month window, channel assignment by
+      ex-ante artifact class, artifacts pinned byte-identical at freeze.
+    type: "archival_search"
+    inputs: []
+    outputs: []
+    code_anchor: "PREREGISTRATION.md §3, published with the dataset (panel manifest at freeze)"
+    reproducibility:
+      seed: "N/A (deterministic selection rule fixed ex ante)"
+      version: "PL0 v1.0 (2026-07-03)"
+      runtime_environment: "panel manifest, pinned artifact store"
+    provenance:
+      created_by: author
+      created_at: "2026-07-03T00:00:00Z"
+      under_conditions: "frozen before any reading"
+    body_sections: ["Two Channels of the Public Record"]
+  - id: M2
+    statement: >-
+      Rubric classification: at least three cross-family operator pairs read
+      each artifact and code every improvement intervention onto the D4-D1
+      ladder under the frozen decision tree (deepest-specified rung wins;
+      specified-not-promised tie-breaker, ties break downward), returning
+      structured records (rung, evidence span, confidence) logged as
+      append-only JSONL.
+    type: "ai_invocation"
+    inputs: []
+    outputs: []
+    code_anchor: "RUBRIC.md (frozen with PL0, published with the dataset); prism_core.llm_call_logger"
+    reproducibility:
+      seed: "temperature 0 where honored; PL1 pins + model_epoch stamping per reading"
+      version: "PL0 v1.0; PL1 config pinned at campaign start"
+      runtime_environment: "prism_core provider layer"
+    provenance:
+      created_by: author
+      created_at: "2026-07-03T00:00:00Z"
+      under_conditions: "frozen before any reading"
+    body_sections: ["The Depth-Coding Rubric", "The AI Operator as Coder"]
+  - id: M3
+    statement: >-
+      Gap estimation with floors: per organization, depth distributions per
+      channel over coded interventions; the gap = mean depth rank(STATED)
+      minus mean depth rank(ENACTED); operator floor = across-pair dispersion
+      of the gap on the identical pinned panel; resolved iff the absolute gap
+      exceeds twice the floor; source-cluster bootstrap CIs with artifacts as
+      clusters; ordinal-safe co-primaries (two-sample KS agreement in
+      direction; median-rank and stochastic-dominance robustness). The
+      estimator's formal definitions — rung scores D4 = 1 through D1 = 4, the
+      per-pair gap, the across-pair floor, the k = 2 resolution criterion,
+      and the section-10.1 nested criterion |gap| > k max(operator floor,
+      artifact band) — are displayed as equations in the paper, and the
+      frozen power computation (.80 power at 45 resolved organizations for a
+      half-rung gap at SD 1.0, alpha .017, exact noncentral t) is reproduced
+      by the companion power script and displayed as the power-curves figure.
+    type: "statistical_analysis"
+    inputs: []
+    outputs: []
+    code_anchor: "PL4 estimator (publishes with the paper per computation-script standard); power_analysis.py (power curves, seed 20260703)"
+    reproducibility:
+      seed: "fixed seed for bootstrap; run command in script docstring"
+      version: "PL0 v1.0 §6"
+      runtime_environment: "Python 3.12 + uv"
+    provenance:
+      created_by: author
+      created_at: "2026-07-03T00:00:00Z"
+      under_conditions: "frozen before any reading"
+    body_sections: ["Floors and Resolution"]
+  - id: M4
+    statement: >-
+      Stage-1 constructed-ground-truth validation: a planted vignette bank
+      (approximately 40-60 synthetic intervention descriptions with depth
+      fixed by construction, spanning all rungs, both channel registers, and
+      masked/named variants, including matched minimal pairs at the hardest
+      coding boundaries) read before any real-organization artifact; macro
+      accuracy of at least .80 gates Stage 2.
+    type: "verification_cascade"
+    inputs: []
+    outputs: []
+    code_anchor: "RUBRIC.md §4, published with the dataset (hard cases seed the bank)"
+    reproducibility:
+      seed: "bank frozen and versioned before reading"
+      version: "PL0 v1.0 §3"
+      runtime_environment: "PL2 bank + PL3 JSONL logs"
+    provenance:
+      created_by: author
+      created_at: "2026-07-03T00:00:00Z"
+      under_conditions: "frozen before any reading"
+    body_sections: ["Stage 1: Constructed Ground Truth"]
+  - id: M5
+    statement: >-
+      Pre-flight operator concordance screen with the mechanical
+      three-times-median exclusion rule, fixed ex ante, applied at campaign
+      setup before any confirmatory reading.
+    type: "verification_cascade"
+    inputs: []
+    outputs: []
+    code_anchor: "prism_core concordance module, published with the code (apply_exclusion_rule)"
+    reproducibility:
+      seed: "deterministic rule"
+      version: "shared instrument-family equipment"
+      runtime_environment: "prism_core"
+    provenance:
+      created_by: author
+      created_at: "2026-07-03T00:00:00Z"
+      under_conditions: "imported unchanged from the family apparatus"
+    body_sections: ["The AI Operator as Coder"]
+  - id: M6
+    statement: >-
+      Human-coded convergent-validity subsample — PRE-REGISTERED PLACEHOLDER,
+      DEFERRED (PL0 v1.1 pre-collection amendment): a human coder blind to
+      operator outputs codes at least 10 percent of all interventions under
+      the same frozen rubric, agreement reported as percent plus Cohen's
+      kappa; NOT collected this round — supplied by a future addendum or the
+      family's postponed human-subjects member, and no human-interpretability
+      claim is made until then.
+    type: "qualitative_coding"
+    inputs: []
+    outputs: []
+    code_anchor: "RUBRIC.md, published with the dataset (same decision tree)"
+    reproducibility:
+      seed: "subsample selection rule fixed ex ante"
+      version: "PL0 v1.1 §9.1 (deferred before any collection)"
+      runtime_environment: "blind coding protocol (future addendum)"
+    provenance:
+      created_by: author
+      created_at: "2026-07-03T00:00:00Z"
+      under_conditions: "deferred at pre-collection amendment; placeholder retained"
+    body_sections: ["The AI Operator as Coder"]
+  - id: M7
+    statement: >-
+      Channel-label permutation falsification: channel labels randomly
+      reassigned within organization (1,000 permutations) must center the gap
+      at zero, with the observed gap outside the permutation .95 interval for
+      the decoupling claim to stand.
+    type: "statistical_analysis"
+    inputs: []
+    outputs: []
+    code_anchor: "PL4 estimator (permutation module)"
+    reproducibility:
+      seed: "fixed permutation seed"
+      version: "PL0 v1.0 §6"
+      runtime_environment: "Python 3.12 + uv"
+    provenance:
+      created_by: author
+      created_at: "2026-07-03T00:00:00Z"
+      under_conditions: "frozen before any reading"
+    body_sections: ["Pre-Registered Hypotheses"]
+
+# ============================================================================
+# Observations (raw L-layer campaign events; measurements live in the
+# committed PL4 results JSONs the findings anchor to)
+# ============================================================================
+observations:
+  - id: O1
+    statement: >-
+      Stage-1 run completed 2026-07-03: version check (all 8 pins live),
+      concordance screen (OP1/OP3 probe disagreement .000, no exclusion),
+      104 bank readings x 2 pairs = 208 logged calls, $0.77.
+    raw_data_pointer: "[internal path removed] (+ PL3 logs)"
+    instrument: "OP1 (claude-opus-4-8 -> gpt-5.4-mini) + OP3 (qwen3.7-max -> deepseek-v4-flash)"
+    timestamp: "2026-07-03"
+    conditions_at_capture: "frozen PL0 v1.1; PL2 bank v1.0.0; temperature 0 where honored"
+    provenance:
+      created_by: "tool:run_stage1.py"
+      created_at: "2026-07-03T00:00:00Z"
+    body_sections: ["Stage 1: Constructed Ground Truth"]
+  - id: O2
+    statement: >-
+      Stage-2 campaign completed 2026-07-03: 40 pinned organizations x 2
+      channels x 372 artifacts x 4 cross-family pairs, named + 15-org masked
+      arms; 8,143 parsed records; $69.67 of the $193 user-approved cap.
+    raw_data_pointer: "[internal path removed]{1..4}.jsonl (+ PL3 logs)"
+    instrument: "OP1-OP4 per PL1 v1.0.1 (segmenter family != classifier family)"
+    timestamp: "2026-07-03"
+    conditions_at_capture: "frozen PL0 v1.1; pinned panel (SHA-256 manifest); version check pre-run"
+    provenance:
+      created_by: "tool:run_stage2.py (4 shards)"
+      created_at: "2026-07-03T00:00:00Z"
+    body_sections: ["Stage 2: The Organization Panel"]
+
+# ============================================================================
+# Findings (measurements = [internal path removed]{1,2}_results.json,
+# estimator seed 20260703)
+# ============================================================================
+findings:
+  - id: F1
+    statement: >-
+      Stage-1 measurability is a ceiling result: macro depth-classification
+      accuracy 1.000 for BOTH Stage-1 pairs on the full 52-unit bank AND on
+      the 14 held-out bases (whose answers are not in the prompt), with zero
+      malformed outputs and masked = named agreement 1.0 on identical text.
+    source_measurements: ["data/pl4_stage1_results.json"]
+    generating_method: M4
+    statistical_strength: "104 readings; per-rung recall 1.00 at every rung; ceiling effect noted"
+    antecedents: [O1, M4]
+    falsifier: "any held-out misclassification would have lowered the held-out macro below 1.000"
+    provenance:
+      created_by: "tool:score_stage1.py"
+      created_at: "2026-07-03T00:00:00Z"
+    body_sections: ["Stage 1: Constructed Ground Truth"]
+  - id: F2
+    statement: >-
+      Panel resolution is the boundary result: 35 of 40 organizations carried
+      at least three pair-complete readings, and 4 of 35 (11 percent) resolved
+      at the pre-registered criterion (|gap| > 2 x across-pair floor; median
+      floor .584 rung units, swallowing the median absolute gap) — far below
+      the minimum-resolved target of 45, so H2 and H3 demote to descriptive
+      reporting by the frozen rule. One resolved organization has a
+      degenerate floor of .000 (few interventions, identical pair gaps).
+    source_measurements: ["data/pl4_stage2_results.json"]
+    generating_method: M3
+    statistical_strength: "resolution counts are mechanical; k-sweep: 4 resolved at k=1.5, 2 at k=3"
+    antecedents: [O2, M3]
+    falsifier: "45+ resolved organizations would have licensed confirmatory H2/H3 tests"
+    provenance:
+      created_by: "tool:estimator_stage2.py (seed 20260703)"
+      created_at: "2026-07-03T00:00:00Z"
+    body_sections: ["Stage 2: The Organization Panel"]
+  - id: F3
+    statement: >-
+      Descriptive gap structure tilts in the decoupling direction without
+      confirming it: all-organization mean gap .176 rung units (median .059;
+      20 of 35 positive); the four resolved organizations average .815 (d =
+      .754, p = .229 at n = 4), and one resolved organization is NEGATIVE
+      (acts deeper than it talks) — the pre-registered heterogeneity case.
+    source_measurements: ["data/pl4_stage2_results.json"]
+    generating_method: M3
+    statistical_strength: "descriptive by rule (F2 demotion); no confirmatory claim"
+    antecedents: [F2]
+    falsifier: "a negative or zero-centered panel tilt would have reversed the descriptive direction"
+    provenance:
+      created_by: "tool:estimator_stage2.py (seed 20260703)"
+      created_at: "2026-07-03T00:00:00Z"
+    body_sections: ["Stage 2: The Organization Panel"]
+  - id: F4
+    statement: >-
+      The pooled depth distributions differ across channels in the decoupling
+      direction: two-sample KS D = .158, p < .001, stated deeper — the
+      ordinal co-primary agrees in direction with F3 at distribution level.
+    source_measurements: ["data/pl4_stage2_results.json"]
+    generating_method: M3
+    statistical_strength: "pooled over interventions; distribution-level, not org-level inference"
+    antecedents: [O2, M3]
+    falsifier: "KS direction reversal or p >= .017"
+    provenance:
+      created_by: "tool:estimator_stage2.py (seed 20260703)"
+      created_at: "2026-07-03T00:00:00Z"
+    body_sections: ["Stage 2: The Organization Panel"]
+  - id: F5
+    statement: >-
+      The channel-label permutation falsification bar is NOT cleared: the
+      observed panel mean .176 lies inside the central .95 permutation
+      interval [-.193, .184] (1,000 within-organization label shuffles, seed
+      20260703) — panel-level label exchangeability is not rejected.
+    source_measurements: ["data/pl4_stage2_results.json"]
+    generating_method: M7
+    statistical_strength: "pre-registered falsification test; binding"
+    antecedents: [O2, M7]
+    falsifier: "observed mean outside the interval would have cleared the bar"
+    provenance:
+      created_by: "tool:estimator_stage2.py (seed 20260703)"
+      created_at: "2026-07-03T00:00:00Z"
+    body_sections: ["Pre-Registered Hypotheses", "Stage 2: The Organization Panel"]
+  - id: F6
+    statement: >-
+      The negative control is not clean: 9 of 46 within-channel disjoint
+      artifact splits pseudo-resolve at the same criterion — within-channel
+      artifact heterogeneity is comparable to between-channel differences
+      for a fifth of testable organization-channels, so the across-pair
+      floor alone under-prices artifact sampling variance.
+    source_measurements: ["data/pl4_stage2_results.json"]
+    generating_method: M3
+    statistical_strength: "mechanical count; control pre-registered to produce ~0"
+    antecedents: [O2, M3]
+    falsifier: "0-1 pseudo-resolutions would have passed the control"
+    provenance:
+      created_by: "tool:estimator_stage2.py (seed 20260703)"
+      created_at: "2026-07-03T00:00:00Z"
+    body_sections: ["Rivals and Controls", "Stage 2: The Organization Panel"]
+  - id: F7
+    statement: >-
+      The prior-knowledge contamination bound is empty at the mean: masked
+      minus named gap = -.018 rung units (SD .206, 13 evaluable
+      organizations) — organization identity moves readings by essentially
+      nothing on identical text, consistent with the Stage-1 masked = named
+      ceiling.
+    source_measurements: ["data/pl4_stage2_results.json"]
+    generating_method: M2
+    statistical_strength: "subsample bound; SD reported"
+    antecedents: [O2, M2]
+    falsifier: "a mean shift comparable to the floors would have implicated priors"
+    provenance:
+      created_by: "tool:estimator_stage2.py (seed 20260703)"
+      created_at: "2026-07-03T00:00:00Z"
+    body_sections: ["Rivals and Controls"]
+  - id: F8
+    statement: >-
+      Nearly half of segmented improvement spans specify nothing codable:
+      UNCLASSIFIED shares .470 (stated channel) and .393 (enacted channel)
+      under the specified-not-promised rule — a measured index of unspecific
+      improvement rhetoric in the public record, higher in strategy prose
+      than in enacted reports.
+    source_measurements: ["data/pl4_stage2_results.json"]
+    generating_method: M2
+    statistical_strength: "shares over 1,891 (stated) and 2,397 (enacted) classified spans"
+    antecedents: [O2, M2]
+    falsifier: "near-zero UNCLASSIFIED shares"
+    provenance:
+      created_by: "tool:estimator_stage2.py (seed 20260703)"
+      created_at: "2026-07-03T00:00:00Z"
+    body_sections: ["Stage 2: The Organization Panel", "Discussion"]
+
+  - id: F9
+    statement: >-
+      Post-hoc nested-band robustness (labeled amendment, primary unchanged):
+      adding an artifact-sampling band (seeded cluster-bootstrap SD of the
+      gap) under the operator band keeps 3 of the 4 primary resolutions —
+      all three positive; the negative-gap organization falls below its
+      artifact band — while the negative control improves only partially
+      (raw 9/46 to 7/44 under the nested band, 5/42 class-stratified):
+      within-channel depth heterogeneity across individual filings is a
+      real, partly class-driven property of public records, priced by the
+      nested criterion and reported rather than repaired away.
+    source_measurements: ["data/pl4_posthoc_results.json"]
+    generating_method: M3
+    statistical_strength: "post-hoc robustness (PL0 v1.2 §10.1); descriptive"
+    antecedents: [F2, F6]
+    falsifier: "a clean class-stratified control would have attributed the heterogeneity fully to class structure"
+    provenance:
+      created_by: "tool:analyze_posthoc.py (seed 20260703)"
+      created_at: "2026-07-03T00:00:00Z"
+    body_sections: ["Stage 2: The Organization Panel", "Limitations"]
+
+  - id: F10
+    statement: >-
+      The tie-breaker sensitivity (RC1), executed via the labeled re-read arm
+      (every named-arm span re-classified under ties-upward and
+      ties-flagged regimes; 4,288 spans each; Stage-1 bank macro .99 and
+      1.00), leaves every conclusion unchanged: resolved counts 3-4 across
+      regimes, mean gap .110-.176, ties nearly never fire (3 of 4,288
+      flagged). The one nuance is honest: under the tie-flagged regime the
+      median gap crosses zero (-.003 vs .059 downward) — the descriptive
+      tilt is regime-robust in mean and fragile in median, consistent with
+      a small-signal, floor-dominated panel.
+    source_measurements: ["data/pl4_posthoc_results.json"]
+    generating_method: M2
+    statistical_strength: "post-hoc-executed pre-registered sensitivity (PL0 v1.2 §10.2)"
+    antecedents: [F2, F3]
+    falsifier: "a regime flipping the resolution verdict or the demotion decision"
+    provenance:
+      created_by: "tool:rerun_rc1.py + analyze_posthoc.py (seed 20260703)"
+      created_at: "2026-07-04T00:00:00Z"
+    body_sections: ["Stage 2: The Organization Panel", "Limitations"]
+
+  - id: F11
+    statement: >-
+      Artifact-level variance decomposition of the primary records
+      corroborates the negative-control diagnosis from the measurement side:
+      splitting per-cell (operator pair x artifact) mean depth into marginal
+      components, between-artifact variance exceeds between-pair variance in
+      37 of 52 qualifying organization-channels (median between-artifact
+      share .802 stated, .628 enacted; artifact-dominant in 18 of 21 stated
+      and 19 of 31 enacted) — individual artifacts inside one register
+      differ in depth more than model families disagree, and more so in
+      strategy prose than in enacted reports.
+    source_measurements: ["data/variance_decomposition.json"]
+    generating_method: M3
+    statistical_strength: >-
+      descriptive decomposition; marginal variance shares over
+      organization-channels with >= 3 pairs and >= 4 artifacts carrying
+      classified interventions
+    antecedents: [F6, F9]
+    falsifier: >-
+      pair-dominant shares (between-pair variance exceeding between-artifact
+      in most organization-channels) would have located the instrument's
+      noise in operator disagreement rather than artifact heterogeneity
+    provenance:
+      created_by: "tool:variance_decomposition.py (seed 20260703)"
+      created_at: "2026-07-04T00:00:00Z"
+    body_sections: ["Stage 2: The Organization Panel"]
+
+# ============================================================================
+# Negative findings (from Phase-2 DR; pre-campaign)
+# ============================================================================
+negative_findings:
+  - id: NF1
+    statement: >-
+      No LLM-read organizational-maturity or optimization-depth instrument
+      was found in the target methods literature 2023-2026 — at registry
+      depth or in the pre-submission full-text sweep extended to preprint
+      servers; existing LLM work covers qualitative-analysis assistance,
+      supervised text scoring, measurement-error mitigation, sentence-level
+      commitment and greenwashing classifiers, and one maturity-rating proof
+      of concept without reliability floors — none an ordered
+      intervention-depth ladder read by LLM operators against measured noise
+      floors.
+    expected_observation: >-
+      A published instrument in which AI operators classify organizational
+      improvement interventions onto an ordered depth scale against measured
+      reliability floors.
+    source_method: "Phase-2 DR registry sweep (Crossref, 2026-07-03) + full-text web sweep incl. arXiv/SSRN preprints (2026-07-04; the owed extension, executed)"
+    affects_nodes: [P6]
+    motivates: [P3]
+    provenance:
+      created_by: author
+      created_at: "2026-07-03T00:00:00Z"
+      under_conditions: >-
+        registry-depth sweep 2026-07-03; owed full-text extension EXECUTED
+        2026-07-04 — novelty holds; nearest neighbors recorded in changelog
+    body_sections: ["Position Among Measurement Approaches"]
+  - id: NF2
+    statement: >-
+      Prior empirical decoupling measurement is construct-specific archival
+      design — announced versus executed stock repurchases being the
+      canonical case — and the process-maturity tradition measures by
+      practitioner self-report; there is no general-purpose, reusable,
+      noise-floored instrument for the depth gap between organizational talk
+      and reported action.
+    expected_observation: >-
+      A reusable talk-action depth instrument applicable across intervention
+      types without a construct-specific archival design or self-report grid.
+    source_method: "Phase-2 DR verification reading (2026-07-03)"
+    affects_nodes: [P4, P6]
+    motivates: [P3]
+    provenance:
+      created_by: author
+      created_at: "2026-07-03T00:00:00Z"
+      under_conditions: "anchors verified via Crossref before spine entry"
+    body_sections: ["Position Among Measurement Approaches"]
+
+# ============================================================================
+# Derivations
+# ============================================================================
+derivations:
+  - id: D1
+    statement: >-
+      Because the ladder's rungs are ordered by the dependency chain (P2) and
+      each intervention codes at the deepest rung it specifies (P1), the
+      signed difference of mean depth rank between channels is a meaningful
+      one-dimensional summary of register decoupling — direction carries the
+      espoused-versus-enacted interpretation and magnitude carries rung units.
+    from: [P1, P2]
+    to: P4
+    reasoning_type: "deductive"
+    provenance:
+      created_by: author
+      created_at: "2026-07-03T00:00:00Z"
+      under_conditions: "pre-campaign spine lock"
+    body_sections: ["Floors and Resolution"]
+  - id: D2
+    statement: >-
+      The downward tie-breaker (unspecified depth codes toward the surface)
+      biases the STATED channel toward shallower readings, which shrinks the
+      stated-minus-enacted gap; the H2 test under the default rubric is
+      therefore conservative, and the three-regime sensitivity (RC1) bounds
+      the tie-breaker's contribution.
+    from: [P1]
+    to: P4
+    reasoning_type: "deductive"
+    provenance:
+      created_by: author
+      created_at: "2026-07-03T00:00:00Z"
+      under_conditions: "pre-campaign spine lock"
+    body_sections: ["The Depth-Coding Rubric"]
+
+  - id: D3
+    statement: >-
+      Source-agnosticism follows from the apparatus's parameterization: the
+      panel frame and the channel-to-artifact-class mapping are protocol
+      parameters, not commitments, so a disclosed-to-instrument corpus
+      (structured intake responses, internal change records, process
+      documentation) instantiates the same instrument under the same floors
+      and controls. Two guards carry over rather than dissolve: self-reported
+      depth claims remain stated-register wherever they appear (the
+      process-audit argument), and the scope statement becomes
+      per-deployment — the instrument measures the record submitted to it.
+      The expected precision gain concentrates on the enacted channel, where
+      the campaign's own noise decomposition locates the pathology
+      (unspecific spans; within-channel artifact heterogeneity).
+    from: [P6, F6, F8]
+    to: P6
+    reasoning_type: "deductive"
+    provenance:
+      created_by: author
+      created_at: "2026-07-04T00:00:00Z"
+    body_sections: ["Discussion"]
+
+# ============================================================================
+# Alternative explanations (registered rivals; status open until campaign)
+# ============================================================================
+alternative_explanations:
+  - id: A1
+    statement: >-
+      A positive stated-enacted gap reflects model priors about famous
+      organizations (transformation branding absorbed from training data)
+      rather than the artifact text.
+    rules_out_required: [RC2]
+    ruled_out_by: [F1, F7]
+    rules_out_status: "rejected"
+    reasoning: >-
+      The masked-identity arm re-codes with organization identity removed; if
+      the gap survives masking, priors do not carry it. Pre-registered as the
+      contamination bound, not assumed away.
+    provenance:
+      created_by: author
+      created_at: "2026-07-03T00:00:00Z"
+      under_conditions: "pre-campaign spine lock"
+    body_sections: ["Rivals and Controls"]
+  - id: A2
+    statement: >-
+      A positive gap is an artifact-genre effect: strategy prose is
+      linguistically deeper-sounding regardless of substance, and the rubric
+      merely detects genre, not decoupling.
+    rules_out_required: [M4, RC5]
+    ruled_out_by: [F1]
+    rules_out_status: "rejected"
+    reasoning: >-
+      The vignette bank plants both registers with depth fixed by
+      construction — if the rubric tracked genre rather than specified depth,
+      Stage-1 accuracy would fail on register-crossed vignettes; the
+      specified-not-promised test codes unspecified depth language toward the
+      surface by design.
+    provenance:
+      created_by: author
+      created_at: "2026-07-03T00:00:00Z"
+      under_conditions: "pre-campaign spine lock"
+    body_sections: ["Rivals and Controls"]
+  - id: A3
+    statement: >-
+      Any measured gap is instrument noise: operator disagreement, not
+      organizational decoupling.
+    rules_out_required: [M3, M5]
+    ruled_out_by: [F2]
+    rules_out_status: "partially_ruled_out"
+    reasoning: >-
+      The per-pair resolution criterion makes noise the null: a gap is
+      claimed only beyond twice the measured across-pair floor, concordance
+      is screened mechanically before reading, and an unresolved gap is
+      reported as unresolved under the no-rescue rule.
+    provenance:
+      created_by: author
+      created_at: "2026-07-03T00:00:00Z"
+      under_conditions: "pre-campaign spine lock"
+    body_sections: ["Floors and Resolution"]
+
+# ============================================================================
+# Robustness checks (all planned; pre-registered in PL0 v1.0)
+# ============================================================================
+robustness_checks:
+  - id: RC1
+    statement: >-
+      Tie-breaker sensitivity: all hypothesis statistics recomputed under
+      downward (default), upward, and ties-excluded regimes; conclusions must
+      survive all three or the discrepancy is reported as a limitation.
+    varied_parameter: "rubric tie-breaking rule"
+    range_explored: "three regimes"
+    result_stability: "confirmed"  # EXECUTED via the labeled re-read arm (PL0 v1.2 §10.2); F10: conclusions stable across regimes; median-sign fragility reported
+    affects_nodes: [P3, P4]
+    source_method: M2
+    provenance:
+      created_by: author
+      created_at: "2026-07-03T00:00:00Z"
+      under_conditions: "pre-registered"
+    body_sections: ["Stage 2: The Organization Panel"]
+  - id: RC2
+    statement: >-
+      Masked-identity contamination bound: vignette bank fully, and a Stage-2
+      subsample, re-read with organization names and identifying strings
+      replaced; the masked-vs-named reading delta is reported as the
+      prior-knowledge bound.
+    varied_parameter: "organization identity visibility"
+    range_explored: "named vs masked"
+    result_stability: "confirmed"  # F7: masked-minus-named -.018 (SD .206)
+    affects_nodes: [P3, P4, P5, A1]
+    source_method: M2
+    provenance:
+      created_by: author
+      created_at: "2026-07-03T00:00:00Z"
+      under_conditions: "pre-registered"
+    body_sections: ["Rivals and Controls", "Stage 2: The Organization Panel"]
+  - id: RC3
+    statement: >-
+      Same-organization negative control: disjoint artifact draws from the
+      same organization, window, and channel must not produce a gap beyond
+      the floor.
+    varied_parameter: "artifact draw within channel"
+    range_explored: "disjoint splits"
+    result_stability: "unstable"  # F6: 9/46 pseudo-resolutions — artifact heterogeneity under-priced by the across-pair floor
+    affects_nodes: [P4, AA2]
+    source_method: M3
+    provenance:
+      created_by: author
+      created_at: "2026-07-03T00:00:00Z"
+      under_conditions: "pre-registered"
+    body_sections: ["Rivals and Controls"]
+  - id: RC4
+    statement: >-
+      Ordinal-safety: mean-rank gap conclusions cross-checked against
+      median-rank gap, two-sample KS direction agreement, and first-order
+      stochastic dominance.
+    varied_parameter: "gap operationalization"
+    range_explored: "four statistics"
+    result_stability: "partial"  # F3/F4: mean .176 vs median .059 (skew); KS direction agrees
+    affects_nodes: [P4]
+    source_method: M3
+    provenance:
+      created_by: author
+      created_at: "2026-07-03T00:00:00Z"
+      under_conditions: "pre-registered"
+    body_sections: ["Stage 2: The Organization Panel"]
+  - id: RC5
+    statement: >-
+      Channel-label permutation: observed gap must fall outside the .95
+      interval of the within-organization label-permutation distribution.
+    varied_parameter: "channel labels"
+    range_explored: "1,000 permutations"
+    result_stability: "confirmed"  # ran as registered; bar NOT cleared (F5) — the test worked, the claim did not
+    affects_nodes: [P4, A2, AA2]
+    source_method: M7
+    provenance:
+      created_by: author
+      created_at: "2026-07-03T00:00:00Z"
+      under_conditions: "pre-registered"
+    body_sections: ["Pre-Registered Hypotheses"]
+
+# ============================================================================
+# Limitations
+# ============================================================================
+limitations:
+  - id: L1
+    statement: >-
+      The enacted channel consists of reports of concrete events, not the
+      events themselves; the instrument measures the gap between two
+      registers of the public record, and a talk-action reading of that gap
+      leans on the verifiability of enacted-channel artifact classes (AA3).
+    affects: [P4]
+    severity: "medium"
+    mitigation: >-
+      Enacted-channel classes restricted to filings and executed-change
+      reports; matching to accounting outcomes is future work and no
+      performance-consequence claim is made.
+    provenance:
+      created_by: author
+      created_at: "2026-07-03T00:00:00Z"
+      under_conditions: "pre-campaign spine lock"
+    body_sections: ["Limitations"]
+  - id: L2
+    statement: >-
+      Stage-1 validation generalizes to real artifacts only insofar as the
+      constructed vignette bank is distributionally representative of real
+      intervention descriptions; representativeness is argued by construction
+      (rung x register x minimal-pair coverage), not measured.
+    affects: [P3]
+    severity: "medium"
+    mitigation: >-
+      Human-coded real-artifact subsample (M6) supplies convergent validity
+      on real text; per-rung accuracy reported so weak rungs are visible.
+    provenance:
+      created_by: author
+      created_at: "2026-07-03T00:00:00Z"
+      under_conditions: "pre-campaign spine lock"
+    body_sections: ["Limitations"]
+  - id: L3
+    statement: >-
+      No causal or performance claims: the instrument measures a descriptive
+      property of public signals; whether deep optimizers outperform, and
+      whether gaps predict reversion, are downstream questions requiring
+      outcome data.
+    affects: [P2, P4]
+    severity: "low"
+    mitigation: "Scoped to future work; the depth doctrine (P2) is cited theory here, not a tested causal claim."
+    provenance:
+      created_by: author
+      created_at: "2026-07-03T00:00:00Z"
+      under_conditions: "pre-campaign spine lock"
+    body_sections: ["Limitations", "Discussion"]
+  - id: L4
+    statement: >-
+      Confirmatory power holds only at the pre-registered minimum resolved
+      panel (45 organizations for a half-rung gap); below it, hypothesis
+      claims demote to descriptive reporting by rule.
+    affects: [P4, P5]
+    severity: "medium"
+    mitigation: "Panel sized at 60+ with sibling-campaign exclusion rates priced in; minimum-resolved-N rule frozen in PL0 §7."
+    provenance:
+      created_by: author
+      created_at: "2026-07-03T00:00:00Z"
+      under_conditions: "pre-campaign spine lock"
+    body_sections: ["Limitations"]
+  - id: L5
+    statement: >-
+      The pre-registered tie-breaker sensitivity (RC1) was not executable
+      within the original design — the downward tie-break binds inside the
+      frozen classifier prompt, not in the estimator (a PL0 v1.0 design
+      oversight discovered at analysis) — and was EXECUTED via the labeled
+      post-campaign re-read arm (PL0 v1.2 §10.2), whose results are F10:
+      conclusions stable across all three regimes.
+    affects: [P4]
+    severity: "low"
+    mitigation: >-
+      Deferred re-read arm (three-regime prompts on the pinned panel) at any
+      future version; the conservativeness argument (D2) bounds the direction
+      of the bias meanwhile.
+    provenance:
+      created_by: author
+      created_at: "2026-07-03T00:00:00Z"
+      under_conditions: "post-campaign"
+    body_sections: ["Limitations"]
+
+# ============================================================================
+# Propositions
+# ============================================================================
+propositions:
+  - id: P1
+    statement: >-
+      Optimization depth is a well-defined ordinal property of an
+      organizational improvement intervention: the rung of the four-rung
+      ladder (economic outputs, coordination structure, activity chain,
+      delivered value) whose object the intervention specifies a change to,
+      decidable by a mechanical rubric.
+    type: ontological
+    conditions: "C4"
+    antecedents: []
+    assumptions: []
+    falsifier: >-
+      If trained coders (human or AI) cannot apply the rubric consistently to
+      constructed cases with depth fixed by construction — Stage-1 accuracy
+      below the pre-registered threshold with disagreement spread across
+      rungs rather than localized — depth is not rubric-decidable as defined.
+    evidence:
+      - type: citation
+        anchor: >-
+          Rungs ground in the published organizational tier stack: delivered
+          value, activity chain, and coordination structure are the
+          operational tiers; economics is the stack's output surface, and
+          coordination structure exists because activity chains do not
+          self-coordinate.
+        citation_keys:
+          [
+            zharnikov-2026-dual-hierarchies-organizational-transferability-six,
+            zharnikov-2026-organizational-schema-theory-test-driven,
+          ]
+        citation_role: definitional_source
+      - type: citation
+        anchor: >-
+          The structure rung and the intervention-as-coded-element draw on
+          canonical accounts of coordination structure and of routines as the
+          unit of organizational activity.
+        citation_keys:
+          [
+            mintzberg-1979-structuring-organizations-synthesis,
+            pentland-2005-organizational-routines-as,
+          ]
+        citation_role: definitional_source
+    body_sections: ["The Depth Ladder"]
+    provenance:
+      created_by: author
+      created_at: "2026-07-03T00:00:00Z"
+      under_conditions: "pre-campaign spine lock"
+  - id: P2
+    statement: >-
+      The ladder's order is a dependency chain: interventions at a deeper
+      rung cascade outward to shallower rungs, while surface interventions
+      leave the deeper specification unchanged and tend to revert — the
+      durable-change locus is the process and product rungs.
+    type: ontological
+    conditions: "C4"
+    antecedents: [P1]
+    assumptions: []
+    falsifier: >-
+      Systematic evidence of durable economic improvement from pure D4
+      interventions absent any deeper respecification, or of D1/D2
+      interventions failing to propagate outward at rates comparable to D4
+      reversion, would break the asymmetry.
+    evidence:
+      - type: citation
+        anchor: >-
+          The deep-intervention doctrine: process redesign over output
+          manipulation; waste eliminated by respecifying activity chains, not
+          by accelerating them; structure mirrors the process topology it
+          coordinates, so structure-only change reverts.
+        citation_keys:
+          [
+            hammer-1993-reengineering-corporation-manifesto,
+            ohno-1988-toyota-production-system,
+            womack-1996-lean-thinking-banish,
+            conway-1968-how-do-committees,
+          ]
+        citation_role: theoretical_predecessor
+    body_sections: ["The Depth Ladder"]
+    provenance:
+      created_by: author
+      created_at: "2026-07-03T00:00:00Z"
+      under_conditions: "cited theory; not causally tested in this paper (L3)"
+  - id: P3
+    statement: >-
+      Optimization depth is machine-readable: AI operators under the frozen
+      rubric recover constructed ground truth at or above the pre-registered
+      accuracy threshold and resolve real organizations' depth readings
+      beyond the operator floor.
+    type: measurement_result
+    conditions: "C1, C3, C5"
+    antecedents: [P1]
+    assumptions: [AA1, AA4]
+    falsifier: >-
+      Stage-1 macro accuracy below .80, or a majority of panel organizations
+      unresolved at the per-pair criterion — either publishes as the measured
+      capability bound and withdraws the instrument claim.
+    evidence:
+      - type: empirical
+        anchor: >-
+          RESOLVED PARTIALLY (FORK 2026-07-03): H1(i) supported at ceiling
+          (F1: macro accuracy 1.000 full-bank AND held-out, both pairs);
+          H1(ii) FAILS the majority criterion (F2: 4 of 35 resolve) — depth
+          is machine-readable on constructed texts while per-organization
+          gap resolution on real filings is floor-limited.
+    body_sections: ["Stage 1: Constructed Ground Truth", "Stage 2: The Organization Panel"]
+    provenance:
+      created_by: author
+      created_at: "2026-07-03T00:00:00Z"
+      under_conditions: "H1(i) ceiling on constructed bank; H1(ii) boundary result (F2)"
+  - id: P4
+    statement: >-
+      The stated channel reads systematically deeper than the enacted
+      channel: organizations' strategy prose claims deeper optimization than
+      their reported interventions specify, and the signed gap clears the
+      operator floor at panel level.
+    type: empirical_finding
+    conditions: "C1, C2, C3, C5"
+    antecedents: [P1, P2]
+    assumptions: [AA2, AA3]
+    ruled_out_rivals: []
+    falsifier: >-
+      A panel-level gap unresolved against the floor, centered at zero under
+      permutation, or negative — each is a committed publishable outcome; a
+      floored null reads as measured consistency of public organizational
+      communication.
+    evidence:
+      - type: citation
+        anchor: >-
+          Direction predicted by the decoupling tradition (formal claims
+          decouple from operational practice) and the espoused-versus-in-use
+          asymmetry; the canonical archival measurement found announced
+          programs systematically unexecuted.
+        citation_keys: [meyer-1977-institutionalized-organizations-formal, argyris-1978-organizational-learning-theory]
+        citation_role: theoretical_predecessor
+      - type: empirical
+        anchor: >-
+          DEMOTED TO DESCRIPTIVE by the frozen minimum-resolved rule (F2: 4
+          resolved < 45): the descriptive tilt agrees with the pre-registered
+          direction (F3: mean .176, 20/35 positive; F4: pooled KS
+          stated-deeper, p < .001) but the permutation falsification bar is
+          not cleared (F5) — no confirmatory decoupling claim is made.
+    body_sections: ["Floors and Resolution", "Stage 2: The Organization Panel"]
+    provenance:
+      created_by: author
+      created_at: "2026-07-03T00:00:00Z"
+      under_conditions: "descriptive by rule; committed-null pattern honored"
+  - id: P5
+    statement: >-
+      The stated-actual gap is a property of the organization's public
+      signal, not of the measuring model family: across cross-family operator
+      pairs, per-organization gap dispersion stays within the operator floor
+      for resolved organizations.
+    type: measurement_result
+    conditions: "C5"
+    antecedents: [P3]
+    assumptions: [AA4]
+    falsifier: >-
+      Family-dependent gaps (across-family dispersion exceeding the floor)
+      falsify signal-attribution; the finding then demotes to a
+      family-conditional reading under the no-rescue rule.
+    evidence:
+      - type: empirical
+        anchor: >-
+          DESCRIPTIVE ONLY (demoted with H2 per F2): all 4 resolved
+          organizations pass the leave-one-out family-dispersion check —
+          consistent with signal attribution at a sample too small to claim
+          it.
+    body_sections: ["Stage 2: The Organization Panel"]
+    provenance:
+      created_by: author
+      created_at: "2026-07-03T00:00:00Z"
+      under_conditions: "descriptive by rule"
+  - id: P6
+    statement: >-
+      The instrument-family scaffold and its metrological discipline
+      (pre-registration, operator noise floors, per-pair resolution,
+      cross-family operators, mechanical concordance screening, committed
+      nulls) transfer unchanged from observer-side perception constructs to a
+      producer-side organizational construct, crossing the producer-observer
+      seam at the rendered artifact.
+    type: rendering_equivalence
+    conditions: "C1"
+    antecedents: [P1]
+    assumptions: []
+    falsifier: >-
+      If the producer-side construct had required new floor machinery, new
+      resolution logic, or a new scaffold layer beyond domain-specific
+      prompts and rubric, the domain-neutrality claim would fail; NF1/NF2
+      locate what is genuinely new (the construct and rubric), and the
+      apparatus diff against the sibling instruments is the check.
+    evidence:
+      - type: citation
+        anchor: >-
+          The scaffold's domain-neutrality claim; the seam map licensing
+          producer-side reading through rendered public artifacts; the
+          observability limit that scopes the reading to the public signal;
+          organizational configurations observationally equivalent from
+          outside — the stated channel can be metameric exactly where the
+          enacted channel resolves.
+        citation_keys:
+          [
+            zharnikov-2026as-prism-structured-measurement,
+            zharnikov-2026bc-producer-observer-seam,
+            zharnikov-2026-specification-impossibility-organizational-design-high,
+            zharnikov-2026-organizational-metamerism-when-distinct-configurations,
+          ]
+        citation_role: theoretical_predecessor
+      - type: self_application
+        anchor: >-
+          The paper itself is the transfer: PL0-PL4 instantiated for the
+          organizational construct with only PL2 prompts, the rubric, and the
+          panel design new.
+    body_sections: ["Position Among Measurement Approaches", "Discussion"]
+    provenance:
+      created_by: author
+      created_at: "2026-07-03T00:00:00Z"
+      under_conditions: "pre-campaign spine lock"
+
+# ============================================================================
+# Corpus precedents
+# ============================================================================
+corpus_precedents:
+  - paper_key: 2026as
+    relationship: extends
+    spine_nodes: [P6]
+  - paper_key: 2026ax
+    relationship: applies
+    spine_nodes: [M3, C5]
+  - paper_key: 2026ap
+    relationship: applies
+    spine_nodes: [M2, AA4]
+  - paper_key: 2026ay
+    relationship: applies
+    spine_nodes: [C5, A3]
+  - paper_key: 2026az
+    relationship: applies
+    spine_nodes: [M5]
+  - paper_key: 2026bb
+    relationship: extends
+    spine_nodes: [P4]
+  - paper_key: 2026ba
+    relationship: applies
+    spine_nodes: [M2]
+  - paper_key: 2026i
+    relationship: tests
+    spine_nodes: [P1, P2]
+  - paper_key: 2026ag
+    relationship: applies
+    spine_nodes: [P1]
+  - paper_key: 2026af
+    relationship: applies
+    spine_nodes: [P6]
+  - paper_key: 2026h
+    relationship: applies
+    spine_nodes: [C1]
+  - paper_key: foam-bridge-note
+    relationship: applies
+    spine_nodes: [P6, C1]
+
+# ============================================================================
+# External anchors (citation_role per node; the four review-added anchors were
+# Crossref-verified 2026-07-03 — records in DR_PHASE_2_CITATIONS.md — and
+# registered in the substrate; feldman-2003 already existed and is reused)
+# ============================================================================
+external_anchors:
+  - citation_key: argyris-1978-organizational-learning-theory
+    role: theoretical_predecessor
+    spine_nodes: [P4]
+  - citation_key: meyer-1977-institutionalized-organizations-formal
+    role: theoretical_predecessor
+    spine_nodes: [P4]
+  - citation_key: hammer-1993-reengineering-corporation-manifesto
+    role: theoretical_predecessor
+    spine_nodes: [P2]
+  - citation_key: hammer-2007-the-process-audit
+    role: contrast_case
+    spine_nodes: [NF2]
+  - citation_key: ohno-1988-toyota-production-system
+    role: theoretical_predecessor
+    spine_nodes: [P2]
+  - citation_key: womack-1996-lean-thinking-banish
+    role: theoretical_predecessor
+    spine_nodes: [P2]
+  - citation_key: conway-1968-how-do-committees
+    role: theoretical_predecessor
+    spine_nodes: [P2]
+  - citation_key: mintzberg-1979-structuring-organizations-synthesis
+    role: definitional_source
+    spine_nodes: [P1]
+  - citation_key: pentland-2005-organizational-routines-as
+    role: definitional_source
+    spine_nodes: [P1]
+  - citation_key: gilardi-2023-chatgpt-outperforms-crowd
+    role: methodological_source
+    spine_nodes: [AA1]
+  - citation_key: ziems-2024-can-large-language-models
+    role: methodological_source
+    spine_nodes: [AA1]
+  - citation_key: nosek-2018-the-preregistration-revolution
+    role: methodological_source
+    spine_nodes: [M1, M4]
+  - citation_key: flake-2020-measurement-schmeasurement-questionable
+    role: methodological_source
+    spine_nodes: [M3]
+  - citation_key: westphal-2001-decoupling-policy-from
+    role: contrast_case
+    spine_nodes: [P4, NF2]
+  - citation_key: duriau-2007-content-analysis-literature
+    role: methodological_source
+    spine_nodes: [M2, NF1]
+  - citation_key: feldman-2003-reconceptualizing-organizational-routines
+    role: theoretical_predecessor
+    spine_nodes: [P2]
+  - citation_key: aguinis-2018-what-you-see
+    role: methodological_source
+    spine_nodes: [M2]
+  - citation_key: abrahamson-1996-management-fashion
+    role: motivating_problem
+    spine_nodes: [P4]
+  - citation_key: zbaracki-1998-rhetoric-reality-total
+    role: motivating_problem
+    spine_nodes: [P4, NF2]
+  - citation_key: bromley-2012-smoke-mirrors-walking
+    role: definitional_source
+    spine_nodes: [P4]
+  - citation_key: fiss-2006-symbolic-management-strategic
+    role: contrast_case
+    spine_nodes: [NF2]
+  - citation_key: liddell-2018-analyzing-ordinal-data
+    role: methodological_source
+    spine_nodes: [M3]
+  - citation_key: hayes-2007-answering-the-call
+    role: methodological_source
+    spine_nodes: [M6]
+  - citation_key: crilly-2012-faking-it-or
+    role: theoretical_predecessor
+    spine_nodes: [F3]
+  - citation_key: mckenny-2018-what-doesnt-get
+    role: methodological_source
+    spine_nodes: [M2, NF1]
+  - citation_key: hannigan-2019-topic-modeling-management
+    role: methodological_source
+    spine_nodes: [NF1]
+  # Pre-upload pass anchors, independently verified 2026-07-04 (Brunsson via
+  # OpenLibrary ISBN; Wickert/Christensen/Paulk via Crossref; Merkl-Davies &
+  # Brennan 2007 DROPPED — canonical JAL v26 version has no Crossref record).
+  - citation_key: brunsson-1989-the-organization-of
+    role: theoretical_predecessor
+    spine_nodes: [P4]
+  - citation_key: wickert-2016-walking-and-talking
+    role: theoretical_predecessor
+    spine_nodes: [P4]
+  - citation_key: christensen-2013-csr-as-aspirational
+    role: contrast_case
+    spine_nodes: [P4]
+  - citation_key: paulk-1993-capability-maturity-model
+    role: contrast_case
+    spine_nodes: [P1]
+
+# ============================================================================
+# Open questions / owed steps
+# ============================================================================
+
+# ============================================================================
+# Changelog (append-only)
+# ============================================================================

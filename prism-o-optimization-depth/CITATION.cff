@@ -1,0 +1,38 @@
+cff-version: 1.2.0
+message: "If you use this paper, please cite it as below."
+authors:
+  - family-names: Zharnikov
+    given-names: Dmitry
+    affiliation: "Independent Researcher"
+    orcid: "https://orcid.org/0009-0000-6893-9231"
+title: "Measuring Optimization Depth: A Pre-Registered Instrument for the Stated-Actual Optimization Gap in Organizational Self-Description (PRISM-O)"
+version: 1.0.0
+date-released: 2026-06-14
+url: "https://doi.org/10.5281/zenodo.21159815"
+repository-code: "https://github.com/spectralbranding/sbt-papers"
+identifiers:
+  - type: doi
+    value: "10.5281/zenodo.21159815"
+    description: "Zenodo concept DOI (all versions)"
+keywords:
+  - optimization depth
+  - decoupling
+  - content analysis
+  - large language models
+  - measurement instrument
+  - preregistration
+  - organizational change
+  - noise floor
+license:
+  - CC-BY-4.0
+  - MIT
+type: article
+preferred-citation:
+  type: article
+  authors:
+    - family-names: Zharnikov
+      given-names: Dmitry
+  title: "Measuring Optimization Depth: A Pre-Registered Instrument for the Stated-Actual Optimization Gap in Organizational Self-Description (PRISM-O)"
+  year: 2026
+  doi: "10.5281/zenodo.21159815"
+  url: "https://doi.org/10.5281/zenodo.21159815"

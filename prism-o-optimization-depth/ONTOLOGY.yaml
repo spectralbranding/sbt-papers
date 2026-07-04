@@ -1,0 +1,55 @@
+# ONTOLOGY.yaml module - 2026bd (PRISM-O)
+#
+# Per-paper ontology module per [internal path removed]
+# §"ONTOLOGY.yaml schema (v0.1)". owns = terms THIS artifact introduces (unique
+# authority); imports = terms owned by other modules it uses (reference only).
+#
+# PRISM-O = the organizational member of the PRISM instrument family: the first member
+# pointed at the producer side of the producer-observer seam. It owns the
+# optimization-depth construct and the stated-actual optimization gap; it imports the
+# PRISM scaffold (prism), the OST tier stack (2026i/2026ag), and the floor apparatus.
+#
+# DRAFT SEED — file authored pre-gate; NOT yet linked into the substrate
+# (build_ontology --apply is owed post-gate per [internal path removed]).
+
+paper_key: 2026bd
+schema_version: 0.1
+
+owns:
+  - term_key: prism-o
+    label: "PRISM-O"
+    canonical_form: "PRISM-O"
+    definition: "The organizational member of the PRISM instrument family: an AI-operator instrument that reads a frozen panel of an organization's public artifacts, classifies every improvement intervention onto the optimization-depth ladder, and measures the stated-actual optimization gap against operator noise floors. The first PRISM member whose target is producer-side structure (the tier stack) rather than observer-side perception, read through the rendered artifacts at the producer-observer seam."
+    first_section: "PRISM-O Specification"
+  - term_key: optimization-depth
+    label: "Optimization depth"
+    canonical_form: "optimization depth"
+    definition: "The rung of the four-rung depth ladder at which an organizational improvement intervention binds: D4 operations/economics (targets economic quantities directly), D3 organization (changes coordination structure), D2 process (changes the activity chain), D1 product/value (changes what value is delivered). D1-D3 ground in Tiers 4/5/6 of the six-tier ontology; D4 is the stack's economic output surface, deliberately not a tier. The ladder is ordered by the dependency chain: deeper interventions cascade outward to shallower layers, while surface interventions revert because the deeper specification reasserts itself."
+    first_section: "The Depth Ladder"
+    relations:
+      - {type: maps_to, term_key: tier-4-product, note: "rung D1 (product/value) binds at Tier 4"}
+      - {type: maps_to, term_key: tier-5-process, note: "rung D2 (process) binds at Tier 5"}
+      - {type: maps_to, term_key: tier-6-organization, note: "rung D3 (organization) binds at Tier 6; rung D4 (operations/economics) is the stack's output surface, not a tier"}
+  - term_key: stated-actual-optimization-gap
+    label: "Stated-actual optimization gap"
+    canonical_form: "stated-actual optimization gap"
+    definition: "The signed difference between the optimization depth an organization's strategy prose claims (the stated channel) and the depth its reported concrete interventions reveal (the enacted channel), measured per organization over a fixed window and claimed only when it clears twice the operator noise floor. Positive when the organization talks deeper than it acts - the espoused-versus-in-use / policy-practice decoupling direction, operationalized as a floored measurement. Both channels are public renderings: the gap measures communicated decoupling in the public record, never internal ground truth."
+    first_section: "The Gap Estimator"
+    relations:
+      - {type: maps_to, term_key: choice-perception-gap, note: "sibling gap construct: stated versus behavioral readout, there on the observer side of the seam, here on the producer side"}
+
+imports:
+  - {term_key: prism-instrument}
+  - {term_key: prism-five-layer-scaffold}
+  - {term_key: organizational-schema-theory}
+  - {term_key: six-tier-ontology}
+  - {term_key: tier-4-product}
+  - {term_key: tier-5-process}
+  - {term_key: tier-6-organization}
+  - {term_key: operator-noise-floor}
+  - {term_key: operator-role}
+  - {term_key: organizational-metamerism}
+  - {term_key: choice-perception-gap}
+
+refines: []
+
