@@ -1,0 +1,176 @@
+[
+  {
+    "brand": "Patagonia",
+    "channel": "official",
+    "url": "https://www.patagonia.com/core-values/",
+    "retrieved_at": "2026-07-02T09:03:39Z",
+    "chars": 2359,
+    "sha256": "a0dfe57da59adcf058d610f46267edd4bf163cecbbafcada4ab771acc0cf1b9c"
+  },
+  {
+    "brand": "Patagonia",
+    "channel": "press",
+    "url": "https://fortune.com/2025/10/08/patagonia-ceo-ryan-gellert-climate-change-business-model-albania-national-park/",
+    "retrieved_at": "2026-07-02T09:03:46Z",
+    "chars": 2482,
+    "sha256": "9b69adc30acdcac7a8ca04e8701b5e626c4829b3c63389a67514c93e7fac4594"
+  },
+  {
+    "brand": "Patagonia",
+    "channel": "experience",
+    "url": "https://www.switchbacktravel.com/reviews/patagonia-nano-puff-hoody",
+    "retrieved_at": "2026-07-02T09:08:15Z",
+    "chars": 2498,
+    "sha256": "d9076b79825b2cfe55eb391ceff1e4f9205ebfc3d7804dbc622ede130240684f",
+    "note": "Trustpilot blocked bot access (403); used detailed third-party gear review article instead"
+  },
+  {
+    "brand": "Patagonia",
+    "channel": "social",
+    "url": "https://news.ycombinator.com/item?id=32842357",
+    "retrieved_at": "2026-07-02T09:11:02Z",
+    "chars": 2495,
+    "sha256": "d21663bb3db2ded0abbd6a054e4a0afc94a598112eabfb0487551193b5070eb0",
+    "note": "Reddit JSON endpoints returned 403; used Hacker News thread via Algolia API"
+  },
+  {
+    "brand": "Harley-Davidson",
+    "channel": "official",
+    "url": "https://www.harley-davidson.com/us/en/content/stories/harley-davidson-founders.html",
+    "retrieved_at": "2026-07-02T09:03:39Z",
+    "chars": 2495,
+    "sha256": "e93524bec51d57abaaa26da14ebacf0efef810e0ad6e2c81f20761437ea8c65e",
+    "note": "about-us.html returned 404; used brand-story page (The Founders of Harley-Davidson) on brand's own site"
+  },
+  {
+    "brand": "Harley-Davidson",
+    "channel": "press",
+    "url": "https://ridermagazine.com/2025/08/04/harley-davidson-names-artie-starrs-to-replace-jochen-zeitz-as-ceo/",
+    "retrieved_at": "2026-07-02T09:03:46Z",
+    "chars": 2495,
+    "sha256": "8e38b32a35588fe5f5144e46f9e6fe6cba609958dfd8f1b2a8abd79918ebf83c"
+  },
+  {
+    "brand": "Harley-Davidson",
+    "channel": "experience",
+    "url": "https://www.sitejabber.com/reviews/harley-davidson.com",
+    "retrieved_at": "2026-07-02T09:09:52Z",
+    "chars": 2497,
+    "sha256": "596bef97d3eeed54e47dbb04f8095e353fa51751a459178f481f7cac6d208c3c",
+    "note": "Trustpilot blocked bot access (403); used Sitejabber customer reviews"
+  },
+  {
+    "brand": "Harley-Davidson",
+    "channel": "social",
+    "url": "https://news.ycombinator.com/item?id=18439638",
+    "retrieved_at": "2026-07-02T09:11:02Z",
+    "chars": 2499,
+    "sha256": "eebd77666eaee3c701bbfaa9dde8d98415789f5b59ae658f7ac979f7500903ca",
+    "note": "Reddit JSON endpoints returned 403; used Hacker News thread via Algolia API"
+  },
+  {
+    "brand": "Erewhon",
+    "channel": "official",
+    "url": "https://ship.erewhon.com/pages/about",
+    "retrieved_at": "2026-07-02T09:03:39Z",
+    "chars": 2156,
+    "sha256": "e911d1c84e37c8300d060b0403a5abf0a502585dad6df3750df5fb5aecf9eace",
+    "note": "erewhon.com/about is JS-rendered (no static text); used brand's own ship.erewhon.com Our Story page"
+  },
+  {
+    "brand": "Erewhon",
+    "channel": "press",
+    "url": "https://www.grocerydive.com/news/erewhon-confirms-plans-store-new-york-city-manhattan-west-villiage-kith-ivy-membership/759368/",
+    "retrieved_at": "2026-07-02T09:03:46Z",
+    "chars": 1947,
+    "sha256": "1aba426b9250dad60a23f612419e37cfc0707d10b3bce335e8508164962d9074"
+  },
+  {
+    "brand": "Erewhon",
+    "channel": "experience",
+    "url": "https://spoonuniversity.com/reviews/erewhon-review-smoothie-los-angeles/",
+    "retrieved_at": "2026-07-02T09:08:57Z",
+    "chars": 2498,
+    "sha256": "d8634710338051e5a12599f2250a8c93c6f2edf194c68fe3161382cc911ca807",
+    "note": "Trustpilot and Thingtesting blocked (403); used detailed third-party store/product review article"
+  },
+  {
+    "brand": "Erewhon",
+    "channel": "social",
+    "url": "https://old.reddit.com/r/LosAngeles/comments/1i2flmh/erewhon_is_a_joke/",
+    "retrieved_at": "2026-07-02T09:12:34Z",
+    "chars": 2496,
+    "sha256": "570e01ad58584e2d0dd703a3e2e65d03e0d480c452a489d6217f991ad51358d4",
+    "note": "reddit.com JSON blocked (403); post + comment text retrieved via PullPush API (api.pullpush.io)"
+  },
+  {
+    "brand": "Airbnb",
+    "channel": "official",
+    "url": "https://news.airbnb.com/about-us/",
+    "retrieved_at": "2026-07-02T09:03:39Z",
+    "chars": 2493,
+    "sha256": "b0fe5f8815cab5101887da433ac2763dec012e9f4e3703c672bc852054bbd14c"
+  },
+  {
+    "brand": "Airbnb",
+    "channel": "press",
+    "url": "https://techcrunch.com/2025/05/13/airbnb-lauches-services-and-experinces-as-it-thinks-about-connecting-travelers/",
+    "retrieved_at": "2026-07-02T09:05:49Z",
+    "chars": 2499,
+    "sha256": "2ed8e0c62b15be6385881010ddff1a9aa395030b8aee2df64aff0f2356f185c7",
+    "note": "Skift and PhocusWire blocked (403); TechCrunch used"
+  },
+  {
+    "brand": "Airbnb",
+    "channel": "experience",
+    "url": "https://www.sitejabber.com/reviews/airbnb.com",
+    "retrieved_at": "2026-07-02T09:07:36Z",
+    "chars": 2497,
+    "sha256": "3b9b46bfbf0026fac2276b2511f16e94e3193e413982aa1ad6663a50292d6056",
+    "note": "Trustpilot and ConsumerAffairs blocked (403); used Sitejabber customer reviews"
+  },
+  {
+    "brand": "Airbnb",
+    "channel": "social",
+    "url": "https://news.ycombinator.com/item?id=34219422",
+    "retrieved_at": "2026-07-02T09:11:02Z",
+    "chars": 2499,
+    "sha256": "5f3db50ca5b317689705f344ba164ad7c7cd1a6106bb3272869a94e3cc095806",
+    "note": "Reddit JSON endpoints returned 403; used Hacker News thread via Algolia API"
+  },
+  {
+    "brand": "Sephora",
+    "channel": "official",
+    "url": "https://web.archive.org/web/20260416115512/https://www.sephora.com/beauty/about-us",
+    "retrieved_at": "2026-07-02T09:03:39Z",
+    "chars": 2477,
+    "sha256": "930640610a319712136bb302cd911d2c5ca8d23d71449cba48ff4aa314c83378",
+    "note": "sephora.com (US/UK/SG/IN) returns 403 to all non-browser fetches; used Wayback Machine snapshot (2026-04-16) of Sephora's own About Us page"
+  },
+  {
+    "brand": "Sephora",
+    "channel": "press",
+    "url": "https://www.retaildive.com/news/sephora-accelerate-program-beauty-brand-2025-cohort/736135/",
+    "retrieved_at": "2026-07-02T09:04:48Z",
+    "chars": 2498,
+    "sha256": "f5980dfd08a5910dc4f42508d1faa4282b39d61c05903892f617588a5a17937f"
+  },
+  {
+    "brand": "Sephora",
+    "channel": "experience",
+    "url": "https://www.sitejabber.com/reviews/sephora.com",
+    "retrieved_at": "2026-07-02T09:09:25Z",
+    "chars": 2497,
+    "sha256": "d6c8e5f03ec27be8fb66e21fce7ea4363a99b266a28b8f0efa693be2e8fed15c",
+    "note": "Trustpilot blocked bot access (403); used Sitejabber customer reviews"
+  },
+  {
+    "brand": "Sephora",
+    "channel": "social",
+    "url": "https://news.ycombinator.com/item?id=39149406",
+    "retrieved_at": "2026-07-02T09:11:02Z",
+    "chars": 2178,
+    "sha256": "8a1f69a6a197c28068815a3340a5c9d34e909d1121cf548e3f9a7bfefe66f188",
+    "note": "Reddit JSON endpoints returned 403; used Hacker News thread via Algolia API"
+  }
+]

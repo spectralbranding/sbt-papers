@@ -1,0 +1,174 @@
+[
+  {
+    "brand": "Goldman Sachs",
+    "channel": "official",
+    "url": "https://www.goldmansachs.com/about-us",
+    "retrieved_at": "2026-07-02T08:52:00Z",
+    "chars": 2493,
+    "sha256": "722d49a4c817136e7d703fc1e73776707a6fc5f50535bd217d6d82dd592651b3"
+  },
+  {
+    "brand": "Goldman Sachs",
+    "channel": "press",
+    "url": "https://www.cnbc.com/2026/04/13/goldman-sachs-gs-earnings-1q-2026.html",
+    "retrieved_at": "2026-07-02T09:00:00Z",
+    "chars": 2393,
+    "sha256": "9c23f73ce028b2c909bbc366e85ebc11c5a76a08b27924e4f89224c5612515bf"
+  },
+  {
+    "brand": "Goldman Sachs",
+    "channel": "experience",
+    "url": "https://fortune.com/article/marcus-by-goldman-sachs-review/",
+    "retrieved_at": "2026-07-02T09:05:00Z",
+    "chars": 2498,
+    "sha256": "20f7da88d30fa1f8f50e25e20aa1f405a1ff00a0558547b97eb01a2a3024668e",
+    "note": "Fallback: Trustpilot bot-redirected to unrelated pages, Bankrate/NerdWallet blocked; used detailed Fortune review article of Marcus by Goldman Sachs consumer banking service experience"
+  },
+  {
+    "brand": "Goldman Sachs",
+    "channel": "social",
+    "url": "https://news.ycombinator.com/item?id=3702253",
+    "retrieved_at": "2026-07-02T09:06:30Z",
+    "chars": 2499,
+    "sha256": "a9028412b8e7e9ac676c53930ab05f77720c8029625cc6b0b9c983b55a8257b7",
+    "note": "Hacker News discussion of Goldman Sachs culture (via hn.algolia.com API); item 3702253 'Why I Am Leaving Goldman Sachs', 249 comments"
+  },
+  {
+    "brand": "Basecamp",
+    "channel": "official",
+    "url": "https://basecamp.com/",
+    "retrieved_at": "2026-07-02T08:52:00Z",
+    "chars": 1204,
+    "sha256": "515d2542d74c5191066bb13de53add16305fe7687f9543a3c7e92525ea6ba8ab"
+  },
+  {
+    "brand": "Basecamp",
+    "channel": "press",
+    "url": "https://www.datacenterdynamics.com/en/news/37signals-expects-to-save-7m-over-five-years-after-moving-off-of-the-cloud/",
+    "retrieved_at": "2026-07-02T09:03:00Z",
+    "chars": 2498,
+    "sha256": "df6547aaaaa554708e9b07769b821341282d232d13c9f18557ed05b7fd6d90fb",
+    "note": "Fallback: no accessible 2025-2026 major-outlet article about Basecamp/37signals found; used 2023 Data Center Dynamics (trade outlet) news article on the Basecamp-maker's cloud exit"
+  },
+  {
+    "brand": "Basecamp",
+    "channel": "experience",
+    "url": "https://www.forbes.com/advisor/business/software/basecamp-review/",
+    "retrieved_at": "2026-07-02T09:04:00Z",
+    "chars": 2066,
+    "sha256": "5481fa1cc5b8061e9c6cfaafbc2e75e4900bdf574caa7fa5f12d9ecea08f450f",
+    "note": "Forbes Advisor product review; curl blocked (403), captured via headless browser"
+  },
+  {
+    "brand": "Basecamp",
+    "channel": "social",
+    "url": "https://news.ycombinator.com/item?id=26944192",
+    "retrieved_at": "2026-07-02T09:06:30Z",
+    "chars": 2497,
+    "sha256": "929a828222bfdd934e24d6ab002d0580cbd3ce23b517b71a8575533ac78920f5",
+    "note": "Hacker News discussion (via hn.algolia.com API); item 26944192 'Changes at Basecamp', 792 comments"
+  },
+  {
+    "brand": "Zoom",
+    "channel": "official",
+    "url": "https://www.zoom.com/en/about/",
+    "retrieved_at": "2026-07-02T08:55:00Z",
+    "chars": 2498,
+    "sha256": "587596d46216cceaa3eeb6fed8760b3fbecf432cd0afc271fb8c56f1b091c85c",
+    "note": "Static curl render too short (JS page); main content extracted via defuddle clean fetch"
+  },
+  {
+    "brand": "Zoom",
+    "channel": "press",
+    "url": "https://www.cnbc.com/2026/02/05/wolfe-upgrades-zoom-cites-improving-growth-profile-and-ai-monetization.html",
+    "retrieved_at": "2026-07-02T09:00:00Z",
+    "chars": 2393,
+    "sha256": "771a29cab05b0773a93f71e37318c26e727f64b778df9356783757fa17d5ecf8"
+  },
+  {
+    "brand": "Zoom",
+    "channel": "experience",
+    "url": "https://www.techradar.com/reviews/zoom",
+    "retrieved_at": "2026-07-02T09:04:00Z",
+    "chars": 2499,
+    "sha256": "4beeee448d49ea52f32fdacc66ab671d0264ca391f1512c9313e93cdd3714d73"
+  },
+  {
+    "brand": "Zoom",
+    "channel": "social",
+    "url": "https://news.ycombinator.com/item?id=37021160",
+    "retrieved_at": "2026-07-02T09:06:30Z",
+    "chars": 2496,
+    "sha256": "2755a83cd56e6f2413e93c3f86692f78f93809dd2dbc72e93bbce4b8030d301b",
+    "note": "Hacker News discussion (via hn.algolia.com API); item 37021160 'Zoom terms now allow training AI on user content with no opt out', 511 comments"
+  },
+  {
+    "brand": "Slack",
+    "channel": "official",
+    "url": "https://slack.com/about",
+    "retrieved_at": "2026-07-02T08:52:00Z",
+    "chars": 1837,
+    "sha256": "fb0dad8d9f0adc38e63ccc391a8f1a40d7303424565dce73e535e80916ceb11a"
+  },
+  {
+    "brand": "Slack",
+    "channel": "press",
+    "url": "https://techcrunch.com/2026/03/31/salesforce-announces-an-ai-heavy-makeover-for-slack-with-30-new-features/",
+    "retrieved_at": "2026-07-02T09:00:30Z",
+    "chars": 2491,
+    "sha256": "16d227b08f829b75e5971a81d000dde891be2b0b9dfd9df4cc5c89e381f4d4c6"
+  },
+  {
+    "brand": "Slack",
+    "channel": "experience",
+    "url": "https://www.techradar.com/reviews/slack",
+    "retrieved_at": "2026-07-02T09:04:00Z",
+    "chars": 2496,
+    "sha256": "d4437cc2aa4b3ad180ed1f1570541d70c02a7e0f9801b8bcff6cbe786990ad52"
+  },
+  {
+    "brand": "Slack",
+    "channel": "social",
+    "url": "https://news.ycombinator.com/item?id=45283887",
+    "retrieved_at": "2026-07-02T09:06:30Z",
+    "chars": 2496,
+    "sha256": "6d91a80e588303c8b9ef40fa2682a52d6b46adc2965f75e7f7a5baad33ec8101",
+    "note": "Hacker News discussion (via hn.algolia.com API); item 45283887 'Slack has raised our charges by $195k per year', 1470 comments"
+  },
+  {
+    "brand": "WeWork",
+    "channel": "official",
+    "url": "https://www.wework.com/en-GB/about-us",
+    "retrieved_at": "2026-07-02T08:58:30Z",
+    "chars": 2493,
+    "sha256": "96fb9bc2d5ed790e395ea00f3b5123b85e082d99534d1d590b4d6df7b4158a59",
+    "note": "Fallback: wework.com returns 403 to plain HTTP clients; https://www.wework.com/mission redirected to en-GB/about-us, captured via headless browser"
+  },
+  {
+    "brand": "WeWork",
+    "channel": "press",
+    "url": "https://fortune.com/2026/04/13/wework-go-pod-comeback-phone-booth/",
+    "retrieved_at": "2026-07-02T09:01:30Z",
+    "chars": 2206,
+    "sha256": "4330212491cbbc63c87c0b84ed78c31e6d76b5c9eee1f07949001fa67a60e313",
+    "note": "Fortune CEO Daily piece on WeWork Go launch; non-WeWork newsletter preamble lines removed"
+  },
+  {
+    "brand": "WeWork",
+    "channel": "experience",
+    "url": "https://mybalancedspace.com/wework-review/",
+    "retrieved_at": "2026-07-02T09:06:00Z",
+    "chars": 2496,
+    "sha256": "f323e19a78b56f39a3435af1e08487e7794400ccd153c791b096dc9f42d19d98",
+    "note": "Fallback: Trustpilot/GetApp/Executive Traveller blocked; used detailed first-person third-party review of the WeWork coworking experience (7 months, 3 London locations)"
+  },
+  {
+    "brand": "WeWork",
+    "channel": "social",
+    "url": "https://news.ycombinator.com/item?id=38172437",
+    "retrieved_at": "2026-07-02T09:06:30Z",
+    "chars": 2493,
+    "sha256": "6e61acd9290a491a4ff6770ea63e76f55fd382719a4928e6ab20f731c477cd00",
+    "note": "Hacker News discussion (via hn.algolia.com API); item 38172437 'WeWork Goes Bankrupt', 430 comments"
+  }
+]

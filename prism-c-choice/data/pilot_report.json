@@ -1,0 +1,68 @@
+{
+  "pilot_scenarios": [
+    "S01",
+    "S07",
+    "S16",
+    "S22",
+    "S27"
+  ],
+  "pilot_brands": [
+    "Apple",
+    "SAP"
+  ],
+  "family_discordance": {
+    "alibaba": 0.0,
+    "anthropic": 0.0,
+    "deepseek": 0.0,
+    "openai": 0.0
+  },
+  "family_exclusion": {
+    "kept": [
+      "alibaba",
+      "anthropic",
+      "deepseek",
+      "openai"
+    ],
+    "excluded": [],
+    "rule": "score > 3.0 x median(others)",
+    "scores": {
+      "alibaba": 0.0,
+      "anthropic": 0.0,
+      "deepseek": 0.0,
+      "openai": 0.0
+    }
+  },
+  "choice_floor_all_families": 0.0,
+  "choice_floor_kept_families": 0.0,
+  "op_pair_discordance": {
+    "OP1": 0.0035599248313578635,
+    "OP2": 0.002539975996440791,
+    "OP3": 0.004197761185453397,
+    "OP4": 0.014636196936667845
+  },
+  "op_pair_exclusion": {
+    "kept": [
+      "OP1",
+      "OP2",
+      "OP3"
+    ],
+    "excluded": [
+      {
+        "unit": "OP4",
+        "score": 0.014636196936667845,
+        "median_others": 0.0035599248313578635
+      }
+    ],
+    "rule": "score > 3.0 x median(others)",
+    "scores": {
+      "OP1": 0.0035599248313578635,
+      "OP2": 0.002539975996440791,
+      "OP3": 0.004197761185453397,
+      "OP4": 0.014636196936667845
+    }
+  },
+  "gate_max_choice_floor": 0.25,
+  "gate_pass": true,
+  "n_choice_records": 40,
+  "n_stated_records": 8
+}

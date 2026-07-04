@@ -1,0 +1,135 @@
+# PRISM-C PL1 Configuration — provisional until the pre-flight pilot; frozen
+# before confirmatory collection (freeze recorded in freeze_note below).
+# Version: prism-c/v1.0.0
+# Date authored: 2026-07-02
+# Provider set + budget confirmed by user 2026-07-02 (4 families, $100 cap;
+# 40 scenarios x 8 arrangements; exclusion rule fixed ex ante per PL0 §9.2).
+
+config_version: prism-c/v1.0.0
+budget_cap_usd: 100.00
+temperature: 0 # where honored; providers that reject/ignore it are logged as-sent
+seed: 20260702
+
+# --- Stated-reading side (PRISM-B reuse, unchanged from 2026az) -------------
+# Cross-family operator pairs (renderer != extractor family, 2026ap). Same
+# pinned IDs as research/prism_m/PL1_CONFIG.yaml (verified live 2026-07-02).
+operator_pairs:
+  OP1:
+    renderer: {model: claude-opus-4-8, family: anthropic}
+    extractor: {model: gpt-5.4-mini-2026-03-17, family: openai}
+  OP2:
+    renderer: {model: gpt-5.5-2026-04-23, family: openai}
+    extractor: {model: claude-haiku-4-5-20251001, family: anthropic}
+  OP3:
+    renderer: {model: qwen3.7-max-2026-06-08, family: alibaba}
+    extractor: {model: deepseek-v4-flash, family: deepseek}
+  OP4:
+    renderer: {model: deepseek-v4-pro, family: deepseek}
+    extractor: {model: qwen3.6-flash-2026-04-16, family: alibaba}
+
+# --- Choice side (new at PL2) ------------------------------------------------
+# One chooser model per family; the choice operator floor is the pairwise
+# disagreement rate between families on identical trials.
+choosers:
+  CH-ANT: {model: claude-opus-4-8, family: anthropic}
+  CH-OAI: {model: gpt-5.5-2026-04-23, family: openai}
+  CH-ALI: {model: qwen3.7-max-2026-06-08, family: alibaba}
+  CH-DSK: {model: deepseek-v4-pro, family: deepseek}
+
+fallbacks:
+  claude-opus-4-8: claude-sonnet-4-6
+  gpt-5.5-2026-04-23: gpt-4o-2024-11-20
+  gpt-5.4-mini-2026-03-17: gpt-4o-mini-2024-07-18
+  claude-haiku-4-5-20251001: claude-haiku-4-5
+  qwen3.7-max-2026-06-08: qwen3.7-max
+  qwen3.6-flash-2026-04-16: qwen-flash
+  deepseek-v4-pro: deepseek-v4-flash
+  deepseek-v4-flash: deepseek-v4-pro
+
+# Brand bank: REUSED FROZEN — research/prism_m/PL2_BRAND_BANK.yaml
+# (prism-m/v1.0.0, 40 brands, five coherence types x B2C/B2B, Interbrand
+# index frame + pre-registered supplementation rule). Reuse keeps the stated
+# readings on the same stimulus frame as the completed PRISM-M campaign.
+brand_bank: ../prism_m/PL2_BRAND_BANK.yaml
+
+# Stated readings use the same four artifact channels as 2026az.
+artifact_channels:
+  A1: {id: official, description: "official brand communications - website, advertising, packaging, owned media"}
+  A2: {id: press, description: "third-party press and news coverage of the brand"}
+  A3: {id: experience, description: "customer experience reports and product/service reviews"}
+  A4: {id: social, description: "organic social-media and forum discourse about the brand"}
+
+# Counterbalancing (PL0 §9.1): 8 position arrangements per (scenario,
+# choice-set) trial - the n rotations of the base option order (each option
+# once in first position) plus the n rotations of the reversed order,
+# deduplicated and truncated to 8 by the deterministic scheme in code
+# (prism_c_lib.arrangements). Sets whose full scheme yields fewer than 8
+# distinct permutations use the full set (n=3 -> 6; n=2 controls -> 2).
+# Each independent API call carries exactly one arrangement; statelessness
+# of the calls removes cross-set order carryover by construction (each trial
+# is a fresh context), so option position is the operative presentation
+# factor.
+n_arrangements: 8
+
+# Pre-flight pilot (PL0 §9.2): ~50-call screen BEFORE the bank freezes.
+pilot:
+  choice_scenarios: 5      # x 2 arrangements x 4 chooser families = 40 calls
+  choice_arrangements: 2
+  stated_brands: 2         # x 1 channel x 4 op pairs x (render+extract) = 16 calls
+  stated_channels: [official]
+  exclusion_rule: "discordance score > 3 x median of remaining units (mechanical; PL0 §9.2)"
+  gate_max_choice_floor: 0.25  # post-exclusion pilot choice floor must be <= this
+  # so k=2 leaves an estimable range (2 x floor <= .5) for the divergence rate
+
+# Retry/redraw policy for malformed output (same as 2026az)
+retry_policy:
+  max_retries: 3
+  backoff_seconds: [5, 15, 45]
+  malformed_output: redraw_once_then_flag
+
+# Gap criterion (PL0 §6): divergence rate resolved above floor iff
+# CI95 lower bound > k x choice operator floor, k = 2
+# (robustness sweep k in {1.5, 2, 3} at PL4).
+snr_k: 2.0
+
+# Controls (PL0 §5): outside the 40 confirmatory scenarios.
+controls:
+  negative: near_duplicate_pair   # fictional twin options, identical one-line
+                                  # descriptions; counterbalanced pick must not
+                                  # prefer either option beyond chance
+  positive: dominating_option     # one bank brand dominating on every
+                                  # dimension for the scenario; must be picked
+                                  # reliably
+  n_negative_sets: 5
+  n_positive_sets: 5
+  control_arrangements: 8
+
+# List price per 1M tokens (input/output USD), cost telemetry; the logger's
+# PRICE_TABLE is the runtime source.
+list_prices:
+  claude-opus-4-8: {input: 5.00, output: 25.00}
+  claude-haiku-4-5-20251001: {input: 1.00, output: 5.00}
+  gpt-5.5-2026-04-23: {input: 5.00, output: 30.00}
+  gpt-5.4-mini-2026-03-17: {input: 0.55, output: 2.20}
+  qwen3.7-max-2026-06-08: {input: 2.50, output: 7.50}
+  qwen3.6-flash-2026-04-16: {input: 0.10, output: 0.30}
+  deepseek-v4-pro: {input: 1.74, output: 3.48}
+  deepseek-v4-flash: {input: 0.14, output: 0.28}
+
+# --- Pilot outcome (2026-07-02, data/pilot_report.json) ---------------------
+# Mechanical application of the frozen exclusion rule (PL0 §9.2):
+# - chooser families: all four KEPT (per-family majority-pick discordance =
+#   0.0 on 40/40 pilot trials - full unanimity; choice floor 0.0).
+# - operator pairs (stated side): OP4 EXCLUDED from the operator floor
+#   (leave-one-out vector discordance .0146 > 3 x median-of-others .0036) -
+#   replicating the 2026az deepseek-v4-pro-renderer discordance on this
+#   instrument. OP4 is still COLLECTED and reported as an exploratory
+#   observer per the rule; it does not enter floors or pooled vectors.
+# - PILOT GATE: post-exclusion choice floor 0.0 <= .25 -> PASSED.
+pilot_excluded_op_pairs: [OP4]
+pilot_excluded_choosers: []
+
+freeze_note: FROZEN 2026-07-02 for confirmatory collection, after the
+  pre-flight pilot (a) applied the exclusion rule mechanically (OP4 out of
+  the stated floor; all choosers kept) and (b) passed the pilot gate
+  (post-exclusion choice floor 0.0 <= 0.25). Version prism-c/v1.0.0.

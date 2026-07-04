@@ -1,0 +1,173 @@
+[
+  {
+    "brand": "McDonald's",
+    "channel": "official",
+    "url": "https://corporate.mcdonalds.com/corpmcd/our-company/who-we-are.html",
+    "retrieved_at": "2026-07-02T09:03:39Z",
+    "chars": 1888,
+    "sha256": "bfdf0228f9ee2a31c42b93f3190ef059a4ee6f440ef567b1ec684ee9bee1b818"
+  },
+  {
+    "brand": "McDonald's",
+    "channel": "press",
+    "url": "https://www.cnbc.com/2026/06/01/mcdonalds-mcd-unveils-growth-strategy.html",
+    "retrieved_at": "2026-07-02T09:03:39Z",
+    "chars": 2492,
+    "sha256": "c23930e06db556f8b06bdde91487c327a1fdf34f890b00dc04c944e7cb7edd5b"
+  },
+  {
+    "brand": "McDonald's",
+    "channel": "experience",
+    "url": "https://www.smartcustomer.com/reviews/mcdonalds.com",
+    "retrieved_at": "2026-07-02T09:04:48Z",
+    "chars": 2492,
+    "sha256": "a228ff0ed532e8f4b3ed9b10c7999c27ef64ff2ec31be17ef6fbfd411b4d2634",
+    "note": "Trustpilot/ConsumerAffairs returned HTTP 403 to automated fetch; used Sitejabber consumer reviews (sitejabber.com/reviews/mcdonalds.com, redirects to smartcustomer.com)"
+  },
+  {
+    "brand": "McDonald's",
+    "channel": "social",
+    "url": "https://news.ycombinator.com/item?id=46006848",
+    "retrieved_at": "2026-07-02T09:06:06Z",
+    "chars": 2493,
+    "sha256": "ee9e72e2b7ff71cd465a8f8e8e94dabc498055c4018fc85c94784bdd6327f5a3",
+    "note": "Reddit JSON endpoints returned HTTP 403 from this network; used Hacker News discussion thread via Algolia API"
+  },
+  {
+    "brand": "Toyota",
+    "channel": "official",
+    "url": "https://global.toyota/en/company/vision-and-philosophy/global-vision/",
+    "retrieved_at": "2026-07-02T09:03:39Z",
+    "chars": 2499,
+    "sha256": "1f768144599ff760fd1d9442ddaa1588098d6186105360e643245ef22527e1c9"
+  },
+  {
+    "brand": "Toyota",
+    "channel": "press",
+    "url": "https://electrek.co/2026/07/01/toyotas-electric-suv-tops-17500-sales-outpaces-key-ev-rivals/",
+    "retrieved_at": "2026-07-02T09:03:39Z",
+    "chars": 2499,
+    "sha256": "54da3d560f6f38e323e9875b17204bdc4f7f19dca95d48c1260418d12110fd69"
+  },
+  {
+    "brand": "Toyota",
+    "channel": "experience",
+    "url": "https://www.caranddriver.com/toyota/camry",
+    "retrieved_at": "2026-07-02T09:04:48Z",
+    "chars": 2499,
+    "sha256": "eaae702af7cec36f7fdfc53f173f27f5491375e9cfeeb21295e9c13ba0630d10",
+    "note": "Trustpilot/ConsumerAffairs returned HTTP 403; used detailed third-party expert review article (Car and Driver, 2026 Toyota Camry review)"
+  },
+  {
+    "brand": "Toyota",
+    "channel": "social",
+    "url": "https://news.ycombinator.com/item?id=33057003",
+    "retrieved_at": "2026-07-02T09:06:06Z",
+    "chars": 2493,
+    "sha256": "fd30144b2cf5fd1f26f73eabbf942636dd2054e6bf798fe26178bdefc92c6002",
+    "note": "Reddit JSON endpoints returned HTTP 403 from this network; used Hacker News discussion thread via Algolia API"
+  },
+  {
+    "brand": "Visa",
+    "channel": "official",
+    "url": "https://usa.visa.com/about-visa.html",
+    "retrieved_at": "2026-07-02T09:03:39Z",
+    "chars": 2494,
+    "sha256": "c611780b7622137a5e4f6c759a9419bf0ea637441dd8023f8d23159ad35f7f88"
+  },
+  {
+    "brand": "Visa",
+    "channel": "press",
+    "url": "https://www.coindesk.com/business/2026/01/30/visa-and-mastercard-aren-t-buying-the-stablecoin-hype-for-everyday-payments",
+    "retrieved_at": "2026-07-02T09:03:39Z",
+    "chars": 2494,
+    "sha256": "29d0f70ed6aff8f48605e9562e5476e2f178e4c2c8b036284556c12832b8b66b"
+  },
+  {
+    "brand": "Visa",
+    "channel": "experience",
+    "url": "https://www.smartcustomer.com/reviews/visa.com",
+    "retrieved_at": "2026-07-02T09:04:48Z",
+    "chars": 2493,
+    "sha256": "3e6dddee2aee7d1eff0a0d984f793cf6e38a03a41d9de9ea692add450849f5ca",
+    "note": "Trustpilot/ConsumerAffairs returned HTTP 403; used Sitejabber consumer reviews (sitejabber.com/reviews/visa.com, redirects to smartcustomer.com)"
+  },
+  {
+    "brand": "Visa",
+    "channel": "social",
+    "url": "https://news.ycombinator.com/item?id=46958399",
+    "retrieved_at": "2026-07-02T09:06:06Z",
+    "chars": 2496,
+    "sha256": "00501c3489f14b997994793322e7975b4aef932ad40c50d34f26d3d7694087ba",
+    "note": "Reddit JSON endpoints returned HTTP 403 from this network; used Hacker News discussion thread via Algolia API"
+  },
+  {
+    "brand": "Nike",
+    "channel": "official",
+    "url": "https://about.nike.com/en/company",
+    "retrieved_at": "2026-07-02T09:03:39Z",
+    "chars": 2084,
+    "sha256": "056fd80bbbb0ee3aa4c2efa5248900a3d9e7913303ddddf19abefb2924afcb16"
+  },
+  {
+    "brand": "Nike",
+    "channel": "press",
+    "url": "https://www.cnbc.com/2026/06/30/nike-nke-q4-2026-earnings.html",
+    "retrieved_at": "2026-07-02T09:03:39Z",
+    "chars": 2493,
+    "sha256": "e0676cb1ef180e0185a2141d44d6a2103810801b7e876c743f5a8e13cd4a7864"
+  },
+  {
+    "brand": "Nike",
+    "channel": "experience",
+    "url": "https://runrepeat.com/nike-pegasus-41",
+    "retrieved_at": "2026-07-02T09:04:48Z",
+    "chars": 2493,
+    "sha256": "94494f8a6c5387c1c3b48addeb16092c86a6fbad6a1ae211320e5905fefd3ea9",
+    "note": "Trustpilot returned HTTP 403; used detailed third-party product review article (RunRepeat lab review of Nike Pegasus 41)"
+  },
+  {
+    "brand": "Nike",
+    "channel": "social",
+    "url": "https://news.ycombinator.com/item?id=43631543",
+    "retrieved_at": "2026-07-02T09:06:06Z",
+    "chars": 2488,
+    "sha256": "a139d95b1416ecd1d920ecbd73d7d405f1b2481398778110fedceefda7ae04d4",
+    "note": "Reddit JSON endpoints returned HTTP 403 from this network; used Hacker News discussion thread via Algolia API"
+  },
+  {
+    "brand": "Starbucks",
+    "channel": "official",
+    "url": "https://web.archive.org/web/20251231200444id_/https://www.starbucks.com/about-us/",
+    "retrieved_at": "2026-07-02T09:03:39Z",
+    "chars": 2490,
+    "sha256": "8eb4719429103cfda3c5303154c0366929cfa07f20e69f375ac4add46ec8d459",
+    "note": "Live starbucks.com/about-us and about.starbucks.com returned HTTP 403 to automated fetch; captured brand-authored About Us text via Wayback Machine snapshot"
+  },
+  {
+    "brand": "Starbucks",
+    "channel": "press",
+    "url": "https://www.cnbc.com/2026/01/29/starbucks-investor-day-updates-brian-niccol-turnaround.html",
+    "retrieved_at": "2026-07-02T09:03:39Z",
+    "chars": 2498,
+    "sha256": "409a8f670383e8a52ec2d46117816ad56303c76df066d87ea0a70cc8c835ecdc"
+  },
+  {
+    "brand": "Starbucks",
+    "channel": "experience",
+    "url": "https://www.smartcustomer.com/reviews/starbucks.com",
+    "retrieved_at": "2026-07-02T09:04:48Z",
+    "chars": 2497,
+    "sha256": "cf7601ecb95a32c96c0ac5ffa9023b7571eb2fe3aac55a2584906a05be1170be",
+    "note": "Trustpilot/ConsumerAffairs returned HTTP 403; used Sitejabber consumer reviews (sitejabber.com/reviews/starbucks.com, redirects to smartcustomer.com)"
+  },
+  {
+    "brand": "Starbucks",
+    "channel": "social",
+    "url": "https://news.ycombinator.com/item?id=35273712",
+    "retrieved_at": "2026-07-02T09:06:06Z",
+    "chars": 2495,
+    "sha256": "a350ab87f4cfdfe4db73dea8bf404aa3a3cb94a6e23e421bb4c19a98a91a9a00",
+    "note": "Reddit JSON endpoints returned HTTP 403 from this network; used Hacker News discussion thread via Algolia API"
+  }
+]

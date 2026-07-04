@@ -1,0 +1,174 @@
+[
+  {
+    "brand": "Stripe",
+    "channel": "official",
+    "url": "https://stripe.com/about",
+    "retrieved_at": "2026-07-02T09:10:33Z",
+    "chars": 2499,
+    "sha256": "bedbc4da90bc8097c5ad7015754a19bbd5a3d60d8df46a35080bd84286a606f0"
+  },
+  {
+    "brand": "Stripe",
+    "channel": "press",
+    "url": "https://www.paymentsdive.com/news/stripe-valued-at-159b-in-tender-offer-ipo-payments/812883/",
+    "retrieved_at": "2026-07-02T09:10:33Z",
+    "chars": 2496,
+    "sha256": "6a5e89b96afd224c8ec091b79e79f5adc711dd53ce04eaa8e92fdafb1441d06f"
+  },
+  {
+    "brand": "Stripe",
+    "channel": "experience",
+    "url": "https://www.merchantmaverick.com/reviews/stripe-review/",
+    "retrieved_at": "2026-07-02T09:10:33Z",
+    "chars": 2497,
+    "sha256": "27e76b23e1a2c55c105ceda8a8dc9c1c491ba78d3f59213eebd849094e7da720",
+    "note": "Trustpilot and G2 blocked automated access (403); used detailed third-party review article instead"
+  },
+  {
+    "brand": "Stripe",
+    "channel": "social",
+    "url": "https://news.ycombinator.com/item?id=45129085",
+    "retrieved_at": "2026-07-02T09:10:33Z",
+    "chars": 2500,
+    "sha256": "fa0326bb1b21be33a1eaec1d78f3199e39850691262068c28cf628bc2e02d2be",
+    "note": "Hacker News thread (Stripe Tempo L1 announcement discussion, 1072 comments)"
+  },
+  {
+    "brand": "Boeing",
+    "channel": "official",
+    "url": "https://www.boeing.com/company/general-info",
+    "retrieved_at": "2026-07-02T09:10:33Z",
+    "chars": 2499,
+    "sha256": "c86063140d751b2948c8509bd06d78948ecc2b2b4f3da77f7a95053c140de6cd"
+  },
+  {
+    "brand": "Boeing",
+    "channel": "press",
+    "url": "https://www.cnbc.com/2026/04/22/boeing-ba-q1-2026-earnings.html",
+    "retrieved_at": "2026-07-02T09:10:33Z",
+    "chars": 2497,
+    "sha256": "c4c7222f0a87f45692950c73fb0f2ba049a0e7279f0edd9b5209600e07e5de55"
+  },
+  {
+    "brand": "Boeing",
+    "channel": "experience",
+    "url": "https://passportbydesign.com/2025/05/united-economy-class-review-boeing-787-dreamliner/",
+    "retrieved_at": "2026-07-02T09:10:33Z",
+    "chars": 2493,
+    "sha256": "35afc0a3f94e28d4f363b2f02093bb1c190f446bf38991bee431d990d6faf1fb",
+    "note": "detailed third-party passenger-experience review of Boeing 787 product"
+  },
+  {
+    "brand": "Boeing",
+    "channel": "social",
+    "url": "https://news.ycombinator.com/item?id=38893909",
+    "retrieved_at": "2026-07-02T09:10:33Z",
+    "chars": 2499,
+    "sha256": "0edccd815daa0a4352c7842c16c65792023b725b6c661115e6860165fc79b2c2",
+    "note": "Hacker News thread (737 Max 9 grounding discussion, 838 comments); reddit.com JSON endpoints blocked automated access"
+  },
+  {
+    "brand": "GE",
+    "channel": "official",
+    "url": "https://www.geaerospace.com/company/about-us/history",
+    "retrieved_at": "2026-07-02T09:10:33Z",
+    "chars": 2493,
+    "sha256": "6fc12208d3859e5c4100280f05226dc25bbec4e605385ca2530266b8ea940bf3",
+    "note": "geaerospace.com/company returned leadership-bio page; history/about page used as brand-story page"
+  },
+  {
+    "brand": "GE",
+    "channel": "press",
+    "url": "https://www.tradingkey.com/analysis/stocks/us-stocks/261808692-ge-aerospace-line-in-q1-2026-why-stock-down-4-tradingkey",
+    "retrieved_at": "2026-07-02T09:10:33Z",
+    "chars": 2418,
+    "sha256": "2a6270d11a9cb616782fa7d3b047a55c007fc118cca621b2cb335fe1ee817ad5",
+    "note": "investing.com (Reuters syndication) returned 403; trade-outlet earnings analysis used instead"
+  },
+  {
+    "brand": "GE",
+    "channel": "experience",
+    "url": "https://simpleflying.com/ge-aerospace-worlds-toughest-jet-engines/",
+    "retrieved_at": "2026-07-02T09:10:33Z",
+    "chars": 2496,
+    "sha256": "06897dfd734897efbcfb569a72f93e28684d19a27336b5881ac32701ded29ddd",
+    "note": "no G2/Trustpilot presence for GE Aerospace products; detailed third-party review article of engine product/service experience used"
+  },
+  {
+    "brand": "GE",
+    "channel": "social",
+    "url": "https://news.ycombinator.com/item?id=40943253",
+    "retrieved_at": "2026-07-02T09:10:33Z",
+    "chars": 2499,
+    "sha256": "020edf5c8b09d5f55e97a8682ca2d77979d5810ee61614021d4daf357ee1c23d",
+    "note": "Hacker News thread (GE Aerospace hypersonic ramjet, 150 comments)"
+  },
+  {
+    "brand": "Intel",
+    "channel": "official",
+    "url": "https://www.intel.com/content/www/us/en/company-overview/company-overview.html",
+    "retrieved_at": "2026-07-02T09:10:33Z",
+    "chars": 2090,
+    "sha256": "42f5758a8d9293c5f9bc92d5ff888eace72f5b13c9d5e3abd61e0cda8bde215c"
+  },
+  {
+    "brand": "Intel",
+    "channel": "press",
+    "url": "https://www.cnbc.com/2026/06/16/intel-begins-production-of-18a-p-inches-closer-to-possible-apple-deal.html",
+    "retrieved_at": "2026-07-02T09:10:33Z",
+    "chars": 2493,
+    "sha256": "b5beab5c4eb94b341c1bd741d67818683fbd4e37e4a628545c842071f6fe3101"
+  },
+  {
+    "brand": "Intel",
+    "channel": "experience",
+    "url": "https://www.techradar.com/computing/cpu/intel-core-ultra-9-285k-and-intel-core-ultra-5-245k-review",
+    "retrieved_at": "2026-07-02T09:10:33Z",
+    "chars": 2450,
+    "sha256": "97a1b19bfb0fd94f4ad0d5d367094e308e402e710c7ca3f1f60be923725188da",
+    "note": "detailed third-party product review (CPU) used; G2 covers Intel software only"
+  },
+  {
+    "brand": "Intel",
+    "channel": "social",
+    "url": "https://news.ycombinator.com/item?id=46508435",
+    "retrieved_at": "2026-07-02T09:10:33Z",
+    "chars": 2498,
+    "sha256": "3d309fd38575906a4392e7473779ab113b6ddd4b472475d48787791fe2e30dd5",
+    "note": "Hacker News thread (Core Ultra Series 3 on Intel 18A, 178 comments)"
+  },
+  {
+    "brand": "Huawei",
+    "channel": "official",
+    "url": "https://www.huawei.com/en/corporate-information",
+    "retrieved_at": "2026-07-02T09:10:33Z",
+    "chars": 2094,
+    "sha256": "a22fb8a196cbf3d164c3b3638921aa4d33140e7a20b079cc71c3e67b0d1c19cd"
+  },
+  {
+    "brand": "Huawei",
+    "channel": "press",
+    "url": "https://www.cnbc.com/2026/05/25/huawei-chip-logicfolding-semiconductor-nvidia-china.html",
+    "retrieved_at": "2026-07-02T09:10:33Z",
+    "chars": 2497,
+    "sha256": "28b7ffe70e1788cdb5a400689c784833fd80d21df70e8e1f42e72c68a43214da"
+  },
+  {
+    "brand": "Huawei",
+    "channel": "experience",
+    "url": "https://www.gsmarena.com/huawei_pura_80_ultra-review-2863p6.php",
+    "retrieved_at": "2026-07-02T09:10:33Z",
+    "chars": 2498,
+    "sha256": "e5a55bd662737317916752b0041b897c3abed1f909fc7f80792760dadef669ac",
+    "note": "detailed third-party product review (flagship phone) verdict page"
+  },
+  {
+    "brand": "Huawei",
+    "channel": "social",
+    "url": "https://news.ycombinator.com/item?id=33803692",
+    "retrieved_at": "2026-07-02T09:10:33Z",
+    "chars": 2499,
+    "sha256": "38de78cc2aa630a43b6a9ae3dd959130426052838b86c9783eeaf98f1cf6f335",
+    "note": "Hacker News thread (512 comments); reddit.com JSON endpoints blocked automated access"
+  }
+]

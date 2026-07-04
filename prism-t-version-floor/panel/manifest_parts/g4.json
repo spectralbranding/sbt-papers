@@ -1,0 +1,176 @@
+[
+  {
+    "brand": "Uber",
+    "channel": "official",
+    "url": "https://www.uber.com/us/en/about/",
+    "retrieved_at": "2026-07-02T09:03:39Z",
+    "chars": 2499,
+    "sha256": "7c0db2012d76b031f703371c43111a02bf463b1304feb225686a64c90959d60c"
+  },
+  {
+    "brand": "Uber",
+    "channel": "press",
+    "url": "https://techcrunch.com/2026/03/19/uber-taps-rivian-to-build-robotaxis-in-deal-worth-up-to-1-25b/",
+    "retrieved_at": "2026-07-02T09:08:17Z",
+    "chars": 2496,
+    "sha256": "a279eb488058a58835bd5229cf1a95612a2cda8095d32667d86df54d9dc5da56"
+  },
+  {
+    "brand": "Uber",
+    "channel": "experience",
+    "url": "https://www.trustpilot.com/review/www.uber.com",
+    "retrieved_at": "2026-07-02T09:03:39Z",
+    "chars": 2399,
+    "sha256": "c865f60e6367326db1d635f3978b1962836d53a5a65769298eb5599c5ca12b9b",
+    "note": "fetched via headless browser (site blocks plain HTTP clients)"
+  },
+  {
+    "brand": "Uber",
+    "channel": "social",
+    "url": "https://news.ycombinator.com/item?id=25623858",
+    "retrieved_at": "2026-07-02T09:06:53Z",
+    "chars": 2496,
+    "sha256": "2a8f9c8f3fc8c3f9e044a1b98cc9bdb1b9135d76f7416f72ff4298c9ca32a046",
+    "note": "thread text retrieved via hn.algolia.com items API"
+  },
+  {
+    "brand": "Tesla",
+    "channel": "official",
+    "url": "https://www.tesla.com/about",
+    "retrieved_at": "2026-07-02T09:03:39Z",
+    "chars": 1843,
+    "sha256": "15723e65b15aec4827bb606d0b4ac6c5cc9b444f98c04eb9a624cff47d68e7c9",
+    "note": "fetched via headless browser after HTTP 403 on plain fetch"
+  },
+  {
+    "brand": "Tesla",
+    "channel": "press",
+    "url": "https://www.cnbc.com/2026/04/02/tesla-tsla-q1-2026-vehicle-delivery-production.html",
+    "retrieved_at": "2026-07-02T09:08:26Z",
+    "chars": 2495,
+    "sha256": "914249a023c0fa86b5dc081c015100dfeb75cc7ad240697934996c27f7972d28"
+  },
+  {
+    "brand": "Tesla",
+    "channel": "experience",
+    "url": "https://www.trustpilot.com/review/tesla.com",
+    "retrieved_at": "2026-07-02T09:03:39Z",
+    "chars": 2497,
+    "sha256": "7e94b01382db88a7bc35a3b5e6314da652f5f7d602d5972d3f6929805059ccda",
+    "note": "fetched via headless browser (site blocks plain HTTP clients)"
+  },
+  {
+    "brand": "Tesla",
+    "channel": "social",
+    "url": "https://news.ycombinator.com/item?id=47523330",
+    "retrieved_at": "2026-07-02T09:06:54Z",
+    "chars": 2493,
+    "sha256": "0715d00ea805fd83ce1909e35c76103d48e9c82c134581133ee9792267238192",
+    "note": "thread text retrieved via hn.algolia.com items API"
+  },
+  {
+    "brand": "Meta (Facebook)",
+    "channel": "official",
+    "url": "https://www.meta.com/about/company-info/",
+    "retrieved_at": "2026-07-02T09:03:39Z",
+    "chars": 2280,
+    "sha256": "2309538e4c7bd5448a7e81bcefb8922b994bf82e4d0cfc745caed7f7dc1d678c",
+    "note": "redirect target of about.meta.com/company-info/; rendered via headless browser (JS-only page)"
+  },
+  {
+    "brand": "Meta (Facebook)",
+    "channel": "press",
+    "url": "https://www.cnbc.com/2026/07/01/meta-stock-cloud-ai-compute.html",
+    "retrieved_at": "2026-07-02T09:08:35Z",
+    "chars": 2499,
+    "sha256": "618df7fc94e49b1f6c52fcfdb7efc13a0901ddf726c60db2b60d8538ed746938"
+  },
+  {
+    "brand": "Meta (Facebook)",
+    "channel": "experience",
+    "url": "https://www.trustpilot.com/review/www.facebook.com",
+    "retrieved_at": "2026-07-02T09:03:39Z",
+    "chars": 2499,
+    "sha256": "2241f9ed881a14422ccb42d53902dc929c0f71856a4b298685582ad13014fe58",
+    "note": "fetched via headless browser (site blocks plain HTTP clients)"
+  },
+  {
+    "brand": "Meta (Facebook)",
+    "channel": "social",
+    "url": "https://news.ycombinator.com/item?id=47225130",
+    "retrieved_at": "2026-07-02T09:06:56Z",
+    "chars": 2496,
+    "sha256": "1d835d486f50f3f7f21d23fdcc7024460471ed0d2887453e48ddb3bb87edcc3e",
+    "note": "thread text retrieved via hn.algolia.com items API"
+  },
+  {
+    "brand": "X (Twitter)",
+    "channel": "official",
+    "url": "https://business.x.com/en/advertising",
+    "retrieved_at": "2026-07-02T09:03:39Z",
+    "chars": 2193,
+    "sha256": "abd8b696a3573a4388326436f0f56ca97635ce3c257c1ea89bbc386c5d147d07",
+    "note": "fallback: about.x.com/en carries under 500 chars of body text; used X's own business/advertising page"
+  },
+  {
+    "brand": "X (Twitter)",
+    "channel": "press",
+    "url": "https://techcrunch.com/2026/03/25/elon-musk-pauses-changes-to-xs-creator-revenue-sharing-program-after-backlash/",
+    "retrieved_at": "2026-07-02T09:08:43Z",
+    "chars": 2497,
+    "sha256": "54bc2eddc248cf82b37fa14a3f9e7c4e7bc7bf9f97a8aca241cddc30b7e571ee"
+  },
+  {
+    "brand": "X (Twitter)",
+    "channel": "experience",
+    "url": "https://www.trustpilot.com/review/www.twitter.com",
+    "retrieved_at": "2026-07-02T09:03:55Z",
+    "chars": 2473,
+    "sha256": "c7d0606dcd8ed8d95f5e86726952fc6a45751190b27e561227545ee1c0f928be",
+    "note": "fetched via headless browser (site blocks plain HTTP clients)"
+  },
+  {
+    "brand": "X (Twitter)",
+    "channel": "social",
+    "url": "https://news.ycombinator.com/item?id=41630094",
+    "retrieved_at": "2026-07-02T09:06:57Z",
+    "chars": 2499,
+    "sha256": "b7054fa65806717f0b9226f4ec52f7793a03cd90be629c4afcd635b980f4ced3",
+    "note": "thread text retrieved via hn.algolia.com items API"
+  },
+  {
+    "brand": "Ryanair",
+    "channel": "official",
+    "url": "https://corporate.ryanair.com/about-us/our-customers/",
+    "retrieved_at": "2026-07-02T09:03:39Z",
+    "chars": 1251,
+    "sha256": "946cc06de477c23d4929c96b141d8920df4d069b9b9de9bb9bf7c6435b77727b",
+    "note": "fallback: corporate.ryanair.com/about-us/ index is navigation-only; used the Our Customers brand page"
+  },
+  {
+    "brand": "Ryanair",
+    "channel": "press",
+    "url": "https://www.euronews.com/business/2026/05/18/ryanair-profits-surge-40-to-226-billion-despite-boeing-delays-and-fuel-crisis",
+    "retrieved_at": "2026-07-02T09:09:06Z",
+    "chars": 2495,
+    "sha256": "134f0ede9ef35629c28cfb9a8fd6941c7de69b32013208905c4fd720eb5f2ce3"
+  },
+  {
+    "brand": "Ryanair",
+    "channel": "experience",
+    "url": "https://www.trustpilot.com/review/www.ryanair.com",
+    "retrieved_at": "2026-07-02T09:04:33Z",
+    "chars": 2498,
+    "sha256": "88c73dea8f6f17d0118179c5fac6b82585a485a8b6b6414b163e12933597c333",
+    "note": "fetched via headless browser (site blocks plain HTTP clients)"
+  },
+  {
+    "brand": "Ryanair",
+    "channel": "social",
+    "url": "https://news.ycombinator.com/item?id=48502601",
+    "retrieved_at": "2026-07-02T09:06:58Z",
+    "chars": 2494,
+    "sha256": "82c3f4b91b189cbce0deaf15422fecfc22ca977ff25af62f4c778923e5789047",
+    "note": "thread text retrieved via hn.algolia.com items API"
+  }
+]

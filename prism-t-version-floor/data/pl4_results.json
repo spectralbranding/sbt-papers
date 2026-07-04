@@ -1,0 +1,1080 @@
+{
+  "primary": {
+    "metric": "cosine",
+    "snr_k": 2.0,
+    "excluded_ops": [
+      "OP4"
+    ],
+    "n_brands": 40,
+    "operator_floor": {
+      "mean": 0.007762638357369789,
+      "median": 0.00585755522519793,
+      "max": 0.020564263372956693
+    },
+    "ladders": {
+      "anthropic-opus": {
+        "extractor": "gpt-5.4-mini-2026-03-17",
+        "version_floor": {
+          "mean": 0.012390809834328192,
+          "median": 0.009428232238900547
+        },
+        "pairs": {
+          "claude-opus-4-1-20250805 -> claude-opus-4-5-20251101": {
+            "n_brands": 40,
+            "mean_distance": 0.005607857447803732,
+            "mean_operator_floor": 0.007762638357369789,
+            "snr": 0.722416424627031,
+            "ci95": [
+              0.5245247739254244,
+              0.9896641802768402
+            ],
+            "drifts_at_k": false,
+            "adjacent": true,
+            "positive_control": false
+          },
+          "claude-opus-4-1-20250805 -> claude-opus-4-6": {
+            "n_brands": 40,
+            "mean_distance": 0.007641284715787971,
+            "mean_operator_floor": 0.007762638357369789,
+            "snr": 0.9843669592740198,
+            "ci95": [
+              0.7359496858864041,
+              1.3159898750132835
+            ],
+            "drifts_at_k": false,
+            "adjacent": false,
+            "positive_control": false
+          },
+          "claude-opus-4-1-20250805 -> claude-opus-4-7": {
+            "n_brands": 40,
+            "mean_distance": 0.006570704851407386,
+            "mean_operator_floor": 0.007762638357369789,
+            "snr": 0.8464525266939956,
+            "ci95": [
+              0.620292816418575,
+              1.110508914813553
+            ],
+            "drifts_at_k": false,
+            "adjacent": false,
+            "positive_control": false
+          },
+          "claude-opus-4-1-20250805 -> claude-opus-4-8": {
+            "n_brands": 40,
+            "mean_distance": 0.005500779117943061,
+            "mean_operator_floor": 0.007762638357369789,
+            "snr": 0.7086223606849679,
+            "ci95": [
+              0.5664297809352908,
+              0.8578805304885705
+            ],
+            "drifts_at_k": false,
+            "adjacent": false,
+            "positive_control": false
+          },
+          "claude-opus-4-5-20251101 -> claude-opus-4-6": {
+            "n_brands": 40,
+            "mean_distance": 0.0047893224382580726,
+            "mean_operator_floor": 0.007762638357369789,
+            "snr": 0.6169709598426838,
+            "ci95": [
+              0.44432680571720223,
+              0.8466835368818427
+            ],
+            "drifts_at_k": false,
+            "adjacent": true,
+            "positive_control": false
+          },
+          "claude-opus-4-5-20251101 -> claude-opus-4-7": {
+            "n_brands": 40,
+            "mean_distance": 0.004739437432410881,
+            "mean_operator_floor": 0.007762638357369789,
+            "snr": 0.6105446646128112,
+            "ci95": [
+              0.43824599235684386,
+              0.825171271368834
+            ],
+            "drifts_at_k": false,
+            "adjacent": false,
+            "positive_control": false
+          },
+          "claude-opus-4-5-20251101 -> claude-opus-4-8": {
+            "n_brands": 40,
+            "mean_distance": 0.005430319422169797,
+            "mean_operator_floor": 0.007762638357369789,
+            "snr": 0.6995455890347247,
+            "ci95": [
+              0.5483319538815176,
+              0.8776670886368876
+            ],
+            "drifts_at_k": false,
+            "adjacent": false,
+            "positive_control": false
+          },
+          "claude-opus-4-6 -> claude-opus-4-7": {
+            "n_brands": 40,
+            "mean_distance": 0.0034180823032626596,
+            "mean_operator_floor": 0.007762638357369789,
+            "snr": 0.44032481559798015,
+            "ci95": [
+              0.33555377210832793,
+              0.5724027784720664
+            ],
+            "drifts_at_k": false,
+            "adjacent": true,
+            "positive_control": false
+          },
+          "claude-opus-4-6 -> claude-opus-4-8": {
+            "n_brands": 40,
+            "mean_distance": 0.005141314006327896,
+            "mean_operator_floor": 0.007762638357369789,
+            "snr": 0.662315281175861,
+            "ci95": [
+              0.4799503699712979,
+              0.8786079853749799
+            ],
+            "drifts_at_k": false,
+            "adjacent": false,
+            "positive_control": false
+          },
+          "claude-opus-4-7 -> claude-opus-4-8": {
+            "n_brands": 40,
+            "mean_distance": 0.004115212499982437,
+            "mean_operator_floor": 0.007762638357369789,
+            "snr": 0.5301306476651055,
+            "ci95": [
+              0.3594316284472241,
+              0.7691942230938906
+            ],
+            "drifts_at_k": false,
+            "adjacent": true,
+            "positive_control": false
+          }
+        },
+        "h3": {
+          "n_brands": 40,
+          "mean_diff": -0.2363020833333333,
+          "ci95": [
+            -0.30625416666666666,
+            -0.16712734375000007
+          ],
+          "t": -6.427703079067362,
+          "p_one_sided": 0.9999999339885268,
+          "cohen_d": -1.0163090926565113,
+          "per_dimension_mean_drift": {
+            "semiotic": 1.25234375,
+            "narrative": 0.3553124999999999,
+            "ideological": 0.446875,
+            "experiential": 0.6860937500000001,
+            "social": 0.48656250000000006,
+            "economic": 0.63546875,
+            "cultural": 0.5545312499999999,
+            "temporal": 0.5179687499999999
+          },
+          "high_drift_set": [
+            "ideological",
+            "cultural",
+            "social",
+            "temporal",
+            "economic"
+          ],
+          "format_anchored_set": [
+            "semiotic",
+            "narrative",
+            "experiential"
+          ]
+        }
+      },
+      "openai-gpt": {
+        "extractor": "claude-haiku-4-5-20251001",
+        "version_floor": {
+          "mean": 0.004940984507799992,
+          "median": 0.0038736998392862043
+        },
+        "pairs": {
+          "gpt-4o-2024-11-20 -> gpt-5-2025-08-07": {
+            "n_brands": 40,
+            "mean_distance": 0.0021730177699394145,
+            "mean_operator_floor": 0.007762638357369789,
+            "snr": 0.2799328874926098,
+            "ci95": [
+              0.20144084335161017,
+              0.3884179580369729
+            ],
+            "drifts_at_k": false,
+            "adjacent": true,
+            "positive_control": false
+          },
+          "gpt-4o-2024-11-20 -> gpt-5.5-2026-04-23": {
+            "n_brands": 40,
+            "mean_distance": 0.003914498169242497,
+            "mean_operator_floor": 0.007762638357369789,
+            "snr": 0.5042741899120037,
+            "ci95": [
+              0.38108207179280695,
+              0.6502802831965144
+            ],
+            "drifts_at_k": false,
+            "adjacent": false,
+            "positive_control": true
+          },
+          "gpt-5-2025-08-07 -> gpt-5.5-2026-04-23": {
+            "n_brands": 40,
+            "mean_distance": 0.0034731534762626414,
+            "mean_operator_floor": 0.007762638357369789,
+            "snr": 0.4474192041891603,
+            "ci95": [
+              0.31905534584309225,
+              0.5948838628947799
+            ],
+            "drifts_at_k": false,
+            "adjacent": true,
+            "positive_control": false
+          }
+        },
+        "h3": {
+          "n_brands": 40,
+          "mean_diff": -0.18102083333333324,
+          "ci95": [
+            -0.2535755208333332,
+            -0.11157187499999996
+          ],
+          "t": -4.9801198305504215,
+          "p_one_sided": 0.9999933325954056,
+          "cohen_d": -0.7874260842555566,
+          "per_dimension_mean_drift": {
+            "semiotic": 0.8693749999999998,
+            "narrative": 0.3778124999999999,
+            "ideological": 0.48968750000000005,
+            "experiential": 0.5609375,
+            "social": 0.43374999999999997,
+            "economic": 0.536875,
+            "cultural": 0.30156250000000007,
+            "temporal": 0.3465625
+          },
+          "high_drift_set": [
+            "ideological",
+            "cultural",
+            "social",
+            "temporal",
+            "economic"
+          ],
+          "format_anchored_set": [
+            "semiotic",
+            "narrative",
+            "experiential"
+          ]
+        }
+      },
+      "alibaba-qwen": {
+        "extractor": "deepseek-v4-flash",
+        "version_floor": {
+          "mean": 0.011145032004744732,
+          "median": 0.009372155203964061
+        },
+        "pairs": {
+          "qwen3-max-2025-09-23 -> qwen3.5-plus-2026-02-15": {
+            "n_brands": 40,
+            "mean_distance": 0.008157779396290362,
+            "mean_operator_floor": 0.007762638357369789,
+            "snr": 1.0509029302576527,
+            "ci95": [
+              0.8073743664830016,
+              1.362446923814975
+            ],
+            "drifts_at_k": false,
+            "adjacent": true,
+            "positive_control": false
+          },
+          "qwen3-max-2025-09-23 -> qwen3.7-max-2026-06-08": {
+            "n_brands": 40,
+            "mean_distance": 0.009226748274203597,
+            "mean_operator_floor": 0.007762638357369789,
+            "snr": 1.1886098320481198,
+            "ci95": [
+              0.8936120129857091,
+              1.5546376711199927
+            ],
+            "drifts_at_k": false,
+            "adjacent": false,
+            "positive_control": false
+          },
+          "qwen3.5-plus-2026-02-15 -> qwen3.7-max-2026-06-08": {
+            "n_brands": 40,
+            "mean_distance": 0.005630085674696639,
+            "mean_operator_floor": 0.007762638357369789,
+            "snr": 0.7252799132850855,
+            "ci95": [
+              0.6055413773574551,
+              0.8678540240362743
+            ],
+            "drifts_at_k": false,
+            "adjacent": true,
+            "positive_control": false
+          }
+        },
+        "h3": {
+          "n_brands": 40,
+          "mean_diff": -0.042604166666666665,
+          "ci95": [
+            -0.12399739583333334,
+            0.04022395833333326
+          ],
+          "t": -0.9598609971899275,
+          "p_one_sided": 0.8284807338590348,
+          "cohen_d": -0.15176734941403253,
+          "per_dimension_mean_drift": {
+            "semiotic": 1.1859375,
+            "narrative": 0.4984375,
+            "ideological": 0.621875,
+            "experiential": 0.690625,
+            "social": 0.7828125,
+            "economic": 0.840625,
+            "cultural": 0.81875,
+            "temporal": 0.68125
+          },
+          "high_drift_set": [
+            "ideological",
+            "cultural",
+            "social",
+            "temporal",
+            "economic"
+          ],
+          "format_anchored_set": [
+            "semiotic",
+            "narrative",
+            "experiential"
+          ]
+        }
+      }
+    },
+    "h1_supported": false,
+    "negative_control": {
+      "n_brands": 40,
+      "mean_rerun_distance": 0.004274915150827929,
+      "mean_operator_floor": 0.007762638357369789,
+      "pass_mean": true,
+      "within_floor_fraction": 0.8
+    }
+  },
+  "robustness": {
+    "k_sweep": {
+      "1.5": false,
+      "2.0": false,
+      "3.0": false
+    },
+    "euclidean": {
+      "metric": "euclidean",
+      "snr_k": 2.0,
+      "excluded_ops": [
+        "OP4"
+      ],
+      "n_brands": 40,
+      "operator_floor": {
+        "mean": 0.10704818865954721,
+        "median": 0.09941682499340537,
+        "max": 0.229835199110145
+      },
+      "ladders": {
+        "anthropic-opus": {
+          "extractor": "gpt-5.4-mini-2026-03-17",
+          "version_floor": {
+            "mean": 0.13154637436025685,
+            "median": 0.13217526201190072
+          },
+          "pairs": {
+            "claude-opus-4-1-20250805 -> claude-opus-4-5-20251101": {
+              "n_brands": 40,
+              "mean_distance": 0.0861312572232755,
+              "mean_operator_floor": 0.10704818865954721,
+              "snr": 0.8046026588754782,
+              "ci95": [
+                0.6814023160154594,
+                0.946350819558304
+              ],
+              "drifts_at_k": false,
+              "adjacent": true,
+              "positive_control": false
+            },
+            "claude-opus-4-1-20250805 -> claude-opus-4-6": {
+              "n_brands": 40,
+              "mean_distance": 0.09709747121002779,
+              "mean_operator_floor": 0.10704818865954721,
+              "snr": 0.9070445042170086,
+              "ci95": [
+                0.7801339634429519,
+                1.0606895615229301
+              ],
+              "drifts_at_k": false,
+              "adjacent": false,
+              "positive_control": false
+            },
+            "claude-opus-4-1-20250805 -> claude-opus-4-7": {
+              "n_brands": 40,
+              "mean_distance": 0.08624677491624254,
+              "mean_operator_floor": 0.10704818865954721,
+              "snr": 0.8056817774893805,
+              "ci95": [
+                0.6970486443798174,
+                0.9207662828272293
+              ],
+              "drifts_at_k": false,
+              "adjacent": false,
+              "positive_control": false
+            },
+            "claude-opus-4-1-20250805 -> claude-opus-4-8": {
+              "n_brands": 40,
+              "mean_distance": 0.08695811628259609,
+              "mean_operator_floor": 0.10704818865954721,
+              "snr": 0.8123268349654661,
+              "ci95": [
+                0.7047447744921626,
+                0.9260823600763772
+              ],
+              "drifts_at_k": false,
+              "adjacent": false,
+              "positive_control": false
+            },
+            "claude-opus-4-5-20251101 -> claude-opus-4-6": {
+              "n_brands": 40,
+              "mean_distance": 0.09085370722436521,
+              "mean_operator_floor": 0.10704818865954721,
+              "snr": 0.8487178378450996,
+              "ci95": [
+                0.726247646682751,
+                0.9837665774572056
+              ],
+              "drifts_at_k": false,
+              "adjacent": true,
+              "positive_control": false
+            },
+            "claude-opus-4-5-20251101 -> claude-opus-4-7": {
+              "n_brands": 40,
+              "mean_distance": 0.07678755916739992,
+              "mean_operator_floor": 0.10704818865954721,
+              "snr": 0.7173176877528747,
+              "ci95": [
+                0.6056505165085155,
+                0.8373013248307855
+              ],
+              "drifts_at_k": false,
+              "adjacent": false,
+              "positive_control": false
+            },
+            "claude-opus-4-5-20251101 -> claude-opus-4-8": {
+              "n_brands": 40,
+              "mean_distance": 0.07933301981748679,
+              "mean_operator_floor": 0.10704818865954721,
+              "snr": 0.7410963306422222,
+              "ci95": [
+                0.6377762181247222,
+                0.8454205666819791
+              ],
+              "drifts_at_k": false,
+              "adjacent": false,
+              "positive_control": false
+            },
+            "claude-opus-4-6 -> claude-opus-4-7": {
+              "n_brands": 40,
+              "mean_distance": 0.07429444445665766,
+              "mean_operator_floor": 0.10704818865954721,
+              "snr": 0.6940280390258768,
+              "ci95": [
+                0.5860615177479432,
+                0.8179740169239692
+              ],
+              "drifts_at_k": false,
+              "adjacent": true,
+              "positive_control": false
+            },
+            "claude-opus-4-6 -> claude-opus-4-8": {
+              "n_brands": 40,
+              "mean_distance": 0.093170509264083,
+              "mean_operator_floor": 0.10704818865954721,
+              "snr": 0.8703604463630827,
+              "ci95": [
+                0.739104878911623,
+                1.0140590358209782
+              ],
+              "drifts_at_k": false,
+              "adjacent": false,
+              "positive_control": false
+            },
+            "claude-opus-4-7 -> claude-opus-4-8": {
+              "n_brands": 40,
+              "mean_distance": 0.06904831604404574,
+              "mean_operator_floor": 0.10704818865954721,
+              "snr": 0.6450208724562813,
+              "ci95": [
+                0.5502916597220577,
+                0.7526172096059651
+              ],
+              "drifts_at_k": false,
+              "adjacent": true,
+              "positive_control": false
+            }
+          },
+          "h3": {
+            "n_brands": 40,
+            "mean_diff": -0.2363020833333333,
+            "ci95": [
+              -0.30625416666666666,
+              -0.16712734375000007
+            ],
+            "t": -6.427703079067362,
+            "p_one_sided": 0.9999999339885268,
+            "cohen_d": -1.0163090926565113,
+            "per_dimension_mean_drift": {
+              "semiotic": 1.25234375,
+              "narrative": 0.3553124999999999,
+              "ideological": 0.446875,
+              "experiential": 0.6860937500000001,
+              "social": 0.48656250000000006,
+              "economic": 0.63546875,
+              "cultural": 0.5545312499999999,
+              "temporal": 0.5179687499999999
+            },
+            "high_drift_set": [
+              "ideological",
+              "cultural",
+              "social",
+              "temporal",
+              "economic"
+            ],
+            "format_anchored_set": [
+              "semiotic",
+              "narrative",
+              "experiential"
+            ]
+          }
+        },
+        "openai-gpt": {
+          "extractor": "claude-haiku-4-5-20251001",
+          "version_floor": {
+            "mean": 0.08097040625151394,
+            "median": 0.0767007761207125
+          },
+          "pairs": {
+            "gpt-4o-2024-11-20 -> gpt-5-2025-08-07": {
+              "n_brands": 40,
+              "mean_distance": 0.05538999560398796,
+              "mean_operator_floor": 0.10704818865954721,
+              "snr": 0.5174304796520062,
+              "ci95": [
+                0.4258599966575284,
+                0.613913298677201
+              ],
+              "drifts_at_k": false,
+              "adjacent": true,
+              "positive_control": false
+            },
+            "gpt-4o-2024-11-20 -> gpt-5.5-2026-04-23": {
+              "n_brands": 40,
+              "mean_distance": 0.06817751443669953,
+              "mean_operator_floor": 0.10704818865954721,
+              "snr": 0.6368862032175922,
+              "ci95": [
+                0.5414500158468825,
+                0.7504675106764825
+              ],
+              "drifts_at_k": false,
+              "adjacent": false,
+              "positive_control": true
+            },
+            "gpt-5-2025-08-07 -> gpt-5.5-2026-04-23": {
+              "n_brands": 40,
+              "mean_distance": 0.06575465070793694,
+              "mean_operator_floor": 0.10704818865954721,
+              "snr": 0.6142528101718846,
+              "ci95": [
+                0.5191044896873362,
+                0.7206965648720103
+              ],
+              "drifts_at_k": false,
+              "adjacent": true,
+              "positive_control": false
+            }
+          },
+          "h3": {
+            "n_brands": 40,
+            "mean_diff": -0.18102083333333324,
+            "ci95": [
+              -0.2535755208333332,
+              -0.11157187499999996
+            ],
+            "t": -4.9801198305504215,
+            "p_one_sided": 0.9999933325954056,
+            "cohen_d": -0.7874260842555566,
+            "per_dimension_mean_drift": {
+              "semiotic": 0.8693749999999998,
+              "narrative": 0.3778124999999999,
+              "ideological": 0.48968750000000005,
+              "experiential": 0.5609375,
+              "social": 0.43374999999999997,
+              "economic": 0.536875,
+              "cultural": 0.30156250000000007,
+              "temporal": 0.3465625
+            },
+            "high_drift_set": [
+              "ideological",
+              "cultural",
+              "social",
+              "temporal",
+              "economic"
+            ],
+            "format_anchored_set": [
+              "semiotic",
+              "narrative",
+              "experiential"
+            ]
+          }
+        },
+        "alibaba-qwen": {
+          "extractor": "deepseek-v4-flash",
+          "version_floor": {
+            "mean": 0.12634489652015488,
+            "median": 0.11481727999937996
+          },
+          "pairs": {
+            "qwen3-max-2025-09-23 -> qwen3.5-plus-2026-02-15": {
+              "n_brands": 40,
+              "mean_distance": 0.0942722220670375,
+              "mean_operator_floor": 0.10704818865954721,
+              "snr": 0.8806521926948059,
+              "ci95": [
+                0.7483690955107429,
+                1.0258776498388
+              ],
+              "drifts_at_k": false,
+              "adjacent": true,
+              "positive_control": false
+            },
+            "qwen3-max-2025-09-23 -> qwen3.7-max-2026-06-08": {
+              "n_brands": 40,
+              "mean_distance": 0.11306225039621295,
+              "mean_operator_floor": 0.10704818865954721,
+              "snr": 1.0561808827591908,
+              "ci95": [
+                0.9148914827105045,
+                1.211402230192503
+              ],
+              "drifts_at_k": false,
+              "adjacent": false,
+              "positive_control": false
+            },
+            "qwen3.5-plus-2026-02-15 -> qwen3.7-max-2026-06-08": {
+              "n_brands": 40,
+              "mean_distance": 0.09197749907455885,
+              "mean_operator_floor": 0.10704818865954721,
+              "snr": 0.859215837524176,
+              "ci95": [
+                0.7504862929582379,
+                0.9682202235715617
+              ],
+              "drifts_at_k": false,
+              "adjacent": true,
+              "positive_control": false
+            }
+          },
+          "h3": {
+            "n_brands": 40,
+            "mean_diff": -0.042604166666666665,
+            "ci95": [
+              -0.12399739583333334,
+              0.04022395833333326
+            ],
+            "t": -0.9598609971899275,
+            "p_one_sided": 0.8284807338590348,
+            "cohen_d": -0.15176734941403253,
+            "per_dimension_mean_drift": {
+              "semiotic": 1.1859375,
+              "narrative": 0.4984375,
+              "ideological": 0.621875,
+              "experiential": 0.690625,
+              "social": 0.7828125,
+              "economic": 0.840625,
+              "cultural": 0.81875,
+              "temporal": 0.68125
+            },
+            "high_drift_set": [
+              "ideological",
+              "cultural",
+              "social",
+              "temporal",
+              "economic"
+            ],
+            "format_anchored_set": [
+              "semiotic",
+              "narrative",
+              "experiential"
+            ]
+          }
+        }
+      },
+      "h1_supported": false,
+      "negative_control": {
+        "n_brands": 40,
+        "mean_rerun_distance": 0.07374439773983227,
+        "mean_operator_floor": 0.10704818865954721,
+        "pass_mean": true,
+        "within_floor_fraction": 0.725
+      }
+    },
+    "mahalanobis": {
+      "metric": "mahalanobis",
+      "snr_k": 2.0,
+      "excluded_ops": [
+        "OP4"
+      ],
+      "n_brands": 40,
+      "operator_floor": {
+        "mean": 0.5918055616426138,
+        "median": 0.5403685133130756,
+        "max": 1.3309419110630043
+      },
+      "ladders": {
+        "anthropic-opus": {
+          "extractor": "gpt-5.4-mini-2026-03-17",
+          "version_floor": {
+            "mean": 0.6329660002433224,
+            "median": 0.616456082569101
+          },
+          "pairs": {
+            "claude-opus-4-1-20250805 -> claude-opus-4-5-20251101": {
+              "n_brands": 40,
+              "mean_distance": 0.4270965009508557,
+              "mean_operator_floor": 0.5918055616426138,
+              "snr": 0.7216838242706066,
+              "ci95": [
+                0.6090172758640553,
+                0.857226617034018
+              ],
+              "drifts_at_k": false,
+              "adjacent": true,
+              "positive_control": false
+            },
+            "claude-opus-4-1-20250805 -> claude-opus-4-6": {
+              "n_brands": 40,
+              "mean_distance": 0.44162350455218996,
+              "mean_operator_floor": 0.5918055616426138,
+              "snr": 0.7462307439734447,
+              "ci95": [
+                0.6417090384281923,
+                0.867920420761232
+              ],
+              "drifts_at_k": false,
+              "adjacent": false,
+              "positive_control": false
+            },
+            "claude-opus-4-1-20250805 -> claude-opus-4-7": {
+              "n_brands": 40,
+              "mean_distance": 0.4188700379198025,
+              "mean_operator_floor": 0.5918055616426138,
+              "snr": 0.707783206290235,
+              "ci95": [
+                0.6122751012280814,
+                0.8131808771728207
+              ],
+              "drifts_at_k": false,
+              "adjacent": false,
+              "positive_control": false
+            },
+            "claude-opus-4-1-20250805 -> claude-opus-4-8": {
+              "n_brands": 40,
+              "mean_distance": 0.4461803774929626,
+              "mean_operator_floor": 0.5918055616426138,
+              "snr": 0.7539306934773401,
+              "ci95": [
+                0.6506507923360604,
+                0.8681669650641368
+              ],
+              "drifts_at_k": false,
+              "adjacent": false,
+              "positive_control": false
+            },
+            "claude-opus-4-5-20251101 -> claude-opus-4-6": {
+              "n_brands": 40,
+              "mean_distance": 0.45678594008417805,
+              "mean_operator_floor": 0.5918055616426138,
+              "snr": 0.7718513810791577,
+              "ci95": [
+                0.6662954450265102,
+                0.8919822618922949
+              ],
+              "drifts_at_k": false,
+              "adjacent": true,
+              "positive_control": false
+            },
+            "claude-opus-4-5-20251101 -> claude-opus-4-7": {
+              "n_brands": 40,
+              "mean_distance": 0.3902728651614174,
+              "mean_operator_floor": 0.5918055616426138,
+              "snr": 0.659461300225326,
+              "ci95": [
+                0.5580607946610618,
+                0.770186034258602
+              ],
+              "drifts_at_k": false,
+              "adjacent": false,
+              "positive_control": false
+            },
+            "claude-opus-4-5-20251101 -> claude-opus-4-8": {
+              "n_brands": 40,
+              "mean_distance": 0.39276538089021934,
+              "mean_operator_floor": 0.5918055616426138,
+              "snr": 0.6636730141569824,
+              "ci95": [
+                0.5691485983371862,
+                0.760111406207682
+              ],
+              "drifts_at_k": false,
+              "adjacent": false,
+              "positive_control": false
+            },
+            "claude-opus-4-6 -> claude-opus-4-7": {
+              "n_brands": 40,
+              "mean_distance": 0.3781058047867399,
+              "mean_operator_floor": 0.5918055616426138,
+              "snr": 0.6389020808409953,
+              "ci95": [
+                0.5328266089479023,
+                0.762105445687093
+              ],
+              "drifts_at_k": false,
+              "adjacent": true,
+              "positive_control": false
+            },
+            "claude-opus-4-6 -> claude-opus-4-8": {
+              "n_brands": 40,
+              "mean_distance": 0.4718631409231538,
+              "mean_operator_floor": 0.5918055616426138,
+              "snr": 0.7973279933589199,
+              "ci95": [
+                0.6753959503219247,
+                0.924662683217594
+              ],
+              "drifts_at_k": false,
+              "adjacent": false,
+              "positive_control": false
+            },
+            "claude-opus-4-7 -> claude-opus-4-8": {
+              "n_brands": 40,
+              "mean_distance": 0.3619331689951518,
+              "mean_operator_floor": 0.5918055616426138,
+              "snr": 0.6115744637319244,
+              "ci95": [
+                0.5263669447150443,
+                0.7081907167667404
+              ],
+              "drifts_at_k": false,
+              "adjacent": true,
+              "positive_control": false
+            }
+          },
+          "h3": {
+            "n_brands": 40,
+            "mean_diff": -0.2363020833333333,
+            "ci95": [
+              -0.30625416666666666,
+              -0.16712734375000007
+            ],
+            "t": -6.427703079067362,
+            "p_one_sided": 0.9999999339885268,
+            "cohen_d": -1.0163090926565113,
+            "per_dimension_mean_drift": {
+              "semiotic": 1.25234375,
+              "narrative": 0.3553124999999999,
+              "ideological": 0.446875,
+              "experiential": 0.6860937500000001,
+              "social": 0.48656250000000006,
+              "economic": 0.63546875,
+              "cultural": 0.5545312499999999,
+              "temporal": 0.5179687499999999
+            },
+            "high_drift_set": [
+              "ideological",
+              "cultural",
+              "social",
+              "temporal",
+              "economic"
+            ],
+            "format_anchored_set": [
+              "semiotic",
+              "narrative",
+              "experiential"
+            ]
+          }
+        },
+        "openai-gpt": {
+          "extractor": "claude-haiku-4-5-20251001",
+          "version_floor": {
+            "mean": 0.41171987544646865,
+            "median": 0.38827798230966937
+          },
+          "pairs": {
+            "gpt-4o-2024-11-20 -> gpt-5-2025-08-07": {
+              "n_brands": 40,
+              "mean_distance": 0.30580271849210455,
+              "mean_operator_floor": 0.5918055616426138,
+              "snr": 0.5167283620034246,
+              "ci95": [
+                0.42461140990495283,
+                0.6118752382315021
+              ],
+              "drifts_at_k": false,
+              "adjacent": true,
+              "positive_control": false
+            },
+            "gpt-4o-2024-11-20 -> gpt-5.5-2026-04-23": {
+              "n_brands": 40,
+              "mean_distance": 0.3477546234900191,
+              "mean_operator_floor": 0.5918055616426138,
+              "snr": 0.5876163490670693,
+              "ci95": [
+                0.4911782065406261,
+                0.7032267248684325
+              ],
+              "drifts_at_k": false,
+              "adjacent": false,
+              "positive_control": true
+            },
+            "gpt-5-2025-08-07 -> gpt-5.5-2026-04-23": {
+              "n_brands": 40,
+              "mean_distance": 0.33053488234351186,
+              "mean_operator_floor": 0.5918055616426138,
+              "snr": 0.5585193917848291,
+              "ci95": [
+                0.46924743287294196,
+                0.6566639250956673
+              ],
+              "drifts_at_k": false,
+              "adjacent": true,
+              "positive_control": false
+            }
+          },
+          "h3": {
+            "n_brands": 40,
+            "mean_diff": -0.18102083333333324,
+            "ci95": [
+              -0.2535755208333332,
+              -0.11157187499999996
+            ],
+            "t": -4.9801198305504215,
+            "p_one_sided": 0.9999933325954056,
+            "cohen_d": -0.7874260842555566,
+            "per_dimension_mean_drift": {
+              "semiotic": 0.8693749999999998,
+              "narrative": 0.3778124999999999,
+              "ideological": 0.48968750000000005,
+              "experiential": 0.5609375,
+              "social": 0.43374999999999997,
+              "economic": 0.536875,
+              "cultural": 0.30156250000000007,
+              "temporal": 0.3465625
+            },
+            "high_drift_set": [
+              "ideological",
+              "cultural",
+              "social",
+              "temporal",
+              "economic"
+            ],
+            "format_anchored_set": [
+              "semiotic",
+              "narrative",
+              "experiential"
+            ]
+          }
+        },
+        "alibaba-qwen": {
+          "extractor": "deepseek-v4-flash",
+          "version_floor": {
+            "mean": 0.6877440440272734,
+            "median": 0.6371208187963009
+          },
+          "pairs": {
+            "qwen3-max-2025-09-23 -> qwen3.5-plus-2026-02-15": {
+              "n_brands": 40,
+              "mean_distance": 0.5197251251671888,
+              "mean_operator_floor": 0.5918055616426138,
+              "snr": 0.8782025023973099,
+              "ci95": [
+                0.7379491899574566,
+                1.036313789287882
+              ],
+              "drifts_at_k": false,
+              "adjacent": true,
+              "positive_control": false
+            },
+            "qwen3-max-2025-09-23 -> qwen3.7-max-2026-06-08": {
+              "n_brands": 40,
+              "mean_distance": 0.609304435877146,
+              "mean_operator_floor": 0.5918055616426138,
+              "snr": 1.0295686207915355,
+              "ci95": [
+                0.8767330176331609,
+                1.201024370870147
+              ],
+              "drifts_at_k": false,
+              "adjacent": false,
+              "positive_control": false
+            },
+            "qwen3.5-plus-2026-02-15 -> qwen3.7-max-2026-06-08": {
+              "n_brands": 40,
+              "mean_distance": 0.49585521570762625,
+              "mean_operator_floor": 0.5918055616426138,
+              "snr": 0.8378684619511381,
+              "ci95": [
+                0.7238875130073802,
+                0.9538038532910961
+              ],
+              "drifts_at_k": false,
+              "adjacent": true,
+              "positive_control": false
+            }
+          },
+          "h3": {
+            "n_brands": 40,
+            "mean_diff": -0.042604166666666665,
+            "ci95": [
+              -0.12399739583333334,
+              0.04022395833333326
+            ],
+            "t": -0.9598609971899275,
+            "p_one_sided": 0.8284807338590348,
+            "cohen_d": -0.15176734941403253,
+            "per_dimension_mean_drift": {
+              "semiotic": 1.1859375,
+              "narrative": 0.4984375,
+              "ideological": 0.621875,
+              "experiential": 0.690625,
+              "social": 0.7828125,
+              "economic": 0.840625,
+              "cultural": 0.81875,
+              "temporal": 0.68125
+            },
+            "high_drift_set": [
+              "ideological",
+              "cultural",
+              "social",
+              "temporal",
+              "economic"
+            ],
+            "format_anchored_set": [
+              "semiotic",
+              "narrative",
+              "experiential"
+            ]
+          }
+        }
+      },
+      "h1_supported": false,
+      "negative_control": {
+        "n_brands": 40,
+        "mean_rerun_distance": 0.3731370822036773,
+        "mean_operator_floor": 0.5918055616426138,
+        "pass_mean": true,
+        "within_floor_fraction": 0.825
+      }
+    }
+  }
+}

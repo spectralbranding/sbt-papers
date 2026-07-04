@@ -1,0 +1,173 @@
+[
+  {
+    "brand": "Microsoft",
+    "channel": "official",
+    "url": "https://www.microsoft.com/en-us/about",
+    "retrieved_at": "2026-07-02T09:04:15Z",
+    "chars": 2434,
+    "sha256": "fbdd87640165b622d33158908f88cecd1aaf98e26e9e0598034d103d2813a9a9"
+  },
+  {
+    "brand": "Microsoft",
+    "channel": "press",
+    "url": "https://www.cnbc.com/2026/04/29/microsoft-msft-q3-earnings-report-2026.html",
+    "retrieved_at": "2026-07-02T09:04:15Z",
+    "chars": 2499,
+    "sha256": "dd9eb553b6f5f9a4431c02be45d0ef5adfc40eb01aa9baeaf1c6fb7ff01841e8"
+  },
+  {
+    "brand": "Microsoft",
+    "channel": "experience",
+    "url": "https://www.cloudwards.net/microsoft-365-review/",
+    "retrieved_at": "2026-07-02T09:04:15Z",
+    "chars": 2498,
+    "sha256": "09041b2d199de76d9db9102b5d602862633e145e19949dc5573f7fc04687fd13",
+    "note": "G2 and TechRadar returned 403; used detailed Cloudwards third-party review of Microsoft 365"
+  },
+  {
+    "brand": "Microsoft",
+    "channel": "social",
+    "url": "https://news.ycombinator.com/item?id=46795864",
+    "retrieved_at": "2026-07-02T09:04:15Z",
+    "chars": 2498,
+    "sha256": "d4a40bbda4c47fdd411495db849497662f314005fb22bd73afcc4a90fa8cfc7f",
+    "note": "Hacker News thread via hn.algolia.com API (1503 comments)"
+  },
+  {
+    "brand": "IBM",
+    "channel": "official",
+    "url": "https://www.ibm.com/about",
+    "retrieved_at": "2026-07-02T09:04:15Z",
+    "chars": 2497,
+    "sha256": "da35c19fb72be7e93c196ae0a117f67660b2cbe82187a9c92cb998a45a8f5a87"
+  },
+  {
+    "brand": "IBM",
+    "channel": "press",
+    "url": "https://thequantuminsider.com/2026/05/28/ibm-plans-10-billion-quantum-push-as-efforts-to-commercialize-quantum-intensifies/",
+    "retrieved_at": "2026-07-02T09:04:15Z",
+    "chars": 2499,
+    "sha256": "691b408253030ef5e9f22c02fa07277e50d949a33254247199ef310566a2e0fd",
+    "note": "CNBC/TechCrunch search surfaced no accessible IBM piece; used press-friendly trade outlet The Quantum Insider (2026-05-28)"
+  },
+  {
+    "brand": "IBM",
+    "channel": "experience",
+    "url": "https://www.infoworld.com/article/2248987/review-ibm-watson-strikes-again-2.html",
+    "retrieved_at": "2026-07-02T09:04:15Z",
+    "chars": 2495,
+    "sha256": "1ddf7a7df315b6242039bc1434362976349a7ff5afcb06963920d5576f1022fd",
+    "note": "G2/TrustRadius/PeerSpot/TechRepublic blocked or off-target; used InfoWorld hands-on review of IBM Watson/SPSS cloud ML services (2016)"
+  },
+  {
+    "brand": "IBM",
+    "channel": "social",
+    "url": "https://news.ycombinator.com/item?id=18321884",
+    "retrieved_at": "2026-07-02T09:04:15Z",
+    "chars": 2497,
+    "sha256": "f875761663dfe6707053ef90b1826bc9a22777b1e326b66219151f8e5bfb94d7",
+    "note": "Hacker News thread via hn.algolia.com API (1052 comments)"
+  },
+  {
+    "brand": "Siemens",
+    "channel": "official",
+    "url": "https://www.siemens.com/global/en/company/about.html",
+    "retrieved_at": "2026-07-02T09:04:15Z",
+    "chars": 2492,
+    "sha256": "4b5762f6f7225b13b2d5bf0ffa0e91fff45ec02092ff4371e0507430fc86328c"
+  },
+  {
+    "brand": "Siemens",
+    "channel": "press",
+    "url": "https://fortune.com/2026/01/07/fusion-power-commonwealth-sparc-nuclear-fusion-pilot-ai-siemens-nvidia/",
+    "retrieved_at": "2026-07-02T09:04:15Z",
+    "chars": 2495,
+    "sha256": "13f0a6da1b103a2d228f4ecfed087f6be492b3058e33bbf05933f91141fc4213"
+  },
+  {
+    "brand": "Siemens",
+    "channel": "experience",
+    "url": "https://www.scan2cad.com/blog/cad/solid-edge-vs-nx/",
+    "retrieved_at": "2026-07-02T09:04:15Z",
+    "chars": 2499,
+    "sha256": "74c9874ffafd1342f67d9eca836490feff219d2d9b49b95abd489cfe29c7fd0d",
+    "note": "Review platforms 403; used detailed Scan2CAD third-party review comparing Siemens Solid Edge and NX (updated 2025)"
+  },
+  {
+    "brand": "Siemens",
+    "channel": "social",
+    "url": "https://news.ycombinator.com/item?id=27279043",
+    "retrieved_at": "2026-07-02T09:04:15Z",
+    "chars": 2492,
+    "sha256": "e42fb1d417747f770dd611a1661db283742a62b0b853174a8e45d0e68970f45b",
+    "note": "Hacker News thread via hn.algolia.com API (169 comments)"
+  },
+  {
+    "brand": "SAP",
+    "channel": "official",
+    "url": "https://www.sap.com/about/company.html",
+    "retrieved_at": "2026-07-02T09:04:15Z",
+    "chars": 2496,
+    "sha256": "3350370f941009ce7d857318030985fa2a57b7421e648d37136a2c7c90aaa674"
+  },
+  {
+    "brand": "SAP",
+    "channel": "press",
+    "url": "https://techcrunch.com/2026/05/05/sap-bets-1-16b-on-18-month-old-german-ai-lab-and-says-yes-to-nemoclaw/",
+    "retrieved_at": "2026-07-02T09:04:15Z",
+    "chars": 2499,
+    "sha256": "af82f1d32762d55e1f991f6ac807afa4f0bf943d668b362eead5bb9d16f64ca4"
+  },
+  {
+    "brand": "SAP",
+    "channel": "experience",
+    "url": "https://softwareconnect.com/reviews/sap-s4hana/",
+    "retrieved_at": "2026-07-02T09:04:15Z",
+    "chars": 2497,
+    "sha256": "0cce290db1eb027b41c4f707c0f7a88ec84506cae11a7255dbb8d5f06637d053",
+    "note": "G2/TrustRadius 403; used Software Connect review page for SAP Cloud ERP (S/4HANA) incl. verified user reviews"
+  },
+  {
+    "brand": "SAP",
+    "channel": "social",
+    "url": "https://news.ycombinator.com/item?id=32776276",
+    "retrieved_at": "2026-07-02T09:04:15Z",
+    "chars": 2491,
+    "sha256": "73e4af607e6ad041df065bdc6473900b84748c935d85a80a47b2a0a696f0bea4",
+    "note": "Hacker News thread via hn.algolia.com API (686 comments)"
+  },
+  {
+    "brand": "Cisco",
+    "channel": "official",
+    "url": "https://www.cisco.com/c/en/us/about.html",
+    "retrieved_at": "2026-07-02T09:04:15Z",
+    "chars": 2490,
+    "sha256": "2255b6d558d054947ea482a66fa7350c797e13070f7e86083d7ac6cf28365b13"
+  },
+  {
+    "brand": "Cisco",
+    "channel": "press",
+    "url": "https://www.cnbc.com/2026/05/13/cisco-csco-q3-earnings-report-2026.html",
+    "retrieved_at": "2026-07-02T09:04:15Z",
+    "chars": 2494,
+    "sha256": "f587a6660bc5833e1b847db48e71eb8dc971a755d121fa88eafe936f83dfebe5"
+  },
+  {
+    "brand": "Cisco",
+    "channel": "experience",
+    "url": "https://fractionalciso.com/meraki-review-security-appliance/",
+    "retrieved_at": "2026-07-02T09:04:15Z",
+    "chars": 2499,
+    "sha256": "f330de9dff19b74325ec6d60bee8b2bd2890e48ddbfdba47c7f72a7cfdc206d4",
+    "note": "Review platforms 403; used detailed Fractional CISO third-party review of Cisco Meraki Security Appliance"
+  },
+  {
+    "brand": "Cisco",
+    "channel": "social",
+    "url": "https://news.ycombinator.com/item?id=23697083",
+    "retrieved_at": "2026-07-02T09:04:15Z",
+    "chars": 2498,
+    "sha256": "012589abace61f51dcd007483c844809a9fb422d17f006b2b1d2ac2163f64736",
+    "note": "Hacker News thread via hn.algolia.com API (592 comments)"
+  }
+]

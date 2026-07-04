@@ -1,0 +1,43 @@
+{
+  "operator_concordance": {
+    "OP1": 0.005906909068751076,
+    "OP2": 0.0055482640707132935,
+    "OP3": 0.004784236965351463,
+    "OP4": 0.5560185140812404
+  },
+  "exclusion_verdict": {
+    "kept": [
+      "OP1",
+      "OP2",
+      "OP3"
+    ],
+    "excluded": [
+      {
+        "unit": "OP4",
+        "score": 0.5560185140812404,
+        "median_others": 0.0055482640707132935
+      }
+    ],
+    "rule": "score > 3.0 x median(others)",
+    "scores": {
+      "OP1": 0.005906909068751076,
+      "OP2": 0.0055482640707132935,
+      "OP3": 0.004784236965351463,
+      "OP4": 0.5560185140812404
+    }
+  },
+  "rung_availability": {
+    "claude-opus-4-1-20250805": true,
+    "claude-opus-4-5-20251101": true,
+    "claude-opus-4-6": true,
+    "claude-opus-4-7": true,
+    "claude-opus-4-8": true,
+    "gpt-4o-2024-11-20": true,
+    "gpt-5-2025-08-07": true,
+    "gpt-5.5-2026-04-23": true,
+    "qwen3-max-2025-09-23": true,
+    "qwen3.5-plus-2026-02-15": true,
+    "qwen3.7-max-2026-06-08": true
+  },
+  "n_pilot_records": 20
+}

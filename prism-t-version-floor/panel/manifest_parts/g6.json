@@ -1,0 +1,174 @@
+[
+  {
+    "brand": "Oracle",
+    "channel": "official",
+    "url": "https://www.oracle.com/corporate/",
+    "retrieved_at": "2026-07-02T09:05:24Z",
+    "chars": 2497,
+    "sha256": "47ba26ce4f39377293ea88c548ed4979186016f4c1f0b63bc45c722c436353b5"
+  },
+  {
+    "brand": "Oracle",
+    "channel": "press",
+    "url": "https://www.cnbc.com/2026/06/10/oracle-orcl-q4-earnings-report-2026.html",
+    "retrieved_at": "2026-07-02T09:05:24Z",
+    "chars": 2498,
+    "sha256": "4327b02ea5d59fbfdbb27a404f2dff516999af5b0341eab54d4294fa8ecce39a"
+  },
+  {
+    "brand": "Oracle",
+    "channel": "experience",
+    "url": "https://www.brokenrubik.com/blog/oracle-netsuite-pros-and-cons-the-definitive-guide",
+    "retrieved_at": "2026-07-02T09:05:24Z",
+    "chars": 2498,
+    "sha256": "86637e7b3ecf9bd8491a405b494898f8de09562142e79bc157672a686021afcb",
+    "note": "Fallback: Oracle Database/G2 review pages returned 403; used a detailed third-party Oracle NetSuite (Oracle-owned ERP) pros/cons review with G2/Capterra/Gartner ratings."
+  },
+  {
+    "brand": "Oracle",
+    "channel": "social",
+    "url": "https://news.ycombinator.com/item?id=47587935",
+    "retrieved_at": "2026-07-02T09:05:24Z",
+    "chars": 2494,
+    "sha256": "cc311015c2c119672c81a357c58e0f2c0b74819a875da59ff4817e4c9feb4204",
+    "note": "Public forum: Hacker News thread (HN Algolia API) on Oracle's 2026 30k-job cuts; post + comments."
+  },
+  {
+    "brand": "FedEx",
+    "channel": "official",
+    "url": "https://www.fedex.com/en-us/about.html",
+    "retrieved_at": "2026-07-02T09:05:24Z",
+    "chars": 2495,
+    "sha256": "42c0169786f82674d2d9096ef7f1538c4340a753dcc7c02ff8acd3142455b739"
+  },
+  {
+    "brand": "FedEx",
+    "channel": "press",
+    "url": "https://www.cnbc.com/2026/06/23/fedex-fdx-q4-2026-earnings.html",
+    "retrieved_at": "2026-07-02T09:05:24Z",
+    "chars": 2495,
+    "sha256": "8bdfd8764cedc9cd4742a7db0794ff5ef73f34cdb941f43f74b450d74086bda7"
+  },
+  {
+    "brand": "FedEx",
+    "channel": "experience",
+    "url": "https://www.sitejabber.com/reviews/fedex.com",
+    "retrieved_at": "2026-07-02T09:05:24Z",
+    "chars": 2491,
+    "sha256": "862910187ec6c70721c6f6b252eed6339f507f856cd0f7c3234e5f76902ff09e",
+    "note": "Fallback: Trustpilot/G2 returned 403; used Sitejabber (SmartCustomer) aggregated FedEx customer reviews (1.2/5, 2,898 reviews)."
+  },
+  {
+    "brand": "FedEx",
+    "channel": "social",
+    "url": "https://news.ycombinator.com/item?id=39479001",
+    "retrieved_at": "2026-07-02T09:05:24Z",
+    "chars": 2499,
+    "sha256": "da1d01882b86fc9bd80f68541148e85a8459320c54bed785e595ccc1b1613b77",
+    "note": "Public forum: Hacker News thread (HN Algolia API) about FedEx phishing/brand experience; post + comments."
+  },
+  {
+    "brand": "Caterpillar",
+    "channel": "official",
+    "url": "https://www.caterpillar.com/en/company.html",
+    "retrieved_at": "2026-07-02T09:05:24Z",
+    "chars": 2495,
+    "sha256": "5b90c5efc795be2a114c11a6f616220d639c17aaa362bebc6d2eada90f865b19"
+  },
+  {
+    "brand": "Caterpillar",
+    "channel": "press",
+    "url": "https://www.constructiondive.com/news/caterpillar-q4-2025-sales-record-high-build-momentum-2026/811071/",
+    "retrieved_at": "2026-07-02T09:05:24Z",
+    "chars": 2493,
+    "sha256": "e03fab98042cf67de4c409e31cd002bc7d70e15e28d6656f7ecab23556e248b6"
+  },
+  {
+    "brand": "Caterpillar",
+    "channel": "experience",
+    "url": "https://www.heavyequipmentguide.ca/article/27634/closer-look-caterpillar-launches-next-generation-excavators",
+    "retrieved_at": "2026-07-02T09:05:24Z",
+    "chars": 2499,
+    "sha256": "6a11a033d21c0415ad6086065416545ef9e411db4063cd34bca829446525c949",
+    "note": "Fallback: Equipment World review returned 403; used Heavy Equipment Guide hands-on Closer Look review of Cat Next Generation excavators (cab/operator experience)."
+  },
+  {
+    "brand": "Caterpillar",
+    "channel": "social",
+    "url": "https://news.ycombinator.com/item?id=33889415",
+    "retrieved_at": "2026-07-02T09:05:24Z",
+    "chars": 2499,
+    "sha256": "f998434e99682f22d22590a13baeff5cfa58c3abc257bffbc675092913c167a2",
+    "note": "Public forum: Hacker News thread (HN Algolia API) on the Cat-branded phone with FLIR camera; post + comments. (Most 'Caterpillar' HN threads concern the insect; this is the on-brand product thread.)"
+  },
+  {
+    "brand": "Salesforce",
+    "channel": "official",
+    "url": "https://www.salesforce.com/company/about-us/",
+    "retrieved_at": "2026-07-02T09:05:24Z",
+    "chars": 2498,
+    "sha256": "30d92f494e3e9207d8d0d3e1440c98f9d6c00cc2d6a3f146f8f81bdc6165df88"
+  },
+  {
+    "brand": "Salesforce",
+    "channel": "press",
+    "url": "https://techcrunch.com/2026/06/15/salesforce-acquires-ai-customer-service-platform-fin-for-3-6b/",
+    "retrieved_at": "2026-07-02T09:05:24Z",
+    "chars": 1913,
+    "sha256": "a78cde5d91ca114b732b63a8ebe0dccdbbc9b78484561df08ff647966d5f2b8d",
+    "note": "Shorter clean article (In Brief format), 1913 chars, above 500-char minimum."
+  },
+  {
+    "brand": "Salesforce",
+    "channel": "experience",
+    "url": "https://tech.co/crm-software/salesforce-review",
+    "retrieved_at": "2026-07-02T09:05:24Z",
+    "chars": 2499,
+    "sha256": "94c28a020885fdcf945c2fd9ffc39787f4b473e688ea3765706b378cd743b773",
+    "note": "Review platforms (G2/Capterra) blocked; used Tech.co hands-on Salesforce CRM review (pros/cons, pricing, testing)."
+  },
+  {
+    "brand": "Salesforce",
+    "channel": "social",
+    "url": "https://news.ycombinator.com/item?id=42639417",
+    "retrieved_at": "2026-07-02T09:05:24Z",
+    "chars": 2498,
+    "sha256": "54a7b75197070f56359aa5d3087e7f498b384ff5b3eaa1250f05afa5b397c309",
+    "note": "Public forum: Hacker News thread (HN Algolia API) on Benioff's 2025 no-new-engineers statement; post + comments."
+  },
+  {
+    "brand": "Nvidia",
+    "channel": "official",
+    "url": "https://www.nvidia.com/en-us/about-nvidia/",
+    "retrieved_at": "2026-07-02T09:05:24Z",
+    "chars": 1996,
+    "sha256": "6f4af50f93ae4beef004a33ffe4dfea6a94f5eacde296b2c211aa09a534b41aa",
+    "note": "Nvidia About page is largely video-based; extracted all substantive section text (1996 chars, above minimum)."
+  },
+  {
+    "brand": "Nvidia",
+    "channel": "press",
+    "url": "https://www.cnbc.com/2026/02/25/nvidia-nvda-earnings-report-q4-2026.html",
+    "retrieved_at": "2026-07-02T09:05:24Z",
+    "chars": 2496,
+    "sha256": "16b1a4eab05c61a2a7408eff8a352b9c6bddd2a0cf9c29a8040f3e715e68f758"
+  },
+  {
+    "brand": "Nvidia",
+    "channel": "experience",
+    "url": "https://www.techradar.com/computing/gpu/nvidia-geforce-rtx-5090",
+    "retrieved_at": "2026-07-02T09:05:24Z",
+    "chars": 2495,
+    "sha256": "dc1185250a61c6c943ce37ea13c0d06fcc8a6ca38acf0e5cb5d32b0fde61857f",
+    "note": "Used TechRadar RTX 5090 in-depth product review (two-minute review + price/value verdict)."
+  },
+  {
+    "brand": "Nvidia",
+    "channel": "social",
+    "url": "https://news.ycombinator.com/item?id=44468175",
+    "retrieved_at": "2026-07-02T09:05:24Z",
+    "chars": 2499,
+    "sha256": "eabd0afe10d71f22c660b9c527865343cf15305e3297dca37f548cc306c2ef0e",
+    "note": "Public forum: Hacker News thread (HN Algolia API) 'Nvidia won, we all lost'; post + comments."
+  }
+]

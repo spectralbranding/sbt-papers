@@ -1,0 +1,174 @@
+[
+  {
+    "brand": "Hermès",
+    "channel": "official",
+    "url": "https://finance.hermes.com/en/",
+    "retrieved_at": "2026-07-02T09:06:56Z",
+    "chars": 2063,
+    "sha256": "624f577c3593dfbfe566ef5e5a5baa1e75df60e00445208095c2e626cde1609c",
+    "note": "fallback: www.hermes.com brand-story pages return HTTP 403 to fetchers; used the brand's own corporate site (finance.hermes.com)"
+  },
+  {
+    "brand": "Hermès",
+    "channel": "press",
+    "url": "https://wwd.com/business-news/financial/hermes-q1-sales-rise-2026-middle-east-tourism-challenges-1238916275/",
+    "retrieved_at": "2026-07-02T09:06:56Z",
+    "chars": 2499,
+    "sha256": "a98613746a6c87ec1b4bc7b47073f187c6cb8b034361d99fcc048b0068c26018"
+  },
+  {
+    "brand": "Hermès",
+    "channel": "experience",
+    "url": "https://www.pursebop.com/my-hermes-paris-appointment-system-experiences/",
+    "retrieved_at": "2026-07-02T09:06:56Z",
+    "chars": 2493,
+    "sha256": "fcc816cfcad6485cf59830bac3fd766b011d463d29199c5dee45530cfd47254a",
+    "note": "fallback: Trustpilot and purseblog.com blocked (403); used detailed first-person Hermès boutique experience article"
+  },
+  {
+    "brand": "Hermès",
+    "channel": "social",
+    "url": "https://news.ycombinator.com/item?id=40770358",
+    "retrieved_at": "2026-07-02T09:06:56Z",
+    "chars": 2497,
+    "sha256": "e55aa5b8a6edeaf436be0085616e3bc95318e2ddc31fa3b6defd66f4d5df4ae0",
+    "note": "fallback: Reddit returns 403 to non-browser fetchers; used Hacker News thread 'The economics of the Birkin handbag' (351 comments) via hn.algolia.com API"
+  },
+  {
+    "brand": "Apple",
+    "channel": "official",
+    "url": "https://www.apple.com/",
+    "retrieved_at": "2026-07-02T09:06:56Z",
+    "chars": 1553,
+    "sha256": "b2c2509411b42dadf077f37995e7dd84874aafad073510b75fa6a443222b9d39"
+  },
+  {
+    "brand": "Apple",
+    "channel": "press",
+    "url": "https://www.cnbc.com/2026/04/30/apple-aapl-q2-2026-earnings-report.html",
+    "retrieved_at": "2026-07-02T09:06:56Z",
+    "chars": 2497,
+    "sha256": "1b285bb57c1c9f02fbe7deaef3b63c929df8d8c794e7230e0c4e1c818b65c05a"
+  },
+  {
+    "brand": "Apple",
+    "channel": "experience",
+    "url": "https://www.tomsguide.com/phones/iphones/apple-iphone-17-review",
+    "retrieved_at": "2026-07-02T09:06:56Z",
+    "chars": 2495,
+    "sha256": "4c2710c71ee2dabd2243688d7377cd6d0936414ef995737d3e785d2837c0ec3c",
+    "note": "fallback: Trustpilot and ConsumerAffairs blocked (403/WAF); used detailed third-party iPhone 17 product review"
+  },
+  {
+    "brand": "Apple",
+    "channel": "social",
+    "url": "https://news.ycombinator.com/item?id=36201593",
+    "retrieved_at": "2026-07-02T09:06:56Z",
+    "chars": 2498,
+    "sha256": "85d4783315e4c5ea9d6e706a63e55998ed0325b36eeaaf72987b2e582c921df6",
+    "note": "fallback: Reddit returns 403 to non-browser fetchers; used Hacker News thread 'Apple Vision Pro: Apple's first spatial computer' (2843 comments) via hn.algolia.com API"
+  },
+  {
+    "brand": "LEGO",
+    "channel": "official",
+    "url": "https://www.lego.com/en-us/aboutus",
+    "retrieved_at": "2026-07-02T09:06:56Z",
+    "chars": 842,
+    "sha256": "04967bbee0ff78f3f85a2a3e714e8c04add603c82dfcf0d51b05cbb62d7bc0ad"
+  },
+  {
+    "brand": "LEGO",
+    "channel": "press",
+    "url": "https://www.cnbc.com/2025/08/27/lego-first-half-2025-earnings-post-record-revenue.html",
+    "retrieved_at": "2026-07-02T09:06:56Z",
+    "chars": 2499,
+    "sha256": "bf932eebfd2c84011febb28c2bef533b0e1b3b145697b3bd93c5e0c09702cfc5"
+  },
+  {
+    "brand": "LEGO",
+    "channel": "experience",
+    "url": "https://jaysbrickblog.com/reviews/review-lego-72046-game-boy/",
+    "retrieved_at": "2026-07-02T09:06:56Z",
+    "chars": 2498,
+    "sha256": "562495e03cdb6d1fa9bf5d1ea24f6264d256474a564612da22ca785c48f884fc",
+    "note": "fallback: Trustpilot blocked (WAF); used detailed third-party LEGO set review (72046 Game Boy)"
+  },
+  {
+    "brand": "LEGO",
+    "channel": "social",
+    "url": "https://news.ycombinator.com/item?id=48314136",
+    "retrieved_at": "2026-07-02T09:06:56Z",
+    "chars": 2490,
+    "sha256": "c094102b272c3bef7cdc8e0c49cb91a91b831c32514c450c563c41f6b8edef29",
+    "note": "fallback: Reddit returns 403 to non-browser fetchers; used Hacker News thread about a $200k LEGO collection (624 comments) via hn.algolia.com API"
+  },
+  {
+    "brand": "Rolex",
+    "channel": "official",
+    "url": "https://www.rolex.com/about-rolex",
+    "retrieved_at": "2026-07-02T09:06:56Z",
+    "chars": 1248,
+    "sha256": "a72583f6d6ae4948a7dec57b0a3235d05788cb113a91468fa8ca3763c8f5d41e"
+  },
+  {
+    "brand": "Rolex",
+    "channel": "press",
+    "url": "https://monochrome-watches.com/news-2026-rolex-price-list-2025-2026-increase-evolution-year-to-year-minimal-evolution-steel-models-large-increase-gold-watches/",
+    "retrieved_at": "2026-07-02T09:06:56Z",
+    "chars": 2497,
+    "sha256": "d0e7ea8091d1bb15f968d45744006e1230ecfdac15a33236bb14affe86056cbc",
+    "note": "fallback: no accessible CNBC/BBC/Bloomberg Rolex article found; used press-friendly trade outlet Monochrome Watches (2026 price-list news)"
+  },
+  {
+    "brand": "Rolex",
+    "channel": "experience",
+    "url": "https://timeandtidewatches.com/rolex-land-dweller-36-ref-127234-hands-on/",
+    "retrieved_at": "2026-07-02T09:06:56Z",
+    "chars": 2496,
+    "sha256": "be411da465f063bff1b7940c3725b56b6170bbbd0f63e159940cf44763baebe0",
+    "note": "fallback: Trustpilot blocked (WAF); used detailed third-party owner's hands-on review (Land-Dweller 36)"
+  },
+  {
+    "brand": "Rolex",
+    "channel": "social",
+    "url": "https://news.ycombinator.com/item?id=38714650",
+    "retrieved_at": "2026-07-02T09:06:56Z",
+    "chars": 2497,
+    "sha256": "a08db0ccfa7c43bfe665fb0416f5074ebe2fae716028966fefe891cbe58eeb07",
+    "note": "fallback: Reddit returns 403 to non-browser fetchers; used Hacker News thread 'Rolex fined $100M...' (263 comments) via hn.algolia.com API"
+  },
+  {
+    "brand": "IKEA",
+    "channel": "official",
+    "url": "https://www.ikea.com/us/en/this-is-ikea/about-us/",
+    "retrieved_at": "2026-07-02T09:06:56Z",
+    "chars": 1182,
+    "sha256": "a29da78ee739f825bf56986a883aba1f08a120cd24ad7011053437ecec64a474"
+  },
+  {
+    "brand": "IKEA",
+    "channel": "press",
+    "url": "https://www.cnbc.com/2026/03/26/ikea-has-high-hopes-for-india-as-it-stares-a-global-slowdown.html",
+    "retrieved_at": "2026-07-02T09:06:56Z",
+    "chars": 2493,
+    "sha256": "082246e571a123a7d7d66119f7d5007305088b072052fe1902c90701f2aae6d2"
+  },
+  {
+    "brand": "IKEA",
+    "channel": "experience",
+    "url": "https://www.forbes.com/sites/shephyken/2025/11/09/how-ikea-creates-a-luxury-experience/",
+    "retrieved_at": "2026-07-02T09:06:56Z",
+    "chars": 2497,
+    "sha256": "7e8665149943c5bcc4e7fbcf091f493d67becf86a98a57ceebec794a317a95d5",
+    "note": "fallback: Trustpilot and ConsumerAffairs blocked (403/WAF); used detailed third-party article on the IKEA customer experience"
+  },
+  {
+    "brand": "IKEA",
+    "channel": "social",
+    "url": "https://news.ycombinator.com/item?id=25925926",
+    "retrieved_at": "2026-07-02T09:06:56Z",
+    "chars": 2492,
+    "sha256": "c92ef92e6c7d87c88234199ee8ee1b05ad7eb044cf1bde0948cef798139aa8be",
+    "note": "fallback: Reddit returns 403 to non-browser fetchers; used Hacker News thread 'IKEA buys 11,000 acres of U.S. forest' (603 comments) via hn.algolia.com API"
+  }
+]

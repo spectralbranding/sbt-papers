@@ -1,0 +1,146 @@
+# PRISM-T PL1 Configuration — version-ladder config for epoch VE-1.
+# Version: prism-t/v1.0.0
+# Date authored: 2026-07-02. PROVISIONAL until the pre-flight pilot; frozen
+# before VE-1 collection (freeze recorded in freeze_note at the bottom).
+# Decision provenance: user delegated provider set + budget + ladder to the
+# session (2026-07-02, "execute autonomously"); defaults mirror the confirmed
+# 2026az/2026bb campaign decisions (PL0 §9.5).
+# Model catalogs verified live via read-only /models endpoints on 2026-07-02:
+# every pinned rung ID below was present on its provider's catalog.
+
+config_version: prism-t/v1.0.0
+budget_cap_usd: 100.00
+seed: 20260702
+epoch: VE-1
+temperature: 0 # where honored; providers that reject/ignore it are logged as-sent
+
+# --- Contemporaneous operator pairs (the H1 baseline floor) -----------------
+# Same 4-family cross-family set as 2026az/2026bb (renderer != extractor
+# family, 2026ap). The per-brand operator floor is the cross-pair dispersion
+# of the pinned-panel reading at the current epoch (post-exclusion).
+operator_pairs:
+  OP1:
+    renderer: {model: claude-opus-4-8, family: anthropic}
+    extractor: {model: gpt-5.4-mini-2026-03-17, family: openai}
+  OP2:
+    renderer: {model: gpt-5.5-2026-04-23, family: openai}
+    extractor: {model: claude-haiku-4-5-20251001, family: anthropic}
+  OP3:
+    renderer: {model: qwen3.7-max-2026-06-08, family: alibaba}
+    extractor: {model: deepseek-v4-flash, family: deepseek}
+  OP4:
+    # deepseek-v4-pro is thinking-tier as a RENDERER too: at max_out 1200 it
+    # returned empty content on ~60% of cells (reasoning budget); override.
+    renderer: {model: deepseek-v4-pro, family: deepseek, max_out: 4000}
+    extractor: {model: qwen3.6-flash-2026-04-16, family: alibaba}
+
+# --- Version ladders (the H1/H3 comparison; PL0 §9.1 back-catalog epochs) ---
+# The RENDERER version is the only thing that moves within a ladder; the
+# extractor is fixed per ladder (cross-family, exact pinned ID) so pinned-panel
+# movement across rungs is renderer-version drift under a matched operator.
+# Each ladder's TOP rung coincides with one contemporaneous operator pair
+# (OP1/OP2/OP3), so top-rung records are collected once and shared.
+# DeepSeek is NOT ladderable (API serves only the current generation) and
+# participates as operator family only.
+ladders:
+  anthropic-opus:
+    extractor: {model: gpt-5.4-mini-2026-03-17, family: openai}
+    rungs: # release order; all live on 2026-07-02
+      - {model: claude-opus-4-1-20250805, family: anthropic}
+      - {model: claude-opus-4-5-20251101, family: anthropic}
+      - {model: claude-opus-4-6, family: anthropic}
+      - {model: claude-opus-4-7, family: anthropic}
+      - {model: claude-opus-4-8, family: anthropic} # = OP1 renderer
+  openai-gpt:
+    extractor: {model: claude-haiku-4-5-20251001, family: anthropic}
+    rungs:
+      - {model: gpt-4o-2024-11-20, family: openai}
+      # gpt-5 dated base is a reasoning-tier model: at max_completion_tokens
+      # 1200 the reasoning budget consumed the whole allowance and content
+      # came back empty (pilot, 2026-07-02) — per-rung max_out override.
+      - {model: gpt-5-2025-08-07, family: openai, max_out: 4000}
+      - {model: gpt-5.5-2026-04-23, family: openai} # = OP2 renderer
+  alibaba-qwen:
+    extractor: {model: deepseek-v4-flash, family: deepseek}
+    rungs: # open-weights family - the replicable ladder
+      - {model: qwen3-max-2025-09-23, family: alibaba}
+      - {model: qwen3.5-plus-2026-02-15, family: alibaba}
+      - {model: qwen3.7-max-2026-06-08, family: alibaba} # = OP3 renderer
+
+# --- Controls (PL0 §5) -------------------------------------------------------
+controls:
+  # negative: same version, two full pinned-panel runs; run-2 distance must
+  # sit within the operator floor.
+  negative: {model: claude-opus-4-8, family: anthropic, extractor: {model: gpt-5.4-mini-2026-03-17, family: openai}, runs: 2}
+  # positive: the deliberately distant version pair (18+ months apart);
+  # designated ex ante, must exceed the operator floor.
+  positive: {ladder: openai-gpt, pair: [gpt-4o-2024-11-20, gpt-5.5-2026-04-23]}
+
+# --- Pre-flight pilot (PL0 §9.4) ---------------------------------------------
+pilot:
+  stated_brands: 2          # x 1 channel x 4 op pairs x (render+extract) = 16 calls
+  stated_channels: [official]
+  ladder_brands: 1          # x 1 channel x 11 rungs x (render+extract) = 22 calls
+  exclusion_rule: "discordance score > 3 x median of remaining units (mechanical; PL0 §9.4)"
+
+# Panel (PL0 §9.3): frozen 40-brand bank + byte-identical pinned artifacts.
+brand_bank: ../prism_m/PL2_BRAND_BANK.yaml
+panel_dir: panel/pinned
+panel_manifest: panel/PINNED_MANIFEST.json
+
+artifact_channels:
+  A1: {id: official, description: "official brand communications - website, advertising, packaging, owned media"}
+  A2: {id: press, description: "third-party press and news coverage of the brand"}
+  A3: {id: experience, description: "customer experience reports and product/service reviews"}
+  A4: {id: social, description: "organic social-media and forum discourse about the brand"}
+
+fallbacks: {} # version identity is the construct - NO fallback substitution;
+              # an unavailable rung is dropped and reported, never substituted.
+
+retry_policy:
+  max_retries: 3
+  backoff_seconds: [5, 15, 45]
+  malformed_output: redraw_once_then_flag
+
+# Drift criterion (PL0 §6): version pair drifts iff pinned inter-version S/N
+# bootstrap CI lower bound > k, k = 2 (robustness sweep k in {1.5, 2, 3}).
+snr_k: 2.0
+
+# List price per 1M tokens (input/output USD), cost telemetry; the logger's
+# PRICE_TABLE is the runtime source. Back-catalog rungs at provider list.
+list_prices:
+  claude-opus-4-8: {input: 5.00, output: 25.00}
+  claude-opus-4-7: {input: 5.00, output: 25.00}
+  claude-opus-4-6: {input: 5.00, output: 25.00}
+  claude-opus-4-5-20251101: {input: 5.00, output: 25.00}
+  claude-opus-4-1-20250805: {input: 15.00, output: 75.00}
+  claude-haiku-4-5-20251001: {input: 1.00, output: 5.00}
+  gpt-5.5-2026-04-23: {input: 5.00, output: 30.00}
+  gpt-5-2025-08-07: {input: 1.25, output: 10.00}
+  gpt-4o-2024-11-20: {input: 2.50, output: 10.00}
+  gpt-5.4-mini-2026-03-17: {input: 0.55, output: 2.20}
+  qwen3.7-max-2026-06-08: {input: 2.50, output: 7.50}
+  qwen3.5-plus-2026-02-15: {input: 0.80, output: 2.40}
+  qwen3-max-2025-09-23: {input: 1.20, output: 6.00}
+  qwen3.6-flash-2026-04-16: {input: 0.10, output: 0.30}
+  deepseek-v4-pro: {input: 1.74, output: 3.48}
+  deepseek-v4-flash: {input: 0.14, output: 0.28}
+
+# --- Pilot outcome (2026-07-02, data/pilot_report.json) ---------------------
+# Mechanical application of the frozen exclusion rule (PL0 §9.4):
+# - OP4 EXCLUDED from the stated operator floor: leave-one-out vector
+#   discordance .556 > 3 x median-of-others .0055 (~100x) — the third
+#   replication of the deepseek-v4-pro-renderer discordance (2026az stated
+#   readings; 2026bb pilot; now the artifact-reading variant, where it is an
+#   order of magnitude more extreme). OP4 is still COLLECTED and reported as
+#   an exploratory observer; it enters no floor and no pooled vector.
+# - OP1/OP2/OP3 kept (concordance .0048-.0059).
+# - All 11 ladder rungs available and rendering/extracting cleanly after the
+#   gpt-5 max_out override above (empty-content reasoning-budget gotcha).
+pilot_excluded_op_pairs: [OP4]
+
+freeze_note: FROZEN 2026-07-02 for VE-1 collection, after the pre-flight
+  pilot (a) applied the exclusion rule mechanically (OP4 out of the stated
+  floor; OP1-OP3 kept) and (b) verified every ladder rung renders and
+  extracts cleanly. Panel manifest sealed the same day (160 artifacts,
+  SHA-256). Version prism-t/v1.0.0.

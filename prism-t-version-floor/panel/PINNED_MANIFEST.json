@@ -1,0 +1,1540 @@
+[
+ {
+  "brand": "Hermès",
+  "channel": "official",
+  "url": "https://finance.hermes.com/en/",
+  "retrieved_at": "2026-07-02T09:06:56Z",
+  "chars": 2063,
+  "sha256": "624f577c3593dfbfe566ef5e5a5baa1e75df60e00445208095c2e626cde1609c",
+  "note": "fallback: www.hermes.com brand-story pages return HTTP 403 to fetchers; used the brand's own corporate site (finance.hermes.com)",
+  "fragment": "g1.json"
+ },
+ {
+  "brand": "Hermès",
+  "channel": "press",
+  "url": "https://wwd.com/business-news/financial/hermes-q1-sales-rise-2026-middle-east-tourism-challenges-1238916275/",
+  "retrieved_at": "2026-07-02T09:06:56Z",
+  "chars": 2499,
+  "sha256": "a98613746a6c87ec1b4bc7b47073f187c6cb8b034361d99fcc048b0068c26018",
+  "fragment": "g1.json"
+ },
+ {
+  "brand": "Hermès",
+  "channel": "experience",
+  "url": "https://www.pursebop.com/my-hermes-paris-appointment-system-experiences/",
+  "retrieved_at": "2026-07-02T09:06:56Z",
+  "chars": 2493,
+  "sha256": "fcc816cfcad6485cf59830bac3fd766b011d463d29199c5dee45530cfd47254a",
+  "note": "fallback: Trustpilot and purseblog.com blocked (403); used detailed first-person Hermès boutique experience article",
+  "fragment": "g1.json"
+ },
+ {
+  "brand": "Hermès",
+  "channel": "social",
+  "url": "https://news.ycombinator.com/item?id=40770358",
+  "retrieved_at": "2026-07-02T09:06:56Z",
+  "chars": 2497,
+  "sha256": "e55aa5b8a6edeaf436be0085616e3bc95318e2ddc31fa3b6defd66f4d5df4ae0",
+  "note": "fallback: Reddit returns 403 to non-browser fetchers; used Hacker News thread 'The economics of the Birkin handbag' (351 comments) via hn.algolia.com API",
+  "fragment": "g1.json"
+ },
+ {
+  "brand": "Apple",
+  "channel": "official",
+  "url": "https://www.apple.com/",
+  "retrieved_at": "2026-07-02T09:06:56Z",
+  "chars": 1553,
+  "sha256": "b2c2509411b42dadf077f37995e7dd84874aafad073510b75fa6a443222b9d39",
+  "fragment": "g1.json"
+ },
+ {
+  "brand": "Apple",
+  "channel": "press",
+  "url": "https://www.cnbc.com/2026/04/30/apple-aapl-q2-2026-earnings-report.html",
+  "retrieved_at": "2026-07-02T09:06:56Z",
+  "chars": 2497,
+  "sha256": "1b285bb57c1c9f02fbe7deaef3b63c929df8d8c794e7230e0c4e1c818b65c05a",
+  "fragment": "g1.json"
+ },
+ {
+  "brand": "Apple",
+  "channel": "experience",
+  "url": "https://www.tomsguide.com/phones/iphones/apple-iphone-17-review",
+  "retrieved_at": "2026-07-02T09:06:56Z",
+  "chars": 2495,
+  "sha256": "4c2710c71ee2dabd2243688d7377cd6d0936414ef995737d3e785d2837c0ec3c",
+  "note": "fallback: Trustpilot and ConsumerAffairs blocked (403/WAF); used detailed third-party iPhone 17 product review",
+  "fragment": "g1.json"
+ },
+ {
+  "brand": "Apple",
+  "channel": "social",
+  "url": "https://news.ycombinator.com/item?id=36201593",
+  "retrieved_at": "2026-07-02T09:06:56Z",
+  "chars": 2498,
+  "sha256": "85d4783315e4c5ea9d6e706a63e55998ed0325b36eeaaf72987b2e582c921df6",
+  "note": "fallback: Reddit returns 403 to non-browser fetchers; used Hacker News thread 'Apple Vision Pro: Apple's first spatial computer' (2843 comments) via hn.algolia.com API",
+  "fragment": "g1.json"
+ },
+ {
+  "brand": "LEGO",
+  "channel": "official",
+  "url": "https://www.lego.com/en-us/aboutus",
+  "retrieved_at": "2026-07-02T09:06:56Z",
+  "chars": 842,
+  "sha256": "04967bbee0ff78f3f85a2a3e714e8c04add603c82dfcf0d51b05cbb62d7bc0ad",
+  "fragment": "g1.json"
+ },
+ {
+  "brand": "LEGO",
+  "channel": "press",
+  "url": "https://www.cnbc.com/2025/08/27/lego-first-half-2025-earnings-post-record-revenue.html",
+  "retrieved_at": "2026-07-02T09:06:56Z",
+  "chars": 2499,
+  "sha256": "bf932eebfd2c84011febb28c2bef533b0e1b3b145697b3bd93c5e0c09702cfc5",
+  "fragment": "g1.json"
+ },
+ {
+  "brand": "LEGO",
+  "channel": "experience",
+  "url": "https://jaysbrickblog.com/reviews/review-lego-72046-game-boy/",
+  "retrieved_at": "2026-07-02T09:06:56Z",
+  "chars": 2498,
+  "sha256": "562495e03cdb6d1fa9bf5d1ea24f6264d256474a564612da22ca785c48f884fc",
+  "note": "fallback: Trustpilot blocked (WAF); used detailed third-party LEGO set review (72046 Game Boy)",
+  "fragment": "g1.json"
+ },
+ {
+  "brand": "LEGO",
+  "channel": "social",
+  "url": "https://news.ycombinator.com/item?id=48314136",
+  "retrieved_at": "2026-07-02T09:06:56Z",
+  "chars": 2490,
+  "sha256": "c094102b272c3bef7cdc8e0c49cb91a91b831c32514c450c563c41f6b8edef29",
+  "note": "fallback: Reddit returns 403 to non-browser fetchers; used Hacker News thread about a $200k LEGO collection (624 comments) via hn.algolia.com API",
+  "fragment": "g1.json"
+ },
+ {
+  "brand": "Rolex",
+  "channel": "official",
+  "url": "https://www.rolex.com/about-rolex",
+  "retrieved_at": "2026-07-02T09:06:56Z",
+  "chars": 1248,
+  "sha256": "a72583f6d6ae4948a7dec57b0a3235d05788cb113a91468fa8ca3763c8f5d41e",
+  "fragment": "g1.json"
+ },
+ {
+  "brand": "Rolex",
+  "channel": "press",
+  "url": "https://monochrome-watches.com/news-2026-rolex-price-list-2025-2026-increase-evolution-year-to-year-minimal-evolution-steel-models-large-increase-gold-watches/",
+  "retrieved_at": "2026-07-02T09:06:56Z",
+  "chars": 2497,
+  "sha256": "d0e7ea8091d1bb15f968d45744006e1230ecfdac15a33236bb14affe86056cbc",
+  "note": "fallback: no accessible CNBC/BBC/Bloomberg Rolex article found; used press-friendly trade outlet Monochrome Watches (2026 price-list news)",
+  "fragment": "g1.json"
+ },
+ {
+  "brand": "Rolex",
+  "channel": "experience",
+  "url": "https://timeandtidewatches.com/rolex-land-dweller-36-ref-127234-hands-on/",
+  "retrieved_at": "2026-07-02T09:06:56Z",
+  "chars": 2496,
+  "sha256": "be411da465f063bff1b7940c3725b56b6170bbbd0f63e159940cf44763baebe0",
+  "note": "fallback: Trustpilot blocked (WAF); used detailed third-party owner's hands-on review (Land-Dweller 36)",
+  "fragment": "g1.json"
+ },
+ {
+  "brand": "Rolex",
+  "channel": "social",
+  "url": "https://news.ycombinator.com/item?id=38714650",
+  "retrieved_at": "2026-07-02T09:06:56Z",
+  "chars": 2497,
+  "sha256": "a08db0ccfa7c43bfe665fb0416f5074ebe2fae716028966fefe891cbe58eeb07",
+  "note": "fallback: Reddit returns 403 to non-browser fetchers; used Hacker News thread 'Rolex fined $100M...' (263 comments) via hn.algolia.com API",
+  "fragment": "g1.json"
+ },
+ {
+  "brand": "IKEA",
+  "channel": "official",
+  "url": "https://www.ikea.com/us/en/this-is-ikea/about-us/",
+  "retrieved_at": "2026-07-02T09:06:56Z",
+  "chars": 1182,
+  "sha256": "a29da78ee739f825bf56986a883aba1f08a120cd24ad7011053437ecec64a474",
+  "fragment": "g1.json"
+ },
+ {
+  "brand": "IKEA",
+  "channel": "press",
+  "url": "https://www.cnbc.com/2026/03/26/ikea-has-high-hopes-for-india-as-it-stares-a-global-slowdown.html",
+  "retrieved_at": "2026-07-02T09:06:56Z",
+  "chars": 2493,
+  "sha256": "082246e571a123a7d7d66119f7d5007305088b072052fe1902c90701f2aae6d2",
+  "fragment": "g1.json"
+ },
+ {
+  "brand": "IKEA",
+  "channel": "experience",
+  "url": "https://www.forbes.com/sites/shephyken/2025/11/09/how-ikea-creates-a-luxury-experience/",
+  "retrieved_at": "2026-07-02T09:06:56Z",
+  "chars": 2497,
+  "sha256": "7e8665149943c5bcc4e7fbcf091f493d67becf86a98a57ceebec794a317a95d5",
+  "note": "fallback: Trustpilot and ConsumerAffairs blocked (403/WAF); used detailed third-party article on the IKEA customer experience",
+  "fragment": "g1.json"
+ },
+ {
+  "brand": "IKEA",
+  "channel": "social",
+  "url": "https://news.ycombinator.com/item?id=25925926",
+  "retrieved_at": "2026-07-02T09:06:56Z",
+  "chars": 2492,
+  "sha256": "c92ef92e6c7d87c88234199ee8ee1b05ad7eb044cf1bde0948cef798139aa8be",
+  "note": "fallback: Reddit returns 403 to non-browser fetchers; used Hacker News thread 'IKEA buys 11,000 acres of U.S. forest' (603 comments) via hn.algolia.com API",
+  "fragment": "g1.json"
+ },
+ {
+  "brand": "McDonald's",
+  "channel": "official",
+  "url": "https://corporate.mcdonalds.com/corpmcd/our-company/who-we-are.html",
+  "retrieved_at": "2026-07-02T09:03:39Z",
+  "chars": 1888,
+  "sha256": "bfdf0228f9ee2a31c42b93f3190ef059a4ee6f440ef567b1ec684ee9bee1b818",
+  "fragment": "g2.json"
+ },
+ {
+  "brand": "McDonald's",
+  "channel": "press",
+  "url": "https://www.cnbc.com/2026/06/01/mcdonalds-mcd-unveils-growth-strategy.html",
+  "retrieved_at": "2026-07-02T09:03:39Z",
+  "chars": 2492,
+  "sha256": "c23930e06db556f8b06bdde91487c327a1fdf34f890b00dc04c944e7cb7edd5b",
+  "fragment": "g2.json"
+ },
+ {
+  "brand": "McDonald's",
+  "channel": "experience",
+  "url": "https://www.smartcustomer.com/reviews/mcdonalds.com",
+  "retrieved_at": "2026-07-02T09:04:48Z",
+  "chars": 2492,
+  "sha256": "a228ff0ed532e8f4b3ed9b10c7999c27ef64ff2ec31be17ef6fbfd411b4d2634",
+  "note": "Trustpilot/ConsumerAffairs returned HTTP 403 to automated fetch; used Sitejabber consumer reviews (sitejabber.com/reviews/mcdonalds.com, redirects to smartcustomer.com)",
+  "fragment": "g2.json"
+ },
+ {
+  "brand": "McDonald's",
+  "channel": "social",
+  "url": "https://news.ycombinator.com/item?id=46006848",
+  "retrieved_at": "2026-07-02T09:06:06Z",
+  "chars": 2493,
+  "sha256": "ee9e72e2b7ff71cd465a8f8e8e94dabc498055c4018fc85c94784bdd6327f5a3",
+  "note": "Reddit JSON endpoints returned HTTP 403 from this network; used Hacker News discussion thread via Algolia API",
+  "fragment": "g2.json"
+ },
+ {
+  "brand": "Toyota",
+  "channel": "official",
+  "url": "https://global.toyota/en/company/vision-and-philosophy/global-vision/",
+  "retrieved_at": "2026-07-02T09:03:39Z",
+  "chars": 2499,
+  "sha256": "1f768144599ff760fd1d9442ddaa1588098d6186105360e643245ef22527e1c9",
+  "fragment": "g2.json"
+ },
+ {
+  "brand": "Toyota",
+  "channel": "press",
+  "url": "https://electrek.co/2026/07/01/toyotas-electric-suv-tops-17500-sales-outpaces-key-ev-rivals/",
+  "retrieved_at": "2026-07-02T09:03:39Z",
+  "chars": 2499,
+  "sha256": "54da3d560f6f38e323e9875b17204bdc4f7f19dca95d48c1260418d12110fd69",
+  "fragment": "g2.json"
+ },
+ {
+  "brand": "Toyota",
+  "channel": "experience",
+  "url": "https://www.caranddriver.com/toyota/camry",
+  "retrieved_at": "2026-07-02T09:04:48Z",
+  "chars": 2499,
+  "sha256": "eaae702af7cec36f7fdfc53f173f27f5491375e9cfeeb21295e9c13ba0630d10",
+  "note": "Trustpilot/ConsumerAffairs returned HTTP 403; used detailed third-party expert review article (Car and Driver, 2026 Toyota Camry review)",
+  "fragment": "g2.json"
+ },
+ {
+  "brand": "Toyota",
+  "channel": "social",
+  "url": "https://news.ycombinator.com/item?id=33057003",
+  "retrieved_at": "2026-07-02T09:06:06Z",
+  "chars": 2493,
+  "sha256": "fd30144b2cf5fd1f26f73eabbf942636dd2054e6bf798fe26178bdefc92c6002",
+  "note": "Reddit JSON endpoints returned HTTP 403 from this network; used Hacker News discussion thread via Algolia API",
+  "fragment": "g2.json"
+ },
+ {
+  "brand": "Visa",
+  "channel": "official",
+  "url": "https://usa.visa.com/about-visa.html",
+  "retrieved_at": "2026-07-02T09:03:39Z",
+  "chars": 2494,
+  "sha256": "c611780b7622137a5e4f6c759a9419bf0ea637441dd8023f8d23159ad35f7f88",
+  "fragment": "g2.json"
+ },
+ {
+  "brand": "Visa",
+  "channel": "press",
+  "url": "https://www.coindesk.com/business/2026/01/30/visa-and-mastercard-aren-t-buying-the-stablecoin-hype-for-everyday-payments",
+  "retrieved_at": "2026-07-02T09:03:39Z",
+  "chars": 2494,
+  "sha256": "29d0f70ed6aff8f48605e9562e5476e2f178e4c2c8b036284556c12832b8b66b",
+  "fragment": "g2.json"
+ },
+ {
+  "brand": "Visa",
+  "channel": "experience",
+  "url": "https://www.smartcustomer.com/reviews/visa.com",
+  "retrieved_at": "2026-07-02T09:04:48Z",
+  "chars": 2493,
+  "sha256": "3e6dddee2aee7d1eff0a0d984f793cf6e38a03a41d9de9ea692add450849f5ca",
+  "note": "Trustpilot/ConsumerAffairs returned HTTP 403; used Sitejabber consumer reviews (sitejabber.com/reviews/visa.com, redirects to smartcustomer.com)",
+  "fragment": "g2.json"
+ },
+ {
+  "brand": "Visa",
+  "channel": "social",
+  "url": "https://news.ycombinator.com/item?id=46958399",
+  "retrieved_at": "2026-07-02T09:06:06Z",
+  "chars": 2496,
+  "sha256": "00501c3489f14b997994793322e7975b4aef932ad40c50d34f26d3d7694087ba",
+  "note": "Reddit JSON endpoints returned HTTP 403 from this network; used Hacker News discussion thread via Algolia API",
+  "fragment": "g2.json"
+ },
+ {
+  "brand": "Nike",
+  "channel": "official",
+  "url": "https://about.nike.com/en/company",
+  "retrieved_at": "2026-07-02T09:03:39Z",
+  "chars": 2084,
+  "sha256": "056fd80bbbb0ee3aa4c2efa5248900a3d9e7913303ddddf19abefb2924afcb16",
+  "fragment": "g2.json"
+ },
+ {
+  "brand": "Nike",
+  "channel": "press",
+  "url": "https://www.cnbc.com/2026/06/30/nike-nke-q4-2026-earnings.html",
+  "retrieved_at": "2026-07-02T09:03:39Z",
+  "chars": 2493,
+  "sha256": "e0676cb1ef180e0185a2141d44d6a2103810801b7e876c743f5a8e13cd4a7864",
+  "fragment": "g2.json"
+ },
+ {
+  "brand": "Nike",
+  "channel": "experience",
+  "url": "https://runrepeat.com/nike-pegasus-41",
+  "retrieved_at": "2026-07-02T09:04:48Z",
+  "chars": 2493,
+  "sha256": "94494f8a6c5387c1c3b48addeb16092c86a6fbad6a1ae211320e5905fefd3ea9",
+  "note": "Trustpilot returned HTTP 403; used detailed third-party product review article (RunRepeat lab review of Nike Pegasus 41)",
+  "fragment": "g2.json"
+ },
+ {
+  "brand": "Nike",
+  "channel": "social",
+  "url": "https://news.ycombinator.com/item?id=43631543",
+  "retrieved_at": "2026-07-02T09:06:06Z",
+  "chars": 2488,
+  "sha256": "a139d95b1416ecd1d920ecbd73d7d405f1b2481398778110fedceefda7ae04d4",
+  "note": "Reddit JSON endpoints returned HTTP 403 from this network; used Hacker News discussion thread via Algolia API",
+  "fragment": "g2.json"
+ },
+ {
+  "brand": "Starbucks",
+  "channel": "official",
+  "url": "https://web.archive.org/web/20251231200444id_/https://www.starbucks.com/about-us/",
+  "retrieved_at": "2026-07-02T09:03:39Z",
+  "chars": 2490,
+  "sha256": "8eb4719429103cfda3c5303154c0366929cfa07f20e69f375ac4add46ec8d459",
+  "note": "Live starbucks.com/about-us and about.starbucks.com returned HTTP 403 to automated fetch; captured brand-authored About Us text via Wayback Machine snapshot",
+  "fragment": "g2.json"
+ },
+ {
+  "brand": "Starbucks",
+  "channel": "press",
+  "url": "https://www.cnbc.com/2026/01/29/starbucks-investor-day-updates-brian-niccol-turnaround.html",
+  "retrieved_at": "2026-07-02T09:03:39Z",
+  "chars": 2498,
+  "sha256": "409a8f670383e8a52ec2d46117816ad56303c76df066d87ea0a70cc8c835ecdc",
+  "fragment": "g2.json"
+ },
+ {
+  "brand": "Starbucks",
+  "channel": "experience",
+  "url": "https://www.smartcustomer.com/reviews/starbucks.com",
+  "retrieved_at": "2026-07-02T09:04:48Z",
+  "chars": 2497,
+  "sha256": "cf7601ecb95a32c96c0ac5ffa9023b7571eb2fe3aac55a2584906a05be1170be",
+  "note": "Trustpilot/ConsumerAffairs returned HTTP 403; used Sitejabber consumer reviews (sitejabber.com/reviews/starbucks.com, redirects to smartcustomer.com)",
+  "fragment": "g2.json"
+ },
+ {
+  "brand": "Starbucks",
+  "channel": "social",
+  "url": "https://news.ycombinator.com/item?id=35273712",
+  "retrieved_at": "2026-07-02T09:06:06Z",
+  "chars": 2495,
+  "sha256": "a350ab87f4cfdfe4db73dea8bf404aa3a3cb94a6e23e421bb4c19a98a91a9a00",
+  "note": "Reddit JSON endpoints returned HTTP 403 from this network; used Hacker News discussion thread via Algolia API",
+  "fragment": "g2.json"
+ },
+ {
+  "brand": "Patagonia",
+  "channel": "official",
+  "url": "https://www.patagonia.com/core-values/",
+  "retrieved_at": "2026-07-02T09:03:39Z",
+  "chars": 2359,
+  "sha256": "a0dfe57da59adcf058d610f46267edd4bf163cecbbafcada4ab771acc0cf1b9c",
+  "fragment": "g3.json"
+ },
+ {
+  "brand": "Patagonia",
+  "channel": "press",
+  "url": "https://fortune.com/2025/10/08/patagonia-ceo-ryan-gellert-climate-change-business-model-albania-national-park/",
+  "retrieved_at": "2026-07-02T09:03:46Z",
+  "chars": 2482,
+  "sha256": "9b69adc30acdcac7a8ca04e8701b5e626c4829b3c63389a67514c93e7fac4594",
+  "fragment": "g3.json"
+ },
+ {
+  "brand": "Patagonia",
+  "channel": "experience",
+  "url": "https://www.switchbacktravel.com/reviews/patagonia-nano-puff-hoody",
+  "retrieved_at": "2026-07-02T09:08:15Z",
+  "chars": 2498,
+  "sha256": "d9076b79825b2cfe55eb391ceff1e4f9205ebfc3d7804dbc622ede130240684f",
+  "note": "Trustpilot blocked bot access (403); used detailed third-party gear review article instead",
+  "fragment": "g3.json"
+ },
+ {
+  "brand": "Patagonia",
+  "channel": "social",
+  "url": "https://news.ycombinator.com/item?id=32842357",
+  "retrieved_at": "2026-07-02T09:11:02Z",
+  "chars": 2495,
+  "sha256": "d21663bb3db2ded0abbd6a054e4a0afc94a598112eabfb0487551193b5070eb0",
+  "note": "Reddit JSON endpoints returned 403; used Hacker News thread via Algolia API",
+  "fragment": "g3.json"
+ },
+ {
+  "brand": "Harley-Davidson",
+  "channel": "official",
+  "url": "https://www.harley-davidson.com/us/en/content/stories/harley-davidson-founders.html",
+  "retrieved_at": "2026-07-02T09:03:39Z",
+  "chars": 2495,
+  "sha256": "e93524bec51d57abaaa26da14ebacf0efef810e0ad6e2c81f20761437ea8c65e",
+  "note": "about-us.html returned 404; used brand-story page (The Founders of Harley-Davidson) on brand's own site",
+  "fragment": "g3.json"
+ },
+ {
+  "brand": "Harley-Davidson",
+  "channel": "press",
+  "url": "https://ridermagazine.com/2025/08/04/harley-davidson-names-artie-starrs-to-replace-jochen-zeitz-as-ceo/",
+  "retrieved_at": "2026-07-02T09:03:46Z",
+  "chars": 2495,
+  "sha256": "8e38b32a35588fe5f5144e46f9e6fe6cba609958dfd8f1b2a8abd79918ebf83c",
+  "fragment": "g3.json"
+ },
+ {
+  "brand": "Harley-Davidson",
+  "channel": "experience",
+  "url": "https://www.sitejabber.com/reviews/harley-davidson.com",
+  "retrieved_at": "2026-07-02T09:09:52Z",
+  "chars": 2497,
+  "sha256": "596bef97d3eeed54e47dbb04f8095e353fa51751a459178f481f7cac6d208c3c",
+  "note": "Trustpilot blocked bot access (403); used Sitejabber customer reviews",
+  "fragment": "g3.json"
+ },
+ {
+  "brand": "Harley-Davidson",
+  "channel": "social",
+  "url": "https://news.ycombinator.com/item?id=18439638",
+  "retrieved_at": "2026-07-02T09:11:02Z",
+  "chars": 2499,
+  "sha256": "eebd77666eaee3c701bbfaa9dde8d98415789f5b59ae658f7ac979f7500903ca",
+  "note": "Reddit JSON endpoints returned 403; used Hacker News thread via Algolia API",
+  "fragment": "g3.json"
+ },
+ {
+  "brand": "Erewhon",
+  "channel": "official",
+  "url": "https://ship.erewhon.com/pages/about",
+  "retrieved_at": "2026-07-02T09:03:39Z",
+  "chars": 2156,
+  "sha256": "e911d1c84e37c8300d060b0403a5abf0a502585dad6df3750df5fb5aecf9eace",
+  "note": "erewhon.com/about is JS-rendered (no static text); used brand's own ship.erewhon.com Our Story page",
+  "fragment": "g3.json"
+ },
+ {
+  "brand": "Erewhon",
+  "channel": "press",
+  "url": "https://www.grocerydive.com/news/erewhon-confirms-plans-store-new-york-city-manhattan-west-villiage-kith-ivy-membership/759368/",
+  "retrieved_at": "2026-07-02T09:03:46Z",
+  "chars": 1947,
+  "sha256": "1aba426b9250dad60a23f612419e37cfc0707d10b3bce335e8508164962d9074",
+  "fragment": "g3.json"
+ },
+ {
+  "brand": "Erewhon",
+  "channel": "experience",
+  "url": "https://spoonuniversity.com/reviews/erewhon-review-smoothie-los-angeles/",
+  "retrieved_at": "2026-07-02T09:08:57Z",
+  "chars": 2498,
+  "sha256": "d8634710338051e5a12599f2250a8c93c6f2edf194c68fe3161382cc911ca807",
+  "note": "Trustpilot and Thingtesting blocked (403); used detailed third-party store/product review article",
+  "fragment": "g3.json"
+ },
+ {
+  "brand": "Erewhon",
+  "channel": "social",
+  "url": "https://old.reddit.com/r/LosAngeles/comments/1i2flmh/erewhon_is_a_joke/",
+  "retrieved_at": "2026-07-02T09:12:34Z",
+  "chars": 2496,
+  "sha256": "570e01ad58584e2d0dd703a3e2e65d03e0d480c452a489d6217f991ad51358d4",
+  "note": "reddit.com JSON blocked (403); post + comment text retrieved via PullPush API (api.pullpush.io)",
+  "fragment": "g3.json"
+ },
+ {
+  "brand": "Airbnb",
+  "channel": "official",
+  "url": "https://news.airbnb.com/about-us/",
+  "retrieved_at": "2026-07-02T09:03:39Z",
+  "chars": 2493,
+  "sha256": "b0fe5f8815cab5101887da433ac2763dec012e9f4e3703c672bc852054bbd14c",
+  "fragment": "g3.json"
+ },
+ {
+  "brand": "Airbnb",
+  "channel": "press",
+  "url": "https://techcrunch.com/2025/05/13/airbnb-lauches-services-and-experinces-as-it-thinks-about-connecting-travelers/",
+  "retrieved_at": "2026-07-02T09:05:49Z",
+  "chars": 2499,
+  "sha256": "2ed8e0c62b15be6385881010ddff1a9aa395030b8aee2df64aff0f2356f185c7",
+  "note": "Skift and PhocusWire blocked (403); TechCrunch used",
+  "fragment": "g3.json"
+ },
+ {
+  "brand": "Airbnb",
+  "channel": "experience",
+  "url": "https://www.sitejabber.com/reviews/airbnb.com",
+  "retrieved_at": "2026-07-02T09:07:36Z",
+  "chars": 2497,
+  "sha256": "3b9b46bfbf0026fac2276b2511f16e94e3193e413982aa1ad6663a50292d6056",
+  "note": "Trustpilot and ConsumerAffairs blocked (403); used Sitejabber customer reviews",
+  "fragment": "g3.json"
+ },
+ {
+  "brand": "Airbnb",
+  "channel": "social",
+  "url": "https://news.ycombinator.com/item?id=34219422",
+  "retrieved_at": "2026-07-02T09:11:02Z",
+  "chars": 2499,
+  "sha256": "5f3db50ca5b317689705f344ba164ad7c7cd1a6106bb3272869a94e3cc095806",
+  "note": "Reddit JSON endpoints returned 403; used Hacker News thread via Algolia API",
+  "fragment": "g3.json"
+ },
+ {
+  "brand": "Sephora",
+  "channel": "official",
+  "url": "https://web.archive.org/web/20260416115512/https://www.sephora.com/beauty/about-us",
+  "retrieved_at": "2026-07-02T09:03:39Z",
+  "chars": 2477,
+  "sha256": "930640610a319712136bb302cd911d2c5ca8d23d71449cba48ff4aa314c83378",
+  "note": "sephora.com (US/UK/SG/IN) returns 403 to all non-browser fetches; used Wayback Machine snapshot (2026-04-16) of Sephora's own About Us page",
+  "fragment": "g3.json"
+ },
+ {
+  "brand": "Sephora",
+  "channel": "press",
+  "url": "https://www.retaildive.com/news/sephora-accelerate-program-beauty-brand-2025-cohort/736135/",
+  "retrieved_at": "2026-07-02T09:04:48Z",
+  "chars": 2498,
+  "sha256": "f5980dfd08a5910dc4f42508d1faa4282b39d61c05903892f617588a5a17937f",
+  "fragment": "g3.json"
+ },
+ {
+  "brand": "Sephora",
+  "channel": "experience",
+  "url": "https://www.sitejabber.com/reviews/sephora.com",
+  "retrieved_at": "2026-07-02T09:09:25Z",
+  "chars": 2497,
+  "sha256": "d6c8e5f03ec27be8fb66e21fce7ea4363a99b266a28b8f0efa693be2e8fed15c",
+  "note": "Trustpilot blocked bot access (403); used Sitejabber customer reviews",
+  "fragment": "g3.json"
+ },
+ {
+  "brand": "Sephora",
+  "channel": "social",
+  "url": "https://news.ycombinator.com/item?id=39149406",
+  "retrieved_at": "2026-07-02T09:11:02Z",
+  "chars": 2178,
+  "sha256": "8a1f69a6a197c28068815a3340a5c9d34e909d1121cf548e3f9a7bfefe66f188",
+  "note": "Reddit JSON endpoints returned 403; used Hacker News thread via Algolia API",
+  "fragment": "g3.json"
+ },
+ {
+  "brand": "Uber",
+  "channel": "official",
+  "url": "https://www.uber.com/us/en/about/",
+  "retrieved_at": "2026-07-02T09:03:39Z",
+  "chars": 2499,
+  "sha256": "7c0db2012d76b031f703371c43111a02bf463b1304feb225686a64c90959d60c",
+  "fragment": "g4.json"
+ },
+ {
+  "brand": "Uber",
+  "channel": "press",
+  "url": "https://techcrunch.com/2026/03/19/uber-taps-rivian-to-build-robotaxis-in-deal-worth-up-to-1-25b/",
+  "retrieved_at": "2026-07-02T09:08:17Z",
+  "chars": 2496,
+  "sha256": "a279eb488058a58835bd5229cf1a95612a2cda8095d32667d86df54d9dc5da56",
+  "fragment": "g4.json"
+ },
+ {
+  "brand": "Uber",
+  "channel": "experience",
+  "url": "https://www.trustpilot.com/review/www.uber.com",
+  "retrieved_at": "2026-07-02T09:03:39Z",
+  "chars": 2399,
+  "sha256": "c865f60e6367326db1d635f3978b1962836d53a5a65769298eb5599c5ca12b9b",
+  "note": "fetched via headless browser (site blocks plain HTTP clients)",
+  "fragment": "g4.json"
+ },
+ {
+  "brand": "Uber",
+  "channel": "social",
+  "url": "https://news.ycombinator.com/item?id=25623858",
+  "retrieved_at": "2026-07-02T09:06:53Z",
+  "chars": 2496,
+  "sha256": "2a8f9c8f3fc8c3f9e044a1b98cc9bdb1b9135d76f7416f72ff4298c9ca32a046",
+  "note": "thread text retrieved via hn.algolia.com items API",
+  "fragment": "g4.json"
+ },
+ {
+  "brand": "Tesla",
+  "channel": "official",
+  "url": "https://www.tesla.com/about",
+  "retrieved_at": "2026-07-02T09:03:39Z",
+  "chars": 1843,
+  "sha256": "15723e65b15aec4827bb606d0b4ac6c5cc9b444f98c04eb9a624cff47d68e7c9",
+  "note": "fetched via headless browser after HTTP 403 on plain fetch",
+  "fragment": "g4.json"
+ },
+ {
+  "brand": "Tesla",
+  "channel": "press",
+  "url": "https://www.cnbc.com/2026/04/02/tesla-tsla-q1-2026-vehicle-delivery-production.html",
+  "retrieved_at": "2026-07-02T09:08:26Z",
+  "chars": 2495,
+  "sha256": "914249a023c0fa86b5dc081c015100dfeb75cc7ad240697934996c27f7972d28",
+  "fragment": "g4.json"
+ },
+ {
+  "brand": "Tesla",
+  "channel": "experience",
+  "url": "https://www.trustpilot.com/review/tesla.com",
+  "retrieved_at": "2026-07-02T09:03:39Z",
+  "chars": 2497,
+  "sha256": "7e94b01382db88a7bc35a3b5e6314da652f5f7d602d5972d3f6929805059ccda",
+  "note": "fetched via headless browser (site blocks plain HTTP clients)",
+  "fragment": "g4.json"
+ },
+ {
+  "brand": "Tesla",
+  "channel": "social",
+  "url": "https://news.ycombinator.com/item?id=47523330",
+  "retrieved_at": "2026-07-02T09:06:54Z",
+  "chars": 2493,
+  "sha256": "0715d00ea805fd83ce1909e35c76103d48e9c82c134581133ee9792267238192",
+  "note": "thread text retrieved via hn.algolia.com items API",
+  "fragment": "g4.json"
+ },
+ {
+  "brand": "Meta (Facebook)",
+  "channel": "official",
+  "url": "https://www.meta.com/about/company-info/",
+  "retrieved_at": "2026-07-02T09:03:39Z",
+  "chars": 2280,
+  "sha256": "2309538e4c7bd5448a7e81bcefb8922b994bf82e4d0cfc745caed7f7dc1d678c",
+  "note": "redirect target of about.meta.com/company-info/; rendered via headless browser (JS-only page)",
+  "fragment": "g4.json"
+ },
+ {
+  "brand": "Meta (Facebook)",
+  "channel": "press",
+  "url": "https://www.cnbc.com/2026/07/01/meta-stock-cloud-ai-compute.html",
+  "retrieved_at": "2026-07-02T09:08:35Z",
+  "chars": 2499,
+  "sha256": "618df7fc94e49b1f6c52fcfdb7efc13a0901ddf726c60db2b60d8538ed746938",
+  "fragment": "g4.json"
+ },
+ {
+  "brand": "Meta (Facebook)",
+  "channel": "experience",
+  "url": "https://www.trustpilot.com/review/www.facebook.com",
+  "retrieved_at": "2026-07-02T09:03:39Z",
+  "chars": 2499,
+  "sha256": "2241f9ed881a14422ccb42d53902dc929c0f71856a4b298685582ad13014fe58",
+  "note": "fetched via headless browser (site blocks plain HTTP clients)",
+  "fragment": "g4.json"
+ },
+ {
+  "brand": "Meta (Facebook)",
+  "channel": "social",
+  "url": "https://news.ycombinator.com/item?id=47225130",
+  "retrieved_at": "2026-07-02T09:06:56Z",
+  "chars": 2496,
+  "sha256": "1d835d486f50f3f7f21d23fdcc7024460471ed0d2887453e48ddb3bb87edcc3e",
+  "note": "thread text retrieved via hn.algolia.com items API",
+  "fragment": "g4.json"
+ },
+ {
+  "brand": "X (Twitter)",
+  "channel": "official",
+  "url": "https://business.x.com/en/advertising",
+  "retrieved_at": "2026-07-02T09:03:39Z",
+  "chars": 2193,
+  "sha256": "abd8b696a3573a4388326436f0f56ca97635ce3c257c1ea89bbc386c5d147d07",
+  "note": "fallback: about.x.com/en carries under 500 chars of body text; used X's own business/advertising page",
+  "fragment": "g4.json"
+ },
+ {
+  "brand": "X (Twitter)",
+  "channel": "press",
+  "url": "https://techcrunch.com/2026/03/25/elon-musk-pauses-changes-to-xs-creator-revenue-sharing-program-after-backlash/",
+  "retrieved_at": "2026-07-02T09:08:43Z",
+  "chars": 2497,
+  "sha256": "54bc2eddc248cf82b37fa14a3f9e7c4e7bc7bf9f97a8aca241cddc30b7e571ee",
+  "fragment": "g4.json"
+ },
+ {
+  "brand": "X (Twitter)",
+  "channel": "experience",
+  "url": "https://www.trustpilot.com/review/www.twitter.com",
+  "retrieved_at": "2026-07-02T09:03:55Z",
+  "chars": 2473,
+  "sha256": "c7d0606dcd8ed8d95f5e86726952fc6a45751190b27e561227545ee1c0f928be",
+  "note": "fetched via headless browser (site blocks plain HTTP clients)",
+  "fragment": "g4.json"
+ },
+ {
+  "brand": "X (Twitter)",
+  "channel": "social",
+  "url": "https://news.ycombinator.com/item?id=41630094",
+  "retrieved_at": "2026-07-02T09:06:57Z",
+  "chars": 2499,
+  "sha256": "b7054fa65806717f0b9226f4ec52f7793a03cd90be629c4afcd635b980f4ced3",
+  "note": "thread text retrieved via hn.algolia.com items API",
+  "fragment": "g4.json"
+ },
+ {
+  "brand": "Ryanair",
+  "channel": "official",
+  "url": "https://corporate.ryanair.com/about-us/our-customers/",
+  "retrieved_at": "2026-07-02T09:03:39Z",
+  "chars": 1251,
+  "sha256": "946cc06de477c23d4929c96b141d8920df4d069b9b9de9bb9bf7c6435b77727b",
+  "note": "fallback: corporate.ryanair.com/about-us/ index is navigation-only; used the Our Customers brand page",
+  "fragment": "g4.json"
+ },
+ {
+  "brand": "Ryanair",
+  "channel": "press",
+  "url": "https://www.euronews.com/business/2026/05/18/ryanair-profits-surge-40-to-226-billion-despite-boeing-delays-and-fuel-crisis",
+  "retrieved_at": "2026-07-02T09:09:06Z",
+  "chars": 2495,
+  "sha256": "134f0ede9ef35629c28cfb9a8fd6941c7de69b32013208905c4fd720eb5f2ce3",
+  "fragment": "g4.json"
+ },
+ {
+  "brand": "Ryanair",
+  "channel": "experience",
+  "url": "https://www.trustpilot.com/review/www.ryanair.com",
+  "retrieved_at": "2026-07-02T09:04:33Z",
+  "chars": 2498,
+  "sha256": "88c73dea8f6f17d0118179c5fac6b82585a485a8b6b6414b163e12933597c333",
+  "note": "fetched via headless browser (site blocks plain HTTP clients)",
+  "fragment": "g4.json"
+ },
+ {
+  "brand": "Ryanair",
+  "channel": "social",
+  "url": "https://news.ycombinator.com/item?id=48502601",
+  "retrieved_at": "2026-07-02T09:06:58Z",
+  "chars": 2494,
+  "sha256": "82c3f4b91b189cbce0deaf15422fecfc22ca977ff25af62f4c778923e5789047",
+  "note": "thread text retrieved via hn.algolia.com items API",
+  "fragment": "g4.json"
+ },
+ {
+  "brand": "Microsoft",
+  "channel": "official",
+  "url": "https://www.microsoft.com/en-us/about",
+  "retrieved_at": "2026-07-02T09:04:15Z",
+  "chars": 2434,
+  "sha256": "fbdd87640165b622d33158908f88cecd1aaf98e26e9e0598034d103d2813a9a9",
+  "fragment": "g5.json"
+ },
+ {
+  "brand": "Microsoft",
+  "channel": "press",
+  "url": "https://www.cnbc.com/2026/04/29/microsoft-msft-q3-earnings-report-2026.html",
+  "retrieved_at": "2026-07-02T09:04:15Z",
+  "chars": 2499,
+  "sha256": "dd9eb553b6f5f9a4431c02be45d0ef5adfc40eb01aa9baeaf1c6fb7ff01841e8",
+  "fragment": "g5.json"
+ },
+ {
+  "brand": "Microsoft",
+  "channel": "experience",
+  "url": "https://www.cloudwards.net/microsoft-365-review/",
+  "retrieved_at": "2026-07-02T09:04:15Z",
+  "chars": 2498,
+  "sha256": "09041b2d199de76d9db9102b5d602862633e145e19949dc5573f7fc04687fd13",
+  "note": "G2 and TechRadar returned 403; used detailed Cloudwards third-party review of Microsoft 365",
+  "fragment": "g5.json"
+ },
+ {
+  "brand": "Microsoft",
+  "channel": "social",
+  "url": "https://news.ycombinator.com/item?id=46795864",
+  "retrieved_at": "2026-07-02T09:04:15Z",
+  "chars": 2498,
+  "sha256": "d4a40bbda4c47fdd411495db849497662f314005fb22bd73afcc4a90fa8cfc7f",
+  "note": "Hacker News thread via hn.algolia.com API (1503 comments)",
+  "fragment": "g5.json"
+ },
+ {
+  "brand": "IBM",
+  "channel": "official",
+  "url": "https://www.ibm.com/about",
+  "retrieved_at": "2026-07-02T09:04:15Z",
+  "chars": 2497,
+  "sha256": "da35c19fb72be7e93c196ae0a117f67660b2cbe82187a9c92cb998a45a8f5a87",
+  "fragment": "g5.json"
+ },
+ {
+  "brand": "IBM",
+  "channel": "press",
+  "url": "https://thequantuminsider.com/2026/05/28/ibm-plans-10-billion-quantum-push-as-efforts-to-commercialize-quantum-intensifies/",
+  "retrieved_at": "2026-07-02T09:04:15Z",
+  "chars": 2499,
+  "sha256": "691b408253030ef5e9f22c02fa07277e50d949a33254247199ef310566a2e0fd",
+  "note": "CNBC/TechCrunch search surfaced no accessible IBM piece; used press-friendly trade outlet The Quantum Insider (2026-05-28)",
+  "fragment": "g5.json"
+ },
+ {
+  "brand": "IBM",
+  "channel": "experience",
+  "url": "https://www.infoworld.com/article/2248987/review-ibm-watson-strikes-again-2.html",
+  "retrieved_at": "2026-07-02T09:04:15Z",
+  "chars": 2495,
+  "sha256": "1ddf7a7df315b6242039bc1434362976349a7ff5afcb06963920d5576f1022fd",
+  "note": "G2/TrustRadius/PeerSpot/TechRepublic blocked or off-target; used InfoWorld hands-on review of IBM Watson/SPSS cloud ML services (2016)",
+  "fragment": "g5.json"
+ },
+ {
+  "brand": "IBM",
+  "channel": "social",
+  "url": "https://news.ycombinator.com/item?id=18321884",
+  "retrieved_at": "2026-07-02T09:04:15Z",
+  "chars": 2497,
+  "sha256": "f875761663dfe6707053ef90b1826bc9a22777b1e326b66219151f8e5bfb94d7",
+  "note": "Hacker News thread via hn.algolia.com API (1052 comments)",
+  "fragment": "g5.json"
+ },
+ {
+  "brand": "Siemens",
+  "channel": "official",
+  "url": "https://www.siemens.com/global/en/company/about.html",
+  "retrieved_at": "2026-07-02T09:04:15Z",
+  "chars": 2492,
+  "sha256": "4b5762f6f7225b13b2d5bf0ffa0e91fff45ec02092ff4371e0507430fc86328c",
+  "fragment": "g5.json"
+ },
+ {
+  "brand": "Siemens",
+  "channel": "press",
+  "url": "https://fortune.com/2026/01/07/fusion-power-commonwealth-sparc-nuclear-fusion-pilot-ai-siemens-nvidia/",
+  "retrieved_at": "2026-07-02T09:04:15Z",
+  "chars": 2495,
+  "sha256": "13f0a6da1b103a2d228f4ecfed087f6be492b3058e33bbf05933f91141fc4213",
+  "fragment": "g5.json"
+ },
+ {
+  "brand": "Siemens",
+  "channel": "experience",
+  "url": "https://www.scan2cad.com/blog/cad/solid-edge-vs-nx/",
+  "retrieved_at": "2026-07-02T09:04:15Z",
+  "chars": 2499,
+  "sha256": "74c9874ffafd1342f67d9eca836490feff219d2d9b49b95abd489cfe29c7fd0d",
+  "note": "Review platforms 403; used detailed Scan2CAD third-party review comparing Siemens Solid Edge and NX (updated 2025)",
+  "fragment": "g5.json"
+ },
+ {
+  "brand": "Siemens",
+  "channel": "social",
+  "url": "https://news.ycombinator.com/item?id=27279043",
+  "retrieved_at": "2026-07-02T09:04:15Z",
+  "chars": 2492,
+  "sha256": "e42fb1d417747f770dd611a1661db283742a62b0b853174a8e45d0e68970f45b",
+  "note": "Hacker News thread via hn.algolia.com API (169 comments)",
+  "fragment": "g5.json"
+ },
+ {
+  "brand": "SAP",
+  "channel": "official",
+  "url": "https://www.sap.com/about/company.html",
+  "retrieved_at": "2026-07-02T09:04:15Z",
+  "chars": 2496,
+  "sha256": "3350370f941009ce7d857318030985fa2a57b7421e648d37136a2c7c90aaa674",
+  "fragment": "g5.json"
+ },
+ {
+  "brand": "SAP",
+  "channel": "press",
+  "url": "https://techcrunch.com/2026/05/05/sap-bets-1-16b-on-18-month-old-german-ai-lab-and-says-yes-to-nemoclaw/",
+  "retrieved_at": "2026-07-02T09:04:15Z",
+  "chars": 2499,
+  "sha256": "af82f1d32762d55e1f991f6ac807afa4f0bf943d668b362eead5bb9d16f64ca4",
+  "fragment": "g5.json"
+ },
+ {
+  "brand": "SAP",
+  "channel": "experience",
+  "url": "https://softwareconnect.com/reviews/sap-s4hana/",
+  "retrieved_at": "2026-07-02T09:04:15Z",
+  "chars": 2497,
+  "sha256": "0cce290db1eb027b41c4f707c0f7a88ec84506cae11a7255dbb8d5f06637d053",
+  "note": "G2/TrustRadius 403; used Software Connect review page for SAP Cloud ERP (S/4HANA) incl. verified user reviews",
+  "fragment": "g5.json"
+ },
+ {
+  "brand": "SAP",
+  "channel": "social",
+  "url": "https://news.ycombinator.com/item?id=32776276",
+  "retrieved_at": "2026-07-02T09:04:15Z",
+  "chars": 2491,
+  "sha256": "73e4af607e6ad041df065bdc6473900b84748c935d85a80a47b2a0a696f0bea4",
+  "note": "Hacker News thread via hn.algolia.com API (686 comments)",
+  "fragment": "g5.json"
+ },
+ {
+  "brand": "Cisco",
+  "channel": "official",
+  "url": "https://www.cisco.com/c/en/us/about.html",
+  "retrieved_at": "2026-07-02T09:04:15Z",
+  "chars": 2490,
+  "sha256": "2255b6d558d054947ea482a66fa7350c797e13070f7e86083d7ac6cf28365b13",
+  "fragment": "g5.json"
+ },
+ {
+  "brand": "Cisco",
+  "channel": "press",
+  "url": "https://www.cnbc.com/2026/05/13/cisco-csco-q3-earnings-report-2026.html",
+  "retrieved_at": "2026-07-02T09:04:15Z",
+  "chars": 2494,
+  "sha256": "f587a6660bc5833e1b847db48e71eb8dc971a755d121fa88eafe936f83dfebe5",
+  "fragment": "g5.json"
+ },
+ {
+  "brand": "Cisco",
+  "channel": "experience",
+  "url": "https://fractionalciso.com/meraki-review-security-appliance/",
+  "retrieved_at": "2026-07-02T09:04:15Z",
+  "chars": 2499,
+  "sha256": "f330de9dff19b74325ec6d60bee8b2bd2890e48ddbfdba47c7f72a7cfdc206d4",
+  "note": "Review platforms 403; used detailed Fractional CISO third-party review of Cisco Meraki Security Appliance",
+  "fragment": "g5.json"
+ },
+ {
+  "brand": "Cisco",
+  "channel": "social",
+  "url": "https://news.ycombinator.com/item?id=23697083",
+  "retrieved_at": "2026-07-02T09:04:15Z",
+  "chars": 2498,
+  "sha256": "012589abace61f51dcd007483c844809a9fb422d17f006b2b1d2ac2163f64736",
+  "note": "Hacker News thread via hn.algolia.com API (592 comments)",
+  "fragment": "g5.json"
+ },
+ {
+  "brand": "Oracle",
+  "channel": "official",
+  "url": "https://www.oracle.com/corporate/",
+  "retrieved_at": "2026-07-02T09:05:24Z",
+  "chars": 2497,
+  "sha256": "47ba26ce4f39377293ea88c548ed4979186016f4c1f0b63bc45c722c436353b5",
+  "fragment": "g6.json"
+ },
+ {
+  "brand": "Oracle",
+  "channel": "press",
+  "url": "https://www.cnbc.com/2026/06/10/oracle-orcl-q4-earnings-report-2026.html",
+  "retrieved_at": "2026-07-02T09:05:24Z",
+  "chars": 2498,
+  "sha256": "4327b02ea5d59fbfdbb27a404f2dff516999af5b0341eab54d4294fa8ecce39a",
+  "fragment": "g6.json"
+ },
+ {
+  "brand": "Oracle",
+  "channel": "experience",
+  "url": "https://www.brokenrubik.com/blog/oracle-netsuite-pros-and-cons-the-definitive-guide",
+  "retrieved_at": "2026-07-02T09:05:24Z",
+  "chars": 2498,
+  "sha256": "86637e7b3ecf9bd8491a405b494898f8de09562142e79bc157672a686021afcb",
+  "note": "Fallback: Oracle Database/G2 review pages returned 403; used a detailed third-party Oracle NetSuite (Oracle-owned ERP) pros/cons review with G2/Capterra/Gartner ratings.",
+  "fragment": "g6.json"
+ },
+ {
+  "brand": "Oracle",
+  "channel": "social",
+  "url": "https://news.ycombinator.com/item?id=47587935",
+  "retrieved_at": "2026-07-02T09:05:24Z",
+  "chars": 2494,
+  "sha256": "cc311015c2c119672c81a357c58e0f2c0b74819a875da59ff4817e4c9feb4204",
+  "note": "Public forum: Hacker News thread (HN Algolia API) on Oracle's 2026 30k-job cuts; post + comments.",
+  "fragment": "g6.json"
+ },
+ {
+  "brand": "FedEx",
+  "channel": "official",
+  "url": "https://www.fedex.com/en-us/about.html",
+  "retrieved_at": "2026-07-02T09:05:24Z",
+  "chars": 2495,
+  "sha256": "42c0169786f82674d2d9096ef7f1538c4340a753dcc7c02ff8acd3142455b739",
+  "fragment": "g6.json"
+ },
+ {
+  "brand": "FedEx",
+  "channel": "press",
+  "url": "https://www.cnbc.com/2026/06/23/fedex-fdx-q4-2026-earnings.html",
+  "retrieved_at": "2026-07-02T09:05:24Z",
+  "chars": 2495,
+  "sha256": "8bdfd8764cedc9cd4742a7db0794ff5ef73f34cdb941f43f74b450d74086bda7",
+  "fragment": "g6.json"
+ },
+ {
+  "brand": "FedEx",
+  "channel": "experience",
+  "url": "https://www.sitejabber.com/reviews/fedex.com",
+  "retrieved_at": "2026-07-02T09:05:24Z",
+  "chars": 2491,
+  "sha256": "862910187ec6c70721c6f6b252eed6339f507f856cd0f7c3234e5f76902ff09e",
+  "note": "Fallback: Trustpilot/G2 returned 403; used Sitejabber (SmartCustomer) aggregated FedEx customer reviews (1.2/5, 2,898 reviews).",
+  "fragment": "g6.json"
+ },
+ {
+  "brand": "FedEx",
+  "channel": "social",
+  "url": "https://news.ycombinator.com/item?id=39479001",
+  "retrieved_at": "2026-07-02T09:05:24Z",
+  "chars": 2499,
+  "sha256": "da1d01882b86fc9bd80f68541148e85a8459320c54bed785e595ccc1b1613b77",
+  "note": "Public forum: Hacker News thread (HN Algolia API) about FedEx phishing/brand experience; post + comments.",
+  "fragment": "g6.json"
+ },
+ {
+  "brand": "Caterpillar",
+  "channel": "official",
+  "url": "https://www.caterpillar.com/en/company.html",
+  "retrieved_at": "2026-07-02T09:05:24Z",
+  "chars": 2495,
+  "sha256": "5b90c5efc795be2a114c11a6f616220d639c17aaa362bebc6d2eada90f865b19",
+  "fragment": "g6.json"
+ },
+ {
+  "brand": "Caterpillar",
+  "channel": "press",
+  "url": "https://www.constructiondive.com/news/caterpillar-q4-2025-sales-record-high-build-momentum-2026/811071/",
+  "retrieved_at": "2026-07-02T09:05:24Z",
+  "chars": 2493,
+  "sha256": "e03fab98042cf67de4c409e31cd002bc7d70e15e28d6656f7ecab23556e248b6",
+  "fragment": "g6.json"
+ },
+ {
+  "brand": "Caterpillar",
+  "channel": "experience",
+  "url": "https://www.heavyequipmentguide.ca/article/27634/closer-look-caterpillar-launches-next-generation-excavators",
+  "retrieved_at": "2026-07-02T09:05:24Z",
+  "chars": 2499,
+  "sha256": "6a11a033d21c0415ad6086065416545ef9e411db4063cd34bca829446525c949",
+  "note": "Fallback: Equipment World review returned 403; used Heavy Equipment Guide hands-on Closer Look review of Cat Next Generation excavators (cab/operator experience).",
+  "fragment": "g6.json"
+ },
+ {
+  "brand": "Caterpillar",
+  "channel": "social",
+  "url": "https://news.ycombinator.com/item?id=33889415",
+  "retrieved_at": "2026-07-02T09:05:24Z",
+  "chars": 2499,
+  "sha256": "f998434e99682f22d22590a13baeff5cfa58c3abc257bffbc675092913c167a2",
+  "note": "Public forum: Hacker News thread (HN Algolia API) on the Cat-branded phone with FLIR camera; post + comments. (Most 'Caterpillar' HN threads concern the insect; this is the on-brand product thread.)",
+  "fragment": "g6.json"
+ },
+ {
+  "brand": "Salesforce",
+  "channel": "official",
+  "url": "https://www.salesforce.com/company/about-us/",
+  "retrieved_at": "2026-07-02T09:05:24Z",
+  "chars": 2498,
+  "sha256": "30d92f494e3e9207d8d0d3e1440c98f9d6c00cc2d6a3f146f8f81bdc6165df88",
+  "fragment": "g6.json"
+ },
+ {
+  "brand": "Salesforce",
+  "channel": "press",
+  "url": "https://techcrunch.com/2026/06/15/salesforce-acquires-ai-customer-service-platform-fin-for-3-6b/",
+  "retrieved_at": "2026-07-02T09:05:24Z",
+  "chars": 1913,
+  "sha256": "a78cde5d91ca114b732b63a8ebe0dccdbbc9b78484561df08ff647966d5f2b8d",
+  "note": "Shorter clean article (In Brief format), 1913 chars, above 500-char minimum.",
+  "fragment": "g6.json"
+ },
+ {
+  "brand": "Salesforce",
+  "channel": "experience",
+  "url": "https://tech.co/crm-software/salesforce-review",
+  "retrieved_at": "2026-07-02T09:05:24Z",
+  "chars": 2499,
+  "sha256": "94c28a020885fdcf945c2fd9ffc39787f4b473e688ea3765706b378cd743b773",
+  "note": "Review platforms (G2/Capterra) blocked; used Tech.co hands-on Salesforce CRM review (pros/cons, pricing, testing).",
+  "fragment": "g6.json"
+ },
+ {
+  "brand": "Salesforce",
+  "channel": "social",
+  "url": "https://news.ycombinator.com/item?id=42639417",
+  "retrieved_at": "2026-07-02T09:05:24Z",
+  "chars": 2498,
+  "sha256": "54a7b75197070f56359aa5d3087e7f498b384ff5b3eaa1250f05afa5b397c309",
+  "note": "Public forum: Hacker News thread (HN Algolia API) on Benioff's 2025 no-new-engineers statement; post + comments.",
+  "fragment": "g6.json"
+ },
+ {
+  "brand": "Nvidia",
+  "channel": "official",
+  "url": "https://www.nvidia.com/en-us/about-nvidia/",
+  "retrieved_at": "2026-07-02T09:05:24Z",
+  "chars": 1996,
+  "sha256": "6f4af50f93ae4beef004a33ffe4dfea6a94f5eacde296b2c211aa09a534b41aa",
+  "note": "Nvidia About page is largely video-based; extracted all substantive section text (1996 chars, above minimum).",
+  "fragment": "g6.json"
+ },
+ {
+  "brand": "Nvidia",
+  "channel": "press",
+  "url": "https://www.cnbc.com/2026/02/25/nvidia-nvda-earnings-report-q4-2026.html",
+  "retrieved_at": "2026-07-02T09:05:24Z",
+  "chars": 2496,
+  "sha256": "16b1a4eab05c61a2a7408eff8a352b9c6bddd2a0cf9c29a8040f3e715e68f758",
+  "fragment": "g6.json"
+ },
+ {
+  "brand": "Nvidia",
+  "channel": "experience",
+  "url": "https://www.techradar.com/computing/gpu/nvidia-geforce-rtx-5090",
+  "retrieved_at": "2026-07-02T09:05:24Z",
+  "chars": 2495,
+  "sha256": "dc1185250a61c6c943ce37ea13c0d06fcc8a6ca38acf0e5cb5d32b0fde61857f",
+  "note": "Used TechRadar RTX 5090 in-depth product review (two-minute review + price/value verdict).",
+  "fragment": "g6.json"
+ },
+ {
+  "brand": "Nvidia",
+  "channel": "social",
+  "url": "https://news.ycombinator.com/item?id=44468175",
+  "retrieved_at": "2026-07-02T09:05:24Z",
+  "chars": 2499,
+  "sha256": "eabd0afe10d71f22c660b9c527865343cf15305e3297dca37f548cc306c2ef0e",
+  "note": "Public forum: Hacker News thread (HN Algolia API) 'Nvidia won, we all lost'; post + comments.",
+  "fragment": "g6.json"
+ },
+ {
+  "brand": "Goldman Sachs",
+  "channel": "official",
+  "url": "https://www.goldmansachs.com/about-us",
+  "retrieved_at": "2026-07-02T08:52:00Z",
+  "chars": 2493,
+  "sha256": "722d49a4c817136e7d703fc1e73776707a6fc5f50535bd217d6d82dd592651b3",
+  "fragment": "g7.json"
+ },
+ {
+  "brand": "Goldman Sachs",
+  "channel": "press",
+  "url": "https://www.cnbc.com/2026/04/13/goldman-sachs-gs-earnings-1q-2026.html",
+  "retrieved_at": "2026-07-02T09:00:00Z",
+  "chars": 2393,
+  "sha256": "9c23f73ce028b2c909bbc366e85ebc11c5a76a08b27924e4f89224c5612515bf",
+  "fragment": "g7.json"
+ },
+ {
+  "brand": "Goldman Sachs",
+  "channel": "experience",
+  "url": "https://fortune.com/article/marcus-by-goldman-sachs-review/",
+  "retrieved_at": "2026-07-02T09:05:00Z",
+  "chars": 2498,
+  "sha256": "20f7da88d30fa1f8f50e25e20aa1f405a1ff00a0558547b97eb01a2a3024668e",
+  "note": "Fallback: Trustpilot bot-redirected to unrelated pages, Bankrate/NerdWallet blocked; used detailed Fortune review article of Marcus by Goldman Sachs consumer banking service experience",
+  "fragment": "g7.json"
+ },
+ {
+  "brand": "Goldman Sachs",
+  "channel": "social",
+  "url": "https://news.ycombinator.com/item?id=3702253",
+  "retrieved_at": "2026-07-02T09:06:30Z",
+  "chars": 2499,
+  "sha256": "a9028412b8e7e9ac676c53930ab05f77720c8029625cc6b0b9c983b55a8257b7",
+  "note": "Hacker News discussion of Goldman Sachs culture (via hn.algolia.com API); item 3702253 'Why I Am Leaving Goldman Sachs', 249 comments",
+  "fragment": "g7.json"
+ },
+ {
+  "brand": "Basecamp",
+  "channel": "official",
+  "url": "https://basecamp.com/",
+  "retrieved_at": "2026-07-02T08:52:00Z",
+  "chars": 1204,
+  "sha256": "515d2542d74c5191066bb13de53add16305fe7687f9543a3c7e92525ea6ba8ab",
+  "fragment": "g7.json"
+ },
+ {
+  "brand": "Basecamp",
+  "channel": "press",
+  "url": "https://www.datacenterdynamics.com/en/news/37signals-expects-to-save-7m-over-five-years-after-moving-off-of-the-cloud/",
+  "retrieved_at": "2026-07-02T09:03:00Z",
+  "chars": 2498,
+  "sha256": "df6547aaaaa554708e9b07769b821341282d232d13c9f18557ed05b7fd6d90fb",
+  "note": "Fallback: no accessible 2025-2026 major-outlet article about Basecamp/37signals found; used 2023 Data Center Dynamics (trade outlet) news article on the Basecamp-maker's cloud exit",
+  "fragment": "g7.json"
+ },
+ {
+  "brand": "Basecamp",
+  "channel": "experience",
+  "url": "https://www.forbes.com/advisor/business/software/basecamp-review/",
+  "retrieved_at": "2026-07-02T09:04:00Z",
+  "chars": 2066,
+  "sha256": "5481fa1cc5b8061e9c6cfaafbc2e75e4900bdf574caa7fa5f12d9ecea08f450f",
+  "note": "Forbes Advisor product review; curl blocked (403), captured via headless browser",
+  "fragment": "g7.json"
+ },
+ {
+  "brand": "Basecamp",
+  "channel": "social",
+  "url": "https://news.ycombinator.com/item?id=26944192",
+  "retrieved_at": "2026-07-02T09:06:30Z",
+  "chars": 2497,
+  "sha256": "929a828222bfdd934e24d6ab002d0580cbd3ce23b517b71a8575533ac78920f5",
+  "note": "Hacker News discussion (via hn.algolia.com API); item 26944192 'Changes at Basecamp', 792 comments",
+  "fragment": "g7.json"
+ },
+ {
+  "brand": "Zoom",
+  "channel": "official",
+  "url": "https://www.zoom.com/en/about/",
+  "retrieved_at": "2026-07-02T08:55:00Z",
+  "chars": 2498,
+  "sha256": "587596d46216cceaa3eeb6fed8760b3fbecf432cd0afc271fb8c56f1b091c85c",
+  "note": "Static curl render too short (JS page); main content extracted via defuddle clean fetch",
+  "fragment": "g7.json"
+ },
+ {
+  "brand": "Zoom",
+  "channel": "press",
+  "url": "https://www.cnbc.com/2026/02/05/wolfe-upgrades-zoom-cites-improving-growth-profile-and-ai-monetization.html",
+  "retrieved_at": "2026-07-02T09:00:00Z",
+  "chars": 2393,
+  "sha256": "771a29cab05b0773a93f71e37318c26e727f64b778df9356783757fa17d5ecf8",
+  "fragment": "g7.json"
+ },
+ {
+  "brand": "Zoom",
+  "channel": "experience",
+  "url": "https://www.techradar.com/reviews/zoom",
+  "retrieved_at": "2026-07-02T09:04:00Z",
+  "chars": 2499,
+  "sha256": "4beeee448d49ea52f32fdacc66ab671d0264ca391f1512c9313e93cdd3714d73",
+  "fragment": "g7.json"
+ },
+ {
+  "brand": "Zoom",
+  "channel": "social",
+  "url": "https://news.ycombinator.com/item?id=37021160",
+  "retrieved_at": "2026-07-02T09:06:30Z",
+  "chars": 2496,
+  "sha256": "2755a83cd56e6f2413e93c3f86692f78f93809dd2dbc72e93bbce4b8030d301b",
+  "note": "Hacker News discussion (via hn.algolia.com API); item 37021160 'Zoom terms now allow training AI on user content with no opt out', 511 comments",
+  "fragment": "g7.json"
+ },
+ {
+  "brand": "Slack",
+  "channel": "official",
+  "url": "https://slack.com/about",
+  "retrieved_at": "2026-07-02T08:52:00Z",
+  "chars": 1837,
+  "sha256": "fb0dad8d9f0adc38e63ccc391a8f1a40d7303424565dce73e535e80916ceb11a",
+  "fragment": "g7.json"
+ },
+ {
+  "brand": "Slack",
+  "channel": "press",
+  "url": "https://techcrunch.com/2026/03/31/salesforce-announces-an-ai-heavy-makeover-for-slack-with-30-new-features/",
+  "retrieved_at": "2026-07-02T09:00:30Z",
+  "chars": 2491,
+  "sha256": "16d227b08f829b75e5971a81d000dde891be2b0b9dfd9df4cc5c89e381f4d4c6",
+  "fragment": "g7.json"
+ },
+ {
+  "brand": "Slack",
+  "channel": "experience",
+  "url": "https://www.techradar.com/reviews/slack",
+  "retrieved_at": "2026-07-02T09:04:00Z",
+  "chars": 2496,
+  "sha256": "d4437cc2aa4b3ad180ed1f1570541d70c02a7e0f9801b8bcff6cbe786990ad52",
+  "fragment": "g7.json"
+ },
+ {
+  "brand": "Slack",
+  "channel": "social",
+  "url": "https://news.ycombinator.com/item?id=45283887",
+  "retrieved_at": "2026-07-02T09:06:30Z",
+  "chars": 2496,
+  "sha256": "6d91a80e588303c8b9ef40fa2682a52d6b46adc2965f75e7f7a5baad33ec8101",
+  "note": "Hacker News discussion (via hn.algolia.com API); item 45283887 'Slack has raised our charges by $195k per year', 1470 comments",
+  "fragment": "g7.json"
+ },
+ {
+  "brand": "WeWork",
+  "channel": "official",
+  "url": "https://www.wework.com/en-GB/about-us",
+  "retrieved_at": "2026-07-02T08:58:30Z",
+  "chars": 2493,
+  "sha256": "96fb9bc2d5ed790e395ea00f3b5123b85e082d99534d1d590b4d6df7b4158a59",
+  "note": "Fallback: wework.com returns 403 to plain HTTP clients; https://www.wework.com/mission redirected to en-GB/about-us, captured via headless browser",
+  "fragment": "g7.json"
+ },
+ {
+  "brand": "WeWork",
+  "channel": "press",
+  "url": "https://fortune.com/2026/04/13/wework-go-pod-comeback-phone-booth/",
+  "retrieved_at": "2026-07-02T09:01:30Z",
+  "chars": 2206,
+  "sha256": "4330212491cbbc63c87c0b84ed78c31e6d76b5c9eee1f07949001fa67a60e313",
+  "note": "Fortune CEO Daily piece on WeWork Go launch; non-WeWork newsletter preamble lines removed",
+  "fragment": "g7.json"
+ },
+ {
+  "brand": "WeWork",
+  "channel": "experience",
+  "url": "https://mybalancedspace.com/wework-review/",
+  "retrieved_at": "2026-07-02T09:06:00Z",
+  "chars": 2496,
+  "sha256": "f323e19a78b56f39a3435af1e08487e7794400ccd153c791b096dc9f42d19d98",
+  "note": "Fallback: Trustpilot/GetApp/Executive Traveller blocked; used detailed first-person third-party review of the WeWork coworking experience (7 months, 3 London locations)",
+  "fragment": "g7.json"
+ },
+ {
+  "brand": "WeWork",
+  "channel": "social",
+  "url": "https://news.ycombinator.com/item?id=38172437",
+  "retrieved_at": "2026-07-02T09:06:30Z",
+  "chars": 2493,
+  "sha256": "6e61acd9290a491a4ff6770ea63e76f55fd382719a4928e6ab20f731c477cd00",
+  "note": "Hacker News discussion (via hn.algolia.com API); item 38172437 'WeWork Goes Bankrupt', 430 comments",
+  "fragment": "g7.json"
+ },
+ {
+  "brand": "Stripe",
+  "channel": "official",
+  "url": "https://stripe.com/about",
+  "retrieved_at": "2026-07-02T09:10:33Z",
+  "chars": 2499,
+  "sha256": "bedbc4da90bc8097c5ad7015754a19bbd5a3d60d8df46a35080bd84286a606f0",
+  "fragment": "g8.json"
+ },
+ {
+  "brand": "Stripe",
+  "channel": "press",
+  "url": "https://www.paymentsdive.com/news/stripe-valued-at-159b-in-tender-offer-ipo-payments/812883/",
+  "retrieved_at": "2026-07-02T09:10:33Z",
+  "chars": 2496,
+  "sha256": "6a5e89b96afd224c8ec091b79e79f5adc711dd53ce04eaa8e92fdafb1441d06f",
+  "fragment": "g8.json"
+ },
+ {
+  "brand": "Stripe",
+  "channel": "experience",
+  "url": "https://www.merchantmaverick.com/reviews/stripe-review/",
+  "retrieved_at": "2026-07-02T09:10:33Z",
+  "chars": 2497,
+  "sha256": "27e76b23e1a2c55c105ceda8a8dc9c1c491ba78d3f59213eebd849094e7da720",
+  "note": "Trustpilot and G2 blocked automated access (403); used detailed third-party review article instead",
+  "fragment": "g8.json"
+ },
+ {
+  "brand": "Stripe",
+  "channel": "social",
+  "url": "https://news.ycombinator.com/item?id=45129085",
+  "retrieved_at": "2026-07-02T09:10:33Z",
+  "chars": 2500,
+  "sha256": "fa0326bb1b21be33a1eaec1d78f3199e39850691262068c28cf628bc2e02d2be",
+  "note": "Hacker News thread (Stripe Tempo L1 announcement discussion, 1072 comments)",
+  "fragment": "g8.json"
+ },
+ {
+  "brand": "Boeing",
+  "channel": "official",
+  "url": "https://www.boeing.com/company/general-info",
+  "retrieved_at": "2026-07-02T09:10:33Z",
+  "chars": 2499,
+  "sha256": "c86063140d751b2948c8509bd06d78948ecc2b2b4f3da77f7a95053c140de6cd",
+  "fragment": "g8.json"
+ },
+ {
+  "brand": "Boeing",
+  "channel": "press",
+  "url": "https://www.cnbc.com/2026/04/22/boeing-ba-q1-2026-earnings.html",
+  "retrieved_at": "2026-07-02T09:10:33Z",
+  "chars": 2497,
+  "sha256": "c4c7222f0a87f45692950c73fb0f2ba049a0e7279f0edd9b5209600e07e5de55",
+  "fragment": "g8.json"
+ },
+ {
+  "brand": "Boeing",
+  "channel": "experience",
+  "url": "https://passportbydesign.com/2025/05/united-economy-class-review-boeing-787-dreamliner/",
+  "retrieved_at": "2026-07-02T09:10:33Z",
+  "chars": 2493,
+  "sha256": "35afc0a3f94e28d4f363b2f02093bb1c190f446bf38991bee431d990d6faf1fb",
+  "note": "detailed third-party passenger-experience review of Boeing 787 product",
+  "fragment": "g8.json"
+ },
+ {
+  "brand": "Boeing",
+  "channel": "social",
+  "url": "https://news.ycombinator.com/item?id=38893909",
+  "retrieved_at": "2026-07-02T09:10:33Z",
+  "chars": 2499,
+  "sha256": "0edccd815daa0a4352c7842c16c65792023b725b6c661115e6860165fc79b2c2",
+  "note": "Hacker News thread (737 Max 9 grounding discussion, 838 comments); reddit.com JSON endpoints blocked automated access",
+  "fragment": "g8.json"
+ },
+ {
+  "brand": "GE",
+  "channel": "official",
+  "url": "https://www.geaerospace.com/company/about-us/history",
+  "retrieved_at": "2026-07-02T09:10:33Z",
+  "chars": 2493,
+  "sha256": "6fc12208d3859e5c4100280f05226dc25bbec4e605385ca2530266b8ea940bf3",
+  "note": "geaerospace.com/company returned leadership-bio page; history/about page used as brand-story page",
+  "fragment": "g8.json"
+ },
+ {
+  "brand": "GE",
+  "channel": "press",
+  "url": "https://www.tradingkey.com/analysis/stocks/us-stocks/261808692-ge-aerospace-line-in-q1-2026-why-stock-down-4-tradingkey",
+  "retrieved_at": "2026-07-02T09:10:33Z",
+  "chars": 2418,
+  "sha256": "2a6270d11a9cb616782fa7d3b047a55c007fc118cca621b2cb335fe1ee817ad5",
+  "note": "investing.com (Reuters syndication) returned 403; trade-outlet earnings analysis used instead",
+  "fragment": "g8.json"
+ },
+ {
+  "brand": "GE",
+  "channel": "experience",
+  "url": "https://simpleflying.com/ge-aerospace-worlds-toughest-jet-engines/",
+  "retrieved_at": "2026-07-02T09:10:33Z",
+  "chars": 2496,
+  "sha256": "06897dfd734897efbcfb569a72f93e28684d19a27336b5881ac32701ded29ddd",
+  "note": "no G2/Trustpilot presence for GE Aerospace products; detailed third-party review article of engine product/service experience used",
+  "fragment": "g8.json"
+ },
+ {
+  "brand": "GE",
+  "channel": "social",
+  "url": "https://news.ycombinator.com/item?id=40943253",
+  "retrieved_at": "2026-07-02T09:10:33Z",
+  "chars": 2499,
+  "sha256": "020edf5c8b09d5f55e97a8682ca2d77979d5810ee61614021d4daf357ee1c23d",
+  "note": "Hacker News thread (GE Aerospace hypersonic ramjet, 150 comments)",
+  "fragment": "g8.json"
+ },
+ {
+  "brand": "Intel",
+  "channel": "official",
+  "url": "https://www.intel.com/content/www/us/en/company-overview/company-overview.html",
+  "retrieved_at": "2026-07-02T09:10:33Z",
+  "chars": 2090,
+  "sha256": "42f5758a8d9293c5f9bc92d5ff888eace72f5b13c9d5e3abd61e0cda8bde215c",
+  "fragment": "g8.json"
+ },
+ {
+  "brand": "Intel",
+  "channel": "press",
+  "url": "https://www.cnbc.com/2026/06/16/intel-begins-production-of-18a-p-inches-closer-to-possible-apple-deal.html",
+  "retrieved_at": "2026-07-02T09:10:33Z",
+  "chars": 2493,
+  "sha256": "b5beab5c4eb94b341c1bd741d67818683fbd4e37e4a628545c842071f6fe3101",
+  "fragment": "g8.json"
+ },
+ {
+  "brand": "Intel",
+  "channel": "experience",
+  "url": "https://www.techradar.com/computing/cpu/intel-core-ultra-9-285k-and-intel-core-ultra-5-245k-review",
+  "retrieved_at": "2026-07-02T09:10:33Z",
+  "chars": 2450,
+  "sha256": "97a1b19bfb0fd94f4ad0d5d367094e308e402e710c7ca3f1f60be923725188da",
+  "note": "detailed third-party product review (CPU) used; G2 covers Intel software only",
+  "fragment": "g8.json"
+ },
+ {
+  "brand": "Intel",
+  "channel": "social",
+  "url": "https://news.ycombinator.com/item?id=46508435",
+  "retrieved_at": "2026-07-02T09:10:33Z",
+  "chars": 2498,
+  "sha256": "3d309fd38575906a4392e7473779ab113b6ddd4b472475d48787791fe2e30dd5",
+  "note": "Hacker News thread (Core Ultra Series 3 on Intel 18A, 178 comments)",
+  "fragment": "g8.json"
+ },
+ {
+  "brand": "Huawei",
+  "channel": "official",
+  "url": "https://www.huawei.com/en/corporate-information",
+  "retrieved_at": "2026-07-02T09:10:33Z",
+  "chars": 2094,
+  "sha256": "a22fb8a196cbf3d164c3b3638921aa4d33140e7a20b079cc71c3e67b0d1c19cd",
+  "fragment": "g8.json"
+ },
+ {
+  "brand": "Huawei",
+  "channel": "press",
+  "url": "https://www.cnbc.com/2026/05/25/huawei-chip-logicfolding-semiconductor-nvidia-china.html",
+  "retrieved_at": "2026-07-02T09:10:33Z",
+  "chars": 2497,
+  "sha256": "28b7ffe70e1788cdb5a400689c784833fd80d21df70e8e1f42e72c68a43214da",
+  "fragment": "g8.json"
+ },
+ {
+  "brand": "Huawei",
+  "channel": "experience",
+  "url": "https://www.gsmarena.com/huawei_pura_80_ultra-review-2863p6.php",
+  "retrieved_at": "2026-07-02T09:10:33Z",
+  "chars": 2498,
+  "sha256": "e5a55bd662737317916752b0041b897c3abed1f909fc7f80792760dadef669ac",
+  "note": "detailed third-party product review (flagship phone) verdict page",
+  "fragment": "g8.json"
+ },
+ {
+  "brand": "Huawei",
+  "channel": "social",
+  "url": "https://news.ycombinator.com/item?id=33803692",
+  "retrieved_at": "2026-07-02T09:10:33Z",
+  "chars": 2499,
+  "sha256": "38de78cc2aa630a43b6a9ae3dd959130426052838b86c9783eeaf98f1cf6f335",
+  "note": "Hacker News thread (512 comments); reddit.com JSON endpoints blocked automated access",
+  "fragment": "g8.json"
+ }
+]

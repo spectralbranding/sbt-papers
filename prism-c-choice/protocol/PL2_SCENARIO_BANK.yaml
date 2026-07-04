@@ -1,0 +1,379 @@
+# PRISM-C PL2 Scenario + Choice-Set Bank — provisional until the pre-flight
+# pilot passes; frozen before confirmatory collection.
+# Version: prism-c/v1.0.0
+# Date authored: 2026-07-02
+#
+# 40 pre-registered need-scenarios, each with a 3-5 brand choice-set drawn
+# from the REUSED FROZEN brand bank (research/prism_m/PL2_BRAND_BANK.yaml,
+# prism-m/v1.0.0: Interbrand index frame, five coherence types x B2C/B2B).
+# Construction rules (ex ante):
+#   - the need text names NO brand and no proprietary product line;
+#   - every choice-set member is a plausible spend of the same budget for the
+#     stated need (heterogeneous categories allowed - the agentic setting is
+#     "which BRAND gets this need", not a within-category shelf test);
+#   - sets mix coherence types and price tiers wherever the need allows;
+#   - each option enters the choice prompt as "<Brand> - <category>" exactly
+#     as recorded in the brand bank (nominative reference only, matching the
+#     PRISM-B renderer discipline).
+# Controls (PL0 §5) are OUTSIDE the 40 confirmatory scenarios: positive =
+# dominating option among low-fit alternatives; negative = fictional
+# near-duplicate twins with identical one-line descriptions.
+
+version: prism-c/v1.0.0
+brand_bank: ../prism_m/PL2_BRAND_BANK.yaml
+
+scenarios:
+  # ---------------- B2C (S01-S20) ----------------
+  - id: S01
+    sector: b2c
+    need: >-
+      A senior manager wants a memorable status gift for a long-standing
+      business partner celebrating a career milestone. Budget is generous;
+      the gift should signal lasting esteem and refined taste rather than
+      novelty.
+    choice_set: [Hermès, Rolex, Apple, Nike]
+  - id: S02
+    sector: b2c
+    need: >-
+      A spouse is choosing a twentieth-anniversary gift. They want something
+      enduring and personal that will still feel meaningful decades from now,
+      and they are willing to pay a significant premium for it.
+    choice_set: [Hermès, Rolex, Sephora, LEGO]
+  - id: S03
+    sector: b2c
+    need: >-
+      A recent graduate is furnishing a small first apartment on a modest
+      budget and wants the space to feel functional, personal, and put
+      together without overspending.
+    choice_set: [IKEA, Apple, Sephora]
+  - id: S04
+    sector: b2c
+    need: >-
+      Parents are planning regular weekend activities for two children aged
+      six and nine. They want something engaging and screen-light that the
+      family can do together at home.
+    choice_set: [LEGO, McDonald's, Meta (Facebook), Apple]
+  - id: S05
+    sector: b2c
+    need: >-
+      A commuter with a 90-minute daily round trip needs a dependable
+      personal vehicle. Total cost of ownership and reliability matter more
+      than image or novelty.
+    choice_set: [Toyota, Tesla, Harley-Davidson]
+  - id: S06
+    sector: b2c
+    need: >-
+      A hiker who cares strongly about environmental responsibility is
+      replacing worn outdoor clothing and wants gear whose maker credibly
+      shares those values.
+    choice_set: [Patagonia, Nike, IKEA]
+  - id: S07
+    sector: b2c
+    need: >-
+      A busy parent needs a quick, affordable, predictable dinner option for
+      the family on weeknights when there is no time to cook.
+    choice_set: [McDonald's, Starbucks, Erewhon]
+  - id: S08
+    sector: b2c
+    need: >-
+      A health-conscious professional wants to upgrade their weekly grocery
+      habit toward organic, wellness-oriented food and is willing to pay a
+      premium for provenance and curation.
+    choice_set: [Erewhon, McDonald's, Starbucks, IKEA]
+  - id: S09
+    sector: b2c
+    need: >-
+      A couple is arranging a spontaneous three-day weekend getaway and needs
+      lodging with local character that can be booked quickly and flexibly.
+    choice_set: [Airbnb, Ryanair, Uber]
+  - id: S10
+    sector: b2c
+    need: >-
+      A student is planning a two-week multi-city trip across Europe on a
+      strict budget and wants to keep travel costs as low as possible.
+    choice_set: [Ryanair, Airbnb, Uber, Visa]
+  - id: S11
+    sector: b2c
+    need: >-
+      Someone is assembling a birthday gift for a friend who loves skincare
+      and makeup and enjoys trying new products from many different lines.
+    choice_set: [Sephora, Hermès, Nike]
+  - id: S12
+    sector: b2c
+    need: >-
+      A desk worker starting a fitness routine wants motivating gear and a
+      sense of joining a community of people who train.
+    choice_set: [Nike, Patagonia, Apple]
+  - id: S13
+    sector: b2c
+    need: >-
+      A consumer is choosing which payment brand to rely on for everyday
+      purchases at home and abroad, prioritizing universal acceptance and
+      dependable dispute handling.
+    choice_set: [Visa, Apple, Stripe]
+  - id: S14
+    sector: b2c
+    need: >-
+      A person who moved abroad wants one primary platform for staying
+      visible in the daily lives of family and old friends through photos,
+      updates, and groups.
+    choice_set: [Meta (Facebook), X (Twitter), Apple]
+  - id: S15
+    sector: b2c
+    need: >-
+      An independent commentator wants to build a public audience around
+      short, timely takes on current events and industry news.
+    choice_set: [X (Twitter), Meta (Facebook), Apple]
+  - id: S16
+    sector: b2c
+    need: >-
+      A fifty-year-old professional wants to mark a life transition with a
+      purchase that feels like freedom and identity rather than utility.
+    choice_set: [Harley-Davidson, Tesla, Rolex, Patagonia]
+  - id: S17
+    sector: b2c
+    need: >-
+      An office worker wants to make their daily coffee moment feel like a
+      small reliable ritual - consistent taste, a familiar setting, and a
+      place to sit for twenty minutes.
+    choice_set: [Starbucks, McDonald's, Erewhon]
+  - id: S18
+    sector: b2c
+    need: >-
+      An adult child is choosing easy-to-use technology to keep an elderly
+      parent connected for video calls, photos, and reminders, with minimal
+      setup friction.
+    choice_set: [Apple, Microsoft, Meta (Facebook)]
+  - id: S19
+    sector: b2c
+    need: >-
+      A visitor spending a week in an unfamiliar city needs to get around
+      reliably at all hours without renting a car.
+    choice_set: [Uber, Toyota, Ryanair]
+  - id: S20
+    sector: b2c
+    need: >-
+      A collector wants a display-worthy hobby purchase for their study -
+      something crafted, limited, and satisfying to assemble or maintain over
+      months.
+    choice_set: [LEGO, Rolex, Harley-Davidson, Nike]
+
+  # ---------------- B2B (S21-S40) ----------------
+  - id: S21
+    sector: b2b
+    need: >-
+      A mid-size insurer is selecting the primary partner for a five-year
+      migration of core systems to the cloud, weighing reliability, enterprise
+      support, and long-term roadmap credibility.
+    choice_set: [Microsoft, IBM, Oracle, SAP]
+  - id: S22
+    sector: b2b
+    need: >-
+      A scaling company of 200 sales employees needs a customer-relationship
+      platform the whole revenue organization will live in daily.
+    choice_set: [Salesforce, Microsoft, Oracle, SAP]
+  - id: S23
+    sector: b2b
+    need: >-
+      A 50-person startup wants one tool as the home for all internal team
+      communication, replacing scattered email threads.
+    choice_set: [Slack, Zoom, Microsoft, Basecamp]
+  - id: S24
+    sector: b2b
+    need: >-
+      A distributed consultancy is standardizing on a single video-meeting
+      platform for client-facing and internal calls, prioritizing call
+      quality and ease of joining.
+    choice_set: [Zoom, Microsoft, Cisco, Slack]
+  - id: S25
+    sector: b2b
+    need: >-
+      A founding team building a two-sided marketplace needs payments
+      infrastructure that developers can integrate quickly and that will
+      scale internationally.
+    choice_set: [Stripe, Visa, Microsoft]
+  - id: S26
+    sector: b2b
+    need: >-
+      A university research lab is provisioning computing hardware for
+      training machine-learning models and wants the strongest ecosystem of
+      tools and community support.
+    choice_set: [Nvidia, Intel, Microsoft, IBM]
+  - id: S27
+    sector: b2b
+    need: >-
+      A regional enterprise is overhauling the network infrastructure of its
+      headquarters and branch offices, balancing performance, security
+      posture, and procurement risk.
+    choice_set: [Cisco, Huawei, Siemens, Intel]
+  - id: S28
+    sector: b2b
+    need: >-
+      An industrial group is modernizing an aging manufacturing plant -
+      automation, monitoring, and energy systems - under a single lead
+      technology partner.
+    choice_set: [Siemens, GE, IBM, Caterpillar]
+  - id: S29
+    sector: b2b
+    need: >-
+      A grocery chain is equipping a last-mile delivery fleet of two hundred
+      vehicles, weighing running costs, uptime, and driver familiarity.
+    choice_set: [Toyota, Tesla, Uber]
+  - id: S30
+    sector: b2b
+    need: >-
+      A multinational manufacturer is replacing its enterprise
+      resource-planning backbone across finance, supply chain, and HR in
+      fourteen countries.
+    choice_set: [SAP, Oracle, Microsoft, IBM]
+  - id: S31
+    sector: b2b
+    need: >-
+      A late-stage technology company preparing for public listing is
+      choosing the lead financial-services partner for the offering and the
+      treasury relationships around it.
+    choice_set: [Goldman Sachs, Visa, Stripe, IBM]
+  - id: S32
+    sector: b2b
+    need: >-
+      A hybrid-first company of 300 employees is rethinking its workspace
+      spend - it wants flexible, professional space and infrastructure for
+      teams that meet in person two days a week.
+    choice_set: [WeWork, IKEA, Zoom, Airbnb]
+  - id: S33
+    sector: b2b
+    need: >-
+      A fully remote creative agency of 25 people needs a calm, opinionated
+      project-management home base that clients can be invited into.
+    choice_set: [Basecamp, Slack, Microsoft, Salesforce]
+  - id: S34
+    sector: b2b
+    need: >-
+      A consumer-electronics maker is qualifying a strategic semiconductor
+      supplier for its next device generation, weighing performance,
+      supply security, and geopolitical exposure.
+    choice_set: [Nvidia, Intel, Huawei]
+  - id: S35
+    sector: b2b
+    need: >-
+      A retail bank is modernizing decades-old database estates that must
+      not lose a transaction, and wants the vendor with the deepest
+      mission-critical track record.
+    choice_set: [Oracle, Microsoft, IBM, SAP]
+  - id: S36
+    sector: b2b
+    need: >-
+      A regional airline planning fleet growth is selecting its main
+      capital-equipment partner for aircraft and engine programs over the
+      next decade.
+    choice_set: [Boeing, GE, Siemens]
+  - id: S37
+    sector: b2b
+    need: >-
+      A national bank is refreshing its network and security backbone after
+      an audit, prioritizing vendor trustworthiness and regulatory comfort.
+    choice_set: [Cisco, IBM, Microsoft, Huawei]
+  - id: S38
+    sector: b2b
+    need: >-
+      A traditional retailer's board wants one strategic partner to lead a
+      three-year digital-transformation program across stores, e-commerce,
+      and data.
+    choice_set: [IBM, Microsoft, Salesforce, SAP]
+  - id: S39
+    sector: b2b
+    need: >-
+      A professional-services firm is consolidating its corporate travel and
+      lodging program to control cost while keeping consultants comfortable
+      on long engagements.
+    choice_set: [Airbnb, Ryanair, Uber, Visa]
+  - id: S40
+    sector: b2b
+    need: >-
+      An HR team is selecting a single vendor for a monthly employee-wellness
+      perk that should feel premium, healthy, and genuinely used by staff.
+    choice_set: [Erewhon, Nike, Starbucks, Sephora]
+
+# ---------------- Controls (outside the confirmatory 40) ----------------
+positive_controls:
+  # One bank brand dominating on every dimension FOR THE SCENARIO, among
+  # low-fit alternatives; must be reliably chosen (PL0 §5).
+  - id: P01
+    need: >-
+      A law firm must send signed original contracts from New York to
+      Singapore with guaranteed overnight-tier international delivery and
+      tracking.
+    choice_set: [FedEx, LEGO, Sephora]
+    dominant: FedEx
+  - id: P02
+    need: >-
+      A buyer wants a hand-finished silk scarf from a storied luxury house
+      as a gift that signals classic European craftsmanship.
+    choice_set: [Hermès, McDonald's, Caterpillar]
+    dominant: Hermès
+  - id: P03
+    need: >-
+      A machine-learning team needs top-tier accelerator hardware for
+      training large neural networks this quarter.
+    choice_set: [Nvidia, Starbucks, Ryanair]
+    dominant: Nvidia
+  - id: P04
+    need: >-
+      A parent wants a creative construction toy that a seven-year-old can
+      build with safely and expand set by set.
+    choice_set: [LEGO, Goldman Sachs, Cisco]
+    dominant: LEGO
+  - id: P05
+    need: >-
+      A traveler on a highway stop wants a fast, inexpensive, predictable
+      burger-and-fries meal within ten minutes.
+    choice_set: [McDonald's, Rolex, SAP]
+    dominant: McDonald's
+
+negative_controls:
+  # Fictional near-duplicate twins: identical one-line descriptions, names
+  # matched in structure. Counterbalanced across positions; no stable pick
+  # beyond chance is the pass criterion (PL0 §5). The raw per-position pick
+  # rates double as a position-bias calibration.
+  - id: N01
+    need: >-
+      An office manager is choosing a supplier for standard A4 copy paper on
+      a recurring monthly order.
+    options:
+      - {name: Nordvale Supply Co., descriptor: office paper supplier}
+      - {name: Nordgale Supply Co., descriptor: office paper supplier}
+  - id: N02
+    need: >-
+      A household is picking a brand of still bottled spring water for
+      weekly delivery.
+    options:
+      - {name: Clearbrook Springs, descriptor: bottled spring water}
+      - {name: Clearbrook Waters, descriptor: bottled spring water}
+  - id: N03
+    need: >-
+      A student needs a pack of plain ruled notebooks for the semester.
+    options:
+      - {name: Meridian Paper Works, descriptor: stationery maker}
+      - {name: Meridian Paper Goods, descriptor: stationery maker}
+  - id: N04
+    need: >-
+      A facilities team is restocking AA alkaline batteries for office
+      devices.
+    options:
+      - {name: Voltane Cells, descriptor: alkaline battery brand}
+      - {name: Voltaire Cells, descriptor: alkaline battery brand}
+  - id: N05
+    need: >-
+      A small clinic is hiring a weekly commercial cleaning service for its
+      waiting rooms.
+    options:
+      - {name: BrightPath Cleaning, descriptor: commercial cleaning service}
+      - {name: BrightPoint Cleaning, descriptor: commercial cleaning service}
+
+freeze_note: FROZEN 2026-07-02 for confirmatory collection (pre-flight pilot
+  passed the gate; PL1 records the exclusion-rule outcome). Version
+  prism-c/v1.0.0. Technical correction during collection start (before any
+  affected trial ran) - brand key strings "Meta" / "X" corrected to the brand
+  bank's canonical "Meta (Facebook)" / "X (Twitter)" in S04/S14/S15/S18; a
+  name-form fix required for the harness's bank lookup, no change to any
+  scenario's content or set membership.
