@@ -2,7 +2,7 @@
 
 ## Glossary
 
-_Terms used by **prism** (PRISM: A Structured Measurement Instrument for Multi-Dimensional Brand Perception). Defined terms this paper introduces, refines, or imports from the corpus ontology._
+_Terms used by **prism** (PRISM-B: A Structured Measurement Instrument for Multi-Dimensional Brand Perception). Defined terms this paper introduces, refines, or imports from the corpus ontology._
 
 *Terms introduced by this paper*
 

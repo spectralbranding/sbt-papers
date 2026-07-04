@@ -1,13 +1,13 @@
 [![MIT License](https://img.shields.io/badge/Code-MIT-blue.svg)](../LICENSE)
 [![CC-BY 4.0](https://img.shields.io/badge/Data-CC--BY_4.0-lightgrey.svg)](../LICENSE-data)
-![Last Updated](https://img.shields.io/badge/updated-2026--06--26-success)
+![Last Updated](https://img.shields.io/badge/updated-2026--07--04-success)
 
-# PRISM: A Structured Measurement Instrument for Multi-Dimensional Brand Perception
+# PRISM-B: A Structured Measurement Instrument for Multi-Dimensional Brand Perception
 
 ## 1 | Paper
 
 - Manuscript: [paper.md](paper.md)
-- Version: 1.1.0
+- Version: 1.2.0
 - DOI: [10.5281/zenodo.19555265](https://doi.org/10.5281/zenodo.19555265)
 - **New here?** [AGENTS.md](AGENTS.md) is a file-by-file guide for any reader (human or AI agent) on how to use the paper + every metadata file.
 - Machine-readable bundle: [paper.yaml](paper.yaml) (Paper Spec), [SPINE.yaml](SPINE.yaml), [ONTOLOGY.yaml](ONTOLOGY.yaml), [GLOSSARY.md](GLOSSARY.md)
@@ -21,11 +21,11 @@
 ```bibtex
 @article{Zharnikov2026,
   author  = {Zharnikov, Dmitry},
-  title   = {PRISM: A Structured Measurement Instrument for Multi-Dimensional Brand Perception},
+  title   = {PRISM-B: A Structured Measurement Instrument for Multi-Dimensional Brand Perception},
   year    = {2026},
   doi     = {10.5281/zenodo.19555265},
   url     = {https://doi.org/10.5281/zenodo.19555265},
-  version = {1.1.0},
+  version = {1.2.0},
 }
 ```
 
@@ -37,4 +37,4 @@ Code (if any): MIT — see hub-level [../LICENSE](../LICENSE). Data, figures, ta
 
 ---
 
-*Last updated: 2026-06-26*
+*Last updated: 2026-07-04*

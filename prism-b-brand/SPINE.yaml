@@ -19,7 +19,7 @@ spine_version: "0.2"
 spine_doc_version: "0.1.0"
 paper_key: "prism"
 title: >-
-  PRISM: A Structured Measurement Instrument for Multi-Dimensional Brand
+  PRISM-B: A Structured Measurement Instrument for Multi-Dimensional Brand
   Perception
 provenance: retrofit
 status: >-
@@ -287,11 +287,14 @@ propositions:
     body_sections: ["Multi-Observer Estimation and Perception DOP"]
   - id: P9
     statement: >-
-      PRISM-B is one member of a family sharing the PL0-PL4 scaffold: PRISM-M
-      (metamerism discrimination, binary per-dimension), PRISM-T (temporal
-      tracking via first-order difference and spectral velocity), and PRISM-C
-      (choice prediction, under development) inherit the architecture and
-      substitute PL2 items and PL4 scoring.
+      PRISM-B is one member of a family sharing the PL0-PL4 scaffold. Four
+      siblings are since specified as pre-registered instruments: PRISM-M
+      (metamerism, dual-floor procedure), PRISM-T (temporal / version-floor
+      drift separation, with brand velocity recovered as the live-panel target),
+      PRISM-C (stated-vs-revealed choice gap), and PRISM-O (organizational
+      optimization depth); PRISM-H (human-subject) is planned. Each inherits the
+      architecture and substitutes PL2 items and PL4 scoring, and reports a gap
+      only when it clears the instrument's own measured floor.
     conditions: ""
     antecedents: [P3]
     evidence:

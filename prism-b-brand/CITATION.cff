@@ -5,8 +5,8 @@ authors:
     given-names: Dmitry
     affiliation: "Independent Researcher"
     orcid: "https://orcid.org/0009-0000-6893-9231"
-title: "PRISM: A Structured Measurement Instrument for Multi-Dimensional Brand Perception"
-version: 1.1.0
+title: "PRISM-B: A Structured Measurement Instrument for Multi-Dimensional Brand Perception"
+version: 1.2.0
 date-released: 2026-06-14
 url: "https://doi.org/10.5281/zenodo.19555265"
 repository-code: "https://github.com/spectralbranding/sbt-papers"
@@ -31,7 +31,7 @@ preferred-citation:
   authors:
     - family-names: Zharnikov
       given-names: Dmitry
-  title: "PRISM: A Structured Measurement Instrument for Multi-Dimensional Brand Perception"
+  title: "PRISM-B: A Structured Measurement Instrument for Multi-Dimensional Brand Perception"
   year: 2026
   doi: "10.5281/zenodo.19555265"
   url: "https://doi.org/10.5281/zenodo.19555265"
