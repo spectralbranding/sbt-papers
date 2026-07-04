@@ -13,7 +13,7 @@ meta:
     orcid: 0009-0000-6893-9231
     affiliation: Independent Researcher
   doi: 10.5281/zenodo.21128342
-  date: '2026-07-01'
+  date: '2026-07-02'
   venue: International Journal of Research in Marketing
   license: CC-BY-4.0
   keywords:
@@ -105,7 +105,7 @@ dependencies:
 - relationship: extends
   claim: builds on 2026as
   critical: false
-  doi: 10.5281/zenodo.19555265
+  reference: Zharnikov (2026as), this corpus.
 - relationship: extends
   claim: builds on 2026ax
   critical: false

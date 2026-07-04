@@ -1,6 +1,6 @@
 [![MIT License](https://img.shields.io/badge/Code-MIT-blue.svg)](../LICENSE)
 [![CC-BY 4.0](https://img.shields.io/badge/Data-CC--BY_4.0-lightgrey.svg)](../LICENSE-data)
-![Last Updated](https://img.shields.io/badge/updated-2026--07--02-success)
+![Last Updated](https://img.shields.io/badge/updated-2026--07--04-success)
 
 # From Stated Perception to Revealed Choice: A Pre-Registered Instrument for the Choice-Perception Gap in AI Brand Perception (PRISM-C)
 
@@ -37,4 +37,4 @@ Code (if any): MIT — see hub-level [../LICENSE](../LICENSE). Data, figures, ta
 
 ---
 
-*Last updated: 2026-07-02*
+*Last updated: 2026-07-04*

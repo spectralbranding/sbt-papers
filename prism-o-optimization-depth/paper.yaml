@@ -171,7 +171,7 @@ dependencies:
 - relationship: extends
   claim: builds on 2026as
   critical: false
-  doi: 10.5281/zenodo.19555265
+  reference: Zharnikov (2026as), this corpus.
 - relationship: applies
   claim: builds on 2026ax
   critical: false
