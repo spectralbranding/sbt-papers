@@ -13,7 +13,7 @@ meta:
     orcid: 0009-0000-6893-9231
     affiliation: Independent Researcher
   doi: 10.5281/zenodo.19422427
-  date: '2026-04-01'
+  date: '2026-06-27'
   venue: Preprint
   license: CC-BY-4.0
   keywords:
@@ -29,7 +29,7 @@ meta:
     agentic commerce. This study demonstrates that LLMs systematically collapse brand perception to Experiential
     and Economic dimensions, rendering brands differentiated on narrative, ideological, cultural, or temporal
     dimensions metameric --- structurally different but functionally equivalent in AI recommendations.
-    Using PRISM-B across 21,350 API calls to 24 models spanning nine cultural traditions and 15 languages,
+    Using PRISM-B across 21,350 API calls to 24 models spanning seven training traditions and 15 languages,
     a Dimensional Collapse Index (DCI; uniform baseline = .250) is computed. Mean DCI equals .294 for
     global brands ($p < .001$) and .356 cross-culturally ($d = 3.373$). Cross-model convergence is near-perfect
     (cosine = .977). Local brands collapse 24% more severely than global brands ($d = .92$, in five FMCG

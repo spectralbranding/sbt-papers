@@ -29,7 +29,7 @@ thesis: >-
   separately), rendering brands differentiated on Narrative, Ideological,
   Cultural, or Temporal dimensions structurally different but functionally
   equivalent in AI recommendations. Measured with the PRISM-B forced-allocation
-  instrument across 21,350 API calls to 24 models from nine cultural traditions
+  instrument across 21,350 API calls to 24 models from seven training traditions
   and 15 languages, the Dimensional Collapse Index (uniform baseline = .250) is
   elevated (mean .294 global, .356 cross-cultural) and convergent across
   architectures (cosine .977), so the collapse is structural rather than a
@@ -94,8 +94,9 @@ observations:
     body_sections: ["§Method: Brand Pair Selection", "§Results: Conditional metamerism"]
   - id: O3
     statement: >-
-      Run 5 (exploratory): the panel expanded to 23 models spanning nine
-      cultural training traditions, seven cross-cultural brand comparisons, and
+      Run 5 (exploratory): the panel expanded to 23 models spanning seven
+      training traditions, seven cross-cultural brand comparisons (whose brand
+      pairs add Ukrainian and Mongolian cultural frames), and
       15 native-language prompting conditions = 7,342 calls; the full study
       comprises 21,350 API calls across ten runs.
     raw_data_pointer: "HuggingFace spectralbranding/r15-ai-search-metamerism; experiment/validation/validate.py"
@@ -372,7 +373,7 @@ findings:
   - id: F2
     statement: >-
       H2 SUPPORTED — Metameric convergence: cross-model cosine = .975 (six
-      confirmatory models) and .977 across 24 architectures from nine cultural
+      confirmatory models) and .977 across 24 architectures from seven training
       traditions; dimensional orderings are near-identical despite differences in
       architecture, training corpus, and deployment, so collapse is structural
       and platform-switching is not a hedge.
@@ -545,7 +546,7 @@ alternative_explanations:
     rules_out_status: "rejected"
     reasoning: >-
       Cross-model cosine .977 spans cloud and local open-weight, Western and
-      Chinese and seven further traditions, and aligned and less-aligned systems;
+      Chinese and five further traditions, and aligned and less-aligned systems;
       H3 heterogeneity is null and the profile is stable across versions — so the
       collapse cannot be a single-family training artifact.
     body_sections: ["§Discussion: Summary of Findings"]
