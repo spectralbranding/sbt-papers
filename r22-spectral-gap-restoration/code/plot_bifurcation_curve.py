@@ -12,7 +12,7 @@ Run command:
     uv run python plot_bifurcation_curve.py
 
 Output:
-    ../figures/figure2_bifurcation.png  (300 dpi)
+    ../figures/figure1_bifurcation.png  (300 dpi)
 
 Seed: 42 (fixed for reproducibility)
 """
@@ -105,6 +105,6 @@ plt.tight_layout()
 script_dir = os.path.dirname(os.path.abspath(__file__))
 figures_dir = os.path.join(script_dir, "..", "figures")
 os.makedirs(figures_dir, exist_ok=True)
-out_path = os.path.join(figures_dir, "figure2_bifurcation.png")
+out_path = os.path.join(figures_dir, "figure1_bifurcation.png")
 plt.savefig(out_path, dpi=300, bbox_inches="tight")
 print(f"Saved: {out_path}")
