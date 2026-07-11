@@ -118,8 +118,8 @@ observations:
       A parameter sweep across μ/λ ∈ [0.5, 2.0], N = 2,000 sample paths per
       ratio value, λ = .10 fixed, μ = ratio × λ, 100 equilibration steps,
       tracing mean terminal spectral gap against the ratio (the bifurcation
-      diagram, Figure 2).
-    raw_data_pointer: "r22-spectral-gap-restoration/figures/figure2_bifurcation.png"
+      diagram, Figure 1).
+    raw_data_pointer: "r22-spectral-gap-restoration/figures/figure1_bifurcation.png"
     instrument: "plot_bifurcation_curve.py (seed 42)"
     timestamp: "2026-04"
     body_sections: ["Numerical Illustration: Results"]
@@ -224,7 +224,7 @@ measurements:
     generating_method: M2
     value: "sharp bifurcation at μ/λ = 1.0"
     units: "mean terminal gap vs ratio"
-    body_sections: ["Numerical Illustration: Results (Figure 2)"]
+    body_sections: ["Numerical Illustration: Results (Figure 1)"]
 
 # ============================================================================
 # Propositions — the theoretical backbone
@@ -464,7 +464,7 @@ findings:
     generating_method: M2
     antecedents: [O2, P8]
     falsifier: "If the sweep showed a smooth gradient through ratio 1.0, the bifurcation claim fails."
-    body_sections: ["Numerical Illustration: Results (Figure 2)"]
+    body_sections: ["Numerical Illustration: Results (Figure 1)"]
   - id: F4
     statement: >-
       The simulated low-regime gap collapse at month 46 versus documented Dove

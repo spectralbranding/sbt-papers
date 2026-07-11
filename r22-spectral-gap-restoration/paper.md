@@ -107,6 +107,8 @@ The primary diagnostic metric is the spectral gap time series for each cohort-di
 
 ### Results
 
+Table 1 reports the regime contrast across the diagnostic metrics.
+
 **Table 1.** Monte Carlo Regime Contrast (32 cells per regime, 240 months).
 
 | Metric | High regime ($\mu = 4.50$) | Low regime ($\mu = -.50$) | Ratio |
@@ -128,7 +130,7 @@ The IRF half-life contrast confirms the regime interpretation: high-regime cells
 
 Figure 1 traces the parameter sweep across mu/lambda $\in [.5, 2.0]$ — N = 2,000 sample paths per ratio value, $\lambda = .10$ fixed, $\mu = \text{ratio} \times \lambda$, $t = 100$ equilibration steps. The bifurcation at ratio = 1.0 ($\mu = \lambda$) is a sharp demarcation: mean terminal spectral gap collapses to zero as the ratio crosses below 1.0 and rises monotonically in the recoverable regime (ratio > 1.0). The curve confirms that the threshold at $\mu = \lambda$ is a genuine bifurcation rather than a smooth gradient, as predicted by the sign-flip condition on the Lyapunov exponent.
 
-![](figures/figure2_bifurcation.png)
+![](figures/figure1_bifurcation.png)
 
 **Figure 1.** Bifurcation diagram of the spectral gap as a function of mu/lambda ratio. The threshold mu equals lambda separates the recoverable (mu > lambda) and absorbing (mu < lambda) regimes; the spectral gap collapses to zero in the absorbing regime.
 
@@ -144,11 +146,13 @@ The spectral-gap machinery connects directly to the most familiar object in appl
 
 ### Companion Computation Scripts
 
-The Monte Carlo simulation (Table 1) is fully reproducible from `monte_carlo_simulation.py` at https://github.com/spectralbranding/sbt-papers/tree/main/r22-spectral-gap-restoration/code/. Run command (`uv run --with statsmodels --with numpy --with scipy python3 monte_carlo_simulation.py`) and fixed seed (2026) are documented in the script docstring. The bifurcation diagram (Figure 1) is produced by `plot_bifurcation_curve.py` in the same directory; run command: `uv run python plot_bifurcation_curve.py` (numpy + matplotlib; seed 42; outputs `figures/figure2_bifurcation.png`). The Bridging Illustration's closed-form results (stationary distribution, double-jeopardy diagonal, spectral gap $S/(S+1)$, perturbation half-lives) are verified numerically by `switching_matrix_gap.py` in the same directory; run command: `uv run --with numpy python3 switching_matrix_gap.py` (seed 2026 for the random-share robustness replicate). All numerics and figures in this section are reproducible from these scripts without modification.
+The Monte Carlo simulation (Table 1) is fully reproducible from `monte_carlo_simulation.py` at https://github.com/spectralbranding/sbt-papers/tree/main/r22-spectral-gap-restoration/code/. Run command (`uv run --with statsmodels --with numpy --with scipy python3 monte_carlo_simulation.py`) and fixed seed (2026) are documented in the script docstring. The bifurcation diagram (Figure 1) is produced by `plot_bifurcation_curve.py` in the same directory; run command: `uv run python plot_bifurcation_curve.py` (numpy + matplotlib; seed 42; outputs `figures/figure1_bifurcation.png`). The Bridging Illustration's closed-form results (stationary distribution, double-jeopardy diagonal, spectral gap $S/(S+1)$, perturbation half-lives) are verified numerically by `switching_matrix_gap.py` in the same directory; run command: `uv run --with numpy python3 switching_matrix_gap.py` (seed 2026 for the random-share robustness replicate). All numerics and figures in this section are reproducible from these scripts without modification.
 
 ## Discussion
 
 ### The μ–λ Residual as Brand Health Dashboard
+
+The threshold inequality converts a qualitative intuition — "strong brands recover" — into an empirically estimable condition, summarized as a four-quadrant brand-health map (Figure 2). The $\mu$–$\lambda$ residual (the difference between corrective emission rate and leakage rate) is a leading indicator of cohort separability health. When the residual is large and positive, the brand is in a high-resilience regime; it can sustain a coherence shock and return to the pre-shock eigenspace configuration within a recovery horizon bounded by $1/(\mu - \lambda)$. When the residual is near zero or negative, the brand is approaching the boundary of the recoverable basin, and preemptive intervention — increasing $\mu$ through emission amplification, or decreasing $\lambda$ through coherence-tightening of existing emissions — is required before the shock, not after.
 
 ```{.mermaid width=50%}
 quadrantChart
@@ -165,8 +169,6 @@ quadrantChart
 **Figure 2.** The mu-lambda quadrant translates the threshold inequality into a four-state managerial action map. Brands cross from the recoverable to the absorbing basin when the spectral leakage rate exceeds the corrective emission rate at the dominant cohort's detection scale.
 
 *Notes*: Dove cohort coordinates are illustrative, based on the Numerical Illustration design values (lambda = .10/year, mu = 4.50/year for Purpose-Aligned; mu = -.50/year for Skeptic-Critic). Axis positions are normalized to [0, 1] relative to the parameter range explored in Figure 1.
-
-The threshold inequality converts a qualitative intuition — "strong brands recover" — into an empirically estimable condition, summarized as a four-quadrant brand-health map (Figure 2). The $\mu$–$\lambda$ residual (the difference between corrective emission rate and leakage rate) is a leading indicator of cohort separability health. When the residual is large and positive, the brand is in a high-resilience regime; it can sustain a coherence shock and return to the pre-shock eigenspace configuration within a recovery horizon bounded by $1/(\mu - \lambda)$. When the residual is near zero or negative, the brand is approaching the boundary of the recoverable basin, and preemptive intervention — increasing $\mu$ through emission amplification, or decreasing $\lambda$ through coherence-tightening of existing emissions — is required before the shock, not after.
 
 Practically, $\mu$ is estimable from GRP/SOV data and coherence audit classification of campaign assets [@hanssens-2016-demonstrating-value-marketing]. $\lambda$ is estimable from passive-drift windows in longitudinal brand tracking data, or from Clarke [-@clarke-1976-econometric-measurement-duration] calibrated industry benchmarks when tracking data are unavailable. Clarke [-@clarke-1976-econometric-measurement-duration] reports advertising duration effects spanning 3 to 15 months, implying $\lambda \in [.07, .33]$ per year for established brands; Naik [-@naik-1999-estimating-halflife-advertisements] reports half-lives of 4–24 months, consistent with this range. Mela, Gupta, and Lehmann [-@mela-1997-longterm-impact-promotion] demonstrate empirically that sustained advertising builds brand equity while sustained promotion erodes it — the long-run analog of $\mu$-building versus $\lambda$-elevating marketing actions. The Dekimpe–Hanssens [-@dekimpe-1995-persistence-marketing-effects; -@dekimpe-1999-sustained-spending-persistent] persistence testing framework provides the statistical infrastructure for classifying individual cohort-dimension cells as evolving or stationary. The Monte Carlo result clarifies what "evolving" and "stationary" mean at the cell level: the regime separation is visible in terminal spectral gap magnitude and IRF dynamics, not in ADF stationarity alone. Managers should track the gap metric directly, not rely on centroid-level perceptual maps, because the simulation confirms that MDS-visible centroid positions (.023 vs .027 cosine drift) do not distinguish the regimes.
 
