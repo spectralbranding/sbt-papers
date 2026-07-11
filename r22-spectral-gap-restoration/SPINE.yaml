@@ -386,6 +386,41 @@ propositions:
         anchor: "DBA decay ≈ λ, activation spend ≈ μ; GRP→perception bridge."
         citation_keys: [romaniuk-sharp-2016, mela-gupta-lehmann-1997, hanssens-pauwels-2016, clarke-1976]
     body_sections: ["Discussion: The μ–λ Residual as Brand Health Dashboard", "Managerial Implications"]
+  - id: P11
+    statement: >-
+      (Bridging Illustration) Under the zero-order stationary Dirichlet market
+      with brand shares s and switching parameter S, the purchase-level
+      switching matrix is the Dirichlet-multinomial posterior predictive
+      P = (I + S·1sᵀ)/(S+1). In closed form: (i) its stationary distribution is
+      s itself and the diagonal repeat rate (1 + S·sᵢ)/(1 + S) increases
+      affinely in share, reproducing double jeopardy as the equilibrium
+      signature of the switching structure; (ii) its spectrum is {1, 1/(S+1)}
+      with the non-unit eigenvalue of multiplicity n−1, so the spectral gap is
+      S/(S+1) regardless of shares — the behavioral layer is fast-mixing and a
+      share perturbation halves within ln2/ln(S+1) purchase occasions; (iii)
+      because the non-unit spectrum is a single fast eigenvalue, the
+      purchase-level matrix contains no slow modes — the slow dynamics that
+      decide recovery versus collapse live upstream in the perception operator.
+      Corollary for positioning: a stationary Markov switching model and the
+      Dirichlet are two parameterizations of the same stationary process, so
+      equilibrium quantities computed under both must coincide (agreement is a
+      consistency check, not independent confirmation), and neither can address
+      whether a perturbed market relaxes back or the equilibrium itself moves.
+    conditions: ""
+    antecedents: [P2, P5]
+    evidence:
+      - type: derivation
+        anchor: >-
+          Rank-1 update spectrum of P = (I + S·1sᵀ)/(S+1); stationarity and
+          double-jeopardy diagonal verified numerically (switching_matrix_gap.py,
+          seed 2026; illustrative author-proposed shares and S values).
+        citation_keys: [ehrenberg-1965, goodhardt-ehrenberg-chatfield-1984, ehrenberg-goodhardt-barwise-1990]
+    falsifier: >-
+      Falsified if a purchase-level switching matrix consistent with a
+      stationary Dirichlet market exhibits a second eigenvalue differing from
+      1/(S+1), or a slow relaxation mode not attributable to a change in the
+      underlying propensities (i.e., to a non-stationary perception layer).
+    body_sections: ["Numerical Illustration: Bridging Illustration", "Discussion: Refining Dekimpe–Hanssens by Localizing to Cohort-Dimension Cells"]
 
 # ============================================================================
 # Findings — what the simulation establishes
@@ -476,6 +511,24 @@ alternative_explanations:
       diagnostic, stating the μ > λ sufficient condition the scalar tradition
       cannot express.
     body_sections: ["Introduction", "Discussion: Refining Dekimpe–Hanssens"]
+  - id: A3
+    statement: >-
+      The stochastic brand-choice tradition (Markov switching matrices; the
+      NBD-Dirichlet) already computes equilibrium shares from panel switching
+      structure — and its two formulations agree numerically on equilibrium
+      quantities — so no additional spectral machinery is needed.
+    rules_out_required: [P1, P11]
+    ruled_out_by: [P11]
+    rules_out_status: "rejected"
+    reasoning: >-
+      The agreement of the Markov and Dirichlet computations is a consistency
+      check on one stationary description, not independent confirmation: both
+      parameterize the same stationary purchase process. Stationary descriptions
+      locate the equilibrium but carry no rate layer — P11 shows the
+      purchase-level matrix has a single fast eigenvalue (gap S/(S+1)) and no
+      slow modes, so the recovery-versus-collapse question is undecidable inside
+      the switching table and requires the perception operator's gap (P1).
+    body_sections: ["Introduction", "Numerical Illustration: Bridging Illustration", "Discussion: Refining Dekimpe–Hanssens by Localizing to Cohort-Dimension Cells"]
 
 # ============================================================================
 # Robustness checks — cross-domain corroboration of the absorbing regime
@@ -622,6 +675,9 @@ external_anchors:
   - {citation_key: romaniuk-sharp-2016, role: empirical_anchor, spine_nodes: [P10], note: "Distinctive brand assets — DBA decay ≈ λ, activation ≈ μ"}
   - {citation_key: hanssens-pauwels-2016, role: estimation_bridge, spine_nodes: [P4, P10], note: "GRP-weighted reach → perception-rate bridge for μ"}
   - {citation_key: cleeren-2013, role: empirical_analog, spine_nodes: [P1], note: "Asymmetric recovery from product-harm crises (behavioral analog of μ, Δ)"}
+  - {citation_key: ehrenberg-1965, role: rival_framework, spine_nodes: [P11, A3], note: "Appraisal of Markov brand-switching models — the stationary equilibrium tradition"}
+  - {citation_key: goodhardt-ehrenberg-chatfield-1984, role: rival_framework, spine_nodes: [P11, A3], note: "NBD-Dirichlet stationary market model — equilibrium location without a rate layer"}
+  - {citation_key: ehrenberg-goodhardt-barwise-1990, role: empirical_anchor, spine_nodes: [P11], note: "Double jeopardy — the equilibrium signature reproduced by the switching-matrix diagonal"}
 
 # ============================================================================
 # Open questions / boundary edges

@@ -13,7 +13,7 @@ meta:
     orcid: 0009-0000-6893-9231
     affiliation: Independent Researcher
   doi: 10.5281/zenodo.19778549
-  date: '2026-04-01'
+  date: '2026-06-26'
   venue: MKSC (Marketing Science)
   license: CC-BY-4.0
   keywords:
@@ -159,6 +159,27 @@ claims:
   - P7
   - P3
   - P4
+- id: P11
+  type: proposition
+  statement: '(Bridging Illustration) Under the zero-order stationary Dirichlet market with brand shares
+    s and switching parameter S, the purchase-level switching matrix is the Dirichlet-multinomial posterior
+    predictive P = (I + S·1sᵀ)/(S+1). In closed form: (i) its stationary distribution is s itself and
+    the diagonal repeat rate (1 + S·sᵢ)/(1 + S) increases affinely in share, reproducing double jeopardy
+    as the equilibrium signature of the switching structure; (ii) its spectrum is {1, 1/(S+1)} with the
+    non-unit eigenvalue of multiplicity n−1, so the spectral gap is S/(S+1) regardless of shares — the
+    behavioral layer is fast-mixing and a share perturbation halves within ln2/ln(S+1) purchase occasions;
+    (iii) because the non-unit spectrum is a single fast eigenvalue, the purchase-level matrix contains
+    no slow modes — the slow dynamics that decide recovery versus collapse live upstream in the perception
+    operator. Corollary for positioning: a stationary Markov switching model and the Dirichlet are two
+    parameterizations of the same stationary process, so equilibrium quantities computed under both must
+    coincide (agreement is a consistency check, not independent confirmation), and neither can address
+    whether a perturbed market relaxes back or the equilibrium itself moves.'
+  testable: true
+  tested_in_paper: true
+  status: not_tested
+  depends_on:
+  - P2
+  - P5
 methodology:
   type: mixed
   design: 'Kato–Rellich perturbation analysis: for a coherence shock −L̃ = −L + εQ with Q bounded and
@@ -198,6 +219,13 @@ acceptance:
     by [0, 24] months.
   falsification: Falsified if a documented case shows gap collapse and conviction reorientation with a
     lead time outside [0, 24] months, or conviction reorientation documented to precede gap collapse.
+- claim_id: P11
+  criterion: Holds if (Bridging Illustration) Under the zero-order stationary Dirichlet market with brand
+    shares s and switching parameter S, the purchase-level switching matrix is the Dirichlet-multinomial
+    posterior predictive P = (I + S·1sᵀ)/(S+1).
+  falsification: Falsified if a purchase-level switching matrix consistent with a stationary Dirichlet
+    market exhibits a second eigenvalue differing from 1/(S+1), or a slow relaxation mode not attributable
+    to a change in the underlying propensities (i.e., to a non-stationary perception layer).
 dependencies:
 - relationship: refines
   claim: 'Refines SBT''s stability claims (the paper is described as refining 2026a''s PF4/C4): the eight-dimensional
@@ -299,6 +327,15 @@ dependencies:
 - relationship: extends
   claim: Asymmetric recovery from product-harm crises (behavioral analog of μ, Δ)
   reference: cleeren-2013
+- relationship: extends
+  claim: Appraisal of Markov brand-switching models — the stationary equilibrium tradition
+  reference: ehrenberg-1965
+- relationship: extends
+  claim: NBD-Dirichlet stationary market model — equilibrium location without a rate layer
+  reference: goodhardt-ehrenberg-chatfield-1984
+- relationship: extends
+  claim: Double jeopardy — the equilibrium signature reproduced by the switching-matrix diagonal
+  reference: ehrenberg-goodhardt-barwise-1990
 contradictions: []
 results:
 - claim_id: P1
