@@ -93,11 +93,8 @@ ax.text(
 
 ax.set_xlabel("mu / lambda ratio", fontsize=12)
 ax.set_ylabel("Mean terminal spectral gap (t = 100)", fontsize=12)
-ax.set_title(
-    "Bifurcation of Spectral Gap at mu = lambda Threshold\n"
-    "(lambda = 0.1, N = 2,000 paths per ratio, seed = 42)",
-    fontsize=11,
-)
+# No in-image title: the paper's Figure caption below the image carries it
+# (parameters are stated in the prose and the script docstring).
 ax.legend(fontsize=10)
 ax.grid(True, alpha=0.3)
 ax.set_xlim(0.5, 2.0)
