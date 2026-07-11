@@ -152,7 +152,6 @@ The Monte Carlo simulation (Table 1) is fully reproducible from `monte_carlo_sim
 
 ```{.mermaid width=50%}
 quadrantChart
-    title Brand Health: Leakage vs Corrective Emission
     x-axis Low lambda --> High lambda
     y-axis Low mu --> High mu
     quadrant-1 Sustainable building
