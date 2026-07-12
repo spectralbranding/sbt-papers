@@ -7,6 +7,7 @@
 ## 1 | Paper
 
 - Manuscript: [paper.md](paper.md)
+- Version: 1.0.0
 - DOI: [10.5281/zenodo.21319716](https://doi.org/10.5281/zenodo.21319716)
 - **New here?** [AGENTS.md](AGENTS.md) is a file-by-file guide for any reader (human or AI agent) on how to use the paper + every metadata file.
 - Machine-readable bundle: [paper.yaml](paper.yaml) (Paper Spec), [SPINE.yaml](SPINE.yaml), [ONTOLOGY.yaml](ONTOLOGY.yaml), [GLOSSARY.md](GLOSSARY.md)
@@ -24,6 +25,7 @@
   year    = {2026},
   doi     = {10.5281/zenodo.21319716},
   url     = {https://doi.org/10.5281/zenodo.21319716},
+  version = {1.0.0},
 }
 ```
 
