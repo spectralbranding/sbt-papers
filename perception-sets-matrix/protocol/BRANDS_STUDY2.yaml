@@ -1,0 +1,22 @@
+# BRANDS_STUDY2.yaml — frozen Study-2 real-brand consideration sets (2026bf)
+# Fixed at design freeze 2026-07-12. Readings are ELICITED (operator's
+# internalized public-artifact exposure; PRISM-M elicited mode),
+# English-language market. Selection criteria per PREREG section 3.
+
+qsr_coffee:
+  category_label: quick-service coffee chains
+  brands:
+    - {brand_id: Q1, name: "Starbucks"}
+    - {brand_id: Q2, name: "Dunkin'"}
+    - {brand_id: Q3, name: "Tim Hortons"}
+    - {brand_id: Q4, name: "Peet's Coffee"}
+    - {brand_id: Q5, name: "Blue Bottle Coffee"}
+
+athletic_footwear:
+  category_label: athletic footwear
+  brands:
+    - {brand_id: A1, name: "Nike"}
+    - {brand_id: A2, name: "Adidas"}
+    - {brand_id: A3, name: "New Balance"}
+    - {brand_id: A4, name: "Hoka"}
+    - {brand_id: A5, name: "Asics"}

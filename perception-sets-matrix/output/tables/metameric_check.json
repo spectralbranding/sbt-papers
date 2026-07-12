@@ -1,0 +1,94 @@
+{
+  "metameric_pairs": [
+    {
+      "category": "coffee_roasters",
+      "operator": "OP2",
+      "pair": [
+        "Ember & Oak Roasters",
+        "Voltbean"
+      ],
+      "profile_distance": 6.557,
+      "pair_reading_floor": 7.018,
+      "median_abs_propensity_diff": 0.2,
+      "elicitation_floor": 0.0289,
+      "within_elicitation_floor": false
+    },
+    {
+      "category": "coffee_roasters",
+      "operator": "OP2",
+      "pair": [
+        "Voltbean",
+        "Common Ground Collective"
+      ],
+      "profile_distance": 5.766,
+      "pair_reading_floor": 7.018,
+      "median_abs_propensity_diff": 0.2,
+      "elicitation_floor": 0.0289,
+      "within_elicitation_floor": false
+    },
+    {
+      "category": "coffee_roasters",
+      "operator": "OP2",
+      "pair": [
+        "Voltbean",
+        "Maison Noir Caf\u00e9"
+      ],
+      "profile_distance": 6.305,
+      "pair_reading_floor": 7.018,
+      "median_abs_propensity_diff": 0.2,
+      "elicitation_floor": 0.0289,
+      "within_elicitation_floor": false
+    },
+    {
+      "category": "coffee_roasters",
+      "operator": "OP2",
+      "pair": [
+        "Voltbean",
+        "Fairmile Coffee"
+      ],
+      "profile_distance": 4.0,
+      "pair_reading_floor": 7.018,
+      "median_abs_propensity_diff": 0.1,
+      "elicitation_floor": 0.0289,
+      "within_elicitation_floor": false
+    },
+    {
+      "category": "athletic_footwear",
+      "operator": "OP5",
+      "pair": [
+        "Nike",
+        "Adidas"
+      ],
+      "profile_distance": 1.414,
+      "pair_reading_floor": 2.179,
+      "median_abs_propensity_diff": 0.1,
+      "elicitation_floor": 0.0346,
+      "within_elicitation_floor": false
+    },
+    {
+      "category": "athletic_footwear",
+      "operator": "OP6",
+      "pair": [
+        "Nike",
+        "Adidas"
+      ],
+      "profile_distance": 2.693,
+      "pair_reading_floor": 2.915,
+      "median_abs_propensity_diff": 0.1,
+      "elicitation_floor": 0.0679,
+      "within_elicitation_floor": false
+    }
+  ],
+  "per_category_floor_summary": {
+    "coffee_roasters": {
+      "median_reading_floor": 1.061
+    },
+    "qsr_coffee": {
+      "median_reading_floor": 1.118
+    },
+    "athletic_footwear": {
+      "median_reading_floor": 0.866
+    }
+  },
+  "n_metameric_pairs": 6
+}

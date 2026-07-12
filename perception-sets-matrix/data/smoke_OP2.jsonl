@@ -1,0 +1,2 @@
+{"record_key": "smoke|OP2", "arm": "smoke", "operator": "OP2", "model": "claude-haiku-4-5-20251001", "family": "anthropic", "cohort_id": "coffee_roasters_C01", "payload": [4.5, 6.0, 8.5, 7.5, 5.0, 6.5, 6.5, 2.5], "ts": "2026-07-12T09:34:51.135817+00:00"}
+{"record_key": "smoke|OP2", "arm": "smoke", "operator": "OP2", "model": "claude-haiku-4-5-20251001", "family": "anthropic", "cohort_id": "coffee_roasters_C01", "payload": [3.5, 6.0, 8.5, 7.5, 5.0, 6.0, 6.5, 2.0], "ts": "2026-07-12T09:38:11.834287+00:00"}

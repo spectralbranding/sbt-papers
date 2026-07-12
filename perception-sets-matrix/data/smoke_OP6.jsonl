@@ -1,0 +1,2 @@
+{"record_key": "smoke|OP6", "arm": "smoke", "operator": "OP6", "model": "deepseek-v4-flash", "family": "deepseek", "cohort_id": "coffee_roasters_C01", "payload": [3.0, 5.0, 7.0, 6.0, 4.0, 5.0, 5.0, 2.0], "ts": "2026-07-12T09:36:50.863811+00:00"}
+{"record_key": "smoke|OP6", "arm": "smoke", "operator": "OP6", "model": "deepseek-v4-flash", "family": "deepseek", "cohort_id": "coffee_roasters_C01", "payload": [7.0, 5.0, 8.0, 6.0, 4.0, 5.0, 5.0, 2.0], "ts": "2026-07-12T09:41:07.841554+00:00"}

@@ -1,0 +1,2 @@
+{"record_key": "smoke|OP3", "arm": "smoke", "operator": "OP3", "model": "gpt-5.5-2026-04-23", "family": "openai", "cohort_id": "coffee_roasters_C01", "payload": [3.0, 5.0, 6.5, 6.0, 4.0, 5.5, 5.0, 2.0], "ts": "2026-07-12T09:35:01.212048+00:00"}
+{"record_key": "smoke|OP3", "arm": "smoke", "operator": "OP3", "model": "gpt-5.5-2026-04-23", "family": "openai", "cohort_id": "coffee_roasters_C01", "payload": [3.0, 5.0, 6.5, 6.0, 4.0, 5.5, 5.0, 2.0], "ts": "2026-07-12T09:38:18.300185+00:00"}

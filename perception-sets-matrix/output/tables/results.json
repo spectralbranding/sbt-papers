@@ -1,0 +1,342 @@
+{
+  "seed": 20260712,
+  "n_permutations": 10000,
+  "operators": {
+    "OP1": {
+      "F1_icc": 0.99,
+      "F2_sumcheck_rate": 0.9,
+      "F2_juster_tau": 0.843,
+      "F3_mad": 0.736,
+      "F4_failure_rate": 0.0769,
+      "passes": {
+        "F1": true,
+        "F2": false,
+        "F3": true,
+        "F4": false
+      },
+      "pass_all": false
+    },
+    "OP2": {
+      "F1_icc": 0.933,
+      "F2_sumcheck_rate": 1.0,
+      "F2_juster_tau": 0.853,
+      "F3_mad": 1.163,
+      "F4_failure_rate": 0.0,
+      "passes": {
+        "F1": true,
+        "F2": true,
+        "F3": true,
+        "F4": true
+      },
+      "pass_all": true
+    },
+    "OP3": {
+      "F1_icc": 0.994,
+      "F2_sumcheck_rate": 1.0,
+      "F2_juster_tau": 0.85,
+      "F3_mad": 1.021,
+      "F4_failure_rate": 0.0,
+      "passes": {
+        "F1": true,
+        "F2": true,
+        "F3": true,
+        "F4": true
+      },
+      "pass_all": true
+    },
+    "OP4": {
+      "F1_icc": 0.967,
+      "F2_sumcheck_rate": 1.0,
+      "F2_juster_tau": 0.788,
+      "F3_mad": 1.156,
+      "F4_failure_rate": 0.0,
+      "passes": {
+        "F1": true,
+        "F2": true,
+        "F3": true,
+        "F4": true
+      },
+      "pass_all": true
+    },
+    "OP5": {
+      "F1_icc": 0.931,
+      "F2_sumcheck_rate": 1.0,
+      "F2_juster_tau": 0.894,
+      "F3_mad": 1.188,
+      "F4_failure_rate": 0.005,
+      "passes": {
+        "F1": true,
+        "F2": true,
+        "F3": true,
+        "F4": true
+      },
+      "pass_all": true
+    },
+    "OP6": {
+      "F1_icc": 0.919,
+      "F2_sumcheck_rate": 1.0,
+      "F2_juster_tau": 0.914,
+      "F3_mad": 0.899,
+      "F4_failure_rate": 0.0,
+      "passes": {
+        "F1": true,
+        "F2": true,
+        "F3": true,
+        "F4": true
+      },
+      "pass_all": true
+    }
+  },
+  "categories": {
+    "coffee_roasters": {
+      "study": 1,
+      "operators_used": [
+        "OP2",
+        "OP3",
+        "OP4",
+        "OP5",
+        "OP6"
+      ],
+      "n_cohorts_per_op": {
+        "OP2": 10,
+        "OP3": 10,
+        "OP4": 10,
+        "OP5": 10,
+        "OP6": 10
+      },
+      "per_operator_tau_b": {
+        "OP2": 0.072,
+        "OP3": 0.33,
+        "OP4": 0.355,
+        "OP5": 0.235,
+        "OP6": 0.323
+      },
+      "pooled_tau_b": 0.323,
+      "permutation_p_one_sided": 0.0001,
+      "category_level_pass": true,
+      "isotonic_R2_pooled": 0.118,
+      "same_call_tau": 0.32,
+      "delta_tau_common_method": -0.002,
+      "delta_tau_w": -0.196,
+      "delta_tau_w_p_positive": 0.999,
+      "delta_tau_w_p_negative": 0.0015,
+      "robustness": {
+        "cosine_pooled_tau": 0.381,
+        "spearman_pooled": 0.413,
+        "leave_one_brand_out": {
+          "min": 0.222,
+          "max": 0.352
+        },
+        "leave_one_operator_out": {
+          "min": 0.279,
+          "max": 0.326
+        },
+        "brand_fixed_effects_pooled_tau": 0.196,
+        "random_profile_pooled_tau": 0.034
+      },
+      "induced_matrix": {
+        "S": 11.788,
+        "s": [
+          0.218,
+          0.2369,
+          0.2432,
+          0.0755,
+          0.0419,
+          0.1845
+        ],
+        "diagonal": [
+          0.2792,
+          0.2966,
+          0.3024,
+          0.1478,
+          0.1168,
+          0.2483
+        ],
+        "dj_diag_vs_observed_repeat_tau": 0.867,
+        "observed_repeat_by_brand": {
+          "Ember & Oak Roasters": 0.305,
+          "Voltbean": 0.248,
+          "Common Ground Collective": 0.327,
+          "DailyDrip": 0.199,
+          "Maison Noir Caf\u00e9": 0.122,
+          "Fairmile Coffee": 0.209
+        }
+      },
+      "band": {
+        "mass": 0.477,
+        "cohort_dispersion": 10.653
+      }
+    },
+    "qsr_coffee": {
+      "study": 2,
+      "operators_used": [
+        "OP2",
+        "OP3",
+        "OP4",
+        "OP5",
+        "OP6"
+      ],
+      "n_cohorts_per_op": {
+        "OP2": 10,
+        "OP3": 10,
+        "OP4": 10,
+        "OP5": 10,
+        "OP6": 10
+      },
+      "per_operator_tau_b": {
+        "OP2": 0.214,
+        "OP3": 0.14,
+        "OP4": 0.104,
+        "OP5": 0.299,
+        "OP6": 0.375
+      },
+      "pooled_tau_b": 0.214,
+      "permutation_p_one_sided": 0.0002,
+      "category_level_pass": true,
+      "isotonic_R2_pooled": 0.118,
+      "same_call_tau": 0.207,
+      "delta_tau_common_method": -0.006,
+      "delta_tau_w": -0.071,
+      "delta_tau_w_p_positive": 0.8211,
+      "delta_tau_w_p_negative": 0.1794,
+      "robustness": {
+        "cosine_pooled_tau": 0.207,
+        "spearman_pooled": 0.297,
+        "leave_one_brand_out": {
+          "min": 0.178,
+          "max": 0.318
+        },
+        "leave_one_operator_out": {
+          "min": 0.177,
+          "max": 0.256
+        },
+        "brand_fixed_effects_pooled_tau": 0.255,
+        "random_profile_pooled_tau": 0.084
+      },
+      "induced_matrix": {
+        "S": 21.161,
+        "s": [
+          0.2697,
+          0.2137,
+          0.1224,
+          0.1929,
+          0.2012
+        ],
+        "diagonal": [
+          0.3027,
+          0.2492,
+          0.162,
+          0.2294,
+          0.2373
+        ],
+        "dj_diag_vs_observed_repeat_tau": 0.0,
+        "observed_repeat_by_brand": {
+          "Starbucks": 0.348,
+          "Dunkin'": 0.365,
+          "Tim Hortons": 0.277,
+          "Peet's Coffee": 0.386,
+          "Blue Bottle Coffee": 0.357
+        }
+      },
+      "band": {
+        "mass": 0.408,
+        "cohort_dispersion": 10.662
+      }
+    },
+    "athletic_footwear": {
+      "study": 2,
+      "operators_used": [
+        "OP2",
+        "OP3",
+        "OP4",
+        "OP5",
+        "OP6"
+      ],
+      "n_cohorts_per_op": {
+        "OP2": 10,
+        "OP3": 10,
+        "OP4": 10,
+        "OP5": 10,
+        "OP6": 10
+      },
+      "per_operator_tau_b": {
+        "OP2": 0.018,
+        "OP3": -0.017,
+        "OP4": 0.059,
+        "OP5": -0.024,
+        "OP6": 0.074
+      },
+      "pooled_tau_b": 0.018,
+      "permutation_p_one_sided": 0.5341,
+      "category_level_pass": false,
+      "isotonic_R2_pooled": 0.038,
+      "same_call_tau": 0.053,
+      "delta_tau_common_method": 0.035,
+      "delta_tau_w": 0.02,
+      "delta_tau_w_p_positive": 0.3018,
+      "delta_tau_w_p_negative": 0.6987,
+      "robustness": {
+        "cosine_pooled_tau": 0.085,
+        "spearman_pooled": 0.052,
+        "leave_one_brand_out": {
+          "min": -0.023,
+          "max": 0.079
+        },
+        "leave_one_operator_out": {
+          "min": 0.001,
+          "max": 0.038
+        },
+        "brand_fixed_effects_pooled_tau": 0.125,
+        "random_profile_pooled_tau": 0.038
+      },
+      "induced_matrix": {
+        "S": 29.598,
+        "s": [
+          0.2358,
+          0.2093,
+          0.2297,
+          0.1504,
+          0.1748
+        ],
+        "diagonal": [
+          0.2607,
+          0.2352,
+          0.2549,
+          0.1782,
+          0.2018
+        ],
+        "dj_diag_vs_observed_repeat_tau": 0.4,
+        "observed_repeat_by_brand": {
+          "Nike": 0.287,
+          "Adidas": 0.296,
+          "New Balance": 0.36,
+          "Hoka": 0.259,
+          "Asics": 0.24
+        }
+      },
+      "band": {
+        "mass": 0.04,
+        "cohort_dispersion": 10.813
+      }
+    }
+  },
+  "floor_passing_operators": [
+    "OP2",
+    "OP3",
+    "OP4",
+    "OP5",
+    "OP6"
+  ],
+  "K4_instrument_failure": false,
+  "kill_conditions": {
+    "K1_no_link": false,
+    "K2_operator_unstable": false,
+    "K3_common_method_artifact": false,
+    "K4_instrument_failure": false
+  },
+  "family_pooled_tau": {
+    "anthropic": 0.072,
+    "openai": 0.122,
+    "deepseek": 0.267
+  }
+}

@@ -1,0 +1,271 @@
+# STIMULI_STUDY1.yaml — frozen Study-1 stimulus packs (2026bf)
+#
+# Six SYNTHETIC specialty-coffee-roaster brands, each authored to a TARGET
+# eight-dimensional profile (dimension order: Semiotic, Narrative,
+# Ideological, Experiential, Social, Economic, Cultural, Temporal; scale
+# [1,10]; Economic high = value/affordability positioning, low = premium
+# pricing; Temporal high = heritage, low = novelty).
+#
+# Frozen at design freeze 2026-07-12. Stimulus validity gate: reading
+# operators must recover each target within MAD <= 1.5 scale points per
+# dimension (pack means over validation replicates) BEFORE the propensity
+# arm runs; packs failing recovery are re-authored under an append-only
+# AMENDMENTS note here.
+
+category: specialty coffee roasters
+brands:
+  - brand_id: B1
+    name: "Ember & Oak Roasters"
+    archetype: heritage-craft premium
+    target_profile: [8.5, 8.0, 5.5, 9.0, 6.5, 3.0, 7.0, 9.0]
+    positioning_page: >-
+      Ember & Oak has roasted coffee in the same red-brick riverside
+      roastery since 1927. Four generations of the Hartwell family have
+      kept the original cast-iron drum roasters running, and every bag
+      still carries the hand-stamped oak-leaf seal that Elsie Hartwell cut
+      into linoleum during the Depression. The story is told slowly —
+      ninety-six years of roast logs bound in leather, apprenticeships
+      that last three years, a tasting room lined with photographs of the
+      founders' river barges. The coffee itself is treated with the
+      seriousness of wine: single-estate lots, roast profiles tuned by
+      hand to each harvest, cupping notes written for every batch, and a
+      brew guide that specifies water chemistry to the milligram. That
+      craft costs what it costs — a bag of Ember & Oak runs roughly twice
+      the supermarket price, and the company is unapologetic about it.
+      Regulars treat membership in the roastery's subscription as a quiet
+      mark of taste. Sourcing is done through long-standing estate
+      relationships the company describes as fair and personal, though it
+      wears no certification badges and makes no campaign of it.
+    artifacts:
+      - kind: instagram_post
+        text: >-
+          The 1927 drum, still turning. Batch no. 41,212 in the log — a
+          washed Yirgacheffe roasted the way Elsie wrote it down in 1953.
+          Stamped, sealed, numbered. If you know, you know. #EmberAndOak
+          #NinetySixYears
+      - kind: customer_review
+        text: >-
+          Five stars. You taste the difference in the first cup — apricot,
+          honey, a finish that lasts minutes. It is absolutely not cheap,
+          and honestly that's part of why I gift it: the oak-leaf seal on
+          that heavy paper bag says something before it's even opened. The
+          tasting room feels like a museum of coffee done right.
+      - kind: press_blurb
+        text: >-
+          In an era of pop-up roasters, Ember & Oak's century-old roastery
+          is a study in patience: heirloom equipment, three-year
+          apprenticeships, and a price tag that assumes you care. The
+          Hartwells' fourth generation isn't chasing trends — the trends
+          keep circling back to them.
+
+  - brand_id: B2
+    name: "Voltbean"
+    archetype: tech-novelty subscription
+    target_profile: [6.5, 5.5, 4.0, 7.0, 5.0, 6.0, 6.5, 1.5]
+    positioning_page: >-
+      Voltbean launched eighteen months ago and behaves like a software
+      company that happens to roast coffee. Beans are roasted to order by
+      a sensor-tuned fluid-bed system, profiled by an algorithm the team
+      retrains weekly, and shipped within four hours of roasting in a
+      matte charge-port-yellow pouch with a QR code that opens the batch's
+      full telemetry — bean origin, roast curve, even the humidity in the
+      roastery that morning. The app is the product as much as the coffee:
+      taste-matching quizzes, brew timers that learn, a feed where the
+      roast algorithm's release notes read like changelogs. The look is
+      sharp and consistent — the lightning-bean glyph shows up on pouches,
+      cold-brew cans, and the delivery e-bikes. Pricing lands mid-market:
+      a subscription costs about what a decent supermarket bag does once
+      the intro discount settles, which the founders present as the point
+      — fresh-roasted, data-tuned coffee at an ordinary price. Values
+      messaging is light: some talk of low-energy roasting, nothing
+      crusading. Voltbean is loudly, deliberately new, and it says so.
+    artifacts:
+      - kind: instagram_post
+        text: >-
+          v2.7 of the roast model ships today. Slightly longer
+          development on the naturals, brighter florals on the washed
+          lots. Scan your pouch for the new curve. Coffee should update
+          like everything else you love. #Voltbean #RoastOTA
+      - kind: customer_review
+        text: >-
+          Four stars. The cup quality genuinely surprised me — vivid,
+          clean, consistently good — and the app's brew timer is weirdly
+          addictive. Price is fair for what you get. It has zero
+          heritage-romance about it, which I actually find refreshing:
+          it's just very fresh coffee run by nerds.
+      - kind: press_blurb
+        text: >-
+          The fastest-growing name in mail-order coffee is a startup that
+          publishes release notes for its roast algorithm. Voltbean's
+          pitch — telemetry-tuned freshness at a supermarket-adjacent
+          price — has made its yellow pouch a fixture of tech-desk
+          unboxing videos this year.
+
+  - brand_id: B3
+    name: "Common Ground Collective"
+    archetype: activist-community
+    target_profile: [5.0, 7.5, 9.5, 6.0, 8.5, 5.5, 6.0, 5.0]
+    positioning_page: >-
+      Common Ground Collective is a worker-owned roastery organized
+      around one conviction: coffee is a justice issue before it is a
+      taste experience. Founded a decade ago out of a fair-trade
+      organizing campaign, the collective buys exclusively from smallholder
+      cooperatives at published prices — the full ledger of what every
+      farm was paid is printed on the inside of each bag flap and posted
+      online. Members vote on sourcing, wages are equal across the
+      roastery, and a fixed share of revenue funds land-rights legal aid
+      in producing regions. The story of each partner cooperative is told
+      at length — newsletters read like field reports, and the annual
+      Harvest Assembly brings farmers to speak in the roastery. Buying
+      Common Ground is, for its regulars, a public act: the raised-fist
+      cup logo shows up on tote bags at markets and rallies, and the
+      cafe doubles as a meeting hall. The coffee is solid and carefully
+      roasted, if not chasing competition scores, and the price sits a
+      notch above mid-market — framed plainly as the cost of paying
+      people properly.
+    artifacts:
+      - kind: instagram_post
+        text: >-
+          The numbers are on the bag, like always: Finca La Union was paid
+          2.4x the commodity rate for this lot. Vote on the spring
+          sourcing slate closes Friday — members, check your inboxes.
+          Solidarity tastes better. ✊☕ #CommonGroundCollective
+      - kind: customer_review
+        text: >-
+          Five stars, but not really about the flavor — the coffee is
+          good, reliably good, without being showy. I buy it because I
+          know exactly where the money went, down to the dollar, and
+          because the Tuesday organizing nights at the cafe gave me half
+          my neighborhood friendships. You wear this brand as much as
+          drink it.
+      - kind: press_blurb
+        text: >-
+          Common Ground Collective has turned radical transparency into a
+          business model: published farmgate prices, worker-owners, and a
+          customer base that treats the raised-fist cup as a badge. Critics
+          call it coffee-as-politics; the collective's answer is that
+          coffee always was.
+
+  - brand_id: B4
+    name: "DailyDrip"
+    archetype: mass-value convenience
+    target_profile: [3.0, 2.5, 2.0, 4.5, 3.0, 9.5, 4.0, 3.5]
+    positioning_page: >-
+      DailyDrip sells one thing: dependable coffee at the lowest price it
+      can manage. The house line comes in three roasts — Light, Medium,
+      Dark — in plain white bags with a brown droplet mark and the price
+      printed large, because the price is the message. A 2-pound bag
+      costs less than most competitors' 12-ounce offering; the everyday
+      subscription knocks off a further tenth and ships free. There is no
+      founder story to speak of — the company started as a warehouse-club
+      supplier a few years back and says so in one sentence on the
+      website's About page. Marketing is a weekly price flyer. The coffee
+      is blended for consistency rather than character: batch-tested to
+      taste the same in January as in July, inoffensive black, fine with
+      milk. Reviews describe it with words like "solid," "fine," and
+      "does the job," which the brand happily reprints. There are no
+      certifications, no manifesto, no limited drops — just stock levels,
+      a price-per-cup calculator on the homepage, and a promise that the
+      subscription price won't move this year.
+    artifacts:
+      - kind: instagram_post
+        text: >-
+          Math time: DailyDrip Medium works out to 11 cents a cup. Your
+          corner cafe charges 27x that. We'll wait. Free shipping on the
+          2-pack this week. #DailyDrip #CoffeeMath
+      - kind: customer_review
+        text: >-
+          Four stars. Look, it's not going to win awards — it tastes like
+          normal, decent coffee, every single time. But I stopped doing
+          the math against other brands because nothing comes close per
+          pound. Subscription arrives like clockwork. It does the job.
+      - kind: press_blurb
+        text: >-
+          DailyDrip's pitch is almost aggressively boring — three roasts,
+          one low price, zero story — and it is working: the
+          warehouse-supplier-turned-brand now moves more volume than
+          roasters with a hundred times its Instagram following.
+
+  - brand_id: B5
+    name: "Maison Noir Café"
+    archetype: luxury-status
+    target_profile: [9.5, 7.0, 3.5, 8.5, 9.0, 1.5, 8.0, 7.5]
+    positioning_page: >-
+      Maison Noir Café occupies the space where coffee becomes an object
+      of couture. The house, founded in Paris some four decades ago and
+      long associated with the fashion calendar, sells its coffees the
+      way a maison sells fragrance: numbered cuvées in lacquered black
+      tins embossed with the double-M monogram, seasonal collections
+      unveiled at invitation-only salons, collaborations with named
+      ceramicists whose cups sell out in hours. The cafes — Paris, Tokyo,
+      New York — are marble-and-brass rooms where the espresso arrives on
+      a silver tray and the queue outside is part of the theater. The
+      product is genuinely fastidious: rare micro-lots, a resident
+      champion barista who trains every location's staff, water filtered
+      to the house's own standard. But what Maison Noir sells above all
+      is the monogram — being seen with the black tin, gifting it,
+      photographing it. Prices are set accordingly: a tin costs five to
+      eight times the specialty average, and limited cuvées trade above
+      retail. Sustainability language exists in the fine print, elegant
+      and brief.
+    artifacts:
+      - kind: instagram_post
+        text: >-
+          Cuvée No. 9, in the black lacquer tin. Eight hundred tins
+          worldwide, each numbered by hand. The Tokyo salon opens its
+          doors Thursday, by invitation. #MaisonNoirCafe #CuveeNo9
+      - kind: customer_review
+        text: >-
+          Five stars for the experience, which is the point. The espresso
+          is impeccable — silky, precise — but let's be honest: you're
+          buying the monogram, the tray, the moment the tin comes out at
+          a dinner party. It costs a small fortune and everyone I've
+          gifted it to remembers it.
+      - kind: press_blurb
+        text: >-
+          Maison Noir has done for coffee what the great houses did for
+          handbags: the numbered cuvées resell above retail, the salon
+          openings draw the front row, and the black tin has become
+          shorthand for a certain kind of taste — at a price that makes
+          taste the smallest part of the purchase.
+
+  - brand_id: B6
+    name: "Fairmile Coffee"
+    archetype: balanced middle
+    target_profile: [5.5, 5.0, 5.5, 6.0, 5.0, 6.5, 5.0, 5.5]
+    positioning_page: >-
+      Fairmile Coffee is a regional roaster that has spent fifteen
+      unhurried years being reliably good at everything and extreme at
+      nothing. The branding is pleasant and recognizable — a green
+      milestone marker on a cream bag — without trying to be iconic. The
+      website tells the founding story in a warm paragraph: two friends,
+      a secondhand roaster, a promise to keep prices honest; it doesn't
+      labor the point. Sourcing is responsibly done and certified where
+      it counts, mentioned on the bag in a line, not a manifesto. The
+      coffee is well made — fresh, balanced blends and a rotating single
+      origin that locals genuinely like — priced a shade above the
+      supermarket and comfortably below the cult roasters, which the
+      company calls fair for what's in the bag. Fairmile shows up at the
+      county fair, sponsors the local half-marathon, gets a friendly
+      write-up in the regional paper most years. People recommend it
+      without evangelizing: it's the sensible default, the bag you keep
+      coming back to, current enough, traditional enough, and honestly
+      priced.
+    artifacts:
+      - kind: instagram_post
+        text: >-
+          The autumn blend is back — same balance you know, a little
+          cocoa, a little orange. See us at the harvest fair this
+          weekend, first pour is on us. #FairmileCoffee
+      - kind: customer_review
+        text: >-
+          Four stars. It's just good, dependable coffee at a fair price —
+          nicer than the supermarket stuff, without the fuss or the
+          markup of the fancy roasters. The story's sweet, the bag looks
+          nice on the shelf, and I've reordered maybe twenty times.
+      - kind: press_blurb
+        text: >-
+          Fairmile Coffee keeps quietly doing what regional roasters are
+          supposed to do: solid coffee, honest prices, a booth at the
+          fair. Fifteen years in, the milestone-marker bag has become the
+          area's default answer to "what should I buy?"

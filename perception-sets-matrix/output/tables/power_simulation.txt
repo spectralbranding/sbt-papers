@@ -1,0 +1,7 @@
+seed=20260712 sims=1000 perms=1000 alpha=0.05
+config                                          power  median tau_b
+Study 1, per operator, tau=.30                  0.952         0.302
+Study 1, per operator, tau=.20                  0.702         0.205
+Study 1, pooled 4 operators, tau=.20            0.980         0.203
+Study 2, per operator, tau=.30                  0.910         0.308
+Study 2, pooled 4 operators, tau=.20            0.952         0.204

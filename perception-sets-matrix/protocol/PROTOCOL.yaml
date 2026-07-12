@@ -1,0 +1,113 @@
+# PROTOCOL.yaml — frozen campaign protocol (2026bf, Perception Sets the Matrix)
+# Frozen at design freeze 2026-07-12; append-only AMENDMENTS section at the
+# bottom. Checksums of the frozen layer set live in FREEZE_RECORD.md.
+
+protocol_version: psm/1.0.0
+seed: 20260712
+
+dimensions: [semiotic, narrative, ideological, experiential, social, economic, cultural, temporal]
+scale: [1, 10]
+
+operators:
+  - {id: OP1, family: anthropic, model: claude-sonnet-5}
+  - {id: OP2, family: anthropic, model: claude-haiku-4-5-20251001}
+  - {id: OP3, family: openai, model: gpt-5.5-2026-04-23}
+  - {id: OP4, family: openai, model: gpt-5.4-mini-2026-03-17}
+  - {id: OP5, family: deepseek, model: deepseek-v4-pro}
+  - {id: OP6, family: deepseek, model: deepseek-v4-flash}
+reserves:
+  - {id: OP7, family: alibaba, model: qwen3.7-max-2026-06-08}
+  - {id: OP8, family: alibaba, model: qwen3.6-flash-2026-04-16}
+replacement_rule: >-
+  A reserve substitutes a primary ONLY on hard API unavailability at
+  collection (endpoint or model retired / all retries exhausted on every
+  call). Floor failure is demotion, never substitution.
+
+validation_operators: [OP1, OP3]   # stimulus-pack recovery gate, pre-campaign
+
+categories:
+  coffee_roasters: {study: 1, mode: pack, brands_file: STIMULI_STUDY1.yaml}
+  qsr_coffee: {study: 2, mode: elicited, brands_file: BRANDS_STUDY2.yaml}
+  athletic_footwear: {study: 2, mode: elicited, brands_file: BRANDS_STUDY2.yaml}
+
+arms:
+  validate_stimuli: {replicates: 3}  # validation operators x 6 packs x r
+  cohort_validation: {replicates: 1} # persona text -> 8-vector, per operator
+  brand_readings: {replicates: 3}    # cohort-unconditioned
+  eliciting: {replicates: 3}         # constant-sum + juster + switching probe
+  same_call: {replicates: 1}         # joint readings + allocation, one call
+
+# Floors F1/F3 are computed from the campaign's own reading arm — no separate
+# floor calls. Pre-freeze correction 2026-07-12: the canonical five corpus
+# profiles are ILLUSTRATIVE (2026d Table 5 notes + stated limitation), not
+# measurements, and cannot serve as recovery ground truth; F3's ground truth
+# is the authored Study-1 pack targets (known by construction).
+floors:
+  F1_icc_min: 0.60          # ICC(2,1), operator's own repeated brand readings
+  F2_sumcheck_rate: 0.95    # constant-sum passes (sum == 10 after parse)
+  F2_juster_tau_min: 0.5    # Juster vs constant-sum rank agreement, within op
+  F3_mad_max: 1.5           # Study-1 pack means vs authored targets, per dim
+  F4_failure_rate_max: 0.05 # refusal/malformed after retry-with-reprompt
+stimulus_gate_mad_max: 1.5  # Study-1 pack target recovery (validation ops)
+
+analysis:
+  alpha: 0.05
+  tau_floor: 0.20
+  n_permutations: 10000
+  pooling: median-across-floor-passing-operators
+  direction: positive
+  d_max_euclidean: 25.455844122715710  # 9 * sqrt(8)
+  weighted_d_max: 9.0
+  band_rule: middle-tercile-of-fitted-link
+  dirichlet_s_rule: >-
+    s = normalized cohort-mean constant-sum shares; S by moment matching:
+    S + 1 = median over brands of s_j(1-s_j)/Var_c(p_cj), clamped to >= 1.
+  kill_conditions:
+    K1: pooled tau_b < .20 or permutation p >= .05 in BOTH study categories among floor-passing operators
+    K2: pooled per-family tau_b sign flips between floor-passing operator families
+    K3: separated-arm link null while same-call link positive
+    K4: more than half the operator pool fails floors
+
+logging:
+  logs_dir: logs          # append-only JSONL, one record per model API call
+  data_dir: data          # parsed records (append-only, resumable) + results
+  publish: >-
+    Complete call logs -> Hugging Face dataset spectralbranding/
+    perception-sets-matrix (DOI at publication); protocol layers, parsed
+    records, analysis outputs, and code -> public mirror per
+    PUBLIC_MIRROR_STANDARD.md.
+
+# AMENDMENTS (append-only; never edit the frozen body above)
+amendments:
+  - id: A1
+    date: 2026-07-12
+    stage: pre-campaign (smoke test; zero campaign calls fired)
+    change: >-
+      run_campaign.py collect_one raises the output-token cap to >= 8000 for
+      the deepseek family: thinking-tier models spend reasoning tokens before
+      content and the 2000-token cap returned empty content (smoke failure
+      OP5). Harness-technical fix only; no instrument, prompt, design, or
+      analysis change. New code/run_campaign.py SHA-256 recorded in
+      FREEZE_RECORD.md amendment note.
+  - id: A3
+    date: 2026-07-12
+    stage: during collection (8 cells pending after frozen retries)
+    change: >-
+      Same token-cap class as A1 on the Anthropic side: claude-sonnet-5 (OP1)
+      emits thinking blocks and hit stop_reason=max_tokens at the 3000-token
+      cap on the longest Study-1 eliciting/same-call prompts (4+4 cells,
+      logged). collect_one now raises the cap to >= 8000 for the anthropic
+      family as well. Harness-technical fix only; no instrument, prompt,
+      design, or analysis change; failed attempts remain in the record files
+      and count toward F4 per the frozen floor definition.
+  - id: A4
+    date: 2026-07-12
+    stage: post-collection (analysis)
+    change: >-
+      Supplementary script code/metameric_check.py implements the
+      pre-registered P4 metameric-equality check (specified in the
+      pre-registration and the paper's Results shell but omitted from the
+      frozen estimator build): operator-level metameric pairs = median-profile
+      distance below the operator's own reading floor; propensity difference
+      compared to the elicitation floor. Additive, read-only supplement; no
+      frozen primary/secondary rule changes. Output data/metameric_check.json.
