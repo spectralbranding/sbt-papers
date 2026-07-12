@@ -1,0 +1,564 @@
+# SPINE.yaml — Perception Sets the Matrix (2026bf)
+#
+# GENERATIVE spine: authored 2026-07-12 BEFORE any prose, per CLAUDE.md rule
+# 0aa (spine-first drafting protocol). The paper's studies have NOT yet run:
+# observations/measurements/findings will be FORKED in when the pre-registered
+# campaign executes (design frozen in
+# [internal path removed] at campaign start).
+# Until then the spine carries the theory layer (P/D/A/AA/C), the planned
+# method nodes, and the pre-registered falsifiers.
+
+spine_version: "0.2"
+spine_doc_version: "0.1.0"
+paper_key: "2026bf"
+provenance: generative
+title: >-
+  Perception Sets the Matrix: Spectral Match as the Generative Layer of
+  Stochastic Brand-Choice Propensities
+status: >-
+  Generative spine; prose drafted from it 2026-07-12. Pre-registered campaign
+  EXECUTED 2026-07-12 (design frozen + checksummed, FREEZE_RECORD.md;
+  amendments A1-A4); findings forked in from the frozen estimator output
+  (data/results.json, seed 20260712).
+
+thesis: |
+  The stochastic brand-choice tradition (Markov switching-matrix models; the
+  NBD-Dirichlet) takes brand-choice propensities as exogenous givens: it
+  locates the equilibrium the propensities imply but is silent on what sets
+  them. This paper proposes and tests a spectral-match linking model: at
+  cohort level, the perceptual match between an observer cohort's spectral
+  profile and a brand's profile — a similarity statistic on the
+  eight-dimensional perception space — is a monotone predictor of the cohort's
+  stated choice propensity within its category consideration set. Because a
+  propensity vector over a consideration set induces the switching structure
+  (in the zero-order Dirichlet case the entire purchase-level switching matrix
+  in closed form), the perceptual layer sets the matrix the stochastic
+  tradition starts from. The link is tested with LLM-cohort respondents under
+  strict instrument separation (perception readings and propensity elicitation
+  from disjoint operator instances), with pre-registered frozen analysis rules
+  and kill conditions. The practitioner intuition of an intermediate "movable"
+  propensity band is recovered as a derived object: the image of intermediate
+  spectral match under the monotone link.
+
+# ============================================================================
+# Assumption atoms
+# ============================================================================
+assumption_atoms:
+  - id: AA1
+    statement: >-
+      Cohort-level perception is representable as an eight-dimensional observer
+      spectral profile, and a brand as a profile on the same space, with
+      perceptual similarity well-defined by the corpus metric; the match
+      statistic m(c,b) = 1 - d(theta_c, beta_b)/d_max inherits its meaning from
+      that metric.
+    body_sections: ["Theory: The Linking Model"]
+  - id: AA2
+    statement: >-
+      Stated choice propensity elicited from LLM cohort respondents under the
+      frozen instrument is a stable measurement: reading test-retest ICC and
+      propensity coherence clear the pre-registered operator floors. This is an
+      instrument assumption that is CHECKED (floors F1-F4), not presumed.
+    body_sections: ["Method: Operator Floors"]
+  - id: AA3
+    statement: >-
+      Within-category consideration sets are sufficiently exhaustive that
+      constant-sum allocations approximate choice propensities (outside-set
+      leakage is negligible at the category grain studied).
+    body_sections: ["Method: Elicitation Instruments", "Limitations"]
+
+# ============================================================================
+# Boundary conditions
+# ============================================================================
+boundary_conditions:
+  - id: C1
+    statement: >-
+      Cohort-level claims only: all inference is at the cohort x brand cell;
+      no individual-consumer inference is made or implied.
+  - id: C2
+    statement: >-
+      Stated propensity, not behavior: the link is to stated choice
+      propensities in the Juster elicitation tradition; the
+      intentions-to-behavior calibration gap is a stated limitation, out of
+      scope.
+  - id: C3
+    statement: >-
+      Within-category consideration sets only: spectral match does not rank
+      cross-category alternatives; cross-category choice is out of scope by
+      construction.
+  - id: C4
+    statement: >-
+      LLM-cohort regularity: respondents are LLM cohort instruments, justified
+      by the LLM-as-instrument convergence literature; whether the link
+      transfers to human perceptual-choice processes is an explicitly open
+      boundary question, not a claim of this paper.
+
+# ============================================================================
+# Propositions
+# ============================================================================
+propositions:
+  - id: P1
+    statement: >-
+      (The match-propensity link) At cohort level, stated choice propensity
+      p(c,b) within a category consideration set is monotone increasing in
+      spectral match m(c,b) between the cohort's observer spectral profile and
+      the brand's profile.
+    type: empirical_finding
+    conditions: "C1, C2, C3, C4"
+    antecedents: []
+    assumptions: [AA1, AA2, AA3]
+    ruled_out_rivals: [A2]
+    evidence:
+      - type: dataset_anchor
+        anchor: >-
+          Pre-registered two-study test EXECUTED 2026-07-12 under the frozen
+          design (see ME1/F1/NF1): supported in the experimental category
+          (pooled tau_b = .323, p < .001) and in quick-service coffee
+          (tau_b = .214, p < .001); no link in athletic footwear
+          (tau_b = .018, p = .534) — P1 holds with a measured boundary where
+          real brand profiles converge (NF3).
+      - type: log_anchor
+        anchor: >-
+          Prior-art positioning: the self-congruity tradition established
+          congruence-to-preference at the attitude-scale level; this
+          proposition upgrades the object to the full eight-dimensional match
+          statistic and the full within-set propensity vector.
+        citation_keys: [sirgy-1982-selfconcept-consumer-behavior,
+                        sirgy-1997-predictive-validity-self-image-congruence]
+    falsifier: >-
+      Falsified if the pre-registered monotone association is absent (pooled
+      tau_b < .20 or permutation p >= .05) in both study categories among
+      floor-passing operators; or if the association's sign flips between
+      floor-passing operator families.
+    body_sections: ["Theory: The Linking Model", "Results: The Monotone Link"]
+  - id: P2
+    statement: >-
+      (The induced-matrix bridge) A cohort-weighted propensity vector over a
+      consideration set determines, under the zero-order Dirichlet
+      parameterization, the closed-form purchase-level switching matrix
+      P = (I + S*1s^T)/(S+1) — hence equilibrium shares and the double-jeopardy
+      diagonal. Combined with P1, the perceptual layer determines the switching
+      structure the stochastic tradition treats as exogenous: perception sets
+      the matrix.
+    type: ontological
+    conditions: "C1, C3"
+    antecedents: [P1]
+    assumptions: [AA1]
+    evidence:
+      - type: analytic
+        anchor: >-
+          Closed-form induction inherited from the corpus result that the
+          zero-order Dirichlet switching matrix has stationary distribution s,
+          affine-in-share diagonal, and spectral gap S/(S+1) with no slow
+          modes; the propensities are set upstream of the switching table.
+      - type: code_anchor
+        anchor: >-
+          Companion computation script (planned, fixed seed) mapping measured
+          propensity vectors to (S, s) and the induced matrix; double-jeopardy
+          diagonal ordering as the internal consistency check.
+    falsifier: >-
+      Falsified as a bridge if induced matrices from measured propensity
+      vectors systematically fail the double-jeopardy diagonal ordering that
+      the direct switching probes exhibit in the same data.
+    body_sections: ["Theory: From Propensities to the Matrix",
+                    "Results: The Induced Matrix"]
+  - id: P3
+    statement: >-
+      (The derived intermediate band) Under the monotone link, the
+      intermediate-propensity band is the image of intermediate spectral match,
+      and its population mass is a function of cohort-profile dispersion in the
+      category — the practitioner "movable middle" becomes a model-derived
+      prediction target rather than an imported probability cut.
+    type: ontological
+    conditions: "C1, C3"
+    antecedents: [P1]
+    assumptions: [AA1]
+    evidence:
+      - type: analytic
+        anchor: >-
+          Image-of-interval argument: monotone g maps the intermediate match
+          interval to an intermediate propensity band; band mass = mass of
+          cohorts at intermediate match, which grows with profile dispersion.
+    falsifier: >-
+      Weakened if intermediate-band mass fails to track cohort-profile
+      dispersion across the study categories (pre-registered secondary
+      analysis).
+    body_sections: ["Theory: The Intermediate Band", "Discussion"]
+  - id: P4
+    statement: >-
+      (Metameric-equality corollary) Brand pairs whose eight-dimensional
+      profiles are perceptually indistinguishable to a cohort (metameric pairs)
+      must exhibit statistically indistinguishable stated propensity vectors
+      for that cohort, whatever their signal-level differences.
+    type: empirical_finding
+    conditions: "C1, C3, C4"
+    antecedents: [P1]
+    assumptions: [AA1, AA2]
+    evidence:
+      - type: analytic
+        anchor: >-
+          Direct corollary of P1: propensity depends on the brand only through
+          the match statistic, which is invariant across a metameric pair.
+    falsifier: >-
+      Falsified if metameric pairs (profile distance below the operator floor)
+      show propensity differences exceeding the elicitation floor among
+      floor-passing operators — this would show the perceptual layer is not
+      sufficient for the propensity input, bounding P1.
+    body_sections: ["Theory: A Sharp Test", "Discussion"]
+  - id: P5
+    statement: >-
+      (Fluency auxiliary) If the monotone link is carried by processing
+      fluency — brand stimuli congruent with the cohort's activated schema are
+      processed more fluently and evaluated more favorably — then congruence
+      on the dimensions salient to the cohort should carry more of the link
+      than congruence on non-salient dimensions: spectral match computed with
+      the cohort's per-dimension salience weights predicts stated propensity
+      at least as strongly as unweighted match (pre-registered auxiliary
+      comparison delta_tau_w = tau_b(weighted) - tau_b(unweighted) >= 0 among
+      floor-passing operators).
+    type: empirical_finding
+    conditions: "C1, C3, C4"
+    antecedents: [P1]
+    assumptions: [AA1, AA2]
+    ruled_out_rivals: []
+    evidence:
+      - type: dataset_anchor
+        anchor: >-
+          Pre-registered secondary analysis in both studies: the
+          salience-weighted match variant, elevated from robustness form to
+          auxiliary mechanism probe; delta_tau_w reported with a permutation
+          interval.
+      - type: log_anchor
+        anchor: >-
+          Mechanism source: the conceptual/perceptual-fluency findings that
+          congruence with an activated schema raises processing ease and
+          evaluation.
+        citation_keys: [lee-labroo-2004-conceptual-perceptual-fluency-brand]
+    falsifier: >-
+      The fluency account is unsupported (P1 itself unaffected) if
+      salience-weighted match systematically underperforms unweighted match
+      across floor-passing operators (pooled delta_tau_w < 0 with permutation
+      p < .05) in both studies.
+    body_sections: ["Theory: Mechanism", "Results: The Monotone Link"]
+
+# ============================================================================
+# Derivations
+# ============================================================================
+derivations:
+  - id: D1
+    statement: >-
+      P2 follows from P1 plus the zero-order Dirichlet parameterization by
+      composition: match -> propensity (P1, measured) and propensity vector ->
+      switching matrix (closed form, analytic).
+    from: [P1]
+    to: P2
+    reasoning_type: deductive
+    body_sections: ["Theory: From Propensities to the Matrix"]
+  - id: D2
+    statement: >-
+      P3 follows from P1 by the image-of-interval argument for monotone maps;
+      the dispersion claim follows because band mass equals the measure of the
+      intermediate-match preimage under the cohort-profile distribution.
+    from: [P1]
+    to: P3
+    reasoning_type: deductive
+    body_sections: ["Theory: The Intermediate Band"]
+
+# ============================================================================
+# Methods — pre-registered, not yet run
+# ============================================================================
+methods:
+  - id: M1
+    statement: >-
+      Study 1 (causal core): synthetic within-category brand stimuli whose
+      eight-dimensional profiles are manipulated over a design grid; cohort
+      persona specifications span the profile space by maximin Latin hypercube;
+      match is set experimentally. Stimulus validity gated on reading-recovery
+      of target profiles within tolerance before the propensity arm runs.
+    type: survey_instrument
+    inputs: []
+    outputs: []
+    code_anchor: "PREREG_STUDY_DESIGN.md (frozen pre-registration, published with the paper's repository)"
+    body_sections: ["Method: Study 1"]
+  - id: M2
+    statement: >-
+      Study 2 (replication): two real product categories x five brands;
+      brand profiles measured in-study by reading operators; propensities
+      elicited from disjoint eliciting operators; observational replication and
+      boundary check of the Study-1 experimental link.
+    type: survey_instrument
+    inputs: []
+    outputs: []
+    code_anchor: "PREREG_STUDY_DESIGN.md (frozen pre-registration, published with the paper's repository)"
+    body_sections: ["Method: Study 2"]
+  - id: M3
+    statement: >-
+      Instrument separation protocol: perception readings and propensity
+      elicitations from disjoint operator instances sharing only the cohort
+      persona specification; a same-call contrast arm quantifies common-method
+      inflation as delta-tau = tau(same-call) - tau(separated). Frozen primary
+      analysis: Kendall tau_b over cohort x brand cells, permutation null
+      (within-cohort brand-label shuffle), median pooling across floor-passing
+      operators; frozen robustness list (cosine match, salience weights,
+      Spearman, leave-one-brand-out, leave-one-operator-out, brand fixed
+      effects, familiarity/salience controls, random-profile falsification).
+    type: statistical_analysis
+    inputs: []
+    outputs: []
+    code_anchor: "PREREG_STUDY_DESIGN.md (frozen pre-registration, published with the paper's repository)"
+    body_sections: ["Method: Separation and Frozen Analysis"]
+
+# ============================================================================
+# Measurements + findings — forked in at campaign completion (2026-07-12)
+# ============================================================================
+measurements:
+  - id: ME1
+    statement: >-
+      Pre-registered campaign executed 2026-07-12 under the frozen protocol:
+      1,292 logged model API calls (complete JSONL call log), 6 pinned
+      operators across 3 families, 3 categories (1 synthetic + 2 real), all
+      1,224 planned measurement cells completed (zero missing after the
+      frozen retry policy; harness token-cap amendments A1/A3 recorded).
+      Operator floors: 5 of 6 pass; OP1 (claude-sonnet-5) demoted on F2
+      (sum-check rate .90) and F4 (failure rate .077), traceable to the
+      amendment-A3 token-cap interaction and reported in full. Analysis by
+      the frozen seeded estimator (10,000-draw permutation nulls).
+    generating_method: [M1, M2, M3]
+    body_sections: ["Results: The Monotone Link"]
+
+findings:
+  - id: F1
+    statement: >-
+      The monotone match-propensity link is present and passes the
+      pre-registered category-level criterion in the experimental category
+      (Study 1: pooled tau_b = .323, permutation p < .001, isotonic R^2 =
+      .118, per-operator range .072-.355) and in one of two real categories
+      (quick-service coffee: pooled tau_b = .214, p < .001). Direction
+      positive as pre-registered; random-profile falsification destroys the
+      link everywhere (pooled tau .034-.084). Supports P1 within its
+      boundary (see NF1).
+    source_measurements: [ME1]
+    body_sections: ["Results: The Monotone Link"]
+  - id: F2
+    statement: >-
+      Common-method inflation is measured at approximately zero: delta_tau =
+      tau(same-call) - tau(separated) = -.002 (Study 1), -.006 (QSR coffee),
+      +.035 (athletic footwear). The separated-arm link equals the same-call
+      link where the link exists — the association is not manufactured
+      within single generations. Kill condition K3 not triggered; rival A2
+      rejected empirically.
+    source_measurements: [ME1]
+    body_sections: ["Results: The Monotone Link"]
+  - id: F3
+    statement: >-
+      Induced-matrix bridge check: measured propensity vectors map to
+      (S, s) = (11.8, shares) in Study 1, (21.2) QSR, (29.6) footwear; the
+      induced double-jeopardy diagonal ordering matches the observed
+      switching-probe repeat ordering strongly in the experimental category
+      (tau = .867), not in QSR coffee (tau = .0; niche-loyalty deviations),
+      and weakly in footwear (tau = .4). P2's bridge is supported where
+      match is experimentally set and mixed observationally.
+    source_measurements: [ME1]
+    body_sections: ["Results: The Induced Matrix"]
+  - id: F4
+    statement: >-
+      Intermediate-band mass = .477 (Study 1), .408 (QSR), .040 (footwear)
+      while designed cohort-profile dispersion is nearly constant
+      (10.65-10.81) — the space-filling design left the P3
+      dispersion-tracking secondary without leverage this campaign; band
+      mass instead tracked link strength.
+    source_measurements: [ME1]
+    body_sections: ["Results: Robustness"]
+
+negative_findings:
+  - id: NF1
+    statement: >-
+      No link in athletic footwear: pooled tau_b = .018, permutation
+      p = .534, all robustness variants near zero. A genuine boundary
+      result: the category's real brand profiles converge (see NF3), and
+      propensity variance there is set by something outside the measured
+      perceptual state.
+    source_measurements: [ME1]
+    motivates: [P4]
+    body_sections: ["Results: The Monotone Link", "Discussion"]
+  - id: NF2
+    statement: >-
+      The fluency auxiliary is unsupported: delta_tau_w = -.196 with
+      one-sided permutation p = .002 AGAINST the pre-registered direction in
+      Study 1; -.071 (p = .179) in QSR; +.020 (n.s.) in footwear.
+      Salience-weighted match predicts propensity WORSE than unweighted
+      match where the link is strongest — the salience-congruence form of
+      the fluency mechanism is disconfirmed; P1 itself is unaffected; the
+      mechanism question is reopened.
+    source_measurements: [ME1]
+    body_sections: ["Results: The Monotone Link", "Discussion"]
+  - id: NF3
+    statement: >-
+      Metameric-equality violated where exercisable (supplementary
+      pre-registered check, amendment A4): 6 operator-level metameric pairs
+      found (profile distance below the operator's reading floor); in all 6
+      the median propensity difference EXCEEDS the elicitation floor —
+      cleanest for Nike-Adidas (distance 1.41-2.69 vs floors 2.18-2.92;
+      propensity difference .10 vs floors .03-.07). P4 is falsified where
+      exercisable: the perceptual layer is not SUFFICIENT for the propensity
+      input where brand profiles converge — bounding P1's sufficiency
+      reading and cohering with the footwear null (NF1).
+    source_measurements: [ME1]
+    body_sections: ["Results: The Induced Matrix", "Discussion"]
+
+# ============================================================================
+# Alternative explanations — rivals
+# ============================================================================
+alternative_explanations:
+  - id: A1
+    statement: >-
+      (Congruity-suffices rival) The perception-to-preference link is already
+      established by the self-congruity tradition; the spectral formulation
+      adds nothing beyond a finer scale.
+    rules_out_required: [P1, P2, P3]
+    ruled_out_by: [P2, P3]
+    rules_out_status: "rejected"
+    reasoning: >-
+      The congruity tradition predicts mean preference from attitude-scale
+      congruence between self-image and brand image. It does not predict the
+      full within-category propensity vector, does not induce the switching
+      matrix or its equilibrium consequences (P2), does not derive the
+      intermediate band endogenously (P3), and makes no metameric-equality
+      prediction (P4). The linking model is the congruity insight upgraded to
+      the eight-dimensional measurement layer where it acquires stochastic-
+      tradition consequences.
+    body_sections: ["Introduction", "Theory: Prior Art"]
+  - id: A2
+    statement: >-
+      (Common-method rival) Any observed match-propensity association is
+      manufactured within a single LLM generation — intra-generation coherence,
+      not an upstream perceptual regularity.
+    rules_out_required: [P1]
+    ruled_out_by: [F2]
+    rules_out_status: "rejected"
+    reasoning: >-
+      Adjudicated by design and now by measurement: under instrument
+      separation the match statistic and the propensity come from disjoint
+      operator instances, so a single generation cannot produce the
+      correlation; the same-call contrast arm measured the inflation directly
+      at delta_tau = -.002 / -.006 / +.035 across the three categories (F2).
+      The separated-arm link equals the same-call link where the link exists;
+      kill condition K3 not triggered; rival rejected.
+    body_sections: ["Method: Separation and Frozen Analysis", "Results"]
+  - id: A3
+    statement: >-
+      (Silicon-artifact rival) The link is a regularity of LLM representations
+      that does not transfer to human perceptual-choice processes.
+    rules_out_required: [P1]
+    ruled_out_by: []
+    rules_out_status: "open"
+    reasoning: >-
+      Scoped, not resolved: C4 bounds every claim to LLM-cohort regularities;
+      the LLM-as-instrument convergence literature motivates but does not
+      guarantee transfer; homogeneity risk is separately mitigated by the
+      space-filling cohort design and operator diversity. Human replication is
+      recorded as an open boundary question.
+    body_sections: ["Limitations", "Discussion"]
+  - id: A4
+    statement: >-
+      (Reverse-path rival) Familiarity or pre-existing preference drives both
+      the perception readings and the stated propensities; perception does not
+      set propensity, something upstream sets both.
+    rules_out_required: [P1]
+    ruled_out_by: []
+    rules_out_status: "partially_ruled_out"
+    reasoning: >-
+      In Study 1 the brand profiles are experimentally manipulated on synthetic
+      brands with no pre-existing familiarity, so the match-propensity link
+      there cannot be produced by prior preference; in Study 2 the rival
+      remains live for the observational arm and is addressed by the frozen
+      familiarity/salience controls and brand fixed effects.
+    body_sections: ["Method: Study 1", "Results", "Limitations"]
+
+# ============================================================================
+# Robustness checks — pre-registered
+# ============================================================================
+robustness_checks:
+  - id: RC1
+    statement: >-
+      Frozen robustness list on the primary link: cosine in place of Euclidean
+      match; per-dimension salience weights; Spearman rho in place of Kendall
+      tau_b; leave-one-brand-out; leave-one-operator-out.
+    body_sections: ["Results: Robustness"]
+  - id: RC2
+    statement: >-
+      Study-2 confound battery: brand fixed effects; familiarity and salience
+      controls; both frozen before the campaign runs.
+    body_sections: ["Results: Robustness"]
+  - id: RC3
+    statement: >-
+      Random-profile falsification: replacing measured profiles with random
+      8-vectors must destroy the link; a surviving association would indicate
+      an artifact in the analysis pipeline.
+    body_sections: ["Results: Robustness"]
+
+# ============================================================================
+# Limitations
+# ============================================================================
+limitations:
+  - id: L1
+    statement: >-
+      Stated propensity only: no behavioral validation; the
+      intentions-to-behavior calibration gap is inherited from the stated-
+      probability elicitation tradition. Behavioral panel validation is future
+      work.
+    body_sections: ["Limitations"]
+  - id: L2
+    statement: >-
+      LLM-cohort respondents only: human replication of the link is an open
+      boundary question (C4, A3).
+    body_sections: ["Limitations"]
+  - id: L3
+    statement: >-
+      Static link: the dynamics of propensity drift as perception moves are
+      deferred to the corpus's dynamics layer; this paper measures the link at
+      a point in time.
+    body_sections: ["Limitations", "Discussion"]
+
+# ============================================================================
+# External anchors
+# ============================================================================
+external_anchors:
+  - {citation_key: ehrenberg-1965-appraisal-markov-brand-switching, role: framework_engaged, spine_nodes: [P2], note: "Markov brand-switching appraisal — the switching table as the modeling object; propensities exogenous"}
+  - {citation_key: goodhardt-1984-dirichlet-comprehensive-model, role: framework_engaged, spine_nodes: [P2], note: "NBD-Dirichlet — propensities as Dirichlet-distributed givens; equilibrium benchmarks"}
+  - {citation_key: ehrenberg-1990-double-jeopardy-revisited, role: empirical_anchor, spine_nodes: [P2], note: "Double jeopardy — the equilibrium signature the induced matrix must reproduce"}
+  - {citation_key: ehrenberg-2004-understanding-brand-performance, role: empirical_anchor, spine_nodes: [P2], note: "Dirichlet benchmarks in practice"}
+  - {citation_key: sharp-2010-how-brands-grow, role: framework_engaged, spine_nodes: [P1, P2], note: "Modern statement of the tradition; propensity heterogeneity acknowledged, unexplained"}
+  - {citation_key: sirgy-1982-selfconcept-consumer-behavior, role: prior_art, spine_nodes: [P1, A1], note: "Self-congruity review — closest prior art to the match-propensity link"}
+  - {citation_key: sirgy-1997-predictive-validity-self-image-congruence, role: prior_art, spine_nodes: [P1, A1], note: "Predictive validity of self-image congruence measures"}
+  - {citation_key: lee-labroo-2004-conceptual-perceptual-fluency-brand, role: mechanism_anchor, spine_nodes: [P1, P5], note: "Perceptual/conceptual fluency — the nominated mechanism for the monotone link; source of the P5 salience-weighting auxiliary prediction"}
+  - {citation_key: juster-1966-consumer-buying-intentions-purchase, role: method_justification, spine_nodes: [C2, M2], note: "Stated purchase-probability elicitation lineage of the propensity instrument (11-point scale)"}
+  - {citation_key: morwitz-2007-when-purchase-intentions-predict, role: empirical_anchor, spine_nodes: [C2, L1], note: "Intentions-to-behavior calibration gap bounding the stated-propensity claim"}
+  - {citation_key: aaker-1991-managing-brand-equity, role: prior_art, spine_nodes: [A1], note: "Equity-hierarchy tradition — the declared one-paragraph contrast with the spectral-match statistic"}
+  - {citation_key: keller-1993-conceptualizing-measuring-managing, role: prior_art, spine_nodes: [A1], note: "Customer-based brand equity — attitude-to-intention hierarchy contrasted with the match-propensity link"}
+  - {citation_key: gilardi-2023-chatgpt-outperforms-crowd, role: method_justification, spine_nodes: [P1], note: "LLM-as-instrument baseline justification (C4)"}
+  - {citation_key: ziems-2024-can-large-language-models, role: method_justification, spine_nodes: [P1], note: "LLM roles and limits in computational social science (C4)"}
+  - {citation_key: jiang-2025-artificial-hivemind, role: method_justification, spine_nodes: [P1], note: "Homogeneity/variance-collapse caveat behind the space-filling cohort design"}
+  - {citation_key: maier-2025-llms-reproduce-purchase-intent, role: method_justification, spine_nodes: [P1, A3], note: "LLM synthetic respondents reproduce human purchase-intent distributions — convergence evidence specific to the stated-propensity instrument (C4 scoping)"}
+
+# ============================================================================
+# Corpus precedents
+# ============================================================================
+corpus_precedents:
+  - {citation_key: zharnikov-2026-spectral-brand-theory-computational-framework, role: extends, spine_nodes: [P1, AA1], claim: "The eight-dimensional perception space and cohort construct this paper links to choice"}
+  - {citation_key: zharnikov-2026-brand-space-geometry-formal-metric, role: applies, spine_nodes: [P1, AA1], claim: "The metric under the match statistic"}
+  - {citation_key: zharnikov-2026-restoring-perceptual-separability-after-coherence, role: extends, spine_nodes: [P2], claim: "The closed-form zero-order Dirichlet switching matrix and the upstream-propensity statement this paper answers constructively"}
+  - {citation_key: zharnikov-2026-spectral-metamerism-brand-perception-projection, role: tests, spine_nodes: [P4], claim: "Metameric pairs ground the sharp equal-propensity corollary"}
+  - {citation_key: zharnikov-2026az-prism-m-metamerism, role: applies, spine_nodes: [M1, M2, M3], claim: "Pre-registered LLM-instrument design template: floors, frozen rules, logging"}
+  - {citation_key: zharnikov-2026ax-brand-spectrometer, role: applies, spine_nodes: [M1, M2], claim: "Reading-methodology lineage; the propensity elicitation is a study instrument, not an instrument-claim extension"}
+  - {citation_key: zharnikov-2026-cohort-boundaries-high-dimensional-perception, role: applies, spine_nodes: [AA1, M1], claim: "The cohort-level unit of analysis and the space-filling profile design over the perception space"}
+  - {citation_key: zharnikov-2026-non-ergodic-brand-perception-why, role: applies, spine_nodes: [P3], claim: "Aggregate tracking masks cohort heterogeneity — the heterogeneity the Dirichlet tradition models without explaining"}
+  - {citation_key: zharnikov-2026-geometric-approaches-brand-perception-critical, role: applies, spine_nodes: [AA1], claim: "Critical survey positioning the spectral space among geometric brand-perception approaches"}
+  - {citation_key: zharnikov-2026as-prism-structured-measurement, role: applies, spine_nodes: [M3], claim: "Structured-elicitation precedent within the pre-registered instrument family"}
+
+# ============================================================================
+# Open questions
+# ============================================================================
+
+# ============================================================================
+# Spine changelog — append-only (dropped on public export)
+# ============================================================================

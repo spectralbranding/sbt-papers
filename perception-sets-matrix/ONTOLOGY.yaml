@@ -1,0 +1,48 @@
+# ONTOLOGY.yaml module - 2026bf (Perception Sets the Matrix)
+#
+# Per-paper ontology module per [internal path removed]
+# §"ONTOLOGY.yaml schema (v0.1)". owns = terms THIS paper introduces (unique
+# authority); imports = terms owned by other modules it uses (reference only).
+#
+# 2026bf supplies the generative layer under the stochastic brand-choice
+# tradition's exogenous switching propensities: it owns the match statistic,
+# the monotone link, the induced-matrix bridge, and the model-derived
+# intermediate band; it imports the perception-space substrate (cohort,
+# observer spectral profile, dimensions) and the metamerism concept for the
+# sharp corollary.
+
+paper_key: 2026bf
+schema_version: 0.1
+
+owns:
+  - term_key: spectral-match
+    label: "Spectral match"
+    canonical_form: "spectral match"
+    definition: "The cohort-level similarity statistic m(c,b) = 1 − d(θ_c, β_b)/d_max between an observer cohort's spectral profile θ_c and a brand's profile β_b on the eight-dimensional perception space, with d the corpus metric (Euclidean primary; cosine and salience-weighted variants as frozen robustness forms)."
+    first_section: "Theory: The Linking Model"
+  - term_key: match-propensity-link
+    label: "Match–propensity link"
+    canonical_form: "match–propensity link"
+    definition: "The monotone mapping p(c,b) = g(m(c,b)) from cohort-level spectral match to the cohort's stated choice propensity for the brand within its category consideration set; g is estimated isotonically, with no parametric form imposed at the primary test."
+    first_section: "Theory: The Linking Model"
+  - term_key: induced-matrix-bridge
+    label: "Induced-matrix bridge"
+    canonical_form: "induced-matrix bridge"
+    definition: "The composition mapping a cohort-weighted propensity vector over a consideration set to the switching structure it implies: under the zero-order Dirichlet parameterization, the propensity vector determines (S, s) and hence the closed-form purchase-level switching matrix P = (I + S·1sᵀ)/(S+1), its equilibrium shares, and its double-jeopardy diagonal."
+    first_section: "Theory: From Propensities to the Matrix"
+  - term_key: intermediate-match-band
+    label: "Intermediate-match band"
+    canonical_form: "intermediate-match band"
+    definition: "The propensity band that is the image of intermediate spectral match under the monotone link; its population mass is a function of cohort-profile dispersion in the category. A model-derived object: the practitioner notion of a movable middle of intermediate-propensity buyers is recovered as this band rather than imported as a fixed probability cut."
+    replaces: ["movable middle", "movable middles"]
+    first_section: "Theory: The Intermediate Band"
+
+imports:
+  - {term_key: cohort}
+  - {term_key: observer-spectral-profile}
+  - {term_key: spectral-dimensions}
+  - {term_key: spectral-metamerism}
+  - {term_key: operator-noise-floor}
+
+refines: []
+
