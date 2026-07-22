@@ -339,11 +339,3 @@ submission_history:
     status: "preprint"
     doi: "10.5281/zenodo.19210037"
     url: "https://zenodo.org/records/19210037"
-  - venue: "[withheld]"
-    date_submitted: "2026-03-26"
-    status: "under_review"
-    notes: >
-      Article type. 6,596 words at submission. Post-audit working version: 9,216 words
-      (includes §4.5 Specification Grammar, Figure 1 L0-L4 stack, Figure 2 workflow,
-      §6.4 Self-Application, 3 new citations). 44 references. 4 propositions.
-      Abstract trimmed to 160 words. Table 1 headers fixed.

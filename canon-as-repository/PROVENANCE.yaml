@@ -1,49 +1,30 @@
-# PROVENANCE.yaml — Canon as Repository
-# Fork history and submission records per the Research-as-Repository protocol
+# PROVENANCE.yaml -- Canon as Repository
+# Version and publication history per the Research-as-Repository protocol
 
 provenance:
   paper_title: "Canon as Repository: A Specification-Driven Architecture for Transmedia Intellectual Property"
   citation_key: "2026w"
   repository: "spectralbranding/sbt-papers/canon-as-repository"
 
-  forks:
-    - id: "fork-2026-03-31-zenodo-v1.0.0"
-      target: "Zenodo"
+  versions:
+    - version: "1.0.0"
+      date: "2026-03-31"
+      description: >
+        Initial upload. Spec files, schemas, and examples for the
+        specification-driven transmedia architecture.
+    - version: "1.1.0"
+      date: "2026-05-10"
+      description: >
+        URL migration and metadata bump. Standalone canon-repo retired; all spec
+        files, schemas, and examples consolidated into the sbt-papers mirror
+        (sbt-papers/canon-as-repository/), with in-paper URLs updated to the new
+        location.
+
+  publications:
+    - target: "Zenodo"
       target_type: preprint_server
-      created: "2026-03-31"
-      source_commit: "main"
-      status: merged
-      outcome: published
-      identifiers:
-        concept_doi: "10.5281/zenodo.19355800"
-        version_doi: "10.5281/zenodo.19355801"
-        community: ["spectral-branding"]
-      notes: >
-        v1.0.0 initial upload. PDF Zharnikov_2026w_Canon_as_Repository.pdf
-        submitted alongside paper.yaml. v1.0.0 PDF references the now-retired
-        standalone spectralbranding/canon-repo URL; superseded by v1.1.0.
-
-    - id: "fork-2026-04-01-journal1"
-      target: "[withheld]"
-      target_type: journal
-      created: "2026-04-01"
-      status: returned
-      outcome: "Returned without peer review."
-      notes: >
-        Double-anonymous manuscript (4 self-citations masked as [Author]).
-        Paper status reverted to editable.
-
-    - id: "fork-2026-05-10-v1.1.0"
-      target: "sbt-papers consolidated mirror"
-      target_type: github_mirror
-      created: "2026-05-10"
-      source_commit: "main"
-      status: open
-      outcome: "v1.1.0 — URL migration + metadata bump; awaiting next-venue submission"
-      identifiers:
-        concept_doi: "10.5281/zenodo.19355800"
-        version_doi: "pending — to be minted at next Zenodo upload"
-      notes: >
-        Standalone spectralbranding/canon-repo retired. All spec files, schemas,
-        and examples migrated to sbt-papers/canon-as-repository/. URL references
-        in paper updated to new location.
+      concept_doi: "10.5281/zenodo.19355800"
+      version_doi: "10.5281/zenodo.19355801"
+      version: "1.0.0"
+      status: published
+      community: ["spectral-branding"]

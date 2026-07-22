@@ -1,53 +1,28 @@
-# PROVENANCE.yaml — R9: Non-Ergodic Brand Perception
-# Fork history and submission records per the Research-as-Repository protocol
+# PROVENANCE.yaml -- R9: Non-Ergodic Brand Perception
+# Version and publication history per the Research-as-Repository protocol
 
 provenance:
   paper_title: "Non-Ergodic Brand Perception: A Longitudinal Decomposition of Purpose Advertising Effectiveness"
   citation_key: "2026o"
-  repository: "spectralbranding/sbt-papers/r9-dove-case-study"
+  repository: "spectralbranding/sbt-papers/r9-nonergodic-perception"
 
   versions:
     - version: "1.0"
       date: "2026-03-19"
-      description: "Initial draft with 5 propositions, Dove 4-cross-section decomposition, 4 cohort profiles, initial submission"
+      description: "Initial draft with 5 propositions, Dove 4-cross-section decomposition, and 4 cohort profiles."
     - version: "1.1"
       date: "2026-03-29"
-      description: "Resubmission revision: abstract rewrite (practitioner-first), comparison cases expanded (Pepsi, Gillette, Patagonia), limitations section added, word count reduction"
+      description: "Revision: abstract rewrite (practitioner-first), comparison cases expanded (Pepsi, Gillette, Patagonia), limitations section added, word count reduction."
     - version: "2.0"
       date: "2026-04-10"
-      description: "Post-rejection major revision: falsification conditions added to all 5 propositions, Empirical Anchor section (R15 21,601-call corroboration), Discussion restructured into 5-part format, substantive engagement with Vredenburg/Brakus/Holt/Mukherjee/Hermann, actionable limitations"
+      description: "Major revision: falsification conditions added to all 5 propositions, Empirical Anchor section (R15 21,601-call corroboration), Discussion restructured into 5-part format, substantive engagement with Vredenburg/Brakus/Holt/Mukherjee/Hermann, actionable limitations."
     - version: "2.1"
       date: "2026-04-16"
-      description: "Added paragraph on format-mediated primacy as boundary condition for first-signal premium (P5). Submission history updated: IJA pre-submission added. Experiment D and E citation anchors added."
+      description: "Added paragraph on format-mediated primacy as boundary condition for first-signal premium (P5). Experiment D and E citation anchors added."
 
-  forks:
-    - id: "fork-2026-03-20-zenodo"
-      target: "Zenodo"
+  publications:
+    - target: "Zenodo"
       target_type: preprint_server
-      created: "2026-03-20"
-      source_commit: "main"
-      status: merged
-      outcome: published
-      identifiers:
-        doi: "10.5281/zenodo.19138860"
-        community: ["spectral-branding"]
-      note: "v1.0 initial preprint; v2.0 upload pending 2026-04-10"
-
-    - id: "fork-2026-03-19-journal1"
-      target: "[withheld]"
-      target_type: journal
-      created: "2026-03-19"
-      status: desk_rejected
-      decision_date: "2026-03-28"
-
-    - id: "fork-2026-03-29-journal2"
-      target: "[withheld]"
-      target_type: journal
-      created: "2026-03-29"
-      status: desk_rejected
-      decision_date: "2026-04-10"
-
-  target_venue:
-    journal: "[withheld]"
-    status: "pre-submission"
-    fallbacks: []
+      doi: "10.5281/zenodo.19138860"
+      status: published
+      community: ["spectral-branding"]
