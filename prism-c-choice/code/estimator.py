@@ -6,7 +6,7 @@
 """estimator.py — PRISM-C PL4 choice-perception-gap estimator (2026bb).
 
 Deterministic, seeded (SEED = 20260702). Implements the frozen PL0 criteria
-(research/prism_c/PREREGISTRATION.md sections 6 + 9):
+(data/PREREGISTRATION.md sections 6 + 9):
 
 - stated brand vector: pooled mean over channels + op pairs; stated operator
   floor per brand = max pairwise cosine distance among per-op-pair vectors
@@ -41,9 +41,9 @@ Deterministic, seeded (SEED = 20260702). Implements the frozen PL0 criteria
   per-family divergence + leave-one-family-out floors (exploratory)
 
 Run:
-    uv run python research/prism_c/code/estimator.py \
-        --records research/prism_c/data/confirmatory_records.jsonl \
-        --out research/prism_c/data/pl4_results.json --robustness
+    uv run python code/estimator.py \
+        --records data/confirmatory_records.jsonl \
+        --out data/pl4_results.json --robustness
 """
 
 from __future__ import annotations

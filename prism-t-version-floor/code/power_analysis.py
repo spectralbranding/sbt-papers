@@ -5,7 +5,7 @@
 # ///
 """power_analysis.py — simulation-based power analysis for PRISM-T (2026ba).
 
-The pre-draft review's fatal gap 3: does n brands x 4 artifacts x 4 operator
+The design question this answers: does n brands x 4 artifacts x 4 operator
 pairs give sufficient precision to detect version drift at S/N > 2 under the
 brand-cluster bootstrap, and what is the minimum detectable per-dimension
 drift for the H3 two-set contrast?
@@ -22,10 +22,10 @@ reduced to 500 for the power grid (documented; the confirmatory analysis
 uses 2,000).
 
 Run:
-    uv run python research/prism_t/code/power_analysis.py \
-        --out research/prism_t/data/power_analysis.json
+    uv run python code/power_analysis.py \
+        --out data/power_analysis.json
 Quick smoke (tiny grid):
-    uv run python research/prism_t/code/power_analysis.py --quick --out /tmp/pa.json
+    uv run python code/power_analysis.py --quick --out /tmp/pa.json
 """
 
 from __future__ import annotations

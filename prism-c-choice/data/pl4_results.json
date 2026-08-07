@@ -1,0 +1,690 @@
+{
+  "seed": 20260702,
+  "k": 2.0,
+  "metric": "cosine",
+  "n_brands_stated": 40,
+  "n_scenarios_with_need": 40,
+  "n_choice_trials": 1144,
+  "stated_floors": {
+    "Herm\u00e8s": 0.001,
+    "Apple": 0.0014524884473545718,
+    "LEGO": 0.001,
+    "Rolex": 0.002146386683829493,
+    "IKEA": 0.0021931754020111383,
+    "McDonald's": 0.003607444817455896,
+    "Toyota": 0.0012589268872740256,
+    "Visa": 0.012588661569835291,
+    "Nike": 0.001,
+    "Starbucks": 0.0027741089832460375,
+    "Patagonia": 0.0035048356047043816,
+    "Harley-Davidson": 0.0017042165188375646,
+    "Erewhon": 0.0018277936381717597,
+    "Airbnb": 0.017287701315027104,
+    "Sephora": 0.0010420099360681778,
+    "Uber": 0.0052705234915959576,
+    "Tesla": 0.0024423429449391687,
+    "Meta (Facebook)": 0.0024695942402807036,
+    "X (Twitter)": 0.002204847709967872,
+    "Ryanair": 0.004123656099456752,
+    "Microsoft": 0.0027368727164954754,
+    "IBM": 0.003543288307047976,
+    "Siemens": 0.005599836548120907,
+    "SAP": 0.011450815979145768,
+    "Cisco": 0.005405015695469029,
+    "Oracle": 0.0055496435320765425,
+    "FedEx": 0.00602501292619162,
+    "Caterpillar": 0.0026683815912751374,
+    "Salesforce": 0.005836869482086393,
+    "Nvidia": 0.0012736699787141426,
+    "Goldman Sachs": 0.0021923651091453333,
+    "Basecamp": 0.007912087439010285,
+    "Zoom": 0.005142844738873054,
+    "Slack": 0.0034666885442845574,
+    "WeWork": 0.0021636385696703897,
+    "Stripe": 0.002629071840606456,
+    "Boeing": 0.004572465821174321,
+    "GE": 0.007743349944337674,
+    "Intel": 0.005234053230860125,
+    "Huawei": 0.0028979971798648307
+  },
+  "need_floors": {
+    "S01": 0.005024714179949874,
+    "S02": 0.006681040347977563,
+    "S03": 0.003560326644909906,
+    "S04": 0.003968889815440413,
+    "S05": 0.04342547379917838,
+    "S06": 0.018650470881670933,
+    "S07": 0.044768812191057106,
+    "S08": 0.004765109065202888,
+    "S09": 0.007393222178972758,
+    "S10": 0.003918115396075561,
+    "S11": 0.04534903534372292,
+    "S12": 0.008624981411718302,
+    "S13": 0.018194559679437394,
+    "S14": 0.0028843552571481412,
+    "S15": 0.021685128687665367,
+    "S16": 0.00874313574340102,
+    "S17": 0.028224025717000778,
+    "S18": 0.0075582106206500965,
+    "S19": 0.06905438387882834,
+    "S20": 0.0033431385965003724,
+    "S21": 0.07326550978257274,
+    "S22": 0.012651636852044734,
+    "S23": 0.030880848296602093,
+    "S24": 0.008876729752749557,
+    "S25": 0.002693419615942716,
+    "S26": 0.005229858507174612,
+    "S27": 0.003718578229100933,
+    "S28": 0.02916285435727306,
+    "S29": 0.02441285948257832,
+    "S30": 0.005578502704918442,
+    "S31": 0.03087802836317577,
+    "S32": 0.028247148227361074,
+    "S33": 0.00863775144162604,
+    "S34": 0.015426397243879175,
+    "S35": 0.01585739573089462,
+    "S36": 0.010241723890201282,
+    "S37": 0.00672964630576367,
+    "S38": 0.0158136061831885,
+    "S39": 0.03884954485724457,
+    "S40": 0.006999289263782127
+  },
+  "predicted": {
+    "S01": {
+      "predicted": "Herm\u00e8s",
+      "runner_up": "Rolex",
+      "margin": 0.0009173406340249324
+    },
+    "S02": {
+      "predicted": "Herm\u00e8s",
+      "runner_up": "Rolex",
+      "margin": 0.0020262781183837397
+    },
+    "S03": {
+      "predicted": "IKEA",
+      "runner_up": "Apple",
+      "margin": 0.0002134220414966581
+    },
+    "S04": {
+      "predicted": "Apple",
+      "runner_up": "Meta (Facebook)",
+      "margin": 0.00034097992124226817
+    },
+    "S05": {
+      "predicted": "Toyota",
+      "runner_up": "Tesla",
+      "margin": 0.005257774412894212
+    },
+    "S06": {
+      "predicted": "Patagonia",
+      "runner_up": "IKEA",
+      "margin": 0.005960017817728369
+    },
+    "S07": {
+      "predicted": "Erewhon",
+      "runner_up": "McDonald's",
+      "margin": 0.001014085195268355
+    },
+    "S08": {
+      "predicted": "IKEA",
+      "runner_up": "Erewhon",
+      "margin": 0.0023229876715948894
+    },
+    "S09": {
+      "predicted": "Uber",
+      "runner_up": "Airbnb",
+      "margin": 0.0003701692137162427
+    },
+    "S10": {
+      "predicted": "Ryanair",
+      "runner_up": "Uber",
+      "margin": 0.002840840502693953
+    },
+    "S11": {
+      "predicted": "Sephora",
+      "runner_up": "Nike",
+      "margin": 0.001641077432589233
+    },
+    "S12": {
+      "predicted": "Patagonia",
+      "runner_up": "Apple",
+      "margin": 0.001283652113295286
+    },
+    "S13": {
+      "predicted": "Visa",
+      "runner_up": "Apple",
+      "margin": 0.004977967215476942
+    },
+    "S14": {
+      "predicted": "Meta (Facebook)",
+      "runner_up": "Apple",
+      "margin": 0.00011323608123980922
+    },
+    "S15": {
+      "predicted": "Meta (Facebook)",
+      "runner_up": "X (Twitter)",
+      "margin": 0.00016728303238644493
+    },
+    "S16": {
+      "predicted": "Patagonia",
+      "runner_up": "Tesla",
+      "margin": 0.00013704623629762214
+    },
+    "S17": {
+      "predicted": "McDonald's",
+      "runner_up": "Starbucks",
+      "margin": 0.0035744621268839483
+    },
+    "S18": {
+      "predicted": "Meta (Facebook)",
+      "runner_up": "Apple",
+      "margin": 0.00022245169607071347
+    },
+    "S19": {
+      "predicted": "Uber",
+      "runner_up": "Toyota",
+      "margin": 0.0006283359813382683
+    },
+    "S20": {
+      "predicted": "LEGO",
+      "runner_up": "Nike",
+      "margin": 0.0009989539718113782
+    },
+    "S21": {
+      "predicted": "SAP",
+      "runner_up": "Oracle",
+      "margin": 0.001264220909749203
+    },
+    "S22": {
+      "predicted": "SAP",
+      "runner_up": "Oracle",
+      "margin": 0.0018524536382219514
+    },
+    "S23": {
+      "predicted": "Slack",
+      "runner_up": "Microsoft",
+      "margin": 0.0005057430168315946
+    },
+    "S24": {
+      "predicted": "Cisco",
+      "runner_up": "Slack",
+      "margin": 0.0003107990425609275
+    },
+    "S25": {
+      "predicted": "Stripe",
+      "runner_up": "Microsoft",
+      "margin": 0.0005408278106964204
+    },
+    "S26": {
+      "predicted": "Microsoft",
+      "runner_up": "Intel",
+      "margin": 0.0011591154247080349
+    },
+    "S27": {
+      "predicted": "Cisco",
+      "runner_up": "Huawei",
+      "margin": 0.0009110405515475595
+    },
+    "S28": {
+      "predicted": "IBM",
+      "runner_up": "Siemens",
+      "margin": 0.0007885386976623776
+    },
+    "S29": {
+      "predicted": "Toyota",
+      "runner_up": "Uber",
+      "margin": 0.0010717299437024153
+    },
+    "S30": {
+      "predicted": "SAP",
+      "runner_up": "IBM",
+      "margin": 0.00014608449218045383
+    },
+    "S31": {
+      "predicted": "Stripe",
+      "runner_up": "Goldman Sachs",
+      "margin": 0.002467485602018593
+    },
+    "S32": {
+      "predicted": "IKEA",
+      "runner_up": "Airbnb",
+      "margin": 0.006502643555974075
+    },
+    "S33": {
+      "predicted": "Slack",
+      "runner_up": "Microsoft",
+      "margin": 0.0005287391979206246
+    },
+    "S34": {
+      "predicted": "Huawei",
+      "runner_up": "Nvidia",
+      "margin": 0.000840624459230499
+    },
+    "S35": {
+      "predicted": "SAP",
+      "runner_up": "IBM",
+      "margin": 0.0011320170515939365
+    },
+    "S36": {
+      "predicted": "Siemens",
+      "runner_up": "GE",
+      "margin": 0.0074047474143098535
+    },
+    "S37": {
+      "predicted": "Cisco",
+      "runner_up": "IBM",
+      "margin": 0.0002335263651244146
+    },
+    "S38": {
+      "predicted": "IBM",
+      "runner_up": "SAP",
+      "margin": 0.001429328506300398
+    },
+    "S39": {
+      "predicted": "Uber",
+      "runner_up": "Visa",
+      "margin": 7.309110449171818e-05
+    },
+    "S40": {
+      "predicted": "Sephora",
+      "runner_up": "Nike",
+      "margin": 0.0019764702088819197
+    }
+  },
+  "H1": {
+    "divergence_rate": 0.6328671328671329,
+    "n_trials": 1144,
+    "choice_operator_floor": 0.04370629370629372,
+    "snr": 14.479999999999997,
+    "rate_ci95": [
+      0.4832593875295569,
+      0.7788461538461539
+    ],
+    "snr_ci95": [
+      8.39145809044464,
+      74.67129811068105
+    ],
+    "k": 2.0,
+    "supported": true
+  },
+  "H2": {
+    "full_model": {
+      "beta": [
+        -3.507404089367262,
+        -1.0704629971718436,
+        8.464536612807326,
+        -11.070546320524368,
+        5.181807131435885,
+        5.863009547655308,
+        -12.082528966743237,
+        2.9922298223221966
+      ],
+      "se": [
+        0.8175825192837449,
+        1.8464149022500422,
+        1.1584706774763467,
+        1.1121555466692876,
+        1.1058609454906243,
+        0.7078271029855223,
+        1.020323420142276,
+        1.139113597564395
+      ],
+      "ll": -1284.3045994542374,
+      "ll_null": -1468.546463560817,
+      "aic": 2584.609198908475,
+      "mcfadden_r2": 0.12545865498858266,
+      "n_trials": 1144,
+      "converged": true
+    },
+    "restricted_model_no_weighty": {
+      "se": [
+        0.7761808693775019,
+        1.567854512089378,
+        1.0910450682625863,
+        0.8829634183330006,
+        1.0871482435296893
+      ],
+      "ll": -1386.7326227361214,
+      "ll_null": -1468.546463560817,
+      "aic": 2783.4652454722427,
+      "mcfadden_r2": 0.05571076084737547,
+      "n_trials": 1144,
+      "converged": true,
+      "beta": {
+        "semiotic": -3.4079089958013635,
+        "narrative": 4.444900042465896,
+        "ideological": 9.359115534105616,
+        "cultural": -7.715742775207198,
+        "temporal": 0.8274539769402975
+      }
+    },
+    "weights": {
+      "semiotic": -3.507404089367262,
+      "narrative": -1.0704629971718436,
+      "ideological": 8.464536612807326,
+      "experiential": -11.070546320524368,
+      "social": 5.181807131435885,
+      "economic": 5.863009547655308,
+      "cultural": -12.082528966743237,
+      "temporal": 2.9922298223221966
+    },
+    "weights_se": {
+      "semiotic": 0.8175825192837449,
+      "narrative": 1.8464149022500422,
+      "ideological": 1.1584706774763467,
+      "experiential": 1.1121555466692876,
+      "social": 1.1058609454906243,
+      "economic": 0.7078271029855223,
+      "cultural": 1.020323420142276,
+      "temporal": 1.139113597564395
+    },
+    "lr_weighty": {
+      "lr": 204.8560465637679,
+      "df": 3,
+      "p": 3.76568372139681e-44,
+      "delta_ll": 102.42802328188395
+    },
+    "delta_aic": 198.8560465637679,
+    "alpha": 0.017,
+    "supported": true
+  },
+  "H3": {
+    "gamma_raw": 39.20947298274356,
+    "gamma_raw_se": 15.45116400222931,
+    "gamma_adjusted": 39.21362207338458,
+    "gamma_adjusted_se": 15.452068394780381,
+    "position_betas": {
+      "first": -0.009721790032938988,
+      "index": -0.05141082234462229
+    },
+    "position_se": {
+      "first": 0.1128085022970955,
+      "index": 0.13159418676400558
+    },
+    "p_gamma_adjusted": 0.011156485565172498,
+    "shift_within_ci": true,
+    "alpha": 0.017,
+    "supported": true
+  },
+  "mechanisms": {
+    "M1a_participation_ratio": {
+      "weights": {
+        "semiotic": -3.507404089367262,
+        "narrative": -1.0704629971718436,
+        "ideological": 8.464536612807326,
+        "experiential": -11.070546320524368,
+        "social": 5.181807131435885,
+        "economic": 5.863009547655308,
+        "cultural": -12.082528966743237,
+        "temporal": 2.9922298223221966
+      },
+      "effective_dimensionality": 5.953720941633896,
+      "n_dims": 8
+    },
+    "M1b_divergence_vs_nonweighty_share": {
+      "intercept": 0.5501689002195252,
+      "slope": 0.00024128046433901455,
+      "slope_se": 0.0007730157851535206,
+      "slope_z": 0.3121287675789135,
+      "p": 0.7549426645337727,
+      "n": 1144,
+      "odds_ratio_per_sd": 1.0191797059846335
+    },
+    "M2b_divergence_vs_predicted_position": {
+      "intercept": 0.5109112186838622,
+      "slope": 0.06743070324819274,
+      "slope_se": 0.15903238271902162,
+      "slope_z": 0.4240061180956415,
+      "p": 0.6715613514090226,
+      "n": 1144,
+      "odds_ratio_per_sd": 1.0263519773839305
+    },
+    "M3a_brand_asc": {
+      "lr_vs_full": {
+        "lr": 2204.08598622317,
+        "df": 38,
+        "p": 0.0,
+        "delta_ll": 1102.042993111585
+      },
+      "reference_brand": "Airbnb",
+      "top_ascs": {
+        "Zoom": 81.38314995569962,
+        "WeWork": 71.46683924924731,
+        "Slack": -59.368180878164445,
+        "Visa": -86.46277022211976,
+        "Intel": -97.53914620483648,
+        "GE": -99.51925114180563,
+        "Goldman Sachs": -110.06047180478075,
+        "Cisco": -112.91478294554025
+      },
+      "asc_vs_index_member_spearman": {
+        "rho": -0.2626646884488967,
+        "p": 0.11111467145452879
+      }
+    },
+    "M3b_modal_overselection": {
+      "modal_pick_rate_divergent": 0.9682320441988951,
+      "modal_pick_rate_convergent": 0.969047619047619,
+      "note": "modal = per-scenario most frequent pick across all trials"
+    },
+    "M4a_divergence_vs_margin": {
+      "intercept": 0.5711149844052668,
+      "slope": -16.50420395083475,
+      "slope_se": 34.042696272254695,
+      "slope_z": -0.48480895340496055,
+      "p": 0.6278118710148137,
+      "n": 1144,
+      "odds_ratio_per_sd": 0.9708872606136331
+    }
+  },
+  "boundary": {
+    "B1_need_ambiguity": {
+      "terciles_by_need_entropy": {
+        "low": {
+          "n": 392,
+          "rate": 0.6403061224489796,
+          "ci95": [
+            0.393455615942029,
+            0.8480552884615384
+          ]
+        },
+        "mid": {
+          "n": 400,
+          "rate": 0.8,
+          "ci95": [
+            0.566872340425532,
+            1.0
+          ]
+        },
+        "high": {
+          "n": 352,
+          "rate": 0.4346590909090909,
+          "ci95": [
+            0.16569767441860464,
+            0.6888888888888889
+          ]
+        }
+      },
+      "monotone_increasing": false
+    },
+    "B2_dominance": {
+      "dominance_region_divergence": 0.0,
+      "n": 120
+    }
+  },
+  "positive_control": {
+    "passed": true,
+    "overall_rate": 1.0,
+    "per_set": {
+      "P01": {
+        "dominant": "FedEx",
+        "picked_rate": 1.0,
+        "n": 24
+      },
+      "P02": {
+        "dominant": "Herm\u00e8s",
+        "picked_rate": 1.0,
+        "n": 24
+      },
+      "P03": {
+        "dominant": "Nvidia",
+        "picked_rate": 1.0,
+        "n": 24
+      },
+      "P04": {
+        "dominant": "LEGO",
+        "picked_rate": 1.0,
+        "n": 24
+      },
+      "P05": {
+        "dominant": "McDonald's",
+        "picked_rate": 1.0,
+        "n": 24
+      }
+    }
+  },
+  "negative_control": {
+    "passed": true,
+    "per_set": {
+      "N01": {
+        "n": 8,
+        "picks_option_a": 2,
+        "binom_p_two_sided": 0.2890625,
+        "first_position_pick_rate": 0.75
+      },
+      "N02": {
+        "n": 8,
+        "picks_option_a": 7,
+        "binom_p_two_sided": 0.0703125,
+        "first_position_pick_rate": 0.625
+      },
+      "N03": {
+        "n": 8,
+        "picks_option_a": 5,
+        "binom_p_two_sided": 0.7265625,
+        "first_position_pick_rate": 0.875
+      },
+      "N04": {
+        "n": 8,
+        "picks_option_a": 2,
+        "binom_p_two_sided": 0.2890625,
+        "first_position_pick_rate": 0.75
+      },
+      "N05": {
+        "n": 8,
+        "picks_option_a": 5,
+        "binom_p_two_sided": 0.7265625,
+        "first_position_pick_rate": 0.875
+      }
+    }
+  },
+  "exploratory": {
+    "per_family_divergence": {
+      "alibaba": 0.6398601398601399,
+      "anthropic": 0.6188811188811189,
+      "deepseek": 0.6328671328671329,
+      "openai": 0.6398601398601399
+    },
+    "leave_one_family_out_floor": {
+      "without_alibaba": 0.047785547785547784,
+      "without_anthropic": 0.038461538461538464,
+      "without_deepseek": 0.05011655011655012,
+      "without_openai": 0.038461538461538464
+    }
+  },
+  "robustness": {
+    "k_1.5": {
+      "H1": {
+        "divergence_rate": 0.6328671328671329,
+        "n_trials": 1144,
+        "choice_operator_floor": 0.04370629370629372,
+        "snr": 14.479999999999997,
+        "rate_ci95": [
+          0.4832593875295569,
+          0.7788461538461539
+        ],
+        "snr_ci95": [
+          8.39145809044464,
+          74.67129811068105
+        ],
+        "k": 1.5,
+        "supported": true
+      }
+    },
+    "k_3.0": {
+      "H1": {
+        "divergence_rate": 0.6328671328671329,
+        "n_trials": 1144,
+        "choice_operator_floor": 0.04370629370629372,
+        "snr": 14.479999999999997,
+        "rate_ci95": [
+          0.4832593875295569,
+          0.7788461538461539
+        ],
+        "snr_ci95": [
+          8.39145809044464,
+          74.67129811068105
+        ],
+        "k": 3.0,
+        "supported": true
+      }
+    },
+    "euclidean": {
+      "H1": {
+        "divergence_rate": 0.7071678321678322,
+        "n_trials": 1144,
+        "choice_operator_floor": 0.04370629370629372,
+        "snr": 16.179999999999996,
+        "rate_ci95": [
+          0.5676340178482151,
+          0.8321969696969695
+        ],
+        "snr_ci95": [
+          9.460853807471263,
+          81.3702134646958
+        ],
+        "k": 2.0,
+        "supported": true
+      },
+      "predicted_changed": 11
+    },
+    "mahalanobis": {
+      "H1": {
+        "divergence_rate": 0.7281468531468531,
+        "n_trials": 1144,
+        "choice_operator_floor": 0.04370629370629372,
+        "snr": 16.659999999999997,
+        "rate_ci95": [
+          0.5882515312701483,
+          0.8533132742117117
+        ],
+        "snr_ci95": [
+          9.663347829433498,
+          88.0068965517241
+        ],
+        "k": 2.0,
+        "supported": true
+      },
+      "predicted_changed": 17
+    },
+    "excluded_ops_included": {
+      "H1": {
+        "divergence_rate": 0.7561188811188811,
+        "n_trials": 1144,
+        "choice_operator_floor": 0.04370629370629372,
+        "snr": 17.299999999999997,
+        "rate_ci95": [
+          0.6240615295031056,
+          0.8733199835878407
+        ],
+        "snr_ci95": [
+          10.26916520979021,
+          89.45826778044149
+        ],
+        "k": 2.0,
+        "supported": true
+      },
+      "predicted_changed": 10
+    }
+  }
+}

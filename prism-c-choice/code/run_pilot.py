@@ -18,7 +18,7 @@ PILOT GATE: post-exclusion choice floor <= PL1 pilot.gate_max_choice_floor
 collection MUST NOT start (PL0 §9.2: stop and report).
 
 Run (keys via bws; sandbox OFF):
-    bws run -- research/prism_c/code/run_campaign.sh pilot
+    bws run -- code/run_campaign.sh pilot
 """
 
 from __future__ import annotations

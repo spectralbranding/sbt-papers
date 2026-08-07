@@ -10,7 +10,7 @@ inside response_metadata without populating the tokens/cost fields, so the
 campaign spend is computed here from the PL3 logs + the PL1 list_prices
 table. Read-only.
 
-Run: uv run python research/prism_t/code/cost_report.py
+Run: uv run python code/cost_report.py
 """
 
 from __future__ import annotations

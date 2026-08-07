@@ -13,9 +13,9 @@ sets. Writes PL3 JSONL (logs/) + parsed records
 arrangement_id, chooser).
 
 Run (keys via bws; long runs sandbox OFF; shardable):
-    bws run -- research/prism_c/code/run_campaign.sh choice
+    bws run -- code/run_campaign.sh choice
         [--families CH-ANT,CH-OAI] [--scenarios S01,S02] [--suffix _c1]
-    bws run -- research/prism_c/code/run_campaign.sh choice --controls
+    bws run -- code/run_campaign.sh choice --controls
 """
 
 from __future__ import annotations

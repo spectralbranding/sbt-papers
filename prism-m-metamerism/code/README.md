@@ -21,24 +21,24 @@ generators). Publishes under `<public-mirror>/prism-m/code/` at submission
 
 ```sh
 # 0. Unit tests (no API spend; must pass before collection)
-uv run pytest research/prism_m/code/tests/ -q
+uv run pytest code/tests/ -q
 
 # 1. Stage 1 (keys via bws; shardable)
-bws run -- research/prism_m/code/run_campaign.sh stage1
+bws run -- code/run_campaign.sh stage1
 #    parallel shards: --ops OP1 --channels official,press --suffix _s1a  etc.
 #    then: cat data/stage1_records_*.jsonl > data/stage1_records.jsonl
 
 # 2. Freeze the metamer-pair bank (PL2 lock before Stage 2)
-uv run python research/prism_m/code/freeze_pair_bank.py
+uv run python code/freeze_pair_bank.py
 
 # 3. Stage 2 confirmatory + ablation subsample
-bws run -- research/prism_m/code/run_campaign.sh stage2
-bws run -- research/prism_m/code/run_campaign.sh stage2 --ablation
+bws run -- code/run_campaign.sh stage2
+bws run -- code/run_campaign.sh stage2 --ablation
 
 # 4. PL4 analysis (seeded, deterministic)
-uv run python research/prism_m/code/estimator.py \
-    --stage2 research/prism_m/data/stage2_records.jsonl \
-    --out research/prism_m/data/pl4_results.json --robustness
+uv run python code/estimator.py \
+    --stage2 data/stage2_records.jsonl \
+    --out data/pl4_results.json --robustness
 ```
 
 ## Data layers

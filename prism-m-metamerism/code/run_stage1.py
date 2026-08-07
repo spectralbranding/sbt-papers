@@ -12,7 +12,7 @@ vector + the provisional A-SCORE scalar. Writes PL3 append-only JSONL
 present (brand, channel, op_pair, readout) records are skipped.
 
 Run (keys via bws; long runs sandbox OFF):
-    bws run -- research/prism_m/code/run_campaign.sh stage1
+    bws run -- code/run_campaign.sh stage1
 """
 
 from __future__ import annotations

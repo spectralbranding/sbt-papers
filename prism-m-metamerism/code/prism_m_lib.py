@@ -32,13 +32,12 @@ import yaml
 
 HERE = Path(__file__).resolve().parent
 PRISM_M_DIR = HERE.parent
-REPO = PRISM_M_DIR.parents[1]
 LOGS_DIR = PRISM_M_DIR / "logs"
 DATA_DIR = PRISM_M_DIR / "data"
 
-# llm_call_logger moved into prism_core 2026-07-02 (owner: the instrument-
-# family base library; dependency arrow now Spectrometer -> prism_core).
-sys.path.insert(0, str(REPO / "research" / "prism_core"))
+# The logger ships beside this module in the published bundle, so the
+# import resolves without any repo-relative path.
+sys.path.insert(0, str(Path(__file__).resolve().parent))
 from llm_call_logger import log_call  # noqa: E402
 
 DIMENSIONS = [

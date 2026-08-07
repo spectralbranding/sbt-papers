@@ -129,7 +129,7 @@ observations:
       Stage 1 collected 640 parsed records (40 brands x 4 artifact channels x
       2 cross-family operator pairs x 2 readouts) with zero malformed
       extractions, from 960 logged model API calls.
-    raw_data_pointer: "[internal path removed]"
+    raw_data_pointer: "data/stage1_records.jsonl"
     instrument: "PL1 operator pairs OP1 (claude-opus-4-8 -> gpt-5.4-mini-2026-03-17), OP3 (qwen3.7-max-2026-06-08 -> deepseek-v4-flash)"
     timestamp: "2026-07-02"
     conditions_at_capture: "prompt set prism-m/v1.0.0; temperature 0 where honored; append-only JSONL logging"
@@ -144,7 +144,7 @@ observations:
       channels x 4 operator pairs x 4 readouts) plus 40 prompt-ablation
       records, zero malformed, from 1,421 logged calls; full campaign
       totalled 2,416 logged calls at an estimated 13.40 USD.
-    raw_data_pointer: "[internal path removed]"
+    raw_data_pointer: "data/stage2_records.jsonl"
     instrument: "OP1-OP4 per PL1_CONFIG.yaml (four families: Anthropic, OpenAI, Alibaba, DeepSeek)"
     timestamp: "2026-07-02"
     conditions_at_capture: "frozen PAIR_BANK v1.0.0 (Stage-1 retention rule applied before Stage 2)"
@@ -160,7 +160,7 @@ observations:
       prose the four extractors agreed within roughly 2 scale points on every
       dimension; on the OP4 prose all four extractors produced markedly lower
       Economic/Temporal readings, with the OP4 extractor the most extreme.
-    raw_data_pointer: "[internal path removed]*_calls.jsonl"
+    raw_data_pointer: "logs/phase_diagnostic_diag_crossextract_*_calls.jsonl"
     instrument: "extractors gpt-5.4-mini, qwen3.6-flash, claude-haiku-4-5, deepseek-v4-flash on fixed prose"
     timestamp: "2026-07-02"
     conditions_at_capture: "exploratory diagnostic; prose drawn from logged Stage-2 renders (Basecamp, official channel)"

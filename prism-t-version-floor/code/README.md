@@ -4,7 +4,7 @@ Deterministic, seeded pipeline for the PRISM-T version-floor instrument.
 Fixed seed: `SEED = 20260702` (all bootstrap resampling, synthetic
 generators, and the power analysis). Publishes under
 `<public-mirror>/prism-t/code/` at submission (PAQS items 37a-37e).
-Shared machinery imported from `research/prism_core/` (provider layer,
+Shared machinery imported from `code/prism_core/` (provider layer,
 PRISM-B extractor, floors/bootstrap stats, concordance + exclusion rule).
 
 ## Layout
@@ -23,25 +23,25 @@ PRISM-B extractor, floors/bootstrap stats, concordance + exclusion rule).
 
 ```sh
 # 0. Unit tests (no API spend; must pass before collection)
-uv run pytest research/prism_t/code/tests/ -q
+uv run pytest code/tests/ -q
 
 # 0a. Power analysis (no API spend; publishes with the paper)
-uv run python research/prism_t/code/power_analysis.py \
-    --out research/prism_t/data/power_analysis.json
+uv run python code/power_analysis.py \
+    --out data/power_analysis.json
 
 # 1. Pre-flight pilot (keys via bws; ~38 calls) -> exclusion verdict
-bws run -- research/prism_t/code/run_campaign.sh pilot
+bws run -- code/run_campaign.sh pilot
 
 # 2. VE-1 capture (freeze PL1 first; shardable via --ops/--ladders/--brands i:j/--suffix)
-bws run -- research/prism_t/code/run_campaign.sh floor
-bws run -- research/prism_t/code/run_campaign.sh ladder
-bws run -- research/prism_t/code/run_campaign.sh negcontrol
+bws run -- code/run_campaign.sh floor
+bws run -- code/run_campaign.sh ladder
+bws run -- code/run_campaign.sh negcontrol
 #    merge shards: cat data/ve1_records_*.jsonl >> data/ve1_records.jsonl
 
 # 3. PL4 analysis (seeded, deterministic; --excluded-ops from the pilot verdict)
-uv run python research/prism_t/code/estimator.py \
-    --records research/prism_t/data/ve1_records.jsonl \
-    --out research/prism_t/data/pl4_results.json \
+uv run python code/estimator.py \
+    --records data/ve1_records.jsonl \
+    --out data/pl4_results.json \
     --excluded-ops OP4 --robustness
 ```
 

@@ -15,8 +15,8 @@ subsample (first 10 bank brands x 1 channel x OP1+OP3, ablated renderer
 prompt, prompt_variant="ablated").
 
 Run (keys via bws; long runs sandbox OFF):
-    bws run -- research/prism_m/code/run_campaign.sh stage2
-    bws run -- research/prism_m/code/run_campaign.sh stage2 --ablation
+    bws run -- code/run_campaign.sh stage2
+    bws run -- code/run_campaign.sh stage2 --ablation
 """
 
 from __future__ import annotations

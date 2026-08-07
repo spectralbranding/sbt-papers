@@ -157,7 +157,7 @@ observations:
       three times the median of the others (.0036) — the deepseek-v4-pro
       renderer, replicating the discordance the sibling metamerism campaign
       localized to the same renderer role.
-    raw_data_pointer: "[internal path removed] + pilot_report.json"
+    raw_data_pointer: "data/pilot_records.jsonl + pilot_report.json"
     instrument: "PL1 choosers CH-ANT/CH-OAI/CH-ALI/CH-DSK; operator pairs OP1-OP4"
     timestamp: "2026-07-02"
     conditions_at_capture: "prompt set prism-c/v1.0.0; banks provisional pending the gate"
@@ -174,7 +174,7 @@ observations:
       1,144 choice trials (40 scenarios x counterbalanced arrangements x 4
       chooser families), and 160 control trials; the full campaign totalled
       2,981 logged model API calls at an estimated 19.90 USD.
-    raw_data_pointer: "[internal path removed]*.jsonl + choice_records_*.jsonl"
+    raw_data_pointer: "data/stated_records_*.jsonl + choice_records_*.jsonl"
     instrument: "OP1-OP4 + CH-ANT/CH-OAI/CH-ALI/CH-DSK per PL1_CONFIG.yaml (four families: Anthropic, OpenAI, Alibaba, DeepSeek)"
     timestamp: "2026-07-02"
     conditions_at_capture: "banks frozen prism-c/v1.0.0 after the pilot gate passed; PL3 append-only JSONL"

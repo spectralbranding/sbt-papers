@@ -1,0 +1,10 @@
+# Cached download of the HuggingFace dataset of record (re-downloaded on demand).
+_data_cache/
+
+# Scratch probe scripts (delete; see README "Scratch files" note).
+_list_repo.py
+_inspect.py
+_probe.py
+_frozen.py
+_frozen2.py
+_frozen3.py

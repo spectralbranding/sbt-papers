@@ -1,0 +1,94 @@
+# PRISM-M PL1 Configuration — frozen before Stage 1 collection
+# Version: prism-m/v1.0.0
+# Date locked: 2026-07-02
+# Provider set + budget confirmed by user 2026-07-02 (4 families; $100 cap).
+# Model catalogs verified live via read-only /models endpoints on 2026-07-02
+# (all pinned IDs present; see model_availability check in code/README).
+
+config_version: prism-m/v1.0.0
+budget_cap_usd: 100.00
+temperature: 0 # where honored; providers that ignore it are logged as-sent
+
+# Cross-family operator pairs (renderer != extractor family, 2026ap).
+# Four family-disjoint pairs; each family carries renderer load in one pair
+# and extractor load in another (role reversal across the set).
+operator_pairs:
+  OP1:
+    renderer: {model: claude-opus-4-8, family: anthropic}
+    extractor: {model: gpt-5.4-mini-2026-03-17, family: openai}
+    stages: [stage1, stage2]
+  OP2:
+    renderer: {model: gpt-5.5-2026-04-23, family: openai}
+    extractor: {model: claude-haiku-4-5-20251001, family: anthropic}
+    stages: [stage2]
+  OP3:
+    renderer: {model: qwen3.7-max-2026-06-08, family: alibaba}
+    extractor: {model: deepseek-v4-flash, family: deepseek}
+    stages: [stage1, stage2]
+  OP4:
+    renderer: {model: deepseek-v4-pro, family: deepseek}
+    extractor: {model: qwen3.6-flash-2026-04-16, family: alibaba}
+    stages: [stage2]
+
+# Stage 1 (exploratory bank construction) runs the two fully family-disjoint
+# pairs OP1 + OP3 (Anthropic->OpenAI, Alibaba->DeepSeek); the provisional
+# operator floor is the cross-pair dispersion. Stage 2 (confirmatory) runs
+# all four pairs, satisfying the PL0 ">= 3 cross-family operator pairs".
+
+fallbacks:
+  claude-opus-4-8: claude-sonnet-4-6
+  gpt-5.5-2026-04-23: gpt-4o-2024-11-20
+  gpt-5.4-mini-2026-03-17: gpt-4o-mini-2024-07-18
+  claude-haiku-4-5-20251001: claude-haiku-4-5
+  qwen3.7-max-2026-06-08: qwen3.7-max
+  qwen3.6-flash-2026-04-16: qwen-flash
+  deepseek-v4-pro: deepseek-v4-flash
+  deepseek-v4-flash: deepseek-v4-pro
+
+# Artifact-channel operationalization (PL0 "each brand with >= 4 public
+# artifacts so the artifact floor is estimable"): the AI observer reads the
+# brand through four standardized public-artifact CHANNELS, one render per
+# channel. This matches the 2026v/R15 surface (the deployed AI observer's
+# internalized public-artifact exposure IS the observation surface) and the
+# instrument's construct (AI-observer perception, not human-panel perception).
+# The artifact floor = dispersion across channel draws for the same brand.
+artifact_channels:
+  A1: {id: official, description: "official brand communications - website, advertising, packaging, owned media"}
+  A2: {id: press, description: "third-party press and news coverage of the brand"}
+  A3: {id: experience, description: "customer experience reports and product/service reviews"}
+  A4: {id: social, description: "organic social-media and forum discourse about the brand"}
+
+# Aggregator battery (each a projection T_k with its OWN floor)
+aggregators:
+  A-SCORE: {readout: scalar, description: "single brand-health grade A+..F mapped to [0,1]"}
+  A-RANK: {readout: ranking, description: "top-k position in a 'which brand best fits <need>' ranking over the pair"}
+  A-PICK: {readout: binary, description: "recommend this brand: yes/no"}
+
+# Retry/redraw policy for malformed output
+retry_policy:
+  max_retries: 3
+  backoff_seconds: [5, 15, 45]
+  malformed_output: redraw_once_then_flag # logged; flagged records excluded per PL0 section 7
+
+# Resolution criterion (PL0 section 6): resolved iff distance > k * floor, k = 2
+# (robustness sweep k in {1.5, 2, 3} reported at PL4).
+snr_k: 2.0
+stage1_retention: {full_snr_gt: 2.0, scalar_snr_lt: 1.0, marginal_band: [1.0, 2.0]}
+
+# Controls (PL1): negative = same-brand two-channel-draw pair must NOT flag;
+# positive = planted scalar-equal profile-distinct pair MUST flag.
+controls:
+  negative: same_brand_two_artifact_draws
+  positive: planted_scalar_equal_profile_distinct
+
+# List price per 1M tokens (input/output USD), for cost telemetry; the logger's
+# PRICE_TABLE is the runtime source.
+list_prices:
+  claude-opus-4-8: {input: 5.00, output: 25.00}
+  claude-haiku-4-5-20251001: {input: 1.00, output: 5.00}
+  gpt-5.5-2026-04-23: {input: 5.00, output: 30.00}
+  gpt-5.4-mini-2026-03-17: {input: 0.55, output: 2.20}
+  qwen3.7-max-2026-06-08: {input: 2.50, output: 7.50}
+  qwen3.6-flash-2026-04-16: {input: 0.10, output: 0.30}
+  deepseek-v4-pro: {input: 1.74, output: 3.48}
+  deepseek-v4-flash: {input: 0.14, output: 0.28}

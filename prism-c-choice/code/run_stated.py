@@ -13,7 +13,7 @@ dims extract). Writes PL3 JSONL (logs/) + parsed records
 op) / (scenario, op) cells are skipped.
 
 Run (keys via bws; long runs sandbox OFF; shardable):
-    bws run -- research/prism_c/code/run_campaign.sh stated [--ops OP1,OP2]
+    bws run -- code/run_campaign.sh stated [--ops OP1,OP2]
         [--brands A,B] [--channels official,press] [--needs-only]
         [--stated-only] [--suffix _s1]
 """

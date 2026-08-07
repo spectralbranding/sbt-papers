@@ -5,7 +5,7 @@
 # ///
 """prism_c_lib.py — campaign library for PRISM-C (2026bb, choice-perception gap).
 
-Reuses the shared PRISM machinery (research/prism_core/): 4-family provider
+Reuses the shared PRISM machinery (code/prism_core/): 4-family provider
 layer + PL3 logging, the frozen PRISM-B stated-reading prompt set (brand
 readings AND need-vector elicitation), stats + concordance. Adds the PL2
 choice-elicitation prompt battery and the deterministic counterbalancing

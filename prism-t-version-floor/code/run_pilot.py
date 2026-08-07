@@ -14,7 +14,7 @@
       never substituted).
 
 Run (keys via bws; sandbox OFF):
-    bws run -- research/prism_t/code/run_campaign.sh pilot
+    bws run -- code/run_campaign.sh pilot
 """
 
 from __future__ import annotations

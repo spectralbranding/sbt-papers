@@ -24,9 +24,9 @@ Deterministic, seeded. Computes, from the parsed VE-1 record layer:
   - robustness: metric sweep (cosine / euclidean / mahalanobis-diagonal).
 
 Fixed seed SEED = 20260702. Run:
-    uv run python research/prism_t/code/estimator.py \
-        --records research/prism_t/data/ve1_records.jsonl \
-        --out research/prism_t/data/pl4_results.json --robustness
+    uv run python code/estimator.py \
+        --records data/ve1_records.jsonl \
+        --out data/pl4_results.json --robustness
 """
 
 from __future__ import annotations

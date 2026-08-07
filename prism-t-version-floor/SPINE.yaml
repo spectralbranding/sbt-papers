@@ -172,7 +172,7 @@ observations:
       base model is reasoning-tier: at max_completion_tokens 1200 the
       reasoning budget consumed the whole allowance and content returned
       empty — a per-rung token override is part of the frozen PL1).
-    raw_data_pointer: "[internal path removed]"
+    raw_data_pointer: "data/pilot_report.json"
     instrument: "run_pilot.py under PL1 operator pairs + ladders"
     timestamp: "2026-07-02"
     conditions_at_capture: "prompt set prism-t/v1.0.0; pinned panel sealed before pilot"
@@ -193,7 +193,7 @@ observations:
       gpt-5 pilot catch) were resolved by a per-rung token override plus the
       resume pass; the affected pair is the floor-excluded exploratory
       observer throughout.
-    raw_data_pointer: "[internal path removed]"
+    raw_data_pointer: "data/ve1_records.jsonl"
     instrument: "run_ve1.py jobs floor/ladder/negcontrol under frozen PL1 prism-t/v1.0.0"
     timestamp: "2026-07-02"
     conditions_at_capture: "16-way sharded collection; append-only records; every artifact read hash-verified against the sealed manifest"

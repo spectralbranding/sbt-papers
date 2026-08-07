@@ -107,7 +107,7 @@ EPSILON = 0.05  # smoothing for all-zero R4 responses (matches run19_rate_sweep.
 
 # ---------------------------------------------------------------------------
 # Paper-reported values (Table 3, Table 4, abstract, H2) -- the targets.
-# Sourced verbatim from research/papers/2026aa/paper.md (v1.1.0).
+# Sourced verbatim from [internal path removed] (v1.1.0).
 # ---------------------------------------------------------------------------
 PAPER_TABLE3 = {
     # rate: (mean_d, sd, cv)

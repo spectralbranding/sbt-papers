@@ -119,7 +119,7 @@ Five pre-registered hypotheses:
 
 ### Data Quality
 
-Of the 2,125 nominal design cells (5 response formats x 5 brands x 17 models x 5 repetitions), repetition counts varied from 3 to 5 per cell, yielding 1,652 recorded API calls; of these, 1,621 (98.1%) produced valid parsed responses. Total experiment cost was $0.225 USD; wall-clock time was 33 minutes. Zero deviations from the pre-registered protocol were required.
+Of the 2,125 nominal design cells (5 response formats x 5 brands x 17 models x 5 repetitions), repetition counts varied from 3 to 5 per cell, yielding 1,652 recorded API calls; of these, 1,621 (98.1%) produced valid parsed responses. Total experiment cost was approximately $0.23 USD; wall-clock time was approximately 33 minutes. Zero deviations from the pre-registered protocol were required.
 
 ### H1: Monotonic Rate-Distortion Shape
 
@@ -228,7 +228,7 @@ The J-shape applies to well-known brands with dense training-corpus representati
 
 ### Implications for Practice
 
-For brand researchers adopting AI-based measurement, the finding prescribes a specific instrument design: use 1-5 ordinal scales rather than point-allocation or open-ended formats when eliciting brand perception profiles from LLMs. This recommendation aligns with the classical optimal-scale-points finding in human survey design [@cox-1980-optimal-number-response] but arrives via a distinct pathway — prior suppression rather than cognitive capacity. The recommendation applies to any application where the goal is to recover a multi-dimensional brand profile with minimal distortion, including automated brand auditing, competitive monitoring, and AI-mediated market research. The cost efficiency of this approach is notable: the entire 17-model, 5-brand, 5-condition experiment cost $0.225 USD and completed in 33 minutes, making R(D)-calibrated instrument design accessible to researchers without large compute budgets.
+For brand researchers adopting AI-based measurement, the finding prescribes a specific instrument design: use 1-5 ordinal scales rather than point-allocation or open-ended formats when eliciting brand perception profiles from LLMs. This recommendation aligns with the classical optimal-scale-points finding in human survey design [@cox-1980-optimal-number-response] but arrives via a distinct pathway — prior suppression rather than cognitive capacity. The recommendation applies to any application where the goal is to recover a multi-dimensional brand profile with minimal distortion, including automated brand auditing, competitive monitoring, and AI-mediated market research. The cost efficiency of this approach is notable: the entire 17-model, 5-brand, 5-condition experiment cost approximately $0.23 USD and completed in about 33 minutes, making R(D)-calibrated instrument design accessible to researchers without large compute budgets.
 
 For information theorists, the J-shaped curve in a cognitive encoder represents an empirical anomaly worth further investigation. The transition from classical monotonic R(D) to non-monotonic behavior occurs precisely when the encoder possesses strong priors about the source — a condition absent from the memoryless source model underlying Shannon's theorem.
 
@@ -236,7 +236,7 @@ The rate-distortion principle extends bidirectionally. Experiment D (Zharnikov [
 
 ## Data Availability
 
-Code and pre-registration materials are publicly available at https://github.com/spectralbranding/sbt-papers/tree/main/r19-rate-distortion; the dataset of record is archived on HuggingFace at https://doi.org/10.57967/hf/8362. The experiment can be reproduced for $0.225 USD in approximately 33 minutes.
+Code and pre-registration materials are publicly available at https://github.com/spectralbranding/sbt-papers/tree/main/r19-rate-distortion; the dataset of record is archived on HuggingFace at https://doi.org/10.57967/hf/8362. The experiment can be reproduced for about $0.23 USD in approximately 33 minutes.
 
 ## Acknowledgments
 

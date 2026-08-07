@@ -21,7 +21,7 @@ new epoch, keys via `bws run --`).
 
 ```sh
 # 0. Unit suite (no API spend; must pass before collection)
-cd code && uv run --with pytest --with numpy --with pyyaml --with httpx python -m pytest tests/ -q
+cd [internal path removed] && uv run --with pytest --with numpy --with pyyaml --with httpx python -m pytest tests/ -q
 
 # 1. Smoke (one call per operator)
 bws run -- <wrapper.sh: uv run --with httpx --with pyyaml python run_campaign.py --arm smoke>

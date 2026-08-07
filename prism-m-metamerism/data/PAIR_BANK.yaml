@@ -1,0 +1,244 @@
+pair_bank_version: prism-m/v1.0.0
+frozen_date: '2026-07-02'
+stage1_op_pairs:
+- OP1
+- OP3
+retention_rule: full S/N > 2 AND provisional scalar S/N < 1
+n_candidate_pairs_evaluated: 780
+n_retained: 23
+n_marginal_flagged: 19
+retained_pairs:
+- pair:
+  - Basecamp
+  - Cisco
+  snr_full_stage1: 2.055
+  snr_scalar_stage1: 0.125
+  id: MP-1
+- pair:
+  - Basecamp
+  - Goldman Sachs
+  snr_full_stage1: 3.137
+  snr_scalar_stage1: 0.167
+  id: MP-2
+- pair:
+  - Basecamp
+  - Harley-Davidson
+  snr_full_stage1: 3.955
+  snr_scalar_stage1: 0.25
+  id: MP-3
+- pair:
+  - Basecamp
+  - Intel
+  snr_full_stage1: 3.009
+  snr_scalar_stage1: 0.929
+  id: MP-4
+- pair:
+  - Basecamp
+  - McDonald's
+  snr_full_stage1: 7.152
+  snr_scalar_stage1: 0.071
+  id: MP-5
+- pair:
+  - Basecamp
+  - Microsoft
+  snr_full_stage1: 2.235
+  snr_scalar_stage1: 0.75
+  id: MP-6
+- pair:
+  - Basecamp
+  - Salesforce
+  snr_full_stage1: 2.776
+  snr_scalar_stage1: 0.75
+  id: MP-7
+- pair:
+  - Basecamp
+  - Starbucks
+  snr_full_stage1: 6.211
+  snr_scalar_stage1: 0.75
+  id: MP-8
+- pair:
+  - Basecamp
+  - Tesla
+  snr_full_stage1: 2.731
+  snr_scalar_stage1: 0.75
+  id: MP-9
+- pair:
+  - Basecamp
+  - Uber
+  snr_full_stage1: 2.94
+  snr_scalar_stage1: 0.722
+  id: MP-10
+- pair:
+  - Goldman Sachs
+  - McDonald's
+  snr_full_stage1: 2.248
+  snr_scalar_stage1: 0.0
+  id: MP-11
+- pair:
+  - Goldman Sachs
+  - SAP
+  snr_full_stage1: 2.005
+  snr_scalar_stage1: 0.667
+  id: MP-12
+- pair:
+  - Harley-Davidson
+  - McDonald's
+  snr_full_stage1: 2.143
+  snr_scalar_stage1: 0.0
+  id: MP-13
+- pair:
+  - IKEA
+  - Patagonia
+  snr_full_stage1: 4.205
+  snr_scalar_stage1: 0.375
+  id: MP-14
+- pair:
+  - Intel
+  - McDonald's
+  snr_full_stage1: 2.078
+  snr_scalar_stage1: 0.857
+  id: MP-15
+- pair:
+  - LEGO
+  - Patagonia
+  snr_full_stage1: 2.848
+  snr_scalar_stage1: 0.25
+  id: MP-16
+- pair:
+  - McDonald's
+  - Microsoft
+  snr_full_stage1: 2.027
+  snr_scalar_stage1: 0.286
+  id: MP-17
+- pair:
+  - McDonald's
+  - SAP
+  snr_full_stage1: 2.438
+  snr_scalar_stage1: 0.286
+  id: MP-18
+- pair:
+  - McDonald's
+  - Stripe
+  snr_full_stage1: 3.079
+  snr_scalar_stage1: 1.0
+  id: MP-19
+- pair:
+  - McDonald's
+  - Tesla
+  snr_full_stage1: 2.581
+  snr_scalar_stage1: 0.143
+  id: MP-20
+- pair:
+  - Microsoft
+  - Starbucks
+  snr_full_stage1: 2.353
+  snr_scalar_stage1: 0.0
+  id: MP-21
+- pair:
+  - Patagonia
+  - Rolex
+  snr_full_stage1: 2.208
+  snr_scalar_stage1: 0.0
+  id: MP-22
+- pair:
+  - Rolex
+  - Stripe
+  snr_full_stage1: 2.294
+  snr_scalar_stage1: 0.2
+  id: MP-23
+marginal_flagged_pairs:
+- pair:
+  - Basecamp
+  - Caterpillar
+  snr_full_stage1: 3.232
+  snr_scalar_stage1: 1.833
+- pair:
+  - Basecamp
+  - Erewhon
+  snr_full_stage1: 4.602
+  snr_scalar_stage1: 1.25
+- pair:
+  - Basecamp
+  - IKEA
+  snr_full_stage1: 4.719
+  snr_scalar_stage1: 1.5
+- pair:
+  - Basecamp
+  - Ryanair
+  snr_full_stage1: 3.36
+  snr_scalar_stage1: 1.5
+- pair:
+  - Basecamp
+  - SAP
+  snr_full_stage1: 2.159
+  snr_scalar_stage1: 1.25
+- pair:
+  - Basecamp
+  - Sephora
+  snr_full_stage1: 5.236
+  snr_scalar_stage1: 1.75
+- pair:
+  - Basecamp
+  - Slack
+  snr_full_stage1: 4.097
+  snr_scalar_stage1: 1.5
+- pair:
+  - Basecamp
+  - Stripe
+  snr_full_stage1: 2.598
+  snr_scalar_stage1: 1.3
+- pair:
+  - Basecamp
+  - Zoom
+  snr_full_stage1: 3.054
+  snr_scalar_stage1: 1.5
+- pair:
+  - Boeing
+  - Ryanair
+  snr_full_stage1: 2.591
+  snr_scalar_stage1: 1.6
+- pair:
+  - Erewhon
+  - Microsoft
+  snr_full_stage1: 2.146
+  snr_scalar_stage1: 1.0
+- pair:
+  - Harley-Davidson
+  - IKEA
+  snr_full_stage1: 2.709
+  snr_scalar_stage1: 1.625
+- pair:
+  - Harley-Davidson
+  - Ryanair
+  snr_full_stage1: 2.081
+  snr_scalar_stage1: 1.4
+- pair:
+  - Harley-Davidson
+  - Starbucks
+  snr_full_stage1: 2.239
+  snr_scalar_stage1: 2.0
+- pair:
+  - Hermès
+  - Patagonia
+  snr_full_stage1: 2.278
+  snr_scalar_stage1: 1.5
+- pair:
+  - McDonald's
+  - Patagonia
+  snr_full_stage1: 3.875
+  snr_scalar_stage1: 1.143
+- pair:
+  - Meta (Facebook)
+  - Ryanair
+  snr_full_stage1: 2.009
+  snr_scalar_stage1: 1.583
+- pair:
+  - Microsoft
+  - Nike
+  snr_full_stage1: 2.417
+  snr_scalar_stage1: 1.75
+- pair:
+  - Ryanair
+  - Tesla
+  snr_full_stage1: 2.235
+  snr_scalar_stage1: 1.2

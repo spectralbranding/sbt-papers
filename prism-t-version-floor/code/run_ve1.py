@@ -23,9 +23,9 @@ renderer, extractor, run) records are skipped. Shardable via --job /
 --ladders / --ops / --brands i:j / --suffix.
 
 Run (keys via bws; long runs sandbox OFF):
-    bws run -- research/prism_t/code/run_campaign.sh floor
-    bws run -- research/prism_t/code/run_campaign.sh ladder
-    bws run -- research/prism_t/code/run_campaign.sh negcontrol
+    bws run -- code/run_campaign.sh floor
+    bws run -- code/run_campaign.sh ladder
+    bws run -- code/run_campaign.sh negcontrol
 """
 
 from __future__ import annotations

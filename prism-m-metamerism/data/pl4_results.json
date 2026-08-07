@@ -1,0 +1,4697 @@
+{
+  "seed": 20260702,
+  "k": 2.0,
+  "metric": "cosine",
+  "n_brands": 17,
+  "op_pairs": [
+    "OP1",
+    "OP2",
+    "OP3",
+    "OP4"
+  ],
+  "fractions": {
+    "score": {
+      "fraction": null,
+      "n_metameric": 0,
+      "n_resolved": 0,
+      "ci95": [
+        null,
+        null
+      ]
+    },
+    "rank": {
+      "fraction": null,
+      "n_metameric": 0,
+      "n_resolved": 0,
+      "ci95": [
+        null,
+        null
+      ]
+    },
+    "pick": {
+      "fraction": null,
+      "n_metameric": 0,
+      "n_resolved": 0,
+      "ci95": [
+        null,
+        null
+      ]
+    }
+  },
+  "H1": {
+    "supported": false,
+    "pairs": []
+  },
+  "H2": {
+    "n_resolved": 0,
+    "n01_score_only": 0,
+    "n10_rank_only": 0,
+    "p_score_gt_rank": 1.0,
+    "p_rank_gt_full": 1.0,
+    "holm_adjusted": {
+      "score_gt_rank": 1.0,
+      "rank_gt_full": 1.0
+    },
+    "supported": false
+  },
+  "H3": {
+    "per_op_pair_fraction": {
+      "OP1": 1.0,
+      "OP2": null,
+      "OP3": 1.0,
+      "OP4": 0.21296296296296297
+    },
+    "dispersion": 0.787037037037037,
+    "pooled_ci_half_width": null,
+    "supported": false
+  },
+  "negative_control": {
+    "passed": true,
+    "n_tested": 102,
+    "n_flagged_metameric": 0,
+    "n_resolved_distinct_diagnostic": 0,
+    "flags": []
+  },
+  "pair_rows": [
+    {
+      "pair": [
+        "Basecamp",
+        "Cisco"
+      ],
+      "snr_full": 0.09683647604458373,
+      "resolved_full": false,
+      "snr_score": 0.14285714285714304,
+      "metameric_score": false,
+      "snr_rank": 1.4375,
+      "metameric_rank": false,
+      "snr_pick": 0.0,
+      "metameric_pick": false
+    },
+    {
+      "pair": [
+        "Basecamp",
+        "Goldman Sachs"
+      ],
+      "snr_full": 0.06889622402339543,
+      "resolved_full": false,
+      "snr_score": 0.7045454545454546,
+      "metameric_score": false,
+      "snr_rank": 1.3958333333333333,
+      "metameric_rank": false,
+      "snr_pick": 0.25,
+      "metameric_pick": false
+    },
+    {
+      "pair": [
+        "Basecamp",
+        "Harley-Davidson"
+      ],
+      "snr_full": 0.08518528286218917,
+      "resolved_full": false,
+      "snr_score": 0.4642857142857147,
+      "metameric_score": false,
+      "snr_rank": 1.125,
+      "metameric_rank": false,
+      "snr_pick": 0.125,
+      "metameric_pick": false
+    },
+    {
+      "pair": [
+        "Basecamp",
+        "IKEA"
+      ],
+      "snr_full": 0.12618732058532683,
+      "resolved_full": false,
+      "snr_score": 6.344131569286611e-16,
+      "metameric_score": false,
+      "snr_rank": 1.4166666666666665,
+      "metameric_rank": false,
+      "snr_pick": 0.5,
+      "metameric_pick": false
+    },
+    {
+      "pair": [
+        "Basecamp",
+        "Intel"
+      ],
+      "snr_full": 0.11211337867536479,
+      "resolved_full": false,
+      "snr_score": 0.6363636363636366,
+      "metameric_score": false,
+      "snr_rank": 0.8749999999999999,
+      "metameric_rank": false,
+      "snr_pick": 0.3125,
+      "metameric_pick": false
+    },
+    {
+      "pair": [
+        "Basecamp",
+        "LEGO"
+      ],
+      "snr_full": 0.11023742552722669,
+      "resolved_full": false,
+      "snr_score": 0.7499999999999996,
+      "metameric_score": false,
+      "snr_rank": 1.5416666666666665,
+      "metameric_rank": false,
+      "snr_pick": 0.75,
+      "metameric_pick": false
+    },
+    {
+      "pair": [
+        "Basecamp",
+        "McDonald's"
+      ],
+      "snr_full": 0.16302738886370183,
+      "resolved_full": false,
+      "snr_score": 0.10714285714285744,
+      "metameric_score": false,
+      "snr_rank": 1.5416666666666665,
+      "metameric_rank": false,
+      "snr_pick": 0.0,
+      "metameric_pick": false
+    },
+    {
+      "pair": [
+        "Basecamp",
+        "Microsoft"
+      ],
+      "snr_full": 0.08769558457842769,
+      "resolved_full": false,
+      "snr_score": 0.3928571428571426,
+      "metameric_score": false,
+      "snr_rank": 1.5416666666666665,
+      "metameric_rank": false,
+      "snr_pick": 0.0,
+      "metameric_pick": false
+    },
+    {
+      "pair": [
+        "Basecamp",
+        "Patagonia"
+      ],
+      "snr_full": 0.0462185295609852,
+      "resolved_full": false,
+      "snr_score": 0.8214285714285707,
+      "metameric_score": false,
+      "snr_rank": 1.5208333333333333,
+      "metameric_rank": false,
+      "snr_pick": 0.75,
+      "metameric_pick": false
+    },
+    {
+      "pair": [
+        "Basecamp",
+        "Rolex"
+      ],
+      "snr_full": 0.09883988696156532,
+      "resolved_full": false,
+      "snr_score": 0.857142857142857,
+      "metameric_score": false,
+      "snr_rank": 1.5416666666666665,
+      "metameric_rank": false,
+      "snr_pick": 0.5,
+      "metameric_pick": false
+    },
+    {
+      "pair": [
+        "Basecamp",
+        "SAP"
+      ],
+      "snr_full": 0.10185472103971863,
+      "resolved_full": false,
+      "snr_score": 0.7083333333333335,
+      "metameric_score": false,
+      "snr_rank": 1.0208333333333333,
+      "metameric_rank": false,
+      "snr_pick": 0.3333333333333333,
+      "metameric_pick": false
+    },
+    {
+      "pair": [
+        "Basecamp",
+        "Salesforce"
+      ],
+      "snr_full": 0.11817278229217944,
+      "resolved_full": false,
+      "snr_score": 0.21428571428571425,
+      "metameric_score": false,
+      "snr_rank": 1.4791666666666667,
+      "metameric_rank": false,
+      "snr_pick": 0.125,
+      "metameric_pick": false
+    },
+    {
+      "pair": [
+        "Basecamp",
+        "Starbucks"
+      ],
+      "snr_full": 0.15224114644171546,
+      "resolved_full": false,
+      "snr_score": 0.7777777777777777,
+      "metameric_score": false,
+      "snr_rank": 1.3958333333333333,
+      "metameric_rank": false,
+      "snr_pick": 0.16666666666666666,
+      "metameric_pick": false
+    },
+    {
+      "pair": [
+        "Basecamp",
+        "Stripe"
+      ],
+      "snr_full": 0.05260330636677764,
+      "resolved_full": false,
+      "snr_score": 0.37500000000000006,
+      "metameric_score": false,
+      "snr_rank": 1.4583333333333333,
+      "metameric_rank": false,
+      "snr_pick": 0.125,
+      "metameric_pick": false
+    },
+    {
+      "pair": [
+        "Basecamp",
+        "Tesla"
+      ],
+      "snr_full": 0.06751431972470585,
+      "resolved_full": false,
+      "snr_score": 0.7142857142857152,
+      "metameric_score": false,
+      "snr_rank": 1.3125,
+      "metameric_rank": false,
+      "snr_pick": 2.0,
+      "metameric_pick": false
+    },
+    {
+      "pair": [
+        "Basecamp",
+        "Uber"
+      ],
+      "snr_full": 0.08019037611227263,
+      "resolved_full": false,
+      "snr_score": 1.4642857142857146,
+      "metameric_score": false,
+      "snr_rank": 1.4583333333333333,
+      "metameric_rank": false,
+      "snr_pick": 0.75,
+      "metameric_pick": false
+    },
+    {
+      "pair": [
+        "Cisco",
+        "Goldman Sachs"
+      ],
+      "snr_full": 0.19380405827108524,
+      "resolved_full": false,
+      "snr_score": 0.6136363636363635,
+      "metameric_score": false,
+      "snr_rank": 0.16666666666666657,
+      "metameric_rank": false,
+      "snr_pick": 0.25,
+      "metameric_pick": false
+    },
+    {
+      "pair": [
+        "Cisco",
+        "Harley-Davidson"
+      ],
+      "snr_full": 0.29949805737130814,
+      "resolved_full": false,
+      "snr_score": 0.3214285714285717,
+      "metameric_score": false,
+      "snr_rank": 0.34090909090909094,
+      "metameric_rank": false,
+      "snr_pick": 0.125,
+      "metameric_pick": false
+    },
+    {
+      "pair": [
+        "Cisco",
+        "IKEA"
+      ],
+      "snr_full": 0.35272602882671755,
+      "resolved_full": false,
+      "snr_score": 0.1428571428571424,
+      "metameric_score": false,
+      "snr_rank": 0.062499999999999965,
+      "metameric_rank": false,
+      "snr_pick": 0.16666666666666666,
+      "metameric_pick": false
+    },
+    {
+      "pair": [
+        "Cisco",
+        "Intel"
+      ],
+      "snr_full": 0.1325211511018556,
+      "resolved_full": false,
+      "snr_score": 0.590909090909091,
+      "metameric_score": false,
+      "snr_rank": 0.84375,
+      "metameric_rank": false,
+      "snr_pick": 0.3125,
+      "metameric_pick": false
+    },
+    {
+      "pair": [
+        "Cisco",
+        "LEGO"
+      ],
+      "snr_full": 0.30538963854859014,
+      "resolved_full": false,
+      "snr_score": 0.8928571428571426,
+      "metameric_score": false,
+      "snr_rank": 0.4166666666666667,
+      "metameric_rank": false,
+      "snr_pick": 0.25,
+      "metameric_pick": false
+    },
+    {
+      "pair": [
+        "Cisco",
+        "McDonald's"
+      ],
+      "snr_full": 0.4440071625000612,
+      "resolved_full": false,
+      "snr_score": 0.0357142857142856,
+      "metameric_score": false,
+      "snr_rank": 0.4166666666666667,
+      "metameric_rank": false,
+      "snr_pick": 0.0,
+      "metameric_pick": false
+    },
+    {
+      "pair": [
+        "Cisco",
+        "Microsoft"
+      ],
+      "snr_full": 0.21331436124562267,
+      "resolved_full": false,
+      "snr_score": 0.2499999999999997,
+      "metameric_score": false,
+      "snr_rank": 0.4166666666666667,
+      "metameric_rank": false,
+      "snr_pick": 0.0,
+      "metameric_pick": false
+    },
+    {
+      "pair": [
+        "Cisco",
+        "Patagonia"
+      ],
+      "snr_full": 0.19460415203629658,
+      "resolved_full": false,
+      "snr_score": 0.9642857142857137,
+      "metameric_score": false,
+      "snr_rank": 0.33333333333333337,
+      "metameric_rank": false,
+      "snr_pick": 0.25,
+      "metameric_pick": false
+    },
+    {
+      "pair": [
+        "Cisco",
+        "Rolex"
+      ],
+      "snr_full": 0.211770963783682,
+      "resolved_full": false,
+      "snr_score": 1.0,
+      "metameric_score": false,
+      "snr_rank": 0.4166666666666667,
+      "metameric_rank": false,
+      "snr_pick": 0.16666666666666666,
+      "metameric_pick": false
+    },
+    {
+      "pair": [
+        "Cisco",
+        "SAP"
+      ],
+      "snr_full": 0.07880767692762822,
+      "resolved_full": false,
+      "snr_score": 0.625,
+      "metameric_score": false,
+      "snr_rank": 0.7142857142857144,
+      "metameric_rank": false,
+      "snr_pick": 0.3333333333333333,
+      "metameric_pick": false
+    },
+    {
+      "pair": [
+        "Cisco",
+        "Salesforce"
+      ],
+      "snr_full": 0.2407538828370328,
+      "resolved_full": false,
+      "snr_score": 0.0714285714285712,
+      "metameric_score": false,
+      "snr_rank": 0.1666666666666667,
+      "metameric_rank": false,
+      "snr_pick": 0.08333333333333333,
+      "metameric_pick": false
+    },
+    {
+      "pair": [
+        "Cisco",
+        "Starbucks"
+      ],
+      "snr_full": 0.5157336893378685,
+      "resolved_full": false,
+      "snr_score": 0.6666666666666665,
+      "metameric_score": false,
+      "snr_rank": 0.12499999999999993,
+      "metameric_rank": false,
+      "snr_pick": 0.16666666666666666,
+      "metameric_pick": false
+    },
+    {
+      "pair": [
+        "Cisco",
+        "Stripe"
+      ],
+      "snr_full": 0.10074663366862567,
+      "resolved_full": false,
+      "snr_score": 0.5000000000000003,
+      "metameric_score": false,
+      "snr_rank": 0.08333333333333337,
+      "metameric_rank": false,
+      "snr_pick": 0.08333333333333333,
+      "metameric_pick": false
+    },
+    {
+      "pair": [
+        "Cisco",
+        "Tesla"
+      ],
+      "snr_full": 0.35906875797293647,
+      "resolved_full": false,
+      "snr_score": 0.5714285714285722,
+      "metameric_score": false,
+      "snr_rank": 0.375,
+      "metameric_rank": false,
+      "snr_pick": 0.6666666666666666,
+      "metameric_pick": false
+    },
+    {
+      "pair": [
+        "Cisco",
+        "Uber"
+      ],
+      "snr_full": 0.13664917152204825,
+      "resolved_full": false,
+      "snr_score": 1.3214285714285716,
+      "metameric_score": false,
+      "snr_rank": 0.06250000000000003,
+      "metameric_rank": false,
+      "snr_pick": 0.5,
+      "metameric_pick": false
+    },
+    {
+      "pair": [
+        "Goldman Sachs",
+        "Harley-Davidson"
+      ],
+      "snr_full": 0.12011346517192788,
+      "resolved_full": false,
+      "snr_score": 0.4090909090909089,
+      "metameric_score": false,
+      "snr_rank": 0.2954545454545455,
+      "metameric_rank": false,
+      "snr_pick": 0.0625,
+      "metameric_pick": false
+    },
+    {
+      "pair": [
+        "Goldman Sachs",
+        "IKEA"
+      ],
+      "snr_full": 0.09353397374137093,
+      "resolved_full": false,
+      "snr_score": 0.7045454545454541,
+      "metameric_score": false,
+      "snr_rank": 0.062499999999999965,
+      "metameric_rank": false,
+      "snr_pick": 0.4166666666666667,
+      "metameric_pick": false
+    },
+    {
+      "pair": [
+        "Goldman Sachs",
+        "Intel"
+      ],
+      "snr_full": 0.05234375967786973,
+      "resolved_full": false,
+      "snr_score": 0.28409090909090934,
+      "metameric_score": false,
+      "snr_rank": 0.78125,
+      "metameric_rank": false,
+      "snr_pick": 0.125,
+      "metameric_pick": false
+    },
+    {
+      "pair": [
+        "Goldman Sachs",
+        "LEGO"
+      ],
+      "snr_full": 0.13291437384499757,
+      "resolved_full": false,
+      "snr_score": 1.1818181818181814,
+      "metameric_score": false,
+      "snr_rank": 0.5833333333333333,
+      "metameric_rank": false,
+      "snr_pick": 0.5,
+      "metameric_pick": false
+    },
+    {
+      "pair": [
+        "Goldman Sachs",
+        "McDonald's"
+      ],
+      "snr_full": 0.18663991530348797,
+      "resolved_full": false,
+      "snr_score": 0.6363636363636362,
+      "metameric_score": false,
+      "snr_rank": 0.5833333333333333,
+      "metameric_rank": false,
+      "snr_pick": 0.25,
+      "metameric_pick": false
+    },
+    {
+      "pair": [
+        "Goldman Sachs",
+        "Microsoft"
+      ],
+      "snr_full": 0.07513513458723403,
+      "resolved_full": false,
+      "snr_score": 0.4545454545454546,
+      "metameric_score": false,
+      "snr_rank": 0.5833333333333333,
+      "metameric_rank": false,
+      "snr_pick": 0.25,
+      "metameric_pick": false
+    },
+    {
+      "pair": [
+        "Goldman Sachs",
+        "Patagonia"
+      ],
+      "snr_full": 0.032605031415835165,
+      "resolved_full": false,
+      "snr_score": 1.2272727272727266,
+      "metameric_score": false,
+      "snr_rank": 0.4999999999999999,
+      "metameric_rank": false,
+      "snr_pick": 0.5,
+      "metameric_pick": false
+    },
+    {
+      "pair": [
+        "Goldman Sachs",
+        "Rolex"
+      ],
+      "snr_full": 0.058221830077474945,
+      "resolved_full": false,
+      "snr_score": 1.2499999999999998,
+      "metameric_score": false,
+      "snr_rank": 0.5833333333333333,
+      "metameric_rank": false,
+      "snr_pick": 0.4166666666666667,
+      "metameric_pick": false
+    },
+    {
+      "pair": [
+        "Goldman Sachs",
+        "SAP"
+      ],
+      "snr_full": 0.17804975856107602,
+      "resolved_full": false,
+      "snr_score": 0.06250000000000015,
+      "metameric_score": false,
+      "snr_rank": 0.6428571428571429,
+      "metameric_rank": false,
+      "snr_pick": 0.08333333333333333,
+      "metameric_pick": false
+    },
+    {
+      "pair": [
+        "Goldman Sachs",
+        "Salesforce"
+      ],
+      "snr_full": 0.100175365678081,
+      "resolved_full": false,
+      "snr_score": 0.5681818181818182,
+      "metameric_score": false,
+      "snr_rank": 0.3333333333333333,
+      "metameric_rank": false,
+      "snr_pick": 0.16666666666666666,
+      "metameric_pick": false
+    },
+    {
+      "pair": [
+        "Goldman Sachs",
+        "Starbucks"
+      ],
+      "snr_full": 0.22314713769480748,
+      "resolved_full": false,
+      "snr_score": 0.06818181818181795,
+      "metameric_score": false,
+      "snr_rank": 0.0,
+      "metameric_rank": false,
+      "snr_pick": 0.08333333333333333,
+      "metameric_pick": false
+    },
+    {
+      "pair": [
+        "Goldman Sachs",
+        "Stripe"
+      ],
+      "snr_full": 0.05536257478063034,
+      "resolved_full": false,
+      "snr_score": 0.9772727272727272,
+      "metameric_score": false,
+      "snr_rank": 0.24999999999999994,
+      "metameric_rank": false,
+      "snr_pick": 0.3333333333333333,
+      "metameric_pick": false
+    },
+    {
+      "pair": [
+        "Goldman Sachs",
+        "Tesla"
+      ],
+      "snr_full": 0.13277966321805784,
+      "resolved_full": false,
+      "snr_score": 0.24999999999999956,
+      "metameric_score": false,
+      "snr_rank": 0.2500000000000001,
+      "metameric_rank": false,
+      "snr_pick": 0.4166666666666667,
+      "metameric_pick": false
+    },
+    {
+      "pair": [
+        "Goldman Sachs",
+        "Uber"
+      ],
+      "snr_full": 0.08354573030956117,
+      "resolved_full": false,
+      "snr_score": 0.2272727272727273,
+      "metameric_score": false,
+      "snr_rank": 0.18749999999999997,
+      "metameric_rank": false,
+      "snr_pick": 0.25,
+      "metameric_pick": false
+    },
+    {
+      "pair": [
+        "Harley-Davidson",
+        "IKEA"
+      ],
+      "snr_full": 0.2003699686895952,
+      "resolved_full": false,
+      "snr_score": 0.4642857142857141,
+      "metameric_score": false,
+      "snr_rank": 0.3181818181818183,
+      "metameric_rank": false,
+      "snr_pick": 0.25,
+      "metameric_pick": false
+    },
+    {
+      "pair": [
+        "Harley-Davidson",
+        "Intel"
+      ],
+      "snr_full": 0.07562678894524254,
+      "resolved_full": false,
+      "snr_score": 0.48863636363636376,
+      "metameric_score": false,
+      "snr_rank": 0.2727272727272727,
+      "metameric_rank": false,
+      "snr_pick": 0.1875,
+      "metameric_pick": false
+    },
+    {
+      "pair": [
+        "Harley-Davidson",
+        "LEGO"
+      ],
+      "snr_full": 0.027928622592878673,
+      "resolved_full": false,
+      "snr_score": 2.1249999999999996,
+      "metameric_score": false,
+      "snr_rank": 0.4545454545454546,
+      "metameric_rank": false,
+      "snr_pick": 0.3125,
+      "metameric_pick": false
+    },
+    {
+      "pair": [
+        "Harley-Davidson",
+        "McDonald's"
+      ],
+      "snr_full": 0.12634695835415283,
+      "resolved_full": false,
+      "snr_score": 0.41666666666666724,
+      "metameric_score": false,
+      "snr_rank": 0.4545454545454546,
+      "metameric_rank": false,
+      "snr_pick": 0.125,
+      "metameric_pick": false
+    },
+    {
+      "pair": [
+        "Harley-Davidson",
+        "Microsoft"
+      ],
+      "snr_full": 0.13638507650269052,
+      "resolved_full": false,
+      "snr_score": 0.07142857142857179,
+      "metameric_score": false,
+      "snr_rank": 0.4545454545454546,
+      "metameric_rank": false,
+      "snr_pick": 0.125,
+      "metameric_pick": false
+    },
+    {
+      "pair": [
+        "Harley-Davidson",
+        "Patagonia"
+      ],
+      "snr_full": 0.1586315536715658,
+      "resolved_full": false,
+      "snr_score": 2.249999999999999,
+      "metameric_score": false,
+      "snr_rank": 0.4318181818181819,
+      "metameric_rank": false,
+      "snr_pick": 0.3125,
+      "metameric_pick": false
+    },
+    {
+      "pair": [
+        "Harley-Davidson",
+        "Rolex"
+      ],
+      "snr_full": 0.06520082343145722,
+      "resolved_full": false,
+      "snr_score": 2.3124999999999973,
+      "metameric_score": false,
+      "snr_rank": 0.4545454545454546,
+      "metameric_rank": false,
+      "snr_pick": 0.25,
+      "metameric_pick": false
+    },
+    {
+      "pair": [
+        "Harley-Davidson",
+        "SAP"
+      ],
+      "snr_full": 0.38256525417502923,
+      "resolved_full": false,
+      "snr_score": 0.43749999999999994,
+      "metameric_score": false,
+      "snr_rank": 0.1136363636363636,
+      "metameric_rank": false,
+      "snr_pick": 0.125,
+      "metameric_pick": false
+    },
+    {
+      "pair": [
+        "Harley-Davidson",
+        "Salesforce"
+      ],
+      "snr_full": 0.08381242974786521,
+      "resolved_full": false,
+      "snr_score": 0.4375000000000008,
+      "metameric_score": false,
+      "snr_rank": 0.38636363636363646,
+      "metameric_rank": false,
+      "snr_pick": 0.0625,
+      "metameric_pick": false
+    },
+    {
+      "pair": [
+        "Harley-Davidson",
+        "Starbucks"
+      ],
+      "snr_full": 0.09973216677141605,
+      "resolved_full": false,
+      "snr_score": 0.4166666666666665,
+      "metameric_score": false,
+      "snr_rank": 0.2954545454545455,
+      "metameric_rank": false,
+      "snr_pick": 0.0,
+      "metameric_pick": false
+    },
+    {
+      "pair": [
+        "Harley-Davidson",
+        "Stripe"
+      ],
+      "snr_full": 0.05835398804369935,
+      "resolved_full": false,
+      "snr_score": 0.7812500000000006,
+      "metameric_score": false,
+      "snr_rank": 0.3636363636363637,
+      "metameric_rank": false,
+      "snr_pick": 0.1875,
+      "metameric_pick": false
+    },
+    {
+      "pair": [
+        "Harley-Davidson",
+        "Tesla"
+      ],
+      "snr_full": 0.083828176152523,
+      "resolved_full": false,
+      "snr_score": 0.2916666666666671,
+      "metameric_score": false,
+      "snr_rank": 0.20454545454545456,
+      "metameric_rank": false,
+      "snr_pick": 0.375,
+      "metameric_pick": false
+    },
+    {
+      "pair": [
+        "Harley-Davidson",
+        "Uber"
+      ],
+      "snr_full": 0.07283255440019933,
+      "resolved_full": false,
+      "snr_score": 1.1666666666666665,
+      "metameric_score": false,
+      "snr_rank": 0.3636363636363637,
+      "metameric_rank": false,
+      "snr_pick": 0.25,
+      "metameric_pick": false
+    },
+    {
+      "pair": [
+        "IKEA",
+        "Intel"
+      ],
+      "snr_full": 0.12230981689345992,
+      "resolved_full": false,
+      "snr_score": 0.6363636363636364,
+      "metameric_score": false,
+      "snr_rank": 0.8125,
+      "metameric_rank": false,
+      "snr_pick": 0.4375,
+      "metameric_pick": false
+    },
+    {
+      "pair": [
+        "IKEA",
+        "LEGO"
+      ],
+      "snr_full": 0.1967112448750119,
+      "resolved_full": false,
+      "snr_score": 0.7500000000000001,
+      "metameric_score": false,
+      "snr_rank": 0.375,
+      "metameric_rank": false,
+      "snr_pick": 0.25,
+      "metameric_pick": false
+    },
+    {
+      "pair": [
+        "IKEA",
+        "McDonald's"
+      ],
+      "snr_full": 0.15921873146555293,
+      "resolved_full": false,
+      "snr_score": 0.1071428571428568,
+      "metameric_score": false,
+      "snr_rank": 0.375,
+      "metameric_rank": false,
+      "snr_pick": 0.25,
+      "metameric_pick": false
+    },
+    {
+      "pair": [
+        "IKEA",
+        "Microsoft"
+      ],
+      "snr_full": 0.2099359314078775,
+      "resolved_full": false,
+      "snr_score": 0.392857142857142,
+      "metameric_score": false,
+      "snr_rank": 0.375,
+      "metameric_rank": false,
+      "snr_pick": 0.25,
+      "metameric_pick": false
+    },
+    {
+      "pair": [
+        "IKEA",
+        "Patagonia"
+      ],
+      "snr_full": 1.6340209486596182,
+      "resolved_full": false,
+      "snr_score": 0.8214285714285714,
+      "metameric_score": false,
+      "snr_rank": 0.31250000000000006,
+      "metameric_rank": false,
+      "snr_pick": 0.25,
+      "metameric_pick": false
+    },
+    {
+      "pair": [
+        "IKEA",
+        "Rolex"
+      ],
+      "snr_full": 0.33043192586583553,
+      "resolved_full": false,
+      "snr_score": 0.8571428571428577,
+      "metameric_score": false,
+      "snr_rank": 0.375,
+      "metameric_rank": false,
+      "snr_pick": 0.0,
+      "metameric_pick": false
+    },
+    {
+      "pair": [
+        "IKEA",
+        "SAP"
+      ],
+      "snr_full": 0.2698401215373013,
+      "resolved_full": false,
+      "snr_score": 0.708333333333333,
+      "metameric_score": false,
+      "snr_rank": 0.6785714285714287,
+      "metameric_rank": false,
+      "snr_pick": 0.5,
+      "metameric_pick": false
+    },
+    {
+      "pair": [
+        "IKEA",
+        "Salesforce"
+      ],
+      "snr_full": 0.10598615800308799,
+      "resolved_full": false,
+      "snr_score": 0.2142857142857136,
+      "metameric_score": false,
+      "snr_rank": 0.1875,
+      "metameric_rank": false,
+      "snr_pick": 0.375,
+      "metameric_pick": false
+    },
+    {
+      "pair": [
+        "IKEA",
+        "Starbucks"
+      ],
+      "snr_full": 0.11173136511923065,
+      "resolved_full": false,
+      "snr_score": 0.7777777777777771,
+      "metameric_score": false,
+      "snr_rank": 0.062499999999999965,
+      "metameric_rank": false,
+      "snr_pick": 0.3333333333333333,
+      "metameric_pick": false
+    },
+    {
+      "pair": [
+        "IKEA",
+        "Stripe"
+      ],
+      "snr_full": 0.07361499369766394,
+      "resolved_full": false,
+      "snr_score": 0.3750000000000006,
+      "metameric_score": false,
+      "snr_rank": 0.125,
+      "metameric_rank": false,
+      "snr_pick": 0.125,
+      "metameric_pick": false
+    },
+    {
+      "pair": [
+        "IKEA",
+        "Tesla"
+      ],
+      "snr_full": 0.23984328117619147,
+      "resolved_full": false,
+      "snr_score": 0.7142857142857145,
+      "metameric_score": false,
+      "snr_rank": 0.31250000000000006,
+      "metameric_rank": false,
+      "snr_pick": 2.5,
+      "metameric_pick": false
+    },
+    {
+      "pair": [
+        "IKEA",
+        "Uber"
+      ],
+      "snr_full": 0.06611519864493781,
+      "resolved_full": false,
+      "snr_score": 1.4642857142857142,
+      "metameric_score": false,
+      "snr_rank": 0.125,
+      "metameric_rank": false,
+      "snr_pick": 1.0,
+      "metameric_pick": false
+    },
+    {
+      "pair": [
+        "Intel",
+        "LEGO"
+      ],
+      "snr_full": 0.0742954703554484,
+      "resolved_full": false,
+      "snr_score": 0.875,
+      "metameric_score": false,
+      "snr_rank": 1.0,
+      "metameric_rank": false,
+      "snr_pick": 0.5,
+      "metameric_pick": false
+    },
+    {
+      "pair": [
+        "Intel",
+        "McDonald's"
+      ],
+      "snr_full": 0.09356956594799713,
+      "resolved_full": false,
+      "snr_score": 0.6022727272727274,
+      "metameric_score": false,
+      "snr_rank": 1.0,
+      "metameric_rank": false,
+      "snr_pick": 0.3125,
+      "metameric_pick": false
+    },
+    {
+      "pair": [
+        "Intel",
+        "Microsoft"
+      ],
+      "snr_full": 0.018552598050639323,
+      "resolved_full": false,
+      "snr_score": 0.5113636363636366,
+      "metameric_score": false,
+      "snr_rank": 1.0,
+      "metameric_rank": false,
+      "snr_pick": 0.3125,
+      "metameric_pick": false
+    },
+    {
+      "pair": [
+        "Intel",
+        "Patagonia"
+      ],
+      "snr_full": 0.08394430797391697,
+      "resolved_full": false,
+      "snr_score": 0.8977272727272727,
+      "metameric_score": false,
+      "snr_rank": 0.96875,
+      "metameric_rank": false,
+      "snr_pick": 0.5,
+      "metameric_pick": false
+    },
+    {
+      "pair": [
+        "Intel",
+        "Rolex"
+      ],
+      "snr_full": 0.047594910032825406,
+      "resolved_full": false,
+      "snr_score": 0.9090909090909092,
+      "metameric_score": false,
+      "snr_rank": 1.0,
+      "metameric_rank": false,
+      "snr_pick": 0.4375,
+      "metameric_pick": false
+    },
+    {
+      "pair": [
+        "Intel",
+        "SAP"
+      ],
+      "snr_full": 0.18952531906713346,
+      "resolved_full": false,
+      "snr_score": 0.25000000000000017,
+      "metameric_score": false,
+      "snr_rank": 0.21874999999999997,
+      "metameric_rank": false,
+      "snr_pick": 0.0625,
+      "metameric_pick": false
+    },
+    {
+      "pair": [
+        "Intel",
+        "Salesforce"
+      ],
+      "snr_full": 0.06816728015569358,
+      "resolved_full": false,
+      "snr_score": 0.5681818181818185,
+      "metameric_score": false,
+      "snr_rank": 0.90625,
+      "metameric_rank": false,
+      "snr_pick": 0.25,
+      "metameric_pick": false
+    },
+    {
+      "pair": [
+        "Intel",
+        "Starbucks"
+      ],
+      "snr_full": 0.13268798275035143,
+      "resolved_full": false,
+      "snr_score": 0.3181818181818183,
+      "metameric_score": false,
+      "snr_rank": 0.78125,
+      "metameric_rank": false,
+      "snr_pick": 0.1875,
+      "metameric_pick": false
+    },
+    {
+      "pair": [
+        "Intel",
+        "Stripe"
+      ],
+      "snr_full": 0.08779538332448157,
+      "resolved_full": false,
+      "snr_score": 0.7727272727272729,
+      "metameric_score": false,
+      "snr_rank": 0.8749999999999999,
+      "metameric_rank": false,
+      "snr_pick": 0.375,
+      "metameric_pick": false
+    },
+    {
+      "pair": [
+        "Intel",
+        "Tesla"
+      ],
+      "snr_full": 0.10011683762154544,
+      "resolved_full": false,
+      "snr_score": 0.4090909090909091,
+      "metameric_score": false,
+      "snr_rank": 0.65625,
+      "metameric_rank": false,
+      "snr_pick": 0.1875,
+      "metameric_pick": false
+    },
+    {
+      "pair": [
+        "Intel",
+        "Uber"
+      ],
+      "snr_full": 0.1149113707122063,
+      "resolved_full": false,
+      "snr_score": 0.17045454545454566,
+      "metameric_score": false,
+      "snr_rank": 0.8749999999999999,
+      "metameric_rank": false,
+      "snr_pick": 0.0625,
+      "metameric_pick": false
+    },
+    {
+      "pair": [
+        "LEGO",
+        "McDonald's"
+      ],
+      "snr_full": 0.09214127630631673,
+      "resolved_full": false,
+      "snr_score": 1.0000000000000007,
+      "metameric_score": false,
+      "snr_rank": 0.0,
+      "metameric_rank": false,
+      "snr_pick": 0.375,
+      "metameric_pick": false
+    },
+    {
+      "pair": [
+        "LEGO",
+        "Microsoft"
+      ],
+      "snr_full": 0.12332063056024228,
+      "resolved_full": false,
+      "snr_score": 1.1428571428571417,
+      "metameric_score": false,
+      "snr_rank": 0.0,
+      "metameric_rank": false,
+      "snr_pick": 0.375,
+      "metameric_pick": false
+    },
+    {
+      "pair": [
+        "LEGO",
+        "Patagonia"
+      ],
+      "snr_full": 0.27716730528350136,
+      "resolved_full": false,
+      "snr_score": 0.12499999999999958,
+      "metameric_score": false,
+      "snr_rank": 0.25,
+      "metameric_rank": false,
+      "snr_pick": 0.0,
+      "metameric_pick": false
+    },
+    {
+      "pair": [
+        "LEGO",
+        "Rolex"
+      ],
+      "snr_full": 0.10273426146758766,
+      "resolved_full": false,
+      "snr_score": 0.18750000000000028,
+      "metameric_score": false,
+      "snr_rank": 0.0,
+      "metameric_rank": false,
+      "snr_pick": 0.25,
+      "metameric_pick": false
+    },
+    {
+      "pair": [
+        "LEGO",
+        "SAP"
+      ],
+      "snr_full": 0.3489618171271268,
+      "resolved_full": false,
+      "snr_score": 1.145833333333333,
+      "metameric_score": false,
+      "snr_rank": 0.8928571428571429,
+      "metameric_rank": false,
+      "snr_pick": 0.5833333333333334,
+      "metameric_pick": false
+    },
+    {
+      "pair": [
+        "LEGO",
+        "Salesforce"
+      ],
+      "snr_full": 0.04693103870767467,
+      "resolved_full": false,
+      "snr_score": 1.687499999999999,
+      "metameric_score": false,
+      "snr_rank": 0.25,
+      "metameric_rank": false,
+      "snr_pick": 0.5,
+      "metameric_pick": false
+    },
+    {
+      "pair": [
+        "LEGO",
+        "Starbucks"
+      ],
+      "snr_full": 0.04316861721157668,
+      "resolved_full": false,
+      "snr_score": 1.3611111111111103,
+      "metameric_score": false,
+      "snr_rank": 0.43749999999999994,
+      "metameric_rank": false,
+      "snr_pick": 0.4166666666666667,
+      "metameric_pick": false
+    },
+    {
+      "pair": [
+        "LEGO",
+        "Stripe"
+      ],
+      "snr_full": 0.05371709746246425,
+      "resolved_full": false,
+      "snr_score": 0.2812499999999998,
+      "metameric_score": false,
+      "snr_rank": 0.3333333333333333,
+      "metameric_rank": false,
+      "snr_pick": 0.25,
+      "metameric_pick": false
+    },
+    {
+      "pair": [
+        "LEGO",
+        "Tesla"
+      ],
+      "snr_full": 0.08643983992882362,
+      "resolved_full": false,
+      "snr_score": 1.708333333333333,
+      "metameric_score": false,
+      "snr_rank": 0.6875,
+      "metameric_rank": false,
+      "snr_pick": 2.75,
+      "metameric_pick": false
+    },
+    {
+      "pair": [
+        "LEGO",
+        "Uber"
+      ],
+      "snr_full": 0.052843213800431534,
+      "resolved_full": false,
+      "snr_score": 2.583333333333333,
+      "metameric_score": false,
+      "snr_rank": 0.25,
+      "metameric_rank": false,
+      "snr_pick": 1.125,
+      "metameric_pick": false
+    },
+    {
+      "pair": [
+        "McDonald's",
+        "Microsoft"
+      ],
+      "snr_full": 0.18945332314056437,
+      "resolved_full": false,
+      "snr_score": 0.28571428571428525,
+      "metameric_score": false,
+      "snr_rank": 0.0,
+      "metameric_rank": false,
+      "snr_pick": 0.0,
+      "metameric_pick": false
+    },
+    {
+      "pair": [
+        "McDonald's",
+        "Patagonia"
+      ],
+      "snr_full": 0.5295271578866889,
+      "resolved_full": false,
+      "snr_score": 1.083333333333334,
+      "metameric_score": false,
+      "snr_rank": 0.25,
+      "metameric_rank": false,
+      "snr_pick": 0.375,
+      "metameric_pick": false
+    },
+    {
+      "pair": [
+        "McDonald's",
+        "Rolex"
+      ],
+      "snr_full": 0.1733171164510156,
+      "resolved_full": false,
+      "snr_score": 1.125000000000001,
+      "metameric_score": false,
+      "snr_rank": 0.0,
+      "metameric_rank": false,
+      "snr_pick": 0.25,
+      "metameric_pick": false
+    },
+    {
+      "pair": [
+        "McDonald's",
+        "SAP"
+      ],
+      "snr_full": 0.4628271908960028,
+      "resolved_full": false,
+      "snr_score": 0.6458333333333333,
+      "metameric_score": false,
+      "snr_rank": 0.8928571428571429,
+      "metameric_rank": false,
+      "snr_pick": 0.3333333333333333,
+      "metameric_pick": false
+    },
+    {
+      "pair": [
+        "McDonald's",
+        "Salesforce"
+      ],
+      "snr_full": 0.07906591712695116,
+      "resolved_full": false,
+      "snr_score": 0.12499999999999972,
+      "metameric_score": false,
+      "snr_rank": 0.25,
+      "metameric_rank": false,
+      "snr_pick": 0.125,
+      "metameric_pick": false
+    },
+    {
+      "pair": [
+        "McDonald's",
+        "Starbucks"
+      ],
+      "snr_full": 0.03335564563203935,
+      "resolved_full": false,
+      "snr_score": 0.6944444444444442,
+      "metameric_score": false,
+      "snr_rank": 0.43749999999999994,
+      "metameric_rank": false,
+      "snr_pick": 0.16666666666666666,
+      "metameric_pick": false
+    },
+    {
+      "pair": [
+        "McDonald's",
+        "Stripe"
+      ],
+      "snr_full": 0.10876602571695322,
+      "resolved_full": false,
+      "snr_score": 0.4687500000000004,
+      "metameric_score": false,
+      "snr_rank": 0.3333333333333333,
+      "metameric_rank": false,
+      "snr_pick": 0.125,
+      "metameric_pick": false
+    },
+    {
+      "pair": [
+        "McDonald's",
+        "Tesla"
+      ],
+      "snr_full": 0.22368794047899387,
+      "resolved_full": false,
+      "snr_score": 0.7083333333333337,
+      "metameric_score": false,
+      "snr_rank": 0.6875,
+      "metameric_rank": false,
+      "snr_pick": 1.0,
+      "metameric_pick": false
+    },
+    {
+      "pair": [
+        "McDonald's",
+        "Uber"
+      ],
+      "snr_full": 0.09163150050330139,
+      "resolved_full": false,
+      "snr_score": 1.5833333333333333,
+      "metameric_score": false,
+      "snr_rank": 0.25,
+      "metameric_rank": false,
+      "snr_pick": 0.75,
+      "metameric_pick": false
+    },
+    {
+      "pair": [
+        "Microsoft",
+        "Patagonia"
+      ],
+      "snr_full": 0.13317859261109286,
+      "resolved_full": false,
+      "snr_score": 1.2142857142857129,
+      "metameric_score": false,
+      "snr_rank": 0.25,
+      "metameric_rank": false,
+      "snr_pick": 0.375,
+      "metameric_pick": false
+    },
+    {
+      "pair": [
+        "Microsoft",
+        "Rolex"
+      ],
+      "snr_full": 0.1080343627935454,
+      "resolved_full": false,
+      "snr_score": 1.2499999999999991,
+      "metameric_score": false,
+      "snr_rank": 0.0,
+      "metameric_rank": false,
+      "snr_pick": 0.25,
+      "metameric_pick": false
+    },
+    {
+      "pair": [
+        "Microsoft",
+        "SAP"
+      ],
+      "snr_full": 0.232959096283941,
+      "resolved_full": false,
+      "snr_score": 0.47916666666666685,
+      "metameric_score": false,
+      "snr_rank": 0.8928571428571429,
+      "metameric_rank": false,
+      "snr_pick": 0.3333333333333333,
+      "metameric_pick": false
+    },
+    {
+      "pair": [
+        "Microsoft",
+        "Salesforce"
+      ],
+      "snr_full": 0.11347480508201693,
+      "resolved_full": false,
+      "snr_score": 0.17857142857142852,
+      "metameric_score": false,
+      "snr_rank": 0.25,
+      "metameric_rank": false,
+      "snr_pick": 0.125,
+      "metameric_pick": false
+    },
+    {
+      "pair": [
+        "Microsoft",
+        "Starbucks"
+      ],
+      "snr_full": 0.17272141092908025,
+      "resolved_full": false,
+      "snr_score": 0.4722222222222223,
+      "metameric_score": false,
+      "snr_rank": 0.43749999999999994,
+      "metameric_rank": false,
+      "snr_pick": 0.16666666666666666,
+      "metameric_pick": false
+    },
+    {
+      "pair": [
+        "Microsoft",
+        "Stripe"
+      ],
+      "snr_full": 0.040382817939319686,
+      "resolved_full": false,
+      "snr_score": 0.7187500000000002,
+      "metameric_score": false,
+      "snr_rank": 0.3333333333333333,
+      "metameric_rank": false,
+      "snr_pick": 0.125,
+      "metameric_pick": false
+    },
+    {
+      "pair": [
+        "Microsoft",
+        "Tesla"
+      ],
+      "snr_full": 0.10358013499281905,
+      "resolved_full": false,
+      "snr_score": 0.3214285714285721,
+      "metameric_score": false,
+      "snr_rank": 0.6875,
+      "metameric_rank": false,
+      "snr_pick": 1.0,
+      "metameric_pick": false
+    },
+    {
+      "pair": [
+        "Microsoft",
+        "Uber"
+      ],
+      "snr_full": 0.06099452841290015,
+      "resolved_full": false,
+      "snr_score": 1.0714285714285712,
+      "metameric_score": false,
+      "snr_rank": 0.25,
+      "metameric_rank": false,
+      "snr_pick": 0.75,
+      "metameric_pick": false
+    },
+    {
+      "pair": [
+        "Patagonia",
+        "Rolex"
+      ],
+      "snr_full": 0.33722541761911556,
+      "resolved_full": false,
+      "snr_score": 0.06250000000000083,
+      "metameric_score": false,
+      "snr_rank": 0.25,
+      "metameric_rank": false,
+      "snr_pick": 0.25,
+      "metameric_pick": false
+    },
+    {
+      "pair": [
+        "Patagonia",
+        "SAP"
+      ],
+      "snr_full": 0.16393754120915155,
+      "resolved_full": false,
+      "snr_score": 1.1874999999999996,
+      "metameric_score": false,
+      "snr_rank": 0.8571428571428572,
+      "metameric_rank": false,
+      "snr_pick": 0.5833333333333334,
+      "metameric_pick": false
+    },
+    {
+      "pair": [
+        "Patagonia",
+        "Salesforce"
+      ],
+      "snr_full": 0.3172171753742705,
+      "resolved_full": false,
+      "snr_score": 2.416666666666662,
+      "metameric_score": false,
+      "snr_rank": 0.16666666666666666,
+      "metameric_rank": false,
+      "snr_pick": 0.5,
+      "metameric_pick": false
+    },
+    {
+      "pair": [
+        "Patagonia",
+        "Starbucks"
+      ],
+      "snr_full": 0.2785157110859041,
+      "resolved_full": false,
+      "snr_score": 1.4166666666666654,
+      "metameric_score": false,
+      "snr_rank": 0.37499999999999994,
+      "metameric_rank": false,
+      "snr_pick": 0.4166666666666667,
+      "metameric_pick": false
+    },
+    {
+      "pair": [
+        "Patagonia",
+        "Stripe"
+      ],
+      "snr_full": 0.03050593267964709,
+      "resolved_full": false,
+      "snr_score": 0.3437499999999996,
+      "metameric_score": false,
+      "snr_rank": 0.25,
+      "metameric_rank": false,
+      "snr_pick": 0.25,
+      "metameric_pick": false
+    },
+    {
+      "pair": [
+        "Patagonia",
+        "Tesla"
+      ],
+      "snr_full": 0.17155881122617755,
+      "resolved_full": false,
+      "snr_score": 1.7916666666666659,
+      "metameric_score": false,
+      "snr_rank": 0.625,
+      "metameric_rank": false,
+      "snr_pick": 2.75,
+      "metameric_pick": false
+    },
+    {
+      "pair": [
+        "Patagonia",
+        "Uber"
+      ],
+      "snr_full": 0.07740079034779251,
+      "resolved_full": false,
+      "snr_score": 2.666666666666666,
+      "metameric_score": false,
+      "snr_rank": 0.1875,
+      "metameric_rank": false,
+      "snr_pick": 1.125,
+      "metameric_pick": false
+    },
+    {
+      "pair": [
+        "Rolex",
+        "SAP"
+      ],
+      "snr_full": 0.2675813659635402,
+      "resolved_full": false,
+      "snr_score": 1.2083333333333333,
+      "metameric_score": false,
+      "snr_rank": 0.8928571428571429,
+      "metameric_rank": false,
+      "snr_pick": 0.5,
+      "metameric_pick": false
+    },
+    {
+      "pair": [
+        "Rolex",
+        "Salesforce"
+      ],
+      "snr_full": 0.11052694182535627,
+      "resolved_full": false,
+      "snr_score": 1.8749999999999973,
+      "metameric_score": false,
+      "snr_rank": 0.25,
+      "metameric_rank": false,
+      "snr_pick": 0.375,
+      "metameric_pick": false
+    },
+    {
+      "pair": [
+        "Rolex",
+        "Starbucks"
+      ],
+      "snr_full": 0.14564659168811625,
+      "resolved_full": false,
+      "snr_score": 1.4444444444444438,
+      "metameric_score": false,
+      "snr_rank": 0.43749999999999994,
+      "metameric_rank": false,
+      "snr_pick": 0.3333333333333333,
+      "metameric_pick": false
+    },
+    {
+      "pair": [
+        "Rolex",
+        "Stripe"
+      ],
+      "snr_full": 0.06016031812085964,
+      "resolved_full": false,
+      "snr_score": 0.37500000000000006,
+      "metameric_score": false,
+      "snr_rank": 0.3333333333333333,
+      "metameric_rank": false,
+      "snr_pick": 0.125,
+      "metameric_pick": false
+    },
+    {
+      "pair": [
+        "Rolex",
+        "Tesla"
+      ],
+      "snr_full": 0.19594680097428632,
+      "resolved_full": false,
+      "snr_score": 1.8333333333333333,
+      "metameric_score": false,
+      "snr_rank": 0.6875,
+      "metameric_rank": false,
+      "snr_pick": 2.5,
+      "metameric_pick": false
+    },
+    {
+      "pair": [
+        "Rolex",
+        "Uber"
+      ],
+      "snr_full": 0.09312597430042527,
+      "resolved_full": false,
+      "snr_score": 2.708333333333333,
+      "metameric_score": false,
+      "snr_rank": 0.25,
+      "metameric_rank": false,
+      "snr_pick": 1.0,
+      "metameric_pick": false
+    },
+    {
+      "pair": [
+        "SAP",
+        "Salesforce"
+      ],
+      "snr_full": 0.2539744748935592,
+      "resolved_full": false,
+      "snr_score": 0.5833333333333335,
+      "metameric_score": false,
+      "snr_rank": 0.7857142857142857,
+      "metameric_rank": false,
+      "snr_pick": 0.25,
+      "metameric_pick": false
+    },
+    {
+      "pair": [
+        "SAP",
+        "Starbucks"
+      ],
+      "snr_full": 0.5120014775992621,
+      "resolved_full": false,
+      "snr_score": 0.12499999999999993,
+      "metameric_score": false,
+      "snr_rank": 0.6428571428571429,
+      "metameric_rank": false,
+      "snr_pick": 0.16666666666666666,
+      "metameric_pick": false
+    },
+    {
+      "pair": [
+        "SAP",
+        "Stripe"
+      ],
+      "snr_full": 0.1007369121273541,
+      "resolved_full": false,
+      "snr_score": 0.9583333333333333,
+      "metameric_score": false,
+      "snr_rank": 0.75,
+      "metameric_rank": false,
+      "snr_pick": 0.4166666666666667,
+      "metameric_pick": false
+    },
+    {
+      "pair": [
+        "SAP",
+        "Tesla"
+      ],
+      "snr_full": 0.34284226300663256,
+      "resolved_full": false,
+      "snr_score": 0.2916666666666664,
+      "metameric_score": false,
+      "snr_rank": 0.5,
+      "metameric_rank": false,
+      "snr_pick": 0.3333333333333333,
+      "metameric_pick": false
+    },
+    {
+      "pair": [
+        "SAP",
+        "Uber"
+      ],
+      "snr_full": 0.12388272241337744,
+      "resolved_full": false,
+      "snr_score": 0.1458333333333332,
+      "metameric_score": false,
+      "snr_rank": 0.75,
+      "metameric_rank": false,
+      "snr_pick": 0.16666666666666666,
+      "metameric_pick": false
+    },
+    {
+      "pair": [
+        "Salesforce",
+        "Starbucks"
+      ],
+      "snr_full": 0.06654423041462743,
+      "resolved_full": false,
+      "snr_score": 0.6111111111111112,
+      "metameric_score": false,
+      "snr_rank": 0.24999999999999997,
+      "metameric_rank": false,
+      "snr_pick": 0.08333333333333333,
+      "metameric_pick": false
+    },
+    {
+      "pair": [
+        "Salesforce",
+        "Stripe"
+      ],
+      "snr_full": 0.05822625560245989,
+      "resolved_full": false,
+      "snr_score": 0.5625000000000001,
+      "metameric_score": false,
+      "snr_rank": 0.08333333333333333,
+      "metameric_rank": false,
+      "snr_pick": 0.25,
+      "metameric_pick": false
+    },
+    {
+      "pair": [
+        "Salesforce",
+        "Tesla"
+      ],
+      "snr_full": 0.13851906957260493,
+      "resolved_full": false,
+      "snr_score": 0.5833333333333341,
+      "metameric_score": false,
+      "snr_rank": 0.5000000000000001,
+      "metameric_rank": false,
+      "snr_pick": 0.875,
+      "metameric_pick": false
+    },
+    {
+      "pair": [
+        "Salesforce",
+        "Uber"
+      ],
+      "snr_full": 0.045075805011091805,
+      "resolved_full": false,
+      "snr_score": 1.4583333333333337,
+      "metameric_score": false,
+      "snr_rank": 0.0625,
+      "metameric_rank": false,
+      "snr_pick": 0.625,
+      "metameric_pick": false
+    },
+    {
+      "pair": [
+        "Starbucks",
+        "Stripe"
+      ],
+      "snr_full": 0.09305275209446308,
+      "resolved_full": false,
+      "snr_score": 1.1111111111111107,
+      "metameric_score": false,
+      "snr_rank": 0.18749999999999997,
+      "metameric_rank": false,
+      "snr_pick": 0.25,
+      "metameric_pick": false
+    },
+    {
+      "pair": [
+        "Starbucks",
+        "Tesla"
+      ],
+      "snr_full": 0.09896319185412372,
+      "resolved_full": false,
+      "snr_score": 0.22222222222222185,
+      "metameric_score": false,
+      "snr_rank": 0.2500000000000001,
+      "metameric_rank": false,
+      "snr_pick": 0.5,
+      "metameric_pick": false
+    },
+    {
+      "pair": [
+        "Starbucks",
+        "Uber"
+      ],
+      "snr_full": 0.0680649671411637,
+      "resolved_full": false,
+      "snr_score": 0.36111111111111066,
+      "metameric_score": false,
+      "snr_rank": 0.18749999999999997,
+      "metameric_rank": false,
+      "snr_pick": 0.3333333333333333,
+      "metameric_pick": false
+    },
+    {
+      "pair": [
+        "Stripe",
+        "Tesla"
+      ],
+      "snr_full": 0.022238669847299622,
+      "resolved_full": false,
+      "snr_score": 1.000000000000001,
+      "metameric_score": false,
+      "snr_rank": 0.43750000000000006,
+      "metameric_rank": false,
+      "snr_pick": 1.125,
+      "metameric_pick": false
+    },
+    {
+      "pair": [
+        "Stripe",
+        "Uber"
+      ],
+      "snr_full": 0.025750275693183774,
+      "resolved_full": false,
+      "snr_score": 1.6562500000000009,
+      "metameric_score": false,
+      "snr_rank": 0.0,
+      "metameric_rank": false,
+      "snr_pick": 0.875,
+      "metameric_pick": false
+    },
+    {
+      "pair": [
+        "Tesla",
+        "Uber"
+      ],
+      "snr_full": 0.02289764632900577,
+      "resolved_full": false,
+      "snr_score": 0.874999999999999,
+      "metameric_score": false,
+      "snr_rank": 0.43750000000000006,
+      "metameric_rank": false,
+      "snr_pick": 0.25,
+      "metameric_pick": false
+    }
+  ],
+  "meta": {
+    "LEGO": {
+      "coherence_type": "ecosystem",
+      "sector": "b2c",
+      "goods_type": "experience"
+    },
+    "Rolex": {
+      "coherence_type": "ecosystem",
+      "sector": "b2c",
+      "goods_type": "search"
+    },
+    "IKEA": {
+      "coherence_type": "signal",
+      "sector": "b2c",
+      "goods_type": "search"
+    },
+    "McDonald's": {
+      "coherence_type": "signal",
+      "sector": "b2c",
+      "goods_type": "experience"
+    },
+    "Starbucks": {
+      "coherence_type": "identity",
+      "sector": "b2c",
+      "goods_type": "experience"
+    },
+    "Patagonia": {
+      "coherence_type": "identity",
+      "sector": "b2c",
+      "goods_type": "experience"
+    },
+    "Harley-Davidson": {
+      "coherence_type": "identity",
+      "sector": "b2c",
+      "goods_type": "experience"
+    },
+    "Uber": {
+      "coherence_type": "experiential",
+      "sector": "b2c",
+      "goods_type": "experience"
+    },
+    "Tesla": {
+      "coherence_type": "incoherent",
+      "sector": "b2c",
+      "goods_type": "search"
+    },
+    "Microsoft": {
+      "coherence_type": "ecosystem",
+      "sector": "b2b",
+      "goods_type": "search"
+    },
+    "SAP": {
+      "coherence_type": "ecosystem",
+      "sector": "b2b",
+      "goods_type": "credence"
+    },
+    "Cisco": {
+      "coherence_type": "signal",
+      "sector": "b2b",
+      "goods_type": "search"
+    },
+    "Salesforce": {
+      "coherence_type": "identity",
+      "sector": "b2b",
+      "goods_type": "credence"
+    },
+    "Goldman Sachs": {
+      "coherence_type": "identity",
+      "sector": "b2b",
+      "goods_type": "credence"
+    },
+    "Basecamp": {
+      "coherence_type": "identity",
+      "sector": "b2b",
+      "goods_type": "search"
+    },
+    "Stripe": {
+      "coherence_type": "experiential",
+      "sector": "b2b",
+      "goods_type": "experience"
+    },
+    "Intel": {
+      "coherence_type": "incoherent",
+      "sector": "b2b",
+      "goods_type": "search"
+    }
+  },
+  "positive_control": {
+    "passed": true,
+    "rows": [
+      {
+        "pair": [
+          "PLANT_A",
+          "PLANT_B"
+        ],
+        "snr_full": 339.2060256136431,
+        "resolved_full": true,
+        "snr_score": 0.02788586251621398,
+        "metameric_score": true,
+        "snr_rank": 0.1081189710610911,
+        "metameric_rank": true,
+        "snr_pick": 0.0,
+        "metameric_pick": true
+      }
+    ]
+  },
+  "exploratory": {
+    "operator_concordance": {
+      "OP1-OP2": {
+        "median": 0.0009077312773194679,
+        "max": 0.0037210625974551936
+      },
+      "OP1-OP3": {
+        "median": 0.001844276336337325,
+        "max": 0.007784113196945164
+      },
+      "OP1-OP4": {
+        "median": 0.010931054985033994,
+        "max": 0.0675290670643377
+      },
+      "OP2-OP3": {
+        "median": 0.0019805638448181506,
+        "max": 0.005722756461882361
+      },
+      "OP2-OP4": {
+        "median": 0.01005379977901566,
+        "max": 0.06976506726339005
+      },
+      "OP3-OP4": {
+        "median": 0.012530570616700154,
+        "max": 0.07549193732046089
+      }
+    },
+    "leave_one_operator_out": {
+      "without_OP1": {
+        "fractions": {
+          "score": {
+            "fraction": null,
+            "n_metameric": 0,
+            "n_resolved": 0,
+            "ci95": [
+              null,
+              null
+            ]
+          },
+          "rank": {
+            "fraction": null,
+            "n_metameric": 0,
+            "n_resolved": 0,
+            "ci95": [
+              null,
+              null
+            ]
+          },
+          "pick": {
+            "fraction": null,
+            "n_metameric": 0,
+            "n_resolved": 0,
+            "ci95": [
+              null,
+              null
+            ]
+          }
+        },
+        "H2": {
+          "n_resolved": 0,
+          "n01_score_only": 0,
+          "n10_rank_only": 0,
+          "p_score_gt_rank": 1.0,
+          "p_rank_gt_full": 1.0,
+          "holm_adjusted": {
+            "score_gt_rank": 1.0,
+            "rank_gt_full": 1.0
+          },
+          "supported": false
+        },
+        "H3": {
+          "per_op_pair_fraction": {
+            "OP2": null,
+            "OP3": 1.0,
+            "OP4": 0.11475409836065574
+          },
+          "dispersion": 0.8852459016393442,
+          "pooled_ci_half_width": null,
+          "supported": false
+        },
+        "negative_control": {
+          "passed": false,
+          "n_tested": 102,
+          "n_flagged_metameric": 3,
+          "n_resolved_distinct_diagnostic": 7
+        },
+        "n_resolved": 0
+      },
+      "without_OP2": {
+        "fractions": {
+          "score": {
+            "fraction": null,
+            "n_metameric": 0,
+            "n_resolved": 0,
+            "ci95": [
+              null,
+              null
+            ]
+          },
+          "rank": {
+            "fraction": null,
+            "n_metameric": 0,
+            "n_resolved": 0,
+            "ci95": [
+              null,
+              null
+            ]
+          },
+          "pick": {
+            "fraction": null,
+            "n_metameric": 0,
+            "n_resolved": 0,
+            "ci95": [
+              null,
+              null
+            ]
+          }
+        },
+        "H2": {
+          "n_resolved": 0,
+          "n01_score_only": 0,
+          "n10_rank_only": 0,
+          "p_score_gt_rank": 1.0,
+          "p_rank_gt_full": 1.0,
+          "holm_adjusted": {
+            "score_gt_rank": 1.0,
+            "rank_gt_full": 1.0
+          },
+          "supported": false
+        },
+        "H3": {
+          "per_op_pair_fraction": {
+            "OP1": 1.0,
+            "OP3": 1.0,
+            "OP4": 0.19090909090909092
+          },
+          "dispersion": 0.8090909090909091,
+          "pooled_ci_half_width": null,
+          "supported": false
+        },
+        "negative_control": {
+          "passed": false,
+          "n_tested": 102,
+          "n_flagged_metameric": 3,
+          "n_resolved_distinct_diagnostic": 6
+        },
+        "n_resolved": 0
+      },
+      "without_OP3": {
+        "fractions": {
+          "score": {
+            "fraction": null,
+            "n_metameric": 0,
+            "n_resolved": 0,
+            "ci95": [
+              null,
+              null
+            ]
+          },
+          "rank": {
+            "fraction": null,
+            "n_metameric": 0,
+            "n_resolved": 0,
+            "ci95": [
+              null,
+              null
+            ]
+          },
+          "pick": {
+            "fraction": null,
+            "n_metameric": 0,
+            "n_resolved": 0,
+            "ci95": [
+              null,
+              null
+            ]
+          }
+        },
+        "H2": {
+          "n_resolved": 0,
+          "n01_score_only": 0,
+          "n10_rank_only": 0,
+          "p_score_gt_rank": 1.0,
+          "p_rank_gt_full": 1.0,
+          "holm_adjusted": {
+            "score_gt_rank": 1.0,
+            "rank_gt_full": 1.0
+          },
+          "supported": false
+        },
+        "H3": {
+          "per_op_pair_fraction": {
+            "OP1": 1.0,
+            "OP2": null,
+            "OP4": 0.1590909090909091
+          },
+          "dispersion": 0.8409090909090909,
+          "pooled_ci_half_width": null,
+          "supported": false
+        },
+        "negative_control": {
+          "passed": false,
+          "n_tested": 102,
+          "n_flagged_metameric": 3,
+          "n_resolved_distinct_diagnostic": 7
+        },
+        "n_resolved": 0
+      },
+      "without_OP4": {
+        "fractions": {
+          "score": {
+            "fraction": 0.5,
+            "n_metameric": 7,
+            "n_resolved": 14,
+            "ci95": [
+              0.0,
+              0.8461538461538461
+            ]
+          },
+          "rank": {
+            "fraction": 0.2857142857142857,
+            "n_metameric": 4,
+            "n_resolved": 14,
+            "ci95": [
+              0.0,
+              1.0
+            ]
+          },
+          "pick": {
+            "fraction": 0.9285714285714286,
+            "n_metameric": 13,
+            "n_resolved": 14,
+            "ci95": [
+              0.75,
+              1.0
+            ]
+          }
+        },
+        "H2": {
+          "n_resolved": 14,
+          "n01_score_only": 6,
+          "n10_rank_only": 3,
+          "p_score_gt_rank": 0.25390625,
+          "p_rank_gt_full": 9.23855399922449e-06,
+          "holm_adjusted": {
+            "rank_gt_full": 1.847710799844898e-05,
+            "score_gt_rank": 0.25390625
+          },
+          "supported": false
+        },
+        "H3": {
+          "per_op_pair_fraction": {
+            "OP1": 0.2765957446808511,
+            "OP2": 0.5625,
+            "OP3": 0.41935483870967744
+          },
+          "dispersion": 0.2859042553191489,
+          "pooled_ci_half_width": 0.4230769230769231,
+          "supported": true
+        },
+        "negative_control": {
+          "passed": false,
+          "n_tested": 102,
+          "n_flagged_metameric": 10,
+          "n_resolved_distinct_diagnostic": 32
+        },
+        "n_resolved": 14
+      }
+    },
+    "prompt_ablation": {
+      "n": 20,
+      "median_shift_over_floor": 0.24096936454864304,
+      "max_shift_over_floor": 1.9862308286936459,
+      "share_within_floor": 0.95
+    },
+    "concordant_subset": {
+      "held_out": "OP4",
+      "analysis": {
+        "seed": 20260702,
+        "k": 2.0,
+        "metric": "cosine",
+        "n_brands": 17,
+        "op_pairs": [
+          "OP1",
+          "OP2",
+          "OP3"
+        ],
+        "fractions": {
+          "score": {
+            "fraction": 0.5,
+            "n_metameric": 7,
+            "n_resolved": 14,
+            "ci95": [
+              0.0,
+              0.8461538461538461
+            ]
+          },
+          "rank": {
+            "fraction": 0.2857142857142857,
+            "n_metameric": 4,
+            "n_resolved": 14,
+            "ci95": [
+              0.0,
+              1.0
+            ]
+          },
+          "pick": {
+            "fraction": 0.9285714285714286,
+            "n_metameric": 13,
+            "n_resolved": 14,
+            "ci95": [
+              0.75,
+              1.0
+            ]
+          }
+        },
+        "H1": {
+          "supported": false,
+          "pairs": []
+        },
+        "H2": {
+          "n_resolved": 14,
+          "n01_score_only": 6,
+          "n10_rank_only": 3,
+          "p_score_gt_rank": 0.25390625,
+          "p_rank_gt_full": 9.23855399922449e-06,
+          "holm_adjusted": {
+            "rank_gt_full": 1.847710799844898e-05,
+            "score_gt_rank": 0.25390625
+          },
+          "supported": false
+        },
+        "H3": {
+          "per_op_pair_fraction": {
+            "OP1": 0.2765957446808511,
+            "OP2": 0.5625,
+            "OP3": 0.41935483870967744
+          },
+          "dispersion": 0.2859042553191489,
+          "pooled_ci_half_width": 0.4230769230769231,
+          "supported": true
+        },
+        "negative_control": {
+          "passed": false,
+          "n_tested": 102,
+          "n_flagged_metameric": 10,
+          "n_resolved_distinct_diagnostic": 32,
+          "flags": [
+            {
+              "brand": "Basecamp",
+              "channels": [
+                "experience",
+                "press"
+              ],
+              "snr_full": 8.218953668861671,
+              "snr_scalar": 0.6666666666666704
+            },
+            {
+              "brand": "Basecamp",
+              "channels": [
+                "press",
+                "social"
+              ],
+              "snr_full": 5.29793448793549,
+              "snr_scalar": 0.0
+            },
+            {
+              "brand": "LEGO",
+              "channels": [
+                "official",
+                "social"
+              ],
+              "snr_full": 2.827311222530443,
+              "snr_scalar": 0.8888888888888877
+            },
+            {
+              "brand": "LEGO",
+              "channels": [
+                "press",
+                "social"
+              ],
+              "snr_full": 2.2409605701700968,
+              "snr_scalar": 0.8888888888888877
+            },
+            {
+              "brand": "Microsoft",
+              "channels": [
+                "experience",
+                "social"
+              ],
+              "snr_full": 2.9188686510009494,
+              "snr_scalar": 0.9999999999999978
+            },
+            {
+              "brand": "Microsoft",
+              "channels": [
+                "official",
+                "press"
+              ],
+              "snr_full": 2.6344005157657757,
+              "snr_scalar": 0.666666666666666
+            },
+            {
+              "brand": "Starbucks",
+              "channels": [
+                "experience",
+                "press"
+              ],
+              "snr_full": 4.1124221801076635,
+              "snr_scalar": 0.0
+            },
+            {
+              "brand": "Starbucks",
+              "channels": [
+                "experience",
+                "social"
+              ],
+              "snr_full": 3.7323304448417263,
+              "snr_scalar": 0.9523809523809522
+            },
+            {
+              "brand": "Stripe",
+              "channels": [
+                "official",
+                "press"
+              ],
+              "snr_full": 2.6206849986292187,
+              "snr_scalar": 0.6666666666666663
+            },
+            {
+              "brand": "Tesla",
+              "channels": [
+                "press",
+                "social"
+              ],
+              "snr_full": 2.1829429735900274,
+              "snr_scalar": 0.22222222222222213
+            }
+          ]
+        },
+        "pair_rows": [
+          {
+            "pair": [
+              "Basecamp",
+              "Cisco"
+            ],
+            "snr_full": 1.1646125581034945,
+            "resolved_full": false,
+            "snr_score": 0.13333333333333375,
+            "metameric_score": false,
+            "snr_rank": 1.3611111111111112,
+            "metameric_rank": false,
+            "snr_pick": 0.11111111111111116,
+            "metameric_pick": false
+          },
+          {
+            "pair": [
+              "Basecamp",
+              "Goldman Sachs"
+            ],
+            "snr_full": 0.5786801890685376,
+            "resolved_full": false,
+            "snr_score": 0.5416666666666671,
+            "metameric_score": false,
+            "snr_rank": 1.4166666666666667,
+            "metameric_rank": false,
+            "snr_pick": 0.16666666666666674,
+            "metameric_pick": false
+          },
+          {
+            "pair": [
+              "Basecamp",
+              "Harley-Davidson"
+            ],
+            "snr_full": 2.5724979051513293,
+            "resolved_full": true,
+            "snr_score": 0.5000000000000006,
+            "metameric_score": true,
+            "snr_rank": 1.277777777777778,
+            "metameric_rank": false,
+            "snr_pick": 0.16666666666666674,
+            "metameric_pick": true
+          },
+          {
+            "pair": [
+              "Basecamp",
+              "IKEA"
+            ],
+            "snr_full": 3.9742473837555274,
+            "resolved_full": true,
+            "snr_score": 1.4999999999999978,
+            "metameric_score": false,
+            "snr_rank": 1.4444444444444446,
+            "metameric_rank": false,
+            "snr_pick": 0.6666666666666665,
+            "metameric_pick": true
+          },
+          {
+            "pair": [
+              "Basecamp",
+              "Intel"
+            ],
+            "snr_full": 1.2557044827355552,
+            "resolved_full": false,
+            "snr_score": 0.88888888888889,
+            "metameric_score": false,
+            "snr_rank": 0.9444444444444443,
+            "metameric_rank": false,
+            "snr_pick": 0.3333333333333335,
+            "metameric_pick": false
+          },
+          {
+            "pair": [
+              "Basecamp",
+              "LEGO"
+            ],
+            "snr_full": 3.7776718537126466,
+            "resolved_full": true,
+            "snr_score": 1.9999999999999984,
+            "metameric_score": false,
+            "snr_rank": 1.5,
+            "metameric_rank": false,
+            "snr_pick": 0.6666666666666665,
+            "metameric_pick": true
+          },
+          {
+            "pair": [
+              "Basecamp",
+              "McDonald's"
+            ],
+            "snr_full": 4.869568052919266,
+            "resolved_full": true,
+            "snr_score": 0.3333333333333341,
+            "metameric_score": true,
+            "snr_rank": 1.5,
+            "metameric_rank": false,
+            "snr_pick": 0.16666666666666674,
+            "metameric_pick": true
+          },
+          {
+            "pair": [
+              "Basecamp",
+              "Microsoft"
+            ],
+            "snr_full": 2.149259379398112,
+            "resolved_full": true,
+            "snr_score": 0.0,
+            "metameric_score": true,
+            "snr_rank": 1.5,
+            "metameric_rank": false,
+            "snr_pick": 0.33333333333333304,
+            "metameric_pick": true
+          },
+          {
+            "pair": [
+              "Basecamp",
+              "Patagonia"
+            ],
+            "snr_full": 1.3772662197960182,
+            "resolved_full": false,
+            "snr_score": 3.333333333333325,
+            "metameric_score": false,
+            "snr_rank": 1.4722222222222223,
+            "metameric_rank": false,
+            "snr_pick": 0.6666666666666665,
+            "metameric_pick": false
+          },
+          {
+            "pair": [
+              "Basecamp",
+              "Rolex"
+            ],
+            "snr_full": 3.4863412710893984,
+            "resolved_full": true,
+            "snr_score": 3.3333333333333273,
+            "metameric_score": false,
+            "snr_rank": 1.5,
+            "metameric_rank": false,
+            "snr_pick": 0.33333333333333304,
+            "metameric_pick": true
+          },
+          {
+            "pair": [
+              "Basecamp",
+              "SAP"
+            ],
+            "snr_full": 0.9532002345634573,
+            "resolved_full": false,
+            "snr_score": 0.6666666666666672,
+            "metameric_score": false,
+            "snr_rank": 0.9166666666666667,
+            "metameric_rank": false,
+            "snr_pick": 0.22222222222222232,
+            "metameric_pick": false
+          },
+          {
+            "pair": [
+              "Basecamp",
+              "Salesforce"
+            ],
+            "snr_full": 3.3623166816040784,
+            "resolved_full": true,
+            "snr_score": 0.0,
+            "metameric_score": true,
+            "snr_rank": 1.4166666666666667,
+            "metameric_rank": false,
+            "snr_pick": 0.0,
+            "metameric_pick": true
+          },
+          {
+            "pair": [
+              "Basecamp",
+              "Starbucks"
+            ],
+            "snr_full": 4.895939109855287,
+            "resolved_full": true,
+            "snr_score": 0.5714285714285718,
+            "metameric_score": true,
+            "snr_rank": 1.4166666666666667,
+            "metameric_rank": false,
+            "snr_pick": 0.11111111111111116,
+            "metameric_pick": true
+          },
+          {
+            "pair": [
+              "Basecamp",
+              "Stripe"
+            ],
+            "snr_full": 1.5862634842618806,
+            "resolved_full": false,
+            "snr_score": 0.7500000000000006,
+            "metameric_score": false,
+            "snr_rank": 1.388888888888889,
+            "metameric_rank": false,
+            "snr_pick": 0.0,
+            "metameric_pick": false
+          },
+          {
+            "pair": [
+              "Basecamp",
+              "Tesla"
+            ],
+            "snr_full": 2.332339490369586,
+            "resolved_full": true,
+            "snr_score": 0.5555555555555565,
+            "metameric_score": true,
+            "snr_rank": 1.2222222222222223,
+            "metameric_rank": false,
+            "snr_pick": 2.3333333333333335,
+            "metameric_pick": false
+          },
+          {
+            "pair": [
+              "Basecamp",
+              "Uber"
+            ],
+            "snr_full": 2.1278096023390876,
+            "resolved_full": true,
+            "snr_score": 1.916666666666667,
+            "metameric_score": false,
+            "snr_rank": 1.388888888888889,
+            "metameric_rank": false,
+            "snr_pick": 0.6666666666666667,
+            "metameric_pick": true
+          },
+          {
+            "pair": [
+              "Cisco",
+              "Goldman Sachs"
+            ],
+            "snr_full": 0.46647462185388355,
+            "resolved_full": false,
+            "snr_score": 0.4583333333333335,
+            "metameric_score": false,
+            "snr_rank": 0.2222222222222223,
+            "metameric_rank": false,
+            "snr_pick": 0.0,
+            "metameric_pick": false
+          },
+          {
+            "pair": [
+              "Cisco",
+              "Harley-Davidson"
+            ],
+            "snr_full": 0.7871038956072607,
+            "resolved_full": false,
+            "snr_score": 0.2666666666666666,
+            "metameric_score": false,
+            "snr_rank": 0.20000000000000004,
+            "metameric_rank": false,
+            "snr_pick": 0.08333333333333337,
+            "metameric_pick": false
+          },
+          {
+            "pair": [
+              "Cisco",
+              "IKEA"
+            ],
+            "snr_full": 0.8856682869242198,
+            "resolved_full": false,
+            "snr_score": 0.7333333333333334,
+            "metameric_score": false,
+            "snr_rank": 0.3333333333333334,
+            "metameric_rank": false,
+            "snr_pick": 0.3333333333333333,
+            "metameric_pick": false
+          },
+          {
+            "pair": [
+              "Cisco",
+              "Intel"
+            ],
+            "snr_full": 0.682258400138017,
+            "resolved_full": false,
+            "snr_score": 0.8148148148148157,
+            "metameric_score": false,
+            "snr_rank": 1.0,
+            "metameric_rank": false,
+            "snr_pick": 0.11111111111111116,
+            "metameric_pick": false
+          },
+          {
+            "pair": [
+              "Cisco",
+              "LEGO"
+            ],
+            "snr_full": 0.9950741586963805,
+            "resolved_full": false,
+            "snr_score": 1.3333333333333321,
+            "metameric_score": false,
+            "snr_rank": 0.5555555555555557,
+            "metameric_rank": false,
+            "snr_pick": 0.3333333333333333,
+            "metameric_pick": false
+          },
+          {
+            "pair": [
+              "Cisco",
+              "McDonald's"
+            ],
+            "snr_full": 1.2308980583431286,
+            "resolved_full": false,
+            "snr_score": 0.0,
+            "metameric_score": false,
+            "snr_rank": 0.5555555555555557,
+            "metameric_rank": false,
+            "snr_pick": 0.0,
+            "metameric_pick": false
+          },
+          {
+            "pair": [
+              "Cisco",
+              "Microsoft"
+            ],
+            "snr_full": 0.5256273929699721,
+            "resolved_full": false,
+            "snr_score": 0.13333333333333375,
+            "metameric_score": false,
+            "snr_rank": 0.5555555555555557,
+            "metameric_rank": false,
+            "snr_pick": 0.22222222222222218,
+            "metameric_pick": false
+          },
+          {
+            "pair": [
+              "Cisco",
+              "Patagonia"
+            ],
+            "snr_full": 0.44750457415621475,
+            "resolved_full": false,
+            "snr_score": 1.466666666666665,
+            "metameric_score": false,
+            "snr_rank": 0.44444444444444453,
+            "metameric_rank": false,
+            "snr_pick": 0.3333333333333333,
+            "metameric_pick": false
+          },
+          {
+            "pair": [
+              "Cisco",
+              "Rolex"
+            ],
+            "snr_full": 0.6224832991103835,
+            "resolved_full": false,
+            "snr_score": 1.466666666666666,
+            "metameric_score": false,
+            "snr_rank": 0.5555555555555557,
+            "metameric_rank": false,
+            "snr_pick": 0.22222222222222218,
+            "metameric_pick": false
+          },
+          {
+            "pair": [
+              "Cisco",
+              "SAP"
+            ],
+            "snr_full": 0.054989303255103095,
+            "resolved_full": false,
+            "snr_score": 0.5833333333333336,
+            "metameric_score": false,
+            "snr_rank": 0.7619047619047619,
+            "metameric_rank": false,
+            "snr_pick": 0.11111111111111116,
+            "metameric_pick": false
+          },
+          {
+            "pair": [
+              "Cisco",
+              "Salesforce"
+            ],
+            "snr_full": 0.7334002909728458,
+            "resolved_full": false,
+            "snr_score": 0.13333333333333375,
+            "metameric_score": false,
+            "snr_rank": 0.2222222222222223,
+            "metameric_rank": false,
+            "snr_pick": 0.11111111111111116,
+            "metameric_pick": false
+          },
+          {
+            "pair": [
+              "Cisco",
+              "Starbucks"
+            ],
+            "snr_full": 1.4889816962822775,
+            "resolved_full": false,
+            "snr_score": 0.4761904761904763,
+            "metameric_score": false,
+            "snr_rank": 0.2222222222222223,
+            "metameric_rank": false,
+            "snr_pick": 0.0,
+            "metameric_pick": false
+          },
+          {
+            "pair": [
+              "Cisco",
+              "Stripe"
+            ],
+            "snr_full": 0.5892681628285236,
+            "resolved_full": false,
+            "snr_score": 0.7333333333333334,
+            "metameric_score": false,
+            "snr_rank": 0.11111111111111119,
+            "metameric_rank": false,
+            "snr_pick": 0.11111111111111116,
+            "metameric_pick": false
+          },
+          {
+            "pair": [
+              "Cisco",
+              "Tesla"
+            ],
+            "snr_full": 0.9103113009400075,
+            "resolved_full": false,
+            "snr_score": 0.44444444444444503,
+            "metameric_score": false,
+            "snr_rank": 0.5555555555555556,
+            "metameric_rank": false,
+            "snr_pick": 0.6666666666666666,
+            "metameric_pick": false
+          },
+          {
+            "pair": [
+              "Cisco",
+              "Uber"
+            ],
+            "snr_full": 0.7233421429755298,
+            "resolved_full": false,
+            "snr_score": 1.3999999999999995,
+            "metameric_score": false,
+            "snr_rank": 0.0833333333333334,
+            "metameric_rank": false,
+            "snr_pick": 0.3333333333333333,
+            "metameric_pick": false
+          },
+          {
+            "pair": [
+              "Goldman Sachs",
+              "Harley-Davidson"
+            ],
+            "snr_full": 0.18633101076556852,
+            "resolved_full": false,
+            "snr_score": 0.2916666666666668,
+            "metameric_score": false,
+            "snr_rank": 0.3333333333333334,
+            "metameric_rank": false,
+            "snr_pick": 0.08333333333333337,
+            "metameric_pick": false
+          },
+          {
+            "pair": [
+              "Goldman Sachs",
+              "IKEA"
+            ],
+            "snr_full": 0.28170232545767054,
+            "resolved_full": false,
+            "snr_score": 0.916666666666667,
+            "metameric_score": false,
+            "snr_rank": 0.3333333333333333,
+            "metameric_rank": false,
+            "snr_pick": 0.5,
+            "metameric_pick": false
+          },
+          {
+            "pair": [
+              "Goldman Sachs",
+              "Intel"
+            ],
+            "snr_full": 0.16054745843246435,
+            "resolved_full": false,
+            "snr_score": 0.40740740740740805,
+            "metameric_score": false,
+            "snr_rank": 1.1333333333333335,
+            "metameric_rank": false,
+            "snr_pick": 0.16666666666666674,
+            "metameric_pick": false
+          },
+          {
+            "pair": [
+              "Goldman Sachs",
+              "LEGO"
+            ],
+            "snr_full": 0.29437180498461296,
+            "resolved_full": false,
+            "snr_score": 1.2916666666666663,
+            "metameric_score": false,
+            "snr_rank": 27.777777777777775,
+            "metameric_rank": false,
+            "snr_pick": 0.5,
+            "metameric_pick": false
+          },
+          {
+            "pair": [
+              "Goldman Sachs",
+              "McDonald's"
+            ],
+            "snr_full": 0.3501720888316795,
+            "resolved_full": false,
+            "snr_score": 0.4583333333333335,
+            "metameric_score": false,
+            "snr_rank": 27.777777777777775,
+            "metameric_rank": false,
+            "snr_pick": 0.0,
+            "metameric_pick": false
+          },
+          {
+            "pair": [
+              "Goldman Sachs",
+              "Microsoft"
+            ],
+            "snr_full": 0.1515466255275379,
+            "resolved_full": false,
+            "snr_score": 0.5416666666666671,
+            "metameric_score": false,
+            "snr_rank": 27.777777777777775,
+            "metameric_rank": false,
+            "snr_pick": 0.33333333333333326,
+            "metameric_pick": false
+          },
+          {
+            "pair": [
+              "Goldman Sachs",
+              "Patagonia"
+            ],
+            "snr_full": 0.16090636823460927,
+            "resolved_full": false,
+            "snr_score": 1.3749999999999993,
+            "metameric_score": false,
+            "snr_rank": 0.6666666666666666,
+            "metameric_rank": false,
+            "snr_pick": 0.5,
+            "metameric_pick": false
+          },
+          {
+            "pair": [
+              "Goldman Sachs",
+              "Rolex"
+            ],
+            "snr_full": 0.19228686187934851,
+            "resolved_full": false,
+            "snr_score": 1.3749999999999998,
+            "metameric_score": false,
+            "snr_rank": 27.777777777777775,
+            "metameric_rank": false,
+            "snr_pick": 0.33333333333333326,
+            "metameric_pick": false
+          },
+          {
+            "pair": [
+              "Goldman Sachs",
+              "SAP"
+            ],
+            "snr_full": 0.5228038252379623,
+            "resolved_full": false,
+            "snr_score": 0.12500000000000014,
+            "metameric_score": false,
+            "snr_rank": 0.8571428571428571,
+            "metameric_rank": false,
+            "snr_pick": 0.11111111111111116,
+            "metameric_pick": false
+          },
+          {
+            "pair": [
+              "Goldman Sachs",
+              "Salesforce"
+            ],
+            "snr_full": 0.2063670796381168,
+            "resolved_full": false,
+            "snr_score": 0.5416666666666671,
+            "metameric_score": false,
+            "snr_rank": 0.0,
+            "metameric_rank": false,
+            "snr_pick": 0.16666666666666674,
+            "metameric_pick": false
+          },
+          {
+            "pair": [
+              "Goldman Sachs",
+              "Starbucks"
+            ],
+            "snr_full": 0.427782779243178,
+            "resolved_full": false,
+            "snr_score": 0.041666666666666526,
+            "metameric_score": false,
+            "snr_rank": 0.0,
+            "metameric_rank": false,
+            "snr_pick": 0.0,
+            "metameric_pick": false
+          },
+          {
+            "pair": [
+              "Goldman Sachs",
+              "Stripe"
+            ],
+            "snr_full": 0.2350160772042026,
+            "resolved_full": false,
+            "snr_score": 0.916666666666667,
+            "metameric_score": false,
+            "snr_rank": 0.1111111111111111,
+            "metameric_rank": false,
+            "snr_pick": 0.16666666666666674,
+            "metameric_pick": false
+          },
+          {
+            "pair": [
+              "Goldman Sachs",
+              "Tesla"
+            ],
+            "snr_full": 0.1750082975712161,
+            "resolved_full": false,
+            "snr_score": 0.12499999999999958,
+            "metameric_score": false,
+            "snr_rank": 0.7777777777777778,
+            "metameric_rank": false,
+            "snr_pick": 1.0,
+            "metameric_pick": false
+          },
+          {
+            "pair": [
+              "Goldman Sachs",
+              "Uber"
+            ],
+            "snr_full": 0.2591040412803119,
+            "resolved_full": false,
+            "snr_score": 0.4166666666666664,
+            "metameric_score": false,
+            "snr_rank": 0.08333333333333333,
+            "metameric_rank": false,
+            "snr_pick": 0.5,
+            "metameric_pick": false
+          },
+          {
+            "pair": [
+              "Harley-Davidson",
+              "IKEA"
+            ],
+            "snr_full": 0.672001698582743,
+            "resolved_full": false,
+            "snr_score": 1.2500000000000002,
+            "metameric_score": false,
+            "snr_rank": 0.4000000000000001,
+            "metameric_rank": false,
+            "snr_pick": 0.33333333333333337,
+            "metameric_pick": false
+          },
+          {
+            "pair": [
+              "Harley-Davidson",
+              "Intel"
+            ],
+            "snr_full": 0.1720194054234179,
+            "resolved_full": false,
+            "snr_score": 0.6666666666666675,
+            "metameric_score": false,
+            "snr_rank": 0.8,
+            "metameric_rank": false,
+            "snr_pick": 0.0,
+            "metameric_pick": false
+          },
+          {
+            "pair": [
+              "Harley-Davidson",
+              "LEGO"
+            ],
+            "snr_full": 0.19850445088681484,
+            "resolved_full": false,
+            "snr_score": 1.999999999999999,
+            "metameric_score": false,
+            "snr_rank": 0.5333333333333333,
+            "metameric_rank": false,
+            "snr_pick": 0.33333333333333337,
+            "metameric_pick": false
+          },
+          {
+            "pair": [
+              "Harley-Davidson",
+              "McDonald's"
+            ],
+            "snr_full": 0.42525949731465595,
+            "resolved_full": false,
+            "snr_score": 0.3333333333333333,
+            "metameric_score": false,
+            "snr_rank": 0.5333333333333333,
+            "metameric_rank": false,
+            "snr_pick": 0.08333333333333337,
+            "metameric_pick": false
+          },
+          {
+            "pair": [
+              "Harley-Davidson",
+              "Microsoft"
+            ],
+            "snr_full": 0.40479460415215385,
+            "resolved_full": false,
+            "snr_score": 0.5,
+            "metameric_score": false,
+            "snr_rank": 0.5333333333333333,
+            "metameric_rank": false,
+            "snr_pick": 0.25,
+            "metameric_pick": false
+          },
+          {
+            "pair": [
+              "Harley-Davidson",
+              "Patagonia"
+            ],
+            "snr_full": 0.6327340971606924,
+            "resolved_full": false,
+            "snr_score": 2.166666666666665,
+            "metameric_score": false,
+            "snr_rank": 0.46666666666666673,
+            "metameric_rank": false,
+            "snr_pick": 0.33333333333333337,
+            "metameric_pick": false
+          },
+          {
+            "pair": [
+              "Harley-Davidson",
+              "Rolex"
+            ],
+            "snr_full": 0.1768820078217064,
+            "resolved_full": false,
+            "snr_score": 2.166666666666666,
+            "metameric_score": false,
+            "snr_rank": 0.5333333333333333,
+            "metameric_rank": false,
+            "snr_pick": 0.25,
+            "metameric_pick": false
+          },
+          {
+            "pair": [
+              "Harley-Davidson",
+              "SAP"
+            ],
+            "snr_full": 0.7669456002717638,
+            "resolved_full": false,
+            "snr_score": 0.41666666666666696,
+            "metameric_score": false,
+            "snr_rank": 0.619047619047619,
+            "metameric_rank": false,
+            "snr_pick": 0.0,
+            "metameric_pick": false
+          },
+          {
+            "pair": [
+              "Harley-Davidson",
+              "Salesforce"
+            ],
+            "snr_full": 0.279818253315425,
+            "resolved_full": false,
+            "snr_score": 0.5000000000000006,
+            "metameric_score": false,
+            "snr_rank": 0.3333333333333334,
+            "metameric_rank": false,
+            "snr_pick": 0.16666666666666674,
+            "metameric_pick": false
+          },
+          {
+            "pair": [
+              "Harley-Davidson",
+              "Starbucks"
+            ],
+            "snr_full": 0.4933638351991078,
+            "resolved_full": false,
+            "snr_score": 0.2857142857142859,
+            "metameric_score": false,
+            "snr_rank": 0.3333333333333334,
+            "metameric_rank": false,
+            "snr_pick": 0.08333333333333337,
+            "metameric_pick": false
+          },
+          {
+            "pair": [
+              "Harley-Davidson",
+              "Stripe"
+            ],
+            "snr_full": 0.29441758022722225,
+            "resolved_full": false,
+            "snr_score": 1.2500000000000002,
+            "metameric_score": false,
+            "snr_rank": 0.2666666666666667,
+            "metameric_rank": false,
+            "snr_pick": 0.16666666666666674,
+            "metameric_pick": false
+          },
+          {
+            "pair": [
+              "Harley-Davidson",
+              "Tesla"
+            ],
+            "snr_full": 0.27553030762540753,
+            "resolved_full": false,
+            "snr_score": 0.22222222222222288,
+            "metameric_score": false,
+            "snr_rank": 0.13333333333333333,
+            "metameric_rank": false,
+            "snr_pick": 0.41666666666666663,
+            "metameric_pick": false
+          },
+          {
+            "pair": [
+              "Harley-Davidson",
+              "Uber"
+            ],
+            "snr_full": 0.9447599485357967,
+            "resolved_full": false,
+            "snr_score": 1.4166666666666663,
+            "metameric_score": false,
+            "snr_rank": 0.2666666666666667,
+            "metameric_rank": false,
+            "snr_pick": 0.16666666666666663,
+            "metameric_pick": false
+          },
+          {
+            "pair": [
+              "IKEA",
+              "Intel"
+            ],
+            "snr_full": 0.5250036486116476,
+            "resolved_full": false,
+            "snr_score": 1.2222222222222232,
+            "metameric_score": false,
+            "snr_rank": 1.2000000000000002,
+            "metameric_rank": false,
+            "snr_pick": 0.6666666666666667,
+            "metameric_pick": false
+          },
+          {
+            "pair": [
+              "IKEA",
+              "LEGO"
+            ],
+            "snr_full": 1.2616083255139823,
+            "resolved_full": false,
+            "snr_score": 0.9999999999999986,
+            "metameric_score": false,
+            "snr_rank": 0.6666666666666666,
+            "metameric_rank": false,
+            "snr_pick": 0.0,
+            "metameric_pick": false
+          },
+          {
+            "pair": [
+              "IKEA",
+              "McDonald's"
+            ],
+            "snr_full": 0.9739468442447885,
+            "resolved_full": false,
+            "snr_score": 3.666666666666664,
+            "metameric_score": false,
+            "snr_rank": 0.6666666666666666,
+            "metameric_rank": false,
+            "snr_pick": 0.5,
+            "metameric_pick": false
+          },
+          {
+            "pair": [
+              "IKEA",
+              "Microsoft"
+            ],
+            "snr_full": 0.9819929796625719,
+            "resolved_full": false,
+            "snr_score": 0.7499999999999989,
+            "metameric_score": false,
+            "snr_rank": 0.6666666666666666,
+            "metameric_rank": false,
+            "snr_pick": 0.3333333333333335,
+            "metameric_pick": false
+          },
+          {
+            "pair": [
+              "IKEA",
+              "Patagonia"
+            ],
+            "snr_full": 2.4668000996021013,
+            "resolved_full": true,
+            "snr_score": 1.8333333333333275,
+            "metameric_score": false,
+            "snr_rank": 0.3333333333333333,
+            "metameric_rank": true,
+            "snr_pick": 0.0,
+            "metameric_pick": true
+          },
+          {
+            "pair": [
+              "IKEA",
+              "Rolex"
+            ],
+            "snr_full": 0.886221348886502,
+            "resolved_full": false,
+            "snr_score": 1.8333333333333297,
+            "metameric_score": false,
+            "snr_rank": 0.6666666666666666,
+            "metameric_rank": false,
+            "snr_pick": 0.3333333333333335,
+            "metameric_pick": false
+          },
+          {
+            "pair": [
+              "IKEA",
+              "SAP"
+            ],
+            "snr_full": 0.7449972130285747,
+            "resolved_full": false,
+            "snr_score": 1.0416666666666672,
+            "metameric_score": false,
+            "snr_rank": 0.9047619047619048,
+            "metameric_rank": false,
+            "snr_pick": 0.4444444444444445,
+            "metameric_pick": false
+          },
+          {
+            "pair": [
+              "IKEA",
+              "Salesforce"
+            ],
+            "snr_full": 0.3981895244827152,
+            "resolved_full": false,
+            "snr_score": 2.9999999999999822,
+            "metameric_score": false,
+            "snr_rank": 0.1111111111111111,
+            "metameric_rank": false,
+            "snr_pick": 0.6666666666666665,
+            "metameric_pick": false
+          },
+          {
+            "pair": [
+              "IKEA",
+              "Starbucks"
+            ],
+            "snr_full": 0.912123162665505,
+            "resolved_full": false,
+            "snr_score": 1.0,
+            "metameric_score": false,
+            "snr_rank": 0.1111111111111111,
+            "metameric_rank": false,
+            "snr_pick": 0.3333333333333333,
+            "metameric_pick": false
+          },
+          {
+            "pair": [
+              "IKEA",
+              "Stripe"
+            ],
+            "snr_full": 0.6389008722625962,
+            "resolved_full": false,
+            "snr_score": 0.0,
+            "metameric_score": false,
+            "snr_rank": 0.2222222222222222,
+            "metameric_rank": false,
+            "snr_pick": 0.33333333333333326,
+            "metameric_pick": false
+          },
+          {
+            "pair": [
+              "IKEA",
+              "Tesla"
+            ],
+            "snr_full": 1.9282475712431895,
+            "resolved_full": false,
+            "snr_score": 1.055555555555556,
+            "metameric_score": false,
+            "snr_rank": 0.888888888888889,
+            "metameric_rank": false,
+            "snr_pick": 750.0,
+            "metameric_pick": false
+          },
+          {
+            "pair": [
+              "IKEA",
+              "Uber"
+            ],
+            "snr_full": 0.9836418069545407,
+            "resolved_full": false,
+            "snr_score": 2.6666666666666665,
+            "metameric_score": false,
+            "snr_rank": 0.16666666666666666,
+            "metameric_rank": false,
+            "snr_pick": 1.0,
+            "metameric_pick": false
+          },
+          {
+            "pair": [
+              "Intel",
+              "LEGO"
+            ],
+            "snr_full": 0.30947593395782197,
+            "resolved_full": false,
+            "snr_score": 1.555555555555556,
+            "metameric_score": false,
+            "snr_rank": 1.3333333333333335,
+            "metameric_rank": false,
+            "snr_pick": 0.6666666666666667,
+            "metameric_pick": false
+          },
+          {
+            "pair": [
+              "Intel",
+              "McDonald's"
+            ],
+            "snr_full": 0.37374385322257025,
+            "resolved_full": false,
+            "snr_score": 0.8148148148148157,
+            "metameric_score": false,
+            "snr_rank": 1.3333333333333335,
+            "metameric_rank": false,
+            "snr_pick": 0.16666666666666674,
+            "metameric_pick": false
+          },
+          {
+            "pair": [
+              "Intel",
+              "Microsoft"
+            ],
+            "snr_full": 0.08409744289728265,
+            "resolved_full": false,
+            "snr_score": 0.88888888888889,
+            "metameric_score": false,
+            "snr_rank": 1.3333333333333335,
+            "metameric_rank": false,
+            "snr_pick": 0.5,
+            "metameric_pick": false
+          },
+          {
+            "pair": [
+              "Intel",
+              "Patagonia"
+            ],
+            "snr_full": 0.399540288800316,
+            "resolved_full": false,
+            "snr_score": 1.6296296296296298,
+            "metameric_score": false,
+            "snr_rank": 1.2666666666666666,
+            "metameric_rank": false,
+            "snr_pick": 0.6666666666666667,
+            "metameric_pick": false
+          },
+          {
+            "pair": [
+              "Intel",
+              "Rolex"
+            ],
+            "snr_full": 0.20344782203644748,
+            "resolved_full": false,
+            "snr_score": 1.6296296296296304,
+            "metameric_score": false,
+            "snr_rank": 1.3333333333333335,
+            "metameric_rank": false,
+            "snr_pick": 0.5,
+            "metameric_pick": false
+          },
+          {
+            "pair": [
+              "Intel",
+              "SAP"
+            ],
+            "snr_full": 0.7248246028077234,
+            "resolved_full": false,
+            "snr_score": 0.29629629629629683,
+            "metameric_score": false,
+            "snr_rank": 0.04761904761904741,
+            "metameric_rank": false,
+            "snr_pick": 0.0,
+            "metameric_pick": false
+          },
+          {
+            "pair": [
+              "Intel",
+              "Salesforce"
+            ],
+            "snr_full": 0.3250519088823134,
+            "resolved_full": false,
+            "snr_score": 0.88888888888889,
+            "metameric_score": false,
+            "snr_rank": 1.1333333333333335,
+            "metameric_rank": false,
+            "snr_pick": 0.3333333333333335,
+            "metameric_pick": false
+          },
+          {
+            "pair": [
+              "Intel",
+              "Starbucks"
+            ],
+            "snr_full": 0.39581117000128024,
+            "resolved_full": false,
+            "snr_score": 0.444444444444445,
+            "metameric_score": false,
+            "snr_rank": 1.1333333333333335,
+            "metameric_rank": false,
+            "snr_pick": 0.11111111111111116,
+            "metameric_pick": false
+          },
+          {
+            "pair": [
+              "Intel",
+              "Stripe"
+            ],
+            "snr_full": 0.36869411668083163,
+            "resolved_full": false,
+            "snr_score": 1.2222222222222232,
+            "metameric_score": false,
+            "snr_rank": 1.0666666666666667,
+            "metameric_rank": false,
+            "snr_pick": 0.3333333333333335,
+            "metameric_pick": false
+          },
+          {
+            "pair": [
+              "Intel",
+              "Tesla"
+            ],
+            "snr_full": 0.1950505621635467,
+            "resolved_full": false,
+            "snr_score": 0.5185185185185188,
+            "metameric_score": false,
+            "snr_rank": 0.6666666666666667,
+            "metameric_rank": false,
+            "snr_pick": 0.8333333333333333,
+            "metameric_pick": false
+          },
+          {
+            "pair": [
+              "Intel",
+              "Uber"
+            ],
+            "snr_full": 0.5914327104732208,
+            "resolved_full": false,
+            "snr_score": 0.0370370370370379,
+            "metameric_score": false,
+            "snr_rank": 1.0666666666666667,
+            "metameric_rank": false,
+            "snr_pick": 0.33333333333333326,
+            "metameric_pick": false
+          },
+          {
+            "pair": [
+              "LEGO",
+              "McDonald's"
+            ],
+            "snr_full": 0.3738413382600634,
+            "resolved_full": false,
+            "snr_score": 2.2222222222222214,
+            "metameric_score": false,
+            "snr_rank": 0.0,
+            "metameric_rank": false,
+            "snr_pick": 0.5,
+            "metameric_pick": false
+          },
+          {
+            "pair": [
+              "LEGO",
+              "Microsoft"
+            ],
+            "snr_full": 0.6263419122705631,
+            "resolved_full": false,
+            "snr_score": 1.4999999999999967,
+            "metameric_score": false,
+            "snr_rank": 0.0,
+            "metameric_rank": false,
+            "snr_pick": 0.3333333333333335,
+            "metameric_pick": false
+          },
+          {
+            "pair": [
+              "LEGO",
+              "Patagonia"
+            ],
+            "snr_full": 2.6175758887358365,
+            "resolved_full": true,
+            "snr_score": 0.22222222222222157,
+            "metameric_score": true,
+            "snr_rank": 0.3333333333333333,
+            "metameric_rank": true,
+            "snr_pick": 0.0,
+            "metameric_pick": true
+          },
+          {
+            "pair": [
+              "LEGO",
+              "Rolex"
+            ],
+            "snr_full": 0.7574709516973472,
+            "resolved_full": false,
+            "snr_score": 0.22222222222222304,
+            "metameric_score": false,
+            "snr_rank": 0.0,
+            "metameric_rank": false,
+            "snr_pick": 0.3333333333333335,
+            "metameric_pick": false
+          },
+          {
+            "pair": [
+              "LEGO",
+              "SAP"
+            ],
+            "snr_full": 0.83493648393644,
+            "resolved_full": false,
+            "snr_score": 1.4166666666666663,
+            "metameric_score": false,
+            "snr_rank": 1.0,
+            "metameric_rank": false,
+            "snr_pick": 0.4444444444444445,
+            "metameric_pick": false
+          },
+          {
+            "pair": [
+              "LEGO",
+              "Salesforce"
+            ],
+            "snr_full": 0.27547402486440836,
+            "resolved_full": false,
+            "snr_score": 1.9999999999999984,
+            "metameric_score": false,
+            "snr_rank": 0.3333333333333333,
+            "metameric_rank": false,
+            "snr_pick": 0.6666666666666665,
+            "metameric_pick": false
+          },
+          {
+            "pair": [
+              "LEGO",
+              "Starbucks"
+            ],
+            "snr_full": 0.1680639651893293,
+            "resolved_full": false,
+            "snr_score": 1.4285714285714275,
+            "metameric_score": false,
+            "snr_rank": 0.3333333333333333,
+            "metameric_rank": false,
+            "snr_pick": 0.3333333333333333,
+            "metameric_pick": false
+          },
+          {
+            "pair": [
+              "LEGO",
+              "Stripe"
+            ],
+            "snr_full": 0.36048983769959925,
+            "resolved_full": false,
+            "snr_score": 0.7499999999999994,
+            "metameric_score": false,
+            "snr_rank": 0.4444444444444444,
+            "metameric_rank": false,
+            "snr_pick": 0.33333333333333326,
+            "metameric_pick": false
+          },
+          {
+            "pair": [
+              "LEGO",
+              "Tesla"
+            ],
+            "snr_full": 0.794230319937883,
+            "resolved_full": false,
+            "snr_score": 1.555555555555555,
+            "metameric_score": false,
+            "snr_rank": 1.1111111111111112,
+            "metameric_rank": false,
+            "snr_pick": 750.0,
+            "metameric_pick": false
+          },
+          {
+            "pair": [
+              "LEGO",
+              "Uber"
+            ],
+            "snr_full": 1.0899464324062356,
+            "resolved_full": false,
+            "snr_score": 3.416666666666665,
+            "metameric_score": false,
+            "snr_rank": 0.3333333333333333,
+            "metameric_rank": false,
+            "snr_pick": 1.0,
+            "metameric_pick": false
+          },
+          {
+            "pair": [
+              "McDonald's",
+              "Microsoft"
+            ],
+            "snr_full": 0.9460942459810655,
+            "resolved_full": false,
+            "snr_score": 0.16666666666666705,
+            "metameric_score": false,
+            "snr_rank": 0.0,
+            "metameric_rank": false,
+            "snr_pick": 0.33333333333333326,
+            "metameric_pick": false
+          },
+          {
+            "pair": [
+              "McDonald's",
+              "Patagonia"
+            ],
+            "snr_full": 3.7115878840900494,
+            "resolved_full": true,
+            "snr_score": 3.6666666666666594,
+            "metameric_score": false,
+            "snr_rank": 0.3333333333333333,
+            "metameric_rank": true,
+            "snr_pick": 0.5,
+            "metameric_pick": true
+          },
+          {
+            "pair": [
+              "McDonald's",
+              "Rolex"
+            ],
+            "snr_full": 0.7613437850535415,
+            "resolved_full": false,
+            "snr_score": 3.6666666666666616,
+            "metameric_score": false,
+            "snr_rank": 0.0,
+            "metameric_rank": false,
+            "snr_pick": 0.33333333333333326,
+            "metameric_pick": false
+          },
+          {
+            "pair": [
+              "McDonald's",
+              "SAP"
+            ],
+            "snr_full": 1.0209806011376763,
+            "resolved_full": false,
+            "snr_score": 0.5833333333333336,
+            "metameric_score": false,
+            "snr_rank": 1.0,
+            "metameric_rank": false,
+            "snr_pick": 0.11111111111111116,
+            "metameric_pick": false
+          },
+          {
+            "pair": [
+              "McDonald's",
+              "Salesforce"
+            ],
+            "snr_full": 0.3705795031254317,
+            "resolved_full": false,
+            "snr_score": 0.6666666666666652,
+            "metameric_score": false,
+            "snr_rank": 0.3333333333333333,
+            "metameric_rank": false,
+            "snr_pick": 0.16666666666666674,
+            "metameric_pick": false
+          },
+          {
+            "pair": [
+              "McDonald's",
+              "Starbucks"
+            ],
+            "snr_full": 0.15970374638330498,
+            "resolved_full": false,
+            "snr_score": 0.4761904761904763,
+            "metameric_score": false,
+            "snr_rank": 0.3333333333333333,
+            "metameric_rank": false,
+            "snr_pick": 0.0,
+            "metameric_pick": false
+          },
+          {
+            "pair": [
+              "McDonald's",
+              "Stripe"
+            ],
+            "snr_full": 0.7785827738317903,
+            "resolved_full": false,
+            "snr_score": 0.916666666666668,
+            "metameric_score": false,
+            "snr_rank": 0.4444444444444444,
+            "metameric_rank": false,
+            "snr_pick": 0.16666666666666674,
+            "metameric_pick": false
+          },
+          {
+            "pair": [
+              "McDonald's",
+              "Tesla"
+            ],
+            "snr_full": 1.6957645768479914,
+            "resolved_full": false,
+            "snr_score": 0.44444444444444503,
+            "metameric_score": false,
+            "snr_rank": 1.1111111111111112,
+            "metameric_rank": false,
+            "snr_pick": 1.0,
+            "metameric_pick": false
+          },
+          {
+            "pair": [
+              "McDonald's",
+              "Uber"
+            ],
+            "snr_full": 1.611689949983601,
+            "resolved_full": false,
+            "snr_score": 1.7499999999999998,
+            "metameric_score": false,
+            "snr_rank": 0.3333333333333333,
+            "metameric_rank": false,
+            "snr_pick": 0.5,
+            "metameric_pick": false
+          },
+          {
+            "pair": [
+              "Microsoft",
+              "Patagonia"
+            ],
+            "snr_full": 0.5578308726862333,
+            "resolved_full": false,
+            "snr_score": 1.6666666666666625,
+            "metameric_score": false,
+            "snr_rank": 0.3333333333333333,
+            "metameric_rank": false,
+            "snr_pick": 0.3333333333333335,
+            "metameric_pick": false
+          },
+          {
+            "pair": [
+              "Microsoft",
+              "Rolex"
+            ],
+            "snr_full": 0.5634344502882976,
+            "resolved_full": false,
+            "snr_score": 1.6666666666666636,
+            "metameric_score": false,
+            "snr_rank": 0.0,
+            "metameric_rank": false,
+            "snr_pick": 0.0,
+            "metameric_pick": false
+          },
+          {
+            "pair": [
+              "Microsoft",
+              "SAP"
+            ],
+            "snr_full": 0.4053847499808422,
+            "resolved_full": false,
+            "snr_score": 0.6666666666666672,
+            "metameric_score": false,
+            "snr_rank": 1.0,
+            "metameric_rank": false,
+            "snr_pick": 0.3333333333333333,
+            "metameric_pick": false
+          },
+          {
+            "pair": [
+              "Microsoft",
+              "Salesforce"
+            ],
+            "snr_full": 0.6167784850608328,
+            "resolved_full": false,
+            "snr_score": 0.0,
+            "metameric_score": false,
+            "snr_rank": 0.3333333333333333,
+            "metameric_rank": false,
+            "snr_pick": 0.33333333333333304,
+            "metameric_pick": false
+          },
+          {
+            "pair": [
+              "Microsoft",
+              "Starbucks"
+            ],
+            "snr_full": 0.9579882066693496,
+            "resolved_full": false,
+            "snr_score": 0.5714285714285718,
+            "metameric_score": false,
+            "snr_rank": 0.3333333333333333,
+            "metameric_rank": false,
+            "snr_pick": 0.22222222222222218,
+            "metameric_pick": false
+          },
+          {
+            "pair": [
+              "Microsoft",
+              "Stripe"
+            ],
+            "snr_full": 0.3443934861983218,
+            "resolved_full": false,
+            "snr_score": 0.7499999999999989,
+            "metameric_score": false,
+            "snr_rank": 0.4444444444444444,
+            "metameric_rank": false,
+            "snr_pick": 0.16666666666666652,
+            "metameric_pick": false
+          },
+          {
+            "pair": [
+              "Microsoft",
+              "Tesla"
+            ],
+            "snr_full": 0.2601705717027092,
+            "resolved_full": false,
+            "snr_score": 0.5555555555555565,
+            "metameric_score": false,
+            "snr_rank": 1.1111111111111112,
+            "metameric_rank": false,
+            "snr_pick": 2.6666666666666665,
+            "metameric_pick": false
+          },
+          {
+            "pair": [
+              "Microsoft",
+              "Uber"
+            ],
+            "snr_full": 0.6784757794962335,
+            "resolved_full": false,
+            "snr_score": 1.9166666666666647,
+            "metameric_score": false,
+            "snr_rank": 0.3333333333333333,
+            "metameric_rank": false,
+            "snr_pick": 0.8333333333333333,
+            "metameric_pick": false
+          },
+          {
+            "pair": [
+              "Patagonia",
+              "Rolex"
+            ],
+            "snr_full": 1.4540954897950589,
+            "resolved_full": false,
+            "snr_score": 2.220446049250311e-15,
+            "metameric_score": false,
+            "snr_rank": 0.3333333333333333,
+            "metameric_rank": false,
+            "snr_pick": 0.3333333333333335,
+            "metameric_pick": false
+          },
+          {
+            "pair": [
+              "Patagonia",
+              "SAP"
+            ],
+            "snr_full": 0.40536783470966026,
+            "resolved_full": false,
+            "snr_score": 1.4999999999999993,
+            "metameric_score": false,
+            "snr_rank": 0.9523809523809524,
+            "metameric_rank": false,
+            "snr_pick": 0.4444444444444445,
+            "metameric_pick": false
+          },
+          {
+            "pair": [
+              "Patagonia",
+              "Salesforce"
+            ],
+            "snr_full": 1.3804011997430232,
+            "resolved_full": false,
+            "snr_score": 3.333333333333325,
+            "metameric_score": false,
+            "snr_rank": 0.2222222222222222,
+            "metameric_rank": false,
+            "snr_pick": 0.6666666666666665,
+            "metameric_pick": false
+          },
+          {
+            "pair": [
+              "Patagonia",
+              "Starbucks"
+            ],
+            "snr_full": 2.206717237345992,
+            "resolved_full": true,
+            "snr_score": 1.5238095238095224,
+            "metameric_score": false,
+            "snr_rank": 0.2222222222222222,
+            "metameric_rank": true,
+            "snr_pick": 0.3333333333333333,
+            "metameric_pick": true
+          },
+          {
+            "pair": [
+              "Patagonia",
+              "Stripe"
+            ],
+            "snr_full": 0.44639060550926213,
+            "resolved_full": false,
+            "snr_score": 0.9166666666666657,
+            "metameric_score": false,
+            "snr_rank": 0.3333333333333333,
+            "metameric_rank": false,
+            "snr_pick": 0.33333333333333326,
+            "metameric_pick": false
+          },
+          {
+            "pair": [
+              "Patagonia",
+              "Tesla"
+            ],
+            "snr_full": 1.2899212226392232,
+            "resolved_full": false,
+            "snr_score": 1.6666666666666656,
+            "metameric_score": false,
+            "snr_rank": 1.0,
+            "metameric_rank": false,
+            "snr_pick": 750.0,
+            "metameric_pick": false
+          },
+          {
+            "pair": [
+              "Patagonia",
+              "Uber"
+            ],
+            "snr_full": 1.1263875708860291,
+            "resolved_full": false,
+            "snr_score": 3.5833333333333313,
+            "metameric_score": false,
+            "snr_rank": 0.25,
+            "metameric_rank": false,
+            "snr_pick": 1.0,
+            "metameric_pick": false
+          },
+          {
+            "pair": [
+              "Rolex",
+              "SAP"
+            ],
+            "snr_full": 0.6230300435352474,
+            "resolved_full": false,
+            "snr_score": 1.5,
+            "metameric_score": false,
+            "snr_rank": 1.0,
+            "metameric_rank": false,
+            "snr_pick": 0.3333333333333333,
+            "metameric_pick": false
+          },
+          {
+            "pair": [
+              "Rolex",
+              "Salesforce"
+            ],
+            "snr_full": 0.4019297589276421,
+            "resolved_full": false,
+            "snr_score": 3.3333333333333273,
+            "metameric_score": false,
+            "snr_rank": 0.3333333333333333,
+            "metameric_rank": false,
+            "snr_pick": 0.33333333333333304,
+            "metameric_pick": false
+          },
+          {
+            "pair": [
+              "Rolex",
+              "Starbucks"
+            ],
+            "snr_full": 0.8992399361008868,
+            "resolved_full": false,
+            "snr_score": 1.523809523809523,
+            "metameric_score": false,
+            "snr_rank": 0.3333333333333333,
+            "metameric_rank": false,
+            "snr_pick": 0.22222222222222218,
+            "metameric_pick": false
+          },
+          {
+            "pair": [
+              "Rolex",
+              "Stripe"
+            ],
+            "snr_full": 0.5596527319685353,
+            "resolved_full": false,
+            "snr_score": 0.9166666666666669,
+            "metameric_score": false,
+            "snr_rank": 0.4444444444444444,
+            "metameric_rank": false,
+            "snr_pick": 0.16666666666666652,
+            "metameric_pick": false
+          },
+          {
+            "pair": [
+              "Rolex",
+              "Tesla"
+            ],
+            "snr_full": 1.258016613974854,
+            "resolved_full": false,
+            "snr_score": 1.6666666666666665,
+            "metameric_score": false,
+            "snr_rank": 1.1111111111111112,
+            "metameric_rank": false,
+            "snr_pick": 2.6666666666666665,
+            "metameric_pick": false
+          },
+          {
+            "pair": [
+              "Rolex",
+              "Uber"
+            ],
+            "snr_full": 1.670992917004828,
+            "resolved_full": false,
+            "snr_score": 3.5833333333333326,
+            "metameric_score": false,
+            "snr_rank": 0.3333333333333333,
+            "metameric_rank": false,
+            "snr_pick": 0.8333333333333333,
+            "metameric_pick": false
+          },
+          {
+            "pair": [
+              "SAP",
+              "Salesforce"
+            ],
+            "snr_full": 0.6670643534268563,
+            "resolved_full": false,
+            "snr_score": 0.6666666666666672,
+            "metameric_score": false,
+            "snr_rank": 0.8571428571428571,
+            "metameric_rank": false,
+            "snr_pick": 0.22222222222222232,
+            "metameric_pick": false
+          },
+          {
+            "pair": [
+              "SAP",
+              "Starbucks"
+            ],
+            "snr_full": 1.1818031853945674,
+            "resolved_full": false,
+            "snr_score": 0.16666666666666666,
+            "metameric_score": false,
+            "snr_rank": 0.8571428571428571,
+            "metameric_rank": false,
+            "snr_pick": 0.11111111111111116,
+            "metameric_pick": false
+          },
+          {
+            "pair": [
+              "SAP",
+              "Stripe"
+            ],
+            "snr_full": 0.5361057184894614,
+            "resolved_full": false,
+            "snr_score": 1.0416666666666672,
+            "metameric_score": false,
+            "snr_rank": 0.8095238095238095,
+            "metameric_rank": false,
+            "snr_pick": 0.22222222222222232,
+            "metameric_pick": false
+          },
+          {
+            "pair": [
+              "SAP",
+              "Tesla"
+            ],
+            "snr_full": 0.7308442337396996,
+            "resolved_full": false,
+            "snr_score": 0.24999999999999972,
+            "metameric_score": false,
+            "snr_rank": 0.5238095238095237,
+            "metameric_rank": false,
+            "snr_pick": 0.5555555555555555,
+            "metameric_pick": false
+          },
+          {
+            "pair": [
+              "SAP",
+              "Uber"
+            ],
+            "snr_full": 0.4876048776524559,
+            "resolved_full": false,
+            "snr_score": 0.29166666666666624,
+            "metameric_score": false,
+            "snr_rank": 0.8095238095238095,
+            "metameric_rank": false,
+            "snr_pick": 0.22222222222222218,
+            "metameric_pick": false
+          },
+          {
+            "pair": [
+              "Salesforce",
+              "Starbucks"
+            ],
+            "snr_full": 0.6424880938400765,
+            "resolved_full": false,
+            "snr_score": 0.5714285714285718,
+            "metameric_score": false,
+            "snr_rank": 0.0,
+            "metameric_rank": false,
+            "snr_pick": 0.11111111111111116,
+            "metameric_pick": false
+          },
+          {
+            "pair": [
+              "Salesforce",
+              "Stripe"
+            ],
+            "snr_full": 0.321590680709612,
+            "resolved_full": false,
+            "snr_score": 0.7500000000000006,
+            "metameric_score": false,
+            "snr_rank": 0.1111111111111111,
+            "metameric_rank": false,
+            "snr_pick": 0.0,
+            "metameric_pick": false
+          },
+          {
+            "pair": [
+              "Salesforce",
+              "Tesla"
+            ],
+            "snr_full": 0.7431294445768103,
+            "resolved_full": false,
+            "snr_score": 0.5555555555555565,
+            "metameric_score": false,
+            "snr_rank": 0.7777777777777778,
+            "metameric_rank": false,
+            "snr_pick": 2.3333333333333335,
+            "metameric_pick": false
+          },
+          {
+            "pair": [
+              "Salesforce",
+              "Uber"
+            ],
+            "snr_full": 0.7987425686615203,
+            "resolved_full": false,
+            "snr_score": 1.916666666666667,
+            "metameric_score": false,
+            "snr_rank": 0.08333333333333333,
+            "metameric_rank": false,
+            "snr_pick": 0.6666666666666667,
+            "metameric_pick": false
+          },
+          {
+            "pair": [
+              "Starbucks",
+              "Stripe"
+            ],
+            "snr_full": 0.7626070788871891,
+            "resolved_full": false,
+            "snr_score": 1.0,
+            "metameric_score": false,
+            "snr_rank": 0.1111111111111111,
+            "metameric_rank": false,
+            "snr_pick": 0.11111111111111116,
+            "metameric_pick": false
+          },
+          {
+            "pair": [
+              "Starbucks",
+              "Tesla"
+            ],
+            "snr_full": 0.7056164374173941,
+            "resolved_full": false,
+            "snr_score": 0.09523809523809487,
+            "metameric_score": false,
+            "snr_rank": 0.7777777777777778,
+            "metameric_rank": false,
+            "snr_pick": 0.6666666666666666,
+            "metameric_pick": false
+          },
+          {
+            "pair": [
+              "Starbucks",
+              "Uber"
+            ],
+            "snr_full": 1.4786244512873887,
+            "resolved_full": false,
+            "snr_score": 0.5238095238095231,
+            "metameric_score": false,
+            "snr_rank": 0.08333333333333333,
+            "metameric_rank": false,
+            "snr_pick": 0.3333333333333333,
+            "metameric_pick": false
+          },
+          {
+            "pair": [
+              "Stripe",
+              "Tesla"
+            ],
+            "snr_full": 0.21302434884899915,
+            "resolved_full": false,
+            "snr_score": 1.055555555555556,
+            "metameric_score": false,
+            "snr_rank": 0.6666666666666667,
+            "metameric_rank": false,
+            "snr_pick": 1.1666666666666667,
+            "metameric_pick": false
+          },
+          {
+            "pair": [
+              "Stripe",
+              "Uber"
+            ],
+            "snr_full": 0.3368329660225947,
+            "resolved_full": false,
+            "snr_score": 2.6666666666666665,
+            "metameric_score": false,
+            "snr_rank": 0.0,
+            "metameric_rank": false,
+            "snr_pick": 0.6666666666666667,
+            "metameric_pick": false
+          },
+          {
+            "pair": [
+              "Tesla",
+              "Uber"
+            ],
+            "snr_full": 0.8089896709276022,
+            "resolved_full": false,
+            "snr_score": 0.722222222222221,
+            "metameric_score": false,
+            "snr_rank": 0.5000000000000001,
+            "metameric_rank": false,
+            "snr_pick": 0.5,
+            "metameric_pick": false
+          }
+        ],
+        "meta": {
+          "LEGO": {
+            "coherence_type": "ecosystem",
+            "sector": "b2c",
+            "goods_type": "experience"
+          },
+          "Rolex": {
+            "coherence_type": "ecosystem",
+            "sector": "b2c",
+            "goods_type": "search"
+          },
+          "IKEA": {
+            "coherence_type": "signal",
+            "sector": "b2c",
+            "goods_type": "search"
+          },
+          "McDonald's": {
+            "coherence_type": "signal",
+            "sector": "b2c",
+            "goods_type": "experience"
+          },
+          "Starbucks": {
+            "coherence_type": "identity",
+            "sector": "b2c",
+            "goods_type": "experience"
+          },
+          "Patagonia": {
+            "coherence_type": "identity",
+            "sector": "b2c",
+            "goods_type": "experience"
+          },
+          "Harley-Davidson": {
+            "coherence_type": "identity",
+            "sector": "b2c",
+            "goods_type": "experience"
+          },
+          "Uber": {
+            "coherence_type": "experiential",
+            "sector": "b2c",
+            "goods_type": "experience"
+          },
+          "Tesla": {
+            "coherence_type": "incoherent",
+            "sector": "b2c",
+            "goods_type": "search"
+          },
+          "Microsoft": {
+            "coherence_type": "ecosystem",
+            "sector": "b2b",
+            "goods_type": "search"
+          },
+          "SAP": {
+            "coherence_type": "ecosystem",
+            "sector": "b2b",
+            "goods_type": "credence"
+          },
+          "Cisco": {
+            "coherence_type": "signal",
+            "sector": "b2b",
+            "goods_type": "search"
+          },
+          "Salesforce": {
+            "coherence_type": "identity",
+            "sector": "b2b",
+            "goods_type": "credence"
+          },
+          "Goldman Sachs": {
+            "coherence_type": "identity",
+            "sector": "b2b",
+            "goods_type": "credence"
+          },
+          "Basecamp": {
+            "coherence_type": "identity",
+            "sector": "b2b",
+            "goods_type": "search"
+          },
+          "Stripe": {
+            "coherence_type": "experiential",
+            "sector": "b2b",
+            "goods_type": "experience"
+          },
+          "Intel": {
+            "coherence_type": "incoherent",
+            "sector": "b2b",
+            "goods_type": "search"
+          }
+        }
+      }
+    }
+  },
+  "robustness": {
+    "k_1.5": {
+      "fractions": {
+        "score": {
+          "fraction": 1.0,
+          "n_metameric": 1,
+          "n_resolved": 1,
+          "ci95": [
+            1.0,
+            1.0
+          ]
+        },
+        "rank": {
+          "fraction": 1.0,
+          "n_metameric": 1,
+          "n_resolved": 1,
+          "ci95": [
+            1.0,
+            1.0
+          ]
+        },
+        "pick": {
+          "fraction": 1.0,
+          "n_metameric": 1,
+          "n_resolved": 1,
+          "ci95": [
+            1.0,
+            1.0
+          ]
+        }
+      },
+      "H2": {
+        "n_resolved": 1,
+        "n01_score_only": 0,
+        "n10_rank_only": 0,
+        "p_score_gt_rank": 1.0,
+        "p_rank_gt_full": 0.01,
+        "holm_adjusted": {
+          "rank_gt_full": 0.02,
+          "score_gt_rank": 1.0
+        },
+        "supported": false
+      }
+    },
+    "k_3.0": {
+      "fractions": {
+        "score": {
+          "fraction": null,
+          "n_metameric": 0,
+          "n_resolved": 0,
+          "ci95": [
+            null,
+            null
+          ]
+        },
+        "rank": {
+          "fraction": null,
+          "n_metameric": 0,
+          "n_resolved": 0,
+          "ci95": [
+            null,
+            null
+          ]
+        },
+        "pick": {
+          "fraction": null,
+          "n_metameric": 0,
+          "n_resolved": 0,
+          "ci95": [
+            null,
+            null
+          ]
+        }
+      },
+      "H2": {
+        "n_resolved": 0,
+        "n01_score_only": 0,
+        "n10_rank_only": 0,
+        "p_score_gt_rank": 1.0,
+        "p_rank_gt_full": 1.0,
+        "holm_adjusted": {
+          "score_gt_rank": 1.0,
+          "rank_gt_full": 1.0
+        },
+        "supported": false
+      }
+    },
+    "euclidean": {
+      "fractions": {
+        "score": {
+          "fraction": null,
+          "n_metameric": 0,
+          "n_resolved": 0,
+          "ci95": [
+            null,
+            null
+          ]
+        },
+        "rank": {
+          "fraction": null,
+          "n_metameric": 0,
+          "n_resolved": 0,
+          "ci95": [
+            null,
+            null
+          ]
+        },
+        "pick": {
+          "fraction": null,
+          "n_metameric": 0,
+          "n_resolved": 0,
+          "ci95": [
+            null,
+            null
+          ]
+        }
+      },
+      "H2": {
+        "n_resolved": 0,
+        "n01_score_only": 0,
+        "n10_rank_only": 0,
+        "p_score_gt_rank": 1.0,
+        "p_rank_gt_full": 1.0,
+        "holm_adjusted": {
+          "score_gt_rank": 1.0,
+          "rank_gt_full": 1.0
+        },
+        "supported": false
+      }
+    },
+    "mahalanobis": {
+      "fractions": {
+        "score": {
+          "fraction": null,
+          "n_metameric": 0,
+          "n_resolved": 0,
+          "ci95": [
+            null,
+            null
+          ]
+        },
+        "rank": {
+          "fraction": null,
+          "n_metameric": 0,
+          "n_resolved": 0,
+          "ci95": [
+            null,
+            null
+          ]
+        },
+        "pick": {
+          "fraction": null,
+          "n_metameric": 0,
+          "n_resolved": 0,
+          "ci95": [
+            null,
+            null
+          ]
+        }
+      },
+      "H2": {
+        "n_resolved": 0,
+        "n01_score_only": 0,
+        "n10_rank_only": 0,
+        "p_score_gt_rank": 1.0,
+        "p_rank_gt_full": 1.0,
+        "holm_adjusted": {
+          "score_gt_rank": 1.0,
+          "rank_gt_full": 1.0
+        },
+        "supported": false
+      }
+    }
+  }
+}

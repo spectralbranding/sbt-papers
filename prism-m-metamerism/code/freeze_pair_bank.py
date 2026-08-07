@@ -12,7 +12,7 @@ eight-dimension S/N > 2 (distinct) AND provisional scalar S/N < 1
 not retained. Writes ../PAIR_BANK.yaml — locked before Stage 2.
 
 Run:
-    uv run python research/prism_m/code/freeze_pair_bank.py
+    uv run python code/freeze_pair_bank.py
 """
 
 from __future__ import annotations

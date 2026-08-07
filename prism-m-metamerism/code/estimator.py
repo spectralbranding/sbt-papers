@@ -6,7 +6,7 @@
 """estimator.py — PRISM-M PL4 metameric-fraction estimator (2026az).
 
 Deterministic, seeded (SEED = 20260702). Implements the frozen PL0 criteria
-(research/prism_m/PREREGISTRATION.md section 6):
+(data/PREREGISTRATION.md section 6):
 
 - readout value per (brand, op_pair): mean over channel draws
 - distances: full readout = 1 - cosine similarity between eight-dimension
@@ -36,9 +36,9 @@ Deterministic, seeded (SEED = 20260702). Implements the frozen PL0 criteria
   distance alternates; prompt-ablation subsample comparison
 
 Run:
-    uv run python research/prism_m/code/estimator.py \
-        --stage2 research/prism_m/data/stage2_records.jsonl \
-        --out research/prism_m/data/pl4_results.json
+    uv run python code/estimator.py \
+        --stage2 data/stage2_records.jsonl \
+        --out data/pl4_results.json
 """
 
 from __future__ import annotations

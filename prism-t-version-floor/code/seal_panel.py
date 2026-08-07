@@ -12,7 +12,7 @@ guarantee, fragments are provenance). Validates completeness (40 brands x
 4 channels), minimum length (>= 500 chars), UTF-8 decodability, and
 duplicate-cell collisions. After sealing, the panel directory is IMMUTABLE.
 
-Run: uv run python research/prism_t/code/seal_panel.py
+Run: uv run python code/seal_panel.py
 """
 
 from __future__ import annotations

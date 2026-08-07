@@ -4,13 +4,13 @@ Deterministic, seeded pipeline for the PRISM-C choice-perception-gap
 instrument. Fixed seed: `SEED = 20260702` (all bootstrap resampling and
 synthetic generators). Publishes under `<public-mirror>/prism-c/code/` at
 submission (PAQS items 37a-37e). Shared machinery lives in
-`research/prism_core/` (extracted from the frozen 2026az campaign code).
+`code/prism_core/` (extracted from the frozen 2026az campaign code).
 
 ## Layout
 
 | File | Role |
 |---|---|
-| `prism_c_lib.py` | Campaign library: PL1 config + bank loaders (brand bank REUSED FROZEN from `research/prism_m/PL2_BRAND_BANK.yaml`), deterministic counterbalancing scheme, choice-elicitation + need-renderer prompts (`prism-c/v1.0.0`), measurement wrappers with PL3 logging |
+| `prism_c_lib.py` | Campaign library: PL1 config + bank loaders (brand bank REUSED FROZEN from `data/PL2_BRAND_BANK.yaml`), deterministic counterbalancing scheme, choice-elicitation + need-renderer prompts (`prism-c/v1.0.0`), measurement wrappers with PL3 logging |
 | `run_pilot.py` | Pre-flight operator-concordance pilot (~56 calls) + mechanical exclusion rule + PILOT GATE (exits nonzero on gate failure; confirmatory collection must not start) |
 | `run_stated.py` | Stated readings (bank x 4 channels x kept op pairs) + need vectors (scenarios x kept op pairs); resumable, shardable |
 | `run_choice.py` | Choice battery (scenarios x arrangements x kept chooser families) + `--controls` (positive dominating-option + negative near-duplicate sets); resumable, shardable |
@@ -22,24 +22,24 @@ submission (PAQS items 37a-37e). Shared machinery lives in
 
 ```sh
 # 0. Unit tests (no API spend; must pass before collection)
-uv run pytest research/prism_c/code/tests/ -q
+uv run pytest code/tests/ -q
 
 # 1. Pre-flight pilot + gate (keys via bws; STOP if gate fails)
-bws run -- research/prism_c/code/run_campaign.sh pilot
+bws run -- code/run_campaign.sh pilot
 
 # 2. Stated readings + need vectors (shardable by --ops/--brands/--channels)
-bws run -- research/prism_c/code/run_campaign.sh stated
+bws run -- code/run_campaign.sh stated
 
 # 3. Choice battery + controls (shardable by --families/--scenarios)
-bws run -- research/prism_c/code/run_campaign.sh choice
-bws run -- research/prism_c/code/run_campaign.sh choice --controls
+bws run -- code/run_campaign.sh choice
+bws run -- code/run_campaign.sh choice --controls
 
 # 4. PL4 analysis (seeded, deterministic)
-uv run python research/prism_c/code/estimator.py \
-    --records research/prism_c/data/stated_records*.jsonl \
-              research/prism_c/data/choice_records*.jsonl \
-    --index-status research/prism_m/PL2_BRAND_BANK.yaml \
-    --out research/prism_c/data/pl4_results.json --robustness
+uv run python code/estimator.py \
+    --records data/stated_records*.jsonl \
+              data/choice_records*.jsonl \
+    --index-status data/PL2_BRAND_BANK.yaml \
+    --out data/pl4_results.json --robustness
 ```
 
 ## Data layers
