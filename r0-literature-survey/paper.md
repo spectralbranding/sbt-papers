@@ -97,7 +97,7 @@ Second, the theory is static. Products have fixed positions in characteristics s
 
 Peli and Nooteboom [-@peli-1999-market-partitioning-geometry] explored what happens as the number of characteristics dimensions grows in the context of organizational ecology, demonstrating that high-dimensional resource spaces create geometric "pockets" that sustain specialist niches. This is one of the few studies to examine the geometric consequences of dimensionality in a characteristics-space framework, but it focused on organizational populations rather than individual brand perception. The spectral resource allocation framework of Zharnikov [-@zharnikov-2026-spectral-resource-allocation-demand-driven] directly extends the characteristics-space tradition by deriving demand-driven investment rules in multi-dimensional brand space, providing a formal bridge between Lancaster's geometric perspective and optimal brand resource allocation.
 
-```mermaid
+```{.mermaid width="55%"}
 graph LR
   GEO["Geometric traditions<br/>(MDS, Lancaster, Non-Euclidean)"]
   MEAS["Measurement traditions<br/>(Info geometry, INDSCAL)"]

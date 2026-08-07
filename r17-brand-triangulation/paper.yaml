@@ -12,7 +12,7 @@ meta:
     orcid: 0009-0000-6893-9231
     affiliation: Independent Researcher
   doi: 10.5281/zenodo.19482547
-  date: '2026-04-01'
+  date: '2026-06-27'
   venue: Preprint
   license: CC-BY-4.0
   keywords:
@@ -302,7 +302,7 @@ dependencies:
   claim: Kalman optimal linear state estimator
   doi: 10.1115/1.3662552
 - relationship: extends
-  claim: MKSC advertising state-space tradition
+  claim: marketing-science advertising state-space tradition
   doi: 10.1287/mksc.17.3.214
 - relationship: extends
   claim: Pictorial space as base+fiber — shared objective space / observer projections

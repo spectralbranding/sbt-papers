@@ -6,7 +6,7 @@ ORCID: 0009-0000-6893-9231
 
 DOI: [10.5281/zenodo.19528833](https://doi.org/10.5281/zenodo.19528833)
 
-Working Paper v1.1.0 – April 2026 (revised June 2026)
+Working Paper v1.1.1 – April 2026 (revised August 2026)
 
 ## Abstract
 
@@ -123,7 +123,7 @@ Of the 2,125 nominal design cells (5 response formats x 5 brands x 17 models x 5
 
 ### H1: Monotonic Rate-Distortion Shape
 
-H1 is **not supported**. All 17 models show directionally negative Spearman correlations between rate and distortion (rho range: -.3 to -.9), but none reach Bonferroni-corrected significance at alpha = .00294. This is a power artifact: with only n = 5 rate conditions per model, the Spearman test has insufficient resolution. The J-shape analysis below provides the informative characterization.
+H1 is **not supported**. All 17 models show directionally negative Spearman correlations between rate and distortion (rho range: -.3 to -.9), but none reach Bonferroni-corrected significance at alpha = .00294. This is a power artifact: with only n = 5 rate conditions per model, the Spearman test has insufficient resolution. The J-shape analysis below provides the informative characterization. Reading the null as a substantive absence would invert the evidence: significance and substantive importance come apart in both directions, and the effect size and the shape carry the evidentiary weight that a *p*-value in an underpowered design cannot [@ghanbarpour-2026-significance-misleads].
 
 ### J-Shaped Rate-Distortion Curve
 

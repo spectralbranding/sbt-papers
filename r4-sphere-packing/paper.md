@@ -556,7 +556,7 @@ Dmitry Zharnikov: Conceptualization, Data curation, Formal analysis, Investigati
 
 All numerical results reported in this paper were computed using the companion code `r4_capacity_bounds.py` (Python 3.12, numpy, scipy). Key computed values:
 
-Table A1: Key Numerical Values.
+**Table A1.** Key Numerical Values.
 
 | Quantity | Value |
 |----------|-------|
@@ -591,7 +591,7 @@ The script fixes `SEED = 42` at file top, exposes the volume function $V_n(r)$, 
 
 For reference, positioning capacity lower bounds $(1/\varepsilon)^n$ at $\varepsilon = .10$ across dimensions:
 
-Table B1: Dimensional Capacity, Optimal Packings, and Kissing Numbers at $\varepsilon = .10$.
+**Table B1.** Dimensional Capacity, Optimal Packings, and Kissing Numbers at $\varepsilon = .10$.
 
 | $n$ | Capacity | Known optimal packing | Kissing number |
 |-----|----------|----------------------|----------------|

@@ -311,7 +311,7 @@ propositions:
     antecedents: [P2, P_plateau]
     evidence:
       - type: citation
-        anchor: "Kalman state-estimation; DOP-fed Kalman covariance (Guo 2022); MKSC advertising state-space tradition (Naik et al.)."
+        anchor: "Kalman state-estimation; DOP-fed Kalman covariance (Guo 2022); marketing-science advertising state-space tradition (Naik et al.)."
         citation_keys: [kalman-1960-new-approach-linear, naik-1998-planning-media-schedules]
     falsifier: >-
       C6 fails if the filter's prediction errors show no correlation with actual
@@ -665,7 +665,7 @@ external_anchors:
   - {citation_key: transtrum-2015-perspective-sloppiness-emergent, role: structural_analogy, spine_nodes: [P_plateau], note: "Parameter sloppiness = plateau structure"}
   - {citation_key: aubin-1991-viability-theory, role: structural_analogy, spine_nodes: [P_corridor], note: "Viability theory — admissible-corridor mathematics"}
   - {citation_key: kalman-1960-new-approach-linear, role: methodological_grounding, spine_nodes: [C6], note: "Kalman optimal linear state estimator"}
-  - {citation_key: naik-1998-planning-media-schedules, role: methodological_grounding, spine_nodes: [C6], note: "MKSC advertising state-space tradition"}
+  - {citation_key: naik-1998-planning-media-schedules, role: methodological_grounding, spine_nodes: [C6], note: "marketing-science advertising state-space tradition"}
   - {citation_key: koenderink-2012-gauge-fields-pictorial, role: structural_analogy, spine_nodes: [P_target], note: "Pictorial space as base+fiber — shared objective space / observer projections"}
   - {citation_key: bell-1964-einstein-podolsky-rosen, role: structural_analogy, spine_nodes: [P_nonlocal], note: "Non-locality of jointly-correlated measurement (analogy only)"}
 

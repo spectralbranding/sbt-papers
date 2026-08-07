@@ -12,16 +12,16 @@ Working Paper v2.2.0 – March 2026 (revised June 2026)
 
 Purpose campaigns are evaluated by aggregate metrics that cannot distinguish structural success from surface popularity. This paper presents what is, to the author's knowledge, the first formal application of the SBT eight-dimension decomposition to a longitudinal purpose-campaign case study: Dove's "Campaign for Real Beauty" (2004--2026) across four temporal cross-sections. Four observer cohorts — Purpose-Aligned, Product-Pragmatist, Social-Signal Reader, and Skeptic-Critic — receive identical signals but form structurally different brand convictions. Within the case set considered here, disproportionate commercial impact is traced to *dimensional creation*: the activation of a previously null dimension that opens new perceptual territory rather than competing within existing space. Five propositions address dimensional creation, observer heterogeneity, portfolio interference, counter-cultural decay, and dimensional specificity. Independent quantitative evidence from a large-scale AI-observer study replicates the cohort-divergence and Patagonia-as-exception patterns, providing an empirical anchor across a controllable observer population. The framework extends brand-equity, authenticity, and cultural-branding literatures by supplying a formal, cohort-contingent account of simultaneous positive and negative conviction formation.
 
-**Keywords**: brand purpose, purpose advertising, brand activism, observer cohorts, portfolio interference, counter-cultural decay, multi-dimensional perception
-
----
-
 ## Practitioner Takeaways
 
 - Purpose campaigns succeed by activating previously dormant perceptual dimensions rather than strengthening existing ones; Dove's null-to-positive Ideological shift created uncrowded perceptual territory that drove disproportionate revenue growth.
 - The same campaign signals produce structurally opposite responses across observer cohorts: what empowers Purpose-Aligned observers simultaneously intensifies negative conviction among Skeptic-Critics.
 - Portfolio-level contradictions (e.g., Dove empowerment alongside Axe objectification) generate predictable interference on the Ideological dimension, with penalty severity proportional to observer awareness of corporate parentage.
 - Advertising managers should replace aggregate sentiment tracking with cohort-specific measurement and audit dimensional profiles before launching purpose campaigns.
+
+**Keywords**: brand purpose, purpose advertising, brand activism, observer cohorts, portfolio interference, counter-cultural decay, multi-dimensional perception
+
+---
 
 In January 2004, Dove launched the "Campaign for Real Beauty" with a series of billboards featuring photographs of women who did not conform to conventional beauty-industry standards. By 2007, Dove's global revenue had approximately doubled from ~$2B to ~$4B. By 2013, the "Real Beauty Sketches" video had accumulated over 163 million views, generating 4.6 billion public relations impressions and a 6% sales increase. By 2023, the brand reported EUR 6B in annual turnover — its highest underlying sales growth in a decade [@unilever-2023-annual-report-accounts]. Among discrete purpose campaigns documented in the academic and practitioner literature, none has sustained comparable commercial performance over two decades (as distinct from long-term brand positioning, such as Patagonia's).
 
@@ -270,17 +270,17 @@ Keller's [-@keller-1993-conceptualizing-measuring-managing] equity-as-stock meta
 
 **Table 6.** Framework capability comparison.
 
-| # | Phenomenon | Aa96 | Aa97 | Ke93 | Ka08 | SBT |
+| # | Phenomenon | Aaker 1996 | Aaker 1997 | Keller 1993 | Kapferer 2008 | SBT |
 |---|---|---|---|---|---|---|
 | 1 | Observer heterogeneity | — | — | — | — | Yes |
-| 2 | Multi-dim. profile | Part. | Yes | — | Yes | Yes |
+| 2 | Multi-dimensional profile | Partial | Yes | — | Yes | Yes |
 | 3 | Portfolio interference | — | — | — | — | Yes |
-| 4 | Counter-cultural decay | — | — | Part. | — | Yes |
-| 5 | Dim. creation vs. repos. | — | — | — | — | Yes |
+| 4 | Counter-cultural decay | — | — | Partial | — | Yes |
+| 5 | Dimension creation vs. repositioning | — | — | — | — | Yes |
 | 6 | Revenue-dimension link | — | — | — | — | Yes |
-| 7 | Observer-defined dims. | — | — | — | — | Yes |
+| 7 | Observer-defined dimensions | — | — | — | — | Yes |
 
-*Notes*: Aa96 = Aaker [-@aaker-1996-building-strong-brands], Aa97 = Aaker [-@aaker-1997-dimensions-brand-personality], Ke93 = Keller [-@keller-1993-conceptualizing-measuring-managing], Ka08 = Kapferer [-@kapferer-2008-new-strategic-brand, 4th ed.]. Yes = explicitly modeled. Part. = captures related phenomenon without specific mechanism. — = outside framework scope.
+*Notes*: Frameworks compared: Aaker [-@aaker-1996-building-strong-brands], Aaker [-@aaker-1997-dimensions-brand-personality], Keller [-@keller-1993-conceptualizing-measuring-managing], and Kapferer [-@kapferer-2008-new-strategic-brand, 4th ed.]. Yes = explicitly modeled; Partial = captures the related phenomenon without a specific mechanism; — = outside framework scope.
 
 ## Propositions
 

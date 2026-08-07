@@ -129,7 +129,7 @@ Aaker's four identity perspectives each bundle multiple independent perceptual c
 
 **Figure 1.** Projection from Aaker's Four Perspectives to SBT's Eight Perceptual Dimensions (Theorem 1, Appendix A).
 
-```{.mermaid width=60%}
+```{.mermaid width="40%"}
 flowchart LR
   A1[Brand-as-Product] --> S1[Experiential]
   A1 --> S2[Semiotic]

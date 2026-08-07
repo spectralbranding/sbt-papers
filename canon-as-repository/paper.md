@@ -385,6 +385,10 @@ For television and new media scholarship, the architecture offers three advances
 
 Most fundamentally, the specification-rendering architecture clarifies the authorship question at a moment when that question has become urgent. Authorship is specification: the creative act of deciding WHAT the story is. Rendering is the craft act of deciding HOW the story is expressed. AI is rapidly becoming capable of rendering; specification remains a distinctively human creative activity. The author's value is not in the prose, the image, or the performance. It is in the specification — the structured creative judgment that constrains all renderings and outlives every one of them.
 
+## Data and Code Availability
+
+The canon-as-repository demonstration is publicly available at https://github.com/spectralbranding/sbt-papers/tree/main/canon-as-repository under the MIT licence. No other datasets were used.
+
 ## Acknowledgments
 
 This research received no external funding. AI assistants (Claude Opus 4.8, Grok 4.20, Gemini 2.5 Pro) were used for initial literature search and editorial refinement; all theoretical claims, propositions, and interpretations are the author's sole responsibility.
@@ -392,18 +396,6 @@ This research received no external funding. AI assistants (Claude Opus 4.8, Grok
 ## Author Contributions (CRediT)
 
 Dmitry Zharnikov: Conceptualization, Data curation, Formal analysis, Investigation, Methodology, Project administration, Software, Validation, Writing — original draft, Writing — review and editing.
-
-## Data Availability
-
-The canon-as-repository demonstration is publicly available at https://github.com/spectralbranding/sbt-papers/tree/main/canon-as-repository under the MIT licence. No other datasets were used.
-
-## Conflict of Interest
-
-The author declares no competing interests.
-
-## Changelog
-
-- v1.1.0 (2026-05-10): URL migration — spec repository moved from standalone github.com/spectralbranding/canon-repo to consolidated github.com/spectralbranding/sbt-papers/tree/main/canon-as-repository. Metadata version bump; body unchanged.
 
 ## References
 

@@ -67,8 +67,8 @@ $$x_{i+1} = \gamma \cdot f(x_i) + (1 - \gamma) \cdot z_{i+1}$$
 
 where $f: [0,1]^8 \to [0,1]^8$ is the cascade function (mapping a higher-level specification to the constraints it imposes on the next level) and $z_{i+1} \in [0,1]^8$ represents the free component at level $i+1$. At $\gamma = 0$, there is no cascade and all 48 dimensions are free. At $\gamma = 1$, the cascade is perfect and levels 1--5 are fully determined by L0, leaving only 8 free dimensions. The L0 → L5 hierarchy with effective free dimensions under $\gamma = 0.5$ is shown in Figure 1.
 
-```mermaid
-flowchart TD
+```{.mermaid width="100%"}
+flowchart LR
     L0["L0 Purpose<br/>8.00 free dims"]
     L1["L1 Values<br/>4.00 free dims"]
     L2["L2 Strategy<br/>2.00 free dims"]
@@ -130,11 +130,11 @@ This ratio collapses dramatically with dimension:
 
 The decay profile of the inscribed-ball volume across dimensions is plotted in Figure 2, which renders the super-exponential nature of the collapse on a single log-scaled axis.
 
-```mermaid
+```{.mermaid width="62%"}
+%%{init: {"themeVariables": {"xyChart": {"plotColorPalette": "#1f4e79"}}}}%%
 xychart-beta
-    title "Inscribed-ball volume decays super-exponentially with dimension"
     x-axis "Dimension n" [2, 4, 8, 16, 24, 32, 40, 48]
-    y-axis "log10 V_n(0.5)" -28 --> 1
+    y-axis "log10 Vₙ(0.5)" -28 --> 1
     line [-0.10, -0.51, -1.80, -5.45, -9.94, -15.00, -20.48, -26.31]
 ```
 
@@ -525,19 +525,14 @@ The two frameworks are complementary, not competing:
 
 Two additional frameworks merit differentiation. The positioning of R5 relative to four canonical framework archetypes along the search-vs-specification and discrete-vs-continuous axes is summarized in Figure 3.
 
-```mermaid
+```{.mermaid width="60%"}
 quadrantChart
-    title Framework Positioning
     x-axis Discrete --> Continuous
     y-axis Search --> Specification
-    quadrant-1 Specification, Continuous
-    quadrant-2 Specification, Discrete
-    quadrant-3 Search, Discrete
-    quadrant-4 Search, Continuous
-    R5 OST this paper: [0.85, 0.85]
-    Suh Axiomatic Design: [0.15, 0.85]
-    Kauffman NK Landscapes: [0.15, 0.15]
-    Levinthal Fitness Landscapes: [0.85, 0.15]
+    R5 OST this paper: [0.72, 0.74]
+    Suh Axiomatic Design: [0.28, 0.74]
+    Kauffman NK Landscapes: [0.28, 0.26]
+    Levinthal Fitness Landscapes: [0.72, 0.26]
 ```
 
 **Figure 3.** Framework-positioning quadrant. The horizontal axis runs from discrete to continuous parameter spaces; the vertical axis runs from search-based to specification-based theories. R5 occupies the specification--continuous quadrant, geometrically distinct from search-based accounts (NK landscapes, fitness landscapes) and discrete-specification accounts (Axiomatic Design, Star Model).
@@ -656,7 +651,7 @@ AI assistants (Claude Opus 4.8, Grok 4.20, Gemini 2.5 Pro) were used for initial
 
 ## Author Contributions (CRediT)
 
-Conceptualization, D.Z.; Formal Analysis, D.Z.; Writing — Original Draft, D.Z.; Writing — Review & Editing, D.Z.
+Dmitry Zharnikov: Conceptualization, Formal analysis, Writing — original draft, Writing — review and editing.
 
 ## References
 

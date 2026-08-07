@@ -264,9 +264,16 @@ We examine five candidates that arise naturally from the branding literature and
 
 The distinction between a **meaning channel** (a mode of processing through which signals become meaning) and a **content domain** (a topic area that signals may address) is the critical conceptual move underlying all five reduction arguments above. Meaning channels are the rows — the eight independent transmission pathways; content domains are the columns — the semantic fields a brand might address. Any content domain can be transmitted through multiple channels; no content domain constitutes a channel itself. Figure 1 makes this orthogonality explicit.
 
-```mermaid
-graph TD
-  subgraph Channels ["Meaning Channels (transmission pathways)"]
+```{.mermaid width="58%"}
+graph LR
+  subgraph Domains ["Content Domains"]
+    D1[Aesthetic]
+    D2[Functional]
+    D3[Ethical]
+    D4[Digital]
+    D5[Environmental]
+  end
+  subgraph Channels ["Meaning Channels"]
     C1[Semiotic]
     C2[Narrative]
     C3[Ideological]
@@ -275,13 +282,6 @@ graph TD
     C6[Economic]
     C7[Cultural]
     C8[Temporal]
-  end
-  subgraph Domains ["Content Domains (what signals are about)"]
-    D1[Aesthetic]
-    D2[Functional]
-    D3[Ethical]
-    D4[Digital]
-    D5[Environmental]
   end
   D1 --> C1
   D1 --> C7
@@ -299,7 +299,7 @@ graph TD
   D5 --> C6
 ```
 
-**Figure 1.** The eight meaning channels (left) are independent transmission pathways; any content domain (right) can be conveyed through multiple channels. Channels and content domains are orthogonal axes — confusing them is the most common source of dimension-counting errors.
+**Figure 1.** Content domains (left) each map to multiple meaning channels (right): the eight channels are independent transmission pathways, and any content domain can be conveyed through several of them. Channels and content domains are orthogonal axes — confusing them is the most common source of dimension-counting errors.
 
 None of the five candidates survives the reduction test, as summarized graphically in Figure 2. Each either decomposes into components of existing dimensions or represents a content domain processed through existing meaning channels rather than a new channel of meaning transmission. Environmentalism is a content domain; ideology is a meaning channel. Digital is a medium; experience is a meaning channel. This distinction is what prevents the dimensional taxonomy from inflating indefinitely — new topics and new media do not create new meaning channels.
 
@@ -307,8 +307,8 @@ The completeness claim is therefore: the eight dimensions of SBT correspond to t
 
 **Figure 2.** Decomposition Tree — Candidate Ninth Dimensions Reduce to Combinations of Existing Channels.
 
-```mermaid
-flowchart TD
+```{.mermaid width="78%"}
+flowchart LR
   Aesthetic[Aesthetic candidate] --> Sem[Semiotic channel]
   Aesthetic --> Cul[Cultural channel]
   Functional[Functional candidate] --> Exp[Experiential channel]
@@ -530,20 +530,20 @@ Three findings address RQ1. First, no single dimension is indispensable: all eig
 
 **Figure 3.** Robustness Trajectory — DCI Ranking Stability Under Dimension Removal.
 
-```mermaid
+```{.mermaid width="100%"}
 flowchart LR
-  Baseline["8D baseline (cosine 1.000, disp. 0.00)"] --> Eco["drop Economic (cosine .994, disp. 3.55)"]
-  Eco --> Sem["drop Semiotic (cosine .998, disp. 3.36)"]
-  Sem --> Ide["drop Ideological (cosine .9997, disp. 1.45)"]
-  Ide --> Cul["drop Cultural (cosine .9997, disp. 1.27)"]
-  Cul --> Nar["drop Narrative (cosine .9998, disp. 1.27)"]
-  Nar --> Exp["drop Experiential (cosine .9997, disp. 1.09)"]
-  Exp --> Tem["drop Temporal (cosine .9999, disp. 1.00)"]
-  Tem --> Soc["drop Social (cosine .9999, disp. .91)"]
-  Soc --> SixDfloor["6D floor: drop Ideological+Economic (cosine .994, disp. 5.00)"]
+  B["8D baseline<br/>disp 0.00"] --> E["Economic<br/>3.55"]
+  E --> S["Semiotic<br/>3.36"]
+  S --> I["Ideological<br/>1.45"]
+  I --> C["Cultural<br/>1.27"]
+  C --> N["Narrative<br/>1.27"]
+  N --> X["Experiential<br/>1.09"]
+  X --> T["Temporal<br/>1.00"]
+  T --> O["Social<br/>.91"]
+  O --> F["6D floor<br/>5.00"]
 ```
 
-*Notes*: Drop-one nodes ordered from most to least disruptive (left to right). The horizontal trajectory traces how DCI ranking stability degrades as the most informative dimensions are removed first. All drop-one cosines remain above .994; the steepest single-dimension drop is Economic (a DCI numerator component); all six non-DCI dimensions cluster in the .9997-.9999 cosine range. The terminal node represents the most disruptive computable two-dimension removal (Ideological + Economic) from Experiment 2, marking the empirical robustness floor at six dimensions. Cosine = vector cosine similarity of the 22-element DCI vector against the 8D baseline; rank disp. = mean absolute rank displacement across 22 models.
+*Notes*: Single-dimension drops ordered left to right from most to least disruptive; each node shows the dropped dimension and its mean rank displacement (full per-drop metrics, including cosine similarity, are in Table 2). The trajectory traces how DCI ranking stability degrades as the most informative dimensions are removed first. The steepest single-dimension drop is Economic (a DCI numerator component); all six non-DCI dimensions cluster at displacements near 1.0. The final node represents the most disruptive computable two-dimension removal (Ideological + Economic) from Experiment 2, marking the empirical robustness floor at six dimensions. Rank disp. = mean absolute rank displacement across 22 models.
 
 *Experiment 2: Dimension reduction (8D to 6D).* All 28 pairwise dimension combinations were removed, producing 28 six-dimensional variants. The Semiotic + Economic pair produces undefined DCI (both numerator components removed; $\text{DCI} = 0/\text{total}$ for all models), confirming that both components are structurally necessary for the collapse metric.
 

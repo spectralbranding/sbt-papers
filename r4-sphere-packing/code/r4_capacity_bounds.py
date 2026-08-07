@@ -239,7 +239,7 @@ def table2_unit_ball_volume():
         compare(f"V_{n}(1)", unit_ball_volume(n), reported[n])
     # Peak dimension check
     vols = {n: unit_ball_volume(n) for n in range(1, 13)}
-    peak = max(vols, key=vols.get)
+    peak = max(vols, key=lambda n: vols[n])
     compare(
         "argmax_n V_n(1) (peak dimension)",
         float(peak),

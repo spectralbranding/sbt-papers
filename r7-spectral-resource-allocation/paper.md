@@ -592,7 +592,7 @@ Theorem 1 prescribes the optimal investment ratio across dimensions. A brand can
 
 The five steps and their decision logic are shown as a flowchart in Figure 5.
 
-```mermaid
+```{.mermaid width="58%"}
 graph TD
     A[Step 1<br/>Measure cohort weights w of c<br/>SBT protocol Zharnikov 2026a] --> B[Step 2<br/>Estimate cost parameters alpha i<br/>from operational data]
     B --> C[Step 3<br/>Compute s star equals w of c over lambda alpha<br/>Theorem 1]

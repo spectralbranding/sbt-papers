@@ -632,25 +632,17 @@ The framework reveals that the same architectural label — "house of brands" �
 
 The practical consequence is a shift in the locus of portfolio strategy. The question for portfolio managers is not only "how should the portfolio be structured?" but "how do the portfolio's brands interact in the perception space of each observer cohort they serve?" Answering this question requires the multi-dimensional, observer-heterogeneous framework that SBT provides. Spectral portfolio theory offers the formal tools — interference metrics, coherence types, capacity bounds, and testable propositions — to move brand portfolio management from architectural taxonomy to perceptual engineering.
 
-## Author Contributions (CRediT)
-
-Dmitry Zharnikov: Conceptualization, Data curation, Formal analysis, Investigation, Methodology, Project administration, Software, Validation, Writing — original draft, Writing — review and editing.
-
-## Declaration of Competing Interests
-
-The author declares no competing interests.
-
-## Data Availability
+## Data and Code Availability
 
 No primary data was collected. Illustrative case analyses use public corporate data from the LVMH [-@lvmh-2023-2023-annual-report] and Unilever [-@unilever-2023-annual-report-accounts] annual reports. The open-source toolkit implementing the SBT computational pipeline is available at https://github.com/spectralbranding/sbt-framework.
-
-## Declaration of Generative AI and AI-Assisted Technologies in the Manuscript Preparation Process
-
-During the preparation of this work the author used Claude (Anthropic) in order to assist with structural verification, cross-paper consistency checking across an eight-paper research program, and copy-editing. After using this tool, the author reviewed and edited the content as needed and takes full responsibility for the content of the published article.
 
 ## Acknowledgments
 
 AI assistants (Claude, Anthropic) were used for initial literature search, cross-paper consistency checking, and editorial refinement; all theoretical claims, propositions, and interpretations are the author's sole responsibility.
+
+## Author Contributions (CRediT)
+
+Dmitry Zharnikov: Conceptualization, Data curation, Formal analysis, Investigation, Methodology, Project administration, Software, Validation, Writing — original draft, Writing — review and editing.
 
 ## References
 

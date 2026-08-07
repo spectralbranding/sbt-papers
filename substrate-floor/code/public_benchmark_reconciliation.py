@@ -5,7 +5,7 @@ A genuinely EXTERNAL worked demonstration (instruments and data outside the spec
 corpus): reconcile the ordinal claim "model A outperforms model B" across public LLM benchmarks
 of different KINDS — MMLU (broad-knowledge MCQ), MATH (competition math), HumanEval (code
 synthesis) — that share no raw output space. The reconciliation runs through the SAME committed
-lattice as the corpus cases (code/substrate_floor.reconcile), proving the rule is
+lattice as the corpus cases ([internal path removed]), proving the rule is
 instrument-general, not corpus-specific.
 
 Each benchmark is a noisy measurement of "is A better than B." Per instrument:
@@ -42,8 +42,8 @@ except ImportError:
         "PyYAML required: uv run --with pyyaml python ... public_benchmark_reconciliation.py"
     )
 
-RESEARCH = Path(__file__).resolve().parents[2]  # .../research
-SF_DIR = Path(__file__).resolve().parents[1]  # .../this paper's folder
+RESEARCH = Path(__file__).resolve().parents[3]  # .../research
+SF_DIR = Path(__file__).resolve().parents[1]  # .../[internal path removed]
 sys.path.insert(0, str(RESEARCH / "code"))
 from substrate_floor import reconcile  # the SAME committed lattice the corpus cases use
 

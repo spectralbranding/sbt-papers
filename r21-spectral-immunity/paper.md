@@ -463,6 +463,10 @@ Managerially, as AI-mediated brand interactions grow across recommendation, sear
 
 Spectral immunity reframes the central question in brand portfolio theory. The relevant question is not whether observers can be made aware of portfolio relationships — they can — but whether their encoding architecture allocates bandwidth to those relationships. For the rapidly growing class of general-purpose AI observers, the answer is no. Portfolio strategy must therefore adapt: in AI-mediated channels the strategic unit is the individual brand, not the portfolio. Future research establishing this asymmetry with human observers — complementing search-based portfolio models [@ke-2022-model-product-portfolio] and the perceptual-instrument validity established by Li et al. [-@li-2024-frontiers-determining-validity] — will determine the boundary conditions under which immunity holds and where it breaks.
 
+## Data Availability
+
+Experiment data (9,925 observations) are archived at https://doi.org/10.57967/hf/8380 (HuggingFace). The dataset contains direct-rating, recommendation-prompt, multi-turn conversation, native-language ablation, and prompt-location ablation observations across 13 models from 7 training traditions. The open-source toolkit implementing the SBT computational pipeline is available at https://github.com/spectralbranding/sbt-framework.
+
 ## Acknowledgments
 
 AI assistants (Claude Opus 4.8, Grok 4.20, Gemini 2.5 Pro) were used for initial literature search, for software development — authoring the experiment harness and the analysis and scoring scripts — and for orchestrating and running the reported experiments through those scripts, as well as for editorial refinement; all theoretical claims, propositions, and interpretations are the author's sole responsibility.
@@ -470,10 +474,6 @@ AI assistants (Claude Opus 4.8, Grok 4.20, Gemini 2.5 Pro) were used for initial
 ## Author Contributions (CRediT)
 
 Dmitry Zharnikov: Conceptualization, Data curation, Formal analysis, Investigation, Methodology, Project administration, Software, Validation, Writing — original draft, Writing — review and editing.
-
-## Data Availability
-
-Experiment data (9,925 observations) are archived at https://doi.org/10.57967/hf/8380 (HuggingFace). The dataset contains direct-rating, recommendation-prompt, multi-turn conversation, native-language ablation, and prompt-location ablation observations across 13 models from 7 training traditions. The open-source toolkit implementing the SBT computational pipeline is available at https://github.com/spectralbranding/sbt-framework.
 
 ## References
 

@@ -68,8 +68,8 @@ flowchart LR
         C3[Cohort C3<br/>weight w3]
         C4[Cohort C4<br/>weight w4]
     end
-    B((Brand position B<br/>x in R^8))
-    PDOP[PDOP<br/>geometric quality<br/>= sqrt trace W^T W inverse]
+    B((Brand position B<br/>x in 8-dim space))
+    PDOP[PDOP<br/>geometric quality<br/>= sqrt trace of W-transpose-W inverse]
     C1 -- y1 = w1 dot x + b1 --> B
     C2 -- y2 = w2 dot x + b2 --> B
     C3 -- y3 = w3 dot x + b3 --> B

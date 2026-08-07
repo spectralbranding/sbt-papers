@@ -12,7 +12,7 @@ seeded code (no hand-drawing), the same reproducibility standard as the numerica
 
 Reproduce:
     uv run --with numpy --with matplotlib python code/make_figures.py
-Fixed seed 20260624. Writes PNGs to figures/.
+Fixed seed 20260624. Writes PNGs to [internal path removed]
 """
 
 from __future__ import annotations

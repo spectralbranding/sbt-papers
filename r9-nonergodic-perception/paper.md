@@ -6,7 +6,7 @@ ORCID: 0009-0000-6893-9231
 
 DOI: [10.5281/zenodo.19138860](https://doi.org/10.5281/zenodo.19138860)
 
-Working Paper v2.2.0 – March 2026 (revised June 2026)
+Working Paper v2.3.0 – March 2026 (revised July 2026)
 
 ## Abstract
 
@@ -84,7 +84,7 @@ Three features of the SBT dynamic model are essential for the argument that foll
 
 ### Formal Definition: When Time-Averages Differ from Ensemble-Averages in Brand Perception
 
-We begin with a formal statement of what non-ergodicity means in the brand perception context. Let $x_i(t) \in \mathbb{R}^8_+$ denote observer *i*'s perception profile of a brand at time *t*. The perception profile is a normalized vector capturing the observer's internal representation of the brand across eight dimensions. The perception space and its geometric properties are formalized in Zharnikov [-@zharnikov-2026-brand-space-geometry-formal-metric]; the present model inherits that metric structure.
+We begin with a formal statement of what non-ergodicity means in the brand perception context. Let $x_i(t) \in S^7_+ \subset \mathbb{R}^8_+$ denote observer *i*'s perception profile of a brand at time *t*. The perception profile is a normalized vector — the positive octant of the unit 7-sphere, not the full positive orthant — capturing the observer's internal representation of the brand across eight dimensions. The perception space and its geometric properties are formalized in Zharnikov [-@zharnikov-2026-non-ergodic-brand-perception-diffusion; -@zharnikov-2026-brand-space-geometry-formal-metric]; the present model inherits that metric structure.
 
 **Definition 1 (Ensemble average).** The ensemble average at time *t* is the cross-sectional mean across *N* observers:
 
