@@ -191,7 +191,7 @@
         "OP6": 0.375
       },
       "pooled_tau_b": 0.214,
-      "permutation_p_one_sided": 0.0002,
+      "permutation_p_one_sided": 0.0005,
       "category_level_pass": true,
       "isotonic_R2_pooled": 0.118,
       "same_call_tau": 0.207,
@@ -267,7 +267,7 @@
         "OP6": 0.074
       },
       "pooled_tau_b": 0.018,
-      "permutation_p_one_sided": 0.5341,
+      "permutation_p_one_sided": 0.5247,
       "category_level_pass": false,
       "isotonic_R2_pooled": 0.038,
       "same_call_tau": 0.053,

@@ -31,6 +31,8 @@ from pathlib import Path
 
 from huggingface_hub import HfApi
 
+from psm_lib import paper_asset
+
 PAPER_DIR = Path(__file__).resolve().parents[1]
 REPO = PAPER_DIR.parents[2]
 SLUG = "perception-sets-matrix"
@@ -74,7 +76,7 @@ def stage_prereg(dst: Path) -> None:
 
 
 def stage_freeze_record(dst: Path) -> None:
-    text = (PAPER_DIR / "FREEZE_RECORD.md").read_text()
+    text = paper_asset("FREEZE_RECORD.md").read_text()
     text = text.replace(
         "[internal path removed]",
         "PREREG_STUDY_DESIGN.md (internal frozen original; public copy at protocol/PREREG_STUDY_DESIGN.md carries two documented administrative redactions)",

@@ -30,6 +30,7 @@ from __future__ import annotations
 
 import argparse
 import glob
+import hashlib
 import json
 import math
 from collections import defaultdict
@@ -37,6 +38,8 @@ from pathlib import Path
 
 import numpy as np
 import yaml
+
+from psm_lib import paper_asset
 
 HERE = Path(__file__).resolve().parent
 PAPER_DIR = HERE.parent
@@ -374,12 +377,12 @@ def one_sided_p(obs: float, null: np.ndarray) -> float:
 # ---------------------------------------------------------------------------
 def analyze(records_glob: str, out_path: str, n_perm: int = N_PERM) -> dict:
     rng = np.random.default_rng(SEED)
-    proto = yaml.safe_load((PAPER_DIR / "PROTOCOL.yaml").read_text())
-    personas_all = yaml.safe_load((PAPER_DIR / "PERSONAS.yaml").read_text())[
+    proto = yaml.safe_load(paper_asset("PROTOCOL.yaml").read_text())
+    personas_all = yaml.safe_load(paper_asset("PERSONAS.yaml").read_text())[
         "categories"
     ]
-    s1 = yaml.safe_load((PAPER_DIR / "STIMULI_STUDY1.yaml").read_text())
-    s2 = yaml.safe_load((PAPER_DIR / "BRANDS_STUDY2.yaml").read_text())
+    s1 = yaml.safe_load(paper_asset("STIMULI_STUDY1.yaml").read_text())
+    s2 = yaml.safe_load(paper_asset("BRANDS_STUDY2.yaml").read_text())
     cat_brands = {
         "coffee_roasters": [b["name"] for b in s1["brands"]],
         "qsr_coffee": [b["name"] for b in s2["qsr_coffee"]["brands"]],
@@ -428,8 +431,15 @@ def analyze(records_glob: str, out_path: str, n_perm: int = N_PERM) -> dict:
             o: round(kendall_tau_b(tables[o]["m"].ravel(), tables[o]["p"].ravel()), 3)
             for o in t_ops
         }
+        # The per-category stream is offset by a STABLE digest of the category
+        # name. Python's builtin hash() is randomized per process unless
+        # PYTHONHASHSEED is pinned, so seeding from it made this permutation
+        # null draw a different stream on every run -- the reported p-value
+        # could not be reproduced from the committed records. sha256 is stable
+        # across processes, machines and Python versions.
+        cat_offset = int(hashlib.sha256(cat.encode()).hexdigest()[:8], 16) % 1000
         obs, null = perm_null_pooled(
-            ms, ps, np.random.default_rng(SEED + hash(cat) % 1000), n_perm
+            ms, ps, np.random.default_rng(SEED + cat_offset), n_perm
         )
         p_val = one_sided_p(obs, null)
 
@@ -694,8 +704,8 @@ def analyze(records_glob: str, out_path: str, n_perm: int = N_PERM) -> dict:
 # Stimulus-validation gate (pre-campaign)
 # ---------------------------------------------------------------------------
 def stimulus_gate(records_glob: str) -> bool:
-    proto = yaml.safe_load((PAPER_DIR / "PROTOCOL.yaml").read_text())
-    s1 = yaml.safe_load((PAPER_DIR / "STIMULI_STUDY1.yaml").read_text())
+    proto = yaml.safe_load(paper_asset("PROTOCOL.yaml").read_text())
+    s1 = yaml.safe_load(paper_asset("STIMULI_STUDY1.yaml").read_text())
     targets = {b["brand_id"]: np.array(b["target_profile"]) for b in s1["brands"]}
     ops_data = load_all(records_glob)
     per_pack: dict = defaultdict(list)

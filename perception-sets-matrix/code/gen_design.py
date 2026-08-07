@@ -26,6 +26,8 @@ import numpy as np
 import yaml
 from scipy.stats import qmc
 
+from psm_lib import paper_asset
+
 HERE = Path(__file__).resolve().parent
 PAPER_DIR = HERE.parent
 
@@ -144,13 +146,13 @@ def main() -> None:
         ),
         "categories": personas,
     }
-    (PAPER_DIR / "PERSONAS.yaml").write_text(
+    paper_asset("PERSONAS.yaml").write_text(
         yaml.safe_dump(out, sort_keys=False, allow_unicode=True, width=78)
     )
     print(f"PERSONAS.yaml written: {sum(len(v) for v in personas.values())} cohorts")
 
     # Match-coverage diagnostic vs Study-1 targets, if stimuli file exists.
-    stim_path = PAPER_DIR / "STIMULI_STUDY1.yaml"
+    stim_path = paper_asset("STIMULI_STUDY1.yaml")
     if stim_path.exists():
         stim = yaml.safe_load(stim_path.read_text())
         d_max = 9 * math.sqrt(8)

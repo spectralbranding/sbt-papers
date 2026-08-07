@@ -31,16 +31,16 @@ import sys
 import time
 from pathlib import Path
 
-import httpx
 import yaml
 
 HERE = Path(__file__).resolve().parent
 PAPER_DIR = HERE.parent
-REPO = PAPER_DIR.parents[2]
 LOGS_DIR = PAPER_DIR / "logs"
 DATA_DIR = PAPER_DIR / "data"
 
-sys.path.insert(0, str(REPO / "research" / "code"))
+# The logger ships beside this module in the published bundle, so the import
+# resolves without a repo-relative path that only exists in the working tree.
+sys.path.insert(0, str(HERE))
 from llm_call_logger import log_call  # noqa: E402
 
 SEED = 20260712
@@ -71,20 +71,45 @@ FAMILY_KEYS = {
 }
 
 
+# Frozen design assets sit beside the paper in the authoring tree and under
+# protocol/ in the published bundle, whose layout is hand-curated. Every reader
+# resolves through here so the same code runs in both without a copy of the
+# layout in each module.
+_ASSET_DIRS = ("", "protocol")
+
+
+def paper_asset(name: str) -> Path:
+    """Resolve a frozen design asset to wherever this checkout keeps it.
+
+    Falls back to the directory holding the other protocol assets, so a
+    regenerated artifact is written back beside its siblings rather than
+    stranded at the bundle root where nothing would read it.
+    """
+    for sub in _ASSET_DIRS:
+        candidate = PAPER_DIR / sub / name if sub else PAPER_DIR / name
+        if candidate.exists():
+            return candidate
+    for sub in _ASSET_DIRS:
+        anchor = PAPER_DIR / sub / "PROTOCOL.yaml" if sub else PAPER_DIR / "PROTOCOL.yaml"
+        if anchor.exists():
+            return anchor.parent / name
+    return PAPER_DIR / name
+
+
 def load_protocol() -> dict:
-    return yaml.safe_load((PAPER_DIR / "PROTOCOL.yaml").read_text())
+    return yaml.safe_load(paper_asset("PROTOCOL.yaml").read_text())
 
 
 def load_personas() -> dict:
-    return yaml.safe_load((PAPER_DIR / "PERSONAS.yaml").read_text())
+    return yaml.safe_load(paper_asset("PERSONAS.yaml").read_text())
 
 
 def load_study1() -> dict:
-    return yaml.safe_load((PAPER_DIR / "STIMULI_STUDY1.yaml").read_text())
+    return yaml.safe_load(paper_asset("STIMULI_STUDY1.yaml").read_text())
 
 
 def load_study2() -> dict:
-    return yaml.safe_load((PAPER_DIR / "BRANDS_STUDY2.yaml").read_text())
+    return yaml.safe_load(paper_asset("BRANDS_STUDY2.yaml").read_text())
 
 
 def pack_text(brand: dict) -> str:
@@ -208,6 +233,12 @@ def call_model(
     phase: str,
     max_out: int = 2000,
 ) -> str:
+    # Imported here, not at module scope: the analysis path (estimator, power
+    # simulation, unit suite) reads committed records and makes no HTTP call,
+    # so it must not require an HTTP client to be installed to import this
+    # module. Only the --collect path reaches this function.
+    import httpx
+
     key = os.environ[FAMILY_KEYS[family]]
     endpoint = FAMILY_ENDPOINTS[family]
     prompt_sha = hashlib.sha256((system + "\n" + user).encode()).hexdigest()

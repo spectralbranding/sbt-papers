@@ -27,10 +27,11 @@ sys.path.insert(0, str(CODE))
 
 import estimator as E  # noqa: E402
 import psm_lib as L  # noqa: E402
+from psm_lib import paper_asset  # noqa: E402
 
-PROTO = yaml.safe_load((PAPER_DIR / "PROTOCOL.yaml").read_text())
-PERSONAS = yaml.safe_load((PAPER_DIR / "PERSONAS.yaml").read_text())["categories"]
-S1 = yaml.safe_load((PAPER_DIR / "STIMULI_STUDY1.yaml").read_text())
+PROTO = yaml.safe_load(paper_asset("PROTOCOL.yaml").read_text())
+PERSONAS = yaml.safe_load(paper_asset("PERSONAS.yaml").read_text())["categories"]
+S1 = yaml.safe_load(paper_asset("STIMULI_STUDY1.yaml").read_text())
 CAT = "coffee_roasters"
 BRANDS = [b["name"] for b in S1["brands"]]
 TARGETS = {b["name"]: np.array(b["target_profile"]) for b in S1["brands"]}

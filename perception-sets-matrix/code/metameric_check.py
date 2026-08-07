@@ -28,6 +28,7 @@ import numpy as np
 import yaml
 
 import estimator as E
+from psm_lib import paper_asset
 
 PAPER_DIR = Path(__file__).resolve().parent.parent
 
@@ -35,11 +36,11 @@ PAPER_DIR = Path(__file__).resolve().parent.parent
 def main() -> None:
     results = json.loads((PAPER_DIR / "data" / "results.json").read_text())
     passing = results["floor_passing_operators"]
-    personas_all = yaml.safe_load((PAPER_DIR / "PERSONAS.yaml").read_text())[
+    personas_all = yaml.safe_load(paper_asset("PERSONAS.yaml").read_text())[
         "categories"
     ]
-    s1 = yaml.safe_load((PAPER_DIR / "STIMULI_STUDY1.yaml").read_text())
-    s2 = yaml.safe_load((PAPER_DIR / "BRANDS_STUDY2.yaml").read_text())
+    s1 = yaml.safe_load(paper_asset("STIMULI_STUDY1.yaml").read_text())
+    s2 = yaml.safe_load(paper_asset("BRANDS_STUDY2.yaml").read_text())
     cat_brands = {
         "coffee_roasters": [b["name"] for b in s1["brands"]],
         "qsr_coffee": [b["name"] for b in s2["qsr_coffee"]["brands"]],

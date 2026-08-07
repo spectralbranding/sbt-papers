@@ -114,7 +114,7 @@ propositions:
           design (see ME1/F1/NF1): supported in the experimental category
           (pooled tau_b = .323, p < .001) and in quick-service coffee
           (tau_b = .214, p < .001); no link in athletic footwear
-          (tau_b = .018, p = .534) — P1 holds with a measured boundary where
+          (tau_b = .018, p = .525) — P1 holds with a measured boundary where
           real brand profiles converge (NF3).
       - type: log_anchor
         anchor: >-
@@ -373,7 +373,7 @@ negative_findings:
   - id: NF1
     statement: >-
       No link in athletic footwear: pooled tau_b = .018, permutation
-      p = .534, all robustness variants near zero. A genuine boundary
+      p = .525, all robustness variants near zero. A genuine boundary
       result: the category's real brand profiles converge (see NF3), and
       propensity variance there is set by something outside the measured
       perceptual state.

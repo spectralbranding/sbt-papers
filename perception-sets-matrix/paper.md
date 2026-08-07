@@ -142,11 +142,11 @@ Table 3: Primary Monotone-Link Results by Category (Floor-Passing Operators, Poo
 |---|---|---|---|---|---|---|---|
 | Specialty coffee (synthetic) | 1 | .323 | < .001 | .118 | −.002 | −.196 | yes |
 | Quick-service coffee | 2 | .214 | < .001 | .118 | −.006 | −.071 | yes |
-| Athletic footwear | 2 | .018 | .534 | .038 | +.035 | +.020 | no |
+| Athletic footwear | 2 | .018 | .525 | .038 | +.035 | +.020 | no |
 
 *Notes*: Pooled $\tau_b$ = median across the five floor-passing operators; permutation $p$ one-sided (pre-registered positive direction), shared within-cohort brand-label permutations. $\Delta\tau$ = same-call minus separated-arm association (common-method inflation). $\Delta\tau_w$ = salience-weighted minus unweighted match association (fluency auxiliary, pre-registered direction $\geq 0$).
 
-The experimental category delivers the link as pre-registered: pooled $\tau_b = .323$ (per-operator range .072 to .355), permutation $p < .001$, both category-level criteria met. Quick-service coffee replicates it observationally ($\tau_b = .214$, $p < .001$), sitting just above the pre-registered $\tau_b \geq .20$ floor. Athletic footwear does not: $\tau_b = .018$, $p = .534$, with every robustness variant near zero — a boundary result taken up below and in the Discussion. Because the link is present in the experimental category and one real category, kill condition K1 is not triggered; all family-pooled associations carry the same sign (K2 clear).
+The experimental category delivers the link as pre-registered: pooled $\tau_b = .323$ (per-operator range .072 to .355), permutation $p < .001$, both category-level criteria met. Quick-service coffee replicates it observationally ($\tau_b = .214$, $p < .001$), sitting just above the pre-registered $\tau_b \geq .20$ floor. Athletic footwear does not: $\tau_b = .018$, $p = .525$, with every robustness variant near zero — a boundary result taken up below and in the Discussion. Because the link is present in the experimental category and one real category, kill condition K1 is not triggered; all family-pooled associations carry the same sign (K2 clear).
 
 The same-call contrast arm delivers the design's sharpest methodological number: common-method inflation is measured at $\Delta\tau = -.002$ (Study 1), $-.006$ (quick-service coffee), and $+.035$ (footwear). The separated-arm link equals the same-call link where the link exists — the association is not manufactured inside single generations, and kill condition K3 is not triggered.
 
