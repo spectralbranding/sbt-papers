@@ -25,7 +25,7 @@ a Beta population is fitted to the five anchors by method-of-moments and N cohor
 from it, so the monotone tau-vs-distinctiveness ordering (P3) is demonstrated across a
 population with a tight bootstrap interval rather than across only five clustered anchors.
 
-Run:    uv run --with numpy --with matplotlib python research/papers/2026aw/code/forced_relaxation_demo.py
+Run:    uv run --with numpy --with matplotlib python code/forced_relaxation_demo.py
 Seed:   20260620 (fixed). Deps: NumPy + Matplotlib only. No network, no credentials.
 Outputs: figures/figure1_tau_vs_distinctiveness.png, output/tables/forced_relaxation_results.csv
 """

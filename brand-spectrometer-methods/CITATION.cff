@@ -7,7 +7,7 @@ authors:
     orcid: "https://orcid.org/0009-0000-6893-9231"
 title: "The Brand Spectrometer: A Reproducible Instrument for Cohort-Resolved, Multi-Dimensional Brand-Perception Measurement from Public Artifacts"
 version: 1.2.0
-date-released: 2026-06-14
+date-released: 2026-07-02
 url: "https://doi.org/10.5281/zenodo.20775963"
 repository-code: "https://github.com/spectralbranding/sbt-papers"
 identifiers:

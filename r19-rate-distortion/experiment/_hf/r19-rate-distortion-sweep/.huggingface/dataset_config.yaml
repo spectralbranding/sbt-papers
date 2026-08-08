@@ -1,0 +1,18 @@
+configs:
+  - config_name: default
+    data_files:
+      - split: train
+        path: "train.csv"
+  - config_name: rate_sweep
+    data_files:
+      - split: train
+        path: "data/r19_rate_sweep.jsonl"
+  - config_name: per_cell
+    data_files:
+      - split: train
+        path: "analysis/r19_per_cell.csv"
+  - config_name: per_brand
+    data_files:
+      - split: train
+        path: "analysis/r19_per_brand_rd.csv"
+default_config_name: default

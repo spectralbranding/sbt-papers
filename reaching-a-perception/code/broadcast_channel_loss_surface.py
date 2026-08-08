@@ -153,7 +153,7 @@ def main():
 
     ax.set_xlabel(r"cohort distinctiveness  $\sin^2\beta$")
     ax.set_ylabel("per-impression spill cost  $c$")
-    ax.set_title("Total-loss surface and bridge frontier (2026av Figure 1)")
+    # No in-figure title: the paper's markdown caption ("Figure 1: ...") labels it.
     fig.tight_layout()
 
     out = figdir / "figure1_loss_surface.png"

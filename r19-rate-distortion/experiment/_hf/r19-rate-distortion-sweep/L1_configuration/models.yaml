@@ -1,0 +1,135 @@
+# R19 Model Configuration
+# Confirmatory core: 17 architectures spanning 17 distinct training pipelines
+# (6 Western × 11 cross-cultural)
+
+confirmatory_core:
+  # ── Western (6) ─────────────────────────────────────────────────
+  - key: claude
+    provider: Anthropic
+    model_id: claude-haiku-4-5
+    lineage: Anthropic Western
+    api_key_var: ANTHROPIC_API_KEY
+    cost_per_call_usd: 0.001
+
+  - key: gpt
+    provider: OpenAI
+    model_id: gpt-4o-mini
+    lineage: OpenAI Western
+    api_key_var: OPENAI_API_KEY
+    cost_per_call_usd: 0.0002
+
+  - key: gemini
+    provider: Google
+    model_id: gemini-2.5-flash
+    lineage: Google Western
+    api_key_var: GOOGLE_API_KEY
+    cost_per_call_usd: 0.0002
+    notes: requires thinking_budget=0 patch (see run11 pattern)
+
+  - key: grok
+    provider: xAI
+    model_id: grok-3-mini
+    lineage: xAI Western (X corpus)
+    api_key_var: GROK_API_KEY
+    cost_per_call_usd: 0.0002
+
+  - key: groq_llama33
+    provider: Groq (Meta inference)
+    model_id: llama-3.3-70b-versatile
+    lineage: Meta Llama Western
+    api_key_var: GROQ_API_KEY
+    cost_per_call_usd: 0.0
+
+  - key: gemma4_local
+    provider: Ollama (Google)
+    model_id: gemma4:latest
+    lineage: Google Gemma Western
+    api_key_var: OLLAMA_AVAILABLE
+    cost_per_call_usd: 0.0
+    notes: local inference, included as cross-check on Western group
+
+  # ── Cross-cultural (11) ─────────────────────────────────────────
+  - key: deepseek
+    provider: DeepSeek
+    model_id: deepseek-chat
+    lineage: DeepSeek Chinese
+    api_key_var: DEEPSEEK_API_KEY
+    cost_per_call_usd: 0.0002
+
+  - key: cerebras_qwen3
+    provider: Cerebras (Alibaba inference)
+    model_id: qwen-3-235b-a22b-instruct-2507
+    lineage: Alibaba Qwen Chinese
+    api_key_var: CEREBRAS_API_KEY
+    cost_per_call_usd: 0.0
+
+  - key: dashscope_qwen_plus
+    provider: DashScope International (Alibaba)
+    model_id: qwen-plus
+    lineage: Alibaba Qwen Chinese
+    api_key_var: DASHSCOPE_API_KEY
+    cost_per_call_usd: 0.0
+
+  - key: sambanova_deepseek
+    provider: SambaNova (DeepSeek inference)
+    model_id: DeepSeek-V3-0324
+    lineage: DeepSeek Chinese
+    api_key_var: SAMBANOVA_API_KEY
+    cost_per_call_usd: 0.0
+
+  - key: fireworks_glm
+    provider: Fireworks (Zhipu AI inference)
+    model_id: glm-4p7
+    lineage: Zhipu GLM Chinese
+    api_key_var: FIREWORKS_API_KEY
+    cost_per_call_usd: 0.0
+
+  - key: groq_kimi
+    provider: Groq (Moonshot AI inference)
+    model_id: moonshotai/kimi-k2-instruct
+    lineage: Moonshot Kimi Chinese
+    api_key_var: GROQ_API_KEY
+    cost_per_call_usd: 0.0
+
+  - key: sarvam
+    provider: Sarvam AI (Indus)
+    model_id: sarvam-m
+    lineage: Sarvam Indian
+    api_key_var: SARVAM_API_KEY
+    cost_per_call_usd: 0.0008
+
+  - key: gigachat_api
+    provider: Sber
+    model_id: GigaChat-2-Max
+    lineage: Sber GigaChat Russian
+    api_key_var: GIGACHAT_API_KEY
+    cost_per_call_usd: 0.0010
+
+  - key: yandexgpt_pro
+    provider: Yandex AI Studio
+    model_id: yandexgpt-pro
+    lineage: Yandex YandexGPT Russian
+    api_key_var: YANDEX_AI_API_KEY
+    cost_per_call_usd: 0.0008
+
+  - key: gptoss_swallow
+    provider: Yandex AI Studio
+    model_id: gpt-oss-swallow
+    lineage: Tokyo Tech Swallow Japanese
+    api_key_var: YANDEX_AI_API_KEY
+    cost_per_call_usd: 0.0010
+
+  - key: groq_allam
+    provider: Groq (SDAIA inference)
+    model_id: allam-2-7b
+    lineage: SDAIA ALLaM Arabic
+    api_key_var: GROQ_API_KEY
+    cost_per_call_usd: 0.0
+
+simulated:
+  - key: simulated
+    provider: internal
+    model_id: simulated
+    api_key_var: null
+    cost_per_call_usd: 0.0
+    notes: deterministic fake responses for --demo mode

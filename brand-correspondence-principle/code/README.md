@@ -9,7 +9,7 @@ regime-departure parameters.
 
 ```
 cd [internal path removed]
-uv run --with numpy python [internal path removed]
+uv run --with numpy python code/correspondence_loss_surface.py
 ```
 
 Deterministic given the fixed seed `SEED = 20260619`. No network, no credentials.

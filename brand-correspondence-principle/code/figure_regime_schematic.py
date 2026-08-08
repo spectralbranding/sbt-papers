@@ -10,7 +10,7 @@ computation stays NumPy-only and reproducible without a plotting dependency.
 
 RUN:
     cd [internal path removed]
-    uv run --with matplotlib python [internal path removed]
+    uv run --with matplotlib python code/figure_regime_schematic.py
 
 OUTPUT: [internal path removed]  (fixed seed)
 """

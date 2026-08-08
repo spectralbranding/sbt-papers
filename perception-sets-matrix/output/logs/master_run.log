@@ -1,0 +1,17 @@
+== unit suite (must pass before anything) ==
+.........                                                                [100%]
+9 passed in 12.23s
+== design artifacts (seeded; byte-identical regeneration) ==
+PERSONAS.yaml written: 30 cohorts
+Study-1 match coverage over 60 cells: min=0.471 p25=0.564 median=0.635 p75=0.672 max=0.944
+== power simulation ==
+seed=20260712 sims=1000 perms=1000 alpha=0.05
+config                                          power  median tau_b
+Study 1, per operator, tau=.30                  0.952         0.302
+Study 1, per operator, tau=.20                  0.702         0.205
+Study 1, pooled 4 operators, tau=.20            0.980         0.203
+Study 2, per operator, tau=.30                  0.910         0.308
+Study 2, pooled 4 operators, tau=.20            0.952         0.204
+== seeded estimator ==
+results -> data/results.json
+== done ==

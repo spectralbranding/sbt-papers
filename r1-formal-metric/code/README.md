@@ -20,7 +20,7 @@ Perception*:
 ## Run
 
 ```
-uv run python research/papers/2026d/code/metrics.py
+uv run python code/metrics.py
 ```
 
 The `__main__` smoke test uses a fixed seed (`20260326`) and reproduces:

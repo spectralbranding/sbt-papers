@@ -7,7 +7,7 @@ authors:
     orcid: "https://orcid.org/0009-0000-6893-9231"
 title: "Separating Instrument Drift from Brand Signal: A Pre-Registered Model-Version Tracking Instrument for AI Brand Perception (PRISM-T)"
 version: 1.0.0
-date-released: 2026-06-14
+date-released: 2026-07-02
 url: "https://doi.org/10.5281/zenodo.21128779"
 repository-code: "https://github.com/spectralbranding/sbt-papers"
 identifiers:

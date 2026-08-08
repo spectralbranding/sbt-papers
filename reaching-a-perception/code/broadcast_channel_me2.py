@@ -233,7 +233,7 @@ def main():
 
     # --- 3. two case studies: the handoff contract in operation ---------------
     # Maintenance: established distinctive brand (highest observed anchor).
-    maint_name = max(obs, key=obs.get)
+    maint_name = max(obs, key=lambda k: obs[k])
     s_maint = obs[maint_name]
     # Category creation: an undifferentiated new entrant whose perception is not
     # yet FORMED -- a flat profile in which no dimension stands out, so the
@@ -342,14 +342,33 @@ def main():
         lw=1.2,
         label=f"routing threshold s* = {s_star:.2f}",
     )
-    # observed anchors
+    # observed anchors — plot all points, then label the isolated high anchor
+    # directly and fan the tightly-clustered low anchors with leader lines so the
+    # labels never overlap (four of the five anchors sit at s ~ .335-.358).
     for n, s in obs.items():
         oi_n, _, _ = over_index(s)
-        ax.plot(s, oi_n, "o", color="#dd6b20", ms=7, markeredgecolor="black")
-        ax.annotate(n, (s, oi_n), textcoords="offset points", xytext=(5, 5), fontsize=8)
+        ax.plot(s, oi_n, "o", color="#dd6b20", ms=7, markeredgecolor="black", zorder=5)
+    hi = max(obs, key=obs.get)
+    oi_hi, _, _ = over_index(obs[hi])
+    ax.annotate(
+        hi, (obs[hi], oi_hi), textcoords="offset points", xytext=(8, 4), fontsize=8
+    )
+    cluster = sorted((n for n in obs if n != hi), key=lambda n: obs[n])
+    for i, n in enumerate(cluster):
+        s = obs[n]
+        oi_n, _, _ = over_index(s)
+        ax.annotate(
+            n,
+            (s, oi_n),
+            textcoords="offset points",
+            xytext=(-14, 26 + i * 17),
+            ha="right",
+            fontsize=8,
+            arrowprops=dict(arrowstyle="-", lw=0.5, color="gray"),
+        )
     ax.set_xlabel(r"cohort distinctiveness  $s = \sin^2\beta$ (single-dimension)")
     ax.set_ylabel("resonance over-index")
-    ax.set_title("ME2: resonance over-index vs distinctiveness (2026av Figure 2)")
+    # No in-figure title: the paper's markdown caption ("Figure 2: ...") labels it.
     ax.legend(loc="upper left", fontsize=8)
     fig.tight_layout()
     out = figdir / "figure2_me2_overindex.png"

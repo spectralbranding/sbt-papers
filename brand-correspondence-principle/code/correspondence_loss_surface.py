@@ -58,7 +58,7 @@ above the >= 5000 floor); reported with Monte Carlo standard errors.
 
 RUN:
     cd [internal path removed]
-    uv run python [internal path removed]
+    uv run python code/correspondence_loss_surface.py
 
 CALIBRATION ANCHOR (observation O1 in SPINE.yaml). The AI-observer dispersion and the
 collapsed AI mean direction are set to the scale of the human-vs-AI cohort perception

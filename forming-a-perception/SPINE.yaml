@@ -27,7 +27,7 @@ thesis: |
   persistence time tau of its formed perception, because a more distinctive brand sits FARTHER
   OUTSIDE the dense, localized generic attractor, where that attractor adds LESS restoring
   curvature to its well, so lambda_min is smaller and the perception relaxes more slowly. This
-  ordering, ASSERTED in v1.0.0 through the toy law lambda(s)=lambda_0(1-kappa*s), is DERIVED in the
+  ordering, ASSERTED through the toy law lambda(s)=lambda_0(1-kappa*s), is DERIVED in the
   Electronic Companion (EC.3) from a single stated, defended curvature primitive (P-CURV: a dense
   localized attractor contributes restoring curvature that falls with separation), and the toy law
   is recovered as its local linearization. The forced-OU vector model NESTS the scalar prior art:

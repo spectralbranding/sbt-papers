@@ -18,7 +18,7 @@ metrics the paper defines plus the closed-form null baseline:
 
 Run command (reproduces the paper's null baseline and the 1/256 compression):
 
-    uv run python research/papers/2026d/code/metrics.py
+    uv run python code/metrics.py
 
 The ``__main__`` smoke test reproduces two paper numbers with a fixed seed:
 the ~.44 concentration null baseline sqrt(7/36) for random observer pairs at

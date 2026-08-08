@@ -90,7 +90,9 @@ def paper_asset(name: str) -> Path:
         if candidate.exists():
             return candidate
     for sub in _ASSET_DIRS:
-        anchor = PAPER_DIR / sub / "PROTOCOL.yaml" if sub else PAPER_DIR / "PROTOCOL.yaml"
+        anchor = (
+            PAPER_DIR / sub / "PROTOCOL.yaml" if sub else PAPER_DIR / "PROTOCOL.yaml"
+        )
         if anchor.exists():
             return anchor.parent / name
     return PAPER_DIR / name

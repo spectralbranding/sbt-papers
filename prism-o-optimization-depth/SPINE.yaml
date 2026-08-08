@@ -356,7 +356,7 @@ observations:
       Stage-1 run completed 2026-07-03: version check (all 8 pins live),
       concordance screen (OP1/OP3 probe disagreement .000, no exclusion),
       104 bank readings x 2 pairs = 208 logged calls, $0.77.
-    raw_data_pointer: "[internal path removed] (+ PL3 logs)"
+    raw_data_pointer: "data/stage1_records.jsonl (+ PL3 logs)"
     instrument: "OP1 (claude-opus-4-8 -> gpt-5.4-mini) + OP3 (qwen3.7-max -> deepseek-v4-flash)"
     timestamp: "2026-07-03"
     conditions_at_capture: "frozen PL0 v1.1; PL2 bank v1.0.0; temperature 0 where honored"
@@ -369,7 +369,7 @@ observations:
       Stage-2 campaign completed 2026-07-03: 40 pinned organizations x 2
       channels x 372 artifacts x 4 cross-family pairs, named + 15-org masked
       arms; 8,143 parsed records; $69.67 of the $193 user-approved cap.
-    raw_data_pointer: "[internal path removed]{1..4}.jsonl (+ PL3 logs)"
+    raw_data_pointer: "data/stage2_records_op{1..4}.jsonl (+ PL3 logs)"
     instrument: "OP1-OP4 per PL1 v1.0.1 (segmenter family != classifier family)"
     timestamp: "2026-07-03"
     conditions_at_capture: "frozen PL0 v1.1; pinned panel (SHA-256 manifest); version check pre-run"
@@ -379,7 +379,7 @@ observations:
     body_sections: ["Stage 2: The Organization Panel"]
 
 # ============================================================================
-# Findings (measurements = [internal path removed]{1,2}_results.json,
+# Findings (measurements = data/pl4_stage{1,2}_results.json,
 # estimator seed 20260703)
 # ============================================================================
 findings:
