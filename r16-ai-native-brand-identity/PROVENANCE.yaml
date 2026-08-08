@@ -50,6 +50,3 @@ provenance:
         community: ["spectral-branding"]
       note: "v1.4 uploaded 2026-04-05; v1.5 pending upload"
 
-  target_venue:
-    journal: "[withheld]"
-    status: "pre-submission"

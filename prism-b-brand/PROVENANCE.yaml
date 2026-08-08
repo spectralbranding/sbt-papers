@@ -27,8 +27,3 @@ provenance:
 
   forks: []
 
-  target_venue:
-    journal: "[withheld]"
-    status: "pre-submission"
-
-  target_venue_alt: []

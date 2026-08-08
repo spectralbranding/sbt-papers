@@ -32,10 +32,4 @@ provenance:
     doi: "10.5281/zenodo.19778549"
     uploaded: 2026-04-26
     version: "1.0.0"
-    note: "Uploaded as v1.0.0 working paper (publication date 2026-04-26). Marketing Science submission to follow."
-
-  target_venue:
-    name: "Marketing Science"
-    publisher: "INFORMS"
-    style: "AMA"
-    review_type: "double-anonymous"
+    note: "Uploaded as v1.0.0 working paper (publication date 2026-04-26)."

@@ -43,8 +43,3 @@ provenance:
         community: ["spectral-branding"]
       note: "v1.0 initial preprint (17-model full panel). v1.0.1 PDF update pending."
 
-  target_venue:
-    journal: "[withheld]"
-    status: "pre-submission"
-
-  target_venue_alt: []
