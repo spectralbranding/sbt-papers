@@ -101,14 +101,6 @@ hypothesis_results:
     status: not_supported
     note: "NOT SUPPORTED in full 17-model panel (CV at R1 = .210, threshold .20)."
 
-target_venue: "Marketing Letters (Springer)"
-target_venue_alt:
-  - "Quantitative Marketing and Economics (Springer)"
-  - "Journal of Marketing Research"
-  - "Journal of the Academy of Marketing Science"
-
-submission_history: []
-
 methodology:
   type: empirical
   design: >

@@ -73,8 +73,14 @@ import numpy as np
 # Path setup: reuse R15 infrastructure (read-only)
 # -------------------------------------------------------------------------------
 
+# Set R15_EXPERIMENT_DIR to point at a checkout of the r15-ai-search-metamerism
+# experiment directory. The default resolves it as a sibling paper within the same
+# sbt-papers checkout, which is where it lives when this script is run from the repo.
 R15_EXPERIMENT_DIR = Path(
-    "/Users/d/projects/sbt-papers/r15-ai-search-metamerism/experiment"
+    os.environ.get(
+        "R15_EXPERIMENT_DIR",
+        Path(__file__).resolve().parents[4] / "r15-ai-search-metamerism" / "experiment",
+    )
 )
 sys.path.insert(0, str(R15_EXPERIMENT_DIR))
 

@@ -111,10 +111,10 @@ Cross-model CV at R1 = 0.2105 (threshold = .20, n=17 models)
 
 ## Files Generated
 
-- `/Users/d/projects/spectral-branding/research/R19_rate_distortion/experiment/L3_sessions/r19_rate_sweep.jsonl` — per-call JSONL session log
-- `/Users/d/projects/spectral-branding/research/R19_rate_distortion/experiment/L4_analysis/r19_results.json` — aggregated results JSON
-- `/Users/d/projects/spectral-branding/research/R19_rate_distortion/experiment/L4_analysis/r19_per_cell.csv` — long-format per-cell CSV
-- `/Users/d/projects/spectral-branding/research/R19_rate_distortion/experiment/L4_analysis/r19_rd_curves.csv` — per-model R(D) curve data + fit
-- `/Users/d/projects/spectral-branding/research/R19_rate_distortion/experiment/L4_analysis/r19_summary.md` — this summary
-- `/Users/d/projects/spectral-branding/research/R19_rate_distortion/experiment/L4_analysis/r19_pre_registration_audit.md` — pre-registration audit
+- `data/r19_rate_sweep.jsonl` — per-call JSONL session log
+- `analysis/r19_results.json` — aggregated results JSON
+- `analysis/r19_per_cell.csv` — long-format per-cell CSV
+- `analysis/r19_rd_curves.csv` — per-model R(D) curve data + fit
+- `analysis/r19_summary.md` — this summary
+- `analysis/r19_pre_registration_audit.md` — pre-registration audit
 
