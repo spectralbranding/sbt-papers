@@ -20,13 +20,8 @@ spine_version: "0.2"
 spine_doc_version: "0.1.0"        # retrofit extraction first lock (2026-06-14, D4)
 paper_key: "2026t"
 title: "Paper as Specification: A Machine-Readable Standard for Scientific Claims"
-target_venue_primary: "TBD (working paper v0.1; Zenodo 10.5281/zenodo.19210037)"
 provenance: retrofit
-status: >-
-  Working paper v0.1 (March 2026), Zenodo-deposited. Retrofit spine extracted
-  from the published paper.md on 2026-06-14 under D4; reflects the paper as
-  written, including its four untested propositions and single-author
-  demonstration.
+status: "Not exported; see the paper's own version and DOI."
 
 thesis: |
   The verification crisis in science is, at root, a specification crisis.
@@ -478,11 +473,6 @@ external_anchors:
 # ============================================================================
 # Open questions / boundary edges
 # ============================================================================
-open:
-  - "Do the four propositions hold under independent multi-author, multi-field testing (the explicit falsifiers in P6-P9)?"
-  - "Will journals accept paper.yaml as supplementary material and will repositories index it (institutional adoption, L4)?"
-  - "Does the standard's expressiveness extend to complex empirical/statistical designs and non-standard methodologies without extension (L3)?"
-  - "How does L4 cross-corpus verification operate at field scale -- the federation infrastructure deferred to the 2026u companion?"
 
 # ============================================================================
 # Spine changelog -- append-only
