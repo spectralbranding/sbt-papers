@@ -20,11 +20,7 @@ provenance: generative
 title: >-
   Separating Instrument Drift from Brand Signal: A Pre-Registered
   Model-Version Tracking Instrument for AI Brand Perception (PRISM-T)
-status: >-
-  Spine locked after the frozen PL0/PL1 campaign completed VE-1 end-to-end
-  (pilot + floor + three ladders + controls + robustness, 2026-07-02;
-  2,080/2,080 cells). Drafting proceeds against this spine. H2's live-panel
-  decomposition completes at a later calendar epoch by design.
+status: "Not exported; see the paper's own version and DOI."
 
 thesis: |
   Every longitudinal claim made with an LLM-observer instrument is confounded

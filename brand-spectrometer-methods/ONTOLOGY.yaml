@@ -1,7 +1,7 @@
 # ONTOLOGY.yaml module - 2026ax (The Brand Spectrometer: A Reproducible Instrument
 # for Cohort-Resolved, Multi-Dimensional Brand-Perception Measurement)
 #
-# Per-paper ontology module per [internal path removed]
+# Per-paper ontology module per SPINE_FIRST_DRAFTING_PROTOCOL.md.
 # owns = terms THIS paper introduces; imports = terms owned elsewhere it uses;
 # refines = an imported term this module narrows.
 #

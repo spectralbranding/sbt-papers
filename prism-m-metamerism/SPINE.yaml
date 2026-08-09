@@ -20,9 +20,7 @@ provenance: generative
 title: >-
   Measuring Perceptual Indistinguishability: A Pre-Registered Metamerism
   Instrument for AI Brand Perception (PRISM-M)
-status: >-
-  Spine locked after the frozen PL0 campaign completed (Stage 1 + Stage 2 +
-  controls + robustness, 2026-07-02). Drafting proceeds against this spine.
+status: "Not exported; see the paper's own version and DOI."
 
 thesis: |
   Indistinguishability under a coarse readout is measurable, not assertable.

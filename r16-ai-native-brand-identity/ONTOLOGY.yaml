@@ -1,6 +1,6 @@
 # ONTOLOGY.yaml module - 2026x
 #
-# Per-paper ontology module per [internal path removed]
+# Per-paper ontology module per SPINE_FIRST_DRAFTING_PROTOCOL.md
 # §"ONTOLOGY.yaml schema (v0.1)". owns = terms THIS paper introduces (unique
 # authority); imports = terms owned by other modules it uses (reference only).
 # Linked into the substrate `terms` graph by build_ontology.py; rendered per-paper

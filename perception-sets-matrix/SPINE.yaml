@@ -15,11 +15,7 @@ provenance: generative
 title: >-
   Perception Sets the Matrix: Spectral Match as the Generative Layer of
   Stochastic Brand-Choice Propensities
-status: >-
-  Generative spine; prose drafted from it 2026-07-12. Pre-registered campaign
-  EXECUTED 2026-07-12 (design frozen + checksummed, FREEZE_RECORD.md;
-  amendments A1-A4); findings forked in from the frozen estimator output
-  (data/results.json, seed 20260712).
+status: "Not exported; see the paper's own version and DOI."
 
 thesis: |
   The stochastic brand-choice tradition (Markov switching-matrix models; the

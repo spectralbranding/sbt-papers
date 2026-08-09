@@ -1,7 +1,7 @@
 # ONTOLOGY.yaml module - 2026aw (Forming a Perception: Campaigns as Forcing Functions
 # and the Relaxation of the Brand Perception Cloud)
 #
-# Per-paper ontology module per [internal path removed]
+# Per-paper ontology module per SPINE_FIRST_DRAFTING_PROTOCOL.md.
 # owns = terms THIS paper introduces; imports = terms owned elsewhere it uses;
 # refines = an imported term this module narrows.
 #

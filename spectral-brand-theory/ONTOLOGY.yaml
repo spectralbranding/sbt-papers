@@ -1,6 +1,6 @@
 # ONTOLOGY.yaml module — 2026a (Spectral Brand Theory, the SBT root paper)
 #
-# A paper's ontology module per [internal path removed]
+# A paper's ontology module per SPINE_FIRST_DRAFTING_PROTOCOL.md
 # §"ONTOLOGY.yaml schema (v0.1)". This module OWNS the canonical SBT terms that
 # 2026a introduces (it is their unique authority). 31 papers depend on 2026a, so
 # these are the corpus's root semantics. Linked into the substrate `terms` graph
