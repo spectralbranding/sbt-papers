@@ -473,6 +473,11 @@ external_anchors:
 # ============================================================================
 # Open questions / boundary edges
 # ============================================================================
+open:
+  - "Do the four propositions hold under independent multi-author, multi-field testing (the explicit falsifiers in P6-P9)?"
+  - "Will journals accept paper.yaml as supplementary material and will repositories index it (institutional adoption, L4)?"
+  - "Does the standard's expressiveness extend to complex empirical/statistical designs and non-standard methodologies without extension (L3)?"
+  - "How does L4 cross-corpus verification operate at field scale -- the federation infrastructure deferred to the 2026u companion?"
 
 # ============================================================================
 # Spine changelog -- append-only
