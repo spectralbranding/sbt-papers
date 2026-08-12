@@ -24,7 +24,7 @@ Pattern:
 
 Schema (per [internal ref removed]):
 - log_format_version + phase + operation + operator + operator_role + model_version
-- timestamp_utc + system_prompt + [internal ref removed] + parameters
+- timestamp_utc + system_prompt + user_prompt + parameters
 
 operator_role (added v1.1 for Brand Spectrometer T4-RE pipeline + Paper B cross-operator
 discipline): one of {"renderer", "extractor", "orchestrator"} or None for unspecified.
@@ -359,7 +359,7 @@ class _CallLogger:
         latency = max(time.time() - self._start_time, 0.0)
         # Redact prompts + response + parameters recursively
         sys_prompt, w1 = _redact(self._system_prompt)
-        [internal ref removed], w2 = _redact(self._user_prompt)
+        user_prompt, w2 = _redact(self._user_prompt)
         response, w3 = _redact(self._response)
         params, w4 = _redact_recursive(self._parameters)
         resp_meta, w5 = _redact_recursive(self._response_metadata)
@@ -375,7 +375,7 @@ class _CallLogger:
             .isoformat()
             .replace("+00:00", "Z"),
             "system_prompt": sys_prompt,
-            "[internal ref removed]": [internal ref removed],
+            "user_prompt": user_prompt,
             "parameters": params,
             "request_id": self._request_id,
             "endpoint": self.endpoint,
@@ -460,7 +460,7 @@ def log_call_post_hoc(
     operator: str,
     model_version: str,
     system_prompt: str,
-    [internal ref removed]: str,
+    user_prompt: str,
     response: str,
     operator_role: str | None = None,
     parameters: dict[str, Any] | None = None,
@@ -491,7 +491,7 @@ def log_call_post_hoc(
     )
     logger._start_time = time.time()  # latency won't be meaningful for reconstructions
     logger.set_system_prompt(system_prompt)
-    logger.set_user_prompt([internal ref removed])
+    logger.set_user_prompt(user_prompt)
     logger.set_parameters(parameters or {})
     logger.set_model_version(model_version)
     if cost_usd_est:
