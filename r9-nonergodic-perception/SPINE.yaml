@@ -1,7 +1,7 @@
 # SPINE.yaml — Non-Ergodic Perception (2026o / R9)
 #
 # RETROFIT spine: extracted descriptively from the completed paper.md, NOT
-# authored generatively before prose (CLAUDE.md rule 0aa / Publication Pipeline
+# authored generatively before prose ([internal ref removed] rule 0aa / Publication Pipeline
 # decision D4, [internal path removed]). The
 # backbone is the paper's five formal propositions (P1–P5), the three structural
 # sources of non-ergodicity, the multiplicative-update sufficiency conditions
@@ -376,7 +376,7 @@ observations:
       Tesla) supply eight-dimension emission vectors whose coefficient of
       variation (CV) indexes coherence: low CV = coherent, high CV = incoherent
       (Zharnikov 2026a).
-    raw_data_pointer: "CLAUDE.md §3 canonical brand profiles; Zharnikov 2026a"
+    raw_data_pointer: "[internal ref removed] §3 canonical brand profiles; Zharnikov 2026a"
     instrument: "canonical SBT profile vectors"
     timestamp: "2026-05"
     body_sections: ["Table 3"]
