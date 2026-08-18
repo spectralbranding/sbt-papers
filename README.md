@@ -22,7 +22,7 @@ Eight companion papers establishing formal mathematical foundations for SBT, plu
 | R0 | [Geometric Approaches to Brand Perception: A Critical Survey](r0-literature-survey/paper.md) | [10.5281/zenodo.18945217](https://doi.org/10.5281/zenodo.18945217) | Preprint |
 | R1 | [Brand Space Geometry: A Formal Metric for Multi-Dimensional Brand Perception](r1-formal-metric/paper.md) | [10.5281/zenodo.18945295](https://doi.org/10.5281/zenodo.18945295) | Preprint |
 | R2 | [Spectral Metamerism in Brand Perception: Projection Bounds from High-Dimensional Geometry](r2-spectral-metamerism/paper.md) | [10.5281/zenodo.18945352](https://doi.org/10.5281/zenodo.18945352) | Preprint |
-| R3 | [Cohort Boundaries in High-Dimensional Perception Space: A Concentration of Measure Analysis](r3-cohort-boundaries/paper.md) | [10.5281/zenodo.18945477](https://doi.org/10.5281/zenodo.18945477) | Preprint |
+| R3 | [Boundary Volume and Cohort Reassignment on the 7-Simplex: A Concentration Analysis Under the Uniform Null](r3-cohort-boundaries/paper.md) | [10.5281/zenodo.18945477](https://doi.org/10.5281/zenodo.18945477) | Preprint |
 | R4 | [How Many Brands Can a Market Hold? Sphere Packing Bounds for Multi-Dimensional Positioning](r4-sphere-packing/paper.md) | [10.5281/zenodo.18945522](https://doi.org/10.5281/zenodo.18945522) | Preprint |
 | R5 | [Specification Impossibility in Organizational Design: A High-Dimensional Geometric Analysis](r5-specification-impossibility/paper.md) | [10.5281/zenodo.18945591](https://doi.org/10.5281/zenodo.18945591) | Preprint |
 | R6 | [Non-Ergodic Brand Perception: Diffusion Dynamics on Multi-Dimensional Perceptual Manifolds](r6-diffusion-dynamics/paper.md) | [10.5281/zenodo.18945659](https://doi.org/10.5281/zenodo.18945659) | Preprint |

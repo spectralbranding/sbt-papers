@@ -1,7 +1,7 @@
-# SPINE.yaml — Geometric Necessity of Fuzzy Cohort Boundaries (2026f / R3)
+# SPINE.yaml — Boundary Volume and Cohort Reassignment on the 7-Simplex (2026f / R3)
 #
 # RETROFIT spine: extracted descriptively from the completed paper.md, not
-# authored generatively before prose (CLAUDE.md rule 0aa / publication pipeline
+# authored generatively before prose ([internal ref removed] rule 0aa / publication pipeline
 # decision D4). Reflects the paper's ACTUAL argument backbone as written.
 #
 # Schema v0.2 ([internal path removed] §"SPINE.yaml schema
@@ -15,8 +15,8 @@ spine_doc_version: "0.1.0"     # retrofit spine first lock (2026-06-14)
 paper_key: "2026f"
 provenance: retrofit
 title: >-
-  Geometric Necessity of Fuzzy Cohort Boundaries: A Concentration Analysis of
-  the 7-Simplex
+  Boundary Volume and Cohort Reassignment on the 7-Simplex: A Concentration
+  Analysis Under the Uniform Null
 status: "Not exported; see the paper's own version and DOI."
 
 thesis: |
@@ -211,8 +211,11 @@ measurements:
   - id: m_bvf
     statement: >-
       Boundary volume fraction lower bound BVF(8, .10) >= 52.2% (= 1 - .9^7) at
-      the intrinsic-dimension exponent n-1=7; the earlier ambient-dimension
-      figure 57.0% is the conservative variant.
+      the intrinsic-dimension exponent n-1=7, where delta is depth into a cell as
+      a fraction of that cell's VOLUME RADIUS r_V = (vol(C)/omega_d)^(1/d) and
+      distance is to the FULL cell boundary (internal bisectors together with the
+      bounding faces of the simplex); the earlier ambient-dimension figure 57.0%
+      is the conservative variant.
     source_observations: []
     generating_method: M2
     value: "BVF(8, .10) >= .522"
@@ -220,18 +223,23 @@ measurements:
     body_sections: ["§4.2 Table 3", "§4.2 Theorem 2"]
   - id: m_bvf_empirical
     statement: >-
-      Empirical boundary fractions (k=4 Voronoi, 10^5 samples) of 35.9% / 62.5% /
-      91.6% at delta = .05 / .10 / .20, consistently exceeding the Theorem 2
-      lower bounds (30.2% / 52.2% / 79.0%) by 6-13 points as expected for k>=3.
+      Empirical boundary fractions (k=4 Voronoi, 10^5 samples, seed 42) of
+      51.7% / 78.7% / 97.0% at delta = .05 / .10 / .20 under the settled
+      definition (delta relative to the cell volume radius, distance to the full
+      cell boundary), exceeding the Theorem 2 lower bounds (30.2% / 52.2% /
+      79.0%) by 22-27 points because the bound is attained only by a Euclidean
+      ball. Measured cell volume shares .183/.183/.263/.372, in-radii .091-.097,
+      volume radii .216-.239, mean R/r_V = .424.
     source_observations: [O2]
     generating_method: M4
-    value: "62.5% at delta=.10 (empirical, k=4)"
+    value: "78.7% at delta=.10 (empirical, k=4, settled definition)"
     units: "volume fraction"
-    body_sections: ["§5.2 Table 5"]
+    body_sections: ["Table 7"]
   - id: m_fisher_rao
     statement: >-
       Fisher-Rao contrast ratio R_8 = 5.72 (~70% of Euclidean), mean geodesic
-      distance 1.22 rad, CV .230 — same transitional regime; the BVF bound
+      distance 1.214 rad against an analytic 2*arccos(E[BC]) = 1.252 rad that
+      bounds it above by Jensen (arccos is concave), CV .230 — same transitional regime; the BVF bound
       1 - (1-delta)^{n-1} transfers verbatim (52.2% at delta=.10).
     source_observations: [O3]
     generating_method: M4
@@ -252,6 +260,33 @@ measurements:
 # ============================================================================
 # Propositions — the core theoretical claims
 # ============================================================================
+  - id: m_bisector_proximity
+    statement: >-
+      Under the uniform null with a k-means partition at k>=3, the mean Euclidean
+      distance to the nearest inter-cohort bisector is .088 against a component
+      SD of .1102 (ratio .795 at k=4), and approximately two-thirds of observers
+      lie within one component SD of a bisector: 66.3 / 69.1 / 69.1 / 69.7 /
+      69.5% at k = 3/4/5/6/8, and 67.9% (SD .96 pp) across seeds 42-46 at k=4.
+      k=2 is the degenerate outlier at 49.1%. For 85.4% of observers the nearest
+      piece of cell boundary is a face of the simplex, not a bisector.
+    source_observations: [O2]
+    generating_method: M4
+    value: "~68% within one component SD of an inter-cohort bisector (k>=3)"
+    units: "fraction of observers"
+    body_sections: ["Table 8", "Proposition 4"]
+  - id: m_refit_alpha
+    statement: >-
+      With the k=4 partition RE-FIT to each Dir(alpha,...,alpha) population and
+      each population compared against its own component SD, the within-one-SD
+      bisector fraction RISES with alpha — 69.1 / 72.5 / 74.8 / 76.7 / 78.4 /
+      80.6% at alpha = 1/2/3/5/10/30 — while the scale-free ratio of mean
+      bisector distance to component SD FALLS from .795 to .605.
+    source_observations: [O2]
+    generating_method: M4
+    value: "69.1% -> 80.6% over alpha in [1,30] under re-fitting"
+    units: "fraction of observers"
+    body_sections: ["Table 10"]
+
 propositions:
   - id: P1
     statement: >-
@@ -308,25 +343,32 @@ propositions:
         anchor: "Theorem 1; Beyer et al. (1999) distance-concentration framework; CV_n ~ O(n^{-1/2})."
       - type: empirical
         anchor: "Monte Carlo Table 2 / §5.1 (m_contrast)."
-    falsifier: "If empirical Dir(1,...,1) draws at n=8 show component variance differing from 1/[n(n+1)]=.012 beyond sampling error (Prop 2 falsifier), or R_8 far from 7.46, P4 fails."
+    falsifier: "If independent Monte Carlo at n=8 returns R_8 far from 7.46, or the CV_n ~ O(n^{-1/2}) decay fails across n, P4 fails. NOTE: the Proposition 2 variance identity is NOT a falsifier — draws from Dir(1,...,1) cannot contradict an algebraic identity of the family they are drawn from; what is testable there is whether real observer weights are described by a symmetric Dirichlet at all."
     body_sections: ["§3.3 Beyer's Distance Contrast Phenomenon", "§5.1"]
   - id: P5
     statement: >-
       Boundary fuzziness theorem (Theorem 2): for ANY convex k-partition (k>=2)
       of Delta^{n-1}, the boundary volume fraction satisfies
-      BVF(n,delta) >= 1 - (1-delta)^{n-1}; at n=8, delta=.10 this is >= 52.2%, so
-      a MAJORITY of observer profiles lie within 10% relative distance of some
-      cohort boundary. The (n-1) exponent is the simplex's intrinsic dimension;
-      the bound is conservative for k>=3.
+      BVF(n,delta) >= 1 - (1-delta)^{n-1}, where delta is depth into a cell as a
+      fraction of that cell's VOLUME RADIUS and the distance is to the FULL cell
+      boundary; at n=8, delta=.10 this is >= 52.2%, so a MAJORITY of the simplex
+      lies near the boundary of its own cohort region. The (n-1) exponent is the
+      simplex's intrinsic dimension. The bound is attained by a Euclidean ball
+      and is conservative for simplicial and Voronoi cells. It bounds VOLUME near
+      a cell boundary, and does NOT by itself bound the fraction of observers at
+      risk of cohort reassignment, because 85.4% of the volume it counts abuts a
+      face of the simplex rather than an inter-cohort frontier (see P14).
     conditions: "C1, C2, AA1"
     antecedents: [P1]
     evidence:
       - type: analytic
-        anchor: "Theorem 2; Brunn-Minkowski peeling (Schneider 2014, Vershynin 2018)."
+        anchor: "Theorem 2; Brunn-Minkowski applied to the inner parallel body C_{-t} (+) tB <= C (Schneider 2014, Vershynin 2018)."
+      - type: analytic
+        anchor: "Thin-box witness: normalising delta by the in-radius R instead of r_V asserts a bound Brunn-Minkowski does not deliver, and is false whenever R < r_V."
       - type: empirical
-        anchor: "Monte Carlo k=4 Voronoi Table 5: empirical 62.5% at delta=.10 exceeds bound (m_bvf, m_bvf_empirical)."
-    falsifier: "If a convex k-partition of Dir(1,...,1) draws on Delta^7 puts fewer than 52% of profiles within 10% relative distance of a boundary, P5 fails."
-    body_sections: ["§4.2 Boundary Fraction Theorem for Convex Partitions"]
+        anchor: "Monte Carlo k=4 Voronoi Table 7: empirical 78.7% at delta=.10 exceeds the bound; the in-radius reading returns 44.9%, BELOW the bound (m_bvf, m_bvf_empirical)."
+    falsifier: "If a convex k-partition of Delta^7 puts less than 1-(1-delta)^{n-1} of the simplex volume within delta*r_V of its own cell's full boundary, P5 fails. A measurement that normalises delta differently, or that measures to the internal bisectors only, does not test P5."
+    body_sections: ["Theorem 2, Boundary Fraction Theorem for Convex Partitions"]
   - id: P6
     statement: >-
       The boundary fuzziness is GEOMETRIC, not statistical: Theorem 2 holds for
@@ -357,13 +399,14 @@ propositions:
     body_sections: ["§4.2 (Comparison across dimensions)"]
   - id: P8
     statement: >-
-      The uniform Dirichlet is the WORST case (Corollary 2): for fixed partition
-      geometry V_boundary(alpha) is strictly decreasing in alpha, so
-      symmetric Dir(alpha,...,alpha) with alpha>1 has strictly sharper boundaries
-      than the uniform bound. The reduction factor is alpha^{-(n-1)/2}=alpha^{-3.5}
-      at n=8 (Proposition 3), driving boundaries below 2% for empirically
-      plausible alpha in [3,10]. The fuzziness severity is therefore a calibration
-      result: the uniform null sets the maximum, and any empirical alpha sharpens it.
+      The uniform Dirichlet is the WORST case FOR A FIXED ZONE (Corollary 2):
+      holding the partition geometry fixed, V_boundary(alpha) is strictly
+      decreasing in alpha, so symmetric Dir(alpha,...,alpha) with alpha>1 places
+      less mass inside that same unmoving zone. The reduction factor is
+      alpha^{-(n-1)/2}=alpha^{-3.5} at n=8 (Proposition 3), giving under 2% for
+      alpha in [3,10] against a zone pinned at its alpha=1 geometry. The
+      fixed-zone clause is NOT a formality and does not license a calibration
+      reading of fuzziness severity; see P15.
     conditions: "C3"
     antecedents: [P5]
     evidence:
@@ -371,24 +414,27 @@ propositions:
         anchor: "Proposition 3 + Corollary 2; Stirling + log-concavity Brunn-Minkowski argument."
       - type: empirical
         anchor: "Table 6 numerical values; behavioral alpha range [3,10] (Frigyik et al. 2010, Aitchison 1986)."
-    falsifier: "If for some alpha_1 > alpha_2 >= 1 a Monte Carlo study shows V_boundary(alpha_1) >= V_boundary(alpha_2), or the rate departs from alpha^{-3.5}, P8 fails (Prop 3 / Cor 2 falsifiers)."
-    body_sections: ["§8.2-§8.4 Boundary Fuzziness Under Concentrated Distributions"]
+    falsifier: "If for some alpha_1 > alpha_2 >= 1 a Monte Carlo study shows more mass in a zone HELD FIXED at its alpha=1 geometry under alpha_1 than under alpha_2, or the rate departs from alpha^{-3.5}, P8 fails. A measurement taken under a re-fitted partition does not test P8 (that is P15)."
+    body_sections: ["Boundary Fuzziness Under Concentrated Distributions"]
   - id: P9
     statement: >-
-      Corollary 1: dynamic, fuzzy cohort membership is geometrically NECESSARY
-      under the uniform null — because BVF(8,.10) >= 52.2% and the Dirichlet
-      component SD is .110 (perturbations of boundary-crossing magnitude are
-      typical), discrete cohort assignment for the majority of observers is
-      unstable under small perturbations of the weight profile or boundary
-      placement. The claim that cohort membership is dynamic and fuzzy (2026a) is
-      thus not merely empirical but a geometric necessity in 8-D perception space.
+      Corollary 1: cohort membership is dynamic and fuzzy for approximately
+      two-thirds of observers under the uniform null. An observer at distance eps
+      from an inter-cohort bisector is reassigned by a shift of eps toward it, and
+      two-thirds have eps below one component SD (.1102, Proposition 2) — a shift
+      the population's own variability supplies. This REST ON P14, not on P5: it
+      is an empirical result about k-means partitions at k>=3 under a specific
+      null, not a geometric necessity holding for every convex partition. Earlier
+      versions derived it from P5's 52.2% volume figure; that inference does not
+      hold, because the volume P5 counts is dominated by simplex-face proximity.
+      The claim survives at a LARGER figure under the weaker modality.
     conditions: "C1, C2, AA1"
-    antecedents: [P5, P4]
+    antecedents: [P14, P4]
     evidence:
-      - type: analytic
-        anchor: "Corollary 1; SD .1102 from Proposition 2 makes boundary-crossing perturbations typical."
-    falsifier: "If a convex partition shows fewer than 50% of Dir(1,...,1) profiles within 10% relative distance of a boundary, Corollary 1 fails."
-    body_sections: ["§4.3 Implications for Cohort Cardinality"]
+      - type: empirical
+        anchor: "Proposition 4 / Table 8 (m_bisector_proximity); SD .1102 from Proposition 2 sets the perturbation scale."
+    falsifier: "If a k-means partition at k>=3 leaves fewer than half of observers within one component SD of an inter-cohort bisector, Corollary 1 fails. Inherited from P14."
+    body_sections: ["Implications for Cohort Cardinality"]
   - id: P10
     statement: >-
       Cohort count is resolution-dependent, not an objective population feature:
@@ -441,7 +487,7 @@ propositions:
   - id: P13
     statement: >-
       Static concentration geometry interacts with non-ergodic dynamics: the wide
-      boundary zone (>= 52%) amplifies non-ergodic effects (a single
+      bisector zone (~two-thirds of observers within one component SD, P14) amplifies non-ergodic effects (a single
       signal-driven boundary crossing can trigger an irreversible cohort
       transition), and SBT's absorbing states / crystallized priors restrict the
       dynamics to poorly connected subsets of S^7_+, breaking the conditions
@@ -453,6 +499,45 @@ propositions:
       - type: analytic
         anchor: "Non-ergodicity (Peters 2019); bounded-confidence fragmentation (Hegselmann & Krause 2002); full dynamics deferred to 2026j."
     body_sections: ["§7 Connection to Non-Ergodic Dynamics"]
+  - id: P14
+    statement: >-
+      Inter-cohort bisector proximity (Proposition 4): under the uniform null
+      with a k-means partition at k>=3, the mean Euclidean distance to the
+      nearest inter-cohort bisector is .088 — BELOW the component SD of .1102 —
+      and approximately two-thirds of observers lie within one component SD of a
+      bisector. Stable in k for k>=3 (66.3-69.7%) and across seeds (67.9%, SD
+      .96 pp), degenerate at k=2 (49.1%). This is the quantity that governs
+      cohort-reassignment risk, and it is measured rather than derived: P5 bounds
+      volume near the FULL cell boundary, of which 85.4% abuts a face of the
+      simplex where no perturbation can reassign anyone.
+    conditions: "C1, C2, AA1"
+    antecedents: [P4]
+    evidence:
+      - type: empirical
+        anchor: "Table 8 / m_bisector_proximity; component SD .1102 from Proposition 2 supplies the perturbation scale."
+    falsifier: "An elicited sample of real observer weight profiles on Delta^7, partitioned by the same procedure at k>=3, in which the mean distance to the nearest inter-cohort bisector EXCEEDS that sample's component SD, or in which fewer than half of observers lie within one such SD. A population of well-separated compact clusters would produce exactly that, so the test discriminates. It requires an observer-weight elicitation and is not answerable from artifact-level brand measurements, which record a different object."
+    body_sections: ["Proposition 4", "Table 8"]
+  - id: P15
+    statement: >-
+      Re-fitting reverses the practical reading of P8: clustering re-fits the
+      partition to the population, so as mass concentrates the boundaries follow
+      it. Measured with the k=4 partition re-fit at each alpha and each
+      population compared against its OWN component SD (both distances and the
+      perturbation scale contract as alpha^{-1/2}), the within-one-SD bisector
+      fraction RISES from 69.1% at alpha=1 to 80.6% at alpha=30 while the
+      scale-free ratio FALLS from .795 to .605. P8's arithmetic is unaffected —
+      it is a correct statement about a fixed zone — but the step from it to a
+      claim about real practice fails, since no practitioner holds a partition
+      fixed while the population moves. Consequently the methodological
+      prescription (P11) does not depend on the population being uniform and does
+      not wait on an estimate of alpha.
+    conditions: "C1, C2"
+    antecedents: [P8, P14]
+    evidence:
+      - type: empirical
+        anchor: "Table 10 / m_refit_alpha; alpha in [1,30], covering the [3,10] behavioural window."
+    falsifier: "If, under a partition re-fit to each Dir(alpha,...,alpha) population and compared against that population's own component SD, the within-one-SD bisector fraction FALLS materially with alpha, P15 fails and P8's calibration reading is restored. Sensitive to the clustering procedure: only fixed-k k-means is tested here, and a procedure that also selects k from the data is untested."
+    body_sections: ["Concentration Under a Re-Fitted Partition", "Table 10"]
 
 # ============================================================================
 # Derivations — key closed-form results
@@ -503,24 +588,62 @@ findings:
     body_sections: ["§5.1 Distance Ratio Simulations"]
   - id: F2
     statement: >-
-      Monte Carlo confirms the boundary-volume bound: empirical k=4 Voronoi
-      fractions 35.9% / 62.5% / 91.6% at delta=.05/.10/.20 consistently exceed
-      the Theorem 2 lower bounds (30.2% / 52.2% / 79.0%) by 6-13 points, as
-      expected since the bound is conservative for k>=3 and multiple boundaries
-      contribute.
+      Monte Carlo confirms the boundary-volume bound under the settled definition
+      of delta: empirical k=4 Voronoi fractions 51.7% / 78.7% / 97.0% at
+      delta=.05/.10/.20 exceed the Theorem 2 lower bounds (30.2% / 52.2% /
+      79.0%) by 22-27 points, as expected since the bound is attained only by a
+      Euclidean ball. Measured under an in-radius normalisation the same
+      quantity returns 25.3% / 44.9% / 71.4% — BELOW the bound at every width,
+      which is how a normalisation the proof cannot support shows up numerically.
     type: "simulation_confirmation"
     source_measurements: [m_bvf, m_bvf_empirical]
     generating_method: M4
     antecedents: [O2]
-    falsifier: "If empirical k=4 boundary fractions fall below the Theorem 2 lower bound, F2 (and P5) fail."
+    falsifier: "If empirical k=4 boundary fractions measured under the settled definition fall below the Theorem 2 lower bound, F2 (and P5) fail."
     citation_role_in_paper: "primary_evidence_for_P5"
-    body_sections: ["§5.2 Boundary Proximity Simulations"]
+    body_sections: ["Table 7, Boundary Proximity Simulations"]
+  - id: F4
+    statement: >-
+      The boundary zone of Theorem 2 is not the reassignment zone. For 85.4% of
+      observers the nearest piece of cell boundary is a face of the simplex — a
+      near-zero weight component — rather than an inter-cohort bisector, and no
+      perturbation can push a weight below zero. Measured directly, the mean
+      distance to the nearest bisector is .0877 against a component SD of .1102,
+      and approximately two-thirds of observers lie within one component SD of a
+      bisector. The reassignment claim therefore survives at a LARGER figure than
+      the 52.2% it previously rested on, but as an empirical result about
+      k-means partitions at k>=3 rather than as a geometric necessity.
+    type: "measurement"
+    source_measurements: [m_bisector_proximity]
+    generating_method: M4
+    antecedents: [O2]
+    falsifier: "Inherited from P14."
+    citation_role_in_paper: "primary_evidence_for_P14_and_P9"
+    body_sections: ["Table 8", "What the Boundary Zone Contains"]
+  - id: F5
+    statement: >-
+      Concentration does not sharpen cohort boundaries once the partition is
+      re-fit. Comparing each Dir(alpha,...,alpha) population against its own
+      component SD, the within-one-SD bisector fraction rises from 69.1% at
+      alpha=1 to 80.6% at alpha=30 and the scale-free ratio falls from .795 to
+      .605, across a range that contains the [3,10] behavioural window. The
+      alpha^{-3.5} contraction remains correct for a zone held fixed; what does
+      not follow is the inference to real practice.
+    type: "measurement"
+    source_measurements: [m_refit_alpha, m_alpha_scaling]
+    generating_method: M4
+    antecedents: [O2]
+    falsifier: "Inherited from P15."
+    citation_role_in_paper: "primary_evidence_for_P15"
+    body_sections: ["Table 10", "Concentration Under a Re-Fitted Partition"]
   - id: F3
     statement: >-
       The qualitative conclusions hold under both metrics: Fisher-Rao gives
       R_8 = 5.72 (~70% of Euclidean) in the same transitional regime, and the
       boundary-volume bound is identical in form and value (52.2% at delta=.10)
-      because the square-root isometry preserves intrinsic dimension.
+      because the square-root isometry preserves intrinsic dimension. The mean
+      geodesic distance is 1.214 rad; the analytic 2*arccos(E[BC]) = 1.252 rad
+      is an upper bound on it by Jensen, not an estimate of it.
     type: "robustness_confirmation"
     source_measurements: [m_fisher_rao]
     generating_method: M4

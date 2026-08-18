@@ -1,13 +1,13 @@
 [![MIT License](https://img.shields.io/badge/Code-MIT-blue.svg)](../LICENSE)
 [![CC-BY 4.0](https://img.shields.io/badge/Data-CC--BY_4.0-lightgrey.svg)](../LICENSE-data)
-![Last Updated](https://img.shields.io/badge/updated-2026--08--10-success)
+![Last Updated](https://img.shields.io/badge/updated-2026--08--18-success)
 
-# Geometric Necessity of Fuzzy Cohort Boundaries: A Concentration Analysis of the 7-Simplex
+# Boundary Volume and Cohort Reassignment on the 7-Simplex: A Concentration Analysis Under the Uniform Null
 
 ## 1 | Paper
 
 - Manuscript: [paper.md](paper.md)
-- Version: 1.2.0
+- Version: 2.0.0
 - DOI: [10.5281/zenodo.18945477](https://doi.org/10.5281/zenodo.18945477)
 - **New here?** [AGENTS.md](AGENTS.md) is a file-by-file guide for any reader (human or AI agent) on how to use the paper + every metadata file.
 - Machine-readable bundle: [paper.yaml](paper.yaml) (Paper Spec), [SPINE.yaml](SPINE.yaml), [ONTOLOGY.yaml](ONTOLOGY.yaml), [GLOSSARY.md](GLOSSARY.md)
@@ -21,11 +21,11 @@
 ```bibtex
 @article{Zharnikov2026,
   author  = {Zharnikov, Dmitry},
-  title   = {Geometric Necessity of Fuzzy Cohort Boundaries: A Concentration Analysis of the 7-Simplex},
+  title   = {Boundary Volume and Cohort Reassignment on the 7-Simplex: A Concentration Analysis Under the Uniform Null},
   year    = {2026},
   doi     = {10.5281/zenodo.18945477},
   url     = {https://doi.org/10.5281/zenodo.18945477},
-  version = {1.2.0},
+  version = {2.0.0},
 }
 ```
 
@@ -37,4 +37,4 @@ Code (if any): MIT — see hub-level [../LICENSE](../LICENSE). Data, figures, ta
 
 ---
 
-*Last updated: 2026-08-10*
+*Last updated: 2026-08-18*

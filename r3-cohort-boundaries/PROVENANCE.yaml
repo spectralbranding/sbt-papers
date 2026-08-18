@@ -1,8 +1,8 @@
-# PROVENANCE.yaml — Cohort Boundaries in High-Dimensional Perception Space
+# PROVENANCE.yaml — Boundary Volume and Cohort Reassignment on the 7-Simplex
 # Fork history and submission records per the Research-as-Repository protocol
 
 provenance:
-  paper_title: "Cohort Boundaries in High-Dimensional Perception Space: A Concentration of Measure Analysis"
+  paper_title: "Boundary Volume and Cohort Reassignment on the 7-Simplex: A Concentration Analysis Under the Uniform Null"
   citation_key: "2026f"
   repository: "spectralbranding/sbt-papers/r3-cohort-boundaries"
 

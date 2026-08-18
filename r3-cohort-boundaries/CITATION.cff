@@ -5,9 +5,9 @@ authors:
     given-names: Dmitry
     affiliation: "Independent Researcher"
     orcid: "https://orcid.org/0009-0000-6893-9231"
-title: "Geometric Necessity of Fuzzy Cohort Boundaries: A Concentration Analysis of the 7-Simplex"
-version: 1.2.0
-date-released: 2026-06-27
+title: "Boundary Volume and Cohort Reassignment on the 7-Simplex: A Concentration Analysis Under the Uniform Null"
+version: 2.0.0
+date-released: 2026-08-18
 url: "https://doi.org/10.5281/zenodo.18945477"
 repository-code: "https://github.com/spectralbranding/sbt-papers"
 identifiers:
@@ -30,7 +30,7 @@ preferred-citation:
   authors:
     - family-names: Zharnikov
       given-names: Dmitry
-  title: "Geometric Necessity of Fuzzy Cohort Boundaries: A Concentration Analysis of the 7-Simplex"
+  title: "Boundary Volume and Cohort Reassignment on the 7-Simplex: A Concentration Analysis Under the Uniform Null"
   year: 2026
   doi: "10.5281/zenodo.18945477"
   url: "https://doi.org/10.5281/zenodo.18945477"

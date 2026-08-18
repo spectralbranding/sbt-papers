@@ -2,7 +2,7 @@
 
 ## Glossary
 
-_Terms used by **2026f** (Geometric Necessity of Fuzzy Cohort Boundaries: A Concentration Analysis of the 7-Simplex). Defined terms this paper introduces, refines, or imports from the corpus ontology._
+_Terms used by **2026f** (Boundary Volume and Cohort Reassignment on the 7-Simplex: A Concentration Analysis Under the Uniform Null). Defined terms this paper introduces, refines, or imports from the corpus ontology._
 
 *Terms introduced by this paper*
 
