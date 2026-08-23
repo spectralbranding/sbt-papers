@@ -90,7 +90,7 @@ The mechanism is structurally analogous to Tversky's [-@tversky-1972-elimination
 
 ### Hypotheses
 
-This paper models the LLM spectral profile as a weight vector $\mathbf{w}_{LLM} = [w_1^{LLM}, \ldots, w_8^{LLM}]$ with structurally predictable properties: high weights on verifiable dimensions (Economic, Experiential) that are well-represented in training data through product specifications, reviews, and feature comparisons; moderate weights on textually-represented dimensions (Semiotic, Narrative) that have textual correlates but lack perceptual depth; and low weights on perception-dependent dimensions (Ideological, Social, Cultural, Temporal) that require embodied experience, social context, cultural embeddedness, or lived temporal continuity that the model lacks. This structural profile generates four primary hypotheses:
+This paper models the LLM spectral profile as a weight vector $\mathbf{w}_{\text{LLM}} = [w_1^{\text{LLM}}, \ldots, w_8^{\text{LLM}}]$ with structurally predictable properties: high weights on verifiable dimensions (Economic, Experiential) that are well-represented in training data through product specifications, reviews, and feature comparisons; moderate weights on textually-represented dimensions (Semiotic, Narrative) that have textual correlates but lack perceptual depth; and low weights on perception-dependent dimensions (Ideological, Social, Cultural, Temporal) that require embodied experience, social context, cultural embeddedness, or lived temporal continuity that the model lacks. This structural profile generates four primary hypotheses:
 
 **Hypothesis 1 (Dimensional Bias):** LLMs assign systematically higher implicit weights to Economic and Experiential dimensions than to Narrative, Ideological, Cultural, and Temporal dimensions when processing brand comparison queries.
 
@@ -203,15 +203,15 @@ Because the structured weight allocation design requires models to output JSON w
 
 **Step 1: JSON parsing and validation.** Each model response is parsed as JSON. Responses that fail JSON parsing are discarded and re-prompted (fewer than 3% of calls across all models). The eight-dimensional weight vector is extracted from the parsed output.
 
-**Step 2: Weight sum tolerance and renormalization.** Valid responses must have a total point allocation within 15% of the target 100 points (i.e., between 85 and 115). Responses outside this tolerance are discarded. Valid responses are renormalized to sum to exactly 100, preserving relative proportions: $w_i^{norm} = w_i \times 100 / \sum_{j=1}^{8} w_j$.
+**Step 2: Weight sum tolerance and renormalization.** Valid responses must have a total point allocation within 15% of the target 100 points (i.e., between 85 and 115). Responses outside this tolerance are discarded. Valid responses are renormalized to sum to exactly 100, preserving relative proportions: $w_i^{\text{norm}} = w_i \times 100 / \sum_{j=1}^{8} w_j$.
 
-**Step 3: Spectral profile estimation.** For each model, the implicit spectral profile is estimated as the mean normalized weight vector across all organic responses (Types 1 and 2): $\hat{w}_i^{LLM} = \bar{w}_i / \sum_{j=1}^{8} \bar{w}_j$, where $\bar{w}_i$ is the mean allocated weight for dimension $i$ across all responses.
+**Step 3: Spectral profile estimation.** For each model, the implicit spectral profile is estimated as the mean normalized weight vector across all organic responses (Types 1 and 2): $\hat{w}_i^{\text{LLM}} = \bar{w}_i / \sum_{j=1}^{8} \bar{w}_j$, where $\bar{w}_i$ is the mean allocated weight for dimension $i$ across all responses.
 
 **Step 4: Dimensional Collapse Index (DCI).** The DCI measures the degree to which a model's weight allocation concentrates on Economic and Semiotic dimensions --- the two dimensions most tied to verifiable, quantifiable brand attributes. It is defined as:
 
-$$DCI = (w_{Economic} + w_{Semiotic}) / 100$$
+$$DCI = (w_{\text{Economic}} + w_{\text{Semiotic}}) / 100$$
 
-where $w_{Economic}$ and $w_{Semiotic}$ are the model's mean allocated weights for those dimensions. Under a uniform allocation (each dimension receives 12.5 points), the baseline DCI is $(12.5 + 12.5) / 100 = .250$. Values above .250 indicate concentration toward verifiable dimensions; values below indicate preservation of perception-dependent dimensions.
+where $w_{\text{Economic}}$ and $w_{\text{Semiotic}}$ are the model's mean allocated weights for those dimensions. Under a uniform allocation (each dimension receives 12.5 points), the baseline DCI is $(12.5 + 12.5) / 100 = .250$. Values above .250 indicate concentration toward verifiable dimensions; values below indicate preservation of perception-dependent dimensions.
 
 A note on the Experiential dimension: Table 4 shows that Experiential (150% of baseline) is the most inflated single dimension in the global brand results, exceeding both Economic (117%) and Semiotic (118%). The DCI formula intentionally captures the *economic-semiotic* over-weighting pattern as a paired index of verifiability concentration, because these two dimensions are most directly tied to checkable factual attributes (price, specifications, visual identity). Experiential operates as a distinct inflation mechanism: models inflate it because experiential attributes (features, functionality, sensory properties) are richly represented in product reviews, but its inflation reflects functional-descriptive abundance rather than the verifiability asymmetry captured by the Economic-Semiotic pair. The DCI therefore understates total collapse relative to the soft dimensions when Experiential is high, but correctly identifies the verifiability-driven collapse mechanism. Readers should interpret DCI alongside the full dimensional weight table (Tables 4 and 5) to capture the Experiential inflation pattern separately.
 
@@ -219,23 +219,23 @@ A note on the Experiential dimension: Table 4 shows that Experiential (150% of b
 
 ### Statistical Model
 
-For a given model $m$ and brand pair $p$, the PRISM-B instrument elicits a weight vector $\mathbf{w}_{mp} = [w_{mp,1}, \ldots, w_{mp,8}]$ where $\sum_{i=1}^{8} w_{mp,i} = 100$. Each call $c$ produces a raw allocation $\mathbf{w}_{mpc}$; the model-pair spectral profile is the mean across repetitions:
+For a given model $m$ and brand pair $p$, the PRISM-B instrument elicits a weight vector $\mathbf{w}_{\text{mp}} = [w_{\text{mp},1}, \ldots, w_{\text{mp},8}]$ where $\sum_{i=1}^{8} w_{\text{mp},i} = 100$. Each call $c$ produces a raw allocation $\mathbf{w}_{\text{mpc}}$; the model-pair spectral profile is the mean across repetitions:
 
-$$\hat{\mathbf{w}}_{mp} = \frac{1}{C} \sum_{c=1}^{C} \mathbf{w}_{mpc}$$
+$$\hat{\mathbf{w}}_{\text{mp}} = \frac{1}{C} \sum_{c=1}^{C} \mathbf{w}_{\text{mpc}}$$
 
 where $C$ is the number of valid responses (typically 3 repetitions $\times$ 2 prompt types = 6). The model-level spectral profile aggregates across pairs:
 
-$$\hat{\mathbf{w}}_m = \frac{1}{P} \sum_{p=1}^{P} \hat{\mathbf{w}}_{mp}$$
+$$\hat{\mathbf{w}}_m = \frac{1}{P} \sum_{p=1}^{P} \hat{\mathbf{w}}_{\text{mp}}$$
 
 The Dimensional Collapse Index for model $m$ on pair $p$ is:
 
-$$DCI_{mp} = \frac{w_{mp,\text{Econ}} + w_{mp,\text{Sem}}}{100}$$
+$$DCI_{\text{mp}} = \frac{w_{mp,\text{Econ}} + w_{mp,\text{Sem}}}{100}$$
 
 with standard error estimated from the repetition-level variance:
 
-$$SE(DCI_{mp}) = \frac{1}{100} \sqrt{s^2_{mp,\text{Econ}} + s^2_{mp,\text{Sem}} + 2 \cdot \text{cov}(w_{mp,\text{Econ}}, w_{mp,\text{Sem}})}$$
+$$SE(DCI_{\text{mp}}) = \frac{1}{100} \sqrt{s^2_{mp,\text{Econ}} + s^2_{mp,\text{Sem}} + 2 \cdot \text{cov}(w_{mp,\text{Econ}}, w_{mp,\text{Sem}})}$$
 
-where $s^2_{mp,i}$ is the sample variance of dimension $i$'s allocation across repetitions. This formalization permits confidence intervals on all reported DCI values and enables formal comparison of DCI across model clusters, brand pair types, and cultural groups using standard parametric tests.
+where $s^2_{\text{mp},i}$ is the sample variance of dimension $i$'s allocation across repetitions. This formalization permits confidence intervals on all reported DCI values and enables formal comparison of DCI across model clusters, brand pair types, and cultural groups using standard parametric tests.
 
 The Economic-plus-Semiotic pair is selected as the verifiability index for a substantive reason, not as an algebraic convenience. Economic content (price tier, value-for-money, scarcity) and Semiotic content (visual identity, naming, design language) share the property that they are *checkable from training data alone*: a text-conditioned encoder can ground them without recourse to embodied experience or sustained social context. The remaining perception-dependent dimensions --- Cultural, Temporal, Narrative, and Ideological --- are exactly those that fall into the encoder bottleneck specified in Figure 1, because grounding them requires inputs (lived continuity, community participation, embodied cultural codes, evaluative commitment) that text-only corpora encode only sparsely. DCI therefore measures concentration on the *verifiability anchors* of the eight-dimensional space; high DCI is the empirical signature of a perception that has retreated to those anchors. Experiential weight is reported separately in Tables 4 and 5 because its inflation reflects functional-descriptive abundance in product reviews rather than the verifiability-asymmetry mechanism the DCI is designed to isolate.
 
