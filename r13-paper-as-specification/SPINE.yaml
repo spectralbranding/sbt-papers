@@ -491,6 +491,53 @@ propositions:
         anchor: "Prior art occupying the harvest-time and born-readable positions (§3.2)"
         citation_keys: [jaradeh-2019-open-research-knowledge, stocker-2025-rethinking-production-publication, bless-2023-scikgtex-latex-package]
     body_sections: ["§3.2 Existing Partial Solutions", "§3.3 The Missing Layer"]
+  - id: P19
+    statement: >-
+      The claim that formal-semantic authoring is impractical for working
+      researchers is too strong as usually stated, and the one field study that
+      tested it says so. Authors given tool support did produce formal
+      representations of their own claims, rated the underlying concept easy,
+      rated the instantiation only moderately difficult, reported high
+      confidence in what they had produced, and said they would do it again.
+      What the study does not establish is generality: its participants were
+      already fluent in knowledge representation and ontologies, so it
+      demonstrates feasibility for a semantically literate population rather
+      than for the median researcher. The defensible form of the adoption
+      argument is therefore about the size of the population that can author a
+      given format without training, not about whether formal authoring is
+      possible at all. Notably, the same participants rated the human-readable
+      rendering of their work as far more important to readers than the formal
+      one, which is an argument for a machine-readable companion beside a
+      human-readable paper rather than in place of it.
+    antecedents: [P3]
+    falsifier: >-
+      If a comparable field study drawn from a population with no prior
+      knowledge-representation background reports the same feasibility and
+      willingness-to-repeat, the literacy qualification is unnecessary and the
+      adoption argument must rest on authoring cost alone.
+    evidence:
+      - type: citation
+        anchor: "Field study publishing a journal special issue as formal claims, with participant difficulty and confidence ratings (§3.2)"
+        citation_keys: [bucur-2023-nanopublication-based-semantic-publishing]
+    body_sections: ["§3.2 Existing Partial Solutions", "§7.5 Adoption Barriers", "§9 Limitations"]
+  - id: P20
+    statement: >-
+      Author-side adoption of a specification standard is necessary but not
+      sufficient, because the obstacle to reforming scholarly communication is
+      a collective-action problem rather than a technical one. Proposals to
+      replace the incumbent publishing system converge on community-governed
+      open standards, substitutable service providers, and funder requirements
+      that redirect institutional money toward open infrastructure. A standard
+      authored by individuals therefore needs an institutional counterpart --
+      a governance body it does not itself constitute -- and its adoption path
+      should be stated in those terms rather than as a purely voluntary
+      diffusion curve.
+    antecedents: [P12]
+    evidence:
+      - type: citation
+        anchor: "Community-governed standards body and funder-driven redirection as the institutional route (§7.5)"
+        citation_keys: [brembs-2023-replacing-academic-journals]
+    body_sections: ["§7.5 Adoption Barriers"]
 
 # ============================================================================
 # Findings -- what the twenty-paper demonstration shows
@@ -631,6 +678,8 @@ external_anchors:
   - {citation_key: rogers-2003-diffusion-innovations-5th, role: theoretical_anchor, spine_nodes: [P12], note: "Diffusion of innovations -- staged adoption pathway"}
   - {citation_key: aczel-2026-investigating-analytical-robustness, role: motivating_evidence, spine_nodes: [P2, P6], note: "Many-analysts reanalysis of 100 studies: the cost of analytical underspecification, measured"}
   - {citation_key: stocker-2025-rethinking-production-publication, role: prior_art_closest, spine_nodes: [P3, P18], note: "reborn -- machine-readable findings emitted from the computing environment during data analysis, deposited with the article and collected into a knowledge graph; the born-readable position, and the closest prior art"}
+  - {citation_key: bucur-2023-nanopublication-based-semantic-publishing, role: prior_art_closest, spine_nodes: [P3, P19], note: "Field study: a journal special issue published entirely as formal claims, including reviews and decisions; participant difficulty, confidence and willingness-to-repeat ratings -- the closest thing this literature has to an adoption test"}
+  - {citation_key: brembs-2023-replacing-academic-journals, role: theoretical_anchor, spine_nodes: [P20], note: "The institutional counterpart: community-governed open standards, substitutable providers, funder-driven redirection; frames the obstacle as a collective-action problem"}
 
 # ============================================================================
 # Open questions / boundary edges

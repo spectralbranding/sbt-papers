@@ -274,6 +274,38 @@ claims:
   status: not_tested
   depends_on:
   - P3
+- id: P19
+  type: proposition
+  statement: 'The claim that formal-semantic authoring is impractical for working researchers is too strong
+    as usually stated, and the one field study that tested it says so. Authors given tool support did
+    produce formal representations of their own claims, rated the underlying concept easy, rated the instantiation
+    only moderately difficult, reported high confidence in what they had produced, and said they would
+    do it again. What the study does not establish is generality: its participants were already fluent
+    in knowledge representation and ontologies, so it demonstrates feasibility for a semantically literate
+    population rather than for the median researcher. The defensible form of the adoption argument is
+    therefore about the size of the population that can author a given format without training, not about
+    whether formal authoring is possible at all. Notably, the same participants rated the human-readable
+    rendering of their work as far more important to readers than the formal one, which is an argument
+    for a machine-readable companion beside a human-readable paper rather than in place of it.'
+  testable: true
+  tested_in_paper: true
+  status: not_tested
+  depends_on:
+  - P3
+- id: P20
+  type: proposition
+  statement: Author-side adoption of a specification standard is necessary but not sufficient, because
+    the obstacle to reforming scholarly communication is a collective-action problem rather than a technical
+    one. Proposals to replace the incumbent publishing system converge on community-governed open standards,
+    substitutable service providers, and funder requirements that redirect institutional money toward
+    open infrastructure. A standard authored by individuals therefore needs an institutional counterpart
+    -- a governance body it does not itself constitute -- and its adoption path should be stated in those
+    terms rather than as a purely voluntary diffusion curve.
+  testable: false
+  tested_in_paper: true
+  status: not_tested
+  depends_on:
+  - P12
 methodology:
   type: empirical
   design: 'Paper Spec v0.1.0: a YAML 1.2 companion file validatable against a JSON Schema, with top-level
@@ -342,6 +374,12 @@ acceptance:
   falsification: If a born-readable pipeline is shown to emit acceptance criteria, falsification conditions
     and dependency criticality for a paper without the author supplying them separately, author-time specification
     is redundant rather than complementary and the division collapses.
+- claim_id: P19
+  criterion: Holds if the claim that formal-semantic authoring is impractical for working researchers
+    is too strong as usually stated, and the one field study that tested it says so.
+  falsification: If a comparable field study drawn from a population with no prior knowledge-representation
+    background reports the same feasibility and willingness-to-repeat, the literacy qualification is unnecessary
+    and the adoption argument must rest on authoring cost alone.
 dependencies:
 - relationship: extends
   claim: Research-as-Repository (2026u) is the process/infrastructure layer that the paper.yaml internal
@@ -422,6 +460,15 @@ dependencies:
     deposited with the article and collected into a knowledge graph; the born-readable position, and the
     closest prior art
   doi: 10.1038/s41597-025-04905-0
+- relationship: extends
+  claim: 'Field study: a journal special issue published entirely as formal claims, including reviews
+    and decisions; participant difficulty, confidence and willingness-to-repeat ratings -- the closest
+    thing this literature has to an adoption test'
+  doi: 10.7717/peerj-cs.1159
+- relationship: extends
+  claim: 'The institutional counterpart: community-governed open standards, substitutable providers, funder-driven
+    redirection; frames the obstacle as a collective-action problem'
+  doi: 10.1098/rsos.230206
 contradictions: []
 limitations:
 - description: 'The paper is theoretical: the four propositions are stated but not tested, and there is
