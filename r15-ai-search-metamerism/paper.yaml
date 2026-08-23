@@ -32,7 +32,7 @@ meta:
     Using PRISM-B across 21,350 API calls to 24 models spanning seven training traditions and 15 languages,
     a Dimensional Collapse Index (DCI; uniform baseline = .250) is computed. Mean DCI equals .294 for
     global brands ($p < .001$) and .356 cross-culturally ($d = 3.373$). Cross-model convergence is near-perfect
-    (cosine = .977). Local brands collapse 24% more severely than global brands ($d = .92$, in five FMCG
+    (cosine = .977). Local brands collapse 20% more severely than global brands ($d = .92$, in five FMCG
     pairs tested). Native-language prompting is null in home markets ($p = .716$) but reduces collapse
     up to .095 in foreign-market frames ($p = .002$). Geopolitical context independently modulates weights
     ($p < .001$). Structured Brand Function specifications recover approximately 20% of lost dimensionality.
@@ -135,6 +135,23 @@ claims:
   testable: false
   tested_in_paper: true
   status: not_tested
+- id: P9
+  type: proposition
+  statement: Dimensional collapse and persona heterogeneity are claims on different axes, and evidence
+    about one does not transfer to the other. This paper claims collapse in discriminability ACROSS STIMULUS
+    OBJECTS — whether one observer resolves two brands as different — which is a property of that observer's
+    weight vector w_LLM. Persona-simulation work claims heterogeneity ACROSS SIMULATED INDIVIDUALS — whether
+    many synthetic respondents differ from one another as real respondents do. A model can carry rich
+    between-person variance and still project every brand onto the same two dimensions, because between-person
+    spread says nothing about which dimensions any single reader weights. Recovery of individual-level
+    fidelity by richer elicitation therefore bounds neither the magnitude nor the existence of the collapse
+    reported here; it bears on a different quantity.
+  testable: false
+  tested_in_paper: true
+  status: not_tested
+  depends_on:
+  - P2
+  - P4
 methodology:
   type: empirical
   design: 'PRISM-B forced-allocation elicitation: each model allocates exactly 100 points across the eight
@@ -192,7 +209,7 @@ dependencies:
   reference: wyszecki-1982-color-science-concepts
 - relationship: extends
   claim: Johnson-Lindenstrauss lemma — dimension-reduction distortion
-  reference: johnson-1984-extensions-lipschitz
+  doi: 10.1090/conm/026/737400
 - relationship: extends
   claim: Elimination by aspects — near-zero-weight dimensions effectively eliminated
   doi: 10.1037/h0032955
@@ -228,6 +245,25 @@ dependencies:
 - relationship: extends
   claim: Marketing in the age of Alexa — channel shift to algorithmic recommendation
   reference: dawar-2018-marketing-age-alexa
+- relationship: extends
+  claim: Theory-informed structured-interview simulation restores individual-level fidelity across backbones;
+    addressed on the axis distinction, and independently corroborative in reporting persona prompting
+    as a centrally clustered, low-heterogeneity distribution
+  doi: 10.18653/v1/2026.eacl-long.82
+- relationship: extends
+  claim: Belief transfer is factor-local — a belief seeded inside a latent factor moves the estimate,
+    the same belief from a random factor is indistinguishable from demographics alone; cite for factor-locality
+    and the demographics-null, not for effect sizes
+  doi: 10.18653/v1/2024.findings-emnlp.819
+- relationship: extends
+  claim: 'Noise-floor discipline: the best configuration remains several times the bootstrap sampling-noise
+    floor, and the framing of the output as an estimator with no internal error signal rather than an
+    artificial human; quote raw distances only'
+  doi: 10.2139/ssrn.7306183
+- relationship: extends
+  claim: Luxury-research sampling standards; its own stated boundary permits broad non-consumer sampling
+    when non-consumers' perceptions of luxury are the object of study, which is the case here
+  doi: 10.1002/mar.70245
 contradictions: []
 limitations:
 - description: All observations are LLM-generated with no human validation of dimensional weight profiles;

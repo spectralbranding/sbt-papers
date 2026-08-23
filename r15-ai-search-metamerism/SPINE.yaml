@@ -66,6 +66,26 @@ boundary_conditions:
     observable: "Presence/absence of verified retrieval grounding at inference."
     excludes: "Retrieval-augmented agents over verified soft-dimension feeds."
     body_sections: ["§Discussion: Boundary Conditions"]
+  - id: C3
+    statement: >-
+      The reported magnitudes are for short, structured brand-comparison
+      elicitations. Narrative-rich, theory-informed elicitation protocols are
+      outside the tested envelope; they are expected to move the estimates and
+      are not claimed to leave the collapse intact at the same magnitude.
+    observable: "Prompt length, structure, and narrative depth of the elicitation."
+    excludes: "Long-form theory-informed interview protocols."
+    body_sections: ["§Discussion: Boundary Conditions"]
+  - id: C4
+    statement: >-
+      The read is over publicly available discourse, not a sampled respondent
+      cohort. A reading of a brand therefore reports how that brand is described
+      in the open record, and is never the perception of a verified consumer of
+      that brand at a given market level. The reading weakens as a category's
+      relevant buyers become less represented in public discourse; elite luxury
+      is the studied case.
+    observable: "Representation of a category's actual buyers in public discourse."
+    excludes: "Any claim about verified luxury consumers' perceptions."
+    body_sections: ["§Discussion: Boundary Conditions", "§Discussion: Limitations"]
 
 # ============================================================================
 # Observations — the experimental runs (the empirical substrate)
@@ -211,7 +231,7 @@ measurements:
     units: "verifiability-concentration index (baseline .250)"
     body_sections: ["§Results: Brand Function resolution (Run 4)"]
   - id: m_heterogeneity_null
-    statement: "MANOVA on per-model DCI: F(5,54) = 0.59, p = .712 (Run 2); t = .221, p = .413, d = .043 (Run 5) — no AI observer heterogeneity beyond sampling noise."
+    statement: "MANOVA on per-model DCI: F(5,54) = .59, p = .712 (Run 2); t = .221, p = .413, d = .043 (Run 5) — no AI observer heterogeneity beyond sampling noise."
     source_observations: [O1, O3]
     generating_method: M3
     value: "p = .712; d = .043"
@@ -282,7 +302,7 @@ propositions:
     evidence:
       - type: theory
         anchor: "JL lemma; optical metamerism analogue; elimination-by-aspects mechanism."
-        citation_keys: [johnson-1984-extensions-lipschitz, wyszecki-1982-color-science-concepts, tversky-1972-elimination-by-aspects]
+        citation_keys: [johnson-1984-extensions-lipschitz-mappings, wyszecki-1982-color-science-concepts, tversky-1972-elimination-by-aspects]
     body_sections: ["§Theoretical Framework: Spectral Metamerism and Dimensional Collapse"]
   - id: P5
     statement: >-
@@ -350,6 +370,34 @@ propositions:
         anchor: "Implications for search advertising theory; managerial and practical implications; convergence with the AI-defensibility directive."
         citation_keys: [hermann-2026-trusting-ai-agents, sabbah-2026-marketing-machines-how]
     body_sections: ["§Implications for Search Advertising Theory", "§Discussion: Practical/Managerial Implications"]
+  - id: P9
+    statement: >-
+      Dimensional collapse and persona heterogeneity are claims on different
+      axes, and evidence about one does not transfer to the other. This paper
+      claims collapse in discriminability ACROSS STIMULUS OBJECTS — whether one
+      observer resolves two brands as different — which is a property of that
+      observer's weight vector w_LLM. Persona-simulation work claims
+      heterogeneity ACROSS SIMULATED INDIVIDUALS — whether many synthetic
+      respondents differ from one another as real respondents do. A model can
+      carry rich between-person variance and still project every brand onto the
+      same two dimensions, because between-person spread says nothing about
+      which dimensions any single reader weights. Recovery of individual-level
+      fidelity by richer elicitation therefore bounds neither the magnitude nor
+      the existence of the collapse reported here; it bears on a different
+      quantity.
+    conditions: "C1, C3"
+    antecedents: [P2, P4]
+    evidence:
+      - type: analytic
+        anchor: "The w_LLM weight-vector construct is defined over dimensions for one observer, not over a population of observers."
+        citation_keys: []
+      - type: contrary_evidence_addressed
+        anchor: "Theory-informed structured-interview simulation substantially restores individual-level fidelity across backbones while leaving the observer's dimensional weighting untouched."
+        citation_keys: [wang-2026-generative-personality-simulation]
+      - type: convergent_evidence
+        anchor: "Belief transfer is factor-local: seeding a belief inside a latent factor moves the estimate, the same belief from a random factor does not — the signature of reading off a low-dimensional latent coordinate."
+        citation_keys: [chuang-2024-beyond-demographics-aligning]
+    body_sections: ["§Discussion: Boundary Conditions", "§Results: Brand Function resolution (Run 4)", "§Dimensional Collapse in Related Domains"]
 
 # ============================================================================
 # Findings — what the experiments demonstrate (mapped to the hypotheses)
@@ -453,7 +501,7 @@ negative_findings:
   - id: NF1
     statement: >-
       H3 NOT SUPPORTED — AI observer heterogeneity: per-model DCI variation falls
-      within sampling noise (F(5,54) = 0.59, p = .712; Run 5 t = .221, p = .413,
+      within sampling noise (F(5,54) = .59, p = .712; Run 5 t = .221, p = .413,
       d = .043). There are no distinct AI observer cohorts at the DCI level;
       collapse is shared across architectures. This is central: it forecloses
       platform-switching as a strategic hedge.
@@ -565,6 +613,28 @@ alternative_explanations:
       measures perceptual-level dimensional weight directly, not aggregate
       ranking.
     body_sections: ["§Theoretical Framework: The AI Observer Problem", "§Connection to Broader Trends"]
+  - id: A3
+    statement: >-
+      The collapse could be an artifact of impoverished elicitation rather than
+      a property of the observer's weight vector, since theory-informed,
+      narrative-rich persona protocols substantially restore individual-level
+      fidelity in a neighbouring domain, and this paper's prompts are short
+      brand-comparison elicitations.
+    rules_out_required: [P9]
+    ruled_out_by: [P9, F2, NF1, F4]
+    rules_out_status: "rejected"
+    reasoning: >-
+      The restored quantity is heterogeneity across simulated individuals, not
+      discriminability across stimulus objects, so it does not address w_LLM
+      (P9). Independently: the collapse is invariant across 24 architectures and
+      seven training traditions (F2) with a null heterogeneity test (NF1), which
+      an elicitation artifact would not produce; and the one intervention that
+      does add dimensional information to the prompt reduces the index by only
+      about a fifth and leaves it above baseline (F4) — measured on the
+      stimulus-discrimination axis, where the objection would have to bite.
+      Elicitation richness nonetheless bounds the estimates rather than the
+      claim, which is recorded as C3.
+    body_sections: ["§Discussion: Boundary Conditions"]
 
 # ============================================================================
 # Limitations — honest scope of the empirical claims
@@ -648,7 +718,7 @@ external_anchors:
   - {citation_key: brakus-2009-brand-experience-what, role: framework_mapped, spine_nodes: [P1], note: "Brand experience scale — subsumed in Experiential"}
   - {citation_key: kapferer-2012-new-strategic-brand, role: framework_mapped, spine_nodes: [P1], note: "Brand identity prism — culture facet maps to Cultural/Ideological"}
   - {citation_key: wyszecki-1982-color-science-concepts, role: foundational_analogue, spine_nodes: [P4], note: "Optical metamerism — the perceptual analogue grounding spectral metamerism"}
-  - {citation_key: johnson-1984-extensions-lipschitz, role: foundational_theory, spine_nodes: [P4], note: "Johnson-Lindenstrauss lemma — dimension-reduction distortion"}
+  - {citation_key: johnson-1984-extensions-lipschitz-mappings, role: foundational_theory, spine_nodes: [P4], note: "Johnson-Lindenstrauss lemma — dimension-reduction distortion"}
   - {citation_key: tversky-1972-elimination-by-aspects, role: mechanism_analogue, spine_nodes: [P4], note: "Elimination by aspects — near-zero-weight dimensions effectively eliminated"}
   - {citation_key: gersho-1991-vector-quantization-signal, role: foundational_theory, spine_nodes: [P7], note: "Vector quantization — independent quantizers converge on a common partition under small rate budget"}
   - {citation_key: shannon-1959-coding-theorems-discrete, role: foundational_theory, spine_nodes: [P7], note: "Rate-distortion theory — minimum-distortion encoding under a fidelity criterion"}
@@ -660,6 +730,10 @@ external_anchors:
   - {citation_key: hashimoto-2025-exploring-personality-structure, role: convergent_evidence, spine_nodes: [P5], note: "Personality-structure compression under LLM mediation"}
   - {citation_key: li-2024-frontiers-determining-validity, role: rival_evidence, spine_nodes: [P3], note: "LLM/human perceptual-map agreement >75% — the aggregate-agreement rival cleared by A2"}
   - {citation_key: dawar-2018-marketing-age-alexa, role: motivating_context, spine_nodes: [P3], note: "Marketing in the age of Alexa — channel shift to algorithmic recommendation"}
+  - {citation_key: wang-2026-generative-personality-simulation, role: rival_evidence, spine_nodes: [P9], note: "Theory-informed structured-interview simulation restores individual-level fidelity across backbones; addressed on the axis distinction, and independently corroborative in reporting persona prompting as a centrally clustered, low-heterogeneity distribution"}
+  - {citation_key: chuang-2024-beyond-demographics-aligning, role: convergent_evidence, spine_nodes: [P6, P9], note: "Belief transfer is factor-local — a belief seeded inside a latent factor moves the estimate, the same belief from a random factor is indistinguishable from demographics alone; cite for factor-locality and the demographics-null, not for effect sizes"}
+  - {citation_key: gordon-2026-richer-personas-improve, role: convergent_evidence, spine_nodes: [P9, C3], note: "Noise-floor discipline: the best configuration remains several times the bootstrap sampling-noise floor, and the framing of the output as an estimator with no internal error signal rather than an artificial human; quote raw distances only"}
+  - {citation_key: holmqvist-2026-conducting-luxury-research, role: boundary_anchor, spine_nodes: [C4], note: "Luxury-research sampling standards; its own stated boundary permits broad non-consumer sampling when non-consumers' perceptions of luxury are the object of study, which is the case here"}
 
 # ============================================================================
 # Open questions / boundary edges
@@ -668,3 +742,4 @@ external_anchors:
 # ============================================================================
 # Spine changelog — append-only
 # ============================================================================
+

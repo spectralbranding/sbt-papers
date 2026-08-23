@@ -6,14 +6,21 @@ authors:
     affiliation: "Independent Researcher"
     orcid: "https://orcid.org/0009-0000-6893-9231"
 title: "Paper as Specification: A Machine-Readable Standard for Scientific Claims"
-version: 1.0.0
-date-released: 2026-06-14
+version: 2.0.0
+date-released: 2026-03-24
 url: "https://doi.org/10.5281/zenodo.19210037"
 repository-code: "https://github.com/spectralbranding/sbt-papers"
 identifiers:
   - type: doi
     value: "10.5281/zenodo.19210037"
     description: "Zenodo concept DOI (all versions)"
+keywords:
+  - scientific verification
+  - machine-readable claims
+  - reproducibility crisis
+  - structured science
+  - open science
+  - dependency graphs
 license:
   - CC-BY-4.0
   - MIT

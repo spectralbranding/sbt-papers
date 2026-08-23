@@ -1,10 +1,12 @@
 # SPINE.yaml — Paper as Specification (2026t / R13)
 #
-# RETROFIT spine: extracted descriptively from the completed paper.md, NOT
-# authored generatively before prose (SPINE-for-all-active-canonical, decision
-# D4; [internal path removed]). It captures
-# the paper's ACTUAL argument backbone as published; it does not extend or
-# aspirationally augment it.
+# MIXED-provenance spine. P0-P12 + F1-F2 + L1-L4 are a RETROFIT: extracted
+# descriptively from the completed paper.md, NOT authored generatively before
+# prose (SPINE-for-all-active-canonical, decision D4;
+# [internal path removed]). P13-P17 and F3
+# were authored GENERATIVELY on 2026-08-23, spine-first, before the prose that
+# states them, per the spine-first protocol. Do not read the retrofit caveat as
+# applying to the whole file.
 #
 # Schema v0.2 ([internal path removed] §"Schema v0.2"): the
 # paper is mostly theory (it proposes the Paper Spec v0.1.0 standard and the
@@ -20,7 +22,7 @@ spine_version: "0.2"
 spine_doc_version: "0.1.0"        # retrofit extraction first lock (2026-06-14, D4)
 paper_key: "2026t"
 title: "Paper as Specification: A Machine-Readable Standard for Scientific Claims"
-provenance: retrofit
+provenance: mixed
 status: "Not exported; see the paper's own version and DOI."
 
 thesis: |
@@ -179,7 +181,7 @@ propositions:
     evidence:
       - type: citation
         anchor: "Historical precedent §2.1-2.2"
-        citation_keys: [eisenstein-1979-printing-press-agent, brin-1998-anatomy-large-scale, guha-2016-schema-org-evolution, bollacker-2008-freebase-collaboratively]
+        citation_keys: [eisenstein-1979-printing-press-as, brin-1998-anatomy-largescale-hypertextual, guha-2016-schemaorg-evolution-structured, bollacker-2008-freebase-collaboratively-created]
     body_sections: ["§2 Historical Precedent"]
   - id: P1
     statement: >-
@@ -194,7 +196,7 @@ propositions:
     evidence:
       - type: citation
         anchor: "Tao 'deductive overhang' + replication-crisis + reviewer-scaling evidence (§1, §2.3)"
-        citation_keys: [tao-2026-how-worlds-top, hanson-2024-strain-scientific-publishing, open-science-2015-estimating-reproducibility, ioannidis-2005-why-most-published]
+        citation_keys: [tao-2026-how-worlds-top, hanson-2024-strain-scientific-publishing, open-2015-estimating-reproducibility-psychological, ioannidis-2005-why-most-published]
     body_sections: ["§1 Introduction", "§2.3 LLMs and the Specification Gap"]
   - id: P2
     statement: >-
@@ -251,7 +253,7 @@ propositions:
     evidence:
       - type: analytic
         anchor: "CI/CD isomorphism + TDD lineage (§5, Figure 1)"
-        citation_keys: [beck-2002-test-driven-development]
+        citation_keys: [beck-2002-testdriven-development-by]
     body_sections: ["§5 Verification Layers"]
   - id: P6
     statement: >-
@@ -319,7 +321,7 @@ propositions:
     evidence:
       - type: citation
         anchor: "AAAI-26 pilot + research-assessment reform (§7.2-7.3)"
-        citation_keys: [goldberg-2026-ai-assisted-peer, hicks-2015-bibliometrics-leiden-manifesto]
+        citation_keys: [goldberg-2026-aiassisted-peer-review, hicks-2015-bibliometrics-leiden-manifesto]
     body_sections: ["§7.2 Scalar Metrics and Structural Alternatives", "§7.3 The Future of Peer Review"]
   - id: P11
     statement: >-
@@ -343,8 +345,125 @@ propositions:
     evidence:
       - type: citation
         anchor: "Adoption barriers, schema.org precedent, diffusion model (§7.5)"
-        citation_keys: [guha-2016-schema-org-evolution, rogers-2003-diffusion-innovations]
+        citation_keys: [guha-2016-schemaorg-evolution-structured, rogers-2003-diffusion-innovations-5th]
     body_sections: ["§7.5 Adoption Barriers"]
+
+  # --------------------------------------------------------------------------
+  # FORK 2026-08-23 -- the realized-system propositions. P13-P17 state what five
+  # months of continuous operation of the standard on the corpus established.
+  # These are NOT restatements of P4-P5; each reports a property of the standard
+  # that was discovered by running it and that the v0.1 design did not predict.
+  # --------------------------------------------------------------------------
+  - id: P13
+    statement: >-
+      At corpus scale the manifest ceases to be the authored artifact and
+      becomes a projection. The author writes a typed claim graph (the spine)
+      and a term module (the ontology); the paper.yaml manifest is generated
+      from them rather than hand-written. The thirty-minute hand-authored
+      manifest remains the correct entry point and the minimum viable instance,
+      but it is the first rung of an adoption ladder, not the terminal form.
+      The ordering is not incidental: the claim graph is generative and the
+      manifest is descriptive, so the graph must precede the manifest.
+    antecedents: [P4]
+    evidence:
+      - type: analytic
+        anchor: "Bundle architecture: spine and ontology as sources, manifest as generated projection"
+        citation_keys: []
+    falsifier: >-
+      If an independent author maintaining a comparable corpus continues to
+      hand-author manifests at scale without adopting a generative upstream
+      artifact, and reports no loss from doing so, the projection claim is a
+      local artifact of this author's tooling rather than a property of the
+      standard at scale.
+    body_sections: ["§4 Paper Spec: A Machine-Readable Standard", "§6 Demonstration"]
+  - id: P14
+    statement: >-
+      The binding constraint on a specification layer for science is not
+      verification of the claims but DRIFT between the specification and the
+      prose it specifies. This has no analogue in the software pipeline the
+      L0-L4 stack was modelled on, because in software the source is the
+      artifact, whereas a specified paper is two artifacts that can silently
+      diverge. An anti-drift gate -- a check that the bundle and its substrate
+      still agree, run on every edit and failing the build on hard drift -- is
+      therefore a necessary sixth component, not an implementation detail of
+      the five layers.
+    antecedents: [P5]
+    evidence:
+      - type: analytic
+        anchor: "Bundle anti-drift gate aggregating citation, ontology, spine-sync and surface checks"
+        citation_keys: [beck-2002-testdriven-development-by]
+    falsifier: >-
+      If a corpus maintained under L0-L4 alone shows no measurable accumulation
+      of specification-prose divergence over a substantial number of edits,
+      then drift is not the binding constraint and the additional gate is
+      redundant.
+    body_sections: ["§5 Verification Layers"]
+  - id: P15
+    statement: >-
+      The deliberate simplification of typed citation relationships to five
+      does not survive sustained use. The vocabulary grew because authors
+      needed distinctions the small set could not carry, and the growth proved
+      nearly free: the great majority of the enlarged vocabulary already had
+      standard published predicates waiting for it. The defensible position is
+      therefore not to compete with the established citation and mapping
+      vocabularies but to author in the researcher's own terms and EMIT into
+      them, reserving novel predicates for the few relations with no prior art.
+    antecedents: [P4, P3]
+    evidence:
+      - type: analytic
+        anchor: "Standards crosswalk: internal vocabularies mapped onto published predicates with bidirectional coverage enforcement"
+        citation_keys: [shotton-2010-cito-citation-typing]
+    falsifier: >-
+      If an independently developed claim vocabulary of comparable size shows
+      substantially lower coverage against the published predicate sets, the
+      convergence is specific to this author's vocabulary rather than a general
+      property, and competing rather than emitting remains defensible.
+    body_sections: ["§4 Paper Spec: A Machine-Readable Standard", "§7 Discussion"]
+  - id: P16
+    statement: >-
+      In an AI-mediated research economy a claim without instrument provenance
+      is not a specified claim. A specification layer must therefore record, on
+      every node, how the node was produced -- by a person, by a named tool, or
+      by a named model under a stated configuration -- together with the record
+      locating the act. The corollary is a division the v0.1 design does not
+      contain: reusable tooling should resolve its instrument indirectly, by
+      role, so it can be changed in one place, whereas a pre-registered study
+      must pin its instrument literally, because an instrument that changes
+      silently between runs is not an instrument.
+    antecedents: [P1, P4]
+    evidence:
+      - type: analytic
+        anchor: "Mandatory per-node provenance; role-resolved tooling versus literally pinned study instruments"
+        citation_keys: []
+    falsifier: >-
+      If claims carrying full instrument provenance prove no more reproducible
+      or auditable than otherwise-identical claims without it, provenance is
+      metadata decoration rather than constitutive, and the field is optional.
+    body_sections: ["§5 Verification Layers", "§7 Discussion"]
+  - id: P17
+    statement: >-
+      The multi-author case has a specified mechanism rather than only an open
+      question. Where a single-author linker must abort when two modules claim
+      the same term, a federated linker can instead CLASSIFY every cross-owner
+      interaction into a small closed set of relations and propose a typed,
+      justified reconciliation before either author has read the other's prose,
+      with definitional identity decided mechanically by content-addressed
+      hashing rather than by judgement. What this does not do is settle the
+      semantic questions for the authors; whether two independent authors
+      accept such proposals is a stated, falsifiable next experiment. The
+      single-author corpus is the degenerate case in which the two parties are
+      the same person at two times and the negotiation collapses to a rebase.
+    antecedents: [P4]
+    falsifier: >-
+      If two independent authors, given the classified interactions and
+      proposed reconciliations for their overlapping modules, reject or ignore
+      the proposals at a rate indistinguishable from unaided negotiation, the
+      mechanism adds no value over reading each other's papers.
+    evidence:
+      - type: analytic
+        anchor: "Federated module negotiation: interaction classification, reconciliation proposals, content-addressed definitional identity"
+        citation_keys: []
+    body_sections: ["§9 Limitations", "§7 Discussion"]
 
 # ============================================================================
 # Findings -- what the twenty-paper demonstration shows
@@ -373,6 +492,20 @@ findings:
     generating_method: M1
     antecedents: [O3]
     body_sections: ["§6.4 Self-Application"]
+  - id: F3
+    statement: >-
+      The standard now runs continuously on the corpus rather than being
+      demonstrated on it once. Every active paper is maintained as a bundle
+      whose manifest, glossary, bibliography and registers are regenerated
+      projections of one content-addressed store, and the link and drift checks
+      run on every edit. The demonstration corpus of the original study has
+      accordingly changed status: it is a dated authoring-cost measurement,
+      not a description of the present system.
+    type: "operating_record"
+    source_measurements: []
+    generating_method: M1
+    antecedents: [O3]
+    body_sections: ["§6 Demonstration", "§7 Discussion"]
 
 # ============================================================================
 # Limitations -- the paper's own honest scope (§9)
@@ -454,21 +587,22 @@ external_anchors:
   - {citation_key: tao-2026-how-worlds-top, role: motivating_problem, spine_nodes: [P1], note: "Tao: 'deductive overhang' + need for a semi-formal language of scientific talk"}
   - {citation_key: hanson-2024-strain-scientific-publishing, role: motivating_evidence, spine_nodes: [P1], note: "Publication growth (5%/yr) outpacing reviewer availability"}
   - {citation_key: ioannidis-2005-why-most-published, role: motivating_evidence, spine_nodes: [P1], note: "Replication/verification crisis"}
-  - {citation_key: open-science-2015-estimating-reproducibility, role: motivating_evidence, spine_nodes: [P1], note: "Reproducibility crisis in psychology"}
+  - {citation_key: open-2015-estimating-reproducibility-psychological, role: motivating_evidence, spine_nodes: [P1], note: "Reproducibility crisis in psychology"}
   - {citation_key: fang-2012-misconduct-accounts-majority, role: motivating_evidence, spine_nodes: [P2], note: "Retraction-citation burden (avg 35, occasionally thousands)"}
-  - {citation_key: eisenstein-1979-printing-press-agent, role: historical_precedent, spine_nodes: [P0], note: "Printing press as agent of change"}
-  - {citation_key: brin-1998-anatomy-large-scale, role: historical_precedent, spine_nodes: [P0], note: "PageRank -- link structure as quality signal"}
-  - {citation_key: guha-2016-schema-org-evolution, role: precedent_standard, spine_nodes: [P0, P12], note: "schema.org -- individual value before network effects (adoption model)"}
-  - {citation_key: bollacker-2008-freebase-collaboratively, role: historical_precedent, spine_nodes: [P0], note: "Freebase knowledge graph"}
+  - {citation_key: eisenstein-1979-printing-press-as, role: historical_precedent, spine_nodes: [P0], note: "Printing press as agent of change"}
+  - {citation_key: brin-1998-anatomy-largescale-hypertextual, role: historical_precedent, spine_nodes: [P0], note: "PageRank -- link structure as quality signal"}
+  - {citation_key: guha-2016-schemaorg-evolution-structured, role: precedent_standard, spine_nodes: [P0, P12], note: "schema.org -- individual value before network effects (adoption model)"}
+  - {citation_key: bollacker-2008-freebase-collaboratively-created, role: historical_precedent, spine_nodes: [P0], note: "Freebase knowledge graph"}
   - {citation_key: shotton-2010-cito-citation-typing, role: prior_art_closest, spine_nodes: [P3, P4], note: "CiTO -- typed citations; paper-level precursor to claim-level dependencies"}
   - {citation_key: lakens-2021-improving-transparency-falsifiability, role: prior_art_closest, spine_nodes: [P3], note: "scienceverse -- closest prior art; hypothesis-level, R-bound, no cross-paper deps"}
   - {citation_key: jaradeh-2019-open-research-knowledge, role: prior_art_contrast, spine_nodes: [P3], note: "ORKG -- post-hoc lossy extraction vs author-authored spec"}
   - {citation_key: wilkinson-2016-fair-guiding-principles, role: prior_art, spine_nodes: [P3], note: "FAIR -- data not claims"}
   - {citation_key: clark-2014-micropublications-semantic-model, role: prior_art, spine_nodes: [P3], note: "Micropublications -- claim/evidence model, adoption failed"}
-  - {citation_key: beck-2002-test-driven-development, role: theoretical_anchor, spine_nodes: [P5], note: "TDD -- specification-first discipline; CI/CD lineage of L0-L4"}
-  - {citation_key: goldberg-2026-ai-assisted-peer, role: supporting_evidence, spine_nodes: [P10], note: "AAAI-26 pilot -- structured multi-stage review beats single-prompt (+.21 recall)"}
+  - {citation_key: beck-2002-testdriven-development-by, role: theoretical_anchor, spine_nodes: [P5], note: "TDD -- specification-first discipline; CI/CD lineage of L0-L4"}
+  - {citation_key: goldberg-2026-aiassisted-peer-review, role: supporting_evidence, spine_nodes: [P10], note: "AAAI-26 pilot -- structured multi-stage review beats single-prompt (+.21 recall)"}
   - {citation_key: hicks-2015-bibliometrics-leiden-manifesto, role: motivating_problem, spine_nodes: [P10], note: "Leiden Manifesto -- scalar-metric critique"}
-  - {citation_key: rogers-2003-diffusion-innovations, role: theoretical_anchor, spine_nodes: [P12], note: "Diffusion of innovations -- staged adoption pathway"}
+  - {citation_key: rogers-2003-diffusion-innovations-5th, role: theoretical_anchor, spine_nodes: [P12], note: "Diffusion of innovations -- staged adoption pathway"}
+  - {citation_key: aczel-2026-investigating-analytical-robustness, role: motivating_evidence, spine_nodes: [P2, P6], note: "Many-analysts reanalysis of 100 studies: the cost of analytical underspecification, measured"}
 
 # ============================================================================
 # Open questions / boundary edges

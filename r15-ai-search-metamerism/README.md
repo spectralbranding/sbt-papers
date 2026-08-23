@@ -1,13 +1,13 @@
 [![MIT License](https://img.shields.io/badge/Code-MIT-blue.svg)](../LICENSE)
 [![CC-BY 4.0](https://img.shields.io/badge/Data-CC--BY_4.0-lightgrey.svg)](../LICENSE-data)
-![Last Updated](https://img.shields.io/badge/updated-2026--08--13-success)
+![Last Updated](https://img.shields.io/badge/updated-2026--08--23-success)
 
 # Dimensional Collapse in AI-Mediated Search: Large Language Models as Metameric Observers of Brand Advertising
 
 ## 1 | Paper
 
 - Manuscript: [paper.md](paper.md)
-- Version: 3.3.0
+- Version: 3.4.0
 - DOI: [10.5281/zenodo.19422427](https://doi.org/10.5281/zenodo.19422427)
 - **New here?** [AGENTS.md](AGENTS.md) is a file-by-file guide for any reader (human or AI agent) on how to use the paper + every metadata file.
 - Machine-readable bundle: [paper.yaml](paper.yaml) (Paper Spec), [SPINE.yaml](SPINE.yaml), [ONTOLOGY.yaml](ONTOLOGY.yaml), [GLOSSARY.md](GLOSSARY.md)
@@ -25,7 +25,7 @@
   year    = {2026},
   doi     = {10.5281/zenodo.19422427},
   url     = {https://doi.org/10.5281/zenodo.19422427},
-  version = {3.3.0},
+  version = {3.4.0},
 }
 ```
 
@@ -37,4 +37,4 @@ Code (if any): MIT — see hub-level [../LICENSE](../LICENSE). Data, figures, ta
 
 ---
 
-*Last updated: 2026-08-13*
+*Last updated: 2026-08-23*
