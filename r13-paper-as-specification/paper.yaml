@@ -257,6 +257,23 @@ claims:
   status: not_tested
   depends_on:
   - P4
+- id: P18
+  type: proposition
+  statement: 'Approaches to machine-readable scientific knowledge divide by WHEN the structure is created
+    and BY WHAT, not by how expressive the format is. Three positions are occupied. Harvest-time reconstruction
+    builds the structure after publication, from the finished article, by annotators or extraction systems.
+    Born-readable computation emits the structure during data analysis, from the computing environment
+    that produced the result, by instrumenting the analysis itself. Author-time specification records
+    the structure while the paper is written, from the author, about the argument. These are complements
+    rather than rivals, because they can capture different things: an analysis pipeline can emit what
+    it computed but cannot emit what would refute the claim or which cited work is a critical dependency,
+    since neither is present in the computation; and an extraction system after the fact can recover neither.
+    The layers compose, and a corpus wanting all three needs all three.'
+  testable: true
+  tested_in_paper: true
+  status: not_tested
+  depends_on:
+  - P3
 methodology:
   type: empirical
   design: 'Paper Spec v0.1.0: a YAML 1.2 companion file validatable against a JSON Schema, with top-level
@@ -319,6 +336,12 @@ acceptance:
   falsification: If two independent authors, given the classified interactions and proposed reconciliations
     for their overlapping modules, reject or ignore the proposals at a rate indistinguishable from unaided
     negotiation, the mechanism adds no value over reading each other's papers.
+- claim_id: P18
+  criterion: Holds if approaches to machine-readable scientific knowledge divide by WHEN the structure
+    is created and BY WHAT, not by how expressive the format is.
+  falsification: If a born-readable pipeline is shown to emit acceptance criteria, falsification conditions
+    and dependency criticality for a paper without the author supplying them separately, author-time specification
+    is redundant rather than complementary and the division collapses.
 dependencies:
 - relationship: extends
   claim: Research-as-Repository (2026u) is the process/infrastructure layer that the paper.yaml internal
@@ -394,6 +417,11 @@ dependencies:
 - relationship: extends
   claim: 'Many-analysts reanalysis of 100 studies: the cost of analytical underspecification, measured'
   doi: 10.1038/s41586-025-09844-9
+- relationship: extends
+  claim: reborn -- machine-readable findings emitted from the computing environment during data analysis,
+    deposited with the article and collected into a knowledge graph; the born-readable position, and the
+    closest prior art
+  doi: 10.1038/s41597-025-04905-0
 contradictions: []
 limitations:
 - description: 'The paper is theoretical: the four propositions are stated but not tested, and there is

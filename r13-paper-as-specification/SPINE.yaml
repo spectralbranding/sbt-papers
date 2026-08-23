@@ -464,6 +464,33 @@ propositions:
         anchor: "Federated module negotiation: interaction classification, reconciliation proposals, content-addressed definitional identity"
         citation_keys: []
     body_sections: ["§9 Limitations", "§7 Discussion"]
+  - id: P18
+    statement: >-
+      Approaches to machine-readable scientific knowledge divide by WHEN the
+      structure is created and BY WHAT, not by how expressive the format is.
+      Three positions are occupied. Harvest-time reconstruction builds the
+      structure after publication, from the finished article, by annotators or
+      extraction systems. Born-readable computation emits the structure during
+      data analysis, from the computing environment that produced the result,
+      by instrumenting the analysis itself. Author-time specification records
+      the structure while the paper is written, from the author, about the
+      argument. These are complements rather than rivals, because they can
+      capture different things: an analysis pipeline can emit what it computed
+      but cannot emit what would refute the claim or which cited work is a
+      critical dependency, since neither is present in the computation; and an
+      extraction system after the fact can recover neither. The layers compose,
+      and a corpus wanting all three needs all three.
+    antecedents: [P3]
+    falsifier: >-
+      If a born-readable pipeline is shown to emit acceptance criteria,
+      falsification conditions and dependency criticality for a paper without
+      the author supplying them separately, author-time specification is
+      redundant rather than complementary and the division collapses.
+    evidence:
+      - type: citation
+        anchor: "Prior art occupying the harvest-time and born-readable positions (§3.2)"
+        citation_keys: [jaradeh-2019-open-research-knowledge, stocker-2025-rethinking-production-publication, bless-2023-scikgtex-latex-package]
+    body_sections: ["§3.2 Existing Partial Solutions", "§3.3 The Missing Layer"]
 
 # ============================================================================
 # Findings -- what the twenty-paper demonstration shows
@@ -603,6 +630,7 @@ external_anchors:
   - {citation_key: hicks-2015-bibliometrics-leiden-manifesto, role: motivating_problem, spine_nodes: [P10], note: "Leiden Manifesto -- scalar-metric critique"}
   - {citation_key: rogers-2003-diffusion-innovations-5th, role: theoretical_anchor, spine_nodes: [P12], note: "Diffusion of innovations -- staged adoption pathway"}
   - {citation_key: aczel-2026-investigating-analytical-robustness, role: motivating_evidence, spine_nodes: [P2, P6], note: "Many-analysts reanalysis of 100 studies: the cost of analytical underspecification, measured"}
+  - {citation_key: stocker-2025-rethinking-production-publication, role: prior_art_closest, spine_nodes: [P3, P18], note: "reborn -- machine-readable findings emitted from the computing environment during data analysis, deposited with the article and collected into a knowledge graph; the born-readable position, and the closest prior art"}
 
 # ============================================================================
 # Open questions / boundary edges
