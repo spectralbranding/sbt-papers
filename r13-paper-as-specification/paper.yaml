@@ -24,19 +24,19 @@ meta:
   - dependency graphs
   abstract: 'The verification crisis in science is a specification crisis. Papers communicate claims in
     natural language optimized for human comprehension but hostile to machine verification. Three prior
-    generation-specification cycles — printing press and scientific method, internet and structured data,
-    large language models and paper specification — establish a pattern: each breakthrough in information
-    production was resolved by a specification breakthrough, not by faster consumption. This paper introduces
-    Paper Spec v0.1.0, an open YAML standard making a paper''s claims, methodology, acceptance criteria,
-    and results machine-readable without replacing the paper, together with five verification layers from
-    schema validation to retraction cascade analysis. A twenty-paper demonstration across two research
-    programs reveals dependency structures and specification deficiencies invisible in unstructured text,
-    and four formal propositions are advanced with explicit acceptance and falsification criteria. The
-    paper then reports four results that five months of continuous use established and the design did
+    generation-specification cycles — printing press, internet, and large language models — establish
+    a pattern: each breakthrough in information production was resolved by a specification breakthrough,
+    not by faster consumption. This paper introduces Paper Spec v0.1.0, an open YAML standard making a
+    paper''s claims, methodology, acceptance criteria, and results machine-readable without replacing
+    the paper, together with five verification layers from schema validation to retraction cascade analysis.
+    A twenty-paper, two-program demonstration reveals dependency structures and specification deficiencies
+    invisible in unstructured text; four formal propositions carry explicit falsification criteria. The
+    paper then reports five results that five months of continuous use established and the design did
     not predict: at corpus scale the manifest becomes a generated projection of a typed claim graph; drift
     between specification and prose, not claim verification, is the binding constraint; the deliberate
     simplification of typed dependencies does not survive use, and the enlarged vocabulary maps onto existing
-    published predicates; and instrument provenance proves constitutive of a claim.'
+    published predicates; instrument provenance proves constitutive of a claim; and its materiality axis
+    attaches to dependencies rather than claims, leaving selective reporting undetectable by construction.'
 claims:
 - id: P0
   type: proposition
@@ -306,6 +306,40 @@ claims:
   status: not_tested
   depends_on:
   - P12
+- id: P21
+  type: proposition
+  statement: 'A specification standard can carry a materiality axis and still be unable to detect selective
+    reporting, because the axis is attached to what a paper depends ON rather than to what it CLAIMS.
+    In the operating corpus the criticality flag is live and heavily used across dependency edges, and
+    limitations carry a severity, but the claim record has no materiality field at all: its status field
+    records epistemic state -- active, draft, superseded, rejected -- which is a different axis altogether.
+    A claim can be active, true, fully supported and entirely immaterial to the paper''s conclusion, and
+    nothing in the record says so. Because dependency criticality is one of exactly two properties the
+    comparison of standards names as distinguishing this one, the gap is not an omission but a mis-aimed
+    contribution: selective reporting is a claims-side materiality failure, so the stack cannot detect
+    it by construction rather than by oversight.'
+  testable: true
+  tested_in_paper: true
+  status: not_tested
+  depends_on:
+  - P4
+  - P5
+- id: P22
+  type: proposition
+  statement: 'The pattern in which the operating system grows a component the published stack does not
+    contain has now recurred on a second and unrelated axis: retention. The store records a superseded
+    epistemic status, and a substantial number of claims carry it, but none of the five published layers
+    is a retention layer -- nothing in the stack requires that a claim which has been withdrawn or replaced
+    remain visible and linked to what replaced it. Stated narrowly, the published stack has no retention
+    layer although the store does. Because the same shape has now appeared twice on axes that have nothing
+    to do with each other, it is better read as a property of specifying a standard and then operating
+    it than as an incident of either axis.'
+  testable: true
+  tested_in_paper: true
+  status: not_tested
+  depends_on:
+  - P14
+  - P21
 methodology:
   type: empirical
   design: 'Paper Spec v0.1.0: a YAML 1.2 companion file validatable against a JSON Schema, with top-level
@@ -380,6 +414,20 @@ acceptance:
   falsification: If a comparable field study drawn from a population with no prior knowledge-representation
     background reports the same feasibility and willingness-to-repeat, the literacy qualification is unnecessary
     and the adoption argument must rest on authoring cost alone.
+- claim_id: P21
+  criterion: Holds if a specification standard can carry a materiality axis and still be unable to detect
+    selective reporting, because the axis is attached to what a paper depends ON rather than to what it
+    CLAIMS.
+  falsification: If an independent coder, given only a paper's claim records with their epistemic status
+    together with its dependency criticality flags, can identify which of that paper's reported claims
+    are immaterial to its conclusion at agreement substantially above chance, then materiality is recoverable
+    from what the standard already records and no claims-side axis is needed.
+- claim_id: P22
+  criterion: 'Holds if the pattern in which the operating system grows a component the published stack
+    does not contain has now recurred on a second and unrelated axis: retention.'
+  falsification: If a systematic comparison of the operating corpus's components against the five published
+    layers finds that the remaining components map onto L0-L4 without residue, then the drift gate and
+    the retention gap are two incidents rather than a pattern, and the generalization is unsupported.
 dependencies:
 - relationship: extends
   claim: Research-as-Repository (2026u) is the process/infrastructure layer that the paper.yaml internal
@@ -442,7 +490,7 @@ dependencies:
   doi: 10.1186/2041-1480-5-28
 - relationship: extends
   claim: TDD -- specification-first discipline; CI/CD lineage of L0-L4
-  doi: 10.5555/579193
+  reference: beck-2002-testdriven-development-by
 - relationship: extends
   claim: AAAI-26 pilot -- structured multi-stage review beats single-prompt (+.21 recall)
   doi: 10.48550/arXiv.2604.13940
@@ -493,6 +541,12 @@ limitations:
     supplementary material, whether repositories would index it, or whether reviewers would use it --
     and the standard is at v0.1.0, so field names and enums may change, exposing early adopters to specification
     instability (mitigated by the semantic-versioning and migration commitment).'
+  severity: moderate
+  addressable: true
+- description: Selective reporting is outside what the standard can detect. Materiality is recorded on
+    dependencies and on limitations but not on claims, so a paper can specify every claim it makes, pass
+    every layer, and still omit the claims that would have mattered. Closing this requires a claims-side
+    materiality field and a rule about what must be reported, neither of which the current version contains.
   severity: moderate
   addressable: true
 repositories:

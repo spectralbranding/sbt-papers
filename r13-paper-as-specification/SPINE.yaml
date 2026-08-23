@@ -538,6 +538,58 @@ propositions:
         anchor: "Community-governed standards body and funder-driven redirection as the institutional route (§7.5)"
         citation_keys: [brembs-2023-replacing-academic-journals]
     body_sections: ["§7.5 Adoption Barriers"]
+  - id: P21
+    statement: >-
+      A specification standard can carry a materiality axis and still be unable
+      to detect selective reporting, because the axis is attached to what a
+      paper depends ON rather than to what it CLAIMS. In the operating corpus
+      the criticality flag is live and heavily used across dependency edges,
+      and limitations carry a severity, but the claim record has no materiality
+      field at all: its status field records epistemic state -- active, draft,
+      superseded, rejected -- which is a different axis altogether. A claim can be active, true, fully supported and entirely
+      immaterial to the paper's conclusion, and nothing in the record says so.
+      Because dependency criticality is one of exactly two properties the
+      comparison of standards names as distinguishing this one, the gap is not
+      an omission but a mis-aimed contribution: selective reporting is a
+      claims-side materiality failure, so the stack cannot detect it by
+      construction rather than by oversight.
+    antecedents: [P4, P5]
+    evidence:
+      - type: analytic
+        anchor: "Corpus store schema and populated axes: dependency criticality three-valued and populated; claim record five columns with no materiality field"
+        citation_keys: []
+    falsifier: >-
+      If an independent coder, given only a paper's claim records with their
+      epistemic status together with its dependency criticality flags, can
+      identify which of that paper's reported claims are immaterial to its
+      conclusion at agreement substantially above chance, then materiality is
+      recoverable from what the standard already records and no claims-side
+      axis is needed.
+    body_sections: ["§6 What Sustained Use Changed", "§9 Limitations"]
+  - id: P22
+    statement: >-
+      The pattern in which the operating system grows a component the published
+      stack does not contain has now recurred on a second and unrelated axis:
+      retention. The store records a superseded epistemic status, and a
+      substantial number of claims carry it, but none of the five published
+      layers is a retention layer -- nothing in the stack requires that a claim
+      which has been withdrawn or replaced remain visible and linked to what
+      replaced it. Stated narrowly, the published stack has no retention layer
+      although the store does. Because the same shape has now appeared twice on
+      axes that have nothing to do with each other, it is better read as a
+      property of specifying a standard and then operating it than as an
+      incident of either axis.
+    antecedents: [P14, P21]
+    evidence:
+      - type: analytic
+        anchor: "Superseded status live in the claim store; no retention layer among L0-L4"
+        citation_keys: []
+    falsifier: >-
+      If a systematic comparison of the operating corpus's components against
+      the five published layers finds that the remaining components map onto
+      L0-L4 without residue, then the drift gate and the retention gap are two
+      incidents rather than a pattern, and the generalization is unsupported.
+    body_sections: ["§6 What Sustained Use Changed"]
 
 # ============================================================================
 # Findings -- what the twenty-paper demonstration shows
@@ -626,6 +678,17 @@ limitations:
     severity: "scope-bounding"
     affects: [P12]
     body_sections: ["§9 Limitations (No institutional validation; Version 0.1.0)"]
+  - id: L5
+    statement: >-
+      Selective reporting is outside what the standard can detect. Materiality
+      is recorded on dependencies and on limitations but not on claims, so a
+      paper can specify every claim it makes, pass every layer, and still omit
+      the claims that would have mattered. Closing this requires a claims-side
+      materiality field and a rule about what must be reported, neither of
+      which the current version contains.
+    severity: "scope-bounding"
+    affects: [P21, P7]
+    body_sections: ["§9 Limitations (Selective reporting is out of reach)"]
 
 # ============================================================================
 # Cross-paper engagement
@@ -689,6 +752,8 @@ open:
   - "Will journals accept paper.yaml as supplementary material and will repositories index it (institutional adoption, L4)?"
   - "Does the standard's expressiveness extend to complex empirical/statistical designs and non-standard methodologies without extension (L3)?"
   - "How does L4 cross-corpus verification operate at field scale -- the federation infrastructure deferred to the 2026u companion?"
+  - "Would a claims-side materiality field be authorable at acceptable cost, and would it make selective reporting detectable (P21's falsifier)?"
+  - "Do further components of the operating corpus fail to map onto L0-L4, or do drift and retention exhaust the residue (P22's falsifier)?"
 
 # ============================================================================
 # Spine changelog -- append-only
