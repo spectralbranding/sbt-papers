@@ -448,14 +448,14 @@ The metameric fraction is defined by two chosen constants, and earlier versions 
 
 **Table 9.** Mean Metameric Fraction Across a $\pm 20\%$ Grid on Both Classification Thresholds.
 
-| $d_{8D}$ threshold | $d_{1D} < .24$ | $d_{1D} < .27$ | $d_{1D} < .30$ | $d_{1D} < .33$ | $d_{1D} < .36$ |
+| $d_{8D}$ threshold | $d_{1D} < 0.24$ | $d_{1D} < 0.27$ | $d_{1D} < 0.30$ | $d_{1D} < 0.33$ | $d_{1D} < 0.36$ |
 |:---:|:---:|:---:|:---:|:---:|:---:|
 | $> .80$ | 26.2% | 29.4% | 32.5% | 35.6% | 38.5% |
 | $> .90$ | 26.0% | 29.1% | 32.1% | 35.2% | 38.2% |
 | $> 1.00$ | 25.5% | 28.6% | 31.6% | 34.6% | 37.5% |
 | $> 1.20$ (see note) | 23.8% | 26.7% | 29.5% | 32.4% | 35.1% |
 
-*Notes*: Mean over 2,000 trials per cell, $N = 50$ profiles per trial, seed 42; computed by the companion script. The published thresholds are the centre cell ($d_{8D} > 1.0$, $d_{1D} < .30$, 31.6%). The row for $d_{8D} > 1.10$ is omitted for width and falls monotonically between the adjacent rows (30.7% at the centre column).
+*Notes*: Mean over 2,000 trials per cell, $N = 50$ profiles per trial, seed 42; computed by the companion script. The published thresholds are the centre cell ($d_{8D} > 1.0$, $d_{1D} < 0.30$, 31.6%). The row for $d_{8D} > 1.10$ is omitted for width and falls monotonically between the adjacent rows (30.7% at the centre column).
 
 The grid does not support the withdrawn robustness claim as stated, and the two thresholds behave differently. Varying the 8D separation threshold by $\pm 20\%$ moves the fraction by 3.0 percentage points (32.5% to 29.5% at the central 1D threshold), because the log-normal generator places almost all pairs above any of these separations. Varying the 1D collapse threshold by $\pm 20\%$ moves it by 12.0 points (25.5% to 37.5% at the central 8D threshold), and close to proportionally: a pair counts as metameric when its 1D gap falls inside a window whose width is that threshold, so the count scales with it. Across the full grid the fraction ranges from 23.8% to 38.5%.
 
