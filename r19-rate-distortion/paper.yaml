@@ -32,11 +32,11 @@ meta:
     format (100-point allocation, 26 bits) but at an intermediate bounded format (1-5 ordinal scale, 19
     bits), corresponding to a 49.4% reduction in mean distortion (R1 = .172 → R2 = .087). All 17 models
     exhibit this pattern (paired *t*(16) = 11.92, *p* < .001, Cohen''s *d*~z~ = 2.89 for R1 vs R2). Cross-model
-    coefficient of variation averages .140 across all five rate conditions (CV = .171 excluding the structurally
-    degenerate R5 single-dimension condition), indicating codebook convergence across architectures. These
-    findings demonstrate that structured response formats suppress encoder bias and yield higher-fidelity
-    brand perception measurements than unconstrained elicitation, with direct implications for AI-mediated
-    brand research instrument design.'
+    coefficient of variation over the four non-degenerate conditions is .171, above the pre-registered
+    .15 threshold, so codebook convergence is not supported in dispersion; the panel shares ordering,
+    not magnitude. These findings demonstrate that structured response formats suppress encoder bias and
+    yield higher-fidelity brand perception measurements than unconstrained elicitation, with direct implications
+    for AI-mediated brand research instrument design.'
 claims:
 - id: P1
   type: proposition
@@ -92,10 +92,12 @@ claims:
   - P4
 - id: P6
   type: proposition
-  statement: 'Codebook convergence: 17 architectures from distinct training lineages (Western, Chinese,
-    Russian, Indian, Saudi, Japanese) trace essentially the same J-shaped curve (mean cross-model CV .140),
-    indicating the rate-distortion trade-off is an emergent property of the LLM optimization landscape
-    rather than a training-corpus-specific artifact.'
+  statement: Codebook convergence holds in ordering but not in dispersion. All 17 architectures from distinct
+    training lineages (Western, Chinese, Russian, Indian, Saudi, Japanese) place the distortion minimum
+    at the same rate condition and reproduce the same rank ordering of the five conditions; the pre-registered
+    dispersion criterion is not met, since the cross-model CV averaged over the four non-degenerate conditions
+    is .171 against a .15 threshold. The rate-distortion ordering is therefore an emergent property of
+    the encoding task, while the magnitude of distortion at a given rate remains architecture-specific.
   testable: true
   tested_in_paper: true
   status: not_tested
@@ -151,10 +153,9 @@ acceptance:
     ~26 bits), a 49.'
   falsification: If any model achieved lower distortion at a non-R2 rate, P4 fails.
 - claim_id: P6
-  criterion: 'Holds if codebook convergence: 17 architectures from distinct training lineages (Western,
-    Chinese, Russian, Indian, Saudi, Japanese) trace essentially the same J-shaped curve (mean cross-model
-    CV.'
-  falsification: If cross-model CV exceeded the .15 threshold (curves diverged by lineage), P6 weakens.
+  criterion: Holds if codebook convergence holds in ordering but not in dispersion.
+  falsification: If the location of the minimum differed by architecture, or if the rank ordering of the
+    five conditions differed by training lineage, P6 fails.
 dependencies:
 - relationship: extends
   claim: Spectral metamerism (projection bounds) established that retaining 11.6% of an LLM's implicit
@@ -239,10 +240,13 @@ limitations:
     perception.
   severity: moderate
   addressable: true
-- description: Only English prompts were used; native-language effects on the R(D) curve are untested.
+- description: 'Only English prompts were used; native-language effects on the R(D) curve are untested.
     The H4 architectural-separation test is severely underpowered (panels of 15+ models per group needed).
-    The R5 condition produces extreme distortion by construction (a 1-of-8 indicator cannot approximate
-    any realistic eight-dimensional profile).
+    The R5 condition produces extreme distortion by construction: the forced one-of-eight indicator gives
+    a total variation distance of exactly 1 - w_canon,j, so the condition is arithmetic on the canonical
+    profile and contributes no encoder measurement. The design also contains no flat-response baseline
+    arm, which is what would be needed to separate encoder behaviour from the geometry of the canonical
+    profiles in the per-brand comparison.'
   severity: moderate
   addressable: true
 - description: 'H3 (the Shannon bound) is deferred: the analytical Dirichlet-source R(D) lower bound is

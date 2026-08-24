@@ -427,10 +427,17 @@ corpus_precedents:
     relationship: tests
     spine_nodes: [P3, P6, L1]
     note: >-
-      R15 (2026v) is the empirical companion: 21,600+ calls, 24 models confirm
+      R15 (2026v) is the empirical companion: 21,350 calls, 24 models report
       structural dimensional collapse (cross-model cosine .977), local brands
-      collapse 24% more (d=.878), native-language querying does not reduce it —
-      the measured perceptual failure mode R16 theorizes behaviorally.
+      collapsing 20% more (d = .92), and no systematic native-language
+      reduction (58/121 positive, mean +.001) — the measured perceptual failure
+      mode R16 theorizes behaviorally. Same author, same instrument, so this is
+      convergence and not independent confirmation; R15's local condition rests
+      on n = 5 brand pairs, all food and beverage. The cosine is consistent
+      with a shared representational subspace but does not establish one: the
+      same profile against a uniform allocation returns .964 and independent
+      Dirichlet(8) allocations average .905, so the discriminating test is a
+      label-permutation null on the per-model profiles, which has not been run.
   - paper_key: 2026a
     relationship: applies
     spine_nodes: [P0, P4]

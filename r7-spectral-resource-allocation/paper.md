@@ -6,11 +6,11 @@ ORCID: 0009-0000-6893-9231
 
 DOI: [10.5281/zenodo.19009268](https://doi.org/10.5281/zenodo.19009268)
 
-Working Paper v1.2.0 – March 2026 (revised June 2026)
+Working Paper v2.0.0 – March 2026 (revised August 2026)
 
 ## Abstract
 
-Brand managers allocate resources across perceptual dimensions — design, storytelling, pricing, heritage — yet rarely ground those decisions in measured customer salience weights. This paper develops a resource allocation model in which a brand's signal portfolio $s \in \mathbb{R}^8_+$ is evaluated by observer cohorts whose weight vectors $w(c) \in \Delta^7$ reside on the probability simplex, and perceived value is $\langle w(c), s \rangle$ net of a separable convex cost. Five results follow. First, optimal investment is proportional to cohort weight divided by marginal cost, generalizing Dorfman-Steiner [-@dorfman-1954-optimal-advertising-optimal] to multi-dimensional perceptual space (Theorem 1). Second, the economic loss from optimizing under founder rather than cohort weights — the alignment gap — is bounded below by the Fisher-Rao distance between weight vectors (Theorem 2). Third, a single portfolio efficiently serves multiple cohorts only when their weights lie inside a Fisher-Rao ball of radius $r < \pi/4$ (Theorem 3). Fourth, the cost-minimizing portfolio achieving a target perception is unique when all dimensions are active (Theorem 4). Fifth, cohort-specific interaction terms shift investment toward complementary dimensions, generalizing Naik and Raman [-@naik-2003-understanding-impact-synergy] (Theorem 5). The framework supplies a diagnostic (alignment audit) and a prescriptive tool (dimension-specific budget ratios), providing the optimization layer missing from current brand-tracking systems.
+Brand managers allocate resources across perceptual dimensions — design, storytelling, pricing, heritage — yet rarely ground those decisions in measured salience weights. This paper models a brand's signal portfolio $s \in \mathbb{R}^8_+$ as read by observer cohorts whose weight vectors $w(c) \in \Delta^7$ lie on the probability simplex, with perceived value $\langle w(c), s \rangle$ net of separable convex cost. Five results follow. First, optimal investment is proportional to cohort weight over marginal cost, generalizing Dorfman-Steiner [-@dorfman-1954-optimal-advertising-optimal] to eight perceptual dimensions (Theorem 1). Second, where the founder's weights are at least as concentrated as the cohort's, the resulting loss — the alignment gap — is bounded below by a quartic function of Fisher-Rao distance; outside that regime it is not sign-definite (Theorem 2, corrected). Third, one portfolio efficiently serves multiple cohorts only if their weights lie inside a Fisher-Rao ball of radius $r < \pi/4$ (Theorem 3). Fourth, the cost-minimizing portfolio achieving a target perception is unique when all dimensions are active (Theorem 4). Fifth, cohort-specific interaction terms shift investment toward complementary dimensions, generalizing Naik and Raman [-@naik-2003-understanding-impact-synergy] (Theorem 5). The framework supplies a diagnostic (alignment audit) and a prescriptive tool (dimension-specific budget ratios): the optimization layer brand-tracking systems lack.
 
 **Keywords**: brand resource allocation, spectral perception, alignment gap, founder bias, multi-dimensional optimization, cohort targeting
 
@@ -24,11 +24,11 @@ This paper builds on Spectral Brand Theory [@zharnikov-2026-spectral-brand-theor
 
 This paper builds the economic bridge. The resource allocation problem is formalised as follows: given a measured cohort weight profile $w(c) \in \Delta^7$, what signal portfolio $s^* \in \mathbb{R}^8_+$ maximises the cohort's perceived value net of operational cost? The formulation reveals a structural failure mode termed the *alignment gap* — the value loss that occurs when the signal portfolio is optimised for the founder's spectral profile rather than the cohort's. The alignment gap is not a cognitive bias in the psychological sense; it is a geometric property of the divergence between two points on the probability simplex. A founder with high experiential sensitivity and zero economic sensitivity will systematically over-invest in product experience and under-invest in pricing — not because they are irrational, but because they are optimizing the correct objective function with the wrong weights.
 
-The alignment gap formalises what practitioners call "product-market fit failure." The term has remained informal because no framework provided a metric for the distance between "what the founder values" and "what the customer values." SBT's Fisher-Rao metric on $\Delta^7$ [@zharnikov-2026-brand-space-geometry-formal-metric] provides exactly this. Theorem 2 establishes that the economic loss from founder weight projection is bounded below by this metric distance, giving the alignment gap a geometric interpretation: it is the cost of being in the wrong place on the probability simplex.
+The alignment gap formalises what practitioners call "product-market fit failure." The term has remained informal because no framework provided a metric for the distance between "what the founder values" and "what the customer values." SBT's Fisher-Rao metric on $\Delta^7$ [@zharnikov-2026-brand-space-geometry-formal-metric] provides exactly this. Theorem 2 establishes that, inside a stated concentration regime, the economic loss from founder weight projection is bounded below by a function of this metric distance, giving the alignment gap a geometric interpretation: it is the cost of being in the wrong place on the probability simplex. The bound is quartic in the distance and correspondingly loose, so the operational quantity throughout is the gap itself, computed directly from two measured profiles.
 
 The alignment gap has a natural portfolio-theoretic interpretation. In Markowitz's [-@markowitz-1952-portfolio-selection-journal] mean-variance framework, the cost of using prior views instead of market equilibrium weights is the tracking error against the efficient frontier. Analogously, the alignment gap is the brand-investment cost of using the founder's prior weights $w(f)$ instead of the cohort equilibrium weights $w(c)$; the cohort weight matrix $W(c)$ plays the role of the covariance matrix $\Sigma$ in determining how far off-equilibrium the founder portfolio sits. This connection places the spectral allocation problem within the broader tradition of portfolio optimization under heterogeneous beliefs [@markowitz-1952-portfolio-selection-journal] while extending that tradition from financial assets to perceptual dimensions.
 
-The paper makes five contributions. First, the optimal dimensional allocation for a single cohort is derived, showing that investment should be proportional to cohort weights scaled by inverse marginal cost (Theorem 1). This result generalizes the Dorfman-Steiner [-@dorfman-1954-optimal-advertising-optimal] condition — optimal advertising/quality ratio equals the elasticity ratio — to eight perceptual dimensions, with cohort weights replacing the scalar elasticity ratio, and is the dimensional-perception analogue of the response-function rules in Mantrala, Sinha, and Zoltners [-@mantrala-1992-impact-resource-allocation]. Second, a lower bound on the alignment gap is proven in terms of the Fisher-Rao distance, establishing that perceptual distance predicts economic loss (Theorem 2). Third, the conditions under which a single signal portfolio can efficiently serve multiple cohorts are characterised, connecting to the cohort targeting literature (Theorem 3). Fourth, the economic interpretation of spectral metamerism is given as the cost-minimizing signal portfolio that achieves a target perception (Theorem 4), connecting to Zharnikov [-@zharnikov-2026-spectral-metamerism-brand-perception-projection]. Fifth, the linear value function is generalised to a quadratic form with cohort-dependent interaction matrix $W(c)$, and optimal allocation is shown to shift toward complementary dimensions and away from substitutive ones (Theorem 5); this is the eight-dimensional generalization of the two-channel synergy model of Naik and Raman [-@naik-2003-understanding-impact-synergy], with the advance that interaction weights are cohort-dependent rather than fixed media properties.
+The paper makes five contributions. First, the optimal dimensional allocation for a single cohort is derived, showing that investment should be proportional to cohort weights scaled by inverse marginal cost (Theorem 1). This result generalizes the Dorfman-Steiner [-@dorfman-1954-optimal-advertising-optimal] condition — optimal advertising/quality ratio equals the elasticity ratio — to eight perceptual dimensions, with cohort weights replacing the scalar elasticity ratio, and is the dimensional-perception analogue of the response-function rules in Mantrala, Sinha, and Zoltners [-@mantrala-1992-impact-resource-allocation]. Second, a lower bound on the alignment gap is proven in terms of the Fisher-Rao distance under an explicit concentration hypothesis, establishing that perceptual distance constrains economic loss within that regime and — through the counterexample that fixes the regime's boundary — that it does not constrain it outside (Theorem 2). Third, the conditions under which a single signal portfolio can efficiently serve multiple cohorts are characterised, connecting to the cohort targeting literature (Theorem 3). Fourth, the economic interpretation of spectral metamerism is given as the cost-minimizing signal portfolio that achieves a target perception (Theorem 4), connecting to Zharnikov [-@zharnikov-2026-spectral-metamerism-brand-perception-projection]. Fifth, the linear value function is generalised to a quadratic form with cohort-dependent interaction matrix $W(c)$, and optimal allocation is shown to shift toward complementary dimensions and away from substitutive ones (Theorem 5); this is the eight-dimensional generalization of the two-channel synergy model of Naik and Raman [-@naik-2003-understanding-impact-synergy], with the advance that interaction weights are cohort-dependent rather than fixed media properties.
 
 The paper then demonstrates that five established strategy frameworks — Blue Ocean Strategy [@kim-2005-blue-ocean-strategy], Jobs to Be Done [@christensen-2016-know-your-customers], Lean Startup [@ries-2011-lean-startup-how], Porter's Five Forces [@porter-1980-competitive-strategy-techniques], and the Resource-Based View [@barney-1991-firm-resources-sustained] — each operate on an implicit low-dimensional projection of the spectral resource allocation problem. Blue Ocean's strategy canvas is a low-resolution spectral profile. JTBD's "job" decomposition maps to weight vector identification. Lean Startup's MVP hypothesis corresponds to an L0 demand-validation gate. Porter's rivalry intensity maps to sphere-packing density [@zharnikov-2026-many-brands-can-market-hold]. The Resource-Based View's VRIN criteria map to spectral position uniqueness. These are not loose analogies; they are structural correspondences derived from the model's formal apparatus.
 
@@ -77,7 +77,7 @@ This is the inner product of the cohort's weight vector with the brand's signal 
 
 **Remark 1 (Compositional geometry).** The weight vector $w(c) \in \Delta^7$ is a probability vector, and Aitchison's [-@aitchison-1986-statistical-analysis-compositional] compositional data analysis warns that standard inner products on the raw simplex may violate the geometric structure appropriate for compositional data, where the relevant operations are log-ratio transformations (alr/clr/ilr). The spectral value function $V(s, c) = \langle w(c), s \rangle$ is defined as a perceptual inner product on the raw simplex — it models the cohort's evaluation of the brand as a weighted sum of perceived signal intensities, not as a statistical model of proportional compositions. A full log-ratio reformulation under the Aitchison metric is a direction for future work; the directional implications of Theorems 1–5 are expected to hold under such reformulation because the sign structure of the optimal solution depends on the relative magnitudes of $w_i(c)$, not on the absolute geometry of the simplex.
 
-**Remark 2 (Value function linearity).** The linearity of $V$ in $s$ is a modeling choice that captures first-order effects. In practice, diminishing marginal perception (a Weber-Fechner effect) would make $V$ concave in each $s_i$. The model addresses this through the cost function (Operational Cost Function), which captures diminishing returns on the production side. The perceptual side could be generalized to $V(s, c) = \sum_i w_i(c) \cdot u_i(s_i)$ with concave $u_i$; all results extend with minor modifications. The Hellinger distance bound in Theorem 2 exploits the linearity of $V$. Extension to concave utility functions is a direction for future work; the directional implication — that misalignment is bounded below by a geometric quantity related to the distance between founder and cohort weight profiles — is expected to hold under concavity, but the specific bound form may change.
+**Remark 2 (Value function linearity).** The linearity of $V$ in $s$ is a modeling choice that captures first-order effects. In practice, diminishing marginal perception (a Weber-Fechner effect) would make $V$ concave in each $s_i$. The model addresses this through the cost function (Operational Cost Function), which captures diminishing returns on the production side. The perceptual side could be generalized to $V(s, c) = \sum_i w_i(c) \cdot u_i(s_i)$ with concave $u_i$; all results extend with minor modifications. The Hellinger distance bound in Theorem 2 exploits the linearity of $V$ and its concentration hypothesis. Extension to concave utility functions is a direction for future work; the directional implication — that misalignment is bounded below by a geometric quantity related to the distance between founder and cohort weight profiles, inside the concentration regime of condition (e) — is expected to hold under concavity, but the specific bound form may change.
 
 ### Operational Cost Function
 
@@ -149,15 +149,15 @@ $$V^*(c) = \sum_{i=1}^{8} \frac{w_i(c)^2}{\lambda \alpha_i}$$
 
 This is a weighted sum of squared cohort weights, inversely weighted by costs. It reveals the value of dimensional targeting: cohorts with concentrated weight profiles (high weight on few dimensions) are more profitable to serve than cohorts with diffuse profiles, because concentration allows the brand to invest heavily in a few dimensions rather than spreading thinly across many.
 
-**Proposition 1** (Concentration premium). *For two cohorts with the same mean weight $\bar{w} = 1/8$ but different concentrations, the cohort with higher Herfindahl index $H(c) = \sum_i w_i(c)^2$ achieves higher optimal value $V^*(c)$, with:*
+**Proposition 1** (Concentration identity). *Under uniform costs $\alpha_i = \bar{\alpha}$, the optimal value of serving cohort $c$ is exactly the cohort's Herfindahl index, rescaled:*
 
-$$V^*(c) = \frac{H(c)}{\lambda \bar{\alpha}} \quad \text{when } \alpha_i = \bar{\alpha} \text{ for all } i$$
+$$V^*(c) = \frac{H(c)}{\lambda \bar{\alpha}}, \qquad H(c) = \sum_i w_i(c)^2$$
 
-*where $\bar{\alpha}$ is the common cost parameter.*
+*Consequently $V^*$ is a strictly increasing function of $H$, and two cohorts order by optimal value exactly as they order by Herfindahl index.*
 
-*Proof.* With uniform costs, $V^*(c) = \sum_i w_i(c)^2 / (\lambda \bar{\alpha}) = H(c) / (\lambda \bar{\alpha})$. Since $H(c) \geq 1/8$ with equality at $w_i = 1/8$ for all $i$ (uniform weights), concentrated cohorts yield strictly higher $V^*$. $\square$
+*Proof.* Substituting $s_i^*(c) = w_i(c)/(\lambda\bar{\alpha})$ into $V(s,c) - \lambda C(s)$ gives $V^*(c) = \sum_i w_i(c)^2/(\lambda\bar{\alpha})$, which is $H(c)/(\lambda\bar{\alpha})$ by definition of $H$. $\square$
 
-**Interpretation.** Niche cohorts (high $H$) are inherently more valuable to serve than mass-market cohorts (low $H$), holding costs equal. This formalizes the practitioner intuition that "a narrow audience you can delight is better than a broad audience you can only satisfy."
+**Interpretation.** This is a derivation, not a finding. Optimal value and concentration are the same quantity up to the positive factor $1/(\lambda\bar{\alpha})$, so no cohort comparison can disconfirm the ordering, and none is offered as evidence for it. Earlier versions stated the proposition under the hypothesis "two cohorts with the same mean weight $\bar{w} = 1/8$"; that hypothesis excludes nothing, because every point of $\Delta^7$ has mean weight $1/8$ by the simplex constraint, and it is withdrawn. What the identity does supply is an interpretation of the model: within a quadratic-cost world, the practitioner intuition that "a narrow audience you can delight is better than a broad audience you can only satisfy" is a consequence of the cost structure assumed, not an independent empirical regularity. Whether real cost structures are quadratic and separable is condition C2, and that is where the empirical risk sits.
 
 ### Dark Signals and Zero-Weight Dimensions
 
@@ -199,35 +199,37 @@ Subtracting gives the result. $\square$
 
 ### The Alignment Gap and Fisher-Rao Distance
 
-The Fisher-Rao metric on $\Delta^7$ [@zharnikov-2026-brand-space-geometry-formal-metric] provides the natural measure of distance between weight profiles. The alignment gap is now connected to this metric.
+The Fisher-Rao metric on $\Delta^7$ [@zharnikov-2026-brand-space-geometry-formal-metric] provides the natural measure of distance between weight profiles. The alignment gap is connected to this metric below. The connection is narrower and weaker than the first version of this paper claimed: it requires a hypothesis on the relative concentration of the two profiles, and within that hypothesis the bound is quartic in the distance rather than quadratic. Both restrictions are corrections; the withdrawn statement and the counterexample that forced the correction are given after the theorem.
 
-**Theorem 2** (Alignment gap lower bound). *Let $d_{\text{FR}}(w(f), w(c))$ denote the Fisher-Rao distance between the founder's and cohort's weight profiles on $\Delta^7$. Then:*
+**Theorem 2** (Alignment gap lower bound, under concentration). *Let $w(f), w(c) \in \Delta^7$, let costs be quadratic with uniform parameters $\alpha_i = \bar{\alpha}$, and suppose the founder's profile is at least as concentrated as the cohort's in the Euclidean sense:*
 
-$$\mathcal{A}(f, c) \geq \frac{1}{\lambda \bar{\alpha}} \cdot \frac{d_{\text{FR}}(w(f), w(c))^2}{4 \cdot 8}$$
+$$\|w(c)\|_2 \leq \|w(f)\|_2 \tag{C4}$$
 
-*More precisely, using the Hellinger distance $H(f, c) = \frac{1}{\sqrt{2}} \|\sqrt{w(f)} - \sqrt{w(c)}\|_2$:*
+*Then:*
 
-$$\mathcal{A}(f, c) \geq \frac{H(f, c)^2}{2 \lambda \bar{\alpha}}$$
+$$\mathcal{A}(f, c) \geq \frac{\|w(f) - w(c)\|_2^2}{2 \lambda \bar{\alpha}}$$
 
-*Proof.* The Hellinger distance satisfies $H(f,c)^2 = 1 - \text{BC}(f,c)$, where $\text{BC}(f,c) = \sum_i \sqrt{w_i(f) w_i(c)}$ is the Bhattacharyya coefficient. By the Cauchy-Schwarz inequality on $\Delta^7$:
+*and, in terms of the Hellinger distance $H(f, c) = \frac{1}{\sqrt{2}} \|\sqrt{w(f)} - \sqrt{w(c)}\|_2$:*
 
-$$\langle w(f), w(c) \rangle \leq \|w(f)\| \cdot \|w(c)\|$$
+$$\mathcal{A}(f, c) \geq \frac{H(f, c)^4}{4 \lambda \bar{\alpha}} = \frac{1}{\lambda \bar{\alpha}} \sin^4\!\left(\frac{d_{\text{FR}}(w(f), w(c))}{4}\right)$$
 
-and by the relationship between Hellinger distance and inner product on the simplex:
+*Hypothesis (C4) cannot be dropped: without it $\mathcal{A}(f,c)$ is not sign-definite, and it is identically zero for every cohort whenever $w(f)$ is uniform.*
 
-$$\|w(f)\|^2 - \langle w(f), w(c) \rangle \geq \|w(f)\|^2 (1 - \text{BC}(f,c)) = \|w(f)\|^2 \cdot H(f,c)^2$$
+*Proof.* By Proposition 2, $\mathcal{A}(f,c) = \left[\|w(f)\|^2 - \langle w(f), w(c) \rangle\right] / (\lambda\bar{\alpha})$. The polarisation identity
 
-Since $w(f) \in \Delta^7$, the bound $\|w(f)\|^2 \geq 1/8$ holds (with equality at uniform weights). Thus:
+$$\|w(f)\|^2 - \langle w(f), w(c) \rangle = \tfrac{1}{2}\|w(f) - w(c)\|_2^2 + \tfrac{1}{2}\left(\|w(f)\|^2 - \|w(c)\|^2\right)$$
 
-$$\mathcal{A}(f,c) \geq \frac{H(f,c)^2}{8 \lambda \bar{\alpha}}$$
+is exact, and (C4) makes its second term non-negative, which gives the Euclidean form. For the Hellinger form, Cauchy-Schwarz over the eight coordinates gives $\|w(f) - w(c)\|_2^2 \geq \|w(f) - w(c)\|_1^2 / 8$, and the total-variation inequality $\|p - q\|_1 \geq 2H(p,q)^2$ gives $\|w(f) - w(c)\|_1^2 \geq 4 H(f,c)^4$; together these yield $\|w(f) - w(c)\|_2^2 \geq H(f,c)^4 / 2$. The Fisher-Rao form follows from $d_{\text{FR}} = 2\arccos(\text{BC})$ and $H^2 = 1 - \text{BC}$, so that $H^2 = 2\sin^2(d_{\text{FR}}/4)$. Appendix A.1 gives the argument in full. $\square$
 
-The Fisher-Rao distance satisfies $d_{\text{FR}} = 2 \arccos(\text{BC})$, and for small distances $d_{\text{FR}} \approx 2H$. This sketch establishes the weaker constant $1/8$ via the uniform-weight floor $\|w(f)\|^2 \geq 1/8$; the tighter stated constant $1/2$ follows from the sharper $L^2$-Hellinger identity $\|w(f)\|^2 - \langle w(f), w(c)\rangle = \tfrac{1}{2}\|w(f) - w(c)\|^2 + \tfrac{1}{2}(\|w(f)\|^2 - \|w(c)\|^2)$ together with $\|p - q\|^2 \geq 2H(p,q)^2$, derived in full in Appendix A.1. $\square$
+*Withdrawn statement (v1.0.0-v1.2.0).* Earlier versions asserted the bound $\mathcal{A}(f, c) \geq H(f, c)^2 / (2\lambda\bar{\alpha})$, its Fisher-Rao form $\mathcal{A}(f,c) \geq d_{\text{FR}}^2/(32\lambda\bar{\alpha})$, and the unconditional reading that perceptual distance predicts economic loss. All three are false. Put the founder at the barycentre of the simplex, $w_i(f) = 1/8$. Then $\mathcal{A}(f,c) \propto \langle w(f), w(f) - w(c)\rangle = \tfrac{1}{8}\left(1 - \sum_i w_i(c)\right) = 0$ for **every** $w(c) \in \Delta^7$, while the right-hand side is strictly positive whenever $w(c) \neq w(f)$ — at $w(c) = e_1$ it is $.323$. The failure is generic rather than a boundary artifact: in a fixed-seed sweep of 200,000 Dirichlet pairs, 91,555 violate the published bound, and among cohorts drawn against a uniform founder the violation rate is 100%. Two errors in the earlier Appendix A.1 produced it. First, the step "the $L^2$ distance on the simplex satisfies $\|p - q\|^2 \geq 2H(p,q)^2$ (a standard inequality)" states the $L^1$ result for the $L^2$ norm; at the witness pair $\|p - q\|_2^2 = .875$ against $2H^2 = 1.293$, while $\|p-q\|_1 = 1.75$ clears it. Second, the polarisation identity above was applied with its second term dropped as if non-negative, when that term is negative precisely when the cohort is the more concentrated of the two — which is the case the counterexample constructs. The corrected statement adds (C4), which excludes exactly that case, and pays for the $L^1$ detour with two extra powers of the distance.
 
-**Interpretation.** The alignment gap has a geometric floor: it cannot be smaller than a quantity determined by how far apart the founder and cohort sit on the probability simplex. Founders who are perceptually close to their target cohort (small $d_{\text{FR}}$) have small alignment gaps. Founders who are perceptually distant face a structural economic loss that, under the model's separable cost and linear value assumptions, cannot be recovered through improved execution on the chosen dimensions — only reallocation toward the cohort's actual weights closes the gap. Figure 1 visualizes this geometry for the five illustrative brands, plotting each founder–cohort pair and its Fisher-Rao geodesic on a low-dimensional projection of $\Delta^7$.
+**Interpretation.** Inside the concentration regime the alignment gap has a geometric floor: a founder who is perceptually distant from a cohort no more concentrated than themselves faces a structural loss that, under the model's separable-cost and linear-value assumptions, better execution on the already-chosen dimensions cannot recover — only reallocation toward the cohort's measured weights closes it. The floor is qualitative and should not be read as a quantitative prediction. Being quartic, it is extremely slack in the region where brands actually sit: across the five illustrative pairs of Table 8 the Hellinger floor ranges from below $.00001$ to $.00007$ against realised gaps of $.0067$ to $.0650$, two to three orders of magnitude larger. Whenever both profiles are measured, $\mathcal{A}(f,c)$ is computed directly from Proposition 2 and no bound is needed; the theorem's role is to establish that the loss is structural inside (C4), not to estimate it.
+
+**Condition (C4) is checkable, and it binds.** Both Herfindahl indices are computed from the same two profiles the gap needs, so applying the theorem costs nothing extra. It excludes a real and identifiable case: a diffuse founder facing a concentrated cohort. There the founder-optimal portfolio can be worth *more* to the cohort than to the founder, so the "gap" is negative and the language of loss does not apply. The five illustrative pairs in Table 8 all satisfy (C4) — the founder profiles have Herfindahl indices $.152$ to $.290$ against cohort indices $.137$ to $.189$ — so every reported gap falls inside the theorem's scope. Figure 1 visualizes this geometry, plotting each founder-cohort pair and its Fisher-Rao geodesic on a low-dimensional projection of $\Delta^7$.
 
 ![](figures/r7_alignment_gap_simplex.png)
 
-**Figure 1.** Two-dimensional principal-component projection of $\Delta^7$ for the five illustrative brands (Tables 5–6). Each circle marks the founder weight $w(f)$, each square marks the target cohort weight $w(c)$, and the connecting curve is the Fisher-Rao geodesic obtained by spherical interpolation between $\sqrt{w(f)}$ and $\sqrt{w(c)}$ on the positive orthant of $S^7$. Annotated values are alignment gaps $\mathcal{A}(f, c) = \|w(f)\|^2 - \langle w(f), w(c) \rangle$ from Theorem 2. Hermès and Erewhon project closest to their cohorts and exhibit the smallest gaps; IKEA's founder profile, dominated by the economic dimension, projects farthest from its cohort and registers the largest gap. The figure is generated by the companion script (Companion Computation Script subsection).
+**Figure 1.** Two-dimensional principal-component projection of $\Delta^7$ for the five illustrative brands (Tables 5–6). Each circle marks the founder weight $w(f)$, each square marks the target cohort weight $w(c)$, and the connecting curve is the Fisher-Rao geodesic obtained by spherical interpolation between $\sqrt{w(f)}$ and $\sqrt{w(c)}$ on the positive orthant of $S^7$. Annotated values are alignment gaps $\mathcal{A}(f, c) = \|w(f)\|^2 - \langle w(f), w(c) \rangle$ computed directly from Proposition 2; the geodesic length is the Fisher-Rao distance entering Theorem 2's bound, which all five pairs satisfy with large slack. Hermès and Erewhon project closest to their cohorts and exhibit the smallest gaps; IKEA's founder profile, dominated by the economic dimension, projects farthest from its cohort and registers the largest gap. The figure is generated by the companion script (Companion Computation Script subsection).
 
 ### Two Failure Modes
 
@@ -278,7 +280,7 @@ By the curvature of $V^*$ (which is convex in $w$ by Proposition 1), the loss is
 
 $$k_{\max} \sim \left(\frac{\pi}{2r(\epsilon)}\right)^7$$
 
-*For $\epsilon = .10$: $k_{\max} \approx (4.9)^7 \approx 6.7 \times 10^4$, a large but finite number.* This bound is consistent with the sphere-packing capacity derived in Zharnikov [-@zharnikov-2026-many-brands-can-market-hold] at perceptual threshold $\varepsilon = .10$.
+*For $\epsilon = .10$: $k_{\max} \approx (4.9)^7 \approx 6.7 \times 10^4$, a large but finite number.* The two quantities are different counts and are not being compared. This corollary counts **cohorts on $\Delta^7$** that one portfolio can serve within an efficiency tolerance; the sphere-packing capacity of Zharnikov [-@zharnikov-2026-many-brands-can-market-hold] counts **brands in $\mathbb{R}^8_+$** that a market can hold at a perceptual discrimination threshold, and returns approximately $10^8$ at the same numerical $\varepsilon = .10$. Both are finite, and they differ by roughly three and a half orders of magnitude because they count different objects in different spaces; earlier versions described them as "consistent", which asserted an agreement with no criterion attached, and that description is withdrawn.
 
 ### The Sub-Brand Decision
 
@@ -546,7 +548,7 @@ Table 8 reports the **alignment gap results** under uniform costs ($\alpha_i = 1
 | Erewhon | .180 | .168 | .0125 | .061 | Small gap (experiential aligns) |
 | Tesla | .180 | .152 | .0285 | .131 | Narrative/experiential over-weight |
 
-*Notes*: $\lambda = 1$, $\bar{\alpha} = 1$ (uniform costs). All values computed from companion script (Companion Computation Script subsection). Hellinger $H(f,c) = \frac{1}{\sqrt{2}}\|\sqrt{w(f)} - \sqrt{w(c)}\|_2$. Profiles are illustrative; see Tables 5–6.
+*Notes*: $\lambda = 1$, $\bar{\alpha} = 1$ (uniform costs). All values computed from companion script (Companion Computation Script subsection). Hellinger $H(f,c) = \frac{1}{\sqrt{2}}\|\sqrt{w(f)} - \sqrt{w(c)}\|_2$. **This table states no pass criterion and tests nothing.** Both the founder and the cohort profiles are author-constructed (Tables 6-7), not measured, so the gaps and their ordering are properties of those constructions; they demonstrate that the quantities are computable and show what a completed audit looks like. All five pairs satisfy condition (C4): the founder Herfindahl indices are $.152$, $.290$, $.170$, $.180$ and $.180$ against cohort indices $.144$, $.189$, $.137$, $.159$ and $.143$ in the same order. The gap ratios $\mathcal{A}(f,c)/V^*(c)$ are $.047$ (Hermès), $.344$ (IKEA), $.179$ (Patagonia), $.079$ (Erewhon) and $.200$ (Tesla).
 
 **Ordering**: Hermès (.0067) < Erewhon (.0125) < Patagonia (.0245) < Tesla (.0285) < IKEA (.0650). Figure 4 plots the founder and cohort weight profiles that generate these gaps.
 
@@ -578,7 +580,7 @@ As Table 9 reports, no brand in this sample has a true blind spot ($w_i = 0$). T
 
 The alignment gap framework provides the formal justification for OST's L0 demand-validation gate [@zharnikov-2026-organizational-schema-theory-test-driven]. If the founder's spectral profile is used as the input to L1-L5 specification, the expected value loss is at least $\mathcal{A}(f, c)$. The L0 gate requires external evidence of the target cohort's dimensional weights before operational specification proceeds, replacing founder weights with measured cohort weights as the optimization input.
 
-The demand-validation gate is not optional. Theorem 2 proves that the alignment gap is bounded below by a geometric quantity (Fisher-Rao distance) that, under the model's assumptions, cannot be recovered by improved execution on misaligned dimensions. A founder who is distant from their target cohort on $\Delta^7$ will systematically misallocate resources unless the portfolio itself is reoriented toward the cohort's measured weights.
+The case for the gate does not depend on Theorem 2's bound. It rests on Proposition 2, which is an identity: substituting founder weights for cohort weights costs exactly $\left[\|w(f)\|^2 - \langle w(f), w(c)\rangle\right]/(\lambda\bar{\alpha})$, and that quantity is computable as soon as both profiles are measured. Theorem 2 adds one thing to this, and only inside condition (C4): the loss is a floor rather than a transient, so it cannot be recovered by improved execution on the dimensions already chosen. A founder who is distant from their target cohort on $\Delta^7$, and no more diffuse than that cohort, will systematically misallocate resources unless the portfolio itself is reoriented toward the cohort's measured weights. Where (C4) fails, the identity still gives the value difference; what is lost is the guarantee that it cannot be executed away.
 
 ### Dimensional Investment Audit
 
@@ -604,7 +606,7 @@ graph TD
     G --> A
 ```
 
-**Figure 5.** Five-step dimensional investment audit operationalising Theorem 1. The decision diamond at Step 5 implements the alignment-gap threshold: by Theorem 2, a Fisher-Rao distance above approximately $.32$ between $w(f)$ and $w(c)$ corresponds to an expected alignment gap above ten percent of optimal value, which the consolidated allocation literature treats as a structural reallocation trigger. The audit cycle restarts each quarter so that drift in measured cohort weights propagates back into Step 1.
+**Figure 5.** Five-step dimensional investment audit operationalising Theorem 1. The decision diamond at Step 5 compares the directly computed ratio $\mathcal{A}(f,c)/V^*(c) = \left[\|w(f)\|^2 - \langle w(f), w(c)\rangle\right]/\|w(c)\|^2$ against a tolerance the firm sets; at a tolerance of $.10$ the five illustrative brands split $.047$ and $.079$ (no trigger) against $.179$, $.200$ and $.344$ (trigger). Earlier versions instead read the trigger off a Fisher-Rao distance of $.32$ radians. That threshold is withdrawn: $.32$ is Theorem 3's *multi-cohort* radius at $\epsilon = .10$, which concerns the spread among several cohorts and not the founder-cohort gap, and the two do not track each other — across these same five pairs the Fisher-Rao distance rank-orders the gap ratio at only $\rho = .80$, inverting two of the ten pairs. Since both inputs to the ratio are already measured at Step 1, the distance proxy is unnecessary as well as unsound. The audit cycle restarts each quarter so that drift in measured cohort weights propagates back into Step 1.
 
 ### Multi-Cohort Portfolio Design
 
@@ -616,7 +618,7 @@ The spectral model provides the left side; organizational cost analysis provides
 
 ### Managerial Implications
 
-Rust, Lemon, and Zeithaml [-@rust-2004-return-marketing-using] frame marketing investment as return on marketing within a customer equity framework; the spectral resource allocation model operationalizes their framework at the dimension level by identifying which specific perceptual investments drive customer equity for a given cohort. On a practical level, the five theorems translate into the following Monday-morning checklist for a Chief Marketing Officer. First, Theorem 1 informs the quarterly budget review: allocate dimension-level spend in proportion to $w_i(c) / \alpha_i$, with cost parameters $\alpha_i$ estimated from operational data. Second, Theorem 2 provides the alignment audit: if the Fisher-Rao distance between the founder profile and the cohort profile exceeds .32 radians (the $\epsilon = .10$ threshold), the expected alignment gap exceeds 10% of optimal value — a structural reallocation trigger. Third, Theorem 3 informs the sub-brand decision: if the firm serves cohorts whose Fisher-Rao spread exceeds $r(.10) \approx .32$, a separate portfolio is economically justified regardless of brand coherence preferences. Fourth, Theorem 4 provides the cost audit: identify the cheapest signal portfolio achieving the target perception and redirect savings to the highest-weight dimensions. Fifth, Theorem 5 provides the interaction adjustment: for cohorts with known complementary or substitutive dimension pairs, adjust allocations according to Corollary 3, with the interaction weight matrix estimated from spectral profiling data. Together, these translate the paper's formal apparatus into a five-step operational protocol that requires measurement infrastructure specified in Zharnikov [-@zharnikov-2026-spectral-brand-theory-computational-framework].
+Rust, Lemon, and Zeithaml [-@rust-2004-return-marketing-using] frame marketing investment as return on marketing within a customer equity framework; the spectral resource allocation model operationalizes their framework at the dimension level by identifying which specific perceptual investments drive customer equity for a given cohort. On a practical level, the five theorems translate into the following Monday-morning checklist for a Chief Marketing Officer. First, Theorem 1 informs the quarterly budget review: allocate dimension-level spend in proportion to $w_i(c) / \alpha_i$, with cost parameters $\alpha_i$ estimated from operational data. Second, Proposition 2 provides the alignment audit: compute $\mathcal{A}(f,c)/V^*(c)$ from the two measured profiles and reallocate when it exceeds the tolerance the firm is willing to leave on the table, with Theorem 2 supplying the reason the shortfall will not close on its own whenever the founder is at least as concentrated as the cohort. Third, Theorem 3 informs the sub-brand decision: if the firm serves cohorts whose Fisher-Rao spread exceeds $r(.10) \approx .32$, a separate portfolio is economically justified regardless of brand coherence preferences. Fourth, Theorem 4 provides the cost audit: identify the cheapest signal portfolio achieving the target perception and redirect savings to the highest-weight dimensions. Fifth, Theorem 5 provides the interaction adjustment: for cohorts with known complementary or substitutive dimension pairs, adjust allocations according to Corollary 3, with the interaction weight matrix estimated from spectral profiling data. Together, these translate the paper's formal apparatus into a five-step operational protocol that requires measurement infrastructure specified in Zharnikov [-@zharnikov-2026-spectral-brand-theory-computational-framework].
 
 ## Limitations and Future Research
 
@@ -646,7 +648,7 @@ All five case-study brands in the illustrative examples — Hermès, IKEA, Patag
 
 ### Boundary Conditions
 
-The spectral resource allocation model applies under the following conditions: (a) cohort weight profiles are measurable on the probability simplex $\Delta^7$ using the SBT measurement protocol [@zharnikov-2026-spectral-brand-theory-computational-framework]; (b) the operational cost function is convex and approximately separable across dimensions, so that cross-dimensional cost interactions are second-order relative to own-dimension costs; (c) the signal-perception map is approximately linear within the operational range of investment, so that the value function $V(s, c) = \langle w(c), s \rangle$ captures the dominant effects; and (d) the target cohort is empirically identifiable and stable over the relevant planning horizon. When condition (b) is violated, the full cost-interaction extension discussed in Interaction Effects in Value and Cost applies. When condition (c) is violated — for example, when perceptual saturation creates strong diminishing returns at high signal levels — the concave-utility extension of Remark 2 applies. When condition (a) is difficult to satisfy in practice, the Aitchison [-@aitchison-1986-statistical-analysis-compositional] log-ratio reformulation noted in Remark 1 offers an alternative compositional treatment. These boundary conditions do not undermine the qualitative conclusions of Theorems 1–5; they specify the domain within which the quantitative predictions are most reliable.
+The spectral resource allocation model applies under the following conditions: (a) cohort weight profiles are measurable on the probability simplex $\Delta^7$ using the SBT measurement protocol [@zharnikov-2026-spectral-brand-theory-computational-framework]; (b) the operational cost function is convex and approximately separable across dimensions, so that cross-dimensional cost interactions are second-order relative to own-dimension costs; (c) the signal-perception map is approximately linear within the operational range of investment, so that the value function $V(s, c) = \langle w(c), s \rangle$ captures the dominant effects; (d) the target cohort is empirically identifiable and stable over the relevant planning horizon; and (e), for Theorem 2's lower bound alone, the founder's weight profile is at least as concentrated as the cohort's, $\|w(c)\|_2 \leq \|w(f)\|_2$. When condition (b) is violated, the full cost-interaction extension discussed in Interaction Effects in Value and Cost applies. When condition (c) is violated — for example, when perceptual saturation creates strong diminishing returns at high signal levels — the concave-utility extension of Remark 2 applies. When condition (a) is difficult to satisfy in practice, the Aitchison [-@aitchison-1986-statistical-analysis-compositional] log-ratio reformulation noted in Remark 1 offers an alternative compositional treatment. Condition (e) is different in kind from the others: it is not a modelling convenience but a hypothesis without which Theorem 2 is false, and it is checkable from the same two profiles the gap itself requires. Conditions (a)-(d) do not undermine the qualitative conclusions of Theorems 1-5; they specify the domain within which the quantitative predictions are most reliable.
 
 ## Conclusion
 
@@ -669,7 +671,7 @@ The paper completes the economic interpretation of the SBT mathematical foundati
 
 *Notes*: Companion papers R1–R6 appear in the reference list. Economic interpretations are the contributions of this paper (Theorems 1–5).
 
-***Theoretical contributions.*** The five contributions introduced in the opening section arrive at the following final form. The first contribution — the optimal single-cohort allocation (Theorem 1) — generalizes the Dorfman-Steiner [-@dorfman-1954-optimal-advertising-optimal] condition and the response-function rules of Mantrala, Sinha, and Zoltners [-@mantrala-1992-impact-resource-allocation] to cohort-specific perceptual weights on the simplex. The second contribution — the Fisher-Rao lower bound on the alignment gap (Theorem 2) — is the first explicit linkage between information-geometric distance on $\Delta^7$ and economic loss in branding. The third contribution — the multi-cohort efficiency bound (Theorem 3) — characterizes when a single brand architecture can serve multiple cohorts. The fourth contribution — the economic interpretation of metamerism (Theorem 4) — identifies the cost-minimizing signal portfolio achieving any target perception. The fifth contribution — the cohort-dependent interaction matrix (Theorem 5) — extends the two-media synergy model of Naik and Raman [-@naik-2003-understanding-impact-synergy] to eight dimensions with observer-dependent interaction weights, and places the spectral allocation problem within the portfolio optimization tradition [@markowitz-1952-portfolio-selection-journal].
+***Theoretical contributions.*** The five contributions introduced in the opening section arrive at the following final form. The first contribution — the optimal single-cohort allocation (Theorem 1) — generalizes the Dorfman-Steiner [-@dorfman-1954-optimal-advertising-optimal] condition and the response-function rules of Mantrala, Sinha, and Zoltners [-@mantrala-1992-impact-resource-allocation] to cohort-specific perceptual weights on the simplex. The second contribution — the Fisher-Rao lower bound on the alignment gap (Theorem 2) — is the first explicit linkage between information-geometric distance on $\Delta^7$ and economic loss in branding, and it comes with its own limit: the linkage holds only where the founder is at least as concentrated as the cohort, it is quartic rather than quadratic in the distance, and the counterexample that establishes both is part of the contribution. The third contribution — the multi-cohort efficiency bound (Theorem 3) — characterizes when a single brand architecture can serve multiple cohorts. The fourth contribution — the economic interpretation of metamerism (Theorem 4) — identifies the cost-minimizing signal portfolio achieving any target perception. The fifth contribution — the cohort-dependent interaction matrix (Theorem 5) — extends the two-media synergy model of Naik and Raman [-@naik-2003-understanding-impact-synergy] to eight dimensions with observer-dependent interaction weights, and places the spectral allocation problem within the portfolio optimization tradition [@markowitz-1952-portfolio-selection-journal].
 
 ***Managerial contributions.*** The alignment gap provides a quantifiable, geometrically grounded metric for what practitioners have long called product-market fit failure. By making perceptual distance economically actionable, the framework closes the gap between brand theory and brand investment practice. The question facing managers is no longer whether perceptual dimensions matter, but which ones their specific cohorts weight most heavily — and how to reallocate resources accordingly before competitors do.
 
@@ -698,36 +700,63 @@ The Bhattacharyya coefficient is:
 
 $$\text{BC}(p, q) = \sum_i \sqrt{p_i q_i}$$
 
-These are related by $H^2 = 1 - \text{BC}$.
-
-The Fisher-Rao distance on the simplex $\Delta^{n-1}$ is:
+These are related by $H^2 = 1 - \text{BC}$. The Fisher-Rao distance on the simplex $\Delta^{n-1}$ is:
 
 $$d_{\text{FR}}(p, q) = 2 \arccos\left(\sum_i \sqrt{p_i q_i}\right) = 2 \arccos(\text{BC}(p,q))$$
 
-For the alignment gap, the quantity $\|w(f)\|^2 - \langle w(f), w(c) \rangle$ must be bounded from below in terms of $H(f,c)$.
+so that $H^2 = 1 - \cos(d_{\text{FR}}/2) = 2\sin^2(d_{\text{FR}}/4)$.
 
-Note that:
-$$\langle w(f), w(c) \rangle \leq \left(\sum_i \sqrt{w_i(f) w_i(c)}\right)^2 = \text{BC}(f,c)^2$$
+#### A.1.1 The Quantity to Be Bounded
 
-by the Cauchy-Schwarz inequality applied to vectors $(\sqrt{w_i(f)} \cdot \sqrt{w_i(f)})$ and $(\sqrt{w_i(f)} \cdot \sqrt{w_i(c)/w_i(f)})$.
+By Proposition 2, the alignment gap under uniform quadratic costs is $\mathcal{A}(f,c) = G/(\lambda\bar{\alpha})$ with
 
-More precisely, by the rearrangement:
+$$G := \|w(f)\|^2 - \langle w(f), w(c) \rangle = \langle w(f),\, w(f) - w(c) \rangle$$
 
-$$\|w(f)\|^2 - \langle w(f), w(c) \rangle = \sum_i w_i(f) [w_i(f) - w_i(c)]$$
+$G$ is **not** non-negative on $\Delta^7 \times \Delta^7$. Taking $w(f) = (.4, .6, 0, \ldots, 0)$ and $w(c) = e_2$ gives $G = .16 + .36 - .60 = -.08$: the cohort values the founder-optimal portfolio more highly than the founder does. Any lower bound on $G$ by a non-negative function of a distance therefore requires a hypothesis, and the hypothesis must be one that excludes this configuration.
 
-Using $a - b \geq (\sqrt{a} - \sqrt{b})^2$ for $a, b \geq 0$ when $a \geq b$ (and bounding the negative terms) yields:
+#### A.1.2 The Exact Identity and the Concentration Hypothesis
 
-$$\sum_i w_i(f) [w_i(f) - w_i(c)] \geq \min_i w_i(f) \cdot \sum_i (w_i(f) - w_i(c))_+^2$$
+For any two vectors,
 
-For the general bound, the following identity is used:
+$$\|w(f)\|^2 - \langle w(f), w(c) \rangle = \tfrac{1}{2}\|w(f) - w(c)\|_2^2 + \tfrac{1}{2}\left(\|w(f)\|^2 - \|w(c)\|^2\right)$$
 
-$$\|w(f)\|^2 - \langle w(f), w(c) \rangle = \frac{1}{2}\|w(f) - w(c)\|^2 + \frac{1}{2}(\|w(f)\|^2 - \|w(c)\|^2)$$
+which is verified by expanding $\|w(f) - w(c)\|_2^2 = \|w(f)\|^2 - 2\langle w(f), w(c)\rangle + \|w(c)\|^2$. Under hypothesis (C4), $\|w(c)\|_2 \leq \|w(f)\|_2$, the second term is non-negative and
 
-The $L^2$ distance on the simplex satisfies $\|p - q\|^2 \geq 2H(p,q)^2$ (a standard inequality). Combined with $\|w(f)\|^2 \geq 1/8$, this yields:
+$$G \geq \tfrac{1}{2}\|w(f) - w(c)\|_2^2 \tag{A.1}$$
 
-$$\mathcal{A}(f,c) \geq \frac{H(f,c)^2}{2\lambda\bar{\alpha}}$$
+This is the Euclidean form of Theorem 2, and it is tight: equality holds exactly when $\|w(c)\|_2 = \|w(f)\|_2$.
 
-as stated. $\square$
+#### A.1.3 From Euclidean Separation to Hellinger Distance
+
+Two standard inequalities convert (A.1). Writing $\delta = w(f) - w(c)$, Cauchy-Schwarz over the $n = 8$ coordinates gives $\|\delta\|_1^2 \leq n\|\delta\|_2^2$, hence
+
+$$\|\delta\|_2^2 \geq \frac{\|\delta\|_1^2}{8}$$
+
+The total-variation inequality relates the $L^1$ distance to the Hellinger distance: with $\text{TV}(p,q) = \tfrac{1}{2}\|p - q\|_1$, the chain $H^2 \leq \text{TV} \leq H\sqrt{2 - H^2}$ holds on any finite probability space, and its left half gives $\|\delta\|_1 \geq 2H(f,c)^2$. Substituting,
+
+$$\|\delta\|_2^2 \geq \frac{4H(f,c)^4}{8} = \frac{H(f,c)^4}{2}$$
+
+and combining with (A.1),
+
+$$\mathcal{A}(f,c) \geq \frac{H(f,c)^4}{4\lambda\bar{\alpha}} = \frac{\sin^4\!\left(d_{\text{FR}}(w(f), w(c))/4\right)}{\lambda\bar{\alpha}} \tag{A.2}$$
+
+as stated. The exponent is not an artifact of a loose step. Take $w(c)$ with a coordinate at zero where $w(f)$ has a small mass $\delta$: the Hellinger distance registers $(\sqrt{\delta} - 0)^2 = \delta$ on that coordinate while the Euclidean distance registers $\delta^2$, so $H^2 \sim \delta$ and $\|\delta\|_2^2 \sim \delta^2 \sim H^4$. The quartic relation is the correct order in the regime that matters — profiles that disagree about which dimensions carry any weight at all.
+
+#### A.1.4 The Withdrawn Argument
+
+Versions 1.0.0 through 1.2.0 stated (A.2) with $H^2$ in place of $H^4$, no hypothesis (C4), and a constant of $1/2$. Two steps failed.
+
+*First*, the appendix invoked "$\|p - q\|^2 \geq 2H(p,q)^2$ (a standard inequality)". The standard inequality is the $L^1$ one, $\|p-q\|_1 \geq 2H^2$, used above; the $L^2$ version is false. At $p$ uniform on eight coordinates and $q = e_1$, $\|p-q\|_2^2 = .875$ while $2H^2 = 1.293$, whereas $\|p - q\|_1 = 1.75$ clears the bound comfortably. Routing through $L^1$ is what costs the two extra powers.
+
+*Second*, the identity of A.1.2 was applied with $\tfrac{1}{2}(\|w(f)\|^2 - \|w(c)\|^2)$ dropped as if non-negative. That term is negative exactly when the cohort is more concentrated than the founder, and at the witness pair it equals $-.438$ — larger in magnitude than the whole of $G$.
+
+*The resulting statement is false on an open set, not at a boundary.* Put the founder at the barycentre, $w_i(f) = 1/8$. Then
+
+$$G = \left\langle w(f),\, w(f) - w(c) \right\rangle = \tfrac{1}{8}\left(1 - \sum_i w_i(c)\right) = 0$$
+
+for **every** $w(c) \in \Delta^7$, since simplex weights sum to one, while $H(f,c)^2/2$ is strictly positive for every $w(c) \neq w(f)$: it equals $.323$ at $w(c) = e_1$, and it is still $.323$ at $w(c) = (1 - 10^{-6}, 10^{-6}/7, \ldots)$, $.309$ at $\varepsilon = .001$ and $.223$ at $\varepsilon = .05$. The uniform founder is also the unique point where (C4) forces $w(c) = w(f)$, because $\|w\|_2$ attains its minimum $1/\sqrt{8}$ on $\Delta^7$ there; the corrected theorem is therefore vacuous precisely on the family that falsified the old one, which is the right behaviour.
+
+The counterexample is reproduced by `falsification_sweep_2026k_theorem2.py`, and the corrected bound is checked by the companion script's `--verify-theorem2` mode: over 200,000 fixed-seed Dirichlet pairs, 91,555 violate the withdrawn bound, while none of the 99,935 pairs satisfying (C4) violates either (A.1) or (A.2), the worst observed ratio of $\mathcal{A}$ to the (A.2) right-hand side being $1.545$.
 
 ### A.2 Numerical Computations for Illustrative Numerical Examples
 
@@ -775,8 +804,12 @@ All numerical values in Tables 5–8 and Appendix A.2 are reproduced by the comp
 
 `https://github.com/spectralbranding/sbt-papers/tree/main/r7-spectral-resource-allocation/code/r7_spectral_resource_allocation.py`
 
-The script uses a fixed seed (`SEED = 42`) and requires no proprietary data. Run command:
+The script uses a fixed seed (`SEED = 42`) and requires no proprietary data. Run commands:
 
 `uv run --with numpy python r7_spectral_resource_allocation.py`
 
-Running the script reproduces the per-brand alignment gap values, the rank ordering Hermès < Erewhon < Patagonia < Tesla < IKEA, and the Theorem 5 interaction-adjusted allocations for the heritage premium and luxury paradox examples.
+`uv run --with numpy python r7_spectral_resource_allocation.py --verify-theorem2`
+
+The first reproduces the per-brand alignment gap values, the rank ordering Hermès < Erewhon < Patagonia < Tesla < IKEA, the condition-(C4) check and gap ratios reported in Table 8's notes, the Fisher-Rao versus gap-ratio rank comparison quoted in Figure 5's caption, and the Theorem 5 interaction-adjusted allocations for the heritage premium and luxury paradox examples. The second runs the Monte Carlo verification of the corrected Theorem 2 reported in Appendix A.1.4. The counterexample that withdrew the earlier statement is reproduced separately by `falsification_sweep_2026k_theorem2.py`, published alongside it.
+
+The script's `assert` statements compare its computed values against the values printed in this paper. They catch transcription drift between the text and the code; they are not an independent verification of the underlying algebra, which is carried by the proofs in Appendix A.1.

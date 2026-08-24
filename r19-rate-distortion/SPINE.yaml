@@ -117,11 +117,16 @@ measurements:
   - id: m_curve
     statement: >-
       Cross-model mean distortion by rate: R1 .172, R2 .087, R3 .111, R4 .181,
-      R5 .857 (Table 2); minimum at R2 in every one of the 17 models and across
-      all five brands (Table 3).
+      R5 .857 (Table 3); minimum at R2 in every one of the 17 models and across
+      all five brands (Table 4). R5 is degenerate rather than measured: the
+      format forces a one-of-eight indicator, for which the total variation
+      distance to the canonical profile is identically 1 - w_canon,j, an
+      arithmetic function of the canonical profile alone. Its analytic floor,
+      taking j at each brand's largest canonical weight, is .807 to .853 across
+      the five brands (mean .831), which is where the reported R5 values sit.
     source_observations: [O1, O2]
     generating_method: M2
-    value: "R1 .172 / R2 .087 / R3 .111 / R4 .181 / R5 .857"
+    value: "R1 .172 / R2 .087 / R3 .111 / R4 .181 / R5 .857 (R5 analytic, floor .831)"
     units: "total variation distance (mean over 17 model means)"
   - id: m_jshape_tests
     statement: >-
@@ -135,13 +140,29 @@ measurements:
     units: "paired-t statistics + effect sizes"
   - id: m_convergence
     statement: >-
-      Mean cross-model coefficient of variation across the five rate conditions is
-      .140 (below the .15 H2 threshold); .171 excluding the degenerate R5; CV at R1
-      is .210 in the full 17-model panel (.196 in the 7-model confirmatory subset).
+      Per-condition cross-model coefficient of variation: R1 .210, R2 .132, R3
+      .143, R4 .198, R5 .018. Averaged over the four non-degenerate conditions
+      R1-R4 the mean CV is .171, above the .15 H2 threshold; the .140 average
+      that clears the threshold is obtained only by including R5, whose near-zero
+      dispersion is a property of the forced one-of-eight encoding rather than of
+      any encoder. CV at R1 is .210 in the full 17-model panel (.196 in the
+      7-model confirmatory subset).
     source_observations: [O1]
     generating_method: M3
-    value: "mean CV .140 (all five) / .171 (R1-R4) / R1 CV .210"
+    value: "mean CV .171 (R1-R4, the non-degenerate average) / .140 (all five) / R1 CV .210"
     units: "coefficient of variation"
+  - id: m_flat_baseline
+    statement: >-
+      A flat-response baseline — a constant-rating encoder, whose normalized
+      output is the uniform vector — has total variation distance to the
+      canonical profiles of IKEA .071, Patagonia .081, Hermes .095, Erewhon .153,
+      Tesla .171. This ordering reproduces the observed per-brand R2 distortion
+      ordering (Spearman rho = .900) and inverts the observed R1-to-R2 reduction
+      ordering (rho = -.900), with no encoder input of any kind.
+    source_observations: [O2]
+    generating_method: M2
+    value: "TV(uniform, canonical): IKEA .071 / Patagonia .081 / Hermes .095 / Erewhon .153 / Tesla .171"
+    units: "total variation distance"
   - id: m_arch_slope
     statement: >-
       Per-model power-law slope b (D = a*R^-b + c): Western (n=6) mean b=2.93
@@ -228,17 +249,23 @@ propositions:
     body_sections: ["Theoretical Background: Response Format Effects in Survey Methodology", "Discussion: The Bias-Suppression Mechanism"]
   - id: P6
     statement: >-
-      Codebook convergence: 17 architectures from distinct training lineages
-      (Western, Chinese, Russian, Indian, Saudi, Japanese) trace essentially the
-      same J-shaped curve (mean cross-model CV .140), indicating the
-      rate-distortion trade-off is an emergent property of the LLM optimization
-      landscape rather than a training-corpus-specific artifact.
+      Codebook convergence holds in ordering but not in dispersion. All 17
+      architectures from distinct training lineages (Western, Chinese, Russian,
+      Indian, Saudi, Japanese) place the distortion minimum at the same rate
+      condition and reproduce the same rank ordering of the five conditions;
+      the pre-registered dispersion criterion is not met, since the cross-model
+      CV averaged over the four non-degenerate conditions is .171 against a .15
+      threshold. The rate-distortion ordering is therefore an emergent property
+      of the encoding task, while the magnitude of distortion at a given rate
+      remains architecture-specific.
     conditions: "C1"
     antecedents: [P4, F2]
     evidence:
       - type: empirical
-        anchor: "H2 supported; m_convergence; parallels 2026v cosine .977 and 2026ac immunity."
-    falsifier: "If cross-model CV exceeded the .15 threshold (curves diverged by lineage), P6 weakens."
+        anchor: "H2 not supported on the non-degenerate average; m_convergence; ordering agreement 17/17."
+    falsifier: >-
+      If the location of the minimum differed by architecture, or if the rank
+      ordering of the five conditions differed by training lineage, P6 fails.
     body_sections: ["Results: H2: Common Rate-Distortion Curve", "Discussion: Codebook Convergence"]
   - id: P7
     statement: >-
@@ -285,14 +312,21 @@ findings:
     body_sections: ["Results: J-Shaped Rate-Distortion Curve"]
   - id: F2
     statement: >-
-      H2 is supported: mean cross-model CV across the five rate conditions is .140
-      (.171 excluding the degenerate R5), so 17 architectures from distinct training
-      pipelines trace essentially the same curve — codebook convergence.
+      H2 is not supported. Averaged over the four non-degenerate rate conditions
+      the cross-model CV is .171, above the .15 threshold. The .140 average
+      reported against the threshold in earlier versions included R5, whose
+      distortion is an arithmetic function of the canonical profile and whose
+      near-zero dispersion is therefore not a measurement of encoder agreement.
+      What survives is ordinal: all 17 architectures place the minimum at the
+      same condition and reproduce the same rank ordering across conditions.
     type: "convergence_result"
-    source_measurements: [m_convergence]
+    source_measurements: [m_convergence, m_curve]
     generating_method: M3
     antecedents: [O1]
-    falsifier: "If cross-model CV exceeded .15, F2 (H2) fails."
+    falsifier: >-
+      Reached: the non-degenerate cross-model CV exceeds .15, so the dispersion
+      form of H2 is rejected. The ordinal form fails if any architecture places
+      the minimum elsewhere.
     citation_role_in_paper: "primary_evidence_for_P6"
     body_sections: ["Results: H2: Common Rate-Distortion Curve"]
 
@@ -302,10 +336,16 @@ findings:
 negative_findings:
   - id: NF1
     statement: >-
-      H1 (monotonic decay) is not supported: all 17 models show directionally
-      negative rate-distortion Spearman correlations (rho -.3 to -.9) but none
-      reach Bonferroni-corrected significance (alpha .00294) — a power artifact of
-      only n=5 rate conditions per model, not evidence against the curve.
+      H1 (monotonic decay) is unevaluable as pre-registered rather than not
+      supported. The test is a Spearman correlation over the five rate
+      conditions, and the exact permutation distribution at n = 5 has a minimum
+      two-tailed p of 2/120 = .0167, attained only at rho = -1. The
+      Bonferroni-corrected threshold of .05/17 = .00294 lies below that floor by
+      a factor of 5.67, so no data whatever could have cleared it and the
+      hypothesis carried no falsifying content as written. All 17 models show
+      directionally negative rate-distortion Spearman correlations (rho -.3 to
+      -.9); the directional pattern, not a significance verdict, is what the
+      design supports.
     expected_observation: "Significant per-model monotonic rate-distortion correlation."
     source_method: M3
     affects_nodes: [P2, P4]
@@ -315,12 +355,30 @@ negative_findings:
       H4 (architectural separation) is not supported: Western vs cross-cultural
       power-law slopes do not differ (Welch t(11.4)=-1.21, p=.250, d=-.466); the
       apparent gap is driven by two outlier slopes (GLM-4, ALLaM) and the test is
-      ~22% powered. H5 (R1 CV below .20) is also not supported in the full panel
-      (CV .210), marginally met in the 7-model confirmatory subset (.196).
+      ~22% powered. The pre-registered decision rule conjoined p < .05 with
+      |d| > .50, and the second conjunct can never bind: at n1 = 6 versus
+      n2 = 11, t = 1.97 x d, so p < .05 already requires |d| > 1.12. The verdict
+      therefore rests on the significance criterion alone. H5 (R1 CV below .20)
+      is also not supported in the full panel (CV .210), marginally met in the
+      7-model confirmatory subset (.196).
     expected_observation: "Distinct slopes by training lineage; R1 CV below .20."
     source_method: M3
     affects_nodes: [P6]
     body_sections: ["Results: H4: Architectural Separation", "Results: H5: R1 Convergence Floor"]
+  - id: NF3
+    statement: >-
+      The per-brand ordering of distortion carries no evidence about
+      training-corpus density. A flat-response baseline, which has no brand
+      information at all, reproduces the observed R2 ordering (Spearman
+      rho = .900) and inverts the observed R1-to-R2 reduction ordering
+      (rho = -.900), because the distance from a canonical profile to the uniform
+      vector orders the brands the same way. The pattern is normalization
+      geometry; a corpus-density reading would require a design that separates
+      the two, which this experiment does not contain.
+    expected_observation: "Per-brand distortion ordering tracking training-corpus prior density."
+    source_method: M2
+    affects_nodes: [P7]
+    body_sections: ["Results: Per-Brand Patterns", "Discussion: Managerial Implications"]
 
 # ============================================================================
 # Alternative explanations — rivals the J-shape claim must clear
@@ -357,10 +415,14 @@ limitations:
       Only English prompts were used; native-language effects on the R(D) curve are
       untested. The H4 architectural-separation test is severely underpowered
       (panels of 15+ models per group needed). The R5 condition produces extreme
-      distortion by construction (a 1-of-8 indicator cannot approximate any
-      realistic eight-dimensional profile).
+      distortion by construction: the forced one-of-eight indicator gives a total
+      variation distance of exactly 1 - w_canon,j, so the condition is arithmetic
+      on the canonical profile and contributes no encoder measurement. The design
+      also contains no flat-response baseline arm, which is what would be needed
+      to separate encoder behaviour from the geometry of the canonical profiles
+      in the per-brand comparison.
     severity: "future-work"
-    affects: [P6, NF2]
+    affects: [P6, NF2, NF3]
     body_sections: ["Discussion: Limitations", "Discussion: Boundary Conditions"]
   - id: L3
     statement: >-

@@ -13,7 +13,7 @@ meta:
     affiliation: Independent Researcher
   doi: 10.5281/zenodo.18945522
   date: '2026-06-27'
-  venue: Working Paper (Zenodo); marketing-science / quant-marketing venue TBD
+  venue: Preprint
   license: CC-BY-4.0
   keywords:
   - sphere packing
@@ -162,15 +162,25 @@ acceptance:
 - claim_id: P3
   criterion: Holds if (Proposition 3, White space abundance) For n_b brands at threshold epsilon with
     non-overlapping neighborhoods, the unoccupied fraction is ~ 1 - n_b * epsilon^8; at epsilon =.
-  falsification: Falsified if the measured covered fraction of brand space exceeds n_b * epsilon^8 by
-    a margin inconsistent with the non-overlap assumption.
+  falsification: 'Falsified if the measured covered fraction of brand space, obtained by volume integration
+    over observed brand positions, falls SHORT of n_b * epsilon^8 by a margin inconsistent with the non-overlap
+    assumption — that is, if the formula UNDER-states white space. The direction matters and the earlier
+    statement had it backwards: covered volume is subadditive, so overlapping neighborhoods can only reduce
+    the covered fraction below n_b * epsilon^8, and the approximation can therefore never over-state white
+    space through clustering. The reachable failure is clustering so severe that the true white-space
+    fraction materially exceeds 1 - n_b * epsilon^8.'
 - claim_id: P4
   criterion: Holds if (Proposition 4, Category saturation) A category with effective dimensionality d_eff
     and threshold epsilon is saturated when the number of brands approaches (1/epsilon)^d_eff; saturation
     depends on effective dimensionality, not raw brand count (commodity d_eff ~ 2 saturates near 100;
     luxury d_eff ~ 8 admits 10^8).
-  falsification: Falsified if a category's observed brand count consistently and substantially exceeds
-    (1/epsilon)^d_eff (d_eff estimated via PCA) without measurable perceptual overlap.
+  falsification: 'Falsified if a category''s observed brand count consistently and substantially exceeds
+    (1/epsilon)^d_eff without measurable perceptual overlap, where d_eff and epsilon are FIXED BY PRE-REGISTRATION
+    for that category before the brand count is taken. The pre-registration is what makes the test a test:
+    with d_eff free to be re-estimated after the fact, any observed count can be accommodated by raising
+    it, and the earlier wording said so explicitly ("indicating that the effective dimensionality estimate
+    was too low, not that capacity is unbounded"), which made every brand count confirmatory. That rider
+    is withdrawn.'
 - claim_id: P5
   criterion: Holds if (Proposition 5, Correlation collapses capacity) If the eight SBT dimensions have
     average pairwise correlation rho, effective dimensionality is d_eff = n / (1 + (n-1) rho) and capacity
@@ -195,8 +205,12 @@ dependencies:
   critical: false
   doi: 10.5281/zenodo.18945352
 - relationship: applies
-  claim: R3 (concentration of measure / fuzzy cohort boundaries) explains why brand profiles concentrate
-    near boundaries, qualifying interior-position kissing bounds and white-space discoverability.
+  claim: R3 (concentration of measure) explains why observer profiles concentrate near boundaries, qualifying
+    interior-position kissing bounds and white-space discoverability. The figure carried across is at
+    least 52.2% of Delta^7 lying near the boundary of its own cohort region at relative distance .10 —
+    the intrinsic-dimension bound — and separately about two-thirds of observers lying within one component
+    standard deviation of an inter-cohort frontier, which is the quantity that carries reassignment risk
+    and is an empirical result under a specific null rather than a geometric necessity.
   critical: false
   doi: 10.5281/zenodo.18945477
 - relationship: extends

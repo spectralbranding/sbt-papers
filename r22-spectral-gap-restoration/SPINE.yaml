@@ -1,7 +1,7 @@
 # SPINE.yaml — Spectral Gap Restoration (2026ad / R22)
 #
 # RETROFIT spine: extracted descriptively from the completed paper.md per
-# CLAUDE.md rule 0aa + the retrofit-SPINE agent brief (D4, SPINE-for-all-active
+# [internal ref removed] rule 0aa + the retrofit-SPINE agent brief (D4, SPINE-for-all-active
 # -canonical project). NOT authored generatively before prose — this is a
 # faithful backbone extraction from the finished paper.
 #
@@ -175,7 +175,14 @@ measurements:
   - id: m_terminal_gap
     statement: >-
       Terminal spectral gap (month 240): high regime mean 1.10 vs low regime
-      mean .02 — a 52x ratio across all 32 cells per regime.
+      mean .02 — a 52x ratio across all 32 cells per regime. Both terms are
+      closed forms of generator parameters: the high-regime mean is the assigned
+      OU equilibrium E[g₀](μ − λ)/μ = 1.10 × 4.40/4.50 = 1.08, and the
+      low-regime mean is NOT the decay (which reaches 4.7 × 10⁻⁶ by month 240)
+      but the stationary floor of the additive noise reflected at the
+      generator's lower bound, .3σ√(2/π)/√(2(λ − μ)) = .026 at σ = .12. The
+      ratio is therefore a signal-to-noise ratio of the simulation and moves
+      inversely with σ (≈83x at σ = .06, ≈21x at σ = .24).
     source_observations: [O1]
     generating_method: M2
     value: "high 1.10 / low .02 / ratio 52x"
@@ -184,7 +191,12 @@ measurements:
   - id: m_irf_halflife
     statement: >-
       IRF half-life (months, mean): high regime 1.4 vs low regime 13.1 — a 9.3x
-      ratio.
+      ratio. Closed form: the AR(1) coefficient is 1 − |μ − λ|Δt by
+      construction, giving ln2/[−ln(1 − 4.40/12)] = 1.5 and
+      ln2/[−ln(1 − .60/12)] = 13.5 months; the ratio is 8.9 at the monthly step
+      and tends to (μ_high − λ)/(λ − μ_low) = 4.40/.60 = 7.3 in the continuum
+      limit. The contrast restates the two chosen net drift rates in half-life
+      units.
     source_observations: [O1]
     generating_method: M2
     value: "high 1.4 / low 13.1 / ratio 9.3x"
@@ -194,8 +206,14 @@ measurements:
     statement: >-
       ADF classifies 32/32 cells stationary in BOTH regimes (regime contrast not
       visible in stationarity dichotomy); cosine drift from initial centroid is
-      low and near-identical (.023 high vs .027 low), confirming MDS centroid
-      maps cannot distinguish the regimes.
+      low and near-identical (.023 high vs .027 low). The near-identity is a
+      closed form of the initial draw, not a finding: both regimes drive all
+      eight coordinates to a common scalar (8.0 in the high regime, the 9.9
+      upper clip in the low), so the terminal vector is a positive multiple of
+      1 in both and cosine drift reduces to 1 − cos(v₀, 1) = 1 − (1 + CV²)^(−½)
+      with CV = .231 the coefficient of variation of the U(3, 7) initial draw,
+      giving .026. No setting of μ and λ inside this design could have produced
+      a regime difference here.
     source_observations: [O1]
     generating_method: M2
     value: "ADF 32/32 both; cosine .023 vs .027"
@@ -204,10 +222,15 @@ measurements:
   - id: m_collapse_lead
     statement: >-
       Low-regime spectral gap reaches 10% of initial value at a mean of 46
-      months post-shock; against the Dove documented conviction-reorientation
-      horizon (~48 months) this is consistent with a 6–18 month lead time
-      (range derived from the Clarke 1976 advertising-duration band for brands
-      with λ ∈ [.07, .33]).
+      months post-shock — a closed form of the chosen drift, since
+      (1 − (λ − μ)Δt)^t = .10 solves at t = ln(.10)/ln(.95) = 44.9 months.
+      Against the documented Dove conviction-reorientation horizon (~48 months,
+      the closing edge of a 2004–2008 tracking window rather than a dated event)
+      the difference is two months. Two months lies OUTSIDE the 6–18 month band
+      the paper reports for P7, so the simulation does not support that band;
+      the band is carried entirely by the Clarke 1976 advertising-duration range
+      for brands with λ ∈ [.07, .33]. The two-month figure is inside P7's own
+      [0, 24] month bound, which is too wide to discriminate.
     source_observations: [O1]
     generating_method: M2
     value: "gap-to-10% at month 46; lead time 6–18 months"
@@ -216,8 +239,12 @@ measurements:
   - id: m_bifurcation
     statement: >-
       Across μ/λ ∈ [0.5, 2.0], mean terminal spectral gap collapses to zero as
-      the ratio crosses below 1.0 and rises monotonically above 1.0 — a sharp
-      bifurcation at ratio = 1.0 (μ = λ), not a smooth gradient.
+      the ratio crosses below 1.0 and rises monotonically above 1.0. The
+      crossing LOCATION is a closed form of the recursion, not an output of the
+      sweep: the sweep iterates g ← g(1 + (μ − λ)) at unit step for 100 steps,
+      so the terminal gap before noise is g₀(1 + λ(r − 1))^100 and the
+      multiplicative base equals 1 exactly at r = 1, for every λ > 0 and every
+      horizon. Only the apparent steepness depends on λ and the horizon.
     source_observations: [O2]
     generating_method: M2
     value: "sharp bifurcation at μ/λ = 1.0"
@@ -242,9 +269,13 @@ propositions:
         anchor: "Kato–Rellich perturbation bound + Diaconis–Stroock spectral-gap bound."
         citation_keys: [kato-1995, diaconis-stroock-1991, reed-simon-1978]
     falsifier: >-
-      Falsified if (a) a brand maintains cohort separability over an extended
-      post-shock window with μ < λ by independent measurement, or (b) a brand
-      with μ ≫ λ loses separability following a coherence shock.
+      P1 states a sufficient condition, so exactly one class of observation
+      falsifies it: a brand with independently measured μ ≫ λ that loses cohort
+      separability following a coherence shock. A brand maintaining separability
+      under μ < λ does NOT falsify P1 — that case falls outside the antecedent,
+      and a sufficient condition asserts nothing about instances in which its
+      condition fails. The μ < λ direction is carried by P5 (Corollary 1), whose
+      falsifier fires on it.
     body_sections: ["Theory: The Threshold Inequality"]
   - id: P2
     statement: >-
@@ -328,8 +359,14 @@ propositions:
       precedes conviction reorientation by the interval in which gap magnitude
       falls below the detection threshold while centroid positions remain
       visually separated; under the Dove-calibrated parameters this lead time is
-      bounded by [0, 24] months. This early-warning window is the framework's
-      practical contribution.
+      bounded by [0, 24] months. Two bands appear in the paper with different
+      standing: [0, 24] months follows from the calibration, while the narrower
+      6–18 month band used in the Discussion and Managerial Implications is
+      taken from published advertising-duration ranges for established FMCG
+      brands and is not derived from this corollary. Neither band is tested
+      against data here, and the Monte Carlo demonstration yields a value inside
+      the first but outside the second. This early-warning window is the
+      framework's practical contribution, contingent on that confirmation.
     conditions: "AA1, AA3"
     antecedents: [P1, P5]
     evidence:
@@ -426,12 +463,14 @@ propositions:
 findings:
   - id: F1
     statement: >-
-      The threshold correctly predicts regime divergence at the Dove-calibrated
-      parameters: 32/32 high-regime cells preserve their spectral gaps (terminal
-      mean 1.10) while all 32 sign-inverted low-regime cells collapse (terminal
-      mean .02) — a 52-fold difference — and the IRF half-life contrast (1.4 vs
-      13.1 months) confirms the threshold separates recoverable from absorbing
-      dynamics.
+      The simulated dynamics implement the analytic threshold: 32/32
+      high-regime cells preserve their spectral gaps (terminal mean 1.10) while
+      all 32 sign-inverted low-regime cells collapse (terminal mean .02) — a
+      52-fold difference — with an IRF half-life contrast of 1.4 vs 13.1 months.
+      Both contrasts are closed forms of the hard-coded regime parameters (see
+      m_terminal_gap, m_irf_halflife), so the finding is a transcription check
+      between the derivation and its simulation, NOT evidence that the threshold
+      separates regimes in observed brand data.
     type: "regime_separation_demonstration"
     source_measurements: [m_terminal_gap, m_irf_halflife]
     generating_method: M2
@@ -440,35 +479,48 @@ findings:
     body_sections: ["Numerical Illustration: Results", "Conclusion"]
   - id: F2
     statement: >-
-      The regime difference is invisible to centroid-level diagnostics: ADF
-      classes all 64 cells stationary and cosine drift is near-identical
-      (.023 vs .027), so MDS-visible centroid positions do not distinguish the
-      regimes — spectral gap dynamics, not centroid positions, are the
-      diagnostic.
+      Within the simulation the regime difference does not appear in
+      centroid-level diagnostics: ADF classes all 64 cells stationary and cosine
+      drift is near-identical (.023 vs .027). This is guaranteed by the design
+      (both regimes converge to a multiple of the all-ones vector; see
+      m_adf_cosine) and therefore does not test the substantive claim. The claim
+      that spectral gap dynamics rather than centroid positions are the
+      diagnostic rests on the analytic argument that a gap can close while
+      centroids remain separated (P1, P7), and awaits a measured test.
     type: "diagnostic_invisibility_demonstration"
     source_measurements: [m_adf_cosine]
     generating_method: M2
     antecedents: [O1, P7]
-    falsifier: "If centroid cosine drift had separated the regimes, the spectral-gap-as-sole-diagnostic claim weakens."
+    falsifier: "Cannot fire inside this design: both regimes converge to a common scalar, so centroid cosine drift could not have separated them. A measured centroid series that tracks a measured gap series through a regime change would falsify the claim."
     body_sections: ["Numerical Illustration: Results", "Discussion"]
   - id: F3
     statement: >-
-      The μ = λ threshold is a genuine bifurcation rather than a smooth
-      gradient: the parameter sweep shows mean terminal gap collapsing to zero
-      below ratio 1.0 and rising monotonically above it, consistent with the
-      Lyapunov sign-flip condition (P8).
+      The parameter sweep shows mean terminal gap collapsing to zero below
+      ratio 1.0 and rising monotonically above it. The LOCATION of the crossing
+      is an identity of the recursion, not a result: the sweep iterates
+      g ← g(1 + (μ − λ)) at unit step, and the multiplicative base
+      1 + λ(r − 1) equals 1 exactly at r = 1 for every λ > 0 and every horizon.
+      The sweep varies only the apparent steepness of the transition at the
+      chosen λ and horizon. Empirical content would require locating the
+      crossing from measured separability series against independently measured
+      μ and λ.
     type: "bifurcation_demonstration"
     source_measurements: [m_bifurcation]
     generating_method: M2
     antecedents: [O2, P8]
-    falsifier: "If the sweep showed a smooth gradient through ratio 1.0, the bifurcation claim fails."
+    falsifier: "Cannot fire inside this design: the crossing at r = 1 is algebraic. Falsified by a measured separability series whose estimated crossing ratio differs from 1."
     body_sections: ["Numerical Illustration: Results (Figure 1)"]
   - id: F4
     statement: >-
-      The simulated low-regime gap collapse at month 46 versus documented Dove
-      conviction reorientation at ~48 months is consistent with a 6–18 month
-      lead time, supporting Corollary 3 (P7); the mixing-time bound places the
-      irreversible-collapse window at 10–30 months for λ ∈ [.07, .33].
+      The simulated low-regime gap collapse at month 46 (closed form 44.9
+      months) versus documented Dove conviction reorientation at ~48 months is a
+      two-month difference. It does NOT support the 6–18 month band — two months
+      falls outside it — and it does not establish a lead time, being the
+      distance between a closed form of an assumed drift rate and the endpoint
+      of a four-year tracking window coarser than the difference. It is inside
+      P7's [0, 24] month bound, which is too wide to discriminate. The
+      mixing-time bound places the irreversible-collapse window at 10–30 months
+      for λ ∈ [.07, .33].
     type: "lead_time_consistency"
     source_measurements: [m_collapse_lead]
     generating_method: M2
@@ -552,7 +604,10 @@ limitations:
       The Monte Carlo demonstration is an exploratory illustration under
       author-proposed Dove-calibrated parameters, NOT a confirmatory test against
       observed data; no Dove tracking-panel data were used to fit the model and
-      no confidence intervals on λ and μ are available. Confirmatory estimation
+      no confidence intervals on λ and μ are available. Every contrast in
+      Table 1 is a closed form of a generator parameter, so no quantity reported
+      there could have come out otherwise under this design and none carries
+      independent evidential weight. Confirmatory estimation
       from real Dove longitudinal data is deferred to a companion paper using R10
       source data (2026p).
     severity: "scope-bounding"

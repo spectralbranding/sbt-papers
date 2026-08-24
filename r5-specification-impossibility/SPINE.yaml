@@ -1,6 +1,6 @@
 # SPINE.yaml — Specification Impossibility in Organizational Design (2026h / R5)
 #
-# RETROFIT spine (CLAUDE.md rule 0aa / publication-pipeline decision D4):
+# RETROFIT spine ([internal ref removed] rule 0aa / publication-pipeline decision D4):
 # extracted DESCRIPTIVELY from the completed paper.md, not authored
 # generatively before prose. The paper was finished (Working Paper v1.1.0,
 # March 2026) before this spine existed; every node below traces to claims
@@ -220,11 +220,26 @@ propositions:
       - type: derivation
         anchor: "Theorem 1 proof: (1/epsilon)^48 distinguishable cubes; M·V_48(epsilon) coverage upper bound; Corollary 1.1."
         citation_keys: []
-    falsifier: >-
-      Falsified if the OST parameter space has intrinsic dimensionality
-      substantially below 48 (e.g. <20 effective dims from empirical structural
-      dependencies), in which case V_48 is replaced by V_{d_eff} on the lower-dim
-      subspace (paper's stated falsifier).
+    applicability_condition: >-
+      Theorem 1 is a volume computation and no observation can contradict it; the
+      earlier clause ("falsified if the OST parameter space has intrinsic
+      dimensionality substantially below 48, e.g. <20 effective dims") is
+      withdrawn on two grounds. It named an applicability condition, not a
+      falsifier (the same arithmetic holds at any d with V_d in place of V_48),
+      and P4 already meets it at d_eff = 15.75. The two dimensionalities are
+      different objects: P3 counts the parameters a specification must assign
+      values to (the cascade makes 32.25 of the 48 deterministic, it does not
+      delete them), P4 counts the free ones under an ASSUMED gamma = .5 that is
+      illustrative, not measured. The consequence is printed rather than hidden:
+      at d = 15.75, V_15.75(.1) ~ 1e-16.32, 1% coverage takes 2.1e14 templates
+      instead of 7.3e57, and 1e20 templates would cover the space many times over
+      — so the strong "even 1e20 specifications" form holds at 48 dimensions and
+      fails at 15.75, while the realistic-template form survives both (1e10
+      templates cover 1e-49.86 at d = 48 and 1e-6.32 at d = 15.75). What is
+      testable is the intrinsic dimensionality of the empirical distribution of
+      real specifications, measured by an estimator that does not pass through
+      gamma; the threshold for coverage below 1e-3 is d >= 9.5 at 1e6 templates,
+      d >= 13.0 at 1e10, d >= 21.1 at 1e20.
     body_sections: ["§The Coverage Impossibility Theorem", "§Dimensional Comparison"]
   - id: P4
     statement: >-
@@ -258,9 +273,19 @@ propositions:
         anchor: "R(gamma) = 1 - (1-(1-gamma)^L)/(gamma·L); functional-form prediction sharper than loose/tight coupling (Weick 1976)."
         citation_keys: []
     falsifier: >-
-      Falsified if a paired sample {(gamma_hat_o, R_hat_o)} shows Pearson r < .50
-      with R(gamma_hat), or residuals depend systematically on level (per-pair
-      gamma differing by >.20 within one organization).
+      The earlier correlation clause is withdrawn as circular: the only d_eff
+      estimator this paper supplies is P4's closed form in gamma, so R_hat =
+      1 - d_eff(gamma_hat)/48 equals R(gamma_hat) identically and r = 1 for every
+      sample, including pure noise. Restated: falsified if R_hat_o computed from a
+      d_eff estimate INDEPENDENT of gamma_hat — the participation ratio
+      (sum lambda_i)^2 / sum lambda_i^2 of the measured 48-parameter covariance
+      spectrum, or a manifold intrinsic-dimension estimator on the same matrices —
+      correlates below .50 with R(gamma_hat) across organizations, or if the
+      residuals R_hat_o - R(gamma_hat_o) depend systematically on level (per-pair
+      gamma differing by >.20 within one organization). The second clause was
+      always testable and does not depend on the first, because per-pair gamma
+      estimates are separate measurements rather than one closed form evaluated
+      twice.
     body_sections: ["§A Falsifiable Empirical Prediction"]
   - id: P6
     statement: >-
@@ -294,11 +319,17 @@ propositions:
   - id: P8
     statement: >-
       (Information-theoretic reading) A full 48-dim specification carries
-      H_48 = 48·log2(10) ≈ 159.4 bits, far exceeding human working-memory capacity
-      (≈23 bits Miller, ≈13 bits Cowan); therefore structural compression via
-      cascade and fork is COGNITIVELY NECESSARY, not merely convenient — the
-      cascade turns an impossible 159.4-bit simultaneous problem into a sequential
-      one with ≤26.6 bits at any step.
+      H_48 = 48·log2(10) ≈ 159.4 bits against a working-memory capacity of ≈23.2
+      bits (Miller) or ≈13.3 (Cowan). The comparison is a DERIVATION, not a
+      measurement: log2(1/epsilon) cancels from both sides, so the ratio is
+      exactly the chunk count over the dimension count — 7/48 = .146 and
+      4/48 = .083 at ANY resolution. Its substantive content is the assumption
+      that one chunk equals one activation dimension. The cascade turns a
+      159.4-bit simultaneous problem into a sequential one with <=26.6 bits at any
+      step. Whether that makes compression COGNITIVELY NECESSARY is a behavioural
+      claim the arithmetic does not carry, because designers work with external
+      representations rather than unaided recall; it is marked untested pending
+      the behavioural comparison named in the falsifier.
     conditions: "C1"
     antecedents: [P3, P4]
     evidence:
@@ -306,9 +337,19 @@ propositions:
         anchor: "H = n·log2(1/epsilon) (Corollary 2); WM ratio; per-level load Table 8; cascade as lossy compression, CR≈3.05 (Corollary 3)."
         citation_keys: []
     falsifier: >-
-      Corollary 3 falsified if a full specification's effective information is
-      substantially below 23 bits, or organizations routinely produce coherent
-      specifications with no cascade/fork compression.
+      The earlier clause (a) — "falsified if a full specification's effective
+      information is substantially below 23 bits" — is withdrawn as unreachable
+      under the model's own floor: L0 contributes 8 free dimensions at every
+      gamma, so d_eff >= 8 and H_eff >= 26.6 bits, above the 23.2-bit capacity by
+      construction. Restated with a reachable target: the chunk identification
+      fails if the number of independently varying activation parameters at L0 is
+      measured at 6 or fewer across organizations, since H_eff would then be at
+      most 19.9 bits and no compression would be needed. The necessity claim fails
+      if designers given the same 48-parameter task with and without a cascade
+      scaffold — both with full access to external representations — produce
+      specifications of indistinguishable completeness and internal consistency on
+      a rubric fixed in advance, or if organizations are observed producing
+      coherent full-dimensional specifications with no cascade or fork structure.
     body_sections: ["§Information-Theoretic Interpretation"]
   - id: P9
     statement: >-
@@ -386,7 +427,7 @@ findings:
     source_measurements: [m_ball_volume, m_coverage_ceiling]
     generating_method: M1
     antecedents: [P3]
-    falsifier: "If the viable specification subspace has intrinsic dimension well below ~20, exhaustive coverage becomes feasible and F1 weakens."
+    falsifier: "If the viable specification subspace has measured intrinsic dimension below the template-count threshold (d >= 13.0 against 1e10 templates, d >= 21.1 against 1e20, for coverage under 1e-3), exhaustive coverage becomes feasible at that template count and F1 weakens. The threshold must be met by an estimator independent of the assumed gamma, since P4 s d_eff = 15.75 is a modeling output, not a measurement."
     citation_role_in_paper: "primary_result"
     provenance:
       created_by: "author"
@@ -398,12 +439,14 @@ findings:
       modularity theory: the cascade collapses d_eff (67% at gamma=0.5) and the
       fork factors the space into shared/private subspaces, so hierarchy IS
       dimensionality reduction and modularity IS subspace decomposition — both
-      cognitively necessary responses to coverage impossibility, not conveniences.
+      GEOMETRIC responses to coverage impossibility. Whether they are also
+      cognitively necessary is not settled by the bit arithmetic and awaits the
+      behavioural comparison specified under P8.
     type: "theorem_consequence"
     source_measurements: [m_deff, m_fork_private, m_entropy]
     generating_method: M1
     antecedents: [P4, P6, P7, P8]
-    falsifier: "If organizations routinely specify coherently without any cascade/fork compression, the necessity claim fails."
+    falsifier: "If organizations routinely specify coherently without any cascade/fork compression, or if scaffolded and unscaffolded designers produce specifications of indistinguishable completeness and consistency in the comparison specified under P8, the necessity claim fails."
     citation_role_in_paper: "primary_result"
     provenance:
       created_by: "author"

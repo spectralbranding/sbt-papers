@@ -23,23 +23,21 @@ meta:
   - dimensionality reduction
   - cascade constraints
   - forkability
-  abstract: 'Organizational design frameworks prescribe configurations across multiple interdependent
-    levels yet no existing theory quantifies the fundamental limits of exhaustive specification. This
-    paper applies high-dimensional geometry to prove that comprehensive organizational specification is
-    geometrically impossible. OrgSchema Theory''s (OST) 8x6 activation matrix is formalized as a 48-dimensional
-    specification space $[0,1]^{48}$; three core results follow. First, the Coverage Impossibility Theorem:
-    at resolution $\varepsilon = 0.1$ per dimension, there are $10^{48}$ distinguishable specifications,
-    each covering a ball of volume $V_{48}(0.1) \approx 1.38 \times 10^{-60}$; even $10^{20}$ specifications
-    cover only $10^{-40}$ of the space. Second, the Effective Dimensionality Theorem: OST''s cascade model
-    reduces effective dimensionality from 48 to $d_{\text{eff}} = 15.75$ at $\gamma = 0.5$, a 67% reduction.
-    Third, the Forkability Theorem: the fork model decomposes the specification space into shared and
-    private subspaces, formalizing franchises and open-source ecosystems. An information-theoretic analysis
-    shows that full specification requires 159.4 bits, far exceeding human working-memory capacity, establishing
-    that cascade and fork compression is cognitively necessary. These geometric results are strictly complementary
-    to Simon''s bounded-rationality argument: cognitive limits make optimization difficult; geometric
-    impossibility precludes exhaustive coverage regardless of cognitive capacity. The paper distinguishes
-    specification impossibility from NK landscape search complexity, providing the first formal volumetric
-    justification for OST''s specialization requirement within the organizational design literature.'
+  abstract: 'Organizational design frameworks prescribe configurations across interdependent levels, yet
+    none quantifies the limits of exhaustive specification. This paper applies high-dimensional geometry
+    to OrgSchema Theory''s (OST) 8x6 activation matrix, formalized as a 48-dimensional specification space
+    $[0,1]^{48}$. Three results follow. The Coverage Impossibility Theorem: at resolution $\varepsilon
+    = 0.1$ there are $10^{48}$ distinguishable specifications, each covering a ball of volume $V_{48}(0.1)
+    \approx 1.38 \times 10^{-60}$, so even $10^{20}$ specifications cover $10^{-40}$ of the space. The
+    Effective Dimensionality Theorem: the cascade model reduces effective dimensionality to $d_{\text{eff}}
+    = 15.75$ at an illustrative $\gamma = 0.5$, a 67% reduction. The Forkability Theorem: the fork model
+    decomposes the space into shared and private subspaces, formalizing franchises and open-source ecosystems.
+    An information-theoretic analysis sets 159.4 bits of full specification against a working-memory capacity
+    near 23 bits, a ratio that reduces to the dimension count over the chunk count and is resolution-free.
+    These geometric results are complementary to Simon''s bounded-rationality argument: cognitive limits
+    make optimization difficult, whereas geometric impossibility precludes exhaustive coverage regardless
+    of cognitive capacity. The paper distinguishes specification impossibility from NK landscape search
+    complexity, supplying the first formal volumetric justification for OST''s specialization requirement.'
 claims:
 - id: P1
   type: proposition
@@ -66,7 +64,7 @@ claims:
     specifications, each covering V_48(0.1) ≈ 1.38e-60; any practically enumerable collection covers a
     negligible fraction (10^20 templates → 1.38e-40), so exhaustive coverage is geometrically impossible
     — not merely impractical.
-  testable: true
+  testable: false
   tested_in_paper: true
   status: not_tested
   depends_on:
@@ -118,11 +116,15 @@ claims:
   - P6
 - id: P8
   type: proposition
-  statement: (Information-theoretic reading) A full 48-dim specification carries H_48 = 48·log2(10) ≈
-    159.4 bits, far exceeding human working-memory capacity (≈23 bits Miller, ≈13 bits Cowan); therefore
-    structural compression via cascade and fork is COGNITIVELY NECESSARY, not merely convenient — the
-    cascade turns an impossible 159.4-bit simultaneous problem into a sequential one with ≤26.6 bits at
-    any step.
+  statement: '(Information-theoretic reading) A full 48-dim specification carries H_48 = 48·log2(10) ≈
+    159.4 bits against a working-memory capacity of ≈23.2 bits (Miller) or ≈13.3 (Cowan). The comparison
+    is a DERIVATION, not a measurement: log2(1/epsilon) cancels from both sides, so the ratio is exactly
+    the chunk count over the dimension count — 7/48 = .146 and 4/48 = .083 at ANY resolution. Its substantive
+    content is the assumption that one chunk equals one activation dimension. The cascade turns a 159.4-bit
+    simultaneous problem into a sequential one with <=26.6 bits at any step. Whether that makes compression
+    COGNITIVELY NECESSARY is a behavioural claim the arithmetic does not carry, because designers work
+    with external representations rather than unaided recall; it is marked untested pending the behavioural
+    comparison named in the falsifier.'
   testable: true
   tested_in_paper: true
   status: not_tested
@@ -188,11 +190,6 @@ methodology:
     software: [internal path removed]
     method: uv run --with numpy,scipy python ...
 acceptance:
-- claim_id: P3
-  criterion: Holds if (Theorem 1, Coverage Impossibility) At resolution epsilon = 0.
-  falsification: Falsified if the OST parameter space has intrinsic dimensionality substantially below
-    48 (e.g. <20 effective dims from empirical structural dependencies), in which case V_48 is replaced
-    by V_{d_eff} on the lower-dim subspace (paper's stated falsifier).
 - claim_id: P4
   criterion: Holds if (Theorem 2, Effective Dimensionality Reduction) OST's cascade model, where level
     i constrains level i+1 with strength gamma, reduces effective dimensionality to d_eff = 8(1-(1-gamma)^6)/gamma
@@ -205,13 +202,28 @@ acceptance:
     a falsifiable empirical prediction: the cross-level coherence ratio R = 1 - d_eff/(nL) is a monotone
     increasing function R(gamma) of cascade coupling, so across organizations an estimated R_hat should
     track R(gamma_hat) within a tolerance band (anchors R(.'
-  falsification: Falsified if a paired sample {(gamma_hat_o, R_hat_o)} shows Pearson r < .50 with R(gamma_hat),
-    or residuals depend systematically on level (per-pair gamma differing by >.20 within one organization).
+  falsification: 'The earlier correlation clause is withdrawn as circular: the only d_eff estimator this
+    paper supplies is P4''s closed form in gamma, so R_hat = 1 - d_eff(gamma_hat)/48 equals R(gamma_hat)
+    identically and r = 1 for every sample, including pure noise. Restated: falsified if R_hat_o computed
+    from a d_eff estimate INDEPENDENT of gamma_hat — the participation ratio (sum lambda_i)^2 / sum lambda_i^2
+    of the measured 48-parameter covariance spectrum, or a manifold intrinsic-dimension estimator on the
+    same matrices — correlates below .50 with R(gamma_hat) across organizations, or if the residuals R_hat_o
+    - R(gamma_hat_o) depend systematically on level (per-pair gamma differing by >.20 within one organization).
+    The second clause was always testable and does not depend on the first, because per-pair gamma estimates
+    are separate measurements rather than one closed form evaluated twice.'
 - claim_id: P8
   criterion: Holds if (Information-theoretic reading) A full 48-dim specification carries H_48 = 48·log2(10)
     ≈ 159.
-  falsification: Corollary 3 falsified if a full specification's effective information is substantially
-    below 23 bits, or organizations routinely produce coherent specifications with no cascade/fork compression.
+  falsification: 'The earlier clause (a) — "falsified if a full specification''s effective information
+    is substantially below 23 bits" — is withdrawn as unreachable under the model''s own floor: L0 contributes
+    8 free dimensions at every gamma, so d_eff >= 8 and H_eff >= 26.6 bits, above the 23.2-bit capacity
+    by construction. Restated with a reachable target: the chunk identification fails if the number of
+    independently varying activation parameters at L0 is measured at 6 or fewer across organizations,
+    since H_eff would then be at most 19.9 bits and no compression would be needed. The necessity claim
+    fails if designers given the same 48-parameter task with and without a cascade scaffold — both with
+    full access to external representations — produce specifications of indistinguishable completeness
+    and internal consistency on a rubric fixed in advance, or if organizations are observed producing
+    coherent full-dimensional specifications with no cascade or fork structure.'
 dependencies:
 - relationship: extends
   claim: OST (Zharnikov 2026i) supplies the architectural framework — the six levels, eight dimensions,
@@ -292,26 +304,30 @@ results:
   status: supported
   notes: 'Cascade hierarchy and forkability are geometric microfoundations for modularity theory: the
     cascade collapses d_eff (67% at gamma=0.5) and the fork factors the space into shared/private subspaces,
-    so hierarchy IS dimensionality reduction and modularity IS subspace decomposition — both cognitively
-    necessary responses to coverage impossibility, not conveniences.'
+    so hierarchy IS dimensionality reduction and modularity IS subspace decomposition — both GEOMETRIC
+    responses to coverage impossibility. Whether they are also cognitively necessary is not settled by
+    the bit arithmetic and awaits the behavioural comparison specified under P8.'
 - claim_id: P6
   status: supported
   notes: 'Cascade hierarchy and forkability are geometric microfoundations for modularity theory: the
     cascade collapses d_eff (67% at gamma=0.5) and the fork factors the space into shared/private subspaces,
-    so hierarchy IS dimensionality reduction and modularity IS subspace decomposition — both cognitively
-    necessary responses to coverage impossibility, not conveniences.'
+    so hierarchy IS dimensionality reduction and modularity IS subspace decomposition — both GEOMETRIC
+    responses to coverage impossibility. Whether they are also cognitively necessary is not settled by
+    the bit arithmetic and awaits the behavioural comparison specified under P8.'
 - claim_id: P7
   status: supported
   notes: 'Cascade hierarchy and forkability are geometric microfoundations for modularity theory: the
     cascade collapses d_eff (67% at gamma=0.5) and the fork factors the space into shared/private subspaces,
-    so hierarchy IS dimensionality reduction and modularity IS subspace decomposition — both cognitively
-    necessary responses to coverage impossibility, not conveniences.'
+    so hierarchy IS dimensionality reduction and modularity IS subspace decomposition — both GEOMETRIC
+    responses to coverage impossibility. Whether they are also cognitively necessary is not settled by
+    the bit arithmetic and awaits the behavioural comparison specified under P8.'
 - claim_id: P8
   status: supported
   notes: 'Cascade hierarchy and forkability are geometric microfoundations for modularity theory: the
     cascade collapses d_eff (67% at gamma=0.5) and the fork factors the space into shared/private subspaces,
-    so hierarchy IS dimensionality reduction and modularity IS subspace decomposition — both cognitively
-    necessary responses to coverage impossibility, not conveniences.'
+    so hierarchy IS dimensionality reduction and modularity IS subspace decomposition — both GEOMETRIC
+    responses to coverage impossibility. Whether they are also cognitively necessary is not settled by
+    the bit arithmetic and awaits the behavioural comparison specified under P8.'
 limitations:
 - description: The coverage bounds assume a uniform distribution over [0,1]^48; real organizations cluster
     on a viability manifold. A viability-weighted analysis would reduce the volume to be covered, though

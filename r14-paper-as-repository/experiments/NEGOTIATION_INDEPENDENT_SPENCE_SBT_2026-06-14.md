@@ -362,7 +362,7 @@ confirming they differ and the three context-term hashes confirming they equal t
 The committed citation substrate (`[internal path removed]`) and the live ontology modules
 (`[internal path removed]*.yaml`) were not modified.
 
-**Publication plan (per user direction).** *All experiment data above is to be published in the public
+**Publication plan (by author decision).** *All experiment data above is to be published in the public
 SSOT when/if a paper carrying this evidence is published.* The carrying paper is **R14 / 2026u**
 ("negotiate a paper before you read it"). At that paper's publication these artifacts move to the public
 mirror `sbt-papers/r14-paper-as-repository/` under an `experiments/negotiation-independent-spence/`

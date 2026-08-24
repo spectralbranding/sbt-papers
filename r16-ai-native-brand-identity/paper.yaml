@@ -27,20 +27,20 @@ meta:
   abstract: 'Brand identity verification technologies have historically changed discontinuously in response
     to shifts in the primary observer type. This paper formalizes the *observer-driven evolution thesis*
     and extends it to the current transition from human to AI agents. The Brand Function is defined as
-    *f*(query, context, observer_type, time) $\to$ response, constituting the complete behavioral specification
-    required for machine observers. Cryptographic signatures on this function are predicted to replace
-    logos as the primary identity mechanism for text-primary AI agents. The framework introduces *behavioral
-    metamerism* --- the condition in which brands converge on statistically indistinguishable profiles
-    while differing in structurally relevant behavioral contingencies --- an equivalence that statistical
-    optimization (including generative engine optimization) cannot resolve. Six falsifiable propositions
-    link observer type to identity technology, specification to coherence, and cryptographic attestation
-    to computational trust. Existing protocols address discovery and transaction but omit perception measurement,
-    behavioral specification, and coherence verification. The Brand Function fills these gaps by integrating
-    spectral perception dimensions, observer-contingent decision rules, and computable coherence metrics.
-    The analysis implies that brands must develop dual identity infrastructure: visual for humans, cryptographically
-    attested behavioral specifications for machines. Theoretical contributions reposition brand equity
-    as observer-contingent; managerial implications center on verifiable behavioral contracts that reduce
-    adverse selection and moral hazard in delegated purchasing.'
+    *f*(query, context, observer_type, time) $\to$ response, the complete behavioral specification machine
+    observers require. Cryptographic signatures on this function are predicted to replace logos as the
+    primary identity mechanism for text-primary AI agents. The framework introduces *behavioral metamerism*
+    --- brands converging on statistically indistinguishable profiles while differing in structurally
+    relevant behavioral contingencies --- an equivalence that statistical optimization, generative engine
+    optimization included, cannot resolve. Six falsifiable propositions link observer type to identity
+    technology, specification to coherence, and cryptographic attestation to computational trust. Existing
+    protocols address discovery and transaction but omit perception measurement, behavioral specification,
+    and coherence verification. The Brand Function fills these gaps by integrating spectral perception
+    dimensions, observer-contingent decision rules, and computable coherence metrics. The analysis implies
+    that brands must develop dual identity infrastructure: visual for humans, cryptographically attested
+    behavioral specifications for machines. Theoretical contributions reposition brand equity as observer-contingent;
+    managerial implications center on verifiable behavioral contracts that reduce adverse selection and
+    moral hazard in delegated purchasing.'
 claims:
 - id: P0
   type: proposition
@@ -178,9 +178,14 @@ dependencies:
   critical: false
   doi: 10.5281/zenodo.18945352
 - relationship: tests
-  claim: 'R15 (2026v) is the empirical companion: 21,600+ calls, 24 models confirm structural dimensional
-    collapse (cross-model cosine .977), local brands collapse 24% more (d=.878), native-language querying
-    does not reduce it — the measured perceptual failure mode R16 theorizes behaviorally.'
+  claim: 'R15 (2026v) is the empirical companion: 21,350 calls, 24 models report structural dimensional
+    collapse (cross-model cosine .977), local brands collapsing 20% more (d = .92), and no systematic
+    native-language reduction (58/121 positive, mean +.001) — the measured perceptual failure mode R16
+    theorizes behaviorally. Same author, same instrument, so this is convergence and not independent confirmation;
+    R15''s local condition rests on n = 5 brand pairs, all food and beverage. The cosine is consistent
+    with a shared representational subspace but does not establish one: the same profile against a uniform
+    allocation returns .964 and independent Dirichlet(8) allocations average .905, so the discriminating
+    test is a label-permutation null on the per-model profiles, which has not been run.'
   critical: false
   doi: 10.5281/zenodo.19422427
 - relationship: applies

@@ -83,6 +83,18 @@ boundary_conditions:
     provenance:
       created_by: "author"
       created_at: "2026-03"
+  - id: C4
+    statement: >-
+      For the alignment-gap lower bound only: the founder's weight profile is at
+      least as concentrated as the cohort's, ||w(c)||_2 <= ||w(f)||_2. Outside this
+      regime the gap is not sign-definite — a cohort more concentrated than the
+      founder can value the founder-optimal portfolio more highly than the founder
+      does — and no lower bound in terms of perceptual distance is available.
+    observable: "Both Herfindahl indices sum_i w_i^2 computable from the two measured profiles; the condition is checkable before the bound is applied."
+    excludes: "Diffuse founders facing concentrated cohorts, including every pair with a uniform founder, for which the gap is identically zero."
+    provenance:
+      created_by: "author"
+      created_at: "2026-08"
 
 # ============================================================================
 # Observations — the illustrative numerical scenario as input data
@@ -229,16 +241,19 @@ propositions:
     body_sections: ["Corollary 1", "Remark 3"]
   - id: P3
     statement: >-
-      (Proposition 1, concentration premium) Under uniform costs the optimal
-      value is V*(c) = H(c)/(lambda·alpha-bar) where H(c) = sum_i w_i(c)^2 is the
-      Herfindahl index; concentrated cohorts (high H) achieve strictly higher
-      optimal value than diffuse ones, formalizing "a narrow audience you can
-      delight beats a broad one you can only satisfy."
+      (Proposition 1, concentration identity) Under uniform costs the optimal
+      value is exactly V*(c) = H(c)/(lambda·alpha-bar), where H(c) = sum_i w_i(c)^2
+      is the cohort's Herfindahl index. Optimal value is therefore a strictly
+      increasing function of concentration by identity, not by empirical
+      association: the ordering of two cohorts by V* is the ordering of their
+      Herfindahl indices, restated. The managerial reading — a narrow audience
+      is worth more per unit of cost than a broad one — is a consequence of the
+      quadratic-cost model, and carries no independent evidential weight.
     conditions: "C1, C2, C3"
     antecedents: [P1]
     evidence:
       - type: derivation
-        anchor: "V*(c) = sum_i w_i(c)^2 / (lambda·alpha-bar); H(c) >= 1/8 with equality at uniform weights (Proposition 1 proof)."
+        anchor: "V*(c) = sum_i w_i(c)^2 / (lambda·alpha-bar) is an identity under alpha_i = alpha-bar; every w in Delta^7 has mean weight 1/8, so a 'same mean weight' hypothesis excludes nothing (Proposition 1 proof)."
     body_sections: ["§Optimal Value and the Value of Information", "Proposition 1"]
   - id: P4
     statement: >-
@@ -255,18 +270,30 @@ propositions:
     body_sections: ["§The Alignment Gap", "Definition 1"]
   - id: P5
     statement: >-
-      (Theorem 2) The alignment gap is bounded below by a geometric quantity:
-      A(f,c) >= H(f,c)^2 / (2·lambda·alpha-bar) via the Hellinger distance, and
-      equivalently by the Fisher–Rao distance d_FR between w(f) and w(c). Perceptual
-      distance predicts economic loss; the gap has a floor that improved execution
-      on the chosen dimensions cannot recover — only reallocation toward the
-      cohort's weights closes it.
-    conditions: "C1, C2, C3"
+      (Theorem 2, corrected at v2.0.0) Under the concentration hypothesis
+      ||w(c)||_2 <= ||w(f)||_2 — the founder's weights are at least as concentrated
+      as the cohort's — the alignment gap is bounded below by the squared Euclidean
+      separation, A(f,c) >= ||w(f) − w(c)||_2^2 / (2·lambda·alpha-bar), which is exact
+      algebra, and in Hellinger form by A(f,c) >= H(f,c)^4 / (4·lambda·alpha-bar).
+      The Hellinger form is QUARTIC in the distance, not quadratic, and the
+      hypothesis is necessary: without it the gap is not sign-definite and vanishes
+      identically for a uniform founder. Perceptual separation therefore bounds
+      economic loss only inside the concentration regime, and the bound is far too
+      loose to serve as a managerial trigger — the gap is computed directly instead.
+    conditions: "C1, C2, C3, C4"
     antecedents: [P4]
     evidence:
       - type: derivation
-        anchor: "Bhattacharyya coefficient, Cauchy–Schwarz on Delta^7, ||w(f)||^2 >= 1/8, d_FR = 2·arccos(BC) (Theorem 2 + Appendix A.1)."
-    falsifier: "If a portfolio with d_FR(w(f),w(c)) large can attain a near-zero alignment gap under the model assumptions, Theorem 2 fails."
+        anchor: "Exact identity ||w(f)||^2 − <w(f),w(c)> = (1/2)||w(f)−w(c)||^2 + (1/2)(||w(f)||^2 − ||w(c)||^2); the concentration hypothesis makes the second term non-negative. Hellinger form via ||d||_2^2 >= ||d||_1^2/8 (Cauchy–Schwarz on eight coordinates) and ||p−q||_1 >= 2H^2 (total variation). Theorem 2 + Appendix A.1."
+      - type: computation
+        anchor: "Companion script --verify-theorem2: the published quadratic bound fails on 91,555 of 200,000 Dirichlet pairs and identically along the uniform-founder family; the corrected bound has no violation among the 99,935 pairs satisfying the hypothesis, worst observed slack ratio 1.545."
+    falsifier: "If a founder–cohort pair satisfying ||w(c)||_2 <= ||w(f)||_2 attains an alignment gap below ||w(f) − w(c)||_2^2 / (2·lambda·alpha-bar), the corrected Theorem 2 fails."
+    withdrawn: >-
+      The v1.0.0 statement A(f,c) >= H(f,c)^2 / (2·lambda·alpha-bar), its Fisher-Rao
+      form A(f,c) >= d_FR^2 / (32·lambda·alpha-bar), and the reading that perceptual
+      distance predicts economic loss unconditionally. A uniform founder has
+      A(f,c) = 0 against every cohort on the simplex while the right-hand side stays
+      strictly positive.
     body_sections: ["§The Alignment Gap and Fisher-Rao Distance", "Theorem 2", "Appendix A.1"]
   - id: P6
     statement: >-
@@ -517,7 +544,7 @@ limitations:
     body_sections: ["§B2B Applicability"]
 
 # ============================================================================
-# Cross-paper engagement (real corpus keys; see CLAUDE.md citation-key table)
+# Cross-paper engagement (real corpus keys; see [internal ref removed] citation-key table)
 # ============================================================================
 corpus_precedents:
   - paper_key: 2026a

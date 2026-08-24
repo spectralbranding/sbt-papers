@@ -96,11 +96,36 @@ assumption_atoms:
     statement: >-
       The dimension intrinsic-volatility ordering
       nu_Tem < nu_Sem < nu_Nar < nu_Ide < nu_Cul < nu_Eco < nu_Soc < nu_Exp
-      is adopted on theoretical grounds (justified in Zharnikov 2026r).
+      is STIPULATED on theoretical grounds. It is neither measured here nor
+      established elsewhere in the corpus. The nearest available corpus
+      quantity is cross-model variance in how much weight observers allocate to
+      each dimension, which measures disagreement about a dimension's
+      importance rather than the temporal volatility of the dimension itself;
+      its ranking does not reproduce the ordering assumed here, placing Social
+      and Experiential among the least variable dimensions rather than the most.
     relaxation_consequence: >-
       A different volatility ordering would re-rank the identity vs experiential
       asymmetry comparison (Corollary 1), which depends on the active dimensions
-      of those two types having low vs high volatility respectively.
+      of those two types having low vs high volatility respectively. Because the
+      ordering is stipulated rather than established, that comparison is
+      conditional on the stipulation and is not derived.
+
+  - id: AA5
+    statement: >-
+      The operative drift floor alpha_min is set at the emission s_crit at which
+      the signal-driven drift's marginal contribution to mu_i equals the decay
+      drift's restoring rate, i.e. gamma * s_crit = delta, so s_crit = delta /
+      gamma. At the paper's working parameters (gamma = .020, delta = .050) this
+      gives s_crit = 2.5. Below s_crit a dimension's position is anchored by the
+      brand-independent decay term; above it the dimension is carried by the
+      brand's own emission.
+    relaxation_consequence: >-
+      The floor moves with the ratio delta / gamma, so a different working
+      parameterization moves which dimensions clear it. At s_crit = 2.5 the
+      floor-crossing count is k = 8 for Hermes, IKEA, Patagonia and Erewhon and
+      k = 7 for Tesla, so the floor criterion separates only the incoherent type;
+      the remaining separations rest on the graded anisotropy classification and
+      on AA4.
 
 # ============================================================================
 # Observations — the Monte Carlo simulation as a built evidence artifact
@@ -209,7 +234,13 @@ propositions:
       low-volatility dimensions; experiential asymmetry (Erewhon) is 2-3
       anisotropic on high-volatility dimensions; incoherent (Tesla) is
       effectively stochastic. Robustness is governed by the absolute drift FLOOR
-      on the weakest dimension, not the spread of the drift vector.
+      on the weakest dimension, not the spread of the drift vector. The two
+      counts in this mapping are distinct and must not be conflated: the
+      floor-crossing count k(alpha; alpha_min) at the derived floor s_crit = 2.5
+      is 8 for Hermes, IKEA, Patagonia and Erewhon and 7 for Tesla, while the
+      k-anisotropy labels (8 / 5 / 3 / 2-3 / stochastic) are a DESCRIPTIVE
+      reading of relative drift concentration in each canonical profile at an
+      informal strong-drift level of s_i around 7, not floor crossings.
     conditions: "C1"
     antecedents: [P1]
     evidence:
@@ -218,7 +249,7 @@ propositions:
         citation_keys: []
       - type: empirical
         anchor: "Floor-crossing counts and within-brand variance from coherence_resilience_computations.py."
-    assumptions: [AA1]
+    assumptions: [AA1, AA5]
     body_sections: ["§2.3 Mapping Coherence Types to Drift Structures", "§2.4 Summary of Drift Typology"]
   - id: P3
     statement: >-
@@ -227,12 +258,16 @@ propositions:
       lower absorption probability than a k-anisotropic field, which is lower
       than a stochastic field; moreover P_abs is increasing in the anisotropy
       degree (8-k). Absorption is dominated by the weakest dimension because the
-      hitting probability is convex in the drift parameter (Jensen).
+      hitting probability is convex in the drift parameter (Jensen). The
+      convexity premise is ASSERTED, NOT VERIFIED: the appendix supplies a
+      heuristic and defers the second-derivative computation, so the Jensen step
+      and everything resting on it are conditional on a property the paper does
+      not establish.
     conditions: "C1"
     antecedents: [P1, P2, M2]
     evidence:
       - type: analytic
-        anchor: "Union bound over single-coordinate hitting probabilities + convexity/Jensen argument; scale-function + comparison theorem (Ikeda & Watanabe 1989, Thm VI.1.1)."
+        anchor: "Union bound over single-coordinate hitting probabilities + Jensen step conditional on an ASSERTED convexity premise; monotonicity (not convexity) is supplied by the scale-function + comparison theorem (Ikeda & Watanabe 1989, Thm VI.1.1)."
         citation_keys: []
     assumptions: [AA1, AA2]
     falsifier: "If absorption probability does not order with drift isotropy at equal total drift, Theorem 1 fails."
@@ -243,12 +278,16 @@ propositions:
       absorption probability is lower when the active (strongly-driven)
       dimensions have LOW intrinsic volatility than when they have HIGH
       volatility, because strong drift in a low-noise environment yields a more
-      deterministic trajectory away from the boundary.
+      deterministic trajectory away from the boundary. The comparative statement
+      in nu is derived; WHICH SBT dimensions are the low- and high-volatility
+      ones is not. Applying the corollary to a named pair of coherence types is
+      therefore conditional on the stipulated ordering AA4, which the paper does
+      not establish and which the nearest corpus measurement does not support.
     conditions: "C1"
     antecedents: [P3, AA4]
     evidence:
       - type: analytic
-        anchor: "Volatility ordering (Definition 3) + noise-vs-drift trade-off on the active dimensions."
+        anchor: "Noise-vs-drift trade-off on the active dimensions; the dimension assignment enters only through the stipulated ordering of Definition 3."
         citation_keys: [urde-2007-corporate-brands-heritage, brakus-2009-brand-experience]
     assumptions: [AA4]
     body_sections: ["§3.3 The Role of Dimension Volatility"]
@@ -258,13 +297,20 @@ propositions:
       absorption-probability ordering across types:
       eco < signal < identity < exp_asymmetry < incoherent, equivalently the
       stability ordering A+ > A- > B+ > B- > C-. The identity-vs-experiential
-      step is distinguished only by Corollary 1 (both are ~3-anisotropic); the
-      remaining steps follow from Theorem 1.
+      step is distinguished only by Corollary 1 (both are ~3-anisotropic) and is
+      therefore conditional on the stipulated volatility ordering AA4; the
+      remaining steps follow from Theorem 1 applied to the DESCRIPTIVE
+      anisotropy labels of P2, not to floor crossings, since at the derived floor
+      four of the five canonical types are alike (alpha_min, 8)-robust. Both
+      inputs are read off the same canonical profiles that define the coherence
+      types, so the ordering restates the type assignment; what the derivation
+      supplies is the mechanism (weakest-link absorption under a convexity
+      premise), not an independent confirmation of the grading.
     conditions: "C1"
     antecedents: [P3, P4]
     evidence:
       - type: analytic
-        anchor: "Step-by-step derivation chaining Theorem 1 (eco<sig<ident, exp_asym<incoh) and Corollary 1 (ident<exp_asym)."
+        anchor: "Step-by-step chaining of Theorem 1 (eco<sig<ident, exp_asym<incoh) over the descriptive anisotropy labels and Corollary 1 (ident<exp_asym) over the stipulated volatility ordering."
         citation_keys: []
     body_sections: ["§3.4 Full Stability Ordering"]
   - id: P6
@@ -314,7 +360,12 @@ propositions:
       - type: analytic
         anchor: "Theorem 3(1)-(2): assembled from Proposition 1 (stability) and Theorem 2 (recovery)."
         citation_keys: []
-    falsifier: "If coherence-type ordering does not predict recovery beyond coherence score, Theorem 3 is falsified (= Prediction 1 null)."
+    falsifier: >-
+      If coherence type adds no explanatory power for recovery speed over
+      coherence score, Theorem 3 is falsified (= Prediction 1 null). The test is
+      the nested-model F-test with cross-validated or adjusted R^2; an
+      unadjusted Delta R^2 > 0 is not a falsifiable condition, since it holds for
+      any added regressor including a random one.
     body_sections: ["§5.1 Assembling the Full Prediction"]
   - id: P9
     statement: >-
@@ -405,10 +456,16 @@ alternative_explanations:
       The reconciliation distinguishes shock MAGNITUDE from drift PROTECTION: a
       brand emitting strongly on the Ideological dimension sets a high observer
       expectation, so a transgression there is a larger deviation, i.e. a larger
-      effective shock eta_Ide (Theorem 2(c)). The larger shock lowers recovery
-      probability on that dimension — consistent with Aaker et al. — without
-      contradicting the unconditional ordering, which is defined relative to
-      crises of EQUAL severity.
+      effective shock eta_Ide. The channel is Theorem 2(a) — recovery
+      probability falls as the post-crisis state moves closer to the boundary —
+      together with an expectation-amplified eta that the model itself does not
+      derive. Theorem 2(c) runs the OTHER WAY and must not be cited here: at
+      equal severity it makes recovery on an ACTIVE dimension far more likely
+      than on a passive one, which is exactly the drift advantage the amplified
+      shock has to overcome. The larger shock lowers recovery probability on
+      that dimension — consistent with Aaker et al. — without contradicting the
+      unconditional ordering, which is defined relative to crises of EQUAL
+      severity.
     body_sections: ["§6.4 Reconciliation with Aaker, Fournier, and Brasel (2004)"]
   - id: A2
     statement: >-
@@ -460,9 +517,12 @@ limitations:
     body_sections: ["§8.3 Limitations"]
   - id: L4
     statement: >-
-      The dimension-volatility ordering (Definition 3) is proposed on
-      theoretical grounds and not empirically validated; its specific
-      quantitative relationships remain to be established.
+      The dimension-volatility ordering (Definition 3) is STIPULATED, not
+      established. Two endpoints have external support (heritage is the most
+      stable equity component; experiential associations the most volatile);
+      the six intermediate ranks do not, and neither does the low-volatility
+      placement of the Ideological and Narrative dimensions on which the
+      identity-vs-experiential-asymmetry step actually turns.
     severity: "unvalidated-assumption"
     affects: [P4]
     body_sections: ["§8.3 Limitations"]
@@ -472,6 +532,8 @@ limitations:
       convexity of the hitting probability at the boundary alpha=0) is deferred
       to a forthcoming technical companion note; Appendix A records only the
       structural argument plus a planned 10,000-path numerical verification.
+      The convexity premise is therefore asserted and pending verification, and
+      the Theorem 1 Jensen step inherits that status.
     severity: "proof-completeness"
     affects: [P3]
     body_sections: ["Appendix A. Technical Note on Convexity of Hitting Probabilities"]
@@ -520,9 +582,15 @@ corpus_precedents:
       Provides a crisis-specific rationale for the broad-spectrum (ecosystem)
       allocation strategy recommended in Spectral Resource Allocation (2026k).
   - paper_key: 2026r
-    relationship: applies
+    relationship: contrasts
     spine_nodes: [P4]
-    note: "Imports the dimension-volatility ordering justification from 2026r (Definition 3 / AA4)."
+    note: >-
+      2026r does NOT supply the dimension-volatility ordering (Definition 3 /
+      AA4) and must not be cited for it. What 2026r reports is cross-model
+      variance in dimension weight allocation, a different quantity, and its
+      ranking does not reproduce the ordering assumed here. The engagement is a
+      contrast over what the two quantities measure; the ordering itself stands
+      as a stipulation of this paper.
   - paper_key: 2026ac
     relationship: extends
     spine_nodes: [P8]
@@ -548,8 +616,8 @@ external_anchors:
   - {citation_key: perrow-1984-normal-accidents, role: contrast, spine_nodes: [P8], note: "Normal Accident Theory: operational coupling; complementary (predicts WHEN, not WHICH)."}
   - {citation_key: holling-1973-resilience-stability, role: framework, spine_nodes: [P8], note: "Engineering vs ecological resilience maps to recovery vs absorption probability."}
   - {citation_key: molenaar-2004-manifesto-psychology, role: supporting, spine_nodes: [P9], note: "Ensemble-average analyses misrepresent individual trajectories — analog of aggregate-score failure."}
-  - {citation_key: urde-2007-corporate-brands-heritage, role: supporting, spine_nodes: [P4], note: "Heritage is the most stable equity component (low Temporal volatility)."}
-  - {citation_key: brakus-2009-brand-experience, role: supporting, spine_nodes: [P4], note: "Experiential associations are the most volatile (high Experiential volatility)."}
+  - {citation_key: urde-2007-corporate-brands-heritage, role: supporting, spine_nodes: [P4], note: "Heritage is the most stable equity component — supports the LOW-volatility endpoint (Temporal) only, not the intermediate ranks."}
+  - {citation_key: brakus-2009-brand-experience, role: supporting, spine_nodes: [P4], note: "Experiential associations are the most volatile — supports the HIGH-volatility endpoint only, not the intermediate ranks."}
   - {citation_key: naik-raman-2003-understanding-impact-synergy, role: prior_method, spine_nodes: [P1], note: "SDE toolkit standard for multi-channel brand-signal dynamics."}
   - {citation_key: schweidel-2008-understanding-service-retention, role: prior_method, spine_nodes: [P3], note: "Latent absorbing-threshold retention model — extended to perceptual dimensions."}
 

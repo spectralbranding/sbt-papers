@@ -22,22 +22,21 @@ meta:
   - absorbing boundaries
   - Laplace-Beltrami operator
   - mixing time
-  abstract: 'Brand perception is inherently dynamic, yet formal continuous-time manifold models of multi-dimensional
-    brand perception remain scarce. This paper models an observer''s brand perception as a stochastic
-    process on $S^7_+$, the positive octant of the 7-sphere in Spectral Brand Theory''s eight-dimensional
-    perception space. Signal encounters drive Brownian motion on the manifold, signal decay introduces
-    drift toward a neutral prior, and negative conviction creates absorbing boundaries. A Stratonovich
-    SDE on $S^7_+$ yields four results: well-posedness up to absorption (Theorem 1); exponential survival
-    probability decay at rate $\lambda_{D,1} \sigma_0^2/2$ with eigenvalue $\lambda_{D,1} = 112$ (Theorem
-    2); Dirichlet spectral gap $\lambda_{D,2} - \lambda_{D,1} = 48$ with faster mixing to quasi-stationary
-    distribution than on the full sphere (Theorem 3); and time-ensemble divergence with probability 1,
-    establishing non-ergodicity via absorbing-boundary dynamics independent of Peters'' [-@peters-2019-ergodicity-problem-economics]
-    multiplicative framing (Theorem 4). Application to five brands shows absorption risk nearly matches
-    SBT coherence grading with one inversion explained by coherence-type-dependent drift (Proposition
-    7). Recovery time scales as $1/\delta^2$ in residual dimensional perception (Proposition 5), consistent
-    with Tylenol–BP divergence. A sensitivity analysis around a representative D/A ratio recovers the
-    empirically observed Goldilocks zone $r^* \in [.55, .65]$ (Proposition 6). Results formalize the dynamic
-    distinction between vectorized and rasterized brand management.'
+  abstract: 'Brand perception is inherently dynamic, yet formal continuous-time manifold models of it
+    remain scarce. This paper models an observer''s brand perception as a stochastic process on $S^7_+$,
+    the positive octant of the 7-sphere in Spectral Brand Theory''s eight-dimensional perception space.
+    Signal encounters drive Brownian motion on the manifold, signal decay introduces drift toward a neutral
+    prior, and negative conviction creates absorbing boundaries. A Stratonovich SDE on $S^7_+$ yields
+    four results: well-posedness up to absorption (Theorem 1); exponential survival decay at rate $\lambda_{D,1}
+    \sigma_0^2/2$, $\lambda_{D,1} = 112$ (Theorem 2); Dirichlet spectral gap 48, giving faster mixing
+    to the quasi-stationary distribution than on the full sphere (Theorem 3); and time-ensemble divergence
+    with probability 1, establishing non-ergodicity through absorption rather than Peters'' [-@peters-2019-ergodicity-problem-economics]
+    multiplicative framing (Theorem 4). Five brands are ordered by boundary distance; matching that order
+    to SBT coherence grading requires drift strengths read off the grades, so Proposition 7 states a mechanism,
+    not a demonstrated link. Recovery time scales as $1/\delta^2$ in residual perception (Proposition
+    5). The D/A survival bound sweeps $[.31, .72]$ across the plausible parameter range, making the Goldilocks
+    zone $r^* \in [.55, .65]$ a calibration (Proposition 6). Results formalize the dynamic distinction
+    between vectorized and rasterized brand management.'
 claims:
 - id: P1
   type: proposition
@@ -117,20 +116,28 @@ claims:
 - id: P6
   type: proposition
   statement: '(Proposition 6, D/A Goldilocks zone) The designed/ambient ratio r trades absorption against
-    exploration: too little design (r < .55) risks absorption, too much (r > .65) suppresses the stochastic
-    exploration that crystallizes perception. A sensitivity analysis at the representative drift-strength
-    midpoint recovers r* in [.55, .65], consistent with the empirically observed optimal D/A range — a
-    calibration that is coherent with the observed interval, not a unique first-principles derivation.'
+    exploration: too little design risks absorption, too much suppresses the stochastic exploration that
+    crystallizes perception. The model does not predict where the trade-off sits. The survival lower bound
+    r_min = 1.12/(.56 + alpha lambda_enc d_partial) sweeps the whole of [.31, .72] across the paper''s
+    own stated plausible range for the drift parameter, so it constrains r only to that width; the .55
+    figure is the value at a midpoint chosen after the target interval was known, and the .65 crystallization
+    upper bound is asserted with no expression and no computation behind it. r* in [.55, .65] is therefore
+    a calibration of the model to the SBT range, not a prediction of it, and it supplies no independent
+    corroboration of that range.'
   testable: true
   tested_in_paper: true
   status: not_tested
 - id: P7
   type: proposition
-  statement: '(Proposition 7, Absorption ordering) For the five case-study brands the drift-adjusted absorption
-    ordering Tesla > Erewhon > IKEA > Patagonia > Hermès nearly matches the SBT coherence grading (C-
-    > B- > B+ > A- > A+), with one inversion: IKEA (A-) outranks Patagonia (B+) in risk because identity
-    coherence generates stronger directional drift than signal coherence — coherence TYPE, not the letter
-    grade, determines dynamical stability.'
+  statement: (Proposition 7, Absorption ordering) For the five case-study brands, the distance-from-boundary
+    ordering computed from the canonical profiles is Tesla > Hermès > Erewhon > Patagonia > IKEA. The
+    drift-adjusted ordering Tesla > Erewhon > IKEA > Patagonia > Hermès is obtained by reordering it with
+    per-brand drift strengths that are read off the SBT coherence grade and type; no drift strength is
+    measured from encounter data. Its near-match to the coherence grading is therefore a relabelling of
+    the input, not a result, and the one departure — IKEA above Patagonia — is the qualitative distinction
+    between identity and signal coherence likewise supplied by hand. The computed content of the proposition
+    is the distance-from-boundary ordering; the drift adjustment is a hypothesis awaiting independent
+    measurement of alpha lambda_enc.
   testable: true
   tested_in_paper: true
   status: not_tested
@@ -182,8 +189,10 @@ acceptance:
   criterion: Holds if (Theorem 4, Non-ergodicity) For the absorbed process with zero drift, the time average
     of any bounded observable with nonzero spatial mean converges to 0 almost surely while the ensemble
     average is generically nonzero — time and ensemble averages diverge with probability 1.
-  falsification: If absorption were not almost sure (no absorbing boundary), the time and ensemble averages
-    would coincide.
+  falsification: As an analytic statement P4 cannot be falsified while absorption is almost sure; the
+    substantive falsifier is the modelling premise, not the theorem. The premise fails if observer perception
+    in some dimension does not in fact become absorbing at zero — if dimensions recover from zero — in
+    which case tau is not a.s. finite and the divergence does not follow.
 - claim_id: P5
   criterion: 'Holds if (Proposition 5, Recovery time scaling) Under the semi-permeable boundary model
     (reflecting drift on the open near-death zone (0, epsilon), absorbing at 0), the expected return time
@@ -193,15 +202,16 @@ acceptance:
     severity, controlling for response strategy and pre-crisis profile.
 - claim_id: P6
   criterion: 'Holds if (Proposition 6, D/A Goldilocks zone) The designed/ambient ratio r trades absorption
-    against exploration: too little design (r <.'
-  falsification: Falsified if the empirically optimal D/A ratio across 50+ brands does not concentrate
-    in [.55, .65], or varies with sigma_0 unpredictably.
+    against exploration: too little design risks absorption, too much suppresses the stochastic exploration
+    that crystallizes perception.'
+  falsification: 'A test of the interval against brand data is circular, because the interval was calibrated
+    to that same range. What can be falsified is the trade-off structure the model asserts: measure alpha
+    lambda_enc and d_partial independently of the coherence grade, compute r_min from them, and P6 fails
+    if the observed optimal r for those brands falls outside the resulting interval. Absent such measurement,
+    P6 carries no falsifying content beyond internal consistency.'
 - claim_id: P7
-  criterion: 'Holds if (Proposition 7, Absorption ordering) For the five case-study brands the drift-adjusted
-    absorption ordering Tesla > Erewhon > IKEA > Patagonia > Hermès nearly matches the SBT coherence grading
-    (C- > B- > B+ > A- > A+), with one inversion: IKEA (A-) outranks Patagonia (B+) in risk because identity
-    coherence generates stronger directional drift than signal coherence — coherence TYPE, not the letter
-    grade, determines dynamical stability.'
+  criterion: Holds if (Proposition 7, Absorption ordering) For the five case-study brands, the distance-from-boundary
+    ordering computed from the canonical profiles is Tesla > Hermès > Erewhon > Patagonia > IKEA.
   falsification: Falsified if observed frequency of dimensional collapse in tracking data does not rank
     Tesla > Erewhon > IKEA > Patagonia > Hermès, controlling for encounter rate and noise.
 dependencies:
@@ -322,10 +332,13 @@ results:
     structurally from the Netzer et al. (2008) finite-state resurrecting HMM.
 - claim_id: P7
   status: supported
-  notes: 'Coherence type is the determinant of absorption-risk ordering: the near-match between the dynamical
-    absorption ordering and the SBT coherence grades — with the single IKEA/Patagonia inversion — is,
-    to the author''s knowledge, the first formal derivation within SBT connecting coherence type to dynamical
-    stability from first principles.'
+  notes: 'The absorption model supplies a computed, grade-independent risk ordering from the canonical
+    profiles alone: Tesla > Hermès > Erewhon > Patagonia > IKEA by distance from the absorbing boundary.
+    It does NOT independently recover the coherence grading; the drift-adjusted ordering that matches
+    the grades is produced by drift strengths read off those same grades, so the match is definitional.
+    The framework''s contribution here is the mechanism — a route by which coherence type could govern
+    dynamical stability, through drift strength opposing boundary approach — and the measurement it makes
+    necessary, not a demonstrated connection.'
 limitations:
 - description: Headline theorems assume isotropic diffusion and scalar, constant parameters (kappa, alpha,
     sigma_0, lambda_enc); anisotropic Sigma and dimension-specific kappa_i / kappa_R(i) change absorption-risk
@@ -345,6 +358,14 @@ limitations:
 - description: All five case studies are global English-language consumer brands; the absorption ordering
     and drift-diffusion parameters may not generalize to B2B, regional/East-Asian, or service-dominant
     brands without recalibration, and the SDE parameters are not yet empirically estimated.
+  severity: moderate
+  addressable: true
+- description: The drift parameters that carry the per-brand results — alpha lambda_enc in Proposition
+    6 and Proposition 7, and the effective diffusion behind the tabulated ergodicity coefficients — are
+    assigned from the SBT coherence grade and type rather than measured. Every per-brand ordering in the
+    paper therefore inherits the grade it is compared against, and none of them constitutes independent
+    evidence for the grade. Only the distance-from-boundary quantities and the closed-form spectral results
+    are computed from data external to the grading.
   severity: moderate
   addressable: true
 repositories:

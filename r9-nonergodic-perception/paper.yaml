@@ -53,6 +53,20 @@ claims:
   - P_source1
   - P_source2
   - P_source3
+- id: P_basisinvariance
+  type: proposition
+  statement: The non-ergodicity result is invariant under change of dimensional basis. Order dependence
+    and time asymmetry are properties of a trajectory through perception space, not of the coordinate
+    system used to describe it, so rotating or redecomposing the eight dimensions relabels where a trajectory
+    goes without rendering it reversible and without converting an absorbing region into a passable one.
+    The structural claim therefore holds in any multi-dimensional perception space exhibiting the three
+    sources; what does NOT transfer is the managerial layer, whose prescriptions name specific dimensions
+    and are basis-dependent.
+  testable: false
+  tested_in_paper: true
+  status: not_tested
+  depends_on:
+  - P_nonergodic
 - id: P_source1
   type: proposition
   statement: 'Source 1 — Absorbing states: deeply negative brand conviction is a perceptual configuration
@@ -66,9 +80,11 @@ claims:
   type: proposition
   statement: 'Source 2 — Multiplicative dynamics: signals do not add to perception; they interact multiplicatively
     with the existing perceptual state and its cross-dimensional context, x_i^(d)(t+1) = f(x_i^(d)(t),
-    s^(d), x_i^(-d)(t)). Because f is concave/nonlinear in the signal when the state is large, Jensen''s
-    inequality makes the ensemble (arithmetic-mean) average exceed the time (geometric-mean) average —
-    overstating the growth typical individuals experience, even without strict multiplicativity.'
+    s^(d), x_i^(-d)(t)). Where f is concave in the signal at high perceptual states, the ensemble (arithmetic-mean)
+    average exceeds the time (geometric-mean) average. The Jensen / AM-GM step is algebra and carries
+    no empirical content: it holds for every concave function, and is an equality when updating is linear
+    in the signal. The empirical content of Source 2 lies wholly in the antecedent — whether brand-perception
+    updating is in fact concave.'
   testable: false
   tested_in_paper: true
   status: not_tested

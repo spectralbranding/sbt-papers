@@ -195,19 +195,21 @@ propositions:
   - id: P1
     statement: >-
       (Proposition 1 — Interference conditionality) Spectral interference
-      between brands B_i and B_j within a portfolio operates iff three
-      conditions hold simultaneously: (a) the brands share at least one observer
-      cohort, (b) the awareness gate exceeds a minimum threshold, and (c) the
-      brands' emission profiles differ on at least one dimension weighted above
-      a salience threshold by the shared cohort. Absence of any one condition
-      suppresses interference entirely.
+      between brands B_i and B_j within a portfolio REQUIRES three conditions,
+      each NECESSARY: (a) the brands share at least one observer cohort, (b) the
+      awareness gate exceeds a minimum threshold, and (c) the brands' emission
+      profiles differ on at least one dimension weighted above a salience
+      threshold by the shared cohort. Absence of any one condition suppresses
+      interference entirely. The three are NOT claimed jointly sufficient: P1 is
+      silent on whether interference occurs when all three hold. Necessity-only is
+      stated in the Theory section, ahead of the data.
     conditions: ""
     antecedents: [P0]
     evidence:
       - type: derivation
-        anchor: "From Eq. 3, I_d = 0 when alpha = 0, when w_d = 0, or when e_d^{B_j} = mu_d; conditions jointly necessary, individually insufficient."
-    falsifier: "P1 falsified if, with (a) and (c) holding and alpha = 0, cohort overlap + spectral divergence alone produce non-zero perception cloud shifts."
-    body_sections: ["Theoretical Framework §Propositions (P1)"]
+        anchor: "From Eq. 3, I_d = 0 when alpha = 0, when w_d = 0, or when e_d^{B_j} = mu_d. Each condition is necessary; the derivation establishes nothing about the converse, since Eq. 3 gives POTENTIAL perturbation and realization is P2's subject."
+    falsifier: "Each of the three necessity claims is separately falsifiable by removing that condition and observing interference anyway. The condition with an experimental handle: with (a) and (c) holding and alpha = 0, cohort overlap + spectral divergence alone producing non-zero perception cloud shifts. This study CANNOT fire it — alpha ~ 1 throughout and there is no alpha = 0 arm — so its results bear on P1 neither way."
+    body_sections: ["Theoretical Framework §Propositions (P1)", "Results §Proposition Support Summary"]
   - id: P2
     statement: >-
       (Proposition 2 — Awareness-gate sufficiency inversion) The awareness gate
@@ -286,7 +288,7 @@ findings:
     source_measurements: [m_immunity]
     generating_method: M2
     antecedents: [O1, O2]
-    falsifier: "Falsified if a 7+ model / 3+ tradition study finds systematic portfolio-induced DCI shifts > 2.0 with d > .50 surviving FDR across 5+ archetypes and 3+ modalities."
+    falsifier: "RESTATED — the previous six-way conjunction (7+ models / 3+ traditions AND shifts > 2.0 AND d > .50 AND FDR survival AND 5+ archetypes AND 3+ modalities, simultaneously) was effectively unfalsifiable, and this study's own largest result already cleared three of the six (13 models across 7 traditions; Swallow/Toyota delta = -2.35; Japanese tradition-level d = -.63). H5 is falsified if a study using this design and a comparable panel finds |ΔDCI| above the ±1.0 TOST bound for MORE THAN HALF the brands tested, with those tests FDR-significant at alpha = .05. Narrower refutation of immunity as a general property (not for the remaining archetypes): any single portfolio archetype in which EVERY brand shows an FDR-significant shift above the bound. Either is reachable by one well-powered replication."
     citation_role_in_paper: "primary_evidence_for_P2"
     body_sections: ["Results §Main Finding", "Table 3", "Conclusion"]
   - id: F2
@@ -443,6 +445,26 @@ negative_findings:
     affects_nodes: [F1, F3, P1]
     motivates: [P2]
     body_sections: ["Results §Hypothesis Tests (Confirmatory)"]
+  - id: NF2
+    statement: >-
+      The exploratory language hypotheses (H8 language-dependent immunity, H9
+      home-model amplification) produced no FDR-significant effects and are scored
+      NOT SUPPORTED under the same rule applied to H1/H2/H6/H7. They were
+      previously scored "Mixed" on uncorrected magnitude, which is not the basis on
+      which the confirmatory difference hypotheses were scored; the single decision
+      rule is now stated before the verdicts. One decision rule governs all
+      verdicts: difference hypotheses (H1, H2, H4, H6, H7, H8, H9) are supported
+      only on an effect surviving FDR at alpha = .05 across the 20 tests;
+      equivalence hypotheses (H3, H5) are scored by TOST against the ±1.0 DCI
+      bound. Large uncorrected effects (Swallow/Toyota delta = -2.35; YandexGPT
+      delta = +.72) are recorded as observations and do not move a verdict. Each
+      tradition is represented by a single model, so H8/H9 could not have
+      distinguished tradition-level amplification from model idiosyncrasy either
+      way.
+    expected_observation: "Native-language ΔDCI systematically exceeding English-language ΔDCI, surviving FDR."
+    source_method: M2
+    affects_nodes: [F1]
+    body_sections: ["Results §Hypothesis Tests (Exploratory)", "Table 5"]
 
 # ============================================================================
 # Cross-paper engagement (corpus precedents)

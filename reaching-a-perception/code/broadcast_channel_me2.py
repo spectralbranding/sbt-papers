@@ -73,7 +73,7 @@ import matplotlib.pyplot as plt
 
 SEED = 20260619
 
-# Canonical public brand profiles (CLAUDE.md; the corpus's public anchors).
+# Canonical public brand profiles ([internal ref removed]; the corpus's public anchors).
 # Dimension order: Semiotic, Narrative, Ideological, Experiential, Social,
 # Economic, Cultural, Temporal.
 PROFILES = {

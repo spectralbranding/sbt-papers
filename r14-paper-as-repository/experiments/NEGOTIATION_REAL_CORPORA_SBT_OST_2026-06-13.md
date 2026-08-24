@@ -82,7 +82,7 @@ source file noted per term: the six-level TDD cascade (`l0-customer-experience-c
 `l1-signal-requirements`, `l2-process-contracts`, `l3-procedures`, `l4-input-specifications`,
 `l5-sourcing-requirements`), `tier-architecture`, `specification`, the three-way signal taxonomy
 (`designed-signal` / `operational-signal` / `ambient-signal`), `intentional-brand`,
-`specification-drift`, and `rendering`. Sources: `[internal path removed][internal path removed]
+`specification-drift`, and `rendering`. Sources: `[internal path removed]
 paper.md` (the L0-L5 cascade and the fork/openness model),
 `articles/OST-02_organization_as_signal_source.md` (the designed/operational/ambient signal
 taxonomy; "your processes are your brand"; the intentional brand via full D/A control), and
@@ -293,7 +293,7 @@ No seed, dataset download, network call, or API key is required.
 The committed citation substrate (`[internal path removed]`) and the live ontology
 modules (`[internal path removed]*.yaml`) were not modified.
 
-**Publication plan (per user direction, 2026-06-13).** *All experiment data above is to be
+**Publication plan (by author decision, 2026-06-13).** *All experiment data above is to be
 published in the public SSOT when/if a paper carrying this evidence is published.* The carrying
 paper is **R14 / 2026u** (`§"A Realized Instance"`, whose §5.5 cites the federated case as
 evidence). At that paper's publication, these artifacts move to the public mirror

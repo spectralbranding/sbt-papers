@@ -1,6 +1,6 @@
 [![MIT License](https://img.shields.io/badge/Code-MIT-blue.svg)](../LICENSE)
 [![CC-BY 4.0](https://img.shields.io/badge/Data-CC--BY_4.0-lightgrey.svg)](../LICENSE-data)
-![Last Updated](https://img.shields.io/badge/updated-2026--08--23-success)
+![Last Updated](https://img.shields.io/badge/updated-2026--08--24-success)
 
 # Boundary Volume and Cohort Reassignment on the 7-Simplex: A Concentration Analysis Under the Uniform Null
 
@@ -37,4 +37,4 @@ Code (if any): MIT — see hub-level [../LICENSE](../LICENSE). Data, figures, ta
 
 ---
 
-*Last updated: 2026-08-23*
+*Last updated: 2026-08-24*

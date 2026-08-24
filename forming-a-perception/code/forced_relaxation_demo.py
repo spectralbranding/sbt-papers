@@ -39,7 +39,7 @@ import numpy as np
 
 SEED = 20260620
 
-# Five canonical PUBLIC brand profiles (CLAUDE.md; order: Semiotic, Narrative, Ideological,
+# Five canonical PUBLIC brand profiles ([internal ref removed]; order: Semiotic, Narrative, Ideological,
 # Experiential, Social, Economic, Cultural, Temporal).
 PROFILES = {
     "Hermes": [9.5, 9.0, 7.0, 9.0, 8.5, 3.0, 9.0, 9.5],

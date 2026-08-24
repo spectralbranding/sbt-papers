@@ -85,28 +85,35 @@ claims:
     to (8-m)D. Cohorts with similar Fisher-Rao-close weight profiles share nearly identical null spaces
     and therefore agree on which brands are equivalent — disagreement between cohorts is geometric, not
     noise.'
-  testable: true
+  testable: false
   tested_in_paper: true
   status: not_tested
   depends_on:
   - P4
 - id: P6
   type: proposition
-  statement: (Theorem 4) For n independent equal-variance dimensions projected to k, the maximum retained
+  statement: '(Theorem 4) For n independent equal-variance dimensions projected to k, the maximum retained
     variance is k/n; for n=8, k=1 the optimal 1D projection captures at most 12.5%, leaving 87.5% in the
-    7 null-space dimensions. Correlated real profiles can exceed this worst-case (empirically PC1 = 54.9%
-    on the five canonical brands), but PCA maximizes variance, not interpretability, and metameric collapse
-    persists at the finer structure PC1 ignores.
+    7 null-space dimensions. Correlated real profiles can exceed this worst-case in principle, but the
+    five canonical brands cannot show it: five points in R^8 span at most four dimensions, so the sample
+    covariance has at most four nonzero eigenvalues and PC1 >= 25% before any correlation exists. Against
+    rank-limited nulls the observed PC1 = 54.9% and three-component 92.3% are not distinguishable from
+    independence (parametric p = .314 / .768; permutation p = .363 / .815), so the case set supplies no
+    evidence of inter-dimensional correlation either way. PCA in any case maximizes variance, not interpretability,
+    and metameric collapse persists at the finer structure the leading component ignores.'
   testable: false
   tested_in_paper: true
   status: not_tested
 - id: P7
   type: proposition
-  statement: (Theorem 5) A discrete L-level grade has channel capacity log_2 L bits; the 8-dimensional
+  statement: '(Theorem 5) A discrete L-level grade has channel capacity log_2 L bits; the 8-dimensional
     profile carries n*B bits; the retention ratio is log_2 L/(n*B). For L=5, B=2.5 this is 2.32/20 = 11.6%,
-    so ~88.4% of the brand's identity is invisible to the grade. The bound is independent of linearity
-    (nonlinear phi cannot exceed log_2 L) and, under sequential (non-memoryless) evaluation, log_2 L is
-    an upper bound — strengthening, not weakening, the deficit conclusion.
+    so ~88.4% of the brand''s identity is invisible to that grade. 11.6% is the retention of the five-point
+    scale, NOT a ceiling on scalar grades: rho(L) grows without bound in L and reaches unity at L = 2^(nB)
+    ~ 10^6, where the output enumerates the profile rather than summarizing it. What is scale-free is
+    the kernel — a linear R^8 -> R^1 map has a 7-dimensional null space at every L. The bound is independent
+    of linearity (nonlinear phi cannot exceed log_2 L) and, under sequential (non-memoryless) evaluation,
+    log_2 L is an upper bound — strengthening, not weakening, the deficit conclusion.'
   testable: false
   tested_in_paper: true
   status: not_tested
@@ -163,11 +170,6 @@ acceptance:
     the affine subspace s + ker(phi) with the positive orthant — a convex continuum of dimension at most
     7, not a sparse set of edge cases.'
   falsification: If ker(phi) for some R^8 -> R^1 projection has dimension other than 7, Theorem 3 fails.
-- claim_id: P5
-  criterion: 'Holds if (Proposition 1, null-space complementarity) In SBT the projection is observer-dependent:
-    phi_w(s) = <w, clr(s)> for w in the simplex Delta^7.'
-  falsification: Proposition 1 is falsified if two observers with Fisher-Rao distance > delta produce
-    identical metameric-pair classifications across >= 20 brand profiles.
 dependencies:
 - relationship: applies
   claim: Extends SBT's eight-dimension architecture and its L1 (spectral profile) / L2 (5-level grade)

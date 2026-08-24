@@ -6,7 +6,7 @@ authors:
     affiliation: "Independent Researcher"
     orcid: "https://orcid.org/0009-0000-6893-9231"
 title: "Why Eight? Completeness and Necessity of the SBT Dimensional Taxonomy"
-version: 1.3.0
+version: 1.4.0
 date-released: 2026-06-27
 url: "https://doi.org/10.5281/zenodo.19207599"
 repository-code: "https://github.com/spectralbranding/sbt-papers"

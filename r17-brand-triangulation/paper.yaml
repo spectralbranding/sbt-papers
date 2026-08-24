@@ -24,19 +24,20 @@ meta:
   - differential correction
   abstract: 'Brand positioning research faces a structural measurement problem: every observer cohort
     perceives a brand through a distinct spectral weight profile, yet conventional methods treat inter-cohort
-    variation as noise. Brand triangulation reframes this variation as geometric information. Drawing
-    on GPS positioning theory, the framework maps observer cohorts to satellites, brand emission profiles
-    to receiver location, and cohort biases to clock error. The central innovation is Perception DOP (PDOP),
-    a scalar computed solely from proposed cohort weight profiles that quantifies expected estimation
-    precision before data collection. The approach further introduces differential brand measurement using
-    reference brands to correct systematic observer bias and establishes identifiability conditions linking
-    spectral metamerism to geometric underdetermination. The framework is illustrated with dimensional-weight
-    data from six large language models (4,860 observations) and validated through Monte Carlo simulation
-    (2,000 trials) confirming the theoretical PDOP–MSE power-law relationship (log-log slope = 1.000,
-    $R^2$ = .993, Spearman $\rho$ = .992). Brand Function specifications reduce dimensional collapse by
-    20% in the LLM constellation. By converting multi-observer disagreement into a primary source of positioning
-    information, the framework supplies pre-study design criteria, bias-correction protocols, and dynamic
-    tracking machinery that together upgrade brand measurement from opinion aggregation to geometric estimation.'
+    variation as noise. Brand triangulation reframes it as geometric information. Drawing on GPS positioning
+    theory, the framework maps observer cohorts to satellites, brand emission profiles to receiver location,
+    and cohort biases to clock error. Its central construct is Perception DOP (PDOP), a scalar computed
+    from proposed cohort weight profiles, defined where they span the eight-dimensional space, quantifying
+    expected estimation precision before data collection. The approach adds differential measurement correcting
+    systematic observer bias, and identifiability conditions linking spectral metamerism to geometric
+    underdetermination. The framework is illustrated with dimensional-weight data from six large language
+    models (4,860 observations). Because the PDOP–MSE relation is the least-squares estimator''s own covariance,
+    a companion Monte Carlo simulation (2,000 trials) verifies the implementation rather than the relation
+    (log-log slope = 1.000, $R^2$ = .993); whether the linear model fits real cohorts is left to a human-cohort
+    study. Brand Function specifications reduce dimensional collapse by 20% in the LLM constellation.
+    Converting multi-observer disagreement into positioning information supplies design criteria, bias
+    correction, and tracking machinery that upgrade brand measurement from opinion aggregation to geometric
+    estimation.'
 claims:
 - id: P0
   type: proposition
@@ -59,11 +60,11 @@ claims:
   - P0
 - id: P1
   type: proposition
-  statement: (Paper Proposition 1) For N observer cohorts with spectral weight profiles w_1..w_N, the
-    precision of brand-position estimation is inversely proportional to Perception DOP = sqrt(trace((W^T
-    W)^{-1})); cohort configurations that minimize PDOP — maximally diverse weight profiles — yield the
-    most precise positioning. PDOP is computable pre-study, making cohort selection an A-optimal experimental-design
-    problem.
+  statement: (Paper Proposition 1) For N ≥ 8 observer cohorts with spectral weight profiles w_1..w_N whose
+    stacked matrix W satisfies rank(W) = 8, the precision of brand-position estimation is inversely proportional
+    to Perception DOP = sqrt(trace((W^T W)^{-1})); cohort configurations that minimize PDOP — maximally
+    diverse weight profiles — yield the most precise positioning. PDOP is computable pre-study, making
+    cohort selection an A-optimal experimental-design problem.
   testable: true
   tested_in_paper: true
   status: not_tested
@@ -71,11 +72,14 @@ claims:
   - P0
 - id: P_plateau
   type: proposition
-  statement: 'PDOP has a sensitivity plateau: configurations near the optimum perform similarly well,
-    so it is a usable pre-study design criterion despite estimation uncertainty in cohort weight profiles
-    — researchers need only be within the plateau region, not at the exact minimum. The plateau is structural
-    (separation of time scales / parameter sloppiness), not parameter-dependent.'
-  testable: false
+  statement: 'PDOP is a usable pre-study design criterion despite estimation uncertainty in cohort weight
+    profiles, because its sensitivity to weight-profile perturbation is shallow: degradation grows at
+    roughly 3.6 percentage points per .1 of perturbation scale, so approximate calibration is sufficient.
+    The measured growth is FIRST-ORDER (linear) in the perturbation scale, not the second-order flatness
+    a stationary plateau would produce; the transferred structural plateau claim is therefore NOT supported
+    by the perturbation evidence, and what the evidence supports is a small linear sensitivity coefficient
+    rather than a flat optimum.'
+  testable: true
   tested_in_paper: true
   status: not_tested
   depends_on:
@@ -189,9 +193,20 @@ methodology:
     method: Python 3.12 + uv (numpy, scipy)
 acceptance:
 - claim_id: P1
-  criterion: Holds if (Paper Proposition 1) For N observer cohorts with spectral weight profiles w_1.
-  falsification: P1 fails if PDOP does not predict estimation variance relative to a known ground-truth
-    profile across many random cohort configurations, multiple brands, and multiple estimation conditions.
+  criterion: Holds if (Paper Proposition 1) For N ≥ 8 observer cohorts with spectral weight profiles w_1.
+  falsification: 'P1 as an analytic statement about the OLS estimator cannot be falsified by simulation
+    under the same linear model, because the PDOP–MSE relation IS that estimator''s covariance. What can
+    fail is the transfer: P1 fails as a claim about brand measurement if, on real cohort data, PDOP computed
+    from independently calibrated weight profiles does not predict estimation variance relative to a known
+    ground-truth profile across many cohort configurations, multiple brands, and multiple estimation conditions.'
+- claim_id: P_plateau
+  criterion: 'Holds if pDOP is a usable pre-study design criterion despite estimation uncertainty in cohort
+    weight profiles, because its sensitivity to weight-profile perturbation is shallow: degradation grows
+    at roughly 3.'
+  falsification: The shallow-sensitivity claim fails if perturbation of the optimal weight matrix produces
+    degradation growing faster than linearly in ε, or a coefficient large enough that ordinary calibration
+    error moves PDOP out of the design-relevant range. A second-order plateau claim would require degradation
+    ∝ ε²; the observed exponent near 1 already refutes it.
 - claim_id: P2
   criterion: Holds if (Paper Proposition 2) Differential brand measurement — using calibration brands
     with known spectral profiles to estimate each cohort's systematic error and subtract it from target-brand
@@ -314,26 +329,35 @@ contradictions: []
 results:
 - claim_id: P1
   status: supported
-  notes: 'Under the linear observation model, PDOP is a sharp predictor of RMSE: the log-log slope of
-    1.000 (R²=.993, ρ=.992) confirms the GPS-theory power law MSE = σ²·N·PDOP² (per-cohort-normalized
-    PDOP), holding per-dimension (ρ .985–.995) and across two orders of magnitude in PDOP. Observer geometry
-    dominates measurement precision (26-fold RMSE spread across PDOP quartiles at fixed noise). This is
-    a mathematical confirmation under the model''s data-generating process; transfer to real cohort responses
-    is an empirical question (Option B).'
+  notes: 'Under the linear observation model the relation MSE = σ²·N·PDOP² is the OLS estimator''s own
+    covariance, so it holds by derivation and the Monte Carlo cannot test it. What the simulation establishes
+    is that the implementation reproduces the derived identity to within sampling error: log-log slope
+    1.000 (R²=.993, ρ=.992), per-dimension ρ .985–.995, per-trial mean ratio .996, and a 26-fold RMSE
+    spread across PDOP quartiles that is the same identity read across the quartile range of PDOP. The
+    pooled MSE slope of .880 is a leverage artefact of the heavy-tailed PDOP draw, not a departure from
+    the identity. No empirical content about brand measurement is carried at this step; the empirical
+    question — whether the linear observation model approximates real human and AI cohort response — is
+    deferred to the Option B human-cohort study.'
 - claim_id: P2
   status: supported
-  notes: On the R15 AI constellation, the aggregate weight matrix is dominated by Experiential/Semiotic/Economic,
-    leaving Cultural and Temporal the least-resolved (highest per-dimension DOP); differential correction
+  notes: 'On the R15 AI constellation the six-model weight matrix is 6 × 8, so rank(W) ≤ 6 < 8 and no
+    per-dimension DOP can be computed for it: PDOP is formally infinite for the collapsed-observation
+    case and the constellation is reported instead by its directly observed mean weights. Those weights
+    are dominated by Experiential (18.8), Semiotic (14.8) and Economic (14.3) and thinnest on Cultural
+    (7.3), Social (7.8) and Temporal (8.1) against a flat-weight baseline of 12.5; differential correction
     reduces cross-model variance most on Economic (where the Economic Default is active) and least on
     Experiential, and a Brand Function specification cuts local-brand DCI by 20% — geometric evidence
-    that metamerism is an observer-infrastructure property resolvable by added dimensional information.
+    that metamerism is an observer-infrastructure property resolvable by added dimensional information.'
 - claim_id: P_metamerism
   status: supported
-  notes: On the R15 AI constellation, the aggregate weight matrix is dominated by Experiential/Semiotic/Economic,
-    leaving Cultural and Temporal the least-resolved (highest per-dimension DOP); differential correction
+  notes: 'On the R15 AI constellation the six-model weight matrix is 6 × 8, so rank(W) ≤ 6 < 8 and no
+    per-dimension DOP can be computed for it: PDOP is formally infinite for the collapsed-observation
+    case and the constellation is reported instead by its directly observed mean weights. Those weights
+    are dominated by Experiential (18.8), Semiotic (14.8) and Economic (14.3) and thinnest on Cultural
+    (7.3), Social (7.8) and Temporal (8.1) against a flat-weight baseline of 12.5; differential correction
     reduces cross-model variance most on Economic (where the Economic Default is active) and least on
     Experiential, and a Brand Function specification cuts local-brand DCI by 20% — geometric evidence
-    that metamerism is an observer-infrastructure property resolvable by added dimensional information.
+    that metamerism is an observer-infrastructure property resolvable by added dimensional information.'
 limitations:
 - description: 'The human observer constellation is absent: the empirical demonstration is AI-only (Option
     A). The multi-constellation DOP-reduction conjecture (C4) cannot be fully tested without human-cohort

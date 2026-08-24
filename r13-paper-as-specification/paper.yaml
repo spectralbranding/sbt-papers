@@ -549,6 +549,15 @@ limitations:
     materiality field and a rule about what must be reported, neither of which the current version contains.
   severity: moderate
   addressable: true
+- description: 'The five sustained-use items are REPORTS of what changed in one corpus under one author,
+    and as reports they are not falsifiable: they record which design commitments broke and what replaced
+    them, and nothing in the section is offered as a test. What is falsifiable is the generalization each
+    report invites, and each such generalization needs an independent author or an independently maintained
+    corpus to test. All six such conditions -- one per finding, plus the one attached to the generalization
+    drawn across the drift and retention axes -- are stated in the limitations, and none of them has been
+    run.'
+  severity: moderate
+  addressable: true
 repositories:
 - platform: GitHub
   url: https://github.com/spectralbranding/sbt-papers/tree/main/r13-paper-as-specification

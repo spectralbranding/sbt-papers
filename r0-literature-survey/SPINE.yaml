@@ -61,9 +61,11 @@ propositions:
       consequences), a formal metric with proved properties, observer
       heterogeneity beyond preference parameters, temporal dynamics (decay,
       compounding, path dependence), a generative signal mechanism, and
-      empirical validation. These criteria define the evaluative axes of the
-      survey.
-    conditions: "Criteria are formally defined in §11.1; criterion 6 reported separately from criteria 1–5."
+      empirical validation. These criteria are the survey's own: they were
+      derived from the structural absences identified in P1 and they match the
+      design commitments of the candidate framework the survey positions, so
+      they form a positioning axis rather than a neutral scoring frame.
+    conditions: "Criteria are formally defined in §11.1; criterion 6 reported separately from criteria 1–5. Because the criterion set is author-stipulated, counts of joint satisfaction against it are properties of the criterion set as much as of the traditions scored."
     antecedents: [P1]
     evidence:
       - type: analytic
@@ -234,14 +236,18 @@ propositions:
 
   - id: P12
     statement: >-
-      The compound gap is the central finding: no surveyed tradition satisfies
-      all five core criteria (high-D geometry, formal metric, observer
-      heterogeneity, non-ergodic dynamics, generative mechanism)
-      simultaneously. Each tradition excels on one or two while leaving the
-      rest unaddressed; the gap is the absence of the combination, not of any
-      single ingredient. The classification matrix shows the five-way
-      intersection is unoccupied.
-    conditions: "Criterion 6 (empirical validation) reported separately; the diagnosis concerns criteria 1–5."
+      No surveyed tradition satisfies all five core criteria (high-D geometry,
+      formal metric, observer heterogeneity, non-ergodic dynamics, generative
+      mechanism) simultaneously. Each tradition excels on one or two while
+      leaving the rest unaddressed; the shortfall is in the combination, not in
+      any single ingredient. That the five-way intersection is unoccupied
+      follows from the construction of the criterion set (P2) rather than from
+      an independent measurement: the five criteria were stipulated as the
+      properties a candidate framework is being built to supply, so no prior
+      tradition was positioned to satisfy them jointly. The matrix's
+      contribution is to state the criterion set explicitly and place each
+      tradition against it, not to discover a vacancy.
+    conditions: "Criterion 6 (empirical validation) reported separately; the diagnosis concerns criteria 1–5. The unoccupied intersection is a property of the stipulated criterion set, not an empirical finding about the traditions."
     antecedents: [P3, P4, P5, P6, P7, P8, P9, P10, P11]
     evidence:
       - type: analytic

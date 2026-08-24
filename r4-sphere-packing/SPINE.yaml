@@ -173,6 +173,13 @@ measurements:
     generating_method: M2
     value: ">= 1.00e8 (lower), <= 3.78e10 (upper), E_8 estimate ~6.49e9"
     units: "distinguishable brand positions"
+    note: >-
+      That the E_8 estimate lies between the two bounds is a derivation, not an
+      observation. N_E8 = Delta_8 * (2/epsilon)^8, so N_E8 divided by the lower
+      bound is Delta_8 * 2^8 = 64.94 for every epsilon, and the upper bound
+      divided by N_E8 is (1 + epsilon/2)^8 / Delta_8, which is at least
+      1/Delta_8 = 3.94 for every epsilon >= 0. The ordering is therefore fixed
+      by arithmetic and cannot come out otherwise.
     body_sections: ["Table 4", "Appendix A Table A1"]
   - id: m_kiss
     statement: "E_8 kissing number is 240, decomposing as 112 specialist (two-coordinate +/-1) + 128 generalist (eight-coordinate +/-1/2, even sign parity) minimal vectors at squared norm 2; ratio ~47:53."
@@ -283,8 +290,16 @@ propositions:
       - type: derivation
         anchor: "Neighborhood volume V_8(epsilon)/V_8(1) = epsilon^8; Table 6."
     falsifier: >-
-      Falsified if the measured covered fraction of brand space exceeds
-      n_b * epsilon^8 by a margin inconsistent with the non-overlap assumption.
+      Falsified if the measured covered fraction of brand space, obtained by
+      volume integration over observed brand positions, falls SHORT of
+      n_b * epsilon^8 by a margin inconsistent with the non-overlap assumption
+      — that is, if the formula UNDER-states white space. The direction matters
+      and the earlier statement had it backwards: covered volume is subadditive,
+      so overlapping neighborhoods can only reduce the covered fraction below
+      n_b * epsilon^8, and the approximation can therefore never over-state
+      white space through clustering. The reachable failure is clustering so
+      severe that the true white-space fraction materially exceeds
+      1 - n_b * epsilon^8.
     body_sections: ["White Space and Market Saturation — Proposition 3"]
   - id: P4
     statement: >-
@@ -301,8 +316,14 @@ propositions:
         citation_keys: [sharp-2010-how-brands-grow]
     falsifier: >-
       Falsified if a category's observed brand count consistently and
-      substantially exceeds (1/epsilon)^d_eff (d_eff estimated via PCA) without
-      measurable perceptual overlap.
+      substantially exceeds (1/epsilon)^d_eff without measurable perceptual
+      overlap, where d_eff and epsilon are FIXED BY PRE-REGISTRATION for that
+      category before the brand count is taken. The pre-registration is what
+      makes the test a test: with d_eff free to be re-estimated after the fact,
+      any observed count can be accommodated by raising it, and the earlier
+      wording said so explicitly ("indicating that the effective dimensionality
+      estimate was too low, not that capacity is unbounded"), which made every
+      brand count confirmatory. That rider is withdrawn.
     body_sections: ["White Space and Market Saturation — Category Saturation (Proposition 4)"]
   - id: P5
     statement: >-
@@ -520,9 +541,15 @@ corpus_precedents:
     relationship: applies
     spine_nodes: [C4, P3, L2]
     note: >-
-      R3 (concentration of measure / fuzzy cohort boundaries) explains why
-      brand profiles concentrate near boundaries, qualifying interior-position
-      kissing bounds and white-space discoverability.
+      R3 (concentration of measure) explains why observer profiles concentrate
+      near boundaries, qualifying interior-position kissing bounds and
+      white-space discoverability. The figure carried across is at least 52.2%
+      of Delta^7 lying near the boundary of its own cohort region at relative
+      distance .10 — the intrinsic-dimension bound — and separately about
+      two-thirds of observers lying within one component standard deviation of
+      an inter-cohort frontier, which is the quantity that carries reassignment
+      risk and is an empirical result under a specific null rather than a
+      geometric necessity.
   - paper_key: 2026r
     relationship: extends
     spine_nodes: [C1, P7]

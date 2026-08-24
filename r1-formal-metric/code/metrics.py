@@ -20,10 +20,17 @@ Run command (reproduces the paper's null baseline and the 1/256 compression):
 
     uv run python code/metrics.py
 
-The ``__main__`` smoke test reproduces two paper numbers with a fixed seed:
-the ~.44 concentration null baseline sqrt(7/36) for random observer pairs at
-n = 8, and the 1/256 positive-octant volume fraction, and checks the
-Theorem 5(i) closed form against a Monte Carlo estimate.
+The ``__main__`` smoke test reproduces the paper's printed numbers with a fixed
+seed: the ~.44 concentration null baseline sqrt(7/36) for random observer pairs
+at n = 8, the 1/256 positive-octant volume fraction, the Theorem 5(i) closed
+form against a Monte Carlo estimate, the case-study Aitchison distances of
+Table 6, and (added 2026-08-24 with the corrected paper) the observer-dependent
+distances and ordering reversals of Table 7, the Fisher-Rao contraction under
+dimension merging, and the tau-classification of the case-study pairs.
+
+Those assertions compare the paper's printed values against the values this
+module computes. They catch transcription drift between paper and script; they
+are NOT an independent verification that the computations are correct.
 """
 
 from __future__ import annotations
@@ -164,6 +171,53 @@ def positive_octant_fraction(n: int = N_DIM) -> float:
     return 1.0 / (2.0**n)
 
 
+CANONICAL_NAMES = ("Hermes", "IKEA", "Patagonia", "Erewhon", "Tesla")
+CANONICAL_PROFILES = (
+    (9.5, 9.0, 7.0, 9.0, 8.5, 3.0, 9.0, 9.5),
+    (8.0, 7.5, 6.0, 7.0, 5.0, 9.0, 7.5, 6.0),
+    (6.0, 9.0, 9.5, 7.5, 8.0, 5.0, 7.0, 6.5),
+    (7.0, 6.5, 5.0, 9.0, 8.5, 3.5, 7.5, 2.5),
+    (7.5, 8.5, 3.0, 6.0, 7.0, 6.0, 4.0, 2.0),
+)
+W_AESTHETE = (0.25, 0.15, 0.05, 0.20, 0.10, 0.05, 0.15, 0.05)
+W_PRAGMATIST = (0.05, 0.05, 0.10, 0.15, 0.05, 0.35, 0.05, 0.20)
+
+
+def merge_dimensions(w, i: int, j: int) -> np.ndarray:
+    """Coarse-grain a simplex point by merging categories ``i`` and ``j``."""
+    w = np.asarray(w, dtype=float)
+    keep = [x for k, x in enumerate(w) if k not in (i, j)]
+    return np.array(keep + [w[i] + w[j]])
+
+
+def split_dimension(w, i: int, frac: float = 0.5) -> np.ndarray:
+    """Congruent refinement: split category ``i`` with the same kernel for all."""
+    w = list(np.asarray(w, dtype=float))
+    mass = w.pop(i)
+    return np.array(w + [frac * mass, (1.0 - frac) * mass])
+
+
+def jnd_threshold(weber_fraction: float, n: int = N_DIM) -> float:
+    """Definition 4 threshold tau(k) = sqrt((n-1)/n^2) * ln(1 + k).
+
+    One just-noticeable difference is a factor (1 + k) on a single dimension.
+    In clr coordinates that shifts the profile by ln(1+k) along a direction of
+    norm sqrt((n-1)/n), and averaging over uniform observer weights (E[w_k] =
+    1/n) gives E_w[d_w^2] = ((n-1)/n^2) ln^2(1+k).
+    """
+    return float(np.sqrt((n - 1) / n**2) * np.log1p(weber_fraction))
+
+
+def critical_weber_fraction(s_a, s_b, n: int = N_DIM) -> float:
+    """Weber fraction at which a pair stops being meaningfully differentiated."""
+    rms = np.sqrt(expected_observer_distance_sq(s_a, s_b))
+    return float(np.expm1(rms / np.sqrt((n - 1) / n**2)))
+
+
+def _pair_indices(m: int):
+    return [(i, j) for i in range(m) for j in range(i + 1, m)]
+
+
 def _smoke_test() -> None:
     rng = np.random.default_rng(20260326)
 
@@ -210,7 +264,132 @@ def _smoke_test() -> None:
         < 1e-12
     )
 
+    # ------------------------------------------------------------------ 6 --
+    # Table 7: observer-dependent distances and ordering reversals.
+    prof = [np.array(p, dtype=float) for p in CANONICAL_PROFILES]
+    pairs = _pair_indices(len(prof))
+    d_a = {pr: observer_distance(W_AESTHETE, prof[pr[0]], prof[pr[1]]) for pr in pairs}
+    d_b = {
+        pr: observer_distance(W_PRAGMATIST, prof[pr[0]], prof[pr[1]]) for pr in pairs
+    }
+    print("\nTable 7 — observer-dependent distances")
+    for i, j in pairs:
+        print(
+            f"  {CANONICAL_NAMES[i]:>10s}-{CANONICAL_NAMES[j]:<10s} "
+            f"alpha {d_a[(i, j)]:.3f}   beta {d_b[(i, j)]:.3f}   "
+            f"ratio {d_b[(i, j)]/d_a[(i, j)]:.2f}"
+        )
+    reversals = [
+        (p, q)
+        for idx, p in enumerate(pairs)
+        for q in pairs[idx + 1 :]
+        if (d_a[p] - d_a[q]) * (d_b[p] - d_b[q]) < 0
+    ]
+    n_comparisons = len(pairs) * (len(pairs) - 1) // 2
+    print(
+        f"  ordering reversals between the two observers: {len(reversals)} of "
+        f"{n_comparisons} pair-of-pairs comparisons "
+        f"({100*len(reversals)/n_comparisons:.1f}%)"
+    )
+    assert len(reversals) == 13, len(reversals)
+    assert abs(d_a[(0, 1)] - 0.323) < 5e-4, d_a[(0, 1)]
+    assert abs(d_b[(0, 1)] - 0.738) < 5e-4, d_b[(0, 1)]
+    assert abs(d_a[(1, 4)] - 0.384) < 5e-4, d_a[(1, 4)]
+    assert abs(d_b[(1, 4)] - 0.425) < 5e-4, d_b[(1, 4)]
+    # IKEA's neighbourhood: Hermes moves from rank 2 to rank 4 of 4.
+    others = [k for k in range(5) if k != 1]
+    rank_a = sorted(
+        others, key=lambda k: observer_distance(W_AESTHETE, prof[1], prof[k])
+    )
+    rank_b = sorted(
+        others, key=lambda k: observer_distance(W_PRAGMATIST, prof[1], prof[k])
+    )
+    print(f"  IKEA neighbourhood, aesthete   : {[CANONICAL_NAMES[k] for k in rank_a]}")
+    print(f"  IKEA neighbourhood, pragmatist : {[CANONICAL_NAMES[k] for k in rank_b]}")
+    assert rank_a.index(0) == 1 and rank_b.index(0) == 3
+
+    # ------------------------------------------------------------------ 7 --
+    # Cencov: merging contracts d_FR; congruent refinement preserves it.
+    full = fisher_rao_distance(W_AESTHETE, W_PRAGMATIST)
+    merges = {
+        (i, j): fisher_rao_distance(
+            merge_dimensions(W_AESTHETE, i, j), merge_dimensions(W_PRAGMATIST, i, j)
+        )
+        for i, j in _pair_indices(N_DIM)
+    }
+    contractions = {k: 1.0 - v / full for k, v in merges.items()}
+    worst = max(contractions, key=contractions.get)
+    best = min(contractions, key=contractions.get)
+    refined = fisher_rao_distance(
+        split_dimension(W_AESTHETE, 0), split_dimension(W_PRAGMATIST, 0)
+    )
+    print("\nCencov: coarse-graining contracts, congruent refinement preserves")
+    print(f"  d_FR(w_alpha, w_beta), 8 categories        : {full:.3f}")
+    print(
+        f"  merge semiotic+narrative (dims 1+2)        : {merges[(0, 1)]:.3f} "
+        f"({100*contractions[(0, 1)]:.1f}% contraction)"
+    )
+    print(
+        f"  largest contraction, merge dims {worst[0]+1}+{worst[1]+1}         : "
+        f"{merges[worst]:.3f} ({100*contractions[worst]:.1f}%)"
+    )
+    print(
+        f"  smallest contraction, merge dims {best[0]+1}+{best[1]+1}        : "
+        f"{merges[best]:.3f} ({100*contractions[best]:.1f}%)"
+    )
+    print(
+        f"  mean contraction over all 28 merges        : "
+        f"{100*np.mean(list(contractions.values())):.1f}%"
+    )
+    print(f"  congruent refinement (0.5/0.5 split dim 1) : {refined:.3f}")
+    assert all(v >= -1e-12 for v in contractions.values()), "a merge expanded d_FR"
+    assert abs(full - 1.176) < 5e-4, full
+    assert abs(merges[(0, 1)] - 1.171) < 1e-3, merges[(0, 1)]
+    assert abs(contractions[worst] - 0.380) < 5e-3, contractions[worst]
+    assert abs(np.mean(list(contractions.values())) - 0.075) < 5e-3
+    assert abs(refined - full) < 1e-12, (refined, full)
+
+    # ------------------------------------------------------------------ 8 --
+    # Definition 4: tau from a Weber JND, and the resulting classification.
+    tau = jnd_threshold(0.10)
+    obs = rng.dirichlet(np.ones(N_DIM), size=400_000)
+    print(f"\nDefinition 4 with tau(k = .10) = {tau:.4f}")
+    rms_vals, cvs, p5s, kstars = [], [], [], []
+    for i, j in pairs:
+        delta_sq = (clr(prof[i]) - clr(prof[j])) ** 2
+        d2 = obs @ delta_sq
+        rms = float(np.sqrt(expected_observer_distance_sq(prof[i], prof[j])))
+        cv = float(d2.std() / d2.mean())
+        p5 = float(np.percentile(np.sqrt(d2), 5))
+        kstar = critical_weber_fraction(prof[i], prof[j])
+        rms_vals.append(rms)
+        cvs.append(cv)
+        p5s.append(p5)
+        kstars.append(kstar)
+        print(
+            f"  {CANONICAL_NAMES[i]:>10s}-{CANONICAL_NAMES[j]:<10s} "
+            f"rms d_w {rms:.3f}  CV {cv:.3f}  5th pct {p5:.3f}  k* {100*kstar:.0f}%  "
+            f"{'meaningful' if rms > tau else 'NOT meaningful':>14s}  "
+            f"{'robust' if p5 > tau else 'NOT robust'}"
+        )
+    assert all(v > tau for v in rms_vals), "a pair failed the meaningfulness test"
+    assert all(v > tau for v in p5s), "a pair failed the robustness test"
+    assert abs(min(rms_vals) - 0.311) < 1e-3, min(rms_vals)
+    assert abs(max(rms_vals) - 0.621) < 1e-3, max(rms_vals)
+    assert abs(min(kstars) - 1.56) < 0.01, min(kstars)
+    assert abs(max(kstars) - 5.54) < 0.02, max(kstars)
+    assert abs(min(cvs) - 0.307) < 5e-3, min(cvs)
+    assert abs(max(cvs) - 0.692) < 5e-3, max(cvs)
+    assert abs(min(p5s) - 0.216) < 5e-3, min(p5s)
+    assert abs(max(p5s) - 0.390) < 5e-3, max(p5s)
+
     print("\nAll smoke-test assertions passed.")
+    print(
+        "NOTE: these assertions compare the paper's printed values against the\n"
+        "values this module computes. They catch transcription drift between\n"
+        "paper and script; they are NOT an independent verification that the\n"
+        "computations are correct."
+    )
 
 
 if __name__ == "__main__":

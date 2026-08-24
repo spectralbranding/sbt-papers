@@ -33,12 +33,12 @@ meta:
     for at least one pair. Completeness is shown by reducing five proposed ninth dimensions to combinations
     of existing channels. The apparent conflict with low-dimensional MDS solutions is resolved via concentration-of-measure
     mathematics: low-dimensional projections capture most variance while losing the profile-shape information
-    that distinguishes coherence types. Robustness checks using synthetic observers confirm that each
-    dimension carries non-trivial variance (5-19%) and rank stability deteriorates below eight dimensions.
-    The taxonomy integrates prior meaning frameworks while satisfying psychometric criteria for theoretical
-    derivation [@borsboom-2003-theoretical-status-latent; @rossiter-2002-coarse-procedure-scale], offering
-    consumer researchers a coordinate system for studying meaning transfer, cultural branding, and perceptual
-    coherence.'
+    that distinguishes coherence types. Robustness checks on AI-observer data show the cross-model ranking
+    survives every single-dimension removal against a random-re-ranking null; the variance-share decomposition
+    is reported as inconclusive. The taxonomy integrates prior meaning frameworks while satisfying psychometric
+    criteria for theoretical derivation [@borsboom-2003-theoretical-status-latent; @rossiter-2002-coarse-procedure-scale],
+    offering consumer researchers a coordinate system for studying meaning transfer, cultural branding,
+    and perceptual coherence.'
 claims:
 - id: P1
   type: proposition
@@ -262,7 +262,8 @@ dependencies:
   claim: CBBE — hierarchical, not flat dimensional
   doi: 10.1177/002224299305700101
 - relationship: extends
-  claim: Eight value types — independently derived count converging on eight
+  claim: Eight consumer-value types, mapping many-to-one onto SBT channels; the shared count carries no
+    evidential weight and is not used as support
   doi: 10.4324/9780203010679
 - relationship: extends
   claim: Five consumption values — theory-derived, maps into SBT channels

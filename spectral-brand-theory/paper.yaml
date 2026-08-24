@@ -13,7 +13,7 @@ meta:
     affiliation: Independent Researcher
   doi: 10.5281/zenodo.18945912
   date: '2026-06-26'
-  venue: Working paper (Zenodo; corpus conceptual hub)
+  venue: Preprint
   license: CC-BY-4.0
   keywords:
   - brand perception
@@ -220,9 +220,14 @@ acceptance:
     to identical brand signal environments form systematically different brand convictions as a function
     of their spectral-profile differences (weights, tolerances, priors, encounter mode) — profile-predictable
     divergence, not random variation.
-  falsification: Falsified if cohorts with measurably different profiles produce conviction distributions
-    that do not differ after controlling for signal exposure — i.e. profile predicts no incremental variance
-    beyond demographics.
+  falsification: 'The original falsifier (profile variation predicts no incremental variance in conviction
+    beyond demographics) could not fire: priors are a component of the spectral profile and a prior about
+    a brand is a lagged measure of conviction about it, so the outcome sits inside the predictor. Restated
+    over the belief-independent components: falsified if cohorts differing measurably in dimensional weights,
+    tolerances and gate state — elicited on stimuli other than the focal brand, with priors about the
+    focal brand measured and held constant — produce conviction distributions that do not differ after
+    controlling for signal exposure. Under that specification a null is attainable and would show the
+    perceptual apparatus does no work once prior belief is fixed.'
 - claim_id: PF2
   criterion: Holds if (Formal Proposition 2 — Non-ergodicity of perception) The temporal sequence in which
     brand signals are encountered affects the resulting conviction even when the signal set is identical,
@@ -345,7 +350,12 @@ results:
     distinct resilience profiles — ecosystem (selective absorption / purification, Hermès), signal (uniform
     transmission, IKEA), identity (binary ideological split, Patagonia), experiential asymmetry (geographic
     split by evidence base, Erewhon), and incoherent (amplifying fragility, Tesla). Type is set by cohort
-    interdependence, ideological centrality, and encounter-mode variance.'
+    interdependence, ideological centrality, and encounter-mode variance. The five-brand demonstration
+    does not establish the taxonomy: the brands were selected one per type, and the type assignment is
+    the stated selection rationale, so the analysis returns the five types because the sample was built
+    to contain one instance of each. The count and the partition come from the drift-geometry derivation
+    in the R12 companion, not from these cases; the demonstration shows only that each type can be given
+    a distinct resilience mechanism and that the pipeline recovers the type it was handed a case of.'
 - claim_id: PF5
   status: supported
   notes: 'Asymmetric conviction resilience: an evidence-free negative conviction (Tesla Boycotter, experiential
@@ -355,18 +365,22 @@ results:
     wasted effort.'
 - claim_id: P3
   status: supported
-  notes: Brand power and brand health are independent variables. Tesla has maximum emission power (universal
+  notes: 'Brand power and brand health are independent variables. Tesla has maximum emission power (universal
     awareness, 7/8 dimensions at strength >=4, gate permeability 10/10) yet minimum architectural health
-    (cloud coherence 2/10, D/A 30/65, C-). The D/A ratio most powerfully discriminates power from health;
-    an exploratory 55-65% designed-signal optimal zone emerges from the five-brand comparison (requiring
-    larger-sample validation).
+    (cloud coherence 2/10, D/A 30/65, C-). The D/A ratio most powerfully discriminates power from health.
+    The 55-65% designed-signal band is derived formally in the R6 companion; it is not supported by these
+    five brands and is contradicted by them — IKEA sits at 75% designed, outside the band, and grades
+    A-, above Patagonia at 65% inside it (B+). What the five cases support is one-sided and confined to
+    the low extreme: at 30% designed, Tesla has most of its signal environment outside its own control.'
 - claim_id: P7
   status: supported
-  notes: Brand power and brand health are independent variables. Tesla has maximum emission power (universal
+  notes: 'Brand power and brand health are independent variables. Tesla has maximum emission power (universal
     awareness, 7/8 dimensions at strength >=4, gate permeability 10/10) yet minimum architectural health
-    (cloud coherence 2/10, D/A 30/65, C-). The D/A ratio most powerfully discriminates power from health;
-    an exploratory 55-65% designed-signal optimal zone emerges from the five-brand comparison (requiring
-    larger-sample validation).
+    (cloud coherence 2/10, D/A 30/65, C-). The D/A ratio most powerfully discriminates power from health.
+    The 55-65% designed-signal band is derived formally in the R6 companion; it is not supported by these
+    five brands and is contradicted by them — IKEA sits at 75% designed, outside the band, and grades
+    A-, above Patagonia at 65% inside it (B+). What the five cases support is one-sided and confined to
+    the low extreme: at 30% designed, Tesla has most of its signal environment outside its own control.'
 limitations:
 - description: The five-brand application is an illustrative proof-of-concept using SBT's own pipeline,
     not an empirical study; the four mechanisms are candidates, not validated findings. Independent human-subject

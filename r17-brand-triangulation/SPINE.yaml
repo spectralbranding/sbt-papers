@@ -81,10 +81,15 @@ assumption_atoms:
     body_sections: ["§3.1 Observation Model", "§3.2 Assumptions (A2)"]
   - id: AA3
     statement: >-
-      Weight-matrix rank: W has rank min(K, 8); for collapsed observations the
-      spanning condition rank(W) = 8 is required for identifiability.
-    affects_nodes: [P3]
-    body_sections: ["§3.2 Assumptions (A3)"]
+      Weight-matrix rank: W has rank min(K, 8). PDOP is defined only when
+      rank(W) = 8, which requires K ≥ 8 rows; where rank(W) < 8 the Gram matrix
+      W^T W is singular, (W^T W)^{-1} does not exist, and PDOP is +∞ because the
+      null-space directions of W are not estimable at all. The Moore-Penrose
+      pseudo-inverse (W^T W)^+ may be substituted, but its trace then reports
+      precision only within the estimable row space and is not a bound on the
+      full eight-dimensional position.
+    affects_nodes: [P1, P3, F2]
+    body_sections: ["§3.2 Assumptions (A3)", "§3.2 Perception DOP", "§9.2 DOP Computation"]
   - id: AA4
     statement: >-
       Stable calibration profiles: canonical profiles (Hermès, IKEA, Patagonia)
@@ -135,8 +140,9 @@ propositions:
     body_sections: ["§3.4 What Brand Triangulation Measures: Emission, Not Conviction"]
   - id: P1
     statement: >-
-      (Paper Proposition 1) For N observer cohorts with spectral weight profiles
-      w_1..w_N, the precision of brand-position estimation is inversely
+      (Paper Proposition 1) For N ≥ 8 observer cohorts with spectral weight
+      profiles w_1..w_N whose stacked matrix W satisfies rank(W) = 8, the
+      precision of brand-position estimation is inversely
       proportional to Perception DOP = sqrt(trace((W^T W)^{-1})); cohort
       configurations that minimize PDOP — maximally diverse weight profiles —
       yield the most precise positioning. PDOP is computable pre-study, making
@@ -147,29 +153,42 @@ propositions:
       - type: derivation
         anchor: "PDOP = sqrt(trace of inverse Fisher information) = sqrt(A-optimal trace) = multivariate Cramér-Rao lower bound; D/A-optimal design connection."
         citation_keys: [kuhfeld-1994-efficient-experimental-design]
-      - type: empirical
-        anchor: "Monte Carlo confirmation of the PDOP–MSE relationship (F1)."
+      - type: derivation
+        anchor: "Monte Carlo recovery of the identity MSE = σ²·N·PDOP² (F1) — a numerical check that the implementation reproduces the OLS estimator's own covariance, not an independent test of it."
     falsifier: >-
-      P1 fails if PDOP does not predict estimation variance relative to a known
-      ground-truth profile across many random cohort configurations, multiple
-      brands, and multiple estimation conditions.
+      P1 as an analytic statement about the OLS estimator cannot be falsified by
+      simulation under the same linear model, because the PDOP–MSE relation IS
+      that estimator's covariance. What can fail is the transfer: P1 fails as a
+      claim about brand measurement if, on real cohort data, PDOP computed from
+      independently calibrated weight profiles does not predict estimation
+      variance relative to a known ground-truth profile across many cohort
+      configurations, multiple brands, and multiple estimation conditions.
     body_sections: ["§3.2 Perception DOP"]
   - id: P_plateau
     statement: >-
-      PDOP has a sensitivity plateau: configurations near the optimum perform
-      similarly well, so it is a usable pre-study design criterion despite
-      estimation uncertainty in cohort weight profiles — researchers need only
-      be within the plateau region, not at the exact minimum. The plateau is
-      structural (separation of time scales / parameter sloppiness), not
-      parameter-dependent.
+      PDOP is a usable pre-study design criterion despite estimation uncertainty
+      in cohort weight profiles, because its sensitivity to weight-profile
+      perturbation is shallow: degradation grows at roughly 3.6 percentage
+      points per .1 of perturbation scale, so approximate calibration is
+      sufficient. The measured growth is FIRST-ORDER (linear) in the
+      perturbation scale, not the second-order flatness a stationary plateau
+      would produce; the transferred structural plateau claim is therefore NOT
+      supported by the perturbation evidence, and what the evidence supports is
+      a small linear sensitivity coefficient rather than a flat optimum.
     conditions: ""
     antecedents: [P1]
     evidence:
       - type: analytic
-        anchor: "Invariant-corridor plateau result transferred to PDOP; parallel to model-parameter sloppiness."
+        anchor: "Invariant-corridor plateau result offered as a structural analogy only; parallel to model-parameter sloppiness."
         citation_keys: [transtrum-2015-perspective-sloppiness-emergent]
       - type: empirical
-        anchor: "Perturbation result: <10% PDOP degradation at ε=0.2 (m_plateau)."
+        anchor: "Perturbation result: degradation 3.6% / 7.2% / 10.5% at ε = .1 / .2 / .3, log-log slope .977 on ε (m_plateau)."
+    falsifier: >-
+      The shallow-sensitivity claim fails if perturbation of the optimal weight
+      matrix produces degradation growing faster than linearly in ε, or a
+      coefficient large enough that ordinary calibration error moves PDOP out of
+      the design-relevant range. A second-order plateau claim would require
+      degradation ∝ ε²; the observed exponent near 1 already refutes it.
     body_sections: ["§3.3 Sensitivity Plateau", "§9.6 (sensitivity plateau)"]
   - id: P2
     statement: >-
@@ -344,6 +363,19 @@ derivations:
     derived_from: [P1, AA1]
     method_of_derivation: "Restricting the Cramér-Rao trace to the 7-D tangent subspace of Δ^7."
     body_sections: ["§3.2 (Simplex-constrained PDOP lower bound)"]
+  - id: P_monotone
+    statement: >-
+      Adding an observer cohort cannot raise PDOP. Appending a row w to W adds
+      the positive-semidefinite rank-one term w wᵀ to the Gram matrix, so
+      W^T W increases in the Loewner order; matrix inversion is Loewner
+      order-reversing on the positive-definite cone, so (W^T W)^{-1} decreases
+      and trace((W^T W)^{-1}) — hence PDOP — is non-increasing in the cohort
+      set. The reduction is strict exactly when the new row has a component
+      outside the span of the existing rows. This is an algebraic property of
+      the design matrix, not an empirical regularity of observer constellations.
+    derived_from: [P1, AA3]
+    method_of_derivation: "Loewner monotonicity of the Gram matrix under row augmentation plus order-reversal of matrix inversion."
+    body_sections: ["§9.2 DOP Computation"]
   - id: P_power
     statement: >-
       Power analysis: per-dimension variance is σ²_obs·PDOP²/8, so a precision
@@ -445,11 +477,11 @@ measurements:
     units: "PDOP"
     body_sections: ["§9.6 (PDOP bounds for the N=9 minimum case)"]
   - id: m_plateau
-    statement: "Median PDOP degradation ≈3.6% at ε=0.1, ≈7.2% at ε=0.2 (<10%), ≈10.5% at ε=0.3 (plateau confirmed)."
+    statement: "Median PDOP degradation ≈3.6% at ε=0.1, ≈7.2% at ε=0.2, ≈10.5% at ε=0.3. Degradation is linear in ε (log-log slope .977 across the three grid points; a stationary plateau would give ≈14.4% and ≈32.4%), so the result is a shallow first-order sensitivity of about 3.6 percentage points per .1 of ε, not a second-order plateau."
     source_observations: [O2]
     generating_method: M3
-    value: "3.6% at ε=.1; 7.2% at ε=.2; 10.5% at ε=.3"
-    units: "% PDOP degradation"
+    value: "3.6% at ε=.1; 7.2% at ε=.2; 10.5% at ε=.3; log-log slope .977"
+    units: "% PDOP degradation; regression slope"
     body_sections: ["§9.6 (sensitivity plateau)"]
   - id: m_dci_bf
     statement: >-
@@ -465,25 +497,34 @@ measurements:
 findings:
   - id: F1
     statement: >-
-      Under the linear observation model, PDOP is a sharp predictor of RMSE: the
-      log-log slope of 1.000 (R²=.993, ρ=.992) confirms the GPS-theory power law
-      MSE = σ²·N·PDOP² (per-cohort-normalized PDOP), holding per-dimension (ρ .985–.995) and across two orders
-      of magnitude in PDOP. Observer geometry dominates measurement precision
-      (26-fold RMSE spread across PDOP quartiles at fixed noise). This is a
-      mathematical confirmation under the model's data-generating process;
-      transfer to real cohort responses is an empirical question (Option B).
-    type: "simulation_confirmation"
+      Under the linear observation model the relation MSE = σ²·N·PDOP² is the
+      OLS estimator's own covariance, so it holds by derivation and the Monte
+      Carlo cannot test it. What the simulation establishes is that the
+      implementation reproduces the derived identity to within sampling error:
+      log-log slope 1.000 (R²=.993, ρ=.992), per-dimension ρ .985–.995, per-trial
+      mean ratio .996, and a 26-fold RMSE spread across PDOP quartiles that is
+      the same identity read across the quartile range of PDOP. The pooled MSE
+      slope of .880 is a leverage artefact of the heavy-tailed PDOP draw, not a
+      departure from the identity. No empirical content about brand measurement
+      is carried at this step; the empirical question — whether the linear
+      observation model approximates real human and AI cohort response — is
+      deferred to the Option B human-cohort study.
+    type: "derivation_check"
     source_measurements: [m_slope_loglog, m_slope_mse, m_quartile]
     generating_method: M1
     antecedents: [O2, P1]
-    falsifier: "If the simulated PDOP–RMSE slope departs materially from 1.0 under a correctly-specified linear model, F1 fails."
-    citation_role_in_paper: "primary_evidence_for_P1"
+    falsifier: "F1 fails only as an implementation check: if the simulated log-log slope or the per-trial RMSE/(σ√N·PDOP) ratio departed materially from 1.0 under the correctly-specified linear model, the implementation would be wrong. It cannot fail as a test of the underlying relation."
+    citation_role_in_paper: "implementation_check_for_P1"
     body_sections: ["§9.6"]
   - id: F2
     statement: >-
-      On the R15 AI constellation, the aggregate weight matrix is dominated by
-      Experiential/Semiotic/Economic, leaving Cultural and Temporal the
-      least-resolved (highest per-dimension DOP); differential correction
+      On the R15 AI constellation the six-model weight matrix is 6 × 8, so
+      rank(W) ≤ 6 < 8 and no per-dimension DOP can be computed for it: PDOP is
+      formally infinite for the collapsed-observation case and the constellation
+      is reported instead by its directly observed mean weights. Those weights
+      are dominated by Experiential (18.8), Semiotic (14.8) and Economic (14.3)
+      and thinnest on Cultural (7.3), Social (7.8) and Temporal (8.1) against a
+      flat-weight baseline of 12.5; differential correction
       reduces cross-model variance most on Economic (where the Economic Default
       is active) and least on Experiential, and a Brand Function specification
       cuts local-brand DCI by 20% — geometric evidence that metamerism is an

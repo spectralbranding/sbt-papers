@@ -265,30 +265,48 @@ contradictions: []
 results:
 - claim_id: P1
   status: supported
-  notes: 'In the Dove illustration the velocity/acceleration layer surfaces dynamics that static position
-    cannot: Cultural is a leading indicator that decelerates years before its position falls; Narrative
-    and Social follow with a lag; brand speed traces an inverted-U; and the Experiential dimension stays
-    near-zero velocity throughout, consistent with an unchanged product while brand meaning transforms
-    — demonstrating that the kinematic decomposition isolates experience-level from meaning-level dynamics.'
+  notes: 'In the Dove illustration the velocity/acceleration layer extracts structure that static position
+    does not show: Cultural decelerates before its position falls; Narrative and Social turn negative
+    one period after they decelerate; brand speed is non-monotone; and the Experiential dimension stays
+    near-zero velocity throughout, consistent with an unchanged product while brand meaning transforms.
+    Every one of these is a difference of the SAME four author-assigned columns of Table 1, assigned in
+    one pass with the whole 2003-2023 trajectory already known, so the readings demonstrate what the calculus
+    extracts from a profile series and are not findings about Dove. In particular, the Period 1 acceleration
+    is NOT a prediction of the Period 3 reversal: the 2013 column enters both sides, and both are readings
+    of one act of assignment. Testing anticipation requires acceleration estimated on measured data ending
+    before the reversal interval begins.'
 - claim_id: P5
   status: supported
-  notes: 'In the Dove illustration the velocity/acceleration layer surfaces dynamics that static position
-    cannot: Cultural is a leading indicator that decelerates years before its position falls; Narrative
-    and Social follow with a lag; brand speed traces an inverted-U; and the Experiential dimension stays
-    near-zero velocity throughout, consistent with an unchanged product while brand meaning transforms
-    — demonstrating that the kinematic decomposition isolates experience-level from meaning-level dynamics.'
+  notes: 'In the Dove illustration the velocity/acceleration layer extracts structure that static position
+    does not show: Cultural decelerates before its position falls; Narrative and Social turn negative
+    one period after they decelerate; brand speed is non-monotone; and the Experiential dimension stays
+    near-zero velocity throughout, consistent with an unchanged product while brand meaning transforms.
+    Every one of these is a difference of the SAME four author-assigned columns of Table 1, assigned in
+    one pass with the whole 2003-2023 trajectory already known, so the readings demonstrate what the calculus
+    extracts from a profile series and are not findings about Dove. In particular, the Period 1 acceleration
+    is NOT a prediction of the Period 3 reversal: the 2013 column enters both sides, and both are readings
+    of one act of assignment. Testing anticipation requires acceleration estimated on measured data ending
+    before the reversal interval begins.'
 limitations:
 - description: The Dove illustration uses author-assigned (qualitative) profiles, not survey or experimental
     data, and only four time points over 20 years (three velocity, two acceleration estimates — the bare
     minimum). All computed velocity, acceleration, and DC values are illustrative of the method and are
     NOT validated empirical measurements; validation requires real brand-tracking data with known measurement
-    properties and external criteria.
+    properties and external criteria. The four columns were assigned in a single pass with the full trajectory
+    already known, so no reading derived from them can be treated as anticipating a later part of the
+    same series.
   severity: moderate
   addressable: true
 - description: Noise amplification under differentiation makes raw finite-difference velocity (and especially
     acceleration) estimates unreliable from few noisy measurements; raw differences should be treated
     as illustrative, with the Kalman filter the recommended practical estimator. Third-order derivatives
     (jerk) are impractical at current tracking frequencies.
+  severity: moderate
+  addressable: true
+- description: The Dove periods are unequally spaced (dt = 3, 7, 10 years), so the speed estimator ||dx||/dt
+    confounds trajectory speed with interval length and cross-period speed comparisons are not like-for-like.
+    A constant-interval design (the monthly sampling the operational implementation specifies) is what
+    separates the two; until then the inverted-U in speed cannot be distinguished from the interval schedule.
   severity: moderate
   addressable: true
 - description: Dimensional-creation events (null-to-positive transition, e.g. Dove's Ideological dimension

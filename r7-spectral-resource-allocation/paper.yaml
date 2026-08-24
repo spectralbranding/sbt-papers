@@ -22,21 +22,21 @@ meta:
   - founder bias
   - multi-dimensional optimization
   - cohort targeting
-  abstract: Brand managers allocate resources across perceptual dimensions — design, storytelling, pricing,
-    heritage — yet rarely ground those decisions in measured customer salience weights. This paper develops
-    a resource allocation model in which a brand's signal portfolio $s \in \mathbb{R}^8_+$ is evaluated
-    by observer cohorts whose weight vectors $w(c) \in \Delta^7$ reside on the probability simplex, and
-    perceived value is $\langle w(c), s \rangle$ net of a separable convex cost. Five results follow.
-    First, optimal investment is proportional to cohort weight divided by marginal cost, generalizing
-    Dorfman-Steiner [-@dorfman-1954-optimal-advertising-optimal] to multi-dimensional perceptual space
-    (Theorem 1). Second, the economic loss from optimizing under founder rather than cohort weights —
-    the alignment gap — is bounded below by the Fisher-Rao distance between weight vectors (Theorem 2).
-    Third, a single portfolio efficiently serves multiple cohorts only when their weights lie inside a
-    Fisher-Rao ball of radius $r < \pi/4$ (Theorem 3). Fourth, the cost-minimizing portfolio achieving
-    a target perception is unique when all dimensions are active (Theorem 4). Fifth, cohort-specific interaction
-    terms shift investment toward complementary dimensions, generalizing Naik and Raman [-@naik-2003-understanding-impact-synergy]
+  abstract: 'Brand managers allocate resources across perceptual dimensions — design, storytelling, pricing,
+    heritage — yet rarely ground those decisions in measured salience weights. This paper models a brand''s
+    signal portfolio $s \in \mathbb{R}^8_+$ as read by observer cohorts whose weight vectors $w(c) \in
+    \Delta^7$ lie on the probability simplex, with perceived value $\langle w(c), s \rangle$ net of separable
+    convex cost. Five results follow. First, optimal investment is proportional to cohort weight over
+    marginal cost, generalizing Dorfman-Steiner [-@dorfman-1954-optimal-advertising-optimal] to eight
+    perceptual dimensions (Theorem 1). Second, where the founder''s weights are at least as concentrated
+    as the cohort''s, the resulting loss — the alignment gap — is bounded below by a quartic function
+    of Fisher-Rao distance; outside that regime it is not sign-definite (Theorem 2, corrected). Third,
+    one portfolio efficiently serves multiple cohorts only if their weights lie inside a Fisher-Rao ball
+    of radius $r < \pi/4$ (Theorem 3). Fourth, the cost-minimizing portfolio achieving a target perception
+    is unique when all dimensions are active (Theorem 4). Fifth, cohort-specific interaction terms shift
+    investment toward complementary dimensions, generalizing Naik and Raman [-@naik-2003-understanding-impact-synergy]
     (Theorem 5). The framework supplies a diagnostic (alignment audit) and a prescriptive tool (dimension-specific
-    budget ratios), providing the optimization layer missing from current brand-tracking systems.
+    budget ratios): the optimization layer brand-tracking systems lack.'
 claims:
 - id: P0
   type: proposition
@@ -71,10 +71,12 @@ claims:
   - P1
 - id: P3
   type: proposition
-  statement: (Proposition 1, concentration premium) Under uniform costs the optimal value is V*(c) = H(c)/(lambda·alpha-bar)
-    where H(c) = sum_i w_i(c)^2 is the Herfindahl index; concentrated cohorts (high H) achieve strictly
-    higher optimal value than diffuse ones, formalizing "a narrow audience you can delight beats a broad
-    one you can only satisfy."
+  statement: '(Proposition 1, concentration identity) Under uniform costs the optimal value is exactly
+    V*(c) = H(c)/(lambda·alpha-bar), where H(c) = sum_i w_i(c)^2 is the cohort''s Herfindahl index. Optimal
+    value is therefore a strictly increasing function of concentration by identity, not by empirical association:
+    the ordering of two cohorts by V* is the ordering of their Herfindahl indices, restated. The managerial
+    reading — a narrow audience is worth more per unit of cost than a broad one — is a consequence of
+    the quadratic-cost model, and carries no independent evidential weight.'
   testable: false
   tested_in_paper: true
   status: not_tested
@@ -93,11 +95,14 @@ claims:
   - P1
 - id: P5
   type: proposition
-  statement: '(Theorem 2) The alignment gap is bounded below by a geometric quantity: A(f,c) >= H(f,c)^2
-    / (2·lambda·alpha-bar) via the Hellinger distance, and equivalently by the Fisher–Rao distance d_FR
-    between w(f) and w(c). Perceptual distance predicts economic loss; the gap has a floor that improved
-    execution on the chosen dimensions cannot recover — only reallocation toward the cohort''s weights
-    closes it.'
+  statement: '(Theorem 2, corrected at v2.0.0) Under the concentration hypothesis ||w(c)||_2 <= ||w(f)||_2
+    — the founder''s weights are at least as concentrated as the cohort''s — the alignment gap is bounded
+    below by the squared Euclidean separation, A(f,c) >= ||w(f) − w(c)||_2^2 / (2·lambda·alpha-bar), which
+    is exact algebra, and in Hellinger form by A(f,c) >= H(f,c)^4 / (4·lambda·alpha-bar). The Hellinger
+    form is QUARTIC in the distance, not quadratic, and the hypothesis is necessary: without it the gap
+    is not sign-definite and vanishes identically for a uniform founder. Perceptual separation therefore
+    bounds economic loss only inside the concentration regime, and the bound is far too loose to serve
+    as a managerial trigger — the gap is computed directly instead.'
   testable: true
   tested_in_paper: true
   status: not_tested
@@ -211,11 +216,9 @@ acceptance:
   falsification: If the value-net-cost optimum is not proportional to w_i(c)/alpha_i under quadratic costs,
     Theorem 1 fails.
 - claim_id: P5
-  criterion: 'Holds if (Theorem 2) The alignment gap is bounded below by a geometric quantity: A(f,c)
-    >= H(f,c)^2 / (2·lambda·alpha-bar) via the Hellinger distance, and equivalently by the Fisher–Rao
-    distance d_FR between w(f) and w(c).'
-  falsification: If a portfolio with d_FR(w(f),w(c)) large can attain a near-zero alignment gap under
-    the model assumptions, Theorem 2 fails.
+  criterion: Holds if (Theorem 2, corrected at v2.
+  falsification: If a founder–cohort pair satisfying ||w(c)||_2 <= ||w(f)||_2 attains an alignment gap
+    below ||w(f) − w(c)||_2^2 / (2·lambda·alpha-bar), the corrected Theorem 2 fails.
 - claim_id: P7
   criterion: Holds if (Theorem 3, multi-cohort efficiency bound) A single signal portfolio attains at
     least (1−epsilon) of the sum of individual optima iff the cohort weight profiles lie within a Fisher–Rao

@@ -7,7 +7,7 @@
 # by build_ontology.py; rendered per-paper by render_paper_glossary.py.
 #
 # Term definitions + canonical_form + replaces taken from the canonical
-# terminology map: [internal path removed] §5 + CLAUDE.md
+# terminology map: [internal path removed] §5 + [internal ref removed]
 # "Terminology". Do not silently diverge — those are the SSOT for surface forms.
 
 paper_key: 2026a

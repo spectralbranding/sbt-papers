@@ -178,10 +178,13 @@ measurements:
     body_sections: ["Survival Time Estimates", "Table 9", "Table A1"]
   - id: m_da_zone
     statement: >-
-      Survival lower bound r_min sweeps [.32, .72] as alpha lambda_enc d_partial
-      ranges [3.0, 1.0]; at the representative midpoint 1.5, r_min ≈ .54 and the
-      crystallization upper bound ≈ .65, placing the Goldilocks zone at
-      r* in [.55, .65].
+      Survival lower bound r_min = 1.12/(.56 + alpha lambda_enc d_partial)
+      sweeps [.31, .72] as alpha lambda_enc d_partial ranges [3.0, 1.0]; at the
+      representative midpoint 1.5, r_min = .54. The crystallization upper bound
+      .65 is asserted, not computed: no expression for it is given and no value
+      of it is derived. The reported zone r* in [.55, .65] is therefore fixed by
+      the choice of the representative midpoint and by the asserted upper bound,
+      both selected so that the interval coincides with the SBT range.
     source_observations: [O1]
     generating_method: M3
     value: "r* in [.55, .65] (representative midpoint 1.5 -> r_min ≈ .54)"
@@ -191,8 +194,14 @@ measurements:
     statement: >-
       Boundary distances d_partial(s_hat): Tesla .120 (Temporal), Hermès .127
       (Economic), Erewhon .135 (Temporal), Patagonia .237 (Economic), IKEA .249
-      (Social); ergodicity coefficients epsilon range from Hermès 5.0 (ergodic)
-      to Tesla .4 (non-ergodic).
+      (Social). The tabulated per-brand ergodicity coefficients (Hermès 5.0 down
+      to Tesla .4) are NOT computed from Theorem 3: that expression contains no
+      drift term, so at the paper's own sigma_0 = .1 it returns tau_mix = 4.17 yr
+      and epsilon = .24 for every brand alike. The tabulated values correspond to
+      per-brand effective diffusion sigma_eff = sqrt(2/(48 tau_mix)) of .456,
+      .373, .345, .228 and .129 for Hermès, Patagonia, IKEA, Erewhon and Tesla —
+      back-solved from the tabulated answers, never independently measured, and
+      ordered by the coherence grade.
     source_observations: [O1]
     generating_method: M4
     value: "d_partial: Tesla .120 ... IKEA .249; epsilon: Hermès 5.0 ... Tesla .4"
@@ -261,6 +270,14 @@ propositions:
         anchor: "Spectral-gap control of QSD mixing; degree-8 vs degree-10 odd-in-every-coordinate eigenfunctions."
         citation_keys: [cattiaux-2009-quasistationary-distributions-diffusion]
     falsifier: "If the second odd-parity Dirichlet eigenfunction is not degree 10, the gap (and the faster-mixing claim) changes."
+    quantitative_consequence: >-
+      At the paper's own sigma_0 = .1 the expression evaluates to tau_mix = 4.17
+      years, uniform across brands because no brand-specific quantity enters it.
+      This is the model's actual mixing prediction and it supports no per-brand
+      ordering. It also settles a contradiction inside the paper: mixing on
+      S^7_+ is FASTER than on the full sphere (4.17 yr against 28.6 yr at the
+      same sigma_0), so the ergodicity-coefficient passage's assertion that
+      tau_mix is LARGER on the positive orthant is wrong and is withdrawn.
     body_sections: ["Mixing Time on S^7_+", "Mixing Time and Non-Ergodicity"]
   - id: P4
     statement: >-
@@ -277,9 +294,22 @@ propositions:
         anchor: >-
           Absorption at finite tau freezes the time-integral numerator while the
           1/T factor sends the time average to 0; ensemble mean is nonzero by
-          assumption.
+          assumption. The conclusion uses only boundedness of f and almost-sure
+          finiteness of tau; the octant S^7_+, the value lambda_{D,1} = 112 and
+          the quasi-stationary distribution enter nowhere in it, and the same
+          limit holds for any absorbed process on any domain. What the spectral
+          and QSD apparatus supplies is not the limit but its rate and its
+          conditional branch: lambda_{D,1} fixes the exponential decay of the
+          survival probability and hence the timescale on which the divergence
+          becomes measurable, and pi_QSD supplies the non-zero limit on the
+          surviving branch in P4a.
         citation_keys: [collet-2013-quasistationary-distributions-markov]
-    falsifier: "If absorption were not almost sure (no absorbing boundary), the time and ensemble averages would coincide."
+    falsifier: >-
+      As an analytic statement P4 cannot be falsified while absorption is almost
+      sure; the substantive falsifier is the modelling premise, not the theorem.
+      The premise fails if observer perception in some dimension does not in fact
+      become absorbing at zero — if dimensions recover from zero — in which case
+      tau is not a.s. finite and the divergence does not follow.
     body_sections: ["Non-Ergodicity Theorem", "The Ergodicity Coefficient"]
   - id: P4a
     statement: >-
@@ -310,36 +340,59 @@ propositions:
           One-dimensional diffusion scale-function / speed-measure hitting-time
           analysis with degenerate drift kappa_R(epsilon - y)/y.
         citation_keys: [collet-2013-quasistationary-distributions-markov, casteras-2024-stickyreflecting-diffusion-as]
-      - type: case_evidence
-        anchor: "Tylenol (large delta, high epsilon) recovers fast; BP (small delta, weak reserves) does not — illustrative, not a precise prediction."
+      - type: illustration
+        anchor: >-
+          Tylenol (large delta, high epsilon) recovers fast; BP (small delta,
+          weak reserves) does not. Neither delta nor epsilon is measured: both
+          are assigned narratively from the outcomes already known, so the pair
+          illustrates what the 1/delta^2 scaling would look like and supplies no
+          evidence for it. Measuring delta from pre-crisis dimensional scores
+          would be required to turn it into a test.
         citation_keys: [coombs-2007-protecting-organization-reputations]
     falsifier: "Falsified if documented brand-crisis recovery times do not scale ~1/delta^2 in residual-dimension severity, controlling for response strategy and pre-crisis profile."
-    body_sections: ["Recovery Time Scaling", "Application: Tylenol vs. BP"]
+    body_sections: ["Recovery Time Scaling", "Illustration: Tylenol vs. BP"]
   - id: P6
     statement: >-
       (Proposition 6, D/A Goldilocks zone) The designed/ambient ratio r trades
-      absorption against exploration: too little design (r < .55) risks
-      absorption, too much (r > .65) suppresses the stochastic exploration that
-      crystallizes perception. A sensitivity analysis at the representative
-      drift-strength midpoint recovers r* in [.55, .65], consistent with the
-      empirically observed optimal D/A range — a calibration that is coherent
-      with the observed interval, not a unique first-principles derivation.
+      absorption against exploration: too little design risks absorption, too
+      much suppresses the stochastic exploration that crystallizes perception.
+      The model does not predict where the trade-off sits. The survival lower
+      bound r_min = 1.12/(.56 + alpha lambda_enc d_partial) sweeps the whole of
+      [.31, .72] across the paper's own stated plausible range for the drift
+      parameter, so it constrains r only to that width; the .55 figure is the
+      value at a midpoint chosen after the target interval was known, and the
+      .65 crystallization upper bound is asserted with no expression and no
+      computation behind it. r* in [.55, .65] is therefore a calibration of the
+      model to the SBT range, not a prediction of it, and it supplies no
+      independent corroboration of that range.
     conditions: "C1, C2, C3"
     antecedents: [M3, m_da_zone]
     evidence:
       - type: computed
         anchor: "gamma(r) = 0 survival bound + crystallization upper bound; Table 5 drift-strength sensitivity sweep."
-    falsifier: "Falsified if the empirically optimal D/A ratio across 50+ brands does not concentrate in [.55, .65], or varies with sigma_0 unpredictably."
+    falsifier: >-
+      A test of the interval against brand data is circular, because the
+      interval was calibrated to that same range. What can be falsified is the
+      trade-off structure the model asserts: measure alpha lambda_enc and
+      d_partial independently of the coherence grade, compute r_min from them,
+      and P6 fails if the observed optimal r for those brands falls outside the
+      resulting interval. Absent such measurement, P6 carries no falsifying
+      content beyond internal consistency.
     body_sections: ["The Optimal Range", "Deriving the D/A Goldilocks Zone"]
   - id: P7
     statement: >-
-      (Proposition 7, Absorption ordering) For the five case-study brands the
-      drift-adjusted absorption ordering Tesla > Erewhon > IKEA > Patagonia >
-      Hermès nearly matches the SBT coherence grading (C- > B- > B+ > A- > A+),
-      with one inversion: IKEA (A-) outranks Patagonia (B+) in risk because
-      identity coherence generates stronger directional drift than signal
-      coherence — coherence TYPE, not the letter grade, determines dynamical
-      stability.
+      (Proposition 7, Absorption ordering) For the five case-study brands, the
+      distance-from-boundary ordering computed from the canonical profiles is
+      Tesla > Hermès > Erewhon > Patagonia > IKEA. The drift-adjusted ordering
+      Tesla > Erewhon > IKEA > Patagonia > Hermès is obtained by reordering it
+      with per-brand drift strengths that are read off the SBT coherence grade
+      and type; no drift strength is measured from encounter data. Its
+      near-match to the coherence grading is therefore a relabelling of the
+      input, not a result, and the one departure — IKEA above Patagonia — is
+      the qualitative distinction between identity and signal coherence
+      likewise supplied by hand. The computed content of the proposition is the
+      distance-from-boundary ordering; the drift adjustment is a hypothesis
+      awaiting independent measurement of alpha lambda_enc.
     conditions: "C1, C2"
     antecedents: [M4, m_brand_dpartial, P2]
     evidence:
@@ -381,16 +434,20 @@ findings:
     body_sections: ["Introduction (Table 1 comparison)", "Contributions"]
   - id: F2
     statement: >-
-      Coherence type is the determinant of absorption-risk ordering: the
-      near-match between the dynamical absorption ordering and the SBT coherence
-      grades — with the single IKEA/Patagonia inversion — is, to the author's
-      knowledge, the first formal derivation within SBT connecting coherence type
-      to dynamical stability from first principles.
-    type: "first_formal_derivation"
+      The absorption model supplies a computed, grade-independent risk ordering
+      from the canonical profiles alone: Tesla > Hermès > Erewhon > Patagonia >
+      IKEA by distance from the absorbing boundary. It does NOT independently
+      recover the coherence grading; the drift-adjusted ordering that matches
+      the grades is produced by drift strengths read off those same grades, so
+      the match is definitional. The framework's contribution here is the
+      mechanism — a route by which coherence type could govern dynamical
+      stability, through drift strength opposing boundary approach — and the
+      measurement it makes necessary, not a demonstrated connection.
+    type: "mechanism_proposed"
     source_measurements: [m_brand_dpartial]
     generating_method: M4
     antecedents: [P7]
-    citation_role_in_paper: "primary_evidence_for_P7"
+    citation_role_in_paper: "mechanism_statement_for_P7"
     body_sections: ["Absorption Risk Ordering"]
 
 # ============================================================================
@@ -467,6 +524,19 @@ limitations:
     affects: [P6, P7]
     body_sections: ["Limitations (item 7)", "Empirical Identification Strategy"]
 
+  - id: L5
+    statement: >-
+      The drift parameters that carry the per-brand results — alpha lambda_enc
+      in Proposition 6 and Proposition 7, and the effective diffusion behind the
+      tabulated ergodicity coefficients — are assigned from the SBT coherence
+      grade and type rather than measured. Every per-brand ordering in the paper
+      therefore inherits the grade it is compared against, and none of them
+      constitutes independent evidence for the grade. Only the
+      distance-from-boundary quantities and the closed-form spectral results are
+      computed from data external to the grading.
+    severity: "evidential"
+    affects: [P6, P7, F2]
+    body_sections: ["The Optimal Range", "Absorption Risk Ordering", "Ergodicity Coefficient by Brand"]
 # ============================================================================
 # Cross-paper engagement
 # ============================================================================

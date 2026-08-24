@@ -253,6 +253,34 @@ limitations:
     as a validated social practice, not the mechanism itself.
   severity: moderate
   addressable: true
+- description: 'The AI-contribution-traceability target cannot be evaluated as specified. Its denominator
+    (the set of AI-assisted edits) is observable only through the attribution metadata that constitutes
+    its numerator, so an unattributed AI-assisted edit is absent from the population the protocol can
+    see and the ratio is unity by construction, whatever the true attribution rate. Comparing declared
+    involvement against the commit log inherits the same limit: it detects declaration in excess of the
+    log, never use in excess of both. A measurable version needs a denominator established outside the
+    log — an audit sample under disclosure amnesty, or instrumentation at the editing tool so the record
+    of a model invocation is produced by a party other than the one deciding whether to declare it. Neither
+    is part of the protocol; the target is a design intention, not a metric.'
+  severity: moderate
+  addressable: true
+- description: 'The independence "proof" is not a proof. ingest.jsonl is written by the party whose independence
+    is at issue and records only the additions that party routed through the tooling, so reading a source
+    outside the wiki, or removing an entry before the first push, leaves the log silent in exactly the
+    way genuine independence does. Git hashing makes the log tamper-evident after the fact; it cannot
+    make it complete at the time of writing. The supportable claim is narrower: the asserting party committed
+    to a contemporaneous record before any dispute arose, and the record is consistent with the assertion.
+    The other four intellectual-work proofs (discovery, priority, attestation, derivation) are unaffected
+    — each asserts the PRESENCE of a timestamped entry, whereas independence asserts the ABSENCE of one.'
+  severity: moderate
+  addressable: true
+- description: The Table 2a feature-coverage comparison scores rival systems against this protocol's own
+    six design commitments, each derived from the five gaps this paper identifies. It measures distance
+    from this design rather than merit, and the "This protocol" row is full by construction. Every other
+    system would score differently under criteria derived from its own aims; ratings are the author's
+    reading of public documentation, not the developers' assessment. The table is positioning, not evaluation.
+  severity: moderate
+  addressable: true
 repositories:
 - platform: GitHub
   url: https://github.com/spectralbranding/sbt-papers/tree/main/r14-paper-as-repository

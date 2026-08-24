@@ -96,7 +96,13 @@ observations:
       The present paper is itself authored under the Paper Spec it proposes;
       its companion paper.yaml specifies propositions P1-P4 with dependencies
       and falsification conditions and passes L0 schema validation and L1
-      internal-consistency checks.
+      internal-consistency checks. The manifest excerpt printed in the paper
+      recorded P1 at status `supported`, which contradicts the paper's own
+      report that the four propositions are stated and not tested; the status
+      is `not_tested`. L0-L2 pass either way. L3 -- plausibility, the layer
+      whose stated job is asking whether the evidence justifies a claim's
+      status -- is the layer that would catch it, and it is the one the
+      self-application did not run.
     raw_data_pointer: "paper §6.4 (self-application)"
 
 # ============================================================================
@@ -136,10 +142,15 @@ measurements:
       averaging thirty-six minutes per paper (twenty-twenty-five minutes for
       papers with explicit propositions; forty-five-fifty for discursive ones).
       The most time-consuming step in every case was articulating acceptance
-      (especially falsification) criteria.
+      (especially falsification) criteria. The average OVERRUNS design
+      principle 1's thirty-minute target by six minutes, 20 per cent, and the
+      slowest cases run to fifty minutes. The demonstration therefore did not
+      meet the design principle it was the test of; the thirty-minute figure
+      holds for a paper with explicitly stated propositions, not as a corpus
+      average.
     source_observations: [O1]
     generating_method: M1
-    value: "~12 h / 20 papers; ~36 min/paper average"
+    value: "~12 h / 20 papers; ~36 min/paper average vs a 30 min target (20% over)"
     units: "wall-clock authoring time"
   - id: m_dependency_depth
     statement: >-
@@ -689,6 +700,20 @@ limitations:
     severity: "scope-bounding"
     affects: [P21, P7]
     body_sections: ["§9 Limitations (Selective reporting is out of reach)"]
+  - id: L6
+    statement: >-
+      The five sustained-use items are REPORTS of what changed in one corpus
+      under one author, and as reports they are not falsifiable: they record
+      which design commitments broke and what replaced them, and nothing in
+      the section is offered as a test. What is falsifiable is the
+      generalization each report invites, and each such generalization needs
+      an independent author or an independently maintained corpus to test.
+      All six such conditions -- one per finding, plus the one attached to the
+      generalization drawn across the drift and retention axes -- are stated in
+      the limitations, and none of them has been run.
+    severity: "scope-bounding"
+    affects: [P13, P14, P15, P16, P21, P22]
+    body_sections: ["§9 Limitations (Sustained use is self-observed)"]
 
 # ============================================================================
 # Cross-paper engagement

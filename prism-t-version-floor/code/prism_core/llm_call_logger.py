@@ -5,7 +5,7 @@ Owned by prism_core (the PRISM instrument-family base library) since
 the dependency direction — Brand Spectrometer -> prism_core, never the
 reverse. JSONL log format v1.2 is unchanged: no log migration.
 
-Implements feedback_llm_call_professional_logging.md (HARD RULE 2026-05-27):
+Implements [internal ref removed] (HARD RULE 2026-05-27):
 every LLM/model API call in this paper's research work is JSONL-logged in an
 academically-acceptable schema, published on the public GitHub mirror at
 Zenodo upload, and cited in paper.md by GitHub URL.
@@ -27,7 +27,7 @@ Pattern:
         logger.capture_response(response)
     # On exit: writes JSONL row to logs/3.5b_render_PB_abstract_to_chinese_calls.jsonl
 
-Schema (per feedback_llm_call_professional_logging.md):
+Schema (per [internal ref removed]):
 - log_format_version + phase + operation + operator + operator_role + model_version
 - timestamp_utc + system_prompt + user_prompt + parameters
 

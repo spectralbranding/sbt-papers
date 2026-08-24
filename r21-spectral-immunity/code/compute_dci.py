@@ -239,7 +239,7 @@ def cohens_d(group1: list[float], group2: list[float]) -> float:
 
 
 # ---------------------------------------------------------------------------
-# Canonical brand profiles (from CLAUDE.md project spec)
+# Canonical brand profiles (from [internal ref removed] project spec)
 # Used in stub mode to verify DCI computation
 # ---------------------------------------------------------------------------
 

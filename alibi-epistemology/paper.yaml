@@ -25,8 +25,8 @@ meta:
   - brand perception
   - confirmation bias
   abstract: 'This paper argues that the atom-cloud-fact pipeline constitutes an epistemological architecture
-    demonstrably transferable across at least two structurally distinct domains. The pipeline models knowledge
-    formation through three formally specified stages: atomic observation (typed, source-bound data extraction),
+    transferable across at least two structurally distinct domains. The pipeline models knowledge formation
+    through three formally specified stages: atomic observation (typed, source-bound data extraction),
     probabilistic cloud formation (weighted multi-dimensional clustering), and fact collapse (threshold-based
     crystallization with full re-collapse on new evidence). Four propositions are developed: (P1) the
     pipeline''s external-corroboration requirement structurally reduces confirmation bias relative to
@@ -36,11 +36,12 @@ meta:
     prevents category errors conflating brand signals, perception clouds, and brand convictions; and (P4)
     cross-model disagreement is diagnostic of evidential ambiguity, not model failure. The architecture
     originated in financial document processing; its seven principles transfer with parametric extension
-    to brand perception modeling, producing Spectral Brand Theory (SBT). Existing approaches — Bayesian
-    updating, AGM revision, Dempster-Shafer theory, and symbolic expert systems — each fail structurally
-    for at least one of four requirements: path-independence, observer heterogeneity, epistemic separation,
-    or linguistic implementability. The cross-domain transfer supports the claim that the pipeline captures
-    a general structure of knowledge formation from heterogeneous observation.'
+    to brand perception modeling, producing Spectral Brand Theory (SBT). Against four requirements drawn
+    from the architecture''s own design commitments — path-independence, observer heterogeneity, epistemic
+    separation, linguistic implementability — Bayesian updating, AGM revision, Dempster-Shafer theory,
+    and symbolic expert systems each fall short structurally. Because both domains share one author, the
+    transfer demonstrates domain-generality rather than establishing it; independent replication is the
+    test.'
 claims:
 - id: P_ARCH1
   type: proposition
@@ -175,10 +176,13 @@ claims:
   - P_ARCH2
 - id: P_RIVALS
   type: proposition
-  statement: Four requirements define an adequate multi-domain knowledge-formation framework — path-independence,
-    observer heterogeneity, epistemic separation, linguistic implementability — and Bayesian updating,
-    AGM revision, Dempster-Shafer theory, and symbolic expert systems each fail at least one structurally;
-    the atom-cloud-fact pipeline passes all four.
+  statement: Four requirements — path-independence, observer heterogeneity, epistemic separation, linguistic
+    implementability — are this architecture's own design commitments stated as criteria, so the atom-cloud-fact
+    pipeline satisfies all four by construction. Against that axis, Bayesian updating, AGM revision, Dempster-Shafer
+    theory, and symbolic expert systems each fall short on at least one, and in each case because the
+    requirement is incompatible with a core commitment of the rival rather than through an oversight that
+    refinement could repair. The comparison positions the rivals relative to this architecture's commitments;
+    it does not evaluate them on their own terms.
   testable: false
   tested_in_paper: false
   status: not_tested

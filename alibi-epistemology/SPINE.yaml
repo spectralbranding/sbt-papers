@@ -131,13 +131,15 @@ propositions:
       fact→brand conviction, re-collapse→conviction rebuild — because the
       underlying epistemic structure is identical.
     antecedents: [P_FINIMPL, P_ARCH2]
+    conditions: "Both domains were developed by the same author and the brand-domain constructs were derived from the seven principles, so exhibiting a counterpart for each principle confirms that the mapping was carried out and nothing further. The transfer is a demonstration of vocabulary coherence, not a test; independent replication in a domain not developed by this author is the test."
     evidence:
       - type: self-application
         anchor: >-
-          Table 3 (§4.1) maps every concept across domains; §4.3 validates each
-          of the seven principles operating identically in the brand domain.
+          Table 3 (§4.1) maps every concept across domains; §4.3 sets out each of
+          the seven principles operating in the brand domain. Self-confirming by
+          construction — the mapping is checked against itself.
         citation_keys: [zharnikov-2026a-spectral-brand-theory]
-    body_sections: ["4.1 The Mapping", "4.3 Principle Transfer Validation"]
+    body_sections: ["4.1 The Mapping", "4.3 Principle Transfer Across Domains"]
 
   - id: P_HETOBS
     statement: >-
@@ -283,11 +285,17 @@ propositions:
   # ---- Comparative requirements (Section 8) ----
   - id: P_RIVALS
     statement: >-
-      Four requirements define an adequate multi-domain knowledge-formation
-      framework — path-independence, observer heterogeneity, epistemic
-      separation, linguistic implementability — and Bayesian updating, AGM
-      revision, Dempster-Shafer theory, and symbolic expert systems each fail at
-      least one structurally; the atom-cloud-fact pipeline passes all four.
+      Four requirements — path-independence, observer heterogeneity, epistemic
+      separation, linguistic implementability — are this architecture's own
+      design commitments stated as criteria, so the atom-cloud-fact pipeline
+      satisfies all four by construction. Against that axis, Bayesian updating,
+      AGM revision, Dempster-Shafer theory, and symbolic expert systems each
+      fall short on at least one, and in each case because the requirement is
+      incompatible with a core commitment of the rival rather than through an
+      oversight that refinement could repair. The comparison positions the
+      rivals relative to this architecture's commitments; it does not evaluate
+      them on their own terms.
+    conditions: "The requirement set is not neutral: it was drawn from the architecture it scores highest. The defensible content is the structural nature of each shortfall, not the scoreline."
     antecedents: [P_RECOLLAPSE, P_HETOBS]
     evidence:
       - type: analytic

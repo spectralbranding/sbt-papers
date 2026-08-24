@@ -6,7 +6,7 @@ ORCID: 0009-0000-6893-9231
 
 DOI: [10.5281/zenodo.18945295](https://doi.org/10.5281/zenodo.18945295)
 
-Working Paper v2.2.0 – March 2026 (revised June 2026)
+Working Paper v2.3.0 – March 2026 (revised August 2026)
 
 ## Abstract
 
@@ -289,7 +289,11 @@ For readers approaching from the information-geometry side, Nielsen [-@nielsen-2
 
 The Fisher-Rao metric also satisfies Criterion 1: the metric tensor $g_{ij}(w) = \delta_{ij} / w_i$ assigns large curvature near the simplex boundary (where weights are small), so small absolute changes in near-zero weights produce large distances. This aligns with the psychological observation that introducing a new, previously ignored dimension into an observer's attention structure is a more significant perceptual shift than redistributing attention among already-salient dimensions.
 
-To make Criterion 2 rigorous for the SBT context: dimension-collapsing on observer profiles corresponds to a Markov morphism via the stochastic matrix that maps the 8-category weight distribution to the merged-category distribution. For example, collapsing the semiotic and narrative dimensions into a single "symbolic" dimension corresponds to the stochastic matrix $T$ where $T_{11} = T_{12} = 1$ and $T_{ii} = 1$ for $i = 3, \ldots, 7$ (renumbered). The Cencov theorem guarantees that Fisher-Rao distances are invariant under all such $T$, providing the formal statement that the observer metric is robust to changes in the SBT dimensional taxonomy.
+To make Criterion 2 rigorous for the SBT context: dimension-collapsing on observer profiles corresponds to a Markov morphism via the stochastic matrix that maps the 8-category weight distribution to the merged-category distribution. For example, collapsing the semiotic and narrative dimensions into a single "symbolic" dimension corresponds to the stochastic matrix $T$ where $T_{11} = T_{12} = 1$ and $T_{ii} = 1$ for $i = 3, \ldots, 7$ (renumbered). Cencov's theorem does not guarantee invariance under such a $T$, and an earlier version of this passage claimed that it did. What Cencov establishes is invariance under *congruent embeddings* by Markov morphisms: the refinement direction, in which a category is split by a stochastic kernel applied identically to every distribution. Merging is the opposite operation. Coarse-graining is a data-processing map, and by the monotonicity of Fisher information under such maps it can only contract $d_{FR}$; equality holds only in the special case where the merged categories carry the same likelihood ratio in both profiles, so that the merge is a sufficient statistic.
+
+The contraction is measurable on the paper's own two observer profiles. In the full eight-category space $d_{FR}(w_\alpha, w_\beta) = 1.176$. Merging the semiotic and narrative dimensions into a single symbolic dimension gives 1.171, a contraction of .5%. Across all 28 pairwise merges the contracted distance runs from 1.176 — merging narrative and cultural, where both observers happen to weight the two dimensions equally and the merge is exactly sufficient — down to .729 for merging semiotic and economic, a contraction of 38.0%; the mean contraction is 7.5%, and no merge expands the distance. Applying the same $0.5/0.5$ splitting kernel to both profiles instead, a congruent refinement, returns 1.176 to machine precision, which is Cencov's invariance exhibited on these profiles.
+
+The correct statement is therefore one-sided. Refining the SBT taxonomy leaves observer distances exactly unchanged; coarsening it can only understate them. No change to the dimensional taxonomy can manufacture an observer difference that the finer taxonomy did not already contain, and that — not full taxonomy-invariance — is what the geometry supports.
 
 Criterion 3 is satisfied by the closed-form formula involving only square roots and arc-cosine.
 
@@ -527,9 +531,19 @@ The practical interpretation is as follows. Under the null model (uniformly rand
 
 $$\mathbb{E}_w[d_w^2(s_A, s_B)] > \tau^2$$
 
-*and are* robustly differentiated *if additionally $\text{Var}_w[d_w^2] < \sigma^2$ for a specified tolerance $\sigma$.*
+*and are* robustly differentiated *if the differentiation survives for all but a stated minority of the observer population — operationally, if the 5th percentile of $d_w$ under the null also exceeds $\tau$.*
 
-Meaningful differentiation requires sufficient total brand difference. Robust differentiation additionally requires that the difference be spread across multiple dimensions, so that it is visible to a broad range of observer profiles. A brand differentiation that is concentrated on a single dimension (e.g., price alone) may be meaningful in expectation but will have high variance — robust for price-sensitive observers, invisible to others.
+Meaningful differentiation requires sufficient total brand difference. Robust differentiation additionally requires that the difference be spread across multiple dimensions, so that it is visible to a broad range of observer profiles. A brand differentiation that is concentrated on a single dimension (e.g., price alone) may be meaningful in expectation but will be highly observer-contingent — robust for price-sensitive observers, invisible to others.
+
+**Assigning $\tau$, and what it classifies.** A definition with an unassigned threshold classifies nothing, and earlier versions of this paper left both $\tau$ and a variance tolerance $\sigma$ unassigned, so no pair in Table 6 was ever classified. The Weber-Fechner scaling that justifies the Aitchison metric also fixes $\tau$. Take one just-noticeable difference to be a Weber fraction $k$ on a single dimension. A change of factor $(1+k)$ on dimension $j$ alone shifts the clr vector by $\ln(1+k)$ times a unit-norm direction scaled by $\sqrt{7/8}$, so the observer-averaged squared distance it produces is $\mathbb{E}_w[d_w^2] = \frac{1}{8}\cdot\frac{7}{8}\ln^2(1+k)$, giving
+
+$$\tau(k) = \sqrt{\tfrac{7}{64}}\,\ln(1+k).$$
+
+At $k = .10$, a conservative Weber fraction for a graded perceptual continuum, $\tau = .0315$.
+
+Against that threshold every pair in Table 6 is meaningfully differentiated, and by a wide margin: the observer-averaged distances $\sqrt{\mathbb{E}_w[d_w^2]}$ run from .311 for Hermès-Patagonia to .621 for Hermès-Tesla, ten to twenty times $\tau$. Equivalently, the Weber fraction at which each pair would *cease* to be meaningfully differentiated runs from 156% for Hermès-Patagonia to 554% for Hermès-Tesla — that is, the classification is insensitive to any plausible choice of $k$. Every pair is also robustly differentiated: the 5th percentile of $d_w$ under the uniform-observer null ranges from .216 to .389, still an order of magnitude above $\tau$.
+
+The criterion therefore does not discriminate among these five brands, and saying so is the point of assigning the threshold. Five deliberately contrasting exemplars are all far apart; the definition is built to reject pairs that are not, and a case set containing no such pair cannot exercise it. What does discriminate among them is how observer-contingent each differentiation is, measured by the coefficient of variation of $d_w^2$ across the null observer population: .307 for Patagonia-Tesla, whose difference is spread across dimensions, up to .693 for Hermès-IKEA, whose difference is concentrated in the economic and temporal dimensions. That ordering is the same one the observer-dependent distances of Table 7 make visible, and it is the quantity a practitioner should read.
 
 ## Geometric Properties of the Positive Octant
 
@@ -613,7 +627,7 @@ The strategic implication is direct: **brands perceived primarily through a sing
 
 ### The Spectral Sensitivity Index
 
-We define a curvature-based risk metric that quantifies trajectory vulnerability for a brand at position $s \in S^7_+$ perceived by observer cohort $w \in \Delta^7_\circ$.
+We define a curvature functional for a brand at position $s \in S^7_+$ perceived by observer cohort $w \in \Delta^7_\circ$. It is a boundary and warped-space construct rather than a risk score: on the interior of $S^7_+$ under the round metric it is constant, and all of its content lies in how it diverges as the brand approaches the boundary and in how the observer weighting modulates that divergence.
 
 **Definition 5** (Spectral Sensitivity Index). *For a brand at position $s \in S^7_+$ and observer profile $w \in \Delta^7_\circ$, the spectral sensitivity index is:*
 
@@ -621,7 +635,9 @@ $$\text{SSI}(s, w) = \frac{1}{8} \sum_{k=1}^{8} w_k \cdot \kappa_k(s)$$
 
 *where $\kappa_k(s)$ is the principal curvature of $S^7_+$ in the direction of the $k$-th coordinate at $s$, and $1/8$ normalizes by the number of dimensions. The SSI is the observer-weighted average of directional curvatures, measuring trajectory sensitivity as perceived by a specific observer.*
 
-For the round sphere, the principal curvatures are uniform ($\kappa_k = 1$ for all $k$), so $\text{SSI} = 1/8$ everywhere on the interior of $S^7_+$ under the round metric. The index becomes non-trivial in two cases:
+**The index is constant on the interior, by its own normalization.** For the round sphere the principal curvatures are uniform, $\kappa_k = 1$ for all $k$, and observer weights sum to one, so $\text{SSI}(s, w) = \frac{1}{8}\sum_k w_k \cdot 1 = 1/8$ for every brand and every observer in the interior of $S^7_+$. This is not a small effect to be measured but an identity: the value $1/8$ contains no information about $s$ or $w$, and any two brands compared on it under the round metric are equal by construction. The index must therefore not be reported as a risk score, and no comparative statement about brands may rest on its interior value.
+
+What the construct does is locate where the round-metric picture stops applying. The index becomes non-trivial in exactly two cases, and both are departures from the interior round metric:
 
 1. **Near the boundary of $S^7_+$**: When a brand's profile approaches zero on some dimension (structural absence), the Aitchison metric's log transform amplifies small perturbations in that direction. The effective curvature in the Aitchison-induced Riemannian structure diverges as $s_k \to 0$, creating a *sensitivity singularity* at the boundary.
 
@@ -630,6 +646,8 @@ For the round sphere, the principal curvatures are uniform ($\kappa_k = 1$ for a
 **Corollary 1** (Structural absence amplifies sensitivity). *A brand with structural absence on dimension $k$ (formalized as $s_k \to 0^+$) has $\kappa_k(s) \to \infty$ in the Aitchison geometry on $(\mathcal{B}, d_{\mathcal{B}}) = (\mathbb{R}^8_+, d_A)$, where the Aitchison log-transform diverges as $s_k \to 0^+$, implying unbounded trajectory sensitivity in that direction. The observer-weighted sensitivity index $\text{SSI}(s, w)$ diverges whenever $w_k > 0$ for a dimension with structural absence. Note that $S^7_+$ with its inherited round metric has constant sectional curvature 1 and no curvature divergence; the divergence arises in the Aitchison-induced Riemannian structure on $\mathbb{R}^8_+$.*
 
 This formalizes an insight from SBT's qualitative framework: structural absence is strategically powerful (dark signals create distinctive brand signatures) but geometrically fragile (small perturbations to a near-zero dimension have outsized effects on the brand's trajectory). The tension between signal power and geometric vulnerability is the fundamental trade-off of dark-signal strategy.
+
+Stated precisely, then, the spectral sensitivity index is a diagnostic of proximity to the structural-absence boundary and of concentration in the observer's weight profile, not a graded measure of trajectory risk across brands. Two brands both interior to $S^7_+$ cannot be ranked by it. Turning it into a comparative instrument would require a curvature that varies on the interior — the Aitchison-induced structure on $\mathbb{R}^8_+$ supplies one, and computing $\kappa_k$ in that structure for brands at measurable distances from the boundary is the work that would make the index a metric rather than an indicator. That computation is not attempted here.
 
 ### Connection to Non-Ergodic Dynamics
 
@@ -736,6 +754,34 @@ $$d_{w_\beta}(\text{Hermès}, \text{Patagonia}) \approx 0.40$$
 
 Here the distance spread is much narrower ($0.28$ vs. $0.40$, compared to the $0.32$ vs. $0.74$ spread for Hermès-IKEA), because Hermès and Patagonia differ on dimensions that both observers attend to (semiotic design vs. purposeful utility is visible to the aesthete; both have moderate economic positioning visible to the pragmatist).
 
+**A genuine ordering reversal.** Neither pair above reverses. Both observers rank Hermès-Patagonia below Hermès-IKEA; only the magnitudes differ, and a difference in magnitude is a difference in scale, not a reversal. A reversal requires two brand pairs whose *order* changes with the observer, and the case set contains several. Table 7 gives all ten pairwise distances under both observer profiles.
+
+**Table 7.** Observer-Dependent Distances $d_w$ for All Ten Case-Study Brand Pairs Under Two Observer Profiles.
+
+| Brand pair | $d_{w_\alpha}$ (aesthete) | $d_{w_\beta}$ (pragmatist) | Ratio $\beta / \alpha$ |
+|---|:---:|:---:|:---:|
+| Hermès-IKEA | .323 | .738 | 2.29 |
+| Hermès-Patagonia | .276 | .402 | 1.46 |
+| Hermès-Erewhon | .303 | .552 | 1.82 |
+| Hermès-Tesla | .439 | .855 | 1.95 |
+| IKEA-Patagonia | .281 | .415 | 1.48 |
+| IKEA-Erewhon | .385 | .593 | 1.54 |
+| IKEA-Tesla | .384 | .425 | 1.11 |
+| Patagonia-Erewhon | .359 | .413 | 1.15 |
+| Patagonia-Tesla | .440 | .573 | 1.30 |
+| Erewhon-Tesla | .341 | .457 | 1.34 |
+
+*Notes*: $d_w(s_A, s_B) = \sqrt{\sum_k w_k (\text{clr}_k(s_A) - \text{clr}_k(s_B))^2}$, computed by the companion implementation from the clr profiles of Appendix A.4. Values to three decimal places because two of them differ in the third. The five brand profiles are held fixed throughout; only $w$ changes.
+
+Thirteen of the 45 pair-of-pairs comparisons — 28.9% — invert between the two observers. The sharpest is Hermès-IKEA set against IKEA-Tesla. The aesthete places Hermès nearer to IKEA than IKEA is to Tesla ($.323 < .384$); the pragmatist places them further apart, and by a wide margin ($.738 > .425$). The ratio $d_w(\text{Hermès}, \text{IKEA}) / d_w(\text{IKEA}, \text{Tesla})$ moves from .84 to 1.74, a factor of 2.1.
+
+The same reversal reads more directly as a change in one brand's neighbourhood. Ranking the other four brands by their distance from IKEA:
+
+- Aesthete $w_\alpha$: Patagonia (.281), **Hermès (.323)**, Tesla (.384), Erewhon (.385).
+- Pragmatist $w_\beta$: Patagonia (.415), Tesla (.425), Erewhon (.593), **Hermès (.738)**.
+
+Hermès is IKEA's second-nearest neighbour for the aesthete and its most distant for the pragmatist: rank 2 of 4 becomes rank 4 of 4, with the brand profiles unchanged. This is what an observer-dependent distance reversal is. It is not that one observer perceives larger distances than another, which any global rescaling would produce, but that the two orderings disagree — which no single observer-independent distance function on brand space can reproduce, whatever its scale.
+
 These results demonstrate the central claim of the metric framework: brand distance is not an objective quantity but a function of the observer's attentional structure. The metric formalizes what SBT describes qualitatively — that different observer cohorts inhabit genuinely different brand landscapes.
 
 ## Discussion
@@ -798,7 +844,7 @@ All three metrics admit closed-form expressions and are efficient to compute for
 
 **Numerical stability.** Near-zero brand profile components ($s_k \to 0^+$) cause the clr transform to diverge; zero-replacement at $\varepsilon$ is required before applying the Aitchison metric. The ilr basis construction follows Egozcue et al. [-@egozcue-2003-isometric-logratio-transformations] using Gram-Schmidt orthonormalization on the clr hyperplane; any orthonormal basis is equivalent for distance computation, so numerical stability of the basis choice does not affect distances. The broader toolkit of Riemannian geometric statistics — intrinsic mean estimation, principal geodesic analysis, parallel transport, and tangent-plane PCA — is developed comprehensively in Pennec, Sommer, and Fletcher [-@pennec-2020-riemannian-geometric-statistics] and applies directly when brand profiles or observer weights are pooled, averaged, or compared in the warped product space.
 
-**Reference implementation.** A Python reference implementation of all metrics defined in this paper is openly available in the public repository at https://github.com/spectralbranding/sbt-papers/tree/main/r1-formal-metric/code/ (`metrics.py`, with a README and run command `uv run python metrics.py`). The implementation uses NumPy for vectorized computation; pairwise distance matrices for a portfolio of 100 brands compute in under one millisecond on standard hardware. A fixed-seed smoke test reproduces the paper's reported quantities — the $\sqrt{7/36} \approx .44$ null baseline (Theorem 4), the $1/256$ positive-octant volume fraction (Proposition 4), the Theorem 5(i) closed form for the expected observer-dependent distance, and the case-study Aitchison distances of Table 6.
+**Reference implementation.** A Python reference implementation of all metrics defined in this paper is openly available in the public repository at https://github.com/spectralbranding/sbt-papers/tree/main/r1-formal-metric/code/ (`metrics.py`, with a README and run command `uv run python metrics.py`). The implementation uses NumPy for vectorized computation; pairwise distance matrices for a portfolio of 100 brands compute in under one millisecond on standard hardware. A fixed-seed smoke test reproduces the paper's reported quantities — the $\sqrt{7/36} \approx .44$ null baseline (Theorem 4), the $1/256$ positive-octant volume fraction (Proposition 4), the Theorem 5(i) closed form for the expected observer-dependent distance, the case-study Aitchison distances of Table 6, the observer-dependent distances and thirteen ordering reversals of Table 7, the Fisher-Rao contraction under dimension merging, and the $\tau$-classification of the case-study pairs. The test's assertions compare the paper's printed values against the values the implementation computes: they catch transcription drift between paper and script, and they are not an independent verification that the computations are correct.
 
 ## Conclusion
 

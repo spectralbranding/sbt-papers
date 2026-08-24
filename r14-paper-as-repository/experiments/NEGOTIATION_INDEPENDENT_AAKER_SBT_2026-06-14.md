@@ -95,7 +95,7 @@ this experiment: SBT introduces brand-domain terms under **deliberately-qualifie
 `perception-cloud`, `brand-conviction`, `positioning-capacity`, `spectral-dimensions`,
 `coherence-type`, `signal-coherence`, `spectral-identity` — never the bare incumbent forms
 ("brand image", "brand attitude", "positioning", "brand personality"). This qualification is the
-documented rename boundary in `CLAUDE.md` ("cohort" not "segment"; "perception cloud" not "brand
+documented rename boundary in `[internal ref removed]` ("cohort" not "segment"; "perception cloud" not "brand
 image"; "brand conviction" not "brand attitude"; "re-collapse" not "rebranding").
 
 ### 2.2 Author B — Aaker incumbent module (new; faithfully transcribed, attributed per term)
@@ -395,7 +395,7 @@ not derived. No seed, dataset download, network call, or API key is required.
 The committed citation substrate (`[internal path removed]`) and the live ontology modules
 (`[internal path removed]*.yaml`) were not modified.
 
-**Publication plan (per user direction).** *All experiment data above is to be published in the
+**Publication plan (by author decision).** *All experiment data above is to be published in the
 public SSOT when/if a paper carrying this evidence is published.* The carrying paper is **R14 /
 2026u** ("negotiate a paper before you read it"). At that paper's publication these artifacts move to
 the public mirror `sbt-papers/r14-paper-as-repository/` under an

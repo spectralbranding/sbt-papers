@@ -6,7 +6,7 @@ ORCID: 0009-0000-6893-9231
 
 DOI: [10.5281/zenodo.18945522](https://doi.org/10.5281/zenodo.18945522)
 
-Working Paper v1.2.0 – March 2026 (revised June 2026)
+Working Paper v1.3.0 – March 2026 (revised August 2026)
 
 ## Abstract
 
@@ -217,7 +217,9 @@ where $R$ is the radius of the region of interest. For the unit ball at $\vareps
 
 $$N_{E_8} \approx .2537 \times \frac{V_8(1)}{V_8(.05)} \approx 6.49 \times 10^{9}$$
 
-This estimate treats the unit ball as if it were a large region of an infinite lattice; boundary effects may shift the estimate by $\sim\varepsilon$ relative to the exact finite-volume result (a 6–8% correction at $\varepsilon = .10$). This $E_8$-based estimate falls between the simple lower and upper bounds, as expected. It represents the capacity achievable by the optimal packing, which is tighter than the volume ratio upper bound but higher than the simple lower bound because the latter does not account for efficient packing arrangements.
+This estimate treats the unit ball as if it were a large region of an infinite lattice; boundary effects may shift the estimate by $\sim\varepsilon$ relative to the exact finite-volume result (a 6–8% correction at $\varepsilon = .10$).
+
+That the $E_8$ estimate falls between the two bounds of Proposition 1 is a derivation rather than a check, and it is worth stating as one. Since $N_{E_8} = \Delta_8 (2/\varepsilon)^8$ and the lower bound is $(1/\varepsilon)^8$, their ratio is $\Delta_8 \cdot 2^8 = 64.94$ for every $\varepsilon$; and the upper bound divided by $N_{E_8}$ is $(1 + \varepsilon/2)^8 / \Delta_8$, which is at least $1/\Delta_8 = 3.94$ for every $\varepsilon \geq 0$. Both ratios are constants of the packing density, free of any input from the brand space, so the ordering could not have come out otherwise and nothing is confirmed by observing it. What the estimate does carry is a magnitude: at $\varepsilon = .10$ the optimal packing sits a factor of 64.9 above the naive volume bound and a factor of 5.8 below the covering bound, which locates how much of the gap between the two bounds is packing inefficiency rather than the slack in the covering argument.
 
 ### The Kissing Number: Specialist vs. Generalist Decomposition
 
@@ -306,7 +308,9 @@ $$f_{\text{white}} \approx 1 - n_b \cdot \varepsilon^8$$
 
 **Plain-English interpretation.** The 8-dimensional positioning space is almost entirely empty. Even with 10,000 brands — far more than any single product category contains — 99.99% of the space is unoccupied. This is a direct consequence of the curse of dimensionality: volumes in high dimensions are much larger than low-dimensional intuition suggests.
 
-*Falsification*: Proposition 3 is falsified if the actual covered fraction of the 8-dimensional brand space, measured via volume integration over observed brand positions, exceeds $n_b \cdot \varepsilon^8$ by a margin inconsistent with the non-overlap assumption — i.e., if brands cluster so densely that the approximation $f_\text{white} \approx 1 - n_b \cdot \varepsilon^8$ systematically overestimates white space.
+*Falsification*: Proposition 3 is falsified if the actual covered fraction of the 8-dimensional brand space, measured via volume integration over observed brand positions, falls **short** of $n_b \cdot \varepsilon^8$ by a margin inconsistent with the non-overlap assumption — that is, if brands cluster densely enough that $f_\text{white} \approx 1 - n_b \cdot \varepsilon^8$ systematically **under**estimates white space.
+
+The direction is the whole content of the test, and it runs opposite to the intuition that clustering hurts the approximation from above. Covered volume is subadditive: the union of $n_b$ balls has volume at most $n_b \cdot \varepsilon^8$, with equality only when no two neighborhoods overlap. Clustering can therefore only reduce the covered fraction below $n_b \cdot \varepsilon^8$, so no arrangement of brands can make the approximation overestimate coverage, and the failure mode as originally stated is unreachable. What a real brand distribution can do is cluster severely enough that the true white-space fraction materially exceeds $1 - n_b \cdot \varepsilon^8$, and that is what the test looks for.
 
 ### Why White Space Identification Is Harder Than It Seems
 
@@ -341,7 +345,7 @@ $$n_b \approx \left(\frac{1}{\varepsilon}\right)^{d_{\text{eff}}}$$
 
 **Plain-English interpretation.** Saturation depends on effective dimensionality, not raw brand count. A commodity market ($d_{\text{eff}} \approx 2$) saturates at approximately 100 brands. A luxury market ($d_{\text{eff}} \approx 8$) can accommodate 100 million distinguishable positions. The strategic implication is that brands should seek to activate independent dimensions, not merely more dimensions.
 
-*Falsification*: Proposition 4 is falsified if a product category's observed brand count consistently and substantially exceeds $(1/\varepsilon)^{d_\text{eff}}$ (estimated via PCA on observer-perceived brand profiles) without measurable perceptual overlap — indicating that the effective dimensionality estimate was too low, not that capacity is unbounded.
+*Falsification*: Proposition 4 is falsified if a product category's observed brand count consistently and substantially exceeds $(1/\varepsilon)^{d_\text{eff}}$ without measurable perceptual overlap, where $d_{\text{eff}}$ and $\varepsilon$ are estimated for that category — by PCA on observer-perceived brand profiles and by a just-noticeable-difference study respectively — and **fixed before the brand count is taken**. The pre-registration is what makes this a test. If $d_{\text{eff}}$ may be re-estimated after the count is in, any excess count is absorbed by raising it, and no observation can refute the proposition; the test discriminates only against a value fixed in advance.
 
 The category examples in the table above are illustrative, not empirical. Determining the effective dimensionality of a specific product category requires empirical measurement — for example, via PCA on observer-perceived brand profiles or analysis of which SBT dimensions drive differentiation in that category. This is a direction for future empirical work.
 
@@ -495,7 +499,7 @@ The positioning capacity analysis provides quantitative context for Zharnikov [-
 
 ### Connection to R3: Concentration Near Boundaries
 
-Zharnikov [-@zharnikov-2026-cohort-boundaries-high-dimensional-perception] showed that 57% of $\Delta^7$ lies within relative distance .10 of a cohort boundary. The positioning capacity analysis reveals the complement: even with $10^8$ positions available, concentration pushes actual brand profiles toward thin shells. Both "who is observing" and "where brands are" concentrate in geometrically constrained regions, despite the theoretical abundance of the full space.
+Zharnikov [-@zharnikov-2026-cohort-boundaries-high-dimensional-perception] showed that at least 52.2% of $\Delta^7$ lies within a tenth of a cell's volume radius of the boundary of its own cohort region, and that roughly two-thirds of observers sit within one component standard deviation of an inter-cohort frontier. The two figures are not interchangeable: the first is a geometric lower bound holding for any convex partition, most of whose counted volume abuts a face of the simplex rather than a neighbouring cohort, while the second is the measured quantity that carries reassignment risk, established empirically under a uniform null rather than derived. The positioning capacity analysis reveals the complement: even with $10^8$ positions available, concentration pushes actual brand profiles toward thin shells. Both "who is observing" and "where brands are" concentrate in geometrically constrained regions, despite the theoretical abundance of the full space.
 
 ### Tension with Empirical Brand Growth Research
 
@@ -585,7 +589,7 @@ Run command:
 
 `uv run --with numpy --with scipy python r4_capacity_bounds.py`
 
-The script fixes `SEED = 42` at file top, exposes the volume function $V_n(r)$, the effective-dimensionality function $d_{\text{eff}}(n, \rho) = n/(1 + (n-1)\rho)$, the simple volume bound $(1/\varepsilon)^n$, the covering upper bound $((2 + \varepsilon)/\varepsilon)^n$, the $E_8$ packing-density estimate, and a deterministic enumeration of the 112 + 128 = 240 minimal vectors of $E_8$ at squared norm 2. All values reported in this appendix and in the body tables match the script's stdout to the displayed precision; the kissing-shell counts are exact.
+The script fixes `SEED = 42` at file top, exposes the volume function $V_n(r)$, the effective-dimensionality function $d_{\text{eff}}(n, \rho) = n/(1 + (n-1)\rho)$, the simple volume bound $(1/\varepsilon)^n$, the covering upper bound $((2 + \varepsilon)/\varepsilon)^n$, the $E_8$ packing-density estimate, and a deterministic enumeration of the 112 + 128 = 240 minimal vectors of $E_8$ at squared norm 2. All values reported in this appendix and in the body tables match the script's stdout to the displayed precision; the kissing-shell counts are exact. That agreement should be read for what it is. The script evaluates the same closed forms the paper states and the paper reports the script's output, so the assertions catch transcription drift between the two — a mistyped exponent, a stale table cell — and nothing else. They are not an independent verification of the mathematics, which rests on the proofs given above and on the cited results for $\Delta_8$ and $\tau(8)$.
 
 ## Appendix B: Dimensional Capacity Comparison
 

@@ -25,8 +25,8 @@ meta:
   abstract: 'This paper surveys geometric and topological methods applied to brand perception across ten
     intellectual traditions: multidimensional scaling, characteristics-space economics, conceptual spaces,
     non-Euclidean perceptual geometry, information geometry, individual-differences modeling, topological
-    data analysis, quantum cognition, opinion dynamics, and non-ergodicity research. The central finding
-    is that a significant compound gap persists: no existing framework combines high-dimensional geometric
+    data analysis, quantum cognition, opinion dynamics, and non-ergodicity research. Against five criteria
+    stipulated here, a compound gap persists: no surveyed framework combines high-dimensional geometric
     structure, a generative signal mechanism, observer heterogeneity, and non-ergodic temporal dynamics
     into an integrated theory of brand perception. Multidimensional scaling operates in two to three dimensions
     and offers no generative mechanism. Conceptual spaces provide geometric foundations for cognition
@@ -51,10 +51,13 @@ claims:
   status: not_tested
 - id: P2
   type: proposition
-  statement: A comprehensive geometric theory of brand perception should satisfy six criteria — high dimensionality
-    (>3 with examined geometric consequences), a formal metric with proved properties, observer heterogeneity
-    beyond preference parameters, temporal dynamics (decay, compounding, path dependence), a generative
-    signal mechanism, and empirical validation. These criteria define the evaluative axes of the survey.
+  statement: 'A comprehensive geometric theory of brand perception should satisfy six criteria — high
+    dimensionality (>3 with examined geometric consequences), a formal metric with proved properties,
+    observer heterogeneity beyond preference parameters, temporal dynamics (decay, compounding, path dependence),
+    a generative signal mechanism, and empirical validation. These criteria are the survey''s own: they
+    were derived from the structural absences identified in P1 and they match the design commitments of
+    the candidate framework the survey positions, so they form a positioning axis rather than a neutral
+    scoring frame.'
   testable: false
   tested_in_paper: false
   status: not_tested
@@ -163,11 +166,14 @@ claims:
   - P2
 - id: P12
   type: proposition
-  statement: 'The compound gap is the central finding: no surveyed tradition satisfies all five core criteria
-    (high-D geometry, formal metric, observer heterogeneity, non-ergodic dynamics, generative mechanism)
-    simultaneously. Each tradition excels on one or two while leaving the rest unaddressed; the gap is
-    the absence of the combination, not of any single ingredient. The classification matrix shows the
-    five-way intersection is unoccupied.'
+  statement: 'No surveyed tradition satisfies all five core criteria (high-D geometry, formal metric,
+    observer heterogeneity, non-ergodic dynamics, generative mechanism) simultaneously. Each tradition
+    excels on one or two while leaving the rest unaddressed; the shortfall is in the combination, not
+    in any single ingredient. That the five-way intersection is unoccupied follows from the construction
+    of the criterion set (P2) rather than from an independent measurement: the five criteria were stipulated
+    as the properties a candidate framework is being built to supply, so no prior tradition was positioned
+    to satisfy them jointly. The matrix''s contribution is to state the criterion set explicitly and place
+    each tradition against it, not to discover a vacancy.'
   testable: false
   tested_in_paper: false
   status: not_tested

@@ -27,19 +27,19 @@ meta:
   - PRISM-B
   abstract: 'Large language models (LLMs) increasingly mediate consumer brand evaluation in search and
     agentic commerce. This study demonstrates that LLMs systematically collapse brand perception to Experiential
-    and Economic dimensions, rendering brands differentiated on narrative, ideological, cultural, or temporal
-    dimensions metameric --- structurally different but functionally equivalent in AI recommendations.
-    Using PRISM-B across 21,350 API calls to 24 models spanning seven training traditions and 15 languages,
-    a Dimensional Collapse Index (DCI; uniform baseline = .250) is computed. Mean DCI equals .294 for
-    global brands ($p < .001$) and .356 cross-culturally ($d = 3.373$). Cross-model convergence is near-perfect
-    (cosine = .977). Local brands collapse 20% more severely than global brands ($d = .92$, in five FMCG
-    pairs tested). Native-language prompting is null in home markets ($p = .716$) but reduces collapse
-    up to .095 in foreign-market frames ($p = .002$). Geopolitical context independently modulates weights
-    ($p < .001$). Structured Brand Function specifications recover approximately 20% of lost dimensionality.
+    and Economic dimensions, leaving brands differentiated on narrative, ideological, cultural, or temporal
+    dimensions metameric by inference, not by measured inter-brand distance. Using PRISM-B across 21,350
+    API calls to 24 models spanning seven training traditions and 15 languages, a Dimensional Collapse
+    Index (DCI; uniform baseline = .250) is computed. Mean DCI equals .294 for global brands ($p < .001$)
+    and .356 cross-culturally ($d = 3.373$). Cross-model convergence is near-perfect (cosine = .977).
+    Local brands collapse 20% more severely than global brands ($d = .92$, in five FMCG pairs tested).
+    Native-language prompting is null in home markets ($p = .716$) but reduces collapse up to .095 in
+    foreign-market frames ($p = .002$). Geopolitical context independently modulates weights ($p < .001$).
+    Structured Brand Function specifications remove two-thirds of above-baseline excess (.103 to .034).
     Collapse is stable across model versions. For search advertising, these findings reframe strategy
     from platform selection to dimensional defensibility: advertisers must encode soft brand dimensions
-    in verifiable, machine-readable form or risk effective erasure by LLM intermediaries. Patterns reflect
-    the text-conditioned LLM observers tested here.'
+    in verifiable, machine-readable form or risk erasure by LLM intermediaries. Patterns reflect the text-conditioned
+    LLM observers tested here.'
 claims:
 - id: P1
   type: proposition

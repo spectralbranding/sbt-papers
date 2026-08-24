@@ -52,10 +52,12 @@ claims:
 - id: P1
   type: proposition
   statement: '(Proposition 1 — Interference conditionality) Spectral interference between brands B_i and
-    B_j within a portfolio operates iff three conditions hold simultaneously: (a) the brands share at
-    least one observer cohort, (b) the awareness gate exceeds a minimum threshold, and (c) the brands''
-    emission profiles differ on at least one dimension weighted above a salience threshold by the shared
-    cohort. Absence of any one condition suppresses interference entirely.'
+    B_j within a portfolio REQUIRES three conditions, each NECESSARY: (a) the brands share at least one
+    observer cohort, (b) the awareness gate exceeds a minimum threshold, and (c) the brands'' emission
+    profiles differ on at least one dimension weighted above a salience threshold by the shared cohort.
+    Absence of any one condition suppresses interference entirely. The three are NOT claimed jointly sufficient:
+    P1 is silent on whether interference occurs when all three hold. Necessity-only is stated in the Theory
+    section, ahead of the data.'
   testable: true
   tested_in_paper: true
   status: not_tested
@@ -128,12 +130,15 @@ methodology:
 acceptance:
 - claim_id: P1
   criterion: 'Holds if (Proposition 1 — Interference conditionality) Spectral interference between brands
-    B_i and B_j within a portfolio operates iff three conditions hold simultaneously: (a) the brands share
-    at least one observer cohort, (b) the awareness gate exceeds a minimum threshold, and (c) the brands''
+    B_i and B_j within a portfolio REQUIRES three conditions, each NECESSARY: (a) the brands share at
+    least one observer cohort, (b) the awareness gate exceeds a minimum threshold, and (c) the brands''
     emission profiles differ on at least one dimension weighted above a salience threshold by the shared
     cohort.'
-  falsification: P1 falsified if, with (a) and (c) holding and alpha = 0, cohort overlap + spectral divergence
-    alone produce non-zero perception cloud shifts.
+  falsification: 'Each of the three necessity claims is separately falsifiable by removing that condition
+    and observing interference anyway. The condition with an experimental handle: with (a) and (c) holding
+    and alpha = 0, cohort overlap + spectral divergence alone producing non-zero perception cloud shifts.
+    This study CANNOT fire it — alpha ~ 1 throughout and there is no alpha = 0 arm — so its results bear
+    on P1 neither way.'
 - claim_id: P2
   criterion: Holds if (Proposition 2 — Awareness-gate sufficiency inversion) The awareness gate is necessary
     but not sufficient for spectral interference.

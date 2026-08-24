@@ -228,9 +228,16 @@ methods:
 measurements:
   - id: m_speed
     statement: >-
-      Dove brand speed ||v|| follows an inverted-U across the three periods:
-      2.10 units/yr (Ignition, 7 computable dims), 0.31 (Expansion), 0.36
-      (Normative Absorption). All values illustrative of the method.
+      Dove brand speed ||v|| is non-monotone across the three periods: 2.10
+      units/yr (Ignition, 7 computable dims), 0.31 (Expansion), 0.36 (Normative
+      Absorption). The inverted-U shape is PARTLY AN ESTIMATOR ARTIFACT: speed is
+      ||dx||/dt and the three periods use dt = 3, 7 and 10 years, so one and the
+      same displacement scores 3.3x faster over the ignition interval than over
+      the absorption interval. On per-period displacement instead, ignition is
+      2.8x expansion (not ~6.8x) and absorption is 1.6x expansion (not ~1.2x): the
+      shape survives, the magnitudes do not. As reported, the inverted-U cannot be
+      distinguished from the interval schedule. All values illustrative of the
+      method, computed from four author-assigned columns.
     source_observations: [O1]
     generating_method: M1
     value: "||v|| = 2.10 / 0.31 / 0.36 units per year"
@@ -239,8 +246,11 @@ measurements:
   - id: m_cultural
     statement: >-
       Cultural-dimension velocity turns negative first (Period 2: v_C = -0.07)
-      with strongly negative acceleration in Period 1 (a_C = -0.314), years
-      before Cultural position visibly falls (8.5 -> 5.5). Illustrative.
+      with strongly negative acceleration in Period 1 (a_C = -0.314), before
+      Cultural position visibly falls (8.5 -> 5.5). The lead time is a property of
+      an assignment made in one pass with the trajectory already known, not an
+      observed lead; whether it appears in measured data is Prediction 1.
+      Illustrative, from four author-assigned columns.
     source_observations: [O1]
     generating_method: M1
     value: "v_C = -0.07 (Period 2); a_C = -0.314 (Period 1 -> 2)"
@@ -261,14 +271,19 @@ measurements:
 findings:
   - id: F1
     statement: >-
-      In the Dove illustration the velocity/acceleration layer surfaces dynamics
-      that static position cannot: Cultural is a leading indicator that
-      decelerates years before its position falls; Narrative and Social follow
-      with a lag; brand speed traces an inverted-U; and the Experiential
-      dimension stays near-zero velocity throughout, consistent with an
-      unchanged product while brand meaning transforms — demonstrating that the
-      kinematic decomposition isolates experience-level from meaning-level
-      dynamics.
+      In the Dove illustration the velocity/acceleration layer extracts structure
+      that static position does not show: Cultural decelerates before its position
+      falls; Narrative and Social turn negative one period after they decelerate;
+      brand speed is non-monotone; and the Experiential dimension stays near-zero
+      velocity throughout, consistent with an unchanged product while brand
+      meaning transforms. Every one of these is a difference of the SAME four
+      author-assigned columns of Table 1, assigned in one pass with the whole
+      2003-2023 trajectory already known, so the readings demonstrate what the
+      calculus extracts from a profile series and are not findings about Dove. In
+      particular, the Period 1 acceleration is NOT a prediction of the Period 3
+      reversal: the 2013 column enters both sides, and both are readings of one act
+      of assignment. Testing anticipation requires acceleration estimated on
+      measured data ending before the reversal interval begins.
     type: "illustrative_demonstration"
     source_measurements: [m_speed, m_cultural, m_dc]
     generating_method: M1
@@ -337,7 +352,9 @@ limitations:
       velocity, acceleration, and DC values are illustrative of the method and
       are NOT validated empirical measurements; validation requires real
       brand-tracking data with known measurement properties and external
-      criteria.
+      criteria. The four columns were assigned in a single pass with the full
+      trajectory already known, so no reading derived from them can be treated as
+      anticipating a later part of the same series.
     severity: "scope-bounding"
     affects: [F1, m_speed, m_cultural, m_dc]
     body_sections: ["§6.1 Notes", "§8.1 Author-assigned profiles, Data frequency"]
@@ -351,6 +368,17 @@ limitations:
     severity: "methodological"
     affects: [M1, P2]
     body_sections: ["§3.3", "§8.1 Noise amplification"]
+  - id: L5
+    statement: >-
+      The Dove periods are unequally spaced (dt = 3, 7, 10 years), so the speed
+      estimator ||dx||/dt confounds trajectory speed with interval length and
+      cross-period speed comparisons are not like-for-like. A constant-interval
+      design (the monthly sampling the operational implementation specifies) is
+      what separates the two; until then the inverted-U in speed cannot be
+      distinguished from the interval schedule.
+    severity: "methodological"
+    affects: [m_speed, F1]
+    body_sections: ["§6.2 Velocity Vectors (Table 2 Notes)", "§6.4 Dynamic Interpretation"]
   - id: L3
     statement: >-
       Dimensional-creation events (null-to-positive transition, e.g. Dove's

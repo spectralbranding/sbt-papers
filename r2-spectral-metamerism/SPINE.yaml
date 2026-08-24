@@ -153,13 +153,47 @@ measurements:
     statement: >-
       A 5-level grade captures 2.32 bits (log_2 5) of a ~20-bit profile (8 x 2.5
       bits), retaining 11.6%; the 7D null-space variance loss is 87.5% (1 - 1/8);
-      finer output scales (e.g. [0,100]) raise retention to ~33.2% but the 7D
-      null space persists.
+      retention is rho(L) = log_2 L / 20, so finer output scales raise it (33.2% at
+      L = 100, unity only at L = 2^20) while the 7D null space persists at every L.
     source_observations: []
     generating_method: M3
     value: "11.6% information retention; 87.5% variance lost; null-space dim 7"
     units: "bits / fraction / dimension count"
     body_sections: ["Information-Theoretic Bounds — Grade Information Capacity; Variance Retention"]
+  - id: m_pca_rank_limited_null
+    statement: >-
+      PCA on the five canonical profiles gives PC1 = 54.9% and PC1+PC2+PC3 = 92.3%,
+      of a spectrum with at most four nonzero eigenvalues. Against a parametric
+      rank-limited null (Sigma = sigma^2 I_8, five draws) the medians are 50.9% and
+      94.8% (p = .314, p = .768); against a per-dimension permutation null they are
+      52.2% and 95.0% (p = .363, p = .815). Neither null is rejected.
+    source_observations: []
+    generating_method: M1
+    value: "PC1 54.9% (p = .314); cum3 92.3% (p = .768); permutation p = .363 / .815"
+    units: "share of total variance; one-sided tail probability"
+    body_sections: ["Information-Theoretic Bounds — Variance Retention"]
+  - id: m_threshold_grid
+    statement: >-
+      Mean metameric fraction over a +/-20% grid on both thresholds: 23.8% to 38.5%,
+      centre cell 31.6%; swing 3.0 percentage points with the 8D threshold and 12.0
+      with the 1D threshold.
+    source_observations: [O1]
+    generating_method: M1
+    value: "23.8--38.5% (centre 31.6%)"
+    units: "fraction of pairwise comparisons"
+    body_sections: ["Monte Carlo Verification — Threshold Sensitivity (Table 9)"]
+  - id: m_brand_space_audit_null
+    statement: >-
+      Resampling each dimension independently from its observed marginal across the
+      five canonical profiles gives a null Aitchison distance with median 1.15, 5th
+      to 95th percentile .54 to 1.77, sd .38. The observer-space moment
+      sqrt(7/36) = .441 sits at the 2nd percentile of that null and therefore
+      classifies every case-set distance (.88 to 1.76, median 1.23) as misaligned.
+    source_observations: []
+    generating_method: M1
+    value: "null median 1.15 (.54--1.77); .441 at the 2nd percentile"
+    units: "Aitchison distance"
+    body_sections: ["From Rasterized to Vectorized Brand Management — The Vectorized Alternative"]
 
 # ============================================================================
 # Propositions — the formal theoretical claims
@@ -238,19 +272,31 @@ propositions:
     evidence:
       - type: proposition
         anchor: "Generic hyperplane intersection in R^8 (7+7-8=6); simplex normalization forces non-proportional weights."
-    falsifier: >-
-      Proposition 1 is falsified if two observers with Fisher-Rao distance > delta
-      produce identical metameric-pair classifications across >= 20 brand profiles.
+    applicability_condition: >-
+      Proposition 1 is an algebraic fact about hyperplanes in R^8 and no
+      observation can contradict it; the earlier falsification clause (two
+      Fisher-Rao-separated observers producing identical metameric-pair
+      classifications) is withdrawn. What is testable is applicability: that an
+      observer's evaluation is a linear functional <w, clr(s)> with a stable w in
+      Delta^7. It fails if elicited evaluations from one observer across >= 20
+      brand profiles admit no fixed w within measurement error — structured
+      residuals by brand category, or a fitted w that shifts with the comparison
+      set. That would leave the geometry intact and its use here unsupported.
     body_sections: ["Null Space Analysis — Observer-Dependent Null Spaces"]
   - id: P6
     statement: >-
       (Theorem 4) For n independent equal-variance dimensions projected to k, the
       maximum retained variance is k/n; for n=8, k=1 the optimal 1D projection
       captures at most 12.5%, leaving 87.5% in the 7 null-space dimensions.
-      Correlated real profiles can exceed this worst-case (empirically PC1 = 54.9%
-      on the five canonical brands), but PCA maximizes variance, not
-      interpretability, and metameric collapse persists at the finer structure PC1
-      ignores.
+      Correlated real profiles can exceed this worst-case in principle, but the
+      five canonical brands cannot show it: five points in R^8 span at most four
+      dimensions, so the sample covariance has at most four nonzero eigenvalues and
+      PC1 >= 25% before any correlation exists. Against rank-limited nulls the
+      observed PC1 = 54.9% and three-component 92.3% are not distinguishable from
+      independence (parametric p = .314 / .768; permutation p = .363 / .815), so
+      the case set supplies no evidence of inter-dimensional correlation either way.
+      PCA in any case maximizes variance, not interpretability, and metameric
+      collapse persists at the finer structure the leading component ignores.
     conditions: "C1"
     antecedents: []
     evidence:
@@ -263,7 +309,12 @@ propositions:
       (Theorem 5) A discrete L-level grade has channel capacity log_2 L bits; the
       8-dimensional profile carries n*B bits; the retention ratio is
       log_2 L/(n*B). For L=5, B=2.5 this is 2.32/20 = 11.6%, so ~88.4% of the
-      brand's identity is invisible to the grade. The bound is independent of
+      brand's identity is invisible to that grade. 11.6% is the retention of the
+      five-point scale, NOT a ceiling on scalar grades: rho(L) grows without bound
+      in L and reaches unity at L = 2^(nB) ~ 10^6, where the output enumerates the
+      profile rather than summarizing it. What is scale-free is the kernel — a
+      linear R^8 -> R^1 map has a 7-dimensional null space at every L. The bound is
+      independent of
       linearity (nonlinear phi cannot exceed log_2 L) and, under sequential
       (non-memoryless) evaluation, log_2 L is an upper bound — strengthening, not
       weakening, the deficit conclusion.
@@ -303,7 +354,7 @@ propositions:
     antecedents: [P2, P4, P7, m_metameric_fraction]
     evidence:
       - type: synthesis
-        anchor: "Practical consequence of the JL, null-space, and information bounds; vectorized audits as Aitchison-distance comparisons against a 7/36 null-model baseline."
+        anchor: "Practical consequence of the JL, null-space, and information bounds; vectorized audits as Aitchison-distance comparisons against a null resampled in brand space from the observed per-dimension marginals (median 1.15, 5th-95th .54-1.77)."
     body_sections: ["From Rasterized to Vectorized Brand Management", "Connection to MDS and Survey Design"]
 
 # ============================================================================
@@ -363,14 +414,19 @@ findings:
 robustness_checks:
   - id: RC1
     statement: >-
-      The metameric fraction is robust to +/-20% variation in the d_8D > 1.0 /
-      d_1D < 0.3 thresholds, and the qualitative "substantial fraction is
-      metameric" conclusion holds for any generating distribution that spreads
-      profiles over the ambient space (log-normal used; uniform and empirically
-      calibrated are future-work alternatives).
+      Over a +/-20% grid on both classification thresholds the mean metameric
+      fraction ranges 23.8%-38.5% (centre cell 31.6%). The two thresholds are not
+      alike: the 8D separation threshold moves the fraction by 3.0 percentage
+      points across the grid, the 1D collapse threshold by 12.0 points and close to
+      proportionally. The earlier blanket "robust to +/-20% threshold variation"
+      claim is withdrawn and replaced by the grid; what survives threshold-free is
+      the weaker statement that between roughly a quarter and two fifths of pairs
+      collapse under a single random projection. The qualitative conclusion holds
+      for any generating distribution that spreads profiles over the ambient space
+      (log-normal used; uniform and empirically calibrated remain untested).
     type: "sensitivity_analysis"
     sensitivity_of: [F1]
-    body_sections: ["Monte Carlo Verification — Simulation Design, Results (Table 7 notes)", "Appendix A.3"]
+    body_sections: ["Monte Carlo Verification — Simulation Design, Threshold Sensitivity (Table 9)", "Appendix A.3"]
 
 # ============================================================================
 # Alternative explanations — rivals the paper rules out

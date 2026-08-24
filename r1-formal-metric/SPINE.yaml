@@ -135,11 +135,22 @@ propositions:
   - id: P4
     statement: >-
       (Theorem, Cencov) The Fisher-Rao metric is the UNIQUE Riemannian metric on
-      the probability simplex (up to constant scaling) invariant under Markov
-      morphisms / sufficient-statistic embeddings; for the observer simplex this
-      is the decisive selection criterion (Criterion 2, invariance under
-      dimension-collapsing), which no Euclidean, Hellinger, Jensen-Shannon, or
-      Aitchison alternative possesses.
+      the probability simplex (up to constant scaling) invariant under CONGRUENT
+      EMBEDDINGS by Markov morphisms — the refinement direction, in which a
+      category is split by a stochastic kernel applied identically to every
+      distribution. It is NOT invariant under general stochastic maps: merging
+      categories is a coarse-graining and, by monotonicity of Fisher information,
+      can only CONTRACT d_FR, with equality only when the merge is a sufficient
+      statistic. On the paper's own observer profiles d_FR(w_alpha, w_beta) = 1.176
+      contracts to 1.171 under a semiotic+narrative merge (.5%), across all 28
+      pairwise merges to between 1.176 (0.0%, narrative+cultural, equal weights in
+      both profiles) and .729 (38.0%, semiotic+economic), mean 7.5%, and never
+      expands; the congruent .5/.5 refinement returns 1.176 exactly. The
+      selection criterion for the observer simplex is therefore the one-sided
+      statement — refinement preserves observer distance, coarsening can only
+      understate it, so no taxonomy change manufactures an observer difference the
+      finer taxonomy did not contain — which no Euclidean, Hellinger,
+      Jensen-Shannon, or Aitchison alternative possesses either.
     conditions: "C2"
     antecedents: []
     evidence:
@@ -236,14 +247,18 @@ propositions:
   - id: P11
     statement: >-
       (Definition 5 + Corollary 1, spectral sensitivity index) Jacobi-field
-      analysis on the perception manifold yields the spectral sensitivity index
-      SSI(s,w) = (1/8) sum_k w_k kappa_k(s), an observer-weighted curvature
-      measure of trajectory vulnerability. On S^7_+ (constant curvature 1)
-      nearby geodesics OSCILLATE rather than diverge; but in the Aitchison
-      geometry the curvature DIVERGES as a dimension approaches structural
-      absence (s_k -> 0+), so structural absence is strategically powerful yet
-      geometrically fragile — small perturbations to a near-zero dimension have
-      outsized trajectory effects.
+      analysis on the perception manifold yields SSI(s,w) = (1/8) sum_k w_k
+      kappa_k(s). It is a BOUNDARY AND WARPED-SPACE CONSTRUCT, not a risk metric
+      with a comparative value: on the interior of S^7_+ under the round metric
+      kappa_k = 1 for all k and sum_k w_k = 1, so SSI = 1/8 identically for every
+      brand and every observer, and two interior brands cannot be ranked by it.
+      Its content is where the round-metric picture stops applying. On S^7_+
+      (constant curvature 1) nearby geodesics OSCILLATE rather than diverge; in
+      the Aitchison geometry the curvature DIVERGES as a dimension approaches
+      structural absence (s_k -> 0+), so structural absence is strategically
+      powerful yet geometrically fragile. Making the index comparative on the
+      interior would require kappa_k in the Aitchison-induced structure at
+      measurable distance from the boundary; that computation is not attempted.
     conditions: "C1, C2"
     antecedents: [P2, P7]
     evidence:
@@ -263,7 +278,7 @@ observations:
       qualitative SBT coherence assessments of 2026a (Table 5). These are
       ILLUSTRATIVE inputs chosen to reflect the case-study descriptions, NOT
       empirical measurements.
-    raw_data_pointer: "paper §9.1 Table 5; CLAUDE.md canonical brand profiles"
+    raw_data_pointer: "paper §9.1 Table 5; [internal ref removed] canonical brand profiles"
     instrument: "qualitative SBT coherence assessment (2026a), transcribed to numeric profiles"
     timestamp: "2026-03"
     body_sections: ["§9.1"]
@@ -335,15 +350,51 @@ measurements:
     body_sections: ["§9.2"]
   - id: m_observer_reversal
     statement: >-
-      Observer-dependent distances: the pragmatist perceives Hermes-IKEA as
-      ~2.3x farther apart than the aesthete (.74 vs .32), while for
-      Hermes-Patagonia the spread is narrow (.40 vs .28) — a demonstrated
-      observer-dependent distance contrast invisible to observer-blind methods.
+      Observer-dependent distances for all ten case pairs under the aesthete and
+      pragmatist profiles (Table 7). MAGNITUDE contrast: the pragmatist perceives
+      Hermes-IKEA as ~2.3x farther apart than the aesthete (.738 vs .323) while
+      the Hermes-Patagonia spread is narrow (.402 vs .276). ORDERING REVERSAL,
+      which the magnitude contrast alone does NOT establish: 13 of the 45
+      pair-of-pairs comparisons (28.9%) invert between the two observers. The
+      sharpest is Hermes-IKEA against IKEA-Tesla — the aesthete ranks .323 < .384,
+      the pragmatist .738 > .425, the ratio moving from .84 to 1.74. Read as a
+      neighbourhood, Hermes is IKEA's second-nearest brand for the aesthete and
+      its most distant for the pragmatist (rank 2 of 4 to rank 4 of 4) with the
+      brand profiles held fixed.
     source_observations: [O1, O2]
     generating_method: M2
-    value: "Hermes-IKEA: d_beta=.74, d_alpha=.32 (ratio ~2.3); Hermes-Patagonia: d_beta=.40, d_alpha=.28"
-    units: "observer-dependent (weighted clr) distance"
-    body_sections: ["§9.3"]
+    value: "13/45 (28.9%) pair-of-pairs orderings invert; Hermes-IKEA .323/.738 vs IKEA-Tesla .384/.425; Hermes moves rank 2 -> 4 in IKEA's neighbourhood"
+    units: "observer-dependent (weighted clr) distance; count of ordering inversions"
+    body_sections: ["§9.3 (Table 7)"]
+  - id: m_cencov_contraction
+    statement: >-
+      Fisher-Rao distance between the two canonical observer profiles is 1.176 on
+      eight categories. All 28 pairwise category merges contract it: to 1.171 for
+      semiotic+narrative (.5%), 1.176 for narrative+cultural (0.0%, a sufficient
+      statistic here because both observers weight the two equally), .729 for
+      semiotic+economic (38.0%); mean contraction 7.5%, no merge expands. A
+      congruent .5/.5 refinement returns 1.176 to machine precision.
+    source_observations: [O2]
+    generating_method: M2
+    value: "d_FR = 1.176; merge contractions 0.0%-38.0%, mean 7.5%; refinement exact"
+    units: "Fisher-Rao distance; percentage contraction"
+    body_sections: ["§4.3"]
+  - id: m_jnd_classification
+    statement: >-
+      With tau(k) = sqrt(7/64) ln(1+k) and a Weber fraction k = .10, tau = .0315.
+      All ten case pairs are meaningfully differentiated (observer-averaged
+      distance .311 to .621, ten to twenty times tau) and robustly differentiated
+      (5th percentile of d_w under the uniform-observer null .216 to .389). The
+      critical Weber fraction at which a pair would cease to qualify runs 156% to
+      554%, so the classification is insensitive to any plausible k and does not
+      discriminate among these five brands. What does discriminate is the
+      coefficient of variation of d_w^2 across the null observer population: .307
+      for Patagonia-Tesla to .693 for Hermes-IKEA.
+    source_observations: [O1, O2]
+    generating_method: M2
+    value: "tau = .0315 at k = .10; all ten pairs meaningful and robust; CV .307-.693; k* 156%-554%"
+    units: "observer-dependent distance; coefficient of variation; Weber fraction"
+    body_sections: ["§6.3 (Definition 4)"]
   - id: m_concentration_baseline
     statement: >-
       Expected squared Euclidean distance between two uniform observer profiles
@@ -373,15 +424,18 @@ findings:
     statement: >-
       Brand distance is NOT an objective property of brands but a function of
       the observer's attentional structure: the same brand pair can be perceived
-      as close by one cohort and far by another (the Hermes-IKEA reversal). This
-      is the paper's central result — different observer cohorts inhabit
+      as close by one cohort and far by another. The claim is carried by an
+      exhibited ORDERING reversal, not by a magnitude contrast: 13 of the 45
+      pair-of-pairs comparisons invert between the aesthete and pragmatist
+      profiles, and Hermes moves from IKEA's second-nearest brand to its most
+      distant. This is the paper's central result — different observer cohorts inhabit
       metrically distinct brand landscapes — turning SBT's qualitative claim into
       a theorem.
     type: "demonstration"
     source_measurements: [m_observer_reversal]
     generating_method: M2
     antecedents: [P7, P9]
-    falsifier: "If every observer cohort assigned the same rank-order of brand distances, observer-dependence would be vacuous."
+    falsifier: "If every observer cohort assigned the same rank-order of brand distances, observer-dependence would be vacuous. The case set exhibits the reversal: 13 of 45 pair-of-pairs orderings invert between the two canonical observers, so the condition does not obtain here."
     citation_role_in_paper: "headline_result"
     body_sections: ["§9.3", "§11"]
   - id: F2

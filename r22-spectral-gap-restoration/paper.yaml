@@ -14,7 +14,7 @@ meta:
     affiliation: Independent Researcher
   doi: 10.5281/zenodo.19778549
   date: '2026-06-26'
-  venue: MKSC (Marketing Science)
+  venue: Preprint
   license: CC-BY-4.0
   keywords:
   - spectral gap
@@ -31,14 +31,14 @@ meta:
     perception space: the corrective coherence emission rate $\mu$ must exceed the spectral leakage rate
     $\lambda$ at the observer cohort''s detection scale ($\mu > \lambda$ at scale $\delta$). Cohort perception
     clouds are modeled as almost-invariant sets in a stochastic flow on an eight-dimensional SBT perception
-    manifold, with separability governed by the spectral gap of the perception operator. The threshold
-    follows from Kato–Rellich perturbation theory and Diaconis–Stroock spectral-gap bounds for reversible
-    Markov chains. Author-proposed Dove-calibrated parameters — $\lambda \approx .10$/year and $\mu \approx
-    4.50$/year — motivate a Monte Carlo demonstration of the threshold''s predictive properties. The $\mu/\lambda$
-    ratio of 45 satisfies the inequality for the Purpose-Aligned cohort but is sign-inverted for the Skeptic-Critic
-    cohort, correctly predicting the documented conviction divergence. Spectral-gap collapse precedes
-    conviction reorientation by 6–18 months, offering a leading indicator unavailable from perceptual
-    maps or aggregate VECMs. Implications extend to AI-mediated perception where scale-dependent leakage
+    manifold, separability governed by the perception operator''s spectral gap. The threshold follows
+    from Kato–Rellich perturbation theory and Diaconis–Stroock spectral-gap bounds for reversible Markov
+    chains. Author-proposed Dove-calibrated parameters ($\lambda \approx .10$/year, $\mu \approx 4.50$/year)
+    seed a Monte Carlo demonstration whose regime contrasts are closed forms of those parameters, not
+    independent evidence. The $\mu/\lambda$ ratio of 45 satisfies the inequality for the Purpose-Aligned
+    cohort but is sign-inverted for the Skeptic-Critic cohort, matching the documented conviction divergence.
+    A 6–18 month lead of gap collapse over conviction reorientation is predicted from advertising-duration
+    ranges, untested here. Implications extend to AI-mediated perception where scale-dependent leakage
     accelerates fine-grained separability loss.'
 claims:
 - id: P1
@@ -112,10 +112,15 @@ claims:
   - P5
 - id: P7
   type: proposition
-  statement: (Corollary 3 — Spectral Lead Time) Spectral-gap collapse under μ < λ precedes conviction
+  statement: '(Corollary 3 — Spectral Lead Time) Spectral-gap collapse under μ < λ precedes conviction
     reorientation by the interval in which gap magnitude falls below the detection threshold while centroid
     positions remain visually separated; under the Dove-calibrated parameters this lead time is bounded
-    by [0, 24] months. This early-warning window is the framework's practical contribution.
+    by [0, 24] months. Two bands appear in the paper with different standing: [0, 24] months follows from
+    the calibration, while the narrower 6–18 month band used in the Discussion and Managerial Implications
+    is taken from published advertising-duration ranges for established FMCG brands and is not derived
+    from this corollary. Neither band is tested against data here, and the Monte Carlo demonstration yields
+    a value inside the first but outside the second. This early-warning window is the framework''s practical
+    contribution, contingent on that confirmation.'
   testable: true
   tested_in_paper: true
   status: not_tested
@@ -202,9 +207,11 @@ acceptance:
     operator P with baseline gap Δ(P) > 0 perturbed by a coherence shock to P̃ = P + εQ, cohort separability
     survives (Δ(P̃) > 0) if the corrective coherence emission rate μ exceeds the spectral leakage rate
     λ at the dominant observer cohort''s detection scale δ: μ > λ at scale δ.'
-  falsification: Falsified if (a) a brand maintains cohort separability over an extended post-shock window
-    with μ < λ by independent measurement, or (b) a brand with μ ≫ λ loses separability following a coherence
-    shock.
+  falsification: 'P1 states a sufficient condition, so exactly one class of observation falsifies it:
+    a brand with independently measured μ ≫ λ that loses cohort separability following a coherence shock.
+    A brand maintaining separability under μ < λ does NOT falsify P1 — that case falls outside the antecedent,
+    and a sufficient condition asserts nothing about instances in which its condition fails. The μ < λ
+    direction is carried by P5 (Corollary 1), whose falsifier fires on it.'
 - claim_id: P5
   criterion: Holds if (Corollary 1 — Absorbing Collapse) If μ < λ for an interval exceeding the mixing
     time τ_mix ≤ C/λ, cohort distinctions almost surely collapse to the stationary distribution (the absorbing-state
@@ -340,24 +347,34 @@ contradictions: []
 results:
 - claim_id: P1
   status: supported
-  notes: 'The threshold correctly predicts regime divergence at the Dove-calibrated parameters: 32/32
-    high-regime cells preserve their spectral gaps (terminal mean 1.10) while all 32 sign-inverted low-regime
-    cells collapse (terminal mean .02) — a 52-fold difference — and the IRF half-life contrast (1.4 vs
-    13.1 months) confirms the threshold separates recoverable from absorbing dynamics.'
+  notes: 'The simulated dynamics implement the analytic threshold: 32/32 high-regime cells preserve their
+    spectral gaps (terminal mean 1.10) while all 32 sign-inverted low-regime cells collapse (terminal
+    mean .02) — a 52-fold difference — with an IRF half-life contrast of 1.4 vs 13.1 months. Both contrasts
+    are closed forms of the hard-coded regime parameters (see m_terminal_gap, m_irf_halflife), so the
+    finding is a transcription check between the derivation and its simulation, NOT evidence that the
+    threshold separates regimes in observed brand data.'
 - claim_id: P7
   status: supported
-  notes: 'The regime difference is invisible to centroid-level diagnostics: ADF classes all 64 cells stationary
-    and cosine drift is near-identical (.023 vs .027), so MDS-visible centroid positions do not distinguish
-    the regimes — spectral gap dynamics, not centroid positions, are the diagnostic.'
+  notes: 'Within the simulation the regime difference does not appear in centroid-level diagnostics: ADF
+    classes all 64 cells stationary and cosine drift is near-identical (.023 vs .027). This is guaranteed
+    by the design (both regimes converge to a multiple of the all-ones vector; see m_adf_cosine) and therefore
+    does not test the substantive claim. The claim that spectral gap dynamics rather than centroid positions
+    are the diagnostic rests on the analytic argument that a gap can close while centroids remain separated
+    (P1, P7), and awaits a measured test.'
 - claim_id: P8
   status: supported
-  notes: 'The μ = λ threshold is a genuine bifurcation rather than a smooth gradient: the parameter sweep
-    shows mean terminal gap collapsing to zero below ratio 1.0 and rising monotonically above it, consistent
-    with the Lyapunov sign-flip condition (P8).'
+  notes: 'The parameter sweep shows mean terminal gap collapsing to zero below ratio 1.0 and rising monotonically
+    above it. The LOCATION of the crossing is an identity of the recursion, not a result: the sweep iterates
+    g ← g(1 + (μ − λ)) at unit step, and the multiplicative base 1 + λ(r − 1) equals 1 exactly at r =
+    1 for every λ > 0 and every horizon. The sweep varies only the apparent steepness of the transition
+    at the chosen λ and horizon. Empirical content would require locating the crossing from measured separability
+    series against independently measured μ and λ.'
 limitations:
 - description: The Monte Carlo demonstration is an exploratory illustration under author-proposed Dove-calibrated
     parameters, NOT a confirmatory test against observed data; no Dove tracking-panel data were used to
-    fit the model and no confidence intervals on λ and μ are available. Confirmatory estimation from real
+    fit the model and no confidence intervals on λ and μ are available. Every contrast in Table 1 is a
+    closed form of a generator parameter, so no quantity reported there could have come out otherwise
+    under this design and none carries independent evidential weight. Confirmatory estimation from real
     Dove longitudinal data is deferred to a companion paper using R10 source data (2026p).
   severity: moderate
   addressable: true

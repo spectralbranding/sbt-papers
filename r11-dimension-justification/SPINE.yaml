@@ -148,12 +148,33 @@ measurements:
     units: "DCI ratio (Economic+Semiotic share of total weight)"
     body_sections: ["§8A Data"]
   - id: m_droponce_floor
-    statement: "All eight drop-one DCI cosines exceed .994 (min .994 = Economic); all Spearman rhos significant at p < .001."
+    statement: >-
+      All eight drop-one DCI cosines exceed .994 (min .994 = Economic); all Spearman
+      rhos significant at p < .001. The cosine is not a discriminating statistic on
+      this quantity and is reported descriptively only: two INDEPENDENT positive
+      22-vectors with DCI's own first two moments (mean .356, SD .029) already have
+      expected cosine m^2/(m^2+s^2) = .993, and exceed .994 about 45% of the time,
+      so a cosine above .994 is what unrelated vectors give. The statistic that does
+      discriminate is mean absolute rank displacement, whose reference value under a
+      uniformly random re-ranking of 22 models is (n^2-1)/(3n) = 7.32.
     source_observations: [O1]
     generating_method: M1
-    value: "min drop-one cosine .994; all rho p < .001"
-    units: "cosine similarity / rank-correlation p-value"
+    value: "min drop-one cosine .994 (reference cosine for independent vectors .993); disp .91-3.55 vs random-reranking reference 7.32"
+    units: "cosine similarity / mean absolute rank displacement"
     body_sections: ["§8A Table 1"]
+  - id: m_rank_null
+    statement: >-
+      Under a uniformly random re-ranking of the 22 models, mean absolute rank
+      displacement has expectation (n^2-1)/(3n) = 7.32 with a 95% interval of
+      [5.27, 9.27] (100,000 draws, seed 42). Every observed drop-one displacement
+      (.91 to 3.55) falls below that interval, p < .001 even for the most disruptive
+      single drop; the most disruptive computable pair, at 5.00, gives p = .014.
+      The reference is data-free: it depends only on the number of models.
+    source_observations: [O1]
+    generating_method: M1
+    value: "random-reranking reference 7.32, 95% CI [5.27, 9.27]; observed drop-one .91-3.55"
+    units: "mean absolute rank positions"
+    body_sections: ["§8A Table 1", "§8A Table 2"]
   - id: m_droppair_floor
     statement: "Across 27 computable pair removals, Spearman rho range [.513, .960] (mean .819), cosine range [.993, .9998] (mean .998); lowest rho = Ideological+Economic (.513)."
     source_observations: [O1]
@@ -162,10 +183,19 @@ measurements:
     units: "rank-correlation / cosine"
     body_sections: ["§8A Table 2"]
   - id: m_expansion_null
-    statement: "10D expansion: Spearman rho = .9997 (p < .001), cosine = 1.000, mean rank displacement = 0.09 — subdivision adds no discriminative power."
+    statement: >-
+      10D expansion: Spearman rho = .9997 (p < .001), cosine = 1.000, mean rank
+      displacement = 0.09. This is an algebraic identity, not a measurement. The
+      split preserves each dimension's total weight and both Economic halves
+      re-enter the DCI numerator, so numerator and denominator are both unchanged
+      and every model's DCI is identical before and after — verified to machine
+      precision. The residual departure of rho from 1.000 is a tie-handling
+      artifact in the rank transform, not a change in any DCI value. The result is
+      therefore a check that the augmentation code preserves weight, and carries no
+      evidence about whether ten dimensions would out-resolve eight.
     source_observations: [O1]
     generating_method: M3
-    value: "rho .9997 / cosine 1.000 / disp 0.09"
+    value: "DCI invariant under the split (max |delta| < 1e-16); rho .9997 / cosine 1.000 / disp 0.09"
     units: "rank-correlation / cosine / rank positions"
     body_sections: ["§8A Experiment 3"]
   - id: m_variance_share
@@ -173,9 +203,18 @@ measurements:
       Every dimension carries 5.4–18.7% of total cross-model variance (Economic 18.7%,
       Cultural 17.3%, Ideological 16.7%, Semiotic 15.4%, Experiential 11.4%, Narrative 9.2%,
       Social 5.9%, Temporal 5.4%); six non-DCI dimensions = 49.2% of total variance.
+      The shares are shares of their own sum, so they average 12.5% by construction
+      and a range covering 12.5% is not by itself evidence that every dimension
+      carries information. Calibrated against an exchangeable reference null (22
+      models, eight dimensions of equal true variance, 100,000 draws, seed 42), the
+      median max/min share ratio is 2.40 with a 95% interval of [1.55, 4.39]; the
+      observed ratio of 3.46 sits inside it (p = .105), and the observed spread of
+      13.3 percentage points is likewise unremarkable (p = .209). The share
+      dispersion therefore neither supports nor refutes the claim that all eight
+      dimensions carry distinct information.
     source_observations: [O1]
     generating_method: M4
-    value: "per-dim variance share 5.4%–18.7%"
+    value: "per-dim variance share 5.4%–18.7%; max/min ratio 3.46 vs exchangeable-null median 2.40, 95% CI [1.55, 4.39]"
     units: "% of total cross-model variance"
     body_sections: ["§8A Table 3"]
 
@@ -374,22 +413,31 @@ findings:
   - id: F1
     statement: >-
       (RQ1) The DCI cross-model ranking is ROBUST to dimension reduction but every removal
-      sacrifices information: all drop-one cosines exceed .994 and all drop-pair cosines exceed
-      .993, with the DCI-component dimensions (Economic, Semiotic) most disruptive. No single
-      dimension is indispensable, yet the ranking is overdetermined rather than reducible.
+      sacrifices information. The evidence is the rank displacement, not the cosine: every
+      drop-one displacement (.91 to 3.55) and the most disruptive computable pair (5.00) fall
+      below the random-re-ranking reference of 7.32, while the cosine floor of .994 is at the
+      level two unrelated positive vectors with DCI's moments already reach and is reported
+      descriptively only. The DCI-component dimensions (Economic, Semiotic) are the most
+      disruptive, which is partly structural: six of the eight dimensions enter DCI only
+      through its denominator, so their removal can move the index only by renormalization.
+      No single dimension is indispensable, yet the ranking is overdetermined rather than
+      reducible.
     type: "empirical_confirmation"
-    source_measurements: [m_droponce_floor, m_droppair_floor]
+    source_measurements: [m_droponce_floor, m_droppair_floor, m_rank_null]
     generating_method: M1
     antecedents: [O1]
     citation_role_in_paper: "empirical_support_for_P7"
     body_sections: ["§8A Experiments 1–2", "§8A Summary"]
   - id: F2
     statement: >-
-      (RQ2) Expanding to ten dimensions by subdividing existing channels adds NO discriminative
-      power to the cross-model ranking (rho = .9997, cosine = 1.000, displacement 0.09),
-      confirming that subdivision yields granularity without new information — beyond eight is
-      redundant for the collapse phenomenon. (Whether a genuinely new orthogonal dimension would
-      add power is not tested.)
+      (RQ2) Expanding to ten dimensions by subdividing existing channels leaves the cross-model
+      DCI ranking unchanged (rho = .9997, cosine = 1.000, displacement 0.09), but this is a
+      derivation rather than a finding: the split preserves total weight and returns both
+      Economic halves to the DCI numerator, so every model's DCI is unchanged as a matter of
+      arithmetic and no other outcome was reachable. What the experiment establishes is that
+      the augmentation preserves weight, which is worth having as a code check. RQ2 as posed —
+      whether a richer taxonomy resolves more — is not answered by it, and would need a
+      genuinely new dimension carrying information absent from the eight.
     type: "empirical_confirmation"
     source_measurements: [m_expansion_null]
     generating_method: M3
@@ -398,13 +446,20 @@ findings:
     body_sections: ["§8A Experiment 3", "§8A Summary"]
   - id: F3
     statement: >-
-      (RQ3) All eight dimensions carry non-trivial cross-model variance (5.4–18.7%), none below
-      5.4%; the dimensions least disruptive to DCI ranking (Cultural 17.3%, Ideological 16.7%)
+      (RQ3) The eight variance shares span 5.4–18.7%, but that span is not itself evidence:
+      the shares sum to one by construction and average 12.5%, and an exchangeable reference
+      null with eight equally varying dimensions at 22 models reproduces the observed max/min
+      ratio (3.46 observed against a null median of 2.40, 95% interval [1.55, 4.39], p = .105).
+      RQ3 is therefore recorded as not answered by this decomposition. What does survive is the
+      pattern of agreement and disagreement, which does not depend on the share dispersion: the
+      dimensions least disruptive to DCI ranking (Cultural 17.3%, Ideological 16.7%)
       carry the highest variance after Economic and are the primary sources of inter-model
       DISAGREEMENT (removing them raises mean pairwise profile cosine .976→.980), while Economic
-      and Experiential are the primary sources of inter-model AGREEMENT. Eight sits at the
-      resolution limit: every dimension contributes measurable variation; below eight sacrifices
-      variance, beyond eight introduces redundancy.
+      and Experiential are the primary sources of inter-model AGREEMENT. That contrast is
+      directional and does not rest on the share magnitudes. The stronger reading — that eight
+      sits at a resolution limit, with fewer sacrificing variance and more introducing
+      redundancy — is not carried by these three experiments and is stated in the paper as a
+      conjecture awaiting the human-subject factor study.
     type: "empirical_confirmation"
     source_measurements: [m_variance_share, m_dci_baseline]
     generating_method: M4
@@ -561,7 +616,7 @@ external_anchors:
   - {citation_key: aaker-1997-dimensions-brand-personality, role: rival_framework, spine_nodes: [P1, P11], note: "Brand personality 5 factors — the empirical-discovery exemplar SBT contrasts with"}
   - {citation_key: kapferer-2008-new-strategic-brand, role: rival_framework, spine_nodes: [P1, P11], note: "Brand identity prism 6 facets — missing economic + temporal"}
   - {citation_key: keller-1993-conceptualizing-measuring-managing, role: rival_framework, spine_nodes: [P11], note: "CBBE — hierarchical, not flat dimensional"}
-  - {citation_key: holbrook-1999-consumer-value-framework, role: convergent_count, spine_nodes: [P11], note: "Eight value types — independently derived count converging on eight"}
+  - {citation_key: holbrook-1999-consumer-value-framework, role: taxonomy_comparison, spine_nodes: [P11], note: "Eight consumer-value types, mapping many-to-one onto SBT channels; the shared count carries no evidential weight and is not used as support"}
   - {citation_key: sheth-1991-why-we-buy, role: rival_framework, spine_nodes: [P11], note: "Five consumption values — theory-derived, maps into SBT channels"}
   - {citation_key: rossiter-2002-coarse-procedure-scale, role: methodological_warrant, spine_nodes: [P2], note: "C-OAR-SE — conceptual analysis can precede/supersede factor analysis; SBT adds the completeness test"}
   - {citation_key: borsboom-2003-theoretical-status-latent, role: methodological_warrant, spine_nodes: [P2], note: "Factor analysis cannot identify construct domains from within"}

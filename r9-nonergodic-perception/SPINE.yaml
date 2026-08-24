@@ -166,6 +166,27 @@ propositions:
         anchor: "Peters (2019) ergodicity problem; Peters & Gell-Mann (2016); Doctor et al. (2020) boundary conditions."
         citation_keys: [peters-2019-ergodicity-problem-economics, peters-2016-evaluating-gambles-using, doctor-2020-economists-views-ergodicity]
     body_sections: ["§3.1 Formal Definition", "§7.2 Relationship to Classical Brand Theory"]
+  - id: P_basisinvariance
+    statement: >-
+      The non-ergodicity result is invariant under change of dimensional basis.
+      Order dependence and time asymmetry are properties of a trajectory through
+      perception space, not of the coordinate system used to describe it, so
+      rotating or redecomposing the eight dimensions relabels where a trajectory
+      goes without rendering it reversible and without converting an absorbing
+      region into a passable one. The structural claim therefore holds in any
+      multi-dimensional perception space exhibiting the three sources; what does
+      NOT transfer is the managerial layer, whose prescriptions name specific
+      dimensions and are basis-dependent.
+    conditions: "None beyond those on P_nonergodic."
+    antecedents: [P_nonergodic]
+    evidence:
+      - type: argument
+        anchor: >-
+          Analytic. Follows from the definitions: ergodicity compares a time
+          average along a trajectory with an ensemble average across
+          trajectories, and both are basis-independent functionals of the same
+          paths.
+    body_sections: ["§7.4 Limitations and Future Empirical Research"]
   - id: P_source1
     statement: >-
       Source 1 — Absorbing states: deeply negative brand conviction is a
@@ -186,10 +207,12 @@ propositions:
       Source 2 — Multiplicative dynamics: signals do not add to perception; they
       interact multiplicatively with the existing perceptual state and its
       cross-dimensional context, x_i^(d)(t+1) = f(x_i^(d)(t), s^(d), x_i^(-d)(t)).
-      Because f is concave/nonlinear in the signal when the state is large,
-      Jensen's inequality makes the ensemble (arithmetic-mean) average exceed the
-      time (geometric-mean) average — overstating the growth typical individuals
-      experience, even without strict multiplicativity.
+      Where f is concave in the signal at high perceptual states, the ensemble
+      (arithmetic-mean) average exceeds the time (geometric-mean) average. The
+      Jensen / AM-GM step is algebra and carries no empirical content: it holds
+      for every concave function, and is an equality when updating is linear in
+      the signal. The empirical content of Source 2 lies wholly in the antecedent
+      — whether brand-perception updating is in fact concave.
     conditions: "AA_C1, AA_C2, AA_C3, C_lowinvolve"
     antecedents: [AA_C1, AA_C2, AA_C3]
     evidence:
@@ -347,11 +370,17 @@ propositions:
 derivations:
   - id: D_multiplicative_sufficiency
     statement: >-
-      When any of C1–C3 (AA_C1/AA_C2/AA_C3) holds uniformly across the population
-      the dynamics are multiplicative and P1–P5 apply; when all three fail
-      uniformly the dynamics are additive and ergodic, time averages converge to
-      ensemble averages, and classical brand tracking (Keller 1993; Aaker 1991)
-      is valid — revealing the classical framework as a special case.
+      The sufficiency conditions are DISJUNCTIVE — any one of C1–C3
+      (AA_C1/AA_C2/AA_C3) holding uniformly implies multiplicative dynamics and
+      P1–P5 apply — and C3 (proportional forgetting) is satisfied in nearly every
+      market whose memory dynamics have been measured. The disjunction is
+      therefore close to universal, so satisfying it is not evidence for the
+      multiplicative regime. Failing all three at once would require absolute-scale
+      signal evaluation, prior-independent weighting AND linear forgetting
+      together; no such market is documented and the framework does not predict
+      where one would be found. C1–C3 make the multiplicative assumption explicit
+      and inspectable; they do not test it. The discriminating test is the
+      log-linear vs linear panel fit.
     antecedents: [AA_C1, AA_C2, AA_C3, P_nonergodic]
     body_sections: ["§4.5 Sufficiency Conditions"]
   - id: D_formal_correspondence
@@ -443,17 +472,20 @@ findings:
     body_sections: ["Table 2", "§6.1 The Tracking Fallacy"]
   - id: F_table3
     statement: >-
-      The ensemble-time gap orders by coherence (Tesla > Erewhon > Hermès >
-      Patagonia ≈ IKEA), tracking profile dispersion (CV) rather than profile
-      mean — confirming P3's prediction that overestimation is worse for
-      low-coherence brands. Ensemble averages can converge across brands of very
-      different underlying populations, masking real differences visible only when
-      individual trajectories are tracked.
-    type: "simulation_demonstration"
+      The gap ORDERING (Tesla > Erewhon > Hermès > Patagonia ≈ IKEA) is a
+      construction, not a result: lambda is set proportional to profile CV in the
+      calibration and the simulated gap is monotone increasing in lambda, so the
+      ordering reproduces the CV ordering by arithmetic and carries no
+      confirmatory weight for P3. What the simulation does supply is a MAGNITUDE:
+      once an absorption rate is granted, over six periods the tracked ensemble
+      average is flat at 7.3 across all five brands while the population averages
+      spread from 6.4 to 6.9. Establishing that dispersion drives absorption would
+      require absorption rates measured independently of the emission profile.
+    type: "simulation_derivation"
     source_measurements: [m_table3_gaps]
     generating_method: M_absorption_sim
     antecedents: [P3, O_canonical_profiles]
-    citation_role_in_paper: "illustrative_evidence_for_P3"
+    citation_role_in_paper: "magnitude_derivation_for_P3"
     body_sections: ["Table 3"]
 
 # ============================================================================
@@ -470,11 +502,13 @@ alternative_explanations:
     ruled_out_by: [D_multiplicative_sufficiency, P_source2]
     rules_out_status: "scoped_as_special_case"
     reasoning: >-
-      The additive/ergodic regime is not refuted but located: it is the special
-      case where all of C1–C3 fail uniformly. Where any of C1–C3 holds (the
-      common high-involvement case), dynamics are multiplicative and the
-      propositions apply; the log-linear vs linear panel-fit test distinguishes
-      the regimes empirically.
+      The additive/ergodic regime is not refuted but located as the limiting case
+      in which all of C1–C3 fail uniformly. Because the conditions are disjunctive
+      and C3 alone is near-universal, that limiting case is close to empty, which
+      means the taxonomy does not partition markets and does not by itself rule
+      the rival out. Only the log-linear vs linear panel-fit test distinguishes
+      the regimes empirically; the rules_out status rests on that test, not on
+      C1–C3.
     body_sections: ["§4.5 Sufficiency Conditions", "§7.2 Relationship to Classical Brand Theory"]
   - id: A_bayesian_convergence
     statement: >-

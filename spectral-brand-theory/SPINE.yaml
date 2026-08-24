@@ -185,13 +185,20 @@ measurements:
     body_sections: ["§3.4", "Table 5"]
   - id: m_insights
     statement: >-
-      Across five brands, 25 insights were assessed against the four
-      validation criteria; all 25 were judged to satisfy all four
-      (author-assessed; independent blind practitioner evaluation noted as a
-      stronger future test).
+      Across five brands, 25 already-selected top insights were scored by the
+      framework's author against four criteria and all 25 were recorded as
+      satisfying all four. The count is not a validation result: the denominator
+      is a pre-filtered set, the scorer authored the framework, and two of the
+      four criteria (dimensionally specific, observer-differentiated) are
+      guaranteed by the YAML output contract, which requires every module to
+      name the dimensions and cohorts it reasons over. At most two criteria
+      (non-obvious, actionable) carry information, and both rest on a single
+      non-blind rater. Read descriptively: the pipeline emitted dimension- and
+      cohort-specific output for every brand, and the author judged that output
+      non-obvious and actionable.
     source_observations: [O1]
     generating_method: M2
-    value: "25 of 25 insights accepted (author-assessed)"
+    value: "25 of 25 top insights recorded as satisfying all four criteria (author-scored, pre-filtered, two criteria format-guaranteed)"
     units: "count out of 25"
     body_sections: ["§3.3"]
   - id: m_tesla_asymmetry
@@ -334,9 +341,17 @@ propositions:
         anchor: "Identical ads produce different meanings across target/non-target groups; 'purposeful polysemy' is observed spectral metamerism."
         citation_keys: []
     falsifier: >-
-      Falsified if cohorts with measurably different profiles produce conviction
-      distributions that do not differ after controlling for signal exposure —
-      i.e. profile predicts no incremental variance beyond demographics.
+      The original falsifier (profile variation predicts no incremental variance
+      in conviction beyond demographics) could not fire: priors are a component
+      of the spectral profile and a prior about a brand is a lagged measure of
+      conviction about it, so the outcome sits inside the predictor. Restated
+      over the belief-independent components: falsified if cohorts differing
+      measurably in dimensional weights, tolerances and gate state — elicited on
+      stimuli other than the focal brand, with priors about the focal brand
+      measured and held constant — produce conviction distributions that do not
+      differ after controlling for signal exposure. Under that specification a
+      null is attainable and would show the perceptual apparatus does no work
+      once prior belief is fixed.
     body_sections: ["§2.6 Proposition 1"]
   - id: PF2
     statement: >-
@@ -470,11 +485,19 @@ findings:
       experiential asymmetry (geographic split by evidence base, Erewhon), and
       incoherent (amplifying fragility, Tesla). Type is set by cohort
       interdependence, ideological centrality, and encounter-mode variance.
+      The five-brand demonstration does not establish the taxonomy: the brands
+      were selected one per type, and the type assignment is the stated
+      selection rationale, so the analysis returns the five types because the
+      sample was built to contain one instance of each. The count and the
+      partition come from the drift-geometry derivation in the R12 companion,
+      not from these cases; the demonstration shows only that each type can be
+      given a distinct resilience mechanism and that the pipeline recovers the
+      type it was handed a case of.
     type: "candidate_mechanism"
     source_measurements: [m_convergence]
     generating_method: M1
     antecedents: [O1, PF4]
-    statistical_strength: "five-brand exploratory taxonomy; candidate, not validated"
+    statistical_strength: "selection frame reported back with resilience profiles attached; the count is derived formally in the R12 companion, not recovered from these five cases"
     body_sections: ["§4.2 Five Types of Brand Coherence"]
   - id: F3
     statement: >-
@@ -496,13 +519,17 @@ findings:
       emission power (universal awareness, 7/8 dimensions at strength >=4, gate
       permeability 10/10) yet minimum architectural health (cloud coherence
       2/10, D/A 30/65, C-). The D/A ratio most powerfully discriminates power
-      from health; an exploratory 55-65% designed-signal optimal zone emerges
-      from the five-brand comparison (requiring larger-sample validation).
+      from health. The 55-65% designed-signal band is derived formally in the R6
+      companion; it is not supported by these five brands and is contradicted by
+      them — IKEA sits at 75% designed, outside the band, and grades A-, above
+      Patagonia at 65% inside it (B+). What the five cases support is one-sided
+      and confined to the low extreme: at 30% designed, Tesla has most of its
+      signal environment outside its own control.
     type: "candidate_mechanism"
     source_measurements: [m_convergence]
     generating_method: M1
     antecedents: [O1, P3, P7]
-    statistical_strength: "five-brand exploratory comparison; the 55-65% zone is an exploratory hypothesis"
+    statistical_strength: "five-brand exploratory comparison; the 55-65% band is a formal derivation with one disconfirming case in this sample"
     body_sections: ["§4.4 Brand Power and Brand Health as Independent Variables"]
 
 # ============================================================================

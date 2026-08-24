@@ -1,7 +1,7 @@
 # SPINE.yaml — R10 / 2026p — Dove Case Study
 #
 # RETROFIT spine: extracted descriptively from the completed paper.md
-# ([internal path removed]), per CLAUDE.md D4 (SPINE-for-all-active-
+# ([internal path removed]), per [internal ref removed] D4 (SPINE-for-all-active-
 # canonical). This is NOT a spine-first generative draft — it faithfully maps
 # the argument backbone of an already-finished paper. Reviewers evaluate spine
 # and prose separately.
@@ -396,7 +396,16 @@ limitations:
       Single-case design: the dimensional-activation mechanism is derived from one
       focal case plus three sub-paragraph comparators (Pepsi, Gillette,
       Patagonia); the propositions are theoretically grounded hypotheses requiring
-      multi-case validation, not established cross-campaign laws.
+      multi-case validation, not established cross-campaign laws. The four
+      mechanism accounts applied to those cases are selected post hoc and are
+      closed under outcome — every success is classed as coherent activation or
+      anchored reinforcement, every failure as missing narrative foundation or
+      dimensional contradiction — so their joint fit to the sample is not evidence.
+      Two patterns the set could NOT accommodate: a null-dimension activation with
+      no narrative contradiction and a consistent portfolio that nonetheless fails
+      commercially, and a campaign that contradicts an established dimension in a
+      portfolio that contradicts it further and nonetheless succeeds. Neither
+      appears in these four cases, which is a fact about the sample.
     severity: "future-work"
     affects: [P1, P2, P3, P4, P5]
     body_sections: ["Generalizability and Boundary Conditions"]
@@ -416,26 +425,44 @@ limitations:
 robustness_checks:
   - id: RC1
     statement: >-
-      Coordinate invariance: the dimensional activation patterns (null-to-positive
-      Ideological transition, Cultural inverted-U, PA/SC mirror divergence) are
-      invariant under basis transformations — they replicate across alternative
-      dimensional decompositions, indicating real phenomena rather than artifacts
-      of the chosen eight-dimension coordinate system.
-    type: "invariance_check"
+      WITHDRAWN as a check; retained as an open question. The coordinate-invariance
+      claim (that the activation patterns replicate across alternative dimensional
+      decompositions) was never run: no alternative decomposition is defined,
+      computed or reported. Nullity of a vector component is not preserved under a
+      general rotation, so the null-to-positive Ideological transition, the Cultural
+      inverted-U and the PA/SC mirror divergence are stated in the SBT-8 basis and
+      are not known to survive redescription in another. The findings are findings
+      about Dove's trajectory in SBT-8 coordinates; their generality beyond it is
+      unestablished.
+    type: "unrun_check"
     sensitivity_of: [P1, P2, P4]
-    falsifier: "If the activation profiles do not replicate under an alternative dimensional basis, the structural claim weakens to a coordinate artifact."
-    body_sections: ["Discussion: Coordinate Invariance and Velocity Tracking"]
+    falsifier: >-
+      Not applicable while the check is unrun. The check that would carry
+      falsifying content: recode the same source material under an independently
+      motivated alternative decomposition, recompute the trajectory, and test
+      whether a state change appears at the same time point. Absence of the state
+      change under that recoding would make the pattern a coordinate artifact.
+    body_sections: ["Discussion: Basis Dependence and Velocity Tracking"]
   - id: RC2
     statement: >-
-      Model-specificity check on the competitive-interference test: the high-
-      replication per-cell 240-call run (gpt-4o-mini only) confirms the model-
-      specific instability that 2026g's broader five-model design (250 calls)
-      surfaced as an exploratory anomaly — gpt-4o-mini shows ~double the cross-
-      condition profile shift of the other four models. Replication on additional
-      architectures with comparable per-cell power is warranted.
-    type: "model_specificity_check"
+      2026g's five-model competitive-interference design (250 calls, one repetition
+      per model-condition cell) returned a NULL on aggregate competitive
+      interference, and that null is reported as a null. Its incidental observation
+      that gpt-4o-mini showed ~double the cross-condition profile shift of the other
+      four models rests on one repetition per cell, with no power calculation and no
+      correction, and is an anomaly rather than a result. The high-replication
+      240-call run reported here is a SINGLE-MODEL finding, not a confirmation of
+      model-specific instability: run on the one model the earlier design flagged, it
+      cannot distinguish an effect peculiar to gpt-4o-mini from an effect the
+      five-model design was too thinly replicated to detect in any model. No claim
+      about model specificity is made.
+    type: "single_model_result"
     sensitivity_of: [P3, m_competitive_interference]
-    falsifier: "If other architectures with equal power show no comparable per-cell modulation, the effect is model-idiosyncratic."
+    falsifier: >-
+      The comparison that would carry content: run the per-cell replication used
+      here across all five architectures. Comparable per-cell modulation elsewhere
+      would make the effect general; its absence elsewhere would make it
+      model-idiosyncratic. Until then neither is claimed.
     body_sections: ["Portfolio Interference: The Unilever Paradox"]
 
 # ============================================================================

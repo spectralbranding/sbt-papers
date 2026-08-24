@@ -72,10 +72,19 @@ claims:
   - P2
 - id: P4
   type: proposition
-  statement: (Theorem, Cencov) The Fisher-Rao metric is the UNIQUE Riemannian metric on the probability
-    simplex (up to constant scaling) invariant under Markov morphisms / sufficient-statistic embeddings;
-    for the observer simplex this is the decisive selection criterion (Criterion 2, invariance under dimension-collapsing),
-    which no Euclidean, Hellinger, Jensen-Shannon, or Aitchison alternative possesses.
+  statement: '(Theorem, Cencov) The Fisher-Rao metric is the UNIQUE Riemannian metric on the probability
+    simplex (up to constant scaling) invariant under CONGRUENT EMBEDDINGS by Markov morphisms — the refinement
+    direction, in which a category is split by a stochastic kernel applied identically to every distribution.
+    It is NOT invariant under general stochastic maps: merging categories is a coarse-graining and, by
+    monotonicity of Fisher information, can only CONTRACT d_FR, with equality only when the merge is a
+    sufficient statistic. On the paper''s own observer profiles d_FR(w_alpha, w_beta) = 1.176 contracts
+    to 1.171 under a semiotic+narrative merge (.5%), across all 28 pairwise merges to between 1.176 (0.0%,
+    narrative+cultural, equal weights in both profiles) and .729 (38.0%, semiotic+economic), mean 7.5%,
+    and never expands; the congruent .5/.5 refinement returns 1.176 exactly. The selection criterion for
+    the observer simplex is therefore the one-sided statement — refinement preserves observer distance,
+    coarsening can only understate it, so no taxonomy change manufactures an observer difference the finer
+    taxonomy did not contain — which no Euclidean, Hellinger, Jensen-Shannon, or Aitchison alternative
+    possesses either.'
   testable: false
   tested_in_paper: true
   status: not_tested
@@ -151,12 +160,16 @@ claims:
   - P2
 - id: P11
   type: proposition
-  statement: (Definition 5 + Corollary 1, spectral sensitivity index) Jacobi-field analysis on the perception
-    manifold yields the spectral sensitivity index SSI(s,w) = (1/8) sum_k w_k kappa_k(s), an observer-weighted
-    curvature measure of trajectory vulnerability. On S^7_+ (constant curvature 1) nearby geodesics OSCILLATE
-    rather than diverge; but in the Aitchison geometry the curvature DIVERGES as a dimension approaches
-    structural absence (s_k -> 0+), so structural absence is strategically powerful yet geometrically
-    fragile — small perturbations to a near-zero dimension have outsized trajectory effects.
+  statement: '(Definition 5 + Corollary 1, spectral sensitivity index) Jacobi-field analysis on the perception
+    manifold yields SSI(s,w) = (1/8) sum_k w_k kappa_k(s). It is a BOUNDARY AND WARPED-SPACE CONSTRUCT,
+    not a risk metric with a comparative value: on the interior of S^7_+ under the round metric kappa_k
+    = 1 for all k and sum_k w_k = 1, so SSI = 1/8 identically for every brand and every observer, and
+    two interior brands cannot be ranked by it. Its content is where the round-metric picture stops applying.
+    On S^7_+ (constant curvature 1) nearby geodesics OSCILLATE rather than diverge; in the Aitchison geometry
+    the curvature DIVERGES as a dimension approaches structural absence (s_k -> 0+), so structural absence
+    is strategically powerful yet geometrically fragile. Making the index comparative on the interior
+    would require kappa_k in the Aitchison-induced structure at measurable distance from the boundary;
+    that computation is not attempted.'
   testable: false
   tested_in_paper: true
   status: not_tested
@@ -275,15 +288,19 @@ results:
 - claim_id: P7
   status: supported
   notes: 'Brand distance is NOT an objective property of brands but a function of the observer''s attentional
-    structure: the same brand pair can be perceived as close by one cohort and far by another (the Hermes-IKEA
-    reversal). This is the paper''s central result — different observer cohorts inhabit metrically distinct
-    brand landscapes — turning SBT''s qualitative claim into a theorem.'
+    structure: the same brand pair can be perceived as close by one cohort and far by another. The claim
+    is carried by an exhibited ORDERING reversal, not by a magnitude contrast: 13 of the 45 pair-of-pairs
+    comparisons invert between the aesthete and pragmatist profiles, and Hermes moves from IKEA''s second-nearest
+    brand to its most distant. This is the paper''s central result — different observer cohorts inhabit
+    metrically distinct brand landscapes — turning SBT''s qualitative claim into a theorem.'
 - claim_id: P9
   status: supported
   notes: 'Brand distance is NOT an objective property of brands but a function of the observer''s attentional
-    structure: the same brand pair can be perceived as close by one cohort and far by another (the Hermes-IKEA
-    reversal). This is the paper''s central result — different observer cohorts inhabit metrically distinct
-    brand landscapes — turning SBT''s qualitative claim into a theorem.'
+    structure: the same brand pair can be perceived as close by one cohort and far by another. The claim
+    is carried by an exhibited ORDERING reversal, not by a magnitude contrast: 13 of the 45 pair-of-pairs
+    comparisons invert between the aesthete and pragmatist profiles, and Hermes moves from IKEA''s second-nearest
+    brand to its most distant. This is the paper''s central result — different observer cohorts inhabit
+    metrically distinct brand landscapes — turning SBT''s qualitative claim into a theorem.'
 - claim_id: P10
   status: supported
   notes: 'The n=8 concentration baseline (~.44) and the 1/256 octant compression jointly establish that

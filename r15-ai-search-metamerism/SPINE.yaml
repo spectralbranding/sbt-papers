@@ -224,10 +224,10 @@ measurements:
     units: "between-condition effect size"
     body_sections: ["§Results: Conditional metamerism"]
   - id: m_brandfunction
-    statement: "Brand Function specifications reduced aggregate local-brand DCI from .353 to .284 (~20% toward baseline), driven by Cultural-dimension recovery; DCI remained above .250 and Economic stayed elevated at 15.4."
+    statement: "Brand Function specifications reduced aggregate local-brand DCI from .353 to .284 — .069 of the .103 excess over the .250 baseline, or 67% of the measured collapse — driven by Cultural-dimension recovery; DCI remained above .250 and Economic stayed elevated at 15.4. The index-relative figure .069/.353 = 19.5%, reported in earlier versions as ~20%, divides by a quantity three-quarters of which is the baseline every allocation must produce, and understates the intervention by a factor of three."
     source_observations: [O4]
     generating_method: M2
-    value: "DCI .353 -> .284 (~20% recovery); residual above baseline"
+    value: "DCI .353 -> .284; 67% of the above-baseline excess removed (.103 -> .034); residual above baseline"
     units: "verifiability-concentration index (baseline .250)"
     body_sections: ["§Results: Brand Function resolution (Run 4)"]
   - id: m_heterogeneity_null
@@ -405,31 +405,45 @@ propositions:
 findings:
   - id: F1
     statement: >-
-      H1 SUPPORTED — Dimensional bias: LLMs exhibit non-uniform spectral
-      profiles, systematically over-weighting Experiential (150% global / 144%
-      local) and Economic (117% global / 168% local) while suppressing Cultural
-      and Temporal below the uniform baseline in both runs (Ideological and
-      Social fall below baseline only for local brands); DCI is elevated above
-      .250 in every model in Run 3 and in five of six in Run 2.
+      H1 SUPPORTED — Verifiability concentration: the Dimensional Collapse
+      Index, the sum of the Economic and Semiotic weights, is elevated above its
+      .250 uniform baseline in every model in Run 3 and in five of six in Run 2.
+      Reported alongside it, and not part of H1's test, the descriptive weight
+      pattern over-weights Experiential (150% global / 144% local) and Economic
+      (117% global / 168% local) while Cultural and Temporal fall below the
+      uniform share in both runs (Ideological and Social only for local brands).
+      Under a forced 100-point allocation the shares sum to a constant, so the
+      below-baseline dimensions are the arithmetic complement of the elevated
+      ones rather than a second observation; the ranking is what the design
+      establishes, and a free-allocation arm would be needed to separate
+      absolute neglect from relative displacement.
     type: "confirmatory_result"
     source_measurements: [m_dci_global, m_dci_local, m_dci_crosscultural]
     generating_method: M2
     antecedents: [O1, O2, O3]
-    falsifier: "If DCI did not exceed .250, or Experiential/Economic were not the dominant weights, H1 fails."
+    falsifier: "If DCI did not exceed .250 across models, H1 fails. The dominance of any particular pair of dimensions in the descriptive table is not part of the test, because the forced allocation makes the low shares the complement of the high ones."
     citation_role_in_paper: "primary_evidence_for_P5_P6"
     body_sections: ["§Results: H1 Dimensional Bias"]
   - id: F2
     statement: >-
-      H2 SUPPORTED — Metameric convergence: cross-model cosine = .975 (six
-      confirmatory models) and .977 across 24 architectures from seven training
-      traditions; dimensional orderings are near-identical despite differences in
-      architecture, training corpus, and deployment, so collapse is structural
-      and platform-switching is not a hedge.
+      H2 SUPPORTED as restated — Shared collapse subspace: cross-model cosine
+      = .975 (six confirmatory models) and .977 across 24 architectures from
+      seven training traditions; dimensional orderings are near-identical
+      despite differences in architecture, training corpus, and deployment, so
+      the low-rank subspace is shared rather than model-specific and
+      platform-switching is not a hedge. The stronger claim H2 originally made —
+      that specific brand PAIRS become functionally equivalent — is NOT measured
+      by this statistic. Cosine similarity compares two MODELS' weight vectors;
+      functional equivalence is a distance between two BRANDS inside one model,
+      and that distance was never computed. Every statement in the paper that a
+      pair is metameric is an inference from the weight vector, labelled as one.
+      Computing inter-brand distances from the Type-3 per-brand probes is the
+      measurement that would test it directly and is left to subsequent work.
     type: "confirmatory_result"
     source_measurements: [m_cosine]
     generating_method: M3
     antecedents: [O1, O3]
-    falsifier: "If cosine fell substantially below unity across architectures, the shared-subspace claim (P6) fails."
+    falsifier: "If cosine fell substantially below unity across architectures, the shared-subspace claim (P6) fails. Note that no value of this statistic can confirm or refute functional equivalence between two brands, which is a different quantity in a different space."
     citation_role_in_paper: "primary_evidence_for_P6_P8"
     body_sections: ["§Results: H2 Metameric Convergence"]
   - id: F3
@@ -449,11 +463,15 @@ findings:
     body_sections: ["§Results: Conditional metamerism"]
   - id: F4
     statement: >-
-      Brand Function resolution SUPPORTED (partial): structured Brand Function
-      specifications recover ~20% of lost dimensionality (local DCI .353 ->
-      .284), driven primarily by Cultural-dimension recovery, but DCI stays above
-      baseline and Economic stays elevated — collapse is partly information-driven
-      and partly a structural property of text-based processing.
+      Brand Function resolution SUPPORTED: structured Brand Function
+      specifications remove 67% of the above-baseline excess (local DCI .353 ->
+      .284, excess .103 -> .034), driven primarily by Cultural-dimension
+      recovery, but DCI stays above baseline and Economic stays elevated. A
+      cheap prompt-level intervention that removes two-thirds of the measured
+      collapse is evidence FOR the information-availability reading; the .034
+      residual is what survives when the missing dimensional information is
+      supplied directly, and is where the structural component of the collapse
+      is bounded.
     type: "intervention_result"
     source_measurements: [m_brandfunction]
     generating_method: M2
@@ -742,4 +760,3 @@ external_anchors:
 # ============================================================================
 # Spine changelog — append-only
 # ============================================================================
-

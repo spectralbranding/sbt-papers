@@ -28,16 +28,16 @@ meta:
     better than coherence *score*. No formal derivation has connected this prediction to dynamics. This
     paper provides that derivation by analyzing the drift structures that different coherence types produce
     within the stochastic differential equation (SDE) framework of Zharnikov [-@zharnikov-2026-non-ergodic-brand-perception-diffusion].
-    Two characterizations of drift geometry — isotropy and $k$-anisotropy — yield three main results.
-    Theorem 1 establishes that absorption probability decreases monotonically in drift isotropy: isotropic
-    drift fields (ecosystem coherence) produce lower absorption risk than anisotropic or stochastic drift.
-    Theorem 2 shows that recovery probability depends on dimension-specific drift, creating asymmetric
-    vulnerability profiles — crises on passive dimensions (e.g., the Economic dimension for Hermès) are
-    disproportionately dangerous. Theorem 3 derives the full resilience ordering — ecosystem > signal
-    > identity > experiential asymmetry > incoherent — from SDE geometry. The type-over-score principle
-    is the central result: crisis survival depends on the minimum drift across dimensions, not the average,
-    so two brands with identical total emission but different distributions have different resilience.
-    The framework is applied to four documented crises and generates three falsifiable predictions.'
+    Two characterizations of drift geometry — isotropy and $k$-anisotropy — yield three results. Theorem
+    1 makes absorption probability decrease monotonically in drift isotropy, conditional on an asserted
+    convexity premise. Theorem 2 shows that recovery probability depends on dimension-specific drift,
+    creating asymmetric vulnerability profiles — crises on passive dimensions (e.g., the Economic dimension
+    for Hermès) are disproportionately dangerous. Theorem 3 assembles the resilience ordering — ecosystem
+    > signal > identity > experiential asymmetry > incoherent — whose final step is conditional on a stipulated
+    dimension-volatility ordering. The type-over-score principle is the central result: crisis survival
+    depends on the minimum drift across dimensions, not the average, so two brands with identical total
+    emission but different distributions have different resilience. The framework is applied to four documented
+    crises and generates three falsifiable predictions.'
 claims:
 - id: P1
   type: proposition
@@ -53,7 +53,12 @@ claims:
     8)-robust / isotropic in the operative sense; signal (IKEA) is 5-anisotropic; identity (Patagonia)
     is 3-anisotropic on low-volatility dimensions; experiential asymmetry (Erewhon) is 2-3 anisotropic
     on high-volatility dimensions; incoherent (Tesla) is effectively stochastic. Robustness is governed
-    by the absolute drift FLOOR on the weakest dimension, not the spread of the drift vector.'
+    by the absolute drift FLOOR on the weakest dimension, not the spread of the drift vector. The two
+    counts in this mapping are distinct and must not be conflated: the floor-crossing count k(alpha; alpha_min)
+    at the derived floor s_crit = 2.5 is 8 for Hermes, IKEA, Patagonia and Erewhon and 7 for Tesla, while
+    the k-anisotropy labels (8 / 5 / 3 / 2-3 / stochastic) are a DESCRIPTIVE reading of relative drift
+    concentration in each canonical profile at an informal strong-drift level of s_i around 7, not floor
+    crossings.'
   testable: false
   tested_in_paper: true
   status: not_tested
@@ -65,7 +70,9 @@ claims:
     drift intensity constant, an isotropic field has lower absorption probability than a k-anisotropic
     field, which is lower than a stochastic field; moreover P_abs is increasing in the anisotropy degree
     (8-k). Absorption is dominated by the weakest dimension because the hitting probability is convex
-    in the drift parameter (Jensen).'
+    in the drift parameter (Jensen). The convexity premise is ASSERTED, NOT VERIFIED: the appendix supplies
+    a heuristic and defers the second-derivative computation, so the Jensen step and everything resting
+    on it are conditional on a property the paper does not establish.'
   testable: true
   tested_in_paper: true
   status: not_tested
@@ -77,7 +84,10 @@ claims:
   statement: (Corollary 1) Among k-anisotropic fields with the same k and total drift, absorption probability
     is lower when the active (strongly-driven) dimensions have LOW intrinsic volatility than when they
     have HIGH volatility, because strong drift in a low-noise environment yields a more deterministic
-    trajectory away from the boundary.
+    trajectory away from the boundary. The comparative statement in nu is derived; WHICH SBT dimensions
+    are the low- and high-volatility ones is not. Applying the corollary to a named pair of coherence
+    types is therefore conditional on the stipulated ordering AA4, which the paper does not establish
+    and which the nearest corpus measurement does not support.
   testable: false
   tested_in_paper: true
   status: not_tested
@@ -88,7 +98,12 @@ claims:
   statement: '(Proposition 1) Combining Theorem 1 with Corollary 1 yields the absorption-probability ordering
     across types: eco < signal < identity < exp_asymmetry < incoherent, equivalently the stability ordering
     A+ > A- > B+ > B- > C-. The identity-vs-experiential step is distinguished only by Corollary 1 (both
-    are ~3-anisotropic); the remaining steps follow from Theorem 1.'
+    are ~3-anisotropic) and is therefore conditional on the stipulated volatility ordering AA4; the remaining
+    steps follow from Theorem 1 applied to the DESCRIPTIVE anisotropy labels of P2, not to floor crossings,
+    since at the derived floor four of the five canonical types are alike (alpha_min, 8)-robust. Both
+    inputs are read off the same canonical profiles that define the coherence types, so the ordering restates
+    the type assignment; what the derivation supplies is the mechanism (weakest-link absorption under
+    a convexity premise), not an independent confirmation of the grading.'
   testable: false
   tested_in_paper: true
   status: not_tested
@@ -189,8 +204,10 @@ acceptance:
   criterion: Holds if (Theorem 3) The crisis resilience ordering ecosystem > signal > identity > experiential
     asymmetry > incoherent follows from SDE geometry, where resilience = 1 - P_abs(T; mu, x_post-crisis);
     the ordering is robust to crisis severity for eta < eta*.
-  falsification: If coherence-type ordering does not predict recovery beyond coherence score, Theorem
-    3 is falsified (= Prediction 1 null).
+  falsification: If coherence type adds no explanatory power for recovery speed over coherence score,
+    Theorem 3 is falsified (= Prediction 1 null). The test is the nested-model F-test with cross-validated
+    or adjusted R^2; an unadjusted Delta R^2 > 0 is not a falsifiable condition, since it holds for any
+    added regressor including a random one.
 - claim_id: P9
   criterion: 'Holds if (Theorem 3, Result 3 — the type-over-score principle, central contribution) Two
     brands with identical total emission sum_i s_i but different emission distributions have different
@@ -238,8 +255,11 @@ dependencies:
     in Spectral Resource Allocation (2026k).
   critical: false
   doi: 10.5281/zenodo.19009268
-- relationship: applies
-  claim: Imports the dimension-volatility ordering justification from 2026r (Definition 3 / AA4).
+- relationship: extends
+  claim: 2026r does NOT supply the dimension-volatility ordering (Definition 3 / AA4) and must not be
+    cited for it. What 2026r reports is cross-model variance in dimension weight allocation, a different
+    quantity, and its ranking does not reproduce the ordering assumed here. The engagement is a contrast
+    over what the two quantities measure; the ordering itself stands as a stipulation of this paper.
   critical: false
   doi: 10.5281/zenodo.19207599
 - relationship: extends
@@ -291,10 +311,12 @@ dependencies:
   claim: Ensemble-average analyses misrepresent individual trajectories — analog of aggregate-score failure.
   reference: molenaar-2004-manifesto-psychology
 - relationship: extends
-  claim: Heritage is the most stable equity component (low Temporal volatility).
+  claim: Heritage is the most stable equity component — supports the LOW-volatility endpoint (Temporal)
+    only, not the intermediate ranks.
   reference: urde-2007-corporate-brands-heritage
 - relationship: extends
-  claim: Experiential associations are the most volatile (high Experiential volatility).
+  claim: Experiential associations are the most volatile — supports the HIGH-volatility endpoint only,
+    not the intermediate ranks.
   reference: brakus-2009-brand-experience
 - relationship: extends
   claim: SDE toolkit standard for multi-channel brand-signal dynamics.
@@ -349,13 +371,18 @@ limitations:
     strategy (which would endogenize the post-crisis drift field).
   severity: moderate
   addressable: true
-- description: The dimension-volatility ordering (Definition 3) is proposed on theoretical grounds and
-    not empirically validated; its specific quantitative relationships remain to be established.
+- description: The dimension-volatility ordering (Definition 3) is STIPULATED, not established. Two endpoints
+    have external support (heritage is the most stable equity component; experiential associations the
+    most volatile); the six intermediate ranks do not, and neither does the low-volatility placement of
+    the Ideological and Narrative dimensions on which the identity-vs-experiential-asymmetry step actually
+    turns.
   severity: moderate
   addressable: true
 - description: A fully rigorous proof of the absorption-probability ordering (the convexity of the hitting
     probability at the boundary alpha=0) is deferred to a forthcoming technical companion note; Appendix
-    A records only the structural argument plus a planned 10,000-path numerical verification.
+    A records only the structural argument plus a planned 10,000-path numerical verification. The convexity
+    premise is therefore asserted and pending verification, and the Theorem 1 Jensen step inherits that
+    status.
   severity: moderate
   addressable: true
 repositories:

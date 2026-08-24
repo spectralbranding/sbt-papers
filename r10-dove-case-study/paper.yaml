@@ -14,7 +14,7 @@ meta:
     affiliation: Independent Researcher
   doi: 10.5281/zenodo.19139258
   date: '2026-06-27'
-  venue: advertising / marketing (JAR-adjacent; purpose-advertising)
+  venue: Preprint
   license: CC-BY-4.0
   keywords:
   - brand purpose
@@ -242,7 +242,14 @@ limitations:
   addressable: true
 - description: 'Single-case design: the dimensional-activation mechanism is derived from one focal case
     plus three sub-paragraph comparators (Pepsi, Gillette, Patagonia); the propositions are theoretically
-    grounded hypotheses requiring multi-case validation, not established cross-campaign laws.'
+    grounded hypotheses requiring multi-case validation, not established cross-campaign laws. The four
+    mechanism accounts applied to those cases are selected post hoc and are closed under outcome — every
+    success is classed as coherent activation or anchored reinforcement, every failure as missing narrative
+    foundation or dimensional contradiction — so their joint fit to the sample is not evidence. Two patterns
+    the set could NOT accommodate: a null-dimension activation with no narrative contradiction and a consistent
+    portfolio that nonetheless fails commercially, and a campaign that contradicts an established dimension
+    in a portfolio that contradicts it further and nonetheless succeeds. Neither appears in these four
+    cases, which is a fact about the sample.'
   severity: moderate
   addressable: true
 - description: 'English-language US/UK cultural scope: all sources are Western; the Glow & Lovely portfolio
