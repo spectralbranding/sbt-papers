@@ -132,6 +132,9 @@ dependencies:
   claim: 'anchor: horton-2023-large-language-models'
   doi: 10.3386/w31122
 - relationship: extends
+  claim: 'anchor: aher-2023-using-large-language'
+  doi: 10.48550/arXiv.2208.10264
+- relationship: extends
   claim: 'anchor: dillion-2023-can'
   doi: 10.1016/j.tics.2023.04.008
 - relationship: extends
