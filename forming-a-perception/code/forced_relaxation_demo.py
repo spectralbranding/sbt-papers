@@ -7,7 +7,7 @@ CALIBRATED SIMULATION, not a field test: it shows the model computes, recovers t
 seeded perception-decay time constant tau from a post-pulse centroid trajectory, and
 reproduces the qualitative ordering d tau / d sin^2(beta) > 0 and the maintenance-budget
 fall-off. Calibration uses the five canonical PUBLIC brand profiles (NOT a proprietary
-atom instrument), so inputs and outputs are fully reproducible.
+reflection instrument), so inputs and outputs are fully reproducible.
 
 Model (per-brand, reduced to the off-generic eigen-direction):
     dx = [ -lambda(s) * (x - x_star) + F(t) ] dt + sigma dW

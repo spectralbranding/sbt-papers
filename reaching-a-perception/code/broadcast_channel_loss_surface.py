@@ -27,7 +27,7 @@ Two bridges compete:
       L(P*) = L0, independent of the broadcast spill cost. Calibrated to a
       representative proxy-informativeness level (median mutual information
       between perceptual-cohort membership and addressable proxy features in
-      the atom corpus); held fixed here as the illustrative constant L0.
+      the reflection corpus); held fixed here as the illustrative constant L0.
 
 The handoff contract routes to whichever bridge has the lower total loss:
           L_min(s, c) = min( c * (1 - s), L0 )

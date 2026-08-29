@@ -24,7 +24,7 @@ credentials. Outputs: `figures/figure1_loss_surface.png`,
 
 Distinctiveness is calibrated to an **observed public proxy** — the five canonical
 brand profiles (Hermes, IKEA, Patagonia, Erewhon, Tesla), the corpus's public
-anchors, NOT the work-in-progress atom instrument. For a single-dimension
+anchors, NOT the work-in-progress reflection instrument. For a single-dimension
 broadcast, a cohort's distinctiveness is the share of its *centered* profile's
 energy carried by its dominant dimension (this removes the common positive-level
 "halo" every brand shares). The five anchors give distinctiveness

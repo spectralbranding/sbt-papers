@@ -25,7 +25,7 @@ target displacement `d` is `F_hold = lambda(s) * d` (Proposition 4).
 
 **Calibration.** Distinctiveness `s` reuses the 2026av calibration: the centered-profile
 dominant-dimension energy share of the five canonical PUBLIC brand profiles (Hermes, IKEA,
-Patagonia, Erewhon, Tesla — NOT a proprietary atom instrument). A Beta is fitted to the five
+Patagonia, Erewhon, Tesla — NOT a proprietary reflection instrument). A Beta is fitted to the five
 anchors by method of moments and `N = 10,000` cohorts are drawn and clipped to the observed
 anchor range (no extrapolation beyond the most distinctive anchor, which would also drive
 `lambda -> 0`).

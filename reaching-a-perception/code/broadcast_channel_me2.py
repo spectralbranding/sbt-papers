@@ -8,7 +8,7 @@ fixed seed:
   1. CALIBRATE a cohort-distinctiveness distribution to an OBSERVED public proxy
      -- the five canonical SBT brand profiles (Hermes, IKEA, Patagonia, Erewhon,
      Tesla), the public anchors used throughout the corpus -- NOT the work-in-
-     progress atom-based instrument. Distinctiveness for a SINGLE-dimension
+     progress reflection-based instrument. Distinctiveness for a SINGLE-dimension
      broadcast is the concentration of the *centered* profile on its dominant
      dimension: s = max_k (v_k - mean(v))^2 / sum_k (v_k - mean(v))^2, which
      removes the common "halo" level (every brand scores positive on every
