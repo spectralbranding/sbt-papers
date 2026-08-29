@@ -1,0 +1,43 @@
+# ONTOLOGY.yaml module - 2026bp (entity-name leakage in dimensional readings)
+#
+# Per-paper ontology module per SPINE_FIRST_DRAFTING_PROTOCOL.md
+# §"ONTOLOGY.yaml schema (v0.1)". owns = terms THIS paper introduces (unique
+# authority); imports = terms owned by other modules it uses (reference only).
+# Linked into the substrate `terms` graph by build_ontology.py.
+#
+# 2026bp measures a property of a measurement stack rather than of a brand. It
+# introduces the leakage construct, the exchange procedure that estimates it,
+# the yardstick the estimate is expressed in, and the guard-denominator
+# distinction the re-analysis turns on. It imports the dimensional apparatus it
+# measures rather than redefining it.
+
+paper_key: 2026bp
+schema_version: 0.1
+
+owns:
+  - term_key: entity-name-leakage
+    label: "Entity-name leakage"
+    canonical_form: "entity-name leakage"
+    definition: "The share of a language model's dimensional rating of a written artifact that is carried by the name of the entity the artifact is said to concern rather than by the artifact's content; measured as the movement in the rated profile when the entity name is exchanged and the artifact text is held byte-identical."
+    first_section: "Abstract; Background"
+  - term_key: byte-identical-name-exchange
+    label: "Byte-identical name exchange"
+    canonical_form: "byte-identical name exchange"
+    definition: "A manipulation in which an entity name occupying a single slot in an artifact is replaced by another name of matched type while every other byte of the artifact is unchanged, so that any movement in a reading taken over the artifact is attributable to the label alone; substitution rather than removal, because an ablated identifier leaves the entity in the residual content and makes the artifact incongruous."
+    first_section: "Method — The contrast"
+  - term_key: test-retest-yardstick
+    label: "Test-retest yardstick"
+    canonical_form: "test-retest yardstick"
+    definition: "The spread of one operator's readings over repeat presentations of an identical prompt, used as the reference against which a manipulation's effect is judged large or small; an effect above one yardstick unit moves the reading further than re-asking the same question moves it."
+    first_section: "Method — The magnitude and its yardstick"
+  - term_key: residual-referenced-guard
+    label: "Residual-referenced neutrality guard"
+    canonical_form: "residual-referenced guard"
+    definition: "A neutrality test that refers a text-by-entity interaction to the within-cell residual rather than to the entity main effect, on the ground that the main effect moves with replicate count and with its own magnitude while the interaction it is meant to calibrate does not, so that a main-effect-referenced ratio has no stable null to be judged against."
+    first_section: "Results — What the guard was measuring; Discussion"
+
+imports:
+  - {term_key: perception-cloud}
+  - {term_key: reflection}
+
+refines: []

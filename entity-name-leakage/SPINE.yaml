@@ -1,0 +1,807 @@
+# SPINE.yaml — Entity-Name Leakage in Language-Model Dimensional Readings (2026bp)
+#
+# GENERATIVE spine, authored BEFORE paper.md prose per
+# SPINE_FIRST_DRAFTING_PROTOCOL.md. Every prose claim in paper.md traces to a
+# node here. EMPIRICAL paper over author-collected instrument records, so v0.2
+# (observation -> method -> measurement -> finding -> proposition).
+#
+# The paper reports what is ESTABLISHED and pre-registers what is not. F1 and F2
+# are in hand. F3 records that the route decomposition is NOT identified, and F4
+# records why the verdict that blocked it does not mean what it appeared to mean.
+# A3-A5 stay OPEN by design; a paper that closed them here would be overclaiming.
+#
+# or review-process meta. Authoring provenance lives in per-node
+# provenance.source_log_event and in authoring_notes / changelog, both dropped on
+# public export.
+
+spine_version: "0.2"
+spine_doc_version: "0.1.0"
+schema_version: "0.2"
+paper_key: "2026bp"
+provenance_mode: empirical
+title: >-
+  The Label Moves the Reading: Entity-Name Leakage in Language-Model
+  Dimensional Ratings of a Fixed Text
+
+thesis: >-
+  A dimensional rating produced by a language model over a written artifact is
+  normally treated as a reading OF that artifact. It is not purely that. With
+  the artifact text held byte-identical and only the entity name exchanged, the
+  eight-dimensional profile moves by an amount at or above the instrument's own
+  test-retest spread, and the movement reproduces across two independently
+  designed collections. The most obvious deflationary account — that the effect
+  is incongruity between a text written for one entity and a label naming
+  another — is refuted by the second collection, whose texts were authored for
+  no entity and which returned a LARGER effect. Which of three routes carries
+  the leakage is NOT settled here, and the paper says so: the collected design
+  can bound the text-by-entity interaction only to an upper limit too loose to
+  license the decomposition. The measurement procedure is offered as a
+  diagnostic any rubric instrument can be put through.
+
+stylized_facts:
+  - id: SF1
+    statement: >-
+      A language model's dimensional rating of a fixed text is partly a function
+      of the entity the text is said to be about, rather than of the text alone.
+    aggregates_findings: [F1, F2]
+    aggregation_logic: >-
+      F1 establishes the effect and its reproduction across two designs; F2
+      removes the one account under which the effect would have been an artifact
+      of the first design's stimuli.
+    uniquely_explained_by: >-
+      No account on which the rating is a pure function of the rated text can
+      produce a non-zero effect, because the text is byte-identical across the
+      contrast.
+    body_sections: ["Results — The effect"]
+    provenance:
+      created_by: "author"
+      created_at: "2026-08-29T00:00:00Z"
+
+observations:
+  - id: O1
+    statement: >-
+      Instrument records from the first collection's name-exchange arm, four
+      artifact texts each paired with a prevalent real entity and an invented
+      one, two independent runs.
+    raw_data_pointer: "prevalence_probe/data/run{1,2}/records_*.jsonl"
+    instrument: "eight-dimensional scored rubric administered to six operators across three model families"
+    timestamp: "2026-08-26T00:00:00Z"
+    conditions_at_capture: "frozen protocol and stimulus pack; operator pins literal; zero failures"
+    provenance:
+      created_by: "author"
+      created_at: "2026-08-26T00:00:00Z"
+    body_sections: ["Method — Collections"]
+
+  - id: O2
+    statement: >-
+      Instrument records from the second collection's name-exchange arm, nine
+      entities across three prevalence strata crossed with four artifact texts
+      authored for no entity, six operators, two independent runs, 864 records.
+    raw_data_pointer: "name_effect_probe/data/run{1,2}/records_*.jsonl"
+    instrument: "eight-dimensional scored rubric administered to six operators across three model families"
+    timestamp: "2026-08-26T00:00:00Z"
+    conditions_at_capture: "frozen protocol and stimulus pack; all six operators passed floors in both runs; zero failures"
+    provenance:
+      created_by: "author"
+      created_at: "2026-08-26T00:00:00Z"
+    body_sections: ["Method — Collections"]
+
+methods:
+  - id: M1
+    statement: >-
+      Per-dimension name-exchange magnitude: Euclidean distance between two
+      entities' profiles over the same text and operator, divided by the square
+      root of the number of dimensions.
+    type: "statistical_analysis"
+    inputs: [O1, O2]
+    outputs: [m1, m2, m3, m4]
+    code_anchor: "name_effect_probe/code/stats_core.py"
+    reproducibility:
+      seed: "deterministic (no RNG)"
+      version: "frozen; checksummed in the collection's freeze record"
+      runtime_environment: "Python 3.12"
+    provenance:
+      created_by: "author"
+      created_at: "2026-08-26T00:00:00Z"
+    body_sections: ["Method — The magnitude"]
+
+  - id: M2
+    statement: >-
+      Test-retest normalisation: the same operator's spread over repeat
+      presentations of an identical prompt, used as the yardstick against which
+      a name-exchange magnitude is judged large or small.
+    type: "statistical_analysis"
+    inputs: [O1, O2]
+    outputs: [m2, m4]
+    code_anchor: "name_effect_probe/code/stats_core.py"
+    reproducibility:
+      seed: "deterministic (no RNG)"
+      version: "frozen; checksummed in the collection's freeze record"
+      runtime_environment: "Python 3.12"
+    provenance:
+      created_by: "author"
+      created_at: "2026-08-26T00:00:00Z"
+    body_sections: ["Method — The yardstick"]
+
+  - id: M3
+    statement: >-
+      Weighted two-way text-by-class decomposition of the name-exchange
+      magnitudes, with the interaction mean square referred to the WITHIN-CELL
+      residual mean square rather than to the class effect.
+    type: "statistical_analysis"
+    inputs: [O2]
+    outputs: [m5]
+    code_anchor: "phase2_power/estimate_guard_ratio.py"
+    reproducibility:
+      seed: "deterministic (no RNG)"
+      version: "validated against the collection's own published aggregate before reporting"
+      runtime_environment: "Python 3.12 + numpy + pyyaml"
+    provenance:
+      created_by: "author"
+      created_at: "2026-08-29T00:00:00Z"
+    body_sections: ["Results — What the guard was measuring"]
+
+  - id: M5
+    statement: >-
+      Per-dimension decomposition of the name-exchange movement, validated by
+      requiring the root mean square over dimensions to reproduce the reported
+      aggregate before any per-dimension value is emitted.
+    type: "statistical_analysis"
+    inputs: [O2]
+    outputs: [m7]
+    code_anchor: "phase2_power/per_dimension_leakage.py"
+    reproducibility:
+      seed: "deterministic (no RNG)"
+      version: "validated against the collection's own aggregate before reporting"
+      runtime_environment: "Python 3.12 + numpy"
+    provenance:
+      created_by: "author"
+      created_at: "2026-08-29T00:00:00Z"
+    body_sections: ["Results — The leakage is structured"]
+
+  - id: M4
+    statement: >-
+      Monte Carlo of the sampling behaviour of the interaction-to-residual ratio
+      at the measured value, sweeping the number of texts, to obtain the upper
+      confidence limit a design of each size could defend.
+    type: "simulation"
+    inputs: [m5]
+    outputs: [m6]
+    code_anchor: "phase2_power/equivalence_power.py"
+    reproducibility:
+      seed: "20260829"
+      version: "run twice; byte-identical output"
+      runtime_environment: "Python 3.12 + numpy"
+    provenance:
+      created_by: "author"
+      created_at: "2026-08-29T00:00:00Z"
+    body_sections: ["Results — How tightly neutrality can be bounded"]
+
+measurements:
+  - id: m7
+    statement: >-
+      Per-dimension mean absolute movement under a name exchange in the second
+      collection, ordered: semiotic .859 / .839, cultural .742 / .728, social
+      .659 / .679, economic .542 / .542, experiential .499 / .520, temporal
+      .492 / .583, narrative .490 / .466, ideological .360 / .353.
+    source_observations: [O2]
+    generating_method: M5
+    value: "max/min ratio 2.39 and 2.38; range .499 and .486 rubric points"
+    uncertainty: "two independent runs reported separately; both extremes agree across runs"
+    units: "rubric points per dimension"
+    provenance: {created_by: "author", created_at: "2026-08-29T00:00:00Z"}
+
+  - id: m8
+    statement: >-
+      Second collection, 864 records per run: aggregate mean .824 with 95% CI
+      [.793, .855] in run 1 and .825 with [.794, .856] in run 2; variance shares
+      of total sum of squares are artifact 17.9 and 16.8 percent, operator 7.2
+      and 6.1 percent, name class .6 and .5 percent.
+    source_observations: [O2]
+    generating_method: M3
+    value: "CI [.793,.855] / [.794,.856]; class share .6% / .5%"
+    uncertainty: "two independent runs reported separately"
+    units: "rubric points; percentage of total sum of squares"
+    provenance: {created_by: "author", created_at: "2026-08-29T00:00:00Z"}
+
+  - id: m1
+    statement: "First collection, per-dimension name-exchange magnitude: .584 and .523 across two runs."
+    source_observations: [O1]
+    generating_method: M1
+    value: ".584 / .523"
+    uncertainty: "two independent runs reported separately; no pooling"
+    units: "rubric points per dimension"
+    provenance: {created_by: "author", created_at: "2026-08-26T00:00:00Z"}
+
+  - id: m2
+    statement: "First collection, the same magnitude in test-retest units: 1.194 and 1.016."
+    source_observations: [O1]
+    generating_method: M2
+    value: "1.194 / 1.016"
+    uncertainty: "two independent runs reported separately"
+    units: "multiples of the instrument's own replicate spread"
+    provenance: {created_by: "author", created_at: "2026-08-26T00:00:00Z"}
+
+  - id: m3
+    statement: "Second collection, per-dimension name-exchange magnitude: .824 and .825 across two runs."
+    source_observations: [O2]
+    generating_method: M1
+    value: ".824 / .825"
+    uncertainty: "two independent runs, agreeing to three decimal places"
+    units: "rubric points per dimension"
+    provenance: {created_by: "author", created_at: "2026-08-26T00:00:00Z"}
+
+  - id: m4
+    statement: "Second collection, the same magnitude in test-retest units: 1.152 and 1.092."
+    source_observations: [O2]
+    generating_method: M2
+    value: "1.152 / 1.092"
+    uncertainty: "two independent runs reported separately"
+    units: "multiples of the instrument's own replicate spread"
+    provenance: {created_by: "author", created_at: "2026-08-26T00:00:00Z"}
+
+  - id: m5
+    statement: >-
+      Residual-referenced text-by-entity interaction in the second collection:
+      F = 1.235 and 1.084 on 9 and 848 degrees of freedom, an interaction
+      standard deviation .066 and .039 times the within-cell residual.
+    source_observations: [O2]
+    generating_method: M3
+    value: "F 1.235 / 1.084; ratio .066 / .039; mean ratio .053"
+    uncertainty: "the .05 critical value at these degrees of freedom is approximately 1.89; neither run is close to it"
+    units: "variance ratio; dimensionless"
+    provenance: {created_by: "author", created_at: "2026-08-29T00:00:00Z"}
+
+  - id: m6
+    statement: >-
+      Upper 95 percent confidence limit on the interaction-to-residual ratio as
+      a function of the number of texts, at the measured ratio: .159 at four
+      texts, .130 at eight, .108 at sixteen, .103 at twenty, .100 at
+      twenty-four, .086 at forty-eight.
+    source_observations: [O2]
+    generating_method: M4
+    value: ".159 / .130 / .108 / .103 / .100 / .086"
+    uncertainty: "3,000 simulated experiments per text count; fixed seed"
+    units: "variance ratio; dimensionless"
+    provenance: {created_by: "author", created_at: "2026-08-29T00:00:00Z"}
+
+findings:
+  - id: F1
+    statement: >-
+      Exchanging the entity name while holding the artifact text byte-identical
+      moves the eight-dimensional profile by .55 to .82 rubric points per
+      dimension, which is at or above the instrument's own test-retest spread in
+      every run, and the effect reproduces across two independently designed
+      collections.
+    source_measurements: [m1, m2, m3, m4]
+    generating_method: M1
+    statistical_strength: >-
+      Two independent collections, two independent runs each, six operators
+      across three model families, zero instrument failures; the second
+      collection's two runs agree to three decimal places.
+    conditions: "C1, C2, C3"
+    antecedents: [O1, O2, M1, M2]
+    falsifier: >-
+      A collection on fresh texts and names in which the name-exchange magnitude
+      does not exceed the same operators' replicate spread.
+    provenance: {created_by: "author", created_at: "2026-08-29T00:00:00Z"}
+    body_sections: ["Results — The effect"]
+
+  - id: F2
+    statement: >-
+      The effect is larger, not smaller, when the texts were authored for no
+      entity at all: .824 against .584 per dimension.
+    source_measurements: [m1, m3]
+    generating_method: M1
+    statistical_strength: >-
+      Across-collection comparison on different texts and a different name set;
+      both values reproduce within their own collections.
+    conditions: "C1, C2, C3"
+    antecedents: [F1]
+    falsifier: >-
+      Texts authored for no entity returning a magnitude at or below the
+      magnitude on texts authored for a specific entity.
+    provenance: {created_by: "author", created_at: "2026-08-29T00:00:00Z"}
+    body_sections: ["Results — Against incongruity"]
+
+  - id: F3
+    statement: >-
+      Which of the three candidate routes carries the leakage is not identified
+      by either collection, and the class contrasts that would identify it are
+      not reportable.
+    source_measurements: [m5, m6]
+    generating_method: M3
+    statistical_strength: >-
+      The pre-registered neutrality guard did not return a stable verdict across
+      two runs, and its precedence rule bars reading the class contrasts when it
+      does not.
+    conditions: "C1, C2, C3"
+    antecedents: [O2, M3]
+    falsifier: >-
+      A collection whose neutrality guard returns the same verdict in both runs
+      and whose class contrasts separate the routes.
+    provenance: {created_by: "author", created_at: "2026-08-29T00:00:00Z"}
+    body_sections: ["Results — What is not settled"]
+
+  - id: F4
+    statement: >-
+      Referred to the within-cell residual rather than to the entity main
+      effect, the text-by-entity interaction is estimated at roughly five
+      percent of the residual in both runs and neither test approaches
+      significance, so the blocking verdict reflected the choice of denominator
+      rather than an unstable interaction.
+    source_measurements: [m5]
+    generating_method: M3
+    statistical_strength: >-
+      F = 1.235 and 1.084 on 9 and 848 degrees of freedom against a .05
+      critical value near 1.89; the estimating pipeline reproduces the
+      collection's own published aggregate exactly before reporting.
+    conditions: "C1, C2, C3"
+    antecedents: [F3, M3]
+    falsifier: >-
+      A residual-referenced interaction of the same order as the entity main
+      effect, which would make the two denominators agree.
+    provenance: {created_by: "author", created_at: "2026-08-29T00:00:00Z"}
+    body_sections: ["Results — What the guard was measuring"]
+
+  - id: F5
+    statement: >-
+      A four-text design can bound the interaction-to-residual ratio only below
+      .159, while sixteen texts bound it below .108 and twenty-four below .100,
+      with returns flattening thereafter.
+    source_measurements: [m6]
+    generating_method: M4
+    statistical_strength: "3,000 simulated experiments per text count at the measured ratio; fixed seed; output reproduces byte-identically"
+    conditions: "C1, C2, C3"
+    antecedents: [F4, M4]
+    falsifier: "A simulation at the same measured ratio returning materially different limits under an equivalent decomposition."
+    provenance: {created_by: "author", created_at: "2026-08-29T00:00:00Z"}
+    body_sections: ["Results — How tightly neutrality can be bounded"]
+
+  - id: F6
+    statement: >-
+      The movement is not uniform across the eight dimensions: the largest and
+      smallest differ by a factor of 2.39 and 2.38 in the two runs, and the
+      ordering agrees at both extremes, the semiotic dimension moving most and
+      the ideological least in both.
+    source_measurements: [m7]
+    generating_method: M5
+    statistical_strength: >-
+      Two independent runs; the max-to-min ratio agrees to two decimal places
+      and both extreme dimensions are the same in each.
+    conditions: "C1, C2, C3"
+    antecedents: [F1, M5]
+    falsifier: >-
+      A run in which the dimension ordering does not reproduce, or in which the
+      spread across dimensions is within what re-asking the same question
+      produces.
+    provenance: {created_by: "author", created_at: "2026-08-29T00:00:00Z"}
+    body_sections: ["Results — The leakage is structured"]
+
+  - id: F7
+    statement: >-
+      The name class is the smallest of the three crossed factors, at roughly
+      half a percent of total variance against 17 percent for the artifact and
+      6 to 7 percent for the operator, so a ratio referred to the class effect
+      is a ratio of two small quantities.
+    source_measurements: [m8]
+    generating_method: M3
+    statistical_strength: "Both runs agree on the ordering and on the magnitude of each share to within a percentage point."
+    conditions: "C1, C2, C3"
+    antecedents: [m8, F4]
+    falsifier: "A collection in which the class effect is comparable to the artifact or operator effect, which would make the two denominators behave alike."
+    provenance: {created_by: "author", created_at: "2026-08-29T00:00:00Z"}
+    body_sections: ["Results — The effect", "Results — What the guard was measuring"]
+
+propositions:
+  - id: P1
+    statement: >-
+      A language model's dimensional rating of a written artifact is not a pure
+      function of that artifact: the entity the artifact is said to concern
+      carries a measurable share of the rating.
+    type: empirical_finding
+    conditions: "C1, C2, C3"
+    antecedents: [F1, F2, F6]
+    assumptions: [AA1, AA2, AA3]
+    falsifier: >-
+      A name exchange over byte-identical text that leaves the profile within
+      the same operators' replicate spread.
+    evidence:
+      - type: dataset_anchor
+        anchor: "both collections' name-exchange arms, four runs in total"
+      - type: log_anchor
+        anchor: "per-call records with prompt hashes, zero failures in either collection"
+    ruled_out_rivals: [A1]
+    body_sections: ["Results — The effect", "Discussion"]
+    provenance: {created_by: "author", created_at: "2026-08-29T00:00:00Z"}
+
+  - id: P2
+    statement: >-
+      A byte-identical name exchange, paired with a blind recovery probe that
+      asks whether the original entity is still identifiable from the text, is a
+      reusable procedure for measuring how much of any rubric instrument's
+      reading is carried by the label rather than by the rated material.
+    type: methodological
+    conditions: "C2"
+    antecedents: [F1, F2, P1]
+    assumptions: [AA1, AA2]
+    falsifier: >-
+      The procedure returning a non-zero leakage estimate on an instrument
+      constructed so that the label cannot enter, which would show the estimate
+      measures something other than leakage.
+    evidence:
+      - type: code_anchor
+        anchor: "the magnitude estimator and the decomposition are published and run from a fixed seed"
+    ruled_out_rivals: []
+    body_sections: ["A diagnostic other instruments can be put through"]
+    provenance: {created_by: "author", created_at: "2026-08-29T00:00:00Z"}
+
+  - id: P3
+    statement: >-
+      A neutrality guard that refers a text-by-entity interaction to the entity
+      main effect rather than to the within-cell residual can return a blocking
+      verdict when the interaction is small, because the reference quantity
+      moves with the main effect and with replicate count while the interaction
+      does not.
+    type: measurement_result
+    conditions: "C2"
+    antecedents: [F3, F4, F7]
+    assumptions: [AA1]
+    falsifier: >-
+      A demonstration that the two denominators order designs identically, which
+      would make the choice immaterial.
+    evidence:
+      - type: dataset_anchor
+        anchor: "the same records yield a firing guard under one denominator and an unremarkable ratio under the other"
+    ruled_out_rivals: []
+    body_sections: ["Results — What the guard was measuring", "Discussion"]
+    provenance: {created_by: "author", created_at: "2026-08-29T00:00:00Z"}
+
+derivations:
+  - id: D1
+    statement: >-
+      P1 follows from F1 and F2 by elimination: the rated text is constant
+      across the contrast, so any non-zero movement must enter through the only
+      thing that changed, and the one account under which the movement would be
+      an artifact of stimulus construction is refuted by F2.
+    from: [F1, F2]
+    to: P1
+    reasoning_type: "deductive"
+    provenance: {created_by: "author", created_at: "2026-08-29T00:00:00Z"}
+    body_sections: ["Results — The effect"]
+
+  - id: D2
+    statement: >-
+      P3 follows from F4 by contrast: the same records return a firing guard
+      under one denominator and a ratio near zero under the other, so the
+      verdict is a property of the reference quantity rather than of the data.
+    from: [F3, F4]
+    to: P3
+    reasoning_type: "deductive"
+    provenance: {created_by: "author", created_at: "2026-08-29T00:00:00Z"}
+    body_sections: ["Results — What the guard was measuring"]
+
+alternative_explanations:
+  - id: A1
+    statement: >-
+      The effect is incongruity: a text written for one entity carries traces of
+      it, and exchanging the label creates a mismatch the model registers.
+    rules_out_required: [F2]
+    ruled_out_by: [F2]
+    rules_out_status: "rejected"
+    reasoning: >-
+      Texts authored for no entity should have shrunk the effect toward the
+      instrument's noise. They enlarged it, from .584 to .824 per dimension.
+    provenance: {created_by: "author", created_at: "2026-08-26T00:00:00Z"}
+    body_sections: ["Results — Against incongruity"]
+
+  - id: A2
+    statement: >-
+      The effect is driven by how well known an entity is, so that leakage is a
+      function of prevalence rather than of the label as such.
+    rules_out_required: [NF2]
+    ruled_out_by: [NF2]
+    rules_out_status: "partially_ruled_out"
+    reasoning: >-
+      A pre-registered prevalence split returned eight estimates across two
+      runs, none significant, with seven of the eight pointing opposite to the
+      prediction and no gradient in the stratum means. This addresses
+      prevalence, not whether the model knows the entity at all, and the two
+      must not be collapsed.
+    provenance: {created_by: "author", created_at: "2026-08-26T00:00:00Z"}
+    body_sections: ["Results — Against a prevalence account"]
+
+  - id: A3
+    statement: >-
+      The effect is carried by prior content: what the model has stored about
+      the particular entity enters the reading.
+    rules_out_required: [F3]
+    ruled_out_by: []
+    rules_out_status: "open"
+    reasoning: "Separating this from A4 and A5 requires the class contrasts, which F3 records as unreportable."
+    provenance: {created_by: "author", created_at: "2026-08-29T00:00:00Z"}
+    body_sections: ["Results — What is not settled"]
+
+  - id: A4
+    statement: "The effect is carried by familiarity rather than by content: knowing of an entity is enough."
+    rules_out_required: [F3]
+    ruled_out_by: []
+    rules_out_status: "open"
+    reasoning: "Same identification barrier as A3."
+    provenance: {created_by: "author", created_at: "2026-08-29T00:00:00Z"}
+    body_sections: ["Results — What is not settled"]
+
+  - id: A5
+    statement: >-
+      The effect is carried by the name as a bare token sequence, independent of
+      anything the model knows about the entity.
+    rules_out_required: [F3]
+    ruled_out_by: []
+    rules_out_status: "open"
+    reasoning: >-
+      Same identification barrier as A3, and this route is the one with
+      independent support in the surrounding literature, where form alone is
+      shown to carry meaning-like signal in both people and models. Its
+      existence would therefore be confirmatory; only its share relative to A3
+      would be new.
+    provenance: {created_by: "author", created_at: "2026-08-29T00:00:00Z"}
+    body_sections: ["Results — What is not settled", "Discussion"]
+
+robustness_checks:
+  - id: RC1
+    statement: >-
+      Every verdict is required to hold in two independently collected runs, and
+      any verdict that differs between them is removed rather than confirmed.
+    varied_parameter: "collection run"
+    range_explored: "two runs in each of two collections"
+    result_stability: "confirmed"
+    affects_nodes: [F1, F2, F3, F4]
+    source_method: M1
+    provenance: {created_by: "author", created_at: "2026-08-26T00:00:00Z"}
+    body_sections: ["Method — Reproduction requirement"]
+
+  - id: RC2
+    statement: >-
+      Re-estimate the interaction on sixteen to twenty-four texts so that
+      neutrality can be bounded tightly enough to license the route
+      decomposition.
+    varied_parameter: "number of texts"
+    range_explored: "16 to 24, per the simulated limits in m6"
+    result_stability: "planned"
+    affects_nodes: [F3, A3, A4, A5]
+    source_method: M4
+    provenance: {created_by: "author", created_at: "2026-08-29T00:00:00Z"}
+    body_sections: ["Pre-registered continuation"]
+
+  - id: RC3
+    statement: >-
+      Blind multi-family recovery probe testing whether the original entity
+      remains identifiable from the text once the name is exchanged, run to
+      completion before any further outcome collection.
+    varied_parameter: "text set"
+    range_explored: "both collections' text sets, scored against the exchange's own variant list"
+    result_stability: "planned"
+    affects_nodes: [F1, F2, P1, P2]
+    source_method: M1
+    provenance: {created_by: "author", created_at: "2026-08-29T00:00:00Z"}
+    body_sections: ["Pre-registered continuation"]
+
+assumption_atoms:
+  - id: AA1
+    statement: >-
+      Euclidean distance over the eight dimensions, divided by the square root
+      of their number, is an adequate scalar summary of how far two profiles
+      differ.
+    type: "measurement_construct"
+    relaxable: true
+    relaxation_consequence: >-
+      Under a different summary the magnitudes change scale; the sign and the
+      comparison against replicate spread are preserved for any monotone
+      summary.
+    affects: [M1, F1, F2]
+    provenance: {created_by: "author", created_at: "2026-08-26T00:00:00Z"}
+    body_sections: ["Method — The magnitude"]
+
+  - id: AA2
+    statement: >-
+      An operator's spread over repeat presentations of an identical prompt is
+      an adequate reference for what counts as instrument noise.
+    type: "measurement_construct"
+    relaxable: true
+    relaxation_consequence: >-
+      A between-operator reference would be wider and would make the same effect
+      look smaller; the choice is stated rather than assumed, and both are
+      reported.
+    affects: [M2, F1]
+    provenance: {created_by: "author", created_at: "2026-08-26T00:00:00Z"}
+    body_sections: ["Method — The yardstick"]
+
+  - id: AA3
+    statement: >-
+      Six operators across three model families are enough to establish that the
+      effect is not a property of one model.
+    type: "sampling"
+    relaxable: true
+    relaxation_consequence: >-
+      With fewer families the result would be an observation about one vendor's
+      models rather than about the instrument class.
+    affects: [F1, P1]
+    provenance: {created_by: "author", created_at: "2026-08-26T00:00:00Z"}
+    body_sections: ["Method — Operators"]
+
+boundary_conditions:
+  - id: C1
+    statement: >-
+      All claims concern language-model cohorts and the readings they produce.
+      Nothing here is a claim about people.
+  - id: C2
+    statement: >-
+      The instrument is a constrained, theory-scored dimensional rubric.
+      Whether the same holds for open-ended dimensional batteries is untested.
+  - id: C3
+    statement: >-
+      Nine entity names, one product domain, English-language artifacts of
+      roughly a paragraph in length.
+
+limitations:
+  - id: L1
+    statement: "The route carrying the leakage is unidentified, and the paper does not claim otherwise."
+    affects: [F3, P1, A3, A4, A5]
+    severity: "high"
+    mitigation: "RC2 states the design that would identify it and the text count the simulation says it needs."
+    provenance: {created_by: "author", created_at: "2026-08-29T00:00:00Z"}
+    body_sections: ["Limitations"]
+
+  - id: L2
+    statement: >-
+      The first collection's contrasts each paired a prevalent real entity
+      against an invented one, so that collection alone cannot separate what the
+      model knows about an entity from the unfamiliarity of an invented name.
+    affects: [F1, A3, A4]
+    severity: "medium"
+    mitigation: >-
+      The second collection contains real-against-real contrasts at matched
+      prevalence and so resolves the confound by design; reading them is what
+      F3 blocks.
+    provenance: {created_by: "author", created_at: "2026-08-26T00:00:00Z"}
+    body_sections: ["Limitations"]
+
+  - id: L3
+    statement: "Nine names in one domain; whether the magnitude transfers to other categories is untested."
+    affects: [F1, P1]
+    severity: "medium"
+    mitigation: "Stated as scope; the diagnostic of P2 is what a reader would run on their own domain."
+    provenance: {created_by: "author", created_at: "2026-08-26T00:00:00Z"}
+    body_sections: ["Limitations"]
+
+  - id: L4
+    statement: >-
+      No human comparison was collected, so the size of the effect cannot be
+      compared against what a label does to a person reading the same text.
+    affects: [P1]
+    severity: "medium"
+    mitigation: "The nearest human evidence is cited rather than reproduced, and is on a different response measure."
+    provenance: {created_by: "author", created_at: "2026-08-29T00:00:00Z"}
+    body_sections: ["Limitations"]
+
+  - id: L5
+    statement: >-
+      Whether the exchanged name removes what the model knows has not yet been
+      measured, so the reported magnitudes may be lower bounds.
+    affects: [F1, F2, P1]
+    severity: "high"
+    mitigation: "RC3 is the probe that settles it and is pre-registered to run before any further outcome collection."
+    provenance: {created_by: "author", created_at: "2026-08-29T00:00:00Z"}
+    body_sections: ["Limitations", "Pre-registered continuation"]
+
+  - id: L6
+    statement: >-
+      The operator pool is drawn from commercially served models rather than
+      open-weight ones, so the instrument cannot be versioned or inspected by
+      the researcher, and whether the effect survives on a pool that can be is
+      untested.
+    affects: [F1, P1, AA3]
+    severity: "medium"
+    mitigation: >-
+      Literal pinning and full call logging fix what was used and make the
+      mismatch auditable; they do not remove it. Stated as an open question
+      rather than a solved one.
+    provenance: {created_by: "author", created_at: "2026-08-29T00:00:00Z"}
+    body_sections: ["Method — The instrument and the operators"]
+
+  - id: L7
+    statement: >-
+      The harness logs responses but not token probabilities, so the reading's
+      uncertainty cannot be modelled from the released records, only its
+      location.
+    affects: [F1, F4]
+    severity: "low"
+    mitigation: "Stated as a gap; the released records support re-analysis of location but not of confidence."
+    provenance: {created_by: "author", created_at: "2026-08-29T00:00:00Z"}
+    body_sections: ["Method — The instrument and the operators"]
+
+negative_findings:
+  - id: NF1
+    statement: >-
+      No prior study holds a multi-sentence artifact byte-identical while
+      exchanging only the entity name and scoring a dimensional rubric; adjacent
+      work rates the stimulus itself, or manipulates a name in a vignette and
+      measures a different response class in people.
+    expected_observation: "A study exchanging an entity label over fixed text and reporting a dimensional profile."
+    source_method: "bibliographic search across two indices, with every candidate record checked against the registry of record"
+    affects_nodes: [SF1, P1]
+    motivates: [SF1]
+    provenance: {created_by: "author", created_at: "2026-08-29T00:00:00Z"}
+    body_sections: ["Related work"]
+
+  - id: NF2
+    statement: >-
+      A pre-registered test of the prevalence account returned eight estimates
+      across two independent runs, none significant, with seven pointing
+      opposite to the predicted direction and no gradient across strata.
+    expected_observation: "A negative slope of frame-sensitivity on corpus prevalence, if a memorised prior drove the readings."
+    source_method: "pre-registered slope test, four variants, two runs"
+    affects_nodes: [A2]
+    motivates: []
+    provenance: {created_by: "author", created_at: "2026-08-26T00:00:00Z"}
+    body_sections: ["Results — Against a prevalence account"]
+
+corpus_precedents:
+  - paper_key: "2026v"
+    claim: >-
+      The instrument and its eight dimensions, and the multilingual prompt set
+      that fixes their wording.
+    note: "Supplies the rubric whose behaviour is measured here."
+  - paper_key: "2026a"
+    claim: "The dimensional framework the rubric operationalises."
+    note: "Cited for the construct, not for any result."
+  - paper_key: "2026e"
+    claim: "Profile distance and the reading floor below which two profiles are treated as indistinguishable."
+    note: "Supplies the geometry in which a magnitude is judged."
+
+external_anchors:
+  - citation_key: "majnemer-2022-names-from-nowhere"
+    use: >-
+      The nearest design analogue in any literature: a name placed inside an
+      otherwise fixed vignette shifts experimental responses, in people.
+    claim: "Establishes that a label inside fixed text can move a reading, on a different response class and population."
+  - citation_key: "marklova-2025-iconicity-large-language"
+    use: "Evidence that form-to-meaning association is present in language models."
+    claim: "Supports A5 as a live route and is why its existence would be confirmatory rather than novel."
+  - citation_key: "loakman-2024-ears-see-eyes"
+    use: "Sound-symbolism experiments run on multimodal language models."
+    claim: "Second independent statement of the same route."
+  - citation_key: "gatti-2024-valence-without-meaning"
+    use: "Word form alone carries valence in people, separately from meaning."
+    claim: "The human-side mechanism for a bare-string route."
+  - citation_key: "lowrey-2007-phonetic-symbolism-brand"
+    use: "The consumer-research tradition on name sound and preference."
+    claim: "Places the phenomenon in a literature older than the instrument."
+  - citation_key: "trott-2024-augment-psycholinguistic-datasets"
+    use: "Dimensional ratings elicited from a language model against human gold standards."
+    claim: "The closest instrument-level neighbour; rates the stimulus itself rather than a label over fixed text."
+  - citation_key: "kamruzzaman-2024-global-good-local"
+    use: "Entity identity systematically shifts a language model's judgements between classes of brand."
+    claim: "Establishes that identity biases output; leaves open whether it enters a rating nominally of a fixed text."
+  - citation_key: "kello-2025-contextual-assembly-lexical"
+    use: "How context assembles the lexical functions a dimensional rating draws on."
+    claim: "The mechanism a label would have to act through, in the same instrument literature."
+  - citation_key: "brickman-2025-large-language-models"
+    use: "Review of language models used as psychological assessors."
+    claim: "Places the instrument-validity question inside the assessor literature rather than beside it."
+  - citation_key: "dickson-2025-comparing-perceptual-judgments"
+    use: "Perceptual judgments of stimuli in multimodal models compared against human judgments on the same items."
+    claim: "Second instrument-level neighbour; like the first, the rated object is the thing the rating is about."
+  - citation_key: "hussain-2024-tutorial-open-source"
+    use: "The transparency and reproducibility case for open-weight models in behavioural research."
+    claim: "Grounds L6, the cost of an operator pool the researcher cannot version."
+  - citation_key: "duan-2024-macbehaviour-r-package"
+    use: "A purpose-built package for language-model behavioural experimentation, including logging of responses and token probabilities."
+    claim: "Sets the floor this study's harness is measured against, and grounds L7."
+  - citation_key: "feuerriegel-2026-reporting-checklist-large"
+    use: "Consensus reporting checklist for language models in behavioural science."
+    claim: "The reporting standard followed; the item mapping is released with the dataset."
+  - citation_key: "linde-2023-decisions-about-equivalence"
+    use: "Comparison of equivalence procedures and their discrimination at small samples."
+    claim: "Governs how the bound in F5 may be stated."
+
