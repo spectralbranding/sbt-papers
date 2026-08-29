@@ -38,14 +38,18 @@ thesis: |
   allocation (invest in proportion to cohort weight over marginal cost) that
   generalizes Dorfman–Steiner to eight perceptual dimensions. The central
   construct is the alignment gap: the economic loss incurred when the portfolio
-  is optimized for the founder's spectral profile rather than the cohort's,
-  which is bounded below by the Fisher–Rao distance between the two weight
-  vectors — giving "product-market fit failure" a geometric floor that improved
-  execution cannot recover, only reallocation toward the cohort's measured
-  weights closes it. The framework further characterizes when one portfolio
-  efficiently serves multiple cohorts (a Fisher–Rao ball of radius r < pi/4),
-  reads spectral metamerism as cost minimization (the cheapest portfolio
-  achieving a target perception), and extends the two-media synergy model to a
+  is optimized for the founder's spectral profile rather than the cohort's.
+  Where the founder's weights are at least as concentrated as the cohort's, that
+  gap is bounded below by a quartic function of the Fisher–Rao distance between
+  the two weight vectors; outside that regime it is not sign-definite, and it
+  vanishes identically for a uniform founder. The bound is far too loose to
+  serve as a managerial trigger, so the gap is computed directly — what it
+  establishes is that "product-market fit failure" has a conditional geometric
+  floor that improved execution on the chosen dimensions cannot recover, only
+  reallocation toward the cohort's measured weights closes it. The framework
+  further characterizes when one portfolio efficiently serves multiple cohorts
+  (a Fisher–Rao ball of radius r < pi/4), reads spectral metamerism as cost
+  minimization (the cheapest portfolio achieving a target perception), and extends the two-media synergy model to a
   cohort-dependent interaction matrix W(c). It supplies the optimization layer
   missing from current brand-tracking systems: a diagnostic (alignment audit)
   and a prescriptive tool (dimension-specific budget ratios). The numerical
@@ -270,7 +274,7 @@ propositions:
     body_sections: ["§The Alignment Gap", "Definition 1"]
   - id: P5
     statement: >-
-      (Theorem 2, corrected at v2.0.0) Under the concentration hypothesis
+      (Theorem 2) Under the concentration hypothesis
       ||w(c)||_2 <= ||w(f)||_2 — the founder's weights are at least as concentrated
       as the cohort's — the alignment gap is bounded below by the squared Euclidean
       separation, A(f,c) >= ||w(f) − w(c)||_2^2 / (2·lambda·alpha-bar), which is exact

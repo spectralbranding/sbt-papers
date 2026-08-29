@@ -95,14 +95,14 @@ claims:
   - P1
 - id: P5
   type: proposition
-  statement: '(Theorem 2, corrected at v2.0.0) Under the concentration hypothesis ||w(c)||_2 <= ||w(f)||_2
-    — the founder''s weights are at least as concentrated as the cohort''s — the alignment gap is bounded
-    below by the squared Euclidean separation, A(f,c) >= ||w(f) − w(c)||_2^2 / (2·lambda·alpha-bar), which
-    is exact algebra, and in Hellinger form by A(f,c) >= H(f,c)^4 / (4·lambda·alpha-bar). The Hellinger
-    form is QUARTIC in the distance, not quadratic, and the hypothesis is necessary: without it the gap
-    is not sign-definite and vanishes identically for a uniform founder. Perceptual separation therefore
-    bounds economic loss only inside the concentration regime, and the bound is far too loose to serve
-    as a managerial trigger — the gap is computed directly instead.'
+  statement: '(Theorem 2) Under the concentration hypothesis ||w(c)||_2 <= ||w(f)||_2 — the founder''s
+    weights are at least as concentrated as the cohort''s — the alignment gap is bounded below by the
+    squared Euclidean separation, A(f,c) >= ||w(f) − w(c)||_2^2 / (2·lambda·alpha-bar), which is exact
+    algebra, and in Hellinger form by A(f,c) >= H(f,c)^4 / (4·lambda·alpha-bar). The Hellinger form is
+    QUARTIC in the distance, not quadratic, and the hypothesis is necessary: without it the gap is not
+    sign-definite and vanishes identically for a uniform founder. Perceptual separation therefore bounds
+    economic loss only inside the concentration regime, and the bound is far too loose to serve as a managerial
+    trigger — the gap is computed directly instead.'
   testable: true
   tested_in_paper: true
   status: not_tested
@@ -216,7 +216,10 @@ acceptance:
   falsification: If the value-net-cost optimum is not proportional to w_i(c)/alpha_i under quadratic costs,
     Theorem 1 fails.
 - claim_id: P5
-  criterion: Holds if (Theorem 2, corrected at v2.
+  criterion: Holds if (Theorem 2) Under the concentration hypothesis ||w(c)||_2 <= ||w(f)||_2 — the founder's
+    weights are at least as concentrated as the cohort's — the alignment gap is bounded below by the squared
+    Euclidean separation, A(f,c) >= ||w(f) − w(c)||_2^2 / (2·lambda·alpha-bar), which is exact algebra,
+    and in Hellinger form by A(f,c) >= H(f,c)^4 / (4·lambda·alpha-bar).
   falsification: If a founder–cohort pair satisfying ||w(c)||_2 <= ||w(f)||_2 attains an alignment gap
     below ||w(f) − w(c)||_2^2 / (2·lambda·alpha-bar), the corrected Theorem 2 fails.
 - claim_id: P7
