@@ -126,6 +126,15 @@ dependencies:
   claim: 'anchor: trott-2024-augment-psycholinguistic-datasets'
   doi: 10.3758/s13428-024-02337-z
 - relationship: extends
+  claim: 'anchor: argyle-2023-out-one-many'
+  doi: 10.1017/pan.2023.2
+- relationship: extends
+  claim: 'anchor: horton-2023-large-language-models'
+  doi: 10.3386/w31122
+- relationship: extends
+  claim: 'anchor: dillion-2023-can'
+  doi: 10.1016/j.tics.2023.04.008
+- relationship: extends
   claim: 'anchor: kamruzzaman-2024-global-good-local'
   doi: 10.18653/v1/2024.emnlp-main.707
 - relationship: extends
