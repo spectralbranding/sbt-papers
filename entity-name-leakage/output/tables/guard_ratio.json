@@ -1,0 +1,33 @@
+{
+  "validation": {
+    "run1": 0.824,
+    "run2": 0.825
+  },
+  "runs": {
+    "run1": {
+      "n_texts": 4,
+      "n_obs": 864,
+      "ms_interaction": 0.21784716490681905,
+      "ms_residual": 0.1763777635629683,
+      "F": 1.2351169473188486,
+      "df_interaction": 9,
+      "df_residual": 848,
+      "sd_interaction": 0.02771194465817902,
+      "sd_residual": 0.4199735272168572,
+      "ratio_sd_interaction_over_sd_residual": 0.06598497967675401
+    },
+    "run2": {
+      "n_texts": 4,
+      "n_obs": 864,
+      "ms_interaction": 0.1958950925938651,
+      "ms_residual": 0.1807579089625406,
+      "F": 1.0837428564990839,
+      "df_interaction": 9,
+      "df_residual": 848,
+      "sd_interaction": 0.016742706334248892,
+      "sd_residual": 0.42515633473175557,
+      "ratio_sd_interaction_over_sd_residual": 0.03938011730393807
+    }
+  },
+  "ratio_mean": 0.05268254849034604
+}

@@ -215,11 +215,19 @@ This paper is archived at [10.5281/zenodo.22161305](https://doi.org/10.5281/zeno
 
 ### *The dataset of record*
 
-The instrument records for both collections are released in full: every call with its prompt hash, parameters and response, alongside the frozen protocols, stimulus packs and freeze records that fix what was decided before collection began. The freeze records carry SHA-256 checksums for the protocol, the stimulus pack and the analysis code, so a reader can confirm that the analysis was written against the pre-registration rather than against the data.
+The instrument records for both collections are released in full at [10.57967/hf/10159](https://doi.org/10.57967/hf/10159): every call with its prompt hash, parameters and response, alongside the frozen protocols, stimulus packs, harness code and freeze records that fix what was decided before collection began. The freeze records carry SHA-256 checksums for the protocol, the stimulus pack and the analysis code, so a reader can confirm that the analysis was written against the pre-registration rather than against the data.
+
+Eight of those checksums do not match what is published, and the mismatch is the record working rather than failing. A freeze fixes the state before collection; what changed afterwards is recorded as an append-only amendment in the relevant protocol, and the mismatch is how a reader finds it without relying on this account. Two amendments changed analysis code. One rewrote a reporting module during the first run and before any collected value was read. The other, taken up in the re-analysis above, corrected the neutrality guard after both runs had been collected and read; the more permissive variant that would have cleared the guard was computed, reported as a diagnostic and deliberately not adopted as the decision rule.
 
 ### *Companion computation script*
 
-The reported re-analysis and both simulations are reproducible from published scripts. `estimate_guard_ratio.py` produces Table 4, `equivalence_power.py` produces Table 5, `per_dimension_leakage.py` produces Table 3, and `simulate_guard_power.py` produces the guard-reproducibility analysis referenced in the discussion. Each carries a fixed seed and its run command in its docstring; all three were run twice and produce byte-identical output. `estimate_guard_ratio.py` validates itself against the collection's own published aggregate before reporting and exits without reporting if that validation fails.
+The reported re-analysis and both simulations are reproducible from four published scripts at `code/`. `estimate_guard_ratio.py` produces Table 4, `per_dimension_leakage.py` produces Table 3, `equivalence_power.py` produces Table 5, and `simulate_guard_power.py` produces the guard-reproducibility analysis referenced in the discussion. Each carries a fixed seed, its run command in its docstring, and its dependencies pinned inline, so `uv` is the only prerequisite. `reproduce.sh` runs all four against a downloaded collection:
+
+    hf download spectralbranding/entity-name-leakage \
+        --repo-type dataset --local-dir enl-data
+    ./reproduce.sh enl-data/second_collection
+
+All four were run twice and produce byte-identical tables in `output/tables/`. `estimate_guard_ratio.py` validates itself against the collection's own published aggregate before reporting and exits without reporting if that validation fails.
 
 ## Acknowledgments
 

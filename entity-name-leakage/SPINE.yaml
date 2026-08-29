@@ -131,7 +131,7 @@ methods:
     type: "statistical_analysis"
     inputs: [O2]
     outputs: [m5]
-    code_anchor: "phase2_power/estimate_guard_ratio.py"
+    code_anchor: "code/estimate_guard_ratio.py"
     reproducibility:
       seed: "deterministic (no RNG)"
       version: "validated against the collection's own published aggregate before reporting"
@@ -149,7 +149,7 @@ methods:
     type: "statistical_analysis"
     inputs: [O2]
     outputs: [m7]
-    code_anchor: "phase2_power/per_dimension_leakage.py"
+    code_anchor: "code/per_dimension_leakage.py"
     reproducibility:
       seed: "deterministic (no RNG)"
       version: "validated against the collection's own aggregate before reporting"
@@ -167,7 +167,7 @@ methods:
     type: "simulation"
     inputs: [m5]
     outputs: [m6]
-    code_anchor: "phase2_power/equivalence_power.py"
+    code_anchor: "code/equivalence_power.py"
     reproducibility:
       seed: "20260829"
       version: "run twice; byte-identical output"
@@ -642,6 +642,18 @@ boundary_conditions:
     statement: >-
       Nine entity names, one product domain, English-language artifacts of
       roughly a paragraph in length.
+  - id: C4
+    statement: >-
+      Two amendments changed analysis code after the freeze, and both are
+      recorded as append-only entries in the collections' own protocols. One
+      rewrote a reporting module during the first run, before any collected
+      value was read. The other corrected the neutrality guard after both runs
+      had been collected and read; it is the correction M3 acts on, it did not
+      change the guard's verdict, and the more permissive variant that would
+      have cleared the guard was computed, reported as a diagnostic, and not
+      adopted as the decision rule. Eight published checksums therefore do not
+      match, which is how a reader locates the changes independently of this
+      statement.
 
 limitations:
   - id: L1
