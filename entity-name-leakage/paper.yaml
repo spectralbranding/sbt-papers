@@ -77,18 +77,18 @@ methodology:
     method: Python 3.12
 acceptance:
 - claim_id: P1
-  criterion: 'Holds if a language model''s dimensional rating of a written artifact is not a pure function
+  criterion: 'Holds if A language model''s dimensional rating of a written artifact is not a pure function
     of that artifact: the entity the artifact is said to concern carries a measurable share of the rating.'
   falsification: A name exchange over byte-identical text that leaves the profile within the same operators'
     replicate spread.
 - claim_id: P2
-  criterion: Holds if a byte-identical name exchange, paired with a blind recovery probe that asks whether
+  criterion: Holds if A byte-identical name exchange, paired with a blind recovery probe that asks whether
     the original entity is still identifiable from the text, is a reusable procedure for measuring how
     much of any rubric instrument's reading is carried by the label rather than by the rated material.
   falsification: The procedure returning a non-zero leakage estimate on an instrument constructed so that
     the label cannot enter, which would show the estimate measures something other than leakage.
 - claim_id: P3
-  criterion: Holds if a neutrality guard that refers a text-by-entity interaction to the entity main effect
+  criterion: Holds if A neutrality guard that refers a text-by-entity interaction to the entity main effect
     rather than to the within-cell residual can return a blocking verdict when the interaction is small,
     because the reference quantity moves with the main effect and with replicate count while the interaction
     does not.

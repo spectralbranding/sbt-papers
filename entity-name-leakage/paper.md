@@ -113,7 +113,7 @@ They enlarged it, from .584 to .824 per dimension — a 41% increase on texts au
 
 ### *The leakage is structured, and the structure reproduces*
 
-The movement is not spread evenly over the eight dimensions (Table 3). The largest and smallest dimensions differ by a factor of 2.39 in the first run and 2.38 in the second, and the ordering agrees: the semiotic dimension moves most in both runs, the ideological dimension least in both.
+The movement is not spread evenly over the eight dimensions (Table 3). The largest and smallest dimensions differ by a factor of 2.39 in the first run and 2.38 in the second, and the ordering agrees at both extremes: the semiotic dimension moves most in both runs, the ideological dimension least in both.
 
 Table 3: Per-dimension movement under a name exchange, second collection.
 

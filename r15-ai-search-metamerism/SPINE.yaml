@@ -571,7 +571,7 @@ robustness_checks:
     statement: >-
       Temporal stability (Experiment H13, 450 calls, 4 model pairs): all pairwise
       profile cosines > .97 across model versions, ruling out the hypothesis that
-      model scaling will naturally resolve collapse.
+      model version updates alone will resolve collapse.
     type: "version_stability_check"
     sensitivity_of: [F2, P8]
     body_sections: ["§Results: Robustness", "§Limitations and Future Research"]

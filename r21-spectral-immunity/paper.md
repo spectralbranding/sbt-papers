@@ -415,7 +415,7 @@ Table 8 situates the bandwidth-constraint mechanism alongside the prior portfoli
 
 ***Managerial Implications***
 
-**Portfolio architecture is invisible to AI across all archetype types.** As AI-mediated brand interactions grow — what Dubois, Dawson, and Jaiswal [-@dubois-2025-forget-what-you] term the "Share of Model" economy — portfolio strategies become irrelevant in these channels across all seven archetypes tested. Investment shifts from portfolio orchestration (the DO layer) to individual brand specification (the WHAT layer): clarity of brand output characteristics accumulates in AI perception, while portfolio architecture does not.
+**Portfolio architecture is invisible to AI in single-turn interaction across all archetype types.** As AI-mediated brand interactions grow — what Dubois, Dawson, and Jaiswal [-@dubois-2025-forget-what-you] term the "Share of Model" economy — portfolio strategies become irrelevant in these channels across all seven archetypes tested. Investment shifts from portfolio orchestration (the DO layer) to individual brand specification (the WHAT layer): clarity of brand output characteristics accumulates in AI perception, while portfolio architecture does not.
 
 **Shielding is automatic but amplification is impossible.** House-of-brands architecture shields brands from destructive interference automatically in AI perception (good news for Unilever's Dove-Axe contradiction). But constructive interference is equally blocked (bad news for LVMH's luxury cluster synergy). The Yandex branded house — where shared naming maximally saturates the awareness gate — shows the same immunity as LVMH's house of brands.
 

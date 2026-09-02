@@ -94,10 +94,11 @@ claims:
   type: proposition
   statement: Codebook convergence holds in ordering but not in dispersion. All 17 architectures from distinct
     training lineages (Western, Chinese, Russian, Indian, Saudi, Japanese) place the distortion minimum
-    at the same rate condition and reproduce the same rank ordering of the five conditions; the pre-registered
-    dispersion criterion is not met, since the cross-model CV averaged over the four non-degenerate conditions
-    is .171 against a .15 threshold. The rate-distortion ordering is therefore an emergent property of
-    the encoding task, while the magnitude of distortion at a given rate remains architecture-specific.
+    at the same rate condition, and 16 of 17 reproduce the panel's ordering on the three steps the study
+    counts; the pre-registered dispersion criterion is not met, since the cross-model CV averaged over
+    the four non-degenerate conditions is .171 against a .15 threshold. The rate-distortion ordering is
+    therefore an emergent property of the encoding task, while the magnitude of distortion at a given
+    rate remains architecture-specific.
   testable: true
   tested_in_paper: true
   status: not_tested
@@ -150,10 +151,14 @@ acceptance:
 - claim_id: P4
   criterion: 'Holds if the empirical rate-distortion curve is J-shaped: minimum distortion occurs at the
     intermediate bounded format R2 (1-5 ordinal, ~19 bits), not at the highest-rate R1 (100-point allocation,
-    ~26 bits), a 49.'
+    ~26 bits), a 49.4% mean-distortion reduction observed in all 17 architectures and all five brands.'
   falsification: If any model achieved lower distortion at a non-R2 rate, P4 fails.
 - claim_id: P6
-  criterion: Holds if codebook convergence holds in ordering but not in dispersion.
+  criterion: Holds if codebook convergence holds in ordering but not in dispersion. All 17 architectures
+    from distinct training lineages (Western, Chinese, Russian, Indian, Saudi, Japanese) place the distortion
+    minimum at the same rate condition, and 16 of 17 reproduce the panel's ordering on the three steps
+    the study counts; the pre-registered dispersion criterion is not met, since the cross-model CV averaged
+    over the four non-degenerate conditions is .171 against a .15 threshold.
   falsification: If the location of the minimum differed by architecture, or if the rank ordering of the
     five conditions differed by training lineage, P6 fails.
 dependencies:

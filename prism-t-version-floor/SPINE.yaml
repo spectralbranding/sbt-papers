@@ -483,7 +483,7 @@ findings:
       d = −.79; Qwen −.043, d = −.15; pre-registered one-sided p > .999,
       > .999, .829). The reversal is concentrated in a single dimension:
       Semiotic drifts 1.25 / .87 / 1.19 scale points across the three
-      ladders — roughly double any other dimension in every ladder.
+      ladders — the largest cell in every ladder.
     antecedents: [O3, M5, m2]
     provenance:
       created_by: "tool:estimator.py"

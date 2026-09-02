@@ -252,7 +252,8 @@ propositions:
       Codebook convergence holds in ordering but not in dispersion. All 17
       architectures from distinct training lineages (Western, Chinese, Russian,
       Indian, Saudi, Japanese) place the distortion minimum at the same rate
-      condition and reproduce the same rank ordering of the five conditions;
+      condition, and 16 of 17 reproduce the panel's ordering on the three steps
+      the study counts;
       the pre-registered dispersion criterion is not met, since the cross-model
       CV averaged over the four non-degenerate conditions is .171 against a .15
       threshold. The rate-distortion ordering is therefore an emergent property
@@ -299,8 +300,8 @@ propositions:
 findings:
   - id: F1
     statement: >-
-      All 17 models achieve minimum distortion at R2 (.087) versus R1 (.172),
-      a 49.4% reduction, with paired t(16)=11.92, p<.001, d_z=2.89 for R1 vs R2
+      All 17 models achieve minimum distortion at R2, and the panel mean falls
+      from R1 (.172) to R2 (.087), a 49.4% reduction, with paired t(16)=11.92, p<.001, d_z=2.89 for R1 vs R2
       (17/17 models) and Fisher combined chi-squared(6)=69.06, p<.001; the J-shape
       is robust across every architecture and brand.
     type: "primary_empirical_result"
@@ -318,7 +319,8 @@ findings:
       distortion is an arithmetic function of the canonical profile and whose
       near-zero dispersion is therefore not a measurement of encoder agreement.
       What survives is ordinal: all 17 architectures place the minimum at the
-      same condition and reproduce the same rank ordering across conditions.
+      same condition, and 16 of 17 reproduce the panel's ordering on the three
+      steps the study counts.
     type: "convergence_result"
     source_measurements: [m_convergence, m_curve]
     generating_method: M3
