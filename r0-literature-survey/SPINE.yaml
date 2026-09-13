@@ -164,12 +164,21 @@ propositions:
 
   - id: P8
     statement: >-
-      Topological data analysis (persistent homology) supplies coordinate-free,
-      high-dimensional tools that could reveal structural features (holes,
-      loops, voids) in brand-perception point clouds invisible to MDS, but has
-      seen essentially no adoption in marketing — a missed opportunity
-      attributable to disciplinary boundaries rather than unsuitability.
-    conditions: null
+      Topological data analysis has been adopted in marketing on BEHAVIORAL data
+      (clickstream persistence diagrams discriminating buyers from non-buyers);
+      the unoccupied case is PERCEPTUAL data — multi-attribute ratings of brands
+      by multiple observers — and competitive positioning in an attribute space.
+      What such an analysis could claim is bounded by three constraints:
+      persistent homology is coordinate-free but not metric-free, so on
+      non-commensurate attribute axes the barcode depends on the chosen metric;
+      homology recovery has a sample cost growing with dimension, so at realistic
+      per-brand sample sizes only the zeroth Betti number is defensible; and
+      persistence of β₀ is single-linkage clustering read at all scales, which is
+      a principled way to avoid pre-specifying k rather than a new construct.
+    conditions: >-
+      The metric constraint binds wherever the attribute axes are not established
+      as commensurate. The sample constraint binds at the hundreds-of-ratings-per-
+      brand densities typical of perception designs, not in principle.
     antecedents: [P2]
     evidence:
       - type: citation
@@ -177,6 +186,21 @@ propositions:
           TDA fundamentals and adjacent-field applications (finance, neural
           fMRI) demonstrating it captures perceptual structure.
         citation_keys: [carlsson-2009-topology-data-bulletin, edelsbrunner-2010-computational-topology-introduction, yen-2021-using-topological-data, carrire-2020-perslay-neural-network]
+      - type: citation
+        anchor: >-
+          Persistent homology already applied in marketing to clickstream data:
+          session-level page transitions as Markov chains, persistence diagrams
+          extracted from the transition structure, buyers discriminated from
+          non-buyers.
+        citation_keys: [lakshminarayan-2020-topological-data-analysis-digital-marketing]
+      - type: citation
+        anchor: >-
+          The three boundary conditions: diagram distance is bounded by the
+          chosen metric rather than freed from it; homology recovery from random
+          samples carries a dimension-dependent sample cost; bootstrap confidence
+          bands are the standard test of whether a feature is separable from
+          sampling noise.
+        citation_keys: [cohen-steiner-2007-stability-persistence-diagrams, niyogi-2008-finding-homology-submanifolds, fasy-2014-confidence-sets-persistence]
     body_sections: ["7. Topological Data Analysis in Marketing"]
 
   - id: P9

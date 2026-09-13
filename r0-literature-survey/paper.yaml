@@ -121,10 +121,14 @@ claims:
   - P2
 - id: P8
   type: proposition
-  statement: Topological data analysis (persistent homology) supplies coordinate-free, high-dimensional
-    tools that could reveal structural features (holes, loops, voids) in brand-perception point clouds
-    invisible to MDS, but has seen essentially no adoption in marketing — a missed opportunity attributable
-    to disciplinary boundaries rather than unsuitability.
+  statement: 'Topological data analysis has been adopted in marketing on BEHAVIORAL data (clickstream
+    persistence diagrams discriminating buyers from non-buyers); the unoccupied case is PERCEPTUAL data
+    — multi-attribute ratings of brands by multiple observers — and competitive positioning in an attribute
+    space. What such an analysis could claim is bounded by three constraints: persistent homology is coordinate-free
+    but not metric-free, so on non-commensurate attribute axes the barcode depends on the chosen metric;
+    homology recovery has a sample cost growing with dimension, so at realistic per-brand sample sizes
+    only the zeroth Betti number is defensible; and persistence of β₀ is single-linkage clustering read
+    at all scales, which is a principled way to avoid pre-specifying k rather than a new construct.'
   testable: false
   tested_in_paper: false
   status: not_tested

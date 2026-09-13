@@ -6,7 +6,7 @@ ORCID: 0009-0000-6893-9231
 
 DOI: [10.5281/zenodo.18945217](https://doi.org/10.5281/zenodo.18945217)
 
-Working Paper v1.4.0 – March 2026 (revised June 2026)
+Working Paper v1.5.0 – March 2026 (revised September 2026)
 
 ## Abstract
 
@@ -225,7 +225,7 @@ A further neuroscience parallel is Representational Similarity Analysis (RSA), i
 
 Topological Data Analysis (TDA) provides tools for examining the "shape" of data through the lens of algebraic topology. The core method, persistent homology, constructs a nested sequence of simplicial complexes (a filtration) from point-cloud data and identifies topological features---connected components ($\beta_0$), loops ($\beta_1$), voids ($\beta_2$), and higher-dimensional analogues---that persist across multiple scales. Features that persist over a wide range of scales are interpreted as genuine structural properties, while those that appear and disappear quickly are treated as noise [@edelsbrunner-2010-computational-topology-introduction; @carlsson-2009-topology-data-bulletin].
 
-Persistence diagrams and barcodes provide compact visual summaries of topological features and their lifespans. Importantly, TDA is coordinate-free: it depends only on pairwise distances between data points, not on any particular embedding. This makes it robust to the choice of distance metric and dimensionality reduction, unlike MDS-based approaches.
+Persistence diagrams and barcodes provide compact visual summaries of topological features and their lifespans. TDA is coordinate-free: it depends only on pairwise distances between data points, not on any particular embedding, which makes it invariant to rotation and to the choice of dimensionality reduction in a way MDS-based approaches are not. Coordinate-free is not metric-free, however, and the distinction matters for the application discussed below. The filtration is built from the distances themselves, so the barcode inherits whatever metric is imposed on the attribute axes; the stability theorem bounds the distance between two diagrams by the distance between the underlying spaces [@cohen-steiner-2007-stability-persistence-diagrams] rather than freeing the result from that choice.
 
 ### Applications in Adjacent Fields
 
@@ -235,11 +235,19 @@ In social network analysis, persistent homology has been applied to detect commu
 
 ### The Marketing Gap
 
-Despite these applications, TDA has seen minimal adoption in marketing science. We are not aware of published applications of persistent homology, Mapper algorithms, or other TDA methods to brand perception, consumer segmentation, or competitive positioning. The closest applications are in customer network analysis, where hypergraph models [@yen-2021-using-topological-data] have been used to represent multi-item consumer collections, and in sentiment analysis, where topological features of text data have been explored.
+TDA has been adopted in marketing science, but on behavioral rather than perceptual data. Lakshminarayan and Yin [-@lakshminarayan-2020-topological-data-analysis-digital-marketing] apply persistent homology to clickstream data: session-level page transitions are modeled as Markov chains, persistence diagrams are extracted from the resulting transition structure, and the topological features discriminate buyers from non-buyers. Adjacent work uses hypergraph models in customer network analysis to represent multi-item consumer collections [@yen-2021-using-topological-data], and topological features of text data have been explored in sentiment analysis.
 
-This represents a missed opportunity. Brand perception data---multi-attribute ratings of multiple brands by multiple consumers---are naturally high-dimensional point clouds. TDA could reveal structural features of brand-perception spaces that are invisible to MDS: holes in the perceptual map (regions of brand space that no existing brand occupies), loops (cyclical patterns in brand evolution), and higher-dimensional voids (structural gaps in multi-attribute coverage). The coordinate-free nature of TDA would also sidestep the difficult question of which distance metric is "correct" for brand perception.
+The gap is therefore narrower than the absence of TDA from marketing, and it is specific: we are not aware of published applications of persistent homology or Mapper to *perceptual* data---multi-attribute ratings of brands by multiple observers---or to competitive positioning in an attribute space. Clickstreams record what a consumer did; a rating records how a brand was read. The methods transfer across that boundary only if the second kind of data supports them, which is a separate question and, on the evidence below, a harder one than it first appears.
 
-The absence of TDA in marketing is likely attributable to the same disciplinary boundary that has kept other advanced geometric methods out of brand theory: the techniques were developed by mathematicians and computer scientists who have no professional engagement with marketing phenomena.
+Brand perception data are naturally high-dimensional point clouds, and TDA could in principle reveal structural features invisible to MDS: holes in the perceptual map (regions no existing brand occupies), loops (cyclical patterns in brand evolution), and higher-dimensional voids (structural gaps in multi-attribute coverage). Three constraints bound what such an analysis could claim, and we state them here because they are easy to overlook.
+
+First, TDA is coordinate-free but it is not metric-free. The Vietoris-Rips filtration is built from pairwise distances, so the barcode depends on the chosen metric, and the stability theorem bounds diagram distance by that metric rather than removing the dependence [@cohen-steiner-2007-stability-persistence-diagrams]. On attribute axes that are not established as commensurate, raw Euclidean distance, per-dimension standardization, and a compositional log-ratio metric will yield different barcodes. TDA does not sidestep the question of which distance is correct for brand perception; it inherits it.
+
+Second, homology recovery has a sample cost that grows with dimension [@niyogi-2008-finding-homology-submanifolds]. Typical brand-perception designs supply hundreds of ratings per brand across eight or more attributes, a density at which loops and voids are unlikely to be separable from sampling noise once bootstrap confidence bands are reported [@fasy-2014-confidence-sets-persistence]. The zeroth Betti number is the defensible target at realistic sample sizes.
+
+Third, and consequently, the modest form of the proposal is the honest one. Persistence of $\beta_0$ is single-linkage hierarchical clustering read at every scale at once; it is a principled way to avoid pre-specifying the number of clusters, not a new construct. That is a worthwhile diagnostic, and it is a smaller claim than "the shape of brand perception."
+
+Where TDA has entered marketing it has done so through the data that most resembles the domains the methods came from: clickstreams are sequences, and sequence data is what topological methods were already applied to elsewhere. Perceptual rating data has no such bridge, which is a more specific explanation than a general disciplinary boundary and a more testable one. It also predicts where the method will next appear, and where it will not.
 
 ## Quantum Cognition Models
 
@@ -390,7 +398,7 @@ To systematically identify the gap, we assess each surveyed tradition against si
 
 | Tradition | Dimensionality | Metric structure | Observer heterogeneity | Temporal dynamics | Generative mechanism | Empirical validation |
 |---|---|---|---|---|---|---|
-| TDA (persistent homology) | High (point clouds) | Coordinate-free | Not modeled | Change-point detection only | None | Limited (finance, biology) |
+| TDA (persistent homology) | High (point clouds) | Coordinate-free but metric-dependent | Not modeled | Change-point detection only | None | Limited (finance, biology, clickstream marketing) |
 | Quantum Cognition (Busemeyer) | Finite Hilbert space | Inner product | State vectors | Unitary evolution (single-shot) | Measurement collapse | Moderate (decision experiments) |
 | Opinion Dynamics (HK, DeGroot) | 1-D or low-D | Euclidean | Agent-specific initial conditions | Full dynamics (convergence) | Peer influence | Simulation + limited empirical |
 | Non-Ergodicity (Peters, Molenaar) | Not spatial | Not spatial | Person-specific trajectories | Full dynamics (path-dependent) | Multiplicative dynamics | Growing (experiments) |
