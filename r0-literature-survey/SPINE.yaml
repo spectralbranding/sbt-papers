@@ -245,9 +245,15 @@ propositions:
       multiplicative dynamics, absorbing states, and observer heterogeneity —
       precisely the hallmarks brand perception exhibits (multiplicative
       signal-prior interaction, permanent negative conviction as an absorbing
-      state, path dependence) — yet has never been applied to brand
-      perception or any marketing metric.
-    conditions: null
+      state, path dependence) — yet has not been applied to brand perception or
+      any marketing metric by work outside the present research programme.
+    conditions: >-
+      Scoped to work outside this programme. The companion 2026ad applies the
+      formalism to brand conviction and postdates this survey, so the claim is
+      about the external literature and must say so. The boundary is
+      Peters-style time-average-versus-ensemble divergence under multiplicative
+      dynamics; ergodicity in the ordinary Markov steady-state sense is common
+      in marketing modelling and does not bear on the claim.
     antecedents: [P2]
     evidence:
       - type: citation
@@ -256,6 +262,12 @@ propositions:
           experimental + stated-preference evidence of human non-ergodic
           sensitivity.
         citation_keys: [peters-2019-ergodicity-problem-economics, molenaar-2004-manifesto-psychology-as, meder-2021-ergodicitybreaking-reveals-time, vanhoyweghen-2025-investigating-origins-redistributive, fisher-2018-lack-grouptoindividual-generalizability]
+      - type: citation
+        anchor: >-
+          The boundary case: customer-lifetime-value modelling that verifies
+          ergodicity in the Markov steady-state sense, without the
+          time-average/ensemble-average distinction.
+        citation_keys: [clempner-2014-simple-computing-customer-lifetime]
     body_sections: ["10. Non-Ergodicity Beyond Economics"]
 
   - id: P12

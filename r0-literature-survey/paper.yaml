@@ -12,7 +12,7 @@ meta:
     orcid: 0009-0000-6893-9231
     affiliation: Independent Researcher
   doi: 10.5281/zenodo.18945217
-  date: '2026-06-27'
+  date: '2026-09-13'
   venue: Preprint
   license: CC-BY-4.0
   keywords:
@@ -33,13 +33,14 @@ meta:
     but lack temporal dynamics and observer-specific processing. Non-Euclidean perceptual geometry demonstrates
     that Euclidean distance is insufficient for modeling perception, yet this insight has not penetrated
     brand theory. Non-ergodicity has been formalized in psychology, decision science, and evolutionary
-    biology, but has never been applied to brand perception. Six open problems with formal mathematical
-    statements — concerning formal metrics on brand space, projection bounds, concentration of measure,
-    positioning capacity, specification impossibility, and diffusion dynamics on perceptual manifolds
-    — constitute a research agenda for mathematical brand theory; companion papers [@zharnikov-2026-brand-space-geometry-formal-metric;
-    @zharnikov-2026-spectral-metamerism-brand-perception-projection; @zharnikov-2026-cohort-boundaries-high-dimensional-perception;
-    @zharnikov-2026-many-brands-can-market-hold; @zharnikov-2026-specification-impossibility-organizational-design-high;
-    @zharnikov-2026-non-ergodic-brand-perception-diffusion] resolve each.'
+    biology, but has not been applied to brand perception outside the present programme. Six open problems
+    with formal mathematical statements — concerning formal metrics on brand space, projection bounds,
+    concentration of measure, positioning capacity, specification impossibility, and diffusion dynamics
+    on perceptual manifolds — constitute a research agenda for mathematical brand theory; companion papers
+    [@zharnikov-2026-brand-space-geometry-formal-metric; @zharnikov-2026-spectral-metamerism-brand-perception-projection;
+    @zharnikov-2026-cohort-boundaries-high-dimensional-perception; @zharnikov-2026-many-brands-can-market-hold;
+    @zharnikov-2026-specification-impossibility-organizational-design-high; @zharnikov-2026-non-ergodic-brand-perception-diffusion]
+    resolve each.'
 claims:
 - id: P1
   type: proposition
@@ -161,8 +162,8 @@ claims:
     establishes that individual time-average trajectories diverge from population ensemble averages under
     multiplicative dynamics, absorbing states, and observer heterogeneity — precisely the hallmarks brand
     perception exhibits (multiplicative signal-prior interaction, permanent negative conviction as an
-    absorbing state, path dependence) — yet has never been applied to brand perception or any marketing
-    metric.
+    absorbing state, path dependence) — yet has not been applied to brand perception or any marketing
+    metric by work outside the present research programme.
   testable: false
   tested_in_paper: false
   status: not_tested
