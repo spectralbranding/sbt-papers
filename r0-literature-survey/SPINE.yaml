@@ -81,15 +81,20 @@ propositions:
       purely descriptive — they embed dissimilarity data but supply no
       generative mechanism and no temporal dynamics; the two-to-three
       dimensional convention may reflect visual-interpretability limits rather
-      than the true dimensionality of brand perception.
+      than the true dimensionality of brand perception. Johnson-Lindenstrauss
+      distortion bounds are available and are already used elsewhere in
+      marketing (random-projection estimation of discrete-choice models), but
+      have not been turned on the MDS dimensionality-selection decision.
     conditions: null
     antecedents: [P2]
     evidence:
       - type: citation
         anchor: >-
-          MDS historical foundations, the dimensionality convention, and the
-          unaddressed Johnson-Lindenstrauss distortion question.
-        citation_keys: [torgerson-1952-multidimensional-scaling-i, kruskal-1964-multidimensional-scaling-by, bijmolt-1999-comparison-multidimensional-scaling, carroll-1970-analysis-individual-differences, johnson-1984-extensions-lipschitz-mappings]
+          MDS historical foundations, the dimensionality convention, the
+          Johnson-Lindenstrauss bounds, and the one marketing use of those
+          bounds that does exist (random-projection discrete choice) which
+          bounds where the unaddressed question actually falls.
+        citation_keys: [torgerson-1952-multidimensional-scaling-i, kruskal-1964-multidimensional-scaling-by, bijmolt-1999-comparison-multidimensional-scaling, carroll-1970-analysis-individual-differences, johnson-1984-extensions-lipschitz-mappings, chiong-2019-random-projection-discrete-choice]
     body_sections: ["2. Multidimensional Scaling in Marketing"]
 
   - id: P4
@@ -133,15 +138,20 @@ propositions:
       and MDS systematically misrepresents perceptual differences in
       multi-attribute brand space; information geometry (Fisher-Rao) is a
       candidate metric that also accommodates Tversky's documented asymmetries
-      via directed divergences.
+      via directed divergences. The claim is about the geometry of PERCEPTION:
+      non-Euclidean geometry itself does reach consumer-facing representations
+      (hyperbolic embeddings of hierarchical context in recommender systems),
+      but as representation learning, not as a finding about perceptual
+      structure — which is where the claim's boundary falls.
     conditions: null
     antecedents: [P2, P3]
     evidence:
       - type: citation
         anchor: >-
           Non-Euclidean/non-Riemannian perception findings, information
-          geometry, and the Tversky asymmetry critique.
-        citation_keys: [todd-2001-affine-structure-perceptual, bujack-2022-nonriemannian-nature-perceptual, amari-2016-information-geometry-its, tversky-1977-features-similarity-psychological, cencov-1982-statistical-decision-rules]
+          geometry, the Tversky asymmetry critique, and the representation-
+          learning boundary case that bounds the claim.
+        citation_keys: [todd-2001-affine-structure-perceptual, bujack-2022-nonriemannian-nature-perceptual, amari-2016-information-geometry-its, tversky-1977-features-similarity-psychological, cencov-1982-statistical-decision-rules, bauman-2025-hypercars-hyperbolic-embeddings]
     body_sections: ["5. Non-Euclidean Perceptual Geometry"]
 
   - id: P7
@@ -205,19 +215,22 @@ propositions:
 
   - id: P9
     statement: >-
-      Quantum cognition models observer-dependent, non-classical single
-      decisions in Hilbert space (order effects, conjunction fallacy), but its
-      snapshot collapse formalism does not address the cumulative, temporal
-      formation of brand perception through repeated signal encounters, decay,
-      and prior accumulation.
+      Quantum cognition models observer-dependent, non-classical decisions in
+      Hilbert space (order effects, conjunction fallacy). It is not a static
+      formalism — it has an explicit dynamical branch whose state evolves over
+      levels of support and has been compared against Markov dynamics — but
+      those dynamics run WITHIN a single deliberation and terminate at choice,
+      so the formalism does not address the cumulative formation of brand
+      perception across separated signal encounters, decay, and prior
+      accumulation.
     conditions: null
     antecedents: [P2]
     evidence:
       - type: citation
         anchor: >-
-          The Hilbert-space cognition formalism and its single-shot decision
-          scope.
-        citation_keys: [busemeyer-2012-quantum-models-cognition, pothos-2022-quantum-cognition-annual]
+          The Hilbert-space cognition formalism, its consumer applications,
+          and the within-deliberation scope of its dynamical branch.
+        citation_keys: [busemeyer-2012-quantum-models-cognition, pothos-2022-quantum-cognition-annual, busemeyer-2020-markov-versus-quantum-dynamical]
     body_sections: ["8. Quantum Cognition Models"]
 
   - id: P10

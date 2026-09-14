@@ -70,6 +70,9 @@ claims:
     dimensions, assume Euclidean structure, and are purely descriptive — they embed dissimilarity data
     but supply no generative mechanism and no temporal dynamics; the two-to-three dimensional convention
     may reflect visual-interpretability limits rather than the true dimensionality of brand perception.
+    Johnson-Lindenstrauss distortion bounds are available and are already used elsewhere in marketing
+    (random-projection estimation of discrete-choice models), but have not been turned on the MDS dimensionality-selection
+    decision.
   testable: false
   tested_in_paper: false
   status: not_tested
@@ -98,11 +101,14 @@ claims:
   - P2
 - id: P6
   type: proposition
-  statement: Human perceptual space is non-Euclidean — "at best Riemannian" for spatial vision and demonstrably
+  statement: 'Human perceptual space is non-Euclidean — "at best Riemannian" for spatial vision and demonstrably
     non-Riemannian for color — so the default Euclidean-distance assumption in perceptual mapping, conjoint,
     and MDS systematically misrepresents perceptual differences in multi-attribute brand space; information
-    geometry (Fisher-Rao) is a candidate metric that also accommodates Tversky's documented asymmetries
-    via directed divergences.
+    geometry (Fisher-Rao) is a candidate metric that also accommodates Tversky''s documented asymmetries
+    via directed divergences. The claim is about the geometry of PERCEPTION: non-Euclidean geometry itself
+    does reach consumer-facing representations (hyperbolic embeddings of hierarchical context in recommender
+    systems), but as representation learning, not as a finding about perceptual structure — which is where
+    the claim''s boundary falls.'
   testable: false
   tested_in_paper: false
   status: not_tested
@@ -137,9 +143,12 @@ claims:
   - P2
 - id: P9
   type: proposition
-  statement: Quantum cognition models observer-dependent, non-classical single decisions in Hilbert space
-    (order effects, conjunction fallacy), but its snapshot collapse formalism does not address the cumulative,
-    temporal formation of brand perception through repeated signal encounters, decay, and prior accumulation.
+  statement: Quantum cognition models observer-dependent, non-classical decisions in Hilbert space (order
+    effects, conjunction fallacy). It is not a static formalism — it has an explicit dynamical branch
+    whose state evolves over levels of support and has been compared against Markov dynamics — but those
+    dynamics run WITHIN a single deliberation and terminate at choice, so the formalism does not address
+    the cumulative formation of brand perception across separated signal encounters, decay, and prior
+    accumulation.
   testable: false
   tested_in_paper: false
   status: not_tested
