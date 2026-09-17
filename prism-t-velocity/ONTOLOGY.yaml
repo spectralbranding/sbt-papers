@@ -1,0 +1,55 @@
+# Ontology module — Floor-Cleared Brand Velocity (2026be, slug prism-t-velocity)
+#
+# Promoted from [internal path removed] on 2026-07-04 (post-gate,
+# key assigned). Schema per [internal path removed] ("ONTOLOGY.yaml v0.1").
+# owns = terms THIS paper introduces (define only the delta over 2026z + 2026ba);
+# imports = terms owned by other modules it uses; refines = an import this paper narrows.
+# Definitions are LaTeX-safe (glossary-projecting surface -> papers LaTeX rule).
+
+paper_key: 2026be
+schema_version: 0.1
+
+owns:
+  - term_key: floor-cleared-brand-velocity
+    label: "Floor-cleared brand velocity"
+    canonical_form: "floor-cleared brand velocity"
+    definition: >-
+      The spectral velocity $\lVert\Delta r\rVert$ of a brand's eight-dimension reading
+      between two live epochs whose magnitude has cleared the contemporaneous version
+      floor for the same epoch pair (source-cluster bootstrap S/N $= \lVert\Delta
+      r_\text{live}\rVert / \text{version\_floor} > k$): the apparatus-corrected rate of
+      real brand-perception change, distinguished from the raw multi-epoch reading change
+      that confounds brand motion with model-version drift. The dynamic member of the
+      nested-floor / no-rescue architecture — a velocity claim that fails its version
+      floor abstains rather than being rescued.
+    first_section: "The Floor-Clearance Rule for Motion"
+    refines_note: "the empirically-floored specialization of 2026z brand-velocity"
+
+  - term_key: motion-drift-dissociation
+    label: "Motion-drift dissociation"
+    canonical_form: "motion-drift dissociation"
+    definition: >-
+      The double dissociation, across the eight dimensions, between where real brand motion
+      concentrates (the artifact-anchored set {Semiotic, Narrative, Experiential}, driven by
+      what fresh public artifacts display) and where model-version apparatus drift
+      concentrates (the prior-dependent set {Ideological, Cultural, Social, Temporal,
+      Economic}, 2026ba H3): a joint identification signature that separates brand signal
+      from instrument drift more strongly than either floor alone.
+    first_section: "The Motion-Drift Double Dissociation"
+
+  # NOTE (post-gate 2026-07-04): `floored-brand-acceleration` is DEFERRED to the
+  # *Floored Brand Acceleration* (prism-t-acceleration) follow-up (needs >= 3 live epochs).
+  # It is NOT owned by this HV1+HV3 paper; it seeds the follow-up module, not this key.
+
+imports:
+  - {term_key: brand-velocity}                  # owned by 2026z — refined below
+  - {term_key: spectral-dynamics}               # owned by 2026z
+  - {term_key: version-floor}                   # owned by 2026ba
+  - {term_key: operator-noise-floor}            # owned by 2026ax (the operator floor nested inside the version floor)
+  - {term_key: perception-decay-time-constant}  # owned by 2026aw (tau — epoch cadence C1)
+  - {term_key: spectral-dimensions}             # owned by 2026a
+  - {term_key: non-ergodic-perception}          # single-trajectory longitudinal grounding
+
+refines:
+  - {term_key: brand-velocity, owner: 2026z, note: "narrows free-kinematic velocity to the version-floor-cleared, empirically-measured quantity"}
+

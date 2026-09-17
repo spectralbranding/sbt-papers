@@ -1,0 +1,494 @@
+# SPINE.yaml — Floor-Cleared Brand Velocity (prism-t-velocity)
+#
+# Spine-first drafting SSOT ([internal path removed]). Authored BEFORE any
+# prose; every future prose claim must trace to a node here (FORK to extend, REBASE to drop).
+# Schema v0.2 (empirical/methodological paper): the empirical layer is CALENDAR-GATED, so its
+# observations/measurements/findings are PLANNED nodes (result_stability: planned) — they
+# describe the pre-registered chain, not yet-collected data. VE-1 (2026-07) exists; the
+# velocity/dissociation findings land at VE-2 (~10-12 weeks).
+#
+# SCOPE (post-gate 2026-07-04): HV1 (velocity) + HV3 (motion-drift dissociation). Acceleration
+# (former HV2) is DEFERRED to the Floored Brand Acceleration follow-up (see open:).
+#
+# PUBLIC-FORBIDDEN META DISCIPLINE ([internal ref removed] 0aб): review rounds / readiness / venue names /
+# in a RENDERED field (propositions[].statement, findings[], boundary_conditions,
+# external_anchors[].note, corpus_precedents[].note, top-level scalars).
+
+spine_version: "0.2"
+spine_doc_version: "0.1.0"
+paper_key: "2026be"                  # assigned on main 2026-07-04 (post-gate); slug prism-t-velocity
+provenance_mode: pre_registration
+title: >-
+  Floor-Cleared Brand Velocity: Measuring Multi-Epoch Spectral Velocity Against the
+  Apparatus Floor
+thesis: |
+  A raw multi-epoch reading change from an LLM-observer brand instrument confounds real brand
+  motion with model-version apparatus drift. Building on the PRISM-T version floor (a
+  byte-identical pinned panel re-read across model versions isolates apparatus drift) and the
+  spectral-dynamics calculus (velocity as the first time derivative of the eight-dimension
+  reading), this paper measures spectral velocity across two live epochs under a no-rescue
+  floor-clearance rule: a brand is credited with real movement only when its live-panel
+  displacement exceeds the contemporaneous version floor for the same epoch pair. It further
+  derives, and tests, a motion-drift double dissociation — real brand motion loads the
+  artifact-anchored dimensions while apparatus drift loads the prior-dependent dimensions —
+  from a text-based-versus-knowledge-based comprehension mechanism, so the dissociation is a
+  derived identification result rather than an assertion. Both outcomes of the velocity test
+  are publishable: brands demonstrably move beyond apparatus, or a measured upper bound on
+  perceptual velocity relative to instrument drift.
+
+# ============================================================================
+# Boundary conditions — when the measurement is well-posed (RENDERED)
+# ============================================================================
+boundary_conditions:
+  - id: C1
+    statement: >-
+      The epoch cadence is compatible with the perception relaxation timescale (weeks to
+      months), so a finite-difference estimate of velocity between two live epochs is
+      well-posed and not dominated by measurement noise.
+    antecedents: []
+    body_sections: ["Method — Cadence and the Relaxation Timescale"]
+  - id: C2
+    statement: >-
+      The perception dynamics over the observation window are smooth (no crisis-driven jumps,
+      no dimensional-creation events); velocity is a local tangent quantity on the
+      eight-dimension manifold.
+    antecedents: []
+    body_sections: ["Method — Scope of the Kinematic Claim"]
+  - id: C3
+    statement: >-
+      The calibrated population is public digital English-language artifacts of consumer and
+      B2B brands, read by versioned major-API and open-weights model families, over real
+      vendor releases only, with byte-identical prompts across epochs.
+    antecedents: []
+    body_sections: ["Method — Population and Inclusion"]
+  - id: C4
+    statement: >-
+      The motion-drift dissociation holds unless a real-world event is itself value-laden or
+      cultural (shifting the prior-dependent dimensions through the artifacts) or a model
+      version is retrained on materially new cultural corpora (contaminating the
+      artifact-anchored dimensions); these are the pre-registered conditions under which the
+      dissociation is expected to fail.
+    antecedents: []
+    body_sections: ["Method — When the Dissociation Fails"]
+
+# ============================================================================
+# Assumption atoms — assumed-without-test premises (RENDERED, but relaxable)
+# ============================================================================
+assumption_atoms:
+  - id: AA1
+    statement: >-
+      The version floor estimated on the pinned panel for an epoch pair is a valid upper bound
+      on the apparatus contribution to the live-panel displacement for the same epoch pair
+      (the apparatus acts equivalently on pinned and live inputs).
+    type: identification_assumption
+    relaxable: true
+    relaxation_consequence: >-
+      If the apparatus contribution differs between pinned and live inputs, floor subtraction
+      under- or over-corrects the velocity estimate; RC2 (leave-one-operator-out) and RC3
+      (negative control) bound the size of the violation.
+    affects: [P2, P3, M2, F1]
+    body_sections: ["Method — Identification Assumptions"]
+    provenance: {created_by: author, created_at: "2026-07-04"}
+  - id: AA2
+    statement: >-
+      For the small displacements observed over one epoch pair, the one-minus-cosine distance
+      approximates the local tangent metric on the eight-dimension manifold, so the
+      finite-difference displacement is a valid velocity estimate.
+    type: metric_approximation
+    relaxable: true
+    relaxation_consequence: >-
+      For large displacements the approximation degrades; RC1 (distance-metric robustness,
+      Euclidean-embedding vs one-minus-cosine) tests sensitivity.
+    affects: [P3, M2]
+    body_sections: ["Method — Distance Metric"]
+    provenance: {created_by: author, created_at: "2026-07-04"}
+  - id: AA3
+    statement: >-
+      Cross-family operator extraction within an epoch removes format and decoding
+      (surface-behavior) apparatus effects, so residual pinned-panel movement across versions
+      is attributable to model priors rather than tokenizer or instruction-following changes.
+    type: control_assumption
+    relaxable: true
+    relaxation_consequence: >-
+      If format effects survive the cross-family control, they inflate the version floor
+      uniformly across dimensions; a dimension-flat drift signature (vs the dimension-structured
+      signature of P5) diagnoses this.
+    affects: [P4, P5, M1]
+    body_sections: ["Method — Operator Control"]
+    provenance: {created_by: author, created_at: "2026-07-04"}
+
+# ============================================================================
+# Propositions — theoretical / identification claims (RENDERED)
+# ============================================================================
+propositions:
+  - id: P1
+    statement: >-
+      A raw multi-epoch change in an LLM-observer brand reading confounds brand-signal change
+      with model-version apparatus drift; neither a kinematic calculus of perception nor a
+      single-epoch version-robustness result alone licenses a claim that a brand moved.
+    type: ontological
+    conditions: "C3"
+    antecedents: []
+    evidence:
+      - type: citation
+        anchor: "LLM behavior drifts across releases, so a re-measured reading may move because the model changed."
+        citation_keys: [chen-2024-chatgpt-behavior-changing]
+        citation_role: motivating_problem
+      - type: citation
+        anchor: "The dynamics calculus supplies velocity/acceleration but is illustrated, not measured; the version-floor instrument is single-epoch."
+        citation_keys: [zharnikov-2026z-spectral-dynamics, zharnikov-2026ba-prism-t-version-floor]
+        citation_role: theoretical_predecessor
+    falsifier: "If cross-version re-reads of a fixed panel never differ, there is no apparatus confound and P1 is vacuous."
+    body_sections: ["Introduction — The Confound"]
+    provenance: {created_by: author, created_at: "2026-07-04"}
+  - id: P2
+    statement: >-
+      Motion is credited only when live-panel displacement clears the contemporaneous version
+      floor for the same epoch pair (nesting operator floor within version floor); a claim that
+      fails its floor abstains rather than being rescued by an auxiliary argument.
+    type: ontological
+    conditions: "C3"
+    antecedents: [P1]
+    assumptions: [AA1]
+    evidence:
+      - type: citation
+        anchor: "Nested noise floors with no-rescue abstention; the version floor is the temporal member of the nest."
+        citation_keys: [zharnikov-2026ay-substrate-floor, zharnikov-2026ax-brand-spectrometer, zharnikov-2026ba-prism-t-version-floor]
+        citation_role: theoretical_predecessor
+    falsifier: "If a displacement below the version floor is nonetheless shown to be genuine brand signal by an independent measure, the clearance rule is too strict."
+    body_sections: ["Theory — The Floor-Clearance Rule for Motion"]
+    provenance: {created_by: author, created_at: "2026-07-04"}
+  - id: P3
+    statement: >-
+      Under the floor-clearance rule, spectral velocity (the floor-cleared live displacement
+      between two epochs, in one-minus-cosine distance) is an estimable apparatus-corrected
+      quantity, and both outcomes are informative: a cleared velocity is a measured brand
+      motion, a null is a measured upper bound on perceptual velocity relative to apparatus
+      drift over the cadence.
+    type: measurement_result
+    conditions: "C1, C2, C3"
+    antecedents: [P2]
+    assumptions: [AA2]
+    evidence:
+      - type: citation
+        anchor: "Velocity as the first time derivative of the spectral profile."
+        citation_keys: [zharnikov-2026z-spectral-dynamics]
+        citation_role: definitional_source
+      - type: citation
+        anchor: "The one-minus-cosine brand-space distance the displacement is measured in."
+        citation_keys: [zharnikov-2026-brand-space-geometry-formal-metric]
+        citation_role: methodological_source
+    ruled_out_rivals: [A1]
+    falsifier: "If floor-cleared velocity cannot be estimated with a finite bootstrap CI at the panel size, P3 fails on precision grounds (power analysis)."
+    body_sections: ["Theory — Floor-Cleared Velocity"]
+    provenance: {created_by: author, created_at: "2026-07-04"}
+  - id: P4
+    statement: >-
+      On a fixed artifact, a model reading contributes most where the reading leans on model
+      priors beyond the displayed text and least where it is anchored in what the artifact
+      literally shows; therefore a model-version update (which changes parametric priors)
+      concentrates apparatus drift on prior-dependent dimensions, while a real-world event
+      (which changes the artifacts) concentrates real motion on artifact-anchored dimensions.
+    type: ontological
+    conditions: "C4"
+    antecedents: []
+    assumptions: [AA3]
+    evidence:
+      - type: analytic
+        anchor: "Derived from a text-based-vs-knowledge-based account of reading comprehension applied to the eight-dimension readout; see HV3_MECHANISM.md."
+      - type: citation
+        anchor: "Comprehension combines a text-based representation with a knowledge-based (inferential) one; dimensions differ in reliance on each."
+        citation_keys: [kintsch-1988-construction-integration, mckoon-1992-inference-during-reading]
+        citation_role: theoretical_predecessor
+      - type: citation
+        anchor: "In LLMs, version/post-training updates shift parametric knowledge and value expression while context-anchored extraction is comparatively stable."
+        citation_keys: [petroni-2019-language-models-knowledge-bases, longpre-2021-entity-knowledge-conflicts, ouyang-2022-training-language-models]
+        citation_role: theoretical_predecessor
+    falsifier: "If apparatus drift is dimension-flat, or concentrates on artifact-anchored dimensions, the mechanism is wrong."
+    body_sections: ["Theory — Why Dimensions Differ in Version Sensitivity"]
+    provenance: {created_by: author, created_at: "2026-07-04"}
+  - id: P5
+    statement: >-
+      The mechanism predicts a double dissociation: live brand motion loads the
+      artifact-anchored set (Semiotic, Narrative, Experiential) and pinned version drift loads
+      the prior-dependent set (Ideological, Cultural, Social, Temporal, Economic); this joint
+      pattern identifies brand signal from apparatus drift more strongly than either floor
+      alone.
+    type: measurement_result
+    conditions: "C3, C4"
+    antecedents: [P4, P2]
+    evidence:
+      - type: analytic
+        anchor: "Direct prediction of P4 crossed with the version-floor decomposition; the dimension partition is fixed ex ante (not fit to data)."
+    ruled_out_rivals: [A2, A3]
+    falsifier: "If the two-set by two-source interaction is null, or the loadings do not separate by set, the dissociation fails."
+    body_sections: ["Theory — The Motion-Drift Double Dissociation"]
+    provenance: {created_by: author, created_at: "2026-07-04"}
+
+# ============================================================================
+# Methods — planned procedural nodes (RENDERED; result-bearing outputs PLANNED)
+# ============================================================================
+methods:
+  - id: M1
+    statement: >-
+      Two-panel version-floor pipeline: the eight-dimension render+extract prompts, byte-identical
+      across epochs, run under cross-family operator pairs on both the byte-identical pinned panel
+      and the freshly re-collected live panel, at each version epoch.
+    type: ai_invocation
+    inputs: [O1, O2]
+    outputs: [m1, m2]
+    code_anchor: "prism-t-velocity/code/ (planned; PL4 estimator published at submission)"
+    reproducibility: {seed: "temperature 0 where honored; append-only JSONL", version: "prism-t/v1.0.0 prompts"}
+    body_sections: ["Method — Instrument"]
+    provenance: {created_by: author, created_at: "2026-07-04"}
+  - id: M2
+    statement: >-
+      Velocity + floor-clearance estimator: live displacement between consecutive epochs; the
+      version floor as the pinned inter-epoch distance for the same pair; floor-cleared velocity
+      by removing the pinned-drift component; signal-to-noise as displacement over floor; all
+      with source-cluster bootstrap CIs.
+    type: computation
+    inputs: [m1, m2]
+    outputs: [F1]
+    code_anchor: "prism-t-velocity/code/estimator (planned; fixed seed, PAQS 37a-37e)"
+    reproducibility: {seed: "fixed (published at submission)", version: "planned"}
+    body_sections: ["Method — Velocity Estimator"]
+    provenance: {created_by: author, created_at: "2026-07-04"}
+  - id: M3
+    statement: >-
+      Dissociation test: per-dimension live motion vs pinned version drift compared as a
+      two-set (artifact-anchored vs prior-dependent) by two-source (live vs pinned) interaction
+      contrast, Holm-corrected, with the interaction effect size and CI.
+    type: statistical_analysis
+    inputs: [m1, m2]
+    outputs: [F2]
+    body_sections: ["Method — Dissociation Test"]
+    provenance: {created_by: author, created_at: "2026-07-04"}
+  - id: M4
+    statement: >-
+      Power simulation (feasible now, no new data): given operator floors in the .0034-.057
+      range and version floors below .03, the minimum detectable velocity magnitude at
+      signal-to-noise above 2 for the 40-brand by 4-artifact panel, and the power of the M3
+      interaction; if power is below 80% for a medium dimension-set effect, plan >= 60 brands.
+    type: simulation
+    inputs: []
+    outputs: [F3]
+    code_anchor: "prism-t-velocity/code/power_analysis (planned)"
+    reproducibility: {seed: "fixed", version: "planned"}
+    body_sections: ["Method — Power"]
+    provenance: {created_by: author, created_at: "2026-07-04"}
+
+# ============================================================================
+# Observations / measurements — PLANNED (calendar-gated at VE-2)
+# ============================================================================
+observations:
+  - id: O1
+    statement: "VE-1 (2026-07) readings of the frozen pinned + live panels under cross-family operators (exists)."
+    raw_data_pointer: "[internal path removed] (pinned, byte-identical, SHA-256 manifest)"
+    instrument: "PRISM-B pipeline (prism-t/v1.0.0)"
+    timestamp: "2026-07-02"
+    conditions_at_capture: "VE-1: live panel coincides with pinned panel at birth; velocity undefined at t0"
+    provenance: {created_by: author, created_at: "2026-07-04"}
+    body_sections: ["Method — Panels (VE-1 anchor)"]
+  - id: O2
+    statement: "VE-2 (~Aug-Sep 2026) re-reading: pinned panel re-read + live panel re-collected under matched operators and contemporaneous versions (PLANNED)."
+    raw_data_pointer: "prism-t-velocity/data/ (planned, append-only JSONL)"
+    instrument: "PRISM-B pipeline (prism-t/v1.0.0), byte-identical prompts"
+    timestamp: "PLANNED VE-2"
+    conditions_at_capture: "cadence ~10-12 weeks per C1; see EPOCH_2_CAPTURE_PROTOCOL.md"
+    provenance: {created_by: author, created_at: "2026-07-04"}
+    body_sections: ["Method — Panels (VE-2 capture)"]
+measurements:
+  - id: m1
+    statement: "Per-(brand, dimension) pinned-panel displacement VE-1->VE-2 = the version floor for that pair (PLANNED)."
+    source_observations: [O1, O2]
+    generating_method: M1
+    value: "PLANNED (VE-2)"
+    units: "one-minus-cosine distance, per dimension and aggregate"
+    provenance: {created_by: author, created_at: "2026-07-04"}
+  - id: m2
+    statement: "Per-(brand, dimension) live-panel displacement VE-1->VE-2 = version floor + brand signal (PLANNED)."
+    source_observations: [O1, O2]
+    generating_method: M1
+    value: "PLANNED (VE-2)"
+    units: "one-minus-cosine distance, per dimension and aggregate"
+    provenance: {created_by: author, created_at: "2026-07-04"}
+
+# ============================================================================
+# Findings — PLANNED (the pre-registered result slots; filled at VE-2)
+# ============================================================================
+findings:
+  - id: F1
+    statement: >-
+      HV1 result slot: whether >= 1 brand's floor-cleared spectral velocity clears the version
+      floor at signal-to-noise above the pre-registered k (bootstrap CI lower bound), OR the
+      measured upper bound on perceptual velocity relative to apparatus drift if none clears.
+    source_measurements: [m1, m2]
+    generating_method: M2
+    statistical_strength: "PLANNED — source-cluster bootstrap 95% CI; effect size = velocity magnitude + S/N"
+    conditions: "C1, C2, C3"
+    antecedents: [O1, O2, M2, P3]
+    result_stability: planned
+    falsifier: "See P3 falsifier (precision) and P2 falsifier (rule)."
+    provenance: {created_by: author, created_at: "2026-07-04"}
+    body_sections: ["Results — Velocity (HV1)"]
+  - id: F2
+    statement: >-
+      HV3 result slot: whether the two-set by two-source interaction is supported — live motion
+      loading the artifact-anchored set and pinned drift loading the prior-dependent set.
+    source_measurements: [m1, m2]
+    generating_method: M3
+    statistical_strength: "PLANNED — Holm-corrected interaction contrast; effect size + CI"
+    conditions: "C3, C4"
+    antecedents: [m1, m2, M3, P5]
+    result_stability: planned
+    falsifier: "See P5 falsifier."
+    provenance: {created_by: author, created_at: "2026-07-04"}
+    body_sections: ["Results — Motion-Drift Dissociation (HV3)"]
+  - id: F3
+    statement: >-
+      Power/MDE result slot: the minimum detectable velocity at S/N > 2 and the power of the
+      dissociation interaction at the panel size (feasible now, ahead of VE-2).
+    source_measurements: []
+    generating_method: M4
+    statistical_strength: "PLANNED (feasible now) — simulated power curves"
+    conditions: "C3"
+    antecedents: [M4]
+    result_stability: planned
+    provenance: {created_by: author, created_at: "2026-07-04"}
+    body_sections: ["Method — Power (result)"]
+
+# ============================================================================
+# Robustness checks — the reviewer battery (RENDERED; PLANNED)
+# ============================================================================
+robustness_checks:
+  - id: RC1
+    statement: "Distance-metric robustness: re-estimate velocity under Euclidean-embedding distance vs one-minus-cosine."
+    varied_parameter: "distance metric"
+    result_stability: planned
+    affects_nodes: [F1, F2, AA2]
+    source_method: M2
+    provenance: {created_by: author, created_at: "2026-07-04"}
+    body_sections: ["Robustness — Distance Metric"]
+  - id: RC2
+    statement: "Leave-one-operator-out: recompute floors and velocities dropping each operator pair to test operator dependence."
+    varied_parameter: "operator pair set"
+    result_stability: planned
+    affects_nodes: [F1, F2, AA1, AA3]
+    source_method: M1
+    provenance: {created_by: author, created_at: "2026-07-04"}
+    body_sections: ["Robustness — Leave-One-Operator-Out"]
+  - id: RC3
+    statement: "Negative-control falsification: same-version two-run displacements must never clear the version floor."
+    varied_parameter: "version held fixed, run repeated"
+    result_stability: planned
+    affects_nodes: [F1, AA1]
+    source_method: M1
+    provenance: {created_by: author, created_at: "2026-07-04"}
+    body_sections: ["Robustness — Negative Control"]
+  - id: RC4
+    statement: "Multiple-testing sensitivity: report the interaction and per-brand velocity clearances under a correction stronger than Bonferroni (e.g. Holm / BH) as well."
+    varied_parameter: "multiplicity correction"
+    result_stability: planned
+    affects_nodes: [F1, F2]
+    source_method: M2
+    provenance: {created_by: author, created_at: "2026-07-04"}
+    body_sections: ["Robustness — Multiplicity"]
+
+# ============================================================================
+# Alternative explanations — rivals (RENDERED)
+# ============================================================================
+alternative_explanations:
+  - id: A1
+    statement: "Observed live-panel motion is entirely apparatus drift, not brand signal."
+    rules_out_required: [F1]
+    ruled_out_by: [F1]
+    rules_out_status: "candidate (resolved at VE-2)"
+    reasoning: "Clearing the version floor on the live panel while the pinned panel does not move beyond the floor separates signal from apparatus (P2)."
+    provenance: {created_by: author, created_at: "2026-07-04"}
+    body_sections: ["Results — Ruling Out Apparatus"]
+  - id: A2
+    statement: "The dissociation is circular — an artifact of choosing the dimension partition to match the result."
+    rules_out_required: [F2]
+    ruled_out_by: [P4]
+    rules_out_status: "rejected by design"
+    reasoning: "The partition is fixed ex ante (inherited from the parent apparatus) and predicted independently by the P4 mechanism, before any VE-2 data."
+    provenance: {created_by: author, created_at: "2026-07-04"}
+    body_sections: ["Theory — Non-Circularity of the Partition"]
+  - id: A3
+    statement: "Real events also move the prior-dependent dimensions (a value-laden event moves Ideological/Cultural through the artifacts), collapsing the dissociation."
+    rules_out_required: [F2]
+    rules_out_status: "open (bounded by C4)"
+    reasoning: "C4 pre-registers this as the condition under which the dissociation fails; the practitioner claim that cultural brands move most after model updates is a direct test."
+    provenance: {created_by: author, created_at: "2026-07-04"}
+    body_sections: ["Discussion — When Events Are Cultural"]
+
+# ============================================================================
+# Limitations & negative findings (RENDERED)
+# ============================================================================
+limitations:
+  - id: L1
+    statement: "Opportunistic two-epoch cadence: velocity only (no acceleration; that is the deferred follow-up), and the epoch interval is set by real vendor timing within the relaxation-window guideline."
+    affects: [F1, P3]
+    severity: medium
+    mitigation: "Cadence pre-registered against the relaxation timescale (C1); acceleration held for the follow-up once VE-3 exists."
+    provenance: {created_by: author, created_at: "2026-07-04"}
+    body_sections: ["Limitations"]
+  - id: L2
+    statement: "A small version floor at the current epoch lowers the clearance bar; the floor is re-estimated per epoch pair rather than fixed, but a near-null floor limits how strong a no-rescue demonstration the data can carry."
+    affects: [P2, F1]
+    severity: low
+    mitigation: "Report the floor magnitude with its CI at each epoch pair; the positive control (distant-version pair) demonstrates estimator sensitivity."
+    provenance: {created_by: author, created_at: "2026-07-04"}
+    body_sections: ["Limitations"]
+  - id: L3
+    statement: "A single eight-dimension instrument on brands; transfer to other multidimensional-perception domains is untested here."
+    affects: [P3, P5]
+    severity: medium
+    mitigation: "Frame the contribution as the version-floor correction enabling longitudinal LLM-observer measurement; a non-brand demonstration is noted as future work."
+    provenance: {created_by: author, created_at: "2026-07-04"}
+    body_sections: ["Limitations", "Discussion — Generalization"]
+negative_findings:
+  - id: NF1
+    statement: "No existing LLM-observer longitudinal brand study reports a version-floor-corrected velocity; the prior version-stability spot-check was unfloored and profile-level."
+    expected_observation: "A published apparatus-corrected brand-velocity estimate."
+    source_method: "corpus + external literature review"
+    affects_nodes: [P1, P3]
+    motivates: [P3]
+    provenance: {created_by: author, created_at: "2026-07-04"}
+    body_sections: ["Introduction — The Gap"]
+
+# ============================================================================
+# Cross-paper engagement (RENDERED — notes carry NO review/venue meta)
+# ============================================================================
+corpus_precedents:
+  - {paper_key: 2026ba, relationship: extends, spine_nodes: [P1, P2, P4, P5, M1, M2], note: "the version-floor apparatus + the ex-ante dimension partition this paper reuses and puts in motion"}
+  - {paper_key: 2026z, relationship: extends, spine_nodes: [P3], note: "the velocity calculus this paper validates empirically (2026z illustrates it only)"}
+  - {paper_key: 2026aw, relationship: applies, spine_nodes: [C1], note: "the relaxation timescale that fixes the epoch cadence; its forcing model grounds the deferred acceleration follow-up"}
+  - {paper_key: 2026ax, relationship: applies, spine_nodes: [P2], note: "the operator floor nested inside the version floor"}
+  - {paper_key: 2026ay, relationship: applies, spine_nodes: [P2], note: "the no-rescue nesting rule extended to motion"}
+  - {paper_key: 2026v, relationship: tests, spine_nodes: [NF1], note: "the unfloored, profile-level version-stability spot-check this paper disciplines into a floored velocity"}
+  - {paper_key: 2026a, relationship: applies, spine_nodes: [P3, P5], note: "the eight-dimension construct the motion lives in"}
+  - {paper_key: 2026d, relationship: applies, spine_nodes: [P3, AA2], note: "the one-minus-cosine brand-space distance"}
+  - {paper_key: 2026s, relationship: applies, spine_nodes: [C1], note: "coherence types as a candidate moderator of relaxation rate"}
+  - {paper_key: non-ergodic-brand-perception-why, relationship: applies, spine_nodes: [P3], note: "why velocity is a single-trajectory longitudinal quantity"}
+
+external_anchors:
+  - {citation_key: chen-2024-chatgpt-behavior-changing, role: motivating_problem, spine_nodes: [P1]}
+  - {citation_key: gama-2014-concept-drift-survey, role: theoretical_predecessor, spine_nodes: [P1, P2]}
+  - {citation_key: lu-2019-learning-concept-drift, role: theoretical_predecessor, spine_nodes: [P1, P2]}
+  - {citation_key: novick-1966-classical-test-theory, role: canonical_reference, spine_nodes: [P2]}
+  - {citation_key: widaman-2010-factorial-invariance-longitudinal, role: theoretical_predecessor, spine_nodes: [P2]}
+  - {citation_key: flake-2020-measurement-schmeasurement-questionable, role: boundary_anchor, spine_nodes: [C3]}
+  # --- P4 mechanism anchors: Crossref-VERIFIED 2026-07-04 and registered on main.
+  - {citation_key: kintsch-1988-construction-integration, role: theoretical_predecessor, spine_nodes: [P4]}
+  - {citation_key: mckoon-1992-inference-during-reading, role: theoretical_predecessor, spine_nodes: [P4]}
+  - {citation_key: petroni-2019-language-models-knowledge-bases, role: theoretical_predecessor, spine_nodes: [P4]}
+  - {citation_key: longpre-2021-entity-knowledge-conflicts, role: theoretical_predecessor, spine_nodes: [P4]}
+  - {citation_key: ouyang-2022-training-language-models, role: theoretical_predecessor, spine_nodes: [P4]}
+
+# ============================================================================
+# DROPPED BLOCKS — internal only (scrub_spine_ontology drops these; never rendered
+# into paper.yaml). Authoring provenance, review verdicts, venue, follow-up handles.
+# ============================================================================
+
