@@ -14,6 +14,9 @@ identifiers:
   - type: doi
     value: "10.5281/zenodo.19064426"
     description: "Zenodo concept DOI (all versions)"
+  - type: doi
+    value: "10.1002/sres.70172"
+    description: "Journal version of record (Systems Research and Behavioral Science)"
 keywords:
   - rendering problem
   - specification gap
@@ -32,7 +35,8 @@ preferred-citation:
   authors:
     - family-names: Zharnikov
       given-names: Dmitry
-  title: "The Rendering Problem: From Genetic Expression to Brand Perception"
+  title: "The rendering problem in brand perception: From genetic expression to the perception cloud"
+  journal: "Systems Research and Behavioral Science"
   year: 2026
-  doi: "10.5281/zenodo.19064426"
-  url: "https://doi.org/10.5281/zenodo.19064426"
+  doi: "10.1002/sres.70172"
+  url: "https://doi.org/10.1002/sres.70172"
