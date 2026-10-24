@@ -16,12 +16,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v5
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
 
       # Python tooling - only if pyproject.toml exists
       - name: Install uv
         if: hashFiles('pyproject.toml') != ''
-        uses: astral-sh/setup-uv@v7
+        uses: astral-sh/setup-uv@07a047e608db84b3d8c06cd9a7c7dcc9c355c18e # v10.3.2
         with:
           enable-cache: true
           cache-dependency-glob: "uv.lock"
@@ -35,15 +35,15 @@ jobs:
         if: hashFiles('pyproject.toml') != ''
         run: uv sync --all-extras --dev
 
-      - name: 🎨 Lint (Black)
+      - name: Lint (Black)
         if: hashFiles('pyproject.toml') != ''
         run: uv run black --check .
 
-      - name: ⚖️ Lint (Flake8)
+      - name: Lint (Flake8)
         if: hashFiles('pyproject.toml') != ''
-        run: uv run flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
+        run: uv run flake8 . --extend-exclude=.venv,venv,archive,ARCHIVE,node_modules --count --select=E9,F63,F7,F82 --show-source --statistics
 
-      - name: 🔍 Type Check (MyPy)
+      - name: Type Check (MyPy)
         if: hashFiles('pyproject.toml') != ''
         run: |
           # Check for Python files before running MyPy
@@ -55,7 +55,7 @@ jobs:
              echo "No Python files found, skipping MyPy."
           fi
 
-      - name: 🧪 Test (Pytest)
+      - name: Test (Pytest)
         if: hashFiles('pyproject.toml') != ''
         run: |
           # Skip if tests require local environment (marker file)
@@ -69,7 +69,10 @@ jobs:
 
       # Security scan - runs for ALL project types
       - name: Security (Trivy)
-        uses: aquasecurity/trivy-action@v0.36.0
+        # Pinned by commit SHA (trivy-action tags were force-pushed in March 2026).
+        # cache: 'false' skips the trivy-DB cache step, where a setup-trivy change
+        # rejects the $HOME-containing default path and fails the step.
+        uses: aquasecurity/trivy-action@ed142fd0673e97e23eac54620cfb913e5ce36c25 # v0.36.0
         with:
           scan-type: 'fs'
           scan-ref: '.'
@@ -77,3 +80,4 @@ jobs:
           ignore-unfixed: true
           vuln-type: 'os,library'
           severity: 'CRITICAL,HIGH'
+          cache: 'false'
