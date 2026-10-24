@@ -31,3 +31,39 @@ analysis_snapshot:              # version of record for the paper's reported num
 retained_internal:
   - paper.md
   - SPINE/ONTOLOGY/PENDING
+
+# Raw files kept out of the public repository's git tree, with their HuggingFace home.
+# Read by experiment/validation/validate.py and reproduce.sh in the public repository.
+hf_archive:
+  - { file: "exp_agentic_collapse.jsonl", repo: "spectralbranding/exp-agentic-collapse", doi: "10.57967/hf/8437" }
+  - { file: "exp_compounding_format.jsonl", repo: "spectralbranding/exp-compounding-format", doi: "10.57967/hf/8438" }
+  - { file: "exp_compounding_format_v2.jsonl", repo: "spectralbranding/exp-compounding-format", doi: "10.57967/hf/8438" }
+  - { file: "exp_compounding_format_v2_llama_supplement.jsonl", repo: "spectralbranding/exp-compounding-format", doi: "10.57967/hf/8438" }
+  - { file: "exp_compounding_format_v2_qwen_supplement.jsonl", repo: "spectralbranding/exp-compounding-format", doi: "10.57967/hf/8438" }
+  - { file: "exp_cross_language.jsonl", repo: "spectralbranding/exp-cross-language", doi: "10.57967/hf/8439" }
+  - { file: "exp_primacy_generalization.jsonl", repo: "spectralbranding/exp-primacy-generalization", doi: "10.57967/hf/8436" }
+  - { file: "run10_corrective.jsonl", repo: "spectralbranding/r15-ai-search-metamerism", doi: "10.57967/hf/8284" }
+  - { file: "run11_roshen_multicity.jsonl", repo: "spectralbranding/r15-ai-search-metamerism", doi: "10.57967/hf/8284" }
+  - { file: "run12_brand_function.jsonl", repo: "spectralbranding/r15-ai-search-metamerism", doi: "10.57967/hf/8284" }
+  - { file: "run12b_brand_function_extended.jsonl", repo: "spectralbranding/r15-ai-search-metamerism", doi: "10.57967/hf/8284" }
+  - { file: "run13_category_variation.jsonl", repo: "spectralbranding/r15-ai-search-metamerism", doi: "10.57967/hf/8284" }
+  - { file: "run14_dimension_targeting.jsonl", repo: "spectralbranding/r15-ai-search-metamerism", doi: "10.57967/hf/8284" }
+  - { file: "run15_synthetic_cohorts.jsonl", repo: "spectralbranding/r15-synthetic-cohorts", doi: "10.57967/hf/8441" }
+  - { file: "run15b_robustness_latin_square.jsonl", repo: "spectralbranding/r15-synthetic-cohorts", doi: "10.57967/hf/8441" }
+  - { file: "run2_global.jsonl", repo: "spectralbranding/r15-ai-search-metamerism", doi: "10.57967/hf/8284" }
+  - { file: "run2_qwen_plus.jsonl", repo: "spectralbranding/r15-ai-search-metamerism", doi: "10.57967/hf/8284" }
+  - { file: "run3_local.jsonl", repo: "spectralbranding/r15-ai-search-metamerism", doi: "10.57967/hf/8284" }
+  - { file: "run3_qwen_plus.jsonl", repo: "spectralbranding/r15-ai-search-metamerism", doi: "10.57967/hf/8284" }
+  - { file: "run4_resolution.jsonl", repo: "spectralbranding/r15-ai-search-metamerism", doi: "10.57967/hf/8284" }
+  - { file: "run5_crosscultural.jsonl", repo: "spectralbranding/r15-ai-search-metamerism", doi: "10.57967/hf/8284" }
+  - { file: "run5_fireworks_glm.jsonl", repo: "spectralbranding/r15-ai-search-metamerism", doi: "10.57967/hf/8284" }
+  - { file: "run5_gptoss_swallow.jsonl", repo: "spectralbranding/r15-ai-search-metamerism", doi: "10.57967/hf/8284" }
+  - { file: "run5_results.json", repo: "spectralbranding/r15-ai-search-metamerism", doi: "10.57967/hf/8284" }
+  - { file: "run6_banking_clean.jsonl", repo: "spectralbranding/r15-ai-search-metamerism", doi: "10.57967/hf/8284" }
+  - { file: "run7_framing.jsonl", repo: "spectralbranding/r15-ai-search-metamerism", doi: "10.57967/hf/8284" }
+  - { file: "run7_framing_results.json", repo: "spectralbranding/r15-ai-search-metamerism", doi: "10.57967/hf/8284" }
+  - { file: "run7d_swedish.jsonl", repo: "spectralbranding/r15-ai-search-metamerism", doi: "10.57967/hf/8284" }
+  - { file: "run8_native_expansion.jsonl", repo: "spectralbranding/r15-ai-search-metamerism", doi: "10.57967/hf/8284" }
+  - { file: "run9_temp_0.0.jsonl", repo: "spectralbranding/r15-ai-search-metamerism", doi: "10.57967/hf/8284" }
+  - { file: "run9_temp_0.3.jsonl", repo: "spectralbranding/r15-ai-search-metamerism", doi: "10.57967/hf/8284" }
+  - { file: "run9_temp_1.0.jsonl", repo: "spectralbranding/r15-ai-search-metamerism", doi: "10.57967/hf/8284" }
