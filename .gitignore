@@ -38,6 +38,7 @@ venv/
 
 
 # Fleet internal (public repo — nothing tracked)
+.claude/
 .claude-decisions/
 skills/
 .clinerules
@@ -50,17 +51,6 @@ skills/
 # Backup files
 *.bak
 *.jsonl.bak
-
-# Fleet internal (public repo — nothing tracked)
-.claude/
-.claude-decisions/
-skills/
-.clinerules
-.cursorrules
-.cursorignore
-.rooignore
-.mcp.json
-.flake8
 
 # Local type-checker / tooling caches (never publish)
 .mypy_cache/
