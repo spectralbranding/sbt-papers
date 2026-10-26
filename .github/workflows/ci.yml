@@ -14,6 +14,10 @@ jobs:
   quality:
     name: Code Quality & Security
     runs-on: ubuntu-latest
+    env:
+      # uv's own interpreters only, never the runner image's python3, so CI
+      # runs the same patch release as the Macs.
+      UV_PYTHON_PREFERENCE: only-managed
     steps:
       - name: Checkout
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
@@ -29,7 +33,9 @@ jobs:
 
       - name: Set up Python
         if: hashFiles('pyproject.toml') != ''
-        run: uv python install 3.12
+        # No version: installs what .python-version names. Every Python repo
+        # carries the pin; without one, uv would take the newest release.
+        run: uv python install
 
       - name: Install Dependencies
         if: hashFiles('pyproject.toml') != ''
