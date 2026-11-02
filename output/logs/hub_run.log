@@ -1,6 +1,6 @@
 ==================================================
 Hub run: 2026-08-07T08:49:58Z
-Repo: /Users/d/projects/sbt-papers
+Repo: <repo>
 Git SHA: c36a3f4e987c23d1b2bfe103d8aa1cdc1661f077
 Flags: check_only=0 fast=0
 ==================================================
@@ -15,10 +15,10 @@ Flags: check_only=0 fast=0
 
 ==================================== ERRORS ====================================
 _________________ ERROR collecting tests/test_psm_estimator.py _________________
-ImportError while importing test module '/Users/d/projects/sbt-papers/perception-sets-matrix/code/tests/test_psm_estimator.py'.
+ImportError while importing test module '<repo>/perception-sets-matrix/code/tests/test_psm_estimator.py'.
 Hint: make sure your test modules/packages have valid Python names.
 Traceback:
-/Users/d/.local/share/uv/python/cpython-3.14.2-macos-aarch64-none/lib/python3.14/importlib/__init__.py:88: in import_module
+<uv-data>/python/cpython-3.14.2-macos-aarch64-none/lib/python3.14/importlib/__init__.py:88: in import_module
     return _bootstrap._gcd_import(name[level:], package, level)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 tests/test_psm_estimator.py:29: in <module>
@@ -82,7 +82,7 @@ Paper slugs found: 40  ran: 4  skipped: 36
 ==================================================
 ==================================================
 Hub run: 2026-08-07T10:11:47Z
-Repo: /Users/d/projects/sbt-papers
+Repo: <repo>
 Git SHA: c36a3f4e987c23d1b2bfe103d8aa1cdc1661f077
 Flags: check_only=0 fast=0
 ==================================================
@@ -97,10 +97,10 @@ Flags: check_only=0 fast=0
 
 ==================================== ERRORS ====================================
 _________________ ERROR collecting tests/test_psm_estimator.py _________________
-ImportError while importing test module '/Users/d/projects/sbt-papers/perception-sets-matrix/code/tests/test_psm_estimator.py'.
+ImportError while importing test module '<repo>/perception-sets-matrix/code/tests/test_psm_estimator.py'.
 Hint: make sure your test modules/packages have valid Python names.
 Traceback:
-/Users/d/.local/share/uv/python/cpython-3.14.2-macos-aarch64-none/lib/python3.14/importlib/__init__.py:88: in import_module
+<uv-data>/python/cpython-3.14.2-macos-aarch64-none/lib/python3.14/importlib/__init__.py:88: in import_module
     return _bootstrap._gcd_import(name[level:], package, level)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 tests/test_psm_estimator.py:29: in <module>
@@ -164,7 +164,7 @@ Paper slugs found: 40  ran: 4  skipped: 36
 ==================================================
 ==================================================
 Hub run: 2026-08-07T10:52:16Z
-Repo: /Users/d/projects/sbt-papers
+Repo: <repo>
 Git SHA: c36a3f4e987c23d1b2bfe103d8aa1cdc1661f077
 Flags: check_only=0 fast=0
 ==================================================
@@ -209,32 +209,32 @@ results -> data/results.json
 Downloading raw datasets from HuggingFace...
   spectralbranding/exp-agentic-collapse  (DOI 10.57967/hf/8437)
 Fetching 14 files:   0%|          | 0/14 [00:00<?, ?it/s]Fetching 14 files: 100%|██████████| 14/14 [00:00<00:00, 1056.44it/s]
-    downloaded to /Users/d/projects/sbt-papers/r15-ai-search-metamerism/experiment/_hf/exp-agentic-collapse
+    downloaded to <repo>/r15-ai-search-metamerism/experiment/_hf/exp-agentic-collapse
   spectralbranding/exp-compounding-format  (DOI 10.57967/hf/8438)
 Fetching 9 files:   0%|          | 0/9 [00:00<?, ?it/s]Fetching 9 files: 100%|██████████| 9/9 [00:00<00:00, 963.30it/s]
-    downloaded to /Users/d/projects/sbt-papers/r15-ai-search-metamerism/experiment/_hf/exp-compounding-format
+    downloaded to <repo>/r15-ai-search-metamerism/experiment/_hf/exp-compounding-format
   spectralbranding/exp-cross-language  (DOI 10.57967/hf/8439)
 Fetching 5 files:   0%|          | 0/5 [00:00<?, ?it/s]Fetching 5 files: 100%|██████████| 5/5 [00:00<00:00, 911.41it/s]
-    downloaded to /Users/d/projects/sbt-papers/r15-ai-search-metamerism/experiment/_hf/exp-cross-language
+    downloaded to <repo>/r15-ai-search-metamerism/experiment/_hf/exp-cross-language
   spectralbranding/exp-primacy-generalization  (DOI 10.57967/hf/8436)
 Fetching 5 files:   0%|          | 0/5 [00:00<?, ?it/s]Fetching 5 files: 100%|██████████| 5/5 [00:00<00:00, 833.06it/s]
-    downloaded to /Users/d/projects/sbt-papers/r15-ai-search-metamerism/experiment/_hf/exp-primacy-generalization
+    downloaded to <repo>/r15-ai-search-metamerism/experiment/_hf/exp-primacy-generalization
   spectralbranding/r15-ai-search-metamerism  (DOI 10.57967/hf/8284)
 Fetching 67 files:   0%|          | 0/67 [00:00<?, ?it/s]Fetching 67 files: 100%|██████████| 67/67 [00:00<00:00, 1802.49it/s]
-    downloaded to /Users/d/projects/sbt-papers/r15-ai-search-metamerism/experiment/_hf/r15-ai-search-metamerism
+    downloaded to <repo>/r15-ai-search-metamerism/experiment/_hf/r15-ai-search-metamerism
   spectralbranding/r15-synthetic-cohorts  (DOI 10.57967/hf/8441)
 Fetching 14 files:   0%|          | 0/14 [00:00<?, ?it/s]Fetching 14 files: 100%|██████████| 14/14 [00:00<00:00, 1129.76it/s]
-    downloaded to /Users/d/projects/sbt-papers/r15-ai-search-metamerism/experiment/_hf/r15-synthetic-cohorts
+    downloaded to <repo>/r15-ai-search-metamerism/experiment/_hf/r15-synthetic-cohorts
 Done. Raw logs are under experiment/_hf/<dataset>/data/.
 See DATA_MANIFEST.yaml hf_archive: for the file -> dataset map.
 >>> [r16-ai-native-brand-identity] running reproduce.sh 
 Downloading raw datasets from HuggingFace...
   spectralbranding/exp-bf-format  (DOI 10.57967/hf/8440)
 Fetching 7 files:   0%|          | 0/7 [00:00<?, ?it/s]Fetching 7 files: 100%|██████████| 7/7 [00:00<00:00, 898.94it/s]
-    downloaded to /Users/d/projects/sbt-papers/r16-ai-native-brand-identity/experiment/_hf/exp-bf-format
+    downloaded to <repo>/r16-ai-native-brand-identity/experiment/_hf/exp-bf-format
   spectralbranding/r16-behavioral-metamerism-pilot  (DOI 10.57967/hf/8442)
 Fetching 8 files:   0%|          | 0/8 [00:00<?, ?it/s]Fetching 8 files: 100%|██████████| 8/8 [00:00<00:00, 1230.41it/s]
-    downloaded to /Users/d/projects/sbt-papers/r16-ai-native-brand-identity/experiment/_hf/r16-behavioral-metamerism-pilot
+    downloaded to <repo>/r16-ai-native-brand-identity/experiment/_hf/r16-behavioral-metamerism-pilot
 Done. Raw logs are under experiment/_hf/<dataset>/data/.
 See DATA_MANIFEST.yaml hf_archive: for the file -> dataset map.
 >>> [r17-brand-triangulation] no reproduce.sh; skipping (paper bundle without pipeline)
@@ -243,7 +243,7 @@ See DATA_MANIFEST.yaml hf_archive: for the file -> dataset map.
 Downloading raw datasets from HuggingFace...
   spectralbranding/r19-rate-distortion-sweep  (DOI 10.57967/hf/8362)
 Fetching 23 files:   0%|          | 0/23 [00:00<?, ?it/s]Fetching 23 files: 100%|██████████| 23/23 [00:00<00:00, 1317.45it/s]
-    downloaded to /Users/d/projects/sbt-papers/r19-rate-distortion/experiment/_hf/r19-rate-distortion-sweep
+    downloaded to <repo>/r19-rate-distortion/experiment/_hf/r19-rate-distortion-sweep
 Done. Raw logs are under experiment/_hf/<dataset>/data/.
 See DATA_MANIFEST.yaml hf_archive: for the file -> dataset map.
 >>> [r2-spectral-metamerism] no reproduce.sh; skipping (paper bundle without pipeline)
