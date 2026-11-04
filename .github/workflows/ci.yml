@@ -73,13 +73,39 @@ jobs:
             echo "No tests found, skipping."
           fi
 
+      # Trivy binary from its GitHub release, checked against the release's checksum
+      # file. setup-trivy (inside trivy-action) downloads the tarball from
+      # get.trivy.dev, which is NXDOMAIN since 2026-11-03 (aquasecurity/trivy#11537,
+      # aquasecurity/setup-trivy#42): curl exit 6. Installed outside the checkout so
+      # the scan of '.' does not see it.
+      - name: Install Trivy (GitHub release)
+        env:
+          TRIVY_VERSION: '0.70.0'
+        run: |
+          set -euo pipefail
+          base="https://github.com/aquasecurity/trivy/releases/download/v${TRIVY_VERSION}"
+          tgz="trivy_${TRIVY_VERSION}_Linux-64bit.tar.gz"
+          sums="trivy_${TRIVY_VERSION}_checksums.txt"
+          dir="$RUNNER_TEMP/trivy-bin"
+          mkdir -p "$dir"
+          cd "$RUNNER_TEMP"
+          curl -fsSL --retry 3 -o "$tgz" "$base/$tgz"
+          curl -fsSL --retry 3 -o "$sums" "$base/$sums"
+          grep " ${tgz}\$" "$sums" | sha256sum -c -
+          tar -xzf "$tgz" -C "$dir" trivy
+          rm -f "$tgz" "$sums"
+          echo "$dir" >> "$GITHUB_PATH"
+          "$dir/trivy" --version
+
       # Security scan - runs for ALL project types
       - name: Security (Trivy)
         # Pinned by commit SHA (trivy-action tags were force-pushed in March 2026).
-        # cache: 'false' skips the trivy-DB cache step, where a setup-trivy change
-        # rejects the $HOME-containing default path and fails the step.
+        # skip-setup-trivy: the binary comes from the step above. cache: 'false'
+        # skips the trivy-DB cache step, where a setup-trivy change rejects the
+        # $HOME-containing default path and fails the step.
         uses: aquasecurity/trivy-action@ed142fd0673e97e23eac54620cfb913e5ce36c25 # v0.36.0
         with:
+          skip-setup-trivy: true
           scan-type: 'fs'
           scan-ref: '.'
           exit-code: '1'
