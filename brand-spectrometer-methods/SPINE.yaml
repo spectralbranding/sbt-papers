@@ -11,7 +11,7 @@
 # measurements / findings / negative_findings are first-class nodes.
 
 spine_version: "0.2"
-spine_doc_version: "0.3.2"
+spine_doc_version: "0.3.3"
 paper_key: "2026ax"
 provenance: generative
 title: >-
@@ -70,6 +70,15 @@ boundary_conditions:
       Native-language operators are required for non-English cohorts; routing
       non-English artifacts to a different-language family conflates
       comprehension variance with perception variance.
+  - id: C5
+    statement: >-
+      Population boundary: the read is over publicly available discourse, not a
+      sampled respondent cohort. A cohort is a set of public artifacts, never a
+      recruited panel, so a reading of an elite-luxury brand reports how the brand
+      is described in the open record and is never the perception of verified
+      luxury consumers. The owner cohort is artifacts authored by owners, not
+      recruited owners.
+    observable: "Every cohort is defined by an artifact inventory; no respondent is sampled."
 
 # ============================================================================
 # Observations (raw events lifted into the spine)
@@ -243,7 +252,7 @@ findings:
       V1 test-retest PASS 4/5: each K=5 re-render is aggregated to a replicate cohort
       vector and the cohort-level test-retest distance sits below the operator floor
       for 4 cohorts (.015<.057, .006<.010, .003<.013, .004<.010). The Mandarin cohort
-      FAILS (.0076 source-matched-bootstrap > its tight floor .0034): deepseek-v4-flash
+      FAILS (.0079 source-matched-bootstrap > its tight floor .0034): deepseek-v4-flash
       varies more run-to-run than swapping operators does AND returns unparseable
       output on a majority of re-renders — a reliability limit of that operator
       (addressable; see [[F1]] limitation + operator reassessment), not the design.
@@ -416,6 +425,13 @@ alternative_explanations:
       Cohort convergence could be an artifact-selection effect rather than real
       discourse convergence.
     addressed_by: [RC2, C3]
+  - id: AE3
+    statement: >-
+      The owner-versus-press separation could reflect how often each cohort's
+      artifacts name the brand rather than observer voice: which name appears is
+      known to move a language-model dimensional reading (2026bp), and owner and
+      press artifacts might differ in name density.
+    addressed_by: [RC4]
 robustness_checks:
   - id: RC1
     statement: >-
@@ -438,6 +454,18 @@ robustness_checks:
       resolution rule.
     antecedents: [M7, M8]
     evidence: [{type: empirical, detail: "cohort_separability.py (MMD+Holm/BH); controls_calibration.py"}]
+  - id: RC4
+    statement: >-
+      Name identity cannot act on the resolved pair, since the brand name is the
+      same in every cell. Name density was checked on the fresh-window artifact
+      set: actual-owners 23.18 and non-italian-press 25.30 brand mentions per
+      1,000 words (n = 6 and 7), difference 2.12, permutation p = .755; the press
+      cohort names the brand slightly more often while owners read it lower, so
+      there is no density difference for the separation to rest on. This closes
+      the route on this artifact set only; no density was varied, and no claim is
+      made that the instrument is invariant to name density.
+    antecedents: [F6]
+    evidence: [{type: empirical, detail: "name_density.py over name_density_rows.csv (per-artifact counts; seed 20260830; 99,999 permutations)"}]
 
 # ============================================================================
 # Limitations
@@ -506,6 +534,9 @@ corpus_precedents:
   - key: "2026bb"
     relationship: applies
     note: "PRISM-C — companion choice instrument; the stated-to-revealed gap sits outside this instrument's perception-and-valence scope (M10c)."
+  - key: "2026bp"
+    relationship: applies
+    note: "Entity-Name Leakage — which name appears moves a language-model dimensional reading; name identity cancels within one brand, and the density route is checked on this artifact set (AE3, RC4)."
 
 external_anchors:
   - ref: "Campbell & Fiske 1959 [VERIFY]"
@@ -534,6 +565,13 @@ external_anchors:
       LLMs zero-shot classify and explain latent social constructs across a 25-task
       battery — the computational-social-science warrant for the extract stage.
       Crossref-verified 2026-06-24.
+  - ref: "Bacon, Hoque & Sabbah 2026 (Human Resource Management Journal; DOI 10.1111/1748-8583.70068)"
+    use: >-
+      Applied precedent in a management venue: 132,456 job adverts read by one
+      model at temperature zero, every flagged case verified by hand. Its check
+      reports precision on flagged cases within one model family, with no recall
+      estimate and no cross-family comparison, which is the residual the
+      cross-family rule measures.
   - ref: "Zhang et al. 2024 (Findings of NAACL 2024:3881-3906; DOI 10.18653/v1/2024.findings-naacl.246)"
     use: >-
       Sentiment analysis in the era of LLMs, a reality check — validity warrant +
@@ -541,8 +579,13 @@ external_anchors:
   - ref: "Warriner, Kuperman & Brysbaert 2013 (Behavior Research Methods 45(4):1191-1207; DOI 10.3758/s13428-012-0314-x)"
     use: >-
       Human valence/arousal/dominance lexical norms (13,915 lemmas) — the affective-norm
-      criterion the M9 valence layer is to be validated against (future work). Same
-      target venue as this paper. Crossref-verified 2026-06-24.
+      criterion the M9 valence layer is to be validated against (future work).
+      Crossref-verified 2026-06-24.
+  - ref: "Holmqvist, Christodoulides, Gustafsson & Kowalkowski 2026 (Psychology & Marketing; DOI 10.1002/mar.70245)"
+    use: >-
+      Luxury-research sampling standard: luxury perception claims need verified
+      luxury consumers, and broad non-consumer sampling is permitted when
+      non-consumers' perceptions are the object. Anchors boundary C5.
   - ref: "GenAI-vs-consumer-panels paper [VERIFY]"
     use: "the assumption metameric psychometrics rejects (a panel is another cohort, not an oracle)."
   - ref: "Keller 1993; Aaker 1991; Aaker 1997 [VERIFY]"
