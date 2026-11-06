@@ -26,7 +26,7 @@ Random seed: 42 (no stochastic computations — all closed-form; seed included f
              reproducibility policy compliance)
 
 Run command:
-  uv run --with numpy,scipy python research/computation_scripts/r5_specification_impossibility.py
+  uv run --with numpy,scipy python code/r5_specification_impossibility.py
 
 All output matches paper figures to stated precision.
 """

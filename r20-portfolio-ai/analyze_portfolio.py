@@ -16,7 +16,7 @@ Reads responses from responses/ and computes:
 11. System-prompt ablation comparison
 
 Usage:
-    uv run python research/R20_portfolio_ai/analyze_portfolio.py
+    uv run python analyze_portfolio.py
 
 Requirements:
     uv add pandas numpy scipy

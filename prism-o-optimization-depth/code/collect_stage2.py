@@ -40,13 +40,13 @@ Organizations without EDGAR filings fail the channel requirement
 mechanically -> the stratum spare enters; residual shortfalls are recorded
 in the pinned manifest (the frozen selection rule anticipates this).
 
-Output: research/prism_o/panel/<ORG>/<CHANNEL>/<artifact_id>.txt (clipped,
-plain text) + research/prism_o/data/panel_pinned_manifest.json (SHA-256 per
+Output: panel/<ORG>/<CHANNEL>/<artifact_id>.txt (clipped,
+plain text) + data/panel_pinned_manifest.json (SHA-256 per
 artifact, source URL, EDGAR accession, class, date, ai_announcer flag, org
 name variants for the masking arm). Re-runnable; deterministic given EDGAR
 state (selection = most recent class-matched, text >= MIN_CHARS).
 
-Run:  uv run python research/prism_o/code/collect_stage2.py
+Run:  uv run python code/collect_stage2.py
 (no API keys; SEC requires a User-Agent with contact email)
 """
 
@@ -66,7 +66,7 @@ import yaml
 PRISM_O_DIR = Path(__file__).resolve().parents[1]
 DATA_DIR = PRISM_O_DIR / "data"
 PANEL_DIR = PRISM_O_DIR / "panel"
-UA = {"User-Agent": "PRISM-O research instrument (Dmitry Zharnikov, fermeradar@gmail.com)"}
+UA = {"User-Agent": "PRISM-O research instrument (Dmitry Zharnikov, dmitry@spectralbranding.com)"}
 WINDOW = ("2025-07-01", "2026-06-30")
 PER_CHANNEL_MAX = 5
 PER_CHANNEL_MIN = 3

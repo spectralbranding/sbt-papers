@@ -24,7 +24,7 @@ reported first in the paper.
    three-regime stability check, executed late and labeled.
 
 Writes data/pl4_posthoc_results.json. Run:
-    uv run python research/prism_o/code/analyze_posthoc.py
+    uv run python code/analyze_posthoc.py
 """
 
 from __future__ import annotations

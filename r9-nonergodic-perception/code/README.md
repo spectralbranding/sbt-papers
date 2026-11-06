@@ -44,8 +44,7 @@ Stdout matches the values cited in Tables 2 and 3 of the paper.
 Each script is the ground truth for any value cited as "Monte Carlo,"
 "simulated," "computed," or "empirical" in the paper. Per the project's
 Paper Quality Standards section 37d, if a script revision changes a number,
-the paper's table is updated to match. The internal SSOT for the paper text
-lives at `research/R9_nonergodic_perception.md` in the spectral-branding
+the paper's table is updated to match. The paper text is maintained in a private working
 repository; this `code/` directory is mirrored to the public
 `sbt-papers/r9-nonergodic-perception/` repository alongside the public
 `paper.md`.

@@ -1,183 +1,134 @@
 ==================================================
-Hub run: 2026-08-07T08:49:58Z
+Hub run: 2026-11-06T07:57:44Z
 Repo: <repo>
-Git SHA: c36a3f4e987c23d1b2bfe103d8aa1cdc1661f077
+Git SHA: ceeb370818e20b1aa5806a0547eac9e018b7f352
 Flags: check_only=0 fast=0
 ==================================================
 >>> [alibi-epistemology] no reproduce.sh; skipping (paper bundle without pipeline)
 >>> [brand-correspondence-principle] no reproduce.sh; skipping (paper bundle without pipeline)
 >>> [brand-spectrometer-methods] no reproduce.sh; skipping (paper bundle without pipeline)
 >>> [canon-as-repository] no reproduce.sh; skipping (paper bundle without pipeline)
->>> [forming-a-perception] no reproduce.sh; skipping (paper bundle without pipeline)
->>> [perception-sets-matrix] running reproduce.sh 
-== deps check ==
-== unit suite (must pass before anything) ==
+>>> [entity-name-leakage] running reproduce.sh 
+== Table 4: guard interaction against the within-cell residual ==
+Installed 2 packages in 29ms
+VALIDATION — reproducing the probe's own published aggregate
 
-==================================== ERRORS ====================================
-_________________ ERROR collecting tests/test_psm_estimator.py _________________
-ImportError while importing test module '<repo>/perception-sets-matrix/code/tests/test_psm_estimator.py'.
-Hint: make sure your test modules/packages have valid Python names.
-Traceback:
-<uv-data>/python/cpython-3.14.2-macos-aarch64-none/lib/python3.14/importlib/__init__.py:88: in import_module
-    return _bootstrap._gcd_import(name[level:], package, level)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-tests/test_psm_estimator.py:29: in <module>
-    import psm_lib as L  # noqa: E402
-    ^^^^^^^^^^^^^^^^^^^
-psm_lib.py:44: in <module>
-    from llm_call_logger import log_call  # noqa: E402
-    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-E   ModuleNotFoundError: No module named 'llm_call_logger'
-=========================== short test summary info ============================
-ERROR tests/test_psm_estimator.py
-!!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!
-1 error in 0.14s
-!!! [perception-sets-matrix] reproduce.sh exited non-zero
->>> [prism-b-brand] no reproduce.sh; skipping (paper bundle without pipeline)
->>> [prism-c-choice] no reproduce.sh; skipping (paper bundle without pipeline)
->>> [prism-m-metamerism] no reproduce.sh; skipping (paper bundle without pipeline)
->>> [prism-o-optimization-depth] no reproduce.sh; skipping (paper bundle without pipeline)
->>> [prism-t-version-floor] no reproduce.sh; skipping (paper bundle without pipeline)
->>> [producer-observer-seam] no reproduce.sh; skipping (paper bundle without pipeline)
->>> [r0-literature-survey] no reproduce.sh; skipping (paper bundle without pipeline)
->>> [r1-formal-metric] no reproduce.sh; skipping (paper bundle without pipeline)
->>> [r10-dove-case-study] no reproduce.sh; skipping (paper bundle without pipeline)
->>> [r11-dimension-justification] no reproduce.sh; skipping (paper bundle without pipeline)
->>> [r12-coherence-resilience] no reproduce.sh; skipping (paper bundle without pipeline)
->>> [r13-paper-as-specification] no reproduce.sh; skipping (paper bundle without pipeline)
->>> [r14-paper-as-repository] no reproduce.sh; skipping (paper bundle without pipeline)
->>> [r15-ai-search-metamerism] running reproduce.sh 
-Downloading raw datasets from HuggingFace...
-./reproduce.sh: line 8: huggingface-cli: command not found
-!!! [r15-ai-search-metamerism] reproduce.sh exited non-zero
->>> [r16-ai-native-brand-identity] running reproduce.sh 
-Downloading raw datasets from HuggingFace...
-./reproduce.sh: line 8: huggingface-cli: command not found
-!!! [r16-ai-native-brand-identity] reproduce.sh exited non-zero
->>> [r17-brand-triangulation] no reproduce.sh; skipping (paper bundle without pipeline)
->>> [r18-spectral-dynamics] no reproduce.sh; skipping (paper bundle without pipeline)
->>> [r19-rate-distortion] running reproduce.sh 
-Downloading raw datasets from HuggingFace...
-./reproduce.sh: line 8: huggingface-cli: command not found
-!!! [r19-rate-distortion] reproduce.sh exited non-zero
->>> [r2-spectral-metamerism] no reproduce.sh; skipping (paper bundle without pipeline)
->>> [r20-portfolio-ai] no reproduce.sh; skipping (paper bundle without pipeline)
->>> [r21-spectral-immunity] no reproduce.sh; skipping (paper bundle without pipeline)
->>> [r22-spectral-gap-restoration] no reproduce.sh; skipping (paper bundle without pipeline)
->>> [r3-cohort-boundaries] no reproduce.sh; skipping (paper bundle without pipeline)
->>> [r4-sphere-packing] no reproduce.sh; skipping (paper bundle without pipeline)
->>> [r5-specification-impossibility] no reproduce.sh; skipping (paper bundle without pipeline)
->>> [r6-diffusion-dynamics] no reproduce.sh; skipping (paper bundle without pipeline)
->>> [r7-spectral-resource-allocation] no reproduce.sh; skipping (paper bundle without pipeline)
->>> [r8-portfolio-theory] no reproduce.sh; skipping (paper bundle without pipeline)
->>> [r9-nonergodic-perception] no reproduce.sh; skipping (paper bundle without pipeline)
->>> [reaching-a-perception] no reproduce.sh; skipping (paper bundle without pipeline)
->>> [rendering-problem] no reproduce.sh; skipping (paper bundle without pipeline)
->>> [spectral-brand-theory] no reproduce.sh; skipping (paper bundle without pipeline)
->>> [spectral-identity] no reproduce.sh; skipping (paper bundle without pipeline)
->>> [substrate-floor] no reproduce.sh; skipping (paper bundle without pipeline)
-==================================================
-Hub run complete: 2026-08-07T08:50:02Z
-Paper slugs found: 40  ran: 4  skipped: 36
-==================================================
-==================================================
-Hub run: 2026-08-07T10:11:47Z
-Repo: <repo>
-Git SHA: c36a3f4e987c23d1b2bfe103d8aa1cdc1661f077
-Flags: check_only=0 fast=0
-==================================================
->>> [alibi-epistemology] no reproduce.sh; skipping (paper bundle without pipeline)
->>> [brand-correspondence-principle] no reproduce.sh; skipping (paper bundle without pipeline)
->>> [brand-spectrometer-methods] no reproduce.sh; skipping (paper bundle without pipeline)
->>> [canon-as-repository] no reproduce.sh; skipping (paper bundle without pipeline)
->>> [forming-a-perception] no reproduce.sh; skipping (paper bundle without pipeline)
->>> [perception-sets-matrix] running reproduce.sh 
-== deps check ==
-== unit suite (must pass before anything) ==
+  run 1: recomputed 0.824  published 0.824  MATCH
+  run 2: recomputed 0.825  published 0.825  MATCH
 
-==================================== ERRORS ====================================
-_________________ ERROR collecting tests/test_psm_estimator.py _________________
-ImportError while importing test module '<repo>/perception-sets-matrix/code/tests/test_psm_estimator.py'.
-Hint: make sure your test modules/packages have valid Python names.
-Traceback:
-<uv-data>/python/cpython-3.14.2-macos-aarch64-none/lib/python3.14/importlib/__init__.py:88: in import_module
-    return _bootstrap._gcd_import(name[level:], package, level)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-tests/test_psm_estimator.py:29: in <module>
-    import psm_lib as L  # noqa: E402
-    ^^^^^^^^^^^^^^^^^^^
-psm_lib.py:44: in <module>
-    from llm_call_logger import log_call  # noqa: E402
-    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-E   ModuleNotFoundError: No module named 'llm_call_logger'
-=========================== short test summary info ============================
-ERROR tests/test_psm_estimator.py
-!!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!
-1 error in 0.08s
-!!! [perception-sets-matrix] reproduce.sh exited non-zero
->>> [prism-b-brand] no reproduce.sh; skipping (paper bundle without pipeline)
->>> [prism-c-choice] no reproduce.sh; skipping (paper bundle without pipeline)
->>> [prism-m-metamerism] no reproduce.sh; skipping (paper bundle without pipeline)
->>> [prism-o-optimization-depth] no reproduce.sh; skipping (paper bundle without pipeline)
->>> [prism-t-version-floor] no reproduce.sh; skipping (paper bundle without pipeline)
->>> [producer-observer-seam] no reproduce.sh; skipping (paper bundle without pipeline)
->>> [r0-literature-survey] no reproduce.sh; skipping (paper bundle without pipeline)
->>> [r1-formal-metric] no reproduce.sh; skipping (paper bundle without pipeline)
->>> [r10-dove-case-study] no reproduce.sh; skipping (paper bundle without pipeline)
->>> [r11-dimension-justification] no reproduce.sh; skipping (paper bundle without pipeline)
->>> [r12-coherence-resilience] no reproduce.sh; skipping (paper bundle without pipeline)
->>> [r13-paper-as-specification] no reproduce.sh; skipping (paper bundle without pipeline)
->>> [r14-paper-as-repository] no reproduce.sh; skipping (paper bundle without pipeline)
->>> [r15-ai-search-metamerism] running reproduce.sh 
-Downloading raw datasets from HuggingFace...
-./reproduce.sh: line 8: huggingface-cli: command not found
-!!! [r15-ai-search-metamerism] reproduce.sh exited non-zero
->>> [r16-ai-native-brand-identity] running reproduce.sh 
-Downloading raw datasets from HuggingFace...
-./reproduce.sh: line 8: huggingface-cli: command not found
-!!! [r16-ai-native-brand-identity] reproduce.sh exited non-zero
->>> [r17-brand-triangulation] no reproduce.sh; skipping (paper bundle without pipeline)
->>> [r18-spectral-dynamics] no reproduce.sh; skipping (paper bundle without pipeline)
->>> [r19-rate-distortion] running reproduce.sh 
-Downloading raw datasets from HuggingFace...
-./reproduce.sh: line 8: huggingface-cli: command not found
-!!! [r19-rate-distortion] reproduce.sh exited non-zero
->>> [r2-spectral-metamerism] no reproduce.sh; skipping (paper bundle without pipeline)
->>> [r20-portfolio-ai] no reproduce.sh; skipping (paper bundle without pipeline)
->>> [r21-spectral-immunity] no reproduce.sh; skipping (paper bundle without pipeline)
->>> [r22-spectral-gap-restoration] no reproduce.sh; skipping (paper bundle without pipeline)
->>> [r3-cohort-boundaries] no reproduce.sh; skipping (paper bundle without pipeline)
->>> [r4-sphere-packing] no reproduce.sh; skipping (paper bundle without pipeline)
->>> [r5-specification-impossibility] no reproduce.sh; skipping (paper bundle without pipeline)
->>> [r6-diffusion-dynamics] no reproduce.sh; skipping (paper bundle without pipeline)
->>> [r7-spectral-resource-allocation] no reproduce.sh; skipping (paper bundle without pipeline)
->>> [r8-portfolio-theory] no reproduce.sh; skipping (paper bundle without pipeline)
->>> [r9-nonergodic-perception] no reproduce.sh; skipping (paper bundle without pipeline)
->>> [reaching-a-perception] no reproduce.sh; skipping (paper bundle without pipeline)
->>> [rendering-problem] no reproduce.sh; skipping (paper bundle without pipeline)
->>> [spectral-brand-theory] no reproduce.sh; skipping (paper bundle without pipeline)
->>> [spectral-identity] no reproduce.sh; skipping (paper bundle without pipeline)
->>> [substrate-floor] no reproduce.sh; skipping (paper bundle without pipeline)
-==================================================
-Hub run complete: 2026-08-07T10:11:47Z
-Paper slugs found: 40  ran: 4  skipped: 36
-==================================================
-==================================================
-Hub run: 2026-08-07T10:52:16Z
-Repo: <repo>
-Git SHA: c36a3f4e987c23d1b2bfe103d8aa1cdc1661f077
-Flags: check_only=0 fast=0
-==================================================
->>> [alibi-epistemology] no reproduce.sh; skipping (paper bundle without pipeline)
->>> [brand-correspondence-principle] no reproduce.sh; skipping (paper bundle without pipeline)
->>> [brand-spectrometer-methods] no reproduce.sh; skipping (paper bundle without pipeline)
->>> [canon-as-repository] no reproduce.sh; skipping (paper bundle without pipeline)
+  -> the pipeline reproduces the published numbers; the metric is the right one
+
+RESIDUAL-REFERENCED GUARD, per run
+
+  run 1:  n=864 over 4 texts
+      MS_interaction 0.2178   MS_residual 0.1764   F = 1.235  (df 9, 848)
+      SD_interaction 0.0277   SD_residual 0.4200
+      RATIO (SD_inter / SD_resid) = 0.066
+
+  run 2:  n=864 over 4 texts
+      MS_interaction 0.1959   MS_residual 0.1808   F = 1.084  (df 9, 848)
+      SD_interaction 0.0167   SD_residual 0.4252
+      RATIO (SD_inter / SD_resid) = 0.039
+
+MEAN RATIO ACROSS RUNS = 0.053
+
+This is the number simulate_guard_power.py had to sweep. Read the
+text-count requirement off that table at this ratio.
+
+Written: output/tables/guard_ratio.json
+== Table 3: per-dimension movement under a name exchange ==
+Installed 1 package in 9ms
+Per-dimension absolute movement under a name exchange
+
+dimension       run 1   run 2
+--------------------------------
+semiotic        0.859   0.839
+narrative       0.490   0.466
+ideological     0.360   0.353
+experiential    0.499   0.520
+social          0.659   0.679
+economic        0.542   0.542
+cultural        0.742   0.728
+temporal        0.492   0.583
+
+VALIDATION — RMS over dimensions must reproduce the published aggregate
+
+  run 1: 0.824 vs published 0.824  MATCH
+  run 2: 0.825 vs published 0.825  MATCH
+
+max/min ratio: run 1 2.39x, run 2 2.38x
+range: run 1 0.499, run 2 0.486 rubric points
+largest: run 1 semiotic, run 2 semiotic
+smallest: run 1 ideological, run 2 ideological
+
+Agreement on which dimension moves most/least across runs is the
+reproducibility question; a swap means the ordering is not stable.
+== Table 5: equivalence bounds by text count ==
+Installed 1 package in 8ms
+Sampling behaviour of the interaction ratio at the MEASURED true value 0.053
+
+ n_texts |  median |  95th pct (upper bound you could defend)
+----------------------------------------------------------
+       4 |  0.020  |  0.159
+       8 |  0.043  |  0.130
+      12 |  0.044  |  0.117
+      16 |  0.045  |  0.108
+      20 |  0.047  |  0.103
+      24 |  0.048  |  0.100
+      32 |  0.047  |  0.094
+      48 |  0.048  |  0.086
+
+Reading. The 95th percentile is what an unlucky-but-honest run would
+report as its upper bound. A design can only DEMONSTRATE neutrality
+below a bound that sits above this number.
+
+NOTE the four-text row: it is the collected design, and its upper bound
+is why the existing data cannot settle neutrality even though its point
+estimate is small.
+
+Written: output/tables/equivalence_power.json
+== guard reproducibility, discussed but not tabled ==
+Installed 1 package in 9ms
+Guard reproducibility across TWO independent runs (K3), 4000 simulated pairs
+
+interaction/residual ratio 0 = texts truly neutral; the guard SHOULD not fire
+
+n_texts | ratio 0.00 | ratio 0.15 | ratio 0.30 | ratio 0.50
+-----------------------------------------------------------
+      4 |   0.901    |   0.526    |   0.854    |   0.990   
+      6 |   0.910    |   0.523    |   0.970    |   1.000   
+      8 |   0.899    |   0.570    |   0.994    |   1.000   
+     12 |   0.901    |   0.711    |   1.000    |   1.000   
+     16 |   0.913    |   0.819    |   1.000    |   1.000   
+     20 |   0.908    |   0.903    |   1.000    |   1.000   
+     24 |   0.904    |   0.941    |   1.000    |   1.000   
+     32 |   0.909    |   0.988    |   1.000    |   1.000   
+
+Fire rate in a single run (ratio .00 is the false-positive rate):
+
+n_texts | ratio 0.00 | ratio 0.15 | ratio 0.30 | ratio 0.50
+-----------------------------------------------------------
+      4 |   0.051    |   0.440    |   0.915    |   0.995   
+      6 |   0.044    |   0.571    |   0.985    |   1.000   
+      8 |   0.051    |   0.684    |   0.996    |   1.000   
+     12 |   0.054    |   0.830    |   1.000    |   1.000   
+     16 |   0.044    |   0.900    |   1.000    |   1.000   
+     20 |   0.046    |   0.948    |   1.000    |   1.000   
+     24 |   0.050    |   0.970    |   1.000    |   1.000   
+     32 |   0.045    |   0.993    |   1.000    |   1.000   
+
+Reading:
+  A guard is USABLE when two independent runs agree. Agreement below ~.95
+  means the verdict is a coin-flip and cannot license reading past it --
+  which is exactly what happened on 4 texts.
+
+Done. Tables in output/tables/.
 >>> [forming-a-perception] no reproduce.sh; skipping (paper bundle without pipeline)
 >>> [perception-sets-matrix] running reproduce.sh 
 == deps check ==
 == unit suite (must pass before anything) ==
 .........                                                                [100%]
-9 passed in 12.46s
+9 passed in 11.83s
 == design artifacts (seeded; byte-identical regeneration) ==
 PERSONAS.yaml written: 30 cohorts
 Study-1 match coverage over 60 cells: min=0.471 p25=0.564 median=0.635 p75=0.672 max=0.944
@@ -196,6 +147,7 @@ results -> data/results.json
 >>> [prism-c-choice] no reproduce.sh; skipping (paper bundle without pipeline)
 >>> [prism-m-metamerism] no reproduce.sh; skipping (paper bundle without pipeline)
 >>> [prism-o-optimization-depth] no reproduce.sh; skipping (paper bundle without pipeline)
+>>> [prism-t-velocity] no reproduce.sh; skipping (paper bundle without pipeline)
 >>> [prism-t-version-floor] no reproduce.sh; skipping (paper bundle without pipeline)
 >>> [producer-observer-seam] no reproduce.sh; skipping (paper bundle without pipeline)
 >>> [r0-literature-survey] no reproduce.sh; skipping (paper bundle without pipeline)
@@ -208,32 +160,32 @@ results -> data/results.json
 >>> [r15-ai-search-metamerism] running reproduce.sh 
 Downloading raw datasets from HuggingFace...
   spectralbranding/exp-agentic-collapse  (DOI 10.57967/hf/8437)
-Fetching 14 files:   0%|          | 0/14 [00:00<?, ?it/s]Fetching 14 files: 100%|██████████| 14/14 [00:00<00:00, 1056.44it/s]
+Fetching 14 files:   0%|          | 0/14 [00:00<?, ?it/s]Fetching 14 files: 100%|██████████| 14/14 [00:00<00:00, 1123.21it/s]
     downloaded to <repo>/r15-ai-search-metamerism/experiment/_hf/exp-agentic-collapse
   spectralbranding/exp-compounding-format  (DOI 10.57967/hf/8438)
-Fetching 9 files:   0%|          | 0/9 [00:00<?, ?it/s]Fetching 9 files: 100%|██████████| 9/9 [00:00<00:00, 963.30it/s]
+Fetching 9 files:   0%|          | 0/9 [00:00<?, ?it/s]Fetching 9 files: 100%|██████████| 9/9 [00:00<00:00, 765.04it/s]
     downloaded to <repo>/r15-ai-search-metamerism/experiment/_hf/exp-compounding-format
   spectralbranding/exp-cross-language  (DOI 10.57967/hf/8439)
-Fetching 5 files:   0%|          | 0/5 [00:00<?, ?it/s]Fetching 5 files: 100%|██████████| 5/5 [00:00<00:00, 911.41it/s]
+Fetching 5 files:   0%|          | 0/5 [00:00<?, ?it/s]Fetching 5 files: 100%|██████████| 5/5 [00:00<00:00, 635.79it/s]
     downloaded to <repo>/r15-ai-search-metamerism/experiment/_hf/exp-cross-language
   spectralbranding/exp-primacy-generalization  (DOI 10.57967/hf/8436)
-Fetching 5 files:   0%|          | 0/5 [00:00<?, ?it/s]Fetching 5 files: 100%|██████████| 5/5 [00:00<00:00, 833.06it/s]
+Fetching 5 files:   0%|          | 0/5 [00:00<?, ?it/s]Fetching 5 files: 100%|██████████| 5/5 [00:00<00:00, 652.30it/s]
     downloaded to <repo>/r15-ai-search-metamerism/experiment/_hf/exp-primacy-generalization
   spectralbranding/r15-ai-search-metamerism  (DOI 10.57967/hf/8284)
-Fetching 67 files:   0%|          | 0/67 [00:00<?, ?it/s]Fetching 67 files: 100%|██████████| 67/67 [00:00<00:00, 1802.49it/s]
+Fetching 67 files:   0%|          | 0/67 [00:00<?, ?it/s]Fetching 67 files: 100%|██████████| 67/67 [00:00<00:00, 1687.58it/s]
     downloaded to <repo>/r15-ai-search-metamerism/experiment/_hf/r15-ai-search-metamerism
   spectralbranding/r15-synthetic-cohorts  (DOI 10.57967/hf/8441)
-Fetching 14 files:   0%|          | 0/14 [00:00<?, ?it/s]Fetching 14 files: 100%|██████████| 14/14 [00:00<00:00, 1129.76it/s]
+Fetching 14 files:   0%|          | 0/14 [00:00<?, ?it/s]Fetching 14 files: 100%|██████████| 14/14 [00:00<00:00, 866.99it/s]
     downloaded to <repo>/r15-ai-search-metamerism/experiment/_hf/r15-synthetic-cohorts
 Done. Raw logs are under experiment/_hf/<dataset>/data/.
 See DATA_MANIFEST.yaml hf_archive: for the file -> dataset map.
 >>> [r16-ai-native-brand-identity] running reproduce.sh 
 Downloading raw datasets from HuggingFace...
   spectralbranding/exp-bf-format  (DOI 10.57967/hf/8440)
-Fetching 7 files:   0%|          | 0/7 [00:00<?, ?it/s]Fetching 7 files: 100%|██████████| 7/7 [00:00<00:00, 898.94it/s]
+Fetching 7 files:   0%|          | 0/7 [00:00<?, ?it/s]Fetching 7 files: 100%|██████████| 7/7 [00:00<00:00, 1344.57it/s]
     downloaded to <repo>/r16-ai-native-brand-identity/experiment/_hf/exp-bf-format
   spectralbranding/r16-behavioral-metamerism-pilot  (DOI 10.57967/hf/8442)
-Fetching 8 files:   0%|          | 0/8 [00:00<?, ?it/s]Fetching 8 files: 100%|██████████| 8/8 [00:00<00:00, 1230.41it/s]
+Fetching 8 files:   0%|          | 0/8 [00:00<?, ?it/s]Fetching 8 files: 100%|██████████| 8/8 [00:00<00:00, 682.96it/s]
     downloaded to <repo>/r16-ai-native-brand-identity/experiment/_hf/r16-behavioral-metamerism-pilot
 Done. Raw logs are under experiment/_hf/<dataset>/data/.
 See DATA_MANIFEST.yaml hf_archive: for the file -> dataset map.
@@ -242,7 +194,7 @@ See DATA_MANIFEST.yaml hf_archive: for the file -> dataset map.
 >>> [r19-rate-distortion] running reproduce.sh 
 Downloading raw datasets from HuggingFace...
   spectralbranding/r19-rate-distortion-sweep  (DOI 10.57967/hf/8362)
-Fetching 23 files:   0%|          | 0/23 [00:00<?, ?it/s]Fetching 23 files: 100%|██████████| 23/23 [00:00<00:00, 1317.45it/s]
+Fetching 23 files:   0%|          | 0/23 [00:00<?, ?it/s]Fetching 23 files: 100%|██████████| 23/23 [00:00<00:00, 1072.31it/s]
     downloaded to <repo>/r19-rate-distortion/experiment/_hf/r19-rate-distortion-sweep
 Done. Raw logs are under experiment/_hf/<dataset>/data/.
 See DATA_MANIFEST.yaml hf_archive: for the file -> dataset map.
@@ -263,6 +215,6 @@ See DATA_MANIFEST.yaml hf_archive: for the file -> dataset map.
 >>> [spectral-identity] no reproduce.sh; skipping (paper bundle without pipeline)
 >>> [substrate-floor] no reproduce.sh; skipping (paper bundle without pipeline)
 ==================================================
-Hub run complete: 2026-08-07T10:57:37Z
-Paper slugs found: 40  ran: 4  skipped: 36
+Hub run complete: 2026-11-06T08:03:12Z
+Paper slugs found: 42  ran: 5  skipped: 37
 ==================================================

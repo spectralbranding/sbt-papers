@@ -424,9 +424,7 @@ def main() -> None:
         f"paper_terms={con.execute('select count(*) from paper_terms').fetchone()[0]}"
     )
     con.close()
-    print(
-        "Regenerate the .sql mirror: uv run python research/code/sync_substrate.py --sql-only"
-    )
+    print("Regenerate the .sql mirror: run sync_substrate.py --sql-only")
 
 
 if __name__ == "__main__":

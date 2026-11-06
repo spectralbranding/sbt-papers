@@ -33,7 +33,7 @@ import os
 import numpy as np
 
 # ---------------------------------------------------------------------------
-# Canonical emission profiles (from Zharnikov 2026a / CLAUDE.md project constants)
+# Canonical emission profiles (from Zharnikov 2026a)
 # Order: Semiotic, Narrative, Ideological, Experiential, Social, Economic,
 #        Cultural, Temporal
 # ---------------------------------------------------------------------------

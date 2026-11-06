@@ -6,7 +6,7 @@
 """estimator_stage2.py — PRISM-O (2026bd) PL4 estimator (frozen analysis plan).
 
 Implements PREREGISTRATION.md §4/§6 (v1.1). All randomness seeded
-(SEED = 20260703); run command: `uv run python research/prism_o/code/estimator_stage2.py`.
+(SEED = 20260703); run command: `uv run python code/estimator_stage2.py`.
 
 Depth score: D1=4, D2=3, D3=2, D4=1 (deeper = larger); UNCLASSIFIED and
 MALFORMED excluded from means, shares reported per channel.

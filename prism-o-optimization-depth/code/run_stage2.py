@@ -22,7 +22,7 @@ Resumable: done keys (org, channel, artifact_id, op_pair, arm) skipped —
 safe to shard by --ops / --org-slice across parallel processes.
 
 Run (keys via bws; sandbox OFF; one shard per operator pair):
-    bws run -- research/prism_o/code/run_campaign.sh stage2 --ops OP1
+    bws run -- code/run_campaign.sh stage2 --ops OP1
 """
 
 from __future__ import annotations

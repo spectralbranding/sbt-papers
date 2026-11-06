@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """prism_o_lib.py — PRISM-O (2026bd) campaign library.
 
-Adapts the PRISM-M campaign pattern (research/prism_m/code/, 2026az) to the
+Adapts the PRISM-M campaign pattern (prism-m-metamerism/code/, 2026az) to the
 optimization-depth instrument's two roles per operator pair:
 
 - SEGMENTER: reads an artifact/vignette text and returns the list of
