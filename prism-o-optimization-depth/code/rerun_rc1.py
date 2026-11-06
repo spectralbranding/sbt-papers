@@ -21,7 +21,7 @@ frozen downward regime are unchanged; this arm exists solely to compute the
 pre-registered sensitivity. Costs are classifier-only (cheap models); the
 $193 Stage-2 cap continues to govern (phase=stage2 logs).
 
-Run:  bws run -- research/prism_o/code/run_campaign.sh rc1 --regime up
+Run:  bws run -- code/run_campaign.sh rc1 --regime up
 """
 
 from __future__ import annotations

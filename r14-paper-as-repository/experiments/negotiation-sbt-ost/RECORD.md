@@ -39,7 +39,7 @@ independent corpora."* This experiment executes that step on the corpus's two la
   (operations *import* the perception vocabulary; the boundary terms are *narrowed*) is recovered
   mechanically, with no human reading of the other author's prose. *Falsified if* the linker
   reports no cross-owner edges, or edges that contradict the documented convergence relation in
-  `research/.../NOTES_SBT_ORGSCHEMA_CONVERGENCE.md`.
+  internal convergence notes.
 - **H4 — Single-author cleanliness (a prediction that is also the principal limitation).**
   Because SBT and OST are two *intentionally convergent* programs authored by one person, we
   predict a **clean** federation: zero unresolved interactions (no genuine `CONFLICT`,
@@ -293,7 +293,7 @@ No seed, dataset download, network call, or API key is required.
 The committed citation substrate (`the citation substrate`) and the live ontology
 modules (`the live ontology modules`) were not modified.
 
-**Publication plan (per user direction, 2026-06-13).** *All experiment data above is to be
+**Publication plan (by author decision, 2026-06-13).** *All experiment data above is to be
 published in the public SSOT when/if a paper carrying this evidence is published.* The carrying
 paper is **R14 / 2026u** (`§"A Realized Instance"`, whose §5.5 cites the federated case as
 evidence). At that paper's publication, these artifacts move to the public mirror

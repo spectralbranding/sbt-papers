@@ -10,9 +10,9 @@ Pipeline (run order; keys injected via `bws run --`; long runs sandbox-off):
 
 | Step | Command | Output |
 |---|---|---|
-| Stage-1 run (version check → concordance screen → bank) | `bws run -- research/prism_o/code/run_campaign.sh stage1` | `../data/stage1_records.jsonl`, `version_check_stage1.json`, `concordance_screen_stage1.json` |
+| Stage-1 run (version check → concordance screen → bank) | `bws run -- code/run_campaign.sh stage1` | `../data/stage1_records.jsonl`, `version_check_stage1.json`, `concordance_screen_stage1.json` |
 | Stage-1 scoring (H1(i) gate) | `run_campaign.sh score1` | `../data/pl4_stage1_results.json`, `STAGE1_REPORT.md` |
-| Stage-2 cost table (fires nothing) | `uv run python research/prism_o/code/estimate_stage2.py` | `../data/stage2_cost_estimate.json` |
+| Stage-2 cost table (fires nothing) | `uv run python code/estimate_stage2.py` | `../data/stage2_cost_estimate.json` |
 | Panel collection (EDGAR; no model calls) | `run_campaign.sh collect` | `../panel/`, `../data/panel_pinned_manifest.json` |
 | Stage-2 campaign (sharded per pair) | `bws run -- run_campaign.sh stage2 --ops OP1 --suffix _op1 --skip-version-check` (×4; run the version check once first) | `../data/stage2_records_op*.jsonl` |
 | PL4 estimator (seed 20260703) | `run_campaign.sh estimate2` | `../data/pl4_stage2_results.json` |

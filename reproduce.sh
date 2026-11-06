@@ -20,6 +20,7 @@ cd "$REPO_ROOT"
 
 mkdir -p output/figures output/tables output/logs
 LOG_FILE="output/logs/hub_run.log"
+: > "$LOG_FILE"  # one log per pipeline execution (PUBLIC_MIRROR_STANDARD §5)
 
 # Parse flags
 CHECK_ONLY=0

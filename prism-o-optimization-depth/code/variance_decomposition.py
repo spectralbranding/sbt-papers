@@ -21,11 +21,11 @@ artifacts with data (mirrors the estimator's pair rule and the negative
 control's artifact minimum). Deterministic; SEED fixed for consistency with
 the PL4 estimator.
 
-Writes research/prism_o/data/variance_decomposition.json and prints the
+Writes data/variance_decomposition.json and prints the
 panel summary.
 
 Run command:
-    uv run python research/prism_o/code/variance_decomposition.py
+    uv run python code/variance_decomposition.py
 """
 
 from __future__ import annotations

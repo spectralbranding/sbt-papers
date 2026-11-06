@@ -19,7 +19,7 @@ Order is HARD (PL1 verification equipment, methodology-0.3.0):
 Budget guard: aborts if the PL3-logged spend exceeds budget_cap_usd_stage1.
 
 Run (keys via bws; sandbox OFF for the long run):
-    bws run -- research/prism_o/code/run_campaign.sh stage1
+    bws run -- code/run_campaign.sh stage1
 """
 
 from __future__ import annotations

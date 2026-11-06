@@ -82,7 +82,7 @@ random-config tails) are asserted as BANDS that the paper states and the script
 reproduces, not as point values.
 
 Run command:
-    cd research/papers/2026y/simulation
+    cd r17-brand-triangulation/simulation
     uv run --with numpy --with scipy python R17_pdop_simulation.py
 
 Random seed: 42 (fixed at file top; governs every stochastic draw — ground-truth

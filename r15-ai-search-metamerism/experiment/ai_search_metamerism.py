@@ -1236,7 +1236,7 @@ def should_run_native(model_name: str, pair_id: str) -> Optional[str]:
 
     Returns the language code if yes, None if no.
 
-    Design decision (Session 90): native-language prompts are sent to ALL
+    Design decision: native-language prompts are sent to ALL
     models, not just models natively trained in that language. This avoids
     the confound of testing Greek/Latvian/Vietnamese/Serbian/Mongolian/Swahili
     only on models that don't exist for those languages. The strongest H10

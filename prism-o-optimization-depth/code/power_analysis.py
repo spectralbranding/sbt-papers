@@ -11,16 +11,16 @@ H1-H3), across-organization gap SD assumed 1.0 rung (conservative on a 4-rung
 ladder). Power via the noncentral t distribution: for n resolved
 organizations and mean gap g, ncp = (g / SD) * sqrt(n).
 
-Emits research/papers/2026bd/figures/power_curves.png (300 dpi, no on-image
+Emits the paper figure power_curves.png (300 dpi, no on-image
 title per corpus figure standard) and prints the .80-power crossing for each
 curve. Deterministic computation; SEED fixed for reproducibility of any
 future stochastic extension.
 
 Run command:
-    uv run python research/prism_o/code/power_analysis.py
+    uv run python code/power_analysis.py
 
 Output:
-    research/papers/2026bd/figures/power_curves.png
+    figures/power_curves.png
 """
 
 from __future__ import annotations

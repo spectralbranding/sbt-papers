@@ -55,7 +55,7 @@ DIMENSION_DESCRIPTIONS = {
     "temporal": "heritage, history, relationship to time",
 }
 
-# Canonical brand profiles (from CLAUDE.md)
+# Canonical brand profiles (Zharnikov 2026a)
 CANONICAL_PROFILES = {
     "Hermes": [9.5, 9.0, 7.0, 9.0, 8.5, 3.0, 9.0, 9.5],
     "IKEA": [8.0, 7.5, 6.0, 7.0, 5.0, 9.0, 7.5, 6.0],
