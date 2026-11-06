@@ -41,7 +41,13 @@ GAPS = (0.25, 0.50, 0.75)  # mean gap in rung units
 N_RANGE = np.arange(5, 121)
 MIN_RESOLVED_N = 45  # PL0 section 6/7 minimum-resolved-N target
 
-FIG_DIR = Path(__file__).resolve().parents[2] / "papers" / "2026bd" / "figures"
+_HERE = Path(__file__).resolve().parent
+# Working tree: the paper's figures folder lives under papers/2026bd/ two levels up.
+# Public mirror: that folder does not exist, so write to this paper's own figures/.
+_WORKING_FIG_DIR = _HERE.parents[1] / "papers" / "2026bd" / "figures"
+FIG_DIR = (
+    _WORKING_FIG_DIR if _WORKING_FIG_DIR.parent.is_dir() else _HERE.parent / "figures"
+)
 
 
 def power_one_sample_t(n: int, gap: float, sd: float, alpha: float) -> float:
