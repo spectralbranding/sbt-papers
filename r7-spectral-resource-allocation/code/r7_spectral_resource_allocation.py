@@ -33,8 +33,22 @@ Run command (numerics only):
 Run command (numerics + figures):
     uv run python r7_spectral_resource_allocation.py --write-figures
 
+The script also verifies the CORRECTED Theorem 2 (v2.0.0). The
+originally published bound A(f,c) >= H(f,c)^2 / (2 * lambda * alpha_bar)
+is false: a uniform founder gives A(f,c) = 0 against every cohort on the
+simplex while the right-hand side stays positive. The corrected statement
+carries the concentration hypothesis ||w(c)||_2 <= ||w(f)||_2 and reads
+
+    A(f,c) >= ||w(f) - w(c)||_2^2 / (2 * lambda * alpha_bar)     (exact)
+            >= H(f,c)^4 / (4 * lambda * alpha_bar)               (Hellinger form)
+
+`--verify-theorem2` runs a fixed-seed Monte Carlo that (a) reproduces the
+counterexample to the published bound, (b) finds no violation of the
+corrected bound over 200,000 Dirichlet pairs satisfying the hypothesis,
+and (c) reports the worst observed slack.
+
 Fixed seed: SEED = 42 (used for any stochastic elements; all
-computations here are deterministic).
+deterministic computations are seed-independent).
 
 Dependencies: Python 3.12, numpy; matplotlib only required for
 figures (``uv add --dev matplotlib``).
@@ -104,6 +118,40 @@ BRAND_COLORS = {
 }
 
 
+# ---------------------------------------------------------------------------
+# Figure text helpers
+#
+# Figures are part of the paper, so they follow the paper's conventions: math is
+# set as math (matplotlib mathtext renders the LaTeX subset the paper uses, with
+# no external LaTeX install), and a magnitude that cannot exceed one is written
+# without a leading zero, as PAQS requires of every reported value.
+# ---------------------------------------------------------------------------
+DISPLAY_NAME = {"Hermes": "Herm\u00e8s"}
+
+
+def display_name(brand: str) -> str:
+    """The brand as it is written in the paper; dict keys stay ASCII."""
+    return DISPLAY_NAME.get(brand, brand)
+
+
+def nz(value: float, places: int = 4, signed: bool = False) -> str:
+    """Format a magnitude bounded by one with no leading zero (PAQS)."""
+    text = f"{abs(value):.{places}f}"
+    if text.startswith("0."):
+        text = text[1:]
+    if signed:
+        return ("+" if value > 0 else "\u2212" if value < 0 else "") + text
+    return ("\u2212" if value < 0 else "") + text
+
+
+def strip_leading_zero_ticks(ax, axis: str = "y") -> None:
+    """Tick labels for a quantity bounded by one, written the paper's way."""
+    from matplotlib.ticker import FuncFormatter
+
+    fmt = FuncFormatter(lambda v, _pos: nz(v, 3))
+    (ax.yaxis if axis == "y" else ax.xaxis).set_major_formatter(fmt)
+
+
 def normalise(v: np.ndarray) -> np.ndarray:
     """Project raw weight vector onto probability simplex (L1 normalisation)."""
     total = v.sum()
@@ -121,6 +169,100 @@ def fisher_rao(p: np.ndarray, q: np.ndarray) -> float:
     bc = np.sum(np.sqrt(p * q))
     bc = np.clip(bc, -1.0, 1.0)  # guard against floating-point overshoot
     return 2.0 * np.arccos(bc)
+
+
+def optimal_value(wc: np.ndarray, lam: float = 1.0, alpha_bar: float = 1.0) -> float:
+    """V*(c) = H(c) / (lambda * alpha_bar) under uniform quadratic costs.
+
+    H(c) = sum_i w_i(c)^2 is the Herfindahl index of the cohort profile.
+    """
+    return float(np.dot(wc, wc)) / (lam * alpha_bar)
+
+
+def theorem2_bounds(
+    wf: np.ndarray, wc: np.ndarray, lam: float = 1.0, alpha_bar: float = 1.0
+) -> dict:
+    """Both sides of Theorem 2, published (v1.0.0) and corrected (v2.0.0).
+
+    The corrected theorem holds under the concentration hypothesis
+    ||w(c)||_2 <= ||w(f)||_2.  Its first form is exact algebra:
+
+        A(f,c) = (1/2)||w(f)-w(c)||^2 + (1/2)(||w(f)||^2 - ||w(c)||^2),
+
+    so the hypothesis makes the second term non-negative and
+
+        A(f,c) >= ||w(f)-w(c)||^2 / (2 * lambda * alpha_bar).
+
+    The Hellinger form follows from ||d||_2^2 >= ||d||_1^2 / 8 (Cauchy-Schwarz
+    on eight coordinates) and ||p-q||_1 >= 2 H(p,q)^2 (total variation), giving
+
+        A(f,c) >= H(f,c)^4 / (4 * lambda * alpha_bar).
+    """
+    norm_sq_f = float(np.dot(wf, wf))
+    norm_sq_c = float(np.dot(wc, wc))
+    gap = (norm_sq_f - float(np.dot(wf, wc))) / (lam * alpha_bar)
+    h = hellinger(wf, wc)
+    diff_sq = float(np.sum((wf - wc) ** 2))
+    return {
+        "hypothesis_holds": norm_sq_c <= norm_sq_f,
+        "norm_sq_f": norm_sq_f,
+        "norm_sq_c": norm_sq_c,
+        "gap": gap,
+        "hellinger": h,
+        "fisher_rao": fisher_rao(wf, wc),
+        "published_rhs": h**2 / (2.0 * lam * alpha_bar),
+        "euclidean_rhs": diff_sq / (2.0 * lam * alpha_bar),
+        "hellinger_rhs": h**4 / (4.0 * lam * alpha_bar),
+        "gap_ratio": gap / optimal_value(wc, lam, alpha_bar),
+    }
+
+
+def verify_theorem2(n_draws: int = 200_000, seed: int = SEED) -> dict:
+    """Monte Carlo check of the published and the corrected Theorem 2.
+
+    Returns counts of violations. The published bound is expected to fail
+    massively; the corrected bound is expected to fail never.
+    """
+    rng = np.random.default_rng(seed)
+    n = 8
+    uniform = np.full(n, 1.0 / n)
+
+    # (a) The counterexample family: uniform founder, cohorts at every epsilon.
+    counterexample = []
+    for eps in (1e-6, 1e-3, 1e-2, 5e-2, 0.25):
+        wc = np.full(n, eps / (n - 1))
+        wc[0] = 1.0 - eps
+        b = theorem2_bounds(uniform, wc)
+        counterexample.append((eps, b["gap"], b["published_rhs"]))
+
+    # (b) The corrected bound over random pairs satisfying the hypothesis.
+    tested = 0
+    viol_corrected = 0
+    viol_published = 0
+    worst_ratio = np.inf
+    for _ in range(n_draws):
+        wf = rng.dirichlet(np.full(n, 10.0 ** rng.uniform(-2.0, 1.5)))
+        wc = rng.dirichlet(np.full(n, 10.0 ** rng.uniform(-2.0, 1.5)))
+        b = theorem2_bounds(wf, wc)
+        if b["published_rhs"] > 0 and b["gap"] < b["published_rhs"] - 1e-12:
+            viol_published += 1
+        if not b["hypothesis_holds"] or b["hellinger"] < 1e-3:
+            continue
+        tested += 1
+        if b["gap"] < b["euclidean_rhs"] - 1e-12:
+            viol_corrected += 1
+        if b["gap"] < b["hellinger_rhs"] - 1e-12:
+            viol_corrected += 1
+        worst_ratio = min(worst_ratio, b["gap"] / b["hellinger_rhs"])
+
+    return {
+        "counterexample": counterexample,
+        "draws": n_draws,
+        "tested_under_hypothesis": tested,
+        "violations_published": viol_published,
+        "violations_corrected": viol_corrected,
+        "worst_ratio_hellinger_form": float(worst_ratio),
+    }
 
 
 def alignment_gap(
@@ -319,7 +461,7 @@ def write_alignment_gap_simplex(out_dir: str, founders: dict, cohorts: dict) -> 
         anchor_key, (dx, dy), ha, va = label_spec[b]
         anchor = pf if anchor_key == "f" else pc
         ax.annotate(
-            f"{b} (A={gap_val:.4f})",
+            f"{display_name(b)} ($\\mathcal{{A}}$ = {nz(gap_val)})",
             xy=(anchor[0], anchor[1]),
             xytext=(dx, dy),
             textcoords="offset points",
@@ -343,7 +485,7 @@ def write_alignment_gap_simplex(out_dir: str, founders: dict, cohorts: dict) -> 
             color="w",
             markerfacecolor="#444",
             markersize=8,
-            label="Founder w(f)",
+            label="Founder $w(f)$",
         ),
         Line2D(
             [0],
@@ -353,9 +495,9 @@ def write_alignment_gap_simplex(out_dir: str, founders: dict, cohorts: dict) -> 
             markerfacecolor="white",
             markeredgecolor="#444",
             markersize=9,
-            label="Cohort w(c)",
+            label="Cohort $w(c)$",
         ),
-        Line2D([0], [0], color="#444", linewidth=1.4, label="Fisher-Rao geodesic"),
+        Line2D([0], [0], color="#444", linewidth=1.4, label="Fisher\u2013Rao geodesic"),
     ]
     ax.legend(handles=legend_elems, loc="upper right", fontsize=8)
     ax.set_xlabel("PC1 of stacked weight vectors")
@@ -394,7 +536,7 @@ def write_founder_vs_cohort_weights(out_dir: str, founders: dict, cohorts: dict)
             width,
             color=BRAND_COLORS[b],
             alpha=0.55,
-            label="Founder w(f)",
+            label="Founder $w(f)$",
             edgecolor="white",
         )
         ax.bar(
@@ -403,18 +545,19 @@ def write_founder_vs_cohort_weights(out_dir: str, founders: dict, cohorts: dict)
             width,
             color=BRAND_COLORS[b],
             alpha=1.0,
-            label="Cohort w(c)",
+            label="Cohort $w(c)$",
             edgecolor="white",
         )
         gap = float(np.dot(wf, wf) - np.dot(wf, wc))
-        ax.set_ylabel(b, fontsize=9)
+        ax.set_ylabel(display_name(b), fontsize=9)
         ax.set_ylim(0, max(0.55, max(wf.max(), wc.max()) * 1.15))
         ax.grid(True, axis="y", linestyle=":", alpha=0.5)
+        strip_leading_zero_ticks(ax)
         # Top-left placement avoids colliding with the first panel's legend.
         ax.text(
             0.01,
             0.92,
-            f"A(f,c) = {gap:.4f}",
+            f"$\\mathcal{{A}}(f,c)$ = {nz(gap)}",
             transform=ax.transAxes,
             ha="left",
             va="top",
@@ -440,12 +583,12 @@ def write_theorem5_interaction_adjustment(out_dir: str, cohorts: dict) -> str:
         (
             "Hermes",
             hermes_interaction_matrix(0.05),
-            "Heritage premium\n(w_narr,temp = +.05)",
+            "Heritage premium\n($w_{\\mathrm{nar,tem}}$ = +.05)",
         ),
         (
             "Tesla",
             tesla_interaction_matrix(-0.03),
-            "Luxury paradox\n(w_ideo,temp = -.03)",
+            "Luxury paradox\n($w_{\\mathrm{ide,tem}}$ = \u2212.03)",
         ),
     ]
     x = np.arange(8)
@@ -476,9 +619,8 @@ def write_theorem5_interaction_adjustment(out_dir: str, cohorts: dict) -> str:
         # Annotate the two affected dimensions only.
         for i in range(8):
             if abs(delta[i]) > 1e-6:
-                sign = "+" if delta[i] > 0 else ""
                 ax.annotate(
-                    f"{sign}{delta[i]:.4f}",
+                    f"{nz(delta[i], signed=True)}",
                     xy=(x[i] + width / 2, s5[i]),
                     xytext=(0, 4),
                     textcoords="offset points",
@@ -487,10 +629,11 @@ def write_theorem5_interaction_adjustment(out_dir: str, cohorts: dict) -> str:
                 )
         ax.set_xticks(x)
         ax.set_xticklabels(DIM_ABBREV, fontsize=8)
-        ax.set_title(f"{b}: {title}", fontsize=10)
+        ax.set_title(f"{display_name(b)}: {title}", fontsize=10)
         ax.grid(True, axis="y", linestyle=":", alpha=0.5)
+        strip_leading_zero_ticks(ax)
         ax.legend(loc="upper right", fontsize=8)
-    axes[0].set_ylabel("Optimal allocation s*")
+    axes[0].set_ylabel("Optimal allocation $s^*$")
     # Figure title is carried by the paper caption (AMA: no on-image title);
     # the per-panel titles label the two illustrative cases.
     fig.tight_layout()
@@ -514,6 +657,14 @@ def main() -> None:
         "--figure-dir",
         default=os.path.join(os.path.dirname(os.path.abspath(__file__)), "figures"),
         help="Output directory for figures (default: ./figures next to this script).",
+    )
+    parser.add_argument(
+        "--verify-theorem2",
+        action="store_true",
+        help=(
+            "Run the fixed-seed Monte Carlo check of the corrected Theorem 2 "
+            "(200,000 Dirichlet pairs; slow, roughly one minute)."
+        ),
     )
     args = parser.parse_args()
 
@@ -624,6 +775,82 @@ def main() -> None:
         print(f"  H(f,c) = {h:.6f}")
         print()
 
+    # ------------------------------------------------------------------
+    # Theorem 2 (corrected at v2.0.0): the concentration hypothesis, the
+    # exact Euclidean bound, the Hellinger form, and the direct gap ratio
+    # that replaces the withdrawn Fisher-Rao audit trigger.
+    # ------------------------------------------------------------------
+    print("\n--- Theorem 2 (corrected): bounds and the direct gap ratio ---\n")
+    header = (
+        f"  {'Brand':<11}{'||wf||^2':>10}{'||wc||^2':>10}{'hyp':>6}"
+        f"{'A(f,c)':>10}{'|d|^2/2':>10}{'H^4/4':>10}{'d_FR':>8}{'A/V*':>8}"
+    )
+    print(header)
+    t2 = {}
+    for b in brands:
+        v = theorem2_bounds(founders[b], cohorts[b])
+        t2[b] = v
+        print(
+            f"  {b:<11}{v['norm_sq_f']:>10.4f}{v['norm_sq_c']:>10.4f}"
+            f"{('yes' if v['hypothesis_holds'] else 'NO'):>6}{v['gap']:>10.4f}"
+            f"{v['euclidean_rhs']:>10.5f}{v['hellinger_rhs']:>10.5f}"
+            f"{v['fisher_rao']:>8.4f}{v['gap_ratio']:>8.3f}"
+        )
+    print(
+        "\n  All five illustrative pairs satisfy the concentration hypothesis"
+        "\n  ||w(c)||_2 <= ||w(f)||_2, so the corrected Theorem 2 applies to each."
+    )
+
+    # Fisher-Rao distance is a proxy for the gap ratio, not a trigger for it:
+    # report the rank correlation and count the inversions.
+    by_dfr = sorted(brands, key=lambda b: t2[b]["fisher_rao"])
+    by_ratio = sorted(brands, key=lambda b: t2[b]["gap_ratio"])
+    rank_dfr = {b: i for i, b in enumerate(by_dfr)}
+    rank_ratio = {b: i for i, b in enumerate(by_ratio)}
+    d2 = sum((rank_dfr[b] - rank_ratio[b]) ** 2 for b in brands)
+    n_b = len(brands)
+    spearman = 1.0 - 6.0 * d2 / (n_b * (n_b**2 - 1))
+    inversions = sum(
+        1
+        for i, bi in enumerate(brands)
+        for bj in brands[i + 1 :]
+        if (t2[bi]["fisher_rao"] - t2[bj]["fisher_rao"])
+        * (t2[bi]["gap_ratio"] - t2[bj]["gap_ratio"])
+        < 0
+    )
+    print(f"\n  d_FR order:   {' < '.join(by_dfr)}")
+    print(f"  A/V* order:   {' < '.join(by_ratio)}")
+    print(
+        f"  Spearman rho(d_FR, A/V*) = {spearman:.3f} "
+        f"over {n_b} pairs, {inversions} inverted pair(s)."
+    )
+    print(
+        "  The distance does not rank-order the gap ratio, so the audit trigger"
+        "\n  is stated on A/V* directly, which is computable from the same inputs."
+    )
+
+    if args.verify_theorem2:
+        print("\n--- Theorem 2 Monte Carlo verification ---\n")
+        v = verify_theorem2()
+        print("  Counterexample to the PUBLISHED bound (uniform founder):")
+        print(f"    {'epsilon':>10}{'A(f,c)':>12}{'H^2/2':>12}   holds?")
+        for eps, gap_v, rhs in v["counterexample"]:
+            print(f"    {eps:>10g}{gap_v:>12.6f}{rhs:>12.6f}   {gap_v >= rhs}")
+        print(
+            f"\n  {v['violations_published']} of {v['draws']} random pairs violate"
+            " the published bound."
+        )
+        print(
+            f"  {v['violations_corrected']} of {v['tested_under_hypothesis']} pairs"
+            " satisfying the concentration hypothesis violate the corrected bound."
+        )
+        print(
+            "  Worst observed A / (H^4/4) = "
+            f"{v['worst_ratio_hellinger_form']:.3f} (>= 1 means the bound holds)."
+        )
+        assert v["violations_corrected"] == 0, v
+        assert v["violations_published"] > 0, v
+
     # Numerical-integrity assertions: catch any drift between paper text
     # and computed values.
     expected = {
@@ -642,6 +869,32 @@ def main() -> None:
 
     expected_rank = ["Hermes", "Erewhon", "Patagonia", "Tesla", "IKEA"]
     assert rank == expected_rank, (rank, expected_rank)
+
+    # Theorem 2 (corrected): the hypothesis holds on every illustrative pair,
+    # both corrected forms hold, and the published form fails at the uniform
+    # founder. These assertions catch transcription drift between the paper
+    # text and this script; they are not an independent check of the algebra.
+    for b in brands:
+        v = t2[b]
+        assert v["hypothesis_holds"], b
+        assert v["gap"] >= v["euclidean_rhs"] - 1e-12, (b, v)
+        assert v["gap"] >= v["hellinger_rhs"] - 1e-12, (b, v)
+    _uniform = np.full(8, 1.0 / 8)
+    _witness = np.zeros(8)
+    _witness[0] = 1.0
+    _cx = theorem2_bounds(_uniform, _witness)
+    assert abs(_cx["gap"]) < 1e-12, _cx
+    assert _cx["published_rhs"] > 0.3, _cx
+
+    expected_ratio = {
+        "Hermes": 0.047,
+        "IKEA": 0.344,
+        "Patagonia": 0.179,
+        "Erewhon": 0.079,
+        "Tesla": 0.200,
+    }
+    for b, exp_r in expected_ratio.items():
+        assert abs(t2[b]["gap_ratio"] - exp_r) < 1e-3, (b, t2[b]["gap_ratio"], exp_r)
 
     print("=" * 72)
     print("All computations complete. Numerical-integrity assertions passed.")
