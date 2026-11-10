@@ -214,7 +214,8 @@ acceptance:
 - claim_id: P8
   criterion: 'Holds if (Proposition 2, Minimal Completeness) No proper subset of the eight dimensions
     covers all established meaning-transmission channels: the one-tradition-to-one-channel mapping is
-    injective, so removing any dimension leaves the meaning channel of its tradition uncovered (e.'
+    injective, so removing any dimension leaves the meaning channel of its tradition uncovered (e.g. removing
+    Temporal loses heritage/nostalgia/future-orientation as perception components).'
   falsification: If a survey with items for all eight channels yields a stable EFA solution with fewer
     than eight factors (two channels load on one factor across diverse samples), Proposition 2 is falsified.
 - claim_id: P12
