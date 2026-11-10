@@ -12,7 +12,7 @@ meta:
     orcid: 0009-0000-6893-9231
     affiliation: Independent Researcher
   doi: 10.5281/zenodo.20765556
-  date: '2026-06-19'
+  date: '2026-11-10'
   venue: Preprint
   license: CC-BY-4.0
   keywords:
@@ -94,16 +94,27 @@ methodology:
     and addressable proxy features in the reflection corpus / panel; identify P* and bound unobservables.'
 acceptance:
 - claim_id: P1
-  criterion: Holds if the handoff-contract rule.
+  criterion: 'Holds if the handoff-contract rule. For a target (dimension, cohort), the measurement->activation
+    contract emits (i) the recommended bridge mechanism and (ii) its quantified cost: dimension-distinct
+    cohort (sin^2(beta) > threshold) -> broadcast-a-dimension (b), cost = predicted spill; reflections
+    clustered on few live surfaces -> provenance-as-address (c), cost = coverage bias; else -> minimal-loss
+    proxy (a), cost = L(P*).'
   falsification: A setting where a single fixed bridge strictly dominates the contract's selection across
     all cohort geometries would refute the value of conditioning the bridge on cohort geometry.
 - claim_id: P2
-  criterion: Holds if resonance over-index (broadcast-a-dimension).
+  criterion: Holds if resonance over-index (broadcast-a-dimension). A signal emitted strong on dimension
+    d produces salience/response for observer i monotone in <signal_d, w_i>; therefore a dimension-strong
+    creative over-indexes on the dimension-d-sensitive cohort relative to a dimension-neutral control,
+    and the magnitude of over-index is increasing in the cohort's dimensional distinctiveness sin^2(beta)
+    — the SAME quantity that is the perception-metamerism LOSS in 2026au.
   falsification: A dimension-strong creative that does NOT over-index on the dimension-sensitive cohort
     vs a dimension-neutral control (over-index CI includes zero) in a positive-scope category (C3) would
     refute the resonance mechanism.
 - claim_id: P3
-  criterion: Holds if proxy-join loss ordering.
+  criterion: Holds if proxy-join loss ordering. Targeting cohort C through an addressable proxy P is a
+    Blackwell garbling of targeting on the perceptual cohort directly; the expected decision loss L(P)
+    is non-negative and ordered by the informativeness of P about cohort membership, with a minimal-loss
+    proxy P* identifiable from the mutual information I(C; P).
   falsification: Observe targeting via a proxy strictly outperform targeting on the true perceptual cohort
     (same budget) outside measurement-cost differences — Blackwell forbids this on information alone,
     so a robust such finding would refute P3.

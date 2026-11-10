@@ -535,6 +535,7 @@ external_anchors:
   - {citation_key: ziems-2024-can-large-language-models, role: method_justification, spine_nodes: [P1], note: "LLM roles and limits in computational social science (C4)"}
   - {citation_key: jiang-2025-artificial-hivemind, role: method_justification, spine_nodes: [P1], note: "Homogeneity/variance-collapse caveat behind the space-filling cohort design"}
   - {citation_key: maier-2025-llms-reproduce-purchase-intent, role: method_justification, spine_nodes: [P1, A3], note: "LLM synthetic respondents reproduce human purchase-intent distributions — convergence evidence specific to the stated-propensity instrument (C4 scoping)"}
+  - {citation_key: ghanbarpour-2026-significance-misleads, role: empirical_anchor, spine_nodes: [NF1], note: "Statistical detectability is not substantive contribution, and effects differ across domains — supports reading the pre-registered footwear null as an informative boundary result"}
 
 # ============================================================================
 # Corpus precedents

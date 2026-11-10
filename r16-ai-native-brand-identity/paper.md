@@ -6,7 +6,7 @@ ORCID: 0009-0000-6893-9231
 
 DOI: [10.5281/zenodo.19391476](https://doi.org/10.5281/zenodo.19391476)
 
-Working Paper v1.10.0 – April 2026 (revised August 2026)
+Working Paper v1.11.0 – April 2026 (revised November 2026)
 
 ## Abstract
 
@@ -399,7 +399,7 @@ A critical operational distinction follows from the necessity conditions: the Br
 
 The observer-driven evolution thesis reframes brand identity as observer-contingent rather than brand-intrinsic. Brand identity is not a stable property of the brand that different observers perceive with varying accuracy; it is a function of the observer type, with different observer types requiring structurally different identity technologies. This extends SBT's framework of heterogeneous observer cohorts [@zharnikov-2026-spectral-brand-theory-computational-framework] beyond human cohorts to include machine observers with fundamentally different perception mechanisms. While Davenport et al. [-@davenport-2020-how-artificial-intelligence] propose that AI will be most effective when it augments rather than replaces human marketing decisions, the agentic commerce transition represents a context where AI agents increasingly replace human brand evaluation in purchasing decisions --- creating precisely the observer-type change that demands new identity technology rather than incremental augmentation of existing infrastructure.
 
-The Rendering Problem [@zharnikov-2026l-rendering-problem-genetic] provides the theoretical substrate: the Brand Function is the specification; technologies and organizational processes are the rendering engines; spectral emissions are the output. The specification gap between the Brand Function and actual rendered behavior is the central metric of brand management --- for both human and AI observers.
+The Rendering Problem [@zharnikov-2026l-rendering-problem-brand-perception] provides the theoretical substrate: the Brand Function is the specification; technologies and organizational processes are the rendering engines; spectral emissions are the output. The specification gap between the Brand Function and actual rendered behavior is the central metric of brand management --- for both human and AI observers.
 
 Portfolio theory in brand management [@zharnikov-2026-hf-r20-portfolio-ai-perception] faces new complexities when AI observers are introduced. A brand portfolio must maintain distinct Brand Functions for each brand, with sufficient behavioral distance to prevent behavioral metamerism across the portfolio. The portfolio problem extends from perceptual distinctiveness (can human observers tell the brands apart?) to behavioral distinctiveness (can AI agents distinguish the brands' behavioral specifications?).
 

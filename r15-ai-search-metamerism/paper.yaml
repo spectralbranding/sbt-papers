@@ -13,7 +13,7 @@ meta:
     orcid: 0009-0000-6893-9231
     affiliation: Independent Researcher
   doi: 10.5281/zenodo.19422427
-  date: '2026-06-27'
+  date: '2026-11-10'
   venue: Preprint
   license: CC-BY-4.0
   keywords:
@@ -264,6 +264,11 @@ dependencies:
   claim: Luxury-research sampling standards; its own stated boundary permits broad non-consumer sampling
     when non-consumers' perceptions of luxury are the object of study, which is the case here
   doi: 10.1002/mar.70245
+- relationship: extends
+  claim: Entity-name leakage loads heaviest on Semiotic, one of the two dimensions the DCI sums, so the
+    local-versus-global contrast carries an uncontrolled name component; a caveat on that one contrast,
+    not a retraction.
+  doi: 10.5281/zenodo.22161305
 contradictions: []
 limitations:
 - description: All observations are LLM-generated with no human validation of dimensional weight profiles;

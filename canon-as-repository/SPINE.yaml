@@ -115,7 +115,7 @@ propositions:
     evidence:
       - type: citation
         anchor: "The rendering problem as a domain-independent structural pattern."
-        citation_keys: [zharnikov-2026l-rendering-problem]
+        citation_keys: [zharnikov-2026l-rendering-problem-brand-perception]
       - type: analytic
         anchor: "Five-domain table (paper Table 3): biological, organizational, brand, creative IP, scientific knowledge — specification → rendering → perception with a gap at each transition."
     body_sections: ["§2.1 The Rendering Problem", "§8.2 Connection to Adjacent Frameworks", "§9 Conclusion"]

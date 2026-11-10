@@ -6,7 +6,7 @@ ORCID: 0009-0000-6893-9231
 
 DOI: [10.5281/zenodo.19009268](https://doi.org/10.5281/zenodo.19009268)
 
-Working Paper v2.0.0 – March 2026 (revised August 2026)
+Working Paper v2.1.0 – March 2026 (revised November 2026)
 
 ## Abstract
 
@@ -364,7 +364,7 @@ $$\delta_i = s_i^* - s_i^{\mathrm{lin}} = \frac{1}{\lambda \alpha_i} \sum_{j \ne
 
 The interaction framework sharpens the allocation predictions for Hermès and Tesla.
 
-**Hermès: Heritage premium.** The Hermès cohort assigns high salience to narrative (founding mythology, artisanal lineage) and temporal (multi-generational heritage, patina accumulation) dimensions. These two dimensions are strongly complementary for this cohort: a narrative of craft mastery dating to 1837 derives its credibility from temporal depth, and temporal depth is valorized only when accompanied by rich narrative content. Formally, $w_{\text{narrative, temporal}}(c_{\mathrm{H\acute{e}rm\grave{e}s}}) > 0$.
+**Hermès: Heritage premium.** Stipulate, as an illustrative assumption and not a measurement, that the Hermès cohort assigns high salience to narrative (founding mythology, artisanal lineage) and temporal (multi-generational heritage, patina accumulation) dimensions. These two dimensions are strongly complementary for this cohort: a narrative of craft mastery dating to 1837 derives its credibility from temporal depth, and temporal depth is valorized only when accompanied by rich narrative content. Formally, $w_{\text{narrative, temporal}}(c_{\mathrm{H\acute{e}rm\grave{e}s}}) > 0$.
 
 By Corollary 3, the interaction adjustment is $\delta_{\text{narrative}} > 0$ and $\delta_{\text{temporal}} > 0$: optimal investment in both narrative and temporal dimensions exceeds the linear benchmark. A Hermès brand manager who treats narrative and temporal as independent would systematically under-invest in the compound asset they jointly constitute. The linear model recommends investing in narrative and temporal in proportion to their individual weights; the interaction model recommends additional investment in both, with the increment proportional to the synergy weight $w_{\text{narrative, temporal}}$ and the signal strength on the complementary dimension.
 
@@ -550,7 +550,7 @@ Table 8 reports the **alignment gap results** under uniform costs ($\alpha_i = 1
 
 *Notes*: $\lambda = 1$, $\bar{\alpha} = 1$ (uniform costs). All values computed from companion script (Companion Computation Script subsection). Hellinger $H(f,c) = \frac{1}{\sqrt{2}}\|\sqrt{w(f)} - \sqrt{w(c)}\|_2$. **This table states no pass criterion and tests nothing.** Both the founder and the cohort profiles are author-constructed (Tables 6-7), not measured, so the gaps and their ordering are properties of those constructions; they demonstrate that the quantities are computable and show what a completed audit looks like. All five pairs satisfy condition (C4): the founder Herfindahl indices are $.152$, $.290$, $.170$, $.180$ and $.180$ against cohort indices $.144$, $.189$, $.137$, $.159$ and $.143$ in the same order. The gap ratios $\mathcal{A}(f,c)/V^*(c)$ are $.047$ (Hermès), $.344$ (IKEA), $.179$ (Patagonia), $.079$ (Erewhon) and $.200$ (Tesla).
 
-**Ordering**: Hermès (.0067) < Erewhon (.0125) < Patagonia (.0245) < Tesla (.0285) < IKEA (.0650). Figure 4 plots the founder and cohort weight profiles that generate these gaps.
+**Ordering**: Hermès (.0067) < Erewhon (.0125) < Patagonia (.0245) < Tesla (.0285) < IKEA (.0650). Figure 4 plots the founder and cohort weight profiles that generate these gaps. Hermès's place at the foot of this ordering is a property of the author-constructed profiles and reports nothing about how luxury consumers weight the dimensions; the population boundary stated under Empirical Validation applies [@holmqvist-2026-conducting-luxury-research].
 
 ![](figures/r7_founder_vs_cohort_weights.png)
 
@@ -624,7 +624,7 @@ Rust, Lemon, and Zeithaml [-@rust-2004-return-marketing-using] frame marketing i
 
 ### Empirical Validation
 
-The case-study analysis uses hypothetical founder and cohort profiles. Empirical validation requires measuring actual spectral profiles through consumer surveys (MaxDiff analysis, conjoint studies) and founder self-assessment. The empirical validation protocol is specified in Zharnikov [-@zharnikov-2026-spectral-brand-theory-computational-framework] and developed further in the author's internal analysis. The methodology assumes cohort weight profiles are measurable; SBT provides a specification for this measurement [@zharnikov-2026-spectral-brand-theory-computational-framework], though large-scale empirical implementation remains future work.
+The case-study analysis uses hypothetical founder and cohort profiles. Empirical validation requires measuring actual spectral profiles through consumer surveys (MaxDiff analysis, conjoint studies) and founder self-assessment. The empirical validation protocol is specified in Zharnikov [-@zharnikov-2026-spectral-brand-theory-computational-framework] and developed further in the author's internal analysis. The methodology assumes cohort weight profiles are measurable; SBT provides a specification for this measurement [@zharnikov-2026-spectral-brand-theory-computational-framework], though large-scale empirical implementation remains future work. The measurement protocol this model presupposes carries a population boundary: the read is over publicly available discourse, not a sampled respondent cohort — a cohort here is a set of public artifacts, never a recruited panel — so a reading of an elite-luxury brand reports how that brand is described in the open record and is never the perception of verified luxury consumers [@holmqvist-2026-conducting-luxury-research].
 
 ### Cost Function Estimation
 

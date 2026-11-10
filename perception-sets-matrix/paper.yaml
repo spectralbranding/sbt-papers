@@ -13,7 +13,7 @@ meta:
     orcid: 0009-0000-6893-9231
     affiliation: Independent Researcher
   doi: 10.5281/zenodo.21319716
-  date: '2026-07-12'
+  date: '2026-11-10'
   venue: Preprint
   license: CC-BY-4.0
   keywords:
@@ -202,6 +202,10 @@ dependencies:
   claim: LLM synthetic respondents reproduce human purchase-intent distributions — convergence evidence
     specific to the stated-propensity instrument (C4 scoping)
   doi: 10.48550/arXiv.2510.08338
+- relationship: extends
+  claim: Statistical detectability is not substantive contribution, and effects differ across domains
+    — supports reading the pre-registered footwear null as an informative boundary result
+  doi: 10.1057/s41270-026-00519-6
 contradictions: []
 limitations:
 - description: 'Stated propensity only: no behavioral validation; the intentions-to-behavior calibration

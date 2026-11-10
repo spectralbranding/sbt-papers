@@ -12,7 +12,7 @@ meta:
     orcid: 0009-0000-6893-9231
     affiliation: Independent Researcher
   doi: 10.5281/zenodo.19391476
-  date: '2026-06-27'
+  date: '2026-11-10'
   venue: Preprint
   license: CC-BY-4.0
   keywords:
@@ -146,7 +146,7 @@ acceptance:
   falsification: P2 fails if AI agents demonstrably weight logo presence/absence as an informational input
     that meaningfully affects recommendation quality.
 - claim_id: P3
-  criterion: Holds if aI agents do not perceive brand identity through visual recognition but through
+  criterion: Holds if AI agents do not perceive brand identity through visual recognition but through
     structured-data evaluation, behavioral-pattern analysis, and third-party corroboration; the logo carries
     near-zero informational weight for text-based agents and minimal weight in text-only AI mediation
     more broadly.

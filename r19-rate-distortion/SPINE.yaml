@@ -156,12 +156,12 @@ measurements:
       A flat-response baseline — a constant-rating encoder, whose normalized
       output is the uniform vector — has total variation distance to the
       canonical profiles of IKEA .071, Patagonia .081, Hermes .095, Erewhon .153,
-      Tesla .171. This ordering reproduces the observed per-brand R2 distortion
+      Tesla .170. This ordering reproduces the observed per-brand R2 distortion
       ordering (Spearman rho = .900) and inverts the observed R1-to-R2 reduction
       ordering (rho = -.900), with no encoder input of any kind.
     source_observations: [O2]
     generating_method: M2
-    value: "TV(uniform, canonical): IKEA .071 / Patagonia .081 / Hermes .095 / Erewhon .153 / Tesla .171"
+    value: "TV(uniform, canonical): IKEA .071 / Patagonia .081 / Hermes .095 / Erewhon .153 / Tesla .170"
     units: "total variation distance"
   - id: m_arch_slope
     statement: >-
@@ -359,7 +359,7 @@ negative_findings:
       apparent gap is driven by two outlier slopes (GLM-4, ALLaM) and the test is
       ~22% powered. The pre-registered decision rule conjoined p < .05 with
       |d| > .50, and the second conjunct can never bind: at n1 = 6 versus
-      n2 = 11, t = 1.97 x d, so p < .05 already requires |d| > 1.12. The verdict
+      n2 = 11, t = 1.97 x d, so p < .05 already requires |d| > 1.11. The verdict
       therefore rests on the significance criterion alone. H5 (R1 CV below .20)
       is also not supported in the full panel (CV .210), marginally met in the
       7-model confirmatory subset (.196).

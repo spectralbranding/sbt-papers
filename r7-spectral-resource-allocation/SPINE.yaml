@@ -143,7 +143,7 @@ methods:
     type: "analytic_derivation"
     inputs: ["w(c) on Delta^7", "quadratic cost parameters alpha_i", "shadow price lambda"]
     outputs: ["optimal portfolio s*(c)", "cost-minimizing metamer s†", "interaction solution s* = (Lambda − W)^{-1} w(c)"]
-    code_anchor: "[internal path removed]"
+    code_anchor: "https://github.com/spectralbranding/sbt-papers/tree/main/r7-spectral-resource-allocation/code/r7_spectral_resource_allocation.py"
     reproducibility:
       seed: "SEED = 42"
       runtime_environment: "Python 3.12 + uv"
@@ -161,7 +161,7 @@ methods:
     type: "closed_form_evaluation"
     inputs: ["founder weights w(f)", "cohort weights w(c)"]
     outputs: ["A(f,c)", "Hellinger H(f,c)", "rank ordering of brands"]
-    code_anchor: "[internal path removed]"
+    code_anchor: "https://github.com/spectralbranding/sbt-papers/tree/main/r7-spectral-resource-allocation/code/r7_spectral_resource_allocation.py"
     reproducibility:
       seed: "SEED = 42"
       runtime_environment: "Python 3.12 + uv"
@@ -631,6 +631,7 @@ external_anchors:
   - {citation_key: null, role: empirical_premise, spine_nodes: [P10], note: "Lancaster (1966) characteristics approach; McAlister (1982), Chintagunta (1993) attribute-interaction evidence — motivate the quadratic value function."}
   - {citation_key: null, role: framework_projected, spine_nodes: [P11], note: "Kim & Mauborgne (2005) Blue Ocean, Christensen et al. (2016) JTBD, Ries (2011) Lean Startup, Porter (1980) Five Forces, Barney (1991) RBV — the five frameworks read as spectral projections."}
   - {citation_key: null, role: extension_anchor, spine_nodes: [L3], note: "Nerlove & Arrow (1962) advertising-as-capital-stock — the canonical model for the future dynamic extension; Rust, Lemon & Zeithaml (2004) return-on-marketing — managerial framing."}
+  - {citation_key: holmqvist-2026-conducting-luxury-research, role: boundary_anchor, spine_nodes: [C1], note: "Luxury-research sampling standards; its own stated boundary permits broad non-consumer sampling when non-consumers' perceptions of luxury are the object of study. Cited at the population-boundary clause and at the Hermès ordering; the Hermès cohort weights are an illustrative stipulation."}
 
 # ============================================================================
 # Open questions / boundary edges

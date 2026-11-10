@@ -13,7 +13,7 @@ meta:
     orcid: 0009-0000-6893-9231
     affiliation: Independent Researcher
   doi: 10.5281/zenodo.18945477
-  date: '2026-08-18'
+  date: '2026-11-10'
   venue: Preprint
   license: CC-BY-4.0
   keywords:
@@ -260,7 +260,9 @@ acceptance:
 - claim_id: P4
   criterion: 'Holds if pairwise distances on Delta^7 concentrate (Theorem 1): the expected squared Euclidean
     distance is 2(n-1)/(n(n+1)) = 7/36 at n=8, and the distance contrast ratio R_n degrades monotonically
-    with dimension to R_8 ~ 7.'
+    with dimension to R_8 ~ 7.46 — a transitional regime where clustering is POSSIBLE (distances carry
+    discriminative information) but INHERENTLY NOISY (the nearby/far-away boundary is blurred), so the
+    recovered cluster count depends sensitively on the algorithm''s distance threshold.'
   falsification: 'If independent Monte Carlo at n=8 returns R_8 far from 7.46, or the CV_n ~ O(n^{-1/2})
     decay fails across n, P4 fails. NOTE: the Proposition 2 variance identity is NOT a falsifier — draws
     from Dir(1,...,1) cannot contradict an algebraic identity of the family they are drawn from; what
@@ -269,13 +271,15 @@ acceptance:
   criterion: 'Holds if boundary fuzziness theorem (Theorem 2): for ANY convex k-partition (k>=2) of Delta^{n-1},
     the boundary volume fraction satisfies BVF(n,delta) >= 1 - (1-delta)^{n-1}, where delta is depth into
     a cell as a fraction of that cell''s VOLUME RADIUS and the distance is to the FULL cell boundary;
-    at n=8, delta=.'
+    at n=8, delta=.10 this is >= 52.2%, so a MAJORITY of the simplex lies near the boundary of its own
+    cohort region.'
   falsification: If a convex k-partition of Delta^7 puts less than 1-(1-delta)^{n-1} of the simplex volume
     within delta*r_V of its own cell's full boundary, P5 fails. A measurement that normalises delta differently,
     or that measures to the internal bisectors only, does not test P5.
 - claim_id: P8
   criterion: 'Holds if the uniform Dirichlet is the WORST case FOR A FIXED ZONE (Corollary 2): holding
-    the partition geometry fixed, V_boundary(alpha) is strictly decreasing in alpha, so symmetric Dir(alpha,.'
+    the partition geometry fixed, V_boundary(alpha) is strictly decreasing in alpha, so symmetric Dir(alpha,...,alpha)
+    with alpha>1 places less mass inside that same unmoving zone.'
   falsification: If for some alpha_1 > alpha_2 >= 1 a Monte Carlo study shows more mass in a zone HELD
     FIXED at its alpha=1 geometry under alpha_1 than under alpha_2, or the rate departs from alpha^{-3.5},
     P8 fails. A measurement taken under a re-fitted partition does not test P8 (that is P15).
@@ -286,7 +290,9 @@ acceptance:
     SD of an inter-cohort bisector, Corollary 1 fails. Inherited from P14.
 - claim_id: P14
   criterion: 'Holds if inter-cohort bisector proximity (Proposition 4): under the uniform null with a
-    k-means partition at k>=3, the mean Euclidean distance to the nearest inter-cohort bisector is.'
+    k-means partition at k>=3, the mean Euclidean distance to the nearest inter-cohort bisector is .088
+    — BELOW the component SD of .1102 — and approximately two-thirds of observers lie within one component
+    SD of a bisector.'
   falsification: An elicited sample of real observer weight profiles on Delta^7, partitioned by the same
     procedure at k>=3, in which the mean distance to the nearest inter-cohort bisector EXCEEDS that sample's
     component SD, or in which fewer than half of observers lie within one such SD. A population of well-separated
@@ -364,6 +370,11 @@ dependencies:
 - relationship: extends
   claim: Ergodic vs non-ergodic distinction applied to evolving observer profiles.
   doi: 10.1038/s41567-019-0732-0
+- relationship: extends
+  claim: Non-demographic processing traits are an established, measurable class (survey scale on individuals);
+    supports reader-side variation only, not an instrument or validation of cohorts and not one of the
+    eight dimensions.
+  doi: 10.1093/jcr/ucag034
 contradictions: []
 limitations:
 - description: The headline bounds assume the uniform (or symmetric-alpha) Dirichlet null. Real populations

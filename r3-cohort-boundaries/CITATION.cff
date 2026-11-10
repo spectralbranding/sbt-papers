@@ -6,8 +6,8 @@ authors:
     affiliation: "Independent Researcher"
     orcid: "https://orcid.org/0009-0000-6893-9231"
 title: "Boundary Volume and Cohort Reassignment on the 7-Simplex: A Concentration Analysis Under the Uniform Null"
-version: 2.0.0
-date-released: 2026-08-18
+version: 2.1.0
+date-released: 2026-11-10
 url: "https://doi.org/10.5281/zenodo.18945477"
 repository-code: "https://github.com/spectralbranding/sbt-papers"
 identifiers:

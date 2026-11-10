@@ -752,6 +752,7 @@ external_anchors:
   - {citation_key: chuang-2024-beyond-demographics-aligning, role: convergent_evidence, spine_nodes: [P6, P9], note: "Belief transfer is factor-local — a belief seeded inside a latent factor moves the estimate, the same belief from a random factor is indistinguishable from demographics alone; cite for factor-locality and the demographics-null, not for effect sizes"}
   - {citation_key: gordon-2026-richer-personas-improve, role: convergent_evidence, spine_nodes: [P9, C3], note: "Noise-floor discipline: the best configuration remains several times the bootstrap sampling-noise floor, and the framing of the output as an estimator with no internal error signal rather than an artificial human; quote raw distances only"}
   - {citation_key: holmqvist-2026-conducting-luxury-research, role: boundary_anchor, spine_nodes: [C4], note: "Luxury-research sampling standards; its own stated boundary permits broad non-consumer sampling when non-consumers' perceptions of luxury are the object of study, which is the case here"}
+  - {citation_key: zharnikov-2026bp-entity-name-leakage, role: limiting_evidence, spine_nodes: [F3], note: "Entity-name leakage loads heaviest on Semiotic, one of the two dimensions the DCI sums, so the local-versus-global contrast carries an uncontrolled name component; a caveat on that one contrast, not a retraction."}
 
 # ============================================================================
 # Open questions / boundary edges

@@ -12,7 +12,7 @@ meta:
     orcid: 0009-0000-6893-9231
     affiliation: Independent Researcher
   doi: 10.5281/zenodo.19009268
-  date: '2026-06-27'
+  date: '2026-11-10'
   venue: Preprint
   license: CC-BY-4.0
   keywords:
@@ -206,7 +206,7 @@ methodology:
     − sqrt(w(c))||_2 and the Fisher–Rao floor d_FR = 2·arccos(BC); evaluated under uniform costs (alpha_i
     = 1, lambda = 1) for the five illustrative brands and reproduced by the fixed-seed companion script.'
   analysis:
-    software: [internal path removed]
+    software: https://github.com/spectralbranding/sbt-papers/tree/main/r7-spectral-resource-allocation/code/r7_spectral_resource_allocation.py
     method: Python 3.12 + uv
 acceptance:
 - claim_id: P1
@@ -225,7 +225,8 @@ acceptance:
 - claim_id: P7
   criterion: Holds if (Theorem 3, multi-cohort efficiency bound) A single signal portfolio attains at
     least (1−epsilon) of the sum of individual optima iff the cohort weight profiles lie within a Fisher–Rao
-    ball of radius r(epsilon) ≈ sqrt(epsilon) on Delta^7 (r ≈.
+    ball of radius r(epsilon) ≈ sqrt(epsilon) on Delta^7 (r ≈ .32 at epsilon = .10; efficiency condition
+    r < pi/4).
   falsification: If a single portfolio attains (1−epsilon) efficiency for cohorts whose Fisher–Rao spread
     exceeds r(epsilon), Theorem 3 fails.
 - claim_id: P9
@@ -290,6 +291,11 @@ dependencies:
     gap (no metric, no optimization layer) that R7 fills.
   critical: false
   doi: 10.5281/zenodo.18945217
+- relationship: extends
+  claim: Luxury-research sampling standards; its own stated boundary permits broad non-consumer sampling
+    when non-consumers' perceptions of luxury are the object of study. Cited at the population-boundary
+    clause and at the Hermès ordering; the Hermès cohort weights are an illustrative stipulation.
+  doi: 10.1002/mar.70245
 contradictions: []
 results:
 - claim_id: P5

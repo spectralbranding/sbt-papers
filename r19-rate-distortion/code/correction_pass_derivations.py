@@ -18,23 +18,18 @@ Figures reproduced, with paper location:
      - floor / alpha = 5.67
   2. H4 t = 1.97 d relation (Results, "H4: Architectural Separation")
      - t = d * sqrt(n1 * n2 / (n1 + n2)) = 1.97 d at n1 = 6, n2 = 11
-     - two-sided p < .05 at Welch df = 11.4 requires |d| > 1.12
+     - two-sided p < .05 at Welch df = 11.4 requires |d| > 1.11
   3. H2 averaging change (Results, "H2: Common Rate-Distortion Curve")
      - mean cross-model CV over R1-R5 = .140; over R1-R4 = .171
      - difference attributable to the R5 cell = .031
   4. Uniform-vector baseline (Table 4 Notes)
      - total variation distance from the uniform vector to each canonical
-       profile: IKEA .071, Patagonia .081, Hermes .095, Erewhon .153, Tesla .171
+       profile: IKEA .071, Patagonia .081, Hermes .095, Erewhon .153, Tesla .170
      - Spearman rho = .900 against the R2 column, rho = -.900 against the
        R1-to-R2 reduction column
 
 The Table 3 and Table 4 values used as inputs are the paper's printed values;
 `analysis.py` reproduces them from the raw dataset (DOI 10.57967/hf/8362).
-
-Two figures differ from the paper by one unit in the last printed digit and are reported as
-DISCREPANCY rather than forced to match: |d| > 1.12 (exact df 11.4 gives 1.11; integer df 11
-gives 1.12) and the Tesla uniform-vector TV .171 (exact .17045 gives .170; .171 follows from
-rounding .1705 a second time).
 
 Random seed: SEED = 42. Nothing here is stochastic (the H1 floor is an exact
 enumeration of all 120 permutations), so the seed does not affect any value.
@@ -90,7 +85,7 @@ PAPER_TV_UNIFORM = {
     "Patagonia": 0.081,
     "Hermes": 0.095,
     "Erewhon": 0.153,
-    "Tesla": 0.171,
+    "Tesla": 0.170,
 }
 
 N_MODELS = 17
@@ -161,14 +156,14 @@ def figure_2_h4_t_d_relation() -> None:
         f"{factor:.2f}",
         f"{factor:.2f}" == "1.97",
     )
-    # The paper prints 1.12 "at the reported Welch df of 11.4". Exact df 11.4 gives
-    # 2.1916 / 1.9704 = 1.1123 -> 1.11; 1.12 is what integer df 11 gives (1.1170).
+    # The paper prints 1.11 "at the reported Welch df of 11.4": exact df 11.4 gives
+    # 2.1916 / 1.9704 = 1.1123 -> 1.11. Integer df 11 would give 1.12 (1.1170);
+    # earlier versions printed that figure, and the cross-check below keeps it.
     check(
         "|d| needed for p < .05 at df 11.4",
-        "1.12",
+        "1.11",
         f"{d_min:.2f}",
-        f"{d_min:.2f}" == "1.12",
-        near=f"{d_min:.2f}" == "1.11",
+        f"{d_min:.2f}" == "1.11",
     )
     print(
         f"    (critical t at df 11.4 = {t_crit:.3f}; |d| at integer df 11 = {d_min_df11:.2f})"

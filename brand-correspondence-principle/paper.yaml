@@ -12,7 +12,7 @@ meta:
     orcid: 0009-0000-6893-9231
     affiliation: Independent Researcher
   doi: 10.5281/zenodo.20757596
-  date: '2026-06-19'
+  date: '2026-11-10'
   venue: Preprint
   license: CC-BY-4.0
   keywords:
@@ -127,32 +127,57 @@ methodology:
     method: deterministic given seed; no network
 acceptance:
 - claim_id: P1
-  criterion: Holds if representation lemma.
+  criterion: 'Holds if representation lemma. Every incumbent brand-equity framework is a measurable projection-and-aggregation
+    operator T_k = A_k o Pi_k on mu, and the experiment ''observe T_k(mu)'' is a Blackwell garbling of
+    the experiment ''observe mu'': there is a stochastic (Markov) kernel carrying the full perception
+    measurement into the incumbent summary.'
   falsification: An incumbent summary that is NOT a function of mu (carries information about the brand
     absent from the full perception measurement) would refute the garbling claim. None is exhibited in
     the brand literature.
 - claim_id: P2
-  criterion: Holds if correspondence theorem.
+  criterion: 'Holds if correspondence theorem. The aggregate brand-health score T_k(mu) is a sufficient
+    statistic for the managerial decision problem (a, g) — SBT and the incumbent prescribe the same optimal
+    action for every payoff g — if and only if the four regime conditions hold jointly: (i) mu is tight
+    and unimodal (low sigma); (ii) dynamics are slow relative to the measurement cadence (low v); (iii)
+    the observer set is human-only (alpha = 0); (iv) the signal is firm-dominated (low epsilon).'
   falsification: A category in which all four regime parameters are estimated at their classical-limit
     values yet the score and the full cloud prescribe different optimal actions would refute the sufficiency
     direction; a category outside the regime in which they always agree for every payoff would refute
     the insufficiency direction.
 - claim_id: P3
-  criterion: Holds if directed-gradient dominance.
+  criterion: Holds if directed-gradient dominance. Outside the classical regime the score is a strict
+    garbling of the cloud, so the full perception measurement weakly Blackwell-dominates the score for
+    every decision-maker and every bounded payoff; equivalently, the cloud-optimizing manager moves the
+    signal only along (dimension, cohort) directions with observable payoff, whereas the score-optimizing
+    manager allocates part of its effort along unobserved directions ('blind spend') whose sign it cannot
+    determine.
   falsification: Observe a decision-maker who, with access to the full cloud, achieves strictly LOWER
     expected payoff than one restricted to the score (after accounting for measurement cost) in a setting
     outside the classical regime. Blackwell dominance forbids this on the information alone, so a robust
     such observation would refute P3.
 - claim_id: P4
-  criterion: Holds if metameric arbitrage.
+  criterion: Holds if metameric arbitrage. Signal-metamerism (distinct signals inducing equal perception)
+    yields a cheaper-signal lever; perception-metamerism (one signal inducing divergent perception across
+    cohorts) yields a mis-targeting loss; both are invisible to the aggregate model.
   falsification: A decision-loss surface that DECREASES in one of the four parameters, or is bounded away
     from zero at the classical corner, would refute the monotone-lower-bound claim. The Monte Carlo (F1)
     computes this surface and would surface such a violation.
 - claim_id: P5
-  criterion: Holds if falsifiability.
+  criterion: 'Holds if falsifiability. The framework is falsifiable through three observable signatures
+    and the decision/payoff patterns that reject each theorem: (a) regime-parameter estimates (reject
+    P2 if the score-vs-cloud action agreement does not track the four-parameter regime test); (b) blind-spend
+    share (reject P3 if cloud access does not weakly improve realized payoff net of measurement cost outside
+    the regime); (c) metameric-substitution opportunities and the loss surface (reject P4 if the realized
+    loss is non-monotone in the regime parameters or non-zero at the classical corner).'
   falsification: By construction, the three signatures ARE the falsifiers of P2/P3/P4.
 - claim_id: P6
-  criterion: Holds if derived managerial procedure.
+  criterion: 'Holds if derived managerial procedure. The two theorems entail a manager-runnable decision
+    procedure: (a) regime test — estimate (sigma, v, alpha, epsilon) to decide whether the cheap aggregate
+    score is sufficient for the category (do not over-prescribe SBT where the incumbent suffices); (b)
+    blind-spot diagnostic — identify which of the eight dimensions the current framework projects away;
+    (c) directed-intervention rule — act on the single (dimension, cohort) with the largest observable
+    payoff-per-cost; (d) metameric-substitution rule — choose the cheapest signal in a perceptual equivalence
+    class.'
   falsification: If a procedure step were NOT entailed by a theorem quantity (i.e. required an assumption
     beyond P2-P4), it would be a free-standing assertion rather than a derived implication; the derivation
     D3 makes the entailment explicit. The management-substrate integration is a feasibility pointer (companion-program

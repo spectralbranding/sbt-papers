@@ -819,6 +819,7 @@ external_anchors:
   - {citation_key: frigyik-2010-introduction-dirichlet-distribution, role: foundational_method, spine_nodes: [P8], note: "Dirichlet concentration scaling + empirical alpha range [3,10]."}
   - {citation_key: wedel-2000-market-segmentation-conceptual, role: prior_practice, spine_nodes: [P11], note: "Canonical latent-class/mixture segmentation that the rasterized approach inherits."}
   - {citation_key: peters-2019-ergodicity-problem-economics, role: bridging_concept, spine_nodes: [P13], note: "Ergodic vs non-ergodic distinction applied to evolving observer profiles."}
+  - {citation_key: gautam-2026-desire-perfect-products, role: supporting_evidence, spine_nodes: [P2], note: "Non-demographic processing traits are an established, measurable class (survey scale on individuals); supports reader-side variation only, not an instrument or validation of cohorts and not one of the eight dimensions."}
 
 # ============================================================================
 # Open questions / boundary edges

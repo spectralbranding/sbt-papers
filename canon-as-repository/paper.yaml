@@ -12,7 +12,7 @@ meta:
     orcid: 0009-0000-6893-9231
     affiliation: Independent Researcher
   doi: 10.5281/zenodo.19355800
-  date: '2026-06-27'
+  date: '2026-11-10'
   venue: Preprint
   license: CC-BY-4.0
   keywords:
@@ -30,10 +30,10 @@ meta:
     independently of how it is expressed. Building on transmedia storytelling theory [@jenkins-2006-convergence-culture-where;
     @jenkins-2011-august-1-transmedia; @ryan-2001-narrative-as-virtual; @ryan-2015-transmedia-storytelling-industry;
     @dena-2009-transmedia-practice-theorising], world-building research [@wolf-2012-building-imaginary-worlds],
-    and the rendering problem framework [@zharnikov-2026l-rendering-problem-genetic], this paper proposes
-    a specification-driven architecture to close the gap. The canonical specification is reconceived as
-    a version-controlled repository: editions are tagged commits; translations and adaptations are forks;
-    canon governance operates through pull requests; and consistency validation functions as continuous
+    and the rendering problem framework [@zharnikov-2026l-rendering-problem-brand-perception], this paper
+    proposes a specification-driven architecture to close the gap. The canonical specification is reconceived
+    as a version-controlled repository: editions are tagged commits; translations and adaptations are
+    forks; canon governance operates through pull requests; and consistency validation functions as continuous
     integration. Style is a rendering parameter rather than a property of the specification; actors and
     translators function as rendering operators; and artificial intelligence clarifies the authorship
     question by distinguishing specification (the creative act) from rendering (the craft act). Seven

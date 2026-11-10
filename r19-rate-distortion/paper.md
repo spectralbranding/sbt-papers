@@ -6,7 +6,7 @@ ORCID: 0009-0000-6893-9231
 
 DOI: [10.5281/zenodo.19528833](https://doi.org/10.5281/zenodo.19528833)
 
-Working Paper v1.2.0 – April 2026 (revised August 2026)
+Working Paper v1.2.1 – April 2026 (revised November 2026)
 
 ## Abstract
 
@@ -174,7 +174,7 @@ H4 is **not supported**. Per-model power-law slope estimates (*b* in $D = a \cdo
 - Western (n = 6): mean *b* = 2.93 (SD = 1.16)
 - Cross-cultural (n = 11): mean *b* = 4.64 (SD = 4.43)
 
-Welch *t*(11.4) = -1.21, *p* = .250 (two-sided), Cohen's *d* = -.466. Neither pre-registered criterion (*p* < .05, |*d*| > .50) is met, but only one of the two was ever capable of being informative. With $n_1 = 6$ and $n_2 = 11$ the two statistics are tied by $t = d\sqrt{n_1 n_2/(n_1 + n_2)} = 1.97d$, so a two-sided *p* below .05 at the reported Welch df of 11.4 already requires $|d| > 1.12$. The pre-registered floor of $|d| > .50$ therefore lies inside the region the significance conjunct excludes and can never bind: at these group sizes the conjunction reduces to its significance clause. The verdict is reported on that clause alone. A conjunction that discriminates would need an effect-size floor above 1.12, or a design in which the two criteria are not collinear; the choice made here is to state one criterion. Two cross-cultural models (Zhipu GLM-4 and SDAIA ALLaM) show outlier slopes > 13; excluding them yields *t* = .77, *p* = .456, *d* = .42. The apparent group difference is an outlier artifact. The test is severely underpowered (approximately 22% power for *d* = .50 at these sample sizes); panels of 15 or more models per group are needed for definitive resolution.
+Welch *t*(11.4) = -1.21, *p* = .250 (two-sided), Cohen's *d* = -.466. Neither pre-registered criterion (*p* < .05, |*d*| > .50) is met, but only one of the two was ever capable of being informative. With $n_1 = 6$ and $n_2 = 11$ the two statistics are tied by $t = d\sqrt{n_1 n_2/(n_1 + n_2)} = 1.97d$, so a two-sided *p* below .05 at the reported Welch df of 11.4 already requires $|d| > 1.11$. The pre-registered floor of $|d| > .50$ therefore lies inside the region the significance conjunct excludes and can never bind: at these group sizes the conjunction reduces to its significance clause. The verdict is reported on that clause alone. A conjunction that discriminates would need an effect-size floor above 1.11, or a design in which the two criteria are not collinear; the choice made here is to state one criterion. Two cross-cultural models (Zhipu GLM-4 and SDAIA ALLaM) show outlier slopes > 13; excluding them yields *t* = .77, *p* = .456, *d* = .42. The apparent group difference is an outlier artifact. The test is severely underpowered (approximately 22% power for *d* = .50 at these sample sizes); panels of 15 or more models per group are needed for definitive resolution.
 
 ### H5: R1 Convergence Floor
 
@@ -194,7 +194,7 @@ Table 4 reports mean distortion by brand and rate condition across the 17 models
 | Erewhon | .184 | .118 | .152 | .203 | .850 | 35.9% |
 | Tesla | .177 | .138 | .139 | .291 | .882 | 22.0% |
 
-*Notes*: Mean across 17 models. All five brands achieve minimum distortion at R2. No causal reading of the per-brand ordering is offered, because the design cannot support one. A flat-response baseline — a constant-rating encoder, whose normalized output is the uniform vector and which holds no brand information whatever — has total variation distance to the canonical profiles of .071 (IKEA), .081 (Patagonia), .095 (Hermes), .153 (Erewhon), and .171 (Tesla). That ordering reproduces the observed R2 column at Spearman $\rho = .900$ and inverts the observed R1-to-R2 reduction column at $\rho = -.900$. The pattern is therefore normalization geometry: profiles nearer the simplex centre are easier for any quantized format to approach, and the brands whose canonical profiles are furthest from uniform (Tesla, with an Ideological value of 3.0 and a Temporal value of 2.0 out of 10; Erewhon, with a Temporal value of 2.5) are the brands with the shallowest reduction. Separating encoder behaviour from this geometry requires a flat-response arm in the design, which the present experiment does not include.
+*Notes*: Mean across 17 models. All five brands achieve minimum distortion at R2. No causal reading of the per-brand ordering is offered, because the design cannot support one. A flat-response baseline — a constant-rating encoder, whose normalized output is the uniform vector and which holds no brand information whatever — has total variation distance to the canonical profiles of .071 (IKEA), .081 (Patagonia), .095 (Hermes), .153 (Erewhon), and .170 (Tesla). That ordering reproduces the observed R2 column at Spearman $\rho = .900$ and inverts the observed R1-to-R2 reduction column at $\rho = -.900$. The pattern is therefore normalization geometry: profiles nearer the simplex centre are easier for any quantized format to approach, and the brands whose canonical profiles are furthest from uniform (Tesla, with an Ideological value of 3.0 and a Temporal value of 2.0 out of 10; Erewhon, with a Temporal value of 2.5) are the brands with the shallowest reduction. Separating encoder behaviour from this geometry requires a flat-response arm in the design, which the present experiment does not include.
 
 ### Companion Computation Script
 
