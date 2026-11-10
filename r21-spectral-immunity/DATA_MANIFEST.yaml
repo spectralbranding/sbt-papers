@@ -4,7 +4,7 @@
 datasets:
   - name: "R20 Portfolio AI Perception Dataset"
     location: "https://huggingface.co/datasets/spectralbranding/r20-portfolio-ai-perception"
-    doi: "10.57967/hf/8380"
+    doi: "10.57967/hf/11560"
     records: 9925
     description: >
       Combined dataset from main experiment (7,975 observations, 20 brands,
@@ -16,9 +16,10 @@ datasets:
       - "Variance decomposition (Table 4)"
       - "Cross-cultural analysis (Table 5)"
     note: >-
-      The multi-turn file holds the Turn-2 ratings only. The Turn-1 ratings behind Table 6 (rated in the
-      same conversation before the portfolio is disclosed) are in the raw responses, field turn1_scores:
-      https://github.com/spectralbranding/sbt-papers/tree/main/r20-portfolio-ai/responses
+      10.57967/hf/11560 is the DOI of HuggingFace revision 4ab351f, which added the Turn-1 ratings behind
+      Table 6 (rated in the same conversation before the portfolio is disclosed) to multiturn.jsonl as
+      turn1_* columns; the earlier 10.57967/hf/8380 holds Turn 2 only. The raw responses carry both turns
+      (field turn1_scores): https://github.com/spectralbranding/sbt-papers/tree/main/r20-portfolio-ai/responses
 
 code:
   - name: "R20 experiment scripts"

@@ -6,5 +6,5 @@ scipy>=1.13.0
 # numpy is installed with pandas and scipy.
 # huggingface_hub downloads the archived data; not needed with --data-dir.
 huggingface_hub>=0.24.0
-# Table 6 Turn-1 cells (--responses DIR) read the raw response files from
+# --responses DIR (optional) reads Table 6's turn pairs from the raw response files at
 # https://github.com/spectralbranding/sbt-papers/tree/main/r20-portfolio-ai/responses

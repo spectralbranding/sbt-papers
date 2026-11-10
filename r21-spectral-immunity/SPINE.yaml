@@ -84,7 +84,7 @@ observations:
       across 4 prompt modalities (direct rating, naturalistic recommendation,
       multi-turn conversation, native-language ablation) plus a prompt-location
       ablation and a 20-brand published-brand replication.
-    raw_data_pointer: "https://doi.org/10.57967/hf/8380 (HuggingFace) + https://doi.org/10.5281/zenodo.19555282 (Zenodo)"
+    raw_data_pointer: "https://doi.org/10.57967/hf/11560 (HuggingFace) + https://doi.org/10.5281/zenodo.19555282 (Zenodo)"
     instrument: "code/run_portfolio.py (experiment driver) over 13 LLM APIs"
     timestamp: "2026-04"
     body_sections: ["Method §Design", "Results"]

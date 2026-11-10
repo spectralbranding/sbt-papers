@@ -22,7 +22,8 @@ profiles and compares the Table 3 delta DCI values with the differences of the
 1-decimal cell means (small discrepancies are expected from that rounding).
 
 **Full mode** (`--full`, requires HuggingFace access or a local copy of the data):
-Reads the archived records (HF DOI 10.57967/hf/8380), recomputes every printed
+Reads the archived records (HF DOI 10.57967/hf/11560, revision 4ab351f, pinned in
+the script), recomputes every printed
 cell, compares it with the value hard-coded in the script, prints OK or MISMATCH
 per row, and ends with an all-match line (exit code 1 on any mismatch).
 
@@ -30,7 +31,7 @@ per row, and ends with an all-match line (exit code 1 on any mismatch).
 uv run --with huggingface_hub --with pandas --with scipy python compute_dci.py --full
 ```
 
-With the raw responses, Table 6 is checked in full:
+Table 6's turn pairs can instead be read from the raw responses:
 
 ```bash
 git clone https://github.com/spectralbranding/sbt-papers
@@ -38,23 +39,24 @@ uv run --with huggingface_hub --with pandas --with scipy python compute_dci.py \
     --full --responses sbt-papers/r20-portfolio-ai/responses
 ```
 
-Options: `--responses DIR` (raw response files), `--data-dir DIR` (a folder
-holding the three jsonl files below, instead of downloading them).
+Options: `--responses DIR` (raw response files, an alternative source of the
+Table 6 turn pairs), `--data-dir DIR` (a folder holding the three jsonl files
+below, instead of downloading them).
 
 | Table | Reproduced from | What is checked |
 |-------|-----------------|-----------------|
 | 3 | `main_experiment.jsonl` | all 160 cells (Solo, Port, Delta, t, p, d, TOST p, Equivalent); mean absolute delta DCI; counts of TOST-equivalent and FDR-significant brands; the L'Oreal delta range (H6); range of the 40 cell-mean standard errors |
 | 4 | `main_experiment.jsonl` | nested, sequential (type I) variance shares: portfolio, brand within portfolio, model, condition, residual; brand identity (first two rows) |
 | 5 | `main_experiment.jsonl` | the seven tradition rows (Delta DCI, d, p) |
-| 6 | `multiturn.jsonl` (Turn 2) and the raw responses (Turn 1) | Turn-2 DCI from the HF file always; with `--responses`: Turn-1 DCI, delta, d, p, the FDR-significant set, the mean delta over the 20 brands (and its test), the 8 cell-mean standard errors |
+| 6 | `multiturn.jsonl` (Turn 2 in the dimension columns, Turn 1 in `turn1_*`), or the raw responses with `--responses` | Turn-1 and Turn-2 DCI, delta, d, p, the FDR-significant set, the mean delta over the 20 brands (and its test), the 8 cell-mean standard errors |
 | 7 | `published_brands.jsonl` | the 10 brands rated under both conditions (1,300 observations) on Equation 2: Solo, Port, Delta, d; counts of FDR-significant and TOST-equivalent brands; Colgate's TOST p; the Audi and Pepsi p-values; range of the 20 cell-mean standard errors |
 
-The HF files hold Turn-2 scores only for the multi-turn arm. The Turn-1 scores
-are the `turn1_scores` field of the raw response files
-(`*_multiturn_*.json`), public at
+The Turn-1 scores are the `turn1_*` columns of `multiturn.jsonl` from HF
+revision 4ab351f (DOI 10.57967/hf/11560) and the `turn1_scores` field of the raw
+response files (`*_multiturn_*.json`), public at
 https://github.com/spectralbranding/sbt-papers/tree/main/r20-portfolio-ai/responses.
-Without `--responses` the script checks only what the HF files support and
-says so.
+A `multiturn.jsonl` without those columns (the earlier 10.57967/hf/8380) supports
+only Table 6's Turn-2 column; the script checks that and says what it skipped.
 
 Rounding: Table 3 values were transcribed from the original analysis's saved
 results (means to 2 decimals, t and d to 3, p and TOST p to 4) and then rounded
@@ -64,10 +66,10 @@ half up to the printed precision; the script applies the same two steps. Tables
 ## Data sources
 
 - Primary experiment (7,975 observations, 20 brands):
-  https://doi.org/10.57967/hf/8380
+  https://doi.org/10.57967/hf/11560
 - Published-brand extension (1,950 observations, 20 brands; Table 7 tests the
   10 rated under both conditions, 1,300 observations):
-  https://doi.org/10.57967/hf/8380
+  https://doi.org/10.57967/hf/11560
 - Raw responses (Table 6 Turn-1 scores):
   https://github.com/spectralbranding/sbt-papers/tree/main/r20-portfolio-ai/responses
 - Zenodo archive: https://doi.org/10.5281/zenodo.19555282

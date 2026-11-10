@@ -14,9 +14,11 @@ Python version: 3.12
 Fixed random seed: 42
 
 Data sources:
-    Primary experiment (7,975 obs): https://doi.org/10.57967/hf/8380
-    Published-brand extension (1,950 obs): https://doi.org/10.57967/hf/8380
-    Raw responses (Turn-1 scores of Table 6):
+    Primary experiment (7,975 obs): https://doi.org/10.57967/hf/11560
+    Published-brand extension (1,950 obs): https://doi.org/10.57967/hf/11560
+    (the DOI of HuggingFace revision 4ab351f, which the script downloads; it
+    added the Turn-1 columns of multiturn.jsonl to the earlier 10.57967/hf/8380)
+    Raw responses (optional second source of the Turn-1 scores of Table 6):
         https://github.com/spectralbranding/sbt-papers/tree/main/r20-portfolio-ai/responses
     Zenodo archive: https://doi.org/10.5281/zenodo.19555282
 
@@ -28,11 +30,10 @@ This script has two modes:
                   TOST and FDR counts, the H6 range and the cell-mean SE range
          Table 4  nested, sequential (type I) variance decomposition
          Table 5  tradition sub-groups
-         Table 6  multi-turn results; the Turn-1 scores exist only in the raw
-                  response files, so the Turn-1 cells, delta, d, p, the FDR set,
-                  the multi-turn mean delta and the SE range need
-                  --responses DIR (without it only the Turn-2 column is
-                  checked, and the script says so)
+         Table 6  multi-turn results: Turn-1 and Turn-2 DCI, delta, d, p, the
+                  FDR set, the multi-turn mean delta and the SE range, from
+                  the turn1_* and dimension columns of multiturn.jsonl, or from
+                  the raw response files with --responses DIR
          Table 7  published-brand extension on Equation 2 (10 brands, 1,300
                   observations), TOST and FDR counts, SE range
        Each printed value is hard-coded in this file and compared; the script
@@ -48,6 +49,7 @@ Usage:
         python compute_dci.py --full        # full mode (network)
     uv run --with huggingface_hub --with pandas --with scipy \\
         python compute_dci.py --full --responses PATH/TO/r20-portfolio-ai/responses
+        # optional: Table 6 turn pairs from the raw response files
 """
 
 import argparse
@@ -410,7 +412,7 @@ def stub_mode() -> None:
     print(f"  Equivalent (p < .05): {result['equivalent']}")
     print()
     print("Full mode (--full flag): reads the archived records (HuggingFace DOI")
-    print("10.57967/hf/8380) and reproduces Tables 3-7, checking every printed cell.")
+    print("10.57967/hf/11560) and reproduces Tables 3-7, checking every printed cell.")
     print()
     print("Run command: uv run --with huggingface_hub --with pandas --with scipy \\")
     print("    python compute_dci.py --full [--responses DIR]")
@@ -427,6 +429,10 @@ DIMS = [
     "temporal",
 ]
 HF_REPO = "spectralbranding/r20-portfolio-ai-perception"
+# The revision DOI 10.57967/hf/11560 was minted for; pinned so a later card or
+# data change on HuggingFace cannot change what this script reads.
+HF_REVISION = "4ab351f4227f1f1f19d302182e45c7b5435264d9"
+TURN1_DIMS = [f"turn1_{d}" for d in DIMS]
 RESPONSES_URL = (
     "https://github.com/spectralbranding/sbt-papers/tree/main/"
     "r20-portfolio-ai/responses"
@@ -696,7 +702,7 @@ def load_data(name, data_dir):
         print("  uv run --with huggingface_hub --with pandas --with scipy \\")
         print("      python compute_dci.py --full")
         sys.exit(1)
-    path = hf_hub_download(HF_REPO, name, repo_type="dataset")
+    path = hf_hub_download(HF_REPO, name, repo_type="dataset", revision=HF_REVISION)
     return pd.read_json(path, lines=True)
 
 
@@ -846,12 +852,27 @@ def _load_turn_pairs(responses_dir):
     return pd.DataFrame(rows, columns=["brand", "t1", "t2"])
 
 
+def _turn_pairs_from_file(multiturn):
+    """Turn-1 and Turn-2 DCI per row of multiturn.jsonl (turn1_* columns)."""
+    _, pd, _ = _libs()
+    g = multiturn.dropna(subset=TURN1_DIMS)
+    return pd.DataFrame(
+        {
+            "brand": g["brand"].to_numpy(),
+            "t1": dci_matrix(g[TURN1_DIMS].to_numpy()),
+            "t2": dci_matrix(g[DIMS].to_numpy()),
+        }
+    )
+
+
 def check_table6(multiturn, responses_dir, checks):
     """Table 6 (multi-turn, FDR-significant brands) and the multi-turn prose.
 
-    The published multiturn.jsonl holds Turn-2 scores only, so without
-    --responses just the T2 DCI column can be checked. The Turn-1 scores are in
-    the raw response files (field turn1_scores), public at RESPONSES_URL.
+    The Turn-1 scores are the turn1_* columns of multiturn.jsonl (HuggingFace
+    revision 4ab351f, DOI 10.57967/hf/11560) and the turn1_scores field of the
+    raw response files, public at RESPONSES_URL; --responses DIR reads the raw
+    files instead. A copy of multiturn.jsonl without the turn1_* columns (the
+    earlier 10.57967/hf/8380) supports only the T2 DCI column.
     Original: analysis 9 (paired t-test per brand, d = mean difference / SD of
     the differences, Benjamini-Hochberg across the 20 brand p-values rounded to
     4 decimals).
@@ -863,7 +884,8 @@ def check_table6(multiturn, responses_dir, checks):
         .groupby("brand")["t2"]
         .mean()
     )
-    if not responses_dir:
+    has_turn1 = all(c in multiturn.columns for c in TURN1_DIMS)
+    if not responses_dir and not has_turn1:
         checks.header(["T2 pub."])
         for brand, printed in PAPER_TABLE6.items():
             checks.row(
@@ -872,13 +894,18 @@ def check_table6(multiturn, responses_dir, checks):
             )
         checks.skipped(
             "Turn-1 DCI, delta, d, p, FDR set and the multi-turn prose figures need "
-            "the Turn-1 scores; pass --responses DIR (raw responses, "
-            f"{RESPONSES_URL})."
+            "the Turn-1 scores: this multiturn.jsonl has no turn1_* columns; use "
+            f"10.57967/hf/11560 or pass --responses DIR ({RESPONSES_URL})."
         )
         print()
         return
-    pairs = _load_turn_pairs(responses_dir)
-    checks.header(["T1", "T2 raw", "T2 pub.", "Delta", "d", "p"])
+    if responses_dir:
+        pairs = _load_turn_pairs(responses_dir)
+        print(f"  Turn pairs from the raw response files in {responses_dir}")
+    else:
+        pairs = _turn_pairs_from_file(multiturn)
+        print("  Turn pairs from the turn1_* and dimension columns of multiturn.jsonl")
+    checks.header(["T1", "T2 pair", "T2 pub.", "Delta", "d", "p"])
     per = {}
     for brand, g in pairs.groupby("brand"):
         diff = (g.t2 - g.t1).to_numpy()
@@ -901,7 +928,7 @@ def check_table6(multiturn, responses_dir, checks):
             brand,
             [
                 ("T1 DCI", printed[0], fmt(s["t1"], 1)),
-                ("T2 DCI (raw)", printed[1], fmt(s["t2"], 1)),
+                ("T2 DCI (paired rows)", printed[1], fmt(s["t2"], 1)),
                 ("T2 DCI (published file)", printed[1], fmt(t2_pub[brand], 1)),
                 ("Delta", printed[2], fmt(s["delta"], 2, True)),
                 ("d", printed[3], fmt(s["d"], 2)),
@@ -1052,10 +1079,9 @@ def full_mode(data_dir=None, responses_dir=None) -> None:
     and a final line.
 
     Data: main_experiment.jsonl (Tables 3, 4, 5), multiturn.jsonl (Table 6,
-    Turn 2 only) and published_brands.jsonl (Table 7), read from HuggingFace
-    (10.57967/hf/8380) or from --data-dir. Table 6's Turn-1 cells need the raw
-    response files (--responses DIR); without them only Table 6's Turn-2 column
-    is checked and the script says so.
+    both turns) and published_brands.jsonl (Table 7), read from HuggingFace
+    (revision HF_REVISION, 10.57967/hf/11560) or from --data-dir. --responses
+    DIR takes Table 6's turn pairs from the raw response files instead.
 
     Requires: huggingface_hub (unless --data-dir), pandas, scipy.
     """
@@ -1073,8 +1099,7 @@ def full_mode(data_dir=None, responses_dir=None) -> None:
         for item in checks.bad:
             print(f"  {item}")
         sys.exit(1)
-    scope = "" if responses_dir else " (Table 6 Turn-1 cells not checked)"
-    print(f"All {checks.total} checks match{scope}.")
+    print(f"All {checks.total} checks match.")
 
 
 def main(argv=None) -> None:
@@ -1084,7 +1109,7 @@ def main(argv=None) -> None:
         "--responses",
         metavar="DIR",
         help="folder of raw response files (sbt-papers r20-portfolio-ai/responses); "
-        "needed for Table 6's Turn-1 cells",
+        "an alternative source of Table 6's Turn-1 scores",
     )
     parser.add_argument(
         "--data-dir",
