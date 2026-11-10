@@ -1,6 +1,10 @@
 # R21 Spectral Immunity — Computation Script Dependencies
 # Stub mode requires no external packages (Python 3.12 stdlib only).
-# Full mode (--full flag) requires:
+# Full mode (--full flag) reproduces Tables 3-7 and requires:
 pandas>=2.2.0
 scipy>=1.13.0
+# numpy is installed with pandas and scipy.
+# huggingface_hub downloads the archived data; not needed with --data-dir.
 huggingface_hub>=0.24.0
+# Table 6 Turn-1 cells (--responses DIR) read the raw response files from
+# https://github.com/spectralbranding/sbt-papers/tree/main/r20-portfolio-ai/responses

@@ -8,8 +8,12 @@ Reproduces Figure 2 in:
     Zharnikov, D. (2026ac). Spectral Immunity: Why Brand Portfolio Interference
     Disappears for AI Observers. Working Paper. DOI 10.5281/zenodo.19765401
 
-Run command:
-    uv run python code/plot_forest_effect_sizes.py
+Run command (from the paper folder [internal path removed]):
+    uv run --with matplotlib python code/plot_forest_effect_sizes.py
+
+The d values below are typed from Tables 3 and 7. After a change to either
+table, update them and re-run this script to regenerate the figure. Table 7
+is computed on Equation 2 (see compute_dci.py --full).
 
 Python version: 3.12
 Fixed random seed: 42
@@ -42,10 +46,10 @@ TABLE3_DATA = [
     ("Toyota", "Toyota layer", -0.30, True),
     ("Lexus", "Toyota layer", +0.52, True),
     ("LOreal Paris", "LOreal prestige", -0.13, True),
-    ("Lancome", "LOreal prestige", +0.03, True),
-    ("Maybelline", "LOreal prestige", -0.07, True),
-    ("Volvo", "Geely reverse", -0.15, True),
-    ("Polestar", "Geely reverse", -0.07, True),
+    ("Lancome", "LOreal prestige", +0.05, True),
+    ("Maybelline", "LOreal prestige", -0.05, True),
+    ("Volvo", "Geely reverse", -0.23, True),
+    ("Polestar", "Geely reverse", -0.05, True),
     ("Geely Auto", "Geely reverse", +0.27, False),
     ("Yandex", "Yandex branded house", -0.01, True),
     ("Yandex Market", "Yandex branded house", +0.10, True),
@@ -54,16 +58,16 @@ TABLE3_DATA = [
 
 TABLE7_DATA = [
     # (brand, archetype_label, cohen_d, tost_equivalent)
-    ("Coca-Cola", "Published brand extension", +0.08, True),
-    ("Pepsi", "Published brand extension", +0.11, True),
-    ("BMW", "Published brand extension", -0.18, True),
-    ("Audi", "Published brand extension", +0.49, True),
-    ("Google", "Published brand extension", +0.06, True),
-    ("Disney", "Published brand extension", +0.04, True),
-    ("Colgate", "Published brand extension", +0.21, True),
-    ("Samsung", "Published brand extension", +0.06, True),
-    ("H&M", "Published brand extension", -0.29, True),
-    ("Dell", "Published brand extension", +0.16, True),
+    ("Coca-Cola", "Published brand extension", +0.16, True),
+    ("Pepsi", "Published brand extension", +0.34, True),
+    ("BMW", "Published brand extension", -0.12, True),
+    ("Audi", "Published brand extension", -0.44, True),
+    ("Google", "Published brand extension", +0.16, True),
+    ("Disney", "Published brand extension", +0.07, True),
+    ("Colgate", "Published brand extension", +0.20, False),
+    ("Samsung", "Published brand extension", +0.07, True),
+    ("H&M", "Published brand extension", +0.01, True),
+    ("Dell", "Published brand extension", -0.02, True),
 ]
 
 TOST_BOUND = 1.0

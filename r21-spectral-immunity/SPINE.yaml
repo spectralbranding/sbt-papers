@@ -32,8 +32,8 @@ thesis: |
   dimensions and testing three propositions in a fully crossed experiment
   (13 LLMs, 7 training traditions, 40 brands, 7 portfolio archetypes, 4 prompt
   modalities; N = 9,925), the paper finds near-zero portfolio-induced change
-  (mean |ΔDCI| = .26; TOST equivalence for 18/20 brands; .1% of DCI variance
-  from portfolio framing versus 37.4% from brand identity). The sole exception
+  (mean |ΔDCI| = .23; TOST equivalence for 18/20 brands; under .01% of DCI
+  variance from portfolio framing versus 41.4% from brand identity). The sole exception
   is a reverse-aspiration structure (Geely Auto) under multi-turn conversation
   (d = -1.11), where extended context converts coordination information into
   output inference. This resolves the awareness-gate paradox: awareness is
@@ -122,11 +122,12 @@ methods:
   - id: M2
     statement: >-
       Quantify portfolio-induced change per brand as ΔDCI (portfolio minus
-      solo), with paired t-tests, Cohen's d, and TOST equivalence tests
+      solo), with independent-samples t-tests, Cohen's d, and TOST equivalence tests
       (Lakens 2017; Lakens, Scheel & Isager 2018) at ±1.0 DCI bounds;
       Benjamini-Hochberg FDR correction across all 20 brand-level tests; and a
-      variance decomposition attributing DCI variance to brand / portfolio /
-      model / condition factors.
+      nested, sequential (type I) variance decomposition attributing DCI
+      variance to portfolio / brand within portfolio / model / condition /
+      residual.
     type: "equivalence_testing_and_variance_decomposition"
     inputs: ["DCI per cell (O2)"]
     outputs: ["Tables 3-7 (ΔDCI, t, p, d, TOST p, equivalence); Table 4 variance"]
@@ -152,24 +153,24 @@ methods:
 # ============================================================================
 measurements:
   - id: m_immunity
-    statement: "Mean |ΔDCI| = .26; TOST equivalence confirmed for 18/20 brands; 0/20 FDR-significant in direct rating; cosine similarity > .999 for all brands."
+    statement: "Mean |ΔDCI| = .23 (over the 20 Table 3 brands); TOST equivalence confirmed for 18/20 brands; 0/20 FDR-significant in direct rating; cosine similarity > .999 for all brands."
     source_observations: [O1, O2]
     generating_method: M2
-    value: "mean |ΔDCI| = .26 / 18-of-20 equivalent / 0-of-20 FDR-significant"
+    value: "mean |ΔDCI| = .23 / 18-of-20 equivalent / 0-of-20 FDR-significant"
     units: "DCI points + brand counts"
     body_sections: ["Results §Main Finding", "Table 3"]
   - id: m_variance
-    statement: "Variance decomposition: brand identity 37.4%, portfolio (parent) 19.3%, model 8.6%, condition (solo vs. portfolio) .1%."
+    statement: "Nested, sequential (type I) variance decomposition of DCI (2,555 direct ratings, 20 brands): portfolio (parent) 25.2%, brand within portfolio 16.2%, model 7.5%, condition (solo vs. portfolio) under .01% (.003%), residual 51.1%; brand identity (portfolio + brand within portfolio) 41.4%."
     source_observations: [O1, O2]
     generating_method: M2
-    value: "brand 37.4% vs. condition .1% (three orders of magnitude)"
+    value: "brand identity 41.4% vs. condition under .01% (about four orders of magnitude)"
     units: "% of DCI variance"
     body_sections: ["Results §Variance Decomposition", "Table 4"]
   - id: m_geely
-    statement: "Multi-turn conversation, Geely Auto: T1 DCI 8.1 -> T2 DCI 5.1, ΔDCI = -2.93, d = -1.11, p < .001 (largest effect in the experiment); mean ΔDCI across all 20 brands in multi-turn = -.03."
+    statement: "Multi-turn conversation, Geely Auto: T1 DCI 8.1 -> T2 DCI 5.1, ΔDCI = -2.93, d = -1.11, p < .001 (largest effect in the experiment); mean ΔDCI across all 20 brands in multi-turn = -.26 (mean of the 20 per-brand Turn 1 to Turn 2 changes; one-sample t(19) = -1.31, p = .205, d = -.29; the 16 other brands average +.07)."
     source_observations: [O1, O2]
     generating_method: M2
-    value: "Geely Auto d = -1.11 (multi-turn); overall multi-turn mean ΔDCI = -.03"
+    value: "Geely Auto d = -1.11 (multi-turn); overall multi-turn mean ΔDCI = -.26 (not distinguishable from zero across brands)"
     units: "DCI points + Cohen's d"
     body_sections: ["Results §Multi-Turn Conversation: The Geely Auto Exception", "Table 6"]
 
@@ -281,7 +282,7 @@ findings:
     statement: >-
       (H5 Spectral immunity — supported) Across all portfolios and prompt
       modalities, portfolio framing produces near-zero change in brand
-      perception: mean |ΔDCI| = .26, TOST equivalence for 18/20 brands, 0/20
+      perception: mean |ΔDCI| = .23, TOST equivalence for 18/20 brands, 0/20
       FDR-significant in direct rating, cosine > .999. This is the headline
       empirical support for P2 (awareness-gate sufficiency inversion).
     type: "equivalence_null"
@@ -293,10 +294,11 @@ findings:
     body_sections: ["Results §Main Finding", "Table 3", "Conclusion"]
   - id: F2
     statement: >-
-      (Variance decomposition) Brand identity (a WHAT-layer property) explains
-      37.4% of DCI variance while the solo-vs-portfolio condition (a DO-layer
-      manipulation) explains .1% — three orders of magnitude less — direct
-      evidence for the WHAT/DO output-coordination distinction.
+      (Variance decomposition) Brand identity (a WHAT-layer property; portfolio
+      plus brand within portfolio) explains 41.4% of DCI variance while the
+      solo-vs-portfolio condition (a DO-layer manipulation) explains under .01%
+      — about four orders of magnitude less — direct evidence for the WHAT/DO
+      output-coordination distinction.
     type: "variance_attribution"
     source_measurements: [m_variance]
     generating_method: M2
@@ -323,7 +325,9 @@ findings:
       shows the largest effect in the experiment (ΔDCI = -2.93, d = -1.11,
       p < .001), interpreted as conversational accumulation converting DO-layer
       ownership information into WHAT-layer output inference. The overall
-      multi-turn mean ΔDCI is -.03 (effectively zero).
+      multi-turn mean ΔDCI is -.26 (the mean of the 20 per-brand changes; not
+      distinguishable from zero across brands, p = .205; the four FDR-significant
+      brands carry it, the other 16 average +.07).
     type: "boundary_exception"
     source_measurements: [m_geely]
     generating_method: M2
@@ -353,10 +357,14 @@ robustness_checks:
   - id: RC3
     statement: >-
       Published-brand replication: an independent 20-brand stimulus set from
-      peer-reviewed marketing research (zero overlap, N = 1,950) confirms TOST
-      equivalence for all 10 reported brands, 0/10 FDR-significant; lower
-      absolute DCI (range .37-1.31) makes the ±1.0 bound conservative — a
-      stronger immunity claim, not weaker.
+      peer-reviewed marketing research (zero overlap, N = 1,950; the 10 brands
+      rated under both conditions, 1,300 observations, form the test) shows TOST
+      equivalence within ±1.0 DCI points for 9 of the 10 brands (Colgate
+      inconclusive: ΔDCI = +.47, TOST p = .104) and 0/10 FDR-significant. DCI
+      (Equation 2) values lie in the same band as the main experiment (solo
+      means 5.2-9.1 vs. 3.5-8.9 in Table 3). The largest uncorrected shift is
+      Audi's, in the negative direction (d = -.44, p = .012, not
+      FDR-significant).
     type: "independent_stimulus_replication"
     sensitivity_of: [F1]
     body_sections: ["Results §Published-Brand Replication", "Table 7"]
@@ -388,7 +396,7 @@ alternative_explanations:
     rules_out_status: "rejected"
     reasoning: >-
       Peng et al. (2023) establish reliable positive spillover across 2,134
-      effect sizes in human samples; the AI null (mean |ΔDCI| = .26) is a
+      effect sizes in human samples; the AI null (mean |ΔDCI| = .23) is a
       qualitative departure consistent with a fundamentally different
       (compressed) encoding mechanism, not a small-sample anomaly.
     evidence:
@@ -432,8 +440,9 @@ limitations:
     statement: >-
       Part of what the instrument registers as brand identity is the brand name
       as a token: exchanging only the entity name in a byte-identical text moves
-      a model's dimensional reading (2026bp). The 37.4% brand-identity component
-      is therefore an upper bound on variance driven by the brand's substance.
+      a model's dimensional reading (2026bp). The 41.4% brand-identity component
+      (portfolio plus brand within portfolio) is therefore an upper bound on
+      variance driven by the brand's substance.
       The immunity contrast is unaffected, because the name is the same in the
       solo and portfolio arms and its contribution cancels.
     severity: "interpretation"

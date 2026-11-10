@@ -15,6 +15,10 @@ datasets:
       - "All hypothesis tests (H1-H9)"
       - "Variance decomposition (Table 4)"
       - "Cross-cultural analysis (Table 5)"
+    note: >-
+      The multi-turn file holds the Turn-2 ratings only. The Turn-1 ratings behind Table 6 (rated in the
+      same conversation before the portfolio is disclosed) are in the raw responses, field turn1_scores:
+      https://github.com/spectralbranding/sbt-papers/tree/main/r20-portfolio-ai/responses
 
 code:
   - name: "R20 experiment scripts"

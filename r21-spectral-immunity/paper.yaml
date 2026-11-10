@@ -29,15 +29,16 @@ meta:
     across eight perceptual dimensions and tests three propositions in a fully crossed experiment with
     13 LLMs from seven training traditions, 40 brands, seven portfolio archetypes, and four prompt modalities
     (N = 9,925). Using the Dimensional Concentration Index and two-one-sided equivalence tests, the results
-    reveal near-zero portfolio-induced change (mean $|\Delta\text{DCI}|$ = .26; equivalence holds for
-    18/20 brands). Variance decomposition attributes .1% of perceptual concentration to portfolio framing
-    versus 37.4% to brand identity. The sole exception occurs in multi-turn conversation for a reverse-aspiration
-    structure (Geely Auto, d = -1.11), where extended context converts coordination information into output
-    inferences. These results resolve the awareness-gate paradox: awareness is necessary but insufficient.
-    A bandwidth constraint rooted in rate-distortion theory and rational inattention is also required.
-    General-purpose LLMs are rationally inattentive to organizational-coordination signals because these
-    contribute negligibly to output-fidelity reconstruction. As AI mediation of brand interactions grows,
-    portfolio architecture becomes strategically invisible to the general-purpose LLM class tested here.'
+    reveal near-zero portfolio-induced change (mean $|\Delta\text{DCI}|$ = .23; equivalence holds for
+    18/20 brands). Variance decomposition attributes under .01% of perceptual concentration to portfolio
+    framing versus 41.4% to brand identity. The sole exception occurs in multi-turn conversation for a
+    reverse-aspiration structure (Geely Auto, d = -1.11), where extended context converts coordination
+    information into output inferences. These results resolve the awareness-gate paradox: awareness is
+    necessary but insufficient. A bandwidth constraint rooted in rate-distortion theory and rational inattention
+    is also required. General-purpose LLMs are rationally inattentive to organizational-coordination signals
+    because these contribute negligibly to output-fidelity reconstruction. As AI mediation of brand interactions
+    grows, portfolio architecture becomes strategically invisible to the general-purpose LLM class tested
+    here.'
 claims:
 - id: P0
   type: proposition
@@ -118,12 +119,13 @@ methodology:
     and per- dimension interference I_d = alpha * w_d * (e_d^{B_j} - mu_d) aggregated into total interference
     magnitude (Eqs. 1-4). Four portfolio archetypes (spectral cluster / contradiction / spread / layer)
     follow from spectral proximity x cohort overlap. Quantify portfolio-induced change per brand as ΔDCI
-    (portfolio minus solo), with paired t-tests, Cohen''s d, and TOST equivalence tests (Lakens 2017;
-    Lakens, Scheel & Isager 2018) at ±1.0 DCI bounds; Benjamini-Hochberg FDR correction across all 20
-    brand-level tests; and a variance decomposition attributing DCI variance to brand / portfolio / model
-    / condition factors. Power analysis for the equivalence design: with N = 65 per cell, TOST power for
-    ±1.0 DCI bounds at alpha = .05 exceeds .80 for population effects up to |d| = .30, so the study can
-    detect substantively meaningful non-equivalence while classifying smaller effects as equivalent.'
+    (portfolio minus solo), with independent-samples t-tests, Cohen''s d, and TOST equivalence tests (Lakens
+    2017; Lakens, Scheel & Isager 2018) at ±1.0 DCI bounds; Benjamini-Hochberg FDR correction across all
+    20 brand-level tests; and a nested, sequential (type I) variance decomposition attributing DCI variance
+    to portfolio / brand within portfolio / model / condition / residual. Power analysis for the equivalence
+    design: with N = 65 per cell, TOST power for ±1.0 DCI bounds at alpha = .05 exceeds .80 for population
+    effects up to |d| = .30, so the study can detect substantively meaningful non-equivalence while classifying
+    smaller effects as equivalent.'
   analysis:
     software: paper Theoretical Framework
     method: Python 3.12 + uv; published at sbt-papers/r21-spectral-immunity/code/
@@ -295,9 +297,9 @@ limitations:
   addressable: true
 - description: 'Part of what the instrument registers as brand identity is the brand name as a token:
     exchanging only the entity name in a byte-identical text moves a model''s dimensional reading (2026bp).
-    The 37.4% brand-identity component is therefore an upper bound on variance driven by the brand''s
-    substance. The immunity contrast is unaffected, because the name is the same in the solo and portfolio
-    arms and its contribution cancels.'
+    The 41.4% brand-identity component (portfolio plus brand within portfolio) is therefore an upper bound
+    on variance driven by the brand''s substance. The immunity contrast is unaffected, because the name
+    is the same in the solo and portfolio arms and its contribution cancels.'
   severity: moderate
   addressable: true
 repositories:
