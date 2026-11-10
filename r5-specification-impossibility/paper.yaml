@@ -193,7 +193,8 @@ acceptance:
 - claim_id: P4
   criterion: Holds if (Theorem 2, Effective Dimensionality Reduction) OST's cascade model, where level
     i constrains level i+1 with strength gamma, reduces effective dimensionality to d_eff = 8(1-(1-gamma)^6)/gamma
-    — 15.
+    — 15.75 at gamma = 0.5, a 67% reduction — making per-organization specification tractable (~16 rather
+    than 48 independent choices) without making the space coverable.
   falsification: Lemma 1 falsified if measured per-level effective dimensionality at gamma=0.5 deviates
     systematically from d_i = 8·0.5^i (e.g. L2 freedom substantially above 2.0), indicating the uniform-gamma
     model fails.
@@ -201,7 +202,7 @@ acceptance:
   criterion: 'Holds if (Proposition 1, Coherence–Coupling Correspondence) The closed form converts to
     a falsifiable empirical prediction: the cross-level coherence ratio R = 1 - d_eff/(nL) is a monotone
     increasing function R(gamma) of cascade coupling, so across organizations an estimated R_hat should
-    track R(gamma_hat) within a tolerance band (anchors R(.'
+    track R(gamma_hat) within a tolerance band (anchors R(.1)≈.22, R(.5)≈.67, R(.9)≈.82).'
   falsification: 'The earlier correlation clause is withdrawn as circular: the only d_eff estimator this
     paper supplies is P4''s closed form in gamma, so R_hat = 1 - d_eff(gamma_hat)/48 equals R(gamma_hat)
     identically and r = 1 for every sample, including pure noise. Restated: falsified if R_hat_o computed
@@ -213,7 +214,7 @@ acceptance:
     are separate measurements rather than one closed form evaluated twice.'
 - claim_id: P8
   criterion: Holds if (Information-theoretic reading) A full 48-dim specification carries H_48 = 48·log2(10)
-    ≈ 159.
+    ≈ 159.4 bits against a working-memory capacity of ≈23.2 bits (Miller) or ≈13.3 (Cowan).
   falsification: 'The earlier clause (a) — "falsified if a full specification''s effective information
     is substantially below 23 bits" — is withdrawn as unreachable under the model''s own floor: L0 contributes
     8 free dimensions at every gamma, so d_eff >= 8 and H_eff >= 26.6 bits, above the 23.2-bit capacity

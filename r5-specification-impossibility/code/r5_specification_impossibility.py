@@ -21,6 +21,10 @@ Reproduces all numerical values cited in the paper:
               information loss of 5-dimension template projection, Corollary 1.1,
               Proposition 1 γ-coherence prediction
   - Figure 3 data: log-log volume-collapse curve V_n(0.5) for n ∈ {2..48}
+  - Theorem 1 applicability: V_15.75(0.1) ≈ 10⁻¹⁶·³², 2.1 × 10¹⁴ specifications
+              for 1% coverage at d_eff, 10¹⁰ templates covering 10⁻⁴⁹·⁸⁶ (d = 48)
+              and 10⁻⁶·³² (d = 15.75), and the coverage-below-10⁻³ thresholds
+              d ≥ 9.5 / 13.0 / 21.1 at 10⁶ / 10¹⁰ / 10²⁰ templates (brentq)
 
 Random seed: 42 (no stochastic computations — all closed-form; seed included for
              reproducibility policy compliance)
@@ -516,6 +520,58 @@ def proposition1_gamma_prediction():
 
 
 # ---------------------------------------------------------------------------
+# Theorem 1 applicability — coverage at d_eff and the dimension thresholds
+# ---------------------------------------------------------------------------
+
+
+def log10_ball_volume(d: float, r: float) -> float:
+    """log10 V_d(r) for real d: (d/2) log10 pi - ln Gamma(d/2 + 1) / ln 10 + d log10 r."""
+    return (
+        (d / 2) * math.log10(math.pi)
+        - math.lgamma(d / 2 + 1) / math.log(10)
+        + d * math.log10(r)
+    )
+
+
+def theorem1_applicability(epsilon: float = 0.1):
+    """Reconciling Theorem 1 with Theorem 2, and the applicability thresholds.
+
+    Paper values: V_15.75(0.1) ~ 10^-16.32; 1% coverage of the 15.75-dimensional
+    space takes ~2.1 x 10^14 specifications; 10^10 specifications cover
+    10^-49.86 of [0,1]^48 and 10^-6.32 of a 15.75-dimensional space; coverage
+    below 10^-3 requires d >= 9.5 at 10^6 templates, d >= 13.0 at 10^10 and
+    d >= 21.1 at 10^20 (root of log10 M + log10 V_d(eps) = -3, by brentq).
+    """
+    from scipy.optimize import brentq
+
+    print("\n--- Theorem 1 applicability: coverage at d_eff and thresholds ---")
+    d_eff = cascade_d_eff(0.5)
+    lv_eff = log10_ball_volume(d_eff, epsilon)
+    lv_48 = log10_ball_volume(48, epsilon)
+    n_one_pct = 10 ** (-2 - lv_eff)
+    print(f"  log10 V_{d_eff}({epsilon}) = {lv_eff:.2f}  (paper: -16.32)")
+    print(
+        f"  specifications for 1% coverage at d = {d_eff}: {n_one_pct:.2e}  (paper: 2.1e14)"
+    )
+    print(f"  10^10 specs cover 10^{10 + lv_48:.2f} of [0,1]^48  (paper: -49.86)")
+    print(f"  10^10 specs cover 10^{10 + lv_eff:.2f} at d = {d_eff}  (paper: -6.32)")
+    assert abs(lv_eff - (-16.32)) < 0.005
+    assert abs(n_one_pct / 2.1e14 - 1) < 0.05
+    assert abs((10 + lv_48) - (-49.86)) < 0.005
+    assert abs((10 + lv_eff) - (-6.32)) < 0.005
+
+    thresholds = {}
+    for log_m, paper in [(6, 9.5), (10, 13.0), (20, 21.1)]:
+        d_star = brentq(lambda d: log_m + log10_ball_volume(d, epsilon) + 3, 1.0, 48.0)
+        thresholds[log_m] = d_star
+        print(
+            f"  coverage < 10^-3 at 10^{log_m} templates requires d >= {d_star:.2f}  (paper: {paper})"
+        )
+        assert abs(d_star - paper) < 0.05, f"threshold at 10^{log_m}: {d_star}"
+    return {"log10_v_eff": lv_eff, "n_one_pct": n_one_pct, "thresholds": thresholds}
+
+
+# ---------------------------------------------------------------------------
 # Main
 # ---------------------------------------------------------------------------
 
@@ -539,6 +595,7 @@ def main():
     proposition1_gamma_prediction()
     specification_entropy_across_levels()
     intext_values()
+    theorem1_applicability()
 
     print("\n" + "=" * 70)
     print("All computations complete. All assertions passed.")
