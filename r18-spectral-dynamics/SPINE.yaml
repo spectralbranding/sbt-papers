@@ -228,19 +228,19 @@ methods:
 measurements:
   - id: m_speed
     statement: >-
-      Dove brand speed ||v|| is non-monotone across the three periods: 2.10
-      units/yr (Ignition, 7 computable dims), 0.31 (Expansion), 0.36 (Normative
+      Dove brand speed ||v|| is non-monotone across the three periods: 2.09
+      units/yr (Ignition, 7 computable dims), 0.32 (Expansion), 0.35 (Normative
       Absorption). The inverted-U shape is PARTLY AN ESTIMATOR ARTIFACT: speed is
       ||dx||/dt and the three periods use dt = 3, 7 and 10 years, so one and the
       same displacement scores 3.3x faster over the ignition interval than over
       the absorption interval. On per-period displacement instead, ignition is
-      2.8x expansion (not ~6.8x) and absorption is 1.6x expansion (not ~1.2x): the
+      2.8x expansion (not ~6.5x) and absorption is 1.6x expansion (not ~1.1x): the
       shape survives, the magnitudes do not. As reported, the inverted-U cannot be
       distinguished from the interval schedule. All values illustrative of the
       method, computed from four author-assigned columns.
     source_observations: [O1]
     generating_method: M1
-    value: "||v|| = 2.10 / 0.31 / 0.36 units per year"
+    value: "||v|| = 2.09 / 0.32 / 0.35 units per year"
     units: "scale-units per year (1-10 scale)"
     body_sections: ["§6.2 Velocity Vectors (Table 2)"]
   - id: m_cultural
@@ -249,7 +249,8 @@ measurements:
       with strongly negative acceleration in Period 1 (a_C = -0.314), before
       Cultural position visibly falls (8.5 -> 5.5). The lead time is a property of
       an assignment made in one pass with the trajectory already known, not an
-      observed lead; whether it appears in measured data is Prediction 1.
+      observed lead; whether it appears in measured data is Prediction 1, and the
+      Dove columns give no support for an early-warning use of the deceleration.
       Illustrative, from four author-assigned columns.
     source_observations: [O1]
     generating_method: M1

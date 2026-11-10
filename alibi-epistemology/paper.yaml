@@ -13,7 +13,7 @@ meta:
     orcid: 0009-0000-6893-9231
     affiliation: Independent Researcher
   doi: 10.5281/zenodo.18944770
-  date: '2026-06-27'
+  date: '2026-11-10'
   venue: Preprint
   license: CC-BY-4.0
   keywords:
@@ -87,8 +87,8 @@ claims:
   type: proposition
   statement: 'The seven principles transfer from financial reconciliation to brand perception without
     domain specialization: atom→brand signal, source→ encounter type, identity gate→brand recognition,
-    cloud→perception cloud, fact→brand conviction, re-collapse→conviction rebuild — because the underlying
-    epistemic structure is identical.'
+    cloud→perception cloud, fact→brand conviction, re-collapse→conviction rebuild — on the premise that
+    the underlying epistemic structure is shared.'
   testable: false
   tested_in_paper: false
   status: not_tested

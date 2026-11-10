@@ -6,7 +6,7 @@ ORCID: 0009-0000-6893-9231
 
 DOI: [10.5281/zenodo.19294864](https://doi.org/10.5281/zenodo.19294864)
 
-Working Paper v2.2.0 – March 2026 (revised June 2026)
+Working Paper v2.3.0 – March 2026 (revised November 2026)
 
 ## Abstract
 
@@ -69,6 +69,8 @@ The current pipeline has five structural gaps that are difficult to address with
 **Gap 4: No review attribution.** Peer reviewers contribute substantive intellectual work — identifying errors, suggesting improvements, catching methodological flaws. Their contributions are acknowledged in a single generic sentence ("We thank the anonymous reviewers") and then erased. A reviewer who saves a paper from a fatal statistical error receives the same credit as one who submits a two-sentence review: none.
 
 **Gap 5: No machine interface.** The entire pipeline is human-readable only. A PDF cannot be queried, diff'd, branched, or programmatically analyzed without lossy conversion. AI tools that could assist with literature review, consistency checking, or cross-paper analysis must first solve the extraction problem — converting unstructured text back into structured data — before doing any useful work. This is no longer hypothetical: Biswas et al. [-@goldberg-2026-aiassisted-peer-review] deployed AI review at scale across 22,977 AAAI-26 submissions and were forced to apply olmOCR — optical character recognition applied to PDFs — as a preprocessing step precisely because papers lacked machine-readable structure. The repository protocol proposed here eliminates that step: a paper stored as a Git repository with Markdown source and `paper.yaml` is queryable without any format conversion.
+
+The requirement has also been stated from the demand side. Kees and Vallen [-@kees-2026-research-that-matters], as outgoing editors of a public-policy marketing journal, urge authors to "keep the beacon lit from problem formation through conceptualization, data collection, and the presentation of results" so that findings reach the people who would apply them. Their editorial treats this as a question of audience and format; Gap 5 lies beneath it, because what a downstream user, human or machine, needs is the dependency structure the prose encodes, and a PDF does not expose that structure.
 
 The protocol proposed here closes all five gaps by replacing the document assumption with a repository assumption. The paper becomes a Git repository. Submission becomes a fork. Review becomes a branch. Publication becomes a release. Every operation is versioned, attributed, and machine-readable by construction.
 
@@ -1036,7 +1038,7 @@ The protocol distinguishes between information that must always be visible and i
 
 ### The Rendering Problem Isomorphism
 
-The four-level hierarchy introduced earlier — repository, paper, fork, publication — is not merely an analogy to software engineering. It is an instance of a general structural pattern: the specification-implementation-perception pipeline [@zharnikov-2026l-rendering-problem-genetic], in which a specification is rendered into an implementation that produces observer-dependent perception.
+The four-level hierarchy introduced earlier — repository, paper, fork, publication — is not merely an analogy to software engineering. It is an instance of a general structural pattern: the specification-implementation-perception pipeline [@zharnikov-2026l-rendering-problem-brand-perception], in which a specification is rendered into an implementation that produces observer-dependent perception.
 
 **The hierarchy.** The mapping is exact, and Table 5 situates it alongside the two sibling frameworks:
 
@@ -1053,7 +1055,7 @@ The four-level hierarchy introduced earlier — repository, paper, fork, publica
 | Implementation / Render   | Brand signals (emissions)  | Operations (processes)     | Paper (frozen snapshot)    |
 | Perception / Evaluation   | Perception cloud (observer)| Performance metrics        | Community review (peers)   |
 
-*Notes*: SBT = Spectral Brand Theory [@zharnikov-2026-spectral-brand-theory-computational-framework]; OST = Organizational Schema Theory [@zharnikov-2026-organizational-schema-theory-test-driven]. The rendering-problem isomorphism across all three frameworks is formalized in Zharnikov [-@zharnikov-2026l-rendering-problem-genetic].
+*Notes*: SBT = Spectral Brand Theory [@zharnikov-2026-spectral-brand-theory-computational-framework]; OST = Organizational Schema Theory [@zharnikov-2026-organizational-schema-theory-test-driven]. The rendering-problem isomorphism across all three frameworks is formalized in Zharnikov [-@zharnikov-2026l-rendering-problem-brand-perception].
 
 The rendering is lossy at every layer [@zharnikov-2026l-rendering-problem-genetic]. A brand specification cannot be fully conveyed by any finite set of signals. An organizational schema cannot be perfectly executed by any operational process. A research repository cannot be fully captured by any single paper. And the perception is observer-dependent: different consumers perceive different brands from the same signals; different employees experience different organizations from the same processes; different reviewers perceive different papers from the same manuscript. This isomorphism connects to the "between meaning and machine" problem in information science [@ribes-2009-between-meaning-machine]: the gap between local epistemic practice and the formal representations machines can act on.
 

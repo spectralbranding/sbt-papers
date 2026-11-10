@@ -6,8 +6,8 @@ authors:
     affiliation: "Independent Researcher"
     orcid: "https://orcid.org/0009-0000-6893-9231"
 title: "Spectral Dynamics: Velocity, Acceleration, and Phase Space in Multi-Dimensional Brand Perception"
-version: 1.2.0
-date-released: 2026-06-20
+version: 1.3.0
+date-released: 2026-11-10
 url: "https://doi.org/10.5281/zenodo.19468204"
 repository-code: "https://github.com/spectralbranding/sbt-papers"
 identifiers:

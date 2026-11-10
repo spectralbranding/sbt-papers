@@ -13,7 +13,7 @@ meta:
     orcid: 0009-0000-6893-9231
     affiliation: Independent Researcher
   doi: 10.5281/zenodo.19138860
-  date: '2026-07-28'
+  date: '2026-11-10'
   venue: Preprint
   license: CC-BY-4.0
   keywords:
@@ -37,8 +37,8 @@ meta:
     and shows these conditions are empirically testable via longitudinal panel data. These propositions
     unify 80 years of scattered evidence on order effects, primacy, and belief updating within Spectral
     Brand Theory''s eight-dimensional perception framework. The measurement implication is concrete: ensemble
-    averages systematically misrepresent individual trajectories, and the bias direction and magnitude
-    are predictable from brand coherence.'
+    averages systematically misrepresent individual trajectories, and the model implies that the bias
+    grows with the absorption rate, which it ties to brand coherence by assumption rather than by estimate.'
 claims:
 - id: P_nonergodic
   type: proposition
@@ -128,7 +128,9 @@ claims:
     OVERestimates brand health for brands with absorbing-state risk via survivorship bias: the ensemble
     average is computed only over non-absorbed survivors, a positively selected subpopulation. Overestimation
     increases with (a) proximity to absorbing boundaries (lower coherence), (b) variance of signal quality,
-    and (c) duration of tracking. Low-coherence brands (e.g. Tesla) show large divergence; ecosystem-coherent
+    and (c) duration of tracking. The coherence dependence is an implication of an assumed dispersion-to-absorption
+    link (more dispersed emission profiles place observers nearer absorbing boundaries), not an estimated
+    relation. Under that assumption, low-coherence brands (e.g. Tesla) show large divergence and ecosystem-coherent
     brands (e.g. Hermès) show minimal divergence.'
   testable: true
   tested_in_paper: true

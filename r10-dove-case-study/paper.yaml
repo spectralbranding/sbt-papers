@@ -13,7 +13,7 @@ meta:
     orcid: 0009-0000-6893-9231
     affiliation: Independent Researcher
   doi: 10.5281/zenodo.19139258
-  date: '2026-06-27'
+  date: '2026-11-10'
   venue: Preprint
   license: CC-BY-4.0
   keywords:
@@ -161,8 +161,8 @@ dependencies:
   critical: false
   doi: 10.5281/zenodo.18945912
 - relationship: applies
-  claim: Cohort boundaries in high-dimensional perception space (concentration of measure) — the formal
-    basis for observers clustering into perceptual cohorts.
+  claim: Boundary volume and cohort reassignment on the 7-simplex under the uniform null (concentration
+    analysis) — the formal basis for observers clustering into perceptual cohorts.
   critical: false
   doi: 10.5281/zenodo.18945477
 - relationship: applies
@@ -228,6 +228,47 @@ dependencies:
 - relationship: extends
   claim: 'Agentic commerce: AI agents as a structurally distinct high-machine-readable-weight cohort'
   doi: 10.2139/ssrn.6103206
+- relationship: extends
+  claim: '1,714 banking consumers, nine countries: satisfaction ranked against competing brands links
+    to share of wallet better than the absolute score, with significant country-specific effects in the
+    linkage. Supports only that an undifferentiated average discards behaviourally relevant structure.
+    Their ''relative'' means ranked against competitors in the consumer''s usage set, a different decomposition
+    from perceptual cohorts; not to be conflated.'
+  doi: 10.1016/j.gemrev.2015.07.001
+- relationship: extends
+  claim: '79,543 consumers, 20 industries, 15 countries: the satisfaction-to-share-of-wallet relationship
+    is driven by relative ranked satisfaction, not the absolute level. Same scope limit as the 2015 banking
+    study: relative means ranked against competitors, not cohort.'
+  doi: 10.1108/JOSM-12-2013-0345
+- relationship: extends
+  claim: 'Practitioner report: correlation .8 between changes in a rank-based Wallet Allocation Rule score
+    and changes in share of wallet, against .1 for changes in satisfaction or intention to recommend.
+    Same scope limit: rank among competing brands, not cohort.'
+  reference: keiningham-2011-customer-loyalty-isnt-enough
+- relationship: extends
+  claim: '123 firms, 20 industries, 2018-2022: customer-perceived innovativeness (four-item index, one
+    perceptual dimension) correlates with next-year abnormal returns (r = .156, p = .001; r = .172, p
+    = .004) while the satisfaction level is not significant in the models that include it and only its
+    change is. Modest and associational; the model with innovativeness and the change in satisfaction
+    explains 11.3% of within-firm variation. Not an eight-dimension instrument and not validation of the
+    SBT dimension set. Supports only that one perceptual dimension can carry financial information a scalar
+    satisfaction level does not. No shareholder-wealth figure is quoted.'
+  doi: 10.1177/10946705231220463
+- relationship: extends
+  claim: Asset-based brand equity model (loyalty, name awareness, perceived quality, associations, other
+    proprietary assets) on which Aaker 1996 builds; properties of the brand's asset base, not of the observer.
+  reference: aaker-1991-managing-brand-equity
+- relationship: extends
+  claim: Brand equity as a credible signal lowering perceived risk and information costs; nearest existing
+    use of 'signal'. SBT indexes the signal by dimension and makes the penalty depend on cohort weight
+    on that dimension.
+  doi: 10.1207/s15327663jcp0702_02
+- relationship: extends
+  claim: '1,052 Americans: agents conditioned on demographics alone predict held-out survey responses
+    less accurately than agents conditioned on a two-hour interview. Bears only on the weakness of demographic
+    categories as a proxy; conditions on individual self-reports, not spectral weight vectors, so it does
+    not support the eight-dimension structure.'
+  doi: 10.48550/arXiv.2411.10109
 contradictions: []
 limitations:
 - description: 'Interpretive emission scores: Table 1 intensities are the author''s assessment of secondary

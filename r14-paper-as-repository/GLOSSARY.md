@@ -34,7 +34,7 @@ _Terms used by **2026u** (Research as Repository: Infrastructure for Transparent
   - An open, human-writable, machine-readable YAML standard that captures a paper's claims, methodology, acceptance criteria, results, dependencies, contradictions, and limitations in a companion paper.yaml file without replacing the paper itself.
   - _defined by 2026t_
 - **six-tier ontology**
-  - The ontology that decomposes an organization into six nested specification tiers, always in the order Owner Intent -> Business Model -> Business Entity -> Product -> Process -> Organization. Each tier answers a distinct governing question and transfers differently on sale.
+  - The ontology that decomposes an organization into six nested specification tiers, always in the order Owner Intent -> Business Model -> Business Entity -> Product -> Process -> Organization. Each tier answers a distinct governing question and transfers differently on sale. Full form: "six-tier ontology of a business". It is the analyst's common language for a business, set apart from a stakeholder ontology, which is the business's own ontology as one named position writes it.
   - _defined by 2026ag_
 - **Spectral Brand Theory**
   - The theory that a brand is not a property of an object but a signal completed in the observer: an 8-dimensional spectral profile that, when received by an observer cohort, collapses into a distribution of brand convictions (a perception cloud). Brand is measured, not managed.

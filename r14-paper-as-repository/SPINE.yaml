@@ -572,6 +572,18 @@ external_anchors:
   - {citation_key: smith-2007-obo-foundry, role: standard_aligned, spine_nodes: [P8], note: "OBO Foundry — one-term-one-owner governance"}
   - {citation_key: cuencagrau-2008-modular-reuse-ontologies, role: standard_aligned, spine_nodes: [P8], note: "OWL modularity — conservative-extension framing of the linker"}
   - {citation_key: miles-bechhofer-2009-skos-reference, role: standard_aligned, spine_nodes: [P8], note: "SKOS — term-relation vocabulary alignment (synonym/narrows/maps_to)"}
+  - citation_key: kees-2026-research-that-matters
+    role: motivating_problem
+    spine_nodes: [P7]
+    note: >-
+      Editorial by outgoing editors of a public-policy marketing journal. Used as
+      one attributive sentence in the Gap 5 discussion: the editors urge authors
+      to keep the beacon lit from problem formation through the presentation of
+      results, which states the requirement as a question of audience and format.
+      Position statement only, no empirical claim, not current policy of any
+      outlet. The representation point (what a downstream user needs is the
+      dependency structure the prose encodes, which a PDF does not expose) is this
+      paper's own claim and rests on P7, not on the source.
 
 # ============================================================================
 # Open questions / boundary edges

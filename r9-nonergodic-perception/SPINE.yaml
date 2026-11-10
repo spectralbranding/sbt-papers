@@ -41,8 +41,10 @@ thesis: |
   dimension weights diverge permanently under identical signals (P5). These
   propositions unify roughly eighty years of scattered order-effect, primacy,
   and belief-updating evidence within Spectral Brand Theory's eight-dimensional
-  perception space, and the bias direction and magnitude are predictable from
-  brand coherence. The framework is scoped to high-involvement B2C brand
+  perception space. The direction of the bias follows from survivorship; its
+  magnitude rises with the absorption rate, which the model ties to brand
+  coherence by an assumed dispersion-to-absorption link, not by an estimate.
+  The framework is scoped to high-involvement B2C brand
   perception under multiplicative update dynamics.
 
 # ============================================================================
@@ -283,8 +285,11 @@ propositions:
       risk via survivorship bias: the ensemble average is computed only over
       non-absorbed survivors, a positively selected subpopulation. Overestimation
       increases with (a) proximity to absorbing boundaries (lower coherence),
-      (b) variance of signal quality, and (c) duration of tracking. Low-coherence
-      brands (e.g. Tesla) show large divergence; ecosystem-coherent brands
+      (b) variance of signal quality, and (c) duration of tracking. The
+      coherence dependence is an implication of an assumed dispersion-to-absorption
+      link (more dispersed emission profiles place observers nearer absorbing
+      boundaries), not an estimated relation. Under that assumption, low-coherence
+      brands (e.g. Tesla) show large divergence and ecosystem-coherent brands
       (e.g. Hermès) show minimal divergence.
     conditions: "C_shorthorizon"
     antecedents: [P_source1, P_source2]

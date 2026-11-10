@@ -22,7 +22,7 @@ title: >-
   Processing to Brand Perception Modeling
 
 thesis: |
-  The atom-cloud-fact pipeline is a domain-general epistemological
+  The atom-cloud-fact pipeline is a candidate domain-general epistemological
   architecture — a formal model of how knowledge forms from heterogeneous
   observation — not merely a financial document-processing technique. It
   models knowledge formation through three formally distinct stages: atomic
@@ -35,12 +35,15 @@ thesis: |
   transfer with parametric extension from financial reconciliation to
   multi-cohort brand perception, where the single-observer assumption is
   replaced by a heterogeneous-observer model — producing Spectral Brand
-  Theory. The architecture supports four testable propositions about
-  confirmation bias, multi-model replication, epistemic category errors, and
-  cross-model disagreement; and it satisfies four requirements
-  (path-independence, observer heterogeneity, epistemic separation, linguistic
-  implementability) that Bayesian updating, AGM revision, Dempster-Shafer
-  theory, and symbolic expert systems each fail structurally on at least one.
+  Theory. Both domains were developed by one author, so the transfer is a
+  mapping and not an independent test. The architecture supports four testable
+  propositions about confirmation bias, multi-model replication, epistemic
+  category errors, and cross-model disagreement; and it meets four
+  requirements drawn from its own design commitments (path-independence,
+  observer heterogeneity, epistemic separation, linguistic implementability)
+  by construction, against which Bayesian updating, AGM revision,
+  Dempster-Shafer theory, and symbolic expert systems each fall short
+  structurally on at least one.
 
 # ============================================================================
 # Propositions — the argument backbone
@@ -128,8 +131,8 @@ propositions:
       The seven principles transfer from financial reconciliation to brand
       perception without domain specialization: atom→brand signal, source→
       encounter type, identity gate→brand recognition, cloud→perception cloud,
-      fact→brand conviction, re-collapse→conviction rebuild — because the
-      underlying epistemic structure is identical.
+      fact→brand conviction, re-collapse→conviction rebuild — on the premise
+      that the underlying epistemic structure is shared.
     antecedents: [P_FINIMPL, P_ARCH2]
     conditions: "Both domains were developed by the same author and the brand-domain constructs were derived from the seven principles, so exhibiting a counterpart for each principle confirms that the mapping was carried out and nothing further. The transfer is a demonstration of vocabulary coherence, not a test; independent replication in a domain not developed by this author is the test."
     evidence:
@@ -301,11 +304,12 @@ propositions:
       - type: analytic
         anchor: >-
           §8.1-8.4 and the four-requirement × five-architecture matrix
-          (Table 5): Bayesian/AGM fail path-independence, expert systems fail
-          observer heterogeneity, statistical models fail epistemic separation;
-          the pipeline's hybrid symbolic/probabilistic structure passes.
+          (Table 5): Bayesian/AGM fall short on path-independence, expert
+          systems on observer heterogeneity, statistical models on epistemic
+          separation; the pipeline's hybrid symbolic/probabilistic structure
+          meets all four by construction.
         citation_keys: [pearl-1988-probabilistic-reasoning, alchourron-gardenfors-makinson-1985-logic-theory-change, dempster-1967-upper-lower-probabilities, shafer-1976-mathematical-theory-evidence, buchanan-shortliffe-1984-mycin]
-    body_sections: ["8.1 Bayesian Reasoning and AGM Revision", "8.2 Symbolic vs. Probabilistic Reasoning", "8.4 Comparative Requirements Matrix"]
+    body_sections: ["8.1 Bayesian Reasoning and AGM Revision", "8.2 Symbolic vs. Probabilistic Reasoning", "8.4 Positioning Against the Four Requirements"]
 
   - id: P_LLMIMPL
     statement: >-

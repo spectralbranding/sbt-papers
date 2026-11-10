@@ -32,8 +32,8 @@ thesis: |
   competing within existing space. Four observer cohorts (Purpose-Aligned,
   Product-Pragmatist, Social-Signal Reader, Skeptic-Critic) receive identical
   signals but form structurally different brand convictions, with Purpose-Aligned
-  and Skeptic-Critic forming a mirror pair (near-identical weight vectors,
-  opposite conviction valence). Five propositions generalize the case:
+  and Skeptic-Critic forming a mirror pair (nearly identical Narrative and
+  Ideological weights, opposite conviction valence). Five propositions generalize the case:
   dimensional creation, observer heterogeneity, portfolio spectral interference,
   counter-cultural decay, and dimensional specificity over intensity. Independent
   AI-observer evidence (2026v) replicates the cohort-divergence and
@@ -189,7 +189,7 @@ propositions:
     evidence:
       - type: analytic
         anchor: "Framework capability comparison (Table 6: Aaker 1996/1997, Keller 1993, Kapferer 2008 vs SBT)."
-    body_sections: ["Introduction", "What Existing Frameworks Miss"]
+    body_sections: ["Introduction", "What Existing Frameworks Miss", "Discussion: Managerial Implications (Campaign Measurement)"]
   - id: P1
     statement: >-
       (Proposition 1 — Dimensional Creation) Purpose campaigns produce
@@ -479,8 +479,9 @@ corpus_precedents:
     relationship: applies
     spine_nodes: [P2, F_mirror_cohort]
     note: >-
-      Cohort boundaries in high-dimensional perception space (concentration of
-      measure) — the formal basis for observers clustering into perceptual cohorts.
+      Boundary volume and cohort reassignment on the 7-simplex under the uniform
+      null (concentration analysis) — the formal basis for observers clustering
+      into perceptual cohorts.
   - paper_key: 2026j
     relationship: applies
     spine_nodes: [P4, RC1]
@@ -527,6 +528,13 @@ external_anchors:
   - {citation_key: yin-2018-case-study-research, role: methods_anchor, spine_nodes: [M1, L3], note: "Case study research design and methods"}
   - {citation_key: puntoni-2010-meaning-matters-polysemy, role: formalized_by, spine_nodes: [P2], note: "Advertising polysemy formalized with a mechanism"}
   - {citation_key: hermann-2026-trusting-ai-agents, role: extends, spine_nodes: [P5, F_r15_replication], note: "Agentic commerce: AI agents as a structurally distinct high-machine-readable-weight cohort"}
+  - {citation_key: keiningham-2015-competitive-context-is-everything, role: supports, spine_nodes: [P0], note: "1,714 banking consumers, nine countries: satisfaction ranked against competing brands links to share of wallet better than the absolute score, with significant country-specific effects in the linkage. Supports only that an undifferentiated average discards behaviourally relevant structure. Their 'relative' means ranked against competitors in the consumer's usage set, a different decomposition from perceptual cohorts; not to be conflated."}
+  - {citation_key: keiningham-2015-perceptions-are-relative, role: supports, spine_nodes: [P0], note: "79,543 consumers, 20 industries, 15 countries: the satisfaction-to-share-of-wallet relationship is driven by relative ranked satisfaction, not the absolute level. Same scope limit as the 2015 banking study: relative means ranked against competitors, not cohort."}
+  - {citation_key: keiningham-2011-customer-loyalty-isnt-enough, role: supports, spine_nodes: [P0], note: "Practitioner report: correlation .8 between changes in a rank-based Wallet Allocation Rule score and changes in share of wallet, against .1 for changes in satisfaction or intention to recommend. Same scope limit: rank among competing brands, not cohort."}
+  - {citation_key: keiningham-2024-customer-perceptions-firm-innovativeness, role: supports, spine_nodes: [P5, F_financial], note: "123 firms, 20 industries, 2018-2022: customer-perceived innovativeness (four-item index, one perceptual dimension) correlates with next-year abnormal returns (r = .156, p = .001; r = .172, p = .004) while the satisfaction level is not significant in the models that include it and only its change is. Modest and associational; the model with innovativeness and the change in satisfaction explains 11.3% of within-firm variation. Not an eight-dimension instrument and not validation of the SBT dimension set. Supports only that one perceptual dimension can carry financial information a scalar satisfaction level does not. No shareholder-wealth figure is quoted."}
+  - {citation_key: aaker-1991-managing-brand-equity, role: extended_by, spine_nodes: [P0], note: "Asset-based brand equity model (loyalty, name awareness, perceived quality, associations, other proprietary assets) on which Aaker 1996 builds; properties of the brand's asset base, not of the observer."}
+  - {citation_key: erdem-1998-brand-equity-as, role: complemented_by, spine_nodes: [P0, P3], note: "Brand equity as a credible signal lowering perceived risk and information costs; nearest existing use of 'signal'. SBT indexes the signal by dimension and makes the penalty depend on cohort weight on that dimension."}
+  - {citation_key: park-2024-generative-agent-simulations, role: supports, spine_nodes: [P2], note: "1,052 Americans: agents conditioned on demographics alone predict held-out survey responses less accurately than agents conditioned on a two-hour interview. Bears only on the weakness of demographic categories as a proxy; conditions on individual self-reports, not spectral weight vectors, so it does not support the eight-dimension structure."}
 
 # ============================================================================
 # Open questions / boundary edges

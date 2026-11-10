@@ -658,9 +658,13 @@ corpus_precedents:
     relationship: applies
     spine_nodes: [P2]
     note: >-
-      Cohort-boundary geometry: 52% of Δ⁷ lies within δ = .10 of a partition
-      boundary — the justification for treating cohorts as almost-invariant
-      rather than discrete.
+      Cohort-boundary geometry: under the uniform null, at least 52.2% of Δ⁷
+      lies within δ = .10 of a partition boundary (a boundary volume).
+      Cohort reassignment is a separate result of the same paper
+      (Proposition 4): approximately two-thirds of observers lie within one
+      component standard deviation of an inter-cohort bisector. The boundary
+      volume is not itself the justification for the almost-invariant
+      representation in P2.
   - paper_key: 2026j
     relationship: extends
     spine_nodes: [P2, M1]

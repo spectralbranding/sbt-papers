@@ -13,7 +13,7 @@ meta:
     orcid: 0009-0000-6893-9231
     affiliation: Independent Researcher
   doi: 10.5281/zenodo.19294864
-  date: '2026-06-27'
+  date: '2026-11-10'
   venue: Preprint
   license: CC-BY-4.0
   keywords:
@@ -170,7 +170,8 @@ acceptance:
     under a single protocol.
   falsification: If a venue type cannot be expressed as a collection-user, C4 fails.
 - claim_id: P5
-  criterion: Holds if (Paper claim C5) A compliance gate (journal_spec.
+  criterion: Holds if (Paper claim C5) A compliance gate (journal_spec.yaml) substantially reduces formatting-related
+    desk rejections.
   falsification: If formatting desk-rejection rates are unchanged under the gate, C5 fails.
 - claim_id: P6
   criterion: Holds if (Paper claim C6) Provenance-by-design makes dual submission structurally detectable.
@@ -181,7 +182,10 @@ acceptance:
   falsification: If cross-paper queries still require lossy extraction under the protocol, C7 fails.
 - claim_id: P8
   criterion: 'Holds if the author''s corpus runs a working instantiation of the repository reconception:
-    the content-addressed substrate IS the repository, the ontology linker (build_ontology.'
+    the content-addressed substrate IS the repository, the ontology linker (build_ontology.py) is its
+    type-checker, the anti-drift gate (verify_paper_bundle.py) is its continuous integration, the spine-first
+    protocol is its drafting discipline, and the terms / claims / citations graphs are the compiled symbol
+    tables.'
   falsification: If the system does not actually run on the corpus, or the gate does not fail on injected
     drift, P8 fails.
 dependencies:
@@ -236,6 +240,14 @@ dependencies:
 - relationship: extends
   claim: SKOS — term-relation vocabulary alignment (synonym/narrows/maps_to)
   reference: miles-bechhofer-2009-skos-reference
+- relationship: extends
+  claim: 'Editorial by outgoing editors of a public-policy marketing journal. Used as one attributive
+    sentence in the Gap 5 discussion: the editors urge authors to keep the beacon lit from problem formation
+    through the presentation of results, which states the requirement as a question of audience and format.
+    Position statement only, no empirical claim, not current policy of any outlet. The representation
+    point (what a downstream user needs is the dependency structure the prose encodes, which a PDF does
+    not expose) is this paper''s own claim and rests on P7, not on the source.'
+  doi: 10.1177/07439156261473977
 contradictions: []
 limitations:
 - description: 'The realized system is single-author: modules are temporal slices of one author''s program

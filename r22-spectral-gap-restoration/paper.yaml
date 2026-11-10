@@ -13,7 +13,7 @@ meta:
     orcid: 0009-0000-6893-9231
     affiliation: Independent Researcher
   doi: 10.5281/zenodo.19778549
-  date: '2026-06-26'
+  date: '2026-11-10'
   venue: Preprint
   license: CC-BY-4.0
   keywords:
@@ -247,8 +247,11 @@ dependencies:
   critical: false
   doi: 10.5281/zenodo.18945352
 - relationship: applies
-  claim: 'Cohort-boundary geometry: 52% of Δ⁷ lies within δ = .10 of a partition boundary — the justification
-    for treating cohorts as almost-invariant rather than discrete.'
+  claim: 'Cohort-boundary geometry: under the uniform null, at least 52.2% of Δ⁷ lies within δ = .10 of
+    a partition boundary (a boundary volume). Cohort reassignment is a separate result of the same paper
+    (Proposition 4): approximately two-thirds of observers lie within one component standard deviation
+    of an inter-cohort bisector. The boundary volume is not itself the justification for the almost-invariant
+    representation in P2.'
   critical: false
   doi: 10.5281/zenodo.18945477
 - relationship: extends

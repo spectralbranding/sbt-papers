@@ -12,7 +12,7 @@ meta:
     orcid: 0009-0000-6893-9231
     affiliation: Independent Researcher
   doi: 10.5281/zenodo.18945912
-  date: '2026-06-26'
+  date: '2026-11-10'
   venue: Preprint
   license: CC-BY-4.0
   keywords:
@@ -290,8 +290,8 @@ dependencies:
   critical: false
   doi: 10.5281/zenodo.18945522
 - relationship: refines
-  claim: R6 derives the SDE for non-ergodic conviction dynamics and the 55-65% D/A optimal zone from the
-    absorption-exploration tradeoff on S^7_+.
+  claim: R6 derives the SDE for non-ergodic conviction dynamics and the 55-65% D/A band from the absorption-exploration
+    tradeoff on S^7_+.
   critical: false
   doi: 10.5281/zenodo.18945659
 - relationship: refines
@@ -334,6 +334,12 @@ dependencies:
   claim: R22 proves the recovery-threshold inequality for perceptual separability after coherence shocks.
   critical: false
   doi: 10.5281/zenodo.19778549
+- relationship: extends
+  claim: 'Gautam, Raghunathan & Reczek (2026) validate a non-demographic trait (desire for perfect products)
+    that shapes behavior across acquisition and disposal; supports the plausibility that demographics
+    are metadata. Limits: survey scale on individuals, not cohorts read from artifacts; shows some traits
+    are non-demographic, not that demographics never determine behavior.'
+  doi: 10.1093/jcr/ucag034
 contradictions: []
 results:
 - claim_id: PF3

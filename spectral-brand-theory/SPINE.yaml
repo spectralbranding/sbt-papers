@@ -290,6 +290,8 @@ propositions:
     evidence:
       - type: analytic
         anchor: "Addresses Yankelovich-Meer critique of demographic segmentation; builds on latent-class segmentation methodology."
+      - type: citation
+        anchor: "Gautam, Raghunathan & Reczek (2026): a validated non-demographic trait shapes consumer behavior (existence of non-demographic determinants, survey scale on individuals)."
       - type: corpus
         anchor: "Formal cohort-boundary fuzziness in high-dimensional perception space derived in the R3 companion (concentration of measure)."
     body_sections: ["§2.3 (cohort vs segment)"]
@@ -663,7 +665,7 @@ corpus_precedents:
   - paper_key: 2026j
     relationship: refines
     spine_nodes: [PF2, F4]
-    note: "R6 derives the SDE for non-ergodic conviction dynamics and the 55-65% D/A optimal zone from the absorption-exploration tradeoff on S^7_+."
+    note: "R6 derives the SDE for non-ergodic conviction dynamics and the 55-65% D/A band from the absorption-exploration tradeoff on S^7_+."
   - paper_key: 2026k
     relationship: refines
     spine_nodes: [P4]
@@ -720,6 +722,7 @@ external_anchors:
   - {citation_key: "", role: mechanism_precedent, spine_nodes: [PF3], note: "Veblen (1899) conspicuous consumption; Cialdini (2001) scarcity; Eco (1976) communication through absence."}
   - {citation_key: "", role: mechanism_precedent, spine_nodes: [PF5], note: "Kahneman & Tversky (1979) prospect-theory loss asymmetry; Festinger (1957) cognitive dissonance."}
   - {citation_key: "", role: geometric_convergence, spine_nodes: [P8], note: "Resnikoff (1974) Riemannian colour space; Koenderink & van Doorn (2012) pictorial fiber bundle; Bronstein et al. (2021) geometric deep learning; Ma et al. (2025) perceptual manifolds; Hansen & Ghrist (2021) sheaf opinion dynamics."}
+  - {citation_key: "gautam-2026-desire-perfect-products", role: empirical_anchor, spine_nodes: [P5], note: "Gautam, Raghunathan & Reczek (2026) validate a non-demographic trait (desire for perfect products) that shapes behavior across acquisition and disposal; supports the plausibility that demographics are metadata. Limits: survey scale on individuals, not cohorts read from artifacts; shows some traits are non-demographic, not that demographics never determine behavior."}
   - {citation_key: "", role: computational_precedent, spine_nodes: [P2], note: "Colladon (2018) Semantic Brand Score — salience metric; SBT measures perception content, and executes (not just measures) a formal theory."}
 
 # ============================================================================
