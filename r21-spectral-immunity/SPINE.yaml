@@ -428,6 +428,17 @@ limitations:
     severity: "external-validity"
     affects: [F1, P5]
     body_sections: ["Discussion §Boundary Conditions (items 4, 6, 7, 8)"]
+  - id: L4
+    statement: >-
+      Part of what the instrument registers as brand identity is the brand name
+      as a token: exchanging only the entity name in a byte-identical text moves
+      a model's dimensional reading (2026bp). The 37.4% brand-identity component
+      is therefore an upper bound on variance driven by the brand's substance.
+      The immunity contrast is unaffected, because the name is the same in the
+      solo and portfolio arms and its contribution cancels.
+    severity: "interpretation"
+    affects: [m_variance, P5]
+    body_sections: ["Discussion (variance decomposition paragraph)"]
 
 # ============================================================================
 # Negative findings — predicted effects that did not appear
@@ -524,6 +535,10 @@ corpus_precedents:
     relationship: applies
     spine_nodes: [P3]
     note: "Type-over-score coherence-graded resilience (2026s) grounds the interference-asymmetry derivation."
+  - paper_key: 2026bp
+    relationship: refines
+    spine_nodes: [m_variance, L4]
+    note: "Entity-name leakage (2026bp) bounds what the brand-identity variance component contains."
 
 # ============================================================================
 # External anchor literature

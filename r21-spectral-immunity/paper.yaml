@@ -12,7 +12,7 @@ meta:
     orcid: 0009-0000-6893-9231
     affiliation: Independent Researcher
   doi: 10.5281/zenodo.19765401
-  date: '2026-06-27'
+  date: '2026-11-10'
   venue: Preprint
   license: CC-BY-4.0
   keywords:
@@ -195,6 +195,10 @@ dependencies:
   claim: Type-over-score coherence-graded resilience (2026s) grounds the interference-asymmetry derivation.
   critical: false
   doi: 10.5281/zenodo.19208107
+- relationship: refines
+  claim: Entity-name leakage (2026bp) bounds what the brand-identity variance component contains.
+  critical: false
+  doi: 10.5281/zenodo.22161305
 - relationship: extends
   claim: Awareness gate as necessary trigger (associative-network activation).
   doi: 10.1177/002224299305700101
@@ -287,6 +291,13 @@ limitations:
     bandwidth for organizational context. The portfolio condition uses in-context disclosure, not pre-training-only
     awareness, and the two may differ. Native-language conclusions rest on a single model per tradition,
     so tradition-level effects cannot be separated from model- specific idiosyncrasy.
+  severity: moderate
+  addressable: true
+- description: 'Part of what the instrument registers as brand identity is the brand name as a token:
+    exchanging only the entity name in a byte-identical text moves a model''s dimensional reading (2026bp).
+    The 37.4% brand-identity component is therefore an upper bound on variance driven by the brand''s
+    substance. The immunity contrast is unaffected, because the name is the same in the solo and portfolio
+    arms and its contribution cancels.'
   severity: moderate
   addressable: true
 repositories:
