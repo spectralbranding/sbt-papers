@@ -64,8 +64,8 @@ boundary_conditions:
   - id: C3
     statement: >-
       The endogenous-intent closure captures the socially transmitted component of
-      owner intent (substrate includes, but is not exhausted by, perceptual
-      history: biology, material conditions, and accident remain outside the
+      the Tier 1 intent of any position (substrate includes, but is not
+      exhausted by, perceptual history: biology, material conditions, and accident remain outside the
       loop), and human judgment enters as a novelty term, so perception shapes
       intent without determining it. The regress is bounded at a chosen analysis
       horizon - the same substrate lock the parent framework already imposes -
@@ -96,8 +96,9 @@ propositions:
       runs the published log -> meaning S -> rendered instance R hierarchy
       (Tiers 1-4, with meaning as the transmissible producer specification
       concentrated at Tier 4), extended one step upstream by this note with the
-      SUBSTRATE - the working material below the log, sitting loosely at Tier-1
-      Owner Intent - and SBT owns R -> observer projection -> perception cloud
+      SUBSTRATE - the working material below the log, sitting loosely at Tier 1,
+      in the controlling intent from which the producer specification is written -
+      and SBT owns R -> observer projection -> perception cloud
       (the observer side, outside the tier stack). The hand-off at the rendered
       instance is clean - no overlap and no gap: it is textually pre-confirmed
       on the OST side (the tier stack names its own terminus and cedes
@@ -105,6 +106,9 @@ propositions:
       meaning/meaningfulness side (its pipeline terminates at R; the reader's
       completion is outside its boundary conditions by design). The tier stack
       has no observer tier by design, and that absence is the insertion point.
+      The observer's own intent regarding the business is Tier 1 content of the
+      observer's position, so the observer also has a row in the tier matrix;
+      the seam concerns perception, not intent.
       The meaning/meaningfulness/perception triad is therefore a JOIN of the two
       frameworks, not a slice of either alone - a boundary that co-creation
       theory reads as porous and that the closure (P4) reconciles: co-creation
@@ -134,8 +138,8 @@ propositions:
         citation_keys: [zharnikov-2026-spectral-brand-theory-computational-framework]
       - type: citation
         anchor: >-
-          The six-tier producer-side stack the seam map names (Tiers 1-6, Owner
-          Intent through Organization).
+          The six-tier producer-side stack the seam map names (Tiers 1-6, Intent
+          through Organization).
         citation_keys: [zharnikov-2026-dual-hierarchies-organizational-transferability-six]
       - type: citation
         anchor: >-
@@ -218,11 +222,15 @@ propositions:
 
   - id: P4
     statement: >-
-      The endogenous-intent closure. Tier-1 owner intent is endogenous to a
+      The endogenous-intent closure. The Tier 1 intent of any position
+      regarding a business, the controlling intent among them, is endogenous to a
       human-mediated loop: perception clouds sediment into the next generation's
       substrate through human transducers who are both receivers of perception
-      and formers of intent (an owner intends a yacht because, as a prior
-      observer, they inhabited a perception cloud where yachts encode status).
+      and formers of intent (a customer intends a yacht because, as a prior
+      observer, the customer inhabited a perception cloud where yachts encode
+      status; founding a firm is the same step taken at the controlling
+      position). The loop re-enters the tier matrix at every position's Tier 1,
+      not only through founders.
       Intent is therefore a fixed point of the loop rather than an exogenous
       primitive; producer and consumer are one population of humans wearing two
       hats; and human judgment is the mutation term that makes the loop an

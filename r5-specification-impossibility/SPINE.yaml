@@ -101,7 +101,7 @@ methods:
     type: "closed_form_computation"
     inputs: ["n=48 (8×6 activation matrix)", "epsilon=0.1 resolution", "gamma cascade coupling", "fork depth k"]
     outputs: ["Tables 1–9", "Figure 3 volume series", "V_48(0.1)", "d_eff(gamma)", "H_48", "compression ratio"]
-    code_anchor: "[internal path removed]"
+    code_anchor: "https://github.com/spectralbranding/sbt-papers/tree/main/r5-specification-impossibility/code/r5_specification_impossibility.py"
     reproducibility:
       seed: "SEED=42 (no RNG; closed-form, included for policy compliance)"
       runtime_environment: "uv run --with numpy,scipy python ..."
@@ -408,7 +408,7 @@ propositions:
     antecedents: [P4, P7]
     evidence:
       - type: analytic
-        anchor: "Mintzberg (1979) output-vs-process standardization made quantitative via cascade asymmetry; position-as-projection within L3."
+        anchor: "Mintzberg (1979) output-vs-process standardization made quantitative via cascade asymmetry; position-as-projection within L3 (positions are downstream projections of process requirements, Tier 5 of the six-tier ontology of a business, constrained by upstream tiers T1 intent, T2 business model, T3 legal entity, T4 product specification)."
         citation_keys: []
     body_sections: ["§Output Specification Versus Coordination Specification", "§Position-as-Projection Within L3"]
 

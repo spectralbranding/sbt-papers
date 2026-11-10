@@ -22,7 +22,7 @@ _Terms used by **2026h** (Specification Impossibility in Organizational Design: 
 *Imported terms (defined elsewhere)*
 
 - **six-tier ontology**
-  - The ontology that decomposes an organization into six nested specification tiers, always in the order Owner Intent -> Business Model -> Business Entity -> Product -> Process -> Organization. Each tier answers a distinct governing question and transfers differently on sale. Full form: "six-tier ontology of a business". It is the analyst's common language for a business, set apart from a stakeholder ontology, which is the business's own ontology as one named position writes it.
+  - The ontology that decomposes an organization into six nested specification tiers, always in the order Intent -> Business Model -> Business Entity -> Product -> Process -> Organization. Each tier answers a distinct governing question and transfers differently on sale. Full form: "six-tier ontology of a business". It is the analyst's common language for a business, set apart from a stakeholder ontology, which is the business's own ontology as one named position writes it. Position-symmetric (every position has the same row: its intent at Tier 1, its commitments at Tiers 2-6) but not observer-free: the analyst's position configures it. Each position's Tier 1 content is its Intent and its stakeholder ontology; the position reads the six tiers in that ontology.
   - _defined by 2026ag_
 - **the 8 dimensions** (write: `8 dimensions`)
   - The eight spectral dimensions of a brand signal, in canonical order: semiotic, narrative, ideological, experiential, social, economic, cultural, temporal. Lowercase in prose.

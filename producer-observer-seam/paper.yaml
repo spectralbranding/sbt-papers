@@ -13,7 +13,7 @@ meta:
     orcid: 0009-0000-6893-9231
     affiliation: Independent Researcher
   doi: 10.5281/zenodo.21114525
-  date: '2026-07-01'
+  date: '2026-11-11'
   venue: Preprint
   license: CC-BY-4.0
   keywords:
@@ -45,16 +45,18 @@ claims:
     describe one pipeline seen from two ends: the producer side runs the published log -> meaning S ->
     rendered instance R hierarchy (Tiers 1-4, with meaning as the transmissible producer specification
     concentrated at Tier 4), extended one step upstream by this note with the SUBSTRATE - the working
-    material below the log, sitting loosely at Tier-1 Owner Intent - and SBT owns R -> observer projection
-    -> perception cloud (the observer side, outside the tier stack). The hand-off at the rendered instance
-    is clean - no overlap and no gap: it is textually pre-confirmed on the OST side (the tier stack names
-    its own terminus and cedes perception downstream) and pre-confirmed BY SCOPE CONSTRUCTION on the meaning/meaningfulness
-    side (its pipeline terminates at R; the reader''s completion is outside its boundary conditions by
-    design). The tier stack has no observer tier by design, and that absence is the insertion point. The
-    meaning/meaningfulness/perception triad is therefore a JOIN of the two frameworks, not a slice of
-    either alone - a boundary that co-creation theory reads as porous and that the closure (P4) reconciles:
-    co-creation operates THROUGH the loop, not by erasing the specification/perception distinction within
-    one turn.'
+    material below the log, sitting loosely at Tier 1, in the controlling intent from which the producer
+    specification is written - and SBT owns R -> observer projection -> perception cloud (the observer
+    side, outside the tier stack). The hand-off at the rendered instance is clean - no overlap and no
+    gap: it is textually pre-confirmed on the OST side (the tier stack names its own terminus and cedes
+    perception downstream) and pre-confirmed BY SCOPE CONSTRUCTION on the meaning/meaningfulness side
+    (its pipeline terminates at R; the reader''s completion is outside its boundary conditions by design).
+    The tier stack has no observer tier by design, and that absence is the insertion point. The observer''s
+    own intent regarding the business is Tier 1 content of the observer''s position, so the observer also
+    has a row in the tier matrix; the seam concerns perception, not intent. The meaning/meaningfulness/perception
+    triad is therefore a JOIN of the two frameworks, not a slice of either alone - a boundary that co-creation
+    theory reads as porous and that the closure (P4) reconciles: co-creation operates THROUGH the loop,
+    not by erasing the specification/perception distinction within one turn.'
   testable: false
   tested_in_paper: false
   status: not_tested
@@ -90,16 +92,19 @@ claims:
   - P1
 - id: P4
   type: proposition
-  statement: 'The endogenous-intent closure. Tier-1 owner intent is endogenous to a human-mediated loop:
-    perception clouds sediment into the next generation''s substrate through human transducers who are
-    both receivers of perception and formers of intent (an owner intends a yacht because, as a prior observer,
-    they inhabited a perception cloud where yachts encode status). Intent is therefore a fixed point of
-    the loop rather than an exogenous primitive; producer and consumer are one population of humans wearing
-    two hats; and human judgment is the mutation term that makes the loop an expanding spiral rather than
-    a repeating circle. The loop is scale-invariant: the same structure repeats across one reading, one
-    biography, and cultural succession across generations. Cultural-evolution theory supplies the transmission
-    formalism for the sedimentation step (guided variation: individual learning biases what is transmitted);
-    iconic-brand theory documents the same circuit at the brand level without the producer/observer decomposition.'
+  statement: 'The endogenous-intent closure. The Tier 1 intent of any position regarding a business, the
+    controlling intent among them, is endogenous to a human-mediated loop: perception clouds sediment
+    into the next generation''s substrate through human transducers who are both receivers of perception
+    and formers of intent (a customer intends a yacht because, as a prior observer, the customer inhabited
+    a perception cloud where yachts encode status; founding a firm is the same step taken at the controlling
+    position). The loop re-enters the tier matrix at every position''s Tier 1, not only through founders.
+    Intent is therefore a fixed point of the loop rather than an exogenous primitive; producer and consumer
+    are one population of humans wearing two hats; and human judgment is the mutation term that makes
+    the loop an expanding spiral rather than a repeating circle. The loop is scale-invariant: the same
+    structure repeats across one reading, one biography, and cultural succession across generations. Cultural-evolution
+    theory supplies the transmission formalism for the sedimentation step (guided variation: individual
+    learning biases what is transmitted); iconic-brand theory documents the same circuit at the brand
+    level without the producer/observer decomposition.'
   testable: false
   tested_in_paper: false
   status: not_tested

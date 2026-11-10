@@ -6,7 +6,7 @@ ORCID: 0009-0000-6893-9231
 
 DOI: [10.5281/zenodo.18945591](https://doi.org/10.5281/zenodo.18945591)
 
-Working Paper v1.3.0 – March 2026 (revised August 2026)
+Working Paper v1.3.1 – March 2026 (revised November 2026)
 
 ## Abstract
 
@@ -605,7 +605,7 @@ AI systems compress coordination overhead toward zero not by eliminating process
 
 ### Position-as-Projection Within L3
 
-The cascade model has a further implication for the internal structure of L3. Positions within the structure level are not independently chosen variables; they are downstream projections in the multi-tier specification cascade — derived from process requirements (Tier 5 in the six-tier business ontology) but ultimately constrained by upstream tier choices (T1 owner intent, T2 business model, T3 legal entity, T4 product specification). Zharnikov [-@zharnikov-2026m-projection-cascade-why] formalizes the cascade and the projection apparatus governing each junction. Function — whether accounting, quality, or marketing — is a parameter of the position, determined by which processes the position must serve, not an independent organizational primitive. This projection relationship reinforces the cascade coupling quantified above: just as L3's effective dimensionality is compressed by L0--L2 constraints from above, the internal structure of L3 is further constrained by L4's process topology from below. Reorganization — changing positions without changing processes — corresponds to changing the projection operators without changing the underlying process space, which explains why organizational restructuring frequently fails to improve outcomes [@hammer-1996-beyond-reengineering-how]. The specification impossibility established in Theorem 1 thus applies doubly: L3 is constrained from above by the purpose--values--strategy cascade and from below by the process space onto which its positions must project.
+The cascade model has a further implication for the internal structure of L3. Positions within the structure level are not independently chosen variables; they are downstream projections in the multi-tier specification cascade — derived from process requirements (Tier 5 in the six-tier ontology of a business) but ultimately constrained by upstream tier choices (T1 intent, T2 business model, T3 legal entity, T4 product specification). Zharnikov [-@zharnikov-2026m-projection-cascade-why] formalizes the cascade and the projection apparatus governing each junction. Function — whether accounting, quality, or marketing — is a parameter of the position, determined by which processes the position must serve, not an independent organizational primitive. This projection relationship reinforces the cascade coupling quantified above: just as L3's effective dimensionality is compressed by L0--L2 constraints from above, the internal structure of L3 is further constrained by L4's process topology from below. Reorganization — changing positions without changing processes — corresponds to changing the projection operators without changing the underlying process space, which explains why organizational restructuring frequently fails to improve outcomes [@hammer-1996-beyond-reengineering-how]. The specification impossibility established in Theorem 1 thus applies doubly: L3 is constrained from above by the purpose--values--strategy cascade and from below by the process space onto which its positions must project.
 
 ## Limitations and Extensions
 

@@ -12,7 +12,7 @@ meta:
     orcid: 0009-0000-6893-9231
     affiliation: Independent Researcher
   doi: 10.5281/zenodo.18945591
-  date: '2026-06-27'
+  date: '2026-11-11'
   venue: Preprint
   license: CC-BY-4.0
   keywords:
@@ -187,7 +187,7 @@ methodology:
     n·log2(1/epsilon). No stochastic computation; all results are exact (companion script carries a fixed
     SEED=42 only for policy compliance and asserts each cited figure to stated precision).'
   analysis:
-    software: [internal path removed]
+    software: https://github.com/spectralbranding/sbt-papers/tree/main/r5-specification-impossibility/code/r5_specification_impossibility.py
     method: uv run --with numpy,scipy python ...
 acceptance:
 - claim_id: P4
