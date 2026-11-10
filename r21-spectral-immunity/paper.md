@@ -298,7 +298,7 @@ The tradition-level analysis (Table 5) is necessarily exploratory: most traditio
 
 | Tradition | Models (n) | Delta DCI | d | p |
 |-----------|-----------|-----------|---|---|
-| Western | 6 | +.02 | +.03 | .882 |
+| Western | 6 | +.01 | +.02 | .913 |
 | Chinese | 2 | -.06 | -.09 | .692 |
 | European | 1 | -.35 | -.46 | .055 |
 | Japanese | 1 | -.59 | -.63 | .011 |

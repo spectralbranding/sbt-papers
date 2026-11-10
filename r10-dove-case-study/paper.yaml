@@ -247,12 +247,13 @@ dependencies:
   reference: keiningham-2011-customer-loyalty-isnt-enough
 - relationship: extends
   claim: '123 firms, 20 industries, 2018-2022: customer-perceived innovativeness (four-item index, one
-    perceptual dimension) correlates with next-year abnormal returns (r = .156, p = .001; r = .172, p
-    = .004) while the satisfaction level is not significant in the models that include it and only its
-    change is. Modest and associational; the model with innovativeness and the change in satisfaction
-    explains 11.3% of within-firm variation. Not an eight-dimension instrument and not validation of the
-    SBT dimension set. Supports only that one perceptual dimension can carry financial information a scalar
-    satisfaction level does not. No shareholder-wealth figure is quoted.'
+    perceptual dimension) correlates with abnormal returns one and two years later (r = .156, p = .001,
+    and r = .172, p = .004) while the satisfaction level is not significant in the models that include
+    it and only its change is. Modest and associational; the model with innovativeness and the change
+    in satisfaction explains 11.3% of within-firm variation (one-way fixed effects). Not an eight-dimension
+    instrument and not validation of the SBT dimension set. Supports only that one perceptual dimension
+    can carry financial information a scalar satisfaction level does not. No shareholder-wealth figure
+    is quoted.'
   doi: 10.1177/10946705231220463
 - relationship: extends
   claim: Asset-based brand equity model (loyalty, name awareness, perceived quality, associations, other

@@ -1,6 +1,6 @@
 # R21 Spectral Immunity — Companion Computation Script
 
-Reproduces Tables 3-7 from:
+Checks the Table 3 deltas (stub mode) and reproduces Table 5 (full mode) from:
 
 > Zharnikov, D. (2026ac). Spectral Immunity: Why Brand Portfolio Interference
 > Disappears for AI Observers. Working Paper. DOI 10.5281/zenodo.19765401
@@ -20,10 +20,12 @@ Demonstrates the DCI metric computation against the canonical SBT brand
 profiles and verifies all 20 Table 3 delta DCI values.
 
 **Full mode** (requires HuggingFace access):
-Downloads the archived experiment data and reproduces all Tables 3-7.
+Downloads the main-experiment records (HF DOI 10.57967/hf/8380) and reproduces
+Table 5 (sub-group analysis by training tradition), checking each row against the
+printed value. Tables 3, 4, 6 and 7 are not yet reproduced in full mode.
 
 ```bash
-uv run python compute_dci.py --full
+uv run --with huggingface_hub --with pandas --with scipy python compute_dci.py --full
 ```
 
 ## Data sources

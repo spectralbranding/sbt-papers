@@ -2,7 +2,7 @@
 Companion Computation Script — R21 Spectral Immunity
 =====================================================
 Reproduces DCI means, TOST p-values, Cohen's d, and variance decomposition
-from Tables 3-7 in:
+from Tables 3 and 5 (stub mode: Table 3 deltas; full mode: Table 5) in:
 
     Zharnikov, D. (2026ac). Spectral Immunity: Why Brand Portfolio Interference
     Disappears for AI Observers. Working Paper. DOI 10.5281/zenodo.19765401
@@ -19,14 +19,16 @@ Data sources:
     Zenodo archive: https://doi.org/10.5281/zenodo.19555282
 
 This script has two modes:
-    1. Full mode: downloads the archived dataset and reproduces all tables.
+    1. Full mode: downloads the main-experiment records and reproduces Table 5
+       (tradition sub-groups); Tables 3, 4, 6 and 7 are not yet reproduced.
     2. Stub mode (default, no network required): demonstrates the DCI metric
        computation against the canonical brand profiles and checks Table 3
        values for 5 representative brands.
 
 Usage:
     uv run python compute_dci.py            # stub mode
-    uv run python compute_dci.py --full     # full mode (requires HF token)
+    uv run --with huggingface_hub --with pandas --with scipy \
+        python compute_dci.py --full        # full mode (network)
 """
 
 import sys
@@ -385,34 +387,98 @@ def stub_mode() -> None:
     print(f"  TOST p: {result['p_tost']}")
     print(f"  Equivalent (p < .05): {result['equivalent']}")
     print()
-    print("Full mode (--full flag): downloads archived data and reproduces")
-    print("all Tables 3-7. Requires HuggingFace access to DOI 10.57967/hf/8380.")
+    print("Full mode (--full flag): downloads the main-experiment records from")
+    print("HuggingFace DOI 10.57967/hf/8380 and reproduces Table 5.")
     print()
-    print("Run command: uv run python compute_dci.py --full")
+    print("Run command: uv run --with huggingface_hub --with pandas --with scipy \\")
+    print("    python compute_dci.py --full")
+
+
+TRADITIONS = {
+    "Western": {"claude", "gpt4omini", "gemini25flash", "grok", "llama", "gemma4"},
+    "Chinese": {"deepseek", "qwen3"},
+    "European": {"mistral"},
+    "Japanese": {"swallow"},
+    "Korean": {"exaone"},
+    "Russian": {"yandex"},
+    "Indian": {"sarvam"},
+}
+
+# Table 5 as printed in the paper: (Delta DCI, d, p) per tradition.
+PAPER_TABLE5 = {
+    "Western": (0.01, 0.02, 0.913),
+    "Chinese": (-0.06, -0.09, 0.692),
+    "European": (-0.35, -0.46, 0.055),
+    "Japanese": (-0.59, -0.63, 0.011),
+    "Korean": (0.34, 0.35, 0.130),
+    "Russian": (-0.24, -0.32, 0.168),
+    "Indian": (-0.13, -0.07, 0.743),
+}
 
 
 def full_mode() -> None:
     """
-    Full reproduction mode. Downloads data from HuggingFace and reproduces Tables 3-7.
-    Requires: huggingface_hub, pandas, scipy, pingouin (see requirements.txt)
+    Full mode: downloads the main-experiment records from HuggingFace and
+    reproduces Table 5 (sub-group analysis by training tradition).
+
+    Method (the same as the original R20 analysis, `analyze_portfolio.py`,
+    analysis 12): for each tradition, pool that tradition's models' direct
+    ratings, take the mean 8-dimension profile per brand and condition, compute
+    the DCI of each mean profile, and test the 20 per-brand differences
+    (portfolio minus solo) with a one-sample t-test against 0; d is the mean
+    difference over its standard deviation.
+
+    Requires: huggingface_hub, pandas, scipy (see requirements.txt).
+    Tables 3, 4, 6 and 7 are not yet reproduced by this script.
     """
     try:
         import pandas as pd
+        from huggingface_hub import hf_hub_download
         from scipy import stats
     except ImportError:
-        print("Full mode requires pandas and scipy. Install with:")
-        print("  uv add pandas scipy")
+        print("Full mode requires huggingface_hub, pandas and scipy:")
+        print("  uv run --with huggingface_hub --with pandas --with scipy \\")
+        print("      python compute_dci.py --full")
         sys.exit(1)
 
-    print("Full mode: downloading data from HuggingFace DOI 10.57967/hf/8380 ...")
-    print("(Implementation note: load the JSONL files, compute per-brand DCI,")
-    print(" run paired t-tests and TOST for each brand, and reproduce Tables 3-7.)")
+    path = hf_hub_download(
+        "spectralbranding/r20-portfolio-ai-perception",
+        "main_experiment.jsonl",
+        repo_type="dataset",
+    )
+    df = pd.read_json(path, lines=True)
+    dims = [
+        "semiotic",
+        "narrative",
+        "ideological",
+        "experiential",
+        "social",
+        "economic",
+        "cultural",
+        "temporal",
+    ]
+    df = df[df["condition"].isin(["solo", "portfolio"])]
+    print(f"Main experiment: {len(df)} direct ratings, {df['brand'].nunique()} brands")
     print()
-    print("The compute_dci() and tost() functions in this script are the canonical")
-    print("implementations. Use them with the archived data to reproduce paper values.")
+    print("Table 5 reproduction (Delta DCI / d / p; paper value in brackets)")
+    all_match = True
+    for tradition, models in TRADITIONS.items():
+        sub = df[df["model"].isin(models)]
+        means = sub.groupby(["condition", "portfolio", "brand"])[dims].mean()
+        dci = means.apply(lambda row: compute_dci(list(row.values)), axis=1)
+        deltas = (dci.loc["portfolio"] - dci.loc["solo"]).dropna()
+        mean_delta = deltas.mean()
+        d = mean_delta / deltas.std() if deltas.std() > 0 else 0.0
+        p = stats.ttest_1samp(deltas.values, 0).pvalue
+        pd_, pdd, pp = PAPER_TABLE5[tradition]
+        match = round(mean_delta, 2) == pd_ and round(d, 2) == pdd and round(p, 3) == pp
+        all_match = all_match and match
+        print(
+            f"  {tradition:<9} {mean_delta:+.2f} [{pd_:+.2f}]  "
+            f"{d:+.2f} [{pdd:+.2f}]  {p:.3f} [{pp:.3f}]  {'OK' if match else 'MISMATCH'}"
+        )
     print()
-    print("Stub mode (no --full flag) verifies the DCI formula and Table 3 deltas")
-    print("without requiring a network connection.")
+    print("All Table 5 rows match." if all_match else "Table 5 has mismatches.")
 
 
 if __name__ == "__main__":
