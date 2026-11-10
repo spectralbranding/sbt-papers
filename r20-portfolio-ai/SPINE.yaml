@@ -9,7 +9,7 @@
 # claims introduced.
 #
 # Schema v0.2 ([internal path removed] §"Schema v0.2"):
-# this is an EMPIRICAL paper with author-produced data — a preregistered
+# this is an EMPIRICAL paper with author-produced data — an
 # experiment yielding 7,975 parsed LLM observations (later extended to 9,925
 # across 40 brands), with reported statistics (delta DCI, paired-t, p, Cohen's
 # d, TOST equivalence, FDR correction, variance decomposition). Per the
@@ -34,17 +34,18 @@ thesis: |
   saturated (ownership relations are encoded in their parameters and cannot be
   experimentally hidden), so interference-scales-with-awareness predicts
   permanent maximal interference, while a compression account predicts
-  complete immunity. A preregistered experiment across 13 LLMs from seven
+  complete immunity. An experiment across 13 LLMs from seven
   training traditions, 20 brands from seven portfolio archetypes, and four
   prompt modalities (direct rating, naturalistic recommendation, multi-turn
   conversation with mid-dialogue portfolio reveal, native-language framing)
-  yields 7,975 parsed observations; a preregistered published-stimulus
+  yields 7,975 parsed observations; a published-stimulus
   extension adds 1,950 zero-overlap observations (combined 9,925 across 40
   brands). The predominant finding is SPECTRAL IMMUNITY: portfolio framing
   produces near-zero change in the Dimensional Concentration Index
-  (mean |delta DCI| = .26), 0/20 brands are FDR-significant in direct rating,
+  (mean |delta DCI| = .23), 0/20 brands are FDR-significant in direct rating,
   TOST equivalence holds for 18/20 brands within +/-1.0 DCI points, and the
-  null replicates with zero exceptions on the independent stimulus set. The
+  null replicates on the independent stimulus set (no FDR-significant effect,
+  9/10 brands TOST-equivalent). The
   paradox resolves because LLMs operate near minimum-distortion encodings that
   already incorporate portfolio relations implicitly — maximal awareness is
   necessary but not sufficient for interference. Immunity is architectural,
@@ -101,18 +102,18 @@ boundary_conditions:
       created_at: "2026-04"
 
 # ============================================================================
-# Observations — the preregistered experimental runs as analytical events
+# Observations — the experimental runs as analytical events
 # ============================================================================
 observations:
   - id: O1
     statement: >-
-      Main preregistered experiment: 20 brands (7 portfolio archetypes) rated
+      Main experiment: 20 brands (7 portfolio archetypes) rated
       by 13 LLMs from 7 training traditions under four prompt modalities
       (direct rating, naturalistic recommendation, multi-turn conversation,
       native-language ablation) plus a prompt-location ablation, on a 1-5
       PRISM-B scale at temperature .7, yielding 7,975 successfully parsed
-      observations (98.1% parse rate of 8,129 cells).
-    raw_data_pointer: "https://doi.org/10.57967/hf/8380 (7,975 observations)"
+      observations (99.4% of the 8,022 recorded responses; 8,330 designed cells).
+    raw_data_pointer: "https://doi.org/10.57967/hf/11560 (7,975 observations)"
     instrument: "13-model panel (Claude Sonnet 4, GPT-4o-mini, Gemini 2.5 Flash, Grok-3-mini, Llama 3.3 70B, Gemma 4 27B, DeepSeek V3, Qwen3 235B, YandexGPT 5 Pro, Sarvam M, GPT-OSS-Swallow 20B, Mistral Large, EXAONE 3.5 32B) + PRISM-B prompts"
     timestamp: "2026"
     conditions_at_capture: "temperature .7; local models on Apple Mac mini M4 Pro (48 GB) via Ollama v0.20.0"
@@ -126,7 +127,7 @@ observations:
       (1,300 / ~1,235 parsed observations), Turn 1 elicited a solo rating and
       Turn 2 re-rated after a mid-dialogue portfolio reveal within the same
       conversation context.
-    raw_data_pointer: "https://doi.org/10.57967/hf/8380 (1,235 multi-turn observations)"
+    raw_data_pointer: "https://doi.org/10.57967/hf/11560 (1,235 multi-turn observations, Turn 1 and Turn 2)"
     instrument: "13-model panel, two-turn conversational protocol"
     timestamp: "2026"
     provenance:
@@ -139,7 +140,7 @@ observations:
       home-market languages (Japanese/Toyota, Russian/Yandex, Chinese/Geely,
       French/L'Oreal), 11 brands x 2 conditions x 13 models x 5 repetitions
       (1,430 / ~1,322 parsed observations) were prompted in the home language.
-    raw_data_pointer: "https://doi.org/10.57967/hf/8380 (1,322 native-language observations)"
+    raw_data_pointer: "https://doi.org/10.57967/hf/11560 (1,322 native-language observations)"
     instrument: "13-model panel, home-language prompts"
     timestamp: "2026"
     provenance:
@@ -148,12 +149,12 @@ observations:
     body_sections: ["§Method — Design", "§Extensions"]
   - id: O4
     statement: >-
-      Preregistered published-stimulus extension: 20 brands drawn entirely from
+      Published-stimulus extension: 20 brands drawn entirely from
       canonical peer-reviewed marketing studies (zero overlap with the main
       20), 10 in solo+portfolio and 10 solo-only, on the same 13-model /
       7-tradition panel and identical PRISM-B protocol, yielding 1,950
       observations (1,300 solo + 650 portfolio).
-    raw_data_pointer: "https://doi.org/10.57967/hf/8380 (1,950 extension observations)"
+    raw_data_pointer: "https://doi.org/10.57967/hf/11560 (1,950 extension observations)"
     instrument: "same 13-model panel + PRISM-B protocol"
     timestamp: "2026"
     provenance:
@@ -177,7 +178,7 @@ methods:
     outputs: ["per-cell DCI values", "solo vs portfolio DCI per brand"]
     code_anchor: "https://doi.org/10.5281/zenodo.19555282 (source code + analysis scripts)"
     reproducibility:
-      seed: "preregistered design; 5 repetitions per cell; temperature .7"
+      seed: "5 repetitions per cell; temperature .7"
       runtime_environment: "cloud APIs + local Ollama v0.20.0 on Apple Mac mini M4 Pro"
     provenance:
       created_by: "author + AI-assisted analysis scripts"
@@ -185,8 +186,8 @@ methods:
     body_sections: ["§Metrics"]
   - id: M2
     statement: >-
-      Confirmatory-null inference: brand-level paired t-tests of solo vs.
-      portfolio DCI with Cohen's d effect sizes; Benjamini-Hochberg FDR
+      Confirmatory-null inference: brand-level independent-samples t-tests of
+      solo vs. portfolio DCI with Cohen's d effect sizes; Benjamini-Hochberg FDR
       correction across all 20 brand-level tests; two one-sided tests (TOST)
       for statistical equivalence to zero within +/-1.0 DCI bounds; a power
       analysis (70% power for d=.50 at N=50/group in v1; >80% at N=65/cell in
@@ -204,9 +205,10 @@ methods:
     body_sections: ["§Power Analysis", "§Metrics", "§Results"]
   - id: M3
     statement: >-
-      Variance decomposition: partition DCI variance into Brand, Portfolio
-      (parent company), Model, and Condition (solo vs. portfolio) components to
-      quantify how little of perceptual variation the portfolio condition
+      Variance decomposition: nested sequential (type I) partition of DCI variance
+      on the 2,555 direct ratings into Portfolio (parent company), Brand within
+      portfolio, Model, Condition (solo vs. portfolio) and Residual components
+      to quantify how little of perceptual variation the portfolio condition
       explains.
     type: "statistical_analysis"
     inputs: ["per-cell DCI values"]
@@ -224,12 +226,12 @@ measurements:
   - id: m_direct_null
     statement: >-
       Direct-rating solo vs. portfolio: 0/20 brands FDR-significant at .05;
-      mean |delta DCI| = .26; effect sizes small (per-brand |d| <= .52);
+      mean |delta DCI| = .23; effect sizes small (per-brand |d| <= .52);
       cosine similarity > .999 for all brands; TOST equivalence within +/-1.0
       DCI confirmed for 18/20 brands (Geely Auto and Yandex Taxi inconclusive).
     source_observations: [O1]
     generating_method: M2
-    value: "0/20 FDR-sig; mean |delta DCI| = .26; 18/20 TOST-equivalent; cosine > .999"
+    value: "0/20 FDR-sig; mean |delta DCI| = .23; 18/20 TOST-equivalent; cosine > .999"
     units: "DCI points / Cohen's d / cosine"
     provenance:
       created_by: "author + analysis scripts"
@@ -238,7 +240,7 @@ measurements:
   - id: m_lexus
     statement: >-
       Lexus (Toyota spectral-layer aspirational brand) shows delta DCI = +.59,
-      d = .52, paired p = .004 — directionally consistent with aspiration
+      d = .52, independent-samples p = .004 — directionally consistent with aspiration
       dynamics and the largest positive delta — but does NOT survive FDR
       correction across 20 tests, so it is suggestive but not statistically
       robust.
@@ -256,10 +258,11 @@ measurements:
       all DECREASES (flattening) — Geely Auto delta = -2.93 (d = -1.11, the
       largest effect in the experiment), Polestar -1.47 (d = -.54), Toyota -.80
       (d = -.61), Yandex -1.06 (d = -.49); mean delta across all 20 brands was
-      -.03 (effectively zero).
+      -.26 (SD = .88; t(19) = -1.31, p = .205; not distinguishable from zero
+      across brands).
     source_observations: [O2]
     generating_method: M2
-    value: "4/20 FDR-sig, all decreases; Geely Auto d = -1.11; overall mean delta = -.03"
+    value: "4/20 FDR-sig, all decreases; Geely Auto d = -1.11; overall mean delta = -.26"
     units: "DCI points / Cohen's d"
     provenance:
       created_by: "author + analysis scripts"
@@ -284,13 +287,14 @@ measurements:
     body_sections: ["§Extensions", "§Hypothesis Tests"]
   - id: m_variance
     statement: >-
-      Variance decomposition of DCI: Brand 37.4%, Portfolio (parent company)
-      19.3%, Model 8.6%, Condition (solo vs. portfolio) .1% — brand identity
-      dominates and the portfolio CONDITION explains essentially none of the
-      variance.
+      Variance decomposition of DCI (nested, sequential, n = 2,555): Portfolio
+      (parent company) 25.2%, Brand within portfolio 16.2% (brand identity
+      41.4%), Model 7.5%, Condition (solo vs. portfolio) under .01%, Residual
+      51.1% — brand identity dominates and the portfolio CONDITION explains
+      essentially none of the variance.
     source_observations: [O1]
     generating_method: M3
-    value: "Brand 37.4% / Portfolio 19.3% / Model 8.6% / Condition .1%"
+    value: "Portfolio 25.2% / Brand within portfolio 16.2% (brand identity 41.4%) / Model 7.5% / Condition < .01% / Residual 51.1%"
     units: "% variance explained"
     provenance:
       created_by: "author + analysis scripts"
@@ -299,13 +303,14 @@ measurements:
   - id: m_extension_null
     statement: >-
       Published-stimulus extension: 0/10 portfolio-condition brands
-      FDR-significant; no brand shows |d| > .50; TOST equivalence confirmed for
-      all 10 within +/-1.0 DCI; largest effects Audi d = -.44 (VW Group) and
-      Pepsi d = +.34 (PepsiCo), both sub-threshold; combined corpus reaches
+      FDR-significant; no brand shows |d| > .50; TOST equivalence within +/-1.0 DCI
+      for 9 of 10 (Colgate inconclusive, TOST p = .104); largest effects Audi
+      d = -.44 (VW Group; p = .012 against a Benjamini-Hochberg threshold of
+      .005) and Pepsi d = +.34 (PepsiCo; p = .053), both sub-threshold; combined corpus reaches
       9,925 observations across 40 zero-overlap brands.
     source_observations: [O4]
     generating_method: M2
-    value: "0/10 FDR-sig; all |d| < .50; 10/10 TOST-equivalent; combined 9,925 obs / 40 brands"
+    value: "0/10 FDR-sig; all |d| < .50; 9/10 TOST-equivalent (Colgate inconclusive); combined 9,925 obs / 40 brands"
     units: "Cohen's d / DCI points / observation count"
     provenance:
       created_by: "author + analysis scripts"
@@ -381,14 +386,18 @@ propositions:
     antecedents: [P3]
     evidence:
       - type: dataset_anchor
-        anchor: "0/20 FDR-significant in direct rating; mean |delta DCI| = .26; 18/20 TOST-equivalent; cosine > .999 (Table 3, H5)."
+        anchor: "0/20 FDR-significant in direct rating; mean |delta DCI| = .23; 18/20 TOST-equivalent; cosine > .999 (Table 3, H5)."
         citation_keys: []
         citation_role: data_source
     falsifier: >-
-      Falsified (paper's stated condition) if a future study with >=7 models
-      from >=3 traditions finds systematic portfolio-induced DCI shifts > 2.0
-      points with d > .50 surviving multiple-testing correction across >=5
-      archetypes and >=3 modalities simultaneously.
+      Falsified if a study using the present design and a comparable panel
+      finds portfolio-induced |delta DCI| above the +/-1.0 TOST bound for more
+      than half the brands tested, with those tests FDR-significant at
+      alpha = .05; a narrower result also refutes immunity as a general
+      property: any single portfolio archetype in which every brand shows an
+      FDR-significant shift above the bound. Neither condition requires
+      agreement across modalities or archetypes. (Restated from an earlier
+      six-part conjunction that was close to unfalsifiable in practice.)
     body_sections: ["§Research Hypotheses — H5", "§Results — Main Results", "§Conclusion"]
   - id: P5
     statement: >-
@@ -428,13 +437,14 @@ propositions:
       spectral cluster, contradiction, spread, layer, prestige spread, reverse
       aspiration, branded house — show the same direct-framing immunity) and
       across independent stimulus sets (the published-brand extension
-      replicates the null with zero exceptions, combining to 9,925 observations
-      over 40 zero-overlap brands).
+      replicates the null: no FDR-significant effect and 9 of 10 brands
+      TOST-equivalent, combining to 9,925 observations over 40 zero-overlap
+      brands).
     conditions: "C1, C2"
     antecedents: [P4]
     evidence:
       - type: dataset_anchor
-        anchor: "7 archetypes immune in direct framing; extension 0/10 FDR-sig, all |d|<.50, 10/10 TOST-equivalent (Table 7)."
+        anchor: "7 archetypes immune in direct framing; extension 0/10 FDR-sig, all |d|<.50, 9/10 TOST-equivalent (Table 7)."
         citation_keys: []
         citation_role: data_source
     body_sections: ["§Discussion — Spectral immunity generalizes", "§Replication with Published Brand Stimuli"]
@@ -480,12 +490,12 @@ propositions:
       use portfolio architecture to reshape LLM perceptions except in extended
       conversational contexts (a conditional vulnerability for reverse-aspiration
       portfolios). Brand coherence, not portfolio coherence, drives AI
-      perception (brand explains 37% of DCI variance; condition explains .1%).
+      perception (brand identity explains 41.4% of DCI variance; condition explains under .01%).
     conditions: "C1, C3"
     antecedents: [P4, P7, P8]
     evidence:
       - type: dataset_anchor
-        anchor: "Variance decomposition Table 5 (brand 37.4% vs condition .1%); 'Share of Model' framing."
+        anchor: "Variance decomposition Table 5 (brand identity 41.4% vs condition under .01%); 'Share of Model' framing."
         citation_keys: [dubois-2025-forget-what-you]
         citation_role: motivating_problem
     body_sections: ["§Discussion — Managerial Contribution"]
@@ -498,15 +508,15 @@ findings:
     statement: >-
       Spectral immunity holds: portfolio framing produces no systematic change
       in LLM brand perception in single-turn modalities — 0/20 brands
-      FDR-significant in direct rating, mean |delta DCI| = .26, 18/20
+      FDR-significant in direct rating, mean |delta DCI| = .23, 18/20
       TOST-equivalent within +/-1.0 DCI, identical pattern in naturalistic
       recommendation (mean delta -.23, 0/20 FDR-sig) and prompt-location
-      ablation (no difference; condition explains .1% of variance).
+      ablation (no difference); condition explains under .01% of DCI variance.
     type: "experimental_outcome"
     source_measurements: [m_direct_null, m_variance]
     generating_method: M2
     antecedents: [O1, P4]
-    falsifier: "See P4 falsifier — systematic >2.0 DCI shifts, d>.50, surviving FDR across >=5 archetypes and >=3 modalities."
+    falsifier: "See P4 falsifier — |delta DCI| above the +/-1.0 TOST bound for more than half the brands, FDR-significant; or one archetype with every brand FDR-significant above the bound."
     citation_role_in_paper: "primary_result"
     provenance:
       created_by: "author"
@@ -517,7 +527,7 @@ findings:
       Immunity replicates across model traditions and independent stimulus
       sets: all 7 training traditions show immunity (only the Japanese model is
       FDR-inconclusive), and the 20-brand published-stimulus extension
-      reproduces the null with zero exceptions, bringing the corpus to 9,925
+      reproduces the null (no FDR-significant effect, 9 of 10 brands TOST-equivalent), bringing the corpus to 9,925
       observations across 40 zero-overlap brands.
     type: "experimental_outcome"
     source_measurements: [m_variance, m_extension_null]
@@ -536,7 +546,7 @@ findings:
       DECREASES after portfolio reveal, led by Geely Auto (d = -1.11, the
       strongest effect in the experiment), via conversational anchoring — a
       regime-specific vulnerability, not a general exception to immunity (mean
-      multi-turn delta across all 20 brands was -.03).
+      multi-turn delta across all 20 brands was -.26, not distinguishable from zero).
     type: "experimental_outcome"
     source_measurements: [m_multiturn]
     generating_method: M2
@@ -640,8 +650,8 @@ robustness_checks:
   - id: RC3
     statement: >-
       Independent published-brand stimulus set (20 brands from canonical
-      marketing studies, zero overlap) replicates immunity with zero exceptions
-      (0/10 FDR-significant, all |d| < .50, 10/10 TOST-equivalent), addressing
+      marketing studies, zero overlap) replicates immunity (0/10 FDR-significant,
+      all |d| < .50, 9/10 TOST-equivalent with Colgate inconclusive), addressing
       the external-validity concern about the theoretically-motivated main panel.
     varied_parameter: "brand stimulus set (theory-motivated -> literature-sampled)"
     range_explored: "20 additional brands, 1,950 observations"

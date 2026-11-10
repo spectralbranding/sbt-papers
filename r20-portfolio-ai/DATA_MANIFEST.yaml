@@ -11,10 +11,15 @@ superseded_by: 2026ac
 
 hf_dataset:
   repo_id: spectralbranding/r20-portfolio-ai-perception
-  doi: 10.57967/hf/8380
+  doi: 10.57967/hf/11560
   url: https://huggingface.co/datasets/spectralbranding/r20-portfolio-ai-perception
   form: curated            # default/train, 9.9K rows x 16 cols (brand, portfolio, condition, model, 8 SBT dims)
   license: cc-by-4.0
+  note: >-
+    10.57967/hf/11560 is the DOI of HuggingFace revision 4ab351f, which added the Turn-1 ratings behind
+    Table 6 (rated in the same conversation before the portfolio is disclosed) to multiturn.jsonl as
+    turn1_* columns; the earlier 10.57967/hf/8380 holds Turn 2 only. The raw responses carry both turns
+    (field turn1_scores): https://github.com/spectralbranding/sbt-papers/tree/main/r20-portfolio-ai/responses
 
 removed_from_internal:       # de-duplicated 2026-06-16; recoverable from git history
   - responses/               # 12M raw LLM responses (R20 portfolio condition)

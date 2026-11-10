@@ -12,7 +12,7 @@ meta:
     orcid: 0009-0000-6893-9231
     affiliation: Independent Researcher
   doi: 10.5281/zenodo.19555282
-  date: '2026-06-26'
+  date: '2026-11-10'
   venue: Preprint
   license: CC-BY-4.0
   keywords:
@@ -29,16 +29,16 @@ meta:
     Brand portfolio theory predicts that revealing corporate ownership produces perceptual interference
     via an awareness gate [@keller-1993-conceptualizing-measuring-managing; @aaker-1990-consumer-evaluations-brand].
     Because LLMs encode portfolio relationships permanently in their parameters, they should exhibit either
-    maximal interference or complete immunity. This preregistered study tests these hypotheses across
-    13 LLMs spanning seven training traditions. Twenty brands from seven portfolio archetypes were rated
-    under four prompt modalities---direct rating, naturalistic recommendation, multi-turn conversation
-    with mid-dialogue portfolio reveal, and native-language framing---yielding 7,975 observations. A preregistered
-    extension added 20 brands from published marketing research (1,950 observations, zero overlap), replicating
-    immunity and bringing the combined dataset to 9,925 observations across 40 brands. Portfolio framing
-    produces near-zero change in Dimensional Concentration Index (mean $|\Delta\mathrm{DCI}| = .26$);
-    equivalence testing confirms the null for 18 of 20 brands within $\pm 1.0$ DCI points. Multi-turn
-    revelation unlocks modest flattening for reverse-aspiration structures (Geely Auto $d = -1.11$, FDR-significant),
-    but effects remain portfolio- and modality-specific. These results generalize spectral immunity across
+    maximal interference or complete immunity. This study tests these hypotheses across 13 LLMs spanning
+    seven training traditions. Twenty brands from seven portfolio archetypes were rated under four prompt
+    modalities---direct rating, naturalistic recommendation, multi-turn conversation with mid-dialogue
+    portfolio reveal, and native-language framing---yielding 7,975 observations. An extension added 20
+    brands from published marketing research (1,950 observations, zero overlap), replicating immunity
+    and bringing the combined dataset to 9,925 observations across 40 brands. Portfolio framing produces
+    near-zero change in Dimensional Concentration Index (mean $|\Delta\mathrm{DCI}| = .23$); equivalence
+    testing confirms the null for 18 of 20 brands within $\pm 1.0$ DCI points. Multi-turn revelation unlocks
+    modest flattening for reverse-aspiration structures (Geely Auto $d = -1.11$, FDR-significant), but
+    effects remain portfolio- and modality-specific. These results generalize spectral immunity across
     model traditions and portfolio types: house-of-brands shielding is automatic in AI-mediated markets,
     while constructive interference is impossible except in extended conversational contexts. Implications
     for awareness-gate mechanisms and "Share of Model" strategy are discussed.'
@@ -113,10 +113,10 @@ claims:
   - P4
 - id: P7
   type: proposition
-  statement: Spectral immunity GENERALIZES across portfolio archetypes (all 7 — spectral cluster, contradiction,
+  statement: 'Spectral immunity GENERALIZES across portfolio archetypes (all 7 — spectral cluster, contradiction,
     spread, layer, prestige spread, reverse aspiration, branded house — show the same direct-framing immunity)
-    and across independent stimulus sets (the published-brand extension replicates the null with zero
-    exceptions, combining to 9,925 observations over 40 zero-overlap brands).
+    and across independent stimulus sets (the published-brand extension replicates the null: no FDR-significant
+    effect and 9 of 10 brands TOST-equivalent, combining to 9,925 observations over 40 zero-overlap brands).'
   testable: false
   tested_in_paper: true
   status: not_tested
@@ -153,7 +153,7 @@ claims:
     but constructive interference is equally IMPOSSIBLE — brand managers cannot use portfolio architecture
     to reshape LLM perceptions except in extended conversational contexts (a conditional vulnerability
     for reverse-aspiration portfolios). Brand coherence, not portfolio coherence, drives AI perception
-    (brand explains 37% of DCI variance; condition explains .1%).'
+    (brand identity explains 41.4% of DCI variance; condition explains under .01%).'
   testable: false
   tested_in_paper: true
   status: not_tested
@@ -166,13 +166,14 @@ methodology:
   design: 'DCI elicitation: each (brand, condition, model, repetition) cell produces an 8-dimension brand
     profile via the PRISM-B 1-5 scoring protocol, from which the Dimensional Concentration Index DCI =
     (sum_d |w_d - 1/8| / 2) x 100 is computed (the 8-dimension L1 generalization of the two-dimension
-    DCI_R15 used in the dimensional-collapse companion). Confirmatory-null inference: brand-level paired
+    DCI_R15 used in the dimensional-collapse companion). Confirmatory-null inference: brand-level independent-samples
     t-tests of solo vs. portfolio DCI with Cohen''s d effect sizes; Benjamini-Hochberg FDR correction
     across all 20 brand-level tests; two one-sided tests (TOST) for statistical equivalence to zero within
     +/-1.0 DCI bounds; a power analysis (70% power for d=.50 at N=50/group in v1; >80% at N=65/cell in
-    v2.0) motivating TOST as the appropriate frame. Variance decomposition: partition DCI variance into
-    Brand, Portfolio (parent company), Model, and Condition (solo vs. portfolio) components to quantify
-    how little of perceptual variation the portfolio condition explains.'
+    v2.0) motivating TOST as the appropriate frame. Variance decomposition: nested sequential (type I)
+    partition of DCI variance on the 2,555 direct ratings into Portfolio (parent company), Brand within
+    portfolio, Model, Condition (solo vs. portfolio) and Residual components to quantify how little of
+    perceptual variation the portfolio condition explains.'
   analysis:
     software: https://doi.org/10.5281/zenodo.19555282 (source code + analysis scripts)
     method: cloud APIs + local Ollama v0.20.0 on Apple Mac mini M4 Pro
@@ -185,12 +186,16 @@ acceptance:
     paradox itself is falsified if neither regime fits (e.g. effects are large, systematic, AND scale
     with gate saturation).
 - claim_id: P4
-  criterion: Holds if (Spectral Immunity — the central proposition) Across portfolio archetypes and single-turn
+  criterion: 'Holds if (Spectral Immunity — the central proposition) Across portfolio archetypes and single-turn
     prompt modalities, the magnitude of portfolio-induced perception change is statistically equivalent
-    to zero within meaningful bounds (+/-1.
-  falsification: Falsified (paper's stated condition) if a future study with >=7 models from >=3 traditions
-    finds systematic portfolio-induced DCI shifts > 2.0 points with d > .50 surviving multiple-testing
-    correction across >=5 archetypes and >=3 modalities simultaneously.
+    to zero within meaningful bounds (+/-1.0 DCI points): adding portfolio context does not systematically
+    alter how LLMs perceive brands.'
+  falsification: 'Falsified if a study using the present design and a comparable panel finds portfolio-induced
+    |delta DCI| above the +/-1.0 TOST bound for more than half the brands tested, with those tests FDR-significant
+    at alpha = .05; a narrower result also refutes immunity as a general property: any single portfolio
+    archetype in which every brand shows an FDR-significant shift above the bound. Neither condition requires
+    agreement across modalities or archetypes. (Restated from an earlier six-part conjunction that was
+    close to unfalsifiable in practice.)'
 dependencies:
 - relationship: applies
   claim: Spectral Brand Theory (Zharnikov 2026a) supplies the eight perceptual dimensions, the awareness-gate
@@ -249,28 +254,29 @@ results:
 - claim_id: P4
   status: supported
   notes: 'Spectral immunity holds: portfolio framing produces no systematic change in LLM brand perception
-    in single-turn modalities — 0/20 brands FDR-significant in direct rating, mean |delta DCI| = .26,
+    in single-turn modalities — 0/20 brands FDR-significant in direct rating, mean |delta DCI| = .23,
     18/20 TOST-equivalent within +/-1.0 DCI, identical pattern in naturalistic recommendation (mean delta
-    -.23, 0/20 FDR-sig) and prompt-location ablation (no difference; condition explains .1% of variance).'
+    -.23, 0/20 FDR-sig) and prompt-location ablation (no difference); condition explains under .01% of
+    DCI variance.'
 - claim_id: P6
   status: supported
   notes: 'Immunity replicates across model traditions and independent stimulus sets: all 7 training traditions
     show immunity (only the Japanese model is FDR-inconclusive), and the 20-brand published-stimulus extension
-    reproduces the null with zero exceptions, bringing the corpus to 9,925 observations across 40 zero-overlap
-    brands.'
+    reproduces the null (no FDR-significant effect, 9 of 10 brands TOST-equivalent), bringing the corpus
+    to 9,925 observations across 40 zero-overlap brands.'
 - claim_id: P7
   status: supported
   notes: 'Immunity replicates across model traditions and independent stimulus sets: all 7 training traditions
     show immunity (only the Japanese model is FDR-inconclusive), and the 20-brand published-stimulus extension
-    reproduces the null with zero exceptions, bringing the corpus to 9,925 observations across 40 zero-overlap
-    brands.'
+    reproduces the null (no FDR-significant effect, 9 of 10 brands TOST-equivalent), bringing the corpus
+    to 9,925 observations across 40 zero-overlap brands.'
 - claim_id: P8
   status: supported
   notes: 'The only conditional exception is multi-turn conversational revelation for reverse-aspiration
     structure: 4/20 brands show FDR-significant DCI DECREASES after portfolio reveal, led by Geely Auto
     (d = -1.11, the strongest effect in the experiment), via conversational anchoring — a regime-specific
     vulnerability, not a general exception to immunity (mean multi-turn delta across all 20 brands was
-    -.03).'
+    -.26, not distinguishable from zero).'
 limitations:
 - description: DCI is a new metric not yet validated against human perceptual data; the null finding is
     robust to this (a null is a null regardless of metric), but the rate-distortion / compression INTERPRETATION

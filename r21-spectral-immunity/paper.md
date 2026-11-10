@@ -186,7 +186,7 @@ The observer panel comprised 13 models drawn from seven training traditions, spa
 | Mistral Large | Mistral AI | European | Cloud API |
 | EXAONE 3.5 32B | LG AI Research | Korean | Local (Ollama) |
 
-*Notes*: Temperature = .7 for all models. Parse success rate: 7,975/8,330 (95.7%). Local models ran on Apple Mac mini M4 Pro (48 GB RAM) via Ollama v0.20.0.
+*Notes*: Temperature = .7 for all models. Parse success rate: 7,975/8,022 (99.4%) of recorded responses. Local models ran on Apple Mac mini M4 Pro (48 GB RAM) via Ollama v0.20.0.
 
 ***Metrics and Statistical Approach***
 
@@ -322,7 +322,7 @@ Multi-turn conversation is the most ecologically valid condition and the modalit
 | Toyota | 6.8 | 6.0 | -.80 | <.001 | -.61 |
 | Yandex | 6.2 | 5.1 | -1.06 | <.001 | -.49 |
 
-*Notes*: All four brands showed DCI decreases (profile flattening) after portfolio reveal. Geely Auto shows the largest effect in the entire experiment (d = -1.11). The mechanism appears to be conversational anchoring: Turn 1 establishes a premium anchor for the portfolio family (Volvo/Polestar), making Turn 2's framing effective at flattening the lower-tier parent brand. This pattern does not appear for portfolios without the reverse-aspiration dynamic (LVMH, P&G). Mean delta across all 20 brands in multi-turn was -.26: the mean of the 20 per-brand Turn 1 to Turn 2 changes (SD = .88; t(19) = -1.31, p = .205, d = -.29), so it is not distinguishable from zero across brands, and the 16 brands not shown average +.07. Pooled over all 1,235 parsed response pairs the mean change is -.23 (paired t(1234) = -3.13, p = .002, d = -.09). SEs of the eight cell means in this table (SD/sqrt(n)) range from .17 to .30; the companion script (`code/compute_dci.py --full`) prints every SE. Turn 1 is the rating given in the same conversation before the portfolio is disclosed, not the separate solo condition of Table 3. The archived HuggingFace files hold Turn 2 only; the Turn 1 scores are in the raw response files (field turn1_scores) in the public repository at https://github.com/spectralbranding/sbt-papers/tree/main/r20-portfolio-ai/responses.
+*Notes*: All four brands showed DCI decreases (profile flattening) after portfolio reveal. Geely Auto shows the largest effect in the entire experiment (d = -1.11). The mechanism appears to be conversational anchoring: Turn 1 establishes a premium anchor for the portfolio family (Volvo/Polestar), making Turn 2's framing effective at flattening the lower-tier parent brand. This pattern does not appear for portfolios without the reverse-aspiration dynamic (LVMH, P&G). Mean delta across all 20 brands in multi-turn was -.26: the mean of the 20 per-brand Turn 1 to Turn 2 changes (SD = .88; t(19) = -1.31, p = .205, d = -.29), so it is not distinguishable from zero across brands, and the 16 brands not shown average +.07. Pooled over all 1,235 parsed response pairs the mean change is -.23 (paired t(1234) = -3.13, p = .002, d = -.09). SEs of the eight cell means in this table (SD/sqrt(n)) range from .17 to .30; the companion script (`code/compute_dci.py --full`) prints every SE. Turn 1 is the rating given in the same conversation before the portfolio is disclosed, not the separate solo condition of Table 3. The archived HuggingFace multi-turn records hold both the Turn 1 and the Turn 2 ratings (the `turn1_*` columns); the raw response files (field turn1_scores) are in the public repository at https://github.com/spectralbranding/sbt-papers/tree/main/r20-portfolio-ai/responses.
 
 ***Published-Brand Replication***
 

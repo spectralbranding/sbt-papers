@@ -6,11 +6,11 @@ ORCID: 0009-0000-6893-9231
 
 DOI: [10.5281/zenodo.19555282](https://doi.org/10.5281/zenodo.19555282)
 
-Working Paper v1.2.0 – April 2026 (revised June 2026)
+Working Paper v1.3.0 – April 2026 (revised November 2026)
 
 ## Abstract
 
-Large language models (LLMs) increasingly shape how consumers discover and evaluate brands. Brand portfolio theory predicts that revealing corporate ownership produces perceptual interference via an awareness gate [@keller-1993-conceptualizing-measuring-managing; @aaker-1990-consumer-evaluations-brand]. Because LLMs encode portfolio relationships permanently in their parameters, they should exhibit either maximal interference or complete immunity. This preregistered study tests these hypotheses across 13 LLMs spanning seven training traditions. Twenty brands from seven portfolio archetypes were rated under four prompt modalities---direct rating, naturalistic recommendation, multi-turn conversation with mid-dialogue portfolio reveal, and native-language framing---yielding 7,975 observations. A preregistered extension added 20 brands from published marketing research (1,950 observations, zero overlap), replicating immunity and bringing the combined dataset to 9,925 observations across 40 brands. Portfolio framing produces near-zero change in Dimensional Concentration Index (mean $|\Delta\mathrm{DCI}| = .26$); equivalence testing confirms the null for 18 of 20 brands within $\pm 1.0$ DCI points. Multi-turn revelation unlocks modest flattening for reverse-aspiration structures (Geely Auto $d = -1.11$, FDR-significant), but effects remain portfolio- and modality-specific. These results generalize spectral immunity across model traditions and portfolio types: house-of-brands shielding is automatic in AI-mediated markets, while constructive interference is impossible except in extended conversational contexts. Implications for awareness-gate mechanisms and "Share of Model" strategy are discussed.
+Large language models (LLMs) increasingly shape how consumers discover and evaluate brands. Brand portfolio theory predicts that revealing corporate ownership produces perceptual interference via an awareness gate [@keller-1993-conceptualizing-measuring-managing; @aaker-1990-consumer-evaluations-brand]. Because LLMs encode portfolio relationships permanently in their parameters, they should exhibit either maximal interference or complete immunity. This study tests these hypotheses across 13 LLMs spanning seven training traditions. Twenty brands from seven portfolio archetypes were rated under four prompt modalities---direct rating, naturalistic recommendation, multi-turn conversation with mid-dialogue portfolio reveal, and native-language framing---yielding 7,975 observations. An extension added 20 brands from published marketing research (1,950 observations, zero overlap), replicating immunity and bringing the combined dataset to 9,925 observations across 40 brands. Portfolio framing produces near-zero change in Dimensional Concentration Index (mean $|\Delta\mathrm{DCI}| = .23$); equivalence testing confirms the null for 18 of 20 brands within $\pm 1.0$ DCI points. Multi-turn revelation unlocks modest flattening for reverse-aspiration structures (Geely Auto $d = -1.11$, FDR-significant), but effects remain portfolio- and modality-specific. These results generalize spectral immunity across model traditions and portfolio types: house-of-brands shielding is automatic in AI-mediated markets, while constructive interference is impossible except in extended conversational contexts. Implications for awareness-gate mechanisms and "Share of Model" strategy are discussed.
 
 **Keywords:** brand perception, large language models, portfolio interference, awareness gate, TOST equivalence, cross-cultural AI, multi-turn conversation, native-language framing, Share of Model
 
@@ -24,7 +24,7 @@ For LLMs, the awareness gate is permanently saturated. These models cannot be ex
 
 Alternatively, LLMs may operate near minimum-distortion encodings of brand information. If dimensional compression is already at its limit, adding portfolio context provides no additional signal that would alter the encoding. One theoretical framework that predicts this immunity via rate-distortion compression is Spectral Brand Theory [@zharnikov-2026-spectral-brand-theory-computational-framework], but the prediction follows from any account in which LLM brand encodings are compressed and stable.
 
-This paper provides the first comprehensive test of portfolio interference in LLM brand perception. We test competing hypotheses---maximal interference vs. spectral immunity---through a preregistered experiment with six design innovations: 13 models from 7 training traditions, 7 portfolio archetypes, 4 prompt modalities, multi-turn conversation with mid-dialogue portfolio reveal, native-language ablation, and prompt-location ablation. Across 7,975 observations, the predominant finding is clear: 0/20 brands show FDR-significant portfolio effects in direct rating or recommendation conditions.
+This paper provides the first comprehensive test of portfolio interference in LLM brand perception. We test competing hypotheses---maximal interference vs. spectral immunity---through an experiment with six design innovations: 13 models from 7 training traditions, 7 portfolio archetypes, 4 prompt modalities, multi-turn conversation with mid-dialogue portfolio reveal, native-language ablation, and prompt-location ablation. Across 7,975 observations, the predominant finding is clear: 0/20 brands show FDR-significant portfolio effects in direct rating or recommendation conditions.
 
 ## Theoretical Background
 
@@ -60,7 +60,7 @@ where $\alpha_{C_k}$ is the awareness gate, $\bar{w}_d^{(C_k)}$ is the cohort's 
 
 ## Research Hypotheses
 
-Core hypotheses (H1--H5) are derived from portfolio theory and the awareness gate mechanism. Extension hypotheses (H6--H9) test new archetypes and modalities added in the present study.
+Core hypotheses (H1--H5) are derived from portfolio theory and the awareness gate mechanism. Extension hypotheses H6--H7 test new archetypes added in the present study; H8--H9 are exploratory tests of the native-language modality (see Method).
 
 *H1 (Constructive Interference).* Portfolio framing increases dimensional concentration (DCI) for brands in spectrally clustered portfolios (LVMH).
 
@@ -92,7 +92,9 @@ The experiment employed a fully crossed design across four prompt modalities:
 4. **Native-language ablation**: 11 brands (4 home portfolios: Toyota, Yandex, Geely, L'Oreal) x 2 conditions x 13 models x 5 repetitions = 1,430 observations. Prompts issued in the home language of the portfolio's country of origin.
 5. **Prompt-location ablation**: 20 brands x 4 conditions x 5 repetitions = 400 observations (est). Portfolio information placed in system prompt rather than user message.
 
-Total: approximately 7,930 observation cells (7,975 successfully parsed). All ratings used a 1--5 scale following the PRISM-B specification [@zharnikov-2026-empirical-rate-distortion-curve-ai].
+Total: 8,330 designed observation cells, of which 8,022 produced a recorded response and 7,975 were successfully parsed. All ratings used a 1--5 scale following the PRISM-B specification [@zharnikov-2026-empirical-rate-distortion-curve-ai].
+
+Hypotheses H1--H7 were specified prior to data collection on the basis of the theoretical framework; H8--H9 were added after initial analysis as exploratory tests. This study was not formally preregistered.
 
 ### Brands and Portfolios
 
@@ -130,7 +132,7 @@ Total: approximately 7,930 observation cells (7,975 successfully parsed). All ra
 | Mistral Large | Mistral AI | European | Cloud API |
 | EXAONE 3.5 32B | LG AI Research | Korean | Local (Ollama) |
 
-*Notes*: Models span 7 training traditions. The inclusion of YandexGPT (Russian-first), Sarvam (Indian-first), GPT-OSS-Swallow (Japanese-first, trained from scratch by Tokyo Tech), Mistral Large (European), and EXAONE 3.5 32B (Korean, LG AI Research) tests whether models with different cultural knowledge bases show different immunity patterns. Temperature = .7 for all models. Parse success rate: 7,975/8,129 (98.1%). Local models ran on Apple Mac mini M4 Pro (48 GB RAM) via Ollama v0.20.0. Technical reports for the regional and open models: Qwen3 [@qwen-2025-qwen3-technical-report], Mistral Large [@mistral-2024-mistral-large-frontierclass], and EXAONE 3.5 [@lg-2024-exaone-3-5].
+*Notes*: Models span 7 training traditions. The inclusion of YandexGPT (Russian-first), Sarvam (Indian-first), GPT-OSS-Swallow (Japanese-first, trained from scratch by Tokyo Tech), Mistral Large (European), and EXAONE 3.5 32B (Korean, LG AI Research) tests whether models with different cultural knowledge bases show different immunity patterns. Temperature = .7 for all models. Parse success rate: 7,975/8,022 (99.4%) of recorded responses. Local models ran on Apple Mac mini M4 Pro (48 GB RAM) via Ollama v0.20.0. Technical reports for the regional and open models: Qwen3 [@qwen-2025-qwen3-technical-report], Mistral Large [@mistral-2024-mistral-large-frontierclass], and EXAONE 3.5 [@lg-2024-exaone-3-5].
 
 ### Power Analysis
 
@@ -142,7 +144,7 @@ The *Dimensional Concentration Index* (DCI) measures profile concentration:
 
 $$DCI = \frac{\sum_{d=1}^{8} |w_d - \frac{1}{8}|}{2} \times 100 \quad (2)$$
 
-This generalizes the two-dimension form $DCI_{R15} = (w_{Economic} + w_{Semiotic}) / 100$ used in Zharnikov [-@zharnikov-2026-dimensional-collapse-ai-mediated-search], which was specialized to the AI Economic Default; the 8-dimension L1 form here measures total concentration regardless of which dimensions absorb the mass.
+This generalizes the two-dimension form $\mathrm{DCI}_{\mathrm{R15}} = (w_{\mathrm{Economic}} + w_{\mathrm{Semiotic}}) / 100$ used in Zharnikov [-@zharnikov-2026-dimensional-collapse-ai-mediated-search], which was specialized to the AI Economic Default; the 8-dimension L1 form here measures total concentration regardless of which dimensions absorb the mass.
 
 TOST equivalence testing with bounds of $\pm 1.0$ DCI points assesses statistical equivalence to zero. Benjamini-Hochberg correction controls false discovery rate across all 20 brand-level tests.
 
@@ -152,34 +154,36 @@ TOST equivalence testing with bounds of $\pm 1.0$ DCI points assesses statistica
 
 The predominant finding is clear: 0/20 brands show FDR-significant portfolio effects in direct rating conditions. Table 3 presents the full brand-level results.
 
-**Table 3.** DCI by Brand and Condition (N = 7,975; 13 Models, 5 Repetitions).
+**Table 3.** DCI by Brand and Condition.
 
 | Portfolio | Brand | Solo DCI | Port DCI | Delta | t | p | d | TOST p | Equivalent |
 |-----------|-------|----------|----------|-------|---|---|---|--------|------------|
 | LVMH | Dior | 3.5 | 3.8 | +.35 | 1.13 | .262 | +.20 | .020 | Yes |
-| LVMH | Fendi | 5.7 | 5.8 | +.09 | .38 | .702 | +.07 | .000 | Yes |
+| LVMH | Fendi | 5.7 | 5.8 | +.09 | .38 | .702 | +.07 | < .001 | Yes |
 | LVMH | Louis Vuitton | 4.4 | 4.7 | +.34 | .90 | .368 | +.16 | .043 | Yes |
 | Unilever | Axe | 8.6 | 8.7 | +.04 | .12 | .909 | +.02 | .002 | Yes |
-| Unilever | Ben & Jerry's | 6.4 | 6.4 | -.04 | -.24 | .809 | -.04 | .000 | Yes |
+| Unilever | Ben & Jerry's | 6.4 | 6.4 | -.04 | -.24 | .809 | -.04 | < .001 | Yes |
 | Unilever | Dove | 5.6 | 5.9 | +.30 | 1.20 | .234 | +.21 | .003 | Yes |
-| P&G | Gillette | 6.4 | 6.3 | -.15 | -.71 | .477 | -.13 | .000 | Yes |
+| P&G | Gillette | 6.4 | 6.3 | -.15 | -.71 | .477 | -.13 | < .001 | Yes |
 | P&G | Pampers | 6.5 | 6.2 | -.29 | -1.27 | .207 | -.22 | .001 | Yes |
 | P&G | Tide | 7.4 | 7.2 | -.20 | -.55 | .580 | -.10 | .016 | Yes |
 | Toyota | Toyota | 6.8 | 6.4 | -.37 | -1.69 | .093 | -.30 | .003 | Yes |
 | Toyota | Lexus | 5.2 | 5.8 | +.59 | 2.94 | .004 | +.52 | .022 | Yes |
-| L'Oreal | L'Oreal Paris | 5.6 | 5.5 | -.15 | -.75 | .456 | -.13 | .000 | Yes |
-| L'Oreal | Lancome | 5.4 | 5.4 | +.04 | .18 | .858 | +.03 | .000 | Yes |
-| L'Oreal | Maybelline | 6.8 | 6.6 | -.13 | -.38 | .705 | -.07 | .007 | Yes |
-| Geely | Volvo | 6.4 | 6.3 | -.19 | -.81 | .422 | -.15 | .000 | Yes |
-| Geely | Polestar | 8.6 | 8.5 | -.12 | -.37 | .710 | -.07 | .003 | Yes |
+| L'Oreal | L'Oreal Paris | 5.6 | 5.5 | -.15 | -.75 | .456 | -.13 | < .001 | Yes |
+| L'Oreal | Lancome | 5.4 | 5.4 | +.05 | .28 | .783 | +.05 | < .001 | Yes |
+| L'Oreal | Maybelline | 6.6 | 6.6 | -.10 | -.29 | .771 | -.05 | .004 | Yes |
+| Geely | Volvo | 6.5 | 6.2 | -.28 | -1.30 | .196 | -.23 | < .001 | Yes |
+| Geely | Polestar | 8.6 | 8.5 | -.08 | -.27 | .788 | -.05 | .001 | Yes |
 | Geely | Geely Auto | 8.0 | 8.5 | +.54 | 1.49 | .139 | +.27 | .102 | No |
-| Yandex | Yandex | 6.6 | 6.6 | -.01 | -.03 | .976 | -.01 | .000 | Yes |
+| Yandex | Yandex | 6.6 | 6.6 | -.01 | -.03 | .976 | -.01 | < .001 | Yes |
 | Yandex | Yandex Market | 8.2 | 8.4 | +.21 | .54 | .592 | +.10 | .021 | Yes |
 | Yandex | Yandex Taxi | 8.9 | 8.5 | -.36 | -.87 | .384 | -.16 | .062 | No |
 
-*Notes*: N = 65 per cell (13 models x 5 repetitions) for original portfolios; N = 59--65 for v2.0 portfolios. Benjamini-Hochberg correction yields 0/20 significant at FDR = .05. TOST equivalence confirmed for 18/20 brands within $\pm 1.0$ DCI bounds. Geely Auto and Yandex Taxi are inconclusive (neither equivalent nor significantly different). Lexus shows p = .004 in the paired t-test but does not survive FDR correction with 20 tests.
+*Notes*: N = 2,555 direct ratings (the solo and portfolio cells of the 7,975-observation main experiment); 13 models, 5 repetitions, up to 65 per cell (seven brands have fewer in at least one cell, the smallest 58). Benjamini-Hochberg correction yields 0/20 significant at FDR = .05. TOST equivalence confirmed for 18/20 brands within $\pm 1.0$ DCI bounds. Geely Auto and Yandex Taxi are inconclusive (neither equivalent nor significantly different). Lexus shows p = .004 in the independent-samples t-test but does not survive FDR correction with 20 tests. The mean absolute delta over the 20 brands is .23. SEs of the 40 cell means (SD/sqrt(n)) range from .10 to .31.
 
 ### Hypothesis Tests
+
+One decision rule governs every verdict below, and it is stated before the verdicts so that it is visibly applied uniformly. Difference hypotheses (H1, H2, H4, H6, H7, H8, H9) are scored *supported* only on an effect that survives FDR correction at $\alpha$ = .05 across the 20 tests, and *not supported* otherwise, whatever the uncorrected magnitude. Equivalence hypotheses (H3, H5) are scored on TOST against the $\pm 1.0$ DCI bound. No verdict is graded on direction, on an uncorrected *p*, or on a subset of cells chosen after the fact. Where an uncorrected effect is large enough to be worth recording, it is reported as an observation and named as one, and it does not move the verdict.
 
 **H1 (LVMH constructive): Not supported.** Mean $\Delta\mathrm{DCI} = +.26$, effect sizes small (d range +.07 to +.20), no FDR-significant results.
 
@@ -187,17 +191,17 @@ The predominant finding is clear: 0/20 brands show FDR-significant portfolio eff
 
 **H3 (P&G negligible): Supported.** Mean $\Delta\mathrm{DCI} = -.21$, TOST equivalent for all 3 brands, no FDR-significant results.
 
-**H4 (Toyota/Lexus aspirational): Partially supported.** Lexus showed $\Delta = +.59$ (d = .52, p = .004), directionally consistent with aspiration dynamics. However, with 20 tests, 0/20 survive FDR correction. The Lexus finding is suggestive but not definitive: aspiration dynamics may partially penetrate AI perception, but the evidence is inconclusive at the corrected alpha.
+**H4 (Toyota/Lexus aspirational): Not supported at corrected alpha.** Lexus showed $\Delta = +.59$ (d = .52, p = .004) but does not survive FDR correction across 20 tests. The direction is consistent with aspiration dynamics but the evidence is inconclusive. Lexus (d = +.52) shows a larger effect than Toyota (d = -.30), directionally consistent with the H4 prediction of a greater effect on the aspirational brand. However, neither effect survives FDR correction, making this suggestive rather than conclusive.
 
-**H5 (Spectral Immunity): Supported.** TOST equivalence confirmed for 18/20 brands. Mean $|\Delta\mathrm{DCI}| = .26$. Cosine similarity $> .999$ for all brands. 0/20 FDR-significant results. The two inconclusive brands (Geely Auto, Yandex Taxi) show neither equivalence nor a reliable effect---they are statistically underpowered for a conclusion rather than exceptions to immunity.
+**H5 (Spectral Immunity): Supported.** TOST equivalence confirmed for 18/20 brands. Mean $|\Delta\mathrm{DCI}| = .23$. Cosine similarity $> .999$ for all brands. 0/20 FDR-significant results. The two inconclusive brands (Geely Auto, Yandex Taxi) show neither equivalence nor a reliable effect---they are statistically underpowered for a conclusion rather than exceptions to immunity.
 
-**H6 (L'Oreal prestige gradient): Not supported.** All three L'Oreal brands show near-zero $\Delta$ (range -.15 to +.04, all $d < .14$). Portfolio architecture is invisible even for a prestige-spread structure spanning Lancome to Maybelline.
+**H6 (L'Oreal prestige gradient): Not supported.** All three L'Oreal brands show near-zero $\Delta$ (range -.15 to +.05, all $d < .14$). Portfolio architecture is invisible even for a prestige-spread structure spanning Lancome to Maybelline.
 
-**H7 (Geely reverse aspiration): Not supported in direct framing.** Volvo shows $\Delta = -.19$ (d = -.15, TOST equivalent). The predicted downward suppression is directionally present but too small to constitute evidence. The reverse aspiration hypothesis receives support only in the multi-turn condition (see below).
+**H7 (Geely reverse aspiration): Not supported in direct framing.** Volvo shows $\Delta = -.28$ (d = -.23, TOST equivalent). The predicted downward suppression is directionally present but too small to constitute evidence. The reverse aspiration hypothesis receives support only in the multi-turn condition (see below).
 
-**H8 (Language-dependent immunity): Mixed.** Native-language framing activates different discourse layers for some portfolios (Toyota: Japanese model Swallow shows $\Delta = -2.35$; Yandex: YandexGPT shows +.72). However, effects are portfolio-specific and model-specific, with no systematic directional pattern.
+**H8 (Language-dependent immunity; exploratory): Not supported.** No native-language effect survives FDR correction, which under the rule stated above settles the verdict. Two uncorrected observations are worth recording and do not change it: the Japanese Swallow model returns $\Delta = -2.35$ for Toyota and YandexGPT returns $\Delta = +.72$ for Yandex. Effects are portfolio-specific and model-specific with no systematic directional pattern. Because each tradition is represented by a single model, H8 and H9 cannot distinguish home-model amplification from model-specific idiosyncrasy in any case---the Swallow/Toyota effect ($\Delta = -2.35$) may reflect a Swallow-specific response pattern rather than a general Japanese-tradition phenomenon. An earlier version scored H8 and H9 as *Mixed*; that label rested on uncorrected magnitude, which is not the basis on which H1, H2, H6 and H7 were scored, and it has been withdrawn in favour of the single rule.
 
-**H9 (Home-model amplification): Mixed.** The predicted home-model amplification appears selectively. Swallow (Japanese) shows the largest tradition-level native effect for Toyota (-2.35). YandexGPT (Russian) shows modest amplification for Yandex (+.72). Qwen3 (Chinese) shows a conditional effect for Volvo (+2.07). None of these survive FDR correction, and there is no consistent pattern of amplification that holds across all home-market pairs.
+**H9 (Home-model amplification; exploratory): Not supported.** No home-model effect survives FDR correction. The largest uncorrected signal is Swallow (Japanese) for Toyota ($\Delta = -2.35$); YandexGPT (Russian) for Yandex (+.72) and Qwen3 (Chinese) for Volvo (+2.07) are smaller, and no consistent pattern of amplification holds across home-market pairs. Selective appearance in single-model traditions is what the exploratory design cannot distinguish from noise, and it is not scored as partial support.
 
 ### Cross-Cultural Generalizability
 
@@ -205,7 +209,7 @@ The predominant finding is clear: 0/20 brands show FDR-significant portfolio eff
 
 | Tradition | Models (n) | Delta DCI | d | p (tradition level) |
 |-----------|-----------|-----------|---|---------------------|
-| Western | 6 | +.02 | +.03 | .882 |
+| Western | 6 | +.01 | +.02 | .913 |
 | Chinese | 2 | -.06 | -.09 | .692 |
 | European | 1 | -.35 | -.46 | .055 |
 | Japanese | 1 | -.59 | -.63 | .011 |
@@ -213,7 +217,7 @@ The predominant finding is clear: 0/20 brands show FDR-significant portfolio eff
 | Russian | 1 | -.24 | -.32 | .168 |
 | Indian | 1 | -.13 | -.07 | .743 |
 
-*Notes*: The Japanese model (GPT-OSS-Swallow) shows the only tradition-level p-value below .05 (p = .011, d = -.63). This pattern is driven primarily by the Toyota-related brands, consistent with deeper Japanese automotive market knowledge. However, this is a single model, and the effect does not survive FDR correction across 7 tradition comparisons. All other traditions show identical immunity. The European model (Mistral Large) shows a non-significant trend (p = .055) in the direction of sensitivity.
+*Notes*: The Japanese model (GPT-OSS-Swallow) shows the only tradition-level p-value below .05 (p = .011, d = -.63). This pattern is driven primarily by the Toyota-related brands, consistent with deeper Japanese automotive market knowledge. However, this is a single model, and the effect does not survive FDR correction across 7 tradition comparisons. All other traditions show identical immunity. The European model (Mistral Large) shows a non-significant trend (p = .055) in the direction of sensitivity. SEs of the tradition-level mean deltas (SD of the 20 brand deltas / sqrt(20)) range from .12 to .38.
 
 ### Variance Decomposition
 
@@ -221,10 +225,13 @@ The predominant finding is clear: 0/20 brands show FDR-significant portfolio eff
 
 | Factor | % Variance |
 |--------|-----------|
-| Brand | 37.4 |
-| Portfolio (parent company) | 19.3 |
-| Model | 8.6 |
-| Condition (solo vs. portfolio) | .1 |
+| Portfolio (parent company) | 25.2 |
+| Brand within portfolio | 16.2 |
+| Model | 7.5 |
+| Condition (solo vs. portfolio) | < .01 |
+| Residual | 51.1 |
+
+*Notes*: N = 2,555 direct ratings (20 brands, solo and portfolio conditions). Shares are sequential (type I) sums of squares in the order listed, each factor adjusted for those above it, as a percentage of the total sum of squares, so the five shares sum to 100. Brand is nested in portfolio (each brand has one parent), so marginal one-factor shares would overlap. Brand identity, portfolio plus brand within portfolio, explains 41.4% of DCI variance. Condition (solo vs. portfolio framing) explains .003%, under .01% and about four orders of magnitude less than brand identity. Residual variance (51.1%) reflects within-cell variation (repetition-level noise), model x brand interactions, and condition x brand interactions not captured by the main effects.
 
 ### Robustness Checks
 
@@ -236,7 +243,7 @@ The predominant finding is clear: 0/20 brands show FDR-significant portfolio eff
 
 **Multi-turn conversation: Portfolio reveal.** Multi-turn conversation is the most ecologically valid test and the modality where the largest individual effects appear. Four brands showed FDR-significant DCI shifts after portfolio reveal:
 
-**Table 6.** Multi-Turn Results: FDR-Significant Brands (Turn 1 Solo vs. Turn 2 Post-Reveal).
+**Table 6.** Multi-Turn Results: FDR-Significant Brands (Turn 1 Before vs. Turn 2 After the Portfolio Reveal).
 
 | Brand | T1 DCI | T2 DCI | Delta | p | d |
 |-------|--------|--------|-------|---|---|
@@ -245,7 +252,7 @@ The predominant finding is clear: 0/20 brands show FDR-significant portfolio eff
 | Toyota | 6.8 | 6.0 | -.80 | <.001 | -.61 |
 | Yandex | 6.2 | 5.1 | -1.06 | <.001 | -.49 |
 
-*Notes*: 4/20 brands showed FDR-significant shifts in multi-turn conversation. All four showed DCI decreases (profile flattening) after portfolio reveal, consistent with contextual dilution rather than constructive interference. Geely Auto shows the largest effect in the entire experiment (d = -1.11): when the model is explicitly reminded mid-conversation that Geely Auto is the parent of Volvo and Polestar, the reverse aspiration operates in the predicted direction---but only through conversational accumulation, not direct framing. Mean $\Delta$ across all 20 brands was -.03---effectively zero. The Geely Auto multi-turn finding is notable but conditional: it requires extended conversational context and reflects a specific reverse-aspiration dynamic rather than a general exception to immunity.
+*Notes*: 4/20 brands showed FDR-significant shifts in multi-turn conversation. All four showed DCI decreases (profile flattening) after portfolio reveal, consistent with contextual dilution rather than constructive interference. Geely Auto shows the largest effect in the entire experiment (d = -1.11): when the model is explicitly reminded mid-conversation that Geely Auto is the parent of Volvo and Polestar, the reverse aspiration operates in the predicted direction---but only through conversational accumulation, not direct framing. Mean $\Delta$ across all 20 brands was -.26: the mean of the 20 per-brand Turn 1 to Turn 2 changes (SD = .88; t(19) = -1.31, p = .205, d = -.29), so it is not distinguishable from zero across brands, and the 16 brands not shown average +.07. Pooled over all 1,235 parsed response pairs the mean change is -.23 (paired t(1234) = -3.13, p = .002, d = -.09). Turn 1 is the rating given in the same conversation before the portfolio is disclosed, not the separate solo condition of Table 3. The Geely Auto multi-turn finding is notable but conditional: it requires extended conversational context and reflects a specific reverse-aspiration dynamic rather than a general exception to immunity.
 
 **Native-language ablation.** Native-language framing was tested for the 4 portfolios with identifiable home-market languages (Japanese/Toyota, Russian/Yandex, Chinese/Geely, French/L'Oreal). Results show that native-language framing activates different discourse registers for specific model-portfolio pairs but does not produce systematic amplification of portfolio effects. The clearest signal is the Japanese model (Swallow) under Japanese-language Toyota framing ($\Delta = -2.35$ vs. -.37 in English), and YandexGPT under Russian-language Yandex framing (+.72 vs. -.01 in English). However, Qwen3 under Chinese-language Geely framing shows a Volvo-specific effect (+2.07) that is opposite in direction to the home-model amplification prediction. No native-language effect survives FDR correction.
 
@@ -257,30 +264,30 @@ The 20 brands in the main experiment were selected to represent seven portfolio 
 
 Twenty brands were drawn from canonical empirical studies: Aaker [-@aaker-1997-dimensions-brand-personality], Brakus, Schmitt, and Zarantonello [-@brakus-2009-brand-experience-what], Li, Castelo, Katona, and Sarvary [-@li-2024-frontiers-determining-validity], Erdem [-@erdem-1998-empirical-analysis-umbrella], Dew, Ansari, and Toubia [-@dew-2022-letting-logos-speak], Morgan and Rego [-@morgan-2009-brand-portfolio-strategy], and Malar, Krohmer, Hoyer, and Nyffenegger [-@malar-2011-emotional-brand-attachment]. These stimulus sets span brand personality, brand experience, brand extensions, umbrella branding, and emotional brand attachment---traditions that are empirically distinct from the portfolio interference literature. Zero overlap exists between the 20 extension brands and the 20 main-experiment brands.
 
-Ten brands were tested in both solo and portfolio conditions: Coca-Cola (Coca-Cola Co), Pepsi (PepsiCo), BMW (BMW Group), Audi (Volkswagen Group), Google (Alphabet), Disney (Walt Disney Co), Colgate (Colgate-Palmolive), Samsung (Samsung Group), H&M (H&M Group), and Dell (Dell Technologies). Ten brands were tested in solo condition only: Apple, Nike, Starbucks, IBM, Harley-Davidson, Rolex, Amazon, Adidas, McDonald's, and Red Bull. The same 13-model, 7-tradition panel and identical PRISM-B protocol were applied. Total: 1,950 observations (1,300 solo + 650 portfolio), 5 repetitions per cell.
+Ten brands were tested in both solo and portfolio conditions: Coca-Cola (Coca-Cola Co), Pepsi (PepsiCo), BMW (BMW Group), Audi (Volkswagen Group), Google (Alphabet), Disney (Walt Disney Co), Colgate (Colgate-Palmolive), Samsung (Samsung Group), H&M (H&M Group), and Dell (Dell Technologies). Ten brands were tested in solo condition only: Apple, Nike, Starbucks, IBM, Harley-Davidson, Rolex, Amazon, Adidas, McDonald's, and Red Bull. The same 13-model, 7-tradition panel and identical PRISM-B protocol were applied. Total: 1,950 observations (1,300 solo + 650 portfolio), 5 repetitions per cell. The 10 brands rated under both conditions (1,300 observations) form the immunity test in Table 7, which uses the same DCI metric (Equation 2) as Table 3; solo cell means fall in the same range (5.2 to 9.1 in Table 7 vs. 3.5 to 8.9 in Table 3).
 
 ### Results
 
-**Table 7.** Published-Brand Extension: Portfolio Immunity Test (N = 1,950).
+**Table 7.** Published-Brand Extension: Portfolio Immunity Test (N = 1,300).
 
 | Brand | Parent | Solo DCI | Port DCI | Delta | d |
 |-------|--------|----------|----------|-------|---|
 | Coca-Cola | Coca-Cola Co | 5.8 | 6.0 | +.21 | +.16 |
 | Pepsi | PepsiCo | 6.2 | 6.8 | +.52 | +.34 |
 | BMW | BMW Group | 5.2 | 5.1 | -.13 | -.12 |
-| Audi | VW Group | 5.5 | 5.1 | -.45 | -.44 |
+| Audi | VW Group | 5.5 | 5.0 | -.45 | -.44 |
 | Google | Alphabet | 5.8 | 6.0 | +.22 | +.16 |
 | Disney | Walt Disney Co | 5.2 | 5.3 | +.12 | +.07 |
 | Colgate | Colgate-Palmolive | 7.9 | 8.4 | +.47 | +.20 |
 | Samsung | Samsung Group | 5.5 | 5.6 | +.09 | +.07 |
 | H&M | H&M Group | 9.1 | 9.1 | +.04 | +.01 |
-| Dell | Dell Technologies | 8.5 | 8.4 | -.03 | -.02 |
+| Dell | Dell Technologies | 8.4 | 8.4 | -.03 | -.02 |
 
-*Notes*: N = 65 per cell (13 models x 5 repetitions). 0/10 brands FDR-significant at q = .05. TOST equivalence confirmed for all 10 brands within $\pm 1.0$ DCI bounds.
+*Notes*: DCI is computed by Equation 2, as in Table 3. N = 65 per cell (13 models x 5 repetitions). 0/10 brands FDR-significant at q = .05 (Benjamini-Hochberg; the smallest uncorrected p is Audi's, .012, against a threshold of .005). TOST equivalence within $\pm 1.0$ DCI bounds is confirmed for 9 of 10 brands; Colgate is inconclusive ($\Delta$ = +.47, TOST p = .104). SEs of the 20 cell means (SD/sqrt(n)) range from .11 to .38.
 
-The extension replicates the core immunity finding with zero exceptions. No brand shows $|d| > .50$ in the portfolio condition. The largest individual effect is Audi (d = -.44, Volkswagen Group framing), a slight reduction in concentration that falls just below the medium-effect threshold and is TOST-equivalent; the largest positive effect is Pepsi (d = +.34, PepsiCo framing). H&M (d = +.01), Dell (d = -.02), Disney (d = +.07), and Samsung (d = +.07) show near-exact immunity regardless of whether the parent conglomerate name substantially differs from the brand name.
+The extension replicates the core immunity finding: no brand is FDR-significant and 9 of 10 are TOST-equivalent (Colgate, $\Delta$ = +.47, is inconclusive). No brand shows $|d| > .50$ in the portfolio condition. The largest uncorrected effect is Audi's (d = -.44, p = .012, Volkswagen Group framing), a reduction in concentration that falls just below the medium-effect threshold and does not survive FDR correction; the largest positive effect is Pepsi (d = +.34, p = .053, PepsiCo framing). H&M (d = +.01), Dell (d = -.02), Disney (d = +.07), and Samsung (d = +.07) show near-exact immunity regardless of whether the parent conglomerate name substantially differs from the brand name.
 
-Audi and the suggestive Lexus finding from the main experiment (Lexus d = +.52, Toyota framing) both involve premium brands whose corporate sibling average is positioned less distinctively, but the direction of the sub-threshold effect is not consistent across the two cases: Lexus concentrates slightly under portfolio framing while Audi diffuses slightly. Neither reaches the medium-effect threshold, so neither displaces the immunity conclusion.
+Audi's effect is opposite in sign to the Lexus finding from the main experiment (Lexus d = +.52, Toyota framing): Lexus concentrates under portfolio framing while Audi diffuses. Neither survives FDR correction (Audi p = .012 against a Benjamini-Hochberg threshold of .005), so neither displaces the immunity conclusion.
 
 Combined with the main experiment, R20 now encompasses 9,925 observations across 40 brands (20 + 20, zero overlap), 13 models, and 7 training traditions. Spectral immunity generalizes across stimulus sets drawn from independent empirical research traditions spanning three decades of brand theory.
 
@@ -310,7 +317,7 @@ Combined with the main experiment, R20 now encompasses 9,925 observations across
 
 **The Lexus strategy remains an open empirical question.** The aspirational differentiation pattern (Lexus d = .52) is directionally consistent but not statistically robust after FDR correction with 20 brands. Portfolio managers pursuing vertical differentiation strategies (Toyota/Lexus, Volkswagen/Audi, Gap/Banana Republic) should treat AI-channel aspiration dynamics as warranting dedicated replication before acting on them.
 
-**Brand coherence, not portfolio coherence, drives AI perception.** Brand identity explains 37% of DCI variance; condition explains .1%.
+**Brand coherence, not portfolio coherence, drives AI perception.** Brand identity explains 41.4% of DCI variance (portfolio plus brand within portfolio); condition explains under .01%, about four orders of magnitude less.
 
 ### Boundary Conditions and Limitations
 
@@ -330,11 +337,13 @@ Four extensions are warranted. First, validation of DCI against human perceptual
 
 This study provides the first comprehensive test of portfolio interference in LLM brand perception. Across 7,975 observations, 13 models from 7 training traditions, 7 portfolio archetypes, and 4 prompt modalities, the predominant finding is clear: portfolio framing does not systematically alter how LLMs perceive brands. We term this phenomenon *spectral immunity*. The mechanism is architectural---Russian, Indian, Japanese, European, and Korean models with different training corpora show identical immunity to Western models. The original Lexus finding (d = .52) is suggestive but FDR-inconclusive with the full 20-brand panel. The multi-turn Geely Auto finding (d = -1.11) is the strongest effect in the experiment, revealing that reverse aspiration can be unlocked through conversational revelation---but this is a conditional vulnerability, not a general exception to immunity. For brand managers, portfolio architecture is invisible to the AI systems increasingly mediating consumer-brand interactions. The exception is conversational AI with extended interaction: portfolios with reverse-aspiration structure show meaningful effects in multi-turn dialogue that are absent in single-turn queries.
 
-*Falsification conditions:* Spectral immunity (H5) is falsified if any future study, using comparable methods and a panel of $\geq 7$ models from $\geq 3$ traditions, finds systematic portfolio-induced DCI shifts exceeding 2.0 DCI points with effect sizes $d > .50$ that survive multiple testing correction across $\geq 5$ portfolio archetypes and $\geq 3$ prompt modalities simultaneously.
+*Falsification conditions:* The condition previously stated for spectral immunity (H5) conjoined six requirements---a panel of 7+ models from 3+ traditions, DCI shifts above 2.0 points, effect sizes above .50, survival of multiple-testing correction, and both of these across 5+ portfolio archetypes and 3+ prompt modalities, all simultaneously. A six-way conjunction is close to unfalsifiable in practice, and this study's own largest result already clears three of the six: the present panel is 13 models drawn from seven training traditions, the Swallow/Toyota native-language cell returns a DCI shift of $-2.35$, and the Japanese tradition-level effect behind it is $d = -.63$ (Table 4). What stops that cell from being a refutation is FDR correction and the absence of a pattern across archetypes---which are two conjuncts, not six. The condition is therefore restated on the two that carry the content.
+
+Spectral immunity (H5) is falsified if a study using the present design and a comparable panel finds portfolio-induced $|\Delta\mathrm{DCI}|$ above the $\pm 1.0$ TOST bound for more than half the brands tested, with those tests FDR-significant at $\alpha$ = .05. A narrower result also refutes immunity as a general property, though not for the remaining archetypes: any single portfolio archetype in which every brand shows an FDR-significant shift above the bound. Neither condition requires agreement across modalities or archetypes, and either could be produced by a single well-powered replication.
 
 ## Data Availability
 
-Experiment data (7,975 observations) are archived at https://doi.org/10.57967/hf/8380. Source code and analysis scripts are available at https://doi.org/10.5281/zenodo.19555282. The dataset contains 2,555 direct-rating observations, 2,518 recommendation-prompt observations, 1,235 multi-turn conversation observations, 1,322 native-language ablation observations, and 345 prompt-location ablation observations across 13 models from 7 training traditions. Local model experiments were conducted on Apple Mac mini M4 Pro (48 GB RAM) running Ollama v0.20.0.
+Experiment data (7,975 observations) are archived at https://doi.org/10.57967/hf/11560 (HuggingFace). The archived multi-turn records hold both the Turn 1 and the Turn 2 ratings behind Table 6; the raw response files are in the public repository at https://github.com/spectralbranding/sbt-papers/tree/main/r20-portfolio-ai/responses. Source code and analysis scripts are available at https://doi.org/10.5281/zenodo.19555282. The dataset contains 2,555 direct-rating observations, 2,518 recommendation-prompt observations, 1,235 multi-turn conversation observations, 1,322 native-language ablation observations, and 345 prompt-location ablation observations across 13 models from 7 training traditions. Local model experiments were conducted on Apple Mac mini M4 Pro (48 GB RAM) running Ollama v0.20.0.
 
 ## Acknowledgments
 

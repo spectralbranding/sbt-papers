@@ -94,8 +94,8 @@ observations:
       Narrative, Ideological, Experiential, Social, Economic, Cultural,
       Temporal) on the 1-5 PRISM-B scale, from which a Dimensional
       Concentration Index (DCI) is computed per cell (N = 65 per cell;
-      13 models x 5 repetitions); parse success 7,975/8,330 (95.7%) for the
-      core panel.
+      13 models x 5 repetitions); parse success 7,975/8,022 (99.4%) of recorded
+      responses for the core panel.
     raw_data_pointer: "archived dataset; Appendix C verbatim prompts"
     instrument: "PRISM-B 1-5 scale; DCI per Equation 2"
     timestamp: "2026-04"
