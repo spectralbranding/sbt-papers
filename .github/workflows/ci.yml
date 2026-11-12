@@ -146,7 +146,7 @@ jobs:
             echo "No build script, skipping."
             exit 0
           fi
-          # The fleet's tracked .cursorrules/.clinerules symlinks point into
-          # ~/projects/fleet-standards and dangle here; next build stops on them.
+          # Tracked editor-rule symlinks (.cursorrules, .clinerules) have absolute
+          # targets that do not exist on the runner; next build stops on them.
           find . -maxdepth 1 -xtype l -print -delete
           npm run "$script"
