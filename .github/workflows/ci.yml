@@ -25,7 +25,7 @@ jobs:
       # Python tooling - only if pyproject.toml exists
       - name: Install uv
         if: hashFiles('pyproject.toml') != ''
-        uses: astral-sh/setup-uv@07a047e608db84b3d8c06cd9a7c7dcc9c355c18e # v10.3.2
+        uses: astral-sh/setup-uv@68559e99cc807c1eb7e9238fd43a15bba460eec2 # v10.3.3
         with:
           enable-cache: true
           cache-dependency-glob: "uv.lock"
@@ -113,3 +113,40 @@ jobs:
           vuln-type: 'os,library'
           severity: 'CRITICAL,HIGH'
           cache: 'false'
+
+      # Node tooling - only if package-lock.json exists. After Trivy, so the scan sees
+      # the repository, not node_modules or the build output. Node 22 matches the
+      # deploy workflows. The build is `npm run ci:build` when the repo defines it (a
+      # build that needs no secrets), else the `npm run build` a deploy runs, so a
+      # dependency PR that breaks the site fails here instead of in the deploy.
+      - name: Set up Node
+        if: hashFiles('package-lock.json') != ''
+        uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install Node Dependencies
+        if: hashFiles('package-lock.json') != ''
+        run: npm ci
+
+      - name: Build (Node)
+        if: hashFiles('package-lock.json') != ''
+        run: |
+          # Last resort when no secret-free build exists (marker file)
+          if [ -f ".ci-skip-build" ]; then
+            echo "Build skipped (.ci-skip-build marker found)"
+            exit 0
+          fi
+          if [ "$(npm pkg get 'scripts.ci:build')" != "{}" ]; then
+            script="ci:build"
+          elif [ "$(npm pkg get scripts.build)" != "{}" ]; then
+            script="build"
+          else
+            echo "No build script, skipping."
+            exit 0
+          fi
+          # The fleet's tracked .cursorrules/.clinerules symlinks point into
+          # ~/projects/fleet-standards and dangle here; next build stops on them.
+          find . -maxdepth 1 -xtype l -print -delete
+          npm run "$script"
